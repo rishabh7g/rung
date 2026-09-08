@@ -2063,6 +2063,109 @@
  * imparfait in M10. Bounds climb 8 → 10 (M1–M3: 8, M4–M7: 9, M8–M10: 10), pools are authored to
  * 12, M1–M3 ship fully enriched, and M10's items are four-sentence accounts.
  *
+ * ## en-de L2: the decisions, taken against the finished L1 (#432)
+ *
+ * Planned against the REAL cumulative L1 index — **203 surfaces through L1-M10, maxSpan 3**,
+ * rebuilt and read. Recorded in `docs/59-en-de-L2-brief-decisions.md` and repeated in the module
+ * notes. The seven L1 decisions carry unchanged, and decision 2 — the case fold meeting German
+ * capitalisation — governs this level more than any other.
+ *
+ * ### 1. Register — `du` enters at M1, and the paradigm is the price
+ *
+ * The commissioning issue says "`Sie` enters at M1"; L1's decision 3 says every second-person line
+ * in L1 was already `Sie`, and the index agrees (`sie`, `Ihnen`, `Ihr`, `sind`, `möchten` are all
+ * L1-M2's and L1-M3's). So the address that enters here is **`du`**, exactly as en-fr's L2 opens
+ * `tu` and en-ru's opens `ty`. Briefs rule 1 applies to a brief's premises, so the premise is
+ * corrected rather than copied.
+ *
+ * It is the most expensive register decision in the repo, and L1 said why in advance: `Sie` takes
+ * the plural verb, so its form is spelled exactly like the infinitive and cost the index nothing,
+ * while `du` costs a whole second set of endings (`bist`, `hast`, `kannst`, `möchtest`,
+ * `sprichst`), its own imperative (`komm`, `geh`, `gib`, `hilf`), and `dein` / `dich` / `dir`. M1
+ * pays all of it. The law is L1's: `Sie` is never wrong with a shopkeeper, an official, a landlord
+ * or a colleague; `du` is for friends, family, children and anyone who has offered it, and in
+ * German the offer is made out loud (`Wollen wir uns duzen?`) — the same negotiated switch en-fr
+ * and en-ru describe. Which module speaks which: M4, M7 and M8 are `Sie` throughout and chip
+ * `formal`; M6's plans are `du` and chip `informal`; M1 shows the pair; the rest follow the scene
+ * and say which in `usage`.
+ *
+ * ### 2. `sie` — the owner was decided in L1, and L2 inherits rather than decides
+ *
+ * The issue says the `Sie`/`sie` collision is "now live … owner decided here". It was decided in
+ * L1: decision 2 gave the key to **L1-M2**, as ONE entry with THREE readings, with the note
+ * already written true of all three and the separating rule stated (the verb form, and in writing
+ * the capital: `sie ist` she, `sie sind` they, `Sie sind` you). So M2 of this level uses `sie` for
+ * "she" and "they" and **opens no rival row** — it points back, and the L1 note it points at was
+ * written for exactly this moment.
+ *
+ * What IS decided here is the consequence L1 created by exclusion. L1 kept `ihnen` ("to them") and
+ * the possessive `ihr` ("her") out so that `Ihnen` and `Ihr` would each own a clean key — and M2's
+ * job is relationships, which wants "her brother". The ruling: **the possessive "her" is taught on
+ * `ihre` alone** (feminine and plural, a key nothing else holds), and where a masculine or neuter
+ * possession is needed the sentence takes the `von` periphrasis — `der Bruder von Anna` — which is
+ * ordinary spoken German, not a workaround. Bare `ihr` is never authored as a possessive, and
+ * `ihnen` stays out of L2 entirely; both are named in prose and left to L3.
+ *
+ * ### 3. Attributive adjective endings are DEFERRED, and "agreement at length" is the article grid
+ *
+ * German's attributive adjective takes one of three declensions depending on what stands in front
+ * of it (`ein guter Mann`, `der gute Mann`, `guter Wein`), and no honest brief can fit that into a
+ * module whose neighbours are teaching colours. So **every adjective in en-de L2 is PREDICATIVE** —
+ * after `sein`, where it takes no ending at all (`Das Auto ist rot`, `Berlin ist größer als
+ * München`) — and the attributive declension is named in M3's notes as L3's.
+ *
+ * That is not a hole in M3, it is a relocation: German's agreement lives in the ARTICLE, and M3's
+ * job line ("agreement at length") is spent on the case grid L1 half-built — `der` / `die` / `das`
+ * against `den` / `die` / `das` against `dem` / `der` / `dem`, with `ein`, `einen`, `einem` and
+ * `kein` beside them. L1 shipped `der`, `die`, `das`, `den`, `dem`, `ein`, `eine`, `einen`,
+ * `kein`, `keine` and `keinen` without ever laying them out; this is where the grid is assembled,
+ * and it is what lets M4 teach a two-way preposition and M8 teach a dative verb.
+ *
+ * ### 4. Separable verbs stay UNSPLIT in L2 — the modal bracket does the work
+ *
+ * L1's decision 4 named the hazard: a separated prefix at the end of a clause is spelled exactly
+ * like a preposition or an article, so `Ich steige ein` puts `ein` on L1-M1's INDEFINITE ARTICLE
+ * row and `Ich rufe Sie an` needs an `an` that M4 also wants as a preposition. The ruling that
+ * removes the problem for a whole level: **a separable verb appears in L2 only in its unsplit
+ * forms** — the infinitive after a modal (`Sie müssen hier einsteigen`, `Ich möchte Sie anrufen`)
+ * and the participle in the Perfekt (`Ich habe angerufen`) — and never in a split main clause. The
+ * split is named in M4's notes and deferred to L3.
+ *
+ * This costs nothing, because M1's whole lesson is the modal bracket, so every L2 sentence that
+ * wants a separable verb already has a modal in it. `an` is then free for M4 to own as a
+ * preposition, with one note true of the preposition and of the prefix it will later become.
+ *
+ * ### 5. Which past — the Perfekt, except for the three that resist it
+ *
+ * M10's decision, and it is the true description of spoken German rather than a simplification:
+ * **the Perfekt is the spoken past for nearly every verb**, with `haben` or `sein` in position two
+ * and the participle at the very end — the bracket again — and **`sein`, `haben` and the modals
+ * prefer the Präteritum** (`war`, `hatte`, `konnte`), which is why L1-M5 shipped `war`, `waren`,
+ * `hatte` and `hatten` and no participle for either. `sein` as an auxiliary goes with movement and
+ * change of state (`gegangen`, `gefahren`, `gekommen`, `geblieben`, and `aufgestanden`, which
+ * L1-M4 already shipped); `haben` takes the rest. And the relief worth naming out loud: unlike the
+ * three Romance courses in this repo, **the German participle never agrees with anything**.
+ *
+ * Konjunktiv II stays L3-M4's, with exactly one frozen exception: `könnten` in M1's most polite
+ * request, taught as a word with its mood named — the same treatment `je voudrais` gets in en-fr
+ * and `vorrei` in en-it.
+ *
+ * ### Why the en-de L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim. The `du` paradigm and the modal bracket in M1 —
+ * German's signature word order, and the frame every later module borrows; `sie` doing its other
+ * two readings and `haben` for features in M2; the article grid across three cases in M3; the
+ * two-way prepositions (`ins Kino` against `im Kino`, both of which L1-M7 shipped as contractions
+ * without the rule) and unsplit separable verbs in M4; the dative of the recipient and `das Essen`
+ * landing on L1-M3's `essen` row in M5; `halb neun` meaning half past EIGHT and the verb-second
+ * inversion after a fronted time in M6; answering the phone with a surname and `Auf Wiederhören`
+ * in M7, plus the fact German shares with French and not with Italian — no continuous tense at
+ * all; the dative verbs (`helfen`, `gefallen`) and the `nicht` / `kein` rule L1 shipped both
+ * halves of in M8; `-er … als`, `am -sten` and `lieber` as the way German says "prefer" in M9; and
+ * the Perfekt at length in M10. Bounds climb 8 → 10 (M1–M3: 8, M4–M7: 9, M8–M10: 10), pools are
+ * authored to 12, M1–M3 ship fully enriched, and M10's items are four-sentence accounts in the
+ * Perfekt.
+ *
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -5387,6 +5490,215 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "Language of the fields holds to the last turn: ENGLISH in every teaching field — rules[].text, note, trap, sound, changed, why, usage, mnemonic, cue — German only in display and forms, glossEn on every sentence, and literal wherever a turn's order moves. The register holds too: Sie to the end, du never written, and every noun still capitalised.",
       ],
       maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M1': {
+      id: 'L2-M1',
+      title: 'Asking politely',
+      job: 'Requests, thanks, apologies in the right register',
+      patterns: [
+        'Können Sie mir bitte + N-acc + geben?',
+        'Kannst du mir bitte + V-inf + ?',
+        'Könnten Sie mir + V-inf + ?',
+        'Entschuldigung + , + <request>',
+        'Danke schön — Gern geschehen',
+      ],
+      notes: [
+        'REGISTER, decided for the whole level and repeated here because a prompt only ever shows an author the notes (full record: docs/59-en-de-L2-brief-decisions.md; the seven L1 decisions carry unchanged, and decision 2 — the case fold meeting German capitalisation — governs this level more than any other). L1 spoke Sie throughout and kept du and its forms out of display AND out of every forms list, so the address that enters here is du. It is the most expensive register decision in the repo and L1 said why in advance: Sie takes the plural verb, so its form is spelled exactly like the infinitive and cost the index nothing, while du costs a second set of endings (bist, hast, kannst, möchtest, sprichst), its own imperative (komm, geh, gib, hilf) and dein / dich / dir. This module pays all of it. du frames chip `informal`, the Sie frames and the Könnten tier chip `formal`, a line safe with either stays `neutral`.',
+        "THE grammar of the module and of the level: the MODAL BRACKET. A modal is conjugated in position two and its infinitive goes to the very END of the clause — Können Sie mir bitte das Buch geben? — with everything else in between. English keeps its verbs together and German splits them around the sentence, so this is the biggest single word-order delta in the course, and every later module borrows the frame: M4's directions, M6's suggestions, M7's calls and M8's requests for help are all this shape. Author it in both addresses and let the pool test where the infinitive lands.",
+        "The dative arrives with the request, because a request has a recipient: mir (L1-M9's row, from Mir ist kalt), dir, Ihnen (L1-M2's, from Wie geht es Ihnen?), uns. Point back at both L1 rows rather than opening them again, and note that L1-M9's Mir ist kalt was already a dative-subject sentence with no grammatical subject at all — the same shape M8 will use for Mir ist schlecht. A learner who is shown the connection learns one pattern instead of three idioms.",
+        "könnten is Konjunktiv II and the mood is L3-M4's, so it enters as exactly ONE frozen cell — the politest request in the module — with a note naming the mood it belongs to and saying the rest is deferred. That is the treatment en-fr gives je voudrais and en-it gives vorrei. The rest of the politeness is lexical and mostly already the learner's: bitte (L1-M8), danke (L1-M2) climbing to danke schön and vielen Dank, Entschuldigung for getting attention, and Es tut mir leid for regret — a three-way split English makes with one word, like Italian's Scusi / Mi dispiace / Permesso.",
+        "INDEX SEAM: du, bist, hast, kannst, kann, können, könnten, willst, möchtest, gehst, machst, kommst, sprichst, dein, deine, dich, dir, uns, komm, geh, gib, hilf, entschuldigung, leid, schön, vielen, dank and geschehen are fresh keys. mir stays L1-M9's row, Ihnen stays L1-M2's, bitte stays L1-M8's, danke stays L1-M2's. Write every capital where German writes one — Sie, Ihnen, Ihr and every noun — even though the index folds it: the fold cannot see the capital and the reader can, and it is the only visible signal of which sie is meant (L1 decision 2).",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M2': {
+      id: 'L2-M2',
+      title: 'Describing people',
+      job: 'Appearance, character, relationships',
+      patterns: [
+        'Er/Sie ist + Adj',
+        'Er/Sie hat + Adj-less + N-acc',
+        'Das ist mein/meine + N',
+        'Ihre + N + heißt + <name>',
+        'Der + N + von + <name>',
+      ],
+      notes: [
+        'sie does its other two readings here — "she" and "they" — and this module OPENS NO ROW for either. L1\'s decision 2 gave the key to L1-M2 as one entry with three readings, with the note already written true of all three and the separating rule stated: sie ist is "she is" (singular verb), sie sind is "they are" (plural verb, lowercase), Sie sind is "you are" (plural verb, capital mid-sentence). Point back at that note, restate the rule in a rules[] entry here, and let the verb form do the work — because the index cannot see the capital and never will.',
+        'The possessive "her" is the one thing this module must decide, and the index decides it. L1 kept ihnen and the possessive ihr OUT so that Ihnen and Ihr would each own a clean key — Ihr Name is L1-M2\'s "your name". So the possessive "her" is taught on **ihre alone** (feminine and plural: ihre Schwester, ihre Kinder), which is a key nothing else holds, and where a masculine or neuter possession is needed the sentence takes the von periphrasis — der Bruder von Anna — which is ordinary spoken German and not a workaround. Bare ihr is never authored as a possessive. sein and seine ("his") are free and are this module\'s.',
+        "haben carries features, sein carries identity: Er hat kurze Haare — no, in this level Er hat die Haare kurz is avoided too, because BOTH need an attributive adjective. Author features as predicative sentences instead: Seine Haare sind kurz, Ihre Augen sind blau, Er ist groß. That is decision 3 of the level in the field: every adjective in en-de L2 stands after sein and takes no ending, and the attributive declension is L3's. Say it in the note so the constraint reads as a decision rather than as an oversight.",
+        'The family and person set: Bruder, Schwester, Vater, Mutter, Sohn, Tochter, Mann, Freund, Freundin, Eltern, Kind; groß and klein (L1-M10\'s rows), alt (L1-M10), jung, nett, freundlich, ruhig, lustig. Frau is L1-M2\'s key, where it is the title "Frau Weber" — and it also means "woman" and "wife", so point back and write nothing new: one key, three readings, exactly as sie has three. das Mädchen is neuter despite meaning "girl", which is the most famous fact about German gender and belongs in a trap here: gender is a property of the WORD, and -chen makes anything neuter.',
+        "INDEX SEAM: ihre, sein (the possessive — note that the verb sein was never indexed by L1, which only ever showed ist, bin, sind and war, so this key is free and its note must say the two words are spelled alike), seine, meine, von, Bruder, Schwester, Vater, Mutter, Sohn, Tochter, Sohn, Kind, Eltern, Freund, Freundin, Haare, Augen, jung, nett, freundlich, ruhig, lustig and Mädchen are fresh keys. sie, Frau, Herr and Ihr stay L1-M2's rows; er, alt, groß and klein stay L1-M10's; ist and sind stay L1-M1's and L1-M2's.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M3': {
+      id: 'L2-M3',
+      title: 'Describing things',
+      job: 'Size, colour, quality — agreement at length',
+      patterns: [
+        'Der/Die/Das + N + ist + Adj',
+        'Ich sehe + den/die/das + N',
+        'Ich gebe + dem/der/dem + N + <thing>',
+        'Ein/Eine/Ein + N + ist + Adj',
+        'Das ist kein/keine/kein + N',
+      ],
+      notes: [
+        '"Agreement at length" means something different in German than in the Romance courses, and this module is where the level\'s third decision shows its face: German\'s agreement lives in the ARTICLE, not on the adjective, so the grid this module walks is der / die / das against den / die / das (accusative) against dem / der / dem (dative), with ein, eine, einen, einem and the kein series beside them. L1 shipped der, die, das, den, dem, ein, eine, einen, kein, keine and keinen across five modules without ever laying them out. This is where they become a table.',
+        'Adjectives stay PREDICATIVE throughout this level — Das Auto ist rot, Die Tür ist blau — where they take no ending at all. The attributive declension (ein guter Mann · der gute Mann · guter Wein, three declensions chosen by what stands in front) is named here and deferred to L3. Say why in the note: it is the one German system too large to sit beside a module teaching colours, and pretending otherwise would give an author ten sentences of endings and no colours.',
+        'The law that makes the grid worth learning, and it is the payoff an English speaker cannot guess: because case is marked on the article, German word order is FREE in a way English\'s is not — Den Apfel esse ich is a normal sentence meaning "I\'m eating the apple", with the object first. English marks its object by position alone, so this is the deepest structural delta in the course. One rule, one example pair, and the pool tests which noun is doing what.',
+        "Gender is a property of the WORD and is not predictable from meaning, and the module should say so once, plainly, rather than offering a rule that fails: das Mädchen (girl) is neuter, der Löffel and die Gabel sit at the same table with different genders. Teach every noun with its article, exactly as en-es does, and refuse the shortcuts. Colours and qualities are the vocabulary spend: rot, blau, grün, schwarz, weiß, gelb, braun; neu and alt (L1-M10's), sauber, schmutzig, schwer, leicht, lang, kurz, billig and teuer (L1-M8's).",
+        "INDEX SEAM: rot, blau, grün, schwarz, weiß, gelb, braun, sauber, schmutzig, schwer, leicht, lang, kurz, der (the dative feminine — L1-M1 owns der as the masculine nominative, so this cell lands on that row and the note must be true of both), einem and einer are fresh keys where they are not already L1's. weiß carries an ß and the fold KEEPS it (L1 decision 7), so Maße and Masse would be two keys and a shouted STRASSE would land on no row at all — never write a display in capitals. den, dem, ein, eine, einen, kein, keine and keinen stay their L1 rows and this module re-teaches them as a system.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M4': {
+      id: 'L2-M4',
+      title: 'Getting around',
+      job: 'Directions, transport, asking the way',
+      patterns: [
+        'Entschuldigung + , + wo ist + der/die/das + N?',
+        'Gehen Sie geradeaus + , + dann links',
+        'Sie müssen + <place> + einsteigen',
+        'Ich fahre mit dem Bus / mit der Bahn',
+        'Wie komme ich zum/zur + N + ?',
+      ],
+      notes: [
+        "THE preposition law of the module, and L1 shipped both halves without the rule: a two-way preposition — in, auf, an, neben, vor, hinter, unter, über — takes the ACCUSATIVE for motion into a place and the DATIVE for being in one. L1-M7 gave the learner ins Kino and im Kino as two contractions and never said why they differ; here it is. Ich gehe ins Kino against Ich bin im Kino, Ich stelle es auf den Tisch against Es steht auf dem Tisch. It is M3's grid doing real work, which is why M3 comes first.",
+        "Separable verbs appear in this level ONLY unsplit, and the reason is the index: a separated prefix at the end of a clause is spelled exactly like an article or a preposition, so Ich steige ein would put ein on L1-M1's INDEFINITE ARTICLE row. The ruling for the whole level: a separable verb rides behind a modal (Sie müssen hier einsteigen, Ich möchte Sie anrufen) or sits in the Perfekt as a participle (Ich bin eingestiegen), and never splits. The split is named here and deferred to L3. It costs nothing, because M1's lesson is the modal bracket and every L2 sentence that wants a separable verb already has a modal in it.",
+        "The Sie imperative is free: it is the infinitive with Sie after it — Gehen Sie, Nehmen Sie, Fahren Sie — which is the same spelling the learner has had since L1-M1, so the module's grammar budget goes to the prepositions and the vocabulary rather than to a new form. The du imperative (geh, nimm, fahr) is M1's and is named in usage here, not shown, because the scene is a stranger in the street. This module speaks Sie throughout and chips `formal`.",
+        "Transport takes mit plus the DATIVE — mit dem Bus, mit der Bahn, mit dem Auto — and walking is zu Fuß, a fixed phrase. zum and zur (L1-M7's contractions of zu dem and zu der) are the direction words a learner actually needs and are already theirs; nach takes a bare city or country name (nach Berlin) with no article at all. Give the three as a short list rather than as a principle, because German does not have one here.",
+        "INDEX SEAM: links, rechts, geradeaus, Ampel, Ecke, Bahnhof, Haltestelle, Bahn, Auto, Zug, Fuß, an (the preposition, and its note must be true of the separable prefix it will later become — L1's decision 4 in the field), über, mit, einsteigen, aussteigen, anrufen, ankommen and abfahren are fresh keys. Note that the infinitive form of each separable verb is ONE token and therefore one clean key; only the split form would be a problem, and this level never writes it. auf, in, vor, hinter, unter, neben, zu, zum, zur, im and ins stay L1-M4's and L1-M7's rows; wo stays L1-M6's. Place names never index (#61).",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M5': {
+      id: 'L2-M5',
+      title: 'Food and hosting',
+      job: 'Ordering, offering, refusing without offence',
+      patterns: [
+        'Ich möchte + einen/eine/ein + N + , + bitte',
+        'Bringen Sie mir bitte + den/die/das + N',
+        'Möchten Sie noch + N + ?',
+        'Nein danke + , + ich bin satt',
+        'Die Rechnung + , + bitte',
+      ],
+      notes: [
+        'Ordering is L1\'s own vocabulary in a new seat: Ich möchte (L1-M3, and the polite want the course has used since its third module) plus M3\'s accusative article, and the dative of the recipient from M1 — Bringen Sie mir bitte die Rechnung. Ich will exists and is blunt in a way English "I want" is not quite; say so in usage and keep möchte in display. Zusammen oder getrennt? is worth one sentence of its own: a German table is asked whether it pays together or separately, and a learner who has never heard the question will not understand the answer they are expected to give.',
+        'das Essen lands on L1-M3\'s essen row and cannot do otherwise — decision 2\'s fold merges the noun and the verb into one key — so this module points back and writes no new row, with its note true of "to eat" and "the meal" alike. That is the pattern for every noun/verb pair in this course, and this is the one L2 actually meets. Write the capital anyway: the index cannot see it, the reader can.',
+        "Refusing without offence, and German's answer is the opposite of the Indian, Russian and Italian hosting the other courses describe — worth saying plainly, because a learner carrying one culture's script into another gets it wrong in both directions. A German offer is made once or twice and Nein, danke is taken at face value; insisting past a refusal is the impolite move, not the hospitable one. So the refusal needs no elaborate softening: Nein danke, ich bin satt is complete and warm enough, and Vielleicht später is the hedge if one is wanted.",
+        "The vocabulary: Fleisch, Fisch, Gemüse, Reis, Salat, Kuchen, Teller, Glas, Gabel, Löffel, Rechnung, Speisekarte, satt and noch. noch is the offer word (Möchten Sie noch Kaffee?) and is chosen deliberately so that mehr stays free for M9's comparative — the same protection en-es gives más by offering otro and en-fr gives plus by offering encore.",
+        "INDEX SEAM: Fleisch, Fisch, Gemüse, Reis, Salat, Kuchen, Teller, Glas, Gabel, Löffel, Rechnung, Speisekarte, satt, noch, bringen, zusammen and getrennt are fresh keys. essen stays L1-M3's row and answers for das Essen too; möchte and möchten stay L1-M3's; bitte stays L1-M8's; mir stays L1-M9's; the article cells stay M3's and L1's. Every noun is capitalised in display and in forms even though the fold ignores it — correct German is the only signal the reader gets.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M6': {
+      id: 'L2-M6',
+      title: 'Making plans together',
+      job: 'Invitations, suggestions, settling a time',
+      patterns: [
+        'Wollen wir + V-inf + ?',
+        'Hast du am + <day> + Zeit?',
+        'Um wie viel Uhr? — Um halb neun',
+        'Morgen gehe ich + <place>',
+        'Abgemacht + , + bis + <day>',
+      ],
+      notes: [
+        "Plans are made among friends: du and wir throughout, chipped `informal` where the frame is du-only, and the Sie of M4 and M7 deliberately absent — an invitation in Sie reads as a business appointment. The suggestion frame is M1's modal bracket with wir — Wollen wir ins Kino gehen? Sollen wir um acht essen? — so the module opens no new structure and spends its budget on the clock and the word order.",
+        'THE trap of the module, and it is the one that makes learners miss trains: **halb neun is half past EIGHT.** German counts toward the coming hour, where English counts from the last one, so halb acht is 7:30 and halb neun is 8:30. Viertel nach and Viertel vor behave like English. Author the pair in a mistake block and let the pool test it; there is no rule to state beyond the direction of counting, and stating that plainly is worth more than a table.',
+        'Word order is the module\'s grammar: German\'s verb is SECOND in a main clause, and "second" counts phrases and not words — so when a time expression comes first the subject moves behind the verb. Ich gehe morgen ins Kino and Morgen gehe ich ins Kino are both correct and *Morgen ich gehe is not. English fronts a time and changes nothing, which is exactly why this needs a mistake block. The companion rule, worth one line: when both appear, TIME comes before PLACE — Ich fahre am Montag nach Berlin.',
+        "The clock and the calendar: um (L1-M4), Uhr (L1-M4), the numbers from L1-M8, and the days L1 did not teach — Mittwoch, Donnerstag, Samstag, Sonntag beside L1-M4's Montag and Dienstag and L1-M6's Freitag. am is L1-M4's row doing am Montag here. And the collision decision 2 predicted, which this module is the first to meet: der Morgen (\"the morning\") folds onto L1-M6's morgen (\"tomorrow\") and L1-M4's morgens is a third relative. Point back at L1-M6's row, write the rules[] entry here, and open nothing.",
+        'INDEX SEAM: wollen, sollen, wir, Mittwoch, Donnerstag, Samstag, Sonntag, halb, Viertel, nach (as the clock\'s "past" — L1-M5 owns nach hause as a phrase, so the bare preposition is fresh and its note carries both jobs), vor (L1-M7\'s row, doing "to" on the clock — point back), abgemacht, bis and frei are fresh keys where they are not already owned. morgen stays L1-M6\'s, and der Morgen lands on it. um, Uhr, Zeit and am stay L1\'s rows.',
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M7': {
+      id: 'L2-M7',
+      title: 'On the phone',
+      job: 'Calls and messages — openings, closings, taking a message',
+      patterns: [
+        '<Surname> + . — Guten Tag + , + hier ist + <name>',
+        'Kann ich bitte + <person> + sprechen?',
+        'Er/Sie ist nicht da',
+        'Kann ich eine Nachricht hinterlassen?',
+        'Auf Wiederhören',
+      ],
+      notes: [
+        "The German telephone convention is a genuine cultural fact and it is the module's first sentence: the person answering says their SURNAME — Weber. — rather than hello, and the caller opens with Guten Tag, hier ist Rohan Sharma. L1-M2 already taught Weber and Guten Tag, so the words are the learner's and only the convention is new. A learner who answers a German phone with Hallo? is not wrong, but will sound like a stranger; a learner who does not expect a bare surname will think they have the wrong number.",
+        'The delta German shares with French and not with Italian: **there is no continuous tense.** Ich spreche covers "I speak" and "I am speaking" alike, so a learner reaching for an -ing equivalent finds none, and gerade (Er telefoniert gerade) is the word that carries "right now" when it matters. en-it\'s M7 is where a phone call finally motivates a progressive; here it is where the absence of one has to be stated, and the two briefs should be read together.',
+        "Separable verbs are all over this scene — anrufen, zurückrufen, hinterlassen (inseparable, and worth naming as the contrast) — and every one of them rides unsplit behind a modal, per the level's ruling: Ich möchte Sie morgen anrufen, Kann ich eine Nachricht hinterlassen? Ich rufe Sie zurück is the split form and stays out of display; usage may say it exists. This module speaks Sie throughout and chips `formal`, for the honest reason that you cannot see who picked up.",
+        "Auf Wiederhören is the closing, and it is Auf Wiedersehen (L1-M2) with the seeing swapped for hearing — a small joke the language makes that a learner will remember for years. Taking a message needs no new tense: Er ist nicht da, Kann ich etwas ausrichten?, and the past is M10's Perfekt (Er hat angerufen). Reported speech — Er hat gesagt, dass… — is L3's and named as deferred here, which is why a message is passed on with the words themselves.",
+        "INDEX SEAM: hier, Nachricht, hinterlassen, zurückrufen, telefonieren, gerade, Nummer, da, ausrichten and Wiederhören are fresh keys. Auf Wiederhören rides as a two-token surface beside L1-M2's Auf Wiedersehen — the multi-token tool keeping auf on L1-M4's row. nicht stays L1-M2's, sprechen and spreche stay L1-M2's, ist stays L1-M1's, kann and können stay M1's, and sie stays L1-M2's three-reading row, which this module leans on twice a sentence.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M8': {
+      id: 'L2-M8',
+      title: 'When something goes wrong',
+      job: 'Problems, asking for help, complaining calmly',
+      patterns: [
+        'Es funktioniert nicht',
+        'Ich habe + mein/meine + N + verloren',
+        'Können Sie mir helfen?',
+        'Mir ist schlecht / Ich habe Kopfschmerzen',
+        'Entschuldigung + , + es gibt ein Problem',
+      ],
+      notes: [
+        "helfen takes the DATIVE, and it is not alone: helfen, danken, gefallen, gehören and passen all take a dative object where English takes a direct one — Ich helfe Ihnen, never *Ich helfe Sie. It is a short closed list and it should be taught as a list, because no rule predicts membership. This is M3's grid earning its keep a second time, and Können Sie mir helfen? is the module's core sentence: M1's modal bracket, M1's dative, M3's case.",
+        'Mir ist schlecht is a dative-subject sentence with no grammatical subject at all — and L1-M9 already shipped one, Mir ist kalt, without naming the pattern. Name it here and the family falls out: Mir ist schlecht, Mir ist warm, Mir tut der Kopf weh. German, Russian and Italian all put the person in an oblique case for how they feel; a learner who is shown the connection to L1-M9 learns one thing instead of four.',
+        'nicht against kein, and L1 shipped both halves without the rule: **kein negates a noun that would take ein or no article at all** (Ich habe kein Geld, Das ist kein Problem) and **nicht negates everything else** — a verb, an adjective, or a noun with a definite article (Es funktioniert nicht, Der Bus kommt nicht). It is one of the few German rules with a clean statement, and an English speaker who has only "not" will use nicht everywhere. Spend the mistakes here.',
+        "Complaining calmly is a register lesson and German's answer is closer to Russian's than to English's: the softening is the opening (Entschuldigung, …) and the word leider, not a weakening of the claim itself. Es funktioniert nicht is a normal thing to say and is not rude. An English speaker's \"there seems to be a slight issue\" reads as evasive rather than as polite; say so in usage and judge neither language.",
+        "INDEX SEAM: funktioniert, verloren, vergessen, kaputt, helfen, Hilfe, brauche, brauchen, schlecht, Kopfschmerzen, Kopf, weh, Problem, leider, Schlüssel and Geldbeutel are fresh keys. Every participle here (verloren, vergessen) belongs in the forms of its verb's row where the course owns one, and takes a row of its own where it does not — M10 states the Perfekt law that governs them. mir stays L1-M9's, kalt stays L1-M9's, nicht stays L1-M2's, kein / keine / keinen stay L1-M3's, es gibt stays L1-M7's whole surface, and Entschuldigung stays M1's.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M9': {
+      id: 'L2-M9',
+      title: 'Comparing and choosing',
+      job: 'More, less, better — stating a preference',
+      patterns: [
+        'A + ist + Adj-er + als + B',
+        'A + ist + so + Adj + wie + B',
+        'A + ist am + Adj-sten',
+        'Ich trinke lieber + N',
+        'Welcher/Welche/Welches + N + ?',
+      ],
+      notes: [
+        "The comparative is -er and the standard is als: größer als, billiger als, älter als. Two German particulars make it more than an English lookalike. First, many one-syllable adjectives take an UMLAUT in the comparative — alt → älter, groß → größer, jung → jünger, lang → länger — and the fold KEEPS umlauts (L1 decision 7), so alter and älter are two separate index keys and each comparative belongs in its adjective's row as a form. Second, the superlative in a predicate is am -sten — Berlin ist am größten — which conveniently needs no adjective ending, so it fits inside this level's predicative-only rule.",
+        'als against wie, and this is the mistake block: a comparison of UNEQUALS takes als (größer als) and a comparison of EQUALS takes so … wie (so groß wie). *größer wie is the error, it is extremely common in speech among native speakers too, and the brief should say that honestly rather than pretending it never happens — a learner who hears it in Germany and then reads a rule denying it stops trusting the course.',
+        'The irregulars are the ones actually used: gut → besser → am besten, viel → mehr → am meisten, gern → lieber → am liebsten. That last one is the module\'s best delta: **German states a preference with an adverb, not a verb** — Ich trinke lieber Tee means "I prefer tea", literally "I drink more gladly tea" — where English needs the verb "prefer" and Spanish preferir. gern is the positive of that ladder and enters here.',
+        'Choosing needs two declining words: welcher / welche / welches ("which") and dieser / diese / dieses ("this"), both of which take the same endings as der / die / das — so they are M3\'s grid a third time rather than a new system, and the note should say so. Adjectives stay predicative here as everywhere in this level: Welches Auto ist billiger? and not a declined attributive comparative, which is L3\'s.',
+        "INDEX SEAM: als, so, wie (L1-M2 owns wie from Wie geht es Ihnen? — the equality wie lands on that row, so point back and write the rule around it rather than opening a second), größer, älter, jünger, länger, besser, mehr, lieber, gern, am, welcher, welche, welches, dieser, diese and dieses are fresh keys where they are not already owned. am is L1-M4's row (am Montag) doing the superlative here — one key, two jobs, note true of both. Each comparative shape belongs in the forms of its adjective's row where that adjective is this level's, and takes its own row pointing back where the positive is L1's.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M10': {
+      id: 'L2-M10',
+      title: 'Telling what happened',
+      job: 'A four-sentence account in the past',
+      patterns: [
+        'Zuerst + habe ich + <N> + V-participle',
+        'Dann + bin ich + <place> + gegangen',
+        'Es war + Adj + , + also + <clause>',
+        'Schließlich + habe ich + <clause>',
+      ],
+      notes: [
+        "Each item is an ACCOUNT of exactly four short sentences, not one long one, and the per-sentence bound applies to each sentence inside it. Nearly every word comes from L1 and from M1–M9; the honest new spend is the sequencers (zuerst, danach, schließlich, beside L1-M10's dann and also) and the participles an account needs.",
+        "THE decision of the module, and it is the true description of spoken German rather than a simplification: **the Perfekt is the spoken past for nearly every verb** — haben or sein in position two, the participle at the very END, which is M1's bracket again — and **sein, haben and the modals prefer the Präteritum**: war, hatte, konnte, wollte. That is exactly why L1-M5 shipped war, waren, hatte and hatten and no participle for either of them. State the split as the rule; a course that taught ich bin gewesen as the everyday past would be teaching a form Germans rarely say.",
+        'The auxiliary law: sein goes with movement and change of state — gegangen, gefahren, gekommen, geblieben, aufgestanden (L1-M4 shipped that one) — and haben takes everything else. And the relief worth naming out loud, because three courses in this repo say the opposite: **the German participle never agrees with anything.** en-es, en-fr and en-it all make their participle agree in one auxiliary or the other; German simply does not, and a learner arriving from any Romance language should be told so.',
+        "Participle formation is regular enough to state: ge- plus the stem plus -t for a weak verb (gemacht, gearbeitet — both L1-M5's), ge- plus a changed stem plus -en for a strong one (gegangen, gegessen, getrunken — also L1-M5's), and a separable verb wraps the ge- INSIDE it (angerufen, eingestiegen, aufgestanden). That last shape is the one place a separable verb appears in this level without a modal in front of it, and it is still one clean token, so the level's ruling holds.",
+        "Nothing new is opened. The Plusquamperfekt, Konjunktiv II beyond M1's frozen könnten, the passive and reported speech all stay OUT and are named here as L3's. INDEX SEAM: zuerst, danach, schließlich, gefahren, gekommen, geblieben, angerufen, eingestiegen, verloren (M8's), gesehen, gesagt and konnte are fresh keys; each participle belongs in the forms of its verb's row where the course owns one and points back rather than editing an L1 file. war, waren, hatte, hatten, gegangen, gegessen, getrunken, gemacht, gearbeitet and gestern stay L1-M5's rows; dann, also, aber and und stay L1-M10's; weil, denn and deshalb stay L1-M9's.",
+      ],
+      maxWordsPerSentence: 10,
       newWordCap: NEW_WORD_CAP,
     },
   },
