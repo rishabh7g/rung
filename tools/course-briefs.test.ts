@@ -362,3 +362,73 @@ describe('en-ar L2: the decisions its briefs settle (#427)', () => {
     expect(notes).toMatch(/person suffix/i);
   });
 });
+
+describe('hi-en L2: the decisions its briefs settle (#428)', () => {
+  const all = COURSE_BRIEFS['hi-en'] ?? {};
+  const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
+
+  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+    expect(Object.keys(all)).toEqual([
+      ...['L1', 'L2'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    ]);
+  });
+
+  it('climbs its bounds 8 → 9 → 10 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L2-M1', 'L2-M2', 'L2-M3']) expect(bound(id), id).toBe(8);
+    for (const id of ['L2-M4', 'L2-M5', 'L2-M6', 'L2-M7']) expect(bound(id), id).toBe(9);
+    for (const id of ['L2-M8', 'L2-M9', 'L2-M10']) expect(bound(id), id).toBe(10);
+  });
+
+  /**
+   * The decision this L2 exists to make: one `you`, and a politeness scale built out of words.
+   * If it stops reaching an author, the course starts teaching `Do it, please`.
+   */
+  it('states register-in-words, the chip and the Indian-English line in a NOTE', () => {
+    const m1 = all['L2-M1']?.notes.join('\n') ?? '';
+    expect(m1).toMatch(/turning the request into a QUESTION and from making it LONGER/);
+    expect(m1).toMatch(/`informal`/);
+    expect(m1).toMatch(/`formal`/);
+    // The variety is named in usage and never called wrong.
+    expect(m1).toMatch(/kindly do the needful/);
+    expect(m1).toMatch(/never appears in display, in forms or in a pool item/);
+    expect(all['L2-M7']?.notes.join('\n')).toMatch(/isn't it\? as a universal tag/);
+  });
+
+  /** The contraction correction — L1 already owns `won't` and `we'll`. */
+  it('corrects the contraction list and assigns the ones L2 actually adds', () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/The commissioning issue lists `won't` and `we'll`/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/they are already \*\*L1-M6's\*\*/);
+    expect(all['L2-M1']?.notes.join('\n')).toMatch(/can't is its own row/);
+    expect(all['L2-M5']?.notes.join('\n')).toMatch(/I'd is its own row/);
+    expect(all['L2-M6']?.notes.join('\n')).toMatch(/let's is its own row/);
+    expect(all['L2-M8']?.notes.join('\n')).toMatch(/haven't and hasn't are separate rows/);
+  });
+
+  it('opens the possessive at M2 and the present perfect at M8, both on the record', () => {
+    expect(all['L2-M2']?.notes.join('\n')).toMatch(/The possessive 's opens here/);
+    expect(all['L2-M2']?.notes.join('\n')).toMatch(/brother and brother's as two different words/);
+    const m8 = all['L2-M8']?.notes.join('\n') ?? '';
+    expect(m8).toMatch(/present perfect enters HERE and nowhere else in L2/);
+    expect(m8).toMatch(/never carry a finished time expression/);
+    // Reported speech stays L3-M5's, and M7 is the module that would otherwise reach for it.
+    expect(all['L2-M7']?.notes.join('\n')).toMatch(/L3-M5's/);
+    expect(all['L2-M10']?.notes.join('\n')).toMatch(/past perfect \(I had gone\), used to/);
+  });
+
+  it('assigns every new surface an owner, and says the L1 decisions still bind', () => {
+    // `than` against L1-M10's `then` — one letter, no audible difference, no way back.
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/than and then are one letter/);
+    // The multi-token tool, used four more times.
+    expect(all['L2-M1']?.notes.join('\n')).toMatch(/three-token surface/);
+    expect(all['L2-M3']?.notes.join('\n')).toMatch(/a lot of rides as a three-token surface/);
+    // The bookends: the four L1 decisions, restated at both ends of the level.
+    expect(all['L2-M1']?.notes.join('\n')).toMatch(/four L1 decisions/);
+    expect(all['L2-M10']?.notes.join('\n')).toMatch(/four L1 decisions still bind/);
+    for (const [id, brief] of l2) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+});

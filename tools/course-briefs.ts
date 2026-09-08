@@ -1678,6 +1678,95 @@
  * (M1–M3: 8, M4–M7: 9, M8–M10: 10), pools are authored to 12, M1–M3 ship fully enriched, and
  * M10's items are four-sentence accounts with every person suffix written in full.
  *
+ * ## hi-en L2: the decisions, taken against the finished L1 (#428)
+ *
+ * Planned against the REAL cumulative L1 index — **259 surfaces through L1-M10, maxSpan 3**,
+ * rebuilt and read — and against the spoken-English pass (`docs/39`), which is what put `I'm` into
+ * M1 and moved M6's plans onto `be + -ing`. Recorded in `docs/55-hi-en-L2-brief-decisions.md` and
+ * repeated in the module notes. **The four L1 decisions carry unchanged** — Hindi in every
+ * teaching field and no `glossEn`; contractions as single index surfaces; multi-token surfaces
+ * keeping bare words free; first-occurrence-wins homograph owners — and M1's first note and M10's
+ * last say so, because a level that quietly forked them would fork the course.
+ *
+ * ### 1. Register in English is WORDS, not forms — and the Indian-English line is drawn in `usage`
+ *
+ * This is the decision hi-en's L2 exists to make, and it is the mirror image of hi-mr's. Hindi
+ * grades a request three ways in the VERB — दे · दो · दीजिए — on top of तू / तुम / आप. English has
+ * one `you`, one imperative, and buys the whole scale with words and with sentence SHAPE:
+ *
+ *     Give me the book. → Please give me the book. → Can you give me the book?
+ *       → Could you give me the book? → Would you mind giving me the book?
+ *
+ * The law, stated in M1 and true everywhere: **English politeness comes from turning the request
+ * into a question and from making it longer; the verb never changes.** A learner who maps दीजिए
+ * onto an imperative-plus-`please` produces `Do it, please` — grammatical, and blunt. The chip
+ * (#422) carries the tiers now: the bare imperative among friends chips `informal`, the
+ * `please` / `Can you` tier `neutral`, and `Could you` / `Would you mind` chip `formal`.
+ *
+ * The harder half is that this course's learner speaks a real, widely-spoken variety whose
+ * politeness formulas differ from the international-neutral English the course teaches: `kindly do
+ * the needful`, `please revert`, `I am having a doubt`, `isn't it?` as a universal tag. These are
+ * not errors in Indian English and the course must not call them errors. **The rule: an
+ * Indian-English form may be NAMED in `usage` prose, in words, and never appears in `display`, in
+ * `forms` or in a pool item** — the same shape as en-ar's dialect rule, for the same reason. M1
+ * carries the `kindly` line and M7 the `isn't it?` line; no other module needs one.
+ *
+ * ### 2. Contractions — a correction, and the owners L2 actually adds
+ *
+ * The commissioning issue lists `won't` and `we'll` among the contractions L2 must own. The index
+ * says they are already **L1-M6's**, along with `I'll`, `you'll`, `he'll`, `she'll` and `they'll`
+ * — as `wasn't`/`weren't` are L1-M1's, `don't` M3's, `doesn't` M4's, `didn't` M5's, `it's`/`there's`
+ * /`where's` M7's, `isn't`/`aren't` M9's and `that's` M10's. Rule 1 applies to a brief's premises,
+ * so the list is corrected rather than copied. What L2 genuinely adds, one row each with BOTH
+ * shapes in `forms` and never a pre-listed sibling: **`can't`** (M1), **`I'd`** (M5), **`let's`**
+ * (M6), **`you'd`** (M6), **`haven't`** and **`hasn't`** (M8), **`shouldn't`** (M8),
+ * **`wouldn't`** (M9). Straight `'` only, as in L1.
+ *
+ * ### 3. The possessive `'s` — L1 banned it, M2 opens it, and it is a separate word to the index
+ *
+ * L1's decision 2 ends "no possessive `'s` in L1: `Rohan's` would be a fresh surface needing its
+ * own row, and no L1 job needs one". M2's job needs one — relationships are what it is for — so
+ * the ban lifts there, on the record, with the consequence stated in the note: `brother` and
+ * `brother's` are two index keys, so the possessive is deconstructed on its own row pointing back
+ * at the bare noun, and a proper-noun possessive (`Rohan's`) never indexes at all (#61). The
+ * collision to name in the same breath is that `'s` is also `is` and `has` — `he's` is L1-M6's and
+ * `he's got` is L1-M10's — so a learner meets three different `'s` and needs one note that admits it.
+ *
+ * ### 4. What L2 withholds, and the one prohibition it lifts
+ *
+ * Kept out and named in the module that would reach for it: **reported speech** (L3-M5 per
+ * `content/hi-en/levels.json`), which is why M7 takes a message with `Can I take a message?` and
+ * not with `He said that…`; the **past perfect** and **`used to`** (L3), so M10's account runs on
+ * the past simple and the past continuous alone; the **passive**; **relative clauses**; and
+ * **conditionals** beyond the frozen `Would you mind`.
+ *
+ * The prohibition L2 lifts is the **present perfect**, at M8 and nowhere else. A problem report is
+ * where English speakers actually use it — `I've lost my key`, `The bus hasn't come` — and the
+ * simple past is a poor substitute for a present result. It is lifted narrowly: the
+ * present-result use only, with the verbs the course already owns, and the law that makes it
+ * teachable stated true — **the present perfect is about NOW, so it can never carry a finished
+ * time expression** (`I've lost it yesterday` is the error, not a stylistic slip). Its experience
+ * and duration uses (`I've been to Delhi`, `I've lived here for a year`) are named as L3's.
+ * The slogan to kill is "the present perfect is for the recent past": recency has nothing to do
+ * with it, which is why `I've lost my key` holds whether the key went missing a minute or a month ago.
+ *
+ * ### Why the hi-en L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim; the brief adds which Hindi→English delta each job
+ * carries. The politeness ladder in M1, because a request is the first place one `you` has to do
+ * three Hindi jobs; the NON-agreement of adjectives and the stative-verb rule (`He is having brown
+ * eyes` is the marker to spend a mistake on) in M2; countable versus uncountable in M3, which is
+ * where "agreement at length" actually bites in English — Hindi counts सामान and English cannot
+ * count `luggage`; phrasal verbs and the zero article of `by bus` and `go to school` in M4; the
+ * offer frame `Would you like…?` in M5, where `Do you want…?` is grammatical and blunt; the
+ * suggestion frames and the `at`/`on`/`in` fork of time in M6, where Hindi has one postposition;
+ * tag questions in M7, whose mirrored auxiliary is the whole point and whose Indian-English
+ * universal `isn't it?` is named in prose; the present perfect and indirect complaint in M8; the
+ * comparative and the `than`/`then` pair in M9; and the past continuous as background against the
+ * past simple in M10, plus the sequencers an account needs. Bounds climb 8 → 10 (M1–M3: 8, M4–M7:
+ * 9, M8–M10: 10), pools are authored to 12, M1–M3 ship fully enriched, and M10's items are
+ * four-sentence accounts.
+ *
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -3291,6 +3380,215 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "Language of the fields holds to the last turn: Hindi (Devanagari) in every teaching field — rules[].text, note, trap, sound, changed, why, usage, mnemonic, cue — English only in display and forms; no glossEn on any sentence; literal wherever a turn's order moves. A turn is where an author is most tempted to slip an English aside into a note because the English is right there; do not — the note is read in a Hindi voice on screen, and hi-mr's English notes are the quirk this course does not copy.",
       ],
       maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M1': {
+      id: 'L2-M1',
+      title: 'Asking politely',
+      job: 'Requests, thanks, apologies in the right register',
+      patterns: [
+        'Please + V + <object>',
+        'Can you + V + <object>?',
+        'Could you + V + <object>?',
+        'Would you mind + V-ing + <object>?',
+        'Excuse me + , + <request>',
+      ],
+      notes: [
+        "REGISTER, decided for the whole level and repeated here because a prompt only ever shows an author the notes (full record: docs/55-hi-en-L2-brief-decisions.md; the four L1 decisions — Hindi in every teaching field with no glossEn, contractions as single index surfaces, multi-token surfaces, first-occurrence-wins owners — carry into L2 unchanged, field for field). Hindi grades a request in the VERB — दे · दो · दीजिए — on top of तू / तुम / आप. English has one you, one imperative, and buys the entire scale with words and with sentence SHAPE: Give me the book → Please give me the book → Can you give me the book? → Could you give me the book? → Would you mind giving me the book? The law: English politeness comes from turning the request into a QUESTION and from making it LONGER; the verb never changes. #422's chip carries the tiers — the bare imperative among friends chips `informal`, the please / Can you tier `neutral`, Could you and Would you mind chip `formal`.",
+        "THE interference, and it deserves the module's first mistake block: a learner who maps दीजिए onto imperative-plus-please produces Do it, please — grammatical English, and blunt. So is Give me a pen, please to a stranger. State the true rule rather than a politeness scale of adverbs: please softens an order and does not turn it into a request; only the question form does that. Author the same request at all three tiers side by side so the ladder is visible in one screen.",
+        "The Indian-English line, drawn once for the course: kindly do the needful, please revert and I am having a doubt are ordinary in the English the learner hears every day and are NOT errors — but they read as archaic or opaque to the international reader this course is preparing them for. The rule is en-ar's dialect rule in another language: an Indian-English form may be NAMED in usage prose, in words, and never appears in display, in forms or in a pool item. This module carries the kindly line; M7 carries the isn't it? line; no other module needs one, and no rule anywhere calls the variety wrong.",
+        "Sorry against Excuse me, a split Hindi's माफ़ कीजिए does not make: sorry apologises for something that has happened (you stepped on a foot), excuse me asks for something about to happen (you want to get past, or to interrupt, or to ask a stranger a question). Getting them backwards is the most audible small error a Hindi speaker makes in English, and it costs nothing to fix. sorry is L1-M10's row, re-taught here and owned there; thank you is L1-M2's multi-token surface, climbing to thanks a lot without opening a second row.",
+        "INDEX SEAM: could, can't, mind, me, excuse me, thanks a lot and would you mind are this module's keys. can't is its own row with can't · can not · cannot in forms (the L1 contraction policy: both shapes on one row, the note true of all of them) and it does NOT pre-list couldn't, which is M8's. Would you mind rides as a three-token surface, the maximum this course spans, so that would stays free for M9's I'd rather and mind stays free as a verb; Excuse me rides as a two-token surface, which is what leaves the bare me to this module's own request frames. please stays L1-M8's row.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M2': {
+      id: 'L2-M2',
+      title: 'Describing people',
+      job: 'Appearance, character, relationships',
+      patterns: [
+        '<person> + is + Adj',
+        "<person> + has got / 's got + <feature>",
+        'My + N + is + Adj + and + Adj',
+        "<person>'s + N + is + <name>",
+        'a + Adj + Adj + N',
+      ],
+      notes: [
+        "The delta a Hindi speaker feels first is an ABSENCE: English adjectives never agree. लंबा · लंबी · लंबे bends for gender and number; tall does not — a tall man, a tall woman, tall women, and the word is the same every time. Nine modules of Hindi habit are pushing the other way, so state it as a law and not as a footnote, and let the module's pool test it (a tall women is the error to catch). The second half is order: English fixes the sequence of stacked adjectives (opinion before size, size before colour — a nice tall young man) where Hindi is freer. M3 gives the full ladder; here two adjectives is enough.",
+        "THE marker to spend a mistake on: He is having brown eyes. State verbs — have, know, like, want, need, understand — do not take -ing in international English, however ordinary the progressive is in Indian English. The law is about what the verb MEANS, not about the moment: have describes a state that simply holds, so there is no ongoing version of it to report. This pays off L1-M4's have row (possession only) and L1-M10's have got, which is the natural way to say it: She's got long hair.",
+        "The possessive 's opens here, and L1 banned it on purpose — so say why the ban lifts and what it costs. My brother's name is Rohan is the sentence relationships need. The index sees brother and brother's as two different words, so the possessive gets its own row pointing back at the bare noun, and a proper-noun possessive (Rohan's) never indexes at all (#61) — anchor the taught row on a common noun. Name the collision in the same note: 's is also is (he's, L1-M6) and has (he's got, L1-M10), so the learner meets three of them and deserves one honest note rather than three confident ones.",
+        "The family set is where English is POORER than Hindi, and a course that only ever teaches deltas one way would hide it: cousin covers चचेरा, ममेरा, फुफेरा and मौसेरा alike; uncle and aunt each cover four Hindi words; brother and sister carry no age, so बड़ा भाई needs older brother. Teach the workarounds (my mother's brother, my older sister) and let usage say plainly that English cannot make the distinctions Hindi makes without extra words. wife, husband, son, daughter, father, mother, parents are the rest of the spend; brother, brothers, sister and sisters stay L1-M4's and L1-M10's rows.",
+        "INDEX SEAM: tall, short, young, old, kind, funny, clever, quiet, friendly, hair, eyes, cousin, uncle, aunt, wife, husband, son, daughter, father, mother, parents and the possessive rows (brother's, sister's, friend's) are fresh keys. hair is UNCOUNTABLE in the mass sense (she's got long hair, never *hairs) — the first of M3's uncountables, flagged here so M3 can lean on it. has and have stay L1-M4's row; he's, she's and they're stay L1-M6's; he's got and she's got stay L1-M10's multi-token surfaces, which is what keeps got free.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M3': {
+      id: 'L2-M3',
+      title: 'Describing things',
+      job: 'Size, colour, quality — agreement at length',
+      patterns: [
+        'The + N + is + Adj',
+        'a + Adj + Adj + N',
+        'some + N-uncountable',
+        'a lot of + N   /   much + N?   /   many + N-pl?',
+        'a + <counter> + of + N-uncountable',
+      ],
+      notes: [
+        '"Agreement at length" means something different in English than in every other course here, and this module is where it bites: adjectives do not agree at all (M2\'s law), but NOUNS split into countable and uncountable, and that split has no counterpart in Hindi. सामान, फल and सलाह are counted freely; luggage, fruit, advice, information, furniture, bread, money, water and hair are not. *Three luggages, *many informations and *a good news are the errors, and they are the most persistent ones a Hindi speaker makes in English. The law: an uncountable noun names a KIND rather than units — it takes some, a lot of and a counter (a piece of, a glass of, a slice of), never a and never -s.',
+        'much and many belong to this module and their real rule is not the one usually taught. "much for uncountable, many for countable" is correct about grammar and wrong about usage: *I have much money is not English. The law: much and many live in questions and negatives (Is there much sugar? I haven\'t got many pens), and a positive statement takes a lot of. L1-M8\'s how much and how many are multi-token surfaces, so the bare words are free for this module — say so, because a learner who has asked how much for two levels has never met much on its own.',
+        "The adjective-order ladder in full, since M2 only needed two: opinion → size → age → colour → origin → material → noun. a nice big old brown wooden table is nobody's sentence, but the ORDER is fixed and Hindi's is not, so a learner who says a brown big table sounds wrong for a reason they cannot hear. Teach the working version — opinion before fact, size before colour — and let the full ladder sit in a rule for reference.",
+        "Colours and qualities are the vocabulary spend: red, blue, green, black, white, yellow, brown; big and small (with L1-M3's some and L1-M8's this and that pointing at them), long, short (M2's, re-taught for things), heavy, light, clean, dirty, cheap, expensive. Pair each with an L1 noun so the module drills grammar and not vocabulary: The bag is heavy, These bottles are expensive.",
+        "INDEX SEAM: much, many, a lot of, red, blue, green, black, white, yellow, brown, big, small, heavy, light, clean, dirty, cheap, expensive, luggage, advice, information, furniture, bread, money and piece are fresh keys. a lot of rides as a three-token surface — the course's span limit — so that a stays L1-M1's, lot stays free and of stays L1-M8's (kilo of). some stays L1-M3's row, its note now doing uncountable work; the, a and an stay L1-M3's and L1-M1's. water and sugar (L1-M3) are re-shown here as uncountables, which is what they always were: the note points back rather than opening a row.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M4': {
+      id: 'L2-M4',
+      title: 'Getting around',
+      job: 'Directions, transport, asking the way',
+      patterns: [
+        'Excuse me + , + how do I get to + <place>?',
+        'Turn left / Turn right / Go straight',
+        'Take the + <ordinal> + left',
+        'Get on / Get off + the + N',
+        'I go to + <place> + by + N-transport',
+      ],
+      notes: [
+        "Phrasal verbs arrive properly here, and L1 already built the machinery for them: get up and wake up are multi-token surfaces (L1-M4), so the pattern is familiar and the index handling is settled. get on, get off, get in and get out of are each ONE surface with its own row, and the bare get — free, because L1 only ever indexed the phrases — is this module's, with a note true of the family and of get a ticket alike. The delta worth naming: the particle is not a preposition and cannot be dropped or guessed; get on a bus and get in a car are fixed, and Hindi's single चढ़ना covers both.",
+        'The zero article, which Hindi speakers cannot get from Hindi because Hindi has no articles at all: by bus, by train, by car take NO article (*by the bus is the error), and go to school, go to work, go to bed (L1-M9) name the institution rather than the building and take none either — but go to the shop, go to the bank and go to the market do, because those are places. Give the working rule (the activity takes no article, the building does) and one honest line saying English speakers cannot state the rule either, they have simply learnt the list.',
+        "Directions are the vocabulary spend: turn, left, right, straight, opposite, across from, corner, traffic light, crossing, road, station, ticket, far. The frames are M1's politeness in the field — Excuse me, how do I get to the station? — which is chipped `neutral` and is the right register for a stranger; a bare Where is the station? is not rude but is noticeably abrupt, and usage should say so rather than a rule.",
+        "next to and in front of stay L1-M7's multi-token surfaces and are re-shown here doing directions; near and behind stay L1-M7's rows; on and in stay L1-M4's, whose notes were written true of both the time and the place seat. This module owns opposite and across from, and across from rides as a two-token surface so that across stays free.",
+        "INDEX SEAM: get, get on, get off, get in, get out of, turn, left, right, straight, opposite, across from, corner, traffic light, crossing, road, station, ticket, far, by (the means-of-travel one) and second are fresh keys. by is a genuinely new word — L1 never indexed it — so its row is written for the means reading and named as the one this course teaches. take and takes stay L1-M3's row, doing take the second left and take a bus here; how stays L1-M2's, because how do I get to… is not a multi-token surface and must not become one.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M5': {
+      id: 'L2-M5',
+      title: 'Food and hosting',
+      job: 'Ordering, offering, refusing without offence',
+      patterns: [
+        'Would you like + some + N?',
+        "I'd like + a/an + N + , + please",
+        'Can I have + the + N + , + please?',
+        'No + , + thanks + , + <reason>',
+        'Could you pass me + the + N?',
+      ],
+      notes: [
+        "The offer frame is the module's grammar, and the reason is register rather than tense: Do you want some tea? is perfectly grammatical English and lands as blunt or even challenging, where Hindi's क्या आप चाय लेंगे? is neutral. Would you like…? is what a host says, and I'd like… is what a guest orders — the same would, two seats, one pair of rows. This is M1's law paying off immediately: politeness is bought with a longer, less direct frame, not with a different verb.",
+        "some in a question, which contradicts the rule most learners are given: Would you like some tea? uses some, not any, because an OFFER expects yes. The law: any is for open questions and negatives (Have you got any sugar? I haven't got any), some is for offers, requests and positive statements. any is this module's key and some stays L1-M3's row, its note now covering both jobs.",
+        "Refusing without offence is the cultural half, and it runs in BOTH directions here, which is rarer and more useful than a one-way delta. In Indian hosting a first refusal is often ritual and a host is expected to insist; in international English No, thanks is taken at face value, and insisting past it reads as pressure rather than as hospitality. So a learner needs the softeners that make a refusal final and warm at once — No, thanks, I'm full · Maybe later · I'm fine, thanks — and a host needs to know that one offer is enough. Put both halves in usage; no rule moralises about either culture.",
+        'Countability in the field, straight out of M3: a coffee means a cup of coffee and two teas is normal in a café, which looks like it breaks the uncountable law and does not — the container is being counted, not the substance. Say that, because a learner who has just met the law will otherwise decide it has exceptions rather than a mechanism. The rest of the spend is food: bread (uncountable), vegetables, chicken, salt, plate, spoon, glass, bill, menu.',
+        "INDEX SEAM: would, would you like, I'd, like (the would-like sense), any, full, bread, vegetables, chicken, salt, plate, spoon, glass, bill and menu are fresh keys. I'd is its own row with I'd · I would in forms and does NOT pre-list you'd, which is M6's. Would you like rides as a three-token surface, which keeps the bare would available for the row this module also opens — and note that L1-M1's like row is the VERB (I like tea): the would like sense is a different word wearing the same spelling, so its note must be written on the multi-token row and never allowed to overwrite M1's. Can I have stays L1-M8's whole surface, thanks and thank you stay L1-M2's, please stays L1-M8's.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M6': {
+      id: 'L2-M6',
+      title: 'Making plans together',
+      job: 'Invitations, suggestions, settling a time',
+      patterns: [
+        "Let's + V",
+        'Shall we + V?',
+        'How about + V-ing?',
+        'Are you free on + <day>?',
+        "I'm meeting + <person> + at + <time>",
+      ],
+      notes: [
+        "L1-M6 already settled the three futures (docs/39): will for a promise or a decision made now, going to for an intention, and be + -ing for an arrangement. So this module does not teach the future again — it teaches the SUGGESTION frames that sit on top of it: Let's go, Shall we go?, How about going?, Do you want to go?, Are you free on Friday? Say that in the first note, because a brief that re-opened the futures would spend the whole budget re-teaching what the learner has.",
+        "THE delta of the module is time prepositions, where Hindi's one postposition faces an English three-way fork with a memorised exception: at + a clock time (at seven, at half past eight), on + a day or date (on Friday, on Monday — L1-M4 shipped that seat), in + a month, a year or a part of the day (in the morning, in the evening) — and then at night, which breaks the pattern and simply has to be learnt. Name the exception rather than smoothing it over; a rule that pretends English is regular here will be contradicted by the first evening the learner talks about.",
+        "The clock is the other spend: o'clock, half past, quarter past, quarter to, and the days the plan needs (Friday, Saturday, Sunday — L1-M4 owns Monday). English says half past eight where Hindi says साढ़े आठ and the number moves; that mismatch is worth one mistake block, because a learner who translates literally arrives an hour early.",
+        "Agreeing and settling: okay (L1-M10), sure, that sounds good, see you then (L1-M10's see you). Keep the invitations among friends — this module chips `informal` where the frame is friends-only (Let's, How about) and `neutral` for Shall we and Are you free — and let M7 carry the business register.",
+        "INDEX SEAM: let's, shall, how about, free, sure, sounds, o'clock, half past, quarter past, quarter to, Friday, Saturday, Sunday and you'd are fresh keys. let's is its own row with let's · let us in forms, and how about rides as a two-token surface so that how stays L1-M2's and about stays free. going to stays L1-M6's PLAN marker and no display in this module may write going to plus a place — L1's decision 3, still binding. at, on and in stay L1-M4's rows, and their notes were written true of the time seat, which is the one this module uses.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M7': {
+      id: 'L2-M7',
+      title: 'On the phone',
+      job: 'Calls and messages — openings, closings, taking a message',
+      patterns: [
+        'Hello + , + this is + <name>',
+        'Can I speak to + <name> + , + please?',
+        "He's not in + . + Can I take a message?",
+        "I'll call you back + , + <time>",
+        "<statement> + , + aren't you? / isn't he?",
+      ],
+      notes: [
+        "Tag questions are this module's grammar and they are English at its least Hindi-like: Hindi appends one invariant tag — ना, है ना — and English MIRRORS the sentence's auxiliary and FLIPS its polarity. You're coming, aren't you? · He doesn't know, does he? · You've got my number, haven't you? Every tag is built, none is memorised, and the auxiliary the learner needs is always already in the sentence. Author them against the auxiliaries the course owns (are/aren't from L1-M9, do/don't from L1-M3, does/doesn't from L1-M4, will/won't from L1-M6).",
+        "The Indian-English line, drawn a second and last time: isn't it? as a universal tag — You're coming, isn't it? — is ordinary in Indian English and is not an error in it. It is also not international English, and a learner reaching for it is reaching for the ONE tag Hindi's ना taught them. Name it in usage, in words, never in display; the mistake block shows the mirrored tag instead, and no rule calls the variety wrong.",
+        "This is Rohan is what English says on a phone where Hindi says मैं रोहन बोल रहा हूँ — not I am Rohan, which sounds like an introduction at a door. It is a small, fixed, high-frequency delta and it belongs in the first sentence of the module. this is rides as a two-token surface, so that L1-M8's this and L1-M1's is are both left where they are.",
+        "say · tell · speak · talk, the four-way split of Hindi's बोलना and कहना, and the phone is where all four turn up in one conversation. The law is about what follows them: tell takes a person (tell me, tell him), say does not (*say me is the error, say something to me is the repair), speak and talk are about the activity (speak English, talk to my brother, speak to Rohan on the phone). Give the frames, not a synonym list; *He told that he will call is the sentence to catch.",
+        "INDEX SEAM: this is, speak, message, back, hold on, wrong number, in (the not-in sense — a second job for L1-M4's row, pointed back at, never re-opened), say, tell, talk and moment are fresh keys where they are not already owned. Reported speech is NOT opened here: a message is taken with Can I take a message? and passed on with He called, which is L1-M5's past simple; He said that he would call is L3-M5's and is named as deferred in this note. it's, there's and where's stay L1-M7's rows; I'll stays L1-M6's.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M8': {
+      id: 'L2-M8',
+      title: 'When something goes wrong',
+      job: 'Problems, asking for help, complaining calmly',
+      patterns: [
+        "I've lost + my + N",
+        "The + N + doesn't work",
+        'Can you help me + , + please?',
+        "I'm afraid + <statement>",
+        "There's a problem with + the + N",
+      ],
+      notes: [
+        "The present perfect enters HERE and nowhere else in L2, and the level's decision record says why: a problem report is where English speakers actually use it — I've lost my key, The bus hasn't come, I haven't got my ticket — and the simple past cannot say that a past event still matters now. It is lifted narrowly: the PRESENT RESULT use only, on verbs the course already owns, with have / has plus a past participle taught as a pair of shapes rather than as a system. Its experience and duration uses (I've been to Delhi, I've lived here for a year) are named in this note as L3's and no display may show them.",
+        "The law that makes it teachable, and the slogan that ruins it: \"the present perfect is for the recent past\" is false and produces *I've lost it yesterday. The rule is that the present perfect is about NOW — the past event is mentioned only for the result it left — which is exactly why it can never carry a finished time expression. I've lost my key holds whether the key went missing a minute or a month ago; I lost my key yesterday is the simple past because the sentence is about yesterday. Spend the module's mistakes on this pair, side by side.",
+        "Complaining calmly is the register lesson of the level and its sharpest test: English complains INDIRECTLY, and a direct complaint that is neutral in Hindi reads as aggressive in English. The hedges are the content — I'm afraid…, There seems to be a problem, Sorry to bother you, but… — and they are words rather than forms, exactly as M1 said politeness would be. This is worth stating as the module's law: in English the more serious the complaint, the softer the frame.",
+        "The rest of the kit: it doesn't work (L1-M4's doesn't doing its most useful job), it's broken, I can't find it (M1's can't), Can you help me?, should and shouldn't for advice, and the past simple from L1-M5 for anything with a finished time. help, problem, broken, lost, ticket, wallet, late (L1-M9) and again are the vocabulary.",
+        "INDEX SEAM: haven't, hasn't, shouldn't, couldn't, should, lost, broken, found, help, problem, wallet, afraid, bother, seems and again are fresh keys. haven't and hasn't are separate rows — the L1 policy forbids a row pre-listing its sibling, which is why M3's don't never carried doesn't — each with both shapes in forms. lost and broken are past PARTICIPLES sitting in the forms of their verbs' rows where those rows exist, and getting their own row where they do not; the note says which, because a participle that quietly becomes a second verb row is how a course loses track of a paradigm.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M9': {
+      id: 'L2-M9',
+      title: 'Comparing and choosing',
+      job: 'More, less, better — stating a preference',
+      patterns: [
+        'A + is + Adj-er + than + B',
+        'A + is + more + Adj + than + B',
+        'the + Adj-est + N   /   the most + Adj + N',
+        'A + is + as + Adj + as + B',
+        "I'd rather + V   /   I prefer + N",
+      ],
+      notes: [
+        "The comparative changes the ADJECTIVE, which Hindi never does: राम श्याम से लंबा है compares with a postposition and leaves लंबा alone, while English says Ram is taller than Shyam. Two errors follow from that one fact and both deserve a mistake block: *Ram is more taller (the double comparative, because the learner marks the comparison twice) and *Ram is tall than Shyam (because Hindi's adjective needed no change). The law for which form: one syllable takes -er, three or more take more, two syllables go either way except that a final -y always becomes -ier (busier, happier, from L1-M9's busy and L1-M5's happy).",
+        "than and then are one letter and no audible difference apart, and then is L1-M10's key — the sequencer an account uses. A brief that let than be spelled then would send every comparison in the course to a note about what happens next, and first occurrence wins, so no later row could take it back. Write than with its a every time; the note on this row says the pair out loud, because the learner will hear them as the same word.",
+        'The superlative takes the, always — the tallest, the most expensive — where the comparative takes none, and the irregulars are the four that matter: good → better → the best, bad → worse → the worst. better serves both good and well, which is why He plays better is not a mistake and *He plays more good is. The slogan to kill is "add -er and -est": it produces *beautifuller and *expensivest, and the syllable rule above is what replaces it.',
+        "as … as is the equality frame and it is safe here in a way it is not in every course: as tall as Rohan, not as tall as him is a level too far — keep the object to a name or a noun. Choosing needs Which one?, I'd rather (M5's I'd, doing a second job — its row's note must be true of both I'd like and I'd rather) and I prefer, which takes a noun or an -ing form and not a bare infinitive: *I prefer to going is the error, I prefer tea and I prefer going both work.",
+        "INDEX SEAM: than, more, most, less, better, best, worse, worst, as, rather, prefer, which and taller-type comparative shapes are fresh keys. A comparative shape belongs in the forms of the adjective's own row where that adjective is this level's (tall · taller · tallest, M2's row) and gets a row of its own only where the adjective is L1's and cannot be edited — the additions-only law, stated in the level's decision record. so stays L1-M9's consequence word; very stays L1-M2's; that stays L1-M9's conjunction row, whose note already covers the pointing word.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M10': {
+      id: 'L2-M10',
+      title: 'Telling what happened',
+      job: 'A four-sentence account in the past',
+      patterns: [
+        'First + , + <past simple> + . + Then + , + <past simple>',
+        '<past continuous> + when + <past simple>',
+        '<past simple> + because + <past simple>',
+        'After that + , + <past simple> + . + Finally + , + <past simple>',
+      ],
+      notes: [
+        "Each item is an ACCOUNT of exactly four short sentences, not one long one, and the per-sentence bound applies to each sentence inside it. The sequencers are the honest new spend — first, after that, finally, joining L1-M10's then, and, but and so — and everything else is recombination. The four L1 decisions still bind at the end of the level exactly as they did at the start: Hindi in every teaching field with no glossEn; every contraction one surface and one row with both shapes in forms; multi-token surfaces claiming no bare part; and first occurrence winning, so no row here reaches back to redefine an L1 key.",
+        "THE structure of the module: the past continuous carries the background and the past simple moves the story — I was waiting at the station when the phone rang. was and were are L1-M1's be row, which L1-M5 extended with the past rather than opening a second row, so this module extends nothing and simply uses it. The delta is the pairing, not the forms: English marks background with a TENSE where Hindi marks it with रहा था in a shape the learner already has, so this is closer to transfer than to new grammar — say so, and spend the budget on when, which glues the two clauses and is this module's key.",
+        "The error an account produces at length, even from a learner who passed L1-M5: *I didn't went. did and didn't carry the past, so the main verb goes back to its base form — I didn't go, Did you go? — and the same rule governs the question. One mistake block, and then let the accounts drill it, because four sentences give it four chances to appear.",
+        'Build the accounts from scenes the ladder supports: a plan that fell through (M6 and M8), a call at the wrong moment (M7), a meal (M5), directions that went wrong (M4). Keep them everyday and keep the clauses short; an account is four small sentences that hang together, not one long one broken up by full stops.',
+        "Nothing new is opened here. The past perfect (I had gone), used to, the passive and reported speech all stay OUT and are named in this note as L3's — reported speech specifically is L3-M5's, which is why M7 took a message without it. INDEX SEAM: first, after that, finally, when, rang, waiting and the irregular past forms an account needs are fresh keys; each past form belongs in the forms of its verb's row where the course owns that row, and the note points back rather than opening a second one. then, and, but, also and so stay L1-M10's and L1-M9's rows; because stays L1-M9's; yesterday stays L1-M5's.",
+      ],
+      maxWordsPerSentence: 10,
       newWordCap: NEW_WORD_CAP,
     },
   },
