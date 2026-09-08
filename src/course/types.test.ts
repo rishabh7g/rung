@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 375 — nine complete L1-L4 ladders, and L5 opening course by course (#563, #573-#580)', () => {
+  it('finds all 378 — nine complete L1-L4 ladders and L5-M1..M2 on every course (#563, #573-#580)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -231,6 +231,7 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L4-M8.json',
       'content/en-ar/modules/L4-M9.json',
       'content/en-ar/modules/L5-M1.json',
+      'content/en-ar/modules/L5-M2.json',
       'content/en-de/modules/L1-M1.json',
       'content/en-de/modules/L1-M10.json',
       'content/en-de/modules/L1-M2.json',
@@ -440,6 +441,7 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ko/modules/L4-M8.json',
       'content/en-ko/modules/L4-M9.json',
       'content/en-ko/modules/L5-M1.json',
+      'content/en-ko/modules/L5-M2.json',
       'content/en-ru/modules/L1-M1.json',
       'content/en-ru/modules/L1-M10.json',
       'content/en-ru/modules/L1-M2.json',
@@ -565,6 +567,7 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-mr/modules/L4-M8.json',
       'content/hi-mr/modules/L4-M9.json',
       'content/hi-mr/modules/L5-M1.json',
+      'content/hi-mr/modules/L5-M2.json',
     ]);
   });
 
@@ -616,7 +619,7 @@ describe('ModuleContent against the modules that exist', () => {
   it('keeps the romanized course readable: display is the romanization, script the native line', () => {
     const romanized = MODULE_FILES.filter(([name]) => name.includes('en-ar'));
 
-    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(41);
+    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(42);
     for (const [file, json] of romanized) {
       const module = parseModule(json, file);
 
