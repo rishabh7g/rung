@@ -1,0 +1,821 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M3",
+  "title": "Describing things",
+  "job": "Size, colour, quality — agreement at length",
+  "prerequisites": [
+    "L2-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Éhto + Adj + N",
+      "Ya khochú + Adj-acc + N-acc",
+      "Zdes' net + N-gen",
+      "mnógo / nemnógo + N-gen",
+      "N + óchen' + Adj"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "AGREEMENT AT LENGTH is a grid, not a new idea. An adjective matches its noun in gender, number AND case, so M2's vysókiy turns up here as vysókuyu, vysókom and vysókikh. The honest framing: this is bookkeeping. The endings are few, they repeat across every adjective in the language, and the whole paradigm lives in one row's forms so it can be met as one thing rather than as a hundred."
+    },
+    {
+      "tag": "delta",
+      "text": "THE GENITIVE OF ABSENCE, and it is the best sentence type in the module: net plus the genitive says the thing IS NOT HERE, and the sentence has no subject at all. Zdes' net magazína, U menyá net vrémeni. English cannot mirror it — \"there is no shop\" keeps a dummy there — and it is M1's subjectless shape again. net is L1-M2's word for \"no\", doing a second job rather than being a second word."
+    },
+    {
+      "tag": "delta",
+      "text": "A WORD OF AMOUNT IS FOLLOWED BY THE GENITIVE. mnógo vodý, nemnógo sákhara, stakán vodý, cháshka cháya. That one line also explains two things already learnt without explanation: L1-M8's pyat' rubléy and L1-M4's pyat' chasóv were genitive plurals all along, because a number above four is a word of amount too."
+    },
+    {
+      "tag": "interference",
+      "text": "FOUR OF THIS MODULE'S COLOURS CARRY A YÓ — zelyónyy, chyórnyy, zhyóltyy, deshyóvyy — and they must be written with it every time. The rule is not about telling words apart; it is about one word having one spelling, and colours are simply where it lands hardest in this course."
+    },
+    {
+      "tag": "free",
+      "text": "Half the grid costs nothing: for an inanimate masculine noun the accusative is identical to the nominative, so Ya khochú nóvyy stol needs no new shape at all. It is the feminine that moves visibly — knígu, krásnuyu — which is why every accusative sentence here is built on a feminine noun."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M3-S01",
+      "display": "Éhto krásnaya kníga",
+      "script": "Это красная книга",
+      "cue": "This is a red book",
+      "literal": "This red book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "krásnyy",
+            "script": "красный",
+            "cue": "red",
+            "tag": "free",
+            "forms": [
+              "krásnyy",
+              "krásnaya",
+              "krásnoye",
+              "krásnyye",
+              "krásnuyu"
+            ],
+            "note": "The whole paradigm this level shows, in one row: four nominative cells plus the feminine accusative. Old Russian for \"beautiful\" — Krásnaya plóshchad' is the Beautiful Square, not the red one."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The ending is chosen by kníga and by nothing else. A speaker who knows the word for red still has to know the gender of the thing being described before they can say it.",
+      "sound": "EH-ta KRAS-na-ya KNI-ga. The unstressed a's are all reduced, so the word runs shorter than it looks.",
+      "variations": [
+        {
+          "display": "Éhto krásnyy stol",
+          "script": "Это красный стол",
+          "cue": "This is a red table",
+          "changed": "a masculine noun, so the masculine ending"
+        },
+        {
+          "display": "Éhto sínyaya kníga",
+          "script": "Это синяя книга",
+          "cue": "This is a blue book",
+          "changed": "a different colour, the same cell"
+        },
+        {
+          "display": "Éhto bol'sháya krásnaya kníga",
+          "script": "Это большая красная книга",
+          "cue": "This is a big red book",
+          "changed": "two adjectives, both agreeing with the same noun"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto krásnyy kníga",
+        "script": "Это красный книга",
+        "why": "kníga is feminine: Éhto krásnaya kníga."
+      },
+      "usage": "Pointing at something and naming it — the shape every description starts from.",
+      "register": "neutral",
+      "mnemonic": "The noun chooses the ending. Always."
+    },
+    {
+      "id": "L2-M3-S02",
+      "display": "Ya khochú krásnuyu knígu",
+      "script": "Я хочу красную книгу",
+      "cue": "I want the red book",
+      "literal": "I want red book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "síniy",
+            "script": "синий",
+            "cue": "blue (dark)",
+            "tag": "interference",
+            "forms": [
+              "síniy",
+              "sínyaya",
+              "síneye",
+              "síniye",
+              "sínyuyu"
+            ],
+            "note": "A soft adjective, so its endings differ from krásnyy's throughout. Russian splits blue in two: síniy is the dark one and golubóy the light one, and neither covers the other."
+          },
+          {
+            "display": "bélyy",
+            "script": "белый",
+            "cue": "white",
+            "tag": "free",
+            "forms": [
+              "bélyy",
+              "bélaya",
+              "béloye",
+              "bélyye",
+              "béluyu"
+            ],
+            "note": "A hard adjective like krásnyy, and stressed on the stem, so the mark never moves."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "BOTH words move: knígu is the accusative of kníga, and krásnuyu is the accusative to match it. The adjective does not sit still while the noun changes.",
+      "sound": "ya kha-CHU KRAS-nu-yu KNI-gu. The two -u endings rhyme, which is the audible signal that the pair agree.",
+      "variations": [
+        {
+          "display": "Ya khochú sínyuyu knígu",
+          "script": "Я хочу синюю книгу",
+          "cue": "I want the blue book",
+          "changed": "a soft adjective, so a different accusative ending"
+        },
+        {
+          "display": "Ya khochú nóvuyu knígu",
+          "script": "Я хочу новую книгу",
+          "cue": "I want a new book",
+          "changed": "quality rather than colour"
+        },
+        {
+          "display": "Ya khochú bélyy stol",
+          "script": "Я хочу белый стол",
+          "cue": "I want a white table",
+          "changed": "an inanimate masculine — the accusative costs nothing"
+        }
+      ],
+      "mistake": {
+        "display": "Ya khochú krásnaya knígu",
+        "script": "Я хочу красная книгу",
+        "why": "Both words take the accusative: Ya khochú krásnuyu knígu."
+      },
+      "usage": "In a shop, pointing at one of two.",
+      "register": "neutral",
+      "mnemonic": "If the noun moves, the adjective moves with it."
+    },
+    {
+      "id": "L2-M3-S03",
+      "display": "Éhto nóvyy magazín",
+      "script": "Это новый магазин",
+      "cue": "This is a new shop",
+      "literal": "This new shop",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nóvyy",
+            "script": "новый",
+            "cue": "new",
+            "tag": "free",
+            "forms": [
+              "nóvyy",
+              "nóvaya",
+              "nóvoye",
+              "nóvyye",
+              "nóvuyu"
+            ],
+            "note": "Stem-stressed and entirely regular — the adjective to hold the pattern by when a harder one confuses it."
+          },
+          {
+            "display": "chyórnyy",
+            "script": "чёрный",
+            "cue": "black",
+            "tag": "interference",
+            "forms": [
+              "chyórnyy",
+              "chyórnaya",
+              "chyórnoye",
+              "chyórnyye",
+              "chyórnuyu"
+            ],
+            "note": "The yó is written in every shape and carries the stress, as a yó always does. Writing it with e would point the reader at the wrong syllable."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "magazín is masculine, so nóvyy takes -yy. The word looks like it ends in a doubled letter and does not — the first y is the vowel and the second the glide, exactly as in L1-M10's dóbryy.",
+      "sound": "EH-ta NO-vyy ma-ga-ZIN. Both o's of magazín reduce, so only the last syllable is fully sounded.",
+      "variations": [
+        {
+          "display": "Éhto chyórnyy stol",
+          "script": "Это чёрный стол",
+          "cue": "This is a black table",
+          "changed": "a colour with a yó in it"
+        },
+        {
+          "display": "Éhto nóvaya kníga",
+          "script": "Это новая книга",
+          "cue": "This is a new book",
+          "changed": "feminine"
+        },
+        {
+          "display": "Éhto nóvoye pis'mó",
+          "script": "Это новое письмо",
+          "cue": "This is a new letter",
+          "changed": "neuter — the third cell of the same row"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto nóvaya magazín",
+        "script": "Это новая магазин",
+        "why": "magazín is masculine: Éhto nóvyy magazín."
+      },
+      "usage": "Remarking on something that has just appeared in the street.",
+      "register": "neutral",
+      "mnemonic": "A yó is always stressed and always written."
+    },
+    {
+      "id": "L2-M3-S04",
+      "display": "Zelyónaya cháshka na stolé",
+      "script": "Зелёная чашка на столе",
+      "cue": "The green cup is on the table",
+      "literal": "Green cup on table",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zelyónyy",
+            "script": "зелёный",
+            "cue": "green",
+            "tag": "interference",
+            "forms": [
+              "zelyónyy",
+              "zelyónaya",
+              "zelyónoye",
+              "zelyónyye",
+              "zelyónuyu"
+            ],
+            "note": "Another yó word, and the first e reduces almost to i in speech: zi-LYO-nyy. The spelling keeps the e; the mouth does not."
+          },
+          {
+            "display": "zhyóltyy",
+            "script": "жёлтый",
+            "cue": "yellow",
+            "tag": "interference",
+            "forms": [
+              "zhyóltyy",
+              "zhyóltaya",
+              "zhyóltoye",
+              "zhyóltyye",
+              "zhyóltuyu"
+            ],
+            "note": "The third yó colour. After zh the yó is written ё but sounds simply o, because zh cannot be softened — the letter records the history, not the sound."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "stolé is L1-M7's prepositional and has not changed. What is new is that the adjective in front of the SUBJECT agrees with the subject, and the case at the end of the sentence has nothing to do with it.",
+      "sound": "zi-LYO-na-ya CHASH-ka na sta-LYE. The last word takes the stress of the phrase, which is why na leans onto it.",
+      "variations": [
+        {
+          "display": "Zhyóltaya cháshka na stolé",
+          "script": "Жёлтая чашка на столе",
+          "cue": "The yellow cup is on the table",
+          "changed": "a different colour, the same cell"
+        },
+        {
+          "display": "Chyórnaya cháshka na stolé",
+          "script": "Чёрная чашка на столе",
+          "cue": "The black cup is on the table",
+          "changed": "a third yó colour"
+        },
+        {
+          "display": "Zelyónyy stol zdes'",
+          "script": "Зелёный стол здесь",
+          "cue": "The green table is here",
+          "changed": "masculine, and a different way of saying where"
+        }
+      ],
+      "mistake": {
+        "display": "Zelyónyy cháshka na stolé",
+        "script": "Зелёный чашка на столе",
+        "why": "cháshka is feminine: Zelyónaya cháshka na stolé."
+      },
+      "usage": "Saying which one, when there is more than one.",
+      "register": "neutral",
+      "mnemonic": "Three of the six colours here carry a yó."
+    },
+    {
+      "id": "L2-M3-S05",
+      "display": "Éhto óchen' dorogóy bilét",
+      "script": "Это очень дорогой билет",
+      "cue": "This is a very expensive ticket",
+      "literal": "This very expensive ticket",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dorogóy",
+            "script": "дорогой",
+            "cue": "expensive · dear",
+            "tag": "delta",
+            "forms": [
+              "dorogóy",
+              "dorogáya",
+              "dorogóye",
+              "dorogíye",
+              "dorogúyu"
+            ],
+            "note": "End-stressed, so the mark stays on the ending in every shape. It also means \"dear\" of a person, which is how letters open: Dorogóy Iván."
+          },
+          {
+            "display": "deshyóvyy",
+            "script": "дешёвый",
+            "cue": "cheap",
+            "tag": "interference",
+            "forms": [
+              "deshyóvyy",
+              "deshyóvaya",
+              "deshyóvoye",
+              "deshyóvyye",
+              "deshyóvuyu"
+            ],
+            "note": "The fourth yó word of the module. Unlike English \"cheap\", it carries no insult — of a person it is simply not said."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "dorogóy pairs with L1-M8's stóit, and the two answer different questions: skól'ko stóit asks the price, dorogóy gives a verdict on it.",
+      "sound": "EH-ta O-chin' da-ra-GOY bi-LYET. Two unstressed o's in dorogóy both reduce to a, so only the ending is heard clearly.",
+      "variations": [
+        {
+          "display": "Éhto óchen' deshyóvyy bilét",
+          "script": "Это очень дешёвый билет",
+          "cue": "This is a very cheap ticket",
+          "changed": "the opposite verdict"
+        },
+        {
+          "display": "Éhto dorogáya kníga",
+          "script": "Это дорогая книга",
+          "cue": "This is an expensive book",
+          "changed": "feminine, and the stress stays on the ending"
+        },
+        {
+          "display": "Bilét óchen' dorogóy",
+          "script": "Билет очень дорогой",
+          "cue": "The ticket is very expensive",
+          "changed": "the adjective after the missing \"is\" rather than in front of the noun"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto óchen' dórogoy bilét",
+        "script": "Это очень дорогой билет",
+        "why": "The stress is on the ending: dorogóy."
+      },
+      "usage": "Complaining about a price, or explaining why you did not buy something.",
+      "register": "neutral",
+      "mnemonic": "Where the stress starts, it stays."
+    },
+    {
+      "id": "L2-M3-S06",
+      "display": "Éhto málen'kaya chístaya kómnata",
+      "script": "Это маленькая чистая комната",
+      "cue": "This is a small clean room",
+      "literal": "This small clean room",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "málen'kiy",
+            "script": "маленький",
+            "cue": "small · little",
+            "tag": "free",
+            "forms": [
+              "málen'kiy",
+              "málen'kaya",
+              "málen'koye",
+              "málen'kiye",
+              "málen'kuyu"
+            ],
+            "note": "The soft sign in the middle is heard: the l is palatalized. It is the ordinary word for small and carries no diminutive warmth by itself."
+          },
+          {
+            "display": "chístyy",
+            "script": "чистый",
+            "cue": "clean · pure",
+            "tag": "free",
+            "forms": [
+              "chístyy",
+              "chístaya",
+              "chístoye",
+              "chístyye",
+              "chístuyu"
+            ],
+            "note": "Clean of a room, pure of water or a language. Chístyy rússkiy means Russian without foreign words in it."
+          },
+          {
+            "display": "bol'shóy",
+            "script": "большой",
+            "cue": "big · large",
+            "tag": "free",
+            "forms": [
+              "bol'shóy",
+              "bol'sháya",
+              "bol'shóye",
+              "bol'shíye",
+              "bol'shúyu"
+            ],
+            "note": "M1 opened only the neuter cell, inside bol'shóye spasíbo. Here is the paradigm it belongs to, end-stressed throughout."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Two adjectives in a row and no comma between them. Russian stacks them exactly as English does, and both agree separately with the same noun.",
+      "sound": "MA-lin'-ka-ya CHIS-ta-ya KOM-na-ta. Three words, three stresses, all on the first syllable — unusual, and it makes the line easy to say.",
+      "variations": [
+        {
+          "display": "Éhto bol'sháya chístaya kómnata",
+          "script": "Это большая чистая комната",
+          "cue": "This is a big clean room",
+          "changed": "the opposite size"
+        },
+        {
+          "display": "Kómnata óchen' chístaya",
+          "script": "Комната очень чистая",
+          "cue": "The room is very clean",
+          "changed": "the adjective after the missing \"is\""
+        },
+        {
+          "display": "Éhto málen'kiy stol",
+          "script": "Это маленький стол",
+          "cue": "This is a small table",
+          "changed": "masculine"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto málen'kiy chístaya kómnata",
+        "script": "Это маленький чистая комната",
+        "why": "Both adjectives agree with kómnata: málen'kaya chístaya kómnata."
+      },
+      "usage": "Describing a room to someone who has not seen it.",
+      "register": "neutral",
+      "mnemonic": "Two adjectives, two endings, one noun choosing both."
+    },
+    {
+      "id": "L2-M3-S07",
+      "display": "Zdes' net magazína",
+      "script": "Здесь нет магазина",
+      "cue": "There is no shop here",
+      "literal": "Here no of-shop",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "magazína",
+            "script": "магазина",
+            "cue": "of a shop (genitive)",
+            "tag": "delta",
+            "forms": [
+              "magazín",
+              "magazína",
+              "magazíne"
+            ],
+            "note": "L1-M4's magazín in the genitive. The thing that is absent goes into this case — which is the one place Russian marks a noun for not existing."
+          },
+          {
+            "display": "vrémya",
+            "script": "время",
+            "cue": "time",
+            "tag": "interference",
+            "forms": [
+              "vrémya",
+              "vrémeni"
+            ],
+            "note": "Neuter, and one of a small closed set that grow an -en- before every ending: vrémeni, not vrémya. U menyá net vrémeni is the commonest excuse in the language."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "There is no subject in this sentence and nothing is missing. English needs a dummy there; Russian puts the absent thing in the genitive and stops.",
+      "sound": "zdyes' nyet ma-ga-ZI-na. net is emphatic and takes a beat of its own, which is what makes the sentence sound flat rather than apologetic.",
+      "variations": [
+        {
+          "display": "Zdes' net biléta",
+          "script": "Здесь нет билета",
+          "cue": "There is no ticket here",
+          "changed": "a different absent thing"
+        },
+        {
+          "display": "U menyá net vrémeni",
+          "script": "У меня нет времени",
+          "cue": "I haven't got time",
+          "changed": "the same frame with a person in it — the negative of u menyá yest'"
+        },
+        {
+          "display": "Zdes' net stakána",
+          "script": "Здесь нет стакана",
+          "cue": "There is no glass here",
+          "changed": "a different absent thing"
+        }
+      ],
+      "mistake": {
+        "display": "Zdes' net magazín",
+        "script": "Здесь нет магазин",
+        "why": "What is absent goes in the genitive: Zdes' net magazína."
+      },
+      "usage": "Answering \"is there a…?\" — and it is a complete answer on its own.",
+      "register": "neutral",
+      "mnemonic": "Absent things go into the genitive."
+    },
+    {
+      "id": "L2-M3-S08",
+      "display": "Dáyte mne stakán vodý",
+      "script": "Дайте мне стакан воды",
+      "cue": "Give me a glass of water",
+      "literal": "Give to-me glass of-water",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stakán",
+            "script": "стакан",
+            "cue": "glass (tumbler)",
+            "tag": "free",
+            "forms": [
+              "stakán",
+              "stakána",
+              "stakány"
+            ],
+            "note": "A drinking glass, not the material and not spectacles. Russian has separate words for all three."
+          },
+          {
+            "display": "vodý",
+            "script": "воды",
+            "cue": "of water (genitive)",
+            "tag": "delta",
+            "forms": [
+              "vodá",
+              "vódu",
+              "vodý"
+            ],
+            "note": "L1-M3's vodá in the genitive, which is what a word of amount demands. Note the stress: vódu (accusative) and vodý (genitive) differ only in where it falls."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "stakán vodý is \"a glass OF water\" with no word for \"of\". The genitive ending is the of, which is why it can never be dropped.",
+      "sound": "DAY-tye mnye sta-KAN va-DY. The stress moves to the end in vodý, and the o reduces to a in front of it.",
+      "variations": [
+        {
+          "display": "Dáyte mne stakán cháya",
+          "script": "Дайте мне стакан чая",
+          "cue": "Give me a glass of tea",
+          "changed": "a different thing measured"
+        },
+        {
+          "display": "Zdes' net vodý",
+          "script": "Здесь нет воды",
+          "cue": "There is no water here",
+          "changed": "the same case, doing absence rather than amount"
+        },
+        {
+          "display": "Dáyte mne mnógo vodý",
+          "script": "Дайте мне много воды",
+          "cue": "Give me a lot of water",
+          "changed": "a word of amount instead of a container"
+        }
+      ],
+      "mistake": {
+        "display": "Dáyte mne stakán vodá",
+        "script": "Дайте мне стакан вода",
+        "why": "A container takes the genitive: Dáyte mne stakán vodý."
+      },
+      "usage": "At a table, at a counter, at a kiosk.",
+      "register": "neutral",
+      "mnemonic": "The genitive ending IS the word \"of\"."
+    },
+    {
+      "id": "L2-M3-S09",
+      "display": "Cháshka cháya, pozháluysta",
+      "script": "Чашка чая, пожалуйста",
+      "cue": "A cup of tea, please",
+      "literal": "Cup of-tea, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cháya",
+            "script": "чая",
+            "cue": "of tea (genitive)",
+            "tag": "delta",
+            "forms": [
+              "chay",
+              "cháya"
+            ],
+            "note": "L1-M1's chay in the genitive. Its own row rather than an edit to L1's, because an L1 file is never changed — the note points back instead."
+          },
+          {
+            "display": "sákhara",
+            "script": "сахара",
+            "cue": "of sugar (genitive)",
+            "tag": "delta",
+            "forms": [
+              "sákhar",
+              "sákhara"
+            ],
+            "note": "L1-M3's sákhar in the genitive, and stem-stressed, so nothing moves but the ending."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "This is a complete order with no verb in it. Russian counters run on noun phrases, and adding a verb makes the request longer without making it politer.",
+      "sound": "CHASH-ka CHA-ya pa-ZHA-lsta. The two ch words chime, which is why the phrase is easy to remember and easy to hear.",
+      "variations": [
+        {
+          "display": "Nemnógo sákhara, pozháluysta",
+          "script": "Немного сахара, пожалуйста",
+          "cue": "A little sugar, please",
+          "changed": "a word of amount instead of a container"
+        },
+        {
+          "display": "Cháshka kófe, pozháluysta",
+          "script": "Чашка кофе, пожалуйста",
+          "cue": "A cup of coffee, please",
+          "changed": "kófe never changes shape, whatever the case"
+        },
+        {
+          "display": "Stakán vodý, pozháluysta",
+          "script": "Стакан воды, пожалуйста",
+          "cue": "A glass of water, please",
+          "changed": "a different container and a different drink"
+        }
+      ],
+      "mistake": {
+        "display": "Cháshka chay, pozháluysta",
+        "script": "Чашка чай, пожалуйста",
+        "why": "A container takes the genitive: Cháshka cháya, pozháluysta."
+      },
+      "usage": "The commonest order in the country, said exactly like this.",
+      "register": "neutral",
+      "mnemonic": "kófe is the one that never moves."
+    },
+    {
+      "id": "L2-M3-S10",
+      "display": "Zdes' mnógo khléba",
+      "script": "Здесь много хлеба",
+      "cue": "There is a lot of bread here",
+      "literal": "Here much of-bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khléba",
+            "script": "хлеба",
+            "cue": "of bread (genitive)",
+            "tag": "delta",
+            "forms": [
+              "khleb",
+              "khléba"
+            ],
+            "note": "L1-M6's khleb in the genitive. The bare word is one syllable and unmarked; the moment an ending is added the stress becomes markable, and the mark appears."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "mnógo has been in the course since L1-M6 and has always demanded this case. What is new is not the word but the ending after it — and the same demand explains pyat' rubléy and pyat' chasóv, said for two levels without a reason.",
+      "sound": "zdyes' MNO-ga KHLYE-ba. The kh is the sound at the end of Scottish \"loch\".",
+      "variations": [
+        {
+          "display": "Zdes' nemnógo khléba",
+          "script": "Здесь немного хлеба",
+          "cue": "There is a little bread here",
+          "changed": "the smaller amount, the same case after it"
+        },
+        {
+          "display": "Zdes' mnógo vodý",
+          "script": "Здесь много воды",
+          "cue": "There is a lot of water here",
+          "changed": "a feminine noun in the genitive"
+        },
+        {
+          "display": "Zdes' mnógo sákhara",
+          "script": "Здесь много сахара",
+          "cue": "There is a lot of sugar here",
+          "changed": "a third noun on the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Zdes' mnógo khleb",
+        "script": "Здесь много хлеб",
+        "why": "A word of amount takes the genitive: Zdes' mnógo khléba."
+      },
+      "usage": "Saying what a place has plenty of — a shop, a table, a kitchen.",
+      "register": "neutral",
+      "mnemonic": "Amount word in front, genitive behind."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M3-C01",
+      "display": "Éhto krásnaya kníga",
+      "script": "Это красная книга",
+      "cue": "This is a red book"
+    },
+    {
+      "id": "L2-M3-C02",
+      "display": "Ya khochú krásnuyu knígu",
+      "script": "Я хочу красную книгу",
+      "cue": "I want the red book"
+    },
+    {
+      "id": "L2-M3-C03",
+      "display": "Éhto nóvyy magazín",
+      "script": "Это новый магазин",
+      "cue": "This is a new shop"
+    },
+    {
+      "id": "L2-M3-C04",
+      "display": "Zelyónaya cháshka na stolé",
+      "script": "Зелёная чашка на столе",
+      "cue": "The green cup is on the table"
+    },
+    {
+      "id": "L2-M3-C05",
+      "display": "Éhto óchen' dorogóy bilét",
+      "script": "Это очень дорогой билет",
+      "cue": "This is a very expensive ticket"
+    },
+    {
+      "id": "L2-M3-C06",
+      "display": "Éhto málen'kaya chístaya kómnata",
+      "script": "Это маленькая чистая комната",
+      "cue": "This is a small clean room"
+    },
+    {
+      "id": "L2-M3-C07",
+      "display": "Zdes' net magazína",
+      "script": "Здесь нет магазина",
+      "cue": "There is no shop here"
+    },
+    {
+      "id": "L2-M3-C08",
+      "display": "Dáyte mne stakán vodý",
+      "script": "Дайте мне стакан воды",
+      "cue": "Give me a glass of water"
+    },
+    {
+      "id": "L2-M3-C09",
+      "display": "Cháshka cháya, pozháluysta",
+      "script": "Чашка чая, пожалуйста",
+      "cue": "A cup of tea, please"
+    },
+    {
+      "id": "L2-M3-C10",
+      "display": "Zdes' mnógo khléba",
+      "script": "Здесь много хлеба",
+      "cue": "There is a lot of bread here"
+    },
+    {
+      "id": "L2-M3-C11",
+      "display": "U menyá net vrémeni",
+      "script": "У меня нет времени",
+      "cue": "I haven't got time"
+    },
+    {
+      "id": "L2-M3-C12",
+      "display": "Éhto bol'sháya chístaya kómnata",
+      "script": "Это большая чистая комната",
+      "cue": "This is a big clean room"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

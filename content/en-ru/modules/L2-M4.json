@@ -1,0 +1,878 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": [
+    "L2-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "Izviníte, kak doytí do + N-gen + ?",
+      "Idíte pryámo + , + potóm nalévo",
+      "Ya yédu v + N-acc",
+      "Ya yédu na + N-prep",
+      "Kudá vy idyóte? — Gde ostanóvka?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ONE CONTRAST DOES ALL THE WORK: v and na take the ACCUSATIVE for motion and the PREPOSITIONAL for location. Ya idú v magazín is going; Ya v magazíne is being there, which is L1-M7's own sentence. For an inanimate masculine noun the accusative is identical to the nominative, so half of this costs nothing — it is the feminine that shows the move, v Moskvú against L1-M1's v Moskvé. The question words fork the same way: gde asks where a thing IS, kudá asks where it is GOING."
+    },
+    {
+      "tag": "delta",
+      "text": "RUSSIAN CANNOT SAY \"I'M GOING\" WITHOUT DECIDING HOW. idtí is going on foot; yékhat' is going by vehicle. An English speaker has never had to choose, and there is no neutral option to fall back on — Ya idú v Moskvú would mean walking there. The other split, between one trip and going habitually, is real and is L3's; nothing here touches it."
+    },
+    {
+      "tag": "free",
+      "text": "TRANSPORT, decided for this course: \"by bus\" is both na avtóbuse and avtóbusom, and this course teaches na avtóbuse — one preposition and one case the learner already owns from L1-M7's na rabóte, doing a new job. The instrumental proper is L3's and no display in this level uses it. peshkóm comes in as a WORD rather than as a pattern: it is a frozen instrumental, and there is nothing to copy from it."
+    },
+    {
+      "tag": "free",
+      "text": "The directions reuse M1's imperative: idíte, povernite. do takes the genitive — kak doytí do stántsii — which is M3's case doing a fourth job after absence, amount and \"of\". Point back rather than learn it again."
+    },
+    {
+      "tag": "interference",
+      "text": "metró does not decline at all. It is the first indeclinable noun in the course, and it stays metró in every position: v metró, na metró, okolo metró. Words borrowed with an unusual ending behave this way — kófe is the other one the learner already has."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "Izviníte, kak doytí do stántsii?",
+      "script": "Извините, как дойти до станции?",
+      "cue": "Excuse me, how do I get to the station?",
+      "literal": "Excuse, how to-reach up-to station?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "doytí",
+            "script": "дойти",
+            "cue": "to get to (on foot)",
+            "tag": "delta",
+            "forms": [
+              "doytí"
+            ],
+            "note": "idtí with do- on the front, which adds \"as far as\". The prefix is why the preposition do follows it and why the whole thing is about arriving rather than travelling."
+          },
+          {
+            "display": "do",
+            "script": "до",
+            "cue": "up to · as far as",
+            "tag": "free",
+            "forms": [
+              "do"
+            ],
+            "note": "A preposition taking the genitive — M3's case doing a fourth job after absence, amount and \"of\". One syllable, so no stress mark."
+          },
+          {
+            "display": "stántsiya",
+            "script": "станция",
+            "cue": "station",
+            "tag": "free",
+            "forms": [
+              "stántsiya",
+              "stántsii",
+              "stántsiyu"
+            ],
+            "note": "A metro or small railway station. The big railway terminus is a vokzál, and the two are not interchangeable."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "do takes the genitive, so stántsiya becomes stántsii. That is the same case as M3's Zdes' net magazína — the fourth job it does, and no new ending to learn.",
+      "sound": "iz-vi-NI-tye kak day-TI da STAN-tsi-i. The unstressed o of do reduces to a and leans onto the noun.",
+      "variations": [
+        {
+          "display": "Izviníte, kak doytí do magazína?",
+          "script": "Извините, как дойти до магазина?",
+          "cue": "Excuse me, how do I get to the shop?",
+          "changed": "a masculine noun in the same genitive"
+        },
+        {
+          "display": "Prostíte, kak doytí do stántsii?",
+          "script": "Простите, как дойти до станции?",
+          "cue": "Excuse me, how do I get to the station?",
+          "changed": "M1's other opener"
+        },
+        {
+          "display": "Kak doytí do úlitsy?",
+          "script": "Как дойти до улицы?",
+          "cue": "How do I get to the street?",
+          "changed": "no opener — direct, and noticeably barer"
+        }
+      ],
+      "mistake": {
+        "display": "Izviníte, kak doytí do stántsiya?",
+        "script": "Извините, как дойти до станция?",
+        "why": "do takes the genitive: kak doytí do stántsii?"
+      },
+      "usage": "Stopping someone in the street. The verb already says you intend to walk.",
+      "register": "neutral",
+      "mnemonic": "do means as far as, and takes the genitive."
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "Idíte pryámo, potóm nalévo",
+      "script": "Идите прямо, потом налево",
+      "cue": "Go straight on, then left",
+      "literal": "Go straight, then to-the-left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idíte",
+            "script": "идите",
+            "cue": "go (on foot)",
+            "tag": "free",
+            "forms": [
+              "idíte"
+            ],
+            "note": "The imperfective imperative of idtí — M1's rule paying off, because directions are a way of proceeding rather than one act."
+          },
+          {
+            "display": "pryámo",
+            "script": "прямо",
+            "cue": "straight on",
+            "tag": "free",
+            "forms": [
+              "pryámo"
+            ],
+            "note": "Straight ahead. It also means \"frankly\" — Skazhí pryámo, say it straight — which is the same picture in both languages."
+          },
+          {
+            "display": "nalévo",
+            "script": "налево",
+            "cue": "to the left",
+            "tag": "free",
+            "forms": [
+              "nalévo"
+            ],
+            "note": "Motion to the left. Being on the left is sléva, a different word — Russian keeps direction and position apart here as it does everywhere."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The imperfective is right here for the reason M1 gave: this is how to go, not one act of going. A perfective imperative would sound like an order to move now.",
+      "sound": "i-DI-tye PRYA-ma pa-TOM na-LYE-va. Both final o's reduce to a, so nalévo ends in the same sound as pryámo.",
+      "variations": [
+        {
+          "display": "Idíte pryámo, potóm naprávo",
+          "script": "Идите прямо, потом направо",
+          "cue": "Go straight on, then right",
+          "changed": "the other direction"
+        },
+        {
+          "display": "Idíte naprávo",
+          "script": "Идите направо",
+          "cue": "Go right",
+          "changed": "one instruction only"
+        },
+        {
+          "display": "Povernite nalévo",
+          "script": "Поверните налево",
+          "cue": "Turn left",
+          "changed": "turning rather than going — and this one is perfective"
+        }
+      ],
+      "mistake": {
+        "display": "Idíte pryámo, potóm lévo",
+        "script": "Идите прямо, потом лево",
+        "why": "Direction takes the na- form: potóm nalévo."
+      },
+      "usage": "Giving directions to someone who has stopped you.",
+      "register": "neutral",
+      "mnemonic": "na- on the front means towards."
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "Povernite naprávo na perekryóstke",
+      "script": "Поверните направо на перекрёстке",
+      "cue": "Turn right at the crossroads",
+      "literal": "Turn to-the-right at crossroads",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "povernite",
+            "script": "поверните",
+            "cue": "turn (one act)",
+            "tag": "delta",
+            "forms": [
+              "povernite"
+            ],
+            "note": "A perfective imperative, and correctly so: turning is one act, where going is a way of proceeding. The same sentence holds both aspects at once."
+          },
+          {
+            "display": "naprávo",
+            "script": "направо",
+            "cue": "to the right",
+            "tag": "free",
+            "forms": [
+              "naprávo"
+            ],
+            "note": "nalévo's twin. práva also means \"rights\" and \"a driving licence\", which is a coincidence of the language rather than a picture."
+          },
+          {
+            "display": "perekryóstok",
+            "script": "перекрёсток",
+            "cue": "crossroads · junction",
+            "tag": "interference",
+            "forms": [
+              "perekryóstok",
+              "perekryóstka",
+              "perekryóstke"
+            ],
+            "note": "Carries a yó, which must be written. The o before the k disappears whenever an ending is added — perekryóstke, not perekryóstoke."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "One sentence, two aspects, and both are right. povernite is one act; the idíte of the sentence before was a way of going. The choice is about how the action is being presented, never about how long it takes.",
+      "sound": "pa-vir-NI-tye na-PRA-va na pi-ri-KRYOS-tkye. The yó takes the stress, as it always does.",
+      "variations": [
+        {
+          "display": "Povernite nalévo na perekryóstke",
+          "script": "Поверните налево на перекрёстке",
+          "cue": "Turn left at the crossroads",
+          "changed": "the other direction"
+        },
+        {
+          "display": "Povernite naprávo na ploshchadi",
+          "script": "Поверните направо на площади",
+          "cue": "Turn right at the square",
+          "changed": "a different landmark, feminine"
+        },
+        {
+          "display": "Idíte pryámo do perekryóstka",
+          "script": "Идите прямо до перекрёстка",
+          "cue": "Go straight on as far as the crossroads",
+          "changed": "do plus the genitive again"
+        }
+      ],
+      "mistake": {
+        "display": "Povernite naprávo na perekryóstok",
+        "script": "Поверните направо на перекрёсток",
+        "why": "This na is location, so the prepositional: na perekryóstke."
+      },
+      "usage": "The second half of almost every set of directions.",
+      "register": "neutral",
+      "mnemonic": "Turning is one act; going is a way of going."
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "Gde ostanóvka avtóbusa?",
+      "script": "Где остановка автобуса?",
+      "cue": "Where is the bus stop?",
+      "literal": "Where stop of-bus?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ostanóvka",
+            "script": "остановка",
+            "cue": "stop (bus or tram)",
+            "tag": "free",
+            "forms": [
+              "ostanóvka",
+              "ostanóvki",
+              "ostanóvke"
+            ],
+            "note": "From the verb for stopping. A metro station is never an ostanóvka — that is a stántsiya, and the words are not swapped."
+          },
+          {
+            "display": "avtóbus",
+            "script": "автобус",
+            "cue": "bus",
+            "tag": "free",
+            "forms": [
+              "avtóbus",
+              "avtóbusa",
+              "avtóbuse"
+            ],
+            "note": "Stem-stressed throughout, so the mark never moves. The v is pronounced f before the t."
+          },
+          {
+            "display": "metró",
+            "script": "метро",
+            "cue": "the metro · the underground",
+            "tag": "interference",
+            "forms": [
+              "metró"
+            ],
+            "note": "It never changes shape: v metró, na metró, do metró. The first indeclinable noun in the course after kófe."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "avtóbusa is genitive and means \"of the bus\", exactly as M3's stakán vodý did. Two nouns side by side in Russian put the second one in the genitive, and the of is the ending.",
+      "sound": "gdye a-sta-NOF-ka af-TO-bu-sa. Both v's go voiceless, which is why the word sounds nothing like its spelling.",
+      "variations": [
+        {
+          "display": "Gde ostanóvka?",
+          "script": "Где остановка?",
+          "cue": "Where is the stop?",
+          "changed": "shorter, and enough when a bus is in sight"
+        },
+        {
+          "display": "Gde stántsiya metró?",
+          "script": "Где станция метро?",
+          "cue": "Where is the metro station?",
+          "changed": "the metro, and metró does not decline"
+        },
+        {
+          "display": "Ostanóvka avtóbusa ryádom",
+          "script": "Остановка автобуса рядом",
+          "cue": "The bus stop is nearby",
+          "changed": "an answer rather than a question"
+        }
+      ],
+      "mistake": {
+        "display": "Gde ostanóvka avtóbus?",
+        "script": "Где остановка автобус?",
+        "why": "The second noun goes in the genitive: ostanóvka avtóbusa."
+      },
+      "usage": "The question a traveller asks most, after the one about the toilet.",
+      "register": "neutral",
+      "mnemonic": "Noun behind noun means genitive."
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "Ya yédu na avtóbuse",
+      "script": "Я еду на автобусе",
+      "cue": "I'm going by bus",
+      "literal": "I go-by-vehicle on bus",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yékhat'",
+            "script": "ехать",
+            "cue": "to go (by vehicle)",
+            "tag": "delta",
+            "forms": [
+              "yékhat'",
+              "yédu",
+              "yédete"
+            ],
+            "note": "Going by any vehicle — bus, car, train, boat. There is no neutral verb covering both this and idtí, so the choice cannot be avoided."
+          },
+          {
+            "display": "yédu",
+            "script": "еду",
+            "cue": "I go (by vehicle)",
+            "tag": "free",
+            "forms": [
+              "yédu"
+            ],
+            "note": "The ya form of yékhat'. It has no obvious relation to the infinitive, which is normal for this small group of verbs."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "This na is the one from L1-M7's na rabóte — location, prepositional — doing the work English does with \"by\". The course teaches this rather than avtóbusom so that no new case has to be opened for one frame.",
+      "sound": "ya YE-du na af-TO-bu-sye. The e of yédu is the ye of \"yes\", and the stress is on it.",
+      "variations": [
+        {
+          "display": "Ya yédu na metró",
+          "script": "Я еду на метро",
+          "cue": "I'm going by metro",
+          "changed": "metró, which does not change shape"
+        },
+        {
+          "display": "Ya yédu na póyezde",
+          "script": "Я еду на поезде",
+          "cue": "I'm going by train",
+          "changed": "a different vehicle"
+        },
+        {
+          "display": "Ya idú peshkóm",
+          "script": "Я иду пешком",
+          "cue": "I'm walking",
+          "changed": "on foot, so the other verb entirely"
+        }
+      ],
+      "mistake": {
+        "display": "Ya idú na avtóbuse",
+        "script": "Я иду на автобусе",
+        "why": "A vehicle takes yékhat': Ya yédu na avtóbuse."
+      },
+      "usage": "Saying how you are getting somewhere — asked constantly, and the answer decides the verb.",
+      "register": "neutral",
+      "mnemonic": "Feet take idtí. Wheels take yékhat'."
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "Kudá vy idyóte?",
+      "script": "Куда вы идёте?",
+      "cue": "Where are you going?",
+      "literal": "Whither you go?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kudá",
+            "script": "куда",
+            "cue": "where to",
+            "tag": "delta",
+            "forms": [
+              "kudá"
+            ],
+            "note": "The motion twin of L1-M7's gde. English lost this distinction with \"whither\"; Russian keeps it, and using gde for motion is heard immediately."
+          },
+          {
+            "display": "idyóte",
+            "script": "идёте",
+            "cue": "you go (on foot)",
+            "tag": "free",
+            "forms": [
+              "idtí",
+              "idú",
+              "idyóte"
+            ],
+            "note": "The vy form of idtí, carrying a yó and therefore the stress. The whole verb lives on this row: infinitive, ya form, vy form."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "gde and kudá are not interchangeable. Gde vy idyóte? asks where the walking is happening, which is not a question anybody means to ask.",
+      "sound": "ku-DA vy i-DYO-tye. Both stresses fall late, which is what gives the question its rising shape.",
+      "variations": [
+        {
+          "display": "Kudá vy yédete?",
+          "script": "Куда вы едете?",
+          "cue": "Where are you going? (by vehicle)",
+          "changed": "the vehicle verb"
+        },
+        {
+          "display": "Ya idú v magazín",
+          "script": "Я иду в магазин",
+          "cue": "I'm going to the shop",
+          "changed": "the answer — motion, so v plus the accusative"
+        },
+        {
+          "display": "Gde vy rabótayete?",
+          "script": "Где вы работаете?",
+          "cue": "Where do you work?",
+          "changed": "gde, because nothing is moving"
+        }
+      ],
+      "mistake": {
+        "display": "Gde vy idyóte?",
+        "script": "Где вы идёте?",
+        "why": "Motion takes kudá: Kudá vy idyóte?"
+      },
+      "usage": "Meeting someone in the street. It is friendly rather than nosy.",
+      "register": "neutral",
+      "mnemonic": "gde stands still. kudá moves."
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "Ya idú v magazín",
+      "script": "Я иду в магазин",
+      "cue": "I'm going to the shop",
+      "literal": "I go into shop",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idtí",
+            "script": "идти",
+            "cue": "to go (on foot)",
+            "tag": "delta",
+            "forms": [
+              "idtí",
+              "idú"
+            ],
+            "note": "Going on foot, one trip. L1-M5's poshyól and L1-M6's poydú are this verb's past and future — the family was already the learner's."
+          },
+          {
+            "display": "idú",
+            "script": "иду",
+            "cue": "I go (on foot)",
+            "tag": "free",
+            "forms": [
+              "idú"
+            ],
+            "note": "The ya form. Russian has no separate continuous tense, so this is both \"I go\" and \"I am going\", and only the situation says which."
+          },
+          {
+            "display": "rabótu",
+            "script": "работу",
+            "cue": "to work (accusative)",
+            "tag": "delta",
+            "forms": [
+              "rabóta",
+              "rabótu",
+              "rabóte"
+            ],
+            "note": "L1-M7's rabóta in the accusative — the shape a feminine noun takes after a preposition of motion. Its own row pointing back, because an L1 file is never edited."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "magazín is an inanimate masculine, so its accusative looks exactly like its nominative. Nothing visible has happened — and the case is still accusative, which is why the feminine version below looks so different.",
+      "sound": "ya i-DU v ma-ga-ZIN. The v has no vowel of its own and simply attaches to the front of the next word.",
+      "variations": [
+        {
+          "display": "Ya idú na rabótu",
+          "script": "Я иду на работу",
+          "cue": "I'm going to work",
+          "changed": "feminine, so the accusative shows: rabótu against L1-M7's rabóte"
+        },
+        {
+          "display": "Ya v magazíne",
+          "script": "Я в магазине",
+          "cue": "I'm in the shop",
+          "changed": "no motion, so the prepositional — L1-M7's own sentence"
+        },
+        {
+          "display": "Ya idú domóy",
+          "script": "Я иду домой",
+          "cue": "I'm going home",
+          "changed": "domóy is its own word for motion homewards"
+        }
+      ],
+      "mistake": {
+        "display": "Ya idú v magazíne",
+        "script": "Я иду в магазине",
+        "why": "Motion takes the accusative: Ya idú v magazín."
+      },
+      "usage": "Answering kudá, or explaining where you are off to.",
+      "register": "neutral",
+      "mnemonic": "Motion accuses. Location sits in the prepositional."
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "Éhto dalekó ili blízko?",
+      "script": "Это далеко или близко?",
+      "cue": "Is that far or near?",
+      "literal": "That far or near?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dalekó",
+            "script": "далеко",
+            "cue": "far",
+            "tag": "free",
+            "forms": [
+              "dalekó"
+            ],
+            "note": "A flat word, like M1's núzhno and mózhno, so it never agrees with anything. Éhto dalekó is a complete sentence."
+          },
+          {
+            "display": "blízko",
+            "script": "близко",
+            "cue": "near · close",
+            "tag": "free",
+            "forms": [
+              "blízko"
+            ],
+            "note": "dalekó's opposite, and flat in the same way. Ryádom means the same thing and is warmer — right next door rather than merely close."
+          },
+          {
+            "display": "ryádom",
+            "script": "рядом",
+            "cue": "nearby · right next to",
+            "tag": "free",
+            "forms": [
+              "ryádom"
+            ],
+            "note": "Closer than blízko, and the ordinary answer when something is within sight. It is a frozen instrumental, like peshkóm, and nothing is to be copied from its ending."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Éhto here is the flat pointing word from M2 and agrees with nothing, which is why the same sentence works whatever is being asked about.",
+      "sound": "EH-ta da-li-KO i-li BLIS-ka. dalekó is stressed at the very end, and its two unstressed vowels almost disappear.",
+      "variations": [
+        {
+          "display": "Éhto dalekó?",
+          "script": "Это далеко?",
+          "cue": "Is that far?",
+          "changed": "the shortest form of the question"
+        },
+        {
+          "display": "Net, éhto blízko",
+          "script": "Нет, это близко",
+          "cue": "No, that's near",
+          "changed": "the answer"
+        },
+        {
+          "display": "Ostanóvka ryádom",
+          "script": "Остановка рядом",
+          "cue": "The stop is right nearby",
+          "changed": "the warmer word, with a named thing"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto dalyokó ili blízko?",
+        "script": "Это далёко или близко?",
+        "why": "There is no yó in this word: dalekó."
+      },
+      "usage": "The follow-up to every set of directions, and it decides whether you walk.",
+      "register": "neutral",
+      "mnemonic": "Flat words never agree with anything."
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "Éhto úlitsa ili ploshchad'?",
+      "script": "Это улица или площадь?",
+      "cue": "Is this a street or a square?",
+      "literal": "This street or square?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "úlitsa",
+            "script": "улица",
+            "cue": "street",
+            "tag": "free",
+            "forms": [
+              "úlitsa",
+              "úlitsy",
+              "úlitse"
+            ],
+            "note": "Feminine and regular. Na úlitse means both \"in the street\" and \"outdoors\", which is why it is heard about the weather."
+          },
+          {
+            "display": "ploshchad'",
+            "script": "площадь",
+            "cue": "square",
+            "tag": "interference",
+            "forms": [
+              "ploshchad'",
+              "ploshchadi"
+            ],
+            "note": "Feminine despite ending in a consonant plus a soft sign — the same shape as M2's mat' and doch', and the same warning: the ending does not say the gender."
+          },
+          {
+            "display": "ili",
+            "script": "или",
+            "cue": "or",
+            "tag": "free",
+            "forms": [
+              "ili"
+            ],
+            "note": "Plain \"or\". It is unstressed in speech and leans on the word before it, so it is easy to miss in a question."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "ploshchad' is feminine and úlitsa is feminine, but for different reasons: one ends in -a and the other in a soft sign. Only the first of those is a rule.",
+      "sound": "EH-ta U-li-tsa i-li PLO-shchat'. The shch is one long soft sound, not two.",
+      "variations": [
+        {
+          "display": "Éhto bol'sháya ploshchad'",
+          "script": "Это большая площадь",
+          "cue": "This is a big square",
+          "changed": "an answer, with M3's adjective agreeing as feminine"
+        },
+        {
+          "display": "Gde nóvaya úlitsa?",
+          "script": "Где новая улица?",
+          "cue": "Where is the new street?",
+          "changed": "a question about place, so gde"
+        },
+        {
+          "display": "Ostanóvka na úlitse",
+          "script": "Остановка на улице",
+          "cue": "The stop is in the street",
+          "changed": "location, so the prepositional"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto úlitsa ili bol'shóy ploshchad'?",
+        "script": "Это улица или большой площадь?",
+        "why": "ploshchad' is feminine: bol'sháya ploshchad'."
+      },
+      "usage": "Working out where you are from a sign or a map.",
+      "register": "neutral",
+      "mnemonic": "A soft sign hides the gender. Learn the word."
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "Ya yédu na mashíne, ne na póyezde",
+      "script": "Я еду на машине, не на поезде",
+      "cue": "I'm going by car, not by train",
+      "literal": "I go-by-vehicle on car, not on train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mashína",
+            "script": "машина",
+            "cue": "car",
+            "tag": "free",
+            "forms": [
+              "mashína",
+              "mashíne",
+              "mashínu"
+            ],
+            "note": "Feminine, so the na form ends in -e. It also means \"machine\" in general, which is where the word comes from."
+          },
+          {
+            "display": "póyezd",
+            "script": "поезд",
+            "cue": "train",
+            "tag": "free",
+            "forms": [
+              "póyezd",
+              "póyezde",
+              "poyezdá"
+            ],
+            "note": "Masculine, with an irregular plural in -á that takes the stress off the stem. The singular is stem-stressed throughout."
+          },
+          {
+            "display": "peshkóm",
+            "script": "пешком",
+            "cue": "on foot",
+            "tag": "interference",
+            "forms": [
+              "peshkóm"
+            ],
+            "note": "A word rather than a pattern. Its -om ending is a frozen instrumental — the case this level does not open — and nothing else in the module is built the same way."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Both halves take na plus the prepositional, and the ne only denies the second. The frame is not repeated because the verb is not repeated.",
+      "sound": "ya YE-du na ma-SHY-nye nye na PO-yez-dye. The shi of mashíne is hard, so it sounds shy and not shee.",
+      "variations": [
+        {
+          "display": "Ya yédu na mashíne",
+          "script": "Я еду на машине",
+          "cue": "I'm going by car",
+          "changed": "the first half alone"
+        },
+        {
+          "display": "Ya idú peshkóm, ne na avtóbuse",
+          "script": "Я иду пешком, не на автобусе",
+          "cue": "I'm walking, not going by bus",
+          "changed": "on foot, so idtí — and peshkóm takes no preposition"
+        },
+        {
+          "display": "Vy yédete na póyezde?",
+          "script": "Вы едете на поезде?",
+          "cue": "Are you going by train?",
+          "changed": "a question, and the vy form"
+        }
+      ],
+      "mistake": {
+        "display": "Ya yédu na mashínu, ne na póyezde",
+        "script": "Я еду на машину, не на поезде",
+        "why": "This na is means, not motion, so the prepositional: na mashíne."
+      },
+      "usage": "Arranging how to travel, and correcting an assumption about it.",
+      "register": "neutral",
+      "mnemonic": "By vehicle: na plus the prepositional, every time."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "Izviníte, kak doytí do stántsii?",
+      "script": "Извините, как дойти до станции?",
+      "cue": "Excuse me, how do I get to the station?"
+    },
+    {
+      "id": "L2-M4-C02",
+      "display": "Idíte pryámo, potóm nalévo",
+      "script": "Идите прямо, потом налево",
+      "cue": "Go straight on, then left"
+    },
+    {
+      "id": "L2-M4-C03",
+      "display": "Povernite naprávo na perekryóstke",
+      "script": "Поверните направо на перекрёстке",
+      "cue": "Turn right at the crossroads"
+    },
+    {
+      "id": "L2-M4-C04",
+      "display": "Gde ostanóvka avtóbusa?",
+      "script": "Где остановка автобуса?",
+      "cue": "Where is the bus stop?"
+    },
+    {
+      "id": "L2-M4-C05",
+      "display": "Ya yédu na avtóbuse",
+      "script": "Я еду на автобусе",
+      "cue": "I'm going by bus"
+    },
+    {
+      "id": "L2-M4-C06",
+      "display": "Kudá vy idyóte?",
+      "script": "Куда вы идёте?",
+      "cue": "Where are you going?"
+    },
+    {
+      "id": "L2-M4-C07",
+      "display": "Ya idú v magazín",
+      "script": "Я иду в магазин",
+      "cue": "I'm going to the shop"
+    },
+    {
+      "id": "L2-M4-C08",
+      "display": "Éhto dalekó ili blízko?",
+      "script": "Это далеко или близко?",
+      "cue": "Is that far or near?"
+    },
+    {
+      "id": "L2-M4-C09",
+      "display": "Éhto úlitsa ili ploshchad'?",
+      "script": "Это улица или площадь?",
+      "cue": "Is this a street or a square?"
+    },
+    {
+      "id": "L2-M4-C10",
+      "display": "Ya yédu na mashíne, ne na póyezde",
+      "script": "Я еду на машине, не на поезде",
+      "cue": "I'm going by car, not by train"
+    },
+    {
+      "id": "L2-M4-C11",
+      "display": "Ya idú peshkóm",
+      "script": "Я иду пешком",
+      "cue": "I'm walking"
+    },
+    {
+      "id": "L2-M4-C12",
+      "display": "Gde stántsiya metró?",
+      "script": "Где станция метро?",
+      "cue": "Where is the metro station?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

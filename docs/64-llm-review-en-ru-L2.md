@@ -104,3 +104,87 @@ stays at 20.
 9. **`úmnyy`** (M2-S09). Given as warm, closer to "bright" than to "clever". Confirm.
 10. **`drug` / `podrúga`** (M2-S08). Confirm `drug` really is usable of a woman in the way the note
     claims, and that `podrúga` carries no romantic reading in the frame shown.
+
+## Wave 2 — L2-M3, L2-M4, L2-M5 (#447)
+
+Three rungs against the briefs of #429. Reviewed against the real cumulative index: 312 surfaces
+through L2-M2, 401 through L2-M5, `maxSpan` 3.
+
+### The case load, and how the three modules split it
+
+M3 is where Russian's central difficulty becomes visible, and the module's framing is that it is
+**bookkeeping rather than a new idea**: an adjective agrees in gender, number and case, and the
+whole paradigm sits in one row's `forms` so it is met as one thing. The genitive arrives doing
+three jobs at once — absence (`Zdes' net magazína`), amount (`mnógo khléba`) and "of"
+(`stakán vodý`) — and rule 2 pays a debt L1 left open: `pyat' rubléy` and `pyat' chasóv` were
+genitive plurals all along, said for two levels without a reason. A rule that retroactively
+explains something already learnt is worth three that only add.
+
+M4 gives the case its fourth job (`do` plus the genitive) and adds the one contrast that does all
+the work: `v` and `na` take the accusative for motion and the prepositional for location. Half of
+that costs nothing, because an inanimate masculine's accusative is its nominative — which is why
+every accusative sentence in M3 and M4 is built on a feminine noun, where the ending actually
+moves.
+
+M5 spends M1's aspect decision. A host is always imperfective — `Sadítes'`, `Prokhodíte`,
+`Ugoshcháytes'`, `Beríte` — and M4's `povernite` sits two modules earlier as the perfective
+counter-example, so the level shows the same speaker choosing both. That is the clearest evidence
+the course can give that aspect is about how an action is PRESENTED: sitting down takes the same
+three seconds either way.
+
+### Additions-only, and the rows it costs
+
+L2 never edits an L1 file, so every new shape of an L1 noun is a row of its own pointing back:
+`magazína`, `vodý`, `cháya`, `sákhara`, `khléba` (M3) and `rabótu` (M4). That is the law working as
+written rather than a workaround — the learner who taps `vodý` reaches a note about the genitive,
+and L1-M3's `vodá` row is untouched.
+
+### Corrections made against the real index
+
+- **`bol'shóy` was accidentally pre-empted by M1.** The wave-1 file put the whole `bol'shóye`
+  paradigm in the `forms` of the row inside `bol'shóye spasíbo`, which would have taken the key M3's
+  seam assigns to the adjective lesson. M1's row is trimmed to the single neuter cell it actually
+  teaches, with a note saying so, and M3 opens the paradigm.
+- **`síniy`, not `sínij`.** The seam spells it with a `j`; every other adjective in the course ends
+  `-iy` (`rússkiy`, `khoróshiy`, `vysókiy`). The scheme wins, and the file ships `síniy`.
+- **`do` needed a row.** The M4 seam lists it as a fresh key and the brief's own note treats it as
+  pointing back at M3's case; the build rejected the module until the preposition had a row of its
+  own, which is right — `do` is a word, not a case.
+- **`Éhto`, not `Éto`.** Three displays in M4's first draft dropped the `h`. The romanization
+  scheme writes `éhto`, and `éto` is a different index key — the ratchet caught all three.
+
+### Four rows the briefs do not list
+
+`metró` (M4), `rabótu` (M4), `nam` and `peredáyte` (M5). `metró` is named in the M4 brief's prose as
+the first indeclinable noun the course shows but is missing from its seam; the other three surfaced
+through the ratchet, and each earned its row rather than a rewritten variation — `nam` orders for a
+table, `peredáyte` is what is actually said for the salt, and `rabótu` shows the feminine accusative
+the module's own rule promises.
+
+### The ratchet
+
+Four findings across the wave (`do`, `éto`, `nam`, `peredáyte`), each fixed in content. The en-ru
+baseline stays at 20.
+
+### Open questions for the native pass
+
+11. **`Zdes' net magazína`** (M3-S07). Confirm it is the ordinary way to say a shop is absent, and
+    that a native would not more often say `Magazína zdes' net`.
+12. **The colour set** (M3). Six colours, four with a yó. Confirm `síniy` and `golubóy` really do
+    not cover each other in the frames shown, and that `síniy` is right for a dark blue book.
+13. **`dorogóy` of a ticket** (M3-S05). Confirm it is the everyday verdict rather than `dórogo`, the
+    flat word.
+14. **`kak doytí do…`** (M4-S01). Confirm this is the commoner street question rather than
+    `kak proytí k…`, and that the prefixed verb does not sound bookish.
+15. **`na avtóbuse` over `avtóbusom`** (M4-S05). The course's decision. Confirm `na avtóbuse` is at
+    least as common in speech, so the choice costs the learner nothing.
+16. **`ostanóvka avtóbusa`** (M4-S04). Confirm the genitive is what is said rather than
+    `avtóbusnaya ostanóvka`.
+17. **`Kudá vy idyóte?`** (M4-S06). The usage line calls it friendly rather than nosy. Confirm for a
+    neighbour or a colleague.
+18. **`Sadítes'` vs `Prisázhivaytes'`** (M5-S01). Confirm `Sadítes'` carries no hint of the
+    superstition some speakers attach to it, and is the safe default.
+19. **`Mne, pozháluysta, sup`** (M5-S03). Confirm the verbless order is normal at a counter and
+    reads as polite rather than curt.
+20. **`ya uzhé syt`** (M5-S05). Confirm it is the ordinary refusal and carries no complaint, and
+    that the ritual repeat of an offer described in rule 3 still holds today.

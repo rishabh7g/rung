@@ -319,6 +319,24 @@ authored `u menyá` and `u vas` the same way, and matching it is both the fix an
 teaching. **The native gate is still unmet**: docs/64 ends in open questions 1–10, a fresh en-ru L2
 chain.
 
+**en-ru reaches the middle of L2 (#447, 2026-09-08).** `L2-M3` _Describing things_, `L2-M4`
+_Getting around_ and `L2-M5` _Food and hosting_ ship against the same briefs; a strict
+`npm run build` emits `en-ru: 15 modules (L1-M1..M10, L2-M1..M5)`. M3 makes Russian's central
+difficulty visible and frames it honestly as **bookkeeping rather than a new idea** — the adjective
+agrees in gender, number and case, and the whole paradigm lives in one row's `forms`. The genitive
+arrives doing three jobs at once (absence, amount, "of") and pays a debt L1 left open: `pyat'
+rubléy` and `pyat' chasóv` were genitive plurals all along, said for two levels without a reason.
+M4 gives that case a fourth job (`do`) and adds the contrast that carries the module — `v` and `na`
+take the accusative for motion and the prepositional for location — plus the split English never
+makes, `idtí` on foot against `yékhat'` by vehicle, with no neutral verb to fall back on. M5 spends
+M1's aspect decision: a host is always imperfective, and M4's perfective `povernite` sits two rungs
+earlier so the level shows the same speaker choosing both. Because L2 never edits an L1 file, every
+new shape of an L1 noun is **a row of its own pointing back** (`vodý`, `cháya`, `sákhara`,
+`khléba`, `magazína`, `rabótu`). One wave-1 correction travelled with this wave: M1's `bol'shóye`
+row had taken the whole paradigm and was trimmed to the single neuter cell it teaches, so M3 owns
+the adjective. Four ratchet findings, all fixed in content; the en-ru baseline stays at 20. **The
+native gate is still unmet**: docs/64 now ends in open questions 1–20.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on
