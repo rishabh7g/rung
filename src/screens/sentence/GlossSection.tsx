@@ -10,7 +10,7 @@
  * it is the one line that declares its language as a literal rather than through the manifest.
  */
 import type { Sentence } from '../../course/types.ts';
-import styles from '../SentenceScreen.module.css';
+import '../sentence-screen.css';
 
 interface GlossSectionProps {
   sentence: Sentence;
@@ -20,16 +20,16 @@ export function GlossSection({ sentence }: GlossSectionProps) {
   if (sentence.glossEn === undefined && sentence.literal === undefined) return null;
 
   return (
-    <section data-section="gloss" className={styles.section}>
+    <section data-section="gloss" className="sentence-section">
       {sentence.glossEn !== undefined && (
-        <p className={styles.gloss} lang="en">
+        <p className="sentence-gloss" lang="en">
           {sentence.glossEn}
         </p>
       )}
       {sentence.literal !== undefined && (
-        <div className={styles.plateAccent}>
-          <h3 className={styles.sectionLabel}>WORD-FOR-WORD</h3>
-          <p className={styles.prose}>{sentence.literal}</p>
+        <div className="sentence-plate-accent">
+          <h3 className="sentence-section-label">WORD-FOR-WORD</h3>
+          <p className="sentence-prose sentence-course-prose">{sentence.literal}</p>
         </div>
       )}
     </section>

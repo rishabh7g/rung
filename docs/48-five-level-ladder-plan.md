@@ -263,7 +263,7 @@ Two things the review deliberately did NOT change:
   introduce a polite address that is a verb paradigm, not a word. The enum is `neutral | informal`;
   hi-mr's L2 briefs and en-it's L1 header both record working around its absence.
 - Change: the enum in `content/schema/module.schema.json`, `Register` in `src/course/types.ts`,
-  `ModuleSentence.register` in `tools/validate.ts`, the comment in `SentenceScreen.module.css`.
+  `ModuleSentence.register` in `tools/validate.ts`, the comment in `sentence-screen.css`.
   The chip prints the raw value (`UsageSection.tsx`), so no strings key is involved. Land before
   any L2-M1 is authored; hi-mr's L2-M1 note then reads "chip the formal end `formal`" instead of
   "carry it in `usage`".

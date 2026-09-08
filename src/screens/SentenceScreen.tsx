@@ -70,7 +70,7 @@ import { isOpenableRung, useLadderHandOver } from './sentence/useLadderHandOver.
 import { VariationsSection } from './sentence/VariationsSection.tsx';
 import { WordsSection } from './sentence/WordsSection.tsx';
 import { useProgression } from './useProgression.ts';
-import styles from './SentenceScreen.module.css';
+import './sentence-screen.css';
 
 /**
  * The route's component. The module is read back out of the sentence id (`sentence/sentenceId.ts`)
@@ -124,7 +124,7 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
   if (module.error !== null) return <ContentErrorScreen detail={module.error.message} />;
 
   if (!ready || module.data === null) {
-    return <article className={styles.detail} aria-busy="true" />;
+    return <article className="sentence-detail" aria-busy="true" />;
   }
 
   const content = module.data;
@@ -141,10 +141,10 @@ function SentenceDetail({ moduleId, sentenceId }: SentenceDetailProps) {
   const next = content.sentences[at + 1];
 
   return (
-    <article className={styles.detail}>
+    <article className="sentence-detail">
       {/* The prototype's header row, minus the chevron the shell owns (#84, #117). */}
-      <div className={styles.head}>
-        <p className={styles.kicker}>
+      <div className="sentence-head">
+        <p className="sentence-kicker">
           {rungLabel(moduleId)} · SENTENCE {String(at + 1).padStart(2, '0')}
         </p>
         <ProductionDots produced={production?.[sentence.id] ?? 0} />

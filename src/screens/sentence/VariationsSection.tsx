@@ -7,7 +7,7 @@
 import type { L2Written } from '../../course/manifest.ts';
 import type { Sentence, Variation } from '../../course/types.ts';
 import { normalizeSurface, tokenizeSurface } from '../../engine/surface.ts';
-import styles from '../SentenceScreen.module.css';
+import '../sentence-screen.css';
 
 interface VariationsSectionProps {
   sentence: Sentence;
@@ -19,9 +19,9 @@ export function VariationsSection({ sentence, l2 }: VariationsSectionProps) {
   if (variations.length === 0) return null;
 
   return (
-    <section data-section="variations" className={styles.section}>
-      <h3 className={styles.sectionLabel}>SAME PATTERN, SWAPPED PARTS</h3>
-      <ul className={styles.rows}>
+    <section data-section="variations" className="sentence-section">
+      <h3 className="sentence-section-label">SAME PATTERN, SWAPPED PARTS</h3>
+      <ul className="sentence-rows">
         {variations.map((variation, index) => (
           <VariationRow
             key={`${variation.display}-${index}`}
@@ -44,19 +44,21 @@ interface VariationRowProps {
 
 function VariationRow({ base, variation, l2 }: VariationRowProps) {
   return (
-    <li className={styles.variation}>
-      <p className={styles.variationLine} dir={l2.display.dir} lang={l2.display.lang}>
+    <li className="sentence-variation">
+      <p className="sentence-variation-line" dir={l2.display.dir} lang={l2.display.lang}>
         {changedTokens(base, variation.display).map((token, position) => (
           <span
             key={`${token.text}-${position}`}
-            className={token.changed ? styles.changed : undefined}
+            className={token.changed ? 'sentence-changed' : undefined}
           >
             {token.text}
           </span>
         ))}
       </p>
-      <p className={styles.variationCue}>{variation.cue}</p>
-      <p className={styles.variationChanged}>{variation.changed}</p>
+      <p className="sentence-variation-cue sentence-prose sentence-course-prose">{variation.cue}</p>
+      <p className="sentence-variation-changed sentence-prose sentence-course-prose">
+        {variation.changed}
+      </p>
     </li>
   );
 }

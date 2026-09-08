@@ -7,7 +7,7 @@
  */
 import type { L2Written } from '../../course/manifest.ts';
 import type { Sentence } from '../../course/types.ts';
-import styles from '../SentenceScreen.module.css';
+import '../sentence-screen.css';
 
 interface MistakeSectionProps {
   sentence: Sentence;
@@ -18,13 +18,17 @@ export function MistakeSection({ sentence, l2 }: MistakeSectionProps) {
   if (sentence.mistake === undefined) return null;
 
   return (
-    <section data-section="mistake" className={styles.section}>
-      <h3 className={styles.sectionLabel}>COMMON MISTAKE</h3>
-      <div className={styles.mistake}>
-        <p className={styles.mistakeDisplay} dir={l2.display.dir} lang={l2.display.lang}>
+    <section data-section="mistake" className="sentence-section">
+      <h3 className="sentence-section-label">COMMON MISTAKE</h3>
+      <div className="sentence-mistake">
+        <p
+          className="sentence-mistake-display sentence-course-prose"
+          dir={l2.display.dir}
+          lang={l2.display.lang}
+        >
           {sentence.mistake.display}
         </p>
-        <p className={styles.prose}>{sentence.mistake.why}</p>
+        <p className="sentence-prose sentence-course-prose">{sentence.mistake.why}</p>
       </div>
     </section>
   );

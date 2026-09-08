@@ -8,7 +8,7 @@
 import type { L2Written } from '../../course/manifest.ts';
 import type { Sentence, Word } from '../../course/types.ts';
 import { TagChip } from '../TagChip.tsx';
-import styles from '../SentenceScreen.module.css';
+import '../sentence-screen.css';
 
 interface WordsSectionProps {
   sentence: Sentence;
@@ -20,9 +20,9 @@ export function WordsSection({ sentence, l2 }: WordsSectionProps) {
   if (words.length === 0) return null;
 
   return (
-    <section data-section="words" className={styles.section}>
-      <h3 className={styles.sectionLabel}>WORD BY WORD</h3>
-      <ul className={styles.rows}>
+    <section data-section="words" className="sentence-section">
+      <h3 className="sentence-section-label">WORD BY WORD</h3>
+      <ul className="sentence-rows">
         {words.map((word, index) => (
           <WordRow key={`${word.display}-${index}`} word={word} l2={l2} />
         ))}
@@ -38,17 +38,19 @@ interface WordRowProps {
 
 function WordRow({ word, l2 }: WordRowProps) {
   return (
-    <li className={styles.word}>
-      <p className={styles.wordHead}>
-        <span className={styles.wordDisplay} dir={l2.display.dir} lang={l2.display.lang}>
+    <li className="sentence-word">
+      <p className="sentence-word-head">
+        <span className="sentence-word-display" dir={l2.display.dir} lang={l2.display.lang}>
           {word.display}
         </span>
-        <span className={styles.wordCue}>{word.cue}</span>
+        <span className="sentence-word-cue sentence-course-prose">{word.cue}</span>
         <TagChip tag={word.tag} />
       </p>
-      {word.note !== undefined && <p className={styles.wordNote}>{word.note}</p>}
+      {word.note !== undefined && (
+        <p className="sentence-word-note sentence-prose sentence-course-prose">{word.note}</p>
+      )}
       {word.forms.length > 0 && (
-        <p className={styles.forms}>
+        <p className="sentence-forms sentence-prose sentence-course-prose">
           forms:{' '}
           <span dir={l2.display.dir} lang={l2.display.lang}>
             {word.forms.join(' · ')}

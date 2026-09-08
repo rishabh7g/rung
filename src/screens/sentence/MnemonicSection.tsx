@@ -8,7 +8,7 @@
 import type { Strings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
-import styles from '../SentenceScreen.module.css';
+import '../sentence-screen.css';
 
 interface MnemonicSectionProps {
   sentence: Sentence;
@@ -19,10 +19,10 @@ export function MnemonicSection({ sentence, strings }: MnemonicSectionProps) {
   if (sentence.mnemonic === undefined) return null;
 
   return (
-    <section data-section="mnemonic" className={styles.mnemonic}>
+    <section data-section="mnemonic" className="sentence-mnemonic">
       <RegistrationMarks />
-      <p className={styles.courseLabel}>{strings['sentence.pocketIt']}</p>
-      <p className={styles.prose}>{sentence.mnemonic}</p>
+      <p className="sentence-course-label sentence-course-prose">{strings['sentence.pocketIt']}</p>
+      <p className="sentence-prose sentence-course-prose">{sentence.mnemonic}</p>
     </section>
   );
 }

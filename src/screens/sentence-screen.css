@@ -4,11 +4,11 @@
 
    ONE rule governs the colour of this screen (design/tokens.md §7 rule 2): the interference
    trap is amber and nothing else is. The `--interference-*` fill, border, icon and text appear
-   in `.trap*` below and nowhere else in this file; the mistake plate is `--mistake-border` /
+   in `.sentence-trap*` below and nowhere else in this file; the mistake plate is `--mistake-border` /
    `--mistake-bg` with struck neutral text — never amber, never red. SentenceScreen.test.tsx
    scans this stylesheet for exactly that. */
 
-.detail {
+.sentence-detail {
   display: flex;
   flex-direction: column;
   /* the prototype's 18px between sections */
@@ -20,7 +20,7 @@
 
 /* The prototype's header row, minus the chevron and the screen name the shell owns (#84, #117):
    the kicker on the left, the sentence's two production dots hard right. */
-.head {
+.sentence-head {
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -28,7 +28,7 @@
   border-bottom: var(--border-hairline);
 }
 
-.kicker {
+.sentence-kicker {
   flex: 1;
   margin: 0;
   font: var(--text-kicker);
@@ -55,20 +55,19 @@
  * The one place this screen escapes it is `TagChip` — its label is English furniture, so the
  * design's own 9.5–11px band applies there.
  */
-.courseProse {
+.sentence-course-prose {
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
 }
 
-.prose {
-  composes: courseProse;
+.sentence-prose {
   margin: 0;
 }
 
 /* A section's label: the prototype's 10px condensed kicker, uppercase and tracked. English
    furniture in the register of the `M1 · SENTENCE 02` kicker above (#71) — never course copy,
    which is why it may live below the Devanagari floor. */
-.sectionLabel {
+.sentence-section-label {
   margin: 0;
   font: var(--text-kicker-sm);
   letter-spacing: var(--kicker-tracking);
@@ -82,26 +81,24 @@
  * rather than the kicker's: uppercasing and tracking a Devanagari string is not a style the
  * design package has, and §2's floor applies to a label as much as to a paragraph.
  */
-.courseLabel {
-  composes: courseProse;
+.sentence-course-label {
   margin: 0;
   font-weight: var(--font-heading-weight);
   color: var(--color-accent-700);
 }
 
-.section {
+.sentence-section {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
 
-/* The disclosure between the tiers (#401, #408) — the pager's own button shape (`.step` below:
+/* The disclosure between the tiers (#401, #408) — the pager's own button shape (`.sentence-step` below:
    hairline frame, the secondary height, centred label) drawn full width across the column, plus
    the chevron a disclosure needs and a pager does not. It was a ghost first — accent text between
    two hairlines — and between the amber trap and the "pocket it" plate it read as a caption rather
    than a control. A door has to look like a door. */
-.deeper {
-  composes: courseProse;
+.sentence-deeper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,11 +115,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.deeper:active {
+.sentence-deeper:active {
   background: color-mix(in srgb, var(--color-text) 14%, transparent);
 }
 
-.deeperIcon {
+.sentence-deeper-icon {
   flex: none;
   width: var(--icon-inline);
   height: var(--icon-inline);
@@ -131,7 +128,7 @@
 }
 
 /* The lower tier, open — the same column rhythm the article keeps between sections. */
-.depth {
+.sentence-depth {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
@@ -139,19 +136,18 @@
 
 /* ---------------------------------------------------------------------- 1 · hero */
 
-.hero {
+.sentence-hero {
   display: flex;
   flex-direction: column;
 }
 
 /* The one hero slot in the ramp: Mukta 700 32px/1.55 (design/tokens.md §2). */
-.display {
+.sentence-display {
   margin: 0;
   font: var(--text-l2-hero);
 }
 
-.cue {
-  composes: prose;
+.sentence-cue {
   margin-top: var(--space-1);
   color: var(--ink-70);
 }
@@ -159,7 +155,7 @@
 /* Romanized courses only: 15px in `--ink-65`, set in `--font-script-fallback` because Barlow
    draws no Arabic and Mukta is Devanagari (design/tokens.md §2). Same recipe as the module
    list's quiet line — the app's only two font-family overrides, and both take the token. */
-.script {
+.sentence-script {
   margin: var(--space-2) 0 0;
   font: var(--text-body);
   font-family: var(--font-script-fallback);
@@ -170,7 +166,7 @@
 
 /* English wherever it exists (`glossEn` — absent where the L2 is itself English, #268), so the
    body face and no floor — it is the quiet line under the hero, exactly as the prototype has it. */
-.gloss {
+.sentence-gloss {
   margin: 0;
   font: var(--text-secondary);
   color: var(--ink-65);
@@ -178,7 +174,7 @@
 
 /* The word-for-word plate: an accent rule down the start edge, no fill (design/tokens.md §3 —
    blueprint objects carry no surface). */
-.plateAccent {
+.sentence-plate-accent {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
@@ -190,14 +186,13 @@
 
 /* The same plate in the neutral key — the sound note and the usage note (prototype: a 2px
    neutral-300 rule). */
-.plateQuiet {
-  composes: plateAccent;
+.sentence-plate-quiet {
   border-inline-start-color: var(--color-neutral-300);
 }
 
 /* --------------------------------------------------------------------- 3 · words */
 
-.rows {
+.sentence-rows {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -207,12 +202,12 @@
 }
 
 /* A blueprint row: hairline, radius 0, no fill. */
-.word {
+.sentence-word {
   padding: var(--space-3);
   border: var(--border-hairline);
 }
 
-.wordHead {
+.sentence-word-head {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -222,29 +217,26 @@
 
 /* The word itself — the prototype's Mukta 600 18px, which is the floor exactly: the one line on
    this screen where the two agree. */
-.wordDisplay {
+.sentence-word-display {
   font: var(--text-l2-list);
   font-size: var(--devanagari-min-size);
 }
 
-.wordCue {
-  composes: courseProse;
+.sentence-word-cue {
   color: var(--ink-70);
 }
 
 /* The chip is pushed to the row's end — `margin-inline-start: auto` so an RTL course flips it. */
-.wordHead > :last-child {
+.sentence-word-head > :last-child {
   margin-inline-start: auto;
 }
 
-.wordNote {
-  composes: prose;
+.sentence-word-note {
   margin-top: var(--space-1);
   color: var(--ink-75);
 }
 
-.forms {
-  composes: prose;
+.sentence-forms {
   margin-top: var(--space-1);
   color: var(--ink-70);
 }
@@ -258,7 +250,7 @@
  * of a list of discrete statements. `--space-4` outside, `--space-1` inside: a 4x ratio, which is
  * the smallest that survives being read at arm's length on a phone.
  */
-.rules {
+.sentence-rules {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -285,7 +277,7 @@
  * CSS only — `SentenceScreen.tsx` is untouched, and so is `TagChip`, which three other surfaces
  * share (the word rows above, the Practice why rows, Comprehension).
  */
-.rule {
+.sentence-rule {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -299,7 +291,7 @@
  * fill, the amber hairline, the ⚠ in `--interference-icon` and the text in `--interference-text`.
  * Nothing else in this file touches an `--interference-*` token, and the test asserts it.
  */
-.trap {
+.sentence-trap {
   display: flex;
   gap: var(--space-3);
   padding: var(--space-3);
@@ -308,7 +300,7 @@
   border-color: var(--interference-border);
 }
 
-.trapIcon {
+.sentence-trap-icon {
   flex: none;
   width: var(--icon-ui);
   height: var(--icon-ui);
@@ -316,33 +308,31 @@
   stroke-width: var(--icon-stroke);
 }
 
-.trapText {
+.sentence-trap-text {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
   min-width: 0;
 }
 
-.trapHead {
-  composes: courseLabel;
+.sentence-trap-head {
   color: var(--interference-text);
 }
 
-.trapBody {
-  composes: prose;
+.sentence-trap-body {
   color: var(--interference-text);
 }
 
 /* ---------------------------------------------------------------- 7 · variations */
 
-.variation {
+.sentence-variation {
   padding: var(--space-3);
   border: var(--border-hairline);
 }
 
 /* The tokens are laid out with the gap where the spaces were, so the changed part can carry a
    fill of its own without the space beside it lighting up too. */
-.variationLine {
+.sentence-variation-line {
   display: flex;
   flex-wrap: wrap;
   gap: 0 var(--space-2);
@@ -352,18 +342,16 @@
 }
 
 /* "Same pattern, swapped parts" — the swapped part, and only it, is filled [D10]. */
-.changed {
+.sentence-changed {
   background: var(--variation-highlight);
 }
 
-.variationCue {
-  composes: prose;
+.sentence-variation-cue {
   margin-top: var(--space-1);
   color: var(--ink-70);
 }
 
-.variationChanged {
-  composes: prose;
+.sentence-variation-changed {
   margin-top: var(--space-2);
   color: var(--color-accent-800);
 }
@@ -376,27 +364,26 @@
  * information about the language, not a warning about the learner, and amber means exactly one
  * thing in this product.
  */
-.mistake {
+.sentence-mistake {
   padding: var(--space-3);
   background: var(--mistake-bg);
   border: var(--border-hairline);
   border-color: var(--mistake-border);
 }
 
-.mistakeDisplay {
-  composes: courseProse;
+.sentence-mistake-display {
   margin: 0;
   text-decoration: line-through;
   color: var(--color-neutral-600);
 }
 
-.mistake > .prose {
+.sentence-mistake > .sentence-prose {
   margin-top: var(--space-1);
 }
 
 /* --------------------------------------------------------------------- 9 · usage */
 
-.usageHead {
+.sentence-usage-head {
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -405,7 +392,7 @@
 
 /* The register chip — a closed enum (`neutral` · `informal` · `formal`), English like the tag
    labels, so it takes the neutral tag pair at the design's own chip size (design/tokens.md §6). */
-.register {
+.sentence-register {
   padding: var(--space-1) var(--space-2);
   background: var(--tag-free-bg);
   color: var(--tag-free-fg);
@@ -417,7 +404,7 @@
 
 /* A blueprint object — hairline, radius 0, ground fill, and the four `+` registration marks
    (design/tokens.md §3, §7 rule 3), which is what `position: relative` is for. */
-.mnemonic {
+.sentence-mnemonic {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -436,7 +423,7 @@
  * the affordance the prototype's footer has. The negative margins bleed it to the screen's
  * edges, past the column's own padding.
  */
-.pager {
+.sentence-pager {
   position: sticky;
   bottom: 0;
   display: flex;
@@ -450,7 +437,7 @@
 
 /* Secondary buttons at `--btn-secondary-height` (46px), which clears `--tap-min` — the same call
    PR #139 and #140 made where the prototype writes a bare 46 inline. */
-.step {
+.sentence-step {
   flex: 1;
   display: inline-flex;
   align-items: center;
@@ -470,24 +457,24 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.step:active:not(:disabled) {
+.sentence-step:active:not(:disabled) {
   background: color-mix(in srgb, var(--color-text) 14%, transparent);
 }
 
 /* The ends of the module: 45% opacity, the base system's disabled state (design/tokens.md §6). */
-.step:disabled {
+.sentence-step:disabled {
   opacity: 45%;
   cursor: default;
 }
 
-.stepIcon {
+.sentence-step-icon {
   flex: none;
   width: var(--icon-inline);
   height: var(--icon-inline);
   stroke-width: var(--icon-stroke);
 }
 
-.position {
+.sentence-position {
   flex: none;
   margin: 0;
   font: var(--text-caption);

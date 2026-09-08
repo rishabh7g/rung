@@ -9,7 +9,7 @@
  */
 import type { Rule, Sentence } from '../../course/types.ts';
 import { TagChip } from '../TagChip.tsx';
-import styles from '../SentenceScreen.module.css';
+import '../sentence-screen.css';
 
 interface RulesSectionProps {
   sentence: Sentence;
@@ -24,13 +24,13 @@ export function RulesSection({ sentence, moduleRules }: RulesSectionProps) {
   if (rules.length === 0) return null;
 
   return (
-    <section data-section="rules" className={styles.section}>
-      <h3 className={styles.sectionLabel}>RULES USED</h3>
-      <ul className={styles.rules}>
+    <section data-section="rules" className="sentence-section">
+      <h3 className="sentence-section-label">RULES USED</h3>
+      <ul className="sentence-rules">
         {rules.map(({ index, rule }) => (
-          <li key={index} className={styles.rule}>
+          <li key={index} className="sentence-rule">
             <TagChip tag={rule.tag} />
-            <span className={styles.prose}>{rule.text}</span>
+            <span className="sentence-prose sentence-course-prose">{rule.text}</span>
           </li>
         ))}
       </ul>

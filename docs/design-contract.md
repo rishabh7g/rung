@@ -242,7 +242,7 @@ landing on one size is not a new dependency, it makes an existing one load-beari
 override's — resolves to at least 16px, so a future ramp entry added below the floor fails the
 same way. Walked the six stylesheets that consume the four raised tokens
 (`ladder-screen.css`, `comprehension-screen.css`, `RitualScreen.module.css`,
-`module-screen.css`, `SentenceScreen.module.css`, `boot-screens.css`) for the layout
+`module-screen.css`, `sentence-screen.css`, `boot-screens.css`) for the layout
 consequence: every caption/micro/secondary use is either a short closed-vocabulary count/label
 (`"part 1 of 2"`, `"2 of 10"`, `neutral`/`informal`) in a `flex: none` slot beside a `flex: 1,
 min-width: 0` sibling that absorbs the space, or wraps freely in a column (`rowJob` in

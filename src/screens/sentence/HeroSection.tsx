@@ -8,7 +8,7 @@
  */
 import type { L2Written } from '../../course/manifest.ts';
 import type { Sentence } from '../../course/types.ts';
-import styles from '../SentenceScreen.module.css';
+import '../sentence-screen.css';
 
 interface HeroSectionProps {
   sentence: Sentence;
@@ -17,13 +17,13 @@ interface HeroSectionProps {
 
 export function HeroSection({ sentence, l2 }: HeroSectionProps) {
   return (
-    <section data-section="hero" className={styles.hero}>
-      <h2 className={styles.display} dir={l2.display.dir} lang={l2.display.lang}>
+    <section data-section="hero" className="sentence-hero">
+      <h2 className="sentence-display" dir={l2.display.dir} lang={l2.display.lang}>
         {sentence.display}
       </h2>
-      <p className={styles.cue}>{sentence.cue}</p>
+      <p className="sentence-cue sentence-prose sentence-course-prose">{sentence.cue}</p>
       {sentence.script !== undefined && (
-        <p className={styles.script} dir={l2.script.dir} lang={l2.script.lang}>
+        <p className="sentence-script" dir={l2.script.dir} lang={l2.script.lang}>
           {sentence.script}
         </p>
       )}

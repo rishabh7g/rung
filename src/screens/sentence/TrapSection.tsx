@@ -8,7 +8,7 @@
 import { TriangleAlert } from 'lucide-react';
 import type { Strings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
-import styles from '../SentenceScreen.module.css';
+import '../sentence-screen.css';
 
 interface TrapSectionProps {
   sentence: Sentence;
@@ -19,11 +19,13 @@ export function TrapSection({ sentence, strings }: TrapSectionProps) {
   if (sentence.trap === undefined) return null;
 
   return (
-    <section data-section="trap" className={styles.trap}>
-      <TriangleAlert className={styles.trapIcon} aria-hidden="true" />
-      <div className={styles.trapText}>
-        <p className={styles.trapHead}>{strings['sentence.trapHead']}</p>
-        <p className={styles.trapBody}>{sentence.trap}</p>
+    <section data-section="trap" className="sentence-trap">
+      <TriangleAlert className="sentence-trap-icon" aria-hidden="true" />
+      <div className="sentence-trap-text">
+        <p className="sentence-trap-head sentence-course-label sentence-course-prose">
+          {strings['sentence.trapHead']}
+        </p>
+        <p className="sentence-trap-body sentence-prose sentence-course-prose">{sentence.trap}</p>
       </div>
     </section>
   );

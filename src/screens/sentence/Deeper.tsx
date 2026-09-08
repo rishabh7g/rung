@@ -18,7 +18,7 @@
 import { useState, type ReactNode } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import type { Strings } from '../../course/strings.ts';
-import styles from '../SentenceScreen.module.css';
+import '../sentence-screen.css';
 
 interface DeeperProps {
   /** The panel's `id` — unique per sentence, so `aria-controls` names exactly one element. */
@@ -36,7 +36,7 @@ export function Deeper({ id, strings, children }: DeeperProps) {
     <>
       <button
         type="button"
-        className={styles.deeper}
+        className="sentence-deeper sentence-course-prose"
         aria-expanded={deeper}
         // Only while there is one: a reference to an id no element has is a broken reference
         // (`WhyPanel`'s call, #88's before it).
@@ -47,13 +47,13 @@ export function Deeper({ id, strings, children }: DeeperProps) {
       >
         {deeper ? strings['sentence.less'] : strings['sentence.deeper']}
         {deeper ? (
-          <ChevronUp className={styles.deeperIcon} aria-hidden="true" />
+          <ChevronUp className="sentence-deeper-icon" aria-hidden="true" />
         ) : (
-          <ChevronDown className={styles.deeperIcon} aria-hidden="true" />
+          <ChevronDown className="sentence-deeper-icon" aria-hidden="true" />
         )}
       </button>
       {deeper && (
-        <div id={id} className={styles.depth}>
+        <div id={id} className="sentence-depth">
           {children}
         </div>
       )}

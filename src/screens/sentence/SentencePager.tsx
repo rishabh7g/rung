@@ -37,7 +37,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import type { Strings } from '../../course/strings.ts';
 import type { Sentence } from '../../course/types.ts';
 import { PRACTICE_PATH } from '../../shell/routes.tsx';
-import styles from '../SentenceScreen.module.css';
+import '../sentence-screen.css';
 
 interface SentencePagerProps {
   /** Zero-based position of this sentence in its module. */
@@ -69,46 +69,46 @@ export function SentencePager({
   };
 
   return (
-    <nav className={styles.pager} aria-label={strings['a11y.sentencePager']}>
+    <nav className="sentence-pager" aria-label={strings['a11y.sentencePager']}>
       {handBackAt === undefined ? (
         <button
           type="button"
-          className={styles.step}
+          className="sentence-step"
           disabled={previous === undefined}
           onClick={() => {
             step(previous);
           }}
         >
-          <ArrowLeft className={styles.stepIcon} aria-hidden="true" />
+          <ArrowLeft className="sentence-step-icon" aria-hidden="true" />
           {strings['sentence.prev']}
         </button>
       ) : (
-        <Link className={styles.step} to={`/sentence/${handBackAt.id}`}>
-          <ArrowLeft className={styles.stepIcon} aria-hidden="true" />
+        <Link className="sentence-step" to={`/sentence/${handBackAt.id}`}>
+          <ArrowLeft className="sentence-step-icon" aria-hidden="true" />
           {strings['sentence.prevModule']}
         </Link>
       )}
-      <p className={styles.position}>
+      <p className="sentence-position">
         {at + 1} / {total}
       </p>
       {next === undefined ? (
         <Link
-          className={styles.step}
+          className="sentence-step"
           to={handOverTo === undefined ? PRACTICE_PATH : `/sentence/${handOverTo}-S01`}
         >
           {handOverTo === undefined ? strings['sentence.done'] : strings['sentence.nextModule']}
-          <ArrowRight className={styles.stepIcon} aria-hidden="true" />
+          <ArrowRight className="sentence-step-icon" aria-hidden="true" />
         </Link>
       ) : (
         <button
           type="button"
-          className={styles.step}
+          className="sentence-step"
           onClick={() => {
             step(next);
           }}
         >
           {strings['sentence.next']}
-          <ArrowRight className={styles.stepIcon} aria-hidden="true" />
+          <ArrowRight className="sentence-step-icon" aria-hidden="true" />
         </button>
       )}
     </nav>
