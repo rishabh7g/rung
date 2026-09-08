@@ -58,7 +58,7 @@ import { RegistrationMarks } from '../screens/RegistrationMarks.tsx';
 import { HintLine } from '../shell/useHint.tsx';
 import { SelfMark, type Mark } from './SelfMark.tsx';
 import { useCommitWindow } from './useCommitWindow.ts';
-import styles from './RevealCard.module.css';
+import './reveal-card.css';
 
 /** What the learner said about their own recall. The parent decides what it costs. */
 export interface RevealResult {
@@ -131,17 +131,17 @@ export function RevealCard({
   const card = held.sentenceId === sentenceId ? held : fresh(sentenceId);
 
   return (
-    <section className={styles.card}>
-      <div className={styles.cue}>
+    <section className="reveal-card">
+      <div className="reveal-cue">
         {/* No label over the cue (Practice audit, 2026-09-05). `cueLabel` used to name the learner's
             own language above every one of the fifteen cues — the reveal button already names the
             other one, and the accent rule is the cue's whole frame. Comprehension still prints the
             label, because there the cue is the L2 and the language IS the surprise. */}
-        <p className={styles.cueText}>{cue}</p>
+        <p className="reveal-cue-text">{cue}</p>
       </div>
 
       {!card.revealed && (
-        <div className={styles.recall}>
+        <div className="reveal-recall">
           {/**
            * Said once per install, on the first cue the learner ever sees (#319): the recall
            * happens outside the app. The card used to say it on EVERY cue, in a dashed "outside
@@ -153,13 +153,13 @@ export function RevealCard({
            * storage itself (Invariant 4's scan reads this file for exactly that); `HintLine` owns
            * the fact, as `WhyPanel` owns the word rows.
            */}
-          <HintLine hint="recall" className={styles.hint} />
+          <HintLine hint="recall" className="reveal-hint" />
 
-          <div className={styles.revealFrame}>
+          <div className="reveal-frame">
             <RegistrationMarks />
             <button
               type="button"
-              className={styles.reveal}
+              className="reveal"
               onClick={() => setCard({ ...card, revealed: true })}
             >
               {strings.revealLabel}
@@ -169,25 +169,25 @@ export function RevealCard({
       )}
 
       {card.revealed && (
-        <div className={styles.answer}>
-          <div className={styles.answerPlate}>
+        <div className="reveal-answer">
+          <div className="reveal-answer-plate">
             <RegistrationMarks />
-            <p className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
+            <p className="reveal-display" dir={l2?.display.dir} lang={l2?.display.lang}>
               {display}
             </p>
             {/* Romanized courses only: recognition, never something to produce (§9 [D20]). */}
             {script !== undefined && (
-              <p className={styles.script} dir={l2?.script.dir} lang={l2?.script.lang}>
+              <p className="reveal-script" dir={l2?.script.dir} lang={l2?.script.lang}>
                 {script}
               </p>
             )}
             {/* ─── the "why" seam (#94): word rows land here, inside the answer plate ─── */}
-            {why !== undefined && <div className={styles.why}>{why}</div>}
+            {why !== undefined && <div className="reveal-why">{why}</div>}
           </div>
 
           {/* The mark, and nothing beside it: choosing commits the card (#313). No Next, and
               nothing disabled either — the two segments are the whole of what there is to do. */}
-          <div className={chosen === null ? styles.marks : styles.marksMarked}>
+          <div className={chosen === null ? 'reveal-marks' : 'reveal-marks-marked reveal-marks'}>
             <SelfMark mark={chosen} onMark={choose} />
           </div>
         </div>

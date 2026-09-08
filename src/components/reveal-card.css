@@ -5,7 +5,7 @@
 /* The card fills the session's column and lets the mark row sit at the bottom of it — the
    prototype's `flex:1` phase area. In a parent that is not a flex column this is inert, which is
    how the tests and the screenshot harness render it. */
-.card {
+.reveal-card {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -18,7 +18,7 @@
 /* The one rule on the card, and the accent's only appearance until the reveal button:
    `--tick-height` is the design package's only 2px length, the same stand-in the level strip's
    bar takes (#86, flagged on #117). */
-.cue {
+.reveal-cue {
   padding-left: var(--space-4);
   border-left: var(--tick-height) solid var(--color-accent-300);
 }
@@ -26,7 +26,7 @@
 /* Course copy, Mukta: `--text-l2-cue` is the ramp's practice cue slot (400 20px/1.6). The label
    the prototype writes above it (a 10px uppercase kicker naming the L1) is not drawn — see the
    component. */
-.cueText {
+.reveal-cue-text {
   margin: 0;
   font: var(--text-l2-cue);
 }
@@ -35,7 +35,7 @@
 
 /* Centred in what is left of the card: the reveal sits in the middle of the screen, because
    recalling before it is the whole of what is being asked. */
-.recall {
+.reveal-recall {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -44,7 +44,7 @@
 
 /* The registration marks frame the reveal CTA rather than a border — the prototype's `blueprint`
    wrapper with a transparent border and its four corners. */
-.revealFrame {
+.reveal-frame {
   position: relative;
 }
 
@@ -79,7 +79,7 @@
 
 /* The reveal itself (design/tokens.md §5): fade + a 7px rise over `--motion-reveal`, which is
    `--space-2` (6.8px) on the scale — the same rise the module list's expansion uses. */
-.answer {
+.reveal-answer {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -101,7 +101,7 @@
 
 /* A blueprint object: radius 0, a hairline, no surface fill, and the four registration marks —
    which is the `position: relative`. */
-.answerPlate {
+.reveal-answer-plate {
   position: relative;
   padding: var(--space-4);
   background: var(--color-bg);
@@ -110,7 +110,7 @@
 
 /* The answer, and the loudest text in the session: `--text-l2-card` is 600 26px/1.6 Mukta, the
    ramp's slot named for exactly this card. */
-.display {
+.reveal-display {
   margin: 0;
   font: var(--text-l2-card);
 }
@@ -118,7 +118,7 @@
 /* The quiet native-script line, romanized courses only (design/tokens.md §1, §2): 15px in
    `--ink-65`, in `--font-script-fallback` because Barlow draws no Arabic and Mukta is
    Devanagari. Same treatment as the module list's third line (#88). */
-.script {
+.reveal-script {
   margin: var(--space-1) 0 0;
   font: var(--text-body);
   font-family: var(--font-script-fallback);
@@ -127,7 +127,7 @@
 
 /* The seam `WhyPanel` fills (#94): its ghost toggle and the word rows it expands in place. The
    card only spaces it — everything inside is the panel's own stylesheet. */
-.why {
+.reveal-why {
   margin-top: var(--space-3);
 }
 
@@ -135,7 +135,7 @@
 
 /* Bottom of the card: the mark is the last thing the learner does, and `margin-top: auto` is what
    keeps it there whatever the sentence's length. */
-.marks {
+.reveal-marks {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -148,9 +148,12 @@
  * button, so the segments keep the whole width they always wanted — the type wall the 2:1 was
  * working around (hi-mr's segments are Devanagari at the `--devanagari-min-size` floor, and half
  * a 360px row wraps them) simply stops being a constraint when nothing shares the row.
+ *
+ * It has no declarations of its own and never did — it was `composes: marks` and nothing else, so
+ * the compiler emitted no rule for it either. The name stays because the marked state is worth
+ * seeing in the DOM; the element carries `.reveal-marks` beside it for the styling.
  */
-.marksMarked {
-  composes: marks;
+.reveal-marks-marked {
 }
 
 /* design/tokens.md §5: reduced motion collapses every movement in the product — including the
@@ -161,7 +164,7 @@
    `animationend` commit under this very rule would fire in 0.01ms, rushing exactly the learners
    this rule exists to protect. */
 @media (prefers-reduced-motion: reduce) {
-  .answer {
+  .reveal-answer {
     animation: none;
   }
 }
@@ -169,7 +172,7 @@
 /* The show-once recall hint (#319). Quiet, above the reveal, and gone from the second card
    onwards — it is the one sentence the card says about itself, not a plate it wears. The dashed
    "outside the app" frame #225 removed is deliberately not back: this is a line, once. */
-.hint {
+.reveal-hint {
   margin: 0 0 var(--space-3);
   font: var(--text-caption);
   color: var(--ink-65);
