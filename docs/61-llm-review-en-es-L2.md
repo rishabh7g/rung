@@ -138,7 +138,84 @@ Three more rounds of variation-only surfaces were caught and fixed in content: `
 which is a better existence question than the shop it replaced; `mucha` became the row described
 above; the rest were rewritten out. The en-es baseline stays at 10.
 
+## Wave 3 — L2-M6…L2-M10 (#453) — the level closes
+
+The last five rungs, taking en-es to twenty modules and 477 surfaces, `maxSpan` 3. The level's
+`draft` flag comes off in the same change.
+
+### L2-M6 "Making plans together"
+
+The `nosotros` cell arrives and doubles as the suggestion — `¿Vamos al cine?` is both "we go" and
+"shall we go", so Spanish needs no extra word where English needs "let's". `podemos` (S03) is the
+sentence that shows the stem change has a rule: the stress moves off the stem and the `ue` goes
+with it. The clock teaches `y media` and `y cuarto` and stops there, because `menos cuarto` would
+spend M9's key before M9 could give it its comparative note — the brief's ruling, held.
+
+`conmigo` (S02) is the one place in the language where a preposition and a pronoun have grown into
+one word, and it gets a sentence rather than a footnote.
+
+### L2-M7 "On the phone"
+
+The payoff of a decision L1-M1 made: `Me llamo` was indexed whole, which left `llamo` free, so
+`te llamo` (S05) is a different key with a different note. S05's own trap says it out loud,
+because a learner who has said `me llamo` for two levels will otherwise read `te llamo` as
+"I name you".
+
+The gerund enters here and the module states what it does NOT do: `estoy comiendo` is this moment,
+and tomorrow takes M6's plain present. `Diga` (S01) is Spain's phone opener and its note gives
+`¿Aló?` and `¿Bueno?` as the Latin American ones — the second of which the level cannot teach,
+since `bueno` is L1-M10's key. S10 opens no new word at all, which is what a module's last
+sentence should look like.
+
+### L2-M8 "When something goes wrong"
+
+`doler` (S01, S02) is the structural payoff of the whole course: it is built exactly like
+`gustar`, so the thing that hurts is the subject and `me duelen los pies` follows from `me gustan
+los libros`. The rule says it in those words — `gustar` was never a quirk, it is a class.
+
+`problema` (S09) keeps the promise L1-M1's gender note made when it refused the "-o/-a" shortcut.
+And S10 gives the clitic its second legal position — glued to a dictionary-form verb, `ayudarme` —
+with the mistake block set on the one place it may not go, loose between two verbs.
+
+### L2-M9 "Comparing and choosing"
+
+`más … que` costs no new function word, because `que` is M5's row and `de` is L1-M1's; the work is
+the choice, not the vocabulary. `mejor`/`peor` and `mayor`/`menor` are taught as four words that
+already carry their comparison, with the doubled `*más mejor` as the mistake — the same error
+English makes with "more better".
+
+`esta` against `está` (S03) is the accent law at its sharpest: the two sit in the same sentence
+shapes, and S03's second variation puts both in one line so the difference is visible rather than
+asserted.
+
+### L2-M10 "Telling what happened"
+
+Each item is a four-sentence account and the module opens almost nothing: `había`, `nadie`,
+`algo`, `tarde`, `al final`, and the past cells an account needs. S10 introduces no new word at
+all.
+
+The imperfect/preterite law is stated as a role in the telling rather than as a property of the
+event, and the slogan is killed in the same words en-ru's, en-it's and en-fr's M10s use. Two
+sentences do the work a rule cannot: S03's `la película era muy buena` against `fui al cine`, and
+S05's `estaba muy cansado` against `no comí nada`. The mistake blocks are all tense swaps, because
+that is the only error this module can produce.
+
+`llegué` (S04) earns its own note for the silent `u` that keeps the `g` hard — the same kind of
+spelling rule as M4's `cruzo` → `cruce`, and the second time the course has had to explain that
+Spanish spells around its own sounds.
+
+### The ratchet across the wave
+
+Five more rounds caught and fixed: `ir`, `juntos`, `punto`, `este` in M6; `médico`, `su`, `doy`,
+`cuál`, `llame`, `fácil` in M7; `llamar` in M8; `lento`, `habla`, `yo`, `esto` in M9; `compré`,
+`dolía`, `podía`, `tenía` in M10. Every one was a variation reaching for a word no row owned, and
+every one was rewritten rather than baselined. Notice what the list is made of: mostly other cells
+of verbs the module DOES teach, which is the failure mode a `forms` list is supposed to catch and
+a variation slips past. **The en-es baseline stayed at 10 for the whole level** — ten modules, 249
+new surfaces, and not one addition to the debt.
+
 ### Open questions for the native pass
+
 
 
 1. **`¿Me da un café?` as the default counter frame.** The module makes it the ordinary way to
@@ -169,3 +246,22 @@ above; the rest were rewritten out. The en-es baseline stays at 10.
     individual ones. Confirm a menu would not simply say `verduras`.
 11. **`un agua`** (M5-S08 variation). Written with `un` because the noun starts with a stressed
     a. Confirm `un agua` rather than `una agua` in a bar order.
+12. **`Diga` as the phone opener** (M7-S01). Authored as Spain's, with `¿Aló?` and `¿Bueno?` named
+    in `usage`. Confirm `Dígame` is not now the commoner of the two in Spain.
+13. **`se pone`** (M7-S03). Given as "she's coming to the phone". Confirm it is still current
+    rather than dated, and that `ahora se pone` is what a household actually says.
+14. **`No funciona` for a phone** (M8-S03). The rule contrasts it with `trabajar` for people.
+    Check that `no va` is not the commoner spoken form for a device that has stopped.
+15. **`Es la tienda más barata de la calle`** (M9-S04). Confirm `de` rather than `en` for a street,
+    which is the case the rule is stated on.
+16. **`Hablamos mucho`** (M10-S02). Authored as a past, relying on context alone to separate it
+    from the present. Confirm a native reads it as past in that four-sentence frame.
+17. **`Mi madre dijo que estaba buena`** (M10-S07). The imperfect is kept after the reporting verb.
+    Confirm this is what people say, and that the sentence does not want `estaba muy buena`.
+18. **The whole-account items.** Every M10 display is four sentences. Confirm the pacing reads as
+    one person telling one small story, rather than as four unconnected lines.
+19. **`Estaba en el trabajo`** (M10-S06). The account runs `Mi hermano llamó ayer. Estaba en el
+    trabajo.` and the cue reads it as "I was at work", but the Spanish is equally "he was". A
+    native pass should say whether the four-sentence frame settles it, or whether the item needs
+    `yo estaba` — which would break the module's own no-pronoun rule and is therefore a real
+    question rather than a typo.

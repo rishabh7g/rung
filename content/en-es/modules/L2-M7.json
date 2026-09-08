@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": [
+    "L2-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present",
+      "present_continuous",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "Diga + , + ¿quién es?",
+      "Soy + <name> + , + ¿está + <person>?",
+      "Estoy + V-ando/-iendo",
+      "¿Le dejo un mensaje?",
+      "Te llamo + <time>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "estar plus -ando or -iendo says something is happening right now: estoy comiendo. Spanish keeps it for the actual moment — for tomorrow it uses the plain present, which is M6's rule."
+    },
+    {
+      "tag": "interference",
+      "text": "Me llamo is \"my name is\" and te llamo is \"I'll call you\". Same verb, and the little pronoun in front decides which. A learner who has said me llamo for two levels will read te llamo as \"I name you\"."
+    },
+    {
+      "tag": "delta",
+      "text": "le names the person something is done TO or FOR — le dejo un mensaje. It is the same le that made le gusta read the way it does."
+    },
+    {
+      "tag": "free",
+      "text": "Identifying yourself on the phone is Soy + your name, exactly as English says \"it's me\". No extra word is needed."
+    },
+    {
+      "tag": "delta",
+      "text": "está does a third job here: ¿Está tu hermana? asks whether she is THERE, not how she is. The verb has not changed; the situation supplies the meaning."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "Diga, ¿quién es?",
+      "cue": "Hello, who's calling?",
+      "literal": "Speak(polite), who is?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Diga",
+            "cue": "hello (on the phone)",
+            "tag": "delta",
+            "forms": [
+              "diga",
+              "dígame"
+            ],
+            "note": "The polite imperative of decir, built from digo exactly as siga is from sigo. It is how Spain answers a phone; dígame is the longer, slightly warmer version."
+          },
+          {
+            "display": "quién",
+            "cue": "who",
+            "tag": "free",
+            "forms": [],
+            "note": "Carries an accent because it asks, like qué and dónde. Its unaccented twin quien joins clauses and is not taught here."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Diga is not \"say it\". On a phone it is simply hello, and translating it word for word makes it sound like an order.",
+      "sound": "DI-ga with a hard g. DEE-ga-me for the longer form, stressed on the first syllable and written with an accent.",
+      "variations": [
+        {
+          "display": "Dígame, ¿quién es?",
+          "cue": "Hello, who's calling?",
+          "changed": "the longer opener, which is commoner in Spain"
+        },
+        {
+          "display": "¿Quién es? Soy Rohan.",
+          "cue": "Who's calling? It's Rohan.",
+          "changed": "the question and its answer together"
+        },
+        {
+          "display": "Diga, ¿es la tienda?",
+          "cue": "Hello, is that the shop?",
+          "changed": "the caller checking they have the right number"
+        }
+      ],
+      "mistake": {
+        "display": "Dice, ¿quién es?",
+        "why": "dice is \"he says\". The phone answer is the imperative: Diga."
+      },
+      "usage": "Spain. Much of Latin America says ¿Aló? or ¿Bueno? instead, and both are understood.",
+      "register": "formal",
+      "mnemonic": "Spain picks up the phone by inviting you to speak."
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "Soy Rohan, ¿está tu hermana?",
+      "cue": "It's Rohan, is your sister there?",
+      "literal": "I-am Rohan, is your sister?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tu",
+            "cue": "your",
+            "tag": "interference",
+            "forms": [
+              "tu",
+              "tus"
+            ],
+            "note": "No accent: tu hermana is \"your sister\". The accented tú is the pronoun, and the two are different words on the page and identical in the ear."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "está here asks whether she is present, not how she is. Same verb, different question, and only the situation tells them apart.",
+      "sound": "TU, one syllable, and the accent on the pronoun changes nothing you can hear.",
+      "variations": [
+        {
+          "display": "Soy Ana, ¿está tu hermano?",
+          "cue": "It's Ana, is your brother there?",
+          "changed": "another caller and another sibling"
+        },
+        {
+          "display": "¿Está tu madre, por favor?",
+          "cue": "Is your mother there, please?",
+          "changed": "por favor, which softens a call to a house"
+        },
+        {
+          "display": "Soy Rohan. ¿Cómo estás?",
+          "cue": "It's Rohan. How are you?",
+          "changed": "the other job of estar, in the next breath"
+        }
+      ],
+      "mistake": {
+        "display": "Soy Rohan, ¿es tu hermana?",
+        "why": "es would be asking whether she IS your sister. Being present is estar: ¿está tu hermana?"
+      },
+      "usage": "Calling a house. Naming yourself first is expected, and skipping it reads as abrupt.",
+      "register": "informal",
+      "mnemonic": "está asks if they are there; es asks who they are."
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "Un momento, ahora se pone.",
+      "cue": "One moment, she's coming to the phone.",
+      "literal": "A moment, now oneself puts.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ahora",
+            "cue": "now",
+            "tag": "free",
+            "forms": [],
+            "note": "Right now, or in a moment — Spanish uses it for both, and ahora mismo is the emphatic one."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "se pone is not M5's ¿me pone…? The little se turns \"put\" into \"put oneself\", which on a phone means come to it.",
+      "sound": "a-O-ra, three syllables with the h silent, and one tapped r.",
+      "variations": [
+        {
+          "display": "Un momento, ahora la llamo.",
+          "cue": "One moment, I'll call her now.",
+          "changed": "a different way of handling the call"
+        },
+        {
+          "display": "Ahora no puede, lo siento.",
+          "cue": "She can't right now, I'm sorry.",
+          "changed": "the refusal, with M1's apology"
+        },
+        {
+          "display": "Ahora está comiendo.",
+          "cue": "She's eating right now.",
+          "changed": "S05's -iendo form, giving the reason"
+        }
+      ],
+      "mistake": {
+        "display": "Un momento, ahora pone.",
+        "why": "Without se the sentence says she is putting something. se pone is coming to the phone."
+      },
+      "usage": "What the person who answered says as they go to fetch someone.",
+      "register": "neutral",
+      "mnemonic": "se turns putting into putting yourself."
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "Está hablando con mi madre.",
+      "cue": "He's talking to my mother.",
+      "literal": "Is talking with my mother.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hablando",
+            "cue": "talking",
+            "tag": "delta",
+            "forms": [],
+            "note": "hablar with -ando on the end. Every -ar verb makes this shape the same way, and estar in front of it says the action is happening now."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "hablar con, not hablar a. You talk WITH someone in Spanish, even when English says \"to\".",
+      "sound": "a-BLAN-do, with the h silent and the b soft between vowels.",
+      "variations": [
+        {
+          "display": "Estoy hablando con mi hermana.",
+          "cue": "I'm talking to my sister.",
+          "changed": "the I-form of estar in front"
+        },
+        {
+          "display": "Está hablando con mi padre.",
+          "cue": "He's talking to my father.",
+          "changed": "someone else on the other end"
+        },
+        {
+          "display": "No está hablando, está comiendo.",
+          "cue": "He isn't talking, he's eating.",
+          "changed": "two -ndo forms set against each other"
+        }
+      ],
+      "mistake": {
+        "display": "Está hablando a mi madre.",
+        "why": "hablar takes con for the person you talk to: hablando con mi madre."
+      },
+      "usage": "The reason someone cannot come to the phone. It is happening at this instant, which is what the form is for.",
+      "register": "neutral",
+      "mnemonic": "-ar verbs take -ando, and estar puts them in this moment."
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "Estoy comiendo, te llamo luego.",
+      "cue": "I'm eating, I'll call you later.",
+      "literal": "I-am eating, to-you I-call later.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "comiendo",
+            "cue": "eating",
+            "tag": "delta",
+            "forms": [],
+            "note": "An -er or -ir verb takes -iendo where an -ar verb takes -ando: comiendo, bebiendo, escribiendo."
+          },
+          {
+            "display": "llamo",
+            "cue": "I call",
+            "tag": "interference",
+            "forms": [
+              "llamo",
+              "llama"
+            ],
+            "note": "llamar, to call. Me llamo is \"my name is\" and te llamo is \"I'll call you\" — the same verb, and the little word in front decides."
+          },
+          {
+            "display": "luego",
+            "cue": "later",
+            "tag": "free",
+            "forms": [],
+            "note": "The bare word inside M10's hasta luego, doing its own job at last."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "te llamo is a promise about the future said in the present, exactly as M6 taught. And it is not \"I name you\".",
+      "sound": "ko-MYEN-do. YA-mo for llamo, because ll is a y almost everywhere.",
+      "variations": [
+        {
+          "display": "Estoy comiendo, te llamo mañana.",
+          "cue": "I'm eating, I'll call you tomorrow.",
+          "changed": "a named time instead of luego"
+        },
+        {
+          "display": "Ahora estoy comiendo.",
+          "cue": "I'm eating right now.",
+          "changed": "ahora making the moment explicit"
+        },
+        {
+          "display": "Te llamo el viernes, ¿vale?",
+          "cue": "I'll call you on Friday, OK?",
+          "changed": "M6's vale closing the arrangement"
+        }
+      ],
+      "mistake": {
+        "display": "Estoy comiendo, me llamo luego.",
+        "why": "me llamo says your name. To promise a call it is te llamo."
+      },
+      "usage": "The commonest way any Spanish phone call ends early.",
+      "register": "informal",
+      "mnemonic": "me names you, te calls you."
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "¿Le dejo un mensaje?",
+      "cue": "Shall I leave her a message?",
+      "literal": "To-her I-leave a message?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Le",
+            "cue": "to him · to her",
+            "tag": "delta",
+            "forms": [],
+            "note": "Names the person something is done TO or FOR, and it does not say which gender. It is the same le that sits inside le gusta."
+          },
+          {
+            "display": "dejo",
+            "cue": "I leave",
+            "tag": "free",
+            "forms": [
+              "dejo",
+              "deja"
+            ],
+            "note": "dejar, to leave something behind. Not the same as leaving a place, which is a different verb."
+          },
+          {
+            "display": "mensaje",
+            "cue": "message",
+            "tag": "free",
+            "forms": [
+              "mensaje",
+              "mensajes"
+            ],
+            "note": "Masculine despite the -e: un mensaje. The j is the same breathy h as in lejos."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "le covers him and her alike. Spanish marks the role and not the gender here, which is the opposite of what English does.",
+      "sound": "men-SA-he, with the j said as a breathy h and the final e always sounded.",
+      "variations": [
+        {
+          "display": "¿Le dejo un mensaje a tu hermana?",
+          "cue": "Shall I leave your sister a message?",
+          "changed": "the person named as well as pronounced"
+        },
+        {
+          "display": "Le dejo un mensaje.",
+          "cue": "I'll leave her a message.",
+          "changed": "said flat, it becomes what you are going to do"
+        },
+        {
+          "display": "¿Me deja un mensaje?",
+          "cue": "Could you leave me a message?",
+          "changed": "me instead of le, and the usted form of the verb"
+        }
+      ],
+      "mistake": {
+        "display": "¿Dejo le un mensaje?",
+        "why": "le goes in front of the conjugated verb, like every pronoun in this course: ¿Le dejo…?"
+      },
+      "usage": "Offered by whoever answered. The caller says sí, por favor and then dictates it.",
+      "register": "formal",
+      "mnemonic": "le is a role, not a gender."
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "¿Me das tu número?",
+      "cue": "Can you give me your number?",
+      "literal": "To-me give(you) your number?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "número",
+            "cue": "number",
+            "tag": "free",
+            "forms": [
+              "número",
+              "números"
+            ],
+            "note": "Masculine: el número. The accent is on the first syllable and is written because that is unusual for a word ending in a vowel."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The accent on número is not optional. Without it the word would be stressed on the middle syllable and would be a verb.",
+      "sound": "NU-me-ro — three syllables, stressed on the first, which is what the accent marks.",
+      "variations": [
+        {
+          "display": "¿Me da tu número, por favor?",
+          "cue": "Could you give me your number, please?",
+          "changed": "the usted verb, with por favor softening it"
+        },
+        {
+          "display": "¿Me das tu número de casa?",
+          "cue": "Can you give me your home number?",
+          "changed": "de naming which number"
+        },
+        {
+          "display": "Tu número es muy largo.",
+          "cue": "Your number is very long.",
+          "changed": "tu in front of a different sentence"
+        }
+      ],
+      "mistake": {
+        "display": "¿Me das tu numero?",
+        "why": "The accent is part of the spelling: número. Dropping it moves the stress and the word."
+      },
+      "usage": "Ending a first conversation. Spanish asks directly and it is not forward.",
+      "register": "informal",
+      "mnemonic": "The accent holds the stress at the front."
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "No está, llama luego, por favor.",
+      "cue": "She isn't in, call later, please.",
+      "literal": "Not is, call(you) later, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "llama",
+            "cue": "call (tú imperative)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tú imperative of llamar, and it is spelled exactly like the he-she form. For most verbs the friendly command IS the third-person present. The row for llamar is S05's."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "llama is both \"he calls\" and \"call!\". Only the sentence tells them apart, and Spanish is comfortable with that.",
+      "sound": "YA-ma. The double l is one sound, never two.",
+      "variations": [
+        {
+          "display": "No está, llama el viernes.",
+          "cue": "She isn't in, call on Friday.",
+          "changed": "a named day rather than luego"
+        },
+        {
+          "display": "No está en casa.",
+          "cue": "She isn't at home.",
+          "changed": "the place named"
+        },
+        {
+          "display": "No está, ¿le dejo un mensaje?",
+          "cue": "She isn't in, shall I leave her a message?",
+          "changed": "the offer that usually follows"
+        }
+      ],
+      "mistake": {
+        "display": "No está, llamas luego.",
+        "why": "llamas is a statement — \"you call\". The command drops the -s: llama."
+      },
+      "usage": "Said by whoever answered, and it is not rude. Spanish gives instructions more directly than English does.",
+      "register": "informal",
+      "mnemonic": "The friendly command is the he-form."
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "Perdone, número equivocado.",
+      "cue": "Sorry, wrong number.",
+      "literal": "Excuse(polite), number mistaken.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "equivocado",
+            "cue": "wrong · mistaken",
+            "tag": "delta",
+            "forms": [
+              "equivocado",
+              "equivocada"
+            ],
+            "note": "Describes something that has been got wrong, so it agrees with what it describes: número equivocado, casa equivocada."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "No verb at all, and none is expected. Spanish drops the whole frame once the situation is obvious.",
+      "sound": "e-ki-bo-KA-do, five syllables, with the qu a plain k and the v said like a b.",
+      "variations": [
+        {
+          "display": "Perdone, es el número equivocado.",
+          "cue": "Sorry, it's the wrong number.",
+          "changed": "the full sentence, with the verb back"
+        },
+        {
+          "display": "Disculpe, número equivocado.",
+          "cue": "Sorry, wrong number.",
+          "changed": "M1's other opener"
+        },
+        {
+          "display": "Creo que es el número equivocado.",
+          "cue": "I think it's the wrong number.",
+          "changed": "M5's creo que, which softens it"
+        }
+      ],
+      "mistake": {
+        "display": "Perdone, número equivocada.",
+        "why": "número is masculine, so the adjective is equivocado."
+      },
+      "usage": "Said and heard in a second, and then the call ends. Perdone is what keeps it civil.",
+      "register": "formal",
+      "mnemonic": "The number is wrong, so the adjective follows the number."
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "Te llamo mañana, ¿vale?",
+      "cue": "I'll call you tomorrow, OK?",
+      "literal": "To-you I-call tomorrow, OK?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "te",
+            "cue": "to you",
+            "tag": "interference",
+            "forms": [],
+            "note": "The partner of M1's me, and on this verb it is what separates a promise from a name: te llamo is \"I'll call you\", me llamo is \"my name is\"."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Everything here is recombination: M6's vale, M6's arrangement present, and this module's te llamo. No new word, and that is the point of the last sentence.",
+      "sound": "The question at the end lifts the pitch on VA-le and nothing else.",
+      "variations": [
+        {
+          "display": "Te llamo el viernes, ¿vale?",
+          "cue": "I'll call you on Friday, OK?",
+          "changed": "a named day"
+        },
+        {
+          "display": "Te llamo luego, ¿vale?",
+          "cue": "I'll call you later, OK?",
+          "changed": "luego, when you cannot promise a day"
+        },
+        {
+          "display": "Vale, hasta luego.",
+          "cue": "OK, see you.",
+          "changed": "the reply, and the end of the call"
+        }
+      ],
+      "mistake": {
+        "display": "Te llamaré mañana, ¿vale?",
+        "why": "The present carries a settled plan: te llamo mañana. A future tense here sounds like a forecast."
+      },
+      "usage": "How half of all Spanish calls end. ¿vale? asks for agreement without asking a question.",
+      "register": "informal",
+      "mnemonic": "Promise it in the present and seal it with vale."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M7-C01",
+      "display": "Diga, ¿quién es?",
+      "cue": "Hello, who's calling?"
+    },
+    {
+      "id": "L2-M7-C02",
+      "display": "Soy Rohan, ¿está tu hermana?",
+      "cue": "It's Rohan, is your sister there?"
+    },
+    {
+      "id": "L2-M7-C03",
+      "display": "Un momento, ahora se pone.",
+      "cue": "One moment, she's coming to the phone."
+    },
+    {
+      "id": "L2-M7-C04",
+      "display": "Está hablando con mi madre.",
+      "cue": "He's talking to my mother."
+    },
+    {
+      "id": "L2-M7-C05",
+      "display": "Estoy comiendo, te llamo luego.",
+      "cue": "I'm eating, I'll call you later."
+    },
+    {
+      "id": "L2-M7-C06",
+      "display": "¿Le dejo un mensaje?",
+      "cue": "Shall I leave her a message?"
+    },
+    {
+      "id": "L2-M7-C07",
+      "display": "¿Me das tu número?",
+      "cue": "Can you give me your number?"
+    },
+    {
+      "id": "L2-M7-C08",
+      "display": "No está, llama luego, por favor.",
+      "cue": "She isn't in, call later, please."
+    },
+    {
+      "id": "L2-M7-C09",
+      "display": "Perdone, número equivocado.",
+      "cue": "Sorry, wrong number."
+    },
+    {
+      "id": "L2-M7-C10",
+      "display": "Te llamo mañana, ¿vale?",
+      "cue": "I'll call you tomorrow, OK?"
+    },
+    {
+      "id": "L2-M7-C11",
+      "display": "Ahora no puede, lo siento.",
+      "cue": "She can't right now, I'm sorry."
+    },
+    {
+      "id": "L2-M7-C12",
+      "display": "Dígame, ¿quién es?",
+      "cue": "Hello, who's calling?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

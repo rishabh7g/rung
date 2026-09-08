@@ -161,11 +161,11 @@ what "written unaided" is supposed to look like. The passive stays out of L3 by 
 `बोललो` stays the pinned index miss it has been since docs/15. **The native gate is still unmet**:
 docs/51 ends in open questions 71–96.
 
-**en-es starts its second level (#435, #444, 2026-09-08) — the first L2 outside hi-mr.** `L2-M1`
-_Asking politely_ through `L2-M5` _Food and hosting_ are authored against the briefs of #426
+**en-es climbs to two levels (#435, #444, #453, 2026-09-08) — the first L2 outside hi-mr.** All ten
+L2 rungs — `L2-M1`…`L2-M10`, _Conversations_ — are authored against the briefs of #426
 (`docs/53-en-es-L2-brief-decisions.md`) and carry `verified: true` on the same standing authority,
 backed by `docs/61-llm-review-en-es-L2.md`; a strict `npm run build` emits
-`en-es: 15 modules (L1-M1..M10, L2-M1..M5)` and the cumulative index runs 228 → 375 surfaces. M1
+`en-es: 20 modules (L1-M1..M10, L2-M1..M10)` and the cumulative index runs 228 → 477 surfaces. M1
 teaches the FRAME rather than the pronoun — the level's register decision, and the correction the
 briefs record, since L1-M2 had already taught `usted` on a row of its own — with `¿Me da…?` beside
 `¿Me das…?` and `¿Puede…?` beside `¿Puedes…?`, chipped `formal` and `informal` (#422); M2 teaches
@@ -174,12 +174,21 @@ split. Authoring moved one key an unexecuted brief had misassigned — the bare 
 not M5's, because `¿Me da…?` is M1's own first pattern — and both brief notes were corrected in the
 same commit. The **shown-surface ratchet (#491) caught two waves of variation-only surfaces**
 before either shipped, `por` among them, which `docs/53` keeps unowned across the whole level; the
-en-es baseline stays at 10. **The native gate is still unmet**: docs/61 ends in open questions 1–11,
-a fresh en-es L2 chain. M3 pays the `bueno` ruling in full — the row is authored on `buenas` with
-no masculine singular, because that key is L1-M10's discourse "well, …" — M4 teaches the polite
-imperative as a recipe from the I-form and names L3's subjunctive as the system it belongs to,
-and M5 puts `para` in for a recipient and nothing else, with bare `por` still appearing nowhere in
-the level.
+en-es baseline stays at 10. **The native gate is still unmet**: docs/61 ends in open questions 1–19,
+a fresh en-es L2 chain. What L2 teaches: the request frames and the stem change L1 shipped twice
+without naming (M1), `tener` for features and the `es listo` / `está listo` pair (M2), the
+agreement grid with the `bueno` ruling paid in full — the row is authored on `buenas` with no
+masculine singular, because that key is L1-M10's discourse "well, …" (M3), `hay` against `está`
+and the polite imperative as a recipe from the I-form, with L3's subjunctive named as the system
+it belongs to (M4), `para` for a recipient and nothing else, with bare `por` appearing nowhere in
+the level (M5), the `nosotros` cell that doubles as a suggestion (M6), the gerund and `te llamo` —
+the payoff of L1-M1's decision to index `Me llamo` whole (M7), `doler` built exactly like
+`gustar`, which is where `gustar` stops being a quirk and becomes a class (M8), the comparatives
+that cost no new function word (M9), and in M10 four-sentence accounts whose last item opens no
+new word at all. **The shown-surface ratchet (#491) held the line for the whole level**: ten
+modules, 249 new surfaces, and the en-es baseline still at 10 — every variation that reached for
+an untaught word was rewritten rather than baselined, and most of them were reaching for another
+cell of a verb the module already taught.
 
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by

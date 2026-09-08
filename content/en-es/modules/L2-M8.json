@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": [
+    "L2-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present",
+      "preterite"
+    ],
+    "allowedPatterns": [
+      "Me duele + el/la + N",
+      "No funciona + el/la + N",
+      "¿Me puede ayudar?",
+      "Tengo que + V-inf",
+      "Perdone + , + creo que hay un problema"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "doler is built exactly like gustar: the part that hurts is the SUBJECT and the verb agrees with it — me duele la cabeza, me duelen los pies. me only says who feels it. gustar was never a quirk; it is a class."
+    },
+    {
+      "tag": "interference",
+      "text": "The article stands where English wants a possessive: me duele LA cabeza, never mi cabeza. The me has already said whose it is."
+    },
+    {
+      "tag": "delta",
+      "text": "tener que plus a dictionary-form verb is how Spanish says \"have to\": tengo que ir. The que cannot be dropped, and tengo ir is not a sentence."
+    },
+    {
+      "tag": "interference",
+      "text": "Spanish complains through the frame, not through volume: Perdone, creo que hay un problema. An unsoftened No funciona reads as an accusation, and softening it takes two words."
+    },
+    {
+      "tag": "delta",
+      "text": "problema is masculine despite the -a, because it is one of a small Greek family — el problema, el tema. It is the promise M1 of the level below made when it refused the \"-o/-a\" shortcut."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "Me duele la cabeza.",
+      "cue": "I have a headache.",
+      "literal": "To-me hurts the head.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "duele",
+            "cue": "hurts",
+            "tag": "delta",
+            "forms": [
+              "duele",
+              "duelen"
+            ],
+            "note": "doler, and the stem changes o→ue exactly as poder does. The thing that hurts is the subject, so one thing takes duele and more than one takes duelen."
+          },
+          {
+            "display": "cabeza",
+            "cue": "head",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: la cabeza. The z is the same th or s as in cerca, depending where you are."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The head is doing the hurting, not you. That is why the verb agrees with it and not with the person who feels it.",
+      "sound": "DWE-le, with the same glide as puedo. ka-BE-sa or ka-BE-tha.",
+      "variations": [
+        {
+          "display": "Le duele la cabeza.",
+          "cue": "His head hurts.",
+          "changed": "M7's le, so it is someone else who feels it"
+        },
+        {
+          "display": "¿Te duele la cabeza?",
+          "cue": "Does your head hurt?",
+          "changed": "asked of a friend"
+        },
+        {
+          "display": "No me duele la cabeza.",
+          "cue": "My head doesn't hurt.",
+          "changed": "no in front of the pronoun and the verb alike"
+        }
+      ],
+      "mistake": {
+        "display": "Me duele mi cabeza.",
+        "why": "The me already says whose head it is: me duele la cabeza."
+      },
+      "usage": "The commonest complaint anyone makes, and the frame carries every other one.",
+      "register": "neutral",
+      "mnemonic": "The body part does the hurting; you only receive it."
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "Me duelen los pies.",
+      "cue": "My feet hurt.",
+      "literal": "To-me hurt the feet.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "duelen",
+            "cue": "hurt (more than one)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two feet, so the verb goes plural — because the feet are the subject. The row for doler is S01's."
+          },
+          {
+            "display": "pies",
+            "cue": "feet",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine: los pies. The singular is pie, one syllable."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "me does not change for the plural and the verb does. It is exactly the me gusta / me gustan pair from the first module of the course.",
+      "sound": "DWE-len, and PYES as a single syllable.",
+      "variations": [
+        {
+          "display": "Me duelen mucho los pies.",
+          "cue": "My feet hurt a lot.",
+          "changed": "mucho on the verb, where it belongs"
+        },
+        {
+          "display": "Le duelen los pies.",
+          "cue": "His feet hurt.",
+          "changed": "someone else feeling it"
+        },
+        {
+          "display": "¿Te duelen los pies?",
+          "cue": "Do your feet hurt?",
+          "changed": "the question, to a friend"
+        }
+      ],
+      "mistake": {
+        "display": "Me duele los pies.",
+        "why": "The feet are the subject and there are two of them: me duelen."
+      },
+      "usage": "After a long day walking, which in a Spanish city is most of them.",
+      "register": "neutral",
+      "mnemonic": "Count the body parts, not the people."
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "El teléfono no funciona.",
+      "cue": "The phone doesn't work.",
+      "literal": "The telephone not works.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "teléfono",
+            "cue": "telephone",
+            "tag": "free",
+            "forms": [
+              "teléfono",
+              "teléfonos"
+            ],
+            "note": "Masculine: el teléfono. The accent marks the stress two syllables from the end, which is unusual and therefore written."
+          },
+          {
+            "display": "funciona",
+            "cue": "works",
+            "tag": "free",
+            "forms": [],
+            "note": "Of a machine only. A person who works is trabaja, and the two are never swapped."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "funcionar is for machines and trabajar is for people. English uses \"work\" for both and Spanish will not.",
+      "sound": "te-LE-fo-no, four syllables, stressed where the accent says.",
+      "variations": [
+        {
+          "display": "El metro no funciona hoy.",
+          "cue": "The metro isn't working today.",
+          "changed": "something bigger than a phone"
+        },
+        {
+          "display": "No funciona, lo siento.",
+          "cue": "It doesn't work, I'm sorry.",
+          "changed": "the subject dropped, as Spanish does once it is known"
+        },
+        {
+          "display": "¿Funciona el teléfono?",
+          "cue": "Does the phone work?",
+          "changed": "asked as a question, subject at the end"
+        }
+      ],
+      "mistake": {
+        "display": "El teléfono no trabaja.",
+        "why": "trabajar is what a person does for a living. A machine funciona."
+      },
+      "usage": "Reporting a fault. On its own it is flat; S07 shows how to soften it.",
+      "register": "neutral",
+      "mnemonic": "Machines function, people work."
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "Está roto, lo siento.",
+      "cue": "It's broken, I'm sorry.",
+      "literal": "Is broken, it I-feel.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "roto",
+            "cue": "broken",
+            "tag": "delta",
+            "forms": [
+              "roto",
+              "rota",
+              "rotos",
+              "rotas"
+            ],
+            "note": "Describes the state something is in, so it goes with estar and agrees with the thing: la puerta está rota."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "estar, not ser. Being broken is a state, and ser would be claiming the thing is broken by nature.",
+      "sound": "RO-to, with the initial r rolled — a single tap is a different word.",
+      "variations": [
+        {
+          "display": "La puerta está rota.",
+          "cue": "The door is broken.",
+          "changed": "a feminine thing, so the adjective moves"
+        },
+        {
+          "display": "El teléfono está roto.",
+          "cue": "The phone is broken.",
+          "changed": "the module's own object"
+        },
+        {
+          "display": "No está roto, no funciona.",
+          "cue": "It isn't broken, it just doesn't work.",
+          "changed": "the two complaints set against each other"
+        }
+      ],
+      "mistake": {
+        "display": "Es roto, lo siento.",
+        "why": "A state takes estar: está roto."
+      },
+      "usage": "Admitting a fault as well as reporting one. lo siento is what makes it an apology.",
+      "register": "neutral",
+      "mnemonic": "Broken is a state, and states are estar."
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "¿Me puede ayudar, por favor?",
+      "cue": "Could you help me, please?",
+      "literal": "To-me can(polite) to-help, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ayudar",
+            "cue": "to help",
+            "tag": "free",
+            "forms": [
+              "ayudar",
+              "ayuda"
+            ],
+            "note": "Takes a direct object with no preposition: ayudar a alguien takes an a only because it is a person. ayuda is also the noun, help."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "me climbs to the front of both verbs, exactly as M1 taught with ¿Me puede dar…?",
+      "sound": "a-yu-DAR, with the y as in \"yes\" and the final r tapped once.",
+      "variations": [
+        {
+          "display": "¿Me puedes ayudar?",
+          "cue": "Can you help me?",
+          "changed": "asked of a friend"
+        },
+        {
+          "display": "Necesito ayuda, por favor.",
+          "cue": "I need help, please.",
+          "changed": "the noun instead of the verb"
+        },
+        {
+          "display": "¿Le puedo ayudar?",
+          "cue": "Can I help you?",
+          "changed": "offered rather than asked for, with M7's le"
+        }
+      ],
+      "mistake": {
+        "display": "¿Puede me ayudar, por favor?",
+        "why": "me never sits between two verbs. It goes in front of both: ¿Me puede ayudar?"
+      },
+      "usage": "The sentence to have ready in any country. It works on a street, in a shop and at a counter alike.",
+      "register": "formal",
+      "mnemonic": "The little word runs to the very front."
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "Tengo que ir al médico.",
+      "cue": "I have to go to the doctor.",
+      "literal": "I-have that to-go to-the doctor.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ir",
+            "cue": "to go",
+            "tag": "free",
+            "forms": [],
+            "note": "The dictionary form of voy, vas and vamos — a verb whose forms look nothing like it, which is why it has waited until it was needed."
+          },
+          {
+            "display": "médico",
+            "cue": "doctor",
+            "tag": "free",
+            "forms": [
+              "médico",
+              "médica"
+            ],
+            "note": "Masculine or feminine by who the doctor is: el médico, la médica. Also used as the adjective medical."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The que is obligatory. tengo ir is not a sentence, and English's \"have to\" gives no clue that a word is missing.",
+      "sound": "IR is one syllable, and the r at the end is a single tap.",
+      "variations": [
+        {
+          "display": "Tengo que ir a casa.",
+          "cue": "I have to go home.",
+          "changed": "a place that takes no article"
+        },
+        {
+          "display": "Tienes que ir al médico.",
+          "cue": "You have to go to the doctor.",
+          "changed": "said to a friend"
+        },
+        {
+          "display": "Tengo que quedar con mi hermana.",
+          "cue": "I have to meet my sister.",
+          "changed": "M6's verb inside the obligation"
+        }
+      ],
+      "mistake": {
+        "display": "Tengo ir al médico.",
+        "why": "tener que needs its que: tengo que ir."
+      },
+      "usage": "Explaining why you have to leave, and the commonest excuse there is.",
+      "register": "neutral",
+      "mnemonic": "Spanish has THAT to go."
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "Perdone, creo que hay un error.",
+      "cue": "Excuse me, I think there's a mistake.",
+      "literal": "Excuse(polite), I-think that there-is a mistake.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "error",
+            "cue": "mistake",
+            "tag": "free",
+            "forms": [
+              "error",
+              "errores"
+            ],
+            "note": "Masculine: un error. Stressed on the second syllable, which is why the plural gains an accent nowhere — errores keeps the stress in the same place."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Three softeners before the complaint even starts: Perdone, creo que, and un rather than el. Spanish does its complaining in the frame.",
+      "sound": "e-RROR, with the double r rolled — a single tap would be a different word entirely.",
+      "variations": [
+        {
+          "display": "Perdone, creo que hay un problema.",
+          "cue": "Excuse me, I think there's a problem.",
+          "changed": "S09's noun in the same frame"
+        },
+        {
+          "display": "Disculpe, hay un error en la cuenta.",
+          "cue": "Sorry, there's a mistake in the bill.",
+          "changed": "M5's cuenta, and the place named"
+        },
+        {
+          "display": "Creo que es un error.",
+          "cue": "I think it's a mistake.",
+          "changed": "ser rather than hay, so it names rather than announces"
+        }
+      ],
+      "mistake": {
+        "display": "Perdone, hay el error.",
+        "why": "hay never takes a definite article — M4's rule. And un keeps the complaint gentle."
+      },
+      "usage": "At a counter, a till or a table. It is the softest way in Spanish to say that someone has got something wrong.",
+      "register": "formal",
+      "mnemonic": "Frame first, complaint second."
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "Perdí la llave en la calle.",
+      "cue": "I lost the key in the street.",
+      "literal": "I-lost the key in the street.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Perdí",
+            "cue": "I lost",
+            "tag": "delta",
+            "forms": [
+              "perdí",
+              "perdió"
+            ],
+            "note": "perder in the past, and the accent is what makes it \"I\": perdí. Without it, perdi is nothing at all."
+          },
+          {
+            "display": "llave",
+            "cue": "key",
+            "tag": "free",
+            "forms": [
+              "llave",
+              "llaves"
+            ],
+            "note": "Feminine: la llave. The ll is a y sound, as in calle."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "The accent carries the person. perdí is I and perdió is he or she, and the only difference is which vowel wears it.",
+      "sound": "per-DI, stressed at the end, which is what the accent marks. YA-be for llave.",
+      "variations": [
+        {
+          "display": "Perdí el teléfono.",
+          "cue": "I lost my phone.",
+          "changed": "the article where English wants a possessive"
+        },
+        {
+          "display": "Perdió la llave en el metro.",
+          "cue": "He lost the key on the metro.",
+          "changed": "the he-form, and the accent moves"
+        },
+        {
+          "display": "Perdí las llaves ayer.",
+          "cue": "I lost the keys yesterday.",
+          "changed": "plural, and a time from the level below"
+        }
+      ],
+      "mistake": {
+        "display": "Perdi la llave en la calle.",
+        "why": "Without the accent the word has no person and no stress: perdí."
+      },
+      "usage": "Reported to whoever might have found it. The past tense here is L1-M5's, doing exactly its job.",
+      "register": "neutral",
+      "mnemonic": "The accent is the person."
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "Es un problema muy grande.",
+      "cue": "It's a very big problem.",
+      "literal": "Is a problem very big.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "problema",
+            "cue": "problem",
+            "tag": "interference",
+            "forms": [
+              "problema",
+              "problemas"
+            ],
+            "note": "Masculine despite ending in -a: el problema, un problema. It belongs to a small Greek family — el tema, el sistema — and the ending predicts nothing."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The word the whole course has been promising since its first gender note. If \"-a is feminine\" were a rule, this would be la problema.",
+      "sound": "pro-BLE-ma, with the b soft between vowels and one tapped r.",
+      "variations": [
+        {
+          "display": "No es un problema.",
+          "cue": "It isn't a problem.",
+          "changed": "the reassurance, which is how the word is most often used"
+        },
+        {
+          "display": "Hay un problema con el teléfono.",
+          "cue": "There's a problem with the phone.",
+          "changed": "hay announcing it, and con naming what it is with"
+        },
+        {
+          "display": "Es un problema pequeño.",
+          "cue": "It's a small problem.",
+          "changed": "M3's adjective, still agreeing masculine"
+        }
+      ],
+      "mistake": {
+        "display": "Es una problema muy grande.",
+        "why": "problema is masculine: un problema. Learn every noun with its article and this never bites."
+      },
+      "usage": "Said about the situation rather than about the person, which is what keeps it civil.",
+      "register": "neutral",
+      "mnemonic": "The -a that lies."
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "No lo encuentro, ¿puede ayudarme?",
+      "cue": "I can't find it, could you help me?",
+      "literal": "Not it I-find, can(polite) to-help-me?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "encuentro",
+            "cue": "I find",
+            "tag": "delta",
+            "forms": [
+              "encuentro",
+              "encuentra"
+            ],
+            "note": "encontrar, and the stem changes o→ue like poder and doler: encuentro, encuentra, but encontrar."
+          },
+          {
+            "display": "ayudarme",
+            "cue": "to help me",
+            "tag": "delta",
+            "forms": [],
+            "note": "The one place the little word may follow the verb: glued onto a dictionary form, as one word. ¿Me puede ayudar? and ¿Puede ayudarme? are both right and mean the same."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Two legal places for me and no third. Either in front of everything, or glued to the end of a dictionary-form verb — never loose between them.",
+      "sound": "en-KWEN-tro, with the ue glide again. a-yu-DAR-me, stressed where ayudar was.",
+      "variations": [
+        {
+          "display": "No lo encuentro.",
+          "cue": "I can't find it.",
+          "changed": "the shortest it gets"
+        },
+        {
+          "display": "¿Puede ayudarme, por favor?",
+          "cue": "Could you help me, please?",
+          "changed": "the glued form standing alone"
+        },
+        {
+          "display": "No encuentro la llave.",
+          "cue": "I can't find the key.",
+          "changed": "the thing named instead of pronounced"
+        }
+      ],
+      "mistake": {
+        "display": "¿Puede me ayudar?",
+        "why": "Loose between the verbs is the one place me cannot go. Either ¿Me puede ayudar? or ¿Puede ayudarme?"
+      },
+      "usage": "In a shop, a station, an office. The two halves are a report and a request, and Spanish likes them in that order.",
+      "register": "formal",
+      "mnemonic": "Front of everything, or glued to the end — nowhere in between."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M8-C01",
+      "display": "Me duele la cabeza.",
+      "cue": "I have a headache."
+    },
+    {
+      "id": "L2-M8-C02",
+      "display": "Me duelen los pies.",
+      "cue": "My feet hurt."
+    },
+    {
+      "id": "L2-M8-C03",
+      "display": "El teléfono no funciona.",
+      "cue": "The phone doesn't work."
+    },
+    {
+      "id": "L2-M8-C04",
+      "display": "La puerta está rota.",
+      "cue": "The door is broken."
+    },
+    {
+      "id": "L2-M8-C05",
+      "display": "¿Me puede ayudar, por favor?",
+      "cue": "Could you help me, please?"
+    },
+    {
+      "id": "L2-M8-C06",
+      "display": "Tengo que ir al médico.",
+      "cue": "I have to go to the doctor."
+    },
+    {
+      "id": "L2-M8-C07",
+      "display": "Perdone, creo que hay un error.",
+      "cue": "Excuse me, I think there's a mistake."
+    },
+    {
+      "id": "L2-M8-C08",
+      "display": "Perdí la llave en la calle.",
+      "cue": "I lost the key in the street."
+    },
+    {
+      "id": "L2-M8-C09",
+      "display": "Es un problema muy grande.",
+      "cue": "It's a very big problem."
+    },
+    {
+      "id": "L2-M8-C10",
+      "display": "No lo encuentro, ¿puede ayudarme?",
+      "cue": "I can't find it, could you help me?"
+    },
+    {
+      "id": "L2-M8-C11",
+      "display": "Hay un problema con el teléfono.",
+      "cue": "There's a problem with the phone."
+    },
+    {
+      "id": "L2-M8-C12",
+      "display": "¿Te duele la cabeza?",
+      "cue": "Does your head hurt?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
