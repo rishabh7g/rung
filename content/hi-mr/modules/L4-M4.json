@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": [
+    "L4-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "future"
+    ],
+    "allowedPatterns": [
+      "clause + तरी + clause",
+      "Adj/N + असलं + तरी + clause",
+      "clause. तरीही + clause",
+      "खरं तर + clause",
+      "N-पेक्षा + N + Adj + आहे"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "तरी closes the concessive clause from the BACK: [clause] + तरी + [main clause]. पाऊस आला तरी मी येईन — 'even if it rains, I'll come'. The clause before तरी takes exactly the past shape L3-M4's जर clause takes, and तरी is what flips 'if' into 'even if'. It is the spine of the module and the one shape the ladder has never had."
+    },
+    {
+      "tag": "delta",
+      "text": "असलं तरी concedes a STATE rather than an event: महाग असलं तरी चांगलं आहे, ती भाजी महाग असली तरी चांगली आहे, तो लहान असला तरी हुशार आहे. The असलं agrees with the thing being conceded, never with the speaker, and it appears only in front of तरी — this is not a new tense, it is one cell of असणे bought for one job."
+    },
+    {
+      "tag": "delta",
+      "text": "तरीही opens the NEXT sentence — 'even so' — where तरी sits inside one. काल खूप गर्दी होती. तरीही मला जागा मिळाली. Hindi's फिर भी does both jobs with one word; Marathi splits them, and putting तरी where तरीही belongs (or the reverse) is the commonest slip after the front-versus-back one."
+    },
+    {
+      "tag": "interference",
+      "text": "Hindi's हालाँकि opens the concessive clause from the FRONT. Marathi has nothing in that slot at all — it closes from the back with तरी — so हालाँकि पाऊस आला, मी येईन is not a Marathi sentence, it is a Hindi sentence in Devanagari. Put the concession word at the END of the clause it concedes. Second, smaller: Hindi लेकिन and पर both come out as पण, which L4-M2 bought and this module uses without re-teaching."
+    },
+    {
+      "tag": "free",
+      "text": "The case-making words a persuader needs, and most of them are already owned. खरं तर is TWO owned words — खरं (L3-M3) + तर (L3-M4) — meaning 'actually, in fact', and since this course indexes single tokens the phrase owns no row and lives here. Beside it: मान्य आहे (granted), नक्कीच (certainly), बरोबरच (quite right), खरंच (really). नक्कीच, बरोबरच and खरंच are all the same -च stuck on a word the learner already has."
+    },
+    {
+      "tag": "free",
+      "text": "-पेक्षा welds onto the thing compared, and the comparison itself is L2-M9's and not new: त्यापेक्षा हे पुस्तक स्वस्त आहे. L2-M9 bought only the fused माझ्यापेक्षा, so त्यापेक्षा is a fresh word here even though the grammar behind it is two levels old. Never write त्या पेक्षा as two words."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "पाऊस आला तरी मी येईन",
+      "cue": "बारिश आ भी जाए तो भी मैं आऊँगा",
+      "glossEn": "Even if it rains, I will come",
+      "literal": "बारिश आई फिर-भी मैं आऊँगा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "तरी",
+            "cue": "फिर भी / भले ही",
+            "tag": "delta",
+            "forms": [
+              "तरी"
+            ],
+            "note": "Closes the concessive clause from the BACK, where L3-M4's तर closes a condition. तरी is NOT a form of तर — one letter apart, two different words."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "हिंदी हालाँकि/भले ही वाक्य के आगे लगाता है, मराठी तरी उस आधे के पीछे लगाता है. आगे कुछ नहीं आता — पाऊस आला तरी, न कि तरी पाऊस आला.",
+      "sound": "तरी = त‑री, 'री' थोड़ा लंबा. तर (त‑र) से एक ही मात्रा का फ़र्क़ है, इसलिए साफ़ बोलिए.",
+      "variations": [
+        {
+          "display": "उशीर झाला तरी मी येईन",
+          "cue": "देर हो भी जाए तो भी मैं आऊँगा",
+          "changed": "शर्त बदली — पाऊस आला → उशीर झाला. तरी वहीं, आधे के पीछे."
+        },
+        {
+          "display": "पाऊस आला तरी आम्ही जाणार",
+          "cue": "बारिश आ भी जाए तो भी हम जाएँगे",
+          "changed": "दूसरा आधा बदला — मी येईन → आम्ही जाणार. तरी वाले आधे को कुछ नहीं हुआ."
+        }
+      ],
+      "mistake": {
+        "display": "हालाँकि पाऊस आला, तरी मी येईन",
+        "why": "हालाँकि हिंदी का शब्द है और वह आगे बैठता है. मराठी में रियायत वाला शब्द सिर्फ़ पीछे आता है, और वह अकेला तरी है."
+      },
+      "usage": "अपना इरादा पक्का बताते वक़्त, किसी अड़चन के बावजूद.",
+      "register": "neutral",
+      "mnemonic": "तर आगे शर्त, तरी पीछे रियायत."
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "हे महाग असलं तरी चांगलं आहे",
+      "cue": "यह महँगा होने पर भी अच्छा है",
+      "glossEn": "Even though it's expensive, it's good",
+      "literal": "यह महँगा होने-पर-भी अच्छा है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "असलं",
+            "cue": "होने पर भी",
+            "tag": "delta",
+            "forms": [
+              "असलं",
+              "असला",
+              "असली"
+            ],
+            "note": "असणे's -लं cell, used only in front of तरी. It agrees with the thing conceded: महाग असलं तरी, भाजी महाग असली तरी, तो लहान असला तरी."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "असलं उस चीज़ से मिलता है जिसकी रियायत दी जा रही है, बोलने वाले से नहीं. हे नपुंसक है इसलिए असलं; ही भाजी होती तो असली.",
+      "sound": "असलं = अ‑स‑लं, अंत नाक से. असलं तरी बोलते वक़्त दोनों जुड़ जाते हैं.",
+      "variations": [
+        {
+          "display": "ही भाजी महाग असली तरी चांगली आहे",
+          "cue": "यह सब्ज़ी महँगी होने पर भी अच्छी है",
+          "changed": "चीज़ औरत-जाति हुई — असली तरी, और चांगली भी."
+        },
+        {
+          "display": "तो लहान असला तरी हुशार आहे",
+          "cue": "वह छोटा होने पर भी होशियार है",
+          "changed": "चीज़ मर्दाना हुई — असला तरी. तीन रूप, एक ही काम."
+        }
+      ],
+      "mistake": {
+        "display": "महाग तरी असलं हे चांगलं आहे",
+        "why": "तरी हमेशा उस आधे के आख़िर में आता है जिसे वह रियायत देता है: महाग असलं तरी. बीच में घुसाया नहीं जाता."
+      },
+      "usage": "ख़रीदारी में क़ीमत मानकर भी चीज़ की तारीफ़ करते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "असलं तरी = होने पर भी — और असलं चीज़ से मिलता है."
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "काल खूप गर्दी होती. तरीही मला जागा मिळाली.",
+      "cue": "कल बहुत भीड़ थी. फिर भी मुझे जगह मिल गई.",
+      "glossEn": "There was a big crowd yesterday. Even so, I got a seat.",
+      "literal": "कल बहुत भीड़ थी. फिर-भी मुझे जगह मिली.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "तरीही",
+            "cue": "फिर भी",
+            "tag": "delta",
+            "forms": [
+              "तरीही"
+            ],
+            "note": "तरी + ही. It opens the NEXT sentence — 'even so' — instead of closing a clause. Hindi फिर भी does both jobs; Marathi keeps them apart."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "तरी एक ही वाक्य के अंदर काम करता है, तरीही अगले वाक्य को शुरू करता है. हिंदी 'फिर भी' दोनों जगह चलता है — मराठी में दो अलग शब्द हैं.",
+      "sound": "तरीही = त‑री‑ही, तीनों हलके, आख़िरी 'ही' खींचिए मत.",
+      "variations": [
+        {
+          "display": "खूप उशीर झाला. तरीही मी गेलो.",
+          "cue": "बहुत देर हो गई. फिर भी मैं गया.",
+          "changed": "पहला वाक्य बदला, तरीही अब भी दूसरे वाक्य के सिर पर."
+        },
+        {
+          "display": "काम अवघड होतं. तरीही ते झालं.",
+          "cue": "काम मुश्किल था. फिर भी वह हो गया.",
+          "changed": "दोनों वाक्य नपुंसक — होतं, झालं. तरीही कभी नहीं बदलता."
+        }
+      ],
+      "mistake": {
+        "display": "काल खूप गर्दी होती. तरी मला जागा मिळाली.",
+        "why": "नए वाक्य के सिर पर तरीही आता है. तरी को अपने आगे उसी वाक्य में एक आधा चाहिए."
+      },
+      "usage": "कोई क़िस्सा सुनाते वक़्त, जब नतीजा उम्मीद के उलट निकला हो.",
+      "register": "neutral",
+      "mnemonic": "तरी अंदर, तरीही अगले वाक्य के सिर पर."
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "खरं तर हे स्वस्त आहे, त्याचा फायदा जास्त आहे",
+      "cue": "असल में यह सस्ता है, इसका फ़ायदा ज़्यादा है",
+      "glossEn": "Actually this is cheap — there's more benefit in it",
+      "literal": "सच तो यह सस्ता है, उसका फ़ायदा ज़्यादा है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "फायदा",
+            "cue": "फ़ायदा",
+            "tag": "free",
+            "forms": [
+              "फायदा"
+            ],
+            "note": "The same word as Hindi फ़ायदा, written without the nuqta. Masculine: त्याचा फायदा जास्त आहे."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "खरं तर दो अलग शब्द हैं और दोनों पहले से आपके हैं — खरं (L3-M3) और तर (L3-M4). खरंतर जोड़कर मत लिखिए, और यहाँ तर का शर्त वाला मतलब बिलकुल नहीं है.",
+      "sound": "खरं तर = ख‑रं‑तर, बीच में हलका ठहराव. फायदा = फा‑य‑दा, बिना नुक़्ते के.",
+      "variations": [
+        {
+          "display": "खरं तर हे काम अवघड नाही",
+          "cue": "असल में यह काम मुश्किल नहीं है",
+          "changed": "खरं तर वैसा ही, आगे का आधा पूरा बदल गया. यह जोड़ी हमेशा वाक्य के सिर पर बैठती है."
+        },
+        {
+          "display": "खरं तर त्याचा फायदा जास्त आहे",
+          "cue": "असल में उसका फ़ायदा ज़्यादा है",
+          "changed": "सिर्फ़ फ़ायदे वाला आधा. फायदा मर्दाना है, इसलिए त्याचा."
+        }
+      ],
+      "mistake": {
+        "display": "खरंतर हे स्वस्त आहे",
+        "why": "खरं और तर दो शब्द हैं, बीच में जगह चाहिए. जोड़ने पर वह न खरं रहता है न तर."
+      },
+      "usage": "किसी की ग़लतफ़हमी सुधारते वक़्त, नरमी से.",
+      "register": "neutral",
+      "mnemonic": "खरं + तर = असल में, और यह तर शर्त वाला तर नहीं."
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "त्यापेक्षा हे पुस्तक स्वस्त आहे आणि जास्त चांगलं आहे",
+      "cue": "उससे यह किताब सस्ती है और ज़्यादा अच्छी है",
+      "glossEn": "This book is cheaper than that one, and better",
+      "literal": "उससे यह किताब सस्ती है और ज़्यादा अच्छी है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "त्यापेक्षा",
+            "cue": "उससे",
+            "tag": "free",
+            "forms": [
+              "त्यापेक्षा"
+            ],
+            "note": "त्या + -पेक्षा, welded. L2-M9 bought only माझ्यापेक्षा, so every other -पेक्षा word is fresh. Never त्या पेक्षा."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "तुलना वाली बात L2-M9 में हो चुकी है, नई सिर्फ़ यह है कि -पेक्षा हर शब्द से चिपककर एक शब्द बनाता है. L2-M9 ने सिर्फ़ माझ्यापेक्षा ख़रीदा था.",
+      "sound": "त्यापेक्षा = त्या‑पे‑क्षा. 'क्ष' को 'छ' मत बनाइए.",
+      "variations": [
+        {
+          "display": "त्यापेक्षा ही भाजी स्वस्त आहे",
+          "cue": "उससे यह सब्ज़ी सस्ती है",
+          "changed": "तुलना की चीज़ बदली — पुस्तक → भाजी. त्यापेक्षा जस का तस, वह कभी नहीं बदलता."
+        },
+        {
+          "display": "त्यापेक्षा हे घर मोठं आहे",
+          "cue": "उससे यह घर बड़ा है",
+          "changed": "तुलना का नाप बदला — स्वस्त → मोठं. ढाँचा वही: त्यापेक्षा + चीज़ + गुण + आहे."
+        }
+      ],
+      "mistake": {
+        "display": "त्या पेक्षा हे पुस्तक स्वस्त आहे",
+        "why": "-पेक्षा अलग शब्द नहीं है, वह चिपकता है: त्यापेक्षा, माझ्यापेक्षा, कॉफीपेक्षा."
+      },
+      "usage": "दो चीज़ों में से एक चुनवाते वक़्त, दुकान में या बहस में.",
+      "register": "neutral",
+      "mnemonic": "-पेक्षा चिपकता है, कभी अलग नहीं खड़ा होता."
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "मला हे मान्य आहे, पण तरीही मी जाणार नाही",
+      "cue": "मुझे यह मंज़ूर है, पर फिर भी मैं नहीं जाऊँगा",
+      "glossEn": "I grant you that, but even so I'm not going",
+      "literal": "मुझे यह मंज़ूर है, पर फिर-भी मैं जाने-वाला नहीं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "मान्य",
+            "cue": "मंज़ूर",
+            "tag": "free",
+            "forms": [
+              "मान्य"
+            ],
+            "note": "मान्य आहे — granted, accepted. The concession you make out loud before you hold your ground."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "यह इस मॉड्यूल की असली चाल है: एक बात मान लेना और दूसरी पर टिके रहना. सिर्फ़ मान लेना L3-M3 का बरोबर आहे है; सिर्फ़ मना करना L3-M3 का चूक आहे. दोनों एक साथ यहाँ हैं.",
+      "sound": "मान्य = मान्‑य, 'न्य' एक ही झटके में. तरीही आगे हलका.",
+      "variations": [
+        {
+          "display": "तुमचं बरोबर आहे, हे मला मान्य आहे",
+          "cue": "आपका ठीक है, यह मुझे मंज़ूर है",
+          "changed": "सिर्फ़ रियायत वाला आधा — यहाँ कोई पलटाव नहीं, इसलिए तरीही की ज़रूरत ही नहीं."
+        },
+        {
+          "display": "मला हे मान्य आहे, पण तरीही मी येणार नाही",
+          "cue": "मुझे यह मंज़ूर है, पर फिर भी मैं नहीं आऊँगा",
+          "changed": "क्रिया बदली — जाणार → येणार. तरीही अपनी जगह पर, पण के ठीक बाद."
+        }
+      ],
+      "mistake": {
+        "display": "मला हे मान्य आहे, पण फिर भी मी जाणार नाही",
+        "why": "फिर भी हिंदी है. मराठी में उसकी जगह तरीही है, और वह पण के बाद उसी तरह बैठता है."
+      },
+      "usage": "बहस में अपनी बात पर टिके रहते हुए, सामने वाले की इज़्ज़त रखते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "मान्य आहे … पण तरीही — मानिए, फिर भी टिकिए."
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "हे काम अवघड आहे, पण नक्कीच होईल",
+      "cue": "यह काम मुश्किल है, पर ज़रूर हो जाएगा",
+      "glossEn": "This work is hard, but it will certainly get done",
+      "literal": "यह काम मुश्किल है, पर ज़रूर होगा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "नक्कीच",
+            "cue": "ज़रूर",
+            "tag": "free",
+            "forms": [
+              "नक्कीच"
+            ],
+            "note": "नक्की (L1-M6) + -च, the emphasis particle: certainly, definitely. The same -च builds बरोबरच and खरंच."
+          },
+          {
+            "display": "अवघड",
+            "cue": "मुश्किल",
+            "tag": "free",
+            "forms": [
+              "अवघड"
+            ],
+            "note": "Hard, difficult — the everyday Marathi word. कठीण is understood but reads bookish, and Hindi मुश्किल is not used here."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "नक्कीच नक्की (L1-M6) पर -च लगाकर बना है, और वही -च बरोबरच और खरंच भी बनाता है. यह -च ज़ोर देता है, नया शब्द नहीं बनाता.",
+      "sound": "अवघड = अ‑व‑घड, बीच का 'घ' साँस के साथ. नक्कीच का अंत छोटा 'च'.",
+      "variations": [
+        {
+          "display": "हे काम अवघड नाही, नक्कीच होईल",
+          "cue": "यह काम मुश्किल नहीं है, ज़रूर हो जाएगा",
+          "changed": "रियायत हटी — अब सिर्फ़ भरोसा बचा. नक्कीच वहीं का वहीं."
+        },
+        {
+          "display": "काम अवघड असलं तरी नक्कीच होईल",
+          "cue": "काम मुश्किल होने पर भी ज़रूर हो जाएगा",
+          "changed": "पण की जगह असलं तरी — वही बात, रियायत वाले ढाँचे में."
+        }
+      ],
+      "mistake": {
+        "display": "हे काम मुश्किल आहे, पण नक्कीच होईल",
+        "why": "मुश्किल हिंदी है. मराठी में रोज़ का शब्द अवघड है."
+      },
+      "usage": "किसी को हिम्मत देते वक़्त, मुश्किल मानकर भी.",
+      "register": "neutral",
+      "mnemonic": "नक्की + च = ज़रूर, और -च हर जगह ज़ोर का काम करता है."
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "त्याचा उपयोग जास्त आहे, तोटा कमी आहे",
+      "cue": "उसका इस्तेमाल ज़्यादा है, नुक़सान कम है",
+      "glossEn": "It is more useful, and less of a loss",
+      "literal": "उसका इस्तेमाल ज़्यादा है, नुक़सान कम है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "उपयोग",
+            "cue": "इस्तेमाल / फ़ायदा",
+            "tag": "free",
+            "forms": [
+              "उपयोग"
+            ],
+            "note": "Use, usefulness. त्याचा उपयोग आहे — 'it is of use'. Masculine, like फायदा and तोटा."
+          },
+          {
+            "display": "तोटा",
+            "cue": "नुक़सान",
+            "tag": "free",
+            "forms": [
+              "तोटा"
+            ],
+            "note": "Loss, downside — फायदा's twin, and the word that makes a case two-sided. Masculine: तोटा कमी आहे."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "जास्त और कमी L2-M9 से आपके पास हैं; नया सिर्फ़ यह है कि उन्हें फ़ायदे-नुक़सान के साथ जोड़कर दलील बनाई जाती है. उपयोग, फायदा और तोटा तीनों मर्दाना हैं.",
+      "sound": "उपयोग = उ‑प‑योग. तोटा = तो‑टा, 'ट' जीभ पीछे मोड़कर.",
+      "variations": [
+        {
+          "display": "त्याचा उपयोग कमी आहे, तोटा जास्त आहे",
+          "cue": "उसका इस्तेमाल कम है, नुक़सान ज़्यादा है",
+          "changed": "जास्त और कमी की अदला-बदली — दलील उलट गई, शब्द वही रहे."
+        },
+        {
+          "display": "त्याचा फायदा जास्त आहे, तोटा कमी आहे",
+          "cue": "उसका फ़ायदा ज़्यादा है, नुक़सान कम है",
+          "changed": "उपयोग → फायदा. दोनों मर्दाना, इसलिए त्याचा दोनों जगह चलता है."
+        }
+      ],
+      "mistake": {
+        "display": "त्याचा उपयोग जास्त आहे, नुक़सान कमी आहे",
+        "why": "नुक़सान हिंदी है. मराठी में फायदा का जोड़ीदार तोटा है."
+      },
+      "usage": "कोई सलाह देते वक़्त, दोनों पलड़े दिखाकर.",
+      "register": "neutral",
+      "mnemonic": "फायदा–तोटा जोड़ी है, जैसे जास्त–कमी."
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "तो लहान असला तरी त्याचं बरोबरच आहे",
+      "cue": "वह छोटा होने पर भी उसका बिलकुल ठीक है",
+      "glossEn": "He may be young, but he's quite right",
+      "literal": "वह छोटा होने-पर-भी उसका बिलकुल-ठीक है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "बरोबरच",
+            "cue": "बिलकुल ठीक",
+            "tag": "free",
+            "forms": [
+              "बरोबरच"
+            ],
+            "note": "बरोबर (L3-M3) + -च: right, and no argument about it. The concession that costs you nothing."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "तुमचं बरोबर आहे L3-M3 का है; बरोबरच उसी पर -च लगाकर 'बिलकुल ठीक' बना देता है. यह रियायत देने का सबसे सस्ता तरीक़ा है.",
+      "sound": "बरोबरच = ब‑रो‑ब‑रच, आख़िरी 'च' छोटा और सूखा.",
+      "variations": [
+        {
+          "display": "ती लहान असली तरी तिचं बरोबरच आहे",
+          "cue": "वह छोटी होने पर भी उसका बिलकुल ठीक है",
+          "changed": "कर्ता औरत — असली तरी और तिचं. बरोबरच नहीं बदलता."
+        },
+        {
+          "display": "तो नवा असला तरी त्याचं बरोबरच आहे",
+          "cue": "वह नया होने पर भी उसका बिलकुल ठीक है",
+          "changed": "रियायत की वजह बदली — लहान → नवा. ढाँचा वही रहा."
+        }
+      ],
+      "mistake": {
+        "display": "तो लहान तरी असला त्याचं बरोबरच आहे",
+        "why": "तरी उस आधे के आख़िर में आता है: लहान असला तरी. असला के आगे रखने से आधा टूट जाता है."
+      },
+      "usage": "किसी छोटे या नए आदमी की बात का साथ देते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "बरोबर + च = बिलकुल ठीक, बहस ख़त्म."
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "हे खरंच चांगलं आहे, तरी थोडं महाग आहे",
+      "cue": "यह सचमुच अच्छा है, फिर भी थोड़ा महँगा है",
+      "glossEn": "This really is good, though it's a bit expensive",
+      "literal": "यह सचमुच अच्छा है, फिर-भी थोड़ा महँगा है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "खरंच",
+            "cue": "सचमुच",
+            "tag": "free",
+            "forms": [
+              "खरंच"
+            ],
+            "note": "खरं (L3-M3) + -च: really, truly. Not to be confused with खरं तर, which is two words and means 'actually'."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "खरंच 'सचमुच' है, खरं अकेला 'सच' है, और खरं तर 'असल में' है — तीन अलग चीज़ें, एक ही जड़ से. और यहाँ तरी अपनी आदत के मुताबिक़ पिछले आधे को रियायत दे रहा है.",
+      "sound": "खरंच = ख‑रंच, 'रं' नाक से और आख़िरी 'च' सूखा.",
+      "variations": [
+        {
+          "display": "हे खरंच स्वस्त आहे, तरी मला नको",
+          "cue": "यह सचमुच सस्ता है, फिर भी मुझे नहीं चाहिए",
+          "changed": "दूसरा आधा मना करने वाला हुआ — नको (L1-M3). तरी फिर भी बीच में."
+        },
+        {
+          "display": "ती भाजी खरंच चांगली आहे, तरी महाग आहे",
+          "cue": "वह सब्ज़ी सचमुच अच्छी है, फिर भी महँगी है",
+          "changed": "चीज़ औरत-जाति — चांगली. खरंच और तरी दोनों जस के तस."
+        }
+      ],
+      "mistake": {
+        "display": "हे खरं चांगलं आहे, तरी थोडं महाग आहे",
+        "why": "खरं अकेला 'सच' है — हे खरं आहे यानी 'यह सच है'. 'सचमुच अच्छा' कहने के लिए -च चाहिए: खरंच."
+      },
+      "usage": "तारीफ़ करते वक़्त, एक कमी भी ईमानदारी से मानकर.",
+      "register": "neutral",
+      "mnemonic": "खरं सच, खरंच सचमुच, खरं तर असल में."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "पाऊस आला तरी मी येईन",
+      "cue": "बारिश आ भी जाए तो भी मैं आऊँगा"
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "हे महाग असलं तरी चांगलं आहे",
+      "cue": "यह महँगा होने पर भी अच्छा है"
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "खूप गर्दी होती, तरीही मला जागा मिळाली",
+      "cue": "बहुत भीड़ थी, फिर भी मुझे जगह मिल गई"
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "खरं तर हे काम अवघड नाही",
+      "cue": "असल में यह काम मुश्किल नहीं है"
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "त्यापेक्षा हे पुस्तक स्वस्त आहे",
+      "cue": "उससे यह किताब सस्ती है"
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "मला हे मान्य आहे, पण मी जाणार नाही",
+      "cue": "मुझे यह मंज़ूर है, पर मैं नहीं जाऊँगा"
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "तो लहान असला तरी हुशार आहे",
+      "cue": "वह छोटा होने पर भी होशियार है"
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "त्याचा उपयोग जास्त आहे",
+      "cue": "उसका इस्तेमाल ज़्यादा है"
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "हे खरंच चांगलं आहे",
+      "cue": "यह सचमुच अच्छा है"
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "काम अवघड असलं तरी नक्कीच होईल",
+      "cue": "काम मुश्किल होने पर भी ज़रूर हो जाएगा"
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "तुमचं बरोबरच आहे, पण मी उद्या जाणार नाही",
+      "cue": "आपका बिलकुल ठीक है, पर मैं कल नहीं जाऊँगा"
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "त्याचा फायदा जास्त आहे, तोटा कमी आहे",
+      "cue": "उसका फ़ायदा ज़्यादा है, नुक़सान कम है"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M3",
+  "title": "What might have been",
+  "job": "Regrets and past hypotheticals",
+  "prerequisites": [
+    "L4-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present",
+      "Perfekt",
+      "Konjunktiv II"
+    ],
+    "allowedPatterns": [
+      "Wenn ich Zeit gehabt hätte + , + wäre ich gekommen",
+      "Ich hätte + <Infinitiv> + sollen",
+      "Das hättest du + <Infinitiv> + können",
+      "Fast wäre ich + <Partizip>",
+      "Es wäre besser gewesen + , + wenn + <verb-final>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ONE PAST SUBJUNCTIVE, NOT TWO. English needs two constructions for the unreal past — if I had known, I would have come — and German has a single one: the Perfekt with its auxiliary moved into Konjunktiv II. hätte … gemacht, wäre … gekommen. Every participle is already yours from L1-M5 and L2-M10, and the haben/sein split is L2-M10's rule doing its fourth job: what moves or changes state takes wäre, everything else takes hätte."
+    },
+    {
+      "tag": "delta",
+      "text": "THE UMLAUT IS THE MOOD, not decoration. hatte is the real past (L1-M5) and hätte is the unreal one (L3-M4); war against wäre, konnte against könnte. They are two different index keys, because the fold keeps the umlaut, and they say two different things: Wenn ich Zeit hatte is a habit you had, Wenn ich Zeit gehabt hätte is a time that never came. Write the umlaut or write another sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "THE AUXILIARY GOES LAST IN THE WENN-CLAUSE. English puts had in front of the participle; German puts the participle first and the auxiliary behind it, because wenn is subordinating and the finite verb is last (L1-M9). Wenn ich Zeit gehabt hätte, never *wenn ich hätte Zeit gehabt. In the main half the finite verb is second as always, and after a fronted wenn-clause that means wäre ich gekommen."
+    },
+    {
+      "tag": "delta",
+      "text": "THE DOUBLE INFINITIVE (Ersatzinfinitiv). When a modal joins the past subjunctive it does NOT appear as a participle. Ich hätte kommen können, never *ich hätte kommen gekonnt. Das hättest du sagen sollen. The clause ends with TWO INFINITIVES — the full verb first, the modal second — and the finite hätte stands in position two. That is the exact reverse of English should have come, and it is the one thing from this module to over-learn."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ONE PLACE VERB-FINAL BENDS. In a subordinate clause the finite verb of a double infinitive moves in FRONT of the pair instead of standing last: Ich weiß, dass ich hätte kommen können — not *dass ich kommen können hätte. It is the single exception to L1-M9's verb-final law in the whole course, it applies only to a double infinitive, and it is named here rather than drilled."
+    },
+    {
+      "tag": "free",
+      "text": "WÜRDE BUILDS NO PAST, and what stays elsewhere. English would have is two words; German is one, wäre or hätte, so *ich würde gekommen sein is not a sentence anybody says. The present Konjunktiv II — wäre, hätte, könnte, sollte, müsste, würde — is L3-M4's and is used here freely without a new row. Konjunktiv I is L4-M7's, the narrative Präteritum L4-M8's. And a fact that was NOT undone stays in the plain Perfekt: Schade, dass ich nicht mitgekommen bin. Only the unreal half takes the mood."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M3-S01",
+      "display": "Wenn ich Zeit gehabt hätte, wäre ich gekommen",
+      "cue": "If I had had time, I would have come",
+      "literal": "If I time had-had would-have, would-be I come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gehabt",
+            "cue": "had (participle of haben)",
+            "tag": "delta",
+            "forms": [
+              "gehabt"
+            ],
+            "note": "The participle of haben. In a wenn-clause it stands BEFORE its auxiliary — gehabt hätte — which is the reverse of English had had."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Wenn ich Zeit hatte means whenever I had time — a habit. The umlaut of hätte is what makes the time unreal, and it is never optional.",
+      "sound": "ven ikh TSAIT ge-HAPT HET-uh, VAIR-uh ikh ge-KOM-un.",
+      "variations": [
+        {
+          "display": "Wenn wir Zeit gehabt hätten, wären wir gekommen",
+          "cue": "If we had had time, we would have come",
+          "changed": "Plural throughout: hätten in the wenn-clause, wären in the main half. The order of both halves is untouched."
+        }
+      ],
+      "mistake": {
+        "display": "Wenn ich Zeit hatte, wäre ich gekommen",
+        "why": "hatte is the real past, so the first half now reports something that did happen while the second half denies it. The unreal past needs hätte: Wenn ich Zeit gehabt hätte."
+      },
+      "usage": "Explaining after the fact why you did not turn up.",
+      "register": "neutral",
+      "mnemonic": "gehabt hätte — the doing first, the mood last."
+    },
+    {
+      "id": "L4-M3-S02",
+      "display": "Ich hätte früher Bescheid sagen sollen",
+      "cue": "I should have let you know earlier",
+      "literal": "I would-have earlier notice say should",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Bescheid",
+            "cue": "notice, word (as in let someone know)",
+            "tag": "free",
+            "forms": [
+              "Bescheid"
+            ],
+            "note": "Bescheid sagen is a fixed pair: to let somebody know. Bescheid takes no article and does not move: Ich sage Ihnen Bescheid."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "English should have said puts the modal first. German puts it LAST, behind the full verb: sagen sollen, and never *gesollt.",
+      "sound": "ikh HET-uh FRUE-er buh-SHAIT ZAA-gun ZOL-un.",
+      "variations": [
+        {
+          "display": "Ich hätte früher Bescheid sagen müssen",
+          "cue": "I would have had to let you know earlier",
+          "changed": "sollen becomes müssen — the obligation hardens from ought to had to. The double-infinitive order does not move."
+        }
+      ],
+      "mistake": {
+        "display": "Ich hätte früher Bescheid sagen gesollt",
+        "why": "A modal in the past subjunctive appears as an infinitive, not a participle. The pair is sagen sollen; gesollt is a form this construction has replaced."
+      },
+      "usage": "Apologising for having kept somebody waiting on news.",
+      "register": "neutral",
+      "mnemonic": "Two infinitives at the end, the modal riding last."
+    },
+    {
+      "id": "L4-M3-S03",
+      "display": "Das hättest du mir sagen können",
+      "cue": "You could have told me that",
+      "literal": "That would-have you to-me say can",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hättest",
+            "cue": "you would have (du-form of hätte)",
+            "tag": "delta",
+            "forms": [
+              "hättest"
+            ],
+            "note": "The du-form of hätte (L3-M4). Umlaut and two t's: hättest is the unreal one, hattest the plain past you never need here."
+          }
+        ],
+        "rules": [
+          3,
+          1
+        ]
+      },
+      "trap": "English could have told is modal, auxiliary, participle. German is auxiliary, full verb, modal — hättest … sagen können — with the modal at the very end.",
+      "sound": "das HET-est doo MEER ZAA-gun KOEN-un.",
+      "variations": [
+        {
+          "display": "Das hätten Sie mir sagen können",
+          "cue": "You could have told me that",
+          "changed": "The same reproach to somebody you address as Sie. hättest becomes hätten; nothing else in the clause moves."
+        }
+      ],
+      "mistake": {
+        "display": "Das hättest du mir sagen gekonnt",
+        "why": "können keeps its infinitive shape here. gekonnt exists, but not behind another infinitive: the pair is sagen können."
+      },
+      "usage": "A mild reproach to a friend who kept something back.",
+      "register": "informal",
+      "mnemonic": "hättest … können — the blame opens and the modal closes."
+    },
+    {
+      "id": "L4-M3-S04",
+      "display": "Fast wäre ich zu spät gekommen",
+      "cue": "I almost arrived too late",
+      "literal": "Almost would-be I too late come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fast",
+            "cue": "almost, nearly",
+            "tag": "interference",
+            "forms": [
+              "fast"
+            ],
+            "note": "fast means almost and never English fast (that is schnell, L2-M9). It marks a near miss, so the clause behind it is unreal."
+          },
+          {
+            "display": "zu spät",
+            "cue": "too late",
+            "tag": "free",
+            "forms": [
+              "zu spät"
+            ],
+            "note": "zu here is too, not to: zu spät is too late. The pair is fixed and takes no ending — Sie kommen zu spät."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "fast fronts, so the finite verb follows it immediately: Fast wäre ich. English almost I would have keeps the subject in front; German does not.",
+      "sound": "fast VAIR-uh ikh tsoo SHPAIT ge-KOM-un.",
+      "variations": [
+        {
+          "display": "Beinahe wäre ich zu spät gekommen",
+          "cue": "I very nearly arrived too late",
+          "changed": "beinahe for fast — the same near miss, one degree more deliberate. Both front and both invert."
+        }
+      ],
+      "mistake": {
+        "display": "Fast ich wäre zu spät gekommen",
+        "why": "Whatever stands first, the finite verb is second: Fast wäre ich. Putting ich between them gives the verb a third seat, which German does not have."
+      },
+      "usage": "The friendliest sentence in the module — a near miss that ended well.",
+      "register": "neutral",
+      "mnemonic": "fast fronts, wäre follows, the subject waits its turn."
+    },
+    {
+      "id": "L4-M3-S05",
+      "display": "Es wäre besser gewesen, wenn wir gewartet hätten",
+      "cue": "It would have been better if we had waited",
+      "literal": "It would-be better been, if we waited would-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gewesen",
+            "cue": "been (participle of sein)",
+            "tag": "delta",
+            "forms": [
+              "gewesen"
+            ],
+            "note": "The participle of sein. wäre gewesen is would have been in two words where English needs three — the auxiliary alone carries the mood."
+          },
+          {
+            "display": "gewartet",
+            "cue": "waited (participle of warten)",
+            "tag": "free",
+            "forms": [
+              "gewartet"
+            ],
+            "note": "Regular participle of warten (L3-M4): ge- + wart + -et. warten takes haben, so the unreal past is hätten gewartet, never wären."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The wenn-clause ends gewartet hätten. An author who writes *wenn wir hätten gewartet has used the double-infinitive order on a clause that has no modal in it.",
+      "sound": "es VAIR-uh BES-er ge-VAY-zun, ven veer ge-VAR-tet HET-un.",
+      "variations": [
+        {
+          "display": "Es wäre besser gewesen, wenn wir gefragt hätten",
+          "cue": "It would have been better if we had asked",
+          "changed": "One participle swaps for another. gefragt also takes haben, so hätten stays."
+        }
+      ],
+      "mistake": {
+        "display": "Es wäre besser gewesen, wenn wir hätten gewartet",
+        "why": "wenn sends the finite verb to the very end: gewartet hätten. The auxiliary only jumps in front of a DOUBLE INFINITIVE, and there is no modal here."
+      },
+      "usage": "Reviewing a decision with the people who took it with you.",
+      "register": "neutral",
+      "mnemonic": "besser gewesen — the judgement, then the participle that carries it."
+    },
+    {
+      "id": "L4-M3-S06",
+      "display": "Wenn ich das doch nur gewusst hätte",
+      "cue": "If only I had known that",
+      "literal": "If I that yet only known would-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gewusst",
+            "cue": "known (participle of wissen)",
+            "tag": "delta",
+            "forms": [
+              "gewusst"
+            ],
+            "note": "The participle of wissen, and it is irregular: gewusst, not *gewisst. Wenn ich das gewusst hätte is the standard German regret."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "doch nur is what carries if only; there is no separate word for only-if. Both halves are already yours — doch is L1-M2's and nur is L3-M10's.",
+      "sound": "ven ikh das dokh NOOR ge-VUST HET-uh.",
+      "variations": [
+        {
+          "display": "Wenn wir das doch nur gewusst hätten",
+          "cue": "If only we had known that",
+          "changed": "Plural subject, so hätte becomes hätten. doch nur keeps its seat in the middle field."
+        }
+      ],
+      "mistake": {
+        "display": "Wenn ich das doch nur hätte gewusst",
+        "why": "The clause has no modal, so the finite verb stays at the end: gewusst hätte. Moving hätte forward is the double-infinitive order borrowed where it does not belong."
+      },
+      "usage": "A wish about something you could not have known at the time.",
+      "register": "neutral",
+      "mnemonic": "doch nur — two small words and the whole regret."
+    },
+    {
+      "id": "L4-M3-S07",
+      "display": "Schade, dass ich nicht mitgekommen bin",
+      "cue": "It is a shame that I did not come along",
+      "literal": "Shame, that I not along-come am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "schade",
+            "cue": "a shame, a pity",
+            "tag": "free",
+            "forms": [
+              "schade"
+            ],
+            "note": "A whole regret in one word: Schade! On its own, or in front of a dass-clause. It takes no ending and no article."
+          },
+          {
+            "display": "mitgekommen",
+            "cue": "come along (participle of mitkommen)",
+            "tag": "delta",
+            "forms": [
+              "mitgekommen"
+            ],
+            "note": "Participle of mitkommen (L3-M1). The ge- goes INSIDE, between prefix and stem — mitgekommen, never *gemitkommen — and it takes sein."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "This one is NOT subjunctive. Not coming along really happened, so it stays in the plain Perfekt; only the half that did not happen takes the mood.",
+      "sound": "SHAA-duh, das ikh nikht MIT-ge-kom-un bin.",
+      "variations": [
+        {
+          "display": "Schade, dass wir nicht mitgekommen sind",
+          "cue": "It is a shame that we did not come along",
+          "changed": "Plural subject, so bin becomes sind. dass still parks the verb at the end."
+        }
+      ],
+      "mistake": {
+        "display": "Schade, dass ich nicht mitgekommen wäre",
+        "why": "wäre would make the staying-behind unreal, and it was real. A fact is reported in the Perfekt; the subjunctive is for what never happened."
+      },
+      "usage": "Saying you are sorry to have missed something, without blaming anyone.",
+      "register": "neutral",
+      "mnemonic": "Schade is for what happened; hätte is for what did not."
+    },
+    {
+      "id": "L4-M3-S08",
+      "display": "Das war mein Fehler, es tut mir leid",
+      "cue": "That was my mistake, I am sorry",
+      "literal": "That was my mistake, it does to-me sorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Fehler",
+            "cue": "mistake, error",
+            "tag": "free",
+            "forms": [
+              "Fehler"
+            ],
+            "note": "der Fehler, and the plural is die Fehler — the noun itself does not change. einen Fehler machen is the pair for making one."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "es tut mir leid is one frozen phrase and mir is dative: the sorrow is done TO me. Every word of it is already yours from L2-M1.",
+      "sound": "das vaar main FAY-ler, es toot meer LAIT.",
+      "variations": [
+        {
+          "display": "Das war mein Fehler, das tut mir wirklich leid",
+          "cue": "That was my mistake, I am really sorry",
+          "changed": "wirklich sharpens the apology and sits in the middle field, in front of leid."
+        }
+      ],
+      "mistake": {
+        "display": "Das wäre mein Fehler gewesen",
+        "why": "The mistake was real, so it takes war. wäre gewesen would say it would have been my mistake — a hypothetical you are not owning."
+      },
+      "usage": "Owning a mistake plainly, which German expects you to do in one sentence.",
+      "register": "neutral",
+      "mnemonic": "war for what was; the mood is only for what was not."
+    },
+    {
+      "id": "L4-M3-S09",
+      "display": "Beinahe wärst du zu spät gekommen",
+      "cue": "You very nearly arrived too late",
+      "literal": "Nearly would-be you too late come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "beinahe",
+            "cue": "very nearly, all but",
+            "tag": "free",
+            "forms": [
+              "beinahe"
+            ],
+            "note": "The fuller twin of fast and the same near miss. It fronts and inverts: Beinahe wärst du zu spät gekommen."
+          },
+          {
+            "display": "wärst",
+            "cue": "you would be (du-form of wäre)",
+            "tag": "delta",
+            "forms": [
+              "wärst"
+            ],
+            "note": "The du-form of wäre (L3-M4). kommen is a verb of motion, so its unreal past takes wärst, never hättest."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The auxiliary is chosen by the full verb, not by the mood. kommen took sein in L2-M10, so it takes wärst here — hättest gekommen is not a thing.",
+      "sound": "bai-NAA-huh VAIRST doo tsoo SHPAIT ge-KOM-un.",
+      "variations": [
+        {
+          "display": "Beinahe wären Sie zu spät gekommen",
+          "cue": "You very nearly arrived too late",
+          "changed": "The same near miss said to somebody you address as Sie: wärst becomes wären."
+        }
+      ],
+      "mistake": {
+        "display": "Beinahe hättest du zu spät gekommen",
+        "why": "kommen takes sein, so the unreal past is wärst gekommen. The umlaut is right; the auxiliary is the wrong one."
+      },
+      "usage": "Teasing a friend who made it by seconds.",
+      "register": "informal",
+      "mnemonic": "Motion takes wäre — even when the motion never quite happened."
+    },
+    {
+      "id": "L4-M3-S10",
+      "display": "Ich hätte Ihnen gern geholfen, aber ich hatte keine Zeit",
+      "cue": "I would gladly have helped you, but I had no time",
+      "literal": "I would-have to-you gladly helped, but I had no time",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geholfen",
+            "cue": "helped (participle of helfen)",
+            "tag": "delta",
+            "forms": [
+              "geholfen"
+            ],
+            "note": "Participle of helfen (L2-M1). helfen takes the dative, so it is Ihnen geholfen — the person helped is never an accusative object."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Both halves are past, and only one is unreal: hätte geholfen for the help that never came, hatte for the missing time that really was missing.",
+      "sound": "ikh HET-uh EE-nun gern ge-HOL-fun, AA-ber ikh HAT-uh KAI-nuh TSAIT.",
+      "variations": [
+        {
+          "display": "Ich hätte dir gern geholfen, aber ich hatte keine Zeit",
+          "cue": "I would gladly have helped you, but I had no time",
+          "changed": "The same regret to a friend: Ihnen becomes dir. Nothing else changes, which is the point."
+        }
+      ],
+      "mistake": {
+        "display": "Ich würde Ihnen gern geholfen haben",
+        "why": "würde builds no past in German. would have helped is one auxiliary in the subjunctive — hätte geholfen — and the three-word English shape has no German twin."
+      },
+      "usage": "Declining, after the fact, in a way that keeps the relationship.",
+      "register": "formal",
+      "mnemonic": "hätte and hatte in one sentence: one umlaut apart, one world apart."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M3-C01",
+      "display": "Wenn ich Zeit gehabt hätte, wäre ich gekommen",
+      "cue": "If I had had time, I would have come"
+    },
+    {
+      "id": "L4-M3-C02",
+      "display": "Ich hätte früher kommen sollen",
+      "cue": "I should have come earlier"
+    },
+    {
+      "id": "L4-M3-C03",
+      "display": "Das hättest du mir sagen können",
+      "cue": "You could have told me that"
+    },
+    {
+      "id": "L4-M3-C04",
+      "display": "Fast wäre ich zu spät gekommen",
+      "cue": "I almost arrived too late"
+    },
+    {
+      "id": "L4-M3-C05",
+      "display": "Es wäre besser gewesen, wenn wir gewartet hätten",
+      "cue": "It would have been better if we had waited"
+    },
+    {
+      "id": "L4-M3-C06",
+      "display": "Wenn ich das gewusst hätte, wäre ich geblieben",
+      "cue": "If I had known that, I would have stayed"
+    },
+    {
+      "id": "L4-M3-C07",
+      "display": "Schade, dass wir nicht mitgekommen sind",
+      "cue": "It is a shame that we did not come along"
+    },
+    {
+      "id": "L4-M3-C08",
+      "display": "Das war mein Fehler, es tut mir leid",
+      "cue": "That was my mistake, I am sorry"
+    },
+    {
+      "id": "L4-M3-C09",
+      "display": "Beinahe hätte ich den Termin vergessen",
+      "cue": "I very nearly forgot the appointment"
+    },
+    {
+      "id": "L4-M3-C10",
+      "display": "Ich hätte Ihnen gern geholfen",
+      "cue": "I would gladly have helped you"
+    },
+    {
+      "id": "L4-M3-C11",
+      "display": "Du hättest mich fragen können",
+      "cue": "You could have asked me"
+    },
+    {
+      "id": "L4-M3-C12",
+      "display": "Es wäre besser gewesen, wenn ich Bescheid gesagt hätte",
+      "cue": "It would have been better if I had let you know"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

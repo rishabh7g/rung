@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M3",
+  "title": "What might have been",
+  "job": "Regrets and past hypotheticals",
+  "prerequisites": ["L4-M2"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_past", "infinitive", "conditional (past + by)"],
+    "allowedPatterns": [
+      "Yésli by + <past> + , + <subject> + by + <past>",
+      "Nádo býlo + V-perfective-inf",
+      "Ne nádo býlo + V-perfective-inf",
+      "Zhal' + , + chto + <clause>",
+      "Ya mog by + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "RUSSIAN'S by HAS NO TENSE, and this module is a subtraction rather than an addition. English has three shapes — if I have time I will call, if I had time I would call, if I HAD HAD time I would HAVE called — and Russian has two. The last two collapse into one: past plus by in both halves, nothing conjugated and nothing new. Yésli by u menyá býlo vrémya, ya by pozvoníl is BOTH if I had time I would call AND if I had had time I would have called. What picks the reading is an adverb — vcherá against sevódnya — or the situation around it. The machine itself is L3-M4's and is not opened again here; this module only runs it over a FINISHED event."
+    },
+    {
+      "tag": "interference",
+      "text": "The interference is OVER-BUILDING. A learner reaching for would have hunts for something extra to put into the Russian, and there is nothing to put: no second past, no byl standing beside the by, no auxiliary of any kind. Every mistake plate in this module is the same invented double past, and the cure is the same every time — delete what you added. If you have written more words than L3-M4 wrote for the present reading, you have written too many."
+    },
+    {
+      "tag": "delta",
+      "text": "The regret frames are IMPERSONAL. Nádo býlo pozvonít' has no subject at all — exactly as L3-M4's nádo has none — and it is L3-M4's nádo with L1-M5's býlo behind it, not a new word. The refusal is made by putting ne in FRONT of the whole frame and changing nothing else: ne nádo býlo pozvonít'. English switches verbs at that point, should have against should not have; Russian adds two letters. Both frames take a perfective infinitive, because a regret is about something that was to have been finished."
+    },
+    {
+      "tag": "delta",
+      "text": "dólzhen byl is NOT this, and a learner will treat the two as one. dólzhen AGREES — dólzhen byl, dolzhná bylá, dolzhný býli — and it reports an OBLIGATION that existed: ya dólzhen byl rabótat', I had to work, and perhaps I did. nádo býlo reports a REGRET about what was not done. Both are past, both translate with should, and only one of them is an apology."
+    },
+    {
+      "tag": "delta",
+      "text": "zhal', chto … is it is a pity that …, phrase for phrase, with its clause fenced by a comma exactly as L3-M3's khotyá and L1-M9's chto are fenced — and the clause inside is a PLAIN past, with no by in it. Beside it sit the two softer regrets, both blaming nobody: mog by plus an infinitive (I could have) and stóilo plus an infinitive (it would have been worth). zrya fronted does the same work in one word."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M3-S01",
+      "display": "Yésli by ya ne zabýl klyuch, ya by ne opozdál.",
+      "script": "Если бы я не забыл ключ, я бы не опоздал.",
+      "cue": "If I hadn't forgotten the key, I wouldn't have been late.",
+      "literal": "If would I not forgot key, I would not was-late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zabýl",
+            "script": "забыл",
+            "cue": "forgot (a man)",
+            "tag": "free",
+            "forms": ["zabýl", "zabýla", "zabýt'"],
+            "note": "Past of zabýt', to forget. A woman says zabýla. Here it is doing counterfactual work rather than past work, and the by beside it is the only thing that says so."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English marks this reading with a second past — had forgotten, would have been. Russian marks it with nothing at all. The Russian for if I forget, if I had forgotten and if I had forgotten (but I did not) differs only in the by and the adverb.",
+      "sound": "za-BYL — two syllables, the stress on the second. The final -l is light, almost swallowed.",
+      "variations": [
+        {
+          "display": "Yésli by ya ne zabýla klyuch, ya by ne opozdála.",
+          "script": "Если бы я не забыла ключ, я бы не опоздала.",
+          "cue": "If I hadn't forgotten the key, I wouldn't have been late.",
+          "changed": "a woman speaking — both past forms take -a and by does not move"
+        },
+        {
+          "display": "Yésli by ya ne zabýl klyuch, ya by uspél.",
+          "script": "Если бы я не забыл ключ, я бы успел.",
+          "cue": "If I hadn't forgotten the key, I'd have made it in time.",
+          "changed": "the second half re-aimed at the outcome instead of the failure"
+        }
+      ],
+      "mistake": {
+        "display": "Yésli by ya ne byl zabýl klyuch, ya by ne byl opozdál.",
+        "script": "Если бы я не был забыл ключ, я бы не был опоздал.",
+        "why": "The invented double past, and it is the mistake of this whole module. English builds had forgotten and would have been out of two pieces; Russian has one piece and byl is not part of it."
+      },
+      "usage": "Working out, after the fact, which small thing lost you the morning.",
+      "register": "neutral",
+      "mnemonic": "One by per half, one past per half. Anything else you wanted to add is English."
+    },
+    {
+      "id": "L4-M3-S02",
+      "display": "Ya mog by vam pomóch' vcherá, no ya opozdál.",
+      "script": "Я мог бы вам помочь вчера, но я опоздал.",
+      "cue": "I could have helped you yesterday, but I was late.",
+      "literal": "I could would to-you to-help yesterday, but I was-late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mog",
+            "script": "мог",
+            "cue": "could (a man)",
+            "tag": "delta",
+            "forms": ["mog", "moglá", "moglí"],
+            "note": "Past of moch', and irregular the same one way L3-M4's pomóg is: no -l in the masculine. Oná moglá, oní moglí. With by beside it, could becomes could have."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English could have is two words and both of them move (could have, might have, may have). mog by is two words and neither of them ever changes shape — only mog agrees, and by never does anything at all.",
+      "sound": "MOK — one syllable, and the final g goes hard to k. moglá puts the stress on the ending: mag-LA.",
+      "variations": [
+        {
+          "display": "Oná moglá by vam pomóch' vcherá.",
+          "script": "Она могла бы вам помочь вчера.",
+          "cue": "She could have helped you yesterday.",
+          "changed": "a woman as the one who could — moglá, and by stays put"
+        },
+        {
+          "display": "Ya mog by pozvonít' vam ránshe.",
+          "script": "Я мог бы позвонить вам раньше.",
+          "cue": "I could have called you earlier.",
+          "changed": "a different infinitive after the frame"
+        }
+      ],
+      "mistake": {
+        "display": "Ya mogú by vam pomóch' vcherá.",
+        "script": "Я могу бы вам помочь вчера.",
+        "why": "by demands a PAST beside it. mogú is L2-M1's present, I can, and the pair mogú by does not exist in Russian at all."
+      },
+      "usage": "Owning up to a missed chance without quite apologising for it.",
+      "register": "neutral",
+      "mnemonic": "mog by — the could that is over. mogú — the can that is now."
+    },
+    {
+      "id": "L4-M3-S03",
+      "display": "Nádo býlo pozvonít' vrachú vcherá.",
+      "script": "Надо было позвонить врачу вчера.",
+      "cue": "We should have called the doctor yesterday.",
+      "literal": "Necessary was to-call to-doctor yesterday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nádo býlo",
+            "script": "надо было",
+            "cue": "should have",
+            "tag": "delta",
+            "forms": ["nádo býlo"],
+            "note": "L3-M4's nádo with L1-M5's býlo behind it, and still subjectless: nobody at all is named. Take the pair whole — a tap on it opens regret, a tap on a bare nádo opens L3-M4's need."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "English cannot say this without a subject: somebody should have called. Russian names nobody, which is exactly why the frame is usable — it lets you say the thing was not done without saying who did not do it.",
+      "sound": "NA-da BY-la — four light syllables, stress on the first of each word, and both o's reduce to a.",
+      "variations": [
+        {
+          "display": "Nádo býlo pozvonít' ránshe.",
+          "script": "Надо было позвонить раньше.",
+          "cue": "We should have called earlier.",
+          "changed": "the reproach aimed at the timing rather than at whom"
+        },
+        {
+          "display": "Nádo býlo srázu vstat'.",
+          "script": "Надо было сразу встать.",
+          "cue": "I should have got up straight away.",
+          "changed": "a different infinitive, with srázu inside the frame"
+        }
+      ],
+      "mistake": {
+        "display": "Ya dólzhen byl pozvonít' vrachú vcherá.",
+        "script": "Я должен был позвонить врачу вчера.",
+        "why": "Not wrong Russian — wrong meaning. This reports an obligation that existed and says nothing about whether it was met. dólzhen agrees and describes; nádo býlo regrets."
+      },
+      "usage": "Saying afterwards that a call was owed, without pinning it on anybody in the room.",
+      "register": "neutral",
+      "mnemonic": "nádo býlo has no subject, so it has no accused."
+    },
+    {
+      "id": "L4-M3-S04",
+      "display": "Ne nádo býlo yemú zvonít' tak pózdno.",
+      "script": "Не надо было ему звонить так поздно.",
+      "cue": "We shouldn't have called him so late.",
+      "literal": "Not necessary was to-him to-call so late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ne nádo býlo",
+            "script": "не надо было",
+            "cue": "should not have",
+            "tag": "delta",
+            "forms": ["ne nádo býlo"],
+            "note": "The refusal is made by putting L1-M3's ne in front of the whole frame and changing nothing else. English swaps should have for should not have; Russian adds two letters."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "The ne goes in FRONT of the frame, not inside it. Nádo ne býlo is not a Russian sentence, and a learner writes it because English negates the middle of should not have.",
+      "sound": "ni-NA-da BY-la — the ne leans onto nádo and loses its own vowel; six syllables that come out as two beats.",
+      "variations": [
+        {
+          "display": "Ne nádo býlo yemú zvonít' vcherá.",
+          "script": "Не надо было ему звонить вчера.",
+          "cue": "We shouldn't have called him yesterday.",
+          "changed": "the reproach moved onto the day rather than the hour"
+        },
+        {
+          "display": "Ne nádo býlo tak pózdno zvonít'.",
+          "script": "Не надо было так поздно звонить.",
+          "cue": "It was wrong to call so late.",
+          "changed": "the adverb before the infinitive, with nobody called at all"
+        }
+      ],
+      "mistake": {
+        "display": "Nádo ne býlo yemú zvonít' tak pózdno.",
+        "script": "Надо не было ему звонить так поздно.",
+        "why": "The ne has been dropped into the middle, where English puts its not. It belongs at the very front: ne nádo býlo, one unbroken frame."
+      },
+      "usage": "Calling a late phone call a mistake the morning after it.",
+      "register": "neutral",
+      "mnemonic": "Front the ne. Russian negates the frame, not its middle."
+    },
+    {
+      "id": "L4-M3-S05",
+      "display": "Zhal', chto ya ne pozvoníl vam ránshe.",
+      "script": "Жаль, что я не позвонил вам раньше.",
+      "cue": "It's a pity I didn't call you earlier.",
+      "literal": "Pity, that I not called to-you earlier.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zhal'",
+            "script": "жаль",
+            "cue": "it's a pity",
+            "tag": "delta",
+            "forms": ["zhal'"],
+            "note": "A whole main clause in one word: no verb, no subject, nothing agreeing. Its chto-clause is fenced with a comma exactly as L3-M3's khotyá and L1-M9's chto are fenced."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "The clause after zhal', chto carries a PLAIN past — pozvoníl, not pozvoníl by. English puts the counterfactual inside (a pity I hadn't called); Russian leaves the inside alone, because zhal' has already said the regret.",
+      "sound": "ZHAL — one syllable, and the soft sign palatalises the l so it ends closer to zhal-y than to the English shall.",
+      "variations": [
+        {
+          "display": "Zhal', chto oná ne pozvoníla.",
+          "script": "Жаль, что она не позвонила.",
+          "cue": "It's a pity she didn't call.",
+          "changed": "somebody else's failure, and zhal' does not move for it"
+        },
+        {
+          "display": "Zhal', chto ya vas ne predupredíl.",
+          "script": "Жаль, что я вас не предупредил.",
+          "cue": "It's a pity I didn't warn you.",
+          "changed": "a different regret in the same fenced clause"
+        }
+      ],
+      "mistake": {
+        "display": "Zhal', chto ya by ne pozvoníl vam ránshe.",
+        "script": "Жаль, что я бы не позвонил вам раньше.",
+        "why": "No by inside a zhal' clause. by would make it a hypothetical call that was never on the table; the plain past says the call was possible and was not made."
+      },
+      "usage": "The mildest thing you can say about your own silence.",
+      "register": "neutral",
+      "mnemonic": "zhal' regrets the fact. by would have invented a different one."
+    },
+    {
+      "id": "L4-M3-S06",
+      "display": "Stóilo srázu pozvonít' vrachú i vsyó skazát'.",
+      "script": "Стоило сразу позвонить врачу и всё сказать.",
+      "cue": "It would have been worth calling the doctor at once and telling him everything.",
+      "literal": "Was-worth at-once to-call to-doctor and everything to-say.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stóilo",
+            "script": "стоило",
+            "cue": "it was worth (doing)",
+            "tag": "delta",
+            "forms": ["stóilo"],
+            "note": "The past of L1-M8's stóit, costs, in a second sense: it was worth doing. Subjectless like nádo býlo, and with an infinitive after it, it is a mild should have."
+          },
+          {
+            "display": "skazát'",
+            "script": "сказать",
+            "cue": "to say, to tell",
+            "tag": "free",
+            "forms": ["skazát'"],
+            "note": "The infinitive behind L2-M10's skazál and L2-M1's skazhíte. Perfective: one telling, with an end to it, which is what a regret is always about."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "stóilo has nothing to do with price here, and a learner who met stóit at L1-M8 as costs will read the sentence as a bill. One verb, two senses, and the tense is what separates them in practice.",
+      "sound": "STO-i-la — three syllables, stress on the first, the middle one barely there.",
+      "variations": [
+        {
+          "display": "Stóilo pozvonít' vrachú ránshe.",
+          "script": "Стоило позвонить врачу раньше.",
+          "cue": "It would have been worth calling the doctor earlier.",
+          "changed": "one infinitive instead of two"
+        },
+        {
+          "display": "Stóilo srázu vsyó skazát'.",
+          "script": "Стоило сразу всё сказать.",
+          "cue": "It would have been worth saying everything at once.",
+          "changed": "the telling alone, with nobody called"
+        }
+      ],
+      "mistake": {
+        "display": "Stóit býlo srázu pozvonít' vrachú.",
+        "script": "Стоит было сразу позвонить врачу.",
+        "why": "Built on the pattern of nádo býlo, which is two words because nádo has no past of its own. stóilo is a verb and carries its own past; stóit býlo is one word too many."
+      },
+      "usage": "Second-guessing a decision gently, with no one to blame for it.",
+      "register": "neutral",
+      "mnemonic": "stóit costs money. stóilo cost you the morning."
+    },
+    {
+      "id": "L4-M3-S07",
+      "display": "Nádo býlo vstat' ráno, ináche ya by opozdál.",
+      "script": "Надо было встать рано, иначе я бы опоздал.",
+      "cue": "I should have got up early, otherwise I'd have been late.",
+      "literal": "Necessary was to-get-up early, otherwise I would was-late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ináche",
+            "script": "иначе",
+            "cue": "otherwise, differently",
+            "tag": "delta",
+            "forms": ["ináche"],
+            "note": "Two jobs in one word: otherwise, or else after a warning, and differently after a verb — S10 uses that second sense. It opens its clause and takes no comma of its own."
+          },
+          {
+            "display": "vstat'",
+            "script": "встать",
+            "cue": "to get up",
+            "tag": "free",
+            "forms": ["vstat'"],
+            "note": "The infinitive behind L1-M6's vstal and vstánu. Perfective, so it is one getting-up with an end to it — the aspect every regret frame wants."
+          }
+        ],
+        "rules": [2, 0]
+      },
+      "trap": "The two halves are not in the same mood and that is fine: nádo býlo is the flat regret, and the ináche half is the counterfactual that by marks. English keeps otherwise I would have been late in one machine; Russian runs two.",
+      "sound": "i-NA-che — three syllables, stress in the middle, the ch soft as in cheese.",
+      "variations": [
+        {
+          "display": "Nádo býlo pozvonít' srázu, ináche ya by opozdál.",
+          "script": "Надо было позвонить сразу, иначе я бы опоздал.",
+          "cue": "I should have called at once, otherwise I'd have been late.",
+          "changed": "a different thing left undone before the same consequence"
+        },
+        {
+          "display": "Nádo býlo vstat' ráno, ináche ya by ne uspél.",
+          "script": "Надо было встать рано, иначе я бы не успел.",
+          "cue": "I should have got up early, otherwise I wouldn't have made it.",
+          "changed": "the consequence negated"
+        }
+      ],
+      "mistake": {
+        "display": "Nádo býlo vstal ráno, ináche ya by opozdál.",
+        "script": "Надо было встал рано, иначе я бы опоздал.",
+        "why": "nádo býlo takes an INFINITIVE and never a past. The past has been copied across from the by-half, where it does belong."
+      },
+      "usage": "Explaining a near miss to somebody who watched you make it by seconds.",
+      "register": "neutral",
+      "mnemonic": "After nádo býlo, the verb never conjugates. After by, it is always past."
+    },
+    {
+      "id": "L4-M3-S08",
+      "display": "Yésli by ya výshel ránshe, ya by uspél.",
+      "script": "Если бы я вышел раньше, я бы успел.",
+      "cue": "If I had left earlier, I would have made it in time.",
+      "literal": "If would I went-out earlier, I would made-it.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uspél",
+            "script": "успел",
+            "cue": "made it in time (a man)",
+            "tag": "free",
+            "forms": ["uspél", "uspéla", "uspét'"],
+            "note": "One verb for the English three: to be in time, to manage it, to make it. A woman says uspéla; the infinitive is uspét'. Perfective, so it is always about one deadline."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Word for word this is if I went out earlier, I would make it — no had, no have anywhere. The past reading is carried by the situation, and vcherá or ránshe is what pins it down when the situation will not.",
+      "sound": "us-PYEL — two syllables, stress on the second, and the e is the ye of yes.",
+      "variations": [
+        {
+          "display": "Yésli by oná výshla ránshe, oná by uspéla.",
+          "script": "Если бы она вышла раньше, она бы успела.",
+          "cue": "If she had left earlier, she would have made it.",
+          "changed": "a woman in both halves — two -a endings, and by untouched"
+        },
+        {
+          "display": "Yésli by ya výshel ráno, ya by ne opozdál.",
+          "script": "Если бы я вышел рано, я бы не опоздал.",
+          "cue": "If I had left early, I wouldn't have been late.",
+          "changed": "the same regret said from the other end"
+        }
+      ],
+      "mistake": {
+        "display": "Yésli by ya by výshel ránshe, ya by uspél.",
+        "script": "Если бы я бы вышел раньше, я бы успел.",
+        "why": "One by per half. yésli by already carries the first one, so the second is a duplicate — the over-building instinct again, in its smallest form."
+      },
+      "usage": "The sentence you say to yourself on a platform, watching the doors close.",
+      "register": "neutral",
+      "mnemonic": "yésli by … , … by. Two halves, two by, and never three."
+    },
+    {
+      "id": "L4-M3-S09",
+      "display": "Zrya ya vas ne predupredíl vcherá.",
+      "script": "Зря я вас не предупредил вчера.",
+      "cue": "I was wrong not to warn you yesterday.",
+      "literal": "In-vain I you not warned yesterday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zrya",
+            "script": "зря",
+            "cue": "for nothing, wrongly",
+            "tag": "delta",
+            "forms": ["zrya"],
+            "note": "Fronted, it turns the whole sentence into a regret: Zrya ya ne predupredíl is I was wrong not to warn. One word where English needs a clause, and the verb stays a plain past."
+          },
+          {
+            "display": "predupredíl",
+            "script": "предупредил",
+            "cue": "warned (a man)",
+            "tag": "free",
+            "forms": ["predupredíl", "predupredíla", "predupredít'"],
+            "note": "To warn somebody, and the person warned goes in the accusative: predupredíl vas. A woman says predupredíla; the infinitive is predupredít'."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "zrya plus a negative is a double negative to an English ear and reads as a regret to a Russian one. Zrya ya predupredíl means warning you was the mistake; Zrya ya ne predupredíl means not warning you was.",
+      "sound": "ZRYA — one syllable, and the zr is said together with no vowel between them, which is the whole difficulty.",
+      "variations": [
+        {
+          "display": "Zrya ya vam ne pozvoníl.",
+          "script": "Зря я вам не позвонил.",
+          "cue": "I was wrong not to call you.",
+          "changed": "a different thing left undone"
+        },
+        {
+          "display": "Zrya oná menyá ne predupredíla.",
+          "script": "Зря она меня не предупредила.",
+          "cue": "She was wrong not to warn me.",
+          "changed": "the blame moved onto somebody else, and the past agrees with her"
+        }
+      ],
+      "mistake": {
+        "display": "Zrya ya vas predupredíl vcherá.",
+        "script": "Зря я вас предупредил вчера.",
+        "why": "Correct Russian, opposite meaning: this says warning you was a waste. The ne is the whole sentence, and dropping it turns an apology into a complaint."
+      },
+      "usage": "Admitting you kept something to yourself that you should have passed on.",
+      "register": "neutral",
+      "mnemonic": "zrya blames the choice. The ne says which way the choice went."
+    },
+    {
+      "id": "L4-M3-S10",
+      "display": "Ya by vsyó sdélal ináche, yésli by mog.",
+      "script": "Я бы всё сделал иначе, если бы мог.",
+      "cue": "I'd have done everything differently if I could have.",
+      "literal": "I would everything did otherwise, if would could.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sdélal",
+            "script": "сделал",
+            "cue": "did, made (a man)",
+            "tag": "free",
+            "forms": ["sdélal", "sdélala", "sdélat'"],
+            "note": "The perfective partner of L2-M8's délat': one doing, finished. A woman says sdélala. Under by it is the whole of would have done."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "The halves have swapped order and nothing else has moved — the by still sits in both, and yésli by mog carries no pronoun at all because mog already says who. English cannot drop the subject there.",
+      "sound": "ZDYE-lal — the sd is voiced to zd, two syllables, stress on the first.",
+      "variations": [
+        {
+          "display": "Ya by vsyó sdélal ináche vcherá.",
+          "script": "Я бы всё сделал иначе вчера.",
+          "cue": "I'd have done everything differently yesterday.",
+          "changed": "the adverb doing the disambiguating instead of a second clause"
+        },
+        {
+          "display": "Oná by vsyó sdélala ináche.",
+          "script": "Она бы всё сделала иначе.",
+          "cue": "She'd have done everything differently.",
+          "changed": "a woman as the one who would have"
+        }
+      ],
+      "mistake": {
+        "display": "Ya by vsyó sdélal ináche, yésli by ya mogú.",
+        "script": "Я бы всё сделал иначе, если бы я могу.",
+        "why": "mogú is the present and by will not stand beside it. The half needs mog, and once mog is there the ya is not needed either."
+      },
+      "usage": "The line you reach for when the whole of a thing went wrong and you are not defending it.",
+      "register": "neutral",
+      "mnemonic": "Everything in a by sentence is past. There is no other tense in the room."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M3-C01",
+      "display": "Nádo býlo pozvonít' ránshe.",
+      "script": "Надо было позвонить раньше.",
+      "cue": "We should have called earlier."
+    },
+    {
+      "id": "L4-M3-C02",
+      "display": "Ne nádo býlo yemú zvonít'.",
+      "script": "Не надо было ему звонить.",
+      "cue": "We shouldn't have called him."
+    },
+    {
+      "id": "L4-M3-C03",
+      "display": "Zhal', chto on ne pozvoníl.",
+      "script": "Жаль, что он не позвонил.",
+      "cue": "It's a pity he didn't call."
+    },
+    {
+      "id": "L4-M3-C04",
+      "display": "Ya mog by vam pomóch'.",
+      "script": "Я мог бы вам помочь.",
+      "cue": "I could have helped you."
+    },
+    {
+      "id": "L4-M3-C05",
+      "display": "Stóilo srázu vsyó skazát'.",
+      "script": "Стоило сразу всё сказать.",
+      "cue": "It would have been worth saying everything at once."
+    },
+    {
+      "id": "L4-M3-C06",
+      "display": "Yésli by ya vstal ráno, ya by uspél.",
+      "script": "Если бы я встал рано, я бы успел.",
+      "cue": "If I had got up early, I would have made it."
+    },
+    {
+      "id": "L4-M3-C07",
+      "display": "Zrya ya vas ne predupredíl.",
+      "script": "Зря я вас не предупредил.",
+      "cue": "I was wrong not to warn you."
+    },
+    {
+      "id": "L4-M3-C08",
+      "display": "Oná moglá by pozvonít' vcherá.",
+      "script": "Она могла бы позвонить вчера.",
+      "cue": "She could have called yesterday."
+    },
+    {
+      "id": "L4-M3-C09",
+      "display": "Ya by sdélal éhto ináche.",
+      "script": "Я бы сделал это иначе.",
+      "cue": "I'd have done it differently."
+    },
+    {
+      "id": "L4-M3-C10",
+      "display": "Nádo býlo vstat' ránshe.",
+      "script": "Надо было встать раньше.",
+      "cue": "I should have got up earlier."
+    },
+    {
+      "id": "L4-M3-C11",
+      "display": "Zhal', chto ya opozdál.",
+      "script": "Жаль, что я опоздал.",
+      "cue": "It's a pity I was late."
+    },
+    {
+      "id": "L4-M3-C12",
+      "display": "Ya by vsyó pónyal ránshe.",
+      "script": "Я бы всё понял раньше.",
+      "cue": "I'd have understood everything sooner."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

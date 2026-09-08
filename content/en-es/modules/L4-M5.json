@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M5",
+  "title": "Disagreeing well",
+  "job": "Soften, hedge, save face",
+  "prerequisites": ["L4-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 7,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["present", "present subjunctive", "conditional"],
+    "allowedPatterns": [
+      "Bueno + , + no sé + , + <clause>",
+      "Quizá + <subjunctive>",
+      "Puede que + <subjunctive>",
+      "A lo mejor + <indicative>",
+      "No estoy tan seguro + , la verdad"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "quizá, quizás and tal vez take the SUBJUNCTIVE when the speaker is genuinely unsure (Quizá sea verdad) and the INDICATIVE when they are mostly sure (Quizá es verdad). The mood is the hedge, and this is the only place in L4 where it is the speaker's own choice."
+    },
+    {
+      "tag": "delta",
+      "text": "puede que always takes the subjunctive; a lo mejor always takes the indicative. Neither has a choice, so neither can grade the doubt the way quizá does. Reach for quizá when the exact amount of doubt matters."
+    },
+    {
+      "tag": "free",
+      "text": "bueno, pues, hombre, la verdad, más bien, no del todo and me temo are not grammar at all, and between them they carry more of the softening than the mood does. Every one of them works in tú and in usted alike."
+    },
+    {
+      "tag": "interference",
+      "text": "An English speaker reads bueno as good and hears agreement. At the head of a turn it is very often the first word of a refusal, and pues buys time and commits to nothing. Both are L1-M10's words doing a new job here."
+    },
+    {
+      "tag": "interference",
+      "text": "English softens the CLAIM and leans on a rising voice. Translating that gives Puede que es and Yo pienso que quizás, which read as hesitant rather than tactful. Spanish softens the FRAME and then says the claim flat."
+    },
+    {
+      "tag": "free",
+      "text": "yo diría and sería mejor are ready-made softeners built on the conditional L3-M4 taught in iría and podría. The course spends them whole here and does not open the tense; L5 does that."
+    },
+    {
+      "tag": "free",
+      "text": "The order of the move is the same in both languages: concede, then differ. Nothing else transfers, which is why every item in this module is a frame with a sentence behind it rather than a phrase to memorise."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M5-S01",
+      "display": "Bueno, no sé... no me parece bien, la verdad.",
+      "cue": "Well, I don't know... it doesn't seem right to me, honestly.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "no sé",
+            "cue": "I don't know",
+            "tag": "free",
+            "forms": [],
+            "note": "Two words indexed whole, because L3-M2 owns bare sé. Said mid-turn it is not ignorance: it is the polite way to announce that you are about to disagree."
+          },
+          {
+            "display": "la verdad",
+            "cue": "honestly · to be honest",
+            "tag": "free",
+            "forms": [],
+            "note": "Tacked on at the end it softens what came before, exactly like English honestly. Bare verdad is L3-M3's; this two-word marker is its own thing."
+          }
+        ],
+        "rules": [2, 3, 6]
+      },
+      "trap": "bueno is not good here. At the head of a turn it very often opens a refusal, and an English speaker who hears agreement in it will be surprised by the rest of the sentence.",
+      "sound": "BWEH-no, no SE. The final sé is stressed and cut short, and the pause after it does as much work as the words.",
+      "variations": [
+        {
+          "display": "Bueno, no sé... no me parece bien.",
+          "cue": "Well, I don't know... it doesn't seem right to me.",
+          "changed": "the closing softener is dropped"
+        },
+        {
+          "display": "No sé... no me parece bien, la verdad.",
+          "cue": "I don't know... it doesn't seem right to me, honestly.",
+          "changed": "the opener is dropped, and the refusal lands harder"
+        }
+      ],
+      "mistake": {
+        "display": "Bueno, no conozco... no me parece bien, la verdad.",
+        "why": "no sé is the fixed marker. conocer is for knowing people and places, and no conozco cannot open a hedge."
+      },
+      "usage": "The whole move in one line: soften, pause, differ, soften again. Neutral in both addresses, and safe with a stranger or a friend.",
+      "register": "neutral",
+      "mnemonic": "bueno at the head of a turn means here comes a no."
+    },
+    {
+      "id": "L4-M5-S02",
+      "display": "Quizá sea verdad, pero no estoy seguro.",
+      "cue": "It may be true, but I'm not sure.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quizá",
+            "cue": "maybe · perhaps",
+            "tag": "delta",
+            "forms": ["quizá", "quizás", "tal vez"],
+            "note": "Three spellings of one word, and all three take either mood. quizás is commoner before a vowel; tal vez is the same word in two, and slightly more formal."
+          },
+          {
+            "display": "seguro",
+            "cue": "sure · certain",
+            "tag": "free",
+            "forms": [],
+            "note": "With estar it is sure about something: no estoy seguro. With ser it means safe, so estoy seguro and es seguro are different claims."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "The subjunctive sea is what makes this a real hedge. Say Quizá es verdad instead and you have told the other person you mostly believe it, which is a different move.",
+      "sound": "kee-SA SEH-a. quizá is stressed on the last syllable, and quizás adds only a final s.",
+      "variations": [
+        {
+          "display": "Tal vez sea verdad, pero no estoy seguro.",
+          "cue": "Maybe it's true, but I'm not sure.",
+          "changed": "the marker, at the same strength"
+        },
+        {
+          "display": "Quizá sea verdad, pero no del todo.",
+          "cue": "It may be true, but not entirely.",
+          "changed": "how the doubt is closed"
+        }
+      ],
+      "mistake": {
+        "display": "Quizá es verdad, pero no estoy seguro.",
+        "why": "Not wrong Spanish, but it contradicts itself: the indicative es says you are fairly sure and the second half says you are not."
+      },
+      "usage": "The genuinely undecided hedge. Neutral in both addresses; nothing about it fixes a register.",
+      "register": "neutral",
+      "mnemonic": "The less sure you are, the more subjunctive you use."
+    },
+    {
+      "id": "L4-M5-S03",
+      "display": "Quizá es verdad, pero no es tan importante.",
+      "cue": "It's probably true, but it isn't that important.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "importante",
+            "cue": "important",
+            "tag": "free",
+            "forms": [],
+            "note": "One form for both genders, like every -ante and -ente adjective. L4-M4 bought the frame es importante que whole; this is the bare adjective."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "S02 and S03 differ by one word: sea against es. That single choice is the whole hedge, and English has to reach for may be against probably to say the same thing.",
+      "sound": "kee-SA es ber-DAD. The run quizá es has three vowels in a row and is said as one smooth stretch.",
+      "variations": [
+        {
+          "display": "Quizás es verdad, pero no es tan importante.",
+          "cue": "It's probably true, but it isn't that important.",
+          "changed": "the spelling of the marker"
+        },
+        {
+          "display": "Quizá es verdad, pero no es importante.",
+          "cue": "It's probably true, but it isn't important.",
+          "changed": "the tan goes, and the judgment hardens"
+        }
+      ],
+      "mistake": {
+        "display": "Quizá sea verdad, pero no es tan importante.",
+        "why": "Not an error of grammar but of aim: sea says you doubt it, and this speaker does not. The mood has to match how sure you actually are."
+      },
+      "usage": "The dismissive hedge: grant it, then shrink it. Neutral in both addresses, and the pair with S02 is the module's centre.",
+      "register": "neutral",
+      "mnemonic": "quizá es means I mostly think so; quizá sea means I really do not know."
+    },
+    {
+      "id": "L4-M5-S04",
+      "display": "Puede que tengas razón, pero no lo haría.",
+      "cue": "You may be right, but I wouldn't do it.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "puede que",
+            "cue": "it may be that · maybe",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two words indexed whole, so L2-M1's bare puede keeps its own row. It takes the subjunctive always, with no choice of mood at all."
+          },
+          {
+            "display": "tengas",
+            "cue": "you have (subjunctive)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Present subjunctive of tener, on the yo-form stem teng-. tienes razón becomes tengas razón the moment puede que stands in front of it."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "Puede que es is the commonest error an English speaker makes in this module. puede que has no indicative option, ever, however sure the speaker is.",
+      "sound": "PWEH-de ke TEN-gas. puede que runs together into three quick syllables before the verb.",
+      "variations": [
+        {
+          "display": "Puede que sea verdad, pero no lo haría.",
+          "cue": "It may be true, but I wouldn't do it.",
+          "changed": "what is granted"
+        },
+        {
+          "display": "Puede que tengas razón, pero no del todo.",
+          "cue": "You may be right, but not entirely.",
+          "changed": "how the disagreement is closed"
+        }
+      ],
+      "mistake": {
+        "display": "Puede que tienes razón, pero no lo haría.",
+        "why": "puede que always takes the subjunctive: tengas. tienes is the indicative and cannot follow it."
+      },
+      "usage": "The concession that keeps its distance. The verb form is tú, so this is a friend or a colleague; with usted it would be puede que tenga razón.",
+      "register": "informal",
+      "mnemonic": "puede que never lets an indicative through."
+    },
+    {
+      "id": "L4-M5-S05",
+      "display": "A lo mejor es caro, pero vale la pena.",
+      "cue": "Maybe it's expensive, but it's worth it.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a lo mejor",
+            "cue": "maybe · perhaps",
+            "tag": "delta",
+            "forms": [],
+            "note": "Three words indexed whole; mejor on its own is L2-M9's better. It always takes the indicative, and it is the most spoken of all these markers."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "a lo mejor has nothing to do with better and never takes the subjunctive. Beside puede que it is the pair to learn: two markers with the same meaning and two opposite moods.",
+      "sound": "a lo me-KHOR. The j is the rough back-of-the-throat h, and the three words are said as one.",
+      "variations": [
+        {
+          "display": "A lo mejor tienes razón, pero vale la pena.",
+          "cue": "Maybe you're right, but it's worth it.",
+          "changed": "what is granted"
+        },
+        {
+          "display": "A lo mejor es caro, pero no es tan importante.",
+          "cue": "Maybe it's expensive, but it isn't that important.",
+          "changed": "the counter-claim"
+        }
+      ],
+      "mistake": {
+        "display": "A lo mejor sea caro, pero vale la pena.",
+        "why": "a lo mejor takes the indicative es. The subjunctive belongs to puede que and to the doubting half of quizá."
+      },
+      "usage": "The everyday spoken maybe, heard far more than quizá in ordinary talk. Neutral in either address.",
+      "register": "neutral",
+      "mnemonic": "a lo mejor is spoken and indicative; puede que is careful and subjunctive."
+    },
+    {
+      "id": "L4-M5-S06",
+      "display": "Hombre, no del todo; yo diría que es caro.",
+      "cue": "Come on, not entirely; I'd say it's expensive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hombre",
+            "cue": "come on · look here",
+            "tag": "free",
+            "forms": [],
+            "note": "As an opener it is a marker, not the noun man, and it is said to women too. It marks friendly protest, and it is much commoner in Spain."
+          },
+          {
+            "display": "no del todo",
+            "cue": "not entirely · not quite",
+            "tag": "free",
+            "forms": [],
+            "note": "Three words indexed whole. It is the softest no in the module: it grants part of the claim without saying which part."
+          },
+          {
+            "display": "yo diría",
+            "cue": "I'd say",
+            "tag": "free",
+            "forms": [],
+            "note": "A ready-made softener on L3-M4's conditional. The yo is written out because the hedge is the point: this is my reading, not the truth."
+          }
+        ],
+        "rules": [2, 4, 5]
+      },
+      "trap": "English hedges the claim itself — it might be a bit expensive. Spanish hedges the frame, yo diría que, and then says es caro flat. Hedging both sounds unsure rather than polite.",
+      "sound": "OM-bre. The h is silent, so the word begins on the o, and the rest is two quick syllables.",
+      "variations": [
+        {
+          "display": "Hombre, no del todo; yo diría que no.",
+          "cue": "Come on, not entirely; I'd say no.",
+          "changed": "what the softened claim is"
+        },
+        {
+          "display": "No del todo; yo diría que es caro.",
+          "cue": "Not entirely; I'd say it's expensive.",
+          "changed": "the opener goes, and it cools right down"
+        }
+      ],
+      "mistake": {
+        "display": "Hombre, no del todo; yo diría que sea caro.",
+        "why": "yo diría que takes the indicative. The conditional on diría is already the hedge, and a subjunctive after it hedges twice."
+      },
+      "usage": "Friendly protest between people who know each other, so tú. hombre is Spain far more than Latin America, where oye or mira would do the same job.",
+      "register": "informal",
+      "mnemonic": "Hedge the frame once, then say the claim flat."
+    },
+    {
+      "id": "L4-M5-S07",
+      "display": "Pues no sé, la verdad es que me temo que no.",
+      "cue": "Well, I don't know, the truth is I'm afraid not.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pues",
+            "cue": "well · so",
+            "tag": "free",
+            "forms": [],
+            "note": "At the head of an answer it buys time and commits to nothing. It is the single commonest first word in spoken Spanish and it means almost nothing at all."
+          },
+          {
+            "display": "me temo",
+            "cue": "I'm afraid",
+            "tag": "free",
+            "forms": [],
+            "note": "Reflexive and always with que. It softens bad news exactly as English I am afraid does, and carries no fear in it whatever."
+          }
+        ],
+        "rules": [2, 6]
+      },
+      "trap": "me temo que no is a complete answer and needs no verb after it. English I am afraid not works the same way, which makes this the one softener that transfers whole.",
+      "sound": "pwes no SE. pues is one syllable, pwes, and never the two an English reader expects.",
+      "variations": [
+        {
+          "display": "Pues no sé, me temo que no.",
+          "cue": "Well, I don't know, I'm afraid not.",
+          "changed": "the middle frame is dropped"
+        },
+        {
+          "display": "La verdad es que me temo que no.",
+          "cue": "The truth is, I'm afraid not.",
+          "changed": "the opener goes and the refusal is plainer"
+        }
+      ],
+      "mistake": {
+        "display": "Pues no sé, la verdad que me temo que no.",
+        "why": "The es is not optional: la verdad ES que. Without it the frame has no verb, exactly as with L4-M4's lo que pasa es que."
+      },
+      "usage": "The full refusal, softened at both ends. Neutral in either address, and this is what a shop or an office actually sounds like.",
+      "register": "neutral",
+      "mnemonic": "pues opens the door slowly; me temo closes it kindly."
+    },
+    {
+      "id": "L4-M5-S08",
+      "display": "Le entiendo, pero no estoy tan seguro de eso.",
+      "cue": "I understand you, but I'm not so sure about that.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "entiendo",
+            "cue": "I understand",
+            "tag": "free",
+            "forms": [],
+            "note": "Stem-changing: entender becomes entiendo. Said alone it concedes the other person's position without conceding the point, which is why it opens a formal refusal."
+          }
+        ],
+        "rules": [2, 6]
+      },
+      "trap": "no estoy tan seguro is softer than no estoy seguro, and the tan is doing all of it. Spanish grades a refusal with tan where English reaches for so or quite.",
+      "sound": "le en-TYEN-do. le and entiendo run together into one word in speech, len-TYEN-do.",
+      "variations": [
+        {
+          "display": "Le entiendo, pero no estoy seguro de eso.",
+          "cue": "I understand you, but I'm not sure about that.",
+          "changed": "the tan goes, and the refusal hardens"
+        },
+        {
+          "display": "Te entiendo, pero no estoy tan seguro de eso.",
+          "cue": "I understand you, but I'm not so sure about that.",
+          "changed": "the address, from usted to tú"
+        }
+      ],
+      "mistake": {
+        "display": "Le entiendo, pero no soy tan seguro de eso.",
+        "why": "Being sure is estar, not ser: no estoy seguro. no soy seguro would say that you are not a safe person."
+      },
+      "usage": "The module's formal item. le is the usted object pronoun, and every softener around it is the same one a friend would get: politeness lives in the frame, not in the pronoun.",
+      "register": "formal",
+      "mnemonic": "tan is the dial: no estoy tan seguro is half of no estoy seguro."
+    },
+    {
+      "id": "L4-M5-S09",
+      "display": "No es que sea caro; es que no tengo tiempo.",
+      "cue": "It's not that it's expensive; it's that I don't have time.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "no es que",
+            "cue": "it is not that",
+            "tag": "delta",
+            "forms": [],
+            "note": "Three words indexed whole, and the negative forces the subjunctive: no es que sea. Its positive twin es que keeps the indicative, and L4-M4 owns that row."
+          }
+        ],
+        "rules": [1, 6]
+      },
+      "trap": "The same three words with and without no take different moods: es que es caro but no es que SEA caro. Denying a reason is the doubt that flips it.",
+      "sound": "no es ke SEH-a KA-ro. The whole first half is unstressed until caro, which is where the voice lands.",
+      "variations": [
+        {
+          "display": "No es que sea caro; es que no me parece bien.",
+          "cue": "It's not that it's expensive; it's that it doesn't seem right to me.",
+          "changed": "the real reason"
+        },
+        {
+          "display": "No es que no tenga tiempo; es que es caro.",
+          "cue": "It's not that I don't have time; it's that it's expensive.",
+          "changed": "the two halves swap"
+        }
+      ],
+      "mistake": {
+        "display": "No es que es caro; es que no tengo tiempo.",
+        "why": "no es que denies a reason, and denying it takes the subjunctive sea. The indicative belongs only to the positive es que."
+      },
+      "usage": "The frame for turning something down without giving the reason the other person expects. Neutral in both addresses.",
+      "register": "neutral",
+      "mnemonic": "Add no to es que and the mood flips."
+    },
+    {
+      "id": "L4-M5-S10",
+      "display": "Me temo que no, pero gracias de todos modos.",
+      "cue": "I'm afraid not, but thanks all the same.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "de todos modos",
+            "cue": "all the same · anyway",
+            "tag": "free",
+            "forms": [],
+            "note": "Three words indexed whole. At the end of a refusal it hands the other person back their dignity, and it is what makes the no land softly."
+          }
+        ],
+        "rules": [2, 6]
+      },
+      "trap": "English can end on a bare thanks. Spanish almost always adds the tail — gracias de todos modos — and leaving it off makes a refusal sound curt.",
+      "sound": "de TO-dos MO-dos. Four even syllables with the stress on the two o's, said quickly and low.",
+      "variations": [
+        {
+          "display": "Me temo que no, pero gracias.",
+          "cue": "I'm afraid not, but thanks.",
+          "changed": "the tail is dropped, and it sounds shorter"
+        },
+        {
+          "display": "Pues me temo que no, de todos modos gracias.",
+          "cue": "Well, I'm afraid not, thanks all the same.",
+          "changed": "the order, with pues opening it"
+        }
+      ],
+      "mistake": {
+        "display": "Me temo no, pero gracias de todos modos.",
+        "why": "me temo always takes que, even when only no follows it: me temo QUE no."
+      },
+      "usage": "How the whole module ends: the no is said, and nobody has lost face. Neutral in both addresses, and the last thing said before a goodbye.",
+      "register": "neutral",
+      "mnemonic": "de todos modos is the door held open on the way out."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M5-C01",
+      "display": "Bueno, no sé... no me parece bien, la verdad.",
+      "cue": "Well, I don't know... it doesn't seem right to me, honestly."
+    },
+    {
+      "id": "L4-M5-C02",
+      "display": "Quizá sea verdad, pero no estoy seguro.",
+      "cue": "It may be true, but I'm not sure."
+    },
+    {
+      "id": "L4-M5-C03",
+      "display": "Quizá es verdad, pero no es tan importante.",
+      "cue": "It's probably true, but it isn't that important."
+    },
+    {
+      "id": "L4-M5-C04",
+      "display": "Puede que tengas razón, pero no lo haría.",
+      "cue": "You may be right, but I wouldn't do it."
+    },
+    {
+      "id": "L4-M5-C05",
+      "display": "A lo mejor es caro, pero vale la pena.",
+      "cue": "Maybe it's expensive, but it's worth it."
+    },
+    {
+      "id": "L4-M5-C06",
+      "display": "Hombre, no del todo; yo diría que es caro.",
+      "cue": "Come on, not entirely; I'd say it's expensive."
+    },
+    {
+      "id": "L4-M5-C07",
+      "display": "Pues no sé, la verdad es que me temo que no.",
+      "cue": "Well, I don't know, the truth is I'm afraid not."
+    },
+    {
+      "id": "L4-M5-C08",
+      "display": "Le entiendo, pero no estoy tan seguro de eso.",
+      "cue": "I understand you, but I'm not so sure about that."
+    },
+    {
+      "id": "L4-M5-C09",
+      "display": "No es que sea caro; es que no tengo tiempo.",
+      "cue": "It's not that it's expensive; it's that I don't have time."
+    },
+    {
+      "id": "L4-M5-C10",
+      "display": "Me temo que no, pero gracias de todos modos.",
+      "cue": "I'm afraid not, but thanks all the same."
+    },
+    {
+      "id": "L4-M5-C11",
+      "display": "Tal vez sea mejor esperar un poco.",
+      "cue": "Maybe it's better to wait a bit."
+    },
+    {
+      "id": "L4-M5-C12",
+      "display": "Puede que sea verdad, pero no del todo.",
+      "cue": "It may be true, but not entirely."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

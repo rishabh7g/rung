@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M5",
+  "title": "Disagreeing well",
+  "job": "Soften, hedge, save face",
+  "prerequisites": [
+    "L4-M1",
+    "L4-M2",
+    "L4-M3",
+    "L4-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "présent",
+      "subjonctif présent",
+      "conditionnel"
+    ],
+    "allowedPatterns": [
+      "Je ne suis pas sûr que + <subjunctive>",
+      "Il me semble que + <indicative>",
+      "Je ne dirais pas que + <subjunctive>",
+      "Ça dépend de + <noun>",
+      "Oui + , + mais pas forcément + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE FORM IS ONE RECIPE: TAKE THE ils STEM AND ADD -e, -es, -e, -ions, -iez, -ent. ils viennent gives que je vienne, ils disent gives que je dise, ils prennent gives que je prenne. Nothing is memorised verb by verb — you already know the ils form of every verb this course has taught, so you already know its subjunctive."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TRIGGER STANDS TO THE LEFT OF que, NEVER INSIDE THE CLAUSE. Doubt, will or necessity in the MAIN clause bends the verb behind que; the subordinate clause itself contains no signal at all. Read leftwards and the mood is decided before you reach the verb, which is what stops a learner hunting for it in the wrong half."
+    },
+    {
+      "tag": "interference",
+      "text": "THE COUNTERWEIGHT, OR YOU WILL SUBJUNCTIVE EVERYTHING. il me semble que, je pense que, je crois que and je suis sûr que all take the INDICATIVE: they assert, and an assertion is not a doubt. Only their negative and their question bend the verb — je ne pense pas que ce soit, but je pense que c'est."
+    },
+    {
+      "tag": "free",
+      "text": "SIX FORMS REFUSE THE RECIPE, AND FOUR OF THEM YOU ALREADY OWN. soit, ait, puisse and aille came in as whole words at L3-M3; fasse and sache are the two this module adds. Everything else in the language follows the ils stem, so the irregular list is short enough to hold in one line."
+    },
+    {
+      "tag": "delta",
+      "text": "ENGLISH HEDGES BY WEAKENING THE CLAIM; FRENCH HEDGES BY FRAMING IT. kind of, I guess and sort of soften the words themselves. French builds a frame — je ne suis pas sûr que, je ne dirais pas que — and then states the thing plainly inside it, which reads as more confident rather than less."
+    },
+    {
+      "tag": "free",
+      "text": "NOT EVERY HEDGE TOUCHES THE MOOD. ça dépend de takes a noun, pas forcément qualifies a whole clause, and plutôt, disons and franchement colour a sentence without a que in sight. These are the cheapest half of the module and they disagree just as effectively."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ne STAYS WRITTEN IN EVERY FRAME HERE. je ne suis pas sûr, je ne dirais pas, je ne pense pas — the negation is what turns an assertion into a doubt, so dropping the ne does not just look casual, it removes the very thing that triggers the mood."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M5-S01",
+      "display": "Je ne suis pas sûr que ce soit vrai",
+      "cue": "I'm not sure that's true",
+      "literal": "I not am not sure that this be true",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je ne suis pas sûr que",
+            "cue": "I'm not sure that",
+            "tag": "delta",
+            "forms": [
+              "je ne suis pas sûr que"
+            ],
+            "note": "The frame, indexed whole: sûr already has its own row at L3-M3. Everything after que bends, because the doubt is here and not there."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "soit is not new — L3-M3 shipped it as a word. What is new is knowing WHY it is there: the doubt on the left of que put it there.",
+      "sound": "zhuh nuh swee pah SEWR kuh suh swah VREH. sûr has the tight rounded u, and soit is one syllable, swah, with the t silent.",
+      "variations": [
+        {
+          "display": "Je ne suis pas sûr que ce soit utile",
+          "cue": "I'm not sure that's useful",
+          "changed": "the claim doubted changes and the frame does not move"
+        },
+        {
+          "display": "Je ne suis pas sûr que ce soit un problème",
+          "cue": "I'm not sure that's a problem",
+          "changed": "the doubt lands on a noun phrase instead of an adjective"
+        }
+      ],
+      "mistake": {
+        "display": "Je ne suis pas sûr que c'est vrai",
+        "why": "c'est is the indicative. The doubt standing in front of que is exactly what bends the verb behind it, so the form is ce soit."
+      },
+      "usage": "The most useful disagreement in the language: it doubts the claim and never the person making it.",
+      "register": "neutral",
+      "mnemonic": "The doubt is on the left."
+    },
+    {
+      "id": "L4-M5-S02",
+      "display": "Je ne suis pas sûr qu'il vienne demain",
+      "cue": "I'm not sure he's coming tomorrow",
+      "literal": "I not am not sure that-he come tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vienne",
+            "cue": "comes (subjunctive)",
+            "tag": "delta",
+            "forms": [
+              "vienne",
+              "dise",
+              "prenne"
+            ],
+            "note": "The recipe on three regular verbs: ils viennent gives vienne, ils disent gives dise, ils prennent gives prenne. Drop -ent, add -e."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "qu'il is one word and one key — the que has already elided, so the six-word frame of the sentence before it does not appear here.",
+      "sound": "zhuh nuh swee pah sewr keel vee-EN duh-MAN. vienne has two syllables where vient has one, and that extra syllable is the whole signal.",
+      "variations": [
+        {
+          "display": "Je ne suis pas sûr qu'il dise oui",
+          "cue": "I'm not sure he'll say yes",
+          "changed": "another regular verb through the same recipe"
+        },
+        {
+          "display": "Je ne suis pas sûr qu'elle vienne demain",
+          "cue": "I'm not sure she's coming tomorrow",
+          "changed": "the subject changes and the subjunctive form does not"
+        }
+      ],
+      "mistake": {
+        "display": "Je ne suis pas sûr qu'il vient demain",
+        "why": "vient is the indicative and belongs after je pense que. Behind a doubt the ils stem takes over: viennent minus -ent, plus -e, gives vienne."
+      },
+      "usage": "How you decline to vouch for somebody else's plans without calling them unreliable.",
+      "register": "neutral",
+      "mnemonic": "ils minus -ent, plus -e."
+    },
+    {
+      "id": "L4-M5-S03",
+      "display": "Je ne suis pas sûr qu'il fasse froid demain",
+      "cue": "I'm not sure it'll be cold tomorrow",
+      "literal": "I not am not sure that-it make cold tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fasse",
+            "cue": "does, makes (subjunctive)",
+            "tag": "free",
+            "forms": [
+              "fasse",
+              "sache"
+            ],
+            "note": "Two of the six that refuse the recipe. ils font would never give fasse, and ils savent never sache; the other four came in at L3-M3."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Weather takes faire in French, so it is il fait froid and, behind a doubt, qu'il fasse froid. The verb is the one English would never guess.",
+      "sound": "zhuh nuh swee pah sewr keel FAHS frwah duh-MAN. fasse rhymes with the first syllable of facile; froid is one syllable, frwah.",
+      "variations": [
+        {
+          "display": "Je ne suis pas sûr qu'il sache",
+          "cue": "I'm not sure he knows",
+          "changed": "the second irregular, standing with no clause after it"
+        },
+        {
+          "display": "Je ne pense pas qu'il fasse froid demain",
+          "cue": "I don't think it'll be cold tomorrow",
+          "changed": "a different doubt frame, and the mood behind it is the same"
+        }
+      ],
+      "mistake": {
+        "display": "Je ne suis pas sûr qu'il fait froid demain",
+        "why": "fait is the indicative. faire is one of the six irregulars, and its subjunctive is fasse — a form no stem rule would predict."
+      },
+      "usage": "Hedging a forecast, which is what French speakers do with weather almost as a reflex.",
+      "register": "neutral",
+      "mnemonic": "Six refuse the recipe."
+    },
+    {
+      "id": "L4-M5-S04",
+      "display": "Il me semble que c'est plus compliqué",
+      "cue": "It seems to me it's more complicated",
+      "literal": "It to-me seems that it-is more complicated",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "il me semble que",
+            "cue": "it seems to me that",
+            "tag": "free",
+            "forms": [
+              "il me semble que"
+            ],
+            "note": "The counterweight. It ASSERTS, gently, so the verb behind que stays indicative — the same as je pense que and je crois que."
+          },
+          {
+            "display": "compliqué",
+            "cue": "complicated",
+            "tag": "free",
+            "forms": [
+              "compliqué"
+            ],
+            "note": "The participle of compliquer used as an adjective, like annulé at L4-M2. A feminine subject adds an e that nobody hears."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "It seems is a hedge in English, so a learner expects the mood. It is not a doubt in French — it is a soft claim, and a claim takes the indicative.",
+      "sound": "eel muh SOM-bluh kuh seh plew kom-plee-KAY. semble ends in a swallowed bluh, and the que that follows leans onto it.",
+      "variations": [
+        {
+          "display": "Il me semble que c'est trop cher",
+          "cue": "It seems to me it's too expensive",
+          "changed": "the assertion changes and the indicative holds"
+        },
+        {
+          "display": "Il me semble que c'est plus rapide",
+          "cue": "It seems to me it's faster",
+          "changed": "a comparison instead of a judgement, on the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Il me semble que ce soit plus compliqué",
+        "why": "il me semble que states something. Only doubt, will or necessity bends the verb, and a soft assertion is none of the three."
+      },
+      "usage": "The politest way to introduce your own view — it puts the opinion at arm's length without disowning it.",
+      "register": "neutral",
+      "mnemonic": "Seeming is asserting."
+    },
+    {
+      "id": "L4-M5-S05",
+      "display": "Je ne dirais pas que ce soit un problème",
+      "cue": "I wouldn't say that's a problem",
+      "literal": "I not would-say not that this be a problem",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je ne dirais pas",
+            "cue": "I wouldn't say",
+            "tag": "free",
+            "forms": [
+              "je ne dirais pas"
+            ],
+            "note": "L3-M4's conditional on dire, negated — and the negation is the trigger. Indexed whole, because dirais on its own has no row here."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "The conditional is what makes it polite and the ne … pas is what makes it a doubt. Take either away and the mood behind que goes with it.",
+      "sound": "zhuh nuh dee-REH pah kuh suh swah un pro-BLEM. dirais and dirait sound the same; only the spelling picks the person.",
+      "variations": [
+        {
+          "display": "Je ne dirais pas que ce soit utile",
+          "cue": "I wouldn't say that's useful",
+          "changed": "the thing declined changes and the frame holds"
+        },
+        {
+          "display": "Je ne dirais pas que ce soit compliqué",
+          "cue": "I wouldn't say it's complicated",
+          "changed": "the disagreement lands on an adjective instead of a noun"
+        }
+      ],
+      "mistake": {
+        "display": "Je dirais pas que ce soit un problème",
+        "why": "The ne is dropped in fast speech and never on the page. Worse here than elsewhere: the negation is the thing that triggers the mood."
+      },
+      "usage": "A refusal dressed as an opinion. It is how you contradict somebody senior to you and keep the room calm.",
+      "register": "neutral",
+      "mnemonic": "No ne, no doubt, no mood."
+    },
+    {
+      "id": "L4-M5-S06",
+      "display": "Ça dépend de la ville",
+      "cue": "It depends on the town",
+      "literal": "That depends of the city",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ça dépend",
+            "cue": "it depends",
+            "tag": "free",
+            "forms": [
+              "ça dépend"
+            ],
+            "note": "A whole answer on its own, and with de plus a noun it becomes a real one. dépendre keeps its de where English keeps on."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "de is not optional. Ça dépend la ville is a sentence with a hole in it, and the hole is where English put on.",
+      "sound": "sa day-PON duh la VEEL. dépend ends nasal with no d heard, and the de after it is barely a syllable.",
+      "variations": [
+        {
+          "display": "Ça dépend de la question",
+          "cue": "It depends on the question",
+          "changed": "what the answer hangs on becomes abstract"
+        },
+        {
+          "display": "Ça dépend de la réunion",
+          "cue": "It depends on the meeting",
+          "changed": "the condition becomes an event rather than a place"
+        }
+      ],
+      "mistake": {
+        "display": "Ça dépend la ville",
+        "why": "dépendre takes de and always has. English attaches on and French attaches de; neither language lets you drop it."
+      },
+      "usage": "The national answer to a question you do not want to answer, and it is never heard as evasive.",
+      "register": "neutral",
+      "mnemonic": "dépend keeps its de."
+    },
+    {
+      "id": "L4-M5-S07",
+      "display": "Oui, mais pas forcément ce soir",
+      "cue": "Yes, but not necessarily tonight",
+      "literal": "Yes, but not necessarily this evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pas forcément",
+            "cue": "not necessarily",
+            "tag": "free",
+            "forms": [
+              "pas forcément"
+            ],
+            "note": "The order is fixed. Reversed — forcément pas — it means necessarily not, which is the opposite claim and a much harder one."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "This is the one negative in the module with no ne, because there is no verb for the ne to attach to. Put a verb back and the ne returns.",
+      "sound": "wee, meh pah for-say-MON suh SWAHR. forcément carries its stress on the last syllable, and the c is soft.",
+      "variations": [
+        {
+          "display": "Oui, mais pas forcément demain",
+          "cue": "Yes, but not necessarily tomorrow",
+          "changed": "the reservation moves to a different day"
+        },
+        {
+          "display": "Oui, mais pas forcément ce matin",
+          "cue": "Yes, but not necessarily this morning",
+          "changed": "the same reservation on a nearer horizon"
+        }
+      ],
+      "mistake": {
+        "display": "Oui, mais forcément pas ce soir",
+        "why": "forcément pas says necessarily not — a flat refusal. pas forcément is the hedge, and the order is what separates them."
+      },
+      "usage": "Agreement with the timing taken back out of it — a way of saying yes and not now in five words.",
+      "register": "neutral",
+      "mnemonic": "pas first, forcément second."
+    },
+    {
+      "id": "L4-M5-S08",
+      "display": "Franchement, je ne pense pas que ce soit utile",
+      "cue": "Honestly, I don't think that's useful",
+      "literal": "Frankly, I not think not that this be useful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "franchement",
+            "cue": "honestly, frankly",
+            "tag": "free",
+            "forms": [
+              "franchement"
+            ],
+            "note": "It warns that a real opinion is coming, so it softens the room rather than the claim. Placed first, always, and followed by a comma."
+          },
+          {
+            "display": "je ne pense pas que",
+            "cue": "I don't think that",
+            "tag": "delta",
+            "forms": [
+              "je ne pense pas que"
+            ],
+            "note": "Indexed whole, because pense alone is L1-M9's row. Positive it takes the indicative; negated it becomes a doubt and bends the verb."
+          },
+          {
+            "display": "utile",
+            "cue": "useful, worth it",
+            "tag": "free",
+            "forms": [
+              "utile"
+            ],
+            "note": "One form for both genders. Said of a thing that earns its place, and it is the ordinary word where English might say worth it."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          5
+        ]
+      },
+      "trap": "je pense que and je ne pense pas que are two different frames. The first asserts and takes c'est; the second doubts and takes ce soit.",
+      "sound": "fronsh-MON, zhuh nuh pons pah kuh suh swah ew-TEEL. franchement opens nasal and ends on the stressed MON.",
+      "variations": [
+        {
+          "display": "Franchement, je ne pense pas que ce soit vrai",
+          "cue": "Honestly, I don't think that's true",
+          "changed": "the claim doubted changes and the whole frame holds"
+        },
+        {
+          "display": "Je ne pense pas que ce soit compliqué",
+          "cue": "I don't think it's complicated",
+          "changed": "the warning drops and the disagreement stands bare"
+        }
+      ],
+      "mistake": {
+        "display": "Franchement, je ne pense pas que c'est utile",
+        "why": "Negated, penser triggers the mood. je pense que c'est is right; je ne pense pas que c'est is the one the negation forbids."
+      },
+      "usage": "The whole disagreement in one line: a warning, a hedge, and the claim. Rude only if you skip the franchement.",
+      "register": "neutral",
+      "mnemonic": "Negate penser and the mood follows."
+    },
+    {
+      "id": "L4-M5-S09",
+      "display": "C'est plutôt une question de prix",
+      "cue": "It's more a question of price",
+      "literal": "It-is rather a question of price",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "plutôt",
+            "cue": "rather, more like",
+            "tag": "free",
+            "forms": [
+              "plutôt"
+            ],
+            "note": "One word, and not L4-M3's plus tôt, which is two words and means earlier. plutôt redirects a claim; plus tôt moves a clock."
+          },
+          {
+            "display": "question",
+            "cue": "question, matter",
+            "tag": "free",
+            "forms": [
+              "question"
+            ],
+            "note": "une question de is the frame that reframes: it moves the disagreement onto what the argument is really about."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "Disagreeing by reframing rather than by denying. Nothing said before is contradicted — it is simply declared to be about something else.",
+      "sound": "seh plew-TOH ewn kes-tee-ON duh PREE. question has the sti of a French t, kes-tee-ON, never the sh English puts there.",
+      "variations": [
+        {
+          "display": "C'est plutôt une question de temps",
+          "cue": "It's more a question of time",
+          "changed": "the real subject of the argument changes"
+        },
+        {
+          "display": "C'est plutôt compliqué",
+          "cue": "It's rather complicated",
+          "changed": "plutôt drops to a plain adverb in front of an adjective"
+        }
+      ],
+      "mistake": {
+        "display": "C'est plus tôt une question de prix",
+        "why": "plus tôt is two words and means earlier — L4-M3's phrase. The one word plutôt is the one that means rather."
+      },
+      "usage": "The move that ends an argument by changing what it is about, and it does so without contradicting anybody.",
+      "register": "neutral",
+      "mnemonic": "One word redirects, two words move the clock."
+    },
+    {
+      "id": "L4-M5-S10",
+      "display": "Disons que c'est plus compliqué que ça",
+      "cue": "Let's say it's more complicated than that",
+      "literal": "Let-us-say that it-is more complicated than that",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "disons",
+            "cue": "let's say",
+            "tag": "free",
+            "forms": [
+              "disons"
+            ],
+            "note": "The nous form of dire used as an invitation. It proposes a wording rather than doubting one, so the verb behind que stays indicative."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "disons que looks like every other que frame in this module and behaves like none of them. It proposes, it does not doubt, so nothing bends.",
+      "sound": "dee-ZON kuh seh plew kom-plee-KAY kuh SA. disons ends nasal; the two ques in the line are both the flat kuh.",
+      "variations": [
+        {
+          "display": "Disons que c'est plutôt compliqué",
+          "cue": "Let's say it's rather complicated",
+          "changed": "the comparison becomes a hedge and the mood stays put"
+        },
+        {
+          "display": "Disons que ça dépend",
+          "cue": "Let's say it depends",
+          "changed": "the proposal hands the question back without answering it"
+        }
+      ],
+      "mistake": {
+        "display": "Disons que ce soit plus compliqué que ça",
+        "why": "disons proposes a form of words; it is not doubt, will or necessity. With no trigger on the left, the verb stays indicative."
+      },
+      "usage": "How a French speaker closes a disagreement they intend to keep open — it agrees on a wording, not on the point.",
+      "register": "neutral",
+      "mnemonic": "Proposing is not doubting."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M5-C01",
+      "display": "Je ne suis pas sûr que ce soit vrai",
+      "cue": "I'm not sure that's true"
+    },
+    {
+      "id": "L4-M5-C02",
+      "display": "Je ne suis pas sûr qu'il vienne demain",
+      "cue": "I'm not sure he's coming tomorrow"
+    },
+    {
+      "id": "L4-M5-C03",
+      "display": "Je ne suis pas sûr qu'il fasse froid demain",
+      "cue": "I'm not sure it'll be cold tomorrow"
+    },
+    {
+      "id": "L4-M5-C04",
+      "display": "Il me semble que c'est plus compliqué",
+      "cue": "It seems to me it's more complicated"
+    },
+    {
+      "id": "L4-M5-C05",
+      "display": "Je ne dirais pas que ce soit un problème",
+      "cue": "I wouldn't say that's a problem"
+    },
+    {
+      "id": "L4-M5-C06",
+      "display": "Ça dépend de la ville",
+      "cue": "It depends on the town"
+    },
+    {
+      "id": "L4-M5-C07",
+      "display": "Oui, mais pas forcément ce soir",
+      "cue": "Yes, but not necessarily tonight"
+    },
+    {
+      "id": "L4-M5-C08",
+      "display": "Franchement, je ne pense pas que ce soit utile",
+      "cue": "Honestly, I don't think that's useful"
+    },
+    {
+      "id": "L4-M5-C09",
+      "display": "C'est plutôt une question de prix",
+      "cue": "It's more a question of price"
+    },
+    {
+      "id": "L4-M5-C10",
+      "display": "Disons que c'est plus compliqué que ça",
+      "cue": "Let's say it's more complicated than that"
+    },
+    {
+      "id": "L4-M5-C11",
+      "display": "Je ne pense pas que ce soit vrai",
+      "cue": "I don't think that's true"
+    },
+    {
+      "id": "L4-M5-C12",
+      "display": "Il me semble que ça dépend de la ville",
+      "cue": "It seems to me it depends on the town"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,661 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M3",
+  "title": "What might have been",
+  "job": "Regrets and past hypotheticals",
+  "prerequisites": [
+    "L4-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_past",
+      "past_perfect",
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "law + kuntu qad + V-past + , + la- + V-past",
+      "kāna yajibu an + V-subjunctive",
+      "kāna ʿalayya an + V-subjunctive",
+      "kuntu sa- + V-imperfect",
+      "kāna qad + V-past + qabla + <N>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "kāna qad + a past verb is the PLUPERFECT — one step behind the past: kāna qad dhahaba, he had gone. L3-M7 opened qad in front of a past to mean already; kāna is what pushes the whole thing further back."
+    },
+    {
+      "tag": "delta",
+      "text": "The person lives in kāna and again in the far verb, never in the frame between them. kuntu qad akaltu marks I twice and both ends must agree; kāna yajibu marks nobody at all and is frozen in the he-form."
+    },
+    {
+      "tag": "free",
+      "text": "kāna + sa- + a present verb is the was-going-to: kuntu sa-attaṣil. L1-M6's future put behind a past kāna — the plan existed, and the plan did not happen. Nothing about the verb under sa- changes."
+    },
+    {
+      "tag": "delta",
+      "text": "kāna ʿalayya an is the personal past obligation: L1-M7's ʿalā with a pronoun on it — ʿalayya on me, ʿalayka on you, ʿalayhi on him. Unlike kāna yajibu, this frame does carry the person."
+    },
+    {
+      "tag": "interference",
+      "text": "English would have, should have and could have are three different auxiliaries. Arabic has none of them: every one is kāna in front of something this ladder already owns — a past verb, a sa- future, or an obligation frame."
+    },
+    {
+      "tag": "interference",
+      "text": "One kāna is the whole auxiliary. Because it is doing so much work here, learners stack it — kuntu kāna, kāna sa-kāna — and neither is a sentence. If kāna is already there, the second one is the mistake."
+    },
+    {
+      "tag": "interference",
+      "text": "After an the verb is present-SHAPED whatever the English tense says, and after qad it is past. The tense of the English sentence decides nothing at all about the shape of the second verb."
+    },
+    {
+      "tag": "free",
+      "text": "L3-M4's conditional does not change here. law still opens the condition and the answer clause still wears la- on a plain past verb, however long the condition in front of it has become."
+    },
+    {
+      "tag": "free",
+      "text": "The past obligation is negated on kāna, not on the frame: lam yakun yajibu an taqūl dhālika. L3-M4's lam turns kāna into yakun, and yajibu behind it is untouched."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M3-S01",
+      "display": "kāna qad dhahaba qabla al-ijtimāʿ",
+      "script": "كان قد ذهب قبل الاجتماع",
+      "cue": "He had gone before the meeting",
+      "literal": "Was already he-went before the-meeting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kāna qad",
+            "script": "كان قد",
+            "cue": "he had (already)",
+            "tag": "delta",
+            "forms": [
+              "kāna qad",
+              "kānat qad"
+            ],
+            "note": "L3-M7's qad, one step further back: kāna in front of it puts a finished event behind another finished event. kānat qad for a woman."
+          }
+        ],
+        "rules": [
+          0,
+          6
+        ]
+      },
+      "trap": "English needs two words for this — had gone. Arabic needs kāna in front of the past it already writes, and dhahaba itself does not change shape at all.",
+      "sound": "KĀ-na qad DHA-ha-ba: three short words, and qad is said quickly enough to sound joined to the verb behind it.",
+      "variations": [
+        {
+          "display": "kānat qad dhahabat qabla al-ijtimāʿ",
+          "script": "كانت قد ذهبت قبل الاجتماع",
+          "cue": "She had gone before the meeting",
+          "changed": "the person: he → she, in kāna and in the far verb both"
+        },
+        {
+          "display": "kāna qad akala qabla al-ḥafla",
+          "script": "كان قد أكل قبل الحفلة",
+          "cue": "He had eaten before the party",
+          "changed": "the event and the landmark: going before a meeting → eating before a party"
+        }
+      ],
+      "mistake": {
+        "display": "kāna dhahaba qabla al-ijtimāʿ",
+        "script": "كان ذهب قبل الاجتماع",
+        "why": "Without qad this is not the pluperfect — kāna and a bare past verb read as two loose events rather than one that finished before the other. qad is what stacks them."
+      },
+      "usage": "Putting one past event behind another: what was already done by the time something else happened.",
+      "register": "neutral",
+      "mnemonic": "kāna carries the person, qad carries the already."
+    },
+    {
+      "id": "L4-M3-S02",
+      "display": "kuntu qad akaltu qabla al-ḥafla",
+      "script": "كنت قد أكلت قبل الحفلة",
+      "cue": "I had already eaten before the party",
+      "literal": "I-was already I-ate before the-party",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kuntu qad",
+            "script": "كنت قد",
+            "cue": "I had (already)",
+            "tag": "delta",
+            "forms": [
+              "kuntu qad",
+              "kunta qad",
+              "kunti qad"
+            ],
+            "note": "The person is written twice — in kuntu and again in akaltu — and both ends have to agree. qad in the middle never changes."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English marks the person once, in I. Arabic marks it in kuntu and again in the far verb, and a mismatch — kuntu qad akala — is a different sentence, not a slip.",
+      "sound": "KUN-tu qad a-KAL-tu — the two -tu endings are the person, said at both ends of the frame.",
+      "variations": [
+        {
+          "display": "kunta qad akalta qabla al-ḥafla",
+          "script": "كنت قد أكلت قبل الحفلة",
+          "cue": "You had already eaten before the party",
+          "changed": "the person: I → you, in both verbs at once"
+        },
+        {
+          "display": "kuntu qad darastu qabla al-imtiḥān",
+          "script": "كنت قد درست قبل الامتحان",
+          "cue": "I had studied before the exam",
+          "changed": "what and when: eating before a party → studying before the exam"
+        }
+      ],
+      "mistake": {
+        "display": "kuntu qad akala qabla al-ḥafla",
+        "script": "كنت قد أكل قبل الحفلة",
+        "why": "kuntu says I and akala says he. The frame does not carry the person for the verb behind it, so both ends have to say the same thing."
+      },
+      "usage": "Saying you had already done a thing, so an offer or a plan is no longer needed.",
+      "register": "neutral",
+      "mnemonic": "Person at both ends, qad in the middle."
+    },
+    {
+      "id": "L4-M3-S03",
+      "display": "law kuntu qad dhahabtu mubakkiran, la-raʾaytu al-mudīr",
+      "script": "لو كنت قد ذهبت مبكراً، لرأيت المدير",
+      "cue": "If I had gone early, I would have seen the manager",
+      "literal": "If I-was already I-went early, then-I-saw the-manager",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "la-raʾaytu",
+            "script": "لرأيت",
+            "cue": "I would have seen",
+            "tag": "delta",
+            "forms": [
+              "la-raʾaytu"
+            ],
+            "note": "L3-M4's la- is still the answer marker and it still sits on a plain past verb. Nothing about law changes because the condition in front of it got longer."
+          }
+        ],
+        "rules": [
+          7,
+          4
+        ]
+      },
+      "trap": "English stacks would have on top of a past. Arabic's answer clause is exactly what L3-M4 already taught — la- on an ordinary past verb — however long the condition has become.",
+      "sound": "la-ra-AY-tu: the la- is one light syllable glued to the verb, never a word standing on its own.",
+      "variations": [
+        {
+          "display": "law kuntu qad dhahabtu mubakkiran, la-akaltu maʿaka",
+          "script": "لو كنت قد ذهبت مبكراً، لأكلت معكَ",
+          "cue": "If I had gone early, I would have eaten with you",
+          "changed": "the answer clause: seeing the manager → eating with you"
+        },
+        {
+          "display": "law kuntu qad waṣaltu mubakkiran, la-raʾaytu al-mudīr",
+          "script": "لو كنت قد وصلت مبكراً، لرأيت المدير",
+          "cue": "If I had arrived early, I would have seen the manager",
+          "changed": "the condition: going early → arriving early"
+        }
+      ],
+      "mistake": {
+        "display": "law kuntu qad dhahabtu mubakkiran, raʾaytu al-mudīr",
+        "script": "لو كنت قد ذهبت مبكراً، رأيت المدير",
+        "why": "Dropping la- leaves two plain past clauses side by side, which reads as a report of what happened. la- is what marks the half that did not."
+      },
+      "usage": "Regretting a decision out loud: naming the thing you did not do, and what it cost you.",
+      "register": "neutral",
+      "mnemonic": "Longer condition, same short answer: la- and a past verb."
+    },
+    {
+      "id": "L4-M3-S04",
+      "display": "kāna yajibu an adhhab ilā al-mustashfā",
+      "script": "كان يجب أن أذهب إلى المستشفى",
+      "cue": "I should have gone to the hospital",
+      "literal": "Was it-is-necessary that I-go to the-hospital",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kāna yajibu",
+            "script": "كان يجب",
+            "cue": "it was necessary / should have",
+            "tag": "delta",
+            "forms": [
+              "kāna yajibu"
+            ],
+            "note": "L3-M2's yajibu with kāna in front of it, frozen in the he-form whoever is speaking. The person appears only in the far verb: adhhab."
+          }
+        ],
+        "rules": [
+          1,
+          4,
+          6
+        ]
+      },
+      "trap": "English says I should have and puts the person on the modal. Arabic puts nothing on the frame — kāna yajibu never changes — and only adhhab says who.",
+      "sound": "KĀ-na YA-ji-bu an AD-hab — four beats, with the an said so lightly it almost joins the verb.",
+      "variations": [
+        {
+          "display": "kāna yajibu an tadhhab ilā al-mustashfā",
+          "script": "كان يجب أن تذهب إلى المستشفى",
+          "cue": "You should have gone to the hospital",
+          "changed": "who should have gone: I → you, in the far verb only"
+        },
+        {
+          "display": "kāna yajibu an adrus akthar",
+          "script": "كان يجب أن أدرس أكثر",
+          "cue": "I should have studied more",
+          "changed": "the obligation itself: going to the hospital → studying more"
+        }
+      ],
+      "mistake": {
+        "display": "kuntu yajibu an adhhab ilā al-mustashfā",
+        "script": "كنت يجب أن أذهب إلى المستشفى",
+        "why": "The frame does not take a person. kuntu yajibu puts I on a verb already frozen in the he-form; the frame is kāna yajibu for everybody."
+      },
+      "usage": "Saying, after the fact, that you should have done something — the ordinary spoken regret.",
+      "register": "neutral",
+      "mnemonic": "The frame is frozen; the person waits at the far verb."
+    },
+    {
+      "id": "L4-M3-S05",
+      "display": "kāna ʿalayya an adfaʿ al-fātūra",
+      "script": "كان عليّ أن أدفع الفاتورة",
+      "cue": "I had to pay the bill",
+      "literal": "Was on-me that I-pay the-bill",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kāna ʿalayya",
+            "script": "كان عليّ",
+            "cue": "I had to",
+            "tag": "delta",
+            "forms": [
+              "kāna ʿalayya",
+              "kāna ʿalayka",
+              "kāna ʿalayhi"
+            ],
+            "note": "Here the person IS in the frame: L1-M7's ʿalā with a pronoun on it — ʿalayya me, ʿalayka you, ʿalayhi him — and the far verb repeats it."
+          }
+        ],
+        "rules": [
+          3,
+          1
+        ]
+      },
+      "trap": "English had to and should have are two modals of the same family. Arabic splits them differently: kāna yajibu is the impersonal one, kāna ʿalayya names whose duty it was.",
+      "sound": "KĀ-na ʿa-LAY-ya — the ʿayn is the throat sound, and the -yya at the end is held: ʿalayya, not ʿalaya.",
+      "variations": [
+        {
+          "display": "kāna ʿalayka an tadfaʿ al-fātūra",
+          "script": "كان عليكَ أن تدفع الفاتورة",
+          "cue": "You had to pay the bill",
+          "changed": "whose duty: mine → yours, in the frame and in the verb"
+        },
+        {
+          "display": "kāna ʿalayhi an yadfaʿ al-ījār",
+          "script": "كان عليه أن يدفع الإيجار",
+          "cue": "He had to pay the rent",
+          "changed": "whose duty and what for: mine and the bill → his and the rent"
+        }
+      ],
+      "mistake": {
+        "display": "kāna ʿalayya an dafaʿtu al-fātūra",
+        "script": "كان عليّ أن دفعت الفاتورة",
+        "why": "After an the verb is present-shaped whatever the English tense says. dafaʿtu is a finished past and cannot stand behind an."
+      },
+      "usage": "Explaining an obligation that is over — often the reason you could not do something else.",
+      "register": "neutral",
+      "mnemonic": "The duty sits ON you: ʿalayya, ʿalayka, ʿalayhi."
+    },
+    {
+      "id": "L4-M3-S06",
+      "display": "lam yakun yajibu an taqūl dhālika",
+      "script": "لم يكن يجب أن تقول ذلك",
+      "cue": "You shouldn't have said that",
+      "literal": "Not it-was it-is-necessary that you-say that",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lam yakun yajibu",
+            "script": "لم يكن يجب",
+            "cue": "it wasn't necessary / shouldn't have",
+            "tag": "delta",
+            "forms": [
+              "lam yakun yajibu"
+            ],
+            "note": "Negating the frame, not the verb: L3-M4's lam turns kāna into yakun and the whole obligation goes away. yajibu behind it is untouched."
+          }
+        ],
+        "rules": [
+          8,
+          1
+        ]
+      },
+      "trap": "English negates the modal itself — shouldn't have. Arabic negates kāna, which is why the negative lands three words away from the thing that did not have to happen.",
+      "sound": "lam YA-kun YA-ji-bu: three words with no pause, and the -n of yakun running straight into the y- of yajibu.",
+      "variations": [
+        {
+          "display": "lam yakun yajibu an adhhab",
+          "script": "لم يكن يجب أن أذهب",
+          "cue": "I shouldn't have gone",
+          "changed": "who: you → I, in the far verb"
+        },
+        {
+          "display": "lam yakun yajibu an tadfaʿ al-fātūra",
+          "script": "لم يكن يجب أن تدفع الفاتورة",
+          "cue": "You didn't have to pay the bill",
+          "changed": "the obligation: saying that → paying the bill"
+        }
+      ],
+      "mistake": {
+        "display": "lam yajibu an taqūl dhālika",
+        "script": "لم يجب أن تقول ذلك",
+        "why": "lam attaches to kāna here, not to yajibu. Negating the frame directly leaves the sentence with no past in it and no obligation to cancel."
+      },
+      "usage": "Telling somebody, gently or otherwise, that a thing was said or done when it need not have been.",
+      "register": "neutral",
+      "mnemonic": "Negate the kāna, leave the yajibu alone."
+    },
+    {
+      "id": "L4-M3-S07",
+      "display": "kuntu sa-attaṣil bika, lākin nasītu",
+      "script": "كنت سأتصل بك، لكن نسيت",
+      "cue": "I was going to call you, but I forgot",
+      "literal": "I-was will-I-call with-you, but I-forgot",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kuntu sa-attaṣil",
+            "script": "كنت سأتصل",
+            "cue": "I was going to call",
+            "tag": "delta",
+            "forms": [
+              "kuntu sa-attaṣil",
+              "kunta sa-tattaṣil",
+              "kāna sa-yattaṣil"
+            ],
+            "note": "L1-M6's sa- future put behind kāna: the plan is in the past and it did not happen. The verb under sa- keeps its ordinary present shape."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "English needs two auxiliaries — was going to. Arabic needs kāna plus the sa- it already has, and the verb itself does not move at all.",
+      "sound": "KUN-tu sa-at-ta-ṢIL: the sa- is one quick syllable, and what follows it is the plain present.",
+      "variations": [
+        {
+          "display": "kunta sa-tattaṣil, lākin nasīta",
+          "script": "كنت ستتصل، لكن نسيت",
+          "cue": "You were going to call, but you forgot",
+          "changed": "the person: I → you, in kāna and under sa- both"
+        },
+        {
+          "display": "kāna sa-yattaṣil bika, lākin nasiya",
+          "script": "كان سيتصل بك، لكن نسي",
+          "cue": "He was going to call you, but he forgot",
+          "changed": "the person: I → he, all the way through the sentence"
+        }
+      ],
+      "mistake": {
+        "display": "kuntu kāna sa-attaṣil bika",
+        "script": "كنت كان سأتصل بك",
+        "why": "One kāna is the whole auxiliary. Stacking a second — kuntu kāna, kāna sa-kāna — is the commonest over-reach in this module, and it is not a sentence."
+      },
+      "usage": "Excusing a plan that fell through, without saying whose fault it was.",
+      "register": "neutral",
+      "mnemonic": "Past kāna, future sa-, one event that never happened."
+    },
+    {
+      "id": "L4-M3-S08",
+      "display": "nadimtu li-ʾannī lam adhhab maʿaka",
+      "script": "ندمت لأني لم أذهب معكَ",
+      "cue": "I regretted it because I didn't go with you",
+      "literal": "I-regretted because-I not I-go with-you",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nadimtu",
+            "script": "ندمت",
+            "cue": "I regretted",
+            "tag": "free",
+            "forms": [
+              "nadima",
+              "nadimat",
+              "nadimtu"
+            ],
+            "note": "An ordinary past verb, not a frame: nadimtu I, nadima he, nadimat she. What is regretted hangs off L1-M9's li-ʾanna behind it."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English regret takes an object — I regret it. Arabic hangs the reason off li-ʾanna instead, and L4-M2's rule still holds: that reason clause cannot be moved to the front.",
+      "sound": "na-DIM-tu: short a, short i, and the -tu that means I, exactly as in dhahabtu.",
+      "variations": [
+        {
+          "display": "nadima li-ʾannahu lam yadhhab maʿī",
+          "script": "ندم لأنه لم يذهب معي",
+          "cue": "He regretted it because he didn't go with me",
+          "changed": "the person, in the verb and in the reason clause both"
+        },
+        {
+          "display": "nadimtu li-ʾannī lam adrus",
+          "script": "ندمت لأني لم أدرس",
+          "cue": "I regretted it because I didn't study",
+          "changed": "the reason: not going with you → not studying"
+        }
+      ],
+      "mistake": {
+        "display": "nadimtu li-ʾannī lam dhahabtu maʿaka",
+        "script": "ندمت لأني لم ذهبت معكَ",
+        "why": "lam takes the present-shaped verb, never the past one — L3-M4's rule, unchanged. lam dhahabtu is two pasts fighting over one slot."
+      },
+      "usage": "Owning a small failure to somebody's face, which is what this level's register is for.",
+      "register": "neutral",
+      "mnemonic": "nadimtu, then the reason — never the reason first."
+    },
+    {
+      "id": "L4-M3-S09",
+      "display": "fātanī al-qiṭār, wa fātatnī al-furṣa",
+      "script": "فاتني القطار، وفاتتني الفرصة",
+      "cue": "I missed the train, and I missed the chance",
+      "literal": "It-escaped-me the-train, and it-escaped-me the-opportunity",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fātanī",
+            "script": "فاتني",
+            "cue": "it escaped me / I missed it",
+            "tag": "interference",
+            "forms": [
+              "fāta",
+              "fātanī",
+              "fātatnī"
+            ],
+            "note": "Arabic puts the thing that got away in the subject slot: literally the train escaped me. fātatnī is the feminine, for a feminine noun like al-furṣa."
+          },
+          {
+            "display": "al-furṣa",
+            "script": "الفرصة",
+            "cue": "the opportunity",
+            "tag": "free",
+            "forms": [
+              "furṣa",
+              "al-furṣa",
+              "furaṣ"
+            ],
+            "note": "Feminine, which is why the verb in front of it is fātatnī and not fātanī. The plural is furaṣ."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English makes you the subject — I missed the train. Arabic reverses it: the train is the subject and you are the object stuck on the end of the verb as -nī.",
+      "sound": "FĀ-ta-nī: long ā, then the -nī that means me. fātatnī adds the feminine -at- in the middle.",
+      "variations": [
+        {
+          "display": "fātanī al-qiṭār, wa fātanī al-ijtimāʿ",
+          "script": "فاتني القطار، وفاتني الاجتماع",
+          "cue": "I missed the train and I missed the meeting",
+          "changed": "the second thing missed: a feminine noun → a masculine one, so the verb loses its -at-"
+        },
+        {
+          "display": "fātatnī furṣa jamīla",
+          "script": "فاتتني فرصة جميلة",
+          "cue": "I missed a lovely opportunity",
+          "changed": "the-opportunity → an opportunity, with an adjective behind it"
+        }
+      ],
+      "mistake": {
+        "display": "anā fātanī al-qiṭār",
+        "script": "أنا فاتني القطار",
+        "why": "The English shape — I as the subject — does not carry over. anā is already inside the -nī on the verb, and putting it in front makes two subjects for one train."
+      },
+      "usage": "Reporting a loss that was nobody's fault, or presenting it that way.",
+      "register": "neutral",
+      "mnemonic": "It escaped ME: fāta + nī."
+    },
+    {
+      "id": "L4-M3-S10",
+      "display": "kāna al-qarār khaṭaʾ, wa kāna yajibu an aqūl lā",
+      "script": "كان القرار خطأ، وكان يجب أن أقول لا",
+      "cue": "The decision was a mistake, and I should have said no",
+      "literal": "Was the-decision mistake, and was it-is-necessary that I-say no",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-qarār",
+            "script": "القرار",
+            "cue": "the decision",
+            "tag": "free",
+            "forms": [
+              "qarār",
+              "al-qarār",
+              "qarārāt"
+            ],
+            "note": "Masculine, so the kāna in front of it stays kāna. The plural qarārāt is what a meeting produces."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "English would fold the whole regret onto one modal — I shouldn't have decided that. Arabic states the verdict first and hangs the obligation frame behind it, with kāna doing both jobs.",
+      "sound": "al-qa-RĀR: the stress is on the long ā at the end. khaṭaʾ finishes on a hamza — a catch in the throat, not a vowel.",
+      "variations": [
+        {
+          "display": "kāna al-qarār ṣaḥīḥ, wa kuntu qad qultu naʿam",
+          "script": "كان القرار صحيح، وكنت قد قلت نعم",
+          "cue": "The decision was right, and I had said yes",
+          "changed": "the verdict and the frame: a mistake and should-have → right and had-already"
+        },
+        {
+          "display": "kāna al-qarār khaṭaʾ, wa kāna ʿalayya an aqūl lā",
+          "script": "كان القرار خطأ، وكان عليّ أن أقول لا",
+          "cue": "The decision was a mistake, and it was on me to say no",
+          "changed": "the obligation frame: the impersonal one → the one that names whose duty it was"
+        }
+      ],
+      "mistake": {
+        "display": "kāna al-qarār khaṭaʾ, wa yajibu an aqūl lā",
+        "script": "كان القرار خطأ، ويجب أن أقول لا",
+        "why": "Without the second kāna the sentence turns into a present obligation — I have to say no — and the regret disappears. kāna is the whole difference."
+      },
+      "usage": "Closing an account of something that went wrong: the verdict, then what you should have done.",
+      "register": "neutral",
+      "mnemonic": "One kāna for the verdict, one for the regret."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M3-C01",
+      "display": "kāna qad dhahaba qabla al-ijtimāʿ",
+      "script": "كان قد ذهب قبل الاجتماع",
+      "cue": "He had gone before the meeting"
+    },
+    {
+      "id": "L4-M3-C02",
+      "display": "kuntu qad akaltu qabla al-ḥafla",
+      "script": "كنت قد أكلت قبل الحفلة",
+      "cue": "I had already eaten before the party"
+    },
+    {
+      "id": "L4-M3-C03",
+      "display": "law kuntu qad dhahabtu mubakkiran, la-raʾaytu al-mudīr",
+      "script": "لو كنت قد ذهبت مبكراً، لرأيت المدير",
+      "cue": "If I had gone early, I would have seen the manager"
+    },
+    {
+      "id": "L4-M3-C04",
+      "display": "kāna yajibu an adhhab ilā al-mustashfā",
+      "script": "كان يجب أن أذهب إلى المستشفى",
+      "cue": "I should have gone to the hospital"
+    },
+    {
+      "id": "L4-M3-C05",
+      "display": "kāna ʿalayya an adfaʿ al-fātūra",
+      "script": "كان عليّ أن أدفع الفاتورة",
+      "cue": "I had to pay the bill"
+    },
+    {
+      "id": "L4-M3-C06",
+      "display": "lam yakun yajibu an taqūl dhālika",
+      "script": "لم يكن يجب أن تقول ذلك",
+      "cue": "You shouldn't have said that"
+    },
+    {
+      "id": "L4-M3-C07",
+      "display": "kuntu sa-attaṣil bika, lākin nasītu",
+      "script": "كنت سأتصل بك، لكن نسيت",
+      "cue": "I was going to call you, but I forgot"
+    },
+    {
+      "id": "L4-M3-C08",
+      "display": "nadimtu li-ʾannī lam adhhab maʿaka",
+      "script": "ندمت لأني لم أذهب معكَ",
+      "cue": "I regretted it because I didn't go with you"
+    },
+    {
+      "id": "L4-M3-C09",
+      "display": "fātanī al-qiṭār, wa fātatnī al-furṣa",
+      "script": "فاتني القطار، وفاتتني الفرصة",
+      "cue": "I missed the train, and I missed the chance"
+    },
+    {
+      "id": "L4-M3-C10",
+      "display": "kāna al-qarār khaṭaʾ, wa kāna yajibu an aqūl lā",
+      "script": "كان القرار خطأ، وكان يجب أن أقول لا",
+      "cue": "The decision was a mistake, and I should have said no"
+    },
+    {
+      "id": "L4-M3-C11",
+      "display": "kānat qad dhahabat ilā as-sūq",
+      "script": "كانت قد ذهبت إلى السوق",
+      "cue": "She had gone to the market"
+    },
+    {
+      "id": "L4-M3-C12",
+      "display": "kāna ʿalayhi an yadfaʿ al-ījār",
+      "script": "كان عليه أن يدفع الإيجار",
+      "cue": "He had to pay the rent"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

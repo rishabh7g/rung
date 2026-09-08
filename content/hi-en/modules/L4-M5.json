@@ -1,0 +1,618 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M5",
+  "title": "Disagreeing well",
+  "job": "Soften, hedge, save face",
+  "prerequisites": [
+    "L4-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 9,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present_simple",
+      "conditional",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "I am not sure + (that) + <clause>",
+      "I would say + <clause> + , + but + <clause>",
+      "Maybe + , + but + <clause>",
+      "That is a bit + Adj",
+      "I do not really + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "अंग्रेज़ी नरमी बात पर नहीं, बात के फ़्रेम पर लगाती है. यह सही नहीं है को That is not very right मत बनाइए — बात सीधी रहती है और नरमी उसके आगे वाले ढाँचे में आती है: I am not sure that is right. यही क़ायदा L3-M3 में तय हुआ था और इस पाठ में खुलकर चलता है."
+    },
+    {
+      "tag": "delta",
+      "text": "औज़ार गिने-चुने हैं और हर एक अलग वज़न रखता है. I am not sure और I would say फ़्रेम को नरम करते हैं; maybe, perhaps, probably और possibly अटकल का दर्जा बताते हैं; a bit और slightly विशेषण को हल्का करते हैं; not really नरम इनकार है; और सबसे भारी I do not think है, जो L3-M3 का है और यहाँ दोबारा नहीं खोला जाता."
+    },
+    {
+      "tag": "interference",
+      "text": "a bit सिर्फ़ उस विशेषण के साथ आता है जिसमें शिकायत हो: a bit expensive, a bit late. a bit good या a bit lovely नहीं कहा जाता — अच्छी बात को हल्का करना हो तो quite या really लगाइए. slightly पर यह बंदिश नहीं है और वह लिखित भाषा का है."
+    },
+    {
+      "tag": "interference",
+      "text": "भारतीय अंग्रेज़ी के अपने नरम करने वाले शब्द हैं — actually, only, itself, na — और हिंदी वाले कान को ये नरम ही लगते हैं. बाहर के कान को नहीं. ख़ासकर वाक्य के आगे लगा actually ज़्यादातर दूसरी अंग्रेज़ियों में यह इशारा देता है कि आगे उलटी बात आ रही है, यानी जो कहना था उसका ठीक उल्टा. दोनों अंग्रेज़ियाँ अपनी-अपनी जगह सही हैं: जहाँ आप रहते हैं वहाँ यह चलता है, और जहाँ आप जाएँगे वहाँ यह अलग सुनाई देगा — यह बात जान लेना ही काफ़ी है."
+    },
+    {
+      "tag": "free",
+      "text": "नरमी की आदत हिंदी में अंग्रेज़ी से कम नहीं, ज़्यादा है. इसलिए यहाँ लिहाज़ सीखना नहीं है — सिर्फ़ उसे नई जगह पर रखना है."
+    },
+    {
+      "tag": "delta",
+      "text": "seem और seems L2-M8 की पंक्तियाँ हैं और वहीं से आती हैं. sorry L1-M10 का, rather L2-M9 का, afraid L2-M8 का, और I think so, I hope so तथा disagree L3-M3 के हैं — यह पाठ उन्हें दोबारा नहीं खोलता, सिर्फ़ काम में लेता है. तंज़ और इशारा L5-M7 का काम है, और however तथा on the other hand M4 के."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M5-S01",
+      "display": "I am not sure that is the best answer.",
+      "cue": "मुझे पक्का नहीं लगता कि यह सबसे अच्छा जवाब है.",
+      "literal": "मैं हूँ नहीं पक्का कि वह है वह सबसे अच्छा जवाब.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "I am not sure",
+            "cue": "मुझे पक्का नहीं लगता",
+            "tag": "delta",
+            "forms": [
+              "I am not sure",
+              "not sure"
+            ],
+            "note": "चारों शब्द साथ चलते हैं. आगे that आ सकता है और गिर भी सकता है. यह सामने वाले को ग़लत नहीं कहता, सिर्फ़ अपना शक़ रखता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "यह वाक्य सामने वाले को ग़लत नहीं ठहराता. That is wrong सीधा इनकार है; I am not sure सिर्फ़ शक़ रखता है और बहस नरम रहने देता है.",
+      "sound": "sure बोलने में शुअर है, स्योर नहीं — शुरू में श की आवाज़ आती है.",
+      "variations": [
+        {
+          "display": "I am not sure that is the best way.",
+          "cue": "मुझे पक्का नहीं लगता कि यह सबसे अच्छा रास्ता है.",
+          "changed": "जवाब की जगह रास्ता"
+        },
+        {
+          "display": "We are not sure that is the best answer.",
+          "cue": "हमें पक्का नहीं लगता कि यह सबसे अच्छा जवाब है.",
+          "changed": "मैं की जगह हम — not sure वैसा ही रहा"
+        },
+        {
+          "display": "I am not sure it is the best answer.",
+          "cue": "मुझे पक्का नहीं लगता कि यह सबसे अच्छा जवाब है.",
+          "changed": "that की जगह it"
+        }
+      ],
+      "mistake": {
+        "display": "I am not agree that is the best answer",
+        "why": "agree साधारण क्रिया है — I do not agree लिखिए. और नरम कहना हो तो I am not sure."
+      },
+      "usage": "मीटिंग में — किसी की राय से अलग होते हुए भी उसे ग़लत न ठहराना.",
+      "register": "neutral",
+      "mnemonic": "बात सीधी, फ़्रेम नरम."
+    },
+    {
+      "id": "L4-M5-S02",
+      "display": "I would say it is fine, but you know better.",
+      "cue": "मैं तो कहूँगा कि ठीक है, पर आप ज़्यादा जानते हैं.",
+      "literal": "मैं कहूँगा यह है ठीक, पर तुम जानते बेहतर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "I would say",
+            "cue": "मैं तो कहूँगा",
+            "tag": "delta",
+            "forms": [],
+            "note": "तीनों शब्द साथ चलते हैं. यह I say से नरम है — राय को राय की तरह रखता है, फ़ैसले की तरह नहीं."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "I would say को I will say मत बनाइए. will आने वाले कल की बात है; would यहाँ सिर्फ़ नरमी लाता है.",
+      "sound": "I would say बोलचाल में सिमटकर आइड्-से रह जाता है.",
+      "variations": [
+        {
+          "display": "I would say it is fine, but it is your money.",
+          "cue": "मैं तो कहूँगा कि ठीक है, पर पैसे आपके हैं.",
+          "changed": "दूसरा आधा बदला"
+        },
+        {
+          "display": "I would say it is expensive, but you know better.",
+          "cue": "मैं तो कहूँगा कि महँगा है, पर आप ज़्यादा जानते हैं.",
+          "changed": "ठीक की जगह महँगा"
+        },
+        {
+          "display": "I would say we should wait.",
+          "cue": "मैं तो कहूँगा कि हमें इंतज़ार करना चाहिए.",
+          "changed": "छोटा रूप — but वाला आधा हट गया"
+        }
+      ],
+      "mistake": {
+        "display": "I will say it is fine, but you know better",
+        "why": "यहाँ आने वाले कल की बात नहीं है. नरमी लानी हो तो I would say लिखिए."
+      },
+      "usage": "राय देते समय — ख़ासकर जब सामने वाला आपसे ज़्यादा जानता हो.",
+      "register": "neutral",
+      "mnemonic": "I would say — राय है, फ़ैसला नहीं."
+    },
+    {
+      "id": "L4-M5-S03",
+      "display": "Maybe, but the shop is a bit far from here.",
+      "cue": "शायद, पर दुकान यहाँ से थोड़ी दूर है.",
+      "literal": "शायद, पर वह दुकान है एक थोड़ा दूर से यहाँ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maybe",
+            "cue": "शायद",
+            "tag": "delta",
+            "forms": [],
+            "note": "एक ही जुड़ा हुआ शब्द. अकेले जवाब में भी चलता है और वाक्य के आगे भी. दो शब्दों वाला may be अलग बात है: it may be late."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "maybe और may be अलग हैं. एक शब्द वाला maybe शायद है; दो शब्दों वाला may be क्रिया बनाता है.",
+      "sound": "maybe में ज़ोर पहले हिस्से पर पड़ता है — मे-बी.",
+      "variations": [
+        {
+          "display": "Maybe, but the shop is a bit expensive.",
+          "cue": "शायद, पर दुकान थोड़ी महँगी है.",
+          "changed": "दूर की जगह महँगी"
+        },
+        {
+          "display": "Maybe, but the office is a bit far from here.",
+          "cue": "शायद, पर दफ़्तर यहाँ से थोड़ा दूर है.",
+          "changed": "दुकान की जगह दफ़्तर"
+        },
+        {
+          "display": "The shop is a bit far from here.",
+          "cue": "दुकान यहाँ से थोड़ी दूर है.",
+          "changed": "maybe हट गया — इनकार सीधा हो गया"
+        }
+      ],
+      "mistake": {
+        "display": "May be, but the shop is a bit far from here",
+        "why": "शायद कहने के लिए maybe एक ही शब्द है. दो शब्दों में लिखने पर may be क्रिया बन जाती है."
+      },
+      "usage": "किसी की बात आधी मानकर अपनी अड़चन रखते समय.",
+      "register": "informal",
+      "mnemonic": "maybe एक शब्द, may be दो काम."
+    },
+    {
+      "id": "L4-M5-S04",
+      "display": "That is a bit expensive for a small shop.",
+      "cue": "छोटी दुकान के हिसाब से यह थोड़ा महँगा है.",
+      "literal": "वह है एक थोड़ा महँगा के लिए एक छोटी दुकान.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a bit",
+            "cue": "थोड़ा · ज़रा",
+            "tag": "interference",
+            "forms": [],
+            "note": "दोनों शब्द साथ चलते हैं और सिर्फ़ शिकायत वाले विशेषण के आगे आते हैं: a bit expensive, a bit late. a bit good नहीं कहा जाता."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "a bit को अच्छी बात के साथ मत लगाइए. a bit good या a bit happy अटपटा सुनाई देता है.",
+      "sound": "a bit जुड़कर अ-बिट बोला जाता है, और ज़ोर bit पर रहता है.",
+      "variations": [
+        {
+          "display": "That is a bit expensive for a small bag.",
+          "cue": "छोटे बैग के हिसाब से यह थोड़ा महँगा है.",
+          "changed": "दुकान की जगह बैग"
+        },
+        {
+          "display": "That is a bit late for a Monday.",
+          "cue": "सोमवार के हिसाब से यह थोड़ी देर है.",
+          "changed": "महँगा की जगह देर"
+        },
+        {
+          "display": "That is expensive for a small shop.",
+          "cue": "छोटी दुकान के हिसाब से यह महँगा है.",
+          "changed": "a bit हट गया — शिकायत सीधी हो गई"
+        }
+      ],
+      "mistake": {
+        "display": "That is a bit good for a small shop",
+        "why": "a bit सिर्फ़ शिकायत वाले विशेषण के साथ आता है. तारीफ़ करनी हो तो quite good या really good लिखिए."
+      },
+      "usage": "क़ीमत, देरी या दिक़्क़त की शिकायत — नरम लहजे में.",
+      "register": "neutral",
+      "mnemonic": "a bit सिर्फ़ शिकायत के आगे."
+    },
+    {
+      "id": "L4-M5-S05",
+      "display": "Perhaps I do not really agree with the second point.",
+      "cue": "शायद मैं दूसरी बात से पूरी तरह सहमत नहीं हूँ.",
+      "literal": "शायद मैं नहीं सचमुच सहमत साथ वह दूसरी बात.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "perhaps",
+            "cue": "शायद (लिखित)",
+            "tag": "delta",
+            "forms": [],
+            "note": "maybe जैसा ही, पर ज़्यादा लिखित और नरम. दफ़्तर की चिट्ठी और मीटिंग में यही सुनाई देता है."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "I do not agree भारी पड़ता है. बीच में really आते ही वही बात हल्की हो जाती है: I do not really agree.",
+      "sound": "perhaps में ज़ोर दूसरे हिस्से पर पड़ता है — पर-हैप्स.",
+      "variations": [
+        {
+          "display": "Perhaps I do not really agree with the first point.",
+          "cue": "शायद मैं पहली बात से पूरी तरह सहमत नहीं हूँ.",
+          "changed": "दूसरी की जगह पहली"
+        },
+        {
+          "display": "Perhaps we do not really agree with the manager.",
+          "cue": "शायद हम मैनेजर से पूरी तरह सहमत नहीं हैं.",
+          "changed": "मैं की जगह हम"
+        },
+        {
+          "display": "I do not really agree with the second point.",
+          "cue": "मैं दूसरी बात से पूरी तरह सहमत नहीं हूँ.",
+          "changed": "perhaps हट गया — बात थोड़ी सीधी हो गई"
+        }
+      ],
+      "mistake": {
+        "display": "Perhaps I am not really agree with the second point",
+        "why": "agree साधारण क्रिया है, हालत नहीं. उसके साथ am नहीं लगता: I do not really agree."
+      },
+      "usage": "मीटिंग में — असहमति को सबसे नरम शक्ल में रखते समय.",
+      "register": "formal",
+      "mnemonic": "perhaps लिखित, maybe बोलचाल का."
+    },
+    {
+      "id": "L4-M5-S06",
+      "display": "That is possibly true, but I am not sure.",
+      "cue": "यह शायद सच हो, पर मुझे पक्का नहीं लगता.",
+      "literal": "वह है शायद सच, पर मैं हूँ नहीं पक्का.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "possibly",
+            "cue": "शायद · हो सकता है",
+            "tag": "delta",
+            "forms": [],
+            "note": "maybe और perhaps से भी कम पक्का. विशेषण से ठीक पहले बैठता है: possibly true."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "possibly को probably से मत मिलाइए. probably में उम्मीद ज़्यादा है, possibly में कम.",
+      "sound": "possibly तीन टुकड़ों में बोला जाता है — पॉ-सि-ब्ली.",
+      "variations": [
+        {
+          "display": "That is possibly true, but I would say no.",
+          "cue": "यह शायद सच हो, पर मैं तो मना ही करूँगा.",
+          "changed": "दूसरा आधा बदला"
+        },
+        {
+          "display": "That is possibly the best answer.",
+          "cue": "शायद यही सबसे अच्छा जवाब है.",
+          "changed": "छोटा रूप — but वाला आधा हट गया"
+        },
+        {
+          "display": "That is probably true, but I am not sure.",
+          "cue": "यह शायद सच है, पर मुझे पक्का नहीं लगता.",
+          "changed": "possibly की जगह probably — भरोसा बढ़ गया"
+        }
+      ],
+      "mistake": {
+        "display": "That is possible true, but I am not sure",
+        "why": "विशेषण के आगे क्रिया-विशेषण चाहिए: possibly true. possible अपने आप में विशेषण है."
+      },
+      "usage": "किसी की बात को सिरे से नकारे बिना अपना शक़ रखते समय.",
+      "register": "neutral",
+      "mnemonic": "possibly कम, probably ज़्यादा."
+    },
+    {
+      "id": "L4-M5-S07",
+      "display": "I suppose you might be right, but I have a question.",
+      "cue": "मुझे लगता है आप सही हो सकते हैं, पर मेरा एक सवाल है.",
+      "literal": "मैं मानता तुम शायद हो सही, पर मैं रखता एक सवाल.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "suppose",
+            "cue": "मान लेता हूँ · लगता है",
+            "tag": "delta",
+            "forms": [
+              "suppose",
+              "supposes",
+              "supposed"
+            ],
+            "note": "आधे मन से मानना. I think से नरम और कम पक्का है: I suppose you are right."
+          },
+          {
+            "display": "might",
+            "cue": "शायद … हो",
+            "tag": "delta",
+            "forms": [],
+            "note": "may से कम पक्का. इसके बाद सादी क्रिया आती है और कर्ता से इसका रूप नहीं बदलता: he might be right."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "might के बाद to नहीं आता. might to be ग़लत है; might be सही.",
+      "sound": "might में gh चुप है — माइट.",
+      "variations": [
+        {
+          "display": "I suppose you might be right, but I have a better way.",
+          "cue": "मुझे लगता है आप सही हो सकते हैं, पर मेरे पास बेहतर रास्ता है.",
+          "changed": "सवाल की जगह बेहतर रास्ता"
+        },
+        {
+          "display": "I suppose he might be right, but I have a question.",
+          "cue": "मुझे लगता है वह सही हो सकता है, पर मेरा एक सवाल है.",
+          "changed": "आप की जगह वह"
+        },
+        {
+          "display": "You might be right, but I have a question.",
+          "cue": "आप सही हो सकते हैं, पर मेरा एक सवाल है.",
+          "changed": "I suppose हट गया"
+        }
+      ],
+      "mistake": {
+        "display": "I suppose you might to be right, but I have a question",
+        "why": "might के बाद सादी क्रिया आती है, to नहीं: might be right."
+      },
+      "usage": "बहस में — मानते हुए भी अपना सवाल बचाकर रखना.",
+      "register": "neutral",
+      "mnemonic": "might — हो सकता है, पक्का नहीं."
+    },
+    {
+      "id": "L4-M5-S08",
+      "display": "It is probably slightly better to ask the manager.",
+      "cue": "शायद मैनेजर से पूछ लेना थोड़ा बेहतर रहेगा.",
+      "literal": "यह है शायद ज़रा बेहतर को पूछना वह मैनेजर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "probably",
+            "cue": "शायद (ज़्यादा उम्मीद)",
+            "tag": "delta",
+            "forms": [],
+            "note": "maybe और perhaps से ज़्यादा पक्का — बात होने की उम्मीद ज़्यादा है. is या will के बाद बैठता है: it is probably better."
+          },
+          {
+            "display": "slightly",
+            "cue": "ज़रा · थोड़ा",
+            "tag": "delta",
+            "forms": [],
+            "note": "a bit जैसा ही, पर लिखित और नपा-तुला. यह अच्छी बात के साथ भी चलता है: slightly better."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "slightly और a bit एक ही काम करते हैं, पर slightly अच्छी बात के साथ भी चलता है और a bit नहीं.",
+      "sound": "probably बोलचाल में सिमटकर प्रॉब्-ली रह जाता है.",
+      "variations": [
+        {
+          "display": "It is probably slightly better to ask the doctor.",
+          "cue": "शायद डॉक्टर से पूछ लेना थोड़ा बेहतर रहेगा.",
+          "changed": "मैनेजर की जगह डॉक्टर"
+        },
+        {
+          "display": "It is probably better to ask the manager.",
+          "cue": "शायद मैनेजर से पूछ लेना बेहतर रहेगा.",
+          "changed": "slightly हट गया"
+        },
+        {
+          "display": "It is slightly better to ask the manager first.",
+          "cue": "पहले मैनेजर से पूछ लेना ज़रा बेहतर रहेगा.",
+          "changed": "probably हट गया, first जुड़ गया"
+        }
+      ],
+      "mistake": {
+        "display": "It is probably slight better to ask the manager",
+        "why": "विशेषण के आगे क्रिया-विशेषण चाहिए: slightly better. slight अपने आप में विशेषण है."
+      },
+      "usage": "सलाह देते समय — अपनी सलाह को हल्का रखते हुए.",
+      "register": "neutral",
+      "mnemonic": "slightly नपा-तुला, a bit बोलचाल का."
+    },
+    {
+      "id": "L4-M5-S09",
+      "display": "That is not really the point, I am afraid.",
+      "cue": "मुझे कहते हुए अफ़सोस है, पर बात दरअसल यह नहीं है.",
+      "literal": "वह है नहीं सचमुच वह बात, मैं हूँ अफ़सोस में.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "not really",
+            "cue": "दरअसल … नहीं",
+            "tag": "delta",
+            "forms": [],
+            "note": "नरम इनकार. सीधे not से हल्का है: That is not the point भारी है, That is not really the point नरम."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "not really को really not मत बनाइए. शब्दों की जगह बदलते ही इनकार नरम से सख़्त हो जाता है.",
+      "sound": "not really जुड़कर नॉट्-रि-अ-ली बोला जाता है और ज़ोर really पर पड़ता है.",
+      "variations": [
+        {
+          "display": "That is not really the answer, I am afraid.",
+          "cue": "मुझे कहते हुए अफ़सोस है, पर जवाब दरअसल यह नहीं है.",
+          "changed": "बात की जगह जवाब"
+        },
+        {
+          "display": "That is not really the point.",
+          "cue": "बात दरअसल यह नहीं है.",
+          "changed": "I am afraid हट गया"
+        },
+        {
+          "display": "It is not really the point, I am afraid.",
+          "cue": "मुझे कहते हुए अफ़सोस है, पर बात दरअसल यह नहीं है.",
+          "changed": "that की जगह it"
+        }
+      ],
+      "mistake": {
+        "display": "That is really not the point, I am afraid",
+        "why": "जगह बदलते ही मतलब बदल जाता है. नरम इनकार not really है; really not उसे सख़्त कर देता है."
+      },
+      "usage": "बात पटरी से उतर जाए तो उसे नरमी से वापस लाने के लिए.",
+      "register": "formal",
+      "mnemonic": "not really नरम, really not सख़्त."
+    },
+    {
+      "id": "L4-M5-S10",
+      "display": "Actually, I do not think that is exactly right.",
+      "cue": "दरअसल, मुझे नहीं लगता कि यह बिलकुल सही है.",
+      "literal": "दरअसल, मैं नहीं सोचता वह है बिलकुल सही.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "actually",
+            "cue": "दरअसल · असल में",
+            "tag": "interference",
+            "forms": [],
+            "note": "भारत में यह नरम करने वाला शब्द है. बाहर वाक्य के आगे लगा actually अक्सर इशारा देता है कि आगे उलटी बात आ रही है."
+          },
+          {
+            "display": "exactly",
+            "cue": "बिलकुल · ठीक-ठीक",
+            "tag": "delta",
+            "forms": [],
+            "note": "not exactly नरम इनकार बना देता है: not exactly right यानी पूरी तरह सही नहीं. अकेले जवाब में भी चलता है."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "वाक्य के आगे actually लगाते समय ध्यान रखिए. जहाँ आप रहते हैं वहाँ यह नरम है, बाहर यह उलटी बात का इशारा बन जाता है.",
+      "sound": "actually बोलचाल में सिमटकर ऐक्-श-ली रह जाता है.",
+      "variations": [
+        {
+          "display": "Actually, I do not think that is exactly true.",
+          "cue": "दरअसल, मुझे नहीं लगता कि यह बिलकुल सच है.",
+          "changed": "सही की जगह सच"
+        },
+        {
+          "display": "I do not think that is exactly right.",
+          "cue": "मुझे नहीं लगता कि यह बिलकुल सही है.",
+          "changed": "actually हट गया"
+        },
+        {
+          "display": "Actually, that is not exactly right.",
+          "cue": "दरअसल, यह बिलकुल सही नहीं है.",
+          "changed": "I do not think हट गया — इनकार सीधा हो गया"
+        }
+      ],
+      "mistake": {
+        "display": "Actually, I think that is not exactly right",
+        "why": "अंग्रेज़ी नहीं को आगे खिसका देती है: I do not think that is right. I think that is not भारी और अटपटा लगता है."
+      },
+      "usage": "किसी की बात में हल्की ग़लती पकड़ते समय.",
+      "register": "neutral",
+      "mnemonic": "not exactly — पूरी तरह सही नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M5-C01",
+      "display": "I am not sure that is the best answer.",
+      "cue": "मुझे पक्का नहीं लगता कि यह सबसे अच्छा जवाब है."
+    },
+    {
+      "id": "L4-M5-C02",
+      "display": "I would say it is fine, but you know better.",
+      "cue": "मैं तो कहूँगा कि ठीक है, पर आप ज़्यादा जानते हैं."
+    },
+    {
+      "id": "L4-M5-C03",
+      "display": "Maybe, but the shop is a bit far from here.",
+      "cue": "शायद, पर दुकान यहाँ से थोड़ी दूर है."
+    },
+    {
+      "id": "L4-M5-C04",
+      "display": "That is a bit expensive for a small shop.",
+      "cue": "छोटी दुकान के हिसाब से यह थोड़ा महँगा है."
+    },
+    {
+      "id": "L4-M5-C05",
+      "display": "Perhaps I do not really agree with the second point.",
+      "cue": "शायद मैं दूसरी बात से पूरी तरह सहमत नहीं हूँ."
+    },
+    {
+      "id": "L4-M5-C06",
+      "display": "That is possibly true, but I am not sure.",
+      "cue": "यह शायद सच हो, पर मुझे पक्का नहीं लगता."
+    },
+    {
+      "id": "L4-M5-C07",
+      "display": "I suppose you might be right, but I have a question.",
+      "cue": "मुझे लगता है आप सही हो सकते हैं, पर मेरा एक सवाल है."
+    },
+    {
+      "id": "L4-M5-C08",
+      "display": "It is probably slightly better to ask the manager.",
+      "cue": "शायद मैनेजर से पूछ लेना थोड़ा बेहतर रहेगा."
+    },
+    {
+      "id": "L4-M5-C09",
+      "display": "That is not really the point, I am afraid.",
+      "cue": "मुझे कहते हुए अफ़सोस है, पर बात दरअसल यह नहीं है."
+    },
+    {
+      "id": "L4-M5-C10",
+      "display": "Actually, I do not think that is exactly right.",
+      "cue": "दरअसल, मुझे नहीं लगता कि यह बिलकुल सही है."
+    },
+    {
+      "id": "L4-M5-C11",
+      "display": "Maybe, but I am not sure that is exactly right.",
+      "cue": "शायद, पर मुझे पक्का नहीं लगता कि यह बिलकुल सही है."
+    },
+    {
+      "id": "L4-M5-C12",
+      "display": "I would say it is probably a bit expensive.",
+      "cue": "मैं तो कहूँगा कि यह शायद थोड़ा महँगा है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,668 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M3",
+  "title": "What might have been",
+  "job": "Regrets and past hypotheticals",
+  "prerequisites": [
+    "L4-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 7,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "past_perfect",
+      "conditional_perfect",
+      "simple_past",
+      "present_simple"
+    ],
+    "allowedPatterns": [
+      "If + <had + V-pp> + , + <would have + V-pp>",
+      "I should have + V-pp",
+      "I could have + V-pp",
+      "It might have + V-pp",
+      "I wish I had + V-pp"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "तीसरी शर्त का ढाँचा तय है और दोनों आधे हिलते हैं. शर्त वाले आधे में had + क्रिया का तीसरा रूप आता है, और नतीजे वाले आधे में would have + तीसरा रूप: If I had gone early, I would have caught the train. यह वाक्य उसी बात का हिसाब लगाता है जो हुई ही नहीं."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी दोनों आधों में एक ही शक्ल रखती है — अगर मैं जल्दी जाता तो ट्रेन मिल जाती — इसलिए अंग्रेज़ी में भी दोनों जगह would have लगा देना सबसे आम ग़लती है. If I would have known ग़लत है: शर्त वाले आधे में सिर्फ़ had आता है, would वहाँ कभी नहीं जाता. यह भारतीय अंग्रेज़ी की सबसे पहचानी जाने वाली ग़लतियों में से एक है, और इसी पाठ में इसे सुधारना है."
+    },
+    {
+      "tag": "free",
+      "text": "यह सोच हिंदी में पहले से मौजूद है और रोज़ चलती है — अगर मैं जल्दी जाता तो… इसलिए यहाँ कोई नया विचार नहीं सीखना है, सिर्फ़ नई शक्ल. जो बात सीखने वाला हिंदी में बिना सोचे कह देता है, वही अंग्रेज़ी में कहनी है."
+    },
+    {
+      "tag": "delta",
+      "text": "तीन अधूरे रूप वही काम एक ही आधे में कर देते हैं: should have पछतावा या उलाहना कहता है (मुझे करना चाहिए था), could have उस रास्ते की बात करता है जो खुला था और लिया नहीं गया, और might have बीती बात का अंदाज़ा लगाता है. तीनों के बाद क्रिया का तीसरा रूप ही आता है."
+    },
+    {
+      "tag": "interference",
+      "text": "I wish के बाद बात एक क़दम पीछे खिसक जाती है: I wish I had known. अपनी ही बीती बात के लिए यहाँ would कभी नहीं आता — I wish I would have gone ग़लत है. If only भी इसी तरह चलता है."
+    },
+    {
+      "tag": "delta",
+      "text": "would L2-M5 में नरमी लाता था और L3-M4 में शर्त बनाता था; यहाँ उसका तीसरा काम है — बीती हुई, न हुई बात का नतीजा. उसी तरह should L2-M8 की सलाह से, could L2-M1 की विनम्रता से और had L1-M5 के बीते कल से यहाँ आते हैं, और इस पाठ में तीनों के आगे have + तीसरा रूप बैठता है."
+    },
+    {
+      "tag": "free",
+      "text": "पहली और दूसरी शर्त L3-M4 की हैं और यहाँ दोहराई नहीं जातीं. मिली-जुली शर्त — if I had studied, I would be a doctor now — L5 की है. बोलचाल में would've और should've सुनाई देते हैं, पर लिखते समय पूरे रूप ही लिखिए."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M3-S01",
+      "display": "If I had gone early, I would have caught the train.",
+      "cue": "अगर मैं जल्दी गया होता, तो मुझे ट्रेन मिल जाती.",
+      "literal": "अगर मैं था गया जल्दी, मैं होता पकड़ा वह ट्रेन.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "would have",
+            "cue": "…जाता / …जाती (जो हुआ नहीं)",
+            "tag": "delta",
+            "forms": [],
+            "note": "दो शब्द हमेशा साथ, और इनके बाद क्रिया का तीसरा रूप आता है: would have caught. यह नतीजे वाले आधे में बैठता है, शर्त वाले में कभी नहीं."
+          },
+          {
+            "display": "caught",
+            "cue": "पकड़ ली · मिल गई",
+            "tag": "delta",
+            "forms": [],
+            "note": "catch का तीसरा रूप, और बीता कल भी यही है. ट्रेन या बस पकड़ने के लिए यही शब्द चलता है: I caught the bus."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "शर्त वाले आधे में would मत लगाइए. If I would have gone हिंदी की सीधी नक़ल है — वहाँ सिर्फ़ had gone आता है.",
+      "sound": "would have बोलने में जुड़कर वुड्-अव जैसा सुनाई देता है, लगभग एक शब्द. लिखते समय दोनों शब्द पूरे लिखिए.",
+      "variations": [
+        {
+          "display": "If we had gone early, we would have caught the bus.",
+          "cue": "अगर हम जल्दी गए होते, तो हमें बस मिल जाती.",
+          "changed": "मैं की जगह हम, ट्रेन की जगह बस"
+        },
+        {
+          "display": "I would have caught the train if I had gone early.",
+          "cue": "मुझे ट्रेन मिल जाती अगर मैं जल्दी गया होता.",
+          "changed": "दोनों आधे उलट गए, बीच का अल्पविराम हट गया"
+        },
+        {
+          "display": "If I had gone early, I would have seen the film.",
+          "cue": "अगर मैं जल्दी गया होता, तो मैं फ़िल्म देख लेता.",
+          "changed": "नतीजा बदला — ट्रेन की जगह फ़िल्म"
+        }
+      ],
+      "mistake": {
+        "display": "If I would have gone early, I would have caught the train",
+        "why": "शर्त वाले आधे में would have कभी नहीं आता. वहाँ had gone लिखिए और would have को नतीजे वाले आधे के लिए बचा रखिए."
+      },
+      "usage": "छूटी हुई गाड़ी, छूटा हुआ मौक़ा — जो हुआ नहीं, उसका हिसाब लगाते समय.",
+      "register": "neutral",
+      "mnemonic": "शर्त में had, नतीजे में would have — दोनों आधे कभी एक जैसे नहीं."
+    },
+    {
+      "id": "L4-M3-S02",
+      "display": "If I had seen it, I would have told you.",
+      "cue": "अगर मैंने देखा होता, तो मैं तुम्हें बता देता.",
+      "literal": "अगर मैं था देखा उसे, मैं होता बताया तुम्हें.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "had seen",
+            "cue": "देखा होता",
+            "tag": "delta",
+            "forms": [
+              "had seen",
+              "seen"
+            ],
+            "note": "had + तीसरा रूप, यानी शर्त वाला आधा. see का तीसरा रूप seen है और बीता कल saw — L1-M5 की see वाली पंक्ति यहीं से आगे बढ़ती है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "had seen को have seen से मत मिलाइए. यहाँ बात उस देखने की है जो हुआ ही नहीं.",
+      "sound": "had seen में had धीमा और दबा हुआ बोला जाता है; ज़ोर seen पर रहता है.",
+      "variations": [
+        {
+          "display": "If I had seen it, I would have called you.",
+          "cue": "अगर मैंने देखा होता, तो मैं तुम्हें फ़ोन कर देता.",
+          "changed": "बताने की जगह फ़ोन करना"
+        },
+        {
+          "display": "If she had seen it, she would have told me.",
+          "cue": "अगर उसने देखा होता, तो वह मुझे बता देती.",
+          "changed": "मैं की जगह वह, तुम्हें की जगह मुझे"
+        },
+        {
+          "display": "If I had seen your message, I would have told you.",
+          "cue": "अगर मैंने तुम्हारा संदेश देखा होता, तो मैं तुम्हें बता देता.",
+          "changed": "क्या देखा, वह साफ़ हो गया"
+        }
+      ],
+      "mistake": {
+        "display": "If I would have seen it, I would have told you",
+        "why": "फिर वही ग़लती. शर्त वाले आधे में had seen आता है, would have seen नहीं."
+      },
+      "usage": "सफ़ाई देते समय — मुझे पता होता तो कर देता.",
+      "register": "neutral",
+      "mnemonic": "had seen शर्त, would have told नतीजा — दोनों की शक्ल अलग."
+    },
+    {
+      "id": "L4-M3-S03",
+      "display": "I should have called you last night.",
+      "cue": "मुझे कल रात तुम्हें फ़ोन करना चाहिए था.",
+      "literal": "मैं चाहिए था किया फ़ोन तुम्हें पिछली रात.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "should have",
+            "cue": "करना चाहिए था (पर किया नहीं)",
+            "tag": "delta",
+            "forms": [],
+            "note": "पछतावा या उलाहना. L2-M8 वाला should सलाह देता था; should have बीती बात पर अफ़सोस कहता है, और उसके आगे तीसरा रूप आता है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "should have के बाद to नहीं आता. should have called सही है, should have to call नहीं.",
+      "sound": "बोलचाल में should have सिमटकर शुड्-अव रह जाता है. लिखते समय पूरा लिखिए.",
+      "variations": [
+        {
+          "display": "I should have called you in the morning.",
+          "cue": "मुझे सुबह तुम्हें फ़ोन करना चाहिए था.",
+          "changed": "कल रात की जगह सुबह"
+        },
+        {
+          "display": "We should have called the shop last night.",
+          "cue": "हमें कल रात दुकान पर फ़ोन करना चाहिए था.",
+          "changed": "मैं की जगह हम, तुम्हें की जगह दुकान"
+        },
+        {
+          "display": "I should have asked you last night.",
+          "cue": "मुझे कल रात तुमसे पूछना चाहिए था.",
+          "changed": "फ़ोन करने की जगह पूछना"
+        }
+      ],
+      "mistake": {
+        "display": "I should called you last night",
+        "why": "should के बाद सीधे तीसरा रूप नहीं आता. बीती बात कहनी हो तो बीच में have चाहिए: should have called."
+      },
+      "usage": "माफ़ी और अफ़सोस — जो करना था और किया नहीं.",
+      "register": "neutral",
+      "mnemonic": "should सलाह देता है, should have पछतावा करता है."
+    },
+    {
+      "id": "L4-M3-S04",
+      "display": "I could have taken the bus instead.",
+      "cue": "मैं इसकी जगह बस ले सकता था.",
+      "literal": "मैं सकता था लिया वह बस बजाय.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "could have",
+            "cue": "कर सकता था (पर किया नहीं)",
+            "tag": "delta",
+            "forms": [],
+            "note": "वह रास्ता जो खुला था और लिया नहीं गया. L2-M1 का could विनम्रता के लिए था; could have बीते मौक़े की बात करता है."
+          },
+          {
+            "display": "taken",
+            "cue": "लिया · लिया गया",
+            "tag": "delta",
+            "forms": [],
+            "note": "take का तीसरा रूप. बीता कल took है और तीसरा रूप taken — दोनों अलग हैं: I took the bus · I have taken the bus."
+          },
+          {
+            "display": "instead",
+            "cue": "इसकी जगह · बजाय",
+            "tag": "delta",
+            "forms": [],
+            "note": "वाक्य के आख़िर में अकेला बैठता है और पिछली बात की जगह कुछ और रख देता है. आगे संज्ञा लानी हो तो instead of लिखिए."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "instead के बाद सीधे संज्ञा मत लाइए. instead the bus ग़लत है; instead of the bus सही.",
+      "sound": "could have में l चुप है — कुड्-अव. instead में ज़ोर दूसरे हिस्से पर पड़ता है — इन-स्टेड.",
+      "variations": [
+        {
+          "display": "I could have taken the train instead.",
+          "cue": "मैं इसकी जगह ट्रेन ले सकता था.",
+          "changed": "बस की जगह ट्रेन"
+        },
+        {
+          "display": "You could have taken the bus instead.",
+          "cue": "तुम इसकी जगह बस ले सकते थे.",
+          "changed": "मैं की जगह तुम"
+        },
+        {
+          "display": "I could have taken the first bus instead.",
+          "cue": "मैं इसकी जगह पहली बस ले सकता था.",
+          "changed": "कौन सी बस, यह साफ़ हो गया"
+        }
+      ],
+      "mistake": {
+        "display": "I could have took the bus instead",
+        "why": "could have के बाद बीता कल नहीं, तीसरा रूप आता है: could have taken."
+      },
+      "usage": "जो रास्ता खुला था और लिया नहीं गया — अपनी बात रखते या हल्की सलाह देते समय.",
+      "register": "neutral",
+      "mnemonic": "could have — दरवाज़ा खुला था, मैं अंदर गया नहीं."
+    },
+    {
+      "id": "L4-M3-S05",
+      "display": "The train might have been late because of the rain.",
+      "cue": "शायद बारिश की वजह से ट्रेन देर से रही होगी.",
+      "literal": "वह ट्रेन शायद थी हुई देर वजह बारिश.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "might have",
+            "cue": "शायद … रहा होगा",
+            "tag": "delta",
+            "forms": [],
+            "note": "बीती बात का अंदाज़ा, पक्की ख़बर नहीं. आगे तीसरा रूप आता है: might have been. यहाँ might बीता कल नहीं, अटकल है."
+          },
+          {
+            "display": "been",
+            "cue": "रहा · हुआ",
+            "tag": "delta",
+            "forms": [],
+            "note": "be का तीसरा रूप. यह अकेला कभी नहीं चलता — हमेशा have, has या had के साथ आता है: might have been, has been."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "might have been को has been से मत मिलाइए. has been अब तक की बात है; might have been बीती बात का अंदाज़ा है.",
+      "sound": "might have been तीनों जुड़कर माइट्-अव-बिन जैसे बोले जाते हैं, और बीच वाला have सबसे धीमा रहता है.",
+      "variations": [
+        {
+          "display": "The bus might have been late because of the rain.",
+          "cue": "शायद बारिश की वजह से बस देर से रही होगी.",
+          "changed": "ट्रेन की जगह बस"
+        },
+        {
+          "display": "The train might have been full because of the festival.",
+          "cue": "शायद त्योहार की वजह से ट्रेन भरी रही होगी.",
+          "changed": "देर की जगह भीड़, बारिश की जगह त्योहार"
+        },
+        {
+          "display": "It might have been the rain.",
+          "cue": "शायद बारिश ही रही होगी.",
+          "changed": "वजह सीधे नतीजे की जगह आ गई"
+        }
+      ],
+      "mistake": {
+        "display": "The train might be late because of the rain yesterday",
+        "why": "बीती बात का अंदाज़ा might be से नहीं बनता. बीच में have और फिर तीसरा रूप चाहिए: might have been."
+      },
+      "usage": "जब वजह पक्की न हो — सुनी-सुनाई बात या अपना अंदाज़ा कहते समय.",
+      "register": "neutral",
+      "mnemonic": "might have — शायद हुआ होगा, पक्का नहीं."
+    },
+    {
+      "id": "L4-M3-S06",
+      "display": "I wish I had known about the meeting.",
+      "cue": "काश मुझे मीटिंग के बारे में पता होता.",
+      "literal": "मैं चाहता मैं था जाना बारे में वह मीटिंग.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wish",
+            "cue": "काश",
+            "tag": "interference",
+            "forms": [],
+            "note": "काश. इसके बाद वाली बात एक क़दम पीछे खिसक जाती है: I wish I had known, न कि I wish I would have known."
+          },
+          {
+            "display": "had known",
+            "cue": "पता होता",
+            "tag": "delta",
+            "forms": [
+              "had known",
+              "known"
+            ],
+            "note": "know का तीसरा रूप known है. wish के बाद बीती बात के लिए had known आता है — L3-M1 की know वाली पंक्ति यहीं आगे बढ़ती है."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "I wish के बाद अपनी बीती बात के लिए would कभी नहीं आता. I wish I would have known ग़लत है.",
+      "sound": "wish का श हिंदी के श जैसा है, स नहीं. known में k चुप है — नोन.",
+      "variations": [
+        {
+          "display": "I wish we had known about the meeting.",
+          "cue": "काश हमें मीटिंग के बारे में पता होता.",
+          "changed": "मुझे की जगह हमें"
+        },
+        {
+          "display": "I wish I had known about it before.",
+          "cue": "काश मुझे इसके बारे में पहले पता होता.",
+          "changed": "मीटिंग की जगह इतना ही, और before जुड़ गया"
+        },
+        {
+          "display": "I wish I had known your father.",
+          "cue": "काश मैं तुम्हारे पिता को जानता.",
+          "changed": "बात के बारे में नहीं, आदमी के बारे में"
+        }
+      ],
+      "mistake": {
+        "display": "I wish I would have known about the meeting",
+        "why": "अपनी बीती बात के लिए wish के बाद had आता है, would have नहीं: I wish I had known."
+      },
+      "usage": "अफ़सोस — जो जानकारी वक़्त पर नहीं मिली.",
+      "register": "neutral",
+      "mnemonic": "wish के बाद एक क़दम पीछे — had, would नहीं."
+    },
+    {
+      "id": "L4-M3-S07",
+      "display": "If only I had listened to my father.",
+      "cue": "काश मैंने अपने पिता की बात सुनी होती.",
+      "literal": "अगर सिर्फ़ मैं था सुना को मेरे पिता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "if only",
+            "cue": "काश · अगर सिर्फ़",
+            "tag": "delta",
+            "forms": [],
+            "note": "दोनों शब्द साथ चलते हैं और अकेले वाक्य में अफ़सोस कह देते हैं — नतीजे वाला आधा ज़रूरी नहीं. I wish से भारी है."
+          },
+          {
+            "display": "had listened",
+            "cue": "सुनी होती",
+            "tag": "delta",
+            "forms": [
+              "had listened",
+              "listened"
+            ],
+            "note": "listen का तीसरा रूप listened है. listen के बाद to आता है: listened to my father, न कि listened my father."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "listen के बाद to लगाना मत भूलिए. I listened him ग़लत है; I listened to him सही.",
+      "sound": "listen में t चुप है — लिसन. if only में ज़ोर only पर पड़ता है.",
+      "variations": [
+        {
+          "display": "If only I had listened to my mother.",
+          "cue": "काश मैंने अपनी माँ की बात सुनी होती.",
+          "changed": "पिता की जगह माँ"
+        },
+        {
+          "display": "If only we had listened to the doctor.",
+          "cue": "काश हमने डॉक्टर की बात सुनी होती.",
+          "changed": "मैं की जगह हम, पिता की जगह डॉक्टर"
+        },
+        {
+          "display": "If only I had listened to you.",
+          "cue": "काश मैंने तुम्हारी बात सुनी होती.",
+          "changed": "पिता की जगह तुम"
+        }
+      ],
+      "mistake": {
+        "display": "If only I would have listened to my father",
+        "why": "if only के बाद भी had + तीसरा रूप आता है, would have नहीं."
+      },
+      "usage": "गहरा अफ़सोस — अपने ही फ़ैसले पर.",
+      "register": "neutral",
+      "mnemonic": "If only — नतीजा कहे बिना ही अफ़सोस पूरा."
+    },
+    {
+      "id": "L4-M3-S08",
+      "display": "I almost said no, and I still regret it.",
+      "cue": "मैंने लगभग मना कर दिया था, और अब भी मुझे इसका अफ़सोस है.",
+      "literal": "मैं लगभग कहा नहीं, और मैं अब भी अफ़सोस उसे.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "almost",
+            "cue": "लगभग · होते-होते",
+            "tag": "delta",
+            "forms": [],
+            "note": "काम पूरा होने ही वाला था और हुआ नहीं. यह क्रिया से ठीक पहले बैठता है: I almost said no."
+          },
+          {
+            "display": "regret",
+            "cue": "अफ़सोस होना",
+            "tag": "delta",
+            "forms": [
+              "regret",
+              "regrets",
+              "regretted"
+            ],
+            "note": "क्रिया है, संज्ञा नहीं: I regret it. आगे कोई काम लाना हो तो उसका -ing वाला रूप आता है: I regret saying no."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "regret को sorry से मत बदलिए. sorry माफ़ी है, regret अपने ही फ़ैसले का अफ़सोस.",
+      "sound": "regret में ज़ोर दूसरे हिस्से पर — रि-ग्रेट. almost में ज़ोर पहले पर — ऑल-मोस्ट.",
+      "variations": [
+        {
+          "display": "I almost said yes, and I still regret it.",
+          "cue": "मैंने लगभग हाँ कह दी थी, और अब भी मुझे इसका अफ़सोस है.",
+          "changed": "मना करने की जगह हाँ"
+        },
+        {
+          "display": "She almost said no, and she still regrets it.",
+          "cue": "उसने लगभग मना कर दिया था, और अब भी उसे इसका अफ़सोस है.",
+          "changed": "मैं की जगह वह, और regret का रूप बदला"
+        },
+        {
+          "display": "I almost said no, but I do not regret it.",
+          "cue": "मैंने लगभग मना कर दिया था, पर मुझे इसका अफ़सोस नहीं है.",
+          "changed": "अफ़सोस की जगह अफ़सोस न होना"
+        }
+      ],
+      "mistake": {
+        "display": "I almost said no, and I am still regret it",
+        "why": "regret साधारण क्रिया है, हालत नहीं. उसके साथ am नहीं लगता: I still regret it."
+      },
+      "usage": "पुराने फ़ैसले पर बात करते समय — बीता कल और आज एक साथ.",
+      "register": "neutral",
+      "mnemonic": "almost — होते-होते रह गया."
+    },
+    {
+      "id": "L4-M3-S09",
+      "display": "You could have asked me instead of waiting.",
+      "cue": "इंतज़ार करने की जगह तुम मुझसे पूछ सकते थे.",
+      "literal": "तुम सकते थे पूछा मुझसे बजाय का इंतज़ार.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "instead of",
+            "cue": "की जगह · के बजाय",
+            "tag": "delta",
+            "forms": [],
+            "note": "अकेले instead से अलग: इसके बाद संज्ञा या -ing वाला रूप आता है — instead of waiting, न कि instead of wait."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "instead of के बाद सादी क्रिया मत लाइए. instead of to wait भी ग़लत है — instead of waiting लिखिए.",
+      "sound": "instead of बोलने में जुड़ जाता है — इन-स्टे-डव.",
+      "variations": [
+        {
+          "display": "You could have called me instead of waiting.",
+          "cue": "इंतज़ार करने की जगह तुम मुझे फ़ोन कर सकते थे.",
+          "changed": "पूछने की जगह फ़ोन करना"
+        },
+        {
+          "display": "He could have asked me instead of waiting.",
+          "cue": "इंतज़ार करने की जगह वह मुझसे पूछ सकता था.",
+          "changed": "तुम की जगह वह"
+        },
+        {
+          "display": "You could have asked me instead of the manager.",
+          "cue": "मैनेजर की जगह तुम मुझसे पूछ सकते थे.",
+          "changed": "इंतज़ार की जगह मैनेजर — आगे संज्ञा आ गई"
+        }
+      ],
+      "mistake": {
+        "display": "You could have asked me instead of wait",
+        "why": "instead of के बाद -ing वाला रूप आता है: instead of waiting."
+      },
+      "usage": "हल्का उलाहना — जो किया जा सकता था और किया नहीं गया.",
+      "register": "neutral",
+      "mnemonic": "instead अकेला आख़िर में, instead of के आगे कुछ न कुछ."
+    },
+    {
+      "id": "L4-M3-S10",
+      "display": "We nearly missed the train. I should have gone earlier.",
+      "cue": "हमारी ट्रेन छूटते-छूटते बची. मुझे और जल्दी निकलना चाहिए था.",
+      "literal": "हम लगभग छोड़ा वह ट्रेन. मैं चाहिए था गया और जल्दी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nearly",
+            "cue": "क़रीब-क़रीब · होते-होते",
+            "tag": "delta",
+            "forms": [],
+            "note": "almost जैसा ही. फ़र्क़ हल्का है: nearly नापी हुई बात के साथ ज़्यादा चलता है — nearly missed, nearly ten o'clock."
+          },
+          {
+            "display": "gone",
+            "cue": "गया · चला गया",
+            "tag": "delta",
+            "forms": [],
+            "note": "go का तीसरा रूप. बीता कल went है और तीसरा रूप gone: I went early · I should have gone early."
+          },
+          {
+            "display": "earlier",
+            "cue": "और जल्दी · पहले",
+            "tag": "delta",
+            "forms": [],
+            "note": "early का तुलना वाला रूप — y हटकर -ier आता है. जल्दी से भी जल्दी: I should have gone earlier."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "gone और went को मत मिलाइए. should have के बाद हमेशा gone आता है, went कभी नहीं.",
+      "sound": "nearly में ज़ोर पहले हिस्से पर — नियर-ली. earlier तीन टुकड़ों में — अर-लि-अर.",
+      "variations": [
+        {
+          "display": "We nearly missed the bus. I should have gone earlier.",
+          "cue": "हमारी बस छूटते-छूटते बची. मुझे और जल्दी निकलना चाहिए था.",
+          "changed": "ट्रेन की जगह बस"
+        },
+        {
+          "display": "We nearly missed the train. We should have gone earlier.",
+          "cue": "हमारी ट्रेन छूटते-छूटते बची. हमें और जल्दी निकलना चाहिए था.",
+          "changed": "मैं की जगह हम"
+        },
+        {
+          "display": "I nearly missed the train, and I still feel bad.",
+          "cue": "मेरी ट्रेन छूटते-छूटते बची, और अब भी मुझे बुरा लग रहा है.",
+          "changed": "अफ़सोस दूसरे शब्दों में"
+        }
+      ],
+      "mistake": {
+        "display": "We nearly missed the train. I should have went earlier",
+        "why": "should have के बाद तीसरा रूप आता है. went बीता कल है; यहाँ gone चाहिए."
+      },
+      "usage": "बाल-बाल बचने की बात — स्टेशन पर या दफ़्तर में देर होते-होते बचने पर.",
+      "register": "neutral",
+      "mnemonic": "nearly missed — छूटते-छूटते बचा."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M3-C01",
+      "display": "If I had gone early, I would have caught the train.",
+      "cue": "अगर मैं जल्दी गया होता, तो मुझे ट्रेन मिल जाती."
+    },
+    {
+      "id": "L4-M3-C02",
+      "display": "If I had seen it, I would have told you.",
+      "cue": "अगर मैंने देखा होता, तो मैं तुम्हें बता देता."
+    },
+    {
+      "id": "L4-M3-C03",
+      "display": "I should have called you last night.",
+      "cue": "मुझे कल रात तुम्हें फ़ोन करना चाहिए था."
+    },
+    {
+      "id": "L4-M3-C04",
+      "display": "I could have taken the bus instead.",
+      "cue": "मैं इसकी जगह बस ले सकता था."
+    },
+    {
+      "id": "L4-M3-C05",
+      "display": "The train might have been late because of the rain.",
+      "cue": "शायद बारिश की वजह से ट्रेन देर से रही होगी."
+    },
+    {
+      "id": "L4-M3-C06",
+      "display": "I wish I had known about the meeting.",
+      "cue": "काश मुझे मीटिंग के बारे में पता होता."
+    },
+    {
+      "id": "L4-M3-C07",
+      "display": "If only I had listened to my father.",
+      "cue": "काश मैंने अपने पिता की बात सुनी होती."
+    },
+    {
+      "id": "L4-M3-C08",
+      "display": "I almost said no, and I still regret it.",
+      "cue": "मैंने लगभग मना कर दिया था, और अब भी मुझे इसका अफ़सोस है."
+    },
+    {
+      "id": "L4-M3-C09",
+      "display": "You could have asked me instead of waiting.",
+      "cue": "इंतज़ार करने की जगह तुम मुझसे पूछ सकते थे."
+    },
+    {
+      "id": "L4-M3-C10",
+      "display": "We nearly missed the train. I should have gone earlier.",
+      "cue": "हमारी ट्रेन छूटते-छूटते बची. मुझे और जल्दी निकलना चाहिए था."
+    },
+    {
+      "id": "L4-M3-C11",
+      "display": "She would have helped you, but she was very busy.",
+      "cue": "वह तुम्हारी मदद कर देती, पर वह बहुत व्यस्त थी."
+    },
+    {
+      "id": "L4-M3-C12",
+      "display": "I wish I had taken your advice.",
+      "cue": "काश मैंने तुम्हारी सलाह मानी होती."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

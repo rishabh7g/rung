@@ -1,0 +1,564 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": ["L4-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 8,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present", "present subjunctive"],
+    "allowedPatterns": [
+      "Es verdad que + <indicative> + , pero + <clause>",
+      "Aunque + <indicative> + , + <clause>",
+      "Aunque + <subjunctive> + , + <clause>",
+      "Es importante que + <subjunctive>",
+      "Por un lado + <clause> + , por otro + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "aunque plus the INDICATIVE concedes a fact both speakers accept: Aunque es caro, lo compro — it is expensive, and we both know it. This is the aunque L3-M3 opened, and its row stays L3-M3's."
+    },
+    {
+      "tag": "delta",
+      "text": "aunque plus the SUBJUNCTIVE grants a possibility the speaker will not sign for: Aunque sea caro, lo compro — maybe it is, maybe it is not, and it changes nothing. One word, two moods, two different claims."
+    },
+    {
+      "tag": "delta",
+      "text": "The impersonal value judgment takes the subjunctive: es importante que vengas, es mejor que esperes, hace falta que lo sepa. It is how a case is pressed hard without pointing at anybody."
+    },
+    {
+      "tag": "interference",
+      "text": "English marks the same split lexically — although for the fact, even if for the possibility. Say the English pair first and the Spanish mood falls out of it: although is aunque es, even if is aunque sea."
+    },
+    {
+      "tag": "interference",
+      "text": "English hedges the CLAIM: it might be slightly better. Spanish hedges the FRAME and then says the claim flat. A learner who translates the English hedge sounds unsure rather than courteous, exactly as L3-M3 said of opinions."
+    },
+    {
+      "tag": "free",
+      "text": "tienes razón, pero concedes fully and is the ordinary way to open a counter-argument, not a retreat. An English speaker under-uses it because you are right feels like losing the whole point."
+    },
+    {
+      "tag": "free",
+      "text": "por un lado and por otro lado lay two things side by side without ranking them. lo que pasa es que announces the real reason, and it is the commonest way a Spanish speaker walks a claim back one step without dropping it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "Es verdad que es caro, pero lo compro igual.",
+      "cue": "It's true that it's expensive, but I'm buying it anyway.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es verdad",
+            "cue": "it is true",
+            "tag": "delta",
+            "forms": ["es verdad", "es cierto"],
+            "note": "The full concession, and it keeps the INDICATIVE: es verdad que es caro. Granting a fact is not doubting it, so no subjunctive follows."
+          },
+          {
+            "display": "compro",
+            "cue": "I buy · I am buying",
+            "tag": "free",
+            "forms": [],
+            "note": "Regular -ar present. Spanish has one present where English has two, so compro covers both I buy and I am buying."
+          },
+          {
+            "display": "igual",
+            "cue": "anyway · all the same",
+            "tag": "free",
+            "forms": [],
+            "note": "At the end of a clause igual means all the same. It is the word that holds the ground the first half just gave away."
+          }
+        ],
+        "rules": [5, 4]
+      },
+      "trap": "es verdad que takes the indicative and es importante que takes the subjunctive, though both start es plus an adjective. What decides is whether the frame states a fact or passes judgment on one.",
+      "sound": "es ber-DAD ke es KA-ro. The final d of verdad is barely voiced in Spain and often disappears altogether.",
+      "variations": [
+        {
+          "display": "Es cierto que es caro, pero lo compro igual.",
+          "cue": "It's true that it's expensive, but I'm buying it anyway.",
+          "changed": "the same concession said the other way"
+        },
+        {
+          "display": "Es verdad que es caro, pero vale la pena.",
+          "cue": "It's true that it's expensive, but it's worth it.",
+          "changed": "the counter-claim"
+        }
+      ],
+      "mistake": {
+        "display": "Es verdad que sea caro, pero lo compro igual.",
+        "why": "es verdad que states a fact, so the indicative es follows. Only the judgment frames take sea."
+      },
+      "usage": "The opener of a case: give the other person the true half first. Neutral in both addresses; the scene here is two friends over a price.",
+      "register": "neutral",
+      "mnemonic": "verdad is a fact, so it keeps the indicative."
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "Aunque es caro, este coche vale la pena.",
+      "cue": "Although it's expensive, this car is worth it.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vale la pena",
+            "cue": "it is worth it",
+            "tag": "free",
+            "forms": [],
+            "note": "Three words indexed as one: bare vale is L2-M6's OK. The subject is the thing, so it is vale la pena, never a person doing the valuing."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "Here aunque is followed by es, and that is the whole message: the price is agreed by both of us. English writes this half with although.",
+      "sound": "aw-NKE es KA-ro. aunque is two syllables with the au running together, and the que is a plain ke.",
+      "variations": [
+        {
+          "display": "Aunque es caro, este coche es mejor.",
+          "cue": "Although it's expensive, this car is better.",
+          "changed": "the counter-claim"
+        },
+        {
+          "display": "Aunque es caro, lo compro igual.",
+          "cue": "Although it's expensive, I'm buying it anyway.",
+          "changed": "what follows the concession"
+        }
+      ],
+      "mistake": {
+        "display": "Aunque caro, este coche vale la pena.",
+        "why": "aunque takes a whole clause with a verb in it, so es cannot be dropped. Spanish has no bare although expensive."
+      },
+      "usage": "Said when the price is on the table and nobody is disputing it. Neutral in either address; the pair with S03 is the module's centre.",
+      "register": "neutral",
+      "mnemonic": "aunque es: the fact is on the table already."
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "Aunque sea caro, este coche vale la pena.",
+      "cue": "Even if it's expensive, this car is worth it.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aunque sea",
+            "cue": "even if it is",
+            "tag": "delta",
+            "forms": [],
+            "note": "Indexed whole, because aunque is L3-M3's row and sea is L3-M3's too. The mood is what changed: this half grants a possibility instead of a fact."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "S02 and S03 are the same eight words apart from one: es against sea. That one letter moves the price from agreed to merely possible, and English needs although against even if to say it.",
+      "sound": "aw-NKE SEH-a. sea is two syllables, SEH-a, and it never sounds like the English sea.",
+      "variations": [
+        {
+          "display": "Aunque sea caro, lo compro igual.",
+          "cue": "Even if it's expensive, I'm buying it anyway.",
+          "changed": "what follows the concession"
+        },
+        {
+          "display": "Aunque sea caro, es mejor.",
+          "cue": "Even if it's expensive, it's better.",
+          "changed": "the counter-claim, cut short"
+        }
+      ],
+      "mistake": {
+        "display": "Aunque será caro, este coche vale la pena.",
+        "why": "The possibility is carried by the subjunctive sea, not by a future. será states that it will be expensive, which is the opposite of granting it."
+      },
+      "usage": "Said before the price is known, or when you refuse to argue about it. Neutral in both addresses.",
+      "register": "neutral",
+      "mnemonic": "aunque sea: maybe it is, and it changes nothing."
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "Es importante que vengas a la reunión mañana.",
+      "cue": "It's important that you come to the meeting tomorrow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es importante que",
+            "cue": "it is important that",
+            "tag": "delta",
+            "forms": [],
+            "note": "Three words indexed whole, and the que is part of the frame. Everything after it goes into the subjunctive, because the frame judges rather than reports."
+          },
+          {
+            "display": "vengas",
+            "cue": "you come (subjunctive)",
+            "tag": "delta",
+            "forms": ["vengas", "venga"],
+            "note": "Present subjunctive of venir, built on the yo-form vengo. It is the same stem L4-M1 used for the negative command no vengas."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English keeps the ordinary verb — it is important that you come. Spanish changes the verb itself, and vienes here would sound like a report rather than a request.",
+      "sound": "es eem-por-TAN-te ke BEN-gas. The g of vengas is hard, as in go, never the j sound.",
+      "variations": [
+        {
+          "display": "Es importante que venga a la reunión mañana.",
+          "cue": "It's important that he comes to the meeting tomorrow.",
+          "changed": "who has to come"
+        },
+        {
+          "display": "Hace falta que vengas a la reunión.",
+          "cue": "You need to come to the meeting.",
+          "changed": "the frame — the same subjunctive follows"
+        }
+      ],
+      "mistake": {
+        "display": "Es importante que vienes a la reunión mañana.",
+        "why": "The judgment frame takes the subjunctive: vengas, not vienes. The indicative would turn the pressure into a piece of news."
+      },
+      "usage": "How a case is pressed at work without naming who is pressing it. The scene is tú with a colleague; S08 is the same move in usted.",
+      "register": "informal",
+      "mnemonic": "A frame that judges takes the mood that is not sure."
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "Es mejor que esperes: hace falta más tiempo.",
+      "cue": "It's better for you to wait: more time is needed.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es mejor que",
+            "cue": "it is better that · it is better to",
+            "tag": "delta",
+            "forms": [],
+            "note": "The second judgment frame, indexed whole because mejor is L2-M9's. English turns it into an infinitive, better to wait; Spanish keeps a full clause."
+          },
+          {
+            "display": "esperes",
+            "cue": "you wait (subjunctive)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Present subjunctive of esperar, L2-M1's verb: an -ar verb takes -e endings here. The usted cell espere is L3-M8's already, where it is the formal command wait."
+          },
+          {
+            "display": "hace falta",
+            "cue": "is needed · is necessary",
+            "tag": "free",
+            "forms": ["hace falta", "hace falta que"],
+            "note": "Impersonal: the thing needed is the subject, so it is hace falta tiempo, never a person needing it. With que it takes the subjunctive like the others."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "hace falta looks like it needs a person and does not. hace falta más tiempo is more time is needed, with tiempo as the subject and nobody named at all.",
+      "sound": "es me-KHOR ke es-PEH-res. The j of mejor is the rough back-of-the-throat h.",
+      "variations": [
+        {
+          "display": "Es mejor que esperes un poco: hace falta más tiempo.",
+          "cue": "It's better for you to wait a bit: more time is needed.",
+          "changed": "how long the waiting is"
+        },
+        {
+          "display": "Hace falta que esperes: es mejor.",
+          "cue": "You need to wait: it's better.",
+          "changed": "the two halves swap jobs"
+        }
+      ],
+      "mistake": {
+        "display": "Es mejor que esperas: hace falta más tiempo.",
+        "why": "es mejor que is a judgment, so the subjunctive esperes follows. esperas reports that you are waiting."
+      },
+      "usage": "The softest of the three frames and the one most used to talk somebody down from a decision. Said to a colleague or a friend, in tú.",
+      "register": "informal",
+      "mnemonic": "es mejor que never lets an indicative through."
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "Por un lado tienes razón; por otro lado, es caro.",
+      "cue": "On the one hand you're right; on the other, it's expensive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "por un lado",
+            "cue": "on the one hand",
+            "tag": "free",
+            "forms": [],
+            "note": "Three words indexed whole, so L3-M2's por keeps its own row. It opens the first of two sides and promises a second one."
+          },
+          {
+            "display": "por otro lado",
+            "cue": "on the other hand",
+            "tag": "free",
+            "forms": [],
+            "note": "The answering half. Spanish says the whole phrase again rather than shortening it the way English can drop to on the other."
+          },
+          {
+            "display": "razón",
+            "cue": "reason · rightness",
+            "tag": "free",
+            "forms": [],
+            "note": "In tienes razón it means the rightness, not the reason: Spanish HAS rightness where English IS right. tener is the verb, always."
+          }
+        ],
+        "rules": [6, 5]
+      },
+      "trap": "English is right; Spanish has rightness. tienes razón, never eres razón and never estás correcto, which no Spanish speaker says.",
+      "sound": "por oon LA-do TYEH-nes rra-SON. The initial rr of razón is trilled even though it is written with one r.",
+      "variations": [
+        {
+          "display": "Por un lado tienes razón; por otro lado, no.",
+          "cue": "On the one hand you're right; on the other, no.",
+          "changed": "the second half is cut to one word"
+        },
+        {
+          "display": "Por un lado es caro; por otro lado, vale la pena.",
+          "cue": "On the one hand it's expensive; on the other, it's worth it.",
+          "changed": "what is weighed on each side"
+        }
+      ],
+      "mistake": {
+        "display": "Por un lado eres razón; por otro lado, es caro.",
+        "why": "razón goes with tener, not with ser: tienes razón. eres razón is not Spanish."
+      },
+      "usage": "The frame for holding two true things at once, and the one that buys a speaker time. Between equals; the scene is tú.",
+      "register": "informal",
+      "mnemonic": "In Spanish you HAVE the rightness."
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "Tienes razón, pero eso no es todo el problema.",
+      "cue": "You're right, but that isn't the whole problem.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eso",
+            "cue": "that (the thing just said)",
+            "tag": "free",
+            "forms": ["eso", "esto"],
+            "note": "The neuter demonstrative: it points at an idea, never at an object with a gender. eso is what the other person just said; esto is what you are about to say."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "tienes razón concedes fully and costs nothing. An English speaker holds it back because you are right sounds like surrender; in Spanish it is simply how a counter-argument opens.",
+      "sound": "TYEH-nes rra-SON, PEH-ro EH-so. eso has a plain hissing s, and never the z of English these.",
+      "variations": [
+        {
+          "display": "Tienes razón, pero eso no es todo.",
+          "cue": "You're right, but that isn't everything.",
+          "changed": "the counter-claim is cut short"
+        },
+        {
+          "display": "Es verdad, pero eso no es todo el problema.",
+          "cue": "It's true, but that isn't the whole problem.",
+          "changed": "the concession is impersonal"
+        }
+      ],
+      "mistake": {
+        "display": "Tienes razón, pero esto no es todo el problema.",
+        "why": "eso points back at what the other person said. esto points at what is here or what is coming, so it reads as a change of subject."
+      },
+      "usage": "The turn that keeps a conversation open: grant it, then narrow it. Between equals and in tú; with usted it would be tiene razón.",
+      "register": "informal",
+      "mnemonic": "eso looks back at their words; esto looks forward to yours."
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "Es importante que usted lo sepa antes de la reunión.",
+      "cue": "It's important that you know it before the meeting.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sepa",
+            "cue": "you know · he knows (subjunctive)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Present subjunctive of saber, and irregular: sepa, not sabe. usted and he share the cell, which is why the pronoun is written out here."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "usted takes the same verb form as he and she, so sepa is ambiguous on its own. Spanish writes usted out whenever the sentence would otherwise be read about a third person.",
+      "sound": "oos-TED lo SEH-pa. The d at the end of usted is very light in Spain and often silent altogether.",
+      "variations": [
+        {
+          "display": "Es importante que lo sepa antes de la reunión.",
+          "cue": "It's important that he knows it before the meeting.",
+          "changed": "the pronoun goes, and the sentence becomes about somebody else"
+        },
+        {
+          "display": "Es importante que usted lo sepa.",
+          "cue": "It's important that you know it.",
+          "changed": "the deadline is dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Es importante que usted lo sabe antes de la reunión.",
+        "why": "The judgment frame takes the subjunctive of saber, which is sepa. sabe is the indicative and reports rather than presses."
+      },
+      "usage": "The same case as S04, made in a meeting to somebody addressed as usted. This is the module's one formal item; politeness lives in the frame, and the frame has not changed at all.",
+      "register": "formal",
+      "mnemonic": "usted borrows the he-form, so say usted out loud."
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "Lo que pasa es que no hay más tiempo.",
+      "cue": "The thing is, there's no more time.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lo que pasa",
+            "cue": "what is going on · the thing",
+            "tag": "free",
+            "forms": [],
+            "note": "Three words indexed whole, so it stops at three: the full phrase lo que pasa es que is carried by this row plus the next one."
+          },
+          {
+            "display": "es que",
+            "cue": "it is that · the fact is",
+            "tag": "free",
+            "forms": [],
+            "note": "The excuse marker, and it keeps the indicative. es que on its own opens a reason in speech far more often than porque does."
+          }
+        ],
+        "rules": [6, 4]
+      },
+      "trap": "English says the thing is and stops. Spanish needs both halves, lo que pasa and es que, and dropping the second leaves the sentence hanging.",
+      "sound": "lo ke PA-sa es ke. Six syllables run together as a single unstressed run-up to the real news.",
+      "variations": [
+        {
+          "display": "Lo que pasa es que es caro.",
+          "cue": "The thing is, it's expensive.",
+          "changed": "the reason given"
+        },
+        {
+          "display": "Es que no hay más tiempo.",
+          "cue": "It's just that there's no more time.",
+          "changed": "the long frame drops to the short one"
+        }
+      ],
+      "mistake": {
+        "display": "Lo que pasa que no hay más tiempo.",
+        "why": "The es is not optional: lo que pasa ES que. Without it the phrase has no verb of its own."
+      },
+      "usage": "The polite retreat that is not a retreat: it names the real obstacle without dropping the claim. Neutral in either address.",
+      "register": "neutral",
+      "mnemonic": "lo que pasa es que — both halves, or neither."
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "Por supuesto que es caro, pero insisto: vale la pena.",
+      "cue": "Of course it's expensive, but I insist: it's worth it.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "por supuesto",
+            "cue": "of course",
+            "tag": "free",
+            "forms": [],
+            "note": "Two words indexed whole. With que it concedes the point loudly before the pero, which is the strongest concession the module teaches."
+          },
+          {
+            "display": "insisto",
+            "cue": "I insist",
+            "tag": "free",
+            "forms": [],
+            "note": "Said alone, between two clauses, it does the work of a whole sentence. Spanish uses it far more lightly than English insist."
+          }
+        ],
+        "rules": [5, 4]
+      },
+      "trap": "English insist is heavy and slightly rude. Spanish insisto is ordinary and merely says I have not changed my mind, so a learner under-uses it.",
+      "sound": "por soo-PWES-to ke es KA-ro. supuesto has the pw of the English pw in upward, all in one syllable.",
+      "variations": [
+        {
+          "display": "Por supuesto que es caro, pero vale la pena.",
+          "cue": "Of course it's expensive, but it's worth it.",
+          "changed": "the insistence is dropped"
+        },
+        {
+          "display": "Por supuesto que tienes razón, pero insisto.",
+          "cue": "Of course you're right, but I insist.",
+          "changed": "what is conceded"
+        }
+      ],
+      "mistake": {
+        "display": "Por supuesto es caro, pero insisto: vale la pena.",
+        "why": "When a clause follows, por supuesto takes que: por supuesto QUE es caro. Bare por supuesto answers a question and stops."
+      },
+      "usage": "The end of a case: concede everything, hold the line anyway. Neutral in both addresses, and the same sentence works in a shop or a meeting.",
+      "register": "neutral",
+      "mnemonic": "por supuesto que — the que arrives with the clause."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "Es verdad que es caro, pero lo compro igual.",
+      "cue": "It's true that it's expensive, but I'm buying it anyway."
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "Aunque es caro, este coche vale la pena.",
+      "cue": "Although it's expensive, this car is worth it."
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "Aunque sea caro, este coche vale la pena.",
+      "cue": "Even if it's expensive, this car is worth it."
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "Es importante que vengas a la reunión mañana.",
+      "cue": "It's important that you come to the meeting tomorrow."
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "Es mejor que esperes: hace falta más tiempo.",
+      "cue": "It's better for you to wait: more time is needed."
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "Por un lado tienes razón; por otro lado, es caro.",
+      "cue": "On the one hand you're right; on the other, it's expensive."
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "Tienes razón, pero eso no es todo el problema.",
+      "cue": "You're right, but that isn't the whole problem."
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "Es importante que usted lo sepa antes de la reunión.",
+      "cue": "It's important that you know it before the meeting."
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "Lo que pasa es que no hay más tiempo.",
+      "cue": "The thing is, there's no more time."
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "Por supuesto que es caro, pero insisto: vale la pena.",
+      "cue": "Of course it's expensive, but I insist: it's worth it."
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "Hace falta que vengas a la reunión.",
+      "cue": "You need to come to the meeting."
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "Es cierto que es caro, pero eso no es todo.",
+      "cue": "It's true that it's expensive, but that isn't everything."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

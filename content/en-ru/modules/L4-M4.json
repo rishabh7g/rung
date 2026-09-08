@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": ["L4-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["simple_present_imperfective", "simple_past", "imperative"],
+    "allowedPatterns": [
+      "Ved' + <clause>",
+      "<first stressed word> + zhe + <rest of clause>",
+      "Vo-pérvykh + , + <clause> + . + Vo-vtorýkh + , + <clause>",
+      "Khotyá + <clause> + , + zató + <clause>",
+      "S odnóy storoný + , + <clause> + . + S drugóy storoný + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE MODAL PARTICLES, and they are the clearest case in the course of saying it the way they do. ved' appeals to something both speakers already know — Ved' vy sámi éhto skazáli, come on, you said so yourself — and it opens its clause. zhe INSISTS, and it sits after the first stressed word of its clause and nowhere else: Ya zhe govoríl, Éhto zhe dórogo. Neither has a dictionary equivalent, both are unstressed, and both are everywhere in real argument."
+    },
+    {
+      "tag": "interference",
+      "text": "English carries this work in the VOICE — stress on did, a tag question, surely — so a romanized course has to write on the page what an English speaker would have put into the intonation. A learner translating word for word produces flat Russian, and the honest charge is REGISTER and not grammar: Vy sámi éhto skazáli is correct and simply states a fact, where Ved' vy sámi éhto skazáli reminds you of one you already had. Do not read the particle-free sentence as wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "khotyá heads the CONCEDED clause and only that one. English although can head either half — although it is far, it is cheap; it is cheap, although it is far — and Russian fixes the order: khotyá goes on what you are giving away, and no or zató opens what you are keeping. zató is the word English lacks: on the other hand, to make up for it. It is what turns a concession into an argument rather than a surrender."
+    },
+    {
+      "tag": "delta",
+      "text": "Two frames for ORDERING an argument, and they are built differently. vo-pérvykh and vo-vtorýkh are firstly and secondly, hyphenated, one token each — and the hyphen means the index also holds the bare vo, which is the shape L1-M7's v takes before a consonant cluster (vo vrémya), exactly as L3-M2's s becomes so before mnoy. s odnóy storoný and s drugóy storoný are on the one hand and on the other, three separate tokens with no hyphen anywhere, frozen in the genitive."
+    },
+    {
+      "tag": "delta",
+      "text": "Three more moves that cost no new grammar. dázhe stands immediately before the item that ought to settle the matter — dázhe vrach, even the doctor — and moving it moves what is surprising. ímenno points at exactly one thing and says that is the one: ímenno poéhtomu, precisely for that reason. And the vy-imperatives soglasítes' and podúmayte hand the conclusion to the other person instead of stating it, which is the politest form of pressure Russian has."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "Ved' vy sámi éhto skazáli vcherá.",
+      "script": "Ведь вы сами это сказали вчера.",
+      "cue": "Come on, you said so yourself yesterday.",
+      "literal": "After-all you yourselves this said yesterday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ved'",
+            "script": "ведь",
+            "cue": "after all, come on",
+            "tag": "delta",
+            "forms": ["ved'"],
+            "note": "Appeals to something you both already know, and opens its clause. Unstressed, with no dictionary equivalent — English does this with surely or with a tag question."
+          },
+          {
+            "display": "sámi",
+            "script": "сами",
+            "cue": "yourselves",
+            "tag": "free",
+            "forms": ["sámi"],
+            "note": "The vy form of self, agreeing with the person addressed. It is what makes ved' bite: not somebody said it, you did."
+          },
+          {
+            "display": "skazáli",
+            "script": "сказали",
+            "cue": "said (you, polite)",
+            "tag": "free",
+            "forms": ["skazáli"],
+            "note": "The plural past of L2-M10's skazál, with the -li ending L1-M5's býli uses. Vy skazáli is what one person said to you, said politely."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "ved' is not because and not after all in the sense of in the end. It is the sound of reminding somebody of their own words, and its whole job is to make the next sentence hard to argue with.",
+      "sound": "VYET' — one syllable, the d devoiced to t by the soft sign, and no stress of its own to speak of.",
+      "variations": [
+        {
+          "display": "Ved' vy sámi éhto skazáli.",
+          "script": "Ведь вы сами это сказали.",
+          "cue": "Come on, you said so yourself.",
+          "changed": "no day named — the appeal is to the fact, not the occasion"
+        },
+        {
+          "display": "Ved' ya vam vcherá govoríl.",
+          "script": "Ведь я вам вчера говорил.",
+          "cue": "Come on, I told you yesterday.",
+          "changed": "the reminder turned round onto the speaker's own words"
+        }
+      ],
+      "mistake": {
+        "display": "Vy sámi éhto skazáli vcherá.",
+        "script": "Вы сами это сказали вчера.",
+        "why": "Perfectly good Russian, and the charge is register rather than grammar: with no ved' it states a fact flatly, as evidence. The particle is what makes it an appeal instead of an accusation."
+      },
+      "usage": "Reminding somebody, without heat, that your position is one they already agreed with.",
+      "register": "neutral",
+      "mnemonic": "ved' opens the door. zhe never does."
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "Ya zhe govoríl vam vcherá, chto éhto dórogo.",
+      "script": "Я же говорил вам вчера, что это дорого.",
+      "cue": "I did tell you yesterday that it's expensive.",
+      "literal": "I indeed told to-you yesterday, that this expensive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zhe",
+            "script": "же",
+            "cue": "(insisting)",
+            "tag": "delta",
+            "forms": ["zhe"],
+            "note": "Insists, and sits AFTER the first stressed word of its clause and nowhere else: Ya zhe govoríl, Éhto zhe dórogo. Unstressed itself, and untranslatable one word at a time."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English says this with stress: I DID tell you. Russian will not take stress for that job, so it puts a word there instead — and the word must go in second position, whatever happens to be in first.",
+      "sound": "zhe — one unstressed syllable, leaning on the word in front of it, said as one breath with it: YA-zhe.",
+      "variations": [
+        {
+          "display": "Ya zhe vam govoríl, chto éhto dórogo.",
+          "script": "Я же вам говорил, что это дорого.",
+          "cue": "I did tell you it's expensive.",
+          "changed": "the rest of the clause reordered — zhe still sits second"
+        },
+        {
+          "display": "Éhto zhe óchen' dórogo.",
+          "script": "Это же очень дорого.",
+          "cue": "But it's really expensive.",
+          "changed": "a different first word, so zhe lands after it instead"
+        }
+      ],
+      "mistake": {
+        "display": "Zhe ya govoríl vam vcherá.",
+        "script": "Же я говорил вам вчера.",
+        "why": "zhe can never open a clause. It has no stress of its own, so it needs a word to lean on, and it takes whichever one is first."
+      },
+      "usage": "Saying I told you so and keeping the conversation going anyway.",
+      "register": "neutral",
+      "mnemonic": "zhe is second. Count one word, then write it."
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "Vo-pérvykh, éhto dórogo. Vo-vtorýkh, éhto dalekó.",
+      "script": "Во-первых, это дорого. Во-вторых, это далеко.",
+      "cue": "Firstly, it's expensive. Secondly, it's far.",
+      "literal": "In-firsts, this expensive. In-seconds, this far.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vo-pérvykh",
+            "script": "во-первых",
+            "cue": "firstly",
+            "tag": "free",
+            "forms": ["vo-pérvykh"],
+            "note": "Firstly, and hyphenated. The hyphen also indexes the bare vo — the shape L1-M7's v takes before a consonant cluster, exactly as L3-M2's s becomes so before mnoy."
+          },
+          {
+            "display": "vo-vtorýkh",
+            "script": "во-вторых",
+            "cue": "secondly",
+            "tag": "free",
+            "forms": ["vo-vtorýkh"],
+            "note": "Secondly, built the same way on vtoróy, second. The pair numbers your reasons, and it is firstly / secondly with no shift at all — one of the free ones."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "There is no bare pérvykh and no bare vtorýkh in use here: each is one hyphenated word with a comma after it. English can say first without any dressing; Russian dresses both halves the same way.",
+      "sound": "va-PYER-vykh — three syllables, stress in the middle, and the -ykh ending is the one L2-M2's plural adjectives use.",
+      "variations": [
+        {
+          "display": "Vo-pérvykh, éhto dórogo.",
+          "script": "Во-первых, это дорого.",
+          "cue": "Firstly, it's expensive.",
+          "changed": "one reason given and the second held back"
+        },
+        {
+          "display": "Vo-vtorýkh, magazín óchen' dalekó.",
+          "script": "Во-вторых, магазин очень далеко.",
+          "cue": "Secondly, the shop is very far.",
+          "changed": "the second reason on its own, with the thing named"
+        }
+      ],
+      "mistake": {
+        "display": "Pérvykh, éhto dórogo.",
+        "script": "Первых, это дорого.",
+        "why": "The vo is not decoration and not droppable: the word is one hyphenated unit. Without it the ending is a bare adjective in mid-air."
+      },
+      "usage": "Laying out two reasons in order so the other person can answer them one at a time.",
+      "register": "neutral",
+      "mnemonic": "vo-pérvykh, vo-vtorýkh — both wear the vo, both wear the hyphen."
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "Naprimér, avtóbus stóit deshévle, chem metró.",
+      "script": "Например, автобус стоит дешевле, чем метро.",
+      "cue": "For example, the bus costs less than the metro.",
+      "literal": "For-example, bus costs cheaper, than metro.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naprimér",
+            "script": "например",
+            "cue": "for example",
+            "tag": "free",
+            "forms": ["naprimér"],
+            "note": "One word for two, and it is fenced with a comma the way L3-M3 fences every opener. Stress right at the end: nap-ri-MYER."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "An example is not an argument, and Russian marks the difference the same way English does — naprimér supports the reason you already gave and never replaces it. A learner who opens with it has skipped the claim.",
+      "sound": "nap-ri-MYER — three syllables, stress on the last, and the final r is trilled lightly.",
+      "variations": [
+        {
+          "display": "Naprimér, avtóbus deshévle, chem metró.",
+          "script": "Например, автобус дешевле, чем метро.",
+          "cue": "For example, the bus is cheaper than the metro.",
+          "changed": "the verb dropped, which Russian does freely here"
+        },
+        {
+          "display": "Naprimér, vcherá ya poshyól peshkóm.",
+          "script": "Например, вчера я пошёл пешком.",
+          "cue": "For example, yesterday I walked.",
+          "changed": "an example from your own week rather than a price"
+        }
+      ],
+      "mistake": {
+        "display": "Naprimér avtóbus stóit deshévle, chem metró.",
+        "script": "Например автобус стоит дешевле, чем метро.",
+        "why": "The comma after naprimér is not optional. Russian fences an opener the way L3-M3's comma law fences khotyá, and the fence is what tells a reader where the example begins."
+      },
+      "usage": "Backing a reason you have already given with something concrete.",
+      "register": "neutral",
+      "mnemonic": "naprimér always brings its comma with it."
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "Khotyá magazín dalekó, zató tam vsyó deshévle.",
+      "script": "Хотя магазин далеко, зато там всё дешевле.",
+      "cue": "The shop is far, but on the other hand everything there is cheaper.",
+      "literal": "Although shop far, on-the-other-hand there everything cheaper.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zató",
+            "script": "зато",
+            "cue": "on the other hand, to make up for it",
+            "tag": "delta",
+            "forms": ["zató"],
+            "note": "The word English lacks. It opens the clause that WINS, and it says the second half makes up for the first — which is what turns L3-M3's khotyá from a surrender into an argument."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English although can head either clause and Russian khotyá heads only the conceded one. Put khotyá on the half you are keeping and you have argued against yourself in perfect grammar.",
+      "sound": "za-TO — two syllables, stress on the second, and the first o reduces to a.",
+      "variations": [
+        {
+          "display": "Khotyá magazín dalekó, zató tam deshévle.",
+          "script": "Хотя магазин далеко, зато там дешевле.",
+          "cue": "The shop is far, but it's cheaper there.",
+          "changed": "the same move, shorter"
+        },
+        {
+          "display": "Khotyá éhto dórogo, zató éhto khoróshiy podárok.",
+          "script": "Хотя это дорого, зато это хороший подарок.",
+          "cue": "It's expensive, but on the other hand it's a good present.",
+          "changed": "a concession about price answered with worth"
+        }
+      ],
+      "mistake": {
+        "display": "Khotyá magazín dalekó, no tam vsyó deshévle.",
+        "script": "Хотя магазин далеко, но там всё дешевле.",
+        "why": "Not wrong, and weaker. L1-M10's no only contrasts the two halves; zató says the second one compensates for the first, which is the whole point of conceding at all."
+      },
+      "usage": "Giving away the obvious objection first so that your answer to it lands harder.",
+      "register": "neutral",
+      "mnemonic": "khotyá on what you give up, zató on what you keep."
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "S odnóy storoný, éhto dórogo. S drugóy storoný, éhto khoróshiy podárok.",
+      "script": "С одной стороны, это дорого. С другой стороны, это хороший подарок.",
+      "cue": "On the one hand it's expensive. On the other hand it's a good present.",
+      "literal": "From one side, this expensive. From other side, this good present.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "s odnóy storoný",
+            "script": "с одной стороны",
+            "cue": "on the one hand",
+            "tag": "free",
+            "forms": ["s odnóy storoný", "s drugóy storoný"],
+            "note": "On the one hand / on the other, phrase for phrase and with no hyphen anywhere. Three tokens each, frozen in the genitive, and the pair is learnt and indexed whole."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "This weighs two things and decides nothing, where khotyá … zató decides. Use it to show you have thought about the other side; use zató when you want the argument to end somewhere.",
+      "sound": "s ad-NOY sta-ra-NÝ — five syllables run together as one phrase, and the stress falls on the very last one.",
+      "variations": [
+        {
+          "display": "S odnóy storoný, éhto dórogo.",
+          "script": "С одной стороны, это дорого.",
+          "cue": "On the one hand, it's expensive.",
+          "changed": "one hand offered and the other left for the listener"
+        },
+        {
+          "display": "S drugóy storoný, éhto óchen' khoróshiy podárok.",
+          "script": "С другой стороны, это очень хороший подарок.",
+          "cue": "On the other hand, it's a very good present.",
+          "changed": "the answering half alone"
+        }
+      ],
+      "mistake": {
+        "display": "S odnóy storoná, éhto dórogo.",
+        "script": "С одной сторона, это дорого.",
+        "why": "The phrase is frozen in the genitive: storoný, never the dictionary form storoná. Nothing in it agrees with anything outside it, which is what makes it safe to learn whole."
+      },
+      "usage": "Showing you have weighed both sides before you say which one you are on.",
+      "register": "neutral",
+      "mnemonic": "One hand, other hand — and both of them end in -ý."
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "Dázhe vrach so mnoy soglásen.",
+      "script": "Даже врач со мной согласен.",
+      "cue": "Even the doctor agrees with me.",
+      "literal": "Even doctor with me agreeing.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dázhe",
+            "script": "даже",
+            "cue": "even",
+            "tag": "delta",
+            "forms": ["dázhe"],
+            "note": "Stands immediately before the item it is surprised by: dázhe vrach, even the doctor. Move it and you move the surprise, so its position is the whole of its meaning."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English even floats — even the doctor agrees, the doctor even agrees, the doctor agrees even with me — and each says something different. Russian is the same, which means a learner who puts dázhe where it feels natural in English will say the wrong one.",
+      "sound": "DA-zhe — two syllables, stress on the first, the zh as in measure.",
+      "variations": [
+        {
+          "display": "Dázhe kolléga so mnoy soglásen.",
+          "script": "Даже коллега со мной согласен.",
+          "cue": "Even my colleague agrees with me.",
+          "changed": "a different unlikely ally"
+        },
+        {
+          "display": "Dázhe vcherá éhto býlo dórogo.",
+          "script": "Даже вчера это было дорого.",
+          "cue": "Even yesterday it was expensive.",
+          "changed": "dázhe pointing at a time instead of a person"
+        }
+      ],
+      "mistake": {
+        "display": "Vrach dázhe so mnoy soglásen.",
+        "script": "Врач даже со мной согласен.",
+        "why": "Good Russian, different claim: now the surprise is that he agrees with ME. dázhe marks whatever follows it, so moving it rewrites the sentence silently."
+      },
+      "usage": "Naming the person your opponent would least expect to be on your side.",
+      "register": "neutral",
+      "mnemonic": "dázhe points forward. Whatever comes next is the surprising part."
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "Ímenno poéhtomu ya schitáyu, chto éhto oshíbka.",
+      "script": "Именно поэтому я считаю, что это ошибка.",
+      "cue": "That's precisely why I think it's a mistake.",
+      "literal": "Precisely therefore I consider, that this mistake.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ímenno",
+            "script": "именно",
+            "cue": "precisely, exactly",
+            "tag": "free",
+            "forms": ["ímenno"],
+            "note": "Points at exactly one thing and says that is the one. Ímenno poéhtomu is precisely for that reason. Stress on the first syllable, and it always leans on the word after it."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "ímenno is not the same as óchen'. It does not intensify anything — it narrows, picking one item out of the several that were on the table, which is why it is an argument word and not an emphasis word.",
+      "sound": "EE-me-na — three syllables, stress on the first, and the double n is held a beat longer.",
+      "variations": [
+        {
+          "display": "Ímenno poéhtomu ya tak schitáyu.",
+          "script": "Именно поэтому я так считаю.",
+          "cue": "That's precisely why I think so.",
+          "changed": "the opinion left unstated and pointed at with tak"
+        },
+        {
+          "display": "Ímenno éhto ya i govoríl.",
+          "script": "Именно это я и говорил.",
+          "cue": "That's exactly what I was saying.",
+          "changed": "ímenno pointing at the thing rather than the reason"
+        }
+      ],
+      "mistake": {
+        "display": "Ímenno ya poéhtomu schitáyu, chto éhto oshíbka.",
+        "script": "Именно я поэтому считаю, что это ошибка.",
+        "why": "ímenno marks the word straight after it, so this says it is precisely I who think so — a claim about who, not about why."
+      },
+      "usage": "Tying your conclusion to the one reason you most want remembered.",
+      "register": "neutral",
+      "mnemonic": "ímenno narrows. óchen' turns up the volume."
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "Soglasítes', ved' éhto lúchshe i deshévle.",
+      "script": "Согласитесь, ведь это лучше и дешевле.",
+      "cue": "You must admit, it is better and cheaper.",
+      "literal": "Agree-you, after-all this better and cheaper.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "soglasítes'",
+            "script": "согласитесь",
+            "cue": "you must admit",
+            "tag": "free",
+            "forms": ["soglasítes'"],
+            "note": "Literally agree! — the vy-imperative of soglasít'sya, built on L3-M3's soglásen. It is L4-M1's imperative shape with the reflexive -sya on the end of it."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "This is not an order even though it is an imperative. It invites the other person to draw the conclusion themselves, and English does the same thing with you must admit — which is also not a command.",
+      "sound": "sag-la-SEE-tyes' — four syllables, stress on the third, and the ending is soft: -tyes', not -tes.",
+      "variations": [
+        {
+          "display": "Soglasítes', éhto óchen' dórogo.",
+          "script": "Согласитесь, это очень дорого.",
+          "cue": "You must admit, it's very expensive.",
+          "changed": "no ved' — the invitation left bare"
+        },
+        {
+          "display": "Soglasítes', ved' ya byl prav.",
+          "script": "Согласитесь, ведь я был прав.",
+          "cue": "You must admit I was right.",
+          "changed": "the concession asked for on the earlier argument"
+        }
+      ],
+      "mistake": {
+        "display": "Vy soglasítes', ved' éhto lúchshe i deshévle.",
+        "script": "Вы согласитесь, ведь это лучше и дешевле.",
+        "why": "With vy in front it stops being an imperative and becomes a future: you will agree. That is a prediction about the other person, and it is exactly the wrong tone."
+      },
+      "usage": "Asking for the concession outright, in the friendliest form Russian has for it.",
+      "register": "neutral",
+      "mnemonic": "No pronoun, and it invites. Add vy, and it predicts."
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "Podúmayte sámi: éhto zhe óchen' dórogo.",
+      "script": "Подумайте сами: это же очень дорого.",
+      "cue": "Think about it yourself: it really is very expensive.",
+      "literal": "Think-you yourselves: this indeed very expensive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "podúmayte",
+            "script": "подумайте",
+            "cue": "think about it",
+            "tag": "free",
+            "forms": ["podúmayte"],
+            "note": "The perfective imperative of L1-M9's dúmayu family: think it over once, and reach a conclusion. Handing the conclusion over is a persuasive move, not an instruction."
+          }
+        ],
+        "rules": [4, 0]
+      },
+      "trap": "Perfective and imperfective imperatives are not interchangeable here. Dúmayte sámi tells somebody to go on thinking, which sounds like a dismissal; podúmayte asks for one act of thought and then an answer.",
+      "sound": "pa-DU-may-tye — four syllables, stress on the second, and the final -te is soft.",
+      "variations": [
+        {
+          "display": "Podúmayte sámi, éhto zhe dórogo.",
+          "script": "Подумайте сами, это же дорого.",
+          "cue": "Think about it yourself, it really is expensive.",
+          "changed": "a comma instead of the colon, which reads a shade softer"
+        },
+        {
+          "display": "Podúmayte, naprimér, o rabóte.",
+          "script": "Подумайте, например, о работе.",
+          "cue": "Think about work, for example.",
+          "changed": "the invitation pointed at a topic, with naprimér fenced inside it"
+        }
+      ],
+      "mistake": {
+        "display": "Dúmayte sámi: éhto zhe óchen' dórogo.",
+        "script": "Думайте сами: это же очень дорого.",
+        "why": "The imperfective tells them to keep thinking and reads as go away and work it out. The perfective podúmayte asks for one considered answer, which is what you actually want."
+      },
+      "usage": "Closing your case by asking the other person to finish it for you.",
+      "register": "neutral",
+      "mnemonic": "podúmayte asks for a conclusion. dúmayte asks for a hobby."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "Ved' vy sámi éhto skazáli.",
+      "script": "Ведь вы сами это сказали.",
+      "cue": "Come on, you said so yourself."
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "Ya zhe vam govoríl vcherá.",
+      "script": "Я же вам говорил вчера.",
+      "cue": "I did tell you yesterday."
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "Vo-pérvykh, éhto óchen' dórogo.",
+      "script": "Во-первых, это очень дорого.",
+      "cue": "Firstly, it's very expensive."
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "Vo-vtorýkh, magazín dalekó.",
+      "script": "Во-вторых, магазин далеко.",
+      "cue": "Secondly, the shop is far."
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "Naprimér, avtóbus deshévle, chem metró.",
+      "script": "Например, автобус дешевле, чем метро.",
+      "cue": "For example, the bus is cheaper than the metro."
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "Khotyá dalekó, zató deshévle.",
+      "script": "Хотя далеко, зато дешевле.",
+      "cue": "It's far, but on the other hand it's cheaper."
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "S odnóy storoný, éhto khoróshiy podárok.",
+      "script": "С одной стороны, это хороший подарок.",
+      "cue": "On the one hand, it's a good present."
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "S drugóy storoný, éhto dórogo.",
+      "script": "С другой стороны, это дорого.",
+      "cue": "On the other hand, it's expensive."
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "Dázhe vrach so mnoy soglásen.",
+      "script": "Даже врач со мной согласен.",
+      "cue": "Even the doctor agrees with me."
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "Ímenno poéhtomu ya tak schitáyu.",
+      "script": "Именно поэтому я так считаю.",
+      "cue": "That's precisely why I think so."
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "Soglasítes', éhto lúchshe i deshévle.",
+      "script": "Согласитесь, это лучше и дешевле.",
+      "cue": "You must admit it's better and cheaper."
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "Podúmayte sámi, ved' vy právy.",
+      "script": "Подумайте сами, ведь вы правы.",
+      "cue": "Think about it yourself — you're right, after all."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

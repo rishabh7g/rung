@@ -1,0 +1,616 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": [
+    "L4-M1",
+    "L4-M2",
+    "L4-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "présent",
+      "conditionnel"
+    ],
+    "allowedPatterns": [
+      "C'est vrai que + <clause> + , + mais + <clause>",
+      "Certes + , + <clause> + , + pourtant + <clause>",
+      "D'un côté + <clause> + , + de l'autre + <clause>",
+      "Tu as raison + , + en revanche + <clause>",
+      "Il vaut mieux + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A CONCESSION IS TWO MOVES, NOT ONE CLAUSE. Grant the point flat, then turn: C'est vrai que c'est cher, mais … / Tu as raison, en revanche … Everyday French never buries the concession in a subordinate clause, so the shape of an argument here is a sequence of short statements rather than one long sentence."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH CONCEDES WITH although AND FRENCH DOES NOT. The learner reaches for bien que, which is real French, takes a mood this ladder has not opened, and is almost never spoken. Naming it and refusing it is worth more than teaching it: say the concession flat and turn after the comma."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TURN WORDS SPLIT BY REGISTER, AND THE SPLIT IS THE CONTENT. par contre is what is said, en revanche what is written. pourtant and cependant carry a real and yet. quand même goes at the END of its clause and means all the same. All four join the same two facts; picking the wrong one is a mistake of clothing."
+    },
+    {
+      "tag": "interference",
+      "text": "on the other hand IS NOT de l'autre côté. French has only the PAIR — d'un côté … de l'autre — and it must open with d'un côté for the second half to mean anything. de l'autre côté exists and means on the other side, of a street or a river, which is a place and not an argument."
+    },
+    {
+      "tag": "interference",
+      "text": "actually IS en fait, NEVER actuellement. actuellement means currently, so Actuellement je ne suis pas d'accord says I am not agreeing at the moment — a different claim and a softer one. This is the flattest false friend in the course, and it costs a whole sentence when it goes wrong."
+    },
+    {
+      "tag": "free",
+      "text": "il vaut mieux AND il faudrait TAKE A BARE INFINITIVE AND NAME NOBODY. Il vaut mieux partir plus tôt, il faudrait attendre demain — no de, no subject, no finger pointed. That impersonal frame is what makes advice persuasive here rather than bossy, and it is the cheapest thing in the module."
+    },
+    {
+      "tag": "free",
+      "text": "EVERY CLAUSE IN THIS MODULE STAYS INDICATIVE AND EVERY NEGATIVE KEEPS ITS ne. Je ne suis pas d'accord. No turn word — mais, pourtant, en revanche, par contre, cependant — moves the mood of the verb behind it, and none of them is a reason to drop a ne that L1-M3 put there."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "C'est vrai que le train est cher, mais il est plus rapide",
+      "cue": "It's true the train is expensive, but it's faster",
+      "literal": "It-is true that the train is expensive, but it is more fast",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "c'est vrai que",
+            "cue": "it's true that",
+            "tag": "free",
+            "forms": [
+              "c'est vrai que"
+            ],
+            "note": "The flat grant. It concedes the other side's fact whole, and the que is not optional — English drops that, French keeps que."
+          },
+          {
+            "display": "rapide",
+            "cue": "fast, quick",
+            "tag": "free",
+            "forms": [
+              "rapide"
+            ],
+            "note": "One form for both genders, like tranquille. Comparatives are L2-M9's plus: plus rapide, moins rapide, nothing new to build."
+          }
+        ],
+        "rules": [
+          0,
+          6
+        ]
+      },
+      "trap": "The concession is a complete sentence before the comma. Nothing about c'est vrai que weakens it — you are agreeing, and the mais is what buys it back.",
+      "sound": "seh VREH kuh luh TRAN eh SHEHR, meh eel eh plew ra-PEED. plus keeps its s before a vowel here, so plus rapide is plew-ra-PEED with no z.",
+      "variations": [
+        {
+          "display": "C'est vrai que c'est cher, mais c'est plus rapide",
+          "cue": "It's true it's expensive, but it's faster",
+          "changed": "the subject drops to c'est on both sides, which is how it is usually said"
+        },
+        {
+          "display": "C'est vrai que le train est cher, mais il est plus tranquille",
+          "cue": "It's true the train is expensive, but it's quieter",
+          "changed": "a different virtue bought back, on the same two-move frame"
+        }
+      ],
+      "mistake": {
+        "display": "Bien que le train soit cher, il est plus rapide",
+        "why": "bien que is real French, takes a mood this ladder has not opened, and almost nobody says it out loud. Grant the point flat, then turn."
+      },
+      "usage": "The opening move of any argument you expect to win: the other side hears their own point back before they hear yours.",
+      "register": "neutral",
+      "mnemonic": "Grant it flat, then turn."
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "Tu as raison, en revanche c'est trop cher",
+      "cue": "You're right, on the other hand it's too expensive",
+      "literal": "You have reason, in revenge it-is too expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tu as raison",
+            "cue": "you're right",
+            "tag": "free",
+            "forms": [
+              "tu as raison"
+            ],
+            "note": "raison is a noun, so French HAS reason rather than being right. Indexed whole here; raison itself is already L3-M3's row, from ait raison."
+          },
+          {
+            "display": "en revanche",
+            "cue": "on the other hand",
+            "tag": "delta",
+            "forms": [
+              "en revanche"
+            ],
+            "note": "The written turn. Same job as par contre and one register up, so it belongs in an email and sounds careful out loud."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Conceding first costs you nothing and buys the turn. en revanche needs something granted in front of it, or there is nothing for it to turn away from.",
+      "sound": "tew a reh-ZON, on ruh-VONSH seh troh SHEHR. revanche ends in the soft sh of chose, and the en in front is nasal.",
+      "variations": [
+        {
+          "display": "Tu as raison, en revanche c'est très loin",
+          "cue": "You're right, on the other hand it's very far",
+          "changed": "a different objection hung on the same turn"
+        },
+        {
+          "display": "Tu as raison, en revanche je préfère le train",
+          "cue": "You're right, on the other hand I prefer the train",
+          "changed": "the turn carries a preference instead of a fact"
+        }
+      ],
+      "mistake": {
+        "display": "Tu es raison, en revanche c'est trop cher",
+        "why": "raison is a noun and goes with avoir. Tu es raison says you ARE a reason; it is tu as raison, always."
+      },
+      "usage": "The safest disagreement in the language — it is heard as fair rather than as opposition.",
+      "register": "informal",
+      "mnemonic": "You HAVE reason."
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "Certes, c'est plus cher, pourtant je préfère le train",
+      "cue": "Granted, it's more expensive, and yet I prefer the train",
+      "literal": "Certainly, it-is more expensive, however I prefer the train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "certes",
+            "cue": "granted, admittedly",
+            "tag": "free",
+            "forms": [
+              "certes"
+            ],
+            "note": "A one-word concession that opens the sentence. It is a shade formal and it always promises a turn — nobody says certes and then stops."
+          },
+          {
+            "display": "pourtant",
+            "cue": "and yet, however",
+            "tag": "delta",
+            "forms": [
+              "pourtant"
+            ],
+            "note": "The real and yet: it marks the turn as surprising, not merely opposite. It joins two full clauses on its own and never takes que."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "certes and pourtant are a matched pair. Opening with certes and turning with mais is not wrong, but it wastes the promise certes made.",
+      "sound": "SEHRT, seh plew SHEHR, poor-TON zhuh pray-FEHR luh TRAN. certes keeps its final t, which is unusual and worth remembering.",
+      "variations": [
+        {
+          "display": "Certes, c'est plus cher, pourtant c'est plus rapide",
+          "cue": "Granted, it's more expensive, and yet it's faster",
+          "changed": "the turn carries a second comparison rather than a preference"
+        },
+        {
+          "display": "Certes, c'est loin, pourtant c'est tranquille",
+          "cue": "Granted, it's far, and yet it's quiet",
+          "changed": "both halves shorten to c'est, which is the spoken shape"
+        }
+      ],
+      "mistake": {
+        "display": "Certes, c'est plus cher, pourtant que je préfère le train",
+        "why": "pourtant joins two clauses by itself. Adding que turns it into a subordinator it has never been."
+      },
+      "usage": "Written French, and spoken French when somebody is being deliberately reasonable. It signals that the argument is not over.",
+      "register": "neutral",
+      "mnemonic": "certes opens, pourtant turns."
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "D'un côté c'est pratique, de l'autre c'est très cher",
+      "cue": "On one hand it's practical, on the other it's very expensive",
+      "literal": "Of one side it-is practical, of the other it-is very expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "d'un côté",
+            "cue": "on one hand",
+            "tag": "free",
+            "forms": [
+              "d'un côté"
+            ],
+            "note": "The opener of a pair. It commits you to a second half — start with it and the listener is already waiting for de l'autre."
+          },
+          {
+            "display": "de l'autre",
+            "cue": "on the other",
+            "tag": "free",
+            "forms": [
+              "de l'autre"
+            ],
+            "note": "The closer, and it stops there: de l'autre côté means on the other SIDE, of a street or a river, and is not this phrase."
+          },
+          {
+            "display": "pratique",
+            "cue": "practical, handy",
+            "tag": "free",
+            "forms": [
+              "pratique"
+            ],
+            "note": "One form for both genders. Said of a thing that saves you trouble, far more often than English says practical."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The two halves are one structure, not two sentences that happen to be near each other. Drop d'un côté and de l'autre has nothing to answer.",
+      "sound": "dun koh-TAY seh pra-TEEK, duh LOH-truh seh treh SHEHR. côté ends in a clean ay; the circumflex is history, not sound.",
+      "variations": [
+        {
+          "display": "D'un côté c'est rapide, de l'autre c'est cher",
+          "cue": "On one hand it's fast, on the other it's expensive",
+          "changed": "the two sides swap in a different pair of facts"
+        },
+        {
+          "display": "D'un côté c'est pratique, de l'autre c'est trop loin",
+          "cue": "On one hand it's handy, on the other it's too far",
+          "changed": "the objection becomes distance rather than price"
+        }
+      ],
+      "mistake": {
+        "display": "D'un côté c'est pratique, de l'autre côté c'est très cher",
+        "why": "The pair is d'un côté … de l'autre. Putting côté back in makes it a place — on the other side of the street — which is not what you meant."
+      },
+      "usage": "How a French speaker shows they have weighed something. It reads as fair-minded even when the second half is the one you believe.",
+      "register": "neutral",
+      "mnemonic": "The second side loses its côté."
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "Il vaut mieux partir plus tôt",
+      "cue": "It's better to leave earlier",
+      "literal": "It is-worth better to-leave more early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "il vaut mieux",
+            "cue": "it's better to",
+            "tag": "free",
+            "forms": [
+              "il vaut mieux"
+            ],
+            "note": "Impersonal advice that names nobody: the il is empty. It takes a bare infinitive with no de, and mieux is already L2-M9's word."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "No de between the frame and the verb. il vaut mieux partir, never il vaut mieux de partir — the infinitive attaches straight on.",
+      "sound": "eel voh myuh par-TEER plew TOH. vaut is one syllable, voh, with no t heard at all.",
+      "variations": [
+        {
+          "display": "Il vaut mieux attendre demain",
+          "cue": "It's better to wait until tomorrow",
+          "changed": "the advice becomes patience, on the same empty il"
+        },
+        {
+          "display": "Il vaut mieux prendre le train",
+          "cue": "It's better to take the train",
+          "changed": "the infinitive takes an object and the frame does not move"
+        }
+      ],
+      "mistake": {
+        "display": "Il vaut mieux de partir plus tôt",
+        "why": "il vaut mieux takes the infinitive bare. The de is English's to leaking in through it is better TO leave."
+      },
+      "usage": "The persuasive move that avoids an argument: advice with no subject is hard to take personally.",
+      "register": "neutral",
+      "mnemonic": "No de after mieux."
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "Je suis d'accord, par contre je préfère le vélo",
+      "cue": "I agree, that said I prefer the bike",
+      "literal": "I am of-agreement, by against I prefer the bike",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "par contre",
+            "cue": "that said, on the other hand",
+            "tag": "delta",
+            "forms": [
+              "par contre"
+            ],
+            "note": "The spoken turn, and the one you will actually hear. Same job as en revanche one register down; in writing, prefer en revanche."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "par contre turns after you have granted something. au contraire contradicts what was just said, so the two are not swappable even though English blurs them.",
+      "sound": "zhuh swee da-KOR, par KON-truh zhuh pray-FEHR luh vay-LOH. contre ends in a swallowed ruh, barely a syllable.",
+      "variations": [
+        {
+          "display": "Je suis d'accord, par contre je préfère le train",
+          "cue": "I agree, that said I prefer the train",
+          "changed": "the preference changes and the concession holds"
+        },
+        {
+          "display": "Je suis d'accord, par contre c'est trop cher",
+          "cue": "I agree, that said it's too expensive",
+          "changed": "the turn carries an objection instead of a preference"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis d'accord, au contraire je préfère le vélo",
+        "why": "au contraire denies what was just said, and you have just agreed with it. The word that turns after a concession is par contre."
+      },
+      "usage": "Ordinary spoken French, and a shade too casual for a report — the same sentence written takes en revanche.",
+      "register": "neutral",
+      "mnemonic": "par contre turns; au contraire denies."
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "C'est cher, cependant c'est le meilleur restaurant de la ville",
+      "cue": "It's expensive, however it's the best restaurant in town",
+      "literal": "It-is expensive, however it-is the best restaurant of the city",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cependant",
+            "cue": "however",
+            "tag": "delta",
+            "forms": [
+              "cependant"
+            ],
+            "note": "pourtant's written twin, and the most neutral of the turns. It carries the same and yet, with none of par contre's spoken feel."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "cependant already contains the mais. Writing mais cependant is not emphasis; it is the same word twice.",
+      "sound": "seh SHEHR, suh-pon-DON seh luh meh-YUR res-toh-RON duh la VEEL. cependant is three flat syllables with the stress only on the last.",
+      "variations": [
+        {
+          "display": "C'est cher, cependant c'est le meilleur",
+          "cue": "It's expensive, however it's the best",
+          "changed": "the noun drops and le meilleur stands alone"
+        },
+        {
+          "display": "C'est loin, cependant c'est le meilleur restaurant de la ville",
+          "cue": "It's far, however it's the best restaurant in town",
+          "changed": "the concession changes and the turn does not"
+        }
+      ],
+      "mistake": {
+        "display": "C'est cher, mais cependant c'est le meilleur restaurant de la ville",
+        "why": "cependant is already the turn. Stacking mais in front of it doubles the word rather than strengthening it."
+      },
+      "usage": "The written register. In speech the same sentence takes mais, and nobody would notice the difference.",
+      "register": "neutral",
+      "mnemonic": "One turn word per turn."
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "C'est plus cher, mais je préfère le train quand même",
+      "cue": "It's more expensive, but I prefer the train all the same",
+      "literal": "It-is more expensive, but I prefer the train when same",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quand même",
+            "cue": "all the same, even so",
+            "tag": "delta",
+            "forms": [
+              "quand même"
+            ],
+            "note": "It closes the clause it softens rather than opening it. Two words, and neither one carries its ordinary meaning inside the pair."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "quand même lands at the END. Every other turn word in this module opens its clause, and this is the one that does not.",
+      "sound": "seh plew SHEHR, meh zhuh pray-FEHR luh tran kon-MEM. quand même runs together as kon-MEM, with the d never heard.",
+      "variations": [
+        {
+          "display": "C'est plus cher, mais je préfère le vélo quand même",
+          "cue": "It's more expensive, but I prefer the bike all the same",
+          "changed": "the choice changes and the closing position does not"
+        },
+        {
+          "display": "C'est loin, mais je préfère ce restaurant quand même",
+          "cue": "It's far, but I prefer this restaurant all the same",
+          "changed": "the concession becomes distance and quand même still closes"
+        }
+      ],
+      "mistake": {
+        "display": "C'est plus cher, mais quand même je préfère le train",
+        "why": "Fronted, quand même reads as an exclamation of protest rather than a softener. The all the same sense is the one that closes the sentence."
+      },
+      "usage": "How a French speaker holds their ground without escalating: it grants the objection and keeps the decision.",
+      "register": "neutral",
+      "mnemonic": "quand même comes last."
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "Tu as raison, mais en fait je ne suis pas d'accord",
+      "cue": "You're right, but actually I don't agree",
+      "literal": "You have reason, but in fact I not am not of-agreement",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en fait",
+            "cue": "actually, in fact",
+            "tag": "free",
+            "forms": [
+              "en fait"
+            ],
+            "note": "The word English means by actually. actuellement means currently and is a different claim — this is the course's flattest false friend."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "en fait corrects; actuellement dates. Swap them and I don't agree becomes I am not agreeing at the moment, which concedes far more than you meant.",
+      "sound": "tew a reh-ZON, meh on FEHT zhuh nuh swee pah da-KOR. en fait keeps its t, unlike most French words ending that way.",
+      "variations": [
+        {
+          "display": "Tu as raison, mais en fait je préfère attendre",
+          "cue": "You're right, but actually I'd rather wait",
+          "changed": "the correction becomes a preference rather than a refusal"
+        },
+        {
+          "display": "Certes, mais en fait je ne suis pas d'accord",
+          "cue": "Granted, but actually I don't agree",
+          "changed": "the concession moves up a register and the rest holds"
+        }
+      ],
+      "mistake": {
+        "display": "Tu as raison, mais actuellement je ne suis pas d'accord",
+        "why": "actuellement is currently. That sentence says you are not agreeing for now, which is a concession you did not intend to make."
+      },
+      "usage": "The softest way to refuse outright: the concession is real, and en fait marks the refusal as a correction rather than a fight.",
+      "register": "informal",
+      "mnemonic": "en fait corrects, actuellement dates."
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "De toute façon, il faudrait attendre demain",
+      "cue": "In any case, we'd have to wait until tomorrow",
+      "literal": "Of all fashion, it would-be-necessary to-wait tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "de toute façon",
+            "cue": "in any case, anyway",
+            "tag": "free",
+            "forms": [
+              "de toute façon"
+            ],
+            "note": "It closes an argument by making the branches irrelevant. façon is a way of doing something; the phrase is fixed and never takes a plural."
+          },
+          {
+            "display": "il faudrait",
+            "cue": "we'd have to, it would take",
+            "tag": "free",
+            "forms": [
+              "il faudrait"
+            ],
+            "note": "The conditional of falloir, with an empty il. Like il vaut mieux it takes a bare infinitive and names nobody, which is what softens it."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "il faudrait has no subject to argue with. English has to name somebody — we would have to — and French does not, which is exactly why it lands gently.",
+      "sound": "duh toot fa-ZON, eel foh-DREH a-TON-druh duh-MAN. façon has the soft c of the cedilla, so it is fa-ZON and never fa-KON.",
+      "variations": [
+        {
+          "display": "De toute façon, il faudrait partir plus tôt",
+          "cue": "In any case, we'd have to leave earlier",
+          "changed": "the necessary action changes and the frame does not"
+        },
+        {
+          "display": "De toute façon, il vaut mieux attendre",
+          "cue": "In any case, it's better to wait",
+          "changed": "necessity softens into advice, on the same empty il"
+        }
+      ],
+      "mistake": {
+        "display": "De toute façon, il faudrait d'attendre demain",
+        "why": "il faudrait takes the infinitive bare, exactly like il vaut mieux. There is no de between the frame and the verb."
+      },
+      "usage": "The move that ends a discussion without winning it — it says the disagreement no longer decides anything.",
+      "register": "neutral",
+      "mnemonic": "Empty il, bare infinitive."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "C'est vrai que le train est cher, mais il est plus rapide",
+      "cue": "It's true the train is expensive, but it's faster"
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "Tu as raison, en revanche c'est trop cher",
+      "cue": "You're right, on the other hand it's too expensive"
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "Certes, c'est plus cher, pourtant je préfère le train",
+      "cue": "Granted, it's more expensive, and yet I prefer the train"
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "D'un côté c'est pratique, de l'autre c'est très cher",
+      "cue": "On one hand it's practical, on the other it's very expensive"
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "Il vaut mieux partir plus tôt",
+      "cue": "It's better to leave earlier"
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "Je suis d'accord, par contre je préfère le vélo",
+      "cue": "I agree, that said I prefer the bike"
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "C'est cher, cependant c'est le meilleur restaurant de la ville",
+      "cue": "It's expensive, however it's the best restaurant in town"
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "C'est plus cher, mais je préfère le train quand même",
+      "cue": "It's more expensive, but I prefer the train all the same"
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "Tu as raison, mais en fait je ne suis pas d'accord",
+      "cue": "You're right, but actually I don't agree"
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "De toute façon, il faudrait attendre demain",
+      "cue": "In any case, we'd have to wait until tomorrow"
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "Certes, c'est loin, en revanche c'est tranquille",
+      "cue": "Granted, it's far, on the other hand it's quiet"
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "D'un côté c'est rapide, de l'autre c'est cher",
+      "cue": "On one hand it's fast, on the other it's expensive"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

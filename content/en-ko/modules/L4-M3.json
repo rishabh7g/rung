@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M3",
+  "title": "What might have been",
+  "job": "Regrets and past hypotheticals",
+  "prerequisites": [
+    "L4-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "clause-eosseumyeon + clause-eosseul + geoyeyo",
+      "V-(eu)l + geol + geuraesseoyo",
+      "V-eosseoya + haesseoyo",
+      "geuttae + V-eosseumyeon + joasseul + geoyeyo",
+      "an + V-(eu)l + geol + geuraesseoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PAST IS MARKED TWICE. L3-M4's -(eu)myeon does not change at all; what makes a condition impossible is a PAST stem on both halves. Gamyeon joayo is an open condition, gasseumyeon joasseul geoyeyo one that did not happen."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH PUTS THE UNREALITY IN THE AUXILIARY. Had gone, would have seen — so a learner marks the helper and writes gal geoyeosseoyo. Korean marks the STEM and leaves geoyeyo exactly as L1-M6 taught it: gasseul geoyeyo."
+    },
+    {
+      "tag": "delta",
+      "text": "V-(eu)l geol geuraesseoyo IS THE REGRET PROPER, and it is only ever about the speaker's OWN past action. It is never used of what somebody else did, and geol is a bound noun that never stands on its own."
+    },
+    {
+      "tag": "delta",
+      "text": "-eosseoya haesseoyo SAYS HAD TO, NOT SHOULD HAVE. Ilchik gasseoya haesseoyo is I had to go early as readily as I should have gone early, and only context chooses. The unambiguous regret is ilchik gal geol geuraesseoyo."
+    },
+    {
+      "tag": "free",
+      "text": "THE NEGATIVE REGRET PUTS an IN FRONT OF THE MODIFIER, never in front of geuraesseoyo. An bol geol geuraesseoyo is I should not have watched it; bol geol an geuraesseoyo is not a sentence at all."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH IF IS ONE WORD FOR TWO CONDITIONS. The open one and the impossible one look identical, so the past marking is the only difference a learner can see: bi-ga omyeon an gayo against bi-ga wasseumyeon an gasseul geoyeyo."
+    },
+    {
+      "tag": "free",
+      "text": "NOTHING NEARLY HAPPENED HERE. The nearly frame is L5's, and L3-M9's -deon stays a remembered habit: a regret is not a memory. geuttae is one word, back then, and the time clause proper waits for L4-M6."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M3-S01",
+      "display": "Geuttae ilchik gasseumyeon joasseul geoyeyo.",
+      "script": "그때 일찍 갔으면 좋았을 거예요.",
+      "cue": "It would have been good if I had gone early back then.",
+      "literal": "back-then early went-if good-would thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geuttae",
+            "script": "그때",
+            "cue": "back then · at that time",
+            "tag": "free",
+            "forms": [
+              "geuttae"
+            ],
+            "note": "One word, not geu plus ttae. It plants the past moment the rest of the sentence undoes, and it is what tells a listener the condition is closed rather than open."
+          },
+          {
+            "display": "gasseumyeon",
+            "script": "갔으면",
+            "cue": "if I had gone",
+            "tag": "delta",
+            "forms": [
+              "gasseumyeon"
+            ],
+            "note": "L3-M4's -(eu)myeon on a PAST stem: gasseoyo plus the ending. Gamyeon is if I go; gasseumyeon is if I had gone, and nothing else marks the difference."
+          },
+          {
+            "display": "joasseul",
+            "script": "좋았을",
+            "cue": "would have been good",
+            "tag": "delta",
+            "forms": [
+              "joasseul"
+            ],
+            "note": "joasseoyo under the -(eu)l modifier, waiting for geoyeyo. The pair joasseul geoyeyo is how Korean says it would have been better."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Both halves carry the past or neither counts. Gasseumyeon joayo mixes an impossible if with a present outcome and lands nowhere.",
+      "sound": "GEU-ttae IL-jjik GA-sseu-myeon JO-a-sseul geo-YE-yo. The tt of geuttae is tensed, and the double s of gasseumyeon is held before the ending.",
+      "variations": [
+        {
+          "display": "Geuttae ilchik wasseumyeon joasseul geoyeyo.",
+          "script": "그때 일찍 왔으면 좋았을 거예요.",
+          "cue": "It would have been good if I had come early back then.",
+          "changed": "coming rather than going, with the same doubled past"
+        },
+        {
+          "display": "Geuttae yak-eul meogeosseumyeon joasseul geoyeyo.",
+          "script": "그때 약을 먹었으면 좋았을 거예요.",
+          "cue": "It would have been good if I had taken the medicine back then.",
+          "changed": "a different regret in the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Geuttae ilchik gamyeon joasseul geoyeyo.",
+        "script": "그때 일찍 가면 좋았을 거예요.",
+        "why": "gamyeon is the open condition, if I go. A closed one needs the past on the if-half too: gasseumyeon."
+      },
+      "usage": "Looking back on a day that went wrong, with a friend.",
+      "register": "neutral",
+      "mnemonic": "Two pasts, one regret."
+    },
+    {
+      "id": "L4-M3-S02",
+      "display": "Bi-ga an wasseumyeon chukje-e gasseul geoyeyo.",
+      "script": "비가 안 왔으면 축제에 갔을 거예요.",
+      "cue": "If it had not rained, I would have gone to the festival.",
+      "literal": "rain-SUBJ not came-if festival-to went-would thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wasseumyeon",
+            "script": "왔으면",
+            "cue": "if it had come",
+            "tag": "delta",
+            "forms": [
+              "wasseumyeon"
+            ],
+            "note": "The past conditional of wayo. With bi-ga in front it is if it had rained, and the an before it negates the rain, not the condition."
+          },
+          {
+            "display": "gasseul",
+            "script": "갔을",
+            "cue": "would have gone",
+            "tag": "delta",
+            "forms": [
+              "gasseul"
+            ],
+            "note": "gasseoyo under the -(eu)l modifier. It cannot stand alone: gasseul geoyeyo is the whole form, and geoyeyo is L1-M6's, unchanged."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "English says if it had not rained and marks nothing else. Korean marks the outcome too, so gasseul geoyeyo and not gal geoyeyo.",
+      "sound": "BI-ga AN WA-sseu-myeon CHUK-je-e GA-sseul geo-YE-yo. an leans into wasseumyeon as one breath.",
+      "variations": [
+        {
+          "display": "Bi-ga an wasseumyeon hakgyo-e gasseul geoyeyo.",
+          "script": "비가 안 왔으면 학교에 갔을 거예요.",
+          "cue": "If it had not rained, I would have gone to school.",
+          "changed": "the destination"
+        },
+        {
+          "display": "Bi-ga wasseumyeon chukje-e an gasseul geoyeyo.",
+          "script": "비가 왔으면 축제에 안 갔을 거예요.",
+          "cue": "If it had rained, I would not have gone to the festival.",
+          "changed": "the negative moved to the outcome half"
+        }
+      ],
+      "mistake": {
+        "display": "Bi-ga an omyeon chukje-e gasseul geoyeyo.",
+        "script": "비가 안 오면 축제에 갔을 거예요.",
+        "why": "omyeon is if it rains, still open. The rain is over and did happen, so the if-half takes the past: wasseumyeon."
+      },
+      "usage": "Explaining a missed outing the next day.",
+      "register": "neutral",
+      "mnemonic": "Closed weather, closed condition."
+    },
+    {
+      "id": "L4-M3-S03",
+      "display": "Ilchik gal geol geuraesseoyo.",
+      "script": "일찍 갈 걸 그랬어요.",
+      "cue": "I should have gone early.",
+      "literal": "early go-ing thing was-so",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geol",
+            "script": "걸",
+            "cue": "the thing (I should have done)",
+            "tag": "delta",
+            "forms": [
+              "geol"
+            ],
+            "note": "A bound noun, geot plus -eul worn down to one syllable. It never stands alone and only ever follows a -(eu)l modifier: gal geol, bol geol, meogeul geol."
+          },
+          {
+            "display": "geuraesseoyo",
+            "script": "그랬어요",
+            "cue": "I wish I had",
+            "tag": "delta",
+            "forms": [
+              "geuraesseoyo"
+            ],
+            "note": "Literally it was so, but after V-(eu)l geol it does the regretting and nothing else. Gal geol geuraesseoyo is one frame; the halves are never separated."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "This is the unambiguous regret. Ilchik gasseoya haesseoyo would be heard first as I had to go early, which is a different claim.",
+      "sound": "IL-jjik GAL GEOL geu-RAE-sseo-yo. geol is short and unstressed; it leans onto gal in front of it.",
+      "variations": [
+        {
+          "display": "Ilchik meogeul geol geuraesseoyo.",
+          "script": "일찍 먹을 걸 그랬어요.",
+          "cue": "I should have eaten early.",
+          "changed": "a different verb under the same modifier"
+        },
+        {
+          "display": "Ilchik gongbuhal geol geuraesseoyo.",
+          "script": "일찍 공부할 걸 그랬어요.",
+          "cue": "I should have studied early.",
+          "changed": "studying rather than going"
+        }
+      ],
+      "mistake": {
+        "display": "Ilchik gasseul geol geuraesseoyo.",
+        "script": "일찍 갔을 걸 그랬어요.",
+        "why": "The modifier in front of geol is the plain -(eu)l, gal. geuraesseoyo already carries the past, and marking it twice here is one past too many."
+      },
+      "usage": "Muttered to yourself after a long queue.",
+      "register": "neutral",
+      "mnemonic": "gal geol: plain modifier, past regret."
+    },
+    {
+      "id": "L4-M3-S04",
+      "display": "Geu yeonghwa-reul an bol geol geuraesseoyo.",
+      "script": "그 영화를 안 볼 걸 그랬어요.",
+      "cue": "I should not have watched that film.",
+      "literal": "that film-OBJ not watch-ing thing was-so",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "an",
+            "script": "안",
+            "cue": "not",
+            "tag": "free",
+            "forms": [
+              "an"
+            ],
+            "note": "L1-M3's negative, in the one position this frame allows: in front of the -(eu)l modifier. An bol geol geuraesseoyo is I should not have watched it."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "The negative belongs to bol, not to geuraesseoyo. Moving it to the end gives bol geol an geuraesseoyo, which is not a sentence.",
+      "sound": "GEU yeong-HWA-reul AN BOL GEOL geu-RAE-sseo-yo. an and bol run together as an-bol.",
+      "variations": [
+        {
+          "display": "Geu chaek-eul an bol geol geuraesseoyo.",
+          "script": "그 책을 안 볼 걸 그랬어요.",
+          "cue": "I should not have read that book.",
+          "changed": "the book; bol covers reading as well as watching"
+        },
+        {
+          "display": "Geu yeonghwa-reul bol geol geuraesseoyo.",
+          "script": "그 영화를 볼 걸 그랬어요.",
+          "cue": "I should have watched that film.",
+          "changed": "the regret turned round, with no an"
+        }
+      ],
+      "mistake": {
+        "display": "Geu yeonghwa-reul bol geol an geuraesseoyo.",
+        "script": "그 영화를 볼 걸 안 그랬어요.",
+        "why": "an negates the modifier, never geuraesseoyo. The negative sits in front of bol: an bol geol geuraesseoyo."
+      },
+      "usage": "Coming out of a cinema you wish you had skipped.",
+      "register": "neutral",
+      "mnemonic": "an hugs the modifier."
+    },
+    {
+      "id": "L4-M3-S05",
+      "display": "Eoje ilchik jip-e gasseoya haesseoyo.",
+      "script": "어제 일찍 집에 갔어야 했어요.",
+      "cue": "I had to go home early yesterday.",
+      "literal": "yesterday early home-to gone-must did",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gasseoya",
+            "script": "갔어야",
+            "cue": "had to go",
+            "tag": "delta",
+            "forms": [
+              "gasseoya"
+            ],
+            "note": "L2-M8's -eoya on a PAST stem. It says had to, not should have, so it needs a context; the regret with no ambiguity in it is gal geol geuraesseoyo."
+          }
+        ],
+        "rules": [
+          3,
+          1
+        ]
+      },
+      "trap": "-eosseoya haesseoyo is the obligation frame in the past, and English hears should have in it. Only what surrounds it decides which reading is meant.",
+      "sound": "EO-je IL-jjik JI-be GA-sseo-ya HAE-sseo-yo. The p of jip runs into the -e, so it is heard as ji-be.",
+      "variations": [
+        {
+          "display": "Eoje ilchik byeongwon-e gasseoya haesseoyo.",
+          "script": "어제 일찍 병원에 갔어야 했어요.",
+          "cue": "I had to go to the hospital early yesterday.",
+          "changed": "the destination"
+        },
+        {
+          "display": "Eoje yak-eul meogeosseoya haesseoyo.",
+          "script": "어제 약을 먹었어야 했어요.",
+          "cue": "I had to take the medicine yesterday.",
+          "changed": "the same frame on a different verb"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje ilchik jip-e gasseoya haeyo.",
+        "script": "어제 일찍 집에 갔어야 해요.",
+        "why": "haesseoyo, not haeyo. The obligation is over with the day, so hada carries the past as well."
+      },
+      "usage": "Accounting for yesterday to a colleague.",
+      "register": "neutral",
+      "mnemonic": "eosseoya haesseoyo: had to, first."
+    },
+    {
+      "id": "L4-M3-S06",
+      "display": "Yak-eul meogeosseumyeon gwaenchanasseul geoyeyo.",
+      "script": "약을 먹었으면 괜찮았을 거예요.",
+      "cue": "If I had taken the medicine, I would have been fine.",
+      "literal": "medicine-OBJ ate-if fine-would thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meogeosseumyeon",
+            "script": "먹었으면",
+            "cue": "if I had taken · if I had eaten",
+            "tag": "free",
+            "forms": [
+              "meogeosseumyeon"
+            ],
+            "note": "The past conditional of meogeoyo. Korean takes medicine by eating it, so yak-eul meogeosseumyeon is if I had taken the medicine."
+          },
+          {
+            "display": "gwaenchanasseul",
+            "script": "괜찮았을",
+            "cue": "would have been fine",
+            "tag": "free",
+            "forms": [
+              "gwaenchanasseul"
+            ],
+            "note": "L2-M1's gwaenchanayo in the past under the -(eu)l modifier. It is the mildest outcome word and the one a learner reaches for most often."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "L2-M8 taught yak-eul meogeoyo for taking medicine, and the counterfactual changes nothing about that: only the stem's tense moves.",
+      "sound": "YA-geul meo-GEO-sseu-myeon gwaen-CHA-na-sseul geo-YE-yo. The k of yak runs into the -eul, so it is heard as ya-geul.",
+      "variations": [
+        {
+          "display": "Yak-eul meogeosseumyeon hakgyo-e gasseul geoyeyo.",
+          "script": "약을 먹었으면 학교에 갔을 거예요.",
+          "cue": "If I had taken the medicine, I would have gone to school.",
+          "changed": "a different outcome"
+        },
+        {
+          "display": "Geuttae yak-eul meogeosseumyeon gwaenchanasseul geoyeyo.",
+          "script": "그때 약을 먹었으면 괜찮았을 거예요.",
+          "cue": "If I had taken the medicine back then, I would have been fine.",
+          "changed": "geuttae in front, pinning the missed moment"
+        }
+      ],
+      "mistake": {
+        "display": "Yak-eul meogeumyeon gwaenchanasseul geoyeyo.",
+        "script": "약을 먹으면 괜찮았을 거예요.",
+        "why": "meogeumyeon is if I take it, an open condition. The closed one needs the past on the stem: meogeosseumyeon."
+      },
+      "usage": "Telling a friend why the cold dragged on.",
+      "register": "neutral",
+      "mnemonic": "No medicine, no fine."
+    },
+    {
+      "id": "L4-M3-S07",
+      "display": "Jeongmal huhoehaeyo. Deo gongbuhal geol geuraesseoyo.",
+      "script": "정말 후회해요. 더 공부할 걸 그랬어요.",
+      "cue": "I really regret it. I should have studied more.",
+      "literal": "really regret. more study-ing thing was-so",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "huhoehaeyo",
+            "script": "후회해요",
+            "cue": "I regret it",
+            "tag": "free",
+            "forms": [
+              "huhoehaeyo",
+              "huhoehaesseoyo"
+            ],
+            "note": "The word for the feeling, said in the present even about a long-past thing. It names the regret; V-(eu)l geol geuraesseoyo is what the regret is about."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "huhoehaeyo names a feeling and cannot take the regretted action after it the way English regret can. The action goes in its own geol geuraesseoyo sentence.",
+      "sound": "JEONG-mal hu-HOE-hae-yo. DEO GONG-bu-hal GEOL geu-RAE-sseo-yo. hoe is one beat, close to English hway.",
+      "variations": [
+        {
+          "display": "Jeongmal huhoehaeyo. Deo ilhal geol geuraesseoyo.",
+          "script": "정말 후회해요. 더 일할 걸 그랬어요.",
+          "cue": "I really regret it. I should have worked more.",
+          "changed": "working rather than studying"
+        },
+        {
+          "display": "Jeongmal huhoehaesseoyo. Deo gongbuhal geol geuraesseoyo.",
+          "script": "정말 후회했어요. 더 공부할 걸 그랬어요.",
+          "cue": "I really regretted it. I should have studied more.",
+          "changed": "the regret itself put in the past"
+        }
+      ],
+      "mistake": {
+        "display": "Jeongmal huhoehaeyo. Deo gongbuhaesseul geol geuraesseoyo.",
+        "script": "정말 후회해요. 더 공부했을 걸 그랬어요.",
+        "why": "The modifier in front of geol is the plain -(eu)l: gongbuhal. geuraesseoyo is already the past half of the frame."
+      },
+      "usage": "After results come out, to someone close.",
+      "register": "neutral",
+      "mnemonic": "Name the feeling, then name the deed."
+    },
+    {
+      "id": "L4-M3-S08",
+      "display": "Geuttae yeyak-eul haesseumyeon joasseul geoyeyo.",
+      "script": "그때 예약을 했으면 좋았을 거예요.",
+      "cue": "It would have been good if I had booked back then.",
+      "literal": "back-then booking-OBJ did-if good-would thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "haesseumyeon",
+            "script": "했으면",
+            "cue": "if I had done",
+            "tag": "free",
+            "forms": [
+              "haesseumyeon"
+            ],
+            "note": "The past conditional of haeyo, and the one that carries every hada compound: yeyak-eul haesseumyeon, jeonhwa-reul haesseumyeon, gongbu-reul haesseumyeon."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "L4-M1's yeyak takes hada, so the whole counterfactual rides on haesseumyeon; there is no separate booking verb to conjugate.",
+      "sound": "GEU-ttae ye-YA-geul HAE-sseu-myeon JO-a-sseul geo-YE-yo. The k of yeyak runs into the -eul.",
+      "variations": [
+        {
+          "display": "Geuttae jeonhwa-reul haesseumyeon joasseul geoyeyo.",
+          "script": "그때 전화를 했으면 좋았을 거예요.",
+          "cue": "It would have been good if I had called back then.",
+          "changed": "calling rather than booking"
+        },
+        {
+          "display": "Yeyak-eul haesseumyeon joasseul geoyeyo.",
+          "script": "예약을 했으면 좋았을 거예요.",
+          "cue": "It would have been good if I had booked.",
+          "changed": "geuttae dropped; the doubled past alone still closes it"
+        }
+      ],
+      "mistake": {
+        "display": "Geuttae yeyak-eul hamyeon joasseul geoyeyo.",
+        "script": "그때 예약을 하면 좋았을 거예요.",
+        "why": "hamyeon is if I do, still open. The closed condition is haesseumyeon, and geuttae cannot do that work on its own."
+      },
+      "usage": "Standing outside a full restaurant.",
+      "register": "neutral",
+      "mnemonic": "geuttae sets the scene; the past does the work."
+    },
+    {
+      "id": "L4-M3-S09",
+      "display": "Taeksi-reul tasseumyeon an neujeosseul geoyeyo.",
+      "script": "택시를 탔으면 안 늦었을 거예요.",
+      "cue": "If I had taken a taxi, I would not have been late.",
+      "literal": "taxi-OBJ rode-if not late-would thing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tasseumyeon",
+            "script": "탔으면",
+            "cue": "if I had taken (a ride)",
+            "tag": "free",
+            "forms": [
+              "tasseumyeon"
+            ],
+            "note": "The past conditional of tayo, the verb for boarding. A taxi, a bus and a train are all ridden with it, and the vehicle takes -eul or -reul."
+          },
+          {
+            "display": "neujeosseul",
+            "script": "늦었을",
+            "cue": "would have been late",
+            "tag": "free",
+            "forms": [
+              "neujeosseul"
+            ],
+            "note": "neujeosseoyo under the -(eu)l modifier. With an in front it is the outcome that did not happen: an neujeosseul geoyeyo."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "The an here negates the outcome, not the condition. In S02's frame the same an sat on the if-half instead, and the two positions say opposite things.",
+      "sound": "TAEK-si-reul TA-sseu-myeon AN neu-JEO-sseul geo-YE-yo. an leans into neujeosseul as one breath.",
+      "variations": [
+        {
+          "display": "Jihacheol-eul tasseumyeon an neujeosseul geoyeyo.",
+          "script": "지하철을 탔으면 안 늦었을 거예요.",
+          "cue": "If I had taken the subway, I would not have been late.",
+          "changed": "the subway instead of the taxi"
+        },
+        {
+          "display": "Beoseu-reul tasseumyeon an neujeosseul geoyeyo.",
+          "script": "버스를 탔으면 안 늦었을 거예요.",
+          "cue": "If I had taken the bus, I would not have been late.",
+          "changed": "the bus instead of the taxi"
+        }
+      ],
+      "mistake": {
+        "display": "Taeksi-reul tasseumyeon an neujeul geoyeyo.",
+        "script": "택시를 탔으면 안 늦을 거예요.",
+        "why": "neujeul geoyeyo is a prediction about a day still ahead. The half that did not happen needs the past under the modifier: neujeosseul."
+      },
+      "usage": "Apologising for arriving late to a meeting.",
+      "register": "neutral",
+      "mnemonic": "Ride in the past, arrive in the past."
+    },
+    {
+      "id": "L4-M3-S10",
+      "display": "Yak-eul meogeosseoya haesseoyo. Geuraeseo huhoehaeyo.",
+      "script": "약을 먹었어야 했어요. 그래서 후회해요.",
+      "cue": "I should have taken the medicine. That is why I regret it.",
+      "literal": "medicine-OBJ eaten-must did. so regret",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meogeosseoya",
+            "script": "먹었어야",
+            "cue": "should have taken · had to take",
+            "tag": "delta",
+            "forms": [
+              "meogeosseoya"
+            ],
+            "note": "The -eosseoya haesseoyo frame on meogeoyo. Like gasseoya it reads as had to first, and the huhoehaeyo after it is what settles the sentence as a regret."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "This is the module's slogan trap. -eosseoya haesseoyo alone does not mean should have; the second sentence is what makes the reading a regret.",
+      "sound": "YA-geul meo-GEO-sseo-ya HAE-sseo-yo. geu-RAE-seo hu-HOE-hae-yo. The second sentence drops in pitch throughout.",
+      "variations": [
+        {
+          "display": "Ilchik gasseoya haesseoyo. Geuraeseo huhoehaeyo.",
+          "script": "일찍 갔어야 했어요. 그래서 후회해요.",
+          "cue": "I should have gone early. That is why I regret it.",
+          "changed": "the same pair of sentences on going"
+        },
+        {
+          "display": "Yak-eul meogeosseoya haesseoyo. Jeongmal huhoehaeyo.",
+          "script": "약을 먹었어야 했어요. 정말 후회해요.",
+          "cue": "I should have taken the medicine. I really regret it.",
+          "changed": "jeongmal instead of the causal geuraeseo"
+        }
+      ],
+      "mistake": {
+        "display": "Yak-eul meogeul geol haesseoyo.",
+        "script": "약을 먹을 걸 했어요.",
+        "why": "The regret frame ends in geuraesseoyo, not haesseoyo: meogeul geol geuraesseoyo. haesseoyo belongs to the -eosseoya frame instead."
+      },
+      "usage": "Owning up to a small piece of carelessness.",
+      "register": "neutral",
+      "mnemonic": "Had to, plus regret, equals should have."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M3-C01",
+      "display": "Geuttae ilchik gasseumyeon joasseul geoyeyo.",
+      "script": "그때 일찍 갔으면 좋았을 거예요.",
+      "cue": "It would have been good if I had gone early back then."
+    },
+    {
+      "id": "L4-M3-C02",
+      "display": "Bi-ga an wasseumyeon chukje-e gasseul geoyeyo.",
+      "script": "비가 안 왔으면 축제에 갔을 거예요.",
+      "cue": "If it had not rained, I would have gone to the festival."
+    },
+    {
+      "id": "L4-M3-C03",
+      "display": "Ilchik gal geol geuraesseoyo.",
+      "script": "일찍 갈 걸 그랬어요.",
+      "cue": "I should have gone early."
+    },
+    {
+      "id": "L4-M3-C04",
+      "display": "Geu yeonghwa-reul an bol geol geuraesseoyo.",
+      "script": "그 영화를 안 볼 걸 그랬어요.",
+      "cue": "I should not have watched that film."
+    },
+    {
+      "id": "L4-M3-C05",
+      "display": "Eoje ilchik jip-e gasseoya haesseoyo.",
+      "script": "어제 일찍 집에 갔어야 했어요.",
+      "cue": "I had to go home early yesterday."
+    },
+    {
+      "id": "L4-M3-C06",
+      "display": "Yak-eul meogeosseumyeon gwaenchanasseul geoyeyo.",
+      "script": "약을 먹었으면 괜찮았을 거예요.",
+      "cue": "If I had taken the medicine, I would have been fine."
+    },
+    {
+      "id": "L4-M3-C07",
+      "display": "Jeongmal huhoehaeyo. Deo gongbuhal geol geuraesseoyo.",
+      "script": "정말 후회해요. 더 공부할 걸 그랬어요.",
+      "cue": "I really regret it. I should have studied more."
+    },
+    {
+      "id": "L4-M3-C08",
+      "display": "Geuttae yeyak-eul haesseumyeon joasseul geoyeyo.",
+      "script": "그때 예약을 했으면 좋았을 거예요.",
+      "cue": "It would have been good if I had booked back then."
+    },
+    {
+      "id": "L4-M3-C09",
+      "display": "Taeksi-reul tasseumyeon an neujeosseul geoyeyo.",
+      "script": "택시를 탔으면 안 늦었을 거예요.",
+      "cue": "If I had taken a taxi, I would not have been late."
+    },
+    {
+      "id": "L4-M3-C10",
+      "display": "Yak-eul meogeosseoya haesseoyo. Geuraeseo huhoehaeyo.",
+      "script": "약을 먹었어야 했어요. 그래서 후회해요.",
+      "cue": "I should have taken the medicine. That is why I regret it."
+    },
+    {
+      "id": "L4-M3-C11",
+      "display": "Geuttae gal geol geuraesseoyo.",
+      "script": "그때 갈 걸 그랬어요.",
+      "cue": "I should have gone back then."
+    },
+    {
+      "id": "L4-M3-C12",
+      "display": "Bi-ga wasseumyeon an gasseul geoyeyo.",
+      "script": "비가 왔으면 안 갔을 거예요.",
+      "cue": "If it had rained, I would not have gone."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

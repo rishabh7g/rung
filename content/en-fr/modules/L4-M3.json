@@ -1,0 +1,618 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M3",
+  "title": "What might have been",
+  "job": "Regrets and past hypotheticals",
+  "prerequisites": [
+    "L4-M1",
+    "L4-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "présent",
+      "imparfait",
+      "plus-que-parfait",
+      "conditionnel passé"
+    ],
+    "allowedPatterns": [
+      "Si + <plus-que-parfait> + , + <conditionnel passé>",
+      "J'aurais dû + V-inf",
+      "J'aurais pu + V-inf",
+      "Sans + <noun> + , + <conditionnel passé>",
+      "C'est dommage + , + <conditionnel passé>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "TWO COMPOUND TENSES, AND NOTHING IN EITHER IS NEW. The plus-que-parfait is L2-M10's imparfait auxiliary plus the participle the passé composé already uses — j'avais su, il était parti. The conditionnel passé is L3-M4's conditional auxiliary plus that same participle — j'aurais su, je serais parti. The tense rides the auxiliary; the participle is inherited whole, and nothing here is newly conjugated."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PAST SITS ON THE MODAL, NOT ON have. English says I should have gone and I could have gone, putting the past on have and leaving the modal flat. French does the opposite: j'aurais dû partir, j'aurais pu partir — the conditional lands on devoir and pouvoir, and the verb behind them stays an infinitive that never moves."
+    },
+    {
+      "tag": "interference",
+      "text": "THE si CLAUSE NEVER TAKES A CONDITIONAL, ONE TENSE DEEPER THAN L3-M4. Si j'avais su, j'aurais dit — plus-que-parfait on the left, conditionnel passé on the right, and never the other way round. Si j'aurais su is English's if I would have showing through, and it is the one sentence a French ear will not let pass."
+    },
+    {
+      "tag": "free",
+      "text": "sans + A NOUN IS A WHOLE si CLAUSE IN ONE WORD. Sans ton aide, je n'aurais pas réussi says what si tu ne m'avais pas aidé says, in three words instead of six. Where you have a noun rather than a clause, this is the cheaper half of the module — and the half a learner gets right first."
+    },
+    {
+      "tag": "delta",
+      "text": "THE être-OR-avoir CHOICE IS L2-M10'S, UNCHANGED. The verbs that took être in the passé composé take serais here and the rest take aurais: je serais venu, j'aurais dit. Nothing about the conditional touches that list, so there is no second thing to learn — only the same list, one auxiliary later."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ne STAYS WRITTEN AND THE ELISION IS ONE WORD. je n'aurais pas réussi, je n'aurais jamais fini: n' rides the auxiliary, and pas or jamais sits between the auxiliary and the participle — the same slot pas took in the passé composé, with no new placement to learn."
+    },
+    {
+      "tag": "free",
+      "text": "c'est dommage CARRIES THE REGRET WITH NO MOOD ATTACHED. Beside a conditionnel passé it says everything: C'est dommage, elle aurait aimé ce film. The version with que — dommage que, je regrette que — bends the verb behind it, and that mood is L4-M5's, not this module's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M3-S01",
+      "display": "Si j'avais su, j'aurais dit quelque chose",
+      "cue": "If I had known, I would have said something",
+      "literal": "If I had known, I would-have said some thing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'avais su",
+            "cue": "I had known",
+            "tag": "delta",
+            "forms": [
+              "j'avais su",
+              "su"
+            ],
+            "note": "The plus-que-parfait: L2-M10's avais carrying the tense, su the participle of savoir. Indexed whole, because avais on its own is still L2-M10's imparfait row."
+          },
+          {
+            "display": "j'aurais",
+            "cue": "I would have",
+            "tag": "delta",
+            "forms": [
+              "j'aurais",
+              "aurais",
+              "aurait",
+              "aurions",
+              "auriez",
+              "auraient",
+              "n'aurais",
+              "n'aurait"
+            ],
+            "note": "L3-M4's conditional avoir, now used as an auxiliary. Add a participle and you have the conditionnel passé; the participle itself never changes shape for it."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Both halves are compound and only one may be conditional. The si side takes the plus-que-parfait and waits; the would-have arrives after the comma.",
+      "sound": "see zha-VEH SEW, zho-REH dee kel-kuh SHOZ. j'avais su runs together as zha-veh-SEW, and su takes the tight rounded u of tu, never an oo.",
+      "variations": [
+        {
+          "display": "Si j'avais su, je serais venu",
+          "cue": "If I had known, I would have come",
+          "changed": "the consequence moves to an être verb, so the auxiliary becomes serais"
+        },
+        {
+          "display": "Si j'avais su, j'aurais attendu",
+          "cue": "If I had known, I would have waited",
+          "changed": "the same frame with a different participle — only the last word moves"
+        }
+      ],
+      "mistake": {
+        "display": "Si j'aurais su, j'aurais dit quelque chose",
+        "why": "The si clause never takes a conditional. This is English's if I would have showing through; French puts the plus-que-parfait there and keeps the conditional for the other half."
+      },
+      "usage": "The standard apology for a missed cue: it concedes you would have acted differently, and it is heard far more often than any of its parts.",
+      "register": "neutral",
+      "mnemonic": "si never gets the would."
+    },
+    {
+      "id": "L4-M3-S02",
+      "display": "Si j'avais eu le temps, je serais venu",
+      "cue": "If I had had the time, I would have come",
+      "literal": "If I had had the time, I would-be come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'avais eu",
+            "cue": "I had had",
+            "tag": "delta",
+            "forms": [
+              "j'avais eu",
+              "eu"
+            ],
+            "note": "The pluperfect of avoir on top of avoir: avais carries the tense, eu is the participle. English doubles the word too — I had had — so nothing here is strange."
+          },
+          {
+            "display": "serais",
+            "cue": "would be (auxiliary)",
+            "tag": "delta",
+            "forms": [
+              "serais",
+              "serions",
+              "seriez",
+              "seraient"
+            ],
+            "note": "The être half of the conditionnel passé, for exactly the verbs L2-M10 gave être. The il form serait already has its own row, from L3-M4."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "venir takes être, so the conditional auxiliary is serais and not aurais. L2-M10's list decides it, exactly as it decided the passé composé.",
+      "sound": "see zha-veh-ZEW luh TON, zhuh suh-REH vuh-NEW. eu is one rounded vowel, uh, with no trace of an e or a u heard separately.",
+      "variations": [
+        {
+          "display": "Si j'avais eu le temps, je serais resté",
+          "cue": "If I had had the time, I would have stayed",
+          "changed": "another être verb, so the auxiliary does not move at all"
+        },
+        {
+          "display": "Si j'avais eu le temps, j'aurais fini ce travail",
+          "cue": "If I had had the time, I would have finished this job",
+          "changed": "an avoir verb this time, which swaps serais for aurais"
+        }
+      ],
+      "mistake": {
+        "display": "Si j'avais eu le temps, j'aurais venu",
+        "why": "venir is an être verb. The conditionnel passé inherits that choice unchanged, so it is je serais venu and never j'aurais venu."
+      },
+      "usage": "The politest refusal of an invitation after the fact — it blames the diary rather than the host.",
+      "register": "neutral",
+      "mnemonic": "The être list does not change tense."
+    },
+    {
+      "id": "L4-M3-S03",
+      "display": "Si j'avais été là, j'aurais compris",
+      "cue": "If I had been there, I would have understood",
+      "literal": "If I had been there, I would-have understood",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'avais été",
+            "cue": "I had been",
+            "tag": "delta",
+            "forms": [
+              "j'avais été",
+              "été"
+            ],
+            "note": "été is the participle of être — not the summer, which this course writes as en été. être itself takes avoir, so the pluperfect is avais plus été."
+          },
+          {
+            "display": "compris",
+            "cue": "understood",
+            "tag": "free",
+            "forms": [
+              "compris"
+            ],
+            "note": "The participle of comprendre. The final s is silent, so it lands as kom-PREE, and nothing is heard after that."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "été is the same four letters as the season, and the course meets the participle first. What tells them apart is what stands in front: an auxiliary, or an article.",
+      "sound": "see zha-veh-zay-TAY la, zho-REH kom-PREE. j'avais été is three vowels with no consonant to break them, so it comes out almost as one word.",
+      "variations": [
+        {
+          "display": "Si j'avais été là, j'aurais attendu",
+          "cue": "If I had been there, I would have waited",
+          "changed": "the same absence, a different thing not done"
+        },
+        {
+          "display": "Si tu avais été là, tu aurais compris",
+          "cue": "If you had been there, you would have understood",
+          "changed": "the regret is handed to the other person, and both auxiliaries follow"
+        }
+      ],
+      "mistake": {
+        "display": "Si j'avais été là, j'aurais comprendre",
+        "why": "After an auxiliary French wants the participle, never the infinitive. Only a modal like dû or pu is followed by an infinitive."
+      },
+      "usage": "Said about a conversation you missed rather than a place — it is closer to I wasn't in the room than to I wasn't there.",
+      "register": "neutral",
+      "mnemonic": "été is a participle before it is a season."
+    },
+    {
+      "id": "L4-M3-S04",
+      "display": "J'aurais dû partir plus tôt",
+      "cue": "I should have left earlier",
+      "literal": "I would-have had-to leave more early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dû",
+            "cue": "had to, should have",
+            "tag": "delta",
+            "forms": [
+              "dû"
+            ],
+            "note": "The participle of devoir. Behind aurais it means should have; the circumflex is all that separates it on the page from du, the article."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English puts the past on have and leaves the modal alone. French does it the other way: the conditional lands on devoir, and partir never moves.",
+      "sound": "zho-REH DEW par-TEER plew TOH. dû is the tight rounded u again, and the s of plus is silent in front of tôt.",
+      "variations": [
+        {
+          "display": "J'aurais dû rester à la maison",
+          "cue": "I should have stayed at home",
+          "changed": "the infinitive changes and the whole modal frame stays put"
+        },
+        {
+          "display": "Nous aurions dû partir plus tôt",
+          "cue": "We should have left earlier",
+          "changed": "only the auxiliary is conjugated; dû and partir are untouched"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai dû partir plus tôt",
+        "why": "That is French for I had to leave earlier — something that actually happened. The regret needs the conditional auxiliary: j'aurais dû."
+      },
+      "usage": "The everyday self-reproach, and the one sentence in this module a learner will need first.",
+      "register": "neutral",
+      "mnemonic": "The past sits on the modal."
+    },
+    {
+      "id": "L4-M3-S05",
+      "display": "Il aurait dû nous prévenir",
+      "cue": "He should have warned us",
+      "literal": "He would-have had-to us warn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prévenir",
+            "cue": "to warn, to let know",
+            "tag": "free",
+            "forms": [],
+            "note": "To tell somebody in advance. Behind a modal it stays an infinitive whatever tense the modal is carrying — that is the whole point of rule two."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "nous comes before the infinitive, not after it. The object pronoun attaches to the verb it belongs to, and here that verb is prévenir.",
+      "sound": "eel oh-REH DEW noo pray-vuh-NEER. aurait and aurais sound identical; only the spelling says which person you meant.",
+      "variations": [
+        {
+          "display": "Il aurait dû nous attendre",
+          "cue": "He should have waited for us",
+          "changed": "a different infinitive under the same reproach"
+        },
+        {
+          "display": "Elle aurait dû nous prévenir",
+          "cue": "She should have warned us",
+          "changed": "the subject changes and the auxiliary spelling does not"
+        }
+      ],
+      "mistake": {
+        "display": "Il aurait dû nous prévenu",
+        "why": "dû is already the participle. What follows a modal is the infinitive prévenir; two participles in a row is not a French shape."
+      },
+      "usage": "A complaint about somebody else, and the polite ceiling of one — anything sharper drops the modal entirely.",
+      "register": "neutral",
+      "mnemonic": "One participle, then infinitives."
+    },
+    {
+      "id": "L4-M3-S06",
+      "display": "J'aurais pu venir, mais je ne savais pas",
+      "cue": "I could have come, but I didn't know",
+      "literal": "I would-have been-able come, but I not knew not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pu",
+            "cue": "been able to",
+            "tag": "delta",
+            "forms": [
+              "pu"
+            ],
+            "note": "The participle of pouvoir. j'aurais pu is I could have: the ability was there and went unused, which is what makes it an excuse rather than a fact."
+          },
+          {
+            "display": "savais",
+            "cue": "knew",
+            "tag": "free",
+            "forms": [
+              "savais",
+              "savait"
+            ],
+            "note": "L2-M10's imparfait on savoir — the state of not knowing, not an event. je ne savais pas is I didn't know at the time."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "j'aurais pu is the excuse and j'ai pu is the report. English hides the difference behind one could, so the auxiliary is the only thing carrying it.",
+      "sound": "zho-REH PEW vuh-NEER, meh zhuh nuh sa-VEH PAH. pu and peu are near neighbours; pu is the tighter of the two.",
+      "variations": [
+        {
+          "display": "J'aurais pu partir plus tôt",
+          "cue": "I could have left earlier",
+          "changed": "the same excuse pointed at a different action"
+        },
+        {
+          "display": "Nous aurions pu venir",
+          "cue": "We could have come",
+          "changed": "the excuse becomes collective and only the auxiliary moves"
+        }
+      ],
+      "mistake": {
+        "display": "J'aurais pu venir, mais je savais pas",
+        "why": "The ne is dropped in fast speech and never on the page. Any line carrying pas carries ne or n' with it."
+      },
+      "usage": "The two-part excuse: the offer that was possible, then the reason it was not taken. Neither half stands alone.",
+      "register": "neutral",
+      "mnemonic": "aurais pu excuses; ai pu reports."
+    },
+    {
+      "id": "L4-M3-S07",
+      "display": "Tu aurais pu me prévenir, j'aurais attendu",
+      "cue": "You could have let me know, I would have waited",
+      "literal": "You would-have been-able me warn, I would-have waited",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "attendu",
+            "cue": "waited",
+            "tag": "free",
+            "forms": [
+              "attendu"
+            ],
+            "note": "The participle of attendre, from L3-M5. An -re verb drops the ending and lands on -u, so attendre gives attendu with nothing irregular about it."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Two conditionnels passés side by side, and only the first has a modal in it. The second is the plain frame, with the participle straight after the auxiliary.",
+      "sound": "tew oh-REH PEW muh pray-vuh-NEER, zho-REH a-ton-DEW. The comma is a real pause here — it is what marks the second half as the consequence.",
+      "variations": [
+        {
+          "display": "Tu aurais pu me prévenir, je serais venu",
+          "cue": "You could have let me know, I would have come",
+          "changed": "the consequence takes an être verb and the auxiliary follows"
+        },
+        {
+          "display": "Il aurait pu me prévenir, j'aurais attendu",
+          "cue": "He could have let me know, I would have waited",
+          "changed": "the reproach moves off the person you are speaking to"
+        }
+      ],
+      "mistake": {
+        "display": "Tu aurais pu prévenir moi, j'aurais attendu",
+        "why": "moi is the stressed form and does not sit after an infinitive here. The object pronoun me goes in front of the verb it belongs to."
+      },
+      "usage": "A reproach softened by what you would have done — the second half is what stops it being an accusation.",
+      "register": "informal",
+      "mnemonic": "The pronoun leads the verb."
+    },
+    {
+      "id": "L4-M3-S08",
+      "display": "Sans ton aide, je n'aurais pas réussi",
+      "cue": "Without your help, I wouldn't have managed it",
+      "literal": "Without your help, I not-would-have not succeeded",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sans",
+            "cue": "without",
+            "tag": "free",
+            "forms": [],
+            "note": "sans takes a NOUN and does the work of a whole si clause: sans ton aide says what si tu ne m'avais pas aidé says, in three words rather than six."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "sans is already the negative half of the condition, so the second half still needs its own ne — je n'aurais pas, with nothing cancelled by sans.",
+      "sound": "son ton NED, zhuh no-REH pah ray-ew-SEE. sans is nasal with no s heard, and ton aide links across into a single ton-NED.",
+      "variations": [
+        {
+          "display": "Sans ton aide, je n'aurais jamais fini",
+          "cue": "Without your help, I would never have finished",
+          "changed": "jamais replaces pas and says the same thing harder"
+        },
+        {
+          "display": "Sans toi, je n'aurais pas réussi",
+          "cue": "Without you, I wouldn't have managed it",
+          "changed": "the noun becomes the person, which is warmer and shorter"
+        }
+      ],
+      "mistake": {
+        "display": "Sans ton aide, j'aurais pas réussi",
+        "why": "The ne is not optional on the page. sans negates the condition; it does nothing at all to the clause after the comma."
+      },
+      "usage": "The standard thank-you that does not use merci — it credits the other person by describing the failure that did not happen.",
+      "register": "informal",
+      "mnemonic": "sans owns the condition, not the clause."
+    },
+    {
+      "id": "L4-M3-S09",
+      "display": "Sans toi, je n'aurais jamais fini ce travail",
+      "cue": "Without you, I would never have finished this job",
+      "literal": "Without you, I not-would-have never finished this work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fini",
+            "cue": "finished",
+            "tag": "free",
+            "forms": [
+              "fini"
+            ],
+            "note": "The participle of finir. jamais sits between the auxiliary and it — n'aurais jamais fini — which is the slot pas took in the passé composé."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "jamais goes inside the compound tense and not after it. n'aurais jamais fini, never n'aurais fini jamais.",
+      "sound": "son TWA, zhuh no-REH zha-MEH fee-NEE suh tra-VYE. jamais is unstressed here; the weight of the line falls on fini.",
+      "variations": [
+        {
+          "display": "Sans toi, je n'aurais jamais compris",
+          "cue": "Without you, I would never have understood",
+          "changed": "the participle changes and the negative frame holds"
+        },
+        {
+          "display": "Sans ton aide, je n'aurais jamais fini ce travail",
+          "cue": "Without your help, I would never have finished this job",
+          "changed": "the person becomes the help, which is a shade more formal"
+        }
+      ],
+      "mistake": {
+        "display": "Sans toi, je n'aurais fini jamais ce travail",
+        "why": "jamais belongs between the auxiliary and the participle, exactly where pas belongs. Pushing it to the end is English word order."
+      },
+      "usage": "Stronger than the pas version and reserved for real debts — with jamais it stops being a courtesy.",
+      "register": "informal",
+      "mnemonic": "jamais rides inside the tense."
+    },
+    {
+      "id": "L4-M3-S10",
+      "display": "C'est dommage, elle aurait aimé ce film",
+      "cue": "It's a shame, she would have liked that film",
+      "literal": "It-is a-pity, she would-have liked this film",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dommage",
+            "cue": "a shame, a pity",
+            "tag": "free",
+            "forms": [],
+            "note": "c'est dommage is the whole regret in two words, with no mood attached. The version with que bends the verb behind it, and that is L4-M5's."
+          },
+          {
+            "display": "aimé",
+            "cue": "liked, loved",
+            "tag": "free",
+            "forms": [
+              "aimé"
+            ],
+            "note": "The participle of aimer. j'aurais aimé is the gentlest regret the language has — closer to I would have liked to than to I wanted to."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "c'est dommage stops at the comma. The moment you attach que to it the verb behind changes mood, and this module deliberately does not go there.",
+      "sound": "seh do-MAZH, el oh-REH ay-MAY suh FEELM. dommage has the soft zh of je at the end, never a hard j.",
+      "variations": [
+        {
+          "display": "C'est dommage, il aurait aimé ce film",
+          "cue": "It's a shame, he would have liked that film",
+          "changed": "the subject changes and the auxiliary spelling does not"
+        },
+        {
+          "display": "C'est dommage, j'aurais aimé venir",
+          "cue": "It's a shame, I would have liked to come",
+          "changed": "the regret turns back on the speaker and takes an infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "C'est dommage qu'elle aurait aimé ce film",
+        "why": "que after c'est dommage demands a different mood, and it is not taught yet. Keep the comma and the conditionnel passé stands on its own."
+      },
+      "usage": "Said about somebody who is not in the room — a way of regretting on their behalf without speaking for them.",
+      "register": "neutral",
+      "mnemonic": "Comma, not que."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M3-C01",
+      "display": "Si j'avais su, j'aurais dit quelque chose",
+      "cue": "If I had known, I would have said something"
+    },
+    {
+      "id": "L4-M3-C02",
+      "display": "Si j'avais eu le temps, je serais venu",
+      "cue": "If I had had the time, I would have come"
+    },
+    {
+      "id": "L4-M3-C03",
+      "display": "Si j'avais été là, j'aurais compris",
+      "cue": "If I had been there, I would have understood"
+    },
+    {
+      "id": "L4-M3-C04",
+      "display": "J'aurais dû partir plus tôt",
+      "cue": "I should have left earlier"
+    },
+    {
+      "id": "L4-M3-C05",
+      "display": "Il aurait dû nous prévenir",
+      "cue": "He should have warned us"
+    },
+    {
+      "id": "L4-M3-C06",
+      "display": "J'aurais pu venir, mais je ne savais pas",
+      "cue": "I could have come, but I didn't know"
+    },
+    {
+      "id": "L4-M3-C07",
+      "display": "Tu aurais pu me prévenir, j'aurais attendu",
+      "cue": "You could have let me know, I would have waited"
+    },
+    {
+      "id": "L4-M3-C08",
+      "display": "Sans ton aide, je n'aurais pas réussi",
+      "cue": "Without your help, I wouldn't have managed it"
+    },
+    {
+      "id": "L4-M3-C09",
+      "display": "Sans toi, je n'aurais jamais fini ce travail",
+      "cue": "Without you, I would never have finished this job"
+    },
+    {
+      "id": "L4-M3-C10",
+      "display": "C'est dommage, elle aurait aimé ce film",
+      "cue": "It's a shame, she would have liked that film"
+    },
+    {
+      "id": "L4-M3-C11",
+      "display": "J'aurais aimé venir avec vous",
+      "cue": "I would have liked to come with you"
+    },
+    {
+      "id": "L4-M3-C12",
+      "display": "Nous aurions dû prendre le train",
+      "cue": "We should have taken the train"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

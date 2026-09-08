@@ -266,3 +266,303 @@ pool item), and `sound` present on all twenty sentences.
 94. **`réussir un examen` against `passer un examen`** (M2). Confirm the split as stated, and confirm
     that `j'ai réussi mon examen` is what a French speaker says rather than a construction a learner
     would only meet in a textbook.
+
+## Wave 2 — L4-M3, L4-M4 and L4-M5 (#543)
+
+The level's RANGE modules: the tense L3-M4 promised and did not pay, the first module where an
+argument has a shape, and the module that turns the subjunctive from four memorised words into a
+rule. Authored in one pass against `npm run content:kit`, with every seam in the three briefs' §5
+re-run through `npm run content:owner` before a row was written.
+
+### L4-M3 "What might have been" — two compound tenses and nothing newly conjugated
+
+    S01  Si j'avais su, j'aurais dit quelque chose
+    S02  Si j'avais eu le temps, je serais venu
+    S03  Si j'avais été là, j'aurais compris
+    S04  J'aurais dû partir plus tôt
+    S05  Il aurait dû nous prévenir
+    S06  J'aurais pu venir, mais je ne savais pas
+    S07  Tu aurais pu me prévenir, j'aurais attendu
+    S08  Sans ton aide, je n'aurais pas réussi
+    S09  Sans toi, je n'aurais jamais fini ce travail
+    S10  C'est dommage, elle aurait aimé ce film
+
+Fifteen word rows, seven module rules, five patterns at 3/2/2/2/1. The module's whole argument is
+that neither tense is new: the plus-que-parfait is L2-M10's `avais` plus the participle the passé
+composé already ships, and the conditionnel passé is L3-M4's conditional auxiliary plus that same
+participle. Rule 0 says it once and the grammar then costs nothing, which is what leaves room for
+the regret. Rule 1 carries the delta that actually bites — English puts the past on *have* (*I
+should have gone*) and French puts it on the modal (`j'aurais dû partir`) — and S04's mistake plate
+is the sentence a learner assembles out of English parts, `J'ai dû partir plus tôt`, which is French
+for *I had to leave*. Rule 2 extends L3-M4's order law one tense deeper and S01's plate is
+`Si j'aurais su`, the module's headline error. Rule 4 says the `être`-or-`avoir` choice is L2-M10's
+list unchanged, which is why S02 takes `je serais venu` and its plate takes `j'aurais venu`. Rule 6
+holds `c'est dommage` to the comma and hands `dommage que` to L4-M5, as brief note 4 required.
+
+`été` is taken as the participle, per brief note 5, on a row (`j'avais été`) whose `forms` also open
+the bare key, and whose note says in as many words that it is not the summer and that the season
+will be written `en été`. That row is the one place on the ladder where the homograph is decided.
+
+### L4-M4 "Persuading" — concession as a sequence, not a subordinate clause
+
+    S01  C'est vrai que le train est cher, mais il est plus rapide
+    S02  Tu as raison, en revanche c'est trop cher
+    S03  Certes, c'est plus cher, pourtant je préfère le train
+    S04  D'un côté c'est pratique, de l'autre c'est très cher
+    S05  Il vaut mieux partir plus tôt
+    S06  Je suis d'accord, par contre je préfère le vélo
+    S07  C'est cher, cependant c'est le meilleur restaurant de la ville
+    S08  C'est plus cher, mais je préfère le train quand même
+    S09  Tu as raison, mais en fait je ne suis pas d'accord
+    S10  De toute façon, il faudrait attendre demain
+
+Sixteen word rows, seven module rules. Every sentence is two moves — grant, then turn — because
+that is what brief note 2 says an argument is in French, and the module never once buries the
+concession in a subordinate clause. The turn words are taught as a register split rather than as
+synonyms: `par contre` spoken (S06), `en revanche` written (S02), `pourtant` and `cependant`
+carrying a real *and yet* (S03, S07), and `quand même` at the END (S08), which is the only one of
+the five that does not open its clause and therefore gets its own trap line and its own plate.
+
+`bien que` is named and refused, on S01's plate, exactly as brief note 3 asked: it is real French,
+it takes a mood this ladder has not opened, and nobody says it out loud. The other two interference
+plates are S04's `de l'autre côté` (a place, not an argument — the pair is `d'un côté … de l'autre`)
+and S09's `actuellement`, the course's flattest false friend, where the wrong word turns *I don't
+agree* into *I am not agreeing at the moment* and concedes far more than the speaker meant.
+`je suis d'accord` opens no row and points back at L2-M6, as the brief required; `tu as raison` is
+indexed whole.
+
+### L4-M5 "Disagreeing well" — the mood as a rule, with its counterweight in the same module
+
+    S01  Je ne suis pas sûr que ce soit vrai
+    S02  Je ne suis pas sûr qu'il vienne demain
+    S03  Je ne suis pas sûr qu'il fasse froid demain
+    S04  Il me semble que c'est plus compliqué
+    S05  Je ne dirais pas que ce soit un problème
+    S06  Ça dépend de la ville
+    S07  Oui, mais pas forcément ce soir
+    S08  Franchement, je ne pense pas que ce soit utile
+    S09  C'est plutôt une question de prix
+    S10  Disons que c'est plus compliqué que ça
+
+Fourteen word rows, seven module rules, and the two halves brief note 2 demanded and no more.
+The FORM is rule 0 — the `ils` stem plus `-e`, taught on one row (`vienne`, with `dise` and `prenne`
+in its `forms`) so that the recipe is visible on three verbs at once — and rule 3 names the six that
+refuse it: `soit`, `ait`, `puisse`, `aille`, which the course already ships from L3-M3 and which
+this module points back at rather than re-teaching, plus `fasse` and `sache`, which share one row.
+The TRIGGER is rule 1, stated as a direction rather than a list: it stands to the LEFT of `que`, and
+the subordinate clause carries no signal at all.
+
+The counterweight is in the same module, as brief note 3 insisted. S04 is `il me semble que` on the
+INDICATIVE with a plate that puts `ce soit` there and explains why it is wrong; S08 teaches
+`je ne pense pas que` as the negated twin of L1-M9's `pense` and its plate is
+`je ne pense pas que c'est`. S10 is the third guard: `disons que` looks like every other `que` frame
+here and proposes rather than doubts, so nothing bends. Four sentences (S06, S07, S09, S10) carry no
+mood at all — `ça dépend de`, `pas forcément`, `plutôt`, `disons` — which is rule 5's point that a
+hedge does not have to touch a verb. Nothing after a conjunction is opened: `jusqu'à ce que` and
+`avant que` stay L4-M6's, as brief note 4 required.
+
+### The seams the briefs got wrong, and what `content:owner` actually said
+
+All three briefs' §5 were re-run in full. Every claim any of them makes held — `j'aurais`, `aurais`,
+`aurait`, `dû`, `pu`, `su`, `aurait pu`, `j'avais eu`, `si j'avais su` and `été` free; `j'avais` →
+L3-M4 and `avais` / `avait` → L2-M10; the whole M4 connective list free with `mais` → L1-M10,
+`raison` → L3-M3, `d'accord` → L2-M6, `mieux` / `moins` → L2-M9; `soit` / `ait` / `puisse` / `aille`
+/ `sûr` / `crois` → L3-M3, `pense` → L1-M9, `fasse` / `vienne` / `sache` / `dise` / `prenne` free,
+and `peut-être` → L3-M3 with both bare parts bought by the hyphen key. What follows is what the
+briefs did NOT say and what a wave writing to them alone would have got wrong.
+
+**1. The `être` branch of the conditionnel passé is already half-owned.** M3's brief note 2 names
+`je serais parti` without saying that one cell of that paradigm has a row:
+
+    serais	free
+    serait	L3-M4
+    serions	free
+    seriez	free
+    seraient	free
+
+`serait` came in at L3-M4 with the plain conditional. A row whose `forms` listed the full paradigm
+would put `serait` on a key L3-M4 keeps, so the note a learner tapping `il serait venu` is shown
+would be the wrong one. The module's row is `serais` with `serions`, `seriez` and `seraient` in
+`forms` and `serait` deliberately absent — and its note says out loud that the `il` form is
+L3-M4's. This is the single most useful correction in the wave.
+
+**2. The negated conditional auxiliary is its own key, and the en-fr elision law is what makes it
+so.** M3's brief lists only the bare forms. Two of this module's five patterns produce a negative:
+
+    n'aurais	free
+    n'aurait	free
+    n'avais	L2-M10
+
+The pluperfect's negative is already owned; the conditionnel passé's is not. `Sans ton aide, je
+n'aurais pas réussi` (S08) and `Sans toi, je n'aurais jamais fini ce travail` (S09) would each be a
+`SHOWN-BUT-UNTAUGHT n'aurais` if the `j'aurais` row did not carry `n'aurais` and `n'aurait` in its
+`forms`. It does.
+
+**3. `à l'heure` cannot be written at this rung, and `plus tôt` can.** Both are free as whole keys
+and they behave in opposite ways when the fold breaks them up:
+
+    plus tôt	free   (plus → L2-M9, tôt → L3-M1)
+    à l'heure	free   (à → L1-M4, l'heure → free)
+    à la maison	free   (maison → L1-M4)
+
+`plus tôt` and `à la maison` resolve piecewise and need no row. `à l'heure` does not, because the
+elided `l'heure` is owned by nobody — the same half-failure Wave 1 recorded for bare `parce`. S09's
+first draft read `nous serions arrivés à l'heure`; it ships as `plus tôt`, and `l'heure` is left for
+whichever module first wants to teach a clock.
+
+**4. The `être` participles the module needs are all already owned.** `resté` → L1-M5,
+`arrivé` / `arrivés` → L2-M10, `partie` → L2-M8, `venu` → L3-M10. Nothing on the `être` side had to
+be re-taught, which is why fifteen rows were enough for a module carrying two tenses.
+
+**5. `vrai` and `raison` mean the M4 frames are indexed whole by CHOICE, not by necessity.**
+
+    c'est vrai que	free   (c'est → L1-M8, vrai → L3-M3, que → L1-M9)
+    tu as raison	free   (tu → L2-M1, as → L2-M1, raison → L3-M3)
+
+Both lines would resolve with no row at all. The brief tells the module to index `tu as raison`
+whole so the *avoir*-not-*être* fact has somewhere to live, and the same argument applies to
+`c'est vrai que`; both rows exist to carry a note, not to make a display legal. Worth recording
+because it is the opposite of the usual reason for a whole key.
+
+**6. `il vaut mieux` and `il faudrait` leave their bare verbs unowned.**
+
+    il vaut mieux	free
+    vaut	free
+    il faudrait	free
+    faudrait	free
+
+Indexing the frames whole — which is what the brief asks and what the module does — means bare
+`vaut` and bare `faudrait` are still owned by nobody after this wave. A later module writing
+`ça vaut le prix` or `il faudrait que` will be one `SHOWN-BUT-UNTAUGHT` unless it opens the row
+itself. Recorded as a debt rather than paid here, because neither bare form belongs in a module
+about persuasion.
+
+**7. The brief's §5 is silent on adjectives, and an argument cannot be written without one.**
+`rapide`, `pratique`, `calme`, `agréable`, `facile`, `utile`, `difficile` and `compliqué` are all
+free at this point on the ladder; `cher` → L1-M8, `loin` → L2-M4, `bon` → L1-M10, `meilleur` →
+L2-M9, `tranquille` → L3-M6. L4-M4 spends two of the free ones (`rapide`, `pratique`) and L4-M5 two
+more (`compliqué`, `utile`), and leans on the owned five for everything else. `moins cher`,
+`trop cher` and `c'est cher` are free as whole keys and resolve piecewise, so none of them is a row.
+
+**8. Bare `même` was declined.** M4's brief note 5 says the module *may* take `même` as *even*, with
+a note that must read true beside L3-M3's whole key `même si`. It does not: nothing in the ten
+displays needs *even*, and spending the key on a sentence that does not need it would make the note
+a promise about a word the module never uses. `même` is still free after this wave, and `quand même`
+is a separate key that does not spend it.
+
+**9. `qu'il` — not `peut-être` — is the elision that decides L4-M5.** The brief's hyphen warning
+points at `peut-être`; the seam that actually shapes the module is this one:
+
+    qu'il	L3-M5
+    qu'elle	L3-M5
+    je ne suis pas sûr que	free
+    je ne pense pas que	free
+
+Both frames are six- and five-token keys ending in `que`, and NEITHER of them matches in front of a
+pronoun subject: `Je ne suis pas sûr qu'il vienne demain` (S02) tokenizes straight past the frame
+into `je` / `ne` / `suis` / `pas` / `sûr` / `qu'il` / `vienne` / `demain`, every one of which
+resolves on its own. So the whole-key rows earn their place only on the `que ce soit` lines, and
+S02's trap line says so to the learner rather than leaving it as an index accident.
+
+**10. `ce soit` needed no row, which is what "point back rather than re-teach" looks like.**
+
+    ce soit	free   (ce → L2-M1, soit → L3-M3)
+
+Three of this module's ten sentences and six of its variations write `ce soit`, and not one of them
+opens a key for it. The
+`je ne suis pas sûr que` row's note is where the learner is told that `soit` is L3-M3's word and
+that what is new is knowing why it is there.
+
+**11. `aujourd'hui` is still free after thirty-two modules, and this wave declined it too.** It
+surfaced while hunting for a time word for S07 and it is a genuine gap in the ladder, but a
+first-teach that arrives inside a hedge (`pas forcément aujourd'hui`) would waste it. S07 ships
+`ce soir` (`soir` → L3-M10) and `aujourd'hui` is left for a module that is about time.
+
+### The ratchet
+
+`npm run content:shown -- en-fr L4-M3`, `-- en-fr L4-M4` and `-- en-fr L4-M5` each print
+`clean — every shown surface resolves`, with **zero** `SHOWN-BUT-UNTAUGHT`, **zero**
+`COLLIDES INSIDE THIS MODULE` and **zero** `RE-TEACH` lines. All forty-five word rows across the
+three modules open a key no earlier module owns, so there is nothing to argue about under
+`RE-TEACH` at all — which is the point of seam corrections 1, 5 and 10 above: each of them is a row
+that was NOT written because an earlier module already owns the cell.
+
+`npx vitest run tools/shown-surfaces.test.ts` is **11/11** and **en-fr holds at its baseline of 20**.
+Nothing was raised and nothing needed lowering. The wave adds thirty displays, sixty
+`variations[].display` lines and three twelve-item `comprehensionPool`s, and not one of them shows a
+surface no row owns.
+
+`npm run content:validate` reports `CONTENT 304/304 ok` on this wave's last run — the total moves
+while the other eight courses' L4 waves land in the same checkout; what matters is that
+`en-fr/L4-M3.json`, `en-fr/L4-M4.json` and `en-fr/L4-M5.json` are all on the `ok` side of it.
+
+`npx vitest run src/course/types.test.ts` is **323 passed, 2 failed** on the same run, and neither
+failure is this wave's: one is the module-census list (`finds all 288`), which is the parent's, and
+the other is the hi-en language assertion, which belongs to that course's wave landing beside this
+one. Every en-fr assertion passes: no `glossEn` anywhere, straight apostrophes in every L2 slot — `display`, `forms`,
+`variations[].display`, `mistake.display` and every pool item — and `sound` present on all thirty
+sentences, with all five enrichment blocks on L4-M3 as the M1–M3 rule requires.
+
+### Open questions for the native pass
+
+95. **`j'avais été` as the `été` row** (M3). The homograph is decided here: `été` is taken as the
+    participle, and the note promises the season will be written `en été` whole by a later module.
+    Confirm that promise is one a French speaker would recognise as safe — that `en été` really is
+    how the season is normally met — and that no ordinary sentence at this level needs bare `été`
+    meaning *summer*.
+
+96. **`serais` without `serait`** (M3). The row teaches the `être` conditional auxiliary with the
+    `il` form deliberately missing, because L3-M4 owns it. Confirm a learner is not left with a hole
+    that matters — that meeting `il serait venu` after learning `je serais venu` is genuinely
+    trivial, and that the note pointing back at L3-M4 is the right place to say so.
+
+97. **`Il aurait dû nous prévenir`** (M3, S05). Confirm the pronoun placement is what a French
+    speaker writes and that `prévenir` is the ordinary verb here rather than `avertir` or a
+    construction with `dire`. The plate refuses `nous prévenu`; confirm that is the error a learner
+    actually makes.
+
+98. **`Sans toi, je n'aurais jamais fini ce travail`** (M3, S09). Confirm `jamais` sits between the
+    auxiliary and the participle in real usage as flatly as the trap claims, and confirm the line is
+    read as warm rather than heavy — the `usage` field says it is reserved for real debts.
+
+99. **`C'est dommage, elle aurait aimé ce film`** (M3, S10). Confirm the comma version is what is
+    said, and that a French speaker would not reach straight for `dommage qu'elle n'ait pas pu
+    venir`. If the `que` version is the reflex, this module's rule 6 is deferring something the
+    learner will meet first.
+
+100. **The register split among the M4 turn words.** `par contre` spoken, `en revanche` written,
+     `cependant` most neutral, `pourtant` carrying surprise. Confirm the split as stated, and in
+     particular confirm that `par contre` is no longer stigmatised in writing to a degree that would
+     make S06 bad advice.
+
+101. **`quand même` at the end** (M4, S08). The plate refuses the fronted version. Confirm fronted
+     `quand même` really does read as protest rather than as the softener, and that end position is
+     the one a learner should be given first.
+
+102. **`Certes` in speech** (M4, S03). The module calls it "a shade formal" and still puts it in a
+     spoken-sounding line. Confirm `certes` is live in conversation today, and that opening with it
+     genuinely promises a turn strongly enough that `pourtant` rather than `mais` is the better
+     partner.
+
+103. **Refusing `bien que`** (M4, S01 plate). Confirm that refusing it outright at L4 is right —
+     that a learner will meet it in reading long before they need it in speech, and that no ordinary
+     spoken register makes it the natural choice.
+
+104. **The `ils`-stem recipe as stated** (M5, rule 0). Confirm the rule holds for every verb this
+     course has taught, and that the six exceptions named (`soit`, `ait`, `puisse`, `aille`, `fasse`,
+     `sache`) are the complete list a learner at this level will hit. If `veuille` or `vaille`
+     belongs on it, that is a change to rule 3.
+
+105. **`il me semble que` on the indicative** (M5, S04). This is the module's whole counterweight.
+     Confirm the indicative is what a French speaker says, and confirm that the negative
+     (`il ne me semble pas que`) is the form that bends it — the rule claims so and the module never
+     shows it.
+
+106. **`Je ne dirais pas que ce soit un problème`** (M5, S05). Confirm the subjunctive after
+     `je ne dirais pas que` is what is actually said rather than a textbook preference, and that the
+     indicative version would strike a native ear as wrong rather than merely casual.
+
+107. **`Disons que` and `franchement`** (M5, S08, S10). Confirm both are current spoken French and
+     not dated, confirm `franchement` in first position is heard as courteous rather than as a
+     warning of rudeness, and confirm `disons que` takes the indicative as flatly as S10's plate
+     claims.

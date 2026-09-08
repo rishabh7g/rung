@@ -227,3 +227,294 @@ ordinary `-are` paradigm.
 72. **`in ritardo` beside `tardi`** (M2-S03 trap, and pool item C10, which puts both in one line on
     purpose). Confirm `Il treno era in ritardo, di conseguenza sono arrivato tardi` reads naturally
     and is not felt as a repetition a speaker would avoid.
+
+## Wave 2 — L4-M3, L4-M4 and L4-M5 (#542)
+
+The level's RANGE modules, authored against the briefs in `tools/course-briefs.ts` and reviewed
+against the REAL cumulative index rather than against the briefs' account of it. Every seam below
+was checked with `npm run content:owner -- en-it …`, which now reports **1030 surfaces owned, folded
+over 32 modules through L4-M2**, at **`maxSpan` 3**. That is the wave 1 fold plus wave 1's own two
+modules: the 958-surface / 30-module pin `docs/90` and the section above were written against no
+longer exists, and a later wave should quote **1030 / 32** instead. `maxSpan` does not move — see
+"Two keys that would have raised `maxSpan`" below, where it nearly did.
+
+### L4-M3 "What might have been" — the two-piece machine, and where the tense lives
+
+The ten displays:
+
+1. `Se avessi saputo, ti avrei chiamato`
+2. `Avrei dovuto dire la verità subito`
+3. `Sarebbe stato meglio partire ieri`
+4. `Magari avessi ascoltato mia madre`
+5. `Meno male che ho portato l'ombrello`
+6. `Se fossi partito prima, non avrei perso il treno`
+7. `Avrei potuto dire qualcosa, ma non ho detto niente`
+8. `Che peccato, sarebbe stato un bel viaggio`
+9. `Dovevo partire ieri, invece sono rimasto a casa`
+10. `Se avessi avuto tempo, sarei venuto anche io`
+
+What it teaches. Rule 0 states the machine as the brief demands it — two compound halves, `se` plus
+`avessi`/`fossi` plus a participle on the left, `avrei`/`sarei` plus a participle on the right — and
+says out loud that everything under it is already paid for: L2-M10's auxiliary law, L3-M10's
+participles, L3-M4's `-ei / -esti / -ebbe`. The one genuinely new fact is that the AUXILIARY carries
+the tense while the main verb stops moving, so the module buys two auxiliary rows and not fifty
+forms. Rule 1 is the modal inversion (`avrei dovuto andare`, never `dovrei essere andato`), rule 2
+is that `se` is compulsory and never takes the conditional, rule 3 is the `avessi`/`avevo` minimal
+pair the brief insisted be shown rather than hidden, and rule 4 is the regret vocabulary plus the
+spoken `dovevo`/`potevo` shortcut.
+
+Per the brief's note 4, the module shows `avrei dovuto` and `avrei potuto` with a bare infinitive
+ONLY; `sarei dovuto andare` appears nowhere, not even in a variation, and is left to L5. The
+`passato remoto` stays deferred and the present `se` frame is never re-opened — no display in the
+module puts `se` in front of a present tense.
+
+**25 rows** against a cap of 25, `minWordsPerSentence` 5, `maxWordsPerSentence` 13.
+
+### L4-M4 "Persuading" — the concessive move, and the two words for *but*
+
+The ten displays:
+
+1. `È vero che costa di più, ma dura molto`
+2. `Hai ragione, però non ho tempo adesso`
+3. `Ti conviene prenotare adesso, costa molto meno`
+4. `D'accordo, però almeno dobbiamo partire presto`
+5. `Vale la pena provare, secondo me`
+6. `In realtà non è così caro, anzi conviene`
+7. `Comunque il mio punto di vista non cambia`
+8. `Insomma, è difficile convincere mio padre`
+9. `Appunto, è quello che dicevo prima`
+10. `Soprattutto ti conviene parlare con lui`
+
+What it teaches. Rule 0 makes the concession a STRUCTURE and not a word — `è vero che X, ma Y`;
+`hai ragione, però Y`; `d'accordo, però Y` — and says the claim must live in the second half or the
+speaker has simply agreed. Rule 1 is the positional split the brief calls the thing no learner
+produces unprompted: `ma` can only open its clause, `però` can open OR close it, and S02's first
+variation (`Hai ragione, non ho tempo adesso però`) exists solely to put the final `però` in front
+of the learner. Rule 2 is `conviene` as a double false friend running impersonally like `piacere`.
+Rule 3 is the graded register — `dovresti` (L3-M4) / `ti conviene` / `sarebbe meglio` / `devi`
+(L3-M2) — and rule 4 is the bare-infinitive advice family, which is the module's answer to the
+question of why persuasion does not have to wait for a mood.
+
+Per the brief's note 4, the congiuntivo appears nowhere in this module. S01's mistake plate is
+built on exactly that: `È vero che costi di più` is shown as WRONG, because conceding a point is the
+opposite of doubting it. Raising the voice, insisting and the ironic climb-down are left to L5.
+
+**21 rows** against a cap of 25.
+
+### L4-M5 "Disagreeing well" — the mood as a paradigm, and the pronoun that comes back
+
+The ten displays:
+
+1. `Non credo che sia vero`
+2. `Non sono del tutto d'accordo, ma capisco`
+3. `Sarà, però secondo me è troppo caro`
+4. `Dipende da quello che vuoi fare`
+5. `Forse hai ragione, ma non saprei`
+6. `Dubito che lui possa venire domani`
+7. `Può darsi che tu abbia ragione`
+8. `Mi sa che non è una buona idea`
+9. `Sembra difficile, ma non è detto`
+10. `Temo di no, probabilmente è troppo tardi`
+
+What it teaches. Rule 0 pays L3-M3's debt and names the present congiuntivo as a paradigm: `-are`
+takes `-i` across `io`, `tu` and `lui`, `-ere` and `-ire` take `-a`, and L3-M3's `sia`, `abbia` and
+`possa` are the same three-way syncretism in an irregular shape. Rule 1 is the module's sharpest
+fact and it is carried by the content as well as by the prose — S06 and S07 both put the pronoun in
+(`che lui possa`, `che tu abbia`), each has a variation that swaps ONLY the pronoun, and S06's third
+variation drops it deliberately with a `changed` line saying that only works if he was just named.
+Rule 2 lists the doubt triggers and isolates `mi sa che` as the one that keeps the indicative;
+S08's mistake plate is the overcorrection (`Mi sa che non sia`) a learner makes the week after
+meeting the mood. Rule 3 is the adverb half that carries no grammar at all, and rule 4 is
+concessive `sarà` plus the fact that English and Italian raise the negation the same way.
+
+Per the brief's note 4, the imperfect congiuntivo is not extended here — it is L4-M3's and every
+`avessi` in this course stays there — `benché` and `sebbene` do not appear, and every disagreement
+in the module is sincere.
+
+**20 rows** against a cap of 25.
+
+### The brief seams, checked against the emitted index
+
+`npm run content:owner -- en-it avrei sarei avrebbe fossi "avrei dovuto" "avrei potuto" "avrei
+voluto" "sarebbe stato" peccato "che peccato" "meno male" "meno male che" altrimenti invece "invece
+di" dovevo potevo volevo voleva saputo avuto dire niente viaggio ombrello "l'ombrello" ascoltato
+portato verità dovuto potuto voluto avessi sarebbe se magari`:
+
+```
+avrei free · sarei free · avrebbe free · fossi free
+avrei dovuto free · avrei potuto free · avrei voluto free · sarebbe stato free
+peccato free · che peccato free · meno male free · meno male che free
+altrimenti free · invece free · invece di free · dovevo free · potevo free · volevo free
+saputo free · avuto free · dire free · niente free · viaggio free · ombrello free
+l'ombrello free · ascoltato free · portato free · verità free
+voleva L3-M5 · dovuto L3-M10 · potuto L3-M10 · voluto L3-M10
+avessi L3-M4 · sarebbe L3-M4 · se L3-M4 · magari L3-M3
+```
+
+M3's note 5 is confirmed in every particular: the two anchor forms really are L3-M4's, `magari`
+really is L3-M3's, and `saputo` really is the one participle this module has to buy. Three
+corrections and refinements come out of it anyway.
+
+**`avrebbe` cannot have the row the brief implies.** Note 5 lists `avrei`, `avrebbe` and `sarei`
+side by side as fresh keys. All three are free, but `avrebbe` is the third cell of the SAME paradigm
+as `avrei`, so a row of its own would have been a `COLLIDES INSIDE THIS MODULE` finding the moment
+one row's `forms` list carried the other's display. `avrei` therefore owns the whole set —
+`avrei · avresti · avrebbe · avremmo · avreste · avrebbero` — in one row, and the module spends one
+new word where the brief's list reads like two.
+
+**`sarei`'s paradigm has a hole in it, and the hole is `sarebbe`.** `sarebbe` is L3-M4's, so
+`sarei`'s `forms` list is `sarei · saresti · saremmo · sareste · sarebbero` with the third person
+missing on purpose: listing it would re-teach a key this course settled two levels down. The row's
+note says so in as many words, which is the only place a learner can be told.
+
+**`voleva` is L3-M5's and `volevo` is not.** The spoken-shortcut row for `volere` therefore stops at
+`volevo · volevi`. `dovevo · dovevi · doveva` and `potevo · potevi · poteva` are complete because
+all six of those are free; `volere` is the one imperfetto in this module that cannot have its own
+third person, and nothing in the brief warns of it.
+
+`npm run content:owner -- en-it però "ti conviene" conviene "vale la pena" "è vero che" "in realtà"
+comunque insomma anzi appunto soprattutto almeno "punto di vista" convincere ragione "hai ragione"
+"d'accordo" "sono d'accordo" dura prenotare provare cambia dicevo difficile ma "secondo me" "anche
+se" dovresti bisogna basta`:
+
+```
+però free · ti conviene free · conviene free · vale la pena free · è vero che free
+in realtà free · comunque free · insomma free · anzi free · appunto free
+soprattutto free · almeno free · punto di vista free · convincere free · hai ragione free
+dura free · prenotare free · provare free · cambia free · dicevo free · difficile free
+ragione L3-M3 · d'accordo L2-M6 · sono d'accordo L3-M3 · ma L1-M10 · secondo me L3-M3
+anche se L3-M3 · dovresti L3-M4 · bisogna L3-M8 · basta L2-M5
+```
+
+Both of the seams M4's note 5 says its first instinct got wrong reproduce exactly. **`ragione` is
+L3-M3's**, so `hai ragione` is indexed whole and the bare noun keeps L3-M3's note; and **`d'accordo`
+is L2-M6's**, not L3-M3's, so S04's concessive `D'accordo, però …` re-uses the row that taught the
+*agreed* of settling a time, while `sono d'accordo` stays a separate L3-M3 key. Its apostrophe is
+inside the one token throughout, per the elision law.
+
+**`in realtà` is bought by M4 and not by M5, though both briefs list it as fresh.** M4-S06 owns it;
+M5's note 5 lists it too, and M5 uses it in pool item C12 without a row, resolving through M4. First
+occurrence wins, and the two modules were authored in the same wave, so this is a decision rather
+than an accident: recorded here so a later reader does not think M5 forgot it. The same reasoning
+put `difficile` in M4-S08 and let M5-S09 write `Sembra difficile` for free.
+
+`npm run content:owner -- en-it "non credo" dubito sembra "può darsi" sarà dipende "dipende da"
+"non del tutto" "del tutto" piuttosto direi "non saprei" temo probabilmente chissà capisco "non è
+detto" "non sono d'accordo" "mi sa che" "mi sa" vada credo penso sia abbia possa "mi sembra" forse
+troppo idea venire te me`:
+
+```
+non credo free · dubito free · sembra free · può darsi free · sarà free
+dipende free · dipende da free · non del tutto free · del tutto free · piuttosto free
+direi free · non saprei free · temo free · probabilmente free · chissà free · capisco free
+non è detto free · non sono d'accordo free · mi sa che free · mi sa free
+vada L2-M4 · credo L3-M3 · penso L3-M3 · sia L3-M3 · abbia L3-M3 · possa L3-M3
+mi sembra L3-M3 · forse L3-M3 · troppo free · idea free · venire free · te free · me free
+```
+
+**`vada` is L2-M4's, and this wave inherits the correction rather than repeating it.** M5's note 5
+is right: it is the polite imperative of `Vada sempre dritto`, taught as directions two levels
+before L3-M3's brief claimed it as fresh, and first occurrence wins. No row here touches it and no
+display in the module writes it.
+
+**`direi` really is free**, exactly as note 5 says against `docs/73`: `docs/73` listed it among
+L3-M3's softeners, the shipped module never took it, and the index is the record. It is M5-S03's
+third row.
+
+**`non del tutto` cannot be the key the brief promises, because the brief's own pattern hides it.**
+Note 5 says `non del tutto` indexes WHOLE, and the module's second pattern is
+`Non sono del tutto d'accordo + , + ma + <clause>`. In that display the token sequence is
+`non · sono · del · tutto · d'accordo` — `sono` sits between `non` and `del tutto`, so a
+`non del tutto` key would never match the sentence it was bought for. The row is therefore keyed
+**`del tutto`**, with `non del tutto` as a second form so the bare reply (`Sei d'accordo? Non del
+tutto.`) still resolves; S02's second variation is that reply. One row, two keys, no collision.
+
+**Two keys that would have raised `maxSpan` from 3 to 4, and were not bought.** `vale la pena di`
+(M4-S05) and `non è detto che` (M5-S09) are both four tokens. Either as a `forms` entry would have
+pushed the emitted `maxSpan` to 4 for the whole course, lengthening the resolver's walk on every
+line of every module for one variant apiece. Both were dropped from `forms` and stated in the rows'
+notes instead — `vale la pena` and `non è detto` are the keys, and the `di`/`che` versions are
+described in English prose. A later author who needs a four-token key should raise `maxSpan`
+deliberately and say so, not acquire it as a side effect of a `forms` list.
+
+**The index is thinner at L4 than a brief-reader expects.** `troppo`, `idea`, `venire`, `dire`,
+`niente`, `avuto`, `difficile`, `dura`, `provare`, `cambia` and `almeno` are all still free after
+thirty-two modules. Every one of them was checked before use and every one is a row in this wave.
+The other side of the same coin: `te` and `me` are free too — the bare disjunctive pronouns have
+never been taught — which is why M3-S10 ends `sarei venuto anche io` and not `sarei venuto con te`,
+and why M5-S04's third variation is `Dipende da quello che vuole lui` rather than `Dipende da te`.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` holds at **en-it 17**, unchanged and not lowered, across all three
+modules; the file passes **11/11**. `npm run content:shown -- en-it L4-M3 / L4-M4 / L4-M5` reports
+**`L4-M3: clean — every shown surface resolves`**, **`L4-M4: clean — every shown surface
+resolves`** and **`L4-M5: clean — every shown surface resolves`**: no `SHOWN-BUT-UNTAUGHT`, no
+`COLLIDES INSIDE THIS MODULE`, and **no `RE-TEACH` at all** in any of the three.
+`npm run content:validate` passes on every module in the tree, this wave's three included
+(`CONTENT 300/300 ok` at the moment it was run; the count moves as the other eight courses' waves
+land alongside this one).
+
+Zero re-teaches was designed for and not lucky, and in this wave the design decision was about
+PARADIGMS. Three of the rows here are auxiliary paradigms (`avrei`, `sarei`, `fossi`) and three more
+are imperfetto paradigms (`dovevo`, `potevo`, `volevo`), which is exactly the shape that collides:
+a `forms` list written from a conjugation table rather than from the index will sooner or later
+list a cell an earlier module already owns, or a cell a sibling row of the same module opens. Each
+of those six lists was written against `content:owner` output cell by cell, which is how `sarebbe`
+came out of `sarei` and `voleva` came out of `volevo`. The multi-token blocks (`avrei dovuto`,
+`avrei potuto`, `avrei voluto`, `sarebbe stato`, `che peccato`, `meno male che`, `è vero che`,
+`ti conviene`, `vale la pena`, `punto di vista`, `non credo`, `può darsi`, `dipende da`,
+`mi sa che`, `non è detto`, `non sono d'accordo`, `del tutto`) each open keys strictly longer than
+anything an earlier module owns, so the resolver's longest-match-first walk reaches them first and
+every owned single token keeps its own row.
+
+### Open questions for the native pass
+
+73. **`dovevo` as a full substitute for `avrei dovuto`** (M3, rule 4 and S09). `docs/90` question 54
+    already asks whether `dovevo chiamare` is what is actually said. This wave went further and
+    shipped `Dovevo partire ieri, invece sono rimasto a casa` as a HERO display with the imperfetto,
+    not as a variation. Confirm that is natural as a stand-alone regret and not only as an answer to
+    a question already asked.
+74. **`Magari avessi ascoltato mia madre`** (M3-S04). Confirm the bare `magari` + congiuntivo
+    trapassato is the ordinary spoken wish, and that a speaker would not more often reach for
+    `Avessi ascoltato…` with no `magari`, or for `Se solo avessi ascoltato…`.
+75. **`meno male che` with a plain `ho` clause** (M3-S05). Confirm `Meno male che ho portato
+    l'ombrello` is the everyday shape, and that the alternative with the congiuntivo
+    (`Meno male che abbia…`) is genuinely not heard rather than merely careful.
+76. **`Che peccato` versus bare `Peccato`** (M3-S08 and its first variation). Both ship, and the
+    variation's `changed` line treats them as interchangeable. Confirm they really are, or say which
+    is the default reaction to a cancelled plan.
+77. **`anche io` against `anch'io`** (M3-S10). The module writes `anche io` because the elided
+    `anch'io` would need its own key and the module could not spare a row for it. Confirm `anche io`
+    is written and said without sounding stilted, and whether `anch'io` should be bought at L5.
+78. **The final `però`** (M4-S02, first variation). `Hai ragione, non ho tempo adesso però` is the
+    module's showpiece. Confirm the sentence-final `però` is current in ordinary speech across
+    registers, and not marked as regional or as particularly Northern.
+79. **`ti conviene` said to a stranger** (M4-S03 and S10). The register chip is `neutral`. Confirm
+    `Ti conviene prenotare adesso` is not felt as presumptuous from somebody you have just met, and
+    whether `Le conviene` — which this module deliberately does not teach, per the `Lei` policy — is
+    what a shop assistant would actually say.
+80. **`anzi` after a negated clause** (M4-S06, rule prose and the mistake plate). The module says
+    `anzi` must push further in the same direction. Confirm `In realtà non è così caro, anzi
+    conviene` reads as intended, and that `anzi` after a negative is not heard as a correction of
+    the speaker's own previous words.
+81. **`Insomma` at the head of a clause against bare `Insomma`** (M4-S08). The note says tone alone
+    separates the summary use from the shrugging *so-so*. Confirm that is true in practice and that
+    the fronted summary use is not now the minority reading.
+82. **`Appunto` as a rebuttal** (M4-S09). The trap says it can sound sharp. Confirm the degree: is
+    `Appunto, è quello che dicevo prima` a normal conversational move or is it already pointed
+    enough that a learner should be warned harder than the module warns them.
+83. **`Sarà` alone before `però`** (M5-S03). `docs/90` question 57 asks whether the concessive
+    `sarà` is current. This wave shipped it as a HERO display and as pool item C03, so the answer
+    now decides a display and not a note. Confirm, and say whether it needs a following `sì` or a
+    particular intonation to read as a concession rather than as a real future.
+84. **`Mi sa che` with the indicative, taught as the exception** (M5-S08, rule 2). The module's
+    mistake plate marks `Mi sa che non sia` as WRONG. Confirm the congiuntivo after `mi sa che` is
+    genuinely not said by educated speakers, rather than being a live variant that a plate should
+    not condemn.
+85. **How far the un-drop rule actually goes** (M5, rule 1, S06 and S07). The module says the
+    pronoun comes back whenever the subject is not obvious. Confirm the boundary: is
+    `Dubito che possa venire domani` — S06's third variation — really only acceptable when the
+    person was named in the previous turn, or is a bare third person the default reading?
+86. **`Temo di no` as an everyday refusal** (M5-S10). Confirm it carries no more weight than English
+    *I'm afraid not*, and is not reserved for genuinely bad news.

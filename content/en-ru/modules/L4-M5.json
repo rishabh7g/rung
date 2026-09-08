@@ -1,0 +1,570 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M5",
+  "title": "Disagreeing well",
+  "job": "Soften, hedge, save face",
+  "prerequisites": ["L4-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["simple_present_imperfective", "simple_past", "simple_future_perfective", "conditional (past + by)"],
+    "allowedPatterns": [
+      "Ya ne sovsém soglásen + s + <N-instrumental>",
+      "Vy ne znáyete + , + <clause> + ?",
+      "Vryad li + <clause>",
+      "Ya by skazál + , + chto + <clause>",
+      "Da net + , + navérnoye"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Three softening devices, and every one of them is a RE-USE rather than a new form. (a) THE NEGATED QUESTION as a polite approach: Vy ne znáyete, gde …? is not a negative at all but the ordinary courteous opener, and L2-M1's Vy ne mózhete …? was the first of them. (b) by AS A SOFTENER: Ya by skazál, I would say — L3-M4's counterfactual machine doing register work, which is why M3 and M5 sit near each other. (c) THE NEGATED ADVERB: ne sovsém, ne óchen', vryad li. Russian weakens the DEGREE and leaves the claim standing, where English weakens the claim itself."
+    },
+    {
+      "tag": "interference",
+      "text": "The largest interference here is not a form but a VOLUME. Direct Russian disagreement sounds blunt to an English ear and hedged English sounds evasive to a Russian one. Both are polite in their own room and neither is ranked here: Ya ne soglásen is a perfectly civil thing to say, and the devices in this module are for the times when you want to keep the other person talking rather than for repairing rudeness that was never there."
+    },
+    {
+      "tag": "delta",
+      "text": "da net — literally yes no — is the ordinary mild no, I do not think so, and nothing in English prepares a learner for it. The da is a PARTICLE and not L1-M2's word for yes; a learner parsing it as agreement hears the opposite of what was said. It is written without a comma between the two words, and Da net, navérnoye is the whole polite refusal in three words."
+    },
+    {
+      "tag": "delta",
+      "text": "WORD ORDER IS THE HEDGE. ne sovsém soglásen is not entirely in agreement — the softener. sovsém ne soglásen is not in agreement at all — the bluntest form Russian has. The same two words in the other order say the opposite thing, and this is the module's sharpest fact. vryad li works the same way, weakening the likelihood rather than the claim: it is two tokens, always together, and the li in it is not L3-M5's question particle."
+    },
+    {
+      "tag": "delta",
+      "text": "THE VERB TO KNOW, opened here properly. L2-M6 taught exactly one form of it — znáyesh', inside Ty znáyesh', gde magazín? — and left the rest of the paradigm standing, so this module opens znáyu, znáyete and the infinitive znat' beside it. It is a regular -ay- verb with nothing surprising in it, and the reason it matters here is that Vy ne znáyete …? is the courteous opener of the whole module."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M5-S01",
+      "display": "Ya ne sovsém soglásen s vámi.",
+      "script": "Я не совсем согласен с вами.",
+      "cue": "I don't entirely agree with you.",
+      "literal": "I not entirely agreeing with you.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sovsém",
+            "script": "совсем",
+            "cue": "entirely, at all",
+            "tag": "delta",
+            "forms": ["sovsém"],
+            "note": "Its meaning is decided by what stands in front of it. ne sovsém is not entirely — a hedge; sovsém ne is not at all — the bluntest refusal there is. Same two words, opposite force."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "English weakens the claim: I am not sure I agree. Russian leaves soglásen exactly where it was and weakens the DEGREE in front of it. Nothing about the agreement itself is hedged — only how much of it there is.",
+      "sound": "sav-SYEM — two syllables, stress on the second, and the first o reduces to a.",
+      "variations": [
+        {
+          "display": "Ya ne sovsém soglásna s vámi.",
+          "script": "Я не совсем согласна с вами.",
+          "cue": "I don't entirely agree with you.",
+          "changed": "a woman speaking — L3-M3's soglásna, and sovsém does not move"
+        },
+        {
+          "display": "Ya ne sovsém soglásen s kollégoy.",
+          "script": "Я не совсем согласен с коллегой.",
+          "cue": "I don't entirely agree with my colleague.",
+          "changed": "somebody absent disagreed with, in L3-M2's instrumental"
+        }
+      ],
+      "mistake": {
+        "display": "Ya sovsém ne soglásen s vámi.",
+        "script": "Я совсем не согласен с вами.",
+        "why": "Both orders are good Russian and they mean opposite things. This one is I do not agree with you AT ALL — the hardest disagreement in the module, delivered by accident."
+      },
+      "usage": "Opening a disagreement you intend to keep talking through.",
+      "register": "neutral",
+      "mnemonic": "ne sovsém softens. sovsém ne slams."
+    },
+    {
+      "id": "L4-M5-S02",
+      "display": "Vy ne znáyete, gde zdes' aptéka?",
+      "script": "Вы не знаете, где здесь аптека?",
+      "cue": "Do you happen to know where there's a chemist round here?",
+      "literal": "You not know, where here chemist?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "znáyete",
+            "script": "знаете",
+            "cue": "you know",
+            "tag": "delta",
+            "forms": ["znáyete", "znáyu", "znat'"],
+            "note": "The vy form of znat', to know. L2-M6 taught only the ty form, znáyesh'; the rest of the paradigm opens here because the courteous question needs it."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "The ne is not a negative. Vy ne znáyete …? is not do you not know but the ordinary polite approach to a stranger, exactly like L2-M1's Vy ne mózhete …? Dropping it does not make the question clearer, only blunter.",
+      "sound": "ZNA-ye-tye — three syllables, stress on the first, and the final -te is soft.",
+      "variations": [
+        {
+          "display": "Vy ne znáyete, gde zdes' magazín?",
+          "script": "Вы не знаете, где здесь магазин?",
+          "cue": "Do you happen to know where there's a shop round here?",
+          "changed": "a different thing being looked for"
+        },
+        {
+          "display": "Ya ne znáyu, gde zdes' aptéka.",
+          "script": "Я не знаю, где здесь аптека.",
+          "cue": "I don't know where there's a chemist round here.",
+          "changed": "the same verb answering rather than asking — and here the ne really is a negative"
+        }
+      ],
+      "mistake": {
+        "display": "Vy znáyete, gde zdes' aptéka?",
+        "script": "Вы знаете, где здесь аптека?",
+        "why": "Correct, and it is the register that has slipped. Without the ne the question is a demand for information; with it, it leaves the other person an easy way to say no."
+      },
+      "usage": "Stopping a stranger in the street without making it an interrogation.",
+      "register": "formal",
+      "mnemonic": "The polite question in Russian begins by giving them permission to say no."
+    },
+    {
+      "id": "L4-M5-S03",
+      "display": "Vryad li on pridyót sevódnya vécherom.",
+      "script": "Вряд ли он придёт сегодня вечером.",
+      "cue": "He's unlikely to come this evening.",
+      "literal": "Hardly whether he will-come today in-the-evening.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vryad li",
+            "script": "вряд ли",
+            "cue": "hardly, unlikely",
+            "tag": "delta",
+            "forms": ["vryad li"],
+            "note": "Two tokens that never separate, learnt whole. The li in it is not L3-M5's question particle, and vryad never appears without it. It opens its clause and takes no comma."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "English hedges the verb — he probably will not come, I doubt he will come. Russian leaves the verb in the plain future and puts the whole doubt in front, in one two-word block that changes nothing after it.",
+      "sound": "vryad-LEE — the two words run together as one, with the stress on the li.",
+      "variations": [
+        {
+          "display": "Vryad li oná pridyót sevódnya.",
+          "script": "Вряд ли она придёт сегодня.",
+          "cue": "She's unlikely to come today.",
+          "changed": "a woman as the one not coming — nothing in the frame moves"
+        },
+        {
+          "display": "Vryad li éhto právda.",
+          "script": "Вряд ли это правда.",
+          "cue": "That's hardly likely to be true.",
+          "changed": "no verb at all after it"
+        }
+      ],
+      "mistake": {
+        "display": "Vryad on pridyót sevódnya vécherom.",
+        "script": "Вряд он придёт сегодня вечером.",
+        "why": "vryad does not stand on its own. The pair is frozen, and dropping the li leaves a word that is not used alone in modern Russian."
+      },
+      "usage": "Doubting somebody's plan out loud without calling it off for them.",
+      "register": "neutral",
+      "mnemonic": "vryad never travels without li."
+    },
+    {
+      "id": "L4-M5-S04",
+      "display": "Ya by skazál, chto éhto ne sovsém tak.",
+      "script": "Я бы сказал, что это не совсем так.",
+      "cue": "I would say that's not quite how it is.",
+      "literal": "I would said, that this not entirely so.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ya by skazál",
+            "script": "я бы сказал",
+            "cue": "I would say",
+            "tag": "delta",
+            "forms": ["ya by skazál"],
+            "note": "L3-M4's by doing register work instead of counterfactual work: nothing hypothetical is meant, it is only softer than Ya skazhú. Learnt and indexed whole, three tokens."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "This is the same machine M3 used for regret, with none of the regret in it. by has no tense and here it has no hypothesis either — it is doing what English does with I would say rather than I say, which is exactly nothing to the facts and a great deal to the tone.",
+      "sound": "ya by ska-ZAL — four syllables, one stress at the very end, and the by is swallowed between them.",
+      "variations": [
+        {
+          "display": "Ya by skazál, chto éhto óchen' dórogo.",
+          "script": "Я бы сказал, что это очень дорого.",
+          "cue": "I'd say that's very expensive.",
+          "changed": "a judgement instead of a correction"
+        },
+        {
+          "display": "Ya by skazál, chto vy ne právy.",
+          "script": "Я бы сказал, что вы не правы.",
+          "cue": "I'd say you're wrong.",
+          "changed": "the flattest possible disagreement, softened only by the frame"
+        }
+      ],
+      "mistake": {
+        "display": "Ya by skazát', chto éhto ne sovsém tak.",
+        "script": "Я бы сказать, что это не совсем так.",
+        "why": "by takes a PAST beside it and never an infinitive — the same law M3 wrote for mog by. The past here is not past time, only the shape by demands."
+      },
+      "usage": "Correcting somebody's version of events without saying they were wrong.",
+      "register": "neutral",
+      "mnemonic": "Same by, no hypothesis. Here it is only good manners."
+    },
+    {
+      "id": "L4-M5-S05",
+      "display": "Da net, navérnoye, vy právy.",
+      "script": "Да нет, наверное, вы правы.",
+      "cue": "Well, no — you're probably right, actually.",
+      "literal": "Yes no, probably, you right.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "da net",
+            "script": "да нет",
+            "cue": "well, no",
+            "tag": "delta",
+            "forms": ["da net"],
+            "note": "Literally yes no, and it means a mild no. The da is a PARTICLE, not L1-M2's yes, and no comma goes between the two words. Learnt and indexed whole."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "A learner who reads the da as agreement hears the opposite of what was said. Nothing in English does this, and the only defence is to take the two words as one word with one meaning.",
+      "sound": "da-NYET — said as one word with the stress on the second half, and never with a pause between them.",
+      "variations": [
+        {
+          "display": "Da net, navérnoye, éhto oshíbka.",
+          "script": "Да нет, наверное, это ошибка.",
+          "cue": "Well, no — it's probably a mistake.",
+          "changed": "the refusal aimed at a claim rather than a person"
+        },
+        {
+          "display": "Da net, ya tak ne dúmayu.",
+          "script": "Да нет, я так не думаю.",
+          "cue": "No, I don't think so.",
+          "changed": "no navérnoye, so the refusal is a shade firmer"
+        }
+      ],
+      "mistake": {
+        "display": "Da, net, navérnoye, vy právy.",
+        "script": "Да, нет, наверное, вы правы.",
+        "why": "With a comma it is two answers in a row — yes; no — and reads as somebody changing their mind mid-sentence. Da net is one unit and takes no comma inside it."
+      },
+      "usage": "Backing down gracefully when you decide the other person had it right.",
+      "register": "informal",
+      "mnemonic": "Da net is one word wearing two. The da means nothing at all."
+    },
+    {
+      "id": "L4-M5-S06",
+      "display": "Vozmózhno, vy právy, no ya tak ne dúmayu.",
+      "script": "Возможно, вы правы, но я так не думаю.",
+      "cue": "Possibly you're right, but I don't think so.",
+      "literal": "Possibly, you right, but I so not think.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vozmózhno",
+            "script": "возможно",
+            "cue": "possibly",
+            "tag": "free",
+            "forms": ["vozmózhno"],
+            "note": "Behaves like possibly, position and all: it opens the sentence with a comma after it, exactly as L3-M3's navérnoye does. One of the free ones."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "vozmózhno and navérnoye are not the same strength. navérnoye is probably and leans towards yes; vozmózhno is possibly and commits to nothing, which is why it is the one you want in front of a disagreement.",
+      "sound": "vaz-MOZH-na — three syllables, stress in the middle, and the zh as in measure.",
+      "variations": [
+        {
+          "display": "Vozmózhno, éhto oshíbka.",
+          "script": "Возможно, это ошибка.",
+          "cue": "Possibly it's a mistake.",
+          "changed": "the hedge alone, with nothing conceded first"
+        },
+        {
+          "display": "Vozmózhno, vy právy, no ya ne uvéren.",
+          "script": "Возможно, вы правы, но я не уверен.",
+          "cue": "Possibly you're right, but I'm not sure.",
+          "changed": "L3-M3's uvéren closing it instead of a flat opinion"
+        }
+      ],
+      "mistake": {
+        "display": "Vozmózhno vy právy, no ya tak ne dúmayu.",
+        "script": "Возможно вы правы, но я так не думаю.",
+        "why": "The comma after vozmózhno is what makes it an aside rather than part of the clause. Russian fences its sentence adverbs, as L3-M3's comma law already required."
+      },
+      "usage": "Conceding the possibility and keeping your position in the same breath.",
+      "register": "neutral",
+      "mnemonic": "navérnoye leans yes. vozmózhno leans nowhere."
+    },
+    {
+      "id": "L4-M5-S07",
+      "display": "Boyús', chto vy ne právy.",
+      "script": "Боюсь, что вы не правы.",
+      "cue": "I'm afraid you're wrong.",
+      "literal": "I-fear, that you not right.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "boyús'",
+            "script": "боюсь",
+            "cue": "I'm afraid",
+            "tag": "delta",
+            "forms": ["boyús'"],
+            "note": "A -sya verb, so the ending is -ús'. With chto and a clause it is the English I'm afraid that … and carries no fear at all; with a bare noun after it, it does."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "Two constructions, two meanings. Boyús', chto … is the polite hedge. Boyús' plus a noun — boyús' vrachá — is real fear of that thing, and a learner who runs the two together will alarm somebody.",
+      "sound": "ba-YUS' — two syllables, stress on the second, and the soft sign palatalises the final s.",
+      "variations": [
+        {
+          "display": "Boyús', chto éhto oshíbka.",
+          "script": "Боюсь, что это ошибка.",
+          "cue": "I'm afraid it's a mistake.",
+          "changed": "a claim disagreed with instead of a person"
+        },
+        {
+          "display": "Boyús', chto vy ne sovsém právy.",
+          "script": "Боюсь, что вы не совсем правы.",
+          "cue": "I'm afraid you're not quite right.",
+          "changed": "two hedges stacked — the frame and the degree"
+        }
+      ],
+      "mistake": {
+        "display": "Ya boyús' vas.",
+        "script": "Я боюсь вас.",
+        "why": "This is I am afraid OF you, which is a sentence about fear and not about disagreement. The hedging boyús' always has chto and a clause after it."
+      },
+      "usage": "Delivering bad news about somebody's argument, in the mildest wrapper there is.",
+      "register": "formal",
+      "mnemonic": "boyús' plus chto is manners. boyús' plus a noun is fear."
+    },
+    {
+      "id": "L4-M5-S08",
+      "display": "Ládno, ya soglasílsya, no ya ne sovsém uvéren.",
+      "script": "Ладно, я согласился, но я не совсем уверен.",
+      "cue": "All right, I agreed, but I'm not entirely sure.",
+      "literal": "All-right, I agreed, but I not entirely sure.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ládno",
+            "script": "ладно",
+            "cue": "all right, fine",
+            "tag": "free",
+            "forms": ["ládno"],
+            "note": "The spoken all right — it accepts the situation without endorsing it, and it opens the sentence with a comma. Warmer and less formal than khoroshó used the same way."
+          },
+          {
+            "display": "soglasílsya",
+            "script": "согласился",
+            "cue": "agreed (a man)",
+            "tag": "free",
+            "forms": ["soglasílsya", "soglasílas'"],
+            "note": "The past of soglasít'sya, to agree, built on L3-M3's soglásen. A -sya verb: a woman says soglasílas', and the -sya is never optional."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "Agreeing out loud and being convinced are two different things in both languages, and this is the sentence that separates them. ládno concedes the argument; ne sovsém uvéren keeps the doubt on the record.",
+      "sound": "LAD-na — two syllables, stress on the first, and the final o reduces to a.",
+      "variations": [
+        {
+          "display": "Ládno, ya soglasílsya, no ya ne uvéren.",
+          "script": "Ладно, я согласился, но я не уверен.",
+          "cue": "All right, I agreed, but I'm not sure.",
+          "changed": "the doubt stated flatly instead of hedged"
+        },
+        {
+          "display": "Ládno, oná soglasílas', no éhto oshíbka.",
+          "script": "Ладно, она согласилась, но это ошибка.",
+          "cue": "All right, she agreed, but it's a mistake.",
+          "changed": "a woman agreeing — the -sya becomes -s'"
+        }
+      ],
+      "mistake": {
+        "display": "Ládno, ya soglasíl, no ya ne sovsém uvéren.",
+        "script": "Ладно, я согласил, но я не совсем уверен.",
+        "why": "The verb is reflexive and the -sya is part of it, not an ending you may drop. soglasíl on its own means talked somebody else round, and needs an object it has not got."
+      },
+      "usage": "Going along with a decision while making sure nobody thinks you are sure of it.",
+      "register": "informal",
+      "mnemonic": "ládno ends the argument. It does not end the doubt."
+    },
+    {
+      "id": "L4-M5-S09",
+      "display": "Ya ne khochú spórit', no ya ne soglásen.",
+      "script": "Я не хочу спорить, но я не согласен.",
+      "cue": "I don't want to argue, but I don't agree.",
+      "literal": "I not want to-argue, but I not agreeing.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spórit'",
+            "script": "спорить",
+            "cue": "to argue",
+            "tag": "free",
+            "forms": ["spórit'"],
+            "note": "Imperfective, so it is arguing as an activity rather than one exchange. It is not reflexive, which is worth noticing right beside soglasít'sya, which is."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "In English I do not want to argue often means the conversation is over. In Russian it is a way of keeping it going — the second half is the point, and the first half is what buys permission to say it.",
+      "sound": "SPO-rit' — two syllables, stress on the first, and the final -t' is soft.",
+      "variations": [
+        {
+          "display": "Ya ne khochú spórit' s vámi.",
+          "script": "Я не хочу спорить с вами.",
+          "cue": "I don't want to argue with you.",
+          "changed": "the person named, in L3-M2's instrumental"
+        },
+        {
+          "display": "Ya ne búdu spórit'.",
+          "script": "Я не буду спорить.",
+          "cue": "I'm not going to argue.",
+          "changed": "L1-M5's búdu, so the refusal is about what happens next"
+        }
+      ],
+      "mistake": {
+        "display": "Ya ne khochú spórit'sya, no ya ne soglásen.",
+        "script": "Я не хочу спориться, но я не согласен.",
+        "why": "spórit' takes no -sya. The ending has been copied across from soglasít'sya, which is the reflexive one, and the two sit close enough together to invite exactly that."
+      },
+      "usage": "Refusing the fight and the position at the same time.",
+      "register": "neutral",
+      "mnemonic": "soglasít'sya has the -sya. spórit' does not."
+    },
+    {
+      "id": "L4-M5-S10",
+      "display": "Da net, ya prósto ne sovsém soglásen s vámi.",
+      "script": "Да нет, я просто не совсем согласен с вами.",
+      "cue": "No, no — it's just that I don't entirely agree with you.",
+      "literal": "Yes no, I simply not entirely agreeing with you.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prósto",
+            "script": "просто",
+            "cue": "simply, it's just that",
+            "tag": "delta",
+            "forms": ["prósto"],
+            "note": "In front of a disagreement it means it is nothing more than this — it shrinks the objection rather than describing it. English does the same job with it is just that."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "prósto here is not the adverb simply that describes how something is done. It is a softener aimed at the whole sentence, and it works only in front of the thing being played down.",
+      "sound": "PROS-ta — two syllables, stress on the first, and the final o reduces to a.",
+      "variations": [
+        {
+          "display": "Ya prósto ne sovsém soglásen.",
+          "script": "Я просто не совсем согласен.",
+          "cue": "It's just that I don't entirely agree.",
+          "changed": "without the opening refusal"
+        },
+        {
+          "display": "Da net, ya prósto ne uvéren.",
+          "script": "Да нет, я просто не уверен.",
+          "cue": "No, no — it's just that I'm not sure.",
+          "changed": "doubt instead of disagreement after the same opener"
+        }
+      ],
+      "mistake": {
+        "display": "Da net, ya prósto sovsém ne soglásen s vámi.",
+        "script": "Да нет, я просто совсем не согласен с вами.",
+        "why": "prósto plays the objection down and sovsém ne is the hardest possible objection, so the sentence undercuts itself. Keep prósto with ne sovsém, never with sovsém ne."
+      },
+      "usage": "Closing a disagreement by making it sound smaller than it is.",
+      "register": "neutral",
+      "mnemonic": "prósto makes it small. sovsém ne makes it total. Pick one."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M5-C01",
+      "display": "Ya ne sovsém soglásen s vámi.",
+      "script": "Я не совсем согласен с вами.",
+      "cue": "I don't entirely agree with you."
+    },
+    {
+      "id": "L4-M5-C02",
+      "display": "Vy ne znáyete, gde zdes' magazín?",
+      "script": "Вы не знаете, где здесь магазин?",
+      "cue": "Do you happen to know where there's a shop round here?"
+    },
+    {
+      "id": "L4-M5-C03",
+      "display": "Vryad li on pridyót sevódnya.",
+      "script": "Вряд ли он придёт сегодня.",
+      "cue": "He's unlikely to come today."
+    },
+    {
+      "id": "L4-M5-C04",
+      "display": "Ya by skazál, chto éhto oshíbka.",
+      "script": "Я бы сказал, что это ошибка.",
+      "cue": "I'd say that's a mistake."
+    },
+    {
+      "id": "L4-M5-C05",
+      "display": "Da net, navérnoye.",
+      "script": "Да нет, наверное.",
+      "cue": "No, I don't think so."
+    },
+    {
+      "id": "L4-M5-C06",
+      "display": "Vozmózhno, vy právy.",
+      "script": "Возможно, вы правы.",
+      "cue": "Possibly you're right."
+    },
+    {
+      "id": "L4-M5-C07",
+      "display": "Boyús', chto vy ne právy.",
+      "script": "Боюсь, что вы не правы.",
+      "cue": "I'm afraid you're wrong."
+    },
+    {
+      "id": "L4-M5-C08",
+      "display": "Ládno, ya soglasílsya.",
+      "script": "Ладно, я согласился.",
+      "cue": "All right, I agreed."
+    },
+    {
+      "id": "L4-M5-C09",
+      "display": "Ya ne khochú spórit'.",
+      "script": "Я не хочу спорить.",
+      "cue": "I don't want to argue."
+    },
+    {
+      "id": "L4-M5-C10",
+      "display": "Ya prósto ne uvéren.",
+      "script": "Я просто не уверен.",
+      "cue": "It's just that I'm not sure."
+    },
+    {
+      "id": "L4-M5-C11",
+      "display": "Ya ne znáyu, gde aptéka.",
+      "script": "Я не знаю, где аптека.",
+      "cue": "I don't know where the chemist is."
+    },
+    {
+      "id": "L4-M5-C12",
+      "display": "Vryad li éhto právda.",
+      "script": "Вряд ли это правда.",
+      "cue": "That's hardly likely to be true."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
