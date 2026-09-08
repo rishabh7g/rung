@@ -1,0 +1,728 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": [
+    "L2-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Pardon + , + où est + le/la + N + ?",
+      "Tournez à gauche / à droite",
+      "Allez tout droit + , + puis + <direction>",
+      "Je vais à + <place> / en + <transport>",
+      "Il faut + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "THE IMPERATIVE IS FREE HERE: the vous imperative is the present tense with the pronoun taken off. vous tournez → Tournez, vous allez → Allez, vous prenez → Prenez. Every one of those present forms is already the learner's, so this module's grammar costs nothing and the whole budget goes to the prepositions and the words. The tu imperative — tourne, va, prends — exists and is not written, because the scene is a stranger in the street."
+    },
+    {
+      "tag": "delta",
+      "text": "TRANSPORT SPLITS ON ONE RELIABLE RULE: EN for anything you get inside — en bus, en train, en voiture, en avion — and À for anything you sit on or use with your body: à pied, à vélo, à moto. That one really is a rule and not a list, which makes it the cheapest thing in the module."
+    },
+    {
+      "tag": "interference",
+      "text": "droite is \"right\" and tout droit is \"straight on\". One letter apart, and a whole different direction. A learner who hears them as the same word will turn where they should not, so the module puts them in one sentence and spends a mistake block on the pair."
+    },
+    {
+      "tag": "free",
+      "text": "à gauche and à droite are taught WHOLE. That keeps L1-M4's à on its own row and gives the direction its own note — there is nothing to assemble here, and a learner who tries will get the article wrong."
+    },
+    {
+      "tag": "free",
+      "text": "il faut is a FROZEN impersonal plus an infinitive: Il faut tourner à gauche. It is the most useful obligation frame in the language and it costs one word. il faut QUE plus a subjunctive is L3's, and naming it here is what stops a later author importing the tense along with the word."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "Pardon, où est la gare?",
+      "cue": "Excuse me, where is the station?",
+      "literal": "Pardon, where is the station?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gare",
+            "cue": "station",
+            "tag": "free",
+            "forms": [
+              "gares"
+            ],
+            "note": "A railway station. A metro stop is a station and a bus stop is an arrêt — three words where English has one."
+          },
+          {
+            "display": "rue",
+            "cue": "street",
+            "tag": "free",
+            "forms": [
+              "rues"
+            ],
+            "note": "Feminine. It is what appears on a sign with a name after it — rue de Paris — and the u is the rounded vowel."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "M1's Pardon is doing the opening here, and Excusez-moi would work as well. Both are ordinary; a bare Où est la gare? is not rude but is noticeably abrupt.",
+      "sound": "par-DON oo eh la GAR. The où is a single oo and the r of gare is at the back of the throat.",
+      "variations": [
+        {
+          "display": "Pardon, où est la rue?",
+          "cue": "Excuse me, where is the street?",
+          "changed": "a different place"
+        },
+        {
+          "display": "Excusez-moi, où est la gare?",
+          "cue": "Excuse me, where is the station?",
+          "changed": "M1's other opener"
+        },
+        {
+          "display": "Pardon, où est le métro?",
+          "cue": "Excuse me, where is the metro?",
+          "changed": "a masculine place"
+        }
+      ],
+      "mistake": {
+        "display": "Pardon, où est le gare?",
+        "why": "gare is feminine: Pardon, où est la gare?"
+      },
+      "usage": "Stopping someone in the street — the module's opening move.",
+      "register": "formal",
+      "mnemonic": "gare for trains, station for the metro, arrêt for buses."
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "Tournez à gauche au feu",
+      "cue": "Turn left at the lights",
+      "literal": "Turn to left at-the fire",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tournez",
+            "cue": "turn (vous)",
+            "tag": "free",
+            "forms": [],
+            "note": "The present tense with the pronoun taken off. Vous tournez is a statement; Tournez is an order, and nothing else has changed."
+          },
+          {
+            "display": "à gauche",
+            "cue": "to the left",
+            "tag": "free",
+            "forms": [],
+            "note": "One thing, not two. There is no article inside it and none can be added — à la gauche is not what people say."
+          },
+          {
+            "display": "feu",
+            "cue": "traffic light · fire",
+            "tag": "interference",
+            "forms": [
+              "feux"
+            ],
+            "note": "Literally a fire, and by extension a traffic light. Its plural takes an x, and au feu means at the lights."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The imperative is the same word as the statement. French marks the order by dropping vous, where English changes nothing at all — so the two languages meet in the middle and the learner has to spot the difference.",
+      "sound": "toor-NAY a GOHSH o FUH. The au of au feu is a pure o.",
+      "variations": [
+        {
+          "display": "Tournez à droite au feu",
+          "cue": "Turn right at the lights",
+          "changed": "the other direction"
+        },
+        {
+          "display": "Tournez à gauche à la gare",
+          "cue": "Turn left at the station",
+          "changed": "a different landmark"
+        },
+        {
+          "display": "Prenez la première rue à gauche",
+          "cue": "Take the first street on the left",
+          "changed": "a different instruction"
+        }
+      ],
+      "mistake": {
+        "display": "Tournez à la gauche au feu",
+        "why": "The phrase takes no article: Tournez à gauche au feu."
+      },
+      "usage": "Giving directions to someone who has stopped you.",
+      "register": "formal",
+      "mnemonic": "Drop the pronoun and you have an order."
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "Allez tout droit, puis à droite",
+      "cue": "Go straight on, then right",
+      "literal": "Go all straight, then to right",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tout droit",
+            "cue": "straight on",
+            "tag": "delta",
+            "forms": [],
+            "note": "One thing, and one letter from droite. Straight on, not right — and the difference is the module's whole trap."
+          },
+          {
+            "display": "à droite",
+            "cue": "to the right",
+            "tag": "free",
+            "forms": [],
+            "note": "à gauche's pair, and built the same way. The te on the end is what marks it as a direction rather than \"straight\"."
+          },
+          {
+            "display": "droite",
+            "cue": "the right",
+            "tag": "free",
+            "forms": [],
+            "note": "The noun. It is also the feminine of droit, which is where the confusion comes from — the words really are related."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "tout droit and à droite are in the same sentence on purpose. One is straight on, the other is right, and a learner who hears only droi- will go the wrong way.",
+      "sound": "a-LAY too DRWA pwee a DRWAT. The t of droite is sounded and the t of droit is not.",
+      "variations": [
+        {
+          "display": "Allez tout droit, puis à gauche",
+          "cue": "Go straight on, then left",
+          "changed": "the other direction"
+        },
+        {
+          "display": "Allez tout droit",
+          "cue": "Go straight on",
+          "changed": "one instruction only"
+        },
+        {
+          "display": "Continuez tout droit",
+          "cue": "Keep going straight on",
+          "changed": "a different verb — keep going rather than go"
+        }
+      ],
+      "mistake": {
+        "display": "Allez tout droite, puis à droite",
+        "why": "Straight on is tout droit: Allez tout droit, puis à droite."
+      },
+      "usage": "The first half of nearly every set of directions.",
+      "register": "formal",
+      "mnemonic": "The t you hear is the turn."
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "Prenez le bus, puis le métro",
+      "cue": "Take the bus, then the metro",
+      "literal": "Take the bus, then the metro",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prenez",
+            "cue": "take (vous)",
+            "tag": "free",
+            "forms": [
+              "prendre"
+            ],
+            "note": "The imperative of prendre, and it takes a bus, a street or a coffee — the same range English gives \"take\"."
+          },
+          {
+            "display": "bus",
+            "cue": "bus",
+            "tag": "free",
+            "forms": [],
+            "note": "Its plural is also bus, because it ends in s. The final s IS sounded here, unusually — BÜSS."
+          },
+          {
+            "display": "métro",
+            "cue": "metro · underground",
+            "tag": "free",
+            "forms": [],
+            "note": "Short for métropolitain and masculine. The é is a letter with an accent and must be written with it."
+          },
+          {
+            "display": "continuez",
+            "cue": "keep going (vous)",
+            "tag": "free",
+            "forms": [],
+            "note": "Another imperative made by dropping the pronoun. It is what a French speaker says where English says \"carry on\"."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "bus sounds its final s and most French words do not. It is a borrowed word, and borrowed words keep habits French has otherwise lost.",
+      "sound": "pruh-NAY luh BÜSS pwee luh may-TRO. The ü is the rounded front vowel.",
+      "variations": [
+        {
+          "display": "Prenez le métro",
+          "cue": "Take the metro",
+          "changed": "one instruction"
+        },
+        {
+          "display": "Prenez le train à la gare",
+          "cue": "Take the train at the station",
+          "changed": "with a place"
+        },
+        {
+          "display": "Continuez tout droit, puis prenez le bus",
+          "cue": "Keep going straight on, then take the bus",
+          "changed": "two instructions joined"
+        }
+      ],
+      "mistake": {
+        "display": "Prenez bus, puis métro",
+        "why": "French keeps its articles: Prenez le bus, puis le métro."
+      },
+      "usage": "Explaining a route with more than one leg.",
+      "register": "formal",
+      "mnemonic": "Borrowed words keep their s."
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "Je vais en bus",
+      "cue": "I go by bus",
+      "literal": "I go in bus",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en",
+            "cue": "in · by (transport)",
+            "tag": "delta",
+            "forms": [],
+            "note": "For anything you get INSIDE: en bus, en train, en voiture, en avion. No article follows it — en le bus is not French."
+          },
+          {
+            "display": "avion",
+            "cue": "aeroplane",
+            "tag": "free",
+            "forms": [
+              "avions"
+            ],
+            "note": "Masculine and starting with a vowel, so l'avion. en avion is by air, and the n of en links onto the vowel."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "No article after en. That is the whole shape — en bus, never en le bus — and it is the same instinct that gives à pied no article either.",
+      "sound": "zhuh vay on BÜSS. The en is nasal and no n is actually said.",
+      "variations": [
+        {
+          "display": "Je vais en train",
+          "cue": "I go by train",
+          "changed": "a different vehicle"
+        },
+        {
+          "display": "Je vais en voiture",
+          "cue": "I go by car",
+          "changed": "L1-M3's noun"
+        },
+        {
+          "display": "Je vais en avion",
+          "cue": "I go by plane",
+          "changed": "a vowel, and the n links onto it"
+        }
+      ],
+      "mistake": {
+        "display": "Je vais en le bus",
+        "why": "en takes no article: Je vais en bus."
+      },
+      "usage": "Saying how you get about, which comes up early with anyone new.",
+      "register": "neutral",
+      "mnemonic": "Inside it: en. On it: à."
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "Je vais à pied, pas en voiture",
+      "cue": "I'm walking, not driving",
+      "literal": "I go on foot, not in car",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "à pied",
+            "cue": "on foot · walking",
+            "tag": "delta",
+            "forms": [],
+            "note": "For anything you use with your body. à vélo and à moto are the same shape — you sit on them rather than in them."
+          },
+          {
+            "display": "pied",
+            "cue": "foot",
+            "tag": "free",
+            "forms": [
+              "pieds"
+            ],
+            "note": "The d is silent. Its plural takes an s that is also silent, so the word sounds the same however many feet are involved."
+          },
+          {
+            "display": "vélo",
+            "cue": "bicycle",
+            "tag": "free",
+            "forms": [
+              "vélos"
+            ],
+            "note": "The everyday word; bicyclette is the formal one and sounds dated. à vélo, because you sit on it."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The rule really is about inside and on. A bus takes en because you get in it; a bicycle takes à because you get on it — and there is no list to memorise.",
+      "sound": "zhuh vay a PYAY pa on vwa-TÜR. The final d of pied is silent.",
+      "variations": [
+        {
+          "display": "Je vais à vélo",
+          "cue": "I go by bike",
+          "changed": "another thing you sit on"
+        },
+        {
+          "display": "Je vais à pied à la gare",
+          "cue": "I'm walking to the station",
+          "changed": "with a destination"
+        },
+        {
+          "display": "Je vais en voiture, pas à pied",
+          "cue": "I'm driving, not walking",
+          "changed": "the two halves swapped"
+        }
+      ],
+      "mistake": {
+        "display": "Je vais en pied, pas en voiture",
+        "why": "You are not inside your feet: Je vais à pied."
+      },
+      "usage": "Arranging how to get somewhere, or correcting an assumption.",
+      "register": "neutral",
+      "mnemonic": "In it or on it — that is the whole rule."
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "Il faut tourner à gauche",
+      "cue": "You have to turn left",
+      "literal": "It is-necessary to-turn to left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "faut",
+            "cue": "it is necessary",
+            "tag": "delta",
+            "forms": [
+              "aller"
+            ],
+            "note": "It only ever appears as il faut — there is no other person of this verb in use. An infinitive follows it (tourner, prendre, aller), and nobody is named as doing the thing."
+          },
+          {
+            "display": "tourner",
+            "cue": "to turn",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive behind Tournez. Every -er infinitive is said the same as its past participle, which is why French spelling matters so much here."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The il means nothing. It is a placeholder, exactly as in il y a and il pleut, and there is no person in the sentence at all.",
+      "sound": "eel fo toor-NAY a GOHSH. faut is one syllable with a pure o and a silent t.",
+      "variations": [
+        {
+          "display": "Il faut prendre le bus",
+          "cue": "You have to take the bus",
+          "changed": "a different infinitive"
+        },
+        {
+          "display": "Il faut aller tout droit",
+          "cue": "You have to go straight on",
+          "changed": "another instruction"
+        },
+        {
+          "display": "Il faut tourner à droite",
+          "cue": "You have to turn right",
+          "changed": "the other direction"
+        }
+      ],
+      "mistake": {
+        "display": "Vous faut tourner à gauche",
+        "why": "The verb only takes il: Il faut tourner à gauche."
+      },
+      "usage": "Telling someone what has to be done, without ordering them to do it.",
+      "register": "neutral",
+      "mnemonic": "il faut has no person in it."
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "C'est loin, ou c'est près?",
+      "cue": "Is it far, or is it near?",
+      "literal": "It-is far, or it-is near?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "près",
+            "cue": "near · close",
+            "tag": "free",
+            "forms": [],
+            "note": "The bare adverb. L1-M7 taught près de, which names what something is near; without the de it simply means close by."
+          },
+          {
+            "display": "loin",
+            "cue": "far",
+            "tag": "free",
+            "forms": [],
+            "note": "Invariable. loin de names what it is far from, and on its own it simply means a long way."
+          },
+          {
+            "display": "ou",
+            "cue": "or",
+            "tag": "interference",
+            "forms": [],
+            "note": "Without an accent it is \"or\"; with one, où, it is \"where\". One mark, two words, and L1-M7 owns the other."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "ou and où are separated only by the accent, and the accent is a letter here rather than a decoration. The index treats them as two keys, and so should the writer.",
+      "sound": "say LWAN oo say PREH. The oin of loin is nasal.",
+      "variations": [
+        {
+          "display": "C'est loin?",
+          "cue": "Is it far?",
+          "changed": "the shortest form"
+        },
+        {
+          "display": "Non, c'est près",
+          "cue": "No, it's near",
+          "changed": "the answer"
+        },
+        {
+          "display": "La gare, c'est loin?",
+          "cue": "The station — is it far?",
+          "changed": "with the place named first"
+        }
+      ],
+      "mistake": {
+        "display": "C'est loin, où c'est près?",
+        "why": "\"Or\" has no accent: C'est loin, ou c'est près?"
+      },
+      "usage": "The follow-up to every set of directions, and it decides whether you walk.",
+      "register": "neutral",
+      "mnemonic": "The accent turns or into where."
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "L'arrêt de bus est au coin",
+      "cue": "The bus stop is on the corner",
+      "literal": "The-stop of bus is at-the corner",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "arrêt",
+            "cue": "stop (bus or tram)",
+            "tag": "free",
+            "forms": [
+              "arrêts",
+              "l'arrêt"
+            ],
+            "note": "The circumflex is a letter. l'arrêt is its own index key because the elision fuses — the same policy L1 set with l'eau."
+          },
+          {
+            "display": "coin",
+            "cue": "corner",
+            "tag": "free",
+            "forms": [
+              "coins"
+            ],
+            "note": "The corner of a street, and by extension a neighbourhood — le coin means round here. Nothing to do with the English word."
+          },
+          {
+            "display": "place",
+            "cue": "square · seat · space",
+            "tag": "interference",
+            "forms": [
+              "places"
+            ],
+            "note": "A town square, a seat on a train, or room for something. Three jobs on one word, and the sentence says which."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "arrêt de bus has no article in the middle. Two nouns joined by de leave the second bare when it names a kind rather than a particular thing.",
+      "sound": "la-REH duh BÜSS eh o KWAN. The circumflex e is open and the final t is silent.",
+      "variations": [
+        {
+          "display": "L'arrêt de bus est près de la gare",
+          "cue": "The bus stop is near the station",
+          "changed": "L1-M7's four-token phrase"
+        },
+        {
+          "display": "La gare est au coin",
+          "cue": "The station is on the corner",
+          "changed": "a different place"
+        },
+        {
+          "display": "La place est loin",
+          "cue": "The square is far",
+          "changed": "another place word"
+        }
+      ],
+      "mistake": {
+        "display": "L'arrêt de le bus est au coin",
+        "why": "de and le fuse into du, and here neither is wanted: L'arrêt de bus."
+      },
+      "usage": "Answering someone who asked where something is.",
+      "register": "neutral",
+      "mnemonic": "A kind of thing goes bare after de."
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "Prenez la première rue à droite",
+      "cue": "Take the first street on the right",
+      "literal": "Take the first street to right",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "première",
+            "cue": "first (feminine)",
+            "tag": "free",
+            "forms": [
+              "premier",
+              "premiers",
+              "premières"
+            ],
+            "note": "The masculine premier has an acute-less e that becomes grave in the feminine — première — to keep the sound, exactly as léger did."
+          },
+          {
+            "display": "train",
+            "cue": "train",
+            "tag": "free",
+            "forms": [
+              "trains"
+            ],
+            "note": "The ain is nasal and no n is said. en train is by rail; le train is the thing itself."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "première goes in FRONT of the noun, because ordinals always do. It is not on M3's list of exceptions — ordinals are a class of their own and never follow.",
+      "sound": "pruh-NAY la pruh-MYEHR RÜ a DRWAT. The è of première is open.",
+      "variations": [
+        {
+          "display": "Prenez la première rue à gauche",
+          "cue": "Take the first street on the left",
+          "changed": "the other direction"
+        },
+        {
+          "display": "Prenez le premier bus",
+          "cue": "Take the first bus",
+          "changed": "masculine, so the other spelling"
+        },
+        {
+          "display": "Il faut prendre la première rue à droite",
+          "cue": "You have to take the first street on the right",
+          "changed": "the obligation frame instead of the order"
+        }
+      ],
+      "mistake": {
+        "display": "Prenez la rue première à droite",
+        "why": "Ordinals go in front: Prenez la première rue à droite."
+      },
+      "usage": "The precise half of a set of directions.",
+      "register": "formal",
+      "mnemonic": "Ordinals always go in front."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "Pardon, où est la gare?",
+      "cue": "Excuse me, where is the station?"
+    },
+    {
+      "id": "L2-M4-C02",
+      "display": "Tournez à gauche au feu",
+      "cue": "Turn left at the lights"
+    },
+    {
+      "id": "L2-M4-C03",
+      "display": "Allez tout droit, puis à droite",
+      "cue": "Go straight on, then right"
+    },
+    {
+      "id": "L2-M4-C04",
+      "display": "Prenez le bus, puis le métro",
+      "cue": "Take the bus, then the metro"
+    },
+    {
+      "id": "L2-M4-C05",
+      "display": "Je vais en bus",
+      "cue": "I go by bus"
+    },
+    {
+      "id": "L2-M4-C06",
+      "display": "Je vais à pied, pas en voiture",
+      "cue": "I'm walking, not driving"
+    },
+    {
+      "id": "L2-M4-C07",
+      "display": "Il faut tourner à gauche",
+      "cue": "You have to turn left"
+    },
+    {
+      "id": "L2-M4-C08",
+      "display": "C'est loin, ou c'est près?",
+      "cue": "Is it far, or is it near?"
+    },
+    {
+      "id": "L2-M4-C09",
+      "display": "L'arrêt de bus est au coin",
+      "cue": "The bus stop is on the corner"
+    },
+    {
+      "id": "L2-M4-C10",
+      "display": "Prenez la première rue à droite",
+      "cue": "Take the first street on the right"
+    },
+    {
+      "id": "L2-M4-C11",
+      "display": "Je vais en avion",
+      "cue": "I go by plane"
+    },
+    {
+      "id": "L2-M4-C12",
+      "display": "Il faut prendre le bus",
+      "cue": "You have to take the bus"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

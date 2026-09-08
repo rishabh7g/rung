@@ -1,0 +1,670 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M9",
+  "title": "Comparing and choosing",
+  "job": "More, less, better — stating a preference",
+  "prerequisites": [
+    "L2-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "A + est + plus + Adj + que + B",
+      "A + est + moins + Adj + que + B",
+      "le/la plus + Adj",
+      "A + est + meilleur que + B",
+      "Je préfère + ce/cette + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "THE COMPARATIVE IS TWO WORDS AROUND AN UNCHANGED ADJECTIVE: plus grand que, moins cher que, aussi grand que. English forks between -er and \"more\" and French does not fork at all — nothing bends but the adjective's own agreement, which M3 already taught."
+    },
+    {
+      "tag": "delta",
+      "text": "The superlative adds the article to the same frame — le plus grand, la moins chère — and marks the group with DE and not \"in\": le plus grand de la ville. That preposition is the half English speakers miss, because \"the biggest in the city\" gives no warning of it."
+    },
+    {
+      "tag": "interference",
+      "text": "meilleur against mieux is French keeping apart what English merges. meilleur is the ADJECTIVE — C'est le meilleur restaurant — and mieux is the ADVERB — On mange mieux ici. plus bon and plus bien are the errors that \"add plus\" produces, and neither is French. Italian splits the same pair and Spanish does not, so the three courses genuinely disagree here."
+    },
+    {
+      "tag": "free",
+      "text": "que is L1-M9's word, where it means \"that\". The comparative que is the same key doing a second job, so nothing new is opened for it — and plus has a pronunciation fork worth listening for: the s is silent in plus grand and sounded in plus de and in plus standing alone."
+    },
+    {
+      "tag": "delta",
+      "text": "Choosing needs ce, cet, cette and ces — with cet before a vowel, the same euphonic instinct as M2's mon amie and M3's bel — and quel, which is an ADJECTIVE and bends with its noun: Quel livre? Quelle voiture? The standalone forms celui-ci and lequel are L3's; a learner can choose with quel plus a noun and does not need two systems at once."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M9-S01",
+      "display": "La ville est plus grande que le village",
+      "cue": "The town is bigger than the village",
+      "literal": "The town is more big that the village",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "plus",
+            "cue": "more",
+            "tag": "delta",
+            "forms": [],
+            "note": "It goes in front and the adjective does not change. The s is SILENT here — plü grand — and sounded when plus stands alone or takes de."
+          },
+          {
+            "display": "moins",
+            "cue": "less",
+            "tag": "free",
+            "forms": [],
+            "note": "plus's opposite, built the same way. It also does the quarter-to on a clock — sept heures moins le quart — which M6 pointed forward to."
+          },
+          {
+            "display": "village",
+            "cue": "village",
+            "tag": "free",
+            "forms": [
+              "villages"
+            ],
+            "note": "Masculine, and the ill is the soft y of ville. A ville is a town of any size; a village is smaller than the smallest of them."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Nothing happens to grand beyond its ordinary agreement. English would say bigger and French says more big, which leaves the adjective only its gender and number to worry about.",
+      "sound": "plü GRAHND kuh luh vee-LAZH. The s of plus is silent in front of an adjective.",
+      "variations": [
+        {
+          "display": "Le village est moins grand que la ville",
+          "cue": "The village is smaller than the town",
+          "changed": "the other way round"
+        },
+        {
+          "display": "La voiture est plus chère que le vélo",
+          "cue": "The car is more expensive than the bike",
+          "changed": "a different pair"
+        },
+        {
+          "display": "Le train est moins cher que la voiture",
+          "cue": "The train is cheaper than the car",
+          "changed": "L1-M8's adjective"
+        }
+      ],
+      "mistake": {
+        "display": "La ville est plus grand que le village",
+        "why": "ville is feminine: La ville est plus grande que le village."
+      },
+      "usage": "Comparing two places, two prices, two anything.",
+      "register": "neutral",
+      "mnemonic": "The adjective never changes for the comparison."
+    },
+    {
+      "id": "L2-M9-S02",
+      "display": "Le vélo est aussi cher que le train",
+      "cue": "The bike is as expensive as the train",
+      "literal": "The bike is also dear that the train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aussi",
+            "cue": "as · also",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M10's word for \"also\", doing the equality job here. aussi … que is \"as … as\", and it is the same word in both readings."
+          },
+          {
+            "display": "ville",
+            "cue": "town · city",
+            "tag": "free",
+            "forms": [
+              "villes"
+            ],
+            "note": "The ill is the soft y of fille. En ville means in town, with no article at all."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "aussi is one word doing two jobs, and only the que after it says which. Moi aussi is \"me too\"; aussi grand que is \"as big as\".",
+      "sound": "luh vay-LO eh o-SEE SHEHR kuh luh TRAN. The aussi is two syllables with a pure o.",
+      "variations": [
+        {
+          "display": "Le vélo est aussi grand que le train",
+          "cue": "The bike is as big as the train",
+          "changed": "a different quality"
+        },
+        {
+          "display": "La voiture est aussi chère que le train",
+          "cue": "The car is as expensive as the train",
+          "changed": "a feminine subject, so the adjective agrees"
+        },
+        {
+          "display": "Le vélo n'est pas aussi cher que le train",
+          "cue": "The bike isn't as expensive as the train",
+          "changed": "negated"
+        }
+      ],
+      "mistake": {
+        "display": "Le vélo est aussi cher comme le train",
+        "why": "The equality frame takes que: aussi cher que le train."
+      },
+      "usage": "Saying two things are the same size, price or quality.",
+      "register": "neutral",
+      "mnemonic": "aussi … que — as … as."
+    },
+    {
+      "id": "L2-M9-S03",
+      "display": "C'est le plus grand restaurant de la ville",
+      "cue": "It's the biggest restaurant in the city",
+      "literal": "It-is the most big restaurant of the city",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "restaurant",
+            "cue": "restaurant",
+            "tag": "free",
+            "forms": [
+              "restaurants"
+            ],
+            "note": "The final t is silent and the au is a pure o. A smaller, plainer place is a bistrot or a brasserie."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The group is marked with DE and not with a word for \"in\". de la ville, never dans la ville — and English's \"in the city\" gives no warning of it.",
+      "sound": "luh plü grahn res-to-RAHN duh la VEEL. The s of plus is still silent.",
+      "variations": [
+        {
+          "display": "C'est le plus petit restaurant de la ville",
+          "cue": "It's the smallest restaurant in the city",
+          "changed": "the opposite"
+        },
+        {
+          "display": "C'est la plus grande ville de la ville",
+          "cue": "It's the biggest city in the city",
+          "changed": "feminine, and a country as the group"
+        },
+        {
+          "display": "C'est le moins cher de la ville",
+          "cue": "It's the cheapest in the city",
+          "changed": "moins, and no noun after it"
+        }
+      ],
+      "mistake": {
+        "display": "C'est le plus grand restaurant dans la ville",
+        "why": "The group takes de: le plus grand restaurant de la ville."
+      },
+      "usage": "Recommending the best of several.",
+      "register": "neutral",
+      "mnemonic": "The group takes de, never dans."
+    },
+    {
+      "id": "L2-M9-S04",
+      "display": "C'est le meilleur restaurant",
+      "cue": "It's the best restaurant",
+      "literal": "It-is the better restaurant",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meilleur",
+            "cue": "better · best (adjective)",
+            "tag": "delta",
+            "forms": [
+              "meilleurs"
+            ],
+            "note": "The adjective, and it goes in FRONT of the noun. plus bon does not exist — this word replaces the whole frame."
+          },
+          {
+            "display": "meilleure",
+            "cue": "better (feminine)",
+            "tag": "free",
+            "forms": [
+              "meilleures"
+            ],
+            "note": "The feminine, which sounds exactly the same. The ill is the soft y and the extra e changes nothing you can hear."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "meilleur has no plus in front of it and needs none. It IS the comparative of bon, and adding plus is the error the \"add plus\" slogan produces.",
+      "sound": "may-YUHR. Three sounds, the ill a soft y, and the final r at the back.",
+      "variations": [
+        {
+          "display": "C'est la meilleure ville de la ville",
+          "cue": "It's the best city in the city",
+          "changed": "feminine — and it still sounds the same"
+        },
+        {
+          "display": "C'est meilleur que le vélo",
+          "cue": "It's better than the bike",
+          "changed": "a comparison rather than a superlative"
+        },
+        {
+          "display": "C'est le meilleur",
+          "cue": "It's the best",
+          "changed": "with no noun after it"
+        }
+      ],
+      "mistake": {
+        "display": "C'est le plus bon restaurant",
+        "why": "bon's comparative is meilleur: C'est le meilleur restaurant."
+      },
+      "usage": "Recommending somewhere, which is the sentence asked for most.",
+      "register": "neutral",
+      "mnemonic": "meilleur already is the comparative."
+    },
+    {
+      "id": "L2-M9-S05",
+      "display": "On mange mieux ici",
+      "cue": "The food is better here",
+      "literal": "One eats better here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mieux",
+            "cue": "better (adverb)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The adverb, invariable, and only ever about an ACTION. meilleur describes a thing; mieux describes how something is done."
+          },
+          {
+            "display": "pire",
+            "cue": "worse",
+            "tag": "free",
+            "forms": [
+              "pires"
+            ],
+            "note": "meilleur's opposite as an adjective. plus mauvais also exists and is commoner in speech; pire is the shorter and sharper of the two."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "meilleur describes a thing and mieux describes an action, and getting them the wrong way round is the single commonest French mistake an English speaker makes.",
+      "sound": "on MAHNZH myuh ee-SEE. mieux is one syllable and ends in the rounded vowel.",
+      "variations": [
+        {
+          "display": "On mange mieux en ville",
+          "cue": "The food is better in town",
+          "changed": "a named place"
+        },
+        {
+          "display": "C'est le meilleur restaurant ici",
+          "cue": "It's the best restaurant here",
+          "changed": "the adjective, about the place itself"
+        },
+        {
+          "display": "C'est pire que le vélo",
+          "cue": "It's worse than the bike",
+          "changed": "the opposite adjective"
+        }
+      ],
+      "mistake": {
+        "display": "On mange meilleur ici",
+        "why": "An action takes the adverb: On mange mieux ici."
+      },
+      "usage": "Comparing two places to eat.",
+      "register": "neutral",
+      "mnemonic": "meilleur a thing, mieux an action."
+    },
+    {
+      "id": "L2-M9-S06",
+      "display": "Je préfère ce livre",
+      "cue": "I prefer this book",
+      "literal": "I prefer this book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "préfère",
+            "cue": "I prefer",
+            "tag": "free",
+            "forms": [
+              "préférer"
+            ],
+            "note": "The middle é becomes è when the ending is silent — je préfère but préférer. That is a spelling rule that follows the sound."
+          },
+          {
+            "display": "ce",
+            "cue": "this (masculine)",
+            "tag": "free",
+            "forms": [],
+            "note": "In front of a masculine noun starting with a consonant. It is the same spelling as L1's ce in c'est, and both are this course's."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "French does not distinguish this from that here. ce livre is both, and -ci and -là can be added to force the difference — a device this level names and does not need.",
+      "sound": "zhuh pray-FEHR suh LEEVR. The è is open and the final e is silent.",
+      "variations": [
+        {
+          "display": "Je préfère cette voiture",
+          "cue": "I prefer this car",
+          "changed": "a feminine noun"
+        },
+        {
+          "display": "Je préfère ces livres",
+          "cue": "I prefer these books",
+          "changed": "plural — one form for both genders"
+        },
+        {
+          "display": "Tu préfères ce livre?",
+          "cue": "Do you prefer this book?",
+          "changed": "asking a friend"
+        }
+      ],
+      "mistake": {
+        "display": "Je préfère cette livre",
+        "why": "livre is masculine: Je préfère ce livre."
+      },
+      "usage": "In a shop, choosing between two things on the counter.",
+      "register": "neutral",
+      "mnemonic": "One word for this and that."
+    },
+    {
+      "id": "L2-M9-S07",
+      "display": "Je préfère cet appartement",
+      "cue": "I prefer this flat",
+      "literal": "I prefer this flat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cet",
+            "cue": "this (masculine, before a vowel)",
+            "tag": "delta",
+            "forms": [],
+            "note": "ce's pre-vowel shape, and it sounds exactly like the feminine cette. The spelling is the only difference between them."
+          },
+          {
+            "display": "cette",
+            "cue": "this (feminine)",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine, and it is said the same as cet. Which one to write is decided by the noun's gender, and nothing in the sound helps."
+          },
+          {
+            "display": "ces",
+            "cue": "these (plural)",
+            "tag": "free",
+            "forms": [],
+            "note": "One form for both genders in the plural, as mes and ses are. The plural is always the easy cell."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "cet and cette sound identical and mean different things. Only the noun says which to write, and the learner has to know its gender before they can spell the sentence.",
+      "sound": "set a-par-tuh-MON. The t of cet links straight onto the vowel.",
+      "variations": [
+        {
+          "display": "Je préfère cet homme",
+          "cue": "I prefer this man",
+          "changed": "a silent h, which counts as a vowel"
+        },
+        {
+          "display": "Je préfère cette maison",
+          "cue": "I prefer this house",
+          "changed": "feminine — and it sounds the same"
+        },
+        {
+          "display": "Je préfère ces appartements",
+          "cue": "I prefer these flats",
+          "changed": "plural, where the problem disappears"
+        }
+      ],
+      "mistake": {
+        "display": "Je préfère ce appartement",
+        "why": "A vowel takes cet: Je préfère cet appartement."
+      },
+      "usage": "Choosing between two places, and the shape trips every learner once.",
+      "register": "neutral",
+      "mnemonic": "cet and cette sound the same. Only the noun decides."
+    },
+    {
+      "id": "L2-M9-S08",
+      "display": "Quel livre est-ce que tu préfères?",
+      "cue": "Which book do you prefer?",
+      "literal": "Which book is-it that you prefer?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quel",
+            "cue": "which (masculine)",
+            "tag": "delta",
+            "forms": [
+              "quels"
+            ],
+            "note": "An ADJECTIVE, so it agrees with its noun. That is what separates it from a bare question word, and English's \"which\" gives no warning."
+          },
+          {
+            "display": "quelle",
+            "cue": "which (feminine)",
+            "tag": "free",
+            "forms": [
+              "quelles"
+            ],
+            "note": "The feminine, and it sounds exactly like quel. L1-M4's à quelle heure was this word all along, inside a whole phrase."
+          },
+          {
+            "display": "préfères",
+            "cue": "you prefer",
+            "tag": "free",
+            "forms": [
+              "préférez"
+            ],
+            "note": "The tu cell, with the same è as je préfère. The vous cell préférez has the acute back, because its ending is sounded."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "quel agrees with its noun because it is an adjective. M1's est-ce que carries the question, so nothing new is needed to ask it.",
+      "sound": "kel LEEVR ess-kuh tü pray-FEHR. The marker collapses to two syllables.",
+      "variations": [
+        {
+          "display": "Quelle voiture est-ce que tu préfères?",
+          "cue": "Which car do you prefer?",
+          "changed": "feminine — and it sounds the same"
+        },
+        {
+          "display": "Quels livres est-ce que tu préfères?",
+          "cue": "Which books do you prefer?",
+          "changed": "plural"
+        },
+        {
+          "display": "Quel livre est-ce que vous préférez?",
+          "cue": "Which book do you prefer?",
+          "changed": "to someone you do not know"
+        }
+      ],
+      "mistake": {
+        "display": "Quelle livre est-ce que tu préfères?",
+        "why": "livre is masculine: Quel livre est-ce que tu préfères?"
+      },
+      "usage": "Offering a choice — in a shop, at a table, over a menu.",
+      "register": "informal",
+      "mnemonic": "quel agrees, because it is an adjective."
+    },
+    {
+      "id": "L2-M9-S09",
+      "display": "Je préfère le train à la voiture",
+      "cue": "I prefer the train to the car",
+      "literal": "I prefer the train to the car",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "préférer",
+            "cue": "to prefer",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive, with both é's acute because the ending is sounded. It takes a noun or another infinitive after it."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "préférer takes à and not que. Je préfère le train que l'avion is what an English speaker writes, and the comparison word does not belong here at all.",
+      "sound": "zhuh pray-FEHR luh tran a la vwa-TÜR. The à and la stay separate — no elision in front of a consonant.",
+      "variations": [
+        {
+          "display": "Je préfère le vélo au train",
+          "cue": "I prefer the bike to the train",
+          "changed": "a feminine second thing"
+        },
+        {
+          "display": "Je préfère marcher",
+          "cue": "I prefer to walk",
+          "changed": "an infinitive rather than a noun"
+        },
+        {
+          "display": "Tu préfères le train ou la voiture?",
+          "cue": "Do you prefer the train or the car?",
+          "changed": "the question, with ou"
+        }
+      ],
+      "mistake": {
+        "display": "Je préfère le train que la voiture",
+        "why": "préférer takes à: Je préfère le train à la voiture."
+      },
+      "usage": "Stating a preference, which French does without hedging.",
+      "register": "neutral",
+      "mnemonic": "préférer takes à, not que."
+    },
+    {
+      "id": "L2-M9-S10",
+      "display": "Ce restaurant est meilleur, mais plus cher",
+      "cue": "This restaurant is better, but more expensive",
+      "literal": "This restaurant is better, but more dear",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "marcher",
+            "cue": "to walk",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive behind M6's and M8's marche. Its literal sense is walking, and everything else it does grew out of that."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "meilleur takes no plus and cher does. One is already a comparative and the other is an ordinary adjective, and the same sentence holds both.",
+      "sound": "may-YUHR meh plü SHEHR. The s of plus is silent in front of the adjective.",
+      "variations": [
+        {
+          "display": "Ce restaurant est pire, mais moins cher",
+          "cue": "This restaurant is worse, but cheaper",
+          "changed": "both verdicts reversed"
+        },
+        {
+          "display": "Cette ville est meilleure, mais plus chère",
+          "cue": "This city is better, but more expensive",
+          "changed": "feminine throughout"
+        },
+        {
+          "display": "Ce restaurant est le meilleur de la ville",
+          "cue": "This restaurant is the best in the city",
+          "changed": "the superlative"
+        }
+      ],
+      "mistake": {
+        "display": "Ce restaurant est plus meilleur, mais plus cher",
+        "why": "meilleur is already comparative: Ce restaurant est meilleur, mais plus cher."
+      },
+      "usage": "The honest recommendation, with the catch attached.",
+      "register": "neutral",
+      "mnemonic": "One word already comparative, one word not."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M9-C01",
+      "display": "La ville est plus grande que le village",
+      "cue": "The town is bigger than the village"
+    },
+    {
+      "id": "L2-M9-C02",
+      "display": "Le vélo est aussi cher que le train",
+      "cue": "The bike is as expensive as the train"
+    },
+    {
+      "id": "L2-M9-C03",
+      "display": "C'est le plus grand restaurant de la ville",
+      "cue": "It's the biggest restaurant in the city"
+    },
+    {
+      "id": "L2-M9-C04",
+      "display": "C'est le meilleur restaurant",
+      "cue": "It's the best restaurant"
+    },
+    {
+      "id": "L2-M9-C05",
+      "display": "On mange mieux ici",
+      "cue": "The food is better here"
+    },
+    {
+      "id": "L2-M9-C06",
+      "display": "Je préfère ce livre",
+      "cue": "I prefer this book"
+    },
+    {
+      "id": "L2-M9-C07",
+      "display": "Je préfère cet appartement",
+      "cue": "I prefer this flat"
+    },
+    {
+      "id": "L2-M9-C08",
+      "display": "Quel livre est-ce que tu préfères?",
+      "cue": "Which book do you prefer?"
+    },
+    {
+      "id": "L2-M9-C09",
+      "display": "Je préfère le train à la voiture",
+      "cue": "I prefer the train to the car"
+    },
+    {
+      "id": "L2-M9-C10",
+      "display": "Ce restaurant est meilleur, mais plus cher",
+      "cue": "This restaurant is better, but more expensive"
+    },
+    {
+      "id": "L2-M9-C11",
+      "display": "Le train est moins cher que la voiture",
+      "cue": "The train is cheaper than the car"
+    },
+    {
+      "id": "L2-M9-C12",
+      "display": "Je préfère cette voiture",
+      "cue": "I prefer this car"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

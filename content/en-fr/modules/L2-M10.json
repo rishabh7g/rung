@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M10",
+  "title": "Telling what happened",
+  "job": "A four-sentence account in the past",
+  "prerequisites": [
+    "L2-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "past_perfect_compound",
+      "imperfect"
+    ],
+    "allowedPatterns": [
+      "<imparfait background> + , + <passé composé event>",
+      "D'abord + <passé composé> + , + ensuite + <passé composé>",
+      "Il y avait + <N> + , + alors + <passé composé>",
+      "Enfin + <passé composé>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "TWO PASTS, TWO JOBS. The imparfait paints the standing situation a story happens against — what was already going on, what things were like, the weather, a habit, an age. The passé composé moves the account forward one completed step at a time. Il était tard et il n'y avait personne. Alors j'ai appelé Anne. L1-M5 shipped the second and never taught the choice; this is where it is taught."
+    },
+    {
+      "tag": "interference",
+      "text": "THE SLOGAN TO KILL: \"one is for completed actions and the other for ongoing ones\". It breaks on the first real account. Hier j'ai mangé à sept heures is completed. Je mangeais quand tu as appelé is not \"ongoing\" in any objective sense — it is background for the call. Quand j'étais petit, j'allais toujours à la mer is a habit and not a duration. What decides it is the ROLE the clause plays in the telling."
+    },
+    {
+      "tag": "delta",
+      "text": "THE AUXILIARY LAW, written down at last: être for the movement and change-of-state verbs — aller, venir, partir, rester, rentrer, arriver — and for reflexives, with the participle agreeing with the SUBJECT in gender and number. avoir for everything else, with no agreement at all. L1 taught the agreement by example in allée and restée; here is the rule behind it."
+    },
+    {
+      "tag": "free",
+      "text": "The sequencers are the honest new spend: d'abord, ensuite and enfin, beside L1-M10's puis, et puis and alors. Each account is four short sentences rather than one long one, and almost every word in them comes from L1 and from M1–M9."
+    },
+    {
+      "tag": "free",
+      "text": "Nothing new is opened. The plus-que-parfait, the subjunctive, the conditional beyond M1's frozen je voudrais, and reported speech all stay OUT and belong to L3 — which is why an account here reports what happened and never what anyone said about it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M10-S01",
+      "display": "Il était tard. Il n'y avait personne. Alors j'ai appelé Anne",
+      "cue": "It was late. There was nobody. So I called Anne",
+      "literal": "It was late. It not-there had nobody. So I-have called Anne",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "était",
+            "cue": "was",
+            "tag": "delta",
+            "forms": [
+              "étais"
+            ],
+            "note": "The imparfait of être. It says what things were LIKE and does not move the story on — which is the whole of what the tense does."
+          },
+          {
+            "display": "il y avait",
+            "cue": "there was · there were",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's il y a in the imparfait, and one whole surface as that one is. It covers both English numbers."
+          },
+          {
+            "display": "personne",
+            "cue": "nobody · person",
+            "tag": "interference",
+            "forms": [],
+            "note": "With ne in front of the verb it means nobody; on its own it is a person. The negative reading needs that ne and cannot do without it."
+          },
+          {
+            "display": "tard",
+            "cue": "late",
+            "tag": "free",
+            "forms": [],
+            "note": "The d is silent. Il est tard is late in the day; en retard is late for something, and the two are not swapped."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Two imparfaits set the scene and one passé composé moves it. That is the whole architecture of a French account, visible in three short sentences.",
+      "sound": "ee-lay-TAR. eel nya-VAY per-SON. a-LOR zhay a-puh-LAY AN. The imparfait endings all run to the same -ait sound.",
+      "variations": [
+        {
+          "display": "Il était tard. Alors j'ai appelé Anne",
+          "cue": "It was late. So I called Anne",
+          "changed": "two steps instead of three"
+        },
+        {
+          "display": "Il n'y avait personne. Alors je suis rentré",
+          "cue": "There was nobody. So I went home",
+          "changed": "movement, so être and an agreeing participle"
+        },
+        {
+          "display": "Il était tard et il n'y avait personne",
+          "cue": "It was late and there was nobody",
+          "changed": "the two halves of the scene, joined"
+        }
+      ],
+      "mistake": {
+        "display": "Il était tard. Il y avait personne. Alors j'ai appelé Anne",
+        "why": "The negative reading needs its ne: Il n'y avait personne."
+      },
+      "usage": "Opening an account — the situation first, then what you did about it.",
+      "register": "neutral",
+      "mnemonic": "Imparfait sets the scene. Passé composé moves it."
+    },
+    {
+      "id": "L2-M10-S02",
+      "display": "Je mangeais quand tu as appelé",
+      "cue": "I was eating when you called",
+      "literal": "I was-eating when you have called",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mangeais",
+            "cue": "I was eating",
+            "tag": "delta",
+            "forms": [],
+            "note": "The imparfait of L1-M3's manger. The e before the a keeps the g soft — mangeais, not mangais."
+          },
+          {
+            "display": "quand",
+            "cue": "when",
+            "tag": "free",
+            "forms": [],
+            "note": "It glues the two tenses together: background before it, event after it. It also asks a question — Quand est-ce que tu es rentré?"
+          },
+          {
+            "display": "arrivé",
+            "cue": "arrived",
+            "tag": "free",
+            "forms": [
+              "arrivée",
+              "arrivés",
+              "arrivées"
+            ],
+            "note": "The participle of arriver. Movement, so être and agreement — il est arrivé, elle est arrivée."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The eating and the call took the same kind of time. What separates them is that one is scenery and the other is the event — a decision about the telling rather than about the world.",
+      "sound": "zhuh mon-ZHAY kon tü a a-puh-LAY. The an of quand is nasal.",
+      "variations": [
+        {
+          "display": "Je travaillais quand tu as appelé",
+          "cue": "I was working when you called",
+          "changed": "a different background"
+        },
+        {
+          "display": "Je mangeais quand il est arrivé",
+          "cue": "I was eating when he arrived",
+          "changed": "an arrival, so être and agreement"
+        },
+        {
+          "display": "Hier j'ai mangé à sept heures",
+          "cue": "Yesterday I ate at seven",
+          "changed": "a completed step — the same verb, the other tense"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai mangé quand tu as appelé",
+        "why": "The background clause is imparfait: Je mangeais quand tu as appelé."
+      },
+      "usage": "Explaining what you were in the middle of.",
+      "register": "informal",
+      "mnemonic": "Background imparfait, event passé composé."
+    },
+    {
+      "id": "L2-M10-S03",
+      "display": "Hier il pleuvait. Je suis resté à la maison",
+      "cue": "Yesterday it was raining. I stayed at home",
+      "literal": "Yesterday it was-raining. I am stayed at the house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pleuvait",
+            "cue": "it was raining",
+            "tag": "free",
+            "forms": [],
+            "note": "The imparfait of L1-M9's il pleut. Weather is almost always imparfait in an account, because it is the scenery rather than an event."
+          },
+          {
+            "display": "travaillais",
+            "cue": "I was working",
+            "tag": "free",
+            "forms": [],
+            "note": "The imparfait of L1-M1's travailler. Every -er verb takes the same -ais, -ait, -ions endings, so the class is regular throughout."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "rester takes être even though nothing moves. The law is \"movement and change of state\", and French counts staying put as the second — a place the rule has to be learnt rather than reasoned out.",
+      "sound": "eel pluh-VAY. zhuh swee res-TAY. The eu of pleuvait is the rounded vowel.",
+      "variations": [
+        {
+          "display": "Hier il pleuvait. Je suis restée à la maison",
+          "cue": "Yesterday it was raining. I stayed at home",
+          "changed": "said by a woman, so the participle agrees"
+        },
+        {
+          "display": "Il faisait froid. Je suis resté à la maison",
+          "cue": "It was cold. I stayed at home",
+          "changed": "a different kind of weather"
+        },
+        {
+          "display": "Hier il pleuvait. J'ai pris le bus",
+          "cue": "Yesterday it was raining. I took the bus",
+          "changed": "avoir, and no agreement at all"
+        }
+      ],
+      "mistake": {
+        "display": "Hier il pleuvait. J'ai resté à la maison",
+        "why": "rester takes être: Je suis resté à la maison."
+      },
+      "usage": "Explaining a day that did not go to plan.",
+      "register": "neutral",
+      "mnemonic": "Weather is scenery, so imparfait."
+    },
+    {
+      "id": "L2-M10-S04",
+      "display": "Il faisait froid et je n'avais pas ma clé",
+      "cue": "It was cold and I didn't have my key",
+      "literal": "It was-making cold and I not-had not my key",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "faisait",
+            "cue": "it was (of weather)",
+            "tag": "delta",
+            "forms": [
+              "faisais",
+              "chaud"
+            ],
+            "note": "French MAKES weather rather than being it: il fait froid, il faisait chaud. L1-M9's own idiom, in the imparfait — and chaud is its other half."
+          },
+          {
+            "display": "avais",
+            "cue": "I had",
+            "tag": "free",
+            "forms": [
+              "avait",
+              "n'avais"
+            ],
+            "note": "The imparfait of avoir. Having something is a state rather than an event, so it is nearly always this tense. Negated it elides: je n'avais pas."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Both halves are imparfait because neither is a step. Nothing has happened yet in this sentence — it is entirely scene-setting, and the account has not started to move.",
+      "sound": "eel fuh-ZAY FRWA ay zhuh na-VAY pa ma KLAY. The ai of faisait is said uh, unusually.",
+      "variations": [
+        {
+          "display": "Il faisait chaud et je n'avais pas d'eau",
+          "cue": "It was hot and I had no water",
+          "changed": "the opposite weather, and M5's negated partitive"
+        },
+        {
+          "display": "Il faisait froid. Je suis rentré",
+          "cue": "It was cold. I went home",
+          "changed": "with a step after the scene"
+        },
+        {
+          "display": "Je n'avais pas ma clé",
+          "cue": "I didn't have my key",
+          "changed": "the second half alone"
+        }
+      ],
+      "mistake": {
+        "display": "Il était froid et je n'avais pas ma clé",
+        "why": "Weather is made, not been: Il faisait froid."
+      },
+      "usage": "Setting up a story that is about to go wrong.",
+      "register": "neutral",
+      "mnemonic": "French makes the weather."
+    },
+    {
+      "id": "L2-M10-S05",
+      "display": "D'abord j'ai mangé, ensuite je suis sorti",
+      "cue": "First I ate, then I went out",
+      "literal": "At-first I-have eaten, next I am gone-out",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "d'abord",
+            "cue": "first · to begin with",
+            "tag": "free",
+            "forms": [],
+            "note": "An elision, so one index key. It opens an account, and ensuite and enfin follow it."
+          },
+          {
+            "display": "ensuite",
+            "cue": "then · next",
+            "tag": "free",
+            "forms": [],
+            "note": "A step after the first one. L1-M10's puis does the same job and is shorter; ensuite is the one that pairs with d'abord."
+          },
+          {
+            "display": "sorti",
+            "cue": "gone out",
+            "tag": "free",
+            "forms": [
+              "sortie",
+              "sortis",
+              "sorties"
+            ],
+            "note": "The participle of sortir, and movement, so être and agreement. A woman says je suis sortie."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "One sentence, two auxiliaries: ai with manger and suis with sortir. Nothing about the meaning of the two events differs — only whether the verb involves movement.",
+      "sound": "da-BOR zhay mon-ZHAY on-SWEET zhuh swee sor-TEE. The apostrophe of d'abord is a join.",
+      "variations": [
+        {
+          "display": "D'abord j'ai mangé, ensuite je suis sortie",
+          "cue": "First I ate, then I went out",
+          "changed": "said by a woman"
+        },
+        {
+          "display": "D'abord je suis sorti, ensuite j'ai mangé",
+          "cue": "First I went out, then I ate",
+          "changed": "the order swapped, and the auxiliaries with it"
+        },
+        {
+          "display": "J'ai mangé, puis je suis sorti",
+          "cue": "I ate, then I went out",
+          "changed": "L1-M10's shorter sequencer"
+        }
+      ],
+      "mistake": {
+        "display": "D'abord j'ai mangé, ensuite j'ai sorti",
+        "why": "Movement takes être: ensuite je suis sorti."
+      },
+      "usage": "Telling someone the order things happened in.",
+      "register": "neutral",
+      "mnemonic": "Movement takes être and agrees."
+    },
+    {
+      "id": "L2-M10-S06",
+      "display": "J'ai perdu mon billet. Enfin j'ai pris le bus",
+      "cue": "I lost my ticket. In the end I took the bus",
+      "literal": "I-have lost my ticket. Finally I-have taken the bus",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "enfin",
+            "cue": "in the end · finally",
+            "tag": "free",
+            "forms": [],
+            "note": "It closes an account and marks the last step rather than merely the latest. The in is nasal and no n is said."
+          },
+          {
+            "display": "pris",
+            "cue": "taken",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of prendre. With avoir it does not agree, and its shape has to be learnt — it is nothing like the infinitive."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Both verbs take avoir and neither participle agrees. That is the easy half of the law — with avoir nothing on the end ever moves.",
+      "sound": "on-FAN zhay pree luh BÜSS. The s of pris is silent.",
+      "variations": [
+        {
+          "display": "J'ai perdu mon billet. Enfin je suis rentré",
+          "cue": "I lost my ticket. In the end I went home",
+          "changed": "movement in the second half, so être"
+        },
+        {
+          "display": "Enfin j'ai pris le bus",
+          "cue": "In the end I took the bus",
+          "changed": "the second half alone"
+        },
+        {
+          "display": "J'ai perdu mon billet. Puis j'ai pris le bus",
+          "cue": "I lost my ticket. Then I took the bus",
+          "changed": "puis rather than enfin — a step, not the last one"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai perdu mon billet. Enfin j'ai prise le bus",
+        "why": "With avoir the participle does not agree: j'ai pris le bus."
+      },
+      "usage": "The story of a journey that went wrong and then worked out.",
+      "register": "neutral",
+      "mnemonic": "With avoir, nothing agrees."
+    },
+    {
+      "id": "L2-M10-S07",
+      "display": "Il y avait beaucoup de monde. Alors je suis rentré",
+      "cue": "There were a lot of people. So I went home",
+      "literal": "It there had much of world. So I am returned",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "monde",
+            "cue": "people · world",
+            "tag": "interference",
+            "forms": [],
+            "note": "beaucoup de monde is \"a lot of people\", and the word literally means world. It is singular, so nothing around it goes plural."
+          },
+          {
+            "display": "rentré",
+            "cue": "gone home",
+            "tag": "free",
+            "forms": [
+              "rentrée",
+              "rentrés",
+              "rentrées"
+            ],
+            "note": "L1-M9's rentrer. Movement, so être and agreement — je suis rentré for a man, rentrée for a woman."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "monde is singular and \"people\" is plural. Translating the English number would put a plural verb where French wants a singular one.",
+      "sound": "eel nya-VAY bo-KOO duh MOND. The p of beaucoup is silent.",
+      "variations": [
+        {
+          "display": "Il y avait beaucoup de monde. Alors je suis rentrée",
+          "cue": "There were a lot of people. So I went home",
+          "changed": "said by a woman"
+        },
+        {
+          "display": "Il n'y avait pas beaucoup de monde",
+          "cue": "There weren't many people",
+          "changed": "negated"
+        },
+        {
+          "display": "Il y avait beaucoup de monde au cinéma",
+          "cue": "There were a lot of people at the cinema",
+          "changed": "with a place"
+        }
+      ],
+      "mistake": {
+        "display": "Il y avaient beaucoup de monde. Alors je suis rentré",
+        "why": "il y avait never changes: Il y avait beaucoup de monde."
+      },
+      "usage": "Describing a place that was crowded, and what you did about it.",
+      "register": "neutral",
+      "mnemonic": "monde counts as one."
+    },
+    {
+      "id": "L2-M10-S08",
+      "display": "Quand j'étais petit, j'allais toujours à la mer",
+      "cue": "When I was little, I always went to the seaside",
+      "literal": "When I-was little, I-was-going always to the sea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "étais",
+            "cue": "I was · you were",
+            "tag": "free",
+            "forms": [
+              "j'étais"
+            ],
+            "note": "The je and tu cells of the imparfait of être, spelled the same. Before a vowel je elides onto it: j'étais."
+          },
+          {
+            "display": "allais",
+            "cue": "I used to go",
+            "tag": "delta",
+            "forms": [
+              "j'allais",
+              "allés",
+              "allées"
+            ],
+            "note": "A habit, so the imparfait — and a habit is not a duration. English needs \"used to\" here and French needs only the tense. Its participle allé agrees, because aller is movement."
+          },
+          {
+            "display": "mer",
+            "cue": "sea · seaside",
+            "tag": "free",
+            "forms": [
+              "mers"
+            ],
+            "note": "à la mer is the seaside as a place to go. It is feminine, and it sounds exactly like mère, M2's mother."
+          },
+          {
+            "display": "toujours",
+            "cue": "always · still",
+            "tag": "free",
+            "forms": [],
+            "note": "Two jobs on one word: always in a habit, still in the present. The final s is silent and the word never changes."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Nothing here is ongoing and nothing is background. It is a habit, which is the third job the imparfait does — and the one that most clearly breaks the \"ongoing\" slogan.",
+      "sound": "kon zhay-TAY puh-TEE zha-LAY too-ZHOOR a la MEHR. mer and mère are homophones.",
+      "variations": [
+        {
+          "display": "Quand j'étais petite, j'allais toujours à la mer",
+          "cue": "When I was little, I always went to the seaside",
+          "changed": "said by a woman"
+        },
+        {
+          "display": "Quand j'étais petit, je mangeais à la maison",
+          "cue": "When I was little, I ate at home",
+          "changed": "a different habit"
+        },
+        {
+          "display": "J'allais toujours à la mer",
+          "cue": "I always used to go to the seaside",
+          "changed": "without saying when"
+        }
+      ],
+      "mistake": {
+        "display": "Quand j'étais petit, je suis toujours allé à la mer",
+        "why": "A habit takes the imparfait: j'allais toujours à la mer."
+      },
+      "usage": "Talking about childhood, which is where the imparfait lives.",
+      "register": "neutral",
+      "mnemonic": "A habit is not a duration."
+    },
+    {
+      "id": "L2-M10-S09",
+      "display": "Il était tard. J'ai appelé Anne. Enfin nous sommes sortis",
+      "cue": "It was late. I called Anne. In the end we went out",
+      "literal": "It was late. I-have called Anne. Finally we are gone-out",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sommes",
+            "cue": "we are",
+            "tag": "free",
+            "forms": [],
+            "note": "The nous cell of être, and here it is the auxiliary. L1-M10 showed nous sommes allés without opening the word itself."
+          },
+          {
+            "display": "avait",
+            "cue": "he/she had",
+            "tag": "free",
+            "forms": [],
+            "note": "The third-person cell of avais. The whole imparfait of avoir is regular, unlike its present."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Three sentences, one scene and two steps. The scene is imparfait and both steps are passé composé — and the second takes être because going out is movement, so its participle counts us.",
+      "sound": "on-FAN noo som sor-TEE. The s of sortis is silent and the agreement is invisible.",
+      "variations": [
+        {
+          "display": "Il était tard. J'ai appelé Anne",
+          "cue": "It was late. I called Anne",
+          "changed": "two sentences instead of three"
+        },
+        {
+          "display": "J'étais fatigué. Enfin je suis rentré",
+          "cue": "I was tired. In the end I went home",
+          "changed": "a different scene and a different ending"
+        },
+        {
+          "display": "Enfin nous sommes sortis ensemble",
+          "cue": "In the end we went out together",
+          "changed": "with M6's word on the end"
+        }
+      ],
+      "mistake": {
+        "display": "Il était tard. J'ai appelé Anne. Enfin nous avons sortis",
+        "why": "Movement takes être: nous sommes sortis."
+      },
+      "usage": "A whole small account — a situation, a step, an outcome.",
+      "register": "neutral",
+      "mnemonic": "Scene, step, step."
+    },
+    {
+      "id": "L2-M10-S10",
+      "display": "Hier il faisait chaud. Nous sommes allés à la mer. Enfin j'ai dormi",
+      "cue": "Yesterday it was hot. We went to the seaside. In the end I slept",
+      "literal": "Yesterday it was-making hot. We are gone to the sea. Finally I-have slept",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dormi",
+            "cue": "slept",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of L1-M6's dormir. Sleeping is neither movement nor a change of state, so it takes avoir and does not agree."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Three verbs, three different tenses or auxiliaries, and each is chosen by the rule rather than by the meaning: weather is scenery, going is movement, sleeping is neither.",
+      "sound": "eel fuh-ZAY SHO. noo som a-LAY a la MEHR. The participle allés agrees with a plural we and no s is heard.",
+      "variations": [
+        {
+          "display": "Hier il faisait chaud. Nous sommes allés à la mer",
+          "cue": "Yesterday it was hot. We went to the seaside",
+          "changed": "two sentences"
+        },
+        {
+          "display": "Il faisait chaud. Je suis allé à la mer",
+          "cue": "It was hot. I went to the seaside",
+          "changed": "one person, so the participle agrees with him"
+        },
+        {
+          "display": "J'étais fatigué. Enfin j'ai dormi",
+          "cue": "I was tired. In the end I slept",
+          "changed": "a different scene, and avoir on the last verb"
+        }
+      ],
+      "mistake": {
+        "display": "Hier il faisait chaud. Nous avons allés à la mer. Enfin j'ai dormi",
+        "why": "Movement takes être: Nous sommes allés à la mer."
+      },
+      "usage": "A whole day told in three sentences, which is what an account is.",
+      "register": "neutral",
+      "mnemonic": "The rule picks the auxiliary, not the meaning."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M10-C01",
+      "display": "Il était tard. Il n'y avait personne. Alors j'ai appelé Anne",
+      "cue": "It was late. There was nobody. So I called Anne"
+    },
+    {
+      "id": "L2-M10-C02",
+      "display": "Je mangeais quand tu as appelé",
+      "cue": "I was eating when you called"
+    },
+    {
+      "id": "L2-M10-C03",
+      "display": "Hier il pleuvait. Je suis resté à la maison",
+      "cue": "Yesterday it was raining. I stayed at home"
+    },
+    {
+      "id": "L2-M10-C04",
+      "display": "Il faisait froid et je n'avais pas ma clé",
+      "cue": "It was cold and I didn't have my key"
+    },
+    {
+      "id": "L2-M10-C05",
+      "display": "D'abord j'ai mangé, ensuite je suis sorti",
+      "cue": "First I ate, then I went out"
+    },
+    {
+      "id": "L2-M10-C06",
+      "display": "J'ai perdu mon billet. Enfin j'ai pris le bus",
+      "cue": "I lost my ticket. In the end I took the bus"
+    },
+    {
+      "id": "L2-M10-C07",
+      "display": "Il y avait beaucoup de monde. Alors je suis rentré",
+      "cue": "There were a lot of people. So I went home"
+    },
+    {
+      "id": "L2-M10-C08",
+      "display": "Quand j'étais petit, j'allais toujours à la mer",
+      "cue": "When I was little, I always went to the seaside"
+    },
+    {
+      "id": "L2-M10-C09",
+      "display": "Il était tard. J'ai appelé Anne. Enfin nous sommes sortis",
+      "cue": "It was late. I called Anne. In the end we went out"
+    },
+    {
+      "id": "L2-M10-C10",
+      "display": "Hier il faisait chaud. Nous sommes allés à la mer",
+      "cue": "Yesterday it was hot. We went to the seaside"
+    },
+    {
+      "id": "L2-M10-C11",
+      "display": "J'étais fatigué. Enfin j'ai dormi",
+      "cue": "I was tired. In the end I slept"
+    },
+    {
+      "id": "L2-M10-C12",
+      "display": "Hier j'ai mangé à sept heures",
+      "cue": "Yesterday I ate at seven"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

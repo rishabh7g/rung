@@ -1,0 +1,628 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": [
+    "L2-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present",
+      "past_perfect_compound"
+    ],
+    "allowedPatterns": [
+      "Allô + ? + C'est + <name> + à l'appareil",
+      "Je voudrais parler à + <name>",
+      "Il n'est pas là + . + Je peux laisser un message?",
+      "Ne quittez pas",
+      "Je vous rappelle + <time>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "FRENCH HAS NO CONTINUOUS TENSE. Je parle covers \"I speak\" and \"I am speaking\" alike, so a learner reaching for an -ing equivalent finds none. être en train de parler exists and is emphatic — right in the middle of it — rather than the default. Italian's answer to the same problem is the opposite one, and a call is where both languages show their hand."
+    },
+    {
+      "tag": "free",
+      "text": "Allô? answers a phone and nothing else. It is not a greeting at a door and not a way of getting someone's attention. The identification is C'est Marc à l'appareil, where L1-M8's c'est does the work and à l'appareil is what makes it a phone call."
+    },
+    {
+      "tag": "free",
+      "text": "This module speaks vous throughout, for a reason worth stating plainly: you cannot see who picked up. M6's tu is deliberately absent, and that is a rule about not knowing rather than about politeness."
+    },
+    {
+      "tag": "interference",
+      "text": "SPOKEN FRENCH DROPS THE ne — Il est pas là, Je sais pas — and this course writes it everywhere, in display, forms and pool alike. Writing both would fork one negation into two index surfaces. A phone call is where a learner first hears the drop, so it is named here and in no other module."
+    },
+    {
+      "tag": "free",
+      "text": "Taking a message needs no new tense: laisser un message, rappeler, le numéro, Ne quittez pas, and L1-M5's passé composé for what already happened — Il a appelé. Reported speech, Il a dit que…, is L3's, which is why a message is passed on with the words themselves."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "Allô? C'est Marc à l'appareil",
+      "cue": "Hello? This is Marc speaking",
+      "literal": "Hello? It-is Marc at the-device",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "allô",
+            "cue": "hello (on the phone)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Only on a phone. Bonjour is for meeting someone, and using either in the other place is heard at once."
+          },
+          {
+            "display": "à l'appareil",
+            "cue": "speaking · on the line",
+            "tag": "free",
+            "forms": [
+              "appareil"
+            ],
+            "note": "Literally \"at the device\". The elision fuses l' onto the noun, so the whole thing is one index key with the bare word beside it."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Je suis Marc is what a learner reaches for and it sounds like an introduction at a door. On a phone French says C'est, exactly as English says \"this is\".",
+      "sound": "a-LO say MARK a la-pa-RAY. The circumflex on ô says the vowel is closed and long.",
+      "variations": [
+        {
+          "display": "Allô? C'est Anne à l'appareil",
+          "cue": "Hello? This is Anne speaking",
+          "changed": "a different name"
+        },
+        {
+          "display": "Allô?",
+          "cue": "Hello?",
+          "changed": "just the answer, which is what a person picking up says"
+        },
+        {
+          "display": "C'est Marc à l'appareil",
+          "cue": "This is Marc speaking",
+          "changed": "the identification alone"
+        }
+      ],
+      "mistake": {
+        "display": "Allô? Je suis Marc à l'appareil",
+        "why": "On a phone French uses c'est: C'est Marc à l'appareil."
+      },
+      "usage": "Both ends of every call in French start here.",
+      "register": "formal",
+      "mnemonic": "Allô is only ever a phone."
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "Je voudrais parler à Anne",
+      "cue": "I'd like to speak to Anne",
+      "literal": "I would-like to-speak to Anne",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parler",
+            "cue": "to speak · to talk",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive behind L1-M5's parlé. It takes à with a person and nothing with a language — parler à Anne, parler français."
+          },
+          {
+            "display": "numéro",
+            "cue": "number",
+            "tag": "free",
+            "forms": [
+              "numéros"
+            ],
+            "note": "A phone number, a house number, a size. The é is a letter with its accent, and the o at the end is closed."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "parler takes à with a person and no preposition at all with a language. parler avec exists and means talking WITH someone rather than to them, which is a different conversation.",
+      "sound": "zhuh voo-DRAY par-LAY a AN. The infinitive and the participle parlé sound identical.",
+      "variations": [
+        {
+          "display": "Je voudrais parler à Marc",
+          "cue": "I'd like to speak to Marc",
+          "changed": "a different person"
+        },
+        {
+          "display": "Je peux parler à Anne?",
+          "cue": "Can I speak to Anne?",
+          "changed": "a plainer request"
+        },
+        {
+          "display": "C'est le bon numéro, merci",
+          "cue": "That's the right number, thanks",
+          "changed": "the answer, with thanks"
+        }
+      ],
+      "mistake": {
+        "display": "Je voudrais parler Anne",
+        "why": "A person takes à: Je voudrais parler à Anne."
+      },
+      "usage": "Asking for someone when a third person answers.",
+      "register": "formal",
+      "mnemonic": "parler à a person, parler a language."
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "Il n'est pas là",
+      "cue": "He isn't here",
+      "literal": "He not-is not there",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "n'est",
+            "cue": "is not (elided)",
+            "tag": "free",
+            "forms": [],
+            "note": "ne plus est, fused by the elision into one token. L1-M5 showed the same join in n'ai, and the index sees a single key."
+          },
+          {
+            "display": "là",
+            "cue": "there · here",
+            "tag": "interference",
+            "forms": [],
+            "note": "The accent is the whole difference from L1-M1's la, the article. It covers \"there\" and often \"here\" — Il est là means he is in."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "là and la are one accent apart and the accent is a letter. The index treats them as two keys, and only one of them means anything about place.",
+      "sound": "eel neh pa LA. The n' is elided onto the verb and the whole line runs flat.",
+      "variations": [
+        {
+          "display": "Elle n'est pas là",
+          "cue": "She isn't here",
+          "changed": "a different person"
+        },
+        {
+          "display": "Il est là",
+          "cue": "He's here",
+          "changed": "the positive"
+        },
+        {
+          "display": "Il n'est pas là. Je peux laisser un message?",
+          "cue": "He isn't here. Can I leave a message?",
+          "changed": "with the next move"
+        }
+      ],
+      "mistake": {
+        "display": "Il n'est pas la",
+        "why": "The place word carries an accent: Il n'est pas là."
+      },
+      "usage": "Answering a call for someone who is out.",
+      "register": "formal",
+      "mnemonic": "The accent is what makes it a place."
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "Je peux laisser un message?",
+      "cue": "Can I leave a message?",
+      "literal": "I can to-leave a message?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laisser",
+            "cue": "to leave (something)",
+            "tag": "free",
+            "forms": [
+              "laissé"
+            ],
+            "note": "Leaving a thing behind, not leaving a place — that is partir, L1-M6's verb. The double s is a hiss."
+          },
+          {
+            "display": "message",
+            "cue": "message",
+            "tag": "free",
+            "forms": [
+              "messages"
+            ],
+            "note": "Masculine, and both g sounds are soft. Un message is what you leave; le numéro is what you leave with it."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "This is a question made by intonation alone. The words are a statement, and French asks a great many questions this way — M1's est-ce que is the other option and is not compulsory.",
+      "sound": "zhuh puh leh-SAY un meh-SAZH. The final g of message is the soft zh.",
+      "variations": [
+        {
+          "display": "Je peux laisser un numéro?",
+          "cue": "Can I leave a number?",
+          "changed": "a different thing left"
+        },
+        {
+          "display": "Est-ce que je peux laisser un message?",
+          "cue": "Can I leave a message?",
+          "changed": "with M1's question marker"
+        },
+        {
+          "display": "Vous pouvez laisser un message",
+          "cue": "You can leave a message",
+          "changed": "the offer rather than the request"
+        }
+      ],
+      "mistake": {
+        "display": "Je peux laisse un message?",
+        "why": "An infinitive follows peux: Je peux laisser un message?"
+      },
+      "usage": "When the person you wanted is out.",
+      "register": "formal",
+      "mnemonic": "Intonation alone makes a question."
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "Ne quittez pas, s'il vous plaît",
+      "cue": "Hold the line, please",
+      "literal": "Not leave not, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quittez",
+            "cue": "leave · hang up (vous)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Literally \"do not leave\". It is the fixed phrase for holding a line and is almost never heard outside it."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "The negation wraps the verb: ne in front, pas behind. It is L1-M3's own frame, and the imperative changes nothing about where the two halves go.",
+      "sound": "nuh kee-TAY pa. The whole phrase runs as one and the final s of pas is silent.",
+      "variations": [
+        {
+          "display": "Ne quittez pas",
+          "cue": "Hold the line",
+          "changed": "without please — still ordinary"
+        },
+        {
+          "display": "Un moment, ne quittez pas",
+          "cue": "One moment, hold the line",
+          "changed": "with a moment in front"
+        },
+        {
+          "display": "Ne quittez pas, je vous rappelle",
+          "cue": "Hold the line — I'll call you back",
+          "changed": "with what happens next"
+        }
+      ],
+      "mistake": {
+        "display": "Ne pas quittez, s'il vous plaît",
+        "why": "The negation wraps the verb: Ne quittez pas, s'il vous plaît."
+      },
+      "usage": "Holding someone while you fetch another person.",
+      "register": "formal",
+      "mnemonic": "ne in front, pas behind, always."
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "Je vous rappelle ce soir",
+      "cue": "I'll call you back this evening",
+      "literal": "I you call-again this evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rappelle",
+            "cue": "I call back",
+            "tag": "free",
+            "forms": [
+              "rappeler"
+            ],
+            "note": "appeler with ra- on the front, which means again. The double l appears only where the ending is silent — je rappelle but rappeler."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "This is a present tense doing the work of English's future, and the time word carries the rest. Je vous rappellerai exists and would sound like a promise about next month.",
+      "sound": "zhuh voo ra-PEL suh SWAR. The double l is where the stress of the word sits.",
+      "variations": [
+        {
+          "display": "Je vous rappelle demain",
+          "cue": "I'll call you back tomorrow",
+          "changed": "a different time"
+        },
+        {
+          "display": "Je te rappelle ce soir",
+          "cue": "I'll call you back this evening",
+          "changed": "to a friend"
+        },
+        {
+          "display": "Vous pouvez me rappeler?",
+          "cue": "Can you call me back?",
+          "changed": "asking rather than promising, with the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Je rappelle vous ce soir",
+        "why": "The pronoun goes in front: Je vous rappelle ce soir."
+      },
+      "usage": "Closing a call you could not finish.",
+      "register": "formal",
+      "mnemonic": "ra- means again."
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "Il a appelé ce matin",
+      "cue": "He called this morning",
+      "literal": "He has called this morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "appelé",
+            "cue": "called",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of appeler, and it is what passes a message on. With avoir it does not agree with anything, which M10 will state as a rule."
+          },
+          {
+            "display": "ce matin",
+            "cue": "this morning",
+            "tag": "free",
+            "forms": [
+              "matin"
+            ],
+            "note": "L1-M4 taught le matin, mornings in general; this is the one that has just happened. Both are whole surfaces and neither answers for the other."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "L1-M5's past does the whole job here. French has no separate way of reporting what someone said at this level, and Il a dit que… belongs to L3 — so a message travels in the words it arrived in.",
+      "sound": "eel a a-puh-LAY suh ma-TAN. Two a's meet in the middle and both are sounded.",
+      "variations": [
+        {
+          "display": "Elle a appelé ce matin",
+          "cue": "She called this morning",
+          "changed": "a different caller"
+        },
+        {
+          "display": "Il a appelé hier",
+          "cue": "He called yesterday",
+          "changed": "a different time"
+        },
+        {
+          "display": "Il a laissé un message",
+          "cue": "He left a message",
+          "changed": "a different verb"
+        }
+      ],
+      "mistake": {
+        "display": "Il a appelée ce matin",
+        "why": "With avoir the participle does not agree: Il a appelé ce matin."
+      },
+      "usage": "Telling someone who rang while they were out.",
+      "register": "neutral",
+      "mnemonic": "With avoir, nothing agrees."
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "Je parle avec Anne",
+      "cue": "I'm talking to Anne",
+      "literal": "I speak with Anne",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parle",
+            "cue": "I speak · I am speaking",
+            "tag": "delta",
+            "forms": [],
+            "note": "One form for both. French has no continuous tense at all, so nothing in the sentence says whether this is a habit or is happening now."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "There is no way to mark \"right now\" here, and none is needed. A learner hunting for an -ing form will not find one, and adding en train de would make the sentence emphatic rather than ordinary.",
+      "sound": "zhuh PARL a-VEK AN. parle ends in a consonant cluster with no vowel after it.",
+      "variations": [
+        {
+          "display": "Je parle avec Marc",
+          "cue": "I'm talking to Marc",
+          "changed": "a different person"
+        },
+        {
+          "display": "Il parle avec Anne",
+          "cue": "He's talking to Anne",
+          "changed": "a different subject"
+        },
+        {
+          "display": "Je parle français",
+          "cue": "I speak French",
+          "changed": "a language, so no preposition"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis parlant avec Anne",
+        "why": "French has no continuous: Je parle avec Anne."
+      },
+      "usage": "Saying what is going on — and the same words would do for a habit.",
+      "register": "neutral",
+      "mnemonic": "One present for both English presents."
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "C'est le bon numéro?",
+      "cue": "Is that the right number?",
+      "literal": "It-is the good number?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rappeler",
+            "cue": "to call back",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive, with a single l because the ending is sounded. Vous pouvez me rappeler? is the request that uses it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "bon goes in FRONT of the noun, because it is on M3's short list. Most adjectives would follow, and this one does not.",
+      "sound": "say luh bon nü-may-RO. The ü of numéro is rounded.",
+      "variations": [
+        {
+          "display": "Ce n'est pas le bon numéro",
+          "cue": "That's not the right number",
+          "changed": "the negative answer"
+        },
+        {
+          "display": "Vous pouvez me rappeler?",
+          "cue": "Can you call me back?",
+          "changed": "the request, with the infinitive"
+        },
+        {
+          "display": "C'est le bon numéro, merci",
+          "cue": "That's the right number, thanks",
+          "changed": "the answer, with thanks"
+        }
+      ],
+      "mistake": {
+        "display": "C'est le numéro bon?",
+        "why": "bon is on the front list: C'est le bon numéro?"
+      },
+      "usage": "Checking a number you were given, or one that came up wrong.",
+      "register": "formal",
+      "mnemonic": "bon goes in front, like beau."
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "Merci, au revoir",
+      "cue": "Thank you, goodbye",
+      "literal": "Thanks, to the seeing-again",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "moment",
+            "cue": "moment",
+            "tag": "free",
+            "forms": [
+              "moments"
+            ],
+            "note": "Un moment holds someone for a few seconds. Un instant does the same and is slightly more formal."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Salut is for people you address as tu, and on a phone you do not know who answered. Au revoir is the safe close, exactly as vous is the safe address.",
+      "sound": "mer-SEE o ruh-VWAR. The r's are at the back of the throat.",
+      "variations": [
+        {
+          "display": "Merci beaucoup, au revoir",
+          "cue": "Thank you very much, goodbye",
+          "changed": "with M1's fuller thanks"
+        },
+        {
+          "display": "Au revoir, à demain",
+          "cue": "Goodbye, see you tomorrow",
+          "changed": "with M6's sign-off"
+        },
+        {
+          "display": "Un moment, s'il vous plaît",
+          "cue": "One moment, please",
+          "changed": "holding someone instead of leaving"
+        }
+      ],
+      "mistake": {
+        "display": "Merci, salut",
+        "why": "On a vous call the close is au revoir: Merci, au revoir."
+      },
+      "usage": "Ending a call with anyone you would address as vous.",
+      "register": "formal",
+      "mnemonic": "au revoir on a phone, always."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M7-C01",
+      "display": "Allô? C'est Marc à l'appareil",
+      "cue": "Hello? This is Marc speaking"
+    },
+    {
+      "id": "L2-M7-C02",
+      "display": "Je voudrais parler à Anne",
+      "cue": "I'd like to speak to Anne"
+    },
+    {
+      "id": "L2-M7-C03",
+      "display": "Il n'est pas là",
+      "cue": "He isn't here"
+    },
+    {
+      "id": "L2-M7-C04",
+      "display": "Je peux laisser un message?",
+      "cue": "Can I leave a message?"
+    },
+    {
+      "id": "L2-M7-C05",
+      "display": "Ne quittez pas, s'il vous plaît",
+      "cue": "Hold the line, please"
+    },
+    {
+      "id": "L2-M7-C06",
+      "display": "Je vous rappelle ce soir",
+      "cue": "I'll call you back this evening"
+    },
+    {
+      "id": "L2-M7-C07",
+      "display": "Il a appelé ce matin",
+      "cue": "He called this morning"
+    },
+    {
+      "id": "L2-M7-C08",
+      "display": "Je parle avec Anne",
+      "cue": "I'm talking to Anne"
+    },
+    {
+      "id": "L2-M7-C09",
+      "display": "C'est le bon numéro?",
+      "cue": "Is that the right number?"
+    },
+    {
+      "id": "L2-M7-C10",
+      "display": "Merci, au revoir",
+      "cue": "Thank you, goodbye"
+    },
+    {
+      "id": "L2-M7-C11",
+      "display": "Vous pouvez me rappeler?",
+      "cue": "Can you call me back?"
+    },
+    {
+      "id": "L2-M7-C12",
+      "display": "Il a laissé un message",
+      "cue": "He left a message"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

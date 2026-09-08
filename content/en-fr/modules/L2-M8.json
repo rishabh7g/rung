@@ -1,0 +1,650 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": [
+    "L2-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present",
+      "past_perfect_compound"
+    ],
+    "allowedPatterns": [
+      "Ça ne marche pas",
+      "J'ai perdu + mon/ma + N",
+      "J'ai mal à la + N",
+      "Vous pouvez m'aider + , + s'il vous plaît?",
+      "Il y a un problème avec + le/la + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "avoir mal à is the fourth member of a family the learner has had since L1-M9. j'ai faim, j'ai froid, j'ai soif — and now j'ai mal à la tête. French treats a state as something you HAVE, and the article stands where English wants a possessive: à la tête, never à ma tête."
+    },
+    {
+      "tag": "delta",
+      "text": "m'aider is ONE key to the index. The elision fuses the pronoun to what follows, so m'aider and t'aider are single surfaces rather than two words each. A learner who met me in front of a verb at M5 will look for it here and not find it — it is inside the next word."
+    },
+    {
+      "tag": "free",
+      "text": "The past here is L1-M5's passé composé and nothing more: J'ai perdu mon billet, J'ai oublié mon téléphone, Le train est parti. No plus-que-parfait, no subjunctive, and no conditional beyond M1's frozen je voudrais — which is why a complaint here is framed rather than hedged."
+    },
+    {
+      "tag": "delta",
+      "text": "COMPLAINING CALMLY IS NOT HEDGING. The softening comes from the opening — Excusez-moi, il y a un problème… — and from Malheureusement. Directness about the fault itself is normal and is not rude; an English speaker's \"there seems to be a slight issue\" reads as evasive rather than as polite."
+    },
+    {
+      "tag": "free",
+      "text": "ça marche is M6's row doing its literal job. There it settled a plan; here it says a machine works, and Ça ne marche pas is the ordinary way to report a fault. One word, two readings, and the situation decides."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "Excusez-moi, ça ne marche pas",
+      "cue": "Excuse me, it isn't working",
+      "literal": "Excuse-me, that not walks not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "malheureusement",
+            "cue": "unfortunately",
+            "tag": "free",
+            "forms": [],
+            "note": "The one hedge French uses in a complaint. It reports regret about a fact; it does not weaken the fact itself."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "The politeness is entirely in Excusez-moi, and what follows is flat. Softening the fault as well is what makes an English speaker sound evasive here.",
+      "sound": "ex-kü-zay-MWA sa nuh MARSH pa. The ne is barely sounded even when it is written.",
+      "variations": [
+        {
+          "display": "Ça ne marche pas",
+          "cue": "It isn't working",
+          "changed": "without the opener — abrupt, but not rude"
+        },
+        {
+          "display": "Malheureusement, ça ne marche pas",
+          "cue": "Unfortunately, it isn't working",
+          "changed": "with the one hedge the language uses"
+        },
+        {
+          "display": "Le téléphone ne marche pas",
+          "cue": "The phone isn't working",
+          "changed": "with the thing named"
+        }
+      ],
+      "mistake": {
+        "display": "Excusez-moi, il semble qu'il y a un petit problème",
+        "why": "French states it: Excusez-moi, ça ne marche pas."
+      },
+      "usage": "Reporting a fault at a desk, a shop or a hotel.",
+      "register": "formal",
+      "mnemonic": "Polite opener, plain statement."
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "J'ai perdu mon billet",
+      "cue": "I've lost my ticket",
+      "literal": "I-have lost my ticket",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "perdu",
+            "cue": "lost",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of perdre. With avoir it does not agree with anything, which M10 will state as a rule."
+          },
+          {
+            "display": "billet",
+            "cue": "ticket · banknote",
+            "tag": "free",
+            "forms": [
+              "billets"
+            ],
+            "note": "Both jobs on one word. The ill is the soft y of fille, and the final t is silent."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The possessive IS used here, unlike in M2's feature frame. mon billet is a thing you own; la tête in the next sentence is part of you, and French treats the two differently.",
+      "sound": "zhay per-DÜ mon bee-YEH. j'ai is one syllable.",
+      "variations": [
+        {
+          "display": "J'ai perdu ma clé",
+          "cue": "I've lost my key",
+          "changed": "a feminine thing"
+        },
+        {
+          "display": "J'ai perdu mon téléphone",
+          "cue": "I've lost my phone",
+          "changed": "a different thing"
+        },
+        {
+          "display": "Malheureusement, j'ai perdu mon billet",
+          "cue": "Unfortunately, I've lost my ticket",
+          "changed": "with the hedge"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai perdue mon billet",
+        "why": "With avoir the participle does not agree: J'ai perdu mon billet."
+      },
+      "usage": "At a station, a hotel desk, a lost-property office.",
+      "register": "neutral",
+      "mnemonic": "A thing you own keeps its possessive."
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "J'ai mal à la tête",
+      "cue": "I have a headache",
+      "literal": "I-have bad to the head",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mal",
+            "cue": "pain · badly",
+            "tag": "delta",
+            "forms": [],
+            "note": "In j'ai mal it is the pain; on its own it is the adverb \"badly\" — Ça va mal. One word, and no later row can take it back."
+          },
+          {
+            "display": "tête",
+            "cue": "head",
+            "tag": "free",
+            "forms": [
+              "têtes"
+            ],
+            "note": "The circumflex is a letter. It marks an s that used to be there — the English \"test\" and the French tête are cousins."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "This is the same avoir the learner has been using since L1-M9's j'ai faim. It is the fourth member of a family, not a new idiom — and the article, not a possessive, is what follows à.",
+      "sound": "zhay mal a la TET. The circumflex e is open and long.",
+      "variations": [
+        {
+          "display": "J'ai mal au dos",
+          "cue": "My back hurts",
+          "changed": "a masculine part, so à contracts to au"
+        },
+        {
+          "display": "Tu as mal à la tête?",
+          "cue": "Have you got a headache?",
+          "changed": "asking a friend"
+        },
+        {
+          "display": "J'ai mal aux pieds",
+          "cue": "My feet hurt",
+          "changed": "plural, so à contracts to aux"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai mal à ma tête",
+        "why": "The article does the work: J'ai mal à la tête."
+      },
+      "usage": "At a chemist's, or as a reason for going home.",
+      "register": "neutral",
+      "mnemonic": "The fourth member of the j'ai faim family."
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "J'ai mal au dos",
+      "cue": "My back hurts",
+      "literal": "I-have bad to-the back",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dos",
+            "cue": "back",
+            "tag": "free",
+            "forms": [
+              "aux"
+            ],
+            "note": "The s is silent, and its plural is also dos. au dos, because it is masculine and à plus le fuses — with les it fuses to aux, as in aux pieds."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "au is à plus le, welded, and aux is à plus les. The frame does not change — only the article inside it does, and the gender of the body part decides.",
+      "sound": "zhay mal o DO. Both o's are closed and neither final consonant is heard.",
+      "variations": [
+        {
+          "display": "J'ai mal à la tête",
+          "cue": "I have a headache",
+          "changed": "a feminine part"
+        },
+        {
+          "display": "Il a mal au dos",
+          "cue": "His back hurts",
+          "changed": "a different person"
+        },
+        {
+          "display": "J'ai mal aux pieds",
+          "cue": "My feet hurt",
+          "changed": "plural"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai mal à le dos",
+        "why": "à and le fuse: J'ai mal au dos."
+      },
+      "usage": "Explaining why you cannot carry something.",
+      "register": "neutral",
+      "mnemonic": "à + le = au, à + les = aux."
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "Vous pouvez m'aider, s'il vous plaît?",
+      "cue": "Could you help me, please?",
+      "literal": "You can to-help-me, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "m'aider",
+            "cue": "to help me",
+            "tag": "delta",
+            "forms": [],
+            "note": "ONE word: me plus aider, fused by the elision. The pronoun is still in front of its verb — it has simply been welded on."
+          },
+          {
+            "display": "aider",
+            "cue": "to help",
+            "tag": "free",
+            "forms": [],
+            "note": "M1 opened this row; here it is the bare infinitive beside the fused form. Both are index keys and neither answers for the other."
+          },
+          {
+            "display": "aide",
+            "cue": "help (noun) · helps",
+            "tag": "free",
+            "forms": [],
+            "note": "The noun and the verb cell are spelled the same. À l'aide! is the shout, and it is rarer than the English \"help!\""
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The pronoun has not moved — it has fused. m'aider is one token to the index and one word to the ear, and looking for a separate me is what confuses a learner here.",
+      "sound": "voo poo-VAY may-DAY seel voo PLEH. The m' runs straight into the vowel.",
+      "variations": [
+        {
+          "display": "Tu peux m'aider?",
+          "cue": "Can you help me?",
+          "changed": "to a friend"
+        },
+        {
+          "display": "Vous pouvez m'aider?",
+          "cue": "Could you help me?",
+          "changed": "without please"
+        },
+        {
+          "display": "Je peux vous aider?",
+          "cue": "Can I help you?",
+          "changed": "the offer, where no elision happens"
+        }
+      ],
+      "mistake": {
+        "display": "Vous pouvez me aider, s'il vous plaît?",
+        "why": "The elision is compulsory: Vous pouvez m'aider, s'il vous plaît?"
+      },
+      "usage": "Asking a stranger for real help.",
+      "register": "formal",
+      "mnemonic": "The pronoun fuses, it does not move."
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "Il y a un problème avec la clé",
+      "cue": "There's a problem with the key",
+      "literal": "It there has a problem with the key",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "problème",
+            "cue": "problem",
+            "tag": "free",
+            "forms": [
+              "problèmes"
+            ],
+            "note": "Masculine, despite the -e ending. The grave accent is a letter and the word is said pro-BLEM."
+          },
+          {
+            "display": "clé",
+            "cue": "key",
+            "tag": "free",
+            "forms": [
+              "clés"
+            ],
+            "note": "Feminine. It is also spelled clef, with a silent f, and both are current — this course writes clé."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "L1-M7's il y a is doing the work, and the il means nothing at all. It is the same placeholder as in il faut and il pleut.",
+      "sound": "eel ya un pro-BLEM a-VEK la KLAY. The il y a runs together as two syllables.",
+      "variations": [
+        {
+          "display": "Il y a un problème avec le téléphone",
+          "cue": "There's a problem with the phone",
+          "changed": "a masculine thing"
+        },
+        {
+          "display": "Excusez-moi, il y a un problème",
+          "cue": "Excuse me, there's a problem",
+          "changed": "with the opener and no detail"
+        },
+        {
+          "display": "Il n'y a pas de problème",
+          "cue": "There's no problem",
+          "changed": "negated, and M5's rule flattens the article"
+        }
+      ],
+      "mistake": {
+        "display": "Il y a une problème avec la clé",
+        "why": "problème is masculine: Il y a un problème avec la clé."
+      },
+      "usage": "The opening of any complaint at a desk.",
+      "register": "formal",
+      "mnemonic": "-e on the end does not always mean feminine."
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "J'ai oublié mon téléphone à la maison",
+      "cue": "I've left my phone at home",
+      "literal": "I-have forgotten my telephone at the house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "oublié",
+            "cue": "forgotten · left behind",
+            "tag": "delta",
+            "forms": [],
+            "note": "French uses \"forget\" where English says \"leave\". laisser exists and means deliberately left, so the choice records whether it was an accident."
+          },
+          {
+            "display": "téléphone",
+            "cue": "telephone",
+            "tag": "free",
+            "forms": [
+              "téléphones"
+            ],
+            "note": "Two accented e's and both are sounded. The stress in French falls on the phrase rather than the word."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English chooses between \"forgot\" and \"left\" by whether it was deliberate, and so does French — but the two languages draw the line in different places. An accident is always oublier.",
+      "sound": "zhay oo-blee-AY mon tay-lay-FON. The oublié is four syllables.",
+      "variations": [
+        {
+          "display": "J'ai oublié ma clé",
+          "cue": "I've forgotten my key",
+          "changed": "a feminine thing"
+        },
+        {
+          "display": "J'ai oublié mon billet",
+          "cue": "I've forgotten my ticket",
+          "changed": "a different thing"
+        },
+        {
+          "display": "J'ai laissé mon téléphone à la maison",
+          "cue": "I left my phone at home",
+          "changed": "deliberately, so laisser"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai laissé mon téléphone à la maison par accident",
+        "why": "An accident takes oublier: J'ai oublié mon téléphone à la maison."
+      },
+      "usage": "Explaining why you cannot show a ticket or answer a call.",
+      "register": "neutral",
+      "mnemonic": "Accident forgets. Intention leaves."
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "Le train est parti",
+      "cue": "The train has left",
+      "literal": "The train is left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parti",
+            "cue": "left · departed",
+            "tag": "delta",
+            "forms": [
+              "partie",
+              "partis",
+              "parties"
+            ],
+            "note": "The participle of L1-M6's partir. It takes être because it is movement, and then it AGREES with the subject — which a participle after avoir never does."
+          },
+          {
+            "display": "cassé",
+            "cue": "broken",
+            "tag": "free",
+            "forms": [
+              "cassée",
+              "cassés",
+              "cassées"
+            ],
+            "note": "The participle of casser, used as an adjective. C'est cassé says a thing is broken without saying who broke it, which keeps a complaint calm."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The auxiliary is est and not a, because partir is movement — and the participle then agrees with the train. M10 writes the rule down; here it is used.",
+      "sound": "luh tran eh par-TEE. The an of train is nasal.",
+      "variations": [
+        {
+          "display": "Le train est parti à sept heures",
+          "cue": "The train left at seven",
+          "changed": "with a time"
+        },
+        {
+          "display": "La clé est cassée",
+          "cue": "The key is broken",
+          "changed": "a state rather than a movement, and it agrees"
+        },
+        {
+          "display": "Le téléphone est cassé",
+          "cue": "The phone is broken",
+          "changed": "a masculine thing"
+        }
+      ],
+      "mistake": {
+        "display": "Le train a parti",
+        "why": "Movement takes être: Le train est parti."
+      },
+      "usage": "Explaining why you are late, or why a plan has failed.",
+      "register": "neutral",
+      "mnemonic": "Movement takes être and agrees."
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "Malheureusement, j'ai perdu ma clé",
+      "cue": "Unfortunately, I've lost my key",
+      "literal": "Unfortunately, I-have lost my key",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "marche",
+            "cue": "works · walks",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's row, in its literal job. Ça marche settles a plan there; here Ça ne marche pas reports a machine that has stopped."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Malheureusement is six syllables and does the work of one English word. It is the only softener a French complaint uses, and it goes at the front.",
+      "sound": "mal-uh-ruh-zuh-MAHN. The h is silent and the whole word runs to a nasal ending.",
+      "variations": [
+        {
+          "display": "Malheureusement, ça ne marche pas",
+          "cue": "Unfortunately, it isn't working",
+          "changed": "a fault rather than a loss"
+        },
+        {
+          "display": "J'ai perdu ma clé",
+          "cue": "I've lost my key",
+          "changed": "without the hedge"
+        },
+        {
+          "display": "Malheureusement, le train est parti",
+          "cue": "Unfortunately, the train has left",
+          "changed": "a different problem"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai perdu ma clé malheureusement",
+        "why": "The hedge goes at the front: Malheureusement, j'ai perdu ma clé."
+      },
+      "usage": "Delivering bad news, at a desk or on a phone.",
+      "register": "neutral",
+      "mnemonic": "One softener, and it goes first."
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "Excusez-moi, il y a un problème avec la chambre",
+      "cue": "Excuse me, there's a problem with the room",
+      "literal": "Excuse-me, it there has a problem with the room",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chambre",
+            "cue": "room (bedroom)",
+            "tag": "interference",
+            "forms": [
+              "chambres"
+            ],
+            "note": "A bedroom or a hotel room. A room in general is une pièce, and une salle is a hall — three words where English has one."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The complaint is stated flatly after the opener, and that is the whole technique. An English speaker's instinct is to bury the fault in qualifiers, and in French that reads as shifty rather than as polite.",
+      "sound": "eel ya un pro-BLEM a-VEK la SHAHMBR. The ch is a sh.",
+      "variations": [
+        {
+          "display": "Il y a un problème avec la chambre",
+          "cue": "There's a problem with the room",
+          "changed": "without the opener"
+        },
+        {
+          "display": "Excusez-moi, la clé ne marche pas",
+          "cue": "Excuse me, the key doesn't work",
+          "changed": "the fault named precisely"
+        },
+        {
+          "display": "Malheureusement, il y a un problème avec la chambre",
+          "cue": "Unfortunately, there's a problem with the room",
+          "changed": "with the hedge"
+        }
+      ],
+      "mistake": {
+        "display": "Excusez-moi, il y a une chambre problème",
+        "why": "The frame takes avec: il y a un problème avec la chambre."
+      },
+      "usage": "At a hotel desk, which is where this module's whole kit gets used at once.",
+      "register": "formal",
+      "mnemonic": "The opener is polite. The claim is plain."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M8-C01",
+      "display": "Excusez-moi, ça ne marche pas",
+      "cue": "Excuse me, it isn't working"
+    },
+    {
+      "id": "L2-M8-C02",
+      "display": "J'ai perdu mon billet",
+      "cue": "I've lost my ticket"
+    },
+    {
+      "id": "L2-M8-C03",
+      "display": "J'ai mal à la tête",
+      "cue": "I have a headache"
+    },
+    {
+      "id": "L2-M8-C04",
+      "display": "J'ai mal au dos",
+      "cue": "My back hurts"
+    },
+    {
+      "id": "L2-M8-C05",
+      "display": "Vous pouvez m'aider, s'il vous plaît?",
+      "cue": "Could you help me, please?"
+    },
+    {
+      "id": "L2-M8-C06",
+      "display": "Il y a un problème avec la clé",
+      "cue": "There's a problem with the key"
+    },
+    {
+      "id": "L2-M8-C07",
+      "display": "J'ai oublié mon téléphone à la maison",
+      "cue": "I've left my phone at home"
+    },
+    {
+      "id": "L2-M8-C08",
+      "display": "Le train est parti",
+      "cue": "The train has left"
+    },
+    {
+      "id": "L2-M8-C09",
+      "display": "Malheureusement, j'ai perdu ma clé",
+      "cue": "Unfortunately, I've lost my key"
+    },
+    {
+      "id": "L2-M8-C10",
+      "display": "Excusez-moi, il y a un problème avec la chambre",
+      "cue": "Excuse me, there's a problem with the room"
+    },
+    {
+      "id": "L2-M8-C11",
+      "display": "La clé est cassée",
+      "cue": "The key is broken"
+    },
+    {
+      "id": "L2-M8-C12",
+      "display": "Tu peux m'aider?",
+      "cue": "Can you help me?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

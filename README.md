@@ -418,6 +418,60 @@ al mare` shows most clearly, being a habit rather than a duration. Sixteen ratch
 the wave, all fixed by opening the row the module needed; the en-it baseline stays at 17. **The
 native gate is still unmet**: docs/65 ends in open questions 1–35, a fresh en-it L2 chain.
 
+**en-fr starts its second level (#440, 2026-09-08).** `L2-M1` _Asking politely_ and `L2-M2`
+_Describing people_ are authored against the briefs of #431
+(`docs/58-en-fr-L2-brief-decisions.md`), backed by `docs/66-llm-review-en-fr-L2.md`; a strict
+`npm run build` emits `en-fr: 12 modules (L1-M1..M10, L2-M1..M2)`. M1 **pays a debt L1 wrote down**:
+decision 1 kept `tu` out of every display and every `forms` list and named it as what a later level
+owed, and this is that level. The paradigm opens with the rest point hiding inside it — for most
+verbs the `tu` form is the `je` form plus a silent `-s`, and `je peux` and `tu peux` are one word
+twice. `est-ce que` is taught as what it is, a marker you put in front of a statement that changes
+nothing else, and `je voudrais` arrives as one frozen cell of a tense L3 owns. M2's delta is that a
+possessive agrees with the **thing possessed** — `sa voiture` is his car and hers alike — with the
+euphonic `mon amie` following immediately, where the SOUND decides the spelling and not the gender.
+The wave required scoping two L1-shaped assertions in `src/course/types.test.ts`: the ban on
+`tu`-register words and the flat `neutral` register chip were both correct for a level that spoke
+only `vous`, and both are what L2-M1 is chartered to lift. That is the second time this milestone
+that a second level exposed a test encoding the level as well as the rule. **The native gate is
+still unmet**: docs/66 ends in open questions 1–10, a fresh en-fr L2 chain.
+
+**en-fr reaches the middle of L2 (#449, 2026-09-08).** `L2-M3` _Describing things_, `L2-M4`
+_Getting around_ and `L2-M5` _Food and hosting_ ship against the same briefs; a strict
+`npm run build` emits `en-fr: 15 modules (L1-M1..M10, L2-M1..M5)`. M3 states the agreement grid as
+what it actually is — **almost entirely a writing rule**, since three of `grand`'s four shapes sound
+identical and only the index can tell them apart — and teaches adjective position as a LIST rather
+than a rule, with `bel`, `nouvel` and `vieil` each its own index key. M4's imperative is **free**:
+the `vous` imperative is the present tense with the pronoun removed, so the whole budget goes to the
+prepositions, where one genuinely reliable rule does the work (`en` for anything you get inside,
+`à` for anything you sit on). M5 states the rule L1 set up perfectly and never named: L1-M3 taught
+`du`, `de la`, `des`, and L1-M3 taught `ne … pas`, and the two never met in one sentence —
+**after a negation every partitive collapses to `de`**. Its object pronouns open narrowly on `me`
+and `te`, because `le`, `la` and `les` are already articles and the identically spelled pronouns can
+never be first-taught here; and its refusal is the odd one out of the whole collection, softened by
+a **compliment** rather than a reason, with a host who offers once or twice and then stops. Ten
+ratchet findings, all fixed in content. **The native gate is still unmet**: docs/66 now ends in open
+questions 1–21.
+
+**en-fr's second level closes (#458, 2026-09-08).** `L2-M6` _Making plans together_ through
+`L2-M10` _Telling what happened_ complete the ladder; `content/en-fr/levels.json` drops the L2 draft
+flag and a strict `npm run build` emits `en-fr: 20 modules (L1-M1..M10, L2-M1..M10)`. M6's best fact
+is `on`: in everyday French it IS "we", and it takes the **third-person singular verb**, so every
+form the learner needs is already theirs from L1's `il` and `elle` sentences. M7's delta is an
+**absence** — French has no continuous tense at all, so `Je parle` covers "I speak" and "I am
+speaking" alike and there is no `-ing` equivalent to reach for; that is the exact opposite of
+en-it's M7, where a call is what finally motivates `stare + gerundio`, and the review says so. The
+level's one dialect line lives there too: spoken French drops the `ne`, and this course writes it
+everywhere because writing both would fork one negation into two index surfaces. M8's `avoir mal à`
+is the **fourth member of a family** the learner has had since L1-M9's `j'ai faim`, and `m'aider` is
+one index key because the elision welds the pronoun onto the verb rather than moving it. M9 keeps
+`meilleur` apart from `mieux` — where Italian agrees with French and Spanish does not — and marks a
+superlative's group with `de` and never "in". M10 states the auxiliary law and kills the two-pasts
+slogan in the same words the other three M10s use. Two seam corrections: `quel` was returned to M9
+after an M7 draft borrowed it, and M9's comparison was rebuilt on `la ville` and `le village`
+because place names do not resolve in the index (#61) — which made the sentence better, since it now
+shows the feminine agreement the rule is about. Twenty-two ratchet findings, all fixed in content.
+**The native gate is still unmet**: docs/66 ends in open questions 1–35, a fresh en-fr L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on
