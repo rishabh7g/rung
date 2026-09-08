@@ -482,9 +482,9 @@ describe('hi-en L2: the decisions its briefs settle (#428)', () => {
   const all = COURSE_BRIEFS['hi-en'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -545,6 +545,56 @@ describe('hi-en L2: the decisions its briefs settle (#428)', () => {
     for (const [id, brief] of l2) {
       expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
     }
+  });
+});
+
+describe('hi-en L3: the decisions its briefs settle (#464)', () => {
+  const all = COURSE_BRIEFS['hi-en'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * `docs/55` §4 named five things L2 withheld. Every one has an owner here, named in the notes,
+   * because an author only ever sees the notes.
+   */
+  it('gives every piece L2 withheld an owner', () => {
+    expect(all['L3-M4']?.notes.join('\n'), 'conditionals').toMatch(/no will after if/i);
+    expect(all['L3-M5']?.notes.join('\n'), 'reported speech').toMatch(/REPORTED QUESTIONS/);
+    expect(all['L3-M8']?.notes.join('\n'), 'the passive').toMatch(/PASSIVE OPENS HERE/);
+    expect(all['L3-M9']?.notes.join('\n'), 'relative clauses').toMatch(/RELATIVE CLAUSES OPEN/);
+    expect(all['L3-M10']?.notes.join('\n'), 'used to').toMatch(/used to/);
+    expect(all['L3-M10']?.notes.join('\n'), 'the past perfect').toMatch(/PAST PERFECT/);
+    // The perfect's duration use, which L2-M8 explicitly deferred while lifting the result use.
+    expect(all['L3-M7']?.notes.join('\n')).toMatch(/for AGAINST since/);
+  });
+
+  /**
+   * This is the one course whose target language is the interference language's opposite, so the
+   * briefs are written against what a Hindi speaker actually produces. The four highest-frequency
+   * markers of Indian English each have a module that owns them.
+   */
+  it('names the interference each module is built to catch', () => {
+    expect(all['L3-M1']?.notes.join('\n'), 'stative -ing').toMatch(/STATIVE VERBS DO NOT TAKE/);
+    expect(all['L3-M2']?.notes.join('\n'), 'uncountables').toMatch(/UNCOUNTABLE NOUNS/);
+    expect(all['L3-M3']?.notes.join('\n'), '*I am agree').toMatch(/agree is a VERB/);
+    expect(all['L3-M6']?.notes.join('\n'), '-ed against -ing').toMatch(/-ed AGAINST -ing/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  it('names what it defers to L4', () => {
+    expect(all['L3-M4']?.notes.join('\n'), 'the third conditional').toMatch(/L4-M3/);
+    expect(all['L3-M8']?.notes.join('\n'), 'the perfect passive').toMatch(/L4/);
   });
 });
 
