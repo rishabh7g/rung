@@ -1,0 +1,707 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M1",
+  "title": "Sayings and idioms",
+  "job": "The figurative everyday, and when it is used",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "presente, L1-M6's, which is the only tense a frozen phrase ever stands in",
+      "congiuntivo presente in one lexicalised word, crepi, learnt whole and never conjugated",
+      "infinito, L1-M6's, after di and as the citation form of a pronominal verb"
+    ],
+    "allowedPatterns": [
+      "In bocca al lupo + ! + Crepi + !",
+      "Non vedo l'ora di + V-inf",
+      "Ce la faccio + / + Non ce la faccio",
+      "Me ne vado + / + Se la prende",
+      "<proverbio> + è + un modo di dire"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A FROZEN PHRASE HAS NO MOVING PARTS. In bocca al lupo, Meglio tardi che mai, Piove sul bagnato, Mi raccomando: every word inside is ordinary and most of them are already owned by an earlier module, but the phrase is bought WHOLE and swapping any one word destroys it. Meglio tardi di mai is not a weaker version of the saying; it is not the saying. Learn each one as a single long word with spaces in it, and do not look for the grammar underneath, because the grammar is not what is being used."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PRONOMINAL VERB IS ONE LEXEME AND NOT A SUM. farcela, cavarsela, andarsene, prendersela are verbs with one or two pronouns welded on, and the pronouns have stopped meaning anything on their own: ce la faccio is not I do it there, me ne vado is not I go of it. Each is taught here as a LEXEME — the infinitive plus one or two conjugated cells — and never as a paradigm. The machinery that attaches the pronouns, and lets you build a new one, is L5-M8's; take these four whole until then."
+    },
+    {
+      "tag": "interference",
+      "text": "A WORD-FOR-WORD ENGLISH IDIOM IS NEVER AN ITALIAN ONE, AND THE TRAP RUNS BOTH WAYS. Non posso aspettare for non vedo l'ora is the obvious direction. The other direction is worse, because the words exist: buona fortuna is real Italian that an Italian avoids in exactly the moment an English speaker reaches for good luck, and saying it before an exam is felt as tempting fate. Nor does Italian tolerate deliberate variation the way English does: alter an idiom in English and you are being witty, alter one in Italian and you are making a mistake."
+    },
+    {
+      "tag": "interference",
+      "text": "SOME FORMULAS OBLIGE A SPECIFIC REPLY, WHICH ENGLISH HAS NO EQUIVALENT OF. In bocca al lupo requires Crepi, and grazie is not a softer answer to it but a missing one: the exchange is left visibly half-finished. Figurati is the same move in the other direction — it is the reply, not the opening. Learn these as pairs, and notice that the reply is often the odder-looking half."
+    },
+    {
+      "tag": "free",
+      "text": "THE WORDS FOR TALKING ABOUT THE PHRASES THEMSELVES. Un modo di dire is a figure of speech, un proverbio is a saying that claims to teach something, and alla lettera is the reading you must not give either of them. Beside them sit the two shrugs a learner hears all day and can produce at once: boh, which says I have no idea, and mah, which says I doubt it, plus piano piano for little by little."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M1-S01",
+      "display": "In bocca al lupo! Crepi!",
+      "cue": "Good luck! — Thanks!",
+      "literal": "In mouth to-the wolf! May-it-die!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in bocca al lupo",
+            "cue": "good luck",
+            "tag": "delta",
+            "forms": [
+              "in bocca al lupo"
+            ],
+            "note": "Four words, none of them movable: not in bocca del lupo, not al lupo in bocca. Said before an exam, an interview, a first day at work."
+          },
+          {
+            "display": "crepi",
+            "cue": "may it die — the required answer",
+            "tag": "interference",
+            "forms": [
+              "crepi"
+            ],
+            "note": "The only correct reply. grazie is not a softer answer, it is a missing one; the wish is answered, never thanked. Crepi il lupo is the long form."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "buona fortuna is real Italian, and an Italian avoids it in exactly this moment: it is felt as tempting fate, which is why the wolf and the curse are used instead.",
+      "sound": "een BOK-ka al LOO-po. KRAY-pee. bocca has a double c and it is held; crepi is stressed on the first syllable, never on the last.",
+      "variations": [
+        {
+          "display": "In bocca al lupo per domani!",
+          "cue": "Good luck for tomorrow!",
+          "changed": "per domani added, so the wish names the day"
+        },
+        {
+          "display": "Domani ho un esame. In bocca al lupo!",
+          "cue": "I have an exam tomorrow. Good luck!",
+          "changed": "the occasion said first, the wish second"
+        },
+        {
+          "display": "In bocca al lupo per il lavoro!",
+          "cue": "Good luck with the job!",
+          "changed": "per il lavoro, so the wish names an interview"
+        }
+      ],
+      "mistake": {
+        "display": "In bocca al lupo! Grazie!",
+        "why": "grazie is not the reply. The formula takes Crepi and nothing else, and thanking it leaves the exchange half-finished in a way an Italian hears immediately."
+      },
+      "usage": "Said to anybody about to face something — an exam, an interview, a first day.",
+      "register": "informal",
+      "mnemonic": "The wolf is wished on you; you curse the wolf back."
+    },
+    {
+      "id": "L5-M1-S02",
+      "display": "Non vedo l'ora di partire",
+      "cue": "I can't wait to leave",
+      "literal": "Not I-see the-hour of to-leave",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "non vedo l'ora",
+            "cue": "I can't wait",
+            "tag": "delta",
+            "forms": [
+              "non vedo l'ora",
+              "non vediamo l'ora"
+            ],
+            "note": "Always negative, and always followed by di plus an infinitive. Vedo l'ora on its own is not Italian: the non is welded to the phrase."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English drops the object — I can't wait — and Italian never does. l'ora sits inside the phrase and di plus the infinitive says what the waiting is for.",
+      "sound": "non VE-do LO-ra dee par-TEE-re. vedo l'ora runs together as one word, ve-do-LO-ra, with no pause at the apostrophe.",
+      "variations": [
+        {
+          "display": "Non vedo l'ora di mangiare",
+          "cue": "I can't wait to eat",
+          "changed": "di mangiare for di partire, same frame"
+        },
+        {
+          "display": "Non vediamo l'ora di partire",
+          "cue": "We can't wait to leave",
+          "changed": "vediamo, so it is we who cannot wait"
+        },
+        {
+          "display": "Non vedo l'ora di partire domani",
+          "cue": "I can't wait to leave tomorrow",
+          "changed": "domani added, and the waiting gets a date"
+        }
+      ],
+      "mistake": {
+        "display": "Non posso aspettare di partire",
+        "why": "The word-for-word English. posso aspettare says I am able to wait, which is the opposite of what you mean. The phrase is fixed: non vedo l'ora."
+      },
+      "usage": "Saying you are looking forward to something, to anybody at all.",
+      "register": "neutral",
+      "mnemonic": "You cannot see the hour, so you cannot wait for it."
+    },
+    {
+      "id": "L5-M1-S03",
+      "display": "Meglio tardi che mai, dice il proverbio",
+      "cue": "Better late than never, as the proverb says",
+      "literal": "Better late than never, says the proverb",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meglio tardi che mai",
+            "cue": "better late than never",
+            "tag": "delta",
+            "forms": [
+              "meglio tardi che mai"
+            ],
+            "note": "Four fixed words. meglio is L2-M9's and tardi is L2-M7's, but the saying is bought whole: change one of them and it stops being the saying."
+          },
+          {
+            "display": "proverbio",
+            "cue": "a proverb",
+            "tag": "free",
+            "forms": [
+              "proverbio"
+            ],
+            "note": "A saying that claims to teach something. A modo di dire is only a figure of speech; un proverbio carries a lesson, which is why it can be quoted at somebody."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Italian compares with che here, where English says than. Meglio tardi di mai is what an English speaker builds after meeting di for than elsewhere, and it is wrong inside this phrase.",
+      "sound": "MEL-yo TAR-dee ke MY. The gl of meglio is one sound, like the lli of million; mai rhymes with the English my.",
+      "variations": [
+        {
+          "display": "Meglio tardi che mai!",
+          "cue": "Better late than never!",
+          "changed": "said alone, as a whole answer"
+        },
+        {
+          "display": "Meglio tardi che mai, dice sempre mia madre",
+          "cue": "Better late than never, my mother always says",
+          "changed": "sempre mia madre, so the saying gets an owner"
+        },
+        {
+          "display": "È un vecchio proverbio italiano",
+          "cue": "It's an old Italian proverb",
+          "changed": "the saying named rather than used"
+        }
+      ],
+      "mistake": {
+        "display": "Meglio tardi di mai",
+        "why": "di for che. The comparative di you learnt for più grande di me does not reach inside a frozen saying: this one has che and only che."
+      },
+      "usage": "Welcoming somebody who has finally arrived, or finally done the thing.",
+      "register": "neutral",
+      "mnemonic": "che is the than that lives inside the saying."
+    },
+    {
+      "id": "L5-M1-S04",
+      "display": "Piove sul bagnato è un modo di dire, non alla lettera",
+      "cue": "\"It rains on the wet\" is a figure of speech, not something literal",
+      "literal": "It-rains on-the wet is a way of saying, not to-the letter",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "piove sul bagnato",
+            "cue": "when it rains it pours",
+            "tag": "delta",
+            "forms": [
+              "piove sul bagnato"
+            ],
+            "note": "One more trouble landing on somebody who has trouble already. piove is L1-M9's weather; the three words together are not about weather at all."
+          },
+          {
+            "display": "modo di dire",
+            "cue": "a figure of speech",
+            "tag": "free",
+            "forms": [
+              "modo di dire",
+              "modi di dire"
+            ],
+            "note": "What an Italian answers when you ask what a phrase means: è un modo di dire, do not take it apart. It is the category, not the phrase."
+          },
+          {
+            "display": "alla lettera",
+            "cue": "literally, word for word",
+            "tag": "free",
+            "forms": [
+              "alla lettera"
+            ],
+            "note": "The reading an idiom must not be given. It is almost always used in the negative: non alla lettera, non prenderlo alla lettera."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "An English speaker reads the rain as good things piling up. Italian means the opposite far more often: the water falls where the ground is already soaked.",
+      "sound": "PYO-ve sool ban-YA-to. The gn of bagnato is one sound, like the ny of canyon; sul is one syllable.",
+      "variations": [
+        {
+          "display": "Oggi piove sul bagnato",
+          "cue": "Today it's one thing after another",
+          "changed": "oggi in front, so the saying reports a day"
+        },
+        {
+          "display": "Piove sul bagnato, è un vecchio modo di dire",
+          "cue": "Piove sul bagnato — it's an old figure of speech",
+          "changed": "vecchio added, and the comma splits saying from label"
+        },
+        {
+          "display": "Non è un proverbio, è un modo di dire",
+          "cue": "It isn't a proverb, it's a figure of speech",
+          "changed": "the two labels set against each other"
+        }
+      ],
+      "mistake": {
+        "display": "Piove sul bagnato alla lettera",
+        "why": "alla lettera cancels the idiom. Saying a figure of speech is literal turns it back into weather, which is exactly the reading the phrase does not have."
+      },
+      "usage": "Said when one more bad thing lands on somebody who is already having a bad week.",
+      "register": "neutral",
+      "mnemonic": "The rain always lands where it is already wet."
+    },
+    {
+      "id": "L5-M1-S05",
+      "display": "Mi raccomando, non dimenticare le chiavi",
+      "cue": "Now don't forget the keys",
+      "literal": "Me I-commend, not to-forget the keys",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi raccomando",
+            "cue": "mind you do it",
+            "tag": "delta",
+            "forms": [
+              "mi raccomando"
+            ],
+            "note": "Two words that put pressure on an order already given. English has no single word for it: please is too weak and I am warning you is far too strong."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "It is not asking for a recommendation. mi raccomando leans on an instruction that has already been said; it never carries the instruction itself.",
+      "sound": "mee rak-ko-MAN-do. The double c is held: rak-ko, not ra-ko. The stress falls on MAN.",
+      "variations": [
+        {
+          "display": "Mi raccomando, non fare tardi",
+          "cue": "Mind you're not late",
+          "changed": "a different order for it to lean on"
+        },
+        {
+          "display": "Mi raccomando!",
+          "cue": "Mind you do!",
+          "changed": "said alone, once the order is understood"
+        },
+        {
+          "display": "Non dimenticare le chiavi, mi raccomando",
+          "cue": "Don't forget the keys, mind",
+          "changed": "moved to the end, which is where it is most often heard"
+        }
+      ],
+      "mistake": {
+        "display": "Ti raccomando, non dimenticare le chiavi",
+        "why": "The pronoun is mi and never ti. The speaker commends the matter to himself; ti raccomando is a different verb doing a different job."
+      },
+      "usage": "Tacked onto an instruction you really mean — a parent at the door, a friend lending a key.",
+      "register": "informal",
+      "mnemonic": "mi raccomando is the tone of voice this course cannot play for you."
+    },
+    {
+      "id": "L5-M1-S06",
+      "display": "Grazie mille! Figurati, non è niente",
+      "cue": "Thanks a lot! — Don't mention it, it's nothing",
+      "literal": "Thanks thousand! Figure-yourself, not it-is nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "figurati",
+            "cue": "don't mention it / come off it",
+            "tag": "delta",
+            "forms": [
+              "figurati"
+            ],
+            "note": "One word doing two dismissive jobs: not at all, after thanks, and come off it, after something unbelievable. si figuri is the polite counterpart."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English keeps its two answers apart — you're welcome and come on. figurati is both, so hearing it after grazie must not be read as disbelief.",
+      "sound": "fee-GOO-ra-tee, four syllables, stressed on the second. Everything after the stress is light and fast.",
+      "variations": [
+        {
+          "display": "Figurati!",
+          "cue": "Don't mention it!",
+          "changed": "said alone, which is its usual size"
+        },
+        {
+          "display": "Grazie mille! Figurati!",
+          "cue": "Thanks a lot! — Not at all!",
+          "changed": "the pair with nothing after it"
+        },
+        {
+          "display": "Figurati, non è niente",
+          "cue": "Don't mention it, it's nothing",
+          "changed": "the reply without the thanks in front"
+        }
+      ],
+      "mistake": {
+        "display": "Grazie mille! Figurarsi!",
+        "why": "figurarsi is the infinitive and answers nobody. The reply is the -ti form, figurati, which is the only shape that reaches a person."
+      },
+      "usage": "Answering thanks between friends, and answering something too good or too odd to believe.",
+      "register": "informal",
+      "mnemonic": "Figure it yourself — it was nothing."
+    },
+    {
+      "id": "L5-M1-S07",
+      "display": "Ce la faccio, piano piano",
+      "cue": "I can manage it, little by little",
+      "literal": "There it I-do, slow slow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ce la faccio",
+            "cue": "I can manage it",
+            "tag": "delta",
+            "forms": [
+              "ce la faccio",
+              "ce la fai"
+            ],
+            "note": "I can manage. ce and la mean nothing here on their own; only the verb moves, and only in the cells taught: ce la faccio, ce la fai."
+          },
+          {
+            "display": "farcela",
+            "cue": "to manage, to make it",
+            "tag": "delta",
+            "forms": [
+              "farcela"
+            ],
+            "note": "The infinitive of ce la faccio with both pronouns stuck on the end. This is the shape a dictionary lists; the rule that builds it is L5-M8's."
+          },
+          {
+            "display": "piano piano",
+            "cue": "little by little",
+            "tag": "free",
+            "forms": [
+              "piano piano"
+            ],
+            "note": "Gradually. Italian doubles the adverb where English adds a phrase, and the doubling is the whole device: piano alone only means slowly or quietly."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "ce la faccio is not I do it there. Neither pronoun can be translated and neither can be dropped: faccio on its own only means I make.",
+      "sound": "che la FAT-cho, PYA-no PYA-no. ce is che and never ke; faccio has a double c and it is held.",
+      "variations": [
+        {
+          "display": "Non ce la faccio più",
+          "cue": "I can't take any more",
+          "changed": "the negative, with non standing on its own in front"
+        },
+        {
+          "display": "Ce la fai?",
+          "cue": "Can you manage?",
+          "changed": "ce la fai, so the question is asked of you"
+        },
+        {
+          "display": "Piano piano ce la faccio",
+          "cue": "Little by little I'll manage",
+          "changed": "piano piano moved to the front"
+        }
+      ],
+      "mistake": {
+        "display": "La faccio piano piano",
+        "why": "Dropping ce leaves an ordinary verb: la faccio is I make it. The phrase means manage only with both pronouns in place and in that order."
+      },
+      "usage": "Saying you will cope — with the work, with the stairs, with the language.",
+      "register": "neutral",
+      "mnemonic": "ce plus la plus faccio: three pieces, one meaning."
+    },
+    {
+      "id": "L5-M1-S08",
+      "display": "Me la cavo bene con l'italiano",
+      "cue": "I get by well in Italian",
+      "literal": "Me it I-pull-out well with the-Italian",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me la cavo",
+            "cue": "I get by",
+            "tag": "delta",
+            "forms": [
+              "me la cavo",
+              "te la cavi"
+            ],
+            "note": "I manage, I am not bad at it. Less than ce la faccio and much less than parlo bene: it is the modest answer to how is your Italian."
+          },
+          {
+            "display": "cavarsela",
+            "cue": "to get by, to cope",
+            "tag": "delta",
+            "forms": [
+              "cavarsela"
+            ],
+            "note": "The infinitive of me la cavo, both pronouns riding on the end. A dictionary lists it here; how they got there is L5-M8's."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "It is not a synonym of ce la faccio. farcela is succeeding at one job; cavarsela is being adequate at a whole skill, and the two are not swapped.",
+      "sound": "me la KA-vo BE-ne con lee-ta-LYA-no. cavo is stressed on the first syllable; the s of casa-like words is a z sound between vowels.",
+      "variations": [
+        {
+          "display": "Te la cavi bene!",
+          "cue": "You get by fine!",
+          "changed": "te la cavi, so it is said to you"
+        },
+        {
+          "display": "Me la cavo, ma non bene",
+          "cue": "I get by, but not well",
+          "changed": "ma non bene added, and the modesty sharpens"
+        },
+        {
+          "display": "Non me la cavo con il lavoro",
+          "cue": "I'm not coping with the work",
+          "changed": "the negative, and something else to be bad at"
+        }
+      ],
+      "mistake": {
+        "display": "Mi la cavo bene con l'italiano",
+        "why": "mi becomes me in front of la. This is the only shape that ever appears; mi la is never written and never said."
+      },
+      "usage": "Answering a question about a skill you have some of and do not want to boast about.",
+      "register": "neutral",
+      "mnemonic": "You pull yourself out of it — just about."
+    },
+    {
+      "id": "L5-M1-S09",
+      "display": "Me ne vado a casa, è tardi",
+      "cue": "I'm off home, it's late",
+      "literal": "Me of-it I-go to house, it-is late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me ne vado",
+            "cue": "I'm off, I'm leaving",
+            "tag": "delta",
+            "forms": [
+              "me ne vado",
+              "se ne va"
+            ],
+            "note": "Leaving THIS place — this party, this room, this conversation. vado says where you are going; me ne vado announces the departure itself."
+          },
+          {
+            "display": "andarsene",
+            "cue": "to leave, to be off",
+            "tag": "delta",
+            "forms": [
+              "andarsene"
+            ],
+            "note": "The infinitive of me ne vado: andare with se and ne welded to the end. The welding is explained in L5-M8; take the word whole here."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "vado a casa is neutral, I am going home. me ne vado announces the leaving, and can sound abrupt if you have only just arrived.",
+      "sound": "me ne VA-do a KA-za, e TAR-dee. The s of casa is a z sound because it sits between two vowels.",
+      "variations": [
+        {
+          "display": "Me ne vado adesso",
+          "cue": "I'm off now",
+          "changed": "adesso for a casa, so only the timing is said"
+        },
+        {
+          "display": "Se ne va a casa",
+          "cue": "He's off home",
+          "changed": "se ne va, so somebody else is the one leaving"
+        },
+        {
+          "display": "È tardi, me ne vado",
+          "cue": "It's late, I'm off",
+          "changed": "the reason first and the announcement second"
+        }
+      ],
+      "mistake": {
+        "display": "Mi ne vado a casa",
+        "why": "mi becomes me in front of ne, exactly as it does in front of la. mi ne is not a shape Italian has."
+      },
+      "usage": "Announcing that you are leaving a place — a party, an office, a bar.",
+      "register": "informal",
+      "mnemonic": "me plus ne plus vado: I take myself away from here."
+    },
+    {
+      "id": "L5-M1-S10",
+      "display": "Boh, se la prende sempre per niente",
+      "cue": "Dunno — he always takes offence over nothing",
+      "literal": "Dunno, himself it he-takes always for nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se la prende",
+            "cue": "he takes it badly",
+            "tag": "delta",
+            "forms": [
+              "se la prende",
+              "te la prendi"
+            ],
+            "note": "Gets offended, takes it to heart. The la points at nothing you can name: the phrase is about the mood, not about a thing."
+          },
+          {
+            "display": "prendersela",
+            "cue": "to take offence",
+            "tag": "delta",
+            "forms": [
+              "prendersela"
+            ],
+            "note": "The infinitive of se la prende, pronouns and all. Its target is usually a person: prendersela con qualcuno is to take it out on somebody."
+          },
+          {
+            "display": "boh",
+            "cue": "dunno",
+            "tag": "free",
+            "forms": [
+              "boh",
+              "mah"
+            ],
+            "note": "I have no idea, and I am not going to find out. mah is its neighbour: boh is ignorance, mah is doubt about something you do know."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "boh is not rude, but it is not neutral either: it closes the question. non lo so is the polite version and boh is the shrug.",
+      "sound": "bo, one short syllable with no h sound at all. se la PREN-de, stressed on PREN.",
+      "variations": [
+        {
+          "display": "Se la prende per niente",
+          "cue": "He takes offence over nothing",
+          "changed": "sempre dropped, so it reports one occasion"
+        },
+        {
+          "display": "Non te la prendi mai",
+          "cue": "You never take it badly",
+          "changed": "te la prendi, and the negative with mai"
+        },
+        {
+          "display": "Mah, non capisco",
+          "cue": "Hmm — I don't get it",
+          "changed": "mah for boh: doubt rather than ignorance"
+        }
+      ],
+      "mistake": {
+        "display": "Boh, si la prende sempre",
+        "why": "si becomes se in front of la, the same change mi makes to me. si la is never written, in this phrase or any other."
+      },
+      "usage": "Reporting to a third person that somebody is touchy.",
+      "register": "informal",
+      "mnemonic": "boh is the shrug you can spell."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M1-C01",
+      "display": "In bocca al lupo per il lavoro!",
+      "cue": "Good luck with the job!"
+    },
+    {
+      "id": "L5-M1-C02",
+      "display": "Crepi!",
+      "cue": "Thanks! (the only answer to in bocca al lupo)"
+    },
+    {
+      "id": "L5-M1-C03",
+      "display": "Non vedo l'ora di mangiare",
+      "cue": "I can't wait to eat"
+    },
+    {
+      "id": "L5-M1-C04",
+      "display": "Meglio tardi che mai!",
+      "cue": "Better late than never!"
+    },
+    {
+      "id": "L5-M1-C05",
+      "display": "Oggi piove sul bagnato",
+      "cue": "Today it's one thing after another"
+    },
+    {
+      "id": "L5-M1-C06",
+      "display": "Mi raccomando, non fare tardi",
+      "cue": "Mind you're not late"
+    },
+    {
+      "id": "L5-M1-C07",
+      "display": "Figurati, non è niente",
+      "cue": "Don't mention it, it's nothing"
+    },
+    {
+      "id": "L5-M1-C08",
+      "display": "Ce la fai da solo?",
+      "cue": "Can you manage on your own?"
+    },
+    {
+      "id": "L5-M1-C09",
+      "display": "Piano piano ce la faccio",
+      "cue": "Little by little I'll manage"
+    },
+    {
+      "id": "L5-M1-C10",
+      "display": "Te la cavi bene con l'italiano",
+      "cue": "You get by well in Italian"
+    },
+    {
+      "id": "L5-M1-C11",
+      "display": "È tardi, me ne vado",
+      "cue": "It's late, I'm off"
+    },
+    {
+      "id": "L5-M1-C12",
+      "display": "Boh, è solo un modo di dire",
+      "cue": "Dunno — it's just a figure of speech"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

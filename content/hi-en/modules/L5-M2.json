@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M2",
+  "title": "Humour and teasing",
+  "job": "Banter, irony, and when not to",
+  "prerequisites": [
+    "L5-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present_simple",
+      "present_continuous",
+      "simple_past",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "I'm only joking + .",
+      "<teasing clause> + — + just kidding + .",
+      "No offence + , + but + <clause> + .",
+      "<clause> + . + I did not mean it + .",
+      "Do not take it + the wrong way + ."
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "अंग्रेज़ी में मज़ाक़ का निशान चेहरे से नहीं, शब्दों से लगता है, और वे शब्द गिने-चुने हैं. बात से पहले: no offence, but … . बात के बाद: I'm only joking · just kidding. यही छोटे-छोटे निशान सुनने वाले को बताते हैं कि बात मज़ाक़ में कही गई थी."
+    },
+    {
+      "tag": "delta",
+      "text": "निशान की जगह भी जमी हुई है. no offence छेड़ से पहले आता है और उसके साथ but लगभग हमेशा रहता है; just kidding और only joking ठीक बात के बाद आते हैं. निशान को वाक्य के बीच में रख देने से वह निशान रहता ही नहीं — और पहले रख देने से छेड़ चेतावनी बन जाती है."
+    },
+    {
+      "tag": "free",
+      "text": "कम कहकर ज़्यादा कहना अंग्रेज़ी की आदत है, और वह तारीफ़ का सबसे आम रूप है. not bad at all पूरी तारीफ़ है, शिकायत नहीं; that was not terrible भी तारीफ़ ही है. इन्हें ठंडा या अधूरा जवाब समझकर बुरा मत मानिए — जवाब में thank you ही जाता है."
+    },
+    {
+      "tag": "interference",
+      "text": "तीन जगह हिंदी धोखा देती है. एक, कहने का ढंग — अंग्रेज़ी का मज़ाक़ अक्सर सपाट चेहरे से, बिना हँसी के कहा जाता है, इसलिए वह सीधी बात लगता है; और हिंदी वाली हँसी के साथ कहा गया मज़ाक़ ज़्यादा कोशिश जैसा लगता है. दो, निजी बातें — वज़न, रंग, शादी और तनख़्वाह पर टिप्पणी हिंदी में प्यार भरी छेड़ है, अंग्रेज़ी में वह किसी भी दोस्ती में मज़ाक़ मानी ही नहीं जाती. यह सुनने वालों के बारे में तथ्य है, सीखने वाले की ग़लती नहीं. तीन, बड़े-छोटे का फ़र्क़ — हिंदी आप और तुम से छूट का निशान लगा देती है, अंग्रेज़ी के पास वह निशान है ही नहीं."
+    },
+    {
+      "tag": "free",
+      "text": "यह पाठ सिर्फ़ उस मज़ाक़ का है जिस पर निशान लगा हो और जिसे तुरंत हल्का कर दिया जाए. बिना निशान वाला व्यंग्य — जहाँ कहा कुछ जाता है और अर्थ ठीक उलटा होता है — L5-M7 का विषय है, यहाँ का नहीं. hurt का 'दिल दुखाना' वाला काम भी वहीं जाता है; L3-M7 वाली पंक्ति शरीर के दर्द की है और उसका अर्थ यहाँ नहीं चलता."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M2-S01",
+      "display": "I'm only joking. Do not take it the wrong way.",
+      "cue": "मैं बस मज़ाक़ कर रहा हूँ. इसे ग़लत मत समझिए.",
+      "literal": "मैं हूँ सिर्फ़ मज़ाक़ कर रहा. करो नहीं लेना इसे वह ग़लत रास्ता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "only joking",
+            "cue": "बस मज़ाक़ कर रहा हूँ",
+            "tag": "free",
+            "forms": [
+              "only joking"
+            ],
+            "note": "मज़ाक़ के बाद लगाया जाने वाला निशान. हमेशा बात कह चुकने के बाद आता है; पहले लगा देने से छेड़ का असर ही ख़त्म हो जाता है."
+          },
+          {
+            "display": "the wrong way",
+            "cue": "बुरा मानकर, ग़लत ढंग से",
+            "tag": "free",
+            "forms": [
+              "the wrong way"
+            ],
+            "note": "take के साथ ही आता है: do not take it the wrong way. अकेला way (L4-M1) रास्ता या ढंग है, और वह अर्थ यहाँ नहीं चलता."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "अंग्रेज़ी का मज़ाक़ अक्सर सपाट चेहरे से कहा जाता है, इसलिए निशान लगाना ज़रूरी है — हँसी अपने आप निशान नहीं बनती.",
+      "sound": "I'm में दोनों शब्द जुड़कर आइम् बोले जाते हैं, और joking में o लंबा है — जोक्-इंग्.",
+      "variations": [
+        {
+          "display": "I'm only joking.",
+          "cue": "मैं बस मज़ाक़ कर रहा हूँ.",
+          "changed": "सिर्फ़ निशान"
+        },
+        {
+          "display": "Do not take it the wrong way.",
+          "cue": "इसे ग़लत मत समझिए.",
+          "changed": "सिर्फ़ दूसरा वाक्य"
+        },
+        {
+          "display": "She is only joking.",
+          "cue": "वह बस मज़ाक़ कर रही है.",
+          "changed": "अन्य पुरुष"
+        }
+      ],
+      "mistake": {
+        "display": "I'm only joke. Do not take it the wrong way",
+        "why": "निशान का रूप only joking है; only joke कुछ नहीं होता."
+      },
+      "usage": "मज़ाक़ कह चुकने के तुरंत बाद, जब लगे कि सामने वाला बुरा मान सकता है.",
+      "register": "informal",
+      "mnemonic": "मज़ाक़ के पीछे लगने वाला छोटा-सा निशान."
+    },
+    {
+      "id": "L5-M2-S02",
+      "display": "That was a silly question — just kidding.",
+      "cue": "वह बेवक़ूफ़ी भरा सवाल था — मज़ाक़ कर रहा हूँ.",
+      "literal": "वह था एक बेवक़ूफ़ सवाल — सिर्फ़ मज़ाक़.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "silly",
+            "cue": "बेवक़ूफ़ी भरा, बचकाना",
+            "tag": "free",
+            "forms": [
+              "silly"
+            ],
+            "note": "हल्का शब्द है, गाली नहीं. दोस्तों और घर की छेड़ में चलता है, दफ़्तर या सरकारी बात में नहीं."
+          },
+          {
+            "display": "just kidding",
+            "cue": "मज़ाक़ कर रहा हूँ",
+            "tag": "free",
+            "forms": [
+              "just kidding"
+            ],
+            "note": "only joking का ही साथी और उससे ज़्यादा बोलचाल का. अकेला just (L1-M8) 'बस' है और वह अर्थ इसके भीतर नहीं बचता."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "निशान छेड़ के बाद ही आता है. Just kidding, that was a silly question कहने से वह मज़ाक़ नहीं, चेतावनी बन जाता है.",
+      "sound": "just kidding में पहला t दब जाता है — जस्-किडिंग् सुनाई देता है.",
+      "variations": [
+        {
+          "display": "That was a silly question.",
+          "cue": "वह बेवक़ूफ़ी भरा सवाल था.",
+          "changed": "बिना निशान"
+        },
+        {
+          "display": "That was silly — just kidding.",
+          "cue": "वह बेवक़ूफ़ी थी — मज़ाक़ कर रहा हूँ.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "Just kidding.",
+          "cue": "मज़ाक़ कर रहा हूँ.",
+          "changed": "सिर्फ़ निशान"
+        }
+      ],
+      "mistake": {
+        "display": "Just kidding, that was a silly question",
+        "why": "निशान बात के बाद आता है; पहले रखने से छेड़ चेतावनी बन जाती है."
+      },
+      "usage": "दोस्तों के बीच हल्की छेड़ के तुरंत बाद.",
+      "register": "informal",
+      "mnemonic": "छेड़ो, और तुरंत just kidding लगा दो."
+    },
+    {
+      "id": "L5-M2-S03",
+      "display": "No offence, but this shop is not very good.",
+      "cue": "बुरा मत मानिएगा, पर यह दुकान बहुत अच्छी नहीं है.",
+      "literal": "नहीं अपराध, पर यह दुकान है नहीं बहुत अच्छा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "no offence",
+            "cue": "बुरा मत मानिएगा",
+            "tag": "free",
+            "forms": [
+              "no offence"
+            ],
+            "note": "आने वाली सीधी बात से पहले लगने वाला निशान. वाक्य के आरंभ में आता है और उसके साथ but लगभग हमेशा रहता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "no offence लगा देने से निजी टिप्पणी मज़ाक़ नहीं बन जाती. वज़न, रंग, शादी और तनख़्वाह वाली बात निशान के साथ भी नहीं चलती.",
+      "sound": "offence में ज़ोर दूसरे अक्षर पर है — अ-फ़ेन्स्.",
+      "variations": [
+        {
+          "display": "No offence, but this work is not very good.",
+          "cue": "बुरा मत मानिएगा, पर यह काम बहुत अच्छा नहीं है.",
+          "changed": "दुकान की जगह काम"
+        },
+        {
+          "display": "This shop is not very good.",
+          "cue": "यह दुकान बहुत अच्छी नहीं है.",
+          "changed": "बिना निशान"
+        },
+        {
+          "display": "No offence, but I am not coming.",
+          "cue": "बुरा मत मानिएगा, पर मैं नहीं आ रहा हूँ.",
+          "changed": "दूसरी बात के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "No offence but this shop is not very good",
+        "why": "निशान के बाद कॉमा ज़रूरी है; उसके बिना वह अलग नहीं दिखता."
+      },
+      "usage": "अपनी राय साफ़ कहने से ठीक पहले, जब वह राय चुभ सकती हो.",
+      "register": "informal",
+      "mnemonic": "पहले माफ़ी का निशान, फिर सीधी बात."
+    },
+    {
+      "id": "L5-M2-S04",
+      "display": "That was a joke. I did not mean it.",
+      "cue": "वह मज़ाक़ था. मेरा वह मतलब नहीं था.",
+      "literal": "वह था एक मज़ाक़. मैंने किया नहीं मतलब इसे.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "joke",
+            "cue": "मज़ाक़",
+            "tag": "free",
+            "forms": [
+              "joke",
+              "jokes",
+              "joking"
+            ],
+            "note": "गिनने वाली संज्ञा है: a joke, two jokes. joking इसी का चलता रूप है और वही निशान only joking के भीतर आता है."
+          },
+          {
+            "display": "mean it",
+            "cue": "सचमुच कहना, इरादा होना",
+            "tag": "free",
+            "forms": [
+              "mean it"
+            ],
+            "note": "दोनों शब्द साथ चलते हैं. अकेला mean (L3-M1) 'अर्थ होना' है; I did not mean it कहता है कि इरादा वैसा नहीं था."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "I did not mean it माफ़ी नहीं है. यह सिर्फ़ इरादा साफ़ करता है, और माफ़ी अलग से माँगनी पड़ती है.",
+      "sound": "joke में o लंबा है — जोक्, और mean में ee लंबा — मीन्.",
+      "variations": [
+        {
+          "display": "That was a joke.",
+          "cue": "वह मज़ाक़ था.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "I did not mean it.",
+          "cue": "मेरा वह मतलब नहीं था.",
+          "changed": "सिर्फ़ सुधार"
+        },
+        {
+          "display": "It was a joke. I did not mean it.",
+          "cue": "वह मज़ाक़ था. मेरा वह मतलब नहीं था.",
+          "changed": "that की जगह it"
+        }
+      ],
+      "mistake": {
+        "display": "That was a joke. I did not meant it",
+        "why": "did के बाद क्रिया का सादा रूप आता है — mean, meant नहीं."
+      },
+      "usage": "जब मज़ाक़ ग़लत समझ लिया गया हो और उसे तुरंत ठीक करना हो.",
+      "register": "informal",
+      "mnemonic": "मज़ाक़ था — इरादा नहीं था."
+    },
+    {
+      "id": "L5-M2-S05",
+      "display": "He is very funny, but he is never serious.",
+      "cue": "वह बहुत मज़ाक़िया है, पर कभी गंभीर नहीं होता.",
+      "literal": "वह है बहुत मज़ाक़िया, पर वह है कभी नहीं गंभीर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "funny",
+            "cue": "मज़ाक़िया, हँसाने वाला",
+            "tag": "free",
+            "forms": [
+              "funny"
+            ],
+            "note": "आदमी और बात दोनों के लिए चलता है. That is not funny छेड़ रोकने का सबसे आम वाक्य है."
+          },
+          {
+            "display": "serious",
+            "cue": "गंभीर",
+            "tag": "free",
+            "forms": [
+              "serious",
+              "seriously"
+            ],
+            "note": "seriously इसी का क्रिया-विशेषण रूप है और क्रिया के साथ आता है: do not take it seriously."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "funny का एक और अर्थ 'अजीब' भी है, पर वह इस पाठ का विषय नहीं.",
+      "sound": "funny का u अ जैसा है — फ़नी, और serious तीन अक्षरों में — सिअ-रि-अस्.",
+      "variations": [
+        {
+          "display": "He is very funny.",
+          "cue": "वह बहुत मज़ाक़िया है.",
+          "changed": "सिर्फ़ पहला आधा"
+        },
+        {
+          "display": "She is never serious.",
+          "cue": "वह कभी गंभीर नहीं होती.",
+          "changed": "सिर्फ़ दूसरा आधा"
+        },
+        {
+          "display": "That is not funny.",
+          "cue": "यह मज़ाक़ की बात नहीं है.",
+          "changed": "छेड़ रोकने वाला वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "He is very funny, but he is never seriously",
+        "why": "be के बाद विशेषण serious आता है; seriously क्रिया के साथ चलता है."
+      },
+      "usage": "किसी के मिज़ाज के बारे में बताते समय, बात-चीत में.",
+      "register": "neutral",
+      "mnemonic": "हँसाने वाला funny, गंभीर serious."
+    },
+    {
+      "id": "L5-M2-S06",
+      "display": "Do not tease him. He does not take a joke.",
+      "cue": "उसे मत छेड़िए. वह मज़ाक़ बर्दाश्त नहीं कर पाता.",
+      "literal": "करो नहीं छेड़ना उसे. वह करता नहीं लेना एक मज़ाक़.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tease",
+            "cue": "छेड़ना",
+            "tag": "free",
+            "forms": [
+              "tease",
+              "teasing"
+            ],
+            "note": "हिंदी की छेड़ ठीक यही काम है, और छूट भी लगभग वही है — दोस्तों और घर में चलता है, अनजान लोगों के साथ नहीं."
+          },
+          {
+            "display": "take a joke",
+            "cue": "मज़ाक़ बर्दाश्त करना",
+            "tag": "free",
+            "forms": [
+              "take a joke"
+            ],
+            "note": "पूरा समूह एक इकाई है और उसका अर्थ मज़ाक़ करना नहीं, मज़ाक़ सह लेना है. भीतर का a कभी नहीं हटता."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "अंग्रेज़ी में वज़न, रंग, शादी और तनख़्वाह पर छेड़ चलती ही नहीं, चाहे दोस्ती कितनी भी पुरानी हो.",
+      "sound": "tease में ee लंबा है और अंत में z की आवाज़ आती है — टीज़्.",
+      "variations": [
+        {
+          "display": "Do not tease him.",
+          "cue": "उसे मत छेड़िए.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "He does not take a joke.",
+          "cue": "वह मज़ाक़ बर्दाश्त नहीं कर पाता.",
+          "changed": "सिर्फ़ दूसरा वाक्य"
+        },
+        {
+          "display": "She is teasing me again.",
+          "cue": "वह मुझे फिर छेड़ रही है.",
+          "changed": "चलता रूप"
+        }
+      ],
+      "mistake": {
+        "display": "Do not tease him. He does not take joke",
+        "why": "समूह के भीतर a रहता है — take a joke."
+      },
+      "usage": "किसी को छेड़ से रोकते समय, दोस्तों के बीच.",
+      "register": "informal",
+      "mnemonic": "छेड़ना tease, सह लेना take a joke."
+    },
+    {
+      "id": "L5-M2-S07",
+      "display": "Come on, do not take it seriously.",
+      "cue": "अरे भई, इसे इतनी गंभीरता से मत लीजिए.",
+      "literal": "आओ पर, करो नहीं लेना इसे गंभीरता से.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "come on",
+            "cue": "अरे भई, चलिए भी",
+            "tag": "free",
+            "forms": [
+              "come on"
+            ],
+            "note": "हल्का उलाहना, जिसमें ग़ुस्सा नहीं है. अकेला come (L1-M6) 'आना' है और आने से यहाँ कोई मतलब नहीं."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "come on का यह अर्थ सिर्फ़ बोलचाल में है; लिखने में या सरकारी बात में नहीं आता.",
+      "sound": "दोनों शब्द जुड़ जाते हैं — क-मॉन् सुनाई देता है.",
+      "variations": [
+        {
+          "display": "Come on, it was a joke.",
+          "cue": "अरे भई, वह तो मज़ाक़ था.",
+          "changed": "दूसरा आधा बदलकर"
+        },
+        {
+          "display": "Do not take it seriously.",
+          "cue": "इसे गंभीरता से मत लीजिए.",
+          "changed": "बिना निशान"
+        },
+        {
+          "display": "Come on, he is only joking.",
+          "cue": "अरे भई, वह बस मज़ाक़ कर रहा है.",
+          "changed": "निशान के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "Come on, do not take it serious",
+        "why": "क्रिया के साथ seriously आता है, serious नहीं."
+      },
+      "usage": "जब सामने वाला हल्की बात को भारी बना ले.",
+      "register": "informal",
+      "mnemonic": "come on = इतना मत सोचिए."
+    },
+    {
+      "id": "L5-M2-S08",
+      "display": "The food was not bad at all. She was very happy.",
+      "cue": "खाना बहुत अच्छा था. वह बहुत ख़ुश थी.",
+      "literal": "वह खाना था नहीं बुरा पर सब. वह थी बहुत ख़ुश.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "not bad at all",
+            "cue": "बहुत अच्छा (कम कहकर)",
+            "tag": "interference",
+            "forms": [
+              "not bad at all"
+            ],
+            "note": "यह पूरी तारीफ़ है, शिकायत नहीं. अकेला not bad (L1-M2) 'ठीक-ठाक' है; at all जुड़ते ही वह तारीफ़ बन जाता है."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "इसे ठंडा जवाब समझकर बुरा मत मानिए. अंग्रेज़ी में कम कहना ही ज़्यादा कहना है, और जवाब में thank you ही जाता है.",
+      "sound": "at all जुड़कर अ-टॉल् सुनाई देता है, और दोनों शब्द अलग नहीं बोले जाते.",
+      "variations": [
+        {
+          "display": "The food was not bad at all.",
+          "cue": "खाना बहुत अच्छा था.",
+          "changed": "सिर्फ़ तारीफ़"
+        },
+        {
+          "display": "Your work was not bad at all.",
+          "cue": "आपका काम बहुत अच्छा था.",
+          "changed": "काम की तारीफ़"
+        },
+        {
+          "display": "She was very happy.",
+          "cue": "वह बहुत ख़ुश थी.",
+          "changed": "सिर्फ़ दूसरा वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "The food was not bad. She was very happy",
+        "why": "at all के बिना यह सिर्फ़ 'ठीक-ठाक' कहता है, पूरी तारीफ़ नहीं."
+      },
+      "usage": "तारीफ़ करते समय, जब सीधे very good कहना ज़्यादा लगे.",
+      "register": "neutral",
+      "mnemonic": "बुरा बिल्कुल नहीं — यानी बहुत अच्छा."
+    },
+    {
+      "id": "L5-M2-S09",
+      "display": "I meant it as a joke. She was offended.",
+      "cue": "मैंने वह मज़ाक़ में कहा था. उसने बुरा मान लिया.",
+      "literal": "मैंने मतलब किया इसे जैसे एक मज़ाक़. वह थी नाराज़.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meant",
+            "cue": "मतलब था, इरादा था",
+            "tag": "free",
+            "forms": [
+              "meant"
+            ],
+            "note": "mean का भूतकाल वाला रूप. I meant it as a joke कहता है कि उस समय इरादा मज़ाक़ का ही था."
+          },
+          {
+            "display": "offended",
+            "cue": "बुरा मान गया, नाराज़",
+            "tag": "free",
+            "forms": [
+              "offend",
+              "offended"
+            ],
+            "note": "इसमें सिर्फ़ ग़ुस्सा नहीं, अपमान का भाव है. सादा रूप offend है: do not offend her."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "offended को ग़ुस्सा मत समझिए. angry ग़ुस्सा है, offended अपमान का बुरा मानना है.",
+      "sound": "meant का उच्चारण मेन्ट् है, मीन्ट् नहीं.",
+      "variations": [
+        {
+          "display": "I meant it as a joke.",
+          "cue": "मैंने वह मज़ाक़ में कहा था.",
+          "changed": "सिर्फ़ सफ़ाई"
+        },
+        {
+          "display": "She was offended.",
+          "cue": "उसने बुरा मान लिया.",
+          "changed": "सिर्फ़ नतीजा"
+        },
+        {
+          "display": "He meant it as a joke.",
+          "cue": "उसने वह मज़ाक़ में कहा था.",
+          "changed": "अन्य पुरुष"
+        }
+      ],
+      "mistake": {
+        "display": "I mean it as a joke. She was offended",
+        "why": "बात बीत चुकी है, इसलिए भूतकाल वाला meant आता है."
+      },
+      "usage": "जब मज़ाक़ बिगड़ जाए और बताना हो कि इरादा क्या था.",
+      "register": "neutral",
+      "mnemonic": "meant = इरादा तो यही था."
+    },
+    {
+      "id": "L5-M2-S10",
+      "display": "Think about her feelings. Do not offend her.",
+      "cue": "उसकी भावनाओं का ख़्याल कीजिए. उसे नाराज़ मत कीजिए.",
+      "literal": "सोचो के बारे में उसकी भावनाएँ. करो नहीं नाराज़ करना उसे.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "feelings",
+            "cue": "भावनाएँ",
+            "tag": "free",
+            "forms": [
+              "feelings"
+            ],
+            "note": "इस अर्थ में हमेशा बहुवचन में आता है. L3-M6 वाला feel क्रिया है; यह उसी से बनी संज्ञा है और मन की बात कहती है."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "वज़न, रंग, शादी और तनख़्वाह पर टिप्पणी अंग्रेज़ी में छेड़ नहीं मानी जाती, चाहे निशान लगा हो और चाहे दोस्ती पुरानी हो.",
+      "sound": "feelings में ee लंबा है और अंत में z की आवाज़ आती है — फ़ीलिंग्ज़्.",
+      "variations": [
+        {
+          "display": "Think about her feelings.",
+          "cue": "उसकी भावनाओं का ख़्याल कीजिए.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "Do not offend her.",
+          "cue": "उसे नाराज़ मत कीजिए.",
+          "changed": "सिर्फ़ दूसरा वाक्य"
+        },
+        {
+          "display": "Think about my feelings.",
+          "cue": "मेरी भावनाओं का ख़्याल कीजिए.",
+          "changed": "कर्म बदलकर"
+        }
+      ],
+      "mistake": {
+        "display": "Think about her feeling. Do not offend her",
+        "why": "इस अर्थ में यह हमेशा बहुवचन है — feelings."
+      },
+      "usage": "किसी को छेड़ से रोकते समय, जब बात निजी हो चली हो.",
+      "register": "neutral",
+      "mnemonic": "छेड़ने से पहले सामने वाले की भावनाएँ."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M2-C01",
+      "display": "I'm only joking.",
+      "cue": "मैं बस मज़ाक़ कर रहा हूँ."
+    },
+    {
+      "id": "L5-M2-C02",
+      "display": "Do not take it the wrong way.",
+      "cue": "इसे ग़लत मत समझिए."
+    },
+    {
+      "id": "L5-M2-C03",
+      "display": "That was a silly question — just kidding.",
+      "cue": "वह बेवक़ूफ़ी भरा सवाल था — मज़ाक़ कर रहा हूँ."
+    },
+    {
+      "id": "L5-M2-C04",
+      "display": "No offence, but this shop is not very good.",
+      "cue": "बुरा मत मानिएगा, पर यह दुकान बहुत अच्छी नहीं है."
+    },
+    {
+      "id": "L5-M2-C05",
+      "display": "That was a joke. I did not mean it.",
+      "cue": "वह मज़ाक़ था. मेरा वह मतलब नहीं था."
+    },
+    {
+      "id": "L5-M2-C06",
+      "display": "He is very funny, but he is never serious.",
+      "cue": "वह बहुत मज़ाक़िया है, पर कभी गंभीर नहीं होता."
+    },
+    {
+      "id": "L5-M2-C07",
+      "display": "He does not take a joke.",
+      "cue": "वह मज़ाक़ बर्दाश्त नहीं कर पाता."
+    },
+    {
+      "id": "L5-M2-C08",
+      "display": "Come on, do not take it seriously.",
+      "cue": "अरे भई, इसे गंभीरता से मत लीजिए."
+    },
+    {
+      "id": "L5-M2-C09",
+      "display": "The food was not bad at all.",
+      "cue": "खाना बहुत अच्छा था."
+    },
+    {
+      "id": "L5-M2-C10",
+      "display": "I meant it as a joke.",
+      "cue": "मैंने वह मज़ाक़ में कहा था."
+    },
+    {
+      "id": "L5-M2-C11",
+      "display": "She was offended.",
+      "cue": "उसने बुरा मान लिया."
+    },
+    {
+      "id": "L5-M2-C12",
+      "display": "Think about her feelings.",
+      "cue": "उसकी भावनाओं का ख़्याल कीजिए."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

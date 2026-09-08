@@ -1,0 +1,677 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M2",
+  "title": "Humour and teasing",
+  "job": "Banter, irony, and when not to",
+  "prerequisites": [
+    "L5-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "clause. + nongdam-ieyo",
+      "V-(eu)l + ppeonhaesseoyo",
+      "gyeou + V-eosseoyo",
+      "neomu + A-aseo + utgyeoyo",
+      "clause-janayo. + jangnan-ieyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE DISCLAIMER IS A SENTENCE, NOT A TONE. nongdam-ieyo and jangnan-ieyo come AFTER the remark and are far less optional than English just kidding. Without one, a light remark is simply heard as a claim."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH MARKS A JOKE WITH THE VOICE, KOREAN WITH A WORD. A learner's deadpan carries nothing across; the signal has to be said out loud. Reading the signal when it comes back at you is the other half of the skill."
+    },
+    {
+      "tag": "delta",
+      "text": "-(eu)l ppeonhaesseoyo IS NOT A COUNTERFACTUAL. It says the thing did not happen and says nothing at all about what would have followed, so it never joins an if-clause. That is exactly why L4-M3 kept it out."
+    },
+    {
+      "tag": "free",
+      "text": "IT IS USUALLY HYPERBOLE. jugeul ppeonhaesseoyo, I nearly died, is comic far more often than it is literal — and here English gives a gift, because the figure is the same one, whole."
+    },
+    {
+      "tag": "free",
+      "text": "gyeou IS THE OTHER HALF OF THE PAIR. ppeonhaesseoyo says it did not happen; gyeou says it did happen, and only just. Between them they are nearly and barely, which L4-M3 could not hold together."
+    },
+    {
+      "tag": "interference",
+      "text": "TEASING RUNS DOWNWARD OR SIDEWAYS. English teasing runs upward freely and reads as warmth. A Korean tease aimed at an elder is not funny in any tone of voice, and no disclaimer repairs it."
+    },
+    {
+      "tag": "free",
+      "text": "THE AMPLIFIERS A JOKE RUNS ON are jinjja, wanjeon and daebak. They are casual speech in polite clothing: right among friends and colleagues, wrong in an announcement or to an elder."
+    },
+    {
+      "tag": "delta",
+      "text": "utgyeoyo IS ABOUT THE THING, useoyo ABOUT THE PERSON. A story is utgyeoyo, funny; the listener useoyo, laughs. They are one letter apart in the romanization and point in opposite directions."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M2-S01",
+      "display": "Oneul sukje-ga eopseoyo. Nongdam-ieyo.",
+      "script": "오늘 숙제가 없어요. 농담이에요.",
+      "cue": "There's no homework today. Just kidding.",
+      "literal": "today homework-SUBJ not-exist. joke-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nongdam",
+            "script": "농담",
+            "cue": "a joke",
+            "tag": "free",
+            "forms": [
+              "nongdam",
+              "nongdam-i",
+              "nongdam-eun",
+              "nongdam-eul",
+              "nongdam-ieyo"
+            ],
+            "note": "The joke itself. nongdam-ieyo, said after the remark, is what tells a listener the remark was one."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English can leave a joke to the voice. Korean does not: without nongdam-ieyo the first sentence is only a claim about homework.",
+      "sound": "O-neul SUK-je-ga EOP-seo-yo. NONG-da-mi-e-yo.",
+      "variations": [
+        {
+          "display": "Nongdam-ieyo.",
+          "script": "농담이에요.",
+          "cue": "Just kidding.",
+          "changed": "the disclaimer alone"
+        },
+        {
+          "display": "Oneul sukje-ga eopseoyo.",
+          "script": "오늘 숙제가 없어요.",
+          "cue": "There's no homework today.",
+          "changed": "the remark with the disclaimer taken off"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul sukje-ga eopseoyo. Nongdam.",
+        "script": "오늘 숙제가 없어요. 농담.",
+        "why": "The bare noun is not the disclaimer. Korean says the whole sentence nongdam-ieyo; dropping the copula is the plain style this course does not speak."
+      },
+      "usage": "Taking back a small untruth you told for a laugh.",
+      "register": "neutral",
+      "mnemonic": "Say the joke, then say it was one."
+    },
+    {
+      "id": "L5-M2-S02",
+      "display": "Eoje neomu bappaseo jugeul ppeonhaesseoyo.",
+      "script": "어제 너무 바빠서 죽을 뻔했어요.",
+      "cue": "Yesterday I was so busy I nearly died.",
+      "literal": "yesterday too busy-BECAUSE die-FUT nearly-did",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jugeul ppeonhaesseoyo",
+            "script": "죽을 뻔했어요",
+            "cue": "nearly died",
+            "tag": "free",
+            "forms": [
+              "jugeul ppeonhaesseoyo",
+              "neomeojil ppeonhaesseoyo",
+              "useul ppeonhaesseoyo"
+            ],
+            "note": "Nearly, as a whole phrase: the verb stem takes -(eu)l and ppeonhaesseoyo follows it. A near miss, and far more often a joke about one."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "It says only that the thing did not happen. English I nearly died invites what would have followed; the Korean does not, and it takes no if-clause.",
+      "sound": "EO-je NEO-mu BAP-pa-seo JU-geul PPEON-hae-sseo-yo.",
+      "variations": [
+        {
+          "display": "Jugeul ppeonhaesseoyo.",
+          "script": "죽을 뻔했어요.",
+          "cue": "I nearly died.",
+          "changed": "the exaggeration alone"
+        },
+        {
+          "display": "Neomeojil ppeonhaesseoyo.",
+          "script": "넘어질 뻔했어요.",
+          "cue": "I nearly fell over.",
+          "changed": "a different verb in the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje neomu bappasseumyeon jugeul ppeonhaesseoyo.",
+        "script": "어제 너무 바빴으면 죽을 뻔했어요.",
+        "why": "This makes it a counterfactual: if I had been busy, I would have died. ppeonhaesseoyo reports a near miss that really did nearly happen."
+      },
+      "usage": "Making a hard day sound comic.",
+      "register": "neutral",
+      "mnemonic": "Nearly — and nothing about what came next."
+    },
+    {
+      "id": "L5-M2-S03",
+      "display": "Oneul gyeou jip-e wasseoyo.",
+      "script": "오늘 겨우 집에 왔어요.",
+      "cue": "I only just got home today.",
+      "literal": "today barely house-to came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gyeou",
+            "script": "겨우",
+            "cue": "barely, only just",
+            "tag": "free",
+            "forms": [
+              "gyeou"
+            ],
+            "note": "The other half of nearly. ppeonhaesseoyo says it did not happen; gyeou says it did happen, and only just."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "gyeou is not nearly. A sentence with gyeou reports something that DID happen; one with ppeonhaesseoyo reports something that did not.",
+      "sound": "O-neul GYEO-u JI-be WA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Gyeou wasseoyo.",
+          "script": "겨우 왔어요.",
+          "cue": "I only just got here.",
+          "changed": "the adverb and the verb alone"
+        },
+        {
+          "display": "Jip-e gyeou wasseoyo.",
+          "script": "집에 겨우 왔어요.",
+          "cue": "I only just got home.",
+          "changed": "gyeou moved next to the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul jip-e ol ppeonhaesseoyo.",
+        "script": "오늘 집에 올 뻔했어요.",
+        "why": "That says I nearly came home, and therefore did not. gyeou is the word for getting there after all, with difficulty."
+      },
+      "usage": "Saying you made it, but barely.",
+      "register": "neutral",
+      "mnemonic": "gyeou: it happened, only just."
+    },
+    {
+      "id": "L5-M2-S04",
+      "display": "Geu iyagi-neun jinjja utgyeoyo.",
+      "script": "그 이야기는 진짜 웃겨요.",
+      "cue": "That story is really funny.",
+      "literal": "that story-TOPIC really is-funny",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "iyagi",
+            "script": "이야기",
+            "cue": "a story, something somebody told you",
+            "tag": "free",
+            "forms": [
+              "iyagi",
+              "iyagi-neun",
+              "iyagi-ga",
+              "iyagi-reul"
+            ],
+            "note": "A story or an anecdote. It is what a joke usually arrives inside, and it is the ordinary word for what somebody told you."
+          },
+          {
+            "display": "utgyeoyo",
+            "script": "웃겨요",
+            "cue": "is funny, makes people laugh",
+            "tag": "delta",
+            "forms": [
+              "utgyeoyo",
+              "utgyeoseo",
+              "utgyeosseoyo"
+            ],
+            "note": "Said of the thing, never of the person doing the laughing: a story is utgyeoyo, and the listener useoyo."
+          }
+        ],
+        "rules": [
+          6,
+          7
+        ]
+      },
+      "trap": "utgyeoyo and useoyo are one letter apart and point opposite ways. The joke is utgyeoyo; the person who hears it useoyo.",
+      "sound": "GEU I-ya-gi-neun JIN-jja UT-gyeo-yo.",
+      "variations": [
+        {
+          "display": "Jinjja utgyeoyo.",
+          "script": "진짜 웃겨요.",
+          "cue": "It's really funny.",
+          "changed": "the amplifier and the verb alone"
+        },
+        {
+          "display": "Geu iyagi-ga jinjja utgyeoyo.",
+          "script": "그 이야기가 진짜 웃겨요.",
+          "cue": "That story is really funny.",
+          "changed": "the subject particle instead of the topic"
+        }
+      ],
+      "mistake": {
+        "display": "Geu iyagi-neun jinjja useoyo.",
+        "script": "그 이야기는 진짜 웃어요.",
+        "why": "That says the story laughs. A story is funny — utgyeoyo — and only a person useoyo."
+      },
+      "usage": "Passing on something that made you laugh.",
+      "register": "neutral",
+      "mnemonic": "The joke utgyeoyo, the listener useoyo."
+    },
+    {
+      "id": "L5-M2-S05",
+      "display": "Chingu-ga neomu utgyeoseo jeongmal manhi useoyo.",
+      "script": "친구가 너무 웃겨서 정말 많이 웃어요.",
+      "cue": "My friend is so funny that I really laugh a lot.",
+      "literal": "friend-SUBJ too is-funny-BECAUSE really a-lot laugh",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "useoyo",
+            "script": "웃어요",
+            "cue": "laughs",
+            "tag": "free",
+            "forms": [
+              "useoyo",
+              "useoseo"
+            ],
+            "note": "What a person does. Its past useosseoyo already belongs to L4-M10, so this row teaches the present and the -aseo form only."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "-aseo hangs off the stem. utgyeoyo becomes utgyeoseo and useoyo becomes useoseo; neither of them keeps its -yo.",
+      "sound": "CHIN-gu-ga NEO-mu UT-gyeo-seo JEONG-mal MA-ni U-seo-yo.",
+      "variations": [
+        {
+          "display": "Neomu utgyeoseo manhi useoyo.",
+          "script": "너무 웃겨서 많이 웃어요.",
+          "cue": "It's so funny that I laugh a lot.",
+          "changed": "without naming the friend"
+        },
+        {
+          "display": "Chingu-ga manhi useoyo.",
+          "script": "친구가 많이 웃어요.",
+          "cue": "My friend laughs a lot.",
+          "changed": "the result clause alone"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga neomu useoseo jeongmal manhi utgyeoyo.",
+        "script": "친구가 너무 웃어서 정말 많이 웃겨요.",
+        "why": "The two verbs have swapped places. It now says the friend laughs so much that I am the funny one."
+      },
+      "usage": "Explaining why somebody had you in stitches.",
+      "register": "neutral",
+      "mnemonic": "Funny causes, laughing follows."
+    },
+    {
+      "id": "L5-M2-S06",
+      "display": "Jinjja daebak-ieyo. Wanjeon utgyeoyo.",
+      "script": "진짜 대박이에요. 완전 웃겨요.",
+      "cue": "That's amazing. Absolutely hilarious.",
+      "literal": "really jackpot-is. completely is-funny",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "daebak",
+            "script": "대박",
+            "cue": "amazing, a hit",
+            "tag": "free",
+            "forms": [
+              "daebak",
+              "daebak-ieyo"
+            ],
+            "note": "A one-word reaction to something remarkable, good or bad. It is exclamation rather than description, so it usually stands on its own."
+          },
+          {
+            "display": "wanjeon",
+            "script": "완전",
+            "cue": "totally, absolutely",
+            "tag": "free",
+            "forms": [
+              "wanjeon"
+            ],
+            "note": "An amplifier in front of a verb or an adjective. Stronger than L3-M1's jeongmal, and lighter in tone."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "All three amplifiers are casual speech in polite clothing. They fit friends and colleagues, and they do not fit an announcement or an elder.",
+      "sound": "JIN-jja DAE-ba-gi-e-yo. WAN-jeon UT-gyeo-yo.",
+      "variations": [
+        {
+          "display": "Daebak-ieyo.",
+          "script": "대박이에요.",
+          "cue": "That's amazing.",
+          "changed": "the reaction alone"
+        },
+        {
+          "display": "Wanjeon daebak-ieyo.",
+          "script": "완전 대박이에요.",
+          "cue": "That's absolutely amazing.",
+          "changed": "the two amplifiers stacked"
+        }
+      ],
+      "mistake": {
+        "display": "Jinjja daebak. Wanjeon utgyeoyo.",
+        "script": "진짜 대박. 완전 웃겨요.",
+        "why": "daebak on its own is the plain style. In the -yo speech this course writes, the reaction still carries the copula: daebak-ieyo."
+      },
+      "usage": "Reacting to a story you enjoyed.",
+      "register": "neutral",
+      "mnemonic": "daebak keeps its copula."
+    },
+    {
+      "id": "L5-M2-S07",
+      "display": "Je chingu-neun jinjja jaemiisseoyo.",
+      "script": "제 친구는 진짜 재미있어요.",
+      "cue": "My friend is really good fun.",
+      "literal": "my friend-TOPIC really is-fun",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jinjja",
+            "script": "진짜",
+            "cue": "really, seriously",
+            "tag": "free",
+            "forms": [
+              "jinjja"
+            ],
+            "note": "The everyday amplifier, and a whole question on its own: jinjja means really? L3-M1's jeongmal is its more careful twin."
+          },
+          {
+            "display": "jaemiisseoyo",
+            "script": "재미있어요",
+            "cue": "is fun, is enjoyable",
+            "tag": "free",
+            "forms": [
+              "jaemiisseoyo",
+              "jaemiisseosseoyo"
+            ],
+            "note": "Built from jaemi, fun, and isseoyo, and written as one word. Said of a person it means good company, not that they tell jokes."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "jaemiisseoyo about a person means good company. utgyeoyo about a person would say they are ridiculous, so the two are not interchangeable.",
+      "sound": "JE CHIN-gu-neun JIN-jja JAE-mi-i-sseo-yo.",
+      "variations": [
+        {
+          "display": "Jinjja jaemiisseoyo.",
+          "script": "진짜 재미있어요.",
+          "cue": "It's really good fun.",
+          "changed": "without naming the friend"
+        },
+        {
+          "display": "Geu iyagi-ga jaemiisseosseoyo.",
+          "script": "그 이야기가 재미있었어요.",
+          "cue": "That story was fun.",
+          "changed": "the past, said of a story"
+        }
+      ],
+      "mistake": {
+        "display": "Je chingu-neun jinjja jaemi isseoyo.",
+        "script": "제 친구는 진짜 재미 있어요.",
+        "why": "jaemiisseoyo is written as one word. Split in two it reads as a bare noun and a separate verb, which is not how the phrase is said."
+      },
+      "usage": "Recommending somebody's company.",
+      "register": "neutral",
+      "mnemonic": "jaemi and isseoyo, written as one."
+    },
+    {
+      "id": "L5-M2-S08",
+      "display": "Oneul sihum itjanayo. Jangnan-ieyo.",
+      "script": "오늘 시험 있잖아요. 장난이에요.",
+      "cue": "There's an exam today, you know. I'm only teasing.",
+      "literal": "today exam exist-you-know. teasing-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sihum",
+            "script": "시험",
+            "cue": "an exam, a test",
+            "tag": "free",
+            "forms": [
+              "sihum",
+              "sihum-i",
+              "sihum-eul"
+            ],
+            "note": "The test itself. Korean often leaves the particle off after it in speech, which is why it stands bare in sihum itjanayo."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "L4-M4's -janayo assumes the listener already knows. That is what makes it a tease: it presents an invention as common knowledge.",
+      "sound": "O-neul SI-heum IT-ja-na-yo. JANG-na-ni-e-yo.",
+      "variations": [
+        {
+          "display": "Jangnan-ieyo.",
+          "script": "장난이에요.",
+          "cue": "I'm only teasing.",
+          "changed": "the disclaimer alone"
+        },
+        {
+          "display": "Oneul sihum-i eopseoyo.",
+          "script": "오늘 시험이 없어요.",
+          "cue": "There's no exam today.",
+          "changed": "the truth, plainly said"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul sihum itjanayo.",
+        "script": "오늘 시험 있잖아요.",
+        "why": "Without jangnan-ieyo the tease is just a false statement, and the listener has no way to hear it as anything else. The disclaimer is not decoration."
+      },
+      "usage": "Winding a friend up and then letting them off.",
+      "register": "neutral",
+      "mnemonic": "Tease, then release."
+    },
+    {
+      "id": "L5-M2-S09",
+      "display": "Eoreun-hante jangnan-eul hamyeon an dwaeyo.",
+      "script": "어른한테 장난을 하면 안 돼요.",
+      "cue": "You must not tease an elder.",
+      "literal": "elder-to teasing-OBJ do-if not become",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jangnan",
+            "script": "장난",
+            "cue": "teasing, a prank",
+            "tag": "free",
+            "forms": [
+              "jangnan",
+              "jangnan-i",
+              "jangnan-eun",
+              "jangnan-eul",
+              "jangnan-ieyo"
+            ],
+            "note": "The act rather than the words. jangnan-ieyo withdraws a tease the way nongdam-ieyo withdraws a joke."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "English teasing runs upward and reads as warmth. Korean teasing runs downward or sideways, and no tone of voice makes it acceptable upward.",
+      "sound": "EO-reun-han-te JANG-na-neul HA-myeon AN DWAE-yo.",
+      "variations": [
+        {
+          "display": "Jangnan-eul hamyeon an dwaeyo.",
+          "script": "장난을 하면 안 돼요.",
+          "cue": "You must not tease.",
+          "changed": "the rule without naming who"
+        },
+        {
+          "display": "Eoreun-hante nongdam-eul hamyeon an dwaeyo.",
+          "script": "어른한테 농담을 하면 안 돼요.",
+          "cue": "You must not joke with an elder.",
+          "changed": "a joke rather than a tease, the same rule"
+        }
+      ],
+      "mistake": {
+        "display": "Eoreun-hante jangnan-eul haeyo.",
+        "script": "어른한테 장난을 해요.",
+        "why": "Grammatical and still wrong. The second half of this module is that a tease chooses its listener before it chooses its words."
+      },
+      "usage": "Naming the one place a tease does not go.",
+      "register": "neutral",
+      "mnemonic": "Sideways or down. Never up."
+    },
+    {
+      "id": "L5-M2-S10",
+      "display": "Geu nongdam-eun jaemi-ga eopseoyo.",
+      "script": "그 농담은 재미가 없어요.",
+      "cue": "That joke isn't funny.",
+      "literal": "that joke-TOPIC fun-SUBJ not-exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jaemi",
+            "script": "재미",
+            "cue": "fun, interest",
+            "tag": "free",
+            "forms": [
+              "jaemi",
+              "jaemi-ga"
+            ],
+            "note": "The noun inside jaemiisseoyo. The verdict on a flat joke is jaemi-ga eopseoyo, and it is milder in Korean than it sounds translated."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "A flat joke gets no harsher verdict than this. jaemi-ga eopseoyo is the ordinary thing to say, not the insult that isn't funny sounds like in English.",
+      "sound": "GEU NONG-da-meun JAE-mi-ga EOP-seo-yo.",
+      "variations": [
+        {
+          "display": "Jaemi-ga eopseoyo.",
+          "script": "재미가 없어요.",
+          "cue": "It isn't funny.",
+          "changed": "the verdict alone"
+        },
+        {
+          "display": "Geu iyagi-neun jaemi-ga eopseoyo.",
+          "script": "그 이야기는 재미가 없어요.",
+          "cue": "That story isn't fun.",
+          "changed": "a story rather than a joke"
+        }
+      ],
+      "mistake": {
+        "display": "Geu nongdam-eun jaemi eopseoyo.",
+        "script": "그 농담은 재미 없어요.",
+        "why": "The particle is doing work: jaemi-ga is the subject of eopseoyo. Fast speech drops it, but the phrase a learner writes carries it."
+      },
+      "usage": "Telling a friend their joke fell flat.",
+      "register": "neutral",
+      "mnemonic": "No fun exists in it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M2-C01",
+      "display": "Nongdam-ieyo.",
+      "script": "농담이에요.",
+      "cue": "Just kidding."
+    },
+    {
+      "id": "L5-M2-C02",
+      "display": "Jangnan-ieyo.",
+      "script": "장난이에요.",
+      "cue": "I'm only teasing."
+    },
+    {
+      "id": "L5-M2-C03",
+      "display": "Jugeul ppeonhaesseoyo.",
+      "script": "죽을 뻔했어요.",
+      "cue": "I nearly died."
+    },
+    {
+      "id": "L5-M2-C04",
+      "display": "Neomeojil ppeonhaesseoyo.",
+      "script": "넘어질 뻔했어요.",
+      "cue": "I nearly fell over."
+    },
+    {
+      "id": "L5-M2-C05",
+      "display": "Gyeou wasseoyo.",
+      "script": "겨우 왔어요.",
+      "cue": "I only just got here."
+    },
+    {
+      "id": "L5-M2-C06",
+      "display": "Jinjja utgyeoyo.",
+      "script": "진짜 웃겨요.",
+      "cue": "That's really funny."
+    },
+    {
+      "id": "L5-M2-C07",
+      "display": "Wanjeon daebak-ieyo.",
+      "script": "완전 대박이에요.",
+      "cue": "That's absolutely amazing."
+    },
+    {
+      "id": "L5-M2-C08",
+      "display": "Geu iyagi-ga jaemiisseoyo.",
+      "script": "그 이야기가 재미있어요.",
+      "cue": "That story is fun."
+    },
+    {
+      "id": "L5-M2-C09",
+      "display": "Chingu-ga manhi useoyo.",
+      "script": "친구가 많이 웃어요.",
+      "cue": "My friend laughs a lot."
+    },
+    {
+      "id": "L5-M2-C10",
+      "display": "Oneul sihum-i eopseoyo. Nongdam-ieyo.",
+      "script": "오늘 시험이 없어요. 농담이에요.",
+      "cue": "There's no exam today. Just kidding."
+    },
+    {
+      "id": "L5-M2-C11",
+      "display": "Jaemi-ga eopseoyo.",
+      "script": "재미가 없어요.",
+      "cue": "It isn't funny."
+    },
+    {
+      "id": "L5-M2-C12",
+      "display": "Eoreun-hante nongdam-eul hamyeon an dwaeyo.",
+      "script": "어른한테 농담을 하면 안 돼요.",
+      "cue": "You must not joke with an elder."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

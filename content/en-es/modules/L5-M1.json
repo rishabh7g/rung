@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M1",
+  "title": "Sayings and idioms",
+  "job": "The figurative everyday, and when it is used",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["present", "preterite", "infinitive"],
+    "allowedPatterns": [
+      "V-light + <fixed N> (echar una mano · meter la pata · hacer caso)",
+      "Estar + <fixed complement> (estar hecho polvo · estar en las nubes)",
+      "<idiom clause> + , + <plain restatement clause>",
+      "Tener ganas de + V-inf",
+      "No + tener + ni idea + de + <N>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A light-verb idiom is ONE unit: a nearly empty verb plus a fixed noun. The noun carries the meaning; the verb is chosen by the noun and not by the sense, so the pair has to be learned together. Echar, meter, hacer, dar, poner, tomar and tener are all doing this job here, and none of them means what it means alone."
+    },
+    {
+      "tag": "interference",
+      "text": "The English verb never predicts the Spanish one. English GIVES a hand, TAKES a walk and PAYS attention; Spanish THROWS a hand (echar una mano), GIVES a turn (dar una vuelta) and MAKES case (hacer caso). A learner who translates the verb is wrong every single time — the verb is the half you cannot guess."
+    },
+    {
+      "tag": "delta",
+      "text": "The second family is estar plus a fixed complement, for a passing state: estar hecho polvo, estar en las nubes. It is always estar and never ser, because the state is a condition and not an identity; and hecho polvo agrees for gender like an ordinary adjective (hecho for a man, hecha for a woman)."
+    },
+    {
+      "tag": "free",
+      "text": "Say the plain thing beside the figurative one. A comma and a restatement — often opened by es decir — hands a listener both versions at once, which is how nearly every display in this module is built and how a learner buys time when the idiom does not land."
+    },
+    {
+      "tag": "free",
+      "text": "These are neutral, unremarkable register, not jokes: an English speaker who hears echar una mano as colourful will save it for occasions that never come. Every display here addresses one friend as tú (docs/53 §1) and none of them needs an usted frame. The opposite risk is real too — an idiom in every sentence marks a learner faster than a plain mistake does."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M1-S01",
+      "display": "¿Me puedes echar una mano? Es decir, ¿me puedes ayudar?",
+      "cue": "Can you give me a hand? That is, can you help me?",
+      "literal": "Me you-can to-throw a hand? Is to-say, me you-can to-help?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "echar una mano",
+            "cue": "to give a hand · to help out",
+            "tag": "interference",
+            "forms": ["echar una mano", "echa una mano"],
+            "note": "English GIVES a hand; Spanish THROWS one. Never dar una mano. The verb is the half you cannot guess, and it is fixed to this noun."
+          },
+          {
+            "display": "es decir",
+            "cue": "that is · in other words",
+            "tag": "free",
+            "forms": ["es decir"],
+            "note": "The restatement hinge: it opens the plain version of what you just said figuratively. Two ordinary words doing one fixed job."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "An English speaker reaches for dar because English gives a hand. Dar una mano is not Spanish; the fixed verb is echar and nothing else opens this noun.",
+      "sound": "The ch of echar is the ch of church, never a k. The three words run as one: e-cha-RU-na-MA-no, with no pause before una.",
+      "variations": [
+        {
+          "display": "Mi hermano siempre echa una mano en casa.",
+          "cue": "My brother always gives a hand around the house.",
+          "changed": "The infinitive becomes the third person: the noun and the article never move, only the verb."
+        }
+      ],
+      "mistake": {
+        "display": "¿Me puedes dar una mano?",
+        "why": "A direct translation of the English. Dar is the wrong light verb for mano, and the phrase reads as literally handing over a hand. Echar is the only verb this noun takes."
+      },
+      "usage": "The ordinary, everyday way to ask for help with something small and physical — a bag, a table, a move. Neutral, and far commoner than ayudar in speech.",
+      "register": "informal",
+      "mnemonic": "You do not hand a hand — you throw it: echar una mano."
+    },
+    {
+      "id": "L5-M1-S02",
+      "display": "Echo de menos a mi hermana, pero la veo en agosto.",
+      "cue": "I miss my sister, but I will see her in August.",
+      "literal": "I-throw of less to my sister, but her I-see in August.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "echar de menos",
+            "cue": "to miss (a person or place)",
+            "tag": "interference",
+            "forms": ["echar de menos", "echo de menos", "echa de menos"],
+            "note": "The same echar, a different fixed noun phrase, an unrelated meaning. Nothing in echar or menos predicts to miss: the whole thing is the word."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Perder is the verb for losing a thing, not for missing a person. Perdí a mi hermana says she died or is lost.",
+      "sound": "Echo de menos elides at the seam: e-cho-de-ME-nos, four beats, stress on ME. The o of echo never sounds like the English echo.",
+      "variations": [
+        {
+          "display": "Mi madre echa de menos el pueblo.",
+          "cue": "My mother misses the village.",
+          "changed": "First person to third, and the object is a place rather than a person — the frame does not care which."
+        }
+      ],
+      "mistake": {
+        "display": "Pierdo a mi hermana.",
+        "why": "Perder is to lose. This sentence says the sister is missing, not that she is missed. Echar de menos is the only ordinary way to say it in Spain."
+      },
+      "usage": "Everyday and unremarkable, said to family and friends. In much of Latin America extrañar does the same job; echar de menos is what Spain says.",
+      "register": "neutral",
+      "mnemonic": "You throw the person into the less: echar de menos."
+    },
+    {
+      "id": "L5-M1-S03",
+      "display": "Metí la pata en la reunión, dije algo muy mal.",
+      "cue": "I put my foot in it at the meeting; I said something very wrong.",
+      "literal": "I-put the paw in the meeting, I-said something very badly.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meter la pata",
+            "cue": "to put your foot in it · to blunder",
+            "tag": "free",
+            "forms": ["meter la pata", "metí la pata"],
+            "note": "Literally to put the paw in. Neutral and everyday, not crude: it is the ordinary word for having said the wrong thing."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The article is fixed. It is la pata, never mi pata or una pata — the noun inside a light-verb idiom keeps no freedom of its own.",
+      "sound": "Metí carries its stress on the last syllable, me-TI, and the accent is what says so. La pata is flat: LA-pa-ta.",
+      "variations": [
+        {
+          "display": "Es fácil meter la pata con el jefe.",
+          "cue": "It is easy to put your foot in it with the boss.",
+          "changed": "Preterite to infinitive, under es fácil — the idiom behaves like any ordinary verb once the unit is intact."
+        }
+      ],
+      "mistake": {
+        "display": "Metí mi pata en la reunión.",
+        "why": "Swapping la for mi breaks the unit and reads literally: I put my paw somewhere. The article is part of the word."
+      },
+      "usage": "Said about yourself, usually with a rueful laugh, at work or among friends. Neutral — no rudeness in it at all, which surprises English speakers.",
+      "register": "neutral",
+      "mnemonic": "One paw in the wrong place: meter la pata."
+    },
+    {
+      "id": "L5-M1-S04",
+      "display": "El médico lo dijo, pero no le hice caso.",
+      "cue": "The doctor said so, but I took no notice of him.",
+      "literal": "The doctor it said, but not to-him I-made case.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hacer caso",
+            "cue": "to take notice · to heed",
+            "tag": "interference",
+            "forms": ["hacer caso", "hace caso", "hice caso"],
+            "note": "English PAYS attention; Spanish MAKES case. The person heeded is a le, not a direct object: le hice caso, never lo hice caso."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Bare caso is never used alone in this sense, and prestar atención is the written, formal alternative. In speech it is hacer caso and nothing else.",
+      "sound": "Caso has a soft s and never a z sound: CA-so. Hice is ee-se, two syllables, with the c before e sounding s in America and th in most of Spain.",
+      "variations": [
+        {
+          "display": "El niño no hace caso a nadie.",
+          "cue": "The child takes no notice of anybody.",
+          "changed": "Preterite to present, and the person heeded arrives with a rather than as a pronoun."
+        }
+      ],
+      "mistake": {
+        "display": "El médico lo dijo, pero no pagué atención.",
+        "why": "Pagar attention is English wearing Spanish clothes: pagar is for money. Prestar atención exists but is formal; hacer caso is what is said."
+      },
+      "usage": "Neutral and constant — about advice, about children, about warnings. No hacer caso is the everyday way to say somebody ignored you.",
+      "register": "neutral",
+      "mnemonic": "You do not pay attention, you make a case of it: hacer caso."
+    },
+    {
+      "id": "L5-M1-S05",
+      "display": "Después de la reunión te puedo poner al día, si quieres.",
+      "cue": "After the meeting I can bring you up to date, if you like.",
+      "literal": "After of the meeting you I-can to-put to-the day, if you-want.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poner al día",
+            "cue": "to bring (someone) up to date",
+            "tag": "free",
+            "forms": ["poner al día", "pone al día"],
+            "note": "Literally to put to the day. It is al día, singular, never a los días; and the person brought up to date is the object, not the day."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English updates a person with a verb of its own. Spanish has no ordinary one-word verb here in speech: actualizar is for software and forms, not for people.",
+      "sound": "Al día is two syllables plus one: al-DI-a, with the accent on the i splitting it from the a. Poner keeps its stress on the last syllable, po-NER.",
+      "variations": [
+        {
+          "display": "El jefe pone al día el horario cada lunes.",
+          "cue": "The boss updates the timetable every Monday.",
+          "changed": "The object is a thing rather than a person, and the infinitive becomes the third person."
+        }
+      ],
+      "mistake": {
+        "display": "Te puedo actualizar después de la reunión.",
+        "why": "Actualizar is for a system, a file or a price. Used of a person it sounds like a software release note. Poner al día is what a colleague says."
+      },
+      "usage": "Office and family alike, and completely neutral. Ponerse al día — the reflexive — is catching up on your own backlog, and is just as common.",
+      "register": "informal",
+      "mnemonic": "Put someone to the day they missed: poner al día."
+    },
+    {
+      "id": "L5-M1-S06",
+      "display": "Con este frío, es difícil tener ganas de salir de casa.",
+      "cue": "In this cold, it is hard to feel like going out.",
+      "literal": "With this cold, is difficult to-have desires of to-leave of house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tener ganas de",
+            "cue": "to feel like (doing something)",
+            "tag": "delta",
+            "forms": ["tener ganas de"],
+            "note": "The citation form of the frame L3-M6 taught you conjugated, in tengo ganas de and tienes ganas de. Only those two persons are taught; this row adds the infinitive, nothing else."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The de is not optional and never becomes a. Tener ganas a is not Spanish, and tener gana — singular — is a different, much rarer word.",
+      "sound": "Ganas has a hard g, as in go, because the a follows it: GA-nas. The de leans onto the next word and almost disappears: ganas-de-sa-LIR.",
+      "variations": [
+        {
+          "display": "Hoy tengo ganas de dar una vuelta.",
+          "cue": "Today I feel like going for a walk.",
+          "changed": "The infinitive becomes the first person L3-M6 already taught, and the thing wanted is itself an idiom from this module."
+        }
+      ],
+      "mistake": {
+        "display": "Con este frío, es difícil tener ganas a salir.",
+        "why": "The preposition is fixed: tener ganas DE. Swapping in a is the commonest error in the whole frame, and it is audible immediately."
+      },
+      "usage": "Constant in speech, about anything from a coffee to a holiday. No tengo ganas on its own is a complete and very common answer.",
+      "register": "informal",
+      "mnemonic": "Desires OF doing it: tener ganas de."
+    },
+    {
+      "id": "L5-M1-S07",
+      "display": "Estoy hecha polvo, no puedo dar una vuelta contigo hoy.",
+      "cue": "I am shattered; I cannot go for a walk with you today.",
+      "literal": "I-am made dust, not I-can to-give a turn with-you today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hecho polvo",
+            "cue": "shattered · worn out",
+            "tag": "delta",
+            "forms": ["hecho polvo", "hecha polvo"],
+            "note": "Literally made dust. It goes with estar and never ser, and it agrees for gender: hecho for a man, hecha for a woman. L3-M7 taught hecho as the participle."
+          },
+          {
+            "display": "dar una vuelta",
+            "cue": "to go for a walk · to go for a turn",
+            "tag": "interference",
+            "forms": ["dar una vuelta", "damos una vuelta"],
+            "note": "English TAKES a walk; Spanish GIVES a turn. It means a stroll with no errand at the end of it, which is why it is not the same as ir a andar."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "Soy hecha polvo is impossible. A state you are in this evening takes estar; ser would claim it is what you are made of.",
+      "sound": "Polvo is two clean syllables, POL-vo, and the v is the same soft b sound as in Spanish b — POL-bo to an English ear.",
+      "variations": [
+        {
+          "display": "Estoy hecho polvo después del examen.",
+          "cue": "I am shattered after the exam.",
+          "changed": "A man speaking, so the complement is hecho: the idiom agrees even though it is fixed."
+        }
+      ],
+      "mistake": {
+        "display": "Soy hecha polvo, no puedo dar una vuelta.",
+        "why": "Ser turns a passing state into a permanent property. Estar is what the estar-plus-complement family is built on, and swapping it breaks the idiom rather than shading it."
+      },
+      "usage": "Very common and slightly informal, said at the end of a long day. Neutral enough for a colleague, warm enough for a friend.",
+      "register": "informal",
+      "mnemonic": "Ground down to dust — and only ever estar."
+    },
+    {
+      "id": "L5-M1-S08",
+      "display": "Hoy estoy en las nubes, no entiendo nada.",
+      "cue": "Today I am up in the clouds; nothing is going in.",
+      "literal": "Today I-am in the clouds, not I-understand nothing.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en las nubes",
+            "cue": "daydreaming · miles away",
+            "tag": "free",
+            "forms": ["en las nubes"],
+            "note": "Always plural and always with estar. It is about attention, not about mood: somebody en las nubes is not sad, only elsewhere."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "English says on cloud nine for happiness. En las nubes is not that at all — it is the absent-minded one, closer to away with the fairies.",
+      "sound": "Nubes is NU-bes, and the b is soft between vowels. Las nubes runs together with one s: laz-NU-bes.",
+      "variations": [
+        {
+          "display": "El estudiante está en las nubes.",
+          "cue": "The student is miles away.",
+          "changed": "First person to third; the complement itself never changes, because nothing in it agrees."
+        }
+      ],
+      "mistake": {
+        "display": "Hoy estoy en la nube, no entiendo nada.",
+        "why": "The singular is wrong here — la nube is a real cloud, or the cloud your files are in. The idiom is fixed in the plural."
+      },
+      "usage": "Neutral and affectionate: said of a child, a tired colleague, or yourself. It excuses the inattention rather than accusing it.",
+      "register": "neutral",
+      "mnemonic": "Not one cloud but all of them: en las nubes."
+    },
+    {
+      "id": "L5-M1-S09",
+      "display": "No tengo ni idea de este horario, lo siento.",
+      "cue": "I have no idea about this timetable, sorry.",
+      "literal": "Not I-have nor idea of this timetable, it I-feel.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ni idea",
+            "cue": "no idea at all",
+            "tag": "free",
+            "forms": ["ni idea"],
+            "note": "The ni is what makes it flat: no tengo ni idea is much stronger than no lo sé. Ni idea also stands alone as a whole answer."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "No tengo una idea means you cannot think of a suggestion. Ni is the negative particle that turns it into knowing nothing whatever.",
+      "sound": "Ni idea has two i sounds meeting, and speech merges them: nee-DE-a, three beats rather than four.",
+      "variations": [
+        {
+          "display": "Ni idea de dónde está el banco.",
+          "cue": "No idea where the bank is.",
+          "changed": "The verb drops away entirely: ni idea de is a complete turn on its own."
+        }
+      ],
+      "mistake": {
+        "display": "No tengo una idea de este horario.",
+        "why": "Una idea counts ideas. The idiom needs ni, which is not a but nor — it denies even one, and that is where the force comes from."
+      },
+      "usage": "Neutral to informal and extremely common. Bare Ni idea, said alone, is the ordinary shrug; with a stranger, soften it with lo siento as here.",
+      "register": "neutral",
+      "mnemonic": "Not even one idea: ni idea."
+    },
+    {
+      "id": "L5-M1-S10",
+      "display": "Creo que me quieres tomar el pelo, no te creo.",
+      "cue": "I think you are pulling my leg; I do not believe you.",
+      "literal": "I-believe that me you-want to-take the hair, not you I-believe.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tomar el pelo",
+            "cue": "to pull someone's leg · to tease",
+            "tag": "interference",
+            "forms": ["tomar el pelo", "toma el pelo"],
+            "note": "English pulls a LEG; Spanish takes the HAIR. L2-M2 taught pelo as the haircut — this is a different word made of the same three, and only the whole phrase means teasing."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "Neither the verb nor the noun can be swapped. Tirar el pelo is pulling somebody's hair for real, and it is not a joke.",
+      "sound": "Tomar el pelo runs as five beats, to-ma-REL-PE-lo: the r of tomar joins el, so the two words sound like one.",
+      "variations": [
+        {
+          "display": "Mi hermano me toma el pelo cada día.",
+          "cue": "My brother pulls my leg every day.",
+          "changed": "Infinitive to third person, with the teased person arriving as me before the verb."
+        }
+      ],
+      "mistake": {
+        "display": "Creo que me quieres tirar la pierna.",
+        "why": "A word-for-word English leg-pull. Tirar la pierna is meaningless in Spanish, and the fixed phrase is tomar el pelo, hair and all."
+      },
+      "usage": "Warm and completely everyday between friends and family — it names the teasing rather than resenting it. This is the reflex L5-M2 builds its whole module on.",
+      "register": "informal",
+      "mnemonic": "They take the hair, not the leg: tomar el pelo."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M1-C01",
+      "display": "Echo de menos a mi madre.",
+      "cue": "I miss my mother."
+    },
+    {
+      "id": "L5-M1-C02",
+      "display": "Perdona, metí la pata.",
+      "cue": "Sorry, I put my foot in it."
+    },
+    {
+      "id": "L5-M1-C03",
+      "display": "El niño no hace caso a nadie.",
+      "cue": "The child takes no notice of anybody."
+    },
+    {
+      "id": "L5-M1-C04",
+      "display": "Vamos a dar una vuelta por el parque.",
+      "cue": "Let us go for a walk in the park."
+    },
+    {
+      "id": "L5-M1-C05",
+      "display": "Estoy hecho polvo, me voy a casa.",
+      "cue": "I am shattered, I am going home."
+    },
+    {
+      "id": "L5-M1-C06",
+      "display": "Estás en las nubes hoy.",
+      "cue": "You are miles away today."
+    },
+    {
+      "id": "L5-M1-C07",
+      "display": "No tengo ni idea de esto.",
+      "cue": "I have no idea about this."
+    },
+    {
+      "id": "L5-M1-C08",
+      "display": "¿Me quieres tomar el pelo?",
+      "cue": "Are you pulling my leg?"
+    },
+    {
+      "id": "L5-M1-C09",
+      "display": "Te puedo poner al día mañana.",
+      "cue": "I can bring you up to date tomorrow."
+    },
+    {
+      "id": "L5-M1-C10",
+      "display": "Es difícil tener ganas de trabajar los domingos.",
+      "cue": "It is hard to feel like working on Sundays."
+    },
+    {
+      "id": "L5-M1-C11",
+      "display": "Mi hermano echa una mano en la cocina.",
+      "cue": "My brother gives a hand in the kitchen."
+    },
+    {
+      "id": "L5-M1-C12",
+      "display": "Metí la pata, es decir, dije algo mal.",
+      "cue": "I put my foot in it — that is, I said something wrong."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,750 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M2",
+  "title": "Humour and teasing",
+  "job": "Banter, irony, and when not to",
+  "prerequisites": [
+    "L5-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "presente, L1-M6's, which is where a tease is delivered",
+      "imperfetto, L2-M10's, in one lexicalised repair: scherzavo",
+      "passato prossimo, L2-M10's, in abbiamo riso and nowhere else",
+      "imperativo negativo, L4-M1's non plus infinitive, in non ti offendere"
+    ],
+    "allowedPatterns": [
+      "Ma dai + ! + / + Ma va + !",
+      "<N> + -ino / -one / -accio",
+      "Ti prendo in giro + / + Scherzavo",
+      "Senti chi parla + !",
+      "Anch'io + / + Neanch'io"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE EVALUATIVE SUFFIX MOVES THE TONE, NOT THE SIZE. -ino and -etto add warmth (attimino, poverino, bellino), -one adds size and fondness together (bacione), -accio adds contempt (tempaccio, parolaccia). This is the machinery Italian uses to say how it feels about a thing while naming it, and it is why an Italian sentence can be affectionate with no adjective in it at all. Read -ino as little and you will use it to mean small, which is the one thing it does not reliably mean."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PARTICLES OF MOCK PROTEST CARRY THE JOKE, BECAUSE NOTHING ELSE CAN. ma dai, ma va, addirittura, senti chi parla: short fixed noises that mark what follows, or what preceded, as not seriously meant. In speech the tone would do this work; this course has no audio at all, so the WORDS have to do it, and an item that is not funny on the page is not funny. Learn them as whole units — ma dai is not ma plus dai — and learn which direction each one pushes."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH TEASES BY UNDERSTATEMENT AND ITALIAN BY EXAGGERATION. That is not a nuance, it is the whole difference: addirittura, esagerato, roba da matti. An English speaker who says it was quite good where an Italian says sei esagerato has not made a small stylistic slip, they have simply not been heard as joking. Overshoot on purpose, and expect to be overshot at."
+    },
+    {
+      "tag": "delta",
+      "text": "THE REPAIR THAT CLOSES A TEASE IS AN IMPERFETTO. scherzavo, I was joking — never ho scherzato. The passato prossimo is perfectly grammatical and lands as a confession to a finished act, which turns a light tease into an apology for having committed one. This is a tense choice worth memorising as a lexeme rather than derived: one form, one job, and the alternative is not a weaker version of it."
+    },
+    {
+      "tag": "free",
+      "text": "THE ECHO REPLIES AND THE WORDS FOR THE JOKE ITSELF. anch'io answers a positive and neanch'io answers a negative, and they are single words with the elision inside them — anch'io is not anche plus io on the page. Around them: che ridere for what a laugh, buffo for funny in a way you smile AT, divertente for funny with no edge in it, esagerato for over the top, permaloso for touchy, and senza offesa and non ti offendere for the two ways of taking the edge off after the fact."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ALTERED WORDS ARE LEXICALISED, NOT PRODUCTIVE. The eight or so shown here are words a dictionary lists: carino, bellino, poverino, attimino, bacione, tempaccio, parolaccia. A learner who invents a ninth by rule is inventing a word, and it will be heard as one. Each altered word also keeps the gender of its base — parola is feminine, so it is parolaccia and never parolaccio — and the base itself stays where its own module put it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M2-S01",
+      "display": "Ma dai, non ci credo!",
+      "cue": "Oh come on, I don't believe it!",
+      "literal": "But give, not there I-believe",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ma dai",
+            "cue": "come off it",
+            "tag": "delta",
+            "forms": [
+              "ma dai"
+            ],
+            "note": "One protest spelled with two words. Neither half is doing its own job: nobody is being told to give anything, and the ma is not contrasting with anything."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "It is not the imperative of dare with ma in front of it. Splitting the pair gives dai, come on, plus an ordinary but — which is not the same move at all.",
+      "sound": "ma DYE. dai rhymes with the English dye and takes the whole stress; ma is swallowed in front of it.",
+      "variations": [
+        {
+          "display": "Ma dai!",
+          "cue": "Come on!",
+          "changed": "said alone, which is most of the time"
+        },
+        {
+          "display": "Ma dai, non è vero!",
+          "cue": "Come off it, that's not true!",
+          "changed": "the disbelief said out loud after the particle"
+        },
+        {
+          "display": "Ma dai, che ridere!",
+          "cue": "Oh come on, what a laugh!",
+          "changed": "che ridere after it, so the protest is friendly"
+        }
+      ],
+      "mistake": {
+        "display": "Dai, ma non ci credo",
+        "why": "Split apart, the two words go back to meaning what they say. The protest is the pair, in that order, with nothing between them."
+      },
+      "usage": "Reacting to news you find hard to believe, or to a friend who is laying it on thick.",
+      "register": "informal",
+      "mnemonic": "Two small words, one raised eyebrow."
+    },
+    {
+      "id": "L5-M2-S02",
+      "display": "Ma va! Addirittura, non ci credo",
+      "cue": "Get away! Really — I don't believe it",
+      "literal": "But goes! Even-so, not there I-believe",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ma va",
+            "cue": "get away, you're joking",
+            "tag": "delta",
+            "forms": [
+              "ma va"
+            ],
+            "note": "Flatter disbelief than ma dai. The verb is va, the third person, and it is not aimed at anybody: the pair is one fixed noise."
+          },
+          {
+            "display": "addirittura",
+            "cue": "really, going that far",
+            "tag": "free",
+            "forms": [
+              "addirittura"
+            ],
+            "note": "Even, to that extent. Said alone it is a whole reaction — you did THAT? — and it is the exaggeration this kind of joking runs on."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "ma dai and ma va are not interchangeable. ma dai invites the other person to go on; ma va tells them to stop.",
+      "sound": "ma VA. ad-dee-reet-TOO-ra: five syllables, a double d and a double t, both of them held.",
+      "variations": [
+        {
+          "display": "Ma va!",
+          "cue": "Get away!",
+          "changed": "alone, which is its usual size"
+        },
+        {
+          "display": "Addirittura!",
+          "cue": "Really! That much?",
+          "changed": "the second half alone, as a whole answer"
+        },
+        {
+          "display": "Ma va, non è vero!",
+          "cue": "Get away, that's not true!",
+          "changed": "the denial spelled out after it"
+        }
+      ],
+      "mistake": {
+        "display": "Ma vai! Addirittura!",
+        "why": "The form is va and not the vai you say to a friend. Nobody is being told to go anywhere, so the verb never agrees with anyone."
+      },
+      "usage": "Answering a claim you think is over the top, from a friend and never from a stranger.",
+      "register": "informal",
+      "mnemonic": "ma dai pulls the story out; ma va pushes it away."
+    },
+    {
+      "id": "L5-M2-S03",
+      "display": "Ti prendo in giro, scherzavo",
+      "cue": "I'm teasing you — I was joking",
+      "literal": "You I-take in circle, I-was-joking",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prendo in giro",
+            "cue": "I'm teasing",
+            "tag": "delta",
+            "forms": [
+              "prendo in giro",
+              "prendi in giro"
+            ],
+            "note": "Tease, take the mickey. The person goes in front of the verb — ti prendo in giro — and giro is not doing any work you could look up."
+          },
+          {
+            "display": "prendere in giro",
+            "cue": "to tease",
+            "tag": "delta",
+            "forms": [
+              "prendere in giro"
+            ],
+            "note": "The infinitive, and the shape a dictionary lists. It is not unkind in itself: what makes a tease cruel is who it is aimed at, not this verb."
+          },
+          {
+            "display": "scherzavo",
+            "cue": "I was joking",
+            "tag": "delta",
+            "forms": [
+              "scherzavo"
+            ],
+            "note": "The repair, and it is an imperfetto on purpose. ho scherzato is grammatical and lands as a confession to a finished act, not as a light correction."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "English also says I WAS joking, so the tense feels familiar — but the alternative is the trap: ho scherzato reads as an apology for something you did, which is exactly the weight a tease must not have.",
+      "sound": "tee PREN-do een JEE-ro, sker-TSA-vo. The g of giro is soft, like the j of jeep; the z of scherzavo is a ts.",
+      "variations": [
+        {
+          "display": "Scherzavo!",
+          "cue": "I was joking!",
+          "changed": "the repair alone, which is how it usually arrives"
+        },
+        {
+          "display": "Ti prendo in giro!",
+          "cue": "I'm teasing you!",
+          "changed": "the tease without the repair behind it"
+        },
+        {
+          "display": "Mi prendi in giro?",
+          "cue": "Are you teasing me?",
+          "changed": "prendi, and the question turned round on you"
+        }
+      ],
+      "mistake": {
+        "display": "Ti prendo in giro, ho scherzato",
+        "why": "ho scherzato closes the joke as a completed event and sounds like owning up to it. The repair is scherzavo, and only scherzavo."
+      },
+      "usage": "Said straight after a tease, to make sure it landed as one.",
+      "register": "informal",
+      "mnemonic": "Walk them round in a circle, then say you were joking."
+    },
+    {
+      "id": "L5-M2-S04",
+      "display": "Senti chi parla! Non ti offendere",
+      "cue": "Look who's talking! Don't take it the wrong way",
+      "literal": "Hear who speaks! Not yourself offend",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "senti chi parla",
+            "cue": "look who's talking",
+            "tag": "delta",
+            "forms": [
+              "senti chi parla"
+            ],
+            "note": "The comeback that turns a tease back on the teaser. Three ordinary words, frozen: the senti is not an order to listen to anything."
+          },
+          {
+            "display": "non ti offendere",
+            "cue": "don't take it badly",
+            "tag": "delta",
+            "forms": [
+              "non ti offendere"
+            ],
+            "note": "L4-M1's non plus an infinitive, with ti attached. It comes AFTER the tease and is what keeps one from turning into an insult."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "English hears listen at the front and waits for an instruction. Nothing is being asked here: the three words are one retort and the fourth word never comes.",
+      "sound": "SEN-tee kee PAR-la. chi is kee and never chee; the stress sits on SEN and on PAR.",
+      "variations": [
+        {
+          "display": "Senti chi parla!",
+          "cue": "Look who's talking!",
+          "changed": "the comeback alone"
+        },
+        {
+          "display": "Non ti offendere!",
+          "cue": "Don't take it badly!",
+          "changed": "the repair alone, with no tease in front"
+        },
+        {
+          "display": "Senti chi parla, senza offesa!",
+          "cue": "Look who's talking — no offence!",
+          "changed": "senza offesa added, so the comeback is softened as it lands"
+        }
+      ],
+      "mistake": {
+        "display": "Ascolta chi parla!",
+        "why": "The frozen word is senti. ascolta is the ordinary verb for listen and turns a comeback into a plain instruction to pay attention."
+      },
+      "usage": "Turning a tease back on the person who made it, between people who know each other well.",
+      "register": "informal",
+      "mnemonic": "Same words, other direction."
+    },
+    {
+      "id": "L5-M2-S05",
+      "display": "Che tempaccio! Ho detto una parolaccia",
+      "cue": "What foul weather! I've just sworn",
+      "literal": "What weather-bad! I-have said a word-bad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tempaccio",
+            "cue": "foul weather",
+            "tag": "delta",
+            "forms": [
+              "tempaccio"
+            ],
+            "note": "tempo is L3-M4's and stays there. The -accio adds contempt and only contempt: this is not more weather, it is worse weather."
+          },
+          {
+            "display": "parolaccia",
+            "cue": "a swear word",
+            "tag": "delta",
+            "forms": [
+              "parolaccia",
+              "parolacce"
+            ],
+            "note": "Built on parola with the same suffix, feminine because parola is. It is the name for the category; this module goes no further into it than that."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "-accio is not a size. tempaccio is not a lot of weather and parolaccia is not a long word: the ending carries disgust, and disgust is all it carries.",
+      "sound": "ke tem-PAT-cho, pa-ro-LAT-cha. A double c before i or e is a held ch sound, and the i after it is silent.",
+      "variations": [
+        {
+          "display": "Che tempaccio oggi!",
+          "cue": "What foul weather today!",
+          "changed": "oggi added, so the complaint gets a day"
+        },
+        {
+          "display": "Che parolaccia!",
+          "cue": "What language!",
+          "changed": "the second noun alone, as an exclamation"
+        },
+        {
+          "display": "Non dire una parolaccia!",
+          "cue": "Don't swear!",
+          "changed": "L4-M1's negative order in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "Che parolaccio!",
+        "why": "The suffix takes the gender of the word it lands on. parola is feminine, so it is parolaccia; parolaccio is a word Italian does not have."
+      },
+      "usage": "Complaining about the weather, or about what somebody has just said.",
+      "register": "informal",
+      "mnemonic": "-accio is the ending that spits."
+    },
+    {
+      "id": "L5-M2-S06",
+      "display": "Un attimino, arrivo subito",
+      "cue": "Just a sec — I'm coming right away",
+      "literal": "A moment-little, I-arrive immediately",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "attimino",
+            "cue": "just a sec",
+            "tag": "delta",
+            "forms": [
+              "attimino",
+              "un attimino"
+            ],
+            "note": "attimo is L2-M7's. The -ino does not make the moment shorter, it makes the asking softer, and Italians tease each other about how often it is said."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "un attimino is not a smaller attimo. A learner who reads -ino as little will start using it to mean small and be heard as coy.",
+      "sound": "oon at-tee-MEE-no. The double t is held; the stress falls on MEE and nowhere else.",
+      "variations": [
+        {
+          "display": "Un attimino!",
+          "cue": "One sec!",
+          "changed": "alone, which is how it is usually heard"
+        },
+        {
+          "display": "Un attimino, arrivo",
+          "cue": "One sec, I'm coming",
+          "changed": "subito dropped, and the promise gets vaguer"
+        },
+        {
+          "display": "Arrivo subito, un attimino",
+          "cue": "I'm coming right away, one sec",
+          "changed": "the two halves swapped round"
+        }
+      ],
+      "mistake": {
+        "display": "Una attimino, arrivo subito",
+        "why": "attimo is masculine and stays masculine when the ending changes. The article is un, and no suffix ever moves a word's gender."
+      },
+      "usage": "Asking somebody to wait — at a counter, on the phone, at a door.",
+      "register": "informal",
+      "mnemonic": "-ino softens the ask; it does not shorten the wait."
+    },
+    {
+      "id": "L5-M2-S07",
+      "display": "Che carino! Che bellino! Un bacione, poverino!",
+      "cue": "How sweet! How cute! A big kiss, poor thing!",
+      "literal": "What dear-little! What beautiful-little! A kiss-big, poor-little!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carino",
+            "cue": "sweet, nice",
+            "tag": "delta",
+            "forms": [
+              "carino",
+              "carina"
+            ],
+            "note": "Built on caro, dear, and drifted away from it: carino is light praise for a person, a thing or a gesture, with no weight behind it."
+          },
+          {
+            "display": "bellino",
+            "cue": "cute",
+            "tag": "delta",
+            "forms": [
+              "bellino",
+              "bellina"
+            ],
+            "note": "bello is L2-M3's and stays there. bellino is smaller PRAISE, not smaller beauty, and it is faintly patronising when said of an adult."
+          },
+          {
+            "display": "bacione",
+            "cue": "a big kiss",
+            "tag": "delta",
+            "forms": [
+              "bacione",
+              "bacioni"
+            ],
+            "note": "-one carries size and fondness at once. The plural bacioni is how a message to a friend signs off, where English would write love."
+          },
+          {
+            "display": "poverino",
+            "cue": "poor thing",
+            "tag": "delta",
+            "forms": [
+              "poverino",
+              "poverina"
+            ],
+            "note": "Sympathy, and between friends usually mock sympathy. Which one it is depends entirely on who is saying it about what, never on the word."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "None of these four is about size. -ino and -one move warmth, so a learner who hears bacione as a physically large kiss has read the wrong dimension entirely.",
+      "sound": "ka-REE-no, bel-LEE-no, ba-CHO-ne, po-ve-REE-no. The ci of bacione is a cho sound, with the i silent.",
+      "variations": [
+        {
+          "display": "Che carino!",
+          "cue": "How sweet!",
+          "changed": "one altered word alone"
+        },
+        {
+          "display": "Un bacione!",
+          "cue": "A big kiss!",
+          "changed": "the sign-off on its own"
+        },
+        {
+          "display": "Poverina, che bellina!",
+          "cue": "Poor thing, how cute!",
+          "changed": "both endings feminine, agreeing with the same person"
+        }
+      ],
+      "mistake": {
+        "display": "Che carina, poverino!",
+        "why": "The endings have to agree with the same person. carina and poverina go together, or carino and poverino; mixing them inside one breath is the giveaway."
+      },
+      "usage": "Cooing over a child, a photo or a small kindness — and, between friends, over a small misfortune.",
+      "register": "informal",
+      "mnemonic": "-ino is a pat on the arm, -one is a hug."
+    },
+    {
+      "id": "L5-M2-S08",
+      "display": "Che ridere! Abbiamo riso, sei buffo",
+      "cue": "What a laugh! We laughed — you're funny",
+      "literal": "What to-laugh! We-have laughed, you-are funny",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "che ridere",
+            "cue": "what a laugh",
+            "tag": "free",
+            "forms": [
+              "che ridere"
+            ],
+            "note": "che plus a bare infinitive is a whole exclamation in Italian, where English needs a noun: not what a laughing, but what a laugh."
+          },
+          {
+            "display": "abbiamo riso",
+            "cue": "we laughed",
+            "tag": "delta",
+            "forms": [
+              "abbiamo riso"
+            ],
+            "note": "Taught as a pair on purpose. The bare participle riso is already L1-M8's rice, so a tap on that word alone opens a note about shopping."
+          },
+          {
+            "display": "buffo",
+            "cue": "funny, comical",
+            "tag": "free",
+            "forms": [
+              "buffo",
+              "buffa"
+            ],
+            "note": "Funny in a way you smile AT rather than with. divertente is the word with no edge in it, and the difference between them is the whole tease."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "riso is rice and the participle of ridere, spelled identically. Say abbiamo riso, ho riso, hai riso — and never leave the participle standing on its own.",
+      "sound": "ke REE-de-re, ab-BYA-mo REE-zo, say BOOF-fo. The s of riso is a z sound; buffo has a double f and it is held.",
+      "variations": [
+        {
+          "display": "Che ridere!",
+          "cue": "What a laugh!",
+          "changed": "the exclamation alone"
+        },
+        {
+          "display": "Abbiamo riso tutta la sera",
+          "cue": "We laughed all evening",
+          "changed": "tutta la sera added, so the laughing gets a length"
+        },
+        {
+          "display": "Sei molto buffo",
+          "cue": "You're very funny",
+          "changed": "molto in front, and the tease is aimed"
+        }
+      ],
+      "mistake": {
+        "display": "Che ridere! Abbiamo ridere",
+        "why": "ridere is the infinitive and cannot follow abbiamo. The participle is riso, however much it looks like the rice from the shopping module."
+      },
+      "usage": "Said in the retelling, after something funny has actually happened.",
+      "register": "informal",
+      "mnemonic": "riso is rice until abbiamo is standing in front of it."
+    },
+    {
+      "id": "L5-M2-S09",
+      "display": "Senza offesa, ma sei esagerato e permaloso",
+      "cue": "No offence, but you're over the top and touchy",
+      "literal": "Without offence, but you-are exaggerated and touchy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "senza offesa",
+            "cue": "no offence",
+            "tag": "free",
+            "forms": [
+              "senza offesa"
+            ],
+            "note": "Said BEFORE the thing that might offend, where non ti offendere is said after it. Both are fixed and neither is an apology."
+          },
+          {
+            "display": "esagerato",
+            "cue": "over the top",
+            "tag": "delta",
+            "forms": [
+              "esagerato",
+              "esagerata"
+            ],
+            "note": "Half complaint and half compliment, because exaggeration is how this kind of joking is done. Said of a person, not of a thing."
+          },
+          {
+            "display": "permaloso",
+            "cue": "touchy, easily offended",
+            "tag": "free",
+            "forms": [
+              "permaloso",
+              "permalosa"
+            ],
+            "note": "The word for somebody who cannot take a tease. Calling a friend permaloso is itself a tease, which is why it belongs in this module."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "English teases by understating and Italian by overstating. A learner who softens this to sei un po' troppo has not been gentler, they have simply not been heard as joking.",
+      "sound": "SEN-tsa of-FE-za, e-za-je-RA-to, per-ma-LO-zo. The z of senza is a ts; both s sounds between vowels are z.",
+      "variations": [
+        {
+          "display": "Sei esagerato!",
+          "cue": "You're over the top!",
+          "changed": "the accusation alone"
+        },
+        {
+          "display": "Senza offesa, ma sei permaloso",
+          "cue": "No offence, but you're touchy",
+          "changed": "one adjective instead of two"
+        },
+        {
+          "display": "Non sei divertente, sei esagerato",
+          "cue": "You're not funny, you're over the top",
+          "changed": "the two words set against each other"
+        }
+      ],
+      "mistake": {
+        "display": "Senza offesa, ma sei esagerato e permalosa",
+        "why": "One person, one gender, twice. esagerato is masculine and permalosa feminine; a single sentence cannot hold both endings about the same person."
+      },
+      "usage": "Answering a friend who has told a story far bigger than the thing that happened.",
+      "register": "informal",
+      "mnemonic": "senza offesa goes in front, non ti offendere goes behind."
+    },
+    {
+      "id": "L5-M2-S10",
+      "display": "Sei divertente. Anch'io! Non sono buffo. Neanch'io!",
+      "cue": "You're funny. — Me too! I'm not comical. — Nor am I!",
+      "literal": "You-are entertaining. Also-I! Not I-am comical. Neither-I!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "divertente",
+            "cue": "funny, entertaining",
+            "tag": "free",
+            "forms": [
+              "divertente"
+            ],
+            "note": "The neutral word for funny, said of a person or an evening. It carries no edge at all, which is what separates it from buffo."
+          },
+          {
+            "display": "anch'io",
+            "cue": "me too",
+            "tag": "delta",
+            "forms": [
+              "anch'io"
+            ],
+            "note": "One word on the page, apostrophe and all, and it answers a POSITIVE. anche is L1-M10's and io is L2-M5's; this is neither of them."
+          },
+          {
+            "display": "neanch'io",
+            "cue": "nor me",
+            "tag": "interference",
+            "forms": [
+              "neanch'io"
+            ],
+            "note": "The answer to a NEGATIVE, and the one English speakers get wrong: after non sono, me too is wrong and neanch'io is the only reply."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "English can answer a negative with me neither or me too and be understood either way. Italian cannot: anch'io after a non sentence is heard as agreeing with the opposite of what was said.",
+      "sound": "dee-ver-TEN-te, an-KEE-o, ne-an-KEE-o. The ch is a k sound and the apostrophe is not a pause.",
+      "variations": [
+        {
+          "display": "Anch'io!",
+          "cue": "Me too!",
+          "changed": "the positive reply alone"
+        },
+        {
+          "display": "Neanch'io!",
+          "cue": "Nor me!",
+          "changed": "the negative reply alone"
+        },
+        {
+          "display": "Sei molto divertente",
+          "cue": "You're very funny",
+          "changed": "molto in front, and no reply after it"
+        }
+      ],
+      "mistake": {
+        "display": "Non sono buffo. Anch'io!",
+        "why": "anch'io agrees with a positive. After a non sentence it says the opposite of what the speaker means, and neanch'io is the only reply that works."
+      },
+      "usage": "Agreeing with a friend, in the two directions a conversation can be going.",
+      "register": "informal",
+      "mnemonic": "anch'io after a yes, neanch'io after a no."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M2-C01",
+      "display": "Ma dai, non ci credo!",
+      "cue": "Come off it, I don't believe it!"
+    },
+    {
+      "id": "L5-M2-C02",
+      "display": "Ma va! Addirittura!",
+      "cue": "Get away! Really?"
+    },
+    {
+      "id": "L5-M2-C03",
+      "display": "Mi prendi in giro?",
+      "cue": "Are you teasing me?"
+    },
+    {
+      "id": "L5-M2-C04",
+      "display": "Scherzavo, senza offesa",
+      "cue": "I was joking, no offence"
+    },
+    {
+      "id": "L5-M2-C05",
+      "display": "Senti chi parla!",
+      "cue": "Look who's talking!"
+    },
+    {
+      "id": "L5-M2-C06",
+      "display": "Che tempaccio oggi!",
+      "cue": "What foul weather today!"
+    },
+    {
+      "id": "L5-M2-C07",
+      "display": "Non dire una parolaccia!",
+      "cue": "Don't swear!"
+    },
+    {
+      "id": "L5-M2-C08",
+      "display": "Un attimino, arrivo subito",
+      "cue": "One sec, I'm coming right away"
+    },
+    {
+      "id": "L5-M2-C09",
+      "display": "Che carino! Un bacione!",
+      "cue": "How sweet! A big kiss!"
+    },
+    {
+      "id": "L5-M2-C10",
+      "display": "Poverina, che bellina!",
+      "cue": "Poor thing, how cute!"
+    },
+    {
+      "id": "L5-M2-C11",
+      "display": "Che ridere! Sei molto buffo",
+      "cue": "What a laugh! You're very funny"
+    },
+    {
+      "id": "L5-M2-C12",
+      "display": "Non sono permaloso. Neanch'io!",
+      "cue": "I'm not touchy. — Nor am I!"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

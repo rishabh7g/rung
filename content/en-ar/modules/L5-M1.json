@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M1",
+  "title": "Sayings and idioms",
+  "job": "The figurative everyday, and when it is used",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "<proverb, indexed whole> + , + kamā yaqūl al-mathal",
+      "<person> + khafīf ad-damm",
+      "<adjective> + al- + N-body (the iḍāfa idiom)",
+      "ka- + al- + N",
+      "hunāka mathal yaqūl + : + <proverb>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A fixed expression is repeated, never composed. The forty modules before this one taught sentences you build; these items are strings you store whole and produce unchanged, word for word and in one order."
+    },
+    {
+      "tag": "delta",
+      "text": "The body idiom is an iḍāfa L3 already opened — khafīf ad-damm, ṭawīl al-bāl, ṭawīl al-lisān: an adjective in front of a definite body part. The grammar is old; what is new is that the whole means what no part of it says."
+    },
+    {
+      "tag": "interference",
+      "text": "Read word by word, khafīf ad-damm is a blood disorder and ṭawīl al-lisān is a measurement. Literal reading fails in both directions — an English idiom carried straight across into Arabic is nonsense too."
+    },
+    {
+      "tag": "delta",
+      "text": "man inside a proverb is not L2-M7's question word who. In man jadda wajada it is a free relative — whoever strove, found — a fossil that survives only inside sayings. Recognise it; never build with it."
+    },
+    {
+      "tag": "delta",
+      "text": "mā in front of a past verb is the second fossil. mā qalla wa dalla keeps a shape ordinary speech no longer uses in this position, and it too is stored as one string. Bare mā is not this module's to define."
+    },
+    {
+      "tag": "free",
+      "text": "hunāka mathal yaqūl and kamā yaqūl al-mathal are the two frames that mark what follows as a quotation. Both stand on L3-M5's yaqūl, unchanged, and both are the safest way for a learner to deploy a saying at all."
+    },
+    {
+      "tag": "interference",
+      "text": "REGISTER is the real trap. An English proverb in conversation is usually jokey or ironic; an Arabic proverb is graver and borrows the authority of everyone who said it before you. It is not a punchline."
+    },
+    {
+      "tag": "free",
+      "text": "L4-M5's ka- and the free-standing mithl both mean like, and both make a LIVE comparison: khafīfa ka-al-ʿuṣfūr is about actual lightness. khafīf ad-damm looks like the same shape and is not a comparison at all."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M1-S01",
+      "display": "hunāka mathal yaqūl: man jadda wajada",
+      "script": "هناك مثل يقول: من جد وجد",
+      "cue": "There is a proverb that says: he who strives, finds.",
+      "literal": "There a-proverb it-says: whoever strove, found",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mathal",
+            "script": "مثل",
+            "cue": "proverb, saying",
+            "tag": "free",
+            "forms": [
+              "mathal",
+              "al-mathal",
+              "amthāl"
+            ],
+            "note": "The word for a proverb; the plural is amthāl. With the article, al-mathal, it is what the quoting frame names: kamā yaqūl al-mathal."
+          },
+          {
+            "display": "man jadda wajada",
+            "script": "من جد وجد",
+            "cue": "he who strives, finds",
+            "tag": "delta",
+            "forms": [
+              "man jadda wajada"
+            ],
+            "note": "One stored string. The man here is not L2-M7's question word who — it is a fossil free relative that lives only inside sayings."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "man is L2-M7's who as a question. Inside a proverb it means whoever, and it is not a rule you may build with — ordinary Arabic does not open a relative clause this way.",
+      "sound": "man JAD-da wa-JA-da: both verbs hold a doubled middle consonant, and the two rhyme. A proverb is shaped to be repeated.",
+      "variations": [
+        {
+          "display": "hunāka mathal yaqūl: aṣ-ṣabr miftāḥ al-faraj",
+          "script": "هناك مثل يقول: الصبر مفتاح الفرج",
+          "cue": "There is a proverb that says: patience is the key to relief.",
+          "changed": "the proverb inside the frame; the frame itself never moves"
+        },
+        {
+          "display": "yaqūl abī dāʾiman: man jadda wajada",
+          "script": "يقول أبي دائمًا: من جد وجد",
+          "cue": "My father always says: he who strives, finds.",
+          "changed": "who is quoting it — the saying is untouched, as a saying must be"
+        }
+      ],
+      "mistake": {
+        "display": "man yajidd yajid",
+        "script": "من يجد يجد",
+        "why": "Modernising the proverb into the present destroys it. A saying is stored, not conjugated: the past-plus-past shape is the fossil, and changing it leaves the words true and the proverb gone."
+      },
+      "usage": "Introducing a proverb you are about to quote — the safest way for a learner to use one at all.",
+      "register": "neutral",
+      "mnemonic": "A proverb is quoted, never conjugated."
+    },
+    {
+      "id": "L5-M1-S02",
+      "display": "mā qalla wa dalla, kamā yaqūl al-mathal",
+      "script": "ما قل ودل، كما يقول المثل",
+      "cue": "Brief and to the point, as the proverb says.",
+      "literal": "What was-little and pointed, as says the-proverb",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mā qalla wa dalla",
+            "script": "ما قل ودل",
+            "cue": "brief, and says everything",
+            "tag": "delta",
+            "forms": [
+              "mā qalla wa dalla"
+            ],
+            "note": "Stored whole. The mā sits in front of a past verb in a way ordinary speech no longer uses; the phrase praises something said shortly and well."
+          },
+          {
+            "display": "kamā",
+            "script": "كما",
+            "cue": "as, just as",
+            "tag": "free",
+            "forms": [
+              "kamā"
+            ],
+            "note": "The quoting frame's as. It stands in front of a verb and leaves it alone: L3-M5's yaqūl is unchanged behind it."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          5
+        ]
+      },
+      "trap": "Four words, and not one of them is doing its ordinary job. Do not try to build with mā plus a past verb — outside a saying the course negates a past with L3-M4's lam.",
+      "sound": "mā QAL-la wa DAL-la: two doubled verbs and an internal rhyme. The shape is how you know a saying has landed.",
+      "variations": [
+        {
+          "display": "mā qalla wa dalla, kamā yaqūl abī",
+          "script": "ما قل ودل، كما يقول أبي",
+          "cue": "Brief and to the point, as my father says.",
+          "changed": "who is credited with the saying"
+        },
+        {
+          "display": "hunāka mathal yaqūl: mā qalla wa dalla",
+          "script": "هناك مثل يقول: ما قل ودل",
+          "cue": "There is a proverb that says: brief and to the point.",
+          "changed": "the other frame, which moves in front of the saying"
+        }
+      ],
+      "mistake": {
+        "display": "lam yaqill wa lam yadull",
+        "script": "لم يقل ولم يدل",
+        "why": "Rebuilding the saying with the ordinary past negative gives grammatical Arabic and no proverb. A fossil is not a pattern; it is a string."
+      },
+      "usage": "Praising something said briefly and well — a short speech, a short answer, a short message.",
+      "register": "formal",
+      "mnemonic": "Short, and it lands: mā qalla wa dalla."
+    },
+    {
+      "id": "L5-M1-S03",
+      "display": "aṣ-ṣabr miftāḥ al-faraj, wa hādhā mathal qadīm",
+      "script": "الصبر مفتاح الفرج، وهذا مثل قديم",
+      "cue": "Patience is the key to relief, and this is an old proverb.",
+      "literal": "The-patience key the-relief, and this proverb old",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aṣ-ṣabr",
+            "script": "الصبر",
+            "cue": "patience",
+            "tag": "free",
+            "forms": [
+              "aṣ-ṣabr",
+              "ṣabr"
+            ],
+            "note": "Patience as a thing, so it carries the article. The proverb is a nominal sentence — subject, predicate, and no verb between them."
+          },
+          {
+            "display": "al-faraj",
+            "script": "الفرج",
+            "cue": "relief, the lifting of a hardship",
+            "tag": "free",
+            "forms": [
+              "al-faraj",
+              "faraj"
+            ],
+            "note": "Not happiness: the moment a difficulty ends. L1-M7's miftāḥ, a key, is doing figurative work in front of it."
+          },
+          {
+            "display": "qadīm",
+            "script": "قديم",
+            "cue": "old, long-standing",
+            "tag": "free",
+            "forms": [
+              "qadīm",
+              "qadīma"
+            ],
+            "note": "Of things, not of people — a proverb, a house, a story. An old person is kabīr fī as-sinn, which is L4-M8's."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          6
+        ]
+      },
+      "trap": "The English is patience IS the key; the Arabic has no is. Four levels in, the missing copula still catches learners inside a saying, where there is no verb to lean on.",
+      "sound": "aṣ-ṣABR: sun-letter assimilation, so the l of al- is not said — aṣ-ṣabr, never al-ṣabr. miftāḥ carries a long ā.",
+      "variations": [
+        {
+          "display": "aṣ-ṣabr miftāḥ al-faraj, kamā yaqūl al-mathal",
+          "script": "الصبر مفتاح الفرج، كما يقول المثل",
+          "cue": "Patience is the key to relief, as the proverb says.",
+          "changed": "the comment becomes the quoting frame"
+        },
+        {
+          "display": "hādhā mathal qadīm jiddan",
+          "script": "هذا مثل قديم جدًا",
+          "cue": "This is a very old proverb.",
+          "changed": "only the comment survives; the proverb itself is dropped"
+        }
+      ],
+      "mistake": {
+        "display": "aṣ-ṣabr huwa miftāḥ li-al-faraj",
+        "script": "الصبر هو مفتاح للفرج",
+        "why": "Every added word is grammatical and the proverb is gone. A saying is quoted with the words it has; padding it out reads as someone explaining it rather than saying it."
+      },
+      "usage": "Said to someone waiting out a hard stretch — a delay, an illness, an application.",
+      "register": "neutral",
+      "mnemonic": "Patience is a key, not a wait."
+    },
+    {
+      "id": "L5-M1-S04",
+      "display": "ṣadīqī khafīf ad-damm jiddan",
+      "script": "صديقي خفيف الدم جدًا",
+      "cue": "My friend is very good company.",
+      "literal": "My-friend light the-blood very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khafīf ad-damm",
+            "script": "خفيف الدم",
+            "cue": "funny, good company",
+            "tag": "interference",
+            "forms": [
+              "khafīf ad-damm"
+            ],
+            "note": "Light of blood. The iḍāfa is L3's and the meaning is not: the whole says pleasant to be around, and no part of it says that."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Word for word this is a blood disorder. The idiom is stored whole and translated whole; taking khafīf and ad-damm apart gives you nothing the sentence means.",
+      "sound": "kha-FĪF ad-DAMM: kh is the throat-clearing sound, and the article assimilates to the sun letter d, so the m of damm is doubled and held.",
+      "variations": [
+        {
+          "display": "abī khafīf ad-damm",
+          "script": "أبي خفيف الدم",
+          "cue": "My father is good company.",
+          "changed": "who is being described"
+        },
+        {
+          "display": "al-mudīr khafīf ad-damm ayḍan",
+          "script": "المدير خفيف الدم أيضًا",
+          "cue": "The manager is good company too.",
+          "changed": "ayḍan adds the idiom to somebody already mentioned"
+        }
+      ],
+      "mistake": {
+        "display": "ṣadīqī damuhu khafīf",
+        "script": "صديقي دمه خفيف",
+        "why": "The same words in another order. A fixed expression exists in one order only, and an idiom has no variants a learner may invent."
+      },
+      "usage": "The warmest ordinary compliment about a person's company — a friend, a colleague, a host.",
+      "register": "informal",
+      "mnemonic": "Light blood, easy company."
+    },
+    {
+      "id": "L5-M1-S05",
+      "display": "jārī ṭawīl al-bāl, wa huwa khafīf ad-damm ayḍan",
+      "script": "جاري طويل البال، وهو خفيف الدم أيضًا",
+      "cue": "My neighbour is patient, and he is good company too.",
+      "literal": "My-neighbour long the-mind, and he light the-blood also",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jārī",
+            "script": "جاري",
+            "cue": "my neighbour",
+            "tag": "free",
+            "forms": [
+              "jārī",
+              "al-jār",
+              "jār"
+            ],
+            "note": "Neighbour. With -ī on the end it is my neighbour; al-jār is the form the proverb al-jār qabla ad-dār uses."
+          },
+          {
+            "display": "ṭawīl al-bāl",
+            "script": "طويل البال",
+            "cue": "patient, unruffled",
+            "tag": "interference",
+            "forms": [
+              "ṭawīl al-bāl"
+            ],
+            "note": "Long of mind. ṭawīl is L2-M2's long, al-bāl the mind as a place where things wait — and the whole simply means patient."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Two body idioms side by side, and neither can be read through its parts. English has the same habit — thick-skinned, warm-hearted — so the idea transfers even though no single idiom does.",
+      "sound": "JĀ-rī ṭa-WĪL al-BĀL: three long ā vowels in a row, and al-bāl keeps the l of the article because b is a moon letter.",
+      "variations": [
+        {
+          "display": "al-mudīr ṭawīl al-bāl",
+          "script": "المدير طويل البال",
+          "cue": "The manager is patient.",
+          "changed": "who is patient"
+        },
+        {
+          "display": "jārī ṭawīl al-bāl dāʾiman",
+          "script": "جاري طويل البال دائمًا",
+          "cue": "My neighbour is always patient.",
+          "changed": "dāʾiman makes it a standing trait rather than today's mood"
+        }
+      ],
+      "mistake": {
+        "display": "jārī ṭawīl al-bāl kabīr",
+        "script": "جاري طويل البال كبير",
+        "why": "An idiom does not take an extra adjective inside it. Anything else you want to say about the person goes in a second clause, as wa huwa khafīf ad-damm ayḍan does here."
+      },
+      "usage": "Describing someone who does not lose their temper — a teacher, a driver, a parent.",
+      "register": "neutral",
+      "mnemonic": "Long mind, long fuse."
+    },
+    {
+      "id": "L5-M1-S06",
+      "display": "hunāka mathal yaqūl: al-jār qabla ad-dār",
+      "script": "هناك مثل يقول: الجار قبل الدار",
+      "cue": "There is a proverb that says: the neighbour before the house.",
+      "literal": "There a-proverb it-says: the-neighbour before the-house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ad-dār",
+            "script": "الدار",
+            "cue": "the house, the home",
+            "tag": "free",
+            "forms": [
+              "ad-dār",
+              "dār"
+            ],
+            "note": "The older word for a house, kept alive by this proverb and by its rhyme with al-jār. The everyday word is L1-M3's al-bayt."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          6
+        ]
+      },
+      "trap": "It is advice, not a statement of fact: find out who lives next door before you buy. English keeps the same advice as a whole sentence; Arabic keeps it as four words.",
+      "sound": "al-JĀR QAB-la ad-DĀR: jār and dār rhyme, and the rhyme is why the saying survived at all.",
+      "variations": [
+        {
+          "display": "al-jār qabla ad-dār, kamā yaqūl al-mathal",
+          "script": "الجار قبل الدار، كما يقول المثل",
+          "cue": "The neighbour before the house, as the proverb says.",
+          "changed": "the frame moves behind the saying"
+        },
+        {
+          "display": "yaqūl abī: al-jār qabla ad-dār",
+          "script": "يقول أبي: الجار قبل الدار",
+          "cue": "My father says: the neighbour before the house.",
+          "changed": "a person quotes it instead of the frame"
+        }
+      ],
+      "mistake": {
+        "display": "al-jār qabla al-bayt",
+        "script": "الجار قبل البيت",
+        "why": "al-bayt is the everyday word and the proverb does not take it. Swapping the synonym in kills the rhyme, and a saying with its rhyme gone stops being heard as a saying."
+      },
+      "usage": "Said when somebody is choosing where to live, or explaining why they stayed where they are.",
+      "register": "neutral",
+      "mnemonic": "jār before dār — the rhyme is the rule."
+    },
+    {
+      "id": "L5-M1-S07",
+      "display": "ʿuṣfūr fī al-yad khayr min ʿuṣfūr ʿalā ash-shajara",
+      "script": "عصفور في اليد خير من عصفور على الشجرة",
+      "cue": "A bird in the hand is better than a bird in the tree.",
+      "literal": "A-bird in the-hand better than a-bird on the-tree",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿuṣfūr",
+            "script": "عصفور",
+            "cue": "a bird, a sparrow",
+            "tag": "free",
+            "forms": [
+              "ʿuṣfūr",
+              "al-ʿuṣfūr",
+              "ka-al-ʿuṣfūr"
+            ],
+            "note": "A small bird. With L4-M5's ka- joined on the front it makes ka-al-ʿuṣfūr, like a bird, which is the comparison two sentences below."
+          },
+          {
+            "display": "ash-shajara",
+            "script": "الشجرة",
+            "cue": "the tree",
+            "tag": "free",
+            "forms": [
+              "ash-shajara",
+              "shajara"
+            ],
+            "note": "Tree. sh is a sun letter, so the article assimilates and it is written and said ash-shajara."
+          }
+        ],
+        "rules": [
+          0,
+          6
+        ]
+      },
+      "trap": "This one really does transfer: English says a bird in the hand is worth two in the bush, and the Arabic says almost the same words. That is rare, and it is not a licence — most idioms carried across come out as nonsense.",
+      "sound": "ʿuṣ-FŪR: the ʿ is the tight throat sound, not the hamza. ʿalā ash-SHA-ja-ra assimilates the article to the sh.",
+      "variations": [
+        {
+          "display": "al-ʿuṣfūr fī al-yad khayr min ʿuṣfūr ʿalā ash-shajara",
+          "script": "العصفور في اليد خير من عصفور على الشجرة",
+          "cue": "The bird in the hand is better than a bird in the tree.",
+          "changed": "the article on the first bird; the saying is quoted both ways"
+        },
+        {
+          "display": "hunāka mathal yaqūl: ʿuṣfūr fī al-yad khayr min ʿuṣfūr ʿalā ash-shajara",
+          "script": "هناك مثل يقول: عصفور في اليد خير من عصفور على الشجرة",
+          "cue": "There is a proverb that says: a bird in the hand is better than a bird in the tree.",
+          "changed": "the quoting frame in front, which is how a learner should introduce it"
+        }
+      ],
+      "mistake": {
+        "display": "ʿuṣfūr fī al-yad khayr min ʿuṣfūrayn fī ash-shajara",
+        "script": "عصفور في اليد خير من عصفورين في الشجرة",
+        "why": "Importing the English arithmetic — two in the bush — gives a dual this ladder has not taught and a proverb Arabic does not say. Quote the Arabic saying, not a translation of yours."
+      },
+      "usage": "Arguing for taking what is already on the table — a job, a price, a date already agreed.",
+      "register": "neutral",
+      "mnemonic": "One in the hand beats one on the branch."
+    },
+    {
+      "id": "L5-M1-S08",
+      "display": "hiya khafīfa ka-al-ʿuṣfūr",
+      "script": "هي خفيفة كالعصفور",
+      "cue": "She is as light as a bird.",
+      "literal": "She light like-the-bird",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khafīf",
+            "script": "خفيف",
+            "cue": "light (in weight)",
+            "tag": "delta",
+            "forms": [
+              "khafīf",
+              "khafīfa"
+            ],
+            "note": "The plain adjective, meaning light. It is the same word as in khafīf ad-damm, where nothing about it is literal — one adjective, two jobs."
+          },
+          {
+            "display": "mithl",
+            "script": "مثل",
+            "cue": "like, similar to",
+            "tag": "free",
+            "forms": [
+              "mithl"
+            ],
+            "note": "The free-standing like, where L4-M5's ka- is a clitic written joined. mithl al-ʿuṣfūr and ka-al-ʿuṣfūr are the same comparison."
+          }
+        ],
+        "rules": [
+          7,
+          2
+        ]
+      },
+      "trap": "Here the comparison is literal — a real bird, real lightness. The trap runs the other way: khafīf ad-damm looks like the same construction and is a stored idiom, not a comparison you may extend.",
+      "sound": "kha-FĪ-fa ka-al-ʿuṣ-FŪR: ka- is written joined to what it compares, so the whole comparison is one written word with its stress at the end.",
+      "variations": [
+        {
+          "display": "hiya khafīfa mithl al-ʿuṣfūr",
+          "script": "هي خفيفة مثل العصفور",
+          "cue": "She is as light as a bird.",
+          "changed": "ka- becomes the free-standing mithl; the meaning does not move"
+        },
+        {
+          "display": "huwa khafīf ka-al-ʿuṣfūr",
+          "script": "هو خفيف كالعصفور",
+          "cue": "He is as light as a bird.",
+          "changed": "the gender, so the adjective loses its -a"
+        }
+      ],
+      "mistake": {
+        "display": "hiya khafīfa ad-damm ka-al-ʿuṣfūr",
+        "script": "هي خفيفة الدم كالعصفور",
+        "why": "Two systems welded together. khafīf ad-damm is a stored idiom about company, ka-al-ʿuṣfūr a live comparison about weight; running them into one sentence says neither."
+      },
+      "usage": "An ordinary compliment about someone's step, or about a child.",
+      "register": "informal",
+      "mnemonic": "ka- is glued on; mithl stands alone."
+    },
+    {
+      "id": "L5-M1-S09",
+      "display": "hādhā ar-rajul ṭawīl al-lisān wa lākin qalbuhu abyaḍ",
+      "script": "هذا الرجل طويل اللسان ولكن قلبه أبيض",
+      "cue": "This man is sharp-tongued, but he is kind-hearted.",
+      "literal": "This the-man long the-tongue and but his-heart white",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṭawīl al-lisān",
+            "script": "طويل اللسان",
+            "cue": "sharp-tongued, insolent",
+            "tag": "interference",
+            "forms": [
+              "ṭawīl al-lisān"
+            ],
+            "note": "Long of tongue — the same iḍāfa shape as ṭawīl al-bāl and the opposite verdict. Fixed whole: swapping the body part does not give you a new idiom."
+          },
+          {
+            "display": "qalbuhu",
+            "script": "قلبه",
+            "cue": "his heart",
+            "tag": "free",
+            "forms": [
+              "qalbuhu",
+              "al-qalb",
+              "qalb"
+            ],
+            "note": "Heart, with -hu for his. qalbuhu abyaḍ — his heart is white — is the idiom for kind."
+          },
+          {
+            "display": "abyaḍ",
+            "script": "أبيض",
+            "cue": "white",
+            "tag": "free",
+            "forms": [
+              "abyaḍ"
+            ],
+            "note": "White. Inside this idiom it carries clean and kind; the colour English reaches for is a temperature instead, and the two do not swap."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "English gives kindness a temperature — warm-hearted — and Arabic gives it a colour. Translating warm across produces nothing; the idiom is stored with its own colour.",
+      "sound": "ṭa-WĪL al-li-SĀN: l is a sun letter, so the article's l runs into it and doubles — al-lisān. Then QAL-bu-hu AB-yaḍ.",
+      "variations": [
+        {
+          "display": "hādhā ar-rajul ṭawīl al-lisān",
+          "script": "هذا الرجل طويل اللسان",
+          "cue": "This man is sharp-tongued.",
+          "changed": "the concession is dropped and only the complaint is left"
+        },
+        {
+          "display": "al-mudīr ṭawīl al-lisān, wa lākin qalbuhu abyaḍ",
+          "script": "المدير طويل اللسان، ولكن قلبه أبيض",
+          "cue": "The manager is sharp-tongued, but he is kind-hearted.",
+          "changed": "who is being described"
+        }
+      ],
+      "mistake": {
+        "display": "qalbuhu sākhin",
+        "script": "قلبه ساخن",
+        "why": "Warm-hearted translated straight across. sākhin is heat, and about a heart it says nothing a speaker recognises — the idiom needs abyaḍ."
+      },
+      "usage": "Excusing someone whose manner is harsh — a relative, a boss, an old friend.",
+      "register": "informal",
+      "mnemonic": "Long tongue, white heart."
+    },
+    {
+      "id": "L5-M1-S10",
+      "display": "ad-dunyā ṣaghīra, kamā yaqūl al-mathal",
+      "script": "الدنيا صغيرة، كما يقول المثل",
+      "cue": "It's a small world, as the proverb says.",
+      "literal": "The-world small, as says the-proverb",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ad-dunyā",
+            "script": "الدنيا",
+            "cue": "the world, this life",
+            "tag": "free",
+            "forms": [
+              "ad-dunyā",
+              "dunyā"
+            ],
+            "note": "The world as the place people live in, and it always takes the article. ad-dunyā ṣaghīra is what you say on running into someone unexpectedly."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          6
+        ]
+      },
+      "trap": "The saying lands exactly where English puts it's a small world, which makes it the easiest item here — and the register is still graver: it is said with a shrug at how things fall out, not as a joke.",
+      "sound": "ad-DUN-yā ṣa-GHĪ-ra: sun-letter d doubles after the article, and the final -ā of dunyā is long.",
+      "variations": [
+        {
+          "display": "ad-dunyā ṣaghīra jiddan",
+          "script": "الدنيا صغيرة جدًا",
+          "cue": "It's a very small world.",
+          "changed": "jiddan intensifies it, which this saying tolerates"
+        },
+        {
+          "display": "hunāka mathal yaqūl: ad-dunyā ṣaghīra",
+          "script": "هناك مثل يقول: الدنيا صغيرة",
+          "cue": "There is a proverb that says: it's a small world.",
+          "changed": "the frame in front"
+        }
+      ],
+      "mistake": {
+        "display": "al-ʿālam ṣaghīr",
+        "script": "العالم صغير",
+        "why": "A literal translation of small world. It is understandable and it is not the saying; ad-dunyā is the word the fixed expression uses and the one a listener is waiting for."
+      },
+      "usage": "On meeting someone you know in an unexpected place.",
+      "register": "neutral",
+      "mnemonic": "ad-dunyā, not the globe."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M1-C01",
+      "display": "hunāka mathal yaqūl: man jadda wajada",
+      "script": "هناك مثل يقول: من جد وجد",
+      "cue": "There is a proverb that says: he who strives, finds."
+    },
+    {
+      "id": "L5-M1-C02",
+      "display": "mā qalla wa dalla, kamā yaqūl al-mathal",
+      "script": "ما قل ودل، كما يقول المثل",
+      "cue": "Brief and to the point, as the proverb says."
+    },
+    {
+      "id": "L5-M1-C03",
+      "display": "aṣ-ṣabr miftāḥ al-faraj, wa hādhā mathal qadīm",
+      "script": "الصبر مفتاح الفرج، وهذا مثل قديم",
+      "cue": "Patience is the key to relief, and this is an old proverb."
+    },
+    {
+      "id": "L5-M1-C04",
+      "display": "ṣadīqī khafīf ad-damm jiddan",
+      "script": "صديقي خفيف الدم جدًا",
+      "cue": "My friend is very good company."
+    },
+    {
+      "id": "L5-M1-C05",
+      "display": "jārī ṭawīl al-bāl, wa huwa khafīf ad-damm ayḍan",
+      "script": "جاري طويل البال، وهو خفيف الدم أيضًا",
+      "cue": "My neighbour is patient, and he is good company too."
+    },
+    {
+      "id": "L5-M1-C06",
+      "display": "hunāka mathal yaqūl: al-jār qabla ad-dār",
+      "script": "هناك مثل يقول: الجار قبل الدار",
+      "cue": "There is a proverb that says: the neighbour before the house."
+    },
+    {
+      "id": "L5-M1-C07",
+      "display": "ʿuṣfūr fī al-yad khayr min ʿuṣfūr ʿalā ash-shajara",
+      "script": "عصفور في اليد خير من عصفور على الشجرة",
+      "cue": "A bird in the hand is better than a bird in the tree."
+    },
+    {
+      "id": "L5-M1-C08",
+      "display": "hiya khafīfa ka-al-ʿuṣfūr",
+      "script": "هي خفيفة كالعصفور",
+      "cue": "She is as light as a bird."
+    },
+    {
+      "id": "L5-M1-C09",
+      "display": "hādhā ar-rajul ṭawīl al-lisān wa lākin qalbuhu abyaḍ",
+      "script": "هذا الرجل طويل اللسان ولكن قلبه أبيض",
+      "cue": "This man is sharp-tongued, but he is kind-hearted."
+    },
+    {
+      "id": "L5-M1-C10",
+      "display": "ad-dunyā ṣaghīra, kamā yaqūl al-mathal",
+      "script": "الدنيا صغيرة، كما يقول المثل",
+      "cue": "It's a small world, as the proverb says."
+    },
+    {
+      "id": "L5-M1-C11",
+      "display": "al-mudīr ṭawīl al-bāl",
+      "script": "المدير طويل البال",
+      "cue": "The manager is patient."
+    },
+    {
+      "id": "L5-M1-C12",
+      "display": "hiya khafīfa mithl al-ʿuṣfūr",
+      "script": "هي خفيفة مثل العصفور",
+      "cue": "She is as light as a bird."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

@@ -1,0 +1,708 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M2",
+  "title": "Humour and teasing",
+  "job": "Banter, irony, and when not to",
+  "prerequisites": [
+    "L5-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "présent",
+      "imparfait",
+      "impératif"
+    ],
+    "allowedPatterns": [
+      "Tu rigoles + ?",
+      "Mais non + , + je te taquine",
+      "Qu'est-ce que tu es + <adjective> + !",
+      "Comme c'est + <adjective> + !",
+      "C'était pour rire + , + ne le prends pas mal"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "FRENCH HAS TWO EXCLAMATIVE FRAMES AND NEITHER ONE INVERTS. qu'est-ce que and comme both go in FRONT of an ordinary clause and leave it exactly as it was: qu'est-ce que tu es drole, comme c'est malin. English moves its words about — how funny you are — and leads its other frame with an article and a noun — what a fool. Neither move exists here. Put the frame down, then say the sentence you were going to say anyway."
+    },
+    {
+      "tag": "delta",
+      "text": "FRENCH BANTER IS SIGNALLED, NOT DEADPAN, AND THE SIGNAL IS WHAT KEEPS IT FRIENDLY. je te taquine, je plaisante, je rigole, c'etait pour rire, tu rigoles, sans blague and the tag hein all exist to say out loud that a line was a joke. English banter is often flat and unmarked, so an English speaker delivers a French tease deadpan and it is heard as a real opinion. Mark it, in the same breath, and if the face opposite you changes, mark it again."
+    },
+    {
+      "tag": "interference",
+      "text": "drole IS THE MODULE'S ONE REAL FALSE FRIEND, AND ITS POSITION DECIDES ITS MEANING. Behind the noun it is ordinary: un type drole is a funny man. In FRONT of the noun with de it flips: un drole de type is an odd character, and no laughing is implied. English splits these across two different words; French carries both on one, and a learner fresh from drole = funny will say the opposite of what they mean."
+    },
+    {
+      "tag": "delta",
+      "text": "REGISTER IS THE CONTENT, NOT A FOOTNOTE. marrant and rigolo are familiar; amusant is neutral and safe in writing or with a stranger; drole sits between them and travels almost anywhere. English funny is register-free, so the learner uses whichever word they met first — amusant in a bar sounds stiff, marrant in a report sounds sloppy. Same for the markers: je plaisante is neutral, je rigole is friends only."
+    },
+    {
+      "tag": "free",
+      "text": "qu'est-ce que IS NOT est-ce que. L2-M1 owns est-ce que, the question marker. This module's qu'est-ce que is a different item with a different job — an exclamation, not a question — and the course indexes it whole for that reason. It also brings the bare qu'est along with it, which is a hyphen part and never a word anybody says on its own: qu'est only ever appears inside qu'est-ce que and qu'est-ce que c'est."
+    },
+    {
+      "tag": "free",
+      "text": "THE ne IS ALWAYS WRITTEN (docs/58 section 4). ne le prends pas mal and ne te moque pas de moi are both written in full here, even though a French speaker saying them out loud will very often drop the ne. Speech drops it; this course does not. A learner who drops it in writing reads as careless rather than as casual."
+    },
+    {
+      "tag": "delta",
+      "text": "WHEN NOT TO, WHICH IS CONTENT AND NOT A DISCLAIMER. Teasing is for people who already know you, is never about what a person cannot change — where they are from, how they look, what they believe — and always leaves them room to laugh back. If a tease has to be explained afterwards it was not one. And this module's humour is MARKED and cooperative throughout; unmarked, pointed irony is L5-M7's, and reaching for it early is what makes a learner hear sarcasm everywhere."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M2-S01",
+      "display": "Tu rigoles ?",
+      "cue": "You're joking?",
+      "literal": "You laugh ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tu rigoles",
+            "cue": "you're joking",
+            "tag": "delta",
+            "forms": [
+              "tu rigoles"
+            ],
+            "note": "Familiar, and a whole move: as a question it is friendly disbelief. rigoler is the familiar verb for laughing about something."
+          },
+          {
+            "display": "hein",
+            "cue": "right?, eh?",
+            "tag": "free",
+            "forms": [
+              "hein"
+            ],
+            "note": "The tag hung on the end of a teasing line to ask the other person to be in on it. Very common in speech, never written in formal French."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "English you're joking can be cold or accusing. French tu rigoles ? is almost always the warm reading — surprise, not a charge.",
+      "sound": "tew ree-GOL ? The final s is silent, and French puts a space before the question mark.",
+      "variations": [
+        {
+          "display": "Tu rigoles, hein ?",
+          "cue": "You're joking, right?",
+          "changed": "the tag that asks for agreement"
+        },
+        {
+          "display": "Mais tu rigoles ?",
+          "cue": "You have got to be joking?",
+          "changed": "mais sharpens the disbelief"
+        }
+      ],
+      "mistake": {
+        "display": "Tu rigoles.",
+        "why": "the same two words flat, with a full stop, read as an accusation that somebody is not being serious. The question mark is what makes it banter."
+      },
+      "usage": "Answering something you find hard to believe, among friends.",
+      "register": "informal",
+      "mnemonic": "rigoler is laughing with; the question mark is the invitation."
+    },
+    {
+      "id": "L5-M2-S02",
+      "display": "Mais non, je te taquine",
+      "cue": "No no, I'm teasing you",
+      "literal": "But no, I you tease",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je te taquine",
+            "cue": "I'm teasing you",
+            "tag": "delta",
+            "forms": [
+              "je te taquine"
+            ],
+            "note": "The plain marker: it says the line before it was a tease. Neutral-familiar, and it works with anybody you are on tu terms with."
+          },
+          {
+            "display": "je plaisante",
+            "cue": "I'm joking",
+            "tag": "free",
+            "forms": [
+              "je plaisante"
+            ],
+            "note": "The neutral version of the same move. Safe with a colleague or a stranger, where je rigole would be too familiar."
+          },
+          {
+            "display": "je rigole",
+            "cue": "I'm just kidding",
+            "tag": "free",
+            "forms": [
+              "je rigole"
+            ],
+            "note": "The familiar version, one register below je plaisante. Friends only, and the same family as tu rigoles."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "English marks a tease afterwards, often thrown away — just kidding. French puts the marker in the same breath, and the mais non in front of it is the half an English speaker leaves out.",
+      "sound": "meh nohn, zhuh tuh tah-KEEN. taquine ends on a clear n and its final e is silent.",
+      "variations": [
+        {
+          "display": "Mais non, je plaisante",
+          "cue": "No no, I'm joking",
+          "changed": "the neutral marker"
+        },
+        {
+          "display": "Mais non, je rigole",
+          "cue": "No no, I'm just kidding",
+          "changed": "the familiar marker"
+        }
+      ],
+      "mistake": {
+        "display": "Non, je te taquine",
+        "why": "bare non answers a question. mais non waves the misunderstanding away, and it is the part that makes the line land as a repair rather than a correction."
+      },
+      "usage": "Repairing a tease the moment you see it did not land as one.",
+      "register": "informal",
+      "mnemonic": "mais non first, then the marker."
+    },
+    {
+      "id": "L5-M2-S03",
+      "display": "Qu'est-ce que tu es drôle !",
+      "cue": "You're so funny!",
+      "literal": "What-is-it that you are funny !",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qu'est-ce que",
+            "cue": "how, so (exclamative)",
+            "tag": "delta",
+            "forms": [
+              "qu'est-ce que"
+            ],
+            "note": "The exclamative frame, and NOT L2-M1's question marker est-ce que. Ordinary word order follows it: qu'est-ce que tu es drôle."
+          },
+          {
+            "display": "drôle",
+            "cue": "funny",
+            "tag": "interference",
+            "forms": [
+              "drôle"
+            ],
+            "note": "Funny, on its own and behind a noun. In FRONT of a noun with de it flips: un drôle de type is an odd character, not a funny one."
+          },
+          {
+            "display": "marrant",
+            "cue": "funny (familiar)",
+            "tag": "free",
+            "forms": [
+              "marrant",
+              "marrante"
+            ],
+            "note": "The familiar word for funny — friends and family. amusant is the neutral one and drôle sits between them."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3,
+          4
+        ]
+      },
+      "trap": "English inverts: how funny you are. French touches nothing — the frame goes in front and the clause behind it stays exactly as it was.",
+      "sound": "kess-kuh tew ay DROHL ! qu'est-ce que collapses to kess-kuh in speech; French puts a space before the exclamation mark.",
+      "variations": [
+        {
+          "display": "Qu'est-ce que tu es marrant !",
+          "cue": "You're so funny!",
+          "changed": "the register of funny"
+        },
+        {
+          "display": "Qu'est-ce que c'est drôle !",
+          "cue": "That's so funny!",
+          "changed": "aimed at the thing, not the person"
+        }
+      ],
+      "mistake": {
+        "display": "Qu'est-ce que es-tu drôle !",
+        "why": "the inversion belongs to questions. After the exclamative frame the clause keeps ordinary order, so tu es and never es-tu."
+      },
+      "usage": "Telling somebody they are funny, with warmth and a little exaggeration.",
+      "register": "informal",
+      "mnemonic": "The frame goes in front; nothing behind it moves."
+    },
+    {
+      "id": "L5-M2-S04",
+      "display": "Comme c'est malin !",
+      "cue": "Oh, very clever!",
+      "literal": "How it-is clever !",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "comme c'est",
+            "cue": "how ... it is",
+            "tag": "delta",
+            "forms": [
+              "comme c'est"
+            ],
+            "note": "The second exclamative frame, shorter than qu'est-ce que and a little more written. Ordinary order again: comme c'est malin."
+          },
+          {
+            "display": "malin",
+            "cue": "clever, smart",
+            "tag": "free",
+            "forms": [
+              "malin",
+              "maligne"
+            ],
+            "note": "Clever. Said warmly it is a compliment; said flat it is the standard French way of calling something a bad idea."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "English what a clever idea leads with an article and a noun. French leads with comme and keeps a plain clause — there is no article in the frame at all.",
+      "sound": "kom say mah-LAN ! The n of malin is nasal, not sounded.",
+      "variations": [
+        {
+          "display": "Comme c'est drôle !",
+          "cue": "How funny!",
+          "changed": "the adjective"
+        },
+        {
+          "display": "Comme tu es malin !",
+          "cue": "How clever you are!",
+          "changed": "the frame points at the person"
+        }
+      ],
+      "mistake": {
+        "display": "Comme quel malin !",
+        "why": "quel is L2-M9's and belongs to a noun phrase like quel idiot. The comme frame takes a clause, never a noun phrase."
+      },
+      "usage": "Reacting to something clever — or, said flat, to something that was not.",
+      "register": "informal",
+      "mnemonic": "comme, then a plain clause."
+    },
+    {
+      "id": "L5-M2-S05",
+      "display": "C'était pour rire, ne le prends pas mal",
+      "cue": "It was a joke, don't take it badly",
+      "literal": "It-was for to-laugh, not it take not badly",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "c'était pour rire",
+            "cue": "it was a joke",
+            "tag": "delta",
+            "forms": [
+              "c'était pour rire",
+              "pour rire"
+            ],
+            "note": "The repair line, said after a tease that landed wrong. pour rire on its own means for a laugh, and c'est pour rire works in the present."
+          },
+          {
+            "display": "ne le prends pas mal",
+            "cue": "don't take it the wrong way",
+            "tag": "delta",
+            "forms": [
+              "ne le prends pas mal"
+            ],
+            "note": "Whole. The le stands for the thing you said and sits before the verb. The ne is written even though speech drops it."
+          }
+        ],
+        "rules": [
+          1,
+          5,
+          6
+        ]
+      },
+      "trap": "English says no offence, which asks the other person for nothing. The French line asks them to do something — not to take it badly — and is warmer for it.",
+      "sound": "say-teh poor REER, nuh luh prahn pah MAL. prends ends silent; the d is not heard.",
+      "variations": [
+        {
+          "display": "C'était pour rire, hein",
+          "cue": "It was a joke, right",
+          "changed": "the tag replaces the request"
+        },
+        {
+          "display": "Ne le prends pas mal, c'était pour rire",
+          "cue": "Don't take it the wrong way, it was a joke",
+          "changed": "the order — the request comes first"
+        }
+      ],
+      "mistake": {
+        "display": "C'était pour rire, le prends pas mal",
+        "why": "the ne is not optional in written French. Speech drops it constantly; this course writes it, and a learner who drops it on the page reads as careless."
+      },
+      "usage": "Walking a tease back the moment somebody's face changes.",
+      "register": "informal",
+      "mnemonic": "Say it was for a laugh, then ask for the laugh back."
+    },
+    {
+      "id": "L5-M2-S06",
+      "display": "Ah bon ? Sans blague ?",
+      "cue": "Really? No kidding?",
+      "literal": "Ah good ? Without joke ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ah bon",
+            "cue": "really?",
+            "tag": "free",
+            "forms": [
+              "ah bon"
+            ],
+            "note": "Mild surprise, and two of the most-used words in French conversation. Flat it means really; drawn out it means you believe none of it."
+          },
+          {
+            "display": "sans blague",
+            "cue": "no kidding",
+            "tag": "free",
+            "forms": [
+              "sans blague",
+              "blague"
+            ],
+            "note": "Mock disbelief, familiar. une blague is a joke, so the phrase is literally asking whether you are making one."
+          },
+          {
+            "display": "tu m'étonnes",
+            "cue": "you don't say",
+            "tag": "free",
+            "forms": [
+              "tu m'étonnes"
+            ],
+            "note": "Literally you surprise me, used to mean the reverse: that was entirely predictable. Familiar, and always ironic."
+          },
+          {
+            "display": "ça alors",
+            "cue": "well I never",
+            "tag": "free",
+            "forms": [
+              "ça alors"
+            ],
+            "note": "Genuine surprise with no irony in it at all. Slightly old-fashioned and safe with anybody."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "English really? can land cold. Both markers in this line are warm by default; the cold one in French is tu m'étonnes, which says the reverse of what it looks like.",
+      "sound": "ah BOHN ? sahn BLAHG ? The g of blague is hard, as in the English bag.",
+      "variations": [
+        {
+          "display": "Ah bon ? Tu m'étonnes",
+          "cue": "Really? You don't say",
+          "changed": "the second half turns ironic"
+        },
+        {
+          "display": "Sans blague ? Ça alors !",
+          "cue": "No kidding? Well I never!",
+          "changed": "the surprise is genuine"
+        }
+      ],
+      "mistake": {
+        "display": "Ah bien ? Sans blague ?",
+        "why": "the marker is ah bon and it is fixed. bien is not a swap you may make — the item is stored whole, like an idiom."
+      },
+      "usage": "Reacting to news a friend has just given you, anywhere between real surprise and open doubt.",
+      "register": "informal",
+      "mnemonic": "ah bon opens the door; tu m'étonnes shuts it with a smile."
+    },
+    {
+      "id": "L5-M2-S07",
+      "display": "Mais bien sûr, tu es très amusant",
+      "cue": "Oh, of course, you're hilarious",
+      "literal": "But well sure, you are very amusing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mais bien sûr",
+            "cue": "oh, of course (flat)",
+            "tag": "delta",
+            "forms": [
+              "mais bien sûr"
+            ],
+            "note": "Said flat, French's plainest irony marker: it agrees in words and disagrees in tone. Said brightly it is a real yes."
+          },
+          {
+            "display": "amusant",
+            "cue": "funny, amusing",
+            "tag": "free",
+            "forms": [
+              "amusant",
+              "amusante"
+            ],
+            "note": "The neutral word for funny — safe in writing and with strangers. marrant and rigolo are its familiar cousins."
+          },
+          {
+            "display": "rigolo",
+            "cue": "funny (familiar)",
+            "tag": "free",
+            "forms": [
+              "rigolo",
+              "rigolote"
+            ],
+            "note": "Familiar and a little childish, warmly so. Same family as rigoler, je rigole and tu rigoles."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "English funny is register-free, so a learner reaches for whichever French word came first. amusant in a bar sounds stiff; marrant in a report sounds sloppy.",
+      "sound": "meh byan SEWR, tew ay treh zah-mew-ZAHN. The liaison in très amusant is made: treh-ZAH.",
+      "variations": [
+        {
+          "display": "Mais bien sûr, tu es très rigolo",
+          "cue": "Oh, of course, you're hilarious",
+          "changed": "the register of funny"
+        },
+        {
+          "display": "Bien sûr, tu es très amusant",
+          "cue": "Of course, you're very funny",
+          "changed": "without mais, and the irony goes with it"
+        }
+      ],
+      "mistake": {
+        "display": "Mais bien sûr que tu es très amusant",
+        "why": "bien sûr que introduces a fact you are asserting, which kills the irony. The flat marker stands on its own in front of the clause."
+      },
+      "usage": "Agreeing in words with something you do not agree with, among friends who will hear the tone.",
+      "register": "informal",
+      "mnemonic": "The flatter the bien sûr, the less it means."
+    },
+    {
+      "id": "L5-M2-S08",
+      "display": "Ne te moque pas de moi",
+      "cue": "Don't make fun of me",
+      "literal": "Not you mock not of me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se moquer de",
+            "cue": "to make fun of",
+            "tag": "delta",
+            "forms": [
+              "se moquer de",
+              "ne te moque pas de",
+              "ne te moque pas"
+            ],
+            "note": "Reflexive, and it keeps de in front of whoever is mocked. This is the line for a tease that went too far, and it is not itself a joke."
+          }
+        ],
+        "rules": [
+          1,
+          5,
+          6
+        ]
+      },
+      "trap": "English make fun of somebody takes a plain object after of. French needs de too, and always: se moquer de moi, never se moquer moi.",
+      "sound": "nuh tuh mok pah duh MWAH. moque rhymes with the English mock and its qu is a hard k.",
+      "variations": [
+        {
+          "display": "Ne te moque pas de moi, hein",
+          "cue": "Don't make fun of me, all right",
+          "changed": "the tag keeps it light"
+        },
+        {
+          "display": "Ne te moque pas, c'était pour rire",
+          "cue": "Don't make fun, it was a joke",
+          "changed": "without the person, and a repair follows"
+        }
+      ],
+      "mistake": {
+        "display": "Ne te moque pas moi",
+        "why": "the de is structural rather than decoration. Without it the verb has nothing to attach the person to, and the line does not parse."
+      },
+      "usage": "Asking somebody to stop — playfully if you are smiling, seriously if you are not.",
+      "register": "informal",
+      "mnemonic": "You always mock DE somebody."
+    },
+    {
+      "id": "L5-M2-S09",
+      "display": "C'est un drôle de type",
+      "cue": "He's an odd character",
+      "literal": "It-is a funny of guy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "un drôle de type",
+            "cue": "an odd character",
+            "tag": "interference",
+            "forms": [
+              "un drôle de type"
+            ],
+            "note": "drôle in FRONT of the noun with de means odd, not funny. Behind the noun it keeps its ordinary sense: un type drôle is a funny man."
+          },
+          {
+            "display": "type",
+            "cue": "guy, bloke",
+            "tag": "free",
+            "forms": [
+              "type"
+            ],
+            "note": "A man, familiarly — closer to bloke than to man. Also the ordinary word for a kind or a sort of thing."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "This is the module's one real false friend. A learner who has just met drôle as funny reads un drôle de type as a funny guy and says the opposite of what they meant.",
+      "sound": "say uhn drohl duh TEEP. type is one syllable, teep, with no y-sound anywhere in it.",
+      "variations": [
+        {
+          "display": "C'est un type drôle",
+          "cue": "He's a funny guy",
+          "changed": "the position of drôle, and the meaning with it"
+        },
+        {
+          "display": "C'est un drôle de film",
+          "cue": "That's a strange film",
+          "changed": "the noun — the frame is productive"
+        }
+      ],
+      "mistake": {
+        "display": "C'est un drôle type",
+        "why": "the de is what builds the frame. Without it the phrase is neither of the two readings and simply does not stand up."
+      },
+      "usage": "Describing somebody as odd — usually mildly, sometimes not.",
+      "register": "neutral",
+      "mnemonic": "drôle in front is odd; drôle behind is funny."
+    },
+    {
+      "id": "L5-M2-S10",
+      "display": "Tu parles ! C'est n'importe quoi",
+      "cue": "Yeah, right! That's nonsense",
+      "literal": "You speak ! It-is no-matter what",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tu parles",
+            "cue": "yeah, right",
+            "tag": "delta",
+            "forms": [
+              "tu parles"
+            ],
+            "note": "Ironic dismissal, familiar. It looks like you speak and means the opposite of agreement — a marker learners hear early and misread."
+          },
+          {
+            "display": "n'importe quoi",
+            "cue": "nonsense, rubbish",
+            "tag": "delta",
+            "forms": [
+              "n'importe quoi"
+            ],
+            "note": "Whole. Its n' belongs to n'importe, no matter, and is not the negator this course has drilled since L1 — there is no pas anywhere near it."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          6
+        ]
+      },
+      "trap": "The n' in n'importe quoi looks exactly like the negative ne of ce n'est pas. It is not, and hunting for the missing pas is the mistake it produces.",
+      "sound": "tew PARL ! say nan-port KWAH. The final s of parles is silent.",
+      "variations": [
+        {
+          "display": "Mais non, c'est n'importe quoi",
+          "cue": "No no, that's nonsense",
+          "changed": "softened with mais non"
+        },
+        {
+          "display": "Tu parles ! Il est très drôle",
+          "cue": "Yeah, right! He's hilarious",
+          "changed": "the ironic half comes second"
+        }
+      ],
+      "mistake": {
+        "display": "Tu parles ! C'est n'importe quoi pas",
+        "why": "n'importe quoi carries no pas. Its n' is part of n'importe, not the negation, and adding pas is the learner reflex this row exists to stop."
+      },
+      "usage": "Rejecting what somebody just said — lightly among friends, sharply anywhere else.",
+      "register": "informal",
+      "mnemonic": "n'importe quoi has an n' and no pas."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M2-C01",
+      "display": "Tu rigoles ?",
+      "cue": "You're joking?"
+    },
+    {
+      "id": "L5-M2-C02",
+      "display": "Mais non, je te taquine",
+      "cue": "No no, I'm teasing you"
+    },
+    {
+      "id": "L5-M2-C03",
+      "display": "Qu'est-ce que tu es drôle !",
+      "cue": "You're so funny!"
+    },
+    {
+      "id": "L5-M2-C04",
+      "display": "Comme c'est malin !",
+      "cue": "Oh, very clever!"
+    },
+    {
+      "id": "L5-M2-C05",
+      "display": "C'était pour rire, ne le prends pas mal",
+      "cue": "It was a joke, don't take it badly"
+    },
+    {
+      "id": "L5-M2-C06",
+      "display": "Ah bon ? Sans blague ?",
+      "cue": "Really? No kidding?"
+    },
+    {
+      "id": "L5-M2-C07",
+      "display": "Mais bien sûr, tu es très amusant",
+      "cue": "Oh, of course, you're hilarious"
+    },
+    {
+      "id": "L5-M2-C08",
+      "display": "Ne te moque pas de moi",
+      "cue": "Don't make fun of me"
+    },
+    {
+      "id": "L5-M2-C09",
+      "display": "C'est un drôle de type",
+      "cue": "He's an odd character"
+    },
+    {
+      "id": "L5-M2-C10",
+      "display": "Tu parles ! C'est n'importe quoi",
+      "cue": "Yeah, right! That's nonsense"
+    },
+    {
+      "id": "L5-M2-C11",
+      "display": "Mais non, je plaisante",
+      "cue": "No no, I'm joking"
+    },
+    {
+      "id": "L5-M2-C12",
+      "display": "Qu'est-ce que tu es marrant !",
+      "cue": "You're so funny!"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
