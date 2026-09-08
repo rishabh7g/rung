@@ -74,8 +74,8 @@ ones (`bu`, `vu`, `fait`), with the mistake plates showing the invented `boiré`
    shape that happened to open it — the correction `docs/28` had to make on `suis`.
 3. **The bare form, the present and the participle kept as THREE rows.** `manger` (M3),
    `mange` (M4) and `mangé` (M5) are three surfaces with three jobs, and folding any two together
-   would answer a tap with the wrong tense. `tools/content-build.test.ts` pins that they are
-   distinct — and that `mangé` and `mange` differ by the accent alone.
+   would answer a tap with the wrong tense. `tools/content-build.test.ts` — since deleted with the rest of the suite on 2026-08-30 (#370) — pinned
+   that they are distinct — and that `mangé` and `mange` differ by the accent alone.
 4. **`n'ai` given its own row rather than a `forms` entry on `j'ai`.** `n'ai` is `ne` + `ai`; it is
    not another shape of `j'ai`, and listing it there would have been the `forms`-swallowing bug
    the briefs forbid. Both fusions are rows, each naming both of its halves, and the test pins
@@ -111,7 +111,7 @@ No pool item equals a hero sentence of its own module.
 - `npm run content:build -- --with-unverified --with-fixtures` — `en-fr: 5 modules (L1-M1..M5)`,
   indexes 24 / 37 / 56 / 75 / 92 surfaces, no pool warnings.
 - Strict build unchanged: the course is still dropped whole by the gate.
-- `src/course/enFrAuthored.test.tsx` — the dev-build smoke, by test: each rung's ten cards,
+- `src/course/enFrAuthored.test.tsx` (that file was deleted with the rest of the suite on 2026-08-30 (#370), so this section is the record of the walk, not a walk anyone can re-run) — the dev-build smoke, by test: each rung's ten cards,
   Sentence Detail over M3-S07, M4-S10 and M5-S05 with their fused rows and mistake plates, and the
   Why panel answering `Je ne veux pas de lait`, `Vous vous levez à quelle heure ?` and
   `Vous avez vu le film ?` with the rows above.

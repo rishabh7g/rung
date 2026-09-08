@@ -107,7 +107,7 @@ interference tag because English has no single word for it. `всё` closes the 
 - **No pool item equals a hero sentence** in any of the ten modules. One collision was caught
   during this pass and rewritten (M10-C01 was M10-S01 exactly).
 - **Three variations on every one of the hundred sentences**, no exemptions taken.
-- A new block in `tools/content-build.test.ts` pins the seams on the real emitted index: every case
+- A new block in `tools/content-build.test.ts` (a file since deleted with the rest of the suite on 2026-08-30 (#370)) pinned the seams on the real emitted index: every case
   shape on the row that first taught its word; `быть` and each aspect pair's own paradigm on one
   row; the gender pairs; the aspect pairs as SEPARATE rows (`пью` vs `выпил`, `встаю` vs `встану`);
   `maxSpan` 3; every multi-token surface and the bare word it leaves free; `есть` owned by M7; a
@@ -115,7 +115,7 @@ interference tag because English has no single word for it. `всё` closes the 
   index and every е-spelling of one absent from it.
 - en-ru joined the `[Q3]` sweep in the same file: all five authored courses now resolve every
   sentence and pool token.
-- `src/course/enRuAuthored.test.tsx` — the module list of all ten rungs as ten cards each, plus
+- `src/course/enRuAuthored.test.tsx` (that file was deleted with the rest of the suite on 2026-08-30 (#370), so this section is the record of the walk, not a walk anyone can re-run) — the module list of all ten rungs as ten cards each, plus
   Sentence Detail checks on M6's `буду`-less future, M7's existential row and its `literal`, M8's
   three-token possession frame, M9's dative experiencer, and an M10 turn rendering whole with its
   `он · она · оно · они` row; plus a Why-panel tap proving `У меня есть ключ.` resolves as TWO rows

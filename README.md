@@ -106,17 +106,21 @@ vitest.
 CI job. There is deliberately no separate lint/test/build pipeline to keep in sync. When a run is
 red, each step's full log is in `.verify/<step>.log`.
 
-### What TEST actually runs — ten files, and the suite that was cut
+### What TEST actually runs — eleven files, and the suite that was cut
 
 **The suite was cut in half on 2026-08-30, in two commits, and the sections below say so wherever
 they used to lean on a file that went.** `02a45dd` (#362–#365) removed the render-level suite —
 every `*.test.tsx` that mounted a screen or a component — and `5365eaa` (#370) cut what remained to
 three files. Both were deliberate. Neither touched the prose here, so until #497 this README named
 twenty test files that had been deleted; every one of them existed once, and none was invented.
-Ten files run today:
+#503 finished the sweep everywhere else — `docs/`, `index.html` and the headers under `tools/` and
+`scripts/` — under one rule: **a deleted test may be named only where the same paragraph says it
+was deleted.** Cited as a live gate it is a lie; cited as history, marked, it is the record.
+Eleven files run today:
 
 | File | What it proves |
 |---|---|
+| `scripts/generate-splash.test.ts` | the splash wordmark is drawn from outlines and the committed set is byte-for-byte what this machine regenerates (#502) |
 | `scripts/verify.test.ts` | the harness's own step order, summary line, failure block and exit codes, in a tmp dir against fake `npm`/`npx` |
 | `src/course/types.test.ts` | every module and ladder in `content/` walked key by key against `types.ts`, plus the `FORCED_DUPLICATES` ownership map |
 | `src/engine/leitner.test.ts` | the review scheduler's boxes, intervals and per-session picks |

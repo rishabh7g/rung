@@ -56,7 +56,8 @@ flag on all five rungs.
 3. **One `be` row.** `L1-M1-S01` `words[2]` now has `forms` `am · is · are · was · were` and a note
    that is true of all five (the present split by person, the past by number); M5 opened no second
    row, and `I was happy yesterday` deconstructs only `happy`. Every `was` / `were` in M5's displays
-   and pool resolves to M1's row — pinned in `tools/content-build.test.ts`.
+   and pool resolves to M1's row — pinned at the time in `tools/content-build.test.ts`, a file
+   since deleted with the rest of the suite on 2026-08-30 (#370).
 4. **Multi-token surfaces.** `get up` (`get up · gets up`) and `wake up` (`wake up · wakes up`) are
    whole rows in M4 and `got up` a fresh whole row in M5; bare `get`, `up`, `wake`, `got` are
    unclaimed. `in the morning` is `in` + `the` + `morning` with no phrase row (`the` is M3's,
@@ -114,8 +115,9 @@ Run against the emitted `public/content/hi-en/index/L1-M<n>.json`, through the r
 `WhyRow` renders. **123 pool tokens over the three modules, 0 unresolved, 0 wrong-word landings**
 (M3 34 tokens / 3 forms-hits, M4 45 / 3, M5 44 / 4). Every sentence display was walked the same way
 (138 tokens, 0 unresolved); no sentence depends on a row that comes later in its own module. The
-same landings are pinned in `tools/content-build.test.ts` ("lands hi-en M3–M5 on the rows the briefs
-assigned") and rendered through the real Why panel in `src/course/hiEnAuthored.test.tsx`.
+same landings were pinned in `tools/content-build.test.ts` ("lands hi-en M3–M5 on the rows the
+briefs assigned") and rendered through the real Why panel in `src/course/hiEnAuthored.test.tsx`.
+Both files were deleted with the rest of the suite on 2026-08-30 (#370).
 
 ### L1-M3 — 56 surfaces cumulative, maxSpan 2
 
@@ -240,7 +242,8 @@ The index is cumulative and first-occurrence-wins, so these are load-bearing for
   `under`, `near`, `behind`, `next to`, `in front of`, `this`, the furniture (M7); `how much`, `how
   many`, `Can I have`, `please`, `of`, `rupees`, `kilo`, `bottle`, the numbers (M8); `because`, `so`,
   `that`, `very`, `why`, the feelings other than `happy` / `tired` (M9); `and`, `but`, `also`, `then`
-  (M10). `tools/content-build.test.ts` pins a subset of these as absent after M5.
+  (M10). `tools/content-build.test.ts` pinned a subset of these as absent after M5, until that
+  file was deleted with the rest of the suite on 2026-08-30 (#370).
 
 ## Authoring calls outside the briefs' letter (recorded so #272 does not "fix" them back)
 
@@ -305,7 +308,8 @@ Self-review of the drafts, plus the audit above, changed these things before the
   tools/content-build.test.ts tools/validate.test.ts src/screens/SettingsScreen.test.tsx
   tools/generate-prompt.test.ts` → green (`types.test.ts` inventory now 35 files, hi-en law asserted
   over five; `content-build.test.ts` dev build ships five, the new M3–M5 landing test; the
-  `hiEnAuthored` walk extended to the module list, Sentence Detail and Why panel of all three)
+  `hiEnAuthored` walk extended to the module list, Sentence Detail and Why panel of all three).
+  Every file in that command except `src/course/types.test.ts` was deleted with the rest of the suite on 2026-08-30 (#370)
 - `scripts/verify.sh --fast` → see the PR for the line
 - Payload: **strict (what ships today): unchanged by construction** — hi-en is a fixture course, so
   the strict build and the font subsets never see it. #273's measurement.

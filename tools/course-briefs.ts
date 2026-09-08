@@ -200,7 +200,8 @@
  *
  * ### 1. The language of every field — Hindi teaches, English is the thing taught
  *
- * The language law (#186/#196, `src/langLaw.test.tsx`): the document speaks the course's L1 (`hi`),
+ * The language law (#186/#196; the scan that enforced it went with the render-level suite on
+ * 2026-08-30, so it is a review rule now): the document speaks the course's L1 (`hi`),
  * every L2 line declares `en`, and unlabelled prose inherits the L1. So in hi-en **every teaching
  * field is Hindi, in Devanagari** — `rules[].text`, word `note`, `trap`, `sound`,
  * `variations[].changed`, `mistake.why`, `usage`, `mnemonic` and `cue` — and English appears ONLY in
@@ -1088,7 +1089,8 @@
  *
  * ### 1. The language of every field, and the lines a sentence carries
  *
- * The language law (#186/#196, `src/langLaw.test.tsx`): the document speaks the course's L1 (`en`)
+ * The language law (#186/#196; the scan that enforced it went with the render-level suite on
+ * 2026-08-30, so it is a review rule now): the document speaks the course's L1 (`en`)
  * and every L2 line declares `de`. So every teaching field is ENGLISH — `rules[].text`, word
  * `note`, `trap`, `sound`, `variations[].changed`, `mistake.why`, `usage`, `mnemonic` and `cue` —
  * and German appears ONLY in the L2 slots: sentence / word / variation / mistake / pool `display`,

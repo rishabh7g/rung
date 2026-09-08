@@ -3,9 +3,10 @@
  *
  * They live in `tools/` rather than inline in `vite.config.ts` for one reason: the manifest is a
  * **contract with a document**, not a config detail. `design/pwa-checklist.md` §3.1 prints the
- * exact JSON this product must ship, so `tools/pwa.test.ts` parses that block out of the
- * checklist and deep-equals it against `pwaManifest()` — the checklist changing and the build not
- * is a red test, in a repo where nothing else would ever notice.
+ * exact JSON this product must ship, and a test parsed that block out of the checklist and
+ * deep-equalled it against `pwaManifest()` — so the checklist changing and the build not was a red
+ * run. That test went with the suite cut on 2026-08-30 (#370). Keeping the two in step is a review
+ * rule now, and nothing else in the repo would ever notice.
  *
  * Everything here takes the build's `base` (#91): the checklist prints the manifest for a site at
  * `/`, and the Pages deploy serves it from `/rung/`. A manifest is the one file no bundler
@@ -94,9 +95,10 @@ export const favicon = (base = DEFAULT_BASE): string =>
  *
  * `id` and `start_url` are the base itself and not `${base}#/`: HashRouter puts every route in the
  * fragment, so the document is always the base and the app resolves its own first screen
- * (`src/App.tsx`). At `/` this is the checklist key for key, which is what `tools/pwa.test.ts`
- * asserts; at `/rung/` every path in it moves with the deploy, which is the whole point — a
- * manifest is the one file no bundler rewrites for you.
+ * (`src/App.tsx`). At `/` this is the checklist key for key — the deep-equal above asserted that
+ * until it was cut, and it is read against the checklist by hand now; at `/rung/` every path in it
+ * moves with the deploy, which is the whole point — a manifest is the one file no bundler rewrites
+ * for you.
  */
 export const pwaManifest = (base = DEFAULT_BASE): Partial<ManifestOptions> => ({
   name: BRAND,
@@ -166,8 +168,10 @@ const PLUGIN_DEFAULTS_DROPPED = { scope: undefined };
  * and by nobody at runtime (every `<link>`/manifest entry names a PNG) — so precaching it would
  * be the same wasted download for the same reason the splash set is out.
  *
- * `tools/pwa.test.ts` holds this list to the budget's attribution file by file: what these globs
- * select over a `dist/` listing must be exactly what `tools/payload-budget.ts` calls `shell`.
+ * `precacheAudit()` in `tools/payload-budget.ts` holds this list to the budget's attribution file
+ * by file (#211, the BUDGET stage): what these globs select over a `dist/` listing must be exactly
+ * what that module calls `shell`. A test asserted the same equality until the 2026-08-30 cut; the
+ * audit is what fails a run today.
  */
 export const PRECACHE_GLOBS = [
   '**/*.{html,css,js}',

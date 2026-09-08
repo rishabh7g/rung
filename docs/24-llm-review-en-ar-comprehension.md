@@ -152,9 +152,9 @@ Every item carries the romanized `display` (the course's ALA-LC-flavoured scheme
    (`hal tuḥibbīn al-qahwa?` — M1's interference rule); requests stay indefinite where the module
    taught them so; `urīd al-ʿaṣīr faqaṭ` and `hal sharibta al-qahwa …?` point at a particular
    thing on purpose, and their cues say so.
-4. **The count is pinned, exactly.** `tools/content-build.test.ts` now asserts every en-ar module
-   holds exactly 12 pool items, each with both `display` and `script`, and that no pool item
-   equals a hero sentence through the shared normaliser — so the next growth pass moves the pin
+4. **The count was pinned, exactly.** `tools/content-build.test.ts` — deleted with the rest of the suite on 2026-08-30 (#370) — asserted every
+   en-ar module held exactly 12 pool items, each with both `display` and `script`, and that no pool
+   item equalled a hero sentence through the shared normaliser — so the next growth pass moved the pin
    deliberately, and a hero-retelling item cannot land silently.
 
 ## Verification

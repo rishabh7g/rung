@@ -94,5 +94,6 @@ Word bounds climb 8 → 10 across the level (M1–M3: 8, M4–M7: 9, M8–M10: 1
 5 → 8; `newWordCap` stays the PRD §5 25 everywhere; pools are authored to 12, the course's
 shipped size (#305). M1–M3 ship fully enriched (validator law, any level). `L2-M1`'s prompt
 renders today from the real index — `npm run content:prompt -- hi-mr L2-M1` — and the mirror,
-climb, seam and debt decisions above are pinned by `tools/generate-prompt.test.ts`
-(`COURSE_BRIEFS hi-mr L2`).
+climb, seam and debt decisions above were pinned by the deleted `tools/generate-prompt.test.ts`
+(`COURSE_BRIEFS hi-mr L2`). That test went on 2026-08-30 (#370); `tools/course-briefs.test.ts`
+took the idiom back for en-ko and hi-mr **L3**, so hi-mr L2's decisions are unpinned today.

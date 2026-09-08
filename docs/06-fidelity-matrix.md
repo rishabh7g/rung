@@ -31,7 +31,7 @@ phone; recorded on #117).
 | Ladder · mid (430) | match | position line `LEVEL 1 · 2 OF 10`, counts-only pending line |
 | Ladder · sealed tap (360) | match | honest toast, counts only; toast recipe §6.2 |
 | Ladder · level just-completed | match | §5.1 state 1 — bar moves, filled cell rests, no copy |
-| Ladder · all-complete | match | §5.1 state 3 mechanised in `LadderScreen.test.tsx`; no beat |
+| Ladder · all-complete | match | §5.1 state 3 was mechanised in the Ladder screen's test; no beat |
 | Rung card · fresh | match | one primary + note, no dots yet (0 writes still draws 10 pairs) |
 | Rung card · studied | **fixed** | §6.1 anatomy's production-dots row + counts-only writes line was missing in every stage — added (`RungCard.tsx`, reusing #88's `ProductionDots`); counts only (`9 / 20`), the prototype's English note has no key post-freeze (#71) |
 | Rung card · exit-ready | match | primary + 46px secondary pair (tokens over inline 44, the #139 call); dots row now full |
@@ -40,14 +40,14 @@ phone; recorded on #117).
 | Module list · cards / restore | match | #88 record: head row in scroll area, one scroll column, scroll restore via `shell/scrollArea.tsx`; expand-in-place retired on #217 — a card is one link into Detail, the sanctioned divergence recorded in `design/PRD-design.md` §15 |
 | Module list · dots | match | pairs per card top-right; `n / 20` count in the head row |
 | Sentence detail · full | match | #89 record: section order [D10], trap plate colour-law walked by its own test, sticky pager, `1 / 10` counts, back-to-module chevron |
-| Sentence detail · sparse module | match | absent sections render nothing (no empty plates) — `SentenceScreen.test.tsx` |
+| Sentence detail · sparse module | match | absent sections render nothing (no empty plates) — held by the Sentence screen's test at the time |
 | Practice · hub | match | kicker + course title, three phase cards, ownership line; notebook invitation **filed** (below) |
 | Practice · review cue / revealed / marked | match | immersive (no nav), 2px cue rule, dashed nudge plate, reveal 52px CTA, marks 2:1 row (#93 record), Next hidden until marked |
 | Practice · read / produce / tick / resume / summary | match | committed baselines (`practice-*.png`, #96/#102) + phase tests; tick numberless, default ON |
 | Ritual · arc (write / check / confirm) | match | #100 record: bare-ordinal title, `1 / 2` counts, dashed plate zero-interactive (mechanised), no marks on the dashed plate (sanctioned) |
 | Ritual · hold | match | ~900ms fill, release resets, reduced-motion static (`HoldToConfirm` tests + `ritual-hold-*.png`) |
 | Comprehension · items / marked | match | no counter, no red outside marks; deep link without the hold's handover lands on the ritual arc (guarded route, sanctioned) |
-| Comprehension · retry interstitial | **fixed** | §6.3's five layers render, but the kicker (`retry.kicker`, course copy minted at Sync-3 AFTER #102's screenshot pass) was set in the `--text-kicker` Barlow recipe — literal notdef boxes for "COMPREHEND · फिर से" on the hi-mr screen. Re-set in the standing course-label treatment (#89 `trapHead`, #93 `cueLabel`, #100 plate label); a stylesheet test in `ComprehensionScreen.test.tsx` now keeps Barlow faces and `text-transform` out of the interstitial; baseline `docs/images/comprehension-retry-360.png` refreshed (PR #179) |
+| Comprehension · retry interstitial | **fixed** | §6.3's five layers render, but the kicker (`retry.kicker`, course copy minted at Sync-3 AFTER #102's screenshot pass) was set in the `--text-kicker` Barlow recipe — literal notdef boxes for "COMPREHEND · फिर से" on the hi-mr screen. Re-set in the standing course-label treatment (#89 `trapHead`, #93 `cueLabel`, #100 plate label); a stylesheet test in the Comprehension screen's file kept Barlow faces and `text-transform` out of the interstitial; baseline `docs/images/comprehension-retry-360.png` refreshed (PR #179) |
 | Verdict · pass + unlock handover | match | checklist + both honesty lines (#71 ratification), one-shot flag consumed on the Ladder; deep link without a pass redirects (guarded, sanctioned) |
 | Settings · course / tick / storage / backup | match | §6.2 recipe: native select ≥16px at 44px, counts-only status line, frozen reassurance footer; storage computed rows; switch toast in the NEW course's words |
 | Boot / offline / error | match | `offline-*.png` receipts (#91, docs/05-pwa-notes.md); content-error screen #79 |
@@ -56,14 +56,14 @@ phone; recorded on #117).
 
 - **Colour law + tokens-only:** grep clean (no hex/px/named face outside comments; amber only in
   the three trap/tag sheets, `--mark-*` only in `SelfMark`, unlock keyframes only in
-  `unlockBeat`). Now **mechanised app-wide** in `src/colourLaw.test.ts` — the allowlists are the
-  sanction record; `styleContract.test.ts` still closes the raw-value back door.
+  `unlockBeat`). It was **mechanised app-wide** in a colour-law test — the allowlists were the
+  sanction record — with a style-contract test closing the raw-value back door.
 - **Ink ramp vs the prototype (#185, re-checked after the change):** the prototype's quiet levels
   (40–55% ink) measure 2.42–3.63 : 1 as text on the paper, under WCAG AA, so the app paints them
   at 65–75% instead — a **sanctioned colour divergence**, app-wide and colour-only: no geometry,
   copy, state, type or ordering moved, so every cell above still matches state-for-state (the
   contrast column simply improves). Rung-by-rung ratios and the mapping are in `design/tokens.md`
-  §1; `src/colourLaw.test.ts` composites each `color-mix()` rung onto every ground and fails under
+  §1; the colour-law test composited each `color-mix()` rung onto every ground and failed under
   4.5 : 1. Same shape of divergence as the accent's half-step down (#184).
 - **Body-text floor vs the prototype (#252):** the design package's four smallest body-role
   sizes (`--text-body` 15px, `--text-secondary` 13px, `--text-caption` 11.5px, `--text-micro`
@@ -75,7 +75,7 @@ phone; recorded on #117).
   unchanged — they are labels, not the body prose the standard's floor addresses.
 - **Reduced motion:** all four motions (reveal, expand, hold, unlock beat — plus toast and tick)
   collapse under `prefers-reduced-motion`; verified live over emulated media on the module
-  expand and the reveal, and mechanised in `src/colourLaw.test.ts` (any sheet declaring
+  expand and the reveal, and mechanised in the colour-law test (any sheet declaring
   animation/transition must carry the reduce block).
 - **Invariants 1–8:** each is mechanised where it lives (`unlockPath`, `productionCounters`,
   `silence`, `shellPurity`, `clock`, ritual step-2 zero-interactive, store shape pinning) — all

@@ -87,8 +87,8 @@ Run against the emitted `public/content/hi-en/index/L1-M<n>.json`, through the r
 (`matchSurfaces` + `tokenizeSurface` from `src/engine/surface.ts`), resolving each hit back to
 `modules/<id>.json → sentences[<sid>].deconstruction.words[<idx>]` — the exact row `WhyPanel` /
 `WhyRow` renders. **66 pool tokens, 0 unresolved, 0 wrong-word landings.** The same landings are
-pinned in `tools/content-build.test.ts` ("lands hi-en on the rows the briefs assigned") and
-rendered through the real Why panel in `src/course/hiEnAuthored.test.tsx`.
+were pinned in `tools/content-build.test.ts` ("lands hi-en on the rows the briefs assigned") and
+rendered through the real Why panel in `src/course/hiEnAuthored.test.tsx`. Both files were deleted with the rest of the suite on 2026-08-30 (#370).
 
 ### L1-M1 — 21 surfaces, maxSpan 1
 
@@ -177,7 +177,8 @@ The index is cumulative and first-occurrence-wins, so these are load-bearing for
   (M3); `likes`, `does`, `doesn't`, `he`, `she`, `have`, `in`, `on`, `at` (M4); `did`, `was`, `were`
   (M5); `will`, `going to`, `her` (M6); `it`, `it's`, `there is`, `where` (M7); `how much`, `please`,
   `of` (M8); `because`, `so`, `very` (M9); `and`, `but`, `also`, `then` (M10). `well` was not used.
-  `tools/content-build.test.ts` pins a subset of these as absent after M2.
+  `tools/content-build.test.ts` pinned a subset of these as absent after M2, until that file was
+  deleted with the rest of the suite on 2026-08-30 (#370).
 
 Two authoring calls that are not in the briefs' patterns verbatim, recorded so #271 does not
 "fix" them back:
@@ -227,7 +228,8 @@ Self-review of the drafts, plus the audit above, changed these things before the
   → green; `src/course/types.test.ts` (inventory now 32 files, hi-en language law asserted),
   `src/screens/SettingsScreen.test.tsx` (M1's CTA now present) and the new
   `src/course/hiEnAuthored.test.tsx` (Ladder → module list → Sentence Detail with no gloss
-  paragraph and the WORD-FOR-WORD plate → Why panel on two pool items) → green
+  paragraph and the WORD-FOR-WORD plate → Why panel on two pool items) → green. Every file named
+  here except `src/course/types.test.ts` was deleted with the rest of the suite on 2026-08-30 (#370)
 - `scripts/verify.sh --fast` → see the PR for the line
 - Payload: **strict (what ships today): unchanged by construction** — hi-en is a fixture course, so
   the strict build and the font subsets never see it. The dev-build cost of the Devanagari subset

@@ -268,8 +268,8 @@ to the system's DejaVu Sans, while the plain ASCII letters beside them are Mukta
 line paints in two faces — `Rohān` renders with a visibly taller, differently-weighted `ā`. This is
 a font-pipeline gap (#197 gave the Arabic line a face and left the romanized line on Mukta), not a
 content defect, and it predates this content: the four-sentence fixture had it too. It is filed
-separately rather than fixed here, because the fix touches `src/fonts.test.ts`'s pinned face
-inventory.
+separately rather than fixed here, because the fix touched the pinned face inventory in
+`src/fonts.test.ts` — a file since deleted with the rest of the suite on 2026-08-30 (#370).
 
 ## Open questions for a native pass
 

@@ -27,13 +27,15 @@ romanization diacritic in a system face any more.
 | `@fontsource/barlow` | 400 · 500 · 600 | The ramp only asks for 400 (body, secondary, caption, micro); 500/600 are the UI headroom the ticket names. |
 | `@fontsource/barlow-condensed` | 500 · 600 · **700** | 600 is `--font-heading-weight` (screen/rung/verdict titles, kickers). **700 is not in the ticket's list but `--text-brand: 700 23px/1 var(--font-heading)` is** — the wordmark. Without it the browser synthesises a bold and nothing says so, which is the exact failure [D15] is about. Verified in the built app: the header pulls `Barlow Condensed 700`. |
 
-Imported one line per face in `src/main.tsx`. `font-display: swap` comes from @fontsource and is
-asserted in `src/fonts.test.ts`.
+Imported one line per face in `src/main.tsx`. `font-display: swap` comes from @fontsource, and a
+fonts test asserted it.
 
-**`src/fonts.test.ts` is the guard that keeps this honest.** It parses the `--text-*` shorthands
-in `design/tokens.css` into the set of (family, weight) pairs the product actually renders, and
-fails if `main.tsx` does not import one of them. A ramp entry that changes 600 → 700 turns it red
-instead of quietly shipping a synthesised face.
+**That fonts test was the guard that kept this honest, and it no longer exists.** It parsed the
+`--text-*` shorthands in `design/tokens.css` into the set of (family, weight) pairs the product
+actually renders and failed if `main.tsx` did not import one of them, so a ramp entry that changed
+600 → 700 turned it red instead of quietly shipping a synthesised face. It was deleted with the
+rest of the suite on 2026-08-30 (#370). Nothing compares the ramp to `main.tsx`'s imports today —
+every claim below that leans on it is a rule the repo follows, not one it enforces.
 
 ### woff2 only
 
@@ -69,10 +71,11 @@ Two things about it are deliberate:
   friends in `dist/assets/index-*.css`. With the dynamic import there is no chunk and no CSS.
   In the built app `#/dev/type` renders the Ladder (the `*` route redirects, hash rewritten to
   `#/`), and `grep -r 'TypeSpecimen\|dev/type' dist` finds nothing.
-- **It is the single entry in the shell-purity allowlist** (`src/shellPurity.test.ts`). That
-  guard fails on any course script under `src/`, and a font specimen exists to render one. The
-  exemption is safe because the file never reaches a build, not because the text is "only a
-  specimen" — the list stays exactly one long and the pattern was not widened.
+- **It was the single entry in the shell-purity allowlist.** That scan failed on any course
+  script under `src/`, and a font specimen exists to render one. The exemption was safe because
+  the file never reaches a build, not because the text is "only a specimen" — the list stayed
+  exactly one long and the pattern was not widened. The scan itself was deleted on 2026-08-30
+  (#370), so there is no allowlist to be the entry of any more.
 
 ## 3. Devanagari — no tofu anywhere
 
@@ -234,8 +237,8 @@ Devanagari strings rendering in a system face.
 | dev server, `#/dev/type` (uses every face) | 77 | **0** | 13 | 0 |
 | built app (`vite preview`), Ladder | 12 | **0** | 5 | 0 |
 
-`grep -ri 'fonts.googleapis\|fonts.gstatic' dist` → nothing, and `src/fonts.test.ts` fails on any
-font host named in `src/` or `index.html`. (The Arabic quiet line was still `--font-script-fallback`
+`grep -ri 'fonts.googleapis\|fonts.gstatic' dist` → nothing, and the fonts test failed on any font
+host named in `src/` or `index.html` until it was cut; that grep is the whole check now. (The Arabic quiet line was still `--font-script-fallback`
 = system-ui when this was measured; §8 is [D15]'s "if en-ar ships" clause, now taken.)
 
 ## 7. Reproducing
@@ -275,9 +278,10 @@ downloads **7,544** bytes today, and both budget rows the strict build gates sta
 
 **One weight is the whole requirement.** All five `.script` rules are `font: var(--text-body)`
 (400 15px/1.55) with only the family swapped, so 400 is what renders and 500/600/700 would be
-dead payload — the same argument that cut Mukta 500 in #113. `src/fonts.test.ts` derives that
-pairing from the stylesheets rather than trusting this paragraph: any rule that takes a `--text-*`
-shorthand and overrides `font-family` contributes its (family, weight) to the bundle requirement.
+dead payload — the same argument that cut Mukta 500 in #113. The fonts test derived that pairing
+from the stylesheets rather than trusting this paragraph: any rule that takes a `--text-*`
+shorthand and overrides `font-family` contributed its (family, weight) to the bundle requirement.
+Since 2026-08-30 the paragraph is all there is.
 
 ### 8.2 The divergence from `design/tokens.css`, recorded
 
@@ -292,10 +296,10 @@ divergence in `docs/05-pwa-notes.md` §3.
 
 `system-ui` deliberately **stays behind** the named face: the subset's `unicode-range` claims the
 Arabic block, the joiners and the space, and nothing else, so a Latin character or a digit inside
-a script line still resolves exactly as it did before this ticket. `src/fonts.test.ts` fails if
-the stack ever loses its named face, if `design/tokens.css` ever tries to carry the family itself,
-or if the override is imported before the tokens; `src/styleContract.test.ts` keeps the override
-register one file long.
+a script line still resolves exactly as it did before this ticket. The fonts test failed if the
+stack lost its named face, if `design/tokens.css` tried to carry the family itself, or if the
+override was imported before the tokens, and the style-contract scan kept the override register one
+file long. Both went on 2026-08-30.
 
 ### 8.3 The subset
 
@@ -416,7 +420,7 @@ actually used and whether it was a custom (bundled) one. Every glyph of every Ar
 
 Four of the five `.script` rules, observed live. The fifth, `ComprehensionItem`, sits behind the
 exit ritual (two got-its per sentence) and could not be reached by script; it carries the
-byte-identical rule against the same token, and `src/fonts.test.ts` asserts all five resolve to a
+byte-identical rule against the same token, and the fonts test asserted all five resolved to a
 face the bundle carries. Before the space joined the subset the same probe read
 `DejaVu Sans ×1 + Noto Naskh Arabic ×11` — one system glyph per word gap, which is what §8.3's
 `U+0020` fixed.
@@ -471,9 +475,10 @@ This is §4's **option 3**, taken. §4.1.1 records the decision and why options 
 `--text-l2-list` (600) and `--text-l2-hero` (700), so they render at every weight Mukta renders
 the letters at. One weight would have left the hero's `ʿ` as a browser-synthesised bold beside a
 real Mukta 700 `a` — the exact failure [D15] is about, and the argument that cut Mukta 500 in #113
-run in reverse. `src/fonts.test.ts` derives the requirement from the ramp rather than trusting
-this paragraph: since #222 it reads **every** named family in a `--font-*` stack, not just the
-head, so a face the product renders in second place is held to the ramp exactly as Mukta is.
+run in reverse. The fonts test derived the requirement from the ramp rather than trusting this
+paragraph: from #222 it read **every** named family in a `--font-*` stack, not just the head, so a
+face the product rendered in second place was held to the ramp exactly as Mukta was. It was cut on
+2026-08-30; the requirement stands, unchecked.
 
 ### 9.2 Why Source Sans 3 — coverage first, then fit, both measured
 
@@ -535,8 +540,9 @@ Two `ScriptTarget`s, both named `latin-ext`, on two faces:
 found every course downloading the Arabic face because the offline warm sampled whitespace and
 format characters that several `unicode-range`s claim at once (`U+0020`, `U+200C-200E`). Both new
 ranges start at U+0100 and contain no space, joiner, digit or ASCII letter, so the class of bug
-cannot come back through them. `tools/font-subset.test.ts` asserts it twice: once against a string
-of the neutral characters, once against the **actual authored content of every course** —
+cannot come back through them. The font-subset test asserted it twice — once against a string of
+the neutral characters, once against the **actual authored content of every course** — before it
+was cut on 2026-08-30:
 
     coveredChars(courseText('hi-mr'), latinExt)      → ''
     coveredChars(courseText('en-es'), diacritics)    → ''
@@ -618,9 +624,9 @@ curl -sI $base/assets/source-sans-3-latin-ext-400-*.woff2 | head -1         # 20
 ```
 
 Glyph-level truth is a browser question and this host runs no browser: the evidence here is the
-`cmap` of the real subsets (`tools/font-subset.test.ts` reads it with HarfBuzz, in CI-visible
-assertions rather than a screenshot), the ranges in the served CSS, and the per-course byte rows
-above. `/dev/type` in a browser on another machine remains the way to see it.
+`cmap` of the real subsets (the font-subset test read it with HarfBuzz, in assertions rather than
+a screenshot; that test has since been deleted), the ranges in the served CSS, and the per-course
+byte rows above. `/dev/type` in a browser on another machine remains the way to see it.
 
 ## 10. Cyrillic — the same face, a second range (#325)
 
@@ -667,7 +673,8 @@ course in the catalogue.
 
 **ё is a letter, not baseline.** It is inside the claimed block, so it renders — but it is
 harvested from content like every other letter, so a build with no en-ru content ships no glyph
-for it. The baseline is `'№'` and `src/fonts.test.ts` pins that ё is not in it.
+for it. The baseline is `'№'`, and the fonts test pinned that ё is not in it until that test was
+cut.
 
 ### 10.3 Bytes
 
@@ -687,6 +694,6 @@ range is claimed by no course that does not write Cyrillic.
 ### 10.4 What is not proven here
 
 Glyph-level rendering is a browser question and this host runs no browser (§9.6). The evidence is
-the `cmap` of the real subsets (`tools/font-subset.test.ts`, HarfBuzz), the claimed ranges in the
-committed sheet, and the byte rows above. **No en-ru content has been rendered in a browser in
+the `cmap` of the real subsets (the font-subset test, HarfBuzz — deleted since), the claimed
+ranges in the committed sheet, and the byte rows above. **No en-ru content has been rendered in a browser in
 this face** — when the course is authored, `/dev/type` on a machine with one is the way to see it.

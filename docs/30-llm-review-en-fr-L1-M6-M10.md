@@ -73,7 +73,7 @@ the subject pronoun stays, because the endings are silent.
 2. **`côté` never left bare.** `à côté de` alone would have stranded `côté` in
    `à côté du lit` — the phrase does not match through a contraction. The row's `forms` carry
    `à côté de` · `à côté du` · `à côté de la`, and `près de` likewise, and
-   `tools/content-build.test.ts` pins that `côté` is not a key.
+   `tools/content-build.test.ts` — since deleted with the rest of the suite on 2026-08-30 (#370) — pinned that `côté` is not a key.
 3. **`va` allowed onto the `vais` row rather than kept unclaimed.** It is a genuine third person of
    `aller`, and the two-token `ça va` still wins wherever both words stand together, because the
    resolver takes the longest match first. Two keys, two notes, neither reachable by accident.
@@ -111,7 +111,7 @@ finished index:
 - `npm run content:build -- --with-unverified --with-fixtures` — `en-fr: 10 modules
   (L1-M1..M10)`, indexes 24 / 37 / 56 / 75 / 92 / 105 / 123 / 143 / 157 / 171, no pool warnings.
 - Strict build unchanged: the course is still dropped whole by the gate.
-- `src/course/enFrAuthored.test.tsx` — the dev-build smoke over all ten rungs, including M10's
+- `src/course/enFrAuthored.test.tsx` (that file was deleted with the rest of the suite on 2026-08-30 (#370), so this section is the record of the walk, not a walk anyone can re-run) — the dev-build smoke over all ten rungs, including M10's
   turns rendering whole (ten cards for ten turns) and Sentence Detail on M6-S01, M7-S04, M8-S05,
   M9-S01 and M10-S05.
 - `scripts/verify.sh --fast` green.

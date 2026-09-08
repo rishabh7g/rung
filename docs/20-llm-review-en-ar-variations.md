@@ -22,8 +22,8 @@ in the 194 existing lines, so acceptance criterion 4 records zero fixes.
 ## Method
 
 The constraint #287 inherits from #283: a variation a learner reads in M2 has only M2's cumulative
-index behind it, and `tools/content-build.test.ts` sweeps every en-ar variation line against the
-index of the module that shows it, pinned at six decided misses. So every new variation was
+index behind it, and `tools/content-build.test.ts` — since deleted with the rest of the suite on 2026-08-30 (#370) — swept every en-ar variation
+line against the index of the module that showed it, pinned at six decided misses. So every new variation was
 authored **from the module's own cumulative surface set** (27 → 52 → 73 → 104 → 135 → 168 → 195 →
 224 → 263 → 283 keys) and swept through the real engine (`matchSurfaces` + `tokenizeSurface`,
 `src/engine/surface.ts`) against the emitted `public/content/en-ar/index/L1-M*.json` before and
@@ -255,7 +255,7 @@ The issue named this call and left it to the author; taken as offered.
 ## Verification
 
 - variation sweep through the real engine, per module: **298/298 lines, zero new misses** — the
-  only misses are the six pinned in `tools/content-build.test.ts`, unchanged
+  only misses are the six pinned in `tools/content-build.test.ts` (removed since), unchanged
 - codepoint audit: every character in the new display/script lines already occurs in en-ar content
 - `public/content/en-ar/index/*.json` before vs after `npm run content:build`: **byte-identical**
   (0 lost, 0 moved, 0 added; variations are never indexed)

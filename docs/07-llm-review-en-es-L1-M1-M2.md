@@ -159,7 +159,7 @@ Self-review of the draft, plus the audit above, changed five things:
 - `npm run content:build -- --with-unverified --with-fixtures` → `en-es: 2 modules (L1-M1..M2)`,
   `index L1-M1: 26 surfaces`, `index L1-M2: 43 surfaces`
 - `npx vitest run tools/validate.test.ts tools/content-build.test.ts src/course/types.test.ts` →
-  **110/110 green**
+  **110/110 green** (the first two files were deleted with the rest of the suite on 2026-08-30 (#370))
 - `npm run typecheck`, `npx eslint .`, `npx prettier --check .` → clean
 - Payload, measured both ways:
   - **strict (what ships today): unchanged.** `BUDGET fonts 361.2 KiB ≤ 380`, `js 94.2 KiB gzip`,

@@ -96,15 +96,16 @@ rows' own notes: `forms` entries and variations have no register field (Q21 belo
   2-token; M2 stays 2, the course stays 3).
 - **The variation sweep** moved 27 → **30 decided misses**: the three tokens of `How's it
   going?` at M2-S03 (`how's`, `it`, `going`) — `it` is M7's on schedule, the other two
-  deliberately unclaimed. Pinned in `tools/content-build.test.ts` with the rationale in the
-  test's comment; the other three new variations sweep clean. The 27 prior misses are unchanged.
+  deliberately unclaimed. Pinned in `tools/content-build.test.ts` — a file since deleted with the rest of the suite on 2026-08-30 (#370) — with the
+  rationale in the test's comment; the other three new variations sweep clean. The 27 prior misses are unchanged.
 - **Codepoint stability**: the new prose introduces **zero characters** the two touched files
   did not already carry, so the font subsets cannot grow from this pass.
 - Suites: `npm run content:validate` 40/40; `npm run content:build` green (the two count pins
   updated 203 → 207); `tools/content-build.test.ts` 84/84 including the re-pinned sweep;
   `src/course/hiEnAuthored.test.tsx` (the M10-C08 turn walk still lands `See you`, M5's `see`
   never opened), `src/course/types.test.ts`, `tools/validate.test.ts`,
-  `src/screens/SentenceScreen.test.tsx` all green; then the full `scripts/verify.sh`.
+  `src/screens/SentenceScreen.test.tsx` all green; then the full `scripts/verify.sh`. Every file in
+  that list except `src/course/types.test.ts` has since been removed.
 
 ## Open questions for a fluent-English pass
 

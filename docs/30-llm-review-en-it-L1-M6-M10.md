@@ -136,7 +136,7 @@ holds its four adjective shapes and nothing of `caldo`'s noun uses, which are th
 
 ## Smoke — by test, never a browser
 
-`src/course/enItAuthored.test.tsx` walks all ten rungs, and two checks were added for this issue:
+`src/course/enItAuthored.test.tsx` (that file was deleted with the rest of the suite on 2026-08-30 (#370), so this section is the record of the walk, not a walk anyone can re-run) walked all ten rungs, and two checks were added for this issue:
 M10's turns render whole — two or three sentences to a card, with every sentence inside a turn
 inside the module's own per-sentence bound (the #111 / #194 check: the format needed no schema
 change) — and M10-S06 renders `lui` and `lei` as two separate word rows.

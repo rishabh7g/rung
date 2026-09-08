@@ -167,8 +167,8 @@ The 30 new keys: `española`, `le gusta`, `le gustan`, `quiere`, `te gusta`, `te
 
 ### What #285 inherits
 
-`tools/content-build.test.ts` now sweeps **every en-es variation line** against its own module's
-index and pins the result at ten misses — two proper nouns (`ana`, `méxico`), four forward
+`tools/content-build.test.ts` swept **every en-es variation line** against its own module's
+index and pinned the result at ten misses — that file was deleted with the rest of the suite on 2026-08-30 (#370), and `tools/shown-surfaces.test.ts` (#491) is the standing ratchet in its place, per course and by count rather than by row — — two proper nouns (`ana`, `méxico`), four forward
 references that resolve on schedule (`es` → M2, `quieres` → M3, `casa` → M7, `muy` → M8) and the
 four tokens of the three exemptions above. A third variation that resolves nowhere fails that test,
 so #285 has to decide about a new surface rather than discover it later. The second new test pins
@@ -183,7 +183,8 @@ the paradigm seams themselves (`quiere`/`quieres`, `hice`/`hiciste`, the gustar 
 - variation sweep through the real engine: **13 of 13 target surfaces resolved or exempted**; the
   only remaining misses are the ten pinned in the test
 - `npx vitest run tools/content-build.test.ts tools/validate.test.ts src/course/types.test.ts
-  tools/payload-budget.test.ts src/course/content.test.tsx` → green
+  tools/payload-budget.test.ts src/course/content.test.tsx` → green (every file but
+  `src/course/types.test.ts` has since been deleted with the rest of the suite on 2026-08-30 (#370))
 - `npm run typecheck`, `npx eslint .`, `npx prettier --check .` → clean
 - `npm run build && npm run budget` → green: `course:en-es` **71.3 → 71.5 KiB** gzip against 360,
   `shell` and the other three courses unmoved (the new bytes are notes and `forms` strings inside

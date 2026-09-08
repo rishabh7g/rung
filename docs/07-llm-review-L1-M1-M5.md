@@ -75,7 +75,8 @@ Verification run: `npm run content:validate` → `CONTENT 12/12 ok`;
 `npm run content:build -- --with-unverified --with-fixtures` → green (this is what enforces PRD §6.3,
 every comprehension token resolving);
 `vitest run tools/validate.test.ts tools/content-build.test.ts tools/generate-prompt.test.ts
-src/course/types.test.ts` → 119 passed.
+src/course/types.test.ts` → 119 passed. The first three of those files were deleted with the rest of the suite on 2026-08-30 (#370); this is the
+record of the run as it stood, not a suite anyone can re-run.
 
 ## Headline: the content is in good shape
 
@@ -225,11 +226,11 @@ where guessing would be worse than asking.
 
 This section predicted the mechanics; here is what the flip actually cost, all ten modules at once:
 
-- `tools/content-build.test.ts` — the strict-build test now asserts
+- `tools/content-build.test.ts` — the strict-build test gained assertions on
   `hi-mr: 10 modules (L1-M1..M10)` and a skipped list of the two fixture courses, and a second test
-  asserts every strictly-shipped module names a reviewer and a date.
-- `tools/validate.test.ts`, `src/course/types.test.ts` — the "never true in this repo" assertions
-  became "true only with a signature".
+  asserting every strictly-shipped module named a reviewer and a date. That file was deleted with the rest of the suite on 2026-08-30 (#370).
+- `tools/validate.test.ts` (deleted with it), `src/course/types.test.ts` — the "never true in this
+  repo" assertions became "true only with a signature".
 - `content/schema/module.schema.json` — `verified` is described as the ship gate it is, `verifiedBy`
   as who or what reviewed the module; `verifiedAt` is now a plain `date` (YYYY-MM-DD).
 - **Fonts and payload.** The Devanagari subsets are generated against shipped content, so they went

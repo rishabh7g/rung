@@ -18,8 +18,8 @@ no exemption was needed.**
 ## Method
 
 The constraint #285 inherits from #281: a variation a learner reads in M1 has only M1's cumulative
-index behind it, and `tools/content-build.test.ts` sweeps every en-es variation line against the
-index of the module that shows it, pinned at ten decided misses. So every third variation was
+index behind it, and `tools/content-build.test.ts` — since deleted with the rest of the suite on 2026-08-30 (#370) — swept every en-es variation
+line against the index of the module that showed it, pinned at ten decided misses. So every third variation was
 authored **from the module's own cumulative surface set** (32 → 51 → 75 → 99 → 125 → 142 → 165 →
 186 → 211 → 227 keys) and swept through the real engine (`matchSurfaces` + `tokenizeSurface`,
 `src/engine/surface.ts`) against the emitted `public/content/en-es/index/L1-M*.json` before and
@@ -27,7 +27,7 @@ after authoring.
 
 **Result: zero new misses.** The sweep still reports exactly the ten pinned lines — two proper
 nouns, four forward references, the four tokens of the three #281 exemptions — so the pin in
-`tools/content-build.test.ts` is untouched. No new proper noun was introduced anywhere: `Rohan`
+`tools/content-build.test.ts` (removed since) was untouched. No new proper noun was introduced anywhere: `Rohan`
 appears only where M1's index already carries it, `Ana` and `México` only from M2 on, where theirs
 do.
 
@@ -234,7 +234,7 @@ of the `hasta mañana` row no variation showed.
 ## Verification
 
 - variation sweep through the real engine, per module: **300/300 lines, zero new misses** — the
-  only misses are the ten pinned in `tools/content-build.test.ts`, unchanged
+  only misses are the ten pinned in `tools/content-build.test.ts` (removed since), unchanged
 - `public/content/en-es/index/*.json` before vs after `npm run content:build`: **byte-identical**
   (variations are never indexed; the additions-only invariant holds with nothing to prove)
 - `npm run content:validate` → **CONTENT 40/40 ok**

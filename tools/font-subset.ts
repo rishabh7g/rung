@@ -55,9 +55,10 @@
  * #202 shipped it, at which point the Naskh subset became ~10 KiB of real content.
  *
  * `src/fonts/mukta.css`, `src/fonts/naskh.css` and `src/fonts/source-sans-3.css` (all committed)
- * declare the `@font-face` blocks pointing at the generated files; `tools/font-subset.test.ts`
- * keeps them in sync. The generated woff2 are gitignored — they are derived from content the same
- * way `public/content/` is.
+ * declare the `@font-face` blocks pointing at the generated files; a test kept them in sync until
+ * the 2026-08-30 cut, and keeping them in sync is a review rule now — a sheet naming a file this
+ * module never emits fails at fetch time, not at build time. The generated woff2 are gitignored —
+ * they are derived from content the same way `public/content/` is.
  */
 import { mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -75,14 +76,14 @@ export const GENERATED_DIR = path.join(REPO_ROOT, 'src', 'fonts', 'generated');
 /* ----------------------------------------------------------------- the contract */
 
 /** The Mukta weights the ramp renders — 400 (cue), 600 (card/list), 700 (hero). 500 was design
-    headroom no `--text-*` token ever asked for, trimmed here (#113); `src/fonts.test.ts` goes red
-    if the ramp starts asking for a weight this list lacks. */
+    headroom no `--text-*` token ever asked for, trimmed here (#113); a scan over the ramp went red
+    if it asked for a weight this list lacks, until that scan was cut on 2026-08-30. */
 export const MUKTA_WEIGHTS = [400, 600, 700] as const;
 
 /** The Naskh weight the quiet script line renders. All five `.script` rules are
     `font: var(--text-body)` (400 15px) with the family swapped to `--font-script-fallback`, so one
-    weight is the whole requirement — `src/fonts.test.ts` derives that pairing and goes red if the
-    line ever asks for a weight this list lacks. */
+    weight is the whole requirement — the same deleted scan derived that pairing and went red if the
+    line asked for a weight this list lacks. */
 export const NASKH_WEIGHTS = [400] as const;
 
 /** The Source Sans 3 weights the romanization renders (#222) — the L2 ramp's three, because the
@@ -292,7 +293,7 @@ export function weightsFor(face: SubsetFace, target: ScriptTarget): readonly num
   return target.weights ?? face.weights;
 }
 
-/** The files one face's rows produce — `tools/font-subset.test.ts` holds its sheet to this list. */
+/** The files one face's rows produce — a test held each sheet to this list until 2026-08-30. */
 export function outputFiles(face: SubsetFace): string[] {
   return face.targets.flatMap((target) =>
     weightsFor(face, target).map((weight) => `${face.slug}-${target.subset}-${weight}.woff2`),

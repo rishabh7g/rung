@@ -120,8 +120,8 @@ the fourth keeps आपण inclusive in both halves.
 - `public/content/hi-mr/index/*.json` before vs after the rebuild: **byte-identical, 10/10 files**
   (`md5sum -c`) — pools are validated against the index, never indexed, so no pre-existing key
   moved and none was added; `maxSpan` unchanged (1 throughout)
-- new pin in `tools/content-build.test.ts`: every hi-mr pool ≥ 12 items and **no pool item echoes
-  a hero sentence** — the file's suite is 82/82
+- new pin in `tools/content-build.test.ts` (a file since deleted with the rest of the suite on 2026-08-30 (#370)): every hi-mr pool ≥ 12 items and
+  **no pool item echoes a hero sentence** — the file's suite was 82/82
 - `scripts/verify.sh` → `TYPES ok | LINT ok | TEST 1332/1332 ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok`
 - `npm run budget` → `course:hi-mr` **344.6 → 345.3 KiB** gzip (precache:hi-mr 559.2 → 559.9) —
   the 40 Devanagari items cost ~0.7 KiB gzip, recombined-from-taught-words text compressing almost

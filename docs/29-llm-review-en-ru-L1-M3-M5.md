@@ -106,7 +106,7 @@ rather than `в магазин`.
 - **Three variations on every one of the thirty sentences**, none of them a bare noun swap alone.
 - `src/course/types.test.ts` — the field-language walk and the stress-mark scan, over all five
   files.
-- `src/course/enRuAuthored.test.tsx` — the module list of each rung as ten cards, plus four new
+- `src/course/enRuAuthored.test.tsx` (that file was deleted with the rest of the suite on 2026-08-30 (#370), so this section is the record of the walk, not a walk anyone can re-run) — the module list of each rung as ten cards, plus four new
   Sentence Detail checks: M3's `вода · воду` on one row, M4's `час · часа · часов` on one row and
   the `в` row's two-seat cue, M5's `был · была · было · были` on one row, and M5-S03's two endings
   answering to two different masters.

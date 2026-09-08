@@ -4,11 +4,12 @@
  * Three build-time artefacts carry a colour that a stylesheet cannot: the web app manifest
  * (`background_color`/`theme_color` are JSON, and JSON has no `var()`), the `<meta name=
  * "theme-color">` in `index.html`, and the rasterised app icons. Hard-coding `#f2f2f3` in three
- * more places is exactly the drift `src/styleContract.test.ts` bans inside `src/` — so they all
- * read the token instead, here, and the design package stays the one source of the value.
+ * more places is exactly the drift a style-token scan over `src/` used to ban — so they all read
+ * the token instead, here, and the design package stays the one source of the value. (That scan was
+ * deleted on 2026-08-30; the rule stands, nothing enforces it.)
  *
- * The parse is deliberately small: a flat `--name: value;` scan over the file's text, which is
- * how `src/fonts.test.ts` reads the same file. It resolves one level of `var(--other)` so an
+ * The parse is deliberately small: a flat `--name: value;` scan over the file's text, the same
+ * shape the deleted fonts test used to read this file with. It resolves one level of `var(--other)` so an
  * alias like `--mark-fg: var(--color-bg)` answers with a colour, and refuses anything it cannot
  * resolve to a literal — a build that guesses a brand colour is worse than one that stops.
  */

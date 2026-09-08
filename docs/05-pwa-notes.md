@@ -35,8 +35,10 @@ and the `%THEME_COLOR%` substitution in `vite.config.ts`).
 
 ### The manifest is the checklist
 
-`design/pwa-checklist.md` §3.1 prints the exact JSON, so `tools/pwa.test.ts` **parses that block
-out of the checklist** and deep-equals it against what the plugin is handed. What `dist/` emits:
+`design/pwa-checklist.md` §3.1 prints the exact JSON, and a PWA test **parsed that block out of
+the checklist** and deep-equalled it against what the plugin is handed. That test was deleted with
+the rest of the suite on 2026-08-30 (#370), so the checklist and `tools/pwa.ts` are kept in step by
+review now, not by a run. What `dist/` emits:
 
 ```json
 {"name":"rung","short_name":"rung","description":"Climb a language, one checkpoint at a time.",
@@ -60,15 +62,16 @@ own language explicitly — `"en"`, because `name` and `description` are English
 and there is no active course at install time to ask.
 
 That is a **sanctioned divergence from the checklist**, the only one: §3.1 does not print `lang`,
-and `design/` is read-only and wiped on re-copy (01-plan §10), so it is recorded here and encoded
-in `tools/pwa.test.ts` (`expectedManifest()` = the parsed block + `lang`) rather than edited into
-the package. Every other key is still the checklist, parsed and deep-equalled.
+and `design/` is read-only and wiped on re-copy (01-plan §10), so it was recorded here and encoded
+in the deleted test's `expectedManifest()` (the parsed block + `lang`) rather than edited into the
+package. This section is now the only place the divergence is written down. Every other key is
+still the checklist, key for key.
 
 ## 2. The icons are the header mark, read not redrawn
 
 `src/shell/RailsMark.tsx` says its geometry is the ticket's verbatim SVG and is not to be
-redrawn. So `scripts/generate-icons.ts` **reads that component** — the same source-scan idiom as
-`src/fonts.test.ts` — lifts its five `<line>`/`<rect>` elements, resolves the colours the
+redrawn. So `scripts/generate-icons.ts` **reads that component** — the same source-scan idiom the
+deleted fonts test used — lifts its five `<line>`/`<rect>` elements, resolves the colours the
 component defers to the page (`currentColor` → `--color-text`, `var(--color-accent)`) out of
 `design/tokens.css`, stands them on the `--color-bg` ground and rasterises with sharp. There is
 no second copy of the mark anywhere: change the header and `npm run icons:build` follows it.
@@ -192,8 +195,9 @@ and therefore against a **dev-content build**, the only build that then had a mo
 > (`http://<pi>:<port>`) or a phone — the same bucket as §8's deferred items. What can be said
 > without a browser is said in §3.2 and is machine-checked: the emitted worker precaches exactly
 > the shell (`BUDGET precache … = shell ok`, gated in `scripts/verify.sh`), the two runtime routes
-> are both `CacheFirst` with no network preference (`tools/pwa.test.ts`), and the warm fetches
-> every file a course ships and only its own script's faces (`src/pwa/offlineCourse.test.ts`).
+> are both `CacheFirst` with no network preference, and the warm fetches every file a course ships
+> and only its own script's faces. Both of those were test assertions when this was written; both
+> tests went on 2026-08-30 (#370), and of the three claims only the precache one is still gated.
 > The step of the walk this cannot stand in for is the one that matters most — a **cold** start,
 > server dead, on a course that has been opened once before. That is the acceptance test to run
 > on the next device pass.
@@ -316,9 +320,10 @@ owns has to land under it. Four mechanisms, and only one of them was wrong:
 The manifest is the silent one. `id`, `start_url` and all three icon `src`s were typed as `/…`,
 which on a sub-path resolves against the **origin root**: an installed app whose launch icon 404s
 and whose `start_url` opens `https://rishabh7g.github.io/` — somebody else's page, with no worker.
-So `tools/pwa.ts` now takes the base and builds every path from it (`pwaManifest(base)`), and
-`tools/pwa.test.ts` asserts the sub-path manifest is the checklist with `/rung` in front of each
-path, that `id`/`start_url` are the base, and that no icon points above it. `scope` is still
+So `tools/pwa.ts` now takes the base and builds every path from it (`pwaManifest(base)`), and the
+PWA test asserted the sub-path manifest was the checklist with `/rung` in front of each path, that
+`id`/`start_url` were the base, and that no icon pointed above it — until it was deleted on
+2026-08-30. `scope` is still
 deleted, and still correct: the browser derives it from `start_url`'s directory, which is now
 `/rung/` — the same scope the worker registers with.
 

@@ -152,7 +152,8 @@ The nine: `झोपणार` → M4-S06 #2, `जाऊ` → M6-S01 #1, `ये
 
 ## What #286 inherits
 
-`tools/content-build.test.ts` gains hi-mr's two seams, twins of en-es's:
+`tools/content-build.test.ts` gained hi-mr's two seams, twins of en-es's, and was later deleted with the rest of the suite on 2026-08-30 (#370) —
+`tools/shown-surfaces.test.ts` (#491) is the standing ratchet in its place, per course and by count rather than by row:
 
 1. **every hi-mr variation line** swept against *its own module's* index, pinned at three decided
    misses — one proper noun (`प्रिया`) and the two exemptions (`पाच`, `बोललो`). A third variation

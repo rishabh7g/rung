@@ -86,7 +86,7 @@ below.
 Verification run: `npm run content:validate` → `CONTENT 12/12 ok`;
 `npm run content:build -- --with-unverified --with-fixtures` → green;
 `vitest run tools/validate.test.ts tools/content-build.test.ts tools/generate-prompt.test.ts
-src/course/types.test.ts` → 119 passed.
+src/course/types.test.ts` → 119 passed. The first three were deleted with the rest of the suite on 2026-08-30 (#370); only the fourth still runs.
 
 ## Headline: the grammar is sound; the damage was in the index
 
@@ -346,7 +346,7 @@ Recorded so the native reviewer's PR is mechanical. Flipping `verified: true` (+
 `verifiedAt`) changes what the **strict** build ships — today it ships nothing for hi-mr. The one
 place that is inventory-pinned:
 
-- `tools/content-build.test.ts` (~line 1118) asserts the strict-build line
+- `tools/content-build.test.ts` (deleted with the rest of the suite on 2026-08-30 (#370); ~line 1118 as it then stood) asserted the strict-build line
   `'hi-mr: 0 modules — L1-M1, …, L1-M10 unverified (native gate #64; --with-unverified ships them in
   dev)'` and the skipped-id list (~line 1133). Flipping all ten makes that
   `hi-mr: 10 modules (L1-M1..M10)`, with the dev-build assertion (~line 1127) unchanged; flipping a

@@ -39,8 +39,8 @@ M1's real cumulative inventory (24 surfaces). `content/en-fr/levels.json` now ca
 
 Two standards that had to be retrofitted onto the older courses are baked in from the first
 module, so en-fr will never need the retrofit: **three variations on every sentence** (#288's bar
-on hi-en) and **twelve comprehension items per module** (#292's). Both are pinned in
-`tools/content-build.test.ts`.
+on hi-en) and **twelve comprehension items per module** (#292's). Both were pinned in
+`tools/content-build.test.ts`, a file since deleted with the rest of the suite on 2026-08-30 (#370).
 
 ## The six decisions of the briefs' en-fr header, as shipped
 
@@ -51,7 +51,7 @@ on hi-en) and **twelve comprehension items per module** (#292's). Both are pinne
    `src/course/types.test.ts` asserts it mechanically over every en-fr file it finds. The `être`
    row's `forms` are `suis · êtes · est` and deliberately do NOT list `es`, so the index never
    carries a shape the course does not teach; the emitted index is checked for its absence in
-   `tools/content-build.test.ts`. `tu` and `salut` are named in prose — M2-S01's word note says
+   `tools/content-build.test.ts` (removed since). `tu` and `salut` are named in prose — M2-S01's word note says
    `salut` "belongs with tu, the register this course does not write; you will hear it constantly
    and will not need it here" — because naming is not writing. Every sentence chips `neutral`.
 2. **Elision.** `j'aime` (M1-S05) and `je m'appelle` (M1-S01) are each their own word row, and
@@ -162,8 +162,8 @@ landing on a row whose note is false of the sentence it appears in.** The landin
 - `j'aime` (M1-C05, C12) → `L1-M1-S05#0`; `aime` (M1-C06, C07) → `L1-M1-S10#0`. Two rows, two
   notes, and the right one each time.
 
-No pool item equals a hero sentence of its own module, case-insensitively — pinned in
-`tools/content-build.test.ts`.
+No pool item equals a hero sentence of its own module, case-insensitively — pinned at the time in
+`tools/content-build.test.ts`, removed since.
 
 ## Verification
 
@@ -172,8 +172,8 @@ No pool item equals a hero sentence of its own module, case-insensitively — pi
   indexes 24 and 37 surfaces, no pool warnings.
 - Strict `npm run content:build` — unchanged: `en-fr: 0 modules — fixture course, excluded by the
   gate`, and no `public/content/en-fr/` is written.
-- `src/course/enFrAuthored.test.tsx` — the dev-build smoke, by test and never by a browser
-  (CLAUDE.md bans Playwright and Chromium on this host): the real `<App />` booted over the real
+- `src/course/enFrAuthored.test.tsx` (that file was deleted with the rest of the suite on 2026-08-30 (#370), so this section is the record of the walk, not a walk anyone can re-run) — the dev-build smoke, by test and never by a
+  browser (CLAUDE.md bans Playwright and Chromium on this host): the real `<App />` booted over the real
   `content/en-fr/` tree, the ladder in English chrome with `lang="en"`, each rung's ten cards,
   Sentence Detail with the gloss paragraph present (the L2 is not English) and the WORD-FOR-WORD
   plate beside it, and the Why panel answering `Marc est de Paris`, `Merci, ça va bien` and

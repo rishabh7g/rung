@@ -299,12 +299,14 @@ other. Each was resolved toward the seam decisions, which are the irreversible h
   carry the gloss on every sentence, all five enrichment blocks on every sentence, and 13 and 14
   comprehension items; `public/content/courses.json` now lists `en-de` with `fixture: true`
   preserved. The module list itself is rendered through the real content tree by
-  `src/screens/SettingsScreen.test.tsx`, which boots the en-de ladder off
-  `content/en-de/levels.json` and now finds one call to action where it used to find none.
+  `src/screens/SettingsScreen.test.tsx`, which booted the en-de ladder off
+  `content/en-de/levels.json` and found one call to action where it used to find none. That file
+  was deleted with the rest of the suite on 2026-08-30 (#370).
 - Pinned inventories updated: `src/course/types.test.ts` (72 module files, en-de's two added in
   glob order), `tools/content-build.test.ts` (en-de now ships two rungs on a dev build, writes
   `public/content/en-de/`, and appears in the emitted manifest carrying its fixture flag) and
-  `src/screens/SettingsScreen.test.tsx` (one link in the ladder, not zero).
+  `src/screens/SettingsScreen.test.tsx` (one link in the ladder, not zero) — the last two files
+  removed since.
 - A new `src/course/types.test.ts` case pins the briefs' decisions on the shipped files: `glossEn`
   on every sentence, `register: "neutral"` on every sentence, no `du`-register token in any L2 slot
   including mistake plates, no lowercase `ihr` / `ihre` / `ihnen`, no all-caps L2 token, no

@@ -24,8 +24,9 @@ records zero fixes.
 ## Method
 
 The constraint #288 inherits from #284: a variation a learner reads in M1 has only M1's
-cumulative index behind it, and `tools/content-build.test.ts` sweeps every hi-en variation line
-against the index of the module that shows it, pinned at twenty-seven decided misses. So every
+cumulative index behind it, and `tools/content-build.test.ts` — since deleted with the rest of the suite on 2026-08-30 (#370) — swept every hi-en
+variation line against the index of the module that showed it, pinned at twenty-seven decided
+misses. So every
 new variation was authored **from the module's own cumulative surface set** (24 → 40 → 57 → 91 →
 109 → 127 → 149 → 172 → 189 → 203 keys) and swept through the real engine (`matchSurfaces` +
 `tokenizeSurface`, `src/engine/surface.ts`) against the emitted
@@ -253,7 +254,8 @@ with its own subject).
 ## Verification
 
 - variation sweep through the real engine, per module: **300/300 lines, zero new misses** — the
-  only misses are the twenty-seven pinned in `tools/content-build.test.ts`, unchanged
+  only misses are the twenty-seven pinned in `tools/content-build.test.ts` (removed since),
+  unchanged
 - `resolveSentence` spot-check (the WhyPanel path) over the 102 new lines: **zero dropped spans**
 - codepoint audit: every character in the new display/cue/changed strings already occurs in hi-en
   content

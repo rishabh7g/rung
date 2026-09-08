@@ -130,7 +130,8 @@ The eight: `tuḥibbīn` → M1-S05 #0, `masā' al-khayr` → M2-S03 #0, `tadhha
 
 ## What #287 inherits
 
-`tools/content-build.test.ts` gains en-ar's two seams, twins of en-es's and hi-mr's:
+`tools/content-build.test.ts` gained en-ar's two seams, twins of en-es's and hi-mr's, and was
+later deleted with the rest of the suite on 2026-08-30 (#370) — `tools/shown-surfaces.test.ts` (#491) is the standing ratchet in its place, per course and by count rather than by row:
 
 1. **every en-ar variation line** swept against *its own module's* index, pinned at six decided
    misses — two proper nouns (`priyā` twice, `miṣr`), the sibling greeting (`marḥaban`), and the
