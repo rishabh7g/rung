@@ -18,13 +18,13 @@
 
 /* ---------------------------------------------------------------------- the head */
 
-.head {
+.verdict-head {
   padding-bottom: var(--space-3);
   border-bottom: var(--border-hairline);
 }
 
 /* English shell furniture, in the register of the module list's `M1 · MODULE` — raised on #71. */
-.kicker {
+.verdict-kicker {
   margin: 0;
   font: var(--text-kicker);
   letter-spacing: var(--kicker-tracking);
@@ -35,7 +35,7 @@
 /* `--text-verdict-title` (34px) exists for exactly this line and nothing else in the product.
    `M1 · Passed` is the Ladder's own PASSED status label at the size the prototype gives it — the
    same English furniture, in the one place the ritual is allowed to be loud in words. */
-.title {
+.verdict-title {
   margin: var(--space-1) 0 0;
   font: var(--text-verdict-title);
 }
@@ -44,14 +44,14 @@
 
 /* A blueprint object (design/tokens.md §3): radius 0, hairline, no surface fill, and the four
    registration marks it wears — which is why it is `position: relative`. */
-.receipt {
+.verdict-receipt {
   position: relative;
   padding: var(--space-4);
   background: var(--color-bg);
   border: var(--border-hairline);
 }
 
-.checks {
+.verdict-checks {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -60,7 +60,7 @@
   list-style: none;
 }
 
-.check {
+.verdict-check {
   display: flex;
   align-items: flex-start;
   gap: var(--space-2);
@@ -68,7 +68,7 @@
 
 /* The check itself: Lucide, inline size, accent — decoration beside a line that says the same
    thing in words, so it is `aria-hidden` at the call site. */
-.tick {
+.verdict-tick {
   flex: none;
   width: var(--icon-inline);
   height: var(--icon-inline);
@@ -85,14 +85,13 @@
  * Ladder's prose made (#138, #139), same reason, and it wants the same answer from the design
  * package. Raised for #117.
  */
-.checkText {
+.verdict-check-text {
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
 }
 
 /* The course's closing sentence — it names the rung that just opened. */
-.line {
-  composes: checkText;
+.verdict-line {
   margin: 0;
   color: var(--ink-75);
 }
@@ -102,7 +101,7 @@
 /* THE one filled object on the screen (design/tokens.md §3): solid accent, ground-coloured text,
    full width, `--cta-height` where the prototype writes 50px inline. `margin-top: auto` holds it
    at the foot of the screen, as the prototype does. */
-.cta {
+.verdict-cta {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,7 +123,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.cta:active {
+.verdict-cta:active {
   background: var(--color-accent-700);
   border-color: var(--color-accent-700);
 }
