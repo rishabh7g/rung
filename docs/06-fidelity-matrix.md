@@ -36,7 +36,7 @@ phone; recorded on #117).
 | Rung card · studied | **fixed** | §6.1 anatomy's production-dots row + counts-only writes line was missing in every stage — added (`RungCard.tsx`, reusing #88's `ProductionDots`); counts only (`9 / 20`), the prototype's English note has no key post-freeze (#71) |
 | Rung card · exit-ready | match | primary + 46px secondary pair (tokens over inline 44, the #139 call); dots row now full |
 | Rung card · pending | match | note + ghost, no dots — nothing authored to count (recorded divergence: the prototype papers over it with the authored module's numbers) |
-| Rung card · unlock beat | match | one beat, 1000ms, one-shot flag; reduced-motion `animation: none` (`unlockBeat.module.css`) |
+| Rung card · unlock beat | match | one beat, 1000ms, one-shot flag; reduced-motion `animation: none` (`unlock-beat.css`) |
 | Module list · cards / restore | match | #88 record: head row in scroll area, one scroll column, scroll restore via `shell/scrollArea.tsx`; expand-in-place retired on #217 — a card is one link into Detail, the sanctioned divergence recorded in `design/PRD-design.md` §15 |
 | Module list · dots | match | pairs per card top-right; `n / 20` count in the head row |
 | Sentence detail · full | match | #89 record: section order [D10], trap plate colour-law walked by its own test, sticky pager, `1 / 10` counts, back-to-module chevron |

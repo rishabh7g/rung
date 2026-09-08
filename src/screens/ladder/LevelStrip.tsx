@@ -31,7 +31,7 @@
  */
 import { Lock } from 'lucide-react';
 import { interpolate, useStrings } from '../../course/strings.ts';
-import beat from './unlockBeat.module.css';
+import './unlock-beat.css';
 import styles from './LevelStrip.module.css';
 
 /** What one mini square says about one rung. Ten per cell, in ladder order. */
@@ -86,7 +86,7 @@ export function LevelStrip({ cells, onSealedTap }: LevelStripProps) {
 
         const className = [
           cell.active ? styles.cellActive : styles.cell,
-          cell.unsealed === true ? beat.beat : null,
+          cell.unsealed === true ? 'unlock-beat' : null,
         ]
           .filter(Boolean)
           .join(' ');

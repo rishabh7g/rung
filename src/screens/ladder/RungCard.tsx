@@ -43,7 +43,7 @@ import { HintLine } from '../../shell/useHint.tsx';
 import { ProductionDots } from '../module/ProductionDots.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { rungLabel } from './rungLabel.ts';
-import beat from './unlockBeat.module.css';
+import './unlock-beat.css';
 import styles from './RungCard.module.css';
 
 interface RungCardProps {
@@ -88,7 +88,7 @@ export function RungCard({
 
   return (
     <div
-      className={[styles.card, unlocked ? beat.beat : null].filter(Boolean).join(' ')}
+      className={[styles.card, unlocked ? 'unlock-beat' : null].filter(Boolean).join(' ')}
       // The beat's own handle: a test and a live walk both need to see the celebration land on
       // the right rung, and the class name is a CSS-modules hash.
       data-beat={unlocked ? 'rung' : undefined}

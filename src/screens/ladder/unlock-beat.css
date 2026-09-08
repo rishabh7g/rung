@@ -1,5 +1,5 @@
 /* Layout only, tokens only (docs/design-contract.md rule 1).
-   design/Rung App v3.3.dc.html → `@keyframes unlockBeat`, and design/tokens.md §5's fourth and
+   design/Rung App v3.3.dc.html → `@keyframes unlock-beat`, and design/tokens.md §5's fourth and
    last movement: 1000ms (`--motion-unlock`), cubic-bezier(.2,.7,.3,1), an accent-200 flash and a
    10px settle, ONCE. */
 
@@ -22,7 +22,7 @@
  * (docs/design-contract.md), so this is the same call `LevelStrip.module.css` documents for the
  * 2px accent bar. Raised for #117 with the rest.
  */
-@keyframes unlockBeat {
+@keyframes unlock-beat {
   0% {
     background: var(--color-accent-200);
     transform: translateY(var(--space-3));
@@ -38,15 +38,15 @@
   }
 }
 
-.beat {
-  animation: unlockBeat var(--motion-unlock) cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
+.unlock-beat {
+  animation: unlock-beat var(--motion-unlock) cubic-bezier(0.2, 0.7, 0.3, 1) backwards;
 }
 
 /* design/tokens.md §5: reduced motion collapses every movement in the product. The beat is the
    loudest one there is, so it is also the one that most has to go — what remains is what the
    Ladder would have shown anyway: the rung, open. */
 @media (prefers-reduced-motion: reduce) {
-  .beat {
+  .unlock-beat {
     animation: none;
   }
 }

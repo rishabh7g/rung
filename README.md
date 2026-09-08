@@ -1592,7 +1592,7 @@ ritual ever records: the rung passes, and the sentences it taught enter the revi
 |---|---|
 | `src/screens/VerdictScreen.tsx` | the guard, the receipt, the write on arrival, the way back |
 | `src/state/store.ts` — `completeRitual` | pass + enrol, in one persisted document |
-| `src/screens/ladder/unlockBeat.module.css` | the beat: 1000ms, accent-200 flash, 10px settle, once |
+| `src/screens/ladder/unlock-beat.css` | the beat: 1000ms, accent-200 flash, 10px settle, once |
 | `src/shell/routes.tsx` — `passedRung`/`justPassed` | the one-shot navigation flag |
 
 [verdict-360.png](docs/images/verdict-360.png) ·
