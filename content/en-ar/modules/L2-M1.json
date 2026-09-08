@@ -1,0 +1,687 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M1",
+  "title": "Asking politely",
+  "job": "Requests, thanks, apologies in the right register",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "V-imperative + min faḍlika/faḍliki",
+      "law samaḥta/samaḥti + , + <request>",
+      "hal yumkinuka/yumkinuki + an + V?",
+      "aʿṭinī + al- + N + min faḍlika",
+      "shukran jazīlan — ʿafwan"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The imperative is the ta- form with its prefix taken off: tashrab → ishrab, tadhhab → idhhab, ta'kul → kul. If what is left cannot start a word, a vowel goes in front, and word-initial hamza is not written — so these are spelled with a plain vowel."
+    },
+    {
+      "tag": "interference",
+      "text": "Arabic has no polite verb form above the imperative. Politeness is bought with words — min faḍlika, law samaḥta — or by asking instead of telling. Looking for a politer conjugation is the English and Hindi habit, and there is nothing there to find."
+    },
+    {
+      "tag": "delta",
+      "text": "The second person forks by GENDER, not by politeness: -ka to a man, -ki to a woman. Arabic has no tú/usted split at all, and the course has been marking this since its first module."
+    },
+    {
+      "tag": "free",
+      "text": "hal yumkinuka an + verb is \"is it possible for you to…\", built from hal (M2) and an (M3), both already yours. It is the softest of the three ways to ask."
+    },
+    {
+      "tag": "delta",
+      "text": "The adverbial -an ending survives the course's no-case-endings rule, because it is lexical rather than grammatical: shukran, jazīlan, ʿafwan, ghadan, dāʾiman."
+    },
+    {
+      "tag": "interference",
+      "text": "The romanized line and the Arabic line do not carry the same information. samaḥta and samaḥti are one spelling in unvowelled Arabic — سمحت — and two in the romanization. The line you read tells you who is being addressed; the quiet line does not."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M1-S01",
+      "display": "ishrab ash-shāy, min faḍlika",
+      "script": "اشرب الشاي، من فضلك",
+      "cue": "Drink the tea, please",
+      "literal": "Drink(you-m) the-tea, from your-favour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ishrab",
+            "script": "اشرب",
+            "cue": "drink! (to a man)",
+            "tag": "delta",
+            "forms": [
+              "ishrab",
+              "ishrabī"
+            ],
+            "note": "tashrab (M4) with the prefix taken off, and an i- put in front because shr- cannot start a word. To a woman it adds -ī: ishrabī."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "An imperative on its own is not rude in Arabic, but it is bare. min faḍlika is what a speaker adds, and it is added almost every time.",
+      "sound": "ISH-rab, with the initial i barely there — in fast speech it disappears after a vowel.",
+      "variations": [
+        {
+          "display": "ishrab al-ʿaṣīr, min faḍlika",
+          "script": "اشرب العصير، من فضلك",
+          "cue": "Drink the juice, please",
+          "changed": "a different drink in the same frame"
+        },
+        {
+          "display": "ishrabī ash-shāy, min faḍliki",
+          "script": "اشربي الشاي، من فضلك",
+          "cue": "Drink the tea, please (to a woman)",
+          "changed": "both words move to the feminine together"
+        },
+        {
+          "display": "lā tashrab al-qahwa",
+          "script": "لا تشرب القهوة",
+          "cue": "Don't drink the coffee",
+          "changed": "the negative goes back to the ta- form with lā in front"
+        }
+      ],
+      "mistake": {
+        "display": "tashrab ash-shāy, min faḍlika",
+        "script": "تشرب الشاي، من فضلك",
+        "why": "tashrab is a statement — \"you drink\". The command takes the prefix off: ishrab."
+      },
+      "usage": "Offered rather than ordered: this is what a host says while pouring. min faḍlika turns it from an instruction into an invitation.",
+      "register": "neutral",
+      "mnemonic": "Take the prefix off and put a vowel where it stood."
+    },
+    {
+      "id": "L2-M1-S02",
+      "display": "law samaḥta, ayna al-maṭʿam?",
+      "script": "لو سمحت، أين المطعم؟",
+      "cue": "Excuse me, where's the restaurant?",
+      "literal": "If you-permitted, where the-restaurant?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "law",
+            "script": "لو",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "Only ever appears in this phrase in the course. law samaḥta is frozen — literally \"if you would permit\" — and neither word is used apart from it here."
+          },
+          {
+            "display": "samaḥta",
+            "script": "سمحت",
+            "cue": "you permitted (to a man)",
+            "tag": "interference",
+            "forms": [
+              "samaḥta",
+              "samaḥti"
+            ],
+            "note": "The perfect's person-suffix, which the course writes in full: -ta to a man, -ti to a woman. Both are سمحت in the Arabic line — the quiet line cannot tell them apart."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          5
+        ]
+      },
+      "trap": "The two forms are one spelling in Arabic and two in the romanization. This is the first place in the course where the two lines carry different amounts of information.",
+      "sound": "law sa-MAḤ-ta. The ḥ is a hard breath from deep in the throat, not an English h.",
+      "variations": [
+        {
+          "display": "law samaḥti, ayna al-bayt?",
+          "script": "لو سمحت، أين البيت؟",
+          "cue": "Excuse me, where's the house? (to a woman)",
+          "changed": "the feminine address — and the Arabic line does not move"
+        },
+        {
+          "display": "law samaḥta, ayna as-sūq?",
+          "script": "لو سمحت، أين السوق؟",
+          "cue": "Excuse me, where's the market?",
+          "changed": "another place, same opener"
+        },
+        {
+          "display": "law samaḥta, hādhā al-kitāb",
+          "script": "لو سمحت، هذا الكتاب",
+          "cue": "Excuse me, this is the book",
+          "changed": "the opener in front of a statement rather than a question"
+        }
+      ],
+      "mistake": {
+        "display": "law samaḥ, ayna al-maṭʿam?",
+        "script": "لو سمح، أين المطعم؟",
+        "why": "The suffix carries the person and cannot be dropped: samaḥta to a man, samaḥti to a woman."
+      },
+      "usage": "The everyday way to stop a stranger, anywhere Arabic is spoken. Chipped formal because it is the ceremonial end of the course's one register.",
+      "register": "formal",
+      "mnemonic": "The romanization knows who you are talking to; the script leaves it to the room."
+    },
+    {
+      "id": "L2-M1-S03",
+      "display": "hal yumkinuka an tatakallam?",
+      "script": "هل يمكنك أن تتكلم؟",
+      "cue": "Could you speak?",
+      "literal": "Question is-possible-for-you that you-speak?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yumkinuka",
+            "script": "يمكنك",
+            "cue": "is it possible for you (to a man)",
+            "tag": "delta",
+            "forms": [
+              "yumkinuka",
+              "yumkinuki"
+            ],
+            "note": "Literally \"it is possible for you\", with the same -ka / -ki suffix as ismuka. The two are one spelling in the Arabic line, as samaḥta and samaḥti are."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3,
+          5
+        ]
+      },
+      "trap": "The frame has no word for \"can\" and no word for \"could\". Arabic asks whether something is possible FOR you, and the softness comes from the length of the question.",
+      "sound": "yum-KI-nu-ka, four syllables, and every one of them said.",
+      "variations": [
+        {
+          "display": "hal yumkinuki an tashrab al-qahwa?",
+          "script": "هل يمكنك أن تشرب القهوة؟",
+          "cue": "Could you drink the coffee? (to a woman)",
+          "changed": "the frame moves to the feminine — and the Arabic line does not"
+        },
+        {
+          "display": "hal yumkinuka an ta'kul maʿī?",
+          "script": "هل يمكنك أن تأكل معي؟",
+          "cue": "Could you eat with me?",
+          "changed": "a different verb after an"
+        },
+        {
+          "display": "hal yumkinuka an tashtarī al-khubz?",
+          "script": "هل يمكنك أن تشتري الخبز؟",
+          "cue": "Could you buy the bread?",
+          "changed": "a request for a favour rather than for a moment"
+        }
+      ],
+      "mistake": {
+        "display": "hal yumkinuka tatakallam?",
+        "script": "هل يمكنك تتكلم؟",
+        "why": "an is obligatory between the two verbs, exactly as it is after urīd (M3). Two verbs never touch."
+      },
+      "usage": "The softest request in the module, and the one that is safe with anybody at all.",
+      "register": "formal",
+      "mnemonic": "Not can you, but is it possible for you."
+    },
+    {
+      "id": "L2-M1-S04",
+      "display": "aʿṭinī al-māʾ, min faḍlika",
+      "script": "أعطني الماء، من فضلك",
+      "cue": "Give me the water, please",
+      "literal": "Give(you-m)-me the-water, from your-favour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aʿṭinī",
+            "script": "أعطني",
+            "cue": "give me (to a man)",
+            "tag": "delta",
+            "forms": [
+              "aʿṭinī",
+              "aʿṭīnī"
+            ],
+            "note": "An imperative with -nī, \"me\", glued to the end. Word-initial hamza is not written, so it starts with a plain a — and the ʿ in the middle is ʿayn, a different letter."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The object pronoun attaches to the verb as one word. Arabic has nothing loose for a learner to place, and nothing to place wrongly.",
+      "sound": "aʿ-ṬI-nī. The ʿ is ʿayn — a tightening at the very bottom of the throat, not the hamza's clean catch.",
+      "variations": [
+        {
+          "display": "aʿṭinī al-kitāb, min faḍlika",
+          "script": "أعطني الكتاب، من فضلك",
+          "cue": "Give me the book, please",
+          "changed": "another thing asked for"
+        },
+        {
+          "display": "aʿṭinī al-miftāḥ, min faḍliki",
+          "script": "أعطني المفتاح، من فضلك",
+          "cue": "Give me the key, please (to a woman)",
+          "changed": "the feminine address, in the second word only"
+        },
+        {
+          "display": "aʿṭinī qahwa, law samaḥta",
+          "script": "أعطني قهوة، لو سمحت",
+          "cue": "Give me a coffee, please",
+          "changed": "the other softener, and a bare noun"
+        }
+      ],
+      "mistake": {
+        "display": "aʿṭi nī al-māʾ",
+        "script": "أعط ني الماء",
+        "why": "The pronoun is part of the word: aʿṭinī. Arabic never lets an object pronoun stand alone after a verb."
+      },
+      "usage": "A counter, a table, a shop. Direct, and completely ordinary once min faḍlika is on the end.",
+      "register": "neutral",
+      "mnemonic": "The me is glued on, not set down beside it."
+    },
+    {
+      "id": "L2-M1-S05",
+      "display": "shukran jazīlan ʿalā al-ʿaṣīr",
+      "script": "شكرا جزيلا على العصير",
+      "cue": "Thank you very much for the juice",
+      "literal": "Thanks plentiful upon the-juice",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jazīlan",
+            "script": "جزيلا",
+            "cue": "plentiful · very much",
+            "tag": "delta",
+            "forms": [],
+            "note": "Only ever follows shukran, and it carries the same adverbial -an. The pair is a fixed step above M2's bare shukran."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "ʿalā is \"on\" or \"upon\" and here it is \"for\". Thanks in Arabic land ON the thing given, not for it.",
+      "sound": "SHUK-ran ja-ZĪ-lan — both -an endings are a light n, and neither is a case ending.",
+      "variations": [
+        {
+          "display": "shukran jazīlan ʿalā al-qahwa",
+          "script": "شكرا جزيلا على القهوة",
+          "cue": "Thank you very much for the coffee",
+          "changed": "another thing to be thankful for"
+        },
+        {
+          "display": "shukran, ʿafwan",
+          "script": "شكرا، عفوا",
+          "cue": "Thanks. — You're welcome.",
+          "changed": "the exchange in two words"
+        },
+        {
+          "display": "shukran jazīlan ʿalā al-ḥalīb",
+          "script": "شكرا جزيلا على الحليب",
+          "cue": "Thank you very much for the milk",
+          "changed": "a third thing to be thankful for"
+        }
+      ],
+      "mistake": {
+        "display": "shukran jazīl ʿalā al-ʿaṣīr",
+        "script": "شكرا جزيل على العصير",
+        "why": "The -an is part of the phrase: jazīlan. It is one of the three exemptions from the course's no-case-endings rule."
+      },
+      "usage": "One step above shukran and well short of ceremony. It is what you say when someone has actually done something.",
+      "register": "formal",
+      "mnemonic": "Thanks fall ON the thing, and they come in an -an."
+    },
+    {
+      "id": "L2-M1-S06",
+      "display": "ʿafwan, lā baʾsa",
+      "script": "عفوا، لا بأس",
+      "cue": "You're welcome, it's no trouble",
+      "literal": "Pardon, no harm",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baʾsa",
+            "script": "بأس",
+            "cue": "harm",
+            "tag": "free",
+            "forms": [],
+            "note": "Only appears after lā, and the pair means \"no harm done\" or \"never mind\". The hamza in the middle is written ʾ and is a different letter from ʿayn."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "ʿafwan answers thanks AND excuses an interruption. One word, two jobs, and its row is M10's from the level below.",
+      "sound": "ʿAF-wan, and BAʾ-sa with a clean catch in the throat between the a and the s.",
+      "variations": [
+        {
+          "display": "lā baʾsa, shukran",
+          "script": "لا بأس، شكرا",
+          "cue": "It's no trouble, thanks",
+          "changed": "the two halves swapped"
+        },
+        {
+          "display": "lā baʾsa, lā urīd shāy",
+          "script": "لا بأس، لا أريد شاي",
+          "cue": "Never mind, I don't want tea",
+          "changed": "the phrase as a refusal rather than as a reply"
+        },
+        {
+          "display": "ʿafwan, ayna al-maṭʿam?",
+          "script": "عفوا، أين المطعم؟",
+          "cue": "Excuse me, where's the restaurant?",
+          "changed": "ʿafwan doing its other job, as an opener"
+        }
+      ],
+      "mistake": {
+        "display": "ʿafwan, lā baʾs",
+        "script": "عفوا، لا بأس",
+        "why": "The phrase is lā baʾsa, with the final -a. It is frozen, and dropping the vowel leaves half a phrase."
+      },
+      "usage": "The reply to thanks, and the reply to an apology. It closes a small exchange without ending the conversation.",
+      "register": "neutral",
+      "mnemonic": "No harm, so nothing to answer for."
+    },
+    {
+      "id": "L2-M1-S07",
+      "display": "āsif, lā urīd al-qahwa",
+      "script": "آسف، لا أريد القهوة",
+      "cue": "Sorry, I don't want the coffee",
+      "literal": "Sorry, not I-want the-coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "āsif",
+            "script": "آسف",
+            "cue": "sorry (a man speaking)",
+            "tag": "delta",
+            "forms": [
+              "āsif",
+              "āsifa"
+            ],
+            "note": "An adjective, so it agrees with the SPEAKER: āsif from a man, āsifa from a woman. It is regret, not the word for stopping a stranger."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "āsif agrees with whoever is speaking, which is the opposite of the L1 rule that adjectives agree with what they describe — because here the speaker IS what is described.",
+      "sound": "Ā-sif, with a long first vowel. The Arabic line writes it with a madda, آ, which is two hamzas' worth of a.",
+      "variations": [
+        {
+          "display": "āsifa, lā urīd ash-shāy",
+          "script": "آسفة، لا أريد الشاي",
+          "cue": "Sorry, I don't want the tea (a woman speaking)",
+          "changed": "a woman speaking, so the adjective moves"
+        },
+        {
+          "display": "āsif, lā yumkinuka an tadhhab",
+          "script": "آسف، لا يمكنك أن تذهب",
+          "cue": "Sorry, you can't go",
+          "changed": "the apology in front of a refusal"
+        },
+        {
+          "display": "āsif jiddan",
+          "script": "آسف جدا",
+          "cue": "I'm very sorry",
+          "changed": "jiddan, which is M3's word doing its adverbial job"
+        }
+      ],
+      "mistake": {
+        "display": "āsif, lā urīd al-qahwa (said by a woman)",
+        "script": "آسف، لا أريد القهوة",
+        "why": "A woman says āsifa. The adjective follows the speaker, because the speaker is the one who is sorry."
+      },
+      "usage": "Turning something down. Adding a reason after it is what keeps it warm, and in Arabic hosting the offer will come again anyway.",
+      "register": "neutral",
+      "mnemonic": "The sorry one is the one it agrees with."
+    },
+    {
+      "id": "L2-M1-S08",
+      "display": "kul al-khubz, min faḍlika",
+      "script": "كل الخبز، من فضلك",
+      "cue": "Eat the bread, please",
+      "literal": "Eat(you-m) the-bread, from your-favour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kul",
+            "script": "كل",
+            "cue": "eat! (to a man)",
+            "tag": "delta",
+            "forms": [
+              "kul",
+              "kulī"
+            ],
+            "note": "From taʾkul with the prefix off, and the hamza falls away with it — kul, not ʾkul. Three letters, and it is the whole imperative."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "No vowel goes in front here, because kul can already start a word. The rule adds one only when it has to.",
+      "sound": "KUL, one syllable, with the l clear and forward.",
+      "variations": [
+        {
+          "display": "kulī al-fākiha, min faḍliki",
+          "script": "كلي الفاكهة، من فضلك",
+          "cue": "Eat the fruit, please (to a woman)",
+          "changed": "the feminine, which adds -ī to the imperative"
+        },
+        {
+          "display": "kul maʿī, law samaḥta",
+          "script": "كل معي، لو سمحت",
+          "cue": "Eat with me, please",
+          "changed": "an invitation rather than an instruction"
+        },
+        {
+          "display": "lā ta'kul al-khubz",
+          "script": "لا تأكل الخبز",
+          "cue": "Don't eat the bread",
+          "changed": "the negative, which brings the ta- form back"
+        }
+      ],
+      "mistake": {
+        "display": "ta'kul al-khubz, min faḍlika",
+        "script": "تأكل الخبز، من فضلك",
+        "why": "That is a statement. The command drops the prefix: kul."
+      },
+      "usage": "A table. In Arab hosting this is said more than once, and a first refusal is not taken as an answer.",
+      "register": "neutral",
+      "mnemonic": "If it can start a word, nothing goes in front."
+    },
+    {
+      "id": "L2-M1-S09",
+      "display": "law samaḥti, aʿṭinī al-kitāb",
+      "script": "لو سمحت، أعطني الكتاب",
+      "cue": "Excuse me, give me the book (to a woman)",
+      "literal": "If you-permitted(f), give(you)-me the-book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "samaḥti",
+            "script": "سمحت",
+            "cue": "you permitted (to a woman)",
+            "tag": "interference",
+            "forms": [],
+            "note": "The feminine of samaḥta, and the Arabic line is identical — سمحت for both. The row for law samaḥta is S02's."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "The two lines disagree about how much they know. A reader of the romanization can see the address; a reader of the Arabic has to hear it.",
+      "sound": "sa-MAḤ-ti. The final -i is short and often barely voiced.",
+      "variations": [
+        {
+          "display": "law samaḥta, aʿṭinī al-miftāḥ",
+          "script": "لو سمحت، أعطني المفتاح",
+          "cue": "Excuse me, give me the key",
+          "changed": "the masculine address, and the same Arabic line"
+        },
+        {
+          "display": "law samaḥti, ayna al-madrasa?",
+          "script": "لو سمحت، أين المدرسة؟",
+          "cue": "Excuse me, where's the school?",
+          "changed": "the opener in front of a question"
+        },
+        {
+          "display": "law samaḥti, hal yumkinuki an tatakallam?",
+          "script": "لو سمحت، هل يمكنك أن تتكلم؟",
+          "cue": "Excuse me, could you speak?",
+          "changed": "two feminine markers in one sentence, and neither is visible in the script"
+        }
+      ],
+      "mistake": {
+        "display": "law samaḥta, aʿṭinī al-kitāb (said to a woman)",
+        "script": "لو سمحت، أعطني الكتاب",
+        "why": "To a woman it is samaḥti. The Arabic will not tell you, so the choice has to be made before you speak."
+      },
+      "usage": "A shop, a library, a desk. Getting the address right is the whole politeness here.",
+      "register": "formal",
+      "mnemonic": "The script keeps its counsel; the speaker cannot."
+    },
+    {
+      "id": "L2-M1-S10",
+      "display": "hal yumkinuka an tadhhab maʿī?",
+      "script": "هل يمكنك أن تذهب معي؟",
+      "cue": "Could you come with me?",
+      "literal": "Question is-possible-for-you that you-go with-me?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maʿī",
+            "script": "معي",
+            "cue": "with me",
+            "tag": "free",
+            "forms": [],
+            "note": "M10's row from the level below, doing its own job: maʿa with -ī glued on. Arabic says \"go with me\" where English says \"come with me\"."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "tadhhab is \"go\", and Arabic keeps it where English switches to \"come\". The direction is judged from where the thing is going, not from where the speaker stands.",
+      "sound": "ma-ʿĪ, with the ʿayn between the two vowels and the stress on the long ī.",
+      "variations": [
+        {
+          "display": "hal yumkinuki an tadhhab maʿī?",
+          "script": "هل يمكنك أن تذهب معي؟",
+          "cue": "Could you come with me? (to a woman)",
+          "changed": "the feminine frame, invisible in the Arabic line as always"
+        },
+        {
+          "display": "hal yumkinuka an ta'kul maʿī?",
+          "script": "هل يمكنك أن تأكل معي؟",
+          "cue": "Could you eat with me?",
+          "changed": "a different verb after an"
+        },
+        {
+          "display": "adhhab maʿī, min faḍlika",
+          "script": "اذهب معي، من فضلك",
+          "cue": "Come with me, please",
+          "changed": "the imperative, which is blunter and perfectly usable"
+        }
+      ],
+      "mistake": {
+        "display": "hal yumkinuka an tadhhab maʿ ī?",
+        "script": "هل يمكنك أن تذهب مع ي؟",
+        "why": "The pronoun glues on: maʿī. Arabic writes no space between a preposition and its pronoun."
+      },
+      "usage": "Asking for company, and the politest way in the module to ask for anything at all.",
+      "register": "formal",
+      "mnemonic": "Everything little in Arabic glues on."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M1-C01",
+      "display": "ishrab ash-shāy, min faḍlika",
+      "script": "اشرب الشاي، من فضلك",
+      "cue": "Drink the tea, please"
+    },
+    {
+      "id": "L2-M1-C02",
+      "display": "law samaḥta, ayna al-maṭʿam?",
+      "script": "لو سمحت، أين المطعم؟",
+      "cue": "Excuse me, where's the restaurant?"
+    },
+    {
+      "id": "L2-M1-C03",
+      "display": "hal yumkinuka an tatakallam?",
+      "script": "هل يمكنك أن تتكلم؟",
+      "cue": "Could you speak?"
+    },
+    {
+      "id": "L2-M1-C04",
+      "display": "aʿṭinī al-māʾ, min faḍlika",
+      "script": "أعطني الماء، من فضلك",
+      "cue": "Give me the water, please"
+    },
+    {
+      "id": "L2-M1-C05",
+      "display": "shukran jazīlan ʿalā al-ʿaṣīr",
+      "script": "شكرا جزيلا على العصير",
+      "cue": "Thank you very much for the juice"
+    },
+    {
+      "id": "L2-M1-C06",
+      "display": "ʿafwan, lā baʾsa",
+      "script": "عفوا، لا بأس",
+      "cue": "You're welcome, it's no trouble"
+    },
+    {
+      "id": "L2-M1-C07",
+      "display": "āsif, lā urīd al-qahwa",
+      "script": "آسف، لا أريد القهوة",
+      "cue": "Sorry, I don't want the coffee"
+    },
+    {
+      "id": "L2-M1-C08",
+      "display": "kul al-khubz, min faḍlika",
+      "script": "كل الخبز، من فضلك",
+      "cue": "Eat the bread, please"
+    },
+    {
+      "id": "L2-M1-C09",
+      "display": "law samaḥti, aʿṭinī al-kitāb",
+      "script": "لو سمحت، أعطني الكتاب",
+      "cue": "Excuse me, give me the book"
+    },
+    {
+      "id": "L2-M1-C10",
+      "display": "hal yumkinuka an tadhhab maʿī?",
+      "script": "هل يمكنك أن تذهب معي؟",
+      "cue": "Could you come with me?"
+    },
+    {
+      "id": "L2-M1-C11",
+      "display": "aʿṭinī qahwa, law samaḥta",
+      "script": "أعطني قهوة، لو سمحت",
+      "cue": "Give me a coffee, please"
+    },
+    {
+      "id": "L2-M1-C12",
+      "display": "kul maʿī, law samaḥta",
+      "script": "كل معي، لو سمحت",
+      "cue": "Eat with me, please"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
