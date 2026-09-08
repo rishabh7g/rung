@@ -20,14 +20,14 @@
  * Condensed, because it is course copy and hi-mr's is Devanagari (design/tokens.md §2). The type
  * wall again, same as the rung card's title row; recorded for #117.
  */
-.title {
+.summary-title {
   margin: 0;
   font: var(--text-l2-card);
 }
 
 /* A blueprint object: radius 0, hairline, no fill, and the four registration marks — which is
    the `position: relative` (design/tokens.md §3). */
-.counts {
+.summary-counts {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@
 
 /* One sentence per count, in the course's words — so the number sits where the language puts it
    rather than in a right-aligned column (see the component header). */
-.count {
+.summary-count {
   margin: 0;
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
@@ -53,7 +53,7 @@
  * together at the foot of the column with the loud one on top: when the ritual is open it is the
  * screen's action, and "back to the ladder" is the way past it.
  */
-.toRitual {
+.summary-to-ritual {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +73,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.toRitual:active {
+.summary-to-ritual:active {
   background: var(--color-accent-700);
   border-color: var(--color-accent-700);
 }
@@ -81,7 +81,7 @@
 /* The way out, at the prototype's secondary height — and a link, because it navigates, which is
    also what ends the session (`AppShell`). `margin-top: auto` keeps it at the foot of the column
    when it is alone there. */
-.back {
+.summary-back {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,6 +103,6 @@
    column. When the ritual CTA is there they would otherwise share the free space between them and
    drift apart, so the one that follows it gives its own claim up: the pair sits together at the
    bottom, spaced by the column's gap, loud one on top. */
-.toRitual + .back {
+.summary-to-ritual + .summary-back {
   margin-top: 0;
 }

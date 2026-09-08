@@ -23,7 +23,7 @@ import { Link } from 'react-router-dom';
 import { interpolate, useStrings } from '../../course/strings.ts';
 import { HOME_PATH, RITUAL_PATH } from '../../shell/routes.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
-import styles from './SessionSummary.module.css';
+import './session-summary.css';
 
 interface SessionSummaryProps {
   /** Cards the learner marked got-it in THIS session. */
@@ -38,14 +38,14 @@ export function SessionSummary({ gotIt, total, ritualOpen }: SessionSummaryProps
   const strings = useStrings();
 
   return (
-    <section className={styles.summary}>
-      <h2 className={styles.title}>{strings['practice.summaryTitle']}</h2>
+    <section className="summary">
+      <h2 className="summary-title">{strings['practice.summaryTitle']}</h2>
 
-      <div className={styles.counts}>
+      <div className="summary-counts">
         <RegistrationMarks />
         {/* One sentence, in the course's words — so the numbers sit where the language puts
             them rather than in a right-aligned column. */}
-        <p className={styles.count}>
+        <p className="summary-count">
           {interpolate(strings['practice.summaryScore'], { count: gotIt, total })}
         </p>
       </div>
@@ -53,13 +53,13 @@ export function SessionSummary({ gotIt, total, ritualOpen }: SessionSummaryProps
       {/* The rung is worked through: the exit ritual is what comes next, and this is the moment
           the learner earned it. */}
       {ritualOpen && (
-        <Link className={styles.toRitual} to={RITUAL_PATH}>
+        <Link className="summary-to-ritual" to={RITUAL_PATH}>
           {strings['practice.summaryToRitual']}
         </Link>
       )}
 
       {/* Leaving the route is what ends the session (`AppShell`), so the way out is a link. */}
-      <Link className={styles.back} to={HOME_PATH}>
+      <Link className="summary-back" to={HOME_PATH}>
         {strings['practice.backToLadder']}
       </Link>
     </section>
