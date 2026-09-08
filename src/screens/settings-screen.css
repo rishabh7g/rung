@@ -10,7 +10,7 @@
 }
 
 /* English shell furniture — the header README's purity note anticipates. The prototype's 24px. */
-.title {
+.settings-title {
   margin: 0;
   font: var(--text-screen-title);
 }
@@ -18,7 +18,7 @@
 /* The blueprint object every section is (design/tokens.md §3): radius 0, a hairline,
    --shadow-sm, no surface fill — wearing the four registration marks
    (`./RegistrationMarks.tsx`), which is why it is `position: relative`. */
-.card {
+.settings-card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@
 }
 
 /* The section kickers — the register of the nav's tab labels and the Ladder's LEVEL line. */
-.kicker {
+.settings-kicker {
   margin: 0;
   font: var(--text-kicker);
   letter-spacing: var(--kicker-tracking);
@@ -39,7 +39,7 @@
 }
 
 /* The one section the prototype heads with a bold body word rather than a kicker. */
-.backupTitle {
+.settings-backup-title {
   margin: 0;
   flex: 1;
   min-width: 0;
@@ -49,13 +49,13 @@
 
 /* ------------------------------------------------------------------------------- COURSE */
 
-.courseField {
+.settings-course-field {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
 
-.fieldLabel {
+.settings-field-label {
   font: var(--text-body);
   font-weight: 600;
 }
@@ -70,7 +70,7 @@
  * the floor, `--devanagari-min-size` (18px). Sixth recurrence of the missing-slot wall
  * (#86, #87, #88, #89, #93); flagged for #117, no token invented.
  */
-.select {
+.settings-select {
   min-height: var(--tap-min);
   padding: var(--space-2) var(--space-3);
   font: var(--text-body);
@@ -87,13 +87,13 @@
 
 /* ----------------------------------------------------------------------------- PRACTICE */
 
-.row {
+.settings-row {
   display: flex;
   align-items: center;
   gap: var(--space-3);
 }
 
-.rowTitle {
+.settings-row-title {
   margin: 0;
   font: var(--text-body);
   font-weight: 600;
@@ -101,12 +101,12 @@
 
 /* The Industry seg, as the self-mark draws it (`../components/self-mark.css`): one
    hairline round the pair, one between them, radius 0. */
-.seg {
+.settings-seg {
   display: flex;
   border: var(--border-hairline);
 }
 
-.segOption {
+.settings-seg-option {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,21 +122,20 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.segOption + .segOption,
-.segOption + .segSelected,
-.segSelected + .segOption {
+.settings-seg-option + .settings-seg-option,
+.settings-seg-option + .settings-seg-selected,
+.settings-seg-selected + .settings-seg-option {
   border-left: var(--border-hairline);
 }
 
-.segOption:active {
+.settings-seg-option:active {
   background: color-mix(in srgb, var(--color-text) 7%, transparent);
 }
 
 /* Selected = a tinted accent fill with dark accent ink (design/tokens.md §1: 100–300 for
    tinted fills, 700–900 for text on tints). Not the mark colours — those two fills are the
    product's one sanctioned loud pair and live in the self-mark alone (§7 rule 2). */
-.segSelected {
-  composes: segOption;
+.settings-seg-selected {
   background: var(--color-accent-200);
   color: var(--color-accent-900);
 }

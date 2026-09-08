@@ -35,7 +35,7 @@ import { useAppStore } from '../state/store.ts';
 import { Toast, useToast } from '../shell/Toast.tsx';
 import { RegistrationMarks } from './RegistrationMarks.tsx';
 import BackupSection from './settings/BackupSection.tsx';
-import styles from './SettingsScreen.module.css';
+import './settings-screen.css';
 
 export default function SettingsScreen() {
   const { course, courses } = useCourse();
@@ -68,20 +68,20 @@ export default function SettingsScreen() {
   }, [course, strings, showToast]);
 
   return (
-    <section className={styles.settings}>
-      <h2 className={styles.title}>{strings['settings.title']}</h2>
+    <section className="settings">
+      <h2 className="settings-title">{strings['settings.title']}</h2>
 
       {/* ------------------------------------------------------------------ COURSE (F0) */}
-      <section className={styles.card}>
+      <section className="settings-card">
         <RegistrationMarks />
-        <h3 className={styles.kicker}>{strings['settings.kicker.course']}</h3>
-        <div className={styles.courseField}>
-          <label className={styles.fieldLabel} htmlFor={selectId}>
+        <h3 className="settings-kicker">{strings['settings.kicker.course']}</h3>
+        <div className="settings-course-field">
+          <label className="settings-field-label" htmlFor={selectId}>
             {strings['settings.activeCourse']}
           </label>
           <select
             id={selectId}
-            className={styles.select}
+            className="settings-select"
             value={course.id}
             onChange={(event) => switchCourse(event.target.value)}
           >
@@ -99,24 +99,26 @@ export default function SettingsScreen() {
       </section>
 
       {/* ------------------------------------------------------------------ PRACTICE */}
-      <section className={styles.card}>
+      <section className="settings-card">
         <RegistrationMarks />
-        <h3 className={styles.kicker}>{strings['settings.kicker.practice']}</h3>
-        <div className={styles.row}>
+        <h3 className="settings-kicker">{strings['settings.kicker.practice']}</h3>
+        <div className="settings-row">
           {/* The title and nothing under it (#394). The note that used to sit here explained the
               tick in three lines — the longest text on the page, about its smallest object, next
               to a pair of buttons that already say what they do. */}
-          <p className={styles.rowTitle} id={tickLabelId}>
+          <p className="settings-row-title" id={tickLabelId}>
             {strings['settings.tick.title']}
           </p>
           {/* The same seg the self-mark draws, for the same reason it is buttons rather than
               radios there (`components/SelfMark`, Invariant 6): no input element anywhere.
               Unlike a mark it always has a state — the setting is never null — and its live
               effect is #98's Tick reading the store. */}
-          <div className={styles.seg} role="group" aria-labelledby={tickLabelId}>
+          <div className="settings-seg" role="group" aria-labelledby={tickLabelId}>
             <button
               type="button"
-              className={tickEnabled ? styles.segSelected : styles.segOption}
+              className={
+                tickEnabled ? 'settings-seg-selected settings-seg-option' : 'settings-seg-option'
+              }
               aria-pressed={tickEnabled}
               onClick={() => setSetting('elapsedTickEnabled', true)}
             >
@@ -124,7 +126,9 @@ export default function SettingsScreen() {
             </button>
             <button
               type="button"
-              className={tickEnabled ? styles.segOption : styles.segSelected}
+              className={
+                tickEnabled ? 'settings-seg-option' : 'settings-seg-selected settings-seg-option'
+              }
               aria-pressed={!tickEnabled}
               onClick={() => setSetting('elapsedTickEnabled', false)}
             >
@@ -135,9 +139,9 @@ export default function SettingsScreen() {
       </section>
 
       {/* ----------------------- Backup — export / import, and the room there is (#108, F6, F7) */}
-      <section className={styles.card}>
+      <section className="settings-card">
         <RegistrationMarks />
-        <h3 className={styles.backupTitle}>{strings['settings.backup.title']}</h3>
+        <h3 className="settings-backup-title">{strings['settings.backup.title']}</h3>
         <BackupSection />
       </section>
 
