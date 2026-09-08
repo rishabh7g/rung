@@ -642,6 +642,23 @@ brief itself, marked as the wave that found it. The shown-surface ratchet held a
 existing baseline** with no finding at all. Reviews: `docs/77` through `docs/82`. **The native gate
 is still unmet**, as everywhere in this repo.
 
+**en-de and en-ko finish the wave (#477, #478, 2026-09-08).** All nine courses now stand at
+`22 modules` — or 30, for hi-mr, whose L3 is complete. en-de's result is the one worth naming:
+**zero re-teaches**, on the one course where `src/course/types.test.ts` forbids a second row for a
+surface outright. The L2 wave hit that fourteen times; this one hit it never, because the author
+could run the per-module check and route around a spent key BEFORE writing the sentence. It also
+found the rule that decides which separable verbs a module may split — not the verb but the PREFIX
+it strands, and only `ein`, `an`, `mit` and `auf` are owned — plus two collisions no brief had
+predicted: `kleiner` is L2-M9's comparative, so `ein kleiner Kurs` would send a learner's tap to the
+wrong note, and `meinen` is L2-M8's verb "to mean" rather than a free possessive.
+
+en-ko's wave found an outright error in its own brief, which is the best argument for authoring
+against the index rather than the plan: the brief wrote `jeo-ga` for the in-clause subject, and
+저 + 가 is 제가 — **`je-ga`**. The module makes that alternation its own word row. Two smaller
+corrections went the same way: `meongneun` rather than `meokneun`, because `docs/34` §1.1 writes
+word-internal sound changes as `hangungmal` and `hakgyo` already do; and `ilchik`, the shipped key,
+rather than the brief's `ilccik`. Reviews: `docs/83` and `docs/84`.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

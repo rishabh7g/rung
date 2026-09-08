@@ -1,0 +1,624 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M2",
+  "title": "Work and study",
+  "job": "Explain what you do all day, and how",
+  "prerequisites": [
+    "L3-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Der/Die/Das + Adj-e + N + ist + Adj",
+      "Ich habe + einen + Adj-en + N",
+      "Ein + Adj-er + N + ist + Adj",
+      "Ich arbeite in einem + Adj-en + N",
+      "Das ist die + Adj-ste + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ONE principle holds all three declensions together, and it is worth more than three tables: inside a noun phrase the gender-and-case signal is carried exactly ONCE. If der, die, das, den or dem already carries it, the adjective goes weak and takes only -e or -en — der neue Kollege, mit dem neuen Kollegen. If nothing stands in front of the noun at all, the adjective wears the article's own ending in its place — anstrengende Arbeit, and the -e there is die's. Every ending you will ever need is an ending you already met on der, die and das."
+    },
+    {
+      "tag": "delta",
+      "text": "ein, kein and mein are called MIXED for one reason a learner can hold in a sentence: ein itself has no ending in three cells — masculine nominative, neuter nominative and neuter accusative — so the adjective supplies the missing signal there and looks strong: ein guter Chef, ein neuer Kollege. Everywhere else the ein-word carries the signal itself and the adjective is weak again: einen neuen Chef, in einem kleinen Büro, mit meiner neuen Chefin. Mixed is not a third system; it is the first two, chosen cell by cell."
+    },
+    {
+      "tag": "interference",
+      "text": "English adjectives never inflect, so the first error is no ending at all: ein neu Kollege, eine interessant Arbeit. In front of a noun a German adjective ALWAYS has an ending — there is no bare form in that seat. The bare form belongs after sein, which is where every adjective in L1 and L2 stood, and this module is the first place the two seats are told apart."
+    },
+    {
+      "tag": "interference",
+      "text": "The second error is the one that survives into fluency, and it appears the moment the first is fixed: once -en is learnt it gets spread over everything, giving eine interessanten Arbeit and das größeren Büro. -en is what a weak adjective takes in the masculine accusative, in the dative and in the plural — the cells where the article in front of it is already doing heavy work. It is not a default, and a learner who reaches for it by habit is heard doing so."
+    },
+    {
+      "tag": "delta",
+      "text": "The comparative and the superlative decline too, and the ending goes ON TOP of the -er or the -st: groß gives größer gives das größere Büro, and die größte Firma. These are the two shapes L2-M9 refused to write and named as this level's. L2-M9's am größten is the predicative form and stays exactly where it was — after sein, with no adjective ending at all."
+    },
+    {
+      "tag": "free",
+      "text": "A bare job after sein still takes NO article: Ich bin Studentin, Sie ist Ärztin. L1-M1's law survives a module that has just put an article and an adjective in front of every other noun in sight. Put an adjective on the job and the article comes back — Sie ist eine neue Kollegin — but the bare job never has one. The genitive of these phrases, des neuen Kollegen, is L3-M8's; everything here stays nominative, accusative or dative."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M2-S01",
+      "display": "Der neue Kollege ist sehr nett",
+      "cue": "The new colleague is very nice",
+      "literal": "The new colleague is very nice",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "neue",
+            "cue": "new (after der, die or das)",
+            "tag": "delta",
+            "forms": [],
+            "note": "der already carries the masculine signal, so the adjective goes weak and takes the bare -e: der neue Kollege, die neue Stelle."
+          },
+          {
+            "display": "neuer",
+            "cue": "new (where nothing else carries the signal)",
+            "tag": "delta",
+            "forms": [],
+            "note": "ein has no ending in this cell, so the adjective wears der's own -er: ein neuer Kollege, beside der neue Kollege."
+          },
+          {
+            "display": "Kollegen",
+            "cue": "colleagues · colleague (anywhere but the bare subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M3's Kollege adds -n everywhere but the bare subject — the class L2-M2's Herrn belongs to — and the same form is the plural."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "L1-M10's neu is the form after sein and nowhere else. The moment it stands in front of a noun it has an ending, and which ending depends only on what is standing in front of IT.",
+      "sound": "dair NOY-uh ko-LAY-guh ist zair net. neue is two syllables, NOY-uh.",
+      "variations": [
+        {
+          "display": "Ein neuer Kollege ist sehr nett",
+          "cue": "A new colleague is very nice",
+          "changed": "ein carries nothing, so the adjective takes -er instead of -e"
+        },
+        {
+          "display": "Neue Kollegen sind immer nett",
+          "cue": "New colleagues are always nice",
+          "changed": "nothing in front at all, so the adjective wears die's plural -e"
+        }
+      ],
+      "mistake": {
+        "display": "Der neu Kollege ist sehr nett",
+        "why": "An adjective in front of a noun always has an ending: Der neue Kollege ist sehr nett."
+      },
+      "usage": "Talking about the people at work to somebody outside it.",
+      "register": "neutral",
+      "mnemonic": "der neue · ein neuer · neue. One word, three seats."
+    },
+    {
+      "id": "L3-M2-S02",
+      "display": "Ich habe einen neuen Chef",
+      "cue": "I've got a new boss",
+      "literal": "I have a new boss",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "neuen",
+            "cue": "new (weak -en)",
+            "tag": "delta",
+            "forms": [],
+            "note": "einen already says masculine accusative, so the adjective is weak: einen neuen Chef. The same -en serves the dative and the plural."
+          },
+          {
+            "display": "Chef",
+            "cue": "boss",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, der Chef, and it begins with a sh: it is the French word for a head, not the English word for a cook."
+          },
+          {
+            "display": "Chefin",
+            "cue": "boss (a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "The -in that made Studentin from Student and L2-M3's Kollegin from Kollege: die Chefin."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "einen is the cell where ein DOES carry a signal, so the adjective goes weak here even though it looked strong in ein neuer Chef. The article decides, one cell at a time.",
+      "sound": "ikh HAH-buh INE-en NOY-en shef. Chef rhymes with English \"chef\" and stresses its one syllable.",
+      "variations": [
+        {
+          "display": "Ich habe eine neue Chefin",
+          "cue": "I've got a new boss",
+          "changed": "feminine, where eine carries the signal and the adjective takes -e"
+        },
+        {
+          "display": "Der neue Chef ist sehr freundlich",
+          "cue": "The new boss is very friendly",
+          "changed": "the same adjective back in the weak nominative"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe einen neue Chef",
+        "why": "einen carries masculine accusative, so the adjective is weak -en: Ich habe einen neuen Chef."
+      },
+      "usage": "The first thing anybody says about a change at work.",
+      "register": "neutral",
+      "mnemonic": "ein neuer, but einen neuen. The -n moves to both."
+    },
+    {
+      "id": "L3-M2-S03",
+      "display": "Ein guter Chef ist sehr wichtig",
+      "cue": "A good boss matters a lot",
+      "literal": "A good boss is very important",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "guter",
+            "cue": "good (masculine, nothing else carrying the signal)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's gut standing in front of a noun. ein has no ending in this cell, so the adjective takes der's -er: ein guter Chef."
+          },
+          {
+            "display": "wichtig",
+            "cue": "important",
+            "tag": "free",
+            "forms": [],
+            "note": "After sein it takes no ending at all — Das ist wichtig — which is where every adjective in L1 and L2 was kept."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "gut has no ending after sein and an ending in front of a noun, and both shapes are in this sentence's own variations. It is the same word doing two different jobs, not two words.",
+      "sound": "ine GOO-ter shef ist zair VIKH-tikh. The ch of wichtig is the front sound.",
+      "variations": [
+        {
+          "display": "Ein neuer Chef ist sehr wichtig",
+          "cue": "A new boss matters a lot",
+          "changed": "another adjective in the same cell, taking the same -er"
+        },
+        {
+          "display": "Ein guter Chef ist nie langweilig",
+          "cue": "A good boss is never boring",
+          "changed": "L3-M1's nie, and langweilig bare after sein"
+        }
+      ],
+      "mistake": {
+        "display": "Ein gut Chef ist sehr wichtig",
+        "why": "ein carries no ending here, so the adjective must: Ein guter Chef ist sehr wichtig."
+      },
+      "usage": "Saying what you want from a job, without naming anybody.",
+      "register": "neutral",
+      "mnemonic": "If ein says nothing, the adjective says it."
+    },
+    {
+      "id": "L3-M2-S04",
+      "display": "Ich arbeite in einem kleinen Büro",
+      "cue": "I work in a small office",
+      "literal": "I work in a small office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kleinen",
+            "cue": "small (weak -en)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M10's klein in the dative, where einem carries the signal: in einem kleinen Büro. Do not reach for L2-M9's kleiner, which means smaller."
+          },
+          {
+            "display": "Büro",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "Neuter, das Büro, and the ü is said with the lips of an oo and the tongue of an ee."
+          },
+          {
+            "display": "meiner",
+            "cue": "my (feminine dative)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M2's mein in the dative feminine, taking L2-M3's einer ending: mit meiner neuen Chefin."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "Every dative adjective in this module ends in -en, whatever the gender. That is one of the cells where the -en is right, which is exactly why it is so easy to start using it everywhere.",
+      "sound": "ikh AR-by-tuh in INE-em KLY-nen bue-ROH. Büro stresses its second syllable.",
+      "variations": [
+        {
+          "display": "Ich arbeite mit meiner neuen Chefin",
+          "cue": "I work with my new boss",
+          "changed": "the dative feminine, where meiner carries the signal"
+        },
+        {
+          "display": "Ich arbeite in einem neuen Büro",
+          "cue": "I work in a new office",
+          "changed": "another adjective, same dative -en"
+        }
+      ],
+      "mistake": {
+        "display": "Ich arbeite in einem klein Büro",
+        "why": "In front of a noun the adjective declines: in einem kleinen Büro."
+      },
+      "usage": "Answering where you work, to somebody who has just asked what you do.",
+      "register": "neutral",
+      "mnemonic": "Dative in, -en on. Every gender."
+    },
+    {
+      "id": "L3-M2-S05",
+      "display": "Das ist eine interessante Arbeit",
+      "cue": "That's interesting work",
+      "literal": "That is an interesting work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "interessant",
+            "cue": "interesting",
+            "tag": "delta",
+            "forms": [
+              "interessante"
+            ],
+            "note": "Bare after sein — Die Arbeit ist interessant — and declined in front of a noun: eine interessante Arbeit. One word, both seats."
+          },
+          {
+            "display": "langweilig",
+            "cue": "boring",
+            "tag": "free",
+            "forms": [],
+            "note": "Literally long-becoming, and it is a whole word where English needs two. After sein it stays bare: Die Arbeit ist nicht langweilig."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "eine already says feminine nominative, so the adjective takes the light -e. An -en here is the commonest overcorrection there is, and it is what a learner who has just met the dative reaches for.",
+      "sound": "das ist INE-uh in-ter-ess-AHN-tuh AR-bite. interessant stresses its last syllable.",
+      "variations": [
+        {
+          "display": "Die Arbeit ist sehr interessant",
+          "cue": "The work is very interesting",
+          "changed": "back after sein, so the ending falls away"
+        },
+        {
+          "display": "Die Arbeit ist nicht langweilig",
+          "cue": "The work isn't boring",
+          "changed": "another adjective, still bare after sein"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist eine interessanten Arbeit",
+        "why": "eine carries feminine nominative, so the adjective takes -e: eine interessante Arbeit."
+      },
+      "usage": "Saying something kind about somebody else's job.",
+      "register": "formal",
+      "mnemonic": "-en is a cell, not a default."
+    },
+    {
+      "id": "L3-M2-S06",
+      "display": "Das ist anstrengende Arbeit",
+      "cue": "That's demanding work",
+      "literal": "That is demanding work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anstrengend",
+            "cue": "tiring · demanding",
+            "tag": "delta",
+            "forms": [
+              "anstrengende"
+            ],
+            "note": "With no article at all the adjective wears the article's own ending, so feminine Arbeit gives anstrengende. After sein it stays bare."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Dropping the article does NOT drop the ending. The signal has to be carried once, and with nothing in front of the noun the adjective is the only thing left to carry it.",
+      "sound": "das ist AN-shtreng-en-duh AR-bite. The st of anstrengend is sht.",
+      "variations": [
+        {
+          "display": "Die Arbeit ist sehr anstrengend",
+          "cue": "The work is very tiring",
+          "changed": "after sein, so the ending goes"
+        },
+        {
+          "display": "Das ist interessante Arbeit",
+          "cue": "That's interesting work",
+          "changed": "another adjective carrying die's -e on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist anstrengend Arbeit",
+        "why": "With nothing in front, the adjective carries the signal: Das ist anstrengende Arbeit."
+      },
+      "usage": "Warning somebody about a job without complaining about it.",
+      "register": "neutral",
+      "mnemonic": "No article, no help. The adjective pays."
+    },
+    {
+      "id": "L3-M2-S07",
+      "display": "Ich bin Studentin und studiere an der Uni",
+      "cue": "I'm a student and I study at the university",
+      "literal": "I am student and study at the uni",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "studiere",
+            "cue": "study (I study)",
+            "tag": "interference",
+            "forms": [
+              "studieren"
+            ],
+            "note": "It means to study AT a university and nothing else. Revising for tomorrow is L1-M6's lernen, which is the word English speakers want here."
+          },
+          {
+            "display": "Uni",
+            "cue": "university",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, die Uni, and it is what everybody actually says. an der Uni is where you study."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "A bare job after sein takes no article, so Ich bin eine Studentin is wrong even in a module full of articles. Put an adjective on the job and the article returns.",
+      "sound": "ikh bin shtoo-DEN-tin oont shtoo-DEE-ruh an dair OO-nee.",
+      "variations": [
+        {
+          "display": "Ich bin Studentin und arbeite nicht",
+          "cue": "I'm a student and I don't work",
+          "changed": "the second half negated"
+        },
+        {
+          "display": "Wir studieren an der Uni",
+          "cue": "We study at the university",
+          "changed": "L2-M6's wir, so the verb takes the plural form"
+        }
+      ],
+      "mistake": {
+        "display": "Ich bin eine Studentin und studiere an der Uni",
+        "why": "A bare job after sein takes no article: Ich bin Studentin und studiere an der Uni."
+      },
+      "usage": "Saying what you do, when what you do is not yet a job.",
+      "register": "formal",
+      "mnemonic": "The bare job never has an article. The adjective brings one."
+    },
+    {
+      "id": "L3-M2-S08",
+      "display": "Ich suche eine neue Stelle",
+      "cue": "I'm looking for a new job",
+      "literal": "I seek a new position",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "suche",
+            "cue": "look for (I look for)",
+            "tag": "interference",
+            "forms": [
+              "suchen"
+            ],
+            "note": "The verb carries the for by itself: Ich suche eine Stelle. English's two words are one German verb, and nothing stands between it and its object."
+          },
+          {
+            "display": "Stelle",
+            "cue": "job · position",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, die Stelle — the post you apply for, where L2-M4's Arbeit is the work you actually do."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "eine is the accusative here as well as the nominative, so the adjective keeps its light -e. The feminine is the gender where the two cases look the same and nothing has to change.",
+      "sound": "ikh ZOO-khuh INE-uh NOY-uh SHTELL-uh. The ch of suche is the back sound.",
+      "variations": [
+        {
+          "display": "Ich suche eine interessante Stelle",
+          "cue": "I'm looking for an interesting job",
+          "changed": "a longer adjective, and the ending is unchanged"
+        },
+        {
+          "display": "Suchen Sie eine neue Kollegin?",
+          "cue": "Are you looking for a new colleague?",
+          "changed": "asked of somebody you address as Sie"
+        }
+      ],
+      "mistake": {
+        "display": "Ich suche eine neuen Stelle",
+        "why": "eine carries the signal, so the adjective takes -e: Ich suche eine neue Stelle."
+      },
+      "usage": "Said to somebody who might know of one — so, at a counter or in an office.",
+      "register": "formal",
+      "mnemonic": "Feminine eine, either case, adjective in -e."
+    },
+    {
+      "id": "L3-M2-S09",
+      "display": "Das größere Büro ist sehr teuer",
+      "cue": "The bigger office is very expensive",
+      "literal": "The bigger office is very expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "größere",
+            "cue": "bigger (in front of a noun)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M9's größer with a declension ending stacked on top: das größere Büro. Predicatively it stays größer, with nothing added."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The comparative is not finished when it has its -er. In front of a noun a second ending goes on after it, so the word carries two: größ-er-e.",
+      "sound": "das GRUE-ser-uh bue-ROH ist zair TOY-er. The ß of größere is a sharp s.",
+      "variations": [
+        {
+          "display": "Das größere Büro ist nicht billig",
+          "cue": "The bigger office isn't cheap",
+          "changed": "negated with L1-M8's billig"
+        },
+        {
+          "display": "Das neue Büro ist größer",
+          "cue": "The new office is bigger",
+          "changed": "the comparative back after sein, where it takes no second ending"
+        }
+      ],
+      "mistake": {
+        "display": "Das größeren Büro ist sehr teuer",
+        "why": "das carries neuter nominative, so the adjective takes -e: Das größere Büro ist sehr teuer."
+      },
+      "usage": "Weighing up two rooms, two offices, two anything at work.",
+      "register": "neutral",
+      "mnemonic": "-er first, then the ending. Two endings, one word."
+    },
+    {
+      "id": "L3-M2-S10",
+      "display": "Das ist die größte Firma hier",
+      "cue": "That's the biggest company here",
+      "literal": "That is the biggest firm here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "größte",
+            "cue": "biggest (in front of a noun)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The superlative -st with the weak -e on top: die größte Firma. L2-M9's am größten is the shape that follows sein."
+          },
+          {
+            "display": "Firma",
+            "cue": "company · firm",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, die Firma, and it is the business itself, where das Büro is only the room it sits in."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "am größten and die größte are not interchangeable. The first can only follow sein and the second can only stand in front of a noun, and swapping them is heard immediately.",
+      "sound": "das ist dee GRUES-tuh FEER-mah heer. The st of größte is st, not sht.",
+      "variations": [
+        {
+          "display": "Das ist die größte Stadt",
+          "cue": "That's the biggest city",
+          "changed": "L2-M9's Stadt, the noun that module could not decline for"
+        },
+        {
+          "display": "Diese Firma ist am größten",
+          "cue": "This company is the biggest",
+          "changed": "the predicative superlative, which takes no ending at all"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist die am größten Firma",
+        "why": "In front of a noun the superlative declines: Das ist die größte Firma."
+      },
+      "usage": "Placing your employer for somebody who does not know the town.",
+      "register": "formal",
+      "mnemonic": "am größten after sein. die größte in front."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M2-C01",
+      "display": "Der neue Kollege ist sehr nett",
+      "cue": "The new colleague is very nice"
+    },
+    {
+      "id": "L3-M2-C02",
+      "display": "Ich habe einen neuen Chef",
+      "cue": "I've got a new boss"
+    },
+    {
+      "id": "L3-M2-C03",
+      "display": "Ein guter Chef ist sehr wichtig",
+      "cue": "A good boss matters a lot"
+    },
+    {
+      "id": "L3-M2-C04",
+      "display": "Ich arbeite in einem kleinen Büro",
+      "cue": "I work in a small office"
+    },
+    {
+      "id": "L3-M2-C05",
+      "display": "Das ist eine interessante Arbeit",
+      "cue": "That's interesting work"
+    },
+    {
+      "id": "L3-M2-C06",
+      "display": "Das ist anstrengende Arbeit",
+      "cue": "That's demanding work"
+    },
+    {
+      "id": "L3-M2-C07",
+      "display": "Ich bin Studentin und studiere an der Uni",
+      "cue": "I'm a student and I study at the university"
+    },
+    {
+      "id": "L3-M2-C08",
+      "display": "Ich suche eine neue Stelle",
+      "cue": "I'm looking for a new job"
+    },
+    {
+      "id": "L3-M2-C09",
+      "display": "Das größere Büro ist sehr teuer",
+      "cue": "The bigger office is very expensive"
+    },
+    {
+      "id": "L3-M2-C10",
+      "display": "Das ist die größte Firma hier",
+      "cue": "That's the biggest company here"
+    },
+    {
+      "id": "L3-M2-C11",
+      "display": "Ein neuer Kollege ist sehr nett",
+      "cue": "A new colleague is very nice"
+    },
+    {
+      "id": "L3-M2-C12",
+      "display": "Ich arbeite mit meiner neuen Chefin",
+      "cue": "I work with my new boss"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
