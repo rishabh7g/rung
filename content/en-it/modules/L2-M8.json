@@ -1,0 +1,658 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": [
+    "L2-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present",
+      "past_perfect_compound"
+    ],
+    "allowedPatterns": [
+      "Non funziona + il/la + N",
+      "Ho perso + il/la + N",
+      "Mi fa male + il/la + N",
+      "Può aiutarmi + , + per favore?",
+      "C'è un problema con + il/la + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Mi fa male la testa is built exactly like L1-M1's mi piace: the BODY PART is the subject and mi only names who feels it. So it is mi fanno male i piedi in the plural — the verb counts the feet, not the person. A learner who has been saying mi piace for two levels already owns this, and the rule costs nothing."
+    },
+    {
+      "tag": "free",
+      "text": "The article goes where English wants a possessive: mi fa male la testa, never mia testa. It is the same habit as M2's ha i capelli lunghi — whose head it is was never in doubt, so Italian does not say it."
+    },
+    {
+      "tag": "delta",
+      "text": "A CLITIC ATTACHES TO AN INFINITIVE and becomes part of the word: aiutarmi, dirmi, lasciarlo. M5 taught the clitic in FRONT of a conjugated verb, and this is the other half — with an infinitive it goes on the back and the final e drops. Può aiutarmi? is M1's frame with M5's clitic glued on."
+    },
+    {
+      "tag": "delta",
+      "text": "COMPLAINING CALMLY IS NOT HEDGING. The softening comes from the frame — Scusi, c'è un problema… — and from Purtroppo, not from weakening the claim. A learner who translates \"there seems to be a small problem with the room\" produces something evasive rather than polite, and an Italian will hear the evasion rather than the manners."
+    },
+    {
+      "tag": "interference",
+      "text": "problema is MASCULINE despite ending in -a: il problema, un problema, i problemi. It is one of a small Greek-derived set that the L1 gender note promised would come, and the only safe way to hold it is to say it with its article every time."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "Scusi, non funziona il telefono",
+      "cue": "Excuse me, the phone isn't working",
+      "literal": "Excuse-yourself, not works the telephone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "funziona",
+            "cue": "works (of a machine)",
+            "tag": "free",
+            "forms": [
+              "funzionano"
+            ],
+            "note": "Only of things. A person who works is lavora — L1-M1's verb — and the two are never swapped."
+          },
+          {
+            "display": "telefono",
+            "cue": "telephone",
+            "tag": "free",
+            "forms": [
+              "telefoni"
+            ],
+            "note": "Stressed on the second syllable: te-LE-fo-no. Il telefono is the phone itself; the number is il numero."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The verb comes first and the thing after it. Non funziona il telefono is the neutral way to report a fault; Il telefono non funziona is fine too and sounds more like an answer than a report.",
+      "sound": "foon-TSYO-na. The z is ts, and the io is one glide.",
+      "variations": [
+        {
+          "display": "Non funziona il telefono",
+          "cue": "The phone isn't working",
+          "changed": "without the opener"
+        },
+        {
+          "display": "Scusi, non funziona la macchina",
+          "cue": "Excuse me, the car isn't working",
+          "changed": "a feminine thing"
+        },
+        {
+          "display": "Purtroppo non funziona",
+          "cue": "Unfortunately it isn't working",
+          "changed": "with the one hedge Italian does use"
+        }
+      ],
+      "mistake": {
+        "display": "Scusi, non lavora il telefono",
+        "why": "Machines take funzionare: non funziona il telefono."
+      },
+      "usage": "Reporting a fault at a desk, a shop or a hotel.",
+      "register": "formal",
+      "mnemonic": "People lavorano. Machines funzionano."
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "Ho perso il biglietto",
+      "cue": "I've lost my ticket",
+      "literal": "I-have lost the ticket",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "perso",
+            "cue": "lost",
+            "tag": "free",
+            "forms": [
+              "perdere"
+            ],
+            "note": "An irregular past participle of perdere. With ho it does not agree with anything, which M10 will write down as a rule."
+          },
+          {
+            "display": "chiave",
+            "cue": "key",
+            "tag": "free",
+            "forms": [
+              "chiavi"
+            ],
+            "note": "Feminine, and the ch is a hard k: KYA-ve. Its plural is in -i because it is an -e noun."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The article again, where English wants \"my\". Ho perso il biglietto is what an Italian says; il mio biglietto would be pointed, as though somebody else's had survived.",
+      "sound": "o PER-so. The h of ho is silent, so the word is a single open vowel.",
+      "variations": [
+        {
+          "display": "Ho perso la chiave",
+          "cue": "I've lost my key",
+          "changed": "a feminine thing"
+        },
+        {
+          "display": "Ho perso il telefono",
+          "cue": "I've lost my phone",
+          "changed": "a different thing"
+        },
+        {
+          "display": "Purtroppo ho perso il biglietto",
+          "cue": "Unfortunately I've lost my ticket",
+          "changed": "with the hedge in front"
+        }
+      ],
+      "mistake": {
+        "display": "Ho perso mio biglietto",
+        "why": "The article does the work: Ho perso il biglietto."
+      },
+      "usage": "At a station, a hotel desk, a lost-property office.",
+      "register": "neutral",
+      "mnemonic": "The article stands in for the possessive."
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "Ho dimenticato il telefono a casa",
+      "cue": "I've left my phone at home",
+      "literal": "I-have forgotten the telephone at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dimenticato",
+            "cue": "forgotten · left behind",
+            "tag": "delta",
+            "forms": [
+              "dimenticare"
+            ],
+            "note": "Italian uses \"forget\" where English says \"leave\" — ho dimenticato il telefono a casa. Ho lasciato exists and means deliberately left."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English chooses between \"forgot\" and \"left\" by whether it was deliberate. Italian uses dimenticare for both accidents, and lasciare only when you meant to.",
+      "sound": "dee-men-tee-KA-to. Five syllables, all short, and the stress on the fourth.",
+      "variations": [
+        {
+          "display": "Ho dimenticato la chiave",
+          "cue": "I've forgotten my key",
+          "changed": "a feminine thing"
+        },
+        {
+          "display": "Ho dimenticato il biglietto",
+          "cue": "I've forgotten my ticket",
+          "changed": "a different thing"
+        },
+        {
+          "display": "Ho dimenticato il telefono",
+          "cue": "I've forgotten my phone",
+          "changed": "without saying where"
+        }
+      ],
+      "mistake": {
+        "display": "Ho lasciato il telefono a casa per sbaglio",
+        "why": "An accident is dimenticare: Ho dimenticato il telefono a casa."
+      },
+      "usage": "Explaining why you cannot show a ticket or answer a call.",
+      "register": "neutral",
+      "mnemonic": "Accident forgets. Intention leaves."
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "Mi fa male la testa",
+      "cue": "I have a headache",
+      "literal": "To-me it-makes bad the head",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "male",
+            "cue": "badly · pain",
+            "tag": "free",
+            "forms": [],
+            "note": "Invariable. Fa male is \"it hurts\", and the thing that hurts is the subject of fa — which is why the verb changes when there are two of them."
+          },
+          {
+            "display": "testa",
+            "cue": "head",
+            "tag": "free",
+            "forms": [
+              "teste"
+            ],
+            "note": "Feminine, so la testa. It is the whole head, where English's \"headache\" names the pain rather than the part."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The head is doing the hurting and mi only says to whom. That is L1-M1's mi piace with a different verb, and the pattern is already the learner's.",
+      "sound": "mee fa MA-le la TE-sta. Five short syllables and one beat, which is why it comes out as a single phrase.",
+      "variations": [
+        {
+          "display": "Mi fanno male i piedi",
+          "cue": "My feet hurt",
+          "changed": "two of them, so the verb goes plural"
+        },
+        {
+          "display": "Ti fa male la testa?",
+          "cue": "Have you got a headache?",
+          "changed": "asking a friend, with M5's other clitic"
+        },
+        {
+          "display": "Non mi fa male la testa",
+          "cue": "My head doesn't hurt",
+          "changed": "negated"
+        }
+      ],
+      "mistake": {
+        "display": "Mi fa male mia testa",
+        "why": "The article does the work: Mi fa male la testa."
+      },
+      "usage": "At a chemist's, or as a reason for going home.",
+      "register": "neutral",
+      "mnemonic": "The part hurts. You are only told about it."
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "Mi fanno male i piedi",
+      "cue": "My feet hurt",
+      "literal": "To-me they-make bad the feet",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fanno",
+            "cue": "they make · they do",
+            "tag": "free",
+            "forms": [],
+            "note": "The loro cell of L1-M6's fare. Here it agrees with the feet — the verb counts the body parts and never the person."
+          },
+          {
+            "display": "piedi",
+            "cue": "feet",
+            "tag": "free",
+            "forms": [
+              "piede"
+            ],
+            "note": "M4's a piedi was this word inside a whole phrase; here it stands alone. Its singular is piede, and both vowels are sounded."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "fanno is plural because there are two feet. If it were one foot it would be mi fa male il piede — the verb counts the body parts and never the person.",
+      "sound": "mee FAN-no MA-le ee PYE-dee. The double n is held.",
+      "variations": [
+        {
+          "display": "Mi fa male il piede",
+          "cue": "My foot hurts",
+          "changed": "one of them, so the verb goes back to the singular"
+        },
+        {
+          "display": "Ti fanno male i piedi?",
+          "cue": "Do your feet hurt?",
+          "changed": "asking a friend"
+        },
+        {
+          "display": "Mi fanno male i piedi e la testa",
+          "cue": "My feet and my head hurt",
+          "changed": "two things, with two articles"
+        }
+      ],
+      "mistake": {
+        "display": "Mi fa male i piedi",
+        "why": "Two feet take the plural verb: Mi fanno male i piedi."
+      },
+      "usage": "After a day of walking, which in an Italian city is most days.",
+      "register": "neutral",
+      "mnemonic": "The verb counts the parts."
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "Scusi, può aiutarmi, per favore?",
+      "cue": "Excuse me, could you help me, please?",
+      "literal": "Excuse-yourself, can help-me, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aiutare",
+            "cue": "to help",
+            "tag": "free",
+            "forms": [
+              "aiuta",
+              "aiuto"
+            ],
+            "note": "The bare infinitive, which is what the clitic gets glued to. Aiuto! on its own is the shout for help."
+          },
+          {
+            "display": "aiuto",
+            "cue": "help (noun) · I help",
+            "tag": "free",
+            "forms": [],
+            "note": "The noun and the io form are spelled the same. Ho bisogno di aiuto is \"I need help\", and Aiuto! is the cry."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "M5 said the clitic goes in FRONT of the verb, and here it is on the back. Both are true: in front of a conjugated verb, glued to the back of an infinitive.",
+      "sound": "a-yoo-TAR-mee. The infinitive loses its final e and the mi takes its place.",
+      "variations": [
+        {
+          "display": "Può aiutarmi, per favore?",
+          "cue": "Could you help me, please?",
+          "changed": "without the opener"
+        },
+        {
+          "display": "Puoi aiutarmi?",
+          "cue": "Can you help me?",
+          "changed": "to a friend"
+        },
+        {
+          "display": "Scusi, aiuto!",
+          "cue": "Excuse me — help!",
+          "changed": "the noun on its own, which is the shout"
+        }
+      ],
+      "mistake": {
+        "display": "Scusi, può mi aiutare, per favore?",
+        "why": "With an infinitive the clitic goes on the back: può aiutarmi."
+      },
+      "usage": "Asking a stranger for real help — the sentence a lost traveller needs.",
+      "register": "formal",
+      "mnemonic": "In front of a finite verb, behind an infinitive."
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "C'è un problema con la chiave",
+      "cue": "There's a problem with the key",
+      "literal": "There-is a problem with the key",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "problema",
+            "cue": "problem",
+            "tag": "interference",
+            "forms": [
+              "problemi"
+            ],
+            "note": "Masculine despite the -a, and its plural is in -i. Say it with il or un every time and the gender comes for free."
+          },
+          {
+            "display": "purtroppo",
+            "cue": "unfortunately",
+            "tag": "free",
+            "forms": [],
+            "note": "The one hedge Italian actually uses in a complaint. It reports regret about a fact; it does not weaken the fact itself."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "The frame is where the politeness lives. C'è un problema is direct, and putting Scusi in front of it is what makes it courteous — softening the problem instead would sound evasive.",
+      "sound": "che oon pro-BLE-ma. c'è is one syllable and takes the beat.",
+      "variations": [
+        {
+          "display": "Scusi, c'è un problema con la chiave",
+          "cue": "Excuse me, there's a problem with the key",
+          "changed": "with the opener, which is what carries the manners"
+        },
+        {
+          "display": "C'è un problema con il telefono",
+          "cue": "There's a problem with the phone",
+          "changed": "a masculine thing"
+        },
+        {
+          "display": "Purtroppo c'è un problema",
+          "cue": "Unfortunately there's a problem",
+          "changed": "with the hedge, and no detail"
+        }
+      ],
+      "mistake": {
+        "display": "C'è una problema con la chiave",
+        "why": "problema is masculine: C'è un problema con la chiave."
+      },
+      "usage": "The opening of any complaint at a desk.",
+      "register": "formal",
+      "mnemonic": "-a on the end does not always mean feminine."
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "Il treno è partito",
+      "cue": "The train has left",
+      "literal": "The train is left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "partito",
+            "cue": "left · departed",
+            "tag": "delta",
+            "forms": [
+              "partita",
+              "partiti",
+              "partite"
+            ],
+            "note": "The participle of L1-M6's partire. It takes essere because it is movement, and then it AGREES with the subject — which a participle after avere never does."
+          },
+          {
+            "display": "rotto",
+            "cue": "broken",
+            "tag": "free",
+            "forms": [
+              "rotta",
+              "rotti",
+              "rotte"
+            ],
+            "note": "The participle of rompere, used as an adjective. È rotto says a thing is broken without saying who broke it, which is what keeps a complaint calm."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The auxiliary is è and not ha, because partire is movement — and the participle agrees with the train. M10 writes the rule down; here it is simply used.",
+      "sound": "eel TRE-no e par-TEE-to. The è is a whole word and takes a beat of its own.",
+      "variations": [
+        {
+          "display": "Il treno è partito alle sette",
+          "cue": "The train left at seven",
+          "changed": "with a time"
+        },
+        {
+          "display": "La chiave è rotta",
+          "cue": "The key is broken",
+          "changed": "a state rather than a movement"
+        },
+        {
+          "display": "Il telefono è rotto",
+          "cue": "The phone is broken",
+          "changed": "a masculine thing"
+        }
+      ],
+      "mistake": {
+        "display": "Il treno ha partito",
+        "why": "Movement takes essere: Il treno è partito."
+      },
+      "usage": "Explaining why you are late, or why a plan has failed.",
+      "register": "neutral",
+      "mnemonic": "Movement takes essere and agrees."
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "Purtroppo ho perso il treno",
+      "cue": "Unfortunately I've missed the train",
+      "literal": "Unfortunately I-have lost the train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "funzionano",
+            "cue": "they work",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural of funziona, for when more than one thing is broken. The verb counts the machines, exactly as fanno counts the feet."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "perdere covers losing a thing and missing a train alike. Ho perso il biglietto and Ho perso il treno are the same verb, and English needs two.",
+      "sound": "poor-TROP-po. The double p is held, and the stress is in the middle.",
+      "variations": [
+        {
+          "display": "Ho perso il treno",
+          "cue": "I've missed the train",
+          "changed": "without the hedge"
+        },
+        {
+          "display": "Purtroppo ho perso l'autobus",
+          "cue": "Unfortunately I've missed the bus",
+          "changed": "M4's elided noun"
+        },
+        {
+          "display": "Purtroppo non funzionano i telefoni",
+          "cue": "Unfortunately the phones aren't working",
+          "changed": "a plural fault"
+        }
+      ],
+      "mistake": {
+        "display": "Purtroppo ho mancato il treno",
+        "why": "Missing a train is perdere: Purtroppo ho perso il treno."
+      },
+      "usage": "Apologising for being late, with the reason attached.",
+      "register": "neutral",
+      "mnemonic": "One verb for losing and for missing."
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "Scusi, c'è un problema con la camera",
+      "cue": "Excuse me, there's a problem with the room",
+      "literal": "Excuse-yourself, there-is a problem with the room",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "camera",
+            "cue": "room (in a hotel)",
+            "tag": "interference",
+            "forms": [
+              "camere"
+            ],
+            "note": "A bedroom or a hotel room. A room in general is a stanza, and a camera in the English sense is a macchina fotografica."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The complaint is stated flatly after the opener, and that is the whole technique. An English speaker's instinct is to bury the problem in qualifiers, and in Italian that reads as shifty rather than as polite.",
+      "sound": "KA-me-ra. Stress on the first syllable, and the r is tapped once.",
+      "variations": [
+        {
+          "display": "C'è un problema con la camera",
+          "cue": "There's a problem with the room",
+          "changed": "without the opener"
+        },
+        {
+          "display": "Scusi, non funziona il telefono",
+          "cue": "Excuse me, the phone isn't working",
+          "changed": "the fault named precisely"
+        },
+        {
+          "display": "Purtroppo c'è un problema con la camera",
+          "cue": "Unfortunately there's a problem with the room",
+          "changed": "with the hedge"
+        }
+      ],
+      "mistake": {
+        "display": "Scusi, sembra che ci sia un piccolo problema con la camera",
+        "why": "Italian states it: Scusi, c'è un problema con la camera."
+      },
+      "usage": "At a hotel desk, which is where this module's whole kit gets used at once.",
+      "register": "formal",
+      "mnemonic": "The opener is polite. The claim is plain."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M8-C01",
+      "display": "Scusi, non funziona il telefono",
+      "cue": "Excuse me, the phone isn't working"
+    },
+    {
+      "id": "L2-M8-C02",
+      "display": "Ho perso il biglietto",
+      "cue": "I've lost my ticket"
+    },
+    {
+      "id": "L2-M8-C03",
+      "display": "Ho dimenticato il telefono a casa",
+      "cue": "I've left my phone at home"
+    },
+    {
+      "id": "L2-M8-C04",
+      "display": "Mi fa male la testa",
+      "cue": "I have a headache"
+    },
+    {
+      "id": "L2-M8-C05",
+      "display": "Mi fanno male i piedi",
+      "cue": "My feet hurt"
+    },
+    {
+      "id": "L2-M8-C06",
+      "display": "Scusi, può aiutarmi, per favore?",
+      "cue": "Excuse me, could you help me, please?"
+    },
+    {
+      "id": "L2-M8-C07",
+      "display": "C'è un problema con la chiave",
+      "cue": "There's a problem with the key"
+    },
+    {
+      "id": "L2-M8-C08",
+      "display": "Il treno è partito",
+      "cue": "The train has left"
+    },
+    {
+      "id": "L2-M8-C09",
+      "display": "Purtroppo ho perso il treno",
+      "cue": "Unfortunately I've missed the train"
+    },
+    {
+      "id": "L2-M8-C10",
+      "display": "Scusi, c'è un problema con la camera",
+      "cue": "Excuse me, there's a problem with the room"
+    },
+    {
+      "id": "L2-M8-C11",
+      "display": "La chiave è rotta",
+      "cue": "The key is broken"
+    },
+    {
+      "id": "L2-M8-C12",
+      "display": "Puoi aiutarmi?",
+      "cue": "Can you help me?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

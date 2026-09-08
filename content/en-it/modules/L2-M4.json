@@ -1,0 +1,725 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": [
+    "L2-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Scusi + , + dov'è + il/la + N?",
+      "Giri a destra / a sinistra",
+      "Vada sempre dritto",
+      "Prenda + il/la + N",
+      "Vado in autobus / a piedi"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "This module speaks the polite third person throughout, because a stranger in the street is the scene. Giri, Prenda and Vada join M1's Scusi and Senta, and they are the same kind of thing: present SUBJUNCTIVE forms arriving as frozen politeness words, with L3 to show the paradigm. Their tu partners — gira, prendi, va' — exist and are not written here."
+    },
+    {
+      "tag": "delta",
+      "text": "TRANSPORT TAKES IN: vado in autobus, in treno, in macchina, in metropolitana. Not con and not per. English \"by bus\" and Spanish \"en autobús\" both mislead a little, and walking breaks the pattern anyway — a piedi, with a and not in, for no reason a rule can give. Learn the list."
+    },
+    {
+      "tag": "free",
+      "text": "a destra and a sinistra are taught WHOLE, as one thing each. That keeps the bare a where L1 put it and gives the direction its own note — there is nothing to build here, and a learner who tries to assemble it from a plus a noun will get the article wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "Come si va a…? uses the impersonal si — \"how does one go\". It is the same si hiding inside L1-M1's si chiama, which was taught as a whole phrase precisely so the bare word would still be free when a module needed it. It makes a sentence with no subject at all."
+    },
+    {
+      "tag": "interference",
+      "text": "l'autobus is ONE index key and does not answer for autobus. The elision keeps the apostrophe inside the token, so the engine sees a different word — which is why both are taught here, and why in autobus (no article) and l'autobus (with one) have to be met separately."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "Scusi, dov'è la piazza?",
+      "cue": "Excuse me, where is the square?",
+      "literal": "Excuse-yourself, where-is the square?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "piazza",
+            "cue": "square",
+            "tag": "free",
+            "forms": [
+              "piazze"
+            ],
+            "note": "The double z is held and said ts: pee-AT-tsa. In an Italian town it is the reference point everything else is given from."
+          },
+          {
+            "display": "strada",
+            "cue": "street · road",
+            "tag": "free",
+            "forms": [
+              "strade"
+            ],
+            "note": "The general word. via is what appears on a sign with a name after it, and the two are not swapped."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "dov'è asks about a place both of you know exists. To ask whether there is one at all, Italian uses c'è — C'è una piazza qui? — which is L1-M7's row doing a different job.",
+      "sound": "do-VE la pee-AT-tsa. dov'è is one word with the stress at the end.",
+      "variations": [
+        {
+          "display": "Scusi, dov'è la stazione?",
+          "cue": "Excuse me, where is the station?",
+          "changed": "a different place"
+        },
+        {
+          "display": "Scusi, dov'è la strada?",
+          "cue": "Excuse me, where is the road?",
+          "changed": "a different place"
+        },
+        {
+          "display": "Scusi, dov'è il ponte?",
+          "cue": "Excuse me, where is the bridge?",
+          "changed": "a masculine place"
+        }
+      ],
+      "mistake": {
+        "display": "Scusi, dove è la piazza?",
+        "why": "The elision is compulsory here: Scusi, dov'è la piazza?"
+      },
+      "usage": "Stopping someone in the street — M1's opener doing its job.",
+      "register": "formal",
+      "mnemonic": "dov'è for a place you both know is there."
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "Giri a destra al semaforo",
+      "cue": "Turn right at the lights",
+      "literal": "Turn to right at-the traffic-light",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "giri",
+            "cue": "turn (polite)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Another frozen subjunctive, beside M1's Scusi and Senta. The tu form is gira, and it is not written in this course."
+          },
+          {
+            "display": "a destra",
+            "cue": "to the right",
+            "tag": "free",
+            "forms": [],
+            "note": "One thing, not two. There is no article inside it and none can be added — a la destra is not Italian."
+          },
+          {
+            "display": "semaforo",
+            "cue": "traffic light",
+            "tag": "free",
+            "forms": [
+              "semafori"
+            ],
+            "note": "Singular in Italian where English says \"the lights\". The stress is on the second syllable — se-MA-fo-ro."
+          },
+          {
+            "display": "ponte",
+            "cue": "bridge",
+            "tag": "free",
+            "forms": [
+              "ponti"
+            ],
+            "note": "Masculine, and an -e noun, so its plural is in -i. It also means a long weekend, which is a joke about bridging two holidays."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "a destra has no article and takes none. English's \"to the right\" and Spanish's a la derecha both put one in, and both mislead.",
+      "sound": "JEE-ree a DE-stra. The gi is soft, and the whole imperative is two light syllables.",
+      "variations": [
+        {
+          "display": "Giri a sinistra al semaforo",
+          "cue": "Turn left at the lights",
+          "changed": "the other direction"
+        },
+        {
+          "display": "Giri a destra dopo il ponte",
+          "cue": "Turn right after the bridge",
+          "changed": "a different landmark"
+        },
+        {
+          "display": "Giri a sinistra qui",
+          "cue": "Turn left here",
+          "changed": "no landmark at all"
+        }
+      ],
+      "mistake": {
+        "display": "Giri a la destra al semaforo",
+        "why": "The phrase takes no article: Giri a destra al semaforo."
+      },
+      "usage": "Giving directions to someone who has stopped you.",
+      "register": "formal",
+      "mnemonic": "a destra, a sinistra — no article, ever."
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "Vada sempre dritto",
+      "cue": "Keep going straight on",
+      "literal": "Go always straight",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vada",
+            "cue": "go (polite)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The polite imperative of andare, and it looks nothing like vado or va. Irregular verbs are where the frozen-form policy earns its keep."
+          },
+          {
+            "display": "sempre",
+            "cue": "always · keep on",
+            "tag": "delta",
+            "forms": [],
+            "note": "In directions it means \"keep going\" rather than \"always\". Sempre dritto is one of the most-heard phrases in an Italian street."
+          },
+          {
+            "display": "dritto",
+            "cue": "straight on",
+            "tag": "free",
+            "forms": [
+              "diritto"
+            ],
+            "note": "Both spellings are current and mean the same thing here. diritto also means \"a right\" as in a legal one, which dritto does not."
+          },
+          {
+            "display": "a sinistra",
+            "cue": "to the left",
+            "tag": "free",
+            "forms": [],
+            "note": "a destra's pair, and built the same way — one whole thing with no article inside it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "sempre is not doing its dictionary job. Vada sempre dritto is \"keep straight on\", not \"always go straight\", and the word is nearly compulsory in the phrase.",
+      "sound": "VA-da SEM-pre DREET-to. Three words, three stresses on the first syllable, which is what makes it easy to shout across a street.",
+      "variations": [
+        {
+          "display": "Vada sempre dritto e giri a sinistra",
+          "cue": "Keep straight on and turn left",
+          "changed": "a second instruction joined with e"
+        },
+        {
+          "display": "Vada dritto",
+          "cue": "Go straight on",
+          "changed": "without sempre — shorter, and less usual"
+        },
+        {
+          "display": "Vada avanti",
+          "cue": "Go on ahead",
+          "changed": "forward rather than straight"
+        }
+      ],
+      "mistake": {
+        "display": "Va sempre dritto",
+        "why": "The polite form is vada: Vada sempre dritto."
+      },
+      "usage": "The first half of nearly every set of directions.",
+      "register": "formal",
+      "mnemonic": "sempre dritto — keep going, not always."
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "Prenda la prima strada a destra",
+      "cue": "Take the first street on the right",
+      "literal": "Take the first street to right",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prenda",
+            "cue": "take (polite)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The polite imperative of prendere, L1-M6's verb. It takes a street, a bus, a coffee — the same range English gives \"take\"."
+          },
+          {
+            "display": "prima",
+            "cue": "first · before",
+            "tag": "interference",
+            "forms": [
+              "primo",
+              "primi",
+              "prime"
+            ],
+            "note": "Ordering things here — la prima strada. The same word means \"before\" as an adverb, which is the opposite of dopo."
+          },
+          {
+            "display": "avanti",
+            "cue": "ahead · forward · come in",
+            "tag": "free",
+            "forms": [],
+            "note": "Invariable. On its own at a door it means \"come in\", which is the answer to M1's Permesso."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "prima agrees like an ordinary adjective — la prima strada, il primo ponte — because that is what it is. It only stops agreeing when it means \"before\".",
+      "sound": "PREN-da la PREE-ma STRA-da. The r of prenda is tapped once, never rolled.",
+      "variations": [
+        {
+          "display": "Prenda la prima strada a sinistra",
+          "cue": "Take the first street on the left",
+          "changed": "the other direction"
+        },
+        {
+          "display": "Prenda l'autobus",
+          "cue": "Take the bus",
+          "changed": "a vehicle rather than a street"
+        },
+        {
+          "display": "Vada avanti e prenda la prima strada",
+          "cue": "Go on and take the first street",
+          "changed": "two instructions joined"
+        }
+      ],
+      "mistake": {
+        "display": "Prenda il primo strada a destra",
+        "why": "strada is feminine: Prenda la prima strada a destra."
+      },
+      "usage": "The precise half of a set of directions.",
+      "register": "formal",
+      "mnemonic": "prima counts, so it agrees."
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "Il bar è dopo l'angolo",
+      "cue": "The bar is round the corner",
+      "literal": "The bar is after the-corner",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dopo",
+            "cue": "after",
+            "tag": "free",
+            "forms": [],
+            "note": "Invariable, and it does both place and time — dopo l'angolo, dopo le sette. Its opposite as an adverb is prima."
+          },
+          {
+            "display": "l'angolo",
+            "cue": "the corner",
+            "tag": "interference",
+            "forms": [
+              "angolo",
+              "angoli"
+            ],
+            "note": "The article elides into the noun and the whole thing is ONE index key. The bare angolo is here in the forms so both shapes are taught together."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "l'angolo is a single word to the engine and to the ear. That is the same policy L1 set with l'acqua and l'italiano — an elision fuses, and the fused shape has to be learnt as its own word.",
+      "sound": "DO-po LAN-go-lo. The article and noun run together with no break at all.",
+      "variations": [
+        {
+          "display": "Il bar è dopo il ponte",
+          "cue": "The bar is after the bridge",
+          "changed": "a landmark that takes no elision"
+        },
+        {
+          "display": "Il cinema è dopo l'angolo",
+          "cue": "The cinema is round the corner",
+          "changed": "a different place"
+        },
+        {
+          "display": "La fermata è dopo l'angolo",
+          "cue": "The stop is round the corner",
+          "changed": "a feminine place"
+        }
+      ],
+      "mistake": {
+        "display": "Il bar è dopo il angolo",
+        "why": "A vowel takes the elided article: dopo l'angolo."
+      },
+      "usage": "Answering someone who asked where something is.",
+      "register": "neutral",
+      "mnemonic": "An elision fuses, and the fusion is a word."
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "Prendo l'autobus ogni giorno",
+      "cue": "I take the bus every day",
+      "literal": "I-take the-bus every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "l'autobus",
+            "cue": "the bus",
+            "tag": "interference",
+            "forms": [],
+            "note": "One key, like l'angolo. It does NOT answer for a bare autobus — the engine sees two different words, and both have to be taught."
+          },
+          {
+            "display": "autobus",
+            "cue": "bus",
+            "tag": "free",
+            "forms": [],
+            "note": "Invariable in the plural — gli autobus — because it ends in a consonant. In autobus, with no article at all, is how you say \"by bus\"."
+          },
+          {
+            "display": "fermata",
+            "cue": "stop",
+            "tag": "free",
+            "forms": [
+              "fermate"
+            ],
+            "note": "A bus or tram stop. A railway station is a stazione and never a fermata, though a small one may be called both."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Three shapes of the same idea sit in this module: l'autobus with the article, autobus bare after in, and gli autobus in the plural. None of them is derived from the others.",
+      "sound": "LAOO-to-boos. The stress is on the first syllable, which is where Italian differs from English's \"bus\".",
+      "variations": [
+        {
+          "display": "Prendo l'autobus alle sette",
+          "cue": "I take the bus at seven",
+          "changed": "a time from L1-M4"
+        },
+        {
+          "display": "Vado in autobus",
+          "cue": "I go by bus",
+          "changed": "no article at all, which is what in requires"
+        },
+        {
+          "display": "Dov'è la fermata?",
+          "cue": "Where is the stop?",
+          "changed": "asking rather than telling"
+        }
+      ],
+      "mistake": {
+        "display": "Vado in l'autobus",
+        "why": "in takes no article here: Vado in autobus."
+      },
+      "usage": "Saying how you get about, which comes up early with anyone new.",
+      "register": "neutral",
+      "mnemonic": "With in, the article goes."
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "Vado a piedi, non in macchina",
+      "cue": "I'm walking, not driving",
+      "literal": "I-go on feet, not in car",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a piedi",
+            "cue": "on foot · walking",
+            "tag": "delta",
+            "forms": [],
+            "note": "The one member of the transport set that takes a rather than in, and there is no reason behind it. One whole thing, and the bare piedi is not what a learner needs."
+          },
+          {
+            "display": "macchina",
+            "cue": "car",
+            "tag": "free",
+            "forms": [
+              "macchine"
+            ],
+            "note": "Literally a machine, and it is the ordinary word for a car. The cch is a long hard k."
+          },
+          {
+            "display": "metropolitana",
+            "cue": "underground · metro",
+            "tag": "free",
+            "forms": [
+              "metro"
+            ],
+            "note": "Shortened to metro in speech, and both are used. Feminine, because the long form is an adjective agreeing with a noun nobody says any more."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Every other means of transport takes in and this one takes a. It is not a pattern with an exception — it is a list, and a piedi is on it.",
+      "sound": "a pee-E-dee. Three syllables, and the two vowels of piedi are both sounded.",
+      "variations": [
+        {
+          "display": "Vado in macchina",
+          "cue": "I'm going by car",
+          "changed": "the ordinary in form"
+        },
+        {
+          "display": "Vado in metropolitana",
+          "cue": "I'm going by underground",
+          "changed": "a different means"
+        },
+        {
+          "display": "Vado in treno, non in macchina",
+          "cue": "I'm going by train, not by car",
+          "changed": "both halves on in"
+        }
+      ],
+      "mistake": {
+        "display": "Vado in piedi, non in macchina",
+        "why": "Walking takes a: Vado a piedi, non in macchina."
+      },
+      "usage": "Arranging how to get somewhere, or correcting an assumption about it.",
+      "register": "neutral",
+      "mnemonic": "Everything takes in. Feet take a."
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "La stazione è lontano?",
+      "cue": "Is the station far?",
+      "literal": "The station is far?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lontano",
+            "cue": "far",
+            "tag": "free",
+            "forms": [
+              "lontana",
+              "lontani",
+              "lontane"
+            ],
+            "note": "As an adverb here it does not move — è lontano whatever the subject. As an adjective in front of a noun it agrees normally."
+          },
+          {
+            "display": "vicino",
+            "cue": "near · nearby",
+            "tag": "delta",
+            "forms": [
+              "vicina",
+              "vicini",
+              "vicine"
+            ],
+            "note": "The bare adverb, beside L1-M7's vicino a, which needs the a to name what it is near. Without the a it simply means \"close by\"."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "L1-M7 taught vicino a — near something. This is the same word standing alone, and dropping the a changes it from a preposition into an adverb.",
+      "sound": "lon-TA-no. The o's are pure and short, and the stress is on the middle syllable.",
+      "variations": [
+        {
+          "display": "La stazione è vicino?",
+          "cue": "Is the station near?",
+          "changed": "the opposite question"
+        },
+        {
+          "display": "No, è vicino",
+          "cue": "No, it's close by",
+          "changed": "the answer"
+        },
+        {
+          "display": "Il ponte è lontano",
+          "cue": "The bridge is far",
+          "changed": "a masculine subject — and lontano does not move"
+        }
+      ],
+      "mistake": {
+        "display": "La stazione è lontana?",
+        "why": "As an adverb it does not agree: La stazione è lontano?"
+      },
+      "usage": "The follow-up to every set of directions, and it decides whether you walk.",
+      "register": "neutral",
+      "mnemonic": "vicino a points at something. vicino alone does not."
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "Scusi, come si va a Roma?",
+      "cue": "Excuse me, how do you get to Rome?",
+      "literal": "Excuse-yourself, how one goes to Rome?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si",
+            "cue": "one · you (impersonal)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The impersonal si — \"how does one go\". It is the same si inside L1-M1's si chiama, which was taught whole precisely so the bare word stayed free for this."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "There is no subject and none is missing. si va is a complete verb phrase meaning \"one goes\", and English's nearest match is the vague \"you\" that means anybody.",
+      "sound": "KO-me see VA. si is short and unstressed, leaning onto the verb after it.",
+      "variations": [
+        {
+          "display": "Come si va a Milano?",
+          "cue": "How do you get to Milan?",
+          "changed": "a different destination"
+        },
+        {
+          "display": "Come si va in stazione?",
+          "cue": "How do you get to the station?",
+          "changed": "in rather than a, which places take"
+        },
+        {
+          "display": "Scusi, come si va a Milano?",
+          "cue": "Excuse me, how do you get to Milan?",
+          "changed": "with the opener"
+        }
+      ],
+      "mistake": {
+        "display": "Scusi, come lei va a Roma?",
+        "why": "The impersonal has no subject: Scusi, come si va a Roma?"
+      },
+      "usage": "Asking the way when you do not know what the route even is.",
+      "register": "formal",
+      "mnemonic": "si va — one goes, and nobody is named."
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "Un biglietto, per favore",
+      "cue": "One ticket, please",
+      "literal": "A ticket, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "biglietto",
+            "cue": "ticket",
+            "tag": "free",
+            "forms": [
+              "biglietti"
+            ],
+            "note": "The gli is the soft ly of M2's figlio. It covers a train ticket, a cinema ticket and a banknote alike."
+          },
+          {
+            "display": "binario",
+            "cue": "platform · track",
+            "tag": "free",
+            "forms": [
+              "binari"
+            ],
+            "note": "What English calls a platform, Italian names by the track number: binario tre. Its plural drops one i — binari — as vecchio did."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "A ticket window takes no verb at all. Un biglietto, per favore is a complete transaction, and adding vorrei only makes it politer, never more correct.",
+      "sound": "bee-LYET-to. The gli is one soft sound and the double t is held.",
+      "variations": [
+        {
+          "display": "Due biglietti, per favore",
+          "cue": "Two tickets, please",
+          "changed": "plural"
+        },
+        {
+          "display": "Dov'è il binario?",
+          "cue": "Where is the platform?",
+          "changed": "the next question after the ticket"
+        },
+        {
+          "display": "Il biglietto è caro",
+          "cue": "The ticket is expensive",
+          "changed": "a verdict rather than a request"
+        }
+      ],
+      "mistake": {
+        "display": "Un biglietti, per favore",
+        "why": "One ticket is singular: Un biglietto, per favore."
+      },
+      "usage": "At a station window or a machine — and the platform question follows immediately.",
+      "register": "neutral",
+      "mnemonic": "Italy counts platforms by the track."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "Scusi, dov'è la piazza?",
+      "cue": "Excuse me, where is the square?"
+    },
+    {
+      "id": "L2-M4-C02",
+      "display": "Giri a destra al semaforo",
+      "cue": "Turn right at the lights"
+    },
+    {
+      "id": "L2-M4-C03",
+      "display": "Vada sempre dritto",
+      "cue": "Keep going straight on"
+    },
+    {
+      "id": "L2-M4-C04",
+      "display": "Prenda la prima strada a destra",
+      "cue": "Take the first street on the right"
+    },
+    {
+      "id": "L2-M4-C05",
+      "display": "Il bar è dopo l'angolo",
+      "cue": "The bar is round the corner"
+    },
+    {
+      "id": "L2-M4-C06",
+      "display": "Prendo l'autobus ogni giorno",
+      "cue": "I take the bus every day"
+    },
+    {
+      "id": "L2-M4-C07",
+      "display": "Vado a piedi, non in macchina",
+      "cue": "I'm walking, not driving"
+    },
+    {
+      "id": "L2-M4-C08",
+      "display": "La stazione è lontano?",
+      "cue": "Is the station far?"
+    },
+    {
+      "id": "L2-M4-C09",
+      "display": "Scusi, come si va a Roma?",
+      "cue": "Excuse me, how do you get to Rome?"
+    },
+    {
+      "id": "L2-M4-C10",
+      "display": "Un biglietto, per favore",
+      "cue": "One ticket, please"
+    },
+    {
+      "id": "L2-M4-C11",
+      "display": "Vado in autobus",
+      "cue": "I go by bus"
+    },
+    {
+      "id": "L2-M4-C12",
+      "display": "Dov'è la fermata?",
+      "cue": "Where is the stop?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

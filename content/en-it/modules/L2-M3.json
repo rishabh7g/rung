@@ -1,0 +1,698 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M3",
+  "title": "Describing things",
+  "job": "Size, colour, quality — agreement at length",
+  "prerequisites": [
+    "L2-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "il/la + N + è + Adj",
+      "i/le + N-pl + sono + Adj-pl",
+      "un/una + N + Adj",
+      "un bel + N   /   un + N + bello",
+      "N + molto + Adj"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE GRID IS SMALLER THAN IT LOOKS. An adjective in -o has FOUR cells — rosso, rossa, rossi, rosse — and one in -e has TWO: grande and grandi, verde and verdi. The -e class never marks gender at all, only number. L1 shipped both classes without naming the split (buono at M1, grande at M3, triste at M9), so this is a summary of what the learner already has rather than news."
+    },
+    {
+      "tag": "interference",
+      "text": "The shortcut to refuse is \"-o means masculine, -a means feminine\". That is about NOUNS, and it is false even there: il problema is masculine and la mano is feminine. For adjectives it is worse than useless, because an -e adjective has no gender to mark and looks like neither."
+    },
+    {
+      "tag": "free",
+      "text": "FOUR COLOURS DO NOT CHANGE AT ALL: blu, rosa, viola and beige. le case rosa, i libri blu, la macchina viola. They are nouns pressed into service as adjectives — a rose, a violet — and a noun used this way keeps its own shape. Everything else in the colour set bends normally."
+    },
+    {
+      "tag": "delta",
+      "text": "bello SHORTENS BEFORE A NOUN and the shapes track the article the noun would take: il libro → un bel libro, l'uomo → un bell'uomo, i libri → i bei libri, gli occhi → i begli occhi. After the noun nothing happens: un libro bello. buono does the same on a smaller scale — un buon libro — and its full cells are already L1-M1's."
+    },
+    {
+      "tag": "interference",
+      "text": "molto is INVARIABLE in front of an adjective — molto caro, molto cara, molto care — and BENDS in front of a noun: molti libri, molta acqua. The error is the reverse of the usual one: molta cara comes from a learner who has just been taught that adjectives agree, and has agreed one that does not."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M3-S01",
+      "display": "Il libro è rosso",
+      "cue": "The book is red",
+      "literal": "The book is red",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rosso",
+            "cue": "red",
+            "tag": "free",
+            "forms": [
+              "rossa",
+              "rossi",
+              "rosse"
+            ],
+            "note": "A four-cell adjective, and the whole paradigm is here. The double s is held — ROS-so — which is what separates it from rosa."
+          },
+          {
+            "display": "giallo",
+            "cue": "yellow",
+            "tag": "free",
+            "forms": [
+              "gialla",
+              "gialli",
+              "gialle"
+            ],
+            "note": "Four cells too. The gi is a soft j and the double l is held: JAL-lo."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The ending is chosen by libro and by nothing else. Knowing the word for red is not enough — you have to know the gender of the thing before you can say it.",
+      "sound": "eel LEE-bro e ROS-so. The è is open and stressed, and it is a whole word on its own.",
+      "variations": [
+        {
+          "display": "La casa è rossa",
+          "cue": "The house is red",
+          "changed": "a feminine noun, so the adjective moves"
+        },
+        {
+          "display": "I libri sono rossi",
+          "cue": "The books are red",
+          "changed": "plural, and the verb moves with it"
+        },
+        {
+          "display": "Il libro è giallo",
+          "cue": "The book is yellow",
+          "changed": "a different colour, the same cell"
+        }
+      ],
+      "mistake": {
+        "display": "La casa è rosso",
+        "why": "casa is feminine: La casa è rossa."
+      },
+      "usage": "Pointing at something and naming it — the shape every description starts from.",
+      "register": "neutral",
+      "mnemonic": "The noun chooses the ending. Always."
+    },
+    {
+      "id": "L2-M3-S02",
+      "display": "Le case sono blu",
+      "cue": "The houses are blue",
+      "literal": "The houses are blue",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "blu",
+            "cue": "blue",
+            "tag": "delta",
+            "forms": [],
+            "note": "It never changes: il libro blu, le case blu. A borrowed word that ends in a stressed vowel cannot take an ending, so it does not."
+          },
+          {
+            "display": "rosa",
+            "cue": "pink",
+            "tag": "delta",
+            "forms": [],
+            "note": "It is the noun for a rose, used as a colour, and a noun keeps its own shape: le case rosa, not le case rose — which would mean roses."
+          },
+          {
+            "display": "viola",
+            "cue": "purple",
+            "tag": "free",
+            "forms": [],
+            "note": "The same story as rosa: it is the flower. Invariable, so la macchina viola and i libri viola both stand."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "These four look like they should agree and do not. le case rosse is red houses; le case rosa is pink ones, and the second word is doing something entirely different from the first.",
+      "sound": "BLOO. One syllable, and the u is the oo of \"moon\", cut short.",
+      "variations": [
+        {
+          "display": "Le case sono rosa",
+          "cue": "The houses are pink",
+          "changed": "another invariable colour"
+        },
+        {
+          "display": "I libri sono blu",
+          "cue": "The books are blue",
+          "changed": "masculine plural — and blu still does not move"
+        },
+        {
+          "display": "La casa è viola",
+          "cue": "The house is purple",
+          "changed": "singular, and viola does not move either"
+        }
+      ],
+      "mistake": {
+        "display": "Le case sono rose",
+        "why": "The colour is invariable: Le case sono rosa."
+      },
+      "usage": "Describing anything by its colour — and these four are the ones to watch.",
+      "register": "neutral",
+      "mnemonic": "A flower used as a colour keeps its own shape."
+    },
+    {
+      "id": "L2-M3-S03",
+      "display": "È un bel libro",
+      "cue": "It's a nice book",
+      "literal": "Is a nice book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bel",
+            "cue": "nice · beautiful (before il-words)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The shortened bello, used where the noun would take il. un bel libro, because it is il libro."
+          },
+          {
+            "display": "bei",
+            "cue": "nice (before i-words)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural of bel, for nouns that take i. i bei libri — and it is not spelled belli in that seat."
+          },
+          {
+            "display": "bello",
+            "cue": "nice · beautiful (full form)",
+            "tag": "free",
+            "forms": [
+              "bella",
+              "belli",
+              "belle"
+            ],
+            "note": "The full four cells, used AFTER a noun and after the verb: un libro bello, Il libro è bello. Nothing shortens there."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The short forms only exist in front of the noun. Move bello behind it, or put it after è, and the ordinary paradigm comes back — which is why the same sentence can be said two ways.",
+      "sound": "e oon bel LEE-bro. bel is one short syllable with an open e.",
+      "variations": [
+        {
+          "display": "Sono bei libri",
+          "cue": "They're nice books",
+          "changed": "plural, and the short form changes with it"
+        },
+        {
+          "display": "Il libro è bello",
+          "cue": "The book is nice",
+          "changed": "after the verb — the full form is back"
+        },
+        {
+          "display": "È un libro bello",
+          "cue": "It's a nice book",
+          "changed": "after the noun, which also restores the full form"
+        }
+      ],
+      "mistake": {
+        "display": "È un bello libro",
+        "why": "In front of an il-word it shortens: È un bel libro."
+      },
+      "usage": "The commonest compliment in Italian, on almost anything.",
+      "register": "neutral",
+      "mnemonic": "In front it shortens. Behind it does not."
+    },
+    {
+      "id": "L2-M3-S04",
+      "display": "È un bell'uomo",
+      "cue": "He's a good-looking man",
+      "literal": "Is a beautiful-man",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bell'uomo",
+            "cue": "a good-looking man",
+            "tag": "delta",
+            "forms": [
+              "bell'uomo"
+            ],
+            "note": "The elided bello fused with its noun. The apostrophe stays inside the token, so this is ONE index key — exactly as l'acqua is — and there is no separate bell' for it to resolve through."
+          },
+          {
+            "display": "begli",
+            "cue": "nice (before gli-words)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural of bell', for nouns that take gli: begli occhi. The gli here is the same soft ly as the article it tracks."
+          },
+          {
+            "display": "uomo",
+            "cue": "man",
+            "tag": "interference",
+            "forms": [
+              "uomini"
+            ],
+            "note": "Its plural is irregular and drops the o: uomini. It takes l' because it starts with a vowel, which is what pulls bell' in front of it."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Four shapes of one word, and each tracks the article rather than the gender: il → bel, l' → bell', i → bei, gli → begli. Learn them against the articles and there is nothing extra to remember.",
+      "sound": "e oon bel-LWO-mo. The apostrophe is not a pause — the two run together as a single word.",
+      "variations": [
+        {
+          "display": "Ha begli occhi",
+          "cue": "He has lovely eyes",
+          "changed": "the gli-form, in front of a vowel plural"
+        },
+        {
+          "display": "È un bel libro",
+          "cue": "It's a nice book",
+          "changed": "the il-form"
+        },
+        {
+          "display": "Ha begli occhi verdi",
+          "cue": "He has lovely green eyes",
+          "changed": "a colour added, agreeing with occhi"
+        }
+      ],
+      "mistake": {
+        "display": "È un bel uomo",
+        "why": "A vowel takes the elided form: È un bell'uomo."
+      },
+      "usage": "Describing someone's looks — and it is said of men as freely as bella is of women.",
+      "register": "neutral",
+      "mnemonic": "The article decides which bello you get."
+    },
+    {
+      "id": "L2-M3-S05",
+      "display": "Il libro è nuovo",
+      "cue": "The book is new",
+      "literal": "The book is new",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nuovo",
+            "cue": "new",
+            "tag": "free",
+            "forms": [
+              "nuova",
+              "nuovi",
+              "nuove"
+            ],
+            "note": "Four cells, and the uo is one gliding sound rather than two vowels: NWO-vo."
+          },
+          {
+            "display": "vecchio",
+            "cue": "old",
+            "tag": "delta",
+            "forms": [
+              "vecchia",
+              "vecchi",
+              "vecchie"
+            ],
+            "note": "Of things it is neutral; of a person it is blunt, which is why M2 taught anziano instead. The cch is a long hard k."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The masculine plural of vecchio is vecchi with one i, not vecchii. A word ending in -io drops one i when the i is unstressed, and that is a spelling rule rather than an exception.",
+      "sound": "NWO-vo. Two syllables, not three — the u and o run together.",
+      "variations": [
+        {
+          "display": "Il libro è vecchio",
+          "cue": "The book is old",
+          "changed": "the opposite"
+        },
+        {
+          "display": "La casa è nuova",
+          "cue": "The house is new",
+          "changed": "feminine"
+        },
+        {
+          "display": "I libri sono nuovi",
+          "cue": "The books are new",
+          "changed": "plural"
+        }
+      ],
+      "mistake": {
+        "display": "Il libro è nuova",
+        "why": "libro is masculine: Il libro è nuovo."
+      },
+      "usage": "Talking about anything you have just bought, or anything you have not.",
+      "register": "neutral",
+      "mnemonic": "vecchio for things, anziano for people."
+    },
+    {
+      "id": "L2-M3-S06",
+      "display": "I capelli sono corti",
+      "cue": "The hair is short",
+      "literal": "The hairs are short",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "corto",
+            "cue": "short (in length)",
+            "tag": "interference",
+            "forms": [
+              "corta",
+              "corti",
+              "corte"
+            ],
+            "note": "Length, never height. A short person is basso — M2's word — and using corto of a person is the error an English speaker makes."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "capelli is plural in Italian, so its adjective is plural too: corti, not corto. English says \"the hair is short\" with a singular and the two languages disagree about how many hairs there are.",
+      "sound": "KOR-tee. The r is tapped once, and the o is open.",
+      "variations": [
+        {
+          "display": "I capelli sono lunghi",
+          "cue": "The hair is long",
+          "changed": "the opposite, with M2's adjective"
+        },
+        {
+          "display": "Il libro è corto",
+          "cue": "The book is short",
+          "changed": "a singular masculine thing"
+        },
+        {
+          "display": "Le canzoni sono corte",
+          "cue": "The songs are short",
+          "changed": "feminine plural"
+        }
+      ],
+      "mistake": {
+        "display": "I capelli sono corto",
+        "why": "capelli is plural: I capelli sono corti."
+      },
+      "usage": "Describing someone, or telling a hairdresser what you want.",
+      "register": "neutral",
+      "mnemonic": "corto is length. basso is height."
+    },
+    {
+      "id": "L2-M3-S07",
+      "display": "La cucina è pulita",
+      "cue": "The kitchen is clean",
+      "literal": "The kitchen is clean",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pulito",
+            "cue": "clean",
+            "tag": "free",
+            "forms": [
+              "pulita",
+              "puliti",
+              "pulite"
+            ],
+            "note": "Four cells. It is also the past participle of pulire, to clean — so the same word means \"cleaned\", and the sentence says which."
+          },
+          {
+            "display": "sporco",
+            "cue": "dirty",
+            "tag": "interference",
+            "forms": [
+              "sporca",
+              "sporchi",
+              "sporche"
+            ],
+            "note": "The -co plural keeps its hard sound with an h — sporchi — the way bianco went to bianchi, and not the way amico went to amici."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "sporchi keeps the k sound and amici loses it, and both are -co words. Nothing predicts which way a word goes, which is why each plural is learnt with its word.",
+      "sound": "poo-LEE-ta. Three syllables, the stress in the middle.",
+      "variations": [
+        {
+          "display": "La cucina è sporca",
+          "cue": "The kitchen is dirty",
+          "changed": "the opposite"
+        },
+        {
+          "display": "I piatti sono puliti",
+          "cue": "The plates are clean",
+          "changed": "masculine plural"
+        },
+        {
+          "display": "I piatti sono sporchi",
+          "cue": "The plates are dirty",
+          "changed": "the hard plural of the -co word"
+        }
+      ],
+      "mistake": {
+        "display": "I piatti sono sporci",
+        "why": "This one keeps its hard sound: I piatti sono sporchi."
+      },
+      "usage": "In a kitchen, a hotel room, or an argument about the washing-up.",
+      "register": "neutral",
+      "mnemonic": "The -co plural forks, and only the word says which way."
+    },
+    {
+      "id": "L2-M3-S08",
+      "display": "Il libro è molto pesante",
+      "cue": "The book is very heavy",
+      "literal": "The book is very heavy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pesante",
+            "cue": "heavy",
+            "tag": "free",
+            "forms": [
+              "pesanti"
+            ],
+            "note": "An -e adjective, so two cells and no gender. Of a person or a film it means hard going, which is the same picture English draws."
+          },
+          {
+            "display": "leggero",
+            "cue": "light (in weight)",
+            "tag": "free",
+            "forms": [
+              "leggera",
+              "leggeri",
+              "leggere"
+            ],
+            "note": "Four cells, unlike its opposite. It is weight only — light as in not dark is chiaro, a different word."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "molto does not agree here and pesante does not have a gender to agree with. Two words in a row that look like they should move, and neither does — for two entirely different reasons.",
+      "sound": "pe-ZAN-te. The s between vowels is a z, which is regular in northern speech and not in the south.",
+      "variations": [
+        {
+          "display": "Il libro è molto leggero",
+          "cue": "The book is very light",
+          "changed": "the opposite, and a four-cell adjective"
+        },
+        {
+          "display": "Le bottiglie sono pesanti",
+          "cue": "The bottles are heavy",
+          "changed": "plural — the one other cell pesante has"
+        },
+        {
+          "display": "I libri sono pesanti",
+          "cue": "The books are heavy",
+          "changed": "masculine plural, and the same form"
+        }
+      ],
+      "mistake": {
+        "display": "Il libro è molta pesante",
+        "why": "molto before an adjective never moves: molto pesante."
+      },
+      "usage": "Carrying something, or warning someone before they pick it up.",
+      "register": "neutral",
+      "mnemonic": "-e adjectives have no gender to give."
+    },
+    {
+      "id": "L2-M3-S09",
+      "display": "Le case sono molto piccole",
+      "cue": "The houses are very small",
+      "literal": "The houses are very small",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "piccolo",
+            "cue": "small · little",
+            "tag": "free",
+            "forms": [
+              "piccola",
+              "piccoli",
+              "piccole"
+            ],
+            "note": "grande's opposite, and it has four cells where grande has two — the two classes side by side in one pair of words."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "grande and piccolo mean opposite things and belong to opposite classes. le case grandi has one ending and le case piccole has another, and the difference is in the adjectives rather than in the houses.",
+      "sound": "PEEK-ko-le. The double k is held, and the stress is on the first syllable.",
+      "variations": [
+        {
+          "display": "Le case sono molto grandi",
+          "cue": "The houses are very big",
+          "changed": "the opposite — and a two-cell adjective"
+        },
+        {
+          "display": "La casa è piccola",
+          "cue": "The house is small",
+          "changed": "singular"
+        },
+        {
+          "display": "Il libro è molto grande",
+          "cue": "The book is very big",
+          "changed": "masculine, and grande still does not move for gender"
+        }
+      ],
+      "mistake": {
+        "display": "Le case sono molte piccole",
+        "why": "molto before an adjective is invariable: molto piccole."
+      },
+      "usage": "Describing a place — a flat, a room, a town.",
+      "register": "neutral",
+      "mnemonic": "Opposites, opposite classes."
+    },
+    {
+      "id": "L2-M3-S10",
+      "display": "Ci sono molti libri nuovi",
+      "cue": "There are a lot of new books",
+      "literal": "There are many books new",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "molti",
+            "cue": "many · a lot of",
+            "tag": "delta",
+            "forms": [
+              "molta",
+              "molte"
+            ],
+            "note": "molto counting a NOUN, and here it does agree: molti libri, molta acqua, molte case. L1-M1's molto is the same word in its other job, in front of an adjective, where it never moves."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "One word, two behaviours, and the position decides. In front of an adjective molto is frozen; in front of a noun it counts, and counting means agreeing.",
+      "sound": "MOL-tee LEE-bree NWO-vee. Three words all ending in the same plural i.",
+      "variations": [
+        {
+          "display": "Ci sono molte case nuove",
+          "cue": "There are a lot of new houses",
+          "changed": "feminine plural — both words move"
+        },
+        {
+          "display": "Ci sono molti libri vecchi",
+          "cue": "There are a lot of old books",
+          "changed": "a different adjective"
+        },
+        {
+          "display": "C'è molta acqua",
+          "cue": "There's a lot of water",
+          "changed": "singular feminine, and c'è rather than ci sono"
+        }
+      ],
+      "mistake": {
+        "display": "Ci sono molto libri nuovi",
+        "why": "In front of a noun molto agrees: Ci sono molti libri nuovi."
+      },
+      "usage": "Saying what a place has plenty of.",
+      "register": "neutral",
+      "mnemonic": "In front of a noun it counts, so it agrees."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M3-C01",
+      "display": "Il libro è rosso",
+      "cue": "The book is red"
+    },
+    {
+      "id": "L2-M3-C02",
+      "display": "Le case sono blu",
+      "cue": "The houses are blue"
+    },
+    {
+      "id": "L2-M3-C03",
+      "display": "È un bel libro",
+      "cue": "It's a nice book"
+    },
+    {
+      "id": "L2-M3-C04",
+      "display": "È un bell'uomo",
+      "cue": "He's a good-looking man"
+    },
+    {
+      "id": "L2-M3-C05",
+      "display": "Il libro è nuovo",
+      "cue": "The book is new"
+    },
+    {
+      "id": "L2-M3-C06",
+      "display": "I capelli sono corti",
+      "cue": "The hair is short"
+    },
+    {
+      "id": "L2-M3-C07",
+      "display": "La cucina è pulita",
+      "cue": "The kitchen is clean"
+    },
+    {
+      "id": "L2-M3-C08",
+      "display": "Il libro è molto pesante",
+      "cue": "The book is very heavy"
+    },
+    {
+      "id": "L2-M3-C09",
+      "display": "Le case sono molto piccole",
+      "cue": "The houses are very small"
+    },
+    {
+      "id": "L2-M3-C10",
+      "display": "Ci sono molti libri nuovi",
+      "cue": "There are a lot of new books"
+    },
+    {
+      "id": "L2-M3-C11",
+      "display": "Ha begli occhi verdi",
+      "cue": "He has lovely green eyes"
+    },
+    {
+      "id": "L2-M3-C12",
+      "display": "I piatti sono sporchi",
+      "cue": "The plates are dirty"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

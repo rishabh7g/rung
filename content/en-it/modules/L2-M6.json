@@ -1,0 +1,640 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": [
+    "L2-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Andiamo + a + <place> + ?",
+      "Ti va di + V-inf + ?",
+      "Sei libero / libera + <day> + ?",
+      "Ci vediamo alle + <hour>",
+      "Facciamo alle sette — D'accordo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE noi ENDING IS ALSO THE SUGGESTION. Andiamo! is both \"we go\" and \"let's go\"; Facciamo alle sette is \"let's make it seven\". Italian needs no extra word where English needs \"let's\" and Spanish reaches for vamos a — the -iamo ending does the whole job, and it is the same ending on every verb: andiamo, facciamo, prendiamo, mangiamo, vediamo."
+    },
+    {
+      "tag": "free",
+      "text": "Ti va di…? is the everyday invitation, and its shape is one the learner already owns: literally \"does it suit you to…\", built exactly like L1-M1's mi piace. The thing offered is the subject and the person is named by the little word in front — so ti va di prendere un caffè, and nothing about it is new except the words."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ARTICLE ON A DAY MEANS \"EVERY\". il lunedì is Mondays in general; lunedì on its own is this coming Monday. English marks that difference with a plural — \"on Mondays\" against \"on Monday\" — and Italian marks it with an article, which is why L1-M4's il lunedì and this module's bare lunedì are two different things."
+    },
+    {
+      "tag": "free",
+      "text": "The clock adds e mezza, e un quarto and in punto to L1-M4's alle sette. The quarter-to form uses meno, and this course does not show it here: meno is M9's key and its first note has to be the comparative one. When M9 opens it, the clock use comes with it."
+    },
+    {
+      "tag": "free",
+      "text": "Plans are made among friends, so this module runs on tu and noi and the polite third person is deliberately absent. An invitation in the Lei forms is not wrong — it is a business appointment, which is M7's scene rather than this one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "Andiamo al cinema stasera?",
+      "cue": "Shall we go to the cinema tonight?",
+      "literal": "We-go to-the cinema tonight?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "andiamo",
+            "cue": "we go · let's go",
+            "tag": "delta",
+            "forms": [],
+            "note": "One form, two jobs. As a question it invites; as a shout it means \"come on\". Nothing distinguishes them but the tone."
+          },
+          {
+            "display": "facciamo",
+            "cue": "we do · we make · let's make it",
+            "tag": "free",
+            "forms": [],
+            "note": "The noi cell of L1-M6's fare. Facciamo alle sette is how a time gets settled, and it is the same \"let's\" reading."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "There is no word for \"let's\" and none is missing. The ending carries the suggestion, which makes this one of the few places Italian is shorter than English.",
+      "sound": "an-DYA-mo. Four vowels, three syllables — the ia is one glide.",
+      "variations": [
+        {
+          "display": "Andiamo al bar stasera?",
+          "cue": "Shall we go to the bar tonight?",
+          "changed": "a different place"
+        },
+        {
+          "display": "Andiamo a Roma domani?",
+          "cue": "Shall we go to Rome tomorrow?",
+          "changed": "a city, which takes a with no article"
+        },
+        {
+          "display": "Andiamo al cinema domani?",
+          "cue": "Shall we go to the cinema tomorrow?",
+          "changed": "a different time"
+        }
+      ],
+      "mistake": {
+        "display": "Andiamo a il cinema stasera?",
+        "why": "a and il fuse: Andiamo al cinema stasera?"
+      },
+      "usage": "Suggesting something to a friend. Among strangers this would be forward rather than rude.",
+      "register": "informal",
+      "mnemonic": "The ending is the \"let's\"."
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "Ti va di prendere un caffè?",
+      "cue": "Do you fancy a coffee?",
+      "literal": "To-you it-goes of to-take a coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ti va",
+            "cue": "do you fancy · does that suit you",
+            "tag": "delta",
+            "forms": [],
+            "note": "One thing, built like mi piace: what is offered is the subject and ti names who it is offered to. An infinitive follows, joined by di."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The di is compulsory before the verb and disappears before a noun: Ti va di prendere un caffè? but Ti va un caffè? Both are ordinary, and only the thing that follows decides.",
+      "sound": "tee VA dee PREN-de-re. The whole opener runs as one word before the verb.",
+      "variations": [
+        {
+          "display": "Ti va di mangiare una pizza?",
+          "cue": "Do you fancy a pizza?",
+          "changed": "a different infinitive"
+        },
+        {
+          "display": "Ti va un caffè?",
+          "cue": "Do you fancy a coffee?",
+          "changed": "a noun, so no di"
+        },
+        {
+          "display": "Ti va di andare al cinema?",
+          "cue": "Do you fancy going to the cinema?",
+          "changed": "an invitation with a place"
+        }
+      ],
+      "mistake": {
+        "display": "Ti va prendere un caffè?",
+        "why": "A verb needs di: Ti va di prendere un caffè?"
+      },
+      "usage": "The lightest invitation there is — easy to accept and easy to turn down.",
+      "register": "informal",
+      "mnemonic": "di before a verb, nothing before a noun."
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "Ci vediamo alle sette",
+      "cue": "See you at seven",
+      "literal": "Ourselves we-see at-the seven",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ci vediamo",
+            "cue": "see you · we'll see each other",
+            "tag": "free",
+            "forms": [],
+            "note": "The closing every plan ends on. Literally \"we see each other\", and it is said as one thing — Ci vediamo! on its own is a goodbye."
+          },
+          {
+            "display": "ci",
+            "cue": "us · each other · there",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same particle family as M4's si, and it does several jobs. L1-M7's c'è and ci sono contain it and are their own whole surfaces, answering for nothing outside themselves."
+          },
+          {
+            "display": "vediamo",
+            "cue": "we see · let's see",
+            "tag": "free",
+            "forms": [],
+            "note": "The noi cell of L1-M6's vedere. On its own Vediamo means \"we'll see\", which is what an Italian says instead of committing."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "ci goes in front of the verb, exactly as M5's clitics do. It is the same placement rule, on a word that does a different job.",
+      "sound": "chee ve-DYA-mo. The ci is a soft ch, and the whole phrase runs together.",
+      "variations": [
+        {
+          "display": "Ci vediamo domani",
+          "cue": "See you tomorrow",
+          "changed": "a day instead of an hour"
+        },
+        {
+          "display": "Ci vediamo stasera",
+          "cue": "See you tonight",
+          "changed": "a different time"
+        },
+        {
+          "display": "Ci vediamo alle sette in punto",
+          "cue": "See you at seven sharp",
+          "changed": "the hour pinned down"
+        }
+      ],
+      "mistake": {
+        "display": "Vediamo ci alle sette",
+        "why": "The particle goes in front: Ci vediamo alle sette."
+      },
+      "usage": "Ending a conversation once a plan is made — and it is a goodbye on its own.",
+      "register": "neutral",
+      "mnemonic": "Ci vediamo closes every plan."
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "Sei libero martedì?",
+      "cue": "Are you free on Tuesday?",
+      "literal": "You-are free Tuesday?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "martedì",
+            "cue": "Tuesday",
+            "tag": "free",
+            "forms": [],
+            "note": "Stressed on the last syllable, and every day from Monday to Friday ends that way — the -dì is \"day\". Days are not capitalised in Italian."
+          },
+          {
+            "display": "mercoledì",
+            "cue": "Wednesday",
+            "tag": "free",
+            "forms": [],
+            "note": "The same -dì ending. The stress on the end is what an English speaker gets wrong, saying mer-CO-le-di instead of mer-co-le-DI."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "There is no preposition in front of the day. English needs \"on Tuesday\" and Italian puts the bare word in — adding in or a is the error.",
+      "sound": "mar-te-DEE. The accent on the ì is not decoration: it says the stress is on that vowel.",
+      "variations": [
+        {
+          "display": "Sei libera martedì?",
+          "cue": "Are you free on Tuesday?",
+          "changed": "asking a woman"
+        },
+        {
+          "display": "Sei libero mercoledì?",
+          "cue": "Are you free on Wednesday?",
+          "changed": "a different day"
+        },
+        {
+          "display": "Sono libero giovedì",
+          "cue": "I'm free on Thursday",
+          "changed": "the answer"
+        }
+      ],
+      "mistake": {
+        "display": "Sei libero in martedì?",
+        "why": "A day takes no preposition: Sei libero martedì?"
+      },
+      "usage": "The question that opens every plan.",
+      "register": "informal",
+      "mnemonic": "No preposition in front of a day."
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "Facciamo alle sette e mezza",
+      "cue": "Let's make it half past seven",
+      "literal": "We-make at-the seven and half",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mezza",
+            "cue": "half (past)",
+            "tag": "free",
+            "forms": [
+              "mezzo"
+            ],
+            "note": "Feminine because it agrees with the hour, which is feminine — le sette. The zz is a long ts."
+          },
+          {
+            "display": "quarto",
+            "cue": "quarter",
+            "tag": "free",
+            "forms": [
+              "quarti"
+            ],
+            "note": "Masculine, so un quarto rather than una. The quarter-TO form uses meno, which M9 opens."
+          },
+          {
+            "display": "punto",
+            "cue": "point · sharp (of a time)",
+            "tag": "free",
+            "forms": [],
+            "note": "In punto means exactly on the hour. It is the noun for a full stop and for a point in a game, all from the same idea."
+          },
+          {
+            "display": "giovedì",
+            "cue": "Thursday",
+            "tag": "free",
+            "forms": [],
+            "note": "The gio is a soft j, and the stress is on the last syllable like every other weekday name."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Facciamo here is not \"we make\" but \"let's make it\" — settling a time. It is the noi ending doing the suggestion job again, on a verb English would not use at all.",
+      "sound": "fat-CHA-mo AL-le SET-te e MED-dza. Three double consonants in one line, all held.",
+      "variations": [
+        {
+          "display": "Facciamo alle sette e un quarto",
+          "cue": "Let's make it a quarter past seven",
+          "changed": "fifteen minutes instead of thirty"
+        },
+        {
+          "display": "Facciamo alle sette in punto",
+          "cue": "Let's make it seven sharp",
+          "changed": "on the hour exactly"
+        },
+        {
+          "display": "Ci vediamo giovedì alle sette",
+          "cue": "See you Thursday at seven",
+          "changed": "a day and an hour together"
+        }
+      ],
+      "mistake": {
+        "display": "Facciamo alle sette e mezzo",
+        "why": "It agrees with the hour: alle sette e mezza."
+      },
+      "usage": "Settling the time, which in Italy happens after the day and not before it.",
+      "register": "informal",
+      "mnemonic": "Half agrees with the hour."
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "Venerdì sono libero",
+      "cue": "I'm free on Friday",
+      "literal": "Friday I-am free",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "venerdì",
+            "cue": "Friday",
+            "tag": "free",
+            "forms": [],
+            "note": "The last of the -dì days. Its name is Venus's day, as the French vendredi is."
+          },
+          {
+            "display": "domenica",
+            "cue": "Sunday",
+            "tag": "interference",
+            "forms": [],
+            "note": "The only day that is FEMININE and the only one not ending in -dì — so la domenica, not il. Saturday, sabato, is masculine like the rest."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "domenica breaks two patterns at once: it is feminine and it has no -dì. Both matter, because the article that means \"every\" has to agree — la domenica, il venerdì.",
+      "sound": "do-ME-ni-ca. The stress is on the second syllable, unlike every weekday name around it.",
+      "variations": [
+        {
+          "display": "Domenica sono libero",
+          "cue": "I'm free on Sunday",
+          "changed": "the odd day out"
+        },
+        {
+          "display": "Venerdì non sono libero",
+          "cue": "I'm not free on Friday",
+          "changed": "negated"
+        },
+        {
+          "display": "Domenica andiamo al cinema",
+          "cue": "On Sunday we're going to the cinema",
+          "changed": "a plan rather than an availability"
+        }
+      ],
+      "mistake": {
+        "display": "Il domenica sono libero",
+        "why": "domenica is feminine: la domenica — and here no article at all."
+      },
+      "usage": "Answering about a day, or offering one.",
+      "register": "informal",
+      "mnemonic": "Six days in -dì, and Sunday is the exception."
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "D'accordo, ci vediamo domani",
+      "cue": "All right, see you tomorrow",
+      "literal": "Of-agreement, ourselves we-see tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "d'accordo",
+            "cue": "all right · agreed",
+            "tag": "free",
+            "forms": [],
+            "note": "An elision, so ONE index key — di plus accordo, welded. It is what you say when a plan is settled, and Va bene does the same job more casually."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The apostrophe fuses the two words into one, exactly as in M5's dell'acqua and M4's l'angolo. There is no separate accordo to reach for here.",
+      "sound": "dak-KOR-do. The double k is held, and the whole thing is three syllables.",
+      "variations": [
+        {
+          "display": "D'accordo, a domani",
+          "cue": "All right, see you tomorrow",
+          "changed": "the shorter goodbye"
+        },
+        {
+          "display": "D'accordo, ci vediamo venerdì",
+          "cue": "All right, see you on Friday",
+          "changed": "a named day"
+        },
+        {
+          "display": "Va bene, d'accordo",
+          "cue": "OK, agreed",
+          "changed": "both agreement words together"
+        }
+      ],
+      "mistake": {
+        "display": "Di accordo, ci vediamo domani",
+        "why": "The elision is compulsory: D'accordo, ci vediamo domani."
+      },
+      "usage": "Closing the deal, once the day and the hour are fixed.",
+      "register": "neutral",
+      "mnemonic": "One word, one apostrophe, plan settled."
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "Stasera mangiamo a casa",
+      "cue": "Tonight we're eating at home",
+      "literal": "Tonight we-eat at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mangiamo",
+            "cue": "we eat · let's eat",
+            "tag": "free",
+            "forms": [],
+            "note": "The noi cell of L1-M3's mangiare, and the gi stays soft: man-JA-mo. Like andiamo, it can be a statement or a suggestion."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "This is a present tense doing the work of English's future, exactly as M5's Prendo did. Anything arranged goes in the present, and the time word carries the future all by itself.",
+      "sound": "man-JA-mo. Three syllables, the gi soft, and the stress in the middle.",
+      "variations": [
+        {
+          "display": "Stasera mangiamo fuori",
+          "cue": "Tonight we're eating out",
+          "changed": "out rather than in"
+        },
+        {
+          "display": "Mangiamo a casa domani?",
+          "cue": "Shall we eat at home tomorrow?",
+          "changed": "the suggestion reading, as a question"
+        },
+        {
+          "display": "Domenica mangiamo a casa",
+          "cue": "On Sunday we're eating at home",
+          "changed": "a day at the front"
+        }
+      ],
+      "mistake": {
+        "display": "Stasera mangiamo a la casa",
+        "why": "a casa takes no article: Stasera mangiamo a casa."
+      },
+      "usage": "Settling what happens tonight — and the same words could be a suggestion.",
+      "register": "informal",
+      "mnemonic": "The present handles anything arranged."
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "Il lunedì lavoro, ma lunedì sono libero",
+      "cue": "I work on Mondays, but I'm free this Monday",
+      "literal": "The Monday I-work, but Monday I-am free",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lunedì",
+            "cue": "Monday (this coming one)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Bare, it means the next one. L1-M4's il lunedì, with the article, means Mondays in general — two different things sharing one word."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The whole difference is one article, and English marks it with a plural instead. il lunedì is every Monday; lunedì is the one coming up, and no other word in the sentence changes.",
+      "sound": "loo-ne-DEE. Stress on the last syllable, as the accent says.",
+      "variations": [
+        {
+          "display": "Il sabato lavoro, ma sabato sono libero",
+          "cue": "I work on Saturdays, but I'm free this Saturday",
+          "changed": "a different day, the same contrast"
+        },
+        {
+          "display": "Lunedì sono libero",
+          "cue": "I'm free on Monday",
+          "changed": "the coming Monday only"
+        },
+        {
+          "display": "Il lunedì non lavoro",
+          "cue": "I don't work on Mondays",
+          "changed": "the habit, negated"
+        }
+      ],
+      "mistake": {
+        "display": "Lunedì lavoro, ma il lunedì sono libero",
+        "why": "The article marks the habit: Il lunedì lavoro, ma lunedì sono libero."
+      },
+      "usage": "Sorting out which Monday is meant — which is exactly where this trips people.",
+      "register": "informal",
+      "mnemonic": "Article means every. Bare means next."
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "Prendiamo l'autobus alle sette",
+      "cue": "Let's take the bus at seven",
+      "literal": "We-take the-bus at-the seven",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prendiamo",
+            "cue": "we take · let's take",
+            "tag": "free",
+            "forms": [],
+            "note": "The noi cell of L1-M6's prendere. The whole -iamo family is regular, which is why this module can add five of them at once."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Every verb in this module ends -iamo and none of them is irregular there. The noi cell is the one place Italian's conjugations agree with each other.",
+      "sound": "pren-DYA-mo. The ia is one glide, and the stress lands on it.",
+      "variations": [
+        {
+          "display": "Prendiamo il treno alle sette",
+          "cue": "Let's take the train at seven",
+          "changed": "a different vehicle, with no elision"
+        },
+        {
+          "display": "Prendiamo un caffè?",
+          "cue": "Shall we have a coffee?",
+          "changed": "the suggestion reading"
+        },
+        {
+          "display": "Prendiamo la macchina",
+          "cue": "Let's take the car",
+          "changed": "M4's word, as an object"
+        }
+      ],
+      "mistake": {
+        "display": "Prendiamo il autobus alle sette",
+        "why": "A vowel takes the elided article: Prendiamo l'autobus alle sette."
+      },
+      "usage": "Deciding how to get there, once the time is fixed.",
+      "register": "informal",
+      "mnemonic": "-iamo, every verb, no exceptions."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M6-C01",
+      "display": "Andiamo al cinema stasera?",
+      "cue": "Shall we go to the cinema tonight?"
+    },
+    {
+      "id": "L2-M6-C02",
+      "display": "Ti va di prendere un caffè?",
+      "cue": "Do you fancy a coffee?"
+    },
+    {
+      "id": "L2-M6-C03",
+      "display": "Ci vediamo alle sette",
+      "cue": "See you at seven"
+    },
+    {
+      "id": "L2-M6-C04",
+      "display": "Sei libero martedì?",
+      "cue": "Are you free on Tuesday?"
+    },
+    {
+      "id": "L2-M6-C05",
+      "display": "Facciamo alle sette e mezza",
+      "cue": "Let's make it half past seven"
+    },
+    {
+      "id": "L2-M6-C06",
+      "display": "Venerdì sono libero",
+      "cue": "I'm free on Friday"
+    },
+    {
+      "id": "L2-M6-C07",
+      "display": "D'accordo, ci vediamo domani",
+      "cue": "All right, see you tomorrow"
+    },
+    {
+      "id": "L2-M6-C08",
+      "display": "Stasera mangiamo a casa",
+      "cue": "Tonight we're eating at home"
+    },
+    {
+      "id": "L2-M6-C09",
+      "display": "Il lunedì lavoro, ma lunedì sono libero",
+      "cue": "I work on Mondays, but I'm free this Monday"
+    },
+    {
+      "id": "L2-M6-C10",
+      "display": "Prendiamo l'autobus alle sette",
+      "cue": "Let's take the bus at seven"
+    },
+    {
+      "id": "L2-M6-C11",
+      "display": "Ci vediamo giovedì alle sette",
+      "cue": "See you Thursday at seven"
+    },
+    {
+      "id": "L2-M6-C12",
+      "display": "Domenica andiamo al cinema",
+      "cue": "On Sunday we're going to the cinema"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M9",
+  "title": "Comparing and choosing",
+  "job": "More, less, better — stating a preference",
+  "prerequisites": [
+    "L2-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "A + è + più + Adj + di + B",
+      "A + è + più + Adj + che + Adj",
+      "il/la più + Adj",
+      "A + è + migliore / peggiore + di + B",
+      "Preferisco + questo / quello"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ITALIAN FORCES A CHOICE ENGLISH DOES NOT HAVE. più … DI compares two things on one quality: Roma è più grande di Milano. più … CHE compares two qualities, two verbs or two phrases about the SAME thing: È più bello che utile. The working rule is short — di before a noun or a pronoun, che before anything else — and English's single \"than\" gives no signal at all."
+    },
+    {
+      "tag": "free",
+      "text": "The comparative costs this module no new function words. che is already L1-M5's and di is L1-M1's, so both rows simply take on a second job. The work here is the CHOICE between them, not the vocabulary — which is worth saying, because a learner who is hunting for a word to learn will miss the whole lesson."
+    },
+    {
+      "tag": "interference",
+      "text": "migliore against meglio is Italian keeping apart what English merges. migliore is the ADJECTIVE — È il ristorante migliore — and meglio is the ADVERB — Si mangia meglio qui. English says \"better\" for both and Spanish uses mejor for both, so this delta runs the opposite way from every other comparison in the level. peggiore and peggio do the same."
+    },
+    {
+      "tag": "delta",
+      "text": "preferire brings the -isc- verbs, a third of the third conjugation: preferisco, preferisci, preferisce — with the infix in the singular and the third plural and absent from noi and voi. capire and finire do the same. It is a shape rather than an irregularity, and once seen it covers dozens of verbs."
+    },
+    {
+      "tag": "free",
+      "text": "quello apocopates in front of a noun exactly as M3's bello does, and tracks the same articles: quel libro, quell'uomo, quei libri. questo does not shorten at all. That pairing — one demonstrative that bends and one that does not — is the cheapest way to hold both."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M9-S01",
+      "display": "Roma è più grande di Milano",
+      "cue": "Rome is bigger than Milan",
+      "literal": "Rome is more big of Milan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "più",
+            "cue": "more",
+            "tag": "delta",
+            "forms": [],
+            "note": "The comparative marker, and it goes in front of the adjective — Italian never changes the adjective's ending for a comparison. M7's più tardi kept this word waiting for exactly this row."
+          },
+          {
+            "display": "meno",
+            "cue": "less · minus",
+            "tag": "free",
+            "forms": [],
+            "note": "più's opposite, built the same way: meno grande. It also does the quarter-to on a clock — le sette meno un quarto — which M6 pointed forward to."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The comparison is di because Milano is a noun. Swap in an adjective and it becomes che — and that one decision is the whole grammar of this module.",
+      "sound": "pyoo GRAN-de dee mee-LA-no. più is one syllable, and the accent marks its stress.",
+      "variations": [
+        {
+          "display": "Milano è più piccola di Roma",
+          "cue": "Milan is smaller than Rome",
+          "changed": "the other way round, and M3's adjective agreeing"
+        },
+        {
+          "display": "Roma è meno cara di Milano",
+          "cue": "Rome is less expensive than Milan",
+          "changed": "the opposite marker"
+        },
+        {
+          "display": "Il treno è più caro del biglietto",
+          "cue": "The train is more expensive than the ticket",
+          "changed": "di fused with the article"
+        }
+      ],
+      "mistake": {
+        "display": "Roma è più grande che Milano",
+        "why": "Before a noun it is di: Roma è più grande di Milano."
+      },
+      "usage": "Comparing two places, two prices, two anything.",
+      "register": "neutral",
+      "mnemonic": "di before a noun. che before everything else."
+    },
+    {
+      "id": "L2-M9-S02",
+      "display": "È più bello che utile",
+      "cue": "It's more beautiful than useful",
+      "literal": "Is more beautiful that useful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "utile",
+            "cue": "useful",
+            "tag": "free",
+            "forms": [
+              "utili"
+            ],
+            "note": "An -e adjective, so two cells. The u is fully sounded — OO-tee-le — and the stress is on the first syllable."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Two adjectives about ONE thing, so che. Nothing is being compared with anything else here — the sentence weighs two qualities of the same object, and that is what che is for.",
+      "sound": "e pyoo BEL-lo ke OO-tee-le. che is one short syllable with a hard k.",
+      "variations": [
+        {
+          "display": "È più caro che utile",
+          "cue": "It's more expensive than useful",
+          "changed": "a different first quality"
+        },
+        {
+          "display": "È più utile che bello",
+          "cue": "It's more useful than beautiful",
+          "changed": "the two qualities swapped"
+        },
+        {
+          "display": "È più grande che bello",
+          "cue": "It's more big than beautiful",
+          "changed": "a different pair"
+        }
+      ],
+      "mistake": {
+        "display": "È più bello di utile",
+        "why": "Two qualities take che: È più bello che utile."
+      },
+      "usage": "The verdict with a reservation in it — and it is a very Italian shape.",
+      "register": "neutral",
+      "mnemonic": "Two qualities, one thing: che."
+    },
+    {
+      "id": "L2-M9-S03",
+      "display": "È il ristorante migliore",
+      "cue": "It's the best restaurant",
+      "literal": "Is the restaurant better",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "migliore",
+            "cue": "better · best (adjective)",
+            "tag": "delta",
+            "forms": [
+              "migliori"
+            ],
+            "note": "The adjective. It describes a noun — il ristorante migliore — and it can never describe a verb, which is meglio's job."
+          },
+          {
+            "display": "meglio",
+            "cue": "better (adverb)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The adverb, invariable. Si mangia meglio qui — one eats better here. English uses \"better\" for both and gives no warning at all."
+          },
+          {
+            "display": "ristorante",
+            "cue": "restaurant",
+            "tag": "free",
+            "forms": [
+              "ristoranti"
+            ],
+            "note": "An -e noun, so its plural is in -i. A trattoria is smaller and plainer, and the words are not interchangeable."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "migliore describes a thing and meglio describes an action. Getting them the wrong way round is the single commonest Italian mistake an English or Spanish speaker makes.",
+      "sound": "mee-LYO-re. The gli is the soft ly of figlio and famiglia.",
+      "variations": [
+        {
+          "display": "Si mangia meglio qui",
+          "cue": "The food is better here",
+          "changed": "an action, so the adverb"
+        },
+        {
+          "display": "È il ristorante peggiore",
+          "cue": "It's the worst restaurant",
+          "changed": "the opposite adjective"
+        },
+        {
+          "display": "Si mangia peggio a Roma",
+          "cue": "The food is worse in Rome",
+          "changed": "the opposite adverb"
+        }
+      ],
+      "mistake": {
+        "display": "È il ristorante meglio",
+        "why": "A noun takes the adjective: È il ristorante migliore."
+      },
+      "usage": "Recommending somewhere, and it is the sentence that gets asked for most.",
+      "register": "neutral",
+      "mnemonic": "migliore describes a thing, meglio an action."
+    },
+    {
+      "id": "L2-M9-S04",
+      "display": "Si mangia peggio qui",
+      "cue": "The food is worse here",
+      "literal": "One eats worse here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "peggiore",
+            "cue": "worse · worst (adjective)",
+            "tag": "free",
+            "forms": [
+              "peggiori"
+            ],
+            "note": "migliore's opposite, and an adjective in the same way. Il peggiore is the worst one."
+          },
+          {
+            "display": "peggio",
+            "cue": "worse (adverb)",
+            "tag": "free",
+            "forms": [],
+            "note": "meglio's opposite, invariable, and only ever about an action. The pair maps onto migliore and meglio exactly."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "M4's impersonal si is back, and it is what makes this sentence about eating in general rather than about anyone. Si mangia is \"one eats\" — the food, judged by how it is eaten.",
+      "sound": "see MAN-ja PEJ-jo kwee. Both g's of peggio are one long soft j.",
+      "variations": [
+        {
+          "display": "Si mangia meglio qui",
+          "cue": "The food is better here",
+          "changed": "the opposite verdict"
+        },
+        {
+          "display": "È il ristorante peggiore",
+          "cue": "It's the worst restaurant",
+          "changed": "the adjective, about the place itself"
+        },
+        {
+          "display": "Qui si mangia meglio che a Roma",
+          "cue": "The food is better here than in Rome",
+          "changed": "with a comparison — and che, because a phrase follows"
+        }
+      ],
+      "mistake": {
+        "display": "Si mangia peggiore qui",
+        "why": "An action takes the adverb: Si mangia peggio qui."
+      },
+      "usage": "Comparing two places to eat, which is a national pastime.",
+      "register": "neutral",
+      "mnemonic": "The pair maps: migliore/meglio, peggiore/peggio."
+    },
+    {
+      "id": "L2-M9-S05",
+      "display": "È il libro più bello",
+      "cue": "It's the nicest book",
+      "literal": "Is the book more beautiful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quale",
+            "cue": "which",
+            "tag": "delta",
+            "forms": [
+              "quali"
+            ],
+            "note": "For choosing among things in view. It is a sibling of L1-M5's che cosa, not a form of it — che cosa asks what a thing is, quale asks which one."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The superlative is the same più with an article in front of the noun. Italian has no separate \"most\" ending — il libro più bello does the whole job, and only the article marks it as a superlative.",
+      "sound": "e eel LEE-bro pyoo BEL-lo. The article is what carries the superlative meaning.",
+      "variations": [
+        {
+          "display": "È la casa più grande",
+          "cue": "It's the biggest house",
+          "changed": "feminine"
+        },
+        {
+          "display": "Quale libro è più bello?",
+          "cue": "Which book is nicer?",
+          "changed": "the question, choosing between two"
+        },
+        {
+          "display": "È il ristorante più caro",
+          "cue": "It's the most expensive restaurant",
+          "changed": "a different noun and quality"
+        }
+      ],
+      "mistake": {
+        "display": "È libro più bello",
+        "why": "The superlative needs its article: È il libro più bello."
+      },
+      "usage": "Picking the best of several, in a shop or off a list.",
+      "register": "neutral",
+      "mnemonic": "The article makes it the most."
+    },
+    {
+      "id": "L2-M9-S06",
+      "display": "Preferisco questo",
+      "cue": "I prefer this one",
+      "literal": "I-prefer this",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "preferisco",
+            "cue": "I prefer",
+            "tag": "delta",
+            "forms": [],
+            "note": "An -isc- verb: the infix appears in io, tu, lui and loro and vanishes in noi and voi. capire and finire behave the same way, so this is a class rather than an oddity."
+          },
+          {
+            "display": "questo",
+            "cue": "this one",
+            "tag": "free",
+            "forms": [
+              "questa",
+              "questi",
+              "queste"
+            ],
+            "note": "For what is here. It never shortens, unlike quello — which is the easiest way to keep the two apart."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "questo stands alone here with no noun after it. It is a pronoun as well as an adjective, and Italian needs no \"one\" the way English does.",
+      "sound": "pre-fe-REES-ko KWE-sto. The isc is where the stress lands.",
+      "variations": [
+        {
+          "display": "Preferisco questa",
+          "cue": "I prefer this one",
+          "changed": "a feminine thing"
+        },
+        {
+          "display": "Preferisci questo?",
+          "cue": "Do you prefer this one?",
+          "changed": "the tu cell, with the same infix"
+        },
+        {
+          "display": "Preferisco questo libro",
+          "cue": "I prefer this book",
+          "changed": "with the noun named"
+        }
+      ],
+      "mistake": {
+        "display": "Prefero questo",
+        "why": "This class takes the infix: Preferisco questo."
+      },
+      "usage": "In a shop, choosing between two things on the counter.",
+      "register": "neutral",
+      "mnemonic": "-isc- in the singular, gone in noi and voi."
+    },
+    {
+      "id": "L2-M9-S07",
+      "display": "Preferisco quel libro",
+      "cue": "I prefer that book",
+      "literal": "I-prefer that book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quello",
+            "cue": "that one",
+            "tag": "delta",
+            "forms": [
+              "quella",
+              "quelle",
+              "quelli"
+            ],
+            "note": "For what is over there. Standing alone it keeps its full shape — Preferisco quello — and only shortens when a noun follows."
+          },
+          {
+            "display": "quel",
+            "cue": "that (before il-words)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The shortened form, tracking the article the noun would take — exactly as M3's bel does. quel libro, because it is il libro."
+          },
+          {
+            "display": "preferisce",
+            "cue": "he/she prefers · you prefer (polite)",
+            "tag": "free",
+            "forms": [],
+            "note": "The third-person cell, still with the infix. Cosa preferisce? is what a waiter asks."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "quello shortens and questo does not, and that is the only difference in how they behave. Learning them as a pair is cheaper than learning quello's four shapes alone.",
+      "sound": "kwel LEE-bro. quel is one syllable and runs straight into the noun.",
+      "variations": [
+        {
+          "display": "Preferisco quello",
+          "cue": "I prefer that one",
+          "changed": "standing alone, so the full form"
+        },
+        {
+          "display": "Preferisco quella casa",
+          "cue": "I prefer that house",
+          "changed": "feminine — and it does not shorten"
+        },
+        {
+          "display": "Cosa preferisce?",
+          "cue": "Which would you prefer?",
+          "changed": "the polite question a waiter asks"
+        }
+      ],
+      "mistake": {
+        "display": "Preferisco quello libro",
+        "why": "In front of an il-word it shortens: Preferisco quel libro."
+      },
+      "usage": "Pointing at something across a counter or a room.",
+      "register": "neutral",
+      "mnemonic": "questo never shortens. quello always might."
+    },
+    {
+      "id": "L2-M9-S08",
+      "display": "Quei libri sono più cari",
+      "cue": "Those books are more expensive",
+      "literal": "Those books are more dear",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quei",
+            "cue": "those (before i-words)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural of quel, for nouns that take i — quei libri. It is bei's exact counterpart, and the article is again what chooses it."
+          },
+          {
+            "display": "quell'",
+            "cue": "that (before a vowel)",
+            "tag": "delta",
+            "forms": [
+              "quell'uomo"
+            ],
+            "note": "The elided shape, which fuses with its noun into ONE index key. quell'uomo is a single word to the engine, exactly as M3's bell'uomo is."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Four shapes again, tracking four articles — il, l', i, gli. Once the articles are known, quello and bello cost nothing extra: they are the same rule twice.",
+      "sound": "kway LEE-bree. quei is one syllable with a gliding vowel.",
+      "variations": [
+        {
+          "display": "Quel libro è più caro",
+          "cue": "That book is more expensive",
+          "changed": "singular"
+        },
+        {
+          "display": "Quell'uomo è più giovane",
+          "cue": "That man is younger",
+          "changed": "a vowel, so the elided form"
+        },
+        {
+          "display": "Quelle case sono più grandi",
+          "cue": "Those houses are bigger",
+          "changed": "feminine plural, which does not shorten"
+        }
+      ],
+      "mistake": {
+        "display": "Quelli libri sono più cari",
+        "why": "In front of an i-word it is quei: Quei libri sono più cari."
+      },
+      "usage": "Comparing things at a distance — a shelf, a menu, a display.",
+      "register": "neutral",
+      "mnemonic": "quello and bello are one rule twice."
+    },
+    {
+      "id": "L2-M9-S09",
+      "display": "Questo è più caro di quello",
+      "cue": "This one is more expensive than that one",
+      "literal": "This is more dear of that",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "questa",
+            "cue": "this one (feminine)",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine of questo, standing alone. Questa è più cara — no noun needed, because the ending says which thing is meant."
+          },
+          {
+            "display": "questi",
+            "cue": "these (masculine)",
+            "tag": "free",
+            "forms": [
+              "queste"
+            ],
+            "note": "The plurals, and neither shortens. questi libri, queste case — the article is not involved at all."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "quello is a pronoun here, so it keeps its full shape. It only ever shortens in front of a noun, and there is no noun after it in this sentence.",
+      "sound": "KWE-sto e pyoo KA-ro dee KWEL-lo. The two demonstratives frame the line.",
+      "variations": [
+        {
+          "display": "Questa è più cara di quella",
+          "cue": "This one is more expensive than that one",
+          "changed": "feminine throughout"
+        },
+        {
+          "display": "Questi sono più cari di quelli",
+          "cue": "These are more expensive than those",
+          "changed": "plural throughout"
+        },
+        {
+          "display": "Questo è meno caro di quello",
+          "cue": "This one is less expensive than that one",
+          "changed": "the opposite marker"
+        }
+      ],
+      "mistake": {
+        "display": "Questo è più caro che quello",
+        "why": "Two things compared take di: Questo è più caro di quello."
+      },
+      "usage": "Choosing between two things you can both see.",
+      "register": "neutral",
+      "mnemonic": "No noun after it, no shortening."
+    },
+    {
+      "id": "L2-M9-S10",
+      "display": "Qui si mangia meglio che a Roma",
+      "cue": "The food is better here than in Rome",
+      "literal": "Here one eats better that at Rome",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "preferisci",
+            "cue": "you prefer (to a friend)",
+            "tag": "free",
+            "forms": [],
+            "note": "The tu cell, and the last of the infix set this module shows. Cosa preferisci? is what a friend asks over a menu."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "che rather than di, because what follows is a phrase and not a noun. a Roma is a preposition plus a place, and the rule catches it exactly.",
+      "sound": "kwee see MAN-ja ME-lyo ke a RO-ma. meglio has the soft ly in the middle.",
+      "variations": [
+        {
+          "display": "Qui si mangia meglio",
+          "cue": "The food is better here",
+          "changed": "without the comparison"
+        },
+        {
+          "display": "Cosa preferisci?",
+          "cue": "Which do you prefer?",
+          "changed": "the question, to a friend"
+        },
+        {
+          "display": "Qui si mangia peggio che a Roma",
+          "cue": "The food is worse here than in Rome",
+          "changed": "the opposite verdict"
+        }
+      ],
+      "mistake": {
+        "display": "Qui si mangia meglio di a Roma",
+        "why": "A phrase takes che: Qui si mangia meglio che a Roma."
+      },
+      "usage": "The argument every Italian table eventually has.",
+      "register": "neutral",
+      "mnemonic": "A phrase after it means che."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M9-C01",
+      "display": "Roma è più grande di Milano",
+      "cue": "Rome is bigger than Milan"
+    },
+    {
+      "id": "L2-M9-C02",
+      "display": "È più bello che utile",
+      "cue": "It's more beautiful than useful"
+    },
+    {
+      "id": "L2-M9-C03",
+      "display": "È il ristorante migliore",
+      "cue": "It's the best restaurant"
+    },
+    {
+      "id": "L2-M9-C04",
+      "display": "Si mangia peggio qui",
+      "cue": "The food is worse here"
+    },
+    {
+      "id": "L2-M9-C05",
+      "display": "È il libro più bello",
+      "cue": "It's the nicest book"
+    },
+    {
+      "id": "L2-M9-C06",
+      "display": "Preferisco questo",
+      "cue": "I prefer this one"
+    },
+    {
+      "id": "L2-M9-C07",
+      "display": "Preferisco quel libro",
+      "cue": "I prefer that book"
+    },
+    {
+      "id": "L2-M9-C08",
+      "display": "Quei libri sono più cari",
+      "cue": "Those books are more expensive"
+    },
+    {
+      "id": "L2-M9-C09",
+      "display": "Questo è più caro di quello",
+      "cue": "This one is more expensive than that one"
+    },
+    {
+      "id": "L2-M9-C10",
+      "display": "Qui si mangia meglio che a Roma",
+      "cue": "The food is better here than in Rome"
+    },
+    {
+      "id": "L2-M9-C11",
+      "display": "Si mangia meglio qui",
+      "cue": "The food is better here"
+    },
+    {
+      "id": "L2-M9-C12",
+      "display": "Quale libro è più bello?",
+      "cue": "Which book is nicer?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
