@@ -629,3 +629,454 @@ is 118. The native-speaker gate is a separate and stricter bar than this review,
 132. **`हे नेहमी असं नसतं` as a refusal.** L4-M5-S09 offers "it isn't always like this" as the
      softest way to refuse a claim. Is that a real move in Marathi argument, and is नेहमी in the
      right slot — before असं, as shipped, or after it?
+
+## Wave 3 — L4-M6 through L4-M10 (#537)
+
+The level's RANGE modules — L4-M6 "Before and after", L4-M7 "Official talk", L4-M8 "Back then",
+L4-M9 "Places and journeys" and L4-M10 "A story with a twist" — authored together on 2026-09-08 and
+shipped `verified: true` in the same change, signed
+`Claude Opus 5 — LLM review, authorised by repo owner`. This wave closes hi-mr L4.
+
+Written, like waves 1 and 2, against the **real index** rather than against the briefs.
+`npm run content:owner -- hi-mr …` read `717 surfaces owned, folded over 35 modules through L4-M5`
+when the first display of L4-M6 was written and `765 surfaces owned, folded over 37 modules through
+L4-M7` by the time L4-M9 was — the tool folds the modules **authored** so far, not only the emitted
+ones, which is why a wave that ships five modules has to re-ask its questions as it goes. Every
+ownership line quoted below is that tool's output on the day.
+
+`maxSpan 1` shapes this wave as it shaped the last. Five of the six endings the level still owed —
+`-ल्यावर`, `-ताना`, `-पासून`, `-पर्यंत`, `-हून` — **weld**, so each welded form is its own single-token
+key and can be bought. The shapes that do NOT weld own no key at all and live in `rules[]` and in
+each sentence's `literal`: `करण्यात येईल`, `-ण्यास मनाई आहे`, `उभे राहावे`, `जोपर्यंत … तोपर्यंत`,
+`जेव्हा … तेव्हा`. Both halves of the correlatives are separately owned keys, but the PAIR is not,
+and no tap will ever explain the pairing — the modules say so in their rules.
+
+### L4-M6 — Before and after
+
+Two events against each other inside one sentence. Ten displays:
+
+1. `जेवल्यावर मी थोडा वेळ अभ्यास केला`
+2. `घरी आल्यावर मी लगेच चहा केला`
+3. `तो गेल्यावर आम्ही जेवलो`
+4. `ऑफिसला जाताना मी रोज गाणं ऐकतो`
+5. `काम करताना तो जास्त बोलत नाही`
+6. `सकाळपासून रात्रीपर्यंत मला वेळ नाही`
+7. `जोपर्यंत तो येत नाही तोपर्यंत आम्ही थांबतो`
+8. `मी आधीच जेवलो आहे`
+9. `मी अजून जेवलो नाही`
+10. `जेव्हा मी तिथे गेलो तेव्हा ती घरी होती`
+
+It teaches five welded endings and two frames. `-ल्यावर` (after) on the past stem, with `केल्यावर`
+and `झाल्यावर` opened as forms of S01's row and re-shown in S02's variation and pool item C11;
+`-ताना` (while), person-free, with `येताना` and `बोलताना` as forms; `-पासून` and `-पर्यंत` on TIMES
+only, with `संध्याकाळपर्यंत` and `उद्यापर्यंत` as forms of S06's second row; the correlatives
+`जोपर्यंत … तोपर्यंत` (S07, where the नाही is compulsory) and `जेव्हा … तेव्हा` (S10). And THE PERFECT,
+which `docs/50` §3 deferred out of L3-M7 without naming an owner: it lands here, as exactly the two
+frames the brief allows — `आधीच` + past + `आहे` against `अजून` + past + `नाही` — and `rules[4]` says
+in as many words that it is two frames and not a paradigm. `अजूनही` ships as a form of S09's row and
+is shown in C12. Sixteen rows, twenty-three new surfaces, cap 25.
+
+The one purchase that is not an ending is `ऑफिसला` (S04): a fresh key on the owned lexeme `ऑफिस`
+(L3-M2) — wave 1 §2's class again, and it pays for itself twice, because L4-M8's `गावाला` and
+L4-M9's `मुंबईला` are the same `-ला` and point back at it.
+
+### L4-M7 — Official talk
+
+The register a learner is spoken AT in. Ten displays:
+
+1. `तिकीट खिडकी दहा वाजता बंद करण्यात येईल`
+2. `प्रवाशांना सूचना देण्यात येत आहे`
+3. `इथे धूम्रपान करण्यास मनाई आहे`
+4. `उद्या कार्यालय बंद राहील`
+5. `कृपया रांगेत उभे राहावे`
+6. `तुमचा अर्ज उद्या स्वीकारण्यात येईल`
+7. `हे औषध इथे उपलब्ध आहे`
+8. `तुमचा क्रमांक काय आहे?`
+9. `कृपया इथे थोडा वेळ प्रतीक्षा करावी`
+10. `नोंदणी उद्या सुरू होईल`
+
+The passive lands here, ratified as this module's by `docs/48` §4 — `-ण्यात` + येणे on three verbs
+(`करण्यात`, `देण्यात`, `स्वीकारण्यात`), with the tense on येणे and never on the `-ण्यात` word. Beside
+it the three other official shapes: `-ण्यास मनाई आहे` (S03), `बंद / सुरू राहील` against `होईल` (S04
+and S10, and the pair is the module's sharpest small distinction — a state announced against a
+moment announced), and `उपलब्ध आहे` (S07). The notice optative `-आवे` is S05 and S09, with `करावे`
+and `करावी` as forms of S05's row and the gender agreement shown rather than asserted: `प्रतीक्षा` is
+feminine, so `करावी`. Every sentence carries `register: "formal"`.
+
+The Hindi interference is `rules[1]` and it is the level's sharpest register delta: `बंद केला जाईल`
+is grammatical Marathi and is not what a sign says, so S01's `mistake` is exactly that sentence.
+`rules[1]` also states the half of the rule a learner most needs — the passive is **heard, not
+spoken back**, and their own reply at the counter stays in L2-M1's तुम्ही tier.
+
+The brief asked for both `नंबर` and `क्रमांक` as two rows with a usage line splitting them, and S08
+ships them: `क्रमांक` on the hero and `नंबर` in the first variation, one row each, the notes drawing
+the line as paper against mouth. S08's `mistake` is not a grammar error at all but a register
+collision — `तुमचा क्रमांक काय आहे रे?` — which is the only kind of error this module can really make.
+
+**On the brief's inversion.** `docs/48` §4 asks for a comprehension pool *easier* than the
+production, "because that inversion is the module's shape". The pool as shipped is the ten
+announcements plus `उद्या बँक बंद राहील` and `तुमचा नंबर काय आहे?` — that is, the reading half of the
+module is exactly what the learner will meet on a wall, while the *producing* half is a much smaller
+thing (they never produce any of it; they read it and answer in L2-M1 Marathi). That is how this
+wave read the instruction, and question 141 below asks the native pass whether it read it right.
+
+### L4-M8 — Back then
+
+A stretch of past life, set against now. Ten displays:
+
+1. `पूर्वी मी रोज शाळेत जायचो`
+2. `ती रोज संध्याकाळी खेळायची`
+3. `आम्ही कधीकधी गावाला जायचो`
+4. `तेव्हा आमचं गाव खूप लहान होतं`
+5. `पूर्वी हे शहर लहान होतं, आता ते मोठं आहे`
+6. `आजी रोज गोष्ट सांगायची`
+7. `आम्ही तेव्हा आजोबांकडे राहायचो`
+8. `पूर्वी मी खूप वाचायचो, आता वेळ नाही`
+9. `तेव्हा हे काम सोपं असायचं`
+10. `पूर्वी मी लवकर उठायचो, पण आता नाही`
+
+The past habitual `-आयच-` on seven verbs — `जायचो`, `खेळायची`, `सांगायची`, `राहायचो`, `वाचायचो`,
+`असायचं`, `उठायचो` — with `जायचे`, `खेळायचो`, `सांगायचे`, `राहायची`, `असायची`, `असायचे` as forms. The
+past STATE beside it needs no morphology at all (S04, S05, S09 lean on L3-M3's `होतं`/`होता`/`होती`
+and L4-M5's `नव्हती`), and the then-against-now frame is S05, S08 and S10. `rules[1]` is the clean
+interference the brief promised: Hindi's `जाता था` is two words on the same participle as `जाता है`,
+so a Hindi speaker reaches for `मी जातो होतो`; S01's `mistake` is that exact sentence.
+
+**The paradigm hole is real and it is honoured.** See seam 17 below: `जायची` is L2-M4's, so the
+feminine cell of जाणे is simply missing from S01's `forms` — `["जायचो", "जायचे"]`, no third — and the
+feminine is shown on other verbs instead (`खेळायची`, `सांगायची`, `राहायची`). S01's note names the
+gap, `rules[4]` explains it, and S03's `mistake` is `आम्ही कधीकधी गावाला जायचं`, which is precisely
+the cell a learner would reach into.
+
+### L4-M9 — Places and journeys
+
+One trip end to end. Ten displays:
+
+1. `मी काल पुण्याहून मुंबईला गेलो`
+2. `आम्ही सकाळी लवकर घरून निघालो`
+3. `मी दहा वाजता तिथे पोहोचलो`
+4. `मी स्टेशनवर उतरलो आणि बसमध्ये चढलो`
+5. `घरापासून स्टेशनपर्यंत फक्त दहा मिनिटं आहेत`
+6. `तिथून सरळ जा, मग डावीकडे वळा`
+7. `हा प्रवास खूप छान होता`
+8. `आम्ही ट्रेनने मुंबईहून पुण्याला आलो`
+9. `आम्ही सकाळी लवकर निघालो. किल्ल्यावर आल्यावर आम्ही थांबलो. रात्री घरी आलो.`
+10. `हा रस्ता समुद्रापर्यंत जातो`
+
+One ending and no new tense. `-हून` as the SOURCE OF A MOTION (`पुण्याहून`, `मुंबईहून`, `घरून`,
+`तिथून`) against `-पासून` as ONE END OF A STRETCH (`घरापासून … स्टेशनपर्यंत`), stated in exactly those
+terms in `rules[0]` and `rules[1]`, with the Hindi `से` collapse as `rules[2]` and S01's `mistake`
+(`मी काल पुण्यापासून मुंबईला गेलो`). S05's `mistake` runs the split the other way —
+`घरून स्टेशनपर्यंत` — because `-पर्यंत`'s partner is `-पासून`, never `-हून`, and a learner who has
+absorbed only half the rule will make that one. S08 puts both Hindi `से`s in one Marathi sentence
+and splits them into two different endings: `ट्रेनने` (means, L2-M4's `-ने`) and `मुंबईहून` (place).
+
+The journey verbs are ordinary L1-M5 pasts and cost no grammar: `निघालो`, `पोहोचलो`, `उतरलो`, `चढलो`,
+each taught with the postposition it takes (`rules[3]`, S04). S06 re-shows L2-M4's directions
+unchanged and buys only `तिथून`. S09 is the trip told whole — three sentences, `-ल्यावर` re-shown
+from L4-M6, nothing new but `किल्ल्यावर`.
+
+### L4-M10 — A story with a twist
+
+Six-sentence narratives with one quoted line. Ten displays (each an account; the quoted line is
+inside it):
+
+1. `काल मी ऑफिसला जाताना स्टेशनवर थांबलो. … अचानक तो म्हणाला, "मी अजून जेवलो नाही." मग आम्ही जेवायला गेलो.`
+2. `काल मी सकाळी लवकर घरून निघालो. … अचानक माझा मित्र म्हणाला, "आज कार्यालय बंद राहील." मग मी लगेच घरी आलो.`
+3. `काल सकाळी मी ऑफिसला गेलो. … अचानक एक सूचना आली, "आज नोंदणी बंद राहील." शेवटी मी घरी आलो.`
+4. `परवा आम्ही बसने मुंबईहून पुण्याला आलो. … अचानक माझी आई म्हणाली, "माझा फोन अजून बसमध्ये आहे." पण तोपर्यंत बस गेली.`
+5. `पूर्वी आजी रोज गोष्ट सांगायची. … काल रात्री तिने विचारलं, "तुला अजून आठवतं का?" … शेवटी तिने मला ती गोष्ट पुन्हा सांगितली.`
+6. `काल मला खूप ताप आला. तरी मी सकाळी ऑफिसला गेलो. अचानक माझा मित्र म्हणाला, "तू आज घरी जा." … आता मला खूप बरं आहे.`
+7. `पूर्वी आमचं गाव खूप लहान होतं. … अचानक आजोबा म्हणाले, "पूर्वी इथे काम नव्हतं." मला असं वाटतं की ते खरं आहे.`
+8. `काल संध्याकाळी मी स्टेशनवर थांबलो. … अचानक त्याने फोन केला आणि म्हणाला, "मी आधीच घरी पोहोचलो." शेवटी मी लगेच घरी आलो.`
+9. `काल खूप पाऊस होता म्हणून मी घरी थांबलो. … अचानक माझी आई म्हणाली, "तुझं जेवण अजून इथे आहे." … शेवटी मी रात्री जेवलो.`
+10. `काल मी शाळेत गेलो. तिथे मला आजी भेटली. ती पूर्वी तिथे राहायची. अचानक मी तिला विचारलं, "तुमचा नंबर काय आहे?" शेवटी तिने मला तिचं नाव सांगितलं.`
+
+Every account is five sentences, one under the six-sentence ceiling, and every one carries exactly
+one quoted line. **The new-word spend is one: `अचानक`.** Everything else in all ten accounts is a
+surface some earlier module owns, which is why nine of the ten word rows are consolidation rows in
+L3-M10's shape — an owned lexeme given a note about what it does *inside an account* rather than in
+a sentence. They are listed as re-teaches by `content:shown` and that is the intended outcome; see
+the ratchet below.
+
+The device is direct speech, and `rules[1]` states the no-backshift law: the quoted line stands in
+the tense it was spoken in while the narration stays past. S04 is where that bites — the mother says
+`माझा फोन अजून बसमध्ये आहे` inside a story told entirely in the past, and S04's `mistake` is the same
+line with `होता`, which is what a learner who has been taught English sequence-of-tenses will write.
+S01's `mistake` goes the other way: it converts the quote into L3-M5's `की` report *and* backshifts.
+
+Register is the module's own interference (`rules[4]`) and S10 is built for it: an `आजी` met at a
+school gate is `तुमचा` in the fifth sentence as much as in the first, and S06's `mistake` is the
+opposite slip (a friend addressed as `तुम्ही`). The two `mistake` rows are a matched pair.
+
+## Seams — what `content:owner` said, wave 3
+
+Numbering continues from wave 2's §12.
+
+### 13. The index seam's HEADLINE is stale in every brief, and it moves during the wave
+
+`docs/48`-era briefs describe the fold as "N surfaces through L3-M10". The tool said:
+
+```
+717 surfaces owned, folded over 35 modules through L4-M5     (before L4-M6 was written)
+765 surfaces owned, folded over 37 modules through L4-M7     (before L4-M9 was written)
+```
+
+Two things follow, and the second is the one a future wave will get wrong. First, the fold is much
+deeper than any brief says. Second, **`content:owner` folds the modules that have been AUTHORED, not
+only the ones that have been emitted**, so inside a five-module wave the answer to "is this free?"
+changes as the wave proceeds. Every query in this wave was re-run at the module that needed it, and
+`ऑफिसला`, `गावाला`, `मुंबईला` were bought in that order on purpose: each is the same `-ला` and each
+later row points back at the earlier one rather than re-opening the cell.
+
+### 14. `नेहमी → L4-M5`, one module old, and L4-M8's brief lists it as fresh
+
+```
+नेहमी	L4-M5
+कधीकधी	free
+रोज	L1-M4
+```
+
+L4-M8's brief puts `नेहमी` in its "Fresh" list. It is not free — L4-M5-S09 bought it (`हे नेहमी असं
+नसतं`, wave 2's question 132) — so this module bought `कधीकधी` instead, which is genuinely free and
+does the job the module actually needed (an intermittent habit rather than an invariable one). This
+is the same class as wave 2's §8 (`मिळालं` free while `मिळाली` owned): a brief written before the
+previous wave landed cannot know what that wave spent.
+
+### 15. `रस्ता → L4-M2` and `तिकीट → L4-M3`, both listed as fresh keys by L4-M9's brief
+
+```
+रस्ता	L4-M2
+तिकीट	L4-M3
+प्रवास	free
+```
+
+Both were bought by wave 1 and wave 2 respectively. Neither needed a row here: L4-M9-S10 re-shows
+`रस्ता` under a `समुद्रापर्यंत` row, and L4-M7-S01 re-shows `तिकीट` under a `खिडकी` row. Had either
+been given a row it would have been an unreachable one, resolving to the earlier module's note.
+
+### 16. L4-M7's two flagged claims BOTH held, exactly as the brief predicted
+
+The brief asked for two specific re-checks against `docs/50` §4 and got a yes on both:
+
+```
+अर्ज	free
+कागद	L3-M8
+भरलं	L2-M5
+भरला	L2-M5
+भरली	L2-M5
+पोट	L2-M5
+```
+
+`अर्ज` was briefed for L3-M8 and never authored into a row, so it was available and L4-M7-S06 took
+it. And the भरणे family is L2-M5's (Food and hosting — `पोट भरलं`), not L2-M8's as `docs/50` §4
+assigned it. The lesson generalises: a brief's ownership claim is a claim about a brief, and only
+the emitted index is a claim about the content.
+
+### 17. L4-M8's sharpest seam held, and it forces a deliberate HOLE in a paradigm
+
+```
+जायचं	L2-M4
+जायचा	L2-M4
+जायची	L2-M4
+जायचो	free
+जायचे	free
+करायचो	free   करायची	free   करायचे	free
+खेळायचो	free   खेळायची	free
+राहायचो	free   राहायची	free
+असायचं	free   असायची	free   असायचे	free
+```
+
+L2-M4-S01 owns `जायचं` with `जायचा` and `जायची` as its forms, under an IMPERSONAL note
+(`कसं जायचं?`). So L4-M8-S01's `forms` list is `["जायचो", "जायचे"]` and stops there. This is en-it
+L4-M3's `sarei`/`sarebbe` problem in Devanagari: a complete-looking `-आयच-` paradigm on जाणे would
+have swallowed three cells L2-M4 holds, and a learner tapping `ती रोज शाळेत जायची` would have been
+shown a note that is false of the sentence in front of them — review 08 correction 4's का bug,
+repeated. Every other verb's `-आयच-` cells are unspent, which is why the feminine is taught on
+`खेळणे`, `सांगणे` and `राहणे` instead.
+
+### 18. `असं → L3-M3`, not L3-M5 — L4-M10's against-instinct check, confirmed
+
+```
+असं	L3-M3
+म्हणाला	L3-M5   म्हणाली	L3-M5   म्हणालो	L3-M5   म्हणाले	L3-M5
+विचारलं	L3-M5
+```
+
+`docs/50` §4 and the L3-M5 brief both call `असं` a fresh key of L3-M5. The index says L3-M3, and
+L4-M10-S07's row says so in its note, so a reader who arrives from the briefs is corrected at the
+row rather than left to find the contradiction. The quoted-line device points at L3-M3's row.
+
+### 19. `पूर्वी` and `तेव्हा` were assigned to L4-M6 by L4-M8's brief; the index said free, and this
+wave split them
+
+```
+पूर्वी	free
+तेव्हा	free
+जेव्हा	free
+```
+
+L4-M8's brief lists both under "Owned: `पूर्वी → L4-M6`, `तेव्हा → L4-M6`". Neither was owned by
+anything when this wave began, so the assignment was a prediction, not a fact — and only half of it
+survived contact with the displays. **`तेव्हा` is L4-M6's**, because M6's `जेव्हा … तेव्हा` correlative
+needs it and buys `जेव्हा` beside it. **`पूर्वी` is L4-M8's**, because L4-M6 had no display that
+wanted it: M6 is about two events inside one sentence and `पूर्वी` is about a stretch of former life,
+which is precisely L4-M8's `पूर्वी … आता` frame. L4-M8 therefore buys `पूर्वी` and re-shows `तेव्हा`,
+and L4-M10 re-shows both. A future reader of the briefs should take the index, not the prediction.
+
+### 20. The proper-noun exemption does NOT reach `tools/check-shown.ts`, and L4-M9 is the module
+that would have found out
+
+```
+पुणे	free
+मुंबई	free
+पुण्याहून	free   मुंबईहून	free   पुण्याला	free   मुंबईला	free
+किल्ला	free   किल्ल्यावर	free   समुद्र	free   समुद्रापर्यंत	free
+```
+
+`#61` exempts proper nouns from the index in the sense that nobody has to buy them — but nothing
+exempts them from `SHOWN-BUT-UNTAUGHT`, and `tools/shown-surfaces.test.ts`'s own header lists
+`प्रिया`, `mumbai` and `thomas` among the findings its baselines hold. A bare `पुणे` in an L4-M9
+display would therefore have RAISED hi-mr's baseline, which this wave may not do. So **no display in
+L4-M9 contains a bare place name.** Every place name that appears carries an ending and has a row:
+`पुण्याहून`, `मुंबईहून`, `पुण्याला`, `मुंबईला`. That is the brief's own trap (`दिवाळीत`, `docs/50` §4)
+turned into a rule of thumb: at L4 a proper noun is affordable only when something is welded to it.
+The same reasoning bought `किल्ल्यावर` (with `किल्ला` as its form) and `समुद्रापर्यंत` (with `समुद्र`),
+because the stem change — `किल्ला → किल्ल्या-`, `समुद्र → समुद्रा-`, `पुणे → पुण्या-` — is the thing
+worth teaching and it only shows on the welded form.
+
+### 21. `तुम्ही → L1-M2`, while the register LAW is L2-M1's
+
+```
+तू	L1-M2
+तुम्ही	L1-M2
+कृपया	L2-M1
+धन्यवाद	L2-M1
+```
+
+L4-M7's and L4-M10's briefs both refer the tier question to "L2-M1's tiers", and that is right about
+the *rule*; but the *keys* are L1-M2's, bought before any tier rule existed. L4-M10-S10's row is
+therefore a re-teach of an L1-M2 key carrying an L2-M1 law, and its note says which is which. A
+module that had assumed the key was L2-M1's and written a row for it would have been unreachable.
+
+### 22. Three of this wave's five central shapes own no key, again
+
+`maxSpan 1` means `करण्यात येईल`, `-ण्यास मनाई आहे`, `उभे राहावे`, `जोपर्यंत … तोपर्यंत` and
+`जेव्हा … तेव्हा` are all multi-token and therefore unindexable. Each half is a key and the pairing is
+not, so tapping `जोपर्यंत` explains `जोपर्यंत` and never explains that its `नाही` is compulsory. That
+sentence lives in `L4-M6 rules[3]`, `L4-M7 rules[0]` and `rules[2]`, and each module says so — the
+same disclosure wave 2 made for `पाहिजे होतं` and `खरं तर`.
+
+## The ratchet
+
+`tools/shown-surfaces.test.ts` holds hi-mr at **7**, and this wave leaves it at 7. All five new
+modules are clean:
+
+- `npm run content:shown -- hi-mr L4-M6` → `L4-M6: clean — every shown surface resolves`
+- `npm run content:shown -- hi-mr L4-M7` → `L4-M7: clean — every shown surface resolves`
+- `npm run content:shown -- hi-mr L4-M8` → `L4-M8: clean — every shown surface resolves`
+- `npm run content:shown -- hi-mr L4-M9` → `L4-M9: clean — every shown surface resolves`
+- `npm run content:shown -- hi-mr L4-M10` → `L4-M10: clean — every shown surface resolves, 21
+  re-teach(es) reported above`
+
+No `SHOWN-BUT-UNTAUGHT` and no `COLLIDES INSIDE THIS MODULE` anywhere in the wave. Fifty hero
+displays (nine of them multi-sentence accounts), a hundred variation displays and sixty
+comprehension items all resolve.
+
+**The 21 re-teaches are all L4-M10's and all deliberate.** M6 through M9 report none. M10 spends one
+new word by design (`अचानक`, `docs/48` §4's ceiling of one, matching L3-M10's single `गेली`), and
+`tools/validate.ts` requires every sentence to carry at least one word row — so nine of its ten rows
+are consolidation rows on owned keys, which is exactly the shape L3-M10 shipped in (`आधी`, `भेटलो`,
+`म्हणून`, `होते`, `भरला`, `उठून`, `म्हणाला`, `जर`, `गेलो`, `गेलास`). The rows are
+`म्हणाला`, `शेवटी`, `जेव्हा`, `विचारलं`, `तरी`, `असं`, `त्याने`, `म्हणून`, `तुम्ही`, and each is kept
+because its account genuinely turns on that word: S02 and S05 on who is speaking and which form
+म्हणणे/विचारणे takes, S03 on where `शेवटी` may stand, S04 on the correlative holding two clauses of a
+trip together, S06 on the concession that makes the story a story, S08 on `ने` inside a narrative,
+S09 on `कारण` against `म्हणून`, S10 on the tier. None of them collides inside the module — ten
+distinct keys, ten distinct notes — so the deliberate-repeat exception (equal notes) was not needed
+anywhere in this wave.
+
+The baseline was not lowered and could not have been: all seven findings are in hi-mr L1
+(`थोडं`, `भाजी`, `पाच`, `झाले` taught later; `प्रिया`, `पुणं`, `बोललो` never taught — `docs/52`), a
+level never edits a file below it, and first occurrence wins forward rather than backward. `बोललो`
+in particular is still free and this wave did not buy it, even though three of L4-M10's accounts
+could have used it — `म्हणाला` did the work instead.
+
+`npm run content:validate` → `CONTENT 358/358 ok` (the total climbs while the nine sibling waves
+land; it read 358 when these five files first passed together).
+`npx vitest run tools/shown-surfaces.test.ts` → `Tests 11 passed (11)`.
+`npx vitest run src/course/types.test.ts` read `3 failed | 376 passed (379)`, and all three failures
+belong to other waves: the module census at line 191 (the parent's — it expects 354 and the tree
+holds 359), the en-ar file count at line 598 (39 expected, 40 present), and an en-ko word row whose
+`note` is undefined at line 1029. Every course law in that file passes for all five new modules.
+
+One note on the tooling, for whoever reads this next: `tools/check-shown.ts` was transiently
+un-parseable in the shared checkout part-way through this wave (an unbalanced brace in another
+wave's in-progress edit around line 182), so the middle of this wave was checked by running a
+pristine `git show HEAD:tools/check-shown.ts` copy out of the scratchpad. Every result quoted above
+was re-run and reproduced with the repaired `npm run content:shown` before this section was written.
+
+## Open questions for a native pass — hi-mr L4 wave 3
+
+Continuing the chain in `docs/85-hi-mr-L4-brief-decisions.md` and waves 1 and 2 above, whose last
+number is 132. The native-speaker gate is a separate and stricter bar than this review, and it is
+unmet.
+
+133. **`जेवल्यावर` against `जेवून` for the same two events.** L4-M6-S02's `mistake` refuses
+     `घरी येऊन मी लगेच चहा केला` on the ground that L3-M1's `-ऊन` compresses two steps into one breath
+     while `-ल्यावर` puts a gap between them. Is that gap real in speech, or would a Pune speaker use
+     `येऊन` for this sentence and keep `-ल्यावर` for longer intervals?
+134. **The compulsory `नाही` in the `जोपर्यंत` half.** L4-M6-S07 ships
+     `जोपर्यंत तो येत नाही तोपर्यंत आम्ही थांबतो` and `rules[3]` calls the नाही obligatory. Is
+     `जोपर्यंत तो येईपर्यंत` or a नाही-less `जोपर्यंत` ever heard, and is `तोपर्यंत` really never
+     dropped in speech the way Hindi drops तब तक?
+135. **`मी आधीच जेवलो आहे` against `मी जेवलोय`.** The module ships the full perfect in both frames.
+     Does a speaker in Pune contract it — `जेवलोय`, `आलोय` — often enough that a learner who never
+     hears the long form will be confused, and if so does that belong in a variation or a `sound`
+     line rather than in a hero?
+136. **`सकाळपासून` against `सकाळी पासून`.** S06's `mistake` refuses the spaced form outright. Is the
+     welded spelling genuinely the only one in print, and is the same true of `रात्रीपर्यंत`?
+137. **`करण्यात येईल` against `केला जाईल` — how sharp is the register line really?** L4-M7 stakes
+     three displays and two `mistake` rows on the claim that the जाईल passive is grammatical but
+     never appears on a sign. Is that true of *spoken* announcements too (a station PA, a bank
+     clerk), or only of printed notices?
+138. **`राहील` against `होईल` for an announced state.** S04 and S10 are built as a matched pair —
+     `बंद राहील` (stays closed) against `सुरू होईल` (starts). Is `बंद होईल` ever what a notice says,
+     and would a Marathi reader hear S04's `mistake` as wrong or merely as odd?
+139. **`प्रतीक्षा करावी` against `प्रतीक्षा करावी लागेल` / `थांबावे`.** S09 ships the bare optative.
+     Is `कृपया इथे प्रतीक्षा करावी` the form actually printed, or is `कृपया थोडा वेळ थांबावे` the more
+     usual notice — and if both, which is the office and which the station?
+140. **`क्रमांक` against `नंबर` in speech.** S08's row claims a speaker saying `क्रमांक` sounds like an
+     office. Is that right, or does `क्रमांक` survive in ordinary speech in some collocations
+     (`घर क्रमांक`, `गाडी क्रमांक`) where `नंबर` would sound wrong?
+141. **The comprehension/production inversion, as this module read it.** `docs/48` §4 asks L4-M7's
+     pool to be "easier than the production". This wave shipped the pool as the announcements
+     themselves, on the reading that a learner recognises far more of this register than they can
+     produce. Is that the intended reading, or was the brief asking for a pool of the learner's OWN
+     replies (`माझा क्रमांक तीन आहे`, `मी रांगेत आहे`) instead?
+142. **`ती जायची` — how badly does the missing cell hurt?** L4-M8 cannot show the feminine habitual
+     of जाणे at all (seam 17), so a learner meets `ती खेळायची` and `ती राहायची` but never
+     `ती शाळेत जायची`, which is the single most likely sentence they will want to say. Is the gap
+     survivable, or does L5 need to buy `जायची` back with a note that overrides L2-M4's?
+143. **`असायचं` against `असायचा`/`होतं` for a habitual state.** L4-M8-S09 ships
+     `तेव्हा हे काम सोपं असायचं` and draws `होतं` = was, `असायचं` = used to be. Is `असायचं` common in
+     speech, or is it a form a Marathi speaker would recognise but rarely produce, preferring
+     `तेव्हा हे काम सोपं होतं` and letting `तेव्हा` carry the habituality?
+144. **`आजोबा` as an honorific plural.** L4-M8-S06's variation writes `आजोबा रोज गोष्ट सांगायचे` and
+     the note says आजोबा always takes the plural. Is that invariable, or does a grandchild speaking
+     casually say `आजोबा सांगायचा`?
+145. **`घरून` against `घरापासून`, and whether the split is as clean as `rules[0]`–`rules[1]` say.**
+     L4-M9 stakes the whole module on source-of-motion versus one-end-of-a-stretch. Is there a
+     sentence where both are acceptable with a difference only of nuance, and does `घरापासून निघालो`
+     really sound wrong or merely bookish?
+146. **`प्रवास` as masculine, against Hindi's feminine `यात्रा`.** L4-M9-S07's `mistake` is
+     `ही प्रवास … होती`. Is `प्रवास` invariably masculine in Marathi, and is `सहल` the word a speaker
+     would reach for for a day trip like S09's?
+147. **`अचानक` as the twist's only word, and `अखेर` left on the shelf.** The brief said take `अचानक`
+     and leave `अखेर` because `शेवटी` (L2-M10) already closes a story. Does `अचानक` carry the whole
+     job of the English "and then, out of nowhere", or does a Marathi story-teller more often use
+     `तेवढ्यात` or `इतक्यात` at that hinge — and if so, is the module's one word the wrong one?
+148. **The quoted line's punctuation.** All ten accounts use straight double quotes around the
+     spoken line and a full stop inside them. Is that the convention Marathi print uses, or should
+     the mark be `'…'`, and does the danda belong anywhere in a course that has otherwise settled on
+     the full stop?
