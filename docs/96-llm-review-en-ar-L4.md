@@ -907,7 +907,7 @@ variation and given no row, so the learner's tap reaches the first-teach note.
 
 ## The ratchet
 
-- `npm run content:validate` → **`CONTENT 358/358 ok`**, whole-tree green with the five new files
+- `npm run content:validate` → **`CONTENT 360/360 ok`**, whole-tree green with the five new files
   listed as `en-ar/L4-M6.json ok`, `en-ar/L4-M7.json ok`, `en-ar/L4-M8.json ok`,
   `en-ar/L4-M9.json ok` and `en-ar/L4-M10.json ok`. The denominator moves while the other eight
   courses' waves land beside this one; what matters is the shape of the line and that no file in it
@@ -921,10 +921,11 @@ variation and given no row, so the learner's tap reaches the first-teach note.
   **6**; no baseline was raised and none was lowered — this wave fixed no pre-existing finding and
   added none. Every `variations[].display` and every one of the sixty pool items resolves.
 
-`src/course/types.test.ts` is red only on census assertions, all of them the parent's: `finds all
-354` (now 358), the en-ar count (expects 39, finds 40) and the en-ko romanization case, which is
-another course's. The en-ar count guards the language-law walk below it and vitest aborts the case
-there, so **the en-ar law was re-run by hand over all five modules**: no sentence, word, `forms`
+`src/course/types.test.ts` went red mid-wave on census assertions only — `finds all 354` against 358
+files, and the en-ar count expecting 39 against 40 — both of them the parent's to move as the nine
+waves land, and both moved before the wave closed: the file finishes at **381 passed (381)**. Because
+the en-ar count guards the language-law walk below it and vitest aborts the case there, **the en-ar
+law was also re-run by hand over all five modules** while that assertion was red: no sentence, word, `forms`
 entry, variation, mistake or pool `display` carries an Arabic character, and every one of those
 surfaces carries a `script` line that does. Every teaching field — `rules[].text`, word `note` and
 `cue`, `trap`, `sound`, `variations[].changed`, `mistake.why`, `usage`, `mnemonic`, `literal`,

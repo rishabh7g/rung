@@ -760,7 +760,7 @@ One trip end to end. Ten displays:
 6. `तिथून सरळ जा, मग डावीकडे वळा`
 7. `हा प्रवास खूप छान होता`
 8. `आम्ही ट्रेनने मुंबईहून पुण्याला आलो`
-9. `आम्ही सकाळी लवकर निघालो. किल्ल्यावर आल्यावर आम्ही थांबलो. रात्री घरी आलो.`
+9. `आम्ही सकाळी लवकर निघालो. किल्ल्यावर आल्यावर आम्ही थांबलो. रात्री आम्ही घरी आलो.`
 10. `हा रस्ता समुद्रापर्यंत जातो`
 
 One ending and no new tense. `-हून` as the SOURCE OF A MOTION (`पुण्याहून`, `मुंबईहून`, `घरून`,
@@ -1002,13 +1002,15 @@ level never edits a file below it, and first occurrence wins forward rather than
 in particular is still free and this wave did not buy it, even though three of L4-M10's accounts
 could have used it — `म्हणाला` did the work instead.
 
-`npm run content:validate` → `CONTENT 358/358 ok` (the total climbs while the nine sibling waves
-land; it read 358 when these five files first passed together).
+`npm run content:validate` → `CONTENT 360/360 ok` (the total climbs while the nine sibling waves
+land; it read `CONTENT 358/358 ok` when these five files first passed together).
 `npx vitest run tools/shown-surfaces.test.ts` → `Tests 11 passed (11)`.
-`npx vitest run src/course/types.test.ts` read `3 failed | 376 passed (379)`, and all three failures
-belong to other waves: the module census at line 191 (the parent's — it expects 354 and the tree
-holds 359), the en-ar file count at line 598 (39 expected, 40 present), and an en-ko word row whose
-`note` is undefined at line 1029. Every course law in that file passes for all five new modules.
+`npx vitest run src/course/types.test.ts` → `Tests 381 passed (381)`. When these five files first
+landed it read `3 failed | 376 passed (379)` and all three failures belonged to other waves — the
+module census at line 191 (the parent's, expecting 354 against a tree holding 359), the en-ar file
+count at line 598 (39 expected, 40 present), and an en-ko word row whose `note` was undefined at
+line 1029. Once those censuses caught up the file was green. Every course law in it passes for all
+five new modules.
 
 One note on the tooling, for whoever reads this next: `tools/check-shown.ts` was transiently
 un-parseable in the shared checkout part-way through this wave (an unbalanced brace in another

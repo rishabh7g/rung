@@ -521,3 +521,377 @@ placement and force of `ved'` and `zhe`, and `da net`; these do not restate them
     `soglasítes'`, `podúmayte`, `sovsém`, `znáyete`, `znáyu`, `znat'`, `vryad li`, `da net`,
     `vozmózhno`, `boyús'`, `ládno`, `soglasílsya`, `soglasílas'`, `spórit'`, `prósto`. A slip here is
     a second key with no note behind it.
+
+## Wave 3 — L4-M6 through L4-M10 (#557)
+
+The level's closing five, authored against the briefs in `tools/course-briefs.ts` and the decisions
+in `docs/89`. The index this wave was written against is the real, emitted one:
+`public/content/en-ru/index/`, whose deepest file is now **`L4-M5.json` — 873 surfaces folded over
+35 modules, `cumulativeThrough` L1-M1..L4-M5, `maxSpan` 3**. Wave 1 wrote against 785 surfaces
+through L3-M10 and Wave 2 against 819 through L4-M2; every seam claim below was therefore checked
+against `npm run content:owner` rather than reasoned out, and the tool's own footer —
+`873 surfaces owned, folded over 35 modules through L4-M5` — is what "today" means in this section.
+Nothing below L4 was touched, and no other course was touched. The course's laws carry unchanged:
+romanized `display`, Cyrillic on the quiet `script` line, a precomposed acute on every polysyllable,
+`vy` as the default register. No surface this wave opens spans more than three tokens, so `maxSpan`
+stays at 3 for the fifth level running.
+
+### L4-M6 "Before and after" — the until that is spelt while-not
+
+Ten displays:
+
+1. `Poká ya rabótayu, oná chitáyet knígu.`
+2. `Podozhdíte, poká ya ne vernús'.`
+3. `Poslé tovó kak on ushyól, ya pozvoníla Ánne.`
+4. `Péred tem kak otvétit', podúmayte.`
+5. `Ya zdes' s utrá, i óchen' ustál.`
+6. `Ya zhdu vas uzhé chas.`
+7. `Oná yeshchyó ne prishlá, i ya bespokóyus'.`
+8. `Ya uzhé ne zhivú v Moskvé.`
+9. `S tekh por on ne zvoníl.`
+10. `Ya pozvonyú vam poslé obéda, chérez dva chasá.`
+
+What it teaches: the time CLAUSE, so two events can be pinned to each other instead of to the clock.
+The item the module exists for is that RUSSIAN'S UNTIL IS WHILE-NOT — `poká` is while and takes the
+imperfective on both sides, `poká ne` is until and takes the perfective, and the `ne` negates
+nothing at all. Rule 1 is the interference plate for it, and S02's mistake is the sentence a learner
+writes when they distrust the `ne`. The aspect half of that is a re-use, not a new law: it is
+L2-M10's rule read off a clause. Three further deltas: Russian has NO PERFECT, so `Ya zhdu vas uzhé
+chas` is a plain present plus an adverb (S05, S06); English *since* splits by what follows it, `s`
+plus the genitive for a point (`s utrá`) against `s tekh por` for a stretch (S05, S09); and
+`uzhé` / `uzhé ne` / `yeshchyó ne` are three meanings built from two words apiece, each learnt whole
+(S06, S07, S08). Where English is free, and it is said so: `poslé tovó kak` and `péred tem kak` sit
+exactly where *after* and *before* sit, with L3-M3's comma unchanged. Twenty new surfaces against a
+cap of 25.
+
+### L4-M7 "Official talk" — three ways to say a thing with no doer
+
+Ten displays:
+
+1. `Sevódnya zakrýto, a závtra otkrýto.`
+2. `Zdes' zapreshchenó kurít'.`
+3. `Vam pozvonyát závtra útrom.`
+4. `Zdes' ne kúryat — éhto zapreshchenó.`
+5. `Póyezd otpravlyáyetsya v sem' chasóv.`
+6. `Magazín zakryváyetsya v vósem'.`
+7. `Uvazháyemye passazhíry, póyezd pribyváyet chérez chas.`
+8. `Vnimániye, vkhod zdes', a výkhod tam.`
+9. `Prostíte, éhto mésto zányato.`
+10. `Prósim vas ne kurít' na stántsii.`
+
+What it teaches: the Russian aimed at nobody in particular, which is most of the Russian a visitor
+meets and none of the Russian L1-L3 taught. Rule 0 puts the three devices in one place because they
+answer one question — the short-form participle as the whole predicate (`zakrýto`, `otkrýto`,
+`zányato`, `zapreshchenó`), the reflexive passive (`otpravlyáyetsya`, `zakryváyetsya`, which is
+L3-M1's `-sya` doing a third job and points back rather than re-teaching the ending), and the bare
+third-person plural (`pozvonyát`, `kúryat`, `govoryát`). Rule 1 is the interference: English reaches
+for a passive and Russian's commonest answer contains none, so S03's mistake plate is the invented
+`Vy búdete pozvóneny` and S04's is the sentence with `oní` put back in. The participles are shipped
+as a WORD LIST and rule 2 says so — no participle machine here, which stays L5's — and it carries
+the stress warning the brief asked for, `zakrýto` and `zányato` front-heavy against `zapreshchenó`
+end-heavy. Register is `formal` on all ten, per `docs/56` §3. Half the plates are recognition rather
+than production, and the `usage` lines say which. Twenty-two new surfaces against a cap of 25.
+
+### L4-M8 "Back then" — the case that only appears once there is a verb
+
+Ten displays:
+
+1. `Ránshe ya zhil v Moskvé, a tepér' ya zhivú zdes'.`
+2. `Kogdá ya byl studéntom, ya mnógo chitál.`
+3. `Moy brat stal vrachóm.`
+4. `Oná stála inzhenérom, a ya ostálsya studéntom.`
+5. `Ya ból'she ne rabótayu tam, a tepér' otdykháyu.`
+6. `On vsyó yeshchyó rabótayet v Moskvé.`
+7. `V détstve ya chásto khodíl v kinó.`
+8. `Vsyó izmenílos', no ya vsyó yeshchyó zdes'.`
+9. `Kogdá ya byl málen'kim, my zhíli v Índii.`
+10. `Ránshe on byl studéntom, a tepér' on stal nachál'nikom.`
+
+What it teaches: THEN held against NOW inside one turn, and the INSTRUMENTAL PREDICATE that the
+past tense drags in with it. Rule 0 states it as a fact rather than a mnemonic — with `byt'` and
+`stat'` the complement stands in the instrumental when the state is bounded in time, and the present
+has no verb to trigger it, which is why L1-M5's empty present cell never showed this. S10 carries
+both halves in one sentence (`byl studéntom` … `stal nachál'nikom`), which is the tidiest available
+proof that the case belongs to the verb and not to the noun; S09 extends it to an adjective
+(`byl málen'kim`). The past side of the module is deliberately all imperfective, so with aspect held
+still the case ending is the only thing moving. Rule 1 names the simplification English speakers
+brace against: three English past habituals, one Russian imperfective past plus `ránshe`. Fifteen
+new surfaces against a cap of 25 — the lowest of the wave, because the module's work is a case
+rather than a vocabulary.
+
+### L4-M9 "Places and journeys" — the fork English does not have, twice
+
+Ten displays:
+
+1. `Ya yézzhu v Moskvú kázhdyy god.`
+2. `Sevódnya ya yédu v Moskvú.`
+3. `Vcherá ya khodíl v magazín.`
+4. `Ya khozhú na rabótu peshkóm kázhdyy den'.`
+5. `Ya lyublyú yézdit' na póyezde.`
+6. `On poyékhal tudá vcherá i yeshchyó ne vernúlsya.`
+7. `Doyédete do stántsii, potóm poverníte nalévo.`
+8. `Vam nádo peresést' na avtóbus.`
+9. `Peresádka na metró, a obrátno mózhno peshkóm.`
+10. `Otsyúda avtóbus idyót do ploshchadi.`
+
+What it teaches: DETERMINATE against INDETERMINATE, which no other course in this repo has to carry.
+`idtí` / `khodít'` and `yékhat'` / `yézdit'` are two imperfectives for one English verb, and the
+split is neither tense nor aspect. The fact that decides whether a learner is understood is rule 1,
+THE INDETERMINATE PAST IS A RETURN TRIP: S03 is `Vcherá ya khodíl v magazín`, went and came back,
+and its mistake plate is `Vcherá ya poshyól v magazín`, which sets off and leaves the speaker there.
+Rule 3 pays back L3-M10 at no cost: a prefix on the DETERMINATE stem makes a perfective, which is
+what `ushyól`, `prishyól`, `priyékhal` and this module's `poyékhal` have been doing all along — a
+memorised list turned into a system in one sentence. S06's mistake (`yézdil` against `poyékhal` when
+the man has not come back) is the pair working in the other direction. Directions re-use L2-M4 whole
+per rule 4; `nalévo`, `naprávo`, `pryámo`, `ostanóvka` and the transport nouns open no row.
+Twenty-two new surfaces against a cap of 25.
+
+### L4-M10 "A story with a twist" — the level's exit
+
+Ten accounts, each six sentences with at most one line of dialogue; first sentences given, the rest
+in the file:
+
+1. `Vcherá ya dólgo rabótal. Vécherom pozvoníl Iván. — Ty svobóden? — sprosíl on. …`
+2. `Vcherá ya poteryál klyuch. Snachála ya ne pónyal, chto sluchílos'. …`
+3. `Útrom bylá khoróshaya pogóda. Ya poshyól na rabótu peshkóm. No vdrug poshyól dozhd'. …`
+4. `Vcherá my býli v kafé. Iván zabýl telefón dóma. — Éhto probléma, — skazál on. …`
+5. `Vcherá Ánna ne prishlá. — Chto sluchílos'? — sprosíl ya. …`
+6. `Vcherá ya poyékhal v górod na avtóbuse. Snachála vsyó býlo khoroshó. No vdrug avtóbus slomálsya. …`
+7. `Vcherá ya poshyól v magazín. Snachála ya kupíl khleb i molokó. …`
+8. `Útrom pozvoníl nachál'nik. — Vy svobódny sevódnya? — sprosíl on. …`
+9. `Vcherá v metró ya poteryál súmku. Snachála ya ne pónyal, gde oná. …`
+10. `Poká ya rabótal, Ánna zhdalá menyá dóma. Vécherom ya poyékhal domóy. …`
+
+What it teaches: DIRECT SPEECH, whose whole delta is punctuation — the em dash standing alone to
+open a line, the comma-and-second-dash to close it, and THE VERB BEFORE ITS SUBJECT in the
+attribution. Rule 1 is the interference and it is the module's first plate: `skazál Iván` is neutral,
+`Iván skazál` after a dash is marked, and an English speaker produces the second every time. S01,
+S04 and S09 all carry a mistake plate on that inversion, from three angles. Rule 2 carries the twist
+connectors (`vdrug`, `okazálos', chto`, `v kontsé kontsóv`, `vot`); rule 4 carries the impersonal
+verdict a story closes on (`éhto býlo stránno`, `éhto býlo sméshno`), which is L3-M6's `-o` adverb
+family turned outward onto the event. Rule 3 says plainly that nearly everything else is already the
+learner's, and names L3-M5's no-backshift rule as the reason direct speech is a choice of texture
+rather than of grammar — S08 leans on it twice and its mistake plate is the backshift an English
+speaker adds. The per-sentence bound applies INSIDE the account, as at L3-M10; the longest inner
+sentence in the module is nine words against a bound of 14. Fourteen new surfaces against a cap of
+25, the smallest spend of the wave, which is what an exit module should cost.
+
+### The brief seams, checked against the real index
+
+Every ownership claim in the five briefs' §5 was put to `npm run content:owner` before a row was
+written. Most held. These are the ones that moved, and the two the wave found for itself.
+
+**`poverníte` is free because L2-M4 shipped it WITHOUT its acute.** The M9 brief lists `poverníte`
+among its fresh keys, which reads at first like an error — L2-M4 plainly teaches the word. The tool
+disagrees with the reading and not with the brief:
+
+```
+poverníte	free
+```
+
+and the shipped index carries `povernite`, no accent, because `content/en-ru/modules/L2-M4.json`
+L2-M4-S03 has `"display": "povernite"` against `"script": "поверните"`. The acute is a codepoint and
+`á` and `a` fold to two keys, so the accented spelling genuinely is unowned. This is the parent
+brief's warning about `zná` in a second guise, and it is why the rule is never grep for a surface —
+here even the eye is wrong, because the two spellings differ by a mark most readers do not register.
+M9 opens `poverníte` as its own row with the acute, edits no L2 file, and question 101 below hands
+the underlying defect to whoever next opens L2.
+
+**`zanyát` in L3-M5 carries the wrong stress, and `content:shown` is what found it.** M10-S08 was
+first written `Ya otvétil, chto ya zányat`, and the check said:
+
+```
+SHOWN-BUT-UNTAUGHT L4-M10-S08: zányat
+```
+
+`content/en-ru/modules/L3-M5.json` L3-M5-S08 ships `"display": "zanyát"`, `"forms": ["zanyát",
+"zanyatá"]` for занят / занята́. The feminine is right; the masculine is not — занят is front-stressed,
+`zányat`. A level never edits a file below it and the correctly-stressed form is not a NEW SHAPE
+deserving a row, only the same shape spelt right, so opening one would have put two index keys
+behind one form. M10 avoids the word instead (`chto ya rabótayu`, which serves the no-backshift
+plate just as well) and M7-S09's note and mnemonic were reworded so that neither asserts anything
+about that word's stress. Question 104 carries it to the native pass.
+
+**`uzhé ne` is claimed by two briefs in this same wave.** M6's §3 gives it (`uzhé` and `yeshchyó ne`
+are already and not yet, but `uzhé ne` is not any more) and M8's §5 instructs the author to index
+`ból'she ne`, `uzhé ne` and `vsyó yeshchyó` whole. Both were free at the start of the wave. M6 is the
+earlier module and takes it; M8 opens `ból'she ne` and `vsyó yeshchyó` only, and its rule 2 names
+`uzhé ne` as L4-M6's and calls it the softer of the two. Had M8 opened a row for it, the row would
+have been unreachable — the fold reaches M6 first — and `content:shown` would have reported a
+re-teach rather than failing, which is exactly the class of defect an intra-wave collision hides in.
+
+**`stálo` is L3-M6's, and the M8 brief was right to warn.** Confirmed verbatim:
+
+```
+stal	free
+stála	free
+stálo	L3-M6
+```
+
+M8's `stal` row therefore carries `forms: ["stal", "stat'"]` with a deliberate HOLE at the neuter,
+and both its note and S04's mistake plate say why: L3-M6 opened `stálo` for `mne stálo grústno`, a
+feeling arriving, and it must never be made to answer for becoming a doctor. `stála` is a separate
+row rather than a form of `stal`, again as the brief instructs, and `stat'` sits on only one of the
+two rows so the pair does not collide inside the module.
+
+**`Moskvú` was an unowned cell of an L1 lexeme.** `content:owner` returns `moskvú free` while
+L1-M1 owns `moskvá`, `moskvé` and `moskvý` — the accusative was never shown, so M9-S02 would have
+been shown-but-untaught. Under the level law that a new shape of an older lexeme gets its own row in
+the module that first shows it, M9 opens `Moskvú` with a note pointing back at L1-M1. The same law
+gave M8 its `nachál'nikom` (L3-M2 owns `nachál'nik`), M6 its `otvétit'` (L3-M5 owns `otvétil` and
+`otvétila`, so the infinitive is all M6 opens) and M10 its `zhdal` (L4-M6 opened only `zhdu`,
+`zhdyót` and `zhdat'`, so the past belongs to the module that first tells a story in it).
+
+**`poslé` is free even though L2-M10 shipped `poslé étovo`**, exactly as the M6 brief says:
+`poslé free`, `poslé étovo L2-M10`, because L2-M10 indexed the phrase whole. M6 opens the bare
+preposition. Confirmed with it, and all as the briefs claimed: `uzhé L2-M5` (not L3-M7's, which the
+L3-M7 brief had wrong), `yeshchyó L1-M8`, `kogdá L2-M10`, `do L2-M4`, `s` and `so L3-M2`,
+`zdes' L1-M7`, `vrémya L2-M3`, `den' L3-M7`, `chas L1-M4`, `rabótayet L1-M3`, `skazál L2-M10`,
+`sprosíl` and `otvétil L3-M5`, `kontsé L2-M10`, `khodíl` / `khodíla` / `yézdil` / `yézdila L3-M10`
+against `khodít'` / `khozhú` / `yézdit'` / `yézzhu` all free, `idtí` / `idú` / `yékhat'` / `yédu` /
+`kudá L2-M4`, and `kázhdyy free` while `kázhdyy den'` stays L1-M4's two-token key — so M9 writes
+`kázhdyy god` on its own rows and `kázhdyy den'` still resolves to L1-M4 by longest match.
+
+**The em dash earns no index key, and ten displays prove it.** The M10 brief said `normalizeSurface`
+of a bare dash returns the empty string. `tools/check-shown.ts` reports `L4-M10: clean` across ten
+accounts carrying eighteen dashes between them, so the dialogue punctuation costs the index nothing
+and the wave wrote it freely.
+
+**Two seams the wave decided rather than inherited.** First, M7 takes `zakrýt` and `zakrýta` as
+FORMS of its `zakrýto` row (and `otkrýt` / `otkrýta` of `otkrýto`) rather than as separate rows: they
+are one participle agreeing, not derived words, so `docs/56` §4's rule applies. That is what lets
+M10-S02 write `dver' bylá zakrýta` and M10-S10 `dver' bylá otkrýta` with no row of their own.
+Second, and against the same rule, `otpravlyáyetsya` and `otpravléniye` ARE two rows, because a verb
+and its verbal noun are derived and not declined — the M7 brief's call, honoured. Third, M6's
+`chérez` is re-used by M7-S07 and by both modules' pools: an intra-level dependency, and the reason
+M7 could open its announcement without a row for time.
+
+### The ratchet
+
+`npx vitest run tools/shown-surfaces.test.ts` — **11/11 passed**, en-ru holding at its baseline of
+**20**. All five modules are `clean` under `npm run content:shown`:
+
+```
+L4-M6: clean — every shown surface resolves
+L4-M7: clean — every shown surface resolves
+L4-M8: clean — every shown surface resolves
+L4-M9: clean — every shown surface resolves
+L4-M10: clean — every shown surface resolves
+```
+
+Every token of every `display`, all one hundred `variations[].display` strings and all sixty
+comprehension items resolve in the fold. Not one module reports a RE-TEACH, which is unusual for a
+wave this size and is a consequence of the paradigm holes above: where a lower level owned a cell,
+the row was written around it rather than over it. No module contributes a finding, so the baseline
+neither rises nor falls, and no baseline was lowered because there was nothing of this wave's to
+lower. Nothing below L4 was edited — no L1, L2 or L3 file — and no other course was touched.
+
+`npm run content:validate` — `CONTENT n/n ok`, reading `CONTENT 360/360 ok` when this wave finished.
+The total moves while the eight sibling waves land, so the number is a timestamp rather than a
+claim; `en-ru/L4-M6.json ok` through `en-ru/L4-M10.json ok` are the five lines that are this wave's.
+
+`npx vitest run src/course/types.test.ts` — red, and no failure in it is this wave's. The last
+reading was **2 failed, 379 passed**: the module census (`finds all 354 …`), which is the parent's
+to move once the nine waves are collected, and one sibling per-course count, en-ar
+(`the en-ar modules this rule is written for: expected 40 to be 39`), which belongs to that course's
+wave. The en-ru case counts nothing — it asserts only `enRu.length > 0` and then walks every module
+— so it is unaffected by either, and the assertion that is this course's law passes on its own:
+`npx vitest run src/course/types.test.ts -t "keeps the romanized course in its lane"` — **1 passed**.
+So no romanized field in the five modules carries a Cyrillic character, no acute is decomposed,
+`glossEn` is absent everywhere, and `literal`, `sound`, `usage`, `mnemonic`, `trap`, `mistake` (with
+its own `script`), `register`, two `variations` and a `note` on every word row are present on all
+fifty sentences. A separate scan of the five files for the Cyrillic look-alikes `а е о р с у х к`
+outside `script`, for combining U+0301, for any non-NFC string, and for any word `note` over 200
+characters returned nothing. New-surface counts against the cap of 25: M6 twenty, M7 twenty-two,
+M8 fifteen, M9 twenty-two, M10 fourteen.
+
+### Open questions for the native pass
+
+Continuing the chain; the last number in `docs/89` §7 and in Waves 1 and 2 above is 89. Nothing here
+restates a question already asked.
+
+90. **`poká ne` with the subject inside it** (M6-S02). Confirm that `Podozhdíte, poká ya ne vernús'`
+    is the ordinary spoken form with the subject sitting between the two halves of the connector, and
+    that dropping the `ne` is heard as wrong rather than merely blunt. The whole module leans on the
+    second half of that; if `Podozhdíte, poká ya vernús'` is in fact tolerated in speech, rule 1 is
+    overstated and should be softened.
+
+91. **`péred tem kak` plus an infinitive** (M6-S04, and its second variation). Confirm that
+    `Péred tem kak otvétit', podúmayte` is natural where the two subjects are the same. Separately,
+    the variation `Péred tem kak spat', ya chitáyu knígu` may be the kind of thing a Russian would
+    replace with `pered snom`; if so, say which, because the variation is meant to show the frame
+    taking a second infinitive and not to teach a phrase nobody says.
+
+92. **The verbless present as a perfect** (M6-S05). Confirm that `Ya zdes' s utrá` really carries
+    "I have been here since this morning" with no verb at all, and — this is the mistake plate —
+    that `Ya byl zdes' s utrá` genuinely flips it to a stretch that is over. If the past is also
+    heard as "I have been here (and still am)", the plate is teaching a distinction Russian does not
+    make that sharply.
+
+93. **`zhdu` with a bare object** (M6-S06). Confirm `Ya zhdu vas uzhé chas` as the natural, slightly
+    pointed way to say it after an hour's wait, and that the accusative object takes no preposition.
+    Also confirm that `zhdu` here is not felt to need `uzhé cély chas` or similar; the sentence is
+    at the module's bound and cannot grow.
+
+94. **Every acute in M7's row list, checked one at a time.** `zakrýto`, `otkrýto`, `zányato`,
+    `zapreshchenó`, `otpravlyáyetsya`, `otpravléniye`, `pribyváyet`, `zakryváyetsya`, `uvazháyemye`,
+    `passazhíry`, `pozvonyát`, `kúryat`, `govoryát`, `prósim`, `vnimániye`, `vkhod`, `výkhod`,
+    `mésto`. The L3 review caught five stress slips of exactly this kind, and this wave has just
+    found a sixth in a shipped L3 file (question 104). These eighteen were checked against a
+    dictionary rather than against memory, and they still want a second pair of eyes.
+
+95. **The bare neuter on a shop door** (M7-S01). Confirm that a card in a window reads `ZAKRÝTO`
+    with no noun and no verb, and that `Sevódnya zakrýt` is wrong rather than merely elliptical.
+    The mistake plate asserts the second.
+
+96. **`prósim vas` as a register, not a warning** (M7-S10). Confirm that `Prósim vas ne kurít' na
+    stántsii` is the neutral printed request and carries none of the menace English gives to *we
+    ask you to*, and that `Vy ne dolzhný kurít'` really would be heard as an accusation in that
+    setting. Also confirm the front stress in `prósim`.
+
+97. **`byl málen'kim` against `byl málen'kiy`** (M8-S09). The mistake plate calls the nominative
+    "heard in speech, and still the wrong lesson to learn". Confirm that reading — that the
+    instrumental is the written norm and the nominative is a spoken variant — rather than the
+    stronger claim that the nominative is simply wrong. If it is simply wrong, the plate should say
+    so and lose its hedge.
+
+98. **`ból'she ne` against `uzhé ne`** (M8 rule 2, M6-S08). Both are given as "not any more", with
+    M8 calling `uzhé ne` the softer of the two. Confirm the difference in force and, if there is a
+    context where only one of them will do, name it — the two modules divide the pair between them
+    and neither currently says when to choose which.
+
+99. **The return trip, and a bus route** (M9-S03, M9-S10). Confirm that `Vcherá ya khodíl v magazín`
+    is heard as went-and-came-back and `Vcherá ya poshyól v magazín` leaves the speaker in the shop.
+    Separately, S10's mistake plate treats `Otsyúda avtóbus khódit do ploshchadi` as correct but
+    saying something else — a service that runs rather than this bus's route. Confirm that both are
+    idiomatic and that the difference is the one described.
+
+100. **Directions in the perfective future** (M9-S07). Confirm that `Doyédete do stántsii, potóm
+     poverníte nalévo` is how directions are actually given, with the first verb a future-shaped
+     perfective and the second an imperative. If a Russian would say `doyézzhayte` or simply
+     `Doyédete do stántsii i poverníte`, the pattern in the brief needs revising before L5 builds on
+     it.
+
+101. **`povernite` in L2-M4 has no acute.** L2-M4-S03 ships `"display": "povernite"` for поверните,
+     which is the only reason `poverníte` was free for M9 to open. Confirm the stress is on the `í`
+     — поверни́те — and, if so, this is a defect in a shipped L2 module for a later L2 wave to fix,
+     not for this one. Until it is fixed the course carries two keys for one word, and a learner
+     tapping L2-M4's spelling gets a note while a learner tapping M9's gets a different one.
+
+102. **The punctuation of a spoken line** (M10, all ten accounts). Confirm the shape
+     `— Ya ne znáyu, — skazál Iván.`: em dash and space to open, comma before the closing dash, verb
+     before subject. Confirm too that a question mark simply replaces that comma
+     (`— Ty svobóden? — sprosíl on.`) and that no quotation marks belong anywhere near it.
+
+103. **The impersonal verdict as a closing line** (M10-S07, M10-S08). Confirm that `Éhto býlo
+     stránno` and `Éhto býlo sméshno` are what a speaker actually ends a small story on, and that
+     the neuter `býlo` plus the `-o` adverb is right where the judgement is on a situation rather
+     than a thing. S09 puts the contrast next to it — `Éhto bylá interésnaya istóriya`, agreeing
+     with a feminine noun — and the pair is only worth keeping if both are natural.
+
+104. **`zanyát` in L3-M5 is stressed wrongly.** L3-M5-S08 ships `"display": "zanyát"` for занят with
+     `"forms": ["zanyát", "zanyatá"]`. The feminine `zanyatá` is right; the masculine should be
+     `zányat`, front-stressed, matching the `zányato` this wave opens in M7-S09. Confirm, and if
+     confirmed this is a defect for a later L3 wave: this wave could not touch it, avoided the word
+     in M10 rather than opening a second key for it, and reworded M7-S09's note and mnemonic so that
+     neither states anything about that word's stress.
