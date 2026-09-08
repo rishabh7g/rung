@@ -623,3 +623,68 @@ describe('en-fr L2: the decisions its briefs settle (#431)', () => {
     }
   });
 });
+
+describe('en-de L2: the decisions its briefs settle (#432)', () => {
+  const all = COURSE_BRIEFS['en-de'] ?? {};
+  const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
+
+  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+    expect(Object.keys(all)).toEqual([
+      ...['L1', 'L2'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    ]);
+  });
+
+  it('climbs its bounds 8 → 9 → 10 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L2-M1', 'L2-M2', 'L2-M3']) expect(bound(id), id).toBe(8);
+    for (const id of ['L2-M4', 'L2-M5', 'L2-M6', 'L2-M7']) expect(bound(id), id).toBe(9);
+    for (const id of ['L2-M8', 'L2-M9', 'L2-M10']) expect(bound(id), id).toBe(10);
+  });
+
+  /** L1 spoke `Sie`, so the address that enters is `du` — and it is the priciest in the repo. */
+  it('opens `du` at M1 and states what it costs', () => {
+    const m1 = all['L2-M1']?.notes.join('\n') ?? '';
+    expect(m1).toMatch(/the address that enters here is du/);
+    expect(m1).toMatch(/`informal`/);
+    expect(m1).toMatch(/`formal`/);
+    expect(m1).toMatch(/MODAL BRACKET/);
+    expect(m1).toMatch(/könnten is Konjunktiv II/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/The commissioning issue says "`Sie` enters at M1"/);
+  });
+
+  /** `sie` was settled in L1; L2 inherits it and rules on the debris. */
+  it('inherits the `sie` row from L1-M2 and rules on the possessive `ihr`', () => {
+    const m2 = all['L2-M2']?.notes.join('\n') ?? '';
+    expect(m2).toMatch(/OPENS NO ROW for either/);
+    expect(m2).toMatch(/ihre alone/);
+    expect(m2).toMatch(/von periphrasis/);
+    expect(m2).toMatch(/Bare ihr is never authored as a possessive/);
+  });
+
+  /** The two rulings that let a German L2 exist at all. */
+  it('defers the attributive declension and keeps separable verbs unsplit', () => {
+    expect(all['L2-M3']?.notes.join('\n')).toMatch(/Adjectives stay PREDICATIVE/);
+    expect(all['L2-M3']?.notes.join('\n')).toMatch(/deferred to L3/);
+    const m4 = all['L2-M4']?.notes.join('\n') ?? '';
+    expect(m4).toMatch(/Separable verbs appear in this level ONLY unsplit/);
+    expect(m4).toMatch(/INDEFINITE ARTICLE row/);
+    expect(m4).toMatch(/ACCUSATIVE for motion into a place and the DATIVE/);
+  });
+
+  it('states the past-tense split and the collisions L1 predicted', () => {
+    const m10 = all['L2-M10']?.notes.join('\n') ?? '';
+    expect(m10).toMatch(/Perfekt is the spoken past for nearly every verb/);
+    expect(m10).toMatch(/sein, haben and the modals prefer the Präteritum/);
+    expect(m10).toMatch(/German participle never agrees with anything/);
+    // The fold's own casualties, each pointed back at its L1 owner.
+    expect(all['L2-M5']?.notes.join('\n')).toMatch(/das Essen lands on L1-M3's essen row/);
+    expect(all['L2-M6']?.notes.join('\n')).toMatch(/der Morgen \("the morning"\) folds onto/);
+    expect(all['L2-M8']?.notes.join('\n')).toMatch(/kein negates a noun/);
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/the fold KEEPS umlauts/);
+    for (const [id, brief] of l2) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+});
