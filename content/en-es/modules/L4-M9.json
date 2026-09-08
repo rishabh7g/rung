@@ -1,0 +1,522 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M9",
+  "title": "Places and journeys",
+  "job": "A trip told in full, with directions inside it",
+  "prerequisites": ["L4-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 7,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present", "preterite", "imperfect", "usted imperative"],
+    "allowedPatterns": [
+      "Fuimos a + <place> + y + <preterite>",
+      "Pasamos por + <place>",
+      "El pueblo donde + <clause>",
+      "Tardamos + <time> + en + V-inf",
+      "Cuando llegamos + , + <imperfect scene>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Four prepositions of PATH, and English separates the same four ideas: a is the destination (Fuimos a la costa), por is the route through (Pasamos por la montaña), hasta is as far as and no further (Subimos hasta el río), hacia is towards without arriving (Íbamos hacia la playa). The distinction is already in your head — only the labels are new."
+    },
+    {
+      "tag": "delta",
+      "text": "donde attaches a place to the thing that happened in it, with no preposition in front: el pueblo donde nació mi madre. English can drop its where — the village my mother was born in — and Spanish cannot."
+    },
+    {
+      "tag": "interference",
+      "text": "English says IT took us two hours, with a dummy it. Spanish conjugates for the travellers and puts en in front of the verb: tardamos dos horas EN llegar. There is no subject to invent and the en is not optional."
+    },
+    {
+      "tag": "delta",
+      "text": "dónde with an accent asks a question; donde without one attaches a clause. In Spanish an accent is a letter (L1-M2), so these are two different words that happen to be spelt alike, and L1-M7's dónde has nothing to do with this module's donde."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M9-S01",
+      "display": "Fuimos a la costa en coche y pasamos por la montaña.",
+      "cue": "We went to the coast by car and went through the mountains.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fuimos",
+            "cue": "we went · we were",
+            "tag": "free",
+            "forms": ["fuimos"],
+            "note": "The preterite of ir, and also of ser — fuimos a la costa is we went, fuimos amigos is we were. Only the sentence tells you which."
+          },
+          {
+            "display": "costa",
+            "cue": "coast",
+            "tag": "free",
+            "forms": ["costa"],
+            "note": "The coast as a region, not the edge of the water — that is la playa. Spanish says a la costa where English often says to the seaside."
+          },
+          {
+            "display": "pasamos",
+            "cue": "we passed · we went through",
+            "tag": "delta",
+            "forms": ["pasamos"],
+            "note": "With por it is the route: pasamos por la montaña means the mountains were on the way, not where we stopped. This is L3-M2's por doing its fourth job."
+          },
+          {
+            "display": "montaña",
+            "cue": "mountain · the mountains",
+            "tag": "free",
+            "forms": ["montaña"],
+            "note": "The singular usually covers what English calls the mountains: vamos a la montaña. The ñ is a separate letter, not an n with a mark on it."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "a and por are doing different jobs in one sentence: la costa is where we ended up, la montaña is what we crossed. Swap them and the trip changes shape.",
+      "sound": "FWEE-moss. mon-TA-nya, where the ñ is the ny of canyon.",
+      "variations": [
+        {
+          "display": "Fuimos a la montaña en tren y pasamos por la costa.",
+          "cue": "We went to the mountains by train and went along the coast.",
+          "changed": "the destination and the route swap over"
+        },
+        {
+          "display": "Fuimos a la playa en coche y pasamos por el pueblo.",
+          "cue": "We went to the beach by car and went through the village.",
+          "changed": "where the trip went"
+        }
+      ],
+      "mistake": {
+        "display": "Fuimos a la costa en coche y pasamos a la montaña.",
+        "why": "pasamos a says we moved on to the mountains and stayed. Only por carries the sense of going through something on the way somewhere else."
+      },
+      "usage": "The first line of a holiday told to a friend who asked. Neutral, and no yo or nosotros is needed anywhere.",
+      "register": "neutral",
+      "mnemonic": "a is where you stop; por is what you cross."
+    },
+    {
+      "id": "L4-M9-S02",
+      "display": "Tardamos dos horas en llegar al pueblo.",
+      "cue": "It took us two hours to get to the village.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tardamos",
+            "cue": "we took (an amount of time)",
+            "tag": "interference",
+            "forms": ["tardamos", "tarda"],
+            "note": "The traveller is the subject, not the journey: tardamos, not it took. tarda is the everyday third person — el tren tarda dos horas."
+          },
+          {
+            "display": "pueblo",
+            "cue": "village · small town",
+            "tag": "free",
+            "forms": ["pueblo"],
+            "note": "A village or a small town, and also the people of a place. Anything bigger is una ciudad; there is no size where the two overlap."
+          },
+          {
+            "display": "llegar",
+            "cue": "to arrive · to get there",
+            "tag": "free",
+            "forms": ["llegar"],
+            "note": "The infinitive behind L4-M6's llego and llegues. It takes a for the place arrived at: llegar al pueblo, llegar a casa."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "en llegar, not para llegar and not a llegar. tardar has exactly one preposition and it is the one English would never guess.",
+      "sound": "tar-DA-moss. The same form serves the present and the preterite, so context does the work.",
+      "variations": [
+        {
+          "display": "Tardamos dos horas en llegar a la playa.",
+          "cue": "It took us two hours to get to the beach.",
+          "changed": "where we were heading"
+        },
+        {
+          "display": "El tren tarda dos horas en llegar al pueblo.",
+          "cue": "The train takes two hours to get to the village.",
+          "changed": "the train is the subject, not us"
+        }
+      ],
+      "mistake": {
+        "display": "Tardamos dos horas para llegar al pueblo.",
+        "why": "para llegar is the English in order to arrive, which turns the journey into a purpose. tardar wants en, and the sentence is otherwise perfect."
+      },
+      "usage": "Answering how long did it take. The commonest thing said about any journey, and the commonest place for this preposition to go wrong.",
+      "register": "neutral",
+      "mnemonic": "tardar takes en, and takes you as its subject."
+    },
+    {
+      "id": "L4-M9-S03",
+      "display": "Subimos hasta el río y volvimos a pie.",
+      "cue": "We went up as far as the river and came back on foot.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hasta",
+            "cue": "as far as · up to",
+            "tag": "delta",
+            "forms": ["hasta"],
+            "note": "The end of a stretch, in space or in time. L4-M6's hasta que is this word plus a clause; L1-M10's hasta luego is the same word saying until."
+          },
+          {
+            "display": "subimos",
+            "cue": "we went up · we climbed",
+            "tag": "free",
+            "forms": ["subimos"],
+            "note": "Up a hill, up a staircase, or onto a train — subir al tren. Its opposite bajar works the same way in all three senses."
+          },
+          {
+            "display": "río",
+            "cue": "river",
+            "tag": "free",
+            "forms": ["río"],
+            "note": "The accent puts the stress on the i and makes two syllables of it. Without the accent, rio would be one syllable and a different word."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "hasta el río marks the far end of the walking and says nothing about crossing it. If you crossed it, the verb is cruzamos and the preposition disappears.",
+      "sound": "soo-BEE-moss. REE-o, two syllables, and the r at the start is rolled.",
+      "variations": [
+        {
+          "display": "Subimos hasta la montaña y volvimos a pie.",
+          "cue": "We went up as far as the mountain and came back on foot.",
+          "changed": "how far we got"
+        },
+        {
+          "display": "Subimos hasta el río y volvimos en coche.",
+          "cue": "We went up as far as the river and came back by car.",
+          "changed": "how we came back"
+        }
+      ],
+      "mistake": {
+        "display": "Subimos a el río y volvimos a pie.",
+        "why": "Two faults: a el is always al, and a would make the river the destination rather than the turning point. hasta is the word that says we stopped there."
+      },
+      "usage": "Told on the way back, or the next day. Neutral, and a pie is what makes it sound like an achievement.",
+      "register": "neutral",
+      "mnemonic": "hasta is a full stop drawn on the map."
+    },
+    {
+      "id": "L4-M9-S04",
+      "display": "Íbamos hacia la playa cuando nos perdimos.",
+      "cue": "We were heading for the beach when we got lost.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hacia",
+            "cue": "towards",
+            "tag": "delta",
+            "forms": ["hacia"],
+            "note": "Towards, with no promise of arriving — which is exactly why it sits well beside getting lost. No accent: hacia is not hacía, L4-M8's weather verb."
+          },
+          {
+            "display": "playa",
+            "cue": "beach",
+            "tag": "free",
+            "forms": ["playa"],
+            "note": "The sand and the water at the edge of it. La costa is the whole region; la playa is where you put the towel down."
+          },
+          {
+            "display": "nos perdimos",
+            "cue": "we got lost",
+            "tag": "free",
+            "forms": ["nos perdimos"],
+            "note": "The reflexive of the perder L3-M7 taught as he perdido. Losing a thing is perder; losing yourself is perderse, and the nos is not optional."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "hacia and hacía differ by one accent and are unrelated: hacia la playa is towards the beach, hacía frío is it was cold. The accent is a letter, and this is the pair it matters most on.",
+      "sound": "A-sya, two syllables with the stress on the first. hacía is three syllables with the stress on the ee.",
+      "variations": [
+        {
+          "display": "Íbamos hacia la costa cuando nos perdimos.",
+          "cue": "We were heading for the coast when we got lost.",
+          "changed": "where we were aiming"
+        },
+        {
+          "display": "Íbamos hacia el río cuando nos perdimos.",
+          "cue": "We were heading for the river when we got lost.",
+          "changed": "the target of the walk"
+        }
+      ],
+      "mistake": {
+        "display": "Íbamos a la playa cuando nos perdimos.",
+        "why": "Not wrong, but a says we got there. hacia is what admits, in one word, that the beach was still ahead of us when the story went wrong."
+      },
+      "usage": "The turn in a story about a walk. The imperfect íbamos is L4-M8's, doing the scene-setting L2-M10 taught it to do.",
+      "register": "neutral",
+      "mnemonic": "hacia points; a arrives."
+    },
+    {
+      "id": "L4-M9-S05",
+      "display": "El pueblo donde nació mi madre está en la montaña.",
+      "cue": "The village where my mother was born is in the mountains.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "donde",
+            "cue": "where (attaching a clause)",
+            "tag": "delta",
+            "forms": ["donde"],
+            "note": "No accent, and it asks nothing. It hangs a whole clause off a place so you do not need a second sentence: el pueblo donde nació mi madre."
+          },
+          {
+            "display": "nació",
+            "cue": "was born",
+            "tag": "free",
+            "forms": ["nació"],
+            "note": "Spanish uses one active verb where English uses a passive: nació is she was born, with nothing standing in for was. The infinitive is nacer."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "L1-M7's dónde carries an accent because it asks. This donde carries none because it answers. Writing the accent here turns a description into a question in the middle of a sentence.",
+      "sound": "DON-de, both syllables flat. The question word is stressed harder on the first: DOHN-de.",
+      "variations": [
+        {
+          "display": "El pueblo donde nació mi padre está en la costa.",
+          "cue": "The village where my father was born is on the coast.",
+          "changed": "which parent, and where"
+        },
+        {
+          "display": "La casa donde vivía mi abuela está en el pueblo.",
+          "cue": "The house where my grandmother used to live is in the village.",
+          "changed": "a house and a habit instead of a birth"
+        }
+      ],
+      "mistake": {
+        "display": "El pueblo dónde nació mi madre está en la montaña.",
+        "why": "The accent has been left on. It is a spelling error rather than a grammatical one, and it is the single commonest thing that goes wrong with this word."
+      },
+      "usage": "Introducing a place to somebody who has never heard of it. Neutral, and the whole point is that it costs one sentence rather than two.",
+      "register": "neutral",
+      "mnemonic": "An accent asks; a bare donde tells."
+    },
+    {
+      "id": "L4-M9-S06",
+      "display": "¿Por dónde se va a la playa? Por esta carretera.",
+      "cue": "Which way is it to the beach? Along this road.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carretera",
+            "cue": "road · main road",
+            "tag": "free",
+            "forms": ["carretera"],
+            "note": "A road between places, the sort a car drives along. A street inside a town is L2-M4's calle, and the two are never swapped."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "¿Por dónde? asks which way, not where. ¿Dónde está la playa? asks for its position; ¿Por dónde se va? asks for the route, and the answer comes back with por on it too.",
+      "sound": "ka-rre-TEH-ra. The double r is rolled, and it is what separates this from carrera, a career.",
+      "variations": [
+        {
+          "display": "¿Por dónde se va a la estación? Por esta calle.",
+          "cue": "Which way is it to the station? Along this street.",
+          "changed": "a town destination, so calle replaces carretera"
+        },
+        {
+          "display": "¿Por dónde se va al río? Por este camino.",
+          "cue": "Which way is it to the river? Along this path.",
+          "changed": "a path out of town"
+        }
+      ],
+      "mistake": {
+        "display": "¿Dónde se va a la playa? Por esta carretera.",
+        "why": "Without por the question asks where one goes to the beach, which is not a question. The answer keeps its por and gives the mismatch away."
+      },
+      "usage": "Asked of a stranger in the street. se va keeps it impersonal, which is why the same question works for tú and usted alike.",
+      "register": "neutral",
+      "mnemonic": "por dónde asks for the route, dónde for the place."
+    },
+    {
+      "id": "L4-M9-S07",
+      "display": "Siga por este camino hasta la plaza y gire a la derecha.",
+      "cue": "Follow this path as far as the square and turn right.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "camino",
+            "cue": "path · way · road",
+            "tag": "free",
+            "forms": ["camino"],
+            "note": "The way to somewhere, either a real track or the route itself: el camino a la playa. Also the noun behind caminar, to walk."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "siga por, not siga en. Directions in Spanish run on por, because a road being followed is a route through, not a place you are inside.",
+      "sound": "ka-MEE-no. SEE-ga, with a hard g.",
+      "variations": [
+        {
+          "display": "Siga por este camino hasta el río y gire a la izquierda.",
+          "cue": "Follow this path as far as the river and turn left.",
+          "changed": "the landmark and the turn"
+        },
+        {
+          "display": "Siga todo recto hasta la plaza y gire a la derecha.",
+          "cue": "Go straight on as far as the square and turn right.",
+          "changed": "no path is named, only the direction"
+        }
+      ],
+      "mistake": {
+        "display": "Sigue por este camino hasta la plaza y gira a la derecha.",
+        "why": "Both verbs have slipped into tú. A stranger who has stopped to help you speaks usted, and answering in tú is the mismatch a learner never hears themselves make."
+      },
+      "usage": "The stranger's half of the story: somebody stopped on a road, giving directions to a car. Formal, inside a narration that is not.",
+      "register": "formal",
+      "mnemonic": "Directions travel on por."
+    },
+    {
+      "id": "L4-M9-S08",
+      "display": "Cuando llegamos, el pueblo estaba en fiestas.",
+      "cue": "When we arrived, the village was having its festival.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "llegamos",
+            "cue": "we arrived · we arrive",
+            "tag": "free",
+            "forms": ["llegamos"],
+            "note": "The step, in the preterite, against the scene that follows it in the imperfect. Like tardamos, the form is the same in the present and the past."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "Two tenses doing two jobs, exactly as L3-M10 combined them: llegamos is the step that happened, estaba is the state that was already there when it did.",
+      "sound": "ye-GA-moss. The double l is a y and the g is hard.",
+      "variations": [
+        {
+          "display": "Cuando llegamos, el pueblo estaba muy tranquilo.",
+          "cue": "When we arrived, the village was very quiet.",
+          "changed": "what we found"
+        },
+        {
+          "display": "Cuando llegamos a la playa, hacía mucho frío.",
+          "cue": "When we got to the beach, it was very cold.",
+          "changed": "the scene is the weather"
+        }
+      ],
+      "mistake": {
+        "display": "Cuando llegamos, el pueblo estuvo en fiestas.",
+        "why": "estuvo makes the festival a completed event that started when we arrived. The imperfect estaba is what says it was already going on."
+      },
+      "usage": "The middle of a travel story. Neutral, and this is the shape a whole account hangs on.",
+      "register": "neutral",
+      "mnemonic": "The step is preterite; what it walked into is imperfect."
+    },
+    {
+      "id": "L4-M9-S09",
+      "display": "Cruzamos el río a pie y volvimos al pueblo por la montaña.",
+      "cue": "We crossed the river on foot and came back to the village through the mountains.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cruzamos",
+            "cue": "we crossed",
+            "tag": "free",
+            "forms": ["cruzamos"],
+            "note": "It takes its object bare — cruzamos el río, cruzamos la plaza — with no preposition at all, where English needs across or over."
+          },
+          {
+            "display": "a pie",
+            "cue": "on foot · walking",
+            "tag": "free",
+            "forms": ["a pie"],
+            "note": "Two words, and the noun stays singular however many feet are involved. It sits in the same slot as en coche and en tren."
+          },
+          {
+            "display": "volvimos",
+            "cue": "we came back · we returned",
+            "tag": "free",
+            "forms": ["volvimos"],
+            "note": "The preterite of the volver L3-M9 taught. volver a + a place is to come back to it; volver a + a verb is to do the thing again."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Three path words in one line and each takes a different shape: cruzamos takes no preposition, a pie takes a, and por la montaña takes por. None of the three can borrow another's.",
+      "sound": "kroo-SA-moss. bol-BEE-moss, with both v sounds closer to a b.",
+      "variations": [
+        {
+          "display": "Cruzamos el río en coche y volvimos al pueblo.",
+          "cue": "We crossed the river by car and came back to the village.",
+          "changed": "how we crossed"
+        },
+        {
+          "display": "Cruzamos la plaza a pie y volvimos a la estación.",
+          "cue": "We crossed the square on foot and went back to the station.",
+          "changed": "a town crossing instead of a river"
+        }
+      ],
+      "mistake": {
+        "display": "Cruzamos por el río a pie y volvimos al pueblo por la montaña.",
+        "why": "cruzar already contains the crossing, so por doubles it. The por later in the sentence is right, which is what makes the first one easy to miss."
+      },
+      "usage": "The homeward half of a walking story. Neutral, and a pie is quietly the point of it.",
+      "register": "neutral",
+      "mnemonic": "cruzar needs nothing in front of what it crosses."
+    },
+    {
+      "id": "L4-M9-S10",
+      "display": "El viaje hacia la costa fue largo, pero el camino era fácil.",
+      "cue": "The journey to the coast was long, but the road was easy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "viaje",
+            "cue": "journey · trip",
+            "tag": "free",
+            "forms": ["viaje"],
+            "note": "The whole trip, there and back, and the noun behind viajar. Buen viaje is what you say to somebody leaving."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "fue and era in one sentence, and they are not interchangeable: fue largo sums the journey up now that it is over, era fácil describes what it was like the whole way along.",
+      "sound": "BYA-khe. Two syllables, and the j is the throaty one.",
+      "variations": [
+        {
+          "display": "El viaje hacia la montaña fue largo, pero fácil.",
+          "cue": "The journey to the mountains was long, but easy.",
+          "changed": "the second half is shortened"
+        },
+        {
+          "display": "El camino hacia la costa era muy largo.",
+          "cue": "The road to the coast was very long.",
+          "changed": "the road rather than the journey"
+        }
+      ],
+      "mistake": {
+        "display": "El viaje hacia la costa era largo, pero el camino era fácil.",
+        "why": "Both halves are now scenery and nothing is being summed up. A finished journey judged as a whole takes fue."
+      },
+      "usage": "The last line of the account, delivering the verdict. Neutral.",
+      "register": "neutral",
+      "mnemonic": "fue closes the journey; era describes it."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M9-C01", "display": "Fuimos a la costa en tren.", "cue": "We went to the coast by train." },
+    { "id": "L4-M9-C02", "display": "Tardamos dos horas en llegar.", "cue": "It took us two hours to get there." },
+    { "id": "L4-M9-C03", "display": "Subimos hasta el río a pie.", "cue": "We walked up as far as the river." },
+    { "id": "L4-M9-C04", "display": "Íbamos hacia el pueblo cuando nos perdimos.", "cue": "We were heading for the village when we got lost." },
+    { "id": "L4-M9-C05", "display": "El pueblo donde nació mi madre es muy pequeño.", "cue": "The village where my mother was born is very small." },
+    { "id": "L4-M9-C06", "display": "¿Por dónde se va a la playa?", "cue": "Which way is it to the beach?" },
+    { "id": "L4-M9-C07", "display": "Siga por este camino hasta la plaza.", "cue": "Follow this path as far as the square." },
+    { "id": "L4-M9-C08", "display": "Cuando llegamos a la montaña, hacía frío.", "cue": "When we got to the mountains, it was cold." },
+    { "id": "L4-M9-C09", "display": "Cruzamos el río y volvimos al pueblo.", "cue": "We crossed the river and came back to the village." },
+    { "id": "L4-M9-C10", "display": "El viaje hacia la costa fue muy largo.", "cue": "The journey to the coast was very long." },
+    { "id": "L4-M9-C11", "display": "La carretera de la costa es muy larga.", "cue": "The coast road is very long." },
+    { "id": "L4-M9-C12", "display": "Pasamos por el pueblo donde vivía mi abuela.", "cue": "We went through the village where my grandmother used to live." }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

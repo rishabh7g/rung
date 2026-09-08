@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M9",
+  "title": "Places and journeys",
+  "job": "A trip told in full, with directions inside it",
+  "prerequisites": [
+    "L4-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "N-e + gaseo + N-eul/reul + V-eosseoyo",
+      "V-(eu)n + jeok + isseoyo",
+      "N-(eu)ro + jjuk + gaseo + N-eseo + naeriseyo",
+      "N-eseo + N-kkaji + <Sino number> + sigan + geollyeosseoyo",
+      "<six-sentence trip> meonjeo … geu daeum-e … machimnae …"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "V-(eu)n jeok isseoyo IS THE EXPERIENCE PAST — it is among the things I have done. gasseoyo says I went, on a particular day. Korean keeps the two strictly apart where English folds them into have been."
+    },
+    {
+      "tag": "delta",
+      "text": "THE DIRECTION LIVES INSIDE THE VERB: deureogayo goes in, nagayo goes out, ollagayo goes up, naeryeogayo goes down, doragayo goes back. English hangs a preposition on go; Korean builds a new verb."
+    },
+    {
+      "tag": "delta",
+      "text": "-e IS THE DESTINATION REACHED, -(eu)ro THE DIRECTION FACED. English to is both. San-e gayo arrives at the mountain; oenjjok-euro gayo only heads left, and may never get anywhere."
+    },
+    {
+      "tag": "free",
+      "text": "L2-M4's DIRECTIONS ARE REUSED WHOLE and nothing is added to them: oenjjok, oreunjjok, jjuk, geonneoseyo, doraseyo, sageori, naeriseyo, taseyo. A journey that needs a word L2-M4 has not got is the wrong journey."
+    },
+    {
+      "tag": "free",
+      "text": "A TRIP IS TOLD WITH L2-M10's SEQUENCERS — meonjeo, geu daeum-e, machimnae — and the directions live INSIDE the telling rather than in a list. That is the whole skill this module adds."
+    },
+    {
+      "tag": "free",
+      "text": "gaseo IS L2-M10's AND CHAINS ARRIVING TO DOING: you go, and then, being there, you do the next thing. -go would only list two acts and would lose the being there."
+    },
+    {
+      "tag": "interference",
+      "text": "AN ENGLISH SPEAKER'S KOREAN TRIP COMES OUT PREPOSITION-HEAVY AND VERB-LIGHT — up the mountain, out of the station, back to the house. Every one of those is a single Korean verb, and reaching for wi, bakk or arae rebuilds the English."
+    },
+    {
+      "tag": "free",
+      "text": "chulbal AND dochak ARE L4-M7's, borrowed here for a timetable and nothing else. The announcement register itself stays behind at M7."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M9-S01",
+      "display": "Bada-e gabon jeok isseoyo?",
+      "script": "바다에 가본 적 있어요?",
+      "cue": "Have you ever been to the sea?",
+      "literal": "sea-to gone-tried-MODIFIER instance exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bada",
+            "script": "바다",
+            "cue": "the sea",
+            "tag": "free",
+            "forms": [
+              "bada",
+              "bada-e",
+              "bada-reul"
+            ],
+            "note": "Both the sea and the beach you go to. bada-e gayo is what a Korean says for a trip to the coast, with no separate word for the shore."
+          },
+          {
+            "display": "gabon",
+            "script": "가본",
+            "cue": "having been (to)",
+            "tag": "delta",
+            "forms": [
+              "gabon"
+            ],
+            "note": "gada plus L4-M1's trial auxiliary, joined, then the past modifier. It is the fixed shape of this frame; ga bwasseoyo would put L2-M10's seeing into a sentence about going."
+          },
+          {
+            "display": "jeok",
+            "script": "적",
+            "cue": "an instance of, an occasion",
+            "tag": "delta",
+            "forms": [
+              "jeok"
+            ],
+            "note": "A bound noun that counts occasions, so it needs a modifier in front and isseoyo or eopseoyo after. On its own it is not a word."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "This asks whether it is on your list at all, not when you went. Answering with a date answers a question that was not asked.",
+      "sound": "BA-da-e GA-bon JEOK I-sseo-yo? The question rises only at the very end.",
+      "variations": [
+        {
+          "display": "San-e gabon jeok isseoyo?",
+          "script": "산에 가본 적 있어요?",
+          "cue": "Have you ever been to the mountains?",
+          "changed": "a different place"
+        },
+        {
+          "display": "Gonghang-e gabon jeok isseoyo?",
+          "script": "공항에 가본 적 있어요?",
+          "cue": "Have you ever been to the airport?",
+          "changed": "somewhere ordinary, where the frame still works"
+        }
+      ],
+      "mistake": {
+        "display": "Bada-e ga bwasseoyo?",
+        "script": "바다에 가 봤어요?",
+        "why": "Split into two words, bwasseoyo is L2-M10's saw, and the sentence turns into something about looking. The experience frame is gabon jeok isseoyo, written as it is."
+      },
+      "usage": "Small talk with somebody you have just met.",
+      "register": "neutral",
+      "mnemonic": "jeok counts occasions, not dates."
+    },
+    {
+      "id": "L4-M9-S02",
+      "display": "Yeohaeng-eul gaseo bada-reul bwasseoyo.",
+      "script": "여행을 가서 바다를 봤어요.",
+      "cue": "I went on a trip and saw the sea.",
+      "literal": "trip-OBJ go-AND-THEN sea-OBJ saw",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeohaeng",
+            "script": "여행",
+            "cue": "a trip, travel",
+            "tag": "free",
+            "forms": [
+              "yeohaeng",
+              "yeohaeng-eul",
+              "yeohaeng-i"
+            ],
+            "note": "Takes gada rather than hada in the ordinary phrase: yeohaeng-eul gayo, to go on a trip."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "gaseo is not and then in general. It says that the second thing happened THERE, once you had arrived, which is why a trip is told with it.",
+      "sound": "YEO-haeng-eul GA-seo BA-da-reul BWA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Yeohaeng-eul gaseo san-eul bwasseoyo.",
+          "script": "여행을 가서 산을 봤어요.",
+          "cue": "I went on a trip and saw the mountains.",
+          "changed": "what was seen there"
+        },
+        {
+          "display": "Yeohaeng-i jeongmal joasseoyo.",
+          "script": "여행이 정말 좋았어요.",
+          "cue": "The trip was really good.",
+          "changed": "the trip as the subject, closing an account"
+        }
+      ],
+      "mistake": {
+        "display": "Yeohaeng-eul gago bada-reul bwasseoyo.",
+        "script": "여행을 가고 바다를 봤어요.",
+        "why": "-go lists two separate acts and loses the connection: it could be read as going on a trip, and separately seeing the sea. gaseo ties the second to the place the first reached."
+      },
+      "usage": "Opening a holiday story.",
+      "register": "neutral",
+      "mnemonic": "gaseo means go and then, right there."
+    },
+    {
+      "id": "L4-M9-S03",
+      "display": "San-e gabon jeok isseoyo. Eoje-neun an gasseoyo.",
+      "script": "산에 가본 적 있어요. 어제는 안 갔어요.",
+      "cue": "I have been to the mountains before. I did not go yesterday.",
+      "literal": "mountain-to gone-tried-MODIFIER instance exist. yesterday-TOP not went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "san",
+            "script": "산",
+            "cue": "mountain",
+            "tag": "free",
+            "forms": [
+              "san",
+              "san-e",
+              "san-eul"
+            ],
+            "note": "Korea's default weekend outing, so the word turns up far more often than the English mountain does."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Both halves are about the same place, and they are not the same tense in meaning. The first says it is among my experiences; the second reports one particular day.",
+      "sound": "SA-ne GA-bon JEOK I-sseo-yo. EO-je-neun AN GA-sseo-yo.",
+      "variations": [
+        {
+          "display": "San-e gasseoyo.",
+          "script": "산에 갔어요.",
+          "cue": "I went to the mountains.",
+          "changed": "the plain past on its own — one occasion, no claim about experience"
+        },
+        {
+          "display": "Bada-e gabon jeok eopseoyo.",
+          "script": "바다에 가본 적 없어요.",
+          "cue": "I have never been to the sea.",
+          "changed": "the negative of the frame, which uses eopseoyo"
+        }
+      ],
+      "mistake": {
+        "display": "San-e gasseon jeok isseoyo.",
+        "script": "산에 갔은 적 있어요.",
+        "why": "jeok takes the plain -(eu)n modifier, and the trial auxiliary is what carries the having-tried. Stacking a past on the modifier is a shape Korean does not build."
+      },
+      "usage": "Correcting somebody who assumed you were there yesterday.",
+      "register": "neutral",
+      "mnemonic": "Ever is a frame; yesterday is a tense."
+    },
+    {
+      "id": "L4-M9-S04",
+      "display": "Sageori-eseo oenjjok-euro doragaseyo.",
+      "script": "사거리에서 왼쪽으로 돌아가세요.",
+      "cue": "Turn back to the left at the crossroads.",
+      "literal": "crossroads-at left-toward go-back-PLEASE",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "doragayo",
+            "script": "돌아가요",
+            "cue": "goes back, goes round",
+            "tag": "delta",
+            "forms": [
+              "doragayo",
+              "doragaseyo"
+            ],
+            "note": "dolda plus gada, joined into one verb: the turning and the going are a single word. L2-M4's doraseyo only turns; this one turns and leaves."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "-(eu)ro is the direction faced, so oenjjok-euro is off to the left. oenjjok-e would name a place on the left and stop the sentence going anywhere.",
+      "sound": "SA-geo-ri-e-seo OEN-jjo-geu-ro DO-ra-ga-se-yo.",
+      "variations": [
+        {
+          "display": "Sageori-eseo oreunjjok-euro doragaseyo.",
+          "script": "사거리에서 오른쪽으로 돌아가세요.",
+          "cue": "Turn back to the right at the crossroads.",
+          "changed": "the other side"
+        },
+        {
+          "display": "Jeongnyujang-eseo oenjjok-euro doragayo.",
+          "script": "정류장에서 왼쪽으로 돌아가요.",
+          "cue": "I turn back to the left at the bus stop.",
+          "changed": "your own account rather than an instruction"
+        }
+      ],
+      "mistake": {
+        "display": "Sageori-eseo oenjjok-e doragaseyo.",
+        "script": "사거리에서 왼쪽에 돌아가세요.",
+        "why": "-e puts you AT the left, which a turn cannot do. Movement toward something takes -(eu)ro, and this is the particle pair English to hides."
+      },
+      "usage": "Directions given on a street corner.",
+      "register": "neutral",
+      "mnemonic": "-(eu)ro points; -e arrives."
+    },
+    {
+      "id": "L4-M9-S05",
+      "display": "Gonghang-e deureogaseo chingu-reul mannasseoyo.",
+      "script": "공항에 들어가서 친구를 만났어요.",
+      "cue": "I went into the airport and met my friend.",
+      "literal": "airport-to enter-AND-THEN friend-OBJ met",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gonghang",
+            "script": "공항",
+            "cue": "airport",
+            "tag": "free",
+            "forms": [
+              "gonghang",
+              "gonghang-e"
+            ],
+            "note": "Airport. The ng at the end of the first syllable is held, which is what keeps it apart from gohang."
+          },
+          {
+            "display": "deureogayo",
+            "script": "들어가요",
+            "cue": "goes in, enters",
+            "tag": "delta",
+            "forms": [
+              "deureogayo",
+              "deureogaseo"
+            ],
+            "note": "deulda plus gada. The in is already inside the verb, so nothing else in the sentence has to say it."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "There is no word here for into. Adding one is the English sentence rebuilt on Korean words, and it is what makes a learner's directions sound translated.",
+      "sound": "GONG-hang-e DEU-reo-ga-seo CHIN-gu-reul MAN-na-sseo-yo.",
+      "variations": [
+        {
+          "display": "Jip-e deureogaseo swieoyo.",
+          "script": "집에 들어가서 쉬어요.",
+          "cue": "I go into the house and rest.",
+          "changed": "the everyday use — going indoors"
+        },
+        {
+          "display": "Gonghang-e gaseo chingu-reul mannasseoyo.",
+          "script": "공항에 가서 친구를 만났어요.",
+          "cue": "I went to the airport and met my friend.",
+          "changed": "plain gaseo, which says nothing about going inside"
+        }
+      ],
+      "mistake": {
+        "display": "Gonghang-e an-euro gaseo chingu-reul mannasseoyo.",
+        "script": "공항에 안으로 가서 친구를 만났어요.",
+        "why": "Two words doing one verb's job. Korean has deureogada for exactly this, and spelling the in out separately is the preposition habit English brings."
+      },
+      "usage": "Telling somebody how a meeting happened.",
+      "register": "neutral",
+      "mnemonic": "The direction is in the verb."
+    },
+    {
+      "id": "L4-M9-S06",
+      "display": "Yeok-eseo nagaseo taeksi-reul tayo.",
+      "script": "역에서 나가서 택시를 타요.",
+      "cue": "You go out of the station and take a taxi.",
+      "literal": "station-from exit-AND-THEN taxi-OBJ take",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nagayo",
+            "script": "나가요",
+            "cue": "goes out, exits",
+            "tag": "delta",
+            "forms": [
+              "nagayo",
+              "nagaseo"
+            ],
+            "note": "The mirror of deureogayo, built the same way from nada and gada. -eseo on the station is the from that goes with it."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "-eseo marks where the leaving starts. yeok-e nagayo would say going out TO the station, which is the wrong end of the journey.",
+      "sound": "YEO-ge-seo NA-ga-seo TAEK-si-reul TA-yo.",
+      "variations": [
+        {
+          "display": "Yeok-eseo nagaseo oenjjok-euro gaseyo.",
+          "script": "역에서 나가서 왼쪽으로 가세요.",
+          "cue": "Go out of the station and head left.",
+          "changed": "an instruction rather than a description"
+        },
+        {
+          "display": "Jip-eseo nagayo.",
+          "script": "집에서 나가요.",
+          "cue": "I go out of the house.",
+          "changed": "the verb on its own, with nothing after it"
+        }
+      ],
+      "mistake": {
+        "display": "Yeok-eseo bakk-euro gaseo taeksi-reul tayo.",
+        "script": "역에서 밖으로 가서 택시를 타요.",
+        "why": "Again two words for one verb. nagada already means to go out, and bakk-euro gada is the English out of translated piece by piece."
+      },
+      "usage": "The middle of a set of directions.",
+      "register": "neutral",
+      "mnemonic": "In is deureo-, out is na-."
+    },
+    {
+      "id": "L4-M9-S07",
+      "display": "San-e ollagal ttae sigan-i mani geollyeosseoyo.",
+      "script": "산에 올라갈 때 시간이 많이 걸렸어요.",
+      "cue": "It took a long time going up the mountain.",
+      "literal": "mountain-to go-up-MODIFIER time time-SUBJ a-lot took",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ollagayo",
+            "script": "올라가요",
+            "cue": "goes up, climbs",
+            "tag": "delta",
+            "forms": [
+              "ollagayo",
+              "ollagal"
+            ],
+            "note": "oreuda plus gada, with the r doubling into ll. Before L4-M6's ttae it takes the -l modifier: ollagal ttae."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "geollyeosseoyo is L3-M7's and takes sigan as its subject, not you. Korean says the time took itself; there is no I in the sentence at all.",
+      "sound": "SA-ne OL-la-gal TTAE SI-ga-ni MA-ni GEOL-lyeo-sseo-yo.",
+      "variations": [
+        {
+          "display": "San-e ollagayo.",
+          "script": "산에 올라가요.",
+          "cue": "I go up the mountain.",
+          "changed": "the bare verb"
+        },
+        {
+          "display": "San-e ollagal ttae sigan-i geollyeosseoyo.",
+          "script": "산에 올라갈 때 시간이 걸렸어요.",
+          "cue": "It took time going up the mountain.",
+          "changed": "without mani, so no judgement about how long"
+        }
+      ],
+      "mistake": {
+        "display": "San-e wi-ro gal ttae sigan-i mani geollyeosseoyo.",
+        "script": "산에 위로 갈 때 시간이 많이 걸렸어요.",
+        "why": "wi-ro gada is up the way English says it. Korean has ollagada, and using the preposition shape here is the interference this module is built around."
+      },
+      "usage": "Reporting on a day's hike.",
+      "register": "neutral",
+      "mnemonic": "olla- up, naeryeo- down."
+    },
+    {
+      "id": "L4-M9-S08",
+      "display": "Naeryeogal ttae gil-eul ireobeoryeosseoyo.",
+      "script": "내려갈 때 길을 잃어버렸어요.",
+      "cue": "I got lost on the way down.",
+      "literal": "go-down-MODIFIER time road-OBJ lost",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeryeogayo",
+            "script": "내려가요",
+            "cue": "goes down, descends",
+            "tag": "delta",
+            "forms": [
+              "naeryeogayo",
+              "naeryeogal"
+            ],
+            "note": "naerida plus gada. L2-M4's naeriseyo gets off a bus; this one carries on down a road, and the two are not interchangeable."
+          },
+          {
+            "display": "gil",
+            "script": "길",
+            "cue": "road, way",
+            "tag": "free",
+            "forms": [
+              "gil",
+              "gil-eul",
+              "gil-i"
+            ],
+            "note": "Both the road itself and the way to somewhere. gil-eul ireobeoryeosseoyo, to lose the way, is the fixed phrase for getting lost."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Korean loses the ROAD, not itself. There is no I got lost with you as the object; the thing mislaid is the way.",
+      "sound": "NAE-ryeo-gal TTAE GI-reul I-reo-beo-ryeo-sseo-yo.",
+      "variations": [
+        {
+          "display": "Naeryeogal ttae gil-i meoreoyo.",
+          "script": "내려갈 때 길이 멀어요.",
+          "cue": "The way down is long.",
+          "changed": "the road as subject"
+        },
+        {
+          "display": "San-eul naeryeogayo.",
+          "script": "산을 내려가요.",
+          "cue": "I go down the mountain.",
+          "changed": "the mountain as the path travelled, which takes -eul"
+        }
+      ],
+      "mistake": {
+        "display": "Arae-ro gal ttae gil-eul ireobeoryeosseoyo.",
+        "script": "아래로 갈 때 길을 잃어버렸어요.",
+        "why": "arae-ro gada is down built the English way. The single verb naeryeogada is what Korean uses, and it is the whole point of the set."
+      },
+      "usage": "The part of the story where it went wrong.",
+      "register": "neutral",
+      "mnemonic": "Korean loses the road."
+    },
+    {
+      "id": "L4-M9-S09",
+      "display": "Jido-reul bogo oreunjjok-euro jjuk gasseoyo.",
+      "script": "지도를 보고 오른쪽으로 쭉 갔어요.",
+      "cue": "I looked at the map and went straight on to the right.",
+      "literal": "map-OBJ look-AND right-toward straight went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jido",
+            "script": "지도",
+            "cue": "map",
+            "tag": "free",
+            "forms": [
+              "jido",
+              "jido-reul",
+              "jido-ga"
+            ],
+            "note": "A map, on paper or on a phone. It goes with bogo, to look at, rather than with a verb of reading."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "bogo, not bogoseo. L3-M6's -go simply stacks the two acts here; the map is not a place you arrive at, so gaseo's being-there is not wanted.",
+      "sound": "JI-do-reul BO-go O-reun-jjo-geu-ro JJUK GA-sseo-yo. jjuk is one short tense burst.",
+      "variations": [
+        {
+          "display": "Jido-reul bogo oenjjok-euro gasseoyo.",
+          "script": "지도를 보고 왼쪽으로 갔어요.",
+          "cue": "I looked at the map and went left.",
+          "changed": "the other side, and no jjuk"
+        },
+        {
+          "display": "Jido-ga isseoyo.",
+          "script": "지도가 있어요.",
+          "cue": "I have a map.",
+          "changed": "the map as subject"
+        }
+      ],
+      "mistake": {
+        "display": "Jido-reul bogo oreunjjok-e jjuk gasseoyo.",
+        "script": "지도를 보고 오른쪽에 쭉 갔어요.",
+        "why": "jjuk is a straight run in a direction, so the particle has to be -(eu)ro. -e would fix a point, and you cannot run straight on at a point."
+      },
+      "usage": "Retelling how you found the place.",
+      "register": "neutral",
+      "mnemonic": "jjuk always rides -(eu)ro."
+    },
+    {
+      "id": "L4-M9-S10",
+      "display": "Meonjeo gonghang-e gasseoyo. Geu daeum-e bada-e gasseoyo. Machimnae jip-e doragasseoyo.",
+      "script": "먼저 공항에 갔어요. 그 다음에 바다에 갔어요. 마침내 집에 돌아갔어요.",
+      "cue": "First I went to the airport. Then I went to the sea. Finally I went back home.",
+      "literal": "first airport-to went. that next-at sea-to went. finally house-to went-back",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "doragasseoyo",
+            "script": "돌아갔어요",
+            "cue": "went back",
+            "tag": "free",
+            "forms": [
+              "doragasseoyo"
+            ],
+            "note": "The past of S04's doragayo, and the ordinary way an account of a trip ends. Going back is one verb, not a verb plus back."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The sequencers are L2-M10's and carry the whole shape of the account. Nothing new is needed to tell a trip; what is new is putting the directions inside it.",
+      "sound": "MEON-jeo GONG-hang-e GA-sseo-yo. GEU DA-eu-me BA-da-e GA-sseo-yo. MA-chim-nae JI-be DO-ra-ga-sseo-yo.",
+      "variations": [
+        {
+          "display": "Meonjeo yeok-e gasseoyo. Geu daeum-e bada-e gasseoyo. Machimnae jip-e doragasseoyo.",
+          "script": "먼저 역에 갔어요. 그 다음에 바다에 갔어요. 마침내 집에 돌아갔어요.",
+          "cue": "First I went to the station. Then to the sea. Finally I went back home.",
+          "changed": "where the trip starts"
+        },
+        {
+          "display": "Machimnae jip-e doragasseoyo.",
+          "script": "마침내 집에 돌아갔어요.",
+          "cue": "Finally I went back home.",
+          "changed": "the closing line alone"
+        }
+      ],
+      "mistake": {
+        "display": "Meonjeo gonghang-e gabon jeok isseoyo. Geu daeum-e bada-e gasseoyo.",
+        "script": "먼저 공항에 가본 적 있어요. 그 다음에 바다에 갔어요.",
+        "why": "The experience frame cannot sit inside a chronological account: it says at some point in my life, which meonjeo immediately contradicts. Inside a trip, every step is a plain past."
+      },
+      "usage": "Telling the whole of a day out.",
+      "register": "neutral",
+      "mnemonic": "A trip is plain pasts on a string."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M9-C01",
+      "display": "Bada-e gabon jeok isseoyo?",
+      "script": "바다에 가본 적 있어요?",
+      "cue": "Have you ever been to the sea?"
+    },
+    {
+      "id": "L4-M9-C02",
+      "display": "San-e gabon jeok eopseoyo.",
+      "script": "산에 가본 적 없어요.",
+      "cue": "I have never been to the mountains."
+    },
+    {
+      "id": "L4-M9-C03",
+      "display": "Yeohaeng-eul gaseo bada-reul bwasseoyo.",
+      "script": "여행을 가서 바다를 봤어요.",
+      "cue": "I went on a trip and saw the sea."
+    },
+    {
+      "id": "L4-M9-C04",
+      "display": "Sageori-eseo oenjjok-euro doragaseyo.",
+      "script": "사거리에서 왼쪽으로 돌아가세요.",
+      "cue": "Turn back to the left at the crossroads."
+    },
+    {
+      "id": "L4-M9-C05",
+      "display": "Gonghang-e deureogaseo chingu-reul mannasseoyo.",
+      "script": "공항에 들어가서 친구를 만났어요.",
+      "cue": "I went into the airport and met my friend."
+    },
+    {
+      "id": "L4-M9-C06",
+      "display": "Yeok-eseo nagaseo taeksi-reul tayo.",
+      "script": "역에서 나가서 택시를 타요.",
+      "cue": "You go out of the station and take a taxi."
+    },
+    {
+      "id": "L4-M9-C07",
+      "display": "San-e ollagal ttae sigan-i mani geollyeosseoyo.",
+      "script": "산에 올라갈 때 시간이 많이 걸렸어요.",
+      "cue": "It took a long time going up the mountain."
+    },
+    {
+      "id": "L4-M9-C08",
+      "display": "Naeryeogal ttae gil-eul ireobeoryeosseoyo.",
+      "script": "내려갈 때 길을 잃어버렸어요.",
+      "cue": "I got lost on the way down."
+    },
+    {
+      "id": "L4-M9-C09",
+      "display": "Jido-reul bogo oreunjjok-euro jjuk gasseoyo.",
+      "script": "지도를 보고 오른쪽으로 쭉 갔어요.",
+      "cue": "I looked at the map and went straight on to the right."
+    },
+    {
+      "id": "L4-M9-C10",
+      "display": "Machimnae jip-e doragasseoyo.",
+      "script": "마침내 집에 돌아갔어요.",
+      "cue": "Finally I went back home."
+    },
+    {
+      "id": "L4-M9-C11",
+      "display": "Gicha-ga jamsi hu-e chulbalhamnida.",
+      "script": "기차가 잠시 후에 출발합니다.",
+      "cue": "The train departs shortly."
+    },
+    {
+      "id": "L4-M9-C12",
+      "display": "Yeok-eseo yeok-kkaji han sigan geollyeosseoyo.",
+      "script": "역에서 역까지 한 시간 걸렸어요.",
+      "cue": "It took an hour from station to station."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

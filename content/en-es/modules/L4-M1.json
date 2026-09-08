@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "tú imperative",
+      "present subjunctive"
+    ],
+    "allowedPatterns": [
+      "Primero + V-imperative + , + luego + V-imperative",
+      "Para + V-inf + , + V-imperative",
+      "V-imperative + para que + <subjunctive>",
+      "No + <subjunctive-2sg> + <complement>",
+      "V-imperative+clitic (dámelo) + / + No + me lo + <subjunctive-2sg>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The affirmative tu command is the bare he-she present, with nothing added: hablar gives habla, comer gives come, subir gives sube. Seven verbs are irregular and the list is closed: haz, pon, ven, di, sal, ten, ve."
+    },
+    {
+      "tag": "interference",
+      "text": "The negative command is not the imperative at all. It is no plus the present subjunctive you-form: no hables, no comas, no subas, no hagas. English has one imperative for both polarities, which is why it produces no habla and no hablas."
+    },
+    {
+      "tag": "delta",
+      "text": "Purpose splits on the subject. One subject for both halves takes para plus the INFINITIVE: para ventilar la cocina, abre la ventana. Two subjects take para que plus the SUBJUNCTIVE: abre la ventana para que entre el aire. English to plus verb covers both, so para que is never reached for."
+    },
+    {
+      "tag": "interference",
+      "text": "Pronouns ATTACH to the end of an affirmative command and stand IN FRONT of a negative one: damelo against no me lo des. One rule with two spellings, and the order me lo never changes. English attaches nothing to its verb, ever."
+    },
+    {
+      "tag": "free",
+      "text": "The order words run one to one with English: primero, luego, despues, por ultimo. Only por ultimo is new here; L1-M6 bought despues, L2-M4 primero and L2-M7 luego, and nothing about any of them differs from first, then, after that, last."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "Primero calienta el agua, luego añade el café.",
+      "cue": "First heat the water, then add the coffee.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "calienta",
+            "cue": "heat · warm up",
+            "tag": "delta",
+            "forms": [],
+            "note": "The command is the bare he-heats form of calentar. Nothing is added to make it an order — Spanish takes the third person and points it at you."
+          },
+          {
+            "display": "añade",
+            "cue": "add",
+            "tag": "delta",
+            "forms": [],
+            "note": "añadir is an -ir verb, so its command ends in -e as well: añade. The -ar and the -ir verbs both land on -a or -e; only the -er ones are worth checking twice."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English can say heat and heats and mean two different things; Spanish uses the SAME shape for he heats and for the order. Only the position in the sentence tells them apart.",
+      "sound": "ca-LIEN-ta, stress on the lien, one glide. a-ÑA-de, and the ñ is the ni of onion.",
+      "variations": [
+        {
+          "display": "Primero calienta la leche, luego añade el café.",
+          "cue": "First heat the milk, then add the coffee.",
+          "changed": "the thing being heated"
+        },
+        {
+          "display": "Primero calienta el agua, después añade el café.",
+          "cue": "First heat the water, after that add the coffee.",
+          "changed": "después for luego, one step further along"
+        }
+      ],
+      "mistake": {
+        "display": "Primero calientas el agua.",
+        "why": "calientas is the you-form of the present — a statement about what you do. The order drops the s: calienta."
+      },
+      "usage": "Talking a friend through a recipe in their own kitchen. tú throughout, because you would not say this to a stranger.",
+      "register": "informal",
+      "mnemonic": "The order is the he-form, aimed at you."
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "Primero come algo, después bebe agua y por último descansa.",
+      "cue": "First eat something, after that drink water and last of all rest.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "come",
+            "cue": "eat",
+            "tag": "delta",
+            "forms": [],
+            "note": "The command of comer. L1-M4 taught como, I eat; this is the same verb with the ending that turns it on someone else."
+          },
+          {
+            "display": "bebe",
+            "cue": "drink",
+            "tag": "delta",
+            "forms": [],
+            "note": "beber is an -er verb, so its command ends in -e: bebe. The -ar verbs end in -a — that is the whole affirmative rule."
+          },
+          {
+            "display": "por último",
+            "cue": "last of all · finally",
+            "tag": "free",
+            "forms": [],
+            "note": "The last step of a sequence. It closes a list that primero opened; luego and después are the middle."
+          },
+          {
+            "display": "descansa",
+            "cue": "rest",
+            "tag": "delta",
+            "forms": [],
+            "note": "The command of descansar. An -ar verb, so it ends in -a, exactly like calienta."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English says finally for both the last step and at last, the relief. por último is only the step. The relief is por fin, which this module does not spend.",
+      "sound": "por ÚL-ti-mo, stressed on the ul. des-CAN-sa, stress on the can.",
+      "variations": [
+        {
+          "display": "Primero come algo y por último descansa.",
+          "cue": "First eat something and last of all rest.",
+          "changed": "the middle step dropped, so the list is two long"
+        },
+        {
+          "display": "Come algo ahora y bebe agua.",
+          "cue": "Eat something now and drink water.",
+          "changed": "no sequence at all — two bare orders"
+        }
+      ],
+      "mistake": {
+        "display": "Primero comer algo, después beber agua.",
+        "why": "Infinitives are how a recipe card is written, not how you speak to a person. Spoken to someone, each step takes a command."
+      },
+      "usage": "Looking after a friend who has had a long day. tú, and the sequence words are what make it advice rather than a list of orders.",
+      "register": "informal",
+      "mnemonic": "primero opens the list, por último shuts it."
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "Para ventilar la cocina, abre la ventana.",
+      "cue": "To air out the kitchen, open the window.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ventilar",
+            "cue": "to air out · to ventilate",
+            "tag": "free",
+            "forms": [],
+            "note": "Stays an INFINITIVE after para, because the same person does both halves: you air the kitchen and you open the window."
+          },
+          {
+            "display": "cocina",
+            "cue": "kitchen",
+            "tag": "free",
+            "forms": [],
+            "note": "The room. cocinar, to cook, is the verb it comes from, and this module spends only the noun."
+          },
+          {
+            "display": "abre",
+            "cue": "open",
+            "tag": "delta",
+            "forms": [],
+            "note": "The command of abrir. L2-M1 taught the infinitive abrir; this is the same verb turned on the person in front of you."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English to open covers both purposes this module teaches. Spanish splits them: one subject takes para plus the infinitive, two subjects take para que plus the subjunctive.",
+      "sound": "ven-ti-LAR, stress on the last syllable, as every -ar infinitive is. A-bre, stress on the a.",
+      "variations": [
+        {
+          "display": "Para ventilar la casa, abre la puerta.",
+          "cue": "To air out the house, open the door.",
+          "changed": "the room and the opening"
+        },
+        {
+          "display": "Para ventilar la cocina, abre la ventana un momento.",
+          "cue": "To air out the kitchen, open the window for a moment.",
+          "changed": "how long, added at the end"
+        }
+      ],
+      "mistake": {
+        "display": "Para ventiles la cocina, abre la ventana.",
+        "why": "para never takes a conjugated verb. With one subject it takes the infinitive: para ventilar."
+      },
+      "usage": "A flatmate telling another to clear the smell of frying. tú, and the same line to a landlord would use abra.",
+      "register": "informal",
+      "mnemonic": "Same subject, so the second verb stays unconjugated."
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "Para comer temprano, ven a mi casa a las siete.",
+      "cue": "To eat early, come to my house at seven.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ven",
+            "cue": "come",
+            "tag": "delta",
+            "forms": [
+              "ven",
+              "haz",
+              "pon",
+              "di",
+              "sal",
+              "ten",
+              "ve"
+            ],
+            "note": "One of the seven irregular commands, and the list is closed: haz, pon, ven, di, sal, ten, ve. None of them is the he-form — that is what makes them irregular."
+          },
+          {
+            "display": "siete",
+            "cue": "seven",
+            "tag": "free",
+            "forms": [],
+            "note": "The hour. L1-M8 bought dos, diez and ocho; this is the one the sequence needed."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The irregular commands are short and none of them looks like its infinitive. venir gives ven, not viene — and viene is the statement he comes, which is why the wrong one is understood as gossip.",
+      "sound": "ven is one syllable and the e is short. SIE-te, two syllables, the ie one glide.",
+      "variations": [
+        {
+          "display": "Para comer temprano, ven a mi casa a las ocho.",
+          "cue": "To eat early, come to my house at eight.",
+          "changed": "the hour"
+        },
+        {
+          "display": "Para comer con mi hermana, ven mañana.",
+          "cue": "To eat with my sister, come tomorrow.",
+          "changed": "the reason and the day"
+        }
+      ],
+      "mistake": {
+        "display": "Para comer temprano, viene a mi casa.",
+        "why": "viene is he comes. The command of venir is ven, and it is on the closed irregular list."
+      },
+      "usage": "Inviting a friend to dinner. tú, and the usted twin of ven is venga — L2-M4's siga, gire and tome are the formal commands the course already owns.",
+      "register": "informal",
+      "mnemonic": "Seven irregulars, all short, all learned as a list."
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "Abre la ventana para que entre el aire.",
+      "cue": "Open the window so the air comes in.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "para que",
+            "cue": "so that",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two subjects, so the purpose needs para que and a subjunctive. You open, the air enters — different people, different clause."
+          },
+          {
+            "display": "entre",
+            "cue": "comes in · enters",
+            "tag": "delta",
+            "forms": [],
+            "note": "The present subjunctive of entrar, forced by para que. The indicative would be entra; the subjunctive swaps the -a for an -e."
+          },
+          {
+            "display": "aire",
+            "cue": "air",
+            "tag": "free",
+            "forms": [],
+            "note": "The thing that enters. Masculine, so el aire, even though it ends in -e."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English says so the air comes in with an ordinary present. Spanish cannot: para que takes the subjunctive every time, and no meaning changes when it does.",
+      "sound": "para que runs together as PA-ra-ke; the qu is a plain k with no w in it. AI-re, two syllables.",
+      "variations": [
+        {
+          "display": "Abre la puerta para que entre el aire.",
+          "cue": "Open the door so the air comes in.",
+          "changed": "which opening"
+        },
+        {
+          "display": "Cierra la ventana para que no entre el aire.",
+          "cue": "Close the window so the air doesn't come in.",
+          "changed": "the opposite instruction, and no before the subjunctive"
+        }
+      ],
+      "mistake": {
+        "display": "Abre la ventana para entre el aire.",
+        "why": "para plus a conjugated verb is not Spanish. With two subjects the connector is para que."
+      },
+      "usage": "Said in a hot kitchen to whoever is nearest. tú, and the sentence works unchanged with usted once abre becomes abra.",
+      "register": "informal",
+      "mnemonic": "Two subjects, so que shows up and the mood changes."
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "Cierra la puerta para que no entre el frío.",
+      "cue": "Close the door so the cold doesn't get in.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cierra",
+            "cue": "close · shut",
+            "tag": "delta",
+            "forms": [],
+            "note": "The command of cerrar, and the e breaks to ie under stress exactly as it does in cierro. Same break as calienta."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The negative sits inside the para que clause, not on the command: the order is still positive. English puts doesn't in the same place, which is the one thing that lines up here.",
+      "sound": "CIE-rra, and the rr is trilled — a single r would be ciera, which is nothing at all.",
+      "variations": [
+        {
+          "display": "Cierra la ventana para que no entre el frío.",
+          "cue": "Close the window so the cold doesn't get in.",
+          "changed": "which opening"
+        },
+        {
+          "display": "Cierra la puerta para que no entre el ruido.",
+          "cue": "Close the door so the noise doesn't get in.",
+          "changed": "what is being kept out"
+        }
+      ],
+      "mistake": {
+        "display": "Cierra la puerta para que no entra el frío.",
+        "why": "entra is the indicative. para que takes the subjunctive whether the clause is positive or negative: entre."
+      },
+      "usage": "Winter, and someone has left the door open. tú, and it is an instruction rather than a request — no por favor is expected.",
+      "register": "informal",
+      "mnemonic": "The no goes with the subjunctive, not with the command."
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "No hables tan rápido, por favor.",
+      "cue": "Don't speak so fast, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "no hables",
+            "cue": "don't speak",
+            "tag": "interference",
+            "forms": [
+              "no hables",
+              "no comas",
+              "no subas"
+            ],
+            "note": "The negative command is no plus the present subjunctive: -ar verbs take -es, -er and -ir verbs take -as. no hables, no comas, no subas — that is the whole pattern."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English says do not plus the same verb it used for the order. Spanish changes the verb: habla is the command, hables is the negative one, and no habla means he does not speak.",
+      "sound": "no HA-bles, stress on the ha; the final s is what makes it you.",
+      "variations": [
+        {
+          "display": "No comas tan rápido, por favor.",
+          "cue": "Don't eat so fast, please.",
+          "changed": "the verb, and the -er ending that comes with it"
+        },
+        {
+          "display": "No subas ahora, por favor.",
+          "cue": "Don't go up now, please.",
+          "changed": "an -ir verb, and when rather than how"
+        }
+      ],
+      "mistake": {
+        "display": "No habla tan rápido.",
+        "why": "That is he does not speak fast. The negative command borrows the subjunctive: no hables."
+      },
+      "usage": "Asking a friend to slow down so you can follow. tú, and por favor is what keeps it from sounding sharp.",
+      "register": "informal",
+      "mnemonic": "Say it: hables. Don't say it: no hables. The s stays either way."
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "No pongas el móvil en la mesa, por favor.",
+      "cue": "Don't put your phone on the table, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "no pongas",
+            "cue": "don't put",
+            "tag": "interference",
+            "forms": [
+              "no pongas",
+              "no hagas",
+              "no vayas",
+              "no digas"
+            ],
+            "note": "The irregular commands go negative the ordinary way, through the subjunctive: pon becomes no pongas, haz becomes no hagas, ve becomes no vayas, di becomes no digas."
+          },
+          {
+            "display": "móvil",
+            "cue": "mobile phone",
+            "tag": "free",
+            "forms": [],
+            "note": "The everyday word in Spain; celular is the Latin American one. Stressed on the mo, and the accent is there to say so."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The irregular list only helps in the affirmative. In the negative every one of those seven verbs behaves like any other, so there is no second list to learn.",
+      "sound": "no PON-gas, and the g is hard, as in go. MÓ-vil, stress on the mo.",
+      "variations": [
+        {
+          "display": "No hagas ruido en casa, por favor.",
+          "cue": "Don't make noise at home, please.",
+          "changed": "a different irregular, and what is being asked"
+        },
+        {
+          "display": "No pongas el libro en la mesa.",
+          "cue": "Don't put the book on the table.",
+          "changed": "the object, and no please"
+        }
+      ],
+      "mistake": {
+        "display": "No pones el móvil en la mesa.",
+        "why": "no pones is a statement — you don't put. The negative command is no pongas."
+      },
+      "usage": "At someone else's dinner table. tú among friends; the same line to a stranger is no ponga, and L3-M8's espere is the formal command the course already owns.",
+      "register": "informal",
+      "mnemonic": "Affirmative is irregular; negative is just the subjunctive."
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "Toma el libro y dámelo mañana.",
+      "cue": "Take the book and give it to me tomorrow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "toma",
+            "cue": "take · here you go",
+            "tag": "delta",
+            "forms": [],
+            "note": "The command of tomar, and the everyday word for handing something over. L2-M4 owns the usted twin, tome, in its directions."
+          },
+          {
+            "display": "dámelo",
+            "cue": "give it to me",
+            "tag": "delta",
+            "forms": [],
+            "note": "Three pieces welded into one word: da plus me plus lo. The accent appears because the stress stayed on the da while two syllables were added behind it."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English keeps give it to me as four separate words in any order it likes. Spanish writes the affirmative command as ONE word and fixes the order: person first, thing second.",
+      "sound": "DÁ-me-lo, three syllables, and the accent tells you the stress never moved off the da.",
+      "variations": [
+        {
+          "display": "Toma el libro y dámelo ahora.",
+          "cue": "Take the book and give it to me now.",
+          "changed": "when"
+        },
+        {
+          "display": "Toma el pan y dámelo mañana.",
+          "cue": "Take the bread and give it to me tomorrow.",
+          "changed": "the thing being handed over"
+        }
+      ],
+      "mistake": {
+        "display": "Toma el libro y da me lo mañana.",
+        "why": "On an affirmative command the pronouns are written onto the verb as one word, and the accent comes with them: dámelo."
+      },
+      "usage": "Lending something to a friend. tú, and toma is what you say as your hand goes out.",
+      "register": "informal",
+      "mnemonic": "One word, one accent: dámelo."
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "No me lo des ahora, dámelo luego.",
+      "cue": "Don't give it to me now, give it to me later.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me lo",
+            "cue": "it to me",
+            "tag": "delta",
+            "forms": [],
+            "note": "The pair moves as a block and never reorders: person first, thing second, in front of a negative command and welded behind an affirmative one."
+          },
+          {
+            "display": "des",
+            "cue": "give",
+            "tag": "delta",
+            "forms": [],
+            "note": "The negative-command form of dar. Short, and it is the same subjunctive the other negatives use."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "This is one rule with two spellings, not two rules. The same me lo sits in front when the command is negative and behind when it is positive, and English shows nothing of either.",
+      "sound": "no me lo DES, four short beats with the stress on the last one.",
+      "variations": [
+        {
+          "display": "No me lo des ahora, dámelo mañana.",
+          "cue": "Don't give it to me now, give it to me tomorrow.",
+          "changed": "when the handover happens"
+        },
+        {
+          "display": "No me lo des hoy.",
+          "cue": "Don't give it to me today.",
+          "changed": "the second half dropped"
+        }
+      ],
+      "mistake": {
+        "display": "No des me lo ahora.",
+        "why": "On a negative command the pronouns detach and go in FRONT of the verb: no me lo des."
+      },
+      "usage": "Refusing something now and asking for it later. tú, and the two halves side by side are the pair worth memorising.",
+      "register": "informal",
+      "mnemonic": "Negative in front, affirmative behind — same two words either way."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "Primero calienta el agua, luego añade el café.",
+      "cue": "First heat the water, then add the coffee."
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "Primero come algo y por último descansa.",
+      "cue": "First eat something and last of all rest."
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "Para ventilar la cocina, abre la ventana.",
+      "cue": "To air out the kitchen, open the window."
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "Abre la ventana para que entre el aire.",
+      "cue": "Open the window so the air comes in."
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "Cierra la puerta para que no entre el frío.",
+      "cue": "Close the door so the cold doesn't get in."
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "No hables tan rápido, por favor.",
+      "cue": "Don't speak so fast, please."
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "No pongas el móvil en la mesa.",
+      "cue": "Don't put your phone on the table."
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "Toma el libro y dámelo mañana.",
+      "cue": "Take the book and give it to me tomorrow."
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "No me lo des ahora.",
+      "cue": "Don't give it to me now."
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "Ven a mi casa a las siete.",
+      "cue": "Come to my house at seven."
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "Haz la sopa y pon el pan en la mesa.",
+      "cue": "Make the soup and put the bread on the table."
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "No comas tan rápido y bebe agua.",
+      "cue": "Don't eat so fast and drink water."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

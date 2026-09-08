@@ -1,0 +1,734 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "imperativo, familiar and polite — the module's new mood",
+      "infinitive, after non in a familiar order and after per",
+      "present indicative, L1-M6's, where the familiar order borrows its shape (vai)"
+    ],
+    "allowedPatterns": [
+      "Prima + <imperativo tu> + , + poi + <imperativo tu>",
+      "<imperativo Lei> + <complemento>",
+      "Non + V-inf",
+      "<imperativo> + per + V-inf",
+      "Serve per + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE IMPERATIVE'S ENDINGS ARE CROSSED, AND THE CROSSING IS THE WHOLE DIFFICULTY. Speaking to a friend, an -are verb ends in -a (gira, aspetta, guarda) and an -ere or -ire verb ends in -i (prendi, apri, senti). Speaking politely the two swap over: -are takes -i (giri, firmi, scusi) and -ere and -ire take -a (prenda, senta, apra). One and the same ending is therefore familiar on one class of verb and polite on the other. Learn it as the swap; two separate lists are exactly what a learner merges."
+    },
+    {
+      "tag": "free",
+      "text": "ENGLISH GIVES YOU THE SHAPE FOR FREE. Gira a destra is Turn right word for word and in the same order: the verb comes first, no pronoun is written, and nothing about the SHAPE has to be unlearned. What English does not have is the second imperative — it has one, Italian has two. A learner who has only ever met the polite forms (L2-M1's scusi and senta, L2-M4's vada, prenda and giri) will say Giri to a friend and sound like a ticket office."
+    },
+    {
+      "tag": "interference",
+      "text": "A NEGATIVE ORDER TO A FRIEND IS non PLUS THE INFINITIVE. Non toccare, non aprire, non dimenticare — not the positive form with non stuck in front of it. It looks nothing like the tocca or the apri beside it, and that is the point at which English gives no help: do not touch is one construction for everybody. The polite imperative keeps its own shape under negation (non tocchi, non apra), so the two registers part company here."
+    },
+    {
+      "tag": "interference",
+      "text": "PURPOSE IS per PLUS THE INFINITIVE, NEVER a. English to — meaning in order to — comes out as per: Premi il tasto per uscire, Questo tasto serve per uscire. L3-M2 taught per as for in Lavoro per una ditta italiana; this is the same word doing a second job, which is why it earns no new row. A learner who has met vado a mangiare will reach for a here: a plus an infinitive follows a verb of motion and never states a purpose."
+    },
+    {
+      "tag": "free",
+      "text": "THE POLITE IMPERATIVE IS BORROWED, AND THE OBJECT STAYS A SEPARATE WORD. metta, apra, aspetti and dica are not a form of their own: they are a slice of the congiuntivo, a mood this course opens at L4-M5. Take them here as fixed shapes to be said. And keep every object beside the verb — dica il numero, metta il documento — because the joined-on pronoun forms (dimmi, prendilo) belong to L5 with the rest of clitic attachment."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "Prima apri la finestra, poi chiudi la porta",
+      "cue": "First open the window, then close the door",
+      "literal": "First open the window, then close the door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "apri",
+            "cue": "open — to a friend",
+            "tag": "delta",
+            "forms": [
+              "apri"
+            ],
+            "note": "The familiar imperative of aprire. An -ire verb takes -i here, which is the very ending the polite form uses on -are verbs."
+          },
+          {
+            "display": "chiudi",
+            "cue": "close — to a friend",
+            "tag": "delta",
+            "forms": [
+              "chiudi"
+            ],
+            "note": "The familiar imperative of chiudere. -ere takes -i too, so apri and chiudi rhyme; the polite pair would be apra and chiuda."
+          },
+          {
+            "display": "finestra",
+            "cue": "window",
+            "tag": "free",
+            "forms": [
+              "finestra",
+              "finestre"
+            ],
+            "note": "Feminine. aprire la finestra is the ordinary way to say air the room, and una finestra sulla strada is a window onto the street."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English can front the pronoun in an order — you open the window — and Italian cannot. The verb stands alone and its ending alone says who is being told.",
+      "sound": "PREE-ma AH-pree la fee-NES-tra, poy KYOO-dee la POR-ta. chiudi begins KYOO: chi is k plus i, never the ch of church.",
+      "variations": [
+        {
+          "display": "Prima chiudi la porta, poi apri la finestra",
+          "cue": "First close the door, then open the window",
+          "changed": "the two steps swapped round"
+        },
+        {
+          "display": "Apri la finestra, per favore",
+          "cue": "Open the window, please",
+          "changed": "one step, softened with L1-M8's per favore"
+        },
+        {
+          "display": "Non aprire la finestra",
+          "cue": "Do not open the window",
+          "changed": "negative, so the verb drops back to the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Prima apra la finestra, poi chiudi la porta",
+        "why": "apra is the polite form and chiudi the familiar one; a single order cannot use both. To a friend it is apri ... chiudi."
+      },
+      "usage": "Handing a friend or a flatmate two steps in the order they happen.",
+      "register": "informal",
+      "mnemonic": "-are ends in -a for a friend; everything else ends in -i."
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "Per prima cosa metti la pentola sul fuoco",
+      "cue": "First of all put the pot on the heat",
+      "literal": "For first thing put the pot on-the fire",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "per prima cosa",
+            "cue": "first of all",
+            "tag": "free",
+            "forms": [
+              "per prima cosa"
+            ],
+            "note": "Three words, one fixed phrase: the first thing to do. It never changes shape, and it opens a list of steps where prima on its own would also do."
+          },
+          {
+            "display": "metti",
+            "cue": "put — to a friend",
+            "tag": "delta",
+            "forms": [
+              "metti"
+            ],
+            "note": "The familiar imperative of mettere. -ere takes -i, so it is metti; the polite form metta is S09's, with the endings crossed over."
+          },
+          {
+            "display": "pentola",
+            "cue": "pot, pan",
+            "tag": "free",
+            "forms": [
+              "pentola",
+              "pentole"
+            ],
+            "note": "Feminine. The deep cooking pot that sits on the stove; the flat frying pan is a padella."
+          },
+          {
+            "display": "fuoco",
+            "cue": "fire; the heat of a stove",
+            "tag": "free",
+            "forms": [
+              "fuoco",
+              "fuochi"
+            ],
+            "note": "Masculine. On a stove it is the burner and the heat on it: sul fuoco is on the heat, a fuoco basso on a low flame."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "per prima cosa is frozen: never per la prima cosa, never per prime cose. Nothing inside it agrees with anything.",
+      "sound": "per PREE-ma KO-za MET-tee la PEN-to-la sul FWO-ko. The double t of metti is held: MET-tee, not ME-tee.",
+      "variations": [
+        {
+          "display": "Prima metti la pentola sul fuoco",
+          "cue": "First put the pot on the heat",
+          "changed": "prima on its own, shorter and just as ordinary"
+        },
+        {
+          "display": "Per prima cosa guarda la ricetta",
+          "cue": "First of all look at the recipe",
+          "changed": "a different opening step"
+        },
+        {
+          "display": "Metta la pentola sul fuoco",
+          "cue": "Put the pot on the heat — politely",
+          "changed": "polite, so mettere's -ere swings to -a"
+        }
+      ],
+      "mistake": {
+        "display": "Per prima cosa metta la pentola sul fuoco, poi aggiungi il sale",
+        "why": "metta is polite and aggiungi is familiar, so the two halves address two different people. Pick one register and keep it to the end."
+      },
+      "usage": "Reading a recipe out to somebody who is doing the cooking.",
+      "register": "informal",
+      "mnemonic": "mettere is -ere, so a friend gets metti."
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "Aggiungi il sale, poi aspetta dieci minuti",
+      "cue": "Add the salt, then wait ten minutes",
+      "literal": "Add the salt, then wait ten minutes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aggiungi",
+            "cue": "add — to a friend",
+            "tag": "delta",
+            "forms": [
+              "aggiungi"
+            ],
+            "note": "The familiar imperative of aggiungere, an -ere verb, so -i. The gg is soft before i: ad-JOON-jee."
+          },
+          {
+            "display": "sale",
+            "cue": "salt",
+            "tag": "free",
+            "forms": [
+              "sale"
+            ],
+            "note": "Masculine, and with no plural in this sense. The same four letters are also he or she goes up, from salire; the article tells them apart."
+          },
+          {
+            "display": "aspetta",
+            "cue": "wait — to a friend",
+            "tag": "delta",
+            "forms": [
+              "aspetta"
+            ],
+            "note": "The familiar imperative of aspettare, an -are verb, so -a. The polite form is aspetti, which is the ending a learner expects for a friend."
+          },
+          {
+            "display": "minuti",
+            "cue": "minutes",
+            "tag": "free",
+            "forms": [
+              "minuti",
+              "minuto"
+            ],
+            "note": "Masculine. dieci minuti is ten minutes and un minuto is one; un momento does the same job when the length does not matter."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "aspettare takes its object directly: aspetta dieci minuti, never aspetta per dieci minuti. The for of English wait for does not cross over.",
+      "sound": "ad-JOON-jee il SA-le, poy as-PET-ta DYE-chee mee-NOO-tee. gg before i is the j of jam.",
+      "variations": [
+        {
+          "display": "Aggiungi il sale e aspetta",
+          "cue": "Add the salt and wait",
+          "changed": "e in place of poi, and no length of time"
+        },
+        {
+          "display": "Aspetta dieci minuti, poi aggiungi il sale",
+          "cue": "Wait ten minutes, then add the salt",
+          "changed": "the two steps in the other order"
+        },
+        {
+          "display": "Aspetti dieci minuti, per favore",
+          "cue": "Wait ten minutes, please — politely",
+          "changed": "polite, so aspettare's -are swings to -i"
+        }
+      ],
+      "mistake": {
+        "display": "Aggiunga il sale, poi aspetta dieci minuti",
+        "why": "aggiunga is the polite form standing beside the familiar aspetta. To a friend the pair is aggiungi ... aspetta."
+      },
+      "usage": "Talking a friend through a recipe step by step.",
+      "register": "informal",
+      "mnemonic": "One -ere verb in -i, one -are verb in -a: that is the familiar side."
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "Non toccare la pentola, è molto calda",
+      "cue": "Do not touch the pot, it is very hot",
+      "literal": "Not to-touch the pot, it-is very hot",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "non toccare",
+            "cue": "do not touch — to a friend",
+            "tag": "interference",
+            "forms": [
+              "non toccare",
+              "non aprire",
+              "non dimenticare",
+              "non aggiungere",
+              "non guardare",
+              "non premere"
+            ],
+            "note": "One shape for every negative order to a friend: non plus the plain infinitive. It looks nothing like the positive tocca standing beside it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The positive is tocca and the negative is non toccare — the verb changes shape completely. English keeps one form for both: touch it, do not touch it.",
+      "sound": "non tok-KA-re la PEN-to-la, e MOL-to KAL-da. The cc of toccare is held: tok-KA-re.",
+      "variations": [
+        {
+          "display": "Non aprire la finestra",
+          "cue": "Do not open the window",
+          "changed": "a different verb in the same non plus infinitive frame"
+        },
+        {
+          "display": "Non dimenticare il sale",
+          "cue": "Do not forget the salt",
+          "changed": "L2-M8's dimenticare, negated the same way"
+        },
+        {
+          "display": "Non toccare il fuoco",
+          "cue": "Do not touch the heat",
+          "changed": "a different thing not to touch"
+        }
+      ],
+      "mistake": {
+        "display": "Non tocca la pentola",
+        "why": "non tocca is he does not touch. A negative order to a friend is non plus the infinitive: non toccare."
+      },
+      "usage": "Warning somebody off something hot, sharp or fragile.",
+      "register": "informal",
+      "mnemonic": "Say no to a friend and the verb goes back to the dictionary."
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "Guarda le istruzioni della ricetta e non dimenticare il sale",
+      "cue": "Look at the recipe's instructions and do not forget the salt",
+      "literal": "Look the instructions of-the recipe and not to-forget the salt",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "guarda",
+            "cue": "look at — to a friend",
+            "tag": "delta",
+            "forms": [
+              "guarda"
+            ],
+            "note": "The familiar imperative of guardare, an -are verb, so -a. guardare takes its object with no preposition: guarda le istruzioni."
+          },
+          {
+            "display": "istruzioni",
+            "cue": "instructions",
+            "tag": "free",
+            "forms": [
+              "istruzioni",
+              "istruzione"
+            ],
+            "note": "Feminine, and normally plural like the English. It covers the leaflet in the box as well as the steps themselves."
+          },
+          {
+            "display": "ricetta",
+            "cue": "recipe; prescription",
+            "tag": "free",
+            "forms": [
+              "ricetta",
+              "ricette"
+            ],
+            "note": "Feminine, and it does both jobs: the recipe you cook from and the prescription the doctor writes."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English looks AT something and Italian does not: guarda le istruzioni, never guarda a le istruzioni. The preposition simply is not there.",
+      "sound": "GWAR-da le ee-stroo-TSYO-nee del-la ree-CHET-ta e non dee-men-tee-KA-re il SA-le. The zi of istruzioni is ts.",
+      "variations": [
+        {
+          "display": "Guarda la ricetta",
+          "cue": "Look at the recipe",
+          "changed": "the first half on its own"
+        },
+        {
+          "display": "Non guardare le istruzioni",
+          "cue": "Do not look at the instructions",
+          "changed": "negative, so guardare drops back to the infinitive"
+        },
+        {
+          "display": "Guarda le istruzioni e aggiungi il sale",
+          "cue": "Look at the instructions and add the salt",
+          "changed": "a positive second step in place of the warning"
+        }
+      ],
+      "mistake": {
+        "display": "Guarda a le istruzioni",
+        "why": "guardare needs no preposition, and a le would not be written that way in any case. It is guarda le istruzioni."
+      },
+      "usage": "Pointing a friend at the written steps rather than explaining them.",
+      "register": "informal",
+      "mnemonic": "guarda looks straight at it, with no a in between."
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "Prima gira a destra, poi vai dritto",
+      "cue": "First turn right, then go straight on",
+      "literal": "First turn to right, then go straight",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gira",
+            "cue": "turn — to a friend",
+            "tag": "delta",
+            "forms": [
+              "gira"
+            ],
+            "note": "The familiar imperative of girare, an -are verb, so -a. The polite giri is L2-M4's, in Giri a destra, and it is the -i a learner expects for a friend."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "vai is L1-M6's present tense doing double duty: the familiar order of andare is the form you already know, with nothing new to learn. The polite one is vada, taught at L2-M4.",
+      "sound": "PREE-ma JEE-ra a DES-tra, poy vai DREET-to. gira is JEE-ra: g before i is soft.",
+      "variations": [
+        {
+          "display": "Gira a destra e poi vai dritto",
+          "cue": "Turn right and then go straight on",
+          "changed": "e in place of the prima and poi frame"
+        },
+        {
+          "display": "Prima vai dritto, poi gira a destra",
+          "cue": "First go straight on, then turn right",
+          "changed": "the two steps swapped round"
+        },
+        {
+          "display": "Gira a destra, poi aspetta",
+          "cue": "Turn right, then wait",
+          "changed": "a different second step"
+        }
+      ],
+      "mistake": {
+        "display": "Prima giri a destra, poi vai dritto",
+        "why": "giri is the polite form — L2-M4's Giri a destra. To a friend girare's -are takes -a: gira."
+      },
+      "usage": "Giving a friend directions on foot or from the passenger seat.",
+      "register": "informal",
+      "mnemonic": "girare is -are, so a friend hears gira."
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "Premi il tasto verde per uscire",
+      "cue": "Press the green button to get out",
+      "literal": "Press the button green for to-go-out",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "premi",
+            "cue": "press — to a friend",
+            "tag": "delta",
+            "forms": [
+              "premi"
+            ],
+            "note": "The familiar imperative of premere, an -ere verb, so -i; the polite form is prema. premere is the verb a machine's instructions use for a button."
+          },
+          {
+            "display": "tasto",
+            "cue": "button, key on a machine",
+            "tag": "free",
+            "forms": [
+              "tasto",
+              "tasti"
+            ],
+            "note": "Masculine. A key on a keyboard or a button you press on a panel; the round button on a coat is a bottone."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "Purpose is per plus the infinitive and never a. vado a mangiare is a verb of motion; per uscire is a reason, and a would be wrong here.",
+      "sound": "PRE-mee il TAS-to VER-de per oo-SHEE-re. uscire is oo-SHEE-re: sci is sh.",
+      "variations": [
+        {
+          "display": "Premi il tasto verde",
+          "cue": "Press the green button",
+          "changed": "the order alone, with no purpose attached"
+        },
+        {
+          "display": "Premi il tasto rosso per uscire",
+          "cue": "Press the red button to get out",
+          "changed": "a different button, using L2-M3's rosso"
+        },
+        {
+          "display": "Non premere il tasto verde",
+          "cue": "Do not press the green button",
+          "changed": "negative, so premere drops back to the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Premi il tasto verde a uscire",
+        "why": "purpose never takes a. It is premi il tasto verde per uscire."
+      },
+      "usage": "At a door, a lift or a ticket machine, telling somebody which control to use.",
+      "register": "informal",
+      "mnemonic": "per plus the infinitive is English's in order to."
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "Questo tasto serve per uscire",
+      "cue": "This button is for getting out",
+      "literal": "This button serves for to-go-out",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "serve per",
+            "cue": "is for, serves to",
+            "tag": "free",
+            "forms": [
+              "serve per",
+              "servono per"
+            ],
+            "note": "servire plus per plus an infinitive: what a thing is FOR. Plural things take servono per. It answers the question a che serve?"
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "English turns the purpose into an -ing form — for getting out — and Italian keeps the infinitive: per uscire.",
+      "sound": "KWES-to TAS-to SER-ve per oo-SHEE-re. serve is two syllables, SER-ve.",
+      "variations": [
+        {
+          "display": "Il tasto verde serve per uscire",
+          "cue": "The green button is for getting out",
+          "changed": "the button named by its colour instead of pointed at"
+        },
+        {
+          "display": "Questo tasto non serve per uscire",
+          "cue": "This button is not for getting out",
+          "changed": "negative, and non goes in front of serve, not in front of per"
+        },
+        {
+          "display": "Serve per uscire",
+          "cue": "It is for getting out",
+          "changed": "the subject dropped, as Italian freely does"
+        }
+      ],
+      "mistake": {
+        "display": "Questo tasto serve a uscire",
+        "why": "in this sense servire takes per: serve per uscire. servire a exists, but it means to be of use to somebody."
+      },
+      "usage": "Explaining what a control on a machine actually does.",
+      "register": "neutral",
+      "mnemonic": "serve per — what a thing serves FOR."
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "Scusi, metta il documento sul tavolo e dica il numero",
+      "cue": "Excuse me, put the document on the table and say the number",
+      "literal": "Excuse-me, put the document on-the table and say the number",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "metta",
+            "cue": "put — politely",
+            "tag": "delta",
+            "forms": [
+              "metta"
+            ],
+            "note": "The polite imperative of mettere. An -ere verb takes -a here, which is the ending a friend gets on -are verbs; beside it stands S02's metti."
+          },
+          {
+            "display": "dica",
+            "cue": "say, tell — politely",
+            "tag": "delta",
+            "forms": [
+              "dica"
+            ],
+            "note": "The polite imperative of dire, and irregular: not dice. It is one of the four polite shapes this module asks you to take whole."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "metta and dica look like nothing else you have met, because they are borrowed from the congiuntivo — the mood L4-M5 opens. Take them as fixed shapes for now.",
+      "sound": "SKOO-zee, MET-ta il do-koo-MEN-to sul TA-vo-lo e DEE-ka il NOO-me-ro. dica is DEE-ka: ca is hard.",
+      "variations": [
+        {
+          "display": "Metta il documento sul tavolo",
+          "cue": "Put the document on the table",
+          "changed": "the first order on its own"
+        },
+        {
+          "display": "Metti il documento sul tavolo",
+          "cue": "Put the document on the table — to a friend",
+          "changed": "familiar, so mettere's -ere swings back to -i"
+        },
+        {
+          "display": "Dica il numero, per favore",
+          "cue": "Say the number, please",
+          "changed": "the second order alone, softened"
+        }
+      ],
+      "mistake": {
+        "display": "Scusi, metti il documento sul tavolo",
+        "why": "scusi is polite and metti is familiar, so the sentence changes register halfway. Politely it is metta."
+      },
+      "usage": "At a counter, a bank window or a doctor's desk.",
+      "register": "formal",
+      "mnemonic": "Politely, -ere and -ire swing to -a."
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "Senta, apra la porta e aspetti qui",
+      "cue": "Excuse me, open the door and wait here",
+      "literal": "Listen, open the door and wait here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "apra",
+            "cue": "open — politely",
+            "tag": "delta",
+            "forms": [
+              "apra"
+            ],
+            "note": "The polite imperative of aprire. -ire takes -a here, the exact mirror of S01's apri, which is the same verb spoken to a friend."
+          },
+          {
+            "display": "aspetti",
+            "cue": "wait — politely",
+            "tag": "delta",
+            "forms": [
+              "aspetti"
+            ],
+            "note": "The polite imperative of aspettare. -are takes -i here, which is the ending a friend gets on aprire and chiudere: the crossing in one word."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Both endings are the wrong way round for an English ear: aspetti carries the -i that felt familiar and apra the -a that felt polite. One sentence holds the whole crossing.",
+      "sound": "SEN-ta, A-pra la POR-ta e as-PET-tee kwee. apra is stressed on the first syllable, A-pra.",
+      "variations": [
+        {
+          "display": "Apra la porta, per favore",
+          "cue": "Open the door, please",
+          "changed": "one order, softened"
+        },
+        {
+          "display": "Apri la porta e aspetta qui",
+          "cue": "Open the door and wait here — to a friend",
+          "changed": "familiar, and both endings flip over"
+        },
+        {
+          "display": "Senta, aspetti qui",
+          "cue": "Excuse me, wait here",
+          "changed": "just the waiting"
+        }
+      ],
+      "mistake": {
+        "display": "Senta, apri la porta e aspetti qui",
+        "why": "senta and aspetti are polite; apri is familiar. Politely, aprire takes -a: apra."
+      },
+      "usage": "A stranger or an official telling you what to do.",
+      "register": "formal",
+      "mnemonic": "Polite crosses over: -are takes -i, -ere and -ire take -a."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "Prima apri la finestra, poi chiudi la porta",
+      "cue": "First open the window, then close the door"
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "Per prima cosa metti la pentola sul fuoco",
+      "cue": "First of all put the pot on the heat"
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "Aggiungi il sale e aspetta dieci minuti",
+      "cue": "Add the salt and wait ten minutes"
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "Non toccare il fuoco",
+      "cue": "Do not touch the heat"
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "Non dimenticare le istruzioni",
+      "cue": "Do not forget the instructions"
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "Guarda la ricetta, poi aggiungi il sale",
+      "cue": "Look at the recipe, then add the salt"
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "Gira a destra e poi vai dritto",
+      "cue": "Turn right and then go straight on"
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "Premi il tasto verde per uscire",
+      "cue": "Press the green button to get out"
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "Il tasto verde serve per uscire",
+      "cue": "The green button is for getting out"
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "Scusi, metta il documento sul tavolo",
+      "cue": "Excuse me, put the document on the table"
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "Senta, apra la finestra, per favore",
+      "cue": "Excuse me, open the window, please"
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "Aspetti qui e dica il numero, per favore",
+      "cue": "Wait here and say the number, please"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

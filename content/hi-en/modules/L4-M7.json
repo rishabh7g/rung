@@ -1,0 +1,649 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M7",
+  "title": "Official talk",
+  "job": "Announcements, offices and counters: the formal register you hear",
+  "prerequisites": ["L4-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present_simple",
+      "present_perfect_passive",
+      "present_continuous_passive",
+      "future_simple"
+    ],
+    "allowedPatterns": [
+      "<N> + has been + V-pp",
+      "<N> + is being + V-pp",
+      "You may + V",
+      "Kindly + <imperative>",
+      "Passengers are requested to + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "L3-M8 ने passive खोला था — be + तीसरा रूप. अब उसके बाक़ी दो रूप आते हैं: perfect passive (has been या have been + तीसरा रूप) — Your application has been received — और continuous passive (is being या are being + तीसरा रूप) — The road is being repaired. पहला बताता है कि काम हो चुका है, दूसरा कि अभी चल रहा है."
+    },
+    {
+      "tag": "free",
+      "text": "दफ़्तरी अंग्रेज़ी जान-बूझकर यह नहीं बताती कि काम किसने किया. कोई कर्ता नहीं होता क्योंकि कोई ज़िम्मेदार नाम लेना नहीं चाहता — has been delayed, is being repaired, are requested to. यही उसका असली सुर है और यही उसे रूखा भी बनाता है."
+    },
+    {
+      "tag": "free",
+      "text": "इजाज़त वाला may — You may pay at the counter — can से ज़्यादा औपचारिक है और दफ़्तर में यही सुनाई देता है. ध्यान रहे कि दफ़्तरी shall इस पाठ में नहीं आता: shall L2-M6 का है, जहाँ वह Shall we go? वाला सुझाव है, इसलिए यहाँ उसका इस्तेमाल आपके सामने रखे वाक्य के बारे में झूठ बोलेगा."
+    },
+    {
+      "tag": "interference",
+      "text": "भारतीय दफ़्तरी अंग्रेज़ी अपनी एक अलग बोली है और आप उसे पहले से बोलते हैं: kindly, do the needful, revert, prepone, out of station. भारत में ये सब सही हैं. भारत के बाहर इन्हें पुराना, हास्यास्पद या रूखा सुना जाता है — इसलिए इन्हें सुनने और पढ़ने की चीज़ मानिए, ग़लती नहीं. kindly सबसे तेज़ निशान है, क्योंकि कृपया जैसा लगने पर भी वह please जितना सादा नहीं है."
+    },
+    {
+      "tag": "free",
+      "text": "क्रिया को संज्ञा बना देना दफ़्तरी अंग्रेज़ी की चौथी आदत है: on submission of the form, न कि when you submit the form. इस पाठ में इसे पहचान लेना काफ़ी है; ख़ुद ऐसा लिखना L5 का काम है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M7-S01",
+      "display": "Your application has been received. Kindly wait at the counter.",
+      "cue": "आपका आवेदन मिल गया है. कृपया काउंटर पर इंतज़ार कीजिए.",
+      "literal": "तुम्हारा आवेदन है रहा मिला. कृपया इंतज़ार पर वह काउंटर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "application",
+            "cue": "आवेदन",
+            "tag": "free",
+            "forms": ["application", "applications"],
+            "note": "दफ़्तर में जमा किया जाने वाला काग़ज़. इसकी क्रिया apply L3-M2 की है."
+          },
+          {
+            "display": "has been",
+            "cue": "हो चुका है",
+            "tag": "delta",
+            "forms": ["has been", "have been"],
+            "note": "perfect passive का पहला आधा; आगे तीसरा रूप आता है. बहुवचन के साथ have been."
+          },
+          {
+            "display": "received",
+            "cue": "मिल गया",
+            "tag": "free",
+            "forms": ["received"],
+            "note": "receive का तीसरा रूप. receipt (L3-M8) इसी परिवार का है — जो मिला उसका काग़ज़."
+          },
+          {
+            "display": "kindly",
+            "cue": "कृपया",
+            "tag": "interference",
+            "forms": ["kindly"],
+            "note": "दफ़्तरी please. भारत में हर जगह चलता है; भारत के बाहर यह पुराना और थोड़ा रूखा सुनाई देता है."
+          },
+          {
+            "display": "counter",
+            "cue": "काउंटर",
+            "tag": "free",
+            "forms": ["counter", "counters"],
+            "note": "वह मेज़ जहाँ काम होता है. window (L2-M1) उसी की खिड़की है, counter पूरी जगह."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "kindly को please का सीधा जोड़ीदार मत मानिए. भारत के बाहर सादा please ही सही सुर है.",
+      "sound": "has been बोलचाल में सिमटकर हज़्-बिन् रह जाता है.",
+      "variations": [
+        {
+          "display": "Your application has been received.",
+          "cue": "आपका आवेदन मिल गया है.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "Kindly wait at the counter.",
+          "cue": "कृपया काउंटर पर इंतज़ार कीजिए.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "Your form has been received.",
+          "cue": "आपका फ़ॉर्म मिल गया है.",
+          "changed": "आवेदन की जगह फ़ॉर्म"
+        }
+      ],
+      "mistake": {
+        "display": "Your application is received. Kindly wait at the counter",
+        "why": "काम हो चुका है, इसलिए has been received चाहिए."
+      },
+      "usage": "दफ़्तर या बैंक में जब आपका काग़ज़ जमा हो जाता है.",
+      "register": "formal",
+      "mnemonic": "has been = हो चुका, और किसने किया यह कोई नहीं बताता."
+    },
+    {
+      "id": "L4-M7-S02",
+      "display": "The road is being repaired, so the bus will be late.",
+      "cue": "सड़क की मरम्मत चल रही है, इसलिए बस देर से आएगी.",
+      "literal": "वह सड़क है होती मरम्मत, तो वह बस होगी देर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "is being",
+            "cue": "किया जा रहा है",
+            "tag": "delta",
+            "forms": ["is being", "are being"],
+            "note": "continuous passive का पहला आधा — काम अभी चल रहा है. आगे तीसरा रूप आता है."
+          },
+          {
+            "display": "repaired",
+            "cue": "मरम्मत किया गया",
+            "tag": "free",
+            "forms": ["repaired"],
+            "note": "सड़क, बस या मशीन के लिए. सूचना में यह लगभग हमेशा passive में आता है."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "The road is repairing मत लिखिए. सड़क ख़ुद मरम्मत नहीं करती — is being repaired.",
+      "sound": "is being में दोनों हिस्से जुड़ जाते हैं — इज़्-बीइंग्.",
+      "variations": [
+        {
+          "display": "The road is being repaired.",
+          "cue": "सड़क की मरम्मत चल रही है.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "The bus is being repaired.",
+          "cue": "बस की मरम्मत चल रही है.",
+          "changed": "सड़क की जगह बस"
+        },
+        {
+          "display": "The road is being repaired, so we will be late.",
+          "cue": "सड़क की मरम्मत चल रही है, इसलिए हमें देर होगी.",
+          "changed": "बस की जगह हम"
+        }
+      ],
+      "mistake": {
+        "display": "The road is repairing, so the bus will be late",
+        "why": "सड़क काम नहीं कर रही, उस पर काम हो रहा है: is being repaired."
+      },
+      "usage": "रास्ते, बिजली या मशीन पर अभी चल रहे काम की सूचना.",
+      "register": "formal",
+      "mnemonic": "is being = अभी हो रहा है, और किसी और के हाथों."
+    },
+    {
+      "id": "L4-M7-S03",
+      "display": "The train to Delhi has been delayed. Kindly see the notice.",
+      "cue": "दिल्ली की गाड़ी देर से है. कृपया सूचना देख लीजिए.",
+      "literal": "वह गाड़ी को दिल्ली है रही देर. कृपया देखिए वह सूचना.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "delayed",
+            "cue": "देर से",
+            "tag": "free",
+            "forms": ["delayed"],
+            "note": "गाड़ी, उड़ान या काम के लिए. घोषणा में लगभग हमेशा has been delayed के रूप में आता है."
+          },
+          {
+            "display": "notice",
+            "cue": "सूचना",
+            "tag": "free",
+            "forms": ["notice", "notices"],
+            "note": "दीवार पर लगा वह काग़ज़ जो सबके लिए है — लिखी हुई सूचना."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "The train has been late मत कहिए. गाड़ी के लिए दफ़्तरी शब्द delayed है; late आदमी के लिए है.",
+      "sound": "delayed का आख़िरी d लगभग सुनाई नहीं देता — डि-लेइड्.",
+      "variations": [
+        {
+          "display": "The train has been delayed.",
+          "cue": "गाड़ी देर से है.",
+          "changed": "दिल्ली और दूसरा आधा हट गए"
+        },
+        {
+          "display": "The bus to Delhi has been delayed.",
+          "cue": "दिल्ली की बस देर से है.",
+          "changed": "गाड़ी की जगह बस"
+        },
+        {
+          "display": "Kindly see the notice.",
+          "cue": "कृपया सूचना देख लीजिए.",
+          "changed": "पहला आधा हट गया"
+        }
+      ],
+      "mistake": {
+        "display": "The train to Delhi is delay. Kindly see the notice",
+        "why": "delay संज्ञा है; यहाँ तीसरा रूप चाहिए — has been delayed."
+      },
+      "usage": "स्टेशन या हवाई अड्डे की घोषणा में.",
+      "register": "formal",
+      "mnemonic": "delayed = देर से, और हमेशा has been के साथ."
+    },
+    {
+      "id": "L4-M7-S04",
+      "display": "Passengers are requested to proceed to the counter and wait.",
+      "cue": "यात्रियों से निवेदन है कि वे काउंटर पर जाकर इंतज़ार करें.",
+      "literal": "यात्री हैं निवेदन किए को आगे बढ़ना को वह काउंटर और इंतज़ार.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "passengers",
+            "cue": "यात्री",
+            "tag": "free",
+            "forms": ["passenger", "passengers"],
+            "note": "घोषणा में लगभग हमेशा बहुवचन में, क्योंकि बात सबसे एक साथ कही जा रही है."
+          },
+          {
+            "display": "are requested to",
+            "cue": "से निवेदन है कि",
+            "tag": "delta",
+            "forms": ["are requested to"],
+            "note": "तीनों शब्द साथ चलते हैं. यह आदेश नहीं, दफ़्तरी निवेदन है, और आगे क्रिया का सादा रूप आता है."
+          },
+          {
+            "display": "proceed",
+            "cue": "आगे बढ़िए",
+            "tag": "free",
+            "forms": ["proceed"],
+            "note": "go का दफ़्तरी रूप. घोषणा और सूचना में मिलता है; बोलचाल में कोई नहीं कहता."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "Passengers are requested for proceed मत लिखिए; आगे to और सादी क्रिया आती है.",
+      "sound": "proceed में ज़ोर दूसरे हिस्से पर है — प्र-सीड्.",
+      "variations": [
+        {
+          "display": "Passengers are requested to wait.",
+          "cue": "यात्रियों से निवेदन है कि वे इंतज़ार करें.",
+          "changed": "सबसे छोटा रूप"
+        },
+        {
+          "display": "Passengers are requested to proceed to the counter.",
+          "cue": "यात्रियों से निवेदन है कि वे काउंटर पर जाएँ.",
+          "changed": "और wait हट गया"
+        },
+        {
+          "display": "Passengers are requested to see the notice.",
+          "cue": "यात्रियों से निवेदन है कि वे सूचना देख लें.",
+          "changed": "आगे बढ़ने की जगह देखना"
+        }
+      ],
+      "mistake": {
+        "display": "Passengers are requested for proceeding to the counter",
+        "why": "are requested के बाद to और सादी क्रिया आती है: to proceed."
+      },
+      "usage": "स्टेशन, हवाई अड्डे या दफ़्तर की घोषणा में.",
+      "register": "formal",
+      "mnemonic": "are requested to — निवेदन, आदेश नहीं."
+    },
+    {
+      "id": "L4-M7-S05",
+      "display": "You may pay at the counter. The office is open till five.",
+      "cue": "आप काउंटर पर पैसे दे सकते हैं. दफ़्तर पाँच बजे तक खुला है.",
+      "literal": "तुम सकते देना पर वह काउंटर. वह दफ़्तर है खुला तक पाँच.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "may",
+            "cue": "सकते हैं",
+            "tag": "delta",
+            "forms": ["may"],
+            "note": "इजाज़त वाला may, can से ज़्यादा औपचारिक. दफ़्तरी shall यहाँ नहीं आता — वह L2-M6 का सुझाव है."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "You may को You must मत समझिए. may इजाज़त है और must ज़रूरत, जो L3-M8 का है.",
+      "sound": "may साफ़ और खुला है — मेइ, एक ही झटके में.",
+      "variations": [
+        {
+          "display": "You may pay at the counter.",
+          "cue": "आप काउंटर पर पैसे दे सकते हैं.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "You may wait in the office.",
+          "cue": "आप दफ़्तर में इंतज़ार कर सकते हैं.",
+          "changed": "पैसे देने की जगह इंतज़ार"
+        },
+        {
+          "display": "You may sign here.",
+          "cue": "आप यहाँ दस्तख़त कर सकते हैं.",
+          "changed": "छोटा रूप, नई क्रिया"
+        }
+      ],
+      "mistake": {
+        "display": "You can may pay at the counter",
+        "why": "can और may एक साथ नहीं आते. एक ही चुनिए."
+      },
+      "usage": "काउंटर पर जब कोई आपको इजाज़त दे रहा हो.",
+      "register": "formal",
+      "mnemonic": "may = इजाज़त, must = ज़रूरत."
+    },
+    {
+      "id": "L4-M7-S06",
+      "display": "Kindly submit a valid document at the window before five.",
+      "cue": "कृपया पाँच बजे से पहले खिड़की पर एक चालू काग़ज़ जमा कीजिए.",
+      "literal": "कृपया जमा कीजिए एक चालू काग़ज़ पर वह खिड़की पहले पाँच.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "submit",
+            "cue": "जमा कीजिए",
+            "tag": "free",
+            "forms": ["submit", "submitted"],
+            "note": "काग़ज़ के लिए दफ़्तरी क्रिया. give से ज़्यादा औपचारिक और सिर्फ़ काग़ज़ के साथ चलता है."
+          },
+          {
+            "display": "valid",
+            "cue": "चालू",
+            "tag": "free",
+            "forms": ["valid"],
+            "note": "जो तारीख़ या नियम के हिसाब से चल जाए. टिकट, काग़ज़ और पहचान के साथ आता है."
+          },
+          {
+            "display": "document",
+            "cue": "काग़ज़",
+            "tag": "free",
+            "forms": ["document", "documents"],
+            "note": "form (L3-M8) एक ख़ास भरा जाने वाला काग़ज़ है; document उससे बड़ा और आम शब्द है."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "in the window मत लिखिए. खिड़की और काउंटर के साथ at आता है.",
+      "sound": "submit में ज़ोर दूसरे हिस्से पर है — सब्-मिट्.",
+      "variations": [
+        {
+          "display": "Kindly submit the document at the window.",
+          "cue": "कृपया खिड़की पर काग़ज़ जमा कीजिए.",
+          "changed": "समय हट गया"
+        },
+        {
+          "display": "Kindly submit a valid document.",
+          "cue": "कृपया एक चालू काग़ज़ जमा कीजिए.",
+          "changed": "जगह और समय हट गए"
+        },
+        {
+          "display": "Your document is not valid.",
+          "cue": "आपका काग़ज़ चालू नहीं है.",
+          "changed": "आदेश की जगह ख़बर"
+        }
+      ],
+      "mistake": {
+        "display": "Kindly submit a valid document in the window before five",
+        "why": "खिड़की या काउंटर के साथ at आता है, in नहीं."
+      },
+      "usage": "बैंक या दफ़्तर की खिड़की पर काग़ज़ देते समय.",
+      "register": "formal",
+      "mnemonic": "submit = जमा, valid = चलने वाला."
+    },
+    {
+      "id": "L4-M7-S07",
+      "display": "Kindly do the needful and send the documents in advance.",
+      "cue": "कृपया जो ज़रूरी हो कर दीजिए और काग़ज़ पहले से भेज दीजिए.",
+      "literal": "कृपया कीजिए वह ज़रूरी और भेजिए वे काग़ज़ में पहले.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "do the needful",
+            "cue": "जो ज़रूरी हो कर दीजिए",
+            "tag": "interference",
+            "forms": ["do the needful"],
+            "note": "तीनों शब्द साथ चलते हैं और अलग-अलग इनका कोई अर्थ नहीं. भारत के बाहर यह पुराना और अजीब लगता है."
+          },
+          {
+            "display": "in advance",
+            "cue": "पहले से",
+            "tag": "free",
+            "forms": ["in advance"],
+            "note": "दोनों शब्द साथ चलते हैं और वाक्य के आख़िर में आते हैं — तय समय से पहले."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "do the needful भारत के बाहर मत लिखिए. वहाँ इसे मज़ाक़ की तरह पढ़ा जाता है.",
+      "sound": "do the needful में the दबकर द रह जाता है — डू-द-नीड्फ़ुल्.",
+      "variations": [
+        {
+          "display": "Kindly do the needful.",
+          "cue": "कृपया जो ज़रूरी हो कर दीजिए.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "Kindly send the documents in advance.",
+          "cue": "कृपया काग़ज़ पहले से भेज दीजिए.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "Kindly pay in advance.",
+          "cue": "कृपया पैसे पहले से दे दीजिए.",
+          "changed": "भेजने की जगह देना"
+        }
+      ],
+      "mistake": {
+        "display": "Kindly do the needful and send the documents in advanced",
+        "why": "यह जोड़ा in advance है — advanced नहीं."
+      },
+      "usage": "भारत के दफ़्तरी ईमेल और चिट्ठी में.",
+      "register": "formal",
+      "mnemonic": "do the needful — भारत का दफ़्तरी जुमला, तीनों शब्द एक साथ."
+    },
+    {
+      "id": "L4-M7-S08",
+      "display": "The class has been cancelled and the notice is on the door.",
+      "cue": "कक्षा रद्द हो गई है और सूचना दरवाज़े पर लगी है.",
+      "literal": "वह कक्षा है रही रद्द और वह सूचना है पर वह दरवाज़ा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cancelled",
+            "cue": "रद्द",
+            "tag": "free",
+            "forms": ["cancelled"],
+            "note": "delayed से आगे की बात: अब होगा ही नहीं. कक्षा, बैठक और गाड़ी के साथ आता है."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "The class has been cancel मत लिखिए; passive में तीसरा रूप cancelled चाहिए.",
+      "sound": "cancelled में ज़ोर पहले हिस्से पर है — कैन्-सल्ड्.",
+      "variations": [
+        {
+          "display": "The class has been cancelled.",
+          "cue": "कक्षा रद्द हो गई है.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "The meeting has been cancelled.",
+          "cue": "बैठक रद्द हो गई है.",
+          "changed": "कक्षा की जगह बैठक"
+        },
+        {
+          "display": "The train has been cancelled.",
+          "cue": "गाड़ी रद्द हो गई है.",
+          "changed": "कक्षा की जगह गाड़ी"
+        }
+      ],
+      "mistake": {
+        "display": "The class is cancel and the notice is on the door",
+        "why": "passive के लिए तीसरा रूप चाहिए: has been cancelled."
+      },
+      "usage": "कक्षा, बैठक या गाड़ी के रद्द होने की सूचना.",
+      "register": "formal",
+      "mnemonic": "delayed = देर, cancelled = ख़त्म."
+    },
+    {
+      "id": "L4-M7-S09",
+      "display": "There is a long queue at the bank. Kindly wait here.",
+      "cue": "बैंक में लंबी क़तार है. कृपया यहाँ इंतज़ार कीजिए.",
+      "literal": "वहाँ है एक लंबी क़तार पर वह बैंक. कृपया इंतज़ार यहाँ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "queue",
+            "cue": "क़तार",
+            "tag": "free",
+            "forms": ["queue", "queues"],
+            "note": "भारतीय और ब्रिटिश अंग्रेज़ी का शब्द. लिखने में पाँच अक्षर, बोलने में सिर्फ़ क्यू."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "queue को line मत बनाइए. भारत और ब्रिटेन में queue ही चलता है.",
+      "sound": "queue पूरा का पूरा क्यू बोला जाता है — बाक़ी चार अक्षर चुप हैं.",
+      "variations": [
+        {
+          "display": "There is a long queue.",
+          "cue": "लंबी क़तार है.",
+          "changed": "जगह और दूसरा आधा हट गए"
+        },
+        {
+          "display": "There is a queue at the counter.",
+          "cue": "काउंटर पर क़तार है.",
+          "changed": "बैंक की जगह काउंटर"
+        },
+        {
+          "display": "Kindly wait in the queue.",
+          "cue": "कृपया क़तार में इंतज़ार कीजिए.",
+          "changed": "यहाँ की जगह क़तार में"
+        }
+      ],
+      "mistake": {
+        "display": "There is a long queue at the bank. Kindly wait in here",
+        "why": "यहाँ के लिए सादा here काफ़ी है; उसके आगे in नहीं आता."
+      },
+      "usage": "बैंक, स्टेशन या दफ़्तर में भीड़ बताते समय.",
+      "register": "neutral",
+      "mnemonic": "queue लिखिए, क्यू बोलिए."
+    },
+    {
+      "id": "L4-M7-S10",
+      "display": "Kindly give attention to the announcement. The manager is not available.",
+      "cue": "कृपया घोषणा पर ध्यान दीजिए. मैनेजर उपलब्ध नहीं हैं.",
+      "literal": "कृपया दीजिए ध्यान को वह घोषणा. वह मैनेजर है नहीं उपलब्ध.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "attention",
+            "cue": "ध्यान",
+            "tag": "free",
+            "forms": ["attention"],
+            "note": "घोषणा अक्सर Your attention please से शुरू होती है — यही इसका सबसे आम रूप है."
+          },
+          {
+            "display": "announcement",
+            "cue": "घोषणा",
+            "tag": "free",
+            "forms": ["announcement", "announcements"],
+            "note": "वह सूचना जो बोलकर सबको दी जाए. notice लिखी हुई होती है, announcement सुनाई देती है."
+          },
+          {
+            "display": "available",
+            "cue": "उपलब्ध",
+            "tag": "free",
+            "forms": ["available"],
+            "note": "जो मिल सके या मौजूद हो. आदमी के लिए भी चलता है और चीज़ के लिए भी."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "The manager is not there की जगह दफ़्तर में is not available कहा जाता है — वही सही सुर है.",
+      "sound": "available के चार हिस्से हैं और ज़ोर दूसरे पर — अ-वेइ-ल-बल्.",
+      "variations": [
+        {
+          "display": "Kindly give attention to the announcement.",
+          "cue": "कृपया घोषणा पर ध्यान दीजिए.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "The manager is not available today.",
+          "cue": "मैनेजर आज उपलब्ध नहीं हैं.",
+          "changed": "आज जुड़ा"
+        },
+        {
+          "display": "The document is not available.",
+          "cue": "काग़ज़ उपलब्ध नहीं है.",
+          "changed": "मैनेजर की जगह काग़ज़"
+        }
+      ],
+      "mistake": {
+        "display": "Kindly give attention to the announcement. The manager is not availabe",
+        "why": "वर्तनी पूरी है — available, जिसके आख़िर में able साफ़ दिखता है."
+      },
+      "usage": "स्टेशन की घोषणा और दफ़्तर के जवाब में.",
+      "register": "formal",
+      "mnemonic": "notice पढ़ी जाती है, announcement सुनी जाती है."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M7-C01",
+      "display": "Your application has been received.",
+      "cue": "आपका आवेदन मिल गया है."
+    },
+    {
+      "id": "L4-M7-C02",
+      "display": "The road is being repaired.",
+      "cue": "सड़क की मरम्मत चल रही है."
+    },
+    {
+      "id": "L4-M7-C03",
+      "display": "The train to Delhi has been delayed.",
+      "cue": "दिल्ली की गाड़ी देर से है."
+    },
+    {
+      "id": "L4-M7-C04",
+      "display": "Passengers are requested to proceed to the counter.",
+      "cue": "यात्रियों से निवेदन है कि वे काउंटर पर जाएँ."
+    },
+    {
+      "id": "L4-M7-C05",
+      "display": "You may pay at the counter.",
+      "cue": "आप काउंटर पर पैसे दे सकते हैं."
+    },
+    {
+      "id": "L4-M7-C06",
+      "display": "Kindly submit a valid document at the window.",
+      "cue": "कृपया खिड़की पर एक चालू काग़ज़ जमा कीजिए."
+    },
+    {
+      "id": "L4-M7-C07",
+      "display": "Kindly do the needful and send the form in advance.",
+      "cue": "कृपया जो ज़रूरी हो कर दीजिए और फ़ॉर्म पहले से भेज दीजिए."
+    },
+    {
+      "id": "L4-M7-C08",
+      "display": "The class has been cancelled.",
+      "cue": "कक्षा रद्द हो गई है."
+    },
+    {
+      "id": "L4-M7-C09",
+      "display": "There is a long queue at the bank.",
+      "cue": "बैंक में लंबी क़तार है."
+    },
+    {
+      "id": "L4-M7-C10",
+      "display": "The manager is not available today.",
+      "cue": "मैनेजर आज उपलब्ध नहीं हैं."
+    },
+    {
+      "id": "L4-M7-C11",
+      "display": "Kindly see the notice on the door.",
+      "cue": "कृपया दरवाज़े पर लगी सूचना देख लीजिए."
+    },
+    {
+      "id": "L4-M7-C12",
+      "display": "Your attention please. The announcement is in English.",
+      "cue": "कृपया ध्यान दीजिए. घोषणा अंग्रेज़ी में है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": [
+    "L4-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 7,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present_simple",
+      "simple_past",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "<clause> + because + <clause>",
+      "Because of + <N> + , + <clause>",
+      "<clause> + , + so + <clause>",
+      "<clause> + . + As a result + , + <clause>",
+      "That is why + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "हिंदी वजह और नतीजे के दोनों सिरे बाँध देती है — क्योंकि … इसलिए एक ही वाक्य में साथ चलते हैं. अंग्रेज़ी एक जोड़ पर एक ही कड़ी लेती है: Because it was raining, so I stayed home ग़लत है. या तो Because it was raining, I stayed home लिखिए, या It was raining, so I stayed home — दोनों एक साथ कभी नहीं. यह भारतीय अंग्रेज़ी की सबसे पहचानी जाने वाली शक्लों में से एक है."
+    },
+    {
+      "tag": "delta",
+      "text": "कड़ी का दर्जा तय करता है कि उसके बाद क्या आएगा, और इस पाठ की हर ग़लती यहीं से निकलती है. because पूरा उपवाक्य लेता है. so दो उपवाक्यों के बीच ही बैठता है, पहले वाक्य के आगे कभी नहीं. because of और due to सिर्फ़ संज्ञा लेते हैं. therefore, as a result, that is why और for this reason अपने ही वाक्य के आगे बैठते हैं — उनसे पहले पूर्ण विराम चाहिए, और that is why को छोड़कर बाक़ी के बाद अल्पविराम आता है."
+    },
+    {
+      "tag": "interference",
+      "text": "because of the rain सही है, because of it was raining ग़लत — इनके बाद संज्ञा ही आती है, वाक्य लाना हो तो अकेला because लिखिए. और वजह बताते समय the reason is that चलता है, the reason is because कभी नहीं: because अपने आप में वजह कह चुका होता है, इसलिए उसकी जगह that लेता है."
+    },
+    {
+      "tag": "free",
+      "text": "वजह और नतीजे का क्रम दोनों भाषाओं में एक ही है — इसलिए वाली लड़ी जैसी हिंदी में चलती है वैसी ही अंग्रेज़ी में चलती है, इसलिए यहाँ सोचने का ढंग नहीं बदलना है. नया सिर्फ़ यह है कि अब लड़ी तीन-चार वाक्यों तक जाती है और हर जोड़ पर कड़ी बदल जाती है."
+    },
+    {
+      "tag": "delta",
+      "text": "otherwise का मतलब वरना है और वह अगले वाक्य को पिछले की शर्त से जोड़ता है: Leave now, otherwise you will be late. end up बताता है कि आख़िर में क्या हो गया, चाहा हुआ न हो तब भी — you will end up late, he ended up walking. अकेला end अभी किसी का नहीं है; यहाँ end up पूरे टुकड़े के तौर पर सीखा जाता है."
+    },
+    {
+      "tag": "free",
+      "text": "because और so दोनों L1-M9 के हैं और उनकी पंक्तियाँ वहीं रहती हैं — आपका टैप वहीं जाकर उतरेगा. यह पाठ उनमें कोई नया मतलब नहीं जोड़ता, सिर्फ़ जगह का नियम जोड़ता है: so दो उपवाक्यों के बीच आता है और उससे पहले अल्पविराम लगता है — It was late, so I went home. वाक्य की शुरुआत में so कभी नहीं आता; वहाँ therefore या that is why लिखिए."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "I was late because of the rain.",
+      "cue": "बारिश की वजह से मुझे देर हो गई.",
+      "literal": "मैं था देर वजह-से बारिश.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "because of",
+            "cue": "की वजह से",
+            "tag": "delta",
+            "forms": [],
+            "note": "की वजह से. इसके बाद सिर्फ़ संज्ञा आती है, पूरा वाक्य नहीं — because of the rain, न कि because of it was raining."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "because of के बाद वाक्य मत लाइए. Because of it was raining ग़लत है; वाक्य लाना हो तो अकेला because लिखिए.",
+      "sound": "because of बोलने में जुड़ जाता है — बिकॉ-ज़व; of का f यहाँ व सुनाई देता है.",
+      "variations": [
+        {
+          "display": "I was late because of the traffic lights.",
+          "cue": "ट्रैफ़िक बत्तियों की वजह से मुझे देर हो गई.",
+          "changed": "बारिश की जगह ट्रैफ़िक बत्तियाँ"
+        },
+        {
+          "display": "I was late because the bus did not come.",
+          "cue": "मुझे देर हो गई क्योंकि बस नहीं आई.",
+          "changed": "because of + संज्ञा की जगह because + पूरा वाक्य"
+        },
+        {
+          "display": "Because of the rain, I was late.",
+          "cue": "बारिश की वजह से मुझे देर हो गई.",
+          "changed": "कड़ी आगे आ गई, बीच में अल्पविराम"
+        }
+      ],
+      "mistake": {
+        "display": "Because of it was raining, so I was late",
+        "why": "दो ग़लतियाँ एक साथ: because of के बाद सिर्फ़ संज्ञा आती है, और एक जोड़ पर एक ही कड़ी चलती है. सही है — Because it was raining, I was late."
+      },
+      "usage": "देर की वजह बताना — दफ़्तर में या दोस्त से.",
+      "register": "neutral",
+      "mnemonic": "because of के बाद नाम, because के बाद वाक्य."
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "The train was late due to the rain.",
+      "cue": "बारिश के कारण ट्रेन देर से थी.",
+      "literal": "ट्रेन थी देर कारण बारिश.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "due to",
+            "cue": "के कारण",
+            "tag": "delta",
+            "forms": [],
+            "note": "के कारण — because of का ज़्यादा लिखित रूप. इसके बाद भी सिर्फ़ संज्ञा आती है: due to the rain."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "due to को अकेले due से मत मिलाइए. यहाँ due to एक जुड़ा हुआ टुकड़ा है और उसके बाद संज्ञा ही आती है, वाक्य नहीं.",
+      "sound": "due to बोलने में ड्यू-टु है. भारत में अक्सर डू-टु सुनाई देता है, पर मानक आवाज़ ड्यू वाली है.",
+      "variations": [
+        {
+          "display": "The train was late due to the traffic lights.",
+          "cue": "ट्रैफ़िक बत्तियों के कारण ट्रेन देर से थी.",
+          "changed": "बारिश की जगह ट्रैफ़िक बत्तियाँ"
+        },
+        {
+          "display": "The train was late because of the rain.",
+          "cue": "बारिश की वजह से ट्रेन देर से थी.",
+          "changed": "due to की जगह because of — मतलब वही"
+        },
+        {
+          "display": "Due to the rain, the train was late.",
+          "cue": "बारिश के कारण ट्रेन देर से थी.",
+          "changed": "कड़ी आगे आ गई, बीच में अल्पविराम"
+        }
+      ],
+      "mistake": {
+        "display": "The train was late due to it was raining",
+        "why": "due to के बाद संज्ञा ही आती है. वाक्य लाना हो तो because लिखिए: because it was raining."
+      },
+      "usage": "सूचना और घोषणा वाली भाषा — स्टेशन पर, दफ़्तर की चिट्ठी में.",
+      "register": "formal",
+      "mnemonic": "due to लिखा हुआ, because of बोला हुआ."
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "The train was late. As a result, I missed the meeting.",
+      "cue": "ट्रेन देर से थी. नतीजे में मेरी मीटिंग छूट गई.",
+      "literal": "ट्रेन थी देर. नतीजे-में, मैंने छोड़ी मीटिंग.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as a result",
+            "cue": "नतीजे में",
+            "tag": "delta",
+            "forms": [],
+            "note": "नतीजे में. यह अपने वाक्य के आगे बैठता है — उससे पहले पूर्ण विराम और उसके बाद अल्पविराम: As a result, I missed it."
+          },
+          {
+            "display": "result",
+            "cue": "नतीजा",
+            "tag": "free",
+            "forms": [
+              "result",
+              "results"
+            ],
+            "note": "नतीजा; गिनती में results. as a result में यही शब्द जुड़ा हुआ है, पर अकेले भी चलता है — The result was not good."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "As a result से पहले अल्पविराम नहीं, पूर्ण विराम आता है. The train was late, as a result I missed it ग़लत जोड़ है.",
+      "sound": "result में पहला अक्षर दबा हुआ है और s की आवाज़ ज़ है — रिज़ल्ट.",
+      "variations": [
+        {
+          "display": "The bus was late. As a result, I missed the meeting.",
+          "cue": "बस देर से थी. नतीजे में मेरी मीटिंग छूट गई.",
+          "changed": "ट्रेन की जगह बस"
+        },
+        {
+          "display": "The train was late, so I missed the meeting.",
+          "cue": "ट्रेन देर से थी, इसलिए मेरी मीटिंग छूट गई.",
+          "changed": "as a result की जगह so — दो वाक्य एक हो गए"
+        },
+        {
+          "display": "The train was late. As a result, I was very tired.",
+          "cue": "ट्रेन देर से थी. नतीजे में मैं बहुत थक गया.",
+          "changed": "नतीजा बदल गया"
+        }
+      ],
+      "mistake": {
+        "display": "The train was late, as a result I missed the meeting",
+        "why": "as a result अपना वाक्य शुरू करता है. उससे पहले पूर्ण विराम चाहिए: The train was late. As a result, I missed the meeting."
+      },
+      "usage": "किसी दिन की कहानी में नतीजा बताना.",
+      "register": "neutral",
+      "mnemonic": "as a result से पहले पूर्ण विराम."
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "The bus was full. That is why I walked to work.",
+      "cue": "बस भरी हुई थी. इसीलिए मैं पैदल काम पर गया.",
+      "literal": "बस थी भरी. वह है क्यों मैं चला को काम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "that is why",
+            "cue": "इसीलिए",
+            "tag": "delta",
+            "forms": [],
+            "note": "इसीलिए. पिछली बात को उठाकर नतीजा बताता है और अपने वाक्य के आगे बैठता है — That is why I walked to work."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "That is why के बाद अल्पविराम नहीं आता — सीधे वाक्य आता है. अल्पविराम therefore और as a result लेते हैं, यह नहीं.",
+      "sound": "बोलचाल में That is why सिमटकर That's why हो जाता है — दैट्स्वाइ.",
+      "variations": [
+        {
+          "display": "The bus was full. That is why I walked to the station.",
+          "cue": "बस भरी हुई थी. इसीलिए मैं पैदल स्टेशन गया.",
+          "changed": "काम की जगह स्टेशन"
+        },
+        {
+          "display": "The bus was full, so I walked to work.",
+          "cue": "बस भरी हुई थी, इसलिए मैं पैदल काम पर गया.",
+          "changed": "that is why की जगह so"
+        },
+        {
+          "display": "The train was full. That is why I walked to work.",
+          "cue": "ट्रेन भरी हुई थी. इसीलिए मैं पैदल काम पर गया.",
+          "changed": "बस की जगह ट्रेन"
+        }
+      ],
+      "mistake": {
+        "display": "The bus was full. That is why, I walked to work",
+        "why": "that is why के बाद अल्पविराम नहीं लगता: That is why I walked to work."
+      },
+      "usage": "अपना फ़ैसला समझाना — दोस्त या साथी से.",
+      "register": "neutral",
+      "mnemonic": "that is why के बाद सीधा वाक्य."
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "The shop was not open. Therefore, I could not buy the bread.",
+      "cue": "दुकान खुली नहीं थी. इसलिए मैं ब्रेड नहीं ख़रीद सका.",
+      "literal": "दुकान थी नहीं खुली. इसलिए, मैं सका नहीं ख़रीदना ब्रेड.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "therefore",
+            "cue": "इसलिए",
+            "tag": "delta",
+            "forms": [],
+            "note": "इसलिए — भारी और लिखित. अपने वाक्य के आगे बैठता है और उसके बाद अल्पविराम आता है: Therefore, I could not buy it."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "therefore को so की जगह दो उपवाक्यों के बीच मत डालिए. It was late therefore I went home ग़लत जोड़ है — पहले पूर्ण विराम लगाइए.",
+      "sound": "therefore में there और for जुड़े हैं — देअ-फ़ॉ; बीच का r दबा हुआ है.",
+      "variations": [
+        {
+          "display": "The shop was not open. Therefore, I could not buy the medicine.",
+          "cue": "दुकान खुली नहीं थी. इसलिए मैं दवा नहीं ख़रीद सका.",
+          "changed": "ब्रेड की जगह दवा"
+        },
+        {
+          "display": "The shop was not open, so I could not buy the bread.",
+          "cue": "दुकान खुली नहीं थी, इसलिए मैं ब्रेड नहीं ख़रीद सका.",
+          "changed": "therefore की जगह so"
+        },
+        {
+          "display": "The bank was not open. Therefore, I could not pay the bill.",
+          "cue": "बैंक खुला नहीं था. इसलिए मैं बिल नहीं भर सका.",
+          "changed": "दुकान की जगह बैंक, नतीजा भी बदला"
+        }
+      ],
+      "mistake": {
+        "display": "It was late therefore I went home",
+        "why": "therefore नया वाक्य शुरू करता है: It was late. Therefore, I went home."
+      },
+      "usage": "लिखित भाषा — चिट्ठी, ईमेल, सूचना.",
+      "register": "formal",
+      "mnemonic": "therefore को अपना पूरा वाक्य चाहिए."
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "The salary was not good. For this reason, he left the job.",
+      "cue": "तनख़्वाह अच्छी नहीं थी. इसी वजह से उसने नौकरी छोड़ दी.",
+      "literal": "तनख़्वाह थी नहीं अच्छी. इस वजह-से, वह छोड़ा नौकरी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "for this reason",
+            "cue": "इसी वजह से",
+            "tag": "delta",
+            "forms": [],
+            "note": "इसी वजह से. काम therefore जैसा ही है, पर this पिछली बात की ओर इशारा करता है — For this reason, he left the job."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "इन चारों शब्दों को तोड़िए मत. for reason या for the reason अधूरे हैं; पिछली बात की ओर इशारा this से आता है.",
+      "sound": "for this reason में for दबा हुआ है — फ़अ-दिस-रीज़न; ज़ोर reason पर पड़ता है.",
+      "variations": [
+        {
+          "display": "The salary was not good. For this reason, she left the job.",
+          "cue": "तनख़्वाह अच्छी नहीं थी. इसी वजह से उसने नौकरी छोड़ दी.",
+          "changed": "वह पुरुष की जगह वह स्त्री"
+        },
+        {
+          "display": "The salary was not good. Therefore, he left the job.",
+          "cue": "तनख़्वाह अच्छी नहीं थी. इसलिए उसने नौकरी छोड़ दी.",
+          "changed": "for this reason की जगह therefore"
+        },
+        {
+          "display": "The salary was not good, so he left the job.",
+          "cue": "तनख़्वाह अच्छी नहीं थी, इसलिए उसने नौकरी छोड़ दी.",
+          "changed": "कड़ी so बनी और दो वाक्य एक हो गए"
+        }
+      ],
+      "mistake": {
+        "display": "For this reason he left the job because the salary was not good",
+        "why": "एक जोड़ पर एक ही कड़ी. या for this reason लिखिए या because — दोनों एक साथ नहीं."
+      },
+      "usage": "किसी का फ़ैसला समझाना — दफ़्तर की बात में.",
+      "register": "formal",
+      "mnemonic": "for this reason पिछले वाक्य की ओर इशारा करता है."
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "The reason is that the train did not come.",
+      "cue": "वजह यह है कि ट्रेन नहीं आई.",
+      "literal": "वजह है कि ट्रेन किया नहीं आना.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "reason",
+            "cue": "वजह",
+            "tag": "free",
+            "forms": [
+              "reason",
+              "reasons"
+            ],
+            "note": "वजह; गिनती में reasons. इसके साथ that आता है — the reason is that — और the reason is because कभी नहीं."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "The reason is because the train did not come ग़लत है. because अपने आप में वजह कह चुका होता है, इसलिए the reason के साथ that आता है.",
+      "sound": "reason में ea लंबी ई है और s की आवाज़ ज़ — रीज़न.",
+      "variations": [
+        {
+          "display": "The reason is that the bus did not come.",
+          "cue": "वजह यह है कि बस नहीं आई.",
+          "changed": "ट्रेन की जगह बस"
+        },
+        {
+          "display": "The reason is that I was very tired.",
+          "cue": "वजह यह है कि मैं बहुत थका हुआ था.",
+          "changed": "दूसरी वजह"
+        },
+        {
+          "display": "The train did not come. That is the reason.",
+          "cue": "ट्रेन नहीं आई. यही वजह है.",
+          "changed": "वजह वाला शब्द आख़िर में आ गया"
+        }
+      ],
+      "mistake": {
+        "display": "The reason is because the train did not come",
+        "why": "the reason के बाद that आता है: The reason is that the train did not come."
+      },
+      "usage": "किसी की पूछी हुई वजह का साफ़ जवाब देना.",
+      "register": "neutral",
+      "mnemonic": "the reason is that — because नहीं."
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "Heavy rain caused the problem at the station.",
+      "cue": "भारी बारिश ने स्टेशन पर दिक़्क़त पैदा की.",
+      "literal": "भारी बारिश किया दिक़्क़त पर स्टेशन.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "caused",
+            "cue": "पैदा की",
+            "tag": "free",
+            "forms": [
+              "cause",
+              "causes",
+              "caused"
+            ],
+            "note": "वजह बनना, पैदा करना. क्रिया के रूप में सीधा कर्म लेती है — Rain caused the problem. वही शब्द संज्ञा भी है: the cause."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "cause क्रिया के बाद सीधा कर्म आता है, of नहीं. caused of the problem ग़लत है; of सिर्फ़ संज्ञा वाले रूप में चलता है — the cause of the problem.",
+      "sound": "cause में au की आवाज़ ऑ है और s की ज़ — कॉज़. caused का ed यहाँ ड बोला जाता है: कॉज़्ड.",
+      "variations": [
+        {
+          "display": "Heavy rain caused the problem at the market.",
+          "cue": "भारी बारिश ने बाज़ार में दिक़्क़त पैदा की.",
+          "changed": "स्टेशन की जगह बाज़ार"
+        },
+        {
+          "display": "The rain caused the problem.",
+          "cue": "बारिश ने दिक़्क़त पैदा की.",
+          "changed": "छोटा कर दिया"
+        },
+        {
+          "display": "Heavy rain was the cause of the problem.",
+          "cue": "दिक़्क़त की वजह भारी बारिश थी.",
+          "changed": "क्रिया की जगह संज्ञा — the cause of"
+        }
+      ],
+      "mistake": {
+        "display": "Heavy rain caused of the problem",
+        "why": "cause क्रिया सीधा कर्म लेती है: Heavy rain caused the problem. of सिर्फ़ संज्ञा वाले रूप में आता है."
+      },
+      "usage": "ख़बर या रिपोर्ट जैसी बात — क्या किस से हुआ.",
+      "register": "formal",
+      "mnemonic": "cause क्रिया भी है और नाम भी."
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "The rain had an effect on the market.",
+      "cue": "बारिश का बाज़ार पर असर पड़ा.",
+      "literal": "बारिश रखा एक असर पर बाज़ार.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "effect",
+            "cue": "असर",
+            "tag": "free",
+            "forms": [
+              "effect",
+              "effects"
+            ],
+            "note": "असर — यह नाम वाला शब्द है. इसके साथ have an effect on चलता है: The rain had an effect on the market."
+          },
+          {
+            "display": "affect",
+            "cue": "असर डालना",
+            "tag": "interference",
+            "forms": [
+              "affect",
+              "affects",
+              "affected"
+            ],
+            "note": "असर डालना — यह काम वाला शब्द है: The rain affected the market. effect नाम, affect काम; यही जोड़ी सबसे ज़्यादा उलटी जाती है."
+          }
+        ],
+        "rules": [
+          3,
+          1
+        ]
+      },
+      "trap": "असर पड़ा कहना हो तो had an effect, और असर डाला कहना हो तो affected. The rain had an affect ग़लत है.",
+      "sound": "effect और affect बोलने में लगभग एक जैसे हैं — इफ़ेक्ट, अफ़ेक्ट. फ़र्क़ पहले अक्षर का है और वह दबा हुआ रहता है.",
+      "variations": [
+        {
+          "display": "The rain will affect the market.",
+          "cue": "बारिश बाज़ार पर असर डालेगी.",
+          "changed": "नाम की जगह काम वाला शब्द"
+        },
+        {
+          "display": "The rain had an effect on the salary.",
+          "cue": "बारिश का तनख़्वाह पर असर पड़ा.",
+          "changed": "बाज़ार की जगह तनख़्वाह"
+        },
+        {
+          "display": "The rain affected the market.",
+          "cue": "बारिश ने बाज़ार पर असर डाला.",
+          "changed": "आने वाले वक़्त की जगह बीता हुआ"
+        }
+      ],
+      "mistake": {
+        "display": "The rain had an affect on the market",
+        "why": "नाम वाला शब्द effect है: had an effect on the market. affect काम वाला है — The rain affected the market."
+      },
+      "usage": "किसी बदलाव का असर बताना — ख़बर या दफ़्तर की बात में.",
+      "register": "formal",
+      "mnemonic": "effect नाम, affect काम."
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "Leave now, otherwise you will end up late for the meeting.",
+      "cue": "अभी निकलिए, वरना आप मीटिंग के लिए देर से पहुँचेंगे.",
+      "literal": "निकलो अब, वरना तुम होगे आख़िर-में देर के-लिए मीटिंग.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "otherwise",
+            "cue": "वरना",
+            "tag": "delta",
+            "forms": [],
+            "note": "वरना. यह पिछले वाक्य की उलटी सूरत जोड़ता है और उसके बाद पूरा वाक्य आता है — otherwise you will be late."
+          },
+          {
+            "display": "end up",
+            "cue": "आख़िर में हो जाना",
+            "tag": "free",
+            "forms": [],
+            "note": "आख़िर में हो जाना, अक्सर बिना चाहे. इसके बाद हालत या -ing वाली क्रिया आती है — you will end up late."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "otherwise से पहले अल्पविराम आता है और उसके बाद पूरा वाक्य. otherwise late अधूरा है — कर्ता और क्रिया दोनों चाहिए.",
+      "sound": "otherwise में wise की आवाज़ वाइज़ है — अदर-वाइज़; ज़ोर पहले हिस्से पर पड़ता है.",
+      "variations": [
+        {
+          "display": "Leave now, otherwise you will end up late for the train.",
+          "cue": "अभी निकलिए, वरना आप ट्रेन के लिए देर से पहुँचेंगे.",
+          "changed": "मीटिंग की जगह ट्रेन"
+        },
+        {
+          "display": "Leave now, otherwise you will be late.",
+          "cue": "अभी निकलिए, वरना आपको देर हो जाएगी.",
+          "changed": "end up की जगह सादा be"
+        },
+        {
+          "display": "Take the medicine now, otherwise you will end up ill.",
+          "cue": "दवा अभी ले लीजिए, वरना आप बीमार पड़ जाएँगे.",
+          "changed": "दूसरी शर्त और दूसरा नतीजा"
+        }
+      ],
+      "mistake": {
+        "display": "Leave now, otherwise late for the meeting",
+        "why": "otherwise के बाद पूरा वाक्य आता है: otherwise you will end up late for the meeting."
+      },
+      "usage": "किसी को चेताना — घर पर या काम पर.",
+      "register": "neutral",
+      "mnemonic": "otherwise वरना, और उसके बाद पूरा वाक्य."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "I was late because of the rain.",
+      "cue": "बारिश की वजह से मुझे देर हो गई."
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "The train was late due to the rain.",
+      "cue": "बारिश के कारण ट्रेन देर से थी."
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "The train was late. As a result, I missed the meeting.",
+      "cue": "ट्रेन देर से थी. नतीजे में मेरी मीटिंग छूट गई."
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "The bus was full. That is why I walked to work.",
+      "cue": "बस भरी हुई थी. इसीलिए मैं पैदल काम पर गया."
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "The shop was not open. Therefore, I could not buy the bread.",
+      "cue": "दुकान खुली नहीं थी. इसलिए मैं ब्रेड नहीं ख़रीद सका."
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "For this reason, he left the job.",
+      "cue": "इसी वजह से उसने नौकरी छोड़ दी."
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "The reason is that the train did not come.",
+      "cue": "वजह यह है कि ट्रेन नहीं आई."
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "Heavy rain caused the problem.",
+      "cue": "भारी बारिश ने दिक़्क़त पैदा की."
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "The rain had an effect on the market.",
+      "cue": "बारिश का बाज़ार पर असर पड़ा."
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "Leave now, otherwise you will be late.",
+      "cue": "अभी निकलिए, वरना आपको देर हो जाएगी."
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "It was late, so I went home.",
+      "cue": "देर हो चुकी थी, इसलिए मैं घर चला गया."
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "Because the bus did not come, I walked to work.",
+      "cue": "क्योंकि बस नहीं आई, मैं पैदल काम पर गया."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

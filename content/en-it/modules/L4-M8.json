@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M8",
+  "title": "Back then",
+  "job": "Say how things used to be",
+  "prerequisites": ["L4-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "imperfetto — the tense of the whole module, named as a paradigm here for the first time",
+      "present indicative, only in the half of a sentence that lands in now",
+      "passato prossimo, L1-M5's, shown on the mistake plates as the wrong choice and nowhere else"
+    ],
+    "allowedPatterns": [
+      "Da bambino + <imperfetto>",
+      "<imperfetto> + , + adesso invece + <presente>",
+      "Una volta + <imperfetto>",
+      "Non + <presente> + più",
+      "A quei tempi + <imperfetto>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE IMPERFETTO AS HABIT AND STATE, WITH ITS ENDINGS NAMED AT LAST. L2-M10 shipped the cells it needed — ero, avevo, andavo, faceva, pioveva, mangiavo, lavoravo — and never said where they came from. Here it is, once: take the infinitive, drop the -re, add -vo, -vi, -va, -vamo, -vate, -vano. abitare gives abitavo, prendere gives prendevo, dormire gives dormivo — ONE set of endings across all three verb classes, which makes it the most regular thing in Italian. essere is the only irregular a learner needs: ero, eri, era, eravamo, eravate, erano."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH GIVES YOU NO SIGNAL, AND THIS IS THE MODULE'S WHOLE DIFFICULTY. English has used to and habitual would, so the MEANING is already in your head — but English can ALSO use its plain past for a habit: every summer I went to the sea. Nothing in your own sentence tells you the Italian has to change, so you will produce sono andato where andavo is required, and you will not feel the error. The test is not a list of trigger words. It is whether the sentence describes a stretch you were inside, or a step that finished."
+    },
+    {
+      "tag": "interference",
+      "text": "THERE IS NO VERB BEHIND USED TO, AND not any more WRAPS ROUND THE VERB. Used to is the imperfetto and nothing else; a learner reaching for usavo has invented a form that means I used a thing. And English puts not any more at the end of the sentence while Italian puts non in front of the verb and più behind it: non lavoro più, non fumo più. non lavoro non più is the commonest shape of this error, and the position is where it lands."
+    },
+    {
+      "tag": "free",
+      "text": "THE THEN-AGAINST-NOW FRAME IS WHAT MAKES THE TENSE MEAN ANYTHING. An imperfetto on its own is a description; set against a present it becomes a claim about change. The frames: prima ... adesso invece ...; una volta ...; a quei tempi ...; and non ... più. The habit adverbs are all bought already and need no re-buying — di solito, spesso, raramente, qualche volta and ogni are L3-M1's, ogni giorno is L1-M4's — so they can be dropped into any of these frames as they stand."
+    },
+    {
+      "tag": "delta",
+      "text": "WHAT IS NOT HERE, AND WHY. The trapassato (avevo mangiato) is still deferred, as it has been since L3. The passato remoto is precisely what a learner reading about back then will meet in print — it is the written past, and the spoken past of the south — so it is named honestly here and its forms are left to L5. And the imperfetto set against the passato prossimo INSIDE one episode is L2-M10's rule and L3-M10's, not re-derived: this module only widens the imperfetto's reach from a single episode to a decade."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M8-S01",
+      "display": "Da bambino giocavo sempre in strada",
+      "cue": "As a child I always used to play in the street",
+      "literal": "From child I-played always in street",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "giocavo",
+            "cue": "I used to play",
+            "tag": "delta",
+            "forms": ["giocavo", "giocavi", "giocava", "giocavamo", "giocavate", "giocavano"],
+            "note": "giocare with the -are endings of rule 0, the whole paradigm. giocavo is I played over and over, never I played once."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English says I used to play OR I played. Italian has only one choice for a childhood habit, and it is giocavo — ho giocato would name a single afternoon.",
+      "sound": "da bam-BEE-no jo-KA-vo SEM-pre een STRA-da. giocavo is jo-KA-vo, with the j of jam.",
+      "variations": [
+        {
+          "display": "Da bambino giocavo sempre a casa",
+          "cue": "As a child I always used to play at home",
+          "changed": "where the childhood happened"
+        },
+        {
+          "display": "Da bambino non giocavo mai in strada",
+          "cue": "As a child I never used to play in the street",
+          "changed": "the habit negated, which keeps the same tense"
+        },
+        {
+          "display": "Giocavo sempre in strada da bambino",
+          "cue": "I always used to play in the street as a child",
+          "changed": "the frame moved to the back"
+        }
+      ],
+      "mistake": {
+        "display": "Da bambino ho giocato sempre in strada",
+        "why": "ho giocato names one occasion with edges. da bambino covers years, and years of the same thing is what the imperfetto is for."
+      },
+      "usage": "Telling somebody what your childhood actually looked like.",
+      "register": "informal",
+      "mnemonic": "Years take -vo; one afternoon takes ho."
+    },
+    {
+      "id": "L4-M8-S02",
+      "display": "Una volta abitavo in un paese, adesso invece in città",
+      "cue": "I used to live in a village, whereas now I live in the city",
+      "literal": "One time I-lived in a village, now instead in city",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "una volta",
+            "cue": "once, at one time",
+            "tag": "free",
+            "forms": ["una volta"],
+            "note": "Not once upon a time and not one occasion — it opens a sentence about how things used to stand, and the verb behind it is always an imperfetto."
+          },
+          {
+            "display": "abitavo",
+            "cue": "I used to live",
+            "tag": "delta",
+            "forms": ["abitavo", "abitavi", "abitava", "abitavamo", "abitavate", "abitavano"],
+            "note": "abitare, the whole -are paradigm. Living somewhere is a state rather than an act, so it is almost always this tense in the past."
+          },
+          {
+            "display": "adesso invece",
+            "cue": "whereas now, now on the other hand",
+            "tag": "free",
+            "forms": ["adesso invece"],
+            "note": "The hinge of the module: it turns a description of the past into a claim about change. The verb after it goes back to the present."
+          },
+          {
+            "display": "città",
+            "cue": "city, town",
+            "tag": "free",
+            "forms": ["città"],
+            "note": "Feminine and invariable — la città, le città, with the stress on the last syllable. In città means in town, with no article."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The two halves take two tenses. abitavo for then, abito for now — an Italian will not let both halves share one tense the way English can.",
+      "sound": "OO-na VOL-ta a-bee-TA-vo een oon pa-EH-ze, a-DES-so een-VEH-che een cheet-TA. città ends on a stressed a, cheet-TA.",
+      "variations": [
+        {
+          "display": "Una volta abitavo in città, adesso invece in un paese",
+          "cue": "I used to live in the city, whereas now I live in a village",
+          "changed": "the two ends of the move swapped"
+        },
+        {
+          "display": "Abitavo in un paese, adesso invece in città",
+          "cue": "I used to live in a village, whereas now in the city",
+          "changed": "una volta dropped, which the hinge alone can carry"
+        },
+        {
+          "display": "Una volta abitavamo in un paese, adesso invece in città",
+          "cue": "We used to live in a village, whereas now in the city",
+          "changed": "a family instead of one person"
+        }
+      ],
+      "mistake": {
+        "display": "Una volta ho abitato in un paese, adesso invece in città",
+        "why": "ho abitato closes the years off as one finished fact. una volta plus a way of living asks for abitavo, and the passato prossimo makes it sound like a single stay."
+      },
+      "usage": "Explaining where you are from when the honest answer is two places.",
+      "register": "neutral",
+      "mnemonic": "una volta ... adesso invece — the hinge needs both tenses."
+    },
+    {
+      "id": "L4-M8-S03",
+      "display": "A quei tempi non c'era il telefono in casa",
+      "cue": "In those days there was no telephone in the house",
+      "literal": "At those times not there-was the telephone in house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a quei tempi",
+            "cue": "in those days, back then",
+            "tag": "free",
+            "forms": ["a quei tempi", "tempi"],
+            "note": "With a, never in. tempi on its own is the plural of tempo used for an era, as in erano altri tempi — they were different days."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The phrase is a quei tempi. In quei tempi is understood and is not what anybody says, and English in those days is what pushes a learner towards it.",
+      "sound": "a kway TEM-pee non CHEH-ra eel te-LEH-fo-no een KA-za. quei is one syllable, kway.",
+      "variations": [
+        {
+          "display": "A quei tempi non c'era la macchina",
+          "cue": "In those days there was no car",
+          "changed": "the thing nobody had"
+        },
+        {
+          "display": "Non c'era il telefono in casa a quei tempi",
+          "cue": "There was no telephone in the house back then",
+          "changed": "the frame moved to the back"
+        },
+        {
+          "display": "Erano altri tempi, non c'era il telefono in casa",
+          "cue": "They were different days: there was no telephone in the house",
+          "changed": "the frame stated as a claim of its own"
+        }
+      ],
+      "mistake": {
+        "display": "In quei tempi non c'era il telefono in casa",
+        "why": "The preposition is a. Italian marks an era with a quei tempi and a moment with in quel momento, and the two do not swap."
+      },
+      "usage": "Explaining to somebody younger what a house used to be like.",
+      "register": "neutral",
+      "mnemonic": "A quei tempi — with an a."
+    },
+    {
+      "id": "L4-M8-S04",
+      "display": "D'estate andavamo sempre al mare",
+      "cue": "In summer we always used to go to the seaside",
+      "literal": "Of-summer we-went always to-the sea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "d'estate",
+            "cue": "in summer, summers",
+            "tag": "free",
+            "forms": ["d'estate"],
+            "note": "One word with its elision, and it means every summer rather than one. The elision is not optional: di estate is not written."
+          },
+          {
+            "display": "andavamo",
+            "cue": "we used to go",
+            "tag": "delta",
+            "forms": ["andavi", "andavamo", "andavate", "andavano"],
+            "note": "The cells of andare L2-M10 did not buy. Its andavo and andava are that module's rows, so a learner tapping them is shown the note that first taught them."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English every summer I went is a habit dressed as a plain past. Italian cannot dress it that way: d'estate forces andavamo, and siamo andati would mean one particular summer.",
+      "sound": "des-TA-te an-da-VA-mo SEM-pre al MA-re. d'estate runs together as one word, des-TA-te.",
+      "variations": [
+        {
+          "display": "D'estate non andavamo mai al mare",
+          "cue": "In summer we never used to go to the seaside",
+          "changed": "the habit negated"
+        },
+        {
+          "display": "Andavamo sempre al mare d'estate",
+          "cue": "We always used to go to the seaside in summer",
+          "changed": "the frame moved to the back"
+        },
+        {
+          "display": "D'estate andavate sempre al mare?",
+          "cue": "Did you always use to go to the seaside in summer?",
+          "changed": "the same habit asked about, in the plural you"
+        }
+      ],
+      "mistake": {
+        "display": "Di estate andavamo sempre al mare",
+        "why": "The elision is part of the word. d'estate is one token in speech and in writing, and it answers for neither di nor estate on its own."
+      },
+      "usage": "Answering a question about family holidays.",
+      "register": "informal",
+      "mnemonic": "d'estate — every summer, not one."
+    },
+    {
+      "id": "L4-M8-S05",
+      "display": "Prima fumavo, adesso non più",
+      "cue": "I used to smoke, not any more",
+      "literal": "Before I-smoked, now not more",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fumavo",
+            "cue": "I used to smoke",
+            "tag": "free",
+            "forms": ["fumavo", "fumavi", "fumava", "fumavamo", "fumavano"],
+            "note": "fumare, L3-M8's verb, in the imperfetto. A habit you have given up is the cleanest case the tense has."
+          },
+          {
+            "display": "non più",
+            "cue": "not any more, no longer",
+            "tag": "interference",
+            "forms": ["non più"],
+            "note": "Two words that answer a whole question on their own. With a verb they split around it: non fumo più, non lavoro più."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "In a full sentence the pair wraps the verb: non fumo più. Only when there is no verb at all do the two words sit together, as they do here.",
+      "sound": "PREE-ma foo-MA-vo, a-DES-so non pyoo. più is one syllable, pyoo.",
+      "variations": [
+        {
+          "display": "Prima fumavo, adesso invece no",
+          "cue": "I used to smoke; now I do not",
+          "changed": "the hinge doing the work instead of non più"
+        },
+        {
+          "display": "Prima fumavo molto, adesso non più",
+          "cue": "I used to smoke a lot, not any more",
+          "changed": "how much"
+        },
+        {
+          "display": "Fumavo, ma adesso non più",
+          "cue": "I used to smoke, but not any more",
+          "changed": "ma instead of the bare contrast"
+        }
+      ],
+      "mistake": {
+        "display": "Prima fumavo, adesso non fumo non più",
+        "why": "One non is enough. Once non is in front of the verb, più does the rest: non fumo più. The doubled negative is the commonest shape of this error."
+      },
+      "usage": "Turning down a cigarette without making a speech about it.",
+      "register": "informal",
+      "mnemonic": "non VERB più — the two halves wrap the verb."
+    },
+    {
+      "id": "L4-M8-S06",
+      "display": "Quando ero piccolo dormivo con mia sorella",
+      "cue": "When I was little I used to sleep in my sister's room",
+      "literal": "When I-was small I-slept with my sister",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dormivo",
+            "cue": "I used to sleep",
+            "tag": "delta",
+            "forms": ["dormivo", "dormivi", "dormiva", "dormivamo", "dormivate", "dormivano"],
+            "note": "dormire, the whole -ire paradigm. The endings are the same as prendevo's and abitavo's — only the vowel in front of them changes."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Both halves are imperfetto. quando ero piccolo is a state and dormivo is a habit, so nothing in this sentence is a step and nothing takes ho.",
+      "sound": "KWAN-do EH-ro PEEK-ko-lo dor-MEE-vo kon MEE-a so-REL-la.",
+      "variations": [
+        {
+          "display": "Quando ero piccolo dormivo poco",
+          "cue": "When I was little I used to sleep badly",
+          "changed": "how much sleep instead of who with"
+        },
+        {
+          "display": "Quando ero piccolo non dormivo mai",
+          "cue": "When I was little I never used to sleep",
+          "changed": "the habit negated, with the parents' version of it"
+        },
+        {
+          "display": "Dormivo con mia sorella quando ero piccolo",
+          "cue": "I used to sleep in my sister's room when I was little",
+          "changed": "the frame moved to the back"
+        }
+      ],
+      "mistake": {
+        "display": "Quando ero piccolo ho dormito con mia sorella",
+        "why": "ho dormito names one night. Years of sharing a room is a state, and a state takes the imperfetto in both halves of the sentence."
+      },
+      "usage": "Answering a question about the house you grew up in.",
+      "register": "informal",
+      "mnemonic": "Two halves, one tense."
+    },
+    {
+      "id": "L4-M8-S07",
+      "display": "Eravamo giovani e non avevamo paura di niente",
+      "cue": "We were young and we were not afraid of anything",
+      "literal": "We-were young and not we-had fear of nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eravamo",
+            "cue": "we were",
+            "tag": "delta",
+            "forms": ["eravamo", "eravate", "erano"],
+            "note": "The cells of essere L2-M10 did not buy. Its ero, eri and era are that module's rows, and this row picks up where they stop."
+          },
+          {
+            "display": "avevamo",
+            "cue": "we had, we used to have",
+            "tag": "delta",
+            "forms": ["avevi", "avevamo", "avevate", "avevano"],
+            "note": "The cells of avere L2-M10 did not buy. Its avevo and aveva belong there; avere is regular in this tense, so nothing here is a surprise."
+          },
+          {
+            "display": "paura",
+            "cue": "fear",
+            "tag": "free",
+            "forms": ["paura"],
+            "note": "Italian HAS fear rather than being afraid: avere paura di. So the noun sits behind avere, and the thing feared behind di."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "Italian has fear where English is afraid: avevamo paura, never eravamo paurosi. The verb behind it is avere and the thing feared comes after di.",
+      "sound": "e-ra-VA-mo JO-va-nee e non a-ve-VA-mo pa-OO-ra dee NYEN-te. paura is three syllables, pa-OO-ra.",
+      "variations": [
+        {
+          "display": "Eravamo giovani e non avevamo niente",
+          "cue": "We were young and we had nothing",
+          "changed": "what was missing"
+        },
+        {
+          "display": "Erano giovani e non avevano paura di niente",
+          "cue": "They were young and they were not afraid of anything",
+          "changed": "somebody else's generation"
+        },
+        {
+          "display": "Eravamo giovani, non avevamo paura",
+          "cue": "We were young, we were not afraid",
+          "changed": "the object dropped and the e with it"
+        }
+      ],
+      "mistake": {
+        "display": "Eravamo giovani e non eravamo paura di niente",
+        "why": "Fear is something you have in Italian. avere paura di is fixed, and essere paura is not a sentence at all."
+      },
+      "usage": "The line that ends a story about being twenty.",
+      "register": "neutral",
+      "mnemonic": "avere paura — you HAVE the fear."
+    },
+    {
+      "id": "L4-M8-S08",
+      "display": "I bambini giocavano in strada fino a sera",
+      "cue": "The children used to play in the street until evening",
+      "literal": "The children played in street until at evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bambini",
+            "cue": "children",
+            "tag": "free",
+            "forms": ["bambini", "bambina", "bambine"],
+            "note": "The plural of L2-M10's bambino. A mixed group of children is masculine plural, which is the ordinary rule for any mixed group."
+          },
+          {
+            "display": "sera",
+            "cue": "evening",
+            "tag": "free",
+            "forms": ["sera", "sere"],
+            "note": "The stretch from late afternoon until night. Fino a sera goes without an article, where fino alla sera would sound like a deadline."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The imperfetto and L4-M6's fino a work together here: a habit that ran until a point every day, not once. giocavano is what makes it every day.",
+      "sound": "ee bam-BEE-nee jo-KA-va-no een STRA-da FEE-no a SEH-ra. giocavano is stressed early, jo-KA-va-no.",
+      "variations": [
+        {
+          "display": "I bambini giocavano in strada fino a tardi",
+          "cue": "The children used to play in the street until late",
+          "changed": "the end point left vaguer"
+        },
+        {
+          "display": "I bambini non giocavano mai in strada",
+          "cue": "The children never used to play in the street",
+          "changed": "the habit negated"
+        },
+        {
+          "display": "D'estate i bambini giocavano in strada fino a sera",
+          "cue": "In summer the children used to play in the street until evening",
+          "changed": "the season added at the front"
+        }
+      ],
+      "mistake": {
+        "display": "I bambini hanno giocato in strada fino a sera",
+        "why": "hanno giocato picks one evening out of the years. The sentence is about what every evening looked like, and that is giocavano."
+      },
+      "usage": "Describing a street the way somebody older remembers it.",
+      "register": "neutral",
+      "mnemonic": "Every evening takes -vano."
+    },
+    {
+      "id": "L4-M8-S09",
+      "display": "A scuola facevo tardi e prendevo il tram",
+      "cue": "At school I used to be late and take the tram",
+      "literal": "At school I-made late and I-took the tram",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "scuola",
+            "cue": "school",
+            "tag": "free",
+            "forms": ["scuola", "scuole"],
+            "note": "A scuola with no article means at school as an institution, exactly as in English. La scuola is the building."
+          },
+          {
+            "display": "facevo",
+            "cue": "I used to do, I used to make",
+            "tag": "delta",
+            "forms": ["facevo", "facevi", "facevamo", "facevate", "facevano"],
+            "note": "fare in the imperfetto, minus its faceva, which is L2-M10's row. fare tardi is the idiom for running late."
+          },
+          {
+            "display": "prendevo",
+            "cue": "I used to take",
+            "tag": "delta",
+            "forms": ["prendevo", "prendevi", "prendeva", "prendevamo", "prendevate", "prendevano"],
+            "note": "prendere, the whole -ere paradigm, and the one that shows the three classes share a single set of endings."
+          },
+          {
+            "display": "tram",
+            "cue": "tram",
+            "tag": "free",
+            "forms": ["tram"],
+            "note": "Borrowed and invariable: il tram, i tram. Prendere il tram is the ordinary verb for using it, as with il treno."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Two habits in one sentence share one tense. Slipping into ho preso for the second half turns it into one particular morning.",
+      "sound": "a SKWO-la fa-CHEH-vo TAR-dee e pren-DEH-vo eel tram. facevo is fa-CHEH-vo, with a soft c.",
+      "variations": [
+        {
+          "display": "A scuola facevo tardi ogni giorno",
+          "cue": "At school I used to be late every day",
+          "changed": "the habit spelled out with an adverb"
+        },
+        {
+          "display": "Prendevo il tram e facevo sempre tardi",
+          "cue": "I used to take the tram and I was always late",
+          "changed": "the order of cause and effect"
+        },
+        {
+          "display": "A scuola facevamo tardi e prendevamo il tram",
+          "cue": "At school we used to be late and take the tram",
+          "changed": "a whole class of us instead of one"
+        }
+      ],
+      "mistake": {
+        "display": "A scuola facevo tardi e ho preso il tram",
+        "why": "The two verbs describe the same years and must share a tense. ho preso drops one morning into the middle of a decade."
+      },
+      "usage": "Owning up to what you were like as a pupil.",
+      "register": "informal",
+      "mnemonic": "One stretch of years, one tense."
+    },
+    {
+      "id": "L4-M8-S10",
+      "display": "Erano altri tempi, adesso è tutto diverso",
+      "cue": "Those were different days; now everything is different",
+      "literal": "They-were other times, now is all different",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "diverso",
+            "cue": "different",
+            "tag": "free",
+            "forms": ["diverso", "diversa", "diversi"],
+            "note": "Agrees with what it describes. Tutto diverso is the fixed way of saying everything has changed, and it is what closes this kind of story."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "erano describes how things stood and is the whole point of the sentence. sono stati would count the years as a finished block of events, which is not what anybody means here.",
+      "sound": "EH-ra-no AL-tree TEM-pee, a-DES-so eh TOOT-to dee-VEHR-so.",
+      "variations": [
+        {
+          "display": "Erano altri tempi, adesso è tutto più difficile",
+          "cue": "Those were different days; now everything is harder",
+          "changed": "the judgement made explicit"
+        },
+        {
+          "display": "Erano altri tempi, adesso invece è tutto diverso",
+          "cue": "Those were different days; now, on the other hand, everything is different",
+          "changed": "the hinge put in"
+        },
+        {
+          "display": "Adesso è tutto diverso, erano altri tempi",
+          "cue": "Everything is different now — those were different days",
+          "changed": "now first, then back"
+        }
+      ],
+      "mistake": {
+        "display": "Sono stati altri tempi, adesso è tutto diverso",
+        "why": "sono stati counts the days as events that finished. The sentence is describing how the world stood, and description is what erano is for."
+      },
+      "usage": "The sentence somebody older says to close an argument about how things used to be.",
+      "register": "neutral",
+      "mnemonic": "Erano altri tempi — description, not a count."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M8-C01", "display": "Da bambino giocavo sempre in strada", "cue": "As a child I always used to play in the street" },
+    { "id": "L4-M8-C02", "display": "Una volta abitavo in un paese, adesso invece in città", "cue": "I used to live in a village, whereas now in the city" },
+    { "id": "L4-M8-C03", "display": "A quei tempi non c'era il telefono in casa", "cue": "In those days there was no telephone in the house" },
+    { "id": "L4-M8-C04", "display": "D'estate andavamo sempre al mare", "cue": "In summer we always used to go to the seaside" },
+    { "id": "L4-M8-C05", "display": "Prima fumavo, adesso non più", "cue": "I used to smoke, not any more" },
+    { "id": "L4-M8-C06", "display": "Quando ero piccolo dormivo con mia sorella", "cue": "When I was little I used to sleep in my sister's room" },
+    { "id": "L4-M8-C07", "display": "Eravamo giovani e non avevamo paura di niente", "cue": "We were young and we were not afraid of anything" },
+    { "id": "L4-M8-C08", "display": "I bambini giocavano in strada fino a sera", "cue": "The children used to play in the street until evening" },
+    { "id": "L4-M8-C09", "display": "A scuola facevo tardi e prendevo il tram", "cue": "At school I used to be late and take the tram" },
+    { "id": "L4-M8-C10", "display": "Erano altri tempi, adesso è tutto diverso", "cue": "Those were different days; now everything is different" },
+    { "id": "L4-M8-C11", "display": "Da bambino andavo a scuola in tram", "cue": "As a child I used to go to school by tram" },
+    { "id": "L4-M8-C12", "display": "Prima abitavo in città, adesso non più", "cue": "I used to live in the city, not any more" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M7",
+  "title": "Official talk",
+  "job": "Parse a sign, a tannoy and a counter",
+  "prerequisites": ["L4-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "present indicative, for the announcement itself and after si informa che",
+      "the Lei imperative, L4-M1's, in si rivolga, si accomodi, compili and firmi — L4-M5's mood is pointed at, not re-opened",
+      "the bare infinitive after si prega di and after è vietato",
+      "impersonal si plus a present verb, L3-M8's, widened here from what one does to what one is asked to do"
+    ],
+    "allowedPatterns": [
+      "Si prega di + V-inf",
+      "È vietato + V-inf",
+      "<N> + è in ritardo di + <numero> + minuti",
+      "Si rivolga a + <N>",
+      "In caso di + <N> + , + <imperativo Lei>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE IMPERSONAL-FORMAL CLUSTER, WHICH IS ONE SYSTEM AND NOT FIVE PHRASES. si prega di plus an infinitive, è vietato plus an infinitive, si informa che plus a plain clause, and the Lei imperative L4-M1 taught (si rivolga, si accomodi, compili, firmi) finally standing in the place it comes from. L3-M8 opened the impersonal si at a counter and said what ONE DOES — si paga alla cassa. This module widens the same si to what ONE IS ASKED TO DO, and that is the whole grammatical step."
+    },
+    {
+      "tag": "free",
+      "text": "THIS IS A RECEPTION MODULE BEFORE IT IS A PRODUCTION ONE. The job is to parse a tannoy and a sign, not to compose one. The register has a grammar of its own and it is worth naming: it prefers the NOUN to the verb (Documento, prego), it prefers the IMPERSONAL to the second person, and it is not archaic — it is what is printed on the sign this year. A learner who hears it as quaint will answer in the friendliest Italian they own, which is the one move this module exists to prevent."
+    },
+    {
+      "tag": "interference",
+      "text": "si prega di IS NOT PLEASE. It is a whole impersonal clause meaning one is requested to, and per favore — L1-M8's row — never appears on a sign. Two more mismatches ride with it. English officialdom names the PASSENGER (passengers are requested to remain behind the line) and Italian names the ACTION, so a learner listening for a word meaning you will not hear one and the announcement will pass them by. And si prega DI takes a di where è vietato takes none: si prega di non fumare, è vietato fumare."
+    },
+    {
+      "tag": "free",
+      "text": "prego DOES FOUR JOBS AND ONLY ONE OF THEM IS TAUGHT ELSEWHERE. L1-M10's row is what a learner is shown when they tap it, and it is the you-are-welcome job. The other three are here: please do (Posso? Prego), after you at a door, and — the one that matters at a counter — next please, the clerk waving you forward. When somebody behind glass says Prego, they are not thanking you; they are asking what you want."
+    },
+    {
+      "tag": "delta",
+      "text": "WHAT THIS MODULE POINTS AT AND DOES NOT OPEN. si rivolga and si accomodi are present congiuntivo forms doing duty as commands — L4-M5 named that mood two modules ago and it is not re-derived here, so treat them as fixed counter words. The venire passive (viene effettuato) belongs to fixed announcement phrases and the passive as a system is L5's. And nothing ceremonial belongs here: no toasts, no speeches, no condolences. This is the register of a queue, not of an occasion."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M7-S01",
+      "display": "Si prega di non fumare in sala d'attesa",
+      "cue": "Smoking is not permitted in the waiting room",
+      "literal": "One begs of not to-smoke in room of-wait",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si prega di",
+            "cue": "one is requested to, please (on a sign)",
+            "tag": "interference",
+            "forms": ["si prega di"],
+            "note": "Not the word for please. It is an impersonal clause — one is requested to — and the di in front of the infinitive is compulsory."
+          },
+          {
+            "display": "sala d'attesa",
+            "cue": "waiting room",
+            "tag": "free",
+            "forms": ["sala d'attesa"],
+            "note": "One block, elision and all, and it goes without an article after in: in sala d'attesa, the way English says in hospital."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "si prega di is not please. per favore is what you say to a person standing in front of you; a sign has nobody to be polite to and speaks impersonally.",
+      "sound": "see PREH-ga dee non foo-MA-re een SA-la dat-TEH-za. d'attesa runs together as one word, dat-TEH-za.",
+      "variations": [
+        {
+          "display": "Si prega di non fumare in stazione",
+          "cue": "Smoking is not permitted in the station",
+          "changed": "the whole building instead of one room"
+        },
+        {
+          "display": "Si prega di aspettare in sala d'attesa",
+          "cue": "Please wait in the waiting room",
+          "changed": "an instruction instead of a prohibition"
+        },
+        {
+          "display": "Si prega di non parlare in sala d'attesa",
+          "cue": "Please do not talk in the waiting room",
+          "changed": "the forbidden action"
+        }
+      ],
+      "mistake": {
+        "display": "Per favore non fumare in sala d'attesa",
+        "why": "per favore is addressed to somebody. A sign addresses nobody in particular, so it reaches for si prega di, and a learner who writes per favore has written a note, not a notice."
+      },
+      "usage": "Reading the sign above the seats while you wait for a train.",
+      "register": "formal",
+      "mnemonic": "si prega DI — the di is part of the phrase."
+    },
+    {
+      "id": "L4-M7-S02",
+      "display": "Attenzione, il treno è in ritardo di venti minuti",
+      "cue": "Attention: the train is twenty minutes late",
+      "literal": "Attention, the train is in delay of twenty minutes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "attenzione",
+            "cue": "attention, mind out",
+            "tag": "free",
+            "forms": ["attenzione"],
+            "note": "The opening word of every announcement and every warning sign. Alone it means watch out; in front of a clause it just means listen."
+          },
+          {
+            "display": "ritardo",
+            "cue": "delay",
+            "tag": "free",
+            "forms": ["ritardo", "ritardi"],
+            "note": "The noun behind L4-M2's in ritardo. A station counts it in minutes: un ritardo di venti minuti."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "The delay is measured with di and not with per: in ritardo di venti minuti. And the phrase stays in ritardo — L4-M2's row — never a ritardo.",
+      "sound": "at-ten-TSYO-ne, eel TREH-no eh een ree-TAR-do dee VEN-tee mee-NOO-tee. The zi of attenzione is a ts, at-ten-TSYO-ne.",
+      "variations": [
+        {
+          "display": "Attenzione, il treno è in ritardo di dieci minuti",
+          "cue": "Attention: the train is ten minutes late",
+          "changed": "how long you are waiting"
+        },
+        {
+          "display": "Il treno ha un ritardo di venti minuti",
+          "cue": "The train has a delay of twenty minutes",
+          "changed": "the noun on its own, which is how the board writes it"
+        },
+        {
+          "display": "Attenzione, il treno arriva al binario tre",
+          "cue": "Attention: the train arrives at platform three",
+          "changed": "good news instead of bad"
+        }
+      ],
+      "mistake": {
+        "display": "Attenzione, il treno è tardi di venti minuti",
+        "why": "tardi is late in the day. A service running behind its timetable is in ritardo, and that is the only phrase a station uses."
+      },
+      "usage": "Standing on the platform working out whether you have time for a coffee.",
+      "register": "formal",
+      "mnemonic": "in ritardo DI so many minutes."
+    },
+    {
+      "id": "L4-M7-S03",
+      "display": "È vietato fumare in tutta la stazione",
+      "cue": "Smoking is forbidden throughout the station",
+      "literal": "It-is forbidden to-smoke in all the station",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "è vietato",
+            "cue": "it is forbidden to",
+            "tag": "delta",
+            "forms": ["è vietato", "vietato"],
+            "note": "Takes a bare infinitive and NO di, unlike si prega di. On a sign the è is usually dropped altogether: Vietato fumare."
+          },
+          {
+            "display": "tutta",
+            "cue": "all of, the whole (feminine)",
+            "tag": "free",
+            "forms": ["tutta"],
+            "note": "The feminine of L3-M9's tutto, first shown here. With an article behind it it means the whole of one thing: in tutta la stazione."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "No di after è vietato. si prega DI fumare would be wrong the other way round: one phrase takes the di and the other refuses it.",
+      "sound": "eh vye-TA-to foo-MA-re een TOOT-ta la sta-TSYO-ne. vietato is four syllables, vye-TA-to.",
+      "variations": [
+        {
+          "display": "È vietato fumare in ufficio",
+          "cue": "Smoking is forbidden in the office",
+          "changed": "the place the ban covers"
+        },
+        {
+          "display": "Vietato fumare",
+          "cue": "No smoking",
+          "changed": "the copula dropped, which is what the sign itself says"
+        },
+        {
+          "display": "È vietato entrare in sala d'attesa",
+          "cue": "Entry to the waiting room is forbidden",
+          "changed": "the forbidden action"
+        }
+      ],
+      "mistake": {
+        "display": "È vietato di fumare in tutta la stazione",
+        "why": "è vietato takes no di. The pair is worth memorising together: si prega di fumare has the di, è vietato fumare has none."
+      },
+      "usage": "Reading the red sign on the concourse wall.",
+      "register": "formal",
+      "mnemonic": "Vietato plus the bare verb, no di."
+    },
+    {
+      "id": "L4-M7-S04",
+      "display": "Si rivolga allo sportello numero due",
+      "cue": "Please go to counter number two",
+      "literal": "Oneself turn to-the counter number two",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si rivolga",
+            "cue": "go to, apply to (polite order)",
+            "tag": "delta",
+            "forms": ["si rivolga"],
+            "note": "A fixed counter word: L4-M1's polite imperative of rivolgersi. It sends you somewhere else, and the si belongs to the verb rather than to the impersonal."
+          },
+          {
+            "display": "allo",
+            "cue": "to the (before s plus consonant, and z)",
+            "tag": "free",
+            "forms": ["allo"],
+            "note": "a plus lo. Italian uses lo, not il, in front of sportello and studio, so the joined form is allo sportello."
+          },
+          {
+            "display": "sportello",
+            "cue": "counter, service window",
+            "tag": "free",
+            "forms": ["sportello", "sportelli"],
+            "note": "The window with a person behind it, in a bank, a post office or a station. Not a shop counter, which is a banco."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "si rivolga is an ORDER, not a report. si rivolge, with an e, would say that somebody is going to the counter, which is not what the clerk means.",
+      "sound": "see ree-VOL-ga AL-lo spor-TEL-lo NOO-me-ro DOO-e. The gl of rivolga is a hard g, ree-VOL-ga, not the ly of figlio.",
+      "variations": [
+        {
+          "display": "Si rivolga allo sportello numero tre",
+          "cue": "Please go to counter number three",
+          "changed": "the window you are sent to"
+        },
+        {
+          "display": "Si rivolga al collega",
+          "cue": "Please speak to my colleague",
+          "changed": "a person instead of a window"
+        },
+        {
+          "display": "Si rivolga allo sportello, per favore",
+          "cue": "Please go to the counter",
+          "changed": "the number dropped and a courtesy added"
+        }
+      ],
+      "mistake": {
+        "display": "Si rivolge allo sportello numero due",
+        "why": "The polite command ends in -a. si rivolge is the plain present and reports what somebody does; the clerk is telling you to move."
+      },
+      "usage": "Being sent away from the wrong window in a post office.",
+      "register": "formal",
+      "mnemonic": "Si rivolgA is an order; si rivolgE is a report."
+    },
+    {
+      "id": "L4-M7-S05",
+      "display": "In caso di emergenza, si rivolga al personale",
+      "cue": "In case of emergency, speak to a member of staff",
+      "literal": "In case of emergency, oneself turn to-the staff",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in caso di",
+            "cue": "in case of, in the event of",
+            "tag": "free",
+            "forms": ["in caso di"],
+            "note": "Takes a BARE noun with no article: in caso di emergenza, in caso di ritardo. In caso dell-anything is a learner's sentence, not a sign."
+          },
+          {
+            "display": "emergenza",
+            "cue": "emergency",
+            "tag": "free",
+            "forms": ["emergenza"],
+            "note": "Feminine, and the word on every green exit sign. uscita di emergenza is the emergency exit, again with no article between the two nouns."
+          },
+          {
+            "display": "personale",
+            "cue": "staff, personnel",
+            "tag": "free",
+            "forms": ["personale"],
+            "note": "Singular in Italian where English is plural: il personale is all the staff together, so the verb behind it is singular too."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "in caso di takes no article. English says in case of an emergency and Italian says in caso di emergenza, with nothing between di and the noun.",
+      "sound": "een KA-zo dee e-mer-JEN-tsa, see ree-VOL-ga al per-so-NA-le. emergenza ends -JEN-tsa, with the same ts as attenzione.",
+      "variations": [
+        {
+          "display": "In caso di ritardo, si rivolga al personale",
+          "cue": "In case of delay, speak to a member of staff",
+          "changed": "the thing that has gone wrong"
+        },
+        {
+          "display": "In caso di emergenza, si rivolga allo sportello",
+          "cue": "In case of emergency, go to the counter",
+          "changed": "where you are sent"
+        },
+        {
+          "display": "Si rivolga al personale in caso di emergenza",
+          "cue": "Speak to a member of staff in case of emergency",
+          "changed": "the frame moved to the back"
+        }
+      ],
+      "mistake": {
+        "display": "In caso di una emergenza, si rivolga al personale",
+        "why": "The article is what gives it away as a translation. Italian signs write in caso di emergenza, in caso di ritardo, in caso di sciopero — bare noun every time."
+      },
+      "usage": "Reading the laminated card on the back of a seat.",
+      "register": "formal",
+      "mnemonic": "in caso di plus a naked noun."
+    },
+    {
+      "id": "L4-M7-S06",
+      "display": "Compili la richiesta e firmi qui",
+      "cue": "Fill in the request and sign here",
+      "literal": "Fill-in the request and sign here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "compili",
+            "cue": "fill in (polite order)",
+            "tag": "delta",
+            "forms": ["compili"],
+            "note": "L4-M1's polite imperative of compilare, the verb for filling in a form. It pairs with L3-M8's firmi, and the two always travel together."
+          },
+          {
+            "display": "richiesta",
+            "cue": "request, application",
+            "tag": "free",
+            "forms": ["richiesta"],
+            "note": "The piece of paper you ask WITH, where L3-M8's modulo is the blank form itself. A counter uses both words for the same sheet."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Both verbs stay in the same register. compila la richiesta e firmi mixes a friend and a stranger in one sentence, and a clerk never does that.",
+      "sound": "kom-PEE-lee la ree-KYES-ta e FEER-mee kwee. compili is stressed on the first i, kom-PEE-lee.",
+      "variations": [
+        {
+          "display": "Compili il modulo e firmi qui",
+          "cue": "Fill in the form and sign here",
+          "changed": "L3-M8's word for the same sheet"
+        },
+        {
+          "display": "Compili la richiesta, per favore",
+          "cue": "Fill in the request, please",
+          "changed": "the signature left for later"
+        },
+        {
+          "display": "Compili la richiesta e poi firmi",
+          "cue": "Fill in the request and then sign",
+          "changed": "the order of the two jobs spelled out"
+        }
+      ],
+      "mistake": {
+        "display": "Compila la richiesta e firmi qui",
+        "why": "compila is the tu form and firmi is the polite one, so the sentence changes who it is talking to halfway through. At a counter both are polite."
+      },
+      "usage": "Being handed a pen and a sheet of paper across a window.",
+      "register": "formal",
+      "mnemonic": "compili and firmi — one register, both verbs."
+    },
+    {
+      "id": "L4-M7-S07",
+      "display": "Ho un appuntamento, ma non ho la prenotazione",
+      "cue": "I have an appointment, but I do not have the booking",
+      "literal": "I-have an appointment, but not I-have the booking",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "appuntamento",
+            "cue": "appointment",
+            "tag": "free",
+            "forms": ["appuntamento"],
+            "note": "A slot with a person: a doctor, an office, an official. Prendere un appuntamento is to make one, and it is not a romantic word by itself."
+          },
+          {
+            "display": "prenotazione",
+            "cue": "booking, reservation",
+            "tag": "free",
+            "forms": ["prenotazione"],
+            "note": "A held place: a table, a seat, a room. The verb behind it is prenotare, and a counter will ask for the number rather than the paper."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "The two are not interchangeable. An appuntamento is time with somebody; a prenotazione is a place held for you, and asking for the wrong one at a window gets you sent away.",
+      "sound": "o oon ap-poon-ta-MEN-to, ma non o la pre-no-ta-TSYO-ne. Both are long words with the stress on the second-last syllable.",
+      "variations": [
+        {
+          "display": "Ho un appuntamento per oggi",
+          "cue": "I have an appointment for today",
+          "changed": "the booking dropped and a day added"
+        },
+        {
+          "display": "Ho la prenotazione, ma non ho un appuntamento",
+          "cue": "I have the booking, but I do not have an appointment",
+          "changed": "the two halves swapped"
+        },
+        {
+          "display": "Ho un appuntamento, ma non ho il documento",
+          "cue": "I have an appointment, but I do not have my ID",
+          "changed": "the thing you are missing"
+        }
+      ],
+      "mistake": {
+        "display": "Ho un appuntamento, ma non ho la reservazione",
+        "why": "reservazione is not an Italian word. The booking is a prenotazione, from prenotare, and the invented cognate marks you out immediately."
+      },
+      "usage": "Explaining yourself at a window that wants a number you were never given.",
+      "register": "neutral",
+      "mnemonic": "prenotazione holds a place; appuntamento holds a time."
+    },
+    {
+      "id": "L4-M7-S08",
+      "display": "Si informa che oggi lo sportello è chiuso",
+      "cue": "Please be advised that the counter is closed today",
+      "literal": "One informs that today the counter is closed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si informa",
+            "cue": "it is announced that, please be advised",
+            "tag": "delta",
+            "forms": ["si informa"],
+            "note": "The announcing twin of si prega di: it states a fact rather than asking for something, and the che behind it takes an ordinary indicative clause."
+          },
+          {
+            "display": "chiuso",
+            "cue": "closed",
+            "tag": "free",
+            "forms": ["chiuso", "chiusa"],
+            "note": "The participle of chiudere, L4-M1's verb, used as an adjective. It agrees: lo sportello è chiuso, la stazione è chiusa."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "si informa che keeps the INDICATIVE. The congiuntivo L4-M5 taught belongs behind doubt, and an announcement is never in doubt about its own notice.",
+      "sound": "see een-FOR-ma ke OJ-jee lo spor-TEL-lo eh KYOO-zo. chiuso is KYOO-zo, with a buzzing s.",
+      "variations": [
+        {
+          "display": "Si informa che oggi lo sportello è aperto",
+          "cue": "Please be advised that the counter is open today",
+          "changed": "the news reversed"
+        },
+        {
+          "display": "Si informa che lo sportello è chiuso",
+          "cue": "Please be advised that the counter is closed",
+          "changed": "the day left out, as a permanent notice would"
+        },
+        {
+          "display": "Oggi lo sportello è chiuso",
+          "cue": "The counter is closed today",
+          "changed": "the announcing frame stripped off, which is how you would tell a friend"
+        }
+      ],
+      "mistake": {
+        "display": "Si informa che oggi lo sportello sia chiuso",
+        "why": "sia is the mood of doubt. si informa che announces something the office knows for certain, so the verb stays è."
+      },
+      "usage": "Reading the printed sheet taped to the glass.",
+      "register": "formal",
+      "mnemonic": "si informa che — then a plain fact."
+    },
+    {
+      "id": "L4-M7-S09",
+      "display": "C'è una coda lunga, ma lo sportello è aperto",
+      "cue": "There is a long queue, but the counter is open",
+      "literal": "There-is a queue long, but the counter is open",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "coda",
+            "cue": "queue, line of people",
+            "tag": "free",
+            "forms": ["coda", "fila"],
+            "note": "Literally a tail. fila is the other everyday word for the same thing, and fare la coda is to queue up."
+          },
+          {
+            "display": "aperto",
+            "cue": "open",
+            "tag": "free",
+            "forms": ["aperto", "aperta"],
+            "note": "The participle of aprire used as an adjective, and the opposite of chiuso. It agrees: lo sportello è aperto, la banca è aperta."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "A line of people is a coda or a fila. linea is a line on paper or a telephone line, and it is never used for a queue.",
+      "sound": "cheh OO-na KO-da LOON-ga, ma lo spor-TEL-lo eh a-PEHR-to. coda has a plain o, KO-da.",
+      "variations": [
+        {
+          "display": "C'è una fila lunga allo sportello",
+          "cue": "There is a long queue at the counter",
+          "changed": "the other word for the same queue"
+        },
+        {
+          "display": "C'è una coda lunga, ma lo sportello è chiuso",
+          "cue": "There is a long queue, but the counter is closed",
+          "changed": "the worst possible combination"
+        },
+        {
+          "display": "Non c'è coda, lo sportello è aperto",
+          "cue": "There is no queue, the counter is open",
+          "changed": "the queue negated, and the article goes with it"
+        }
+      ],
+      "mistake": {
+        "display": "C'è una linea lunga, ma lo sportello è aperto",
+        "why": "linea is a drawn line or a phone line. People standing one behind another are una coda or una fila, never una linea."
+      },
+      "usage": "Reporting back to somebody who sent you to the post office.",
+      "register": "neutral",
+      "mnemonic": "coda is a tail of people."
+    },
+    {
+      "id": "L4-M7-S10",
+      "display": "Si accomodi, prego, è il suo turno",
+      "cue": "Come through, please — it is your turn",
+      "literal": "Oneself make-comfortable, please, is the your turn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si accomodi",
+            "cue": "come in, take a seat, come through",
+            "tag": "delta",
+            "forms": ["si accomodi"],
+            "note": "The most useful counter word in the language. It covers come in, sit down, this way and go ahead, and only the situation says which."
+          },
+          {
+            "display": "turno",
+            "cue": "turn, go",
+            "tag": "free",
+            "forms": ["turno"],
+            "note": "Your place in the queue: è il suo turno, tocca a lei. It is also a work shift, which is the same idea of whose time it is."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "The word here is prego, not per favore. per favore asks for something; prego hands it over, and at a counter it means next please.",
+      "sound": "see ak-KO-mo-dee, PREH-go, eh eel SOO-o TOOR-no. accomodi is stressed early, ak-KO-mo-dee.",
+      "variations": [
+        {
+          "display": "Si accomodi, prego",
+          "cue": "Come through, please",
+          "changed": "the reason left unsaid, which is how it is usually said"
+        },
+        {
+          "display": "Prego, è il suo turno",
+          "cue": "Please — it is your turn",
+          "changed": "the invitation carried by prego alone"
+        },
+        {
+          "display": "Si accomodi qui, prego",
+          "cue": "Take a seat here, please",
+          "changed": "a chair pointed at, which is the sit-down reading"
+        }
+      ],
+      "mistake": {
+        "display": "Si accomodi, per favore, è il suo turno",
+        "why": "per favore is a request and the clerk is not requesting anything. The word that waves you forward is prego, one of the four jobs it does."
+      },
+      "usage": "Being called from the waiting chairs to the window.",
+      "register": "formal",
+      "mnemonic": "Prego calls you forward; per favore asks for something."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M7-C01", "display": "Si prega di non fumare in sala d'attesa", "cue": "Smoking is not permitted in the waiting room" },
+    { "id": "L4-M7-C02", "display": "Attenzione, il treno è in ritardo di venti minuti", "cue": "Attention: the train is twenty minutes late" },
+    { "id": "L4-M7-C03", "display": "È vietato fumare in tutta la stazione", "cue": "Smoking is forbidden throughout the station" },
+    { "id": "L4-M7-C04", "display": "Si rivolga allo sportello numero due", "cue": "Please go to counter number two" },
+    { "id": "L4-M7-C05", "display": "In caso di emergenza, si rivolga al personale", "cue": "In case of emergency, speak to a member of staff" },
+    { "id": "L4-M7-C06", "display": "Compili la richiesta e firmi qui", "cue": "Fill in the request and sign here" },
+    { "id": "L4-M7-C07", "display": "Ho un appuntamento, ma non ho la prenotazione", "cue": "I have an appointment, but I do not have the booking" },
+    { "id": "L4-M7-C08", "display": "Si informa che oggi lo sportello è chiuso", "cue": "Please be advised that the counter is closed today" },
+    { "id": "L4-M7-C09", "display": "C'è una coda lunga, ma lo sportello è aperto", "cue": "There is a long queue, but the counter is open" },
+    { "id": "L4-M7-C10", "display": "Si accomodi, prego, è il suo turno", "cue": "Come through, please — it is your turn" },
+    { "id": "L4-M7-C11", "display": "Si prega di aspettare in sala d'attesa", "cue": "Please wait in the waiting room" },
+    { "id": "L4-M7-C12", "display": "In caso di ritardo, si rivolga allo sportello", "cue": "In case of delay, go to the counter" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

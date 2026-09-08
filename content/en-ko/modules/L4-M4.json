@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": [
+    "L4-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "clause-janayo",
+      "V-gineun + hajiman, + clause",
+      "mullon + clause. + geuraedo + clause",
+      "clause-(eu)nikka + V-(eu)l + su + isseoyo",
+      "sasil + N-eun/neun + clause"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-janayo PRESUPPOSES AGREEMENT. It is not an intensifier: it tells the listener they already know this. That is exactly why it persuades, and exactly why it is wrong with a stranger or an elder, who has agreed to nothing."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH IS IT NOT? INVITES AN ANSWER AND -janayo DOES NOT. A tag question hands the floor over; -janayo closes the point, so a sentence ending in it can never be a genuine question."
+    },
+    {
+      "tag": "delta",
+      "text": "V-gineun hajiman CONCEDES THE VERB BEFORE IT TURNS. The stem is nominalised with -gi, marked with -neun, granted, and then overturned: bissagineun hajiman joayo, it IS expensive, but it is good."
+    },
+    {
+      "tag": "free",
+      "text": "WRITE THE CONCESSIVE IN FULL. bissagineun, never bissagin: the contracted form collides with L2-M2's gin, long, and the full spelling is what keeps the two apart on the page."
+    },
+    {
+      "tag": "delta",
+      "text": "mullon ... geuraedo ... IS A TURN, NOT A SENTENCE. mullon grants the other side a whole clause and geuraedo takes the ground back in the next one. Neither word does anything on its own, and the order is fixed."
+    },
+    {
+      "tag": "interference",
+      "text": "KOREAN ARGUES BY CONCEDING FIRST AND ENGLISH BY STACKING CLAIMS. Transfer English directness and the turn reads as an attack; overcorrect and no position is left in it. After three levels of politeness the second failure is the commoner one."
+    },
+    {
+      "tag": "free",
+      "text": "sasil INTRODUCES THE FACT THE OTHER PERSON HAS NOT WEIGHED. It is not a softener and not a correction opener; it puts new evidence on the table, and the clause after it is that evidence."
+    },
+    {
+      "tag": "free",
+      "text": "NO LET US HERE. -(eu)psida is L4-M7's and it lifts the register besides. This module argues in one turn of ordinary conversation: the structured case is L5-M6's, irony is L5's, and declining is L4-M5's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "Jigeum sigan-i itjanayo. Cheoncheonhi gayo.",
+      "script": "지금 시간이 있잖아요. 천천히 가요.",
+      "cue": "We do have time now, you know. Let us go slowly.",
+      "literal": "now time-SUBJ exists-you-know. slowly go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "itjanayo",
+            "script": "있잖아요",
+            "cue": "we do have, you know",
+            "tag": "delta",
+            "forms": [
+              "itjanayo"
+            ],
+            "note": "isseoyo with -janayo on the stem. It does not ask and it does not insist; it says the listener already knows this, which is why it only works with someone who does."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "-janayo can only be said to someone who has already agreed. To a stranger it claims an agreement that was never given, and it lands as presumption.",
+      "sound": "JI-geum SI-ga-ni IT-ja-na-yo. cheon-CHEON-hi GA-yo. The t of it- tenses the j after it, close to it-tja.",
+      "variations": [
+        {
+          "display": "Jigeum sigan-i itjanayo. Cheoncheonhi haeboseyo.",
+          "script": "지금 시간이 있잖아요. 천천히 해보세요.",
+          "cue": "We do have time now, you know. Try it slowly.",
+          "changed": "the second half turned into an instruction"
+        },
+        {
+          "display": "Naeil sigan-i itjanayo. Cheoncheonhi gayo.",
+          "script": "내일 시간이 있잖아요. 천천히 가요.",
+          "cue": "We do have time tomorrow, you know. Let us go slowly.",
+          "changed": "the shared fact moved to tomorrow"
+        }
+      ],
+      "mistake": {
+        "display": "Jigeum sigan-i itjanayo?",
+        "script": "지금 시간이 있잖아요?",
+        "why": "-janayo cannot ask. It tells the listener they already agree, so a question mark on it contradicts the ending: the question is sigan-i isseoyo?"
+      },
+      "usage": "Talking a rushed friend out of hurrying.",
+      "register": "neutral",
+      "mnemonic": "-janayo does not ask. It reminds."
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "I-sikdang-i jochanayo. Yeogi-eseo meogeoyo.",
+      "script": "이 식당이 좋잖아요. 여기에서 먹어요.",
+      "cue": "This restaurant is good, you know. Let us eat here.",
+      "literal": "this restaurant-SUBJ good-you-know. here-at eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jochanayo",
+            "script": "좋잖아요",
+            "cue": "it is good, you know",
+            "tag": "delta",
+            "forms": [
+              "jochanayo"
+            ],
+            "note": "joayo with -janayo. The h of the stem fuses with the j and this course writes what is said, as it writes jochi: jochanayo, never jotjanayo."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "The aspiration is written, not implied. jochanayo is the spelling this course uses everywhere the h of joh- meets a consonant.",
+      "sound": "i-SIK-dang-i JO-cha-na-yo. yeo-GI-e-seo MEO-geo-yo. The cha is a clear aspirated ch, not a j.",
+      "variations": [
+        {
+          "display": "I-sikdang-i jochanayo. Yeogi-eseo bap-eul meogeoyo.",
+          "script": "이 식당이 좋잖아요. 여기에서 밥을 먹어요.",
+          "cue": "This restaurant is good, you know. Let us eat here.",
+          "changed": "the meal named"
+        },
+        {
+          "display": "I-sikdang-i jochanayo. Yeogi-eseo gachi meogeoyo.",
+          "script": "이 식당이 좋잖아요. 여기에서 같이 먹어요.",
+          "cue": "This restaurant is good, you know. Let us eat here together.",
+          "changed": "gachi added to the proposal"
+        }
+      ],
+      "mistake": {
+        "display": "I-sikdang-i joayojanayo.",
+        "script": "이 식당이 좋아요잖아요.",
+        "why": "-janayo goes on the bare stem, not on a finished -ayo form. joh- plus the ending gives jochanayo."
+      },
+      "usage": "Settling where to eat with a colleague you know well.",
+      "register": "neutral",
+      "mnemonic": "h meets j and comes out ch."
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "Bissagineun hajiman, i-geo-ga jeongmal joayo.",
+      "script": "비싸기는 하지만, 이거가 정말 좋아요.",
+      "cue": "It is expensive, yes, but this one is really good.",
+      "literal": "expensive-being but, this-thing-SUBJ really good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bissagineun",
+            "script": "비싸기는",
+            "cue": "expensive it is",
+            "tag": "delta",
+            "forms": [
+              "bissagineun"
+            ],
+            "note": "bissayo nominalised with -gi and marked with -neun, ready to be conceded. Written in full, never as bissagin: the short form collides with L2-M2's gin, long."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The concession is real, not rhetorical. bissagineun hajiman grants the price outright, and a turn that grants nothing before it turns reads as an attack.",
+      "sound": "bi-SSA-gi-neun HA-ji-man, i-GEO-ga JEONG-mal JO-a-yo. The comma is a real pause after hajiman.",
+      "variations": [
+        {
+          "display": "Bissagineun hajiman, i-geo-ga deo joayo.",
+          "script": "비싸기는 하지만, 이거가 더 좋아요.",
+          "cue": "It is expensive, yes, but this one is better.",
+          "changed": "a comparison rather than a flat verdict"
+        },
+        {
+          "display": "Meolgineun hajiman, i-geo-ga jeongmal joayo.",
+          "script": "멀기는 하지만, 이거가 정말 좋아요.",
+          "cue": "It is far, yes, but this one is really good.",
+          "changed": "distance conceded instead of price"
+        }
+      ],
+      "mistake": {
+        "display": "Bissagin hajiman, i-geo-ga jeongmal joayo.",
+        "script": "비싸긴 하지만, 이거가 정말 좋아요.",
+        "why": "bissagin is what speech does with it. This course writes the concessive in full, bissagineun, so that the -gi carrying the concession stays visible."
+      },
+      "usage": "Defending a purchase to someone who has just seen the price.",
+      "register": "neutral",
+      "mnemonic": "Concede in full, then turn."
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "Meolgineun hajiman, beoseu-ga jaju isseoyo.",
+      "script": "멀기는 하지만, 버스가 자주 있어요.",
+      "cue": "It is far, yes, but there are buses often.",
+      "literal": "far-being but, bus-SUBJ often exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meolgineun",
+            "script": "멀기는",
+            "cue": "far it is",
+            "tag": "free",
+            "forms": [
+              "meolgineun"
+            ],
+            "note": "The same concessive on meoreoyo. The l of the stem comes back in front of -gi, so it is meolgineun and never meoreogineun."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "meoreoyo hides its l and -gineun brings it back. The stem is meol-, and every ending that starts with a consonant sees it.",
+      "sound": "MEOL-gi-neun HA-ji-man, BEO-seu-ga JA-ju I-sseo-yo. meol is one beat with a clear l.",
+      "variations": [
+        {
+          "display": "Meolgineun hajiman, beoseu-ga jaju wayo.",
+          "script": "멀기는 하지만, 버스가 자주 와요.",
+          "cue": "It is far, yes, but the bus comes often.",
+          "changed": "the bus arriving rather than existing"
+        },
+        {
+          "display": "Bissagineun hajiman, beoseu-ga jaju isseoyo.",
+          "script": "비싸기는 하지만, 버스가 자주 있어요.",
+          "cue": "It is expensive, yes, but there are buses often.",
+          "changed": "price conceded instead of distance"
+        }
+      ],
+      "mistake": {
+        "display": "Meolgineun, hajiman beoseu-ga jaju isseoyo.",
+        "script": "멀기는, 하지만 버스가 자주 있어요.",
+        "why": "hajiman belongs to the conceded half and cannot be cut away from it. The comma goes after hajiman, not before it."
+      },
+      "usage": "Arguing for a flat that is out of the centre.",
+      "register": "neutral",
+      "mnemonic": "meol- shows its l before -gineun."
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "Mullon jom bissayo. Geuraedo i-geo-ga deo joayo.",
+      "script": "물론 좀 비싸요. 그래도 이거가 더 좋아요.",
+      "cue": "Of course it is a bit expensive. Even so, this one is better.",
+      "literal": "of-course a-bit expensive. even-so this-thing-SUBJ more good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mullon",
+            "script": "물론",
+            "cue": "of course",
+            "tag": "free",
+            "forms": [
+              "mullon"
+            ],
+            "note": "It grants the other side a whole clause and then stops. It never appears without a geuraedo clause after it, and standing alone it sounds like plain agreement."
+          },
+          {
+            "display": "geuraedo",
+            "script": "그래도",
+            "cue": "even so",
+            "tag": "delta",
+            "forms": [
+              "geuraedo"
+            ],
+            "note": "The half of the turn that takes the ground back. It heads its own sentence, after the full stop that ends mullon's, and it is what makes the concession a move."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "Two sentences, in that order. Reversed, the turn concedes the very point it was trying to make, and a listener hears agreement.",
+      "sound": "MUL-lon JOM bi-SSA-yo. geu-RAE-do i-GEO-ga DEO JO-a-yo. The ll of mullon is held.",
+      "variations": [
+        {
+          "display": "Mullon jom meoreoyo. Geuraedo i-geo-ga deo joayo.",
+          "script": "물론 좀 멀어요. 그래도 이거가 더 좋아요.",
+          "cue": "Of course it is a bit far. Even so, this one is better.",
+          "changed": "distance conceded instead of price"
+        },
+        {
+          "display": "Mullon jom bissayo. Geuraedo jeongmal joayo.",
+          "script": "물론 좀 비싸요. 그래도 정말 좋아요.",
+          "cue": "Of course it is a bit expensive. Even so, it is really good.",
+          "changed": "the second half shortened to the verdict"
+        }
+      ],
+      "mistake": {
+        "display": "Geuraedo jom bissayo. Mullon i-geo-ga deo joayo.",
+        "script": "그래도 좀 비싸요. 물론 이거가 더 좋아요.",
+        "why": "The order is fixed: mullon grants first, geuraedo takes the ground back second. Reversed, the turn ends by conceding."
+      },
+      "usage": "Making the case for the pricier option in a shop.",
+      "register": "neutral",
+      "mnemonic": "mullon gives, geuraedo takes back."
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "Hagineun hajiman, jal an dwaesseoyo.",
+      "script": "하기는 하지만, 잘 안 됐어요.",
+      "cue": "I do do it, but it did not go well.",
+      "literal": "doing-being but, well not became",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hagineun",
+            "script": "하기는",
+            "cue": "do it I did",
+            "tag": "free",
+            "forms": [
+              "hagineun"
+            ],
+            "note": "haeyo under the concessive. It concedes the action itself, so hagineun hajiman is I did do it, but — and the but is where the position comes back."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "hagineun concedes the doing, not the result. It is how you keep credit for the effort while admitting the outcome.",
+      "sound": "HA-gi-neun HA-ji-man, JAL AN DWAE-sseo-yo. an leans into dwaesseoyo as one breath.",
+      "variations": [
+        {
+          "display": "Hagineun hajiman, jal moreugesseoyo.",
+          "script": "하기는 하지만, 잘 모르겠어요.",
+          "cue": "I do do it, but I am not really sure.",
+          "changed": "the second half hedged rather than negative"
+        },
+        {
+          "display": "Hagineun hajiman, sigan-i jom eopseoyo.",
+          "script": "하기는 하지만, 시간이 좀 없어요.",
+          "cue": "I do do it, but there is not much time.",
+          "changed": "a different reason after the turn"
+        }
+      ],
+      "mistake": {
+        "display": "Hagin hajiman, jal an dwaesseoyo.",
+        "script": "하긴 하지만, 잘 안 됐어요.",
+        "why": "hagin is the spoken contraction. This course writes hagineun in full so the -gi that carries the concession stays on the page."
+      },
+      "usage": "Reporting on a task that half worked.",
+      "register": "neutral",
+      "mnemonic": "Concede the doing, keep the point."
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "Jigeum an bappeunikka hwaksilhi hal su isseoyo.",
+      "script": "지금 안 바쁘니까 확실히 할 수 있어요.",
+      "cue": "Since I am not busy now, I can certainly do it.",
+      "literal": "now not busy-since certainly do-ing way exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hwaksilhi",
+            "script": "확실히",
+            "cue": "certainly · for sure",
+            "tag": "free",
+            "forms": [
+              "hwaksilhi"
+            ],
+            "note": "The adverb that puts weight behind a claim, sitting in front of the verb. It states confidence rather than raising the voice, which is what an argument in this register needs."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "hwaksilhi commits the speaker. It is not jeongmal, which colours the claim; it says the speaker will answer for it.",
+      "sound": "JI-geum AN ba-PPEU-ni-kka hwak-SIL-hi HAL SU I-sseo-yo. hwaksilhi tenses its s, close to hwak-ssil-hi.",
+      "variations": [
+        {
+          "display": "Jigeum an bappeunikka hwaksilhi gal su isseoyo.",
+          "script": "지금 안 바쁘니까 확실히 갈 수 있어요.",
+          "cue": "Since I am not busy now, I can certainly go.",
+          "changed": "going rather than doing"
+        },
+        {
+          "display": "Sigan-i eopseunikka hwaksilhi mot haeyo.",
+          "script": "시간이 없으니까 확실히 못 해요.",
+          "cue": "Since there is no time, I certainly cannot do it.",
+          "changed": "the same confidence behind a refusal"
+        }
+      ],
+      "mistake": {
+        "display": "Jigeum an bappeunikka hwaksilhi hal isseoyo.",
+        "script": "지금 안 바쁘니까 확실히 할 있어요.",
+        "why": "su is not optional. L2-M1's ability frame is V-(eu)l su isseoyo in three pieces, and without the bound noun there is no ability in the sentence."
+      },
+      "usage": "Volunteering for a job in front of the team.",
+      "register": "neutral",
+      "mnemonic": "hwaksilhi puts your name on it."
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "Sasil i-geo-neun iyu-ga isseoyo.",
+      "script": "사실 이거는 이유가 있어요.",
+      "cue": "Actually, there is a reason for this.",
+      "literal": "in-fact this-thing-TOP reason-SUBJ exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sasil",
+            "script": "사실",
+            "cue": "actually · in fact",
+            "tag": "free",
+            "forms": [
+              "sasil"
+            ],
+            "note": "It introduces the fact the other person has not weighed. Not a softener and not a correction opener: the clause after it is the evidence."
+          },
+          {
+            "display": "iyu",
+            "script": "이유",
+            "cue": "reason",
+            "tag": "free",
+            "forms": [
+              "iyu",
+              "iyu-ga",
+              "iyu-reul"
+            ],
+            "note": "The noun for a reason you can give. L4-M2's ttaemune states a cause inside a sentence; iyu is the thing itself, and it takes the ordinary particles."
+          }
+        ],
+        "rules": [
+          6,
+          5
+        ]
+      },
+      "trap": "sasil is not English actually as a polite correction. It promises evidence, so the sentence after it has to supply some.",
+      "sound": "SA-sil i-GEO-neun I-yu-ga I-sseo-yo. sasil has two even beats and no stress of its own.",
+      "variations": [
+        {
+          "display": "Sasil i-geo-neun iyu-ga eopseoyo.",
+          "script": "사실 이거는 이유가 없어요.",
+          "cue": "Actually, there is no reason for this.",
+          "changed": "the fact turned negative"
+        },
+        {
+          "display": "Sasil jeo-neun geu iyu-reul moreugesseoyo.",
+          "script": "사실 저는 그 이유를 모르겠어요.",
+          "cue": "Actually, I do not know the reason.",
+          "changed": "iyu as the object rather than the subject"
+        }
+      ],
+      "mistake": {
+        "display": "Geunde i-geo-neun iyu-ga isseoyo.",
+        "script": "근데 이거는 이유가 있어요.",
+        "why": "geunde only changes direction. sasil puts on the table a fact the other person has not weighed, and that is what this turn needs."
+      },
+      "usage": "Bringing new information into a disagreement at work.",
+      "register": "neutral",
+      "mnemonic": "sasil promises evidence."
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "Mullon jochanayo. Geuraedo jom bissajanayo.",
+      "script": "물론 좋잖아요. 그래도 좀 비싸잖아요.",
+      "cue": "Of course it is good, you know. Even so, it is a bit expensive.",
+      "literal": "of-course good-you-know. even-so a-bit expensive-you-know",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bissajanayo",
+            "script": "비싸잖아요",
+            "cue": "it is expensive, you know",
+            "tag": "free",
+            "forms": [
+              "bissajanayo"
+            ],
+            "note": "The -janayo of this module on bissayo. In the geuraedo half it is what holds the position: the price is something the listener already knows."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Both halves lean on shared knowledge, so the turn only works between people who share it. Said to a stranger, it claims a history that is not there.",
+      "sound": "MUL-lon JO-cha-na-yo. geu-RAE-do JOM bi-SSA-ja-na-yo. Both -janayo endings fall at the end.",
+      "variations": [
+        {
+          "display": "Mullon jochanayo. Geuraedo jom meoreoyo.",
+          "script": "물론 좋잖아요. 그래도 좀 멀어요.",
+          "cue": "Of course it is good, you know. Even so, it is a bit far.",
+          "changed": "a plain statement in the second half"
+        },
+        {
+          "display": "Mullon jochanayo. Geuraedo jeongmal bissajanayo.",
+          "script": "물론 좋잖아요. 그래도 정말 비싸잖아요.",
+          "cue": "Of course it is good, you know. Even so, it really is expensive.",
+          "changed": "jeongmal instead of jom, which hardens it"
+        }
+      ],
+      "mistake": {
+        "display": "Mullon jochanayo. Hajiman jom bissajanayo.",
+        "script": "물론 좋잖아요. 하지만 좀 비싸잖아요.",
+        "why": "hajiman joins two halves of one sentence. mullon's partner across a full stop is geuraedo, and only geuraedo carries the even so this turn needs."
+      },
+      "usage": "Holding out against a friend's recommendation.",
+      "register": "neutral",
+      "mnemonic": "Grant with -janayo, hold with -janayo."
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "Naeil-eun an bappeujanayo. Geureomyeon gachi gal su isseoyo.",
+      "script": "내일은 안 바쁘잖아요. 그러면 같이 갈 수 있어요.",
+      "cue": "You are not busy tomorrow, you know. Then we can go together.",
+      "literal": "tomorrow-TOP not busy-you-know. then together go-ing way exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bappeujanayo",
+            "script": "바쁘잖아요",
+            "cue": "you are busy, you know",
+            "tag": "free",
+            "forms": [
+              "bappeujanayo"
+            ],
+            "note": "-janayo on bappayo, whose stem is bappeu-, so the ending goes straight onto it. With an in front it says the opposite, and both presuppose agreement."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "This turn tells the listener something about their own diary. It only works if they really did say so, which is the whole condition on -janayo.",
+      "sound": "NAE-i-reun AN ba-PPEU-ja-na-yo. geu-REO-myeon GA-chi GAL SU I-sseo-yo.",
+      "variations": [
+        {
+          "display": "Naeil-eun an bappeujanayo. Geureomyeon gachi hal su isseoyo.",
+          "script": "내일은 안 바쁘잖아요. 그러면 같이 할 수 있어요.",
+          "cue": "You are not busy tomorrow, you know. Then we can do it together.",
+          "changed": "doing rather than going"
+        },
+        {
+          "display": "Jigeum an bappeujanayo. Geureomyeon gachi gal su isseoyo.",
+          "script": "지금 안 바쁘잖아요. 그러면 같이 갈 수 있어요.",
+          "cue": "You are not busy now, you know. Then we can go together.",
+          "changed": "the shared fact moved to now"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil-eun an bappeujanayo. Geureomyeon gachi gapsida.",
+        "script": "내일은 안 바쁘잖아요. 그러면 같이 갑시다.",
+        "why": "-(eu)psida is L4-M7's and it lifts the register in the middle of an ordinary turn. gachi gal su isseoyo keeps the whole turn at one level."
+      },
+      "usage": "Closing a plan with someone who has run out of excuses.",
+      "register": "neutral",
+      "mnemonic": "-janayo needs a shared diary."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "Jigeum sigan-i itjanayo. Cheoncheonhi gayo.",
+      "script": "지금 시간이 있잖아요. 천천히 가요.",
+      "cue": "We do have time now, you know. Let us go slowly."
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "I-sikdang-i jochanayo. Yeogi-eseo meogeoyo.",
+      "script": "이 식당이 좋잖아요. 여기에서 먹어요.",
+      "cue": "This restaurant is good, you know. Let us eat here."
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "Bissagineun hajiman, i-geo-ga jeongmal joayo.",
+      "script": "비싸기는 하지만, 이거가 정말 좋아요.",
+      "cue": "It is expensive, yes, but this one is really good."
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "Meolgineun hajiman, beoseu-ga jaju isseoyo.",
+      "script": "멀기는 하지만, 버스가 자주 있어요.",
+      "cue": "It is far, yes, but there are buses often."
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "Mullon jom bissayo. Geuraedo i-geo-ga deo joayo.",
+      "script": "물론 좀 비싸요. 그래도 이거가 더 좋아요.",
+      "cue": "Of course it is a bit expensive. Even so, this one is better."
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "Hagineun hajiman, jal an dwaesseoyo.",
+      "script": "하기는 하지만, 잘 안 됐어요.",
+      "cue": "I do do it, but it did not go well."
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "Jigeum an bappeunikka hwaksilhi hal su isseoyo.",
+      "script": "지금 안 바쁘니까 확실히 할 수 있어요.",
+      "cue": "Since I am not busy now, I can certainly do it."
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "Sasil i-geo-neun iyu-ga isseoyo.",
+      "script": "사실 이거는 이유가 있어요.",
+      "cue": "Actually, there is a reason for this."
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "Mullon jochanayo. Geuraedo jom bissajanayo.",
+      "script": "물론 좋잖아요. 그래도 좀 비싸잖아요.",
+      "cue": "Of course it is good, you know. Even so, it is a bit expensive."
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "Naeil-eun an bappeujanayo. Geureomyeon gachi gal su isseoyo.",
+      "script": "내일은 안 바쁘잖아요. 그러면 같이 갈 수 있어요.",
+      "cue": "You are not busy tomorrow, you know. Then we can go together."
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "Mullon meolgineun hajiman, beoseu-ga jaju isseoyo.",
+      "script": "물론 멀기는 하지만, 버스가 자주 있어요.",
+      "cue": "Of course it is far, yes, but there are buses often."
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "Sasil i-geo-ga deo joayo. Geuraedo jom bissajanayo.",
+      "script": "사실 이거가 더 좋아요. 그래도 좀 비싸잖아요.",
+      "cue": "Actually this one is better. Even so, it is a bit expensive."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M8",
+  "title": "Back then",
+  "job": "Habits and states in the past; then against now",
+  "prerequisites": ["L4-M1", "L4-M2", "L4-M3", "L4-M4", "L4-M5", "L4-M6", "L4-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["présent", "imparfait", "passé composé", "conditionnel"],
+    "allowedPatterns": [
+      "Avant + , + <imparfait> + . + Maintenant + , + <present>",
+      "Quand j'étais petit + , + <imparfait>",
+      "À l'époque + , + <imparfait>",
+      "Je ne + <present> + plus",
+      "On + <imparfait> + tous les + <period>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE IMPARFAIT CAN CARRY A WHOLE PERIOD ON ITS OWN. L2-M10 and L3-M10 used it to paint the scene a story happened in; here there is no story around it. j'habitais à Paris is not a moment in a tale — it is a stretch of life that is over. Nothing is newly conjugated: the endings are L2-M10's and this module does not touch them."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CONTRAST NEEDS A NOW HALF, OR IT IS NOT A CONTRAST. Autrefois, j'habitais à Paris. Maintenant, j'habite ici. The imparfait alone says a thing was so; putting a present clause beside it is what says it has stopped. Write the pair, and let the two time words — autrefois or à l'époque against maintenant or aujourd'hui — carry the whole meaning."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH MARKS PAST HABIT TWICE AND FRENCH MARKS IT NOT AT ALL. English has used to and it has would — we used to go, we would go every summer. French has NEITHER: on allait is the whole of it. The learner will keep hunting for a word to translate used to, will not find one, and will start bolting extra verbs on. There is nothing to add."
+    },
+    {
+      "tag": "interference",
+      "text": "ONE ENGLISH would, TWO FRENCH TENSES. We would go every summer is a HABIT and takes the imparfait: on allait. I would go if I could is a HYPOTHESIS and takes L3-M4's conditional: j'irais. English spells them the same and French never does. The only test is the question: is this sentence about something that used to happen, or about something that has not happened at all?"
+    },
+    {
+      "tag": "delta",
+      "text": "ne … plus IS NOT ANY MORE, AND IT KEEPS ITS ne. Je ne fume plus, on ne se voit plus. It is the negator for a thing that stopped, and like every other negator it is written with its ne (docs/58 §4). Careful: L2-M9's plus is the comparative — plus facile, more easy. Same four letters, opposite jobs, and only the ne in front of the verb tells them apart."
+    },
+    {
+      "tag": "free",
+      "text": "THE TIME WORD IS WHAT DOES THE WORK. autrefois, à l'époque and the bare adverb avant all open a period, and once one is in place the imparfait needs no help. That avant is the SAME word L3-M8 taught in front of a date (avant le cinq) — one key, two jobs, and no second row is opened for it here."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M8-S01",
+      "display": "Autrefois, j'habitais à Paris. Maintenant, j'habite ici",
+      "cue": "I used to live in Paris. Now I live here",
+      "literal": "Formerly, I-lived at Paris. Now, I-live here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "autrefois",
+            "cue": "formerly, in the old days",
+            "tag": "free",
+            "forms": ["autrefois"],
+            "note": "Opens a period that is finished. One word, and once it is in place the imparfait behind it needs no further marking."
+          },
+          {
+            "display": "j'habitais",
+            "cue": "I used to live",
+            "tag": "delta",
+            "forms": ["j'habitais"],
+            "note": "The imparfait of habiter, with L2-M10's endings unchanged. The elision makes it one word and one key, as j'étais and j'avais are."
+          },
+          {
+            "display": "maintenant",
+            "cue": "now",
+            "tag": "free",
+            "forms": ["maintenant"],
+            "note": "The now half of the pair. Without it the first clause says only that something was true, not that it has stopped being true."
+          },
+          {
+            "display": "j'habite",
+            "cue": "I live",
+            "tag": "free",
+            "forms": ["j'habite"],
+            "note": "The present beside the imparfait. Putting the two forms of one verb side by side is the clearest shape this module has."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English needs used to here and French has no word for it. A learner who insists on translating it reaches for a second verb and produces something French has no room for.",
+      "sound": "oh-truh-FWAH, zha-bee-TEH ah pah-REE. man-tuh-NAHN, zha-BEET ee-SEE. The -ais of j'habitais is an open eh; j'habite ends on a clipped t.",
+      "variations": [
+        {
+          "display": "Autrefois, je travaillais à Paris. Maintenant, je travaille ici",
+          "cue": "I used to work in Paris. Now I work here",
+          "changed": "another verb through the same two-tense pair"
+        },
+        {
+          "display": "Autrefois, j'habitais ici. Maintenant, j'habite à Paris",
+          "cue": "I used to live here. Now I live in Paris",
+          "changed": "the two places swap"
+        }
+      ],
+      "mistake": {
+        "display": "Autrefois, j'ai habité à Paris. Maintenant, j'habite ici",
+        "why": "the passé composé makes it one finished event, as if you lived there once and it was over in an afternoon. A stretch of life takes the imparfait."
+      },
+      "usage": "Answering where are you from? with the honest two-part version instead of one place name.",
+      "register": "neutral",
+      "mnemonic": "Then in the imparfait, now in the present."
+    },
+    {
+      "id": "L4-M8-S02",
+      "display": "À l'époque, on n'avait pas de voiture",
+      "cue": "Back then, we didn't have a car",
+      "literal": "At the-time, one not-had not of car",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "à l'époque",
+            "cue": "back then, at the time",
+            "tag": "delta",
+            "forms": ["à l'époque"],
+            "note": "Names a period rather than a moment. It is the phrase a French speaker reaches for first when they mean back when things were different."
+          },
+          {
+            "display": "on n'avait pas de voiture",
+            "cue": "we didn't have a car",
+            "tag": "delta",
+            "forms": ["on n'avait pas de voiture"],
+            "note": "Written whole because n'avait is its own elided key. The pattern under it is L2-M10's avait, negated, with pas de for the absent thing."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "English says we didn't have a car and puts the past on did. French puts it on the verb itself — n'avait — and there is no auxiliary anywhere in the sentence to carry it.",
+      "sound": "ah lay-POK, ohn na-VEH pah duh vwah-TEWR. on n'avait links across the n, so it comes out as one run, ohn-na-veh.",
+      "variations": [
+        {
+          "display": "À l'époque, on n'avait pas de voiture ici",
+          "cue": "Back then, nobody here had a car",
+          "changed": "the place is named at the end"
+        },
+        {
+          "display": "Autrefois, on n'avait pas de voiture",
+          "cue": "In the old days, we didn't have a car",
+          "changed": "the other opener, same period"
+        }
+      ],
+      "mistake": {
+        "display": "À l'époque, on n'a pas eu de voiture",
+        "why": "the passé composé says the car failed to turn up on one occasion. A standing state — not owning one, for years — is the imparfait's job."
+      },
+      "usage": "Explaining how a household or a town used to work, to somebody who was not there.",
+      "register": "neutral",
+      "mnemonic": "A state that lasted is imparfait."
+    },
+    {
+      "id": "L4-M8-S03",
+      "display": "Quand j'étais petit, je jouais dehors",
+      "cue": "When I was little, I played outside",
+      "literal": "When I-was small, I played outside",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quand j'étais petit",
+            "cue": "when I was little",
+            "tag": "delta",
+            "forms": ["quand j'étais petit"],
+            "note": "Taken whole: every piece is already owned — quand and j'étais are L2-M10's, petit is L2-M2's — and it is the standard opener for a childhood."
+          },
+          {
+            "display": "jouais",
+            "cue": "used to play",
+            "tag": "delta",
+            "forms": ["jouais", "jouait", "jouions"],
+            "note": "The imparfait of jouer on L2-M10's endings: -ais, -ait, -ions. Nothing here is new but the stem."
+          },
+          {
+            "display": "dehors",
+            "cue": "outside, outdoors",
+            "tag": "free",
+            "forms": ["dehors"],
+            "note": "Outside in the open air, with no place named after it. The final s is silent."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "I played and I used to play are two English sentences; je jouais is the only French one. Reaching for the passé composé here — j'ai joué — turns a whole childhood into one afternoon.",
+      "sound": "kahn zhay-TEH puh-TEE, zhuh zhoo-EH duh-OR. jouais is two syllables ending on an open eh; the s of dehors is not sounded.",
+      "variations": [
+        {
+          "display": "Quand j'étais petit, je jouais avec mes amis",
+          "cue": "When I was little, I played with my friends",
+          "changed": "who was there"
+        },
+        {
+          "display": "Quand j'étais petit, on jouait dehors",
+          "cue": "When I was little, we played outside",
+          "changed": "the subject, and the ending moves with it"
+        }
+      ],
+      "mistake": {
+        "display": "Quand j'étais petit, j'ai joué dehors",
+        "why": "j'ai joué is one occasion of playing. A childhood habit is a repeated stretch, and French marks that on the verb: je jouais."
+      },
+      "usage": "The opening line of every story anybody has ever told about their own childhood.",
+      "register": "neutral",
+      "mnemonic": "A habit repeats, so the imparfait does."
+    },
+    {
+      "id": "L4-M8-S04",
+      "display": "Avant, on allait au cinéma tous les jours",
+      "cue": "We used to go to the cinema every day",
+      "literal": "Before, one went to-the cinema all the days",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "allait",
+            "cue": "used to go (he, she, one)",
+            "tag": "delta",
+            "forms": ["allait"],
+            "note": "The third-person imparfait of aller. Its first person, allais, is L2-M10's and stays there — this row opens only the cell that module left empty."
+          }
+        ],
+        "rules": [0, 2, 5]
+      },
+      "trap": "The bare avant here is the same word L3-M8 taught in front of a date. Used alone at the head of a clause it means back then, and English speakers who learnt it as before will read it as incomplete.",
+      "sound": "ah-VAHN, ohn na-LEH oh see-nay-MAH too lay ZHOOR. on allait links across the n; tous les jours runs as three flat syllables.",
+      "variations": [
+        {
+          "display": "Avant, on allait au marché tous les jours",
+          "cue": "We used to go to the market every day",
+          "changed": "where the habit took you"
+        },
+        {
+          "display": "À l'époque, on allait au cinéma tous les jours",
+          "cue": "Back then, we used to go to the cinema every day",
+          "changed": "the opener, and nothing else"
+        }
+      ],
+      "mistake": {
+        "display": "Avant, on est allés au cinéma tous les jours",
+        "why": "on est allés is one trip that happened. tous les jours says it happened over and over, and a repeated trip takes the imparfait: on allait."
+      },
+      "usage": "Describing what a place or a family used to do with its evenings.",
+      "register": "neutral",
+      "mnemonic": "tous les jours wants allait, not est allé."
+    },
+    {
+      "id": "L4-M8-S05",
+      "display": "Je ne fume plus depuis deux ans",
+      "cue": "I stopped smoking two years ago",
+      "literal": "I not smoke more since two years",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je ne fume plus",
+            "cue": "I don't smoke any more",
+            "tag": "delta",
+            "forms": ["je ne fume plus"],
+            "note": "Written whole because L2-M9 owns bare plus as the comparative. Here plus is the negator and only the ne in front of the verb tells the two apart."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "The same four letters mean more and no more. plus facile is more easy; ne … plus is not any more. The ne is not decoration here — it is the entire difference.",
+      "sound": "zhuh nuh fewm PLEW duh-ZAHN. As a negator the s of plus is silent; as the comparative it is often heard. That one consonant is the spoken signal.",
+      "variations": [
+        {
+          "display": "Aujourd'hui, je ne fume plus",
+          "cue": "These days I don't smoke any more",
+          "changed": "the now word moves to the front"
+        },
+        {
+          "display": "Je ne fume plus depuis trois ans",
+          "cue": "I stopped smoking three years ago",
+          "changed": "how long it has been"
+        }
+      ],
+      "mistake": {
+        "display": "Je fume plus depuis deux ans",
+        "why": "without the ne this reads as I smoke more — the comparative. Dropping it does not soften the sentence, it reverses it."
+      },
+      "usage": "Saying a habit is behind you, which in French is a present-tense sentence, not a past one.",
+      "register": "neutral",
+      "mnemonic": "No ne, no not."
+    },
+    {
+      "id": "L4-M8-S06",
+      "display": "Aujourd'hui, on ne se voit plus",
+      "cue": "These days we don't see each other any more",
+      "literal": "Today, one not oneself sees more",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aujourd'hui",
+            "cue": "today, these days",
+            "tag": "free",
+            "forms": ["aujourd'hui"],
+            "note": "The now word for a period rather than a date. Beside an imparfait clause it is what makes the contrast readable."
+          },
+          {
+            "display": "on ne se voit plus",
+            "cue": "we don't see each other any more",
+            "tag": "delta",
+            "forms": ["on ne se voit plus"],
+            "note": "Whole, for the same reason as je ne fume plus: bare plus is L2-M9's. The se here is each other, not oneself."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "English needs each other and French does not — the se carries it. A learner adding a translation for it produces a pronoun French has nowhere to put.",
+      "sound": "oh-zhoor-DWEE, ohn nuh suh vwah PLEW. aujourd'hui is three syllables ending on a long wee; the s of plus stays silent.",
+      "variations": [
+        {
+          "display": "Maintenant, on ne se voit plus",
+          "cue": "Now we don't see each other any more",
+          "changed": "the other now word"
+        },
+        {
+          "display": "On ne se voit plus depuis deux ans",
+          "cue": "We haven't seen each other for two years",
+          "changed": "the duration replaces the opener"
+        }
+      ],
+      "mistake": {
+        "display": "Aujourd'hui, on se voit plus",
+        "why": "with no ne this says we see each other more, which is the opposite news. ne … plus is one negator in two pieces and both are written."
+      },
+      "usage": "Saying a friendship has faded, without saying anything unkind about why.",
+      "register": "neutral",
+      "mnemonic": "se is each other; plus needs its ne."
+    },
+    {
+      "id": "L4-M8-S07",
+      "display": "J'irais bien au cinéma, mais je dois travailler",
+      "cue": "I'd quite like to go to the cinema, but I have to work",
+      "literal": "I-would-go well to-the cinema, but I must work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'irais",
+            "cue": "I would go",
+            "tag": "interference",
+            "forms": ["j'irais"],
+            "note": "L3-M4's conditional, not an imparfait. English says would for both; this one is a hypothesis, and on allait is the habit."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "This is the module's whole hinge. We would go every summer and I would go if I could share one English word and take two different French tenses. Ask which one the sentence means before you pick.",
+      "sound": "zhee-REH byan oh see-nay-MAH, meh zhuh dwah tra-vah-YAY. j'irais is two syllables, zhee-reh, and the bien after it is unstressed.",
+      "variations": [
+        {
+          "display": "J'irais bien à la mer, mais je dois travailler",
+          "cue": "I'd quite like to go to the sea, but I have to work",
+          "changed": "where you would rather be"
+        },
+        {
+          "display": "J'irais bien au marché, mais je n'ai pas le temps",
+          "cue": "I'd quite like to go to the market, but I don't have time",
+          "changed": "the reason you cannot"
+        }
+      ],
+      "mistake": {
+        "display": "J'allais bien au cinéma, mais je dois travailler",
+        "why": "j'allais is the habit — I used to go — which cannot sit in front of but I have to work today. A wish that has not happened takes j'irais."
+      },
+      "usage": "Turning something down while making it clear you would rather not be turning it down.",
+      "register": "neutral",
+      "mnemonic": "Habit: allait. Hypothesis: irais."
+    },
+    {
+      "id": "L4-M8-S08",
+      "display": "Avant, la vie était plus facile",
+      "cue": "Life used to be easier",
+      "literal": "Before, the life was more easy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vie",
+            "cue": "life",
+            "tag": "free",
+            "forms": ["vie"],
+            "note": "Life as a whole, the way a period is lived. It is the noun this module's contrast is usually about."
+          },
+          {
+            "display": "facile",
+            "cue": "easy",
+            "tag": "free",
+            "forms": ["facile"],
+            "note": "The same form for a masculine or a feminine noun, so nothing agrees. Its comparative is L2-M9's plus facile."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "plus facile is more easy, with no ne anywhere. Set beside S05's je ne fume plus it is the clean demonstration that the word itself decides nothing: the ne does.",
+      "sound": "ah-VAHN, lah vee ay-TEH plew fah-SEEL. Here the s of plus is often heard, because it is the comparative and not the negator.",
+      "variations": [
+        {
+          "display": "Aujourd'hui, la vie est plus facile",
+          "cue": "Life is easier these days",
+          "changed": "the now half of the same claim"
+        },
+        {
+          "display": "Avant, la vie était moins facile",
+          "cue": "Life used to be harder",
+          "changed": "the comparison turns round"
+        }
+      ],
+      "mistake": {
+        "display": "Avant, la vie ne était plus facile",
+        "why": "adding a ne turns more easy into not easy any more, which is a different sentence — and the ne would elide to n' in any case."
+      },
+      "usage": "The line every generation says about the one before it.",
+      "register": "neutral",
+      "mnemonic": "plus with ne negates; plus alone compares."
+    },
+    {
+      "id": "L4-M8-S09",
+      "display": "Tout a changé depuis dix ans",
+      "cue": "Everything has changed in the last ten years",
+      "literal": "All has changed since ten years",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tout",
+            "cue": "everything, all of it",
+            "tag": "free",
+            "forms": ["tout"],
+            "note": "Everything, standing alone as a subject. The final t is silent, and it is the same tout that opens L4-M10's tout à coup."
+          },
+          {
+            "display": "changé",
+            "cue": "changed",
+            "tag": "free",
+            "forms": ["changé"],
+            "note": "The participle of changer, on avoir. This is the one sentence in the module that names a completed change rather than a standing state."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "English reaches for a perfect and a for — everything has changed for ten years — and gets the preposition wrong. French keeps depuis, which is L3-M7's, and it means over the last ten years.",
+      "sound": "too tah shahn-ZHAY duh-pwee dee-ZAHN. tout a links across the t; dix ans links across the x, heard as a z.",
+      "variations": [
+        {
+          "display": "Tout a changé depuis deux ans",
+          "cue": "Everything has changed in the last two years",
+          "changed": "how long the change took"
+        },
+        {
+          "display": "Ici, tout a changé depuis dix ans",
+          "cue": "Here, everything has changed in the last ten years",
+          "changed": "the place is pinned first"
+        }
+      ],
+      "mistake": {
+        "display": "Tout changeait depuis dix ans",
+        "why": "the imparfait would make the changing itself the standing state. What is meant is the finished result you can see now, which takes a changé."
+      },
+      "usage": "Summing up a decade in five words, usually before the details.",
+      "register": "neutral",
+      "mnemonic": "A state stands; a change lands."
+    },
+    {
+      "id": "L4-M8-S10",
+      "display": "À l'époque, je ne pouvais pas travailler ici",
+      "cue": "Back then, I couldn't work here",
+      "literal": "At the-time, I not could not to-work here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pouvais",
+            "cue": "could, was able to",
+            "tag": "delta",
+            "forms": ["pouvais"],
+            "note": "The imparfait of pouvoir, for an ability you had or lacked over a period. Not a single failed attempt — that would be the passé composé."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English could is a past and a conditional at once — I couldn't then, I couldn't possibly now. je ne pouvais pas is only the first. The second is L3-M4's conditional and belongs to another sentence.",
+      "sound": "ah lay-POK, zhuh nuh poo-VEH pah tra-vah-YAY ee-SEE. pouvais rhymes with j'étais and takes the same open eh.",
+      "variations": [
+        {
+          "display": "Autrefois, je ne pouvais pas travailler ici",
+          "cue": "In the old days, I couldn't work here",
+          "changed": "the opener"
+        },
+        {
+          "display": "À l'époque, je ne pouvais pas travailler à Paris",
+          "cue": "Back then, I couldn't work in Paris",
+          "changed": "the place"
+        }
+      ],
+      "mistake": {
+        "display": "À l'époque, je n'ai pas pu travailler ici",
+        "why": "je n'ai pas pu is one occasion on which it did not come off. A standing impossibility across a period is je ne pouvais pas."
+      },
+      "usage": "Explaining a rule, a permit or a circumstance that used to stand in your way and no longer does.",
+      "register": "neutral",
+      "mnemonic": "Could-for-years is pouvais."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M8-C01", "display": "Autrefois, j'habitais à Paris", "cue": "I used to live in Paris" },
+    { "id": "L4-M8-C02", "display": "Maintenant, j'habite ici", "cue": "Now I live here" },
+    { "id": "L4-M8-C03", "display": "À l'époque, on n'avait pas de voiture", "cue": "Back then, we didn't have a car" },
+    { "id": "L4-M8-C04", "display": "Quand j'étais petit, on jouait dehors", "cue": "When I was little, we played outside" },
+    { "id": "L4-M8-C05", "display": "Avant, on allait au marché tous les jours", "cue": "We used to go to the market every day" },
+    { "id": "L4-M8-C06", "display": "Je ne fume plus depuis trois ans", "cue": "I stopped smoking three years ago" },
+    { "id": "L4-M8-C07", "display": "On ne se voit plus depuis deux ans", "cue": "We haven't seen each other for two years" },
+    { "id": "L4-M8-C08", "display": "J'irais bien au cinéma, mais je dois travailler", "cue": "I'd quite like to go to the cinema, but I have to work" },
+    { "id": "L4-M8-C09", "display": "Aujourd'hui, la vie est plus facile", "cue": "Life is easier these days" },
+    { "id": "L4-M8-C10", "display": "Tout a changé depuis dix ans", "cue": "Everything has changed in the last ten years" },
+    { "id": "L4-M8-C11", "display": "À l'époque, je ne pouvais pas travailler ici", "cue": "Back then, I couldn't work here" },
+    { "id": "L4-M8-C12", "display": "Quand j'étais petit, je jouais avec mes amis", "cue": "When I was little, I played with my friends" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

@@ -18,7 +18,7 @@
  * verdict. en-de is the strict one: `src/course/types.test.ts` asserts exactly one owner per
  * surface there, and on that course a report here IS a defect.
  */
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 
 import {
   matchSurfaces,
@@ -36,6 +36,7 @@ if (course === undefined || moduleId === undefined) {
 }
 
 interface IndexFile {
+  moduleId: string;
   cumulativeThrough: string[];
   surfaces: Record<string, unknown>;
   maxSpan: number;
@@ -59,7 +60,18 @@ interface Module {
 
 const read = <T>(path: string): T => JSON.parse(readFileSync(path, 'utf8')) as T;
 const indexDir = `public/content/${course}/index`;
-const shipped = read<IndexFile>(`${indexDir}/L2-M10.json`);
+/**
+ * The DEEPEST emitted index, not a hard-coded module. This read `L2-M10.json` while L3 was the
+ * level being authored, which was true for exactly one level; the deepest file is the one whose
+ * `cumulativeThrough` is longest, and picking it by filename does not work — `readdirSync` sorts
+ * `L1-M10.json` before `L1-M2.json`.
+ */
+const shipped = readdirSync(indexDir)
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => read<IndexFile>(`${indexDir}/${f}`))
+  .reduce((deepest, file) =>
+    file.cumulativeThrough.length > deepest.cumulativeThrough.length ? file : deepest,
+  );
 
 /** Surface → the module that first taught it. First occurrence wins, as the emitter does. */
 const taught = new Map<string, string>();
@@ -77,11 +89,16 @@ const own = (surface: string, owner: string): void => {
   maxSpan = Math.max(maxSpan, surfaceSpan(key));
 };
 
-/** Fold in the L3 modules already authored, up to and including this one. */
+/**
+ * Fold in the modules of THIS level already authored, up to and including this one — the ones the
+ * emitted index cannot know about because they have not been built. `level` is read off the module
+ * id rather than assumed, so the same check serves L3, L4 and L5.
+ */
+const [level] = moduleId.split('-');
 const number = (id: string): number => Number(id.split('M')[1]);
 const here = number(moduleId);
 for (let n = 1; n <= here; n += 1) {
-  const file = `content/${course}/modules/L3-M${n}.json`;
+  const file = `content/${course}/modules/${level}-M${n}.json`;
   if (!existsSync(file)) continue;
   const mod = read<Module>(file);
   for (const s of mod.sentences) {
@@ -138,11 +155,27 @@ for (const s of module_.sentences) {
             ' learner is shown — this row is only worth keeping if the sentence needs the word',
         );
       }
+      /**
+       * A row collides when the key it OPENS — its own whole surface — is one another row of this
+       * module already earned, whether as a whole surface or as a hyphen PART. `surfaceIndexKeys`
+       * splits hyphens, so `ʿalā ar-raghm min` silently buys `raghm` and `peut-être` silently buys
+       * `peut`; a later row opening that word as its own display is unreachable, and this map was
+       * blind to it while it held whole surfaces alone. en-ar's L4-M4 wave found the case by
+       * reasoning about the emitter rather than by running this check, which is the wrong way
+       * round.
+       *
+       * Only the whole key is TESTED, though every earned key is RECORDED. Part against part is
+       * not a defect and flagging it is noise: en-ar's `al-` article makes every definite noun
+       * donate `al`, so two ordinary nouns in one module would read as a collision. Nobody taps a
+       * bound article — the learner taps the word.
+       */
       const row = `${s.id} "${w.display}"`;
-      const first = mine.get(key);
-      if (first === undefined) mine.set(key, { row, note: w.note });
-      else if (first.row !== row && first.note !== w.note)
-        collisions.set(key, `${first.row} and ${row}`);
+      const opened = mine.get(key);
+      if (opened !== undefined && opened.row !== row && opened.note !== w.note)
+        collisions.set(key, `${opened.row} and ${row}`);
+      for (const earned of surfaceIndexKeys(key)) {
+        if (!mine.has(earned)) mine.set(earned, { row, note: w.note });
+      }
     }
   }
 }

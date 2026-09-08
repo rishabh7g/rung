@@ -1,0 +1,630 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M7",
+  "title": "Official talk",
+  "job": "Announcements, offices and counters: the formal register you hear",
+  "prerequisites": ["L4-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present_imperfective",
+      "simple_future_perfective",
+      "short-form participle as predicate"
+    ],
+    "allowedPatterns": [
+      "<N> + zakrýto / otkrýto",
+      "Zdes' + zapreshchenó + V-inf",
+      "Póyezd otpravlyáyetsya v + <hour>",
+      "Vam pozvonyát",
+      "Uvazháyemye passazhíry + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "How Russian says a thing with NO DOER — three devices, and a sign or an announcement is built from one of them. (a) The SHORT-FORM PARTICIPLE as the whole predicate: zakrýto, otkrýto, zányato, zapreshchenó, with no verb beside it. (b) The REFLEXIVE PASSIVE, which is L3-M1's -sya doing a third job: magazín zakryváyetsya, the shop closes, with nothing said about who closes it. (c) The BARE THIRD-PERSON PLURAL: Vam pozvonyát, Zdes' ne kúryat — a plural verb, no subject at all, meaning one, they, or somebody."
+    },
+    {
+      "tag": "interference",
+      "text": "English reaches for the passive — you will be called, smoking is not permitted — and Russian's commonest answer contains no passive whatever: a bare plural verb with the subject slot empty. Vam pozvonyát is literally they-will-ring to-you, and nobody is meant by they. Supplying oní puts real people in the sentence and changes what it says; building a byt' passive gives something a station would never print."
+    },
+    {
+      "tag": "delta",
+      "text": "The short participles are a WORD LIST, not a system: learn zakrýto, otkrýto, zányato and zapreshchenó as four labels, because the machine that makes them is L5's. AND EACH ONE'S STRESS IS ITS OWN: zakrýto and zányato are front-heavy, zapreshchenó throws the stress right to the end. There is no pattern to lean on here, so learn each with its acute attached."
+    },
+    {
+      "tag": "free",
+      "text": "The sign words are short, frozen and read like labels, so they cost almost nothing and pay at once: vkhod is the way in, výkhod the way out, zakrýto shut, otkrýto open. None of them takes a verb — a Russian label is a noun or a participle standing alone, and adding yest' to it is what marks a foreigner."
+    },
+    {
+      "tag": "delta",
+      "text": "The register of an announcement is vy from end to end and has two fixed openers. uvazháyemye passazhíry, respected passengers, is how a platform or a carriage addresses everybody; prósim vas plus an infinitive, we ask you to, is how it makes a request. Neither has an informal twin: there is no ty version of a public announcement, so nothing new about politeness is opened here."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M7-S01",
+      "display": "Sevódnya zakrýto, a závtra otkrýto.",
+      "script": "Сегодня закрыто, а завтра открыто.",
+      "cue": "Closed today, open tomorrow.",
+      "literal": "Today closed, and tomorrow open.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zakrýto",
+            "script": "закрыто",
+            "cue": "closed, shut",
+            "tag": "delta",
+            "forms": ["zakrýto", "zakrýt", "zakrýta"],
+            "note": "The label on a locked door. Neuter with nothing to agree with; zakrýt for a masculine thing, zakrýta for a feminine one. Stress on the ý, never on the last syllable."
+          },
+          {
+            "display": "otkrýto",
+            "script": "открыто",
+            "cue": "open",
+            "tag": "delta",
+            "forms": ["otkrýto", "otkrýt", "otkrýta"],
+            "note": "The other half of the same sign, built the same way. It is a state, not an act: L4-M1's otkróyte is the command to open something."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "There is no is in either half, and none is missing. English needs it's closed; Russian's sign is the participle on its own, and putting a verb beside it is what makes a learner's Russian sound translated.",
+      "sound": "za-KRY-ta — the ý is the hard Russian y, made with the tongue pulled back, and the final o reduces to a.",
+      "variations": [
+        {
+          "display": "Magazín zakrýt, a aptéka otkrýta.",
+          "script": "Магазин закрыт, а аптека открыта.",
+          "cue": "The shop is shut, but the chemist is open.",
+          "changed": "real nouns in the sentence, so the participles agree with them"
+        },
+        {
+          "display": "Kafé sevódnya zakrýto.",
+          "script": "Кафе сегодня закрыто.",
+          "cue": "The café is closed today.",
+          "changed": "a neuter noun, which happens to want the same form as the bare sign"
+        }
+      ],
+      "mistake": {
+        "display": "Sevódnya zakrýt, a závtra otkrýt.",
+        "script": "Сегодня закрыт, а завтра открыт.",
+        "why": "zakrýt is the masculine form and wants a masculine thing to agree with. A sign naming nothing takes the neuter, which is why every door in Russia says zakrýto and not zakrýt."
+      },
+      "usage": "Reading a card in a window, or telling someone what it said.",
+      "register": "formal",
+      "mnemonic": "A Russian sign is one word and no verb: zakrýto, otkrýto, and the door has spoken."
+    },
+    {
+      "id": "L4-M7-S02",
+      "display": "Zdes' zapreshchenó kurít'.",
+      "script": "Здесь запрещено курить.",
+      "cue": "Smoking is prohibited here.",
+      "literal": "Here prohibited to-smoke.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zapreshchenó",
+            "script": "запрещено",
+            "cue": "prohibited",
+            "tag": "delta",
+            "forms": ["zapreshchenó"],
+            "note": "The printed prohibition, and the one short participle here with END stress — zapreshchenó, not zapréshcheno. It takes a plain infinitive after it."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English turns the verb into a noun — smoking is prohibited. Russian leaves it an infinitive: zapreshchenó kurít', prohibited to-smoke. There is no Russian noun to build here and no -ing to look for.",
+      "sound": "za-pri-shchi-NO — four syllables with the stress dead last, and shch is one long soft sh.",
+      "variations": [
+        {
+          "display": "Zdes' zapreshchenó rabótat'.",
+          "script": "Здесь запрещено работать.",
+          "cue": "Working here is prohibited.",
+          "changed": "a different infinitive in the same slot"
+        },
+        {
+          "display": "Kurít' zapreshchenó.",
+          "script": "Курить запрещено.",
+          "cue": "Smoking prohibited.",
+          "changed": "the bare sign, with the infinitive in front"
+        }
+      ],
+      "mistake": {
+        "display": "Zdes' ne mózhno kurít'.",
+        "script": "Здесь не можно курить.",
+        "why": "ne mózhno is not Russian at all. Spoken, the word is L3-M4's nel'zyá; printed on a wall, it is zapreshchenó. Neither is built by negating mózhno."
+      },
+      "usage": "Reading a wall, a platform, or the back of a door.",
+      "register": "formal",
+      "mnemonic": "The longest of the four labels earns the stress at the very end: za-pri-shchi-NO."
+    },
+    {
+      "id": "L4-M7-S03",
+      "display": "Vam pozvonyát závtra útrom.",
+      "script": "Вам позвонят завтра утром.",
+      "cue": "You'll get a call tomorrow morning.",
+      "literal": "To-you they-will-ring tomorrow in-morning.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pozvonyát",
+            "script": "позвонят",
+            "cue": "they'll ring (somebody will)",
+            "tag": "interference",
+            "forms": ["pozvonyát"],
+            "note": "A plural verb with the subject slot deliberately empty — the ordinary way to say you will be called. Nobody is meant by they, and naming one changes the sentence."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "This is where an English speaker builds a passive and gets nothing usable. Russian does not say you will be called; it says they-will-ring-you and leaves they unfilled.",
+      "sound": "paz-va-NYAT — stress on the last syllable, and the ya there is a full open a after a soft n.",
+      "variations": [
+        {
+          "display": "Vam pozvonyát iz magazína.",
+          "script": "Вам позвонят из магазина.",
+          "cue": "The shop will call you.",
+          "changed": "where the call comes from, still with no person named"
+        },
+        {
+          "display": "Vam pozvonyát vécherom.",
+          "script": "Вам позвонят вечером.",
+          "cue": "You'll get a call in the evening.",
+          "changed": "a different time on the same empty-subject frame"
+        }
+      ],
+      "mistake": {
+        "display": "Vy búdete pozvóneny.",
+        "script": "Вы будете позвонены.",
+        "why": "The passive an English speaker reaches for, assembled out of L1-M5's búdete and a participle that does not exist. Russian's answer to you will be called is the bare plural verb, and there is nothing to build."
+      },
+      "usage": "What a clerk tells you as you leave the counter.",
+      "register": "formal",
+      "mnemonic": "No doer, so no subject — Russian just makes the verb plural and moves on."
+    },
+    {
+      "id": "L4-M7-S04",
+      "display": "Zdes' ne kúryat — éhto zapreshchenó.",
+      "script": "Здесь не курят — это запрещено.",
+      "cue": "People don't smoke here — it isn't allowed.",
+      "literal": "Here not they-smoke — this prohibited.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kúryat",
+            "script": "курят",
+            "cue": "they smoke, people smoke",
+            "tag": "interference",
+            "forms": ["kúryat"],
+            "note": "The same empty-subject plural as pozvonyát, used of a custom rather than an event. Front-stressed: KU-ryat, from L3-M4's kurít'."
+          },
+          {
+            "display": "govoryát",
+            "script": "говорят",
+            "cue": "they say, people speak",
+            "tag": "interference",
+            "forms": ["govoryát"],
+            "note": "The third-plural of L1-M4's govorít, and the commonest of these subjectless verbs — zdes' govoryát po-rússki, Russian is spoken here."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Do not put a subject in. Zdes' oní ne kúryat means those particular people are not smoking; Zdes' ne kúryat means it is not done here, which is what a Russian actually says.",
+      "sound": "KU-ryat — front-stressed, and the final -yat is short and soft, quite unlike pozvonyát's ending.",
+      "variations": [
+        {
+          "display": "Zdes' govoryát po-rússki.",
+          "script": "Здесь говорят по-русски.",
+          "cue": "Russian is spoken here.",
+          "changed": "a different verb on the same subjectless frame"
+        },
+        {
+          "display": "Zdes' ne kúryat.",
+          "script": "Здесь не курят.",
+          "cue": "There's no smoking here.",
+          "changed": "the bare rule, with the explanation dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Zdes' oní ne kúryat.",
+        "script": "Здесь они не курят.",
+        "why": "Correct Russian about a specific group of people you can point at. As a house rule it is wrong: the whole force of the device is that the subject slot stays empty."
+      },
+      "usage": "Explaining a rule that nobody in particular made.",
+      "register": "formal",
+      "mnemonic": "Leave the subject out and the rule applies to everyone; put one in and it applies to them."
+    },
+    {
+      "id": "L4-M7-S05",
+      "display": "Póyezd otpravlyáyetsya v sem' chasóv.",
+      "script": "Поезд отправляется в семь часов.",
+      "cue": "The train departs at seven o'clock.",
+      "literal": "Train dispatches-itself at seven hours.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "otpravlyáyetsya",
+            "script": "отправляется",
+            "cue": "departs, sets off",
+            "tag": "delta",
+            "forms": ["otpravlyáyetsya"],
+            "note": "L3-M1's -sya in a third job: not washing oneself, but a passive with nobody doing it. The train is dispatched, and the -sya is what removes the dispatcher."
+          },
+          {
+            "display": "otpravléniye",
+            "script": "отправление",
+            "cue": "departure",
+            "tag": "free",
+            "forms": ["otpravléniye"],
+            "note": "The noun on the departures board. A separate word from the verb, not one of its forms, so it is learnt separately — as is pribýtiye, arrival."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English says the train departs and the train is dispatched with two different verbs. Russian has one verb plus -sya, and it covers both without saying who did the dispatching.",
+      "sound": "at-prav-LYA-yit-sa — five syllables, stress in the middle, and the final -tsya is said ts-a.",
+      "variations": [
+        {
+          "display": "Otpravléniye v sem' chasóv.",
+          "script": "Отправление в семь часов.",
+          "cue": "Departure at seven o'clock.",
+          "changed": "the board's version — a noun, and no verb at all"
+        },
+        {
+          "display": "Póyezd otpravlyáyetsya v vósem'.",
+          "script": "Поезд отправляется в восемь.",
+          "cue": "The train departs at eight.",
+          "changed": "a different hour, with chasóv left off as speech does"
+        }
+      ],
+      "mistake": {
+        "display": "Póyezd otpravlyáyet v sem' chasóv.",
+        "script": "Поезд отправляет в семь часов.",
+        "why": "Without -sya the verb needs something to dispatch, and the sentence goes looking for an object it never finds. The -sya is not decoration here; it is what makes the train the thing that leaves."
+      },
+      "usage": "Repeating what the board or the tannoy just said.",
+      "register": "formal",
+      "mnemonic": "Add -sya and the doer disappears: the train dispatches itself."
+    },
+    {
+      "id": "L4-M7-S06",
+      "display": "Magazín zakryváyetsya v vósem'.",
+      "script": "Магазин закрывается в восемь.",
+      "cue": "The shop closes at eight.",
+      "literal": "Shop closes-itself at eight.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zakryváyetsya",
+            "script": "закрывается",
+            "cue": "closes, shuts",
+            "tag": "delta",
+            "forms": ["zakryváyetsya"],
+            "note": "The event, where zakrýto is the state. The shop shuts at eight and is shut afterwards, and Russian marks the difference with a verb against a participle."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English uses closes for both the act and the sign. Russian does not: zakryváyetsya happens at eight, zakrýto is true from eight onwards, and a shop is never described with the wrong one.",
+      "sound": "za-kry-VA-yit-sa — the stress sits on the va, two syllables further along than in zakrýto.",
+      "variations": [
+        {
+          "display": "Magazín zakryváyetsya v sem'.",
+          "script": "Магазин закрывается в семь.",
+          "cue": "The shop closes at seven.",
+          "changed": "an hour earlier"
+        },
+        {
+          "display": "Aptéka zakryváyetsya pózdno.",
+          "script": "Аптека закрывается поздно.",
+          "cue": "The chemist closes late.",
+          "changed": "an adverb instead of a clock time"
+        }
+      ],
+      "mistake": {
+        "display": "Magazín zakryváyet v vósem'.",
+        "script": "Магазин закрывает в восемь.",
+        "why": "Without -sya the shop is closing something else, and the listener waits for the object. The reflexive ending is the whole device: it lets the shop be the thing that shuts."
+      },
+      "usage": "Answering do you know when they shut?",
+      "register": "formal",
+      "mnemonic": "zakryváyetsya is the clock striking; zakrýto is what the door says afterwards."
+    },
+    {
+      "id": "L4-M7-S07",
+      "display": "Uvazháyemye passazhíry, póyezd pribyváyet chérez chas.",
+      "script": "Уважаемые пассажиры, поезд прибывает через час.",
+      "cue": "Attention passengers, the train arrives in an hour.",
+      "literal": "Respected passengers, train arrives through hour.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uvazháyemye",
+            "script": "уважаемые",
+            "cue": "respected (form of address)",
+            "tag": "free",
+            "forms": ["uvazháyemye"],
+            "note": "The opener of every public address in Russian, and untranslatable word for word — it does the work English gives to ladies and gentlemen or to a bare attention."
+          },
+          {
+            "display": "passazhíry",
+            "script": "пассажиры",
+            "cue": "passengers",
+            "tag": "free",
+            "forms": ["passazhíry"],
+            "note": "Passengers. Costs nothing to recognise, and the double s is written but said single. Stress on the zhí."
+          },
+          {
+            "display": "pribyváyet",
+            "script": "прибывает",
+            "cue": "arrives",
+            "tag": "free",
+            "forms": ["pribyváyet"],
+            "note": "The arrivals half of the board, opposite otpravlyáyetsya. No -sya on this one: a train arrives by itself and needs nothing removed."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "uvazháyemye is not a greeting and cannot start a conversation with one person. It addresses a crowd, and out of a loudspeaker it is neutral rather than grand.",
+      "sound": "u-va-ZHA-ye-mye pa-sa-ZHY-ry — two long words, each stressed on its third syllable.",
+      "variations": [
+        {
+          "display": "Uvazháyemye passazhíry, póyezd pribyváyet.",
+          "script": "Уважаемые пассажиры, поезд прибывает.",
+          "cue": "Attention passengers, the train is arriving.",
+          "changed": "the announcement with no time in it"
+        },
+        {
+          "display": "Póyezd pribyváyet chérez chas.",
+          "script": "Поезд прибывает через час.",
+          "cue": "The train arrives in an hour.",
+          "changed": "the fact on its own, without the address"
+        }
+      ],
+      "mistake": {
+        "display": "Dorogíye passazhíry, póyezd pribyváyet chérez chas.",
+        "script": "Дорогие пассажиры, поезд прибывает через час.",
+        "why": "dorogíye is dear, which is how a letter to friends begins. A station, an office and a bank all say uvazháyemye, and the difference is heard immediately."
+      },
+      "usage": "Understanding a platform announcement — this is a listening sentence, not a speaking one.",
+      "register": "formal",
+      "mnemonic": "Every Russian tannoy opens with respect: uvazháyemye first, news second."
+    },
+    {
+      "id": "L4-M7-S08",
+      "display": "Vnimániye, vkhod zdes', a výkhod tam.",
+      "script": "Внимание, вход здесь, а выход там.",
+      "cue": "Attention: the way in is here, the way out is over there.",
+      "literal": "Attention, entrance here, and exit there.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vnimániye",
+            "script": "внимание",
+            "cue": "attention",
+            "tag": "free",
+            "forms": ["vnimániye"],
+            "note": "The one word that opens an announcement when there is no crowd to name. Printed with an exclamation mark, spoken as a flat warning."
+          },
+          {
+            "display": "vkhod",
+            "script": "вход",
+            "cue": "entrance, way in",
+            "tag": "free",
+            "forms": ["vkhod"],
+            "note": "The label over a door you may go through. One syllable, and the v is voiced straight into the kh."
+          },
+          {
+            "display": "výkhod",
+            "script": "выход",
+            "cue": "exit, way out",
+            "tag": "free",
+            "forms": ["výkhod"],
+            "note": "Its opposite, and the pair differ only in the first syllable: vkhod in, výkhod out. This one is front-stressed and has two syllables."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "Neither label takes a verb. Vkhod zdes' is the whole sentence, and adding yest' turns a sign into a claim that entrances exist.",
+      "sound": "VY-khat — the ý is that hard back y again, and the final d hardens to a t.",
+      "variations": [
+        {
+          "display": "Vnimániye, zdes' vkhod.",
+          "script": "Внимание, здесь вход.",
+          "cue": "Attention: the entrance is here.",
+          "changed": "the shortest form the sign takes"
+        },
+        {
+          "display": "Výkhod nalévo, a vkhod naprávo.",
+          "script": "Выход налево, а вход направо.",
+          "cue": "The exit is to the left, the entrance to the right.",
+          "changed": "L2-M4's directions doing the pointing instead of here and there"
+        }
+      ],
+      "mistake": {
+        "display": "Vnimániye, vkhod yest' zdes'.",
+        "script": "Внимание, вход есть здесь.",
+        "why": "L1-M7's yest' says there exists, which no sign has ever needed. A label is a noun and a place, and the verb between them is exactly what Russian leaves out."
+      },
+      "usage": "Reading your way through a station, a museum or a car park.",
+      "register": "formal",
+      "mnemonic": "vkhod in, výkhod out — one letter apart, and the y is the one going out."
+    },
+    {
+      "id": "L4-M7-S09",
+      "display": "Prostíte, éhto mésto zányato.",
+      "script": "Простите, это место занято.",
+      "cue": "Sorry, this seat is taken.",
+      "literal": "Forgive, this place occupied.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mésto",
+            "script": "место",
+            "cue": "place, seat",
+            "tag": "free",
+            "forms": ["mésto"],
+            "note": "A seat on a train, a place in a queue, a spot on a shelf. Neuter, which is why the participle beside it is zányato."
+          },
+          {
+            "display": "zányato",
+            "script": "занято",
+            "cue": "occupied, taken",
+            "tag": "delta",
+            "forms": ["zányato"],
+            "note": "Front-stressed — ZA-nya-ta — unlike zapreshchenó. L3-M5 taught this word of a busy PERSON; the neuter form here is the one a seat, a table or a line takes."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "The stress is the whole difficulty. zányato and zapreshchenó are the same kind of word with opposite stress, and neither can be guessed from the other.",
+      "sound": "ZA-nya-ta — heavy first syllable, then two light ones falling away.",
+      "variations": [
+        {
+          "display": "Éhto mésto zányato.",
+          "script": "Это место занято.",
+          "cue": "This seat is taken.",
+          "changed": "without the apology in front"
+        },
+        {
+          "display": "Prostíte, zdes' zányato.",
+          "script": "Простите, здесь занято.",
+          "cue": "Sorry, this is taken.",
+          "changed": "no noun at all, which is how it is usually said"
+        }
+      ],
+      "mistake": {
+        "display": "Prostíte, éhto mésto zanyát.",
+        "script": "Простите, это место занят.",
+        "why": "That is the masculine form, and it belongs to L3-M5's busy person. mésto is neuter, so a taken seat is zányato — the ending is the only thing telling a listener which you mean."
+      },
+      "usage": "Keeping a seat for someone, politely and without a fight.",
+      "register": "formal",
+      "mnemonic": "A person is busy and a seat is taken with one Russian word — only the ending tells a listener which you mean."
+    },
+    {
+      "id": "L4-M7-S10",
+      "display": "Prósim vas ne kurít' na stántsii.",
+      "script": "Просим вас не курить на станции.",
+      "cue": "We ask you not to smoke at the station.",
+      "literal": "We-ask you not to-smoke at station.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prósim",
+            "script": "просим",
+            "cue": "we ask, we request",
+            "tag": "free",
+            "forms": ["prósim"],
+            "note": "The polite half of an announcement: prósim vas plus an infinitive. The we is the institution, never a group of people you could count."
+          }
+        ],
+        "rules": [4, 1]
+      },
+      "trap": "prósim vas is softer than it looks in English, where we ask you to sounds like a warning. In Russian it is the ordinary printed request and carries no threat at all.",
+      "sound": "PRO-sim vas — front-stressed, the o full and round because it is stressed.",
+      "variations": [
+        {
+          "display": "Prósim vas ne kurít'.",
+          "script": "Просим вас не курить.",
+          "cue": "We ask you not to smoke.",
+          "changed": "the request with no place attached"
+        },
+        {
+          "display": "Prósim vas peredát' soobshchéniye.",
+          "script": "Просим вас передать сообщение.",
+          "cue": "We ask you to pass on the message.",
+          "changed": "a positive request, with L2-M7's infinitive in the slot"
+        }
+      ],
+      "mistake": {
+        "display": "Vy ne dolzhný kurít' na stántsii.",
+        "script": "Вы не должны курить на станции.",
+        "why": "Correct Russian, and it accuses: L3-M4's dolzhný tells this particular person what they are obliged to do. An announcement addresses nobody, so it asks — prósim vas."
+      },
+      "usage": "The sentence a loudspeaker says just before someone lights up.",
+      "register": "formal",
+      "mnemonic": "The institution says we and asks; it never says you must."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M7-C01",
+      "display": "Sevódnya zakrýto, a závtra otkrýto.",
+      "script": "Сегодня закрыто, а завтра открыто.",
+      "cue": "Closed today, open tomorrow."
+    },
+    {
+      "id": "L4-M7-C02",
+      "display": "Zdes' zapreshchenó kurít'.",
+      "script": "Здесь запрещено курить.",
+      "cue": "Smoking is prohibited here."
+    },
+    {
+      "id": "L4-M7-C03",
+      "display": "Vam pozvonyát závtra útrom.",
+      "script": "Вам позвонят завтра утром.",
+      "cue": "You'll get a call tomorrow morning."
+    },
+    {
+      "id": "L4-M7-C04",
+      "display": "Zdes' ne kúryat.",
+      "script": "Здесь не курят.",
+      "cue": "There's no smoking here."
+    },
+    {
+      "id": "L4-M7-C05",
+      "display": "Póyezd otpravlyáyetsya v sem' chasóv.",
+      "script": "Поезд отправляется в семь часов.",
+      "cue": "The train departs at seven o'clock."
+    },
+    {
+      "id": "L4-M7-C06",
+      "display": "Magazín zakryváyetsya v vósem'.",
+      "script": "Магазин закрывается в восемь.",
+      "cue": "The shop closes at eight."
+    },
+    {
+      "id": "L4-M7-C07",
+      "display": "Uvazháyemye passazhíry, póyezd pribyváyet chérez chas.",
+      "script": "Уважаемые пассажиры, поезд прибывает через час.",
+      "cue": "Attention passengers, the train arrives in an hour."
+    },
+    {
+      "id": "L4-M7-C08",
+      "display": "Vnimániye, vkhod zdes', a výkhod tam.",
+      "script": "Внимание, вход здесь, а выход там.",
+      "cue": "Attention: the way in is here, the way out is over there."
+    },
+    {
+      "id": "L4-M7-C09",
+      "display": "Prostíte, éhto mésto zányato.",
+      "script": "Простите, это место занято.",
+      "cue": "Sorry, this seat is taken."
+    },
+    {
+      "id": "L4-M7-C10",
+      "display": "Prósim vas ne kurít' na stántsii.",
+      "script": "Просим вас не курить на станции.",
+      "cue": "We ask you not to smoke at the station."
+    },
+    {
+      "id": "L4-M7-C11",
+      "display": "Aptéka zakrýta, a magazín otkrýt.",
+      "script": "Аптека закрыта, а магазин открыт.",
+      "cue": "The chemist is shut, but the shop is open."
+    },
+    {
+      "id": "L4-M7-C12",
+      "display": "Zdes' govoryát po-rússki.",
+      "script": "Здесь говорят по-русски.",
+      "cue": "Russian is spoken here."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

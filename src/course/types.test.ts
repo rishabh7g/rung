@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 270 — nine complete L1, L2 and L3 ladders (#544-#558)', () => {
+  it('finds all 360 — nine courses at four complete levels, L1-M1..L4-M10 (#537, #552-#562)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -220,6 +220,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L3-M7.json',
       'content/en-ar/modules/L3-M8.json',
       'content/en-ar/modules/L3-M9.json',
+      'content/en-ar/modules/L4-M1.json',
+      'content/en-ar/modules/L4-M10.json',
+      'content/en-ar/modules/L4-M2.json',
+      'content/en-ar/modules/L4-M3.json',
+      'content/en-ar/modules/L4-M4.json',
+      'content/en-ar/modules/L4-M5.json',
+      'content/en-ar/modules/L4-M6.json',
+      'content/en-ar/modules/L4-M7.json',
+      'content/en-ar/modules/L4-M8.json',
+      'content/en-ar/modules/L4-M9.json',
       'content/en-de/modules/L1-M1.json',
       'content/en-de/modules/L1-M10.json',
       'content/en-de/modules/L1-M2.json',
@@ -250,6 +260,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-de/modules/L3-M7.json',
       'content/en-de/modules/L3-M8.json',
       'content/en-de/modules/L3-M9.json',
+      'content/en-de/modules/L4-M1.json',
+      'content/en-de/modules/L4-M10.json',
+      'content/en-de/modules/L4-M2.json',
+      'content/en-de/modules/L4-M3.json',
+      'content/en-de/modules/L4-M4.json',
+      'content/en-de/modules/L4-M5.json',
+      'content/en-de/modules/L4-M6.json',
+      'content/en-de/modules/L4-M7.json',
+      'content/en-de/modules/L4-M8.json',
+      'content/en-de/modules/L4-M9.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
@@ -280,6 +300,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L3-M7.json',
       'content/en-es/modules/L3-M8.json',
       'content/en-es/modules/L3-M9.json',
+      'content/en-es/modules/L4-M1.json',
+      'content/en-es/modules/L4-M10.json',
+      'content/en-es/modules/L4-M2.json',
+      'content/en-es/modules/L4-M3.json',
+      'content/en-es/modules/L4-M4.json',
+      'content/en-es/modules/L4-M5.json',
+      'content/en-es/modules/L4-M6.json',
+      'content/en-es/modules/L4-M7.json',
+      'content/en-es/modules/L4-M8.json',
+      'content/en-es/modules/L4-M9.json',
       'content/en-fr/modules/L1-M1.json',
       'content/en-fr/modules/L1-M10.json',
       'content/en-fr/modules/L1-M2.json',
@@ -310,6 +340,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-fr/modules/L3-M7.json',
       'content/en-fr/modules/L3-M8.json',
       'content/en-fr/modules/L3-M9.json',
+      'content/en-fr/modules/L4-M1.json',
+      'content/en-fr/modules/L4-M10.json',
+      'content/en-fr/modules/L4-M2.json',
+      'content/en-fr/modules/L4-M3.json',
+      'content/en-fr/modules/L4-M4.json',
+      'content/en-fr/modules/L4-M5.json',
+      'content/en-fr/modules/L4-M6.json',
+      'content/en-fr/modules/L4-M7.json',
+      'content/en-fr/modules/L4-M8.json',
+      'content/en-fr/modules/L4-M9.json',
       'content/en-it/modules/L1-M1.json',
       'content/en-it/modules/L1-M10.json',
       'content/en-it/modules/L1-M2.json',
@@ -340,6 +380,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-it/modules/L3-M7.json',
       'content/en-it/modules/L3-M8.json',
       'content/en-it/modules/L3-M9.json',
+      'content/en-it/modules/L4-M1.json',
+      'content/en-it/modules/L4-M10.json',
+      'content/en-it/modules/L4-M2.json',
+      'content/en-it/modules/L4-M3.json',
+      'content/en-it/modules/L4-M4.json',
+      'content/en-it/modules/L4-M5.json',
+      'content/en-it/modules/L4-M6.json',
+      'content/en-it/modules/L4-M7.json',
+      'content/en-it/modules/L4-M8.json',
+      'content/en-it/modules/L4-M9.json',
       'content/en-ko/modules/L1-M1.json',
       'content/en-ko/modules/L1-M10.json',
       'content/en-ko/modules/L1-M2.json',
@@ -370,6 +420,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ko/modules/L3-M7.json',
       'content/en-ko/modules/L3-M8.json',
       'content/en-ko/modules/L3-M9.json',
+      'content/en-ko/modules/L4-M1.json',
+      'content/en-ko/modules/L4-M10.json',
+      'content/en-ko/modules/L4-M2.json',
+      'content/en-ko/modules/L4-M3.json',
+      'content/en-ko/modules/L4-M4.json',
+      'content/en-ko/modules/L4-M5.json',
+      'content/en-ko/modules/L4-M6.json',
+      'content/en-ko/modules/L4-M7.json',
+      'content/en-ko/modules/L4-M8.json',
+      'content/en-ko/modules/L4-M9.json',
       'content/en-ru/modules/L1-M1.json',
       'content/en-ru/modules/L1-M10.json',
       'content/en-ru/modules/L1-M2.json',
@@ -400,6 +460,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ru/modules/L3-M7.json',
       'content/en-ru/modules/L3-M8.json',
       'content/en-ru/modules/L3-M9.json',
+      'content/en-ru/modules/L4-M1.json',
+      'content/en-ru/modules/L4-M10.json',
+      'content/en-ru/modules/L4-M2.json',
+      'content/en-ru/modules/L4-M3.json',
+      'content/en-ru/modules/L4-M4.json',
+      'content/en-ru/modules/L4-M5.json',
+      'content/en-ru/modules/L4-M6.json',
+      'content/en-ru/modules/L4-M7.json',
+      'content/en-ru/modules/L4-M8.json',
+      'content/en-ru/modules/L4-M9.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',
@@ -430,6 +500,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-en/modules/L3-M7.json',
       'content/hi-en/modules/L3-M8.json',
       'content/hi-en/modules/L3-M9.json',
+      'content/hi-en/modules/L4-M1.json',
+      'content/hi-en/modules/L4-M10.json',
+      'content/hi-en/modules/L4-M2.json',
+      'content/hi-en/modules/L4-M3.json',
+      'content/hi-en/modules/L4-M4.json',
+      'content/hi-en/modules/L4-M5.json',
+      'content/hi-en/modules/L4-M6.json',
+      'content/hi-en/modules/L4-M7.json',
+      'content/hi-en/modules/L4-M8.json',
+      'content/hi-en/modules/L4-M9.json',
       'content/hi-mr/modules/L1-M1.json',
       'content/hi-mr/modules/L1-M10.json',
       'content/hi-mr/modules/L1-M2.json',
@@ -460,6 +540,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-mr/modules/L3-M7.json',
       'content/hi-mr/modules/L3-M8.json',
       'content/hi-mr/modules/L3-M9.json',
+      'content/hi-mr/modules/L4-M1.json',
+      'content/hi-mr/modules/L4-M10.json',
+      'content/hi-mr/modules/L4-M2.json',
+      'content/hi-mr/modules/L4-M3.json',
+      'content/hi-mr/modules/L4-M4.json',
+      'content/hi-mr/modules/L4-M5.json',
+      'content/hi-mr/modules/L4-M6.json',
+      'content/hi-mr/modules/L4-M7.json',
+      'content/hi-mr/modules/L4-M8.json',
+      'content/hi-mr/modules/L4-M9.json',
     ]);
   });
 
@@ -511,7 +601,7 @@ describe('ModuleContent against the modules that exist', () => {
   it('keeps the romanized course readable: display is the romanization, script the native line', () => {
     const romanized = MODULE_FILES.filter(([name]) => name.includes('en-ar'));
 
-    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(30);
+    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(40);
     for (const [file, json] of romanized) {
       const module = parseModule(json, file);
 
@@ -647,8 +737,10 @@ describe('ModuleContent against the modules that exist', () => {
 
     expect(
       hiEn.length,
-      'the hi-en modules this rule is written for (#270-#272 L1; #437, #446, #455 L2; #473, #482, #548 L3)',
-    ).toBe(30);
+      'the hi-en modules this rule is written for (#270-#272 L1; #437, #446, #455 L2; #473, #482,' +
+        ' #548 L3; #531 L4). The count guards the walk BELOW it, and vitest aborts the case here —' +
+        ' so a stale number silently stops every language law in this block from running at all.',
+    ).toBe(40);
     for (const [file, json] of hiEn) {
       const module = parseModule(json, file);
 
@@ -832,6 +924,13 @@ describe('ModuleContent against the modules that exist', () => {
      * the level as well as the rule. L2-M5 (#451) adds the second and last of them, `jal
      * meogeosseumnida` — said after eating, frozen exactly as L1-M2's two are, and named as frozen
      * in its own note. Any -mnida beyond these four is still a style slip.
+     *
+     * Through L3, that is. **L4-M7 "Official talk" unfreezes the level** (#527, `docs/93`): its
+     * whole job is `-(seu)pnida`, `-(seu)pnikka`, `-(eu)sipsio` and `-(eu)psida` as a productive
+     * system — the announcement register a learner HEARS, at the station and on the intercom — so
+     * on L4 and above a -mnida form is the content rather than a slip. The gate is therefore
+     * scoped to the levels that froze it, and NOT deleted: L1 through L3 still hold the line, and
+     * a course whose L2 sentence reaches for `hamnida` still fails here.
      */
     const FROZEN_FORMAL = new Set(['gamsahamnida', 'mannaseo bangapseumnida']);
     const FROZEN_FORMAL_L2 = new Set([...FROZEN_FORMAL, 'joesonghamnida', 'jal meogeosseumnida']);
@@ -887,9 +986,10 @@ describe('ModuleContent against the modules that exist', () => {
           expect(PLAIN_STYLE.has(token), `${at} writes the plain-style "${token}"`).toBe(false);
           if (token.endsWith('mnida')) {
             const phrase = normalizeSurface(target.display);
+            const frozenLevel = /^L[123]-/.test(module.id);
             const allowed = module.id.startsWith('L1-') ? FROZEN_FORMAL : FROZEN_FORMAL_L2;
             expect(
-              [...allowed].some((frozen) => phrase.includes(frozen)),
+              !frozenLevel || [...allowed].some((frozen) => phrase.includes(frozen)),
               `${at} writes a -mnida form outside the frozen phrases this level allows`,
             ).toBe(true);
           }

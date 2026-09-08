@@ -1,0 +1,654 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": [
+    "L4-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "<clause> + , + fa- + V + <complement>",
+      "bi-sabab + al- + <maṣdar>",
+      "<clause> + li-dhālika + <clause>",
+      "<N> + yuʾaddī ilā + al- + <maṣdar>",
+      "ammā + <N> + fa- + <predicate>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "fa- is a CLITIC of consequence, written joined to the verb it introduces exactly as sa- and li- are: dhahabtu ilā as-sūq, fa-ishtaraytu al-khubz. L1-M9's li-dhālika is its fuller twin and is what opens a fresh sentence; fa- hangs the next clause off the one before it, which is how Arabic runs a paragraph."
+    },
+    {
+      "tag": "delta",
+      "text": "Three connectors where English has one \"and\": wa is mere addition, thumma is mere sequence, fa- is CONSEQUENCE. Choosing fa- is making a claim that the first clause caused the second, so it is never a free substitute for wa."
+    },
+    {
+      "tag": "free",
+      "text": "ammā … fa- is the topic frame: ammā aṭ-ṭaqs fa-kāna bārid. ammā puts a subject up front and the fa- introduces what is said about it. Neither half stands alone — an ammā with no fa- behind it is a sentence cut in two."
+    },
+    {
+      "tag": "interference",
+      "text": "bi-sabab (L1-M9) takes a NOUN and only a noun: bi-sabab al-maṭar. li-ʾanna (L1-M9) takes a clause. English hides that split inside one word family — because / because of — so \"because we arrived late\" has to be nouned: bi-sabab al-wuṣūl mutaʾakhkhiran, L3-M1's maṣdar paying for itself a second time."
+    },
+    {
+      "tag": "interference",
+      "text": "li-ʾanna cannot open a sentence. English moves a because-clause to the front whenever it likes; Arabic states the fact and hangs the reason behind it, and a fronted li-ʾanna reads as an answer whose question has gone missing."
+    },
+    {
+      "tag": "interference",
+      "text": "li-ʾanna is one of ʾanna's sisters, so the noun behind it is ACCUSATIVE and a pronoun ATTACHES: li-ʾannī, li-ʾannahu, both L1-M9's. li-ʾanna huwa is the shape an English speaker writes and Arabic does not have. This course writes initial hamza, so that ʾanna and L3-M3's anna are two separate entries on the ladder, not one."
+    },
+    {
+      "tag": "free",
+      "text": "mimmā hangs a result on the whole clause before it, and natījatan opens one. yuʾaddī ilā, yusabbib, sabbaba and nātij ʿan are the plainer, more written ways to name the same link — and every one of them joins NOUNS, so a verb has to become a maṣdar before it can stand on either side."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "dhahabtu ilā as-sūq, fa-ishtaraytu al-khubz",
+      "script": "ذهبت إلى السوق، فاشتريت الخبز",
+      "cue": "I went to the market, so I bought the bread",
+      "literal": "I-went to the-market, so-I-bought the-bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fa-ishtaraytu",
+            "script": "فاشتريت",
+            "cue": "so I bought",
+            "tag": "delta",
+            "forms": [],
+            "note": "fa- is a clitic of consequence, written onto the front of its verb like sa- and li-. It says the second thing happened because of the first."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English's \"and\" covers wa, thumma and fa- alike. Only fa- claims the first clause caused the second, so where English chooses nothing Arabic is choosing.",
+      "sound": "fash-ta-RAY-tu, with no pause after the fa-: it is a letter riding on the verb, never a word standing beside it.",
+      "variations": [
+        {
+          "display": "dhahabtu ilā as-sūq, fa-ishtaraytu al-māʾ",
+          "script": "ذهبت إلى السوق، فاشتريت الماء",
+          "cue": "I went to the market, so I bought the water",
+          "changed": "what was bought: al-khubz → al-māʾ"
+        },
+        {
+          "display": "dhahabtu ilā as-sūq, wa ishtaraytu al-khubz",
+          "script": "ذهبت إلى السوق، واشتريت الخبز",
+          "cue": "I went to the market and bought the bread",
+          "changed": "the connector: fa- → wa, and the causal claim goes with it"
+        }
+      ],
+      "mistake": {
+        "display": "dhahabtu ilā as-sūq, wa fa-ishtaraytu al-khubz",
+        "script": "ذهبت إلى السوق، وفاشتريت الخبز",
+        "why": "wa and fa- are both connectors and only one of them may hold that slot. fa- replaces wa; it never queues up behind it."
+      },
+      "usage": "The everyday way to tell a short account of what you did: one clause, and the next hung straight off it.",
+      "register": "neutral",
+      "mnemonic": "fa- is the \"so\" you can lean a whole paragraph on."
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "al-mudīr ghāḍib, fa-yadhhab ilā al-bayt",
+      "script": "المدير غاضب، فيذهب إلى البيت",
+      "cue": "The manager is angry, so he is going home",
+      "literal": "The-manager angry, so-he-goes to the-house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fa-yadhhab",
+            "script": "فيذهب",
+            "cue": "so he goes",
+            "tag": "delta",
+            "forms": [
+              "fa-adhhab",
+              "fa-tadhhab",
+              "fa-yadhhab"
+            ],
+            "note": "fa- takes a person the way L1-M6's sa- did: fa-adhhab I, fa-tadhhab you, fa-yadhhab he. The clitic never changes; only the verb under it does."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English can drop the second subject — \"he is angry, so going home\". Arabic cannot: the person lives in the verb, and fa- attaches to a verb that already carries it.",
+      "sound": "fa-YADH-hab: one word, stress on the stem, and the fa- said so lightly it is easy to miss when listening.",
+      "variations": [
+        {
+          "display": "anā ghāḍib, fa-adhhab ilā al-bayt",
+          "script": "أنا غاضب، فأذهب إلى البيت",
+          "cue": "I'm angry, so I'm going home",
+          "changed": "the person: he → I, and the verb cell with it"
+        },
+        {
+          "display": "al-mudīr ghāḍib, fa-yadhhab ilā al-ʿamal",
+          "script": "المدير غاضب، فيذهب إلى العمل",
+          "cue": "The manager is angry, so he is going to work",
+          "changed": "where he goes: al-bayt → al-ʿamal"
+        }
+      ],
+      "mistake": {
+        "display": "al-mudīr ghāḍib, fa yadhhab ilā al-bayt",
+        "script": "المدير غاضب، ف يذهب إلى البيت",
+        "why": "fa- is never a word on its own — it is a single letter joined to what follows, which is why this course hyphenates it. Standing apart it is not Arabic."
+      },
+      "usage": "Reporting somebody else's reaction: the state, then what it makes them do.",
+      "register": "neutral",
+      "mnemonic": "One letter, three persons — the verb does the changing."
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "lā adhhab ilā al-ʿamal bi-sabab al-maṭar",
+      "script": "لا أذهب إلى العمل بسبب المطر",
+      "cue": "I'm not going to work because of the rain",
+      "literal": "Not I-go to the-work because-of the-rain",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-maṭar",
+            "script": "المطر",
+            "cue": "the rain",
+            "tag": "free",
+            "forms": [],
+            "note": "The rain as a thing, which is exactly what bi-sabab needs. bi-sabab is L1-M9's and holds a noun; li-ʾanna, also L1-M9's, holds a whole clause."
+          }
+        ],
+        "rules": [
+          3,
+          4,
+          5
+        ]
+      },
+      "trap": "English's \"because\" and \"because of\" look like one word with a tail on it. Arabic splits them into two unrelated frames: li-ʾanna takes a clause, bi-sabab takes a bare noun and nothing else.",
+      "sound": "bi-SA-bab al-ma-ṬAR — bi- is a clitic like fa-, so it leans on sabab and takes no pause.",
+      "variations": [
+        {
+          "display": "lā adhhab ilā as-sūq bi-sabab al-maṭar",
+          "script": "لا أذهب إلى السوق بسبب المطر",
+          "cue": "I'm not going to the market because of the rain",
+          "changed": "the destination: al-ʿamal → as-sūq"
+        },
+        {
+          "display": "lā adhhab ilā al-ʿamal bi-sabab al-izdiḥām",
+          "script": "لا أذهب إلى العمل بسبب الازدحام",
+          "cue": "I'm not going to work because of the traffic",
+          "changed": "the cause: al-maṭar → al-izdiḥām"
+        }
+      ],
+      "mistake": {
+        "display": "lā adhhab ilā al-ʿamal bi-sabab al-maṭar shadīd",
+        "script": "لا أذهب إلى العمل بسبب المطر شديد",
+        "why": "A clause has been pushed in behind bi-sabab, which only holds a noun. Either stop at the noun, or switch frames: li-ʾanna al-maṭar shadīd."
+      },
+      "usage": "The commonest excuse shape there is — a reason given as a thing rather than as a story.",
+      "register": "neutral",
+      "mnemonic": "bi-sabab wants a thing; li-ʾanna wants a sentence."
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "waṣaltu mutaʾakhkhiran bi-sabab al-izdiḥām",
+      "script": "وصلت متأخرًا بسبب الازدحام",
+      "cue": "I arrived late because of the traffic",
+      "literal": "I-arrived late because-of the-crowding",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mutaʾakhkhiran",
+            "script": "متأخرًا",
+            "cue": "late",
+            "tag": "free",
+            "forms": [],
+            "note": "The -an tail of an adverb, as on L3-M1's dāʾiman. The ʾ inside it is hamza, the catch in the throat, and never the ʿayn of ʿamal."
+          },
+          {
+            "display": "al-izdiḥām",
+            "script": "الازدحام",
+            "cue": "the traffic, the crush",
+            "tag": "free",
+            "forms": [],
+            "note": "Literally the crowding — a maṣdar doing duty as an everyday noun. It is the word for traffic on a road."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "To say \"because we arrived late\", bi-sabab cannot hold the clause. The arriving has to become a noun first: bi-sabab al-wuṣūl mutaʾakhkhiran, which is L3-M1's maṣdar earning its keep a second time.",
+      "sound": "mu-ta-ʾAKH-khi-ran — five syllables, the kh doubled and held, and the -an clipped short at the end.",
+      "variations": [
+        {
+          "display": "waṣaltu mutaʾakhkhiran bi-sabab al-maṭar",
+          "script": "وصلت متأخرًا بسبب المطر",
+          "cue": "I arrived late because of the rain",
+          "changed": "the cause: al-izdiḥām → al-maṭar"
+        },
+        {
+          "display": "kāna al-mudīr ghāḍib bi-sabab al-wuṣūl mutaʾakhkhiran",
+          "script": "كان المدير غاضب بسبب الوصول متأخرًا",
+          "cue": "The manager was angry because of the late arrival",
+          "changed": "the clause behind bi-sabab, nouned into a maṣdar"
+        }
+      ],
+      "mistake": {
+        "display": "waṣaltu mutaʾakhkhiran bi-sabab waṣaltu",
+        "script": "وصلت متأخرًا بسبب وصلت",
+        "why": "A finite verb parked behind bi-sabab. It holds nouns only, so the verb has to turn into its maṣdar: bi-sabab al-wuṣūl."
+      },
+      "usage": "Arriving anywhere late, in an office or a message: the fact first, then the thing that caused it.",
+      "register": "neutral",
+      "mnemonic": "If a verb has to follow bi-sabab, it stops being a verb first."
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "at-taʾakhkhur mushkila, li-dhālika adhhab mubakkiran",
+      "script": "التأخر مشكلة، لذلك أذهب مبكراً",
+      "cue": "Lateness is a problem, so I go early",
+      "literal": "The-lateness problem, therefore I-go early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "at-taʾakhkhur",
+            "script": "التأخر",
+            "cue": "the lateness, the delay",
+            "tag": "free",
+            "forms": [],
+            "note": "The maṣdar standing behind mutaʾakhkhiran. t is a sun letter, so the article is heard as at-, and the ʾ inside is hamza."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "li-dhālika is the twin of fa-, not a synonym of it. It opens a new sentence and takes a full clause after it; fa- rides on a verb and cannot start anything.",
+      "sound": "at-ta-ʾAKH-khur — the same doubled, held kh as mutaʾakhkhiran, because it is the same root standing still.",
+      "variations": [
+        {
+          "display": "al-izdiḥām mushkila, li-dhālika adhhab mubakkiran",
+          "script": "الازدحام مشكلة، لذلك أذهب مبكراً",
+          "cue": "Traffic is a problem, so I go early",
+          "changed": "the problem named: at-taʾakhkhur → al-izdiḥām"
+        },
+        {
+          "display": "at-taʾakhkhur mushkila, li-dhālika lā adhhab",
+          "script": "التأخر مشكلة، لذلك لا أذهب",
+          "cue": "Lateness is a problem, so I'm not going",
+          "changed": "the consequence: going early → not going"
+        }
+      ],
+      "mistake": {
+        "display": "at-taʾakhkhur mushkila, fa-li-dhālika adhhab mubakkiran",
+        "script": "التأخر مشكلة، فلذلك أذهب مبكراً",
+        "why": "Both consequence markers at once. Pick one: fa- attached to the verb, or li-dhālika opening the clause — stacking them says the same thing twice."
+      },
+      "usage": "Stating a policy or a habit and the reasoning behind it, in the order Arabic prefers: fact, then consequence.",
+      "register": "neutral",
+      "mnemonic": "fa- rides a verb; li-dhālika opens a sentence."
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "al-izdiḥām yuʾaddī ilā at-taʾakhkhur",
+      "script": "الازدحام يؤدي إلى التأخر",
+      "cue": "Traffic leads to delay",
+      "literal": "The-crowding leads to the-lateness",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yuʾaddī",
+            "script": "يؤدي",
+            "cue": "leads (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "\"Leads to\", and it will not go without its ilā. Both ends of it are nouns, so a verb standing on either side has to become a maṣdar first."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English lets a whole clause follow \"leads to\" — leads to us being late. yuʾaddī ilā takes a noun on both sides, which is why this course spent L3-M1 on the maṣdar.",
+      "sound": "yu-ʾAD-dī: the ʾ is hamza on the seat of a w, the d is doubled and held, and the final ī is long.",
+      "variations": [
+        {
+          "display": "al-maṭar yuʾaddī ilā al-izdiḥām",
+          "script": "المطر يؤدي إلى الازدحام",
+          "cue": "Rain leads to traffic",
+          "changed": "both ends of the link: rain causes the crowding"
+        },
+        {
+          "display": "al-izdiḥām yusabbib at-taʾakhkhur",
+          "script": "الازدحام يسبب التأخر",
+          "cue": "Traffic causes delay",
+          "changed": "the verb: yuʾaddī ilā → yusabbib, which needs no preposition"
+        }
+      ],
+      "mistake": {
+        "display": "al-izdiḥām yuʾaddī at-taʾakhkhur",
+        "script": "الازدحام يؤدي التأخر",
+        "why": "The ilā has gone, and without it yuʾaddī means something else entirely — performing a task, not leading to a result. The preposition is part of the meaning."
+      },
+      "usage": "The written, explaining register: reports, notices, an argument being laid out rather than a story being told.",
+      "register": "formal",
+      "mnemonic": "yuʾaddī always arrives with ilā in its hand."
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "ammā aṭ-ṭaqs fa-kāna bārid",
+      "script": "أما الطقس فكان بارد",
+      "cue": "As for the weather, it was cold",
+      "literal": "As-for the-weather so-was cold",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ammā",
+            "script": "أما",
+            "cue": "as for",
+            "tag": "delta",
+            "forms": [],
+            "note": "Puts a topic up front. It cannot stand alone: whatever is said about that topic must begin with fa-, so ammā and fa- always arrive as a pair."
+          },
+          {
+            "display": "aṭ-ṭaqs",
+            "script": "الطقس",
+            "cue": "the weather",
+            "tag": "free",
+            "forms": [],
+            "note": "ṭ is a sun letter, so the article's l is swallowed: al-ṭaqs is said and written aṭ-ṭaqs. The ṭ is the emphatic one, tongue flat."
+          },
+          {
+            "display": "fa-kāna",
+            "script": "فكان",
+            "cue": "so it was",
+            "tag": "delta",
+            "forms": [],
+            "note": "The second half of the ammā frame. Here fa- is not consequence but the answer to a topic — the same letter doing the frame's other job."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English's \"as for X\" is optional decoration you can drop at will. ammā is structural: once it has been said the sentence cannot finish without fa-, and leaving it out sounds like a line cut in half.",
+      "sound": "AM-mā with the m held, then fa-KĀ-na run together — the fa- never takes a pause, even at the seam of the frame.",
+      "variations": [
+        {
+          "display": "ammā al-mudīr fa-kāna ghāḍib",
+          "script": "أما المدير فكان غاضب",
+          "cue": "As for the manager, he was angry",
+          "changed": "the topic: the weather → the manager"
+        },
+        {
+          "display": "aṭ-ṭaqs bārid",
+          "script": "الطقس بارد",
+          "cue": "The weather is cold",
+          "changed": "the frame dropped, leaving the bare statement"
+        }
+      ],
+      "mistake": {
+        "display": "ammā aṭ-ṭaqs kāna bārid",
+        "script": "أما الطقس كان بارد",
+        "why": "The fa- is missing, and with it the second half of the frame. ammā announces a topic and fa- is what answers it — one without the other is not a sentence."
+      },
+      "usage": "Turning to a new subject inside a longer account: after the journey, the food, then \"as for the weather…\".",
+      "register": "neutral",
+      "mnemonic": "ammā opens a door that only fa- can close."
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "waṣala al-mudīr mutaʾakhkhiran, mimmā sabbaba mushkila",
+      "script": "وصل المدير متأخرًا، مما سبب مشكلة",
+      "cue": "The manager arrived late, which caused a problem",
+      "literal": "Arrived the-manager late, which caused problem",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mimmā",
+            "script": "مما",
+            "cue": "which, a thing which",
+            "tag": "delta",
+            "forms": [],
+            "note": "Hangs a consequence on the whole clause before it, not on any one word of it. It is min plus mā run together into one word."
+          },
+          {
+            "display": "sabbaba",
+            "script": "سبب",
+            "cue": "caused",
+            "tag": "free",
+            "forms": [],
+            "note": "Past tense, \"caused\". It takes its result as a bare object with no preposition — unlike yuʾaddī, which needs its ilā."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English's \"which\" can point at a noun or at a whole clause. Arabic splits the job: alladhī points at a noun, mimmā points at everything just said.",
+      "sound": "MIM-mā — the m doubled and held, which is the whole audible difference between it and min mā said slowly.",
+      "variations": [
+        {
+          "display": "waṣaltu mutaʾakhkhiran, mimmā sabbaba mushkila",
+          "script": "وصلت متأخرًا، مما سبب مشكلة",
+          "cue": "I arrived late, which caused a problem",
+          "changed": "who arrived: the manager → I"
+        },
+        {
+          "display": "waṣala al-mudīr mutaʾakhkhiran, wa hādhā sabbaba mushkila",
+          "script": "وصل المدير متأخرًا، وهذا سبب مشكلة",
+          "cue": "The manager arrived late, and this caused a problem",
+          "changed": "the link: mimmā → wa hādhā, the plainer spoken version"
+        }
+      ],
+      "mistake": {
+        "display": "waṣala al-mudīr mutaʾakhkhiran, alladhī sabbaba mushkila",
+        "script": "وصل المدير متأخرًا، الذي سبب مشكلة",
+        "why": "alladhī has to attach to a noun, and here it would attach to the manager — as though he were the problem. Pointing at the whole clause is mimmā's job."
+      },
+      "usage": "Written and careful speech: a report, a complaint, an account where the consequence is of the situation and not of one person.",
+      "register": "formal",
+      "mnemonic": "mimmā points backwards at everything you just said."
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "at-taʾakhkhur nātij ʿan al-izdiḥām",
+      "script": "التأخر ناتج عن الازدحام",
+      "cue": "The delay results from the traffic",
+      "literal": "The-lateness resulting from the-crowding",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nātij",
+            "script": "ناتج",
+            "cue": "resulting, arising",
+            "tag": "free",
+            "forms": [],
+            "note": "Not a verb but a describing word, \"resulting\". It needs ʿan behind it: nātij ʿan is \"arising out of\"."
+          },
+          {
+            "display": "ʿan",
+            "script": "عن",
+            "cue": "from, out of; about",
+            "tag": "free",
+            "forms": [],
+            "note": "Thirty modules and the ladder had never bought it. Here it is \"out of\"; its other everyday job is \"about\", as in speaking about a thing."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "This says the same thing as bi-sabab, backwards: bi-sabab hangs the cause on the result, nātij ʿan hangs the result on the cause. English's \"because of\" only goes one way.",
+      "sound": "NĀ-tij ʿan — the ʿ of ʿan is the throat-squeeze of L1-M4's ʿamal, and it swallows the pause between the two words.",
+      "variations": [
+        {
+          "display": "al-izdiḥām nātij ʿan al-maṭar",
+          "script": "الازدحام ناتج عن المطر",
+          "cue": "The traffic results from the rain",
+          "changed": "both ends: the crowding is now the result"
+        },
+        {
+          "display": "at-taʾakhkhur nātij ʿan al-maṭar",
+          "script": "التأخر ناتج عن المطر",
+          "cue": "The delay results from the rain",
+          "changed": "the cause: al-izdiḥām → al-maṭar"
+        }
+      ],
+      "mistake": {
+        "display": "at-taʾakhkhur nātij min al-izdiḥām",
+        "script": "التأخر ناتج من الازدحام",
+        "why": "min is the ordinary \"from\" of places and materials. nātij takes ʿan, and the pairing is fixed — the word carries its preposition with it."
+      },
+      "usage": "Announcements and written notices, where the cause is stated as a fact about the result rather than as an excuse.",
+      "register": "formal",
+      "mnemonic": "nātij ʿan turns bi-sabab around."
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "al-maṭar yusabbib al-izdiḥām, wa natījatan waṣaltu mutaʾakhkhiran",
+      "script": "المطر يسبب الازدحام، ونتيجةً وصلت متأخرًا",
+      "cue": "Rain causes traffic, and as a result I arrived late",
+      "literal": "The-rain causes the-crowding, and as-a-result I-arrived late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yusabbib",
+            "script": "يسبب",
+            "cue": "causes",
+            "tag": "free",
+            "forms": [],
+            "note": "The present of sabbaba. Written without a final -u because this course writes no mood endings, exactly as it writes adhhab and yadhhab."
+          },
+          {
+            "display": "natījatan",
+            "script": "نتيجةً",
+            "cue": "as a result",
+            "tag": "free",
+            "forms": [],
+            "note": "\"As a result\", opening the clause it belongs to. The -an tail is the adverb ending of L3-M1's dāʾiman and this level's mutaʾakhkhiran."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English can end on \"as a result\" — I was late as a result. natījatan opens its clause and stays at the front, the way awwalan and akhīran do.",
+      "sound": "na-tī-ja-tan: the feminine ending is heard as -tan here, not -a, because the adverbial -an is sitting on it.",
+      "variations": [
+        {
+          "display": "al-maṭar yusabbib al-izdiḥām, wa natījatan lā adhhab",
+          "script": "المطر يسبب الازدحام، ونتيجةً لا أذهب",
+          "cue": "Rain causes traffic, and as a result I'm not going",
+          "changed": "the result clause: arriving late → not going"
+        },
+        {
+          "display": "al-izdiḥām yusabbib at-taʾakhkhur, wa natījatan waṣaltu mutaʾakhkhiran",
+          "script": "الازدحام يسبب التأخر، ونتيجةً وصلت متأخرًا",
+          "cue": "Traffic causes delay, and as a result I arrived late",
+          "changed": "the first clause: the cause moves one link down the chain"
+        }
+      ],
+      "mistake": {
+        "display": "al-maṭar yusabbib al-izdiḥām, waṣaltu mutaʾakhkhiran natījatan",
+        "script": "المطر يسبب الازدحام، وصلت متأخرًا نتيجةً",
+        "why": "natījatan has been left at the end, English-fashion. It is a clause opener: it goes in front of the result, not behind it."
+      },
+      "usage": "The last link of a chain of causes — the one that says how the whole thing landed on you.",
+      "register": "neutral",
+      "mnemonic": "natījatan leads its clause; it never trails one."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "dhahabtu ilā as-sūq, fa-ishtaraytu al-khubz",
+      "script": "ذهبت إلى السوق، فاشتريت الخبز",
+      "cue": "I went to the market, so I bought the bread"
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "al-mudīr ghāḍib, fa-yadhhab ilā al-bayt",
+      "script": "المدير غاضب، فيذهب إلى البيت",
+      "cue": "The manager is angry, so he is going home"
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "lā adhhab ilā al-ʿamal bi-sabab al-maṭar",
+      "script": "لا أذهب إلى العمل بسبب المطر",
+      "cue": "I'm not going to work because of the rain"
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "waṣaltu mutaʾakhkhiran bi-sabab al-izdiḥām",
+      "script": "وصلت متأخرًا بسبب الازدحام",
+      "cue": "I arrived late because of the traffic"
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "at-taʾakhkhur mushkila, li-dhālika adhhab mubakkiran",
+      "script": "التأخر مشكلة، لذلك أذهب مبكراً",
+      "cue": "Lateness is a problem, so I go early"
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "al-izdiḥām yuʾaddī ilā at-taʾakhkhur",
+      "script": "الازدحام يؤدي إلى التأخر",
+      "cue": "Traffic leads to delay"
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "ammā aṭ-ṭaqs fa-kāna bārid",
+      "script": "أما الطقس فكان بارد",
+      "cue": "As for the weather, it was cold"
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "waṣala al-mudīr mutaʾakhkhiran, mimmā sabbaba mushkila",
+      "script": "وصل المدير متأخرًا، مما سبب مشكلة",
+      "cue": "The manager arrived late, which caused a problem"
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "at-taʾakhkhur nātij ʿan al-izdiḥām",
+      "script": "التأخر ناتج عن الازدحام",
+      "cue": "The delay results from the traffic"
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "al-maṭar yusabbib al-izdiḥām",
+      "script": "المطر يسبب الازدحام",
+      "cue": "Rain causes traffic"
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "aṭ-ṭaqs bārid al-yawm, li-dhālika lā adhhab",
+      "script": "الطقس بارد اليوم، لذلك لا أذهب",
+      "cue": "The weather is cold today, so I'm not going"
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "ammā al-mudīr fa-kāna ghāḍib",
+      "script": "أما المدير فكان غاضب",
+      "cue": "As for the manager, he was angry"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

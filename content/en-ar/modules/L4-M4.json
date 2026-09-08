@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": [
+    "L4-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "raghma anna + <N-accusative> + <predicate> + , + <clause>",
+      "ʿalā ar-raghm min + al- + <maṣdar> + , + <clause>",
+      "<clause> + , + wa maʿa dhālika + <clause>",
+      "laysa + <X> + bal + <Y>",
+      "min nāḥiya + <clause> + , + wa min nāḥiya ukhrā + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "raghma anna is one of ʾanna's sisters, like L3-M3's anna and L1-M9's li-ʾanna: it holds a whole CLAUSE, and the noun after it is accusative — a case this course does not write."
+    },
+    {
+      "tag": "delta",
+      "text": "ʿalā ar-raghm min holds a NOUN or L3-M1's maṣdar, never a clause. It is the same clause-against-noun split L4-M2 drew between li-ʾanna and bi-sabab, and it is decided by shape, never by feel."
+    },
+    {
+      "tag": "free",
+      "text": "wa maʿa dhālika answers the concession. Arabic is happy to mark BOTH halves — raghma anna in front, wa maʿa dhālika behind — where English allows only one and calls the other a fault."
+    },
+    {
+      "tag": "delta",
+      "text": "bal CORRECTS: it replaces the thing just denied, so it requires a negative in front of it. laysa X bal Y. English has no single word for it and reaches for two, but rather."
+    },
+    {
+      "tag": "interference",
+      "text": "English picks although, despite and but by feel, and forbids marking both halves of a concession. Arabic picks by the shape of what follows, and expects both halves marked."
+    },
+    {
+      "tag": "interference",
+      "text": "lākin and bal are not interchangeable. lākin ADDS a contrasting fact to something you have let stand; bal REPLACES something you have just denied, and cannot appear without that denial."
+    },
+    {
+      "tag": "free",
+      "text": "lā shakka anna and min al-wāḍiḥ anna are frozen assertion frames. They keep the vowels this course otherwise drops, exactly as as-salāmu ʿalaykum and L2-M1's lā baʾsa do."
+    },
+    {
+      "tag": "free",
+      "text": "min nāḥiya … wa min nāḥiya ukhrā lays two sides of a question flat. It is a frame rather than vocabulary: the second half points back at a first half that has to be there."
+    },
+    {
+      "tag": "free",
+      "text": "ghayr negates a NOUN or an adjective where lā negates a verb: ghayr ṣaḥīḥ not correct, ghayr muhimm unimportant. lā in front of an adjective is not Arabic."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "raghma anna al-lugha ṣaʿba, adrus kull yawm",
+      "script": "رغم أن اللغة صعبة، أدرس كل يوم",
+      "cue": "Although the language is hard, I study every day",
+      "literal": "Despite that the-language hard, I-study every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "raghma anna",
+            "script": "رغم أن",
+            "cue": "although",
+            "tag": "delta",
+            "forms": [
+              "raghma",
+              "raghma anna"
+            ],
+            "note": "Another of ʾanna's sisters (L3-M3): it holds a whole clause, and the noun straight after it is accusative — a case this course does not write."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English lets although take a noun — although the difficulty. Arabic will not: raghma anna needs a clause with a subject and a predicate behind it, and a bare noun takes the other frame.",
+      "sound": "RAGH-ma AN-na: the gh is the gargled r at the back of the throat, and anna's doubled n is held.",
+      "variations": [
+        {
+          "display": "raghma anna aṭ-ṭaqs bārid, adhhab ilā al-ʿamal",
+          "script": "رغم أن الطقس بارد، أذهب إلى العمل",
+          "cue": "Although the weather is cold, I go to work",
+          "changed": "the concession: a hard language → cold weather"
+        },
+        {
+          "display": "raghma anna al-mudīr ghāḍib, al-ʿamal jayyid",
+          "script": "رغم أن المدير غاضب، العمل جيد",
+          "cue": "Although the manager is angry, the work is good",
+          "changed": "both halves: studying → a verdict with no verb in it"
+        }
+      ],
+      "mistake": {
+        "display": "raghma aṣ-ṣuʿūba, adrus kull yawm",
+        "script": "رغم الصعوبة، أدرس كل يوم",
+        "why": "raghma anna wants a clause. With a bare noun the frame has to be ʿalā ar-raghm min, and the two are not interchangeable."
+      },
+      "usage": "Granting a difficulty before you say what you do anyway — the opening move of an argument.",
+      "register": "neutral",
+      "mnemonic": "raghma anna takes a clause; the noun waits for ʿalā ar-raghm min."
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "ʿalā ar-raghm min al-maṭar, dhahabtu ilā as-sūq",
+      "script": "على الرغم من المطر، ذهبت إلى السوق",
+      "cue": "Despite the rain, I went to the market",
+      "literal": "On the-despite from the-rain, I-went to the-market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿalā ar-raghm min",
+            "script": "على الرغم من",
+            "cue": "despite / in spite of",
+            "tag": "delta",
+            "forms": [
+              "ʿalā ar-raghm min"
+            ],
+            "note": "The noun half of the pair. It takes a noun or L3-M1's maṣdar and never a clause — the same split L4-M2 drew between bi-sabab and li-ʾanna."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "English chooses despite over although by feel. Arabic chooses by shape: a clause takes raghma anna, a noun takes ʿalā ar-raghm min, and swapping them is a broken sentence rather than a style slip.",
+      "sound": "ʿa-lā ar-RAGH-mi min — said as one run, with the article's r doubled onto the end of ʿalā.",
+      "variations": [
+        {
+          "display": "ʿalā ar-raghm min al-izdiḥām, waṣaltu mubakkiran",
+          "script": "على الرغم من الازدحام، وصلت مبكراً",
+          "cue": "Despite the traffic, I arrived early",
+          "changed": "the obstacle: rain → traffic"
+        },
+        {
+          "display": "ʿalā ar-raghm min at-taʾakhkhur, al-ijtimāʿ jayyid",
+          "script": "على الرغم من التأخر، الاجتماع جيد",
+          "cue": "Despite the delay, the meeting is good",
+          "changed": "a maṣdar behind min — L3-M1's noun-from-a-verb doing the work a clause would do"
+        }
+      ],
+      "mistake": {
+        "display": "ʿalā ar-raghm min al-maṭar nazala, dhahabtu ilā as-sūq",
+        "script": "على الرغم من المطر نزل، ذهبت إلى السوق",
+        "why": "A clause cannot follow min. The moment there is a verb inside the concession, the frame has to become raghma anna."
+      },
+      "usage": "Naming the obstacle you got past, in one noun, before you say what you did.",
+      "register": "neutral",
+      "mnemonic": "min takes a noun — it always has."
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "al-fikra jayyida, wa maʿa dhālika lastu muwāfiq",
+      "script": "الفكرة جيدة، ومع ذلك لست موافق",
+      "cue": "The idea is good, and even so I don't agree",
+      "literal": "The-idea good, and with that not-I agreeing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maʿa dhālika",
+            "script": "مع ذلك",
+            "cue": "even so / nevertheless",
+            "tag": "free",
+            "forms": [
+              "maʿa dhālika"
+            ],
+            "note": "Literally with that. It answers a concession, and it wants the wa in front of it: wa maʿa dhālika is the frame, maʿa dhālika alone is a preposition."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "English forbids although … but inside one sentence. Arabic expects the answering half to be marked, so raghma anna … wa maʿa dhālika is the ordinary shape rather than a doubling.",
+      "sound": "MA-ʿa DHĀ-li-ka: the ʿayn in maʿa is the throat sound, and dhālika opens with the dh of this.",
+      "variations": [
+        {
+          "display": "al-fikra jayyida, wa maʿa dhālika al-waqt qaṣīr",
+          "script": "الفكرة جيدة، ومع ذلك الوقت قصير",
+          "cue": "The idea is good, and even so there isn't time",
+          "changed": "the objection: I don't agree → there isn't time"
+        },
+        {
+          "display": "al-ʿamal ṣaʿb, wa maʿa dhālika anā saʿīd",
+          "script": "العمل صعب، ومع ذلك أنا سعيد",
+          "cue": "The work is hard, and even so I'm happy",
+          "changed": "both halves: an idea and agreeing → work and being happy"
+        }
+      ],
+      "mistake": {
+        "display": "al-fikra jayyida, maʿa dhālika lastu muwāfiq",
+        "script": "الفكرة جيدة، مع ذلك لست موافق",
+        "why": "Without the wa the phrase reads as the plain preposition with that, and the sentence loses the join that made it a concession."
+      },
+      "usage": "Conceding the other side's point and refusing it in the same breath.",
+      "register": "neutral",
+      "mnemonic": "Both halves marked: raghma anna in front, wa maʿa dhālika behind."
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "laysat al-mushkila fī al-waqt, bal fī at-tarkīz",
+      "script": "ليست المشكلة في الوقت، بل في التركيز",
+      "cue": "The problem isn't the time, it's the concentration",
+      "literal": "Not-is the-problem in the-time, but-rather in the-concentration",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bal",
+            "script": "بل",
+            "cue": "but rather",
+            "tag": "delta",
+            "forms": [
+              "bal"
+            ],
+            "note": "It REPLACES what was just denied, so it needs a negative in front of it. English has no single word for it and reaches for but, which only adds."
+          },
+          {
+            "display": "at-tarkīz",
+            "script": "التركيز",
+            "cue": "the concentration",
+            "tag": "free",
+            "forms": [
+              "tarkīz",
+              "at-tarkīz"
+            ],
+            "note": "A maṣdar of the L3-M1 kind — the act of focusing, used here as an ordinary noun. The sun-letter t doubles onto the article: written al-, said at-tarkīz."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "English but does two jobs: adding a contrast and correcting a denial. Arabic splits them — lākin adds, bal corrects — and bal with no negative in front of it is not a sentence.",
+      "sound": "bal — one short syllable, said hard against the pause before it.",
+      "variations": [
+        {
+          "display": "laysat al-mushkila fī al-mudīr, bal fī al-ʿamal",
+          "script": "ليست المشكلة في المدير، بل في العمل",
+          "cue": "The problem isn't the manager, it's the work",
+          "changed": "what is denied and what replaces it"
+        },
+        {
+          "display": "laysa al-kitāb ghālī, bal rakhīṣ",
+          "script": "ليس الكتاب غالي، بل رخيص",
+          "cue": "The book isn't expensive, it's cheap",
+          "changed": "the shape of the two halves: prepositional phrases → a bare adjective"
+        }
+      ],
+      "mistake": {
+        "display": "al-mushkila fī al-waqt, bal fī at-tarkīz",
+        "script": "المشكلة في الوقت، بل في التركيز",
+        "why": "bal has nothing to correct. Without laysat in front of it there is no denial for bal to replace, and the sentence contradicts itself."
+      },
+      "usage": "Correcting somebody's diagnosis without calling them wrong — the most useful single word in the level.",
+      "register": "neutral",
+      "mnemonic": "No negative, no bal."
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "lā shakka anna al-ʿamal muhimm jiddan",
+      "script": "لا شك أن العمل مهم جدًا",
+      "cue": "There's no doubt that the work is very important",
+      "literal": "No doubt that the-work important very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lā shakka anna",
+            "script": "لا شك أن",
+            "cue": "there's no doubt that",
+            "tag": "free",
+            "forms": [
+              "lā shakka anna"
+            ],
+            "note": "Frozen with its -a, the way L2-M1's lā baʾsa is. Another of ʾanna's sisters, and the clause behind it is an ordinary one."
+          }
+        ],
+        "rules": [
+          6,
+          0
+        ]
+      },
+      "trap": "English softens an assertion almost by reflex — I'm pretty sure. This module does not: the frame states the thing flatly, and every hedge belongs to the module after it.",
+      "sound": "lā SHAK-ka AN-na: two doubled consonants in a row, both of them held.",
+      "variations": [
+        {
+          "display": "lā shakka anna al-lugha ṣaʿba",
+          "script": "لا شك أن اللغة صعبة",
+          "cue": "There's no doubt the language is hard",
+          "changed": "what is being asserted"
+        },
+        {
+          "display": "lā shakka anna al-mudīr ghāḍib",
+          "script": "لا شك أن المدير غاضب",
+          "cue": "There's no doubt the manager is angry",
+          "changed": "the clause behind the frame"
+        }
+      ],
+      "mistake": {
+        "display": "lā shakk anna al-ʿamal muhimm jiddan",
+        "script": "لا شك أن العمل مهم جدًا",
+        "why": "The phrase is frozen as lā shakka, with the -a its own grammar put there, exactly as lā baʾsa is. Dropping the vowel leaves half a phrase."
+      },
+      "usage": "Opening the half of an argument you are not conceding.",
+      "register": "neutral",
+      "mnemonic": "lā shakka anna — no doubt, then the clause."
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "min al-wāḍiḥ anna as-siʿr ghālī jiddan",
+      "script": "من الواضح أن السعر غالي جدًا",
+      "cue": "It's obvious that the price is very expensive",
+      "literal": "From the-clear that the-price expensive very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "min al-wāḍiḥ anna",
+            "script": "من الواضح أن",
+            "cue": "it's obvious that",
+            "tag": "free",
+            "forms": [
+              "min al-wāḍiḥ anna"
+            ],
+            "note": "Literally from the clear. Arabic builds its impersonal openers out of min plus an adjective with the article on it, and ʾanna carries the clause as always."
+          },
+          {
+            "display": "as-siʿr",
+            "script": "السعر",
+            "cue": "the price",
+            "tag": "free",
+            "forms": [
+              "siʿr",
+              "as-siʿr",
+              "asʿār"
+            ],
+            "note": "Masculine. The sun-letter s doubles onto the article: written al-, said as-siʿr. The plural is asʿār."
+          }
+        ],
+        "rules": [
+          6,
+          0
+        ]
+      },
+      "trap": "English needs a dummy subject — it's obvious that. Arabic has no dummy subject at all: min al-wāḍiḥ is a phrase standing where a subject would be, and nothing in it agrees with anything.",
+      "sound": "min al-WĀ-ḍiḥ AN-na — the ḍ is the heavy d, said with the tongue flat against the roof of the mouth.",
+      "variations": [
+        {
+          "display": "min al-wāḍiḥ anna al-mudīr mashghūl",
+          "script": "من الواضح أن المدير مشغول",
+          "cue": "It's obvious the manager is busy",
+          "changed": "the clause behind the frame"
+        },
+        {
+          "display": "min al-wāḍiḥ anna as-siʿr rakhīṣ",
+          "script": "من الواضح أن السعر رخيص",
+          "cue": "It's obvious the price is cheap",
+          "changed": "the verdict on the price: expensive → cheap"
+        }
+      ],
+      "mistake": {
+        "display": "min wāḍiḥ anna as-siʿr ghālī jiddan",
+        "script": "من واضح أن السعر غالي جدًا",
+        "why": "The adjective carries the article here: al-wāḍiḥ. Without it the phrase is not the impersonal opener but a stray from-clear."
+      },
+      "usage": "Asserting a shared fact you expect no argument about, before the part you do expect argument about.",
+      "register": "neutral",
+      "mnemonic": "min + the adjective + anna: from the clear that …"
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "min nāḥiya al-bayt kabīr, wa min nāḥiya ukhrā al-ījār ghālī",
+      "script": "من ناحية البيت كبير، ومن ناحية أخرى الإيجار غالي",
+      "cue": "On one hand the house is big, on the other the rent is expensive",
+      "literal": "From side the-house big, and from side other the-rent expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nāḥiya",
+            "script": "ناحية",
+            "cue": "side / aspect",
+            "tag": "free",
+            "forms": [
+              "nāḥiya",
+              "nawāḥī"
+            ],
+            "note": "A side of a thing. min nāḥiya opens one side of a question, and the answering half is min nāḥiya ukhrā."
+          },
+          {
+            "display": "min nāḥiya ukhrā",
+            "script": "من ناحية أخرى",
+            "cue": "on the other hand",
+            "tag": "free",
+            "forms": [
+              "min nāḥiya ukhrā",
+              "ukhrā"
+            ],
+            "note": "ukhrā is the feminine of other, agreeing with nāḥiya. The phrase is the second half of a frame and does not open a sentence on its own."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "English lets on the other hand stand alone. Arabic's pair is a frame: the second half points back at a first half that has to have been said.",
+      "sound": "NĀ-ḥi-ya: the ḥ is the breathy h from the throat, not the ordinary one. UKH-rā ends on a long ā.",
+      "variations": [
+        {
+          "display": "min nāḥiya al-ʿamal jayyid, wa min nāḥiya ukhrā al-waqt qaṣīr",
+          "script": "من ناحية العمل جيد، ومن ناحية أخرى الوقت قصير",
+          "cue": "On one hand the work is good, on the other there isn't time",
+          "changed": "the two sides: a house and its rent → work and time"
+        },
+        {
+          "display": "min nāḥiya al-kitāb muhimm, wa min nāḥiya ukhrā as-siʿr ghālī",
+          "script": "من ناحية الكتاب مهم، ومن ناحية أخرى السعر غالي",
+          "cue": "On one hand the book matters, on the other the price is high",
+          "changed": "the two sides being weighed against each other"
+        }
+      ],
+      "mistake": {
+        "display": "min nāḥiya ukhrā al-ījār ghālī",
+        "script": "من ناحية أخرى الإيجار غالي",
+        "why": "The second half alone has nothing to answer. The pair opens with min nāḥiya, and only then does ukhrā mean anything."
+      },
+      "usage": "Laying two sides of a decision out flat before you choose between them.",
+      "register": "neutral",
+      "mnemonic": "One side, then the other side: nāḥiya, nāḥiya ukhrā."
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "maʿaka ḥaqq, wa lākin al-waqt qaṣīr",
+      "script": "معكَ حق، ولكن الوقت قصير",
+      "cue": "You have a point, but there isn't time",
+      "literal": "With-you right, and but the-time short",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "maʿaka ḥaqq",
+            "script": "معكَ حق",
+            "cue": "you have a point",
+            "tag": "free",
+            "forms": [
+              "maʿaka ḥaqq",
+              "maʿaki ḥaqq"
+            ],
+            "note": "Literally with you is right. L1's maʿaka carrying a noun instead of a person, and the ordinary way to grant a point before taking it back."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "English you're right puts the rightness on the person. Arabic puts it beside them — the right is with you — and nothing in the sentence agrees with anybody.",
+      "sound": "MA-ʿa-ka ḤAQQ — the final qq is held, and the ḥ is the breathy one.",
+      "variations": [
+        {
+          "display": "maʿaki ḥaqq, wa lākin as-siʿr ghālī",
+          "script": "معكِ حق، ولكن السعر غالي",
+          "cue": "You have a point, but the price is high",
+          "changed": "who is being answered: a man → a woman, and the objection with them"
+        },
+        {
+          "display": "maʿaka ḥaqq, wa lākin lastu muwāfiq",
+          "script": "معكَ حق، ولكن لست موافق",
+          "cue": "You have a point, but I don't agree",
+          "changed": "the objection: no time → no agreement"
+        }
+      ],
+      "mistake": {
+        "display": "anta ṣaḥīḥ, wa lākin al-waqt qaṣīr",
+        "script": "أنت صحيح، ولكن الوقت قصير",
+        "why": "ṣaḥīḥ describes a statement, not a person — anta ṣaḥīḥ calls somebody correct the way a sum is correct. For a person the phrase is maʿaka ḥaqq."
+      },
+      "usage": "Conceding in one breath so you can object in the next — the move this module exists for.",
+      "register": "neutral",
+      "mnemonic": "The right is WITH you: maʿaka ḥaqq."
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "bi-ṣarāḥa, hādhā ghayr ṣaḥīḥ",
+      "script": "بصراحة، هذا غير صحيح",
+      "cue": "Frankly, this isn't correct",
+      "literal": "With-frankness, this other-than correct",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bi-ṣarāḥa",
+            "script": "بصراحة",
+            "cue": "frankly",
+            "tag": "free",
+            "forms": [
+              "bi-ṣarāḥa"
+            ],
+            "note": "L1-M2's bi- on the noun for frankness, written joined as every bi- is. It opens a sentence and warns that what follows is blunt."
+          },
+          {
+            "display": "ghayr",
+            "script": "غير",
+            "cue": "not / other than",
+            "tag": "delta",
+            "forms": [
+              "ghayr"
+            ],
+            "note": "It negates a NOUN or an adjective where lā negates a verb: ghayr ṣaḥīḥ not correct, ghayr muhimm unimportant."
+          }
+        ],
+        "rules": [
+          8
+        ]
+      },
+      "trap": "English negates an adjective with not, or with a prefix — incorrect. Arabic cannot put lā there at all: lā ṣaḥīḥ is not Arabic, and ghayr is the word that does the job.",
+      "sound": "bi-ṣa-RĀ-ḥa: the ṣ is the heavy s. ghayr opens with the gargled gh and ends on a hard r.",
+      "variations": [
+        {
+          "display": "bi-ṣarāḥa, hādhā ghayr muhimm",
+          "script": "بصراحة، هذا غير مهم",
+          "cue": "Frankly, this isn't important",
+          "changed": "what is negated: correct → important"
+        },
+        {
+          "display": "bi-ṣarāḥa, al-fikra ghayr jayyida",
+          "script": "بصراحة، الفكرة غير جيدة",
+          "cue": "Frankly, the idea isn't good",
+          "changed": "the subject and the adjective, which is now feminine"
+        }
+      ],
+      "mistake": {
+        "display": "bi-ṣarāḥa, hādhā lā ṣaḥīḥ",
+        "script": "بصراحة، هذا لا صحيح",
+        "why": "lā negates verbs. In front of an adjective the word is ghayr, and lā ṣaḥīḥ reads as a refusal rather than a judgement."
+      },
+      "usage": "Flagging that you are about to be direct — which in this register is a courtesy, not an attack.",
+      "register": "neutral",
+      "mnemonic": "ghayr for a word, lā for a verb."
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "ʿalā kulli ḥāl, fī raʾyī al-fikra muhimma fiʿlan",
+      "script": "على كل حال، في رأيي الفكرة مهمة فعلًا",
+      "cue": "In any case, in my opinion the idea really does matter",
+      "literal": "On every state, in opinion-my the-idea important really",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿalā kulli ḥāl",
+            "script": "على كل حال",
+            "cue": "in any case",
+            "tag": "free",
+            "forms": [
+              "ʿalā kulli ḥāl"
+            ],
+            "note": "Frozen with the vowels its own grammar put there, like as-salāmu ʿalaykum. It sets the concessions aside and closes the argument."
+          },
+          {
+            "display": "fiʿlan",
+            "script": "فعلًا",
+            "cue": "really / actually",
+            "tag": "free",
+            "forms": [
+              "fiʿlan"
+            ],
+            "note": "The adverbial -an of L2-M1's shukran and jazīlan, on the noun for a deed. It sits behind what it strengthens, where jiddan sits."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "English really slides almost anywhere in a sentence. fiʿlan is an adverb of the -an kind and takes the slot L1-M3's jiddan already taught you: behind the word it strengthens.",
+      "sound": "ʿa-lā KUL-li ḤĀL — one run, no pause. FIʿ-lan: the ʿayn sits inside the word, between the f and the l.",
+      "variations": [
+        {
+          "display": "ʿalā kulli ḥāl, fī raʾyī al-fikra jayyida",
+          "script": "على كل حال، في رأيي الفكرة جيدة",
+          "cue": "In any case, in my opinion the idea is good",
+          "changed": "the verdict: it really matters → it is good"
+        },
+        {
+          "display": "ʿalā kulli ḥāl, sa-adhhab ghadan",
+          "script": "على كل حال، سأذهب غدًا",
+          "cue": "In any case, I'll go tomorrow",
+          "changed": "what survives the argument: an opinion → a decision"
+        }
+      ],
+      "mistake": {
+        "display": "ʿalā kull ḥāl, fī raʾyī al-fikra muhimma fiʿlan",
+        "script": "على كل حال، في رأيي الفكرة مهمة فعلًا",
+        "why": "The phrase is frozen as ʿalā kulli ḥāl. This course drops case endings everywhere else and keeps them inside frozen phrases, which is exactly what this is."
+      },
+      "usage": "Closing: you have granted what you will grant, and this is the part you are not moving on.",
+      "register": "neutral",
+      "mnemonic": "In any case — kulli ḥāl, every state of affairs."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "raghma anna al-lugha ṣaʿba, adrus kull yawm",
+      "script": "رغم أن اللغة صعبة، أدرس كل يوم",
+      "cue": "Although the language is hard, I study every day"
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "ʿalā ar-raghm min al-maṭar, dhahabtu ilā as-sūq",
+      "script": "على الرغم من المطر، ذهبت إلى السوق",
+      "cue": "Despite the rain, I went to the market"
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "al-fikra jayyida, wa maʿa dhālika lastu muwāfiq",
+      "script": "الفكرة جيدة، ومع ذلك لست موافق",
+      "cue": "The idea is good, and even so I don't agree"
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "laysat al-mushkila fī al-waqt, bal fī at-tarkīz",
+      "script": "ليست المشكلة في الوقت، بل في التركيز",
+      "cue": "The problem isn't the time, it's the concentration"
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "lā shakka anna al-ʿamal muhimm jiddan",
+      "script": "لا شك أن العمل مهم جدًا",
+      "cue": "There's no doubt that the work is very important"
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "min al-wāḍiḥ anna as-siʿr ghālī jiddan",
+      "script": "من الواضح أن السعر غالي جدًا",
+      "cue": "It's obvious that the price is very expensive"
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "min nāḥiya al-bayt kabīr, wa min nāḥiya ukhrā al-ījār ghālī",
+      "script": "من ناحية البيت كبير، ومن ناحية أخرى الإيجار غالي",
+      "cue": "On one hand the house is big, on the other the rent is expensive"
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "maʿaka ḥaqq, wa lākin al-waqt qaṣīr",
+      "script": "معكَ حق، ولكن الوقت قصير",
+      "cue": "You have a point, but there isn't time"
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "bi-ṣarāḥa, hādhā ghayr ṣaḥīḥ",
+      "script": "بصراحة، هذا غير صحيح",
+      "cue": "Frankly, this isn't correct"
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "ʿalā kulli ḥāl, fī raʾyī al-fikra muhimma fiʿlan",
+      "script": "على كل حال، في رأيي الفكرة مهمة فعلًا",
+      "cue": "In any case, in my opinion the idea really does matter"
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "raghma anna as-siʿr ghālī, ishtaraytu al-kitāb",
+      "script": "رغم أن السعر غالي، اشتريت الكتاب",
+      "cue": "Although the price is high, I bought the book"
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "laysat al-mushkila fī al-mudīr, bal fī al-ʿamal",
+      "script": "ليست المشكلة في المدير، بل في العمل",
+      "cue": "The problem isn't the manager, it's the work"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

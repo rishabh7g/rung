@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M8",
+  "title": "Back then",
+  "job": "Habits and states in the past; then against now",
+  "prerequisites": ["L4-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present", "Perfekt", "Präteritum"],
+    "allowedPatterns": [
+      "Früher + V-2(Prät) + ich + <rest>",
+      "Als ich klein war + , + V-2(Prät) + ich",
+      "Damals + gab es + <Akk>",
+      "Wir wohnten + in + <Dat>",
+      "Heute + V-2 + ich + nicht mehr"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE REGISTER COMES BEFORE THE ENDINGS. In spoken German the past is the Perfekt (L2-M10); the Präteritum is the tense of books, newspapers and written accounts. Only sein, haben and the modals prefer the Präteritum in speech as well — war, waren, hatte, hatten (L1-M5), konnte, wollte (L2-M10). You have been using that exception since L1 without being told why. This module is the READING tense: a learner with only the Perfekt can speak everywhere and read nowhere."
+    },
+    {
+      "tag": "delta",
+      "text": "WEAK VERBS ADD -te TO THE STEM and then the ordinary endings: machen → machte, wohnen → wohnte, spielen → spielte, sagen → sagte. If you can say the infinitive you can build it. A stem ending in t or d slips an e in first, so it can still be heard: arbeiten → arbeitete."
+    },
+    {
+      "tag": "delta",
+      "text": "STRONG VERBS CHANGE THE VOWEL AND TAKE NO -te AT ALL: gehen → ging, kommen → kam, sehen → sah, geben → gab, fahren → fuhr, sitzen → saß, bleiben → blieb. There is no rule that generates them; it is a closed list learnt one verb at a time. The consolation is that they are English strong verbs by descent and often rhyme with them — kam and came, sah and saw."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ich FORM AND THE er FORM ARE IDENTICAL, in both classes. ich ging and er ging; ich machte and er machte. This is L1-M5's war and hatte rule generalised — one written shape covering two persons — and it is what makes the tense cheap to read. The plural adds -en: wir gingen, wir machten."
+    },
+    {
+      "tag": "delta",
+      "text": "GERMAN HAS NO used to. Where English marks a discontinued habit with a whole construction, German uses an ADVERB and an ordinary past: Früher wohnten wir in einem Dorf. Damals gab es hier keinen Bahnhof. The adverbs carry the habit and the tense stays plain. früher and damals are both L3-M10's rows and keep their notes there — this module writes them and opens neither."
+    },
+    {
+      "tag": "delta",
+      "text": "THERE IS NO PAST CONTINUOUS TO TRANSLATE. English I was reading when … has no German form at all: the Präteritum does both aspects, and ich las covers I read and I was reading. A learner who reaches for war plus a participle has invented a tense German does not have."
+    },
+    {
+      "tag": "free",
+      "text": "WHERE YOU WILL MEET IT DIFFERENTLY. In the south and in Austria even written German often prefers the Perfekt, so the Präteritum is less universal than a textbook suggests. Read that as practice you will meet, not as advice about how to speak: whatever the region, the Präteritum of sein, haben and the modals is said everywhere."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M8-S01",
+      "display": "Früher wohnten wir in einem kleinen Dorf",
+      "cue": "We used to live in a small village",
+      "literal": "Earlier lived we in a small village",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wohnte",
+            "cue": "lived (past of wohnen)",
+            "tag": "delta",
+            "forms": ["wohnte", "wohnten"],
+            "note": "Weak: stem wohn- plus -te. ich wohnte and er wohnte are the same word; the plural adds -n, wir wohnten."
+          },
+          {
+            "display": "Dorf",
+            "cue": "village",
+            "tag": "free",
+            "forms": ["Dorf", "Dörfer"],
+            "note": "Neuter: das Dorf, and the plural takes an umlaut, die Dörfer. Anything smaller than a Stadt is a Dorf."
+          }
+        ],
+        "rules": [0, 1, 4]
+      },
+      "trap": "There is nothing here to translate used to into. Früher is the whole construction, and the verb stays an ordinary past.",
+      "sound": "FRUE-er VOHN-tun veer in EYE-num KLY-nun DORF.",
+      "variations": [
+        {
+          "display": "Früher wohnte ich in einem kleinen Dorf",
+          "cue": "I used to live in a small village",
+          "changed": "wir becomes ich, so the plural -n drops: wohnten becomes wohnte. Früher does the work of used to either way."
+        }
+      ],
+      "mistake": {
+        "display": "Früher wir wohnten in einem kleinen Dorf",
+        "why": "Früher is in first position, so the verb must take second: Früher wohnten wir. Changing the tense never suspends V-2."
+      },
+      "usage": "Telling somebody where you come from.",
+      "register": "neutral",
+      "mnemonic": "Früher is the used to; the verb only has to be past."
+    },
+    {
+      "id": "L4-M8-S02",
+      "display": "Als ich klein war, spielte ich draußen und kam spät nach Hause",
+      "cue": "When I was little I played outside and came home late",
+      "literal": "When I small was, played I outside and came late to home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spielte",
+            "cue": "played (past of spielen)",
+            "tag": "delta",
+            "forms": ["spielte", "spielten"],
+            "note": "Weak, like wohnte: spiel- plus -te. It covers both English pasts — I played and I was playing."
+          },
+          {
+            "display": "kam",
+            "cue": "came (past of kommen)",
+            "tag": "delta",
+            "forms": ["kam", "kamen"],
+            "note": "Strong: the vowel changes and there is no -te. ich kam, er kam, wir kamen — and it rhymes with came for a reason."
+          },
+          {
+            "display": "draußen",
+            "cue": "outside, outdoors",
+            "tag": "free",
+            "forms": ["draußen"],
+            "note": "A place, not a direction: draußen spielen is playing out there. Going out is nach draußen."
+          }
+        ],
+        "rules": [1, 2, 5]
+      },
+      "trap": "als is L3-M5's single past event and it is doing real work here. wenn in this sentence would make the childhood a repeated occasion rather than a stretch of life.",
+      "sound": "als ikh klyn var, SHPEEL-tuh ikh DROW-sun oont kaam shpayt naakh HOW-zuh.",
+      "variations": [
+        {
+          "display": "Als ich klein war, spielten wir jeden Tag draußen",
+          "cue": "When I was little we played outside every day",
+          "changed": "ich becomes wir, so spielte takes its plural -n: spielten. The strong verbs behave the same way."
+        }
+      ],
+      "mistake": {
+        "display": "Als ich klein war, war ich draußen spielend",
+        "why": "German has no past continuous. spielte alone is both I played and I was playing; a participle here is English grammar with German words."
+      },
+      "usage": "Opening a memory of childhood.",
+      "register": "neutral",
+      "mnemonic": "Weak verbs add, strong verbs change — and neither one needs a helper."
+    },
+    {
+      "id": "L4-M8-S03",
+      "display": "Es gab hier damals noch keinen Bahnhof",
+      "cue": "Back then there was no station here",
+      "literal": "It gave here at-that-time still no station",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es gab",
+            "cue": "there was, there were",
+            "tag": "delta",
+            "forms": ["es gab", "gab es"],
+            "note": "The past of L1-M7's es gibt, and just as fixed: es gab takes the accusative, and it is the same for one thing or many."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "es gab never changes for number. English chooses between there was and there were; German uses one form for both, and keinen is accusative because es gab governs it.",
+      "sound": "es gaap here DAA-mals nokh KY-nun BAAN-hohf.",
+      "variations": [
+        {
+          "display": "Damals gab es hier noch keinen Bahnhof",
+          "cue": "Back then there was still no station here",
+          "changed": "Damals is fronted, so the verb inverts and the pair is written gab es. The same two words in the other order."
+        }
+      ],
+      "mistake": {
+        "display": "Es gab hier damals noch kein Bahnhof",
+        "why": "es gab takes an accusative object, and Bahnhof is masculine, so the negative article is keinen. kein would be the nominative."
+      },
+      "usage": "Saying what a place did not have when you knew it.",
+      "register": "neutral",
+      "mnemonic": "es gibt gives now, es gab gave then — and both take the accusative."
+    },
+    {
+      "id": "L4-M8-S04",
+      "display": "Mein Opa saß jeden Abend am Fenster mit der Zeitung",
+      "cue": "My grandfather sat at the window every evening with the newspaper",
+      "literal": "My grandpa sat every evening at-the window with the newspaper",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Opa",
+            "cue": "grandpa, grandfather",
+            "tag": "free",
+            "forms": ["Opa"],
+            "note": "Masculine: der Opa. It is the everyday word and it is what families say; Großvater belongs on a form."
+          },
+          {
+            "display": "saß",
+            "cue": "sat (past of sitzen)",
+            "tag": "delta",
+            "forms": ["saß", "saßen"],
+            "note": "Strong, and the ß is what a long vowel before it signals: saß has the long a of Straße, not the short one of Fluss."
+          },
+          {
+            "display": "Zeitung",
+            "cue": "newspaper",
+            "tag": "free",
+            "forms": ["Zeitung", "Zeitungen"],
+            "note": "Feminine: die Zeitung. Every German noun in -ung is feminine, without exception, so the article is free."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "am Fenster is where he was, not where he was going, so the two-way preposition takes the dative. Nothing about the past tense changes that.",
+      "sound": "myn OH-paa zaas YAY-dun AA-bunt am FENS-ter mit dair TSY-toong.",
+      "variations": [
+        {
+          "display": "Meine Oma und mein Opa saßen jeden Abend am Fenster",
+          "cue": "My grandmother and my grandfather sat at the window every evening",
+          "changed": "Two people, so saß takes its plural: saßen. The strong vowel does not move — only the ending does."
+        }
+      ],
+      "mistake": {
+        "display": "Mein Opa sitzte jeden Abend am Fenster mit der Zeitung",
+        "why": "sitzen is strong, so it changes its vowel instead of adding -te: saß. A -te here is the weak pattern applied to a verb that refuses it."
+      },
+      "usage": "Describing somebody's fixed habit in a written memory.",
+      "register": "neutral",
+      "mnemonic": "Strong verbs do not add; they bend."
+    },
+    {
+      "id": "L4-M8-S05",
+      "display": "Im Sommer fuhren wir immer zu meiner Oma",
+      "cue": "In summer we always went to my grandmother's",
+      "literal": "In-the summer drove we always to my grandma",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fuhr",
+            "cue": "went, drove (past of fahren)",
+            "tag": "delta",
+            "forms": ["fuhr", "fuhren"],
+            "note": "Strong: the a of fahren becomes a long u. ich fuhr, er fuhr, wir fuhren — and it means travelled, not only drove."
+          },
+          {
+            "display": "Oma",
+            "cue": "grandma, grandmother",
+            "tag": "free",
+            "forms": ["Oma", "Omas"],
+            "note": "Feminine: die Oma. zu meiner Oma is to my grandmother's — German names the person, not the house."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "zu meiner Oma is the whole of English to my grandmother's. German does not add a word for the house, and zu takes the dative.",
+      "sound": "im ZOM-er FOO-run veer IM-er tsoo MY-ner OH-maa.",
+      "variations": [
+        {
+          "display": "Im Sommer fuhr ich immer zu meiner Oma",
+          "cue": "In summer I always went to my grandmother's",
+          "changed": "wir becomes ich, so the plural -en drops and the bare strong stem is left: fuhr."
+        }
+      ],
+      "mistake": {
+        "display": "Im Sommer fahrten wir immer zu meiner Oma",
+        "why": "fahren is strong: fuhr. A weak -te on a strong verb is the single most common Präteritum slip, and it is audible immediately."
+      },
+      "usage": "Recounting where a family went every year.",
+      "register": "neutral",
+      "mnemonic": "fahren goes to fuhr the way fahren goes far."
+    },
+    {
+      "id": "L4-M8-S06",
+      "display": "Ich ging jeden Tag in die Stadt und sah meine Freunde",
+      "cue": "I went into town every day and saw my friends",
+      "literal": "I went every day into the town and saw my friends",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ging",
+            "cue": "went (past of gehen)",
+            "tag": "delta",
+            "forms": ["ging", "gingen"],
+            "note": "Strong and irregular even by that standard — gehen and ging share almost nothing. ich ging and er ging are identical."
+          },
+          {
+            "display": "sah",
+            "cue": "saw (past of sehen)",
+            "tag": "delta",
+            "forms": ["sah", "sahen"],
+            "note": "Strong: the e of sehen becomes a long a. It rhymes with English saw, which is the same verb much further back."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "in die Stadt is a direction, so the accusative — that is L2-M4's two-way rule, and the past tense does not touch it.",
+      "sound": "ikh ging YAY-dun taak in dee shtat oont zaa MY-nuh FROYN-duh.",
+      "variations": [
+        {
+          "display": "Wir gingen jeden Tag in die Stadt und sahen meine Freunde",
+          "cue": "We went into town every day and saw my friends",
+          "changed": "Both verbs take the plural -en: gingen, sahen. The vowel that makes them strong stays where it is."
+        }
+      ],
+      "mistake": {
+        "display": "Ich gehte jeden Tag in die Stadt und sehte meine Freunde",
+        "why": "Both verbs are strong and neither takes -te. gehen gives ging, sehen gives sah, and there is no pattern that would have told you."
+      },
+      "usage": "Writing down what a stretch of your life looked like.",
+      "register": "neutral",
+      "mnemonic": "ich ging, er ging — one shape, two people."
+    },
+    {
+      "id": "L4-M8-S07",
+      "display": "Meine Kindheit war schön, wir blieben zwanzig Jahre in dieser Stadt",
+      "cue": "My childhood was good; we stayed twenty years in this town",
+      "literal": "My childhood was beautiful, we stayed twenty years in this town",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Kindheit",
+            "cue": "childhood",
+            "tag": "free",
+            "forms": ["Kindheit"],
+            "note": "Feminine: die Kindheit. Every noun in -heit is feminine, so Kind is neuter but Kindheit is not."
+          },
+          {
+            "display": "blieb",
+            "cue": "stayed (past of bleiben)",
+            "tag": "delta",
+            "forms": ["blieb", "blieben"],
+            "note": "Strong: the ei of bleiben becomes a long ie. Its Perfekt takes sein — ist geblieben — even though nothing moved."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "war and blieben sit side by side and both are Präteritum. war is said everywhere; blieben is what you would read rather than say.",
+      "sound": "MY-nuh KINT-hyt var shurn, veer BLEE-bun TSVAN-tsikh YAA-ruh in DEE-zer shtat.",
+      "variations": [
+        {
+          "display": "Meine Kindheit war schön, ich blieb zwanzig Jahre in dieser Stadt",
+          "cue": "My childhood was good; I stayed twenty years in this town",
+          "changed": "wir becomes ich and blieben loses its -en. war does not move at all — sein has the same shape for both."
+        }
+      ],
+      "mistake": {
+        "display": "Meine Kindheit war schön, wir bleibten zwanzig Jahre in dieser Stadt",
+        "why": "bleiben is strong: blieb. The ie is the whole tense marker, and adding -te on top of it builds a word that does not exist."
+      },
+      "usage": "The opening line of a written account of where you grew up.",
+      "register": "neutral",
+      "mnemonic": "bleiben stays, blieb stayed — one long vowel apart."
+    },
+    {
+      "id": "L4-M8-S08",
+      "display": "Damals arbeitete ich in Berlin und musste früh aufstehen",
+      "cue": "Back then I worked in Berlin and had to get up early",
+      "literal": "At-that-time worked I in Berlin and had-to early get-up",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "arbeitete",
+            "cue": "worked (past of arbeiten)",
+            "tag": "delta",
+            "forms": ["arbeitete", "arbeiteten"],
+            "note": "Weak, with the extra e a stem in t or d needs: arbeit- plus -ete. Without it the -te could not be heard at all."
+          },
+          {
+            "display": "musste",
+            "cue": "had to (past of müssen)",
+            "tag": "delta",
+            "forms": ["musste", "mussten"],
+            "note": "A modal past, so it is said as readily as it is written — like konnte and wollte. The umlaut of müssen drops."
+          },
+          {
+            "display": "aufstehen",
+            "cue": "to get up",
+            "tag": "free",
+            "forms": ["aufstehen"],
+            "note": "Separable, and under a modal it stays whole at the end: musste früh aufstehen. On its own it splits — ich stehe früh auf."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "musste loses the umlaut that müssen carries, and so do konnte, wollte and durfte. The dots belong to the present, not to the past.",
+      "sound": "DAA-mals AR-by-tuh-tuh ikh in ber-LEEN oont MOOS-tuh frue OWF-shtay-un.",
+      "variations": [
+        {
+          "display": "Damals arbeiteten wir in Berlin und mussten früh aufstehen",
+          "cue": "Back then we worked in Berlin and had to get up early",
+          "changed": "Both verbs take the plural -n. arbeitete keeps its inserted e wherever it goes: arbeiteten."
+        }
+      ],
+      "mistake": {
+        "display": "Damals arbeitte ich in Berlin und müsste früh aufstehen",
+        "why": "Two slips in one line: a stem in t needs the extra e, arbeitete; and müsste with the umlaut is Konjunktiv II, which would mean I would have to."
+      },
+      "usage": "Explaining what a former job did to your mornings.",
+      "register": "neutral",
+      "mnemonic": "A t-stem needs a breath: arbeit-e-te."
+    },
+    {
+      "id": "L4-M8-S09",
+      "display": "Meine Mutter sagte immer, wir durften nicht lange draußen bleiben",
+      "cue": "My mother always said we were not allowed to stay outside long",
+      "literal": "My mother said always, we were-allowed not long outside stay",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sagte",
+            "cue": "said (past of sagen)",
+            "tag": "delta",
+            "forms": ["sagte", "sagten"],
+            "note": "The plainest weak verb there is: sag- plus -te. It is also the reporting verb every written story uses."
+          },
+          {
+            "display": "durfte",
+            "cue": "was allowed to (past of dürfen)",
+            "tag": "delta",
+            "forms": ["durfte", "durften"],
+            "note": "The modal of permission in the past, umlaut dropped like musste. Negated it is the strong prohibition: durfte nicht."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "durften nicht is were not allowed to, not did not have to. mussten nicht is the one that means there was no obligation, and English not have to hides the difference.",
+      "sound": "MY-nuh MOO-ter ZAAK-tuh IM-er, veer DOORF-tun nikht LANG-uh DROW-sun BLY-bun.",
+      "variations": [
+        {
+          "display": "Meine Mutter sagte immer, wir mussten früh nach Hause",
+          "cue": "My mother always said we had to be home early",
+          "changed": "durften nicht becomes mussten: permission refused becomes obligation imposed, which is the pair English blurs."
+        }
+      ],
+      "mistake": {
+        "display": "Meine Mutter sagte immer, wir dürften nicht lange draußen bleiben",
+        "why": "dürften with the umlaut is Konjunktiv II — we would be allowed. The plain past of dürfen has no dots: durften."
+      },
+      "usage": "Reporting a rule from your childhood.",
+      "register": "neutral",
+      "mnemonic": "The umlaut is the mood; without it, it is only the past."
+    },
+    {
+      "id": "L4-M8-S10",
+      "display": "Früher machte ich das jeden Tag, heute nicht mehr",
+      "cue": "I used to do that every day; not any more",
+      "literal": "Earlier made I that every day, today not more",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "machte",
+            "cue": "did, made (past of machen)",
+            "tag": "delta",
+            "forms": ["machte", "machten"],
+            "note": "The weak pattern at its simplest: mach- plus -te. Learn this one and every regular verb in the language follows it."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "The second half has no verb at all. German lets heute nicht mehr stand alone against a past clause, and English needs at least an auxiliary.",
+      "sound": "FRUE-er MAKH-tuh ikh das YAY-dun taak, HOY-tuh nikht mair.",
+      "variations": [
+        {
+          "display": "Früher machte ich das jeden Tag, heute nur noch selten",
+          "cue": "I used to do that every day; now only rarely",
+          "changed": "nicht mehr becomes nur noch: not the end of the habit but what is left of it."
+        }
+      ],
+      "mistake": {
+        "display": "Früher ich machte das jeden Tag, heute nicht mehr",
+        "why": "Früher fills position one, so the verb comes second: Früher machte ich. The tense changed; the word order law did not."
+      },
+      "usage": "Closing a memory by saying what is no longer true.",
+      "register": "neutral",
+      "mnemonic": "Früher opens it, nicht mehr shuts it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M8-C01",
+      "display": "Früher wohnten wir in einem kleinen Dorf",
+      "cue": "We used to live in a small village"
+    },
+    {
+      "id": "L4-M8-C02",
+      "display": "Als ich klein war, spielte ich draußen und kam spät nach Hause",
+      "cue": "When I was little I played outside and came home late"
+    },
+    {
+      "id": "L4-M8-C03",
+      "display": "Es gab hier damals noch keinen Bahnhof",
+      "cue": "Back then there was no station here"
+    },
+    {
+      "id": "L4-M8-C04",
+      "display": "Mein Opa saß jeden Abend am Fenster mit der Zeitung",
+      "cue": "My grandfather sat at the window every evening with the newspaper"
+    },
+    {
+      "id": "L4-M8-C05",
+      "display": "Im Sommer fuhren wir immer zu meiner Oma",
+      "cue": "In summer we always went to my grandmother's"
+    },
+    {
+      "id": "L4-M8-C06",
+      "display": "Ich ging jeden Tag in die Stadt und sah meine Freunde",
+      "cue": "I went into town every day and saw my friends"
+    },
+    {
+      "id": "L4-M8-C07",
+      "display": "Meine Kindheit war schön, wir blieben zwanzig Jahre in dieser Stadt",
+      "cue": "My childhood was good; we stayed twenty years in this town"
+    },
+    {
+      "id": "L4-M8-C08",
+      "display": "Damals arbeitete ich in Berlin und musste früh aufstehen",
+      "cue": "Back then I worked in Berlin and had to get up early"
+    },
+    {
+      "id": "L4-M8-C09",
+      "display": "Meine Mutter sagte immer, wir durften nicht lange draußen bleiben",
+      "cue": "My mother always said we were not allowed to stay outside long"
+    },
+    {
+      "id": "L4-M8-C10",
+      "display": "Früher machte ich das jeden Tag, heute nicht mehr",
+      "cue": "I used to do that every day; not any more"
+    },
+    {
+      "id": "L4-M8-C11",
+      "display": "Damals gab es hier nur ein Kino",
+      "cue": "Back then there was only one cinema here"
+    },
+    {
+      "id": "L4-M8-C12",
+      "display": "Wir gingen jeden Sommer zusammen zu meiner Oma",
+      "cue": "Every summer we went to my grandmother's together"
+    }
+  ],
+  "exitTest": { "generateCount": 2, "comprehendCount": 3 }
+}

@@ -1,0 +1,562 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["imperative", "simple_past"],
+    "allowedPatterns": [
+      "आधी + V-आ + मग + V-आ",
+      "V-ऊन + मग + V-आ",
+      "N-साठी / V-ण्यासाठी + clause",
+      "V-ऊ + नका",
+      "प्रथम … नंतर … शेवटी … + V-आ"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The purpose clause in -ण्यासाठी. Take the verbal noun in -णे, bend it to -ण्या-, weld साठी on: करणे → करण्यासाठी, भरणे → भरण्यासाठी, घेणे → घेण्यासाठी. It states the purpose of anything, and it comes BEFORE the instruction it explains: चहा करण्यासाठी पाणी उकळा."
+    },
+    {
+      "tag": "delta",
+      "text": "The second purpose shape is -आयला, and it is the one that follows a verb of motion: मी दूध आणायला गेलो. The division is not formal against casual — -ण्यासाठी states a purpose for anything, -आयला states the purpose of a going or a coming. L2-M5's जेवायला and L3-M4's जायला पाहिजे are the same ending doing its other two jobs."
+    },
+    {
+      "tag": "interference",
+      "text": "The negative imperative is the verb's -ऊ cell FOLLOWED by नका: करू नका, जाऊ नका, पिऊ नका. Hindi puts its negative first (मत करो, मत कीजिए), so a Hindi speaker builds नका करा or नको करू. Both are wrong; the order is fixed, and नको (L1-M3) is 'I don't want it', not 'don't do it'."
+    },
+    {
+      "tag": "free",
+      "text": "Ordering the steps costs nothing new: आधी (L2-M10), मग and नंतर (L1-M4), शेवटी (L2-M10) all carry over, and L3-M1's -ऊन chain still joins two steps into one breath. प्रथम is the only addition — the formal 'first' that heads a numbered list."
+    },
+    {
+      "tag": "delta",
+      "text": "The polite imperative in -आ is L2-M1's करा shape, and every new verb here takes it: उकळा, धुवा, कापा, शिजवा, घाला, वाचा. A one-syllable stem shows nothing extra — खाणे's imperative is simply खा."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "चहा करण्यासाठी आधी पाणी उकळा",
+      "cue": "चाय बनाने के लिए पहले पानी उबालिए",
+      "glossEn": "To make tea, first boil the water",
+      "literal": "चाय करने-के-लिए पहले पानी उबालो",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "करण्यासाठी",
+            "cue": "करने के लिए",
+            "tag": "delta",
+            "forms": ["करण्यासाठी"],
+            "note": "करणे's verbal noun bent to करण्या- with साठी welded on. Hindi करने के लिए is three words; Marathi writes one, and it comes before the instruction."
+          },
+          {
+            "display": "उकळा",
+            "cue": "उबालिए",
+            "tag": "delta",
+            "forms": ["उकळा"],
+            "note": "उकळणे, to boil, in L2-M1's polite -आ imperative — the same ending as करा. New verb, old shape."
+          }
+        ],
+        "rules": [0, 3, 4]
+      },
+      "trap": "हिंदी में तीन शब्द (करने के लिए), मराठी में एक (करण्यासाठी). जोड़ तोड़ना ही सबसे आम ग़लती है.",
+      "sound": "करण्यासाठी = क‑रण्या‑साठी, ज़ोर 'रण्या' पर. 'ण्या' में ण और य जुड़े हुए हैं.",
+      "variations": [
+        {
+          "display": "कॉफी करण्यासाठी आधी पाणी उकळा",
+          "cue": "कॉफ़ी बनाने के लिए पहले पानी उबालिए",
+          "changed": "मक़सद बदला — चहा → कॉफी. -ण्यासाठी वाला हिस्सा वैसा ही रहा."
+        },
+        {
+          "display": "चहा करण्यासाठी दूध उकळा",
+          "cue": "चाय बनाने के लिए दूध उबालिए",
+          "changed": "क्या उबालना है वह बदला — पाणी → दूध. मक़सद और हुक्म दोनों उसी ढाँचे में."
+        }
+      ],
+      "mistake": {
+        "display": "चहा करण्या साठी आधी पाणी उकळा",
+        "why": "साठी को अलग कर दिया. मराठी उसे जोड़कर एक शब्द बनाती है: करण्यासाठी. यही इस पूरे लेवल की चाबी है."
+      },
+      "usage": "किसी को कोई काम सिखाते वक़्त — पहली लाइन जो बताती है कि यह सब किसलिए है.",
+      "register": "neutral",
+      "mnemonic": "करने के लिए → करण्यासाठी. तीन शब्द एक में वेल्ड हो जाते हैं."
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "पाणी उकळून मग साखर घाला",
+      "cue": "पानी उबालकर फिर चीनी डालिए",
+      "glossEn": "Boil the water and then add the sugar",
+      "literal": "पानी उबाल-कर फिर चीनी डालो",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "उकळून",
+            "cue": "उबालकर",
+            "tag": "delta",
+            "forms": ["उकळून"],
+            "note": "उकळणे's -ऊन converb (L3-M1): having boiled. It carries no person and no gender, and the LAST verb of the chain carries the instruction."
+          },
+          {
+            "display": "घाला",
+            "cue": "डालिए",
+            "tag": "delta",
+            "forms": ["घाला"],
+            "note": "घालणे in the polite imperative: here pour in, add. L3-M9 taught it as to wear (घालतो) — one verb, and adding is what it does to sugar and milk."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "-कर की जगह -ऊन, बिलकुल L3-M1 जैसा. नया कुछ नहीं, बस नई क्रिया पर वही जोड़.",
+      "sound": "उकळून = उ‑क‑ळून. ळ मराठी की अपनी ध्वनि है, जीभ तालू से लगती है.",
+      "variations": [
+        {
+          "display": "पाणी उकळून मग दूध घाला",
+          "cue": "पानी उबालकर फिर दूध डालिए",
+          "changed": "क्या डालना है वह बदला — साखर → दूध. जोड़ने वाला उकळून वैसा ही."
+        },
+        {
+          "display": "आधी पाणी उकळा, मग साखर घाला",
+          "cue": "पहले पानी उबालिए, फिर चीनी डालिए",
+          "changed": "जोड़ खोल दिया — आधी … मग … वाले दो अलग हुक्म. मतलब वही, लय अलग."
+        }
+      ],
+      "mistake": {
+        "display": "पाणी उकळकर मग साखर घाला",
+        "why": "हिंदी का -कर मराठी क्रिया पर चिपका दिया. मराठी में जोड़ -ऊन है: उकळून."
+      },
+      "usage": "नुस्ख़ा या तरीक़ा बताते वक़्त, जब दो क़दम एक साँस में आते हैं.",
+      "register": "neutral",
+      "mnemonic": "उबालकर = उकळून. जोड़ बदलता है, बाक़ी वाक्य नहीं."
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "प्रथम भाजी धुवा, नंतर कापा",
+      "cue": "पहले सब्ज़ी धोइए, फिर काटिए",
+      "glossEn": "First wash the vegetables, then cut them",
+      "literal": "प्रथम सब्ज़ी धोओ, बाद-में काटो",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "प्रथम",
+            "cue": "पहले, सबसे पहले",
+            "tag": "free",
+            "forms": ["प्रथम"],
+            "note": "First, at the head of a numbered list — a shade more formal than आधी (L2-M10). प्रथम … नंतर … शेवटी is how a recipe or a printed instruction runs."
+          },
+          {
+            "display": "धुवा",
+            "cue": "धोइए",
+            "tag": "delta",
+            "forms": ["धुवा"],
+            "note": "धुणे, to wash, polite imperative. Hands, vegetables, clothes all take धुवा — Hindi धोइए with the -आ ending of करा."
+          },
+          {
+            "display": "कापा",
+            "cue": "काटिए",
+            "tag": "delta",
+            "forms": ["कापा"],
+            "note": "कापणे, to cut, polite imperative. The stem is काप-, not काट- — Hindi काटिए and Marathi कापा are the same word wearing different consonants."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "काटना → कापणे. बीच का व्यंजन बदल जाता है, इसलिए 'काटा' कहने का मन करेगा — मराठी कापा कहती है.",
+      "sound": "धुवा = धु‑वा, दो साफ़ अक्षर. कापा में पहला 'का' लंबा है.",
+      "variations": [
+        {
+          "display": "प्रथम हात धुवा, नंतर भाजी कापा",
+          "cue": "पहले हाथ धोइए, फिर सब्ज़ी काटिए",
+          "changed": "क्या धोना है वह बदला — भाजी → हात (L3-M7). क्रम वाले शब्द वैसे ही."
+        },
+        {
+          "display": "प्रथम भाजी धुवा, मग कापा",
+          "cue": "पहले सब्ज़ी धोइए, फिर काटिए",
+          "changed": "नंतर की जगह मग — दोनों चलते हैं, मग ज़्यादा बोलचाल का है (L1-M4)."
+        }
+      ],
+      "mistake": {
+        "display": "प्रथम भाजी धुवो, नंतर कापो",
+        "why": "हिंदी का -ओ लगा दिया. मराठी का आदरवाला हुक्म -आ पर ख़त्म होता है: धुवा, कापा — बिलकुल करा जैसा."
+      },
+      "usage": "गिनकर क़दम बताते वक़्त — रेसिपी, फ़ॉर्म भरने का तरीक़ा, मशीन चलाने की हिदायत.",
+      "register": "formal",
+      "mnemonic": "प्रथम … नंतर … शेवटी — गिनती के तीन खूँटे, बीच में हुक्म."
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "शेवटी भाजी शिजवा आणि पोळी करा",
+      "cue": "आख़िर में सब्ज़ी पकाइए और रोटी बनाइए",
+      "glossEn": "Finally cook the vegetables and make the rotis",
+      "literal": "आख़िर-में सब्ज़ी पकाओ और रोटी करो",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "शिजवा",
+            "cue": "पकाइए",
+            "tag": "delta",
+            "forms": ["शिजवा"],
+            "note": "शिजवणे, to cook something, polite imperative. स्वयंपाक (L3-M1) is the whole meal; शिजवा is what you do to one dish."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "मराठी में रोटी 'बनाना' नहीं, 'करना' है: पोळी करा. वही करणे जो L2-M1 में मिला था.",
+      "sound": "शिजवा = शि‑ज‑वा, तीनों अक्षर हलके और बराबर.",
+      "variations": [
+        {
+          "display": "शेवटी भाजी शिजवा आणि भात करा",
+          "cue": "आख़िर में सब्ज़ी पकाइए और चावल बनाइए",
+          "changed": "दूसरा काम बदला — पोळी → भात (L1-M1). शेवटी वैसा ही आख़िरी क़दम बताता है."
+        },
+        {
+          "display": "शेवटी पोळी करा आणि जेवायला बसा",
+          "cue": "आख़िर में रोटी बनाइए और खाना खाने बैठिए",
+          "changed": "आख़िरी क़दम खाने पर ख़त्म — जेवायला (L2-M5) वही -आयला है जो यहाँ मक़सद बताता है."
+        }
+      ],
+      "mistake": {
+        "display": "शेवटी भाजी शिजवा आणि पोळी कर",
+        "why": "एक ही वाक्य में दो तहज़ीबें मिला दीं. कर तू वाला है, शिजवा आप वाला. एक हुक्म में एक ही स्तर रखिए: पोळी करा."
+      },
+      "usage": "काम का आख़िरी क़दम बताते वक़्त — शेवटी वही जगह लेता है जो हिंदी में 'आख़िर में' लेता है.",
+      "register": "neutral",
+      "mnemonic": "शेवटी = आख़िर में. सूची का आख़िरी खूँटा."
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "मी दूध आणायला दुकानात गेलो",
+      "cue": "मैं दूध लाने दुकान गया",
+      "glossEn": "I went to the shop to get milk",
+      "literal": "मैं दूध लाने-को दुकान-में गया",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "आणायला",
+            "cue": "लाने (के लिए)",
+            "tag": "delta",
+            "forms": ["आणायला"],
+            "note": "आणणे + -आयला, the purpose of a going or a coming. L3-M8 taught आणा; this is the same verb answering 'went there to do what?'."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "जाने-आने के साथ मराठी -आयला चुनती है, -ण्यासाठी नहीं. आणण्यासाठी गेलो समझ आएगा, पर कोई बोलता नहीं.",
+      "sound": "आणायला = आ‑णाय‑ला. णा में मूर्धन्य ण, जीभ पीछे मुड़ती है.",
+      "variations": [
+        {
+          "display": "ती दूध आणायला दुकानात गेली",
+          "cue": "वह दूध लाने दुकान गई",
+          "changed": "कर्ता औरत — गेलो → गेली, पर आणायला बिलकुल वैसा ही. मक़सद वाला रूप कभी नहीं बदलता."
+        },
+        {
+          "display": "मी साखर आणायला दुकानाला गेलो",
+          "cue": "मैं चीनी लाने दुकान गया",
+          "changed": "क्या लाना है वह बदला, और दुकानात की जगह दुकानाला (L2-M4) — दोनों चलते हैं."
+        }
+      ],
+      "mistake": {
+        "display": "मी दूध आणण्यासाठी दुकानात गेलो",
+        "why": "मक़सद का लंबा रूप जाने-आने के साथ लगा दिया. यहाँ मराठी -आयला कहती है: आणायला गेलो."
+      },
+      "usage": "यह बताते वक़्त कि आप कहीं क्यों गए — दिन का हिसाब देने की सबसे आम लाइन.",
+      "register": "neutral",
+      "mnemonic": "जाना-आना हो तो -आयला; बाक़ी हर मक़सद के लिए -ण्यासाठी."
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "घाई करू नका, हळू बोला",
+      "cue": "जल्दी मत कीजिए, धीरे बोलिए",
+      "glossEn": "Don't rush, speak slowly",
+      "literal": "जल्दी करो नहीं-कीजिए, धीरे बोलो",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "नका",
+            "cue": "मत (कीजिए)",
+            "tag": "interference",
+            "forms": ["नका"],
+            "note": "The negative imperative follows the verb's -ऊ cell that L2-M6 already taught (करू, जाऊ, येऊ) — same shape, second job: करू नका, जाऊ नका."
+          },
+          {
+            "display": "घाई",
+            "cue": "जल्दी, हड़बड़ी",
+            "tag": "free",
+            "forms": ["घाई"],
+            "note": "Hurry. घाई करणे is to hurry, so घाई करू नका is the everyday 'don't rush' — a whole phrase built on one noun."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "हिंदी में मना पहले आता है (मत कीजिए), मराठी में बाद में (करू नका). यही इस मॉड्यूल की सबसे बड़ी टक्कर है.",
+      "sound": "नका = न‑का, दोनों अक्षर छोटे और तेज़. करू नका एक साँस में बोलिए.",
+      "variations": [
+        {
+          "display": "घाई करू नका, हळू चालत या",
+          "cue": "जल्दी मत कीजिए, धीरे चलकर आइए",
+          "changed": "दूसरा हुक्म बदला — बोला → चालत या (L2-M8, L2-M1). मना वाला हिस्सा वैसा ही."
+        },
+        {
+          "display": "उशीर करू नका, लवकर या",
+          "cue": "देर मत कीजिए, जल्दी आइए",
+          "changed": "मना करने की चीज़ बदली — घाई → उशीर (L3-M4). ढाँचा वही: N + करू नका."
+        }
+      ],
+      "mistake": {
+        "display": "घाई नका करू, हळू बोला",
+        "why": "हिंदी का क्रम उठा लिया — मना पहले. मराठी में नका क्रिया के बाद आता है: करू नका, कभी नका करू नहीं."
+      },
+      "usage": "किसी को रोकते या टोकते वक़्त, बिना रूखे हुए — दुकान में, गाड़ी में, काम पर.",
+      "register": "neutral",
+      "mnemonic": "क्रिया पहले, मना बाद में: करू नका. हिंदी का उल्टा."
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "पैसे भरण्यासाठी बँकेत जा",
+      "cue": "पैसे भरने के लिए बैंक जाओ",
+      "glossEn": "Go to the bank to pay the money in",
+      "literal": "पैसे भरने-के-लिए बैंक-में जा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "भरण्यासाठी",
+            "cue": "भरने के लिए",
+            "tag": "delta",
+            "forms": ["भरण्यासाठी"],
+            "note": "भरणे (L3-M8's भरा) with -ण्यासाठी: in order to fill in or pay in. Every verb makes it the same way — -णे becomes -ण्या-, then साठी."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "तना भरा- नहीं, भरण्या- है. -णे वाला रूप पहले बनाइए, फिर उसे मोड़िए.",
+      "sound": "भरण्यासाठी = भ‑रण्या‑साठी. वही 'रण्या' जो करण्यासाठी में था.",
+      "variations": [
+        {
+          "display": "पैसे भरण्यासाठी इथे थांबा",
+          "cue": "पैसे भरने के लिए यहाँ रुकिए",
+          "changed": "हुक्म बदला — जा → थांबा (L2-M4). मक़सद वाला हिस्सा वैसा ही आगे बैठा है."
+        },
+        {
+          "display": "बिल भरण्यासाठी बँकेत जा",
+          "cue": "बिल भरने के लिए बैंक जाओ",
+          "changed": "क्या भरना है वह बदला — पैसे → बिल (L3-M8). -ण्यासाठी हर संज्ञा के साथ चलता है."
+        }
+      ],
+      "mistake": {
+        "display": "पैसे भरायसाठी बँकेत जा",
+        "why": "तना ग़लत मोड़ा. -णे वाले रूप से बनता है: भरणे → भरण्या- → भरण्यासाठी."
+      },
+      "usage": "रास्ता या तरीक़ा बताते वक़्त, जब सुनने वाले को पता होना चाहिए कि जाना क्यों है.",
+      "register": "informal",
+      "mnemonic": "-णे हटाओ, -ण्या- लगाओ, साठी चिपकाओ. तीन क़दम, एक शब्द."
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "आता चहा पिऊ नका, थोडा थांबा",
+      "cue": "अभी चाय मत पीजिए, थोड़ा रुकिए",
+      "glossEn": "Don't drink the tea yet, wait a little",
+      "literal": "अब चाय पियो नहीं-कीजिए, थोड़ा रुको",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "पिऊ",
+            "cue": "पियो",
+            "tag": "delta",
+            "forms": ["पिऊ"],
+            "note": "पिणे's -ऊ cell, the one नका needs: पिऊ नका. L1-M4 taught पितो — this is the bare cell, not a tense."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "नको (L1-M3) 'नहीं चाहिए' है, मना नहीं. मना करने के लिए -ऊ + नका ही चलता है.",
+      "sound": "पिऊ = पि‑ऊ, दूसरा स्वर लंबा और खुला. पिऊ नका बिना रुके.",
+      "variations": [
+        {
+          "display": "आता जेवण करू नका, थोडा थांबा",
+          "cue": "अभी खाना मत खाइए, थोड़ा रुकिए",
+          "changed": "मना किस चीज़ की, वह बदली — पिऊ → करू (L2-M6). नका वहीं का वहीं."
+        },
+        {
+          "display": "रात्री कॉफी पिऊ नका",
+          "cue": "रात में कॉफ़ी मत पीजिए",
+          "changed": "वक़्त जोड़ा और दूसरा हुक्म हटाया — रात्री (L1-M4). मना वाला ढाँचा अकेला भी पूरा है."
+        }
+      ],
+      "mistake": {
+        "display": "आता चहा नको पिऊ, थोडा थांबा",
+        "why": "नको को मना बना दिया और क्रम भी उलटा. नको चाह के लिए है; मना है -ऊ + नका: पिऊ नका."
+      },
+      "usage": "किसी को अभी रोकते वक़्त — गरम चाय, बंद दरवाज़ा, अधूरा काम.",
+      "register": "neutral",
+      "mnemonic": "पितो से पिऊ, और नका पीछे. दो टुकड़े, तय क्रम."
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "औषध घेण्यासाठी आधी थोडं खा",
+      "cue": "दवा लेने के लिए पहले थोड़ा खाओ",
+      "glossEn": "Eat a little first, so you can take the medicine",
+      "literal": "दवा लेने-के-लिए पहले थोड़ा खा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "घेण्यासाठी",
+            "cue": "लेने के लिए",
+            "tag": "delta",
+            "forms": ["घेण्यासाठी"],
+            "note": "घेणे (L2-M5's घ्या) with -ण्यासाठी: in order to take. Note where the stem bends — घेणे becomes घेण्या-, never घेआ-."
+          },
+          {
+            "display": "खा",
+            "cue": "खा, खाइए",
+            "tag": "delta",
+            "forms": ["खा"],
+            "note": "खाणे's imperative. The stem is one syllable, so nothing is added: Hindi खाओ, Marathi खा — the shortest instruction in the module."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "खा पर कुछ नहीं लगता. एक अक्षर का तना है, इसलिए हुक्म वही अक्षर है — खावा या खाओ नहीं.",
+      "sound": "घेण्यासाठी = घेण्या‑साठी, 'घे' खुला. खा = एक लंबा अक्षर.",
+      "variations": [
+        {
+          "display": "औषध घेण्यासाठी आधी जेवण करा",
+          "cue": "दवा लेने के लिए पहले खाना खाइए",
+          "changed": "हुक्म बदला — खा → जेवण करा (L2-M5). मक़सद वाला हिस्सा वैसा ही."
+        },
+        {
+          "display": "ताप कमी करण्यासाठी औषध घ्या",
+          "cue": "बुख़ार कम करने के लिए दवा लीजिए",
+          "changed": "मक़सद और हुक्म की जगह बदली — ताप (L3-M7), कमी (L2-M9), घ्या (L2-M5). ढाँचा वही."
+        }
+      ],
+      "mistake": {
+        "display": "औषध घेण्यासाठी आधी थोडं खाओ",
+        "why": "हिंदी का खाओ रख दिया. मराठी का हुक्म खा है — तना एक अक्षर का है, इसलिए कुछ जुड़ता ही नहीं."
+      },
+      "usage": "किसी को हिदायत देते वक़्त जब वजह भी बतानी हो — दवा, इलाज, डॉक्टर की सलाह.",
+      "register": "informal",
+      "mnemonic": "घेणे → घेण्यासाठी. मोड़ हमेशा -णे वाले रूप पर लगता है."
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "सगळं नीट वाचा, शेवटी सही करा",
+      "cue": "सब कुछ ध्यान से पढ़िए, आख़िर में दस्तख़त कीजिए",
+      "glossEn": "Read everything carefully, and sign at the end",
+      "literal": "सब ठीक-से पढ़ो, आख़िर-में दस्तख़त करो",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "नीट",
+            "cue": "ध्यान से, ठीक से",
+            "tag": "free",
+            "forms": ["नीट"],
+            "note": "Properly, carefully — the adverb that rides on an instruction. व्यवस्थित is its longer twin; नीट is what people actually say."
+          },
+          {
+            "display": "वाचा",
+            "cue": "पढ़िए",
+            "tag": "delta",
+            "forms": ["वाचा"],
+            "note": "वाचणे, to read, polite imperative — L1-M4's वाचतो wearing L2-M1's करा ending."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "नीट का मतलब 'साफ़-सुथरा' नहीं, 'ध्यान से' है. हिंदी वाला कान 'neat' सुनकर भटक सकता है.",
+      "sound": "नीट = नीट, एक लंबा अक्षर और साफ़ ट. वाचा में 'चा' खुला.",
+      "variations": [
+        {
+          "display": "सगळं नीट वाचा, नंतर सही करा",
+          "cue": "सब कुछ ध्यान से पढ़िए, फिर दस्तख़त कीजिए",
+          "changed": "क्रम वाला शब्द बदला — शेवटी → नंतर (L1-M4). आख़िरी क़दम अब सिर्फ़ 'बाद में' है."
+        },
+        {
+          "display": "फॉर्म नीट भरा, शेवटी सही करा",
+          "cue": "फ़ॉर्म ध्यान से भरिए, आख़िर में दस्तख़त कीजिए",
+          "changed": "पहला काम बदला — वाचा → भरा (L3-M8). नीट दोनों के साथ चलता है."
+        }
+      ],
+      "mistake": {
+        "display": "सगळं नीट वाचो, शेवटी सही करा",
+        "why": "एक ही वाक्य में वाचो और करा — एक हिंदी वाला हुक्म, एक मराठी वाला. मराठी में दोनों -आ पर: वाचा, करा."
+      },
+      "usage": "काग़ज़, फ़ॉर्म या शर्तें समझाते वक़्त — बैंक, दफ़्तर, दुकान.",
+      "register": "formal",
+      "mnemonic": "नीट = ध्यान से. हर हिदायत पर चिपक जाता है."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "चहा करण्यासाठी आधी पाणी उकळा",
+      "cue": "चाय बनाने के लिए पहले पानी उबालिए"
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "पाणी उकळून मग साखर घाला",
+      "cue": "पानी उबालकर फिर चीनी डालिए"
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "प्रथम भाजी धुवा, नंतर कापा",
+      "cue": "पहले सब्ज़ी धोइए, फिर काटिए"
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "शेवटी भाजी शिजवा आणि पोळी करा",
+      "cue": "आख़िर में सब्ज़ी पकाइए और रोटी बनाइए"
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "मी दूध आणायला दुकानात गेलो",
+      "cue": "मैं दूध लाने दुकान गया"
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "घाई करू नका, हळू बोला",
+      "cue": "जल्दी मत कीजिए, धीरे बोलिए"
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "पैसे भरण्यासाठी बँकेत जा",
+      "cue": "पैसे भरने के लिए बैंक जाओ"
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "आता चहा पिऊ नका, थोडा थांबा",
+      "cue": "अभी चाय मत पीजिए, थोड़ा रुकिए"
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "औषध घेण्यासाठी आधी थोडं खा",
+      "cue": "दवा लेने के लिए पहले थोड़ा खाओ"
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "सगळं नीट वाचा, शेवटी सही करा",
+      "cue": "सब कुछ ध्यान से पढ़िए, आख़िर में दस्तख़त कीजिए"
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "स्वयंपाक करण्यासाठी आधी हात धुवा",
+      "cue": "खाना बनाने के लिए पहले हाथ धोइए"
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "ती दूध आणायला दुकानात गेली",
+      "cue": "वह दूध लाने दुकान गई"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

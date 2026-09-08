@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M6",
+  "title": "Before and after",
+  "job": "Time clauses: while, until, since, already, not yet",
+  "prerequisites": [
+    "L4-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "future"
+    ],
+    "allowedPatterns": [
+      "V-(eu)l + ttae + clause",
+      "V-gi + jeon-e + clause",
+      "V-(eu)n + hu-e + clause",
+      "V-neun + dongan + clause",
+      "V-(eu)n + ji + <Sino number> + nyeon + dwaesseoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE CONNECTIVE FIXES THE CLAUSE, THE SENTENCE FIXES THE TENSE. -gi jeon-e keeps its plain stem in a past sentence and -(eu)n hu-e keeps its past modifier in a future one. Korean marks tense once, at the very end."
+    },
+    {
+      "tag": "delta",
+      "text": "-(eu)l ttae IS A TIME, L3-M4's -(eu)myeon IS A CONDITION. English when is both, which is why they are taught against each other. If the clause could take if, it is -(eu)myeon and this module never rewrites it."
+    },
+    {
+      "tag": "delta",
+      "text": "-(eu)myeonseo NEEDS ONE PERSON DOING BOTH THINGS, and is written attached to the stem. -neun dongan does not, and is the one you use when somebody else was doing something."
+    },
+    {
+      "tag": "delta",
+      "text": "ajik IS BOTH still AND not yet. One Korean word, two English ones, and the polarity of the clause is the whole switch: ajik an haesseoyo is not yet, ajik haeyo is still doing it."
+    },
+    {
+      "tag": "free",
+      "text": "beolsseo TAKES A PAST. It reports that the thing is over sooner than expected, so it sits with -eosseoyo and not with a present."
+    },
+    {
+      "tag": "free",
+      "text": "UNTIL SPLITS. A clause takes -(eu)l ttae-kkaji; a noun reuses L2-M4's -kkaji unchanged, as in hakgyo-kkaji. The bound noun ttae is what lets the particle attach to a whole clause."
+    },
+    {
+      "tag": "free",
+      "text": "SINCE IS A DURATION, NOT A POINT. V-(eu)n ji + a Sino number + nyeon + dwaesseoyo says how much time has piled up. English starts at the event; Korean measures the gap."
+    },
+    {
+      "tag": "free",
+      "text": "THE AFTER-CLAUSE RIDES THE PAST MODIFIER: gan hu-e, on hu-e, meogeun hu-e, bon hu-e. It is never built on hada here, because L1-M8 already owns han as the native number one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M6-S01",
+      "display": "Bap-eul meokgi jeon-e son-eul ssiseoyo.",
+      "script": "밥을 먹기 전에 손을 씻어요.",
+      "cue": "I wash my hands before eating.",
+      "literal": "rice-OBJ eat-NOMINAL before-at hand-OBJ wash",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeon-e",
+            "script": "전에",
+            "cue": "before",
+            "tag": "delta",
+            "forms": [
+              "jeon-e"
+            ],
+            "note": "A bound noun plus L1-M4's -e. It takes the plain -gi stem in front of it and never a tense: meokgi jeon-e is before eating in any tense the sentence ends in."
+          },
+          {
+            "display": "son-eul",
+            "script": "손을",
+            "cue": "hand (object)",
+            "tag": "free",
+            "forms": [
+              "son-eul"
+            ],
+            "note": "L2-M5's son with the object particle. Korean leaves the owner out: whose hands is obvious, so my never appears."
+          },
+          {
+            "display": "ssiseoyo",
+            "script": "씻어요",
+            "cue": "washes",
+            "tag": "free",
+            "forms": [
+              "ssiseoyo",
+              "ssiseosseoyo"
+            ],
+            "note": "From ssitda. The stem takes -eoyo, and the past is ssiseosseoyo."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Do not put the past on the clause. Even in a past sentence it stays meokgi jeon-e — meogeotgi jeon-e is not a shape Korean has.",
+      "sound": "BA-beul MEOK-gi JEO-ne SO-neul SSI-seo-yo. The final -k of meok runs into the g of -gi.",
+      "variations": [
+        {
+          "display": "Bap-eul meokgi jeon-e son-eul ssiseosseoyo.",
+          "script": "밥을 먹기 전에 손을 씻었어요.",
+          "cue": "I washed my hands before eating.",
+          "changed": "the sentence is past; the clause has not moved"
+        },
+        {
+          "display": "Hakgyo-e gagi jeon-e keopi-reul masyeoyo.",
+          "script": "학교에 가기 전에 커피를 마셔요.",
+          "cue": "I drink coffee before going to school.",
+          "changed": "a different verb in the before-clause"
+        }
+      ],
+      "mistake": {
+        "display": "Bap-eul meogeotgi jeon-e son-eul ssiseoyo.",
+        "script": "밥을 먹었기 전에 손을 씻어요.",
+        "why": "English agrees the tense of both halves, so a learner pushes the past into the clause. -gi jeon-e has no tense slot at all; the past belongs only on ssiseosseoyo."
+      },
+      "usage": "Ordinary household talk, and the line a parent says to a child.",
+      "register": "neutral",
+      "mnemonic": "Before takes the bare stem, always."
+    },
+    {
+      "id": "L4-M6-S02",
+      "display": "Hakgyo-e gan hu-e chingu-reul mannasseoyo.",
+      "script": "학교에 간 후에 친구를 만났어요.",
+      "cue": "After going to school I met a friend.",
+      "literal": "school-to went-MODIFIER after-at friend-OBJ met",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gan",
+            "script": "간",
+            "cue": "went (before a noun)",
+            "tag": "free",
+            "forms": [
+              "gan",
+              "on"
+            ],
+            "note": "The past modifier of gada and oda. meogeun is L3-M7's and bon is L3-M2's, so those two cells of the paradigm are already taught and are not repeated here."
+          },
+          {
+            "display": "hu-e",
+            "script": "후에",
+            "cue": "after",
+            "tag": "delta",
+            "forms": [
+              "hu-e"
+            ],
+            "note": "The mirror of jeon-e, and it takes the PAST modifier -(eu)n even when the sentence is future: gan hu-e jeonhwahalgeyo."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "hu-e never sits on -gi. gagi hu-e is the shape an English speaker builds by symmetry with gagi jeon-e, and Korean does not have it.",
+      "sound": "HAK-gyo-e GAN HU-e CHIN-gu-reul MAN-na-sseo-yo.",
+      "variations": [
+        {
+          "display": "Hakgyo-e gan hu-e jip-e gasseoyo.",
+          "script": "학교에 간 후에 집에 갔어요.",
+          "cue": "After going to school I went home.",
+          "changed": "a different main clause"
+        },
+        {
+          "display": "Chingu-ga on hu-e bap-eul meogeosseoyo.",
+          "script": "친구가 온 후에 밥을 먹었어요.",
+          "cue": "After my friend came, we ate.",
+          "changed": "the other verb of the pair, and a different subject in the clause"
+        }
+      ],
+      "mistake": {
+        "display": "Hakgyo-e gagi hu-e chingu-reul mannasseoyo.",
+        "script": "학교에 가기 후에 친구를 만났어요.",
+        "why": "-gi belongs to jeon-e alone. After is built on the past modifier, so the pair is not symmetrical the way before and after are in English."
+      },
+      "usage": "Telling somebody how your day went.",
+      "register": "neutral",
+      "mnemonic": "Before takes -gi, after takes -n."
+    },
+    {
+      "id": "L4-M6-S03",
+      "display": "Hangugeo-reul baeul ttae hangsang eumak-eul deureoyo.",
+      "script": "한국어를 배울 때 항상 음악을 들어요.",
+      "cue": "When I study Korean I always listen to music.",
+      "literal": "Korean-OBJ learn-FUTURE-MODIFIER time always music-OBJ listen",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ttae",
+            "script": "때",
+            "cue": "the time when",
+            "tag": "delta",
+            "forms": [
+              "ttae"
+            ],
+            "note": "A bound noun, so it stands after a modifier and never alone. -(eu)l ttae is a TIME; L3-M4's -(eu)myeon is a condition, and English when covers both."
+          },
+          {
+            "display": "eumak-eul",
+            "script": "음악을",
+            "cue": "music (object)",
+            "tag": "free",
+            "forms": [
+              "eumak-eul",
+              "eumak-i"
+            ],
+            "note": "The object form of eumak. The noun is not taught on its own anywhere below, so the particle form is what this row opens; eumak-i is the same noun as a subject."
+          },
+          {
+            "display": "deureoyo",
+            "script": "들어요",
+            "cue": "listens to",
+            "tag": "free",
+            "forms": [
+              "deureoyo",
+              "deureosseoyo"
+            ],
+            "note": "From deutda, whose d turns into r before a vowel ending. L2-M6's deullyeoyo is the other one: that is a sound reaching you, this is you listening."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "baeumyeon would make it a condition — IF I study Korean. ttae says nothing about whether it happens; it only fixes when.",
+      "sound": "HAN-gu-geo-reul BAE-ul TTAE HANG-sang EU-ma-geul DEU-reo-yo. ttae opens with a hard, tense t.",
+      "variations": [
+        {
+          "display": "Chingu-reul mannal ttae hangsang neujeoyo.",
+          "script": "친구를 만날 때 항상 늦어요.",
+          "cue": "When I meet a friend I am always late.",
+          "changed": "a different verb in the time clause"
+        },
+        {
+          "display": "Bap-eul meogeul ttae mul-eul masyeoyo.",
+          "script": "밥을 먹을 때 물을 마셔요.",
+          "cue": "When I eat I drink water.",
+          "changed": "a consonant stem, which takes -eul rather than -l"
+        }
+      ],
+      "mistake": {
+        "display": "Hangugeo-reul baeumyeon hangsang eumak-eul deureoyo.",
+        "script": "한국어를 배우면 항상 음악을 들어요.",
+        "why": "Grammatical, but it says IF I study Korean — a condition, not a time. The two are one word in English and two in Korean, and choosing by the English is how a habit becomes a hypothesis."
+      },
+      "usage": "Describing a routine.",
+      "register": "neutral",
+      "mnemonic": "ttae is a clock, -myeon is a coin toss."
+    },
+    {
+      "id": "L4-M6-S04",
+      "display": "Chingu-ga ilhaneun dongan jeo-neun chaek-eul ilgeosseoyo.",
+      "script": "친구가 일하는 동안 저는 책을 읽었어요.",
+      "cue": "While my friend was working I read a book.",
+      "literal": "friend-SUBJ work-MODIFIER during I-TOP book-OBJ read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dongan",
+            "script": "동안",
+            "cue": "during, while",
+            "tag": "delta",
+            "forms": [
+              "dongan"
+            ],
+            "note": "Takes the -neun modifier and allows TWO different subjects, which is exactly what -(eu)myeonseo forbids. Here the friend works and I read."
+          },
+          {
+            "display": "ilgeosseoyo",
+            "script": "읽었어요",
+            "cue": "read (past)",
+            "tag": "free",
+            "forms": [
+              "ilgeosseoyo",
+              "ilgeoyo"
+            ],
+            "note": "From ikda. The written l is silent before a consonant and voiced before the vowel ending, so it is said il-geo-sseo-yo."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "dongan is a stretch, not a point. It cannot mean when I arrived; that is ttae.",
+      "sound": "CHIN-gu-ga IL-ha-neun DONG-an JEO-neun CHAE-geul IL-geo-sseo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga ilhaneun dongan keopi-reul masyeosseoyo.",
+          "script": "친구가 일하는 동안 커피를 마셨어요.",
+          "cue": "While my friend was working I drank coffee.",
+          "changed": "a different main clause"
+        },
+        {
+          "display": "Jeo-neun ilhaneun dongan eumak-eul deureoyo.",
+          "script": "저는 일하는 동안 음악을 들어요.",
+          "cue": "While I work I listen to music.",
+          "changed": "one subject doing both, which dongan also allows"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga ilhaneun ttae jeo-neun chaek-eul ilgeosseoyo.",
+        "script": "친구가 일하는 때 저는 책을 읽었어요.",
+        "why": "ttae wants -(eu)l in front of it and marks a point; a stretch of time somebody else filled is dongan. The two are not interchangeable."
+      },
+      "usage": "Accounting for an afternoon.",
+      "register": "neutral",
+      "mnemonic": "Two people, one stretch: dongan."
+    },
+    {
+      "id": "L4-M6-S05",
+      "display": "Eumak-eul deureumyeonseo gongbuhaeyo.",
+      "script": "음악을 들으면서 공부해요.",
+      "cue": "I study while listening to music.",
+      "literal": "music-OBJ listen-WHILE study",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deureumyeonseo",
+            "script": "들으면서",
+            "cue": "while listening",
+            "tag": "delta",
+            "forms": [
+              "deureumyeonseo",
+              "ilhamyeonseo",
+              "meogeumyeonseo",
+              "masimyeonseo"
+            ],
+            "note": "An ending, so it is written onto the stem with no space. It requires ONE person doing both things at once — the subject of the two halves cannot differ."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "-(eu)myeonseo is not L3-M4's -(eu)myeon with something added. -myeon is if; -myeonseo is while, and only the second one stacks two actions of one person.",
+      "sound": "EU-ma-geul DEU-reu-myeon-seo GONG-bu-hae-yo. It runs as one long word.",
+      "variations": [
+        {
+          "display": "Eumak-eul deureumyeonseo ilhaeyo.",
+          "script": "음악을 들으면서 일해요.",
+          "cue": "I work while listening to music.",
+          "changed": "a different main verb"
+        },
+        {
+          "display": "Bap-eul meogeumyeonseo yeonghwa-reul bwayo.",
+          "script": "밥을 먹으면서 영화를 봐요.",
+          "cue": "I watch a film while eating.",
+          "changed": "a consonant stem, which takes -eumyeonseo"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga eumak-eul deureumyeonseo jeo-neun gongbuhaeyo.",
+        "script": "친구가 음악을 들으면서 저는 공부해요.",
+        "why": "Two subjects. -(eu)myeonseo can only stack two things ONE person does; when somebody else is doing the other thing the clause has to be -neun dongan."
+      },
+      "usage": "Saying how you get through homework.",
+      "register": "neutral",
+      "mnemonic": "One person, two hands: -myeonseo."
+    },
+    {
+      "id": "L4-M6-S06",
+      "display": "Sueop-i kkeunnal ttae-kkaji yeogi-eseo gidaryeoyo.",
+      "script": "수업이 끝날 때까지 여기에서 기다려요.",
+      "cue": "I will wait here until the class ends.",
+      "literal": "class-SUBJ end-MODIFIER time-until here-at wait",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ttae-kkaji",
+            "script": "때까지",
+            "cue": "until (a clause)",
+            "tag": "delta",
+            "forms": [
+              "ttae-kkaji"
+            ],
+            "note": "ttae plus L2-M4's -kkaji. A noun takes -kkaji on its own — hakgyo-kkaji — but a whole clause needs the bound noun first."
+          },
+          {
+            "display": "kkeunnal",
+            "script": "끝날",
+            "cue": "will end",
+            "tag": "free",
+            "forms": [
+              "kkeunnal",
+              "kkeunnasseoyo"
+            ],
+            "note": "From kkeutnada. The t of the stem is said as n in front of the n, and this course writes what is said — the same law that gives masinneun and meongneun."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "-kkaji does not come loose. Writing kkeunnal kkaji as two words is the shape English suggests and is not how the particle is written.",
+      "sound": "SU-eo-bi KKEUN-nal TTAE-kka-ji YEO-gi-e-seo GI-da-ryeo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga ol ttae-kkaji yeogi-eseo gidaryeoyo.",
+          "script": "친구가 올 때까지 여기에서 기다려요.",
+          "cue": "I will wait here until my friend comes.",
+          "changed": "a different clause before ttae"
+        },
+        {
+          "display": "Hakgyo-kkaji beoseu-reul tayo.",
+          "script": "학교까지 버스를 타요.",
+          "cue": "I take the bus as far as the school.",
+          "changed": "a noun, which takes -kkaji with no ttae at all"
+        }
+      ],
+      "mistake": {
+        "display": "Sueop-i kkeunnal kkaji yeogi-eseo gidaryeoyo.",
+        "script": "수업이 끝날 까지 여기에서 기다려요.",
+        "why": "A particle is written onto the word in front of it. Split off, kkaji is not a word Korean has."
+      },
+      "usage": "Arranging where to be found.",
+      "register": "neutral",
+      "mnemonic": "Clause needs a ttae to hang -kkaji on."
+    },
+    {
+      "id": "L4-M6-S07",
+      "display": "Yeonghwa-neun beolsseo sijakhaesseoyo.",
+      "script": "영화는 벌써 시작했어요.",
+      "cue": "The film has already started.",
+      "literal": "film-TOP already started",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "beolsseo",
+            "script": "벌써",
+            "cue": "already",
+            "tag": "delta",
+            "forms": [
+              "beolsseo"
+            ],
+            "note": "Carries surprise: sooner than you expected. It takes a past, so beolsseo sijakhaeyo is not a sentence Korean makes."
+          },
+          {
+            "display": "sijakhaesseoyo",
+            "script": "시작했어요",
+            "cue": "started",
+            "tag": "free",
+            "forms": [
+              "sijakhaesseoyo",
+              "sijakhaeyo"
+            ],
+            "note": "From sijakhada. The k meeting h is said as one aspirated sound, si-ja-kae-sseo-yo."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "beolsseo is not the same as English already in I have already eaten as a plain report. It always adds so soon?, and dropping that reading loses the word.",
+      "sound": "YEONG-hwa-neun BEOL-sseo SI-ja-kae-sseo-yo. The double s is held.",
+      "variations": [
+        {
+          "display": "Chingu-neun beolsseo jip-e gasseoyo.",
+          "script": "친구는 벌써 집에 갔어요.",
+          "cue": "My friend has already gone home.",
+          "changed": "a different subject and verb"
+        },
+        {
+          "display": "Bap-eul beolsseo meogeosseoyo.",
+          "script": "밥을 벌써 먹었어요.",
+          "cue": "I have already eaten.",
+          "changed": "an object in front of beolsseo"
+        }
+      ],
+      "mistake": {
+        "display": "Yeonghwa-neun beolsseo sijakhaeyo.",
+        "script": "영화는 벌써 시작해요.",
+        "why": "already reports something finished, so the verb has to be past. A present after beolsseo leaves the sentence hanging."
+      },
+      "usage": "Arriving late and being told.",
+      "register": "neutral",
+      "mnemonic": "beolsseo always drags a past behind it."
+    },
+    {
+      "id": "L4-M6-S08",
+      "display": "Bap-eul ajik an meogeosseoyo.",
+      "script": "밥을 아직 안 먹었어요.",
+      "cue": "I have not eaten yet.",
+      "literal": "rice-OBJ yet not ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ajik",
+            "script": "아직",
+            "cue": "still, not yet",
+            "tag": "delta",
+            "forms": [
+              "ajik"
+            ],
+            "note": "One word for two English ones, and the polarity picks: ajik an meogeosseoyo is not yet, ajik meogeoyo is still eating. Nothing on ajik itself changes."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "There is no separate word for yet. If you reach for one and add it to ajik, the sentence doubles the same meaning.",
+      "sound": "BA-beul A-jik AN MEO-geo-sseo-yo. an is unstressed and leans onto the verb.",
+      "variations": [
+        {
+          "display": "Bap-eul ajik meogeoyo.",
+          "script": "밥을 아직 먹어요.",
+          "cue": "I am still eating.",
+          "changed": "the negative is gone, so the same ajik now means still"
+        },
+        {
+          "display": "Chaek-eul ajik an ilgeosseoyo.",
+          "script": "책을 아직 안 읽었어요.",
+          "cue": "I have not read the book yet.",
+          "changed": "a different verb under the same negative"
+        }
+      ],
+      "mistake": {
+        "display": "Bap-eul ajik meogeosseoyo.",
+        "script": "밥을 아직 먹었어요.",
+        "why": "A past with no negative says I already ate, which is beolsseo's job and the opposite of what was meant. ajik needs the negative to mean not yet."
+      },
+      "usage": "Answering have you eaten? — the question Korean asks constantly.",
+      "register": "neutral",
+      "mnemonic": "ajik plus an is not yet; ajik alone is still."
+    },
+    {
+      "id": "L4-M6-S09",
+      "display": "Hanguk-e on ji sip nyeon dwaesseoyo.",
+      "script": "한국에 온 지 십 년 됐어요.",
+      "cue": "It has been ten years since I came to Korea.",
+      "literal": "Korea-to came-MODIFIER since ten year became",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ji",
+            "script": "지",
+            "cue": "since (elapsed)",
+            "tag": "delta",
+            "forms": [
+              "ji"
+            ],
+            "note": "A bound noun after the past modifier, written with a space in front of it. L4-M5's -(eu)lji, uncertainty, is an ending and is written attached — same syllable, different word."
+          },
+          {
+            "display": "nyeon",
+            "script": "년",
+            "cue": "year (counter)",
+            "tag": "free",
+            "forms": [
+              "nyeon"
+            ],
+            "note": "Counts years and takes the Sino numbers L2-M6 uses for the hour, so sip nyeon is ten years."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English names a starting point — since 2016. Korean measures the gap and ends with dwaesseoyo, L4-M2's became: ten years HAVE BECOME.",
+      "sound": "HAN-gu-ge ON JI SIP NYEON DWAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Hanguk-e on ji il nyeon dwaesseoyo.",
+          "script": "한국에 온 지 일 년 됐어요.",
+          "cue": "It has been a year since I came to Korea.",
+          "changed": "a different Sino number"
+        },
+        {
+          "display": "Hakgyo-e on ji sip nyeon dwaesseoyo.",
+          "script": "학교에 온 지 십 년 됐어요.",
+          "cue": "It has been ten years since I came to this school.",
+          "changed": "a different place"
+        }
+      ],
+      "mistake": {
+        "display": "Hanguk-e on hu-e sip nyeon dwaesseoyo.",
+        "script": "한국에 온 후에 십 년 됐어요.",
+        "why": "hu-e orders two events; it cannot carry an elapsed amount. The frame that measures time since is -(eu)n ji, and only ji fits between the modifier and the number."
+      },
+      "usage": "Explaining how long you have been somewhere.",
+      "register": "neutral",
+      "mnemonic": "ji counts the gap, not the date."
+    },
+    {
+      "id": "L4-M6-S10",
+      "display": "Sigan-i isseul ttae jeonhwahalgeyo.",
+      "script": "시간이 있을 때 전화할게요.",
+      "cue": "I will call when I have time.",
+      "literal": "time-SUBJ exist-MODIFIER time will-call",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "isseul",
+            "script": "있을",
+            "cue": "will have, will be there",
+            "tag": "free",
+            "forms": [
+              "isseul"
+            ],
+            "note": "The -(eu)l modifier of L1-M3's isseoyo. Before ttae it is the ordinary shape even when nothing about the future is meant."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "isseumyeon would promise a call only IF time turns up. isseul ttae takes the time for granted and fixes when.",
+      "sound": "SI-ga-ni I-sseul TTAE JEON-hwa-hal-ge-yo.",
+      "variations": [
+        {
+          "display": "Sigan-i isseul ttae yeonghwa-reul bwayo.",
+          "script": "시간이 있을 때 영화를 봐요.",
+          "cue": "I watch films when I have time.",
+          "changed": "a habit rather than a promise"
+        },
+        {
+          "display": "Sigan-i isseumyeon jeonhwahalgeyo.",
+          "script": "시간이 있으면 전화할게요.",
+          "cue": "I will call if I have time.",
+          "changed": "the condition, which is L3-M4's -(eu)myeon and a different promise"
+        }
+      ],
+      "mistake": {
+        "display": "Sigan-i isseul myeon jeonhwahalgeyo.",
+        "script": "시간이 있을 면 전화할게요.",
+        "why": "Half of each pattern. -(eu)myeon is one ending on the stem, and ttae is a bound noun after -(eu)l; mixing them leaves a word that is neither."
+      },
+      "usage": "Closing a conversation without fixing a day.",
+      "register": "neutral",
+      "mnemonic": "ttae promises; -myeon only offers."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M6-C01",
+      "display": "Jip-e gagi jeon-e jeonhwahalgeyo.",
+      "script": "집에 가기 전에 전화할게요.",
+      "cue": "I will call before I go home."
+    },
+    {
+      "id": "L4-M6-C02",
+      "display": "Bap-eul meogeun hu-e keopi-reul masyeoyo.",
+      "script": "밥을 먹은 후에 커피를 마셔요.",
+      "cue": "I drink coffee after eating."
+    },
+    {
+      "id": "L4-M6-C03",
+      "display": "Chingu-reul mannal ttae hangsang neujeoyo.",
+      "script": "친구를 만날 때 항상 늦어요.",
+      "cue": "I am always late when I meet a friend."
+    },
+    {
+      "id": "L4-M6-C04",
+      "display": "Jeo-neun ilhaneun dongan eumak-eul deureoyo.",
+      "script": "저는 일하는 동안 음악을 들어요.",
+      "cue": "I listen to music while I work."
+    },
+    {
+      "id": "L4-M6-C05",
+      "display": "Keopi-reul masimyeonseo chaek-eul ilgeoyo.",
+      "script": "커피를 마시면서 책을 읽어요.",
+      "cue": "I read a book while drinking coffee."
+    },
+    {
+      "id": "L4-M6-C06",
+      "display": "Chingu-ga ol ttae-kkaji gidaryeoyo.",
+      "script": "친구가 올 때까지 기다려요.",
+      "cue": "I wait until my friend comes."
+    },
+    {
+      "id": "L4-M6-C07",
+      "display": "Sueop-i beolsseo kkeunnasseoyo.",
+      "script": "수업이 벌써 끝났어요.",
+      "cue": "The class has already ended."
+    },
+    {
+      "id": "L4-M6-C08",
+      "display": "Yak-eul ajik an meogeosseoyo.",
+      "script": "약을 아직 안 먹었어요.",
+      "cue": "I have not taken the medicine yet."
+    },
+    {
+      "id": "L4-M6-C09",
+      "display": "Hanguk-e on ji sip nyeon dwaesseoyo.",
+      "script": "한국에 온 지 십 년 됐어요.",
+      "cue": "It has been ten years since I came to Korea."
+    },
+    {
+      "id": "L4-M6-C10",
+      "display": "Sigan-i isseul ttae yeonghwa-reul bwayo.",
+      "script": "시간이 있을 때 영화를 봐요.",
+      "cue": "I watch films when I have time."
+    },
+    {
+      "id": "L4-M6-C11",
+      "display": "Hakgyo-e gan hu-e chingu-reul mannayo.",
+      "script": "학교에 간 후에 친구를 만나요.",
+      "cue": "I meet a friend after going to school."
+    },
+    {
+      "id": "L4-M6-C12",
+      "display": "Eumak-eul deureumyeonseo gongbuhaeyo.",
+      "script": "음악을 들으면서 공부해요.",
+      "cue": "I study while listening to music."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": [
+    "L4-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 7,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "<clause> + , así que + <clause>",
+      "Ya que + <clause> + , + <clause>",
+      "<clause> + . Por eso + <clause>",
+      "Por + <N> + , + <clause>",
+      "Gracias a + <N> + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ya que, puesto que and dado que take a whole CLAUSE — a subject and a verb — and they prefer the FRONT: Ya que no hay tren, vamos en coche. They are the words that let a cause be said first."
+    },
+    {
+      "tag": "delta",
+      "text": "así que and por eso also take a clause, but they stand only AFTER the cause and open the CONSEQUENCE. Nothing may be fronted with them: No hay tren, así que vamos en coche, never the other way round."
+    },
+    {
+      "tag": "interference",
+      "text": "por, gracias a, por culpa de and debido a take a NOUN and never a clause. Por la lluvia, no salimos — and never por llueve. This is the same por L3-M2 taught on work and pay, extended into cause, not a second word."
+    },
+    {
+      "tag": "interference",
+      "text": "English because covers every job here and sits happily at either end. Spanish porque only FOLLOWS, so a fronted cause needs ya que instead. porque and por eso are L1-M9's and are re-used here, not re-opened."
+    },
+    {
+      "tag": "free",
+      "text": "sin embargo and por lo tanto are the careful, written pair — however and therefore. The everyday twins are pero and así que, which the course already owns, and a spoken paragraph reaches for those first."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "No hay tren, así que vamos en coche.",
+      "cue": "There's no train, so we're going by car.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "así que",
+            "cue": "so · and so",
+            "tag": "delta",
+            "forms": [],
+            "note": "Takes a whole clause and stands only after the cause. It opens the consequence, which is why nothing can be put in front of it."
+          },
+          {
+            "display": "tren",
+            "cue": "train",
+            "tag": "free",
+            "forms": [],
+            "note": "The service, not one carriage. hay tren means there is a service running at all."
+          },
+          {
+            "display": "coche",
+            "cue": "car",
+            "tag": "free",
+            "forms": [],
+            "note": "The word in Spain; carro and auto are the Latin American ones. en coche, by car, with no article."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English so and Spanish así que line up almost exactly, which is the one free gift in this module — and it is why a learner uses así que for everything and never reaches for the front-loading connectors.",
+      "sound": "a-SÍ ke, two words but one beat in speech; the í carries the stress and the qu is a plain k.",
+      "variations": [
+        {
+          "display": "No hay autobús, así que vamos en coche.",
+          "cue": "There's no bus, so we're going by car.",
+          "changed": "which service is missing"
+        },
+        {
+          "display": "No hay tren, así que hoy no salimos.",
+          "cue": "There's no train, so we're not going out today.",
+          "changed": "the consequence"
+        }
+      ],
+      "mistake": {
+        "display": "Así que no hay tren, vamos en coche.",
+        "why": "así que only ever follows the cause. Fronted, the sentence needs ya que."
+      },
+      "usage": "Two friends deciding how to travel. The scene is tú, but the sentence carries no pronoun and works unchanged with usted.",
+      "register": "neutral",
+      "mnemonic": "así que never goes first."
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "Ya que no hay tren, vamos en coche.",
+      "cue": "Since there's no train, we're going by car.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ya que",
+            "cue": "since · given that",
+            "tag": "delta",
+            "forms": [],
+            "note": "Takes a whole clause and prefers the FRONT — this is the word Spanish uses where English fronts because. Indexed whole: bare ya is L3-M10's already."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English because goes at either end, so a learner writes Porque no hay tren, vamos en coche. It is understood and it is wrong: porque only follows, and the fronted cause is ya que.",
+      "sound": "ya ke — the y is the soft j of yes at the start of a word, and the que is a plain ke.",
+      "variations": [
+        {
+          "display": "Ya que hay huelga, vamos en coche.",
+          "cue": "Since there's a strike, we're going by car.",
+          "changed": "the cause"
+        },
+        {
+          "display": "Ya que no tengo coche, voy en autobús.",
+          "cue": "Since I don't have a car, I'm going by bus.",
+          "changed": "who, and how they travel"
+        }
+      ],
+      "mistake": {
+        "display": "Porque no hay tren, vamos en coche.",
+        "why": "porque cannot open a sentence in ordinary Spanish. The fronted cause takes ya que."
+      },
+      "usage": "The same decision as S01 said the other way round — cause first. Neutral in both addresses; the scene here is tú.",
+      "register": "neutral",
+      "mnemonic": "Cause first means ya que; cause second means porque."
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "Hoy llueve mucho. Por eso no salimos de casa.",
+      "cue": "It's raining a lot today. That's why we're not going out.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "salimos",
+            "cue": "we go out · we leave",
+            "tag": "free",
+            "forms": [],
+            "note": "The we-form of salir. L3-M10 owns the infinitive salir; this is the cell the consequence needed."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "por eso is L1-M9's and is being re-used, not re-taught: it opens the consequence, the same job as así que, and the only difference is that por eso starts a new sentence while así que stays inside one.",
+      "sound": "sa-LI-mos, stress on the li. LLUE-ve, and the ll is the y of yes.",
+      "variations": [
+        {
+          "display": "Hoy hay huelga. Por eso no salimos de casa.",
+          "cue": "There's a strike today. That's why we're not going out.",
+          "changed": "the cause"
+        },
+        {
+          "display": "Hoy llueve mucho. Por eso vamos en coche.",
+          "cue": "It's raining a lot today. That's why we're going by car.",
+          "changed": "the consequence"
+        }
+      ],
+      "mistake": {
+        "display": "Por eso hoy llueve mucho, no salimos.",
+        "why": "por eso opens the CONSEQUENCE. Put in front of the cause it says the rain is the result, which is the opposite claim."
+      },
+      "usage": "Explaining a plan that changed, to anyone. Neutral, and the two short sentences are what make it a paragraph rather than a clause.",
+      "register": "neutral",
+      "mnemonic": "por eso points forward at the result."
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "Por la lluvia, no salimos de casa.",
+      "cue": "Because of the rain, we're not going out.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lluvia",
+            "cue": "rain",
+            "tag": "free",
+            "forms": [],
+            "note": "The NOUN, which is what por needs. The verb llueve, L3-M4's, cannot follow por at all — that is the whole point of this row."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English because of is two words and looks like a conjunction, so a learner puts a clause behind it. Spanish por is a preposition: a noun follows, never a verb.",
+      "sound": "LLU-via, two syllables, and the ll is the y of yes.",
+      "variations": [
+        {
+          "display": "Por la lluvia, hoy no hay autobús.",
+          "cue": "Because of the rain, there's no bus today.",
+          "changed": "the consequence"
+        },
+        {
+          "display": "Por la huelga, no salimos de casa.",
+          "cue": "Because of the strike, we're not going out.",
+          "changed": "the cause, still a noun"
+        }
+      ],
+      "mistake": {
+        "display": "Por llueve, no salimos de casa.",
+        "why": "por takes a noun. The rain as a cause is por la lluvia; the verb needs ya que llueve."
+      },
+      "usage": "The reason given at the door, in one phrase. Neutral, and it is the shortest cause the module teaches.",
+      "register": "neutral",
+      "mnemonic": "por is a preposition, so a noun comes next."
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "Por culpa de la huelga, hoy no hay tren.",
+      "cue": "Because of the strike, there's no train today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "por culpa de",
+            "cue": "because of · thanks to (blame)",
+            "tag": "interference",
+            "forms": [],
+            "note": "por with the blame showing: the cause is something you resent. It takes a noun, exactly as por does, and it is three words that behave as one preposition."
+          },
+          {
+            "display": "huelga",
+            "cue": "strike",
+            "tag": "free",
+            "forms": [],
+            "note": "A work stoppage. Spain talks about them often enough that this is everyday news vocabulary, not political vocabulary."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "por culpa de and gracias a are the same shape with opposite feeling — blame against credit. English has no neat pair, which is why a learner uses plain because of for both and sounds flat.",
+      "sound": "por CUL-pa de, run together in one phrase; the de is barely there.",
+      "variations": [
+        {
+          "display": "Por culpa de la lluvia, hoy no salimos.",
+          "cue": "Because of the rain, we're not going out today.",
+          "changed": "the cause"
+        },
+        {
+          "display": "Por culpa de las obras, el tren tiene retraso.",
+          "cue": "Because of the roadworks, the train is delayed.",
+          "changed": "the cause and the consequence"
+        }
+      ],
+      "mistake": {
+        "display": "Por culpa de hay huelga, no hay tren.",
+        "why": "por culpa de takes a noun like every por does: por culpa de la huelga."
+      },
+      "usage": "Complaining about something that went wrong, to anyone. Neutral, and the blame is in the phrase rather than the tone.",
+      "register": "neutral",
+      "mnemonic": "culpa is blame, so por culpa de is the bad news half."
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "Gracias a tu ayuda, ahora está todo listo.",
+      "cue": "Thanks to your help, everything's ready now.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gracias a",
+            "cue": "thanks to",
+            "tag": "delta",
+            "forms": [],
+            "note": "The credit half of the pair, and it takes a NOUN like the rest of them. The a never drops — gracias tu ayuda is not Spanish."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English thanks to can be sarcastic — thanks to you, we missed it. Spanish gracias a is sincere, and the resentful version is por culpa de. Choosing the wrong one says the wrong thing.",
+      "sound": "GRA-cias a, and in Spain the c of gracias is the th of think.",
+      "variations": [
+        {
+          "display": "Gracias a mi hermana, ahora está todo listo.",
+          "cue": "Thanks to my sister, everything's ready now.",
+          "changed": "who gets the credit"
+        },
+        {
+          "display": "Gracias a tu ayuda, hoy salimos temprano.",
+          "cue": "Thanks to your help, we're leaving early today.",
+          "changed": "the consequence"
+        }
+      ],
+      "mistake": {
+        "display": "Gracias tu ayuda, ahora está todo listo.",
+        "why": "gracias a is two words and the a is part of the connector, not an extra."
+      },
+      "usage": "Thanking someone for what their help made possible. The scene here is tú; the same phrase is unchanged with su ayuda for usted.",
+      "register": "neutral",
+      "mnemonic": "Credit takes gracias a, blame takes por culpa de."
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "Puesto que hay obras, el autobús tiene retraso.",
+      "cue": "Since there are roadworks, the bus is delayed.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "puesto que",
+            "cue": "since · given that",
+            "tag": "delta",
+            "forms": [],
+            "note": "ya que's more careful twin: same job, same front position, a written or considered register. Takes a whole clause."
+          },
+          {
+            "display": "obras",
+            "cue": "roadworks · building work",
+            "tag": "free",
+            "forms": [],
+            "note": "Always plural in this sense. hay obras is what a sign says when a street is dug up."
+          },
+          {
+            "display": "retraso",
+            "cue": "delay",
+            "tag": "free",
+            "forms": [],
+            "note": "A noun. tener retraso is how a service is late; a person who is late uses llegar tarde instead."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English since does double duty for time and cause, and a learner assumes puesto que does too. It does not: it is causal only, and the time since is desde.",
+      "sound": "PUES-to ke, and the ue is one glide. re-TRA-so, stress on the tra.",
+      "variations": [
+        {
+          "display": "Puesto que hay huelga, no hay tren.",
+          "cue": "Since there's a strike, there's no train.",
+          "changed": "the cause and the consequence"
+        },
+        {
+          "display": "Puesto que llueve mucho, vamos en coche.",
+          "cue": "Since it's raining a lot, we're going by car.",
+          "changed": "the cause, and a verb rather than hay"
+        }
+      ],
+      "mistake": {
+        "display": "Puesto que obras, el autobús tiene retraso.",
+        "why": "puesto que takes a whole clause, so the verb has to be there: puesto que hay obras."
+      },
+      "usage": "An announcement, or someone explaining a delay carefully. Neutral leaning formal — spoken Spanish would say como or ya que here.",
+      "register": "neutral",
+      "mnemonic": "puesto que is ya que in its good clothes."
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "Dado que no tengo tiempo, hoy como en casa.",
+      "cue": "Given that I don't have time, today I'm eating at home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dado que",
+            "cue": "given that",
+            "tag": "delta",
+            "forms": [],
+            "note": "The third front-loading connector, and the most written of the three. Same rule: a whole clause behind it, and the que is not optional."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Sentence-initial como is the commonest way a Spaniard says this, and this module refuses it: como is already L1-M4's I eat, and a learner tapping it would be shown a note about eating — which this very sentence proves, since its main clause is that como.",
+      "sound": "DA-do ke, and the d between vowels is soft, like the th of this.",
+      "variations": [
+        {
+          "display": "Dado que hay obras, vamos en autobús.",
+          "cue": "Given that there are roadworks, we're going by bus.",
+          "changed": "the cause and the consequence"
+        },
+        {
+          "display": "Dado que no tengo coche, voy en tren.",
+          "cue": "Given that I don't have a car, I'm going by train.",
+          "changed": "who, and how they travel"
+        }
+      ],
+      "mistake": {
+        "display": "Dado no tengo tiempo, hoy como en casa.",
+        "why": "The que belongs to the connector. Without it, dado is just a past participle."
+      },
+      "usage": "Written Spanish, or a considered spoken explanation. Neutral, and a friend would hear ya que instead.",
+      "register": "neutral",
+      "mnemonic": "All three front-loaders end in que, and none of them may drop it."
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "Hay obras en la calle; sin embargo, no hay mucho ruido.",
+      "cue": "There are roadworks in the street; even so, there isn't much noise.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sin embargo",
+            "cue": "however · even so",
+            "tag": "free",
+            "forms": [],
+            "note": "Indexed whole, because bare sin is a different word. It opens the clause that CONTRADICTS what came before — the mirror of por eso, which opens the clause that follows from it."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "sin embargo is however, not nevertheless-and-therefore: it cancels the expectation the first clause raised. English however can also mean in whatever way; Spanish sin embargo never does.",
+      "sound": "sin em-BAR-go, stress on the bar, and the phrase is always followed by a comma.",
+      "variations": [
+        {
+          "display": "Hay huelga; sin embargo, hay tren.",
+          "cue": "There's a strike; even so, there's a train.",
+          "changed": "the cause and what survives it"
+        },
+        {
+          "display": "Llueve mucho; sin embargo, vamos en coche.",
+          "cue": "It's raining hard; even so, we're going by car.",
+          "changed": "the cause and the consequence"
+        }
+      ],
+      "mistake": {
+        "display": "Sin embargo hay obras, no hay mucho ruido.",
+        "why": "sin embargo opens the surprising half, not the expected one. The roadworks are the fact; the quiet is the surprise."
+      },
+      "usage": "Written or careful Spanish. Neutral, and pero is what the same thought sounds like out loud.",
+      "register": "neutral",
+      "mnemonic": "sin embargo cancels; por eso confirms."
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "No hay tren y hay huelga; por lo tanto, hoy no salimos.",
+      "cue": "There's no train and there's a strike; therefore we're not going out today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "por lo tanto",
+            "cue": "therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "Three tokens, indexed whole. The formal twin of así que and por eso: same position, after the cause, and a register a conversation rarely reaches for."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "English therefore is stiff and Spanish por lo tanto is stiff in exactly the same way, so the register maps for once. What does not map is the position: it is fixed after the cause, where English can also say we therefore.",
+      "sound": "por lo TAN-to, three words run as one phrase, stress on the tan.",
+      "variations": [
+        {
+          "display": "Hay obras y hay huelga; por lo tanto, no hay autobús.",
+          "cue": "There are roadworks and a strike; therefore there's no bus.",
+          "changed": "two causes, one consequence"
+        },
+        {
+          "display": "No tengo tiempo; por lo tanto, hoy como en casa.",
+          "cue": "I don't have time; therefore I'm eating at home today.",
+          "changed": "who, and the consequence"
+        }
+      ],
+      "mistake": {
+        "display": "Por lo tanto no hay tren, no salimos.",
+        "why": "por lo tanto opens the consequence. In front of the cause it claims the missing train is the result."
+      },
+      "usage": "A notice, a report, or someone being deliberately precise. Neutral leaning formal; the spoken version of this whole line is así que.",
+      "register": "neutral",
+      "mnemonic": "Two causes stacked, one por lo tanto to close them."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "No hay tren, así que vamos en coche.",
+      "cue": "There's no train, so we're going by car."
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "Ya que no hay tren, vamos en coche.",
+      "cue": "Since there's no train, we're going by car."
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "Hoy llueve mucho. Por eso no salimos.",
+      "cue": "It's raining a lot today. That's why we're not going out."
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "Por la lluvia, hoy no hay autobús.",
+      "cue": "Because of the rain, there's no bus today."
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "Por culpa de la huelga, hoy no salimos de casa.",
+      "cue": "Because of the strike, we're not going out today."
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "Gracias a tu ayuda, ahora está todo listo.",
+      "cue": "Thanks to your help, everything's ready now."
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "Puesto que hay obras, el autobús tiene retraso.",
+      "cue": "Since there are roadworks, the bus is delayed."
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "Dado que no tengo tiempo, hoy como en casa.",
+      "cue": "Given that I don't have time, today I'm eating at home."
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "Hay obras; sin embargo, no hay mucho ruido.",
+      "cue": "There are roadworks; even so, there isn't much noise."
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "No hay tren; por lo tanto, vamos en coche.",
+      "cue": "There's no train; therefore we're going by car."
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "Ya que hay huelga, hoy trabajo en casa.",
+      "cue": "Since there's a strike, I'm working at home today."
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "El autobús tiene retraso por la lluvia.",
+      "cue": "The bus is delayed because of the rain."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

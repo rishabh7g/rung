@@ -1,0 +1,680 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "imperative",
+      "infinitive",
+      "simple_present_imperfective",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "Snachála + V-perfective-imperative + , + potóm + V-perfective-imperative",
+      "Chtóby + V-inf + , + nádo + V-inf",
+      "<clause> + , + chtóby + <subject> + V-past",
+      "Ne + V-imperfective-imperative",
+      "Nazhmíte + <N-accusative> + i + podozhdíte"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "chtóby is chto plus by, and that is not a coincidence but the rule: it takes exactly the forms L3-M4's by took. When the doer of the purpose is the doer of the main clause, chtóby takes the INFINITIVE — Ya prishyól, chtóby pomóch'. When the doer is somebody else, it takes the PAST — Ya govoryú médlenno, chtóby vy pónyali. That past is not a past; it is the by-form the learner already owns, sitting in a second seat. One new word buys a whole construction."
+    },
+    {
+      "tag": "delta",
+      "text": "Aspect in the imperative is L2-M1's pair — perfective for do-this-one-thing, imperfective for proceed-and-keep-going — and NEGATION FLIPS THE CHOICE. Zakróyte dver' is the instruction: one door, one closing. Ne zakryváyte dver' is the prohibition, and a negative imperative is imperfective always. Negate the perfective you have just written and you have produced a warning about an accident — mind you do not close it — rather than a rule."
+    },
+    {
+      "tag": "free",
+      "text": "Nothing in this module is spent on sequence. snachála (L2-M10), potóm (L1-M10), zatém and nakonéts (L3-M1) are already yours, and they carry the order so completely that each step can stay four words long. The whole spend here is the purpose word and the instruction verbs, which is why a module that teaches a construction can also afford eight imperatives."
+    },
+    {
+      "tag": "interference",
+      "text": "English uses one word, to, for both jobs — I came to help, press to open — so an English speaker writes the bare infinitive and drops chtóby. After a verb of motion Russian allows exactly that: Ya prishyól pomóch' is good Russian. After most other verbs it is not, and the line loses its head. When in doubt, put chtóby in: it is never wrong after a motion verb, only optional."
+    },
+    {
+      "tag": "free",
+      "text": "When the purpose is a THING rather than an act, Russian does not use chtóby at all: dlya plus the genitive. cháshka dlya cháya, stakán dlya vodý. chtóby heads a verb, dlya heads a noun, and no sentence needs both. The heavy written variant dlya tovó chtóby exists and belongs to a register this course opens later; here dlya and chtóby simply divide the work."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "Snachála nazhmíte knópku, potóm podozhdíte minútku.",
+      "script": "Сначала нажмите кнопку, потом подождите минутку.",
+      "cue": "First press the button, then wait a minute.",
+      "literal": "First press button, then wait minute.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nazhmíte",
+            "script": "нажмите",
+            "cue": "press",
+            "tag": "delta",
+            "forms": [
+              "nazhmíte"
+            ],
+            "note": "Perfective imperative: one press and it is done. Its imperfective twin, nazhimáyte, would mean keep pressing."
+          },
+          {
+            "display": "knópku",
+            "script": "кнопку",
+            "cue": "the button",
+            "tag": "free",
+            "forms": [
+              "knópku",
+              "knópka"
+            ],
+            "note": "Accusative of knópka, because it is the thing being pressed. A feminine -a noun takes -u as the object, the same swap as knígu."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "English presses the button and waits a minute with the same two verbs however many times you do it. Russian picks the aspect by the count: one press, one wait.",
+      "sound": "nazh-MEE-tye, KNOP-ku, pa-dazh-DEE-tye. The -te ending is never stressed.",
+      "variations": [
+        {
+          "display": "Snachála nazhmíte knópku, zatém podozhdíte.",
+          "script": "Сначала нажмите кнопку, затем подождите.",
+          "cue": "First press the button, then wait.",
+          "changed": "zatém instead of potóm"
+        },
+        {
+          "display": "Nazhmíte knópku i podozhdíte minútku.",
+          "script": "Нажмите кнопку и подождите минутку.",
+          "cue": "Press the button and wait a minute.",
+          "changed": "the two steps joined by i, with no ordering word"
+        }
+      ],
+      "mistake": {
+        "display": "Snachála nazhimáyte knópku, potóm zhdíte minútku.",
+        "script": "Сначала нажимайте кнопку, потом ждите минутку.",
+        "why": "Both of those are imperfective — keep pressing, keep waiting. One press and one wait are nazhmíte and podozhdíte."
+      },
+      "usage": "Anything with a button on it: a lift, a ticket machine, a coffee machine.",
+      "register": "neutral",
+      "mnemonic": "snachála … potóm is the skeleton; the verbs only hang on it."
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "Chtóby pomóch', nádo srázu pozvonít' vrachú.",
+      "script": "Чтобы помочь, надо сразу позвонить врачу.",
+      "cue": "To help, you have to call the doctor right away.",
+      "literal": "In-order-to help, must at-once to-call to-doctor.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chtóby",
+            "script": "чтобы",
+            "cue": "in order to, so that",
+            "tag": "delta",
+            "forms": [
+              "chtóby"
+            ],
+            "note": "The purpose word. Same doer on both sides here, so it takes the infinitive: chtóby pomóch'. It is chto plus by, and it takes the forms by takes."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English drops to help straight into the sentence with nothing in front of it. There is no motion verb here, so chtóby has to be said.",
+      "sound": "SHTO-by. The ch is pronounced sh in this word, exactly as it is in chto.",
+      "variations": [
+        {
+          "display": "Chtóby pomóch', núzhno pozvonít' vrachú.",
+          "script": "Чтобы помочь, нужно позвонить врачу.",
+          "cue": "To help, one needs to call the doctor.",
+          "changed": "núzhno instead of nádo"
+        },
+        {
+          "display": "Chtóby otdokhnút', nádo idtí domóy.",
+          "script": "Чтобы отдохнуть, надо идти домой.",
+          "cue": "To rest, you have to go home.",
+          "changed": "a different purpose and a different step"
+        }
+      ],
+      "mistake": {
+        "display": "Pomóch', nádo srázu pozvonít' vrachú.",
+        "script": "Помочь, надо сразу позвонить врачу.",
+        "why": "English says to help with a bare infinitive; Russian marks the purpose with chtóby. Without it the clause has no head."
+      },
+      "usage": "Telling somebody what has to be done for a result you both want.",
+      "register": "neutral",
+      "mnemonic": "chtóby = chto + by. Same doer, infinitive."
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "Ya govoryú médlenno, chtóby vy pónyali.",
+      "script": "Я говорю медленно, чтобы вы поняли.",
+      "cue": "I am speaking slowly so that you understand.",
+      "literal": "I speak slowly, in-order-that you understood.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "médlenno",
+            "script": "медленно",
+            "cue": "slowly",
+            "tag": "free",
+            "forms": [
+              "médlenno"
+            ],
+            "note": "The adverb from médlennyy, slow. It says how, so it stands beside the verb: govoryú médlenno."
+          },
+          {
+            "display": "pónyali",
+            "script": "поняли",
+            "cue": "understood",
+            "tag": "delta",
+            "forms": [
+              "pónyali",
+              "pónyal",
+              "pónyala"
+            ],
+            "note": "Past of ponyát'. Under chtóby it is not a past at all: a different doer forces this form, the same one L3-M4's by required."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Nothing in this sentence is in the past. English hears pónyali as a past tense and reaches for a present; the form is fixed by chtóby, not by time.",
+      "sound": "MYED-lyen-na, PO-nya-li. Both words stress the first syllable.",
+      "variations": [
+        {
+          "display": "Ya govoryú médlenno, chtóby ty pónyal.",
+          "script": "Я говорю медленно, чтобы ты понял.",
+          "cue": "I am speaking slowly so that you understand.",
+          "changed": "one friend, so ty and pónyal"
+        },
+        {
+          "display": "Govoríte médlenno, chtóby ya pónyal.",
+          "script": "Говорите медленно, чтобы я понял.",
+          "cue": "Speak slowly so that I understand.",
+          "changed": "the request turned round"
+        }
+      ],
+      "mistake": {
+        "display": "Ya govoryú médlenno, chtóby vy ponyát'.",
+        "script": "Я говорю медленно, чтобы вы понять.",
+        "why": "A different doer, so chtóby takes the past: pónyali. The infinitive is only for when the doer is the main clause's own."
+      },
+      "usage": "Asking to be understood, without asking anybody to do anything.",
+      "register": "neutral",
+      "mnemonic": "Different doer, past form. Same doer, infinitive."
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "Voz'míte klyuch i zakróyte dver'.",
+      "script": "Возьмите ключ и закройте дверь.",
+      "cue": "Take the key and close the door.",
+      "literal": "Take key and close door.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "voz'míte",
+            "script": "возьмите",
+            "cue": "take",
+            "tag": "delta",
+            "forms": [
+              "voz'míte"
+            ],
+            "note": "Perfective imperative: take it once. The soft sign belongs to the word — voz'míte, never vozmíte. L2's beríte is its keep-taking twin."
+          },
+          {
+            "display": "zakróyte",
+            "script": "закройте",
+            "cue": "close",
+            "tag": "delta",
+            "forms": [
+              "zakróyte"
+            ],
+            "note": "Perfective imperative: one door, one closing. This is the form an instruction uses. Its imperfective partner is a separate word, zakryváyte."
+          },
+          {
+            "display": "dver'",
+            "script": "дверь",
+            "cue": "the door",
+            "tag": "free",
+            "forms": [
+              "dver'"
+            ],
+            "note": "Feminine and soft, and its object form is the same as its dictionary form — so zakróyte dver' needs no change at all."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English take and close say nothing about how many times. The perfective imperatives here say once, which is what an instruction means.",
+      "sound": "vaz'-MEE-tye, za-KROY-tye, dvyer'. The soft sign in voz'míte is a tiny pause, not a vowel.",
+      "variations": [
+        {
+          "display": "Voz'míte klyuch i otkróyte dver'.",
+          "script": "Возьмите ключ и откройте дверь.",
+          "cue": "Take the key and open the door.",
+          "changed": "open instead of close"
+        },
+        {
+          "display": "Voz'míte dokumént i zakróyte súmku.",
+          "script": "Возьмите документ и закройте сумку.",
+          "cue": "Take the document and close the bag.",
+          "changed": "a different pair of objects"
+        }
+      ],
+      "mistake": {
+        "display": "Beríte klyuch i zakryváyte dver'.",
+        "script": "Берите ключ и закрывайте дверь.",
+        "why": "Those are the imperfective imperatives — keep taking, keep closing. One key and one door are voz'míte and zakróyte."
+      },
+      "usage": "Handing somebody a short set of steps: a landlord, a neighbour, a colleague.",
+      "register": "neutral",
+      "mnemonic": "voz'míte carries the soft sign; vozmíte is a word this course never writes."
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "Ne zakryváyte dver', pozháluysta. Ya uzhé idú.",
+      "script": "Не закрывайте дверь, пожалуйста. Я уже иду.",
+      "cue": "Please do not close the door. I am coming already.",
+      "literal": "Not close door, please. I already go.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zakryváyte",
+            "script": "закрывайте",
+            "cue": "close, keep closing",
+            "tag": "delta",
+            "forms": [
+              "zakryváyte"
+            ],
+            "note": "The imperfective partner of zakróyte, and the only one a prohibition may use: ne zakryváyte. A negative imperative is imperfective always."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "The English prohibition keeps the same verb: do not close. Russian changes the verb, because a negated perfective is not a rule at all.",
+      "sound": "za-kry-VIGH-tye — four syllables, and the stress lands on VIGH.",
+      "variations": [
+        {
+          "display": "Ne zakryváyte dver'.",
+          "script": "Не закрывайте дверь.",
+          "cue": "Do not close the door.",
+          "changed": "the prohibition on its own"
+        },
+        {
+          "display": "Ne bespokóytes', ya uzhé idú.",
+          "script": "Не беспокойтесь, я уже иду.",
+          "cue": "Do not worry, I am coming already.",
+          "changed": "a different negative instruction"
+        }
+      ],
+      "mistake": {
+        "display": "Ne zakróyte dver'.",
+        "script": "Не закройте дверь.",
+        "why": "A negated perfective is a warning about an accident — mind you do not close it. A prohibition is always imperfective: ne zakryváyte."
+      },
+      "usage": "Stopping something that is about to happen, politely.",
+      "register": "neutral",
+      "mnemonic": "ne plus imperfective. Always."
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "Snachála polozhíte sákhar, potóm dobáv'te vódu.",
+      "script": "Сначала положите сахар, потом добавьте воду.",
+      "cue": "First put in the sugar, then add the water.",
+      "literal": "First put sugar, then add water.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "polozhíte",
+            "script": "положите",
+            "cue": "put, lay",
+            "tag": "delta",
+            "forms": [
+              "polozhíte"
+            ],
+            "note": "Perfective imperative of polozhít', to lay something down. Stress on the last syllable but one: pa-la-ZHY-tye."
+          },
+          {
+            "display": "dobáv'te",
+            "script": "добавьте",
+            "cue": "add",
+            "tag": "delta",
+            "forms": [
+              "dobáv'te"
+            ],
+            "note": "Perfective imperative of dobávit'. The soft sign before -te is part of the form, and what gets added stands in the accusative: dobáv'te vódu."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "English adds the water and leaves it alone; Russian marks it as the object, so it is vódu and not the dictionary form vodá.",
+      "sound": "pa-la-ZHY-tye, da-BAF-tye. The v of dobáv'te devoices to f before the t.",
+      "variations": [
+        {
+          "display": "Snachála polozhíte sákhar, zatém dobáv'te molokó.",
+          "script": "Сначала положите сахар, затем добавьте молоко.",
+          "cue": "First put in the sugar, then add the milk.",
+          "changed": "milk instead of water"
+        },
+        {
+          "display": "Dobáv'te vódu i sákhar.",
+          "script": "Добавьте воду и сахар.",
+          "cue": "Add the water and the sugar.",
+          "changed": "one step instead of two"
+        }
+      ],
+      "mistake": {
+        "display": "Snachála polozhíte sákhar, potóm dobáv'te vodá.",
+        "script": "Сначала положите сахар, потом добавьте вода.",
+        "why": "dobáv'te takes an object, and an object takes the accusative: vódu. vodá is the dictionary form and cannot stand there."
+      },
+      "usage": "A recipe, or any set of steps in a kitchen.",
+      "register": "neutral",
+      "mnemonic": "Snachála … potóm carries the order; the verbs carry only the act."
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "Éhto cháshka dlya cháya, a éhto stakán dlya vodý.",
+      "script": "Это чашка для чая, а это стакан для воды.",
+      "cue": "This is a cup for tea, and this is a glass for water.",
+      "literal": "This cup for tea, and this glass for water.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dlya",
+            "script": "для",
+            "cue": "for",
+            "tag": "delta",
+            "forms": [
+              "dlya"
+            ],
+            "note": "Purpose shaped as a noun, and it takes the genitive: dlya cháya, dlya vodý. Where chtóby needs a verb after it, dlya needs a thing."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English uses one word, for, and so does Russian here — but dlya pulls the noun into the genitive, so the ending changes: chay becomes cháya.",
+      "sound": "dlya is one syllable and it leans forward onto its noun: dlya-CHA-ya, dlya-va-DY.",
+      "variations": [
+        {
+          "display": "Éhto cháshka dlya cháya.",
+          "script": "Это чашка для чая.",
+          "cue": "This is a cup for tea.",
+          "changed": "one half of the pair"
+        },
+        {
+          "display": "Éhto tarélka dlya súpa.",
+          "script": "Это тарелка для супа.",
+          "cue": "This is a bowl for soup.",
+          "changed": "a different thing and a different purpose"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto cháshka chtóby chay.",
+        "script": "Это чашка чтобы чай.",
+        "why": "chtóby heads a verb, never a noun. A purpose shaped as a thing takes dlya and the genitive: cháshka dlya cháya."
+      },
+      "usage": "Saying what a thing is for: on a shelf, in a shop, at a table.",
+      "register": "neutral",
+      "mnemonic": "chtóby heads a verb, dlya heads a noun."
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "Ya prishyól, chtóby pomóch'. Ne bespokóytes', pozháluysta.",
+      "script": "Я пришёл, чтобы помочь. Не беспокойтесь, пожалуйста.",
+      "cue": "I have come to help. Please do not worry.",
+      "literal": "I came, in-order-to to-help. Not worry, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bespokóytes'",
+            "script": "беспокойтесь",
+            "cue": "worry",
+            "tag": "delta",
+            "forms": [
+              "bespokóytes'"
+            ],
+            "note": "The imperative of L3-M6's bespokóitsya, and it is nearly always negated: ne bespokóytes', do not worry. Imperfective, as every prohibition is."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "After a verb of motion Russian would also accept Ya prishyól pomóch', with no chtóby at all. That licence belongs to motion verbs and to no others.",
+      "sound": "pri-SHOL, SHTO-by, pa-MOCH. The final ch of pomóch' is soft, and the soft sign after it is silent.",
+      "variations": [
+        {
+          "display": "Ya prishyól pomóch'.",
+          "script": "Я пришёл помочь.",
+          "cue": "I have come to help.",
+          "changed": "chtóby dropped, which only a motion verb allows"
+        },
+        {
+          "display": "Ya pozvoníl, chtóby pomóch'.",
+          "script": "Я позвонил, чтобы помочь.",
+          "cue": "I rang to help.",
+          "changed": "not a motion verb, so chtóby has to stay"
+        }
+      ],
+      "mistake": {
+        "display": "Ya prishyól, chtóby ya pomóg.",
+        "script": "Я пришёл, чтобы я помог.",
+        "why": "The same person twice, so chtóby takes the infinitive: pomóch'. The past form is only for when somebody else is meant to act."
+      },
+      "usage": "Arriving somewhere, saying why you are there, and calming the room.",
+      "register": "neutral",
+      "mnemonic": "Came to help — one person twice, so the infinitive."
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "Ostorózhno otkróyte súmku i voz'míte dokumént.",
+      "script": "Осторожно откройте сумку и возьмите документ.",
+      "cue": "Carefully open the bag and take out the document.",
+      "literal": "Carefully open bag and take document.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ostorózhno",
+            "script": "осторожно",
+            "cue": "carefully",
+            "tag": "free",
+            "forms": [
+              "ostorózhno"
+            ],
+            "note": "The -o adverb: how the opening is done. On its own, Ostorózhno! is both the sign and the shout for Careful."
+          },
+          {
+            "display": "otkróyte",
+            "script": "откройте",
+            "cue": "open",
+            "tag": "delta",
+            "forms": [
+              "otkróyte"
+            ],
+            "note": "Perfective imperative: open it once. Built exactly like zakróyte, and the two are worth learning as one pair."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English carefully open and a careful person share a word. Russian does not: ostorózhno is the adverb, and ostorózhnyy would describe the person.",
+      "sound": "as-ta-ROZH-na, at-KROY-tye. The adverb stresses its middle, the imperative its first vowel after the prefix.",
+      "variations": [
+        {
+          "display": "Ostorózhno otkróyte súmku.",
+          "script": "Осторожно откройте сумку.",
+          "cue": "Carefully open the bag.",
+          "changed": "one step instead of two"
+        },
+        {
+          "display": "Voz'míte knígu i ostorózhno polozhíte yeyó na stol.",
+          "script": "Возьмите книгу и осторожно положите её на стол.",
+          "cue": "Take the book and carefully put it on the table.",
+          "changed": "the adverb moved onto the second step"
+        }
+      ],
+      "mistake": {
+        "display": "Ostorózhnyy otkróyte súmku.",
+        "script": "Осторожный откройте сумку.",
+        "why": "ostorózhnyy is the adjective and would be describing a person. How something is done is the -o form: ostorózhno."
+      },
+      "usage": "Anything fragile or official: a bag at a check, a parcel, a folder of papers.",
+      "register": "neutral",
+      "mnemonic": "-o on the end means how, not who."
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "Zapólnite ankétu médlenno i ostorózhno, chtóby ne býlo oshíbok.",
+      "script": "Заполните анкету медленно и осторожно, чтобы не было ошибок.",
+      "cue": "Fill in the form slowly and carefully, so that there are no mistakes.",
+      "literal": "Fill-in form slowly and carefully, in-order-that not was of-mistakes.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "oshíbok",
+            "script": "ошибок",
+            "cue": "mistakes",
+            "tag": "free",
+            "forms": [
+              "oshíbok",
+              "oshíbka"
+            ],
+            "note": "Genitive plural of oshíbka, which is what ne býlo demands: chtóby ne býlo oshíbok, so that there were none."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English so that there are no mistakes uses a present tense. Russian says ne býlo — the by-form again — and puts the noun in the genitive.",
+      "sound": "za-POL-ni-tye, a-SHY-bak. The genitive plural drops the final -a of oshíbka and keeps the stress where it was.",
+      "variations": [
+        {
+          "display": "Zapólnite ankétu ostorózhno, chtóby ne býlo oshíbok.",
+          "script": "Заполните анкету осторожно, чтобы не было ошибок.",
+          "cue": "Fill in the form carefully, so that there are no mistakes.",
+          "changed": "one adverb instead of two"
+        },
+        {
+          "display": "Zapólnite ankétu médlenno, chtóby vrach vsyó pónyal.",
+          "script": "Заполните анкету медленно, чтобы врач всё понял.",
+          "cue": "Fill in the form slowly, so that the doctor understands everything.",
+          "changed": "a person as the second doer, so the past form returns"
+        }
+      ],
+      "mistake": {
+        "display": "Zapólnite ankétu médlenno, chtóby net oshíbok.",
+        "script": "Заполните анкету медленно, чтобы нет ошибок.",
+        "why": "net cannot follow chtóby. The negative existential under chtóby is ne býlo plus the genitive: chtóby ne býlo oshíbok."
+      },
+      "usage": "The line on a form, or a colleague's warning before you sign one.",
+      "register": "neutral",
+      "mnemonic": "chtóby ne býlo + genitive: so that there were none."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "Snachála voz'míte klyuch, potóm otkróyte dver'.",
+      "script": "Сначала возьмите ключ, потом откройте дверь.",
+      "cue": "First take the key, then open the door."
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "Nazhmíte knópku i podozhdíte minútku.",
+      "script": "Нажмите кнопку и подождите минутку.",
+      "cue": "Press the button and wait a minute."
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "Chtóby otdokhnút', nádo idtí domóy.",
+      "script": "Чтобы отдохнуть, надо идти домой.",
+      "cue": "To rest, you have to go home."
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "Ne zakryváyte dver', pozháluysta.",
+      "script": "Не закрывайте дверь, пожалуйста.",
+      "cue": "Please do not close the door."
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "Govoríte médlenno, chtóby ya pónyal.",
+      "script": "Говорите медленно, чтобы я понял.",
+      "cue": "Speak slowly so that I understand."
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "Éhto stakán dlya vodý.",
+      "script": "Это стакан для воды.",
+      "cue": "This is a glass for water."
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "Ostorózhno polozhíte dokumént na stol.",
+      "script": "Осторожно положите документ на стол.",
+      "cue": "Carefully put the document on the table."
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "Zapólnite ankétu, chtóby ne býlo oshíbok.",
+      "script": "Заполните анкету, чтобы не было ошибок.",
+      "cue": "Fill in the form so that there are no mistakes."
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "Ya prishyól, chtóby pomóch' vam.",
+      "script": "Я пришёл, чтобы помочь вам.",
+      "cue": "I have come to help you."
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "Dobáv'te sákhar i molokó v chay.",
+      "script": "Добавьте сахар и молоко в чай.",
+      "cue": "Add sugar and milk to the tea."
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "Ne bespokóytes', ya uzhé idú.",
+      "script": "Не беспокойтесь, я уже иду.",
+      "cue": "Do not worry, I am coming already."
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "Voz'míte súmku i idíte naprávo.",
+      "script": "Возьмите сумку и идите направо.",
+      "cue": "Take the bag and go to the right."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

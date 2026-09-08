@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M5",
+  "title": "Disagreeing well",
+  "job": "Soften, hedge, save face",
+  "prerequisites": [
+    "L4-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "clause-neundeyo…",
+      "geulsseyo, + clause-(eu)l + geot + gatayo",
+      "V-(eu)lji + moreugesseoyo",
+      "joesonghajiman, + clause-neundeyo",
+      "N-i/ga + jom + V-(eu)l + geot + gatayo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-(neu)ndeyo LAYS DOWN A BACKGROUND AND STOPS. Joeundeyo is not it is good; it is it is good, but... with the but deleted, and the deletion is the politeness. No English punctuation renders it, so the literal line says it in words."
+    },
+    {
+      "tag": "delta",
+      "text": "jom eoryeoul geot gatayo IS A REFUSAL. It is not a difficulty rating and it leaves no opening. Heard as it might be a bit hard, so there is still a chance, it has been misread, and that misreading survives every correction about grammar."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH MARKS REFUSAL LEXICALLY: no, I cannot. Korean marks it by understatement plus an unfinished clause, and the same understatement in English would mean the opposite. The hedging words map one to one; the pragmatics do not."
+    },
+    {
+      "tag": "free",
+      "text": "TWO ENDINGS THAT LOOK ALIKE. -(eu)lji, uncertainty, is written attached: halji, galji, olji. L4-M6's -(eu)n ji, elapsed time, is a bound noun with a space in front of it. This module writes only the attached one."
+    },
+    {
+      "tag": "delta",
+      "text": "THIS ENDING IS NOT L1-M10's geureonde. The standalone connective sits between two finished sentences; the ending lives on a stem and finishes nothing. Same syllables, different word, and this module never writes the standalone one."
+    },
+    {
+      "tag": "free",
+      "text": "THE SHAPE OF THE ENDING FOLLOWS THE STEM. An adjective takes -(eu)ndeyo: joeundeyo, bappeundeyo. An action verb takes -neundeyo: ilhaneundeyo. isseoyo and eopseoyo go with the action verbs, which gives eomneundeyo."
+    },
+    {
+      "tag": "free",
+      "text": "geot gatayo IS L3-M3's, REUSED AND NOT REOPENED. On a future -(eu)l stem it guesses at what will happen, and the guess is what does the refusing. gatayo never appears on its own."
+    },
+    {
+      "tag": "free",
+      "text": "THE FLAT CONTRADICTION IS NOT TAUGHT HERE. L3-M3's teullyeoyo stays a pointer: this module exists because the flat contradiction is what NOT to say. No banmal, and no -(seu)pnida, which is L4-M7's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M5-S01",
+      "display": "I-geo-ga jeongmal joeundeyo...",
+      "script": "이거가 정말 좋은데요...",
+      "cue": "This one is really good, but...",
+      "literal": "this-thing-SUBJ really good-but-and-then-nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "joeundeyo",
+            "script": "좋은데요",
+            "cue": "it is good, but...",
+            "tag": "delta",
+            "forms": [
+              "joeundeyo"
+            ],
+            "note": "joayo with the trailing -(eu)ndeyo. It is not it is good; it is it is good, but... with the but left out, and leaving it out is the politeness."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "The praise is the hedge. A learner who hears only joeundeyo has heard a compliment and missed the objection that was never spoken.",
+      "sound": "i-GEO-ga JEONG-mal JO-eun-de-yo. The last syllable trails off and does not fall the way a finished sentence does.",
+      "variations": [
+        {
+          "display": "I-geo-ga jeongmal joeundeyo... Geunde jom bissayo.",
+          "script": "이거가 정말 좋은데요... 근데 좀 비싸요.",
+          "cue": "This one is really good, but it is a bit expensive.",
+          "changed": "the deleted half spoken out loud, which is blunter"
+        },
+        {
+          "display": "I-geo-neun jeongmal joeundeyo...",
+          "script": "이거는 정말 좋은데요...",
+          "cue": "This one is really good, but...",
+          "changed": "-neun instead of -ga, marking it as the topic"
+        }
+      ],
+      "mistake": {
+        "display": "I-geo-ga jeongmal joeunde.",
+        "script": "이거가 정말 좋은데.",
+        "why": "Dropping the -yo drops the politeness with it. The ending taught here is -(eu)ndeyo, and the yo is not optional anywhere in this course."
+      },
+      "usage": "Turning down a suggestion in a shop without saying no.",
+      "register": "neutral",
+      "mnemonic": "Praise, then silence."
+    },
+    {
+      "id": "L4-M5-S02",
+      "display": "Jigeum-eun jom bappeundeyo...",
+      "script": "지금은 좀 바쁜데요...",
+      "cue": "I am a bit busy right now, but...",
+      "literal": "now-TOP a-bit busy-but-and-then-nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bappeundeyo",
+            "script": "바쁜데요",
+            "cue": "I am busy, but...",
+            "tag": "delta",
+            "forms": [
+              "bappeundeyo"
+            ],
+            "note": "The same ending on bappayo, whose stem is bappeu-. Said with the voice trailing off, it declines an invitation without the word no ever appearing."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "jom is not a measure of how busy. It is the softener that makes the refusal polite, and removing it makes the same sentence a complaint.",
+      "sound": "JI-geu-meun JOM ba-PPEUN-de-yo. The double p is held, and the ending trails away.",
+      "variations": [
+        {
+          "display": "Jigeum-eun jom bappeundeyo... Naeil eottaeyo?",
+          "script": "지금은 좀 바쁜데요... 내일 어때요?",
+          "cue": "I am a bit busy right now, but how about tomorrow?",
+          "changed": "an alternative offered after the trailing clause"
+        },
+        {
+          "display": "Oneul-eun jom bappeundeyo...",
+          "script": "오늘은 좀 바쁜데요...",
+          "cue": "I am a bit busy today, but...",
+          "changed": "today rather than right now"
+        }
+      ],
+      "mistake": {
+        "display": "Jigeum-eun jom bappayo.",
+        "script": "지금은 좀 바빠요.",
+        "why": "Finished, this is a statement of fact and nothing follows from it. The trailing ending is what leaves the refusal unsaid and the other person's face intact."
+      },
+      "usage": "Deflecting a request at your desk.",
+      "register": "neutral",
+      "mnemonic": "Trail off and the no is understood."
+    },
+    {
+      "id": "L4-M5-S03",
+      "display": "Jeo-neun jigeum ilhaneundeyo...",
+      "script": "저는 지금 일하는데요...",
+      "cue": "I am working right now, but...",
+      "literal": "I-TOP now work-but-and-then-nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ilhaneundeyo",
+            "script": "일하는데요",
+            "cue": "I am working, but...",
+            "tag": "free",
+            "forms": [
+              "ilhaneundeyo"
+            ],
+            "note": "An ACTION verb takes -neundeyo, not -(eu)ndeyo: ilha- plus the ending. It lays down what you are doing and lets the listener draw the conclusion."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "The two shapes are not free variants. joeundeyo is an adjective's and ilhaneundeyo is an action verb's, and swapping them is the commonest slip in this module.",
+      "sound": "JEO-neun JI-geum IL-ha-neun-de-yo. ilha- runs together; the h is light between the vowels.",
+      "variations": [
+        {
+          "display": "Jeo-neun oneul ilhaneundeyo...",
+          "script": "저는 오늘 일하는데요...",
+          "cue": "I am working today, but...",
+          "changed": "today rather than right now"
+        },
+        {
+          "display": "Jeo-neun jigeum yeogi-eseo ilhaneundeyo...",
+          "script": "저는 지금 여기에서 일하는데요...",
+          "cue": "I am working here right now, but...",
+          "changed": "the place added in front of the ending"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun jigeum ilhaeundeyo.",
+        "script": "저는 지금 일해은데요.",
+        "why": "An action verb takes -neundeyo straight on the stem: ilha- plus the ending. The -(eu)ndeyo that gives joeundeyo belongs to adjectives."
+      },
+      "usage": "Fending off an interruption without refusing outright.",
+      "register": "neutral",
+      "mnemonic": "Adjectives take -ndeyo, actions take -neundeyo."
+    },
+    {
+      "id": "L4-M5-S04",
+      "display": "Geulsseyo, bissal geot gatayo.",
+      "script": "글쎄요, 비쌀 것 같아요.",
+      "cue": "Well, I think it will be expensive.",
+      "literal": "well, expensive-will-be thing seems",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geulsseyo",
+            "script": "글쎄요",
+            "cue": "well · I am not sure",
+            "tag": "free",
+            "forms": [
+              "geulsseyo"
+            ],
+            "note": "The non-committal opener. It commits to nothing and buys the sentence after it, and it is a whole turn on its own when nothing else is safe to say."
+          },
+          {
+            "display": "bissal",
+            "script": "비쌀",
+            "cue": "will be expensive",
+            "tag": "free",
+            "forms": [
+              "bissal"
+            ],
+            "note": "bissayo under the -(eu)l modifier, waiting for L3-M3's geot gatayo. The future modifier is what turns a description into a guess."
+          }
+        ],
+        "rules": [
+          6,
+          2
+        ]
+      },
+      "trap": "geulsseyo is not yes and not no. Answered with it, a proposal has been declined politely, and a learner who hears maybe has misheard.",
+      "sound": "geul-SSE-yo, bi-SSAL GEOT GA-ta-yo. The ss of geulsseyo is tensed and held.",
+      "variations": [
+        {
+          "display": "Geulsseyo, bissal geot gatayo. Dareun geo-reul boseyo.",
+          "script": "글쎄요, 비쌀 것 같아요. 다른 거를 보세요.",
+          "cue": "Well, I think it will be expensive. Have a look at another one.",
+          "changed": "a suggestion added after the hedge"
+        },
+        {
+          "display": "Geulsseyo, jom bissal geot gatayo.",
+          "script": "글쎄요, 좀 비쌀 것 같아요.",
+          "cue": "Well, I think it will be a bit expensive.",
+          "changed": "jom added, which softens it further"
+        }
+      ],
+      "mistake": {
+        "display": "Geulsseyo, bissal gatayo.",
+        "script": "글쎄요, 비쌀 같아요.",
+        "why": "geot cannot be dropped. L3-M3's frame is the two-word geot gatayo, and gatayo never stands on its own after a modifier."
+      },
+      "usage": "Answering a price question you would rather not answer.",
+      "register": "neutral",
+      "mnemonic": "geulsseyo buys time and gives ground."
+    },
+    {
+      "id": "L4-M5-S05",
+      "display": "Geulsseyo, naeil-eun bi-ga ol geot gatayo.",
+      "script": "글쎄요, 내일은 비가 올 것 같아요.",
+      "cue": "Well, I think it will rain tomorrow.",
+      "literal": "well, tomorrow-TOP rain-SUBJ come-will thing seems",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ol",
+            "script": "올",
+            "cue": "will come",
+            "tag": "free",
+            "forms": [
+              "ol"
+            ],
+            "note": "The -(eu)l modifier of wayo. With bi-ga in front and geot gatayo after it, this is the ordinary way to talk about weather you cannot vouch for."
+          }
+        ],
+        "rules": [
+          6,
+          2
+        ]
+      },
+      "trap": "Used against somebody's plan, this is a disagreement and not a forecast. The weather is the reason the plan will not happen.",
+      "sound": "geul-SSE-yo, NAE-i-reun BI-ga OL GEOT GA-ta-yo. ol is one short beat with a clear l.",
+      "variations": [
+        {
+          "display": "Geulsseyo, naeil-eun bi-ga an ol geot gatayo.",
+          "script": "글쎄요, 내일은 비가 안 올 것 같아요.",
+          "cue": "Well, I think it will not rain tomorrow.",
+          "changed": "the guess turned negative"
+        },
+        {
+          "display": "Geulsseyo, oneul-eun bi-ga ol geot gatayo.",
+          "script": "글쎄요, 오늘은 비가 올 것 같아요.",
+          "cue": "Well, I think it will rain today.",
+          "changed": "today rather than tomorrow"
+        }
+      ],
+      "mistake": {
+        "display": "Geulsseyo, naeil-eun bi-ga wayo.",
+        "script": "글쎄요, 내일은 비가 와요.",
+        "why": "wayo asserts it. The point of the hedge is that the speaker is not asserting, and ol geot gatayo leaves the other person room to disagree."
+      },
+      "usage": "Casting doubt on an outdoor plan without vetoing it.",
+      "register": "neutral",
+      "mnemonic": "Guess at the weather, not at the person."
+    },
+    {
+      "id": "L4-M5-S06",
+      "display": "Naeil galji moreugesseoyo.",
+      "script": "내일 갈지 모르겠어요.",
+      "cue": "I could not say whether I will go tomorrow.",
+      "literal": "tomorrow go-whether not-know",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "galji",
+            "script": "갈지",
+            "cue": "whether I will go",
+            "tag": "delta",
+            "forms": [
+              "galji",
+              "halji"
+            ],
+            "note": "-(eu)lji written attached, one word, on any stem: galji, halji. L4-M6's elapsed-time ji is a separate bound noun with a space, and the two are never spelled alike."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "moreugesseoyo after -(eu)lji is a hedge, not an admission. It declines to commit; it does not confess ignorance.",
+      "sound": "NAE-il GAL-ji mo-reu-GE-sseo-yo. galji is one word with no pause inside it.",
+      "variations": [
+        {
+          "display": "Naeil halji moreugesseoyo.",
+          "script": "내일 할지 모르겠어요.",
+          "cue": "I could not say whether I will do it tomorrow.",
+          "changed": "the same ending on hada"
+        },
+        {
+          "display": "Oneul galji moreugesseoyo.",
+          "script": "오늘 갈지 모르겠어요.",
+          "cue": "I could not say whether I will go today.",
+          "changed": "today rather than tomorrow"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil gal ji moreugesseoyo.",
+        "script": "내일 갈 지 모르겠어요.",
+        "why": "Written with a space, ji is L4-M6's bound noun for elapsed time. The uncertainty ending is one word: galji."
+      },
+      "usage": "Keeping an invitation open without accepting it.",
+      "register": "neutral",
+      "mnemonic": "No space, no clock."
+    },
+    {
+      "id": "L4-M5-S07",
+      "display": "Chingu-ga olji moreugesseoyo.",
+      "script": "친구가 올지 모르겠어요.",
+      "cue": "I could not say whether my friend will come.",
+      "literal": "friend-SUBJ come-whether not-know",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "olji",
+            "script": "올지",
+            "cue": "whether he will come",
+            "tag": "free",
+            "forms": [
+              "olji"
+            ],
+            "note": "The same ending on wayo. Followed by moreugesseoyo it is I could not say, which is a hedge about somebody else and never a complaint about them."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "The subject here is somebody else, and that is allowed: -(eu)lji is about the not-knowing, so it can be used of anyone.",
+      "sound": "CHIN-gu-ga OL-ji mo-reu-GE-sseo-yo. olji keeps its l before the j.",
+      "variations": [
+        {
+          "display": "Uisa-ga olji moreugesseoyo.",
+          "script": "의사가 올지 모르겠어요.",
+          "cue": "I could not say whether the doctor will come.",
+          "changed": "the doctor rather than a friend"
+        },
+        {
+          "display": "Chingu-ga naeil olji moreugesseoyo.",
+          "script": "친구가 내일 올지 모르겠어요.",
+          "cue": "I could not say whether my friend will come tomorrow.",
+          "changed": "the day added"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga omyeon moreugesseoyo.",
+        "script": "친구가 오면 모르겠어요.",
+        "why": "omyeon is L3-M4's if, which builds a condition. -(eu)lji makes the whole clause the thing that is not known: olji moreugesseoyo."
+      },
+      "usage": "Answering for someone else without promising anything.",
+      "register": "neutral",
+      "mnemonic": "-(eu)lji hedges, -(eu)myeon conditions."
+    },
+    {
+      "id": "L4-M5-S08",
+      "display": "Joesonghajiman, jigeum-eun sigan-i eomneundeyo...",
+      "script": "죄송하지만, 지금은 시간이 없는데요...",
+      "cue": "I am sorry, but there is no time right now, so...",
+      "literal": "sorry-but, now-TOP time-SUBJ not-exist-but-and-then-nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eomneundeyo",
+            "script": "없는데요",
+            "cue": "there is none, but...",
+            "tag": "interference",
+            "forms": [
+              "eomneundeyo"
+            ],
+            "note": "eopseoyo takes the action-verb ending -neundeyo, and the p becomes m in front of the n. This course writes what is said, as it writes masinneun."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "joesonghajiman opens the refusal and the trailing ending closes it without a verb. The two together are the whole no, and neither one says it.",
+      "sound": "joe-SONG-ha-ji-man, JI-geu-meun SI-ga-ni EOM-neun-de-yo. eops- is heard as eom before the n.",
+      "variations": [
+        {
+          "display": "Joesonghajiman, oneul-eun sigan-i eomneundeyo...",
+          "script": "죄송하지만, 오늘은 시간이 없는데요...",
+          "cue": "I am sorry, but there is no time today, so...",
+          "changed": "today rather than right now"
+        },
+        {
+          "display": "Jigeum-eun sigan-i eomneundeyo...",
+          "script": "지금은 시간이 없는데요...",
+          "cue": "There is no time right now, so...",
+          "changed": "the apology dropped, which is less deferential"
+        }
+      ],
+      "mistake": {
+        "display": "Joesonghajiman, jigeum-eun sigan-i eopneundeyo.",
+        "script": "죄송하지만, 지금은 시간이 없는데요.",
+        "why": "The p of eops- becomes m in front of the n, and this course romanizes what is said: eomneundeyo, on the same rule that gives masinneun."
+      },
+      "usage": "Declining a request from someone senior.",
+      "register": "formal",
+      "mnemonic": "eops- meets n and comes out eom."
+    },
+    {
+      "id": "L4-M5-S09",
+      "display": "Joesonghajiman, jeo-neun dareun geo-ga deo joeundeyo...",
+      "script": "죄송하지만, 저는 다른 거가 더 좋은데요...",
+      "cue": "I am sorry, but I prefer a different one, so...",
+      "literal": "sorry-but, I-TOP different thing-SUBJ more good-but-and-then-nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dareun",
+            "script": "다른",
+            "cue": "different · another",
+            "tag": "free",
+            "forms": [
+              "dareun"
+            ],
+            "note": "The modifier for another one of the same kind. In front of geo it offers an alternative, which is how a disagreement here stays an offer rather than a rejection."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "Offering the alternative is the disagreement. Naming what is wrong with the first one would be the flat contradiction this module exists to avoid.",
+      "sound": "joe-SONG-ha-ji-man, JEO-neun DA-reun GEO-ga DEO JO-eun-de-yo.",
+      "variations": [
+        {
+          "display": "Joesonghajiman, dareun geo-ga deo joeundeyo...",
+          "script": "죄송하지만, 다른 거가 더 좋은데요...",
+          "cue": "I am sorry, but a different one is better, so...",
+          "changed": "the speaker left out, which is the ordinary shape"
+        },
+        {
+          "display": "Joesonghajiman, jeo-neun jom dareun geo-ga joeundeyo...",
+          "script": "죄송하지만, 저는 좀 다른 거가 좋은데요...",
+          "cue": "I am sorry, but I like a somewhat different one, so...",
+          "changed": "jom in front, which softens it further"
+        }
+      ],
+      "mistake": {
+        "display": "Joesonghajiman, jeo-neun dareun geo-ga deo joayo.",
+        "script": "죄송하지만, 저는 다른 거가 더 좋아요.",
+        "why": "Finished with joayo it is a flat statement of preference. The trailing joeundeyo leaves the disagreement unspoken, which is what joesonghajiman promised."
+      },
+      "usage": "Disagreeing with a recommendation from a shop assistant.",
+      "register": "formal",
+      "mnemonic": "Offer the other one; never name the fault."
+    },
+    {
+      "id": "L4-M5-S10",
+      "display": "Sigan-i jom eoryeoul geot gatayo.",
+      "script": "시간이 좀 어려울 것 같아요.",
+      "cue": "The timing would be a bit difficult. (No.)",
+      "literal": "time-SUBJ a-bit difficult-will-be thing seems",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoryeoul",
+            "script": "어려울",
+            "cue": "will be difficult",
+            "tag": "delta",
+            "forms": [
+              "eoryeoul",
+              "eoryeoweoyo",
+              "eoryeoun"
+            ],
+            "note": "The -(eu)l modifier of eoryeoweoyo. jom eoryeoul geot gatayo is a refusal; the present eoryeoun would only rate how hard the thing is."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "This is the module. It is a no, it leaves no opening, and a learner who reads it as there is still a chance has made the most expensive mistake in the course.",
+      "sound": "SI-ga-ni JOM eo-RYEO-ul GEOT GA-ta-yo. The whole sentence stays low and even; no word is pushed.",
+      "variations": [
+        {
+          "display": "Naeil-eun jom eoryeoul geot gatayo.",
+          "script": "내일은 좀 어려울 것 같아요.",
+          "cue": "Tomorrow would be a bit difficult. (No.)",
+          "changed": "the day refused rather than the timing"
+        },
+        {
+          "display": "Sigan-i jom eoryeoweoyo.",
+          "script": "시간이 좀 어려워요.",
+          "cue": "The timing is a bit difficult.",
+          "changed": "said outright, which is heard as blunter than the hedge"
+        }
+      ],
+      "mistake": {
+        "display": "Sigan-i jom eoryeoun geot gatayo.",
+        "script": "시간이 좀 어려운 것 같아요.",
+        "why": "eoryeoun is the present modifier and reads as a description of how hard something is. The refusal needs the future -(eu)l: eoryeoul geot gatayo."
+      },
+      "usage": "Turning down a meeting time you cannot make.",
+      "register": "neutral",
+      "mnemonic": "A bit difficult means no."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M5-C01",
+      "display": "I-geo-ga jeongmal joeundeyo...",
+      "script": "이거가 정말 좋은데요...",
+      "cue": "This one is really good, but..."
+    },
+    {
+      "id": "L4-M5-C02",
+      "display": "Jigeum-eun jom bappeundeyo...",
+      "script": "지금은 좀 바쁜데요...",
+      "cue": "I am a bit busy right now, but..."
+    },
+    {
+      "id": "L4-M5-C03",
+      "display": "Jeo-neun jigeum ilhaneundeyo...",
+      "script": "저는 지금 일하는데요...",
+      "cue": "I am working right now, but..."
+    },
+    {
+      "id": "L4-M5-C04",
+      "display": "Geulsseyo, bissal geot gatayo.",
+      "script": "글쎄요, 비쌀 것 같아요.",
+      "cue": "Well, I think it will be expensive."
+    },
+    {
+      "id": "L4-M5-C05",
+      "display": "Geulsseyo, naeil-eun bi-ga ol geot gatayo.",
+      "script": "글쎄요, 내일은 비가 올 것 같아요.",
+      "cue": "Well, I think it will rain tomorrow."
+    },
+    {
+      "id": "L4-M5-C06",
+      "display": "Naeil galji moreugesseoyo.",
+      "script": "내일 갈지 모르겠어요.",
+      "cue": "I could not say whether I will go tomorrow."
+    },
+    {
+      "id": "L4-M5-C07",
+      "display": "Chingu-ga olji moreugesseoyo.",
+      "script": "친구가 올지 모르겠어요.",
+      "cue": "I could not say whether my friend will come."
+    },
+    {
+      "id": "L4-M5-C08",
+      "display": "Joesonghajiman, jigeum-eun sigan-i eomneundeyo...",
+      "script": "죄송하지만, 지금은 시간이 없는데요...",
+      "cue": "I am sorry, but there is no time right now, so..."
+    },
+    {
+      "id": "L4-M5-C09",
+      "display": "Joesonghajiman, jeo-neun dareun geo-ga deo joeundeyo...",
+      "script": "죄송하지만, 저는 다른 거가 더 좋은데요...",
+      "cue": "I am sorry, but I prefer a different one, so..."
+    },
+    {
+      "id": "L4-M5-C10",
+      "display": "Sigan-i jom eoryeoul geot gatayo.",
+      "script": "시간이 좀 어려울 것 같아요.",
+      "cue": "The timing would be a bit difficult. (No.)"
+    },
+    {
+      "id": "L4-M5-C11",
+      "display": "Geulsseyo, jom eoryeoul geot gatayo.",
+      "script": "글쎄요, 좀 어려울 것 같아요.",
+      "cue": "Well, it would be a bit difficult. (No.)"
+    },
+    {
+      "id": "L4-M5-C12",
+      "display": "Joesonghajiman, jigeum-eun jom bappeundeyo...",
+      "script": "죄송하지만, 지금은 좀 바쁜데요...",
+      "cue": "I am sorry, but I am a bit busy right now, so..."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

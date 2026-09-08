@@ -1,0 +1,531 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M9",
+  "title": "Places and journeys",
+  "job": "A trip told in full, with directions inside it",
+  "prerequisites": ["L4-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present", "Perfekt", "Präteritum"],
+    "allowedPatterns": [
+      "Wir sind nach + <Stadt> + gefahren",
+      "Wohin + fahren Sie + ?",
+      "Woher + kommt + der Zug + ?",
+      "Der Zug fährt um acht ab",
+      "Von dort + sind wir + zu Fuß + weitergegangen"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "DIRECTION IS MARKED ON THE QUESTION WORD, and English has no category for it. One English where does three jobs; German splits them. wo asks about a static place (L1-M7's), wohin asks where TO, woher asks where FROM. They are three separate words to learn, not variants of one — and a learner who asks Wo gehen Sie? has asked a question German does not ask."
+    },
+    {
+      "tag": "delta",
+      "text": "hin POINTS AWAY FROM THE SPEAKER, her POINTS TOWARDS THEM. They attach to the front of a question word — wohin, woher — and to the back of a place word — dorthin, hierher. In speech they can also break off and go to the end of the clause: Wo wollen Sie hin? is the same question as Wohin wollen Sie? Getting hin and her the right way round is what makes a journey sentence sound German."
+    },
+    {
+      "tag": "delta",
+      "text": "GERMAN HAS THREE WAYS TO SAY to AND THEY ARE NOT INTERCHANGEABLE. nach for countries, cities and Hause. zu for a person, a shop, a named building. in plus the ACCUSATIVE for going INTO something — ins Kino, in die Stadt. English has one word for all three, so an anglophone picks by feel and is wrong about a third of the time. All three German words are already yours from lower rungs — nach is L2-M4's, in is L1-M1's, and L1-M8's zu is the too of zu teuer rather than a preposition at all — so this is a choice to make, not a word to learn."
+    },
+    {
+      "tag": "delta",
+      "text": "THE VEHICLE TAKES mit AND THE DATIVE: mit dem Bus, mit dem Zug, mit dem Auto. Walking takes no article at all — zu Fuß — and it is a fixed phrase rather than a pattern. English travel by has one preposition for both, and German has one preposition and one bare noun."
+    },
+    {
+      "tag": "delta",
+      "text": "A SEPARABLE VERB STRANDS ITS PREFIX AND SOMEBODY HAS TO OWN IT. abfahren splits — Der Zug fährt um acht ab — and the ab left at the end is a word in its own right. L3-M1 wrote such verbs and did not open the prefix; this module does, because a timetable sentence cannot avoid it. The same ab is also the plain preposition of ab Montag, from Monday on: one word, two seats, exactly as L1-M4's auf works."
+    },
+    {
+      "tag": "free",
+      "text": "THE DIRECTIONS THEMSELVES ARE ALREADY YOURS. links, rechts, geradeaus, Ecke, Ampel, einsteigen, aussteigen, ankommen and abfahren all belong to L2-M4, and the two-way prepositions with their accusative-or-dative rule belong there too. This module does not restate any of it — it is where that rule finally pays, inside one continuous account instead of one exchange at a corner."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M9-S01",
+      "display": "Wohin fahren Sie? Wir machen einen kleinen Ausflug",
+      "cue": "Where are you going? We are taking a short trip",
+      "literal": "Where-to travel you? We make a small excursion",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wohin",
+            "cue": "where to",
+            "tag": "delta",
+            "forms": ["wohin"],
+            "note": "The question word for a destination. wo asks where something IS; wohin asks where it is going, and the two are never swapped."
+          },
+          {
+            "display": "Ausflug",
+            "cue": "outing, day trip",
+            "tag": "free",
+            "forms": ["Ausflug", "Ausflüge"],
+            "note": "Masculine: der Ausflug. Short and for pleasure — a Reise is longer, and you MAKE an Ausflug: einen Ausflug machen."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English asks where are you going with the same where as where are you. German cannot: a destination needs wohin, and wo here would be a different question.",
+      "sound": "voh-HIN FAA-run zee? veer MAKH-un EYE-nun KLY-nun OWS-flook.",
+      "variations": [
+        {
+          "display": "Wo wollen Sie hin? Wir machen einen kleinen Ausflug",
+          "cue": "Where do you want to go? We are taking a short trip",
+          "changed": "wohin split in two: wo stays in front and hin goes to the end. This is what people actually say."
+        }
+      ],
+      "mistake": {
+        "display": "Wo fahren Sie? Wir machen einen kleinen Ausflug",
+        "why": "Wo fahren Sie? asks where the driving is happening, which is not a question anybody asks. A destination takes wohin."
+      },
+      "usage": "Making conversation with somebody who is clearly on their way somewhere.",
+      "register": "formal",
+      "mnemonic": "wo stands still; wohin sets off."
+    },
+    {
+      "id": "L4-M9-S02",
+      "display": "Woher kommt der Zug, und in welche Richtung fährt er?",
+      "cue": "Where does the train come from, and which direction does it go in?",
+      "literal": "Where-from comes the train, and in which direction travels it?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "woher",
+            "cue": "where from",
+            "tag": "delta",
+            "forms": ["woher"],
+            "note": "The origin question, and it swallows the from: Woher kommen Sie? never takes a von in front of it."
+          },
+          {
+            "display": "Richtung",
+            "cue": "direction",
+            "tag": "free",
+            "forms": ["Richtung"],
+            "note": "Feminine, like every noun in -ung: die Richtung. in welche Richtung takes the accusative, because it is a direction."
+          },
+          {
+            "display": "fährt",
+            "cue": "goes, travels (he/she/it)",
+            "tag": "delta",
+            "forms": ["fährt"],
+            "note": "The third person of L1-M6's fahren, and the a takes an umlaut: ich fahre but er fährt. Same vowel change as schlafen and tragen."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Woher already means from where, so von woher is one from too many. The preposition is inside the word.",
+      "sound": "voh-HAIR komt dair tsook, oont in VEL-khuh RIKH-toong fairt air?",
+      "variations": [
+        {
+          "display": "Woher kommen Sie? Und in welche Richtung gehen Sie?",
+          "cue": "Where do you come from? And which direction are you going in?",
+          "changed": "The same two questions asked of a person instead of a train; woher does not change its shape for either."
+        }
+      ],
+      "mistake": {
+        "display": "Von woher kommt der Zug, und in welche Richtung fährt er?",
+        "why": "woher is already where-from. Adding von in front of it doubles the preposition, which is the English from where carried straight across."
+      },
+      "usage": "At a platform, working out whether this is the right train.",
+      "register": "formal",
+      "mnemonic": "woher brings the from with it."
+    },
+    {
+      "id": "L4-M9-S03",
+      "display": "Der Zug fährt um acht ab und kommt um zehn an",
+      "cue": "The train leaves at eight and arrives at ten",
+      "literal": "The train travels at eight off and comes at ten on",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ab",
+            "cue": "off, away (prefix); from (a time onwards)",
+            "tag": "delta",
+            "forms": ["ab"],
+            "note": "Two seats, one word. It is the stranded prefix of abfahren — fährt … ab — and the plain preposition of ab Montag, from Monday on."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "The prefix is at the far end of the clause, so the sentence only means leaves once you have reached ab. Reading German timetables means reading to the end.",
+      "sound": "dair tsook fairt oom akht AP oont komt oom TSAYN AN.",
+      "variations": [
+        {
+          "display": "Ab Montag fährt der Zug um neun",
+          "cue": "From Monday the train goes at nine",
+          "changed": "The other seat: ab as a plain preposition of time, in first position, with no verb to be a prefix of."
+        }
+      ],
+      "mistake": {
+        "display": "Der Zug abfährt um acht und ankommt um zehn",
+        "why": "In a main clause a separable verb splits: the stem takes second position and the prefix goes last. Keeping it whole is what a subordinate clause does."
+      },
+      "usage": "Reading a departure board out loud to somebody.",
+      "register": "neutral",
+      "mnemonic": "The prefix waits at the end of the sentence, like the guard on the platform."
+    },
+    {
+      "id": "L4-M9-S04",
+      "display": "Wo wollen Sie hin? Kommen Sie bitte her!",
+      "cue": "Where do you want to go? Come here, please!",
+      "literal": "Where want you to? Come you please hither!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hin",
+            "cue": "there, away (direction away from the speaker)",
+            "tag": "delta",
+            "forms": ["hin", "dorthin"],
+            "note": "Points away from whoever is speaking. It rides on the front of wohin or the back of dort — dorthin — or stands at the end of its own clause."
+          },
+          {
+            "display": "her",
+            "cue": "here, this way (direction towards the speaker)",
+            "tag": "delta",
+            "forms": ["her", "hierher"],
+            "note": "The mirror of hin: towards the speaker. hierher is to this spot, and Kommen Sie her is the whole of come here."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "English here and there say where something is. hin and her say which way it is moving, and neither one names a place at all.",
+      "sound": "voh VOL-un zee HIN? KOM-un zee BIT-uh HAIR.",
+      "variations": [
+        {
+          "display": "Wollen Sie dorthin? Nein, ich möchte hierher",
+          "cue": "Do you want to go there? No, I would like to come here",
+          "changed": "The bare adverbs joined to their place words: dort plus hin, hier plus her. The direction is the second half of each."
+        }
+      ],
+      "mistake": {
+        "display": "Wo wollen Sie her? Kommen Sie bitte hin!",
+        "why": "The two are the wrong way round. A destination takes hin and a summons towards the speaker takes her — swapping them reverses the journey."
+      },
+      "usage": "Sorting out, at a busy corner, who is going which way.",
+      "register": "formal",
+      "mnemonic": "hin goes hence; her comes here."
+    },
+    {
+      "id": "L4-M9-S05",
+      "display": "Wir fahren mit dem Bus und gehen dann zu Fuß weiter",
+      "cue": "We are going by bus and then carrying on on foot",
+      "literal": "We travel with the bus and go then to foot further",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zu Fuß",
+            "cue": "on foot, walking",
+            "tag": "delta",
+            "forms": ["zu Fuß"],
+            "note": "Fixed, and it takes no article at all: zu Fuß gehen. Every other means of travel takes mit plus the dative — mit dem Bus."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English by covers both halves of this sentence — by bus, on foot. German uses mit plus a dative for one and a bare two-word phrase for the other.",
+      "sound": "veer FAA-run mit daym boos oont GAY-un dan tsoo FOOS VY-ter.",
+      "variations": [
+        {
+          "display": "Wir fahren mit dem Zug und gehen dann zu Fuß weiter",
+          "cue": "We are going by train and then carrying on on foot",
+          "changed": "Bus becomes Zug and the dative dem does not move: the vehicle changes, the frame does not."
+        }
+      ],
+      "mistake": {
+        "display": "Wir fahren mit dem Bus und gehen dann zu dem Fuß weiter",
+        "why": "zu Fuß is frozen and takes no article. Expanding zu into zu dem turns a set phrase into a sentence about walking towards a foot."
+      },
+      "usage": "Explaining how you plan to cover the last part of a journey.",
+      "register": "neutral",
+      "mnemonic": "The bus takes a dative; the feet take nothing."
+    },
+    {
+      "id": "L4-M9-S06",
+      "display": "In Berlin müssen Sie umsteigen und weiter nach München fahren",
+      "cue": "In Berlin you have to change and travel on to Munich",
+      "literal": "In Berlin must you change and further to Munich travel",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "umsteigen",
+            "cue": "to change (trains, buses)",
+            "tag": "free",
+            "forms": ["umsteigen", "steigen", "umgestiegen"],
+            "note": "The third of L2-M4's steigen family: einsteigen on, aussteigen off, umsteigen across. Split, the bare stem stands alone: Wir steigen um."
+          },
+          {
+            "display": "weiter",
+            "cue": "on, further",
+            "tag": "free",
+            "forms": ["weiter"],
+            "note": "Carrying on with what you were doing: weiter fahren, weiter gehen. It goes in front of the verb it extends."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "nach München, not zu München. A city always takes nach; zu is for a person or a named building.",
+      "sound": "in ber-LEEN MUE-sun zee OOM-shty-gun oont VY-ter naakh MUEN-khun FAA-run.",
+      "variations": [
+        {
+          "display": "In Berlin steigen wir um und fahren weiter nach München",
+          "cue": "In Berlin we change and travel on to Munich",
+          "changed": "Without the modal, umsteigen splits: steigen second, um at the end of its clause."
+        }
+      ],
+      "mistake": {
+        "display": "In Berlin müssen Sie umsteigen und weiter zu München fahren",
+        "why": "zu is for a person, a shop or a named building. Cities and countries take nach, and München is a city."
+      },
+      "usage": "Passing on what a ticket office just told you.",
+      "register": "formal",
+      "mnemonic": "nach a place on the map, zu a place with a door."
+    },
+    {
+      "id": "L4-M9-S07",
+      "display": "Wir waren lange unterwegs und kamen erst spät zurück",
+      "cue": "We were on the road a long time and only got back late",
+      "literal": "We were long on-the-way and came only late back",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "unterwegs",
+            "cue": "on the way, on the road, out and about",
+            "tag": "free",
+            "forms": ["unterwegs"],
+            "note": "One word, and it never takes an article. It covers the whole of being between two places, however you are travelling."
+          },
+          {
+            "display": "zurück",
+            "cue": "back",
+            "tag": "free",
+            "forms": ["zurück"],
+            "note": "Direction, not place: zurück is the way back. It goes at the end of the clause, where a separable prefix would."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "erst here is L4-M1's not until, not first. kamen erst spät zurück says we did not get back until late, and there is no other event it is first of.",
+      "sound": "veer VAA-run LANG-uh oon-ter-VAYKS oont KAA-mun airst shpayt tsoo-RUEK.",
+      "variations": [
+        {
+          "display": "Wir sind lange unterwegs gewesen und kamen spät zurück",
+          "cue": "We were on the road a long time and got back late",
+          "changed": "waren becomes the spoken Perfekt sind … gewesen; the Präteritum kamen stays, because a written account mixes both."
+        }
+      ],
+      "mistake": {
+        "display": "Wir waren lange unterwegs und kamen zurück erst spät",
+        "why": "zurück closes the clause, so nothing follows it. Time and manner go in front of it, exactly as they go in front of a separable prefix."
+      },
+      "usage": "Explaining a late arrival the next morning.",
+      "register": "neutral",
+      "mnemonic": "unterwegs is between; zurück is the end of the line."
+    },
+    {
+      "id": "L4-M9-S08",
+      "display": "Die Reise ging über eine Brücke und einen kleinen Fluss",
+      "cue": "The journey went over a bridge and a small river",
+      "literal": "The journey went over a bridge and a small river",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Reise",
+            "cue": "journey, trip",
+            "tag": "free",
+            "forms": ["Reise", "Reisen"],
+            "note": "Feminine: die Reise. The long one — a holiday or a crossing — where an Ausflug is out and back in a day."
+          },
+          {
+            "display": "Brücke",
+            "cue": "bridge",
+            "tag": "free",
+            "forms": ["Brücke", "Brücken"],
+            "note": "Feminine: die Brücke. über eine Brücke is accusative, because crossing it is a direction, not a place."
+          },
+          {
+            "display": "Fluss",
+            "cue": "river",
+            "tag": "free",
+            "forms": ["Fluss", "Flüsse"],
+            "note": "Masculine: der Fluss, with a short u and the ss that a short vowel demands. The plural takes the umlaut: die Flüsse."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "über takes the accusative here because the journey crosses the bridge. Standing on it would be über der Brücke, and only the case says which.",
+      "sound": "dee RY-zuh ging UE-ber EYE-nuh BRUE-kuh oont EYE-nun KLY-nun FLUS.",
+      "variations": [
+        {
+          "display": "Die Reise ging über einen Berg und einen kleinen Fluss",
+          "cue": "The journey went over a mountain and a small river",
+          "changed": "Brücke becomes Berg, so the article changes with the gender: eine Brücke against einen Berg."
+        }
+      ],
+      "mistake": {
+        "display": "Die Reise ging über einer Brücke und einem kleinen Fluss",
+        "why": "Dative would place the journey on top of the bridge without moving. Crossing is a direction, so über takes the accusative."
+      },
+      "usage": "Recounting the shape of a route to somebody who does not know it.",
+      "register": "neutral",
+      "mnemonic": "Crossing takes the accusative; standing takes the dative."
+    },
+    {
+      "id": "L4-M9-S09",
+      "display": "Von dort sind wir zu Fuß auf den Berg gegangen",
+      "cue": "From there we walked up the mountain",
+      "literal": "From there are we to foot onto the mountain gone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dort",
+            "cue": "there (a place away from both of us)",
+            "tag": "free",
+            "forms": ["dort"],
+            "note": "The far there, where L2-M7's da is the near or vaguer one. Add hin for the direction: dorthin."
+          },
+          {
+            "display": "Berg",
+            "cue": "mountain, hill",
+            "tag": "free",
+            "forms": ["Berg", "Berge", "Bergen"],
+            "note": "Masculine: der Berg. Going up one is auf den Berg — accusative, because it is a direction, and the dative would be standing on it."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "gehen with sein in the Perfekt is L2-M10's rule and it is still true here: any movement from one place to another takes sind, never haben.",
+      "sound": "fon DORT zint veer tsoo FOOS owf dayn bairk guh-GANG-un.",
+      "variations": [
+        {
+          "display": "Von dort sind wir zu Fuß in die Stadt gegangen",
+          "cue": "From there we walked into town",
+          "changed": "auf den Berg becomes in die Stadt: a different two-way preposition, the same accusative, because both are destinations."
+        }
+      ],
+      "mistake": {
+        "display": "Von dort haben wir zu Fuß auf den Berg gegangen",
+        "why": "gehen is a verb of movement, so its Perfekt takes sein: sind gegangen. haben here is the English have walked translated word for word."
+      },
+      "usage": "The middle of a story about a day out.",
+      "register": "neutral",
+      "mnemonic": "dort is over there; dorthin is on the way over there."
+    },
+    {
+      "id": "L4-M9-S10",
+      "display": "Haben Sie eine Karte? Ich finde den Weg zum Meer nicht",
+      "cue": "Do you have a map? I cannot find the way to the sea",
+      "literal": "Have you a map? I find the way to-the sea not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Karte",
+            "cue": "map, card, ticket",
+            "tag": "free",
+            "forms": ["Karte", "Karten"],
+            "note": "Feminine: die Karte. One word for a map, a postcard and a ticket — the context does all the work."
+          },
+          {
+            "display": "Weg",
+            "cue": "way, path, route",
+            "tag": "free",
+            "forms": ["Weg", "Wege"],
+            "note": "Masculine: der Weg, with a long e. Do not read it as the adverb weg (away), which has a short one."
+          },
+          {
+            "display": "Meer",
+            "cue": "sea",
+            "tag": "free",
+            "forms": ["Meer"],
+            "note": "Neuter: das Meer, and ans Meer fahren is what a German holiday does. See is a lake, and it is a different word."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "German says I find the way not where English says I cannot find it. The negation alone carries the failure — no modal is needed.",
+      "sound": "HAA-bun zee EYE-nuh KAR-tuh? ikh FIN-duh dayn vayk tsoom MAIR nikht.",
+      "variations": [
+        {
+          "display": "Haben Sie eine Karte? Ich finde den Weg zum Bahnhof nicht",
+          "cue": "Do you have a map? I cannot find the way to the station",
+          "changed": "Meer becomes Bahnhof: both are neuter or masculine with dem, so zum covers them both unchanged."
+        }
+      ],
+      "mistake": {
+        "display": "Haben Sie eine Karte? Ich kann den Weg zum Meer nicht finden",
+        "why": "Not wrong, but heavier than German needs. Ich finde … nicht is what a person actually says; the modal is the English cannot showing through."
+      },
+      "usage": "Asking a stranger for help when you are already lost.",
+      "register": "formal",
+      "mnemonic": "der Weg is long; weg is gone."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M9-C01",
+      "display": "Wohin fahren Sie? Wir machen einen kleinen Ausflug",
+      "cue": "Where are you going? We are taking a short trip"
+    },
+    {
+      "id": "L4-M9-C02",
+      "display": "Woher kommt der Zug, und in welche Richtung fährt er?",
+      "cue": "Where does the train come from, and which direction does it go in?"
+    },
+    {
+      "id": "L4-M9-C03",
+      "display": "Der Zug fährt um acht ab und kommt um zehn an",
+      "cue": "The train leaves at eight and arrives at ten"
+    },
+    {
+      "id": "L4-M9-C04",
+      "display": "Wo wollen Sie hin? Kommen Sie bitte her!",
+      "cue": "Where do you want to go? Come here, please!"
+    },
+    {
+      "id": "L4-M9-C05",
+      "display": "Wir fahren mit dem Bus und gehen dann zu Fuß weiter",
+      "cue": "We are going by bus and then carrying on on foot"
+    },
+    {
+      "id": "L4-M9-C06",
+      "display": "In Berlin müssen Sie umsteigen und weiter nach München fahren",
+      "cue": "In Berlin you have to change and travel on to Munich"
+    },
+    {
+      "id": "L4-M9-C07",
+      "display": "Wir waren lange unterwegs und kamen erst spät zurück",
+      "cue": "We were on the road a long time and only got back late"
+    },
+    {
+      "id": "L4-M9-C08",
+      "display": "Die Reise ging über eine Brücke und einen kleinen Fluss",
+      "cue": "The journey went over a bridge and a small river"
+    },
+    {
+      "id": "L4-M9-C09",
+      "display": "Von dort sind wir zu Fuß auf den Berg gegangen",
+      "cue": "From there we walked up the mountain"
+    },
+    {
+      "id": "L4-M9-C10",
+      "display": "Haben Sie eine Karte? Ich finde den Weg zum Meer nicht",
+      "cue": "Do you have a map? I cannot find the way to the sea"
+    },
+    {
+      "id": "L4-M9-C11",
+      "display": "Ab Montag fährt der Zug schon um neun",
+      "cue": "From Monday the train already goes at nine"
+    },
+    {
+      "id": "L4-M9-C12",
+      "display": "Wir sind zu Fuß dorthin gegangen und mit dem Bus zurück",
+      "cue": "We walked there and came back by bus"
+    }
+  ],
+  "exitTest": { "generateCount": 2, "comprehendCount": 3 }
+}

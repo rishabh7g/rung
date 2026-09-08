@@ -1,0 +1,550 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M6",
+  "title": "Before and after",
+  "job": "Place two events against each other",
+  "prerequisites": ["L4-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present indicative, for the half that carries the frame and for a promise about tomorrow",
+      "passato prossimo, L1-M5's, wherever già or ancora sits inside it",
+      "the bare infinitive after prima di and the participle after dopo aver — the second finite verb Italian does not write",
+      "imperativo, L4-M1's, in the main clause of a prima di sentence"
+    ],
+    "allowedPatterns": [
+      "Prima di + V-inf + , + <clause>",
+      "Dopo aver + <participio> + , + <clause>",
+      "<clause> + finché non + <clause>",
+      "Ho già + <participio>",
+      "Non ho ancora + <participio>",
+      "Da quando + <clause> + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE TIME CLAUSE WITH NO SECOND VERB IN IT. When both halves of a sentence share one subject, Italian does not put a second finite verb in at all: prima di uscire, dopo aver mangiato — a preposition and then a verb in its dictionary form. This is the same economy L3-M3 already taught with penso di plus an infinitive, so a learner who recognises the trick from the opinion module is not meeting new grammar here, only a new preposition in front of it. In dopo aver, avere is clipped to aver in front of the participle, and the two words behave as a single block."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH PUTS AN -ING AFTER THE PREPOSITION AND ITALIAN PUTS THE INFINITIVE. Before leaving is prima di partire; after eating is dopo aver mangiato. prima di mangiando is not a sentence in any register, and the gerund itself (mangiando) is L5's business, not this module's. The rule is one line long: after prima di and after dopo aver, the verb is the form you would look up in a dictionary."
+    },
+    {
+      "tag": "delta",
+      "text": "ALREADY AND NOT YET SIT EXACTLY WHERE ENGLISH PUTS THEM — INSIDE THE COMPOUND PAST. già and ancora slot between the auxiliary and the participle: ho già mangiato, non ho ancora mangiato, matching I have already eaten and I have not yet eaten word for word. It is one of the cleanest one-to-one mappings in the whole level. The only thing to remember is that Italian cannot park già at the end the way English can park already, and that non ancora on its own is a complete answer."
+    },
+    {
+      "tag": "interference",
+      "text": "THE THREE UNTILS, AND THE non THAT NEGATES NOTHING. finché takes a CLAUSE (finché arrivo); fino a takes a NOUN, a time or a place (fino a mezzogiorno); durante takes a noun for a whole stretch. And finché non means the same as finché — the non is expletive and negates nothing at all, so Aspetto finché non arriva is I will wait until he arrives. No English speaker believes that without being told, which is why it is written down here."
+    },
+    {
+      "tag": "free",
+      "text": "SINCE SPLITS IN TWO AND ONLY ONE HALF IS TIME. da quando is the temporal since and it is L3-M7's row, re-used here rather than re-opened; the causal since was L4-M2's siccome and visto che. A learner who owns both will still reach for the wrong half, and the test is whether the clause after it answers when or why. Named here and deliberately shown nowhere: prima che plus the congiuntivo, which is the DIFFERENT-subject twin of prima di and waits for L5, and the trapassato, still deferred as it has been since L3 — in this module before-ness is carried by the preposition and never by a tense."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M6-S01",
+      "display": "Prima di uscire, spegni la luce",
+      "cue": "Before going out, turn off the light",
+      "literal": "Before of to-go-out, switch-off the light",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prima di",
+            "cue": "before (doing something)",
+            "tag": "delta",
+            "forms": ["prima di"],
+            "note": "A preposition, so the verb behind it is an infinitive and never a finite one. Both halves must share a subject, or Italian needs prima che instead."
+          },
+          {
+            "display": "spegni",
+            "cue": "switch off (to a friend)",
+            "tag": "free",
+            "forms": ["spegni", "spegnere", "spento"],
+            "note": "The tu imperative of spegnere, in L4-M1's shape. Its participle is spento, so ho spento la luce is I turned the light off."
+          },
+          {
+            "display": "luce",
+            "cue": "light",
+            "tag": "free",
+            "forms": ["luce", "luci"],
+            "note": "Feminine. La luce is both the lamp on the wall and the daylight coming through the window; the plural le luci is what you turn off on the way out."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English says before going out. Italian says prima di uscire — the plain infinitive, never a gerund and never a finite verb.",
+      "sound": "PREE-ma dee oo-SHEE-re, SPEH-nyee la LOO-che. The gn of spegni is the ny of canyon, and luce ends LOO-che.",
+      "variations": [
+        {
+          "display": "Prima di uscire, chiudi la finestra",
+          "cue": "Before going out, close the window",
+          "changed": "the other thing you deal with on the way out"
+        },
+        {
+          "display": "Prima di partire, spegni la luce",
+          "cue": "Before leaving, turn off the light",
+          "changed": "stepping out becomes leaving for good"
+        },
+        {
+          "display": "Spegni la luce prima di uscire",
+          "cue": "Turn off the light before going out",
+          "changed": "the time clause moved to the back, where it also lives"
+        }
+      ],
+      "mistake": {
+        "display": "Prima di uscendo, spegni la luce",
+        "why": "prima di takes the infinitive. uscendo is the gerund — the shape English reaches for, and the one Italian refuses here."
+      },
+      "usage": "Said to somebody leaving a room you are still sitting in.",
+      "register": "informal",
+      "mnemonic": "prima di, then the dictionary verb."
+    },
+    {
+      "id": "L4-M6-S02",
+      "display": "Dopo aver mangiato, siamo andati a casa",
+      "cue": "After eating, we went home",
+      "literal": "After to-have eaten, we-are gone at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dopo aver",
+            "cue": "after having (done something)",
+            "tag": "delta",
+            "forms": ["dopo aver"],
+            "note": "avere clipped to aver in front of the participle. The pair is one block: dopo aver mangiato, dopo aver finito, dopo aver visto."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English drops the have — after eating. Italian keeps it and clips it: dopo aver mangiato, never dopo mangiato.",
+      "sound": "DOH-po a-VEHR man-JA-to, SYA-mo an-DA-tee a KA-za. aver is stressed on its last syllable, a-VEHR.",
+      "variations": [
+        {
+          "display": "Dopo aver finito, siamo andati a casa",
+          "cue": "After finishing, we went home",
+          "changed": "the thing that ended, rather than the meal"
+        },
+        {
+          "display": "Dopo aver mangiato, sono andato a casa",
+          "cue": "After eating, I went home",
+          "changed": "one traveller instead of several"
+        },
+        {
+          "display": "Siamo andati a casa dopo aver mangiato",
+          "cue": "We went home after eating",
+          "changed": "the time clause at the back"
+        }
+      ],
+      "mistake": {
+        "display": "Dopo mangiato, siamo andati a casa",
+        "why": "The auxiliary is not optional. Italian needs dopo aver in front of the participle, and dopo mangiato is a fragment nobody writes."
+      },
+      "usage": "Telling somebody how an evening finished up.",
+      "register": "neutral",
+      "mnemonic": "dopo aver — after having, always both words."
+    },
+    {
+      "id": "L4-M6-S03",
+      "display": "Ho già finito il lavoro, posso venire",
+      "cue": "I have already finished the work, I can come",
+      "literal": "I-have already finished the work, I-can to-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "già",
+            "cue": "already",
+            "tag": "delta",
+            "forms": ["già"],
+            "note": "Sits between the auxiliary and the participle: ho già finito. It cannot be parked at the end of the sentence the way English parks already."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "Italian will not say ho finito già. già lives between ho and finito, and moving it to the end sounds like a translation.",
+      "sound": "o JA fee-NEE-to eel la-VO-ro, POS-so ve-NEE-re. già is one syllable, JA, with the j of jam.",
+      "variations": [
+        {
+          "display": "Ho già finito, posso venire",
+          "cue": "I have already finished, I can come",
+          "changed": "the object dropped, as in a quick reply"
+        },
+        {
+          "display": "Hai già finito il lavoro?",
+          "cue": "Have you already finished the work?",
+          "changed": "the same frame turned into a question"
+        },
+        {
+          "display": "Ho già finito il lavoro, posso partire",
+          "cue": "I have already finished the work, I can leave",
+          "changed": "coming becomes going"
+        }
+      ],
+      "mistake": {
+        "display": "Ho finito già il lavoro, posso venire",
+        "why": "già belongs between the auxiliary and the participle. At the end it is not so much wrong as never said."
+      },
+      "usage": "Answering a boss who was about to ask whether it is done.",
+      "register": "neutral",
+      "mnemonic": "già goes in the middle, like already."
+    },
+    {
+      "id": "L4-M6-S04",
+      "display": "Non ho ancora deciso, ti dico domani",
+      "cue": "I have not decided yet, I will tell you tomorrow",
+      "literal": "Not I-have yet decided, to-you I-say tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ancora",
+            "cue": "yet, still",
+            "tag": "delta",
+            "forms": ["ancora"],
+            "note": "Inside a negative compound past it is the yet of not yet, between ho and the participle. In a positive sentence on its own it means still."
+          },
+          {
+            "display": "deciso",
+            "cue": "decided",
+            "tag": "free",
+            "forms": ["deciso", "decidere", "decido"],
+            "note": "The participle of decidere, which is irregular: deciso, never decidito. Non ho ancora deciso is the everyday way of putting a choice off."
+          },
+          {
+            "display": "dico",
+            "cue": "I say, I tell",
+            "tag": "free",
+            "forms": ["dico", "dici", "dice"],
+            "note": "From dire. Italian uses the present for a promise about tomorrow, so ti dico domani reads as I will tell you tomorrow."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English can say I have not yet decided or I have not decided yet. Italian has one slot only: non ho ancora deciso.",
+      "sound": "non o an-KO-ra de-CHEE-zo, tee DEE-ko do-MA-nee. deciso is de-CHEE-zo, soft c and a buzzing s.",
+      "variations": [
+        {
+          "display": "Non ho ancora deciso niente",
+          "cue": "I have not decided anything yet",
+          "changed": "niente closing the sentence instead of a promise"
+        },
+        {
+          "display": "Non ho ancora finito, ti dico domani",
+          "cue": "I have not finished yet, I will tell you tomorrow",
+          "changed": "the verb that is still open"
+        },
+        {
+          "display": "Non hai ancora deciso?",
+          "cue": "Have you not decided yet?",
+          "changed": "the same frame as a question"
+        }
+      ],
+      "mistake": {
+        "display": "Non ho deciso ancora, ti dico domani",
+        "why": "ancora belongs between ho and deciso. Pushed to the end it reads as an afterthought, and no speaker puts it there."
+      },
+      "usage": "Buying yourself a day on a decision somebody is waiting for.",
+      "register": "neutral",
+      "mnemonic": "non ho ANCORA deciso — yet sits in the middle."
+    },
+    {
+      "id": "L4-M6-S05",
+      "display": "Aspetta qui finché non arrivo",
+      "cue": "Wait here until I arrive",
+      "literal": "Wait here until not I-arrive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "finché non",
+            "cue": "until",
+            "tag": "interference",
+            "forms": ["finché non", "finché"],
+            "note": "The non negates nothing. finché non arrivo and finché arrivo mean the same thing — until I get there — and the version with non is the commoner one."
+          },
+          {
+            "display": "arrivo",
+            "cue": "I arrive, I get there",
+            "tag": "free",
+            "forms": ["arrivo", "arriva", "arrivano"],
+            "note": "From arrivare. Italian puts the present after finché non for something still to come, where English reaches for a future."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "finché non arrivo does not mean until I do not arrive. The non is expletive: it carries no negation, and dropping it changes the style and not the sense.",
+      "sound": "as-PET-ta kwee feen-KE non ar-REE-vo. finché is stressed on its last syllable, feen-KE.",
+      "variations": [
+        {
+          "display": "Aspetta qui finché arrivo",
+          "cue": "Wait here until I arrive",
+          "changed": "the expletive non dropped — same meaning either way"
+        },
+        {
+          "display": "Aspetta qui finché non arriva il treno",
+          "cue": "Wait here until the train arrives",
+          "changed": "waiting for a thing instead of a person"
+        },
+        {
+          "display": "Non uscire finché non arrivo",
+          "cue": "Do not go out until I arrive",
+          "changed": "an order not to move, in L4-M1's negative shape"
+        }
+      ],
+      "mistake": {
+        "display": "Aspetta qui fino a arrivo",
+        "why": "fino a takes a noun and finché takes a clause. With a verb behind it the word is finché, and the ordinary sentence is finché non arrivo."
+      },
+      "usage": "Leaving somebody at a station while you go and fetch the car.",
+      "register": "informal",
+      "mnemonic": "finché non — the non means nothing."
+    },
+    {
+      "id": "L4-M6-S06",
+      "display": "Da quando sono qui, dormo molto poco",
+      "cue": "Ever since I have been here, I sleep very little",
+      "literal": "From when I-am here, I-sleep very little",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dormo",
+            "cue": "I sleep",
+            "tag": "free",
+            "forms": ["dormo", "dormi", "dorme", "dormiamo"],
+            "note": "From dormire, L1-M5's row. The -ire present runs -o, -i, -e, -iamo, and dormo poco is the ordinary complaint."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "da quando is the since of time, not the since of reason. The because-since is L4-M2's siccome and visto che, and swapping them changes what the sentence claims.",
+      "sound": "da KWAN-do SO-no kwee, DOR-mo MOL-to PO-ko.",
+      "variations": [
+        {
+          "display": "Da quando sono qui, esco poco",
+          "cue": "Ever since I have been here, I go out little",
+          "changed": "sleeping becomes going out"
+        },
+        {
+          "display": "Dormo molto poco da quando sono qui",
+          "cue": "I sleep very little ever since I have been here",
+          "changed": "the time clause at the back"
+        },
+        {
+          "display": "Da quando lavoro qui, dormo molto poco",
+          "cue": "Ever since I have been working here, I sleep very little",
+          "changed": "the thing that started it"
+        }
+      ],
+      "mistake": {
+        "display": "Siccome sono qui, dormo molto poco",
+        "why": "siccome gives a reason. This sentence gives a starting point in time, and that is da quando."
+      },
+      "usage": "Explaining to a friend why you look so tired.",
+      "register": "informal",
+      "mnemonic": "da quando — from when, a date and not a reason."
+    },
+    {
+      "id": "L4-M6-S07",
+      "display": "Durante la settimana non esco mai",
+      "cue": "During the week I never go out",
+      "literal": "During the week not I-go-out never",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "durante",
+            "cue": "during",
+            "tag": "free",
+            "forms": ["durante"],
+            "note": "A preposition that takes a noun and never a verb. For a stretch with a verb inside it Italian uses mentre, which is L3-M10's."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "durante cannot be followed by a verb. During eating is mentre mangio; durante mangiare is not Italian.",
+      "sound": "doo-RAN-te la set-tee-MA-na non ES-ko MA-ee. mai is a syllable and a half, MA-ee.",
+      "variations": [
+        {
+          "display": "Durante la settimana esco poco",
+          "cue": "During the week I go out little",
+          "changed": "never softened to rarely"
+        },
+        {
+          "display": "Non esco mai durante la settimana",
+          "cue": "I never go out during the week",
+          "changed": "the frame at the back"
+        },
+        {
+          "display": "Durante il giorno non esco mai",
+          "cue": "During the day I never go out",
+          "changed": "the stretch shortened to a day"
+        }
+      ],
+      "mistake": {
+        "display": "Durante settimana non esco mai",
+        "why": "durante keeps the article with its noun: durante la settimana, durante il giorno. A bare noun after it reads as a headline, not a sentence."
+      },
+      "usage": "Explaining your week to somebody proposing a Tuesday.",
+      "register": "neutral",
+      "mnemonic": "durante plus a noun, mentre plus a verb."
+    },
+    {
+      "id": "L4-M6-S08",
+      "display": "Ogni volta che piove, resto a casa",
+      "cue": "Every time it rains, I stay at home",
+      "literal": "Every time that it-rains, I-stay at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ogni volta che",
+            "cue": "every time (that)",
+            "tag": "free",
+            "forms": ["ogni volta che"],
+            "note": "Three words behaving as one conjunction. The che is compulsory: ogni volta piove is a headline, not a clause."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English can drop the that — every time it rains. Italian cannot drop the che.",
+      "sound": "O-nyee VOL-ta ke PYO-ve, RES-to a KA-za. ogni is O-nyee, with the ny of canyon.",
+      "variations": [
+        {
+          "display": "Ogni volta che piove, resto in ufficio",
+          "cue": "Every time it rains, I stay at the office",
+          "changed": "the place you get stuck in"
+        },
+        {
+          "display": "Resto a casa ogni volta che piove",
+          "cue": "I stay at home every time it rains",
+          "changed": "the frame at the back"
+        },
+        {
+          "display": "Ogni volta che esco, piove",
+          "cue": "Every time I go out, it rains",
+          "changed": "the two halves swapped, which is the complaining version"
+        }
+      ],
+      "mistake": {
+        "display": "Ogni volta piove, resto a casa",
+        "why": "Without che this is every time it rains as a heading. The conjunction is ogni volta che, all three words of it."
+      },
+      "usage": "Explaining a habit that depends entirely on the weather.",
+      "register": "informal",
+      "mnemonic": "ogni volta CHE — the that stays."
+    },
+    {
+      "id": "L4-M6-S09",
+      "display": "Resto in ufficio fino a mezzogiorno",
+      "cue": "I am staying at the office until midday",
+      "literal": "I-stay in office until at midday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fino a",
+            "cue": "until, as far as",
+            "tag": "delta",
+            "forms": ["fino a"],
+            "note": "Takes a noun, a time or a place: fino a mezzogiorno, fino a domani. With a clause behind it Italian switches to finché."
+          },
+          {
+            "display": "mezzogiorno",
+            "cue": "midday, noon",
+            "tag": "free",
+            "forms": ["mezzogiorno", "mezzanotte"],
+            "note": "Middle-day, and its opposite mezzanotte is middle-night. Both go without an article: a mezzogiorno, fino a mezzanotte."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "fino a takes a noun and finché takes a clause. Fino a arrivo is not a sentence; finché non arrivo is.",
+      "sound": "RES-to een oo-FEE-cho FEE-no a med-zo-JOR-no. The zz of mezzogiorno is a dz sound, med-zo.",
+      "variations": [
+        {
+          "display": "Resto in ufficio fino a domani",
+          "cue": "I am staying at the office until tomorrow",
+          "changed": "a day instead of an hour"
+        },
+        {
+          "display": "Resto qui fino a mezzogiorno",
+          "cue": "I am staying here until midday",
+          "changed": "the place left vague"
+        },
+        {
+          "display": "Resto in ufficio fino a mezzanotte",
+          "cue": "I am staying at the office until midnight",
+          "changed": "the other end of the clock"
+        }
+      ],
+      "mistake": {
+        "display": "Resto in ufficio finché mezzogiorno",
+        "why": "finché wants a clause with a verb in it. In front of a bare noun the word is fino a."
+      },
+      "usage": "Telling a colleague how long you will be reachable.",
+      "register": "neutral",
+      "mnemonic": "fino a takes a noun, finché takes a verb."
+    },
+    {
+      "id": "L4-M6-S10",
+      "display": "Hai già mangiato? No, non ancora",
+      "cue": "Have you already eaten? No, not yet",
+      "literal": "You-have already eaten? No, not yet",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "non ancora",
+            "cue": "not yet",
+            "tag": "delta",
+            "forms": ["non ancora"],
+            "note": "The two-word answer to a già question. On its own it is a complete reply, exactly as English not yet is, and it needs no verb behind it."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "The question is hai già mangiato, not hai mangiato già — and the answer non ancora stands alone, in that order.",
+      "sound": "eye JA man-JA-to? no, non an-KO-ra. hai is one syllable and sounds like the English eye.",
+      "variations": [
+        {
+          "display": "Hai già finito? No, non ancora",
+          "cue": "Have you already finished? No, not yet",
+          "changed": "the verb being asked about"
+        },
+        {
+          "display": "Hai già mangiato? No, non ho ancora mangiato",
+          "cue": "Have you already eaten? No, I have not eaten yet",
+          "changed": "the full answer instead of the short one"
+        },
+        {
+          "display": "Hai già deciso? No, non ancora",
+          "cue": "Have you already decided? No, not yet",
+          "changed": "a decision instead of a meal"
+        }
+      ],
+      "mistake": {
+        "display": "Hai mangiato già? No, ancora non",
+        "why": "già sits between hai and mangiato, and the short answer is non ancora in that order. Ancora non is a different, heavily marked emphasis."
+      },
+      "usage": "The question an Italian household asks at half past one.",
+      "register": "informal",
+      "mnemonic": "Non ancora — two words, and no verb needed."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M6-C01", "display": "Prima di uscire, spegni la luce", "cue": "Before going out, turn off the light" },
+    { "id": "L4-M6-C02", "display": "Dopo aver mangiato, siamo andati a casa", "cue": "After eating, we went home" },
+    { "id": "L4-M6-C03", "display": "Ho già finito il lavoro, posso venire", "cue": "I have already finished the work, I can come" },
+    { "id": "L4-M6-C04", "display": "Non ho ancora deciso, ti dico domani", "cue": "I have not decided yet, I will tell you tomorrow" },
+    { "id": "L4-M6-C05", "display": "Aspetta qui finché non arrivo", "cue": "Wait here until I arrive" },
+    { "id": "L4-M6-C06", "display": "Da quando sono qui, dormo molto poco", "cue": "Ever since I have been here, I sleep very little" },
+    { "id": "L4-M6-C07", "display": "Durante la settimana non esco mai", "cue": "During the week I never go out" },
+    { "id": "L4-M6-C08", "display": "Ogni volta che piove, resto a casa", "cue": "Every time it rains, I stay at home" },
+    { "id": "L4-M6-C09", "display": "Resto in ufficio fino a mezzogiorno", "cue": "I am staying at the office until midday" },
+    { "id": "L4-M6-C10", "display": "Hai già mangiato? No, non ancora", "cue": "Have you already eaten? No, not yet" },
+    { "id": "L4-M6-C11", "display": "Dopo aver finito, ti dico tutto", "cue": "After finishing, I will tell you everything" },
+    { "id": "L4-M6-C12", "display": "Non uscire finché non arriva il treno", "cue": "Do not go out until the train arrives" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

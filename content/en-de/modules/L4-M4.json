@@ -1,0 +1,580 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": [
+    "L4-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present",
+      "Perfekt"
+    ],
+    "allowedPatterns": [
+      "Das ist zwar teuer + , + aber + <clause>",
+      "Einerseits + V-2 + ich + , + andererseits + V-2 + ich",
+      "Ich komme nicht + , + ich habe nämlich keine Zeit",
+      "Außerdem + V-2 + <rest>",
+      "Es geht darum + , + dass + <verb-final>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE FIRST POSITION IS AN ARGUMENTATIVE CHOICE. German allows exactly one element before the finite verb, and by now you have met that as a mechanical law five times. Here it is a tool: what you FRONT is what you are arguing from. Sort the connectives once, on three classes the course already owns — obwohl and weil send the verb LAST (L3-M3, L1-M9); aber and denn leave it SECOND and count as nothing at all; trotzdem and deshalb FRONT and invert (L3-M3, L1-M9). This module's four join the third class: außerdem, dennoch, einerseits, andererseits."
+    },
+    {
+      "tag": "delta",
+      "text": "ZWAR IS NOT ADMITTEDLY. English admittedly is a whole adverb standing apart from its clause; zwar stands INSIDE the clause it concedes and belongs to it, usually straight after the verb: Das ist zwar teuer, aber … . It never stands alone, it never opens a sentence on its own, and the aber half always follows — a zwar with nothing after it is half a sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "NÄMLICH HAS NO ENGLISH COUNTERPART. It gives the reason AFTER the claim, it never stands first, it takes no comma of its own, and it sits in the middle field: Ich komme nicht mit, ich habe nämlich keine Zeit. Set it against the two you already own on the same pair of facts: weil builds a subordinate clause with the verb LAST, denn builds a main clause with the verb SECOND, and nämlich builds no clause at all — it simply marks the sentence it is in as the explanation of the one before."
+    },
+    {
+      "tag": "delta",
+      "text": "EINERSEITS … ANDERERSEITS INVERT, EVERY TIME. English on the one hand / on the other hand leaves the sentence alone: on the one hand IT IS expensive. Both German halves are single elements in first position, so the finite verb follows immediately and the subject comes after it: Einerseits IST das teuer, andererseits IST es sehr gut. Forgetting the inversion is the mistake that survives longest, because the English shape reads as grammatical until you say it aloud."
+    },
+    {
+      "tag": "interference",
+      "text": "EVENTUELL IS THE FALSE FRIEND THIS MODULE WOULD OTHERWISE MINT. eventuell means possibly, not eventually — English eventually is schließlich, which is L2-M10's. It is named here and deliberately not written, because a hedge belongs to L4-M5 next door and a word this treacherous deserves its own row rather than a corner of one. The other one is already settled: also means therefore and never English also, which is auch, and L1-M10 owns both words."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT A CASE ALREADY HAS, so nothing here is re-minted. weil, denn, deshalb, dass, warum, finde, glaube, denke are L1-M9's. aber, oder, und, dann, also are L1-M10's. obwohl, trotzdem, Meinung, stimmt, Recht, sicher, natürlich, ehrlich, wirklich, Grund are L3-M3's — most of a persuasion vocabulary paid for already. Es geht darum, dass … is L4-M2's da-compound earning its keep one module later, and it points back there. Softening and hedging are NOT this module's job: they are L4-M5's, one rung on. This module makes the case and holds the ground."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "Das ist zwar teuer, aber es ist wirklich gut",
+      "cue": "That is expensive, admittedly, but it is really good",
+      "literal": "That is admittedly expensive, but it is really good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zwar",
+            "cue": "admittedly, it is true that",
+            "tag": "delta",
+            "forms": [
+              "zwar"
+            ],
+            "note": "zwar concedes from INSIDE its clause, straight after the verb, and always has an aber half behind it. It never stands alone."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "zwar is not a first-position word. Das zwar ist teuer and Zwar, das ist teuer are both wrong: it sits after the finite verb, in the middle field.",
+      "sound": "das ist tsvaar TOY-er, AA-ber es ist VIRK-likh GOOT.",
+      "variations": [
+        {
+          "display": "Der Termin ist zwar am Montag, aber ich komme trotzdem",
+          "cue": "The appointment is on Monday, admittedly, but I am coming anyway",
+          "changed": "The same concession on a different fact, and trotzdem (L3-M3) closes it — a fronting connective, so the verb follows it."
+        }
+      ],
+      "mistake": {
+        "display": "Zwar das ist teuer, aber es ist wirklich gut",
+        "why": "zwar does not take first position. Put it after the finite verb, inside the clause it concedes: Das ist zwar teuer."
+      },
+      "usage": "Granting the obvious objection before you make your point.",
+      "register": "neutral",
+      "mnemonic": "zwar sits down inside its clause; aber does the standing up."
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "Einerseits ist das teuer, andererseits ist es sehr gut",
+      "cue": "On the one hand that is expensive, on the other it is very good",
+      "literal": "One-side is that expensive, other-side is it very good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "einerseits",
+            "cue": "on the one hand",
+            "tag": "delta",
+            "forms": [
+              "einerseits"
+            ],
+            "note": "One element in first position, so the verb follows it at once: Einerseits ist das teuer. It expects an andererseits behind it."
+          },
+          {
+            "display": "andererseits",
+            "cue": "on the other hand",
+            "tag": "delta",
+            "forms": [
+              "andererseits"
+            ],
+            "note": "The answering half, and it inverts exactly the same way: andererseits ist es sehr gut. Three e's in a row is the spelling learners drop."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "English on the one hand moves nothing. Both German halves are fronted elements, so the verb comes second and the subject third — every time, in both halves.",
+      "sound": "AI-ner-zaits ist das TOY-er, AN-der-er-zaits ist es zair GOOT.",
+      "variations": [
+        {
+          "display": "Einerseits habe ich Zeit, andererseits habe ich kein Geld",
+          "cue": "On the one hand I have time, on the other I have no money",
+          "changed": "Both halves keep the inversion with a different verb: habe ich, not ich habe."
+        }
+      ],
+      "mistake": {
+        "display": "Einerseits das ist teuer, andererseits es ist sehr gut",
+        "why": "Both connectives occupy first position, so the finite verb must be second: Einerseits ist das teuer, andererseits ist es sehr gut."
+      },
+      "usage": "Weighing two sides out loud before you land on one.",
+      "register": "neutral",
+      "mnemonic": "Two hands, two inversions — the verb shakes first each time."
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "Ich komme nicht mit, ich habe nämlich keine Zeit",
+      "cue": "I am not coming along; I have no time, you see",
+      "literal": "I come not along, I have namely no time",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nämlich",
+            "cue": "you see, the reason being",
+            "tag": "delta",
+            "forms": [
+              "nämlich"
+            ],
+            "note": "Explains the sentence before it, from inside the middle field. It never stands first and takes no comma of its own."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "nämlich builds no clause. weil would send the verb last and denn would open a second main clause; nämlich changes nothing about word order at all.",
+      "sound": "ikh KOM-uh nikht MIT, ikh HAA-buh NAIM-likh KAI-nuh TSAIT.",
+      "variations": [
+        {
+          "display": "Ich komme nicht mit, denn ich habe keine Zeit",
+          "cue": "I am not coming along, because I have no time",
+          "changed": "denn (L1-M9) says the same thing as a conjunction and stands between the clauses; nämlich lives inside the second one."
+        }
+      ],
+      "mistake": {
+        "display": "Nämlich ich habe keine Zeit",
+        "why": "nämlich cannot open a sentence — it is not a connective at all, only a marker inside one. Use denn or weil to open, or move nämlich behind the verb."
+      },
+      "usage": "Adding the reason as an afterthought, once the claim has landed.",
+      "register": "neutral",
+      "mnemonic": "nämlich never leads; it explains from the middle of the room."
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "Außerdem ist der Termin schon am Montag",
+      "cue": "Besides, the appointment is already on Monday",
+      "literal": "Besides is the appointment already on Monday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "außerdem",
+            "cue": "besides, what is more",
+            "tag": "delta",
+            "forms": [
+              "außerdem"
+            ],
+            "note": "Adds a second argument and fronts, so the verb follows it: Außerdem ist der Termin am Montag. The ß is written, never a double s."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English besides and what is more leave the sentence standing. außerdem is a fronted element, so the finite verb comes straight after it.",
+      "sound": "OW-ser-daym ist dair ter-MEEN shohn am MOHN-taag.",
+      "variations": [
+        {
+          "display": "Außerdem habe ich am Montag keine Zeit",
+          "cue": "Besides, I have no time on Monday",
+          "changed": "A different verb after the same fronted connective; ich still lands behind it."
+        }
+      ],
+      "mistake": {
+        "display": "Außerdem der Termin ist schon am Montag",
+        "why": "außerdem holds first position, so the verb takes second: Außerdem ist der Termin schon am Montag."
+      },
+      "usage": "Stacking a second reason on top of the first.",
+      "register": "neutral",
+      "mnemonic": "außerdem steps in front, and the verb steps up behind it."
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "Es geht darum, dass wir eine Lösung finden",
+      "cue": "The point is that we find a solution",
+      "literal": "It goes there-about, that we a solution find",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es geht",
+            "cue": "it is about, the point is",
+            "tag": "delta",
+            "forms": [
+              "es geht"
+            ],
+            "note": "A fixed pair with darum: Es geht darum, dass … . Nothing here is about going — es geht um means the matter at hand."
+          },
+          {
+            "display": "Lösung",
+            "cue": "solution",
+            "tag": "free",
+            "forms": [
+              "Lösung"
+            ],
+            "note": "die Lösung, from lösen, to solve or to loosen. eine Lösung finden is the pair German uses where English reaches a solution."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "darum is L4-M2's da-word doing its anticipating job: it holds the place of the dass-clause hanging behind it, and the dass-clause is verb-final as ever.",
+      "sound": "es gayt da-RUM, das veer AI-nuh LOE-zung FIN-dun.",
+      "variations": [
+        {
+          "display": "Es geht darum, dass wir zusammen eine Antwort finden",
+          "cue": "The point is that we find an answer together",
+          "changed": "The dass-clause grows a word and finden stays where it was — at the very end."
+        }
+      ],
+      "mistake": {
+        "display": "Es geht darum, dass wir finden eine Lösung",
+        "why": "dass is subordinating, so its verb goes to the end: dass wir eine Lösung finden. The da-word in front changes nothing about that."
+      },
+      "usage": "Pulling a wandering discussion back to what is actually at stake.",
+      "register": "neutral",
+      "mnemonic": "Es geht darum — the placeholder points, the dass-clause answers."
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "Das ist ein guter Vorschlag, aber ich habe eine Frage",
+      "cue": "That is a good suggestion, but I have a question",
+      "literal": "That is a good suggestion, but I have a question",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Vorschlag",
+            "cue": "suggestion, proposal",
+            "tag": "free",
+            "forms": [
+              "Vorschlag"
+            ],
+            "note": "der Vorschlag, from vorschlagen — literally to strike something forward. einen Vorschlag machen is the pair for making one."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "aber counts as nothing in the count to position two, so the clause behind it starts over: aber ICH HABE, not aber habe ich.",
+      "sound": "das ist ain GOO-ter FOR-shlaag, AA-ber ikh HAA-buh AI-nuh FRAA-guh.",
+      "variations": [
+        {
+          "display": "Das ist ein guter Vorschlag, aber er ist zu teuer",
+          "cue": "That is a good suggestion, but it is too expensive",
+          "changed": "er picks up der Vorschlag — masculine, so er and not es."
+        }
+      ],
+      "mistake": {
+        "display": "Das ist ein guter Vorschlag, aber habe ich eine Frage",
+        "why": "aber is one of the connectives that count as nothing. The clause after it is an ordinary main clause: aber ich habe eine Frage."
+      },
+      "usage": "Conceding the shape of a plan before you question a part of it.",
+      "register": "neutral",
+      "mnemonic": "aber is a doorway, not a step — the clause walks in unchanged."
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "Ihr Argument ist gut, dennoch bin ich dagegen",
+      "cue": "Your argument is good; even so, I am against it",
+      "literal": "Your argument is good, nevertheless am I against-it",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Argument",
+            "cue": "argument, a point in a case",
+            "tag": "delta",
+            "forms": [
+              "Argument"
+            ],
+            "note": "das Argument is a point you make, never a quarrel. A quarrel is der Streit — this word only ever means the reasoning."
+          },
+          {
+            "display": "dennoch",
+            "cue": "even so, nevertheless",
+            "tag": "delta",
+            "forms": [
+              "dennoch"
+            ],
+            "note": "The bookish twin of trotzdem (L3-M3), and it fronts and inverts the same way: dennoch bin ich dagegen."
+          },
+          {
+            "display": "dagegen",
+            "cue": "against it",
+            "tag": "delta",
+            "forms": [
+              "dagegen"
+            ],
+            "note": "L4-M2's da-compound again: gegen plus a thing becomes dagegen. Against a person stays gegen ihn — a da-word never stands for somebody."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Ihr keeps its capital. Lowercase ihr would be her or their, and the index cannot see the difference — the capital is the only signal your reader gets.",
+      "sound": "eer ar-goo-MENT ist GOOT, DEN-okh bin ikh da-GAY-gun.",
+      "variations": [
+        {
+          "display": "Ihr Argument ist gut, trotzdem bin ich dagegen",
+          "cue": "Your argument is good; all the same, I am against it",
+          "changed": "trotzdem for dennoch — the everyday twin. Both front, so bin ich stays inverted either way."
+        }
+      ],
+      "mistake": {
+        "display": "Ihr Argument ist gut, dennoch ich bin dagegen",
+        "why": "dennoch takes first position in its own clause, so the verb is second: dennoch bin ich dagegen."
+      },
+      "usage": "Holding your ground after granting the other side its due.",
+      "register": "formal",
+      "mnemonic": "dennoch fronts, bin follows, ich waits — the ground is held."
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "Der Punkt überzeugt mich überhaupt nicht",
+      "cue": "That point does not convince me at all",
+      "literal": "The point convinces me at-all not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Punkt",
+            "cue": "point (in an argument)",
+            "tag": "free",
+            "forms": [
+              "Punkt"
+            ],
+            "note": "der Punkt is a point in a case and also a full stop. Say der Punkt or dieser Punkt; mein Punkt is an English shape German avoids."
+          },
+          {
+            "display": "überzeugt",
+            "cue": "convinces",
+            "tag": "free",
+            "forms": [
+              "überzeugt",
+              "überzeugen"
+            ],
+            "note": "überzeugen takes an accusative person: es überzeugt mich. Ich bin überzeugt is the state that results."
+          },
+          {
+            "display": "überhaupt",
+            "cue": "at all",
+            "tag": "delta",
+            "forms": [
+              "überhaupt"
+            ],
+            "note": "Sharpens a negative and comes just before nicht: überhaupt nicht is not at all. On its own in a question it means anyway, at all."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "meinen Punkt does not work: meinen is L2-M8's verb, to mean. Say der Punkt or dieser Punkt and the sentence stays yours.",
+      "sound": "dair PUNKT ue-ber-TSOYKT mikh ue-ber-HOWPT nikht.",
+      "variations": [
+        {
+          "display": "Der Punkt überzeugt mich wirklich nicht",
+          "cue": "That point really does not convince me",
+          "changed": "wirklich (L3-M3) for überhaupt: the same seat in front of nicht, one degree softer."
+        }
+      ],
+      "mistake": {
+        "display": "Der Punkt überzeugt mich nicht überhaupt",
+        "why": "überhaupt leans on the negative from in front of it, never behind: überhaupt nicht. Reversed, it reads as two separate words with no force."
+      },
+      "usage": "Rejecting an argument squarely, without rejecting the person.",
+      "register": "neutral",
+      "mnemonic": "überhaupt nicht — the intensifier walks in front of the no."
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "Wir müssen das unbedingt heute besprechen",
+      "cue": "We absolutely have to discuss that today",
+      "literal": "We must that unconditionally today discuss",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "unbedingt",
+            "cue": "absolutely, without fail",
+            "tag": "delta",
+            "forms": [
+              "unbedingt"
+            ],
+            "note": "Literally uncondition-ed: no conditions attached. It strengthens a demand and sits in the middle field, before the time word."
+          },
+          {
+            "display": "besprechen",
+            "cue": "to discuss, to talk through",
+            "tag": "free",
+            "forms": [
+              "besprechen"
+            ],
+            "note": "etwas besprechen takes a plain accusative — no preposition. sprechen über exists too; besprechen is the one that means settle it between us."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "unbedingt is not a time word and does not front here. It belongs in the middle field, and the infinitive besprechen still closes the clause.",
+      "sound": "veer MUES-un das UN-be-dingt HOY-tuh buh-SHPREKH-un.",
+      "variations": [
+        {
+          "display": "Wir müssen das unbedingt am Montag besprechen",
+          "cue": "We absolutely have to discuss that on Monday",
+          "changed": "The time phrase grows; unbedingt keeps its seat in front of it and besprechen keeps the last."
+        }
+      ],
+      "mistake": {
+        "display": "Wir müssen unbedingt besprechen das heute",
+        "why": "The modal sends besprechen to the end, and everything else lines up in front of it: das unbedingt heute besprechen."
+      },
+      "usage": "Pressing for a decision without raising your voice.",
+      "register": "neutral",
+      "mnemonic": "unbedingt — no conditions, and no moving to the front either."
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "Das ist keine gute Idee, denn es ist zu teuer",
+      "cue": "That is not a good idea, because it is too expensive",
+      "literal": "That is no good idea, because it is too expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Idee",
+            "cue": "idea",
+            "tag": "free",
+            "forms": [
+              "Idee"
+            ],
+            "note": "die Idee, stressed on the last syllable: ee-DAY. The plural adds an n — die Ideen — and is pronounced with both e's."
+          },
+          {
+            "display": "gute",
+            "cue": "good (with a feminine noun)",
+            "tag": "free",
+            "forms": [
+              "gute"
+            ],
+            "note": "gut takes -e in front of a feminine noun after eine or keine: eine gute Idee. The masculine form guter is L3-M2's."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "denn leaves the word order alone: denn ES IST zu teuer. weil would send it to the end — weil es zu teuer IST — and both are correct German for the same fact.",
+      "sound": "das ist KAI-nuh GOO-tuh ee-DAY, den es ist tsoo TOY-er.",
+      "variations": [
+        {
+          "display": "Das ist keine gute Idee, weil es zu teuer ist",
+          "cue": "That is not a good idea, because it is too expensive",
+          "changed": "weil for denn, and the verb drops to the end of its clause. The meaning does not move an inch."
+        }
+      ],
+      "mistake": {
+        "display": "Das ist keine gute Idee, denn es zu teuer ist",
+        "why": "denn is a coordinating conjunction and counts as nothing: the clause behind it keeps its verb in second place. Only weil moves it to the end."
+      },
+      "usage": "Turning down a proposal and paying for the refusal with a reason.",
+      "register": "neutral",
+      "mnemonic": "denn leaves the furniture where it is; weil rearranges the room."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "Das ist zwar teuer, aber es ist wirklich gut",
+      "cue": "That is expensive, admittedly, but it is really good"
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "Einerseits ist das gut, andererseits ist es teuer",
+      "cue": "On the one hand that is good, on the other it is expensive"
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "Ich komme nicht mit, ich habe nämlich keine Zeit",
+      "cue": "I am not coming along; I have no time, you see"
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "Außerdem ist der Termin schon am Montag",
+      "cue": "Besides, the appointment is already on Monday"
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "Es geht darum, dass wir eine Lösung finden",
+      "cue": "The point is that we find a solution"
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "Das ist ein guter Vorschlag",
+      "cue": "That is a good suggestion"
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "Ihr Argument ist gut, dennoch bin ich dagegen",
+      "cue": "Your argument is good; even so, I am against it"
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "Der Punkt überzeugt mich überhaupt nicht",
+      "cue": "That point does not convince me at all"
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "Wir müssen das unbedingt besprechen",
+      "cue": "We absolutely have to discuss that"
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "Das ist keine gute Idee, denn es ist zu teuer",
+      "cue": "That is not a good idea, because it is too expensive"
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "Ich finde den Vorschlag gut, außerdem ist er nicht teuer",
+      "cue": "I think the suggestion is good; besides, it is not expensive"
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "Es geht darum, dass wir zusammen eine Antwort finden",
+      "cue": "The point is that we find an answer together"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,721 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_present", "imperative"],
+    "allowedPatterns": [
+      "meonjeo + V-go, + geu daeum-e + V-(eu)seyo",
+      "V-(eu)ryeomyeon + N-eul/reul + V-(eu)seyo",
+      "N-eul/reul + V-eoboseyo",
+      "clause-(eu)myeon + dwaeyo",
+      "V-gi + wihaeseo + N-eul/reul + V-yo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-(eu)ryeomyeon IS THE INTENTION CLAUSE, and its main clause is an instruction or a requirement. haryeomyeon, garyeomyeon: if you mean to do it, if you mean to go. It is the ending a sign uses, and the only one of the two purpose frames that sits comfortably in front of an order."
+    },
+    {
+      "tag": "delta",
+      "text": "-gi wihaeseo IS THE NEUTRAL PURPOSE ADVERBIAL, built on a nominalised stem: gagi, meokgi, hagi. It is heavier than -(eu)ryeomyeon and belongs in an explanation rather than a command — why you are doing a thing, said to someone who asked."
+    },
+    {
+      "tag": "interference",
+      "text": "THE PURPOSE GOES IN FRONT, ALWAYS. English puts it last — press the button to open it — and Korean puts it first, so the whole sentence reverses. The literal line under every purpose sentence here shows the reversal rather than describing it."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH try to MEANS ATTEMPT, POSSIBLY FAILING. -a/eo boda does not: it means do it and see how it goes. Hanbeon meogeoboseyo is an invitation, not a challenge, and translating try to with -a/eo boda teaches the wrong verb."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TRIAL AUXILIARY IS WRITTEN JOINED — haeboseyo, meogeoboseyo, nulleoboseyo, neoeoboseyo — following this course's -a/eo juda rows, which are all single tokens. Spaced, it would land on L2-M6's bwayo, a verb of seeing, and show a note that is false of the sentence."
+    },
+    {
+      "tag": "free",
+      "text": "THE SEQUENCING IS ALREADY BOUGHT AND IS ONLY REUSED. -go is L1-M3's, meonjeo, geu daeum-e and machimnae are L2-M10's. Nothing about ordering steps is reopened here; what is new is why a step is taken."
+    },
+    {
+      "tag": "free",
+      "text": "clause-(eu)myeon dwaeyo IS L3-M4's ENDING ON L2-M7's VERB, spent as permission rather than as condition: that is all you have to do. It answers is that it? and it costs this module no new key."
+    },
+    {
+      "tag": "free",
+      "text": "THE INSTRUCTION LINE IS L2-M1's -(eu)seyo AND NOTHING ELSE. No -(eu)psida and no -(eu)sipsio, which are L4-M7's; no written recipe style, which this course has nowhere; and no time clause, which is L4-M6's. Steps are ordered with adverbs and -go."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "Meonjeo naembi-e mul-eul kkeurigo, geu daeum-e ramyeon-eul neoeuseyo.",
+      "script": "먼저 냄비에 물을 끓이고, 그 다음에 라면을 넣으세요.",
+      "cue": "First boil water in the pot, then put the ramyeon in.",
+      "literal": "first pot-in water-obj boil-and, that next-at ramyeon-obj put-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naembi",
+            "script": "냄비",
+            "cue": "a pot",
+            "tag": "free",
+            "forms": ["naembi", "naembi-e", "naembi-reul"],
+            "note": "The pan you boil in. It takes -e for what goes into it and -reul for the pot as a thing you use."
+          },
+          {
+            "display": "kkeuryeoyo",
+            "script": "끓여요",
+            "cue": "boils it",
+            "tag": "delta",
+            "forms": ["kkeuryeoyo", "kkeurigo", "kkeuriseyo", "kkeuryeosseoyo"],
+            "note": "You boil something with this verb. The h is not heard: the romanization follows the sound, so the stem reads kkeuri- throughout."
+          },
+          {
+            "display": "ramyeon",
+            "script": "라면",
+            "cue": "instant noodles",
+            "tag": "free",
+            "forms": ["ramyeon", "ramyeon-eul", "ramyeon-i"],
+            "note": "The packet noodles, and the dish made from them. It is what a first set of Korean instructions is almost always about."
+          },
+          {
+            "display": "neoeuseyo",
+            "script": "넣으세요",
+            "cue": "put it in",
+            "tag": "delta",
+            "forms": ["neoeuseyo", "neoeoyo", "neoeumyeon", "neoeoboseyo"],
+            "note": "Put a thing inside another thing. The written h goes silent between vowels, so the endings read neoeu- and neoeo-."
+          },
+          {
+            "display": "bul",
+            "script": "불",
+            "cue": "fire · a light · the heat under a pan",
+            "tag": "free",
+            "forms": ["bul", "bul-eul", "bul-i"],
+            "note": "One word for the flame, the lamp and the burner. What English splits into light and heat, a kitchen instruction here keeps together."
+          },
+          {
+            "display": "kyeoyo",
+            "script": "켜요",
+            "cue": "turns it on",
+            "tag": "free",
+            "forms": ["kyeoyo", "kyeogo", "kyeoseyo", "kyeoseo"],
+            "note": "Switches on a light, a screen or a burner. Its opposite is kkeoyo, and both take bul as their object in a kitchen."
+          }
+        ],
+        "rules": [5, 7]
+      },
+      "trap": "-go IS NOT and. It holds one instruction open until the next arrives, which is why the first step here has no -yo and no -seyo on it. Close it early and you have written two sentences with a comma between them.",
+      "sound": "MEON-jeo NAEM-bi-e MU-reul kkeu-RI-go. Mul-eul runs together as MU-reul, and the h in kkeurigo is not pronounced at all.",
+      "variations": [
+        {
+          "display": "Meonjeo bul-eul kyeogo, geu daeum-e mul-eul kkeuriseyo.",
+          "script": "먼저 불을 켜고, 그 다음에 물을 끓이세요.",
+          "cue": "First turn the heat on, then boil the water.",
+          "changed": "the stove step moved to the front, and the instruction ending on the boiling"
+        },
+        {
+          "display": "Meonjeo naembi-e mul-eul kkeurigo, geu daeum-e sogeum-eul neoeuseyo.",
+          "script": "먼저 냄비에 물을 끓이고, 그 다음에 소금을 넣으세요.",
+          "cue": "First boil water in the pot, then add the salt.",
+          "changed": "salt in place of the noodles, on the same two-step frame"
+        }
+      ],
+      "mistake": {
+        "display": "Meonjeo naembi-e mul-eul kkeuriseyo, geu daeum-e ramyeon-eul neoeuseyo.",
+        "script": "먼저 냄비에 물을 끓이세요, 그 다음에 라면을 넣으세요.",
+        "why": "Two finished instructions with a comma between them are two sentences. One instruction in two steps takes -go on the first."
+      },
+      "usage": "Talking someone through a packet of noodles, at the stove or over the phone.",
+      "register": "neutral",
+      "mnemonic": "-go holds the step open, -seyo closes it."
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "Meonjeo sunseo-reul bogo, geu daeum-e beoteun-eul nureuseyo.",
+      "script": "먼저 순서를 보고, 그 다음에 버튼을 누르세요.",
+      "cue": "First look at the order of steps, then press the button.",
+      "literal": "first order-obj look-and, that next-at button-obj press-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sunseo",
+            "script": "순서",
+            "cue": "the order things go in",
+            "tag": "free",
+            "forms": ["sunseo", "sunseo-reul", "sunseo-daero"],
+            "note": "The sequence itself. With -daero it becomes in that order, which is how a machine or a recipe tells you to follow it."
+          },
+          {
+            "display": "bogo",
+            "script": "보고",
+            "cue": "looks at, and then",
+            "tag": "free",
+            "forms": ["bogo", "boseyo"],
+            "note": "The -go and -seyo shapes of L2-M6's bwayo, which is the row that owns the verb. Same word, different endings."
+          },
+          {
+            "display": "beoteun",
+            "script": "버튼",
+            "cue": "a button",
+            "tag": "free",
+            "forms": ["beoteun", "beoteun-eul", "beoteun-i"],
+            "note": "The button on a machine, borrowed straight from English. A shirt button is also beoteun."
+          },
+          {
+            "display": "nureuseyo",
+            "script": "누르세요",
+            "cue": "press it",
+            "tag": "delta",
+            "forms": ["nureuseyo", "nulleoyo", "nulleoboseyo"],
+            "note": "Press or hold down. The stem doubles its l before a vowel ending, so the plain present is nulleoyo, not nureoyo."
+          },
+          {
+            "display": "hwamyeon",
+            "script": "화면",
+            "cue": "a screen",
+            "tag": "free",
+            "forms": ["hwamyeon", "hwamyeon-eul", "hwamyeon-i"],
+            "note": "The display surface of a machine — a ticket kiosk, a phone, a television. Not the device, only the face of it."
+          }
+        ],
+        "rules": [5, 7]
+      },
+      "trap": "bogo AND boseyo ARE THE SAME VERB AS L2-M6's bwayo. English changes nothing between I see it and look at it; Korean changes the ending, and the ending is what says whether you are reporting or instructing.",
+      "sound": "MEON-jeo SUN-seo-reul BO-go. Nureuseyo is nu-REU-se-yo, three light syllables before the ending.",
+      "variations": [
+        {
+          "display": "Meonjeo hwamyeon-eul bogo, geu daeum-e beoteun-eul nureuseyo.",
+          "script": "먼저 화면을 보고, 그 다음에 버튼을 누르세요.",
+          "cue": "First look at the screen, then press the button.",
+          "changed": "what you look at: the screen rather than the list of steps"
+        },
+        {
+          "display": "Meonjeo sunseo-reul boseyo.",
+          "script": "먼저 순서를 보세요.",
+          "cue": "First look at the order of steps.",
+          "changed": "one step standing alone, so the ending closes it"
+        }
+      ],
+      "mistake": {
+        "display": "Meonjeo sunseo-reul bwayo, geu daeum-e beoteun-eul nureuseyo.",
+        "script": "먼저 순서를 봐요, 그 다음에 버튼을 누르세요.",
+        "why": "bwayo reports what someone sees. A step that continues into the next takes bogo, and a step told to a person takes boseyo."
+      },
+      "usage": "At a ticket machine or a kiosk, walking someone through the screen.",
+      "register": "neutral",
+      "mnemonic": "bogo carries on, boseyo tells."
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "Yeok-e garyeomyeon i-jjok-euro gaseyo.",
+      "script": "역에 가려면 이쪽으로 가세요.",
+      "cue": "If you want to go to the station, go this way.",
+      "literal": "station-to go-if-you-mean this-side-toward go-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "garyeomyeon",
+            "script": "가려면",
+            "cue": "if you mean to go",
+            "tag": "delta",
+            "forms": ["garyeomyeon"],
+            "note": "L1-M2's gada with -(eu)ryeomyeon on it. It states an intention, and what follows is what you must do about it."
+          }
+        ],
+        "rules": [0, 2, 7]
+      },
+      "trap": "THE INTENTION COMES FIRST. English says go this way to get to the station and puts the purpose last. Korean has no order in which garyeomyeon could follow gaseyo, so the whole sentence reverses.",
+      "sound": "YEO-ge ga-RYEO-myeon. Yeok-e runs together as YEO-ge, and i-jjok-euro is i-JJO-geu-ro.",
+      "variations": [
+        {
+          "display": "Yeok-e garyeomyeon igeo-reul nureuseyo.",
+          "script": "역에 가려면 이거를 누르세요.",
+          "cue": "If you want to go to the station, press this.",
+          "changed": "the instruction: a machine rather than a direction"
+        },
+        {
+          "display": "Yeyak-eul haryeomyeon i-jjok-euro gaseyo.",
+          "script": "예약을 하려면 이쪽으로 가세요.",
+          "cue": "If you want to make a booking, go this way.",
+          "changed": "the intention: booking rather than travelling"
+        }
+      ],
+      "mistake": {
+        "display": "Yeok-e gagi wihaeseo i-jjok-euro gaseyo.",
+        "script": "역에 가기 위해서 이쪽으로 가세요.",
+        "why": "-gi wihaeseo explains a purpose to someone who asked. In front of an order it sits heavily; an instruction takes -(eu)ryeomyeon."
+      },
+      "usage": "Answering someone lost in a station or a shopping centre.",
+      "register": "neutral",
+      "mnemonic": "-ryeomyeon asks what you want, then tells you."
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "Yeyak-eul haryeomyeon igeo-reul nureuseyo.",
+      "script": "예약을 하려면 이거를 누르세요.",
+      "cue": "If you want to make a booking, press this.",
+      "literal": "booking-obj do-if-you-mean this-obj press-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeyak",
+            "script": "예약",
+            "cue": "a booking · a reservation",
+            "tag": "free",
+            "forms": ["yeyak", "yeyak-eul", "yeyak-i"],
+            "note": "A reservation of any kind — a table, a seat, an appointment. It pairs with hada, so the verb is yeyak-eul haeyo."
+          },
+          {
+            "display": "haryeomyeon",
+            "script": "하려면",
+            "cue": "if you mean to do",
+            "tag": "delta",
+            "forms": ["haryeomyeon"],
+            "note": "L1-M4's hada with -(eu)ryeomyeon on it. It is the shape a sign uses above a machine or beside a form."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "haryeomyeon IS NOT hamyeon. L3-M4's hamyeon says if you do it; haryeomyeon says if you want to do it. The intention is inside the ending, and English has to add a whole verb to carry it.",
+      "sound": "ye-YA-geul ha-RYEO-myeon. Yeyak-eul runs together as ye-YA-geul.",
+      "variations": [
+        {
+          "display": "Yeyak-eul haryeomyeon hwamyeon-eul boseyo.",
+          "script": "예약을 하려면 화면을 보세요.",
+          "cue": "If you want to make a booking, look at the screen.",
+          "changed": "the screen instead of the button"
+        },
+        {
+          "display": "Ramyeon-eul haryeomyeon mul-eul kkeuriseyo.",
+          "script": "라면을 하려면 물을 끓이세요.",
+          "cue": "If you want to make ramyeon, boil water.",
+          "changed": "a kitchen rather than a machine"
+        }
+      ],
+      "mistake": {
+        "display": "Yeyak-eul haryeomyeon igeo-reul nulleoyo.",
+        "script": "예약을 하려면 이거를 눌러요.",
+        "why": "nulleoyo says what somebody does. Telling a person to do it takes nureuseyo, which is what a sign or a helper says."
+      },
+      "usage": "Reading a kiosk out loud for someone who cannot see the screen.",
+      "register": "neutral",
+      "mnemonic": "haryeomyeon is the sign, hamyeon is the condition."
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "Ramyeon-eul hanbeon meogeoboseyo.",
+      "script": "라면을 한번 먹어보세요.",
+      "cue": "Try the ramyeon and see.",
+      "literal": "ramyeon-obj once eat-see-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hanbeon",
+            "script": "한번",
+            "cue": "once · give it a go",
+            "tag": "free",
+            "forms": ["hanbeon"],
+            "note": "One word, not a count. Written together it means give it a go rather than exactly one time, and it is what softens an invitation."
+          },
+          {
+            "display": "meogeoboseyo",
+            "script": "먹어보세요",
+            "cue": "try eating it",
+            "tag": "delta",
+            "forms": ["meogeoboseyo"],
+            "note": "L1-M3's meokda with the trial auxiliary joined onto it. Eat it and see what you think — an offer, and never a dare."
+          }
+        ],
+        "rules": [3, 4, 7]
+      },
+      "trap": "THIS IS NOT try to eat it. English try to means attempt, and possibly fail. -a/eo boda means do it and see how it goes, so meogeoboseyo hands the food over rather than doubting the person can manage it.",
+      "sound": "ra-MYEO-neul HAN-beon meo-geo-BO-se-yo. The auxiliary carries no break: it is one long word.",
+      "variations": [
+        {
+          "display": "Ramyeon-eul hanbeon haeboseyo.",
+          "script": "라면을 한번 해보세요.",
+          "cue": "Try making the ramyeon.",
+          "changed": "make it rather than eat it, on the same trial frame"
+        },
+        {
+          "display": "Sogeum-eul jom neoeoboseyo.",
+          "script": "소금을 좀 넣어보세요.",
+          "cue": "Try adding a little salt.",
+          "changed": "the trial on a different verb, with jom softening it further"
+        }
+      ],
+      "mistake": {
+        "display": "Ramyeon-eul hanbeon meogeuseyo.",
+        "script": "라면을 한번 먹으세요.",
+        "why": "That tells the person to eat. meogeoboseyo offers it instead, and leaves them free to decide they do not like it."
+      },
+      "usage": "Recommending a dish without pressing it on anyone.",
+      "register": "neutral",
+      "mnemonic": "boseyo offers, seyo orders."
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "Sae bangbeop-eul hanbeon haeboseyo.",
+      "script": "새 방법을 한번 해보세요.",
+      "cue": "Try the new method and see.",
+      "literal": "new method-obj once do-see-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bangbeop",
+            "script": "방법",
+            "cue": "a way · a method",
+            "tag": "free",
+            "forms": ["bangbeop", "bangbeop-eul", "bangbeop-daero"],
+            "note": "How a thing is done, taken as a whole. With -daero it becomes the way the method says, which is what an instruction sheet asks for."
+          },
+          {
+            "display": "haeboseyo",
+            "script": "해보세요",
+            "cue": "give it a try",
+            "tag": "delta",
+            "forms": ["haeboseyo"],
+            "note": "L1-M4's hada with the trial auxiliary joined on. It is the most useful of these, because almost any noun plus hada can take it."
+          }
+        ],
+        "rules": [3, 4, 7]
+      },
+      "trap": "haeboseyo IS NOT haseyo WITH A SOFTENER ADDED. haseyo tells someone to do it; haeboseyo says do it and find out. A manager who says haseyo has decided, and one who says haeboseyo has not.",
+      "sound": "SAE bang-BEO-beul HAN-beon hae-BO-se-yo. Bangbeop-eul runs together as bang-BEO-beul.",
+      "variations": [
+        {
+          "display": "Igeo-reul hanbeon haeboseyo.",
+          "script": "이거를 한번 해보세요.",
+          "cue": "Try this and see.",
+          "changed": "this one rather than a named method"
+        },
+        {
+          "display": "Sae bangbeop-eul sunseo-daero haeboseyo.",
+          "script": "새 방법을 순서대로 해보세요.",
+          "cue": "Try the new method in the order given.",
+          "changed": "the order of the steps added to the trial"
+        }
+      ],
+      "mistake": {
+        "display": "Sae bangbeop-eul hanbeon haseyo.",
+        "script": "새 방법을 한번 하세요.",
+        "why": "hanbeon invites and haseyo orders, so the two pull against each other. An invitation ends in haeboseyo."
+      },
+      "usage": "Suggesting a different way of doing something to a colleague.",
+      "register": "neutral",
+      "mnemonic": "hanbeon and boseyo travel together."
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "Sogeum-eul jom neoeumyeon dwaeyo.",
+      "script": "소금을 좀 넣으면 돼요.",
+      "cue": "You just have to add a little salt.",
+      "literal": "salt-obj a-little put-if becomes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sogeum",
+            "script": "소금",
+            "cue": "salt",
+            "tag": "free",
+            "forms": ["sogeum", "sogeum-eul", "sogeum-do"],
+            "note": "Table salt and cooking salt alike. It is the standard first thing a Korean instruction tells you to add."
+          },
+          {
+            "display": "seokkeuseyo",
+            "script": "섞으세요",
+            "cue": "mix it",
+            "tag": "free",
+            "forms": ["seokkeuseyo", "seokkeoyo", "seokkeumyeon"],
+            "note": "Stir two things together. The doubled k of the stem shows up before a vowel ending, so the present is seokkeoyo."
+          }
+        ],
+        "rules": [6, 7]
+      },
+      "trap": "dwaeyo IS NOT a SECOND VERB. The clause in front of it must end in -(eu)myeon: the pair is one frame meaning that will do it. A finished sentence followed by dwaeyo is not Korean.",
+      "sound": "so-GEU-meul JOM neo-EU-myeon DWAE-yo. Sogeum-eul runs together as so-GEU-meul.",
+      "variations": [
+        {
+          "display": "Sogeum-eul neoeuseyo, geu daeum-e jal seokkeuseyo.",
+          "script": "소금을 넣으세요, 그 다음에 잘 섞으세요.",
+          "cue": "Add the salt, then mix it well.",
+          "changed": "two instructions in place of the permission"
+        },
+        {
+          "display": "Jal seokkeumyeon dwaeyo.",
+          "script": "잘 섞으면 돼요.",
+          "cue": "You just have to mix it well.",
+          "changed": "the step: mixing rather than salting"
+        }
+      ],
+      "mistake": {
+        "display": "Sogeum-eul jom neoeoyo dwaeyo.",
+        "script": "소금을 좀 넣어요 돼요.",
+        "why": "neoeoyo closes the sentence, and dwaeyo then has nothing to attach to. The clause has to end in -(eu)myeon: neoeumyeon dwaeyo."
+      },
+      "usage": "Answering is that all? at the stove or over a recipe.",
+      "register": "neutral",
+      "mnemonic": "-myeon dwaeyo: do that, and you are done."
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "Igeo-reul sunseo-daero hamyeon dwaeyo.",
+      "script": "이거를 순서대로 하면 돼요.",
+      "cue": "You just have to do this in order.",
+      "literal": "this-obj order-according-to do-if becomes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "igeo",
+            "script": "이거",
+            "cue": "this one · this thing",
+            "tag": "free",
+            "forms": ["igeo", "igeo-reul", "igeo-neun"],
+            "note": "The everyday spoken word for this thing, said as one token. It is what points at an object when the object has no name yet."
+          }
+        ],
+        "rules": [5, 6, 7]
+      },
+      "trap": "-daero ATTACHES TO A NOUN AND NOT TO A VERB. sunseo-daero is in that order; a verb wanting the same sense needs a different shape altogether. Written apart, daero would mean nothing at all.",
+      "sound": "I-geo-reul SUN-seo-dae-ro HA-myeon DWAE-yo. The -daero rides on sunseo with no break.",
+      "variations": [
+        {
+          "display": "Igeo-reul sunseo-daero haeboseyo.",
+          "script": "이거를 순서대로 해보세요.",
+          "cue": "Try doing this in order.",
+          "changed": "a suggestion instead of the permission"
+        },
+        {
+          "display": "Bangbeop-daero hamyeon dwaeyo.",
+          "script": "방법대로 하면 돼요.",
+          "cue": "You just have to follow the method.",
+          "changed": "the noun -daero attaches to"
+        }
+      ],
+      "mistake": {
+        "display": "Igeo-reul sunseo hamyeon dwaeyo.",
+        "script": "이거를 순서 하면 돼요.",
+        "why": "sunseo on its own is only the word order, a noun with nothing said about it. -daero is what turns it into in accordance with it."
+      },
+      "usage": "Reassuring someone that a form or a machine has no trick to it.",
+      "register": "neutral",
+      "mnemonic": "sunseo is the order, sunseo-daero is following it."
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "Hanguk-e gagi wihaeseo hangugeo-reul baewoyo.",
+      "script": "한국에 가기 위해서 한국어를 배워요.",
+      "cue": "I study Korean in order to go to Korea.",
+      "literal": "Korea-to going for-the-sake-of Korean-obj learn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gagi",
+            "script": "가기",
+            "cue": "going, as a thing",
+            "tag": "delta",
+            "forms": ["gagi"],
+            "note": "L1-M2's gada turned into a noun by -gi. Korean has no infinitive, so a verb that has to sit in front of a postposition is nominalised first."
+          },
+          {
+            "display": "wihaeseo",
+            "script": "위해서",
+            "cue": "for the sake of",
+            "tag": "delta",
+            "forms": ["wihaeseo"],
+            "note": "It follows a -gi stem or a noun and says what the effort is for. It explains rather than instructs, so it reads oddly in front of an order."
+          },
+          {
+            "display": "hangugeo",
+            "script": "한국어",
+            "cue": "the Korean language",
+            "tag": "free",
+            "forms": ["hangugeo", "hangugeo-reul", "hangugeo-ga"],
+            "note": "The language, built on hanguk plus the -eo that names a tongue. The g is heard across the join, which is why it is written hangugeo."
+          },
+          {
+            "display": "hagi",
+            "script": "하기",
+            "cue": "doing, as a thing",
+            "tag": "delta",
+            "forms": ["hagi"],
+            "note": "L1-M4's hada nominalised the same way. It is the most common of these stems, because any noun plus hada can take it."
+          }
+        ],
+        "rules": [1, 2, 7]
+      },
+      "trap": "KOREAN HAS NO INFINITIVE. English to go is one shape doing two jobs; Korean has neither, and a bare stem in front of wihaeseo is not a word. The stem takes -gi first, every time.",
+      "sound": "han-GU-ge GA-gi wi-HAE-seo. Hanguk-e is han-GU-ge, and hangugeo-reul is han-gu-GEO-reul.",
+      "variations": [
+        {
+          "display": "Yeyak-eul hagi wihaeseo yeok-e gayo.",
+          "script": "예약을 하기 위해서 역에 가요.",
+          "cue": "I go to the station in order to make a booking.",
+          "changed": "the purpose built on hada, and a place as the main clause"
+        },
+        {
+          "display": "Hanguk-e gagi wihaeseo yeyak-eul haeyo.",
+          "script": "한국에 가기 위해서 예약을 해요.",
+          "cue": "I make a booking in order to go to Korea.",
+          "changed": "the purpose kept, and the main clause changed"
+        }
+      ],
+      "mistake": {
+        "display": "Hanguk-e ga wihaeseo hangugeo-reul baewoyo.",
+        "script": "한국에 가 위해서 한국어를 배워요.",
+        "why": "A bare stem cannot stand in front of wihaeseo. It has to become a noun first, and -gi is what does that: gagi wihaeseo."
+      },
+      "usage": "Saying why you are learning something, in an interview or over coffee.",
+      "register": "neutral",
+      "mnemonic": "-gi makes the verb a thing, wihaeseo says what it is for."
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "Ramyeon-eul meokgi wihaeseo mul-eul kkeuryeoyo.",
+      "script": "라면을 먹기 위해서 물을 끓여요.",
+      "cue": "I boil water in order to eat ramyeon.",
+      "literal": "ramyeon-obj eating for-the-sake-of water-obj boil",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meokgi",
+            "script": "먹기",
+            "cue": "eating, as a thing",
+            "tag": "delta",
+            "forms": ["meokgi"],
+            "note": "L1-M3's meokda nominalised by -gi. The k of the stem stays written, exactly as it does in L1-M3's meokgo."
+          },
+          {
+            "display": "yori",
+            "script": "요리",
+            "cue": "cooking · a cooked dish",
+            "tag": "free",
+            "forms": ["yori", "yori-reul", "yori-ga"],
+            "note": "Both the activity and the dish it produces. With hada it is the verb to cook: yori-reul haeyo."
+          },
+          {
+            "display": "sseoyo",
+            "script": "써요",
+            "cue": "uses it · writes it",
+            "tag": "free",
+            "forms": ["sseoyo", "sseuseyo", "sseumyeon"],
+            "note": "One verb for use and for write, and the context decides. A pot is sseoyo, and so is a name on a form."
+          }
+        ],
+        "rules": [1, 2, 7]
+      },
+      "trap": "THE PURPOSE CLAUSE STILL COMES FIRST. English would say I boil water to eat ramyeon; every word of the Korean is in the opposite half of the sentence, and the literal line above shows how far it travels.",
+      "sound": "ra-MYEO-neul MEOK-gi wi-HAE-seo. Meokgi keeps its k hard, and kkeuryeoyo is kkeu-RYEO-yo.",
+      "variations": [
+        {
+          "display": "Yori-reul hagi wihaeseo naembi-reul sseoyo.",
+          "script": "요리를 하기 위해서 냄비를 써요.",
+          "cue": "I use a pot in order to cook.",
+          "changed": "the purpose built on hada, and a tool as the main clause"
+        },
+        {
+          "display": "Ramyeon-eul meokgi wihaeseo bul-eul kyeoyo.",
+          "script": "라면을 먹기 위해서 불을 켜요.",
+          "cue": "I turn the heat on in order to eat ramyeon.",
+          "changed": "the step in the main clause"
+        }
+      ],
+      "mistake": {
+        "display": "Ramyeon-eul meokgi wihaeseo mul-eul kkeuriseyo.",
+        "script": "라면을 먹기 위해서 물을 끓이세요.",
+        "why": "-gi wihaeseo explains why you are doing a thing; it does not tell anyone to do it. An instruction takes -(eu)ryeomyeon in front."
+      },
+      "usage": "Explaining your own steps to somebody watching you cook.",
+      "register": "neutral",
+      "mnemonic": "wihaeseo explains, -ryeomyeon instructs."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "Meonjeo naembi-e mul-eul kkeurigo, geu daeum-e ramyeon-eul neoeuseyo.",
+      "script": "먼저 냄비에 물을 끓이고, 그 다음에 라면을 넣으세요.",
+      "cue": "First boil water in the pot, then put the ramyeon in."
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "Meonjeo sunseo-reul bogo, geu daeum-e beoteun-eul nureuseyo.",
+      "script": "먼저 순서를 보고, 그 다음에 버튼을 누르세요.",
+      "cue": "First look at the order of steps, then press the button."
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "Yeok-e garyeomyeon i-jjok-euro gaseyo.",
+      "script": "역에 가려면 이쪽으로 가세요.",
+      "cue": "If you want to go to the station, go this way."
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "Yeyak-eul haryeomyeon igeo-reul nureuseyo.",
+      "script": "예약을 하려면 이거를 누르세요.",
+      "cue": "If you want to make a booking, press this."
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "Ramyeon-eul hanbeon meogeoboseyo.",
+      "script": "라면을 한번 먹어보세요.",
+      "cue": "Try the ramyeon and see."
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "Sae bangbeop-eul hanbeon haeboseyo.",
+      "script": "새 방법을 한번 해보세요.",
+      "cue": "Try the new method and see."
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "Sogeum-eul jom neoeumyeon dwaeyo.",
+      "script": "소금을 좀 넣으면 돼요.",
+      "cue": "You just have to add a little salt."
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "Igeo-reul sunseo-daero hamyeon dwaeyo.",
+      "script": "이거를 순서대로 하면 돼요.",
+      "cue": "You just have to do this in order."
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "Hanguk-e gagi wihaeseo hangugeo-reul baewoyo.",
+      "script": "한국에 가기 위해서 한국어를 배워요.",
+      "cue": "I study Korean in order to go to Korea."
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "Ramyeon-eul meokgi wihaeseo mul-eul kkeuryeoyo.",
+      "script": "라면을 먹기 위해서 물을 끓여요.",
+      "cue": "I boil water in order to eat ramyeon."
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "Meonjeo bul-eul kyeogo, geu daeum-e mul-eul kkeuriseyo.",
+      "script": "먼저 불을 켜고, 그 다음에 물을 끓이세요.",
+      "cue": "First turn the heat on, then boil the water."
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "Sogeum-eul jom neoeoboseyo.",
+      "script": "소금을 좀 넣어보세요.",
+      "cue": "Try adding a little salt."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

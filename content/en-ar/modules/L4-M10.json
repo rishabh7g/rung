@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M10",
+  "title": "A story with a twist",
+  "job": "A six-sentence narrative with a line of dialogue inside it",
+  "prerequisites": [
+    "L4-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_past",
+      "simple_present",
+      "habitual_past",
+      "past_perfect",
+      "future"
+    ],
+    "allowedPatterns": [
+      "kāna + <N> + V-imperfect + , + wa fajʾatan + V-past",
+      "qāla lahu + : + <quoted clause>",
+      "fa- + V-past + <complement>",
+      "kāna qad + V-past + qabla + dhālika",
+      "<N> + alladhī + V + , + V-past"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "DIRECT AGAINST INDIRECT SPEECH. L3-M5 taught the report — qāla innahu marīḍ, with no backshift. This module sets the other half beside it: qāla lī: anā marīḍ, the words exactly as spoken."
+    },
+    {
+      "tag": "delta",
+      "text": "anna and inna belong to the REPORT and vanish from the quotation, and the pronouns flip with them: the reported he is the quoted I. Writing qāla lī anna anā marīḍ is half of each, and it is the error this module exists to prevent."
+    },
+    {
+      "tag": "interference",
+      "text": "English narration leans on the past continuous — I was walking when he arrived. Arabic has no such tense: the background is L4-M8's kāna plus a plain present verb, and the interruption is a bare past. Reaching for a continuous builds L4-M3's pluperfect by accident."
+    },
+    {
+      "tag": "free",
+      "text": "THE TWIST IS BUILT, NOT TAUGHT: kāna plus an imperfect sets the background going (L4-M8), fajʾatan breaks it, L4-M2's fa- carries the consequence, and L4-M3's kāna qad supplies whatever had already happened before the story started."
+    },
+    {
+      "tag": "interference",
+      "text": "English can start a story with a subject — a man came to me. Arabic prefers the verb first with an indefinite subject behind it, which is exactly L4-M9's second relative law doing narrative work."
+    },
+    {
+      "tag": "free",
+      "text": "Speech marks the switch into a quotation with a PAUSE where the page marks it with a colon. The quotation marks are the page's convention, not the language's, and nothing in the quoted line changes shape because of them."
+    },
+    {
+      "tag": "free",
+      "text": "ajāba and radda are the two answering verbs and they split by what came before: ajāba answers a question, radda answers a statement or a request. Both take the quoted line directly, with no particle in between."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M10-S01",
+      "display": "ams, iltaqaytu ṣadīqī fī as-sūq. kāna mutaʿab jiddan. qāla lī: \"anā marīḍ al-yawm\". wa saʾalanī ʿan al-ʿamal. qultu innahu ṣaʿb. thumma dhahabnā ilā al-bayt.",
+      "script": "أمس، التقيت صديقي في السوق. كان متعب جداً. قال لي: «أنا مريض اليوم». وسألني عن العمل. قلت إنه صعب. ثم ذهبنا إلى البيت.",
+      "cue": "Yesterday I met my friend at the market. He was very tired. He said to me: \"I am ill today.\" And he asked me about the work. I said that it was hard. Then we went home.",
+      "literal": "Yesterday, I-met my-friend in the-market. He-was tired very. He-said to-me: \"I ill the-day\". And he-asked-me about the-work. I-said that-it hard. Then we-went to the-house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qāla lī",
+            "script": "قال لي",
+            "cue": "he said to me",
+            "tag": "delta",
+            "forms": [
+              "qāla lī",
+              "qālat lī"
+            ],
+            "note": "The quoting frame. L2-M10's qāla with L3-M5's lī, and behind it the words AS SPOKEN — no anna, and the pronouns as the speaker said them."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "English keeps he said to me and he told me that a hair apart, so a learner slides between them. Arabic marks the difference with a whole particle: anna or inna for the report, nothing at all for the quotation.",
+      "sound": "The colon is a real pause. The quoted line is said in the friend's own voice and comes back down to the narrator's at wa saʾalanī.",
+      "variations": [
+        {
+          "display": "qāla lī: \"anā marīḍ al-yawm\". wa saʾalanī ʿan al-ʿamal.",
+          "script": "قال لي: «أنا مريض اليوم». وسألني عن العمل.",
+          "cue": "He said to me: \"I am ill today.\" And he asked me about the work.",
+          "changed": "the middle pair on its own, quotation against report"
+        },
+        {
+          "display": "qālat lī: \"anā marīḍa al-yawm\". thumma dhahabnā ilā al-bayt.",
+          "script": "قالت لي: «أنا مريضة اليوم». ثم ذهبنا إلى البيت.",
+          "cue": "She said to me: \"I am ill today.\" Then we went home.",
+          "changed": "a woman speaking, so both the frame and the quoted adjective move"
+        }
+      ],
+      "mistake": {
+        "display": "qāla lī anna anā marīḍ",
+        "script": "قال لي أن أنا مريض",
+        "why": "Half report and half quotation. anna belongs to the reported version and takes the reported pronoun — qāla innahu marīḍ. Once the words are quoted, anna goes and anā stays."
+      },
+      "usage": "Retelling a conversation, giving one line in the speaker's own words.",
+      "register": "neutral",
+      "mnemonic": "anna reports; the colon quotes. Never both."
+    },
+    {
+      "id": "L4-M10-S02",
+      "display": "kuntu adrus fī al-bayt. wa fajʾatan waṣala ṣadīqī. lam yakun maʿī waqt. qāla lī: \"hal anta mashghūl?\". qultu lā. wa dhahabnā ilā al-maṭʿam.",
+      "script": "كنت أدرس في البيت. وفجأة وصل صديقي. لم يكن معي وقت. قال لي: «هل أنت مشغول؟». قلت لا. وذهبنا إلى المطعم.",
+      "cue": "I was studying at home. And suddenly my friend arrived. I had no time. He said to me: \"Are you busy?\" I said no. And we went to the restaurant.",
+      "literal": "I-was I-study in the-house. And suddenly he-arrived my-friend. Not he-was with-me time. He-said to-me: \"Question you busy?\". I-said no. And we-went to the-restaurant.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fajʾatan",
+            "script": "فجأة",
+            "cue": "suddenly",
+            "tag": "free",
+            "forms": [
+              "fajʾatan"
+            ],
+            "note": "Suddenly — the word that breaks a background. It carries the -an ending of L1-M4's dāʾiman, and the hamza in the middle is written ʾ."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English would say I WAS STUDYING when he arrived and lean on a continuous tense. Arabic has none: L4-M8's kuntu adrus sets the background and the bare past waṣala cuts across it.",
+      "sound": "faj-ʾa-tan: the hamza is a catch between the j and the a, and the word ends on the light -an.",
+      "variations": [
+        {
+          "display": "kuntu adrus fī al-bayt. wa fajʾatan waṣala ṣadīqī.",
+          "script": "كنت أدرس في البيت. وفجأة وصل صديقي.",
+          "cue": "I was studying at home. And suddenly my friend arrived.",
+          "changed": "the account cut to the background and its interruption"
+        },
+        {
+          "display": "kāna yadrus fī al-bayt. wa fajʾatan waṣala ṣadīqī.",
+          "script": "كان يدرس في البيت. وفجأة وصل صديقي.",
+          "cue": "He was studying at home. And suddenly his friend arrived.",
+          "changed": "the person the story is about"
+        }
+      ],
+      "mistake": {
+        "display": "kuntu qad darastu fī al-bayt. wa fajʾatan waṣala ṣadīqī",
+        "script": "كنت قد درست في البيت. وفجأة وصل صديقي",
+        "why": "L4-M3's pluperfect where the background belongs. kuntu qad darastu says I HAD studied and closes the action; a background that something can interrupt needs the plain present adrus."
+      },
+      "usage": "The opening of any story where something cuts in.",
+      "register": "neutral",
+      "mnemonic": "kāna + present holds the door open; the bare past walks through it."
+    },
+    {
+      "id": "L4-M10-S03",
+      "display": "dhāta yawm, sāfartu ilā al-qarya. kāna aṭ-ṭarīq ṭawīl. nazaltu fī funduq ṣaghīr. qālat lī imraʾa: \"al-manẓar jamīl hunā\". wa kānat al-qarya jamīla fiʿlan.",
+      "script": "ذات يوم، سافرت إلى القرية. كان الطريق طويل. نزلت في فندق صغير. قالت لي امرأة: «المنظر جميل هنا». وكانت القرية جميلة فعلاً.",
+      "cue": "One day I travelled to the village. The road was long. I stayed at a small hotel. A woman said to me: \"The view is beautiful here.\" And the village really was beautiful.",
+      "literal": "One-of day, I-travelled to the-village. Was the-road long. I-stayed in hotel small. She-said to-me woman: \"The-view beautiful here\". And was the-village beautiful really.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dhāta yawm",
+            "script": "ذات يوم",
+            "cue": "one day, once",
+            "tag": "free",
+            "forms": [
+              "dhāta yawm"
+            ],
+            "note": "The story opener — once, one day. It is indexed whole: dhāta on its own is a different word and this module does not open it."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "English can begin with the subject — a woman said to me. Arabic prefers the verb first and the indefinite subject after it, which is L4-M9's second relative law doing narrative work.",
+      "sound": "DHĀ-ta yawm: the dh is the voiced th of this, and the two words run together as one opening beat.",
+      "variations": [
+        {
+          "display": "dhāta yawm, sāfartu ilā al-qarya. kāna aṭ-ṭarīq ṭawīl.",
+          "script": "ذات يوم، سافرت إلى القرية. كان الطريق طويل.",
+          "cue": "One day I travelled to the village. The road was long.",
+          "changed": "the account cut to its opening pair"
+        },
+        {
+          "display": "qālat lī imraʾa: \"al-manẓar jamīl hunā\". wa kānat al-qarya jamīla fiʿlan.",
+          "script": "قالت لي امرأة: «المنظر جميل هنا». وكانت القرية جميلة فعلاً.",
+          "cue": "A woman said to me: \"The view is beautiful here.\" And the village really was beautiful.",
+          "changed": "the quoted line and the narrator's verdict on it"
+        }
+      ],
+      "mistake": {
+        "display": "dhāta yawm, imraʾa qālat lī: \"al-manẓar jamīl hunā\"",
+        "script": "ذات يوم، امرأة قالت لي: «المنظر جميل هنا»",
+        "why": "The indefinite subject put in front of its verb. It is not ungrammatical, but a story told this way reads as a list of headlines; narrative Arabic opens on the verb."
+      },
+      "usage": "Opening an account of something that happened once.",
+      "register": "neutral",
+      "mnemonic": "dhāta yawm is once upon a time, and the verb comes next."
+    },
+    {
+      "id": "L4-M10-S04",
+      "display": "dhahabtu ilā al-maktab mutaʾakhkhir. saʾalanī al-mudīr ʿan at-taʾkhīr. qultu lahu: \"kāna al-izdiḥām ṣaʿb\". ajāba al-mudīr: \"lā baʾsa\". thumma badaʾa al-ijtimāʿ. wa kāna yawm ṭawīl.",
+      "script": "ذهبت إلى المكتب متأخر. سألني المدير عن التأخير. قلت له: «كان الازدحام صعب». أجاب المدير: «لا بأس». ثم بدأ الاجتماع. وكان يوم طويل.",
+      "cue": "I went to the office late. The manager asked me about the delay. I said to him: \"The traffic was bad.\" The manager answered: \"No problem.\" Then the meeting started. And it was a long day.",
+      "literal": "I-went to the-office late. He-asked-me the-manager about the-delay. I-said to-him: \"Was the-crowding hard\". He-answered the-manager: \"No harm\". Then it-started the-meeting. And was day long.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ajāba",
+            "script": "أجاب",
+            "cue": "he answered",
+            "tag": "free",
+            "forms": [
+              "ajāba",
+              "ajābat"
+            ],
+            "note": "To answer a question. The quoted reply follows it directly, with no particle in between."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          6
+        ]
+      },
+      "trap": "English reported speech backshifts — he said the traffic HAD BEEN bad. Arabic does not move the tense at all, and inside a quotation there was never anything to move.",
+      "sound": "a-JĀ-ba: the long ā carries the word, and the b at the end is light.",
+      "variations": [
+        {
+          "display": "saʾalanī al-mudīr ʿan at-taʾkhīr. qultu lahu: \"kāna al-izdiḥām ṣaʿb\".",
+          "script": "سألني المدير عن التأخير. قلت له: «كان الازدحام صعب».",
+          "cue": "The manager asked me about the delay. I said to him: \"The traffic was bad.\"",
+          "changed": "the question and its answer, on their own"
+        },
+        {
+          "display": "ajābat al-muwaẓẓafa: \"lā baʾsa\". thumma badaʾa al-ijtimāʿ.",
+          "script": "أجابت الموظفة: «لا بأس». ثم بدأ الاجتماع.",
+          "cue": "The clerk answered: \"No problem.\" Then the meeting started.",
+          "changed": "who answered, so ajāba takes its feminine -at"
+        }
+      ],
+      "mistake": {
+        "display": "ajāba al-mudīr anna lā baʾsa",
+        "script": "أجاب المدير أن لا بأس",
+        "why": "anna in front of a quotation. ajāba takes the words as they were said; anna would make it a report, and then the sentence needs reshaping rather than a particle."
+      },
+      "usage": "Explaining yourself and being let off.",
+      "register": "neutral",
+      "mnemonic": "ajāba answers a question; the answer comes bare."
+    },
+    {
+      "id": "L4-M10-S05",
+      "display": "dhahabtu ilā ash-shubbāk fī al-maḥaṭṭa. yurjā al-intiẓār fī aṭ-ṭābūr. qultu: \"hal al-ḥajz maṭlūb?\". radda al-muwaẓẓaf: \"yajibu ʿalayka an tadfaʿ ar-rusūm\". dafaʿtu ar-rusūm. wa fī an-nihāya, waṣaltu mutaʾakhkhir.",
+      "script": "ذهبت إلى الشباك في المحطة. يرجى الانتظار في الطابور. قلت: «هل الحجز مطلوب؟». رد الموظف: «يجب عليك أن تدفع الرسوم». دفعت الرسوم. وفي النهاية، وصلت متأخر.",
+      "cue": "I went to the window at the station. Please wait in the queue. I said: \"Is a booking required?\" The clerk replied: \"You must pay the fees.\" I paid the fees. And in the end I arrived late.",
+      "literal": "I-went to the-window in the-station. It-is-requested the-waiting in the-queue. I-said: \"Question the-booking required?\". He-replied the-clerk: \"It-is-necessary on-you that you-pay the-fees\". I-paid the-fees. And in the-end, I-arrived late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "radda",
+            "script": "رد",
+            "cue": "he replied, he answered back",
+            "tag": "free",
+            "forms": [
+              "radda",
+              "raddat"
+            ],
+            "note": "To reply to a remark, where ajāba answers a question. The doubled d is held, which is what keeps it apart from a single-d verb."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          6
+        ]
+      },
+      "trap": "English uses replied and answered interchangeably. Arabic splits them by what came before: ajāba after a question, radda after a statement or a request.",
+      "sound": "RAD-da: the d is doubled and held, and the announcement sentence in the middle is read flat, in the loudspeaker's voice.",
+      "variations": [
+        {
+          "display": "qultu: \"hal al-ḥajz maṭlūb?\". radda al-muwaẓẓaf: \"yajibu ʿalayka an tadfaʿ ar-rusūm\".",
+          "script": "قلت: «هل الحجز مطلوب؟». رد الموظف: «يجب عليك أن تدفع الرسوم».",
+          "cue": "I said: \"Is a booking required?\" The clerk replied: \"You must pay the fees.\"",
+          "changed": "the exchange on its own, question and reply"
+        },
+        {
+          "display": "raddat al-muwaẓẓafa: \"yajibu ʿalayki an tadfaʿ ar-rusūm\". dafaʿtu ar-rusūm.",
+          "script": "ردت الموظفة: «يجب عليك أن تدفع الرسوم». دفعت الرسوم.",
+          "cue": "The clerk replied: \"You must pay the fees.\" I paid the fees.",
+          "changed": "a woman on both sides of the counter, so radda and the frame both move"
+        }
+      ],
+      "mistake": {
+        "display": "radda al-muwaẓẓaf innahu yajibu ʿalayya an adfaʿ",
+        "script": "رد الموظف إنه يجب علي أن أدفع",
+        "why": "The quoted line half-reported. Once inna arrives, the pronouns must all flip to the narrator's point of view; leaving the clerk's own words behind it is the commonest half-way error."
+      },
+      "usage": "An errand that goes exactly as officially as it can.",
+      "register": "neutral",
+      "mnemonic": "ajāba answers, radda answers back."
+    },
+    {
+      "id": "L4-M10-S06",
+      "display": "dhāta yawm, waṣala ṣadīqī fajʾatan. kānat al-mufājaʾa kabīra. qāla lī: \"anā hunā al-yawm\". lam yakun maʿī waqt. lākin dhahabnā ilā al-maṭʿam. wa kāna al-yawm jamīl.",
+      "script": "ذات يوم، وصل صديقي فجأة. كانت المفاجأة كبيرة. قال لي: «أنا هنا اليوم». لم يكن معي وقت. لكن ذهبنا إلى المطعم. وكان اليوم جميل.",
+      "cue": "One day my friend arrived suddenly. The surprise was big. He said to me: \"I am here today.\" I had no time. But we went to the restaurant. And it was a beautiful day.",
+      "literal": "One-of day, he-arrived my-friend suddenly. Was the-surprise big. He-said to-me: \"I here the-day\". Not he-was with-me time. But we-went to the-restaurant. And was the-day beautiful.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-mufājaʾa",
+            "script": "المفاجأة",
+            "cue": "the surprise",
+            "tag": "free",
+            "forms": [
+              "al-mufājaʾa",
+              "mufājaʾa"
+            ],
+            "note": "The noun of fajʾatan: the surprise itself. Both write their hamza as ʾ, and it is the same root you hear in the adverb."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "English can carry a whole surprise in the tense — he had arrived, and I wasn't expecting it. Arabic names it: the adverb breaks the story and the noun says what it was.",
+      "sound": "al-mu-FĀ-ja-ʾa: four syllables, and the hamza before the final a is a small catch, not a vowel.",
+      "variations": [
+        {
+          "display": "dhāta yawm, waṣala ṣadīqī fajʾatan. kānat al-mufājaʾa kabīra.",
+          "script": "ذات يوم، وصل صديقي فجأة. كانت المفاجأة كبيرة.",
+          "cue": "One day my friend arrived suddenly. The surprise was big.",
+          "changed": "the account cut to the turn and its verdict"
+        },
+        {
+          "display": "qāla lī: \"anā hunā al-yawm\". lākin dhahabnā ilā al-maṭʿam.",
+          "script": "قال لي: «أنا هنا اليوم». لكن ذهبنا إلى المطعم.",
+          "cue": "He said to me: \"I am here today.\" But we went to the restaurant.",
+          "changed": "the quoted line and what came of it"
+        }
+      ],
+      "mistake": {
+        "display": "qāla lī annahu huwa hunā al-yawm",
+        "script": "قال لي أنه هو هنا اليوم",
+        "why": "A report with the quoted pronoun still inside it. annahu already carries the he; adding huwa behind it is the report and the quotation trying to occupy the same clause."
+      },
+      "usage": "Telling a small good thing that came out of nowhere.",
+      "register": "neutral",
+      "mnemonic": "fajʾatan is how it happened, al-mufājaʾa is what it was."
+    },
+    {
+      "id": "L4-M10-S07",
+      "display": "kāna al-ijtimāʿ ṭawīl. saʾalanī al-mudīr ʿan al-qarār. kāna aṣ-ṣamt ṭawīl jiddan. thumma qultu: \"lā aẓunn anna hādhā ṣaḥīḥ\". radda al-mudīr: \"maʿaka ḥaqq\". wa baʿda dhālika, ṣāra al-ʿamal sahl.",
+      "script": "كان الاجتماع طويل. سألني المدير عن القرار. كان الصمت طويل جداً. ثم قلت: «لا أظن أن هذا صحيح». رد المدير: «معك حق». وبعد ذلك، صار العمل سهل.",
+      "cue": "The meeting was long. The manager asked me about the decision. The silence was very long. Then I said: \"I don't think this is right.\" The manager replied: \"You have a point.\" And after that the work became easy.",
+      "literal": "Was the-meeting long. He-asked-me the-manager about the-decision. Was the-silence long very. Then I-said: \"Not I-think that this right\". He-replied the-manager: \"With-you right\". And after that, became the-work easy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aṣ-ṣamt",
+            "script": "الصمت",
+            "cue": "the silence",
+            "tag": "free",
+            "forms": [
+              "aṣ-ṣamt",
+              "ṣamt"
+            ],
+            "note": "Silence — the pause a story hangs on. The article assimilates to the ṣ, so it is written aṣ-ṣ- and heard as one long heavy ṣ."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "English writes a pause as punctuation — a dash, an ellipsis. Arabic gives it a noun and a clause of its own, which is why a translated pause disappears and the story loses its turn.",
+      "sound": "aṣ-ṢAMT: one heavy syllable ending on a consonant cluster; the sentence stops dead on it, which is the point.",
+      "variations": [
+        {
+          "display": "kāna aṣ-ṣamt ṭawīl jiddan. thumma qultu: \"lā aẓunn anna hādhā ṣaḥīḥ\".",
+          "script": "كان الصمت طويل جداً. ثم قلت: «لا أظن أن هذا صحيح».",
+          "cue": "The silence was very long. Then I said: \"I don't think this is right.\"",
+          "changed": "the pause and the line that breaks it"
+        },
+        {
+          "display": "radda al-mudīr: \"maʿaka ḥaqq\". wa baʿda dhālika, ṣāra al-ʿamal sahl.",
+          "script": "رد المدير: «معك حق». وبعد ذلك، صار العمل سهل.",
+          "cue": "The manager replied: \"You have a point.\" And after that the work became easy.",
+          "changed": "the reply and the change it brought"
+        }
+      ],
+      "mistake": {
+        "display": "radda al-mudīr anna maʿī ḥaqq",
+        "script": "رد المدير أن معي حق",
+        "why": "The reply reported with the pronouns half turned. If the line becomes a report it is maʿaka becoming maʿī only when the narrator is the one who was right — here it flips the wrong way and the manager ends up agreeing with himself."
+      },
+      "usage": "The moment a disagreement lands well.",
+      "register": "neutral",
+      "mnemonic": "The silence gets a sentence, and the quotation gets a colon."
+    },
+    {
+      "id": "L4-M10-S08",
+      "display": "dhāta yawm, iltaqaytu rajul fī al-qiṭār. saʾalanī ʿan al-madīna. qultu lahu: \"anā hunā mundhu sana\". ajāba: \"wa anā ayḍan\". wa kānat riḥla qaṣīra.",
+      "script": "ذات يوم، التقيت رجل في القطار. سألني عن المدينة. قلت له: «أنا هنا منذ سنة». أجاب: «وأنا أيضاً». وكانت رحلة قصيرة.",
+      "cue": "One day I met a man on the train. He asked me about the city. I said to him: \"I have been here for a year.\" He answered: \"Me too.\" And it was a short trip.",
+      "literal": "One-of day, I-met man in the-train. He-asked-me about the-city. I-said to-him: \"I here since year\". He-answered: \"And I also\". And was trip short.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "iltaqaytu",
+            "script": "التقيت",
+            "cue": "I met",
+            "tag": "free",
+            "forms": [
+              "iltaqaytu",
+              "iltaqā"
+            ],
+            "note": "To meet somebody, by chance or by arrangement. It takes its object directly, with no preposition in between."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "English met is followed by with in some dialects and never in others, so the preposition feels optional. iltaqā takes the person straight, and rajul stands there indefinite with no relative in front of it.",
+      "sound": "il-ta-QAY-tu: the qay in the middle carries the stress, and the q is the deep one.",
+      "variations": [
+        {
+          "display": "dhāta yawm, iltaqaytu rajul fī al-qiṭār. saʾalanī ʿan al-madīna.",
+          "script": "ذات يوم، التقيت رجل في القطار. سألني عن المدينة.",
+          "cue": "One day I met a man on the train. He asked me about the city.",
+          "changed": "the account cut to the meeting and its first question"
+        },
+        {
+          "display": "dhāta yawm, iltaqā ṣadīqī imraʾa fī al-qiṭār.",
+          "script": "ذات يوم، التقى صديقي امرأة في القطار.",
+          "cue": "One day my friend met a woman on the train.",
+          "changed": "who met whom — the third person, with the verb still in front"
+        }
+      ],
+      "mistake": {
+        "display": "iltaqaytu maʿa rajul fī al-qiṭār",
+        "script": "التقيت مع رجل في القطار",
+        "why": "maʿa inserted after iltaqaytu. The verb already contains the meeting; adding with says met together with him, which is a different and stranger claim."
+      },
+      "usage": "A small encounter on the way somewhere.",
+      "register": "neutral",
+      "mnemonic": "iltaqaytu takes the person, not a preposition."
+    },
+    {
+      "id": "L4-M10-S09",
+      "display": "kāna ṣadīqī yaqif amāma al-funduq. wa fajʾatan waṣala al-mudīr. qāla lahu: \"al-maktab mughlaq al-yawm\". radda ṣadīqī: \"sa-antaẓir hunā\". thumma dhahaba al-mudīr. wa kāna al-intiẓār ṭawīl.",
+      "script": "كان صديقي يقف أمام الفندق. وفجأة وصل المدير. قال له: «المكتب مغلق اليوم». رد صديقي: «سأنتظر هنا». ثم ذهب المدير. وكان الانتظار طويل.",
+      "cue": "My friend was standing in front of the hotel. And suddenly the manager arrived. He said to him: \"The office is closed today.\" My friend replied: \"I will wait here.\" Then the manager left. And the wait was long.",
+      "literal": "Was my-friend he-stands in-front-of the-hotel. And suddenly he-arrived the-manager. He-said to-him: \"The-office closed the-day\". He-replied my-friend: \"Will-I-wait here\". Then he-went the-manager. And was the-waiting long.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qāla lahu",
+            "script": "قال له",
+            "cue": "he said to him",
+            "tag": "delta",
+            "forms": [
+              "qāla lahu",
+              "qālat lahu"
+            ],
+            "note": "The same frame as qāla lī with a third-person hearer. The pronoun on li- says who was spoken to; the quoted line does not change for it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "English he told him that the office was closed backshifts the tense and keeps one pronoun system. Arabic quotes the line untouched, so the office is closed NOW inside a story about yesterday.",
+      "sound": "QĀ-la LA-hu: two light words; lahu is unstressed and leans back onto the verb.",
+      "variations": [
+        {
+          "display": "kāna ṣadīqī yaqif amāma al-funduq. wa fajʾatan waṣala al-mudīr.",
+          "script": "كان صديقي يقف أمام الفندق. وفجأة وصل المدير.",
+          "cue": "My friend was standing in front of the hotel. And suddenly the manager arrived.",
+          "changed": "the background and the interruption alone"
+        },
+        {
+          "display": "qālat lahu: \"al-maktab mughlaq al-yawm\". radda ṣadīqī: \"sa-antaẓir hunā\".",
+          "script": "قالت له: «المكتب مغلق اليوم». رد صديقي: «سأنتظر هنا».",
+          "cue": "She said to him: \"The office is closed today.\" My friend replied: \"I will wait here.\"",
+          "changed": "who spoke, on the frame only"
+        }
+      ],
+      "mistake": {
+        "display": "qāla lahu anna al-maktab kāna mughlaq al-yawm",
+        "script": "قال له أن المكتب كان مغلق اليوم",
+        "why": "The quotation turned into a report AND backshifted. anna is legitimate here, but the past kāna is an English habit: Arabic reports what was said in the tense it was said in."
+      },
+      "usage": "A closed door, told as a scene rather than a complaint.",
+      "register": "neutral",
+      "mnemonic": "lī to me, lahu to him; the quoted line never notices."
+    },
+    {
+      "id": "L4-M10-S10",
+      "display": "kāna yawm gharīb. sāfartu ilā al-qarya allatī nazalnā fīhā sābiqan. wa fajʾatan iltaqaytu ṣadīqī hunāka. qāla lī: \"mā zāltu hunā mundhu sana\". kānat mufājaʾa jamīla. wa lam yakun al-yawm ṭawīl.",
+      "script": "كان يوم غريب. سافرت إلى القرية التي نزلنا فيها سابقاً. وفجأة التقيت صديقي هناك. قال لي: «ما زلت هنا منذ سنة». كانت مفاجأة جميلة. ولم يكن اليوم طويل.",
+      "cue": "It was a strange day. I travelled to the village that we stayed in previously. And suddenly I met my friend there. He said to me: \"I have still been here for a year.\" It was a lovely surprise. And the day was not long.",
+      "literal": "Was day strange. I-travelled to the-village which-fem we-stayed in-it-fem previously. And suddenly I-met my-friend there. He-said to-me: \"Still-I here since year\". Was surprise beautiful. And not he-was the-day long.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gharīb",
+            "script": "غريب",
+            "cue": "strange, odd",
+            "tag": "free",
+            "forms": [
+              "gharīb",
+              "gharība"
+            ],
+            "note": "Strange, in the sense of unexpected rather than foreign. It agrees with its noun like any adjective: gharīb, gharība."
+          }
+        ],
+        "rules": [
+          2,
+          4,
+          5
+        ]
+      },
+      "trap": "English would hold the twist back for the last line. Arabic states it first — kāna yawm gharīb — and then earns it, which is the shape L3-M10's accounts already used and this one keeps.",
+      "sound": "gha-RĪB: the gh is the gargled r of French, and the long ī carries the stress.",
+      "variations": [
+        {
+          "display": "kāna yawm gharīb. sāfartu ilā al-qarya allatī nazalnā fīhā sābiqan.",
+          "script": "كان يوم غريب. سافرت إلى القرية التي نزلنا فيها سابقاً.",
+          "cue": "It was a strange day. I travelled to the village that we stayed in previously.",
+          "changed": "the verdict and the journey, with L4-M9's relative clause inside it"
+        },
+        {
+          "display": "wa fajʾatan iltaqaytu ṣadīqī hunāka. qāla lī: \"mā zāltu hunā mundhu sana\".",
+          "script": "وفجأة التقيت صديقي هناك. قال لي: «ما زلت هنا منذ سنة».",
+          "cue": "And suddenly I met my friend there. He said to me: \"I have still been here for a year.\"",
+          "changed": "the turn and the quoted line, on their own"
+        }
+      ],
+      "mistake": {
+        "display": "qāla lī annahu mā zāla hunāka mundhu sana",
+        "script": "قال لي أنه ما زال هناك منذ سنة",
+        "why": "The line reported instead of quoted, and every pronoun and place word has to move with it: hunā becomes hunāka and mā zāltu becomes mā zāla. Doing half of that is where the two systems collide."
+      },
+      "usage": "The last account of the level: a trip, a relative clause, a sister verb and a quoted line in six sentences.",
+      "register": "neutral",
+      "mnemonic": "State the verdict, then tell the story that earns it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M10-C01",
+      "display": "ams, iltaqaytu ṣadīqī fī as-sūq. qāla lī: \"anā marīḍ al-yawm\".",
+      "script": "أمس، التقيت صديقي في السوق. قال لي: «أنا مريض اليوم».",
+      "cue": "Yesterday I met my friend at the market. He said to me: \"I am ill today.\""
+    },
+    {
+      "id": "L4-M10-C02",
+      "display": "kuntu adrus fī al-bayt. wa fajʾatan waṣala ṣadīqī.",
+      "script": "كنت أدرس في البيت. وفجأة وصل صديقي.",
+      "cue": "I was studying at home. And suddenly my friend arrived."
+    },
+    {
+      "id": "L4-M10-C03",
+      "display": "dhāta yawm, sāfartu ilā al-qarya. kāna aṭ-ṭarīq ṭawīl.",
+      "script": "ذات يوم، سافرت إلى القرية. كان الطريق طويل.",
+      "cue": "One day I travelled to the village. The road was long."
+    },
+    {
+      "id": "L4-M10-C04",
+      "display": "saʾalanī al-mudīr ʿan at-taʾkhīr. ajāba al-mudīr: \"lā baʾsa\".",
+      "script": "سألني المدير عن التأخير. أجاب المدير: «لا بأس».",
+      "cue": "The manager asked me about the delay. The manager answered: \"No problem.\""
+    },
+    {
+      "id": "L4-M10-C05",
+      "display": "radda al-muwaẓẓaf: \"yajibu ʿalayka an tadfaʿ ar-rusūm\". dafaʿtu ar-rusūm.",
+      "script": "رد الموظف: «يجب عليك أن تدفع الرسوم». دفعت الرسوم.",
+      "cue": "The clerk replied: \"You must pay the fees.\" I paid the fees."
+    },
+    {
+      "id": "L4-M10-C06",
+      "display": "kānat al-mufājaʾa kabīra. qāla lī: \"anā hunā al-yawm\".",
+      "script": "كانت المفاجأة كبيرة. قال لي: «أنا هنا اليوم».",
+      "cue": "The surprise was big. He said to me: \"I am here today.\""
+    },
+    {
+      "id": "L4-M10-C07",
+      "display": "kāna aṣ-ṣamt ṭawīl jiddan. thumma qultu: \"lā aẓunn anna hādhā ṣaḥīḥ\".",
+      "script": "كان الصمت طويل جداً. ثم قلت: «لا أظن أن هذا صحيح».",
+      "cue": "The silence was very long. Then I said: \"I don't think this is right.\""
+    },
+    {
+      "id": "L4-M10-C08",
+      "display": "dhāta yawm, iltaqaytu rajul fī al-qiṭār. saʾalanī ʿan al-madīna.",
+      "script": "ذات يوم، التقيت رجل في القطار. سألني عن المدينة.",
+      "cue": "One day I met a man on the train. He asked me about the city."
+    },
+    {
+      "id": "L4-M10-C09",
+      "display": "qāla lahu: \"al-maktab mughlaq al-yawm\". radda ṣadīqī: \"sa-antaẓir hunā\".",
+      "script": "قال له: «المكتب مغلق اليوم». رد صديقي: «سأنتظر هنا».",
+      "cue": "He said to him: \"The office is closed today.\" My friend replied: \"I will wait here.\""
+    },
+    {
+      "id": "L4-M10-C10",
+      "display": "kāna yawm gharīb. wa fajʾatan iltaqaytu ṣadīqī hunāka.",
+      "script": "كان يوم غريب. وفجأة التقيت صديقي هناك.",
+      "cue": "It was a strange day. And suddenly I met my friend there."
+    },
+    {
+      "id": "L4-M10-C11",
+      "display": "qāla innahu marīḍ. thumma dhahabnā ilā al-bayt.",
+      "script": "قال إنه مريض. ثم ذهبنا إلى البيت.",
+      "cue": "He said that he was ill. Then we went home."
+    },
+    {
+      "id": "L4-M10-C12",
+      "display": "kāna ṣadīqī yaqif amāma al-funduq. wa kāna al-intiẓār ṭawīl.",
+      "script": "كان صديقي يقف أمام الفندق. وكان الانتظار طويل.",
+      "cue": "My friend was standing in front of the hotel. And the wait was long."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 4
+  }
+}

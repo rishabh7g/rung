@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M6",
+  "title": "Before and after",
+  "job": "Time clauses: while, until, since, already, not yet",
+  "prerequisites": ["L4-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["present", "present subjunctive", "preterite", "perfect", "tú imperative", "usted imperative"],
+    "allowedPatterns": [
+      "Cuando + <subjunctive> + , + <future or imperative>",
+      "Cuando + <indicative> + , + <present or preterite>",
+      "Hasta que + <subjunctive>",
+      "Antes de + V-inf + / + Antes de que + <subjunctive>",
+      "Ya + <perfect> + / + Todavía no + <perfect>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A time clause pointing at the FUTURE takes the subjunctive: Cuando llegues, llámame. The same clause pointing at a habit or at the past takes the indicative: Cuando llego, siempre llamo. One test, five conjunctions — cuando, hasta que, en cuanto, mientras, después de que — all of which L3-M10 already showed you with the indicative."
+    },
+    {
+      "tag": "interference",
+      "text": "English uses the PRESENT for the future in exactly this slot: when I get there, I will call you. So the English sentence hands you Cuando llego, te llamo — which is perfectly good Spanish meaning something else, a habit, and nothing sounds wrong. This is the level's most invisible error: the sentence you produce is grammatical and says the wrong thing."
+    },
+    {
+      "tag": "delta",
+      "text": "antes de que is the exception to rule 0: it takes the subjunctive ALWAYS, past or future. Against it stands antes de + INFINITIVE, which is what Spanish uses when both halves share one subject — Antes de salir, cierra la ventana against Antes de que salgas, cierra la ventana."
+    },
+    {
+      "tag": "free",
+      "text": "ya (already) and todavía no (not yet) sit on the perfect L3-M7 taught you — Ya he perdido las llaves, Todavía no he llamado — and map onto English one to one. ya no is the third of the set and takes the present: it means not any more."
+    },
+    {
+      "tag": "interference",
+      "text": "English SINCE is time and cause in one word. Spanish splits them: desde que is the time one (Desde que vivo aquí…) and ya que, which L4-M2 taught, is the cause one. Choosing by the English word alone gets it wrong half the time."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M6-S01",
+      "display": "Cuando llegues a casa, llámame.",
+      "cue": "When you get home, call me.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "llegues",
+            "cue": "you arrive (still to come)",
+            "tag": "delta",
+            "forms": ["llegues", "llegue"],
+            "note": "The present subjunctive of llegar. It is not a polite form or a doubt — it is what cuando takes when the arriving has not happened yet."
+          },
+          {
+            "display": "llámame",
+            "cue": "call me",
+            "tag": "free",
+            "forms": ["llámame"],
+            "note": "The tú command with me stuck on the end. The accent appears because the added syllable moves the stress, and llama alone carries none."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Cuando llego a casa, llámame is the sentence English gives you, and it is wrong here: llego says you get home every day.",
+      "sound": "KWAN-do YE-gess. The final s of llegues is the you, and dropping it turns the sentence into somebody else arriving.",
+      "variations": [
+        {
+          "display": "Cuando llegues, llámame.",
+          "cue": "When you get in, call me.",
+          "changed": "the place is left out, because both of us know it"
+        },
+        {
+          "display": "Cuando llegue el jefe, llámame.",
+          "cue": "When the boss arrives, call me.",
+          "changed": "who is arriving, and the verb ending with it"
+        }
+      ],
+      "mistake": {
+        "display": "Cuando llegas a casa, llámame.",
+        "why": "llegas is the indicative and describes what you do every day, so the sentence asks for a phone call on every arrival you will ever make."
+      },
+      "usage": "The everyday version of see you later — said to someone walking out of the door. Works unchanged in usted, where only llegue and llámeme move.",
+      "register": "informal",
+      "mnemonic": "Not yet happened, so not yet indicative."
+    },
+    {
+      "id": "L4-M6-S02",
+      "display": "Cuando llego a casa, siempre llamo a mi madre.",
+      "cue": "When I get home, I always call my mother.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "llego",
+            "cue": "I arrive · I get in",
+            "tag": "delta",
+            "forms": ["llego", "llegas", "llega"],
+            "note": "The ordinary present of llegar. Under cuando it says every time, which is why siempre sits comfortably beside it and would jar beside llegues."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "This is the SAME English sentence shape as S01 and the opposite Spanish. The test is not the words, it is whether the arriving is still to come.",
+      "sound": "YEH-go. Spanish ll is a y, and the g is hard as in go.",
+      "variations": [
+        {
+          "display": "Cuando llego tarde, siempre llamo a mi madre.",
+          "cue": "When I get in late, I always call my mother.",
+          "changed": "what makes the habit worth mentioning"
+        },
+        {
+          "display": "Cuando llegué a casa, llamé a mi madre.",
+          "cue": "When I got home, I called my mother.",
+          "changed": "the whole thing moves to one occasion in the past"
+        }
+      ],
+      "mistake": {
+        "display": "Cuando llegue a casa, siempre llamo a mi madre.",
+        "why": "The subjunctive points at one arrival still to come, and siempre says it happens every time. The sentence contradicts itself."
+      },
+      "usage": "Describing a routine to somebody who asked what you do. Neutral in both addresses.",
+      "register": "neutral",
+      "mnemonic": "Habit is indicative, because a habit has already happened."
+    },
+    {
+      "id": "L4-M6-S03",
+      "display": "Voy a esperar hasta que termine la reunión.",
+      "cue": "I'm going to wait until the meeting finishes.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hasta que",
+            "cue": "until (a clause follows)",
+            "tag": "delta",
+            "forms": ["hasta que"],
+            "note": "Two words, one conjunction, and the que is not optional. Bare hasta is the preposition — hasta el sábado — and cannot take a verb after it."
+          },
+          {
+            "display": "termine",
+            "cue": "it finishes (still to come)",
+            "tag": "delta",
+            "forms": ["termine", "termines"],
+            "note": "Present subjunctive of terminar. hasta que about the future always takes it, because whatever it names has not happened yet."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English until the meeting finishes has a present-tense verb, and copying it gives Hasta que termina — a habit, and not what you meant.",
+      "sound": "AS-ta ke ter-MEE-ne. The que is unstressed and runs into hasta.",
+      "variations": [
+        {
+          "display": "Voy a esperar hasta que termines.",
+          "cue": "I'm going to wait until you finish.",
+          "changed": "who is finishing"
+        },
+        {
+          "display": "No voy a salir hasta que termine la reunión.",
+          "cue": "I'm not going to leave until the meeting finishes.",
+          "changed": "what happens on the other side of the wait"
+        }
+      ],
+      "mistake": {
+        "display": "Voy a esperar hasta que termina la reunión.",
+        "why": "termina is the indicative. It reads as a general truth about meetings rather than about this one, and a Spanish speaker hears it as a slip."
+      },
+      "usage": "Said in an office or a waiting room to explain why you are not moving. Neutral.",
+      "register": "neutral",
+      "mnemonic": "Waiting is for something that has not come."
+    },
+    {
+      "id": "L4-M6-S04",
+      "display": "Antes de salir, cierra la ventana.",
+      "cue": "Before going out, close the window.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "antes de",
+            "cue": "before (doing something)",
+            "tag": "delta",
+            "forms": ["antes de"],
+            "note": "L1-M5 taught bare antes as before, on its own. Add de and an INFINITIVE follows, never a conjugated verb: antes de salir, antes de comer."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English says before you go out even when the you is the same person. Spanish uses the infinitive whenever the two halves share a subject, and a que here sounds heavy.",
+      "sound": "AN-tess de sa-LEER. antes de runs together as one word in speech.",
+      "variations": [
+        {
+          "display": "Antes de comer, cierra la ventana.",
+          "cue": "Before eating, close the window.",
+          "changed": "which action comes second"
+        },
+        {
+          "display": "Antes de salir, cierra la puerta.",
+          "cue": "Before going out, close the door.",
+          "changed": "what gets closed"
+        }
+      ],
+      "mistake": {
+        "display": "Antes de que salgas, cierra la ventana.",
+        "why": "Grammatical, but it makes two people of one: the que version says before YOU go out, said by somebody staying behind."
+      },
+      "usage": "A note left on a table, or a parent to a child. Chips informal only because of cierra — the antes de half is register-free.",
+      "register": "informal",
+      "mnemonic": "One subject, one verb: no que."
+    },
+    {
+      "id": "L4-M6-S05",
+      "display": "Antes de que salgas, cierra la ventana, por favor.",
+      "cue": "Before you go out, close the window, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "antes de que",
+            "cue": "before (someone else does something)",
+            "tag": "delta",
+            "forms": ["antes de que"],
+            "note": "Three words, and the only time conjunction that takes the subjunctive ALWAYS — past as well as future. Use it when the two halves have different subjects."
+          },
+          {
+            "display": "salgas",
+            "cue": "you go out (still to come)",
+            "tag": "delta",
+            "forms": ["salgas", "salga"],
+            "note": "Present subjunctive of salir. The g comes from salgo, the yo form, which is where every subjunctive in Spanish is built from."
+          }
+        ],
+        "rules": [2, 0]
+      },
+      "trap": "Set this beside S04 word by word. Same English, and the Spanish differs by whether one person or two are involved.",
+      "sound": "AN-tess de ke SAL-gass. The three little words are said as one run, with no pause before salgas.",
+      "variations": [
+        {
+          "display": "Antes de que salgas, hablamos un momento.",
+          "cue": "Before you go out, let's talk for a moment.",
+          "changed": "what the speaker wants first"
+        },
+        {
+          "display": "Antes de que salga el jefe, cierra la ventana.",
+          "cue": "Before the boss leaves, close the window.",
+          "changed": "who the other subject is"
+        }
+      ],
+      "mistake": {
+        "display": "Antes de que sales, cierra la ventana.",
+        "why": "antes de que has no indicative option at all. sales is simply not available here, which makes this the easiest of the module's rules to keep."
+      },
+      "usage": "Said to somebody on their way out while you stay. por favor is what keeps a bare command friendly.",
+      "register": "informal",
+      "mnemonic": "antes de que never argues: always subjunctive."
+    },
+    {
+      "id": "L4-M6-S06",
+      "display": "Desde que vivo aquí, ya no veo a mis amigos.",
+      "cue": "Since I've lived here, I don't see my friends any more.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "desde que",
+            "cue": "since (a clause follows)",
+            "tag": "interference",
+            "forms": ["desde que"],
+            "note": "The TIME since, and it takes the indicative because the starting point is real. The cause since is ya que, which L4-M2 taught: English uses one word for both."
+          },
+          {
+            "display": "ya no",
+            "cue": "not any more",
+            "tag": "free",
+            "forms": ["ya no"],
+            "note": "Two words for one idea, and it takes the PRESENT: ya no veo means I no longer see. L3-M10 taught bare ya; this pairs it with no."
+          }
+        ],
+        "rules": [4, 3]
+      },
+      "trap": "Spanish keeps the present in Desde que vivo aquí where English reaches for a perfect — since I have lived here. The living is still going on, so Spanish sees no reason to change tense.",
+      "sound": "DESS-de ke. The final e of desde almost disappears before the que.",
+      "variations": [
+        {
+          "display": "Desde que trabajo aquí, ya no veo a mis amigos.",
+          "cue": "Since I've worked here, I don't see my friends any more.",
+          "changed": "what started the change"
+        },
+        {
+          "display": "Desde que vivo aquí, ya no veo a mi hermano.",
+          "cue": "Since I've lived here, I don't see my brother any more.",
+          "changed": "who has gone missing from the week"
+        }
+      ],
+      "mistake": {
+        "display": "Ya que vivo aquí, ya no veo a mis amigos.",
+        "why": "ya que is the cause since, so this says BECAUSE I live here — which turns an observation about time into a complaint about the flat."
+      },
+      "usage": "Said when somebody asks how you are settling in. Neutral, and it works unchanged in usted.",
+      "register": "neutral",
+      "mnemonic": "desde is a date; ya que is a reason."
+    },
+    {
+      "id": "L4-M6-S07",
+      "display": "Ya he perdido las llaves, pero todavía no he llamado.",
+      "cue": "I've already lost the keys, but I haven't called yet.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "todavía no",
+            "cue": "not yet",
+            "tag": "free",
+            "forms": ["todavía no", "aún no"],
+            "note": "Sits in front of the perfect L3-M7 taught, exactly where English puts not yet — except that Spanish puts it first rather than last. aún no is the same thing, slightly more written."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English can put yet at the end — I haven't called yet. Spanish cannot: todavía no goes before the verb, and nothing may be moved to the end to soften it.",
+      "sound": "to-da-VEE-a no. Four syllables with the stress on the VEE; the final a runs into the no.",
+      "variations": [
+        {
+          "display": "Todavía no he perdido las llaves, pero ya he perdido el móvil.",
+          "cue": "I haven't lost the keys yet, but I've already lost my phone.",
+          "changed": "which half is done and which is pending"
+        },
+        {
+          "display": "Ya he llamado, pero todavía no he salido de casa.",
+          "cue": "I've already called, but I haven't left the house yet.",
+          "changed": "the two events, keeping the frame"
+        }
+      ],
+      "mistake": {
+        "display": "He perdido las llaves ya, pero no he llamado todavía.",
+        "why": "Both markers have been pushed to the English positions. A speaker would understand you, and would also hear that the sentence was assembled in another language first."
+      },
+      "usage": "Reporting a small disaster in progress. Neutral, and the two markers never change with register.",
+      "register": "neutral",
+      "mnemonic": "ya and todavía no both go in FRONT."
+    },
+    {
+      "id": "L4-M6-S08",
+      "display": "Después de que hables con el jefe, llámame.",
+      "cue": "After you speak to the boss, call me.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "después de que",
+            "cue": "after (someone else does something)",
+            "tag": "delta",
+            "forms": ["después de que"],
+            "note": "The mirror of antes de que in shape but not in rule: pointing forward it takes the subjunctive, pointing at the past it takes the indicative, like cuando."
+          },
+          {
+            "display": "hables",
+            "cue": "you speak (still to come)",
+            "tag": "delta",
+            "forms": ["hables", "hable"],
+            "note": "The present subjunctive of hablar. L4-M1 taught the same form inside no hables, the negative command — one shape, two jobs, and only the frame tells you which."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "después de que is not antes de que. Swap in a past event — Después de que habló con el jefe — and the indicative comes back, where antes de que would still refuse it.",
+      "sound": "dess-PWESS de ke AH-bless. The h is silent, so hables opens on the a.",
+      "variations": [
+        {
+          "display": "Después de que hables con el médico, llámame.",
+          "cue": "After you speak to the doctor, call me.",
+          "changed": "who you have to speak to"
+        },
+        {
+          "display": "Después de hablar con el jefe, llámame.",
+          "cue": "After speaking to the boss, call me.",
+          "changed": "to the infinitive, which is what Spanish prefers when one person does both"
+        }
+      ],
+      "mistake": {
+        "display": "Después de que hablas con el jefe, llámame.",
+        "why": "hablas is the indicative, so the sentence describes something you do regularly and then asks for one phone call about it."
+      },
+      "usage": "Arranging the order of two errands with a friend or a colleague you use tú with.",
+      "register": "informal",
+      "mnemonic": "Forward is subjunctive, backward is not — except after antes."
+    },
+    {
+      "id": "L4-M6-S09",
+      "display": "Mientras tanto, puedes esperar aquí o volver más tarde.",
+      "cue": "In the meantime, you can wait here or come back later.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mientras tanto",
+            "cue": "in the meantime · meanwhile",
+            "tag": "free",
+            "forms": ["mientras tanto"],
+            "note": "Two words that behave as one adverb and open a sentence. It is not the conjunction mientras L3-M10 taught: nothing follows it but a comma."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "mientras joins two clauses and takes a verb; mientras tanto joins two sentences and takes none. Putting a verb straight after mientras tanto is the commonest slip.",
+      "sound": "MYEN-trass TAN-to. Both words keep their own stress, unlike antes de.",
+      "variations": [
+        {
+          "display": "Mientras tanto, puedes esperar en el café.",
+          "cue": "In the meantime, you can wait in the cafe.",
+          "changed": "where the waiting happens"
+        },
+        {
+          "display": "Mientras tanto, puedes volver más tarde.",
+          "cue": "In the meantime, you can come back later.",
+          "changed": "one of the two options is dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Mientras tanto esperas, puedes volver más tarde.",
+        "why": "A verb has been hung off mientras tanto. Either say mientras esperas, which is a clause, or mientras tanto, which is a full stop in disguise."
+      },
+      "usage": "What a receptionist or a friend says while something else is being sorted out. Neutral; puedes is the only informal thing in it.",
+      "register": "informal",
+      "mnemonic": "mientras takes a verb; mientras tanto takes a comma."
+    },
+    {
+      "id": "L4-M6-S10",
+      "display": "Espere usted aquí hasta que acabe la reunión.",
+      "cue": "Please wait here until the meeting is over.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "acabe",
+            "cue": "it ends · it is over",
+            "tag": "delta",
+            "forms": ["acabe", "acabes"],
+            "note": "Present subjunctive of acabar, which is terminar with a little more finality. Under hasta que about the future it is the only mood available."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "The frame does not change with the address. Only espere moves to espera and acabe stays exactly as it is, because the subjunctive is chosen by hasta que, not by politeness.",
+      "sound": "ess-PEH-re oo-STED. a-KA-be, with the stress in the middle.",
+      "variations": [
+        {
+          "display": "Espere usted aquí hasta que acabe la película.",
+          "cue": "Please wait here until the film is over.",
+          "changed": "what has to end first"
+        },
+        {
+          "display": "Espere usted aquí hasta que llegue el médico.",
+          "cue": "Please wait here until the doctor arrives.",
+          "changed": "an arrival instead of an ending"
+        }
+      ],
+      "mistake": {
+        "display": "Espere usted aquí hasta que acaba la reunión.",
+        "why": "acaba is the indicative and reads as a statement about how meetings generally go, which is not something you can ask somebody to wait for."
+      },
+      "usage": "A receptionist, a nurse or a clerk to somebody they have never met. usted is written out here because espere alone can sound clipped.",
+      "register": "formal",
+      "mnemonic": "Politeness picks espere; the future picks acabe."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M6-C01", "display": "Cuando llegue el médico, te llamo.", "cue": "When the doctor arrives, I'll call you." },
+    { "id": "L4-M6-C02", "display": "Cuando llego tarde, no veo a nadie.", "cue": "When I get in late, I don't see anyone." },
+    { "id": "L4-M6-C03", "display": "No salgas hasta que termine la película.", "cue": "Don't go out until the film finishes." },
+    { "id": "L4-M6-C04", "display": "Antes de salir, llama a tu hermana.", "cue": "Before going out, call your sister." },
+    { "id": "L4-M6-C05", "display": "Antes de que llegue el jefe, cierra la puerta.", "cue": "Before the boss arrives, close the door." },
+    { "id": "L4-M6-C06", "display": "Desde que vivo aquí, trabajo menos.", "cue": "Since I've lived here, I work less." },
+    { "id": "L4-M6-C07", "display": "Ya he hecho todo el trabajo.", "cue": "I've already done all the work." },
+    { "id": "L4-M6-C08", "display": "Todavía no he salido de casa.", "cue": "I haven't left the house yet." },
+    { "id": "L4-M6-C09", "display": "Después de que hables con el médico, llámame.", "cue": "After you speak to the doctor, call me." },
+    { "id": "L4-M6-C10", "display": "Mientras tanto, puedes esperar en la puerta.", "cue": "In the meantime, you can wait by the door." },
+    { "id": "L4-M6-C11", "display": "Espere usted hasta que acabe el examen.", "cue": "Please wait until the exam is over." },
+    { "id": "L4-M6-C12", "display": "Ya no vivo aquí, pero todavía trabajo en la tienda.", "cue": "I don't live here any more, but I still work in the shop." }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

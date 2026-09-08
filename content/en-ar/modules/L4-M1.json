@@ -1,0 +1,698 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "imperative",
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "awwalan + V-imperative + al- + N",
+      "V-imperative + , + thumma + V-imperative",
+      "V-imperative + li- + V-subjunctive",
+      "V-imperative-pl(-ū) + al- + N",
+      "lā + V-jussive + qabla + al- + <maṣdar>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The imperative is a FORMATION, not a word to memorise: take the you-form of the present, drop the ta-, and if what is left begins with two consonants put a helping vowel in front of it. taftaḥ → ftaḥ → iftaḥ; taktub → ktub → uktub, the helper copying the stem's u. Where the remainder already begins with a single consonant nothing is added: taḍaʿ → ḍaʿ."
+    },
+    {
+      "tag": "delta",
+      "text": "Three endings on one stem: iftaḥ to a man, iftaḥī to a woman, iftaḥū to a group. They are the same -ī and -ū the present tense already uses, so the only new thing is where they go."
+    },
+    {
+      "tag": "interference",
+      "text": "The rule is mechanical, not universal. khudh (L2-M4) and kul (L2-M1) come out shorter than it predicts, and a longer verb needs no helping vowel at all: sāʿid, tafaḍḍal, aʿṭi. The six imperatives the ladder handed you as words stay words; the rule is for the verbs you already own in the present."
+    },
+    {
+      "tag": "delta",
+      "text": "li- on the front of a verb is PURPOSE: iftaḥ al-bāb li-yadkhul al-hawāʾ. It is the same letter as L1-M9's li-ʾanna, and the two jobs sit beside each other — li-ʾanna answers why it happened, li- + verb answers what it is for. kay and min ajl an are its twins and are not opened here."
+    },
+    {
+      "tag": "interference",
+      "text": "English says an infinitive of purpose: open it TO let the air in. Arabic has no infinitive to put there — the verb after li- carries a person, so li-yadkhul is \"so that IT comes in\" and li-aftaḥ is \"so that I open\". Choosing the wrong person is the mistake this module plates."
+    },
+    {
+      "tag": "delta",
+      "text": "The verb after li- is in the SUBJUNCTIVE, and this course writes no mood endings, so on the page it is spelled exactly like the ordinary present — L3-M2 rule 3 flagged the mood as L4's and L3-M4 rule 4 already spelled a jussive this way. What is new here is the connector, not a verb shape."
+    },
+    {
+      "tag": "interference",
+      "text": "Arabic has no negative imperative at all. A prohibition is lā in front of the you-form of the present — lā tadhhab, taught in L3-M4 rule 5 and only re-used here — so the shape it borrows is the very one the positive imperative was made by throwing away."
+    },
+    {
+      "tag": "free",
+      "text": "The step spine is awwalan … thāniyan … thumma … baʿda dhālika … akhīran, and it lands where English lands it. Only thāniyan is bought here: awwalan, akhīran and baʿda dhālika are L3-M1's and thumma is L1-M10's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "awwalan, iftaḥ al-bāb",
+      "script": "أولًا، افتح الباب",
+      "cue": "First, open the door",
+      "literal": "Firstly, open the-door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "iftaḥ",
+            "script": "افتح",
+            "cue": "open (to a man)",
+            "tag": "delta",
+            "forms": [
+              "iftaḥ",
+              "iftaḥī",
+              "iftaḥū"
+            ],
+            "note": "taftaḥ minus its ta- leaves ftaḥ, which cannot open a word, so a helping i- goes in front: iftaḥ. Add -ī to a woman, -ū to a group."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7
+        ]
+      },
+      "trap": "English has one imperative for everybody. Arabic picks its ending from who is being addressed, so \"open\" is already three words before anything else has been said.",
+      "sound": "if-TAḤ — the i- is a run-up rather than a syllable you lean on, and the final ḥ is the breathy one from deep in the throat, not an h.",
+      "variations": [
+        {
+          "display": "awwalan, iftaḥ al-kitāb",
+          "script": "أولًا، افتح الكتاب",
+          "cue": "First, open the book",
+          "changed": "the thing opened: al-bāb → al-kitāb"
+        },
+        {
+          "display": "awwalan, iftaḥī al-bāb",
+          "script": "أولًا، افتحي الباب",
+          "cue": "First, open the door (to a woman)",
+          "changed": "who is being told: the -ī ending"
+        }
+      ],
+      "mistake": {
+        "display": "awwalan, taftaḥ al-bāb",
+        "script": "أولًا، تفتح الباب",
+        "why": "That is the ordinary present — \"first, you open the door\" — a description of what happens rather than an instruction. The ta- has to come off before it is an order."
+      },
+      "usage": "The opening move of any set of directions: a recipe, a form, a machine, a route.",
+      "register": "neutral",
+      "mnemonic": "Drop the ta-, and if the rest trips over itself, slide a vowel under it."
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "iftaḥ an-nāfidha li-yadkhul al-hawāʾ",
+      "script": "افتح النافذة ليدخل الهواء",
+      "cue": "Open the window so the air comes in",
+      "literal": "Open the-window to-he-enters the-air",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "li-yadkhul",
+            "script": "ليدخل",
+            "cue": "so that it comes in",
+            "tag": "delta",
+            "forms": [],
+            "note": "li- on a verb is purpose. The same letter as L1-M9's li-ʾanna: li-ʾanna answers why it happened, li- + verb answers what it is for."
+          },
+          {
+            "display": "an-nāfidha",
+            "script": "النافذة",
+            "cue": "the window",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, like most nouns ending in -a. n is a sun letter, so the article's l is swallowed and it is heard an-nāfidha."
+          },
+          {
+            "display": "al-hawāʾ",
+            "script": "الهواء",
+            "cue": "the air",
+            "tag": "free",
+            "forms": [],
+            "note": "Ends in hamza, written ʾ — the catch in the throat. It is not the ʿayn of ʿamal, and the two are never swapped."
+          }
+        ],
+        "rules": [
+          3,
+          4,
+          5
+        ]
+      },
+      "trap": "English puts an infinitive after \"to\": to let the air in. Arabic has none to put there, so the verb behind li- carries a person — li-yadkhul is literally \"so that IT comes in\".",
+      "sound": "li-YAD-khul runs as one word with no pause after the li-, and the final -ʾ of hawāʾ is a stop, not a vowel trailing away.",
+      "variations": [
+        {
+          "display": "iftaḥ al-bāb li-yadkhul al-hawāʾ",
+          "script": "افتح الباب ليدخل الهواء",
+          "cue": "Open the door so the air comes in",
+          "changed": "what is opened: an-nāfidha → al-bāb"
+        },
+        {
+          "display": "iftaḥū an-nāfidha li-yadkhul al-hawāʾ",
+          "script": "افتحوا النافذة ليدخل الهواء",
+          "cue": "Open the window, all of you, so the air comes in",
+          "changed": "who is being told: the plural -ū"
+        }
+      ],
+      "mistake": {
+        "display": "iftaḥ an-nāfidha li-adkhul al-hawāʾ",
+        "script": "افتح النافذة لأدخل الهواء",
+        "why": "li-adkhul is \"so that I come in\". The person on the verb after li- has to be whoever does the entering — here the air — so it is li-yadkhul."
+      },
+      "usage": "How a reason gets attached to an instruction: do this, and here is what it is for.",
+      "register": "neutral",
+      "mnemonic": "li- plus a verb answers what for — and the verb still has to say who."
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "ḍaʿ as-sukkar fī al-qahwa, thumma ishrab",
+      "script": "ضع السكر في القهوة، ثم اشرب",
+      "cue": "Put the sugar in the coffee, then drink",
+      "literal": "Put the-sugar in the-coffee, then drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḍaʿ",
+            "script": "ضع",
+            "cue": "put (to a man)",
+            "tag": "delta",
+            "forms": [
+              "ḍaʿ",
+              "ḍaʿī",
+              "ḍaʿū"
+            ],
+            "note": "taḍaʿ minus ta- leaves ḍaʿ, which already begins with a single consonant, so no helping vowel is added. The shortest imperatives are the ones needing no help."
+          },
+          {
+            "display": "as-sukkar",
+            "script": "السكر",
+            "cue": "the sugar",
+            "tag": "free",
+            "forms": [],
+            "note": "s is a sun letter: the article's l is swallowed by it, so al-sukkar is said and written as-sukkar."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "ishrab arrived in L2-M1 as a word to be memorised. It was a derivation all along — tashrab minus its ta-, with a helping i- in front — and nothing about it was special.",
+      "sound": "ḍaʿ is one heavy syllable: the ḍ is the emphatic d, made with the tongue flat, and the ʿ closes it in the throat.",
+      "variations": [
+        {
+          "display": "ḍaʿ al-māʾ fī al-qahwa, thumma ishrab",
+          "script": "ضع الماء في القهوة، ثم اشرب",
+          "cue": "Put the water in the coffee, then drink",
+          "changed": "what is put in: as-sukkar → al-māʾ"
+        },
+        {
+          "display": "ḍaʿ al-khubz ʿalā aṭ-ṭāwila, thumma kul",
+          "script": "ضع الخبز على الطاولة، ثم كل",
+          "cue": "Put the bread on the table, then eat",
+          "changed": "both steps, kept in the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "taḍaʿ as-sukkar fī al-qahwa, thumma tashrab",
+        "script": "تضع السكر في القهوة، ثم تشرب",
+        "why": "Both verbs still wear their ta-, so this reports what someone does instead of telling them to do it. A recipe in Arabic is imperatives all the way down."
+      },
+      "usage": "The shape of every recipe step and every set of instructions handed over a counter.",
+      "register": "neutral",
+      "mnemonic": "ḍaʿ needs no run-up — one consonant in front is enough to stand on."
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "idhhabū ilā as-sūq, wa khudhū al-khubz",
+      "script": "اذهبوا إلى السوق، وخذوا الخبز",
+      "cue": "Go to the market, all of you, and take the bread",
+      "literal": "Go(pl) to the-market, and take(pl) the-bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idhhabū",
+            "script": "اذهبوا",
+            "cue": "go (to a group)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural of L2-M4's idhhab, with -ū on the end. A plural imperative is a different surface from its singular, so it gets a row of its own here."
+          },
+          {
+            "display": "khudhū",
+            "script": "خذوا",
+            "cue": "take (to a group)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural of L2-M4's khudh. khudh is one of the two verbs shorter than the rule predicts, and the plural ending goes onto it unchanged."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "English says \"go\" to one person and to twenty. Arabic changes the word, and a singular aimed at a group is heard by everyone in it.",
+      "sound": "idh-ha-BŪ — the dh is the one in \"this\", and the long ū at the end carries the stress.",
+      "variations": [
+        {
+          "display": "idhhabū ilā al-bayt, wa khudhū al-māʾ",
+          "script": "اذهبوا إلى البيت، وخذوا الماء",
+          "cue": "Go home, all of you, and take the water",
+          "changed": "where and what: as-sūq → al-bayt, al-khubz → al-māʾ"
+        },
+        {
+          "display": "idhhab ilā as-sūq, wa khudh al-khubz",
+          "script": "اذهب إلى السوق، وخذ الخبز",
+          "cue": "Go to the market and take the bread",
+          "changed": "the addressee: one man instead of a group"
+        }
+      ],
+      "mistake": {
+        "display": "tadhhabū ilā as-sūq",
+        "script": "تذهبوا إلى السوق",
+        "why": "The prefix is still there, so this is \"you (pl.) go\" — a statement. Take the ta- off and the plural ending stays exactly where it was: idhhabū."
+      },
+      "usage": "What a guide, a teacher or a parent says to a room. The singular in the same situation sounds like you are picking somebody out.",
+      "register": "neutral",
+      "mnemonic": "One ending for the group, whatever the verb did to get there."
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "iḍghaṭ ʿalā az-zirr li-yaftaḥ al-bāb",
+      "script": "اضغط على الزر ليفتح الباب",
+      "cue": "Press the button so the door opens",
+      "literal": "Press on the-button to-he-opens the-door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "iḍghaṭ",
+            "script": "اضغط",
+            "cue": "press (to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "taḍghaṭ minus ta- leaves ḍghaṭ, two consonants, so the helping i- goes in front. It takes ʿalā: in Arabic you press ON a thing."
+          },
+          {
+            "display": "az-zirr",
+            "script": "الزر",
+            "cue": "the button",
+            "tag": "free",
+            "forms": [],
+            "note": "z is a sun letter, so the article's l is swallowed: az-zirr, with the r held long."
+          },
+          {
+            "display": "li-yaftaḥ",
+            "script": "ليفتح",
+            "cue": "so that it opens",
+            "tag": "delta",
+            "forms": [],
+            "note": "The purpose li- again, on the he/it-form of this module's first verb. The door is what does the opening, so the verb wears its person."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "\"Press the button\" has no preposition in English. iḍghaṭ needs ʿalā, and dropping it leaves a verb hanging with nothing to press against.",
+      "sound": "IḌ-ghaṭ — the ḍ and ṭ are both emphatic, made with the tongue flat and the sound pushed back, which is what makes the word feel heavy.",
+      "variations": [
+        {
+          "display": "iḍghaṭ ʿalā az-zirr li-yadkhul al-mudīr",
+          "script": "اضغط على الزر ليدخل المدير",
+          "cue": "Press the button so the manager can come in",
+          "changed": "the purpose: the door opening → the manager entering"
+        },
+        {
+          "display": "iḍghaṭ ʿalā az-zirr, thumma intaẓir",
+          "script": "اضغط على الزر، ثم انتظر",
+          "cue": "Press the button, then wait",
+          "changed": "the purpose clause becomes a second step"
+        }
+      ],
+      "mistake": {
+        "display": "iḍghaṭ az-zirr li-yaftaḥ al-bāb",
+        "script": "اضغط الزر ليفتح الباب",
+        "why": "English's bare object copied across. iḍghaṭ reaches its object through ʿalā, and without it the sentence has the shape of a verb that takes nothing."
+      },
+      "usage": "Lifts, machines, forms on a screen — the everyday instruction with a reason attached.",
+      "register": "neutral",
+      "mnemonic": "Two heavy letters, one preposition: press ON it."
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "lā tadhhab ilā as-sūq qabla al-akl",
+      "script": "لا تذهب إلى السوق قبل الأكل",
+      "cue": "Don't go to the market before eating",
+      "literal": "Not you-go to the-market before the-eating",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-akl",
+            "script": "الأكل",
+            "cue": "the eating",
+            "tag": "delta",
+            "forms": [],
+            "note": "The maṣdar of \"eat\", L3-M1's move again: qabla holds a noun and never a verb, so \"before eating\" comes out as \"before the-eating\"."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "There is no negative imperative in Arabic to reach for. A prohibition borrows lā plus the you-form of the present, which is the very shape the positive imperative was built by discarding.",
+      "sound": "The lā is held — a long a with nothing clipped — and tadhhab keeps its ordinary present shape underneath it.",
+      "variations": [
+        {
+          "display": "lā tadhhab ilā al-ʿamal qabla al-akl",
+          "script": "لا تذهب إلى العمل قبل الأكل",
+          "cue": "Don't go to work before eating",
+          "changed": "the destination: as-sūq → al-ʿamal"
+        },
+        {
+          "display": "lā tadhhab ilā as-sūq qabla an-nawm",
+          "script": "لا تذهب إلى السوق قبل النوم",
+          "cue": "Don't go to the market before bed",
+          "changed": "the noun after qabla: al-akl → an-nawm"
+        }
+      ],
+      "mistake": {
+        "display": "lā iftaḥ al-bāb",
+        "script": "لا افتح الباب",
+        "why": "A negative bolted onto an imperative, which Arabic does not have. Say lā taftaḥ al-bāb: the prohibition is built on the present, not on the order."
+      },
+      "usage": "House rules, warnings on a sign, an instruction with a step you must not skip.",
+      "register": "neutral",
+      "mnemonic": "To forbid, put the prefix back and lā in front."
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "intaẓir hunā li-yaʾtī al-mudīr",
+      "script": "انتظر هنا ليأتي المدير",
+      "cue": "Wait here for the manager to come",
+      "literal": "Wait here to-he-comes the-manager",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "intaẓir",
+            "script": "انتظر",
+            "cue": "wait (to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "A longer verb, and the rule still holds: tantaẓir minus ta- leaves ntaẓir, two consonants, so a helping i- makes intaẓir."
+          },
+          {
+            "display": "li-yaʾtī",
+            "script": "ليأتي",
+            "cue": "for him to come",
+            "tag": "delta",
+            "forms": [],
+            "note": "Purpose li- on \"come\". English needs \"wait FOR him TO come\", two words; Arabic does it with one li- and the person already on the verb."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "English's \"wait for X to come\" has a for and a to. Arabic has one li- and no separate word for the person waited on — the yaʾtī is already \"he comes\".",
+      "sound": "in-TA-ẓir, with the ẓ the emphatic partner of dh; the whole word runs into the li- of the next one.",
+      "variations": [
+        {
+          "display": "intaẓir fī al-bayt li-yaʾtī al-mudīr",
+          "script": "انتظر في البيت ليأتي المدير",
+          "cue": "Wait at home for the manager to come",
+          "changed": "where you wait: hunā → fī al-bayt"
+        },
+        {
+          "display": "intaẓir hunā li-yadkhul al-mudīr",
+          "script": "انتظر هنا ليدخل المدير",
+          "cue": "Wait here for the manager to come in",
+          "changed": "the purpose verb: come → come in"
+        }
+      ],
+      "mistake": {
+        "display": "intaẓir hunā li-al-mudīr yaʾtī",
+        "script": "انتظر هنا للمدير يأتي",
+        "why": "English word order pushed through li-. The verb comes straight after li-, and the person it belongs to comes after the verb: li-yaʾtī al-mudīr."
+      },
+      "usage": "A counter, a doorway, an office — the instruction plus the reason for standing still.",
+      "register": "neutral",
+      "mnemonic": "One li- covers both the for and the to."
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "ismaʿ al-mudīr, thumma unẓur ilā al-kitāb",
+      "script": "اسمع المدير، ثم انظر إلى الكتاب",
+      "cue": "Listen to the manager, then look at the book",
+      "literal": "Listen the-manager, then look to the-book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ismaʿ",
+            "script": "اسمع",
+            "cue": "listen (to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "tasmaʿ minus ta- gives smaʿ, so the helping i- is added. It takes its object bare: in Arabic you listen someone, with no word for \"to\"."
+          },
+          {
+            "display": "unẓur",
+            "script": "انظر",
+            "cue": "look (to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "tanẓur minus ta- gives nẓur, and the helping vowel copies the stem's u — so it is unẓur, not inẓur. It reaches its object through ilā."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The two verbs take the opposite prepositions from English's. ismaʿ wants its object bare where English says \"to\", and unẓur wants ilā where English says \"at\".",
+      "sound": "IS-maʿ, then UN-ẓur: same shape, different helping vowel, and the difference is only that nẓur carries a u inside it.",
+      "variations": [
+        {
+          "display": "ismaʿ al-mudīr, thumma qul naʿam",
+          "script": "اسمع المدير، ثم قل نعم",
+          "cue": "Listen to the manager, then say yes",
+          "changed": "the second step: looking → answering"
+        },
+        {
+          "display": "unẓur ilā al-kitāb, thumma ismaʿ al-mudīr",
+          "script": "انظر إلى الكتاب، ثم اسمع المدير",
+          "cue": "Look at the book, then listen to the manager",
+          "changed": "the order of the two steps"
+        }
+      ],
+      "mistake": {
+        "display": "ismaʿ ilā al-mudīr",
+        "script": "اسمع إلى المدير",
+        "why": "English's \"listen TO\" carried over. ismaʿ takes the person straight: ismaʿ al-mudīr. The ilā belongs to unẓur, in the very next clause."
+      },
+      "usage": "Classroom and workplace instructions, and the everyday two-step of attend then check.",
+      "register": "neutral",
+      "mnemonic": "Listen at nothing, look to something."
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "qulī naʿam, thumma iftaḥī al-bāb",
+      "script": "قولي نعم، ثم افتحي الباب",
+      "cue": "Say yes, then open the door",
+      "literal": "Say(f) yes, then open(f) the-door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qul",
+            "script": "قل",
+            "cue": "say (to a man)",
+            "tag": "interference",
+            "forms": [
+              "qul",
+              "qulī",
+              "qulū"
+            ],
+            "note": "taqūl loses its ta- and its long ū at once: qul. The endings bring the vowel back — qulī to a woman, qulū to a group."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "The rule predicts something like uqūl. A hollow verb shortens instead, and no amount of reasoning gets you from taqūl to qul — this one is learned.",
+      "sound": "qu-LĪ — the q is the deep k made far back, and the long ī at the end is what marks the woman being addressed.",
+      "variations": [
+        {
+          "display": "qul naʿam, thumma iftaḥ al-bāb",
+          "script": "قل نعم، ثم افتح الباب",
+          "cue": "Say yes, then open the door (to a man)",
+          "changed": "the addressee: both endings drop"
+        },
+        {
+          "display": "qulū naʿam, thumma iftaḥū al-bāb",
+          "script": "قولوا نعم، ثم افتحوا الباب",
+          "cue": "Say yes, then open the door (to a group)",
+          "changed": "the addressee: both endings become -ū"
+        }
+      ],
+      "mistake": {
+        "display": "qul naʿam, thumma iftaḥī al-bāb",
+        "script": "قل نعم، ثم افتحي الباب",
+        "why": "Two orders in one breath to one person, wearing two different endings. Once the addressee is chosen, every imperative in the sentence has to agree with her."
+      },
+      "usage": "A short chain of instructions to one person, where the ending is what says which person.",
+      "register": "neutral",
+      "mnemonic": "The vowel qul swallowed comes back the moment an ending arrives."
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "awwalan, ḍaʿ al-māʾ, thāniyan aḍif as-sukkar",
+      "script": "أولًا، ضع الماء، ثانيًا أضف السكر",
+      "cue": "First, put in the water, secondly add the sugar",
+      "literal": "Firstly, put the-water, secondly add the-sugar",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "thāniyan",
+            "script": "ثانيًا",
+            "cue": "secondly",
+            "tag": "free",
+            "forms": [],
+            "note": "Second place in a list. It wears the same -an tail as L3-M1's awwalan and akhīran — the ending that turns a word into an adverb."
+          },
+          {
+            "display": "aḍif",
+            "script": "أضف",
+            "cue": "add (to a man)",
+            "tag": "delta",
+            "forms": [],
+            "note": "From tuḍīf. This shape gives aḍif, with a hamza of its own rather than the rule's helping vowel, so it is learned as it stands."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          7
+        ]
+      },
+      "trap": "English can number steps or not, and \"first\" can sit anywhere. awwalan and thāniyan open their clause and stay there, and once you have started numbering you are expected to finish.",
+      "sound": "THĀ-ni-yan, with the th of \"think\" and the -an tail clipped short — the same tail, said the same way, as awwalan just before it.",
+      "variations": [
+        {
+          "display": "awwalan, ḍaʿ al-māʾ, thāniyan aḍif al-qahwa",
+          "script": "أولًا، ضع الماء، ثانيًا أضف القهوة",
+          "cue": "First, put in the water, secondly add the coffee",
+          "changed": "the second ingredient: as-sukkar → al-qahwa"
+        },
+        {
+          "display": "awwalan, ḍaʿ al-māʾ, thumma aḍif as-sukkar",
+          "script": "أولًا، ضع الماء، ثم أضف السكر",
+          "cue": "First, put in the water, then add the sugar",
+          "changed": "the marker: thāniyan → thumma"
+        }
+      ],
+      "mistake": {
+        "display": "al-awwal, ḍaʿ al-māʾ, ath-thānī aḍif as-sukkar",
+        "script": "الأول، ضع الماء، الثاني أضف السكر",
+        "why": "Those are the adjectives \"the first\" and \"the second\", naming things rather than ordering steps. The step markers carry the adverb's -an: awwalan, thāniyan."
+      },
+      "usage": "A numbered recipe or procedure — the frame that lets four or five orders arrive without running together.",
+      "register": "neutral",
+      "mnemonic": "The -an is what turns a number into a step."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "awwalan, iftaḥ al-bāb",
+      "script": "أولًا، افتح الباب",
+      "cue": "First, open the door"
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "ḍaʿ as-sukkar fī al-qahwa",
+      "script": "ضع السكر في القهوة",
+      "cue": "Put the sugar in the coffee"
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "iftaḥ an-nāfidha li-yadkhul al-hawāʾ",
+      "script": "افتح النافذة ليدخل الهواء",
+      "cue": "Open the window so the air comes in"
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "intaẓir hunā",
+      "script": "انتظر هنا",
+      "cue": "Wait here"
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "idhhabū ilā al-bayt",
+      "script": "اذهبوا إلى البيت",
+      "cue": "Go home, all of you"
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "khudhū al-khubz",
+      "script": "خذوا الخبز",
+      "cue": "Take the bread, all of you"
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "lā tadhhab qabla al-akl",
+      "script": "لا تذهب قبل الأكل",
+      "cue": "Don't go before eating"
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "iḍghaṭ ʿalā az-zirr",
+      "script": "اضغط على الزر",
+      "cue": "Press the button"
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "unẓur ilā al-kitāb",
+      "script": "انظر إلى الكتاب",
+      "cue": "Look at the book"
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "ismaʿ al-mudīr, thumma qul naʿam",
+      "script": "اسمع المدير، ثم قل نعم",
+      "cue": "Listen to the manager, then say yes"
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "thāniyan, aḍif al-māʾ",
+      "script": "ثانيًا، أضف الماء",
+      "cue": "Secondly, add the water"
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "iftaḥī al-bāb li-yadkhul al-mudīr",
+      "script": "افتحي الباب ليدخل المدير",
+      "cue": "Open the door so the manager can come in"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

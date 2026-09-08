@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M9",
+  "title": "Places and journeys",
+  "job": "A trip told in full, with directions inside it",
+  "prerequisites": [
+    "L4-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_past",
+      "simple_present",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "al- + N + alladhī / allatī + V + <complement>",
+      "al- + N + alladhī + V + fīhi / fīhā",
+      "<N-indefinite> + V + <complement>",
+      "sāfartu ilā + <place> + bi- + al- + N-transport",
+      "khudh + al- + N + alladhī + V + ilā + <place>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE RELATIVE PRONOUN AGREES AND IS OBLIGATORY: alladhī for a masculine antecedent, allatī for a feminine, alladhīna for a human plural. It is chosen by the noun in FRONT of it, and Arabic cannot drop it the way English drops that."
+    },
+    {
+      "tag": "interference",
+      "text": "English drops the relative whenever it can — the bus going to the market, the hotel we stayed in. After a definite Arabic noun it is required, and its absence leaves the clause hanging on nothing."
+    },
+    {
+      "tag": "delta",
+      "text": "THE INDEFINITE ANTECEDENT TAKES NO PRONOUN AT ALL: raʾaytu rajul yaqif amāma al-bāb, I saw a man standing at the door. The clause simply follows, and inserting alladhī here is an error."
+    },
+    {
+      "tag": "delta",
+      "text": "THE RESUMPTIVE PRONOUN. When the noun is the object of a preposition inside the clause, Arabic keeps a pronoun for it: al-funduq alladhī nazalnā fīhi — the hotel that we stayed in IT. English forbids that pronoun; Arabic requires it."
+    },
+    {
+      "tag": "free",
+      "text": "WHERE THE L1 HELPS: word order inside the clause is ordinary Arabic order and nothing moves. Unlike English there is no fronting to learn — the verb stays where a verb goes and the pronoun stays where the preposition put it."
+    },
+    {
+      "tag": "free",
+      "text": "The trip itself is told in the plain past: sāfartu ilā, then L2-M4's bi- for the means. The directions are L2-M4's too, and what this module adds is only the clause that hangs one off a noun."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M9-S01",
+      "display": "khudh al-ḥāfila allatī tadhhab ilā as-sūq",
+      "script": "خذ الحافلة التي تذهب إلى السوق",
+      "cue": "Take the bus that goes to the market",
+      "literal": "Take the-bus which-fem she-goes to the-market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "allatī",
+            "script": "التي",
+            "cue": "that, which (feminine)",
+            "tag": "delta",
+            "forms": [
+              "allatī"
+            ],
+            "note": "The relative pronoun for a feminine antecedent. Arabic cannot drop it the way English drops that, and it agrees with the noun in front, not with anything in the clause."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "English drops the relative freely — take the bus going to the market. Arabic cannot: with a DEFINITE noun in front, allatī or alladhī is obligatory and its absence is heard as an unfinished sentence.",
+      "sound": "al-la-TĪ: the doubled l is held, so the word has a small hitch in the middle before the long ī.",
+      "variations": [
+        {
+          "display": "khudhī al-ḥāfila allatī tadhhab ilā as-sūq",
+          "script": "خذي الحافلة التي تذهب إلى السوق",
+          "cue": "Take the bus that goes to the market (to a woman)",
+          "changed": "who is being told — L2-M4's feminine imperative, with the relative untouched"
+        },
+        {
+          "display": "khudh al-ḥāfila allatī tadhhab ilā al-maḥaṭṭa",
+          "script": "خذ الحافلة التي تذهب إلى المحطة",
+          "cue": "Take the bus that goes to the station",
+          "changed": "where the bus goes"
+        }
+      ],
+      "mistake": {
+        "display": "khudh al-ḥāfila tadhhab ilā as-sūq",
+        "script": "خذ الحافلة تذهب إلى السوق",
+        "why": "The relative dropped, English-style. After a definite noun the clause has nothing to hang on, and the sentence reads as two commands stuck together."
+      },
+      "usage": "Turning a direction into part of the thing you are pointing at.",
+      "register": "neutral",
+      "mnemonic": "A definite noun keeps its allatī; English is the language that throws it away."
+    },
+    {
+      "id": "L4-M9-S02",
+      "display": "hādhā huwa ash-shāriʿ alladhī yadhhab ilā al-maḥaṭṭa",
+      "script": "هذا هو الشارع الذي يذهب إلى المحطة",
+      "cue": "This is the street that goes to the station",
+      "literal": "This he the-street which-masc he-goes to the-station",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alladhī",
+            "script": "الذي",
+            "cue": "that, which (masculine)",
+            "tag": "delta",
+            "forms": [
+              "alladhī"
+            ],
+            "note": "The masculine relative. Which one you use is decided by the noun in FRONT of it, never by the verb behind it."
+          },
+          {
+            "display": "ash-shāriʿ",
+            "script": "الشارع",
+            "cue": "the street",
+            "tag": "free",
+            "forms": [
+              "ash-shāriʿ",
+              "shāriʿ"
+            ],
+            "note": "The street. L2-M4 gave the directions but never this word; the article assimilates to the sh."
+          },
+          {
+            "display": "aṭ-ṭarīq",
+            "script": "الطريق",
+            "cue": "the road, the way",
+            "tag": "free",
+            "forms": [
+              "aṭ-ṭarīq",
+              "ṭarīq"
+            ],
+            "note": "The road, longer and less urban than a shāriʿ. It is also the way to somewhere, in the sense a direction takes."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English uses one word — that — for every gender and number. Arabic makes you look back at the noun before you can start the clause, which is the opposite direction of travel.",
+      "sound": "al-la-DHĪ: the dh is the voiced th of English this, and again the l in front of it is doubled and held.",
+      "variations": [
+        {
+          "display": "hādhā huwa aṭ-ṭarīq alladhī yadhhab ilā al-maṭār",
+          "script": "هذا هو الطريق الذي يذهب إلى المطار",
+          "cue": "This is the road that goes to the airport",
+          "changed": "the noun, and with it where the road ends"
+        },
+        {
+          "display": "hādhihi hiya al-ḥāfila allatī tadhhab ilā as-sūq",
+          "script": "هذه هي الحافلة التي تذهب إلى السوق",
+          "cue": "This is the bus that goes to the market",
+          "changed": "a feminine antecedent, so hādhihi, hiya and allatī all move together"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā huwa ash-shāriʿ allatī yadhhab ilā al-maḥaṭṭa",
+        "script": "هذا هو الشارع التي يذهب إلى المحطة",
+        "why": "A feminine relative on a masculine noun. The agreement is with ash-shāriʿ in front; the verb behind it is already masculine and cannot rescue the pronoun."
+      },
+      "usage": "Pointing something out and saying what it is for in one sentence.",
+      "register": "neutral",
+      "mnemonic": "Look backwards to pick the pronoun, forwards to use it."
+    },
+    {
+      "id": "L4-M9-S03",
+      "display": "raʾaytu an-nās alladhīna yaʿmalūn fī al-maṭār",
+      "script": "رأيت الناس الذين يعملون في المطار",
+      "cue": "I saw the people who work at the airport",
+      "literal": "I-saw the-people who-pl they-work in the-airport",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "an-nās",
+            "script": "الناس",
+            "cue": "the people",
+            "tag": "free",
+            "forms": [
+              "an-nās",
+              "nās"
+            ],
+            "note": "People, as a collective. It is grammatically plural and human, which is what decides the relative pronoun in front of the clause."
+          },
+          {
+            "display": "alladhīna",
+            "script": "الذين",
+            "cue": "who (human plural)",
+            "tag": "delta",
+            "forms": [
+              "alladhīna"
+            ],
+            "note": "The relative for a HUMAN plural. A non-human plural takes allatī instead, as though it were one feminine thing."
+          },
+          {
+            "display": "yaʿmalūn",
+            "script": "يعملون",
+            "cue": "they work",
+            "tag": "free",
+            "forms": [
+              "yaʿmalūn"
+            ],
+            "note": "The they-cell of L2-M8's yaʿmal. No mood ending is written, so the plural ends on the bare -ūn."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English who and that are indifferent to number. Arabic has a third relative for human plurals only, and choosing it means deciding whether the noun counts as people or as things.",
+      "sound": "al-la-DHĪ-na: the same word as alladhī with a -na tail; the stress stays on the long ī.",
+      "variations": [
+        {
+          "display": "raʾaytu an-nās alladhīna yaʿmalūn fī al-maḥaṭṭa",
+          "script": "رأيت الناس الذين يعملون في المحطة",
+          "cue": "I saw the people who work at the station",
+          "changed": "where they work"
+        },
+        {
+          "display": "sāfartu maʿa an-nās alladhīna yaʿmalūn fī al-maṭār",
+          "script": "سافرت مع الناس الذين يعملون في المطار",
+          "cue": "I travelled with the people who work at the airport",
+          "changed": "the main clause, from seeing to travelling"
+        }
+      ],
+      "mistake": {
+        "display": "raʾaytu an-nās allatī yaʿmalūn fī al-maṭār",
+        "script": "رأيت الناس التي يعملون في المطار",
+        "why": "allatī on a human plural. allatī is for a feminine singular or a non-human plural; people take alladhīna."
+      },
+      "usage": "Describing a group by what they do.",
+      "register": "neutral",
+      "mnemonic": "alladhīna is for people you could count."
+    },
+    {
+      "id": "L4-M9-S04",
+      "display": "raʾaytu rajul yaqif amāma al-bāb",
+      "script": "رأيت رجل يقف أمام الباب",
+      "cue": "I saw a man standing in front of the door",
+      "literal": "I-saw man he-stands in-front-of the-door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rajul",
+            "script": "رجل",
+            "cue": "a man",
+            "tag": "free",
+            "forms": [
+              "rajul",
+              "ar-rajul"
+            ],
+            "note": "A man. Thirty modules in, the word is new: the course has had ṣadīq, mudīr and muwaẓẓaf but never the plain noun."
+          },
+          {
+            "display": "yaqif",
+            "script": "يقف",
+            "cue": "he stands, he is standing",
+            "tag": "free",
+            "forms": [
+              "yaqif",
+              "taqif",
+              "waqafa"
+            ],
+            "note": "He stands or is standing. Arabic has no separate continuous, so the plain present covers both."
+          },
+          {
+            "display": "amāma",
+            "script": "أمام",
+            "cue": "in front of",
+            "tag": "free",
+            "forms": [
+              "amāma"
+            ],
+            "note": "In front of. It takes a noun directly, with no preposition between them."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "English needs a man WHO is standing, or a participle. Arabic forbids the relative here: after an INDEFINITE noun the clause simply follows, and inserting alladhī is the error.",
+      "sound": "YA-qif: the q is deep against the soft palate, and the word ends on a bare f with no vowel behind it.",
+      "variations": [
+        {
+          "display": "raʾaytu imraʾa taqif amāma al-bāb",
+          "script": "رأيت امرأة تقف أمام الباب",
+          "cue": "I saw a woman standing in front of the door",
+          "changed": "who was standing, so the verb takes the t- prefix"
+        },
+        {
+          "display": "raʾaytu ar-rajul alladhī yaqif amāma al-bāb",
+          "script": "رأيت الرجل الذي يقف أمام الباب",
+          "cue": "I saw the man who is standing in front of the door",
+          "changed": "the noun made DEFINITE — which is exactly what forces alladhī back in"
+        }
+      ],
+      "mistake": {
+        "display": "raʾaytu rajul alladhī yaqif amāma al-bāb",
+        "script": "رأيت رجل الذي يقف أمام الباب",
+        "why": "A relative pronoun after an indefinite noun. English inserts one and Arabic forbids one; the pair with the variation above is the whole rule."
+      },
+      "usage": "Reporting what you saw on the way.",
+      "register": "neutral",
+      "mnemonic": "Definite takes the pronoun, indefinite takes nothing."
+    },
+    {
+      "id": "L4-M9-S05",
+      "display": "al-funduq alladhī nazalnā fīhi kāna jamīl",
+      "script": "الفندق الذي نزلنا فيه كان جميل",
+      "cue": "The hotel that we stayed in was beautiful",
+      "literal": "The-hotel which-masc we-stayed in-it was beautiful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-funduq",
+            "script": "الفندق",
+            "cue": "the hotel",
+            "tag": "free",
+            "forms": [
+              "al-funduq",
+              "funduq"
+            ],
+            "note": "The hotel. It is masculine, which is what picks alladhī in front of the clause."
+          },
+          {
+            "display": "nazalnā",
+            "script": "نزلنا",
+            "cue": "we stayed, we put up",
+            "tag": "free",
+            "forms": [
+              "nazalnā",
+              "nazaltu"
+            ],
+            "note": "We stayed — the verb for putting up somewhere, not for remaining. It reaches its place through fī."
+          },
+          {
+            "display": "fīhi",
+            "script": "فيه",
+            "cue": "in it (masculine)",
+            "tag": "delta",
+            "forms": [
+              "fīhi"
+            ],
+            "note": "L1-M7's fī with a pronoun stuck on. Inside a relative clause it is the RESUMPTIVE pronoun, and it is obligatory."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English forbids the pronoun absolutely — the hotel that we stayed in IT is not English. Arabic requires it, and nothing in the L1 prepares a learner to leave it standing.",
+      "sound": "FĪ-hi: two light syllables; the h is the ordinary light one, not the throat ḥ.",
+      "variations": [
+        {
+          "display": "al-funduq alladhī nazaltu fīhi kāna jamīl",
+          "script": "الفندق الذي نزلت فيه كان جميل",
+          "cue": "The hotel that I stayed in was beautiful",
+          "changed": "who stayed — the resumptive pronoun does not move"
+        },
+        {
+          "display": "al-funduq alladhī nazalnā fīhi kāna qarīb min al-maṭār",
+          "script": "الفندق الذي نزلنا فيه كان قريب من المطار",
+          "cue": "The hotel that we stayed in was near the airport",
+          "changed": "what is said about the hotel once the clause closes"
+        }
+      ],
+      "mistake": {
+        "display": "al-funduq alladhī nazalnā kāna jamīl",
+        "script": "الفندق الذي نزلنا كان جميل",
+        "why": "The resumptive pronoun dropped, English-style. nazalnā needs a place, and inside the clause that place can only be fīhi — without it the clause is about nothing."
+      },
+      "usage": "Telling someone about a stay after it is over.",
+      "register": "neutral",
+      "mnemonic": "English throws the pronoun out; Arabic keeps it in."
+    },
+    {
+      "id": "L4-M9-S06",
+      "display": "al-qarya allatī nazalnā fīhā kānat ṣaghīra",
+      "script": "القرية التي نزلنا فيها كانت صغيرة",
+      "cue": "The village that we stayed in was small",
+      "literal": "The-village which-fem we-stayed in-it-fem was small",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-qarya",
+            "script": "القرية",
+            "cue": "the village",
+            "tag": "free",
+            "forms": [
+              "al-qarya",
+              "qarya"
+            ],
+            "note": "A village, smaller than L3-M10's madīna. It is feminine, so everything downstream of it is too."
+          },
+          {
+            "display": "fīhā",
+            "script": "فيها",
+            "cue": "in it (feminine)",
+            "tag": "delta",
+            "forms": [
+              "fīhā"
+            ],
+            "note": "The feminine resumptive. Its ending agrees with the antecedent, exactly as allatī does, so the two always match."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English has one pronoun, it, and forbids it here anyway. Arabic has a masculine and a feminine one and requires whichever the antecedent chose, two words back.",
+      "sound": "fī-HĀ: the long ā at the end takes the stress, which is the only audible difference from fīhi.",
+      "variations": [
+        {
+          "display": "al-madīna allatī nazalnā fīhā kānat kabīra",
+          "script": "المدينة التي نزلنا فيها كانت كبيرة",
+          "cue": "The city that we stayed in was big",
+          "changed": "the antecedent — still feminine, so nothing else moves"
+        },
+        {
+          "display": "al-qarya allatī nazalnā fīhā kānat jamīla",
+          "script": "القرية التي نزلنا فيها كانت جميلة",
+          "cue": "The village that we stayed in was beautiful",
+          "changed": "what is said about it"
+        }
+      ],
+      "mistake": {
+        "display": "al-qarya allatī nazalnā fīhi kānat ṣaghīra",
+        "script": "القرية التي نزلنا فيه كانت صغيرة",
+        "why": "A masculine resumptive under a feminine antecedent. allatī and fīhā are two halves of one agreement and cannot disagree."
+      },
+      "usage": "Describing a place you passed through.",
+      "register": "neutral",
+      "mnemonic": "allatī above, fīhā below: they agree or the clause breaks."
+    },
+    {
+      "id": "L4-M9-S07",
+      "display": "sāfartu ilā al-maṭār bi-al-qiṭār",
+      "script": "سافرت إلى المطار بالقطار",
+      "cue": "I travelled to the airport by train",
+      "literal": "I-travelled to the-airport by-the-train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sāfartu",
+            "script": "سافرت",
+            "cue": "I travelled",
+            "tag": "free",
+            "forms": [
+              "sāfartu",
+              "sāfara",
+              "sāfarnā"
+            ],
+            "note": "To travel, of a journey between places. It reaches its destination through ilā, never bare."
+          },
+          {
+            "display": "al-maṭār",
+            "script": "المطار",
+            "cue": "the airport",
+            "tag": "free",
+            "forms": [
+              "al-maṭār",
+              "maṭār"
+            ],
+            "note": "The airport. It joins L2-M4's maḥaṭṭa, the station, as a place a journey starts or ends."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "English travelled TO and went TO look alike, so the preposition feels optional. With sāfara it is not: the verb cannot take its destination directly.",
+      "sound": "sā-FAR-tu: the first ā is long, and the stress sits on the middle syllable.",
+      "variations": [
+        {
+          "display": "sāfara ṣadīqī ilā al-maṭār bi-al-ḥāfila",
+          "script": "سافر صديقي إلى المطار بالحافلة",
+          "cue": "My friend travelled to the airport by bus",
+          "changed": "who travelled and how — L2-M4's bi- of means, untouched"
+        },
+        {
+          "display": "sāfartu ilā al-madīna bi-al-qiṭār",
+          "script": "سافرت إلى المدينة بالقطار",
+          "cue": "I travelled to the city by train",
+          "changed": "where the journey ended"
+        }
+      ],
+      "mistake": {
+        "display": "sāfartu al-maṭār bi-al-qiṭār",
+        "script": "سافرت المطار بالقطار",
+        "why": "sāfara with a bare destination. The verb needs ilā to reach a place, and without it the airport reads as something the traveller did rather than somewhere they went."
+      },
+      "usage": "The opening line of an account of a trip.",
+      "register": "neutral",
+      "mnemonic": "sāfara always travels ilā."
+    },
+    {
+      "id": "L4-M9-S08",
+      "display": "kānat ar-riḥla ṭawīla, wa lākin al-manẓar kāna jamīl",
+      "script": "كانت الرحلة طويلة، ولكن المنظر كان جميل",
+      "cue": "The trip was long, but the view was beautiful",
+      "literal": "Was the-trip long, and but the-view was beautiful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ar-riḥla",
+            "script": "الرحلة",
+            "cue": "the trip, the journey",
+            "tag": "free",
+            "forms": [
+              "ar-riḥla",
+              "riḥla"
+            ],
+            "note": "The journey as a whole thing, not the travelling. It is feminine, so kānat and ṭawīla follow it."
+          },
+          {
+            "display": "al-manẓar",
+            "script": "المنظر",
+            "cue": "the view, the scenery",
+            "tag": "free",
+            "forms": [
+              "al-manẓar",
+              "manẓar"
+            ],
+            "note": "What you can see from where you are. It is masculine, which is why the second half of the sentence changes shape."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "English keeps was and long the same whoever they belong to. Arabic bends both to the noun, so one sentence with two subjects has two sets of endings.",
+      "sound": "ar-RIḤ-la: the ḥ in the middle is the breathy throat one, and it closes the first syllable.",
+      "variations": [
+        {
+          "display": "kānat ar-riḥla qaṣīra, wa lākin al-manẓar kāna jamīl",
+          "script": "كانت الرحلة قصيرة، ولكن المنظر كان جميل",
+          "cue": "The trip was short, but the view was beautiful",
+          "changed": "the adjective on the first half"
+        },
+        {
+          "display": "kānat ar-riḥla ṭawīla, wa lākin al-funduq kāna jamīl",
+          "script": "كانت الرحلة طويلة، ولكن الفندق كان جميل",
+          "cue": "The trip was long, but the hotel was beautiful",
+          "changed": "what the second half is about"
+        }
+      ],
+      "mistake": {
+        "display": "kāna ar-riḥla ṭawīl, wa lākin al-manẓar kānat jamīla",
+        "script": "كان الرحلة طويل، ولكن المنظر كانت جميلة",
+        "why": "The two agreements swapped. riḥla is feminine and manẓar is masculine, and every word attached to each has to know it."
+      },
+      "usage": "The verdict at the end of a journey.",
+      "register": "neutral",
+      "mnemonic": "The noun decides; kāna and the adjective obey."
+    },
+    {
+      "id": "L4-M9-S09",
+      "display": "idhhab mustaqīm ḥattā taṣil ilā al-maḥaṭṭa",
+      "script": "اذهب مستقيم حتى تصل إلى المحطة",
+      "cue": "Go straight until you reach the station",
+      "literal": "Go straight until you-arrive to the-station",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mustaqīm",
+            "script": "مستقيم",
+            "cue": "straight, straight ahead",
+            "tag": "free",
+            "forms": [
+              "mustaqīm"
+            ],
+            "note": "Straight on. It sits behind the verb of going as a description of the going, with no preposition."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "English go straight and go straight ON are interchangeable, so a learner looks for a particle to add. Arabic adds nothing: the adjective stands bare after the command.",
+      "sound": "mus-ta-QĪM: the q is the deep one and the long ī carries the stress.",
+      "variations": [
+        {
+          "display": "idhhab mustaqīm ḥattā taṣil ilā ash-shāriʿ",
+          "script": "اذهب مستقيم حتى تصل إلى الشارع",
+          "cue": "Go straight until you reach the street",
+          "changed": "where the walking ends"
+        },
+        {
+          "display": "khudh aṭ-ṭarīq alladhī yadhhab ilā al-maḥaṭṭa",
+          "script": "خذ الطريق الذي يذهب إلى المحطة",
+          "cue": "Take the road that goes to the station",
+          "changed": "the same direction given as a relative clause instead of a command"
+        }
+      ],
+      "mistake": {
+        "display": "idhhab mustaqīm ḥattā waṣalta ilā al-maḥaṭṭa",
+        "script": "اذهب مستقيم حتى وصلت إلى المحطة",
+        "why": "A past verb behind ḥattā for an arrival still ahead. L4-M6 set the rule: a present shape for what has not happened, a past for what was reached."
+      },
+      "usage": "Directions given on the street.",
+      "register": "informal",
+      "mnemonic": "The direction is bare; the relative clause is the fancy way."
+    },
+    {
+      "id": "L4-M9-S10",
+      "display": "raʾaytu imraʾa taqif amāma al-funduq alladhī nazalnā fīhi",
+      "script": "رأيت امرأة تقف أمام الفندق الذي نزلنا فيه",
+      "cue": "I saw a woman standing in front of the hotel that we stayed in",
+      "literal": "I-saw woman she-stands in-front-of the-hotel which-masc we-stayed in-it",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "imraʾa",
+            "script": "امرأة",
+            "cue": "a woman",
+            "tag": "free",
+            "forms": [
+              "imraʾa",
+              "al-imraʾa"
+            ],
+            "note": "A woman. The hamza sits in the middle and is written ʾ; the word is rajul's pair and is new for the same reason."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "English would tie the whole thing together with two thats. Arabic uses none for the indefinite woman and one for the definite hotel, in the same breath — the two laws working against each other.",
+      "sound": "im-RA-ʾa: the hamza before the final a is a small catch, not a vowel of its own.",
+      "variations": [
+        {
+          "display": "raʾaytu imraʾa taqif amāma al-maḥaṭṭa",
+          "script": "رأيت امرأة تقف أمام المحطة",
+          "cue": "I saw a woman standing in front of the station",
+          "changed": "the place, with the second clause dropped"
+        },
+        {
+          "display": "raʾaytu al-imraʾa allatī taqif amāma al-funduq",
+          "script": "رأيت المرأة التي تقف أمام الفندق",
+          "cue": "I saw the woman who is standing in front of the hotel",
+          "changed": "the woman made definite, which pulls allatī in and pushes the second clause out"
+        }
+      ],
+      "mistake": {
+        "display": "raʾaytu al-imraʾa taqif amāma al-funduq",
+        "script": "رأيت المرأة تقف أمام الفندق",
+        "why": "A definite antecedent with no relative. Making the noun definite is exactly what obliges allatī, and the two errors of this module are one decision apart."
+      },
+      "usage": "Closing an account of a trip on the thing you remember.",
+      "register": "neutral",
+      "mnemonic": "One sentence, both laws: nothing after a woman, alladhī after the hotel."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M9-C01",
+      "display": "khudh al-ḥāfila allatī tadhhab ilā as-sūq",
+      "script": "خذ الحافلة التي تذهب إلى السوق",
+      "cue": "Take the bus that goes to the market"
+    },
+    {
+      "id": "L4-M9-C02",
+      "display": "hādhā huwa ash-shāriʿ alladhī yadhhab ilā al-maḥaṭṭa",
+      "script": "هذا هو الشارع الذي يذهب إلى المحطة",
+      "cue": "This is the street that goes to the station"
+    },
+    {
+      "id": "L4-M9-C03",
+      "display": "raʾaytu an-nās alladhīna yaʿmalūn fī al-maṭār",
+      "script": "رأيت الناس الذين يعملون في المطار",
+      "cue": "I saw the people who work at the airport"
+    },
+    {
+      "id": "L4-M9-C04",
+      "display": "raʾaytu rajul yaqif amāma al-bāb",
+      "script": "رأيت رجل يقف أمام الباب",
+      "cue": "I saw a man standing in front of the door"
+    },
+    {
+      "id": "L4-M9-C05",
+      "display": "al-funduq alladhī nazalnā fīhi kāna jamīl",
+      "script": "الفندق الذي نزلنا فيه كان جميل",
+      "cue": "The hotel that we stayed in was beautiful"
+    },
+    {
+      "id": "L4-M9-C06",
+      "display": "al-qarya allatī nazalnā fīhā kānat ṣaghīra",
+      "script": "القرية التي نزلنا فيها كانت صغيرة",
+      "cue": "The village that we stayed in was small"
+    },
+    {
+      "id": "L4-M9-C07",
+      "display": "sāfartu ilā al-maṭār bi-al-qiṭār",
+      "script": "سافرت إلى المطار بالقطار",
+      "cue": "I travelled to the airport by train"
+    },
+    {
+      "id": "L4-M9-C08",
+      "display": "kānat ar-riḥla ṭawīla, wa lākin al-manẓar kāna jamīl",
+      "script": "كانت الرحلة طويلة، ولكن المنظر كان جميل",
+      "cue": "The trip was long, but the view was beautiful"
+    },
+    {
+      "id": "L4-M9-C09",
+      "display": "idhhab mustaqīm ḥattā taṣil ilā al-maḥaṭṭa",
+      "script": "اذهب مستقيم حتى تصل إلى المحطة",
+      "cue": "Go straight until you reach the station"
+    },
+    {
+      "id": "L4-M9-C10",
+      "display": "raʾaytu imraʾa taqif amāma al-funduq alladhī nazalnā fīhi",
+      "script": "رأيت امرأة تقف أمام الفندق الذي نزلنا فيه",
+      "cue": "I saw a woman standing in front of the hotel that we stayed in"
+    },
+    {
+      "id": "L4-M9-C11",
+      "display": "sāfarnā ilā al-qarya allatī nazalnā fīhā sābiqan",
+      "script": "سافرنا إلى القرية التي نزلنا فيها سابقاً",
+      "cue": "We travelled to the village that we stayed in previously"
+    },
+    {
+      "id": "L4-M9-C12",
+      "display": "kāna aṭ-ṭarīq ṭawīl, wa lākin ar-riḥla kānat jamīla",
+      "script": "كان الطريق طويل، ولكن الرحلة كانت جميلة",
+      "cue": "The road was long, but the trip was beautiful"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

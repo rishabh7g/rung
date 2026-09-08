@@ -1,0 +1,770 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M3",
+  "title": "What might have been",
+  "job": "Regrets and past hypotheticals",
+  "prerequisites": [
+    "L4-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "congiuntivo trapassato, new here, in the se half only: avessi or fossi plus a participle",
+      "condizionale passato, new here, in the other half: avrei or sarei plus a participle",
+      "imperfetto, L2-M10's, for the spoken dovevo and potevo shortcut",
+      "passato prossimo, L2-M10's, in the clause after meno male che"
+    ],
+    "allowedPatterns": [
+      "Se + avessi + <participio> + , + <condizionale passato>",
+      "Avrei dovuto + V-inf",
+      "Sarebbe stato meglio + V-inf",
+      "Magari + avessi + <participio>",
+      "Meno male che + <passato prossimo>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE MACHINE IS TWO COMPOUND HALVES AND NOTHING IN IT IS NEW BUT THE ORDER. se plus avessi or fossi plus a participle in the first half, avrei or sarei plus a participle in the second: Se avessi saputo, avrei chiamato. The auxiliary law is L2-M10's (avere for most verbs, essere for going and coming and staying), the participles are L3-M10's, the endings -ei, -esti, -ebbe are L3-M4's. What is new is only this: the AUXILIARY now carries the tense and the main verb stops moving. Two forms to learn, not fifty."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TENSE GOES INTO THE MODAL, WHICH IS THE OPPOSITE OF ENGLISH. English keeps should and could in the present and moves the perfect behind them — I should have gone. Italian moves the tense into the modal itself: avrei dovuto andare, avrei potuto dire, avrei voluto venire, with the infinitive left bare at the end. dovrei essere andato is not Italian. Only avere is used under a modal here; the essere version is a later rung's."
+    },
+    {
+      "tag": "interference",
+      "text": "se IS COMPULSORY. English can drop if by inverting the auxiliary — Had I known, I would have called — and Italian has no such move at all. The se half also never takes a conditional: Se avrei saputo is the single commonest learner error in this frame. Conditional on the RIGHT of the comma, congiuntivo on the left, always."
+    },
+    {
+      "tag": "interference",
+      "text": "avessi LOOKS LIKE avevo AND IS NOT ONE. L2-M10's avevo is the imperfetto and states a fact about the past; avessi states something that did not happen. The minimal pair is worth saying aloud: Se avevo tempo, venivo — what a speaker actually says in relaxed speech, per L3-M4 — against Se avessi avuto tempo, sarei venuto, which is the careful form and the one this module teaches."
+    },
+    {
+      "tag": "free",
+      "text": "THE REGRET WORDS ARE SHORT AND THEY CARRY THE FEELING. che peccato is what a shame, meno male che is just as well, magari plus avessi is if only, altrimenti is otherwise, invece di plus an infinitive is instead of. Beside them sits the spoken shortcut: dovevo chiamare and potevo dire are heard constantly for the full avrei dovuto and avrei potuto, and both are ordinary speech rather than sloppiness."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M3-S01",
+      "display": "Se avessi saputo, ti avrei chiamato",
+      "cue": "If I had known, I would have called you",
+      "literal": "If I-had known, you I-would-have called",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saputo",
+            "cue": "known",
+            "tag": "free",
+            "forms": [
+              "saputo"
+            ],
+            "note": "The participle of sapere, and irregular: sapere gives saputo, not sapito. Se avessi saputo on its own is a whole sentence of regret."
+          },
+          {
+            "display": "avrei",
+            "cue": "I would have, as the auxiliary",
+            "tag": "delta",
+            "forms": [
+              "avrei",
+              "avresti",
+              "avrebbe",
+              "avremmo",
+              "avreste",
+              "avrebbero"
+            ],
+            "note": "L3-M4's conditional endings on avere. It carries the tense; the verb behind it is a participle and never changes: avrei chiamato, avresti chiamato, avrebbe chiamato."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "avessi is not L2-M10's avevo. avevo says it was so; avessi says it was not. Se avevo saputo is heard in relaxed speech, but it says a different thing from what you mean here.",
+      "sound": "se a-VES-see sa-POO-to, tee av-RAY kya-MA-to. avessi has a double s and both are held; avrei is two syllables, av-RAY, with the stress at the end.",
+      "variations": [
+        {
+          "display": "Se avessi saputo, ti avrei scritto",
+          "cue": "If I had known, I would have written to you",
+          "changed": "scritto for chiamato, same machine"
+        },
+        {
+          "display": "Se lo avessi saputo, ti avrei chiamato",
+          "cue": "If I had known it, I would have called you",
+          "changed": "lo added, so the thing known is named"
+        },
+        {
+          "display": "Se avessi saputo, sarei venuto",
+          "cue": "If I had known, I would have come",
+          "changed": "sarei for avrei, because venire takes essere"
+        }
+      ],
+      "mistake": {
+        "display": "Se avrei saputo, ti avrei chiamato",
+        "why": "The conditional never goes in the se half. se takes avessi; avrei belongs on the other side of the comma. This is the error to unlearn first."
+      },
+      "usage": "Apologising for something you did not do because nobody told you.",
+      "register": "neutral",
+      "mnemonic": "avessi on the left, avrei on the right."
+    },
+    {
+      "id": "L4-M3-S02",
+      "display": "Avrei dovuto dire la verità subito",
+      "cue": "I should have told the truth straight away",
+      "literal": "I-would-have had-to to-say the truth immediately",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avrei dovuto",
+            "cue": "I should have",
+            "tag": "interference",
+            "forms": [
+              "avrei dovuto",
+              "avresti dovuto",
+              "avrebbe dovuto"
+            ],
+            "note": "One block, then a bare infinitive. English moves the perfect behind should; Italian moves it into the modal. Never dovrei essere andato."
+          },
+          {
+            "display": "dire",
+            "cue": "to say, to tell",
+            "tag": "free",
+            "forms": [
+              "dire"
+            ],
+            "note": "Irregular and very short. Its participle detto is L3-M5's, so dire is the infinitive half of a verb the course already half owns."
+          },
+          {
+            "display": "verità",
+            "cue": "truth",
+            "tag": "free",
+            "forms": [
+              "verità"
+            ],
+            "note": "Feminine and invariable: la verità, le verità. The final accent is stressed, ve-ri-TA, and it never changes for plural."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "dovuto here is not I owed. Under avrei it is the should of hindsight, and the thing you should have done follows as a plain infinitive with nothing between them.",
+      "sound": "av-RAY do-VOO-to DEE-re la ve-ri-TA SOO-bee-to. verità ends on the stressed a; subito is stressed on the first syllable, SOO-bee-to.",
+      "variations": [
+        {
+          "display": "Avresti dovuto dire la verità subito",
+          "cue": "You should have told the truth straight away",
+          "changed": "avresti, so it is said to somebody else"
+        },
+        {
+          "display": "Dovevo dire la verità subito",
+          "cue": "I should have told the truth straight away",
+          "changed": "the spoken shortcut, dovevo for avrei dovuto"
+        },
+        {
+          "display": "Avrei dovuto dire la verità prima",
+          "cue": "I should have told the truth earlier",
+          "changed": "prima for subito, so it is about timing"
+        }
+      ],
+      "mistake": {
+        "display": "Dovrei aver detto la verità subito",
+        "why": "This is English word for word and Italian does not say it. The tense lives in the modal: avrei dovuto dire, one block, then the bare infinitive."
+      },
+      "usage": "Owning up, after the fact, to having held something back.",
+      "register": "neutral",
+      "mnemonic": "The tense climbs into the modal."
+    },
+    {
+      "id": "L4-M3-S03",
+      "display": "Sarebbe stato meglio partire ieri",
+      "cue": "It would have been better to leave yesterday",
+      "literal": "It-would-be been better to-leave yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sarebbe stato",
+            "cue": "it would have been",
+            "tag": "delta",
+            "forms": [
+              "sarebbe stato",
+              "sarebbe stata"
+            ],
+            "note": "L3-M4's sarebbe plus essere's own participle stato. Impersonal here, so it stays masculine singular and an infinitive follows."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "No se is needed. Sarebbe stato meglio states the better option on its own, and English would have been better works the same way — the if half is simply left unsaid.",
+      "sound": "sa-REB-be STA-to MEL-yo par-TEE-re YE-ree. meglio is MEL-yo, the gli sound, not meg-lee-o.",
+      "variations": [
+        {
+          "display": "Sarebbe stato meglio partire prima",
+          "cue": "It would have been better to leave earlier",
+          "changed": "prima for ieri, so it is relative and not a date"
+        },
+        {
+          "display": "Sarebbe stato meglio restare a casa",
+          "cue": "It would have been better to stay at home",
+          "changed": "the opposite choice, restare for partire"
+        },
+        {
+          "display": "Sarebbe stato meglio non partire",
+          "cue": "It would have been better not to leave",
+          "changed": "non before the infinitive, negating the advice"
+        }
+      ],
+      "mistake": {
+        "display": "Sarebbe stato meglio sono partito ieri",
+        "why": "After meglio the verb is an infinitive, never a conjugated tense: partire, not sono partito. Italian keeps the infinitive where English keeps to leave."
+      },
+      "usage": "Saying, after a bad trip, what the right call would have been.",
+      "register": "neutral",
+      "mnemonic": "Better + to-do: meglio takes an infinitive."
+    },
+    {
+      "id": "L4-M3-S04",
+      "display": "Magari avessi ascoltato mia madre",
+      "cue": "If only I had listened to my mother",
+      "literal": "If-only I-had listened my mother",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ascoltato",
+            "cue": "listened to",
+            "tag": "free",
+            "forms": [
+              "ascoltato",
+              "ascoltare"
+            ],
+            "note": "Regular -are, so the participle is ascoltato. It takes its object directly: ascoltare mia madre, with no word for to."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "L3-M3's magari means maybe. In front of avessi it changes job entirely and means if only, and the wish is always one that did not come true.",
+      "sound": "ma-GA-ree a-VES-see as-kol-TA-to MEE-a MA-dre. magari is stressed in the middle, ma-GA-ree.",
+      "variations": [
+        {
+          "display": "Magari avessi ascoltato mio padre",
+          "cue": "If only I had listened to my father",
+          "changed": "mio padre, so the possessive agrees the other way"
+        },
+        {
+          "display": "Magari avessi ascoltato prima",
+          "cue": "If only I had listened earlier",
+          "changed": "no object, just the timing"
+        },
+        {
+          "display": "Avrei dovuto ascoltare mia madre",
+          "cue": "I should have listened to my mother",
+          "changed": "the regret said flat, without the wish"
+        }
+      ],
+      "mistake": {
+        "display": "Magari ho ascoltato mia madre",
+        "why": "With the passato prossimo, magari goes back to meaning maybe and the sentence says I may have listened. The wish reading needs avessi."
+      },
+      "usage": "The wish you say out loud when the advice you ignored turns out to have been right.",
+      "register": "informal",
+      "mnemonic": "magari + avessi = if only."
+    },
+    {
+      "id": "L4-M3-S05",
+      "display": "Meno male che ho portato l'ombrello",
+      "cue": "Just as well I brought the umbrella",
+      "literal": "Less bad that I-have brought the-umbrella",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meno male che",
+            "cue": "just as well that",
+            "tag": "free",
+            "forms": [
+              "meno male che",
+              "meno male"
+            ],
+            "note": "Literally less bad. The relief version of a regret, and the clause after it is an ordinary passato prossimo. Drop the che and meno male stands alone."
+          },
+          {
+            "display": "portato",
+            "cue": "brought, carried",
+            "tag": "free",
+            "forms": [
+              "portato",
+              "portare"
+            ],
+            "note": "Regular -are. portare covers both bringing and wearing, so ho portato l'ombrello and porto gli occhiali use one verb."
+          },
+          {
+            "display": "ombrello",
+            "cue": "umbrella",
+            "tag": "free",
+            "forms": [
+              "ombrello",
+              "l'ombrello",
+              "ombrelli"
+            ],
+            "note": "Masculine, so l'ombrello with the elided article. The apostrophe is part of the word here: l'ombrello is written and said as one piece."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "meno male is not less bad in any literal sense. It is the standard thank goodness, and it is said about small things all day long.",
+      "sound": "ME-no MA-le ke o por-TA-to lom-BREL-lo. l'ombrello runs together as lom-BREL-lo, with no pause at the apostrophe.",
+      "variations": [
+        {
+          "display": "Meno male che hai portato l'ombrello",
+          "cue": "Just as well you brought the umbrella",
+          "changed": "hai, so the relief is about somebody else"
+        },
+        {
+          "display": "Meno male, ho portato l'ombrello",
+          "cue": "Just as well — I brought the umbrella",
+          "changed": "che dropped, so meno male stands alone"
+        },
+        {
+          "display": "Meno male che ho portato gli ombrelli",
+          "cue": "Just as well I brought the umbrellas",
+          "changed": "the plural, gli ombrelli"
+        }
+      ],
+      "mistake": {
+        "display": "Meno male ho portato l'ombrello",
+        "why": "When a whole clause follows, che is not optional: Meno male CHE ho portato. Bare meno male works only as a standalone exclamation."
+      },
+      "usage": "Said with relief when the thing you nearly forgot turns out to have been needed.",
+      "register": "informal",
+      "mnemonic": "Less bad = just as well."
+    },
+    {
+      "id": "L4-M3-S06",
+      "display": "Se fossi partito prima, non avrei perso il treno",
+      "cue": "If I had left earlier, I would not have missed the train",
+      "literal": "If I-were left earlier, not I-would-have lost the train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fossi",
+            "cue": "I had, as the auxiliary for essere verbs",
+            "tag": "delta",
+            "forms": [
+              "fossi",
+              "fosse",
+              "fossimo",
+              "fossero"
+            ],
+            "note": "The essere half of the se machine. It is used wherever L2-M10 used sono: partito, venuto, rimasto. The participle then agrees — fossi partito, fossi partita."
+          },
+          {
+            "display": "altrimenti",
+            "cue": "otherwise",
+            "tag": "free",
+            "forms": [
+              "altrimenti"
+            ],
+            "note": "Joins a fact to what would have followed without it: Sono partito prima, altrimenti avrei perso il treno. The half after it stays conditional."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The auxiliary choice is L2-M10's and nothing here changes it. partire took essere in the passato prossimo, so it takes fossi here, and its participle still agrees with the speaker.",
+      "sound": "se FOS-see par-TEE-to PREE-ma, non av-RAY PER-so il TRE-no. fossi has the double s held, FOS-see.",
+      "variations": [
+        {
+          "display": "Sono partito prima, altrimenti avrei perso il treno",
+          "cue": "I left earlier — otherwise I would have missed the train",
+          "changed": "the fact stated, and altrimenti carrying the rest"
+        },
+        {
+          "display": "Se fossi partita prima, non avrei perso il treno",
+          "cue": "If I had left earlier, I would not have missed the train",
+          "changed": "partita, so a woman is speaking"
+        },
+        {
+          "display": "Se fossimo partiti prima, non avremmo perso il treno",
+          "cue": "If we had left earlier, we would not have missed the train",
+          "changed": "both halves in the we form"
+        }
+      ],
+      "mistake": {
+        "display": "Se avessi partito prima, non avrei perso il treno",
+        "why": "partire is an essere verb, so the se half takes fossi and not avessi. The auxiliary law does not change just because the tense did."
+      },
+      "usage": "Working out afterwards exactly where the morning went wrong.",
+      "register": "neutral",
+      "mnemonic": "essere verbs keep essere: fossi partito."
+    },
+    {
+      "id": "L4-M3-S07",
+      "display": "Avrei potuto dire qualcosa, ma non ho detto niente",
+      "cue": "I could have said something, but I said nothing",
+      "literal": "I-would-have been-able to-say something, but not I-have said nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avrei potuto",
+            "cue": "I could have",
+            "tag": "interference",
+            "forms": [
+              "avrei potuto",
+              "avresti potuto"
+            ],
+            "note": "Same block as avrei dovuto, with potere inside it. A bare infinitive follows: avrei potuto dire, avrei potuto venire."
+          },
+          {
+            "display": "niente",
+            "cue": "nothing",
+            "tag": "free",
+            "forms": [
+              "niente",
+              "nulla"
+            ],
+            "note": "Needs non before the verb: non ho detto niente. The double negative is compulsory in Italian, not an error. nulla is the tidier written twin."
+          },
+          {
+            "display": "potevo",
+            "cue": "I could have, spoken",
+            "tag": "free",
+            "forms": [
+              "potevo",
+              "potevi",
+              "poteva"
+            ],
+            "note": "The imperfetto standing in for avrei potuto. Extremely common in speech and it means the same reproach: Potevo dire qualcosa."
+          },
+          {
+            "display": "volevo",
+            "cue": "I wanted to",
+            "tag": "free",
+            "forms": [
+              "volevo",
+              "volevi"
+            ],
+            "note": "The imperfetto of volere. It states the intention that came to nothing, which is why it sits with regrets: Volevo dire qualcosa."
+          },
+          {
+            "display": "avrei voluto",
+            "cue": "I would have liked to",
+            "tag": "free",
+            "forms": [
+              "avrei voluto",
+              "avresti voluto"
+            ],
+            "note": "The third modal block. Softer than avrei dovuto: it reports a wish rather than an obligation you failed."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "non ho detto niente is not a double negative to be fixed. Italian keeps both halves, and dropping non leaves the sentence ungrammatical rather than emphatic.",
+      "sound": "av-RAY po-TOO-to DEE-re kwal-KO-sa, ma non o DET-to NYEN-te. niente is two syllables, NYEN-te.",
+      "variations": [
+        {
+          "display": "Potevo dire qualcosa, ma non ho detto niente",
+          "cue": "I could have said something, but I said nothing",
+          "changed": "the spoken potevo for avrei potuto"
+        },
+        {
+          "display": "Avrei voluto dire qualcosa, ma non ho detto niente",
+          "cue": "I would have liked to say something, but I said nothing",
+          "changed": "voluto for potuto: a wish, not an ability"
+        },
+        {
+          "display": "Volevo dire qualcosa, ma non ho detto niente",
+          "cue": "I wanted to say something, but I said nothing",
+          "changed": "volevo, the intention stated flat"
+        }
+      ],
+      "mistake": {
+        "display": "Avrei potuto dire qualcosa, ma ho detto niente",
+        "why": "niente still needs its non: non ho detto niente. Italian never drops the non when the negative word comes after the verb."
+      },
+      "usage": "Admitting you stayed quiet in a meeting when you should not have.",
+      "register": "neutral",
+      "mnemonic": "niente always brings non with it."
+    },
+    {
+      "id": "L4-M3-S08",
+      "display": "Che peccato, sarebbe stato un bel viaggio",
+      "cue": "What a shame, it would have been a lovely trip",
+      "literal": "What shame, it-would-be been a nice trip",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "che peccato",
+            "cue": "what a shame",
+            "tag": "free",
+            "forms": [
+              "che peccato"
+            ],
+            "note": "One block, with no article: never che un peccato. It is the ordinary reaction to bad news, small or large."
+          },
+          {
+            "display": "peccato",
+            "cue": "a shame, a pity",
+            "tag": "free",
+            "forms": [
+              "peccato"
+            ],
+            "note": "The noun on its own, said as a whole reaction: Peccato! It also means sin, but nobody hears that reading in this use."
+          },
+          {
+            "display": "viaggio",
+            "cue": "trip, journey",
+            "tag": "free",
+            "forms": [
+              "viaggio",
+              "viaggi"
+            ],
+            "note": "Masculine, double g said as one soft sound: VYAD-jo. Buon viaggio is what you say to somebody leaving."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "che peccato takes no article, unlike English what A shame. Adding one gives che un peccato, which is not said.",
+      "sound": "ke pek-KA-to, sa-REB-be STA-to un bel VYAD-jo. peccato holds the double c, pek-KA-to.",
+      "variations": [
+        {
+          "display": "Peccato, sarebbe stato un bel viaggio",
+          "cue": "Shame — it would have been a lovely trip",
+          "changed": "che dropped, leaving the bare noun"
+        },
+        {
+          "display": "Che peccato, sarebbe stato un bel giorno",
+          "cue": "What a shame, it would have been a lovely day",
+          "changed": "giorno for viaggio"
+        },
+        {
+          "display": "Che peccato, avrei voluto fare quel viaggio",
+          "cue": "What a shame, I would have liked to take that trip",
+          "changed": "the regret made personal with avrei voluto"
+        }
+      ],
+      "mistake": {
+        "display": "Che un peccato, sarebbe stato un bel viaggio",
+        "why": "che peccato carries no article. English needs what A shame; Italian puts the noun straight after che."
+      },
+      "usage": "Reacting to a cancelled plan somebody has just told you about.",
+      "register": "informal",
+      "mnemonic": "che peccato, no article."
+    },
+    {
+      "id": "L4-M3-S09",
+      "display": "Dovevo partire ieri, invece sono rimasto a casa",
+      "cue": "I was supposed to leave yesterday, but instead I stayed at home",
+      "literal": "I-had-to to-leave yesterday, instead I-am stayed at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dovevo",
+            "cue": "I was supposed to",
+            "tag": "free",
+            "forms": [
+              "dovevo",
+              "dovevi",
+              "doveva"
+            ],
+            "note": "The imperfetto of dovere. It reports a plan that did not happen, and in speech it stands in for avrei dovuto without sounding careless."
+          },
+          {
+            "display": "invece",
+            "cue": "instead",
+            "tag": "free",
+            "forms": [
+              "invece"
+            ],
+            "note": "Opens the half that actually happened. It sits at the front of its clause and needs no di when a whole clause follows."
+          },
+          {
+            "display": "invece di",
+            "cue": "instead of",
+            "tag": "free",
+            "forms": [
+              "invece di"
+            ],
+            "note": "The same word with di, and then a bare infinitive: invece di partire. Never invece di sono partito."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "invece and invece di are not interchangeable. Bare invece takes a clause; invece di takes an infinitive, and mixing them is the commonest slip in this pair.",
+      "sound": "do-VE-vo par-TEE-re YE-ree, in-VE-che SO-no ree-MA-sto a KA-sa. invece has the soft c, in-VE-che.",
+      "variations": [
+        {
+          "display": "Invece di partire, sono rimasto a casa",
+          "cue": "Instead of leaving, I stayed at home",
+          "changed": "invece di plus the infinitive, fronted"
+        },
+        {
+          "display": "Avrei dovuto partire ieri, invece sono rimasto a casa",
+          "cue": "I should have left yesterday, but instead I stayed at home",
+          "changed": "the full avrei dovuto for the spoken dovevo"
+        },
+        {
+          "display": "Doveva partire ieri, invece è rimasto a casa",
+          "cue": "He was supposed to leave yesterday, but instead he stayed at home",
+          "changed": "the whole line moved to the he form"
+        }
+      ],
+      "mistake": {
+        "display": "Dovevo partire ieri, invece di sono rimasto a casa",
+        "why": "invece di must be followed by an infinitive. Before a full clause the word is bare invece: invece sono rimasto a casa."
+      },
+      "usage": "Explaining why you are still in town when everybody expected you to be away.",
+      "register": "neutral",
+      "mnemonic": "invece + clause, invece di + infinitive."
+    },
+    {
+      "id": "L4-M3-S10",
+      "display": "Se avessi avuto tempo, sarei venuto anche io",
+      "cue": "If I had had time, I would have come too",
+      "literal": "If I-had had time, I-would-be come also I",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avuto",
+            "cue": "had",
+            "tag": "free",
+            "forms": [
+              "avuto"
+            ],
+            "note": "avere's own participle, so avessi avuto is had had — the doubling English does too. It is regular in shape even though avere is not."
+          },
+          {
+            "display": "sarei",
+            "cue": "I would have, for essere verbs",
+            "tag": "delta",
+            "forms": [
+              "sarei",
+              "saresti",
+              "saremmo",
+              "sareste",
+              "sarebbero"
+            ],
+            "note": "L3-M4's sarebbe is the lui cell of this same set. The participle after it agrees: sarei venuto, sarei venuta."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "anche io is the ordinary spoken form and needs no me. Italian keeps the subject pronoun here because anche is leaning on it, which is one of the few places a pro-drop language puts one back.",
+      "sound": "se a-VES-see a-VOO-to TEM-po, sa-RAY ve-NOO-to AN-ke EE-o. anche has a hard k, AN-ke.",
+      "variations": [
+        {
+          "display": "Se avessi avuto tempo, sarei venuto anche oggi",
+          "cue": "If I had had time, I would have come today as well",
+          "changed": "oggi, so it is about today rather than about me"
+        },
+        {
+          "display": "Se avessi avuto tempo, avrei fatto tutto",
+          "cue": "If I had had time, I would have done everything",
+          "changed": "avrei fatto, an avere verb on the right"
+        },
+        {
+          "display": "Se avessi avuto tempo, sarei venuto ieri",
+          "cue": "If I had had time, I would have come yesterday",
+          "changed": "ieri, pinning the missed occasion"
+        }
+      ],
+      "mistake": {
+        "display": "Se avrei avuto tempo, sarei venuto anche io",
+        "why": "Again the conditional on the wrong side. se takes avessi avuto; sarei venuto is the half that gets the conditional."
+      },
+      "usage": "Turning down an invitation after the event, and meaning it.",
+      "register": "neutral",
+      "mnemonic": "Left side avessi, right side sarei."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M3-C01",
+      "display": "Se avessi saputo, ti avrei chiamato",
+      "cue": "If I had known, I would have called you"
+    },
+    {
+      "id": "L4-M3-C02",
+      "display": "Avrei dovuto dire la verità",
+      "cue": "I should have told the truth"
+    },
+    {
+      "id": "L4-M3-C03",
+      "display": "Sarebbe stato meglio partire ieri",
+      "cue": "It would have been better to leave yesterday"
+    },
+    {
+      "id": "L4-M3-C04",
+      "display": "Magari avessi ascoltato mia madre",
+      "cue": "If only I had listened to my mother"
+    },
+    {
+      "id": "L4-M3-C05",
+      "display": "Meno male che ho portato l'ombrello",
+      "cue": "Just as well I brought the umbrella"
+    },
+    {
+      "id": "L4-M3-C06",
+      "display": "Se fossi partito prima, non avrei perso il treno",
+      "cue": "If I had left earlier, I would not have missed the train"
+    },
+    {
+      "id": "L4-M3-C07",
+      "display": "Avrei potuto dire qualcosa",
+      "cue": "I could have said something"
+    },
+    {
+      "id": "L4-M3-C08",
+      "display": "Che peccato, sarebbe stato un bel viaggio",
+      "cue": "What a shame, it would have been a lovely trip"
+    },
+    {
+      "id": "L4-M3-C09",
+      "display": "Dovevo partire ieri, invece sono rimasto a casa",
+      "cue": "I was supposed to leave yesterday, but instead I stayed at home"
+    },
+    {
+      "id": "L4-M3-C10",
+      "display": "Se avessi avuto tempo, sarei venuto anche io",
+      "cue": "If I had had time, I would have come too"
+    },
+    {
+      "id": "L4-M3-C11",
+      "display": "Potevo chiamare prima, altrimenti avrei perso tutto",
+      "cue": "I could have called earlier — otherwise I would have lost everything"
+    },
+    {
+      "id": "L4-M3-C12",
+      "display": "Invece di parlare, non ho detto niente",
+      "cue": "Instead of speaking, I said nothing"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

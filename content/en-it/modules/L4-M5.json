@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M5",
+  "title": "Disagreeing well",
+  "job": "Soften, hedge, save face",
+  "prerequisites": [
+    "L4-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present congiuntivo, named as a paradigm here, after every doubt trigger",
+      "present indicative, for the claim itself and after mi sa che",
+      "condizionale presente, L3-M4's, in direi and non saprei",
+      "future, L1-M6's, only in the concessive sarà"
+    ],
+    "allowedPatterns": [
+      "Non credo che + <congiuntivo>",
+      "Non sono del tutto d'accordo + , + ma + <clause>",
+      "Sarà + , + però + <clause>",
+      "Dipende da + <N>",
+      "Forse + <clause> + , + non saprei"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PRESENT CONGIUNTIVO, NAMED AS A PARADIGM AT LAST. L3-M3 opened four cells on one trigger and left the system to this level. The endings, once and for all: an -are verb takes -i across io, tu and lui — che io parli, che tu parli, che lui parli — and an -ere or -ire verb takes -a: che io prenda, che tu prenda, che lui prenda. Noi takes -iamo and loro takes -no on the same stem. The irregulars L3-M3 already bought — sia, abbia, possa — are the same three-way syncretism in a different shape."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PRONOUN COMES BACK, AND THIS IS THE MODULE'S SHARPEST FACT. Because io, tu and lui are spelled the SAME in the congiuntivo, a pro-drop language has nothing left to drop: credo che tu abbia ragione, not credo che abbia ragione, which would leave the listener guessing who. Put the subject pronoun in whenever it is not already obvious from what came before. This is the one place in Italian where a learner must un-drop."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TRIGGERS ARE ALL DOUBT, WHICH IS WHERE THE MOOD LIVES. non credo che, dubito che, sembra che, può darsi che and non è detto che all take the congiuntivo. mi sa che does NOT, and takes the plain indicative: mi sa che non è una buona idea. The split is not arbitrary — mi sa che reports a hunch you actually hold, while the others hold the proposition at arm's length."
+    },
+    {
+      "tag": "free",
+      "text": "HALF THE MODULE IS ADVERBS AND THEY CARRY NO GRAMMAR AT ALL. forse, magari, piuttosto, probabilmente, in realtà and non del tutto hedge exactly as their English counterparts do, and none of them touches the verb. Reaching for one of these is always available when the mood has not settled yet, and a sentence built out of them is real Italian rather than a beginner's workaround."
+    },
+    {
+      "tag": "interference",
+      "text": "sarà IS THE FUTURE USED AS A CONCESSION AND ENGLISH CANNOT DO IT. On its own, before a però, it means that may well be — you grant the claim without accepting it. English will has no such use, so there is nothing to carry over and it has to be learned as an idiom. Note also that Italian raises the negation onto the main verb, non credo che sia vero for I do not think it is true, exactly as English does: that much is shared, and it is one fear the congiuntivo does not deserve."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M5-S01",
+      "display": "Non credo che sia vero",
+      "cue": "I do not think that is true",
+      "literal": "Not I-believe that it-be true",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "non credo",
+            "cue": "I do not think",
+            "tag": "free",
+            "forms": [
+              "non credo",
+              "non credo che"
+            ],
+            "note": "The negation sits on credo, not on the second half — exactly as English says I do not think it is true. That much transfers with nothing to unlearn."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "The doubt is what pulls sia out of è. Say credo che è vero and you have stated it as a fact you hold; the mood is doing real work here, not decoration.",
+      "sound": "non KRE-do ke SEE-a VE-ro. sia is two syllables, SEE-a, and never rhymes with the English sea.",
+      "variations": [
+        {
+          "display": "Non credo che sia caro",
+          "cue": "I do not think it is expensive",
+          "changed": "caro for vero, same frame"
+        },
+        {
+          "display": "Non penso che sia vero",
+          "cue": "I do not think that is true",
+          "changed": "penso for credo, interchangeable here"
+        },
+        {
+          "display": "Credo che non sia vero",
+          "cue": "I think that is not true",
+          "changed": "the non moved inside, which is a stronger claim"
+        }
+      ],
+      "mistake": {
+        "display": "Non credo che è vero",
+        "why": "non credo che is a doubt trigger and takes the congiuntivo: sia. It is heard in careless speech, but it is the error the whole module exists to fix."
+      },
+      "usage": "Rejecting a claim somebody has just repeated as fact.",
+      "register": "neutral",
+      "mnemonic": "Doubt on the left, congiuntivo on the right."
+    },
+    {
+      "id": "L4-M5-S02",
+      "display": "Non sono del tutto d'accordo, ma capisco",
+      "cue": "I do not entirely agree, but I understand",
+      "literal": "Not I-am of-the all of-agreement, but I-understand",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "del tutto",
+            "cue": "entirely, completely",
+            "tag": "free",
+            "forms": [
+              "del tutto",
+              "non del tutto"
+            ],
+            "note": "Slotted between sono and d'accordo it turns a flat refusal into a partial one. non del tutto on its own answers a question: Sei d'accordo? Non del tutto."
+          },
+          {
+            "display": "non sono d'accordo",
+            "cue": "I do not agree",
+            "tag": "free",
+            "forms": [
+              "non sono d'accordo"
+            ],
+            "note": "L3-M3's sono d'accordo with its negation, indexed whole. Bare, it is not rude in Italian — it simply ends the exchange, which is what this module is for."
+          },
+          {
+            "display": "capisco",
+            "cue": "I understand, I see",
+            "tag": "free",
+            "forms": [
+              "capisco",
+              "capisci",
+              "capisce"
+            ],
+            "note": "From capire, whose participio capito is L3-M10's. Tacked onto a disagreement it says the other person is not being dismissed."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "del tutto goes BEFORE d'accordo, not after: non sono del tutto d'accordo. English can say I do not agree entirely; Italian will not leave it at the end.",
+      "sound": "non SO-no del TOOT-to dak-KOR-do, ma ka-PEE-sko. capisco has a hard sc, ka-PEE-sko.",
+      "variations": [
+        {
+          "display": "Non sono d'accordo, però capisco",
+          "cue": "I do not agree, but I understand",
+          "changed": "the flat refusal, with però softening it"
+        },
+        {
+          "display": "Non del tutto d'accordo, ma capisco",
+          "cue": "Not entirely in agreement, but I understand",
+          "changed": "the verb dropped, as in a quick reply"
+        },
+        {
+          "display": "Non sono del tutto d'accordo, però capisco",
+          "cue": "I do not entirely agree, but I understand",
+          "changed": "però for ma"
+        }
+      ],
+      "mistake": {
+        "display": "Non sono d'accordo del tutto, ma capisco",
+        "why": "del tutto belongs in front of d'accordo. At the end it reads as a correction bolted on, and no speaker puts it there."
+      },
+      "usage": "Pushing back on a colleague's proposal without shutting the conversation down.",
+      "register": "neutral",
+      "mnemonic": "del tutto goes in the middle."
+    },
+    {
+      "id": "L4-M5-S03",
+      "display": "Sarà, però secondo me è troppo caro",
+      "cue": "That may well be, but in my view it is too expensive",
+      "literal": "It-will-be, however according to-me is too dear",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sarà",
+            "cue": "that may well be",
+            "tag": "interference",
+            "forms": [
+              "sarà"
+            ],
+            "note": "The future of essere used as a concession, and it is a whole turn on its own. English will cannot do this at all, so it has to be learned as an idiom."
+          },
+          {
+            "display": "troppo",
+            "cue": "too, too much",
+            "tag": "free",
+            "forms": [
+              "troppo",
+              "troppa",
+              "troppi"
+            ],
+            "note": "Before an adjective it never agrees — troppo caro, troppo cara. Before a noun it does: troppa gente, troppi soldi."
+          },
+          {
+            "display": "direi",
+            "cue": "I would say",
+            "tag": "free",
+            "forms": [
+              "direi",
+              "diresti"
+            ],
+            "note": "The conditional of dire, used to soften a verdict into an opinion. Direi di no is the gentlest available no."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Sarà is not a prediction. Said alone, with a shrug, it grants the point and takes nothing back, and the disagreement arrives in the clause after però.",
+      "sound": "sa-RA, pe-RO se-KON-do me e TROP-po KA-ro. sarà is stressed on the final a and carries the written accent.",
+      "variations": [
+        {
+          "display": "Direi di no, è troppo caro",
+          "cue": "I would say no, it is too expensive",
+          "changed": "direi opening instead of sarà conceding"
+        },
+        {
+          "display": "Sarà, ma secondo me è troppo caro",
+          "cue": "That may well be, but in my view it is too expensive",
+          "changed": "ma for però"
+        },
+        {
+          "display": "Sarà, però è troppo caro",
+          "cue": "That may well be, but it is too expensive",
+          "changed": "secondo me dropped, so the verdict is flat"
+        }
+      ],
+      "mistake": {
+        "display": "Sarà troppo caro, però secondo me è troppo caro",
+        "why": "Here sarà has been read as a real future and the sentence says it will be too expensive twice. The concessive sarà stands alone, before the comma."
+      },
+      "usage": "Conceding somebody's argument out loud while refusing the conclusion.",
+      "register": "informal",
+      "mnemonic": "Bare sarà = that may well be."
+    },
+    {
+      "id": "L4-M5-S04",
+      "display": "Dipende da quello che vuoi fare",
+      "cue": "It depends on what you want to do",
+      "literal": "It-depends from that which you-want to-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dipende da",
+            "cue": "it depends on",
+            "tag": "interference",
+            "forms": [
+              "dipende da",
+              "dipende",
+              "dipendere"
+            ],
+            "note": "The preposition is da, never su: dipende dal tempo. Bare dipende is a complete answer on its own, and it buys you a turn without agreeing."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "quello che is what, one block, where English uses a single word. da quello che vuoi is the whole object of dipende, and no di appears anywhere in it.",
+      "sound": "dee-PEN-de da KWEL-lo ke VWOY FA-re. vuoi is one syllable with a glide, VWOY.",
+      "variations": [
+        {
+          "display": "Dipende da quello che vuoi",
+          "cue": "It depends on what you want",
+          "changed": "fare dropped, leaving the bare want"
+        },
+        {
+          "display": "Dipende, non saprei",
+          "cue": "It depends — I could not say",
+          "changed": "the bare answer, refusing to commit at all"
+        },
+        {
+          "display": "Dipende da quello che vuole lui",
+          "cue": "It depends on what he wants",
+          "changed": "the decision handed to a third person"
+        }
+      ],
+      "mistake": {
+        "display": "Dipende di quello che vuoi fare",
+        "why": "dipendere takes da and not di. English on maps onto neither, so this pairing has to be memorised: dipende da."
+      },
+      "usage": "Declining to give a straight answer because the answer really does have conditions.",
+      "register": "neutral",
+      "mnemonic": "dipende DA, always da."
+    },
+    {
+      "id": "L4-M5-S05",
+      "display": "Forse hai ragione, ma non saprei",
+      "cue": "Maybe you are right, but I could not say",
+      "literal": "Perhaps you-have reason, but not I-would-know",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "non saprei",
+            "cue": "I could not say, I would not know",
+            "tag": "free",
+            "forms": [
+              "non saprei",
+              "saprei"
+            ],
+            "note": "The conditional of sapere with non. It hands the question back without claiming ignorance, which is why it closes a hedge so neatly."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "non saprei is not non so. non so admits you do not know; non saprei declines to commit, and using the first where you meant the second sounds like giving up.",
+      "sound": "FOR-se eye ra-JO-ne, ma non sa-PRAY. saprei ends on the stressed ei, sa-PRAY.",
+      "variations": [
+        {
+          "display": "Forse hai ragione, però non saprei",
+          "cue": "Maybe you are right, though I could not say",
+          "changed": "però for ma"
+        },
+        {
+          "display": "Forse, non saprei",
+          "cue": "Maybe — I could not say",
+          "changed": "the whole claim dropped, leaving two hedges"
+        },
+        {
+          "display": "Magari hai ragione, ma non saprei",
+          "cue": "You may well be right, but I could not say",
+          "changed": "magari for forse, warmer"
+        }
+      ],
+      "mistake": {
+        "display": "Forse hai ragione, ma non so",
+        "why": "Not ungrammatical, but it says something else: non so is I do not know, while non saprei is I would rather not commit. The hedge needs the conditional."
+      },
+      "usage": "Refusing to back somebody up without contradicting them either.",
+      "register": "informal",
+      "mnemonic": "saprei hedges; so admits."
+    },
+    {
+      "id": "L4-M5-S06",
+      "display": "Dubito che lui possa venire domani",
+      "cue": "I doubt he can come tomorrow",
+      "literal": "I-doubt that he can-be-able to-come tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dubito",
+            "cue": "I doubt",
+            "tag": "free",
+            "forms": [
+              "dubito",
+              "dubiti",
+              "dubita"
+            ],
+            "note": "The strongest doubt trigger in the module, and it always takes che plus the congiuntivo. Dubito on its own also answers a claim outright."
+          },
+          {
+            "display": "venire",
+            "cue": "to come",
+            "tag": "free",
+            "forms": [
+              "venire"
+            ],
+            "note": "The infinitive of the verb whose participio venuto is L3-M10's. After possa it stays bare: possa venire."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "lui is not optional here. possa is the same word for io, tu and lui, so dropping the pronoun leaves the listener with three readings and no way to choose.",
+      "sound": "DOO-bee-to ke LOO-ee POS-sa ve-NEE-re do-MA-nee. dubito is stressed on the first syllable, DOO-bee-to.",
+      "variations": [
+        {
+          "display": "Dubito che tu possa venire domani",
+          "cue": "I doubt you can come tomorrow",
+          "changed": "tu for lui — and only the pronoun tells them apart"
+        },
+        {
+          "display": "Non credo che lui possa venire domani",
+          "cue": "I do not think he can come tomorrow",
+          "changed": "a softer trigger for the same doubt"
+        },
+        {
+          "display": "Dubito che possa venire domani",
+          "cue": "I doubt he can come tomorrow",
+          "changed": "the pronoun dropped, which only works if he was just named"
+        }
+      ],
+      "mistake": {
+        "display": "Dubito che lui può venire domani",
+        "why": "dubito che takes the congiuntivo possa, not the indicative può. This is the trigger with the least tolerance for the indicative of any in the module."
+      },
+      "usage": "Warning somebody not to count on a person who has cancelled before.",
+      "register": "neutral",
+      "mnemonic": "Three persons, one form — say the pronoun."
+    },
+    {
+      "id": "L4-M5-S07",
+      "display": "Può darsi che tu abbia ragione",
+      "cue": "It may be that you are right",
+      "literal": "It-can to-give-itself that you have reason",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "può darsi",
+            "cue": "it may be, possibly",
+            "tag": "delta",
+            "forms": [
+              "può darsi",
+              "può darsi che"
+            ],
+            "note": "Frozen: nothing in it conjugates. Bare Può darsi is a complete reply, and with che it takes the congiuntivo like every other doubt trigger."
+          },
+          {
+            "display": "chissà",
+            "cue": "who knows",
+            "tag": "free",
+            "forms": [
+              "chissà"
+            ],
+            "note": "From chi sa, written as one word with the accent. A whole turn on its own, and it commits you to nothing at all."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "abbia is the same for io, tu and lui, so tu is doing real work. Può darsi che abbia ragione would leave it open whether you meant yourself.",
+      "sound": "pwo DAR-see ke too AB-bya ra-JO-ne. può is one syllable, pwo, and darsi holds the r lightly.",
+      "variations": [
+        {
+          "display": "Chissà, può darsi che tu abbia ragione",
+          "cue": "Who knows — it may be that you are right",
+          "changed": "chissà added in front as a second hedge"
+        },
+        {
+          "display": "Può darsi che lui abbia ragione",
+          "cue": "It may be that he is right",
+          "changed": "lui for tu, and again only the pronoun says so"
+        },
+        {
+          "display": "Può darsi, chissà",
+          "cue": "Maybe — who knows",
+          "changed": "both hedges bare, with no clause at all"
+        }
+      ],
+      "mistake": {
+        "display": "Può darsi che tu hai ragione",
+        "why": "può darsi che is a doubt trigger, so the verb is abbia. hai states it as a fact, which is the opposite of what può darsi is doing."
+      },
+      "usage": "Half-conceding a point you have not finished thinking about.",
+      "register": "informal",
+      "mnemonic": "può darsi never changes shape."
+    },
+    {
+      "id": "L4-M5-S08",
+      "display": "Mi sa che non è una buona idea",
+      "cue": "I reckon it is not a good idea",
+      "literal": "To-me it-knows that not is a good idea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi sa che",
+            "cue": "I reckon, I have a feeling",
+            "tag": "interference",
+            "forms": [
+              "mi sa che",
+              "mi sa"
+            ],
+            "note": "The one trigger here that takes the INDICATIVE: mi sa che non è. It reports a hunch you actually hold, so there is no doubt for the mood to mark."
+          },
+          {
+            "display": "idea",
+            "cue": "idea",
+            "tag": "free",
+            "forms": [
+              "idea",
+              "idee"
+            ],
+            "note": "Feminine, stressed on the e: ee-DE-a. una buona idea keeps buona in front, where it usually sits with short adjectives."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "mi sa che does not mean I know. It is a hunch, close to English I reckon, and its indicative is correct rather than sloppy — this is the exception the mood rule needs.",
+      "sound": "mee sa ke non e OO-na BWO-na ee-DE-a. idea is three syllables with the stress in the middle, ee-DE-a.",
+      "variations": [
+        {
+          "display": "Mi sa che è una buona idea",
+          "cue": "I reckon it is a good idea",
+          "changed": "the negation dropped, so the hunch is positive"
+        },
+        {
+          "display": "Non credo che sia una buona idea",
+          "cue": "I do not think it is a good idea",
+          "changed": "a doubt trigger, which pulls sia out of è"
+        },
+        {
+          "display": "Mi sa che non è vero",
+          "cue": "I have a feeling it is not true",
+          "changed": "the object of the hunch replaced"
+        }
+      ],
+      "mistake": {
+        "display": "Mi sa che non sia una buona idea",
+        "why": "mi sa che is the trigger that does NOT take the congiuntivo. sia here overcorrects, and it is the mistake a learner makes right after learning the mood."
+      },
+      "usage": "Voicing a misgiving about a plan before it has gone too far.",
+      "register": "informal",
+      "mnemonic": "mi sa che keeps the indicative."
+    },
+    {
+      "id": "L4-M5-S09",
+      "display": "Sembra difficile, ma non è detto",
+      "cue": "It looks difficult, but that is not certain",
+      "literal": "It-seems difficult, but not is said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sembra",
+            "cue": "it seems, it looks",
+            "tag": "free",
+            "forms": [
+              "sembra",
+              "sembrano",
+              "sembrare"
+            ],
+            "note": "L3-M3's mi sembra with nobody named. Followed by an adjective it takes no che; followed by a clause, sembra che takes the congiuntivo."
+          },
+          {
+            "display": "non è detto",
+            "cue": "that is not certain, it is not a given",
+            "tag": "delta",
+            "forms": [
+              "non è detto"
+            ],
+            "note": "Literally it is not said. A whole turn on its own, and it leaves the door open without arguing for anything."
+          },
+          {
+            "display": "piuttosto",
+            "cue": "rather, fairly",
+            "tag": "free",
+            "forms": [
+              "piuttosto"
+            ],
+            "note": "In front of an adjective it means fairly and takes the edge off it. It also means rather than, but that use waits for a later rung."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Bare sembra difficile needs no che. The che and the congiuntivo appear only when a whole clause follows: sembra che sia difficile.",
+      "sound": "SEM-bra dif-FEE-chee-le, ma non e DET-to. sembra is stressed on the first syllable, SEM-bra.",
+      "variations": [
+        {
+          "display": "Sembra piuttosto difficile, ma non è detto",
+          "cue": "It looks fairly difficult, but that is not certain",
+          "changed": "piuttosto softening the adjective"
+        },
+        {
+          "display": "Sembra difficile, però non è detto",
+          "cue": "It looks difficult, though that is not certain",
+          "changed": "però for ma"
+        },
+        {
+          "display": "Non è detto, sembra piuttosto difficile",
+          "cue": "It is not certain — it does look fairly difficult",
+          "changed": "the halves swapped, so the hedge leads"
+        }
+      ],
+      "mistake": {
+        "display": "Sembra che difficile, ma non è detto",
+        "why": "che appears only before a clause. Before a bare adjective the verb takes it directly: sembra difficile."
+      },
+      "usage": "Keeping a plan alive that everybody else has already given up on.",
+      "register": "neutral",
+      "mnemonic": "sembra + adjective, sembra che + clause."
+    },
+    {
+      "id": "L4-M5-S10",
+      "display": "Temo di no, probabilmente è troppo tardi",
+      "cue": "I am afraid not — it is probably too late",
+      "literal": "I-fear of no, probably is too late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "temo",
+            "cue": "I am afraid, I fear",
+            "tag": "interference",
+            "forms": [
+              "temo",
+              "temi",
+              "teme"
+            ],
+            "note": "Temo di no is the polite I am afraid not, and it carries no real fear. With a clause, temo che takes the congiuntivo."
+          },
+          {
+            "display": "probabilmente",
+            "cue": "probably",
+            "tag": "free",
+            "forms": [
+              "probabilmente"
+            ],
+            "note": "An adverb, so it changes no verb: probabilmente è tardi keeps the indicative. Built from probabile plus -mente, like most Italian adverbs."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Temo di no takes di before the bare no or si, which English has no equivalent of. It is never temo no.",
+      "sound": "TE-mo dee no, pro-ba-beel-MEN-te e TROP-po TAR-dee. probabilmente has the stress on the -men-, pro-ba-beel-MEN-te.",
+      "variations": [
+        {
+          "display": "Temo di no, probabilmente è tardi",
+          "cue": "I am afraid not — it is probably late",
+          "changed": "troppo dropped, so it is less final"
+        },
+        {
+          "display": "Temo che sia troppo tardi",
+          "cue": "I am afraid it is too late",
+          "changed": "a clause after temo, so the congiuntivo appears"
+        },
+        {
+          "display": "Probabilmente è troppo tardi, temo",
+          "cue": "It is probably too late, I am afraid",
+          "changed": "temo moved to the end as an afterthought"
+        }
+      ],
+      "mistake": {
+        "display": "Temo no, probabilmente è troppo tardi",
+        "why": "The di is compulsory: temo di no, credo di si, penso di no. A bare no after these verbs is not said."
+      },
+      "usage": "Turning down a request you would rather have been able to grant.",
+      "register": "neutral",
+      "mnemonic": "temo DI no, credo DI si."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M5-C01",
+      "display": "Non credo che sia vero",
+      "cue": "I do not think that is true"
+    },
+    {
+      "id": "L4-M5-C02",
+      "display": "Non sono del tutto d'accordo, ma capisco",
+      "cue": "I do not entirely agree, but I understand"
+    },
+    {
+      "id": "L4-M5-C03",
+      "display": "Sarà, però secondo me è troppo caro",
+      "cue": "That may well be, but in my view it is too expensive"
+    },
+    {
+      "id": "L4-M5-C04",
+      "display": "Dipende da quello che vuoi fare",
+      "cue": "It depends on what you want to do"
+    },
+    {
+      "id": "L4-M5-C05",
+      "display": "Forse hai ragione, ma non saprei",
+      "cue": "Maybe you are right, but I could not say"
+    },
+    {
+      "id": "L4-M5-C06",
+      "display": "Dubito che lui possa venire domani",
+      "cue": "I doubt he can come tomorrow"
+    },
+    {
+      "id": "L4-M5-C07",
+      "display": "Può darsi che tu abbia ragione",
+      "cue": "It may be that you are right"
+    },
+    {
+      "id": "L4-M5-C08",
+      "display": "Mi sa che non è una buona idea",
+      "cue": "I reckon it is not a good idea"
+    },
+    {
+      "id": "L4-M5-C09",
+      "display": "Sembra difficile, ma non è detto",
+      "cue": "It looks difficult, but that is not certain"
+    },
+    {
+      "id": "L4-M5-C10",
+      "display": "Temo di no, probabilmente è troppo tardi",
+      "cue": "I am afraid not — it is probably too late"
+    },
+    {
+      "id": "L4-M5-C11",
+      "display": "Chissà, direi piuttosto di no",
+      "cue": "Who knows — I would rather say no"
+    },
+    {
+      "id": "L4-M5-C12",
+      "display": "In realtà non credo che sia troppo tardi",
+      "cue": "Actually I do not think it is too late"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M3",
+  "title": "What might have been",
+  "job": "Regrets and past hypotheticals",
+  "prerequisites": [
+    "L4-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "counterfactual_past",
+      "simple_past",
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "जर + V-past + असतो/असती/असतं + तर + V-past + असतो/असती/असतं",
+      "V-past + नसतो + तर + clause",
+      "Subject + V-आयला + पाहिजे + होतं",
+      "Subject + V-आयला + नको + होतं",
+      "मला + N + हवं + होतं / ते + आवडलं + असतं"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The counterfactual is TWO halves and each half agrees with its OWN subject: जर ती लवकर गेली असती तर तिला संधी मिळाली असती, but जर ते वेळेवर आले असते तर आम्ही भेटलो असतो. L3-M4 stated the rule and shipped only one frame of it — first person, masculine, both halves alike (जर मी लवकर गेलो असतो तर मी त्याला भेटलो असतो). The person and the gender are what this module widens. A transitive half keeps L2-M10's ergative law unchanged: त्याने निरोप दिला असता, त्याने सांगितलं असतं — ने on the subject, the verb agreeing with the thing."
+    },
+    {
+      "tag": "delta",
+      "text": "The negative REPLACES the auxiliary; it does not add a word. गेलो असतो → गेलो नसतो, झालं असतं → झालं नसतं, गर्दी असती → गर्दी नसती. नसतो/नसता/नसती/नसतं/नसते is one paradigm, the negative twin of L3-M4's असतो/असता/असती/असतं/असते, and there is no नाही anywhere inside it. नसतं तर is the counterfactual twin of L3-M4's नाहीतर: नाहीतर warns about what will happen, नसतं तर mourns what did not."
+    },
+    {
+      "tag": "free",
+      "text": "The regret frames are two words each and neither word is new: -आयला पाहिजे (L3-M4) + होतं (L3-M3) is 'should have', -आयला नको (L1-M3) + होतं is 'shouldn't have'. Because this course indexes single tokens only, पाहिजे resolves to L3-M4's row and होतं to L3-M3's, and the FRAME owns no word row at all — it is the first shape in the course that no row can carry, which is why it lives here in the rules and in each sentence's literal. Tapping a word will not explain it; reading this will."
+    },
+    {
+      "tag": "free",
+      "text": "Two more regrets that are not conditionals. मला + N + हवं होतं is a want that was and is over — मला ती नोकरी हवी होती — and the हवं agrees with the thing wanted, exactly as L1-M3's present हवं does. ते मला आवडलं असतं is 'I would have liked it', which L3-M4 named and deliberately did not teach; आवडणे keeps its L1 shape, so the thing liked is the subject and the ending follows it: ते आवडलं, ती गाणी आवडली."
+    },
+    {
+      "tag": "interference",
+      "text": "Hindi's काश has no everyday Marathi twin. Marathi says … असतं तर बरं झालं असतं — 'if it had been so, it would have been good' — and a learner hunting for a one-word 'if only' will either leave it out or import काश, and काश is not Marathi. The architecture otherwise transfers whole: Hindi अगर मैं जल्दी गया होता तो is a past participle plus an agreeing form of होना, and Marathi's is a past participle plus an agreeing form of असणे. Only the auxiliary word changes — होता → असता."
+    },
+    {
+      "tag": "free",
+      "text": "Three shapes one English word apart. मी गेलो असतो is what WOULD have happened (this module). मी जायचो is what USED to happen (L4-M8's past habitual). तो गेला असेल is a guess about now (L4-M5's). And जर … तर in the present or the future is still L3-M4's real conditional, re-shown on every page here and never re-opened."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M3-S01",
+      "display": "जर ती लवकर गेली असती तर तिला संधी मिळाली असती",
+      "cue": "अगर वह जल्दी गई होती तो उसे मौक़ा मिल जाता",
+      "glossEn": "If she had gone early, she would have got the chance",
+      "literal": "अगर वह जल्दी गई होती तो उसको मौक़ा मिली होती",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "संधी",
+            "cue": "मौक़ा",
+            "tag": "free",
+            "forms": [
+              "संधी"
+            ],
+            "note": "Feminine, so संधी मिळाली and never मिळालं. Hindi मौक़ा is masculine — the gender is the one thing that has to change when the word is carried across."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "दोनों आधे अपने-अपने कर्ता से मिलते हैं. कर्ता ती है, इसलिए दोनों जगह -ती: गेली असती, मिळाली असती. L3-M4 ने सिर्फ़ मी वाला मर्दाना फ़्रेम दिखाया था.",
+      "sound": "असती = अ‑स‑ती, तीनों हलके. 'ती' पर ज़ोर मत दीजिए, वरना वह अलग शब्द ती जैसा सुनाई देगा.",
+      "variations": [
+        {
+          "display": "जर ते लवकर गेले असते तर त्यांना संधी मिळाली असती",
+          "cue": "अगर वे जल्दी गए होते तो उन्हें मौक़ा मिल जाता",
+          "changed": "कर्ता बहुवचन — गेले असते. पर दूसरा आधा संधी से मिलता है, इसलिए वहाँ मिळाली असती जस का तस."
+        },
+        {
+          "display": "जर मी लवकर गेलो असतो तर मला संधी मिळाली असती",
+          "cue": "अगर मैं जल्दी गया होता तो मुझे मौक़ा मिल जाता",
+          "changed": "पहला आधा मर्दाना — गेलो असतो, यानी L3-M4 वाला इकलौता फ़्रेम. दूसरा आधा फिर भी संधी से मिला."
+        }
+      ],
+      "mistake": {
+        "display": "जर ती लवकर गेली असतो तर तिला संधी मिळाली असती",
+        "why": "असतो मर्दाना है और कर्ता ती है. सहायक क्रिया अपने ही आधे के कर्ता से मिलती है — गेली असती."
+      },
+      "usage": "जो मौक़ा हाथ से निकल गया, उसके बारे में बात करते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "दो आधे, दो कर्ता, दो मेल: गेली असती … मिळाली असती."
+    },
+    {
+      "id": "L4-M3-S02",
+      "display": "जर ते वेळेवर आले असते तर आम्ही सगळे भेटलो असतो",
+      "cue": "अगर वे वक़्त पर आए होते तो हम सब मिल जाते",
+      "glossEn": "If they had come on time, we would all have met",
+      "literal": "अगर वे वक़्त-पर आए होते तो हम सब मिले होते",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "वेळेवर",
+            "cue": "वक़्त पर",
+            "tag": "free",
+            "forms": [
+              "वेळेवर"
+            ],
+            "note": "वेळ (L3-M4) + -वर, welded into one word — never वेळ वर. The same welding L4-M1 and L4-M2 taught on verbs and on nouns, here on a time word."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "पहला आधा ते से मिला (आले असते), दूसरा आम्ही से (भेटलो असतो). एक ही वाक्य में दो अलग अंत — यही इस मॉड्यूल का पूरा काम है.",
+      "sound": "वेळेवर = वे‑ळे‑वर, 'ळ' जीभ पीछे मोड़कर. एक ही शब्द है, बीच में रुकिए मत.",
+      "variations": [
+        {
+          "display": "जर ती वेळेवर आली असती तर आम्ही भेटलो असतो",
+          "cue": "अगर वह वक़्त पर आई होती तो हम मिल जाते",
+          "changed": "कर्ता औरत — आली असती. दूसरा आधा आम्ही का है, इसलिए भेटलो असतो वैसा ही रहा."
+        },
+        {
+          "display": "जर मी वेळेवर आलो असतो तर हे काम झालं असतं",
+          "cue": "अगर मैं वक़्त पर आया होता तो यह काम हो जाता",
+          "changed": "दूसरे आधे का कर्ता काम है — नपुंसक, इसलिए झालं असतं."
+        }
+      ],
+      "mistake": {
+        "display": "जर ते वेळ वर आले असते तर आम्ही सगळे भेटलो असतो",
+        "why": "वेळेवर एक ही जुड़ा हुआ शब्द है. वेळ को अलग करके वर लगाना हिंदी 'वक़्त पर' की नक़ल है."
+      },
+      "usage": "देर से पहुँचने पर, या किसी छूटी हुई मुलाक़ात पर.",
+      "register": "neutral",
+      "mnemonic": "वेळ + वर = वेळेवर, एक शब्द, एक साँस."
+    },
+    {
+      "id": "L4-M3-S03",
+      "display": "जर त्याने आधी निरोप दिला असता तर हे काम झालं असतं",
+      "cue": "अगर उसने पहले संदेश दिया होता तो यह काम हो जाता",
+      "glossEn": "If he had sent word earlier, this work would have got done",
+      "literal": "अगर उसने पहले संदेश दिया होता तो यह काम हुआ होता",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "दिला",
+            "cue": "दिया",
+            "tag": "free",
+            "forms": [
+              "दिला",
+              "दिलं",
+              "दिली"
+            ],
+            "note": "देणे's past (imperative दे L2-M1, द्या L1-M8). After ने the verb agrees with the THING given: निरोप दिला, पत्र दिलं, चावी दिली."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "त्याने पर ने है, इसलिए क्रिया निरोप से मिलती है — दिला असता, मर्दाना. दूसरे आधे का कर्ता काम है, नपुंसक — झालं असतं. L2-M10 का नियम यहाँ भी वैसा ही चलता है.",
+      "sound": "दिला असता में दोनों शब्द हलके जुड़ते हैं: दि‑ला‑अ‑स‑ता.",
+      "variations": [
+        {
+          "display": "जर तिने आधी निरोप दिला असता तर हे काम झालं असतं",
+          "cue": "अगर उसने (औरत ने) पहले संदेश दिया होता तो यह काम हो जाता",
+          "changed": "कर्ता औरत हुई, पर ने वाला नियम वही — क्रिया अब भी निरोप से मिली, दिला असता."
+        },
+        {
+          "display": "जर त्याने आधी फोन केला असता तर हे काम झालं असतं",
+          "cue": "अगर उसने पहले फ़ोन किया होता तो यह काम हो जाता",
+          "changed": "चीज़ बदली — निरोप → फोन, दोनों मर्दाना, इसलिए केला असता भी मर्दाना."
+        }
+      ],
+      "mistake": {
+        "display": "जर तो आधी निरोप दिला असता तर हे काम झालं असतं",
+        "why": "तो पर ने नहीं लगा. बीती हुई सकर्मक क्रिया में कर्ता को ने चाहिए: त्याने."
+      },
+      "usage": "किसी की ख़ामोशी से हुए नुक़सान की शिकायत करते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "ने आया तो क्रिया चीज़ से मिली — निरोप दिला असता."
+    },
+    {
+      "id": "L4-M3-S04",
+      "display": "जर मी तिथे गेलो नसतो तर मला हे समजलं नसतं",
+      "cue": "अगर मैं वहाँ नहीं गया होता तो मुझे यह समझ नहीं आता",
+      "glossEn": "If I had not gone there, I would not have understood this",
+      "literal": "अगर मैं वहाँ गया न-होता तो मुझे यह समझा न-होता",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "नसतो",
+            "cue": "न होता",
+            "tag": "delta",
+            "forms": [
+              "नसतो",
+              "नसता",
+              "नसती",
+              "नसतं",
+              "नसते"
+            ],
+            "note": "The negative of L3-M4's असतो/असता/असती/असतं/असते. It replaces the auxiliary: गेलो असतो → गेलो नसतो. No नाही goes anywhere near it."
+          },
+          {
+            "display": "समजलं",
+            "cue": "समझ आया",
+            "tag": "free",
+            "forms": [
+              "समजलं"
+            ],
+            "note": "समजणे's neuter past. The thing understood is the subject and the person is मला: मला हे समजलं — 'this became clear to me'."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "हिंदी 'नहीं गया होता' में नहीं एक अलग शब्द है. मराठी में नहीं वाला शब्द है ही नहीं — असतो ख़ुद नसतो बन जाता है.",
+      "sound": "नसतो = न‑स‑तो. पहला 'न' छोटा और हलका; उसे खींचकर 'नाही' मत बनाइए.",
+      "variations": [
+        {
+          "display": "जर ती तिथे गेली नसती तर तिला हे समजलं नसतं",
+          "cue": "अगर वह वहाँ नहीं गई होती तो उसे यह समझ नहीं आता",
+          "changed": "कर्ता औरत — गेली नसती. नकार वही, अंत बदला."
+        },
+        {
+          "display": "जर मी तिथे गेलो असतो तर मला हे समजलं असतं",
+          "cue": "अगर मैं वहाँ गया होता तो मुझे यह समझ आता",
+          "changed": "नकार हटा — नसतो → असतो, नसतं → असतं. एक ही अक्षर पूरा मतलब पलटता है."
+        }
+      ],
+      "mistake": {
+        "display": "जर मी तिथे नाही गेलो असतो तर मला हे समजलं नाही असतं",
+        "why": "मराठी में नाही को असतो के आगे-पीछे जोड़ा नहीं जाता. असतो का अपना नकार नसतो है, असतं का नसतं."
+      },
+      "usage": "जो अच्छा हुआ उसका श्रेय किसी फ़ैसले को देते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "असतो का उल्टा नसतो — नाही कहीं नहीं."
+    },
+    {
+      "id": "L4-M3-S05",
+      "display": "जर काल गर्दी नसती तर मला तिकीट मिळालं असतं",
+      "cue": "अगर कल भीड़ नहीं होती तो मुझे टिकट मिल जाता",
+      "glossEn": "If there had been no crowd yesterday, I would have got a ticket",
+      "literal": "अगर कल भीड़ न-होती तो मुझे टिकट मिला होता",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "तिकीट",
+            "cue": "टिकट",
+            "tag": "free",
+            "forms": [
+              "तिकीट"
+            ],
+            "note": "Neuter, so तिकीट मिळालं. Hindi टिकट is masculine; as with संधी, only the gender travels badly."
+          },
+          {
+            "display": "मिळालं",
+            "cue": "मिला",
+            "tag": "free",
+            "forms": [
+              "मिळालं"
+            ],
+            "note": "The neuter of मिळाली (L4-M2). What is got is the subject, so the ending follows the thing: जागा मिळाली, तिकीट मिळालं."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "गर्दी औरत-जाति है, इसलिए नसती. तिकीट नपुंसक है, इसलिए मिळालं असतं. दोनों आधे अलग-अलग चीज़ों से मिले, कर्ता 'मैं' से नहीं.",
+      "sound": "नसती = न‑स‑ती. मिळालं में 'ळ' जीभ पीछे मोड़कर, और अंत का 'लं' नाक से हलका.",
+      "variations": [
+        {
+          "display": "जर काल गर्दी नसती तर मला जागा मिळाली असती",
+          "cue": "अगर कल भीड़ नहीं होती तो मुझे जगह मिल जाती",
+          "changed": "चीज़ बदली — तिकीट → जागा, औरत-जाति, इसलिए मिळाली असती."
+        },
+        {
+          "display": "जर काल पाऊस नसता तर आम्ही बागेत गेलो असतो",
+          "cue": "अगर कल बारिश नहीं होती तो हम बाग़ में चले जाते",
+          "changed": "पाऊस मर्दाना है — नसता. यही पाँच रूपों वाली माला: नसतो, नसता, नसती, नसतं, नसते."
+        }
+      ],
+      "mistake": {
+        "display": "जर काल गर्दी नाही असती तर मला तिकीट मिळालं असतं",
+        "why": "नाही असती जैसा कुछ नहीं होता. असती का नकार एक ही शब्द है — नसती."
+      },
+      "usage": "स्टेशन, सिनेमा या सण के दिन की भीड़ के बाद.",
+      "register": "neutral",
+      "mnemonic": "गर्दी नसती, तिकीट मिळालं असतं — हर आधा अपनी चीज़ से."
+    },
+    {
+      "id": "L4-M3-S06",
+      "display": "मी त्याचं ऐकायला पाहिजे होतं",
+      "cue": "मुझे उसकी बात सुननी चाहिए थी",
+      "glossEn": "I should have listened to him",
+      "literal": "मैं उसका सुनने-को चाहिए था",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ऐकायला",
+            "cue": "सुनना",
+            "tag": "free",
+            "forms": [
+              "ऐकायला"
+            ],
+            "note": "ऐकणे (L1-M5's ऐकलं) in the -आयला cell L3-M4 puts before पाहिजे. त्याचं ऐकणे is to take his advice, not merely to hear him."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "पाहिजे होतं दो अलग शब्द हैं और यही पूरा फ़्रेम है — हिंदी 'चाहिए था' की तरह. पाहिजे अकेला अभी की बात है, पाहिजे होतं बीती हुई बात का अफ़सोस.",
+      "sound": "ऐकायला = ऐ‑का‑य‑ला, चारों हलके. होतं का अंत नाक से: हो‑तं.",
+      "variations": [
+        {
+          "display": "तुम्ही माझं ऐकायला पाहिजे होतं",
+          "cue": "आपको मेरी बात सुननी चाहिए थी",
+          "changed": "कर्ता बदला — मी → तुम्ही, पर पाहिजे होतं जस का तस. यह फ़्रेम कभी नहीं बदलता."
+        },
+        {
+          "display": "मी काल लवकर उठायला पाहिजे होतं",
+          "cue": "मुझे कल जल्दी उठना चाहिए था",
+          "changed": "क्रिया बदली — ऐकायला → उठायला (L3-M4). -आयला वाला ख़ाना वही रहा."
+        }
+      ],
+      "mistake": {
+        "display": "मी त्याचं ऐकायला पाहिजे आहे",
+        "why": "पाहिजे आहे अभी की ज़रूरत है, अफ़सोस नहीं. बीती बात का अफ़सोस पाहिजे होतं से बनता है."
+      },
+      "usage": "किसी की सलाह न मानने के बाद, अपनी ग़लती मानते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "पाहिजे = चाहिए, पाहिजे होतं = चाहिए था."
+    },
+    {
+      "id": "L4-M3-S07",
+      "display": "मी तिथे उगीच जायला नको होतं",
+      "cue": "मुझे वहाँ बेकार में नहीं जाना चाहिए था",
+      "glossEn": "I shouldn't have gone there for nothing",
+      "literal": "मैं वहाँ बेकार-में जाने-को नहीं-चाहिए था",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "उगीच",
+            "cue": "बेकार में",
+            "tag": "free",
+            "forms": [
+              "उगीच"
+            ],
+            "note": "For nothing, needlessly — the word that turns a plain report of a trip into a regret about it. Hindi बेकार में or यूँ ही."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "नको होतं पाहिजे होतं का उल्टा है, और यह भी दो ही शब्दों का फ़्रेम है. नको यहाँ 'नहीं चाहिए' नहीं, 'नहीं करना चाहिए था' है.",
+      "sound": "उगीच = उ‑गीच, बीच का 'गी' लंबा. नको होतं में दोनों शब्द जुड़कर हलके निकलते हैं.",
+      "variations": [
+        {
+          "display": "मी त्याला हे सांगायला नको होतं",
+          "cue": "मुझे उसे यह नहीं कहना चाहिए था",
+          "changed": "क्रिया बदली — जायला → सांगायला. फ़्रेम नको होतं वैसा का वैसा."
+        },
+        {
+          "display": "तुम्ही तिथे जायला नको होतं",
+          "cue": "आपको वहाँ नहीं जाना चाहिए था",
+          "changed": "कर्ता बदला — मी → तुम्ही, फ़्रेम फिर भी नहीं बदला."
+        }
+      ],
+      "mistake": {
+        "display": "मी तिथे उगीच जायला नाही पाहिजे होतं",
+        "why": "पाहिजे का नकार नाही पाहिजे नहीं, नको है. यही एक शब्द पूरा उल्टा फ़्रेम बना देता है."
+      },
+      "usage": "किसी बेकार गए चक्कर या फ़ालतू ख़र्च पर.",
+      "register": "neutral",
+      "mnemonic": "पाहिजे होतं करना था, नको होतं नहीं करना था."
+    },
+    {
+      "id": "L4-M3-S08",
+      "display": "मला ती नोकरी हवी होती, पण ती संधी चुकली",
+      "cue": "मुझे वह नौकरी चाहिए थी, पर वह मौक़ा छूट गया",
+      "glossEn": "I wanted that job, but that chance was missed",
+      "literal": "मुझे वह नौकरी चाहिए थी, पर वह मौक़ा छूटी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "चुकलं",
+            "cue": "छूट गया",
+            "tag": "free",
+            "forms": [
+              "चुकलं",
+              "चुकला",
+              "चुकली"
+            ],
+            "note": "चुकणे — to be missed, to go wrong. The thing missed is the subject: संधी चुकली, बस चुकली."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "हवं होतं में हवं चीज़ से मिलता है, 'मैं' से नहीं — नोकरी औरत-जाति है, इसलिए हवी होती. यह L1-M3 का वही हवं है, बस पीछे होतं लगा है.",
+      "sound": "चुकली = चु‑क‑ली, तीनों छोटे. संधी में 'धी' लंबा.",
+      "variations": [
+        {
+          "display": "मला ते पुस्तक हवं होतं, पण ते मिळालं नाही",
+          "cue": "मुझे वह किताब चाहिए थी, पर वह नहीं मिली",
+          "changed": "चीज़ नपुंसक हुई — हवं होतं. मराठी में पुस्तक नपुंसक है, हिंदी की किताब औरत-जाति."
+        },
+        {
+          "display": "मला ती संधी हवी होती, पण ती चुकली",
+          "cue": "मुझे वह मौक़ा चाहिए था, पर वह छूट गया",
+          "changed": "नोकरी की जगह संधी — दोनों औरत-जाति, इसलिए हवी होती और चुकली वैसे ही."
+        }
+      ],
+      "mistake": {
+        "display": "मी ती नोकरी हवी होती",
+        "why": "चाहने वाले पर मला आता है, मी नहीं. हवं वाला वाक्य हमेशा मला/तुला/त्याला से शुरू होता है."
+      },
+      "usage": "नौकरी, दाख़िले या किसी मौक़े के छूट जाने पर.",
+      "register": "neutral",
+      "mnemonic": "हवं चीज़ से मिलता है, चाहने वाला मला ही रहता है."
+    },
+    {
+      "id": "L4-M3-S09",
+      "display": "तुम्ही काल आला असता तर मला खूप आवडलं असतं",
+      "cue": "अगर आप कल आए होते तो मुझे बहुत अच्छा लगता",
+      "glossEn": "If you had come yesterday, I would have liked it very much",
+      "literal": "आप कल आए होते तो मुझे बहुत पसंद आया होता",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "आवडलं",
+            "cue": "पसंद आया",
+            "tag": "delta",
+            "forms": [
+              "आवडलं",
+              "आवडला",
+              "आवडली"
+            ],
+            "note": "आवडणे's past. As in L1-M1's आवडतं, the thing liked is the SUBJECT: मला ते आवडलं, मला ती गाणी आवडली."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "हिंदी का काश मराठी में नहीं है. मराठी कहता है … असतं तर बरं झालं असतं. काश उधार लेकर काश तुम्ही आला असता कहना मराठी नहीं है.",
+      "sound": "आवडलं = आ‑व‑ड‑लं, अंत नाक से. असतं भी वैसे ही — दोनों का 'तं' और 'लं' हलका.",
+      "variations": [
+        {
+          "display": "तुम्ही काल आला असता तर बरं झालं असतं",
+          "cue": "आप कल आए होते तो अच्छा होता",
+          "changed": "यही मराठी का 'काश' है — बरं झालं असतं. एक शब्द नहीं, पूरा आधा वाक्य."
+        },
+        {
+          "display": "ती गाणी मला नक्की आवडली असती",
+          "cue": "वे गाने मुझे ज़रूर पसंद आते",
+          "changed": "पसंद आने वाली चीज़ बहुवचन औरत-जाति है — गाणी, इसलिए आवडली असती."
+        }
+      ],
+      "mistake": {
+        "display": "काश तुम्ही काल आला असता",
+        "why": "काश हिंदी का शब्द है. मराठी में इसकी जगह पूरा दूसरा आधा आता है: … तर बरं झालं असतं."
+      },
+      "usage": "किसी न्योते या मुलाक़ात के बाद, अफ़सोस जताते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "काश नहीं — बरं झालं असतं."
+    },
+    {
+      "id": "L4-M3-S10",
+      "display": "मला त्याची आठवण येते, आणि ते सगळं मला आठवतं",
+      "cue": "मुझे उसकी याद आती है, और वह सब मुझे याद है",
+      "glossEn": "I miss him, and I remember it all",
+      "literal": "मुझे उसकी याद आती है, और वह सब मुझे याद-है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "आठवण",
+            "cue": "याद",
+            "tag": "free",
+            "forms": [
+              "आठवण"
+            ],
+            "note": "Feminine noun. आठवण येणे is to miss someone — मला त्याची आठवण येते, 'his memory comes to me'."
+          },
+          {
+            "display": "आठवतं",
+            "cue": "याद है",
+            "tag": "free",
+            "forms": [
+              "आठवतं"
+            ],
+            "note": "आठवणे — to be remembered. Like आवडणे, the thing remembered is the subject: मला ते आठवतं."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "आठवण एक संज्ञा है और उसके साथ येणे आता है; आठवतं क्रिया है और अकेली चलती है. हिंदी में दोनों 'याद' हैं, मराठी में दो अलग शब्द.",
+      "sound": "आठवण = आ‑ठ‑वण, 'ठ' साँस के साथ. आठवतं का अंत नाक से: आ‑ठ‑व‑तं.",
+      "variations": [
+        {
+          "display": "मला ते सगळं आठवतं",
+          "cue": "मुझे वह सब याद है",
+          "changed": "सिर्फ़ क्रिया वाला आधा. याद रखी हुई चीज़ ही कर्ता है, इसलिए ते सगळं आठवतं."
+        },
+        {
+          "display": "त्यांना आमची आठवण येते",
+          "cue": "उन्हें हमारी याद आती है",
+          "changed": "याद करने वाले पर त्यांना, और जिसकी याद है उस पर आमची. आठवण फिर भी औरत-जाति."
+        }
+      ],
+      "mistake": {
+        "display": "मी त्याची आठवण येतो",
+        "why": "याद आने वाले पर मला आता है, मी नहीं — और क्रिया आठवण से मिलती है, इसलिए येते."
+      },
+      "usage": "जो बीत गया या जो दूर चला गया, उसके बारे में.",
+      "register": "neutral",
+      "mnemonic": "आठवण येते (संज्ञा), ते आठवतं (क्रिया)."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M3-C01",
+      "display": "जर मी लवकर गेलो असतो तर मला संधी मिळाली असती",
+      "cue": "अगर मैं जल्दी गया होता तो मुझे मौक़ा मिल जाता"
+    },
+    {
+      "id": "L4-M3-C02",
+      "display": "जर ती वेळेवर आली असती तर तिला जागा मिळाली असती",
+      "cue": "अगर वह वक़्त पर आई होती तो उसे जगह मिल जाती"
+    },
+    {
+      "id": "L4-M3-C03",
+      "display": "जर त्याने आधी सांगितलं असतं तर हे काम झालं असतं",
+      "cue": "अगर उसने पहले बता दिया होता तो यह काम हो जाता"
+    },
+    {
+      "id": "L4-M3-C04",
+      "display": "जर मी हे केलं नसतं तर बरं झालं असतं",
+      "cue": "अगर मैंने यह न किया होता तो अच्छा होता"
+    },
+    {
+      "id": "L4-M3-C05",
+      "display": "पाऊस आला नसता तर आम्ही बागेत गेलो असतो",
+      "cue": "बारिश न आई होती तो हम बाग़ में चले जाते"
+    },
+    {
+      "id": "L4-M3-C06",
+      "display": "तुम्ही काल लवकर जायला पाहिजे होतं",
+      "cue": "आपको कल जल्दी जाना चाहिए था"
+    },
+    {
+      "id": "L4-M3-C07",
+      "display": "मी तिथे उगीच जायला नको होतं",
+      "cue": "मुझे वहाँ बेकार में नहीं जाना चाहिए था"
+    },
+    {
+      "id": "L4-M3-C08",
+      "display": "मला ती नोकरी हवी होती, पण ती संधी चुकली",
+      "cue": "मुझे वह नौकरी चाहिए थी, पर वह मौक़ा छूट गया"
+    },
+    {
+      "id": "L4-M3-C09",
+      "display": "तुम्ही काल आला असता तर बरं झालं असतं",
+      "cue": "आप कल आए होते तो अच्छा होता"
+    },
+    {
+      "id": "L4-M3-C10",
+      "display": "मला त्याची आठवण येते",
+      "cue": "मुझे उसकी याद आती है"
+    },
+    {
+      "id": "L4-M3-C11",
+      "display": "गर्दी नसती तर मला तिकीट मिळालं असतं",
+      "cue": "भीड़ न होती तो मुझे टिकट मिल जाता"
+    },
+    {
+      "id": "L4-M3-C12",
+      "display": "तुम्ही माझं ऐकायला पाहिजे होतं",
+      "cue": "आपको मेरी बात सुननी चाहिए थी"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -102,8 +102,12 @@ describe('delta indexes fold back to the cumulative form (#424)', () => {
       files.reduce((total, file) => total + JSON.stringify(file).length, 0);
 
     expect(size(deltas) * 5).toBeLessThan(size([...cumulative.values()]));
-    // A delta set holds each surface exactly once, whatever the ladder's length.
+    // A delta set holds each surface exactly once, whatever the ladder's length. The total to
+    // compare against is the LAST module's running count, and "last" is read off the built index
+    // rather than named: this line said `L3-M10` and went red the day L4-M1 landed, which is a
+    // fact about the ladder growing and not about the fold.
     const entries = deltas.reduce((total, delta) => total + Object.keys(delta.surfaces).length, 0);
-    expect(entries).toBe(cumulative.get('L3-M10')?.surfaceCount);
+    const last = [...cumulative.values()].at(-1);
+    expect(entries).toBe(last?.surfaceCount);
   });
 });

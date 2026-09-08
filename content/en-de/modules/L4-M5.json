@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M5",
+  "title": "Disagreeing well",
+  "job": "Soften, hedge, save face",
+  "prerequisites": [
+    "L4-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present",
+      "Konjunktiv II"
+    ],
+    "allowedPatterns": [
+      "Sagen Sie mal + , + <question>",
+      "Das ist eben so",
+      "Da bin ich mir nicht so sicher",
+      "Ehrlich gesagt + V-2 + ich + <rest>",
+      "Wäre es nicht besser + , + wenn + <verb-final>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE MODAL PARTICLE. English softens with intonation, tag questions and a wall of qualifiers; German softens with SMALL UNSTRESSED WORDS — doch, ja, mal, eben, halt, wohl, schon. They translate to nothing at all, they never take stress, they never stand first, and they live in the middle field between the verb and whatever the sentence is about. Because an anglophone cannot hear them, their German comes out flat and slightly rude while every sentence is perfectly grammatical."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PARTICLES ARE WORDS YOU ALREADY KNOW, HEARD SIDEWAYS. That is exactly why you miss them: doch and ja are L1-M2's yes and no words, schon is L2-M2's already, wohl is L3-M6's comfortable, eigentlich is L3-M10's. This course gives one row per surface, so those rows keep the jobs they were opened for and this module writes only the three that are new — mal, eben and halt. eben and halt are twins meaning that is just how it is; halt is the southern one and eben is heard everywhere."
+    },
+    {
+      "tag": "delta",
+      "text": "KONJUNKTIV II AS TONE, and it costs nothing new. The very forms that carried the unreal in L3-M4 and the past unreal in L4-M3 are, at this level, simply what a considerate speaker uses about the REAL world: Ich würde sagen, dass … / Das wäre vielleicht besser / Ich hätte da eine Frage / Wäre es nicht besser, wenn …? / Könnten Sie …? One law, stated for the fourth time — L2-M1 said it for requests, L2-M8 for complaints, L3-M3 for opinions — and finally on the forms that carry it: German hedges by moving the MOOD, not by weakening the claim."
+    },
+    {
+      "tag": "delta",
+      "text": "THE NEGATIVE QUESTION IS AN INVITATION TO AGREE, where English uses a tag. Das ist doch teuer, nicht wahr? and Das ist doch teuer, oder? both hand the other person the next move. oder is L1-M10's and is the tag German actually uses in speech; nicht wahr is the fuller, slightly more formal one. Neither is a question about the facts — both are a question about whether you two are still together."
+    },
+    {
+      "tag": "free",
+      "text": "NAMED HERE, DELIBERATELY NOT WRITTEN. Three particles keep their older rows and their older notes, because this level may not edit a file below it and a rival row would be unreachable: the softening doch of Komm doch mit (L1-M2's row is the doch that contradicts a negative), the particle ja of Das ist ja teuer (same row, same problem), and the probability wohl of Das wird wohl stimmen (L3-M6's row is the wohl of Ich fühle mich wohl, comfortable). Meet them in listening; do not expect a row for them here."
+    },
+    {
+      "tag": "free",
+      "text": "HEDGE BY THE SYLLABLE, NOT BY THE SENTENCE. An anglophone hedges by adding words — I think maybe it might possibly be — and German hedges by adding one unstressed syllable, so a translated hedge comes out twice as long and reads as evasive rather than polite. And no sentence here puts two particles in one clause, which real speech does constantly (Das ist ja doch nicht so schlimm) and which cannot be taught inside this module's cap. What is next door: the case-making connectives are L4-M4's, irony is L5-M2's, indirect requests are L5-M7's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M5-S01",
+      "display": "Sagen Sie mal, haben Sie kurz Zeit?",
+      "cue": "Tell me, do you have a moment?",
+      "literal": "Say you once, have you briefly time?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mal",
+            "cue": "(softener — just, for a moment)",
+            "tag": "delta",
+            "forms": [
+              "mal"
+            ],
+            "note": "Short for einmal, and it takes no stress. It turns an order into a request: Sagen Sie mal, Moment mal, Kommen Sie mal her."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "There is no English word here to translate. Drop mal and Sagen Sie is an instruction; keep it and the same words are an opening.",
+      "sound": "ZAA-gun zee maal, HAA-bun zee kurts TSAIT?",
+      "variations": [
+        {
+          "display": "Sagen Sie mal, hätten Sie kurz Zeit?",
+          "cue": "Tell me, would you have a moment?",
+          "changed": "haben becomes hätten: the same question with the mood moved, which is the whole hedge (rule 2)."
+        }
+      ],
+      "mistake": {
+        "display": "Mal sagen Sie, haben Sie kurz Zeit?",
+        "why": "A modal particle never stands first — that is what makes it unstressed. mal belongs behind the verb and its subject: Sagen Sie mal."
+      },
+      "usage": "Opening a request to somebody who is busy.",
+      "register": "formal",
+      "mnemonic": "mal is the knock before the door opens."
+    },
+    {
+      "id": "L4-M5-S02",
+      "display": "Das ist eben so, da kann man kaum etwas machen",
+      "cue": "That is just how it is; there is hardly anything to be done",
+      "literal": "That is just so, there can one hardly something do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eben",
+            "cue": "(particle — that is just how it is)",
+            "tag": "delta",
+            "forms": [
+              "eben"
+            ],
+            "note": "The resigned particle: Das ist eben so accepts a fact rather than reporting it. Unstressed, and it sits after the verb."
+          },
+          {
+            "display": "kaum",
+            "cue": "hardly, scarcely",
+            "tag": "free",
+            "forms": [
+              "kaum"
+            ],
+            "note": "kaum is a negative on its own, so it never takes nicht: man kann kaum etwas machen, never *kaum nicht."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "kaum already means the no. Adding nicht behind it is the double negative an English hardly anything invites and German refuses.",
+      "sound": "das ist AY-bun ZOH, daa kan man kowm ET-vas MAKH-un.",
+      "variations": [
+        {
+          "display": "Das ist eben so, da kann man nichts machen",
+          "cue": "That is just how it is; there is nothing to be done",
+          "changed": "nichts for kaum etwas — flat nothing instead of hardly anything. The resignation is the same."
+        }
+      ],
+      "mistake": {
+        "display": "Das ist eben so, da kann man kaum nichts machen",
+        "why": "kaum carries the negative by itself. kaum etwas is hardly anything; kaum nichts stacks two negatives and says neither."
+      },
+      "usage": "Accepting something you cannot change, without complaining about it.",
+      "register": "neutral",
+      "mnemonic": "eben shrugs; kaum leaves just enough room to breathe."
+    },
+    {
+      "id": "L4-M5-S03",
+      "display": "Das ist halt so, sagen die Leute hier",
+      "cue": "That is just how it is, people here say",
+      "literal": "That is just so, say the people here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "halt",
+            "cue": "(particle — that is just how it is)",
+            "tag": "delta",
+            "forms": [
+              "halt"
+            ],
+            "note": "eben's southern twin, heard across Bavaria, Austria and Switzerland. Same job, same seat; it is not the verb halten."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "halt here has nothing to do with stopping. It is a particle, unstressed, and swapping it for eben changes only where the speaker is from.",
+      "sound": "das ist halt ZOH, ZAA-gun dee LOY-tuh HEER.",
+      "variations": [
+        {
+          "display": "Das ist eben so, sagen die Leute hier",
+          "cue": "That is just how it is, people here say",
+          "changed": "eben for halt: the northern and neutral choice. Nothing else in the sentence moves."
+        }
+      ],
+      "mistake": {
+        "display": "Halt das ist so, sagen die Leute hier",
+        "why": "As a particle halt cannot lead — in first position it reads as the command stop. It belongs behind the verb: Das ist halt so."
+      },
+      "usage": "Reporting an attitude you do not entirely share.",
+      "register": "informal",
+      "mnemonic": "halt is eben with a southern accent."
+    },
+    {
+      "id": "L4-M5-S04",
+      "display": "Irgendwie bin ich mir da nicht ganz sicher",
+      "cue": "Somehow I am not quite sure about that",
+      "literal": "Somehow am I to-me there not quite sure",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "irgendwie",
+            "cue": "somehow, sort of",
+            "tag": "free",
+            "forms": [
+              "irgendwie"
+            ],
+            "note": "Softens a doubt rather than explaining it. Unlike the particles it CAN front — and then the verb follows it: Irgendwie bin ich …"
+          },
+          {
+            "display": "ganz",
+            "cue": "quite, entirely",
+            "tag": "delta",
+            "forms": [
+              "ganz"
+            ],
+            "note": "nicht ganz is not quite — a partial no, which is the hedge. ganz alone means entirely, so the negative in front is what softens it."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "sich sicher sein takes a dative pronoun: ich bin MIR sicher. Drop the mir and the sentence is about being safe, not about being certain.",
+      "sound": "EER-gunt-vee bin ikh meer daa nikht gants ZIKH-er.",
+      "variations": [
+        {
+          "display": "Da bin ich mir nicht ganz sicher",
+          "cue": "I am not quite sure about that",
+          "changed": "da fronts instead of irgendwie, and bin still comes second. Shorter, and one degree more direct."
+        }
+      ],
+      "mistake": {
+        "display": "Irgendwie ich bin mir da nicht ganz sicher",
+        "why": "irgendwie holds first position, so the finite verb must be second: Irgendwie bin ich. Only the unstressed particles are barred from fronting; this one is not."
+      },
+      "usage": "Backing away from agreement without saying no.",
+      "register": "neutral",
+      "mnemonic": "nicht ganz is the smallest no German has."
+    },
+    {
+      "id": "L4-M5-S05",
+      "display": "Ehrlich gesagt finde ich das gar nicht gut",
+      "cue": "To be honest, I do not think that is good at all",
+      "literal": "Honestly said find I that at-all not good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ehrlich gesagt",
+            "cue": "to be honest, frankly",
+            "tag": "delta",
+            "forms": [
+              "ehrlich gesagt"
+            ],
+            "note": "A frozen pair, and it fronts as one element — so the verb follows it: Ehrlich gesagt finde ich … . Both halves are already yours."
+          },
+          {
+            "display": "gar nicht",
+            "cue": "not at all",
+            "tag": "delta",
+            "forms": [
+              "gar nicht"
+            ],
+            "note": "gar strengthens the no and only ever appears in front of it. gar nicht gut is the polite way to say bad without saying schlecht."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "Announcing honesty is softening, not bluntness, in German: ehrlich gesagt warns the listener that a disagreement is coming so it does not land cold.",
+      "sound": "AIR-likh ge-ZAAKT FIN-duh ikh das gaar nikht GOOT.",
+      "variations": [
+        {
+          "display": "Ehrlich gesagt wäre das nicht meine Idee",
+          "cue": "To be honest, that would not be my idea",
+          "changed": "The same opening in front of a Konjunktiv II clause: wäre softens the judgement a second time."
+        }
+      ],
+      "mistake": {
+        "display": "Ehrlich gesagt ich finde das gar nicht gut",
+        "why": "ehrlich gesagt is one fronted element, so the verb takes second place: Ehrlich gesagt finde ich das gar nicht gut."
+      },
+      "usage": "Warning somebody, kindly, that you are about to disagree.",
+      "register": "neutral",
+      "mnemonic": "Say honestly first, and the no arrives with a cushion."
+    },
+    {
+      "id": "L4-M5-S06",
+      "display": "Wäre es nicht besser, wenn wir einen Moment warten?",
+      "cue": "Would it not be better if we waited a moment?",
+      "literal": "Would-be it not better, if we a moment wait?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Moment",
+            "cue": "moment",
+            "tag": "free",
+            "forms": [
+              "Moment"
+            ],
+            "note": "der Moment, stressed on the second syllable. Moment mal! is the everyday hold on a second, with mal doing the softening."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The suggestion is yours, but wäre hands the decision to the listener. Ist es nicht besser is the same words with the mood taken out, and it presses.",
+      "sound": "VAIR-uh es nikht BES-er, ven veer AI-nun mo-MENT VAR-tun?",
+      "variations": [
+        {
+          "display": "Wäre es nicht besser, wenn wir morgen anfangen?",
+          "cue": "Would it not be better if we started tomorrow?",
+          "changed": "A different wenn-clause behind the same opening; the verb still lands at the end of it."
+        }
+      ],
+      "mistake": {
+        "display": "Wäre es nicht besser, wenn wir warten einen Moment?",
+        "why": "wenn is subordinating, so its verb goes last: wenn wir einen Moment warten. The polite mood in the first half does not loosen the second."
+      },
+      "usage": "Proposing a change of plan without overruling anybody.",
+      "register": "neutral",
+      "mnemonic": "Wäre es nicht besser — a suggestion wearing a question's coat."
+    },
+    {
+      "id": "L4-M5-S07",
+      "display": "Das ist doch teuer, nicht wahr?",
+      "cue": "That is expensive, is it not?",
+      "literal": "That is yet expensive, not true?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nicht wahr",
+            "cue": "is it not? right?",
+            "tag": "delta",
+            "forms": [
+              "nicht wahr"
+            ],
+            "note": "One frozen tag for all persons and tenses, where English rebuilds it every time — isn't it, don't you, weren't they. oder? is the everyday twin."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "English builds a fresh tag from the verb of the sentence. German does not: nicht wahr and oder never change shape, whatever the clause in front of them is doing.",
+      "sound": "das ist dokh TOY-er, nikht VAAR?",
+      "variations": [
+        {
+          "display": "Das ist doch teuer, oder?",
+          "cue": "That is expensive, right?",
+          "changed": "oder (L1-M10) for nicht wahr — the tag Germans actually reach for in speech, and one degree less formal."
+        }
+      ],
+      "mistake": {
+        "display": "Das ist doch teuer, ist es nicht?",
+        "why": "A rebuilt English tag. German has a fixed pair, nicht wahr or oder, and neither one repeats the verb."
+      },
+      "usage": "Checking that the other person is still with you before you push.",
+      "register": "neutral",
+      "mnemonic": "One tag, never rebuilt: nicht wahr, or just oder."
+    },
+    {
+      "id": "L4-M5-S08",
+      "display": "Zugegeben, da haben Sie wirklich Recht",
+      "cue": "Granted, you are quite right about that",
+      "literal": "Admitted, there have you really right",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zugegeben",
+            "cue": "granted, admittedly",
+            "tag": "free",
+            "forms": [
+              "zugegeben"
+            ],
+            "note": "The participle of zugeben, to admit, standing alone as a concession. It fronts as one element, so the verb follows it."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "Recht haben is the German pair for being right — haben, not sein. Sie sind Recht is not a sentence anybody says.",
+      "sound": "TSOO-ge-gay-bun, daa HAA-bun zee VIRK-likh REKHT.",
+      "variations": [
+        {
+          "display": "Zugegeben, da haben Sie natürlich Recht",
+          "cue": "Granted, you are of course right about that",
+          "changed": "natürlich (L3-M3) for wirklich: the concession becomes warmer and slightly more generous."
+        }
+      ],
+      "mistake": {
+        "display": "Zugegeben, Sie sind wirklich Recht",
+        "why": "Being right is something you HAVE in German: Sie haben Recht. sein with Recht reads as though the person were correctness itself."
+      },
+      "usage": "Giving ground on one point so you can keep the next.",
+      "register": "formal",
+      "mnemonic": "Concede with zugegeben, and you keep the floor."
+    },
+    {
+      "id": "L4-M5-S09",
+      "display": "Ich würde eher sagen, dass das ziemlich schwer ist",
+      "cue": "I would rather say that that is fairly difficult",
+      "literal": "I would rather say, that that fairly hard is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eher",
+            "cue": "rather, more like",
+            "tag": "delta",
+            "forms": [
+              "eher"
+            ],
+            "note": "Not lieber (L2-M9), which is about preferring. eher corrects an estimate: not that, more like this."
+          },
+          {
+            "display": "ziemlich",
+            "cue": "fairly, rather",
+            "tag": "free",
+            "forms": [
+              "ziemlich"
+            ],
+            "note": "Turns a strong word down a notch: ziemlich schwer is difficult without saying very. It sits directly in front of what it grades."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "Ich würde sagen is not the future and not a wish. It is the ordinary German way to offer an opinion you are willing to have corrected.",
+      "sound": "ikh VUER-duh AY-er ZAA-gun, das das TSEEM-likh SHVAIR ist.",
+      "variations": [
+        {
+          "display": "Ich würde eher sagen, dass das ziemlich teuer ist",
+          "cue": "I would rather say that that is fairly expensive",
+          "changed": "One adjective swaps for another and ist stays at the end, where dass put it."
+        }
+      ],
+      "mistake": {
+        "display": "Ich würde eher sagen, dass das ist ziemlich schwer",
+        "why": "dass sends its verb to the very end: dass das ziemlich schwer ist. The polite würde in the first half changes nothing about the second."
+      },
+      "usage": "Correcting somebody's estimate while leaving room to be wrong.",
+      "register": "neutral",
+      "mnemonic": "würde offers, eher adjusts, ziemlich turns the volume down."
+    },
+    {
+      "id": "L4-M5-S10",
+      "display": "Naja, das weiß ich sowieso schon",
+      "cue": "Well, I know that anyway",
+      "literal": "Well, that know I anyway already",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naja",
+            "cue": "well, ah well",
+            "tag": "free",
+            "forms": [
+              "naja"
+            ],
+            "note": "The spoken opener for a half-hearted answer. It stands outside the clause, so the sentence behind it starts over: naja, das weiß ich."
+          },
+          {
+            "display": "sowieso",
+            "cue": "anyway, in any case",
+            "tag": "free",
+            "forms": [
+              "sowieso"
+            ],
+            "note": "Says the point is moot: it was true before you spoke. It lives in the middle field and is stressed on the last syllable."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "naja does not count towards position two, so das weiß ich is a complete clause of its own behind the comma — the same seat aber takes in L1-M10.",
+      "sound": "naa-YAA, das vais ikh zoh-vee-ZOH shohn.",
+      "variations": [
+        {
+          "display": "Naja, das weiß ich eigentlich schon",
+          "cue": "Well, I actually know that already",
+          "changed": "eigentlich (L3-M10) for sowieso: actually rather than anyway, and a shade more apologetic."
+        }
+      ],
+      "mistake": {
+        "display": "Naja weiß ich das sowieso schon",
+        "why": "naja stands outside the clause and takes no seat in it, so nothing inverts: Naja, das weiß ich sowieso schon."
+      },
+      "usage": "Deflecting a piece of advice you did not ask for.",
+      "register": "informal",
+      "mnemonic": "naja stands at the door; the clause behind it walks in normally."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M5-C01",
+      "display": "Sagen Sie mal, haben Sie kurz Zeit?",
+      "cue": "Tell me, do you have a moment?"
+    },
+    {
+      "id": "L4-M5-C02",
+      "display": "Das ist eben so, da kann man nichts machen",
+      "cue": "That is just how it is; there is nothing to be done"
+    },
+    {
+      "id": "L4-M5-C03",
+      "display": "Das ist halt so, sagen die Leute hier",
+      "cue": "That is just how it is, people here say"
+    },
+    {
+      "id": "L4-M5-C04",
+      "display": "Da bin ich mir nicht ganz sicher",
+      "cue": "I am not quite sure about that"
+    },
+    {
+      "id": "L4-M5-C05",
+      "display": "Ehrlich gesagt finde ich das gar nicht gut",
+      "cue": "To be honest, I do not think that is good at all"
+    },
+    {
+      "id": "L4-M5-C06",
+      "display": "Wäre es nicht besser, wenn wir einen Moment warten?",
+      "cue": "Would it not be better if we waited a moment?"
+    },
+    {
+      "id": "L4-M5-C07",
+      "display": "Das ist doch teuer, nicht wahr?",
+      "cue": "That is expensive, is it not?"
+    },
+    {
+      "id": "L4-M5-C08",
+      "display": "Zugegeben, da haben Sie wirklich Recht",
+      "cue": "Granted, you are quite right about that"
+    },
+    {
+      "id": "L4-M5-C09",
+      "display": "Ich würde eher sagen, dass das ziemlich schwer ist",
+      "cue": "I would rather say that that is fairly difficult"
+    },
+    {
+      "id": "L4-M5-C10",
+      "display": "Naja, das weiß ich sowieso schon",
+      "cue": "Well, I know that anyway"
+    },
+    {
+      "id": "L4-M5-C11",
+      "display": "Irgendwie ist das kaum zu glauben",
+      "cue": "Somehow that is hardly to be believed"
+    },
+    {
+      "id": "L4-M5-C12",
+      "display": "Ich hätte da eine Frage, könnten Sie mir helfen?",
+      "cue": "I would have a question — could you help me?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

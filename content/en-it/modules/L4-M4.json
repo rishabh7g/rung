@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": [
+    "L4-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present, for the claim and the concession alike",
+      "imperfetto, L2-M10's, for dicevo — what you were in the middle of saying",
+      "the bare infinitive, after ti conviene, vale la pena and è difficile"
+    ],
+    "allowedPatterns": [
+      "<claim> + , + perché + <reason>",
+      "È vero che + <clause> + , + ma + <clause>",
+      "Ti conviene + V-inf",
+      "Hai ragione + , + però + <clause>",
+      "D'accordo + , + però + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE CONCESSIVE MOVE IS A STRUCTURE, NOT A WORD. È vero che X, ma Y. Hai ragione, però Y. D'accordo, però Y. The first half really does give ground — it is not a politeness formula — and the ma or the però is what turns it into a move instead of a surrender. Everything you actually want said goes in the SECOND half. A speaker who concedes and then trails off has agreed, whatever they meant."
+    },
+    {
+      "tag": "interference",
+      "text": "ITALIAN HAS TWO WORDS FOR but AND POSITION SPLITS THEM. ma can only OPEN its clause. però can open it or CLOSE it: Hai ragione, però non lo faccio, and equally Hai ragione, non lo faccio però. The final però is the one that sounds Italian and the one no learner produces without being told; it lands lighter than the fronted version, closer to English though at the end of a sentence. ma at the end is not possible."
+    },
+    {
+      "tag": "interference",
+      "text": "conviene IS A FALSE FRIEND TWICE OVER. It is not convenient and it is not agreeable: it means it is in your interest. It also runs IMPERSONALLY, like piacere and mi serve — the thing that suits you is the subject, and you are the indirect object: ti conviene aspettare, mi conviene partire, gli conviene prenotare. There is no io form of it in this use."
+    },
+    {
+      "tag": "free",
+      "text": "THE PERSUASIVE REGISTER IS GRADED, WHERE ENGLISH HAS ONE should. dovresti (L3-M4) is friendly advice between equals. ti conviene appeals to the listener's own interest and is the least pushy of all, because it claims nothing about what is right. sarebbe meglio is impersonal and hides the speaker. devi (L3-M2) is an order. Choosing the wrong rung of that ladder is what makes a reasonable case sound like a demand."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ADVICE FAMILY TAKES A BARE INFINITIVE, SO NO MOOD IS NEEDED AT ALL. ti conviene aspettare, vale la pena provare, basta chiedere, bisogna partire. This is how Italian gives somebody a reason to act without going near the congiuntivo, and it is why this module comes before the mood rather than after it. Nothing between the phrase and the infinitive: never ti conviene di aspettare."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "È vero che costa di più, ma dura molto",
+      "cue": "It is true that it costs more, but it lasts a long time",
+      "literal": "Is true that it-costs of more, but it-lasts much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "è vero che",
+            "cue": "it is true that",
+            "tag": "delta",
+            "forms": [
+              "è vero che"
+            ],
+            "note": "The concession, said whole. It hands the point over honestly, and the clause after ma is where your own case goes. Never è vero che sia."
+          },
+          {
+            "display": "dura",
+            "cue": "it lasts",
+            "tag": "free",
+            "forms": [
+              "dura",
+              "durano",
+              "durare"
+            ],
+            "note": "From durare, regular -are. Used of things that wear well and of events that run long: il film dura due ore."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "è vero che takes the ordinary indicative — costa, not costi. The congiuntivo appears after doubt, and conceding a point is the opposite of doubting it.",
+      "sound": "e VE-ro ke KO-sta dee PYOO, ma DOO-ra MOL-to. è is the open e of the copula, and it carries its accent in writing.",
+      "variations": [
+        {
+          "display": "È vero che costa di più, però dura molto",
+          "cue": "It is true that it costs more, though it lasts a long time",
+          "changed": "però for ma, slightly softer"
+        },
+        {
+          "display": "Costa di più, è vero, ma dura molto",
+          "cue": "It costs more, true, but it lasts a long time",
+          "changed": "the concession moved inside as an aside"
+        },
+        {
+          "display": "È vero che costa molto, ma dura di più",
+          "cue": "It is true that it costs a lot, but it lasts longer",
+          "changed": "the comparison moved to the second half"
+        }
+      ],
+      "mistake": {
+        "display": "È vero che costi di più, ma dura molto",
+        "why": "è vero che is not a doubt trigger, so it takes the indicative costa. costi would be the congiuntivo, and it is wrong here."
+      },
+      "usage": "Arguing for the more expensive option without pretending it is cheap.",
+      "register": "neutral",
+      "mnemonic": "Concede in half one, argue in half two."
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "Hai ragione, però non ho tempo adesso",
+      "cue": "You are right, but I do not have time right now",
+      "literal": "You-have reason, however not I-have time now",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hai ragione",
+            "cue": "you are right",
+            "tag": "interference",
+            "forms": [
+              "hai ragione",
+              "ho ragione",
+              "ha ragione"
+            ],
+            "note": "Italian HAS reason where English IS right, so the verb is avere. L3-M3's bare ragione is the same noun inside penso di avere ragione."
+          },
+          {
+            "display": "però",
+            "cue": "but, though",
+            "tag": "delta",
+            "forms": [
+              "però"
+            ],
+            "note": "The second but. Unlike ma it can also close the clause: Hai ragione, non ho tempo però. That final position is the one worth practising."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Sei ragione is not Italian. Being right, being hungry and being cold all run on avere, and this is the phrase where the habit gets fixed.",
+      "sound": "eye ra-JO-ne, pe-RO non o TEM-po a-DES-so. però is stressed on the final o and carries the accent in writing, which distinguishes it from nothing else but marks the stress.",
+      "variations": [
+        {
+          "display": "Hai ragione, non ho tempo adesso però",
+          "cue": "You are right — I do not have time right now, though",
+          "changed": "però moved to the end, which ma cannot do"
+        },
+        {
+          "display": "Hai ragione, però adesso non ho tempo",
+          "cue": "You are right, but right now I do not have time",
+          "changed": "adesso fronted inside the second half"
+        },
+        {
+          "display": "Hai ragione, ma non ho tempo adesso",
+          "cue": "You are right, but I do not have time right now",
+          "changed": "ma for però, a shade blunter"
+        }
+      ],
+      "mistake": {
+        "display": "Hai ragione, non ho tempo adesso ma",
+        "why": "ma cannot close a clause. Only però can sit at the end; with ma the sentence has to be Hai ragione, ma non ho tempo adesso."
+      },
+      "usage": "Accepting somebody's point while declining to act on it today.",
+      "register": "informal",
+      "mnemonic": "però can end a sentence; ma cannot."
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "Ti conviene prenotare adesso, costa molto meno",
+      "cue": "You are better off booking now, it costs a lot less",
+      "literal": "To-you it-suits to-book now, it-costs much less",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ti conviene",
+            "cue": "you are better off, it is in your interest",
+            "tag": "interference",
+            "forms": [
+              "ti conviene",
+              "mi conviene",
+              "gli conviene"
+            ],
+            "note": "Impersonal like mi piace: the listener is ti, and a bare infinitive follows. The most persuasive and least pushy way to give advice."
+          },
+          {
+            "display": "prenotare",
+            "cue": "to book, to reserve",
+            "tag": "free",
+            "forms": [
+              "prenotare",
+              "prenoto",
+              "prenotato"
+            ],
+            "note": "Regular -are, used for tables, tickets and rooms alike. La prenotazione is the booking itself."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          4
+        ]
+      },
+      "trap": "conviene is not convenient. It says the thing is in your interest, usually financially, and a speaker who reads it as convenient will use it for the wrong half of an argument.",
+      "sound": "tee kon-VYE-ne pre-no-TA-re a-DES-so, KO-sta MOL-to ME-no. conviene has the ie glide, kon-VYE-ne.",
+      "variations": [
+        {
+          "display": "Ti conviene prenotare adesso",
+          "cue": "You are better off booking now",
+          "changed": "the reason dropped, leaving the bare advice"
+        },
+        {
+          "display": "Conviene prenotare adesso, costa molto meno",
+          "cue": "It is worth booking now, it costs a lot less",
+          "changed": "no ti, so the advice is to nobody in particular"
+        },
+        {
+          "display": "Ti conviene prenotare prima",
+          "cue": "You are better off booking in advance",
+          "changed": "prima for adesso, so it is about habit"
+        }
+      ],
+      "mistake": {
+        "display": "Ti conviene di prenotare adesso, costa molto meno",
+        "why": "Nothing goes between conviene and the infinitive. It is ti conviene prenotare, exactly as it is vale la pena provare."
+      },
+      "usage": "Pushing somebody to act now by appealing to their wallet rather than to your preference.",
+      "register": "neutral",
+      "mnemonic": "conviene = it suits YOU, not me."
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "D'accordo, però almeno dobbiamo partire presto",
+      "cue": "All right, but at least we have to leave early",
+      "literal": "Of-agreement, however at-least we-must to-leave early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "almeno",
+            "cue": "at least",
+            "tag": "free",
+            "forms": [
+              "almeno"
+            ],
+            "note": "Marks the minimum you will settle for, which is exactly what a concession needs next. It sits in front of the thing conceded to."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "L2-M6's d'accordo settled a time; here the same word concedes a point. The apostrophe is part of the word and it is never written d' accordo or da accordo.",
+      "sound": "dak-KOR-do, pe-RO al-ME-no dob-BYA-mo par-TEE-re PRE-sto. d'accordo runs together, dak-KOR-do.",
+      "variations": [
+        {
+          "display": "D'accordo, però dobbiamo partire presto",
+          "cue": "All right, but we have to leave early",
+          "changed": "almeno dropped, so the demand is flat"
+        },
+        {
+          "display": "Hai ragione, però almeno dobbiamo partire presto",
+          "cue": "You are right, but at least we have to leave early",
+          "changed": "hai ragione for d'accordo as the concession"
+        },
+        {
+          "display": "D'accordo, però almeno dobbiamo partire adesso",
+          "cue": "All right, but at least we have to leave now",
+          "changed": "adesso for presto: a time, not a habit"
+        }
+      ],
+      "mistake": {
+        "display": "Sono d'accordo però almeno dobbiamo partire presto",
+        "why": "Not wrong, but it is a different move: sono d'accordo agrees with the position, while bare d'accordo only accepts the point and keeps the argument open."
+      },
+      "usage": "Giving way on the plan while holding on to the one condition you care about.",
+      "register": "neutral",
+      "mnemonic": "d'accordo concedes; sono d'accordo agrees."
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "Vale la pena provare, secondo me",
+      "cue": "It is worth trying, in my view",
+      "literal": "It-is-worth the trouble to-try, according to-me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vale la pena",
+            "cue": "it is worth it",
+            "tag": "delta",
+            "forms": [
+              "vale la pena"
+            ],
+            "note": "One block, and then a bare infinitive. Literally it is worth the trouble. The di version, vale la pena di provare, is heard too, but the bare one is commoner in speech."
+          },
+          {
+            "display": "provare",
+            "cue": "to try",
+            "tag": "free",
+            "forms": [
+              "provare",
+              "provo",
+              "provato"
+            ],
+            "note": "Regular -are. It covers trying something out and trying clothes on, and it is the verb this whole advice family reaches for."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "pena is trouble here, not pain or penalty. Nobody hears anything grim in vale la pena; it is as light as English worth a go.",
+      "sound": "VA-le la PE-na pro-VA-re, se-KON-do me. vale is stressed on the first syllable, VA-le.",
+      "variations": [
+        {
+          "display": "Secondo me vale la pena provare",
+          "cue": "In my view it is worth trying",
+          "changed": "the opinion fronted"
+        },
+        {
+          "display": "Vale la pena provare, non costa molto",
+          "cue": "It is worth trying, it does not cost much",
+          "changed": "a reason instead of an opinion"
+        },
+        {
+          "display": "Non vale la pena provare",
+          "cue": "It is not worth trying",
+          "changed": "negated, and the whole block stays intact"
+        }
+      ],
+      "mistake": {
+        "display": "Vale la pena che provo, secondo me",
+        "why": "vale la pena takes an infinitive, not a clause. Adding che pulls the sentence towards a mood the module does not need: vale la pena provare."
+      },
+      "usage": "Recommending a low-stakes experiment when the other person is hesitating.",
+      "register": "neutral",
+      "mnemonic": "vale la pena + infinitive, nothing between."
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "In realtà non è così caro, anzi conviene",
+      "cue": "Actually it is not that expensive — on the contrary, it is a good deal",
+      "literal": "In reality not is so dear, on-the-contrary it-suits",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in realtà",
+            "cue": "actually, in fact",
+            "tag": "interference",
+            "forms": [
+              "in realtà"
+            ],
+            "note": "Corrects an assumption the other person has made. Unlike English actually it is never a filler, so it always signals a real correction ahead."
+          },
+          {
+            "display": "anzi",
+            "cue": "on the contrary, in fact even",
+            "tag": "delta",
+            "forms": [
+              "anzi"
+            ],
+            "note": "Goes further than the correction before it: not merely not expensive but positively good value. English has no single word for it."
+          },
+          {
+            "display": "conviene",
+            "cue": "it is worth it, it pays",
+            "tag": "interference",
+            "forms": [
+              "conviene"
+            ],
+            "note": "The bare impersonal, with nobody named. Said of a price or a plan it means it is the sensible buy."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "anzi does not mean but. It never contradicts your OWN previous clause; it strengthens it, so the half after anzi must go further in the same direction.",
+      "sound": "in re-al-TA non e ko-ZEE KA-ro, AN-tsee kon-VYE-ne. anzi has the ts sound, AN-tsee.",
+      "variations": [
+        {
+          "display": "In realtà non è caro, anzi conviene",
+          "cue": "Actually it is not expensive — on the contrary, it is a good deal",
+          "changed": "così dropped, so the claim is absolute"
+        },
+        {
+          "display": "Non è così caro, anzi conviene provare",
+          "cue": "It is not that expensive — in fact it is worth a try",
+          "changed": "an infinitive after conviene"
+        },
+        {
+          "display": "In realtà conviene, non è così caro",
+          "cue": "Actually it is a good deal, it is not that expensive",
+          "changed": "the two halves swapped, so the verdict leads"
+        }
+      ],
+      "mistake": {
+        "display": "In realtà non è così caro, anzi è molto caro",
+        "why": "anzi must push further in the same direction, not reverse it. For a reversal the word is ma or però."
+      },
+      "usage": "Rescuing an option the other person has already written off on price.",
+      "register": "neutral",
+      "mnemonic": "anzi doubles down, ma turns round."
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "Comunque il mio punto di vista non cambia",
+      "cue": "Anyway, my point of view has not changed",
+      "literal": "Anyway the my point of view not changes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "comunque",
+            "cue": "anyway, in any case",
+            "tag": "free",
+            "forms": [
+              "comunque"
+            ],
+            "note": "Returns to your position after a detour, which is the move that keeps a concession from becoming a retreat. It opens or closes the clause."
+          },
+          {
+            "display": "punto di vista",
+            "cue": "point of view",
+            "tag": "free",
+            "forms": [
+              "punto di vista",
+              "punti di vista"
+            ],
+            "note": "Three words, one idea, and the plural moves only the first: punti di vista. Il mio punto di vista keeps the article before mio."
+          },
+          {
+            "display": "cambia",
+            "cue": "changes",
+            "tag": "free",
+            "forms": [
+              "cambia",
+              "cambiare",
+              "cambiato"
+            ],
+            "note": "Regular -are, and it works with or without an object: la situazione cambia, cambio idea."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Italian keeps the article in front of a possessive: il mio punto di vista, not mio punto di vista. Only single family nouns drop it, which is L2-M2's rule.",
+      "sound": "ko-MUN-kwe il MEE-o POON-to dee VEE-sta non KAM-bya. comunque is ko-MUN-kwe, with the qu said kw.",
+      "variations": [
+        {
+          "display": "Comunque il mio punto di vista è questo",
+          "cue": "Anyway, this is my point of view",
+          "changed": "stated positively instead of as an unchanged fact"
+        },
+        {
+          "display": "Il mio punto di vista comunque non cambia",
+          "cue": "My point of view, in any case, has not changed",
+          "changed": "comunque moved inside, where it sounds calmer"
+        },
+        {
+          "display": "Comunque non cambia niente",
+          "cue": "Anyway, nothing changes",
+          "changed": "the subject dropped for a flat close"
+        }
+      ],
+      "mistake": {
+        "display": "Comunque mio punto di vista non cambia",
+        "why": "The article is compulsory before mio here: il mio punto di vista. Dropping it is the mistake L2-M2's family rule invites."
+      },
+      "usage": "Closing a round of argument without conceding the substance.",
+      "register": "neutral",
+      "mnemonic": "comunque brings you back to your point."
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "Insomma, è difficile convincere mio padre",
+      "cue": "In short, it is hard to convince my father",
+      "literal": "In-short, is difficult to-convince my father",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "insomma",
+            "cue": "in short, all in all",
+            "tag": "free",
+            "forms": [
+              "insomma"
+            ],
+            "note": "Sums up what has been said and signals you are landing. On its own, with a shrug, it also means so-so — but at the head of a clause it is a summary."
+          },
+          {
+            "display": "difficile",
+            "cue": "difficult, hard",
+            "tag": "free",
+            "forms": [
+              "difficile",
+              "difficili"
+            ],
+            "note": "One form for both genders; only the plural moves, to difficili. Stressed on the second syllable, dif-FEE-chee-le."
+          },
+          {
+            "display": "convincere",
+            "cue": "to convince",
+            "tag": "free",
+            "forms": [
+              "convincere",
+              "convinco",
+              "convinto"
+            ],
+            "note": "The -ere verb behind this whole module. Its participle is irregular, convinto, and the person convinced is a direct object."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Bare Insomma with a shrug answers how was it? and means not great. At the front of a clause it is the summary word, and tone alone separates the two.",
+      "sound": "in-SOM-ma, e dif-FEE-chee-le kon-VEEN-che-re MEE-o PA-dre. convincere has two soft c sounds, kon-VEEN-che-re.",
+      "variations": [
+        {
+          "display": "Insomma, è difficile convincere mia madre",
+          "cue": "In short, it is hard to convince my mother",
+          "changed": "mia madre, so the possessive agrees the other way"
+        },
+        {
+          "display": "È difficile convincere mio padre, insomma",
+          "cue": "It is hard to convince my father, in short",
+          "changed": "insomma at the end, summing up after the fact"
+        },
+        {
+          "display": "Insomma, convincere mio padre è difficile",
+          "cue": "In short, convincing my father is hard",
+          "changed": "the infinitive fronted as the subject"
+        }
+      ],
+      "mistake": {
+        "display": "Insomma, è difficile convincere il mio padre",
+        "why": "Single family nouns drop the article after a possessive: mio padre, mia madre. il mio padre is the L2-M2 rule broken."
+      },
+      "usage": "Wrapping up a long complaint about somebody who will not be moved.",
+      "register": "informal",
+      "mnemonic": "insomma at the front sums up."
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "Appunto, è quello che dicevo prima",
+      "cue": "Exactly — that is what I was saying earlier",
+      "literal": "Precisely, is that which I-was-saying earlier",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "appunto",
+            "cue": "exactly, precisely",
+            "tag": "free",
+            "forms": [
+              "appunto"
+            ],
+            "note": "Claims the other person has just made your point for you. It is agreement used as an argument, and it is very common in real disputes."
+          },
+          {
+            "display": "dicevo",
+            "cue": "I was saying",
+            "tag": "free",
+            "forms": [
+              "dicevo",
+              "dicevi",
+              "diceva"
+            ],
+            "note": "The imperfetto of dire, for something you were in the middle of saying. Its participle detto is L3-M5's."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "appunto is not merely yes. It says the point you just made is the one I already made, which is why it can sound sharp if the other person had not meant to agree.",
+      "sound": "ap-POON-to, e KWEL-lo ke dee-CHE-vo PREE-ma. appunto holds the double p, ap-POON-to.",
+      "variations": [
+        {
+          "display": "Appunto, è quello che dicevo",
+          "cue": "Exactly — that is what I was saying",
+          "changed": "prima dropped, so it is about right now"
+        },
+        {
+          "display": "Appunto, è quello che dicevo prima io",
+          "cue": "Exactly — that is what I was saying earlier",
+          "changed": "io added at the end for emphasis on who said it"
+        },
+        {
+          "display": "È appunto quello che dicevo prima",
+          "cue": "That is precisely what I was saying earlier",
+          "changed": "appunto moved inside as an adverb"
+        }
+      ],
+      "mistake": {
+        "display": "Appunto, è quello che ho detto prima",
+        "why": "Not wrong, but it changes the move: ho detto reports a finished statement, while dicevo says you were in the middle of making the point all along."
+      },
+      "usage": "Pouncing, politely, when somebody arrives at the position you started from.",
+      "register": "informal",
+      "mnemonic": "appunto = you have just proved my point."
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "Soprattutto ti conviene parlare con lui",
+      "cue": "Above all, you are better off speaking to him",
+      "literal": "Above-all to-you it-suits to-speak with him",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "soprattutto",
+            "cue": "above all, especially",
+            "tag": "free",
+            "forms": [
+              "soprattutto"
+            ],
+            "note": "Ranks one reason above the rest, which is what a case needs at the end. Two t's in the middle, from sopra plus tutto."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "parlare takes con for the person spoken to, not a. parlare a exists in careful writing, but con is what is said.",
+      "sound": "so-prat-TOOT-to tee kon-VYE-ne par-LA-re kon LOO-ee. the double t is held twice over: so-prat-TOOT-to.",
+      "variations": [
+        {
+          "display": "Ti conviene parlare con lui, soprattutto adesso",
+          "cue": "You are better off speaking to him, especially now",
+          "changed": "soprattutto moved to the end, ranking the timing"
+        },
+        {
+          "display": "Soprattutto ti conviene parlare con mio padre",
+          "cue": "Above all you are better off speaking to my father",
+          "changed": "the person named instead of a pronoun"
+        },
+        {
+          "display": "Soprattutto, conviene parlare con lui",
+          "cue": "Above all, it is best to speak to him",
+          "changed": "ti dropped, so the advice is general"
+        }
+      ],
+      "mistake": {
+        "display": "Sopratutto ti conviene parlare con lui",
+        "why": "The word carries two t's in the middle: soprattutto. One t is the commonest spelling error Italians themselves make."
+      },
+      "usage": "Landing the strongest reason last, when the other arguments have not moved anybody.",
+      "register": "neutral",
+      "mnemonic": "sopra + tutto, both t's kept."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "È vero che costa di più, ma dura molto",
+      "cue": "It is true that it costs more, but it lasts a long time"
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "Hai ragione, però non ho tempo adesso",
+      "cue": "You are right, but I do not have time right now"
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "Ti conviene prenotare adesso",
+      "cue": "You are better off booking now"
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "D'accordo, però almeno dobbiamo partire presto",
+      "cue": "All right, but at least we have to leave early"
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "Vale la pena provare, secondo me",
+      "cue": "It is worth trying, in my view"
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "In realtà non è così caro, anzi conviene",
+      "cue": "Actually it is not that expensive — on the contrary, it is a good deal"
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "Comunque il mio punto di vista non cambia",
+      "cue": "Anyway, my point of view has not changed"
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "Insomma, è difficile convincere mio padre",
+      "cue": "In short, it is hard to convince my father"
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "Appunto, è quello che dicevo prima",
+      "cue": "Exactly — that is what I was saying earlier"
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "Soprattutto ti conviene parlare con lui",
+      "cue": "Above all, you are better off speaking to him"
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "Non vale la pena, ti conviene aspettare",
+      "cue": "It is not worth it — you are better off waiting"
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "Secondo me conviene, anche se costa di più",
+      "cue": "In my view it is worth it, even if it costs more"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

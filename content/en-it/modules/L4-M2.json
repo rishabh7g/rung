@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": [
+    "L4-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "passato prossimo, L2-M10's, for what happened",
+      "imperfetto, L2-M10's, for the weather and the background",
+      "present, for what holds now and for a plan named as now"
+    ],
+    "allowedPatterns": [
+      "Siccome + <clause> + , + <clause>",
+      "<clause> + quindi + <clause>",
+      "<clause> + perché + <clause>",
+      "A causa di + <N> + , + <clause>",
+      "Grazie a + <N> + , + <clause>",
+      "Per questo + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE POSITION IS A LAW, NOT A STYLE. perché can only FOLLOW its clause — Non sono uscito perché pioveva — and never opens the sentence in this sense. siccome, visto che and dato che can only PRECEDE — Siccome pioveva, non sono uscito. The two sentences state exactly the same fact, and neither conjunction can take the other's slot. English because goes at either end, so there is nothing to carry over: this has to be learned as a rule."
+    },
+    {
+      "tag": "free",
+      "text": "WHICH END THE REASON GOES ON IS A CHOICE ABOUT YOUR LISTENER. Front the reason with siccome when it is already shared ground and the consequence is the news; leave it at the back with perché when the reason itself is the news. The consequence words run the other way and always come second: quindi, dunque, di conseguenza and per questo all attach to the result, so the cause must already have been said. L1-M9 gave perché and quindi inside one sentence; this module is about which end each belongs on."
+    },
+    {
+      "tag": "interference",
+      "text": "because of IS NOT perché di. Before a NOUN Italian says a causa di or grazie a, and it chooses between them by whether the outcome is WELCOME: a causa del traffico for the delay, grazie a mia sorella for the rescue. English makes no such distinction and a learner will not think to make it. Both contract with the article that follows — a causa del, a causa della, grazie al, grazie alla."
+    },
+    {
+      "tag": "delta",
+      "text": "per colpa di IS THE SAME SLOT WITH BLAME ATTACHED. colpa is fault, so per colpa del traffico says the traffic is to blame, where a causa del traffico only says it is the cause. It is ordinary speech and not an insult — people say it about weather and trains as readily as about each other — and it is the third member of the set beside a causa di and grazie a."
+    },
+    {
+      "tag": "interference",
+      "text": "ITALIAN SPLITS ENGLISH'S since. siccome, visto che and dato che are CAUSAL only. The temporal since is da quando, which belongs to L4-M6, so Since it was raining and Since I moved here take different words in Italian and the causal ones can never be read as a time. visto and dato are frozen inside these phrases: they never agree with anything that follows."
+    },
+    {
+      "tag": "free",
+      "text": "infatti CONFIRMS, IT DOES NOT CONCLUDE. Sono arrivato in ritardo, infatti c'era molto traffico — the second clause backs the first one up, the way indeed or sure enough does. It never contradicts what came before, so it is not the in fact an English speaker uses to correct somebody, and it is not a consequence word either: that is quindi, dunque, di conseguenza and per questo."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "Siccome pioveva, non sono uscito",
+      "cue": "Since it was raining, I did not go out",
+      "literal": "Since it-was-raining, not I-am gone-out",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "siccome",
+            "cue": "since, as — because",
+            "tag": "delta",
+            "forms": [
+              "siccome"
+            ],
+            "note": "Causal only, and it can only OPEN the sentence. It never takes perché's slot at the back, and it never means since in the sense of a time."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Non sono uscito siccome pioveva is not Italian. Once the reason has moved to the back it must become perché.",
+      "sound": "sik-KO-me pyo-VE-va, non SO-no oo-SHEE-to. The cc of siccome is held: sik-KO-me.",
+      "variations": [
+        {
+          "display": "Non sono uscito perché pioveva",
+          "cue": "I did not go out because it was raining",
+          "changed": "the same fact with the reason at the back, so perché"
+        },
+        {
+          "display": "Siccome pioveva, sono andato in autobus",
+          "cue": "Since it was raining, I went by bus",
+          "changed": "a different consequence"
+        },
+        {
+          "display": "Siccome c'era uno sciopero, non sono uscito",
+          "cue": "Since there was a strike, I did not go out",
+          "changed": "a different reason"
+        }
+      ],
+      "mistake": {
+        "display": "Non sono uscito siccome pioveva",
+        "why": "siccome only opens: Siccome pioveva, non sono uscito. At the back the word is perché."
+      },
+      "usage": "Explaining yourself when the reason is already obvious to both of you.",
+      "register": "neutral",
+      "mnemonic": "siccome comes first; perché comes last."
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "C'era uno sciopero, quindi ho perso il treno",
+      "cue": "There was a strike, so I missed the train",
+      "literal": "There-was a strike, so I-have lost the train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sciopero",
+            "cue": "strike, by workers",
+            "tag": "free",
+            "forms": [
+              "sciopero",
+              "scioperi"
+            ],
+            "note": "Masculine, and sci is sh: SHO-pe-ro. essere in sciopero is to be on strike, and a transport strike is the standard reason a train does not run."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "quindi attaches to the CONSEQUENCE, so the reason has to have been said already. It is not interchangeable with perché, which does the opposite job.",
+      "sound": "CHE-ra OO-no SHO-pe-ro, KWEEN-dee o PER-so il TRE-no. c'era is one word, CHE-ra.",
+      "variations": [
+        {
+          "display": "C'era uno sciopero, dunque ho perso il treno",
+          "cue": "There was a strike, so I missed the train",
+          "changed": "dunque in place of quindi, doing the same job"
+        },
+        {
+          "display": "Ho perso il treno perché c'era uno sciopero",
+          "cue": "I missed the train because there was a strike",
+          "changed": "the reason moved to the back, so perché"
+        },
+        {
+          "display": "Siccome c'era uno sciopero, ho perso il treno",
+          "cue": "Since there was a strike, I missed the train",
+          "changed": "the reason fronted with siccome"
+        }
+      ],
+      "mistake": {
+        "display": "Quindi c'era uno sciopero, ho perso il treno",
+        "why": "quindi opens the result, never the cause. The cause comes first and unmarked: C'era uno sciopero, quindi ho perso il treno."
+      },
+      "usage": "Telling somebody why you are not where you said you would be.",
+      "register": "neutral",
+      "mnemonic": "Cause first, quindi second."
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "Sono arrivato in ritardo, infatti c'era molto traffico",
+      "cue": "I arrived late — sure enough, there was a lot of traffic",
+      "literal": "I-am arrived in delay, indeed there-was much traffic",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "infatti",
+            "cue": "indeed, sure enough",
+            "tag": "interference",
+            "forms": [
+              "infatti"
+            ],
+            "note": "It CONFIRMS what was just said by giving the reason behind it. It never contradicts, so it is not the in fact that an English speaker uses to correct somebody."
+          },
+          {
+            "display": "traffico",
+            "cue": "traffic",
+            "tag": "free",
+            "forms": [
+              "traffico"
+            ],
+            "note": "Masculine and always singular: c'era molto traffico, where English can also count the cars. It has no plural in this sense."
+          },
+          {
+            "display": "in ritardo",
+            "cue": "late, behind time",
+            "tag": "delta",
+            "forms": [
+              "in ritardo",
+              "in orario"
+            ],
+            "note": "ritardo is the delay itself, so Italian is IN a delay. Its opposite is in orario, on time. tardi is the other late, meaning at a late hour."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "in ritardo and tardi are not swappable. in ritardo is late against a schedule; tardi is late in the day. Il treno è in ritardo, but è tardi, andiamo.",
+      "sound": "SO-no ar-ree-VA-to in ree-TAR-do, in-FAT-tee CHE-ra MOL-to TRAF-fee-ko.",
+      "variations": [
+        {
+          "display": "Sono arrivato in ritardo a causa del traffico",
+          "cue": "I arrived late because of the traffic",
+          "changed": "the reason as a noun phrase instead of a second clause"
+        },
+        {
+          "display": "Sono arrivato in ritardo perché c'era molto traffico",
+          "cue": "I arrived late because there was a lot of traffic",
+          "changed": "perché, which states the reason rather than confirming it"
+        },
+        {
+          "display": "C'era molto traffico, quindi sono arrivato in ritardo",
+          "cue": "There was a lot of traffic, so I arrived late",
+          "changed": "cause first, consequence second"
+        }
+      ],
+      "mistake": {
+        "display": "Sono arrivato in ritardo, infatti non c'era traffico",
+        "why": "infatti has to confirm what you just said. A fact that cuts against it needs invece or ma."
+      },
+      "usage": "Backing up what you have just said with the reason behind it.",
+      "register": "neutral",
+      "mnemonic": "infatti agrees; it never argues."
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "A causa del traffico, ho perso la riunione",
+      "cue": "Because of the traffic, I missed the meeting",
+      "literal": "At cause of-the traffic, I-have lost the meeting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a causa di",
+            "cue": "because of — something unwelcome",
+            "tag": "interference",
+            "forms": [
+              "a causa di",
+              "a causa del",
+              "a causa della",
+              "a causa dello",
+              "a causa dei",
+              "a causa delle"
+            ],
+            "note": "Three words behaving as one preposition, and it takes a NOUN, never a clause. It carries the sense that the outcome was unwelcome."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "because of is not perché di. perché needs a whole clause with a verb in it; a causa di needs a noun, and the two never swap places.",
+      "sound": "a KAU-za del TRAF-fee-ko, o PER-so la ree-oo-NYO-ne. causa is KAU-za, with a z that buzzes.",
+      "variations": [
+        {
+          "display": "A causa dello sciopero, ho perso la riunione",
+          "cue": "Because of the strike, I missed the meeting",
+          "changed": "a different noun, and di contracts with lo"
+        },
+        {
+          "display": "Ho perso la riunione a causa del traffico",
+          "cue": "I missed the meeting because of the traffic",
+          "changed": "the phrase moved to the back, where it also sits"
+        },
+        {
+          "display": "Per colpa del traffico, ho perso la riunione",
+          "cue": "It is the traffic's fault I missed the meeting",
+          "changed": "the same slot with blame added"
+        }
+      ],
+      "mistake": {
+        "display": "Perché del traffico ho perso la riunione",
+        "why": "perché cannot take a noun. In front of a noun the phrase is a causa di: a causa del traffico."
+      },
+      "usage": "Explaining a loss or a delay while keeping the blame off anybody in particular.",
+      "register": "neutral",
+      "mnemonic": "a causa di takes a thing; perché takes a sentence."
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "Grazie a mia sorella ho capito il motivo",
+      "cue": "Thanks to my sister I understood the reason",
+      "literal": "Thanks to my sister I-have understood the reason",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "grazie a",
+            "cue": "thanks to — because of something welcome",
+            "tag": "interference",
+            "forms": [
+              "grazie a",
+              "grazie al",
+              "grazie alla",
+              "grazie allo",
+              "grazie ai",
+              "grazie alle"
+            ],
+            "note": "The welcome twin of a causa di, and a preposition rather than the grazie of thank you. It needs a noun after it, and a contracts with the article."
+          },
+          {
+            "display": "motivo",
+            "cue": "reason",
+            "tag": "free",
+            "forms": [
+              "motivo",
+              "motivi"
+            ],
+            "note": "Masculine. il motivo is the reason as something you can name and point at; per questo motivo is a tidy way to open a consequence."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "grazie a is not thank you with an a on the end. It states a cause, and Italian will not use it for a bad outcome — that is a causa di or per colpa di.",
+      "sound": "GRA-tsye a MEE-a so-REL-la o ka-PEE-to il mo-TEE-vo. The zi of grazie is ts.",
+      "variations": [
+        {
+          "display": "Grazie a mia sorella non ho perso il treno",
+          "cue": "Thanks to my sister I did not miss the train",
+          "changed": "a different welcome outcome"
+        },
+        {
+          "display": "Ho capito il motivo grazie a mia sorella",
+          "cue": "I understood the reason thanks to my sister",
+          "changed": "the phrase at the back, where it also sits"
+        },
+        {
+          "display": "A causa di mia sorella ho perso il treno",
+          "cue": "Because of my sister I missed the train",
+          "changed": "the unwelcome twin, and the outcome turns bad with it"
+        }
+      ],
+      "mistake": {
+        "display": "Per causa di mia sorella ho capito tutto",
+        "why": "the phrase is a causa di, not per causa di — and with a good outcome it should be grazie a in any case."
+      },
+      "usage": "Giving somebody the credit for how something turned out.",
+      "register": "neutral",
+      "mnemonic": "grazie a for the rescue, a causa di for the damage."
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "Non ho studiato, dunque non ho capito bene",
+      "cue": "I did not study, so I did not understand properly",
+      "literal": "Not I-have studied, therefore not I-have understood well",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dunque",
+            "cue": "so, therefore",
+            "tag": "free",
+            "forms": [
+              "dunque"
+            ],
+            "note": "A consequence word that follows its cause exactly as quindi does, and a shade more deliberate. It never opens the reason."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "dunque and quindi both point forwards at the result. Neither can front the reason, which is what siccome is for.",
+      "sound": "non o stoo-DYA-to, DOON-kwe non o ka-PEE-to BE-ne. qu is kw, so dunque is DOON-kwe.",
+      "variations": [
+        {
+          "display": "Non ho studiato, quindi non ho capito bene",
+          "cue": "I did not study, so I did not understand properly",
+          "changed": "quindi, the everyday twin of dunque"
+        },
+        {
+          "display": "Non ho capito bene perché non ho studiato",
+          "cue": "I did not understand properly because I did not study",
+          "changed": "consequence first, so the reason takes perché"
+        },
+        {
+          "display": "Siccome non ho studiato, non ho capito bene",
+          "cue": "Since I did not study, I did not understand properly",
+          "changed": "the reason fronted with siccome"
+        }
+      ],
+      "mistake": {
+        "display": "Dunque non ho studiato, non ho capito bene",
+        "why": "dunque marks the consequence, and the consequence is the second clause: ... dunque non ho capito bene."
+      },
+      "usage": "Owning up to why something went badly.",
+      "register": "neutral",
+      "mnemonic": "dunque points forwards, at the result."
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "Visto che c'era lo sciopero, sono andato in autobus",
+      "cue": "Given that there was the strike, I went by bus",
+      "literal": "Seen that there-was the strike, I-am gone in bus",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "visto che",
+            "cue": "given that, seeing that",
+            "tag": "delta",
+            "forms": [
+              "visto che"
+            ],
+            "note": "Two words behaving as one conjunction, and like siccome it opens the clause. The visto in it is frozen: never vista, never visti."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "This visto has nothing to do with L3-M5's visto meaning seen. Inside visto che it never agrees with anything, whoever is speaking and whatever follows.",
+      "sound": "VEE-sto ke CHE-ra lo SHO-pe-ro, SO-no an-DA-to in AU-to-boos.",
+      "variations": [
+        {
+          "display": "Dato che c'era lo sciopero, sono andato in autobus",
+          "cue": "Given that there was the strike, I went by bus",
+          "changed": "dato che, which behaves identically"
+        },
+        {
+          "display": "Siccome c'era lo sciopero, sono andato in autobus",
+          "cue": "Since there was the strike, I went by bus",
+          "changed": "siccome, the third front-only conjunction"
+        },
+        {
+          "display": "Sono andato in autobus perché c'era lo sciopero",
+          "cue": "I went by bus because there was the strike",
+          "changed": "the reason at the back, so perché"
+        }
+      ],
+      "mistake": {
+        "display": "Visto che lo sciopero, sono andato in autobus",
+        "why": "visto che needs a whole clause with a verb in it. In front of a bare noun the phrase is a causa di: a causa dello sciopero."
+      },
+      "usage": "Giving a reason that both of you can already see for yourselves.",
+      "register": "neutral",
+      "mnemonic": "visto che is siccome in two words."
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "Dato che è tardi, spiego tutto domani",
+      "cue": "Given that it is late, I will explain everything tomorrow",
+      "literal": "Given that it-is late, I-explain everything tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dato che",
+            "cue": "given that, since",
+            "tag": "delta",
+            "forms": [
+              "dato che"
+            ],
+            "note": "The twin of visto che, in the same front-only slot. dato is frozen inside it: never data, never dati, whatever follows."
+          },
+          {
+            "display": "spiegare",
+            "cue": "to explain",
+            "tag": "free",
+            "forms": [
+              "spiegare",
+              "spiego",
+              "spieghi",
+              "spiega",
+              "spiegato"
+            ],
+            "note": "A regular -are verb. The thing explained is the direct object and the person takes a: spiego tutto a mia sorella."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Neither dato che nor visto che can move to where perché goes, however natural that feels in English. The back slot belongs to perché alone.",
+      "sound": "DA-to ke e TAR-dee, SPYE-go TOOT-to do-MA-nee. spiego is two syllables, SPYE-go.",
+      "variations": [
+        {
+          "display": "Visto che è tardi, spiego tutto domani",
+          "cue": "Seeing that it is late, I will explain everything tomorrow",
+          "changed": "visto che, the same conjunction in other words"
+        },
+        {
+          "display": "Spiego tutto domani perché è tardi",
+          "cue": "I will explain everything tomorrow because it is late",
+          "changed": "the reason at the back, so perché"
+        },
+        {
+          "display": "Siccome è tardi, spiego tutto domani",
+          "cue": "Since it is late, I will explain everything tomorrow",
+          "changed": "siccome fronting the reason"
+        }
+      ],
+      "mistake": {
+        "display": "Data che è tardi, spiego tutto domani",
+        "why": "dato che never agrees with anything. It is dato che whatever comes after it."
+      },
+      "usage": "Closing a conversation down politely, with a reason attached.",
+      "register": "neutral",
+      "mnemonic": "dato che and visto che never change shape."
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "Per colpa del traffico sono arrivato tardi, per questo sono stanco",
+      "cue": "The traffic made me arrive late, and that is why I am tired",
+      "literal": "For fault of-the traffic I-am arrived late, for this I-am tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "per colpa di",
+            "cue": "because of — and it is their fault",
+            "tag": "delta",
+            "forms": [
+              "per colpa di",
+              "per colpa del",
+              "per colpa della",
+              "per colpa mia",
+              "per colpa sua"
+            ],
+            "note": "The same slot as a causa di with blame attached. colpa is fault, and di contracts with the article that follows."
+          },
+          {
+            "display": "per questo",
+            "cue": "that is why, for this reason",
+            "tag": "free",
+            "forms": [
+              "per questo"
+            ],
+            "note": "Two words you already know, working as one connector. It opens the CONSEQUENCE clause, which is exactly why it can start a sentence where perché cannot."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "per colpa di is not rude. It is what people say when something went wrong and there is something to blame; a causa di is the same slot with the blame taken back out.",
+      "sound": "per KOL-pa del TRAF-fee-ko SO-no ar-ree-VA-to TAR-dee, per KWES-to SO-no STAN-ko.",
+      "variations": [
+        {
+          "display": "A causa del traffico sono arrivato tardi",
+          "cue": "I arrived late because of the traffic",
+          "changed": "the neutral twin, with the blame dropped"
+        },
+        {
+          "display": "Sono arrivato tardi, per questo sono stanco",
+          "cue": "I arrived late, and that is why I am tired",
+          "changed": "the cause dropped, keeping the consequence"
+        },
+        {
+          "display": "Per colpa del traffico ho perso la riunione",
+          "cue": "The traffic made me miss the meeting",
+          "changed": "a different consequence"
+        }
+      ],
+      "mistake": {
+        "display": "Per colpa di traffico sono arrivato tardi",
+        "why": "di contracts with the article in front of a named noun: per colpa del traffico."
+      },
+      "usage": "Complaining about a delay when there is something to pin it on.",
+      "register": "neutral",
+      "mnemonic": "colpa is fault, so per colpa di points a finger."
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "Ho perso il treno, di conseguenza sono arrivato in ritardo",
+      "cue": "I missed the train, and as a result I arrived late",
+      "literal": "I-have lost the train, of consequence I-am arrived in delay",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "di conseguenza",
+            "cue": "as a result, consequently",
+            "tag": "free",
+            "forms": [
+              "di conseguenza"
+            ],
+            "note": "The careful, written end of quindi and dunque — what a notice or a report says. In ordinary speech quindi does the same work."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "di conseguenza opens the RESULT, never the cause, exactly like quindi and dunque. Only the register changes.",
+      "sound": "o PER-so il TRE-no, dee kon-se-GWEN-tsa SO-no ar-ree-VA-to in ree-TAR-do.",
+      "variations": [
+        {
+          "display": "Ho perso il treno, quindi sono arrivato in ritardo",
+          "cue": "I missed the train, so I arrived late",
+          "changed": "quindi, the everyday word for the same link"
+        },
+        {
+          "display": "Ho perso il treno, per questo sono arrivato in ritardo",
+          "cue": "I missed the train, and that is why I arrived late",
+          "changed": "per questo, which points back at the whole first clause"
+        },
+        {
+          "display": "Sono arrivato in ritardo perché ho perso il treno",
+          "cue": "I arrived late because I missed the train",
+          "changed": "consequence first, reason at the back"
+        }
+      ],
+      "mistake": {
+        "display": "Di conseguenza ho perso il treno, sono arrivato in ritardo",
+        "why": "di conseguenza belongs on the second clause, the result: ... di conseguenza sono arrivato in ritardo."
+      },
+      "usage": "An announcement, a report, or careful speech.",
+      "register": "formal",
+      "mnemonic": "di conseguenza is quindi in a suit."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "Siccome pioveva, non sono uscito",
+      "cue": "Since it was raining, I did not go out"
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "Non sono uscito perché pioveva",
+      "cue": "I did not go out because it was raining"
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "C'era uno sciopero, quindi ho perso il treno",
+      "cue": "There was a strike, so I missed the train"
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "Sono arrivato in ritardo a causa del traffico",
+      "cue": "I arrived late because of the traffic"
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "Grazie a mia sorella ho capito tutto",
+      "cue": "Thanks to my sister I understood everything"
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "Visto che è tardi, spiego tutto domani",
+      "cue": "Seeing that it is late, I will explain everything tomorrow"
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "Dato che c'era lo sciopero, sono andato in autobus",
+      "cue": "Given that there was the strike, I went by bus"
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "Non ho studiato, per questo non ho capito bene",
+      "cue": "I did not study, and that is why I did not understand properly"
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "Per colpa del traffico ho perso la riunione",
+      "cue": "The traffic made me miss the meeting"
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "Il treno era in ritardo, di conseguenza sono arrivato tardi",
+      "cue": "The train was late, and as a result I arrived late"
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "Sono stanco, infatti non ho dormito",
+      "cue": "I am tired — sure enough, I did not sleep"
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "Ho capito il motivo, dunque sono contento",
+      "cue": "I have understood the reason, so I am happy"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

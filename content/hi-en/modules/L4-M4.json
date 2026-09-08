@@ -1,0 +1,608 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": [
+    "L4-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 9,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present_simple",
+      "simple_past",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "<claim> + . + However + , + <counter>",
+      "That is true + , + but + <clause>",
+      "You are right about + <N> + , + still + <clause>",
+      "The point is + (that) + <clause>",
+      "At least + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "however, on the other hand और still क्रिया-विशेषण हैं, जोड़ नहीं. ये दो उपवाक्यों को but की तरह नहीं जोड़ सकते. पहले पूर्ण विराम या अर्धविराम आता है, फिर however, फिर अल्पविराम, और उसके बाद नया वाक्य: I was tired. However, I went."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी में फिर भी और लेकिन दोनों सीधे जोड़ वाली जगह में बैठ जाते हैं, इसलिए however को भी वहीं रख देना सबसे आम ग़लती है. I was tired, however I went ग़लत है. यही ग़लती L4-M2 में therefore के साथ थी, और दोनों का इलाज एक ही है — अल्पविराम की जगह पूर्ण विराम."
+    },
+    {
+      "tag": "free",
+      "text": "मानना, फिर मुड़ना — यह कोई विदेशी चाल नहीं है. आपकी बात ठीक है, पर … वही तीन क़दम उसी क्रम में हैं, और सीखने वाला जानता है कि यह कब करना है. अंग्रेज़ी सिर्फ़ इतना और माँगती है कि मानने वाला क़दम शब्दों में साफ़ कहा जाए. सिर्फ़ लहजे से काम नहीं चलता — बिना माने रखी गई उल्टी बात अंग्रेज़ी कान को यह सुनाई देती है कि आपने सामने वाले की बात सुनी ही नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "still L3-M10 की पंक्ति है, जहाँ इसका मतलब था पुरानी बात जो अब तक चल रही है — I still study English. यहाँ वही शब्द दूसरा काम करता है: सामने वाले की बात मान लेने के बाद अपनी बात पर टिके रहना — You are right about the cost. Still, we must go. सीखने वाले की उँगली उसी पुरानी पंक्ति पर जाएगी, इसलिए नया काम यहाँ लिखा जा रहा है."
+    },
+    {
+      "tag": "delta",
+      "text": "but और although अपना पुराना जोड़ वाला काम करते रहते हैं — but दो उपवाक्यों के बीच (L1-M10) और although आधे वाक्य के आगे (L3-M3). एक वाक्य में एक ही जोड़ चलता है: although के साथ but नहीं आता."
+    },
+    {
+      "tag": "free",
+      "text": "यह पाठ भरोसे वाला लहजा है — बात रखिए, दूसरी तरफ़ को उसका हक़ दीजिए, और अपनी बात पर लौट आइए. नरमी और लिहाज़ M5 का काम है, और सवालों के जवाब देकर पूरा मुक़दमा खड़ा करना L5-M6 का."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "The office is far. However, the salary is very good.",
+      "cue": "दफ़्तर दूर है. फिर भी, तनख़्वाह बहुत अच्छी है.",
+      "literal": "वह दफ़्तर है दूर. फिर भी, वह तनख़्वाह है बहुत अच्छी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "however",
+            "cue": "फिर भी · मगर",
+            "tag": "interference",
+            "forms": [],
+            "note": "जोड़ नहीं, क्रिया-विशेषण है. इससे पहले पूर्ण विराम और इसके बाद अल्पविराम आता है: … far. However, the salary …"
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "however को but की जगह मत रखिए. The office is far, however the salary is good ग़लत है — बीच में पूर्ण विराम चाहिए.",
+      "sound": "however में ज़ोर बीच वाले हिस्से पर पड़ता है — हाउ-ए-वर. शुरू का h बोला जाता है, गिराया नहीं जाता.",
+      "variations": [
+        {
+          "display": "The office is far. However, the work is very good.",
+          "cue": "दफ़्तर दूर है. फिर भी, काम बहुत अच्छा है.",
+          "changed": "तनख़्वाह की जगह काम"
+        },
+        {
+          "display": "The office is far. However, I will take the job.",
+          "cue": "दफ़्तर दूर है. फिर भी, मैं यह नौकरी लूँगा.",
+          "changed": "दूसरे आधे में अपना फ़ैसला आ गया"
+        },
+        {
+          "display": "The salary is very good. However, the office is far.",
+          "cue": "तनख़्वाह बहुत अच्छी है. फिर भी, दफ़्तर दूर है.",
+          "changed": "दोनों आधे उलट गए — ज़ोर दूसरी बात पर"
+        }
+      ],
+      "mistake": {
+        "display": "The office is far, however the salary is very good",
+        "why": "however जोड़ नहीं है. अल्पविराम की जगह पूर्ण विराम रखिए और however के बाद अल्पविराम लगाइए."
+      },
+      "usage": "नौकरी, घर या सौदे की बात — एक कमी मानकर अपनी बात रखते समय.",
+      "register": "neutral",
+      "mnemonic": "however से पहले पूर्ण विराम, बाद में अल्पविराम."
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "I admit that is true, but we do not have the time.",
+      "cue": "मैं मानता हूँ कि यह सच है, पर हमारे पास वक़्त नहीं है.",
+      "literal": "मैं मानता वह है सच, पर हम नहीं रखते वह वक़्त.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "admit",
+            "cue": "मानना · क़बूल करना",
+            "tag": "delta",
+            "forms": [
+              "admit",
+              "admits",
+              "admitted"
+            ],
+            "note": "दूसरे की बात को उसका हक़ देना. आगे that आ सकता है और गिर भी सकता है: I admit that is true · I admit it is true."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "admit को accept से मत मिलाइए. यहाँ बात मानने की है, कोई चीज़ लेने की नहीं.",
+      "sound": "admit में ज़ोर दूसरे हिस्से पर पड़ता है — अड्-मिट.",
+      "variations": [
+        {
+          "display": "I admit that is true, but we do not have the money.",
+          "cue": "मैं मानता हूँ कि यह सच है, पर हमारे पास पैसे नहीं हैं.",
+          "changed": "वक़्त की जगह पैसे"
+        },
+        {
+          "display": "We admit that is true, but the deadline is next week.",
+          "cue": "हम मानते हैं कि यह सच है, पर आख़िरी तारीख़ अगले हफ़्ते है.",
+          "changed": "मैं की जगह हम, और दूसरा आधा बदला"
+        },
+        {
+          "display": "That is true, but we do not have the time.",
+          "cue": "यह सच है, पर हमारे पास वक़्त नहीं है.",
+          "changed": "admit हट गया — बात वही, लहजा सीधा"
+        }
+      ],
+      "mistake": {
+        "display": "I am admit that is true, but we do not have the time",
+        "why": "admit साधारण क्रिया है, हालत नहीं. उसके साथ am नहीं लगता: I admit that is true."
+      },
+      "usage": "बहस में — दूसरे की बात मानकर अपनी शर्त रखते समय.",
+      "register": "neutral",
+      "mnemonic": "admit पहले, but बाद में — मानिए, फिर मुड़िए."
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "Of course you are right about the cost. Still, we must go.",
+      "cue": "बेशक आप ख़र्च के बारे में सही हैं. फिर भी, हमें जाना ही होगा.",
+      "literal": "बेशक तुम हो सही बारे में वह ख़र्च. फिर भी, हम ज़रूर जाना.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "of course",
+            "cue": "बेशक · ज़रूर",
+            "tag": "delta",
+            "forms": [],
+            "note": "दोनों शब्द साथ चलते हैं और सामने वाले की बात को खुलकर मान लेते हैं. वाक्य के आगे अल्पविराम के साथ या बिना, दोनों तरह चलता है."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "यहाँ वाला Still वह still नहीं है जो L3-M10 में आदत के लिए आया था. इसका मतलब है — फिर भी.",
+      "sound": "of course में f दब जाता है — अव्-कोर्स.",
+      "variations": [
+        {
+          "display": "Of course you are right about the cost. Still, we must ask.",
+          "cue": "बेशक आप ख़र्च के बारे में सही हैं. फिर भी, हमें पूछना ही होगा.",
+          "changed": "जाने की जगह पूछना"
+        },
+        {
+          "display": "Of course you are right about the time. Still, we must go.",
+          "cue": "बेशक आप वक़्त के बारे में सही हैं. फिर भी, हमें जाना ही होगा.",
+          "changed": "ख़र्च की जगह वक़्त"
+        },
+        {
+          "display": "You are right about the cost. Still, we must go.",
+          "cue": "आप ख़र्च के बारे में सही हैं. फिर भी, हमें जाना ही होगा.",
+          "changed": "of course हट गया — मानना छोटा हो गया"
+        }
+      ],
+      "mistake": {
+        "display": "Of course you are right about the cost, still we must go",
+        "why": "still भी जोड़ नहीं है. उससे पहले पूर्ण विराम और उसके बाद अल्पविराम आता है."
+      },
+      "usage": "बड़े या ग्राहक से बात — उनकी बात मानकर अपने फ़ैसले पर टिके रहते समय.",
+      "register": "formal",
+      "mnemonic": "Of course मानना, Still टिकना."
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "The point is that we cannot wait for the answer.",
+      "cue": "बात यह है कि हम जवाब का इंतज़ार नहीं कर सकते.",
+      "literal": "वह बात है कि हम नहीं सकते इंतज़ार के लिए वह जवाब.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "the point is",
+            "cue": "बात यह है कि",
+            "tag": "delta",
+            "forms": [
+              "the point is",
+              "my point is"
+            ],
+            "note": "तीनों शब्द साथ चलते हैं और असली बात को सामने ले आते हैं. आगे that आ सकता है और बोलचाल में गिर भी जाता है."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "The point is because ग़लत है. आगे बात लानी हो तो that लिखिए: The point is that we cannot wait.",
+      "sound": "the point is बोलने में जुड़ जाता है — द-पॉइं-टिज़.",
+      "variations": [
+        {
+          "display": "The point is that we cannot wait for the money.",
+          "cue": "बात यह है कि हम पैसे का इंतज़ार नहीं कर सकते.",
+          "changed": "जवाब की जगह पैसे"
+        },
+        {
+          "display": "My point is that we cannot wait for the answer.",
+          "cue": "मेरा कहना यह है कि हम जवाब का इंतज़ार नहीं कर सकते.",
+          "changed": "the की जगह my — बात अपनी हो गई"
+        },
+        {
+          "display": "The point is we cannot wait for the answer.",
+          "cue": "बात यह है कि हम जवाब का इंतज़ार नहीं कर सकते.",
+          "changed": "that गिर गया — बोलचाल में ऐसा ही चलता है"
+        }
+      ],
+      "mistake": {
+        "display": "The point is because we cannot wait for the answer",
+        "why": "the point is के बाद that आता है. because अपने आप में वजह कह चुका होता है, इसलिए वहाँ उसकी जगह नहीं."
+      },
+      "usage": "मीटिंग में — बात लंबी हो जाए तो असली मुद्दे पर लौटने के लिए.",
+      "register": "neutral",
+      "mnemonic": "The point is — यहाँ से असली बात शुरू."
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "At least we have a full week before the exam.",
+      "cue": "कम से कम हमारे पास इम्तिहान से पहले पूरा हफ़्ता है.",
+      "literal": "कम से कम हम रखते एक पूरा हफ़्ता पहले वह इम्तिहान.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "at least",
+            "cue": "कम से कम",
+            "tag": "delta",
+            "forms": [],
+            "note": "बुरी बात मान लेने के बाद जो बचा है उसे सामने रखता है. ज़्यादातर वाक्य के आगे बैठता है: At least we have time."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "at least को only से मत बदलिए. at least ढाढ़स है, कमी की शिकायत नहीं.",
+      "sound": "at least में t और l जुड़ जाते हैं — अट्-लीस्ट.",
+      "variations": [
+        {
+          "display": "At least we have a full week before the meeting.",
+          "cue": "कम से कम हमारे पास मीटिंग से पहले पूरा हफ़्ता है.",
+          "changed": "इम्तिहान की जगह मीटिंग"
+        },
+        {
+          "display": "At least we have the money for the tickets.",
+          "cue": "कम से कम हमारे पास टिकटों के पैसे हैं.",
+          "changed": "वक़्त की जगह पैसे"
+        },
+        {
+          "display": "The exam is next week. At least we have a full week.",
+          "cue": "इम्तिहान अगले हफ़्ते है. कम से कम हमारे पास पूरा हफ़्ता है.",
+          "changed": "पहले बुरी ख़बर, फिर ढाढ़स"
+        }
+      ],
+      "mistake": {
+        "display": "At last we have a full week before the exam",
+        "why": "at last का मतलब है आख़िरकार. ढाढ़स देना हो तो at least लिखिए — दोनों अलग हैं."
+      },
+      "usage": "बुरी ख़बर के बाद — अपनी टीम या घरवालों को ढाढ़स देते समय.",
+      "register": "neutral",
+      "mnemonic": "At least — जो बचा है, वह गिनाइए."
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "On the other hand, the small shop is much cheaper.",
+      "cue": "दूसरी तरफ़, छोटी दुकान कहीं ज़्यादा सस्ती है.",
+      "literal": "पर वह दूसरी तरफ़, वह छोटी दुकान है कहीं ज़्यादा सस्ती.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on the other hand",
+            "cue": "दूसरी तरफ़",
+            "tag": "delta",
+            "forms": [],
+            "note": "चारों शब्द साथ चलते हैं. यह दो तरफ़ों को तौलता है, इसलिए इससे पहले पहली तरफ़ कही जा चुकी होनी चाहिए."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "on the other hand अकेला नहीं आता. पहले एक तरफ़ कही जानी चाहिए, वरना सुनने वाला पूछेगा — किसके मुक़ाबले.",
+      "sound": "चारों शब्द जुड़कर बोले जाते हैं और ज़ोर other पर पड़ता है — ऑन-द-अदर-हैंड.",
+      "variations": [
+        {
+          "display": "On the other hand, the big shop is much better.",
+          "cue": "दूसरी तरफ़, बड़ी दुकान कहीं बेहतर है.",
+          "changed": "छोटी की जगह बड़ी, सस्ती की जगह बेहतर"
+        },
+        {
+          "display": "On the other hand, the bus is much cheaper.",
+          "cue": "दूसरी तरफ़, बस कहीं ज़्यादा सस्ती है.",
+          "changed": "दुकान की जगह बस"
+        },
+        {
+          "display": "The big shop is expensive. On the other hand, it is close.",
+          "cue": "बड़ी दुकान महँगी है. दूसरी तरफ़, वह पास है.",
+          "changed": "पहले एक तरफ़, फिर दूसरी"
+        }
+      ],
+      "mistake": {
+        "display": "In the other hand, the small shop is much cheaper",
+        "why": "यहाँ on आता है, in नहीं. चारों शब्द जैसे के तैसे चलते हैं: on the other hand."
+      },
+      "usage": "दो रास्ते तौलते समय — ख़रीदारी, नौकरी या किसी फ़ैसले की बात में.",
+      "register": "neutral",
+      "mnemonic": "एक तरफ़ कही, तभी दूसरी तरफ़."
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "It is worth a long wait for a better office.",
+      "cue": "बेहतर दफ़्तर के लिए लंबा इंतज़ार करना बनता है.",
+      "literal": "यह है लायक़ एक लंबा इंतज़ार के लिए एक बेहतर दफ़्तर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "worth",
+            "cue": "लायक़ · बनता है",
+            "tag": "delta",
+            "forms": [],
+            "note": "आगे संज्ञा या -ing वाला रूप आता है: worth a long wait · worth waiting. आगे सादी क्रिया कभी नहीं आती."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "worth के बाद to नहीं आता. It is worth to wait ग़लत है; worth waiting सही.",
+      "sound": "worth का th जीभ दाँतों के बीच रखकर बोला जाता है — वर्थ, वर्त नहीं.",
+      "variations": [
+        {
+          "display": "It is worth a long wait for a better job.",
+          "cue": "बेहतर नौकरी के लिए लंबा इंतज़ार करना बनता है.",
+          "changed": "दफ़्तर की जगह नौकरी"
+        },
+        {
+          "display": "It is worth waiting for a better office.",
+          "cue": "बेहतर दफ़्तर के लिए इंतज़ार करना बनता है.",
+          "changed": "संज्ञा की जगह -ing वाला रूप"
+        },
+        {
+          "display": "It is not worth a long wait for a small office.",
+          "cue": "छोटे दफ़्तर के लिए लंबा इंतज़ार करना नहीं बनता.",
+          "changed": "उल्टा कहा गया"
+        }
+      ],
+      "mistake": {
+        "display": "It is worth to wait for a better office",
+        "why": "worth के बाद -ing वाला रूप या संज्ञा आती है: worth waiting, worth a long wait."
+      },
+      "usage": "किसी चीज़ की क़ीमत तौलते समय — इंतज़ार, ख़र्च या मेहनत की.",
+      "register": "neutral",
+      "mnemonic": "worth के आगे -ing, to कभी नहीं."
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "Imagine the same problem in a much bigger office.",
+      "cue": "यही दिक़्क़त कहीं बड़े दफ़्तर में सोचकर देखिए.",
+      "literal": "सोचिए वह वही दिक़्क़त में एक कहीं बड़ा दफ़्तर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "imagine",
+            "cue": "सोचकर देखिए · कल्पना कीजिए",
+            "tag": "delta",
+            "forms": [
+              "imagine",
+              "imagines",
+              "imagined"
+            ],
+            "note": "सुनने वाले को अपनी जगह पर खड़ा कर देता है. आगे संज्ञा भी आ सकती है और पूरा वाक्य भी: Imagine it is your money."
+          },
+          {
+            "display": "same",
+            "cue": "वही · एक जैसा",
+            "tag": "delta",
+            "forms": [],
+            "note": "इसके आगे हमेशा the आता है, a कभी नहीं: the same problem. दो चीज़ें मिलानी हों तो आगे as लगता है."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "same के आगे a मत लगाइए. a same problem ग़लत है; the same problem सही.",
+      "sound": "imagine में ज़ोर बीच वाले हिस्से पर पड़ता है — इ-मैज-इन.",
+      "variations": [
+        {
+          "display": "Imagine the same problem in a small office.",
+          "cue": "यही दिक़्क़त छोटे दफ़्तर में सोचकर देखिए.",
+          "changed": "बड़े की जगह छोटे"
+        },
+        {
+          "display": "Imagine the same problem next year.",
+          "cue": "यही दिक़्क़त अगले साल सोचकर देखिए.",
+          "changed": "जगह की जगह वक़्त"
+        },
+        {
+          "display": "Imagine it is your money.",
+          "cue": "सोचकर देखिए कि यह आपके पैसे हैं.",
+          "changed": "संज्ञा की जगह पूरा वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "Imagine a same problem in a much bigger office",
+        "why": "same हमेशा the के साथ आता है: the same problem."
+      },
+      "usage": "बहस में — सामने वाले को अपनी जगह पर खड़ा करने के लिए.",
+      "register": "neutral",
+      "mnemonic": "the same — same कभी अकेला नहीं."
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "That is a fair point. However, the deadline is next week.",
+      "cue": "यह जायज़ बात है. फिर भी, आख़िरी तारीख़ अगले हफ़्ते है.",
+      "literal": "वह है एक जायज़ बात. फिर भी, वह आख़िरी तारीख़ है अगले हफ़्ते.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fair",
+            "cue": "जायज़ · वाजिब",
+            "tag": "delta",
+            "forms": [],
+            "note": "दूसरे की बात को जायज़ मानना. That is a fair point सबसे आम जोड़ है और बहस को एक झटके में नरम कर देता है."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "fair को fare से मत मिलाइए. आवाज़ एक है, पर fare का मतलब किराया होता है.",
+      "sound": "fair और fare एक ही तरह बोले जाते हैं — फ़ेअर.",
+      "variations": [
+        {
+          "display": "That is a fair point. However, we do not have the money.",
+          "cue": "यह जायज़ बात है. फिर भी, हमारे पास पैसे नहीं हैं.",
+          "changed": "दूसरा आधा बदला"
+        },
+        {
+          "display": "That is a fair question. However, the deadline is next week.",
+          "cue": "यह जायज़ सवाल है. फिर भी, आख़िरी तारीख़ अगले हफ़्ते है.",
+          "changed": "बात की जगह सवाल"
+        },
+        {
+          "display": "That is fair. However, the deadline is next week.",
+          "cue": "यह जायज़ है. फिर भी, आख़िरी तारीख़ अगले हफ़्ते है.",
+          "changed": "a fair point की जगह सिर्फ़ fair"
+        }
+      ],
+      "mistake": {
+        "display": "That is a fair point, however the deadline is next week",
+        "why": "however से पहले अल्पविराम नहीं, पूर्ण विराम आता है."
+      },
+      "usage": "मीटिंग में — किसी की बात मानकर अपनी मजबूरी रखते समय.",
+      "register": "formal",
+      "mnemonic": "That is a fair point — मानने का सबसे छोटा रास्ता."
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "I will do it, even if it takes a long time.",
+      "cue": "मैं यह करूँगा, चाहे इसमें लंबा वक़्त लगे.",
+      "literal": "मैं करूँगा यह, चाहे अगर यह ले एक लंबा वक़्त.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "even if",
+            "cue": "चाहे · भले ही",
+            "tag": "delta",
+            "forms": [],
+            "note": "दोनों शब्द साथ चलते हैं. अकेला if शर्त रखता है; even if कहता है कि शर्त पूरी हो या न हो, बात वही रहेगी."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "even if और even though अलग हैं. even if अनजानी बात के लिए है, even though पक्की बात के लिए.",
+      "sound": "even if जुड़कर ईव्-निफ़ जैसा सुनाई देता है.",
+      "variations": [
+        {
+          "display": "We will do it, even if it takes a long time.",
+          "cue": "हम यह करेंगे, चाहे इसमें लंबा वक़्त लगे.",
+          "changed": "मैं की जगह हम"
+        },
+        {
+          "display": "I will do it, even if the office is far.",
+          "cue": "मैं यह करूँगा, चाहे दफ़्तर दूर हो.",
+          "changed": "शर्त बदल गई"
+        },
+        {
+          "display": "Even if it takes a long time, I will do it.",
+          "cue": "चाहे इसमें लंबा वक़्त लगे, मैं यह करूँगा.",
+          "changed": "शर्त आगे आ गई, बीच में अल्पविराम"
+        }
+      ],
+      "mistake": {
+        "display": "I will do it, even it takes a long time",
+        "why": "अकेला even यह काम नहीं करता. पूरा even if लिखिए."
+      },
+      "usage": "अपनी बात पर टिके रहना — मुश्किल मानकर भी फ़ैसला न बदलना.",
+      "register": "neutral",
+      "mnemonic": "even if — शर्त हो या न हो, बात वही."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "The office is far. However, the salary is very good.",
+      "cue": "दफ़्तर दूर है. फिर भी, तनख़्वाह बहुत अच्छी है."
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "I admit that is true, but we do not have the time.",
+      "cue": "मैं मानता हूँ कि यह सच है, पर हमारे पास वक़्त नहीं है."
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "Of course you are right about the cost. Still, we must go.",
+      "cue": "बेशक आप ख़र्च के बारे में सही हैं. फिर भी, हमें जाना ही होगा."
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "The point is that we cannot wait for the answer.",
+      "cue": "बात यह है कि हम जवाब का इंतज़ार नहीं कर सकते."
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "At least we have a full week before the exam.",
+      "cue": "कम से कम हमारे पास इम्तिहान से पहले पूरा हफ़्ता है."
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "On the other hand, the small shop is much cheaper.",
+      "cue": "दूसरी तरफ़, छोटी दुकान कहीं ज़्यादा सस्ती है."
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "It is worth a long wait for a better office.",
+      "cue": "बेहतर दफ़्तर के लिए लंबा इंतज़ार करना बनता है."
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "Imagine the same problem in a much bigger office.",
+      "cue": "यही दिक़्क़त कहीं बड़े दफ़्तर में सोचकर देखिए."
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "That is a fair point. However, the deadline is next week.",
+      "cue": "यह जायज़ बात है. फिर भी, आख़िरी तारीख़ अगले हफ़्ते है."
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "I will do it, even if it takes a long time.",
+      "cue": "मैं यह करूँगा, चाहे इसमें लंबा वक़्त लगे."
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "I know it is expensive. However, it is much better.",
+      "cue": "मुझे पता है कि यह महँगा है. फिर भी, यह कहीं बेहतर है."
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "That is true. Still, I do not agree with you.",
+      "cue": "यह सच है. फिर भी, मैं आपसे सहमत नहीं हूँ."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,542 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M7",
+  "title": "Official talk",
+  "job": "Announcements, offices and counters: the formal register you hear",
+  "prerequisites": ["L4-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present", "Präteritum passive", "present passive", "Konjunktiv I"],
+    "allowedPatterns": [
+      "Der Antrag + wurde + <Partizip>",
+      "Das Formular + muss + <Partizip> + werden",
+      "Die Tür + ist + <Partizip>",
+      "Er sagt + , + er sei + <Adj>",
+      "Wir bitten um Ihr Verständnis"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THIS IS A REGISTER YOU READ AND HEAR, NOT ONE YOU SPEAK. Every sentence in this module is German spoken AT you — the platform announcement, the counter, the letter from the Amt — and the job is to RECOGNISE it. Your own German stays where L2 and L3 put it. Nobody expects a learner to produce a passive announcement, and a learner who tries will sound like a form rather than a person."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PASSIVE, COMPLETED. L3-M9 gave you the present werden-passive; the past is wurde plus the participle — Der Antrag wurde bearbeitet — with wurden for the plural. The participle that goes with a passive in the perfect is worden, never geworden: Der Antrag ist bearbeitet worden. werden, wird and werde stay L3-M9's; this module adds only the three shapes that module could not reach."
+    },
+    {
+      "tag": "delta",
+      "text": "A PASSIVE UNDER A MODAL PUTS THREE THINGS AT THE END. The modal takes second position and the participle plus werden close the bracket together: Das Formular muss vollständig ausgefüllt werden. That is L2-M1's verb bracket for the seventh time, now holding two verbs instead of one, and the order inside it never varies — participle first, werden last."
+    },
+    {
+      "tag": "delta",
+      "text": "werden IS THE EVENT AND sein IS THE STATE, and English uses is closed for both. Die Tür wird geschlossen means somebody is closing it, right now, and something is happening. Die Tür ist geschlossen means it is shut and nothing is happening at all. An anglophone reads half of German officialese one aspect out because English has only the one verb here."
+    },
+    {
+      "tag": "delta",
+      "text": "THE AGENT: von FOR A PERSON, durch FOR A MEANS OR AN OFFICE. von der Kollegin geprüft names who did it; durch das Amt geprüft names what it went through. English by covers both, so the choice has to be made on what kind of thing the agent is, not on the English word. Most announcements name no agent at all — that is exactly what the passive is for."
+    },
+    {
+      "tag": "delta",
+      "text": "GERMAN OFFICIALESE IS NOUN-HEAVY WHERE ENGLISH IS VERB-HEAVY. English writes after we process your application; German writes nach Bearbeitung des Antrags. A sentence translated verb for verb out of English reads as informal German in a formal place. And the fixed frame: bitten takes um and nothing else — Wir bitten um Ihr Verständnis, never *bitten für."
+    },
+    {
+      "tag": "delta",
+      "text": "KONJUNKTIV I MARKS WORDS AS SOMEBODY ELSE'S. Er sagt, er sei krank reports the claim without vouching for it, which English does with reportedly or with quotation marks. It is visibly distinct only in the third person, and even there most of its forms are spelled like first-person present indicatives you already own — habe, komme — so the index can give this module exactly one row: sei. Recognition only. Spoken German reports with dass and the plain indicative, exactly as L3-M5 taught."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M7-S01",
+      "display": "Achtung am Gleis drei: Der Zug nach München hat Verspätung",
+      "cue": "Attention on platform three: the train to Munich is delayed",
+      "literal": "Attention at-the platform three: the train to Munich has delay",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Achtung",
+            "cue": "attention (as an announcement opener)",
+            "tag": "free",
+            "forms": ["Achtung"],
+            "note": "The word a loudspeaker opens with, and a warning sign on its own. Never said between two people in a room."
+          },
+          {
+            "display": "Gleis",
+            "cue": "platform, track",
+            "tag": "free",
+            "forms": ["Gleis", "Gleise"],
+            "note": "Neuter: das Gleis. German counts the track, not the platform edge — am Gleis drei, an Gleis zwei."
+          },
+          {
+            "display": "Verspätung",
+            "cue": "delay",
+            "tag": "free",
+            "forms": ["Verspätung"],
+            "note": "German says a train HAS a delay: Der Zug hat Verspätung. There is no adjective here at all, so no is delayed to translate."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English says the train is delayed and makes it an adjective. German says the train has a delay and makes it a noun, which is the whole shape of this register.",
+      "sound": "AKH-toong am glys DRY: dair tsook naakh MUEN-khun hat fair-SHPAY-toong.",
+      "variations": [
+        {
+          "display": "Der Zug nach Berlin hat heute zehn Minuten Verspätung",
+          "cue": "The train to Berlin is ten minutes late today",
+          "changed": "The amount is added as a bare measure in front of Verspätung — no preposition, exactly as eine Stunde warten takes none."
+        }
+      ],
+      "mistake": {
+        "display": "Achtung am Gleis drei: Der Zug nach München ist verspätet",
+        "why": "Not ungrammatical, but it is not what is announced. The register says hat Verspätung — the noun — and a learner who hears only the adjective will miss the announcement."
+      },
+      "usage": "Standing on a platform, working out whether the announcement is about your train.",
+      "register": "formal",
+      "mnemonic": "The train does not become late; it has a lateness."
+    },
+    {
+      "id": "L4-M7-S02",
+      "display": "Der Antrag wurde gestern bearbeitet",
+      "cue": "The application was processed yesterday",
+      "literal": "The application became yesterday processed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wurde",
+            "cue": "was (passive auxiliary, past)",
+            "tag": "delta",
+            "forms": ["wurde", "wurden", "worden"],
+            "note": "The past of the passive werden. Plural wurden; in the perfect the participle is worden, never geworden. wird and werde stay L3-M9's."
+          },
+          {
+            "display": "bearbeitet",
+            "cue": "processed, dealt with",
+            "tag": "free",
+            "forms": ["bearbeitet", "bearbeiten", "Bearbeitung"],
+            "note": "The verb an office uses about your paperwork. Its noun Bearbeitung is what a letter will actually write: nach Bearbeitung des Antrags."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "English was is the same word in he was tired and it was processed. German splits them: war is the state, wurde is the passive, and only wurde means something happened to the subject.",
+      "sound": "dair AN-traak VOOR-duh GES-tern buh-AR-by-tet.",
+      "variations": [
+        {
+          "display": "Der Antrag ist gestern bearbeitet worden",
+          "cue": "The application was processed yesterday",
+          "changed": "The same past in the Perfekt instead: ist … worden. Speech prefers this one, writing prefers wurde."
+        }
+      ],
+      "mistake": {
+        "display": "Der Antrag ist gestern bearbeitet geworden",
+        "why": "In a passive the participle of werden loses its ge-: worden, not geworden. geworden belongs to the full verb — Er ist Arzt geworden."
+      },
+      "usage": "Reading a status line, or hearing one read out to you at a counter.",
+      "register": "formal",
+      "mnemonic": "wurde moves it; war only holds it."
+    },
+    {
+      "id": "L4-M7-S03",
+      "display": "Bitte beachten Sie: Das Formular muss vollständig ausgefüllt werden",
+      "cue": "Please note: the form must be filled in completely",
+      "literal": "Please note you: the form must completely filled-in become",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "beachten",
+            "cue": "to note, to observe, to pay attention to",
+            "tag": "free",
+            "forms": ["beachten", "beachtet"],
+            "note": "Takes a plain accusative, no preposition: Beachten Sie die Zeiten. Bitte beachten Sie is how a notice opens."
+          },
+          {
+            "display": "vollständig",
+            "cue": "completely, in full",
+            "tag": "free",
+            "forms": ["vollständig"],
+            "note": "The adverb a form uses about itself. It stands in the middle field, in front of the participle it qualifies."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Three verb pieces end this sentence and their order is fixed: ausgefüllt werden, participle first. English puts be before filled and German puts werden last.",
+      "sound": "BIT-uh buh-AKH-tun zee: das for-moo-LAAR mus FOL-shten-dikh OWS-guh-fuelt VAIR-dun.",
+      "variations": [
+        {
+          "display": "Das Formular muss heute noch ausgefüllt werden",
+          "cue": "The form has to be filled in today",
+          "changed": "vollständig gives way to a time phrase; the bracket at the end is untouched, because nothing in the middle field can reach it."
+        }
+      ],
+      "mistake": {
+        "display": "Das Formular muss vollständig werden ausgefüllt",
+        "why": "The participle comes first and werden closes the sentence. Reversing them is the English order — must be filled — carried straight across."
+      },
+      "usage": "Reading the small print above a counter.",
+      "register": "formal",
+      "mnemonic": "Modal second, participle next to last, werden last of all."
+    },
+    {
+      "id": "L4-M7-S04",
+      "display": "Die Tür wird um acht geschlossen",
+      "cue": "The door is closed at eight",
+      "literal": "The door becomes at eight closed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geschlossen",
+            "cue": "closed, shut",
+            "tag": "delta",
+            "forms": ["geschlossen"],
+            "note": "The participle of L4-M1's schließen. With wird it is the closing; with ist it is the shut state — one word, two aspects."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English is closed says both things at once. wird geschlossen is somebody closing it at eight; ist geschlossen is it already being shut. The auxiliary is the whole difference.",
+      "sound": "dee TUER virt oom akht guh-SHLOS-un.",
+      "variations": [
+        {
+          "display": "Die Tür ist schon geschlossen",
+          "cue": "The door is already shut",
+          "changed": "ist for wird: the state, not the event. Nothing is happening in this one — the door is simply shut."
+        }
+      ],
+      "mistake": {
+        "display": "Die Tür ist um acht geschlossen",
+        "why": "With a clock time you are naming an event, so the auxiliary is wird. ist um acht geschlossen says the state holds at eight, which is not what a notice means."
+      },
+      "usage": "Reading opening hours on a door, and knowing which kind of eight o'clock it is.",
+      "register": "formal",
+      "mnemonic": "wird is the hand on the door; ist is the door already shut."
+    },
+    {
+      "id": "L4-M7-S05",
+      "display": "Der Schalter ist von neun bis zehn geöffnet",
+      "cue": "The counter is open from nine until ten",
+      "literal": "The counter is from nine until ten opened",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Schalter",
+            "cue": "counter, service window",
+            "tag": "free",
+            "forms": ["Schalter", "Schaltern"],
+            "note": "Masculine: der Schalter, and the plural is the same word. It is the window at a station, a bank or an office."
+          },
+          {
+            "display": "geöffnet",
+            "cue": "open (as a state)",
+            "tag": "delta",
+            "forms": ["geöffnet"],
+            "note": "The participle of L4-M1's öffnen, and with ist it is the state a sign reports: ist geöffnet, ist geschlossen."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "von … bis here is the clock, not the agent von of rule 4. Between two times it means from, and nobody is doing anything to the counter.",
+      "sound": "dair SHAL-ter ist fon noyn bis TSAYN guh-URF-net.",
+      "variations": [
+        {
+          "display": "Der Schalter wird um zehn geschlossen",
+          "cue": "The counter is closed at ten",
+          "changed": "The state becomes the event: ist geöffnet reports how things stand, wird geschlossen reports what happens at ten."
+        }
+      ],
+      "mistake": {
+        "display": "Der Schalter wird von neun bis zehn geöffnet",
+        "why": "wird geöffnet is the moment somebody opens it, so it cannot last from nine to ten. A stretch of time needs the state: ist geöffnet."
+      },
+      "usage": "Working out from a sign whether you can still be served.",
+      "register": "formal",
+      "mnemonic": "A stretch of time takes ist; a point in time takes wird."
+    },
+    {
+      "id": "L4-M7-S06",
+      "display": "Der Kollege sagt, er sei heute nicht im Büro",
+      "cue": "The colleague says he is not in the office today",
+      "literal": "The colleague says, he be today not in-the office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sei",
+            "cue": "is (reported: he is said to be)",
+            "tag": "delta",
+            "forms": ["sei", "seien"],
+            "note": "Konjunktiv I of sein, and the one form of the mood the index can give this course. Plural seien. It reports without vouching."
+          }
+        ],
+        "rules": [6]
+      },
+      "trap": "sei is not a mistake for ist and not the wäre of L3-M4. It says only that somebody else said it, and takes no position on whether it is true.",
+      "sound": "dair kol-AY-guh zakt, air zy HOY-tuh nikht im bue-ROH.",
+      "variations": [
+        {
+          "display": "Der Kollege sagt, dass er heute nicht im Büro ist",
+          "cue": "The colleague says that he is not in the office today",
+          "changed": "The spoken version: dass and the plain indicative, which is what L3-M5 taught and what people actually say."
+        }
+      ],
+      "mistake": {
+        "display": "Der Kollege sagt, er wäre heute nicht im Büro",
+        "why": "wäre is Konjunktiv II and carries doubt — it hints you do not believe him. Konjunktiv I only marks the words as his."
+      },
+      "usage": "Reading minutes, a newspaper, or a letter that passes on what somebody claimed.",
+      "register": "formal",
+      "mnemonic": "sei hands the sentence back to whoever said it."
+    },
+    {
+      "id": "L4-M7-S07",
+      "display": "Wir bitten um Ihr Verständnis",
+      "cue": "We ask for your understanding",
+      "literal": "We ask around your understanding",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bitten",
+            "cue": "to ask for, to request",
+            "tag": "interference",
+            "forms": ["bitten", "bittet", "gebeten"],
+            "note": "Always with um for the thing asked for: bitten um Verständnis, um einen Termin. Never für, and never a bare accusative."
+          },
+          {
+            "display": "Verständnis",
+            "cue": "understanding, forbearance",
+            "tag": "free",
+            "forms": ["Verständnis"],
+            "note": "Neuter: das Verständnis. Not comprehension of a fact — it is the patience you are being asked for."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "English asks FOR something and German asks UM it. für is the trap here precisely because it is the word that looks like for.",
+      "sound": "veer BIT-un oom eer fair-SHTENT-nis.",
+      "variations": [
+        {
+          "display": "Wir bitten um einen Moment Zeit",
+          "cue": "We ask for a moment of your time",
+          "changed": "The same frame with a different object; um is what does not move, whatever comes after it."
+        }
+      ],
+      "mistake": {
+        "display": "Wir bitten für Ihr Verständnis",
+        "why": "bitten governs um and only um. für is the English for wearing German spelling, and this phrase is fixed enough that the slip is heard immediately."
+      },
+      "usage": "The last line of a notice apologising for a delay or a closure.",
+      "register": "formal",
+      "mnemonic": "bitten always goes around: bitten um."
+    },
+    {
+      "id": "L4-M7-S08",
+      "display": "Ihr Ausweis wurde durch das Amt geprüft",
+      "cue": "Your identity document was checked by the authority",
+      "literal": "Your identity-card became through the office checked",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ausweis",
+            "cue": "identity document, ID card",
+            "tag": "free",
+            "forms": ["Ausweis", "Ausweise"],
+            "note": "Masculine: der Ausweis. The card you are asked for at a counter, not a passport — that is der Reisepass."
+          },
+          {
+            "display": "durch",
+            "cue": "by (a means or an office), through",
+            "tag": "delta",
+            "forms": ["durch"],
+            "note": "Takes the accusative, always. In a passive it names the means or the agency; a person takes von instead."
+          },
+          {
+            "display": "geprüft",
+            "cue": "checked, examined",
+            "tag": "free",
+            "forms": ["geprüft", "prüfen"],
+            "note": "The verb an office uses about a document. prüfen is the plain infinitive; geprüft is what a passive reports."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "English by covers both agents. German makes you decide: von for a person who did it, durch for the office or the means it went through.",
+      "sound": "eer OWS-vys VOOR-duh doorkh das amt guh-PRUEFT.",
+      "variations": [
+        {
+          "display": "Ihr Ausweis wurde von einer Kollegin geprüft",
+          "cue": "Your identity document was checked by a colleague",
+          "changed": "durch das Amt becomes von einer Kollegin: a named person takes von, and von takes the dative."
+        }
+      ],
+      "mistake": {
+        "display": "Ihr Ausweis wurde durch dem Amt geprüft",
+        "why": "durch is accusative without exception: durch das Amt. dem is the dative that von would take, borrowed onto the wrong preposition."
+      },
+      "usage": "Reading back what an office has already done with your paperwork.",
+      "register": "formal",
+      "mnemonic": "von for a face, durch for a machine or an office."
+    },
+    {
+      "id": "L4-M7-S09",
+      "display": "Die nächste Kundin wird bitte am Schalter zwei bedient",
+      "cue": "The next customer will please be served at counter two",
+      "literal": "The next customer becomes please at-the counter two served",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nächste",
+            "cue": "next",
+            "tag": "free",
+            "forms": ["nächste", "nächsten"],
+            "note": "An adjective, so it takes endings: die nächste Kundin, am nächsten Tag. In a queue it is what a counter calls out."
+          },
+          {
+            "display": "Kundin",
+            "cue": "customer (female)",
+            "tag": "free",
+            "forms": ["Kundin", "Kunde", "Kunden"],
+            "note": "Feminine in -in from der Kunde, exactly as Kollegin comes from Kollege. A counter says whichever one is standing there."
+          },
+          {
+            "display": "bedient",
+            "cue": "served, attended to",
+            "tag": "free",
+            "forms": ["bedient", "bedienen"],
+            "note": "What a counter or a waiter does to a person: jemanden bedienen. In the passive it is what happens to you."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "bitte inside a passive announcement is not a please to you personally. It softens an instruction addressed to nobody, which is how this register gives orders.",
+      "sound": "dee NAYKH-stuh KOON-din virt BIT-uh am SHAL-ter tsvy buh-DEENT.",
+      "variations": [
+        {
+          "display": "Der nächste Kunde wird am Schalter drei bedient",
+          "cue": "The next customer is served at counter three",
+          "changed": "Kundin becomes Kunde, so the article changes with it: die nächste Kundin against der nächste Kunde."
+        }
+      ],
+      "mistake": {
+        "display": "Die nächste Kundin ist bitte am Schalter zwei bedient",
+        "why": "This is an instruction about to happen, so it takes wird. ist bedient would report a state — that she has already been served."
+      },
+      "usage": "Hearing your turn called in a bank or an office.",
+      "register": "formal",
+      "mnemonic": "The counter never says you; it says the next customer."
+    },
+    {
+      "id": "L4-M7-S10",
+      "display": "Wir möchten Ihnen mitteilen, dass Ihre Anmeldung erhalten wurde",
+      "cue": "We would like to inform you that your registration has been received",
+      "literal": "We would-like you inform, that your registration received became",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mitteilen",
+            "cue": "to inform, to notify",
+            "tag": "free",
+            "forms": ["mitteilen", "teilt", "mitgeteilt"],
+            "note": "Separable: Wir teilen Ihnen mit … The person told goes in the dative — Ihnen — and the news follows in a dass clause."
+          },
+          {
+            "display": "Anmeldung",
+            "cue": "registration, booking",
+            "tag": "free",
+            "forms": ["Anmeldung", "anmelden"],
+            "note": "Feminine: die Anmeldung. It is both the act of registering and the desk you do it at, which is why signs use it alone."
+          },
+          {
+            "display": "erhalten",
+            "cue": "to receive",
+            "tag": "free",
+            "forms": ["erhalten", "erhält"],
+            "note": "The formal bekommen, and its participle is the same word as its infinitive — erhalten, with no ge- at all."
+          }
+        ],
+        "rules": [1, 5]
+      },
+      "trap": "erhalten looks like a present tense at the end of this sentence. It is the participle: a verb in er- takes no ge-, so the two forms are spelled alike.",
+      "sound": "veer MURKH-tun EE-nun MIT-ty-lun, das EE-ruh AN-mel-doong air-HAL-tun VOOR-duh.",
+      "variations": [
+        {
+          "display": "Das Amt teilt Ihnen mit, dass Ihr Antrag bearbeitet wurde",
+          "cue": "The authority informs you that your application has been processed",
+          "changed": "The modal drops away, so mitteilen splits: teilt second, mit at the end of its clause."
+        }
+      ],
+      "mistake": {
+        "display": "Wir möchten Ihnen mitteilen, dass Ihre Anmeldung geerhalten wurde",
+        "why": "A verb beginning with an unstressed prefix — er-, be-, ver- — builds no ge-. The participle of erhalten is erhalten."
+      },
+      "usage": "The opening line of a letter confirming that something of yours arrived.",
+      "register": "formal",
+      "mnemonic": "erhalten receives twice: once as an infinitive, once as a participle."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M7-C01",
+      "display": "Achtung am Gleis drei: Der Zug nach München hat Verspätung",
+      "cue": "Attention on platform three: the train to Munich is delayed"
+    },
+    {
+      "id": "L4-M7-C02",
+      "display": "Der Antrag wurde gestern bearbeitet",
+      "cue": "The application was processed yesterday"
+    },
+    {
+      "id": "L4-M7-C03",
+      "display": "Das Formular muss vollständig ausgefüllt werden",
+      "cue": "The form must be filled in completely"
+    },
+    {
+      "id": "L4-M7-C04",
+      "display": "Die Tür wird um acht geschlossen",
+      "cue": "The door is closed at eight"
+    },
+    {
+      "id": "L4-M7-C05",
+      "display": "Der Schalter ist von neun bis zehn geöffnet",
+      "cue": "The counter is open from nine until ten"
+    },
+    {
+      "id": "L4-M7-C06",
+      "display": "Der Kollege sagt, er sei heute nicht im Büro",
+      "cue": "The colleague says he is not in the office today"
+    },
+    {
+      "id": "L4-M7-C07",
+      "display": "Wir bitten um Ihr Verständnis",
+      "cue": "We ask for your understanding"
+    },
+    {
+      "id": "L4-M7-C08",
+      "display": "Ihr Ausweis wurde durch das Amt geprüft",
+      "cue": "Your identity document was checked by the authority"
+    },
+    {
+      "id": "L4-M7-C09",
+      "display": "Die nächste Kundin wird bitte am Schalter zwei bedient",
+      "cue": "The next customer will please be served at counter two"
+    },
+    {
+      "id": "L4-M7-C10",
+      "display": "Wir möchten Ihnen mitteilen, dass Ihre Anmeldung erhalten wurde",
+      "cue": "We would like to inform you that your registration has been received"
+    },
+    {
+      "id": "L4-M7-C11",
+      "display": "Bitte beachten Sie, dass der Schalter heute geschlossen ist",
+      "cue": "Please note that the counter is closed today"
+    },
+    {
+      "id": "L4-M7-C12",
+      "display": "Der Antrag ist schon bearbeitet worden",
+      "cue": "The application has already been processed"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 3 }
+}

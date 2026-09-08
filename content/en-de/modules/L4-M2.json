@@ -1,0 +1,590 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": [
+    "L4-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "present",
+      "Perfekt"
+    ],
+    "allowedPatterns": [
+      "Das liegt daran + , + dass + <verb-final>",
+      "Ich mache das + , + damit + <verb-final>",
+      "Es hat geregnet + , + deswegen + V-2 + wir",
+      "Ich habe keine Zeit + , + sodass + <verb-final>",
+      "Ich habe davon gehört + , + aber + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE DA-COMPOUND. English refers back with a preposition plus it or that — with it, for that, about it. German cannot do that for a THING at all: it fuses the two words instead — damit, dafür, davon, dazu, darum, daran, darauf. An r slides in wherever the preposition starts with a vowel (da + an = daran, da + auf = darauf) and nowhere else. mit es and für das are not accented German; they are not German."
+    },
+    {
+      "tag": "delta",
+      "text": "A da-compound stands in for a THING, never for a person. Ich warte auf den Bus becomes Ich warte darauf, but Ich warte auf meinen Chef stays auf ihn. The verbs with a fixed preposition are L3-M6's and unchanged; what is new here is that the object behind that preposition can now be a pronoun at all."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ANTICIPATING da-WORD is what holds a paragraph together. When the object of the preposition is a whole clause, German puts the da-word in the main clause as a placeholder and hangs the clause behind it: Das liegt daran, dass es geregnet hat. The dass-clause is verb-final exactly as L1-M9 taught it; the placeholder is the only new part."
+    },
+    {
+      "tag": "delta",
+      "text": "damit is ONE INDEX KEY WITH TWO READINGS. As a pronominal adverb it means with it. As a conjunction it means so that and sends its verb to the end — Ich mache das, damit alle pünktlich kommen — and it is what German uses when the two halves have DIFFERENT subjects, where um … zu (L3-M1) needs the same subject twice. darum has the same double life."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CONSEQUENCE ADVERBS all FRONT and therefore INVERT, exactly as L1-M9's deshalb does: deswegen, darum and daher are followed straight away by the verb, with the subject behind it. English therefore, so and hence move nothing, which is why this is the error that survives longest. sodass is the other half of the job — one word, never so dass — and carries the result inside a clause of its own, verb last."
+    },
+    {
+      "tag": "free",
+      "text": "What stays out, and where it lives. weil, denn, dass and deshalb are L1-M9's, with their word-order laws already stated there. wegen is a genitive preposition and L3-M8's, so because of it is deswegen here. also means therefore and never English also, which is auch — L1-M10 owns both words and already says so. And causal da — Da es regnet, bleiben wir zu Hause — is the written twin of weil: the index gives da to L2-M7's presence adverb, so this module names it and never writes it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "Das liegt daran, dass es gestern geregnet hat",
+      "cue": "That is because it rained yesterday",
+      "literal": "that lies on-it, that it yesterday rained has",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "liegt daran",
+            "cue": "is because of, comes down to",
+            "tag": "delta",
+            "forms": [
+              "liegt daran"
+            ],
+            "note": "Das liegt daran, dass … is the everyday way to give a reason without weil. It is one surface: liegt on its own is a different word doing a different job."
+          },
+          {
+            "display": "regnen",
+            "cue": "to rain",
+            "tag": "free",
+            "forms": [
+              "regnen",
+              "regnet",
+              "geregnet"
+            ],
+            "note": "regnen only ever takes es as its subject: es regnet, es hat geregnet. There is nothing else it can be about."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "English says that is because and stops. German needs the placeholder daran in front of the clause: Das ist, dass … is not a sentence.",
+      "sound": "das leekt da-RAN, das es GES-tern guh-RAYG-nut hat.",
+      "variations": [
+        {
+          "display": "Das liegt daran, dass ich keine Zeit habe",
+          "cue": "That is because I have no time",
+          "changed": "A different reason fills the dass-clause; the placeholder does not move."
+        }
+      ],
+      "mistake": {
+        "display": "Das liegt, dass es gestern geregnet hat",
+        "why": "liegen needs its an. daran is what the dass-clause is attached to, and dropping it leaves the clause hanging off nothing."
+      },
+      "usage": "Explaining a delay, a cost or a refusal without sounding blunt.",
+      "register": "neutral",
+      "mnemonic": "The da-word holds the door open for the clause behind it."
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "Ich mache das, damit alle pünktlich kommen",
+      "cue": "I do that so that everyone arrives on time",
+      "literal": "I do that, so-that all punctually come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "damit",
+            "cue": "so that; with it",
+            "tag": "delta",
+            "forms": [
+              "damit"
+            ],
+            "note": "Two readings, one word. As a conjunction damit means so that and sends the verb to the end; as a da-compound it means with it."
+          },
+          {
+            "display": "pünktlich",
+            "cue": "punctual, on time",
+            "tag": "free",
+            "forms": [
+              "pünktlich"
+            ],
+            "note": "pünktlich is on time for an event, not a character trait: Der Zug ist pünktlich. It never takes an ending in this position."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "um … zu (L3-M1) needs the same subject in both halves. The moment the second half has a subject of its own, only damit will do.",
+      "sound": "ikh MAKH-uh das, da-MIT AL-uh PUENKT-likh KOM-un.",
+      "variations": [
+        {
+          "display": "Ich mache das, damit wir pünktlich kommen",
+          "cue": "I do that so that we arrive on time",
+          "changed": "The second subject changes; the verb still lands at the end of the clause."
+        }
+      ],
+      "mistake": {
+        "display": "Ich mache das, damit alle kommen pünktlich",
+        "why": "damit is a subordinating conjunction, so its verb goes to the very end: damit alle pünktlich kommen."
+      },
+      "usage": "Justifying an arrangement to somebody it affects.",
+      "register": "neutral",
+      "mnemonic": "damit points at a purpose and parks the verb at the far end."
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "Es hat geregnet, deswegen bleiben wir heute zu Hause",
+      "cue": "It rained, so we are staying at home today",
+      "literal": "it has rained, therefore stay we today at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deswegen",
+            "cue": "therefore, that is why",
+            "tag": "delta",
+            "forms": [
+              "deswegen"
+            ],
+            "note": "deswegen fronts its clause and the verb comes straight after it: deswegen bleiben wir. It is L1-M9's deshalb with no difference in meaning."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "English therefore changes nothing about the word order. deswegen takes first position, so the verb must take second and the subject moves behind it.",
+      "sound": "es hat guh-RAYG-nut, DES-vay-gun BLY-bun veer HOY-tuh tsoo HOW-zuh.",
+      "variations": [
+        {
+          "display": "Es hat geregnet, deswegen bleiben wir heute hier",
+          "cue": "It rained, so we are staying here today",
+          "changed": "The place changes; the inversion after deswegen does not."
+        }
+      ],
+      "mistake": {
+        "display": "Es hat geregnet, deswegen wir bleiben heute zu Hause",
+        "why": "The subject cannot sit between deswegen and the verb. First position is deswegen's, so bleiben is second and wir third."
+      },
+      "usage": "Announcing a decision and its cause in one breath.",
+      "register": "neutral",
+      "mnemonic": "A consequence word takes the first seat, so the verb takes the second."
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "Ich habe keine Zeit, sodass ich nicht kommen kann",
+      "cue": "I have no time, so that I cannot come",
+      "literal": "I have no time, so-that I not come can",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sodass",
+            "cue": "so that (as a result)",
+            "tag": "delta",
+            "forms": [
+              "sodass"
+            ],
+            "note": "One word, never so dass: written apart, so would be read as L2-M9's comparison word. sodass sends its own verb to the end."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "sodass reports a RESULT that followed; damit states a PURPOSE that was intended. Swapping them turns an accident into a plan.",
+      "sound": "ikh HAH-buh KY-nuh tsite, zo-DAS ikh nikht KOM-un kan.",
+      "variations": [
+        {
+          "display": "Er hat keine Zeit, sodass er nicht kommen kann",
+          "cue": "He has no time, so that he cannot come",
+          "changed": "A different subject on both sides; the verb still ends the clause."
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe keine Zeit, so dass ich nicht kommen kann",
+        "why": "Split into two words the line still reads, but so is a different word (L2-M9's as … as). This conjunction is the single token sodass."
+      },
+      "usage": "Explaining a consequence you did not choose.",
+      "register": "neutral",
+      "mnemonic": "One word, one result, verb at the end."
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "Ich habe davon gehört, aber ich weiß nichts",
+      "cue": "I have heard about it, but I know nothing",
+      "literal": "I have of-it heard, but I know nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "davon",
+            "cue": "about it, of it",
+            "tag": "delta",
+            "forms": [
+              "davon"
+            ],
+            "note": "von + es cannot be said, so German fuses them into davon. No r appears, because von begins with a consonant."
+          },
+          {
+            "display": "hören",
+            "cue": "to hear",
+            "tag": "free",
+            "forms": [
+              "hören",
+              "hört",
+              "gehört"
+            ],
+            "note": "von etwas hören is to hear about something, so the pronoun form is davon gehört. gehört is its Perfekt participle."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English keeps the two words apart — heard about it. German cannot: von es does not exist, and davon is the only form there is.",
+      "sound": "ikh HAH-buh da-FON guh-HURT, AH-buh ikh vise nikhts.",
+      "variations": [
+        {
+          "display": "Ich habe davon gehört, aber ich habe keine Zeit",
+          "cue": "I have heard about it, but I have no time",
+          "changed": "The second half changes; davon still points back at the same thing."
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe von es gehört",
+        "why": "von es is not German. A preposition with a thing-pronoun behind it always fuses: davon."
+      },
+      "usage": "Acknowledging news without committing to it.",
+      "register": "neutral",
+      "mnemonic": "Preposition plus it is always one word."
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "Wir warten schon lange darauf, und wir denken oft daran",
+      "cue": "We have been waiting for it a long time, and we often think about it",
+      "literal": "we wait already long on-it, and we think often on-it",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "darauf",
+            "cue": "for it, on it",
+            "tag": "delta",
+            "forms": [
+              "darauf"
+            ],
+            "note": "auf begins with a vowel, so an r slides in: da + auf = darauf. auf etwas warten becomes darauf warten."
+          },
+          {
+            "display": "daran",
+            "cue": "about it, of it",
+            "tag": "delta",
+            "forms": [
+              "daran"
+            ],
+            "note": "da + an = daran, with the same r. an etwas denken becomes daran denken: the verb keeps the preposition it always had (L3-M6)."
+          },
+          {
+            "display": "lange",
+            "cue": "a long time",
+            "tag": "free",
+            "forms": [
+              "lange"
+            ],
+            "note": "lange is a stretch of time, not a length: schon lange means for a long time already. The adjective lang describes a thing instead."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "For a person the fusion is forbidden: auf ihn warten, never darauf. A da-compound is only ever a thing.",
+      "sound": "veer VAR-tun shone LANG-uh da-ROWF, oont veer DENK-un oft da-RAN.",
+      "variations": [
+        {
+          "display": "Wir warten schon lange darauf",
+          "cue": "We have been waiting for it a long time",
+          "changed": "The second half drops away; the da-compound still closes the line."
+        }
+      ],
+      "mistake": {
+        "display": "Wir warten schon lange auf es",
+        "why": "auf es is impossible. A thing-object behind a preposition becomes a da-compound: darauf."
+      },
+      "usage": "Chasing something politely, without naming it again.",
+      "register": "neutral",
+      "mnemonic": "A vowel after da, and an r comes along to join them."
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "Dafür habe ich leider keinen Platz",
+      "cue": "Unfortunately I have no room for that",
+      "literal": "for-that have I unfortunately no room",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dafür",
+            "cue": "for that, for it",
+            "tag": "delta",
+            "forms": [
+              "dafür"
+            ],
+            "note": "für begins with a consonant, so no r is added: da + für = dafür. Fronted here, it takes first position and the verb follows it."
+          },
+          {
+            "display": "Platz",
+            "cue": "room, space; a seat",
+            "tag": "free",
+            "forms": [
+              "Platz"
+            ],
+            "note": "der Platz is both the space a thing needs and a seat to sit on: Ist hier noch ein Platz?"
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "A fronted da-compound is a first position like any other, so the verb comes second: Dafür habe ich, not Dafür ich habe.",
+      "sound": "da-FUER HAH-buh ikh LY-duh KY-nun plats.",
+      "variations": [
+        {
+          "display": "Dafür habe ich leider keine Zeit",
+          "cue": "Unfortunately I have no time for that",
+          "changed": "A different thing is missing; dafür still opens the line."
+        }
+      ],
+      "mistake": {
+        "display": "Dafür ich habe leider keinen Platz",
+        "why": "dafür fills position one, so habe must be second and ich third."
+      },
+      "usage": "Turning something down without repeating what it was.",
+      "register": "neutral",
+      "mnemonic": "Whatever comes first, the verb comes second."
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "Was ist gestern passiert? Ich habe nichts davon gehört",
+      "cue": "What happened yesterday? I have heard nothing about it",
+      "literal": "what is yesterday happened? I have nothing of-it heard",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "passiert",
+            "cue": "happened",
+            "tag": "interference",
+            "forms": [
+              "passiert",
+              "passieren"
+            ],
+            "note": "passieren takes sein in the Perfekt: Was ist passiert? hat passiert is wrong, however English it sounds."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "passieren is a sein-verb, so the auxiliary is ist. An anglophone reaches for hat because English says has happened.",
+      "sound": "vas ist GES-tern pa-SEERT? ikh HAH-buh nikhts da-FON guh-HURT.",
+      "variations": [
+        {
+          "display": "Was ist heute passiert?",
+          "cue": "What happened today?",
+          "changed": "The time word changes; the sein auxiliary does not."
+        }
+      ],
+      "mistake": {
+        "display": "Was hat gestern passiert?",
+        "why": "passieren forms its Perfekt with sein, so the auxiliary is ist: Was ist gestern passiert?"
+      },
+      "usage": "Asking for news you have only half heard about.",
+      "register": "neutral",
+      "mnemonic": "Things that simply happen travel with sein."
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "Das war die Folge davon, und dazu habe ich eine Frage",
+      "cue": "That was the consequence of it, and I have a question about that",
+      "literal": "that was the consequence of-it, and to-that have I a question",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Folge",
+            "cue": "consequence, result",
+            "tag": "free",
+            "forms": [
+              "Folge",
+              "Folgen"
+            ],
+            "note": "die Folge is what follows from something: die Folge davon. In the plural, Folgen is also the episodes of a series."
+          },
+          {
+            "display": "dazu",
+            "cue": "about that, to that",
+            "tag": "delta",
+            "forms": [
+              "dazu"
+            ],
+            "note": "zu begins with a consonant, so no r: da + zu = dazu. eine Frage dazu is a question about it."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "davon and dazu are not interchangeable. The preposition is chosen by the word in front of it: die Folge von etwas, but eine Frage zu etwas.",
+      "sound": "das var dee FOL-guh da-FON, oont da-TSOO HAH-buh ikh EYE-nuh FRAH-guh.",
+      "variations": [
+        {
+          "display": "Das war die Folge davon, und darum habe ich eine Frage",
+          "cue": "That was the consequence of it, and that is why I have a question",
+          "changed": "dazu gives way to darum, and about it turns into that is why."
+        }
+      ],
+      "mistake": {
+        "display": "Das war die Folge von es",
+        "why": "von es cannot be said. The thing-pronoun fuses with its preposition: davon."
+      },
+      "usage": "Following up on something that has already been explained.",
+      "register": "neutral",
+      "mnemonic": "The preposition comes from the noun in front, and da from the thing behind."
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "Ich habe keine Zeit, darum komme ich morgen nicht",
+      "cue": "I have no time, so I am not coming tomorrow",
+      "literal": "I have no time, therefore come I tomorrow not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "darum",
+            "cue": "that is why, therefore",
+            "tag": "delta",
+            "forms": [
+              "darum"
+            ],
+            "note": "darum has the same two lives as damit: therefore as a consequence word, around it as a da-compound. Fronted, it inverts."
+          },
+          {
+            "display": "daher",
+            "cue": "hence, that is why",
+            "tag": "delta",
+            "forms": [
+              "daher"
+            ],
+            "note": "daher is deswegen and darum in a slightly more written register, and it inverts exactly as they do: daher komme ich nicht."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "Three words for one job — deswegen, darum and daher — and all three invert. English so, therefore and hence do not, which is why the verb keeps drifting back to third place.",
+      "sound": "ikh HAH-buh KY-nuh tsite, da-ROOM KOM-uh ikh MOR-gun nikht.",
+      "variations": [
+        {
+          "display": "Ich habe keine Zeit, daher komme ich morgen nicht",
+          "cue": "I have no time, hence I am not coming tomorrow",
+          "changed": "daher takes darum's place; the inversion behind it is identical."
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe keine Zeit, darum ich komme morgen nicht",
+        "why": "darum takes the first position, so komme is second and ich follows it: darum komme ich."
+      },
+      "usage": "Cancelling, with the reason first and the consequence second.",
+      "register": "neutral",
+      "mnemonic": "deswegen, darum, daher — three doors, one verb straight after."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "Das liegt daran, dass es gestern geregnet hat",
+      "cue": "That is because it rained yesterday"
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "Ich mache das, damit alle pünktlich kommen",
+      "cue": "I do that so that everyone arrives on time"
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "Es hat geregnet, deswegen bleiben wir heute zu Hause",
+      "cue": "It rained, so we are staying at home today"
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "Ich habe keine Zeit, sodass ich nicht kommen kann",
+      "cue": "I have no time, so that I cannot come"
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "Ich habe davon gehört, aber ich weiß nichts",
+      "cue": "I have heard about it, but I know nothing"
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "Wir warten schon lange darauf",
+      "cue": "We have been waiting for it a long time"
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "Dafür habe ich leider keinen Platz",
+      "cue": "Unfortunately I have no room for that"
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "Was ist gestern passiert?",
+      "cue": "What happened yesterday?"
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "Das war die Folge davon",
+      "cue": "That was the consequence of it"
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "Ich habe keine Zeit, darum komme ich morgen nicht",
+      "cue": "I have no time, so I am not coming tomorrow"
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "Wir denken oft daran",
+      "cue": "We often think about it"
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "Daher habe ich eine Frage dazu",
+      "cue": "That is why I have a question about it"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,720 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M9",
+  "title": "Places and journeys",
+  "job": "A trip told in full, with directions inside it",
+  "prerequisites": [
+    "L4-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_past",
+      "present_simple",
+      "past_continuous"
+    ],
+    "allowedPatterns": [
+      "We walked along + <N> + and past + <N>",
+      "We got there at + <time>",
+      "It took us + <duration> + to reach + <N>",
+      "We arrived at + <N> + , and then + <clause>",
+      "<clause> + on the way + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "अंग्रेज़ी रास्ते का आकार preposition में रखती है और क्रिया को सादा छोड़ देती है: walk along the river, walk past the school, go through the market, walk towards the station. हिंदी यह आकार क्रिया में रखती है — पार करना, आगे बढ़ना, भीतर घुसना — इसलिए एक अंग्रेज़ी क्रिया और छह preposition मिलकर छह हिंदी क्रियाओं का काम करते हैं."
+    },
+    {
+      "tag": "delta",
+      "text": "इसका सीधा नतीजा यह है कि preposition सजावट नहीं है और उसे न छोड़ा जा सकता है न अंदाज़े से चुना जा सकता है. across, along, past, through, towards, into और up या down — इनमें से हर एक वाक्य का अर्थ बदल देता है."
+    },
+    {
+      "tag": "interference",
+      "text": "पहुँचना के तीन अंग्रेज़ी रूप हैं और तीनों अलग चलते हैं: reach सीधे कर्म लेता है — I reached the station, कभी I reached at the station नहीं; arrive जगह के लिए at और शहर के लिए in लेता है; get हमेशा to लेता है. हिंदी के पहुँचना पर का पर ही वह भटका हुआ at है जो अंग्रेज़ी कान तुरंत पकड़ लेता है."
+    },
+    {
+      "tag": "free",
+      "text": "अकेला there जगह वाला शब्द है — get there, over there. L1-M7 ने there is और there are पूरे जोड़े के रूप में सिखाए थे और अकेली पंक्ति कभी नहीं खोली, इसलिए वह इसी पाठ की है."
+    },
+    {
+      "tag": "free",
+      "text": "यात्रा सुनाने का क्रम दोनों भाषाओं में एक ही है: कहाँ से चले, रास्ते में क्या पड़ा, कितना समय लगा, कब पहुँचे. L2-M4 की पूरी शब्दावली यहाँ जस की तस चलती है — फ़र्क़ सिर्फ़ इतना है कि अब आप रास्ता पूछ नहीं रहे, सुना रहे हैं."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M9-S01",
+      "display": "We set off early and walked along the river.",
+      "cue": "हम सुबह जल्दी चल पड़े और नदी के किनारे-किनारे चले.",
+      "literal": "हम चल पड़े जल्दी और चले साथ वह नदी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "set off",
+            "cue": "चल पड़े",
+            "tag": "free",
+            "forms": [
+              "set off",
+              "sets off"
+            ],
+            "note": "दोनों शब्द साथ चलते हैं. L3-M8 का send off इसी बनावट का है, पर अर्थ अलग."
+          },
+          {
+            "display": "along",
+            "cue": "किनारे-किनारे",
+            "tag": "delta",
+            "forms": [
+              "along"
+            ],
+            "note": "नदी, सड़क या दीवार के साथ-साथ चलना. रास्ते का आकार यही शब्द बताता है, क्रिया नहीं."
+          },
+          {
+            "display": "river",
+            "cue": "नदी",
+            "tag": "free",
+            "forms": [
+              "river",
+              "rivers"
+            ],
+            "note": "इसके साथ along और across दोनों चलते हैं, और दोनों का अर्थ बिलकुल अलग है."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "walked along on the river मत लिखिए. along अकेला काफ़ी है.",
+      "sound": "set off बोलचाल में जुड़कर सेट्-ऑफ़् हो जाता है.",
+      "variations": [
+        {
+          "display": "We set off early.",
+          "cue": "हम सुबह जल्दी चल पड़े.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "We walked along the river.",
+          "cue": "हम नदी के किनारे-किनारे चले.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "We set off and walked along the road.",
+          "cue": "हम चल पड़े और सड़क के किनारे-किनारे चले.",
+          "changed": "नदी की जगह सड़क"
+        }
+      ],
+      "mistake": {
+        "display": "We set off early and walked along on the river",
+        "why": "along अकेला काफ़ी है; उसके आगे on नहीं आता."
+      },
+      "usage": "किसी सैर या यात्रा की शुरुआत बताते समय.",
+      "register": "neutral",
+      "mnemonic": "along = साथ-साथ, किनारे-किनारे."
+    },
+    {
+      "id": "L4-M9-S02",
+      "display": "We walked past the school and then crossed the bridge.",
+      "cue": "हम स्कूल के पास से गुज़रे और फिर पुल पार किया.",
+      "literal": "हम चले बग़ल वह स्कूल और फिर पार किया वह पुल.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "past",
+            "cue": "बग़ल से आगे",
+            "tag": "delta",
+            "forms": [
+              "past"
+            ],
+            "note": "walk past the school का मतलब स्कूल के पास से गुज़र जाना है, वहाँ रुकना नहीं."
+          },
+          {
+            "display": "cross",
+            "cue": "पार करना",
+            "tag": "free",
+            "forms": [
+              "cross",
+              "crossed",
+              "crosses"
+            ],
+            "note": "crossing (L2-M4) इसी से बना है — वह जगह जहाँ सड़क पार की जाती है."
+          },
+          {
+            "display": "bridge",
+            "cue": "पुल",
+            "tag": "free",
+            "forms": [
+              "bridge",
+              "bridges"
+            ],
+            "note": "इसके साथ across और over दोनों चलते हैं; इस पाठ में across खुलता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "walk past को walk near मत समझिए. past में गुज़र जाना है, near में सिर्फ़ पास होना.",
+      "sound": "past का t आख़िर में लगभग गिर जाता है — पास्ट्.",
+      "variations": [
+        {
+          "display": "We walked past the school.",
+          "cue": "हम स्कूल के पास से गुज़रे.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "We crossed the bridge.",
+          "cue": "हमने पुल पार किया.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "We walked past the market and then crossed the road.",
+          "cue": "हम बाज़ार के पास से गुज़रे और फिर सड़क पार की.",
+          "changed": "स्कूल की जगह बाज़ार, पुल की जगह सड़क"
+        }
+      ],
+      "mistake": {
+        "display": "We walked pass the school and then crossed the bridge",
+        "why": "यहाँ past चाहिए. pass क्रिया है, past रास्ता बताने वाला शब्द."
+      },
+      "usage": "रास्ते में क्या-क्या पड़ा, यह गिनाते समय.",
+      "register": "neutral",
+      "mnemonic": "past = बग़ल से आगे निकल जाना."
+    },
+    {
+      "id": "L4-M9-S03",
+      "display": "We went through the market and then walked towards the station.",
+      "cue": "हम बाज़ार के बीच से निकले और फिर स्टेशन की तरफ़ चले.",
+      "literal": "हम गए बीच से वह बाज़ार और फिर चले तरफ़ वह स्टेशन.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "through",
+            "cue": "बीच से होकर",
+            "tag": "delta",
+            "forms": [
+              "through"
+            ],
+            "note": "बाज़ार, गली या भीड़ के भीतर से निकलना. across ऊपर से आर-पार है, through भीतर से."
+          },
+          {
+            "display": "towards",
+            "cue": "की तरफ़",
+            "tag": "delta",
+            "forms": [
+              "towards",
+              "toward"
+            ],
+            "note": "दिशा बताता है, पहुँचना नहीं. to पहुँचा देता है, towards सिर्फ़ मुँह मोड़ता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "walked to the station और walked towards the station एक नहीं हैं. towards में पहुँचना शामिल नहीं है.",
+      "sound": "through में gh बिलकुल चुप है — थ्रू.",
+      "variations": [
+        {
+          "display": "We went through the market.",
+          "cue": "हम बाज़ार के बीच से निकले.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "We walked towards the station.",
+          "cue": "हम स्टेशन की तरफ़ चले.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "We went through the market and then walked to the station.",
+          "cue": "हम बाज़ार के बीच से निकले और फिर स्टेशन तक चले.",
+          "changed": "towards की जगह to — अब पहुँच भी गए"
+        }
+      ],
+      "mistake": {
+        "display": "We went from the market and then walked towards the station",
+        "why": "बाज़ार के भीतर से निकले, इसलिए through सही है."
+      },
+      "usage": "यात्रा के बीच का हिस्सा बताते समय.",
+      "register": "neutral",
+      "mnemonic": "through भीतर से, across आर-पार."
+    },
+    {
+      "id": "L4-M9-S04",
+      "display": "I reached the station at eight. My brother arrived at nine.",
+      "cue": "मैं आठ बजे स्टेशन पहुँचा. मेरा भाई नौ बजे पहुँचा.",
+      "literal": "मैं पहुँचा वह स्टेशन पर आठ. मेरा भाई पहुँचा पर नौ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "reach",
+            "cue": "पहुँचना",
+            "tag": "interference",
+            "forms": [
+              "reach",
+              "reached",
+              "reaches"
+            ],
+            "note": "सीधे कर्म लेता है: I reached the station. हिंदी के पर वाला at यहाँ कभी नहीं आता."
+          },
+          {
+            "display": "arrive",
+            "cue": "पहुँचना",
+            "tag": "delta",
+            "forms": [
+              "arrive",
+              "arrived",
+              "arrives"
+            ],
+            "note": "जगह के लिए at और शहर के लिए in: arrived at the station, arrived in Delhi."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "I reached at the station मत लिखिए. यही हिंदी के पर का सबसे साफ़ धोखा है.",
+      "sound": "reached का आख़िरी हिस्सा t जैसा सुनाई देता है — रीच्ट्.",
+      "variations": [
+        {
+          "display": "I reached the station at eight.",
+          "cue": "मैं आठ बजे स्टेशन पहुँचा.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "My brother arrived at nine.",
+          "cue": "मेरा भाई नौ बजे पहुँचा.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "We arrived in Delhi at eight.",
+          "cue": "हम आठ बजे दिल्ली पहुँचे.",
+          "changed": "जगह की जगह शहर, इसलिए at की जगह in"
+        }
+      ],
+      "mistake": {
+        "display": "I reached at the station at eight. My brother arrived at nine",
+        "why": "reach सीधे कर्म लेता है: I reached the station."
+      },
+      "usage": "कब पहुँचे, यह बताते समय.",
+      "register": "neutral",
+      "mnemonic": "reach सीधे, arrive at, get to."
+    },
+    {
+      "id": "L4-M9-S05",
+      "display": "The journey took a long time, but we reached the city.",
+      "cue": "सफ़र में बहुत समय लगा, पर हम शहर पहुँच गए.",
+      "literal": "वह सफ़र लिया एक लंबा समय, पर हम पहुँचे वह शहर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "journey",
+            "cue": "सफ़र",
+            "tag": "free",
+            "forms": [
+              "journey",
+              "journeys"
+            ],
+            "note": "एक तरफ़ का पूरा रास्ता. trip में जाना और लौटना दोनों शामिल होते हैं."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "The journey took long time मत लिखिए; a long time में a ज़रूरी है.",
+      "sound": "journey का पहला हिस्सा भारी है — जर्-नि.",
+      "variations": [
+        {
+          "display": "The journey took a long time.",
+          "cue": "सफ़र में बहुत समय लगा.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "The journey was good, but we were late.",
+          "cue": "सफ़र अच्छा रहा, पर हमें देर हो गई.",
+          "changed": "दूसरा आधा बदला"
+        },
+        {
+          "display": "We reached the city at nine.",
+          "cue": "हम नौ बजे शहर पहुँचे.",
+          "changed": "पहला आधा हट गया"
+        }
+      ],
+      "mistake": {
+        "display": "The journey took long time, but we reached the city",
+        "why": "समय की लंबाई के साथ a आता है: a long time."
+      },
+      "usage": "यात्रा में कितना समय लगा, यह बताते समय.",
+      "register": "neutral",
+      "mnemonic": "trip पूरा चक्कर, journey एक तरफ़ का रास्ता."
+    },
+    {
+      "id": "L4-M9-S06",
+      "display": "On the way we stopped at a shop in the next street.",
+      "cue": "रास्ते में हम अगली गली की एक दुकान पर रुके.",
+      "literal": "पर वह रास्ता हम रुके पर एक दुकान में वह अगली गली.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on the way",
+            "cue": "रास्ते में",
+            "tag": "delta",
+            "forms": [
+              "on the way"
+            ],
+            "note": "तीनों शब्द साथ चलते हैं. अकेला way L4-M1 का है और उससे यह अलग है."
+          },
+          {
+            "display": "street",
+            "cue": "गली",
+            "tag": "free",
+            "forms": [
+              "street",
+              "streets"
+            ],
+            "note": "road से छोटी और दुकानों वाली. पते में यही शब्द आता है."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "On the way को in the way मत बनाइए. in the way का मतलब है रास्ता रोके खड़ा होना.",
+      "sound": "on the way में the दबकर द रह जाता है — ऑन्-द-वेइ.",
+      "variations": [
+        {
+          "display": "On the way we stopped at a shop.",
+          "cue": "रास्ते में हम एक दुकान पर रुके.",
+          "changed": "गली हट गई"
+        },
+        {
+          "display": "We stopped at a shop in the next street.",
+          "cue": "हम अगली गली की एक दुकान पर रुके.",
+          "changed": "on the way हट गया"
+        },
+        {
+          "display": "On the way we bought water.",
+          "cue": "रास्ते में हमने पानी ख़रीदा.",
+          "changed": "रुकने की जगह ख़रीदना"
+        }
+      ],
+      "mistake": {
+        "display": "In the way we stopped at a shop in the next street",
+        "why": "रास्ते में के लिए on the way सही है; in the way का अर्थ रुकावट है."
+      },
+      "usage": "यात्रा के बीच रुकने की बात बताते समय.",
+      "register": "neutral",
+      "mnemonic": "on the way रास्ते में, in the way रास्ते की रुकावट."
+    },
+    {
+      "id": "L4-M9-S07",
+      "display": "We got there at five and went into the office.",
+      "cue": "हम पाँच बजे वहाँ पहुँचे और दफ़्तर के अंदर गए.",
+      "literal": "हम पहुँचे वहाँ पर पाँच और गए अंदर वह दफ़्तर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "there",
+            "cue": "वहाँ",
+            "tag": "free",
+            "forms": [
+              "there",
+              "over there"
+            ],
+            "note": "जगह वाला अकेला there. L1-M7 का there is और there are पूरे जोड़े थे, यह उनसे अलग है."
+          },
+          {
+            "display": "into",
+            "cue": "के अंदर",
+            "tag": "delta",
+            "forms": [
+              "into"
+            ],
+            "note": "बाहर से भीतर जाना. in सिर्फ़ भीतर होना बताता है, into भीतर जाना."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "We reached there मत लिखिए. reach के आगे there नहीं आता; get there सही जोड़ा है.",
+      "sound": "got there में दोनों t जुड़ जाते हैं — गॉट्-देअर्.",
+      "variations": [
+        {
+          "display": "We got there at five.",
+          "cue": "हम पाँच बजे वहाँ पहुँचे.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "We went into the office.",
+          "cue": "हम दफ़्तर के अंदर गए.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "The office is over there.",
+          "cue": "दफ़्तर वहाँ है.",
+          "changed": "there की जगह over there"
+        }
+      ],
+      "mistake": {
+        "display": "We reached there at five and went into the office",
+        "why": "reach के आगे there नहीं आता. We got there सही है."
+      },
+      "usage": "कहाँ और कब पहुँचे, यह बोलचाल में बताते समय.",
+      "register": "informal",
+      "mnemonic": "get there, arrive at, reach the place — तीन रास्ते, एक मंज़िल."
+    },
+    {
+      "id": "L4-M9-S08",
+      "display": "The road goes up to the bridge and then down to the river.",
+      "cue": "सड़क चढ़कर पुल तक जाती है और फिर उतरकर नदी तक.",
+      "literal": "वह सड़क जाती ऊपर को वह पुल और फिर नीचे को वह नदी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "up",
+            "cue": "ऊपर की ओर",
+            "tag": "delta",
+            "forms": [
+              "up"
+            ],
+            "note": "अकेला up रास्ते का शब्द है. get up और wake up पूरे जोड़े हैं और उनसे इसका नाता नहीं."
+          },
+          {
+            "display": "down",
+            "cue": "नीचे की ओर",
+            "tag": "delta",
+            "forms": [
+              "down"
+            ],
+            "note": "up का उल्टा. sit down एक पूरा जोड़ा है और वहाँ down का अर्थ अलग है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "up और down को सिर्फ़ ऊपर-नीचे मत समझिए; सड़क की चढ़ाई और ढलान के लिए भी यही दोनों आते हैं.",
+      "sound": "up और down दोनों छोटे और सीधे हैं — अप्, डाउन्.",
+      "variations": [
+        {
+          "display": "The road goes up to the bridge.",
+          "cue": "सड़क चढ़कर पुल तक जाती है.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "We walked down to the river.",
+          "cue": "हम उतरकर नदी तक चले.",
+          "changed": "सड़क की जगह हम"
+        },
+        {
+          "display": "The road goes down to the river.",
+          "cue": "सड़क उतरकर नदी तक जाती है.",
+          "changed": "पहला आधा हट गया"
+        }
+      ],
+      "mistake": {
+        "display": "The road goes on the bridge and then to the river",
+        "why": "चढ़ाई और ढलान बतानी है, इसलिए up to और down to चाहिए."
+      },
+      "usage": "रास्ते की चढ़ाई और ढलान बताते समय.",
+      "register": "neutral",
+      "mnemonic": "up चढ़ाई, down ढलान."
+    },
+    {
+      "id": "L4-M9-S09",
+      "display": "We were halfway across the bridge when the rain started.",
+      "cue": "हम आधे पुल तक ही पहुँचे थे कि बारिश शुरू हो गई.",
+      "literal": "हम थे आधे रास्ते आर-पार वह पुल जब वह बारिश शुरू हुई.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "halfway",
+            "cue": "आधे रास्ते",
+            "tag": "free",
+            "forms": [
+              "halfway"
+            ],
+            "note": "एक ही शब्द है, दो नहीं. बीच में जगह छोड़ना यहाँ वर्तनी की ग़लती है."
+          },
+          {
+            "display": "across",
+            "cue": "आर-पार",
+            "tag": "delta",
+            "forms": [
+              "across"
+            ],
+            "note": "एक किनारे से दूसरे किनारे तक. across from एक अलग जोड़ा है जिसका अर्थ सामने है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "halfway को half way मत लिखिए; यह एक ही शब्द है.",
+      "sound": "halfway में l चुप है — हाफ़्-वेइ.",
+      "variations": [
+        {
+          "display": "We were halfway across the bridge.",
+          "cue": "हम आधे पुल तक पहुँचे थे.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "We walked across the bridge.",
+          "cue": "हम पुल पार करके चले.",
+          "changed": "halfway हट गया"
+        },
+        {
+          "display": "We were halfway when the rain started.",
+          "cue": "हम आधे रास्ते ही थे कि बारिश शुरू हो गई.",
+          "changed": "पुल हट गया"
+        }
+      ],
+      "mistake": {
+        "display": "We were half way across the bridge when the rain started",
+        "why": "halfway एक ही शब्द है, बीच में जगह नहीं आती."
+      },
+      "usage": "यात्रा के बीच कुछ हो जाने की बात बताते समय.",
+      "register": "neutral",
+      "mnemonic": "halfway = आधे रास्ते, एक ही शब्द."
+    },
+    {
+      "id": "L4-M9-S10",
+      "display": "The trip was good. We waited on the platform for a long time.",
+      "cue": "चक्कर अच्छा रहा. हम प्लेटफ़ॉर्म पर बहुत देर इंतज़ार करते रहे.",
+      "literal": "वह चक्कर था अच्छा. हम रुके पर वह प्लेटफ़ॉर्म के लिए एक लंबा समय.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trip",
+            "cue": "चक्कर",
+            "tag": "free",
+            "forms": [
+              "trip",
+              "trips"
+            ],
+            "note": "जाना और लौटना दोनों. journey सिर्फ़ एक तरफ़ का रास्ता है."
+          },
+          {
+            "display": "platform",
+            "cue": "प्लेटफ़ॉर्म",
+            "tag": "delta",
+            "forms": [
+              "platform",
+              "platforms"
+            ],
+            "note": "इसके साथ on आता है — on the platform, कभी in the platform नहीं."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "in the platform मत लिखिए. प्लेटफ़ॉर्म के साथ on आता है.",
+      "sound": "platform में ज़ोर पहले हिस्से पर है — प्लैट्-फ़ॉर्म्.",
+      "variations": [
+        {
+          "display": "The trip was good.",
+          "cue": "चक्कर अच्छा रहा.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "We waited on the platform.",
+          "cue": "हम प्लेटफ़ॉर्म पर इंतज़ार करते रहे.",
+          "changed": "समय हट गया"
+        },
+        {
+          "display": "The trip to the village was good.",
+          "cue": "गाँव का चक्कर अच्छा रहा.",
+          "changed": "जगह जुड़ी"
+        }
+      ],
+      "mistake": {
+        "display": "The trip was good. We waited in the platform for a long time",
+        "why": "प्लेटफ़ॉर्म के साथ on आता है: on the platform."
+      },
+      "usage": "यात्रा को समेटते समय.",
+      "register": "neutral",
+      "mnemonic": "on the platform — प्लेटफ़ॉर्म पर, अंदर नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M9-C01",
+      "display": "We set off early and walked along the river.",
+      "cue": "हम सुबह जल्दी चल पड़े और नदी के किनारे-किनारे चले."
+    },
+    {
+      "id": "L4-M9-C02",
+      "display": "We walked past the school and then crossed the bridge.",
+      "cue": "हम स्कूल के पास से गुज़रे और फिर पुल पार किया."
+    },
+    {
+      "id": "L4-M9-C03",
+      "display": "We went through the market.",
+      "cue": "हम बाज़ार के बीच से निकले."
+    },
+    {
+      "id": "L4-M9-C04",
+      "display": "I reached the station at eight.",
+      "cue": "मैं आठ बजे स्टेशन पहुँचा."
+    },
+    {
+      "id": "L4-M9-C05",
+      "display": "My brother arrived at nine.",
+      "cue": "मेरा भाई नौ बजे पहुँचा."
+    },
+    {
+      "id": "L4-M9-C06",
+      "display": "The journey took a long time.",
+      "cue": "सफ़र में बहुत समय लगा."
+    },
+    {
+      "id": "L4-M9-C07",
+      "display": "On the way we stopped at a shop.",
+      "cue": "रास्ते में हम एक दुकान पर रुके."
+    },
+    {
+      "id": "L4-M9-C08",
+      "display": "We got there at five.",
+      "cue": "हम पाँच बजे वहाँ पहुँचे."
+    },
+    {
+      "id": "L4-M9-C09",
+      "display": "The road goes up to the bridge.",
+      "cue": "सड़क चढ़कर पुल तक जाती है."
+    },
+    {
+      "id": "L4-M9-C10",
+      "display": "We were halfway across the bridge.",
+      "cue": "हम आधे पुल तक पहुँचे थे."
+    },
+    {
+      "id": "L4-M9-C11",
+      "display": "We waited on the platform for a long time.",
+      "cue": "हम प्लेटफ़ॉर्म पर बहुत देर इंतज़ार करते रहे."
+    },
+    {
+      "id": "L4-M9-C12",
+      "display": "We walked towards the station and went into the office.",
+      "cue": "हम स्टेशन की तरफ़ चले और दफ़्तर के अंदर गए."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M9",
+  "title": "Places and journeys",
+  "job": "A trip told in full, with directions inside it",
+  "prerequisites": ["L4-M1", "L4-M2", "L4-M3", "L4-M4", "L4-M5", "L4-M6", "L4-M7", "L4-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["présent", "passé composé", "imparfait"],
+    "allowedPatterns": [
+      "On est allés + en / au / aux + <place>",
+      "J'y suis allé + <time>",
+      "Il y en a + <quantity>",
+      "De + <place> + jusqu'à + <place>",
+      "<clause> + , + puis on a pris + <transport>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "y STANDS IN FOR A PLACE ALREADY NAMED, AND IT GOES IN FRONT OF THE VERB. On est allés en France. On y est allés en train. English drops the place phrase altogether once it is understood — we went by train — and French will not: something has to fill the slot, and that something is y, before the verb, never after it."
+    },
+    {
+      "tag": "delta",
+      "text": "en STANDS IN FOR A QUANTITY OR A de-PHRASE, IN THE SAME SEAT. Il y en a trois. On en a acheté deux. Where English says three of them or just three, French puts en in front of the verb and leaves the number at the end. Both little words sit to the LEFT of the verb, which is the one habit an English speaker has to build from nothing."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PREPOSITION IS DECIDED BY THE PLACE, NOT BY THE MOTION. en with a feminine country (en France, en Espagne, en Italie), au with a masculine one (au Portugal, au Canada), aux with a plural one (aux États-Unis), à with a city (à Paris). English has one to for all four, so there is nothing to carry across — this is a fact about the noun, learnt with the noun."
+    },
+    {
+      "tag": "interference",
+      "text": "THE SAME en DOES TWO JOBS AND THEY LOOK IDENTICAL. L2-M4 taught en for transport — en bus, en train, en voiture. Rule 2 uses en for a feminine country. So en France is not by France; it is to France. Say it plainly to yourself once and the ambiguity stops being a problem: after a country name it is the place, after a vehicle it is the means."
+    },
+    {
+      "tag": "free",
+      "text": "EVERY y AND en SURFACE IN THIS MODULE IS LEARNT WHOLE. Bare y is L2-M6's and bare en is L2-M4's, so neither pronoun gets a row of its own here — on y est allés, j'y suis allé, il y en a and on en a are each one key. Read each one as a fixed frame and change only what comes after it."
+    },
+    {
+      "tag": "free",
+      "text": "THE DIRECTIONS ARE ALREADY YOURS. tourner, à gauche, tout droit, prendre le bus, la gare, loin, près de — all L2-M4's and L1-M7's, and this module re-uses them without opening one of them again. What is new is only that they now sit inside an account of a trip you took, rather than a question you asked a stranger."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M9-S01",
+      "display": "On est allés en France en train",
+      "cue": "We went to France by train",
+      "literal": "One is gone in France in train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "France",
+            "cue": "France",
+            "tag": "delta",
+            "forms": ["France"],
+            "note": "A feminine country, so it takes en: en France. The gender is not guessable from the trip — it is learnt with the name."
+          },
+          {
+            "display": "Italie",
+            "cue": "Italy",
+            "tag": "delta",
+            "forms": ["Italie"],
+            "note": "Feminine like France, so en Italie. Most country names ending in -e go this way, which is the nearest thing to a rule here."
+          },
+          {
+            "display": "Portugal",
+            "cue": "Portugal",
+            "tag": "delta",
+            "forms": ["Portugal"],
+            "note": "Masculine, so it takes au: au Portugal. Same journey, different preposition, and only the noun's gender decides."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "en France and en train are the same two letters doing two different jobs in one sentence. After a country it is the destination; after a vehicle it is the means. Nothing in the word itself tells you which.",
+      "sound": "ohn eh-tah-LAY ahn FRAHNS ahn TRAN. Both ens are the same nasal ahn, which is exactly why the sentence is worth saying out loud.",
+      "variations": [
+        {
+          "display": "On est allés en Italie en avion",
+          "cue": "We went to Italy by plane",
+          "changed": "another feminine country, and the transport"
+        },
+        {
+          "display": "On est allés au Portugal en voiture",
+          "cue": "We went to Portugal by car",
+          "changed": "a masculine country, so en becomes au"
+        }
+      ],
+      "mistake": {
+        "display": "On est allés à France en train",
+        "why": "à is for cities — à Paris. A feminine country takes en, and there is no version of this sentence in which à France is right."
+      },
+      "usage": "The first sentence of any account of a holiday: where, and how you got there.",
+      "register": "neutral",
+      "mnemonic": "en a country, à a city."
+    },
+    {
+      "id": "L4-M9-S02",
+      "display": "On y est allés en voiture",
+      "cue": "We went there by car",
+      "literal": "One there is gone in car",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on y est allés",
+            "cue": "we went there",
+            "tag": "delta",
+            "forms": ["on y est allés"],
+            "note": "Whole, because bare y is L2-M6's. The y stands for a place already named and sits between the subject and the auxiliary — never at the end."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English simply drops the place: we went by car. French cannot leave the slot empty, so the sentence a learner produces most naturally — on est allés en voiture, meaning nothing about where — is the one that is missing a word.",
+      "sound": "ohn nee eh-tah-LAY ahn vwah-TEWR. on y links across the n and comes out as ohn-nee, one run with no gap before the verb.",
+      "variations": [
+        {
+          "display": "On y est allés en train",
+          "cue": "We went there by train",
+          "changed": "the transport"
+        },
+        {
+          "display": "On y est allés à pied",
+          "cue": "We walked there",
+          "changed": "the means, which needs no en at all"
+        }
+      ],
+      "mistake": {
+        "display": "On est allés y en voiture",
+        "why": "y never goes after the verb. It leans on the verb from the left, which is the one placement rule an English speaker has no habit for."
+      },
+      "usage": "The second sentence of the account, once the place has been named and need not be repeated.",
+      "register": "neutral",
+      "mnemonic": "y leans left."
+    },
+    {
+      "id": "L4-M9-S03",
+      "display": "J'y suis allé il y a deux ans",
+      "cue": "I went there two years ago",
+      "literal": "I-there am gone it there has two years",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "j'y suis allé",
+            "cue": "I went there",
+            "tag": "delta",
+            "forms": ["j'y suis allé"],
+            "note": "The je version, elided to one token: j'y. Same seat as on y est allés, and the participle agrees with the singular je."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "j'y is one word and one key. The je has already elided into it, so nothing here is covered by L1-M1's je — read it as a single opening syllable.",
+      "sound": "zhee swee-zah-LAY eel ee ah duh-ZAHN. j'y is one syllable, zhee; il y a runs together as eel-ya.",
+      "variations": [
+        {
+          "display": "J'y suis allé en avion",
+          "cue": "I went there by plane",
+          "changed": "the transport replaces the date"
+        },
+        {
+          "display": "J'y suis allé avec mes amis",
+          "cue": "I went there with my friends",
+          "changed": "who went with you"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis allé là il y a deux ans",
+        "why": "là points at a place in front of you. For a place already mentioned in the conversation, French uses y, and it goes before the verb."
+      },
+      "usage": "Answering have you been? with when, rather than with the place name all over again.",
+      "register": "neutral",
+      "mnemonic": "j'y is one syllable and one key."
+    },
+    {
+      "id": "L4-M9-S04",
+      "display": "Il y en a trois dans la valise",
+      "cue": "There are three of them in the suitcase",
+      "literal": "It there of-them has three in the suitcase",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "il y en a",
+            "cue": "there are (some) of them",
+            "tag": "delta",
+            "forms": ["il y en a"],
+            "note": "L1-M7's il y a with en pushed inside it. The en is the of them, and it sits in front of the a like every other pronoun of its kind."
+          },
+          {
+            "display": "valise",
+            "cue": "suitcase",
+            "tag": "free",
+            "forms": ["valise"],
+            "note": "The case you travel with, feminine. It is what the en in this sentence is usually counting things out of."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "English is happy with there are three. French will not leave the of them unsaid once the thing has been mentioned — and the word for it, en, lands in the middle of a phrase the learner already knows as a fixed unit.",
+      "sound": "eel ee ahn ah trwah dahn lah vah-LEEZ. The four little words run as one flat block, eel-yahn-nah, with the count taking all the stress.",
+      "variations": [
+        {
+          "display": "Il y en a deux dans la valise",
+          "cue": "There are two of them in the suitcase",
+          "changed": "the count"
+        },
+        {
+          "display": "Il y en a beaucoup ici",
+          "cue": "There are a lot of them here",
+          "changed": "a quantity word instead of a number"
+        }
+      ],
+      "mistake": {
+        "display": "Il y a trois en dans la valise",
+        "why": "en never follows the number. It goes in front of the verb, which inside il y a means squeezing it between the y and the a."
+      },
+      "usage": "Counting out what is packed, when the thing itself has already been named.",
+      "register": "neutral",
+      "mnemonic": "il y EN a: the en goes inside."
+    },
+    {
+      "id": "L4-M9-S05",
+      "display": "On en a acheté deux au guichet",
+      "cue": "We bought two of them at the counter",
+      "literal": "One of-them has bought two at-the counter",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on en a",
+            "cue": "we have (some) of them",
+            "tag": "delta",
+            "forms": ["on en a"],
+            "note": "The same en, this time in a plain passé composé: subject, en, auxiliary, participle. The number stays at the far end of the sentence."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "English can say we bought two and stop. If the thing has been named, French needs the en, and putting it after acheté — on a acheté en deux — is the arrangement that never occurs in French.",
+      "sound": "ohn nahn nah ash-TAY duh oh gee-SHEH. on en a is three linked syllables with two liaisons in a row, which is what makes it hard to hear.",
+      "variations": [
+        {
+          "display": "On en a acheté trois au guichet",
+          "cue": "We bought three of them at the counter",
+          "changed": "the count"
+        },
+        {
+          "display": "On en a acheté deux au marché",
+          "cue": "We bought two of them at the market",
+          "changed": "where you bought them"
+        }
+      ],
+      "mistake": {
+        "display": "On a acheté deux au guichet",
+        "why": "with no en this is missing its object entirely — two what? Once the thing has been mentioned, the en is what keeps the sentence complete."
+      },
+      "usage": "Reporting a purchase in a conversation where everybody already knows what was bought.",
+      "register": "neutral",
+      "mnemonic": "The count stays right; the en goes left."
+    },
+    {
+      "id": "L4-M9-S06",
+      "display": "Nous sommes allés en Espagne et au Portugal",
+      "cue": "We went to Spain and to Portugal",
+      "literal": "We are gone in Spain and to-the Portugal",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Espagne",
+            "cue": "Spain",
+            "tag": "delta",
+            "forms": ["Espagne"],
+            "note": "Feminine, so en Espagne. Setting it beside au Portugal in one sentence is the fastest way to feel that the preposition follows the noun."
+          },
+          {
+            "display": "États-Unis",
+            "cue": "the United States",
+            "tag": "delta",
+            "forms": ["États-Unis"],
+            "note": "A plural country, so it takes aux: aux États-Unis. The hyphen holds the two halves together as one name."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "One English to serves both halves of this sentence, so the learner writes one French preposition for both. The two countries take different ones and there is no way to hear the difference in English at all.",
+      "sound": "noo som-zah-LAY ahn nes-PAHN-yuh ay oh por-tew-GAL. The gn of Espagne is the ny of onion; États-Unis links across the s as ay-tah-zew-NEE.",
+      "variations": [
+        {
+          "display": "Nous sommes allés en Italie et en France",
+          "cue": "We went to Italy and to France",
+          "changed": "two feminine countries, so one preposition covers both"
+        },
+        {
+          "display": "Nous sommes allés aux États-Unis",
+          "cue": "We went to the United States",
+          "changed": "a plural country, so en becomes aux"
+        }
+      ],
+      "mistake": {
+        "display": "Nous sommes allés en Espagne et en Portugal",
+        "why": "Portugal is masculine and takes au. The second en is the first one copied across, which is exactly what one English to encourages."
+      },
+      "usage": "Listing a trip that took in more than one country, which is where the preposition rule starts to bite.",
+      "register": "neutral",
+      "mnemonic": "en, au, aux — the noun chooses."
+    },
+    {
+      "id": "L4-M9-S07",
+      "display": "On a pris la route jusqu'au Portugal",
+      "cue": "We drove all the way to Portugal",
+      "literal": "One has taken the road until-the Portugal",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "route",
+            "cue": "road, route",
+            "tag": "free",
+            "forms": ["route"],
+            "note": "The road between places. prendre la route is to set off by road, the way prendre le train is L2-M4's."
+          },
+          {
+            "display": "jusqu'au",
+            "cue": "all the way to (a masculine place)",
+            "tag": "free",
+            "forms": ["jusqu'au"],
+            "note": "L4-M6's jusqu'à with the masculine article folded in, exactly as à plus le gives au. Before a feminine place it stays jusqu'à la."
+          },
+          {
+            "display": "frontière",
+            "cue": "border",
+            "tag": "free",
+            "forms": ["frontière"],
+            "note": "The line between two countries. It is feminine, so it takes jusqu'à la rather than jusqu'au."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "English says drove to Portugal and needs no word for all the way. jusqu'à is the piece that says as far as, and a learner who leaves it out has said only that a road was involved.",
+      "sound": "ohn nah pree lah ROOT zhews-KOH por-tew-GAL. jusqu'au is two syllables, zhews-koh, with the contraction heard as a single oh.",
+      "variations": [
+        {
+          "display": "On a pris la route jusqu'à la frontière",
+          "cue": "We drove as far as the border",
+          "changed": "a feminine place, so jusqu'au becomes jusqu'à la"
+        },
+        {
+          "display": "On a pris le train jusqu'au Portugal",
+          "cue": "We took the train all the way to Portugal",
+          "changed": "the means of travel"
+        }
+      ],
+      "mistake": {
+        "display": "On a pris la route jusqu'à le Portugal",
+        "why": "à le is never written in French — it contracts to au, and jusqu'à le contracts the same way, to jusqu'au."
+      },
+      "usage": "Saying how far you went under your own steam, rather than just where you ended up.",
+      "register": "neutral",
+      "mnemonic": "à le is always au, even inside jusqu'à."
+    },
+    {
+      "id": "L4-M9-S08",
+      "display": "On est allés à la plage et à la montagne",
+      "cue": "We went to the beach and to the mountains",
+      "literal": "One is gone at the beach and at the mountain",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "plage",
+            "cue": "beach",
+            "tag": "free",
+            "forms": ["plage"],
+            "note": "Feminine, and it takes the plain à la — an ordinary place, not a country, so rule 2's en and au do not apply."
+          },
+          {
+            "display": "montagne",
+            "cue": "mountain, the mountains",
+            "tag": "free",
+            "forms": ["montagne"],
+            "note": "French keeps this singular where English usually goes plural: à la montagne is to the mountains, as a kind of place to be."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "English pluralises the mountains and keeps the beach singular. French does the opposite of what you expect on the first and the same on the second, so à la montagne reads as odd until you stop translating it word by word.",
+      "sound": "ohn eh-tah-LAY ah lah PLAHZH ay ah lah mohn-TAHN-yuh. plage ends on the soft zh of je; montagne ends on the same ny as Espagne.",
+      "variations": [
+        {
+          "display": "On est allés à la mer et à la montagne",
+          "cue": "We went to the seaside and to the mountains",
+          "changed": "the sea replaces the beach"
+        },
+        {
+          "display": "On est allés à la plage et à la frontière",
+          "cue": "We went to the beach and to the border",
+          "changed": "the second destination"
+        }
+      ],
+      "mistake": {
+        "display": "On est allés à la plage et à les montagnes",
+        "why": "à les is never written — it contracts to aux — and French says à la montagne in the singular in any case."
+      },
+      "usage": "Listing the two halves of a holiday that had some of each.",
+      "register": "neutral",
+      "mnemonic": "à la montagne, singular."
+    },
+    {
+      "id": "L4-M9-S09",
+      "display": "Combien de temps avant le départ ?",
+      "cue": "How long before we leave?",
+      "literal": "How-much of time before the departure?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "combien de temps",
+            "cue": "how long",
+            "tag": "delta",
+            "forms": ["combien de temps"],
+            "note": "Three words for one English how long. L1-M8's combien asks how many; adding de temps is what turns it into a question about duration."
+          },
+          {
+            "display": "départ",
+            "cue": "departure",
+            "tag": "free",
+            "forms": ["départ"],
+            "note": "The moment of leaving, as a noun — the word on a station board. L2-M10's arrivée is its other half."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "How long is two words and French needs three, with a de in the middle that English gives no hint of. combien temps is the shape a learner builds, and it is not French.",
+      "sound": "kohn-byan duh TAHN ah-VAHN luh day-PAR. The final r of départ is heard; the t of avant and the s of temps are not.",
+      "variations": [
+        {
+          "display": "Combien de temps avant le train ?",
+          "cue": "How long before the train?",
+          "changed": "what you are waiting for"
+        },
+        {
+          "display": "Combien de temps ? Deux heures en train",
+          "cue": "How long? Two hours by train",
+          "changed": "the question is answered in the same breath"
+        }
+      ],
+      "mistake": {
+        "display": "Combien temps avant le départ ?",
+        "why": "combien always takes de before a noun — combien de temps, combien de jours. Dropping it is the commonest single error in this question."
+      },
+      "usage": "Asking on a platform or in a car how much longer there is to wait.",
+      "register": "neutral",
+      "mnemonic": "combien always keeps its de."
+    },
+    {
+      "id": "L4-M9-S10",
+      "display": "Le Portugal est un pays au bord de la mer",
+      "cue": "Portugal is a country by the sea",
+      "literal": "The Portugal is a country at-the edge of the sea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pays",
+            "cue": "country",
+            "tag": "free",
+            "forms": ["pays"],
+            "note": "A country as a thing rather than a destination. The s is written in the singular and is silent, so the word never changes shape."
+          },
+          {
+            "display": "au bord de",
+            "cue": "on the edge of, beside",
+            "tag": "free",
+            "forms": ["au bord de"],
+            "note": "Three words for beside a water or a road: au bord de la mer, au bord de la route. It is the fixed phrase, not a place name."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "Country names take an article in French when they are the subject — le Portugal est — and drop it after a preposition — au Portugal. English never writes the Portugal at all, so the article looks like a mistake.",
+      "sound": "luh por-tew-GAL eh-tan pay-EE oh bor duh lah MEHR. pays is two syllables, pay-ee, and the final s stays silent.",
+      "variations": [
+        {
+          "display": "La France est un pays au bord de la mer",
+          "cue": "France is a country by the sea",
+          "changed": "the country, and the article changes with its gender"
+        },
+        {
+          "display": "Ce pays est au bord de la mer",
+          "cue": "This country is by the sea",
+          "changed": "the name is replaced by ce pays"
+        }
+      ],
+      "mistake": {
+        "display": "Portugal est un pays au bord de la mer",
+        "why": "as a subject a country keeps its article: le Portugal, la France. The bare name only appears after en, au or aux."
+      },
+      "usage": "Describing a place to somebody who has not been, once the trip itself has been told.",
+      "register": "neutral",
+      "mnemonic": "le Portugal as subject, au Portugal as destination."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M9-C01", "display": "On est allés en France en train", "cue": "We went to France by train" },
+    { "id": "L4-M9-C02", "display": "On y est allés à pied", "cue": "We walked there" },
+    { "id": "L4-M9-C03", "display": "J'y suis allé il y a deux ans", "cue": "I went there two years ago" },
+    { "id": "L4-M9-C04", "display": "Il y en a trois dans la valise", "cue": "There are three of them in the suitcase" },
+    { "id": "L4-M9-C05", "display": "On en a acheté deux au marché", "cue": "We bought two of them at the market" },
+    { "id": "L4-M9-C06", "display": "Nous sommes allés aux États-Unis", "cue": "We went to the United States" },
+    { "id": "L4-M9-C07", "display": "On a pris le train jusqu'au Portugal", "cue": "We took the train all the way to Portugal" },
+    { "id": "L4-M9-C08", "display": "On a pris la route jusqu'à la frontière", "cue": "We drove as far as the border" },
+    { "id": "L4-M9-C09", "display": "On est allés à la mer et à la montagne", "cue": "We went to the seaside and to the mountains" },
+    { "id": "L4-M9-C10", "display": "Combien de temps avant le départ ?", "cue": "How long before we leave?" },
+    { "id": "L4-M9-C11", "display": "La France est un pays au bord de la mer", "cue": "France is a country by the sea" },
+    { "id": "L4-M9-C12", "display": "On est allés en Espagne et au Portugal", "cue": "We went to Spain and to Portugal" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

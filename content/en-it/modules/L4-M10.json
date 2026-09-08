@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M10",
+  "title": "A story with a twist",
+  "job": "Tell six sentences with a voice inside",
+  "prerequisites": [
+    "L4-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "imperfetto — the standing scene, L2-M10's tense widened by L4-M8",
+      "passato prossimo — each completed step, L1-M5's tense",
+      "present indicative — inside a quoted line only, because a quoted line does not backshift",
+      "imperfetto in a che clause — the backshift L3-M5 taught, set here against the quoted original"
+    ],
+    "allowedPatterns": [
+      "<imperfetto scene> + . + <passato prossimo> + . + <passato prossimo> + .",
+      "<personaggio> + mi ha detto + : + <battuta diretta>",
+      "A quel punto + <passato prossimo>",
+      "Ma + <twist> + .",
+      "Alla fine + <passato prossimo>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "DIRECT SPEECH SET AGAINST THE REPORTED SPEECH L3-M5 TAUGHT, AND HAVING BOTH IN ONE ITEM IS WHAT MAKES THE RULE VISIBLE. Mi ha detto: Non posso venire against Mi ha detto che non poteva venire. The direct line does NOT backshift and the reported one does — the same fact, two tenses, and the choice between them means the same thing it means in English. A learner who sees the pair once, side by side inside one account, will not have to memorise the backshift a second time."
+    },
+    {
+      "tag": "free",
+      "text": "THE PUNCTUATION IS ITALIAN'S OWN AND IT IS ONE LINE LONG. A colon, then a capital letter, then the line: Mi ha detto: Non posso venire. In print a dash usually opens the quoted line rather than quotation marks, and which marks a publisher uses varies from book to book. The colon does not vary. Keep the colon and the capital and you are right whatever the printer decides to do around them."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH'S SIMPLE PAST COVERS BOTH THE STANDING SCENE AND EACH COMPLETED STEP, so an English speaker feels no pressure at all to alternate. Italian's imperfetto and passato prossimo pair is compulsory, and an account that uses one tense throughout is not a stylistic choice — it is unreadable. The test of a good item is still L3-M10's: swap one pair over and WHAT HAPPENED should change, not merely how the sentence sounds."
+    },
+    {
+      "tag": "interference",
+      "text": "DO NOT TRANSLATE A SAID-CHAIN. English is happy to write he said, she said, he said down a whole page. Italian varies the verb — ha risposto when it answers, ha chiesto when it asks, ha aggiunto when it piles on — or drops the verb of speaking altogether. The twist sentence very often has no speech verb in it at all, and a learner who repeats ha detto three times has written English with Italian words in it."
+    },
+    {
+      "tag": "delta",
+      "text": "WHAT THE LAST MODULE OF THE LEVEL DOES NOT TEACH. The passato remoto, which is what a printed story would actually use — said honestly here: this module writes a story as it is TOLD, not as it is printed. Free indirect speech, which needs the printed register first. And a second character's inner thought, which needs a mood this level has only half-opened. The level ends where the learner can already stand, and its whole test is that six sentences of account need almost nothing new."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M10-S01",
+      "display": "Ieri ero in ufficio. Non c'era nessuno. Improvvisamente è arrivato un collega. Mi ha detto: Non posso venire domani. A quel punto ho capito tutto. Per fortuna ho finito presto.",
+      "cue": "Yesterday I was at the office. There was nobody there. Suddenly a colleague turned up. He said to me: I cannot come tomorrow. At that point I understood everything. Luckily I finished early.",
+      "literal": "Yesterday I-was in office. Not there-was nobody. Suddenly is arrived a colleague. To-me he-has said: Not I-can to-come tomorrow. At that point I-have understood all. For fortune I-have finished early.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "improvvisamente",
+            "cue": "suddenly",
+            "tag": "free",
+            "forms": [
+              "improvvisamente"
+            ],
+            "note": "The long, slightly heavier of the two suddenlys. It sits at the head of the sentence that breaks the scene open."
+          },
+          {
+            "display": "a quel punto",
+            "cue": "at that point, at which point",
+            "tag": "free",
+            "forms": [
+              "a quel punto"
+            ],
+            "note": "Marks the moment the teller understood something. It is a whole block, and it does not reach for L2-M6's punto on its own."
+          },
+          {
+            "display": "per fortuna",
+            "cue": "luckily, fortunately",
+            "tag": "free",
+            "forms": [
+              "per fortuna"
+            ],
+            "note": "One block at the head of the sentence, and the ordinary way an account signals relief. Its opposite is L2-M8's purtroppo."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "The quoted line keeps its own tense: Non posso venire, exactly as it was said. It is only when che turns it into a report that posso becomes poteva.",
+      "sound": "eem-prov-vee-za-MEN-te eh ar-ree-VA-to oon kol-LEH-ga. a quel punto is a kwel POON-to.",
+      "variations": [
+        {
+          "display": "Mi ha detto che non poteva venire",
+          "cue": "He told me that he could not come",
+          "changed": "the same line reported instead of quoted, so the tense backshifts"
+        },
+        {
+          "display": "Improvvisamente è arrivata una collega",
+          "cue": "Suddenly a colleague turned up",
+          "changed": "a woman arriving, so the participle agrees"
+        },
+        {
+          "display": "A quel punto non ho capito niente",
+          "cue": "At that point I understood nothing",
+          "changed": "the twist landing the other way"
+        }
+      ],
+      "mistake": {
+        "display": "Mi ha detto che non posso venire domani",
+        "why": "Reported speech backshifts, and the person moves with it. Quoted it is Non posso venire; reported it is che non poteva venire."
+      },
+      "usage": "The small office story you tell somebody over dinner.",
+      "register": "neutral",
+      "mnemonic": "Colon keeps the tense; che moves it."
+    },
+    {
+      "id": "L4-M10-S02",
+      "display": "Stamattina pioveva molto. Aspettavo l'autobus da venti minuti. Appena è arrivato, era pieno. Un signore mi ha detto: Non c'è posto. Ha aggiunto: Arriva un altro subito. Alla fine sono andato a piedi.",
+      "cue": "This morning it was raining hard. I had been waiting for the bus for twenty minutes. As soon as it arrived, it was full. A man said to me: There is no room. He added: Another one is coming straight away. In the end I walked.",
+      "literal": "This-morning it-was-raining much. I-was-waiting the-bus from twenty minutes. As-soon-as is arrived, it-was full. A gentleman to-me has said: Not there-is room. He-has added: Arrives an other immediately. At-the end I-am gone at feet.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ha aggiunto",
+            "cue": "he added, she added",
+            "tag": "free",
+            "forms": [
+              "ha aggiunto"
+            ],
+            "note": "The third speech verb of an account, after detto and risposto. It carries what the speaker piled on top of what they had just said."
+          },
+          {
+            "display": "pieno",
+            "cue": "full",
+            "tag": "free",
+            "forms": [
+              "pieno"
+            ],
+            "note": "Of a bus, a room or a glass. Pieno di gente is full of people, and the di is what a learner drops."
+          },
+          {
+            "display": "signore",
+            "cue": "man, gentleman, sir",
+            "tag": "free",
+            "forms": [
+              "signore"
+            ],
+            "note": "Un signore is a man you do not know, with no fuss attached. Said straight to somebody it is sir."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Two speech verbs in a row must not be the same verb. English says said twice; Italian moves to ha aggiunto, and dropping the second verb altogether is also normal.",
+      "sound": "a a-JOON-to: ar-REE-va oon AL-tro SOO-bee-to. aggiunto is a-JOON-to, with the j of jam.",
+      "variations": [
+        {
+          "display": "Un signore mi ha risposto: Non c'è posto",
+          "cue": "A man answered me: There is no room",
+          "changed": "risposto for detto, because it answers a question"
+        },
+        {
+          "display": "Appena è arrivato, era pieno di gente",
+          "cue": "As soon as it arrived, it was full of people",
+          "changed": "what it was full of"
+        },
+        {
+          "display": "Alla fine sono andato a piedi in ufficio",
+          "cue": "In the end I walked to the office",
+          "changed": "where the walk ended"
+        }
+      ],
+      "mistake": {
+        "display": "Un signore mi ha detto che non c'è posto",
+        "why": "Once che turns the line into a report the verb has to move back: che non c'era posto. Keeping c'è is the commonest slip in this shape."
+      },
+      "usage": "Explaining, at the office, why you are twenty minutes late.",
+      "register": "informal",
+      "mnemonic": "detto, then risposto or aggiunto — never detto twice."
+    },
+    {
+      "id": "L4-M10-S03",
+      "display": "Ieri sera ero a casa da solo. C'era un silenzio strano. All'improvviso ho sentito un rumore. Ho avuto paura. Poi mia sorella mi ha detto: Sono io. Per fortuna non era niente.",
+      "cue": "Last night I was at home on my own. There was an odd silence. All of a sudden I heard a noise. I was frightened. Then my sister said to me: It is me. Luckily it was nothing.",
+      "literal": "Yesterday evening I-was at home from alone. There-was a silence strange. All-of-a-sudden I-have heard a noise. I-have had fear. Then my sister to-me has said: I-am I. For fortune not it-was nothing.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "all'improvviso",
+            "cue": "all of a sudden",
+            "tag": "free",
+            "forms": [
+              "all'improvviso"
+            ],
+            "note": "One surface, elision and all, and it answers for nothing else. The shorter, sharper twin of improvvisamente."
+          },
+          {
+            "display": "silenzio",
+            "cue": "silence",
+            "tag": "free",
+            "forms": [
+              "silenzio"
+            ],
+            "note": "Also what a teacher shouts at a class. In an account it is the scene rather than an event, so the verb round it is c'era."
+          },
+          {
+            "display": "strano",
+            "cue": "strange, odd",
+            "tag": "free",
+            "forms": [
+              "strano",
+              "strana"
+            ],
+            "note": "Agrees with its noun: un silenzio strano, una storia strana. Said of a person it is closer to odd than to foreign."
+          },
+          {
+            "display": "sentito",
+            "cue": "heard, felt",
+            "tag": "free",
+            "forms": [
+              "sentito"
+            ],
+            "note": "The participle of sentire, which covers hearing and feeling both. Ho sentito un rumore is I heard a noise."
+          },
+          {
+            "display": "solo",
+            "cue": "alone, only",
+            "tag": "free",
+            "forms": [
+              "solo"
+            ],
+            "note": "Da solo is on my own. Standing in front of a noun the same word means only: solo un momento, just a moment."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The scene takes c'era and the step takes ho sentito. Putting both in the passato prossimo turns the silence into something that happened rather than something that was there.",
+      "sound": "al-leem-prov-VEE-zo o sen-TEE-to oon roo-MO-re. all'improvviso runs as one word, al-leem-prov-VEE-zo.",
+      "variations": [
+        {
+          "display": "C'era un silenzio strano in casa",
+          "cue": "There was an odd silence in the house",
+          "changed": "where the silence was"
+        },
+        {
+          "display": "All'improvviso ho sentito una macchina",
+          "cue": "All of a sudden I heard a car",
+          "changed": "what the noise turned out to be"
+        },
+        {
+          "display": "Improvvisamente ho sentito un rumore",
+          "cue": "Suddenly I heard a noise",
+          "changed": "the longer, heavier word for the same turn"
+        }
+      ],
+      "mistake": {
+        "display": "Al improvviso ho sentito un rumore",
+        "why": "The elision is part of the word. all'improvviso is one surface with its apostrophe, and al improvviso is not written anywhere."
+      },
+      "usage": "The story you tell the next morning about a noise in the night.",
+      "register": "informal",
+      "mnemonic": "all'improvviso — one word, apostrophe included."
+    },
+    {
+      "id": "L4-M10-S04",
+      "display": "Ieri ho visto un amico in stazione. Era in ritardo, come sempre. Mi ha detto: Domani non vengo. Poi ha detto che non poteva venire. A quel punto ho capito la storia. Alla fine non è venuto.",
+      "cue": "Yesterday I saw a friend at the station. He was late, as always. He said to me: I am not coming tomorrow. Then he said that he could not come. At that point I understood the whole thing. In the end he did not come.",
+      "literal": "Yesterday I-have seen a friend in station. He-was in delay, as always. To-me he-has said: Tomorrow not I-come. Then he-has said that not he-could to-come. At that point I-have understood the story. At-the end not he-is come.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vengo",
+            "cue": "I come, I am coming",
+            "tag": "free",
+            "forms": [
+              "vengo",
+              "vieni"
+            ],
+            "note": "The present of L4-M5's venire, used for a plan. Domani non vengo is a refusal, not a statement about the future."
+          },
+          {
+            "display": "storia",
+            "cue": "story, the whole business",
+            "tag": "free",
+            "forms": [
+              "storia",
+              "storie"
+            ],
+            "note": "A story you tell, and also the word for a situation somebody is making complicated: ho capito la storia."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "This item is the module's whole lesson in one place. vengo inside the quoted line, poteva venire inside the reported one — same refusal, two tenses.",
+      "sound": "do-MA-nee non VEN-go. VEN-go, with a hard g, and the vowel of pen.",
+      "variations": [
+        {
+          "display": "Mi ha detto: Domani non vengo",
+          "cue": "He said to me: I am not coming tomorrow",
+          "changed": "the quoted half on its own"
+        },
+        {
+          "display": "Poi ha detto che non poteva venire",
+          "cue": "Then he said that he could not come",
+          "changed": "the reported half on its own"
+        },
+        {
+          "display": "Era in ritardo, come sempre",
+          "cue": "He was late, as always",
+          "changed": "the standing scene by itself"
+        }
+      ],
+      "mistake": {
+        "display": "Poi ha detto che non vengo",
+        "why": "A report moves the tense AND the person. che non poteva venire is the report; che non vengo says the speaker himself is not coming."
+      },
+      "usage": "Complaining about the friend who never turns up.",
+      "register": "informal",
+      "mnemonic": "Quoted vengo, reported poteva venire."
+    },
+    {
+      "id": "L4-M10-S05",
+      "display": "Domenica c'era una festa a casa di un amico. All'inizio c'era poca gente. Poi è arrivata mia sorella. Mi ha detto: Ho una sorpresa. A quel punto è arrivata anche mia madre. Alla fine è stata una bella festa.",
+      "cue": "On Sunday there was a party at a friend's house. At the start there were not many people. Then my sister arrived. She said to me: I have a surprise. At that point my mother turned up as well. In the end it was a lovely party.",
+      "literal": "Sunday there-was a party at house of a friend. At-the start there-was little people. Then is arrived my sister. To-me she-has said: I-have a surprise. At that point is arrived also my mother. At-the end is been a beautiful party.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sorpresa",
+            "cue": "surprise",
+            "tag": "free",
+            "forms": [
+              "sorpresa"
+            ],
+            "note": "Feminine, and also the participle of sorprendere used as an adjective. Che sorpresa is what you say when the twist lands."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Every arrival here is on essere and every participle agrees: è arrivata mia sorella, è arrivata anche mia madre. The scene round them stays in c'era.",
+      "sound": "o OO-na sor-PREH-za. sorpresa has a buzzing s in the middle, sor-PREH-za.",
+      "variations": [
+        {
+          "display": "Poi è arrivata mia sorella con una sorpresa",
+          "cue": "Then my sister arrived with a surprise",
+          "changed": "the surprise folded into the scene instead of quoted"
+        },
+        {
+          "display": "Alla fine è stata una bella sorpresa",
+          "cue": "In the end it was a lovely surprise",
+          "changed": "the verdict on the surprise instead of on the party"
+        },
+        {
+          "display": "All'inizio c'era poca gente",
+          "cue": "At the start there were not many people",
+          "changed": "the opening scene on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Mi ha detto che ho una sorpresa",
+        "why": "A report moves the person as well as the tense: che aveva una sorpresa. As written, the sentence says the teller has a surprise for himself."
+      },
+      "usage": "Telling somebody about a party that turned out better than expected.",
+      "register": "informal",
+      "mnemonic": "Arrivals on essere, and the ending follows the arriver."
+    },
+    {
+      "id": "L4-M10-S06",
+      "display": "Ieri ho raccontato una storia a mia sorella. All'inizio non ha detto niente. Poi mi ha risposto: Non è vero. Ha aggiunto: Sei strano. E allora ho capito. Alla fine ha capito anche lei.",
+      "cue": "Yesterday I told my sister a story. At the start she said nothing. Then she answered me: That is not true. She added: You are odd. And then I understood. In the end she understood as well.",
+      "literal": "Yesterday I-have told a story to my sister. At-the start not she-has said nothing. Then to-me she-has answered: Not is true. She-has added: You-are strange. And then I-have understood. At-the end has understood also she.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ho raccontato",
+            "cue": "I told (a story)",
+            "tag": "free",
+            "forms": [
+              "ho raccontato",
+              "raccontare",
+              "raccontato"
+            ],
+            "note": "raccontare is telling a story, where L3-M5's dire is saying a thing. You raccontare a storia and dire the truth."
+          },
+          {
+            "display": "ha risposto",
+            "cue": "he answered, she answered",
+            "tag": "free",
+            "forms": [
+              "ha risposto"
+            ],
+            "note": "The speech verb that answers. Italian reaches for it wherever English would write a second said, which is rule 3 in one word."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "Three speech acts, three different verbs: detto, risposto, aggiunto. Repeating ha detto three times is English written with Italian words.",
+      "sound": "o rak-kon-TA-to. mee a rees-POS-to: non eh VEH-ro. risposto is rees-POS-to.",
+      "variations": [
+        {
+          "display": "Ieri ho raccontato una storia a mia madre",
+          "cue": "Yesterday I told my mother a story",
+          "changed": "who heard it"
+        },
+        {
+          "display": "Mi ha risposto: Non è vero",
+          "cue": "She answered me: That is not true",
+          "changed": "the quoted answer on its own"
+        },
+        {
+          "display": "Ha aggiunto: Sei strano",
+          "cue": "She added: You are odd",
+          "changed": "the third speech verb, which English would have made another said"
+        }
+      ],
+      "mistake": {
+        "display": "Mi ha detto: Non è vero. Mi ha detto: Sei strano",
+        "why": "Italian will not use detto twice in a row. The second verb changes to risposto or aggiunto, or the speech verb goes altogether."
+      },
+      "usage": "Reporting an argument in which you were, eventually, right.",
+      "register": "informal",
+      "mnemonic": "One said per story; after that, answer or add."
+    },
+    {
+      "id": "L4-M10-S07",
+      "display": "Stamattina ho perso il treno. Ero in ritardo di dieci minuti. In stazione ho visto un collega. Mi ha detto: Anche io ho perso il treno. E allora ho aspettato il treno dopo. Per fortuna ho aspettato solo un momento.",
+      "cue": "This morning I missed the train. I was ten minutes late. At the station I saw a colleague. He said to me: I missed the train too. And so I waited for the next train. Luckily I only waited a moment.",
+      "literal": "This-morning I-have lost the train. I-was in delay of ten minutes. In station I-have seen a colleague. To-me he-has said: Also I I-have lost the train. And then I-have waited the train after. For fortune I-have waited only a moment.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aspettato",
+            "cue": "waited",
+            "tag": "free",
+            "forms": [
+              "aspettato"
+            ],
+            "note": "The participle of L3-M5's aspettare, first shown here. On avere, not essere: ho aspettato, never sono aspettato."
+          },
+          {
+            "display": "momento",
+            "cue": "moment",
+            "tag": "free",
+            "forms": [
+              "momento"
+            ],
+            "note": "Un momento is both a length of time and a request to wait. Solo un momento is the everyday way of saying not long at all."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Missing a train is one finished step: ho perso. perdevo would say it happened every morning, which is L4-M8's tense doing a different job.",
+      "sound": "SO-lo oon mo-MEN-to. momento is stressed in the middle, mo-MEN-to.",
+      "variations": [
+        {
+          "display": "Mi ha detto: Anche io ho perso il treno",
+          "cue": "He said to me: I missed the train too",
+          "changed": "the quoted line alone"
+        },
+        {
+          "display": "Mi ha detto che era in ritardo",
+          "cue": "He told me that he was late",
+          "changed": "reported instead of quoted"
+        },
+        {
+          "display": "Per fortuna ho aspettato solo un momento",
+          "cue": "Luckily I only waited a moment",
+          "changed": "the relief on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Stamattina perdevo il treno",
+        "why": "perdevo is a habit — I used to miss the train. One particular morning is a step with edges, so it is ho perso."
+      },
+      "usage": "The message you send when you are going to be late but not very late.",
+      "register": "informal",
+      "mnemonic": "One morning takes ho; every morning takes -vo."
+    },
+    {
+      "id": "L4-M10-S08",
+      "display": "Ieri in ufficio c'era un silenzio strano. Aspettavo una risposta da molto tempo. All'improvviso è arrivato il collega. Mi ha detto: È andato tutto bene. E allora ho capito. Alla fine sono andato a casa contento.",
+      "cue": "Yesterday at the office there was an odd silence. I had been waiting for an answer for a long time. All of a sudden my colleague turned up. He said to me: It all went well. And then I understood. In the end I went home happy.",
+      "literal": "Yesterday in office there-was a silence strange. I-was-waiting an answer from much time. All-of-a-sudden is arrived the colleague. To-me he-has said: Is gone all well. And then I-have understood. At-the end I-am gone at home happy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "risposta",
+            "cue": "answer, reply",
+            "tag": "free",
+            "forms": [
+              "risposta"
+            ],
+            "note": "The noun behind ha risposto. Aspettare una risposta is to be waiting to hear, and a job application is the usual thing being waited for."
+          },
+          {
+            "display": "e allora",
+            "cue": "and so, and at that",
+            "tag": "free",
+            "forms": [
+              "e allora"
+            ],
+            "note": "A block at the head of the sentence that follows from what came before. It does not reach for L1-M10's allora, which is a time word."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The scene is c'era and aspettavo, both imperfetto, and the arrival is è arrivato. An account that puts the whole thing in one tense stops being an account.",
+      "sound": "e al-LO-ra o ka-PEE-to. allora has a long double l, al-LO-ra.",
+      "variations": [
+        {
+          "display": "Aspettavo una risposta da molto tempo",
+          "cue": "I had been waiting for an answer for a long time",
+          "changed": "the standing scene by itself"
+        },
+        {
+          "display": "Mi ha risposto: Va tutto bene",
+          "cue": "He answered me: Everything is fine",
+          "changed": "risposto, because it answers the waiting"
+        },
+        {
+          "display": "E allora ho capito tutto",
+          "cue": "And then I understood everything",
+          "changed": "the twist spelled out"
+        }
+      ],
+      "mistake": {
+        "display": "Ieri in ufficio è stato un silenzio strano",
+        "why": "A standing scene takes c'era. è stato counts the silence as an event with edges, and a silence in a room is not an event."
+      },
+      "usage": "Telling somebody at home how the day at work turned out.",
+      "register": "neutral",
+      "mnemonic": "Scene in -vo, step in ho."
+    },
+    {
+      "id": "L4-M10-S09",
+      "display": "Quando ero piccolo mia madre mi raccontava una storia. Era sempre la storia di un cane. A quel punto io dormivo già. Una sera ho chiesto: E poi? Mi ha risposto: Domani. Per fortuna la storia era sempre bella.",
+      "cue": "When I was little my mother used to tell me a story. It was always the story of a dog. By that point I was already asleep. One evening I asked: And then what? She answered me: Tomorrow. Luckily the story was always a good one.",
+      "literal": "When I-was small my mother to-me told a story. It-was always the story of a dog. At that point I I-slept already. One evening I-have asked: And then? To-me she-has answered: Tomorrow. For fortune the story it-was always beautiful.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "raccontava",
+            "cue": "used to tell",
+            "tag": "delta",
+            "forms": [
+              "raccontava"
+            ],
+            "note": "The imperfetto of the raccontare taught at S06 of this module, first shown here. A bedtime story every night is a habit, so it is this tense."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "raccontava is the whole point of the item: years of the same story. ha raccontato would name one evening and the last line would land on nothing.",
+      "sound": "rak-kon-TA-va. The double c is a hard k, rak-kon-TA-va.",
+      "variations": [
+        {
+          "display": "Mia madre mi raccontava sempre una storia",
+          "cue": "My mother always used to tell me a story",
+          "changed": "the habit made explicit"
+        },
+        {
+          "display": "Una sera ho chiesto: E poi?",
+          "cue": "One evening I asked: And then what?",
+          "changed": "the child's line on its own"
+        },
+        {
+          "display": "Mi ha risposto: Domani",
+          "cue": "She answered me: Tomorrow",
+          "changed": "the answer, which is the whole twist of the story"
+        }
+      ],
+      "mistake": {
+        "display": "Quando ero piccolo mia madre mi ha raccontato una storia",
+        "why": "ha raccontato names one evening out of the years. The account is about every evening, and every evening is raccontava."
+      },
+      "usage": "The childhood story people tell each other about their childhood stories.",
+      "register": "informal",
+      "mnemonic": "Every night takes -ava."
+    },
+    {
+      "id": "L4-M10-S10",
+      "display": "Sabato sono andato al mare con un amico. Faceva caldo e c'era poca gente. All'improvviso ha fatto freddo. Un amico mi ha detto: Ho freddo. E allora siamo andati al bar insieme. Alla fine è stata una bella gita.",
+      "cue": "On Saturday I went to the seaside with a friend. It was hot and there were not many people. All of a sudden it turned cold. My friend said to me: I am cold. And so we went to the bar together. In the end it was a lovely day out.",
+      "literal": "Saturday I-am gone at-the sea with a friend. It-made hot and there-was little people. All-of-a-sudden it-has made cold. A friend to-me has said: I-have cold. And then we-are gone at-the bar together. At-the end is been a beautiful outing.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "insieme",
+            "cue": "together",
+            "tag": "free",
+            "forms": [
+              "insieme"
+            ],
+            "note": "Goes at the end of its clause and never changes shape. Insieme a somebody is together with them, with an a and not a con."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "faceva caldo describes how the day stood; ha fatto freddo is the turn in it. The same verb in two tenses is what tells the reader something happened.",
+      "sound": "e al-LO-ra SYA-mo an-DA-tee al bar een-SYEH-me. insieme is een-SYEH-me.",
+      "variations": [
+        {
+          "display": "Sabato sono andato al mare con un amico",
+          "cue": "On Saturday I went to the seaside with a friend",
+          "changed": "the opening step alone"
+        },
+        {
+          "display": "Un amico mi ha detto: Ho freddo",
+          "cue": "A friend said to me: I am cold",
+          "changed": "the line that turned the day round"
+        },
+        {
+          "display": "Alla fine è stata una bella gita",
+          "cue": "In the end it was a lovely day out",
+          "changed": "the verdict, which is where an account of a day ends"
+        }
+      ],
+      "mistake": {
+        "display": "All'improvviso faceva freddo",
+        "why": "faceva describes weather that stood still all day. A change in it is a step with edges, so it is ha fatto freddo."
+      },
+      "usage": "The last story of the level: a whole day, a voice inside it, and nothing new needed.",
+      "register": "informal",
+      "mnemonic": "faceva is how it was; ha fatto is what it did."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M10-C01",
+      "display": "Mi ha detto: Non posso venire domani",
+      "cue": "He said to me: I cannot come tomorrow"
+    },
+    {
+      "id": "L4-M10-C02",
+      "display": "Mi ha detto che non poteva venire",
+      "cue": "He told me that he could not come"
+    },
+    {
+      "id": "L4-M10-C03",
+      "display": "A quel punto ho capito tutto",
+      "cue": "At that point I understood everything"
+    },
+    {
+      "id": "L4-M10-C04",
+      "display": "Improvvisamente è arrivato un collega",
+      "cue": "Suddenly a colleague turned up"
+    },
+    {
+      "id": "L4-M10-C05",
+      "display": "All'improvviso ho sentito un rumore",
+      "cue": "All of a sudden I heard a noise"
+    },
+    {
+      "id": "L4-M10-C06",
+      "display": "Un signore mi ha detto: Non c'è posto",
+      "cue": "A man said to me: There is no room"
+    },
+    {
+      "id": "L4-M10-C07",
+      "display": "Ha aggiunto: Arriva un altro subito",
+      "cue": "He added: Another one is coming straight away"
+    },
+    {
+      "id": "L4-M10-C08",
+      "display": "Mi ha risposto: Non è vero",
+      "cue": "She answered me: That is not true"
+    },
+    {
+      "id": "L4-M10-C09",
+      "display": "E allora ho capito tutto",
+      "cue": "And then I understood everything"
+    },
+    {
+      "id": "L4-M10-C10",
+      "display": "Per fortuna ho aspettato solo un momento",
+      "cue": "Luckily I only waited a moment"
+    },
+    {
+      "id": "L4-M10-C11",
+      "display": "Alla fine è stata una bella gita",
+      "cue": "In the end it was a lovely day out"
+    },
+    {
+      "id": "L4-M10-C12",
+      "display": "Mia madre mi raccontava sempre una storia",
+      "cue": "My mother always used to tell me a story"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

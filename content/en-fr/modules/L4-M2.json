@@ -1,0 +1,581 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": [
+    "L4-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "passé composé",
+      "imparfait"
+    ],
+    "allowedPatterns": [
+      "Comme + <clause> + , + <clause>",
+      "<clause> + parce que + <clause>",
+      "<clause> + , + donc + <clause>",
+      "À cause de + <noun>  /  Grâce à + <noun>",
+      "<clause> + , + du coup + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "FOUR WORDS SHARE ENGLISH'S because, AND WHERE THEY MAY STAND IS WHAT SORTS THEM. parce que answers a pourquoi and does not open the paragraph. comme can ONLY open it. puisque gives a reason both speakers already hold. car joins two clauses that could each stand alone, and is the written one. Nothing about the meaning chooses between them; the position does."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH FRONTS because FREELY AND FRENCH DOES NOT. Because it was raining, we stayed in is ordinary English, and Parce qu'il pleuvait, on est restés is not what a French speaker writes. The word for that front slot is comme, which is why comme is the first thing this module spends."
+    },
+    {
+      "tag": "delta",
+      "text": "ON THE CONSEQUENCE SIDE THE CHOICE IS REGISTER, NOT MEANING. donc (L1-M9) is the neutral one, alors (L1-M10) narrates, du coup is spoken and is everywhere, c'est pourquoi and par conséquent are written. All of them join the same two facts, and picking the wrong one is a mistake of clothing rather than of logic."
+    },
+    {
+      "tag": "interference",
+      "text": "because of SPLITS IN TWO BY WHETHER THE OUTCOME IS WELCOME. grâce à carries a good one — grâce à ton aide — and à cause de a bad one — à cause de la grève. English marks neither, so a learner picks at random and is understood as sarcastic half the time. Grâce à la grève says something no French speaker means."
+    },
+    {
+      "tag": "free",
+      "text": "à cause de AND grâce à TAKE A NOUN; parce que, comme, puisque AND car TAKE A WHOLE CLAUSE. À cause de la pluie against Comme il pleuvait — the same fact in two shapes, and the shape you have is what picks the word. This is the cheapest half of the module and the half a learner gets right first."
+    },
+    {
+      "tag": "interference",
+      "text": "EVERY CLAUSE HERE STAYS INDICATIVE AND THE ne STAYS WRITTEN. Il n'est pas venu, car il était malade. No joiner in this module moves the mood of the verb behind it, and none of them is a reason to drop a ne that L1-M3 put there."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "Comme il pleuvait beaucoup, on est restés à la maison",
+      "cue": "Since it was raining hard, we stayed at home",
+      "literal": "As it was-raining a-lot, one is stayed at the house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "comme",
+            "cue": "since · as",
+            "tag": "delta",
+            "forms": [],
+            "note": "In the front slot it gives a reason. comme also carries like and as elsewhere — comme moi, comme ça — and this is the row a learner is shown for all three."
+          },
+          {
+            "display": "restés",
+            "cue": "stayed",
+            "tag": "delta",
+            "forms": [],
+            "note": "rester takes être in the passé composé, so the participle agrees with the subject: on est restés for a group. L1-M5 taught the bare resté."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "The English word is because and the French for this front slot is not parce que. comme opens the sentence; parce que cannot, and no amount of comma placement will let it.",
+      "sound": "kom eel pluh-VEH boh-KOO, on eh res-TAY a la meh-ZON. The -és of restés is the same AY as the singular, which is why the agreement is invisible in speech.",
+      "variations": [
+        {
+          "display": "Comme il pleuvait, on est restés à la maison",
+          "cue": "Since it was raining, we stayed at home",
+          "changed": "beaucoup drops and the reason still opens the sentence"
+        },
+        {
+          "display": "Comme le train était annulé, on est restés à la maison",
+          "cue": "Since the train was cancelled, we stayed at home",
+          "changed": "another reason in the same front slot"
+        }
+      ],
+      "mistake": {
+        "display": "Parce qu'il pleuvait, on est restés à la maison",
+        "why": "parce que does not open a sentence. The front slot takes comme: Comme il pleuvait, on est restés."
+      },
+      "usage": "How you set a scene before saying what you did about it.",
+      "register": "neutral",
+      "mnemonic": "comme goes first, or it does not go."
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "On est restés à la maison parce que le train était annulé",
+      "cue": "We stayed at home because the train was cancelled",
+      "literal": "One is stayed at the house because the train was cancelled",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "annulé",
+            "cue": "cancelled",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of annuler standing as an adjective after être. Masculine here because le train is; a feminine noun adds an e that nobody hears."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The same two facts as the sentence before it, and the joiner had to change when the order did. parce que is what ANSWERS a pourquoi, and an answer does not come first.",
+      "sound": "on eh res-TAY a la meh-ZON pars kuh luh TRAN ay-teh a-new-LAY. parce que collapses to PARS-kuh in ordinary speech.",
+      "variations": [
+        {
+          "display": "On est restés parce que le train était annulé",
+          "cue": "We stayed in because the train was cancelled",
+          "changed": "the place drops and the reason stays where it is"
+        },
+        {
+          "display": "Le train était annulé, donc on est restés à la maison",
+          "cue": "The train was cancelled, so we stayed at home",
+          "changed": "the reason leads and donc carries the consequence instead"
+        }
+      ],
+      "mistake": {
+        "display": "On est restés à la maison, comme le train était annulé",
+        "why": "comme only opens a sentence. In second place the word is parce que."
+      },
+      "usage": "The direct answer to Pourquoi ? — and the only one of the four that can stand alone as a reply.",
+      "register": "neutral",
+      "mnemonic": "An answer never comes first."
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "Puisque tu es fatigué, reste à la maison",
+      "cue": "Since you're tired, as we both know, stay at home",
+      "literal": "Since you are tired, stay at the house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "puisque",
+            "cue": "since · seeing as",
+            "tag": "delta",
+            "forms": [],
+            "note": "The reason is one both speakers already hold, so it is offered rather than announced. Where parce que informs, puisque reminds — and it elides to puisqu' before a vowel."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "puisque and parce que are not interchangeable. Using puisque for news the hearer does not yet have reads as an accusation that they should have known already.",
+      "sound": "pweesk tew eh fa-tee-GAY, rest a la meh-ZON. The e of puisque is barely there even before a consonant.",
+      "variations": [
+        {
+          "display": "Puisque tu es fatigué, ne commence pas tout de suite",
+          "cue": "Since you're tired, don't start right away",
+          "changed": "the same shared reason, with L4-M1's negative order behind it"
+        },
+        {
+          "display": "Reste à la maison, puisque tu es fatigué",
+          "cue": "Stay at home, since you're tired",
+          "changed": "puisque in second place, which it allows and comme does not"
+        }
+      ],
+      "mistake": {
+        "display": "Puisque tu es fatigué ?",
+        "why": "puisque states a reason both of you already hold; it never asks for one. Asking is Pourquoi ?"
+      },
+      "usage": "Said between people who already share the fact, which is most of what a family says to itself.",
+      "register": "informal",
+      "mnemonic": "puisque reminds; parce que informs."
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "Il n'est pas venu, car il était malade",
+      "cue": "He didn't come, for he was ill",
+      "literal": "He not-is not come, for he was ill",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "car",
+            "cue": "for · because",
+            "tag": "delta",
+            "forms": [],
+            "note": "It JOINS two clauses that could each stand alone, and it always sits between them, never in front. Written French and careful speech; a spoken reply reaches for parce que."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "car is not the English car. It is the written for, and a vehicle is une voiture — L1-M3's word — so the one place the two languages agree here is nowhere.",
+      "sound": "eel neh pah vuh-NEW, kar eel ay-teh ma-LAD. car keeps its r, unlike most French words ending in one.",
+      "variations": [
+        {
+          "display": "Il n'est pas venu, car le train était annulé",
+          "cue": "He didn't come, for the train was cancelled",
+          "changed": "a second reason behind the same written joiner"
+        },
+        {
+          "display": "Il est resté à la maison, car il était malade",
+          "cue": "He stayed at home, for he was ill",
+          "changed": "another consequence in front of the same reason"
+        }
+      ],
+      "mistake": {
+        "display": "Car il était malade, il n'est pas venu",
+        "why": "car never opens a sentence — it only joins two. Fronting the reason needs comme: Comme il était malade, il n'est pas venu."
+      },
+      "usage": "Newspapers, reports and anybody speaking carefully. In conversation it sounds bookish.",
+      "register": "formal",
+      "mnemonic": "car sits in the join, never at the door."
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "La réunion était annulée, donc je suis rentré tôt",
+      "cue": "The meeting was cancelled, so I went home early",
+      "literal": "The meeting was cancelled, so I am returned early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "annulée",
+            "cue": "cancelled",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same participle as S02's annulé, carrying the e that réunion's gender asks for. It is written and never heard, which is the whole difficulty."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The e is silent. annulé and annulée sound identical, so this agreement is a writing rule you can be wrong about for a year and never find out.",
+      "sound": "la ray-ew-nee-ON ay-teh a-new-LAY, donk zhuh swee rahn-TRAY TOH.",
+      "variations": [
+        {
+          "display": "La réunion était annulée, du coup je suis rentré tôt",
+          "cue": "The meeting was cancelled, so I went home early",
+          "changed": "donc becomes du coup, and the line turns spoken"
+        },
+        {
+          "display": "Comme la réunion était annulée, je suis rentré tôt",
+          "cue": "Since the meeting was cancelled, I went home early",
+          "changed": "the consequence side drops and comme carries the reason instead"
+        }
+      ],
+      "mistake": {
+        "display": "La réunion était annulé, donc je suis rentré tôt",
+        "why": "réunion is feminine, so the participle after être takes its e: annulée."
+      },
+      "usage": "The neutral middle of the consequence range — safe in speech and in writing alike.",
+      "register": "neutral",
+      "mnemonic": "The e you write and never say."
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "Il y avait une grève, du coup je suis arrivé en retard",
+      "cue": "There was a strike, so I turned up late",
+      "literal": "There had a strike, of-the blow I am arrived in delay",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "grève",
+            "cue": "strike",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: une grève, la grève. être en grève is to be on strike, and the word is unavoidable in any French news bulletin."
+          },
+          {
+            "display": "du coup",
+            "cue": "so · which meant",
+            "tag": "free",
+            "forms": [],
+            "note": "One key, two words, and thoroughly spoken: it is what donc becomes in conversation. Almost never written in anything formal."
+          },
+          {
+            "display": "en retard",
+            "cue": "late",
+            "tag": "interference",
+            "forms": [],
+            "note": "One key. It is late FOR something with a time on it — un train en retard — where a late hour is tard. The two are not the same word."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "du coup is spoken French doing donc's job. Putting it in a written report reads the way so, yeah reads in written English.",
+      "sound": "eel ee a-VEH ewn GREV, dew KOO zhuh swee a-ree-VAY on ruh-TAR.",
+      "variations": [
+        {
+          "display": "Il y avait une grève, donc je suis arrivé en retard",
+          "cue": "There was a strike, so I turned up late",
+          "changed": "the neutral joiner, and the line could now be written down"
+        },
+        {
+          "display": "Du coup je suis arrivé en retard",
+          "cue": "So I turned up late",
+          "changed": "the reason drops and du coup carries the consequence on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Du coup, par conséquent je suis arrivé en retard",
+        "why": "One join takes one joiner. du coup and par conséquent are the same move in two registers, and stacking them says it twice."
+      },
+      "usage": "Heard several times a minute in spoken French, and worth recognising long before you write it.",
+      "register": "informal",
+      "mnemonic": "du coup is donc with its shoes off."
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "Grâce à ton aide, j'ai réussi mon examen",
+      "cue": "Thanks to your help, I passed my exam",
+      "literal": "Thanks to your help, I-have succeeded my exam",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "grâce à",
+            "cue": "thanks to",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key, and it takes a noun rather than a clause. It carries a WELCOME outcome — the good half of English's because of — and using it for a bad one is a joke or a mistake."
+          },
+          {
+            "display": "réussi",
+            "cue": "passed · succeeded",
+            "tag": "free",
+            "forms": [],
+            "note": "Participle of réussir. réussir un examen is to PASS one; passer un examen only means to sit it, which is the trap English lays here."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "English says because of for both halves and marks nothing. French marks it in the preposition itself, and grâce à is only ever the welcome half.",
+      "sound": "grahs a ton ED, zhay ray-ew-SEE mon eg-za-MAN. The â of grâce is just a long a.",
+      "variations": [
+        {
+          "display": "Grâce à ton aide, j'ai réussi",
+          "cue": "Thanks to your help, I passed",
+          "changed": "the object drops and the thanks still stands"
+        },
+        {
+          "display": "J'ai réussi mon examen grâce à ton aide",
+          "cue": "I passed my exam thanks to your help",
+          "changed": "the thanks moves to the end, which it allows"
+        }
+      ],
+      "mistake": {
+        "display": "À cause de ton aide, j'ai réussi mon examen",
+        "why": "à cause de is for outcomes you did not want. Help that worked takes grâce à."
+      },
+      "usage": "The ordinary way to credit somebody, and the half of the pair to reach for first.",
+      "register": "neutral",
+      "mnemonic": "grâce is a gift, and you only thank for good ones."
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "À cause de la grève, je suis arrivé très en retard",
+      "cue": "Because of the strike, I turned up very late",
+      "literal": "At cause of the strike, I am arrived very in delay",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "à cause de",
+            "cue": "because of",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key, three words, and it takes a noun. It carries an UNWELCOME outcome, which is the half of English's because of that English leaves unmarked."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "It is not parce que. à cause de takes a noun — à cause de la grève — and parce que takes a whole clause, so no sentence ever accepts both.",
+      "sound": "a KOHZ duh la GREV, zhuh swee a-ree-VAY treh zon ruh-TAR. très en links across with a z.",
+      "variations": [
+        {
+          "display": "À cause de la grève, je suis rentré tôt",
+          "cue": "Because of the strike, I went home early",
+          "changed": "another unwelcome outcome behind the same cause"
+        },
+        {
+          "display": "Je suis arrivé très en retard à cause de la grève",
+          "cue": "I turned up very late because of the strike",
+          "changed": "the cause moves to the end, which it allows"
+        }
+      ],
+      "mistake": {
+        "display": "Grâce à la grève, je suis arrivé très en retard",
+        "why": "grâce à is for welcome outcomes only. A strike that made you late takes à cause de."
+      },
+      "usage": "The excuse line — and the one French insists you get the right way round.",
+      "register": "neutral",
+      "mnemonic": "à cause de blames; grâce à thanks."
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "Le magasin était fermé, c'est pourquoi je suis rentré",
+      "cue": "The shop was shut, which is why I went home",
+      "literal": "The shop was closed, it-is why I am returned",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "magasin",
+            "cue": "shop · store",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine: le magasin. A department store is un grand magasin, where the size word does the work and the noun does not change."
+          },
+          {
+            "display": "fermé",
+            "cue": "closed · shut",
+            "tag": "free",
+            "forms": [],
+            "note": "Participle of fermer standing as an adjective: le magasin est fermé. It is what a shop door says where an English one says CLOSED."
+          },
+          {
+            "display": "c'est pourquoi",
+            "cue": "which is why",
+            "tag": "free",
+            "forms": [],
+            "note": "One key. It points back at the whole clause before it, and it is written French — in speech donc or du coup does the same job."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English can hang which is why inside one sentence. French starts a fresh clause after the comma and never says lequel est pourquoi.",
+      "sound": "luh ma-ga-ZAN ay-teh fer-MAY, seh poor-KWAH zhuh swee rahn-TRAY.",
+      "variations": [
+        {
+          "display": "Le magasin était fermé, donc je suis rentré",
+          "cue": "The shop was shut, so I went home",
+          "changed": "the written joiner becomes the neutral one"
+        },
+        {
+          "display": "Comme le magasin était fermé, je suis rentré",
+          "cue": "Since the shop was shut, I went home",
+          "changed": "the consequence side drops and comme takes the reason"
+        }
+      ],
+      "mistake": {
+        "display": "Le magasin était fermé, c'est pour quoi je suis rentré",
+        "why": "It is one word: pourquoi. c'est pour quoi asks what for, which is a different sentence."
+      },
+      "usage": "Reports and written accounts. Said out loud it sounds like you are reading from a page.",
+      "register": "formal",
+      "mnemonic": "c'est pourquoi points back at everything just said."
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "Il y avait une grève. Par conséquent, le bureau était fermé",
+      "cue": "There was a strike. Consequently, the office was closed",
+      "literal": "There had a strike. By consequence, the office was closed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "par conséquent",
+            "cue": "consequently · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "One key, and the most written of the four consequence words. It can open a sentence of its own, which is exactly what donc and du coup do not do comfortably."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Consequently and par conséquent sit at the same height in both languages, so this is the rare pair that transfers whole — and the only one in the module that does.",
+      "sound": "eel ee a-VEH ewn GREV. par kon-say-KAHN, luh bew-ROH ay-teh fer-MAY.",
+      "variations": [
+        {
+          "display": "Il y avait une grève, du coup le bureau était fermé",
+          "cue": "There was a strike, so the office was closed",
+          "changed": "the same two facts, said out loud instead of written"
+        },
+        {
+          "display": "Par conséquent, le bureau était fermé",
+          "cue": "Consequently, the office was closed",
+          "changed": "the cause drops and the consequence stands alone"
+        }
+      ],
+      "mistake": {
+        "display": "Il y avait une grève, par conséquent du coup le bureau était fermé",
+        "why": "Two joiners for one join, in two registers at once. Pick one: par conséquent, or du coup."
+      },
+      "usage": "Minutes, notices and formal letters — the register L4-M7 will live in.",
+      "register": "formal",
+      "mnemonic": "par conséquent is donc in a suit."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "Comme il pleuvait, on est restés à la maison",
+      "cue": "Since it was raining, we stayed at home"
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "On est restés à la maison parce que le train était annulé",
+      "cue": "We stayed at home because the train was cancelled"
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "Puisque tu es fatigué, reste à la maison",
+      "cue": "Since you're tired, stay at home"
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "Il n'est pas venu, car il était malade",
+      "cue": "He didn't come, for he was ill"
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "La réunion était annulée, donc je suis rentré tôt",
+      "cue": "The meeting was cancelled, so I went home early"
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "Il y avait une grève, du coup je suis arrivé en retard",
+      "cue": "There was a strike, so I turned up late"
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "Grâce à ton aide, j'ai réussi mon examen",
+      "cue": "Thanks to your help, I passed my exam"
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "À cause de la grève, je suis arrivé très en retard",
+      "cue": "Because of the strike, I turned up very late"
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "Le magasin était fermé, c'est pourquoi je suis rentré",
+      "cue": "The shop was shut, which is why I went home"
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "Par conséquent, le bureau était fermé",
+      "cue": "Consequently, the office was closed"
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "Comme le magasin était fermé, je suis rentré tôt",
+      "cue": "Since the shop was shut, I went home early"
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "Il était malade, du coup il n'est pas venu",
+      "cue": "He was ill, so he didn't come"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

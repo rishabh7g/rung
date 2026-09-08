@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": ["L4-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_present", "simple_past", "imperative"],
+    "allowedPatterns": [
+      "clause-aseo + clause",
+      "clause-(eu)nikka + V-(eu)seyo",
+      "N + ttaemune + clause",
+      "N + deokbune + clause",
+      "V-ge dwaesseoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ONE OF THE TWO CAUSAL ENDINGS MAY HEAD AN ORDER AND THE OTHER MAY NOT. L3-M3's -(eu)nikka can stand in front of an instruction or a suggestion; L1-M9's -aseo cannot, at all. Bappeunikka naeil jeonhwahaseyo is right and bappaseo naeil jeonhwahaseyo is not."
+    },
+    {
+      "tag": "delta",
+      "text": "-aseo CARRIES NO TENSE OF ITS OWN. The past sits once, on the main verb: saenggyeoseo ... neujeosseoyo, never saenggyeosseoseo. -(eu)nikka may carry one — gasseonikka — which is the second thing that separates them."
+    },
+    {
+      "tag": "interference",
+      "text": "ttaemune LEANS NEGATIVE AND deokbune IS ONLY EVER POSITIVE. English because of covers both, so a learner reaches for ttaemune over a piece of good luck and it reads as blame. Bi ttaemune mot gasseoyo against chingu deokbune jal haesseoyo."
+    },
+    {
+      "tag": "delta",
+      "text": "V-ge dwaesseoyo IS THE CONSEQUENCE FRAME: it came about that. It is what Korean reaches for when nobody decided the outcome. Hanguk-e salge dwaesseoyo says circumstances put me there; sal geoyeyo would say I chose it."
+    },
+    {
+      "tag": "interference",
+      "text": "THE PASSIVE CLASS IS LEXICAL AND CLOSED. English builds a passive from any transitive verb with be plus a participle. Korean does not: boyeoyo, deullyeoyo and yeollyeoyo are words, and a learner who invents a passive of meokda has invented one. No sentence here writes a by-phrase."
+    },
+    {
+      "tag": "free",
+      "text": "-gi ttaemune IS L3-M3's NOUN FRAME WITH A CLAUSE IN FRONT OF IT. ttaemune does not change; what changes is that the thing before it is a nominalised stem — hagi, gagi, meokgi — bought once by L4-M1 and spent again here."
+    },
+    {
+      "tag": "free",
+      "text": "ABILITY IS NOT REOPENED. L2-M8's mot and L2-M1's -(eu)l su isseoyo are reused as consequences rather than retaught. And nothing counterfactual, which is L4-M3's, no time clause, which is L4-M6's, and no -(seu)pnida, which is L4-M7's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "Sago-ga saenggyeoseo neomu neujeosseoyo.",
+      "script": "사고가 생겨서 너무 늦었어요.",
+      "cue": "There was an accident, so I was very late.",
+      "literal": "accident-subj happened-so very was-late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sago",
+            "script": "사고",
+            "cue": "an accident",
+            "tag": "free",
+            "forms": ["sago", "sago-ga", "sago-reul"],
+            "note": "A crash, a mishap, anything that goes wrong without anyone meaning it to. It is the subject of what happened, so it takes -ga."
+          },
+          {
+            "display": "saenggyeosseoyo",
+            "script": "생겼어요",
+            "cue": "it happened · it came up",
+            "tag": "delta",
+            "forms": ["saenggyeosseoyo", "saenggyeoseo", "saenggyeoyo"],
+            "note": "Something came into being with no agent behind it. L3-M7's nasseoyo is the symptom that comes out of a body; this is the event that occurs."
+          },
+          {
+            "display": "neujeosseoyo",
+            "script": "늦었어요",
+            "cue": "was late",
+            "tag": "free",
+            "forms": ["neujeosseoyo", "neujeoyo"],
+            "note": "Late for a thing, said of a person or of a train. It is a whole verb, not late plus a copula."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "THE PAST SITS ONCE. English marks both halves — there was an accident, so I was late — and Korean marks only the main verb. saenggyeosseoseo is not a form.",
+      "sound": "SA-go-ga saeng-GYEO-seo NEO-mu neu-JEO-sseo-yo. Neujeosseoyo is four syllables, with the j soft.",
+      "variations": [
+        {
+          "display": "Sago-ga saenggyeoseo jom neujeosseoyo.",
+          "script": "사고가 생겨서 좀 늦었어요.",
+          "cue": "There was an accident, so I was a bit late.",
+          "changed": "jom softening how late, and the apology with it"
+        },
+        {
+          "display": "Bi ttaemune neomu neujeosseoyo.",
+          "script": "비 때문에 너무 늦었어요.",
+          "cue": "Because of the rain I was very late.",
+          "changed": "the noun-headed cause in place of the ending"
+        }
+      ],
+      "mistake": {
+        "display": "Sago-ga saenggyeosseoseo neomu neujeosseoyo.",
+        "script": "사고가 생겼어서 너무 늦었어요.",
+        "why": "-aseo takes no past marker of its own. The tense goes once, on neujeosseoyo, and the reason clause stays saenggyeoseo."
+      },
+      "usage": "Explaining yourself as you arrive, before anyone asks.",
+      "register": "neutral",
+      "mnemonic": "One past per sentence, and it goes at the end."
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "Jigeum bappeunikka naeil dasi jeonhwahaseyo.",
+      "script": "지금 바쁘니까 내일 다시 전화하세요.",
+      "cue": "I am busy right now, so call again tomorrow.",
+      "literal": "now busy-since tomorrow again phone-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dasi",
+            "script": "다시",
+            "cue": "again",
+            "tag": "free",
+            "forms": ["dasi"],
+            "note": "Once more, from the start. It sits in front of the verb, and it is what makes an instruction sound like a second chance rather than a refusal."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "-(eu)nikka IS THE ONE THAT CAN COMMAND. L3-M3's ending may head an instruction; L1-M9's -aseo may not, and bappaseo jeonhwahaseyo is simply not a sentence. The two are not stylistic neighbours.",
+      "sound": "JI-geum ba-PPEU-ni-kka NAE-il DA-si jeon-hwa-HA-se-yo. The double p is held before the ending.",
+      "variations": [
+        {
+          "display": "Jigeum bappeunikka naeil mannayo.",
+          "script": "지금 바쁘니까 내일 만나요.",
+          "cue": "I am busy right now, so let us meet tomorrow.",
+          "changed": "a suggestion instead of an instruction, which -(eu)nikka also allows"
+        },
+        {
+          "display": "Sigan-i eopseunikka dasi jeonhwahaseyo.",
+          "script": "시간이 없으니까 다시 전화하세요.",
+          "cue": "There is no time, so call again.",
+          "changed": "the reason: no time rather than being busy"
+        }
+      ],
+      "mistake": {
+        "display": "Jigeum bappaseo naeil dasi jeonhwahaseyo.",
+        "script": "지금 바빠서 내일 다시 전화하세요.",
+        "why": "-aseo cannot stand in front of a command. A reason that heads an instruction takes -(eu)nikka: bappeunikka."
+      },
+      "usage": "Putting someone off politely on the phone, at your desk.",
+      "register": "neutral",
+      "mnemonic": "-nikka can give orders, -aseo cannot."
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "Sago ttaemune mun-i an yeollyeoyo.",
+      "script": "사고 때문에 문이 안 열려요.",
+      "cue": "Because of the accident the door does not open.",
+      "literal": "accident because-of door-subj not opens",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mun",
+            "script": "문",
+            "cue": "a door",
+            "tag": "free",
+            "forms": ["mun", "mun-i", "mun-eul"],
+            "note": "A door or a gate. With the passive it takes -i, because the door is the thing that opens rather than the thing anyone opens."
+          },
+          {
+            "display": "yeollyeoyo",
+            "script": "열려요",
+            "cue": "it opens",
+            "tag": "delta",
+            "forms": ["yeollyeoyo", "yeollyeosseoyo"],
+            "note": "The door opens, with nobody opening it. One of the three passives this course teaches; the active yeoreoyo would need a person doing it."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "NO ONE IS DOING THIS. English can say the door is not opened and leave the agent hidden; Korean uses a different word. yeollyeoyo has no by-phrase and cannot take one.",
+      "sound": "SA-go ttae-MU-ne MU-ni AN yeol-LYEO-yo. The double l is held: yeol-LYEO-yo.",
+      "variations": [
+        {
+          "display": "Sago ttaemune mun-i an yeollyeosseoyo.",
+          "script": "사고 때문에 문이 안 열렸어요.",
+          "cue": "Because of the accident the door would not open.",
+          "changed": "the past, on the passive verb"
+        },
+        {
+          "display": "Sago ttaemune hakgyo-e mot gasseoyo.",
+          "script": "사고 때문에 학교에 못 갔어요.",
+          "cue": "Because of the accident I could not get to school.",
+          "changed": "the consequence: a person who cannot go rather than a door that will not open"
+        }
+      ],
+      "mistake": {
+        "display": "Sago deokbune mun-i an yeollyeoyo.",
+        "script": "사고 덕분에 문이 안 열려요.",
+        "why": "deokbune is thanks to, and it is only ever said of good luck. A door stuck shut takes ttaemune."
+      },
+      "usage": "Reporting a problem in a building to whoever can fix it.",
+      "register": "neutral",
+      "mnemonic": "The door opens; nobody opens the door."
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "Yori-reul hagi ttaemune sigan-i eopseoyo.",
+      "script": "요리를 하기 때문에 시간이 없어요.",
+      "cue": "Because I am cooking, I have no time.",
+      "literal": "cooking-obj doing because-of time-subj not-exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ttaemune",
+            "script": "때문에",
+            "cue": "because of",
+            "tag": "free",
+            "forms": ["ttaemune"],
+            "note": "L3-M3's word, unchanged. What is new is what may stand in front of it: a nominalised stem — hagi, gagi, meokgi — as well as a plain noun."
+          }
+        ],
+        "rules": [5, 2]
+      },
+      "trap": "A CLAUSE HAS TO BECOME A NOUN FIRST. ttaemune is a noun frame, so the verb in front of it takes L4-M1's -gi. hae ttaemune and handa ttaemune are both impossible; hagi ttaemune is the shape.",
+      "sound": "YO-ri-reul HA-gi ttae-MU-ne. Sigan-i runs together as si-GA-ni.",
+      "variations": [
+        {
+          "display": "Yori-reul hagi ttaemune jeonhwa-reul mot haesseoyo.",
+          "script": "요리를 하기 때문에 전화를 못 했어요.",
+          "cue": "Because I am cooking, I could not call.",
+          "changed": "the consequence: a call not made"
+        },
+        {
+          "display": "Yeyak-eul hagi ttaemune sigan-i eopseoyo.",
+          "script": "예약을 하기 때문에 시간이 없어요.",
+          "cue": "Because I am making a booking, I have no time.",
+          "changed": "the clause in front: booking rather than cooking"
+        }
+      ],
+      "mistake": {
+        "display": "Yori-reul hae ttaemune sigan-i eopseoyo.",
+        "script": "요리를 해 때문에 시간이 없어요.",
+        "why": "A bare stem cannot sit in front of ttaemune. The clause is nominalised first, exactly as it is in front of wihaeseo: hagi ttaemune."
+      },
+      "usage": "Explaining down the phone why you cannot talk for long.",
+      "register": "neutral",
+      "mnemonic": "-gi turns the clause into the noun ttaemune wants."
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "Chingu deokbune hangugeo-reul jal baewosseoyo.",
+      "script": "친구 덕분에 한국어를 잘 배웠어요.",
+      "cue": "Thanks to a friend I learned Korean well.",
+      "literal": "friend thanks-to Korean-obj well learned",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deokbune",
+            "script": "덕분에",
+            "cue": "thanks to",
+            "tag": "interference",
+            "forms": ["deokbune"],
+            "note": "Only ever positive. It names whoever or whatever you owe the good outcome to, and there is no version of it for bad luck."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "ENGLISH because of DOES BOTH JOBS AND KOREAN SPLITS THEM. Choosing ttaemune here would say the friend was the trouble. The choice between the two is not a matter of tone; it says which way the luck went.",
+      "sound": "CHIN-gu deok-BU-ne. Han-gu-GEO-reul JAL bae-WO-sseo-yo.",
+      "variations": [
+        {
+          "display": "Seonsaengnim deokbune hangugeo-reul jal baewosseoyo.",
+          "script": "선생님 덕분에 한국어를 잘 배웠어요.",
+          "cue": "Thanks to my teacher I learned Korean well.",
+          "changed": "who is being thanked"
+        },
+        {
+          "display": "Chingu deokbune jal haesseoyo.",
+          "script": "친구 덕분에 잘 했어요.",
+          "cue": "Thanks to a friend it went well.",
+          "changed": "what went well left unnamed"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu ttaemune hangugeo-reul jal baewosseoyo.",
+        "script": "친구 때문에 한국어를 잘 배웠어요.",
+        "why": "ttaemune leans negative, so this sounds like blaming the friend for the learning. Good luck takes deokbune."
+      },
+      "usage": "Giving somebody credit, out loud, in front of them.",
+      "register": "neutral",
+      "mnemonic": "deokbune only ever thanks."
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "Sori ttaemune jeonhwa-ga jal an deullyeoyo.",
+      "script": "소리 때문에 전화가 잘 안 들려요.",
+      "cue": "Because of the noise I cannot hear the phone well.",
+      "literal": "noise because-of phone-subj well not is-audible",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sori",
+            "script": "소리",
+            "cue": "a sound · noise",
+            "tag": "free",
+            "forms": ["sori", "sori-ga", "sori-reul"],
+            "note": "Any sound at all, pleasant or not. Whether it is noise is decided by the rest of the sentence rather than by the word."
+          },
+          {
+            "display": "deullyeoyo",
+            "script": "들려요",
+            "cue": "it is audible",
+            "tag": "delta",
+            "forms": ["deullyeoyo", "deullyeosseoyo"],
+            "note": "The sound reaches you; no one is doing the listening. What is heard takes -ga, which is why it is jeonhwa-ga and not jeonhwa-reul."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "THE THING HEARD IS THE SUBJECT. English keeps the hearer in front — I cannot hear the phone — and Korean puts the phone there instead, with -ga. Writing jeonhwa-reul turns it back into active listening.",
+      "sound": "SO-ri ttae-MU-ne jeon-HWA-ga JAL AN deul-LYEO-yo. The double l is held: deul-LYEO-yo.",
+      "variations": [
+        {
+          "display": "Sori ttaemune jeonhwa-ga jal an deullyeosseoyo.",
+          "script": "소리 때문에 전화가 잘 안 들렸어요.",
+          "cue": "Because of the noise I could not hear the phone well.",
+          "changed": "the past, on the passive verb"
+        },
+        {
+          "display": "Sago ttaemune jeonhwa-ga an deullyeoyo.",
+          "script": "사고 때문에 전화가 안 들려요.",
+          "cue": "Because of the accident the phone cannot be heard.",
+          "changed": "the cause: an accident rather than the noise"
+        }
+      ],
+      "mistake": {
+        "display": "Sori ttaemune jeonhwa-reul jal an deullyeoyo.",
+        "script": "소리 때문에 전화를 잘 안 들려요.",
+        "why": "deullyeoyo names the sound arriving, so what arrives is the subject. The particle is -ga, and nobody in the sentence is doing any hearing."
+      },
+      "usage": "On a bad line, in a station or a busy street.",
+      "register": "neutral",
+      "mnemonic": "What is heard takes -ga."
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "Hanguk-e salge dwaesseoyo.",
+      "script": "한국에 살게 됐어요.",
+      "cue": "It came about that I live in Korea.",
+      "literal": "Korea-in live-so-that became",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "salge",
+            "script": "살게",
+            "cue": "to live, as an outcome",
+            "tag": "delta",
+            "forms": ["salge", "sarayo"],
+            "note": "The -ge shape of salda, waiting for dwaesseoyo behind it. The l of the stem drops in the plain present, which is why that form is sarayo."
+          },
+          {
+            "display": "dwaesseoyo",
+            "script": "됐어요",
+            "cue": "it came about",
+            "tag": "delta",
+            "forms": ["dwaesseoyo"],
+            "note": "The past of L2-M7's dwaeyo, doing a different job: it closes the -ge frame and says circumstances brought the outcome, not a decision."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "THIS IS NOT A PLAN. sal geoyeyo would say you decided to live there. -ge dwaesseoyo says it turned out that way, and Korean reaches for it far more often than English reaches for any equivalent.",
+      "sound": "han-GU-ge SAL-ge DWAE-sseo-yo. Dwaesseoyo is two syllables plus the ending: DWAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Yeogi-eseo salge dwaesseoyo.",
+          "script": "여기에서 살게 됐어요.",
+          "cue": "It came about that I live here.",
+          "changed": "here rather than a named country"
+        },
+        {
+          "display": "Yori-reul hage dwaesseoyo.",
+          "script": "요리를 하게 됐어요.",
+          "cue": "It came about that I do the cooking.",
+          "changed": "the verb the -ge frame sits on"
+        }
+      ],
+      "mistake": {
+        "display": "Hanguk-e sal geoyeyo.",
+        "script": "한국에 살 거예요.",
+        "why": "That says you intend to live there. -ge dwaesseoyo says something outside you settled it, which is what makes it the modest answer."
+      },
+      "usage": "Answering how did you end up here? without claiming any credit.",
+      "register": "neutral",
+      "mnemonic": "-ge dwaesseoyo: it turned out that way."
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "Bul-eul kyeoseo hwamyeon-i jal boyeoyo.",
+      "script": "불을 켜서 화면이 잘 보여요.",
+      "cue": "I turned the light on, so the screen is easy to see.",
+      "literal": "light-obj turned-on-so screen-subj well is-visible",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "boyeoyo",
+            "script": "보여요",
+            "cue": "it is visible",
+            "tag": "delta",
+            "forms": ["boyeoyo", "boyeosseoyo"],
+            "note": "The screen is there to be seen. L2-M6's bwayo is a person looking; this is the thing showing, and it takes -i or -ga."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "-aseo AGAIN CARRIES NO TENSE. The turning-on is in the past and the seeing is now, and only the main verb says so. kyeosseoseo is not a form.",
+      "sound": "BU-reul KYEO-seo hwa-MYEO-ni JAL bo-YEO-yo. Bul-eul runs together as BU-reul.",
+      "variations": [
+        {
+          "display": "Bul-eul kyeoseo hwamyeon-i jal boyeosseoyo.",
+          "script": "불을 켜서 화면이 잘 보였어요.",
+          "cue": "I turned the light on, so the screen was easy to see.",
+          "changed": "the past, on the main verb only"
+        },
+        {
+          "display": "Bul ttaemune hwamyeon-i an boyeoyo.",
+          "script": "불 때문에 화면이 안 보여요.",
+          "cue": "Because of the light the screen is not visible.",
+          "changed": "the noun-headed cause, and the outcome reversed"
+        }
+      ],
+      "mistake": {
+        "display": "Bul-eul kyeoseo hwamyeon-eul jal bwayo.",
+        "script": "불을 켜서 화면을 잘 봐요.",
+        "why": "bwayo is you doing the looking. boyeoyo says the screen shows up by itself, and what shows up takes -i rather than -eul."
+      },
+      "usage": "At a kiosk or a desk, saying whether you can read the screen.",
+      "register": "neutral",
+      "mnemonic": "bwayo looks, boyeoyo shows."
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "Sigan-i eopseunikka ramyeon-eul kkeuriseyo.",
+      "script": "시간이 없으니까 라면을 끓이세요.",
+      "cue": "There is no time, so boil some ramyeon.",
+      "literal": "time-subj not-exist-since ramyeon-obj boil-please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eopseunikka",
+            "script": "없으니까",
+            "cue": "since there is none",
+            "tag": "delta",
+            "forms": ["eopseunikka", "eopseoseo"],
+            "note": "L1-M3's eopseoyo under both causal endings. Only the -(eu)nikka one may head the instruction that follows; the -aseo one may not."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "-(eu)nikka IS THE SPEAKER'S OWN JUSTIFICATION. That is the third thing separating it from -aseo, and it is why it can sound blunt to an elder: it says here is my reason, take it. -aseo just offers a fact.",
+      "sound": "si-GA-ni eop-SEU-ni-kka. Eopseunikka has a hard p before the s: eop-SEU-ni-kka.",
+      "variations": [
+        {
+          "display": "Sigan-i eopseoseo ramyeon-eul kkeuryeosseoyo.",
+          "script": "시간이 없어서 라면을 끓였어요.",
+          "cue": "There was no time, so I boiled some ramyeon.",
+          "changed": "-aseo with a statement, where -(eu)nikka had an instruction"
+        },
+        {
+          "display": "Sigan-i eopseunikka ppalli haseyo.",
+          "script": "시간이 없으니까 빨리 하세요.",
+          "cue": "There is no time, so be quick.",
+          "changed": "the instruction: hurry rather than cook"
+        }
+      ],
+      "mistake": {
+        "display": "Sigan-i eopseoseo ramyeon-eul kkeuriseyo.",
+        "script": "시간이 없어서 라면을 끓이세요.",
+        "why": "-aseo cannot head an instruction, however ordinary the reason is. In front of a command it has to be eopseunikka."
+      },
+      "usage": "Telling someone at home what to do about dinner.",
+      "register": "neutral",
+      "mnemonic": "A reason in front of an order is always -nikka."
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "Geu gyeolgwa hangugeo-reul jal hage dwaesseoyo.",
+      "script": "그 결과 한국어를 잘 하게 됐어요.",
+      "cue": "As a result, I came to speak Korean well.",
+      "literal": "that result Korean-obj well do-so-that became",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gyeolgwa",
+            "script": "결과",
+            "cue": "a result · an outcome",
+            "tag": "free",
+            "forms": ["gyeolgwa", "gyeolgwa-ga", "gyeolgwa-reul"],
+            "note": "The outcome of what came before. With L2-M10's geu in front and no particle behind it, geu gyeolgwa carries a cause across a sentence break."
+          },
+          {
+            "display": "hage",
+            "script": "하게",
+            "cue": "to do, as an outcome",
+            "tag": "delta",
+            "forms": ["hage"],
+            "note": "The -ge shape of hada, waiting for dwaesseoyo. L3-M4 already owns the bare ge, so this frame costs the course nothing new."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "geu gyeolgwa TAKES NO PARTICLE. It stands at the front of the sentence as a link back to the one before, which is how one cause is carried across a paragraph rather than tied to a single clause.",
+      "sound": "GEU gyeol-GWA han-gu-GEO-reul JAL HA-ge DWAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Geu gyeolgwa yori-reul jal hage dwaesseoyo.",
+          "script": "그 결과 요리를 잘 하게 됐어요.",
+          "cue": "As a result, I came to cook well.",
+          "changed": "what came about: cooking rather than Korean"
+        },
+        {
+          "display": "Geu gyeolgwa hanguk-e salge dwaesseoyo.",
+          "script": "그 결과 한국에 살게 됐어요.",
+          "cue": "As a result, it came about that I live in Korea.",
+          "changed": "the outcome: living there"
+        }
+      ],
+      "mistake": {
+        "display": "Geu gyeolgwa hangugeo-reul jal haesseoyo.",
+        "script": "그 결과 한국어를 잘 했어요.",
+        "why": "That says you did it well on some occasion. -ge dwaesseoyo says you came to be able to, over time and without deciding to."
+      },
+      "usage": "The last sentence of an account of how something turned out.",
+      "register": "neutral",
+      "mnemonic": "geu gyeolgwa carries the cause into the next sentence."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "Sago-ga saenggyeoseo neomu neujeosseoyo.",
+      "script": "사고가 생겨서 너무 늦었어요.",
+      "cue": "There was an accident, so I was very late."
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "Jigeum bappeunikka naeil dasi jeonhwahaseyo.",
+      "script": "지금 바쁘니까 내일 다시 전화하세요.",
+      "cue": "I am busy right now, so call again tomorrow."
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "Sago ttaemune mun-i an yeollyeoyo.",
+      "script": "사고 때문에 문이 안 열려요.",
+      "cue": "Because of the accident the door does not open."
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "Yori-reul hagi ttaemune sigan-i eopseoyo.",
+      "script": "요리를 하기 때문에 시간이 없어요.",
+      "cue": "Because I am cooking, I have no time."
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "Chingu deokbune hangugeo-reul jal baewosseoyo.",
+      "script": "친구 덕분에 한국어를 잘 배웠어요.",
+      "cue": "Thanks to a friend I learned Korean well."
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "Sori ttaemune jeonhwa-ga jal an deullyeoyo.",
+      "script": "소리 때문에 전화가 잘 안 들려요.",
+      "cue": "Because of the noise I cannot hear the phone well."
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "Hanguk-e salge dwaesseoyo.",
+      "script": "한국에 살게 됐어요.",
+      "cue": "It came about that I live in Korea."
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "Bul-eul kyeoseo hwamyeon-i jal boyeoyo.",
+      "script": "불을 켜서 화면이 잘 보여요.",
+      "cue": "I turned the light on, so the screen is easy to see."
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "Sigan-i eopseunikka ramyeon-eul kkeuriseyo.",
+      "script": "시간이 없으니까 라면을 끓이세요.",
+      "cue": "There is no time, so boil some ramyeon."
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "Geu gyeolgwa hangugeo-reul jal hage dwaesseoyo.",
+      "script": "그 결과 한국어를 잘 하게 됐어요.",
+      "cue": "As a result, I came to speak Korean well."
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "Bi ttaemune neomu neujeosseoyo.",
+      "script": "비 때문에 너무 늦었어요.",
+      "cue": "Because of the rain I was very late."
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "Sago ttaemune hakgyo-e mot gasseoyo.",
+      "script": "사고 때문에 학교에 못 갔어요.",
+      "cue": "Because of the accident I could not get to school."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

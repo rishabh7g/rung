@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M8",
+  "title": "Back then",
+  "job": "Habits and states in the past; then against now",
+  "prerequisites": ["L4-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["present", "imperfect"],
+    "allowedPatterns": [
+      "Antes + <imperfect> + , ahora + <present>",
+      "Solía + V-inf",
+      "De pequeño + <imperfect>",
+      "Cuando era + <N> + , + <imperfect>",
+      "Ya no + <present> + . + Antes sí"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The imperfect L1-M5 opened and L2-M10 used for scenery has a third job, and it is the biggest: HABIT. jugaba is I used to play, not I played once. Nothing in the sentence has to say used to — the tense has already said it."
+    },
+    {
+      "tag": "delta",
+      "text": "solía + INFINITIVE is L3-M1's suelo + infinitive moved back one tense. It is not a new verb and not a new pattern: you already own the frame, and this hands you the past of it. Antes solía trabajar los sábados says exactly what trabajaba says, a little more explicitly."
+    },
+    {
+      "tag": "free",
+      "text": "The imperfect has THREE irregular verbs in the entire language — era, iba, veía — and you already have era from L1-M5. Everything else takes -aba or -ía with no surprises, which makes this the cheapest tense in Spanish to learn."
+    },
+    {
+      "tag": "interference",
+      "text": "English used to is OPTIONAL: when I was little I ate a lot of bread and I used to eat a lot of bread are the same sentence. So nothing warns you that Spanish has already chosen, and you reach for comí — which says you ate once, on one afternoon, and then stopped."
+    },
+    {
+      "tag": "free",
+      "text": "The then-and-now frame: antes + imperfect against ahora + present, and ya no + present as its negative. L4-M6 opened ya no; here it does the work of a whole second clause — Ya no trabajo allí means the trabajaba is over."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M8-S01",
+      "display": "Antes solía trabajar los sábados, ahora no trabajo nunca.",
+      "cue": "I used to work Saturdays, now I never work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "solía",
+            "cue": "I / he used to",
+            "tag": "delta",
+            "forms": ["solía", "solías", "solían"],
+            "note": "The imperfect of the soler L3-M1 taught as suelo. Same verb, same infinitive after it, one tense further back. It has no other tense worth learning."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "solía trabajar and trabajaba mean the same thing. solía is not stronger or more past — it just says used to out loud, the way English can and Spanish usually does not bother to.",
+      "sound": "so-LEE-a. Three syllables: the accent on the i breaks it away from the a that follows.",
+      "variations": [
+        {
+          "display": "Antes solía trabajar los domingos, ahora no trabajo nunca.",
+          "cue": "I used to work Sundays, now I never work.",
+          "changed": "which day the habit sat on"
+        },
+        {
+          "display": "Antes solía trabajar mucho, ahora trabajo menos.",
+          "cue": "I used to work a lot, now I work less.",
+          "changed": "a change of degree rather than a stop"
+        }
+      ],
+      "mistake": {
+        "display": "Antes suelo trabajar los sábados, ahora no trabajo nunca.",
+        "why": "suelo is the present, so the sentence says I usually work Saturdays and then denies it in the same breath. antes is not enough to make a present tense past."
+      },
+      "usage": "Answering what you used to do for a living, or why your weekends look different. Neutral in both addresses.",
+      "register": "neutral",
+      "mnemonic": "suelo is now, solía is then."
+    },
+    {
+      "id": "L4-M8-S02",
+      "display": "De pequeño jugaba en la calle todos los días.",
+      "cue": "As a little boy I played in the street every day.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "de pequeño",
+            "cue": "as a child · when I was little",
+            "tag": "free",
+            "forms": ["de pequeño"],
+            "note": "Two words that behave as one time phrase, and they agree with the speaker: a woman says de pequeña. No verb is needed after it at all."
+          },
+          {
+            "display": "jugaba",
+            "cue": "I / he used to play",
+            "tag": "delta",
+            "forms": ["jugaba", "jugábamos"],
+            "note": "The imperfect of jugar, and perfectly regular — the u-to-ue change that jugar has in the present does not happen in this tense."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The English is I played, with no used to in it anywhere. Copy that and you write jugué, which says you played once, on one particular afternoon of your childhood.",
+      "sound": "khoo-GA-ba. The j is the throaty one, and the g in the middle is hard.",
+      "variations": [
+        {
+          "display": "De pequeño jugaba en el parque todos los días.",
+          "cue": "As a little boy I played in the park every day.",
+          "changed": "where"
+        },
+        {
+          "display": "De pequeña jugaba en la calle todos los días.",
+          "cue": "As a little girl I played in the street every day.",
+          "changed": "the speaker is a woman, so the phrase agrees"
+        }
+      ],
+      "mistake": {
+        "display": "De pequeño jugué en la calle todos los días.",
+        "why": "jugué is the preterite: one game, one day. With todos los días in the same sentence it collapses — a thing cannot happen once every day."
+      },
+      "usage": "Reminiscing with a friend. Intimate, and de pequeño is what people say rather than the fuller cuando era pequeño.",
+      "register": "informal",
+      "mnemonic": "A childhood is a habit, not an event."
+    },
+    {
+      "id": "L4-M8-S03",
+      "display": "Cuando era pequeño, iba al parque con mi hermana.",
+      "cue": "When I was little, I used to go to the park with my sister.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "iba",
+            "cue": "I / he used to go",
+            "tag": "free",
+            "forms": ["iba", "ibas", "íbamos"],
+            "note": "One of the only three irregular imperfects in Spanish, and it looks nothing like ir. Learn these three and the tense holds no more surprises."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "cuando + imperfect is a scene, not a moment. L4-M6's rule about the subjunctive does not apply here at all: nothing is pending, because this is a childhood that has already been lived.",
+      "sound": "EE-ba. Two syllables, and the stress is on the first — not ee-BA.",
+      "variations": [
+        {
+          "display": "Cuando era pequeño, iba al cine con mi hermana.",
+          "cue": "When I was little, I used to go to the cinema with my sister.",
+          "changed": "where the outing went"
+        },
+        {
+          "display": "Cuando era pequeño, íbamos al parque los domingos.",
+          "cue": "When I was little, we used to go to the park on Sundays.",
+          "changed": "to the whole family, and a day is named"
+        }
+      ],
+      "mistake": {
+        "display": "Cuando era pequeño, fui al parque con mi hermana.",
+        "why": "fui is one visit. The sentence then reads as a childhood in which the park happened exactly once, which is almost never what is meant."
+      },
+      "usage": "Told to somebody who asked where you grew up. Warm, and it works unchanged in usted because no verb in it is addressed to anybody.",
+      "register": "informal",
+      "mnemonic": "era, iba, veía — the whole irregular list."
+    },
+    {
+      "id": "L4-M8-S04",
+      "display": "En aquella época no había teléfono en casa.",
+      "cue": "In those days there was no telephone in the house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "época",
+            "cue": "period · time · era",
+            "tag": "free",
+            "forms": ["época"],
+            "note": "A stretch of years rather than a clock time, so it never replaces hora or tiempo. L4-M3 taught aquella, and en aquella época is where a Spanish reminiscence usually starts."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "había is L2-M10's and is already an imperfect. It is invariable — there was and there were are both había — so no plural creeps in when the missing thing is plural.",
+      "sound": "EH-po-ka. Stress on the first syllable, which the accent marks; the middle o is short.",
+      "variations": [
+        {
+          "display": "En aquella época no había teléfono en la tienda.",
+          "cue": "In those days there was no telephone in the shop.",
+          "changed": "where the telephone was missing"
+        },
+        {
+          "display": "En aquella época no había agua en casa.",
+          "cue": "In those days there was no water in the house.",
+          "changed": "what was missing"
+        }
+      ],
+      "mistake": {
+        "display": "En aquella época no hubo teléfono en casa.",
+        "why": "hubo is the preterite and reports a single event. A decade without a telephone is a state, and states take había."
+      },
+      "usage": "Setting a scene for somebody much younger. Neutral, and slightly formal in feel because of aquella.",
+      "register": "neutral",
+      "mnemonic": "A whole era is one long imperfect."
+    },
+    {
+      "id": "L4-M8-S05",
+      "display": "Ya no veo a mis amigos, pero antes los veía mucho.",
+      "cue": "I don't see my friends any more, but I used to see them a lot.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "veía",
+            "cue": "I / he used to see",
+            "tag": "free",
+            "forms": ["veía", "veías"],
+            "note": "The third and last irregular imperfect. It is irregular only in keeping the e of ver, which the regular pattern would have dropped: not vía but veía."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "ya no takes the PRESENT — ya no veo — even though the change it reports is in the past. The past half of the sentence is carried by veía, not by ya no.",
+      "sound": "be-EE-a. Three syllables, and the accent on the i is what keeps them apart.",
+      "variations": [
+        {
+          "display": "Ya no veo a mis amigos, pero antes los veía todos los días.",
+          "cue": "I don't see my friends any more, but I used to see them every day.",
+          "changed": "how often, in the old half"
+        },
+        {
+          "display": "Ya no veo a mi hermano, pero antes lo veía mucho.",
+          "cue": "I don't see my brother any more, but I used to see him a lot.",
+          "changed": "one person instead of several"
+        }
+      ],
+      "mistake": {
+        "display": "Ya no veía a mis amigos, pero antes los veía mucho.",
+        "why": "Both halves are now in the past, so the then-and-now contrast disappears. ya no is about today and must stay in the present."
+      },
+      "usage": "The honest answer to how are things. Neutral, and a common way to say you are lonelier than you were.",
+      "register": "neutral",
+      "mnemonic": "ya no lives in the present; the regret lives in the imperfect."
+    },
+    {
+      "id": "L4-M8-S06",
+      "display": "Antes hacía mucho frío en aquella casa.",
+      "cue": "That house used to be very cold.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hacía",
+            "cue": "it used to be (of weather) · I / he used to do",
+            "tag": "free",
+            "forms": ["hacía", "hacías"],
+            "note": "The imperfect of hacer, regular in spite of the verb's reputation. With frío or calor it is the weather verb, and there it has no subject at all."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "Spanish makes cold rather than being cold: hacía frío, never era frío. The house is not the subject — nothing is.",
+      "sound": "a-SEE-a. The h is silent, so the word opens on the a and the stress lands on the ee.",
+      "variations": [
+        {
+          "display": "Antes hacía mucho frío en la cocina.",
+          "cue": "The kitchen used to be very cold.",
+          "changed": "the room"
+        },
+        {
+          "display": "En aquella época hacía mucho frío en casa.",
+          "cue": "In those days the house used to be very cold.",
+          "changed": "how the then is named"
+        }
+      ],
+      "mistake": {
+        "display": "Antes era mucho frío en aquella casa.",
+        "why": "era translates the English was word for word. Spanish has no was for weather: the verb is hacer, in every tense."
+      },
+      "usage": "Complaining fondly about somewhere you used to live. Neutral.",
+      "register": "neutral",
+      "mnemonic": "Weather is made, not been."
+    },
+    {
+      "id": "L4-M8-S07",
+      "display": "De joven estudiaba por la mañana y trabajaba por la tarde.",
+      "cue": "When I was young I studied in the morning and worked in the afternoon.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "de joven",
+            "cue": "as a young person · in my youth",
+            "tag": "free",
+            "forms": ["de joven"],
+            "note": "Built exactly like de pequeño, and it does not change for a woman because joven has one form for both. It covers roughly the twenties."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "Two habits in one sentence and no y then about it. English would often reach for a used to somewhere; Spanish leaves both verbs bare, because the tense has said it twice already.",
+      "sound": "de KHO-ben. The j is throaty and the v is closer to a b.",
+      "variations": [
+        {
+          "display": "De joven estudiaba por la noche y trabajaba por la mañana.",
+          "cue": "When I was young I studied at night and worked in the morning.",
+          "changed": "the two halves swap round"
+        },
+        {
+          "display": "De joven trabajaba mucho y no estudiaba nunca.",
+          "cue": "When I was young I worked a lot and never studied.",
+          "changed": "an honest confession replaces the timetable"
+        }
+      ],
+      "mistake": {
+        "display": "De joven estudié por la mañana y trabajé por la tarde.",
+        "why": "Both preterites turn a couple of years into a single day: one morning of study, one afternoon of work."
+      },
+      "usage": "Said across a table to somebody younger, often as the first half of advice. Neutral.",
+      "register": "neutral",
+      "mnemonic": "Two habits, two imperfects, no extra words."
+    },
+    {
+      "id": "L4-M8-S08",
+      "display": "Cuando era pequeña, mi abuela hacía sopa los domingos.",
+      "cue": "When I was a little girl, my grandmother used to make soup on Sundays.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "abuela",
+            "cue": "grandmother",
+            "tag": "free",
+            "forms": ["abuela", "abuelo"],
+            "note": "The plural abuelos means grandparents, both of them, the way padres means parents — the masculine plural covers a mixed pair."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "los domingos with the article means on Sundays, every Sunday. Without it, el domingo would be this coming Sunday and the imperfect would have nothing to be habitual about.",
+      "sound": "a-BWEH-la. Three syllables, and the ue is one sound.",
+      "variations": [
+        {
+          "display": "Cuando era pequeña, mi abuela hacía sopa los sábados.",
+          "cue": "When I was a little girl, my grandmother used to make soup on Saturdays.",
+          "changed": "the day"
+        },
+        {
+          "display": "Cuando era pequeño, mi abuelo hacía sopa los domingos.",
+          "cue": "When I was a little boy, my grandfather used to make soup on Sundays.",
+          "changed": "the speaker and the cook"
+        }
+      ],
+      "mistake": {
+        "display": "Cuando era pequeña, mi abuela hizo sopa los domingos.",
+        "why": "hizo is one pot of soup. Set against los domingos it reads as a single Sunday that somehow repeated, which is why the imperfect exists."
+      },
+      "usage": "The most ordinary reminiscence there is. Intimate, and the sort of thing said over a meal.",
+      "register": "informal",
+      "mnemonic": "los domingos plus the imperfect is every Sunday there ever was."
+    },
+    {
+      "id": "L4-M8-S09",
+      "display": "¿Usted también trabajaba allí de joven?",
+      "cue": "Did you use to work there too when you were young?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "allí",
+            "cue": "there · over there",
+            "tag": "free",
+            "forms": ["allí"],
+            "note": "The far there, away from both speakers, which is why it pairs so naturally with a past nobody is standing in any more. aquí is its near opposite."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "trabajaba is both I used to work and you (usted) used to work. Usted is written out here for exactly that reason — without it the question could be about the speaker.",
+      "sound": "a-YEE. Two syllables, stress on the second, and the double l is a y.",
+      "variations": [
+        {
+          "display": "¿Usted también vivía allí de joven?",
+          "cue": "Did you use to live there too when you were young?",
+          "changed": "living instead of working"
+        },
+        {
+          "display": "¿Usted también jugaba allí de pequeño?",
+          "cue": "Did you use to play there too as a child?",
+          "changed": "further back, to childhood"
+        }
+      ],
+      "mistake": {
+        "display": "¿Usted también trabajó allí de joven?",
+        "why": "trabajó asks about one shift. With de joven attached it becomes a question about a single day in somebody's twenties, which is not what anybody wants to know."
+      },
+      "usage": "The same reminiscence as the rest of the module, asked of an older stranger — a neighbour, somebody on a bench. This is the module's one usted item.",
+      "register": "formal",
+      "mnemonic": "The imperfect does not change for politeness; only the pronoun does."
+    },
+    {
+      "id": "L4-M8-S10",
+      "display": "En aquella época la gente no salía por la noche.",
+      "cue": "In those days people didn't go out at night.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "salía",
+            "cue": "used to go out",
+            "tag": "free",
+            "forms": ["salía", "salían"],
+            "note": "The imperfect of salir, and regular. Note the accent: without it salia would be read with the stress in the wrong place and is not a word."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "la gente is grammatically singular in Spanish — la gente no salía, never no salían. English people is plural and pulls the verb the wrong way.",
+      "sound": "sa-LEE-a. Three syllables, and the accent on the i separates it from the a.",
+      "variations": [
+        {
+          "display": "Antes la gente no salía por la noche.",
+          "cue": "People didn't used to go out at night.",
+          "changed": "a plainer way of saying then"
+        },
+        {
+          "display": "En aquella época la gente no salía mucho.",
+          "cue": "In those days people didn't go out much.",
+          "changed": "the time of day is dropped"
+        }
+      ],
+      "mistake": {
+        "display": "En aquella época la gente no salían por la noche.",
+        "why": "salían agrees with the English idea of people rather than with the Spanish word. la gente takes a singular verb every time."
+      },
+      "usage": "Explaining how a place has changed. Neutral, and often the opening line of a longer story.",
+      "register": "neutral",
+      "mnemonic": "la gente is one crowd, so one verb."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M8-C01", "display": "Antes solía trabajar los sábados.", "cue": "I used to work Saturdays." },
+    { "id": "L4-M8-C02", "display": "De pequeño jugaba en el parque.", "cue": "As a little boy I played in the park." },
+    { "id": "L4-M8-C03", "display": "Cuando era pequeño, iba al cine con mi hermano.", "cue": "When I was little, I used to go to the cinema with my brother." },
+    { "id": "L4-M8-C04", "display": "En aquella época no había agua caliente.", "cue": "In those days there was no hot water." },
+    { "id": "L4-M8-C05", "display": "Ya no veo a mis amigos como antes.", "cue": "I don't see my friends the way I used to." },
+    { "id": "L4-M8-C06", "display": "Antes hacía mucho frío en esta casa.", "cue": "This house used to be very cold." },
+    { "id": "L4-M8-C07", "display": "De joven estudiaba y trabajaba.", "cue": "When I was young I studied and worked." },
+    { "id": "L4-M8-C08", "display": "Mi abuela hacía sopa todos los días.", "cue": "My grandmother used to make soup every day." },
+    { "id": "L4-M8-C09", "display": "¿Usted vivía allí de pequeño?", "cue": "Did you use to live there as a child?" },
+    { "id": "L4-M8-C10", "display": "La gente no salía mucho por la noche.", "cue": "People didn't go out much at night." },
+    { "id": "L4-M8-C11", "display": "Mis padres solían hablar de aquella época.", "cue": "My parents used to talk about those days." },
+    { "id": "L4-M8-C12", "display": "Antes vivía aquí, pero ahora vivo lejos.", "cue": "I used to live here, but now I live far away." }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
