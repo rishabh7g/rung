@@ -356,3 +356,337 @@ these two modules, and it is unmet; none of these may be closed by rewriting a s
 130. **`ही गंमत नाही` as a fixed stop line.** S10 and rule 5 treat it as *the* sentence that ends
      teasing. Is it that conventionalised, or is it one option among several — and what does a
      speaker say when the teasing has to stop but the friendship must not?
+
+---
+
+## Wave 2 — L5-M3, L5-M4 and L5-M5 (#572)
+
+### L5-M3 "How they say it there" — the module that admits the course taught one Marathi
+
+Ten displays:
+
+1. `आपण पुणेरी मराठी शिकतो, पण बोली खूप आहेत.`
+2. `कोकणात लोक थोडं वेगळं बोलतात, पण सगळं समजतं.`
+3. `तू काय म्हणतोस, हे बरोबर आहे का?`
+4. `तुम्ही काय म्हणताय, हे बरोबर आहे का?`
+5. `आजोबा काय म्हणतात, ते नीट ऐक.`
+6. `आजकाल तरुण इंग्रजी शब्द वापरतात, पूर्वी असं नव्हतं.`
+7. `हल्ली तरुण पिढी वेगळी मराठी बोलते.`
+8. `इकडे आम्ही असं म्हणतो, तिकडे तसं म्हणतात.`
+9. `मराठीत जास्त म्हणतात, ज्यादा हा हिंदी शब्द आहे.`
+10. `गावाकडे उच्चार वेगळा असतो, पण शब्द तेच असतात.`
+
+What it teaches, in twenty-five keys and five module rules. S01 is the module's whole reason for
+existing and it says the thing out loud: `आपण पुणेरी मराठी शिकतो` — the course has been teaching ONE
+Marathi and here is its name. The three axes the brief's note 2 fixes are each one minimal pair and
+no more. **Region** is S02 and S10: `कोकणात` and `गावाकडे` against the Pune standard, with the
+coastal `हाय`/`नाय` carried as comprehension only. **Honorific** is S03, S04 and S05 — the same
+sentence three times with one cell changed, which is the axis note 2 says the learner is actually
+judged on: `तू … म्हणतोस` / `तुम्ही … म्हणताय` / `आजोबा … म्हणतात`. **Generation** is S06 and S07:
+`आजकाल` and `हल्ली` against L4-M8's `पूर्वी`, and the young speaker's `इंग्रजी शब्द वापरतात` against a
+grandparent who does not.
+
+Rule 3 is the module's most useful sentence and it is the one note 4 demanded: the learner's own
+markers — `ज्यादा` for `जास्त`, `लेकिन` for `पण`, `बहुत` for `खूप`, L4-M7's Hindi-shaped `केला जातो`
+where the sign says `करण्यात येईल` — are **not a Marathi dialect**. They read as Hindi-accented
+Marathi, which is a different and worse thing, and S09 makes that a display. The same rule says
+Hindi's middle tier `तुम` has no Marathi twin at all; S03's `mistake` is exactly that, a learner
+writing `तुम काय म्हणतोस`, and the `why` says the word does not exist rather than that it is rude.
+
+Rule 4 carries note 5's ban: no variety here is *better*, and what marks an outsider is mixing them
+rather than choosing one. Nothing in the module ranks a variety, and the `usage` lines describe
+rather than correct.
+
+**How `हाय` and `नाय` are shipped without ever being produced.** Note 3 is absolute — everything the
+learner PRODUCES stays Pune standard, and the variety spelling lives in `usage` and in the
+comprehension pool. That is a mechanical problem, because *a shown surface is a taught surface*: a
+pool item is scanned and must resolve. The resolution is that `tools/check-shown.ts` (and the
+emitter it imports from) scans `display`, variation displays and pool displays, while a word ROW is
+free to teach a surface the sentence does not contain. So `हाय` and `नाय` are two rows on S02 —
+the Konkan sentence — whose own display is Pune standard throughout; the varieties appear in S02's
+`usage` (`तो घरी आहे` against `तो घरी हाय`) and as pool items C03 and C04, and in no display anywhere.
+The rows carry the route back (`आहे (L1-M1)`, `नाही (L1-M2)`) and say in as many words: recognise,
+never write. Both are tagged `delta`, not `free`, because being able to hear them is the delta.
+
+**Paradigm holes.** The honorific spread is a three-cell paradigm and this module owns only two
+cells: `म्हणतोस` (S03) and `म्हणताय` (S04) each list nothing but themselves in `forms`. The third
+cell, `म्हणतात`, is L5-M1's — see the seam section — so it appears in S05, S08 and S09 as a re-shown
+surface with **no row at all**, and rule 1 says whose it is. A `forms` list on either row that
+reached for `म्हणतात` would have been a collision against a shipped module, which is the en-it
+`sarei` lesson one course over. `म्हणतो` gets its own row on S08 (the first-person cell, free)
+and its note prints the whole ladder so the hole is visible rather than silent.
+
+`ऐक` (S05) is the other shape of an older lexeme: `ऐकतो` is L1-M4's and `ऐकलं` is L1-M5's, so the
+imperative gets its own row in the module that first shows it, with the note pointing back at L1-M4
+— never an edit to a file below. Its `forms` carries `ऐका` too, the तुम्ही imperative, because S05's
+variation shows it.
+
+### L5-M4 "Formal occasions" — where the learner builds a passive for the first time
+
+Ten displays:
+
+1. `उद्या शाळेत एक मोठा कार्यक्रम आयोजित करण्यात आला आहे.`
+2. `हा समारंभ मोठा आहे, इथे तुमचे स्वागत आहे.`
+3. `आज इथे खूप लोक उपस्थित आहेत.`
+4. `मी सर्व उपस्थित मान्यवरांचे आभार मानतो.`
+5. `तुमचे अभिनंदन! हे खूप मोठे यश आहे.`
+6. `तुम्हाला वाढदिवसाच्या खूप खूप शुभेच्छा!`
+7. `तुम्हाला लग्नाच्या खूप खूप शुभेच्छा!`
+8. `तुम्हाला मोठे आयुष्य आणि खूप यश मिळो.`
+9. `त्यांचे निधन झाले, आणि त्यांना श्रद्धांजली वाहण्यात आली.`
+10. `ईश्वर त्यांच्या आत्म्यास शांती देवो.`
+
+The three occasions note 1 names get a block each: the event and the welcome (S01–S03), the
+public thank-you (S04) and the congratulation (S05–S08), the death (S09–S10). Every one is a set
+piece with fixed wording, which rule 4 says out loud, because note 1's claim is that a learner who
+improvises these sounds worse than one who has three memorised lines.
+
+**The productive passive** is rule 0 and it is the deferral `docs/48` §4 amendment 2 opened.
+L4-M7 taught `करण्यात येतं / येईल / आलं` as something the learner READS and owns both `करण्यात` and
+`देण्यात`; this module does not write a second row for either — they are re-shown in S01 and S02 and
+the productive step lives in `rules[0]`, exactly as the brief's note 5 instructed. What IS new is
+`वाहण्यात` (S09), its own single-token key with a note pointing at the base verb `वाहणे`, exactly as
+L4-M7's `-ण्यात` forms are; bare `ण्यात` stands free nowhere. Three sentences show the frame
+completing on `आला` (S01), `आले` (S02's variation) and `आली` (S09), so the agreement rule that
+`rules[0]` states — the `-ण्यात` word never changes, `येणे` carries the tense, `आला/आली/आलं` carries
+the agreement — is visible three times rather than asserted once.
+
+**The ceremonial optative** is rule 1: `मिळो` (S08) and `देवो` (S10), the `-ओ` that blesses. Rule 1
+draws the line note 2 demanded against L4-M7's notice optative `-आवे` (`कृपया रांगेत उभे राहावे`) in
+one sentence: `-ओ` wishes, `-आवे` tells. S10's `mistake` is the sharpest test of it — a learner who
+writes `ईश्वर … शांती मिळो` has produced a sentence in which nobody is doing the giving and `ईश्वर`
+sits idle, which is a grammatical fact rather than a taste.
+
+**Where the L1 helps, and the module says so.** Rule 2 is the honest one note 3 asked for: the
+occasion vocabulary is Sanskrit and carries over nearly outright — `अभिनंदन`, `श्रद्धांजली`, `स्वागत`,
+`आभार`, `समारंभ`, `उपस्थित`, `ईश्वर`, `शांती` — and no delta is manufactured for them; they are tagged
+`free`. The interference is placed exactly where note 3 puts it, on the VERB and on one greeting:
+`श्रद्धांजली वाहणे` against Hindi `अर्पित करना` (S09's `mistake`), `आभार मानणे` against Hindi
+`आभार व्यक्त करना` (S04's `mistake`), `शुभेच्छा` against Hindi `शुभकामनाएँ` (S06's `mistake`), and
+`अभिनंदन` taking no `हो` (S05's `mistake`). Four of the ten `mistake` blocks are the same failure
+mode — reach for the shared noun, then attach the Hindi verb — which is what note 3 predicted.
+
+`कृपया`, `धन्यवाद` and `नमस्कार` are L2-M1's and L1-M2's and are re-shown (S04's first variation ends
+on `धन्यवाद`), never re-opened. Nothing from L3-M8's bank window appears: rule 4 says a condolence is
+not an announcement.
+
+### L5-M5 "Big questions" — the first module whose subject is not in the room
+
+Ten displays:
+
+1. `माझ्या मते प्रेम आणि माणुसकी हा सगळ्यात मोठा धर्म आहे.`
+2. `खोटं बोलणं चूक आहे, पण खरं बोलणं अवघड असतं.`
+3. `माणसाने नेहमी खरं बोललं पाहिजे.`
+4. `प्रामाणिकपणा हा मोठा गुण आहे, पण तो अवघड आहे.`
+5. `चांगुलपणा मोठा आहे, पण मोठेपणा चांगला नाही.`
+6. `समाजात समानता पाहिजे, कारण माणूस म्हणून सगळे समान आहेत.`
+7. `माझ्या मते स्वातंत्र्य आणि न्याय हा एक विचार आहे.`
+8. `सत्य सांगणं अवघड असतं, पण ते गरजेचं आहे.`
+9. `जग मोठं आहे, पण जीवन लहान आहे.`
+10. `माझ्या मते सुख वेगळं आहे आणि समाधान वेगळं आहे.`
+
+The system is NOMINALISATION and it is three devices, one rule each. **Device 1**, `-पणा` on an
+adjective (rule 0): `चांगुलपणा`, `मोठेपणा`, `प्रामाणिकपणा`, all three shipped, all three as their own
+single-token keys with notes pointing at the adjective they are built from. The rule says the stem
+shifts — `चांगला` → `चांगुल-`, `मोठा` → `मोठे-` — so each derived word is learned rather than computed,
+and S05's `mistake` is a learner writing `चांगलापणा`. The bare suffix gets no key, exactly as bare
+`मुळे` and bare `पेक्षा` do not. **Device 2**, `-ता` on a Sanskrit stem (rule 1): `समानता` in S06,
+with rule 1 saying which adjectives can take it and S06's `mistake` (`समानपणा`) showing the wrong
+device on the right word. **Device 3**, the `-णं` verbal noun as SUBJECT (rule 2): `बोलणं` (S02) and
+`सांगणं` (S08), the shape the learner will use most and the one that costs nothing new, since `-णे`
+has been the course's citation form since L1. What is new is the POSITION, and both `mistake`s test
+it from opposite sides: S08's is `सांगणे` left in citation form where the subject slot needs `सांगणं`,
+S02's is `आहेत` where the neuter singular `-णं` subject requires `आहे`.
+
+The generic obligative is rule 3 and S03: `माणसाने नेहमी खरं बोललं पाहिजे`, built on L3-M4's `पाहिजे`
+with nothing new but the ergative-marked `माणसाने`. Its `mistake` is `बोलणे पाहिजे`, the direct
+Hindi calque of `बोलना चाहिए`, which the `trap` names as the module's biggest single slip: Marathi
+puts a PAST form where Hindi puts the infinitive, though the statement is about the future.
+
+Rule 4 is the module's interference rule and it is the one note 3 called the most productive Hindi
+habit failing: Hindi's `-ई` — `अच्छाई`, `सच्चाई`, `बुराई` — does not exist in Marathi. S04's `mistake`
+is `प्रामाणिकताई`, a word the learner invents with total confidence because the suffix works
+everywhere in the L1.
+
+Rule 5 records what the seam found: `माझ्या मते` costs nothing, because `माझ्या` is L2-M2's and `मते`
+is L3-M3's and this course runs at `maxSpan` 1, so the frame is two owned words standing together
+and has no key of its own. Three displays open on it (S01, S07, S10) and no row was written for
+either half.
+
+The module stops where note 4 says it must. Nothing here answers back an objection — that is
+L5-M6 — and nothing is a proverb (L5-M1's) or a ceremony (L5-M4's).
+
+### The seams the briefs got wrong, and what `content:owner` actually said
+
+The briefs' INDEX SEAM sections were written against an older fold. The index today reports
+**857 surfaces owned, folded over 42 modules through L5-M2**, and the brief's own framing —
+"N surfaces through L3-M10" in the L4 briefs, and `docs/103`'s L5 plan — is two rungs behind it.
+Four claims failed, and all four failed in the same direction: a key the brief called `free` had
+been taken by a module authored since.
+
+131. **`म्हणतात` is `L5-M1`, not free.** The L5-M3 brief's note 6 hedged this correctly — "`म्हणतात`
+   is this module's if it ships first; L5-M8's `याला काय म्हणतात?` and L5-M9's `असं म्हणतात` both
+   re-show it and point back, and the authoring order decides" — and the authoring order decided
+   against it. `npm run content:owner -- hi-mr म्हणतात` prints `म्हणतात	L5-M1`; the shipped module
+   bought it inside `असं म्हणतात`. So L5-M3 writes **no row** for it, re-shows it in three displays
+   (S05, S08, S09), and `rules[1]` names L5-M1 as its owner while carrying the third cell of the
+   honorific paradigm. The hedge is what saved the module; a brief that had simply written
+   `म्हणतात → free` would have produced an unreachable row.
+
+132. **`नशीब` is `L5-M1`, not free.** `docs/103`'s L5-M5 note 5 lists `नशीब → free` among that
+   module's fresh keys. It is not: `npm run content:owner -- hi-mr नशीब` prints `नशीब	L5-M1`, and
+   `नशिबाने` and `देवाच्या` sit beside it in the same shipped module — L5-M1 is the proverbs module
+   and luck is proverb vocabulary. L5-M5 ships no `नशीब` row and no `नशीब` display; the abstract
+   ground it would have covered is carried by `धर्म` (S01) and `जग` (S09) instead.
+
+133. **`खोटं` is `L5-M2`, not free.** The L5-M5 brief's note 2 gives `खोटं बोलणं चूक आहे` as the
+   worked example of device 3 — and `npm run content:owner -- hi-mr खोटं` prints `खोटं	L5-M2`,
+   which bought it for the teasing register. The display survives verbatim as S02, because a
+   re-shown owned surface needs no row; only the row that the brief implied had to go. The single
+   new key in S02 is `बोलणं`. Nothing was lost and the sentence the brief wanted is on the page.
+
+134. **`अर्थ` is free today and this module leaves it free.** `docs/103`'s L5-M5 note 5 assigns
+   `अर्थ` to L5-M8 (`याचा अर्थ काय?`) and says L5-M5 re-shows it. L5-M8 does not exist yet, so a
+   re-show would have been `SHOWN-BUT-UNTAUGHT`. L5-M5 therefore uses `अर्थ` in no display and in
+   no row, and the assignment stands untouched for whoever authors L5-M8.
+
+Two brief claims that LOOKED wrong and were right, checked rather than assumed:
+
+135. **`इकडे → free`, `तिकडे → free`, against `इथे → L2-M4` and `तिथे → L2-M4`.** The L5-M3 brief's
+   note 6 flags this as the place the first instinct goes wrong, and `content:owner` confirms it
+   exactly: `इकडे	free`, `तिकडे	free`, `इथे	L2-M4`, `तिथे	L2-M4`. They are separate
+   single-token keys, not forms of the L2 pair, and S08's two rows say so in as many words —
+   `इथे` is a spot, `इकडे` is a direction or a region — so a learner tapping `इकडे` gets a note about
+   the `-कडे` pair rather than a route note into a dialect module. `गावाकडे` (S10) is the same `-कडे`
+   on L4-M8's `गाव`, and its row says that too.
+
+136. **`करण्यात → L4-M7` and `देण्यात → L4-M7`.** True, and the L5-M4 brief's instruction follows from
+   it: those rows exist and their notes are announcement notes, so this module re-shows them and
+   carries the productive step in `rules[0]` rather than writing a second row for a spelling it
+   cannot own. Confirmed before S01 was written, not after.
+
+Two smaller corrections that are the authors' rather than the briefs':
+
+137. **`वाढदिवस` and `लग्न` stay free; L5-M4 owns only `वाढदिवसाच्या` and `लग्नाच्या`.** The greeting
+   frame is `तुम्हाला + N-च्या + खूप + खूप + शुभेच्छा`, so the `-च्या` form is the surface a display
+   actually shows. Listing the bare nouns in `forms` as well would have taken the module to 27 keys
+   against a `newWordCap` of 25. The rows carry the base word in their notes instead, and the bare
+   nouns are left for a module that shows them.
+
+138. **`म्हातारा` was on the L5-M3 brief's fresh-key list and is not shipped.** The generational
+   contrast note 2 asks for — a young speaker against a grandparent — is carried by `तरुण` (S06,
+   S07) against L4-M8's `आजोबा` (S05, and S06's first variation), which costs one key rather than
+   two and puts the grandparent in a sentence rather than in an adjective. `म्हातारा` is still free.
+
+### The ratchet
+
+`npx vitest run tools/shown-surfaces.test.ts` → **11 passed**, hi-mr holding at its baseline of
+**7**. No baseline was raised and none needed lowering: all three modules report
+`clean — every shown surface resolves`, with **zero** `SHOWN-BUT-UNTAUGHT`, **zero**
+`COLLIDES INSIDE THIS MODULE` and **zero** `RE-TEACH` lines between them. The seven that hi-mr
+already carries are untouched by this wave.
+
+Getting to zero cost eighteen variation rewrites, and every one of them is the same finding: a
+`variation` display is scanned exactly like a `display`, so a "one thing changed" restatement that
+reaches for an untaught word is a defect and not a nicety. The words that caught them were
+`चुकीचं`, `वापरत`, `नाहीत`, `प्रत्येक` and `लेकिन` on L5-M3; `सभा`, `सर्वांचे`, `मान्यवर`, `मानते`,
+`लोकांचे`, `तुझे`, `नवीन`, `वर्षाच्या`, `पुढील`, `आयुष्यासाठी`, `सर्वांनी`, `वाहिली`, `सर्वांना`,
+`आमचे`, `हीच`, `प्रार्थना` and `मागणे` on L5-M4; and `वागलं`, `सोपा` and `सुखापेक्षा` on L5-M5. Two of
+them are worth naming separately: `मान्यवर` and `मानते` are the bare noun and the feminine of rows
+this module DOES own, and both could have been bought by widening a `forms` list — each was
+rewritten out instead, because either would have taken L5-M4 past its `newWordCap` of 25. Exactly one
+was resolved by widening `forms`: `ऐका` on L5-M3's `ऐक`, because the तू/तुम्ही imperative pair is a
+real paradigm, neither cell is owned below, and L5-M3 had the key to spare.
+
+`npm run content:validate` → **CONTENT 405/405 ok**.
+
+`npx vitest run src/course/types.test.ts` → 3 failed, 423 passed, and all three failures are census
+counts belonging to the parent: the 378-module list (nine L1–L4 ladders plus L5-M1..M2), the en-ar
+count of 42 and the hi-en count of 42, all now 45 as the nine waves land. None is a hi-mr law and
+none is in a file this wave may write. Every generic assertion — the field-type walk, the
+`rules[]`-index walk, the `register` enum, the M1–M3 enrichment block — passes on all three modules.
+Note for the parent, since the file itself warns about it: the en-ar and hi-en counts guard the
+language-law walks BELOW them and vitest aborts the case at the count, so those two courses' laws
+are not running until the numbers are updated. hi-mr has no such gated block, so nothing of this
+wave's went unchecked.
+
+### Open questions for the native-speaker gate
+
+Continuing the chain: `docs/103` ends at 118 and this file had no numbered questions before this
+section, so these begin at 119.
+
+249. **`हाय` and `नाय` as the whole of the regional axis.** L5-M3 ships one coastal minimal pair,
+     comprehension-only, on two rows attached to S02 whose display contains neither. `docs/103`'s
+     Q115 already asks whether these are the right pair; this wave adds the narrower question. Is
+     one pair enough to make the point that a variety exists, or does a learner who meets exactly
+     two variant spellings conclude that coastal Marathi differs from Pune Marathi in exactly two
+     words? And is `हाय`/`नाय` the pair a Konkan speaker would themselves name first, or the pair a
+     Pune speaker notices first?
+
+250. **A word row that teaches a surface the sentence does not contain.** The mechanism above is
+     legal — the build indexes rows, and only displays, variation displays and pool items are
+     scanned — but it has not been used deliberately anywhere else in the nine courses. On the
+     Sentence Detail screen, S02's deconstruction lists five rows of which two are words the
+     learner cannot find in the line above. Does that read as a dialect footnote, which is what it
+     is, or as a bug? If it reads as a bug, the alternative is a display that produces a variety
+     the module has just forbidden the learner to produce, and note 3 forbids that outright.
+
+251. **`म्हणताय` as the तुम्ही cell.** L5-M3-S04 teaches the contracted `म्हणताय` rather than the
+     full `म्हणता आहात`, on the claim that the contraction is what a Pune speaker actually says and
+     that the full form would make the honorific axis look bookish beside `म्हणतोस`. Confirm the
+     contraction is neutral rather than casual, since S04 is registered `formal` and its `usage`
+     sends the learner to use it with elders and at work. If it is casual, the minimal pair breaks:
+     the तू cell would be plain and the तुम्ही cell marked.
+
+252. **`ज्यादा` shipped as a display.** L5-M3-S09 puts the Hindi word ON THE PAGE — `ज्यादा हा हिंदी
+     शब्द आहे` — as its own `interference` row, so that the index has an entry for the thing the
+     learner is doing wrong. That is the first time this course names an L1 word as a display rather
+     than in a `trap` or a `mistake`. Does showing it teach it? The alternative is to describe it in
+     `rules[3]` only, where a learner never taps it.
+
+253. **`आभार मानतो` and the reflex it must beat.** L5-M4-S04's `mistake` is `आभार व्यक्त करतो`, on
+     the claim that Hindi `आभार व्यक्त करना` calqued into Marathi is wrong rather than merely
+     stiff. Is `व्यक्त करणे` genuinely unavailable with `आभार`, or is it heard from the stage in
+     Pune and only preferred against? The rule is stated absolutely ("the pair is `आभार` + `मानणे`
+     and it does not break") and an absolute rule that is really a preference is the memorable and
+     false kind note 5 of the L5-M3 brief warns about.
+
+254. **`श्रद्धांजली वाहणे` against `श्रद्धांजली अर्पण करणे`.** Same shape, higher stakes, and the
+     brief names only the Hindi `अर्पित करना` as the trap. `अर्पण` is free in the index and is a
+     Marathi word. Confirm that `वाहणे` is the condolence verb in written and spoken Marathi both,
+     and that `अर्पण करणे` is not simply the more formal of two live options — S09 is the sentence
+     of this module that a learner is most likely to send to a grieving family.
+
+255. **`ईश्वर` against `देव` in a condolence.** L5-M4-S10 uses `ईश्वर` and its row says the
+     condolence formula takes `ईश्वर` rather than `देव`, on the reasoning that it is the register-
+     neutral, cross-community word. L5-M1 already owns `देवाची` and `देवाच्या` for the proverbs, so
+     the two coexist in the index. Confirm the split is real and that `देव त्यांच्या आत्म्यास शांती
+     देवो` is not simply the commoner spoken form.
+
+256. **The `-ओ` optative's productivity.** L5-M4 ships exactly two, `मिळो` and `देवो`, and
+     `rules[1]` presents `-ओ` as a mood a learner can recognise everywhere and produce in fixed
+     phrases. Is it productive enough that `यश मिळो` licenses, say, `सुख लाभो`? If it is, the module
+     is under-teaching a live pattern; if it is not, the rule should say the two are memorised items
+     and the ending is not a tool. The brief's phrasing ("the ceremonial optative in `-ओ`") does not
+     decide it.
+
+257. **`चांगुलपणा`'s stem.** L5-M5-S05 teaches `चांगुल-` as an irregular shift from `चांगला` and
+     makes `चांगलापणा` the `mistake`. Confirm the shift and, more importantly, confirm the ceiling:
+     `rules[0]` tells the learner that each `-पणा` word is learned rather than computed, which is
+     safe advice but may be too conservative if the suffix is genuinely productive on
+     ordinary adjectives.
+
+258. **`समाधान` as the module's silent interference.** L5-M5-S10 makes Hindi `समाधान` = *solution*
+     against Marathi `समाधान` = *contentment* the sentence's `trap`, on the same shape as L5-M2's
+     `चेष्टा`. Confirm that the Marathi word does not ALSO carry *solution* in ordinary use — if it
+     does, the trap is a half-truth and the pairing with `सुख` is the only thing keeping S10 honest.
+
+259. **`जग` as the everyday word for *world*.** S09's `trap` claims the register is inverted against
+     Hindi — `जग` bookish there, ordinary here. Confirm, and confirm the neuter gender the `mistake`
+     turns on (`जग मोठं`, not `जग मोठा`). If `जग` is in fact bookish in Marathi too, S09's honest
+     word is `जगात` or a different sentence, and the trap dissolves.
+
+260. **Whether `माझ्या मते` opening three of ten displays is one too many.** It is free — two owned
+     tokens, no key — and that is exactly the risk: a frame that costs nothing gets over-used. A
+     native reader should say whether a Marathi speaker actually prefaces beliefs this often, or
+     whether the ordinary way in is `मला वाटतं` (L3-M3) and `माझ्या मते` is the written one.
