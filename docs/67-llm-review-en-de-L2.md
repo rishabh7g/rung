@@ -94,3 +94,110 @@ FONTS ok | BUILD ok | BUDGET ok`.
    `Seine Haare sind kurz` can describe people usefully without the attributive declension.
 10. **`mein Freund`** (M2-S08). Confirm Germans hear the boyfriend reading first, and that
     `ein Freund von mir` is the ordinary repair.
+
+## Wave 2 — L2-M3, L2-M4, L2-M5 (#450)
+
+### L2-M3 "Describing things" — the grid, and what it buys
+
+L1 shipped `der`, `die`, `das`, `den`, `dem`, `ein`, `eine`, `einen`, `einem` and the `kein` series
+across five modules without ever laying them out. M3 is where they become a table, and the table is
+worth a module only because of what it buys: **word order is free in a way English's is not**. `Den
+Apfel esse ich` is an ordinary sentence — `den` says the noun is the object, so its position no
+longer has to. That is the deepest structural delta in the course, and it is only available once the
+grid is on one page.
+
+Adjectives stay **predicative** throughout — `Das Auto ist rot`, where they take no ending at all.
+The attributive declension (`ein guter Mann`, `der gute Mann`, `guter Wein`: three declensions
+chosen by what stands in front) is too large to sit beside a module teaching colours, and it is said
+to belong to L3 rather than left looking like an oversight.
+
+`weiß` and `Straße` carry the `ß` and the index KEEPS it, so `Maße` and `Masse` are two keys. The
+module's mistake plates spell the respellings out — `Das Auto ist weiss`, `Die Strasse ist sehr
+breit` — which is the one place a `ss` is allowed to appear (see below).
+
+### L2-M4 "Getting around" — two-way prepositions
+
+`in`, `auf`, `an`, `über`, `unter`, `vor`, `hinter`, `neben` and `zwischen` take the ACCUSATIVE for
+motion and the DATIVE for location, and the case is the whole difference: `Ich gehe in den Park`
+against `Ich bin in dem Park`. L1-M7 shipped both seats of `in` without naming the rule; this is
+where it is named.
+
+Separable verbs are kept **unsplit behind a modal** — `Ich möchte einsteigen`, never `Ich steige
+ein` — for an index reason as much as a pedagogical one: a stranded `ein` folds onto L1-M1's
+article row and the note a learner would be shown is about "a", not about boarding a train.
+
+Transport splits three ways and the module takes all three: `mit` + dative for a vehicle, `zu Fuß`
+for walking (never `mit Fuß`), and `nach` for a destination that is a place name.
+
+### L2-M5 "Food and hosting" — the refusal that is taken at face value
+
+This is the one module in the milestone whose culture note points the OPPOSITE way from its
+siblings. hi-mr, hi-en, en-ru and en-it all teach that a first refusal is a ritual and a host will
+offer again. **A German refusal is taken at face value.** `Nein danke, ich bin satt` ends the offer,
+and a learner who has internalised the other courses' hosting will go hungry. `Zusammen oder
+getrennt?` is asked at every German table and a learner who has never heard it freezes at exactly
+the wrong moment.
+
+`noch` is the offer word — `Möchten Sie noch Kaffee?` — chosen deliberately so `mehr` stays free for
+M9's comparatives. The teaching sits in the trap rather than a word row, because M2-S07 already owns
+the `noch` key (see below).
+
+### Three unreachable rows the duplicate check caught
+
+`src/course/types.test.ts` asserts that every en-de surface has exactly ONE row that opens it,
+because first-occurrence-wins makes a second row a note nobody will ever be shown. This wave tripped
+it seven times, and every one was fixed in content rather than by widening the allow-list:
+
+- `der` (M3-S06) — L1-M1 owns it. The sentence's teaching is the feminine DATIVE `der Kollegin`
+  against the masculine nominative `der Kollege`, so the sentence was rebuilt on `Kollegin`, a free
+  key, and the minimal pair is now on one noun stem rather than two.
+- `essen` (M5-S09) — L1-M3 owns it, because the fold merges `das Essen` and `essen`. That fact is
+  already rule 3 of the module, so the row was free to teach `lecker` instead, which is the word a
+  host actually wants to hear.
+- `blau`, `grün`, `lang`, `kurz` (M3) — all four are M2's, opened for eyes and hair. M3-S09 was
+  rebuilt on `breit`/`schmal`, the dimension M2 never took.
+- `Auto` (M4-S06) and `noch` (M5-S05) — M3 and M2 own them; the rows were dropped and the notes
+  fold into prose that was already carrying them.
+- `Löffel` (M5-S10) — M3 owns it. The table setting took `Messer`, which makes the point better
+  anyway: `der Löffel`, `die Gabel`, `das Messer`, three genders at one setting and no rule behind
+  it.
+
+### One test change, and why it is not a loosened check
+
+The ß check (`heisse|strasse|gross|weiss` never appears) reached mistake plates too, and M3's plates
+have to WRITE the respelling in order to strike it out. The exemption is narrow: a mistake display
+is let through only when its own `why` carries a real `ß`. A plate that respells without correcting
+it still fails, which is the defect the check exists for.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` held at **en-de 11** across all three modules. One finding —
+`vielleicht`, from M5-S06's hedge variation — was fixed by opening the row the module's own brief
+names, not by raising the baseline.
+
+### Open questions for the native pass
+
+11. **Free word order** (M3, rule 1). Confirm `Den Apfel esse ich` is ordinary rather than marked,
+    and that a learner producing it unprompted sounds natural rather than emphatic.
+12. **`der Kollegin`** (M3-S06). Confirm the fronted dative recipient is what a speaker reaches for
+    when the recipient is the point, and that `Der Kollegin gebe ich das Buch` needs no more context
+    than it has.
+13. **Predicative-only through a whole colour module** (M3, rule 2). Confirm a learner who can only
+    say `Das Auto ist rot` can describe things usefully, and that deferring the attributive
+    declension to L3 does not leave them sounding foreign in ordinary speech.
+14. **`breit`/`schmal`** (M3-S09). Confirm both are the everyday words for a street's width.
+15. **Two-way prepositions** (M4). Confirm the accusative-for-motion / dative-for-location split is
+    stated at the right grain, and that nine prepositions is not too many for one module.
+16. **Separable verbs behind a modal** (M4). Confirm `Ich möchte einsteigen` is ordinary, and that
+    never showing the split form at this level is safe rather than misleading.
+17. **`zu Fuß`** (M4-S06). Confirm `mit Fuß` is the mistake an English speaker actually makes.
+18. **The refusal taken at face value** (M5, rule 1). This is the wave's strongest cultural claim
+    and the one most worth checking. Confirm a host offers once or twice and stops.
+19. **`Zusammen oder getrennt?`** (M5, rule 2). Confirm it is asked as routinely as the module says,
+    including when the party is obviously together.
+20. **`noch` against `mehr`** (M5-S05). Confirm `Möchten Sie mehr Kaffee?` is wrong rather than
+    merely unusual, and that the article-less `noch Kaffee` is the ordinary offer.
+21. **`lecker`** (M5-S09). Confirm it is the compliment a host expects, and that `sehr gut` reads as
+    flat beside it.
+22. **`satt`** (M5-S06). Confirm it is neutral rather than blunt, and that `voll` of a person who
+    has eaten is genuinely wrong.

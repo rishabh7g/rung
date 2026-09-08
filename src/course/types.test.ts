@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 172 — nine L1 ladders, hi-mr L2 and L3, the complete L2 of en-es, en-ar, hi-en, en-ru, en-it and en-fr, and the first en-de L2 pair (#441)', () => {
+  it('finds all 175 — nine L1 ladders, hi-mr L2 and L3, the complete L2 of en-es, en-ar, hi-en, en-ru, en-it and en-fr, and the first five of en-de (#450)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -225,6 +225,9 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-de/modules/L1-M9.json',
       'content/en-de/modules/L2-M1.json',
       'content/en-de/modules/L2-M2.json',
+      'content/en-de/modules/L2-M3.json',
+      'content/en-de/modules/L2-M4.json',
+      'content/en-de/modules/L2-M5.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
@@ -979,8 +982,12 @@ describe('ModuleContent against the modules that exist', () => {
     for (const [file, json] of enDe) {
       const module = parseModule(json, file);
 
-      /** Every L2 slot, mistake plates included — the register ban reaches all of them. */
-      const l2Slots: [where: string, text: string][] = [];
+      /**
+       * Every L2 slot, mistake plates included — the register ban reaches all of them. The third
+       * element marks the one slot the ß check has to let through: a mistake plate whose whole
+       * subject IS the respelling, which has to write `weiss` to strike it out.
+       */
+      const l2Slots: [where: string, text: string, showsTheRespelling?: boolean][] = [];
       for (const item of module.comprehensionPool) l2Slots.push([item.id, item.display]);
       for (const sentence of module.sentences) {
         const at = sentence.id;
@@ -997,7 +1004,14 @@ describe('ModuleContent against the modules that exist', () => {
           l2Slots.push([`${at} variation`, variation.display]);
         }
         if (sentence.mistake !== undefined) {
-          l2Slots.push([`${at} mistake`, sentence.mistake.display]);
+          // L2-M3 (#450) teaches the ß, and the plate that teaches it spells the error out. The
+          // `why` carrying a real ß is what separates a deliberate demonstration from an author
+          // who typed around the character: a plate that respells without correcting it still fails.
+          l2Slots.push([
+            `${at} mistake`,
+            sentence.mistake.display,
+            sentence.mistake.why.includes('ß'),
+          ]);
         }
         sentence.deconstruction.words.forEach((word, wordIdx) => {
           const row = `${module.id} ${at} w${wordIdx}`;
@@ -1012,7 +1026,7 @@ describe('ModuleContent against the modules that exist', () => {
         });
       }
 
-      for (const [where, text] of l2Slots) {
+      for (const [where, text, showsTheRespelling] of l2Slots) {
         for (const raw of text.split(/[\s,.?!]+/)) {
           const token = raw.trim();
           if (token === '') continue;
@@ -1039,9 +1053,11 @@ describe('ModuleContent against the modules that exist', () => {
             `${where}: "${token}" is all capitals`,
           ).toBe(false);
         }
-        expect(text, `${where}: ß is never respelled with a double s`).not.toMatch(
-          /heisse|heissen|strasse|gross|dreissig|weiss/i,
-        );
+        if (showsTheRespelling !== true) {
+          expect(text, `${where}: ß is never respelled with a double s`).not.toMatch(
+            /heisse|heissen|strasse|gross|dreissig|weiss/i,
+          );
+        }
       }
 
       // The orthography is WRITTEN, not transcribed away. A blanket /ae|oe|ue/ ban was tried and

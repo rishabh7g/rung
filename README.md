@@ -497,6 +497,28 @@ That is the third time this milestone a second level has exposed a test encoding
 as the rule. **The native gate is still unmet**: docs/67 ends in open questions 1–10, a fresh en-de
 L2 chain.
 
+**en-de reaches the halfway mark of its L2 (#450, 2026-09-08).** `L2-M3` _Describing things_,
+`L2-M4` _Getting around_ and `L2-M5` _Food and hosting_ land, and `npm run build` emits `en-de: 15
+modules (L1-M1..M10, L2-M1..M5)`. M3 is where the article grid finally sits on one page, and it
+earns the module by what the grid BUYS: because case is marked on the article, **German word order
+is free in a way English's is not** — `Den Apfel esse ich` is ordinary, with `den` doing the work
+English gives to position alone. Adjectives stay predicative throughout, said as a decision, with
+the three attributive declensions deferred to L3. M4 names the **two-way prepositions** L1-M7
+shipped without naming — accusative for motion, dative for location — and keeps separable verbs
+unsplit behind a modal, because a stranded `ein` folds onto L1-M1's article row and would show a
+learner a note about "a". M5 carries the milestone's one **inverted culture note**: where hi-mr,
+hi-en, en-ru and en-it all teach that a first refusal is ritual, a German refusal is taken at face
+value, and `Zusammen oder getrennt?` is asked at every table. The wave's real lesson was the
+duplicate-row check: it fired **seven times**, each a note that first-occurrence-wins would have
+made unreachable, and every one was fixed in content rather than by widening the allow-list —
+`der`, `essen`, `blau`, `grün`, `lang`, `kurz`, `Auto`, `noch` and `Löffel` all already had owners,
+so three sentences were rebuilt on the keys their modules could actually hold (`Kollegin`, `lecker`,
+`breit`/`schmal`, `Messer`) and the rest fold into prose. The one test change is narrow rather than
+loosened: M3's mistake plates have to WRITE `weiss` and `Strasse` to strike them out, so the ß check
+lets a mistake display through only when its own `why` carries a real `ß`. The ratchet held at
+en-de 11. **The native gate is still unmet**: docs/67 ends in open questions 1–22, a fresh en-de
+L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

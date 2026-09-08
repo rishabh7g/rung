@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": [
+    "L2-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Entschuldigung + , + wo ist + der/die/das + N?",
+      "Gehen Sie geradeaus + , + dann links",
+      "Sie müssen + <place> + einsteigen",
+      "Ich fahre mit dem Bus / mit der Bahn",
+      "Wie komme ich zum/zur + N + ?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A TWO-WAY PREPOSITION TAKES THE ACCUSATIVE FOR MOTION and the DATIVE for being somewhere. in, auf, an, neben, vor, hinter, unter, über all work this way. Ich gehe ins Kino against Ich bin im Kino — L1-M7 gave both contractions and never said why they differ. This is M3's grid doing real work, which is why M3 came first."
+    },
+    {
+      "tag": "free",
+      "text": "The Sie imperative is FREE: it is the infinitive with Sie after it — Gehen Sie, Nehmen Sie, Fahren Sie — which is the spelling the learner has had since L1-M1. So this module's grammar costs nothing and the budget goes to the prepositions and the words. The du imperative (geh, nimm, fahr) is M1's and is not written here, because the scene is a stranger in the street."
+    },
+    {
+      "tag": "free",
+      "text": "SEPARABLE VERBS APPEAR ONLY UNSPLIT in this level, and the reason is the index: a separated prefix at the end of a clause is spelled exactly like an article, so Ich steige ein would put ein on L1-M1's indefinite-article row. So a separable verb rides behind a modal — Sie müssen hier einsteigen — where the infinitive is one clean token. The split is L3's, and it costs nothing here because M1's lesson already puts a modal in every sentence that wants one."
+    },
+    {
+      "tag": "delta",
+      "text": "Transport takes mit plus the DATIVE — mit dem Bus, mit der Bahn, mit dem Auto — and walking is zu Fuß, a fixed phrase with no article. A city or a country takes nach with no article at all: nach Berlin. Three shapes, given as a list, because German does not have a principle here."
+    },
+    {
+      "tag": "free",
+      "text": "zum and zur are L1-M7's contractions of zu dem and zu der, and they are the direction words a learner actually needs: Wie komme ich zum Bahnhof? The gender of the destination decides which, exactly as it decides everything else in M3's grid."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "Entschuldigung, wo ist der Bahnhof?",
+      "cue": "Excuse me, where is the station?",
+      "literal": "Excuse-me, where is the station?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Bahnhof",
+            "cue": "railway station",
+            "tag": "free",
+            "forms": [],
+            "note": "Bahn plus Hof — a railway yard. German builds long nouns by joining short ones, and the gender comes from the LAST part."
+          },
+          {
+            "display": "Haltestelle",
+            "cue": "stop (bus or tram)",
+            "tag": "free",
+            "forms": [
+              "Haltestellen"
+            ],
+            "note": "Another compound: halten plus Stelle, a holding place. Feminine, because Stelle is — the last part always decides."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The gender of a compound comes from its last part and nothing else. Bahnhof is masculine because Hof is, even though Bahn is feminine — which makes long German nouns easier than they look.",
+      "sound": "ent-SHOOL-dee-goong voh ist dair BAAN-hohf. The h in the middle is silent and lengthens the a.",
+      "variations": [
+        {
+          "display": "Entschuldigung, wo ist die Haltestelle?",
+          "cue": "Excuse me, where is the stop?",
+          "changed": "a feminine compound"
+        },
+        {
+          "display": "Wo ist der Bahnhof?",
+          "cue": "Where is the station?",
+          "changed": "without the opener — abrupt to a stranger"
+        },
+        {
+          "display": "Entschuldigung, wo ist die Straße?",
+          "cue": "Excuse me, where is the street?",
+          "changed": "a different place"
+        }
+      ],
+      "mistake": {
+        "display": "Entschuldigung, wo ist die Bahnhof?",
+        "why": "The last part decides: der Bahnhof, because Hof is masculine."
+      },
+      "usage": "Stopping a stranger in the street.",
+      "register": "formal",
+      "mnemonic": "The last part of a compound carries the gender."
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "Gehen Sie geradeaus, dann links",
+      "cue": "Go straight on, then left",
+      "literal": "Go you straight-out, then left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geradeaus",
+            "cue": "straight on",
+            "tag": "free",
+            "forms": [],
+            "note": "gerade plus aus — straight out. It is one word and one stress, on the last syllable."
+          },
+          {
+            "display": "links",
+            "cue": "left",
+            "tag": "free",
+            "forms": [],
+            "note": "It ends in -s and never changes. nach links is \"to the left\" and links alone is \"on the left\"."
+          },
+          {
+            "display": "rechts",
+            "cue": "right",
+            "tag": "free",
+            "forms": [],
+            "note": "links's pair, and it too keeps its -s. The same word means \"legally\" in another life, which is why Recht is a right."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The imperative is the infinitive with Sie after it — the same spelling as the statement Sie gehen, with the words swapped. German marks the order by position and not by changing the verb at all.",
+      "sound": "GAY-en zee guh-RAH-duh-OWS dan LINKS. The stress of geradeaus is on its last syllable.",
+      "variations": [
+        {
+          "display": "Gehen Sie geradeaus, dann rechts",
+          "cue": "Go straight on, then right",
+          "changed": "the other direction"
+        },
+        {
+          "display": "Gehen Sie links",
+          "cue": "Go left",
+          "changed": "one instruction only"
+        },
+        {
+          "display": "Fahren Sie geradeaus, dann links",
+          "cue": "Drive straight on, then left",
+          "changed": "driving rather than walking"
+        }
+      ],
+      "mistake": {
+        "display": "Sie gehen geradeaus, dann links",
+        "why": "The order puts the verb first: Gehen Sie geradeaus, dann links."
+      },
+      "usage": "Giving directions to someone who has stopped you.",
+      "register": "formal",
+      "mnemonic": "Verb first, and it is an order."
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "Gehen Sie an der Ampel rechts",
+      "cue": "Turn right at the lights",
+      "literal": "Go you at the traffic-light right",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "an",
+            "cue": "at · on (a vertical surface)",
+            "tag": "delta",
+            "forms": [],
+            "note": "A two-way preposition: dative for being at a place, accusative for moving to one. It is also a separable prefix, which L3 will show — the same two letters, a different job."
+          },
+          {
+            "display": "Ampel",
+            "cue": "traffic light",
+            "tag": "free",
+            "forms": [
+              "Ampeln"
+            ],
+            "note": "Feminine, so an der Ampel. Singular in German where English says \"the lights\"."
+          },
+          {
+            "display": "Ecke",
+            "cue": "corner",
+            "tag": "free",
+            "forms": [
+              "Ecken"
+            ],
+            "note": "Feminine too — an der Ecke. The double k sound is written ck, which is German's way of doubling it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "an der Ampel is a DATIVE, because nothing is moving to the lights — the turning happens there. Change it to motion and it would be an die Ampel, which is a different sentence.",
+      "sound": "an dair AM-pel REKHTS. The ch of rechts is the back sound after an a-like vowel.",
+      "variations": [
+        {
+          "display": "Gehen Sie an der Ecke links",
+          "cue": "Turn left at the corner",
+          "changed": "a different landmark"
+        },
+        {
+          "display": "Gehen Sie an der Ampel geradeaus",
+          "cue": "Go straight on at the lights",
+          "changed": "a different instruction"
+        },
+        {
+          "display": "Die Haltestelle ist an der Ecke",
+          "cue": "The stop is on the corner",
+          "changed": "a statement rather than an order"
+        }
+      ],
+      "mistake": {
+        "display": "Gehen Sie an die Ampel rechts",
+        "why": "Nothing moves to the lights: an der Ampel rechts."
+      },
+      "usage": "The precise half of a set of directions.",
+      "register": "formal",
+      "mnemonic": "Standing there is dative. Going there is accusative."
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "Ich gehe ins Kino",
+      "cue": "I'm going to the cinema",
+      "literal": "I go into-the cinema",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "über",
+            "cue": "over · about · across",
+            "tag": "free",
+            "forms": [],
+            "note": "Another two-way preposition, and it also means \"about\" a topic. The ü is the rounded front vowel."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "ins is in plus das and im is in plus dem, and the difference is motion. L1-M7 gave both and never said why — this is why, and it is the same rule everywhere the preposition goes.",
+      "sound": "ikh GAY-uh ins KEE-noh. ins is one syllable and the contraction is compulsory.",
+      "variations": [
+        {
+          "display": "Ich bin im Kino",
+          "cue": "I'm at the cinema",
+          "changed": "no motion, so the dative"
+        },
+        {
+          "display": "Ich gehe ins Kino, nicht zur Arbeit",
+          "cue": "I'm going to the cinema, not to work",
+          "changed": "two destinations, one with motion and one with zur"
+        },
+        {
+          "display": "Ich fahre über die Straße",
+          "cue": "I'm driving across the street",
+          "changed": "another two-way preposition, with motion"
+        }
+      ],
+      "mistake": {
+        "display": "Ich gehe im Kino",
+        "why": "Motion takes the accusative: Ich gehe ins Kino."
+      },
+      "usage": "Saying where you are off to.",
+      "register": "neutral",
+      "mnemonic": "ins is going. im is being."
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "Ich fahre mit dem Bus zur Arbeit",
+      "cue": "I go to work by bus",
+      "literal": "I travel with the bus to-the work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mit",
+            "cue": "with · by (transport)",
+            "tag": "delta",
+            "forms": [],
+            "note": "It always takes the DATIVE, in every use — mit dem Bus, mit der Bahn, mit mir. Unlike the two-way prepositions there is nothing to choose."
+          },
+          {
+            "display": "Bus",
+            "cue": "bus",
+            "tag": "free",
+            "forms": [
+              "Busse"
+            ],
+            "note": "Masculine, so mit dem Bus. Its plural doubles the s, which is what German does after a short vowel."
+          },
+          {
+            "display": "Bahn",
+            "cue": "railway · tram",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, so mit der Bahn. It covers the train system and the tram alike, and Zug is the individual train."
+          },
+          {
+            "display": "Arbeit",
+            "cue": "work",
+            "tag": "free",
+            "forms": [],
+            "note": "The noun behind L1-M1's arbeite. It is feminine, so zur Arbeit — and the capital is what tells a reader it is the noun."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "mit is not a two-way preposition and never takes an accusative. The learner has just met a rule about choosing, and this is the group where there is nothing to choose.",
+      "sound": "ikh FAA-ruh mit daym BOOS tsoor AR-bite. zur is one syllable and the contraction is compulsory.",
+      "variations": [
+        {
+          "display": "Ich fahre mit der Bahn zur Arbeit",
+          "cue": "I go to work by train",
+          "changed": "a feminine vehicle, so mit der"
+        },
+        {
+          "display": "Ich fahre mit dem Auto",
+          "cue": "I go by car",
+          "changed": "a neuter vehicle, which looks like the masculine"
+        },
+        {
+          "display": "Ich gehe zu Fuß zur Arbeit",
+          "cue": "I walk to work",
+          "changed": "on foot, with the fixed phrase"
+        }
+      ],
+      "mistake": {
+        "display": "Ich fahre mit den Bus zur Arbeit",
+        "why": "mit always takes the dative: mit dem Bus."
+      },
+      "usage": "Saying how you get about, which comes up early with anyone new.",
+      "register": "neutral",
+      "mnemonic": "mit is dative, always, with nothing to choose."
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "Ich gehe zu Fuß, nicht mit dem Auto",
+      "cue": "I'm walking, not driving",
+      "literal": "I go to foot, not with the car",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Fuß",
+            "cue": "foot",
+            "tag": "free",
+            "forms": [],
+            "note": "zu Fuß is a fixed phrase with no article — the only member of the transport set built this way. It carries an ß, and the index keeps it."
+          },
+          {
+            "display": "Zug",
+            "cue": "train",
+            "tag": "free",
+            "forms": [
+              "Züge"
+            ],
+            "note": "The individual train, where Bahn is the system. Its plural umlauts, and the final g goes to a k sound."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Every other means takes mit and this one takes zu, with no article at all. It is a list rather than a rule, and zu Fuß is the item on it that has to be learnt whole.",
+      "sound": "tsoo FOOS nikht mit daym OW-toh. The ß of Fuß is a long s.",
+      "variations": [
+        {
+          "display": "Ich gehe zu Fuß",
+          "cue": "I'm walking",
+          "changed": "the first half alone"
+        },
+        {
+          "display": "Ich fahre mit dem Zug, nicht mit dem Auto",
+          "cue": "I'm going by train, not by car",
+          "changed": "both halves on mit"
+        },
+        {
+          "display": "Ich fahre nach Berlin",
+          "cue": "I'm going to Berlin",
+          "changed": "a city, which takes nach and no article"
+        }
+      ],
+      "mistake": {
+        "display": "Ich gehe mit Fuß, nicht mit dem Auto",
+        "why": "Walking takes zu: Ich gehe zu Fuß."
+      },
+      "usage": "Arranging how to get somewhere, or correcting an assumption.",
+      "register": "neutral",
+      "mnemonic": "Everything takes mit. Feet take zu."
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "Sie müssen hier einsteigen",
+      "cue": "You have to get on here",
+      "literal": "You must here in-climb",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "müssen",
+            "cue": "must · have to",
+            "tag": "free",
+            "forms": [
+              "muss"
+            ],
+            "note": "A modal, so the infinitive goes to the end — M1's bracket again. Its ich cell muss drops the -e, as every modal does."
+          },
+          {
+            "display": "einsteigen",
+            "cue": "to get on · to board",
+            "tag": "delta",
+            "forms": [],
+            "note": "ein plus steigen, and here it stays ONE word because a modal sends it to the end whole. Split off, that ein would look exactly like the article."
+          },
+          {
+            "display": "aussteigen",
+            "cue": "to get off",
+            "tag": "free",
+            "forms": [],
+            "note": "einsteigen's opposite, built the same way. aus is the prefix, and it means out."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "A separable verb splits in an ordinary sentence — Ich steige hier ein — and this level never writes that, because the stranded ein is spelled exactly like the article. Behind a modal it stays whole, which is where every L2 sentence puts it.",
+      "sound": "zee MUES-sen heer INE-shtye-gen. The st inside the word is still sht.",
+      "variations": [
+        {
+          "display": "Sie müssen hier aussteigen",
+          "cue": "You have to get off here",
+          "changed": "the opposite prefix"
+        },
+        {
+          "display": "Sie müssen am Bahnhof einsteigen",
+          "cue": "You have to get on at the station",
+          "changed": "a place, with the dative contraction"
+        },
+        {
+          "display": "Ich muss hier aussteigen",
+          "cue": "I have to get off here",
+          "changed": "about yourself, with the ich cell"
+        }
+      ],
+      "mistake": {
+        "display": "Sie müssen hier ein steigen",
+        "why": "The infinitive is one word: Sie müssen hier einsteigen."
+      },
+      "usage": "Telling someone where to change trains or buses.",
+      "register": "formal",
+      "mnemonic": "Behind a modal, a separable verb stays whole."
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "Wie komme ich zum Bahnhof?",
+      "cue": "How do I get to the station?",
+      "literal": "How come I to-the station?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ankommen",
+            "cue": "to arrive",
+            "tag": "free",
+            "forms": [],
+            "note": "an plus kommen — the same an as the preposition, doing a prefix's job. Wann kommt der Zug an? splits it, which L3 opens."
+          },
+          {
+            "display": "abfahren",
+            "cue": "to depart",
+            "tag": "free",
+            "forms": [],
+            "note": "ab plus fahren, and ankommen's opposite. ab is a prefix and never a preposition on its own at this level."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "zum is zu plus dem and zur is zu plus der, so the gender of the destination decides which. It is M3's grid again, in the sentence a lost traveller says most.",
+      "sound": "vee KOM-uh ikh tsoom BAAN-hohf. zum is one syllable.",
+      "variations": [
+        {
+          "display": "Wie komme ich zur Haltestelle?",
+          "cue": "How do I get to the stop?",
+          "changed": "a feminine destination, so zur"
+        },
+        {
+          "display": "Wie komme ich zum Kino?",
+          "cue": "How do I get to the cinema?",
+          "changed": "a neuter destination, which takes zum too"
+        },
+        {
+          "display": "Entschuldigung, wie komme ich zum Bahnhof?",
+          "cue": "Excuse me, how do I get to the station?",
+          "changed": "with M1's opener"
+        }
+      ],
+      "mistake": {
+        "display": "Wie komme ich zur Bahnhof?",
+        "why": "Bahnhof is masculine: Wie komme ich zum Bahnhof?"
+      },
+      "usage": "The single most useful question in this module.",
+      "register": "formal",
+      "mnemonic": "zum for der and das, zur for die."
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "Ist der Bahnhof weit von hier?",
+      "cue": "Is the station far from here?",
+      "literal": "Is the station far from here?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "weit",
+            "cue": "far",
+            "tag": "free",
+            "forms": [],
+            "note": "After ist it takes no ending. weit von hier is the fixed way to ask about distance, and von always takes the dative."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "A yes/no question puts the VERB first and no extra word is needed. English has to borrow \"do\" or \"is\"; German simply moves the verb, and the word order carries the question.",
+      "sound": "ist dair BAAN-hohf vite fon HEER. weit rhymes with English \"bite\".",
+      "variations": [
+        {
+          "display": "Ist die Haltestelle weit von hier?",
+          "cue": "Is the stop far from here?",
+          "changed": "a feminine place"
+        },
+        {
+          "display": "Nein, der Bahnhof ist nicht weit",
+          "cue": "No, the station isn't far",
+          "changed": "the answer, with the verb back in second place"
+        },
+        {
+          "display": "Ist das Kino weit von hier?",
+          "cue": "Is the cinema far from here?",
+          "changed": "a neuter place"
+        }
+      ],
+      "mistake": {
+        "display": "Der Bahnhof ist weit von hier?",
+        "why": "A question puts the verb first: Ist der Bahnhof weit von hier?"
+      },
+      "usage": "The follow-up to every set of directions, and it decides whether you walk.",
+      "register": "neutral",
+      "mnemonic": "Move the verb and you have a question."
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "Nehmen Sie den Zug nach Berlin",
+      "cue": "Take the train to Berlin",
+      "literal": "Take you the train to Berlin",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nach",
+            "cue": "to (a place) · after",
+            "tag": "free",
+            "forms": [],
+            "note": "It takes a city or a country with NO article — nach Berlin — and it also means \"after\" a time. L1-M9's nach Hause was this word inside a whole phrase."
+          },
+          {
+            "display": "nehmen",
+            "cue": "to take",
+            "tag": "free",
+            "forms": [
+              "nimmt"
+            ],
+            "note": "Its third person changes the vowel and doubles the m — er nimmt. The du imperative is nimm, which M1's pattern predicts."
+          },
+          {
+            "display": "anrufen",
+            "cue": "to call (on the phone)",
+            "tag": "free",
+            "forms": [],
+            "note": "an plus rufen, another separable verb kept whole behind a modal. M7 will need it, and this is where the shape is established."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "nach takes a city or a country with NO article at all — nach Berlin, nach Indien. zu takes a building and needs one, and in takes a country that has an article. Three shapes, and the destination decides.",
+      "sound": "NAY-men zee dayn TSOOK nakh ber-LEEN. The Z of Zug is a ts.",
+      "variations": [
+        {
+          "display": "Nehmen Sie den Bus nach Berlin",
+          "cue": "Take the bus to Berlin",
+          "changed": "a different vehicle"
+        },
+        {
+          "display": "Sie müssen den Zug nehmen",
+          "cue": "You have to take the train",
+          "changed": "behind a modal, so the infinitive goes last"
+        },
+        {
+          "display": "Sie können mich anrufen",
+          "cue": "You can call me",
+          "changed": "a separable verb behind a modal"
+        }
+      ],
+      "mistake": {
+        "display": "Nehmen Sie den Zug zu Berlin",
+        "why": "A city takes nach: Nehmen Sie den Zug nach Berlin."
+      },
+      "usage": "Telling someone which service to catch.",
+      "register": "formal",
+      "mnemonic": "nach a city, zu a building, in a country with an article."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "Entschuldigung, wo ist der Bahnhof?",
+      "cue": "Excuse me, where is the station?"
+    },
+    {
+      "id": "L2-M4-C02",
+      "display": "Gehen Sie geradeaus, dann links",
+      "cue": "Go straight on, then left"
+    },
+    {
+      "id": "L2-M4-C03",
+      "display": "Gehen Sie an der Ampel rechts",
+      "cue": "Turn right at the lights"
+    },
+    {
+      "id": "L2-M4-C04",
+      "display": "Ich gehe ins Kino",
+      "cue": "I'm going to the cinema"
+    },
+    {
+      "id": "L2-M4-C05",
+      "display": "Ich fahre mit dem Bus zur Arbeit",
+      "cue": "I go to work by bus"
+    },
+    {
+      "id": "L2-M4-C06",
+      "display": "Ich gehe zu Fuß, nicht mit dem Auto",
+      "cue": "I'm walking, not driving"
+    },
+    {
+      "id": "L2-M4-C07",
+      "display": "Sie müssen hier einsteigen",
+      "cue": "You have to get on here"
+    },
+    {
+      "id": "L2-M4-C08",
+      "display": "Wie komme ich zum Bahnhof?",
+      "cue": "How do I get to the station?"
+    },
+    {
+      "id": "L2-M4-C09",
+      "display": "Ist der Bahnhof weit von hier?",
+      "cue": "Is the station far from here?"
+    },
+    {
+      "id": "L2-M4-C10",
+      "display": "Nehmen Sie den Zug nach Berlin",
+      "cue": "Take the train to Berlin"
+    },
+    {
+      "id": "L2-M4-C11",
+      "display": "Ich bin im Kino",
+      "cue": "I'm at the cinema"
+    },
+    {
+      "id": "L2-M4-C12",
+      "display": "Wie komme ich zur Haltestelle?",
+      "cue": "How do I get to the stop?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
