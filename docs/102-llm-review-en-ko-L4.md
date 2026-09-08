@@ -616,3 +616,393 @@ renumbered.
      confirm the present-modifier plate 어려운 것 같아요 really does read as a difficulty rating
      instead; and confirm that the parenthetical `(No.)` in the cue is the right way to teach a
      pragmatic fact the words do not carry.
+
+## Wave 3 — L4-M6 through L4-M10 (#562)
+
+The level's remaining RANGE modules and its exit: time clauses, the formal speech level, past habits,
+journeys, and the story with a twist. Authored against the briefs in `tools/course-briefs.ts` and, as
+in Waves 1 and 2, reviewed against the **REAL emitted index rather than the briefs' account of it** —
+every ownership claim below is quoted from `npm run content:owner -- en-ko …`.
+
+At the start of this wave the fold read **975 surfaces over 35 modules through L4-M5, `maxSpan` 2**.
+After the five modules it reads **1104 surfaces over 40 modules through L4-M10**: L4-M6 contributes
+**32** keys, L4-M7 **35**, L4-M8 **24**, L4-M9 **30** and L4-M10 **8**. In word ROWS — which is what
+`newWordCap` is about — that is 19, 17, 15, 14 and 6, all inside the cap of 25, and the level exits on
+six rows exactly as the M10 brief asked. **`maxSpan` holds at 2.** The fold held nine two-token
+surfaces after thirty modules; `algo boni` is the tenth and the only one this wave adds, so the shape
+the M10 brief called proven is still proven and still bounded.
+
+`npm run content:validate` reports every module `ok` — `CONTENT 360/360 ok` when this section was
+written, and the total moves as the other eight courses' waves land. All five modules are clean under
+`npm run content:shown` with **no `SHOWN-BUT-UNTAUGHT`, no `COLLIDES INSIDE THIS MODULE` and not one
+`RE-TEACH` line anywhere in the wave**; `npx vitest run tools/shown-surfaces.test.ts` is 11/11 with
+en-ko holding at its baseline of 12; `npx vitest run src/course/types.test.ts` is 381/381.
+
+### L4-M6 "Before and after" — the connective fixes the clause, the sentence fixes the tense
+
+```
+S01  Bap-eul meokgi jeon-e son-eul ssiseoyo.
+S02  Hakgyo-e gan hu-e chingu-reul mannasseoyo.
+S03  Hangugeo-reul baeul ttae hangsang eumak-eul deureoyo.
+S04  Chingu-ga ilhaneun dongan jeo-neun chaek-eul ilgeosseoyo.
+S05  Eumak-eul deureumyeonseo gongbuhaeyo.
+S06  Sueop-i kkeunnal ttae-kkaji yeogi-eseo gidaryeoyo.
+S07  Yeonghwa-neun beolsseo sijakhaesseoyo.
+S08  Bap-eul ajik an meogeosseoyo.
+S09  Hanguk-e on ji sip nyeon dwaesseoyo.
+S10  Sigan-i isseul ttae jeonhwahalgeyo.
+```
+
+The module teaches five bound nouns and one ending, and the law it exists for is rule 0: **the shape
+of the clause is fixed by the connective and never by the sentence.** S01 and its first variation are
+the same sentence in two tenses with the clause untouched (`meokgi jeon-e` both times), and the
+mistake plate is the shape English symmetry produces, `meogeotgi jeon-e`. S02 does the mirror: `hu-e`
+takes the PAST modifier even where the sentence is future, and its plate is `gagi hu-e`, the
+before-and-after pair made regular. Between them they say the thing no learner guesses, which is that
+`jeon-e` and `hu-e` are not a matched pair at all.
+
+`ttae` against L3-M4's `-(eu)myeon` gets S03 and S10, deliberately at the two ends of the module so
+the contrast is met twice. S03's plate is `baeumyeon` — grammatical, and a hypothesis where a habit
+was meant — and S10's second variation is the correct `isseumyeon` sentence with `changed` naming it
+as a different promise. Neither module rewrites `-(eu)myeon`; both point at it.
+
+The `while` split runs S04 against S05. `dongan` takes two subjects (the friend works, I read) and
+`-(eu)myeonseo` takes one, and each plate breaks the other's rule: S04 puts `ttae` where a stretch
+belongs, S05 puts two subjects under `-(eu)myeonseo`. S06 splits `until` — a clause needs `ttae` for
+`-kkaji` to attach to, a noun does not, and the second variation is `hakgyo-kkaji` making that
+concrete. S07 and S08 are the small words, and S08's two variations are the whole of `ajik`: the same
+adverb reads as *not yet* under a negative and *still* without one, which is why the polarity switch
+is a variation rather than a note. S09 is the elapsed frame, and its plate is `on hu-e … dwaesseoyo`,
+the sequencing bound noun doing the measuring bound noun's job.
+
+### L4-M7 "Official talk" — the level a learner hears, and answers at their own
+
+```
+S01  Jamsiman gidaryeojusipsio.
+S02  Igeo-neun jeopsu changgu-imnida.
+S03  Pyo-neun yeogi-e isseumnida.
+S04  Jigeum pyo-ga eopseumnida.
+S05  Jamsi hu-e annae bangsong-i isseumnida.
+S06  Seunggaek yeoreobun, gicha-ga chulbalhamnida.
+S07  Gicha-ga yeol si-e dochakhamnida.
+S08  Sajangnim-kkeseo jigeum osimnida.
+S09  Jeopsu-neun je-ga hamnida. Sinbunjeung-i isseumnikka?
+S10  Yeoreobun, jigeum sijakhapsida.
+```
+
+This is the largest change the course has made since L1, and it is authored as **comprehension
+before production**: every one of the twelve pool items is something said AT the learner, and every
+sentence carries a `usage` line naming who is speaking and from where. The four endings each
+get a home — `-(eu)sipsio` in S01, `-(seu)pnida` in S02–S08, `-(seu)pnikka` in S09, `-(eu)psida` in
+S10 — and rule 5 states the answer rule plainly: understand the announcement and reply at your own
+level. S09 is where that is dramatised, because it is the only sentence in the module with two
+speakers in it, and its plate is the CORRECT `-yo` version, marked wrong for the room rather than for
+the grammar.
+
+The trap inside the set is `-(eu)psida`. S10's plate is `Sajangnim, gachi sijakhapsida` — a proposal
+aimed upward — and rule 2 sends the upward version back to L2-M6's `-(eu)llaeyo` with the honorific,
+which is where the course already keeps it. Nothing here lifts the banmal ban, nothing extends L3-M8,
+and the four frozen phrases are named in rule 6 and left alone: not one of the `-mnida` shapes this
+module opens points back at any of them.
+
+### L4-M8 "Back then" — four Korean shapes under one English label
+
+```
+S01  Eoril ttae maeil hakgyo-e gagon haesseoyo.
+S02  Yennal-e-neun sigol-eseo sarasseosseoyo.
+S03  Yejeon-e-neun jaju yeonghwa-reul bwasseoyo. Ijen an bwayo.
+S04  Jaju gatdeon sikdang-i ijen eopseoyo.
+S05  Ilhaetdeon hoesa-neun mani byeonhaesseoyo.
+S06  Haksaeng sijeol-e-neun maeil gongbuhagon haesseoyo.
+S07  Geuttae-neun haksaeng-ieosseoyo. Ijen seonsaengnim-ieyo.
+S08  Yennal-e-neun jip-eseo yori-reul hagon haesseoyo.
+S09  Yejeon-e-neun sigol-eseo ilhaesseoyo. Ijen mani dallajyeosseoyo.
+S10  Eoril ttae saratdeon sigol-e ijen an gayo.
+```
+
+The module is built so that each of the four shapes is teachable by its own meaning and never by the
+English label. `V-gon haesseoyo` gets S01, S06 and S08 on three different stems (`gagon`,
+`gongbuhagon`, `hagon`, with `meokgon` in a variation), and each of the three mistake plates is the
+same error — the tense left off the auxiliary — because that is the one thing that actually goes
+wrong with the frame. `-eotdeon` gets S04, S05 and S10, and S04's first variation is L3-M9's plain
+`gadeon` on the SAME sentence, with `changed` saying what moves: *the open -deon, which keeps the
+habit in view*. That is the contrast the brief asked for, and it is a variation rather than a note
+because the two forms differ by nothing a learner can see except one syllable.
+
+S07 is the gift, and it is authored as a gift: English needs *used to be* and Korean needs
+`haksaeng-ieosseoyo`, which L1-M5 already taught, so the sentence spends its one row on
+`geuttae-neun` instead and the `trap` says outright that reaching for `-gon` or `-eotdeon` here would
+be wrong. S02's doubled past is stated as an END rather than as a stronger past, and its trap says the
+sentence would be wrong about somewhere you still live.
+
+### L4-M9 "Places and journeys" — the direction inside the verb
+
+```
+S01  Bada-e gabon jeok isseoyo?
+S02  Yeohaeng-eul gaseo bada-reul bwasseoyo.
+S03  San-e gabon jeok isseoyo. Eoje-neun an gasseoyo.
+S04  Sageori-eseo oenjjok-euro doragaseyo.
+S05  Gonghang-e deureogaseo chingu-reul mannasseoyo.
+S06  Yeok-eseo nagaseo taeksi-reul tayo.
+S07  San-e ollagal ttae sigan-i mani geollyeosseoyo.
+S08  Naeryeogal ttae gil-eul ireobeoryeosseoyo.
+S09  Jido-reul bogo oreunjjok-euro jjuk gasseoyo.
+S10  Meonjeo gonghang-e gasseoyo. Geu daeum-e bada-e gasseoyo. Machimnae jip-e doragasseoyo.
+```
+
+**No new direction vocabulary at all**, exactly as the brief demanded: `oenjjok`, `oreunjjok`, `jjuk`,
+`sageori`, `jeongnyujang`, `yeok`, `taseyo`, `naeriseyo`, `euro` and `kkaji` are L2-M4's and are used
+in their already-owned particle-shaped forms (`sageori-eseo`, `oenjjok-euro`, `jeongnyujang-eseo`,
+`yeok-kkaji`). What the module adds is the five compound verbs, and every one of the five mistake
+plates is the same interference written a different way: `an-euro gaseo`, `bakk-euro gaseo`,
+`wi-ro gal ttae`, `arae-ro gal ttae`, `oenjjok-e`. Rule 6 names the pattern so the plates read as one
+lesson rather than five.
+
+The experience frame gets S01 and S03, and S03 is the item the brief asked for: the SAME place under
+both frames, `gabon jeok isseoyo` beside `eoje-neun an gasseoyo`, so the difference cannot be read as
+a difference of place or of politeness. S10 is the six-stop trip, and its plate is the experience
+frame pushed inside a chronological account, which `meonjeo` immediately contradicts.
+
+### L4-M10 "A story with a twist" — the line of dialogue, and six new keys
+
+```
+S01  Eoje yeok-eseo jigap-eul ireobeoryeosseoyo. Gapjagi chingu-ga jeonhwahaesseoyo.
+     "Jigap-i yeogi isseoyo" rago haesseoyo. Jeongmal gomawoyo.
+S02  Chingu-ga yeonghwa-reul bwasseoyo. Yeonghwa-ga jeongmal seulpeosseoyo.
+     Geureonde chingu-neun useosseoyo. Algo boni chingu-neun dareun yeonghwa-reul bwasseoyo.
+S03  Oneul achim-e neujeosseoyo. Gapjagi bi-ga wasseoyo.
+     Hoesa-eseo sajangnim-kkeseo "Oneul-eun hyuil-ieyo" rago malsseumhasyeosseoyo. Jeongmal joasseoyo.
+S04  Eoje sijang-e gasseoyo. Sagwa-ga jeongmal ssasseoyo. Geuraeseo mani sasseoyo.
+     Algo boni jip-e sagwa-ga mani isseoyo.
+S05  Jip-eseo chaek-eul ilgeosseoyo. Gapjagi keun sori-ga deullyeosseoyo. Jeongmal nollasseoyo.
+     Algo boni dongsaeng-i wasseoyo.
+S06  Eoje chingu-ga jeonhwahaesseoyo. "Oneul saengil-ieyo" rago haesseoyo.
+     Geuraeseo seonmul-eul sasseoyo. Algo boni je saengil-ieyo.
+S07  Achim-e jigap-eul ireobeoryeosseoyo. Meonjeo hoesa-eseo chajasseoyo.
+     Geu daeum-e yeok-eseo chajasseoyo. Algo boni jigap-i jip-e isseoyo.
+S08  Eoje yeok-e gasseoyo. Annae bangsong-i deullyeosseoyo.
+     "Gicha-ga jamsi hu-e chulbalhamnida" rago haesseoyo. Geuraeseo gapjagi ppalli gasseoyo.
+S09  Oneul chingu-ga jip-e wasseoyo. Keopi-reul masyeosseoyo.
+     Chingu-ga "Igeo-neun cha-yeyo" rago haesseoyo. Geuraeseo mani useosseoyo.
+S10  Yejeon-e-neun hangugeo-reul mothaesseoyo. Gapjagi chingu-ga "Gachi gongbuhaeyo" rago haesseoyo.
+     Geuraeseo maeil gongbuhaesseoyo. Ijen hangugeo-reul jal hage dwaesseoyo.
+```
+
+Six new keys for ten items, which is the smallest spend of the level: `gapjagi`, `algo boni`,
+`useosseoyo`, `nollasseoyo`, `jigap`, `chajasseoyo`. Everything else is assembly, which is what the
+exit of a level is supposed to be. Four items therefore carry a **deliberate repeat** in the sense
+`tools/check-shown.ts` licenses — `gapjagi` is a row on S01, S03, S08 and S10, `algo boni` on S02, S04
+and S06, `useosseoyo` on S02 and S09 — and in every case the repeated rows carry a **byte-identical
+note**, which is what the collision check tests. `content:shown` reports no `COLLIDES` line for the
+module, and a learner who taps the word in any of those items is shown the same sentence, so which row
+the fold reaches is invisible.
+
+The twist is authored as rule 3 defines it — a turn that makes the earlier sentences read differently
+— and S04, S06 and S07 all land it on a PRESENT: the apples are still at home, the birthday is still
+today, the wallet is still where it always was. S06 hides the twist inside the quotation itself, which
+is the shape the module's title promises, and its plate is L3-M5's indirect report, which spells out
+whose birthday and destroys the joke. S08 puts L4-M7's formal level inside the quotation marks and its
+plate lets the level escape into the narration. S03 does the same job for the honorific: the director
+is honoured by `malsseumhasyeosseoyo` outside the quotation, and the plate puts `-si-` inside it. No
+item writes banmal, in a quotation or out of one.
+
+### The brief seams this wave had to correct, and what the index actually said
+
+1. **The M7 brief's demand for a test change is stale, and no test was changed.** Its note 2 says
+   `FROZEN_FORMAL_L2` "fails any token ending in `mnida` outside those four phrases for every module
+   whose id does not start with `L1-`", and that "authoring this module is therefore a TEST CHANGE in
+   the same commit as the content". `src/course/types.test.ts` already reads
+   `const frozenLevel = /^L[123]-/.test(module.id);`, above a comment that names #527 and `docs/93`
+   and says in as many words: "**L4-M7 'Official talk' unfreezes the level** … The gate is therefore
+   scoped to the levels that froze it, and NOT deleted." The re-scoping landed with the briefs, not
+   with the content. This wave touched no file outside its five modules and this document, and
+   `npx vitest run src/course/types.test.ts` is green.
+
+2. **The briefs' index seams are all stated "through L3-M10"; the emitted index is deeper.** At the
+   start of this wave `npm run content:owner -- en-ko …` printed `975 surfaces owned, folded over 35
+   modules through L4-M5`, so every count in the five briefs was five modules behind before a word was
+   written. No individual ownership claim turned out wrong because of it, but three of the surfaces
+   the briefs called free are in fact L4's own — `dwaesseoyo` is L4-M2 (M6's brief says so), `meokgi`
+   and `gagi` are L4-M1 — and an author who trusts the header rather than the tool will mint them
+   again.
+
+3. **`meokgi` and `gagi` are L4-M1's, so the `-gi` row has a hole.** `content:owner` gives
+   `meokgi → L4-M1` and `gagi → L4-M1`. L4-M6-S01 shows `meokgi` in its display and gives it **no
+   row**: the display resolves against L4-M1 and the sentence spends its rows on `jeon-e`, `son-eul`
+   and `ssiseoyo`. The same holds for the first variation's `gagi`. Nothing in the module lists a bare
+   `-gi` in a `forms` array.
+
+4. **The past-modifier paradigm has two holes, and they are load-bearing.** M6's brief says the
+   after-clause is never built on `hada` because `han` is L1-M8's native ONE; `content:owner` confirms
+   `han → L1-M8`. It also says `meogeun` and `bon` point back, and `content:owner` confirms
+   `meogeun → L3-M7` and `bon → L3-M2`. So L4-M6-S02's `gan` row lists exactly `["gan", "on"]` — the
+   two cells that are free — and the note says why the other two are missing. A four-cell paradigm
+   here would have made three unreachable rows and one collision.
+
+5. **`naseo` was cleared and never spent.** M6's brief lists it among the surfaces "minted here".
+   `content:owner` says `naseo` is free, and it is still free after the wave: no sentence needed it,
+   and minting a key no display shows would put an unreachable row in the module. The same applies to
+   M7's `gamnida` and `gasipsio`, both confirmed free and both left free — the module opens
+   `gasimnida` instead, as the honorific partner of `osimnida`, because that is the form its sentence
+   actually shows.
+
+6. **`myeonseo` stays free, and so does `gon`.** M6's brief warns that a `forms` array MINTS INDEX
+   KEYS, which is how a bare `-deon` became a real key at L3-M9. Every `-(eu)myeonseo` surface in
+   L4-M6 is a whole attached word (`deureumyeonseo`, `ilhamyeonseo`, `meogeumyeonseo`,
+   `masimyeonseo`) and every `-gon` surface in L4-M8 is a whole attached word (`gagon`, `hagon`,
+   `gongbuhagon`, `meokgon`). After the wave the fold still says `myeonseo → free` and `gon → free`.
+
+7. **The M8 brief contradicts itself about `eotdeon`, and the stricter half wins.** Its note 5 says no
+   row "may put a bare `-eotdeon`, `-gon` or `-eoss-eoss-` into a forms array", and its own Fresh list
+   then names `eotdeon`. This wave took the rule and not the list: L4-M8 mints `gatdeon`,
+   `ilhaetdeon` and `saratdeon` as whole words and never `eotdeon`, which the fold still reports as
+   **free**. `deon` itself is confirmed as `L3-M9` — the accident `docs/76` §4 said could not happen —
+   and is pointed back at rather than reopened: `gadeon` and `meokdeon` appear only in variations,
+   with no row.
+
+8. **The experience past cannot be written `ga bwasseoyo`, and the brief is right about why.**
+   `content:owner` gives `bwasseoyo → L2-M10`, so the two-token spelling would hand the learner a note
+   about SEEING on a sentence about going. `gabon` and `jeok` are both free and are minted whole;
+   L4-M9-S01's mistake plate is the split spelling, with the reason stated.
+
+9. **A hyphen part is not enough — `matchSurfaces` walks whole whitespace tokens.** This is Wave 2's
+   finding and it bit again, harder, because this wave mints nine nouns. `sigol` is free, but
+   `sigol-eseo`, `sigol-i`, `sigol-e` and `sigol-eul` each had to be listed in the row's `forms`
+   before the displays that show them would resolve. Every noun row in the wave is written that way
+   (`pyo`, `changgu`, `jeopsu`, `bangsong`, `bada`, `san`, `gonghang`, `gil`, `jido`, `jigap`,
+   `yeohaeng`, `yennal`, `sijeol`), and it is the single largest source of surfaces in the wave.
+
+10. **The formal copula arrives as a hyphen part, exactly as `ieyo` did.** The M7 brief does not name
+    `imnida`; `content:owner` said it was free. This course attaches the copula with the particle
+    hyphen (`haksaeng-ieyo`, `chaek-ieyo`), so L4-M7-S02 writes `changgu-imnida` and the bare
+    `imnida` is minted as a hyphen part of it — the same route by which `ieyo` became a key at L1-M1.
+    No row displays the bare form, so nothing is unreachable.
+
+11. **`rago` is L3-M5's, and that fact forced a spacing decision.** `content:owner` gives
+    `rago → L3-M5` and `irago → L3-M5`; both arrived there as hyphen parts of `uisa-rago` and
+    `haksaeng-irago`. For a DIRECT quote there is no host word to hyphenate onto — the token before it
+    is a closing quotation mark — so the romanization sets `rago` off as its own whitespace token and
+    the surface resolves to L3-M5 with nothing spent. The Hangul line writes it joined to the quote,
+    which is the standard spelling. Rule 2 of L4-M10 declares the difference, and question 116 below
+    puts it to the gate.
+
+12. **Two romanizations were corrected against this course's own written-assimilation law.** The law
+    (`docs/34`, and the surfaces `masinneun`, `meongneun`, `hangungmal`, `isseumnida`) writes
+    nasalisation as it is said. The first drafts of this wave had `kkeutnal` and `osipnida`; both are
+    nasalised in speech, so the shipped surfaces are **`kkeunnal`** / `kkeunnasseoyo` and
+    **`osimnida`** / `gasimnida`. The `allowedPatterns` list still carries the morphological
+    `-(eu)sipnida`, as the briefs carry `-(seu)pnida` for a surface that is written `hamnida`; rule 4
+    of L4-M7 says both shapes and names which one the course writes.
+
+13. **Tensification and `hada`-aspiration follow the existing precedent and were left alone.**
+    `jeopsu`, `meokgon`, `gapjagi` and `gidaryeojusipsio` are all tensed in speech and are written
+    untensed, as `hakgyo` and `meokgo` already are. `dochakhamnida`, `chulbalhamnida` and
+    `sijakhaesseoyo` keep the consonant plus `h` across the `hada` boundary, as L2-M8's
+    `mothaesseoyo` does. Both classes are consistent with what shipped below; neither is settled, and
+    questions 108 and 112 put them to the gate.
+
+### The ratchet
+
+`npx vitest run tools/shown-surfaces.test.ts` is **11/11**, and en-ko holds at its baseline of **12**.
+The baseline is **not lowered**, because this wave fixed none of the twelve. They remain
+
+`saram-i · chaek-i · geunyang · geuraeyo · cha-do · il · uisa-yeosseoyo · anieosseoyo · hakgyo-e ·
+oneul-do · minsu-ga · eopseoseo`
+
+and every one is a forward reference inside an L1 variation, owned by a module below the one that
+shows it. Two of them brushed this wave. `saram-i` was the obvious subject for L4-M7-S06's announcement
+and for L4-M10-S01's stranger, and was avoided in both — S06 writes `seunggaek yeoreobun` and S01
+writes `chingu-ga` — for the same reason Wave 2 avoided it: a finding owned by a module below L1-M1
+cannot be closed from L4, and writing the surface again would only spread it. `il` appears in
+L4-M6-S09's first variation as the Sino number one (`on ji il nyeon dwaesseoyo`), where it resolves
+cleanly against L1-M9 in the full fold; the open finding belongs to L1-M4, L1-M5 and L1-M6, whose
+variations show it earlier than L1-M9 teaches it, and closing it is a sweep over verified L1 content
+that this wave is not licensed to make.
+
+**All five new modules contribute zero findings.** Every display, every variation display and every
+comprehension item in L4-M6 through L4-M10 resolves against the index as it stands at that module,
+which is what `npm run content:shown` reports as clean for each and what the ratchet test confirms by
+course. Unlike both earlier waves, this one produced **no `RE-TEACH` lines at all**: where a sentence
+needed a word an earlier module owns, the word was shown in the display with no row of its own
+(`meokgi`, `meogeun`, `gadeon`, `meokdeon`, `haksaeng-ieosseoyo`, `chulbalhamnida` in L4-M9's pool),
+so the learner is sent to the owning module's note by design rather than by accident.
+
+### Open questions for the native pass
+
+The chain continues from **104**, the last number in `docs/93-en-ko-L4-brief-decisions.md` and this
+document taken together. Nothing above 104 existed before this wave, and nothing already numbered is
+renumbered.
+
+105. **`son-eul ssiseoyo` with no possessor** (M6-S01). The note says Korean leaves the owner out
+     because whose hands is obvious. Confirm that 밥을 먹기 전에 손을 씻어요 is what is actually said,
+     and that adding 제 손을 would sound odd rather than merely redundant.
+
+106. **`deureoyo` against L2-M6's `deullyeoyo`** (M6-S03). The note splits them as *you listening*
+     against *a sound reaching you*. Confirm 음악을 들어요 is the natural collocation for listening to
+     music while doing something else, and that the two verbs are as cleanly separated as the note
+     claims.
+
+107. **`-(eu)myeonseo` and the same-subject rule as an absolute** (M6-S05, rule 2). The module states
+     it as a hard rule and its mistake plate breaks it with two subjects. Confirm there is no ordinary
+     spoken register in which a different subject is tolerated, because the plate teaches that it is
+     always wrong.
+
+108. **`kkeunnal` for 끝날** (M6-S06). Written per the assimilation law that gives `masinneun` and
+     `meongneun`, against the revised-romanization `kkeutnal`. Confirm the spelling, and rule on
+     whether the same law should have produced `itseumnida` rather than the `isseumnida` the M7 brief
+     specified — the two cannot both be right, and only the gate can settle which one the course keeps.
+
+109. **`sip nyeon` across a space** (M6-S09). 십 년 is said [심 년], and the assimilation law writes
+     nasalisation. This course writes it `sip nyeon` because the assimilation crosses a whitespace
+     boundary and no shipped surface does that. Confirm, or rule that counters written after a Sino
+     number must be joined and assimilated.
+
+110. **`beolsseo` as always carrying surprise** (M6-S07). The trap says a flat English *already* is
+     not what the word does. Confirm 벌써 always adds *so soon?*, and that a neutral report of
+     completion would use something else.
+
+111. **`gidaryeojusipsio` written joined** (M7-S01). The course keeps the `-a/eo juda` auxiliary joined
+     from L2-M1 on, so this is one token where standard orthography writes 기다려 주십시오. Confirm the
+     learner is not being taught a spelling they will never see on a sign.
+
+112. **`dochakhamnida` and `chulbalhamnida`** (M7-S06, S07). Aspiration across the `hada` boundary is
+     written as consonant plus `h`, following L2-M8's `mothaesseoyo`, rather than as the single
+     aspirated sound the `sound` line describes. Confirm the convention holds for Sino-Korean noun
+     plus 하다 as well as for 못하다.
+
+113. **`osimnida` as the shape a learner should recognise** (M7-S08). Confirm 사장님께서 지금
+     오십니다 is what an assistant says to a waiting visitor, and that `-si-` is genuinely obligatory
+     once `-kkeseo` has marked the subject — the mistake plate treats dropping it as a contradiction
+     rather than as a lesser register.
+
+114. **The `-eotdeon` cluster** (M8-S04, S05, S10; the M8 brief names this explicitly as a gate
+     question). The wave ships `gatdeon`, `ilhaetdeon` and `saratdeon`. The competing spellings are
+     `gatteon` / `ilhaetteon` / `saratteon`, which write the tensing this course writes elsewhere only
+     in `jochi` and `gwallibi`. Settle the cluster, and settle it for L5 at the same time.
+
+115. **`gagon haesseoyo` against a bare past for a childhood habit** (M8-S01, S06, S08). Three of ten
+     sentences use the frame. Confirm it is not literary or dated in speech, and that 어릴 때 매일
+     학교에 가곤 했어요 is what an ordinary speaker says rather than 어릴 때 매일 학교에 갔어요.
+
+116. **`rago` set off as its own word after a closing quotation mark** (M10, five displays, rule 2).
+     The romanization and the Hangul line disagree on spacing here and nowhere else in the course.
+     Confirm the Hangul 라고 joined to the quote is right, and rule on whether the romanization should
+     match it — which would cost the course L3-M5's `rago` surface and mint a new key per quotation.
+
+117. **`algo boni` indexed whole, and always on a present** (M10-S02, S04, S06, S07). Confirm 알고
+     보니 is a fixed two-word discovery marker rather than a transparent 알고 + 보니, and confirm the
+     present-tense landing in S04, S06 and S07 — 집에 사과가 많이 있어요 — is right, because the wave
+     teaches that as the frame's normal shape.
+
+118. **A quoted announcement as the only formal level inside a story** (M10-S08, rule 6). Confirm that
+     안내 방송이 "…합니다"라고 했어요 is how a speaker reports a public announcement, and that
+     attributing the quote to the 방송 rather than to a person is natural.
+
+119. **`chajasseoyo` for searching rather than finding** (M10-S07). The note says 찾다 covers both and
+     the story decides. Confirm 먼저 회사에서 찾았어요 reads as *I looked there* and not as *I found it
+     there*, because the whole item turns on it.
+
+120. **`nollasseoyo` beside `deullyeosseoyo`** (M10-S05). The plate marks the correct 큰 소리를
+     들었어요 as the English sentence rather than as an error. Confirm that a Korean telling this story
+     would put the sound in the subject slot, and that the plate is a fair thing to show a learner as
+     wrong-for-the-story rather than wrong.
