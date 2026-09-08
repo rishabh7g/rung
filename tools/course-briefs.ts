@@ -1767,6 +1767,117 @@
  * 9, M8–M10: 10), pools are authored to 12, M1–M3 ship fully enriched, and M10's items are
  * four-sentence accounts.
  *
+ * ## en-ru L2: the decisions, taken against the finished L1 (#429)
+ *
+ * Planned against the REAL cumulative L1 index — **228 surfaces through L1-M10, maxSpan 3**,
+ * rebuilt and read. Recorded in `docs/56-en-ru-L2-brief-decisions.md` and repeated in the module
+ * notes. The seven L1 decisions carry unchanged: the romanization scheme, **a stress mark on
+ * every polysyllable** (monosyllables take none), `ё` written `yó` in `display` and `ё` in
+ * `script` with `е` never merging into it, one row per noun carrying its case shapes in `forms`,
+ * and aspect pairs kept on separate rows.
+ *
+ * ### 1. The cases — which enter where, and the one that does not
+ *
+ * L1 held to nominative and accusative plus two seats it could not avoid: the prepositional after
+ * `v`/`na` (M7 — `Moskvé`, `kómnate`, `rabóte`, `stolé`) and the genitive after numbers and `u`
+ * (M4, M8 — `chasá`, `rubléy`, `u menyá`). L2 finishes the four cases the ten jobs need, each in
+ * the module whose job cannot be done without it:
+ *
+ * - **Dative at M1**, because a request has a recipient: `Dáyte mne…`, `Skazhíte mne…`. `mne`
+ *   (L1-M1) and `vam` (L1-M2) are already keys, so what M1 adds is the dative of a NOUN and, more
+ *   importantly, the **dative-subject frame** — `Mne núzhno`, `Mne mózhno` — a sentence with no
+ *   subject at all, which L1-M9's `Mne nrávitsya` used without naming.
+ * - **Genitive at M3**, in the two jobs that make it unavoidable: `net` + genitive for absence
+ *   (`Zdes' net magazína` — again no subject) and the genitive of quantity (`mnógo vodý`,
+ *   `nemnógo sákhara`), which gives L1-M6's `mnógo` and L1-M10's `nemnógo` the complement they
+ *   were always missing.
+ * - **Accusative of motion at M4**: `v magazín` (going) against L1-M7's `v magazíne` (being). For
+ *   an inanimate masculine noun the accusative IS the nominative, so this costs no new key at all
+ *   — the contrast is taught in a rule and in the feminine shapes (`v Moskvú`), and M4 points back
+ *   at L1-M7's `v` and `na` rows rather than re-opening them.
+ * - **Genitive of comparison at M9**: `Moskvá ból'she Peterbúrga`. It is what a Russian says, it
+ *   is shorter than the alternative, and it spends the case M3 already taught instead of opening a
+ *   conjunction. `chem` is named in `usage` as the always-available alternative and as the
+ *   REQUIRED one when the two compared things are not both bare nouns.
+ *
+ * **The instrumental stays OUT of L2**, and M4 is where the decision is taken and stated: Russian
+ * says both `na avtóbuse` and `avtóbusom` for "by bus", and this course teaches `na avtóbuse` —
+ * one preposition and one case the learner already owns from `na rabóte`, doing a new job — rather
+ * than opening a fifth case for a single frame. `peshkóm` ("on foot") comes in as a WORD, with a
+ * usage line saying it is a frozen instrumental and not a pattern to copy. The instrumental proper
+ * is L3's.
+ *
+ * ### 2. Aspect — at M1 in the imperative, at M10 in the narrative
+ *
+ * L1 shipped perfective and imperfective partners as separate rows without ever teaching the
+ * choice (`chitát'`/`prochitál`, `pozvonyú`, `kuplyú`/`kupíl`, `napishú`/`napisál`). L2 teaches it
+ * twice, in the two places it decides what a sentence means:
+ *
+ * - **M1, the imperative.** `Skazhíte` (perfective — do this one thing) against `Govoríte`
+ *   (imperfective — proceed, keep going, this is how it is done). The half a learner cannot guess
+ *   is that a HOST uses the imperfective — `Sadítes'`, `Prokhodíte`, `Ugoshcháytes'` — and that
+ *   the perfective in the same seat lands as an order. M5 spends this in the field and points back.
+ * - **M10, the narrative.** The perfective moves the account forward one completed whole at a
+ *   time; the imperfective paints the standing situation, the habit, the activity named for its
+ *   own sake. The slogan to kill is the one en-es's M10 kills in Spanish — "perfective is
+ *   completed, imperfective is ongoing" — and it is false the same way: `Ya dva chasá chitál` is
+ *   bounded and imperfective, `Ya prochitál za dva chasá` is perfective, and what differs is how
+ *   the clause is being USED, not how long the reading took. The fact that makes aspect visible is
+ *   already in the learner's hands: **the perfective has no present tense**, which is why L1-M6's
+ *   `napishú` and `pozvonyú` are futures.
+ *
+ * ### 3. Register — `vy` stays the default, `ty` enters at M6, and the switch is an EVENT
+ *
+ * L1's decision 2 stands: `vy` is the course-wide default and `ty` appeared in no L1 display. M6
+ * is where it enters, because plans are made with friends, and it costs a real spend — `ty`,
+ * `tebyá`, `tebé`, the `-esh'`/`-ish'` second-singular of every verb the course owns, and the
+ * singular imperative (`skazhí`, `day`, `pozvoní`). The chip (#422) maps as: `ty` frames chip
+ * `informal`, the elaborated request (`Bud'te dobrý`, `Vy ne mózhete…?`) chips `formal`, and plain
+ * `vy` to a stranger stays **`neutral`** — it is the unmarked default of this language, not a
+ * politeness tier, and chipping it `formal` would make eight modules formal and say nothing. The
+ * fact English has no equivalent of, and which belongs in `usage` rather than in a rule: in
+ * Russian the move from `vy` to `ty` is NEGOTIATED out loud (`Davay na ty`), so a learner does not
+ * drift into it.
+ *
+ * ### 4. Forms and seams — L2 never edits an L1 file, and five collisions have owners
+ *
+ * A new case shape of an L1 noun is deconstructed in the L2 module that first shows it, on its own
+ * row pointing back at the first-teach row, because the bare word's key is L1's forever and L2
+ * never edits an L1 file. Within L2 the L1 policy holds: one noun, one row, every case shape this
+ * LEVEL shows in its `forms`, and an aspect partner never on the same row. The collisions:
+ *
+ * - **`net` has two jobs** — "no" (L1-M2) and "there isn't" + genitive (M3). L1-M2's row owns the
+ *   key, so M3 points back and writes its rule around it; the same row then answers for M7's
+ *   `Yevó net dóma`.
+ * - **`yevó` and `yeyó` each carry two jobs** — "his/her" and "him/her" — because Russian's
+ *   genitive and accusative pronouns are the possessives. One row each (M2), note true of both.
+ * - **`n-` after a preposition**: `u nevó`, not `*u yevó`. A spelling rule with index consequences
+ *   — `nevó` and `yevó` are two keys — so both are authored on M2's rows and the note says why.
+ * - **`éhto` is not `éhtot`.** L1-M1 owns `éhto` ("this is", the pointing sentence); M9's `éhtot`
+ *   / `éhta` / `éhti` ("this + noun") is a different word that declines, and merging them would put
+ *   every choice in the course on a note about identification.
+ * - **`lúchshe` serves two positives** — `khoroshó` (L1-M2, well) and `khoróshiy` (good) — exactly
+ *   as `mejor` does in en-es. M9 owns it and says so.
+ *
+ * ### Why the en-ru L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim. The imperative's aspect and the dative-subject
+ * frame in M1, because a request is addressed and Russian addresses it without a subject; the long
+ * adjective and the third-person pronouns in M2, where L1's short-form `ustál` finally gets its
+ * partner; the full agreement grid and the genitive of absence in M3; the accusative/prepositional
+ * motion contrast and the determinate motion verbs `idtí` / `yékhat'` in M4 — with the
+ * indeterminate `khodít'` / `yézdit'` named and deferred, because one trip is all a direction needs;
+ * the imperfective host imperative in M5; `ty` and `Davay poydyóm` in M6; the genitive of absence
+ * turned on a person (`Yevó net`) in M7; `Mne núzhen` / `nuzhná` / `núzhno` agreeing with the thing
+ * NEEDED and `U menyá bolít golová` in M8, which is where Russian's habit of putting the person in
+ * an oblique case stops being a curiosity and becomes the way the language works; the comparative
+ * and its genitive in M9; and aspect at length in M10. Kept OUT and named where it would be
+ * reached for: the instrumental, the conditional `by`, reflexive verbs as a system (L1-M9's
+ * `nrávitsya` and M10's `vernúlsya` ride as vocabulary), participles, prefixed motion verbs beyond
+ * L1's `po-`/`pri-`, and numbers above a hundred. Bounds climb 8 → 10 (M1–M3: 8, M4–M7: 9,
+ * M8–M10: 10), pools are authored to 12, M1–M3 ship fully enriched, and M10's items are
+ * four-sentence accounts.
+ *
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -3809,6 +3920,215 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "Keep the turns everyday and symmetric, and reuse the register decision on every addressed line: greeting → wellbeing → plan (Zdrávstvuyte! Kak delá? · Khoroshó, spasíbo. · Závtra ya búdu rabótat'.); want → reason → buy.",
       ],
       maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M1': {
+      id: 'L2-M1',
+      title: 'Asking politely',
+      job: 'Requests, thanks, apologies in the right register',
+      patterns: [
+        'V-imperative-perfective + , + pozháluysta',
+        'Dáyte mne + N-acc + , + pozháluysta',
+        'Vy ne mózhete + V-inf + ?',
+        'Mne núzhno + N/V-inf',
+        "Bol'shóye spasíbo — Ne za chto",
+      ],
+      notes: [
+        "REGISTER, decided for the whole level and repeated here because a prompt only ever shows an author the notes (full record: docs/56-en-ru-L2-brief-decisions.md; the seven L1 decisions carry unchanged — the romanization scheme, a stress mark on every polysyllable and none on a monosyllable, yó in display and ё in script with е never merging, one row per noun with its case shapes in forms, aspect partners on separate rows). L1's decision 2 stands: vy is the course-wide default and ty appears in no display until M6. So this module is not an address contrast; the chip marks the elaborated request — Bud'te dobrý, Vy ne mózhete…? — as `formal`, and plain vy to a stranger stays `neutral`, because it is this language's unmarked default and not a politeness tier.",
+        "THE grammar of the module is the imperative's ASPECT, which L1 shipped in pairs (chitát' / prochitál, kuplyú / kupíl) without ever teaching the choice. Skazhíte, pozháluysta (perfective) asks for ONE act and is the shape of every ordinary request; Govoríte (imperfective) says proceed, keep going, this is how it is done. The half a learner cannot guess, and the one to spend a mistake on: a HOST uses the imperfective — Sadítes', Prokhodíte — and the perfective in that seat lands as an order. M5 spends this at a table and points back here. The -te ending is the vy imperative and every L1 imperative already had it (dáyte, izviníte, zdrávstvuyte), so the FORM is a rest point and the aspect is the whole lesson.",
+        "The dative enters here because a request has a recipient, and with it Russian's signature shape: a sentence with NO SUBJECT. Mne núzhno idtí, Mne mózhno? — literally \"to me [is] necessary\", \"to me [is] permitted\". L1-M9's Mne nrávitsya was already this shape and never said so; name it now, because M3's Zdes' net magazína and M8's Mne nuzhná pómoshch' are the same sentence type and the learner should meet the pattern once rather than three times. mne is L1-M1's row and vam is L1-M2's; what this module adds is the dative of a NOUN (Ivánu, drúgu) and the frame itself.",
+        "The politeness moves are lexical, and one of them is genuinely surprising: a NEGATIVE question is MORE polite in Russian, not less — Vy ne mózhete mne pomóch'? is softer than Vy mózhete…?, where English hears a negative question as doubt or complaint. Tag it delta and spend a mistake on the reverse assumption. The rest: pozháluysta (L1-M3) for both please and you're welcome, bud'te dobrý as the formal opener, bol'shóye spasíbo above L1-M2's spasíbo, and izviníte (L1-M10) beside prostíte — near-synonyms, with izviníte the everyday one and prostíte the weightier apology. Say near-synonyms rather than inventing a clean split the language does not have.",
+        "INDEX SEAM: skazhíte, govoríte, pomogíte, pomóch', mózhete, mózhno, núzhno, bud'te, dobrý, prostíte, bol'shóye and za are fresh keys, each polysyllable carrying its stress mark. dáyte stays L1-M8's row, pozháluysta L1-M3's, izviníte L1-M10's, mne L1-M1's, vam L1-M2's, spasíbo L1-M2's. skazhíte and govoríte are aspect partners and therefore go on SEPARATE rows (the L1 policy), each note naming the other; a single row carrying both would make the module's own lesson unreachable.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M2': {
+      id: 'L2-M2',
+      title: 'Describing people',
+      job: 'Appearance, character, relationships',
+      patterns: [
+        'On/Oná + Adj-long',
+        'Yevó/Yeyó zovút + <name>',
+        "U nevó/neyó yest' + N",
+        'Ehto moy/moyá + N',
+        'On + Adj-short   (ustál, svobóden)',
+      ],
+      notes: [
+        'The long adjective arrives, and L1 set it up without saying so: ustál / ustála / ustáli (L1-M2) are SHORT-form adjectives, which can only stand as a predicate, and rússkiy (L1-M1) is a long one. This module teaches the long form and its four nominative endings — vysókiy · vysókaya · vysókoye · vysókiye — which can stand both before a noun and after the missing "is". State the split honestly: the short form is not a contraction of the long one, and only a handful of adjectives (ustál, svobóden, zányat, rad) use it in everyday speech. There is still no copula: On vysókiy is two words, exactly as L1-M1 taught.',
+        'The third person gets its objects: yevó and yeyó, each carrying TWO jobs — "his"/"him", "her"/"her" — because Russian\'s genitive and accusative pronouns are also its possessives. One row each, the note true of both, or half the module\'s sentences land on a note that is false of them. With them comes a spelling rule that has index consequences: after a preposition they take an n-, so u nevó and u neyó are their own keys beside yevó and yeyó, and all four are authored here with the rule in the note.',
+        "Possession extends L1-M8's frame to other people: U nevó yest' mashína, U neyó yest' brat. The frame itself — literally \"at him there is\" — is the same oblique-person habit as M1's Mne núzhno, and pointing that out costs one sentence and saves the learner from meeting it as a third unrelated idiom. Yevó zovút Iván extends L1-M1's menyá zovút the same way: the pattern is the learner's already, only the pronoun is new.",
+        "The family and person set: brat, sestrá, mat', otéts, syn, doch', zhená, muzh, drug, podrúga; vysókiy, molodóy, stáryy, khoróshiy, dóbryy, úmnyy, vesyólyy. Two of these are worth a line each. mat' and doch' are the two feminine nouns in the course that end in a consonant-plus-soft-sign and decline unlike anything else, so they are taught as words with their shapes in forms and no rule claims they are regular. vesyólyy carries a yó and must be written with it, or it merges with nothing at all — which is the point: the yó rule is not about ambiguity, it is about one word having one spelling.",
+        "INDEX SEAM: yevó, yeyó, nevó, neyó, vysókiy, molodóy, khoróshiy, dóbryy, úmnyy, vesyólyy, brat, sestrá, mat', otéts, syn, doch', zhená, muzh, drug, podrúga and the moy / moyá / moyó / moí rows are fresh keys. on, oná, oní and onó stay L1-M10's rows; ustál and ustála stay L1-M2's, re-shown here as the short form they always were; yest' and u menyá yest' stay L1-M8's. Every adjective row carries the four nominative cells this level shows in its forms — one paradigm, one home — and M3 adds the case shapes to those same rows rather than opening new ones.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M3': {
+      id: 'L2-M3',
+      title: 'Describing things',
+      job: 'Size, colour, quality — agreement at length',
+      patterns: [
+        'Ehto + Adj + N',
+        'Ya khochú + Adj-acc + N-acc',
+        "Zdes' net + N-gen",
+        'mnógo / nemnógo + N-gen',
+        "N + óchen' + Adj",
+      ],
+      notes: [
+        '"At length" is the grid: the adjective agrees with its noun in gender, number AND case, so a word the learner met in M2 as vysókiy appears here as vysókuyu, vysókom and vysókikh. Keep the grid to the cases this course owns — nominative, accusative, prepositional, genitive — and put every cell in the FORMS of the adjective\'s own row, which M2 opened. This is the module where Russian\'s central difficulty becomes visible, and the honest framing is that it is bookkeeping rather than a new idea: the endings are few and they repeat.',
+        'The genitive of absence, and it is the module\'s best sentence type: net + genitive says the thing IS NOT HERE, and the sentence has no subject at all — Zdes\' net magazína, U menyá net vremeni. English cannot mirror it ("there is no shop" keeps a dummy subject), and it is the same subjectless shape as M1\'s Mne núzhno. net is L1-M2\'s key, where it means "no", so this module points back and writes its rule around that row rather than opening a second one — first occurrence wins, and a learner tapping net must reach a note that admits both jobs.',
+        "The genitive of quantity finally gives L1's quantity words their complement: mnógo vodý (L1-M6's mnógo), nemnógo sákhara (L1-M10's nemnógo), stakán vodý, cháshka cháya. The law is one line — a word of amount is followed by the genitive — and it also explains L1-M8's rubléy and L1-M4's chasóv, which the learner has been saying for two levels without knowing why. Say that; a rule that retroactively explains something already learnt is worth three that only add.",
+        "Colours and qualities are the vocabulary spend: krásnyy, sínij, zelyónyy, chyórnyy, bélyy, zhyóltyy; bol'shóy, málen'kiy, nóvyy, dorogóy, deshyóvyy, chístyy. Four of those carry yó and must be spelled with it every time (zelyónyy, chyórnyy, zhyóltyy, deshyóvyy) — the L1 rule, biting harder here than anywhere else in the course simply because colours are where it lands. dorogóy pairs with L1-M8's stóit, and the pool's job is the grid: same noun, wrong ending, which line is right.",
+        "INDEX SEAM: krásnyy, sínij, zelyónyy, chyórnyy, bélyy, zhyóltyy, bol'shóy, málen'kiy, nóvyy, dorogóy, deshyóvyy, chístyy, vrémya and stakán are fresh keys, with every case shape this level shows sitting in the owning row's forms. net stays L1-M2's; mnógo stays L1-M6's; nemnógo stays L1-M10's; khleb, vodá, sákhar, chay, kníga and cháshka stay their L1 rows, and their new GENITIVE shapes (vodý, sákhara, cháya, knígi — note knígi is already L1-M3's plural key and now answers for the genitive too) are deconstructed here on their own rows pointing back, because L2 never edits an L1 file.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M4': {
+      id: 'L2-M4',
+      title: 'Getting around',
+      job: 'Directions, transport, asking the way',
+      patterns: [
+        'Izviníte, kak doyti do + N-gen + ?',
+        'Idíte pryámo + , + potóm nalévo',
+        'Ya yédu v + N-acc',
+        'Ya yédu na + N-prep   (na avtóbuse)',
+        'Kudá vy idyóte? — Gde ostanóvka?',
+      ],
+      notes: [
+        "THE preposition law of the module, and it is one contrast doing all the work: v and na take the ACCUSATIVE for motion and the PREPOSITIONAL for location — Ya idú v magazín (going) against Ya v magazíne (being), L1-M7's own sentence. For an inanimate masculine noun the accusative IS the nominative, so half of this costs no new surface at all; the contrast is taught in a rule and shown in the feminine (v Moskvú against L1-M1's Moskvé). v and na are L1-M7's rows and stay there — this module points back and never re-opens them — and the question words fork the same way: gde asks where something IS (L1-M7), kudá asks where it is GOING, and kudá is this module's key.",
+        "Motion verbs, kept to what a direction needs: idtí (going, on foot, ONE trip) and yékhat' (going, by vehicle, one trip). The split English never makes is the vehicle one — a Russian cannot say \"I'm going to Moscow\" without deciding whether they walk — and it is the delta to tag. The OTHER split, between one trip (idtí) and going habitually (khodít'), is real and is deferred: L3 owns it, and this module's notes name it so a later author does not import it. L1-M5's poshyól and poydú belong to this family and their rows are pointed back at.",
+        'The transport decision, taken here and stated because Russian offers two answers: "by bus" is both na avtóbuse and avtóbusom, and this course teaches **na avtóbuse** — one preposition and one case the learner already owns from L1-M7\'s na rabóte, doing a new job — rather than opening the instrumental for a single frame. peshkóm ("on foot") comes in as a WORD, and a usage line says it is a frozen instrumental rather than a pattern to copy. The instrumental proper is L3\'s, and no display in this level may use it.',
+        "Directions are the vocabulary spend and they reuse M1's imperative: idíte, povernite, nalévo, naprávo, pryámo, ryádom, dalekó, blízko, úlitsa, ploshchad', ostanóvka, stántsiya, perekryóstok, mashína, avtóbus, póyezd, metró. do takes the genitive (kak doyti do vokzála), which is M3's case doing a fourth job — point back rather than re-explaining. metró does not decline at all, which is worth one line, because it is the first indeclinable noun the course shows.",
+        "INDEX SEAM: kudá, idtí, idú, idyóte, idíte, yékhat', yédu, yédete, povernite, nalévo, naprávo, pryámo, ryádom, dalekó, blízko, úlitsa, ploshchad', ostanóvka, stántsiya, perekryóstok, avtóbus, póyezd, metró, mashína, do and peshkóm are fresh keys, every polysyllable stressed. perekryóstok carries a yó. v, na, gde, magazín and rabóta stay L1-M7's rows; poshyól, poshlá and poydú stay L1-M5's; potóm stays L1-M10's. Place names never index (#61), so anchor every direction on a common noun.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M5': {
+      id: 'L2-M5',
+      title: 'Food and hosting',
+      job: 'Ordering, offering, refusing without offence',
+      patterns: [
+        'Mne + , + pozháluysta + , + N-acc',
+        "Sadítes' + ! + Ugoshcháytes'!",
+        'Vam chay íli kófe?',
+        'Net + , + spasíbo + , + ya syt / sytá',
+        'Cháshka cháya + , + pozháluysta',
+      ],
+      notes: [
+        "This is where M1's aspect decision is spent, and the module should say so in its first note: a host speaks in the IMPERFECTIVE — Sadítes', Prokhodíte, Ugoshcháytes', Beríte — and the perfective in the same seat (Sad'tes' as a one-off command) lands as an order rather than as hospitality. It is the clearest evidence in the course that aspect is about how an action is being PRESENTED and not about how long it takes. Point back at M1's rows; open no new aspect rule here.",
+        'Ordering is the dative from M1 plus the accusative from L1-M3: Mne, pozháluysta, sup — literally "to me, please, soup", with no verb at all, which is what a Russian actually says at a counter. Ya khochú (L1-M3) is grammatical and blunter than English "I want", so the note should say that the verbless dative frame is the polite one; this is register carried by shape again, exactly as M1 promised.',
+        "The genitive of quantity in the field, straight from M3: cháshka cháya, stakán vodý, nemnógo sákhara, mnógo khléba. Four L1 nouns getting their genitive shapes, each deconstructed on its own row pointing back — the additions-only law, and the module where it produces the most rows. Say in the note that this is the same rule as M3's mnógo vodý, or the learner meets it twice as two idioms.",
+        "Refusing without offence, with the cultural half stated plainly and without moralising: in Russian hosting an offer is expected to be repeated, so a single Net, spasíbo is heard as politeness rather than as a decision, and the refusal that lands adds a reason — Net, spasíbo, ya uzhé syt. The reverse is worth a line too: a guest who accepts the first offer of a third helping has not been rude. syt / sytá is another short-form adjective (M2's rows), which is why it agrees with the speaker and cannot stand before a noun.",
+        "INDEX SEAM: sadítes', prokhodíte, ugoshcháytes', beríte, syt, sytá, uzhé, íli, sup, myáso, rýba, óvoshchi, sol', tarélka, schyot and vkúsno are fresh keys; schyot carries a yó. chay, khleb, vodá, sákhar, kófe, cháshka, mnógo and nemnógo stay their L1 rows, with their genitive shapes deconstructed here. Príyatnogo appetíta rides as a two-token surface, keeping both its words free — the en-es Me llamo tool, in Russian.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M6': {
+      id: 'L2-M6',
+      title: 'Making plans together',
+      job: 'Invitations, suggestions, settling a time',
+      patterns: [
+        'Davay + V-1pl-future',
+        'Ty svobóden / svobódna + v subbótu?',
+        "Vo skól'ko? — V pyat' chasóv",
+        "Ty khóchesh' + V-inf + ?",
+        'Khoroshó + , + do závtra',
+      ],
+      notes: [
+        "**ty enters here**, and it is the register decision of the level: L1's default was vy and no L1 display showed ty, because a learner who guesses wrong with a stranger is rude, while a learner who guesses wrong with a friend is merely stiff. Plans are made with friends, so this is the module that pays for it — ty, tebyá, tebé, the -esh'/-ish' second-singular of the verbs the course owns (khóchesh', chitáyesh', rabótayesh', búdesh', znáyesh'), and the singular imperative (skazhí, day, pozvoní). Every ty frame chips `informal`; a vy frame in the same module stays `neutral`.",
+        'The fact English has nothing like, and it belongs in usage rather than in a rule: in Russian the move from vy to ty is NEGOTIATED out loud — Davay na ty — rather than drifted into. A learner who knows only that ty is "informal" will switch too early and land somewhere between presumptuous and childish. Say what the trigger actually is: age and closeness, agreed between the two people, and irreversible once agreed.',
+        "Davay is the suggestion particle and it takes the first-person PLURAL of the future: Davay poydyóm v kinó, Davay vstrétimsya závtra. Davayte is its vy partner, so the pair also drills the module's register point. English \"let's\" is one word for both, and the delta is that Russian's carries an address with it.",
+        "Time is the other spend and it forks by preposition: v + accusative for a clock hour (v pyat' chasóv — L1-M4's chasóv and L1-M8's pyat', already owned) and v + accusative for a day (v subbótu, where the feminine ending is visible), while a part of the day is the bare instrumental adverb L1-M4 already taught as words (útrom, vécherom, dnyóm, nóch'yu) — say that they are frozen forms and not a pattern, exactly as M4 said of peshkóm. Days: ponedél'nik, subbóta, voskresén'ye. Vo skól'ko? asks the hour, and vo is skól'ko's prepositional partner spelled with an extra vowel — one more key, one more note.",
+        "INDEX SEAM: ty, tebyá, tebé, khóchesh', chitáyesh', rabótayesh', búdesh', znáyesh', skazhí, day, pozvoní, davay, davayte, poydyóm, vstrétimsya, svobóden, svobódna, ponedél'nik, subbóta, subbótu, voskresén'ye, vo and kinó are fresh keys. khoroshó (L1-M2) does a second job here as \"agreed\" and stays L1's row; skól'ko stays L1-M8's; závtra stays L1-M6's; chasóv stays L1-M4's. skazhí and skazhíte are the same verb in two addresses and belong on the SAME row (forms carry both), unlike an aspect partner, which never does — the distinction is worth stating once here, since this module produces both kinds.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M7': {
+      id: 'L2-M7',
+      title: 'On the phone',
+      job: 'Calls and messages — openings, closings, taking a message',
+      patterns: [
+        'Alló + . + Ehto + <name>',
+        'Mózhno + <name>-acc + ?',
+        "Yevó / Yeyó net + . + Chto peredát'?",
+        'Ya vam pozvonyú + <time>',
+        'Podozhdíte + , + pozháluysta',
+      ],
+      notes: [
+        "The genitive of absence, turned on a person, and it is the most useful sentence in the module: Yevó net dóma, Yeyó seychás net. M3 taught net + genitive for a thing that is not here; a person who is not here takes the same shape, with M2's yevó / yeyó already in the genitive. Three modules, one construction — say so, because a learner who meets it a third time as a new idiom has learnt nothing from the first two.",
+        'Phone openings, and the delta is small, fixed and high-frequency: Russian answers with Alló (or Da, or Slúshayu) and identifies with Ehto Iván — the same "this is" move English makes, where a learner might reach for Ya Iván, which sounds like an introduction at a door. Ehto is L1-M1\'s row doing exactly its own job, so this module points back rather than opening anything. Mózhno Ánnu? ("may I have Anna?") is M1\'s mózhno with an accusative name — and a name never indexes (#61), so the taught row is mózhno\'s.',
+        "Aspect on the phone, the level's third payment: Ya vam pozvonyú (perfective — one call, a promise) against Ya búdu vam zvonít' (imperfective future — I'll be calling, repeatedly). Teach the perfective, name the other in a usage line, and let the pair show what L1-M6 could only assert: the perfective has no present, which is why pozvonyú is a future and not a \"I am calling\".",
+        "Register on the phone is worth one honest line: vy is the default even with someone you would ty in person, because you do not know who has picked up — so this module is written in vy throughout and chipped `neutral`, with M6's ty deliberately absent. That is not a rule about politeness; it is a rule about not knowing.",
+        "INDEX SEAM: alló, peredát', peredáyte, soobshchéniye, nómer, perezvonyú, podozhdíte, minútku, slúshayu and zvonít' are fresh keys. net stays L1-M2's row, now answering for its third job; yevó, yeyó, nevó and neyó stay M2's; pozvonyú, pozvoníl and pozvoníte stay L1-M6's; chto stays L1-M9's; ehto stays L1-M1's; seychás stays L1-M10's. Reported speech is NOT opened here — a message is taken with Chto peredát'? and passed on with On zvoníl, the past L1-M6 already owns — and the note says that On skazál, chto… is L3's.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M8': {
+      id: 'L2-M8',
+      title: 'When something goes wrong',
+      job: 'Problems, asking for help, complaining calmly',
+      patterns: [
+        'U menyá probléma',
+        'Ne rabótayet + N',
+        'Mne núzhen / nuzhná / núzhno + N',
+        'U menyá bolít + N',
+        'Ya poteryál / poteryála + N-acc',
+      ],
+      notes: [
+        "Mne núzhen bilét · Mne nuzhná pómoshch' · Mne núzhno vrémya — and this is the module's best rule, because English hides it completely. The thing NEEDED is the subject and núzhen agrees with IT, while the person sits in the dative; \"I need a ticket\" has the person as subject and shows none of this. It is M1's dative-subject frame with agreement switched on, and it is the moment Russian's habit of putting the person in an oblique case stops being a curiosity and becomes the way the language works. Spend the mistakes here: *Mne núzhno pómoshch' is the error.",
+        "U menyá bolít golová is the same habit again: the body part is the SUBJECT (bolít agrees with it, and bolyát for two) and the person is in the genitive after u, exactly as in L1-M8's u menyá yest'. Author the pair — U menyá bolít golová, U menyá bolyát nógi — and point back at both L1-M8's frame and this module's núzhen rule, so three sentences in the same shape are learnt as one thing.",
+        'The past tense agrees with the SPEAKER, which L1-M5 taught with kupíl / kupíla and which a problem report drills at length: Ya poteryál (a man) · Ya poteryála (a woman). Say subject, not speaker, when the subject is someone else — On poteryál, Oná poteryála — because the speaker-shaped version of this rule is precisely the defect the third Marathi review had to correct three times (docs/08).',
+        'Complaining calmly, and the delta runs the OPPOSITE way from English\'s: Russian complains directly, and the hedged English complaint ("I\'m afraid there seems to be a small problem") reads as insincere or evasive rather than as polite. What carries politeness instead is the frame from M1 — Izviníte, pozháluysta, u menyá probléma — and then a plain statement of what is wrong. Say that in usage without judging either language; a learner who softens a Russian complaint the English way will not be understood as polite.',
+        "INDEX SEAM: probléma, núzhen, nuzhná, poteryál, poteryála, bolít, bolyát, golová, nógi, pómoshch', slomálsya, rabótayet (as \"it works\", a second job for L1-M3's rabótat' family — its row stays L1's) and k sozhaléniyu are fresh keys. núzhno stays M1's row and núzhen / nuzhná join it in forms, because they are one word's cells and not aspect partners. u menyá and u menyá yest' stay L1-M8's; ne stays L1-M3's; izviníte stays L1-M10's.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M9': {
+      id: 'L2-M9',
+      title: 'Comparing and choosing',
+      job: 'More, less, better — stating a preference',
+      patterns: [
+        'A + Adj-comparative + B-gen',
+        'A + Adj-comparative + , + chem + B',
+        'sámyy + Adj + N',
+        'Kakóy vy predpochitáyete?',
+        'Ehtot + N + lúchshe',
+      ],
+      notes: [
+        'The comparative is one ending — -yeye on most adjectives (interésneye, krasívyeye) — plus a short list of irregulars that are the ones actually used: lúchshe, khúzhe, ból\'she, mén\'she, dorózhe, deshévle, výshe, molózhe. Teach the list as vocabulary and the ending as a rule, and kill the slogan the ending invites: "add -yeye" produces *khoroshéye, and the double comparative *bóleye lúchshe is the error even native speakers are teased for.',
+        "\"Than\" is the GENITIVE, and this is the level's fourth spend of M3's case: Moskvá ból'she Peterbúrga, On výshe menyá. It is what a Russian says, it is shorter, and it costs no new word at all. chem is named in usage as the always-available alternative AND as the required one when the two compared things are not both bare nouns (Segódnya teplée, chem vcherá). Give the genitive in display and let chem live in the usage line, so the learner leaves with the idiomatic one.",
+        'The superlative is sámyy + the adjective, and sámyy declines along with it: sámyy bol\'shóy górod, sámaya interésnaya kníga. It is the easy half of the module and a rest point after the comparatives; say so. lúchshe is the sharp one: it serves BOTH khoroshó (L1-M2, "well") and khoróshiy ("good"), exactly as mejor does in en-es — On igráyet lúchshe is "plays better" — so its note must be true of the adverb and the adjective alike.',
+        'Choosing needs a demonstrative and a question word, and both walk into collisions worth naming. ehtot / ehta / ehti ("this + noun") is NOT L1-M1\'s ehto ("this is"): they are different words, ehtot declines, and merging them would send every choice in the course to a note about identifying things. kakóy ("which, what kind of") declines like an adjective and is a sibling of L1-M9\'s chto — cross-reference, merge neither. predpochitáyu takes an accusative noun or an infinitive.',
+        "INDEX SEAM: lúchshe, khúzhe, ból'she, mén'she, dorózhe, deshévle, výshe, interésneye, sámyy, sámaya, chem, ehtot, ehta, ehti, kakóy and predpochitáyu are fresh keys, each polysyllable stressed. A comparative shape belongs in the forms of its adjective's row where that adjective is this level's (M2's or M3's); where the positive is L1's it takes a row of its own pointing back, because L2 never edits an L1 file. khoroshó stays L1-M2's; plókho stays L1-M9's; ehto stays L1-M1's; mnógo stays L1-M6's, and its comparative ból'she is authored here on a new row.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M10': {
+      id: 'L2-M10',
+      title: 'Telling what happened',
+      job: 'A four-sentence account in the past',
+      patterns: [
+        'Snachála + V-perfective-past + , + potóm + V-perfective-past',
+        'Ya + V-imperfective-past + , + kogdá + V-perfective-past',
+        'Býlo + Adv + , + poéhtomu + V-perfective-past',
+        'V kontsé + V-perfective-past',
+      ],
+      notes: [
+        "Each item is an ACCOUNT of exactly four short sentences, not one long one, and the per-sentence bound applies to each sentence inside it. Almost every word is already the learner's; the honest new spend is the sequencers (snachála, kogdá, v kontsé, poslé étovo, joining L1-M10's potóm, i, a, no) and the third-person perfective past cells a story needs.",
+        "THE decision of the module: aspect at length. The perfective presents an action as a COMPLETED WHOLE with a result and moves the account forward one step at a time; the imperfective presents it as a process, a repetition, or simply names the activity, and it is what paints the standing situation. Ya prochitál gazétu i poshyól domóy against Ya chitál gazétu, kogdá on pozvoníl. L1 shipped both members of half a dozen pairs on separate rows (chitát' / prochitál, kuplyú / kupíl, napishú / napisál) without ever teaching the choice; this is where it is taught.",
+        'The slogan to kill, and en-es\'s M10 kills the same one in Spanish: "perfective is completed, imperfective is ongoing". It breaks on the first real account. Ya dva chasá chitál is bounded and imperfective; Ya prochitál za dva chasá is perfective; the reading took the same two hours. What differs is how the clause is being USED in the telling — as a whole with a result, or as a background and a process. Duration does not decide it and repetition does not decide it. Author the pairs so the same event appears in both roles.',
+        'One fact makes aspect visible and the learner already has it: the perfective has NO present tense. L1-M6\'s napishú, pozvonyú and kuplyú are futures for exactly that reason, and a learner who has been told they are "the future" can now be told why. Use it as the module\'s diagnostic — if a form has no present, it is perfective — rather than asking anyone to memorise pairs.',
+        "Nothing new is opened. Reflexive verbs stay OUT as a system: L1-M9's nrávitsya and this module's vernúlsya ride as vocabulary with their notes pointing at each other, and the -sya rule is L3's. So are the conditional by, participles, and prefixed motion verbs beyond L1's po- and pri-. INDEX SEAM: snachála, kogdá, kontsé, vernúlsya, uvídel, uvídela, skazál, skazála and the perfective past cells an account needs are fresh keys, each on its own row (aspect partners never share one) and each pointing back at the imperfective's row where the course owns it. byl, bylá, býlo and býli stay L1-M5's; potóm, i, a and no stay L1-M10's; vcherá stays L1-M5's; poéhtomu and potomú chto stay L1-M9's.",
+      ],
+      maxWordsPerSentence: 10,
       newWordCap: NEW_WORD_CAP,
     },
   },
