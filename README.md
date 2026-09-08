@@ -542,6 +542,24 @@ allow-listed. The ratchet held at en-de 11 across all five modules, with roughly
 fixed by opening rows the modules owned or rewriting variations onto taught surfaces. **The native
 gate is still unmet**: docs/67 ends in open questions 1–40, a fresh en-de L2 chain.
 
+**en-ko starts its second level — the last course to (#442, 2026-09-08).** `L2-M1` _Asking politely_
+and `L2-M2` _Describing people_ are authored against the briefs of #433
+(`docs/60-en-ko-L2-brief-decisions.md`), backed by the new `docs/68-llm-review-en-ko-L2.md`; a
+strict `npm run build` emits `en-ko: 12 modules (L1-M1..M10, L2-M1..M2)`. M1 makes L1's deferred
+honorific productive, and the whole lesson is **which person it lands on**: `-(eu)seyo` honours the
+SUBJECT of its own sentence, so `jeo-neun gaseyo` — honouring yourself — is the error an English
+speaker who learnt it as "the polite one" makes first. It also names the thing Korean does not have:
+**there is no verb "can"**, only the noun `su` ("a way") and L1-M3's `isseoyo`, which is why the
+negative is "there is no way". M2 assembles Korean's signature sentence, **the double subject** —
+`jeo-neun ki-ga keoyo` is *for-me, the-height is-big* — out of pieces L1 had already shipped, and it
+teaches the family set as the place where **Korean is richer than English and the delta runs the
+other way**: four words for an older sibling that each encode the SPEAKER's gender, and one that
+encodes nothing for the younger. The wave widened one L1-shaped assertion by exactly one: the
+`-mnida` check allowed two frozen phrases, and M1's job is to teach the speech levels side by side,
+so `joesonghamnida` joins them at L2 and nowhere else. That is the fourth time this milestone a
+second level has exposed a test encoding the level as well as the rule. **The native gate is still
+unmet**: docs/68 ends in open questions 1–12, a fresh en-ko L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 180 — nine L1 ladders, hi-mr L2 and L3, and the complete L2 of every course but en-ko (#459)', () => {
+  it('finds all 182 — nine L1 ladders, hi-mr L2 and L3, eight complete L2 ladders, and the first en-ko pair (#442)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -303,6 +303,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ko/modules/L1-M7.json',
       'content/en-ko/modules/L1-M8.json',
       'content/en-ko/modules/L1-M9.json',
+      'content/en-ko/modules/L2-M1.json',
+      'content/en-ko/modules/L2-M2.json',
       'content/en-ru/modules/L1-M1.json',
       'content/en-ru/modules/L1-M10.json',
       'content/en-ru/modules/L1-M2.json',
@@ -736,8 +738,16 @@ describe('ModuleContent against the modules that exist', () => {
     const asciiOnly = /^[\x20-\x7E]+$/u;
     /** Plain-style shapes the speech-level decision keeps out of every L2 slot (#376). */
     const PLAIN_STYLE = new Set(['na', 'na-neun', 'nan', 'nae', 'neo', 'neo-neun', 'neo-reul']);
-    /** The two frozen formal phrases M2 teaches whole. Any other -mnida is a style slip. */
+    /**
+     * The two frozen formal phrases L1-M2 teaches whole — and, from L2 on, the one more that
+     * L2-M1 (#442) is chartered to open. That module's job is to show the SPEECH LEVELS side by
+     * side for the first time: gomawoyo against gamsahamnida, mianhaeyo against joesonghamnida.
+     * L1 could hold the line at two because it never taught the pair; a level that does cannot,
+     * and this is the fourth time in the milestone a second level has exposed a test that encoded
+     * the level as well as the rule. Any -mnida beyond these is still a style slip.
+     */
     const FROZEN_FORMAL = new Set(['gamsahamnida', 'mannaseo bangapseumnida']);
+    const FROZEN_FORMAL_L2 = new Set([...FROZEN_FORMAL, 'joesonghamnida']);
     /**
      * Every particle this course writes. A bare one as its own whitespace token would break the
      * ground the index decision stands on — see the case comment.
@@ -790,9 +800,10 @@ describe('ModuleContent against the modules that exist', () => {
           expect(PLAIN_STYLE.has(token), `${at} writes the plain-style "${token}"`).toBe(false);
           if (token.endsWith('mnida')) {
             const phrase = normalizeSurface(target.display);
+            const allowed = module.id.startsWith('L1-') ? FROZEN_FORMAL : FROZEN_FORMAL_L2;
             expect(
-              [...FROZEN_FORMAL].some((frozen) => phrase.includes(frozen)),
-              `${at} writes a -mnida form outside the two frozen phrases`,
+              [...allowed].some((frozen) => phrase.includes(frozen)),
+              `${at} writes a -mnida form outside the frozen phrases this level allows`,
             ).toBe(true);
           }
         }

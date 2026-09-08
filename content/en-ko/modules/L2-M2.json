@@ -1,0 +1,745 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": [
+    "L2-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "N-eun/neun + N-i/ga + Adj-verb-yo",
+      "N-eun/neun + Adj-verb-yo",
+      "Adj-(eu)n + N",
+      "je + N-eun/neun + N-ieyo",
+      "N-kkeseo + gyeseyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE DOUBLE SUBJECT is Korean's signature sentence and English has no version of it. jeo-neun ki-ga keoyo means \"I am tall\", and it is built as for-me, the-height is-big: a TOPIC, then a SUBJECT, then a predicate. Every learner tries to build it with a copula instead. L1 already shipped every piece — L1-M9's joayo, masisseoyo and bappayo are descriptive verbs, and L1-M1's -eun/-neun and -i/-ga are the particles — so this is assembly rather than new grammar, and the mistakes belong on the shape."
+    },
+    {
+      "tag": "interference",
+      "text": "KOREAN ADJECTIVES ARE VERBS, which is the fact that makes the sentence above possible. keoyo, jagayo, yeppeoyo and chinjeolhaeyo conjugate exactly like action verbs and need no copula at all. L1 taught four of them without naming the class; this names it."
+    },
+    {
+      "tag": "delta",
+      "text": "To put a descriptive verb IN FRONT of a noun it has to change shape: -(eu)n turns it into a modifier — keun jip, joeun chingu, yeppeun saram. It is one word wearing two coats, so the attributive shape lives in the same word row as its -yo shape rather than opening a row of its own. M3 walks the ending at length."
+    },
+    {
+      "tag": "delta",
+      "text": "THE FAMILY SET IS WHERE KOREAN IS RICHER THAN ENGLISH, and the delta runs the other way — so this is not extra vocabulary to memorise but a distinction English simply does not draw. hyeong and nuna are what a MAN calls his older brother and sister; oppa and eonni are what a WOMAN calls hers. There is no word for \"older brother\" that does not encode the speaker's own gender. dongsaeng covers a younger sibling of either, and does not encode it at all."
+    },
+    {
+      "tag": "free",
+      "text": "Honorific kinship, and the honorific of existence. eomeoni and abeoji are the respectful words where eomma and appa are what a child says; -nim raises a title, which is why L1-M1's seonsaengnim already carries one; and gyesida is a whole SEPARATE VERB for an honoured person being somewhere, which L1-M2 shipped as gyeseyo. That is M1's decision showing up in the field: a handful of very common verbs have a different word rather than an infix, and nothing new is opened for it here."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "Jeo-neun ki-ga keoyo.",
+      "script": "저는 키가 커요.",
+      "cue": "I'm tall.",
+      "literal": "as-for-me, height-subject is-big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ki",
+            "script": "키",
+            "cue": "height",
+            "tag": "delta",
+            "forms": [
+              "ki",
+              "ki-ga"
+            ],
+            "note": "The thing that is actually big in this sentence. Korean names the property and describes THAT, where English describes the person directly."
+          },
+          {
+            "display": "keoyo",
+            "script": "커요",
+            "cue": "is big · is tall",
+            "tag": "delta",
+            "forms": [
+              "keoyo",
+              "keun",
+              "jagayo",
+              "jageun"
+            ],
+            "note": "A verb, not an adjective, so nothing follows it. In front of a noun it becomes keun — keun jip, a big house — and its opposite jagayo behaves identically, jageun in front of a noun."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "There are two subjects here and both are needed: jeo-neun sets what the sentence is ABOUT and ki-ga names what is big. Drop either and you have half a sentence — and reaching for a copula gives you one with two verbs and no grammar.",
+      "sound": "jeo-neun KI-ga KEO-yo. keoyo has no k-sound at the back; it is one puff and then the vowel.",
+      "variations": [
+        {
+          "display": "Jeo-neun ki-ga jagayo.",
+          "script": "저는 키가 작아요.",
+          "cue": "I'm short.",
+          "changed": "the opposite verb, same shape"
+        },
+        {
+          "display": "Chingu-neun ki-ga keoyo.",
+          "script": "친구는 키가 커요.",
+          "cue": "My friend is tall.",
+          "changed": "L1-M1's friend as the topic"
+        },
+        {
+          "display": "Ki-ga keoyo.",
+          "script": "키가 커요.",
+          "cue": "He's tall.",
+          "changed": "without the topic, which Korean drops whenever it is obvious"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun keun-ieyo.",
+        "script": "저는 큰이에요.",
+        "why": "keoyo is already a verb: Jeo-neun ki-ga keoyo."
+      },
+      "usage": "Describing yourself — and it is asked more often than you would expect.",
+      "register": "neutral",
+      "mnemonic": "Not 'I am tall'. 'As for me, the height is big'."
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "Meori-ga gireoyo.",
+      "script": "머리가 길어요.",
+      "cue": "Her hair is long.",
+      "literal": "hair-subject is-long",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meori",
+            "script": "머리",
+            "cue": "hair · head",
+            "tag": "free",
+            "forms": [
+              "meori",
+              "meori-ga"
+            ],
+            "note": "One word for both, and the sentence decides which. Korean does this often, and it is why a word list on its own teaches so little here."
+          },
+          {
+            "display": "gireoyo",
+            "script": "길어요",
+            "cue": "is long",
+            "tag": "free",
+            "forms": [
+              "gireoyo",
+              "gin",
+              "jjalbayo",
+              "jjalbeun"
+            ],
+            "note": "Its modifier shape is gin — gin meori, long hair — and its opposite jjalbayo makes jjalbeun the same way. The pair is learnt together because hair is described with one or the other."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "No topic is written here and none is missing. Korean states the topic once and then leaves it out for as long as it holds, which can be several sentences.",
+      "sound": "MEO-ri-ga GI-reo-yo. The r is a single flap, closer to a d than to an English r.",
+      "variations": [
+        {
+          "display": "Meori-ga jjalbayo.",
+          "script": "머리가 짧아요.",
+          "cue": "Her hair is short.",
+          "changed": "the opposite"
+        },
+        {
+          "display": "Gin meori.",
+          "script": "긴 머리.",
+          "cue": "Long hair.",
+          "changed": "the modifier shape, in front of the noun"
+        },
+        {
+          "display": "Chingu-neun meori-ga gireoyo.",
+          "script": "친구는 머리가 길어요.",
+          "cue": "My friend has long hair.",
+          "changed": "with the topic named"
+        }
+      ],
+      "mistake": {
+        "display": "Meori-ga gin-ieyo.",
+        "script": "머리가 긴이에요.",
+        "why": "gireoyo is the whole predicate: Meori-ga gireoyo."
+      },
+      "usage": "Describing somebody so a third person can pick them out.",
+      "register": "neutral",
+      "mnemonic": "Say the topic once. Then stop saying it."
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "Yuna-neun yeppeoyo.",
+      "script": "유나는 예뻐요.",
+      "cue": "Yuna is pretty.",
+      "literal": "as-for-Yuna, is-pretty",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeppeoyo",
+            "script": "예뻐요",
+            "cue": "is pretty",
+            "tag": "free",
+            "forms": [
+              "yeppeoyo",
+              "yeppeun"
+            ],
+            "note": "The double pp is tense, made by tightening the throat. Its modifier shape is yeppeun — yeppeun saram, a pretty person."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "One subject is enough when the whole person is what is being described. The double subject appears when a PART or a property is: ki-ga keoyo, meori-ga gireoyo.",
+      "sound": "YU-na-neun YEP-peo-yo. The pp is held and released sharply.",
+      "variations": [
+        {
+          "display": "Yeppeun saram-ieyo.",
+          "script": "예쁜 사람이에요.",
+          "cue": "She's a pretty person.",
+          "changed": "the modifier shape in front of L1-M1's saram"
+        },
+        {
+          "display": "Yuna-neun chinjeolhaeyo.",
+          "script": "유나는 친절해요.",
+          "cue": "Yuna is kind.",
+          "changed": "character instead of appearance"
+        },
+        {
+          "display": "Yuna-neun ki-ga keoyo.",
+          "script": "유나는 키가 커요.",
+          "cue": "Yuna is tall.",
+          "changed": "back to the double subject, because height is a property"
+        }
+      ],
+      "mistake": {
+        "display": "Yuna-neun yeppeun-ieyo.",
+        "script": "유나는 예쁜이에요.",
+        "why": "yeppeoyo is already a verb: Yuna-neun yeppeoyo."
+      },
+      "usage": "Ordinary description, said of somebody not present.",
+      "register": "neutral",
+      "mnemonic": "The whole person takes one subject. A part takes two."
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "Je chingu-neun chinjeolhaeyo.",
+      "script": "제 친구는 친절해요.",
+      "cue": "My friend is kind.",
+      "literal": "my friend-topic is-kind",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chinjeolhaeyo",
+            "script": "친절해요",
+            "cue": "is kind",
+            "tag": "free",
+            "forms": [
+              "chinjeolhaeyo",
+              "chinjeolhan"
+            ],
+            "note": "chinjeol plus haeyo, the -hada shape that builds hundreds of descriptive verbs. Its modifier is chinjeolhan."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "je is the humble 'my' and L1-M1 opened it. Korean lowers the speaker where English raises nobody, and using the plain shape of it here would jar in a way an English ear cannot hear.",
+      "sound": "je CHIN-gu-neun chin-jeol-HAE-yo. The two chin- sounds are the same and it is a coincidence.",
+      "variations": [
+        {
+          "display": "Chinjeolhan chingu.",
+          "script": "친절한 친구.",
+          "cue": "A kind friend.",
+          "changed": "the modifier shape"
+        },
+        {
+          "display": "Je chingu-neun ki-ga jagayo.",
+          "script": "제 친구는 키가 작아요.",
+          "cue": "My friend is short.",
+          "changed": "a property, so the double subject comes back"
+        },
+        {
+          "display": "Seonsaengnim-eun chinjeolhaeyo.",
+          "script": "선생님은 친절해요.",
+          "cue": "The teacher is kind.",
+          "changed": "L1-M1's teacher, whose title already carries -nim"
+        }
+      ],
+      "mistake": {
+        "display": "Je chingu-neun chinjeolhan-ieyo.",
+        "script": "제 친구는 친절한이에요.",
+        "why": "chinjeolhaeyo is the whole predicate: Je chingu-neun chinjeolhaeyo."
+      },
+      "usage": "Saying what somebody is like, rather than what they look like.",
+      "register": "neutral",
+      "mnemonic": "-hada builds hundreds of them. Learn the shape, not the list."
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "Je hyeong-eun uisa-yeyo.",
+      "script": "제 형은 의사예요.",
+      "cue": "My older brother is a doctor.",
+      "literal": "my older-brother-topic doctor-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hyeong",
+            "script": "형",
+            "cue": "older brother (said by a man)",
+            "tag": "delta",
+            "forms": [
+              "hyeong",
+              "hyeong-eun",
+              "oppa",
+              "oppa-neun",
+              "nuna",
+              "eonni",
+              "eonni-neun"
+            ],
+            "note": "A MAN'S word for his older brother. A woman says oppa for the same person, nuna and eonni are the sisters the same way round, and no one of them is neutral."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "There is no word for 'older brother' in Korean. There are two, and which one is right depends on the speaker's own gender rather than the brother's — so a woman reading this sentence aloud about her own brother has said it wrong.",
+      "sound": "je HYEONG-eun ui-sa-YE-yo. hyeong is one syllable with the ng held at the back.",
+      "variations": [
+        {
+          "display": "Je oppa-neun uisa-yeyo.",
+          "script": "제 오빠는 의사예요.",
+          "cue": "My older brother is a doctor.",
+          "changed": "said by a woman — the same brother, a different word"
+        },
+        {
+          "display": "Je nuna-neun uisa-yeyo.",
+          "script": "제 누나는 의사예요.",
+          "cue": "My older sister is a doctor.",
+          "changed": "a man's word for his older sister"
+        },
+        {
+          "display": "Je eonni-neun haksaeng-ieyo.",
+          "script": "제 언니는 학생이에요.",
+          "cue": "My older sister is a student.",
+          "changed": "a woman's word for hers"
+        }
+      ],
+      "mistake": {
+        "display": "Je hyeong-eun uisa-ieyo.",
+        "script": "제 형은 의사이에요.",
+        "why": "uisa ends in a vowel, so the copula is -yeyo: Je hyeong-eun uisa-yeyo."
+      },
+      "usage": "Introducing your family — the first thing asked after your own job.",
+      "register": "neutral",
+      "mnemonic": "The word says who is SPEAKING, not who is meant."
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "Je dongsaeng-eun haksaeng-ieyo.",
+      "script": "제 동생은 학생이에요.",
+      "cue": "My younger sibling is a student.",
+      "literal": "my younger-sibling-topic student-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dongsaeng",
+            "script": "동생",
+            "cue": "younger sibling",
+            "tag": "free",
+            "forms": [
+              "dongsaeng",
+              "dongsaeng-eun",
+              "dongsaeng-i"
+            ],
+            "note": "One word for a younger brother or sister, and it encodes nothing about the speaker. The four older-sibling words all do — which is the asymmetry, not an accident."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "dongsaeng does not say whether the sibling is a brother or a sister, and Korean rarely bothers. Where English is precise about the younger one and vague about the older, Korean is exactly the other way round.",
+      "sound": "je DONG-saeng-eun hak-saeng-i-E-yo. Both -saeng syllables are the same word for 'born'.",
+      "variations": [
+        {
+          "display": "Je dongsaeng-eun ki-ga keoyo.",
+          "script": "제 동생은 키가 커요.",
+          "cue": "My younger sibling is tall.",
+          "changed": "the double subject again"
+        },
+        {
+          "display": "Dongsaeng-i isseoyo.",
+          "script": "동생이 있어요.",
+          "cue": "I have a younger sibling.",
+          "changed": "L1-M3's isseoyo, which is how Korean says 'have'"
+        },
+        {
+          "display": "Je dongsaeng-eun chinjeolhaeyo.",
+          "script": "제 동생은 친절해요.",
+          "cue": "My younger sibling is kind.",
+          "changed": "character instead of a job"
+        }
+      ],
+      "mistake": {
+        "display": "Je dongsaeng-eun haksaeng-yeyo.",
+        "script": "제 동생은 학생예요.",
+        "why": "haksaeng ends in a consonant, so the copula is -ieyo: haksaeng-ieyo."
+      },
+      "usage": "Answering how many brothers and sisters you have.",
+      "register": "neutral",
+      "mnemonic": "Precise about the older one. Vague about the younger."
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "Je eomeoni-neun seonsaengnim-ieyo.",
+      "script": "제 어머니는 선생님이에요.",
+      "cue": "My mother is a teacher.",
+      "literal": "my mother-topic teacher-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eomeoni",
+            "script": "어머니",
+            "cue": "mother",
+            "tag": "free",
+            "forms": [
+              "eomeoni",
+              "eomeoni-neun",
+              "eomma",
+              "abeoji",
+              "abeoji-neun",
+              "appa"
+            ],
+            "note": "The respectful word, and eomma is what a child says — the same split as abeoji against appa. You say eomeoni about your mother to anybody outside the family."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "eomma is not merely informal; it is what a child says, and an adult using it to a stranger sounds like one. The choice is about who is LISTENING, not about how you feel.",
+      "sound": "je eo-MEO-ni-neun seon-saeng-ni-mi-E-yo. The eo is the vowel of English 'bought', said short.",
+      "variations": [
+        {
+          "display": "Je abeoji-neun uisa-yeyo.",
+          "script": "제 아버지는 의사예요.",
+          "cue": "My father is a doctor.",
+          "changed": "the father, with the same respectful shape"
+        },
+        {
+          "display": "Eomma!",
+          "script": "엄마!",
+          "cue": "Mum!",
+          "changed": "what a child calls her, and only a child"
+        },
+        {
+          "display": "Je eomeoni-neun chinjeolhaeyo.",
+          "script": "제 어머니는 친절해요.",
+          "cue": "My mother is kind.",
+          "changed": "character instead of a job"
+        }
+      ],
+      "mistake": {
+        "display": "Je eomma-neun seonsaengnim-ieyo.",
+        "script": "제 엄마는 선생님이에요.",
+        "why": "Talking about her to somebody else takes the respectful word: Je eomeoni-neun seonsaengnim-ieyo."
+      },
+      "usage": "Talking about your parents to somebody outside the family.",
+      "register": "formal",
+      "mnemonic": "eomma to her face as a child. eomeoni to everybody else."
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "Seonsaengnim-eun jip-e gyeseyo.",
+      "script": "선생님은 집에 계세요.",
+      "cue": "The teacher is at home.",
+      "literal": "teacher-topic house-at exists-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gyesida",
+            "script": "계시다",
+            "cue": "to be somewhere (honorific)",
+            "tag": "delta",
+            "forms": [
+              "gyesida",
+              "seonsaengnim-eun"
+            ],
+            "note": "A whole different verb from isseoyo, not an ending added to it. L1-M2 shipped gyeseyo inside a farewell; here it is doing its own job, with an honoured seonsaengnim-eun in front of it."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "A handful of very common verbs have an ENTIRE honorific twin rather than the -si- infix: isseoyo becomes gyeseyo, meogeoyo becomes deuseyo. There are only a few, and they are the few you will need first.",
+      "sound": "seon-saeng-NI-meun ji-BE gye-SE-yo. gye is one syllable, close to English 'gye' in 'gyeser'.",
+      "variations": [
+        {
+          "display": "Eomeoni-neun jip-e gyeseyo.",
+          "script": "어머니는 집에 계세요.",
+          "cue": "My mother is at home.",
+          "changed": "another honoured person"
+        },
+        {
+          "display": "Chingu-neun jip-e isseoyo.",
+          "script": "친구는 집에 있어요.",
+          "cue": "My friend is at home.",
+          "changed": "a friend, so the ordinary verb"
+        },
+        {
+          "display": "Seonsaengnim-eun eodi-e gyeseyo?",
+          "script": "선생님은 어디에 계세요?",
+          "cue": "Where is the teacher?",
+          "changed": "asked, with L1-M7's eodi"
+        }
+      ],
+      "mistake": {
+        "display": "Seonsaengnim-eun jip-e isseoyo.",
+        "script": "선생님은 집에 있어요.",
+        "why": "An honoured person takes gyeseyo: Seonsaengnim-eun jip-e gyeseyo."
+      },
+      "usage": "Saying where a teacher, a parent or an elder is.",
+      "register": "formal",
+      "mnemonic": "A few verbs have a twin, not an ending."
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "Je gajok-eun ne myeong-ieyo.",
+      "script": "제 가족은 네 명이에요.",
+      "cue": "There are four in my family.",
+      "literal": "my family-topic four persons-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gajok",
+            "script": "가족",
+            "cue": "family",
+            "tag": "free",
+            "forms": [
+              "gajok",
+              "gajok-eun",
+              "gajok-i"
+            ],
+            "note": "Counted with L1-M8's myeong, the counter for people. Korean counts a family as a number of people rather than as a number of members."
+          },
+          {
+            "display": "ne",
+            "script": "네",
+            "cue": "four (counting people)",
+            "tag": "free",
+            "forms": [
+              "ne",
+              "net",
+              "myeong-ieyo"
+            ],
+            "note": "The native four, shortened in front of a counter exactly as han, du and se are. On its own it is net, and L1-M8's myeong is the counter — myeong-ieyo is that counter with the copula fused to it."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "ne is also the word for 'yes', spelled and said identically. Nothing but the sentence separates them, and this is the clearest homograph in the course.",
+      "sound": "je GA-jo-geun ne MYEONG-i-e-yo. ne is short and flat here, exactly as in 'yes'.",
+      "variations": [
+        {
+          "display": "Je gajok-eun se myeong-ieyo.",
+          "script": "제 가족은 세 명이에요.",
+          "cue": "There are three in my family.",
+          "changed": "L1-M8's three"
+        },
+        {
+          "display": "Gajok-i isseoyo.",
+          "script": "가족이 있어요.",
+          "cue": "I have family.",
+          "changed": "with isseoyo"
+        },
+        {
+          "display": "Je gajok-eun hanguk-e isseoyo.",
+          "script": "제 가족은 한국에 있어요.",
+          "cue": "My family is in Korea.",
+          "changed": "where they are, with L1-M1's Korea"
+        }
+      ],
+      "mistake": {
+        "display": "Je gajok-eun net myeong-ieyo.",
+        "script": "제 가족은 넷 명이에요.",
+        "why": "The number shortens in front of a counter: ne myeong."
+      },
+      "usage": "Answering how big your family is — a very ordinary question.",
+      "register": "neutral",
+      "mnemonic": "ne is four AND yes. The sentence decides."
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "Je nuna-neun nun-i keoyo.",
+      "script": "제 누나는 눈이 커요.",
+      "cue": "My older sister has big eyes.",
+      "literal": "my older-sister-topic eye-subject is-big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nuna",
+            "script": "누나",
+            "cue": "older sister (said by a man)",
+            "tag": "free",
+            "forms": [
+              "nuna",
+              "nuna-neun"
+            ],
+            "note": "A man's word for his older sister, paired with hyeong. A woman says eonni for the same person."
+          },
+          {
+            "display": "nun",
+            "script": "눈",
+            "cue": "eye",
+            "tag": "free",
+            "forms": [
+              "nun",
+              "nun-i"
+            ],
+            "note": "The eye. There is a second nun meaning snow, said with a longer vowel, and this course does not teach it — one key, one meaning."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The double subject earns its keep here: the sister is the topic and the EYES are the subject. English says 'she has big eyes' with a verb of having; Korean says the eyes are big, about her.",
+      "sound": "je NU-na-neun NU-ni KEO-yo. Both nu- syllables sound the same and are different words.",
+      "variations": [
+        {
+          "display": "Je eonni-neun nun-i keoyo.",
+          "script": "제 언니는 눈이 커요.",
+          "cue": "My older sister has big eyes.",
+          "changed": "said by a woman"
+        },
+        {
+          "display": "Nun-i keoyo.",
+          "script": "눈이 커요.",
+          "cue": "She has big eyes.",
+          "changed": "topic dropped, as Korean does"
+        },
+        {
+          "display": "Je nuna-neun meori-ga gireoyo.",
+          "script": "제 누나는 머리가 길어요.",
+          "cue": "My older sister has long hair.",
+          "changed": "a different property, same shape"
+        }
+      ],
+      "mistake": {
+        "display": "Je nuna-neun keun nun-eul isseoyo.",
+        "script": "제 누나는 큰 눈을 있어요.",
+        "why": "Korean describes the part rather than having it: Je nuna-neun nun-i keoyo."
+      },
+      "usage": "Describing somebody's face — and it is a compliment.",
+      "register": "neutral",
+      "mnemonic": "Not 'she has big eyes'. 'As for her, the eyes are big'."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M2-C01",
+      "display": "Jeo-neun ki-ga keoyo.",
+      "script": "저는 키가 커요.",
+      "cue": "I'm tall."
+    },
+    {
+      "id": "L2-M2-C02",
+      "display": "Meori-ga gireoyo.",
+      "script": "머리가 길어요.",
+      "cue": "Her hair is long."
+    },
+    {
+      "id": "L2-M2-C03",
+      "display": "Yuna-neun yeppeoyo.",
+      "script": "유나는 예뻐요.",
+      "cue": "Yuna is pretty."
+    },
+    {
+      "id": "L2-M2-C04",
+      "display": "Je chingu-neun chinjeolhaeyo.",
+      "script": "제 친구는 친절해요.",
+      "cue": "My friend is kind."
+    },
+    {
+      "id": "L2-M2-C05",
+      "display": "Je hyeong-eun uisa-yeyo.",
+      "script": "제 형은 의사예요.",
+      "cue": "My older brother is a doctor."
+    },
+    {
+      "id": "L2-M2-C06",
+      "display": "Je dongsaeng-eun haksaeng-ieyo.",
+      "script": "제 동생은 학생이에요.",
+      "cue": "My younger sibling is a student."
+    },
+    {
+      "id": "L2-M2-C07",
+      "display": "Je eomeoni-neun seonsaengnim-ieyo.",
+      "script": "제 어머니는 선생님이에요.",
+      "cue": "My mother is a teacher."
+    },
+    {
+      "id": "L2-M2-C08",
+      "display": "Seonsaengnim-eun jip-e gyeseyo.",
+      "script": "선생님은 집에 계세요.",
+      "cue": "The teacher is at home."
+    },
+    {
+      "id": "L2-M2-C09",
+      "display": "Je gajok-eun ne myeong-ieyo.",
+      "script": "제 가족은 네 명이에요.",
+      "cue": "There are four in my family."
+    },
+    {
+      "id": "L2-M2-C10",
+      "display": "Je nuna-neun nun-i keoyo.",
+      "script": "제 누나는 눈이 커요.",
+      "cue": "My older sister has big eyes."
+    },
+    {
+      "id": "L2-M2-C11",
+      "display": "Yeppeun saram-ieyo.",
+      "script": "예쁜 사람이에요.",
+      "cue": "She's a pretty person."
+    },
+    {
+      "id": "L2-M2-C12",
+      "display": "Je oppa-neun uisa-yeyo.",
+      "script": "제 오빠는 의사예요.",
+      "cue": "My older brother is a doctor."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
