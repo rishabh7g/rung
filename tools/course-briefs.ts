@@ -1878,6 +1878,94 @@
  * M8–M10: 10), pools are authored to 12, M1–M3 ship fully enriched, and M10's items are
  * four-sentence accounts.
  *
+ * ## en-it L2: the decisions, taken against the finished L1 (#430)
+ *
+ * Planned against the REAL cumulative L1 index — **263 surfaces through L1-M10, maxSpan 3**,
+ * rebuilt and read. Recorded in `docs/57-en-it-L2-brief-decisions.md` and repeated in the module
+ * notes. The five L1 decisions carry unchanged: the elision apostrophe stays INSIDE a token, so
+ * `l'acqua` and `c'è` are single keys answering for nothing else; accents are letters; multi-token
+ * surfaces keep bare words free; and every homograph has a named owner.
+ *
+ * ### 1. `Lei` — the forms enter at M1, the PRONOUN does not, and the index is why
+ *
+ * The L1 header promised `Lei` to L2, and the issue that commissioned these briefs asked for "the
+ * capital-L spelling". The index refuses it, and this was checked against the real function rather
+ * than assumed: `normalizeSurface('Lei') === 'lei'` — rule 4 lowercases without a locale — and
+ * **`lei` is already L1-M10's key, where it means "she"**. First occurrence wins, so no L2 row can
+ * ever take it back, and a display `Lei` would send every polite sentence in the course to a note
+ * about the third person feminine. This is en-de's `Sie`/`sie` catastrophe, arriving in Italian.
+ *
+ * The answer is not a workaround, it is the idiomatic form: **the polite address is taught as a
+ * VERB CHOICE, and the pronoun `Lei` appears in no L2 `display`.** Italian is pro-drop and the
+ * polite pronoun is normally omitted anyway — `Come sta?`, `Vuole un caffè?`, `Scusi, dov'è la
+ * stazione?` are what people actually say — so the course loses nothing and gains a rule that is
+ * true: *politeness in Italian is carried by the third-person verb, not by a pronoun the speaker
+ * usually leaves out.* `Lei` is NAMED in `usage` prose, in words, with its capital, exactly as
+ * en-ar names a dialect form. The same reasoning bars the polite object clitics `La` and `Le`:
+ * both fold onto L1-M1's ARTICLES.
+ *
+ * Which modules speak it: M4 (asking the way), M7 (the phone) and M8 (a problem with staff or a
+ * stranger) are third-person throughout and chip `formal` (#422); M6's plans are `tu` and chip
+ * `informal`; M1 shows the pair side by side; M2, M3, M5 and M9 follow the scene and say which in
+ * `usage`. The paradigm the address needs is mostly already the learner's — `è`, `vuole`, `ha`,
+ * `va`, `fa`, `prende`, `esce` are all L1 rows — so M1's real spend is `sta`, `può`, and the
+ * frozen politeness cells `potrebbe` / `potresti`.
+ *
+ * ### 2. The formal imperative is the congiuntivo, and L2 ships the words without the system
+ *
+ * `Scusi`, `Senta`, `Giri`, `Prenda`, `Vada` are the forms M1 and M4 need, and they are — exactly
+ * — present subjunctive forms. The congiuntivo as a SYSTEM is L3-M3/M4's per
+ * `content/en-it/levels.json` and stays out. So these enter as **frozen politeness words**, taught
+ * one by one, with a note saying plainly that L3 will show them again as a paradigm. Shipping the
+ * word while deferring the system is the same move en-ar makes with `laysa` and en-es with
+ * `vorrei`'s conditional; hiding the connection would leave L3 re-teaching a form the learner has
+ * been saying for ten modules.
+ *
+ * ### 3. Clitics — `lo`, `li`, `mi`, `ti` only, and the articles are the reason
+ *
+ * `la`, `le`, `i` and `gli` are L1-M1's ARTICLES; the direct-object pronouns spelled identically
+ * can therefore never be first-taught. `lo` and `li` are free (L1 only ever indexed `l'italiano`,
+ * `il`, `la`, `le`, `i`, `gli`), and `mi` and `ti` are free because L1 indexed `mi chiamo`,
+ * `mi piace`, `mi alzo`, `ti chiami` and `ti alzi` WHOLE. So M5 teaches the clitic system on
+ * `lo`, `li`, `mi` and `ti`, names `la`/`le` as objects in prose, and leaves them to L3. This is
+ * the same ruling en-es takes for the same reason, in the same level — the two Romance courses
+ * agree because the same tool made the same trap.
+ *
+ * The one genuinely Italian addition: a clitic ATTACHES to an infinitive as one word — `aiutarmi`,
+ * `lasciarlo` — which the index sees as a single fresh key, not as `aiutare` + `mi`. M8 owns
+ * `aiutarmi` and its note says so.
+ *
+ * ### 4. What L2 withholds, and what M10 finally teaches
+ *
+ * Out, and named where it would be reached for: the **congiuntivo** as a system (L3-M3/M4); the
+ * **conditional** as a system — `vorrei` is L1-M3's frozen row and M1 adds `potrebbe`/`potresti`
+ * as two more frozen cells, nothing more; **`ne`** and the combined clitics; the **passato
+ * remoto**; the **trapassato**; and **`la`/`le` as objects** (decision 3).
+ *
+ * M10's own decision is the one L1 set up and could not take: L1-M5 shipped the passato prossimo
+ * with BOTH auxiliaries and with participle agreement (`ho mangiato`, `sono andata`, `siamo
+ * andati`) and never taught the choice against the **imperfetto**, which L2 opens here. The law:
+ * the imperfetto paints the standing situation, the habit, the age, the weather; the passato
+ * prossimo moves the account forward one completed step. The slogan to kill is the one en-es and
+ * en-ru kill in their own M10s — "one is for completed actions, the other for ongoing ones" —
+ * false the same way, and the three courses should say so in the same words. The auxiliary rule
+ * gets stated at last too: `essere` for movement and change of state and for reflexives, with the
+ * participle agreeing with the SUBJECT; `avere` for everything else, with no agreement.
+ *
+ * ### Why the en-it L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim. The polite verb and Italian's three-way split of
+ * English "sorry" — `Scusi` / `Mi dispiace` / `Permesso` — in M1; `avere` for features, `stare`
+ * against `essere`, and the article that stays on a possessive (`il mio libro`) but vanishes
+ * before a singular family member (`mio fratello`) in M2; the four-cell grid plus the invariable
+ * colours (`blu`, `rosa`, `viola`) and the `-co` plurals that fork (`bianchi` against `amici`) in
+ * M3; the frozen formal imperatives and `in autobus` in M4; the partitive `del`/`della` and the
+ * clitics in M5; the `noi` cell and `Ci vediamo` in M6; `Pronto?` and `stare` + gerundio in M7;
+ * `Mi fa male` and `aiutarmi` in M8; `più … di` against `più … che` — the distinction Italian
+ * forces and English does not have — plus `migliore` against `meglio` in M9; and the imperfetto
+ * in M10. Bounds climb 8 → 10 (M1–M3: 8, M4–M7: 9, M8–M10: 10), pools are authored to 12, M1–M3
+ * ship fully enriched, and M10's items are four-sentence accounts.
+ *
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -4339,6 +4427,215 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         'ACCENT SEAM, cashed here: e ("and") is the new joiner and it is M1\'s è ("is") minus one accent. Both appear inside the same turns, so this is the module where a dropped accent does the most damage — write è on every copula and e bare, and let a mistake block show what comes out when they swap (*Il caffè e buono).',
       ],
       maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M1': {
+      id: 'L2-M1',
+      title: 'Asking politely',
+      job: 'Requests, thanks, apologies in the right register',
+      patterns: [
+        'Scusi / Scusa + , + <request>',
+        'Può / Puoi + V-inf + ?',
+        'Potrebbe / Potresti + V-inf + ?',
+        'Mi dispiace + , + <statement>',
+        'Grazie mille — Prego',
+      ],
+      notes: [
+        "REGISTER, decided for the whole level and repeated here because a prompt only ever shows an author the notes (full record: docs/57-en-it-L2-brief-decisions.md; the five L1 decisions carry unchanged — the elision apostrophe inside a token, accents as letters, multi-token surfaces, named homograph owners). L1 spoke tu throughout and promised Lei to this level. What arrives is the polite VERB, not the pronoun: Italian is pro-drop and the polite pronoun is normally left out — Come sta?, Vuole un caffè?, Scusi, dov'è la stazione? — so the law is that politeness rides the THIRD-PERSON VERB. Author every request in both addresses side by side: Puoi aprire la finestra? beside Può aprire la finestra?. tu frames chip `informal`, the third-person frames and the Potrebbe tier chip `formal`, anything safe with either stays `neutral`.",
+        'The pronoun Lei stays OUT of display, and the reason is the index, checked against the real function rather than assumed: surface.ts lowercases, so Lei folds to lei — and lei is already L1-M10\'s key, meaning "she". First occurrence wins, so no row here could take it back, and a display Lei would send every polite sentence in the course to a note about the third person feminine. Name Lei in usage prose, with its capital, and never in display, forms or a pool item. The polite object clitics La and Le are barred for the same reason: both fold onto L1-M1\'s articles.',
+        'Italian splits English "sorry" three ways and the module lives on the split: Scusi / Scusa asks to be excused before the fact (interrupting, getting past, asking a stranger); Mi dispiace is regret for something that has happened; Permesso asks permission to come in or to pass through a crowd. English speakers reach for one word and Italians hear the wrong one; spend a mistake block on it. Note that Scusi is also the first of this level\'s frozen formal imperatives — see the next note — so it carries two lessons at once.',
+        "The formal imperatives this level uses — Scusi, Senta, and M4's Giri, Prenda, Vada — are present SUBJUNCTIVE forms, and the congiuntivo as a system is L3-M3/M4's. So they enter as frozen politeness words, taught one at a time, with a note saying plainly that L3 will show them again as a paradigm. The same discipline governs the conditional: vorrei is L1-M3's frozen row, and this module adds potrebbe and potresti as two more frozen cells and nothing else. Shipping the word while deferring the system is honest; pretending the forms are unrelated is not.",
+        "INDEX SEAM: scusi, scusa, senta, dispiace, permesso, può, puoi, posso, potrebbe, potresti and sta are fresh keys. Mi dispiace and Grazie mille ride as two-token surfaces — the tool L1 built with mi chiamo and mi piace — which is what keeps the bare mi free for M5's clitic. per favore stays L1-M8's row, prego and mille stay L1-M10's, grazie stays L1-M2's, vorrei stays L1-M3's, and lei stays L1-M10's and is never written with a capital in a field the index reads.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M2': {
+      id: 'L2-M2',
+      title: 'Describing people',
+      job: 'Appearance, character, relationships',
+      patterns: [
+        '<person> + è + Adj',
+        '<person> + ha + i/gli/le + N + Adj',
+        'mio/mia + N-family',
+        'il mio / la mia + N',
+        '<person> + sta + bene / male',
+      ],
+      notes: [
+        'Features take AVERE, not essere: ha i capelli lunghi, ha gli occhi verdi, ha trent\'anni. English says "has green eyes" and then "is thirty", and Italian uses the same verb for both — so age is the sentence to spend a mistake on, because *è trenta is the literal translation and is wrong. The article is part of the frame (ha I capelli, not *ha suoi capelli), which is the same habit M2 will meet again in the possessive rule below.',
+        "essere against stare, and it is NOT Spanish's split — say so, because an author who has read the en-es briefs will import the wrong law. Italian's stare covers health and how someone is doing (Come sta?, Sto bene, L1-M2's own rows) and a few fixed uses; identity, origin, character and even location go to essere (Sono a Roma, where Spanish would say estoy). The working rule: essere for everything except how you FEEL and how things are GOING.",
+        "The possessive rule is Italian's most distinctive small law and it has two halves that must be taught together: a possessive normally keeps its article — il mio libro, la mia casa, i miei amici — and the article DROPS before a singular family member: mio fratello, mia sorella, but i miei fratelli. English drops the article always and Spanish drops it always, so both halves are delta. Author the pair in one screen.",
+        "The family and person set: fratello, sorella, padre, madre, figlio, figlia, marito, moglie, amico, amica, nonno, nonna; alto, basso, giovane, anziano, simpatico, gentile, bravo, magro. Two spellings to plan for, because M3 inherits them: amico pluralises to amici with a SOFT c and simpatico to simpatici, while a word like bianco goes to bianchi with the hard sound preserved — the -co plural forks and no rule predicts it, so each plural sits in its own row's forms.",
+        "INDEX SEAM: ha (L1-M5's row, doing possession here — point back, do not re-open), sta, mio, mia, miei, mie, suo, sua, tuo, tua, fratello, sorella, padre, madre, figlio, figlia, marito, moglie, amico, amica, capelli, occhi, anni, alto, basso, giovane, anziano, simpatico, gentile and magro are the keys. lui and lei stay L1-M10's rows and lei is never capitalised in an indexed field (M1's rule). trent'anni carries an elision and is ONE key — the L1 policy, and the reason a bare anni row is authored separately.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M3': {
+      id: 'L2-M3',
+      title: 'Describing things',
+      job: 'Size, colour, quality — agreement at length',
+      patterns: [
+        'il/la + N + è + Adj',
+        'i/le + N-pl + sono + Adj-pl',
+        'un/una + N + Adj',
+        'un bel + N   /   un + N + bello',
+        'N + molto + Adj',
+      ],
+      notes: [
+        '"At length" is the grid, and Italian\'s is smaller than it looks: an adjective in -o has FOUR cells (rosso · rossa · rossi · rosse) and one in -e has TWO (grande · grandi, felice · felici) — it never marks gender, only number. L1 shipped both classes without naming the split (buono / buona / buoni / buone at M1, grande / grandi at M3, triste / tristi at M9), so the law arrives as a summary of what the learner already has rather than as news. The shortcut to refuse is "-o is masculine, -a is feminine": it is about nouns, and it is false of il problema and la mano just as it is in Spanish.',
+        "The invariable colours are the module's best fact: blu, rosa, viola and beige do not change at all — le case rosa, i libri blu — because they are nouns pressed into service as adjectives. Everything else bends: rosso, nero, bianco, giallo, verde (an -e adjective, so two cells). And the plural of a -co adjective forks unpredictably: bianco → bianchi keeps the hard sound with an h, while simpatico → simpatici goes soft. Put each plural in its own row's forms and let no rule claim the fork is predictable.",
+        "bello and buono apocopate before a noun and it is worth one careful rule: un bel libro, un bell'uomo, i bei libri, begli occhi — the shapes track the article the noun would take (il → bel, l' → bell', i → bei, gli → begli). After the noun, nothing changes: un libro bello. buono does the same on a smaller scale (un buon libro), and its four full cells are already L1-M1's row, so this module extends nothing there and teaches the apocope on bello.",
+        'molto is the intensifier and it is invariable when it modifies an adjective (molto caro, molto cara) and bends when it counts a noun (molti libri, molta acqua). L1-M1 owns molto as "very much"; this module re-teaches both jobs on that row rather than opening one, and its own spend is poco\'s partner set, already L1-M4\'s. The trap is the reverse of the Spanish one: *molta cara is the error, and it comes from a learner who has just learnt that adjectives agree.',
+        "INDEX SEAM: rosso, nero, bianco, giallo, verde, blu, rosa, viola, bel, bell', bei, begli, bello, lungo, corto, nuovo, vecchio, pulito, sporco, pesante and leggero are fresh keys, each row carrying the cells this level shows. grande, grandi, buono's four cells, caro's four (L1-M10) and molto (L1-M1) stay their L1 rows. bell' is a distinct key from bello — the elision apostrophe stays inside the token, so the index sees two words — and that is why both are authored here with cross-referring notes.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M4': {
+      id: 'L2-M4',
+      title: 'Getting around',
+      job: 'Directions, transport, asking the way',
+      patterns: [
+        "Scusi + , + dov'è + il/la + N?",
+        'Giri a destra / a sinistra',
+        'Vada sempre dritto',
+        'Prenda + il/la + N',
+        'Vado in autobus / a piedi',
+      ],
+      notes: [
+        "This module speaks the polite third person throughout, chipped `formal`, and it is where M1's frozen imperatives are spent: Giri, Prenda, Vada, Senta, Scusi. Say again in the note that these are subjunctive forms L3 will teach as a paradigm — a learner who meets them twice as unrelated things has been badly served — and that the tu partners (gira, prendi, va') exist and are named in usage rather than shown, because a stranger in the street is the scene.",
+        'Transport takes IN, not con and not per: vado in autobus, in treno, in macchina, in metropolitana — and a piedi for walking, which uses a instead for no reason a rule can give. English "by bus" and Spanish "en autobús" both mislead a little, so tag it delta and give the list rather than a principle. il biglietto, la fermata, la stazione (L1-M7) and il binario are the nouns.',
+        "Directions are the vocabulary spend: destra, sinistra, dritto, sempre, avanti, dopo, prima, l'angolo, il semaforo, la piazza, la strada, il ponte. a destra and a sinistra are indexed WHOLE, which keeps the bare a on L1-M5's row where it belongs and gives the direction phrase its own note — the same move en-es makes with a la derecha, and for the same reason.",
+        "c'è against ci sono (L1-M7's rows) does the existential work — C'è una banca qui vicino? — and dov'è (also L1-M7, and an elision that is one key) asks for a place both speakers know. Both are re-taught here and owned there. The one new question shape is Come si va a…?, whose si is impersonal: it is a fresh key, and its note should say that this si is the same one hiding inside si chiama (L1-M1's multi-token surface, which is what left the bare si free).",
+        "INDEX SEAM: giri, prenda, vada, destra, sinistra, dritto, avanti, angolo, semaforo, piazza, strada, ponte, biglietto, fermata, binario, autobus, l'autobus, metropolitana, macchina, si, lontano and vicino (the bare adverb — L1-M7 owns vicino a as a phrase) are fresh keys. l'autobus is one key with the elision inside it and does NOT answer for a bare autobus, so both are authored, the second pointing at the first. a destra and a sinistra ride whole; a, in, dove and dov'è stay L1's rows. Street and city names never index (#61).",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M5': {
+      id: 'L2-M5',
+      title: 'Food and hosting',
+      job: 'Ordering, offering, refusing without offence',
+      patterns: [
+        'Per me + , + un/una + N',
+        'Prendo + il/la + N',
+        'Vorrei + del/della + N',
+        'Lo prendo / Li prendo',
+        'No + , + grazie + , + <reason>',
+      ],
+      notes: [
+        "Ordering is L1's own vocabulary in a new seat: Prendo un caffè (L1-M6's prendo, and \"I'll take\" is what an Italian says where English says \"I'll have\"), Vorrei un tavolo per due (L1-M3's vorrei), Per me una pizza. The delta is the present tense doing the work of English's future — Prendo, not *Prenderò — which is the same habit M6 will use for arrangements. Say it here and point forward.",
+        "The partitive article arrives: del pane, della carne, dell'acqua, dei libri — di fused with the article, meaning \"some\". L1 shipped di (M1), d'acqua (M8) and un po' di (M3) and never combined it, so the fusion is the news and the meaning is already known. Each fused form is its own key with the elision inside it where there is one, and dell'acqua does not answer for L1-M8's l'acqua — both are authored and cross-referenced.",
+        "The direct-object clitics open here, and the index decides which: lo, li, mi and ti are free keys, while la, le, i and gli are L1-M1's ARTICLES and can never be first-taught as pronouns. So the law is taught on lo and li (Il pane? Lo prendo. I libri? Li voglio) and on mi and ti (Mi porta il conto?), with the feminine and the indirect forms named in prose and left to L3. The placement rule is the delta: the clitic goes BEFORE the conjugated verb, where English puts the object after it.",
+        "Refusing without offence is the cultural half: an Italian host offers again, and a bare No is heard as an opening rather than as an answer — the refusal that lands adds a reason and a warmth word (No, grazie, sono a posto · Basta così, grazie · Magari più tardi). Put it in usage. The other half is the small ritual vocabulary a meal needs: Buon appetito, il conto, un altro / un'altra (note the apostrophe: the feminine indefinite elides, un'altra, and the masculine does not, un altro — one of the few places Italian's apostrophe carries gender).",
+        "INDEX SEAM: lo, li, mi, ti, del, della, dell'acqua, dei, delle, conto, carne, pesce, verdura, dolce, bicchiere, forchetta, altro, un'altra, posto, basta and appetito are fresh keys. Mi chiamo, mi piace, mi alzo, ti chiami and ti alzi stay L1's multi-token surfaces — which is exactly what left the bare mi and ti available for this module — and the clitic rows' notes name all of them, so a learner is never told that mi means only one thing. prendo, vorrei, per favore and un po' di stay their L1 rows.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M6': {
+      id: 'L2-M6',
+      title: 'Making plans together',
+      job: 'Invitations, suggestions, settling a time',
+      patterns: [
+        'Andiamo + a + <place> + ?',
+        'Ti va di + V-inf + ?',
+        'Sei libero / libera + <day> + ?',
+        'Ci vediamo alle + <hour>',
+        "Facciamo alle otto — D'accordo",
+      ],
+      notes: [
+        "Plans are made among friends: tu and noi throughout, chipped `informal` where the frame is tu-only, and the polite third person deliberately absent — an invitation in the Lei forms reads as a business appointment, which is M7's scene. Say so in usage rather than in a rule.",
+        'The noi cell arrives and it doubles as the suggestion: Andiamo! is both "we go" and "let\'s go", so Italian needs no extra word where English needs "let\'s" and Spanish reaches for vamos a. That is a rest point — the ending does the work — and the honest new spend is the -iamo ending itself across the verbs the course owns (andiamo, facciamo, prendiamo, mangiamo, vediamo).',
+        'Ci vediamo ("see you") is the closing every plan ends on, and its ci is the same impersonal-ish particle family M4 opened with si — one note, cross-referenced, no second family. Ti va di…? is the everyday invitation frame and it is built on L1-M6\'s va: literally "does it suit you to…", the same shape as mi piace, which the note should point at because the learner already owns that pattern.',
+        "The clock: alle sette is L1-M4's, and this module adds e mezza, e un quarto and in punto, plus the days L1 did not teach (martedì, mercoledì, giovedì, venerdì, domenica beside L1-M4's lunedì and sabato). meno un quarto is real and is deliberately NOT shown: meno is M9's key and its comparative note must be its first, so a usage line names the clock use and M9 delivers the word. The article on a day means \"every\" — il lunedì (L1-M4) is Mondays in general, lunedì alone is this coming Monday — a distinction English makes with a plural and Italian with an article.",
+        "INDEX SEAM: andiamo, facciamo, prendiamo, vediamo, ci vediamo, ti va, libera (L1-M10 owns libero and its cells), martedì, mercoledì, giovedì, venerdì, domenica, mezza, quarto, punto and d'accordo are fresh keys. d'accordo carries an elision and is one key. va stays L1-M6's row, alle sette stays L1-M4's phrase, sabato and il sabato stay L1-M4's, stasera and domani stay L1-M6's. ci is authored here as a bare key even though c'è and ci sono (L1-M7) contain it — those are their own surfaces and answer for nothing outside themselves.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M7': {
+      id: 'L2-M7',
+      title: 'On the phone',
+      job: 'Calls and messages — openings, closings, taking a message',
+      patterns: [
+        'Pronto? — Sono + <name>',
+        'Posso parlare con + <name> + ?',
+        "Non c'è + . + Vuole lasciare un messaggio?",
+        'Sto parlando con + <person>',
+        'La richiamo più tardi',
+      ],
+      notes: [
+        'Pronto? is how Italy answers a phone and it means "ready" — a fact worth one line, because a learner who meets it as an unanalysable noise learns nothing, and one who is told it is an adjective can hear the rest of the language in it. The identification is Sono Rohan ("I am Rohan"), where English says "this is" — small, fixed, high-frequency, and the first sentence of the module.',
+        "stare + gerundio opens here, because a call is happening NOW: Sto parlando, Sta mangiando, Non può, sta lavorando. L1 taught sto and stai (M2) and M2 added sta, so the auxiliary is the learner's and only the -ando / -endo form is new. The delta is what it does NOT do: Italian uses the plain present far more than English uses its simple present, so the gerundio is reserved for what is genuinely in progress at this moment — *Domani sto lavorando is wrong where English says \"I'm working tomorrow\", and M6's plain present is the repair.",
+        "This module speaks the polite third person, chipped `formal`, because you cannot see who picked up — and it is where the level's Lei ruling is most visible: the sentences are Vuole lasciare un messaggio? and La richiamo, with no pronoun anywhere, which is what an Italian says. The polite object clitic La is barred from display (it folds onto L1-M1's article), so a note names it in prose and the display uses the frame without it: Richiamo più tardi.",
+        "Taking a message needs no new tense: Non c'è (L1-M7's c'è, negated), Ha lasciato un messaggio (L1-M5's passato prossimo), Richiamo più tardi (M5's present-for-future). Reported speech — Ha detto che… — is L3-M5's and is named as deferred here, which is why a message is passed on with the words themselves.",
+        "INDEX SEAM: pronto, parlare (L1-M4's row — point back), parlando, mangiando, lavorando, messaggio, numero, richiamo, tardi, lasciare, attimo and sbagliato are fresh keys. più is M9's key and is used here inside più tardi — which rides as a two-token surface so that the bare più stays free for M9's comparative, exactly as L1-M8 protected min in en-ar. c'è, non and sono stay their L1 rows; la is never authored as a clitic in this course.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M8': {
+      id: 'L2-M8',
+      title: 'When something goes wrong',
+      job: 'Problems, asking for help, complaining calmly',
+      patterns: [
+        'Non funziona + il/la + N',
+        'Ho perso + il/la + N',
+        'Mi fa male + il/la + N',
+        'Può aiutarmi + , + per favore?',
+        "C'è un problema con + il/la + N",
+      ],
+      notes: [
+        "Mi fa male la testa is the module's structural lesson and it is the same shape as mi piace (L1-M1): the body part is the SUBJECT and mi only names who feels it, so it is mi fanno male i piedi in the plural. Italian, Spanish and Russian all put the person in an oblique case for this, and a learner who has been saying mi piace for two levels already owns the pattern — say that, and the rule costs nothing. The article where English wants a possessive is part of the frame: la testa, never *mia testa.",
+        "aiutarmi is one word to the index and that is the genuinely Italian thing here: a clitic ATTACHES to an infinitive, so aiutarmi, lasciarlo and dirmi are fresh single keys, not aiutare plus mi. Author aiutarmi on its own row with a note saying where the mi went, because a learner who has just met the clitic in M5 will look for it in front of the verb and not find it. Può aiutarmi? is the module's core request and it is M1's frame with M5's clitic glued on.",
+        "The past here is L1-M5's passato prossimo, which is all a problem needs: Ho perso il biglietto, Ho dimenticato il telefono, Il treno è partito (essere, because it is movement — M10 states the auxiliary law; here it is used and pointed forward). No perfect beyond that, no imperfetto yet, and no congiuntivo, which is what Purtroppo credo che… would drag in — so belief is stated plainly with Penso di (L1-M9's phrase) and the que-clause is left to L3.",
+        "Complaining calmly is a register lesson and Italian's answer is not English's: the softening comes from the frame — Scusi, c'è un problema… — and from Purtroppo, not from hedging the claim itself. A learner who translates \"there seems to be a small problem with the room\" produces something evasive rather than polite. Say what the language actually does and let the mistake block show the over-hedged version.",
+        "INDEX SEAM: funziona, perso, dimenticato, rotto, male, testa, piedi, aiutarmi, aiutare, aiuto, problema, purtroppo, chiave and telefono are fresh keys. problema is masculine despite the -a, which is the promise L1-M1's gender note made and this module keeps — author it with its article every time. fa stays L1-M6's row, doing fa male here; mi stays M5's clitic row; ho, è and the participles stay L1-M5's rows; scusi and può stay M1's; per favore stays L1-M8's.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M9': {
+      id: 'L2-M9',
+      title: 'Comparing and choosing',
+      job: 'More, less, better — stating a preference',
+      patterns: [
+        'A + è + più + Adj + di + B',
+        'A + è + più + Adj + che + Adj',
+        'il/la più + Adj',
+        'A + è + migliore / peggiore + di + B',
+        'Preferisco + questo / quello',
+      ],
+      notes: [
+        'THE distinction of the module, and Italian forces a choice English does not have: più … DI compares two things on one quality (Roma è più grande di Milano), and più … CHE compares two qualities, two verbs or two prepositional phrases about the same thing (È più bello che utile · Mangio più a casa che al ristorante). The working rule: di before a noun or a pronoun, che before anything else. Spend a mistake block on it, because English\'s single "than" gives no signal at all.',
+        'che is L1-M5\'s key ("what, that"), so this module points back rather than opening a row, and its note must be true of the comparative job as well — the same discipline en-es applies to que. di is L1-M1\'s key. Between them, the comparative costs this module no new function words at all, which is worth saying: the work is the choice, not the vocabulary.',
+        'migliore against meglio is Italian keeping apart what English merges: migliore is the adjective (È il ristorante migliore) and meglio is the adverb (Si mangia meglio qui) — where English says "better" for both and Spanish uses mejor for both. Same for peggiore / peggio. That is a delta running the opposite way from every other comparison in this level, and it deserves the module\'s second mistake block.',
+        "preferire brings the -isc- verbs, which are a third of Italy's third conjugation and are due: preferisco, preferisci, preferisce — an infix appearing in the singular and the third plural and absent from noi and voi. Author it as a shape rather than as an irregularity, and pair it with capire and finire in a rule so the class is visible. Choosing also needs the demonstratives: questo / questa / questi / queste for what is here, quello for what is there, and quello apocopates before a noun like bello (quel libro, quell'uomo, quei libri) — M3's rule, paid a second time.",
+        "INDEX SEAM: più, meno, migliore, meglio, peggiore, peggio, preferisco, preferisci, preferisce, questo, questa, questi, queste, quello, quel, quell', quei and quale are fresh keys. più tardi (M7) rides as a two-token surface, which is what left the bare più to this module. che stays L1-M5's row and di stays L1-M1's; molto stays L1-M1's and is not a synonym for più, which its note should say. quale is a sibling of L1-M5's che cosa and of cosa — cross-reference all three, merge none.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M10': {
+      id: 'L2-M10',
+      title: 'Telling what happened',
+      job: 'A four-sentence account in the past',
+      patterns: [
+        '<imperfetto background> + , + <passato prossimo event>',
+        '<passato prossimo> + e + <passato prossimo>',
+        "C'era + <N> + , + poi + <passato prossimo>",
+        'Alla fine + <passato prossimo>',
+      ],
+      notes: [
+        "Each item is an ACCOUNT of exactly four short sentences, not one long one, and the per-sentence bound applies to each sentence inside it. Nearly every word comes from L1 and from M1–M9; the honest new spend is the imperfetto itself — ero, avevo, c'era, faceva, pioveva, era — and the sequencers prima, dopo and alla fine beside L1-M10's poi and allora.",
+        "THE decision of the module: L1-M5 shipped the passato prossimo with BOTH auxiliaries and with participle agreement, and never taught the choice against the imperfetto, which opens here. The law, and it must be the true one — the imperfetto paints the standing situation the story happens against (what was already going on, what things were like, the weather, a habit, an age) and the passato prossimo moves the account forward one completed step at a time. Era tardi e non c'era nessuno. Allora ho chiamato Anna.",
+        'The slogan to kill is the one en-es\'s and en-ru\'s M10s kill in their own languages, and the three courses should say it in the same words: "one tense is for completed actions and the other for ongoing ones". It breaks on the first real account. Ieri ho mangiato alle otto is completed; Mangiavo quando hai chiamato is not "ongoing" in any objective sense — it is background for the call; Da bambino andavo sempre al mare is a habit, not a duration. What decides it is the ROLE the clause plays in the telling. Author the pairs so the same event appears in both roles.',
+        'The auxiliary law gets stated at last, because an account cannot avoid it: essere for movement and change of state (è andato, sono partiti, siamo tornati — L1-M5 and L1-M10 shipped the forms) and for reflexives, with the participle agreeing with the SUBJECT in gender and number; avere for everything else, with no agreement at all. L1 taught the agreement by example (sono andata, siamo andati); this is where the rule behind it is written down.',
+        "Nothing new is opened. The passato remoto, the trapassato, the congiuntivo and reported speech all stay OUT and are named here as L3's. INDEX SEAM: ero, era, eri, avevo, aveva, c'era, faceva, pioveva, prima, dopo, alla fine, nessuno and the imperfetto cells an account needs are fresh keys, each pointing back at its verb's L1 row rather than editing it. poi, allora, e, ma and anche stay L1-M10's; ieri and stamattina stay L1-M5's; perché and quindi stay L1-M9's.",
+      ],
+      maxWordsPerSentence: 10,
       newWordCap: NEW_WORD_CAP,
     },
   },
