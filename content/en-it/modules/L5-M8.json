@@ -1,0 +1,677 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M8",
+  "title": "When words run out",
+  "job": "Paraphrase, ask what something means, repair a misunderstanding",
+  "prerequisites": [
+    "L5-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "presente, L1-M6's - every finite verb of the ten except two",
+      "tu imperative, L4-M1's, now carrying attached pronouns: dimmi, ripetimelo, spiegami",
+      "passato prossimo on an owned participle: non ho capito, hai detto",
+      "imperfetto, L2-M10's, for intendevo alone"
+    ],
+    "allowedPatterns": [
+      "Come si dice + <N> + ?",
+      "Che vuol dire + <parola> + ?",
+      "Una specie di + <N>",
+      "Me lo puoi ripetere + ?",
+      "Dimmi + / + Dimmelo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PRONOUN'S POSITION IS DECIDED BY THE VERB FORM AND BY NOTHING ELSE. It ATTACHES, welded on the end, to an infinitive, to a tu imperative and to a gerund: dimmi, ripetimelo, spiegami. It stands BEFORE a finite verb: me lo dici, me lo ripeti. dimmi and me lo dici are the same words in the same relation, and only the shape of the verb moves the pronoun. Not politeness, not emphasis, not meaning."
+    },
+    {
+      "tag": "delta",
+      "text": "WHEN TWO PRONOUNS MEET, THE INDIRECT ONE COMES FIRST AND ITS VOWEL CHANGES TO E. mi lo is not a form; me lo is. Same for te lo and ce lo. And gli plus lo does not sit side by side at all - it fuses into one written word, glielo, which is why it looks like a word rather than a pair."
+    },
+    {
+      "tag": "delta",
+      "text": "NE IS THE PRONOUN FOR OF IT AND OF THEM, AND IT JOINS THE SAME SYSTEM. Non ne parlo mai, I never talk about it. It attaches to the same three verb forms the others attach to, and it survives frozen in che ne so - literally what do I know of it, and in practice a shrug."
+    },
+    {
+      "tag": "free",
+      "text": "THE PARAPHRASE KIT IS FOUR PHRASES AND ONE JOKER, AND NOTHING IN IT IS NEW COMMUNICATIVELY. una specie di - a sort of. quella cosa che - that thing that. come si dice - how do you say. che vuol dire - what does it mean. The joker is coso, the word for a thing whose word you have lost; it is informal and it is exactly English thingy."
+    },
+    {
+      "tag": "interference",
+      "text": "THE TWO THINGS ENGLISH GIVES YOU NO HELP WITH. The vowel change has no logic to offer and no analogue: me lo is simply the form and mi lo is not Italian. And glielo is ONE word for to him, to her AND to them, so three English pronouns collapse into one - there is no feminine version to hunt for, and hunting for it is the commonest wasted hour at this level."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT THIS MODULE NAMES AND DOES NOT TEACH. Attachment to the Lei imperative - me lo dica - is a fourth position, and every polite repair here stays on the finite frame instead: me lo può ripetere. The ci of place with attachment - andarci, restarci - is named here and left; the course closes at this level and a named absence is better than half a system. L5-M1's farcela and cavarsela are this machine already welded shut, and they are not bought a second time."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M8-S01",
+      "display": "Come si dice questo in italiano?",
+      "cue": "How do you say this in Italian?",
+      "literal": "How one says this in Italian?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "come si dice",
+            "cue": "how do you say",
+            "tag": "free",
+            "forms": [
+              "come si dice"
+            ],
+            "note": "Three tokens, one key, sitting on L5-M3's si dice. It is the single most useful sentence opener a learner owns, because it asks for the word without needing it."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "si dice is impersonal - one says. Turning it into come dici tu asks how YOU personally say it, which is a different and much stranger question.",
+      "sound": "CO-me si DI-ce, four light syllables, nothing stressed hard.",
+      "variations": [
+        {
+          "display": "Come si dice in italiano?",
+          "cue": "How do you say it in Italian?",
+          "changed": "the thing left unnamed, pointed at instead"
+        },
+        {
+          "display": "Come si dice questo?",
+          "cue": "How do you say this?",
+          "changed": "the language left out, when it is obvious"
+        }
+      ],
+      "mistake": {
+        "display": "Come dici questo in italiano?",
+        "why": "come dici is how do YOU say it, and it sounds like a challenge. The impersonal si is what makes the question about the language rather than about the person."
+      },
+      "usage": "Mid-conversation, when the word you need has not arrived.",
+      "register": "neutral",
+      "mnemonic": "si dice: one says, so nobody has to."
+    },
+    {
+      "id": "L5-M8-S02",
+      "display": "Che vuol dire questa parola?",
+      "cue": "What does this word mean?",
+      "literal": "What wants to-say this word?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "che vuol dire",
+            "cue": "what does it mean",
+            "tag": "free",
+            "forms": [
+              "che vuol dire",
+              "vuol dire"
+            ],
+            "note": "Literally what does it want to say, which is how Italian says mean. Learned whole: vuol here is not a shortened voglio and does not conjugate with you."
+          },
+          {
+            "display": "parola",
+            "cue": "word",
+            "tag": "free",
+            "forms": [
+              "parola",
+              "parole"
+            ],
+            "note": "The word for a word. It is what you point at when you cannot repeat it, and it turns a blank stare into a question somebody can answer."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "vuol dire is about the word, not the speaker. Che vuoi dire? asks what YOU mean by that, which is a challenge; che vuol dire asks what the word means.",
+      "sound": "ke vwol DI-re. pa-RO-la, stress on RO.",
+      "variations": [
+        {
+          "display": "Che vuol dire?",
+          "cue": "What does that mean?",
+          "changed": "the bare question, pointing at what was just said"
+        },
+        {
+          "display": "Non ho capito questa parola",
+          "cue": "I did not understand this word",
+          "changed": "the same problem stated instead of asked"
+        }
+      ],
+      "mistake": {
+        "display": "Che vuole dire questa parola?",
+        "why": "Not wrong, but nobody says it. The frozen shape is vuol dire, with the e gone, and that is the form to learn."
+      },
+      "usage": "Stopping somebody on one word rather than on the whole sentence.",
+      "register": "neutral",
+      "mnemonic": "the word WANTS to say something."
+    },
+    {
+      "id": "L5-M8-S03",
+      "display": "Non ho capito: me lo puoi ripetere più piano?",
+      "cue": "I did not understand: can you say it again more slowly?",
+      "literal": "Not I have understood: to-me it you can to repeat more slowly?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "non ho capito",
+            "cue": "I did not catch that",
+            "tag": "free",
+            "forms": [
+              "non ho capito",
+              "ho capito"
+            ],
+            "note": "The standard repair, in the passato prossimo rather than the present: Italian reports the failure as a completed event. ho capito on its own is got it."
+          },
+          {
+            "display": "me lo",
+            "cue": "it to me",
+            "tag": "delta",
+            "forms": [
+              "me lo"
+            ],
+            "note": "Two pronouns in the order Italian keeps: indirect first, and mi becomes me in front of lo. Before a finite verb they stand apart from it, as here."
+          },
+          {
+            "display": "più piano",
+            "cue": "more slowly, more quietly",
+            "tag": "free",
+            "forms": [
+              "più piano"
+            ],
+            "note": "piano is both slowly and softly, and the request is heard as either. It is what you add when the words were fine and the speed was not."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "Non capisco says I do not understand in general; non ho capito says I missed that one. The repair Italians use is the past one.",
+      "sound": "non o ca-PI-to. me lo PWOI ri-PE-te-re. pyu PIA-no.",
+      "variations": [
+        {
+          "display": "Me lo puoi ripetere?",
+          "cue": "Can you say it again?",
+          "changed": "the request without the reason"
+        },
+        {
+          "display": "Me lo puoi ripetere più piano?",
+          "cue": "Can you say it again more slowly?",
+          "changed": "the whole repair in one question"
+        },
+        {
+          "display": "Non ho capito",
+          "cue": "I did not catch that",
+          "changed": "the admission alone, which is often enough"
+        }
+      ],
+      "mistake": {
+        "display": "Non ho capito: mi lo puoi ripetere più piano?",
+        "why": "mi lo is not a form. In front of lo the pronoun mi becomes me, with no reason available and no exception."
+      },
+      "usage": "The first thing to say when a sentence went past too fast.",
+      "register": "neutral",
+      "mnemonic": "mi + lo = me lo. The vowel bends, the order does not."
+    },
+    {
+      "id": "L5-M8-S04",
+      "display": "Dimmi tutto, e poi dimmelo ancora",
+      "cue": "Tell me everything, and then tell it to me again",
+      "literal": "Tell-me all, and then tell-it-to-me again",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dimmi",
+            "cue": "tell me",
+            "tag": "delta",
+            "forms": [
+              "dimmi"
+            ],
+            "note": "The tu imperative of dire with the pronoun welded on. The doubled m is the weld: di plus mi, written as one word, and this is the shape English tell me already has."
+          },
+          {
+            "display": "dimmelo",
+            "cue": "tell it to me",
+            "tag": "delta",
+            "forms": [
+              "dimmelo"
+            ],
+            "note": "Both pronouns attached, in the order rule 1 gives: me before lo, all of it on the end of the verb. One word, three pieces."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "dimmi is an imperative and me lo dici is a statement, but the words are identical - only the verb form moved the pronouns. That is the whole system in one pair.",
+      "sound": "DIM-mi, double m held. DIM-me-lo, stress stays on the first syllable.",
+      "variations": [
+        {
+          "display": "Dimmi tutto",
+          "cue": "Tell me everything",
+          "changed": "one pronoun instead of two"
+        },
+        {
+          "display": "Dimmelo ancora",
+          "cue": "Tell it to me again",
+          "changed": "the doubled form alone"
+        }
+      ],
+      "mistake": {
+        "display": "Di me lo ancora",
+        "why": "Attachment is not optional on a tu imperative. The three pieces are written as one word, dimmelo, and split apart they read as nothing at all."
+      },
+      "usage": "Asking a friend to go over something once more.",
+      "register": "informal",
+      "mnemonic": "the imperative swallows its pronouns."
+    },
+    {
+      "id": "L5-M8-S05",
+      "display": "Ripetimi il numero. Ripetimelo, per favore",
+      "cue": "Say the number to me again. Say it to me again, please",
+      "literal": "Repeat-to-me the number. Repeat-it-to-me, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ripetimi",
+            "cue": "say it to me again",
+            "tag": "delta",
+            "forms": [
+              "ripetimi"
+            ],
+            "note": "L2-M1's ripetere as a tu imperative with mi welded on. The stress does not move to the pronoun: it stays where the verb had it."
+          },
+          {
+            "display": "ripetimelo",
+            "cue": "say it to me again",
+            "tag": "delta",
+            "forms": [
+              "ripetimelo"
+            ],
+            "note": "Five syllables and one word. The two pronouns follow rule 1's order even after they attach, so me comes before lo here exactly as it does before a finite verb."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Both forms are tu. To somebody you call Lei the repair goes on a finite verb instead - me lo può ripetere - because attaching to the polite imperative is a position this course does not teach.",
+      "sound": "ri-PE-ti-mi. ri-PE-ti-me-lo - five syllables, and the stress is still on PE.",
+      "variations": [
+        {
+          "display": "Ripetimi il numero",
+          "cue": "Say the number to me again",
+          "changed": "the thing named rather than pronounced"
+        },
+        {
+          "display": "Ripetimelo, per favore",
+          "cue": "Say it to me again, please",
+          "changed": "both pronouns, with the thing left understood"
+        }
+      ],
+      "mistake": {
+        "display": "Ripeti me lo il numero",
+        "why": "Two errors from one cause: the pronouns must attach to a tu imperative, and once lo is there the number cannot be named again."
+      },
+      "usage": "On the phone, when a number went by too fast.",
+      "register": "informal",
+      "mnemonic": "ripeti + me + lo, in that order, welded."
+    },
+    {
+      "id": "L5-M8-S06",
+      "display": "Spiegami quella cosa che hai detto: voglio capire",
+      "cue": "Explain that thing you said to me: I want to understand",
+      "literal": "Explain-to-me that thing that you have said: I want to understand",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spiegami",
+            "cue": "explain to me",
+            "tag": "delta",
+            "forms": [
+              "spiegami"
+            ],
+            "note": "L4-M2's spiegare as a tu imperative with mi attached. No doubling here - the m of mi is the only one, because spiega already ends in a vowel."
+          },
+          {
+            "display": "quella cosa che",
+            "cue": "that thing that, you know the one",
+            "tag": "free",
+            "forms": [
+              "quella cosa che"
+            ],
+            "note": "The paraphraser's frame: it points at something whose name you do not have and hands the naming back to the other person."
+          },
+          {
+            "display": "capire",
+            "cue": "to understand",
+            "tag": "free",
+            "forms": [
+              "capire"
+            ],
+            "note": "The infinitive behind L4-M5's capisco and L3-M10's capito. After voglio, dopo and per it is this form the sentence needs."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "dimmi doubles its m and spiegami does not. The doubling belongs to the four short imperatives - di', da', fa', sta', va' - and not to the rule.",
+      "sound": "SPIE-ga-mi, stress stays on SPIE. ca-PI-re.",
+      "variations": [
+        {
+          "display": "Spiegami quella cosa che hai detto",
+          "cue": "Explain that thing you said to me",
+          "changed": "the request without the reason"
+        },
+        {
+          "display": "Voglio capire",
+          "cue": "I want to understand",
+          "changed": "the reason on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Spiegammi quella cosa che hai detto",
+        "why": "No double m on this one. spiega ends in a vowel already, so the pronoun simply joins it: spiegami."
+      },
+      "usage": "Asking somebody to unpack something they said, without admitting which part was lost.",
+      "register": "informal",
+      "mnemonic": "that THING that - and let them supply the word."
+    },
+    {
+      "id": "L5-M8-S07",
+      "display": "Come si chiama quel coso? È una specie di pane",
+      "cue": "What is that thingy called? It is a sort of bread",
+      "literal": "How itself calls that thing? It is a species of bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "come si chiama",
+            "cue": "what is it called",
+            "tag": "free",
+            "forms": [
+              "come si chiama"
+            ],
+            "note": "Three tokens over L1-M1's si chiama, which introduced people. The same words ask the name of an object, and this is the question that unblocks a paraphrase."
+          },
+          {
+            "display": "coso",
+            "cue": "thingy, whatsit",
+            "tag": "free",
+            "forms": [
+              "coso"
+            ],
+            "note": "The word for a thing whose word has gone. Masculine for an object, informal, and never written in anything formal - but heard constantly."
+          },
+          {
+            "display": "una specie di",
+            "cue": "a sort of, a kind of",
+            "tag": "free",
+            "forms": [
+              "una specie di"
+            ],
+            "note": "The paraphrase frame itself: name the nearest category you DO know and let the hearer close the gap. It is what keeps a conversation moving."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "coso is not cosa in the masculine. cosa is the ordinary word for thing; coso is the one you reach for when the name has gone, and it is informal.",
+      "sound": "CO-me si CHIA-ma. CO-so. U-na SPE-cie di.",
+      "variations": [
+        {
+          "display": "Come si chiama quel coso?",
+          "cue": "What is that thingy called?",
+          "changed": "the question alone"
+        },
+        {
+          "display": "È una specie di pane",
+          "cue": "It is a sort of bread",
+          "changed": "the paraphrase alone, offered rather than asked"
+        }
+      ],
+      "mistake": {
+        "display": "Come si chiama quella coso?",
+        "why": "coso is masculine whatever it stands for. The feminine would be cosa, which is the ordinary noun and not this word at all."
+      },
+      "usage": "In a shop or a kitchen, pointing at something whose name you never learned.",
+      "register": "informal",
+      "mnemonic": "a sort of X beats no X at all."
+    },
+    {
+      "id": "L5-M8-S08",
+      "display": "Te lo dico io: glielo spiego domani",
+      "cue": "I am telling you: I will explain it to him tomorrow",
+      "literal": "To-you it I say I: to-him-it I explain tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "te lo",
+            "cue": "it to you",
+            "tag": "delta",
+            "forms": [
+              "te lo"
+            ],
+            "note": "ti becomes te in front of lo, exactly as mi becomes me. Te lo dico io, with the io added at the end, is how Italian says take it from me."
+          },
+          {
+            "display": "glielo",
+            "cue": "it to him, it to her, it to them",
+            "tag": "delta",
+            "forms": [
+              "glielo"
+            ],
+            "note": "One written word for three English pronouns. gli plus lo fused, and there is no feminine version - glielo covers her too."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "glielo is not gli lo and it is not a le form. Whether the person is a man, a woman or several people, the word is the same one.",
+      "sound": "te lo DI-co I-o. GLIE-lo - the gli as in figlio, then a plain lo.",
+      "variations": [
+        {
+          "display": "Te lo dico io",
+          "cue": "I am telling you",
+          "changed": "the first half, which stands alone as a phrase"
+        },
+        {
+          "display": "Glielo spiego domani",
+          "cue": "I will explain it to him tomorrow",
+          "changed": "the second half alone"
+        }
+      ],
+      "mistake": {
+        "display": "Le lo spiego domani",
+        "why": "le plus lo never stand apart. The pair has exactly one written form, glielo, and it is used for her as much as for him."
+      },
+      "usage": "Promising to pass something on, or vouching for something yourself.",
+      "register": "neutral",
+      "mnemonic": "gli + lo fuse; nothing else about them changes."
+    },
+    {
+      "id": "L5-M8-S09",
+      "display": "Che ne so? Non ne parlo mai",
+      "cue": "How would I know? I never talk about it",
+      "literal": "What of-it I know? Not of-it I talk never",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "che ne so",
+            "cue": "how should I know, search me",
+            "tag": "free",
+            "forms": [
+              "che ne so"
+            ],
+            "note": "A frozen shrug that happens to contain the pronoun this sentence teaches. Learned whole; it is not a real question and expects no answer."
+          },
+          {
+            "display": "ne",
+            "cue": "of it, of them, about it",
+            "tag": "delta",
+            "forms": [
+              "ne"
+            ],
+            "note": "The pronoun for the of-phrase. Non ne parlo is I do not talk about it, and the thing itself is never named again once ne has stood in for it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "ne is not the English none and not a negative. It replaces di plus a thing, and the negation in this sentence comes from non, as always.",
+      "sound": "ke ne SO, three syllables and the weight at the end. non ne PAR-lo MAI.",
+      "variations": [
+        {
+          "display": "Che ne so?",
+          "cue": "How would I know?",
+          "changed": "the shrug alone"
+        },
+        {
+          "display": "Non ne parlo mai",
+          "cue": "I never talk about it",
+          "changed": "the pronoun doing ordinary work"
+        }
+      ],
+      "mistake": {
+        "display": "Non parlo di ne mai",
+        "why": "ne IS the di phrase, so it cannot follow di. It goes in front of the finite verb, like the other pronouns of this module."
+      },
+      "usage": "Refusing a question you genuinely cannot answer, without sounding sharp.",
+      "register": "informal",
+      "mnemonic": "ne carries the of."
+    },
+    {
+      "id": "L5-M8-S10",
+      "display": "Nel senso che intendevo un'altra cosa",
+      "cue": "Meaning that I meant something else",
+      "literal": "In the sense that I intended an other thing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nel senso che",
+            "cue": "meaning that, in the sense that",
+            "tag": "free",
+            "forms": [
+              "nel senso che"
+            ],
+            "note": "The repair frame: it reopens what you just said so you can restate it. Italians use it constantly, and it buys a whole second try at a sentence."
+          },
+          {
+            "display": "intendevo",
+            "cue": "I meant",
+            "tag": "free",
+            "forms": [
+              "intendevo",
+              "intendere"
+            ],
+            "note": "The imperfetto, because what you meant was true all along rather than done at a moment. It is the verb for undoing a misunderstanding you caused."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "intendevo is what you MEANT; ho detto is what you said. Repairing with ho detto argues about the words, which is the fight this phrase exists to avoid.",
+      "sound": "nel SEN-so ke. in-ten-DE-vo, stress on DE.",
+      "variations": [
+        {
+          "display": "Intendevo un'altra cosa",
+          "cue": "I meant something else",
+          "changed": "the repair without the frame"
+        },
+        {
+          "display": "Nel senso che non ho capito",
+          "cue": "Meaning that I did not understand",
+          "changed": "the frame carrying an admission instead"
+        }
+      ],
+      "mistake": {
+        "display": "Nel senso che ho inteso un'altra cosa",
+        "why": "The passato prossimo makes it a completed act of understanding, which is a claim about the other person's sentence. The imperfetto keeps it about your own intention."
+      },
+      "usage": "Taking back a sentence that landed wrong, before it turns into an argument.",
+      "register": "neutral",
+      "mnemonic": "nel senso che opens the door back in."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M8-C01",
+      "display": "Come si dice questo in italiano?",
+      "cue": "How do you say this in Italian?"
+    },
+    {
+      "id": "L5-M8-C02",
+      "display": "Che vuol dire questa parola?",
+      "cue": "What does this word mean?"
+    },
+    {
+      "id": "L5-M8-C03",
+      "display": "Non ho capito, me lo puoi ripetere?",
+      "cue": "I did not catch that, can you say it again?"
+    },
+    {
+      "id": "L5-M8-C04",
+      "display": "Dimmelo più piano",
+      "cue": "Say it to me more slowly"
+    },
+    {
+      "id": "L5-M8-C05",
+      "display": "Ripetimi il numero, per favore",
+      "cue": "Say the number to me again, please"
+    },
+    {
+      "id": "L5-M8-C06",
+      "display": "Spiegami quella cosa che hai detto",
+      "cue": "Explain that thing you said to me"
+    },
+    {
+      "id": "L5-M8-C07",
+      "display": "Come si chiama quel coso?",
+      "cue": "What is that thingy called?"
+    },
+    {
+      "id": "L5-M8-C08",
+      "display": "È una specie di pane",
+      "cue": "It is a sort of bread"
+    },
+    {
+      "id": "L5-M8-C09",
+      "display": "Te lo dico io",
+      "cue": "I am telling you"
+    },
+    {
+      "id": "L5-M8-C10",
+      "display": "Glielo spiego domani",
+      "cue": "I will explain it to him tomorrow"
+    },
+    {
+      "id": "L5-M8-C11",
+      "display": "Che ne so?",
+      "cue": "How would I know?"
+    },
+    {
+      "id": "L5-M8-C12",
+      "display": "Nel senso che intendevo un'altra cosa",
+      "cue": "Meaning that I meant something else"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

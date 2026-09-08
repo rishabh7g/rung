@@ -1,0 +1,507 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M8",
+  "title": "When words run out",
+  "job": "Paraphrase, ask what something means, repair a misunderstanding",
+  "prerequisites": ["L5-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["present", "Perfekt"],
+    "allowedPatterns": [
+      "Wie heißt das + auf Deutsch + ?",
+      "Was bedeutet + <Wort> + ?",
+      "Das ist + so etwas wie + <Nomen>",
+      "Können Sie das + bitte + wiederholen + ?",
+      "Ich meine + nicht + <Akk> + , + sondern + <Akk>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "PARAPHRASE HAS A SMALL SET OF FRAMES, AND THREE OF THEM ARE ALREADY YOURS. so etwas wie plus a noun (so etwas wie ein Buch), eine Art plus a bare noun with no article after it (eine Art Wörterbuch), the relative clause of L3-M8 (das Ding, das man im Büro benutzt), and L4-M1's zum plus a nominalised infinitive for what a thing is for. Learn the frames rather than the words: a learner with four frames and no noun can describe anything, and a learner with the noun and no frame is stuck the moment the noun runs out."
+    },
+    {
+      "tag": "delta",
+      "text": "REPAIR IS A SEQUENCE, NOT A WORD, AND THE MIDDLE STEP IS THE ONE LEARNERS SKIP. Signal the trouble (Wie bitte?, Verzeihung), LOCATE it (Was bedeutet das?, Wie heißt das auf Deutsch?), then reformulate (Ich meine nicht X, sondern Y). A learner who only signals gets the whole sentence repeated at the same speed, which is the failure this module exists to prevent — so always follow Wie bitte? with the part you did not get."
+    },
+    {
+      "tag": "interference",
+      "text": "THE FORMULAE ARE EXACTLY WHAT YOU CANNOT INVENT. What is this in German? is Wie heißt das auf Deutsch? — heißen, the verb for being called, not the verb for saying; and auf Deutsch, not in Deutsch. Sorry? as a repair is Wie bitte?, which shares no word with the apology Es tut mir leid and is not itself an apology. Can you repeat that? takes wiederholen, and Can you say that more slowly? takes langsamer — a comparative, because you are asking for slower than now."
+    },
+    {
+      "tag": "interference",
+      "text": "I mean IS NOT meine. The trap L3-M2 found and L4-M4 inherited arrives a third time and here it does real damage: meine is the possessive MY (L2-M2), and the verb is meinen (L2-M8). So I mean is Ich meine — the two words together, one unit, one row — and Ich meine nicht das Buch, sondern das Wort is the repair frame in full. Writing meine Buch is not a near miss; it is a different sentence."
+    },
+    {
+      "tag": "free",
+      "text": "THE REGISTER OF A REPAIR IS THE LEARNER TAKING RESPONSIBILITY FOR THE GAP. Every sentence here puts the trouble on your side: Verzeihung, das war ein Missverständnis, not you were unclear. This is true to life — you are the one missing the word — and it is also the only version that is safe with a stranger, because a repair that blames the hearer ends the conversation you were trying to keep alive."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M8-S01",
+      "display": "Wie heißt das auf Deutsch?",
+      "cue": "What is that called in German?",
+      "literal": "How is-called that on German?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Wie heißt das",
+            "cue": "what is that called",
+            "tag": "interference",
+            "forms": ["Wie heißt das"],
+            "note": "Three words, one question, learned whole. German asks HOW a thing is called, not what it is — Was ist das auf Deutsch? asks for a definition instead."
+          },
+          {
+            "display": "auf Deutsch",
+            "cue": "in German",
+            "tag": "interference",
+            "forms": ["auf Deutsch"],
+            "note": "auf, never in, for the language something is said in. The same shape covers auf Englisch and auf Französisch, and the language keeps its capital."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "English in German becomes auf Deutsch, and the reflex to write in Deutsch is almost impossible to suppress. in Deutsch exists but means inside the school subject — in Deutsch habe ich eine Eins is about a grade.",
+      "sound": "vee HYST das owf DOYTSH — heißt has a long i and an ß, so it is HYST and not HYSST, and the question rises only on Deutsch.",
+      "variations": [
+        {
+          "display": "Wie heißt dieses Ding auf Deutsch?",
+          "cue": "What is this thing called in German?",
+          "changed": "das becomes dieses Ding, so you can ask about something you are holding rather than something you are pointing at. Far more useful in a shop."
+        }
+      ],
+      "mistake": {
+        "display": "Was sagt man das in Deutsch?",
+        "why": "Three errors in one reflex: the verb is heißen and not sagen, the question word is wie and not was, and the preposition is auf. The whole phrase is memorised rather than assembled."
+      },
+      "usage": "The single most useful question in this module. Point at the thing, ask, and repeat the answer back — a German speaker will correct the repetition, which is the free lesson.",
+      "register": "neutral",
+      "mnemonic": "German asks HOW a thing is called: wie, not was."
+    },
+    {
+      "id": "L5-M8-S02",
+      "display": "Was bedeutet das? Ich verstehe das Wort nicht.",
+      "cue": "What does that mean? I do not understand the word.",
+      "literal": "What means that? I understand the word not.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Was bedeutet das",
+            "cue": "what does that mean",
+            "tag": "free",
+            "forms": ["Was bedeutet das"],
+            "note": "The locating step, learned whole — L5-M5 taught bedeuten itself. It asks about a WORD; for a whole situation a German asks Was heißt das?"
+          },
+          {
+            "display": "Ausdruck",
+            "cue": "expression, turn of phrase",
+            "tag": "free",
+            "forms": ["Ausdruck"],
+            "note": "Masculine, der Ausdruck. Bigger than a Wort and smaller than a sentence — the right word for the several words you did not understand together."
+          },
+          {
+            "display": "beschreiben",
+            "cue": "to describe",
+            "tag": "free",
+            "forms": ["beschreiben"],
+            "note": "Not separable, so it stays whole at the end of the clause. It is what you ask for when a translation would not help — describe it, do not name it."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "Asking Was bedeutet das? on its own leaves the other speaker guessing which word you meant, and they will usually repeat the whole sentence. Name the word — Was bedeutet Beleg? — and the repair takes one turn instead of three.",
+      "sound": "vas buh-DOY-tet das? ikh fair-SHTAY-uh das vort nikht — bedeutet has its stress in the middle and the -et ending is a clear separate syllable.",
+      "variations": [
+        {
+          "display": "Können Sie das bitte beschreiben?",
+          "cue": "Could you describe that, please?",
+          "changed": "You stop asking for a meaning and ask for a description instead. This is what to say when the answer to Was bedeutet das? was another word you did not know."
+        }
+      ],
+      "mistake": {
+        "display": "Was bedeutet das? Ich verstehe nicht das Wort",
+        "why": "nicht has jumped in front of the object. It goes after a definite object and before the rest: Ich verstehe das Wort nicht. This is L1-M2's rule, and a repair is where it gets forgotten."
+      },
+      "usage": "The locating step of a repair, said immediately after the trouble. Naming the word is what makes it a question rather than a complaint.",
+      "register": "neutral",
+      "mnemonic": "Signal, then LOCATE: Wie bitte? gets it repeated, Was bedeutet das? gets it explained."
+    },
+    {
+      "id": "L5-M8-S03",
+      "display": "Das ist so etwas wie ein Ding für das Büro.",
+      "cue": "It is something like a thing for the office.",
+      "literal": "That is so something like a thing for the office.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "so etwas wie",
+            "cue": "something like, a sort of",
+            "tag": "delta",
+            "forms": ["so etwas wie"],
+            "note": "Three words, one frame, and the noun after it keeps its normal article: so etwas wie EIN Buch. It is the fastest way out of a missing noun."
+          },
+          {
+            "display": "Ding",
+            "cue": "thing (an object you can point at)",
+            "tag": "free",
+            "forms": ["Ding"],
+            "note": "Neuter, das Ding — a physical object whose name you do not have. Never used of an abstract matter; that is Sache."
+          },
+          {
+            "display": "Sache",
+            "cue": "matter, affair, item",
+            "tag": "interference",
+            "forms": ["Sache"],
+            "note": "Feminine, die Sache — a matter, a business, a case. Die Sache ist … is the ordinary way to introduce a problem, and no object need be involved."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English thing does both jobs, so learners use Ding for everything and produce Das ist eine schwierige Ding about a situation. If you can pick it up it is a Ding; if you can only discuss it it is a Sache.",
+      "sound": "das ist zo ET-vas vee yn ding fuer das bue-ROH — the three words of the frame run together into one fast so-et-was-wie, which is how it is actually said.",
+      "variations": [
+        {
+          "display": "Das ist eine Sache für das Büro.",
+          "cue": "That is a matter for the office.",
+          "changed": "Ding becomes Sache and the sentence stops being about an object. Now it is a piece of business somebody has to deal with."
+        }
+      ],
+      "mistake": {
+        "display": "Das ist so etwas wie Ding für das Büro",
+        "why": "The article has been dropped. so etwas wie leaves the noun's article exactly where it was — so etwas wie ein Ding. It is eine Art that takes the bare noun, not this frame."
+      },
+      "usage": "Describing an object whose name you never learned. Say it while pointing, and a German speaker will supply the noun without being asked.",
+      "register": "neutral",
+      "mnemonic": "A Ding you can drop on your foot; a Sache you can only argue about."
+    },
+    {
+      "id": "L5-M8-S04",
+      "display": "Das ist eine Art Wörterbuch für Kinder.",
+      "cue": "It is a sort of dictionary for children.",
+      "literal": "That is a kind dictionary for children.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eine Art",
+            "cue": "a kind of, a sort of",
+            "tag": "delta",
+            "forms": ["eine Art"],
+            "note": "Takes the following noun BARE — eine Art Wörterbuch, no second article and no von. That missing article is the whole difference from so etwas wie."
+          },
+          {
+            "display": "Art",
+            "cue": "kind, type, manner",
+            "tag": "free",
+            "forms": ["Art"],
+            "note": "Feminine, die Art. On its own it is a type or a way of doing something — Das ist seine Art is that is how he is."
+          },
+          {
+            "display": "Wörterbuch",
+            "cue": "dictionary",
+            "tag": "free",
+            "forms": ["Wörterbuch"],
+            "note": "Neuter, and built on the plural Wörter — individual words. L4-M10 owns Wort and Worte, and this compound is the one place the other plural surfaces."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English a kind of takes an article after it — a kind of A dictionary is wrong in English too, but a kind of dictionary maps onto eine Art von Wörterbuch, which a German would rarely say. The bare noun is the idiomatic form.",
+      "sound": "das ist Y-nuh art VUER-ter-bookh — Wörterbuch has its stress on the first syllable and the ö is the front-rounded vowel, VUER, not VOR.",
+      "variations": [
+        {
+          "display": "Das ist eine Art Buch.",
+          "cue": "It is a sort of book.",
+          "changed": "The compound goes and the frame stands on the plainest noun there is. This is the version to reach for when even the compound is missing."
+        }
+      ],
+      "mistake": {
+        "display": "Das ist eine Art von einem Wörterbuch für Kinder",
+        "why": "Both the von and the article are English habits. eine Art is followed directly by the bare noun: eine Art Wörterbuch."
+      },
+      "usage": "Defining something by the category it is nearly in. It is the frame a German speaker uses about a thing they know the name of but think you do not.",
+      "register": "neutral",
+      "mnemonic": "eine Art strips the article; so etwas wie leaves it alone."
+    },
+    {
+      "id": "L5-M8-S05",
+      "display": "Können Sie das bitte wiederholen?",
+      "cue": "Could you repeat that, please?",
+      "literal": "Can you that please repeat?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wiederholen",
+            "cue": "to repeat",
+            "tag": "free",
+            "forms": ["wiederholen"],
+            "note": "wieder plus holen, and the ie is the again-word of L3-M10 — not the wider of widerlegen. Inseparable here, so it stays whole at the end."
+          },
+          {
+            "display": "langsamer",
+            "cue": "more slowly",
+            "tag": "delta",
+            "forms": ["langsamer"],
+            "note": "The comparative of L4-M1's langsam, and the comparative is the point: you are asking for slower than they are going, not for slow."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "Asking Können Sie bitte langsam sprechen? asks somebody to speak slowly in general, which sounds like a comment on their speech. langsamer asks them to go slower than they just were, which is a request about this sentence.",
+      "sound": "KUEN-nen zee das BIT-tuh vee-der-HOH-len — wiederholen keeps its stress on the HOH, which is what marks it as inseparable: the separable one would stress the wieder.",
+      "variations": [
+        {
+          "display": "Können Sie bitte langsamer sprechen?",
+          "cue": "Could you speak more slowly, please?",
+          "changed": "You stop asking for the sentence again and ask for a different speed. Ask for both at once and you get neither."
+        }
+      ],
+      "mistake": {
+        "display": "Können Sie das bitte wieder holen?",
+        "why": "Written as two words it means fetch it again, which is a real sentence about an object. The repeating verb is one word, wiederholen, with the stress at the back."
+      },
+      "usage": "The first move when you missed a whole sentence rather than a word. Follow it with the part you did get, or you will hear the same sentence at the same speed.",
+      "register": "formal",
+      "mnemonic": "wieder-HOLEN, stress at the back, means say it again; WIEDER holen, stress at the front, means go and get it again."
+    },
+    {
+      "id": "L5-M8-S06",
+      "display": "Wie bitte? Können Sie das bitte buchstabieren?",
+      "cue": "Sorry? Could you spell that, please?",
+      "literal": "How please? Can you that please spell?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Wie bitte",
+            "cue": "sorry?, pardon?",
+            "tag": "interference",
+            "forms": ["Wie bitte"],
+            "note": "Two words, learned whole, and not an apology at all — it shares nothing with Es tut mir leid. Said flat rather than rising, it becomes a challenge."
+          },
+          {
+            "display": "buchstabieren",
+            "cue": "to spell out",
+            "tag": "free",
+            "forms": ["buchstabieren"],
+            "note": "From Buchstabe, a letter of the alphabet. Asking for a name to be spelled is completely ordinary in German and is not treated as rude."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "English Sorry? is an apology used as a repair, so learners reach for Entschuldigung and then have to add a question. Wie bitte? is already the question, and it is the shortest complete repair signal German has.",
+      "sound": "vee BIT-tuh? KUEN-nen zee das BIT-tuh bookh-shtah-BEE-ren — Wie bitte rises at the end; said falling it means I cannot believe you just said that.",
+      "variations": [
+        {
+          "display": "Wie bitte? Das habe ich nicht verstanden.",
+          "cue": "Sorry? I did not catch that.",
+          "changed": "The signal is followed by a statement of the trouble instead of a request. It is softer, and it invites the other speaker to choose the repair."
+        }
+      ],
+      "mistake": {
+        "display": "Entschuldigung bitte, wie?",
+        "why": "The two halves have been assembled from English. The German repair signal is fixed in the order Wie bitte, and Entschuldigung on its own means excuse me, not pardon."
+      },
+      "usage": "The signal step, said the instant you lose the thread. Follow it with a locating question or you will get the same sentence back unchanged.",
+      "register": "formal",
+      "mnemonic": "Wie bitte rising is pardon; Wie bitte falling is I beg your pardon."
+    },
+    {
+      "id": "L5-M8-S07",
+      "display": "Ich meine nicht das Buch, sondern das Wort.",
+      "cue": "I do not mean the book, but the word.",
+      "literal": "I mean not the book, but-rather the word.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ich meine",
+            "cue": "I mean",
+            "tag": "interference",
+            "forms": ["Ich meine"],
+            "note": "Two words, one row, because bare meine is L2-M2's possessive MY and the verb is L2-M8's meinen. Taken whole, the trap cannot fire."
+          },
+          {
+            "display": "gemeint",
+            "cue": "meant",
+            "tag": "free",
+            "forms": ["gemeint"],
+            "note": "The past participle of meinen, and it lives in one phrase above all: So habe ich das nicht gemeint — that is not how I meant it."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "meine and meinen look like one word and are two. Ich meine das Buch is I mean the book; meine Bücher is my books. Learn the phrase Ich meine as a unit and you will never have to decide which one you are writing.",
+      "sound": "ikh MY-nuh nikht das bookh, ZON-dern das vort — sondern takes a small stress of its own, because it is the word that carries the correction.",
+      "variations": [
+        {
+          "display": "So habe ich das nicht gemeint.",
+          "cue": "That is not how I meant it.",
+          "changed": "The correction becomes an apology for the misunderstanding. This is the sentence for after the damage, where the first one is for before it."
+        }
+      ],
+      "mistake": {
+        "display": "Ich meine nicht das Buch, aber das Wort",
+        "why": "aber contrasts two true things; sondern replaces a rejected one. After a negation the word is always sondern, which is L4-M6's rule arriving where it matters most."
+      },
+      "usage": "The reformulating step — the one that ends the repair. It only works after an explicit nicht, so say what you do not mean first.",
+      "register": "neutral",
+      "mnemonic": "nicht … sondern is the repair pair: cross one out, put the other in."
+    },
+    {
+      "id": "L5-M8-S08",
+      "display": "Verzeihung, das war wohl ein Missverständnis.",
+      "cue": "I beg your pardon, that was presumably a misunderstanding.",
+      "literal": "Pardon, that was presumably a misunderstanding.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Verzeihung",
+            "cue": "pardon, forgive me",
+            "tag": "free",
+            "forms": ["Verzeihung"],
+            "note": "A shade more formal and more apologetic than L2-M1's Entschuldigung, and it fits a mistake you actually made rather than a shoulder you brushed."
+          },
+          {
+            "display": "Missverständnis",
+            "cue": "misunderstanding",
+            "tag": "free",
+            "forms": ["Missverständnis"],
+            "note": "Neuter, and built straight on L4-M7's Verständnis with the miss- prefix. Naming it as a Missverständnis gives it two authors, which is the polite reading."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English that was a misunderstanding often means you misunderstood. German ein Missverständnis is genuinely two-sided and is the standard way of taking half the blame — so it de-escalates, where the English can escalate.",
+      "sound": "fair-TSY-oong, das vahr vohl yn MIS-fair-shtent-nis — Missverständnis is long and its stress stays on the MISS, which is what makes it audible in a fast apology.",
+      "variations": [
+        {
+          "display": "Verzeihung, das war ein Missverständnis.",
+          "cue": "I beg your pardon, that was a misunderstanding.",
+          "changed": "wohl drops out and the hedge goes with it. Now you are asserting it rather than offering it, which is a shade less generous."
+        }
+      ],
+      "mistake": {
+        "display": "Verzeihung, Sie haben das falsch verstanden",
+        "why": "Grammatical, and the wrong register for this module: it hands the mistake to the other speaker. ein Missverständnis leaves it between you, which is what keeps the conversation going."
+      },
+      "usage": "Undoing a misunderstanding you caused, or one you are willing to own half of. On the telephone it is the standard opening of the repair.",
+      "register": "formal",
+      "mnemonic": "A Missverständnis has two people in it — that is why it is the polite word."
+    },
+    {
+      "id": "L5-M8-S09",
+      "display": "Können Sie mir das bitte erklären?",
+      "cue": "Could you explain that to me, please?",
+      "literal": "Can you to-me that please explain?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "erklären",
+            "cue": "to explain",
+            "tag": "free",
+            "forms": ["erklären"],
+            "note": "Built on klar — to make clear. It takes a dative person and an accusative thing: mir das erklären, in that order when both are pronouns and nouns."
+          },
+          {
+            "display": "Erklärung",
+            "cue": "explanation",
+            "tag": "free",
+            "forms": ["Erklärung"],
+            "note": "Feminine, die Erklärung, like every -ung noun. It also means a formal statement, which is why an Erklärung can be something a company issues."
+          },
+          {
+            "display": "ähnlich",
+            "cue": "similar",
+            "tag": "free",
+            "forms": ["ähnlich"],
+            "note": "Takes the dative of what a thing is similar TO, and pairs with wie in a comparison: ähnlich wie ein Buch. The most useful adjective in a paraphrase."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "erklären needs mir. English explain that to me can drop to me in a hurry, but German Können Sie das erklären? asks the room rather than asking you to explain it to the speaker, and it sounds noticeably colder.",
+      "sound": "KUEN-nen zee meer das BIT-tuh air-KLAIR-en — erklären has its stress on the KLÄR, the same syllable as the klar it is built on.",
+      "variations": [
+        {
+          "display": "Ihre Erklärung ist sehr gut.",
+          "cue": "Your explanation is very good.",
+          "changed": "The request becomes a thank-you. The verb has turned into an -ung noun, which is the pattern behind Missverständnis and Andeutung too."
+        }
+      ],
+      "mistake": {
+        "display": "Können Sie mir das bitte erklären, was das bedeutet?",
+        "why": "Two questions welded together. Either ask for the explanation or ask what it means — the was-clause here has no room to attach to, because das has already filled the object slot."
+      },
+      "usage": "The heaviest of the repair moves, and the one that costs the other speaker the most time. Save it for when a translation genuinely would not help.",
+      "register": "formal",
+      "mnemonic": "erklären makes it klar; die Erklärung is the klar thing you get back."
+    },
+    {
+      "id": "L5-M8-S10",
+      "display": "Keine Ahnung, wie man dieses Wort benutzt.",
+      "cue": "No idea how you use this word.",
+      "literal": "No idea, how one this word uses.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "keine Ahnung",
+            "cue": "no idea",
+            "tag": "free",
+            "forms": ["keine Ahnung"],
+            "note": "Two words, learned whole, and a complete sentence on its own. It is casual but not rude, and it is what a German says instead of Ich weiß es nicht."
+          },
+          {
+            "display": "benutzen",
+            "cue": "to use",
+            "tag": "free",
+            "forms": ["benutzen", "benutzt"],
+            "note": "The everyday verb for using an object or a word. Not separable, so in this clause it goes last: wie man dieses Wort benutzt."
+          },
+          {
+            "display": "übersetzen",
+            "cue": "to translate",
+            "tag": "free",
+            "forms": ["übersetzen"],
+            "note": "Inseparable with the stress on the SETZ — ich übersetze. The separable twin, stressed on the ÜBER, means to ferry somebody across a river."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "wie here opens a subordinate clause, so the verb goes to the very end — wie man dieses Wort benutzt. English how you use this word keeps the verb in the middle, and the habit survives the translation more often than any other in this module.",
+      "sound": "KY-nuh AH-noong, vee man DEE-zes vort buh-NUTST — Keine Ahnung is said fast and flat, and the pause before wie is what marks the clause boundary.",
+      "variations": [
+        {
+          "display": "Keine Ahnung, ich muss das Wort übersetzen.",
+          "cue": "No idea, I will have to translate the word.",
+          "changed": "The admission is followed by a plan instead of a question. Note the main clause: übersetzen goes to the end because muss is holding second place."
+        }
+      ],
+      "mistake": {
+        "display": "Keine Ahnung, wie man benutzt dieses Wort",
+        "why": "The verb has stayed in the middle where English keeps it. wie opens a subordinate clause, so benutzt goes to the very end, behind the object."
+      },
+      "usage": "Admitting the gap out loud, which is what keeps a conversation going rather than stalling it. Keine Ahnung is fine with a colleague and a shade too flat for a stranger in a shop.",
+      "register": "informal",
+      "mnemonic": "Keine Ahnung, then the clause — and in the clause the verb goes last."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L5-M8-C01", "display": "Wie heißt das auf Deutsch?", "cue": "What is that called in German?" },
+    { "id": "L5-M8-C02", "display": "Was bedeutet das?", "cue": "What does that mean?" },
+    { "id": "L5-M8-C03", "display": "Das ist so etwas wie ein Buch.", "cue": "It is something like a book." },
+    { "id": "L5-M8-C04", "display": "Das ist eine Art Wörterbuch.", "cue": "It is a sort of dictionary." },
+    { "id": "L5-M8-C05", "display": "Diese Art ist neu für mich.", "cue": "This kind is new to me." },
+    { "id": "L5-M8-C06", "display": "Können Sie das bitte wiederholen?", "cue": "Could you repeat that, please?" },
+    { "id": "L5-M8-C07", "display": "Wie bitte? Ich verstehe das Wort nicht.", "cue": "Sorry? I do not understand the word." },
+    { "id": "L5-M8-C08", "display": "Ich meine nicht das Buch, sondern das Wort.", "cue": "I do not mean the book, but the word." },
+    { "id": "L5-M8-C09", "display": "Verzeihung, das war ein Missverständnis.", "cue": "I beg your pardon, that was a misunderstanding." },
+    { "id": "L5-M8-C10", "display": "Das ist ähnlich wie ein Buch.", "cue": "That is similar to a book." },
+    { "id": "L5-M8-C11", "display": "Können Sie mir das bitte erklären?", "cue": "Could you explain that to me, please?" },
+    { "id": "L5-M8-C12", "display": "Keine Ahnung, ich muss das Wort übersetzen.", "cue": "No idea, I will have to translate the word." }
+  ],
+  "exitTest": { "generateCount": 2, "comprehendCount": 4 }
+}

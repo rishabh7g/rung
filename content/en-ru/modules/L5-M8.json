@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M8",
+  "title": "When words run out",
+  "job": "Paraphrase, ask what something means, repair a misunderstanding",
+  "prerequisites": [
+    "L5-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "Éhto takáya shtúka + , + kotóraya + <clause>",
+      "Chto znáchit + <word> + ?",
+      "Kak nazyváyetsya + <N-nominative> + ?",
+      "Éhto chto-to vróde + <N-genitive>",
+      "To yest' + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE INDEFINITE PARTICLES, and this is the last piece of grammar the ladder teaches. -to marks a thing that EXISTS but is unidentified to the speaker: Ya chto-to slyshal, I heard something — there was a definite something. -nibud' marks a thing not yet picked out at all, which is why it lives in questions, requests and futures: Skazhite chto-nibud', say anything. The series is regular across chto, kto and gde, so one law buys six words."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CIRCUMLOCUTION FRAME. Eto takaya shtuka, kotoraya … is L3-M9's relative pronoun doing the job it was really bought for: describing the thing when the name for it will not come. takaya and kotoraya agree with the noun, so a feminine shtuka takes both in -aya. L3-M9 opened this pronoun and wrote every form of it except this one, so the feminine nominative gets its own row here and points back there."
+    },
+    {
+      "tag": "delta",
+      "text": "THE REPAIR MOVES, in order of how much they undo. to yest' restates what you just said (that is …). ya imeyu v vidu names what you MEANT — a frozen four-word phrase built on having in view, and vidu is a form that exists nowhere else. drugimi slovami reaches for a whole second phrasing. Povtorite, pozhaluysta hands the turn back. None of them is an apology and none needs one."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH HELPS MORE HERE THAN ANYWHERE IN THE LEVEL: some- and any- split along nearly the same line as -to and -nibud' — something happened against did anything happen — so the mapping is free. It fails twice. Under a negative English says any (I didn't see anything) where Russian takes its negative series and NOT -nibud'. And English I mean is a verb of meaning, while ya imeyu v vidu is frozen, so the word-for-word attempt produces nothing at all."
+    },
+    {
+      "tag": "free",
+      "text": "THE SOCIAL RULE, which is the one that keeps a conversation going. An English speaker apologises before asking what a word means. In Russian the bare question is normal — Chto znachit eto slovo? — and an apology in front of it reads as distress rather than as manners. Ask, get the word, carry on."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M8-S01",
+      "display": "Éhto takáya shtúka, kotóraya vsegdá rabótayet.",
+      "script": "Это такая штука, которая всегда работает.",
+      "cue": "It's the sort of thing that always works.",
+      "literal": "This such thing, which always works.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "takáya",
+            "script": "такая",
+            "cue": "such a; this sort of",
+            "tag": "free",
+            "forms": [
+              "takáya"
+            ],
+            "note": "Such a, of a feminine noun. It sets up the description that follows: takáya shtúka, kotóraya … — the sort of thing that … ."
+          },
+          {
+            "display": "shtúka",
+            "script": "штука",
+            "cue": "thing; thingummy",
+            "tag": "free",
+            "forms": [
+              "shtúka",
+              "shtúki"
+            ],
+            "note": "A thing, when you cannot name it. Feminine, slightly casual, and the single most useful noun a learner without a vocabulary can have."
+          },
+          {
+            "display": "kotóraya",
+            "script": "которая",
+            "cue": "which; that (feminine)",
+            "tag": "free",
+            "forms": [
+              "kotóraya"
+            ],
+            "note": "The feminine nominative of L3-M9's kotóryy. It agrees with the noun it describes, not with the clause after it, so a feminine shtúka takes kotóraya."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "English can leave the relative pronoun out — the thing that works, the thing works. Russian cannot: kotóraya is compulsory and it must agree with shtúka.",
+      "sound": "shtúka is SHTOO-ka. kotóraya is ka-TO-ra-ya, stressed on the second syllable, and the ending is said -aya, two vowels.",
+      "variations": [
+        {
+          "display": "Éhto takáya shtúka.",
+          "script": "Это такая штука.",
+          "cue": "It's a thing like this.",
+          "changed": "the frame with the description cut off, which leaves the listener nothing"
+        },
+        {
+          "display": "Éhto takáya shtúka, kotóraya rabótayet.",
+          "script": "Это такая штука, которая работает.",
+          "cue": "It's the sort of thing that works.",
+          "changed": "the relative clause cut to its shortest"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto takóy shtúka, kotóryy vsegdá rabótayet.",
+        "script": "Это такой штука, который всегда работает.",
+        "why": "masculine forms on a feminine noun. shtúka is feminine, so both the setup and the pronoun end in -aya: takáya shtúka, kotóraya."
+      },
+      "usage": "The move that keeps a conversation alive when the noun will not come: describe it instead.",
+      "register": "neutral",
+      "mnemonic": "shtúka plus kotóraya buys you any noun you have forgotten."
+    },
+    {
+      "id": "L5-M8-S02",
+      "display": "Chto znáchit éhto slóvo?",
+      "script": "Что значит это слово?",
+      "cue": "What does this word mean?",
+      "literal": "What means this word?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chto znáchit",
+            "script": "что значит",
+            "cue": "what does … mean",
+            "tag": "free",
+            "forms": [
+              "chto znáchit"
+            ],
+            "note": "What does … mean. Taken whole, because a tap on znáchit alone would give L4-M2's so-then; inside this pair the verb means mean."
+          },
+          {
+            "display": "slóvo",
+            "script": "слово",
+            "cue": "word",
+            "tag": "free",
+            "forms": [
+              "slóvo"
+            ],
+            "note": "A word, neuter. Front-stressed in the singular, SLO-va; the plural slová moves the stress to the end."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "English asks what does X mean with a do. Russian has no auxiliary here, and no apology in front: the bare question is the polite one.",
+      "sound": "znáchit is ZNA-chit, front-stressed. The whole question falls at the end like a statement.",
+      "variations": [
+        {
+          "display": "Chto znáchit shtúka?",
+          "script": "Что значит штука?",
+          "cue": "What does shtuka mean?",
+          "changed": "the same question about a word from this module"
+        },
+        {
+          "display": "Ya ne znáyu éhto slóvo.",
+          "script": "Я не знаю это слово.",
+          "cue": "I don't know this word.",
+          "changed": "saying you lack the word instead of asking what it is"
+        }
+      ],
+      "mistake": {
+        "display": "Chto znáchit éhto slóva?",
+        "script": "Что значит это слова?",
+        "why": "slóva is the plural, or the genitive of one word. The question asks about a single word standing in the nominative: éhto slóvo."
+      },
+      "usage": "Asking outright, mid-conversation, with no apology and no metalanguage.",
+      "register": "neutral",
+      "mnemonic": "Chto znáchit … ? is four syllables and buys you any word in the language."
+    },
+    {
+      "id": "L5-M8-S03",
+      "display": "Kak éhto nazyváyetsya po-rússki?",
+      "script": "Как это называется по-русски?",
+      "cue": "What's this called in Russian?",
+      "literal": "How this calls-itself in-Russian?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nazyváyetsya",
+            "script": "называется",
+            "cue": "is called",
+            "tag": "free",
+            "forms": [
+              "nazyváyetsya"
+            ],
+            "note": "Is called. Reflexive: the thing calls ITSELF, so no one is doing the calling and the -sya is not optional."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "English asks what is it called, with a passive. Russian asks HOW it calls itself — kak, not chto, and a reflexive verb with nobody doing the calling.",
+      "sound": "nazyváyetsya is na-zy-VA-yet-sa; the final -tsya is said -tsa, with no y in it.",
+      "variations": [
+        {
+          "display": "Kak éhto nazyváyetsya?",
+          "script": "Как это называется?",
+          "cue": "What's this called?",
+          "changed": "the question without po-rússki on the end"
+        },
+        {
+          "display": "Kak nazyváyetsya éhta shtúka?",
+          "script": "Как называется эта штука?",
+          "cue": "What's this thing called?",
+          "changed": "the thing named rather than pointed at"
+        }
+      ],
+      "mistake": {
+        "display": "Kak éhto nazyváyet po-rússki?",
+        "script": "Как это называет по-русски?",
+        "why": "the -sya dropped. Without it the verb needs somebody doing the calling; with it the thing calls itself, which is what the question is asking."
+      },
+      "usage": "Pointing at an object and getting its name. The most economical sentence in the module.",
+      "register": "neutral",
+      "mnemonic": "Russian asks HOW a thing calls itself: kak … nazyváyetsya."
+    },
+    {
+      "id": "L5-M8-S04",
+      "display": "Éhto chto-to vróde rabóty.",
+      "script": "Это что-то вроде работы.",
+      "cue": "It's a sort of job.",
+      "literal": "This something like of-work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chto-to",
+            "script": "что-то",
+            "cue": "something",
+            "tag": "free",
+            "forms": [
+              "chto-to"
+            ],
+            "note": "Something that exists but that you cannot identify. The -to half marks the existence; drop the hyphen and you have two unrelated words."
+          },
+          {
+            "display": "vróde",
+            "script": "вроде",
+            "cue": "a sort of; something like",
+            "tag": "free",
+            "forms": [
+              "vróde"
+            ],
+            "note": "A sort of, and it takes the GENITIVE: vróde rabóty. It hedges the comparison, which is exactly what you want when the real word is missing."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English a sort of takes a plain noun. vróde takes the GENITIVE, so rabóta becomes rabóty — the hedge costs an ending.",
+      "sound": "vróde is VRO-dye, front-stressed. chto-to is SHTO-ta, with the chto said sh and the clitic unstressed.",
+      "variations": [
+        {
+          "display": "Éhto vróde rabóty.",
+          "script": "Это вроде работы.",
+          "cue": "It's a bit like work.",
+          "changed": "the hedge without chto-to in front of it"
+        },
+        {
+          "display": "Ya chto-to slýshal.",
+          "script": "Я что-то слышал.",
+          "cue": "I heard something.",
+          "changed": "the same particle marking a real something the speaker cannot name"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto chto-to vróde rabóta.",
+        "script": "Это что-то вроде работа.",
+        "why": "the dictionary form left standing. vróde governs the genitive, so it is vróde rabóty, the same ending L5-M6's v techéniye takes."
+      },
+      "usage": "Naming a thing by what it resembles when the real word is gone.",
+      "register": "neutral",
+      "mnemonic": "vróde eats a genitive: vróde rabóty, never vróde rabóta."
+    },
+    {
+      "id": "L5-M8-S05",
+      "display": "To yest' ya ne ponyál.",
+      "script": "То есть я не понял.",
+      "cue": "That is — I didn't get it.",
+      "literal": "That is I not understood.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "to yest'",
+            "script": "то есть",
+            "cue": "that is; I mean",
+            "tag": "free",
+            "forms": [
+              "to yest'"
+            ],
+            "note": "That is. Two owned words taken whole, because a tap on yest' alone would give L1-M7's there is, which is true of the word and false of the pair."
+          },
+          {
+            "display": "ponyál",
+            "script": "понял",
+            "cue": "understood; got it",
+            "tag": "free",
+            "forms": [
+              "ponyál"
+            ],
+            "note": "Got it, past tense, masculine. A woman says ponyalá. Ya ne ponyál is the ordinary way to say that a sentence did not land."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "The first word is to, not éhto. They look alike on the page and only to belongs in this pair; éhto yest' is not a phrase.",
+      "sound": "to yest' is said ta-YEST', run together, with the stress on the second word.",
+      "variations": [
+        {
+          "display": "To yest' éhto trúdno.",
+          "script": "То есть это трудно.",
+          "cue": "That is, it's hard.",
+          "changed": "the repair restating a fact instead of confessing"
+        },
+        {
+          "display": "Ya ne ponyál.",
+          "script": "Я не понял.",
+          "cue": "I didn't get that.",
+          "changed": "the confession without the repair marker in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto yest' ya ne ponyál.",
+        "script": "Это есть я не понял.",
+        "why": "éhto for to. The pair is frozen as to yest'; éhto yest' would be this exists, and the repair meaning is gone."
+      },
+      "usage": "Repairing your own sentence, or admitting the other person's did not land.",
+      "register": "informal",
+      "mnemonic": "to yest' is one phrase: a tap on yest' alone gives you there is, which is not what you said."
+    },
+    {
+      "id": "L5-M8-S06",
+      "display": "Ya iméyu v vidú, chto éhto trúdno.",
+      "script": "Я имею в виду, что это трудно.",
+      "cue": "I mean that it's hard.",
+      "literal": "I have in view, that this hard.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ya iméyu v vidú",
+            "script": "я имею в виду",
+            "cue": "I mean",
+            "tag": "free",
+            "forms": [
+              "ya iméyu v vidú"
+            ],
+            "note": "I mean — four words frozen into one phrase, literally I have in view. vidú is a form that exists nowhere else, and the phrase never breaks apart."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English I mean is one verb, so the word-for-word attempt reaches for a verb Russian does not use this way. The Russian is four frozen words about having something in view.",
+      "sound": "The phrase runs as ya i-MYE-yu v vi-DOO, with the stress at the very end on vidú.",
+      "variations": [
+        {
+          "display": "Ya iméyu v vidú éhto slóvo.",
+          "script": "Я имею в виду это слово.",
+          "cue": "I mean this word.",
+          "changed": "a noun after the phrase instead of a clause"
+        },
+        {
+          "display": "Ya iméyu v vidú, chto éhto vázhno.",
+          "script": "Я имею в виду, что это важно.",
+          "cue": "I mean that it's important.",
+          "changed": "the same frame over a different claim"
+        }
+      ],
+      "mistake": {
+        "display": "Ya iméyu v vid, chto éhto trúdno.",
+        "script": "Я имею в вид, что это трудно.",
+        "why": "vid for vidú. The -ú ending here exists only inside this phrase; the dictionary form never appears in it, and the phrase never comes apart."
+      },
+      "usage": "Correcting a misunderstanding about what you meant, rather than about what you said.",
+      "register": "neutral",
+      "mnemonic": "Russian does not mean things, it has them in view: iméyu v vidú."
+    },
+    {
+      "id": "L5-M8-S07",
+      "display": "Drugími slovámi, éhto óchen' prósto.",
+      "script": "Другими словами, это очень просто.",
+      "cue": "In other words, it's very simple.",
+      "literal": "By-other by-words, this very simple.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "drugími slovámi",
+            "script": "другими словами",
+            "cue": "in other words",
+            "tag": "free",
+            "forms": [
+              "drugími slovámi"
+            ],
+            "note": "In other words. Both words are instrumental plural and they agree, so it is drugími slovámi and never drugíye slovámi."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "English in other words is three words that never change. The Russian is two instrumentals that agree with each other, so getting one ending wrong breaks the pair.",
+      "sound": "drugími slovámi is dru-GEE-mi sla-VA-mi, both words stressed on their second-to-last syllable.",
+      "variations": [
+        {
+          "display": "Drugími slovámi, éhto trúdno.",
+          "script": "Другими словами, это трудно.",
+          "cue": "In other words, it's hard.",
+          "changed": "the same repair with the opposite verdict"
+        },
+        {
+          "display": "Éhto óchen' prósto.",
+          "script": "Это очень просто.",
+          "cue": "It's very simple.",
+          "changed": "the restatement alone, with nothing marking it as one"
+        }
+      ],
+      "mistake": {
+        "display": "Drugíye slovámi, éhto óchen' prósto.",
+        "script": "Другие словами, это очень просто.",
+        "why": "drugíye is the nominative plural. Both halves of this phrase are instrumental and must match: drugími slovámi."
+      },
+      "usage": "Reaching for a second phrasing when the first one clearly failed.",
+      "register": "neutral",
+      "mnemonic": "Two instrumentals that travel together: drugími slovámi."
+    },
+    {
+      "id": "L5-M8-S08",
+      "display": "Ya ne rasslýshal, povtoríte, pozháluysta.",
+      "script": "Я не расслышал, повторите, пожалуйста.",
+      "cue": "I didn't catch that, could you say it again.",
+      "literal": "I not caught, repeat, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rasslýshal",
+            "script": "расслышал",
+            "cue": "caught (what was said)",
+            "tag": "free",
+            "forms": [
+              "rasslýshal"
+            ],
+            "note": "Caught what was said. The ras- prefix is the difference from slýshal: not hearing at all is slýshal, not catching it in a noisy room is rasslýshal."
+          },
+          {
+            "display": "povtoríte",
+            "script": "повторите",
+            "cue": "say it again",
+            "tag": "free",
+            "forms": [
+              "povtoríte"
+            ],
+            "note": "Say it again — the polite plural imperative. With pozháluysta it is a request; without it, still perfectly civil."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "English apologises first — sorry, I didn't catch that. In Russian the bare statement plus the request is normal, and an apology in front of it sounds like distress.",
+      "sound": "rasslýshal is ras-SLY-shal with a doubled s you can hear. povtoríte is pav-ta-REE-tye.",
+      "variations": [
+        {
+          "display": "Povtoríte, pozháluysta.",
+          "script": "Повторите, пожалуйста.",
+          "cue": "Say that again, please.",
+          "changed": "the request alone, which is enough by itself"
+        },
+        {
+          "display": "Ya ne rasslýshal.",
+          "script": "Я не расслышал.",
+          "cue": "I didn't catch that.",
+          "changed": "the reason alone, which a Russian already hears as the request"
+        }
+      ],
+      "mistake": {
+        "display": "Ya ne slýshal, povtoríte, pozháluysta.",
+        "script": "Я не слышал, повторите, пожалуйста.",
+        "why": "slýshal says you did not hear at all, which in a conversation is nearly an accusation. rasslýshal says the room was noisy, which is what you mean."
+      },
+      "usage": "Keeping your turn when the sentence arrived and did not survive the journey.",
+      "register": "neutral",
+      "mnemonic": "ras- is the noisy room: slýshal is deafness, rasslýshal is a bad line."
+    },
+    {
+      "id": "L5-M8-S09",
+      "display": "Skazhíte chto-nibud', pozháluysta.",
+      "script": "Скажите что-нибудь, пожалуйста.",
+      "cue": "Say something, please.",
+      "literal": "Say anything, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chto-nibud'",
+            "script": "что-нибудь",
+            "cue": "anything; something or other",
+            "tag": "free",
+            "forms": [
+              "chto-nibud'"
+            ],
+            "note": "Anything at all, nothing picked out yet. It belongs in questions, requests and futures, and never after a negative."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English any under a negative — I didn't say anything — tempts a learner into ne … chto-nibud'. Russian never does that; -nibud' lives in questions, requests and futures only.",
+      "sound": "chto-nibud' is shto-ni-BOOD', stressed at the end, and the chto is said sh as always.",
+      "variations": [
+        {
+          "display": "Skazhíte chto-nibud'.",
+          "script": "Скажите что-нибудь.",
+          "cue": "Say something.",
+          "changed": "the request without pozháluysta"
+        },
+        {
+          "display": "Ya chto-to skazál.",
+          "script": "Я что-то сказал.",
+          "cue": "I said something.",
+          "changed": "the -to twin, where the thing said exists and is simply not named"
+        }
+      ],
+      "mistake": {
+        "display": "Ya ne skazál chto-nibud'.",
+        "script": "Я не сказал что-нибудь.",
+        "why": "English any dragged under a negative. A negated Russian clause takes the negative series instead; -nibud' after ne is not said at all."
+      },
+      "usage": "Asking somebody to speak when it does not matter what they say.",
+      "register": "neutral",
+      "mnemonic": "-nibud' asks, -to tells: Skazhíte chto-nibud', Ya chto-to skazál."
+    },
+    {
+      "id": "L5-M8-S10",
+      "display": "Ya gde-to éhto slýshal, i kto-to éhto skazál.",
+      "script": "Я где-то это слышал, и кто-то это сказал.",
+      "cue": "I heard that somewhere, and somebody said it.",
+      "literal": "I somewhere this heard, and somebody this said.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gde-to",
+            "script": "где-то",
+            "cue": "somewhere",
+            "tag": "free",
+            "forms": [
+              "gde-to"
+            ],
+            "note": "Somewhere — a real place you cannot name. L1-M7's gde with the same -to clitic, and the whole is one token."
+          },
+          {
+            "display": "kto-to",
+            "script": "кто-то",
+            "cue": "somebody",
+            "tag": "free",
+            "forms": [
+              "kto-to"
+            ],
+            "note": "Somebody — a real person you cannot name. The last member of the series, and it takes the same endings as kto."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English somewhere and anywhere are close enough to blur. Russian keeps them apart by whether the thing EXISTS: a place you were in is gde-to, never gde-nibud'.",
+      "sound": "gde-to is gdye-TA and kto-to is KTO-ta; in both, the clitic is unstressed and the host keeps its weight.",
+      "variations": [
+        {
+          "display": "Ya gde-to éhto slýshal.",
+          "script": "Я где-то это слышал.",
+          "cue": "I've heard that somewhere.",
+          "changed": "the first half, with the place left unidentified"
+        },
+        {
+          "display": "Kto-to éhto skazál.",
+          "script": "Кто-то это сказал.",
+          "cue": "Somebody said it.",
+          "changed": "the second half, where the somebody exists but is not named"
+        }
+      ],
+      "mistake": {
+        "display": "Ya gde-nibud' éhto slýshal.",
+        "script": "Я где-нибудь это слышал.",
+        "why": "-nibud' in a past statement. You were somewhere when you heard it, so the place exists and takes -to; -nibud' would mean anywhere at all, which cannot be true of something that happened."
+      },
+      "usage": "Reporting a half-remembered fact without pretending to a source you do not have.",
+      "register": "neutral",
+      "mnemonic": "It happened, so it happened somewhere: past tense takes -to."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M8-C01",
+      "display": "Éhto takáya shtúka, kotóraya vsegdá rabótayet.",
+      "script": "Это такая штука, которая всегда работает.",
+      "cue": "It's the sort of thing that always works."
+    },
+    {
+      "id": "L5-M8-C02",
+      "display": "Chto znáchit éhto slóvo?",
+      "script": "Что значит это слово?",
+      "cue": "What does this word mean?"
+    },
+    {
+      "id": "L5-M8-C03",
+      "display": "Kak éhto nazyváyetsya?",
+      "script": "Как это называется?",
+      "cue": "What's this called?"
+    },
+    {
+      "id": "L5-M8-C04",
+      "display": "Éhto chto-to vróde rabóty.",
+      "script": "Это что-то вроде работы.",
+      "cue": "It's a sort of job."
+    },
+    {
+      "id": "L5-M8-C05",
+      "display": "To yest' ya ne ponyál.",
+      "script": "То есть я не понял.",
+      "cue": "That is — I didn't get it."
+    },
+    {
+      "id": "L5-M8-C06",
+      "display": "Ya iméyu v vidú éhto slóvo.",
+      "script": "Я имею в виду это слово.",
+      "cue": "I mean this word."
+    },
+    {
+      "id": "L5-M8-C07",
+      "display": "Drugími slovámi, éhto óchen' prósto.",
+      "script": "Другими словами, это очень просто.",
+      "cue": "In other words, it's very simple."
+    },
+    {
+      "id": "L5-M8-C08",
+      "display": "Povtoríte, pozháluysta.",
+      "script": "Повторите, пожалуйста.",
+      "cue": "Say that again, please."
+    },
+    {
+      "id": "L5-M8-C09",
+      "display": "Ya ne rasslýshal.",
+      "script": "Я не расслышал.",
+      "cue": "I didn't catch that."
+    },
+    {
+      "id": "L5-M8-C10",
+      "display": "Skazhíte chto-nibud'.",
+      "script": "Скажите что-нибудь.",
+      "cue": "Say something."
+    },
+    {
+      "id": "L5-M8-C11",
+      "display": "Kto-to éhto skazál.",
+      "script": "Кто-то это сказал.",
+      "cue": "Somebody said it."
+    },
+    {
+      "id": "L5-M8-C12",
+      "display": "Ya gde-to éhto slýshal.",
+      "script": "Я где-то это слышал.",
+      "cue": "I've heard that somewhere."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

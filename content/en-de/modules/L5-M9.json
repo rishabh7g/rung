@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M9",
+  "title": "Telling it your way",
+  "job": "Retell a known story in your own register",
+  "prerequisites": ["L5-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["Präteritum", "Perfekt", "present"],
+    "allowedPatterns": [
+      "Es war einmal + <Nomen> + , + <Klausel>",
+      "Kurz gesagt + : + <Klausel>",
+      "Also + , + da war + <Nomen> + , + und + <Klausel>",
+      "Am Ende + V-2 + <Subjekt> + <Rest>",
+      "Ich erzähle das + jetzt + <Adverb>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "NARRATIVE REGISTER IS FOUR DIALS, AND THEY MOVE TOGETHER. Tense: the Präteritum of L4-M8 for the written telling, the Perfekt of L2-M10 for the spoken one. Density: full noun phrases in writing, pronouns and ellipsis in speech. Discourse words: none in the written version, and also, jedenfalls all over the spoken one. Opening: Es war einmal against Also, da war mal. One dial moved alone reads as a mistake; all four moved together reads as a register, which is why this module always shows them as a pair."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TENSE DIAL IS THE ONE THE MODULE EXISTS TO DRILL. Es war einmal ein König, der in einem Schloss wohnte is a story on a page. Also, da war mal ein König, und der hat in einem Schloss gewohnt is the same story in a kitchen. Nothing about the events changed. L4-M8 stated the split as a register law; here you USE it as a choice, and choosing wrong is not a grammar error — it is the wrong voice."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH HAS ONE PAST FOR BOTH REGISTERS, SO AN ANGLOPHONE HAS NO REASON TO EXPECT THE TENSE ITSELF TO MOVE. There was once a king and So there was this king use the same verb form, and a learner therefore picks one German past and keeps it everywhere. A fairy tale told in the Perfekt sounds like somebody recounting their weekend; an anecdote about your weekend told in the Präteritum sounds like a written report being read out."
+    },
+    {
+      "tag": "free",
+      "text": "THE TWO OPENINGS ARE FIXED AND THEY ARE NOT INTERCHANGEABLE. Es war einmal is three words, one unit and unmistakably a fairy tale — using it about your own week is a joke, and will be heard as one. Also, da war mal … opens a spoken anecdote, and the mal in it is L4-M5's particle doing exactly what it does everywhere else: making the thing casual and unimportant."
+    },
+    {
+      "tag": "free",
+      "text": "THE RETELLING VOCABULARY WAS BOUGHT THREE LEVELS AGO. erzählen, erzählt and Geschichte are L3-M5's, and the Präteritum forms — ging, kam, sah, sagte, fragte, war, wohnte — are L4-M8's and L4-M10's. So this module spends nothing on the act of telling and everything on the furniture of the story and the words that name the telling itself: Fassung, Version, Handlung, Schluss, knapp, ausführlich."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M9-S01",
+      "display": "Es war einmal ein König, der in einem Schloss wohnte.",
+      "cue": "Once upon a time there was a king who lived in a castle.",
+      "literal": "It was once a king, who in a castle lived.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Es war einmal",
+            "cue": "once upon a time",
+            "tag": "delta",
+            "forms": ["Es war einmal"],
+            "note": "Three words, one opening, and as fixed as its English twin. Say it about anything that is not a fairy tale and your listener will hear a joke."
+          },
+          {
+            "display": "König",
+            "cue": "king",
+            "tag": "free",
+            "forms": ["König"],
+            "note": "Masculine, der König, with the -ig ending said as -ikh in the north and -ik in the south. The feminine is Königin, one row further down."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "The relative clause sends its verb to the end — der in einem Schloss wohnte — and it is the written register that makes this comfortable. In the spoken version the same clause usually becomes a second main sentence instead, which is the density dial moving.",
+      "sound": "es vahr YN-mahl yn KUE-nikh, dair in Y-nem SHLOS VOHN-tuh — Es war einmal runs together as one falling phrase, which is what makes it recognisable before the noun arrives.",
+      "variations": [
+        {
+          "display": "Es war einmal ein König.",
+          "cue": "Once upon a time there was a king.",
+          "changed": "The relative clause goes. The opening is complete without it, and this is the shape to memorise before you start hanging clauses off it."
+        }
+      ],
+      "mistake": {
+        "display": "Es war einmal ein König, der hat in einem Schloss gewohnt",
+        "why": "The four dials have come apart: a written opening with a spoken tense inside the relative clause. Either Es war einmal … wohnte, or Also, da war mal … hat gewohnt — not one of each."
+      },
+      "usage": "The written telling: a book, a bedtime story read aloud, an exam answer that retells a plot. Never an anecdote about yourself.",
+      "register": "formal",
+      "mnemonic": "Es war einmal opens the book; everything after it stays in the Präteritum."
+    },
+    {
+      "id": "L5-M9-S02",
+      "display": "Also, da war mal ein König, und der wohnte in einem Schloss.",
+      "cue": "So, there was this king once, and he lived in a castle.",
+      "literal": "So, there was once a king, and the lived in a castle.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Märchen",
+            "cue": "fairy tale",
+            "tag": "free",
+            "forms": ["Märchen"],
+            "note": "Neuter, das Märchen, and the plural is spelled exactly the same — only the article moves. It also means a tall story somebody is telling you."
+          },
+          {
+            "display": "Fassung",
+            "cue": "version, wording",
+            "tag": "free",
+            "forms": ["Fassung"],
+            "note": "Feminine, die Fassung — one particular telling of something that exists in several. It is the word for a draft, a cut of a film, or the wording of a text."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The der at the start of the second clause is not the article — it is a demonstrative pronoun standing in for the king, and German speech uses it far more than er. In writing it would look careless; in speech er sounds slightly stiff.",
+      "sound": "AL-zo, da vahr mahl yn KUE-nikh, unt dair VOHN-tuh in Y-nem SHLOS — the pauses after Also and after König are the register: a written telling has neither of them.",
+      "variations": [
+        {
+          "display": "Das ist meine Fassung von dem Märchen.",
+          "cue": "That is my version of the fairy tale.",
+          "changed": "The teller steps out and names the telling. Fassung is the word that makes the whole module's point sayable: there is more than one."
+        }
+      ],
+      "mistake": {
+        "display": "Also, da war mal ein König, der in einem Schloss wohnte",
+        "why": "The spoken opening with a written clause behind it. Speech does not hang a relative clause off the first noun — it starts a new main clause with und der."
+      },
+      "usage": "The spoken telling, in a kitchen or a pub. Also and mal are what mark it, and dropping either one pulls the sentence back towards the page.",
+      "register": "informal",
+      "mnemonic": "Also, da war mal — three little words and the book has shut."
+    },
+    {
+      "id": "L5-M9-S03",
+      "display": "Im Wald sah der Held plötzlich ein Licht.",
+      "cue": "In the forest the hero suddenly saw a light.",
+      "literal": "In-the forest saw the hero suddenly a light.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Wald",
+            "cue": "forest, wood",
+            "tag": "free",
+            "forms": ["Wald"],
+            "note": "Masculine, der Wald, and the standard setting of a German fairy tale. im Wald is in the forest; in den Wald is into it."
+          },
+          {
+            "display": "Held",
+            "cue": "hero",
+            "tag": "free",
+            "forms": ["Held"],
+            "note": "Masculine, der Held. It is a weak noun and takes an -en in every case but the nominative, which is why this module keeps it as the subject."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Im Wald takes the first field, so the verb comes second and the subject goes behind it: Im Wald SAH DER HELD. English keeps the subject first — in the forest the hero saw — and the habit survives into German narrative more often than anywhere else.",
+      "sound": "im valt zah dair helt PLUETS-likh yn likht — Wald and Held both end in a hardened t, and sah has a long open ah.",
+      "variations": [
+        {
+          "display": "Im Wald sah der Held ein Licht.",
+          "cue": "In the forest the hero saw a light.",
+          "changed": "plötzlich goes and the sentence stops being a turn in the plot. The adverb is doing narrative work, not describing anything."
+        }
+      ],
+      "mistake": {
+        "display": "Im Wald der Held sah plötzlich ein Licht",
+        "why": "The verb has been left in third place. Im Wald is the first field, so sah must come immediately after it — the same verb-second law as everywhere, and the front field is what disguises it."
+      },
+      "usage": "A written narrative turn. Moving the place to the front is how German narrative paces itself, and it is worth doing deliberately rather than by accident.",
+      "register": "formal",
+      "mnemonic": "Put the forest first and the verb walks straight in behind it."
+    },
+    {
+      "id": "L5-M9-S04",
+      "display": "Die Königin fragte laut, warum der Held so leise war.",
+      "cue": "The queen asked loudly why the hero was so quiet.",
+      "literal": "The queen asked loudly, why the hero so quiet was.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Königin",
+            "cue": "queen",
+            "tag": "free",
+            "forms": ["Königin"],
+            "note": "Feminine, die Königin, built on König with the -in that makes almost any masculine noun feminine in German. The stress does not move."
+          },
+          {
+            "display": "Handlung",
+            "cue": "plot, action",
+            "tag": "free",
+            "forms": ["Handlung"],
+            "note": "Feminine, die Handlung — what happens in a story, as against how it is told. It is also the word for an action in a legal or moral sense."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "warum opens a subordinate clause, so war goes to the very end: warum der Held so leise war. English why the hero was so quiet keeps the verb in the middle, and this is the clause type where that habit does the most damage in a retelling.",
+      "sound": "dee KUE-ni-gin FRAHK-tuh lowt, va-ROOM dair helt zo LY-zuh vahr — the -in of Königin is unstressed and short, so the word still leans on the KUE.",
+      "variations": [
+        {
+          "display": "Die Handlung ist einfach.",
+          "cue": "The plot is simple.",
+          "changed": "You step out of the story and describe it from outside — present tense, because a plot is always summarised in the present however old the story is."
+        }
+      ],
+      "mistake": {
+        "display": "Die Königin fragte laut, warum war der Held so leise",
+        "why": "The warum-clause has been written as a question. It is a subordinate clause here, so the verb goes last: warum der Held so leise war."
+      },
+      "usage": "A written narrative with reported speech folded into it. In the spoken register the same content usually becomes direct speech instead, which is L4-M10's mechanic.",
+      "register": "formal",
+      "mnemonic": "A plot is a Handlung — the things that happen; a Fassung is how you happen to tell them."
+    },
+    {
+      "id": "L5-M9-S05",
+      "display": "Kurz gesagt: Der König ging in den Wald und kam nicht wieder.",
+      "cue": "In short: the king went into the forest and never came back.",
+      "literal": "Short said: The king went into the forest and came not again.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kurz gesagt",
+            "cue": "in short, to put it briefly",
+            "tag": "free",
+            "forms": ["kurz gesagt"],
+            "note": "Two words, learned as one, and it takes no field of its own — the clause after the colon starts fresh with its own subject and verb."
+          },
+          {
+            "display": "knapp",
+            "cue": "brief, sparing; also scarce",
+            "tag": "free",
+            "forms": ["knapp"],
+            "note": "A knappe Fassung is a short one, and knapp about time or money means barely enough. Both readings share the idea of nothing to spare."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "in den Wald with the accusative is into the forest; im Wald with the dative is inside it. The verb of motion is what decides, and a retelling moves people around constantly, so this pair comes up in almost every sentence.",
+      "sound": "koorts guh-ZAHKT: dair KUE-nikh ging in dayn valt unt kahm nikht VEE-der — the colon is a real pause and the two halves each get their own contour.",
+      "variations": [
+        {
+          "display": "Die Fassung ist sehr knapp.",
+          "cue": "The version is very short.",
+          "changed": "The summary is described rather than given. knapp is a judgement on a telling — it can be praise or a complaint, and the tone decides which."
+        }
+      ],
+      "mistake": {
+        "display": "Kurz gesagt: Der König ging im Wald und kam nicht wieder",
+        "why": "im Wald says he did his walking inside the forest, which turns a departure into a stroll. Motion into a place takes the accusative: in den Wald."
+      },
+      "usage": "Compressing a story you have decided not to tell in full. It works in both registers, which is unusual here — most of this module's markers pick a side.",
+      "register": "neutral",
+      "mnemonic": "kurz gesagt cuts it short; knapp is what you call the result."
+    },
+    {
+      "id": "L5-M9-S06",
+      "display": "Ausführlich erzählt, war das eine lange Geschichte.",
+      "cue": "Told in full, it was a long story.",
+      "literal": "In-detail told, was that a long story.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ausführlich",
+            "cue": "in detail, at length",
+            "tag": "free",
+            "forms": ["ausführlich"],
+            "note": "The opposite of knapp, and neutral in tone — an ausführliche Antwort is thorough, not long-winded. Four syllables, stress on the AUS."
+          },
+          {
+            "display": "Version",
+            "cue": "version",
+            "tag": "free",
+            "forms": ["Version"],
+            "note": "Feminine, die Version, and said with a v as in vase: ver-ZYOHN. It overlaps with Fassung, and where they differ Version is the more technical."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Version is a German word that looks entirely English and is not said like one: the V is voiced, the stress is on the last syllable, and the -sion is a soft zh. Reading it as an English word is the commonest single mispronunciation in this module.",
+      "sound": "OWS-fuer-likh air-TSAYLT, vahr das Y-nuh LANG-uh guh-SHIKH-tuh — ausführlich has its stress right at the front and the ü is the front-rounded vowel.",
+      "variations": [
+        {
+          "display": "Diese Version ist ausführlich.",
+          "cue": "This version is a detailed one.",
+          "changed": "The telling is judged instead of performed, and the tense comes back to the present. A story is in the past; a version of it is always in the present."
+        }
+      ],
+      "mistake": {
+        "display": "Ausführlich erzählt, das war eine lange Geschichte",
+        "why": "The participle phrase takes the first field, so the verb must come second: Ausführlich erzählt, WAR das … Putting das in front of war leaves the verb third."
+      },
+      "usage": "Commenting on a telling as you finish it — the sentence a German speaker uses to excuse having gone on too long, or to promise not to.",
+      "register": "neutral",
+      "mnemonic": "knapp and ausführlich are the two ends of the density dial, and neither one is a compliment by itself."
+    },
+    {
+      "id": "L5-M9-S07",
+      "display": "Der König war jedenfalls sehr alt.",
+      "cue": "The king was very old, at any rate.",
+      "literal": "The king was in-any-case very old.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jedenfalls",
+            "cue": "anyway, at any rate",
+            "tag": "delta",
+            "forms": ["jedenfalls"],
+            "note": "A spoken-register marker that gets a wandering story back on track. It sits after the finite verb, and it belongs to speech — it never opens a written narrative."
+          },
+          {
+            "display": "im Grunde",
+            "cue": "basically, at bottom",
+            "tag": "free",
+            "forms": ["im Grunde"],
+            "note": "Two words, fixed, with the old dative -e on L3-M3's Grund. It introduces the point you have been circling, not a summary of what you said."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "jedenfalls is not anyway in the sense of nevertheless. It means whatever else may be true, this much is — so it concedes the digression and keeps the claim, which is why a storyteller reaches for it after losing the thread.",
+      "sound": "dair KUE-nikh vahr YAY-den-fals zair alt — jedenfalls carries its stress on the first syllable and is said quickly, almost as one unstressed lump in the middle of the sentence.",
+      "variations": [
+        {
+          "display": "Im Grunde ist das nur eine Geschichte.",
+          "cue": "Basically it is only a story.",
+          "changed": "The teller stands back from the whole thing. im Grunde is the written-register cousin of jedenfalls and does not sound like somebody recovering a lost thread."
+        }
+      ],
+      "mistake": {
+        "display": "Jedenfalls der König war sehr alt",
+        "why": "Legal but flat wrong for the register: at the front, jedenfalls takes the first field and the verb must follow it — Jedenfalls WAR der König sehr alt. In speech it is easier to keep it after the verb."
+      },
+      "usage": "Spoken retelling, at the moment you realise you have wandered. It is the most useful single word in the module for a learner telling a story in real time.",
+      "register": "informal",
+      "mnemonic": "jedenfalls picks the thread back up; im Grunde puts the whole spool down."
+    },
+    {
+      "id": "L5-M9-S08",
+      "display": "Am Ende hat der Held die Geschichte im Schloss erzählt.",
+      "cue": "In the end the hero told the story in the castle.",
+      "literal": "At-the end has the hero the story in-the castle told.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Schloss",
+            "cue": "castle, palace",
+            "tag": "free",
+            "forms": ["Schloss"],
+            "note": "Neuter, das Schloss, and the same word means a lock on a door — a castle is a thing that shuts. Not to be confused with Schluss, an ending."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Schloss and Schluss are one vowel apart and both turn up in a retelling: das Schloss is the castle, der Schluss is the ending. The o is short and rounded, the u is short and closed, and the articles differ too.",
+      "sound": "am EN-duh hat dair helt dee guh-SHIKH-tuh im SHLOS air-TSAYLT — the Perfekt splits around the whole sentence, hat at the front and erzählt at the very end.",
+      "variations": [
+        {
+          "display": "Am Ende hat der Held die Geschichte erzählt.",
+          "cue": "In the end the hero told the story.",
+          "changed": "The place drops out. Nothing else moves, which is the point: the Perfekt frame holds whatever you put inside it."
+        }
+      ],
+      "mistake": {
+        "display": "Am Ende der Held hat die Geschichte im Schloss erzählt",
+        "why": "Am Ende is the first field, so hat comes second and der Held goes behind it. This is the same error as Im Wald in S03, and a front-loaded time phrase invites it just as reliably as a place does."
+      },
+      "usage": "The spoken telling's closing move — the Perfekt is what marks it as spoken. In a written version the same sentence would end erzählte.",
+      "register": "informal",
+      "mnemonic": "Schloss has an o like a lock; Schluss has a u like the last word."
+    },
+    {
+      "id": "L5-M9-S09",
+      "display": "Der Wolf kam in den Wald. Also, der Wolf ist gekommen.",
+      "cue": "The wolf came into the forest. So, the wolf came along.",
+      "literal": "The wolf came into the forest. So, the wolf is come.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Wolf",
+            "cue": "wolf",
+            "tag": "free",
+            "forms": ["Wolf"],
+            "note": "Masculine, der Wolf, with a short o and a hardened f. The plural takes an umlaut, which is why the o is worth hearing as short in the singular."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "kommen takes sein in the Perfekt, not haben: der Wolf IST gekommen. Every verb of motion and of change of state does, and an English speaker reaching for hat is reaching for the English auxiliary.",
+      "sound": "dair volf kahm in dayn valt. AL-zo, dair volf ist guh-KOM-men — the two halves are the same event, and only the tense and the Also tell you which room you are in.",
+      "variations": [
+        {
+          "display": "Der Wolf ist in den Wald gegangen.",
+          "cue": "The wolf went into the forest.",
+          "changed": "The spoken half on its own, with gehen instead of kommen. Both take sein, and both put the participle at the very end."
+        }
+      ],
+      "mistake": {
+        "display": "Der Wolf kam in den Wald. Also, der Wolf hat gekommen",
+        "why": "hat gekommen does not exist. Verbs of motion build the Perfekt with sein — ist gekommen — and this is the single most common error in a spoken retelling."
+      },
+      "usage": "The pair item: read both halves aloud and hear the dials turn together. Use one or the other in real speech, never both.",
+      "register": "neutral",
+      "mnemonic": "One event, two rooms: kam on the page, ist gekommen in the kitchen."
+    },
+    {
+      "id": "L5-M9-S10",
+      "display": "Am Schluss war der Held wieder im Wald.",
+      "cue": "At the end the hero was back in the forest.",
+      "literal": "At-the end was the hero again in-the forest.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Schluss",
+            "cue": "the end, the close",
+            "tag": "free",
+            "forms": ["Schluss"],
+            "note": "Masculine, der Schluss — the end of a telling, where L4-M6's Ende is the end of anything. Schluss! on its own means that is enough."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "am Schluss is about a story, a speech or a film; am Ende is about time and about everything else. A retelling that says am Ende for its own last sentence is not wrong, but it has stopped talking about the telling and gone back to talking about the events.",
+      "sound": "am shloos vahr dair helt VEE-der im valt — Schluss has a short u and a doubled s, so the word stops sharply, which is a fair guide to what it means.",
+      "variations": [
+        {
+          "display": "Am Schluss war der Held wieder im Schloss.",
+          "cue": "At the end the hero was back in the castle.",
+          "changed": "One vowel, one whole different place. Say both versions aloud — the Schluss / Schloss pair is the module's last and best pronunciation test."
+        }
+      ],
+      "mistake": {
+        "display": "Am Schluss der Held war wieder im Wald",
+        "why": "Am Schluss holds the first field, so war comes second. Three sentences in this module end on the same rule, because a retelling front-loads time and place in nearly every line."
+      },
+      "usage": "Closing a retelling and handing it back. It works in both registers, and in speech it is often the whole sentence: Und am Schluss? — Am Schluss war er wieder im Wald.",
+      "register": "neutral",
+      "mnemonic": "Der Schluss ends the story; das Schloss is where it happened."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L5-M9-C01", "display": "Es war einmal ein König.", "cue": "Once upon a time there was a king." },
+    { "id": "L5-M9-C02", "display": "Also, da war mal ein König.", "cue": "So, there was this king once." },
+    { "id": "L5-M9-C03", "display": "Im Wald war es sehr leise.", "cue": "It was very quiet in the forest." },
+    { "id": "L5-M9-C04", "display": "Die Königin war sehr alt.", "cue": "The queen was very old." },
+    { "id": "L5-M9-C05", "display": "Kurz gesagt: Der Wolf kam nicht wieder.", "cue": "In short: the wolf never came back." },
+    { "id": "L5-M9-C06", "display": "Diese Version ist sehr ausführlich.", "cue": "This version is a very detailed one." },
+    { "id": "L5-M9-C07", "display": "Der König war jedenfalls im Schloss.", "cue": "The king was in the castle, at any rate." },
+    { "id": "L5-M9-C08", "display": "Im Grunde ist das ein Märchen.", "cue": "Basically it is a fairy tale." },
+    { "id": "L5-M9-C09", "display": "Die Handlung ist einfach.", "cue": "The plot is simple." },
+    { "id": "L5-M9-C10", "display": "Die Fassung ist sehr knapp.", "cue": "The version is very short." },
+    { "id": "L5-M9-C11", "display": "Am Schluss war der Held wieder im Wald.", "cue": "At the end the hero was back in the forest." },
+    { "id": "L5-M9-C12", "display": "Das ist meine Fassung von dem Märchen.", "cue": "That is my version of the fairy tale." }
+  ],
+  "exitTest": { "generateCount": 2, "comprehendCount": 4 }
+}

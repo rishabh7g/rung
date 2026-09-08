@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M7",
+  "title": "Between the lines",
+  "job": "Implication, sarcasm, indirect requests",
+  "prerequisites": [
+    "L5-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "presente, L1-M6's - the frame verbs and every answer",
+      "imperfetto of politeness, L4-M3's volevo, re-read rather than re-taught",
+      "condizionale presente, L3-M4's: potresti, dispiacerebbe - no new forms",
+      "passato prossimo where the ladder owns the participle: hai visto"
+    ],
+    "allowedPatterns": [
+      "Volevo chiederti + <N>",
+      "Non è che + <presente> + ?",
+      "Senti + , + <richiesta>",
+      "Certo + , + come no",
+      "Per caso + <presente> + ?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ITALIAN POLITENESS IS DISTANCE IN TIME, AND YOU ALREADY OWN EVERY TENSE IT USES. volevo chiederti - an imperfetto - is politer than voglio chiederti, and it IS English I was wondering. The conditional L3-M4 taught goes a step further up the same ladder: vorrei, potresti, ti dispiacerebbe. This module buys almost no grammar; it tells you what forms you have already learned actually MEAN."
+    },
+    {
+      "tag": "delta",
+      "text": "THE NEGATIVE QUESTION IS THE LEAST IMPOSING REQUEST ITALIAN HAS. Non è che potresti aiutarmi? hands the hearer a ready-made no: the question is already shaped as a doubt, so refusing it costs nothing. Per caso does the same job on a fact - per caso hai visto il mio telefono? - by pretending the answer is unlikely."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH POLITENESS GROWS BY ADDING WORDS; ITALIAN POLITENESS GROWS BY CHANGING THE TENSE, AND STAYS SHORT. I was just wondering whether you might possibly be able to is a pile of qualifiers. Its Italian equivalent is four words. Pile qualifiers onto an Italian request and you sound anxious rather than polite, which is a worse impression than the bluntness you were avoiding."
+    },
+    {
+      "tag": "interference",
+      "text": "DIRECTNESS IS CALIBRATED DIFFERENTLY IN THE TWO LANGUAGES. An unhedged mi passi il sale is neutral Italian, not a command; an English speaker who hears it as brusque and answers in kind will over-hedge everything and be heard as cold or as insincere. Match the tier, do not raise it."
+    },
+    {
+      "tag": "delta",
+      "text": "WRITTEN ITALIAN IRONY NEEDS A MARKER, BECAUSE THERE IS NO TONE TO CARRY IT. English sarcasm rides on the voice and can be delivered on entirely neutral words; on the page Italian cannot do that, so it uses lexicon: certo, come no; ma va; figuriamoci; ci mancherebbe altro. And a word you already own does double duty here - L2-M2's bravo is praise, and said flat after a failure it is the opposite. Nothing in the WORD tells you which; the situation does."
+    },
+    {
+      "tag": "free",
+      "text": "NON È CHE TAKES THE ORDINARY PRESENT IN THIS COURSE. Non è che hai un momento? - hai, not abbia. Italians are heard using the congiuntivo here too, and the choice is genuinely open; this module writes the indicative throughout and leaves the question to the native pass rather than settling it in a rule."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M7-S01",
+      "display": "Volevo chiederti un favore, se hai un momento",
+      "cue": "I wanted to ask you a favour, if you have a moment",
+      "literal": "I wanted to ask-you a favour, if you have a moment",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "volevo chiederti",
+            "cue": "I wanted to ask you, I was wondering",
+            "tag": "delta",
+            "forms": [
+              "volevo chiederti"
+            ],
+            "note": "Learned whole, over L4-M3's volevo. The past tense is not about the past: it puts distance between you and the asking, exactly as English I was wondering does."
+          },
+          {
+            "display": "un favore",
+            "cue": "a favour",
+            "tag": "free",
+            "forms": [
+              "un favore",
+              "favore"
+            ],
+            "note": "The thing you ask for when you do not want to name it yet. Announcing the favour before describing it is what gives the hearer room to decline."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Voglio chiederti un favore is not wrong, but it is a level blunter. The imperfetto is doing all the politeness here, and it costs one letter.",
+      "sound": "vo-LE-vo kie-DER-ti. un fa-VO-re, stress on VO.",
+      "variations": [
+        {
+          "display": "Volevo chiederti un favore",
+          "cue": "I wanted to ask you a favour",
+          "changed": "the request with no opening left for a no"
+        },
+        {
+          "display": "Volevo chiederti una cosa",
+          "cue": "I wanted to ask you something",
+          "changed": "a thing rather than a favour, which asks for less"
+        },
+        {
+          "display": "Senti, volevo chiederti un favore",
+          "cue": "Listen, I wanted to ask you a favour",
+          "changed": "the attention-getter in front"
+        }
+      ],
+      "mistake": {
+        "display": "Volevo chiedere ti un favore",
+        "why": "The pronoun welds onto the infinitive: chiederti, one word, with the final e of chiedere gone. Splitting it is the commonest shape of this error."
+      },
+      "usage": "Opening a request to a friend or a colleague you are on tu terms with.",
+      "register": "informal",
+      "mnemonic": "past tense, present favour: volevo is politeness, not history."
+    },
+    {
+      "id": "L5-M7-S02",
+      "display": "Non è che potresti aiutarmi un momento?",
+      "cue": "You could not help me for a moment, could you?",
+      "literal": "Not is that you could to-help-me a moment?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "non è che",
+            "cue": "is there any chance, you would not happen to",
+            "tag": "delta",
+            "forms": [
+              "non è che"
+            ],
+            "note": "A request shaped as a doubt. It is the least imposing frame Italian has, because the no is already built into the question."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "Non è che is not a real negative. The answer to Non è che hai un momento? is Sì if you do have one - answering No because the question looked negative is the English reflex.",
+      "sound": "non E ke, three light syllables. po-TRES-ti.",
+      "variations": [
+        {
+          "display": "Non è che potresti aiutarmi?",
+          "cue": "You could not help me, could you?",
+          "changed": "the request with no time limit on it"
+        },
+        {
+          "display": "Potresti aiutarmi?",
+          "cue": "Could you help me?",
+          "changed": "the plain conditional, one tier more direct"
+        },
+        {
+          "display": "Non è che hai un momento?",
+          "cue": "You would not have a moment, would you?",
+          "changed": "the ordinary present after the frame"
+        }
+      ],
+      "mistake": {
+        "display": "Non è che potresti aiutarmi un momento, per favore, se non ti dispiace?",
+        "why": "Three hedges on a frame that is already the softest one available. In Italian the pile reads as anxiety; the frame alone had done the work."
+      },
+      "usage": "Asking for something you think might be inconvenient, and saying so in the shape of the question.",
+      "register": "neutral",
+      "mnemonic": "the no is in the question, so the hearer does not have to find one."
+    },
+    {
+      "id": "L5-M7-S03",
+      "display": "Senti, ti dispiacerebbe aspettare un momento?",
+      "cue": "Listen, would you mind waiting a moment?",
+      "literal": "Listen, to-you would-displease to wait a moment?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "senti",
+            "cue": "listen, look here",
+            "tag": "free",
+            "forms": [
+              "senti"
+            ],
+            "note": "The familiar half of the pair whose polite half you already have: L2-M1's senta. Same verb, tu instead of Lei, and it opens a request rather than commanding anything."
+          },
+          {
+            "display": "ti dispiacerebbe",
+            "cue": "would you mind",
+            "tag": "delta",
+            "forms": [
+              "ti dispiacerebbe"
+            ],
+            "note": "Built on L2-M1's mi dispiace, in the conditional. Literally would it displease you, so a yes means no - Italian answers it the same way English does."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "senti is not rude, and it is not senta. senta belongs to Lei; senti to somebody you already call tu, and using the wrong one is heard instantly.",
+      "sound": "SEN-ti. ti dis-pia-ce-REB-be, six syllables and the stress on REB.",
+      "variations": [
+        {
+          "display": "Ti dispiacerebbe aspettare un momento?",
+          "cue": "Would you mind waiting a moment?",
+          "changed": "the request without the attention-getter"
+        },
+        {
+          "display": "Senti, potresti aspettare?",
+          "cue": "Listen, could you wait?",
+          "changed": "the plain conditional in its place"
+        }
+      ],
+      "mistake": {
+        "display": "Senta, ti dispiacerebbe aspettare un momento?",
+        "why": "senta is the Lei form and ti is the tu one. The sentence changes address halfway through, which is the one register error an Italian ear cannot ignore."
+      },
+      "usage": "Asking a friend for a small delay, or softening a request you are about to make.",
+      "register": "informal",
+      "mnemonic": "senti to a friend, senta to a stranger."
+    },
+    {
+      "id": "L5-M7-S04",
+      "display": "Disturbo? Per caso hai visto il mio telefono?",
+      "cue": "Am I interrupting? Have you seen my phone, by any chance?",
+      "literal": "I disturb? By chance you have seen the my telephone?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "disturbo",
+            "cue": "am I interrupting, am I in the way",
+            "tag": "free",
+            "forms": [
+              "disturbo",
+              "disturbare"
+            ],
+            "note": "One word, asked as a question at a door. It is the whole apology, and the answer is normally figurati or ci mancherebbe."
+          },
+          {
+            "display": "per caso",
+            "cue": "by any chance",
+            "tag": "free",
+            "forms": [
+              "per caso"
+            ],
+            "note": "It lowers the cost of the question by pretending the answer is probably no. Italian puts it at the front; English tends to hang it on the end."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "per caso is not by accident here. Attached to a question it is by any chance; the accident reading belongs to a different sentence altogether.",
+      "sound": "dis-TUR-bo. per CA-so, both words light and quick.",
+      "variations": [
+        {
+          "display": "Per caso hai visto il mio telefono?",
+          "cue": "Have you seen my phone, by any chance?",
+          "changed": "the question without the apology"
+        },
+        {
+          "display": "Disturbo? Hai un momento?",
+          "cue": "Am I interrupting? Do you have a moment?",
+          "changed": "the apology carrying a different request"
+        }
+      ],
+      "mistake": {
+        "display": "Hai visto il mio telefono per caso?",
+        "why": "Not ungrammatical, but English word order. Italian opens with per caso, where it colours the whole question instead of arriving after it is over."
+      },
+      "usage": "Coming into a room where somebody is working, and asking for something small.",
+      "register": "neutral",
+      "mnemonic": "per caso at the front makes the question cost less."
+    },
+    {
+      "id": "L5-M7-S05",
+      "display": "Certo, come no: figuriamoci se arriva in orario",
+      "cue": "Oh sure, of course: as if he will get here on time",
+      "literal": "Certain, how not: let-us-imagine if he arrives in time",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "certo",
+            "cue": "sure, of course",
+            "tag": "interference",
+            "forms": [
+              "certo"
+            ],
+            "note": "Sincere on its own. Followed by come no it is the opposite, and nothing in the word says which - the marker after it does."
+          },
+          {
+            "display": "come no",
+            "cue": "of course, oh sure",
+            "tag": "interference",
+            "forms": [
+              "come no"
+            ],
+            "note": "Literally how not. It agrees so hard that it stops agreeing: after certo it is the standard written marker for sarcasm."
+          },
+          {
+            "display": "figuriamoci",
+            "cue": "as if, you must be joking",
+            "tag": "interference",
+            "forms": [
+              "figuriamoci"
+            ],
+            "note": "The plural of L5-M1's figurati, doing a different job: it dismisses what follows as impossible. figuriamoci se plus a plain present is the usual frame."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Certo, come no is not agreement. Read straight it means of course; said about something that will not happen it means the reverse, and this course has no tone to warn you.",
+      "sound": "CER-to. CO-me no, flat and quick. fi-gu-RIA-mo-ci.",
+      "variations": [
+        {
+          "display": "Certo, come no",
+          "cue": "Oh sure, of course",
+          "changed": "the marker with nothing behind it"
+        },
+        {
+          "display": "Figuriamoci se arriva in orario",
+          "cue": "As if he will get here on time",
+          "changed": "the dismissal alone"
+        },
+        {
+          "display": "Certo, arriva in orario",
+          "cue": "Sure, he will get here on time",
+          "changed": "the same words read sincerely"
+        }
+      ],
+      "mistake": {
+        "display": "Certo, come no: figuriamoci se arrivasse in orario",
+        "why": "figuriamoci se takes the ordinary present in speech. The congiuntivo imperfetto belongs to a tense this course does not own, and it makes the line sound written."
+      },
+      "usage": "Recognising, rather than producing: this is what you will hear when somebody does not believe a word of it.",
+      "register": "informal",
+      "mnemonic": "come no = of course NOT."
+    },
+    {
+      "id": "L5-M7-S06",
+      "display": "Ci mancherebbe, non è un problema",
+      "cue": "Not at all, it is no trouble",
+      "literal": "There would-lack, not is a problem",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ci mancherebbe",
+            "cue": "not at all, don't mention it",
+            "tag": "free",
+            "forms": [
+              "ci mancherebbe",
+              "ci mancherebbe altro"
+            ],
+            "note": "The warm answer to an apology or a thank-you. altro on the end makes it bigger, not more formal - it is the emphatic version of the same move."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Ci mancherebbe answers an apology, not an offer. To accept something offered you want volentieri or grazie, not this.",
+      "sound": "chi man-che-REB-be: the ci is CHEE, and the stress falls on REB.",
+      "variations": [
+        {
+          "display": "Ci mancherebbe altro",
+          "cue": "Not at all, don't even mention it",
+          "changed": "the emphatic form"
+        },
+        {
+          "display": "Ci mancherebbe, non era niente",
+          "cue": "Not at all, it was nothing",
+          "changed": "the reassurance put in the past"
+        }
+      ],
+      "mistake": {
+        "display": "Mi mancherebbe, non è un problema",
+        "why": "ci, not mi. mi mancherebbe would say I would miss it, which is a sentence about you rather than a reply to the person apologising."
+      },
+      "usage": "Waving away an apology, or answering somebody who thinks they have put you out.",
+      "register": "neutral",
+      "mnemonic": "it would be the last thing missing - so, no trouble at all."
+    },
+    {
+      "id": "L5-M7-S07",
+      "display": "Lascia perdere, non era importante",
+      "cue": "Never mind, it was not important",
+      "literal": "Leave to-lose, not was important",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lascia perdere",
+            "cue": "never mind, drop it, forget it",
+            "tag": "free",
+            "forms": [
+              "lascia perdere",
+              "lasciamo perdere"
+            ],
+            "note": "Two words, learned whole. It closes a subject without saying why, which is what makes it the polite way out of an awkward line of questions."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Lascia perdere is not rude, but it does end the topic. Said to somebody still speaking it reads as a request to stop, so its warmth comes from what follows it.",
+      "sound": "LA-scia PER-de-re, the scia as in SHA.",
+      "variations": [
+        {
+          "display": "Lascia perdere",
+          "cue": "Never mind",
+          "changed": "the phrase with nothing softening it"
+        },
+        {
+          "display": "Lascia perdere, non era niente",
+          "cue": "Never mind, it was nothing",
+          "changed": "a smaller reason offered"
+        },
+        {
+          "display": "Lasciamo perdere",
+          "cue": "Let us drop it",
+          "changed": "the we-form, which shares the retreat"
+        }
+      ],
+      "mistake": {
+        "display": "Lascia perdere, non è stato importante",
+        "why": "The passato prossimo dates the thing; the imperfetto dismisses it. era importante is what a speaker reaches for when the point is that it never mattered."
+      },
+      "usage": "Withdrawing a question, or letting somebody off answering one.",
+      "register": "informal",
+      "mnemonic": "leave it to be lost."
+    },
+    {
+      "id": "L5-M7-S08",
+      "display": "Diciamo che, in un certo senso, hai ragione",
+      "cue": "Let us say that, in a way, you are right",
+      "literal": "We say that, in a certain sense, you have reason",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "diciamo",
+            "cue": "let us say, sort of",
+            "tag": "free",
+            "forms": [
+              "diciamo",
+              "diciamo che"
+            ],
+            "note": "A hedge, not a we-form. It marks the next thing as approximate, which is how a speaker half-agrees without conceding the point."
+          },
+          {
+            "display": "in un certo senso",
+            "cue": "in a way, in a certain sense",
+            "tag": "free",
+            "forms": [
+              "in un certo senso"
+            ],
+            "note": "The second hedge on the same agreement. Two of them together is how Italian says yes while keeping the door open."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "Diciamo che hai ragione is not agreement. Both hedges are there to take most of it back, and an Italian hears the reservation before the yes.",
+      "sound": "di-CIA-mo, three syllables. in un CER-to SEN-so.",
+      "variations": [
+        {
+          "display": "Diciamo che hai ragione",
+          "cue": "Let us say you are right",
+          "changed": "one hedge instead of two"
+        },
+        {
+          "display": "In un certo senso, hai ragione",
+          "cue": "In a way, you are right",
+          "changed": "the other hedge alone"
+        }
+      ],
+      "mistake": {
+        "display": "Diciamo che, in un certo senso, avresti ragione",
+        "why": "Not the hedging but the verb: the hedges are already doing the softening, and adding the conditional on top produces the pile-up rule 2 warns about."
+      },
+      "usage": "Agreeing far enough to keep a conversation going, and no further.",
+      "register": "neutral",
+      "mnemonic": "two hedges, half a yes."
+    },
+    {
+      "id": "L5-M7-S09",
+      "display": "Onestamente, non mi sembra una buona idea",
+      "cue": "Honestly, it does not seem like a good idea to me",
+      "literal": "Honestly, not to-me seems a good idea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "onestamente",
+            "cue": "honestly, to be honest",
+            "tag": "free",
+            "forms": [
+              "onestamente",
+              "sinceramente"
+            ],
+            "note": "The word that announces a disagreement before it lands. sinceramente is its twin and is a shade warmer; both buy the hearer a second to brace."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Onestamente does not claim that the rest was dishonest. It is a signal that something unwelcome is coming, and dropping it makes the refusal land flat.",
+      "sound": "o-nes-ta-MEN-te, five syllables, stress on MEN.",
+      "variations": [
+        {
+          "display": "Sinceramente, non mi sembra una buona idea",
+          "cue": "Sincerely, it does not seem like a good idea to me",
+          "changed": "the warmer twin"
+        },
+        {
+          "display": "Onestamente, non mi sembra",
+          "cue": "Honestly, I do not think so",
+          "changed": "the verb left hanging, which is how it is usually said"
+        }
+      ],
+      "mistake": {
+        "display": "Onestamente, non è una buona idea",
+        "why": "Losing mi sembra loses the hedge. non è states it as a fact about the idea; non mi sembra keeps it as your reading of it, which is the whole point of the sentence."
+      },
+      "usage": "Disagreeing with a plan without calling it a bad plan.",
+      "register": "neutral",
+      "mnemonic": "onestamente is the warning light, not the verdict."
+    },
+    {
+      "id": "L5-M7-S10",
+      "display": "Davvero? Sul serio, diciamo che dipende",
+      "cue": "Really? Seriously, let us say it depends",
+      "literal": "Truly? On the serious, we say that it depends",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "davvero",
+            "cue": "really, is that so",
+            "tag": "free",
+            "forms": [
+              "davvero"
+            ],
+            "note": "A one-word question that buys time. Said flat it can also be the driest disbelief in the language, which is the second job this module cares about."
+          },
+          {
+            "display": "sul serio",
+            "cue": "seriously, no joke",
+            "tag": "free",
+            "forms": [
+              "sul serio"
+            ],
+            "note": "It cancels irony. After a run of markers it is how a speaker says the next thing is meant straight - or, as a question, asks whether the last one was."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Sul serio does two opposite jobs. As a question it doubts; in front of a statement it insists the statement is sincere, and only the punctuation separates them.",
+      "sound": "dav-VE-ro, double v held. sul SE-rio.",
+      "variations": [
+        {
+          "display": "Davvero?",
+          "cue": "Really?",
+          "changed": "the question alone"
+        },
+        {
+          "display": "Sul serio, diciamo che dipende",
+          "cue": "Seriously, let us say it depends",
+          "changed": "the sincerity marker in front of a hedge"
+        },
+        {
+          "display": "Davvero? Sul serio?",
+          "cue": "Really? Seriously?",
+          "changed": "both as questions, which is open disbelief"
+        }
+      ],
+      "mistake": {
+        "display": "Vero? Sul serio, diciamo che dipende",
+        "why": "vero on its own is the tag question at the end of a sentence, not the standalone really. The doubting one-word question is davvero."
+      },
+      "usage": "Checking whether somebody meant what they just said, then not quite answering.",
+      "register": "informal",
+      "mnemonic": "sul serio switches the irony off."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M7-C01",
+      "display": "Volevo chiederti un favore",
+      "cue": "I wanted to ask you a favour"
+    },
+    {
+      "id": "L5-M7-C02",
+      "display": "Non è che hai un momento?",
+      "cue": "You would not have a moment, would you?"
+    },
+    {
+      "id": "L5-M7-C03",
+      "display": "Senti, ti dispiacerebbe aspettare?",
+      "cue": "Listen, would you mind waiting?"
+    },
+    {
+      "id": "L5-M7-C04",
+      "display": "Per caso hai visto il mio telefono?",
+      "cue": "Have you seen my phone, by any chance?"
+    },
+    {
+      "id": "L5-M7-C05",
+      "display": "Certo, come no",
+      "cue": "Oh sure, of course"
+    },
+    {
+      "id": "L5-M7-C06",
+      "display": "Figuriamoci se arriva in orario",
+      "cue": "As if he will get here on time"
+    },
+    {
+      "id": "L5-M7-C07",
+      "display": "Ci mancherebbe altro",
+      "cue": "Not at all, don't even mention it"
+    },
+    {
+      "id": "L5-M7-C08",
+      "display": "Lascia perdere, non era importante",
+      "cue": "Never mind, it was not important"
+    },
+    {
+      "id": "L5-M7-C09",
+      "display": "Diciamo che, in un certo senso, hai ragione",
+      "cue": "Let us say that, in a way, you are right"
+    },
+    {
+      "id": "L5-M7-C10",
+      "display": "Onestamente, non mi sembra una buona idea",
+      "cue": "Honestly, it does not seem like a good idea to me"
+    },
+    {
+      "id": "L5-M7-C11",
+      "display": "Disturbo? Volevo chiederti una cosa",
+      "cue": "Am I interrupting? I wanted to ask you something"
+    },
+    {
+      "id": "L5-M7-C12",
+      "display": "Davvero? Sul serio?",
+      "cue": "Really? Seriously?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

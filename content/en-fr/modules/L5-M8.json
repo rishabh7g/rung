@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M8",
+  "title": "When words run out",
+  "job": "Paraphrase, ask what something means, repair a misunderstanding",
+  "prerequisites": ["L5-M1", "L5-M2", "L5-M3", "L5-M4", "L5-M5", "L5-M6", "L5-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["présent", "passé composé", "imparfait", "infinitif"],
+    "allowedPatterns": [
+      "C'est un truc qui sert à + V-inf",
+      "Comment on dit + <English word> + en français + ?",
+      "Qu'est-ce que ça veut dire + , + <word> + ?",
+      "Ce n'est pas ce que je voulais dire",
+      "C'est-à-dire + <reformulation>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A PARAPHRASE IS A DEFINING RELATIVE CLAUSE, AND THE SPLIT IS BY ROLE. qui is the SUBJECT of its own clause — un truc QUI sert à ouvrir, the thing does the serving. que is the OBJECT — la chose QUE j'ai achetée, I do the buying. Ask what the relative is DOING in the clause after it, never what it refers to. Both bare words are long owned (qui is L3-M9's, que is L1-M9's), so this module takes them only inside longer keys."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH CUTS who FROM which BY ANIMACY; FRENCH CUTS qui FROM que BY ROLE. The two cuts run at right angles to each other, so the English instinct is not merely unhelpful — it is actively wrong half the time. l'homme qui parle and le truc qui marche take the same qui, person or thing; l'homme que je connais and le truc que j'ai acheté take the same que."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH DROPS THE RELATIVE PRONOUN AND FRENCH NEVER MAY. the thing I bought is la chose QUE j'ai achetée; the word you said is le mot QUE vous avez dit. Because English lets you leave it out, the sentence that comes most naturally to you is the ungrammatical one. If there is a noun and then a new subject, a que belongs between them."
+    },
+    {
+      "tag": "delta",
+      "text": "dont IS THE RELATIVE THAT STANDS FOR A de-PHRASE. Any verb or noun that takes de — parler DE, avoir besoin DE, se servir DE — turns into dont when you make it a relative: je parle de ce machin becomes le machin DONT je parle. There is one word for all of them and it never changes shape. ce dont is one step further on and this module names it without opening it."
+    },
+    {
+      "tag": "free",
+      "text": "THE PLACEHOLDER NOUNS A FRENCH SPEAKER ACTUALLY REACHES FOR. truc and machin are both thingummy and both masculine: un truc, un machin. chose is the neutral one and is feminine: une chose. Attach a relative clause or a pour and you have described anything you cannot name — un truc qui sert à …, un truc pour …, c'est quand on …"
+    },
+    {
+      "tag": "free",
+      "text": "FOUR REPAIR MOVES, LEARNT AS A SET. Ask for the word: comment on dit … en français ? Ask what a word means: qu'est-ce que ça veut dire ? Ask for a repeat, slower: vous pouvez répéter, plus lentement ? Take back what came out wrong: ce n'est pas ce que je voulais dire, je me suis mal exprimé. Between them they cover every way a conversation can stall."
+    },
+    {
+      "tag": "interference",
+      "text": "je veux dire IS I MEAN, AND ENGLISH I mean IS OFTEN NOT. In English it is filler — I mean, it's fine — and French does not want it there; je veux dire announces a real reformulation and nothing else. The same warning applies to actually, which is L4-M4's en fait and never actuellement, a word that means currently."
+    },
+    {
+      "tag": "delta",
+      "text": "WHAT THIS MODULE DOES NOT TAKE. lequel, duquel, auquel and the relative after a preposition are a written register and are named here as not-taken. ce dont is one step past dont and stays shut. And the alphabet is not this course's material: épeler appears as a REQUEST you can make of someone else, not as a skill you are being taught."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M8-S01",
+      "display": "C'est un truc qui sert à ouvrir les bouteilles",
+      "cue": "It's a thing for opening bottles",
+      "literal": "It is a thing which serves to open the bottles",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "un truc qui",
+            "cue": "a thing that",
+            "tag": "delta",
+            "forms": ["un truc qui", "un truc pour", "personne qui"],
+            "note": "The paraphrase frame. qui here is the SUBJECT of what follows — the truc does the serving — and it stays qui for people and things alike."
+          },
+          {
+            "display": "sert à",
+            "cue": "is for, is used for",
+            "tag": "delta",
+            "forms": ["sert à", "ça sert à", "servir"],
+            "note": "Always followed by an infinitive: sert à ouvrir, sert à écrire. ça sert à quoi ? is what is it for, and is the whole question."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "This one frame will get you through most missing nouns, and English hands you the strategy for free. The only French-specific piece is the à: sert à plus infinitive, never sert pour. A thing described by its purpose is un truc pour ouvrir or un truc qui sert à ouvrir, and both are ordinary speech.",
+      "sound": "say an trook kee sair tah oo-VREER lay boo-TAY. sert à links, sair-tah, because the t wakes up before the vowel.",
+      "variations": [
+        {
+          "display": "C'est un truc pour ouvrir les bouteilles",
+          "cue": "It's a thing for opening bottles",
+          "changed": "un truc pour, which needs no relative clause at all"
+        },
+        {
+          "display": "C'est la personne qui parle",
+          "cue": "It's the person who is talking",
+          "changed": "a person instead of a thing, with the same qui"
+        }
+      ],
+      "mistake": {
+        "display": "C'est un truc que sert à ouvrir les bouteilles",
+        "why": "the truc is what DOES the serving, so the relative is the subject of its clause and must be qui. que would make the truc the thing being served, which is not a sentence anyone means."
+      },
+      "usage": "Describing an object whose name you never learnt, without stopping the conversation.",
+      "register": "informal",
+      "mnemonic": "If the thing is doing the verb, it takes qui."
+    },
+    {
+      "id": "L5-M8-S02",
+      "display": "Comment on dit ça en français ?",
+      "cue": "How do you say that in French?",
+      "literal": "How one says that in French?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "comment on dit",
+            "cue": "how do you say",
+            "tag": "free",
+            "forms": ["comment on dit"],
+            "note": "Taken whole, because bare dit is L2-M6's said. The on is the general you, and no est-ce que is needed for this question."
+          },
+          {
+            "display": "en français",
+            "cue": "in French",
+            "tag": "free",
+            "forms": ["en français"],
+            "note": "Languages take en with no article: en français, en anglais. Lower case on the language, unlike English."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "Point at the thing and this question needs no vocabulary at all — comment on dit ça en français ? is the sentence to have ready before you need it. The word you get back will arrive with its article, and that article is worth keeping: un tire-bouchon, not tire-bouchon.",
+      "sound": "koh-mahn tohn dee sah ahn frahn-SAY. comment on links across, koh-mahn-tohn.",
+      "variations": [
+        {
+          "display": "Comment on dit ce mot en français ?",
+          "cue": "How do you say this word in French?",
+          "changed": "the thing being asked about"
+        },
+        {
+          "display": "Comment on dit ça ?",
+          "cue": "How do you say that?",
+          "changed": "the language dropped, when it is obvious"
+        }
+      ],
+      "mistake": {
+        "display": "Comment on dit ça en le français ?",
+        "why": "a language after en takes no article. It is en français, en anglais, en espagnol — the article only appears when the language is the subject or object of a verb: le français est difficile."
+      },
+      "usage": "Getting the word you are missing out of the person you are talking to.",
+      "register": "neutral",
+      "mnemonic": "en plus the language, and nothing in between."
+    },
+    {
+      "id": "L5-M8-S03",
+      "display": "Qu'est-ce que ça veut dire, ce mot ?",
+      "cue": "What does it mean, this word?",
+      "literal": "What is it that that wants to say, this word?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "veut dire",
+            "cue": "means",
+            "tag": "delta",
+            "forms": ["veut dire", "ça veut dire", "veut"],
+            "note": "To mean is literally to want to say. Two words always, and the second one never changes: ça veut dire, ils veulent dire."
+          },
+          {
+            "display": "quoi",
+            "cue": "what (at the end)",
+            "tag": "delta",
+            "forms": ["quoi"],
+            "note": "The question word speech leaves at the END: ça veut dire quoi ?, ça sert à quoi ? Fronting it needs qu'est-ce que instead, and that is the written shape."
+          },
+          {
+            "display": "mot",
+            "cue": "word",
+            "tag": "free",
+            "forms": ["mot", "mots"],
+            "note": "Masculine, un mot, and the t is silent. It is the noun the whole module turns on: the one you have lost or never had."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "French has no single verb for to mean. It says wants to say — ça veut dire — and the vouloir is doing real work: the SENTENCE is what wants to say something. Reaching for a one-word verb here is the reflex to unlearn.",
+      "sound": "kess kuh sah vuh DEER, suh MOH. Qu'est-ce que collapses to kess-kuh in speech, with no gaps at all.",
+      "variations": [
+        {
+          "display": "Qu'est-ce que ça veut dire ?",
+          "cue": "What does that mean?",
+          "changed": "the word left unnamed, when you are pointing at it"
+        },
+        {
+          "display": "Ça veut dire quoi, ce mot ?",
+          "cue": "What does this word mean?",
+          "changed": "the question word moved to the end, which is what speech does"
+        }
+      ],
+      "mistake": {
+        "display": "Qu'est-ce que ça signifie veut dire, ce mot ?",
+        "why": "veut dire is the whole verb and needs nothing in front of it. signifier exists and is the formal one — que signifie ce mot ? — but the two are alternatives, never stacked."
+      },
+      "usage": "Stopping on the one word that is blocking the sentence, instead of losing the whole sentence.",
+      "register": "neutral",
+      "mnemonic": "To mean is to want to say."
+    },
+    {
+      "id": "L5-M8-S04",
+      "display": "C'est le machin dont je parle",
+      "cue": "It's the thingummy I'm talking about",
+      "literal": "It is the thingummy of which I speak",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "machin",
+            "cue": "thingummy",
+            "tag": "free",
+            "forms": ["machin", "truc", "chose"],
+            "note": "machin and truc are the two throwaway ones and both masculine; chose is neutral and feminine, une chose. All three are ordinary speech."
+          },
+          {
+            "display": "dont",
+            "cue": "that … of / whose",
+            "tag": "delta",
+            "forms": ["dont"],
+            "note": "Replaces any de-phrase: je parle DE ce machin becomes le machin DONT je parle. One shape for every gender and number."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "You reach for dont by looking at the VERB, not at the noun. If the verb needs de — parler de, avoir besoin de, se servir de — the relative is dont. If it does not, you are back to qui and que. English gives no signal at all here, because it simply drops the preposition to the end: the thing I'm talking about.",
+      "sound": "say luh mah-SHAN dohn zhuh PARL. dont is one nasal syllable and the t is silent.",
+      "variations": [
+        {
+          "display": "C'est la chose dont je parle",
+          "cue": "It's the thing I'm talking about",
+          "changed": "chose, which is feminine and slightly less throwaway"
+        },
+        {
+          "display": "C'est le truc dont je parle",
+          "cue": "It's the thing I'm talking about",
+          "changed": "truc, the most everyday of the three"
+        }
+      ],
+      "mistake": {
+        "display": "C'est le machin que je parle de",
+        "why": "French cannot leave a preposition stranded at the end the way English can. de plus que collapses into the single word dont, and nothing is left over to put after parle."
+      },
+      "usage": "Pointing back at the thing you have been circling around for two sentences.",
+      "register": "informal",
+      "mnemonic": "Verb takes de, relative becomes dont."
+    },
+    {
+      "id": "L5-M8-S05",
+      "display": "Ce n'est pas ce que je voulais dire",
+      "cue": "That's not what I meant",
+      "literal": "This is not that which I wanted to say",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je voulais dire",
+            "cue": "I meant",
+            "tag": "delta",
+            "forms": ["je voulais dire", "je veux dire"],
+            "note": "The imperfect is what a repair needs: it names the intention you had while you were saying the wrong thing. je veux dire repairs it now instead."
+          }
+        ],
+        "rules": [2, 6]
+      },
+      "trap": "L5-M5's ce que is the pivot of this sentence and it is not que on its own: the thing that. And the tense matters — je voulais dire looks back at what you were trying to say, while je veux dire announces the correction you are about to make. English I meant covers both.",
+      "sound": "suh nay pah suh kuh zhuh voo-lay DEER. ce que collapses to skuh in speech.",
+      "variations": [
+        {
+          "display": "Ce n'est pas ce que je veux dire",
+          "cue": "That's not what I mean",
+          "changed": "the present, which corrects rather than looks back"
+        },
+        {
+          "display": "Ce n'est pas ce que je voulais dire, pardon",
+          "cue": "That's not what I meant, sorry",
+          "changed": "L2-M1's pardon added to soften the correction"
+        }
+      ],
+      "mistake": {
+        "display": "Ce n'est pas que je voulais dire",
+        "why": "the sentence needs the whole pair ce que, not a bare que. Without the ce there is no thing for the clause to describe, and the sentence reads as it is not that I wanted to say — a different claim."
+      },
+      "usage": "Catching a sentence that came out wrong before the other person answers the wrong version.",
+      "register": "neutral",
+      "mnemonic": "ce que is one piece: the thing that."
+    },
+    {
+      "id": "L5-M8-S06",
+      "display": "Je me suis mal exprimé, excusez-moi",
+      "cue": "I put that badly, sorry",
+      "literal": "I myself am badly expressed, excuse me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je me suis mal exprimé",
+            "cue": "I put that badly",
+            "tag": "delta",
+            "forms": ["je me suis mal exprimé", "je me suis mal exprimée"],
+            "note": "Reflexive, so it takes être, and the participle agrees with the speaker: exprimée if you are a woman. L2-M8's mal is the badly."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "This blames the sentence rather than the listener, which is exactly why it works. Je ne me suis pas bien fait comprendre exists and is heavier; je me suis mal exprimé is short, ordinary, and ends the misunderstanding without anybody being wrong.",
+      "sound": "zhuh muh swee mal ek-spree-MAY, ek-skoo-zay MWAH. The final é is a clean ay, and adding the e for a woman changes nothing you can hear.",
+      "variations": [
+        {
+          "display": "Je me suis mal exprimé, pardon",
+          "cue": "I put that badly, sorry",
+          "changed": "pardon, which is quicker and less formal than excusez-moi"
+        },
+        {
+          "display": "Je me suis mal exprimée",
+          "cue": "I put that badly",
+          "changed": "the written agreement when the speaker is a woman"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai mal exprimé, excusez-moi",
+        "why": "the verb is reflexive here — s'exprimer, to express oneself — so it needs both the me and être. j'ai exprimé would need an object: what did you express?"
+      },
+      "usage": "Taking the blame for a misunderstanding so the conversation can carry on.",
+      "register": "neutral",
+      "mnemonic": "s'exprimer is to express YOURSELF, so the me never goes missing."
+    },
+    {
+      "id": "L5-M8-S07",
+      "display": "Je n'ai pas compris, vous pouvez répéter ?",
+      "cue": "I didn't understand — could you say that again?",
+      "literal": "I have not understood, you can repeat?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je n'ai pas compris",
+            "cue": "I didn't understand",
+            "tag": "free",
+            "forms": ["je n'ai pas compris", "comprends"],
+            "note": "Past, not present: the understanding failed a moment ago. je ne comprends pas is the present and means you are lost right now."
+          },
+          {
+            "display": "vous pouvez répéter",
+            "cue": "could you say that again",
+            "tag": "free",
+            "forms": ["vous pouvez répéter", "tu peux répéter"],
+            "note": "A present-tense question doing the work of a polite request. Adding s'il vous plaît is normal and adding a conditional is not necessary."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "Say which one you mean. je n'ai pas compris points at the sentence that just went past; je ne comprends pas points at the whole situation and sounds much larger. Using the present when you meant the past makes a small stumble sound like a breakdown.",
+      "sound": "zhuh nay pah kohn-PREE, voo poo-vay ray-pay-TAY. The s of pas links onto nothing here — compris starts with a consonant.",
+      "variations": [
+        {
+          "display": "Je n'ai pas compris, vous pouvez expliquer ?",
+          "cue": "I didn't understand — can you explain?",
+          "changed": "asking for an explanation rather than a repeat"
+        },
+        {
+          "display": "Tu peux répéter ?",
+          "cue": "Can you say that again?",
+          "changed": "the tu form, for someone you know"
+        }
+      ],
+      "mistake": {
+        "display": "Je ne comprends pas, vous pouvez répéter ?",
+        "why": "not wrong, but it says something bigger than you mean: I don't understand, as a state. For the sentence that just went past, the past tense is the accurate one — je n'ai pas compris."
+      },
+      "usage": "Asking for one sentence again, without confessing to being lost in general.",
+      "register": "neutral",
+      "mnemonic": "One sentence missed is a past tense."
+    },
+    {
+      "id": "L5-M8-S08",
+      "display": "Vous pouvez expliquer autrement, plus lentement ?",
+      "cue": "Can you explain it differently, more slowly?",
+      "literal": "You can explain otherwise, more slowly?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "expliquer",
+            "cue": "to explain",
+            "tag": "free",
+            "forms": ["expliquer", "autrement"],
+            "note": "expliquer autrement is the request that actually helps: not the same words again, but different ones. autrement is otherwise, another way."
+          },
+          {
+            "display": "plus lentement",
+            "cue": "more slowly",
+            "tag": "free",
+            "forms": ["plus lentement", "lentement"],
+            "note": "The ment ending builds adverbs the way English ly does: lent becomes lentement. plus in front makes the comparison."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "Ask for a rewording rather than a repeat. A repeat of the same sentence at the same speed helps nobody, and expliquer autrement is the request a French speaker will act on: they will change the words, not just the volume.",
+      "sound": "voo poo-vay ek-splee-KAY oh-truh-MAHN, ploo lahnt-MAHN. In plus lentement the s of plus is silent.",
+      "variations": [
+        {
+          "display": "Vous pouvez expliquer autrement ?",
+          "cue": "Can you explain it a different way?",
+          "changed": "the speed request dropped"
+        },
+        {
+          "display": "Plus lentement, s'il vous plaît",
+          "cue": "More slowly, please",
+          "changed": "the bare request, when there is no time for a sentence"
+        }
+      ],
+      "mistake": {
+        "display": "Vous pouvez expliquer autrement, plus lent ?",
+        "why": "lent is the adjective, slow, and describes a thing. Describing HOW someone speaks needs the adverb, lentement — the same ment that builds premièrement and franchement."
+      },
+      "usage": "Getting an explanation you can follow, rather than the same one twice.",
+      "register": "neutral",
+      "mnemonic": "ment on the end is English ly."
+    },
+    {
+      "id": "L5-M8-S09",
+      "display": "C'est-à-dire que je ne trouve pas le mot",
+      "cue": "That is to say, I can't find the word",
+      "literal": "It is to say that I not find not the word",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "c'est-à-dire",
+            "cue": "that is to say",
+            "tag": "free",
+            "forms": ["c'est-à-dire"],
+            "note": "Hyphenated and frozen, and the commonest reformulation marker in French. Followed by que when a whole clause comes after it."
+          },
+          {
+            "display": "je ne trouve pas le mot",
+            "cue": "I can't find the word",
+            "tag": "free",
+            "forms": ["je ne trouve pas le mot", "j'ai oublié le mot"],
+            "note": "The admission that buys you time. trouver is used for a word the way English uses find; j'ai oublié le mot says you had it and lost it."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "c'est-à-dire announces a real restatement and is not filler. English that is to say has drifted into a hesitation noise; the French phrase still promises that a clearer version is coming, and a listener will wait for it.",
+      "sound": "say-tah-DEER kuh zhuh nuh troov pah luh MOH. The three hyphenated pieces run as one word.",
+      "variations": [
+        {
+          "display": "C'est-à-dire que j'ai oublié le mot",
+          "cue": "That is to say, I've forgotten the word",
+          "changed": "the admission, made about memory rather than search"
+        },
+        {
+          "display": "Je ne trouve pas le mot",
+          "cue": "I can't find the word",
+          "changed": "the admission on its own, with no reformulation promised"
+        }
+      ],
+      "mistake": {
+        "display": "C'est à dire que je ne trouve pas le mot",
+        "why": "the phrase is written with its hyphens: c'est-à-dire. Without them it reads as three separate words meaning it is to say, which is not a connector and leaves the sentence hanging."
+      },
+      "usage": "Buying yourself a second sentence when the first one did not land.",
+      "register": "neutral",
+      "mnemonic": "Three words, two hyphens, one connector."
+    },
+    {
+      "id": "L5-M8-S10",
+      "display": "Ça s'écrit comment ? Vous pouvez épeler ?",
+      "cue": "How is it spelt? Could you spell it out?",
+      "literal": "That itself writes how? You can spell?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ça s'écrit comment",
+            "cue": "how is it spelt",
+            "tag": "delta",
+            "forms": ["ça s'écrit comment", "s'écrit"],
+            "note": "Reflexive where English is passive: it writes itself how. The question word sits at the end, which is what speech does with comment."
+          },
+          {
+            "display": "épeler",
+            "cue": "to spell out",
+            "tag": "free",
+            "forms": ["épeler"],
+            "note": "Letter by letter, out loud. Asked of the other person here — the letters themselves are not this course's material."
+          }
+        ],
+        "rules": [5, 7]
+      },
+      "trap": "French says it writes itself where English says it is written. The reflexive is how French avoids the passive in ordinary speech, and it turns up all over: ça se dit, ça se fait, ça s'écrit. L5-M4's real passive is for formal occasions, not for asking about a spelling.",
+      "sound": "sah say-KREE koh-MAHN ? voo poo-vay ay-puh-LAY. s'écrit is two syllables, say-kree.",
+      "variations": [
+        {
+          "display": "Ce mot s'écrit comment ?",
+          "cue": "How is this word spelt?",
+          "changed": "the word named instead of pointed at"
+        },
+        {
+          "display": "Vous pouvez épeler, plus lentement ?",
+          "cue": "Could you spell it out, more slowly?",
+          "changed": "the two requests joined"
+        }
+      ],
+      "mistake": {
+        "display": "Comment ça est écrit ?",
+        "why": "that is a real passive and asks how the thing was written down on some particular occasion. Asking about the spelling of a word takes the reflexive: ça s'écrit comment ?"
+      },
+      "usage": "Getting a name or a new word down on paper correctly, first time.",
+      "register": "neutral",
+      "mnemonic": "In French the word writes itself."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M8-C01",
+      "display": "C'est un truc qui sert à ouvrir les bouteilles",
+      "cue": "It's a thing for opening bottles"
+    },
+    {
+      "id": "L5-M8-C02",
+      "display": "Comment on dit ça en français ?",
+      "cue": "How do you say that in French?"
+    },
+    {
+      "id": "L5-M8-C03",
+      "display": "Qu'est-ce que ça veut dire, ce mot ?",
+      "cue": "What does this word mean?"
+    },
+    {
+      "id": "L5-M8-C04",
+      "display": "C'est le machin dont je parle",
+      "cue": "It's the thingummy I'm talking about"
+    },
+    {
+      "id": "L5-M8-C05",
+      "display": "Ce n'est pas ce que je voulais dire",
+      "cue": "That's not what I meant"
+    },
+    { "id": "L5-M8-C06", "display": "Je me suis mal exprimé, pardon", "cue": "I put that badly, sorry" },
+    {
+      "id": "L5-M8-C07",
+      "display": "Je n'ai pas compris, vous pouvez répéter ?",
+      "cue": "I didn't understand — could you say that again?"
+    },
+    {
+      "id": "L5-M8-C08",
+      "display": "Vous pouvez expliquer plus lentement ?",
+      "cue": "Can you explain more slowly?"
+    },
+    {
+      "id": "L5-M8-C09",
+      "display": "C'est-à-dire que je ne trouve pas le mot",
+      "cue": "That is to say, I can't find the word"
+    },
+    { "id": "L5-M8-C10", "display": "Ça s'écrit comment ?", "cue": "How is it spelt?" },
+    { "id": "L5-M8-C11", "display": "C'est la chose dont je parle", "cue": "It's the thing I'm talking about" },
+    {
+      "id": "L5-M8-C12",
+      "display": "C'est un truc pour ouvrir les bouteilles",
+      "cue": "It's a thing for opening bottles"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

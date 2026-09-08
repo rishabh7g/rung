@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M10",
+  "title": "Your own voice",
+  "job": "A piece that changes register midway",
+  "prerequisites": [
+    "L5-M1",
+    "L5-M2",
+    "L5-M3",
+    "L5-M4",
+    "L5-M5",
+    "L5-M6",
+    "L5-M7",
+    "L5-M8",
+    "L5-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["présent", "passé composé", "conditionnel", "infinitif"],
+    "allowedPatterns": [
+      "<four sentences in the vous register> + <turn> + <four sentences in the tu register>",
+      "On se tutoie + ?",
+      "<formal clause> + . + Bref + , + <familiar clause>",
+      "Entre nous + , + <clause>",
+      "<clause> + , + si vous voyez ce que je veux dire"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A REGISTER IS FOUR THINGS MOVING TOGETHER, NOT A VOCABULARY LIST. The ADDRESS pronoun (vous against tu). The CONNECTOR (en revanche and toutefois against par contre and du coup). The LEXIS (travail against boulot, voiture against bagnole, bonjour against salut). And the SENTENCE SHAPE (inversion and the passive against est-ce que and on). A piece that changes only the pronoun has not changed register — it has made a mistake in one word."
+    },
+    {
+      "tag": "free",
+      "text": "THE SWITCH IS NEGOTIATED, AND FRENCH HAS A SENTENCE FOR IT. on se tutoie ? — L5-M3's, and the whole ceremony. It is normally offered by the older, the senior, or the host, and once it is accepted there is no going back inside that relationship. English has no equivalent line, which is why the move feels bigger to a French speaker than an English one expects."
+    },
+    {
+      "tag": "delta",
+      "text": "THIS PIECE READS AS ONE PERSON, AND THE TURN HAS A REASON INSIDE IT. Five sentences at an interview in vous; the offer of tu; four sentences of ordinary shop talk. The register changes because the RELATIONSHIP changed, not because the exercise asked for a change. A switch with no reason in the account turns a skill into a trick, and a listener hears the trick."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH AND FRENCH CARRY REGISTER ON DIFFERENT THINGS. In English the loudest carrier is contraction and elision — I am not becoming I'm not. In French it is the DROPPED ne — je sais pas, il le sait pas, t'as raison — and THIS COURSE WRITES THE ne IN BOTH HALVES, by its own law (docs/58 §4). So the single most audible marker of familiar French is unavailable to any display here, and the switch you can see is carried by pronoun, connector and lexis instead. That is stated in the module and not only in the decisions doc, because it is the clearest thing this course can say about what it shows and what it does not."
+    },
+    {
+      "tag": "free",
+      "text": "NOTHING NEW IS OPENED, AND THAT IS THE POINT. Every carrier this piece needs is already yours: vous from L1-M2 and tu from L2-M1, on and nous from L2-M6, en revanche and par contre from L4-M4, du coup from L4-M2, veuillez and madame from L4-M7, travail from L3-M2, and boulot, salut, relou and on se tutoie from L5-M3. An exit module's honest spend is a handful of sign-offs and one or two nouns."
+    },
+    {
+      "tag": "delta",
+      "text": "WHAT THIS MODULE DOES NOT TAKE. No new grammar, no new tense, and no surface the ladder has not already paid for. Not the dropped ne — not even here, not even as a one-off demonstration, because a single exception would make the law unenforceable in every module behind this one. And not a register change with no motivation in the account, which is the failure mode this whole module is built to avoid."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M10-S01",
+      "display": "Bonjour madame, je vous remercie",
+      "cue": "Good morning, thank you for seeing me",
+      "literal": "Good day madam, I you thank",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je vous remercie",
+            "cue": "thank you",
+            "tag": "free",
+            "forms": ["je vous remercie"],
+            "note": "The full-sentence thank-you, heavier and more deliberate than merci. Two pronouns and a verb, so it can never be said carelessly."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "merci and je vous remercie are not the same size. merci is what you say for a held door; je vous remercie is what you say when you are grateful for something that cost the other person time. Opening with the short one at an interview reads as brisk.",
+      "sound": "bohn-ZHOOR mah-DAM, zhuh voo ruh-mair-SEE. je vous runs as zhuh-voo with no stress on either.",
+      "variations": [
+        {
+          "display": "Bonjour monsieur, je vous remercie",
+          "cue": "Good morning sir, thank you",
+          "changed": "who is being addressed"
+        },
+        {
+          "display": "Je vous remercie, madame",
+          "cue": "Thank you, madam",
+          "changed": "the greeting dropped, when you are already talking"
+        }
+      ],
+      "mistake": {
+        "display": "Salut, je vous remercie",
+        "why": "the two halves are in different registers and cancel each other out. salut belongs with tu; with vous the greeting is bonjour. Mixing them is the exact failure this module exists to name."
+      },
+      "usage": "Opening a meeting with someone who has given you their time.",
+      "register": "formal",
+      "mnemonic": "Long thanks for a large favour, merci for a small one."
+    },
+    {
+      "id": "L5-M10-S02",
+      "display": "Je voudrais vous parler de ce poste",
+      "cue": "I'd like to talk to you about this position",
+      "literal": "I would want to you speak of this post",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poste",
+            "cue": "position, job",
+            "tag": "interference",
+            "forms": ["poste", "postes"],
+            "note": "Masculine for a job; la poste, feminine, is the post office. The article is the only thing separating the two meanings."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "le poste is a job and la poste is the post office, and nothing but the article tells them apart. It is one of the small handful of French nouns whose gender IS the meaning — like le livre, a book, and la livre, a pound.",
+      "sound": "zhuh voo-DRAY voo par-LAY duh suh POST. The final e of poste is silent but the st is heard.",
+      "variations": [
+        {
+          "display": "Je voudrais vous parler de ce travail",
+          "cue": "I'd like to talk to you about this job",
+          "changed": "travail, which is the work rather than the position"
+        },
+        {
+          "display": "Je voudrais vous parler",
+          "cue": "I'd like to speak with you",
+          "changed": "the subject left unnamed, which makes it graver"
+        }
+      ],
+      "mistake": {
+        "display": "Je voudrais vous parler de la poste",
+        "why": "that sentence is about the post office. A job is masculine — le poste, ce poste — and the feminine article moves the whole conversation somewhere else."
+      },
+      "usage": "Naming what you have come to discuss, before anyone else sets the agenda.",
+      "register": "formal",
+      "mnemonic": "le poste is where you work; la poste is where you post."
+    },
+    {
+      "id": "L5-M10-S03",
+      "display": "Pour être honnête, l'entretien a été difficile",
+      "cue": "To be honest, the interview was hard",
+      "literal": "For to be honest, the interview has been difficult",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pour être honnête",
+            "cue": "to be honest",
+            "tag": "free",
+            "forms": ["pour être honnête"],
+            "note": "A hedge that works in either register, which makes it useful across the turn in this piece. The h of honnête is silent."
+          },
+          {
+            "display": "entretien",
+            "cue": "interview",
+            "tag": "free",
+            "forms": ["entretien", "l'entretien", "entretiens"],
+            "note": "Masculine, and always the two-way kind: a job interview or a formal talk. Both surfaces are on this row because the elided form is how it is normally said."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "This is the first crack in the formal surface, and it is deliberate: pour être honnête is the sentence that admits something, and admitting something is what makes the offer of tu two lines later plausible. L5-M4's passive a été does the formal work while the content quietly stops being formal.",
+      "sound": "poor ay-truh oh-NET, lahn-truh-tyan ah ay-tay dee-fee-SEEL. The h of honnête is silent, so pour être links straight into it.",
+      "variations": [
+        {
+          "display": "Pour être honnête, l'entretien a été long",
+          "cue": "To be honest, the interview was long",
+          "changed": "the complaint made about length rather than difficulty"
+        },
+        {
+          "display": "L'entretien a été difficile",
+          "cue": "The interview was hard",
+          "changed": "the hedge removed, which makes it a flat report"
+        }
+      ],
+      "mistake": {
+        "display": "Pour être honnête, le entretien a été difficile",
+        "why": "the h of honnête and the e of entretien both take elision. le entretien is never written or said: it is l'entretien, one word to the ear."
+      },
+      "usage": "Saying the true thing at the point where the meeting could still go either way.",
+      "register": "formal",
+      "mnemonic": "Honesty is the hinge — it works before and after the turn."
+    },
+    {
+      "id": "L5-M10-S04",
+      "display": "En revanche, le travail est vraiment intéressant",
+      "cue": "On the other hand, the work is genuinely interesting",
+      "literal": "In revenge, the work is truly interesting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vraiment",
+            "cue": "really, genuinely",
+            "tag": "free",
+            "forms": ["vraiment"],
+            "note": "Built from L3-M3's vrai with the ment ending. It intensifies without belonging to either register, unlike carrément and grave."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "en revanche and par contre mean the same thing and are not the same word. en revanche is written and formal; par contre is spoken and is what the second half of this piece uses. Watching which one a French speaker reaches for tells you where in the register they think they are.",
+      "sound": "ahn ruh-VAHNSH, luh trah-VYE ay vray-mahn an-tay-ray-SAHN. travail ends in a y sound, trah-vye.",
+      "variations": [
+        {
+          "display": "En revanche, le poste est vraiment intéressant",
+          "cue": "On the other hand, the position is genuinely interesting",
+          "changed": "the position rather than the work itself"
+        },
+        {
+          "display": "Par contre, le travail est vraiment intéressant",
+          "cue": "On the other hand, the work is genuinely interesting",
+          "changed": "par contre, which drops the sentence a register"
+        }
+      ],
+      "mistake": {
+        "display": "En revanche, le boulot est vraiment intéressant",
+        "why": "the connector is formal and the noun is not. boulot is L5-M3's familiar word for work, and putting it after en revanche is the same collision as salut with vous — one half of the sentence in each register."
+      },
+      "usage": "Balancing a criticism with the reason you are still in the room.",
+      "register": "formal",
+      "mnemonic": "en revanche is written; par contre is spoken."
+    },
+    {
+      "id": "L5-M10-S05",
+      "display": "C'est un bon poste, si vous voyez ce que je veux dire",
+      "cue": "It's a good position, if you see what I mean",
+      "literal": "It is a good post, if you see that which I want to say",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si vous voyez ce que je veux dire",
+            "cue": "if you see what I mean",
+            "tag": "free",
+            "forms": ["si vous voyez ce que je veux dire"],
+            "note": "Eight words taken whole. It hands the unsaid half of the sentence to the listener, and it is the last formal line before the turn."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "This is L5-M7's move wearing a formal coat: the sentence says something mild and asks the other person to hear the rest. It is also the invitation that makes on se tutoie ? possible — you cannot offer tu to someone you have not yet let in on anything.",
+      "sound": "say tan bohn POST, see voo vwah-yay suh kuh zhuh vuh DEER. voyez is two syllables, vwah-yay.",
+      "variations": [
+        {
+          "display": "C'est un bon travail, si vous voyez ce que je veux dire",
+          "cue": "It's good work, if you see what I mean",
+          "changed": "the noun being hedged about"
+        },
+        {
+          "display": "Si vous voyez ce que je veux dire",
+          "cue": "If you see what I mean",
+          "changed": "the phrase alone, left hanging after a pause"
+        }
+      ],
+      "mistake": {
+        "display": "C'est un bon poste, si tu vois ce que je veux dire",
+        "why": "the tu version exists and is correct — later. Here it arrives one line before the switch has been offered, which is the whole failure this module names: the register moved without anybody agreeing to move it."
+      },
+      "usage": "Saying the careful half out loud and leaving the rest to be understood.",
+      "register": "formal",
+      "mnemonic": "The last vous of the piece, and the one that opens the door."
+    },
+    {
+      "id": "L5-M10-S06",
+      "display": "On se tutoie ? Entre nous, c'est plus simple",
+      "cue": "Shall we use tu? Between us, it's easier",
+      "literal": "One oneself tutoies? Between us, it is more simple",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "entre nous",
+            "cue": "between us",
+            "tag": "free",
+            "forms": ["entre nous"],
+            "note": "Marks what follows as off the record. Built on L2-M6's nous, and it is the first familiar move of the piece."
+          },
+          {
+            "display": "simple",
+            "cue": "simple, easy",
+            "tag": "free",
+            "forms": ["simple", "simples"],
+            "note": "One form for both genders, like difficile. c'est plus simple is the ordinary reason given for dropping a formality."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "This is the turn, and everything after it changes. L5-M3 taught on se tutoie ? as a fact about French; here it is doing a job inside an account, and the four sentences that follow have to obey it — pronoun, connector and lexis together, not just the pronoun.",
+      "sound": "ohn suh too-TWAH ? AHN-truh NOO, say ploo SANPL. tutoie is two syllables, too-twah.",
+      "variations": [
+        {
+          "display": "On se tutoie ? C'est plus simple",
+          "cue": "Shall we use tu? It's easier",
+          "changed": "the aside removed, which makes the offer blunter"
+        },
+        {
+          "display": "Entre nous, c'est plus simple",
+          "cue": "Between us, it's easier",
+          "changed": "the offer left implied rather than made"
+        }
+      ],
+      "mistake": {
+        "display": "Nous nous tutoyons ? Entre nous, c'est plus simple",
+        "why": "grammatical and nobody says it. The offer is frozen on on — on se tutoie ? — and the nous version sounds like a proposal being read from a document, which is the opposite of what the sentence is for."
+      },
+      "usage": "Offering to drop the formality, and giving a reason so it is easy to accept.",
+      "register": "neutral",
+      "mnemonic": "One sentence, and everything after it is in tu."
+    },
+    {
+      "id": "L5-M10-S07",
+      "display": "Du coup, on se voit demain ?",
+      "cue": "So, shall we see each other tomorrow?",
+      "literal": "Of the blow, one oneself sees tomorrow?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on se voit",
+            "cue": "we'll see each other",
+            "tag": "free",
+            "forms": ["on se voit", "on se voit demain"],
+            "note": "Reciprocal se: the two of you see each other. With a rising tone it is a proposal, and with a full stop it is an arrangement."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "du coup is the first connector of the familiar half and it is doing register work, not logical work. L4-M2 taught it as so, as a result; here it is also a signal, and swapping in par conséquent would put the sentence back on the formal side of the turn.",
+      "sound": "doo KOO, ohn suh vwah duh-MAN. on se voit runs as ohn-suh-vwah with no break.",
+      "variations": [
+        {
+          "display": "Du coup, on se voit ?",
+          "cue": "So, shall we meet?",
+          "changed": "the day left open"
+        },
+        {
+          "display": "On se voit demain",
+          "cue": "We'll see each other tomorrow",
+          "changed": "the question turned into an arrangement"
+        }
+      ],
+      "mistake": {
+        "display": "Du coup, est-ce que vous vous voyez demain ?",
+        "why": "the pronoun has slipped back to vous one sentence after tu was agreed. Once the offer is accepted, going back to vous inside the same conversation reads as a snub rather than as politeness."
+      },
+      "usage": "Making the next arrangement, now that you are on tu terms.",
+      "register": "informal",
+      "mnemonic": "du coup opens the familiar half."
+    },
+    {
+      "id": "L5-M10-S08",
+      "display": "Par contre, le chef est un peu relou",
+      "cue": "Mind you, the boss is a bit of a pain",
+      "literal": "By against, the boss is a little annoying",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chef",
+            "cue": "boss, head",
+            "tag": "free",
+            "forms": ["chef", "chefs"],
+            "note": "Masculine whoever holds the job, and it covers any head of anything — a team, a department, a kitchen. L3-M2's patron is the owner."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "This is the sentence that proves the switch was real. par contre for en revanche, chef for supérieur, relou for pénible, un peu doing the hedging: four familiar choices in eight words, and not one of them is the pronoun. A register that only changed its pronoun would not produce this line.",
+      "sound": "par KOHN-truh, luh SHEF ay an puh ruh-LOO. relou is verlan for lourd, so the two syllables are swapped.",
+      "variations": [
+        {
+          "display": "Par contre, le chef est un peu difficile",
+          "cue": "Mind you, the boss is a bit difficult",
+          "changed": "difficile, which lifts the line back toward neutral"
+        },
+        {
+          "display": "Entre nous, le chef est un peu relou",
+          "cue": "Between us, the boss is a bit of a pain",
+          "changed": "the aside frame, which makes it more confidential"
+        }
+      ],
+      "mistake": {
+        "display": "Toutefois, le chef est un peu relou",
+        "why": "toutefois belongs to a written argument and relou belongs to a break room. The sentence has one foot in each register, which is exactly as audible in French as it would be in English."
+      },
+      "usage": "Saying the thing about your workplace you would not have said ten minutes earlier.",
+      "register": "informal",
+      "mnemonic": "Four familiar choices, only one of them a pronoun."
+    },
+    {
+      "id": "L5-M10-S09",
+      "display": "Si tu veux, un café ?",
+      "cue": "If you like — coffee?",
+      "literal": "If you want, a coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si tu veux",
+            "cue": "if you like",
+            "tag": "free",
+            "forms": ["si tu veux", "si vous voulez"],
+            "note": "L3-M4's conditional si, offering rather than supposing. The vous version is the same offer made across the formal line."
+          },
+          {
+            "display": "un café",
+            "cue": "a coffee",
+            "tag": "free",
+            "forms": ["un café", "cafés"],
+            "note": "A whole invitation in two words. French offers the thing rather than the activity, where English says shall we get a coffee."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "The shortest sentence in the piece and the most familiar. No verb, no est-ce que, no politeness formula — just the offer and the condition. That shape is only available once tu has been agreed, which is why it lands here and could not have opened the module.",
+      "sound": "see too VUH, an kah-FAY ? The whole thing is four syllables, and the rise at the end is what makes it a question.",
+      "variations": [
+        {
+          "display": "Si vous voulez, un café ?",
+          "cue": "If you like, coffee?",
+          "changed": "the same offer made before the turn"
+        },
+        {
+          "display": "Un café ?",
+          "cue": "Coffee?",
+          "changed": "the condition dropped, which makes it warmer still"
+        }
+      ],
+      "mistake": {
+        "display": "Si tu veux, est-ce que vous voulez un café ?",
+        "why": "two registers and two grammars in one sentence. Once the piece is on tu, the offer is si tu veux, un café ? — and the full question form is the thing familiar French is dropping, not adding."
+      },
+      "usage": "Ending a work conversation by turning it into a break.",
+      "register": "informal",
+      "mnemonic": "Fewest words, closest relationship."
+    },
+    {
+      "id": "L5-M10-S10",
+      "display": "Bref, à plus. Bonne journée",
+      "cue": "Anyway — see you. Have a good day",
+      "literal": "Brief, to more. Good day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "à plus",
+            "cue": "see you",
+            "tag": "free",
+            "forms": ["à plus", "à bientôt"],
+            "note": "à plus is the familiar goodbye and the s IS pronounced here. à bientôt is its neutral cousin and works in either register."
+          },
+          {
+            "display": "bonne journée",
+            "cue": "have a good day",
+            "tag": "free",
+            "forms": ["bonne journée"],
+            "note": "Said on leaving, never on arriving — bonjour does that. Feminine journée is the day as a stretch of time rather than a date."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "The last line of the course, and it closes on the register the piece ended in rather than the one it began in. à plus with someone you still call vous would be wrong; cordialement here would be wrong the other way. The goodbye is the last place the switch is visible, and it is the easiest place to forget it.",
+      "sound": "BREF, ah PLOOSS. bun zhoor-NAY. In à plus as a goodbye the s is sounded — plooss — which is not true of plus anywhere else.",
+      "variations": [
+        {
+          "display": "Bref, à bientôt. Bonne journée",
+          "cue": "Anyway, see you soon. Have a good day",
+          "changed": "à bientôt, which would also have worked before the turn"
+        },
+        {
+          "display": "Salut, à plus",
+          "cue": "Bye, see you",
+          "changed": "the whole line reduced to its most familiar form"
+        }
+      ],
+      "mistake": {
+        "display": "Bref, à plus. Cordialement",
+        "why": "cordialement ends a written letter, and a formal one. Speaking it after à plus puts a sign-off from one register on the end of a goodbye from another — the last sentence of the course, undoing the switch it just made."
+      },
+      "usage": "Leaving, in the voice the conversation actually finished in.",
+      "register": "informal",
+      "mnemonic": "End in the register you ended in, not the one you started in."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M10-C01",
+      "display": "Bonjour madame, je vous remercie",
+      "cue": "Good morning, thank you for seeing me"
+    },
+    {
+      "id": "L5-M10-C02",
+      "display": "Je voudrais vous parler de ce poste",
+      "cue": "I'd like to talk to you about this position"
+    },
+    {
+      "id": "L5-M10-C03",
+      "display": "Pour être honnête, l'entretien a été difficile",
+      "cue": "To be honest, the interview was hard"
+    },
+    {
+      "id": "L5-M10-C04",
+      "display": "En revanche, le travail est vraiment intéressant",
+      "cue": "On the other hand, the work is genuinely interesting"
+    },
+    {
+      "id": "L5-M10-C05",
+      "display": "C'est un bon poste, si vous voyez ce que je veux dire",
+      "cue": "It's a good position, if you see what I mean"
+    },
+    {
+      "id": "L5-M10-C06",
+      "display": "On se tutoie ? Entre nous, c'est plus simple",
+      "cue": "Shall we use tu? Between us, it's easier"
+    },
+    {
+      "id": "L5-M10-C07",
+      "display": "Du coup, on se voit demain ?",
+      "cue": "So, shall we see each other tomorrow?"
+    },
+    {
+      "id": "L5-M10-C08",
+      "display": "Par contre, le chef est un peu relou",
+      "cue": "Mind you, the boss is a bit of a pain"
+    },
+    { "id": "L5-M10-C09", "display": "Si tu veux, un café ?", "cue": "If you like — coffee?" },
+    {
+      "id": "L5-M10-C10",
+      "display": "Bref, à plus. Bonne journée",
+      "cue": "Anyway — see you. Have a good day"
+    },
+    { "id": "L5-M10-C11", "display": "Salut, à bientôt", "cue": "Bye, see you soon" },
+    {
+      "id": "L5-M10-C12",
+      "display": "Entre nous, le boulot est simple",
+      "cue": "Between us, the job is easy"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

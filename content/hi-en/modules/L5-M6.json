@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M6",
+  "title": "Arguing a position",
+  "job": "A structured case, objections answered",
+  "prerequisites": ["L5-M1", "L5-M2", "L5-M3", "L5-M4", "L5-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present_simple", "simple_past", "past_perfect", "conditional"],
+    "allowedPatterns": [
+      "Granted + , + <concession> + . + But + <rebuttal> + .",
+      "Although + <concession clause> + , + <main clause> + .",
+      "Firstly + , + <point> + . + Secondly + , + <point> + .",
+      "If + <past perfect> + , + <would> + <bare verb> + now + .",
+      "To sum up + , + <clause> + ."
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "बहस का ढाँचा दो हिस्सों का जोड़ा है — पहले सामने वाले की एक सही बात मान लीजिए (Granted · Admittedly · It is true that), फिर अपनी बात रखिए (But · Nevertheless). नियम दो हैं: मानी हुई बात सच में सामने वाले की हो, बनावटी नहीं; और जवाब उस बात को झुठलाए नहीं, उससे भारी पड़े. Granted, the train is slower. But it costs half as much. — यहाँ ट्रेन का धीमा होना नकारा नहीं गया, बस उससे बड़ी बात रख दी गई."
+    },
+    {
+      "tag": "interference",
+      "text": "यह इस दर्जे की सबसे पहचानी जाने वाली ग़लती है. हिंदी यद्यपि और परन्तु दोनों बोलती है — यद्यपि यह महँगा है, परन्तु काम का है. अंग्रेज़ी दोनों में से सिर्फ़ एक लेती है: या तो Although it is expensive, it is worth the money या It is expensive, but it is worth the money. Although … but … कभी नहीं. यही बात because … so … के जोड़े पर L4-M2 ने कही थी; यहाँ वही नियम रियायत वाले जोड़े पर है."
+    },
+    {
+      "tag": "delta",
+      "text": "अंग्रेज़ी में बहस के जोड़ खुले दिखाए जाते हैं. Firstly · Secondly · For example · To sum up · On balance सजावट नहीं हैं — इन्हीं से सुनने वाले को पता चलता है कि आप बहस में कहाँ पहुँचे. हिंदी बिना इन निशानों के भी बात चलने देती है, इसलिए सीखने वाला जोड़ खुले नहीं छोड़ता और उसकी बात राय के ढेर जैसी लगती है."
+    },
+    {
+      "tag": "delta",
+      "text": "मिली-जुली शर्त: शर्त बीते वक़्त की, नतीजा आज का. If we had booked earlier, we would be on the train now. — बुकिंग पहले हो सकती थी (had + booked), और उसका नुक़सान अभी भुगत रहे हैं (would be … now). L3-M4 वाली साधारण शर्त दोनों सिरे एक ही वक़्त में रखती है; बहस में अक्सर दोनों सिरे अलग वक़्त के होते हैं."
+    },
+    {
+      "tag": "delta",
+      "text": "कारण और तुलना के जोड़ने वाले शब्द: कारण के लिए given that (चूँकि) और पुराना because (L1-M9); आमने-सामने रखने के लिए whereas (जबकि). पढ़ते हुए आपको since और as भी कारण के मानी में मिलेंगे — उन्हें पहचान लीजिए, पर यह कोर्स since को अवधि के लिए (L3-M7) और as को तुलना के लिए (L2-M9) ही सिखाता है, इसलिए ख़ुद लिखते समय given that या because चुनिए."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M6-S01",
+      "display": "Granted, the train is slower. But it costs half as much.",
+      "cue": "माना, ट्रेन धीमी है. लेकिन उसका ख़र्च आधा ही है.",
+      "literal": "माना, वह ट्रेन है धीमी. लेकिन यह ख़र्च करती आधा जितना ज़्यादा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "granted",
+            "cue": "माना",
+            "tag": "delta",
+            "forms": ["granted"],
+            "note": "सामने वाले की एक बात मान लेने का ठप्पा. इसके बाद हमेशा But वाला हिस्सा आता है — अकेला Granted हार है, बहस नहीं."
+          },
+          {
+            "display": "slower",
+            "cue": "धीमी",
+            "tag": "free",
+            "forms": ["slower", "slow", "slowest"],
+            "note": "slow के आगे -er लगने से तुलना बनती है. किससे धीमी, यह कहा नहीं गया — बहस में यह बात से समझ आता है."
+          },
+          {
+            "display": "half",
+            "cue": "आधा",
+            "tag": "free",
+            "forms": ["half"],
+            "note": "half as much = आधा ख़र्च. दाम के साथ half the price भी चलता है, और दोनों में half के आगे a नहीं आता."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Granted से शुरू करके and से जोड़ना बेकार है. और जोड़ने पर आपने बस दूसरी बात भी मान ली; बहस तभी बनती है जब But आए.",
+      "sound": "granted का बीच वाला d दब जाता है — ग्रान्-टिड्.",
+      "variations": [
+        {
+          "display": "Granted, the train is slower.",
+          "cue": "माना, ट्रेन धीमी है.",
+          "changed": "सिर्फ़ मानने वाला हिस्सा"
+        },
+        {
+          "display": "The train is slower, but it costs half as much.",
+          "cue": "ट्रेन धीमी है, पर उसका ख़र्च आधा है.",
+          "changed": "एक ही वाक्य में"
+        },
+        {
+          "display": "Granted, the bus is slower. But it costs half as much.",
+          "cue": "माना, बस धीमी है. लेकिन उसका ख़र्च आधा है.",
+          "changed": "ट्रेन की जगह बस"
+        }
+      ],
+      "mistake": {
+        "display": "Granted, the train is slower and it costs half as much.",
+        "why": "and से जोड़ने पर मानी हुई बात का जवाब नहीं मिलता, दोनों बातें एक ही तरफ़ की लगती हैं. यहाँ But चाहिए, जो पलड़ा दूसरी तरफ़ झुकाता है."
+      },
+      "usage": "जब सामने वाले की एक बात सही मानकर भी अपनी बात मनवानी हो.",
+      "register": "neutral",
+      "mnemonic": "Granted … But … — एक हाथ से दिया, दूसरे से ज़्यादा वापस लिया."
+    },
+    {
+      "id": "L5-M6-S02",
+      "display": "My claim is simple. Although it is expensive, it is worth the money.",
+      "cue": "मेरा दावा सीधा है. हालाँकि यह महँगा है, यह पैसे के लायक़ है.",
+      "literal": "मेरा दावा है सादा. हालाँकि यह है महँगा, यह है लायक़ वह पैसा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "claim",
+            "cue": "दावा",
+            "tag": "free",
+            "forms": ["claim", "claims"],
+            "note": "बहस में जो बात मनवानी है वही claim है. My claim is … से शुरू करने पर सुनने वाले को पता रहता है कि आगे क्या साबित होगा."
+          },
+          {
+            "display": "simple",
+            "cue": "सादा",
+            "tag": "free",
+            "forms": ["simple"],
+            "note": "यहाँ सादा का मतलब आसान और छोटा है. अपने दावे को simple कहना उसे कमज़ोर नहीं, साफ़ बताता है."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "Although वाले वाक्य में but कभी नहीं आता, और but वाले वाक्य में although नहीं. अंग्रेज़ी दोनों में से एक ही जोड़ चुनती है.",
+      "sound": "although में gh बिलकुल चुप है — ऑल्-दो, और ज़ोर दूसरे हिस्से पर.",
+      "variations": [
+        {
+          "display": "Although it is expensive, it is worth the money.",
+          "cue": "हालाँकि यह महँगा है, यह पैसे के लायक़ है.",
+          "changed": "सिर्फ़ रियायत वाला हिस्सा"
+        },
+        {
+          "display": "It is expensive, but it is worth the money.",
+          "cue": "यह महँगा है, पर पैसे के लायक़ है.",
+          "changed": "although की जगह but"
+        },
+        {
+          "display": "My claim is simple.",
+          "cue": "मेरा दावा सीधा है.",
+          "changed": "सिर्फ़ दावा"
+        }
+      ],
+      "mistake": {
+        "display": "Although it is expensive, but it is worth the money.",
+        "why": "यद्यपि … परन्तु … हिंदी में सही है, अंग्रेज़ी में नहीं. although और but में से एक हटाइए — यही इस दर्जे की सबसे पहचानी जाने वाली ग़लती है."
+      },
+      "usage": "बहस की शुरुआत में, जब अपनी बात एक पंक्ति में रखनी हो.",
+      "register": "neutral",
+      "mnemonic": "Although आया तो but गया — दोनों की जगह एक ही है."
+    },
+    {
+      "id": "L5-M6-S03",
+      "display": "Firstly, the school is near. Secondly, the fees are low.",
+      "cue": "पहली बात, स्कूल पास है. दूसरी बात, फ़ीस कम है.",
+      "literal": "पहली बात, वह स्कूल है पास. दूसरी बात, वह फ़ीस है कम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "firstly",
+            "cue": "पहली बात",
+            "tag": "delta",
+            "forms": ["firstly"],
+            "note": "बहस की पहली दलील का निशान. गिनती वाला first (L2-M10) क्रम बताता है; firstly बताता है कि यह पहली दलील है."
+          },
+          {
+            "display": "secondly",
+            "cue": "दूसरी बात",
+            "tag": "delta",
+            "forms": ["secondly"],
+            "note": "firstly के बाद यही आता है. दिशा वाला second (L2-M4) यहाँ काम नहीं देता — दलीलों की गिनती के लिए -ly वाला रूप है."
+          },
+          {
+            "display": "fees",
+            "cue": "फ़ीस",
+            "tag": "free",
+            "forms": ["fees", "fee"],
+            "note": "पढ़ाई या सेवा का दाम. स्कूल-कॉलेज की बात में अंग्रेज़ी इसे लगभग हमेशा बहुवचन fees ही बोलती है."
+          },
+          {
+            "display": "low",
+            "cue": "कम",
+            "tag": "delta",
+            "forms": ["low", "lower"],
+            "note": "दाम, फ़ीस और आवाज़ कम हों तो low. क़द छोटा हो तो short — हिंदी का एक कम अंग्रेज़ी में कई शब्दों में बँटा है."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "firstly के बाद secondly ज़रूर आना चाहिए. एक अकेला firstly सुनने वाले को दूसरी दलील का इंतज़ार कराता रह जाता है.",
+      "sound": "firstly में r के बाद st जुड़कर एक ही साँस में निकलता है — फ़र्स्ट्-ली.",
+      "variations": [
+        {
+          "display": "Firstly, the school is near.",
+          "cue": "पहली बात, स्कूल पास है.",
+          "changed": "सिर्फ़ पहली दलील"
+        },
+        {
+          "display": "Secondly, the fees are low.",
+          "cue": "दूसरी बात, फ़ीस कम है.",
+          "changed": "सिर्फ़ दूसरी दलील"
+        },
+        {
+          "display": "The school is near and the fees are low.",
+          "cue": "स्कूल पास है और फ़ीस कम है.",
+          "changed": "बिना जोड़ के निशान"
+        }
+      ],
+      "mistake": {
+        "display": "First, the school is near. Second, the fees are low.",
+        "why": "समझ तो आ जाएगा, पर first और second इस कोर्स में क्रम और दिशा के लिए हैं. दलील गिनाने के लिए firstly और secondly चलते हैं."
+      },
+      "usage": "जब अपनी बात के पीछे एक से ज़्यादा वजहें रखनी हों.",
+      "register": "neutral",
+      "mnemonic": "firstly, secondly — दलीलों पर लगे नंबर, चीज़ों पर नहीं."
+    },
+    {
+      "id": "L5-M6-S04",
+      "display": "Admittedly the room is small. Nevertheless, the rent is very low.",
+      "cue": "माना कि कमरा छोटा है. फिर भी, किराया बहुत कम है.",
+      "literal": "मानते हुए वह कमरा है छोटा. फिर भी, वह किराया है बहुत कम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "admittedly",
+            "cue": "माना कि",
+            "tag": "delta",
+            "forms": ["admittedly"],
+            "note": "Granted का ही भाई, थोड़ा ज़्यादा किताबी. फ़र्क़ इतना कि इसके बाद अल्पविराम छोड़ा भी जा सकता है."
+          },
+          {
+            "display": "nevertheless",
+            "cue": "फिर भी",
+            "tag": "delta",
+            "forms": ["nevertheless"],
+            "note": "मानी हुई बात के बाद अपना पलड़ा भारी करने वाला शब्द. but से भारी है और लिखने में ज़्यादा चलता है."
+          },
+          {
+            "display": "room",
+            "cue": "कमरा",
+            "tag": "free",
+            "forms": ["room", "rooms"],
+            "note": "घर का एक हिस्सा. जगह के मानी में यही शब्द बिना a या the के आता है — there is room = जगह है."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Nevertheless के आगे अल्पविराम आता है और उसके बाद पूरा वाक्य. इसे but की तरह बीच में मत जोड़िए — Nevertheless it is small ग़लत नहीं, पर अल्पविराम के बिना अटपटा लगता है.",
+      "sound": "nevertheless तीन हिस्सों का है और ज़ोर आख़िरी पर पड़ता है — नेव्-अर्-दि-लेस्.",
+      "variations": [
+        {
+          "display": "Admittedly the room is small.",
+          "cue": "माना कि कमरा छोटा है.",
+          "changed": "सिर्फ़ मानने वाला हिस्सा"
+        },
+        {
+          "display": "The room is small. Nevertheless, the rent is very low.",
+          "cue": "कमरा छोटा है. फिर भी, किराया बहुत कम है.",
+          "changed": "बिना admittedly"
+        },
+        {
+          "display": "Granted, the room is small. But the rent is very low.",
+          "cue": "माना, कमरा छोटा है. पर किराया बहुत कम है.",
+          "changed": "रोज़मर्रा वाला जोड़ा"
+        }
+      ],
+      "mistake": {
+        "display": "Admittedly the room is small, nevertheless but the rent is very low.",
+        "why": "nevertheless और but एक ही काम करते हैं, इसलिए दोनों साथ नहीं आते. एक ही चुनिए."
+      },
+      "usage": "किराया, दाम या नौकरी की बात में, जब कमी मानकर भी फ़ायदा गिनाना हो.",
+      "register": "formal",
+      "mnemonic": "Admittedly … Nevertheless … — वही जोड़ा, लिखने वाले कपड़ों में."
+    },
+    {
+      "id": "L5-M6-S05",
+      "display": "If we had booked earlier, we would be on the train now.",
+      "cue": "अगर हमने पहले बुक करा लिया होता, तो हम अभी ट्रेन में होते.",
+      "literal": "अगर हम था बुक किया पहले, हम होते ऊपर वह ट्रेन अभी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "booked",
+            "cue": "बुक करा लिया",
+            "tag": "free",
+            "forms": ["booked", "booking"],
+            "note": "टिकट, कमरा या सीट पहले से पक्की करना. L1-M1 वाली किताब book से रूप एक है, काम अलग."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "शर्त वाले हिस्से में would कभी नहीं आता. If we would have booked ग़लत है — शर्त में had + booked, और नतीजे में would.",
+      "sound": "booked का ed यहाँ ट् जैसा सुनाई देता है — बुक्ट्.",
+      "variations": [
+        {
+          "display": "If we had booked earlier, we would be on the bus now.",
+          "cue": "अगर हमने पहले बुक करा लिया होता, तो हम अभी बस में होते.",
+          "changed": "ट्रेन की जगह बस"
+        },
+        {
+          "display": "We did not book earlier.",
+          "cue": "हमने पहले बुक नहीं कराया.",
+          "changed": "सीधी बात, बिना शर्त"
+        }
+      ],
+      "mistake": {
+        "display": "If we would have booked earlier, we would be on the train now.",
+        "why": "शर्त वाले आधे हिस्से में would नहीं आता. वहाँ had booked रखिए और would सिर्फ़ नतीजे वाले आधे में."
+      },
+      "usage": "बहस में, जब बीते फ़ैसले का नुक़सान आज गिनाना हो.",
+      "register": "neutral",
+      "mnemonic": "शर्त पीछे (had booked), नतीजा अभी (would be … now)."
+    },
+    {
+      "id": "L5-M6-S06",
+      "display": "The bus is cheap, whereas the train is fast.",
+      "cue": "बस सस्ती है, जबकि ट्रेन तेज़ है.",
+      "literal": "वह बस है सस्ती, जबकि वह ट्रेन है तेज़.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "whereas",
+            "cue": "जबकि",
+            "tag": "delta",
+            "forms": ["whereas"],
+            "note": "दो बातों को आमने-सामने रखता है, किसी को ग़लत कहे बिना. इसके पहले अल्पविराम आता है और आगे पूरा वाक्य."
+          },
+          {
+            "display": "fast",
+            "cue": "तेज़",
+            "tag": "free",
+            "forms": ["fast", "faster"],
+            "note": "रफ़्तार तेज़ हो तो fast, जो slow का उलटा है. काम जल्दी हो जाए तो quick — दोनों को एक मत कीजिए."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "whereas रियायत नहीं देता, सिर्फ़ फ़र्क़ दिखाता है. जहाँ अपनी बात भारी करनी हो वहाँ but या nevertheless चाहिए, whereas नहीं.",
+      "sound": "whereas में wh हल्का व् जैसा और ज़ोर दूसरे हिस्से पर — वेअर्-ऐज़्.",
+      "variations": [
+        {
+          "display": "The bus is cheap. The train is fast.",
+          "cue": "बस सस्ती है. ट्रेन तेज़ है.",
+          "changed": "बिना जोड़ के, दो वाक्य"
+        },
+        {
+          "display": "The train is fast, whereas the bus is cheap.",
+          "cue": "ट्रेन तेज़ है, जबकि बस सस्ती है.",
+          "changed": "दोनों तरफ़ बदलकर"
+        }
+      ],
+      "mistake": {
+        "display": "The bus is cheap, whereas but the train is fast.",
+        "why": "whereas ख़ुद जोड़ने वाला शब्द है, इसलिए उसके साथ but नहीं आता. यह वही दोहरे जोड़ वाली ग़लती है."
+      },
+      "usage": "दो चीज़ों की तुलना में, जब किसी एक को बेहतर नहीं कहना.",
+      "register": "formal",
+      "mnemonic": "whereas = तराज़ू के दो पलड़े, बिना फ़ैसले के."
+    },
+    {
+      "id": "L5-M6-S07",
+      "display": "For example, given that the train is cheap, my brother takes it.",
+      "cue": "मिसाल के तौर पर, चूँकि ट्रेन सस्ती है, मेरा भाई उसी से जाता है.",
+      "literal": "के लिए मिसाल, दिया गया कि वह ट्रेन है सस्ती, मेरा भाई लेता यह.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "for example",
+            "cue": "मिसाल के तौर पर",
+            "tag": "free",
+            "forms": ["for example"],
+            "note": "दोनों शब्द एक इकाई हैं और आगे अल्पविराम आता है. दावे के बाद सबूत रखने का सबसे आम तरीक़ा."
+          },
+          {
+            "display": "given that",
+            "cue": "चूँकि",
+            "tag": "delta",
+            "forms": ["given that"],
+            "note": "कारण बताने वाला जोड़ा, because से ज़्यादा सधा हुआ. इसके आगे पूरा वाक्य आता है, अकेला शब्द नहीं."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "पढ़ते हुए since और as भी चूँकि के मानी में मिलेंगे. इस कोर्स में since अवधि का है (L3-M7) और as तुलना का (L2-M9), इसलिए ख़ुद लिखते समय given that या because चुनिए.",
+      "sound": "for example में दोनों शब्द जुड़ जाते हैं — फ़ॉ-रिग्-ज़ाम्-पल्.",
+      "variations": [
+        {
+          "display": "For example, my brother takes the train.",
+          "cue": "मिसाल के तौर पर, मेरा भाई ट्रेन से जाता है.",
+          "changed": "बिना कारण वाला हिस्सा"
+        },
+        {
+          "display": "Given that the train is cheap, my brother takes it.",
+          "cue": "चूँकि ट्रेन सस्ती है, मेरा भाई उसी से जाता है.",
+          "changed": "बिना मिसाल के निशान"
+        },
+        {
+          "display": "My brother takes the train because it is cheap.",
+          "cue": "मेरा भाई ट्रेन से जाता है क्योंकि वह सस्ती है.",
+          "changed": "because वाला पुराना रूप"
+        }
+      ],
+      "mistake": {
+        "display": "For example, since the train is cheap, my brother takes it.",
+        "why": "अंग्रेज़ी में यह चलता है, पर इस कोर्स ने since को अवधि के लिए सिखाया है. जिस शब्द का सिखाया हुआ काम अलग हो, उससे बचिए."
+      },
+      "usage": "अपने दावे के पीछे एक असल मिसाल रखते समय.",
+      "register": "neutral",
+      "mnemonic": "For example = दावे के नीचे रखा सबूत."
+    },
+    {
+      "id": "L5-M6-S08",
+      "display": "In fact, the evidence is here. I can prove my claim.",
+      "cue": "दरअसल, सबूत यहीं है. मैं अपना दावा साबित कर सकता हूँ.",
+      "literal": "में सच, वह सबूत है यहाँ. मैं सकता साबित करना मेरा दावा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in fact",
+            "cue": "दरअसल",
+            "tag": "free",
+            "forms": ["in fact"],
+            "note": "यह नई बात नहीं जोड़ता, पहले कही बात का वज़न बढ़ाता है. दोनों शब्द साथ चलते हैं और आगे अल्पविराम आता है."
+          },
+          {
+            "display": "evidence",
+            "cue": "सबूत",
+            "tag": "delta",
+            "forms": ["evidence"],
+            "note": "यह कभी गिना नहीं जाता — evidences ग़लत है. बहुत सारे सबूत भी अंग्रेज़ी में evidence ही रहते हैं."
+          },
+          {
+            "display": "prove",
+            "cue": "साबित करना",
+            "tag": "free",
+            "forms": ["prove", "proves", "proved"],
+            "note": "दावे के साथ चलने वाली क्रिया. proof इसका नाम वाला रूप है और prove काम वाला — v और f का यही फ़र्क़ है."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "evidence के आगे न a आता है न an, और उसका बहुवचन नहीं बनता. एक सबूत गिनना हो तो a piece of evidence कहते हैं.",
+      "sound": "evidence में ज़ोर पहले हिस्से पर है — एव्-इ-डन्स्.",
+      "variations": [
+        {
+          "display": "The evidence is here.",
+          "cue": "सबूत यहीं है.",
+          "changed": "सिर्फ़ सबूत वाली बात"
+        },
+        {
+          "display": "In fact, I can prove my claim.",
+          "cue": "दरअसल, मैं अपना दावा साबित कर सकता हूँ.",
+          "changed": "सिर्फ़ दूसरा हिस्सा"
+        },
+        {
+          "display": "I cannot prove my claim.",
+          "cue": "मैं अपना दावा साबित नहीं कर सकता.",
+          "changed": "उलटी बात"
+        }
+      ],
+      "mistake": {
+        "display": "In fact, the evidences are here. I can prove my claim.",
+        "why": "evidence गिना नहीं जाता, इसलिए न evidences बनता है न are आता है. सही रूप है the evidence is here."
+      },
+      "usage": "जब अपनी बात के पीछे सबूत रखकर उसे मज़बूत करना हो.",
+      "register": "formal",
+      "mnemonic": "evidence — हमेशा अकेला, हमेशा is."
+    },
+    {
+      "id": "L5-M6-S09",
+      "display": "I do not argue with that. But I have one objection.",
+      "cue": "उस बात पर मेरी कोई बहस नहीं. पर मेरी एक आपत्ति है.",
+      "literal": "मैं करता नहीं बहस साथ वह. लेकिन मेरे पास है एक आपत्ति.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "argue",
+            "cue": "बहस करना",
+            "tag": "delta",
+            "forms": ["argue", "argues", "argued"],
+            "note": "किसी से argue with, किसी बात पर argue about. यह लड़ना नहीं है — दलील से अपनी बात रखना है."
+          },
+          {
+            "display": "objection",
+            "cue": "आपत्ति",
+            "tag": "free",
+            "forms": ["objection", "objections"],
+            "note": "सामने वाली बात में दिखी एक कमी. I have one objection कहकर बाक़ी पूरी बात मान ली जाती है."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "हिंदी का बहस अक्सर झगड़े के क़रीब है; अंग्रेज़ी का argue बहस में दलील रखना है. गुस्से वाली बात के लिए fight या quarrel अलग शब्द हैं.",
+      "sound": "argue में gu एक ग्यू जैसा निकलता है — आर्-ग्यू.",
+      "variations": [
+        {
+          "display": "I do not argue with that.",
+          "cue": "उस बात पर मेरी कोई बहस नहीं.",
+          "changed": "सिर्फ़ मानने वाला हिस्सा"
+        },
+        {
+          "display": "I have one objection.",
+          "cue": "मेरी एक आपत्ति है.",
+          "changed": "सिर्फ़ आपत्ति"
+        },
+        {
+          "display": "I have one objection, but I agree with your claim.",
+          "cue": "मेरी एक आपत्ति है, पर आपके दावे से मैं सहमत हूँ.",
+          "changed": "आपत्ति के साथ सहमति"
+        }
+      ],
+      "mistake": {
+        "display": "I am not agree with that. But I have one objection.",
+        "why": "agree ख़ुद क्रिया है, इसलिए उसके आगे am नहीं आता. I do not agree या I do not argue with that कहिए."
+      },
+      "usage": "जब सामने वाले की पूरी बात मानकर सिर्फ़ एक जगह अटकना हो.",
+      "register": "neutral",
+      "mnemonic": "एक objection = बाक़ी सब मंज़ूर."
+    },
+    {
+      "id": "L5-M6-S10",
+      "display": "To sum up, on balance I would take the train rather than the bus.",
+      "cue": "कुल मिलाकर, सब तौलकर मैं बस के बजाय ट्रेन लूँगा.",
+      "literal": "को जोड़ना ऊपर, पर तराज़ू मैं लूँगा वह ट्रेन बजाय वह बस.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "to sum up",
+            "cue": "कुल मिलाकर",
+            "tag": "delta",
+            "forms": ["to sum up"],
+            "note": "बहस का आख़िरी जोड़. तीनों शब्द साथ चलते हैं और इसके बाद वही बात लौटती है जो शुरू में रखी थी."
+          },
+          {
+            "display": "on balance",
+            "cue": "सब तौलकर",
+            "tag": "delta",
+            "forms": ["on balance"],
+            "note": "दोनों पलड़े तौलने के बाद वाला फ़ैसला. इसमें यह भी छिपा है कि दूसरी तरफ़ भी कुछ वज़न था."
+          },
+          {
+            "display": "rather than",
+            "cue": "के बजाय",
+            "tag": "delta",
+            "forms": ["rather than"],
+            "note": "दो में से एक चुनने का जोड़ा. अकेला rather (L2-M9) अलग काम करता है — यहाँ दोनों शब्द साथ चाहिए."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "To sum up के बाद नई दलील मत जोड़िए. यह हिस्सा सिर्फ़ पहले कही बातों का नतीजा है.",
+      "sound": "to sum up में तीनों शब्द जुड़कर एक साँस में निकलते हैं — टु-सम्-अप्.",
+      "variations": [
+        {
+          "display": "To sum up, I would take the train.",
+          "cue": "कुल मिलाकर, मैं ट्रेन लूँगा.",
+          "changed": "छोटा नतीजा"
+        },
+        {
+          "display": "On balance, the train is better.",
+          "cue": "सब तौलकर, ट्रेन बेहतर है.",
+          "changed": "सिर्फ़ तराज़ू वाला हिस्सा"
+        },
+        {
+          "display": "I would take the train rather than the bus.",
+          "cue": "मैं बस के बजाय ट्रेन लूँगा.",
+          "changed": "बिना किसी निशान के"
+        }
+      ],
+      "mistake": {
+        "display": "To sum up, I would take the train rather the bus.",
+        "why": "rather अकेला यहाँ काम नहीं करता; चुनाव वाला जोड़ा rather than है. than छूटते ही वाक्य अधूरा लगता है."
+      },
+      "usage": "बहस के आख़िर में, जब सब तौलकर अपना फ़ैसला रखना हो.",
+      "register": "neutral",
+      "mnemonic": "To sum up = बहस का आख़िरी जोड़, नई बात का दरवाज़ा नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M6-C01",
+      "display": "Granted, the train is slower.",
+      "cue": "माना, ट्रेन धीमी है."
+    },
+    {
+      "id": "L5-M6-C02",
+      "display": "But it costs half as much.",
+      "cue": "लेकिन उसका ख़र्च आधा ही है."
+    },
+    {
+      "id": "L5-M6-C03",
+      "display": "My claim is simple.",
+      "cue": "मेरा दावा सीधा है."
+    },
+    {
+      "id": "L5-M6-C04",
+      "display": "Although it is expensive, it is worth the money.",
+      "cue": "हालाँकि यह महँगा है, यह पैसे के लायक़ है."
+    },
+    {
+      "id": "L5-M6-C05",
+      "display": "Firstly, the school is near.",
+      "cue": "पहली बात, स्कूल पास है."
+    },
+    {
+      "id": "L5-M6-C06",
+      "display": "Secondly, the fees are low.",
+      "cue": "दूसरी बात, फ़ीस कम है."
+    },
+    {
+      "id": "L5-M6-C07",
+      "display": "Admittedly the room is small.",
+      "cue": "माना कि कमरा छोटा है."
+    },
+    {
+      "id": "L5-M6-C08",
+      "display": "Nevertheless, the rent is very low.",
+      "cue": "फिर भी, किराया बहुत कम है."
+    },
+    {
+      "id": "L5-M6-C09",
+      "display": "If we had booked earlier, we would be on the train now.",
+      "cue": "अगर हमने पहले बुक करा लिया होता, तो हम अभी ट्रेन में होते."
+    },
+    {
+      "id": "L5-M6-C10",
+      "display": "The bus is cheap, whereas the train is fast.",
+      "cue": "बस सस्ती है, जबकि ट्रेन तेज़ है."
+    },
+    {
+      "id": "L5-M6-C11",
+      "display": "In fact, I can prove my claim.",
+      "cue": "दरअसल, मैं अपना दावा साबित कर सकता हूँ."
+    },
+    {
+      "id": "L5-M6-C12",
+      "display": "To sum up, I would take the train rather than the bus.",
+      "cue": "कुल मिलाकर, मैं बस के बजाय ट्रेन लूँगा."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

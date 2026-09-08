@@ -1,0 +1,622 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M10",
+  "title": "Your own voice",
+  "job": "An eight-sentence piece that changes register midway",
+  "prerequisites": [
+    "L5-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 9,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "present",
+      "perfect",
+      "conditional",
+      "present subjunctive",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "<four sentences, register A> + <pivot> + <four sentences, register B>",
+      "Ahora en serio + , + <clause>",
+      "Si me permite + , + <formal clause>",
+      "<informal clause> + . + <the same content, formal>",
+      "Para terminar + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Spanish marks a change of register with an explicit signal rather than drifting into it. ahora en serio, hablando en serio, bueno pues, dicho esto, si me permite, para terminar: one of these opens the second half of the piece, and everybody hears the turn."
+    },
+    {
+      "tag": "delta",
+      "text": "The turn moves three things at once. The ADDRESS moves (tú against usted, M3's rows). The FRAME moves (¿me pones? against ¿podría?, L2-M1's rows). And the vocabulary TIER moves (an idiom from M1 against a formula from M4). Move only one and nothing has happened."
+    },
+    {
+      "tag": "free",
+      "text": "Politeness lives in the frame, not in the pronoun. A piece may pivot from formal to intimate and be MORE courteous for it: usted with a blunt frame is colder than tú with ¿te importaría? That is the last thing this course has to say about register."
+    },
+    {
+      "tag": "free",
+      "text": "The small change of key: en plan, digamos and por así decirlo loosen a claim; eso es, exacto, efectivamente and desde luego agree with one, in rising order of formality. Reach for the right tier and the register carries itself."
+    },
+    {
+      "tag": "interference",
+      "text": "English carries a change of register almost entirely in TONE and word choice, having no second-person pronoun to move. So a learner writes a piece whose words get longer and whose grammar never shifts, and to a Spanish ear nothing has happened at all."
+    },
+    {
+      "tag": "interference",
+      "text": "Direction matters, and English gets it backwards. An English speaker assumes formal to informal is the friendly move and takes it freely; in Spanish, going from usted to tú claims an intimacy that may not be on offer. Going the other way, tú to usted, is a real and legible cooling."
+    },
+    {
+      "tag": "free",
+      "text": "This module opens no system. No new tense, no new mood, no new class of connector. If a piece needs a shape the ladder has not taught, the piece is wrong and not the ladder, and that is the plainest test an exit module has."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M10-S01",
+      "display": "Bueno pues, muchas gracias a todos por venir hoy aquí.",
+      "cue": "Right then, thank you all very much for coming today.",
+      "literal": "Well then, many thanks to all for to-come today here.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bueno pues",
+            "cue": "right then, well then",
+            "tag": "free",
+            "forms": [
+              "bueno pues",
+              "pues bueno"
+            ],
+            "note": "Opens a piece, or restarts one. Both halves are L1-M10's on their own; together they are the sound of somebody taking the floor."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Bueno pues is not filler even though both words can be. Together they mark a beginning, and a Spanish listener stops talking when they hear it.",
+      "sound": "The two words run into one, bwe-no-PWES, with the weight on the second.",
+      "variations": [
+        {
+          "display": "Pues bueno, muchas gracias a todos.",
+          "cue": "Well then, thank you all very much.",
+          "changed": "The two halves reversed, which is just as common and means the same."
+        },
+        {
+          "display": "Muchas gracias a todos por venir.",
+          "cue": "Thank you all very much for coming.",
+          "changed": "Without the opener. Correct, and it starts without warning — the listener has to catch up."
+        }
+      ],
+      "mistake": {
+        "display": "Bueno pues muchas gracias a todos por venir aqui hoy.",
+        "why": "aquí needs its accent. Without it aqui is not a word, and in a written toast that is the first thing anyone sees."
+      },
+      "usage": "Informal, and the opening half of a piece that will turn serious later. This is the voice you use with people you know.",
+      "register": "informal",
+      "mnemonic": "Take the floor before you use it."
+    },
+    {
+      "id": "L5-M10-S02",
+      "display": "En plan, esto es una boda, no un examen, ¿vale?",
+      "cue": "Like, this is a wedding, not an exam, all right?",
+      "literal": "In plan, this is a wedding, not an exam, okay?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en plan",
+            "cue": "like, sort of",
+            "tag": "free",
+            "forms": [
+              "en plan"
+            ],
+            "note": "Marks the loosest register Spanish has. Fine among friends, badly out of place with anyone you address as usted."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "En plan is the clearest register flag in this module: it cannot appear in the formal half of a piece. If you find yourself writing en plan after si me permite, the piece has come apart.",
+      "sound": "En plan is said flat and fast, em-PLAN, with the n before the p sounding like an m.",
+      "variations": [
+        {
+          "display": "Esto es una boda, no un examen.",
+          "cue": "This is a wedding, not an exam.",
+          "changed": "Without the flag. The same joke, now in a neutral voice that would sit anywhere."
+        },
+        {
+          "display": "En plan, esto es una fiesta, ¿vale?",
+          "cue": "Like, this is a party, right?",
+          "changed": "The flag with a different noun. What carries the register is en plan, not the content."
+        }
+      ],
+      "mistake": {
+        "display": "Si me permite, en plan, esto es una boda.",
+        "why": "Two registers in five words. si me permite belongs to the formal half of a piece and en plan to the informal one; putting them together tells the listener you are not in control of either."
+      },
+      "usage": "Informal only, and mostly Peninsular. In much of Latin America the same slot is filled by como que or tipo.",
+      "register": "informal",
+      "mnemonic": "En plan never meets usted."
+    },
+    {
+      "id": "L5-M10-S03",
+      "display": "Ahora en serio: gracias por venir aquí con la familia.",
+      "cue": "Seriously now: thank you for coming here with the family.",
+      "literal": "Now in serious: thanks for to-come here with the family.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ahora en serio",
+            "cue": "seriously now",
+            "tag": "delta",
+            "forms": [
+              "ahora en serio"
+            ],
+            "note": "THE pivot of this module. It announces that the joking half is over and buys you the room's attention for the second half."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "This is the single most useful phrase in the module and it does nothing on its own. It only works if what follows actually changes register — the address, the frame, the tier — otherwise it is a promise you do not keep.",
+      "sound": "Said as one unit with a small pause after it: a-o-ra-en-SE-ryo, then breathe.",
+      "variations": [
+        {
+          "display": "Ahora en serio.",
+          "cue": "Seriously now.",
+          "changed": "The pivot alone, followed by the pause. That pause is doing half the work."
+        },
+        {
+          "display": "Hablando en serio, gracias por venir.",
+          "cue": "On a serious note, thank you for coming.",
+          "changed": "The other pivot, a shade more measured. Either one turns the piece."
+        }
+      ],
+      "mistake": {
+        "display": "Ahora en serio, en plan, gracias por venir aqui.",
+        "why": "The pivot promised a change of register and en plan immediately undoes it. And aquí has lost its accent."
+      },
+      "usage": "Neutral, and it belongs at the hinge of a piece. Said at the very start it has nothing to turn from.",
+      "register": "neutral",
+      "mnemonic": "Announce the turn, then actually turn."
+    },
+    {
+      "id": "L5-M10-S04",
+      "display": "Hablando en serio, si me permite, quiero agradecer la ayuda.",
+      "cue": "On a serious note, if I may, I want to thank you for the help.",
+      "literal": "Speaking in serious, if me you-permit, I-want to-thank the help.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hablando en serio",
+            "cue": "on a serious note",
+            "tag": "delta",
+            "forms": [
+              "hablando en serio"
+            ],
+            "note": "The more measured of the two pivots. ahora en serio turns a joke; this one turns a whole conversation."
+          },
+          {
+            "display": "si me permite",
+            "cue": "if I may",
+            "tag": "delta",
+            "forms": [
+              "si me permite",
+              "si me permites"
+            ],
+            "note": "Asks the floor rather than taking it, and the verb ending is the register: permite to usted, permites to tú."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "si me permite carries usted inside its verb ending. Saying it to a friend is not more polite, it is a small step backwards, and it is exactly the cooling rule six describes.",
+      "sound": "Permite is per-MI-te, and the r is a single tap rather than the rolled one.",
+      "variations": [
+        {
+          "display": "Si me permites, quiero agradecer la ayuda.",
+          "cue": "If I may, I want to thank you for the help.",
+          "changed": "The same frame to tú. One letter moves and the whole piece changes address."
+        },
+        {
+          "display": "Hablando en serio, quiero agradecer la ayuda.",
+          "cue": "On a serious note, I want to thank you for the help.",
+          "changed": "The pivot without the request for the floor. Still formal, and now slightly more direct."
+        }
+      ],
+      "mistake": {
+        "display": "Si me permite, tienes razon y te agradezco la ayuda.",
+        "why": "The frame opened with usted and the sentence finished with tú. Pick one address and hold it for the whole half; razón also needs its accent."
+      },
+      "usage": "Formal, and the second half of a piece that opened informally. This is the voice for a room rather than a table.",
+      "register": "formal",
+      "mnemonic": "Ask for the floor in the ending of the verb."
+    },
+    {
+      "id": "L5-M10-S05",
+      "display": "Dicho esto, para terminar, brindemos por la familia y los amigos.",
+      "cue": "That said, to finish, let us drink to family and friends.",
+      "literal": "Said this, for to-finish, let-us-toast for the family and the friends.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dicho esto",
+            "cue": "that said",
+            "tag": "free",
+            "forms": [
+              "dicho esto"
+            ],
+            "note": "Closes what came before and opens the last part. It concedes nothing; it simply draws a line under the previous half."
+          },
+          {
+            "display": "para terminar",
+            "cue": "to finish",
+            "tag": "free",
+            "forms": [
+              "para terminar"
+            ],
+            "note": "Promises the end is one sentence away. Say it and then finish, or the room stops believing you."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Dicho esto and ahora bien both turn a piece and they turn it differently. M6's ahora bien answers an objection; dicho esto simply closes a section, and nothing is being argued.",
+      "sound": "Dicho has the ch of English church: DI-cho, with the stress on the first syllable.",
+      "variations": [
+        {
+          "display": "Para terminar, brindemos por la familia.",
+          "cue": "To finish, let us drink to family.",
+          "changed": "The closing alone, which is enough for a short piece."
+        },
+        {
+          "display": "Dicho esto, brindemos por los amigos.",
+          "cue": "That said, let us drink to friends.",
+          "changed": "The line under the previous half, then straight to the toast."
+        }
+      ],
+      "mistake": {
+        "display": "Para terminar, brindemos por la familia, y ahora en serio.",
+        "why": "The pivot cannot follow the ending. ahora en serio opens the second half of a piece; after para terminar there is no half left to open."
+      },
+      "usage": "Formal to neutral, and the last thing said before a toast. L2-M6's brindemos is doing the work; these two frames only set it up.",
+      "register": "formal",
+      "mnemonic": "Say para terminar and then terminate."
+    },
+    {
+      "id": "L5-M10-S06",
+      "display": "Digamos que, por así decirlo, ha sido una noche muy larga.",
+      "cue": "Let us say that, so to speak, it has been a very long night.",
+      "literal": "Let-us-say that, for thus to-say-it, has been a night very long.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "digamos",
+            "cue": "let us say, shall we say",
+            "tag": "free",
+            "forms": [
+              "digamos",
+              "digamos que"
+            ],
+            "note": "Softens the claim that follows without hedging it: you are choosing the word, not doubting the fact."
+          },
+          {
+            "display": "por así decirlo",
+            "cue": "so to speak",
+            "tag": "free",
+            "forms": [
+              "por así decirlo"
+            ],
+            "note": "Flags the words as approximate. It is the mid tier: less casual than en plan, less formal than a written formula."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "These two look like L4-M5's hedges and are not. A hedge softens the claim; these soften the wording, and the claim underneath is as firm as ever.",
+      "sound": "Digamos is di-GA-mos, and the g stays hard because it comes before an a.",
+      "variations": [
+        {
+          "display": "Digamos que ha sido una noche larga.",
+          "cue": "Let us say it has been a long night.",
+          "changed": "One softener instead of two, which is what you would actually say."
+        },
+        {
+          "display": "Ha sido una noche muy larga.",
+          "cue": "It has been a very long night.",
+          "changed": "Nothing softened at all. The same fact, and now you are standing behind every word of it."
+        }
+      ],
+      "mistake": {
+        "display": "Digamos, en plan, por así decirlo, ha sido larga.",
+        "why": "Three softeners from three different tiers in one clause. Choose the tier the half of the piece is in and use one marker from it."
+      },
+      "usage": "Neutral, and the safest register in the module: por así decirlo is at home in both halves of a piece.",
+      "register": "neutral",
+      "mnemonic": "Soften the wording, not the claim."
+    },
+    {
+      "id": "L5-M10-S07",
+      "display": "Eso es. Exacto. Es lo que quiero decir, claro.",
+      "cue": "That is it. Exactly. That is what I mean, of course.",
+      "literal": "That is. Exact. Is the that I-want to-say, clear.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eso es",
+            "cue": "that is it, exactly",
+            "tag": "free",
+            "forms": [
+              "eso es"
+            ],
+            "note": "Agreement at the informal end. L4-M4's eso keeps its own row; the two words together are a whole reply."
+          },
+          {
+            "display": "exacto",
+            "cue": "exactly",
+            "tag": "free",
+            "forms": [
+              "exacto",
+              "exacta"
+            ],
+            "note": "A step up from eso es and still ordinary. It agrees with a statement, never with a person."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Spanish has a ladder of agreements and using the wrong rung is audible. eso es to a friend, exacto in a meeting, efectivamente in writing or to a room — the content is identical and the register is not.",
+      "sound": "Exacto is ek-SAK-to, and the x is a k plus an s rather than the English gz.",
+      "variations": [
+        {
+          "display": "Eso es, exacto.",
+          "cue": "That is it, exactly.",
+          "changed": "Two rungs of the ladder side by side, which is how a listener usually agrees twice."
+        },
+        {
+          "display": "Exacto. Es lo que quiero decir.",
+          "cue": "Exactly. That is what I mean.",
+          "changed": "Agreement plus M8's repair frame, one tier up from eso es."
+        }
+      ],
+      "mistake": {
+        "display": "Eso es, efectivamente, en plan exacto.",
+        "why": "Three rungs of the same ladder at once, and one of them is slang. Agreeing three times in five words reads as nervousness rather than as emphasis."
+      },
+      "usage": "Neutral. eso es sits in the informal half of a piece, exacto anywhere, and both are said constantly.",
+      "register": "neutral",
+      "mnemonic": "One rung at a time."
+    },
+    {
+      "id": "L5-M10-S08",
+      "display": "Desde luego, usted tiene razón. Me explico mejor, perdone.",
+      "cue": "Of course, you are quite right. Let me put it better, forgive me.",
+      "literal": "From then, you have reason. Me I-explain better, forgive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "desde luego",
+            "cue": "of course, certainly",
+            "tag": "free",
+            "forms": [
+              "desde luego"
+            ],
+            "note": "The formal rung of the agreement ladder. Nothing to do with time, despite the luego inside it."
+          },
+          {
+            "display": "me explico",
+            "cue": "let me explain myself",
+            "tag": "free",
+            "forms": [
+              "me explico"
+            ],
+            "note": "Offers a clearer version. No sé si me explico turns it into a question and is a courtesy, not real doubt."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Desde luego is not later on. Read literally it looks temporal, and it is the most emphatic agreement on the ladder — closer to absolutely than to of course.",
+      "sound": "Desde luego runs as DES-de-LWE-go, and the d in the middle is soft, closer to the th of this.",
+      "variations": [
+        {
+          "display": "Desde luego que sí.",
+          "cue": "Absolutely.",
+          "changed": "The strongest form of the agreement, with the que sí doing the emphasis."
+        },
+        {
+          "display": "No sé si me explico.",
+          "cue": "I am not sure I am making myself clear.",
+          "changed": "The same offer turned into a question, which is the more courteous half of the pair."
+        }
+      ],
+      "mistake": {
+        "display": "Desde luego, usted tienes razón, me explico.",
+        "why": "The address is broken in the middle: usted takes tiene, not tienes. This is exactly what rule two means by holding the address for the whole half."
+      },
+      "usage": "Formal. Every word here belongs to the usted half of a piece, and L2-M1's perdone is what closes it.",
+      "register": "formal",
+      "mnemonic": "Desde luego agrees, it does not wait."
+    },
+    {
+      "id": "L5-M10-S09",
+      "display": "Yo diría que sí, aunque con usted diría que quizá no.",
+      "cue": "I would say yes, though with you I would say perhaps not.",
+      "literal": "I would-say that yes, although with you would-say that perhaps not.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "diría",
+            "cue": "I would say",
+            "tag": "free",
+            "forms": [
+              "diría",
+              "diríamos"
+            ],
+            "note": "The bare conditional of decir. L4-M5's yo diría is the fixed hedge; this is the same form used freely in a clause."
+          }
+        ],
+        "rules": [
+          1,
+          5,
+          6
+        ]
+      },
+      "trap": "The two halves of this sentence say the same thing to two different people, and only con usted marks the difference. That is the whole module in one line: the content did not move, the address did.",
+      "sound": "Diría is di-RI-a, three syllables, and the accent on the i is what stops it collapsing to dria.",
+      "variations": [
+        {
+          "display": "Yo diría que sí.",
+          "cue": "I would say yes.",
+          "changed": "L4-M5's fixed hedge, unchanged and still doing its old job."
+        },
+        {
+          "display": "Con usted diría que quizá no.",
+          "cue": "With you I would say perhaps not.",
+          "changed": "The formal half alone. Same verb, and the address has moved everything."
+        }
+      ],
+      "mistake": {
+        "display": "Yo diria que si, aunque con usted dirias que quiza no.",
+        "why": "usted takes diría, not dirías, and three accents are missing. Sí with an accent is yes; si without one is if."
+      },
+      "usage": "Neutral, and it is the sentence to keep if you remember nothing else: what you say can stay put while who you are saying it to moves.",
+      "register": "neutral",
+      "mnemonic": "Same words, different person, different Spanish."
+    },
+    {
+      "id": "L5-M10-S10",
+      "display": "Efectivamente, contigo hablo así, y con usted no. Me explico.",
+      "cue": "Quite so: with you I talk like this, and with you I do not. Let me explain.",
+      "literal": "Effectively, with-you I-speak thus, and with you not. Me I-explain.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "efectivamente",
+            "cue": "quite so, indeed",
+            "tag": "free",
+            "forms": [
+              "efectivamente"
+            ],
+            "note": "The top rung of the agreement ladder: written Spanish, or a room. Said to a friend it sounds like a parody."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          4,
+          5
+        ]
+      },
+      "trap": "Contigo and con usted are the same three English words, and in Spanish they are two different relationships. English has no pronoun to move, which is why a learner's piece can change every word and still not change register.",
+      "sound": "Efectivamente is long and evenly stressed until the end: e-fek-ti-ba-MEN-te.",
+      "variations": [
+        {
+          "display": "Contigo hablo así, y con usted no.",
+          "cue": "With you I talk like this, and with you I do not.",
+          "changed": "The contrast alone. Nine words, and the entire course's argument about register is inside it."
+        },
+        {
+          "display": "Efectivamente, con usted hablo así.",
+          "cue": "Quite so, with you I talk like this.",
+          "changed": "The formal rung with the formal address, matched. That matching is what a finished piece sounds like."
+        }
+      ],
+      "mistake": {
+        "display": "Efectivamente, contigo hablo asi, en plan.",
+        "why": "The top rung of the ladder and the bottom one in the same breath, and así without its accent. If the halves of a piece are going to differ, they differ in order, not word by word."
+      },
+      "usage": "Formal at the front, informal at the back, deliberately: this last sentence of the course runs both registers in one line so you can hear the seam.",
+      "register": "neutral",
+      "mnemonic": "Contigo is not con usted."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M10-C01",
+      "display": "Bueno pues, muchas gracias a todos.",
+      "cue": "Right then, thank you all very much."
+    },
+    {
+      "id": "L5-M10-C02",
+      "display": "En plan, esto es una fiesta.",
+      "cue": "Like, this is a party."
+    },
+    {
+      "id": "L5-M10-C03",
+      "display": "Ahora en serio, gracias por venir.",
+      "cue": "Seriously now, thank you for coming."
+    },
+    {
+      "id": "L5-M10-C04",
+      "display": "Hablando en serio, quiero agradecer la ayuda.",
+      "cue": "On a serious note, I want to thank you for the help."
+    },
+    {
+      "id": "L5-M10-C05",
+      "display": "Si me permite, quiero decir unas palabras.",
+      "cue": "If I may, I would like to say a few words."
+    },
+    {
+      "id": "L5-M10-C06",
+      "display": "Dicho esto, para terminar, brindemos.",
+      "cue": "That said, to finish, let us drink to it."
+    },
+    {
+      "id": "L5-M10-C07",
+      "display": "Digamos que ha sido una noche larga.",
+      "cue": "Let us say it has been a long night."
+    },
+    {
+      "id": "L5-M10-C08",
+      "display": "Por así decirlo, no está mal.",
+      "cue": "So to speak, it is not bad at all."
+    },
+    {
+      "id": "L5-M10-C09",
+      "display": "Eso es, exacto.",
+      "cue": "That is it, exactly."
+    },
+    {
+      "id": "L5-M10-C10",
+      "display": "Desde luego, usted tiene razón.",
+      "cue": "Of course, you are quite right."
+    },
+    {
+      "id": "L5-M10-C11",
+      "display": "Efectivamente, con usted hablo así.",
+      "cue": "Quite so, with you I talk like this."
+    },
+    {
+      "id": "L5-M10-C12",
+      "display": "No sé si me explico.",
+      "cue": "I am not sure I am making myself clear."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

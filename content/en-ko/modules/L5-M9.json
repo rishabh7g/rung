@@ -1,0 +1,582 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M9",
+  "title": "Telling it your way",
+  "job": "Retell a known story in your own register",
+  "prerequisites": ["L5-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": ["simple_present", "simple_past"],
+    "allowedPatterns": [
+      "yennal + yennal-e + N-i/ga + sarasseoyo",
+      "geuraeseo + clause. + geurigo + clause",
+      "<quoted -yo line> + rago + haesseoyo",
+      "algo boni + clause",
+      "geu + iyagi-neun + N + iyagi-yeyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "YENNAL YENNAL-E OPENS A TALE. Once upon a time, doubled. L4-M8 already bought both tokens for yennal-e-neun, in the old days, and the doubling is what turns a memory into a story."
+    },
+    {
+      "tag": "interference",
+      "text": "A KOREAN RETELLING STAYS IN THE PAST. English reaches for the historic present to make a story live — so he walks in. Korean has no narrative present at all, and a tale told in the present reads as a plot summary."
+    },
+    {
+      "tag": "delta",
+      "text": "REGISTER IS THE ONLY VARIABLE. The same events go to a friend in -yo and to a room in L4-M7's -(seu)pnida. What moves is the ending and how much the narrator comments; the events never move."
+    },
+    {
+      "tag": "free",
+      "text": "THE QUOTED LINE KEEPS ITS OWN ENDING. L3-M5's rago takes whatever the character actually said, ending and all, and haesseoyo closes it. Nothing inside the quotation marks is adjusted."
+    },
+    {
+      "tag": "free",
+      "text": "ALGO BONI IS THE TURN. L4-M10's as it turned out, reused whole and never re-taught. A retold tale wants exactly one of them."
+    },
+    {
+      "tag": "free",
+      "text": "GYEOLGUK AND KKEUT CLOSE DIFFERENT THINGS. gyeolguk is in the end and sits on the last event; kkeut-ieyo is what you say when the telling itself is over."
+    },
+    {
+      "tag": "delta",
+      "text": "THE FRAME NARRATOR MAKES IT A RETELLING. geu iyagi-neun ... iyagi-yeyo — that story is a story about — is the sentence that separates telling a tale from reciting one."
+    },
+    {
+      "tag": "free",
+      "text": "NO STORYBOOK -(NEU)NDA AND NO BANMAL. A tale told to a child lives in both and this course teaches neither, so the tale opens with yennal yennal-e and continues in -yo or in -(seu)pnida."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M9-S01",
+      "display": "Yennal yennal-e sigol-e halmeoni-ga sarasseoyo.",
+      "script": "옛날 옛날에 시골에 할머니가 살았어요.",
+      "cue": "Once upon a time, an old woman lived in the countryside.",
+      "literal": "old-day old-day-at countryside-at grandmother-SUBJ lived",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yennal yennal-e",
+            "script": "옛날 옛날에",
+            "cue": "once upon a time",
+            "tag": "delta",
+            "forms": ["yennal yennal-e"],
+            "note": "Learn it as one opening. L4-M8's yennal is the old days; doubled and marked with -e it stops being a memory and becomes a tale."
+          },
+          {
+            "display": "sarasseoyo",
+            "script": "살았어요",
+            "cue": "lived",
+            "tag": "free",
+            "forms": ["sarasseoyo"],
+            "note": "The past of L4-M2's sarayo, and the verb every Korean tale opens on. There lived is the whole first sentence."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English once upon a time can be dropped and the story still starts. yennal yennal-e cannot: without it the first sentence is a claim about somebody's grandmother.",
+      "sound": "YEN-nal YEN-na-re SI-go-re HAL-meo-ni-ga SA-ra-sseo-yo.",
+      "variations": [
+        {
+          "display": "Sigol-e halmeoni-ga sarasseoyo.",
+          "script": "시골에 할머니가 살았어요.",
+          "cue": "An old woman lived in the countryside.",
+          "changed": "the opening dropped: a fact, and no longer a tale"
+        },
+        {
+          "display": "Yennal yennal-e sigol-e halmeoni-ga sarasseumnida.",
+          "script": "옛날 옛날에 시골에 할머니가 살았습니다.",
+          "cue": "Once upon a time, an old woman lived in the countryside.",
+          "changed": "the deferential ending: the same tale told to a room"
+        }
+      ],
+      "mistake": {
+        "display": "Yennal yennal-e sigol-e halmeoni-ga sarayo.",
+        "script": "옛날 옛날에 시골에 할머니가 살아요.",
+        "why": "The opening puts the tale in the past and the verb has to follow it. Korean has no historic present, so a present-tense verb here simply contradicts the first two words."
+      },
+      "usage": "Starting a tale everybody in the room already knows.",
+      "register": "neutral",
+      "mnemonic": "Say the old day twice and the story begins."
+    },
+    {
+      "id": "L5-M9-S02",
+      "display": "Halmeoni-neun san-e gasseoyo. Geurigo horangi-reul mannasseoyo.",
+      "script": "할머니는 산에 갔어요. 그리고 호랑이를 만났어요.",
+      "cue": "The old woman went to the mountain. And she met a tiger.",
+      "literal": "grandmother-TOP mountain-to went. and tiger-OBJ met",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "horangi",
+            "script": "호랑이",
+            "cue": "tiger",
+            "tag": "free",
+            "forms": ["horangi", "horangi-ga", "horangi-reul", "horangi-do"],
+            "note": "The one animal a Korean tale can hardly do without. It costs a key; a tale with three named characters would cost three."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "English keeps the subject alive with pronouns — she went, then she met. Korean marks the old woman once with -neun and then says nothing more about who is acting.",
+      "sound": "HAL-meo-ni-neun SA-ne GA-sseo-yo. GEU-ri-go HO-rang-i-reul MAN-na-sseo-yo.",
+      "variations": [
+        {
+          "display": "Halmeoni-neun san-e gasseoyo.",
+          "script": "할머니는 산에 갔어요.",
+          "cue": "The old woman went to the mountain.",
+          "changed": "the first event alone"
+        },
+        {
+          "display": "Halmeoni-neun horangi-reul mannasseoyo.",
+          "script": "할머니는 호랑이를 만났어요.",
+          "cue": "The old woman met a tiger.",
+          "changed": "the journey dropped: straight to the meeting"
+        }
+      ],
+      "mistake": {
+        "display": "Halmeoni-neun san-e gasseoyo. Geurigo halmeoni-neun horangi-reul mannasseoyo.",
+        "script": "할머니는 산에 갔어요. 그리고 할머니는 호랑이를 만났어요.",
+        "why": "Naming the same person again in the next sentence sounds like a second old woman. Once the topic is set with -neun it stays set until something changes it."
+      },
+      "usage": "Moving a tale on one event at a time.",
+      "register": "neutral",
+      "mnemonic": "One topic, then a chain of events under it."
+    },
+    {
+      "id": "L5-M9-S03",
+      "display": "Horangi-ga \"Bap-eul juseyo\" rago haesseoyo. Halmeoni-neun museoweosseoyo.",
+      "script": "호랑이가 \"밥을 주세요\"라고 했어요. 할머니는 무서웠어요.",
+      "cue": "The tiger said, give me some rice. The old woman was afraid.",
+      "literal": "tiger-SUBJ rice-OBJ give-QUOT said. grandmother-TOP was-afraid",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "museoweosseoyo",
+            "script": "무서웠어요",
+            "cue": "was afraid, was frightening",
+            "tag": "free",
+            "forms": ["museoweosseoyo"],
+            "note": "The past of L3-M6's museoweoyo. It covers both was afraid and was frightening, so the same word can be said of the woman and of the tiger."
+          }
+        ],
+        "rules": [3, 1]
+      },
+      "trap": "English rewrites a quotation to fit the sentence — she asked him to give her rice. Korean leaves the line exactly as it was spoken, honorific ending and all, and only rago and haesseoyo are added around it.",
+      "sound": "HO-rang-i-ga BA-beul JU-se-yo ra-go HAE-sseo-yo. HAL-meo-ni-neun MU-seo-weo-sseo-yo.",
+      "variations": [
+        {
+          "display": "Horangi-ga \"Bap-eul juseyo\" rago haesseoyo.",
+          "script": "호랑이가 \"밥을 주세요\"라고 했어요.",
+          "cue": "The tiger said, give me some rice.",
+          "changed": "the quotation alone, with no reaction"
+        },
+        {
+          "display": "Halmeoni-neun museoweosseoyo.",
+          "script": "할머니는 무서웠어요.",
+          "cue": "The old woman was afraid.",
+          "changed": "the reaction alone, with the line withheld"
+        }
+      ],
+      "mistake": {
+        "display": "Horangi-ga bap-eul jusillae rago haesseoyo.",
+        "script": "호랑이가 밥을 주실래라고 했어요.",
+        "why": "Bending the quoted line towards the reporting sentence is an English habit. The whole point of -rago is that it takes the words as they came."
+      },
+      "usage": "Putting a line of speech into a tale you are retelling.",
+      "register": "neutral",
+      "mnemonic": "Quote it as said, then rago haesseoyo."
+    },
+    {
+      "id": "L5-M9-S04",
+      "display": "Geuraeseo halmeoni-neun domangchyeosseoyo. Algo boni horangi-do museoweosseoyo.",
+      "script": "그래서 할머니는 도망쳤어요. 알고 보니 호랑이도 무서웠어요.",
+      "cue": "So the old woman ran away. As it turned out, the tiger was frightened too.",
+      "literal": "so grandmother-TOP fled. knowing seeing tiger-also was-afraid",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "domangchyeosseoyo",
+            "script": "도망쳤어요",
+            "cue": "ran away, fled",
+            "tag": "free",
+            "forms": ["domangchyeosseoyo"],
+            "note": "One event verb, in the past like everything else in a tale. Said do-mang-chyeo-sseo-yo, four beats before the ending."
+          }
+        ],
+        "rules": [4, 1]
+      },
+      "trap": "English marks the twist with tone of voice or with it turned out that. Korean marks it with L4-M10's algo boni, in the slot before the clause, and a tale wants only one of them.",
+      "sound": "GEU-rae-seo HAL-meo-ni-neun DO-mang-chyeo-sseo-yo. AL-go BO-ni HO-rang-i-do MU-seo-weo-sseo-yo.",
+      "variations": [
+        {
+          "display": "Halmeoni-neun domangchyeosseoyo.",
+          "script": "할머니는 도망쳤어요.",
+          "cue": "The old woman ran away.",
+          "changed": "the join and the twist dropped"
+        },
+        {
+          "display": "Algo boni horangi-do museoweosseoyo.",
+          "script": "알고 보니 호랑이도 무서웠어요.",
+          "cue": "As it turned out, the tiger was frightened too.",
+          "changed": "the twist alone: the line that makes the tale worth retelling"
+        }
+      ],
+      "mistake": {
+        "display": "Algo boni halmeoni-neun domangchyeosseoyo. Geuraeseo horangi-do museoweosseoyo.",
+        "script": "알고 보니 할머니는 도망쳤어요. 그래서 호랑이도 무서웠어요.",
+        "why": "The twist has been put on the ordinary event and the ordinary join on the twist. algo boni belongs on the thing nobody expected, which here is the tiger."
+      },
+      "usage": "Landing the turn a listener is waiting for.",
+      "register": "neutral",
+      "mnemonic": "algo boni: only once you look do you know."
+    },
+    {
+      "id": "L5-M9-S05",
+      "display": "Gyeolguk halmeoni-neun jip-e wasseoyo.",
+      "script": "결국 할머니는 집에 왔어요.",
+      "cue": "In the end the old woman came home.",
+      "literal": "in-the-end grandmother-TOP house-to came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gyeolguk",
+            "script": "결국",
+            "cue": "in the end, after all",
+            "tag": "free",
+            "forms": ["gyeolguk"],
+            "note": "Marks the last event of the story, not the end of the telling. It sits at the front of its clause, like L5-M6's discourse words."
+          }
+        ],
+        "rules": [5, 1]
+      },
+      "trap": "English finally can mean at last, thank goodness. gyeolguk is flatter than that: it reports where the events came to rest, with no relief in it.",
+      "sound": "GYEOL-guk HAL-meo-ni-neun JI-be WA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Gyeolguk halmeoni-neun jip-e gasseoyo.",
+          "script": "결국 할머니는 집에 갔어요.",
+          "cue": "In the end the old woman went home.",
+          "changed": "gasseoyo for wasseoyo: told from away rather than from here"
+        },
+        {
+          "display": "Halmeoni-neun jip-e wasseoyo.",
+          "script": "할머니는 집에 왔어요.",
+          "cue": "The old woman came home.",
+          "changed": "the closing word dropped: one more event, not the last"
+        }
+      ],
+      "mistake": {
+        "display": "Halmeoni-neun jip-e wasseoyo gyeolguk.",
+        "script": "할머니는 집에 왔어요 결국.",
+        "why": "gyeolguk announces that this is the last event, and an announcement that arrives after the event has nothing left to announce. It goes at the front."
+      },
+      "usage": "Bringing the events of a tale to rest.",
+      "register": "neutral",
+      "mnemonic": "gyeolguk is where it all ended up."
+    },
+    {
+      "id": "L5-M9-S06",
+      "display": "Geurigo iyagi-neun kkeut-ieyo.",
+      "script": "그리고 이야기는 끝이에요.",
+      "cue": "And that is the end of the story.",
+      "literal": "and story-TOP end-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kkeut",
+            "script": "끝",
+            "cue": "the end",
+            "tag": "free",
+            "forms": ["kkeut", "kkeut-ieyo"],
+            "note": "A noun, so it takes L1-M1's copula. gyeolguk closed the events; kkeut-ieyo closes the telling and hands the floor back."
+          }
+        ],
+        "rules": [5, 2]
+      },
+      "trap": "English the end is a caption on a page. kkeut-ieyo is spoken out loud at the close of a told story, and leaving it out is what makes a retelling trail off.",
+      "sound": "GEU-ri-go I-ya-gi-neun KKEU-chi-e-yo.",
+      "variations": [
+        {
+          "display": "Iyagi-neun kkeut-ieyo.",
+          "script": "이야기는 끝이에요.",
+          "cue": "The story is over.",
+          "changed": "the join dropped: a flatter close"
+        },
+        {
+          "display": "Geurigo kkeut-ieyo.",
+          "script": "그리고 끝이에요.",
+          "cue": "And that is the end.",
+          "changed": "the subject dropped, as it usually is"
+        }
+      ],
+      "mistake": {
+        "display": "Geurigo iyagi-neun gyeolguk-ieyo.",
+        "script": "그리고 이야기는 결국이에요.",
+        "why": "gyeolguk is an adverb sitting in front of a clause, not a noun a copula can take. The word that ends a telling is kkeut."
+      },
+      "usage": "Handing the floor back when you have finished.",
+      "register": "neutral",
+      "mnemonic": "kkeut, and the room can speak again."
+    },
+    {
+      "id": "L5-M9-S07",
+      "display": "Geu dongwha-neun jaemiisseoyo.",
+      "script": "그 동화는 재미있어요.",
+      "cue": "That folk tale is a good one.",
+      "literal": "that folk-tale-TOP is-interesting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dongwha",
+            "script": "동화",
+            "cue": "folk tale, children's story",
+            "tag": "free",
+            "forms": ["dongwha", "dongwha-neun", "dongwha-ui"],
+            "note": "The kind of story, where L5-M2's iyagi is any story at all. A dongwha is the shared one, which is why it costs the teller no plot at all."
+          }
+        ],
+        "rules": [2, 6]
+      },
+      "trap": "English folk tale sounds academic. dongwha is the ordinary word a Korean adult uses for the stories everybody was told, so it belongs in the conversation and not in a footnote.",
+      "sound": "geu DONG-hwa-neun JAE-mi-i-sseo-yo.",
+      "variations": [
+        {
+          "display": "Geu dongwha-neun jaemiisseosseoyo.",
+          "script": "그 동화는 재미있었어요.",
+          "cue": "That folk tale was a good one.",
+          "changed": "the past: a verdict on the telling just finished"
+        },
+        {
+          "display": "Dongwha-neun jaemiisseoyo.",
+          "script": "동화는 재미있어요.",
+          "cue": "Folk tales are good.",
+          "changed": "the demonstrative dropped: the whole genre"
+        }
+      ],
+      "mistake": {
+        "display": "Geu dongwha-neun jaemi-yeyo.",
+        "script": "그 동화는 재미예요.",
+        "why": "L5-M2 taught jaemi as the noun fun. Saying the tale IS fun rather than that it HAS interest is not a Korean sentence; the adjective jaemiisseoyo does this job."
+      },
+      "usage": "Commenting on the tale, once you have told it.",
+      "register": "neutral",
+      "mnemonic": "dongwha is the story children get; iyagi is any story at all."
+    },
+    {
+      "id": "L5-M9-S08",
+      "display": "Geu dongwha-ui jueingong-i museoweosseoyo.",
+      "script": "그 동화의 주인공이 무서웠어요.",
+      "cue": "The main character of that folk tale was afraid.",
+      "literal": "that folk-tale-of main-character-SUBJ was-afraid",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jueingong",
+            "script": "주인공",
+            "cue": "main character, protagonist",
+            "tag": "free",
+            "forms": ["jueingong", "jueingong-i", "jueingong-eun"],
+            "note": "The word that lets you talk about a tale rather than inside it. With L5-M4's -ui it belongs to the story that holds it."
+          }
+        ],
+        "rules": [6, 2]
+      },
+      "trap": "English can say the main character was scared and mean the reader was. Korean cannot: jueingong is strictly the person inside the tale, and a comment about the listener needs its own sentence.",
+      "sound": "geu DONG-hwa-ui JU-ein-gong-i MU-seo-weo-sseo-yo.",
+      "variations": [
+        {
+          "display": "Geu dongwha-ui jueingong-i domangchyeosseoyo.",
+          "script": "그 동화의 주인공이 도망쳤어요.",
+          "cue": "The main character of that folk tale ran away.",
+          "changed": "a different event reported about the same character"
+        },
+        {
+          "display": "Jueingong-i museoweosseoyo.",
+          "script": "주인공이 무서웠어요.",
+          "cue": "The main character was afraid.",
+          "changed": "the tale dropped: everybody knows which one"
+        }
+      ],
+      "mistake": {
+        "display": "Geu dongwha jueingong-i museoweosseoyo.",
+        "script": "그 동화 주인공이 무서웠어요.",
+        "why": "Two nouns pushed together leave it open which belongs to which. -ui is what ties the character to the tale, and in a sentence about a story that link is the point."
+      },
+      "usage": "Talking about a tale from outside it.",
+      "register": "neutral",
+      "mnemonic": "jueingong is the one the tale is about."
+    },
+    {
+      "id": "L5-M9-S09",
+      "display": "Geu iyagi-neun horangi iyagi-yeyo.",
+      "script": "그 이야기는 호랑이 이야기예요.",
+      "cue": "That story is a story about a tiger.",
+      "literal": "that story-TOP tiger story-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "iyagi-yeyo",
+            "script": "이야기예요",
+            "cue": "is a story",
+            "tag": "delta",
+            "forms": ["iyagi-yeyo"],
+            "note": "L5-M2's iyagi with L1-M1's copula. In the frame sentence the same noun stands at both ends, and the middle says what the story is about."
+          }
+        ],
+        "rules": [6, 2]
+      },
+      "trap": "English says a story about a tiger and the about does the work. Korean puts the topic bare in front of iyagi, with no particle at all, so the two nouns simply lean together.",
+      "sound": "geu I-ya-gi-neun HO-rang-i I-ya-gi-ye-yo.",
+      "variations": [
+        {
+          "display": "Geu iyagi-neun halmeoni iyagi-yeyo.",
+          "script": "그 이야기는 할머니 이야기예요.",
+          "cue": "That story is a story about an old woman.",
+          "changed": "a different subject in the middle slot"
+        },
+        {
+          "display": "Horangi iyagi-yeyo.",
+          "script": "호랑이 이야기예요.",
+          "cue": "It is a story about a tiger.",
+          "changed": "the frame opened dropped: the summary alone"
+        }
+      ],
+      "mistake": {
+        "display": "Geu iyagi-neun horangi-ui iyagi-yeyo.",
+        "script": "그 이야기는 호랑이의 이야기예요.",
+        "why": "-ui would make it the tiger's own story, told by or belonging to him. A story about a subject leaves the two nouns bare and next to each other."
+      },
+      "usage": "Announcing what a retelling is going to be about.",
+      "register": "neutral",
+      "mnemonic": "Story-topic-story: the frame closes on the word it opened with."
+    },
+    {
+      "id": "L5-M9-S10",
+      "display": "Yennal yennal-e halmeoni-ga sigol-e sarasseumnida.",
+      "script": "옛날 옛날에 할머니가 시골에 살았습니다.",
+      "cue": "Once upon a time, an old woman lived in the countryside.",
+      "literal": "old-day old-day-at grandmother-SUBJ countryside-at lived-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sarasseumnida",
+            "script": "살았습니다",
+            "cue": "lived (deferential)",
+            "tag": "delta",
+            "forms": ["sarasseumnida"],
+            "note": "The same event as S01's sarasseoyo in L4-M7's deferential ending. Nothing else in the sentence changes, which is the whole lesson of this module."
+          }
+        ],
+        "rules": [2, 7]
+      },
+      "trap": "English shifts a retelling by changing words — the bedtime version and the lecture version share almost no vocabulary. Korean shifts it by changing the ending and leaving the words alone.",
+      "sound": "YEN-nal YEN-na-re HAL-meo-ni-ga SI-go-re SA-ra-sseum-ni-da.",
+      "variations": [
+        {
+          "display": "Yennal yennal-e halmeoni-ga sigol-e sarasseoyo.",
+          "script": "옛날 옛날에 할머니가 시골에 살았어요.",
+          "cue": "Once upon a time, an old woman lived in the countryside.",
+          "changed": "back to -yo: the same tale, told to one friend"
+        },
+        {
+          "display": "Halmeoni-ga sigol-e sarasseumnida.",
+          "script": "할머니가 시골에 살았습니다.",
+          "cue": "An old woman lived in the countryside.",
+          "changed": "the opening dropped: a report, not a tale"
+        }
+      ],
+      "mistake": {
+        "display": "Yennal yennal-e halmeoni-ga sigol-e sarasseumnida. Geurigo horangi-reul mannasseoyo.",
+        "script": "옛날 옛날에 할머니가 시골에 살았습니다. 그리고 호랑이를 만났어요.",
+        "why": "The register slipped back after one sentence. A retelling holds one level all the way through, and L5-M10 is where a switch inside a piece is allowed — and only with a reason on the page."
+      },
+      "usage": "Telling the same tale across a counter or to a room.",
+      "register": "formal",
+      "mnemonic": "Same tale, new ending, nothing else touched."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M9-C01",
+      "display": "Yennal yennal-e sigol-e halmeoni-ga sarasseoyo.",
+      "script": "옛날 옛날에 시골에 할머니가 살았어요.",
+      "cue": "Once upon a time, an old woman lived in the countryside."
+    },
+    {
+      "id": "L5-M9-C02",
+      "display": "Halmeoni-neun horangi-reul mannasseoyo.",
+      "script": "할머니는 호랑이를 만났어요.",
+      "cue": "The old woman met a tiger."
+    },
+    {
+      "id": "L5-M9-C03",
+      "display": "Horangi-ga \"Bap-eul juseyo\" rago haesseoyo.",
+      "script": "호랑이가 \"밥을 주세요\"라고 했어요.",
+      "cue": "The tiger said, give me some rice."
+    },
+    {
+      "id": "L5-M9-C04",
+      "display": "Halmeoni-neun museoweosseoyo.",
+      "script": "할머니는 무서웠어요.",
+      "cue": "The old woman was afraid."
+    },
+    {
+      "id": "L5-M9-C05",
+      "display": "Geuraeseo halmeoni-neun domangchyeosseoyo.",
+      "script": "그래서 할머니는 도망쳤어요.",
+      "cue": "So the old woman ran away."
+    },
+    {
+      "id": "L5-M9-C06",
+      "display": "Algo boni horangi-do museoweosseoyo.",
+      "script": "알고 보니 호랑이도 무서웠어요.",
+      "cue": "As it turned out, the tiger was frightened too."
+    },
+    {
+      "id": "L5-M9-C07",
+      "display": "Gyeolguk halmeoni-neun jip-e wasseoyo.",
+      "script": "결국 할머니는 집에 왔어요.",
+      "cue": "In the end the old woman came home."
+    },
+    {
+      "id": "L5-M9-C08",
+      "display": "Geurigo iyagi-neun kkeut-ieyo.",
+      "script": "그리고 이야기는 끝이에요.",
+      "cue": "And that is the end of the story."
+    },
+    {
+      "id": "L5-M9-C09",
+      "display": "Geu dongwha-neun jaemiisseoyo.",
+      "script": "그 동화는 재미있어요.",
+      "cue": "That folk tale is a good one."
+    },
+    {
+      "id": "L5-M9-C10",
+      "display": "Geu dongwha-ui jueingong-i museoweosseoyo.",
+      "script": "그 동화의 주인공이 무서웠어요.",
+      "cue": "The main character of that folk tale was afraid."
+    },
+    {
+      "id": "L5-M9-C11",
+      "display": "Geu iyagi-neun horangi iyagi-yeyo.",
+      "script": "그 이야기는 호랑이 이야기예요.",
+      "cue": "That story is a story about a tiger."
+    },
+    {
+      "id": "L5-M9-C12",
+      "display": "Yennal yennal-e halmeoni-ga sigol-e sarasseumnida.",
+      "script": "옛날 옛날에 할머니가 시골에 살았습니다.",
+      "cue": "Once upon a time, an old woman lived in the countryside."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

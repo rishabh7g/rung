@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M9",
+  "title": "Telling it your way",
+  "job": "Retell a known story in your own register",
+  "prerequisites": [
+    "L5-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "passato remoto, THIRD PERSON ONLY and for recognition: fu, ebbe, disse, fece, andò, venne, vide, visse and their plurals",
+      "trapassato prossimo, productive: avevo or ero plus an owned participle",
+      "condizionale passato with essere: sarei dovuto andare, the twin of L4-M3's avrei dovuto",
+      "imperfetto and passato prossimo, L2-M10's and L3-M10's, carrying everything the two above do not"
+    ],
+    "allowedPatterns": [
+      "C'era una volta + <N> + che + <imperfetto>",
+      "Quando + <passato prossimo> + , + era già + <participio>",
+      "<remoto letto> + → + <passato prossimo detto>",
+      "Sarei dovuto + V-inf",
+      "In breve + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PASSATO REMOTO IS A READING TENSE, AND THIS MODULE TEACHES IT ONLY TO BE RECOGNISED. Learn the third persons and stop there: fu / furono, ebbe / ebbero, disse / dissero, fece / fecero, andò / andarono, venne / vennero, vide / videro, visse / vissero. That is the whole list you need for a printed story. Do not put yourself in it - no io and no tu form of this tense is taught here, and using one out loud makes you sound like a book read aloud."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TRAPASSATO IS THE CHEAPEST TENSE LEFT IN THE COURSE, AND ENGLISH GIVES IT TO YOU FREE. avevo or ero plus a participle: Quando sono arrivato, era partito. Every piece is already yours - avevo and era are L2-M10's, the participles are L3-M10's - and English had already left maps onto it one for one. What is new is only the combination."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH MARKS HAD ONCE AND THEN LETS THE PARAGRAPH RUN IN THE SIMPLE PAST. Italian does not: every event that happened before the point you are standing at keeps its trapassato, for as long as you stay standing there. Dropping back into the passato prossimo re-orders the story without meaning to."
+    },
+    {
+      "tag": "delta",
+      "text": "SAREI DOVUTO ANDARE IS THE ESSERE HALF OF A FORM YOU HALF OWN. L4-M3 shipped avrei dovuto and avrei potuto, both on avere. When the verb underneath takes essere - andare, partire, venire - the whole thing takes essere too, and the participle agrees: sarei dovuto andare, sarei dovuta andare. It is one cell of a paradigm, not a new tense."
+    },
+    {
+      "tag": "interference",
+      "text": "AN ENGLISH RETELLING KEEPS THE SOURCE TENSE AND AN ITALIAN RETELLING CHANGES IT. The same story is remoto on the page and prossimo out loud: disse in print becomes ha detto when you tell it. That swap is the exercise of this module - read the one, say the other, and never mix them inside a single telling."
+    },
+    {
+      "tag": "free",
+      "text": "THE RETELLING KIT IS SIX WORDS AND TWO FRAMES. c'era una volta opens; protagonista and personaggio name who it is about; versione is YOUR telling as against the printed one; in breve and per farla breve cut it short; la morale closes it. fiaba and favola are the same thing, and either can be used of a story with a lesson in it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M9-S01",
+      "display": "C'era una volta una bambina che abitava in un paese piccolo",
+      "cue": "Once upon a time there was a girl who lived in a small village",
+      "literal": "There was one time a girl who lived in a village small",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "c'era una volta",
+            "cue": "once upon a time",
+            "tag": "free",
+            "forms": [
+              "c'era una volta"
+            ],
+            "note": "Three tokens over two rows you own - L2-M10's c'era and L4-M8's una volta - and learned whole, because it is a formula and not a description of a time."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "The verb after it is an imperfetto, not a remoto: che abitava, not che abitò. The opening is frozen; what follows it is the ordinary past of description.",
+      "sound": "che-RA U-na VOL-ta, run as one phrase with no pause inside it.",
+      "variations": [
+        {
+          "display": "C'era una volta una bambina",
+          "cue": "Once upon a time there was a girl",
+          "changed": "the opening with nothing after it"
+        },
+        {
+          "display": "C'era una volta un gatto che dormiva sempre",
+          "cue": "Once upon a time there was a cat who always slept",
+          "changed": "a different subject in the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Era una volta una bambina",
+        "why": "The c' is not decoration. c'era is there was; era alone is it was, and the formula loses its there."
+      },
+      "usage": "Opening any story anybody already knows - to a child, or as a joke to an adult.",
+      "register": "neutral",
+      "mnemonic": "there was one time - and Italian says it in exactly that order."
+    },
+    {
+      "id": "L5-M9-S02",
+      "display": "In questa fiaba la protagonista era una bambina",
+      "cue": "In this fairy tale the main character was a girl",
+      "literal": "In this fairy-tale the protagonist was a girl",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fiaba",
+            "cue": "fairy tale, story with a lesson",
+            "tag": "free",
+            "forms": [
+              "fiaba",
+              "fiabe",
+              "favola",
+              "favole"
+            ],
+            "note": "fiaba and favola are the same thing and both are used. Either can be the story you retell, and la morale della favola is the fixed phrase for its lesson."
+          },
+          {
+            "display": "protagonista",
+            "cue": "main character",
+            "tag": "free",
+            "forms": [
+              "protagonista",
+              "protagonisti"
+            ],
+            "note": "One ending for both genders in the singular: la protagonista and il protagonista. Only the article tells you which, which is unusual and worth noticing."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "protagonista does not change for a woman. il protagonista and la protagonista are the same word, and inventing protagonisto or protagonista-feminine is the reflex to resist.",
+      "sound": "FIA-ba, two syllables. pro-ta-go-NIS-ta, stress on NIS.",
+      "variations": [
+        {
+          "display": "In questa fiaba la protagonista è una bambina",
+          "cue": "In this fairy tale the main character is a girl",
+          "changed": "the present, which is how you talk about a story you are holding"
+        },
+        {
+          "display": "La protagonista della fiaba era una bambina",
+          "cue": "The main character of the fairy tale was a girl",
+          "changed": "the story named after the character instead"
+        }
+      ],
+      "mistake": {
+        "display": "In questa fiaba il protagonista era una bambina",
+        "why": "The article has to agree even though the noun cannot. With una bambina it must be la protagonista."
+      },
+      "usage": "Setting up a retelling: which story, and who it is about.",
+      "register": "neutral",
+      "mnemonic": "one ending, two articles."
+    },
+    {
+      "id": "L5-M9-S03",
+      "display": "Il personaggio disse una cosa strana e andò a casa",
+      "cue": "The character said something strange and went home",
+      "literal": "The character said a thing strange and went to home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "personaggio",
+            "cue": "character, figure in a story",
+            "tag": "free",
+            "forms": [
+              "personaggio",
+              "personaggi"
+            ],
+            "note": "Any character; protagonista is the one the story is about. Of a real person it means a public figure, and it is faintly ironic."
+          },
+          {
+            "display": "disse",
+            "cue": "said",
+            "tag": "free",
+            "forms": [
+              "disse",
+              "dissero"
+            ],
+            "note": "The passato remoto of dire, third person. You will read it constantly and you should never say it: out loud this is ha detto, L3-M5's."
+          },
+          {
+            "display": "andò",
+            "cue": "went",
+            "tag": "free",
+            "forms": [
+              "andò",
+              "andarono"
+            ],
+            "note": "The remoto of andare. The accent on the o is the tense - ando with no accent is nothing at all - and out loud it becomes è andato."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Read disse, say ha detto. Both are the same event; the printed page uses one tense and a person telling you the story uses the other.",
+      "sound": "per-so-NAG-gio. DIS-se, double s. an-DO, all the weight on the accented final o.",
+      "variations": [
+        {
+          "display": "Il personaggio disse una cosa strana",
+          "cue": "The character said something strange",
+          "changed": "the first half alone"
+        },
+        {
+          "display": "Andò a casa e non disse niente",
+          "cue": "He went home and said nothing",
+          "changed": "the two remoto verbs the other way round"
+        },
+        {
+          "display": "Dissero una cosa strana e andarono a casa",
+          "cue": "They said something strange and went home",
+          "changed": "both verbs in the plural"
+        }
+      ],
+      "mistake": {
+        "display": "Io dissi una cosa strana e andai a casa",
+        "why": "The first person of this tense is not taught here and should not be produced. A speaker telling their own story says ho detto and sono andato."
+      },
+      "usage": "Reading a printed story, or reporting what one says.",
+      "register": "formal",
+      "mnemonic": "the accented final vowel is the remoto's signature."
+    },
+    {
+      "id": "L5-M9-S04",
+      "display": "Fu una storia lunga. Visse molti anni in città",
+      "cue": "It was a long story. He lived many years in the city",
+      "literal": "It was a story long. He lived many years in city",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fu",
+            "cue": "was",
+            "tag": "free",
+            "forms": [
+              "fu",
+              "furono"
+            ],
+            "note": "The remoto of essere. Short, irregular and everywhere in print; out loud the same sentence is è stata, L3-M10's."
+          },
+          {
+            "display": "visse",
+            "cue": "lived",
+            "tag": "free",
+            "forms": [
+              "visse",
+              "vissero"
+            ],
+            "note": "The remoto of vivere. It is the form a fairy tale ends on - e vissero felici - and it is the one line of remoto most learners already half know."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "fu has no accent and is not a shortened form of anything. It is the whole word, and it is not furono's singular by dropping letters.",
+      "sound": "FU, one syllable and no accent. VIS-se, double s held.",
+      "variations": [
+        {
+          "display": "Fu una storia lunga",
+          "cue": "It was a long story",
+          "changed": "the judgement alone"
+        },
+        {
+          "display": "Visse molti anni in città",
+          "cue": "He lived many years in the city",
+          "changed": "the life alone"
+        },
+        {
+          "display": "Furono anni difficili. Vissero in città",
+          "cue": "They were difficult years. They lived in the city",
+          "changed": "both verbs in the plural"
+        }
+      ],
+      "mistake": {
+        "display": "Fui una storia lunga",
+        "why": "fui is the first person - I was - and a story is not you. The third person is fu, and it is the only person of this tense the module asks for."
+      },
+      "usage": "Reading, and recognising the two commonest remoto verbs on the page.",
+      "register": "formal",
+      "mnemonic": "fu and visse: the two you will meet first."
+    },
+    {
+      "id": "L5-M9-S05",
+      "display": "Quando sono arrivato, era partito da un'ora",
+      "cue": "When I arrived, he had left an hour before",
+      "literal": "When I am arrived, he was left from an hour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "era partito",
+            "cue": "he had left",
+            "tag": "delta",
+            "forms": [
+              "era partito",
+              "era partita",
+              "erano partiti"
+            ],
+            "note": "The trapassato: L2-M10's era plus L3-M10's participle. Two owned words, one new tense, and it maps straight onto English had left."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Not sono arrivato e lui è partito. That puts the two events side by side; the trapassato is what says one of them was already over when the other happened.",
+      "sound": "E-ra par-TI-to, four syllables and no pause between the two words.",
+      "variations": [
+        {
+          "display": "Quando sono arrivato, era già partito",
+          "cue": "When I arrived, he had already left",
+          "changed": "L4-M6's già dropped in, where English also puts already"
+        },
+        {
+          "display": "Era partito da un'ora",
+          "cue": "He had left an hour before",
+          "changed": "the earlier event on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Quando sono arrivato, è partito",
+        "why": "The passato prossimo makes him leave AFTER you arrived. The whole point of the sentence is that he was gone already, and only the trapassato says so."
+      },
+      "usage": "Retelling anything, because a retelling always reorders what happened.",
+      "register": "neutral",
+      "mnemonic": "era + participle = had."
+    },
+    {
+      "id": "L5-M9-S06",
+      "display": "Avevo finito il lavoro quando è arrivata mia madre",
+      "cue": "I had finished the work when my mother arrived",
+      "literal": "I had finished the work when is arrived my mother",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avevo finito",
+            "cue": "I had finished",
+            "tag": "delta",
+            "forms": [
+              "avevo finito",
+              "aveva finito",
+              "avevamo finito"
+            ],
+            "note": "The avere half of the same tense. finito is L3-M10's participle and avevo is L2-M10's imperfetto; nothing here is new except the pair."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "With avere the participle does not agree: avevo finito whoever is speaking. The agreement in era partita belongs to essere, not to the tense.",
+      "sound": "a-VE-vo fi-NI-to, five syllables, both stresses in the middle.",
+      "variations": [
+        {
+          "display": "Avevo finito il lavoro",
+          "cue": "I had finished the work",
+          "changed": "the earlier event alone"
+        },
+        {
+          "display": "Quando è arrivata mia madre, avevo finito",
+          "cue": "When my mother arrived, I had finished",
+          "changed": "the two halves swapped, which Italian allows"
+        }
+      ],
+      "mistake": {
+        "display": "Ho finito il lavoro quando è arrivata mia madre",
+        "why": "That says you finished AT the moment she arrived. avevo finito is what puts the finishing before her arrival, which is what the sentence means."
+      },
+      "usage": "Any account where the order of events is the point.",
+      "register": "neutral",
+      "mnemonic": "avevo + participle, and no agreement to worry about."
+    },
+    {
+      "id": "L5-M9-S07",
+      "display": "Sarei dovuto andare prima. Alla fine sono rimasto",
+      "cue": "I should have gone earlier. In the end I stayed",
+      "literal": "I would-be had-to to-go earlier. At the end I am stayed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sarei dovuto andare",
+            "cue": "I should have gone",
+            "tag": "delta",
+            "forms": [
+              "sarei dovuto andare",
+              "sarei dovuta andare"
+            ],
+            "note": "The essere twin of L4-M3's avrei dovuto. andare takes essere, so the whole compound does, and the participle dovuto agrees with the speaker."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Not avrei dovuto andare. The auxiliary is chosen by the verb at the END - andare - and not by dovere, which is why this cell needs saying at all.",
+      "sound": "sa-REI do-VU-to an-DA-re, six syllables run together as one idea.",
+      "variations": [
+        {
+          "display": "Sarei dovuto andare prima",
+          "cue": "I should have gone earlier",
+          "changed": "the regret without the outcome"
+        },
+        {
+          "display": "Alla fine sono rimasto",
+          "cue": "In the end I stayed",
+          "changed": "the outcome without the regret"
+        },
+        {
+          "display": "Sarei dovuta andare prima",
+          "cue": "I should have gone earlier",
+          "changed": "a woman speaking, so the participle agrees"
+        }
+      ],
+      "mistake": {
+        "display": "Avrei dovuto andare prima",
+        "why": "Heard, and taught in some books, but this course takes the essere line: with an essere verb underneath, the compound goes to essere and the participle agrees."
+      },
+      "usage": "Looking back at a decision inside a story you are telling about yourself.",
+      "register": "neutral",
+      "mnemonic": "the last verb picks the auxiliary."
+    },
+    {
+      "id": "L5-M9-S08",
+      "display": "In breve, la morale della favola è questa",
+      "cue": "In short, the moral of the story is this",
+      "literal": "In brief, the moral of the fable is this",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in breve",
+            "cue": "in short, briefly",
+            "tag": "free",
+            "forms": [
+              "in breve"
+            ],
+            "note": "The cut. It warns the listener that you are about to skip most of it, which is exactly what a retelling does."
+          },
+          {
+            "display": "morale",
+            "cue": "moral, the lesson of it",
+            "tag": "free",
+            "forms": [
+              "morale"
+            ],
+            "note": "Feminine here - la morale della favola. The same spelling as the adjective moral, and only the article separates them."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "la morale is the lesson; il morale is somebody's spirits. Same five letters, different article, opposite conversations.",
+      "sound": "in BRE-ve. mo-RA-le, stress on RA.",
+      "variations": [
+        {
+          "display": "In breve, la morale è questa",
+          "cue": "In short, the moral is this",
+          "changed": "the story left unnamed"
+        },
+        {
+          "display": "La morale della favola è questa",
+          "cue": "The moral of the story is this",
+          "changed": "the closing without the warning"
+        }
+      ],
+      "mistake": {
+        "display": "In breve, il morale della favola è questa",
+        "why": "il morale is morale in the sense of spirits. The lesson of a story is la morale, and the article is the only thing carrying that."
+      },
+      "usage": "Closing a retelling, or cutting one short when you can see it is going long.",
+      "register": "neutral",
+      "mnemonic": "LA morale teaches; IL morale needs cheering up."
+    },
+    {
+      "id": "L5-M9-S09",
+      "display": "Per farla breve, questa versione è la mia",
+      "cue": "To cut a long story short, this version is mine",
+      "literal": "For to-make-it short, this version is the mine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "per farla breve",
+            "cue": "to cut a long story short",
+            "tag": "free",
+            "forms": [
+              "per farla breve"
+            ],
+            "note": "Three tokens, learned whole, with a clitic la inside it that stands for the story - exactly the machine L5-M8 took apart."
+          },
+          {
+            "display": "versione",
+            "cue": "version, telling",
+            "tag": "free",
+            "forms": [
+              "versione",
+              "versioni"
+            ],
+            "note": "The word that makes your retelling yours: la mia versione is not a claim that the printed one is wrong, only that this one is how you tell it."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "per farla breve is fixed. The la inside it refers to nothing you can name, and swapping it for lo or for a noun breaks the phrase.",
+      "sound": "per FAR-la BRE-ve. ver-SIO-ne, stress on SIO.",
+      "variations": [
+        {
+          "display": "Per farla breve, questa è la mia versione",
+          "cue": "To cut a long story short, this is my version",
+          "changed": "the possessive moved after the noun's article"
+        },
+        {
+          "display": "Questa versione è la mia",
+          "cue": "This version is mine",
+          "changed": "the claim without the warning"
+        }
+      ],
+      "mistake": {
+        "display": "Per farlo breve, questa versione è la mia",
+        "why": "The clitic is la and does not agree with anything in your sentence. It is frozen inside the phrase, and farlo breve is simply not the expression."
+      },
+      "usage": "Warning somebody that what follows is the short telling, and yours.",
+      "register": "informal",
+      "mnemonic": "farla breve: the la is the story, and it never changes."
+    },
+    {
+      "id": "L5-M9-S10",
+      "display": "Ebbe paura, vide il mare, fece una cosa strana e venne a casa",
+      "cue": "He was afraid, saw the sea, did something strange and came home",
+      "literal": "He had fear, saw the sea, did a thing strange and came to home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ebbe",
+            "cue": "had",
+            "tag": "free",
+            "forms": [
+              "ebbe",
+              "ebbero"
+            ],
+            "note": "The remoto of avere. ebbe paura is was afraid, on L2-M9's ha paura - the noun does not change, only the tense under it."
+          },
+          {
+            "display": "vide",
+            "cue": "saw",
+            "tag": "free",
+            "forms": [
+              "vide",
+              "videro"
+            ],
+            "note": "The remoto of vedere. Out loud it is ha visto, L3-M5's, and the two look nothing like each other, which is why this one has to be recognised rather than derived."
+          },
+          {
+            "display": "fece",
+            "cue": "did, made",
+            "tag": "free",
+            "forms": [
+              "fece",
+              "fecero"
+            ],
+            "note": "The remoto of fare. ha fatto out loud. Like fu and disse it is short and irregular, and there is no rule to reach for."
+          },
+          {
+            "display": "venne",
+            "cue": "came",
+            "tag": "free",
+            "forms": [
+              "venne",
+              "vennero"
+            ],
+            "note": "The remoto of venire. Not to be read as a form of volere: è venuto is what the same event becomes in speech."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Four verbs, four irregular stems, and no pattern joining them. This tense is learned as a list of shapes to recognise, and pretending it is regular is what makes it unreadable.",
+      "sound": "EB-be. VI-de. FE-ce. VEN-ne. Every one has its stress on the first syllable.",
+      "variations": [
+        {
+          "display": "Ebbe paura e non disse niente",
+          "cue": "He was afraid and said nothing",
+          "changed": "two of the four, in a shorter line"
+        },
+        {
+          "display": "Vide il mare e venne a casa",
+          "cue": "He saw the sea and came home",
+          "changed": "the other two"
+        },
+        {
+          "display": "Fece una cosa strana e venne a casa",
+          "cue": "He did something strange and came home",
+          "changed": "the same events with fare in front"
+        }
+      ],
+      "mistake": {
+        "display": "Ebbi paura, vidi il mare e venni a casa",
+        "why": "Those are the first persons, and they are not this module's. Telling your own story out loud, the line is ho avuto paura, ho visto il mare, sono venuto a casa."
+      },
+      "usage": "Reading a page of a story, and recognising the four verbs that carry most of it.",
+      "register": "formal",
+      "mnemonic": "ebbe, vide, fece, venne: four shapes, no rule."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M9-C01",
+      "display": "C'era una volta un gatto",
+      "cue": "Once upon a time there was a cat"
+    },
+    {
+      "id": "L5-M9-C02",
+      "display": "In questa fiaba la protagonista era una bambina",
+      "cue": "In this fairy tale the main character was a girl"
+    },
+    {
+      "id": "L5-M9-C03",
+      "display": "Il personaggio disse una cosa strana",
+      "cue": "The character said something strange"
+    },
+    {
+      "id": "L5-M9-C04",
+      "display": "Fu una storia lunga",
+      "cue": "It was a long story"
+    },
+    {
+      "id": "L5-M9-C05",
+      "display": "Visse molti anni in città",
+      "cue": "He lived many years in the city"
+    },
+    {
+      "id": "L5-M9-C06",
+      "display": "Quando sono arrivato, era partito da un'ora",
+      "cue": "When I arrived, he had left an hour before"
+    },
+    {
+      "id": "L5-M9-C07",
+      "display": "Avevo finito il lavoro quando è arrivata mia madre",
+      "cue": "I had finished the work when my mother arrived"
+    },
+    {
+      "id": "L5-M9-C08",
+      "display": "Sarei dovuto andare prima",
+      "cue": "I should have gone earlier"
+    },
+    {
+      "id": "L5-M9-C09",
+      "display": "In breve, la morale della favola è questa",
+      "cue": "In short, the moral of the story is this"
+    },
+    {
+      "id": "L5-M9-C10",
+      "display": "Per farla breve, questa versione è la mia",
+      "cue": "To cut a long story short, this version is mine"
+    },
+    {
+      "id": "L5-M9-C11",
+      "display": "Ebbe paura e vide il mare",
+      "cue": "He was afraid and saw the sea"
+    },
+    {
+      "id": "L5-M9-C12",
+      "display": "Fece una cosa strana e venne a casa",
+      "cue": "He did something strange and came home"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

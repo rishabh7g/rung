@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M6",
+  "title": "Arguing a position",
+  "job": "A structured case, objections answered",
+  "prerequisites": ["L5-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 16,
+    "allowedTenses": ["simple_present", "simple_past"],
+    "allowedPatterns": [
+      "cheotjjae, + clause. + duljjae, + clause",
+      "waenyahamyeon + clause-gi + ttaemun-ieyo",
+      "yereul + deureo, + clause",
+      "geureoke + saenggakhal + su-do + isseoyo. + hajiman + clause",
+      "majimageuro, + clause"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PLAN GOES AT THE FRONT. cheotjjae, duljjae and majimageuro are not counting words: they tell a listener where in your case they have arrived. Say one, then the whole clause."
+    },
+    {
+      "tag": "delta",
+      "text": "BECAUSE IS BRACKETED. waenyahamyeon opens the reason and -gi ttaemun-ieyo closes it. English says because once, at the join; Korean announces it at the front and finishes it at the end."
+    },
+    {
+      "tag": "interference",
+      "text": "ONLY THE DISCOURSE WORDS FRONT. Every connective that joins two clauses sits at the END of the first one. A reason fronted with a bare ttaemun is a fragment, not a sentence."
+    },
+    {
+      "tag": "free",
+      "text": "-GI MAKES THE VERB A THING FIRST. eopseoyo becomes eopgi before ttaemun-ieyo can take it, the same move L4-M1 taught with hagi and gagi inside their own frames."
+    },
+    {
+      "tag": "delta",
+      "text": "RAISE THE OBJECTION YOURSELF. geureoke saenggakhal su-do isseoyo names the other reading as thinkable; L1-M10's hajiman or L4-M4's geuraedo then turns it. L4-M4 conceded a point already made — here you invite one."
+    },
+    {
+      "tag": "free",
+      "text": "YEREUL DEUREO IS ONE PIECE. For example — never split it, and never bend deureo, which is not L4-M6's deureoyo, to enter."
+    },
+    {
+      "tag": "interference",
+      "text": "THE FRAME IS DIRECT, THE SENTENCES ARE NOT. A case is argued in -yo, with L4-M5's softeners inside the clauses. Reaching for -(seu)pnida to sound authoritative is the register mistake this course spent two levels preventing."
+    },
+    {
+      "tag": "free",
+      "text": "FIVE NOUNS HOLD A CASE TOGETHER: jujang a claim, munje the problem, chanseong for, bandae against, gyeollon the conclusion."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M6-S01",
+      "display": "Cheotjjae, sigan-i eopseoyo.",
+      "script": "첫째, 시간이 없어요.",
+      "cue": "First, there is no time.",
+      "literal": "firstly, time-SUBJ not-exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cheotjjae",
+            "script": "첫째",
+            "cue": "first, firstly",
+            "tag": "delta",
+            "forms": ["cheotjjae"],
+            "note": "The first item of a case, not the first thing in a queue. It opens the sentence and the whole clause follows it."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English can drop first of all into the middle of a sentence. cheotjjae cannot move: it opens the sentence or it is not doing its job.",
+      "sound": "CHEOT-jjae, SI-ga-ni EOP-seo-yo.",
+      "variations": [
+        {
+          "display": "Cheotjjae, sigan-i eopseosseoyo.",
+          "script": "첫째, 시간이 없었어요.",
+          "cue": "First, there was no time.",
+          "changed": "the past: the same frame over a finished reason"
+        },
+        {
+          "display": "Duljjae, sigan-i eopseoyo.",
+          "script": "둘째, 시간이 없어요.",
+          "cue": "Second, there is no time.",
+          "changed": "the second slot of the same plan"
+        }
+      ],
+      "mistake": {
+        "display": "Sigan-i eopseoyo, cheotjjae.",
+        "script": "시간이 없어요, 첫째.",
+        "why": "The plan word cannot be an afterthought. cheotjjae exists to warn the listener that a list is starting, and a warning that arrives after the item is not a warning."
+      },
+      "usage": "Opening the first reason of a case.",
+      "register": "neutral",
+      "mnemonic": "cheot is first; cheotjjae is first place in your argument."
+    },
+    {
+      "id": "L5-M6-S02",
+      "display": "Duljjae, i-sikdang-eun neomu bissayo.",
+      "script": "둘째, 이 식당은 너무 비싸요.",
+      "cue": "Second, this restaurant is too expensive.",
+      "literal": "secondly, this-restaurant-TOP too is-expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "duljjae",
+            "script": "둘째",
+            "cue": "second, secondly",
+            "tag": "delta",
+            "forms": ["duljjae"],
+            "note": "The second item, built the same way as cheotjjae. A case that opens with cheotjjae owes the listener a duljjae."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "duljjae counts your reasons, never the restaurants. For a second thing in the world Korean reaches for a counter, not for this word.",
+      "sound": "DUL-jjae, i SIK-dang-eun NEO-mu BI-ssa-yo.",
+      "variations": [
+        {
+          "display": "Duljjae, i-sikdang-eun neomu meoreoyo.",
+          "script": "둘째, 이 식당은 너무 멀어요.",
+          "cue": "Second, this restaurant is too far.",
+          "changed": "a different second reason in the same slot"
+        },
+        {
+          "display": "Cheotjjae, i-sikdang-eun neomu bissayo.",
+          "script": "첫째, 이 식당은 너무 비싸요.",
+          "cue": "First, this restaurant is too expensive.",
+          "changed": "the same reason moved to the opening slot"
+        }
+      ],
+      "mistake": {
+        "display": "Duljjae sikdang-eun neomu bissayo.",
+        "script": "둘째 식당은 너무 비싸요.",
+        "why": "Without the comma pause duljjae reads as counting restaurants — the second restaurant. The plan word stands alone before the clause begins."
+      },
+      "usage": "Adding the second reason, once the first has landed.",
+      "register": "neutral",
+      "mnemonic": "dul is two; duljjae is reason two."
+    },
+    {
+      "id": "L5-M6-S03",
+      "display": "Waenyahamyeon sigan-i eopgi ttaemun-ieyo.",
+      "script": "왜냐하면 시간이 없기 때문이에요.",
+      "cue": "Because there is no time.",
+      "literal": "because time-SUBJ not-existing reason-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "waenyahamyeon",
+            "script": "왜냐하면",
+            "cue": "because (announced at the front)",
+            "tag": "delta",
+            "forms": ["waenyahamyeon"],
+            "note": "It announces that a reason is coming and commits you to finishing with ttaemun-ieyo. Alone it is half a construction."
+          },
+          {
+            "display": "ttaemun-ieyo",
+            "script": "때문이에요",
+            "cue": "it is because of that",
+            "tag": "delta",
+            "forms": ["ttaemun-ieyo"],
+            "note": "ttaemun is the reason itself and -ieyo is L1-M1's copula. It closes the bracket waenyahamyeon opened; L3-M3's ttaemune is the joining form, and is a different word here."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "English says because once and then runs on. Korean opens with waenyahamyeon and must still close with ttaemun-ieyo, so the reason is fenced at both ends.",
+      "sound": "WAE-nya-ha-myeon SI-ga-ni EOP-gi TTAE-mu-ni-e-yo.",
+      "variations": [
+        {
+          "display": "Sigan-i eopgi ttaemun-ieyo.",
+          "script": "시간이 없기 때문이에요.",
+          "cue": "It is because there is no time.",
+          "changed": "waenyahamyeon dropped: correct, but it no longer announces itself"
+        },
+        {
+          "display": "Waenyahamyeon hakgyo-e gagi ttaemun-ieyo.",
+          "script": "왜냐하면 학교에 가기 때문이에요.",
+          "cue": "Because I go to school.",
+          "changed": "L4-M1's gagi in the same bracket"
+        }
+      ],
+      "mistake": {
+        "display": "Waenyahamyeon sigan-i eopseoyo.",
+        "script": "왜냐하면 시간이 없어요.",
+        "why": "The bracket was opened and never closed. A finished -yo verb cannot sit under waenyahamyeon: the clause has to end in -gi ttaemun-ieyo."
+      },
+      "usage": "Giving the reason behind a claim you have just made.",
+      "register": "neutral",
+      "mnemonic": "wae is why; waenyahamyeon is here comes the why."
+    },
+    {
+      "id": "L5-M6-S04",
+      "display": "Yereul deureo, beoseu-ga neomu neujeoyo.",
+      "script": "예를 들어, 버스가 너무 늦어요.",
+      "cue": "For example, the bus is too late.",
+      "literal": "example-OBJ raising, bus-SUBJ too is-late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yereul deureo",
+            "script": "예를 들어",
+            "cue": "for example",
+            "tag": "free",
+            "forms": ["yereul deureo"],
+            "note": "Two words, one piece — raising an example. Learn it whole: deureo here is not L4-M6's deureoyo, to enter."
+          }
+        ],
+        "rules": [5, 0]
+      },
+      "trap": "English can put for example almost anywhere in a sentence. yereul deureo opens the example and nothing else goes in front of it.",
+      "sound": "YE-reul DEU-reo, BEO-seu-ga NEO-mu NEU-jeo-yo.",
+      "variations": [
+        {
+          "display": "Yereul deureo, gicha-ga neomu neujeoyo.",
+          "script": "예를 들어, 기차가 너무 늦어요.",
+          "cue": "For example, the train is too late.",
+          "changed": "a different example in the same frame"
+        },
+        {
+          "display": "Yereul deureo, beoseu-ga neomu meoreoyo.",
+          "script": "예를 들어, 버스가 너무 멀어요.",
+          "cue": "For example, the bus is too far.",
+          "changed": "the same subject, a different complaint"
+        }
+      ],
+      "mistake": {
+        "display": "Beoseu-ga neomu neujeoyo, yereul deureo.",
+        "script": "버스가 너무 늦어요, 예를 들어.",
+        "why": "An example that announces itself after it has been given is not an example, it is a repetition. The frame goes first."
+      },
+      "usage": "Making an abstract reason concrete before an objection can.",
+      "register": "neutral",
+      "mnemonic": "ye is an example; yereul deureo raises one up."
+    },
+    {
+      "id": "L5-M6-S05",
+      "display": "Geureoke saenggakhal su-do isseoyo. Hajiman munje-ga isseoyo.",
+      "script": "그렇게 생각할 수도 있어요. 하지만 문제가 있어요.",
+      "cue": "One could see it that way. But there is a problem.",
+      "literal": "that-way think-FUT.ADN way-even exists. but problem-SUBJ exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saenggakhal",
+            "script": "생각할",
+            "cue": "to think, about to think",
+            "tag": "delta",
+            "forms": ["saenggakhal"],
+            "note": "The form L3-M3's saenggakhaeyo takes in front of su. It is not a future: it only says the thinking has not happened yet."
+          },
+          {
+            "display": "su-do",
+            "script": "수도",
+            "cue": "even the possibility",
+            "tag": "delta",
+            "forms": ["su-do"],
+            "note": "L2-M1's su with L1-M3's -do attached. su isseoyo is one can; su-do isseoyo is one might well — which is what concedes the other side its reading."
+          }
+        ],
+        "rules": [4, 6]
+      },
+      "trap": "English concedes with a shrug — fair enough. Korean concedes by calling the other view thinkable, and the concession is worthless unless a turn follows it.",
+      "sound": "GEU-reo-ke SAENG-ga-kal SU-do I-sseo-yo. HA-ji-man MUN-je-ga I-sseo-yo.",
+      "variations": [
+        {
+          "display": "Geureoke saenggakhal su-do isseoyo. Geuraedo munje-ga isseoyo.",
+          "script": "그렇게 생각할 수도 있어요. 그래도 문제가 있어요.",
+          "cue": "One could see it that way. Even so, there is a problem.",
+          "changed": "L4-M4's geuraedo for hajiman: a softer turn"
+        },
+        {
+          "display": "Geureoke saenggakhal su-do isseoyo.",
+          "script": "그렇게 생각할 수도 있어요.",
+          "cue": "One could see it that way.",
+          "changed": "the concession alone, with the turn withheld"
+        }
+      ],
+      "mistake": {
+        "display": "Geureoke saenggakhaeyo su-do isseoyo.",
+        "script": "그렇게 생각해요 수도 있어요.",
+        "why": "A finished verb cannot carry su. The verb has to become saenggakhal first, and only that form can hand the possibility to isseoyo."
+      },
+      "usage": "Naming the objection before your listener does.",
+      "register": "neutral",
+      "mnemonic": "su is the room to do it; su-do is even that much room."
+    },
+    {
+      "id": "L5-M6-S06",
+      "display": "Majimageuro, je gyeollon-eun ganeun geo-ga joayo.",
+      "script": "마지막으로, 제 결론은 가는 거가 좋아요.",
+      "cue": "Lastly, my conclusion is that going is better.",
+      "literal": "lastly, my conclusion-TOP go-ADN thing-SUBJ is-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "majimageuro",
+            "script": "마지막으로",
+            "cue": "lastly, finally",
+            "tag": "delta",
+            "forms": ["majimageuro"],
+            "note": "The close of a case, matching cheotjjae at the other end. It promises that nothing follows, so do not use it twice."
+          },
+          {
+            "display": "gyeollon",
+            "script": "결론",
+            "cue": "conclusion",
+            "tag": "free",
+            "forms": ["gyeollon", "gyeollon-eun", "gyeollon-eul"],
+            "note": "The finding a case arrives at. Said gyeol-lon: the two consonants at the seam assimilate, and the romanization writes what is said."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "English can say finally and then keep talking for a minute. majimageuro is a promise that the next sentence ends the case.",
+      "sound": "MA-ji-ma-geu-ro, je GYEOL-lo-neun GA-neun GEO-ga JO-a-yo.",
+      "variations": [
+        {
+          "display": "Majimageuro, je gyeollon-eul malhaeyo.",
+          "script": "마지막으로, 제 결론을 말해요.",
+          "cue": "Lastly, I will state my conclusion.",
+          "changed": "-eul for -eun: the conclusion as the thing said"
+        },
+        {
+          "display": "Je gyeollon-eun ganeun geo-ga joayo.",
+          "script": "제 결론은 가는 거가 좋아요.",
+          "cue": "My conclusion is that going is better.",
+          "changed": "the close dropped: a conclusion with no announcement"
+        }
+      ],
+      "mistake": {
+        "display": "Majimageuro, je gyeollon-eun gayo.",
+        "script": "마지막으로, 제 결론은 가요.",
+        "why": "A conclusion is a thing, so what follows it has to be a thing too. L5-M5's ganeun geo-ga does that work; a bare finished verb leaves gyeollon-eun with nothing to be."
+      },
+      "usage": "Closing a case with the finding it was built for.",
+      "register": "neutral",
+      "mnemonic": "majimak is the last one; majimageuro is by way of the last one."
+    },
+    {
+      "id": "L5-M6-S07",
+      "display": "Chingu-neun chanseong-ieyo. Hajiman je jujang-eun dallayo.",
+      "script": "친구는 찬성이에요. 하지만 제 주장은 달라요.",
+      "cue": "My friend is for it. But my claim is different.",
+      "literal": "friend-TOP agreement-is. but my claim-TOP differs",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chanseong",
+            "script": "찬성",
+            "cue": "agreement, being for it",
+            "tag": "free",
+            "forms": ["chanseong", "chanseong-ieyo", "chanseong-eun"],
+            "note": "A noun, not a verb: Korean says a person IS agreement rather than that they agree. Its opposite is bandae."
+          },
+          {
+            "display": "jujang",
+            "script": "주장",
+            "cue": "claim, position",
+            "tag": "free",
+            "forms": ["jujang", "jujang-eun"],
+            "note": "What you are arguing, held apart from whether it is true. A case has one jujang and several reasons under it."
+          }
+        ],
+        "rules": [7, 6]
+      },
+      "trap": "English makes these verbs — he agrees, I argue. Korean keeps them nouns and lets the copula or dallayo do the work, so nothing is conjugated at all.",
+      "sound": "CHIN-gu-neun CHAN-seong-i-e-yo. HA-ji-man je JU-jang-eun DAL-la-yo.",
+      "variations": [
+        {
+          "display": "Chingu-neun bandae-yeyo. Hajiman je jujang-eun dallayo.",
+          "script": "친구는 반대예요. 하지만 제 주장은 달라요.",
+          "cue": "My friend is against it. But my claim is different.",
+          "changed": "bandae for chanseong: the other side of the same frame"
+        },
+        {
+          "display": "Chingu-neun chanseong-ieyo. Geuraedo je jujang-eun dallayo.",
+          "script": "친구는 찬성이에요. 그래도 제 주장은 달라요.",
+          "cue": "My friend is for it. Even so, my claim is different.",
+          "changed": "geuraedo for hajiman: the turn made gentler"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-neun chanseonghaeyo.",
+        "script": "친구는 찬성해요.",
+        "why": "The verb exists, but at this level the noun with the copula is what a case is built from — and it is the shape that lets chanseong and bandae stand side by side in one sentence."
+      },
+      "usage": "Placing yourself against a position somebody else holds.",
+      "register": "neutral",
+      "mnemonic": "chanseong sides with; jujang is the side you take."
+    },
+    {
+      "id": "L5-M6-S08",
+      "display": "Munje-ga hana isseoyo. Sigan-i neomu jjalbayo.",
+      "script": "문제가 하나 있어요. 시간이 너무 짧아요.",
+      "cue": "There is one problem. The time is too short.",
+      "literal": "problem-SUBJ one exists. time-SUBJ too is-short",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "munje",
+            "script": "문제",
+            "cue": "problem, issue",
+            "tag": "free",
+            "forms": ["munje", "munje-ga"],
+            "note": "The thing wrong with a position — yours or theirs. Naming one munje and answering it is worth more than listing five."
+          }
+        ],
+        "rules": [7, 6]
+      },
+      "trap": "English says there is a problem with that, and the with-phrase carries the target. Korean names the problem and then states it as a separate sentence, which is why a case reads as short steps.",
+      "sound": "MUN-je-ga HA-na I-sseo-yo. SI-ga-ni NEO-mu JJAL-ba-yo.",
+      "variations": [
+        {
+          "display": "Munje-ga manhi isseoyo. Sigan-i neomu jjalbayo.",
+          "script": "문제가 많이 있어요. 시간이 너무 짧아요.",
+          "cue": "There are many problems. The time is too short.",
+          "changed": "manhi for hana: a pile of them instead of one"
+        },
+        {
+          "display": "Munje-ga eopseoyo.",
+          "script": "문제가 없어요.",
+          "cue": "There is no problem.",
+          "changed": "the negative: the objection refused outright"
+        }
+      ],
+      "mistake": {
+        "display": "Hana munje-ga isseoyo.",
+        "script": "하나 문제가 있어요.",
+        "why": "The count follows the noun it counts. Korean says problem-one-exists, and a number fronted onto the noun reads as English word order in Korean words."
+      },
+      "usage": "Naming the single weak point you intend to press.",
+      "register": "neutral",
+      "mnemonic": "munje is the question put to your case."
+    },
+    {
+      "id": "L5-M6-S09",
+      "display": "Waenyahamyeon jeo-neun jigeum sigan-i eopgi ttaemun-ieyo.",
+      "script": "왜냐하면 저는 지금 시간이 없기 때문이에요.",
+      "cue": "Because right now I have no time.",
+      "literal": "because I-TOP now time-SUBJ not-existing reason-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eopgi",
+            "script": "없기",
+            "cue": "the not-having",
+            "tag": "delta",
+            "forms": ["eopgi"],
+            "note": "eopseoyo turned into a thing so ttaemun can take it, exactly as L4-M1 turns hada into hagi. Said eop-gi, with the p."
+          }
+        ],
+        "rules": [3, 1]
+      },
+      "trap": "English keeps the verb a verb inside because. Korean has to nominalise it first, so the clause under waenyahamyeon never ends in -yo.",
+      "sound": "WAE-nya-ha-myeon JEO-neun JI-geum SI-ga-ni EOP-gi TTAE-mu-ni-e-yo.",
+      "variations": [
+        {
+          "display": "Waenyahamyeon jeo-neun jigeum hakgyo-e gagi ttaemun-ieyo.",
+          "script": "왜냐하면 저는 지금 학교에 가기 때문이에요.",
+          "cue": "Because I am going to school right now.",
+          "changed": "gagi for eopgi: the same slot, a motion verb"
+        },
+        {
+          "display": "Jeo-neun jigeum sigan-i eopseoyo.",
+          "script": "저는 지금 시간이 없어요.",
+          "cue": "I have no time right now.",
+          "changed": "the bracket removed: a plain statement, not a reason"
+        }
+      ],
+      "mistake": {
+        "display": "Waenyahamyeon jeo-neun jigeum sigan-i eopseoyo ttaemun-ieyo.",
+        "script": "왜냐하면 저는 지금 시간이 없어요 때문이에요.",
+        "why": "ttaemun needs a noun in front of it, and a finished -yo verb is not one. eopseoyo has to become eopgi before the bracket can close."
+      },
+      "usage": "Backing a refusal you have already softened.",
+      "register": "neutral",
+      "mnemonic": "eopseoyo loses its ending and becomes eopgi, a thing you can point at."
+    },
+    {
+      "id": "L5-M6-S10",
+      "display": "Je jujang-eun chanseong-ieyo. Hajiman bandae-do manhi isseoyo.",
+      "script": "제 주장은 찬성이에요. 하지만 반대도 많이 있어요.",
+      "cue": "My position is yes. But there is a lot of opposition too.",
+      "literal": "my claim-TOP agreement-is. but opposition-even much exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bandae",
+            "script": "반대",
+            "cue": "opposition, being against it",
+            "tag": "free",
+            "forms": ["bandae", "bandae-yeyo", "bandae-do"],
+            "note": "chanseong's opposite, and a noun in the same way. bandae-yeyo is I am against it; bandae-do adds L1-M3's -do, opposition as well."
+          }
+        ],
+        "rules": [7, 4]
+      },
+      "trap": "English hears I am against as a stance. Korean bandae-yeyo is nearer to my answer is no, so it reports a position rather than a feeling and is far less confrontational than it looks.",
+      "sound": "je JU-jang-eun CHAN-seong-i-e-yo. HA-ji-man BAN-dae-do MA-ni I-sseo-yo.",
+      "variations": [
+        {
+          "display": "Je jujang-eun chanseong-ieyo. Geuraedo bandae-do manhi isseoyo.",
+          "script": "제 주장은 찬성이에요. 그래도 반대도 많이 있어요.",
+          "cue": "My position is yes. Even so, there is a lot of opposition too.",
+          "changed": "geuraedo for hajiman: conceding the count without conceding the case"
+        },
+        {
+          "display": "Je jujang-eun bandae-yeyo.",
+          "script": "제 주장은 반대예요.",
+          "cue": "My position is no.",
+          "changed": "the position reversed and the objection dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Je jujang-eun chanseong-ieyo. Hajiman bandae manhi isseoyo.",
+        "script": "제 주장은 찬성이에요. 하지만 반대 많이 있어요.",
+        "why": "Dropping -do loses the whole point of the sentence. Without it the second clause merely reports opposition; with it, the opposition is granted as well as reported."
+      },
+      "usage": "Granting how much stands against you without moving.",
+      "register": "neutral",
+      "mnemonic": "bandae turns back against; chanseong stands with."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M6-C01",
+      "display": "Cheotjjae, sigan-i eopseoyo.",
+      "script": "첫째, 시간이 없어요.",
+      "cue": "First, there is no time."
+    },
+    {
+      "id": "L5-M6-C02",
+      "display": "Duljjae, neomu bissayo.",
+      "script": "둘째, 너무 비싸요.",
+      "cue": "Second, it is too expensive."
+    },
+    {
+      "id": "L5-M6-C03",
+      "display": "Waenyahamyeon sigan-i eopgi ttaemun-ieyo.",
+      "script": "왜냐하면 시간이 없기 때문이에요.",
+      "cue": "Because there is no time."
+    },
+    {
+      "id": "L5-M6-C04",
+      "display": "Yereul deureo, beoseu-ga neujeoyo.",
+      "script": "예를 들어, 버스가 늦어요.",
+      "cue": "For example, the bus is late."
+    },
+    {
+      "id": "L5-M6-C05",
+      "display": "Geureoke saenggakhal su-do isseoyo.",
+      "script": "그렇게 생각할 수도 있어요.",
+      "cue": "One could see it that way."
+    },
+    {
+      "id": "L5-M6-C06",
+      "display": "Majimageuro, je gyeollon-eul malhaeyo.",
+      "script": "마지막으로, 제 결론을 말해요.",
+      "cue": "Lastly, I will state my conclusion."
+    },
+    {
+      "id": "L5-M6-C07",
+      "display": "Je jujang-eun dallayo.",
+      "script": "제 주장은 달라요.",
+      "cue": "My claim is different."
+    },
+    {
+      "id": "L5-M6-C08",
+      "display": "Chingu-neun chanseong-ieyo.",
+      "script": "친구는 찬성이에요.",
+      "cue": "My friend is for it."
+    },
+    {
+      "id": "L5-M6-C09",
+      "display": "Jeo-neun bandae-yeyo.",
+      "script": "저는 반대예요.",
+      "cue": "I am against it."
+    },
+    {
+      "id": "L5-M6-C10",
+      "display": "Munje-ga hana isseoyo.",
+      "script": "문제가 하나 있어요.",
+      "cue": "There is one problem."
+    },
+    {
+      "id": "L5-M6-C11",
+      "display": "Hajiman sigan-i neomu jjalbayo.",
+      "script": "하지만 시간이 너무 짧아요.",
+      "cue": "But the time is too short."
+    },
+    {
+      "id": "L5-M6-C12",
+      "display": "Geuraedo jeo-neun ganeun geo-ga joayo.",
+      "script": "그래도 저는 가는 거가 좋아요.",
+      "cue": "Even so, I think going is better."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

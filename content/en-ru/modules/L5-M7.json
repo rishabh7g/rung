@@ -1,0 +1,647 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M7",
+  "title": "Between the lines",
+  "job": "Implication, sarcasm, indirect requests",
+  "prerequisites": [
+    "L5-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "infinitive",
+      "conditional (past + by)"
+    ],
+    "allowedPatterns": [
+      "Rázve + <clause> + ?",
+      "Neuzhéli + <clause> + ?",
+      "Zdes' khólodno",
+      "Ne moglí by vy + V-inf",
+      "<subject>-to + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE RHETORICAL QUESTION WITH razve. razve stands first in the clause and asks a question whose expected answer is no; its real content is a challenge. Razve eto dorogo? is that is not expensive, said as a question, and it disagrees with something the other person has just said without ever calling them wrong. The intonation falls at the end instead of rising."
+    },
+    {
+      "tag": "delta",
+      "text": "neuzheli ALSO stands first and is also a question, but its force is SURPRISE rather than challenge: it asks for confirmation of something the speaker finds hard to believe. Neuzheli vy ne znayete? is I can't believe you don't know. The two particles share a shape and split the work: razve accuses, neuzheli marvels. Choosing the wrong one changes what you are accusing the listener of."
+    },
+    {
+      "tag": "delta",
+      "text": "THE EMPHATIC CLITIC -to attaches with a hyphen to the word it insists on, and marks a contrast the speaker does not state: Ya-to znayu is I, at least, know — and the unsaid half is that somebody else does not. It is unstressed, it never stands alone, and it is written joined: ya-to, on-to. A separate word to (as in to yest') exists and is a different animal."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH CARRIES THIS WHOLE LAYER IN THE VOICE, and a course with no audio has to put it on the page. The first failure is UPTAKE, not production: an English speaker reads razve as an ordinary question and answers it literally, and hears Zdes' kholodno as a weather report and leaves the window open. Read every sentence in this module twice — once for what it says, once for what it does."
+    },
+    {
+      "tag": "free",
+      "text": "THE INDIRECT REQUEST NEEDS NO NEW WORD. A plain statement of fact in a room where the fact is a problem IS the request: Zdes' kholodno is close the window. Where you want it explicit, Ne mogli by vy plus an infinitive is L2-M1's polite question negated and run through L3-M4's by — the politest form in the course, built entirely of words you already own."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M7-S01",
+      "display": "Rázve éhto dórogo?",
+      "script": "Разве это дорого?",
+      "cue": "Surely that's not expensive?",
+      "literal": "Really this expensive?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rázve",
+            "script": "разве",
+            "cue": "surely … not?; really?",
+            "tag": "free",
+            "forms": [
+              "rázve"
+            ],
+            "note": "Opens a question that expects the answer net. It challenges a claim rather than asking for information, and the voice falls at the end."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "This is not a question about price. It is a disagreement, and an English speaker who answers it literally with a number has missed the whole sentence.",
+      "sound": "rázve is RAZ-vye, front-stressed, and the question FALLS at the end rather than rising — the falling line is what marks it as a challenge.",
+      "variations": [
+        {
+          "display": "Rázve éhto trúdno?",
+          "script": "Разве это трудно?",
+          "cue": "Surely that's not hard?",
+          "changed": "the same challenge aimed at a different claim"
+        },
+        {
+          "display": "Éhto dórogo.",
+          "script": "Это дорого.",
+          "cue": "That's expensive.",
+          "changed": "the flat statement this question exists to argue with"
+        }
+      ],
+      "mistake": {
+        "display": "Rázve éhto ne dórogo?",
+        "script": "Разве это не дорого?",
+        "why": "ne added to mirror the English isn't it. rázve already carries the expected net; putting ne in flips the expectation to yes, so the challenge lands the other way round."
+      },
+      "usage": "Disagreeing with something just said, without calling the speaker wrong outright.",
+      "register": "neutral",
+      "mnemonic": "rázve expects net — the question IS the disagreement."
+    },
+    {
+      "id": "L5-M7-S02",
+      "display": "Neuzhéli vy ne znáyete?",
+      "script": "Неужели вы не знаете?",
+      "cue": "Do you really not know?",
+      "literal": "Surely-not you not know?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "neuzhéli",
+            "script": "неужели",
+            "cue": "really?; surely not?",
+            "tag": "free",
+            "forms": [
+              "neuzhéli"
+            ],
+            "note": "Opens a question of disbelief. Where rázve challenges, neuzhéli marvels: it asks the other person to confirm something you find hard to believe."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "English really can sit anywhere and mean anything. neuzhéli is only disbelief, and it is only ever the first word of its clause.",
+      "sound": "neuzhéli is nye-oo-ZHE-lee, four syllables with the stress on the third.",
+      "variations": [
+        {
+          "display": "Neuzhéli éhto právda?",
+          "script": "Неужели это правда?",
+          "cue": "Is that really true?",
+          "changed": "surprise aimed at a claim rather than at a person"
+        },
+        {
+          "display": "Vy ne znáyete?",
+          "script": "Вы не знаете?",
+          "cue": "You don't know?",
+          "changed": "the plain question, with the disbelief taken out of it"
+        }
+      ],
+      "mistake": {
+        "display": "Rázve vy ne znáyete?",
+        "script": "Разве вы не знаете?",
+        "why": "rázve where neuzhéli was meant. Both are grammatical; rázve says you ought to know and accuses, neuzhéli says I cannot believe it and marvels."
+      },
+      "usage": "Reacting to news you find hard to believe — softer than rázve, which challenges.",
+      "register": "neutral",
+      "mnemonic": "neuzhéli marvels, rázve accuses."
+    },
+    {
+      "id": "L5-M7-S03",
+      "display": "Zdes' khólodno, a oknó otkrýto.",
+      "script": "Здесь холодно, а окно открыто.",
+      "cue": "It's cold in here, and the window is open.",
+      "literal": "Here cold, and window open.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "oknó",
+            "script": "окно",
+            "cue": "window",
+            "tag": "free",
+            "forms": [
+              "oknó"
+            ],
+            "note": "A window, neuter, so a short-form adjective beside it ends in -o: oknó otkrýto. Stressed on the second syllable."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "THE UPTAKE PLATE. Nothing here is a request in form, and everything here is a request in fact. Heard as a weather report, the window stays open.",
+      "sound": "oknó is ak-NO, stressed on the second syllable; the plural moves it forward to ókna.",
+      "variations": [
+        {
+          "display": "Zdes' khólodno.",
+          "script": "Здесь холодно.",
+          "cue": "It's cold in here.",
+          "changed": "the bare fact, which on its own is already the whole request"
+        },
+        {
+          "display": "Oknó otkrýto.",
+          "script": "Окно открыто.",
+          "cue": "The window is open.",
+          "changed": "the same request made from the other end of the room"
+        }
+      ],
+      "mistake": {
+        "display": "Zdes' khólodno, a oknó otkrýt.",
+        "script": "Здесь холодно, а окно открыт.",
+        "why": "otkrýt is the masculine short form. oknó is neuter, so the predicate ends in -o: oknó otkrýto, exactly as khólodno does."
+      },
+      "usage": "An indirect request. State the problem and a Russian hears the ask inside it.",
+      "register": "neutral",
+      "mnemonic": "The fact is the ask: Zdes' khólodno means close the window."
+    },
+    {
+      "id": "L5-M7-S04",
+      "display": "Ne moglí by vy zakrýt' oknó?",
+      "script": "Не могли бы вы закрыть окно?",
+      "cue": "Could you close the window?",
+      "literal": "Not could would you to-close window?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zakrýt'",
+            "script": "закрыть",
+            "cue": "to close; to shut",
+            "tag": "free",
+            "forms": [
+              "zakrýt'"
+            ],
+            "note": "To close, the perfective infinitive — the form that follows moglí by. Stressed on the second syllable: za-KRYT'."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English politeness adds words like possibly. Russian politeness adds a NEGATIVE: the ne in front is what makes this the most polite request in the course.",
+      "sound": "moglí by runs together as mag-LEE by. The by is unstressed and leans back on the word in front of it.",
+      "variations": [
+        {
+          "display": "Ne moglí by vy zakrýt' dver'?",
+          "script": "Не могли бы вы закрыть дверь?",
+          "cue": "Could you close the door?",
+          "changed": "the same frame with a different object"
+        },
+        {
+          "display": "Vy ne moglí by zakrýt' oknó?",
+          "script": "Вы не могли бы закрыть окно?",
+          "cue": "Couldn't you close the window?",
+          "changed": "the pronoun fronted, which is just as polite"
+        }
+      ],
+      "mistake": {
+        "display": "Moglí by vy zakrýt' oknó?",
+        "script": "Могли бы вы закрыть окно?",
+        "why": "the ne dropped. Without it the question is an ordinary could you; the politeness of this frame lives entirely in the negative."
+      },
+      "usage": "The politest request the course has, and every word in it is already yours.",
+      "register": "formal",
+      "mnemonic": "Russian politeness is negative: ne moglí by vy …"
+    },
+    {
+      "id": "L5-M7-S05",
+      "display": "Ya-to znáyu, chto éhto naróchno.",
+      "script": "Я-то знаю, что это нарочно.",
+      "cue": "I know, at least, that it was on purpose.",
+      "literal": "I-at-least know, that this on-purpose.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ya-to",
+            "script": "я-то",
+            "cue": "I, at least; I for one",
+            "tag": "free",
+            "forms": [
+              "ya-to"
+            ],
+            "note": "L1-M1's ya with the emphatic clitic hyphened on. The -to half is the clitic and never stands alone; the separate word to, as in to yest', is a different animal."
+          },
+          {
+            "display": "naróchno",
+            "script": "нарочно",
+            "cue": "on purpose; deliberately",
+            "tag": "free",
+            "forms": [
+              "naróchno"
+            ],
+            "note": "On purpose. The ch is said sh here, na-ROSH-na, which is the same irregular pair as in konéchno."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English marks this contrast with stress in the voice — I know. Russian marks it with a clitic on the page, and the unsaid half is somebody else who does not know.",
+      "sound": "ya-to is one breath, YA-ta, with the clitic unstressed. Both halves are single syllables, so neither carries an acute.",
+      "variations": [
+        {
+          "display": "Ya-to znáyu.",
+          "script": "Я-то знаю.",
+          "cue": "I know, at any rate.",
+          "changed": "the clitic with nothing behind it, leaving the contrast entirely unsaid"
+        },
+        {
+          "display": "Éhto naróchno.",
+          "script": "Это нарочно.",
+          "cue": "That was on purpose.",
+          "changed": "the accusation without the clitic in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "Ya to znáyu, chto éhto naróchno.",
+        "script": "Я то знаю, что это нарочно.",
+        "why": "the hyphen dropped. Written apart, to is a separate word and the clitic force is gone; -to is always joined to its host."
+      },
+      "usage": "Insisting on your own case while leaving the comparison unspoken and therefore polite.",
+      "register": "informal",
+      "mnemonic": "-to insists and leaves the rest unsaid: Ya-to znáyu."
+    },
+    {
+      "id": "L5-M7-S06",
+      "display": "On-to konéchno prav, a vy net.",
+      "script": "Он-то конечно прав, а вы нет.",
+      "cue": "He's right, of course — you're not.",
+      "literal": "He-at-least of-course right, and you not.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on-to",
+            "script": "он-то",
+            "cue": "he, at least; he for one",
+            "tag": "free",
+            "forms": [
+              "on-to"
+            ],
+            "note": "L1-M10's on with the same clitic. It concedes this person's case in order to deny somebody else's, and the somebody else is left unnamed."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English needs a second clause to make the contrast. Russian has it already in the clitic, so the a vy net is the part that can be dropped, not the part that carries the meaning.",
+      "sound": "on-to is ON-ta. The clitic never pulls the stress off its host.",
+      "variations": [
+        {
+          "display": "On-to prav.",
+          "script": "Он-то прав.",
+          "cue": "He, at least, is right.",
+          "changed": "the clitic alone, with the contrast left to the listener"
+        },
+        {
+          "display": "On konéchno prav.",
+          "script": "Он конечно прав.",
+          "cue": "He's of course right.",
+          "changed": "the same sentence with no clitic and so no contrast implied"
+        }
+      ],
+      "mistake": {
+        "display": "On-to konéchno prav, a vy da.",
+        "script": "Он-то конечно прав, а вы да.",
+        "why": "da for the affirmative half. A Russian contrast closes with net on the negative side; the positive side repeats the fact instead, and a vy da is not Russian."
+      },
+      "usage": "Granting one person their point in order to deny somebody else theirs.",
+      "register": "informal",
+      "mnemonic": "The clitic does the contrasting; the second clause just names who lost."
+    },
+    {
+      "id": "L5-M7-S07",
+      "display": "Tózhe mne rabóta!",
+      "script": "Тоже мне работа!",
+      "cue": "Some job that is!",
+      "literal": "Also to-me work!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tózhe mne",
+            "script": "тоже мне",
+            "cue": "some … that is!",
+            "tag": "free",
+            "forms": [
+              "tózhe mne"
+            ],
+            "note": "A frozen two-word sneer that takes a noun after it: Tózhe mne rabóta. Reverse the words and mne tózhe is the ordinary me too."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Word order is the whole joke. mne tózhe is a friendly me too; tózhe mne is a sneer, and only that order carries it.",
+      "sound": "tózhe mne is TO-zhe mnye, said flat and fast. The sneer is in the flatness, not in the pitch.",
+      "variations": [
+        {
+          "display": "Tózhe mne drug!",
+          "script": "Тоже мне друг!",
+          "cue": "Some friend he is!",
+          "changed": "the same sneer aimed at a person instead of a thing"
+        },
+        {
+          "display": "Éhto tózhe rabóta.",
+          "script": "Это тоже работа.",
+          "cue": "That's work too.",
+          "changed": "the ordinary adverb tózhe doing its day job, with no sneer in it"
+        }
+      ],
+      "mistake": {
+        "display": "Mne tózhe rabóta!",
+        "script": "Мне тоже работа!",
+        "why": "the two words swapped. mne tózhe is me too, an ordinary agreement; the frozen sneer only exists in the order tózhe mne."
+      },
+      "usage": "Dry dismissal. Warm among friends; flat from a stranger it reads as rudeness rather than wit.",
+      "register": "informal",
+      "mnemonic": "tózhe mne is a sneer, mne tózhe is me too."
+    },
+    {
+      "id": "L5-M7-S08",
+      "display": "Agá, nu da, konéchno.",
+      "script": "Ага, ну да, конечно.",
+      "cue": "Uh-huh, sure, of course.",
+      "literal": "Aha, well yes, of course.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "agá",
+            "script": "ага",
+            "cue": "uh-huh; yeah",
+            "tag": "free",
+            "forms": [
+              "agá"
+            ],
+            "note": "A spoken yes. Said warmly it agrees; said flat it is the driest disagreement Russian has. Stressed on the second syllable."
+          },
+          {
+            "display": "nu da",
+            "script": "ну да",
+            "cue": "sure; yeah, right",
+            "tag": "free",
+            "forms": [
+              "nu da"
+            ],
+            "note": "Two of the smallest words in the language, taken whole. Sincere it means of course; flat it means I do not believe a word of this."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Every word here is an agreement and the sentence disagrees. English does this with a flat voice; Russian does it with a pile of tiny words that would each be sincere on their own.",
+      "sound": "agá is a-GA, stressed at the end, with a soft g that goes almost to a breath in fast speech.",
+      "variations": [
+        {
+          "display": "Nu da, konéchno.",
+          "script": "Ну да, конечно.",
+          "cue": "Sure, of course.",
+          "changed": "the shorter version, with the same flat delivery"
+        },
+        {
+          "display": "Agá, ponimáyu.",
+          "script": "Ага, понимаю.",
+          "cue": "Uh-huh, I see.",
+          "changed": "the same word said sincerely, which is what it usually is"
+        }
+      ],
+      "mistake": {
+        "display": "Agá, nu da, konéchno, bezuslóvno.",
+        "script": "Ага, ну да, конечно, безусловно.",
+        "why": "a bookish connector stacked on the sneer. bezuslóvno is L5-M6's written register; this move is built from the smallest spoken words, and one printed word makes it read as sincere."
+      },
+      "usage": "Agreement said so flatly that it disagrees. Keep it dry — piling it on is rudeness, not wit.",
+      "register": "informal",
+      "mnemonic": "Three yeses in a row is a no."
+    },
+    {
+      "id": "L5-M7-S09",
+      "display": "Uzh óchen' khólodno.",
+      "script": "Уж очень холодно.",
+      "cue": "It really is very cold.",
+      "literal": "Indeed very cold.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uzh",
+            "script": "уж",
+            "cue": "really; indeed",
+            "tag": "free",
+            "forms": [
+              "uzh"
+            ],
+            "note": "An unstressed particle that insists on a fact the other person is playing down. A monosyllable, so it carries no acute, and it is not uzhé."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "uzh is one letter away from uzhé, already, and the two have nothing to do with each other. uzh insists; uzhé tells the time.",
+      "sound": "uzh is a single unstressed syllable, oosh, with the final zh going to sh. It never carries an acute.",
+      "variations": [
+        {
+          "display": "Uzh óchen' dórogo.",
+          "script": "Уж очень дорого.",
+          "cue": "It really is very expensive.",
+          "changed": "the same insistence on a different complaint"
+        },
+        {
+          "display": "Óchen' khólodno.",
+          "script": "Очень холодно.",
+          "cue": "It's very cold.",
+          "changed": "the plain intensifier, with no insistence behind it"
+        }
+      ],
+      "mistake": {
+        "display": "Uzhé óchen' khólodno.",
+        "script": "Уже очень холодно.",
+        "why": "uzhé is already, a time word with its own stress. uzh is the unstressed particle that insists, and neither is a shape of the other."
+      },
+      "usage": "Pushing back on somebody who is playing a fact down — and, in this room, still asking for the window.",
+      "register": "informal",
+      "mnemonic": "uzh insists, uzhé is a clock."
+    },
+    {
+      "id": "L5-M7-S10",
+      "display": "Ne moglí by vy govorít' tíshe?",
+      "script": "Не могли бы вы говорить тише?",
+      "cue": "Could you speak more quietly?",
+      "literal": "Not could would you to-speak quieter?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "govorít'",
+            "script": "говорить",
+            "cue": "to speak; to talk",
+            "tag": "free",
+            "forms": [
+              "govorít'"
+            ],
+            "note": "The infinitive of L1-M4's govoryú. The soft sign is the whole difference from govorít, he speaks, and only the infinitive follows moglí by."
+          },
+          {
+            "display": "tíshe",
+            "script": "тише",
+            "cue": "more quietly; quieter",
+            "tag": "free",
+            "forms": [
+              "tíshe"
+            ],
+            "note": "The comparative of tíkho, quiet. Front-stressed, and it works as a one-word request all by itself."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English could you speak quieter can be said sharply. This frame cannot: the negative politeness is baked in, which is why it is the safe thing to say to a stranger.",
+      "sound": "tíshe is TEE-she, front-stressed. govorít' is ga-va-REET', with a soft final t you can hear.",
+      "variations": [
+        {
+          "display": "Vy ne moglí by govorít' tíshe?",
+          "script": "Вы не могли бы говорить тише?",
+          "cue": "Couldn't you speak more quietly?",
+          "changed": "the pronoun fronted, and just as polite"
+        },
+        {
+          "display": "Govoríte tíshe.",
+          "script": "Говорите тише.",
+          "cue": "Speak more quietly.",
+          "changed": "the bare imperative, which is an order rather than a request"
+        }
+      ],
+      "mistake": {
+        "display": "Ne moglí by vy govorít tíshe?",
+        "script": "Не могли бы вы говорит тише?",
+        "why": "the soft sign gone off the infinitive. govorít is he speaks; govorít' is to speak, and only an infinitive can follow moglí by."
+      },
+      "usage": "The same polite frame as the window, aimed at a person's volume instead of an object.",
+      "register": "formal",
+      "mnemonic": "moglí by hands over to an infinitive: … zakrýt', … govorít'."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M7-C01",
+      "display": "Rázve éhto dórogo?",
+      "script": "Разве это дорого?",
+      "cue": "Surely that's not expensive?"
+    },
+    {
+      "id": "L5-M7-C02",
+      "display": "Neuzhéli vy ne znáyete?",
+      "script": "Неужели вы не знаете?",
+      "cue": "Do you really not know?"
+    },
+    {
+      "id": "L5-M7-C03",
+      "display": "Zdes' khólodno.",
+      "script": "Здесь холодно.",
+      "cue": "It's cold in here."
+    },
+    {
+      "id": "L5-M7-C04",
+      "display": "Oknó otkrýto.",
+      "script": "Окно открыто.",
+      "cue": "The window is open."
+    },
+    {
+      "id": "L5-M7-C05",
+      "display": "Ne moglí by vy zakrýt' oknó?",
+      "script": "Не могли бы вы закрыть окно?",
+      "cue": "Could you close the window?"
+    },
+    {
+      "id": "L5-M7-C06",
+      "display": "Ya-to znáyu.",
+      "script": "Я-то знаю.",
+      "cue": "I know, at any rate."
+    },
+    {
+      "id": "L5-M7-C07",
+      "display": "Éhto naróchno.",
+      "script": "Это нарочно.",
+      "cue": "That was on purpose."
+    },
+    {
+      "id": "L5-M7-C08",
+      "display": "On-to konéchno prav.",
+      "script": "Он-то конечно прав.",
+      "cue": "He, of course, is right."
+    },
+    {
+      "id": "L5-M7-C09",
+      "display": "Tózhe mne drug!",
+      "script": "Тоже мне друг!",
+      "cue": "Some friend he is!"
+    },
+    {
+      "id": "L5-M7-C10",
+      "display": "Agá, nu da, konéchno.",
+      "script": "Ага, ну да, конечно.",
+      "cue": "Uh-huh, sure, of course."
+    },
+    {
+      "id": "L5-M7-C11",
+      "display": "Uzh óchen' khólodno.",
+      "script": "Уж очень холодно.",
+      "cue": "It really is very cold."
+    },
+    {
+      "id": "L5-M7-C12",
+      "display": "Ne moglí by vy govorít' tíshe?",
+      "script": "Не могли бы вы говорить тише?",
+      "cue": "Could you speak more quietly?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

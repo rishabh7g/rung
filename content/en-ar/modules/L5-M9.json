@@ -1,0 +1,770 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M9",
+  "title": "Telling it your way",
+  "job": "Retell a known story in your own register",
+  "prerequisites": [
+    "L5-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "habitual_past"
+    ],
+    "allowedPatterns": [
+      "kāna yā mā kān + , + <opening clause>",
+      "<the same event, plain> + / + <the same event, formal>",
+      "aḥkī lakum + qiṣṣa + ʿan + <N>",
+      "fa- + V-past + , + thumma + V-past",
+      "wa fī an-nihāya + V-past"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "NO NEW FORM IS OPENED HERE. Register is a set of CHOICES over grammar you already have — which verb, which connector, how long the clause runs — and selling it as a grammar would be a lie about what you are learning."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PLAIN TELLING is short verb-first sentences, L2-M10's qāla and qultu, and wa strung between the clauses. THE FORMAL TELLING is longer clauses, L4-M7's internal passive where the plain had an active verb, and fa- and thumma carrying the sequence."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH CHANGES REGISTER MOSTLY IN THE LEXICON — Latinate words for formal, Germanic for plain — and its grammar barely moves. Arabic moves the grammar as well. A learner who only swaps the nouns has not changed register at all."
+    },
+    {
+      "tag": "free",
+      "text": "kāna yā mā kān is a frozen string, like L5-M1's proverbs, and it is learnt whole. Do not take it apart: the yā in it is L5-M2's and the mā is L5-M8's, and neither is doing its usual job inside the opener."
+    },
+    {
+      "tag": "free",
+      "text": "A PLAIN REGISTER IS NOT A DIALECT. M3's dialect is a different variety of the language; the plain telling here is the same Arabic with shorter sentences and fewer markers. Confusing the two is the likeliest damage this module can do."
+    },
+    {
+      "tag": "free",
+      "text": "yuqāl, it is said, is L4-M7's internal passive. In a story it does what qāla an-nās does plainly — it takes the teller out of the sentence, which is exactly why it reads as formal."
+    },
+    {
+      "tag": "free",
+      "text": "The connectors carry the register almost on their own: wa is plain, fa- and thumma are the sequence of a written account, and L5-M6's markers sit at the formal end. Change nothing but the connectors and the register has already moved."
+    },
+    {
+      "tag": "free",
+      "text": "Direct speech and the narrative twist are L4-M10's and are re-used untouched here. No new past-tense cell is opened either: a story you already know should need none to retell."
+    },
+    {
+      "tag": "delta",
+      "text": "The register SWITCH inside one piece is M10's, not this module's. M9 tells one story twice; M10 turns once, in the middle. Keeping the two apart is the whole difference between the last two rungs of the course."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M9-S01",
+      "display": "kāna yā mā kān, fī qadīm az-zamān",
+      "script": "كان يا ما كان، في قديم الزمان",
+      "cue": "Once upon a time, in the old days.",
+      "literal": "was O what was, in old-of the-time",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kāna yā mā kān",
+            "script": "كان يا ما كان",
+            "cue": "once upon a time",
+            "tag": "free",
+            "forms": [
+              "kāna yā mā kān"
+            ],
+            "note": "The fixed story opener, learnt whole. Taking it apart teaches nothing: its yā and its mā are not doing the jobs L5-M2 and L5-M8 taught them for."
+          },
+          {
+            "display": "fī qadīm az-zamān",
+            "script": "في قديم الزمان",
+            "cue": "in the old days, long ago",
+            "tag": "free",
+            "forms": [
+              "fī qadīm az-zamān",
+              "zamān"
+            ],
+            "note": " Literally in the oldness of the time. It follows the opener or replaces it, and zamān on its own is an age or an era."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "An English speaker looks for a subject in kāna yā mā kān and finds four words that will not parse. They are not meant to: this is a signal that a story is starting, in the way once upon a time is.",
+      "sound": "KĀ-na yā mā KĀN swings on two long ā's with the short yā mā between them. It is said quickly, as one shape.",
+      "variations": [
+        {
+          "display": "kāna yā mā kān",
+          "script": "كان يا ما كان",
+          "cue": "Once upon a time.",
+          "changed": "the opener alone, with no time phrase behind it"
+        },
+        {
+          "display": "fī qadīm az-zamān, kāna hunāka ṣayyād",
+          "script": "في قديم الزمان، كان هناك صياد",
+          "cue": "Long ago there was a fisherman.",
+          "changed": "the time phrase first, and a story begun behind it"
+        }
+      ],
+      "mistake": {
+        "display": "kāna yā mā kāna, fī qadīm az-zamān",
+        "script": "كان يا ما كان، في قديم الزمان",
+        "why": "The last word is kān, clipped, not kāna. It is a frozen string and the ending it would take as an ordinary verb is not there — regularising it is what marks the opener as learnt from a grammar rather than from a storyteller."
+      },
+      "usage": "The start of a told story — a folk tale, something for a child, or a joke about how old a piece of news is.",
+      "register": "informal",
+      "mnemonic": "Four words, one signal: a story is starting."
+    },
+    {
+      "id": "L5-M9-S02",
+      "display": "aḥkī lakum qiṣṣa ʿan ṣayyād faqīr",
+      "script": "أحكي لكم قصة عن صياد فقير",
+      "cue": "I am telling you a story about a poor fisherman.",
+      "literal": "I-tell to-you-all story about fisherman poor",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aḥkī",
+            "script": "أحكي",
+            "cue": "I tell, I recount",
+            "tag": "free",
+            "forms": [
+              "aḥkī",
+              "yaḥkī",
+              "naḥkī"
+            ],
+            "note": "The plain verb for telling a story out loud, to people in front of you. arwī is its formal partner."
+          },
+          {
+            "display": "lakum",
+            "script": "لكم",
+            "cue": "to you (plural)",
+            "tag": "free",
+            "forms": [
+              "lakum",
+              "laka"
+            ],
+            "note": "L3-M5's lī with the plural you on it. Telling a story is done TO people, so the preposition is not optional."
+          },
+          {
+            "display": "ṣayyād",
+            "script": "صياد",
+            "cue": "fisherman, hunter",
+            "tag": "free",
+            "forms": [
+              "ṣayyād",
+              "aṣ-ṣayyād"
+            ],
+            "note": "One who catches — fish or game, and which one comes from the story. The ṣ is heavy and the yy is doubled."
+          },
+          {
+            "display": "faqīr",
+            "script": "فقير",
+            "cue": "poor",
+            "tag": "free",
+            "forms": [
+              "faqīr"
+            ],
+            "note": "Poor, of a person. In a told story it is a character label rather than a judgement, and it usually arrives before anything happens."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "English tell you a story puts the hearer next to the verb with no preposition. Arabic needs lakum — you tell TO someone — and dropping it leaves the sentence with two objects and no relation between them.",
+      "sound": "aḤ-kī has the tight throat-h and a long ī. ṣay-YĀD doubles the y and darkens its vowels around the heavy ṣ.",
+      "variations": [
+        {
+          "display": "aḥkī lakum qiṣṣa ʿan al-baḥr",
+          "script": "أحكي لكم قصة عن البحر",
+          "cue": "I am telling you a story about the sea.",
+          "changed": "what the story is about"
+        },
+        {
+          "display": "arwī lakum hādhihi al-ḥikāya",
+          "script": "أروي لكم هذه الحكاية",
+          "cue": "I am recounting this tale to you.",
+          "changed": "the verb, and with it the register — arwī is the formal one"
+        }
+      ],
+      "mistake": {
+        "display": "aḥkī qiṣṣa lakum ʿan ṣayyād faqīr",
+        "script": "أحكي قصة لكم عن صياد فقير",
+        "why": "lakum belongs directly after the verb. Pushed behind the object it reads as a story that belongs to you rather than one being told to you, which is a different sentence."
+      },
+      "usage": "Opening a story you are about to tell to more than one person — a table, a class, a family.",
+      "register": "informal",
+      "mnemonic": "You tell TO people — aḥkī lakum, in that order."
+    },
+    {
+      "id": "L5-M9-S03",
+      "display": "kāna aṣ-ṣayyād yaskun qurb al-baḥr",
+      "script": "كان الصياد يسكن قرب البحر",
+      "cue": "The fisherman used to live near the sea.",
+      "literal": "was the-fisherman he-lives near the-sea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaskun",
+            "script": "يسكن",
+            "cue": "he lives, he dwells",
+            "tag": "free",
+            "forms": [
+              "yaskun",
+              "askun",
+              "taskun"
+            ],
+            "note": "To live somewhere, of a place of residence. After kāna it becomes used to live, which is the habitual past L5-M2 already taught."
+          },
+          {
+            "display": "qurb",
+            "script": "قرب",
+            "cue": "near, close to",
+            "tag": "free",
+            "forms": [
+              "qurb"
+            ],
+            "note": "Near a place, and it heads a possessive chain: qurb al-baḥr, near the sea. It is a noun doing a preposition's work, so nothing comes between it and what follows."
+          },
+          {
+            "display": "al-baḥr",
+            "script": "البحر",
+            "cue": "the sea",
+            "tag": "free",
+            "forms": [
+              "al-baḥr",
+              "baḥr"
+            ],
+            "note": "The sea. It is where the story happens and it is definite throughout, because there is only one of it in the tale."
+          }
+        ],
+        "rules": [
+          1,
+          7
+        ]
+      },
+      "trap": "kāna plus a present-shaped verb is the used-to past, not a past-in-progress. English was living pushes a learner toward an ongoing reading; the Arabic frame means it was his habit for years.",
+      "sound": "YAS-kun keeps its two short syllables even. al-BAḤR ends on the tight throat-h and then a hard r: one syllable, no vowel between them.",
+      "variations": [
+        {
+          "display": "kāna aṣ-ṣayyād yaskun qurb al-qarya",
+          "script": "كان الصياد يسكن قرب القرية",
+          "cue": "The fisherman used to live near the village.",
+          "changed": "where he lived"
+        },
+        {
+          "display": "yaskun aṣ-ṣayyād qurb al-baḥr",
+          "script": "يسكن الصياد قرب البحر",
+          "cue": "The fisherman lives near the sea.",
+          "changed": "kāna dropped — the habit becomes the present"
+        }
+      ],
+      "mistake": {
+        "display": "kāna aṣ-ṣayyād yaskun qurb min al-baḥr",
+        "script": "كان الصياد يسكن قرب من البحر",
+        "why": "qurb heads its noun directly. The min is imported from English near TO or close TO, and it breaks the possessive chain qurb al-baḥr depends on."
+      },
+      "usage": "Setting the scene in a told story, where the background is habitual and the events have not started yet.",
+      "register": "neutral",
+      "mnemonic": "kāna plus the present shape — a habit, not a moment."
+    },
+    {
+      "id": "L5-M9-S04",
+      "display": "dhahaba ilā al-baḥr, wa wajada samak kathīr",
+      "script": "ذهب إلى البحر، ووجد سمكًا كثيرًا",
+      "cue": "He went to the sea and found a lot of fish.",
+      "literal": "he-went to the-sea, and he-found fish much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wajada",
+            "script": "وجد",
+            "cue": "he found",
+            "tag": "free",
+            "forms": [
+              "wajada",
+              "wajadtu",
+              "ajid"
+            ],
+            "note": "To find, of something you were not necessarily looking for. wajadtu is I found — the form you use when the story is yours."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "This is the PLAIN telling and it should feel thin: two verbs, one wa, no markers. An English speaker reads thin as unfinished and starts adding connectives, which pushes the register without meaning to.",
+      "sound": "dha-HA-ba opens on the soft dh, the th of this. WA-ja-da is three light beats with no stress worth the name.",
+      "variations": [
+        {
+          "display": "dhahaba ilā al-baḥr, wa wajada samak",
+          "script": "ذهب إلى البحر، ووجد سمكًا",
+          "cue": "He went to the sea and found fish.",
+          "changed": "how much fish — kathīr is L5-M3's and can go"
+        },
+        {
+          "display": "dhahabtu ilā al-baḥr, wa wajadtu samak kathīr",
+          "script": "ذهبت إلى البحر، ووجدت سمكًا كثيرًا",
+          "cue": "I went to the sea and found a lot of fish.",
+          "changed": "the teller — the same plain register, in the first person"
+        }
+      ],
+      "mistake": {
+        "display": "dhahaba ilā al-baḥr, thumma wajada samak kathīr, wa fī an-nihāya ʿāda",
+        "script": "ذهب إلى البحر، ثم وجد سمكًا كثيرًا، وفي النهاية عاد",
+        "why": "Nothing here is ungrammatical — the register has simply moved. thumma and fī an-nihāya belong to the written account, and dropping them into the plain telling makes it neither one thing nor the other."
+      },
+      "usage": "Telling what happened, quickly, to someone who is listening rather than reading.",
+      "register": "informal",
+      "mnemonic": "Plain means thin: verb, wa, verb."
+    },
+    {
+      "id": "L5-M9-S05",
+      "display": "ammā aṣ-ṣayyād fa-kāna saʿīd, thumma ʿāda ilā al-qarya",
+      "script": "أما الصياد فكان سعيدًا، ثم عاد إلى القرية",
+      "cue": "As for the fisherman, he was happy, and then he returned to the village.",
+      "literal": "as-for the-fisherman so-was happy, then he-returned to the-village",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿāda",
+            "script": "عاد",
+            "cue": "he returned",
+            "tag": "free",
+            "forms": [
+              "ʿāda",
+              "ʿudtu",
+              "yaʿūd"
+            ],
+            "note": "To go back to where you came from. It opens on the ʿayn and the ā is long: ʿĀ-da."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "This is the SAME EVENT as S04 in the formal register, and almost none of the difference is vocabulary. ammā … fa- frames the subject, thumma sequences it, and the clause is longer — the nouns barely moved.",
+      "sound": "AM-mā doubles the m. fa-KĀ-na runs the fa straight into the verb with no pause at all; THUM-ma doubles its m in turn.",
+      "variations": [
+        {
+          "display": "ammā aṣ-ṣayyād fa-kāna saʿīd",
+          "script": "أما الصياد فكان سعيدًا",
+          "cue": "As for the fisherman, he was happy.",
+          "changed": "the second clause dropped — the frame stands on one"
+        },
+        {
+          "display": "kāna saʿīd, wa ʿāda ilā al-qarya",
+          "script": "كان سعيدًا، وعاد إلى القرية",
+          "cue": "He was happy and returned to the village.",
+          "changed": "the register — the same two facts, told plainly"
+        }
+      ],
+      "mistake": {
+        "display": "ammā aṣ-ṣayyād kāna saʿīd, thumma ʿāda ilā al-qarya",
+        "script": "أما الصياد كان سعيدًا، ثم عاد إلى القرية",
+        "why": "ammā requires its fa-. The pair is L4-M2's and it is a frame, not a word: without the fa- the topic is announced and then never picked up."
+      },
+      "usage": "A written account, a report, or a story told to an audience rather than across a table.",
+      "register": "formal",
+      "mnemonic": "ammā always finds its fa-."
+    },
+    {
+      "id": "L5-M9-S06",
+      "display": "arwī hādhihi al-ḥikāya bi-ṭarīqa rasmiyya",
+      "script": "أروي هذه الحكاية بطريقة رسمية",
+      "cue": "I recount this tale in a formal way.",
+      "literal": "I-recount this the-tale in-way formal",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "arwī",
+            "script": "أروي",
+            "cue": "I recount, I relate",
+            "tag": "free",
+            "forms": [
+              "arwī",
+              "yarwī"
+            ],
+            "note": "The formal partner of aḥkī. You recount a riwāya and you tell a ḥikāya, and the verb you pick has already set the register before the story starts."
+          },
+          {
+            "display": "al-ḥikāya",
+            "script": "الحكاية",
+            "cue": "the tale",
+            "tag": "free",
+            "forms": [
+              "al-ḥikāya",
+              "ḥikāya",
+              "ḥikāyāt"
+            ],
+            "note": "A told tale, shorter and lighter than a qiṣṣa (L3-M10) and much lighter than a riwāya. The word is built from the same root as aḥkī."
+          },
+          {
+            "display": "bi-ṭarīqa",
+            "script": "بطريقة",
+            "cue": "in a way, in a manner",
+            "tag": "free",
+            "forms": [
+              "bi-ṭarīqa",
+              "ṭarīqa"
+            ],
+            "note": "The frame that names HOW something is done. L5-M3's bi-uslūb is its close neighbour: uslūb is a style you have, ṭarīqa is a way you choose."
+          },
+          {
+            "display": "rasmī",
+            "script": "رسمي",
+            "cue": "formal, official",
+            "tag": "free",
+            "forms": [
+              "rasmī",
+              "rasmiyya"
+            ],
+            "note": "Formal in the sense of official — a letter, a speech, a register. rasmiyya agrees with the feminine ṭarīqa."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English formal describes how a text SOUNDS. rasmī also means official — of a document, an office, a title — so a learner who reads it as merely stiff will use it where the Arabic claims authority the sentence does not have.",
+      "sound": "AR-wī has the r tapped once and a long ī. bi-ṭa-RĪ-qa carries the heavy ṭ, which darkens the a in front of it.",
+      "variations": [
+        {
+          "display": "aḥkī hādhihi al-ḥikāya bi-ṭarīqa ukhrā",
+          "script": "أحكي هذه الحكاية بطريقة أخرى",
+          "cue": "I tell this tale in another way.",
+          "changed": "the verb and the manner together — both ends of the register axis at once"
+        },
+        {
+          "display": "arwī hādhihi al-qiṣṣa bi-ṭarīqa rasmiyya",
+          "script": "أروي هذه القصة بطريقة رسمية",
+          "cue": "I recount this story in a formal way.",
+          "changed": "tale to story — a qiṣṣa is the weightier of the two"
+        }
+      ],
+      "mistake": {
+        "display": "arwī hādhihi al-ḥikāya bi-ṭarīqa rasmī",
+        "script": "أروي هذه الحكاية بطريقة رسمي",
+        "why": "ṭarīqa is feminine, so the adjective must be rasmiyya. The masculine looks like the safe citation form and is exactly wrong here."
+      },
+      "usage": "Naming your own register out loud — in a classroom, or when you are about to change how you are telling something.",
+      "register": "formal",
+      "mnemonic": "arwī a riwāya, aḥkī a ḥikāya."
+    },
+    {
+      "id": "L5-M9-S07",
+      "display": "aḥkī nafs al-qiṣṣa bi-ṭarīqa ukhrā",
+      "script": "أحكي نفس القصة بطريقة أخرى",
+      "cue": "I tell the same story in another way.",
+      "literal": "I-tell same the-story in-way other",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nafs",
+            "script": "نفس",
+            "cue": "the same; self",
+            "tag": "free",
+            "forms": [
+              "nafs",
+              "nafsuhu"
+            ],
+            "note": "Same, and it comes BEFORE the noun in a possessive chain: nafs al-qiṣṣa, the same story. On its own it is the self."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English the same story puts same after the article. Arabic puts nafs first and gives the article to the SECOND word — nafs al-qiṣṣa — because the two make one possessive chain, exactly like khulāṣat al-qawl in M6.",
+      "sound": "NAFS is one closed syllable ending in a cluster: no vowel between the f and the s.",
+      "variations": [
+        {
+          "display": "aḥkī nafs al-ḥikāya bi-ṭarīqa rasmiyya",
+          "script": "أحكي نفس الحكاية بطريقة رسمية",
+          "cue": "I tell the same tale in a formal way.",
+          "changed": "the manner — the story stays put and only the register moves"
+        },
+        {
+          "display": "arwī nafs al-qiṣṣa",
+          "script": "أروي نفس القصة",
+          "cue": "I recount the same story.",
+          "changed": "the verb alone, which has already changed the register"
+        }
+      ],
+      "mistake": {
+        "display": "aḥkī al-qiṣṣa nafs bi-ṭarīqa ukhrā",
+        "script": "أحكي القصة نفس بطريقة أخرى",
+        "why": "nafs cannot follow its noun in this sense. English word order is what puts it there, and behind the noun it reads as the story itself rather than the same story."
+      },
+      "usage": "Announcing a retelling — the sentence this whole module is about, and the one M10 will stop needing.",
+      "register": "neutral",
+      "mnemonic": "nafs first, article last."
+    },
+    {
+      "id": "L5-M9-S08",
+      "display": "baṭal hādhihi al-usṭūra ṣayyād faqīr",
+      "script": "بطل هذه الأسطورة صياد فقير",
+      "cue": "The hero of this legend is a poor fisherman.",
+      "literal": "hero-of this the-legend fisherman poor",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baṭal",
+            "script": "بطل",
+            "cue": "hero, protagonist",
+            "tag": "free",
+            "forms": [
+              "baṭal",
+              "al-baṭal",
+              "abṭāl"
+            ],
+            "note": "The one the story is about. It heads a possessive chain — baṭal al-usṭūra — and so takes no article of its own."
+          },
+          {
+            "display": "usṭūra",
+            "script": "أسطورة",
+            "cue": "legend, myth",
+            "tag": "free",
+            "forms": [
+              "usṭūra",
+              "al-usṭūra",
+              "asāṭīr"
+            ],
+            "note": "A legend, with the heavy ṭ in the middle. It is the oldest and least literal of the four story words: ḥikāya, qiṣṣa, riwāya, usṭūra."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "English hero carries courage in it. baṭal is the one the story follows, and a baṭal can be a fool — the word marks the role, not the character.",
+      "sound": "BA-ṭal has the heavy ṭ in the middle, which darkens both a's. us-ṬŪ-ra stresses the long ū.",
+      "variations": [
+        {
+          "display": "baṭal hādhihi al-ḥikāya ṣayyād faqīr",
+          "script": "بطل هذه الحكاية صياد فقير",
+          "cue": "The hero of this tale is a poor fisherman.",
+          "changed": "legend to tale — and with it how old the telling claims to be"
+        },
+        {
+          "display": "baṭal ar-riwāya faqīr",
+          "script": "بطل الرواية فقير",
+          "cue": "The hero of the novel is poor.",
+          "changed": "the kind of story, and the description shortened"
+        }
+      ],
+      "mistake": {
+        "display": "al-baṭal hādhihi al-usṭūra ṣayyād faqīr",
+        "script": "البطل هذه الأسطورة صياد فقير",
+        "why": "In a possessive chain only the last word takes the article. baṭal al-usṭūra is already definite, and an al- on baṭal breaks the chain — the same rule as M6's khulāṣat al-qawl and L5-M5's asās al-mujtamaʿ."
+      },
+      "usage": "Introducing a story by its main character, before any of it has happened.",
+      "register": "neutral",
+      "mnemonic": "A baṭal is who it is about, not who is brave."
+    },
+    {
+      "id": "L5-M9-S09",
+      "display": "yuqāl inna baṭal ar-riwāya kāna faqīr",
+      "script": "يقال إن بطل الرواية كان فقيرًا",
+      "cue": "It is said that the hero of the novel was poor.",
+      "literal": "it-is-said that hero-of the-novel was poor",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yuqāl",
+            "script": "يقال",
+            "cue": "it is said",
+            "tag": "free",
+            "forms": [
+              "yuqāl"
+            ],
+            "note": "L4-M7's internal passive on L3-M5's verb of saying. It takes the teller out of the sentence, which is exactly what makes a formal telling sound impersonal."
+          },
+          {
+            "display": "ar-riwāya",
+            "script": "الرواية",
+            "cue": "the novel, the long account",
+            "tag": "free",
+            "forms": [
+              "ar-riwāya",
+              "riwāya"
+            ],
+            "note": "The written, weighty one of the story words, and it is what arwī recounts. The r is a sun letter, so the article assimilates: ar-riwāya."
+          }
+        ],
+        "rules": [
+          5,
+          1
+        ]
+      },
+      "trap": "An English speaker reaches for they say, which needs a subject Arabic does not supply. yuqāl has no one behind it at all, and looking for the people who are saying it is looking for something the sentence has deliberately removed.",
+      "sound": "yu-QĀL is two beats with the long ā carrying the stress. ar-ri-WĀ-ya doubles the r after the article.",
+      "variations": [
+        {
+          "display": "yuqāl inna baṭal al-usṭūra kāna faqīr",
+          "script": "يقال إن بطل الأسطورة كان فقيرًا",
+          "cue": "It is said that the hero of the legend was poor.",
+          "changed": "which kind of story is being reported"
+        },
+        {
+          "display": "qāla an-nās inna baṭal ar-riwāya kāna faqīr",
+          "script": "قال الناس إن بطل الرواية كان فقيرًا",
+          "cue": "People said that the hero of the novel was poor.",
+          "changed": "the passive undone — the same fact with the tellers put back in"
+        }
+      ],
+      "mistake": {
+        "display": "yuqāl anna baṭal ar-riwāya kāna faqīr",
+        "script": "يقال أن بطل الرواية كان فقيرًا",
+        "why": "After a verb of saying the particle is inna, L3-M5's, not L3-M3's anna. The two look alike in romanization and are not interchangeable, and this frame takes the first."
+      },
+      "usage": "Reporting a story whose source you are not naming — a written account, a summary, a piece of hearsay dressed formally.",
+      "register": "formal",
+      "mnemonic": "yuqāl: said by nobody in particular."
+    },
+    {
+      "id": "L5-M9-S10",
+      "display": "wa fī an-nihāya, ʿāda an-nās jamīʿan ilā al-qarya",
+      "script": "وفي النهاية، عاد الناس جميعًا إلى القرية",
+      "cue": "And in the end, the people all returned to the village.",
+      "literal": "and in the-end, returned the-people all to the-village",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jamīʿan",
+            "script": "جميعًا",
+            "cue": "all together, all of them",
+            "tag": "free",
+            "forms": [
+              "jamīʿan"
+            ],
+            "note": "All of a group, and it stands AFTER the noun it counts: an-nās jamīʿan. The -an ending is the adverbial one thālithan and akhīran carry."
+          }
+        ],
+        "rules": [
+          6,
+          1
+        ]
+      },
+      "trap": "English all of the people puts all first. jamīʿan follows its noun and cannot lead it, so the English order produces a sentence with two subjects and no verb agreement to hold them together.",
+      "sound": "ja-MĪ-ʿan holds the long ī and then squeezes the ʿayn before the clipped -an. fī an-ni-HĀ-ya runs the fī into the article.",
+      "variations": [
+        {
+          "display": "wa fī an-nihāya, ʿāda aṣ-ṣayyād ilā al-qarya",
+          "script": "وفي النهاية، عاد الصياد إلى القرية",
+          "cue": "And in the end, the fisherman returned to the village.",
+          "changed": "who returned — one man instead of everybody"
+        },
+        {
+          "display": "ʿāda an-nās jamīʿan ilā al-qarya",
+          "script": "عاد الناس جميعًا إلى القرية",
+          "cue": "The people all returned to the village.",
+          "changed": "the closing marker removed, which drops the register back to plain"
+        }
+      ],
+      "mistake": {
+        "display": "wa fī an-nihāya, ʿāda jamīʿan an-nās ilā al-qarya",
+        "script": "وفي النهاية، عاد جميعًا الناس إلى القرية",
+        "why": "jamīʿan must follow the noun it counts. Put in front of an-nās it reads as an adverb on the verb, and the sentence stops saying who returned."
+      },
+      "usage": "Closing a story in the written register. In a plain telling the same event ends with wa and nothing else.",
+      "register": "formal",
+      "mnemonic": "The people, all of them — noun first, jamīʿan behind."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M9-C01",
+      "display": "kāna yā mā kān, fī qadīm az-zamān",
+      "script": "كان يا ما كان، في قديم الزمان",
+      "cue": "Once upon a time, in the old days."
+    },
+    {
+      "id": "L5-M9-C02",
+      "display": "aḥkī lakum qiṣṣa ʿan al-baḥr",
+      "script": "أحكي لكم قصة عن البحر",
+      "cue": "I am telling you a story about the sea."
+    },
+    {
+      "id": "L5-M9-C03",
+      "display": "kāna aṣ-ṣayyād yaskun qurb al-baḥr",
+      "script": "كان الصياد يسكن قرب البحر",
+      "cue": "The fisherman used to live near the sea."
+    },
+    {
+      "id": "L5-M9-C04",
+      "display": "dhahaba ilā al-baḥr, wa wajada samak",
+      "script": "ذهب إلى البحر، ووجد سمكًا",
+      "cue": "He went to the sea and found fish."
+    },
+    {
+      "id": "L5-M9-C05",
+      "display": "ammā aṣ-ṣayyād fa-kāna saʿīd",
+      "script": "أما الصياد فكان سعيدًا",
+      "cue": "As for the fisherman, he was happy."
+    },
+    {
+      "id": "L5-M9-C06",
+      "display": "arwī hādhihi al-ḥikāya bi-ṭarīqa rasmiyya",
+      "script": "أروي هذه الحكاية بطريقة رسمية",
+      "cue": "I recount this tale in a formal way."
+    },
+    {
+      "id": "L5-M9-C07",
+      "display": "aḥkī nafs al-qiṣṣa bi-ṭarīqa ukhrā",
+      "script": "أحكي نفس القصة بطريقة أخرى",
+      "cue": "I tell the same story in another way."
+    },
+    {
+      "id": "L5-M9-C08",
+      "display": "baṭal ar-riwāya faqīr",
+      "script": "بطل الرواية فقير",
+      "cue": "The hero of the novel is poor."
+    },
+    {
+      "id": "L5-M9-C09",
+      "display": "yuqāl inna al-baḥr jamīl",
+      "script": "يقال إن البحر جميل",
+      "cue": "It is said that the sea is beautiful."
+    },
+    {
+      "id": "L5-M9-C10",
+      "display": "wa fī an-nihāya, ʿāda an-nās jamīʿan",
+      "script": "وفي النهاية، عاد الناس جميعًا",
+      "cue": "And in the end, the people all returned."
+    },
+    {
+      "id": "L5-M9-C11",
+      "display": "yaskun aṣ-ṣayyād qurb al-qarya",
+      "script": "يسكن الصياد قرب القرية",
+      "cue": "The fisherman lives near the village."
+    },
+    {
+      "id": "L5-M9-C12",
+      "display": "arwī lakum hādhihi al-usṭūra",
+      "script": "أروي لكم هذه الأسطورة",
+      "cue": "I recount this legend to you."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}
