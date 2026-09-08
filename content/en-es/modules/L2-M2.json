@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": [
+    "L2-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "<person> + es + Adj",
+      "<person> + está + Adj",
+      "Tengo/Tiene + un/una + N",
+      "Tiene + el/los + N + Adj",
+      "Es mi + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "Spanish describes a feature with TENER, not with ser: tiene el pelo largo, and for age tiene diez años. English says \"has long hair\" and then switches to \"is ten\" — Spanish uses the same verb for both."
+    },
+    {
+      "tag": "delta",
+      "text": "tener is irregular in the I-form and stem-changing everywhere else: tengo · tienes · tiene. The e→ie is the same change as quiero and quieres, and the odd one out is tengo."
+    },
+    {
+      "tag": "delta",
+      "text": "The feature takes the definite article where English wants a possessive: tiene EL pelo largo, not su pelo. The hair is already known to be theirs."
+    },
+    {
+      "tag": "interference",
+      "text": "With a character adjective, ser and estar do not differ in strength — they differ in MEANING. es listo is clever; está listo is ready. The L1 rule holds: ser classifies what someone is, estar reports the state they are in."
+    },
+    {
+      "tag": "delta",
+      "text": "An adjective ending in -o has four shapes and one ending in -e or a consonant has two: alto · alta · altos · altas, but amable · amables and joven · jóvenes. M3 walks the whole grid."
+    },
+    {
+      "tag": "free",
+      "text": "Family words work as they do in English — mi hermano, mi padre — and mi never changes for the gender of what is owned. Only a plural moves it: mis hermanos."
+    },
+    {
+      "tag": "delta",
+      "text": "mayor means older of a person, and it is also the comparative of grande. There is no más viejo in ordinary speech about a person; mayor is the word."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "Tengo un hermano y una hermana.",
+      "cue": "I have a brother and a sister.",
+      "literal": "I-have a brother and a sister.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Tengo",
+            "cue": "I have",
+            "tag": "delta",
+            "forms": [
+              "tengo",
+              "tienes",
+              "tiene",
+              "tener"
+            ],
+            "note": "tener, to have. The I-form is the odd one — tengo, with a g nobody predicts — and the rest change e→ie: tienes, tiene. The dictionary form is tener."
+          },
+          {
+            "display": "hermano",
+            "cue": "brother",
+            "tag": "free",
+            "forms": [
+              "hermano",
+              "hermanos"
+            ],
+            "note": "The partner of M4's hermana. hermanos covers brothers, and also brothers and sisters together — a mixed group takes the masculine plural."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "hermanos is not only \"brothers\". Ask ¿Tienes hermanos? and you are asking about siblings of either kind.",
+      "sound": "TEN-go, hard g as in \"go\". er-MA-no, with the h completely silent.",
+      "variations": [
+        {
+          "display": "Tengo dos hermanas.",
+          "cue": "I have two sisters.",
+          "changed": "a number, and only sisters"
+        },
+        {
+          "display": "Tengo un hermano.",
+          "cue": "I have a brother.",
+          "changed": "the shortest the sentence gets"
+        },
+        {
+          "display": "No tengo hermanos.",
+          "cue": "I don't have any brothers or sisters.",
+          "changed": "no in front, and the article disappears with it"
+        }
+      ],
+      "mistake": {
+        "display": "Teno un hermano.",
+        "why": "The I-form of tener is tengo. The g is not optional and there is no rule to derive it from — it is learnt."
+      },
+      "usage": "The first question anyone asks a newcomer, and the first answer they give.",
+      "register": "neutral",
+      "mnemonic": "tengo hides a g; every other form hides an ie."
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "Mi hermano es muy alto.",
+      "cue": "My brother is very tall.",
+      "literal": "My brother is very tall.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alto",
+            "cue": "tall",
+            "tag": "delta",
+            "forms": [
+              "alto",
+              "alta",
+              "altos",
+              "altas"
+            ],
+            "note": "Four shapes, and the one you write tracks the person: mi hermano es alto, mi hermana es alta. It also means high of a thing, and loud of a voice."
+          }
+        ],
+        "rules": [
+          3,
+          4,
+          5
+        ]
+      },
+      "trap": "The adjective follows the noun everywhere else, but after es it simply sits at the end: es alto. There is nothing for it to follow.",
+      "sound": "AL-to. The l is clear and forward, never the dark English l of \"tall\".",
+      "variations": [
+        {
+          "display": "Mi hermana es alta.",
+          "cue": "My sister is tall.",
+          "changed": "the adjective follows the person, not the speaker"
+        },
+        {
+          "display": "Mis hermanos son altos.",
+          "cue": "My brothers are tall.",
+          "changed": "everything goes plural together — mis, son, altos"
+        },
+        {
+          "display": "Mi hermano no es muy alto.",
+          "cue": "My brother isn't very tall.",
+          "changed": "no in front of the verb, and muy stays put"
+        }
+      ],
+      "mistake": {
+        "display": "Mi hermana es alto.",
+        "why": "The adjective agrees with the person it describes: alta. Who is speaking makes no difference at all."
+      },
+      "usage": "Neutral description. Spanish is comfortable saying it about someone present, in a way English often is not.",
+      "register": "neutral",
+      "mnemonic": "The ending points at the person, never at the speaker."
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "Mi hermana tiene el pelo largo.",
+      "cue": "My sister has long hair.",
+      "literal": "My sister has the hair long.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tiene",
+            "cue": "has · you have (polite)",
+            "tag": "interference",
+            "forms": [],
+            "note": "The he-she-usted form of tener, and the verb Spanish uses for features: tiene el pelo largo. The row for tener is S01's."
+          },
+          {
+            "display": "pelo",
+            "cue": "hair",
+            "tag": "delta",
+            "forms": [],
+            "note": "Singular, always, for the hair on a head: el pelo. A pelos plural would be individual hairs off it."
+          },
+          {
+            "display": "largo",
+            "cue": "long",
+            "tag": "interference",
+            "forms": [
+              "largo",
+              "larga",
+              "largos",
+              "largas"
+            ],
+            "note": "Length only. It is not English \"large\" — that is grande — and mistaking the two is the commonest false friend in the language."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "el pelo, not su pelo. Spanish leaves the possessive out when the owner is already the subject of the sentence.",
+      "sound": "PE-lo, with a single tapped r nowhere in it — do not import the rr of perro.",
+      "variations": [
+        {
+          "display": "Mi hermano tiene el pelo corto.",
+          "cue": "My brother has short hair.",
+          "changed": "the opposite length, same frame"
+        },
+        {
+          "display": "Tengo el pelo largo.",
+          "cue": "I have long hair.",
+          "changed": "the same sentence about yourself"
+        },
+        {
+          "display": "¿Tienes el pelo largo?",
+          "cue": "Do you have long hair?",
+          "changed": "the tú form, asked as a question"
+        }
+      ],
+      "mistake": {
+        "display": "Mi hermana es pelo largo.",
+        "why": "A feature takes tener, not ser: tiene el pelo largo. ser would be claiming she IS hair."
+      },
+      "usage": "Everyday description. Hair, eyes and height are all tener; character is ser.",
+      "register": "neutral",
+      "mnemonic": "In Spanish you HAVE the hair; in English you ARE the hairstyle."
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "Mi madre tiene el pelo corto.",
+      "cue": "My mother has short hair.",
+      "literal": "My mother has the hair short.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "madre",
+            "cue": "mother",
+            "tag": "free",
+            "forms": [
+              "madre",
+              "madres"
+            ],
+            "note": "Feminine and ending in -e: la madre, las madres. Mamá is what most people actually call her."
+          },
+          {
+            "display": "corto",
+            "cue": "short",
+            "tag": "delta",
+            "forms": [
+              "corto",
+              "corta",
+              "cortos",
+              "cortas"
+            ],
+            "note": "Short in LENGTH. A short person is bajo, not corto, and the two are never interchangeable."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "corto and bajo split what English calls \"short\": corto is length, bajo is height.",
+      "sound": "MA-dre, with the dre said as one quick beat — not ma-de-re.",
+      "variations": [
+        {
+          "display": "Mi padre tiene el pelo corto.",
+          "cue": "My father has short hair.",
+          "changed": "the other parent, same description"
+        },
+        {
+          "display": "Mi madre no tiene el pelo largo.",
+          "cue": "My mother doesn't have long hair.",
+          "changed": "the negative, with no in front of the verb"
+        },
+        {
+          "display": "Mi madre tiene una tienda.",
+          "cue": "My mother has a shop.",
+          "changed": "tener doing plain possession"
+        }
+      ],
+      "mistake": {
+        "display": "Mi madre es corta.",
+        "why": "For height the word is baja. corta would be describing her length, as of a piece of string."
+      },
+      "usage": "Neutral. Spanish family words are used far more often than English ones inside a conversation.",
+      "register": "neutral",
+      "mnemonic": "corto measures, bajo stands."
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "Mi padre es muy simpático.",
+      "cue": "My father is very nice.",
+      "literal": "My father is very nice.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "padre",
+            "cue": "father",
+            "tag": "free",
+            "forms": [
+              "padre",
+              "padres"
+            ],
+            "note": "Masculine: el padre. padres is also the word for parents — the mixed pair takes the masculine plural, as hermanos does."
+          },
+          {
+            "display": "simpático",
+            "cue": "nice · likeable",
+            "tag": "interference",
+            "forms": [
+              "simpático",
+              "simpática",
+              "simpáticos",
+              "simpáticas"
+            ],
+            "note": "Warm and easy to be around. It is NOT English \"sympathetic\", which is comprensivo — one of the two or three false friends a Spanish learner meets first."
+          }
+        ],
+        "rules": [
+          3,
+          4,
+          5
+        ]
+      },
+      "trap": "simpático says nothing about compassion. It is about being good company.",
+      "sound": "sim-PA-ti-co — the accent is written and it moves the stress off the syllable you would guess.",
+      "variations": [
+        {
+          "display": "Mi madre es muy simpática.",
+          "cue": "My mother is very nice.",
+          "changed": "the ending follows the person described"
+        },
+        {
+          "display": "Mis padres son simpáticos.",
+          "cue": "My parents are nice.",
+          "changed": "padres as parents, and everything goes plural"
+        },
+        {
+          "display": "Mi padre es amable.",
+          "cue": "My father is kind.",
+          "changed": "M1's amable, which has one shape for either gender"
+        }
+      ],
+      "mistake": {
+        "display": "Mi madre es simpático.",
+        "why": "An -o adjective agrees with the person: simpática. The accent stays where it is in every shape."
+      },
+      "usage": "The default compliment about a person's character, and it is used constantly.",
+      "register": "neutral",
+      "mnemonic": "simpático is good company, not a shoulder to cry on."
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "¿Tienes hermanos o hermanas?",
+      "cue": "Do you have brothers or sisters?",
+      "literal": "Have(you) brothers or sisters?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Tienes",
+            "cue": "you have",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tú form of tener, with the e→ie the whole verb shares except tengo. The row for tener is S01's."
+          },
+          {
+            "display": "o",
+            "cue": "or",
+            "tag": "free",
+            "forms": [],
+            "note": "One letter, and it behaves exactly as English \"or\" does. It becomes u before a word starting with o- to keep the two apart."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "No article before hermanos. Asking whether someone has any of a thing leaves the article out altogether.",
+      "sound": "TYE-nes. The o of \"or\" is a single clean vowel and never slides into ow.",
+      "variations": [
+        {
+          "display": "¿Tiene usted hermanos?",
+          "cue": "Do you have brothers or sisters? (polite)",
+          "changed": "the usted form, which looks like he or she"
+        },
+        {
+          "display": "¿Tienes un hermano o una hermana?",
+          "cue": "Do you have a brother or a sister?",
+          "changed": "the articles come back when you mean exactly one"
+        },
+        {
+          "display": "No tengo hermanos.",
+          "cue": "I don't have any.",
+          "changed": "the answer, with the article still absent"
+        }
+      ],
+      "mistake": {
+        "display": "¿Tienes los hermanos?",
+        "why": "The definite article would be asking about particular brothers you both know. ¿Tienes hermanos? asks whether any exist."
+      },
+      "usage": "Small talk anywhere. In Spain the answer usually arrives with names and ages attached.",
+      "register": "informal",
+      "mnemonic": "Any of a thing takes no article at all."
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "Mi amigo es muy listo.",
+      "cue": "My friend is very clever.",
+      "literal": "My friend is very clever.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "amigo",
+            "cue": "friend",
+            "tag": "free",
+            "forms": [
+              "amigo",
+              "amiga",
+              "amigos",
+              "amigas"
+            ],
+            "note": "Masculine and feminine both exist and you pick by who the friend is: mi amigo, mi amiga."
+          },
+          {
+            "display": "listo",
+            "cue": "clever",
+            "tag": "interference",
+            "forms": [
+              "listo",
+              "lista",
+              "listos",
+              "listas"
+            ],
+            "note": "With ser it means clever. With estar it means ready — and it is the clearest case in the language of the two verbs changing a word's meaning rather than its strength."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "es listo and está listo are not the same claim about the same quality. One is a mind, the other is a state of preparation.",
+      "sound": "LIS-to, with the s never buzzed — closer to the ss of \"lesson\".",
+      "variations": [
+        {
+          "display": "Mi amiga es muy lista.",
+          "cue": "My friend is very clever.",
+          "changed": "a female friend, and the adjective follows her"
+        },
+        {
+          "display": "Mi amigo está listo.",
+          "cue": "My friend is ready.",
+          "changed": "estar, and the meaning changes completely"
+        },
+        {
+          "display": "Mis amigos son muy listos.",
+          "cue": "My friends are very clever.",
+          "changed": "plural throughout"
+        }
+      ],
+      "mistake": {
+        "display": "Mi amigo está muy listo.",
+        "why": "estar makes it \"ready\", which is not what you meant. Cleverness is what someone IS: es listo."
+      },
+      "usage": "A compliment. In parts of Latin America listo alone is also \"done, all set\", said as a whole sentence.",
+      "register": "neutral",
+      "mnemonic": "ser makes a mind, estar makes a state of readiness — the same word, two jobs."
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "El café está listo.",
+      "cue": "The coffee is ready.",
+      "literal": "The coffee is ready.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "está",
+            "cue": "is",
+            "tag": "interference",
+            "forms": [],
+            "note": "estar reporting a state, exactly as in M2's estoy bien. Here it turns listo from clever into ready. The row for estar is L1-M2's."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The pair to hold together: mi amigo es listo, el café está listo. Same adjective, two verbs, two unrelated meanings.",
+      "sound": "es-TA, stressed on the last syllable and written with an accent to say so.",
+      "variations": [
+        {
+          "display": "La sopa está lista.",
+          "cue": "The soup is ready.",
+          "changed": "a feminine thing, so the adjective moves"
+        },
+        {
+          "display": "El café no está listo.",
+          "cue": "The coffee isn't ready.",
+          "changed": "the negative, with no in front of está"
+        },
+        {
+          "display": "¿Está listo el café?",
+          "cue": "Is the coffee ready?",
+          "changed": "asked as a question, with the subject moved to the end"
+        }
+      ],
+      "mistake": {
+        "display": "El café es listo.",
+        "why": "ser would be calling the coffee clever. A state of readiness is always estar."
+      },
+      "usage": "Kitchens, counters, waiting rooms. The most useful está sentence there is.",
+      "register": "neutral",
+      "mnemonic": "Coffee is never clever; it is only ever ready."
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "Mi hermana es mayor.",
+      "cue": "My sister is older.",
+      "literal": "My sister is older.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mayor",
+            "cue": "older · elder",
+            "tag": "delta",
+            "forms": [
+              "mayor",
+              "mayores"
+            ],
+            "note": "Older of a person, and one shape for either gender. Spanish does not say más viejo about family; mayor is the word, and M9 will use it as the comparative of grande too."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "There is no \"more\" in front of it. mayor already carries the comparison, exactly as English \"elder\" does.",
+      "sound": "ma-YOR, stressed at the end; the y is the y of \"yes\", not a vowel.",
+      "variations": [
+        {
+          "display": "Mi hermano es mayor.",
+          "cue": "My brother is older.",
+          "changed": "the same shape for a man"
+        },
+        {
+          "display": "Mis hermanas son mayores.",
+          "cue": "My sisters are older.",
+          "changed": "the plural adds -es, the only change it makes"
+        },
+        {
+          "display": "Mi hermana mayor es muy simpática.",
+          "cue": "My older sister is very nice.",
+          "changed": "mayor after the noun, describing which sister"
+        }
+      ],
+      "mistake": {
+        "display": "Mi hermana es más mayor.",
+        "why": "mayor is already a comparison. Adding más doubles it, which is exactly what English \"more older\" does wrong."
+      },
+      "usage": "Family talk. mayor and menor are how Spanish ranks siblings, and the age itself often never comes up.",
+      "register": "neutral",
+      "mnemonic": "mayor has the comparison built in; do not pay for it twice."
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "Es mi amiga y es muy amable.",
+      "cue": "She's my friend and she's very kind.",
+      "literal": "Is my friend and is very kind.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "amiga",
+            "cue": "friend",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine of amigo, whose row is S07's. Es mi amiga needs no ella in front: the ending already says who."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "Two clauses and no pronoun in either. Once the person is established Spanish keeps dropping the subject, and putting ella at the front of the second half would read as a contrast.",
+      "sound": "The y between the halves is said as a short ee and joins the two clauses without a pause.",
+      "variations": [
+        {
+          "display": "Es mi amigo y es muy simpático.",
+          "cue": "He's my friend and he's very nice.",
+          "changed": "a male friend, and both endings follow him"
+        },
+        {
+          "display": "Es mi hermana y es mayor.",
+          "cue": "She's my sister and she's older.",
+          "changed": "the same shape carrying S09's word"
+        },
+        {
+          "display": "Es mi amiga, pero no es muy alta.",
+          "cue": "She's my friend, but she isn't very tall.",
+          "changed": "pero sets the two halves against each other"
+        }
+      ],
+      "mistake": {
+        "display": "Ella es mi amiga y ella es muy amable.",
+        "why": "Neither ella is needed, and both together sound insistent. Spanish drops the subject once it is known."
+      },
+      "usage": "Introducing someone. The two-clause shape is how a Spanish speaker actually presents a person.",
+      "register": "neutral",
+      "mnemonic": "Say who once; the endings carry the rest."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M2-C01",
+      "display": "Tengo un hermano y una hermana.",
+      "cue": "I have a brother and a sister."
+    },
+    {
+      "id": "L2-M2-C02",
+      "display": "Mi hermano es muy alto.",
+      "cue": "My brother is very tall."
+    },
+    {
+      "id": "L2-M2-C03",
+      "display": "Mi hermana tiene el pelo largo.",
+      "cue": "My sister has long hair."
+    },
+    {
+      "id": "L2-M2-C04",
+      "display": "Mi madre tiene el pelo corto.",
+      "cue": "My mother has short hair."
+    },
+    {
+      "id": "L2-M2-C05",
+      "display": "Mi padre es muy simpático.",
+      "cue": "My father is very nice."
+    },
+    {
+      "id": "L2-M2-C06",
+      "display": "¿Tienes hermanos o hermanas?",
+      "cue": "Do you have brothers or sisters?"
+    },
+    {
+      "id": "L2-M2-C07",
+      "display": "Mi amigo es muy listo.",
+      "cue": "My friend is very clever."
+    },
+    {
+      "id": "L2-M2-C08",
+      "display": "El café está listo.",
+      "cue": "The coffee is ready."
+    },
+    {
+      "id": "L2-M2-C09",
+      "display": "Mi hermana es mayor.",
+      "cue": "My sister is older."
+    },
+    {
+      "id": "L2-M2-C10",
+      "display": "Es mi amiga y es muy amable.",
+      "cue": "She's my friend and she's very kind."
+    },
+    {
+      "id": "L2-M2-C11",
+      "display": "Mis padres son muy simpáticos.",
+      "cue": "My parents are very nice."
+    },
+    {
+      "id": "L2-M2-C12",
+      "display": "No tengo hermanos.",
+      "cue": "I don't have any brothers or sisters."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
