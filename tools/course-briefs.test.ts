@@ -72,9 +72,9 @@ describe('en-ko: the decisions its briefs settle (#373, #376)', () => {
     .flatMap((brief) => [...brief.patterns, ...brief.notes, brief.title, brief.job])
     .join('\n');
 
-  it('covers exactly L1-M1..L2-M10 — L2 was added by #433', () => {
+  it('covers exactly L1-M1..L3-M10 — L2 came with #433 and L3 with #469', () => {
     expect(Object.keys(COURSE_BRIEFS['en-ko'] ?? {})).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -953,9 +953,9 @@ describe('en-de L2: the decisions its briefs settle (#432)', () => {
   const all = COURSE_BRIEFS['en-de'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -1014,6 +1014,65 @@ describe('en-de L2: the decisions its briefs settle (#432)', () => {
   });
 });
 
+describe('en-de L3: the decisions its briefs settle (#468)', () => {
+  const all = COURSE_BRIEFS['en-de'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * The level's biggest single debt: L2 kept every adjective PREDICATIVE and said so as a
+   * decision, naming the three attributive declensions as L3's. If that owner went missing
+   * between the levels, the course would never teach them at all.
+   */
+  it('pays the debt L2 named — the attributive declension', () => {
+    expect(all['L3-M2']?.notes.join('\n')).toMatch(/attributive|declension/i);
+  });
+
+  /**
+   * The rest of what `docs/59` withheld, each in the module whose job needs it.
+   */
+  it('gives the other withheld pieces an owner', () => {
+    expect(all['L3-M4']?.notes.join('\n'), 'Konjunktiv II').toMatch(/Konjunktiv II/);
+    expect(all['L3-M5']?.notes.join('\n'), 'reported speech').toMatch(/[Rr]eported speech/);
+    expect(all['L3-M5']?.notes.join('\n'), 'the Plusquamperfekt').toMatch(/Plusquamperfekt/);
+    expect(all['L3-M8']?.notes.join('\n'), 'the genitive').toMatch(/[Gg]enitive/);
+    expect(all['L3-M8']?.notes.join('\n'), 'relative clauses').toMatch(/[Rr]elative/);
+    expect(all['L3-M9']?.notes.join('\n'), 'the werden passive').toMatch(/werden/);
+  });
+
+  /**
+   * Two claims in the commissioning plan were FALSE against the real index, and the briefs are
+   * written to the index rather than to the plan — the same correction `docs/53` §0 recorded for
+   * en-es. `weil`, `dass` and `wenn` are L1's WITH their law, so no L3 module may present
+   * verb-final order as new; and L1-M4 already splits a separable verb. Both facts have to reach
+   * an author, who only ever sees the notes.
+   */
+  it('records the two places the plan and the index disagreed', () => {
+    expect(all['L3-M3']?.notes.join('\n'), 'weil/dass/wenn are L1-M9 and L1-M10').toMatch(
+      /L1-M9|L1-M10/,
+    );
+    expect(all['L3-M1']?.notes.join('\n'), 'L1-M4 already splits one').toMatch(/L1-M4/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  it('names what it defers to L4', () => {
+    expect(notes).toMatch(/L4-M3/);
+    expect(notes).toMatch(/L4/);
+  });
+});
+
 describe('en-ko L2: the decisions its briefs settle (#433)', () => {
   const all = COURSE_BRIEFS['en-ko'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
@@ -1068,5 +1127,54 @@ describe('en-ko L2: the decisions its briefs settle (#433)', () => {
     for (const [id, brief] of l2) {
       expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
     }
+  });
+});
+
+describe('en-ko L3: the decisions its briefs settle (#469)', () => {
+  const all = COURSE_BRIEFS['en-ko'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * The level's biggest structural debt: the VERB MODIFIER is Korean's relative clause, and a
+   * module that has to describe anything cannot do without it. If its owner went missing between
+   * the levels the course would never teach it at all.
+   */
+  it('pays the debt L2 left — the verb modifier', () => {
+    expect(all['L3-M2']?.notes.join('\n')).toMatch(/-\(eu\)n|modifier/i);
+  });
+
+  it('gives the other withheld pieces an owner', () => {
+    expect(all['L3-M4']?.notes.join('\n'), 'the conditional').toMatch(/-\(eu\)myeon|myeon/);
+    expect(all['L3-M5']?.notes.join('\n'), 'reported speech').toMatch(/-dago|dago/);
+    expect(all['L3-M8']?.notes.join('\n'), 'the honorific at length').toMatch(/-si-|honorific/);
+    expect(all['L3-M9']?.notes.join('\n'), 'the retrospective').toMatch(/-deon|deon/);
+  });
+
+  /**
+   * The register decision is the OPPOSITE of the other eight courses and has to survive into L3,
+   * because an author who has read any other L3 brief will look for the `informal` chip. banmal is
+   * what would earn it, L1 banned it, and neither L2 nor L3 lifts the ban.
+   */
+  it('keeps informal deliberately absent, and says so', () => {
+    expect(notes).toMatch(/informal/);
+    expect(notes).toMatch(/banmal/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  it('names what it defers to L4', () => {
+    expect(notes).toMatch(/L4/);
   });
 });

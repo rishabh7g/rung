@@ -206,8 +206,8 @@ export function renderPrompt({ course, brief, schemaText, index }: PromptInputs)
     1. Paste this entire file into Claude.
     2. Save the returned JSON to content/${course.id}/modules/${brief.id}.json.
     3. Run \`npm run content:validate\` — feed failures back and re-ask until it passes.
-    4. Author \`verified: true\` with its signature — \`verifiedBy\` naming the reviewer
-       ("<model> — LLM review, authorised by repo owner") and \`verifiedAt\` the date —
+    4. Author \`verified: true\` with its signature — \`verifiedBy\` naming the AUTHORITY
+       ("LLM review, authorised by repo owner") and \`verifiedAt\` the date —
        and write the wave's section of \`docs/<n>-llm-review-<course>-<level>.md\` in the
        same change. That is the repo's standing default (README, "Strict is production
        truth"); the NATIVE gate is a separate, stricter bar and stays unmet, so the review
@@ -266,7 +266,9 @@ The validator (\`npm run content:validate\`) also enforces, beyond the schema:
 - \`id\` is \`"${brief.id}"\`; exactly ${SENTENCE_COUNT} sentences; \`comprehensionPool\` has at least ${POOL_MIN} items.
 - \`prerequisites\` list only earlier modules of the same level.
 - Every \`deconstruction.rules\` entry indexes into the module-level \`rules\` array.
-- \`verified\` stays \`false\` and \`verifiedBy\`/\`verifiedAt\` stay \`null\` — the native gate owns them.
+- A \`verified: true\` module carries its SIGNATURE — \`verifiedBy\` non-empty and \`verifiedAt\` a
+  date. That is the only shape the validator enforces; it does not care which way you set it, and
+  the standing default in the header is to ship \`true\` with the signature in this same change.
 
 ${vocabularySection(course, brief, index)}
 
