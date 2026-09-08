@@ -418,6 +418,23 @@ al mare` shows most clearly, being a habit rather than a duration. Sixteen ratch
 the wave, all fixed by opening the row the module needed; the en-it baseline stays at 17. **The
 native gate is still unmet**: docs/65 ends in open questions 1–35, a fresh en-it L2 chain.
 
+**en-fr starts its second level (#440, 2026-09-08).** `L2-M1` _Asking politely_ and `L2-M2`
+_Describing people_ are authored against the briefs of #431
+(`docs/58-en-fr-L2-brief-decisions.md`), backed by `docs/66-llm-review-en-fr-L2.md`; a strict
+`npm run build` emits `en-fr: 12 modules (L1-M1..M10, L2-M1..M2)`. M1 **pays a debt L1 wrote down**:
+decision 1 kept `tu` out of every display and every `forms` list and named it as what a later level
+owed, and this is that level. The paradigm opens with the rest point hiding inside it — for most
+verbs the `tu` form is the `je` form plus a silent `-s`, and `je peux` and `tu peux` are one word
+twice. `est-ce que` is taught as what it is, a marker you put in front of a statement that changes
+nothing else, and `je voudrais` arrives as one frozen cell of a tense L3 owns. M2's delta is that a
+possessive agrees with the **thing possessed** — `sa voiture` is his car and hers alike — with the
+euphonic `mon amie` following immediately, where the SOUND decides the spelling and not the gender.
+The wave required scoping two L1-shaped assertions in `src/course/types.test.ts`: the ban on
+`tu`-register words and the flat `neutral` register chip were both correct for a level that spoke
+only `vous`, and both are what L2-M1 is chartered to lift. That is the second time this milestone
+that a second level exposed a test encoding the level as well as the rule. **The native gate is
+still unmet**: docs/66 ends in open questions 1–10, a fresh en-fr L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

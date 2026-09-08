@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 160 — nine L1 ladders, hi-mr L2 and L3, and the complete L2 of en-es, en-ar, hi-en, en-ru and en-it (#457)', () => {
+  it('finds all 162 — nine L1 ladders, hi-mr L2 and L3, the complete L2 of en-es, en-ar, hi-en, en-ru and en-it, and the first en-fr L2 pair (#440)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -253,6 +253,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-fr/modules/L1-M7.json',
       'content/en-fr/modules/L1-M8.json',
       'content/en-fr/modules/L1-M9.json',
+      'content/en-fr/modules/L2-M1.json',
+      'content/en-fr/modules/L2-M2.json',
       'content/en-it/modules/L1-M1.json',
       'content/en-it/modules/L1-M10.json',
       'content/en-it/modules/L1-M2.json',
@@ -861,7 +863,12 @@ describe('ModuleContent against the modules that exist', () => {
       for (const sentence of module.sentences) {
         const at = sentence.id;
         expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
-        expect(sentence.register, `${at} register`).toBe('neutral');
+        // L1 is `neutral` throughout, because politeness above it rides `s'il vous plaît`.
+        // L2-M1 (#440) is chartered to open `tu`, and a level that teaches two addresses has to
+        // chip which is which — so the flat assertion is scoped to the level that made it.
+        if (module.id.startsWith('L1-')) {
+          expect(sentence.register, `${at} register`).toBe('neutral');
+        }
         both(at, sentence.display);
         for (const variation of sentence.variations ?? []) {
           both(`${at} variation`, variation.display);
@@ -883,9 +890,13 @@ describe('ModuleContent against the modules that exist', () => {
       for (const [where, text] of l2Slots) {
         expect(text, `${where}: straight apostrophe only`).not.toMatch(/[’‘]/);
       }
-      for (const [where, text] of taught) {
-        for (const token of text.toLowerCase().split(/[\s,.?!]+/)) {
-          expect(TU_REGISTER.has(token), `${where}: "${token}" is tu-register`).toBe(false);
+      // Decision 1 was L1's: `tu` stayed out of every display and every forms list, and the
+      // briefs named it as what a later level owed. L2-M1 pays it, so the ban holds over L1 only.
+      if (module.id.startsWith('L1-')) {
+        for (const [where, text] of taught) {
+          for (const token of text.toLowerCase().split(/[\s,.?!]+/)) {
+            expect(TU_REGISTER.has(token), `${where}: "${token}" is tu-register`).toBe(false);
+          }
         }
       }
     }
