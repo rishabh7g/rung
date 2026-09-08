@@ -81,7 +81,7 @@ import { rungLabel } from '../ladder/rungLabel.ts';
 import { moduleIdOf } from '../sentence/sentenceId.ts';
 import { SessionSummary } from './SessionSummary.tsx';
 import { Tick } from './Tick.tsx';
-import styles from './Session.module.css';
+import './session.css';
 
 /** Shared, so a course with no counters yet reads the same map every render. */
 const NO_COUNTERS: Readonly<Record<string, number>> = {};
@@ -262,7 +262,7 @@ export function Session({ courseId, rungIds, plan, resume, l2 }: SessionProps) {
   const ritualOpen = exitAvailable(rungIds, production);
 
   return (
-    <section className={styles.session}>
+    <section className="session">
       {/* The gentle elapsed tick (#98): numberless, 2px, as the prototype draws it, and the only
           time affordance in the app (PRD §2 boundary note). It runs while a CARD is on screen —
           `!live.done`, so a finished session stops accruing and the bar leaves with it — and it is
@@ -275,18 +275,18 @@ export function Session({ courseId, rungIds, plan, resume, l2 }: SessionProps) {
       )}
 
       {!live.done && sentence !== undefined && sentenceId !== undefined && (
-        <div className={styles.card}>
-          <div className={styles.head}>
+        <div className="session-card">
+          <div className="session-head">
             {/* Structural furniture, like the module list's `M1 · MODULE` — raised on #71, and
                 drawn ONLY on a card from an earlier rung: a sentence the learner last saw three
                 rungs ago arriving unannounced reads as a mistake. A card from the rung they are on
                 carries no label at all — it is what they came here for, and `M3` fifteen times
                 over was the same fact said on every card (Practice audit, 2026-09-05). */}
             {!inRung.has(sentenceId) && (
-              <p className={styles.kicker}>{`FROM ${rungLabel(fromRung ?? '')}`}</p>
+              <p className="session-kicker">{`FROM ${rungLabel(fromRung ?? '')}`}</p>
             )}
             {/* Counts, never time — and no English "of": the shell owns neither word (#88, #89). */}
-            <p className={styles.position}>
+            <p className="session-position">
               {live.idx + 1} / {cards.length}
             </p>
           </div>
@@ -309,7 +309,7 @@ export function Session({ courseId, rungIds, plan, resume, l2 }: SessionProps) {
 
       {/* A card whose module has not arrived yet (or never will) is nothing to draw: the session
           waits rather than inventing a sentence, and the other cards are unaffected. */}
-      {!live.done && sentence === undefined && <div className={styles.card} aria-busy="true" />}
+      {!live.done && sentence === undefined && <div className="session-card" aria-busy="true" />}
     </section>
   );
 }
