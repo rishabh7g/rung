@@ -1,0 +1,604 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Ich + V-2 + <middle> + <prefix>",
+      "Zuerst + V-2 + ich + <prefix> + , + danach + V-2 + ich",
+      "Ich fahre + <time> + <manner> + <place>",
+      "Ich gehe in die Stadt + , + um + <zu-infinitive>",
+      "Meistens + V-2 + ich + <middle> + <prefix>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A separable verb SPLITS in a main clause. The stem takes the second seat and the prefix goes to the very END of the clause: Ich kaufe am Abend ein. Everything the sentence says stands between the two halves, so one word builds the bracket that L2-M1 built from a modal and its infinitive. L1-M4 already split exactly one verb — Ich stehe um sieben Uhr auf — and L2 froze every other separable verb behind a modal or inside a participle. Here the freeze lifts, and it lifts for all of them."
+    },
+    {
+      "tag": "interference",
+      "text": "English keeps a verb in one piece, so a learner builds Ich anrufe meine Mutter first, every time. There is no German main clause in which anrufen, einkaufen or mitkommen stands whole in the second seat. If the verb is finite and the clause is a main clause, the prefix is at the end and nowhere else — and it is at the end even when eight words separate it from its own stem."
+    },
+    {
+      "tag": "delta",
+      "text": "The stranded prefix is spelled like a word the ladder already owns. ein is L1-M1's indefinite article, an and mit are L2-M4's prepositions, auf is L1-M4's. So the ein at the end of Ich kaufe ein is the same key as the ein of ein Buch, and tapping it shows that earlier note rather than a new one. This module opens no rival row for any of the four: L1-M4's auf row already named both seats — detached prefix here, preposition elsewhere — and this rule is that device written once for the rest of them."
+    },
+    {
+      "tag": "delta",
+      "text": "An infinitive with zu puts the zu INSIDE a separable verb, written as one word: einkaufen gives einzukaufen, aufstehen gives aufzustehen, anrufen gives anzurufen. um … zu is the purpose frame — Ich gehe in die Stadt, um einzukaufen — and it can only be taught where the split has been, because the wedge is the split's own seam. Both halves of um … zu need the SAME subject. When the subjects differ German uses damit, which this course teaches later; do not build it here."
+    },
+    {
+      "tag": "free",
+      "text": "Time, then manner, then place: Ich fahre um acht mit dem Bus zur Arbeit. L2-M6 already put time before place, so the new part is manner sitting in the middle. English says it in the opposite order — to work by bus at eight — and a German sentence built the English way is not wrong so much as translated, which is the thing a learner is trying to stop sounding like."
+    },
+    {
+      "tag": "free",
+      "text": "German has no auxiliary do, and that is a relief worth stating out loud. A frequency word simply stands in the middle field and nothing else in the sentence moves: Ich esse oft eine Suppe, Ich stehe nie früh auf. Front one and L1-M10's law applies as usual, so the verb keeps its second place: Normalerweise esse ich eine Suppe."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "Ich kaufe am Abend ein",
+      "cue": "I do the shopping in the evening",
+      "literal": "I buy in-the evening in",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "einkaufen",
+            "cue": "to shop · to do the shopping",
+            "tag": "delta",
+            "forms": [],
+            "note": "The citation form is one word; a main clause tears it apart — kaufe second, ein last. It is shopping in general, where L1-M6's kaufen buys one thing."
+          },
+          {
+            "display": "Woche",
+            "cue": "week",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, die Woche, and it is not L1-M6's Wochenende: diese Woche is this week, am Wochenende is the weekend."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "The ein at the end is the prefix of einkaufen and not L1-M1's article, but it is the same key in the index, so tapping it answers with the article. Nothing here is a new word; the newness is the seat.",
+      "sound": "ikh KOW-fuh am AH-bent ine. ein is said like English \"mine\" without the m.",
+      "variations": [
+        {
+          "display": "Diese Woche kaufe ich am Freitag ein",
+          "cue": "This week I'm doing the shopping on Friday",
+          "changed": "a fronted time phrase, so the subject moves behind the verb"
+        },
+        {
+          "display": "Zuerst kaufe ich ein, danach gehe ich nach Hause",
+          "cue": "First I do the shopping, then I go home",
+          "changed": "L2-M10's sequencing words, with the prefix still last in its own clause"
+        }
+      ],
+      "mistake": {
+        "display": "Ich einkaufe am Abend",
+        "why": "The prefix goes to the very end: Ich kaufe am Abend ein."
+      },
+      "usage": "Saying what you do on an ordinary evening, without naming a shop.",
+      "register": "neutral",
+      "mnemonic": "Stem second. Prefix last. Everything else in between."
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "Ich rufe meine Mutter an",
+      "cue": "I call my mother",
+      "literal": "I call my mother at",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rufe",
+            "cue": "call (I call)",
+            "tag": "delta",
+            "forms": [
+              "ruft"
+            ],
+            "note": "The stem of L2-M4's anrufen standing on its own, because the an is at the end of the clause. rufe for ich, ruft for er, sie and es."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "The object stands INSIDE the bracket, between the stem and the prefix. English has nothing that behaves like this, so the instinct is to close the verb up and put the object after it.",
+      "sound": "ikh ROO-fuh MY-nuh MOOT-ter an. The u of rufe is a long oo.",
+      "variations": [
+        {
+          "display": "Meine Mutter ruft mich an",
+          "cue": "My mother calls me",
+          "changed": "the other way round, so the stem is ruft"
+        },
+        {
+          "display": "Ich rufe meine Mutter jeden Tag an",
+          "cue": "I call my mother every day",
+          "changed": "L1-M4's jeden Tag added, and the an is pushed further back still"
+        }
+      ],
+      "mistake": {
+        "display": "Ich anrufe meine Mutter",
+        "why": "The stem stands second and the prefix goes last: Ich rufe meine Mutter an."
+      },
+      "usage": "Telling somebody about a habit rather than about one phone call.",
+      "register": "neutral",
+      "mnemonic": "The verb is a bracket. The object lives inside it."
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "Die Arbeit fängt um neun an",
+      "cue": "Work starts at nine",
+      "literal": "The work starts at nine at",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fängt",
+            "cue": "starts · begins",
+            "tag": "delta",
+            "forms": [
+              "anfangen"
+            ],
+            "note": "anfangen with its prefix at the end. The a of fangen becomes ä for er, sie and es, exactly as L1-M6's fahren gives fährt."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The subject here is a thing, not a person, and the split happens anyway. It is a property of the verb, not of who is doing it.",
+      "sound": "dee AR-bite fengt oom noyn an. The ä of fängt is the e of English \"bet\".",
+      "variations": [
+        {
+          "display": "Die Arbeit fängt um acht an",
+          "cue": "Work starts at eight",
+          "changed": "another hour, same frame"
+        },
+        {
+          "display": "Wann fängt die Arbeit an?",
+          "cue": "When does work start?",
+          "changed": "asked, and the prefix is still the last word"
+        }
+      ],
+      "mistake": {
+        "display": "Die Arbeit anfängt um neun",
+        "why": "The prefix detaches: Die Arbeit fängt um neun an."
+      },
+      "usage": "Telling somebody the shape of your working day.",
+      "register": "neutral",
+      "mnemonic": "Even a question ends on the prefix."
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "Ich gehe in die Stadt, um einzukaufen",
+      "cue": "I go into town to do the shopping",
+      "literal": "I go into the town, around to-shop",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "einzukaufen",
+            "cue": "to shop (with zu)",
+            "tag": "delta",
+            "forms": [],
+            "note": "einkaufen with zu wedged between the prefix and the stem, written as one word. Never zu einkaufen — the wedge is where the split already runs."
+          },
+          {
+            "display": "aufzustehen",
+            "cue": "to get up (with zu)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same wedge on L1-M4's aufstehen: auf plus zu plus stehen. Es ist Zeit aufzustehen."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "um … zu needs the same subject in both halves. If the second half has a subject of its own, German uses a different word entirely, and that word is not taught at this level.",
+      "sound": "ikh GAY-uh in dee shtat, oom INE-tsoo-kow-fen. The whole zu-infinitive is said as one word.",
+      "variations": [
+        {
+          "display": "Ich stehe früh auf, um zu frühstücken",
+          "cue": "I get up early to have breakfast",
+          "changed": "a verb in one piece, so zu stands alone in front of it"
+        },
+        {
+          "display": "Es ist Zeit aufzustehen",
+          "cue": "It's time to get up",
+          "changed": "a zu-infinitive with no um at all, completing the noun Zeit"
+        }
+      ],
+      "mistake": {
+        "display": "Ich gehe in die Stadt, um einkaufen",
+        "why": "The zu goes inside the separable verb: um einzukaufen."
+      },
+      "usage": "Giving the reason for an errand, in one breath.",
+      "register": "neutral",
+      "mnemonic": "zu goes where the verb already breaks."
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "Ich habe keine Zeit, meine Mutter anzurufen",
+      "cue": "I haven't got time to call my mother",
+      "literal": "I have no time, my mother to-call",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anzurufen",
+            "cue": "to call (with zu)",
+            "tag": "delta",
+            "forms": [],
+            "note": "anrufen with zu inside. A zu-infinitive needs no um when it simply completes a noun like Zeit; um is for a purpose."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "um belongs to a PURPOSE. This sentence has no purpose in it — the infinitive completes the noun Zeit — so an um here would be wrong.",
+      "sound": "ikh HAH-buh KY-nuh tsite, MY-nuh MOOT-ter AN-tsoo-roo-fen.",
+      "variations": [
+        {
+          "display": "Ich habe keine Zeit anzurufen",
+          "cue": "I haven't got time to call",
+          "changed": "the object dropped, and the infinitive stands alone"
+        },
+        {
+          "display": "Ich habe Zeit, meine Mutter anzurufen",
+          "cue": "I've got time to call my mother",
+          "changed": "the negation dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe keine Zeit, meine Mutter zu anrufen",
+        "why": "The zu is infixed, not stacked in front: meine Mutter anzurufen."
+      },
+      "usage": "Turning something down without making an excuse of it.",
+      "register": "neutral",
+      "mnemonic": "Purpose takes um. A noun's completion takes zu alone."
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "Ich fahre meistens mit dem Bus zur Arbeit",
+      "cue": "I mostly go to work by bus",
+      "literal": "I travel mostly with the bus to-the work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meistens",
+            "cue": "mostly · usually",
+            "tag": "free",
+            "forms": [],
+            "note": "It stands in the middle field, right after the verb and its subject, and needs no auxiliary: Ich fahre meistens mit dem Bus."
+          },
+          {
+            "display": "täglich",
+            "cue": "daily",
+            "tag": "free",
+            "forms": [],
+            "note": "One word where English needs two. It fills the time slot, so it stands before the manner and before the place."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "Time, manner, place — and English says them in the reverse order. To work by bus at eight, word for word, gives a German sentence that a native speaker will understand and never produce.",
+      "sound": "ikh FAH-ruh MY-stens mit daym boos tsoor AR-bite.",
+      "variations": [
+        {
+          "display": "Ich fahre täglich mit dem Bus zur Arbeit",
+          "cue": "I go to work by bus every day",
+          "changed": "a different time word in the same first slot"
+        },
+        {
+          "display": "Ich fahre um acht mit dem Bus zur Arbeit",
+          "cue": "I go to work by bus at eight",
+          "changed": "a clock time instead of a frequency, and the order is unchanged"
+        }
+      ],
+      "mistake": {
+        "display": "Ich fahre zur Arbeit mit dem Bus meistens",
+        "why": "Time, then manner, then place: Ich fahre meistens mit dem Bus zur Arbeit."
+      },
+      "usage": "Answering how you get to work, which is small talk everywhere.",
+      "register": "neutral",
+      "mnemonic": "When, how, where. In that order, always."
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "Am Nachmittag kaufe ich ein, danach gehe ich nach Hause",
+      "cue": "In the afternoon I do the shopping, then I go home",
+      "literal": "In-the afternoon buy I in, after-that go I to house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Nachmittag",
+            "cue": "afternoon",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, der Nachmittag, and it takes am like L1-M4's am Abend: am Nachmittag."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Each clause keeps its own bracket. The ein belongs to the first clause and cannot drift past the comma, however much stands after it.",
+      "sound": "am NAHKH-mit-tahk KOW-fuh ikh ine, DAH-nahkh GAY-uh ikh nahkh HOW-zuh.",
+      "variations": [
+        {
+          "display": "Am Nachmittag kaufe ich ein",
+          "cue": "In the afternoon I do the shopping",
+          "changed": "the second clause dropped"
+        },
+        {
+          "display": "Zuerst kaufe ich ein, schließlich gehe ich nach Hause",
+          "cue": "First I do the shopping, and finally I go home",
+          "changed": "L2-M10's zuerst and schließlich sequencing the same two events"
+        }
+      ],
+      "mistake": {
+        "display": "Am Nachmittag ich kaufe ein",
+        "why": "A fronted time phrase keeps the verb second: Am Nachmittag kaufe ich ein."
+      },
+      "usage": "Narrating a stretch of your day rather than one event in it.",
+      "register": "neutral",
+      "mnemonic": "One clause, one bracket. The comma closes it."
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "Normalerweise esse ich am Mittag eine Suppe",
+      "cue": "I normally have a soup at midday",
+      "literal": "Normally eat I at-the midday a soup",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "normalerweise",
+            "cue": "normally · usually",
+            "tag": "free",
+            "forms": [],
+            "note": "Fronting it inverts the subject and the verb, exactly as L1-M10's dann does: Normalerweise esse ich eine Suppe."
+          },
+          {
+            "display": "Mittag",
+            "cue": "midday · noon",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, der Mittag, and am Mittag is the meal slot of the day. Mittag is the hour; Nachmittag is what follows it."
+          },
+          {
+            "display": "oft",
+            "cue": "often",
+            "tag": "free",
+            "forms": [],
+            "note": "It stands in the middle field and nothing else in the sentence moves — no do, no does: Ich esse oft eine Suppe."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "English needs an auxiliary to say this — I do normally eat, I don't often eat — and German needs nothing at all. The adverb goes in and the sentence is otherwise untouched.",
+      "sound": "nor-MAH-ler-vy-zuh ESS-uh ikh am MIT-tahk INE-uh ZOOP-uh.",
+      "variations": [
+        {
+          "display": "Ich esse oft eine Suppe",
+          "cue": "I often have a soup",
+          "changed": "the adverb in the middle field instead of fronted"
+        },
+        {
+          "display": "Am Mittag esse ich oft eine Suppe",
+          "cue": "At midday I often have a soup",
+          "changed": "the time phrase fronted and the frequency word left behind it"
+        }
+      ],
+      "mistake": {
+        "display": "Ich tue oft eine Suppe essen",
+        "why": "There is no auxiliary do in German: Ich esse oft eine Suppe."
+      },
+      "usage": "Describing what you usually eat, when somebody asks about your day.",
+      "register": "neutral",
+      "mnemonic": "No do. The adverb walks in and nothing moves."
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "Ich stehe am Wochenende nie früh auf",
+      "cue": "I never get up early at the weekend",
+      "literal": "I stand at-the weekend never early up",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nie",
+            "cue": "never",
+            "tag": "interference",
+            "forms": [],
+            "note": "nie negates the sentence by itself, so no nicht goes with it. English says do not ever; German says nie and stops."
+          },
+          {
+            "display": "selten",
+            "cue": "rarely · seldom",
+            "tag": "free",
+            "forms": [],
+            "note": "The rung between manchmal and nie, and it needs no nicht either: Ich stehe selten früh auf."
+          },
+          {
+            "display": "manchmal",
+            "cue": "sometimes",
+            "tag": "free",
+            "forms": [],
+            "note": "One word, and it fronts as happily as it sits in the middle: Manchmal stehe ich früh auf."
+          },
+          {
+            "display": "Nacht",
+            "cue": "night",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, die Nacht, and its time phrase is in der Nacht — the one part of the day that does not take am."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "nie already carries the negation. Ich stehe nie nicht früh auf is not emphatic, it is broken, and the same is true of selten.",
+      "sound": "ikh SHTAY-uh am VOKH-en-en-duh nee froo owf. The st of stehe is sht.",
+      "variations": [
+        {
+          "display": "Ich stehe am Wochenende selten früh auf",
+          "cue": "I rarely get up early at the weekend",
+          "changed": "one rung up the frequency ladder"
+        },
+        {
+          "display": "Manchmal stehe ich am Wochenende früh auf",
+          "cue": "Sometimes I get up early at the weekend",
+          "changed": "the frequency word fronted, so the verb takes second place"
+        },
+        {
+          "display": "Ich arbeite nie in der Nacht",
+          "cue": "I never work at night",
+          "changed": "in der Nacht rather than am, with no split verb at all"
+        }
+      ],
+      "mistake": {
+        "display": "Ich nie stehe am Wochenende früh auf",
+        "why": "The frequency word stands in the middle field, not in front of the verb: Ich stehe am Wochenende nie früh auf."
+      },
+      "usage": "Saying what you never do, which is half of describing a routine.",
+      "register": "neutral",
+      "mnemonic": "nie is the whole negation. nicht stays home."
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "Kommen Sie am Sonntag mit?",
+      "cue": "Are you coming along on Sunday?",
+      "literal": "Come you on-the Sunday with?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mitkommen",
+            "cue": "to come along",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M4's mit doing a second job as a prefix. In a question the stem leads and the mit lands last: Kommen Sie am Sonntag mit?"
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "A yes-or-no question puts the verb first, and the prefix still goes last. The two ends of the verb are as far apart as the sentence allows.",
+      "sound": "KOM-en zee am ZON-tahk mit. The S of Sonntag is a z.",
+      "variations": [
+        {
+          "display": "Kommen Sie mit?",
+          "cue": "Are you coming along?",
+          "changed": "the shortest form there is, and the split survives it"
+        },
+        {
+          "display": "Meine Schwester kommt am Sonntag mit",
+          "cue": "My sister is coming along on Sunday",
+          "changed": "stated rather than asked, with kommt for one person"
+        }
+      ],
+      "mistake": {
+        "display": "Mitkommen Sie am Sonntag?",
+        "why": "The prefix goes to the end: Kommen Sie am Sonntag mit?"
+      },
+      "usage": "Inviting somebody you address as Sie, without making it a favour.",
+      "register": "formal",
+      "mnemonic": "Front the stem, strand the prefix. Even in a question."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "Ich kaufe am Abend ein",
+      "cue": "I do the shopping in the evening"
+    },
+    {
+      "id": "L3-M1-C02",
+      "display": "Ich rufe meine Mutter an",
+      "cue": "I call my mother"
+    },
+    {
+      "id": "L3-M1-C03",
+      "display": "Die Arbeit fängt um neun an",
+      "cue": "Work starts at nine"
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "Ich gehe in die Stadt, um einzukaufen",
+      "cue": "I go into town to do the shopping"
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "Ich habe keine Zeit, meine Mutter anzurufen",
+      "cue": "I haven't got time to call my mother"
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "Ich fahre meistens mit dem Bus zur Arbeit",
+      "cue": "I mostly go to work by bus"
+    },
+    {
+      "id": "L3-M1-C07",
+      "display": "Am Nachmittag kaufe ich ein, danach gehe ich nach Hause",
+      "cue": "In the afternoon I do the shopping, then I go home"
+    },
+    {
+      "id": "L3-M1-C08",
+      "display": "Normalerweise esse ich am Mittag eine Suppe",
+      "cue": "I normally have a soup at midday"
+    },
+    {
+      "id": "L3-M1-C09",
+      "display": "Ich stehe am Wochenende nie früh auf",
+      "cue": "I never get up early at the weekend"
+    },
+    {
+      "id": "L3-M1-C10",
+      "display": "Kommen Sie am Sonntag mit?",
+      "cue": "Are you coming along on Sunday?"
+    },
+    {
+      "id": "L3-M1-C11",
+      "display": "Ich stehe früh auf, um zu frühstücken",
+      "cue": "I get up early to have breakfast"
+    },
+    {
+      "id": "L3-M1-C12",
+      "display": "Ich arbeite nie in der Nacht",
+      "cue": "I never work at night"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

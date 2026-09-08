@@ -1,0 +1,570 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Suelo + V-inf",
+      "Primero … luego … después … al final …",
+      "Normalmente + me + V-o + a + las + <hour>",
+      "Casi siempre / Casi nunca + V-o",
+      "A veces + V-o + , + pero + V-o"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "soler is a VERB that means \"to usually do\": suelo comer, suele trabajar. It carries the habit and the next verb stays an infinitive. English has no such verb and reaches for the adverb \"usually\" instead, so the MOVE is what is new here, not the word."
+    },
+    {
+      "tag": "delta",
+      "text": "The reflexive pronoun rides the END of an infinitive and stands in FRONT of a conjugated verb: suelo ducharme against me ducho. Same pronoun, two positions, and the shape of the verb decides which."
+    },
+    {
+      "tag": "interference",
+      "text": "nunca in front of the verb stands alone: Nunca como carne. Behind the verb the sentence must ALSO carry no: No como carne nunca. The second negative English forbids is obligatory in Spanish once the word follows."
+    },
+    {
+      "tag": "free",
+      "text": "A day is a paragraph strung on the sequencers the course already owns — primero, luego, después, entonces, al final. Nothing new is spent on them and nothing about them differs from English."
+    },
+    {
+      "tag": "delta",
+      "text": "A frequency word — siempre, normalmente, a veces, casi siempre, casi nunca — sits at the head of the clause or straight after the verb. The head is the neutral place, and Spanish does not bury it in the middle the way English buries \"always\"."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "Suelo levantarme temprano y trabajar en casa.",
+      "cue": "I usually get up early and work at home.",
+      "literal": "I-tend to-get-up-myself early and to-work at home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Suelo",
+            "cue": "I usually · I tend to",
+            "tag": "delta",
+            "forms": [
+              "suelo",
+              "sueles",
+              "suele"
+            ],
+            "note": "A VERB, not an adverb: soler carries the \"usually\" and whatever follows stays an infinitive. English has no verb for this at all."
+          },
+          {
+            "display": "levantarme",
+            "cue": "to get up",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M4's me levanto with the pronoun moved onto the end of the infinitive. After suelo the second verb is never conjugated, so the me has nowhere else to go."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "One suelo governs both infinitives. English repeats \"usually\" or drops it; Spanish states the habit once and lets the second verb hang off the same verb.",
+      "sound": "SWE-lo, one syllable for the ue. le-van-TAR-me, stressed on the tar, not on the me that was glued to it.",
+      "variations": [
+        {
+          "display": "Suelo levantarme muy temprano.",
+          "cue": "I usually get up very early.",
+          "changed": "muy, and nothing else"
+        },
+        {
+          "display": "Mi hermana suele trabajar en casa.",
+          "cue": "My sister usually works at home.",
+          "changed": "someone else, so soler moves to its he-she cell"
+        }
+      ],
+      "mistake": {
+        "display": "Usualmente me levanto temprano.",
+        "why": "The word exists and no one says it. Spanish puts the habit in the verb: suelo levantarme temprano."
+      },
+      "usage": "How someone describes their own working day to a colleague. Safe with anyone, which is why the pronoun never appears.",
+      "register": "neutral",
+      "mnemonic": "The habit is a verb, and the rest are infinitives."
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "Suelo ducharme temprano, pero hoy me ducho tarde.",
+      "cue": "I usually shower early, but today I'm showering late.",
+      "literal": "I-tend to-shower-myself early, but today myself I-shower late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ducharme",
+            "cue": "to shower",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same build as levantarme: the infinitive with me stuck on its end. One word on the page and two pieces in the grammar."
+          },
+          {
+            "display": "me ducho",
+            "cue": "I shower",
+            "tag": "delta",
+            "forms": [],
+            "note": "The conjugated half of ducharme, and the pronoun has jumped to the FRONT. The row for what that pronoun does is L1-M4's me levanto."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "ducharme and me ducho are the same two pieces in the opposite order. Nothing about the meaning changed — only whether the verb is conjugated.",
+      "sound": "du-CHAR-me and me DU-cho. The ch is the ch of \"church\", never a k.",
+      "variations": [
+        {
+          "display": "Suelo ducharme por la noche.",
+          "cue": "I usually shower at night.",
+          "changed": "the time of day, with the infinitive untouched"
+        },
+        {
+          "display": "Hoy me ducho muy tarde.",
+          "cue": "Today I'm showering very late.",
+          "changed": "the habit dropped, leaving only what is happening today"
+        }
+      ],
+      "mistake": {
+        "display": "Suelo me ducho temprano.",
+        "why": "soler takes an infinitive, and the pronoun goes onto its end: suelo ducharme temprano."
+      },
+      "usage": "Flagging that today is off the usual pattern. The pero is doing the work the whole sentence is built for.",
+      "register": "neutral",
+      "mnemonic": "Glued on the end, loose in front."
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "Normalmente me despierto a las ocho.",
+      "cue": "Normally I wake up at eight.",
+      "literal": "Normally myself I-wake at the eight.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Normalmente",
+            "cue": "normally · usually",
+            "tag": "free",
+            "forms": [],
+            "note": "Reads exactly as English does and sits where English puts it. Spanish has it and still prefers suelo, which is why the verb is the lesson and this word is not."
+          },
+          {
+            "display": "me despierto",
+            "cue": "I wake up",
+            "tag": "delta",
+            "forms": [],
+            "note": "Waking and getting up are two different verbs, as in English: me despierto first, me levanto after. The e breaks to ie under the stress."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "despertarse is waking; levantarse is leaving the bed. Spanish keeps them apart in exactly the places English does, so this is a rest point, not a rule.",
+      "sound": "nor-mal-MEN-te, four syllables. des-PIER-to, with the stress on the broken vowel.",
+      "variations": [
+        {
+          "display": "Normalmente me despierto muy temprano.",
+          "cue": "Normally I wake up very early.",
+          "changed": "the hour swapped for muy temprano"
+        },
+        {
+          "display": "Me despierto a las nueve.",
+          "cue": "I wake up at nine.",
+          "changed": "the frequency word dropped and the hour moved"
+        }
+      ],
+      "mistake": {
+        "display": "Normalmente despierto a las ocho.",
+        "why": "Without me the verb means waking someone else up. The routine one is me despierto."
+      },
+      "usage": "The plain answer to \"what time do you get up?\". Normalmente at the head is the neutral place for it.",
+      "register": "neutral",
+      "mnemonic": "First me despierto, then me levanto."
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "Siempre me acuesto muy tarde. No es bueno.",
+      "cue": "I always go to bed very late. It's not good.",
+      "literal": "Always myself I-lay-down very late. Not is good.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Siempre",
+            "cue": "always",
+            "tag": "free",
+            "forms": [],
+            "note": "Head of the clause or straight after the verb: siempre me acuesto tarde, me acuesto tarde siempre. Both are ordinary and neither needs anything else to change."
+          },
+          {
+            "display": "me acuesto",
+            "cue": "I go to bed",
+            "tag": "delta",
+            "forms": [],
+            "note": "acostarse, with the o breaking to ue under the stress: me acuesto, but acostarme. L1-M4's me levanto is the row for the pronoun in front."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "acostarse is going to bed, not sleeping. Spanish is describing the move, and the sleeping that follows is a different verb entirely.",
+      "sound": "SIEM-pre, two syllables. a-CUES-to, with the stress landing on the ue that the o became.",
+      "variations": [
+        {
+          "display": "Siempre me acuesto tarde los sábados.",
+          "cue": "I always go to bed late on Saturdays.",
+          "changed": "the day named, so the habit narrows"
+        },
+        {
+          "display": "No me acuesto tarde.",
+          "cue": "I don't go to bed late.",
+          "changed": "the negative, and the no goes in front of the pronoun"
+        }
+      ],
+      "mistake": {
+        "display": "Me acosto muy tarde.",
+        "why": "The stressed o breaks: me acuesto. The unbroken o only survives where the stress moves off it, as in acostarme."
+      },
+      "usage": "Said about oneself with a shrug. The second sentence is the judgement, and Spanish keeps it that short.",
+      "register": "neutral",
+      "mnemonic": "Stress the o and it breaks into ue."
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "A veces me visto antes de comer, a veces después.",
+      "cue": "Sometimes I get dressed before eating, sometimes after.",
+      "literal": "At times myself I-dress before of to-eat, at times after.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "A veces",
+            "cue": "sometimes",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two words learnt as one. Bare vez is not taught anywhere and the a is not L1-M4's a, so the pair is what carries the meaning — the way al final does."
+          },
+          {
+            "display": "me visto",
+            "cue": "I get dressed",
+            "tag": "delta",
+            "forms": [],
+            "note": "vestirse, with the e breaking to i: me visto. The pronoun is the same me as me levanto and it never joins onto a conjugated verb."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "The second a veces has no verb after it and needs none. Spanish drops the repeated clause where English would say \"sometimes after I eat\".",
+      "sound": "a-BE-ses, with a soft b and the c of veces as an s. me BIS-to, again with a soft b.",
+      "variations": [
+        {
+          "display": "A veces me visto muy rápido.",
+          "cue": "Sometimes I get dressed very fast.",
+          "changed": "how, instead of when"
+        },
+        {
+          "display": "Me visto después de comer.",
+          "cue": "I get dressed after eating.",
+          "changed": "the frequency dropped, leaving one fixed order"
+        }
+      ],
+      "mistake": {
+        "display": "A vez me visto antes de comer.",
+        "why": "The phrase is fixed in the plural: a veces. A singular vez only turns up in counting, which this course has not taught."
+      },
+      "usage": "Describing a routine that genuinely varies. a veces twice in one line is how a speaker sets two options against each other.",
+      "register": "neutral",
+      "mnemonic": "Sometimes is plural in Spanish: a veces."
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "Casi siempre estudio por la tarde. Casi nunca por la noche.",
+      "cue": "I almost always study in the afternoon. Almost never at night.",
+      "literal": "Almost always I-study by the afternoon. Almost never by the night.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Casi",
+            "cue": "almost",
+            "tag": "free",
+            "forms": [],
+            "note": "Leans on the word straight after it and never stands alone: casi siempre, casi nunca. Exactly what English does with \"almost\"."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "casi nunca in the second sentence needs no verb and no no. Nothing follows it, so nothing has to be negated a second time.",
+      "sound": "KA-si, with a clean s. The two halves run at the same pace, with a small pause at the full stop.",
+      "variations": [
+        {
+          "display": "Casi siempre estudio en casa.",
+          "cue": "I almost always study at home.",
+          "changed": "where, instead of when"
+        },
+        {
+          "display": "Casi nunca voy al cine.",
+          "cue": "I almost never go to the cinema.",
+          "changed": "the second half given its own verb"
+        }
+      ],
+      "mistake": {
+        "display": "Casi estudio por la noche.",
+        "why": "casi has to lean on a frequency word. On its own it says the studying nearly happened: casi nunca estudio por la noche."
+      },
+      "usage": "Two halves of one habit, the second cut down to a fragment. That ellipsis is ordinary speech, not shorthand.",
+      "register": "neutral",
+      "mnemonic": "casi never stands alone."
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "Nunca como carne. No como carne nunca.",
+      "cue": "I never eat meat. I don't ever eat meat.",
+      "literal": "Never I-eat meat. Not I-eat meat never.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Nunca",
+            "cue": "never",
+            "tag": "interference",
+            "forms": [],
+            "note": "In front of the verb it stands alone: nunca como carne. Behind it the sentence must also carry no: no como carne nunca. English forbids that second negative."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The two sentences mean the same thing. Only the position of nunca changed, and the no appeared because of it — not because the meaning did.",
+      "sound": "NUN-ka. Both sentences carry the same falling tune, which is what tells a listener they are one statement said twice.",
+      "variations": [
+        {
+          "display": "Nunca voy al médico.",
+          "cue": "I never go to the doctor.",
+          "changed": "a different habit, in the front position"
+        },
+        {
+          "display": "No voy nunca al médico.",
+          "cue": "I don't ever go to the doctor.",
+          "changed": "the same habit with nunca behind the verb, so the no arrives"
+        }
+      ],
+      "mistake": {
+        "display": "Como carne nunca.",
+        "why": "Once nunca follows the verb the no is not optional: no como carne nunca. English builds this sentence and Spanish rejects it."
+      },
+      "usage": "Stating a rule about yourself at a table. Both orders are neutral; the second sounds slightly more emphatic.",
+      "register": "neutral",
+      "mnemonic": "nunca in front stands alone, nunca behind brings a no."
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "Mi hermana suele comer en casa a las dos.",
+      "cue": "My sister usually eats at home at two.",
+      "literal": "My sister tends to-eat at home at the two.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "suele",
+            "cue": "he usually · she usually",
+            "tag": "delta",
+            "forms": [],
+            "note": "The he-she cell of S01's suelo, and the infinitive after it is untouched: suele comer, suelo comer. usted takes this same form."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Only soler moves for the person. comer stays an infinitive no matter who is doing it, which is why the pattern is cheap to reuse.",
+      "sound": "SWE-le, the same one-syllable ue as suelo with a different vowel on the end.",
+      "variations": [
+        {
+          "display": "Mi hermano suele comer en casa.",
+          "cue": "My brother usually eats at home.",
+          "changed": "the other sibling, same verb form"
+        },
+        {
+          "display": "Suele comer a las ocho.",
+          "cue": "She usually eats at eight.",
+          "changed": "the subject dropped once she is established"
+        }
+      ],
+      "mistake": {
+        "display": "Mi hermana suele come en casa.",
+        "why": "soler is the verb that conjugates and the next one does not: suele comer."
+      },
+      "usage": "Reporting someone else's routine. The subject is named once and then dropped, as L1-M10 taught.",
+      "register": "neutral",
+      "mnemonic": "One verb conjugates, the other stays whole."
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "¿Sueles comer en casa o en el trabajo?",
+      "cue": "Do you usually eat at home or at work?",
+      "literal": "You-tend to-eat at home or at the work?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Sueles",
+            "cue": "you usually",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tú cell of S01's suelo. Someone you call usted takes suele instead, which is the same form as he and she."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The question asks about the habit, not about today. English would need \"usually\" wedged into the middle; Spanish has already said it in the first word.",
+      "sound": "SWE-les, and the whole question rises only at the very end, on trabajo.",
+      "variations": [
+        {
+          "display": "¿Sueles estudiar por la noche?",
+          "cue": "Do you usually study at night?",
+          "changed": "a different habit asked about"
+        },
+        {
+          "display": "¿Suele comer aquí?",
+          "cue": "Do you usually eat here?",
+          "changed": "the usted address, which borrows the he-she form"
+        }
+      ],
+      "mistake": {
+        "display": "¿Comes normalmente en casa?",
+        "why": "It is understandable and it is not what a speaker says. The habit goes in the verb: ¿sueles comer en casa?"
+      },
+      "usage": "Asked of a colleague or a friend — this is the tú form, so it chips informal. The usted version is in the variations.",
+      "register": "informal",
+      "mnemonic": "-s on the end is you, in soler as everywhere."
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "Primero me despierto y luego me ducho. Al final me visto.",
+      "cue": "First I wake up and then I shower. Last of all I get dressed.",
+      "literal": "First myself I-wake and then myself I-shower. At-the end myself I-dress.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me visto",
+            "cue": "I get dressed",
+            "tag": "delta",
+            "forms": [],
+            "note": "S05's row. Three routine verbs in one paragraph and the pronoun sits in front of every one of them, unchanged."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "Nothing new is opened here, and that is deliberate. A day is recombination, and the only thing holding these three verbs together is a sequencer the course bought two levels ago.",
+      "sound": "One pace across the whole paragraph, with a pause at the full stop and none inside a clause.",
+      "variations": [
+        {
+          "display": "Primero me despierto y después me ducho.",
+          "cue": "First I wake up and afterwards I shower.",
+          "changed": "después in place of luego, with no other change"
+        },
+        {
+          "display": "Al final me visto y voy al trabajo.",
+          "cue": "Last of all I get dressed and go to work.",
+          "changed": "the last step extended with where it leads"
+        }
+      ],
+      "mistake": {
+        "display": "Primero despierto y luego ducho.",
+        "why": "Both verbs need their pronoun: me despierto, me ducho. Without it they describe doing those things to somebody else."
+      },
+      "usage": "The whole module in one item: three reflexives, two sequencers and not one new word.",
+      "register": "neutral",
+      "mnemonic": "Say the order once and the pronouns take care of themselves."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "Suelo levantarme temprano y trabajar en casa.",
+      "cue": "I usually get up early and work at home."
+    },
+    {
+      "id": "L3-M1-C02",
+      "display": "Suelo ducharme por la mañana.",
+      "cue": "I usually shower in the morning."
+    },
+    {
+      "id": "L3-M1-C03",
+      "display": "Normalmente me despierto a las ocho.",
+      "cue": "Normally I wake up at eight."
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "Siempre me acuesto muy tarde.",
+      "cue": "I always go to bed very late."
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "A veces me visto antes de comer.",
+      "cue": "Sometimes I get dressed before eating."
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "Casi siempre estudio por la tarde.",
+      "cue": "I almost always study in the afternoon."
+    },
+    {
+      "id": "L3-M1-C07",
+      "display": "Nunca como carne.",
+      "cue": "I never eat meat."
+    },
+    {
+      "id": "L3-M1-C08",
+      "display": "No como carne nunca.",
+      "cue": "I don't ever eat meat."
+    },
+    {
+      "id": "L3-M1-C09",
+      "display": "Mi hermana suele comer en casa a las dos.",
+      "cue": "My sister usually eats at home at two."
+    },
+    {
+      "id": "L3-M1-C10",
+      "display": "¿Sueles comer en casa o en el trabajo?",
+      "cue": "Do you usually eat at home or at work?"
+    },
+    {
+      "id": "L3-M1-C11",
+      "display": "Primero me despierto y luego me ducho.",
+      "cue": "First I wake up and then I shower."
+    },
+    {
+      "id": "L3-M1-C12",
+      "display": "Casi nunca voy al cine, pero hoy sí.",
+      "cue": "I almost never go to the cinema, but today I am."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

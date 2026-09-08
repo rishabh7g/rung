@@ -72,9 +72,9 @@ describe('en-ko: the decisions its briefs settle (#373, #376)', () => {
     .flatMap((brief) => [...brief.patterns, ...brief.notes, brief.title, brief.job])
     .join('\n');
 
-  it('covers exactly L1-M1..L2-M10 — L2 was added by #433', () => {
+  it('covers exactly L1-M1..L3-M10 — L2 came with #433 and L3 with #469', () => {
     expect(Object.keys(COURSE_BRIEFS['en-ko'] ?? {})).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -214,9 +214,9 @@ describe('en-es L2: the decisions its briefs settle (#426)', () => {
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
   const notes = l2.flatMap(([, brief]) => brief.notes).join('\n');
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -295,14 +295,72 @@ describe('en-es L2: the decisions its briefs settle (#426)', () => {
   });
 });
 
+describe('en-es L3: the decisions its briefs settle (#462)', () => {
+  const all = COURSE_BRIEFS['en-es'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  /**
+   * The bounds climb 10 → 11 → 12, continuing L2's 8 → 10 and matching hi-mr's L3 (#452). They are
+   * pinned because a prompt renders them verbatim into `complexity`, so a wrong number here
+   * becomes a wrong number in ten module files.
+   */
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * Everything `docs/53` §4 named as withheld from L2 has an owner here, and the owner is named in
+   * the notes — an author only ever sees the notes. A piece that lost its owner between the two
+   * levels would be a piece no module ever teaches.
+   */
+  it('gives every piece L2 withheld an owner', () => {
+    expect(all['L3-M2']?.notes.join('\n'), 'por vs para').toMatch(/por AGAINST para/);
+    expect(all['L3-M3']?.notes.join('\n'), 'the subjunctive').toMatch(/SUBJUNCTIVE OPENS HERE/);
+    expect(all['L3-M3']?.notes.join('\n'), 'tan … como').toMatch(/tan … como/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the conditional').toMatch(/conditional -ría/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the -ré future').toMatch(/-ré future/);
+    expect(all['L3-M5']?.notes.join('\n'), 'the object clitics').toMatch(/OBJECT CLITICS/);
+    expect(all['L3-M7']?.notes.join('\n'), 'the perfect').toMatch(/PERFECT OPENS HERE/);
+  });
+
+  /**
+   * The two index collisions `docs/53` §3 predicted are paid the way it said they would be — with
+   * a MULTI-TOKEN surface, because `como` is L1-M4's verb and `la`/`los`/`las` are L1-M1's
+   * articles. A brief that taught either as a bare key would mint a note nobody is ever shown.
+   */
+  it('pays its two predicted collisions with whole surfaces', () => {
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/indexed WHOLE/);
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/MULTI-TOKEN surfaces/);
+    expect(notes).toMatch(/maxSpan is 3/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  /** L4 is where the level stops, and each brief that touches its edge says so. */
+  it('names what it defers to L4', () => {
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/named as L4/);
+    expect(all['L3-M4']?.notes.join('\n')).toMatch(/L4-M3/);
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/L4/);
+    expect(all['L3-M8']?.notes.join('\n')).toMatch(/L4/);
+  });
+});
+
 describe('en-ar L2: the decisions its briefs settle (#427)', () => {
   const all = COURSE_BRIEFS['en-ar'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
   const notes = l2.flatMap(([, brief]) => brief.notes).join('\n');
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -363,13 +421,70 @@ describe('en-ar L2: the decisions its briefs settle (#427)', () => {
   });
 });
 
+describe('en-ar L3: the decisions its briefs settle (#463)', () => {
+  const all = COURSE_BRIEFS['en-ar'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  /**
+   * The bounds climb 10 → 11 → 12, continuing L2's 8 → 10 and matching hi-mr's and en-es's L3.
+   * They are pinned because a prompt renders them verbatim into `complexity`.
+   */
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * `docs/54`'s "What L2 withholds" list has an owner for every piece L3 takes, and the owner is
+   * named in the notes — an author only ever sees the notes.
+   */
+  it('gives the pieces L2 withheld an owner, and narrows the rest', () => {
+    expect(all['L3-M4']?.notes.join('\n'), 'lam and the jussive').toMatch(/JUSSIVE OPENS/);
+    expect(all['L3-M7']?.notes.join('\n'), 'qad').toMatch(/qad OPENS HERE/);
+    expect(all['L3-M3']?.notes.join('\n'), 'one cell of the case system').toMatch(/ACCUSATIVE/);
+    // The passive stays out: M8 teaches the participle a sign is written in and defers the verb.
+    expect(all['L3-M8']?.notes.join('\n')).toMatch(/PASSIVE PARTICIPLE/);
+    expect(all['L3-M8']?.notes.join('\n')).toMatch(/passive verb itself/);
+    // Broken plurals stay vocabulary, in the forms of their singular's row — never a system.
+    expect(notes).toMatch(/[Bb]roken plurals?/);
+  });
+
+  /**
+   * The three collisions this level walks into are all with rows L1 and L2 already own, and each
+   * brief points back rather than opening a second family.
+   */
+  it('points back at every row it collides with', () => {
+    expect(all['L3-M4']?.notes.join('\n'), "law is L2-M1's").toMatch(/law samaḥt/);
+    expect(all['L3-M6']?.notes.join('\n'), "bi- is L1-M2's").toMatch(/L1-M2's clitic row/);
+    expect(all['L3-M3']?.notes.join('\n'), "li- is L1-M9's").toMatch(/L1-M9/);
+    expect(all['L3-M7']?.notes.join('\n'), "yuʿjibunī is M6's").toMatch(/M6/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  /** L4 is where the level stops, and each brief that touches its edge says so. */
+  it('names what it defers to L4', () => {
+    expect(all['L3-M2']?.notes.join('\n'), 'the subjunctive beyond two frames').toMatch(/L4/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the jussive as a mood').toMatch(/L4/);
+    expect(all['L3-M7']?.notes.join('\n'), 'the dual as a system').toMatch(/L4/);
+    expect(all['L3-M8']?.notes.join('\n'), 'the passive verb').toMatch(/L4/);
+  });
+});
+
 describe('hi-en L2: the decisions its briefs settle (#428)', () => {
   const all = COURSE_BRIEFS['hi-en'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -433,13 +548,63 @@ describe('hi-en L2: the decisions its briefs settle (#428)', () => {
   });
 });
 
+describe('hi-en L3: the decisions its briefs settle (#464)', () => {
+  const all = COURSE_BRIEFS['hi-en'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * `docs/55` §4 named five things L2 withheld. Every one has an owner here, named in the notes,
+   * because an author only ever sees the notes.
+   */
+  it('gives every piece L2 withheld an owner', () => {
+    expect(all['L3-M4']?.notes.join('\n'), 'conditionals').toMatch(/no will after if/i);
+    expect(all['L3-M5']?.notes.join('\n'), 'reported speech').toMatch(/REPORTED QUESTIONS/);
+    expect(all['L3-M8']?.notes.join('\n'), 'the passive').toMatch(/PASSIVE OPENS HERE/);
+    expect(all['L3-M9']?.notes.join('\n'), 'relative clauses').toMatch(/RELATIVE CLAUSES OPEN/);
+    expect(all['L3-M10']?.notes.join('\n'), 'used to').toMatch(/used to/);
+    expect(all['L3-M10']?.notes.join('\n'), 'the past perfect').toMatch(/PAST PERFECT/);
+    // The perfect's duration use, which L2-M8 explicitly deferred while lifting the result use.
+    expect(all['L3-M7']?.notes.join('\n')).toMatch(/for AGAINST since/);
+  });
+
+  /**
+   * This is the one course whose target language is the interference language's opposite, so the
+   * briefs are written against what a Hindi speaker actually produces. The four highest-frequency
+   * markers of Indian English each have a module that owns them.
+   */
+  it('names the interference each module is built to catch', () => {
+    expect(all['L3-M1']?.notes.join('\n'), 'stative -ing').toMatch(/STATIVE VERBS DO NOT TAKE/);
+    expect(all['L3-M2']?.notes.join('\n'), 'uncountables').toMatch(/UNCOUNTABLE NOUNS/);
+    expect(all['L3-M3']?.notes.join('\n'), '*I am agree').toMatch(/agree is a VERB/);
+    expect(all['L3-M6']?.notes.join('\n'), '-ed against -ing').toMatch(/-ed AGAINST -ing/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  it('names what it defers to L4', () => {
+    expect(all['L3-M4']?.notes.join('\n'), 'the third conditional').toMatch(/L4-M3/);
+    expect(all['L3-M8']?.notes.join('\n'), 'the perfect passive').toMatch(/L4/);
+  });
+});
+
 describe('en-ru L2: the decisions its briefs settle (#429)', () => {
   const all = COURSE_BRIEFS['en-ru'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -498,13 +663,65 @@ describe('en-ru L2: the decisions its briefs settle (#429)', () => {
   });
 });
 
+describe('en-ru L3: the decisions its briefs settle (#465)', () => {
+  const all = COURSE_BRIEFS['en-ru'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * `docs/56`'s "What L2 withholds" list is the level's plan. Every piece L3 takes has an owner
+   * named in the notes, because an author only ever sees the notes.
+   */
+  it('gives every piece L2 withheld an owner', () => {
+    expect(all['L3-M2']?.notes.join('\n'), 'the instrumental').toMatch(/INSTRUMENTAL OPENS HERE/);
+    expect(all['L3-M1']?.notes.join('\n'), 'reflexives as a system').toMatch(/REFLEXIVE VERBS/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the conditional by').toMatch(/CONDITIONAL by OPENS/);
+    expect(all['L3-M8']?.notes.join('\n'), 'numbers above a hundred').toMatch(/above a hundred/);
+    expect(all['L3-M10']?.notes.join('\n'), 'prefixed motion verbs').toMatch(/PREFIXED MOTION/);
+    expect(all['L3-M10']?.notes.join('\n'), 'khodíl / yézdil').toMatch(/khodíl/);
+  });
+
+  /**
+   * The comma before a subordinate clause is grammar in Russian rather than style, and it is
+   * stated once at M3 and pointed back at twice — the same discipline the seams use.
+   */
+  it('states the comma law once and points back at it', () => {
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/COMMA IS OBLIGATORY/);
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/M3's comma law/);
+    expect(all['L3-M9']?.notes.join('\n')).toMatch(/M3's law/);
+  });
+
+  /** The stress rule (#355) and the quiet Cyrillic line are the course's law, restated for L3. */
+  it('restates the stress and script law', () => {
+    expect(notes).toMatch(/STRESS IS WRITTEN ON EVERY POLYSYLLABLE/);
+    expect(notes).toMatch(/script line/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  it('names what it defers to L4', () => {
+    expect(all['L3-M10']?.notes.join('\n'), 'determinate/indeterminate').toMatch(/L4/);
+  });
+});
+
 describe('en-it L2: the decisions its briefs settle (#430)', () => {
   const all = COURSE_BRIEFS['en-it'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -561,13 +778,67 @@ describe('en-it L2: the decisions its briefs settle (#430)', () => {
   });
 });
 
+describe('en-it L3: the decisions its briefs settle (#466)', () => {
+  const all = COURSE_BRIEFS['en-it'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * `docs/57` §4 named seven withheld pieces. The four L3 takes have owners named in the notes,
+   * and the three it does not take are still named where a module would reach for them.
+   */
+  it('gives the pieces it takes an owner, and leaves the rest named', () => {
+    expect(all['L3-M3']?.notes.join('\n'), 'the congiuntivo').toMatch(/CONGIUNTIVO OPENS HERE/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the conditional').toMatch(/CONDIZIONALE OPENS/);
+    expect(all['L3-M5']?.notes.join('\n'), 'reported speech').toMatch(
+      /reported speech as L3-M5|docs\/57 named reported speech/,
+    );
+    expect(all['L3-M5']?.notes.join('\n'), 'la, le and ne').toMatch(/OBJECT CLITICS/);
+    // Still out, and named: the mood and the tense as SYSTEMS, and the passato remoto's relatives.
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/names the system as L4/);
+    expect(all['L3-M4']?.notes.join('\n')).toMatch(/L4-M3/);
+    expect(all['L3-M8']?.notes.join('\n')).toMatch(/still L4/);
+  });
+
+  /**
+   * The elision law is this course's own and L3 leans on it harder than L2 did, so every brief
+   * that writes an elided form says the surface is ONE key with the elision inside it.
+   */
+  it('keeps the elision law, one key per elided surface', () => {
+    expect(notes).toMatch(/elision inside it/);
+    expect(all['L3-M1']?.notes.join('\n')).toMatch(/STRAIGHT apostrophes only/);
+  });
+
+  /**
+   * `la` and `le` are L1-M1's ARTICLES, so M5's object clitics can only be taught as whole
+   * surfaces — the collision `docs/57` predicted, paid the way it said it would be.
+   */
+  it('pays the la / le collision with whole surfaces', () => {
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/MULTI-TOKEN surfaces/);
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/maxSpan is 3/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+});
+
 describe('en-fr L2: the decisions its briefs settle (#431)', () => {
   const all = COURSE_BRIEFS['en-fr'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -624,13 +895,67 @@ describe('en-fr L2: the decisions its briefs settle (#431)', () => {
   });
 });
 
+describe('en-fr L3: the decisions its briefs settle (#467)', () => {
+  const all = COURSE_BRIEFS['en-fr'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * `docs/58` §5 named six withheld pieces. Each one L3 takes has an owner named in the notes,
+   * and what it does not take is still named where a module would reach for it.
+   */
+  it('gives the pieces it takes an owner', () => {
+    expect(all['L3-M3']?.notes.join('\n'), 'the subjunctive').toMatch(/SUBJUNCTIVE OPENS HERE/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the conditional').toMatch(/CONDITIONNEL OPENS/);
+    expect(all['L3-M5']?.notes.join('\n'), 'reported speech').toMatch(/reported speech/);
+    expect(all['L3-M5']?.notes.join('\n'), 'le, la, les, lui, leur').toMatch(/OBJECT CLITICS/);
+    expect(all['L3-M9']?.notes.join('\n'), 'relative clauses').toMatch(/RELATIVE CLAUSES OPEN/);
+    // Still out and named: the plus-que-parfait counterfactual is L4-M3's.
+    expect(all['L3-M4']?.notes.join('\n')).toMatch(/L4-M3/);
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/names the system as L4/);
+  });
+
+  /**
+   * Two of this course's own laws carry into L3 and the briefs restate both, because an author
+   * only ever sees the notes: the written `ne` (docs/58 §4) and the straight apostrophe with one
+   * key per elided surface.
+   */
+  it('keeps the written ne and the elision law', () => {
+    expect(notes).toMatch(/the ne is WRITTEN|ne stays written/);
+    expect(all['L3-M1']?.notes.join('\n')).toMatch(/STRAIGHT apostrophes only/);
+    expect(notes).toMatch(/ONE key with the elision inside it/);
+  });
+
+  /**
+   * The participle agreement this level tests is a WRITING-ONLY rule — the learner hears nothing
+   * and must write it — which is what makes an eight-sentence account the only honest test of it.
+   */
+  it('keeps the writing-only agreement rule and its limit', () => {
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/WRITING-ONLY|writing-only/);
+    expect(all['L3-M10']?.notes.join('\n')).toMatch(/writing-only|WRITING-ONLY/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+});
+
 describe('en-de L2: the decisions its briefs settle (#432)', () => {
   const all = COURSE_BRIEFS['en-de'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -689,6 +1014,65 @@ describe('en-de L2: the decisions its briefs settle (#432)', () => {
   });
 });
 
+describe('en-de L3: the decisions its briefs settle (#468)', () => {
+  const all = COURSE_BRIEFS['en-de'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * The level's biggest single debt: L2 kept every adjective PREDICATIVE and said so as a
+   * decision, naming the three attributive declensions as L3's. If that owner went missing
+   * between the levels, the course would never teach them at all.
+   */
+  it('pays the debt L2 named — the attributive declension', () => {
+    expect(all['L3-M2']?.notes.join('\n')).toMatch(/attributive|declension/i);
+  });
+
+  /**
+   * The rest of what `docs/59` withheld, each in the module whose job needs it.
+   */
+  it('gives the other withheld pieces an owner', () => {
+    expect(all['L3-M4']?.notes.join('\n'), 'Konjunktiv II').toMatch(/Konjunktiv II/);
+    expect(all['L3-M5']?.notes.join('\n'), 'reported speech').toMatch(/[Rr]eported speech/);
+    expect(all['L3-M5']?.notes.join('\n'), 'the Plusquamperfekt').toMatch(/Plusquamperfekt/);
+    expect(all['L3-M8']?.notes.join('\n'), 'the genitive').toMatch(/[Gg]enitive/);
+    expect(all['L3-M8']?.notes.join('\n'), 'relative clauses').toMatch(/[Rr]elative/);
+    expect(all['L3-M9']?.notes.join('\n'), 'the werden passive').toMatch(/werden/);
+  });
+
+  /**
+   * Two claims in the commissioning plan were FALSE against the real index, and the briefs are
+   * written to the index rather than to the plan — the same correction `docs/53` §0 recorded for
+   * en-es. `weil`, `dass` and `wenn` are L1's WITH their law, so no L3 module may present
+   * verb-final order as new; and L1-M4 already splits a separable verb. Both facts have to reach
+   * an author, who only ever sees the notes.
+   */
+  it('records the two places the plan and the index disagreed', () => {
+    expect(all['L3-M3']?.notes.join('\n'), 'weil/dass/wenn are L1-M9 and L1-M10').toMatch(
+      /L1-M9|L1-M10/,
+    );
+    expect(all['L3-M1']?.notes.join('\n'), 'L1-M4 already splits one').toMatch(/L1-M4/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  it('names what it defers to L4', () => {
+    expect(notes).toMatch(/L4-M3/);
+    expect(notes).toMatch(/L4/);
+  });
+});
+
 describe('en-ko L2: the decisions its briefs settle (#433)', () => {
   const all = COURSE_BRIEFS['en-ko'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
@@ -743,5 +1127,54 @@ describe('en-ko L2: the decisions its briefs settle (#433)', () => {
     for (const [id, brief] of l2) {
       expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
     }
+  });
+});
+
+describe('en-ko L3: the decisions its briefs settle (#469)', () => {
+  const all = COURSE_BRIEFS['en-ko'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * The level's biggest structural debt: the VERB MODIFIER is Korean's relative clause, and a
+   * module that has to describe anything cannot do without it. If its owner went missing between
+   * the levels the course would never teach it at all.
+   */
+  it('pays the debt L2 left — the verb modifier', () => {
+    expect(all['L3-M2']?.notes.join('\n')).toMatch(/-\(eu\)n|modifier/i);
+  });
+
+  it('gives the other withheld pieces an owner', () => {
+    expect(all['L3-M4']?.notes.join('\n'), 'the conditional').toMatch(/-\(eu\)myeon|myeon/);
+    expect(all['L3-M5']?.notes.join('\n'), 'reported speech').toMatch(/-dago|dago/);
+    expect(all['L3-M8']?.notes.join('\n'), 'the honorific at length').toMatch(/-si-|honorific/);
+    expect(all['L3-M9']?.notes.join('\n'), 'the retrospective').toMatch(/-deon|deon/);
+  });
+
+  /**
+   * The register decision is the OPPOSITE of the other eight courses and has to survive into L3,
+   * because an author who has read any other L3 brief will look for the `informal` chip. banmal is
+   * what would earn it, L1 banned it, and neither L2 nor L3 lifts the ban.
+   */
+  it('keeps informal deliberately absent, and says so', () => {
+    expect(notes).toMatch(/informal/);
+    expect(notes).toMatch(/banmal/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  it('names what it defers to L4', () => {
+    expect(notes).toMatch(/L4/);
   });
 });

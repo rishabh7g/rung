@@ -1,0 +1,644 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "jeo-neun + <time>-e + N-eseo + V-yo",
+      "botong + <time>-e + V-yo, + geu daeum-e + V-yo",
+      "N-eun/neun + V-yo + N-i/ga + V-yo",
+      "hangsang / jaju / gakkeum + V-yo",
+      "byeollo / jeonhyeo / geoui + an + V-yo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE TOPIC IS SET ONCE. A day told at length names its topic in the first clause with -eun/-neun and then does not name it again — Jeo-neun achim-e ireonayo. Geurigo bap-eul meogeoyo. L2-M3 taught what the particle does inside one sentence; here the choice governs a whole paragraph, and repeating jeo-neun on every line reads as insistent."
+    },
+    {
+      "tag": "delta",
+      "text": "A PARTICIPANT WHO IS NEW to the account arrives with -i/-ga, and comes back in a later sentence with -eun/-neun. Chingu-ga wayo. Chingu-neun keopi-reul masyeoyo. The first mention introduces somebody; the second one is already what the sentence is about."
+    },
+    {
+      "tag": "delta",
+      "text": "THE FREQUENCY SET, and every one of them stands in FRONT of the verb: botong (usually), hangsang (always), jaju (often), gakkeum (sometimes), geoui (almost, hardly), byeollo (not particularly), jeonhyeo (not at all). English is happy to end a sentence with \"often\"; Korean is not."
+    },
+    {
+      "tag": "interference",
+      "text": "byeollo, jeonhyeo AND geoui REQUIRE THE NEGATIVE THAT FOLLOWS THEM — byeollo an masyeoyo, jeonhyeo mot gayo, geoui an jayo. English carries the negative inside \"not particularly\" and \"hardly\", so a learner writes byeollo masyeoyo and thinks it is a weaker statement. It is not a weaker statement; it is a broken one."
+    },
+    {
+      "tag": "delta",
+      "text": "EVERYTHING PILES UP BEFORE THE VERB, in one neutral order: TIME, then PLACE, then MANNER, then the object, then the verb. Jeo-neun maeil achim-e jip-eseo ppalli bap-eul meogeoyo. English ends with the time — \"I eat quickly at home every morning\" — and a sentence written in English order still parses in Korean, it just sounds shuffled."
+    },
+    {
+      "tag": "free",
+      "text": "Sequencing here is done with ADVERBS the course already owns: meonjeo, geu daeum-e and machimnae from L2-M10, geurigo, hajiman and geunde from L1-M10. The real time CLAUSES — the endings for when, before, after and while — belong to L4-M6, and no display in this module writes one."
+    },
+    {
+      "tag": "free",
+      "text": "The speech level does not move at this level: this course speaks the -yo style, says jeo and never na, and keeps -mnida to its four frozen phrases. The chip is formal on a line whose subject is honoured and neutral everywhere else. There is no informal chip in this course at all, because the forms that would earn it are banmal, which is never written here."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "Jeo-neun botong achim-e ilchik ireonayo. Geurigo bap-eul meogeoyo.",
+      "script": "저는 보통 아침에 일찍 일어나요. 그리고 밥을 먹어요.",
+      "cue": "I usually get up early in the morning. And then I eat.",
+      "literal": "I-topic usually morning-at early get-up. and rice-object eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "botong",
+            "script": "보통",
+            "cue": "usually",
+            "tag": "delta",
+            "forms": [
+              "botong"
+            ],
+            "note": "The plainest member of the frequency set, and like all of them it stands in front of the verb: botong ireonayo, never ireonayo botong."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          5
+        ]
+      },
+      "trap": "THE SECOND SENTENCE HAS NO SUBJECT AND IS COMPLETE. jeo-neun was said once and is now understood; saying it again in the next sentence sounds as though somebody had disputed who was eating.",
+      "sound": "JEO-neun BO-tong A-chi-me IL-chik i-reo-NA-yo. geu-RI-go BA-beul MEO-geo-yo. Say achim-e as a-chi-me: the m carries over to the -e. Even pitch throughout.",
+      "variations": [
+        {
+          "display": "Jeo-neun hangsang achim-e ilchik ireonayo.",
+          "script": "저는 항상 아침에 일찍 일어나요.",
+          "cue": "I always get up early in the morning.",
+          "changed": "hangsang — always, instead of usually"
+        },
+        {
+          "display": "Botong achim-e ilchik ireonayo.",
+          "script": "보통 아침에 일찍 일어나요.",
+          "cue": "I usually get up early in the morning.",
+          "changed": "the topic dropped too, once the conversation already knows who"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun botong achim-e ilchik ireonayo. Jeo-neun bap-eul meogeoyo.",
+        "script": "저는 보통 아침에 일찍 일어나요. 저는 밥을 먹어요.",
+        "why": "The topic is set once and then dropped: Jeo-neun botong achim-e ilchik ireonayo. Geurigo bap-eul meogeoyo."
+      },
+      "usage": "Answering what your morning looks like.",
+      "register": "neutral",
+      "mnemonic": "Name yourself once, at the top."
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "Chingu-ga wayo. Chingu-neun hangsang keopi-reul masyeoyo.",
+      "script": "친구가 와요. 친구는 항상 커피를 마셔요.",
+      "cue": "A friend comes over. My friend always drinks coffee.",
+      "literal": "friend-subject comes. friend-topic always coffee-object drinks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hangsang",
+            "script": "항상",
+            "cue": "always",
+            "tag": "delta",
+            "forms": [
+              "hangsang"
+            ],
+            "note": "Always, the top of the frequency set. It sits before the verb and before the object: hangsang keopi-reul masyeoyo."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "-GA INTRODUCES, -NEUN RETURNS. The friend is new to the account, so the first mention takes -ga; by the second sentence the friend is what the sentence is about, and takes -neun. Putting -neun on both makes the first line sound like a correction of something already said.",
+      "sound": "CHIN-gu-ga WA-yo. CHIN-gu-neun HANG-sang KEO-pi-reul ma-SYEO-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga wayo. Chingu-neun jaju keopi-reul masyeoyo.",
+          "script": "친구가 와요. 친구는 자주 커피를 마셔요.",
+          "cue": "A friend comes over. My friend often drinks coffee.",
+          "changed": "jaju — often, instead of always"
+        },
+        {
+          "display": "Dongsaeng-i wayo. Dongsaeng-eun hangsang mul-eul masyeoyo.",
+          "script": "동생이 와요. 동생은 항상 물을 마셔요.",
+          "cue": "My younger sibling comes over. They always drink water.",
+          "changed": "a different participant, and the -i / -eun shapes a consonant takes"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-neun wayo. Chingu-neun hangsang keopi-reul masyeoyo.",
+        "script": "친구는 와요. 친구는 항상 커피를 마셔요.",
+        "why": "A new participant arrives with -ga: Chingu-ga wayo. Chingu-neun hangsang keopi-reul masyeoyo."
+      },
+      "usage": "Telling somebody who else is in your day.",
+      "register": "neutral",
+      "mnemonic": "-ga brings them in, -neun keeps them."
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "Jaju hakgyo-eseo gongbuhaeyo. Gakkeum jip-eseo gongbuhaeyo.",
+      "script": "자주 학교에서 공부해요. 가끔 집에서 공부해요.",
+      "cue": "I often study at school. Sometimes I study at home.",
+      "literal": "often school-at study. sometimes house-at study",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jaju",
+            "script": "자주",
+            "cue": "often",
+            "tag": "delta",
+            "forms": [
+              "jaju"
+            ],
+            "note": "Often — high frequency but not every time. Like the rest of the set it stands before the verb, and after the time and place words."
+          },
+          {
+            "display": "gakkeum",
+            "script": "가끔",
+            "cue": "sometimes",
+            "tag": "delta",
+            "forms": [
+              "gakkeum"
+            ],
+            "note": "Sometimes, the low end of the set beside jaju. gakkeum gongbuhaeyo — it never follows the verb."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "NEITHER SENTENCE NAMES A SUBJECT, and both are complete. Once the topic is set, Korean simply stops mentioning it. An English speaker keeps feeling that something has been left out, and nothing has.",
+      "sound": "JA-ju hak-GYO-e-seo gong-bu-HAE-yo. GA-kkeum JI-be-seo gong-bu-HAE-yo. The kk of gakkeum is tense: held tight, with no puff of air.",
+      "variations": [
+        {
+          "display": "Jaju hakgyo-eseo hangungmal-eul baewoyo.",
+          "script": "자주 학교에서 한국말을 배워요.",
+          "cue": "I often learn Korean at school.",
+          "changed": "an object, which sits between the place and the verb"
+        },
+        {
+          "display": "Gakkeum sijang-e gayo.",
+          "script": "가끔 시장에 가요.",
+          "cue": "Sometimes I go to the market.",
+          "changed": "a going sentence, where the place takes -e instead of -eseo"
+        }
+      ],
+      "mistake": {
+        "display": "Hakgyo-eseo gongbuhaeyo jaju.",
+        "script": "학교에서 공부해요 자주.",
+        "why": "Frequency comes before the verb, never after it: Jaju hakgyo-eseo gongbuhaeyo."
+      },
+      "usage": "Saying how your week is usually split.",
+      "register": "neutral",
+      "mnemonic": "Frequency first, verb last."
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "Jeo-neun maeil achim-e jip-eseo ppalli bap-eul meogeoyo.",
+      "script": "저는 매일 아침에 집에서 빨리 밥을 먹어요.",
+      "cue": "Every morning I eat quickly at home.",
+      "literal": "I-topic every-day morning-at house-at quickly rice-object eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ppalli",
+            "script": "빨리",
+            "cue": "quickly · fast",
+            "tag": "delta",
+            "forms": [
+              "ppalli"
+            ],
+            "note": "The adverb of L2-M4's ppallayo. It is MANNER, so it stands after the place and before the object: jip-eseo ppalli bap-eul meogeoyo."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "THE ORDER IS TIME, PLACE, MANNER, OBJECT, VERB. English ends with the time and Korean starts with it, so \"I eat quickly at home every morning\" comes out backwards word for word — and a Korean listener hears it as shuffled rather than as wrong.",
+      "sound": "JEO-neun MAE-il A-chi-me JI-be-seo PPAL-li BA-beul MEO-geo-yo. The pp of ppalli is tense, and the l is doubled: ppal-li.",
+      "variations": [
+        {
+          "display": "Jeo-neun maeil jeonyeok-e jip-eseo cheoncheonhi bap-eul meogeoyo.",
+          "script": "저는 매일 저녁에 집에서 천천히 밥을 먹어요.",
+          "cue": "Every evening I eat slowly at home.",
+          "changed": "the time and the manner, with L2-M1's cheoncheonhi"
+        },
+        {
+          "display": "Achim-e ppalli keopi-reul masyeoyo.",
+          "script": "아침에 빨리 커피를 마셔요.",
+          "cue": "In the morning I quickly drink a coffee.",
+          "changed": "a shorter chain — time, manner, object, verb"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun bap-eul ppalli meogeoyo jip-eseo maeil achim-e.",
+        "script": "저는 밥을 빨리 먹어요 집에서 매일 아침에.",
+        "why": "Everything comes before the verb, in one order: Jeo-neun maeil achim-e jip-eseo ppalli bap-eul meogeoyo."
+      },
+      "usage": "Describing a habit in full, when a short answer will not do.",
+      "register": "neutral",
+      "mnemonic": "Time, place, manner, thing, verb."
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "Jeo-neun keopi-reul byeollo an masyeoyo.",
+      "script": "저는 커피를 별로 안 마셔요.",
+      "cue": "I don't drink coffee much.",
+      "literal": "I-topic coffee-object not-particularly not drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "byeollo",
+            "script": "별로",
+            "cue": "not particularly · not much",
+            "tag": "interference",
+            "forms": [
+              "byeollo"
+            ],
+            "note": "It REQUIRES the negative that follows it: byeollo an masyeoyo. English hides the negative inside \"not much\", so byeollo masyeoyo is the sentence a learner writes, and it is broken."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "byeollo IS NOT 'not much' ON ITS OWN. It only sets up a negative that has to arrive: the an is not optional, and dropping it leaves a sentence a Korean speaker cannot finish.",
+      "sound": "JEO-neun KEO-pi-reul BYEOL-lo an ma-SYEO-yo. byeollo has a doubled l: byeol-lo.",
+      "variations": [
+        {
+          "display": "Jeo-neun keopi-reul byeollo an joahaeyo.",
+          "script": "저는 커피를 별로 안 좋아해요.",
+          "cue": "I don't like coffee much.",
+          "changed": "liking instead of drinking, with the same frame"
+        },
+        {
+          "display": "Jeo-neun jeonyeok-e byeollo an meogeoyo.",
+          "script": "저는 저녁에 별로 안 먹어요.",
+          "cue": "I don't eat much in the evening.",
+          "changed": "a time word in front, and no object at all"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun keopi-reul byeollo masyeoyo.",
+        "script": "저는 커피를 별로 마셔요.",
+        "why": "byeollo needs its negative: Jeo-neun keopi-reul byeollo an masyeoyo."
+      },
+      "usage": "Turning something down mildly, without making a point of it.",
+      "register": "neutral",
+      "mnemonic": "byeollo always brings an with it."
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "Hyeong-eun undonghaeyo. Hajiman jeo-neun jeonhyeo an haeyo.",
+      "script": "형은 운동해요. 하지만 저는 전혀 안 해요.",
+      "cue": "My older brother exercises. But I don't at all.",
+      "literal": "older-brother-topic exercises. but I-topic at-all not do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "undonghaeyo",
+            "script": "운동해요",
+            "cue": "exercises · works out",
+            "tag": "free",
+            "forms": [
+              "undonghaeyo"
+            ],
+            "note": "Built exactly like L1-M4's gongbuhaeyo: an activity noun with haeyo welded on. Once the activity is understood, the bare haeyo stands in for the whole verb."
+          },
+          {
+            "display": "jeonhyeo",
+            "script": "전혀",
+            "cue": "not at all",
+            "tag": "interference",
+            "forms": [
+              "jeonhyeo"
+            ],
+            "note": "The strongest of the set, and like byeollo it REQUIRES a negative after it: jeonhyeo an haeyo, jeonhyeo mot gayo. Alone it says nothing."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          6
+        ]
+      },
+      "trap": "jeonhyeo an haeyo USES THE BARE haeyo. Korean does not repeat undonghaeyo once the activity is on the table — which is the one place English agrees, since \"but I don't\" leaves the verb out in the same way.",
+      "sound": "HYEONG-eun un-dong-HAE-yo. ha-JI-man JEO-neun JEON-hyeo an HAE-yo.",
+      "variations": [
+        {
+          "display": "Jeo-neun jeonhyeo mot gayo.",
+          "script": "저는 전혀 못 가요.",
+          "cue": "I can't go at all.",
+          "changed": "L2-M8's mot, which jeonhyeo takes just as readily as an"
+        },
+        {
+          "display": "Hyeong-eun hangsang undonghaeyo.",
+          "script": "형은 항상 운동해요.",
+          "cue": "My older brother always exercises.",
+          "changed": "hangsang, and the contrast dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Hajiman jeo-neun jeonhyeo haeyo.",
+        "script": "하지만 저는 전혀 해요.",
+        "why": "jeonhyeo needs its negative: Hajiman jeo-neun jeonhyeo an haeyo."
+      },
+      "usage": "Setting yourself against somebody else in the family.",
+      "register": "neutral",
+      "mnemonic": "jeonhyeo, then a no."
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "Jeo-neun bam-e geoui an jayo. Geuraeseo pigonhaeyo.",
+      "script": "저는 밤에 거의 안 자요. 그래서 피곤해요.",
+      "cue": "I hardly sleep at night. So I'm tired.",
+      "literal": "I-topic night-at almost not sleep. so am-tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geoui",
+            "script": "거의",
+            "cue": "almost · hardly (with a negative)",
+            "tag": "interference",
+            "forms": [
+              "geoui"
+            ],
+            "note": "In front of a negative it is English's \"hardly\": geoui an jayo, hardly sleep. It is the third member of the set that leans on the negative that follows it."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "geoui an jayo IS NOT 'I almost don't sleep'. Korean reads geoui and the negative as one unit meaning next to none. Read as two separate words, the English speaker gets a hedge where the sentence meant near zero.",
+      "sound": "JEO-neun BA-me GEO-ui an JA-yo. geu-RAE-seo pi-gon-HAE-yo. eo and o are different vowels: geo, never go.",
+      "variations": [
+        {
+          "display": "Jeo-neun bam-e geoui an meogeoyo.",
+          "script": "저는 밤에 거의 안 먹어요.",
+          "cue": "I hardly eat at night.",
+          "changed": "eating instead of sleeping"
+        },
+        {
+          "display": "Geuraeseo hangsang pigonhaeyo.",
+          "script": "그래서 항상 피곤해요.",
+          "cue": "So I'm always tired.",
+          "changed": "hangsang on the consequence"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun bam-e an geoui jayo.",
+        "script": "저는 밤에 안 거의 자요.",
+        "why": "geoui comes first and an sits directly on the verb: Jeo-neun bam-e geoui an jayo."
+      },
+      "usage": "Explaining why you look the way you look this morning.",
+      "register": "neutral",
+      "mnemonic": "geoui plus an is hardly."
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "Meonjeo ilhaeyo. Geu daeum-e jip-eseo swieoyo.",
+      "script": "먼저 일해요. 그 다음에 집에서 쉬어요.",
+      "cue": "First I work. After that I rest at home.",
+      "literal": "first work. that next-at house-at rest",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "swieoyo",
+            "script": "쉬어요",
+            "cue": "rests · takes a break",
+            "tag": "free",
+            "forms": [
+              "swieoyo"
+            ],
+            "note": "To rest. Resting is an activity that happens somewhere, so the place takes -eseo and not -e: jip-eseo swieoyo."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "THE SEQUENCING IS DONE WITH ADVERBS, NOT WITH A CLAUSE. Korean does have real endings for when, before, after and while — they belong to a later level, and nothing on this page needs one.",
+      "sound": "MEON-jeo il-HAE-yo. geu DAE-eu-me JI-be-seo SWI-eo-yo.",
+      "variations": [
+        {
+          "display": "Meonjeo gongbuhaeyo. Geu daeum-e swieoyo.",
+          "script": "먼저 공부해요. 그 다음에 쉬어요.",
+          "cue": "First I study. After that I rest.",
+          "changed": "studying, and the place dropped"
+        },
+        {
+          "display": "Machimnae jip-eseo swieoyo.",
+          "script": "마침내 집에서 쉬어요.",
+          "cue": "In the end I rest at home.",
+          "changed": "L2-M10's closer instead of the middle step"
+        }
+      ],
+      "mistake": {
+        "display": "Meonjeo ilhaeyo. Geu daeum-e jip-e swieoyo.",
+        "script": "먼저 일해요. 그 다음에 집에 쉬어요.",
+        "why": "An activity happens at a place, and that takes -eseo: Geu daeum-e jip-eseo swieoyo."
+      },
+      "usage": "Laying out the shape of an afternoon.",
+      "register": "neutral",
+      "mnemonic": "Adverbs do the sequencing here."
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "Jeo-neun jeonyeok-e jip-e wayo. Dongsaeng-i neutge wayo.",
+      "script": "저는 저녁에 집에 와요. 동생이 늦게 와요.",
+      "cue": "I come home in the evening. My younger sibling comes home late.",
+      "literal": "I-topic evening-at house-to come. younger-sibling-subject late comes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "neutge",
+            "script": "늦게",
+            "cue": "late",
+            "tag": "delta",
+            "forms": [
+              "neutge"
+            ],
+            "note": "The manner adverb for late, and the opposite of L1-M4's ilchik. It stands directly before the verb: neutge wayo."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "THE SECOND SUBJECT IS NEW, SO IT TAKES -i. dongsaeng-eun here would say the account had been about your sibling all along, which is not what the first sentence set up.",
+      "sound": "JEO-neun JEO-nyeo-ge JI-be WA-yo. dong-SAENG-i NEUT-ge WA-yo. The t of neutge is a stopped final: the tongue closes and does not release.",
+      "variations": [
+        {
+          "display": "Dongsaeng-eun hangsang neutge wayo.",
+          "script": "동생은 항상 늦게 와요.",
+          "cue": "My younger sibling always comes home late.",
+          "changed": "-eun, because the sibling is now what the sentence is about"
+        },
+        {
+          "display": "Jeo-neun jeonyeok-e ilchik jip-e wayo.",
+          "script": "저는 저녁에 일찍 집에 와요.",
+          "cue": "I come home early in the evening.",
+          "changed": "ilchik, the opposite of neutge"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun jeonyeok-e jip-eseo wayo.",
+        "script": "저는 저녁에 집에서 와요.",
+        "why": "A destination takes -e: Jeo-neun jeonyeok-e jip-e wayo. With -eseo it would mean you set out from the house."
+      },
+      "usage": "Comparing your evening with somebody else's.",
+      "register": "neutral",
+      "mnemonic": "New face, -i or -ga."
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "Jeo-neun maeil ilhaeyo. Geurigo jeonyeok-e jeongmal jal swieoyo.",
+      "script": "저는 매일 일해요. 그리고 저녁에 정말 잘 쉬어요.",
+      "cue": "I work every day. And in the evening I rest really well.",
+      "literal": "I-topic every-day work. and evening-at really well rest",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeongmal",
+            "script": "정말",
+            "cue": "really",
+            "tag": "free",
+            "forms": [
+              "jeongmal"
+            ],
+            "note": "An intensifier, and it stands in front of whatever it strengthens — here jal. jeongmal jal swieoyo, never jal jeongmal swieoyo."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "TWO ADVERBS IN A ROW KEEP THEIR ORDER: the intensifier comes first, the manner adverb it strengthens second, and both stay in front of the verb. Nothing may cross to the far side of it.",
+      "sound": "JEO-neun MAE-il il-HAE-yo. geu-RI-go JEO-nyeo-ge JEONG-mal jal SWI-eo-yo.",
+      "variations": [
+        {
+          "display": "Jeo-neun maeil ilhaeyo. Hajiman jeonyeok-e swieoyo.",
+          "script": "저는 매일 일해요. 하지만 저녁에 쉬어요.",
+          "cue": "I work every day. But in the evening I rest.",
+          "changed": "hajiman, which sets the two halves against each other"
+        },
+        {
+          "display": "Jeonyeok-e jeongmal jal swieoyo.",
+          "script": "저녁에 정말 잘 쉬어요.",
+          "cue": "In the evening I rest really well.",
+          "changed": "the closing half alone, with the topic dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun maeil ilhaeyo. Jeo-neun jeonyeok-e jeongmal jal swieoyo.",
+        "script": "저는 매일 일해요. 저는 저녁에 정말 잘 쉬어요.",
+        "why": "One topic carries the whole account: Jeo-neun maeil ilhaeyo. Geurigo jeonyeok-e jeongmal jal swieoyo."
+      },
+      "usage": "Summing up an ordinary day in two lines.",
+      "register": "neutral",
+      "mnemonic": "One topic, one paragraph."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "Jeo-neun botong achim-e ilchik ireonayo.",
+      "script": "저는 보통 아침에 일찍 일어나요.",
+      "cue": "I usually get up early in the morning."
+    },
+    {
+      "id": "L3-M1-C02",
+      "display": "Chingu-ga wayo. Chingu-neun hangsang keopi-reul masyeoyo.",
+      "script": "친구가 와요. 친구는 항상 커피를 마셔요.",
+      "cue": "A friend comes over. My friend always drinks coffee."
+    },
+    {
+      "id": "L3-M1-C03",
+      "display": "Jaju hakgyo-eseo gongbuhaeyo.",
+      "script": "자주 학교에서 공부해요.",
+      "cue": "I often study at school."
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "Gakkeum jip-eseo swieoyo.",
+      "script": "가끔 집에서 쉬어요.",
+      "cue": "Sometimes I rest at home."
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "Jeo-neun maeil achim-e jip-eseo ppalli bap-eul meogeoyo.",
+      "script": "저는 매일 아침에 집에서 빨리 밥을 먹어요.",
+      "cue": "Every morning I eat quickly at home."
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "Jeo-neun keopi-reul byeollo an masyeoyo.",
+      "script": "저는 커피를 별로 안 마셔요.",
+      "cue": "I don't drink coffee much."
+    },
+    {
+      "id": "L3-M1-C07",
+      "display": "Hyeong-eun undonghaeyo. Hajiman jeo-neun jeonhyeo an haeyo.",
+      "script": "형은 운동해요. 하지만 저는 전혀 안 해요.",
+      "cue": "My older brother exercises. But I don't at all."
+    },
+    {
+      "id": "L3-M1-C08",
+      "display": "Jeo-neun bam-e geoui an jayo.",
+      "script": "저는 밤에 거의 안 자요.",
+      "cue": "I hardly sleep at night."
+    },
+    {
+      "id": "L3-M1-C09",
+      "display": "Meonjeo ilhaeyo. Geu daeum-e jip-eseo swieoyo.",
+      "script": "먼저 일해요. 그 다음에 집에서 쉬어요.",
+      "cue": "First I work. After that I rest at home."
+    },
+    {
+      "id": "L3-M1-C10",
+      "display": "Dongsaeng-i neutge wayo.",
+      "script": "동생이 늦게 와요.",
+      "cue": "My younger sibling comes home late."
+    },
+    {
+      "id": "L3-M1-C11",
+      "display": "Jeo-neun jeonyeok-e jeongmal jal swieoyo.",
+      "script": "저는 저녁에 정말 잘 쉬어요.",
+      "cue": "In the evening I rest really well."
+    },
+    {
+      "id": "L3-M1-C12",
+      "display": "Jeo-neun jeonhyeo mot gayo.",
+      "script": "저는 전혀 못 가요.",
+      "cue": "I can't go at all."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present_imperfective"
+    ],
+    "allowedPatterns": [
+      "Ya + V-yus' / -sya + <complement>",
+      "Snachála … potóm … zatém … nakonéts …",
+      "Obýchno ya + V + v + <hour>",
+      "Ya nikogdá ne + V",
+      "Kázhdyy den' ya + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "REFLEXIVE VERBS ARE A SYSTEM, and this is where the shape gets said out loud. A particle rides on the very end of the verb, after the ordinary personal ending: -s' when that ending finishes in a vowel (prosypáyu + s' = prosypáyus'), -sya when it finishes in a consonant (prosypáyet + sya = prosypáyetsya). That spelling choice is the whole of the rule, and the ending underneath never changes to accommodate it."
+    },
+    {
+      "tag": "interference",
+      "text": "THE PARTICLE DOES NOT ALWAYS MEAN \"MYSELF\". umyváyus' really is \"I wash myself\" and odeváyus' \"I dress myself\", but vozvrashcháyus' (\"I come back\") has no self to act on and lozhús' (\"I lie down\") has none either. English reads the reflexive and hunts for the object; Russian is mostly just marking that the verb takes none. Learn the verb whole, and do not translate the -s' each time."
+    },
+    {
+      "tag": "interference",
+      "text": "nikogdá REQUIRES A SECOND NEGATIVE. Russian says Ya nikogdá ne p'yu kófe — literally \"I never not drink coffee\" — and the ne is not optional, not emphatic and not a mistake. English forbids exactly this pairing, so an English speaker builds Ya nikogdá p'yu and hears nothing wrong; a Russian hears a sentence that stopped halfway. The two negatives agree here rather than cancelling."
+    },
+    {
+      "tag": "free",
+      "text": "The frequency words are ordinary adverbs and they sit in front of the verb, or open the sentence: obýchno, chásto, inogdá, rédko, vsegdá, nikogdá. Only nikogdá changes anything around it. Parking one at the end, the way English parks \"usually\", makes it an afterthought rather than a fact."
+    },
+    {
+      "tag": "free",
+      "text": "The sequencing spine of a day is snachála … potóm … zatém … nakonéts. Three quarters of it is already yours — snachála from L2-M10, potóm from L1-M10 — and only zatém and nakonéts are new. They are all free words: nothing about them differs from first, then, next, finally."
+    },
+    {
+      "tag": "free",
+      "text": "Every clause in this module is present and imperfective, because a day that repeats is not a story. The past is L1-M5's and L2-M10's business, and aspect at length is L3-M10's; here the tense simply never changes, which is what lets an item run to two sentences without getting harder."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "Ya prosypáyus' ráno kázhdyy den'",
+      "script": "Я просыпаюсь рано каждый день",
+      "cue": "I wake up early every day",
+      "literal": "I wake-self early every day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prosypáyus'",
+            "script": "просыпаюсь",
+            "cue": "I wake up",
+            "tag": "delta",
+            "forms": [
+              "prosypáyus'"
+            ],
+            "note": "The -s' is the reflexive particle, glued on after the ordinary -yu ending. There is no bare prosypáyu to fall back on: the verb only exists with its particle."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "prosypáyus' is opening your eyes, not leaving the bed. L1-M4's vstayú is the getting-up verb, and a Russian account of a morning usually names both in that order.",
+      "sound": "pra-sy-PA-yus RA-na KAZH-dyy dyen. The stress is on the -pá- and the particle takes none of it — every reflexive in this module behaves that way.",
+      "variations": [
+        {
+          "display": "Ya prosypáyus' pózdno kázhdyy den'",
+          "script": "Я просыпаюсь поздно каждый день",
+          "cue": "I wake up late every day",
+          "changed": "late instead of early"
+        },
+        {
+          "display": "Obýchno ya prosypáyus' ráno",
+          "script": "Обычно я просыпаюсь рано",
+          "cue": "Usually I wake up early",
+          "changed": "a frequency word in place of every day"
+        }
+      ],
+      "mistake": {
+        "display": "Ya prosypáyu ráno kázhdyy den'",
+        "script": "Я просыпаю рано каждый день",
+        "why": "Dropping the particle leaves a different verb altogether — prosypát' is to spill something. Ya prosypáyus' ráno kázhdyy den'."
+      },
+      "usage": "Answering what your morning looks like.",
+      "register": "neutral",
+      "mnemonic": "The self rides on the end."
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "Snachála ya umyváyus', potóm odeváyus'",
+      "script": "Сначала я умываюсь, потом одеваюсь",
+      "cue": "First I wash, then I get dressed",
+      "literal": "At-first I wash-self, then dress-self",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "umyváyus'",
+            "script": "умываюсь",
+            "cue": "I wash (myself)",
+            "tag": "delta",
+            "forms": [
+              "umyváyus'"
+            ],
+            "note": "One of the few where the particle really is \"myself\": umyváyu something else, umyváyus' myself. It means the face and hands, not a bath."
+          },
+          {
+            "display": "odeváyus'",
+            "script": "одеваюсь",
+            "cue": "I get dressed",
+            "tag": "delta",
+            "forms": [
+              "odeváyus'"
+            ],
+            "note": "Same particle, same job: odeváyu a child, odeváyus' myself. Russian never says the clothes here — Ya odeváyus' is the complete sentence."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "The second clause drops ya and keeps the particle. What a Russian clause may leave out is the pronoun; what it may never leave out is the -s'.",
+      "sound": "sna-CHA-la ya u-my-VA-yus, pa-TOM a-dye-VA-yus. Both verbs are stressed on their -vá- syllable, one step before the particle.",
+      "variations": [
+        {
+          "display": "Snachála ya umyváyus', potóm závtrakayu",
+          "script": "Сначала я умываюсь, потом завтракаю",
+          "cue": "First I wash, then I have breakfast",
+          "changed": "breakfast in place of getting dressed"
+        },
+        {
+          "display": "Snachála ya umyváyus', zatém odeváyus'",
+          "script": "Сначала я умываюсь, затем одеваюсь",
+          "cue": "First I wash, next I get dressed",
+          "changed": "zatém in place of potóm"
+        }
+      ],
+      "mistake": {
+        "display": "Snachála ya umyváyu, potóm odeváyu",
+        "script": "Сначала я умываю, потом одеваю",
+        "why": "Without the particle both verbs are waiting for an object you never gave them. Snachála ya umyváyus', potóm odeváyus'."
+      },
+      "usage": "Listing the first two things you do in the morning.",
+      "register": "neutral",
+      "mnemonic": "Wash yourself, dress yourself — both end in -s'."
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "Obýchno ya závtrakayu v sem' chasóv",
+      "script": "Обычно я завтракаю в семь часов",
+      "cue": "Usually I have breakfast at seven o'clock",
+      "literal": "Usually I breakfast at seven of-hours",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "obýchno",
+            "script": "обычно",
+            "cue": "usually",
+            "tag": "free",
+            "forms": [
+              "obýchno"
+            ],
+            "note": "The plain, high-frequency \"usually\". It opens a sentence as comfortably as it sits before the verb, and it carries no shade of surprise the way \"normally\" can."
+          },
+          {
+            "display": "závtrakayu",
+            "script": "завтракаю",
+            "cue": "I have breakfast",
+            "tag": "delta",
+            "forms": [
+              "závtrakayu"
+            ],
+            "note": "Breakfast is a VERB in Russian, so there is no noun in the sentence to eat. The stress sits on the first syllable and never moves off it."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "There is no word for \"breakfast\" in this sentence and none is missing — závtrakayu is the whole predicate. Adding a noun for the meal is how an English speaker overbuilds it.",
+      "sound": "a-BYCH-na ya ZAV-tra-ka-yu f syem cha-SOF. závtrakayu has four unstressed syllables trailing its stress, and every one of them reduces.",
+      "variations": [
+        {
+          "display": "Inogdá ya závtrakayu v kafé",
+          "script": "Иногда я завтракаю в кафе",
+          "cue": "Sometimes I have breakfast at a café",
+          "changed": "sometimes, and out at a café"
+        },
+        {
+          "display": "Obýchno ya závtrakayu dóma",
+          "script": "Обычно я завтракаю дома",
+          "cue": "Usually I have breakfast at home",
+          "changed": "where rather than when"
+        }
+      ],
+      "mistake": {
+        "display": "Obýchno ya iméyu závtrak v sem' chasóv",
+        "script": "Обычно я имею завтрак в семь часов",
+        "why": "Two English habits at once: a noun for the meal and a verb for having, neither of which Russian uses here. Obýchno ya závtrakayu v sem' chasóv."
+      },
+      "usage": "Describing the shape of a normal morning.",
+      "register": "neutral",
+      "mnemonic": "Breakfast is a verb here."
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "Zatém ya idú na rabótu peshkóm",
+      "script": "Затем я иду на работу пешком",
+      "cue": "Next I walk to work",
+      "literal": "Next I go to work on-foot",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zatém",
+            "script": "затем",
+            "cue": "next · then",
+            "tag": "free",
+            "forms": [
+              "zatém"
+            ],
+            "note": "The step-after-the-step word. potóm is the everyday \"then\"; zatém is the same move inside a list you are counting through, and a shade more written."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "idú is already going on foot, and peshkóm only makes it explicit. Attached to a vehicle verb it would contradict it, which is why L2-M4 taught the two together.",
+      "sound": "za-TYEM ya i-DU na ra-BO-tu pyesh-KOM. Four of the five words carry their stress on the last syllable, which gives the line its forward push.",
+      "variations": [
+        {
+          "display": "Potóm ya idú na rabótu peshkóm",
+          "script": "Потом я иду на работу пешком",
+          "cue": "Then I walk to work",
+          "changed": "potóm, the everyday word, in place of zatém"
+        },
+        {
+          "display": "Zatém ya vozvrashcháyus' domóy",
+          "script": "Затем я возвращаюсь домой",
+          "cue": "Next I come back home",
+          "changed": "the direction reversed, back home"
+        }
+      ],
+      "mistake": {
+        "display": "Zatém ya idú na rabóta peshkóm",
+        "script": "Затем я иду на работа пешком",
+        "why": "na with a destination takes the accusative, as L2-M4 taught. Zatém ya idú na rabótu peshkóm."
+      },
+      "usage": "Walking someone through the middle of your morning.",
+      "register": "neutral",
+      "mnemonic": "zatém counts the next step."
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "Ya nikogdá ne p'yu kófe vécherom",
+      "script": "Я никогда не пью кофе вечером",
+      "cue": "I never drink coffee in the evening",
+      "literal": "I never not drink coffee in-the-evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nikogdá",
+            "script": "никогда",
+            "cue": "never",
+            "tag": "interference",
+            "forms": [
+              "nikogdá"
+            ],
+            "note": "It never stands alone: the verb still takes ne in front of it. Ya nikogdá ne p'yu — two negatives that agree rather than cancel."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The literal line is the lesson. Russian says \"I never not drink\", and an English speaker who trusts English deletes the ne and produces a sentence that stops halfway.",
+      "sound": "ni-kag-DA nye PYU KO-fye VYE-cha-ram. nikogdá is stressed on its last syllable, exactly like the kogdá buried inside it.",
+      "variations": [
+        {
+          "display": "Ya nikogdá ne rabótayu nóch'yu",
+          "script": "Я никогда не работаю ночью",
+          "cue": "I never work at night",
+          "changed": "a different thing never done"
+        },
+        {
+          "display": "Ya rédko p'yu kófe vécherom",
+          "script": "Я редко пью кофе вечером",
+          "cue": "I rarely drink coffee in the evening",
+          "changed": "rédko, which needs no second negative"
+        }
+      ],
+      "mistake": {
+        "display": "Ya nikogdá p'yu kófe vécherom",
+        "script": "Я никогда пью кофе вечером",
+        "why": "The ne is compulsory, not emphasis: Ya nikogdá ne p'yu kófe vécherom."
+      },
+      "usage": "Turning down an offer by naming a habit.",
+      "register": "neutral",
+      "mnemonic": "nikogdá always brings ne."
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "Inogdá ya rabótayu dóma",
+      "script": "Иногда я работаю дома",
+      "cue": "Sometimes I work from home",
+      "literal": "Sometimes I work at-home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "inogdá",
+            "script": "иногда",
+            "cue": "sometimes",
+            "tag": "free",
+            "forms": [
+              "inogdá"
+            ],
+            "note": "\"Now and again\" — less often than chásto, more often than rédko. Like nikogdá it ends in -gdá, but unlike nikogdá it changes nothing around it."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "dóma is \"at home\" and domóy is \"to home\": one says where you are, the other where you are heading, and neither takes a preposition.",
+      "sound": "i-nag-DA ya ra-BO-ta-yu DO-ma. The o of dóma is the stressed one, so the word ends on a clear a rather than a reduced one.",
+      "variations": [
+        {
+          "display": "Chásto ya rabótayu dóma",
+          "script": "Часто я работаю дома",
+          "cue": "I often work from home",
+          "changed": "often rather than sometimes"
+        },
+        {
+          "display": "Inogdá ya rabótayu vécherom",
+          "script": "Иногда я работаю вечером",
+          "cue": "Sometimes I work in the evening",
+          "changed": "when rather than where"
+        }
+      ],
+      "mistake": {
+        "display": "Inogdá ya rabótayu v dóma",
+        "script": "Иногда я работаю в дома",
+        "why": "dóma already carries the \"at\" inside it and refuses a preposition. Inogdá ya rabótayu dóma."
+      },
+      "usage": "Explaining an arrangement that is not fixed.",
+      "register": "neutral",
+      "mnemonic": "inogdá — now and again."
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "Ya vozvrashcháyus' domóy v shest' chasóv",
+      "script": "Я возвращаюсь домой в шесть часов",
+      "cue": "I come back home at six o'clock",
+      "literal": "I return-self homeward at six of-hours",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vozvrashcháyus'",
+            "script": "возвращаюсь",
+            "cue": "I come back · I return",
+            "tag": "delta",
+            "forms": [
+              "vozvrashcháyus'"
+            ],
+            "note": "The clearest case of a particle that means no self at all — nothing here is returned. It only marks that the verb takes no object, which is what -s' usually does."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Nothing is given back in this sentence. Handing a thing back to someone is a different verb; vozvrashcháyus' is only about you arriving where you came from.",
+      "sound": "vaz-vrash-CHA-yus da-MOY f shest cha-SOF. The stress stays on the stem's -shchá- and the particle is swallowed, as L3's stress law promises.",
+      "variations": [
+        {
+          "display": "Ya vozvrashcháyus' domóy pózdno",
+          "script": "Я возвращаюсь домой поздно",
+          "cue": "I come back home late",
+          "changed": "late instead of at six"
+        },
+        {
+          "display": "Obýchno ya vozvrashcháyus' domóy ráno",
+          "script": "Обычно я возвращаюсь домой рано",
+          "cue": "Usually I come back home early",
+          "changed": "usually, and early"
+        }
+      ],
+      "mistake": {
+        "display": "Ya vozvrashcháyu domóy v shest' chasóv",
+        "script": "Я возвращаю домой в шесть часов",
+        "why": "Without the particle the verb is transitive and waits for the thing you are giving back. Ya vozvrashcháyus' domóy v shest' chasóv."
+      },
+      "usage": "Saying when your working day ends.",
+      "register": "neutral",
+      "mnemonic": "No self in it, and still -s'."
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "Vécherom ya úzhinayu i chitáyu gazétu",
+      "script": "Вечером я ужинаю и читаю газету",
+      "cue": "In the evening I have supper and read the paper",
+      "literal": "In-the-evening I sup and read paper",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "úzhinayu",
+            "script": "ужинаю",
+            "cue": "I have supper",
+            "tag": "delta",
+            "forms": [
+              "úzhinayu"
+            ],
+            "note": "The evening twin of závtrakayu, and a verb for the same reason. Stress on the first syllable, and nothing follows it: what you ate needs its own clause."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "úzhinayu takes no object. The meal is inside the verb, so the food, if you name it, goes in a separate clause joined with i.",
+      "sound": "VYE-cha-ram ya U-zhi-na-yu i chi-TA-yu ga-ZYE-tu. Two first-syllable stresses in a row, which is unusual enough to be worth hearing.",
+      "variations": [
+        {
+          "display": "Vécherom ya úzhinayu dóma",
+          "script": "Вечером я ужинаю дома",
+          "cue": "In the evening I have supper at home",
+          "changed": "at home, and the reading dropped"
+        },
+        {
+          "display": "Inogdá ya úzhinayu v kafé",
+          "script": "Иногда я ужинаю в кафе",
+          "cue": "Sometimes I have supper at a café",
+          "changed": "sometimes, and out at a café"
+        }
+      ],
+      "mistake": {
+        "display": "Vécherom ya úzhinayu i chitáyu gazéta",
+        "script": "Вечером я ужинаю и читаю газета",
+        "why": "The thing read is the object and takes the accusative: chitáyu gazétu."
+      },
+      "usage": "Describing an ordinary evening at home.",
+      "register": "neutral",
+      "mnemonic": "Supper is a verb."
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "Nakonéts ya lozhús' spat'",
+      "script": "Наконец я ложусь спать",
+      "cue": "Finally I go to bed",
+      "literal": "Finally I lay-self to-sleep",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nakonéts",
+            "script": "наконец",
+            "cue": "finally · at last",
+            "tag": "free",
+            "forms": [
+              "nakonéts"
+            ],
+            "note": "Closes a sequence the way snachála opens one. It also works as a standalone exclamation of relief, exactly as English's \"finally!\" does."
+          },
+          {
+            "display": "lozhús'",
+            "script": "ложусь",
+            "cue": "I lie down · I go to bed",
+            "tag": "delta",
+            "forms": [
+              "lozhús'"
+            ],
+            "note": "Literally \"I lay myself down\", and Russian keeps spat' after it: lozhús' spat' is the fixed way to say going to bed."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "spat' stays an infinitive after lozhús'. Russian will not let the two verbs both be finite, so \"I lie down I sleep\" is not available.",
+      "sound": "na-ka-NYETS ya la-ZHUS spat. lozhús' takes its stress on the ending, which is where the particle then hangs unstressed.",
+      "variations": [
+        {
+          "display": "Nakonéts ya lozhús' spat' pózdno",
+          "script": "Наконец я ложусь спать поздно",
+          "cue": "Finally I go to bed late",
+          "changed": "late added at the end"
+        },
+        {
+          "display": "Obýchno ya lozhús' spat' ráno",
+          "script": "Обычно я ложусь спать рано",
+          "cue": "Usually I go to bed early",
+          "changed": "usually and early instead of finally"
+        }
+      ],
+      "mistake": {
+        "display": "Nakonéts ya lozhú spat'",
+        "script": "Наконец я ложу спать",
+        "why": "The particle is what turns \"lay\" into \"lie down\": Nakonéts ya lozhús' spat'."
+      },
+      "usage": "The last line of an account of your day.",
+      "register": "neutral",
+      "mnemonic": "nakonéts closes the day."
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "Moyá sestrá vsegdá prosypáyetsya ráno",
+      "script": "Моя сестра всегда просыпается рано",
+      "cue": "My sister always wakes up early",
+      "literal": "My sister always wakes-self early",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prosypáyetsya",
+            "script": "просыпается",
+            "cue": "he/she wakes up",
+            "tag": "delta",
+            "forms": [
+              "prosypáyetsya"
+            ],
+            "note": "The he/she cell of prosypáyus'. The ending -yet finishes in a consonant, so the particle is the full -sya rather than -s'. The stress does not move."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "-s' and -sya are one particle with two spellings, and the letter in front chooses: a vowel takes -s', a consonant takes -sya. There is nothing else to the rule.",
+      "sound": "ma-YA ses-TRA fseg-DA pra-sy-PA-yet-sa. The -tsya is said flat as \"tsa\", with no y sound in it at all.",
+      "variations": [
+        {
+          "display": "Moy brat vsegdá prosypáyetsya pózdno",
+          "script": "Мой брат всегда просыпается поздно",
+          "cue": "My brother always wakes up late",
+          "changed": "a brother, and late"
+        },
+        {
+          "display": "Moyá sestrá rédko prosypáyetsya ráno",
+          "script": "Моя сестра редко просыпается рано",
+          "cue": "My sister rarely wakes up early",
+          "changed": "rarely instead of always"
+        }
+      ],
+      "mistake": {
+        "display": "Moyá sestrá vsegdá prosypáyets' ráno",
+        "script": "Моя сестра всегда просыпаетсь рано",
+        "why": "After a consonant the particle is the full -sya: Moyá sestrá vsegdá prosypáyetsya ráno."
+      },
+      "usage": "Talking about somebody else's routine.",
+      "register": "neutral",
+      "mnemonic": "Consonant takes -sya."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "Ya prosypáyus' ráno",
+      "script": "Я просыпаюсь рано",
+      "cue": "I wake up early"
+    },
+    {
+      "id": "L3-M1-C02",
+      "display": "Obýchno ya p'yu chay útrom",
+      "script": "Обычно я пью чай утром",
+      "cue": "Usually I drink tea in the morning"
+    },
+    {
+      "id": "L3-M1-C03",
+      "display": "Snachála ya umyváyus', potóm ya odeváyus'",
+      "script": "Сначала я умываюсь, потом я одеваюсь",
+      "cue": "First I wash, then I get dressed"
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "Zatém ya idú na rabótu",
+      "script": "Затем я иду на работу",
+      "cue": "Next I go to work"
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "Ya nikogdá ne rabótayu nóch'yu",
+      "script": "Я никогда не работаю ночью",
+      "cue": "I never work at night"
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "Inogdá ya otdykháyu dóma",
+      "script": "Иногда я отдыхаю дома",
+      "cue": "Sometimes I rest at home"
+    },
+    {
+      "id": "L3-M1-C07",
+      "display": "Ya vozvrashcháyus' domóy pózdno",
+      "script": "Я возвращаюсь домой поздно",
+      "cue": "I come back home late"
+    },
+    {
+      "id": "L3-M1-C08",
+      "display": "Vécherom ya úzhinayu dóma",
+      "script": "Вечером я ужинаю дома",
+      "cue": "In the evening I have supper at home"
+    },
+    {
+      "id": "L3-M1-C09",
+      "display": "Nakonéts ya lozhús' spat'",
+      "script": "Наконец я ложусь спать",
+      "cue": "Finally I go to bed"
+    },
+    {
+      "id": "L3-M1-C10",
+      "display": "Moy brat vsegdá prosypáyetsya pózdno",
+      "script": "Мой брат всегда просыпается поздно",
+      "cue": "My brother always wakes up late"
+    },
+    {
+      "id": "L3-M1-C11",
+      "display": "Ya chásto chitáyu gazétu vécherom",
+      "script": "Я часто читаю газету вечером",
+      "cue": "I often read the paper in the evening"
+    },
+    {
+      "id": "L3-M1-C12",
+      "display": "Ya rédko závtrakayu dóma",
+      "script": "Я редко завтракаю дома",
+      "cue": "I rarely have breakfast at home"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

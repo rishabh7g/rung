@@ -1,0 +1,649 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present_simple",
+      "present_continuous"
+    ],
+    "allowedPatterns": [
+      "I + <adverb> + V + <complement>",
+      "I + am + <adverb> + Adj",
+      "First … then … after that … finally …",
+      "I know + <clause>  (never *I am knowing)",
+      "Every day I + V + , + but today I am + V-ing"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "कुछ क्रियाएँ हालत बताती हैं, काम नहीं — know, want, like, need, understand, mean, believe, belong, own, prefer. इन पर -ing कभी नहीं लगता: I know, न कि I am knowing; I want tea, न कि I am wanting tea. हिंदी में जान रहा हूँ और चाह रहा हूँ बिलकुल आम हैं, इसलिए यहाँ हिंदी की सही आदत अंग्रेज़ी में सीधे ग़लती बन जाती है. सूची छोटी है और बंद है — इसे याद कर लेना ही पूरा काम है."
+    },
+    {
+      "tag": "interference",
+      "text": "have की दो नौकरियाँ हैं और यही ऊपर वाले नियम का अपवाद है. रखने के मतलब में यह हालत है और -ing नहीं लेता — I have a car, I have two brothers, I have a headache. पर जब यह कोई काम बताता है तो -ing ले लेता है — I am having lunch, I am having a bath. इसीलिए I am having a headache ग़लत है और I am having lunch सही."
+    },
+    {
+      "tag": "delta",
+      "text": "कितनी बार वाले शब्दों की जगह अंग्रेज़ी में तय है, हिंदी में खुली. always, usually, sometimes, rarely, never मुख्य क्रिया से ठीक पहले आते हैं — I always drink tea — और be के ठीक बाद — I am always late. हिंदी का हमेशा वाक्य में कहीं भी बैठ सकता है; अंग्रेज़ी में उसके लिए एक ही कुर्सी है."
+    },
+    {
+      "tag": "free",
+      "text": "क्रम के शब्द पहले से आपके हैं — first, then, after that, finally. इस पाठ में इनमें कुछ नया नहीं जुड़ता. जो नया है वह लंबाई है: अब एक ही बात में दो-दो वाक्य आते हैं और दस शब्द तक जाते हैं."
+    },
+    {
+      "tag": "delta",
+      "text": "रोज़ की आदत सादे रूप में आती है — I have lunch at home every day — और जो इसी वक़्त चल रहा है वह am · is · are + -ing में — Today I am having lunch at work. दोनों एक ही बात में साथ आ सकते हैं, और वहीं से यह पाठ लंबा होता है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "Every day I get up early. First I drink tea.",
+      "cue": "हर रोज़ मैं जल्दी उठता हूँ. पहले मैं चाय पीता हूँ.",
+      "literal": "हर रोज़ मैं उठता जल्दी. पहले मैं पीता चाय.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "every day",
+            "cue": "हर रोज़",
+            "tag": "free",
+            "forms": [],
+            "note": "दो शब्दों का एक टुकड़ा, हर रोज़ जैसा ही. वाक्य के शुरू में या आख़िर में बैठता है, बीच में नहीं: Every day I get up early."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "रोज़ की आदत के लिए सादा रूप ही चलता है. Every day I am getting up early ग़लत है — -ing का काम अभी चल रही बात है, रोज़ की बात नहीं.",
+      "sound": "every में बीच का e गिर जाता है — एव्री, न कि एवेरी.",
+      "variations": [
+        {
+          "display": "Every day I get up early. Then I drink tea.",
+          "cue": "हर रोज़ मैं जल्दी उठता हूँ. फिर मैं चाय पीता हूँ.",
+          "changed": "first की जगह then"
+        },
+        {
+          "display": "Every day my sister gets up early.",
+          "cue": "हर रोज़ मेरी बहन जल्दी उठती है.",
+          "changed": "दूसरा कर्ता, क्रिया पर -s"
+        },
+        {
+          "display": "Every day I get up early. First I drink coffee.",
+          "cue": "हर रोज़ मैं जल्दी उठता हूँ. पहले मैं कॉफ़ी पीता हूँ.",
+          "changed": "चाय की जगह कॉफ़ी"
+        }
+      ],
+      "mistake": {
+        "display": "Every day I am getting up early",
+        "why": "रोज़ की आदत सादे रूप में आती है: Every day I get up early."
+      },
+      "usage": "दिन की शुरुआत बताना — किसी नए साथी या पड़ोसी से.",
+      "register": "neutral",
+      "mnemonic": "रोज़ की बात, सादा रूप."
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "I always drink tea in the morning. I never drink coffee.",
+      "cue": "मैं सुबह हमेशा चाय पीता हूँ. मैं कभी कॉफ़ी नहीं पीता.",
+      "literal": "मैं हमेशा पीता चाय में वह सुबह. मैं कभी नहीं पीता कॉफ़ी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in the morning",
+            "cue": "सुबह · सुबह को",
+            "tag": "free",
+            "forms": [],
+            "note": "तीन शब्दों का एक टुकड़ा. हिंदी का सुबह अकेला चलता है, अंग्रेज़ी को तीनों चाहिए — in morning अधूरा है."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "never अपने साथ नकार लेकर आता है, इसलिए दूसरा नकार नहीं आता. I never drink coffee सही, I do not never drink coffee ग़लत.",
+      "sound": "always में पहला हिस्सा भारी है — ऑल्वेज़, ऑलवेज़ नहीं.",
+      "variations": [
+        {
+          "display": "I always drink tea in the evening.",
+          "cue": "मैं शाम को हमेशा चाय पीता हूँ.",
+          "changed": "दिन का दूसरा हिस्सा"
+        },
+        {
+          "display": "My brother always drinks tea in the morning.",
+          "cue": "मेरा भाई सुबह हमेशा चाय पीता है.",
+          "changed": "दूसरा कर्ता, drinks पर -s"
+        },
+        {
+          "display": "I never drink coffee in the morning.",
+          "cue": "मैं सुबह कभी कॉफ़ी नहीं पीता.",
+          "changed": "सिर्फ़ नकार वाला आधा"
+        }
+      ],
+      "mistake": {
+        "display": "I drink always tea in the morning",
+        "why": "कितनी बार वाला शब्द क्रिया से पहले आता है: I always drink tea in the morning."
+      },
+      "usage": "अपनी आदत बताना, जब कोई पूछे कि आप क्या लेंगे.",
+      "register": "neutral",
+      "mnemonic": "क्रिया से पहले हमेशा, be के बाद हमेशा."
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "I usually leave the office at seven. I am never late.",
+      "cue": "मैं आम तौर पर सात बजे दफ़्तर से निकलता हूँ. मैं कभी देर नहीं करता.",
+      "literal": "मैं आम तौर पर छोड़ता वह दफ़्तर पर सात. मैं हूँ कभी देर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "leave",
+            "cue": "निकलना · छोड़ना",
+            "tag": "delta",
+            "forms": [
+              "leave",
+              "leaves"
+            ],
+            "note": "जगह सीधे बाद आती है, कोई से नहीं: I leave the office, न कि I leave from the office."
+          },
+          {
+            "display": "office",
+            "cue": "दफ़्तर",
+            "tag": "free",
+            "forms": [
+              "office",
+              "offices"
+            ],
+            "note": "गिना जाता है, इसलिए आगे the या a आता है और एक से ज़्यादा पर -s: two offices."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "यही वाक्य दोनों कुर्सियाँ दिखाता है. usually आम क्रिया leave से पहले बैठा, और never be के बाद — I am never late, न कि I never am late.",
+      "sound": "leave का ee लंबा है — लीव, लिव नहीं.",
+      "variations": [
+        {
+          "display": "I usually leave the office at nine.",
+          "cue": "मैं आम तौर पर नौ बजे दफ़्तर से निकलता हूँ.",
+          "changed": "दूसरा वक़्त"
+        },
+        {
+          "display": "My brother usually leaves the office at seven.",
+          "cue": "मेरा भाई आम तौर पर सात बजे दफ़्तर से निकलता है.",
+          "changed": "दूसरा कर्ता, leaves पर -s"
+        },
+        {
+          "display": "I am always late.",
+          "cue": "मैं हमेशा देर करता हूँ.",
+          "changed": "be के बाद वाली कुर्सी"
+        }
+      ],
+      "mistake": {
+        "display": "I never am late",
+        "why": "be के बाद आता है, पहले नहीं: I am never late."
+      },
+      "usage": "दफ़्तर का वक़्त बताना.",
+      "register": "neutral",
+      "mnemonic": "be के बाद, बाक़ी सबसे पहले."
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "I know your brother. This car belongs to him.",
+      "cue": "मैं तुम्हारे भाई को जानता हूँ. यह गाड़ी उसकी है.",
+      "literal": "मैं जानता तुम्हारा भाई. यह गाड़ी सम्बन्ध-रखती को उसको.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "know",
+            "cue": "जानना · पहचानना",
+            "tag": "interference",
+            "forms": [
+              "know",
+              "knows"
+            ],
+            "note": "हालत वाली क्रिया, इसलिए -ing कभी नहीं: I know him, न कि I am knowing him. हिंदी का जान रहा हूँ यहीं धोखा देता है."
+          },
+          {
+            "display": "belong",
+            "cue": "का होना",
+            "tag": "interference",
+            "forms": [
+              "belong",
+              "belongs"
+            ],
+            "note": "यह भी हालत है — belonging कभी नहीं. साथ में to आता ही आता है: This car belongs to him."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "जानने-पहचानने की बात हमेशा सादे रूप में रहती है, चाहे कितनी भी पुरानी हो. I am knowing your brother अंग्रेज़ी में है ही नहीं.",
+      "sound": "know में k चुप है — नो, कनो नहीं.",
+      "variations": [
+        {
+          "display": "I know your sister.",
+          "cue": "मैं तुम्हारी बहन को जानता हूँ.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "He knows my brother.",
+          "cue": "वह मेरे भाई को जानता है.",
+          "changed": "दूसरा कर्ता, knows पर -s"
+        },
+        {
+          "display": "This car belongs to my sister.",
+          "cue": "यह गाड़ी मेरी बहन की है.",
+          "changed": "दूसरा मालिक"
+        }
+      ],
+      "mistake": {
+        "display": "I am knowing your brother",
+        "why": "know पर -ing नहीं लगता: I know your brother."
+      },
+      "usage": "किसी से किसी का ज़िक्र करना.",
+      "register": "neutral",
+      "mnemonic": "जानना हालत है, काम नहीं."
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "I understand English. I do not understand what you mean.",
+      "cue": "मैं अंग्रेज़ी समझता हूँ. आपका मतलब क्या है, यह मैं नहीं समझा.",
+      "literal": "मैं समझता अंग्रेज़ी. मैं करता नहीं समझ क्या तुम मतलब.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "understand",
+            "cue": "समझना",
+            "tag": "interference",
+            "forms": [
+              "understand",
+              "understands"
+            ],
+            "note": "हालत वाली क्रिया. I am not understanding बहुत सुनाई देता है और है ग़लत — I do not understand सही."
+          },
+          {
+            "display": "mean",
+            "cue": "मतलब होना",
+            "tag": "interference",
+            "forms": [
+              "mean",
+              "means"
+            ],
+            "note": "यह भी हालत है, इसलिए meaning कभी नहीं. What do you mean? सही, What are you meaning? ग़लत."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "नकार में हालत वाली क्रिया do not लेती है, am not नहीं. I am not understanding की जगह I do not understand.",
+      "sound": "understand पर ज़ोर आख़िरी हिस्से पर है — अंडरस्टैंड.",
+      "variations": [
+        {
+          "display": "I understand English.",
+          "cue": "मैं अंग्रेज़ी समझता हूँ.",
+          "changed": "सिर्फ़ पहला आधा"
+        },
+        {
+          "display": "My sister understands English.",
+          "cue": "मेरी बहन अंग्रेज़ी समझती है.",
+          "changed": "दूसरा कर्ता, understands पर -s"
+        },
+        {
+          "display": "I do not understand this.",
+          "cue": "मैं यह नहीं समझा.",
+          "changed": "छोटा किया"
+        }
+      ],
+      "mistake": {
+        "display": "I am not understanding what you mean",
+        "why": "understand पर -ing नहीं लगता: I do not understand what you mean."
+      },
+      "usage": "बात रुकवाकर दोबारा पूछना.",
+      "register": "neutral",
+      "mnemonic": "समझना हालत है — do not, am not नहीं."
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "I have lunch at home every day. Today I am having lunch at work.",
+      "cue": "मैं हर रोज़ घर पर दोपहर का खाना खाता हूँ. आज मैं काम पर खा रहा हूँ.",
+      "literal": "मैं रखता दोपहर-का-खाना पर घर हर रोज़. आज मैं हूँ रख-रहा दोपहर-का-खाना पर काम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "having",
+            "cue": "खा रहा · कर रहा",
+            "tag": "interference",
+            "forms": [],
+            "note": "have का यही एक रूप काम बताता है, रखना नहीं. I am having lunch सही; I am having a car ग़लत, क्योंकि गाड़ी रखी जाती है."
+          },
+          {
+            "display": "lunch",
+            "cue": "दोपहर का खाना",
+            "tag": "free",
+            "forms": [],
+            "note": "खाने के नामों के आगे कुछ नहीं आता: have lunch, न कि have the lunch."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "एक ही बात में दोनों रूप आ गए और दोनों सही हैं. रोज़ की आदत के लिए have, आज की बात के लिए am having.",
+      "sound": "lunch में ch साफ़ बोला जाता है — लंच, लन्श नहीं.",
+      "variations": [
+        {
+          "display": "I have lunch at home every day.",
+          "cue": "मैं हर रोज़ घर पर दोपहर का खाना खाता हूँ.",
+          "changed": "सिर्फ़ आदत वाला आधा"
+        },
+        {
+          "display": "Today I am having lunch at home.",
+          "cue": "आज मैं घर पर खा रहा हूँ.",
+          "changed": "जगह बदली"
+        },
+        {
+          "display": "My brother is having lunch at work.",
+          "cue": "मेरा भाई काम पर खा रहा है.",
+          "changed": "दूसरा कर्ता, is के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "Every day I am having lunch at home",
+        "why": "रोज़ की आदत सादे रूप में: Every day I have lunch at home."
+      },
+      "usage": "दोपहर के खाने का हाल — फ़ोन पर सबसे आम सवाल का जवाब.",
+      "register": "neutral",
+      "mnemonic": "रखना सादा, करना -ing."
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "I have a headache today, so I am at home.",
+      "cue": "आज मेरे सिर में दर्द है, इसलिए मैं घर पर हूँ.",
+      "literal": "मैं रखता एक सिरदर्द आज, इसलिए मैं हूँ पर घर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "headache",
+            "cue": "सिरदर्द",
+            "tag": "free",
+            "forms": [
+              "headache",
+              "headaches"
+            ],
+            "note": "गिना जाता है, इसलिए आगे a आता है: I have a headache. सिर के लिए head और दर्द के लिए ache, दोनों जुड़कर एक शब्द."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "यही वह वाक्य है जिसे हिंदी बोलने वाला सबसे ज़्यादा बार ग़लत बनाता है. दर्द रखा जाता है, किया नहीं — I am having a headache ग़लत है.",
+      "sound": "headache में ache आवाज़ में एक ही झटका है — एक. पूरा शब्द हेड-एक.",
+      "variations": [
+        {
+          "display": "I have a headache today.",
+          "cue": "आज मेरे सिर में दर्द है.",
+          "changed": "छोटा किया"
+        },
+        {
+          "display": "My sister has a headache today.",
+          "cue": "आज मेरी बहन के सिर में दर्द है.",
+          "changed": "दूसरा कर्ता, has के साथ"
+        },
+        {
+          "display": "I have a headache, so I am at home.",
+          "cue": "मेरे सिर में दर्द है, इसलिए मैं घर पर हूँ.",
+          "changed": "आज हटाया"
+        }
+      ],
+      "mistake": {
+        "display": "I am having a headache today",
+        "why": "दर्द रखा जाता है, किया नहीं: I have a headache today."
+      },
+      "usage": "छुट्टी माँगना या देर से आने की वजह बताना.",
+      "register": "neutral",
+      "mnemonic": "दर्द रखते हैं, करते नहीं."
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "First I have a bath. Then I have breakfast.",
+      "cue": "पहले मैं नहाता हूँ. फिर मैं नाश्ता करता हूँ.",
+      "literal": "पहले मैं रखता एक नहाना. फिर मैं रखता नाश्ता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bath",
+            "cue": "नहाना · स्नान",
+            "tag": "interference",
+            "forms": [
+              "bath",
+              "baths"
+            ],
+            "note": "नहाना have a bath है, take bath नहीं. आगे a आता ही आता है, क्योंकि यह गिना जाता है."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "have a bath एक काम है, इसलिए I am having a bath बिलकुल सही है. यही have जब गाड़ी या भाई पर आता है तो हालत है और -ing नहीं लेता.",
+      "sound": "bath के आख़िर में th जीभ दाँतों के बीच से — बाथ, बाट नहीं.",
+      "variations": [
+        {
+          "display": "First I have a bath. Then I drink tea.",
+          "cue": "पहले मैं नहाता हूँ. फिर मैं चाय पीता हूँ.",
+          "changed": "दूसरा क़दम"
+        },
+        {
+          "display": "My brother has a bath at seven.",
+          "cue": "मेरा भाई सात बजे नहाता है.",
+          "changed": "दूसरा कर्ता, has के साथ"
+        },
+        {
+          "display": "I am having a bath.",
+          "cue": "मैं नहा रहा हूँ.",
+          "changed": "अभी चल रहा है, इसलिए -ing"
+        }
+      ],
+      "mistake": {
+        "display": "First I am taking bath",
+        "why": "नहाने के लिए have a bath चलता है और आदत सादे रूप में आती है: First I have a bath."
+      },
+      "usage": "सुबह का क्रम सुनाना.",
+      "register": "neutral",
+      "mnemonic": "नहाना have है, take नहीं."
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "Sometimes I take the train. I rarely take the bus.",
+      "cue": "कभी-कभी मैं रेल लेता हूँ. मैं शायद ही कभी बस लेता हूँ.",
+      "literal": "कभी-कभी मैं लेता वह रेल. मैं कम-ही लेता वह बस.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sometimes",
+            "cue": "कभी-कभी",
+            "tag": "free",
+            "forms": [],
+            "note": "इसकी दो कुर्सियाँ हैं — क्रिया से पहले, या वाक्य के बिलकुल शुरू में: I sometimes take the train · Sometimes I take the train."
+          },
+          {
+            "display": "rarely",
+            "cue": "शायद ही कभी",
+            "tag": "delta",
+            "forms": [],
+            "note": "इसमें नकार पहले से है, इसलिए दूसरा नहीं आता: I rarely take the bus, न कि I do not rarely take the bus."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "sometimes शुरू में जा सकता है, rarely नहीं. rarely क्रिया से ठीक पहले ही बैठता है.",
+      "sound": "rarely में दो ही हिस्से हैं — रेयर-ली.",
+      "variations": [
+        {
+          "display": "Sometimes I take the bus.",
+          "cue": "कभी-कभी मैं बस लेता हूँ.",
+          "changed": "दूसरी सवारी"
+        },
+        {
+          "display": "I sometimes take the train.",
+          "cue": "मैं कभी-कभी रेल लेता हूँ.",
+          "changed": "वही शब्द, दूसरी कुर्सी"
+        },
+        {
+          "display": "My sister rarely takes the bus.",
+          "cue": "मेरी बहन शायद ही कभी बस लेती है.",
+          "changed": "दूसरा कर्ता, takes पर -s"
+        }
+      ],
+      "mistake": {
+        "display": "I take sometimes the train",
+        "why": "क्रिया और उसकी चीज़ के बीच कुछ नहीं आता: Sometimes I take the train."
+      },
+      "usage": "आने-जाने का तरीक़ा बताना.",
+      "register": "neutral",
+      "mnemonic": "sometimes घूम सकता है, rarely नहीं."
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "After that I finish my work. I hardly ever work at night.",
+      "cue": "उसके बाद मैं अपना काम ख़त्म करता हूँ. मैं रात को शायद ही कभी काम करता हूँ.",
+      "literal": "उसके बाद मैं ख़त्म-करता मेरा काम. मैं मुश्किल-से-कभी काम-करता पर रात.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "finish",
+            "cue": "ख़त्म करना",
+            "tag": "free",
+            "forms": [
+              "finish",
+              "finishes"
+            ],
+            "note": "चीज़ सीधे बाद आती है: I finish my work. वह पर -es लगता है, क्योंकि शब्द sh पर ख़त्म होता है — finishes."
+          },
+          {
+            "display": "hardly ever",
+            "cue": "शायद ही कभी",
+            "tag": "delta",
+            "forms": [],
+            "note": "दो शब्द, एक टुकड़ा, और यह ख़ुद नकार है — इसलिए साथ में not कभी नहीं आता: I hardly ever work at night."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "hardly ever, rarely और never तीनों अपने साथ नकार लेकर चलते हैं. इनके साथ do not लगाना दो नकार कर देता है, जो अंग्रेज़ी में ग़लत है.",
+      "sound": "hardly में d लगभग नहीं सुनाई देता — हार्ली.",
+      "variations": [
+        {
+          "display": "After that I finish my work.",
+          "cue": "उसके बाद मैं अपना काम ख़त्म करता हूँ.",
+          "changed": "छोटा किया"
+        },
+        {
+          "display": "My brother finishes work at seven.",
+          "cue": "मेरा भाई सात बजे काम ख़त्म करता है.",
+          "changed": "दूसरा कर्ता, finishes पर -es"
+        },
+        {
+          "display": "I hardly ever work at night.",
+          "cue": "मैं रात को शायद ही कभी काम करता हूँ.",
+          "changed": "सिर्फ़ दूसरा आधा"
+        }
+      ],
+      "mistake": {
+        "display": "I do not hardly ever work at night",
+        "why": "hardly ever ख़ुद नकार है, दूसरा नकार नहीं आता: I hardly ever work at night."
+      },
+      "usage": "दिन का आख़िरी क़दम सुनाना.",
+      "register": "neutral",
+      "mnemonic": "एक वाक्य, एक नकार."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "Every day I get up early.",
+      "cue": "हर रोज़ मैं जल्दी उठता हूँ."
+    },
+    {
+      "id": "L3-M1-C02",
+      "display": "I always drink tea in the morning.",
+      "cue": "मैं सुबह हमेशा चाय पीता हूँ."
+    },
+    {
+      "id": "L3-M1-C03",
+      "display": "I usually leave the office at nine.",
+      "cue": "मैं आम तौर पर नौ बजे दफ़्तर से निकलता हूँ."
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "I know your sister.",
+      "cue": "मैं तुम्हारी बहन को जानता हूँ."
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "This bag belongs to my brother.",
+      "cue": "यह बैग मेरे भाई का है."
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "I do not understand what you mean.",
+      "cue": "आपका मतलब क्या है, यह मैं नहीं समझा."
+    },
+    {
+      "id": "L3-M1-C07",
+      "display": "Today I am having lunch at home.",
+      "cue": "आज मैं घर पर दोपहर का खाना खा रहा हूँ."
+    },
+    {
+      "id": "L3-M1-C08",
+      "display": "I have a headache, so I am at home.",
+      "cue": "मेरे सिर में दर्द है, इसलिए मैं घर पर हूँ."
+    },
+    {
+      "id": "L3-M1-C09",
+      "display": "First I have a bath. Then I have breakfast.",
+      "cue": "पहले मैं नहाता हूँ. फिर मैं नाश्ता करता हूँ."
+    },
+    {
+      "id": "L3-M1-C10",
+      "display": "Sometimes I take the bus to work.",
+      "cue": "कभी-कभी मैं काम पर बस से जाता हूँ."
+    },
+    {
+      "id": "L3-M1-C11",
+      "display": "I rarely finish work early.",
+      "cue": "मैं शायद ही कभी काम जल्दी ख़त्म करता हूँ."
+    },
+    {
+      "id": "L3-M1-C12",
+      "display": "I hardly ever work at night.",
+      "cue": "मैं रात को शायद ही कभी काम करता हूँ."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

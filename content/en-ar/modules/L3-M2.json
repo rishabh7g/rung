@@ -1,0 +1,592 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M2",
+  "title": "Work and study",
+  "job": "Explain what you do all day, and how",
+  "prerequisites": ["L3-M1"],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "<N> + al-<N>   (the iḍāfa)",
+      "aʿmal + fī + <N>",
+      "adrus + <N> + fī + al-jāmiʿa",
+      "yajibu + an + V-1sg",
+      "yumkinu + an + V-1sg"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Arabic has no word for \"of\". Two nouns are pushed together and the second one owns the first: mudīr ash-sharika, \"the manager of the company\". That chain is the iḍāfa, and it is the shape behind almost every phrase in this module."
+    },
+    {
+      "tag": "interference",
+      "text": "In a chain the FIRST noun never takes al-, the SECOND carries it, and the whole chain takes its definiteness from the second. bāb al-bayt is \"the door of the house\"; bāb bayt is \"a door of a house\"; al-bāb al-bayt is not Arabic at all. English puts \"the\" on both halves, and that is the habit to break."
+    },
+    {
+      "tag": "delta",
+      "text": "The tāʾ marbūṭa is sounded in front of a second noun. shahāda alone ends on a plain -a; shahādat al-jāmiʿa sounds the t. It is the single most audible sign that a chain has been built rather than memorised."
+    },
+    {
+      "tag": "delta",
+      "text": "yajibu an is impersonal: \"it is necessary that I go\", where English says \"I must go\". Nothing in it is you, and it never bends. yumkinu an is its twin for \"it is possible\", and both take L1-M3's an. The subjunctive mood beyond these two frames is L4's."
+    },
+    {
+      "tag": "delta",
+      "text": "The plural comes with the word, not from a pattern. sharika gives sharikāt and muwaẓẓaf gives muwaẓẓafūn, but rātib gives rawātib — a shape nothing in rātib predicts. Each plural is listed on its own singular's row and learned there."
+    },
+    {
+      "tag": "free",
+      "text": "aʿmal and adrus are ordinary imperfect verbs on L1-M4's prefix law: a- for I, ta- for you or for she, ya- for he, na- for we. Only the roots are new here, and the person is still the front of the word."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M2-S01",
+      "display": "mudīr ash-sharika mashghūl al-yawm",
+      "script": "مدير الشركة مشغول اليوم",
+      "cue": "The manager of the company is busy today",
+      "literal": "Manager the-company busy the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mudīr",
+            "script": "مدير",
+            "cue": "manager, director",
+            "tag": "delta",
+            "forms": ["mudīr", "al-mudīr", "mudīrūn"],
+            "note": "Manager. As the first noun of a chain it never takes al-: mudīr ash-sharika. Standing alone and definite, it is al-mudīr."
+          },
+          {
+            "display": "ash-sharika",
+            "script": "الشركة",
+            "cue": "the company",
+            "tag": "free",
+            "forms": ["ash-sharika", "sharika", "sharikāt"],
+            "note": "Company. sh is a sun letter, so al- becomes ash-, exactly as in L1-M2's ash-shāy. The plural sharikāt is regular."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English needs three words for this — the, of, the — and Arabic needs none of them. The relationship is the bare fact of the two nouns touching.",
+      "sound": "mu-DEER ash-SHA-ri-ka — no pause between the two nouns; the chain is said as one word-group.",
+      "variations": [
+        {
+          "display": "bāb al-bayt kabīr",
+          "script": "باب البيت كبير",
+          "cue": "The door of the house is big",
+          "changed": "the same chain built from two words you have owned since L1: door and house"
+        },
+        {
+          "display": "mudīr al-madrasa mashghūl al-yawm",
+          "script": "مدير المدرسة مشغول اليوم",
+          "cue": "The head of the school is busy today",
+          "changed": "what is owned: ash-sharika → al-madrasa"
+        }
+      ],
+      "mistake": {
+        "display": "al-mudīr ash-sharika mashghūl",
+        "script": "المدير الشركة مشغول",
+        "why": "English says \"THE manager of THE company\" and puts an article on each half. A chain allows only one, and it goes on the second noun: mudīr ash-sharika."
+      },
+      "usage": "The everyday way to name anyone by where they work, and the sentence to build the rest of the module on.",
+      "register": "neutral",
+      "mnemonic": "One article per chain, and it sits at the end."
+    },
+    {
+      "id": "L3-M2-S02",
+      "display": "aʿmal fī sharika kabīra",
+      "script": "أعمل في شركة كبيرة",
+      "cue": "I work at a big company",
+      "literal": "I-work in company big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aʿmal",
+            "script": "أعمل",
+            "cue": "I work",
+            "tag": "free",
+            "forms": ["aʿmal", "naʿmal"],
+            "note": "\"I work\" — L2-M8's yaʿmal with L1-M4's a- prefix on the front, and L1-M4's ʿamal is the noun of it."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "English works \"at\" or \"for\" a company, and both tempt maʿa. Arabic works inside it: aʿmal fī sharika.",
+      "sound": "AʿA-mal fee SHA-ri-ka — the ʿ closes the throat between the two a's, and it is what separates aʿmal from a plain amal.",
+      "variations": [
+        {
+          "display": "aʿmal fī ash-sharika",
+          "script": "أعمل في الشركة",
+          "cue": "I work at the company",
+          "changed": "a company becomes the company: only the article moved"
+        },
+        {
+          "display": "naʿmal fī sharika kabīra",
+          "script": "نعمل في شركة كبيرة",
+          "cue": "We work at a big company",
+          "changed": "a- → na-: we, and nothing else in the sentence knows"
+        }
+      ],
+      "mistake": {
+        "display": "aʿmal maʿa sharika kabīra",
+        "script": "أعمل مع شركة كبيرة",
+        "why": "maʿa is \"with\", and it is what English's \"work for\" reaches for. Arabic puts you inside the place: aʿmal fī sharika kabīra."
+      },
+      "usage": "The first thing anyone asks after your name, and the answer is four words long.",
+      "register": "neutral",
+      "mnemonic": "You are IN the company, not with it."
+    },
+    {
+      "id": "L3-M2-S03",
+      "display": "adrus al-ʿarabiyya fī al-jāmiʿa",
+      "script": "أدرس العربية في الجامعة",
+      "cue": "I study Arabic at the university",
+      "literal": "I-study the-Arabic in the-university",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adrus",
+            "script": "أدرس",
+            "cue": "I study",
+            "tag": "free",
+            "forms": ["adrus", "tadrus", "yadrus"],
+            "note": "\"I study\", on the prefix law you have had since L1-M4: a- for I, ta- for you or she, ya- for he. L1-M4's madrasa is the place of it."
+          },
+          {
+            "display": "al-jāmiʿa",
+            "script": "الجامعة",
+            "cue": "the university",
+            "tag": "delta",
+            "forms": ["al-jāmiʿa", "jāmiʿa", "jāmiʿāt"],
+            "note": "The university — from a root meaning \"to gather\". English says \"at university\" with no article; Arabic keeps it: fī al-jāmiʿa."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "\"At university\" and \"at school\" go bare in English and never in Arabic. The article stays on, as it did for ilā al-madrasa in L1-M4.",
+      "sound": "AD-rus al-JAA-mi-ʿa — the ʿ sits inside the word, just before the final -a, and it must be heard.",
+      "variations": [
+        {
+          "display": "adrus fī al-jāmiʿa",
+          "script": "أدرس في الجامعة",
+          "cue": "I study at the university",
+          "changed": "the subject dropped: only where the studying happens"
+        },
+        {
+          "display": "yadrus al-ʿarabiyya fī al-jāmiʿa",
+          "script": "يدرس العربية في الجامعة",
+          "cue": "He studies Arabic at the university",
+          "changed": "a- → ya-: he, and no pronoun anywhere"
+        }
+      ],
+      "mistake": {
+        "display": "adrus al-ʿarabiyya fī jāmiʿa",
+        "script": "أدرس العربية في جامعة",
+        "why": "Bare jāmiʿa is \"a university\" — some university you have not named. Your own is al-jāmiʿa, with the article English drops."
+      },
+      "usage": "The student's half of the module, and it pairs with S02 as the two answers to \"what do you do?\"",
+      "register": "neutral",
+      "mnemonic": "al-jāmiʿa gathers people; darasa is what they do there."
+    },
+    {
+      "id": "L3-M2-S04",
+      "display": "shahādat al-jāmiʿa muhimma jiddan",
+      "script": "شهادة الجامعة مهمة جدًا",
+      "cue": "A university degree is very important",
+      "literal": "Certificate-of the-university important very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "shahāda",
+            "script": "شهادة",
+            "cue": "certificate, degree",
+            "tag": "delta",
+            "forms": ["shahāda", "ash-shahāda", "shahādat", "shahādāt"],
+            "note": "A certificate or degree. In front of a second noun the tāʾ marbūṭa sounds its t: shahādat al-jāmiʿa. Alone it ends on the plain -a."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "The -a you have written on every feminine noun since L1-M1 is not silent here. First in a chain, it becomes -at, and that t is the whole signal.",
+      "sound": "sha-HAA-dat al-JAA-mi-ʿa — the t is pronounced and runs straight into the article.",
+      "variations": [
+        {
+          "display": "shahādat al-jāmiʿa muhimma",
+          "script": "شهادة الجامعة مهمة",
+          "cue": "A university degree is important",
+          "changed": "jiddan dropped: important, not very important"
+        },
+        {
+          "display": "ash-shahāda muhimma jiddan",
+          "script": "الشهادة مهمة جدًا",
+          "cue": "The certificate is very important",
+          "changed": "the chain undone: the noun alone takes its own article and its -a goes quiet again"
+        }
+      ],
+      "mistake": {
+        "display": "shahāda al-jāmiʿa muhimma jiddan",
+        "script": "شهادة الجامعة مهمة جدًا",
+        "why": "Written the same way, said the wrong way. First in a chain, shahāda is shahādat — leaving the t off is what marks a phrase as memorised rather than built."
+      },
+      "usage": "Say it aloud twice: once as ash-shahāda and once as shahādat al-jāmiʿa. The t is the difference and it is audible.",
+      "register": "neutral",
+      "mnemonic": "A chain pulls the hidden t out of the -a."
+    },
+    {
+      "id": "L3-M2-S05",
+      "display": "al-muwaẓẓaf fī ash-sharika mashghūl dāʾiman",
+      "script": "الموظف في الشركة مشغول دائمًا",
+      "cue": "The employee at the company is always busy",
+      "literal": "The-employee in the-company busy always",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "muwaẓẓaf",
+            "script": "موظف",
+            "cue": "employee",
+            "tag": "free",
+            "forms": [
+              "muwaẓẓaf",
+              "al-muwaẓẓaf",
+              "muwaẓẓafa",
+              "al-muwaẓẓafa",
+              "muwaẓẓafūn",
+              "al-muwaẓẓafūn"
+            ],
+            "note": "An employee, bending the way every person-word does: muwaẓẓafa for a woman, muwaẓẓafūn for a group. The ẓ is the heavy dh, held at the back."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "A preposition is not a chain. al-muwaẓẓaf fī ash-sharika keeps both articles because fī stands between them; take fī away and the first article has to go.",
+      "sound": "al-mu-WAẒ-ẓaf — the ẓ is doubled and heavy, the mouth wide and the tongue low.",
+      "variations": [
+        {
+          "display": "al-muwaẓẓafa fī ash-sharika mashghūla",
+          "script": "الموظفة في الشركة مشغولة",
+          "cue": "The employee at the company is busy (a woman)",
+          "changed": "to a woman: muwaẓẓafa, and mashghūla follows it"
+        },
+        {
+          "display": "al-muwaẓẓafūn fī ash-sharika mashghūlūn",
+          "script": "الموظفون في الشركة مشغولون",
+          "cue": "The employees at the company are busy",
+          "changed": "one becomes many, and because they are people the adjective goes plural too"
+        }
+      ],
+      "mistake": {
+        "display": "al-muwaẓẓaf ash-sharika mashghūl",
+        "script": "الموظف الشركة مشغول",
+        "why": "Two definite nouns side by side are neither a chain nor a sentence. Either drop the first article to build one — muwaẓẓaf ash-sharika, the company's employee — or put fī back between them."
+      },
+      "usage": "The line that tests whether the chain has landed: it looks like one and is not.",
+      "register": "neutral",
+      "mnemonic": "fī between them, articles on both; nothing between them, only one."
+    },
+    {
+      "id": "L3-M2-S06",
+      "display": "rātib al-mudīr kabīr",
+      "script": "راتب المدير كبير",
+      "cue": "The manager's salary is big",
+      "literal": "Salary-of the-manager big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rātib",
+            "script": "راتب",
+            "cue": "salary",
+            "tag": "delta",
+            "forms": ["rātib", "ar-rātib", "rawātib"],
+            "note": "Salary. Its plural is rawātib — a shape nothing in rātib predicts, so it is learned here with the word and not built from it."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English offers two shapes here — \"the manager's salary\" and \"the salary of the manager\" — and Arabic has only the chain. There is no 's and no min.",
+      "sound": "RAA-tib al-mu-DEER — long ā at the front, and the chain runs on without a break.",
+      "variations": [
+        {
+          "display": "rātib al-muwaẓẓaf kabīr",
+          "script": "راتب الموظف كبير",
+          "cue": "The employee's salary is big",
+          "changed": "whose salary: al-mudīr → al-muwaẓẓaf"
+        },
+        {
+          "display": "ar-rātib kabīr jiddan",
+          "script": "الراتب كبير جدًا",
+          "cue": "The salary is very big",
+          "changed": "the chain undone: rātib takes back its own article and owns nothing"
+        }
+      ],
+      "mistake": {
+        "display": "rātib min al-mudīr kabīr",
+        "script": "راتب من المدير كبير",
+        "why": "min is \"from\" and \"than\", never \"of\". Nothing at all goes between the two nouns: rātib al-mudīr."
+      },
+      "usage": "Money talk in three words. It is also the shortest sentence in the module and the cleanest chain.",
+      "register": "neutral",
+      "mnemonic": "No word for \"of\" — just push them together."
+    },
+    {
+      "id": "L3-M2-S07",
+      "display": "ʿindī ijtimāʿ fī as-sāʿa ar-rābiʿa",
+      "script": "عندي اجتماع في الساعة الرابعة",
+      "cue": "I have a meeting at four o'clock",
+      "literal": "At-me meeting at the-hour the-fourth",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ijtimāʿ",
+            "script": "اجتماع",
+            "cue": "meeting",
+            "tag": "free",
+            "forms": ["ijtimāʿ", "al-ijtimāʿ", "ijtimāʿāt"],
+            "note": "A meeting — literally a gathering, from the same root as al-jāmiʿa. The plural ijtimāʿāt is regular."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "Arabic still has no verb \"to have\". ʿindī is L1-M7's \"at me\", and a meeting is something that sits at you rather than something you own.",
+      "sound": "ij-ti-MAAʿ — the ʿ is the last sound of the word and must be heard, or it is a plain ijtimā.",
+      "variations": [
+        {
+          "display": "ʿindī ijtimāʿ maʿa mudīr ash-sharika",
+          "script": "عندي اجتماع مع مدير الشركة",
+          "cue": "I have a meeting with the manager of the company",
+          "changed": "the time becomes the person, and S01's chain comes back inside it"
+        },
+        {
+          "display": "ʿindī ijtimāʿ fī al-jāmiʿa ghadan",
+          "script": "عندي اجتماع في الجامعة غدًا",
+          "cue": "I have a meeting at the university tomorrow",
+          "changed": "when and where: four o'clock becomes tomorrow at the university"
+        }
+      ],
+      "mistake": {
+        "display": "ʿindī ijtimāʿ fī ar-rābiʿa",
+        "script": "عندي اجتماع في الرابعة",
+        "why": "English drops \"o'clock\" and the hour stands alone. Arabic names the hour first — fī as-sāʿa ar-rābiʿa — or ar-rābiʿa is an ordinal describing nothing."
+      },
+      "usage": "The working day's most-repeated sentence, and it reuses L2-M6's clock without changing a thing.",
+      "register": "neutral",
+      "mnemonic": "ijtimāʿ and jāmiʿa both gather people."
+    },
+    {
+      "id": "L3-M2-S08",
+      "display": "al-imtiḥānāt fī al-jāmiʿa ṣaʿba",
+      "script": "الامتحانات في الجامعة صعبة",
+      "cue": "The exams at the university are hard",
+      "literal": "The-exams in the-university hard-(f.sg.)",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "imtiḥān",
+            "script": "امتحان",
+            "cue": "exam",
+            "tag": "free",
+            "forms": ["imtiḥān", "al-imtiḥān", "imtiḥānāt", "al-imtiḥānāt"],
+            "note": "An exam, with the regular plural imtiḥānāt. The ḥ is the breathy h of L1-M2's bi-khayr, made in the throat."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "Exams are not people. A non-human plural takes a feminine singular adjective — ṣaʿba, not a plural one — which is L2-M3's law and does not relax at this length.",
+      "sound": "al-im-ti-ḤAA-naat — the ḥ is a squeezed h, and the plural tail -āt is long.",
+      "variations": [
+        {
+          "display": "al-imtiḥān fī al-jāmiʿa ṣaʿb",
+          "script": "الامتحان في الجامعة صعب",
+          "cue": "The exam at the university is hard",
+          "changed": "many exams become one, and the adjective goes back to plain ṣaʿb"
+        },
+        {
+          "display": "imtiḥān al-ʿarabiyya ṣaʿb",
+          "script": "امتحان العربية صعب",
+          "cue": "The Arabic exam is hard",
+          "changed": "a chain instead of a preposition: the exam OF Arabic"
+        }
+      ],
+      "mistake": {
+        "display": "al-imtiḥānāt fī al-jāmiʿa ṣaʿbūn",
+        "script": "الامتحانات في الجامعة صعبون",
+        "why": "\"Plural noun, plural adjective\" is the English slogan, and it is wrong twice over: ṣaʿbūn is for people, and exams take the feminine singular ṣaʿba."
+      },
+      "usage": "The student's complaint, and the module's one reminder that L2-M3's agreement law is still running.",
+      "register": "neutral",
+      "mnemonic": "Things, however many, are treated as one she."
+    },
+    {
+      "id": "L3-M2-S09",
+      "display": "yajibu an adhhab ilā al-ijtimāʿ",
+      "script": "يجب أن أذهب إلى الاجتماع",
+      "cue": "I have to go to the meeting",
+      "literal": "It-is-necessary that I-go to the-meeting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yajibu",
+            "script": "يجب",
+            "cue": "it is necessary",
+            "tag": "interference",
+            "forms": ["yajibu"],
+            "note": "\"It is necessary\", and there is no one in it. English's \"I must\" has an I; yajibu has no subject at all and never bends — the person lives in the verb after an."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "There is nothing here to translate \"I\" with. The obligation is stated impersonally and the person appears only in adhhab, at the far end of the sentence.",
+      "sound": "YA-ji-bu an AD-hab — yajibu keeps its final -u, one of the few places this course writes one.",
+      "variations": [
+        {
+          "display": "yajibu an adrus al-yawm",
+          "script": "يجب أن أدرس اليوم",
+          "cue": "I have to study today",
+          "changed": "what is necessary: going becomes studying"
+        },
+        {
+          "display": "yajibu an tadhhab ilā al-ijtimāʿ",
+          "script": "يجب أن تذهب إلى الاجتماع",
+          "cue": "You have to go to the meeting",
+          "changed": "who has to go: adhhab → tadhhab, and yajibu does not move at all"
+        }
+      ],
+      "mistake": {
+        "display": "anā yajibu an adhhab ilā al-ijtimāʿ",
+        "script": "أنا يجب أن أذهب إلى الاجتماع",
+        "why": "The English \"I must\" pushes a pronoun to the front. yajibu is impersonal — it is necessary — and has no room for anā: yajibu an adhhab."
+      },
+      "usage": "The polite way to leave anywhere. Naming the necessity rather than yourself is what makes it sound like an obligation and not a whim.",
+      "register": "neutral",
+      "mnemonic": "It is necessary — not I am obliged."
+    },
+    {
+      "id": "L3-M2-S10",
+      "display": "yumkinu an adrus fī al-bayt",
+      "script": "يمكن أن أدرس في البيت",
+      "cue": "I can study at home",
+      "literal": "It-is-possible that I-study in the-house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yumkinu",
+            "script": "يمكن",
+            "cue": "it is possible",
+            "tag": "delta",
+            "forms": ["yumkinu"],
+            "note": "\"It is possible\" — yajibu's twin, impersonal in the same way, and the bare stem behind L2-M1's yumkinuka. The an behind it is not optional."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "yajibu and yumkinu are one frame with two meanings, so anything you can say with must you can say with can — and neither ever takes a subject.",
+      "sound": "YUM-ki-nu an AD-rus — the -nu tail is short, and an leans onto the verb behind it.",
+      "variations": [
+        {
+          "display": "yumkinu an adrus fī al-jāmiʿa",
+          "script": "يمكن أن أدرس في الجامعة",
+          "cue": "I can study at the university",
+          "changed": "where the studying can happen"
+        },
+        {
+          "display": "lā yumkinu an adhhab al-yawm",
+          "script": "لا يمكن أن أذهب اليوم",
+          "cue": "I can't go today",
+          "changed": "negated: lā in front of yumkinu, and the rest of the frame holds"
+        }
+      ],
+      "mistake": {
+        "display": "yumkinu adrus fī al-bayt",
+        "script": "يمكن أدرس في البيت",
+        "why": "English's \"can study\" puts two verbs side by side and Arabic will not. an is the hinge L1-M3 taught after urīd, and yumkinu needs it too: yumkinu an adrus."
+      },
+      "usage": "The whole of this level's subjunctive: yajibu an and yumkinu an. Anything wider is L4's.",
+      "register": "neutral",
+      "mnemonic": "Same frame, two doors: must and can."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M2-C01",
+      "display": "mudīr ash-sharika mashghūl al-yawm",
+      "script": "مدير الشركة مشغول اليوم",
+      "cue": "The manager of the company is busy today"
+    },
+    {
+      "id": "L3-M2-C02",
+      "display": "aʿmal fī sharika kabīra",
+      "script": "أعمل في شركة كبيرة",
+      "cue": "I work at a big company"
+    },
+    {
+      "id": "L3-M2-C03",
+      "display": "adrus al-ʿarabiyya fī al-jāmiʿa",
+      "script": "أدرس العربية في الجامعة",
+      "cue": "I study Arabic at the university"
+    },
+    {
+      "id": "L3-M2-C04",
+      "display": "shahādat al-jāmiʿa muhimma jiddan",
+      "script": "شهادة الجامعة مهمة جدًا",
+      "cue": "A university degree is very important"
+    },
+    {
+      "id": "L3-M2-C05",
+      "display": "al-muwaẓẓaf fī ash-sharika mashghūl dāʾiman",
+      "script": "الموظف في الشركة مشغول دائمًا",
+      "cue": "The employee at the company is always busy"
+    },
+    {
+      "id": "L3-M2-C06",
+      "display": "rātib al-mudīr kabīr",
+      "script": "راتب المدير كبير",
+      "cue": "The manager's salary is big"
+    },
+    {
+      "id": "L3-M2-C07",
+      "display": "ʿindī ijtimāʿ fī as-sāʿa ar-rābiʿa",
+      "script": "عندي اجتماع في الساعة الرابعة",
+      "cue": "I have a meeting at four o'clock"
+    },
+    {
+      "id": "L3-M2-C08",
+      "display": "al-imtiḥānāt fī al-jāmiʿa ṣaʿba",
+      "script": "الامتحانات في الجامعة صعبة",
+      "cue": "The exams at the university are hard"
+    },
+    {
+      "id": "L3-M2-C09",
+      "display": "yajibu an adhhab ilā al-ijtimāʿ",
+      "script": "يجب أن أذهب إلى الاجتماع",
+      "cue": "I have to go to the meeting"
+    },
+    {
+      "id": "L3-M2-C10",
+      "display": "yumkinu an adrus fī al-bayt",
+      "script": "يمكن أن أدرس في البيت",
+      "cue": "I can study at home"
+    },
+    {
+      "id": "L3-M2-C11",
+      "display": "mudīr ash-sharika yaʿmal fī al-jāmiʿa ayḍan",
+      "script": "مدير الشركة يعمل في الجامعة أيضًا",
+      "cue": "The manager of the company works at the university too"
+    },
+    {
+      "id": "L3-M2-C12",
+      "display": "yajibu an adrus li-ʾanna al-imtiḥān ghadan",
+      "script": "يجب أن أدرس لأن الامتحان غدًا",
+      "cue": "I have to study because the exam is tomorrow"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

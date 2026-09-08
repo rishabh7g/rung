@@ -1,0 +1,585 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "baʿda + al-<maṣdar> + , + V-1sg",
+      "awwalan … thumma … baʿda dhālika … akhīran …",
+      "ʿādatan + V-1sg + fī + as-sāʿa + <hour>",
+      "dāʾiman / lā … abadan + V-1sg",
+      "qabla + an-nawm + , + V-1sg"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A preposition in Arabic holds a NOUN, never a verb. Where English says \"after I eat\", Arabic names the eating: baʿda al-futūr. The noun a verb turns into is its maṣdar, its verbal noun, and that move is the grammar of this module."
+    },
+    {
+      "tag": "delta",
+      "text": "A maṣdar is vocabulary, not a formula. nāma gives an-nawm, adhhab gives adh-dhahāb, waṣala gives al-wuṣūl — and nothing in the three letters tells you which shape comes out. Each one is learned beside its verb, the way a broken plural is learned beside its singular."
+    },
+    {
+      "tag": "delta",
+      "text": "baʿda and qabla put the noun after them in the GENITIVE, the case every preposition takes. This course writes no case endings, so nothing changes on the page — it is named here because it is the first time the ladder has needed the word at all."
+    },
+    {
+      "tag": "delta",
+      "text": "Every frequency word ends in a written -an: dāʾiman, ʿādatan, aḥyānan, nādiran, abadan. That tail is the adverbial accusative — the same tail on L1's shukran, kathīran and qalīlan — and it is what turns a noun into an adverb."
+    },
+    {
+      "tag": "interference",
+      "text": "There is no Arabic word for \"never\". abadan is \"ever\", and the negative lā stands in front of the verb: lā adhhab ilā as-sūq abadan. English packs both halves into one word, so the lā is exactly what an English speaker leaves out."
+    },
+    {
+      "tag": "free",
+      "text": "The sequencing spine is awwalan … thumma … baʿda dhālika … akhīran, and it lands where English lands it. thumma, lākin and ayḍan are already yours from L1-M10, so only the three new markers are spent here and the rest of the module goes on length."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "baʿda al-ʿamal, adhhab ilā as-sūq",
+      "script": "بعد العمل، أذهب إلى السوق",
+      "cue": "After work, I go to the market",
+      "literal": "After the-work, I-go to the-market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baʿda",
+            "script": "بعد",
+            "cue": "after",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"After\", and what follows it has to be a NOUN: baʿda al-ʿamal. English can put a whole clause behind \"after\"; baʿda cannot hold a verb at all."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English lets a clause follow \"after\" — after I finish work. Only a noun follows baʿda, so the verb has to become a noun first.",
+      "sound": "BAʿ-da al-ʿA-mal — two ʿayns in a row, the throat-squeeze of L1-M4's ʿamal, and baʿda runs straight into its noun with no pause.",
+      "variations": [
+        {
+          "display": "baʿda al-ʿamal, adhhab ilā al-bayt",
+          "script": "بعد العمل، أذهب إلى البيت",
+          "cue": "After work, I go home",
+          "changed": "the destination only: as-sūq → al-bayt"
+        },
+        {
+          "display": "baʿda al-madrasa, adhhab ilā as-sūq",
+          "script": "بعد المدرسة، أذهب إلى السوق",
+          "cue": "After school, I go to the market",
+          "changed": "the noun baʿda is holding: al-ʿamal → al-madrasa"
+        }
+      ],
+      "mistake": {
+        "display": "baʿda adhhab ilā al-ʿamal, ashrab al-qahwa",
+        "script": "بعد أذهب إلى العمل، أشرب القهوة",
+        "why": "This is English's \"after I go to work\" translated word for word. baʿda cannot hold adhhab; the going has to be named as a noun: baʿda adh-dhahāb ilā al-ʿamal."
+      },
+      "usage": "The sentence that opens half of any account of a day. Swap the noun after baʿda and it carries the rest of the week.",
+      "register": "neutral",
+      "mnemonic": "baʿda wants a thing, never a doing."
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "baʿda al-futūr, ashrab al-qahwa",
+      "script": "بعد الفطور، أشرب القهوة",
+      "cue": "After breakfast, I drink the coffee",
+      "literal": "After the-breakfast, I-drink the-coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-futūr",
+            "script": "الفطور",
+            "cue": "breakfast",
+            "tag": "delta",
+            "forms": ["al-futūr", "futūr"],
+            "note": "Breakfast — the noun Arabic reaches for where English says \"after I eat\": baʿda al-futūr. Its verb is not on this ladder, so learn the noun on its own."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "\"After breakfast\" and \"after I eat breakfast\" are one Arabic sentence, and it is the shorter one: the noun already carries the meal and the eating.",
+      "sound": "BAʿ-da al-fu-TOOR — the ū is long and held, the stress sitting on it.",
+      "variations": [
+        {
+          "display": "baʿda al-futūr, adhhab ilā al-ʿamal",
+          "script": "بعد الفطور، أذهب إلى العمل",
+          "cue": "After breakfast, I go to work",
+          "changed": "the second half: what follows the meal"
+        },
+        {
+          "display": "baʿda al-futūr, ashrab ash-shāy",
+          "script": "بعد الفطور، أشرب الشاي",
+          "cue": "After breakfast, I drink the tea",
+          "changed": "the drink only: al-qahwa → ash-shāy"
+        }
+      ],
+      "mistake": {
+        "display": "baʿda ākul, ashrab al-qahwa",
+        "script": "بعد آكل، أشرب القهوة",
+        "why": "\"After I eat\" is the English shape and baʿda will not take ākul. Arabic names the meal instead: baʿda al-futūr."
+      },
+      "usage": "The most ordinary line in the module, and the one to say aloud until the noun comes before the verb does.",
+      "register": "neutral",
+      "mnemonic": "al-futūr is the meal that breaks the fast — a thing, so baʿda can hold it."
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "qabla an-nawm, ashrab al-ḥalīb",
+      "script": "قبل النوم، أشرب الحليب",
+      "cue": "Before sleeping, I drink the milk",
+      "literal": "Before the-sleep, I-drink the-milk",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qabla",
+            "script": "قبل",
+            "cue": "before",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"Before\", and baʿda's mirror in every way, including the one that matters: it holds a noun. English's \"before sleeping\" has a verb inside it; qabla an-nawm has none."
+          },
+          {
+            "display": "an-nawm",
+            "script": "النوم",
+            "cue": "sleep, sleeping",
+            "tag": "delta",
+            "forms": ["an-nawm", "nawm"],
+            "note": "The sleep — the maṣdar of L1-M9's anām. The n of nawm is a sun letter, so al- becomes an-, exactly as in an-niṣf."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "There is no -ing form in Arabic to put behind qabla. \"Before sleeping\" is \"before the sleep\", and the article stays on.",
+      "sound": "QAB-la an-NAWM — qāf from the back of the throat, and the nawm ends on a w that glides rather than a hard m start.",
+      "variations": [
+        {
+          "display": "qabla an-nawm, atakallam maʿa ṣadīqī",
+          "script": "قبل النوم، أتكلم مع صديقي",
+          "cue": "Before sleeping, I talk with my friend",
+          "changed": "what fills the evening: drinking becomes talking"
+        },
+        {
+          "display": "qabla al-ʿamal, ashrab al-ḥalīb",
+          "script": "قبل العمل، أشرب الحليب",
+          "cue": "Before work, I drink the milk",
+          "changed": "the noun after qabla: an-nawm → al-ʿamal"
+        }
+      ],
+      "mistake": {
+        "display": "qabla anām, ashrab al-ḥalīb",
+        "script": "قبل أنام، أشرب الحليب",
+        "why": "anām is a verb and qabla holds only nouns. The noun of anām is an-nawm: qabla an-nawm, ashrab al-ḥalīb."
+      },
+      "usage": "The last line of a day, and the frame every bedtime habit hangs on.",
+      "register": "neutral",
+      "mnemonic": "anām is what I do; an-nawm is the thing I do it into."
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "ʿādatan adhhab ilā al-ʿamal fī as-sāʿa ath-thāniya",
+      "script": "عادةً أذهب إلى العمل في الساعة الثانية",
+      "cue": "I usually go to work at two o'clock",
+      "literal": "Usually I-go to the-work at the-hour the-second",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿādatan",
+            "script": "عادةً",
+            "cue": "usually",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Usually\", wearing the written -an tail of L1-M4's dāʾiman and aḥyānan. It stands at the front and the verb behind it does not move."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English hides the frequency word inside the verb phrase — I usually go. Arabic puts it in front of the whole sentence and leaves the verb exactly as it was.",
+      "sound": "ʿAA-da-tan — the tāʾ marbūṭa of ʿāda is sounded here as a t, because the -an tail is sitting on it.",
+      "variations": [
+        {
+          "display": "dāʾiman adhhab ilā al-ʿamal fī as-sāʿa ath-thāniya",
+          "script": "دائمًا أذهب إلى العمل في الساعة الثانية",
+          "cue": "I always go to work at two o'clock",
+          "changed": "ʿādatan → dāʾiman: usually becomes always, and L1-M4's word does the job"
+        },
+        {
+          "display": "ʿādatan adhhab ilā al-madrasa fī as-sāʿa ath-thāniya",
+          "script": "عادةً أذهب إلى المدرسة في الساعة الثانية",
+          "cue": "I usually go to school at two o'clock",
+          "changed": "the destination only: al-ʿamal → al-madrasa"
+        }
+      ],
+      "mistake": {
+        "display": "ʿāda adhhab ilā al-ʿamal",
+        "script": "عادة أذهب إلى العمل",
+        "why": "The -an tail is not decoration. Without it, ʿāda is the noun \"a custom\" and the sentence has two nouns and no adverb. The adverb is ʿādatan."
+      },
+      "usage": "The answer to \"when do you go to work?\" when the answer is a whole week rather than one morning.",
+      "register": "neutral",
+      "mnemonic": "-an is the adverb tail: shukran, kathīran, ʿādatan."
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "nādiran ākul fī al-maṭʿam",
+      "script": "نادرًا آكل في المطعم",
+      "cue": "I rarely eat at the restaurant",
+      "literal": "Rarely I-eat in the-restaurant",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nādiran",
+            "script": "نادرًا",
+            "cue": "rarely",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Rarely\", with the same -an tail. The rarity is inside the word, so the verb behind it stays positive: nādiran ākul, not lā ākul."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English's \"rarely\" quietly negates its sentence — you tag it with \"do you?\", not \"don't you?\". nādiran does no such thing: nothing else in the sentence changes.",
+      "sound": "NAA-di-ran — long ā at the front, and the -ran tail short and flat.",
+      "variations": [
+        {
+          "display": "aḥyānan ākul fī al-maṭʿam",
+          "script": "أحيانًا آكل في المطعم",
+          "cue": "I sometimes eat at the restaurant",
+          "changed": "nādiran → aḥyānan: rarely becomes sometimes, and L1-M4's word slots straight in"
+        },
+        {
+          "display": "nādiran ashrab al-qahwa fī al-masāʾ",
+          "script": "نادرًا أشرب القهوة في المساء",
+          "cue": "I rarely drink coffee in the evening",
+          "changed": "the habit under the same nādiran: eating out becomes evening coffee"
+        }
+      ],
+      "mistake": {
+        "display": "lā ākul nādiran fī al-maṭʿam",
+        "script": "لا آكل نادرًا في المطعم",
+        "why": "\"I don't rarely eat\" is nonsense in English too. nādiran carries the whole meaning by itself; abadan is the only frequency word in this module that wants lā."
+      },
+      "usage": "The honest middle of a habit — more than never, less than sometimes.",
+      "register": "neutral",
+      "mnemonic": "nādir is the rare one, and it stands on its own."
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "lā adhhab ilā as-sūq abadan",
+      "script": "لا أذهب إلى السوق أبدًا",
+      "cue": "I never go to the market",
+      "literal": "Not I-go to the-market ever",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "abadan",
+            "script": "أبدًا",
+            "cue": "ever (with lā: never)",
+            "tag": "interference",
+            "forms": [],
+            "note": "abadan is \"ever\", not \"never\". It needs lā in front of the verb — lā adhhab … abadan — which is the pair English writes as a single word."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "\"Never\" is one English word and two Arabic ones. Drop the lā because English has nothing to drop, and abadan is left with nothing to negate.",
+      "sound": "laa AD-hab … A-ba-dan — the lā is short and leans on the verb; abadan carries the sentence's last stress.",
+      "variations": [
+        {
+          "display": "lā ashrab al-qahwa abadan",
+          "script": "لا أشرب القهوة أبدًا",
+          "cue": "I never drink coffee",
+          "changed": "the verb and its object, inside the same lā … abadan frame"
+        },
+        {
+          "display": "lā ākul fī al-maṭʿam abadan",
+          "script": "لا آكل في المطعم أبدًا",
+          "cue": "I never eat at the restaurant",
+          "changed": "the habit denied: going becomes eating out"
+        }
+      ],
+      "mistake": {
+        "display": "adhhab ilā as-sūq abadan",
+        "script": "أذهب إلى السوق أبدًا",
+        "why": "This is \"never\" packed into one word the way English packs it. Without lā it reads as \"I go to the market ever\", which is not a sentence: lā adhhab ilā as-sūq abadan."
+      },
+      "usage": "The strongest thing you can say about a habit, and the lā in front is not optional.",
+      "register": "neutral",
+      "mnemonic": "abadan is \"ever\"; the lā is the n- of \"never\"."
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "awwalan ashrab al-qahwa, thumma adhhab ilā al-ʿamal",
+      "script": "أولًا أشرب القهوة، ثم أذهب إلى العمل",
+      "cue": "First I drink the coffee, then I go to work",
+      "literal": "Firstly I-drink the-coffee, then I-go to the-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "awwalan",
+            "script": "أولًا",
+            "cue": "first, firstly",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"First\" as a step, not as a description: awwal (\"first\") with the -an adverb tail. thumma behind it is L1-M10's and needs nothing new."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "English's \"first\" is both an adjective (the first bus) and an adverb (first, I drink coffee). The -an tail is what fixes awwalan as the second of the two.",
+      "sound": "AW-wa-lan — a doubled w held for a beat, then the flat -an.",
+      "variations": [
+        {
+          "display": "awwalan ākul al-fākiha, thumma adhhab ilā al-madrasa",
+          "script": "أولًا آكل الفاكهة، ثم أذهب إلى المدرسة",
+          "cue": "First I eat the fruit, then I go to school",
+          "changed": "both steps replaced, and the spine holds them unchanged"
+        },
+        {
+          "display": "awwalan ashrab al-qahwa, thumma ākul al-khubz",
+          "script": "أولًا أشرب القهوة، ثم آكل الخبز",
+          "cue": "First I drink the coffee, then I eat the bread",
+          "changed": "the second step only: going becomes eating"
+        }
+      ],
+      "mistake": {
+        "display": "awwal ashrab al-qahwa, thumma adhhab ilā al-ʿamal",
+        "script": "أول أشرب القهوة، ثم أذهب إلى العمل",
+        "why": "Without the tail, awwal is an adjective hunting for a noun to describe, and there is none. The sequencing word is awwalan."
+      },
+      "usage": "The opening of any account of a day. thumma, lākin and ayḍan came with L1-M10, so this line costs one word.",
+      "register": "neutral",
+      "mnemonic": "awwal + -an = first-ly."
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "baʿda dhālika ākul al-fākiha maʿa ṣadīqī",
+      "script": "بعد ذلك آكل الفاكهة مع صديقي",
+      "cue": "After that I eat the fruit with my friend",
+      "literal": "After that I-eat the-fruit with my-friend",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baʿda dhālika",
+            "script": "بعد ذلك",
+            "cue": "after that",
+            "tag": "free",
+            "forms": [],
+            "note": "\"After that\", learned as one piece and landing where English lands it. dhālika is L1-M9's \"that\", and it is the noun baʿda is holding here."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "This is the one place in the module where nothing after baʿda carries al-. dhālika is definite by itself, so the article would be a second one.",
+      "sound": "BAʿ-da DHAA-li-ka — dh as in \"this\", and the two words run together as one piece.",
+      "variations": [
+        {
+          "display": "baʿda dhālika adhhab ilā al-bayt",
+          "script": "بعد ذلك أذهب إلى البيت",
+          "cue": "After that I go home",
+          "changed": "what comes next: eating becomes going home"
+        },
+        {
+          "display": "baʿda dhālika ashrab ash-shāy maʿa ṣadīqī",
+          "script": "بعد ذلك أشرب الشاي مع صديقي",
+          "cue": "After that I drink the tea with my friend",
+          "changed": "the food becomes a drink, and the company stays"
+        }
+      ],
+      "mistake": {
+        "display": "baʿda adh-dhālika ākul al-fākiha",
+        "script": "بعد الذلك آكل الفاكهة",
+        "why": "dhālika is already definite and never takes al-. The phrase is fixed and takes nothing: baʿda dhālika."
+      },
+      "usage": "The joint in the middle of an account: awwalan … thumma … baʿda dhālika … akhīran.",
+      "register": "neutral",
+      "mnemonic": "dhālika is \"that\" — the thing you have already said."
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "baʿda al-wuṣūl ilā al-bayt, akhīran anām",
+      "script": "بعد الوصول إلى البيت، أخيرًا أنام",
+      "cue": "After arriving home, I finally sleep",
+      "literal": "After the-arrival to the-house, finally I-sleep",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-wuṣūl",
+            "script": "الوصول",
+            "cue": "arrival, arriving",
+            "tag": "delta",
+            "forms": ["al-wuṣūl", "wuṣūl"],
+            "note": "The arriving — the maṣdar of L2-M10's waṣala. Nothing in waṣala predicts wuṣūl, so the noun is learned beside the verb rather than built from it."
+          },
+          {
+            "display": "akhīran",
+            "script": "أخيرًا",
+            "cue": "finally, at last",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"Finally\", closing a sequence: akhīr (\"last\") with the -an tail. It is the last step of awwalan … thumma … baʿda dhālika … akhīran."
+          }
+        ],
+        "rules": [0, 1, 3, 5]
+      },
+      "trap": "\"After arriving\" is an -ing form, and Arabic has none to offer. baʿda al-wuṣūl is \"after the arrival\", a noun with its article on.",
+      "sound": "BAʿ-da al-wu-ṢOOL — ṣ is the heavy s, and the whole word rounds towards the back of the mouth.",
+      "variations": [
+        {
+          "display": "baʿda al-wuṣūl ilā al-bayt, ākul maʿa ṣadīqī",
+          "script": "بعد الوصول إلى البيت، آكل مع صديقي",
+          "cue": "After arriving home, I eat with my friend",
+          "changed": "what the arrival leads to: sleeping becomes eating"
+        },
+        {
+          "display": "baʿda al-wuṣūl ilā al-madrasa, akhīran ashrab al-māʾ",
+          "script": "بعد الوصول إلى المدرسة، أخيرًا أشرب الماء",
+          "cue": "After arriving at school, I finally drink the water",
+          "changed": "the place arrived at: al-bayt → al-madrasa"
+        }
+      ],
+      "mistake": {
+        "display": "baʿda waṣaltu ilā al-bayt, anām",
+        "script": "بعد وصلت إلى البيت، أنام",
+        "why": "waṣaltu is a verb, and baʿda cannot hold one however natural \"after I arrived\" feels. The maṣdar is what goes there: baʿda al-wuṣūl ilā al-bayt."
+      },
+      "usage": "The end of the day's account, and the one place akhīran belongs.",
+      "register": "neutral",
+      "mnemonic": "waṣala arrives; al-wuṣūl is the arrival."
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "qabla adh-dhahāb ilā al-madrasa, ākul al-khubz",
+      "script": "قبل الذهاب إلى المدرسة، آكل الخبز",
+      "cue": "Before going to school, I eat the bread",
+      "literal": "Before the-going to the-school, I-eat the-bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adh-dhahāb",
+            "script": "الذهاب",
+            "cue": "going, the trip",
+            "tag": "delta",
+            "forms": ["adh-dhahāb", "dhahāb"],
+            "note": "The going — the maṣdar of L1-M4's adhhab, and it keeps the verb's ilā: adh-dhahāb ilā al-madrasa. dh is a sun letter, so al- becomes adh-."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "The maṣdar keeps the preposition its verb had. adhhab ilā al-madrasa becomes adh-dhahāb ilā al-madrasa — the noun still goes somewhere.",
+      "sound": "QAB-la adh-dha-HAAB — the l of al- has vanished into the dh, which is doubled and held.",
+      "variations": [
+        {
+          "display": "qabla adh-dhahāb ilā al-ʿamal, ashrab al-qahwa",
+          "script": "قبل الذهاب إلى العمل، أشرب القهوة",
+          "cue": "Before going to work, I drink the coffee",
+          "changed": "where the going leads: al-madrasa → al-ʿamal"
+        },
+        {
+          "display": "qabla adh-dhahāb ilā al-madrasa, ashrab al-ḥalīb",
+          "script": "قبل الذهاب إلى المدرسة، أشرب الحليب",
+          "cue": "Before going to school, I drink the milk",
+          "changed": "the meal becomes a drink"
+        }
+      ],
+      "mistake": {
+        "display": "qabla adhhab ilā al-madrasa, ākul al-khubz",
+        "script": "قبل أذهب إلى المدرسة، آكل الخبز",
+        "why": "adhhab is a verb and qabla holds only nouns. The noun of adhhab is adh-dhahāb: qabla adh-dhahāb ilā al-madrasa."
+      },
+      "usage": "Arabic has a second route to \"before I go\" — an with a verb behind it — and this course does not use it: the maṣdar is what a speaker reaches for first.",
+      "register": "neutral",
+      "mnemonic": "adhhab is the going I do; adh-dhahāb is the going itself."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "baʿda al-ʿamal, adhhab ilā as-sūq",
+      "script": "بعد العمل، أذهب إلى السوق",
+      "cue": "After work, I go to the market"
+    },
+    {
+      "id": "L3-M1-C02",
+      "display": "baʿda al-futūr, ashrab al-qahwa",
+      "script": "بعد الفطور، أشرب القهوة",
+      "cue": "After breakfast, I drink the coffee"
+    },
+    {
+      "id": "L3-M1-C03",
+      "display": "qabla an-nawm, ashrab al-ḥalīb",
+      "script": "قبل النوم، أشرب الحليب",
+      "cue": "Before sleeping, I drink the milk"
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "ʿādatan adhhab ilā al-ʿamal fī as-sāʿa ath-thāniya",
+      "script": "عادةً أذهب إلى العمل في الساعة الثانية",
+      "cue": "I usually go to work at two o'clock"
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "nādiran ākul fī al-maṭʿam",
+      "script": "نادرًا آكل في المطعم",
+      "cue": "I rarely eat at the restaurant"
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "lā adhhab ilā as-sūq abadan",
+      "script": "لا أذهب إلى السوق أبدًا",
+      "cue": "I never go to the market"
+    },
+    {
+      "id": "L3-M1-C07",
+      "display": "awwalan ashrab al-qahwa, thumma adhhab ilā al-ʿamal",
+      "script": "أولًا أشرب القهوة، ثم أذهب إلى العمل",
+      "cue": "First I drink the coffee, then I go to work"
+    },
+    {
+      "id": "L3-M1-C08",
+      "display": "baʿda dhālika ākul al-fākiha maʿa ṣadīqī",
+      "script": "بعد ذلك آكل الفاكهة مع صديقي",
+      "cue": "After that I eat the fruit with my friend"
+    },
+    {
+      "id": "L3-M1-C09",
+      "display": "baʿda al-wuṣūl ilā al-bayt, akhīran anām",
+      "script": "بعد الوصول إلى البيت، أخيرًا أنام",
+      "cue": "After arriving home, I finally sleep"
+    },
+    {
+      "id": "L3-M1-C10",
+      "display": "qabla adh-dhahāb ilā al-madrasa, ākul al-khubz",
+      "script": "قبل الذهاب إلى المدرسة، آكل الخبز",
+      "cue": "Before going to school, I eat the bread"
+    },
+    {
+      "id": "L3-M1-C11",
+      "display": "baʿda adh-dhahāb ilā as-sūq, ashrab al-qahwa maʿa ṣadīqī",
+      "script": "بعد الذهاب إلى السوق، أشرب القهوة مع صديقي",
+      "cue": "After going to the market, I drink coffee with my friend"
+    },
+    {
+      "id": "L3-M1-C12",
+      "display": "ʿādatan anām baʿda al-ʿamal, lākin al-yawm lā anām",
+      "script": "عادةً أنام بعد العمل، لكن اليوم لا أنام",
+      "cue": "I usually sleep after work, but today I'm not sleeping"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

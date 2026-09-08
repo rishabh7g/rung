@@ -1,0 +1,653 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Di solito + mi + V + alle + <hour>",
+      "Prima … poi … dopo … infine …",
+      "Non + V + mai",
+      "Mi alzo + , + mi lavo + e + mi vesto",
+      "Ogni giorno + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A REFLEXIVE VERB IS MARKED TWICE IN ITALIAN AND ONCE IN ENGLISH. The pronoun comes BEFORE the verb and changes with the person, and the ending changes with it: mi alzo, ti alzi, si alza, ci alziamo, vi alzate, si alzano. English says \"I get up\" with nothing marked at all, so the Italian pronoun looks like a spare word and gets dropped. It is not optional and it is not \"myself\": it is part of the verb."
+    },
+    {
+      "tag": "delta",
+      "text": "The reflexive pronouns are words the course already owns doing a second job. mi and ti are L2-M5's, si is L2-M4's, ci is L2-M6's ci vediamo. Say this out loud rather than meeting mi twice by accident: here mi points the verb back at its own subject, and in L3-M5 the same mi will be an object. One family of little words, two jobs — not two families."
+    },
+    {
+      "tag": "interference",
+      "text": "MAI NEEDS NON. Italian requires the second negative where English forbids it: non mangio mai, never *mangio mai. The course showed this shape already in non c'era nessuno; here it is stated as the rule. non goes in front of the verb, mai after it, and the sentence is only negative when both are present."
+    },
+    {
+      "tag": "free",
+      "text": "Frequency words have a home. di solito, qualche volta and ogni + a day FRAME the sentence and go at the front; spesso, sempre, raramente and mai colour the verb and sit right after it. Nothing agrees and nothing changes shape, so the whole cost of this set is where to put it."
+    },
+    {
+      "tag": "free",
+      "text": "The sequencing spine is nearly free: prima and dopo are L2-M4's direction words doing a time job, poi is L1-M10's, and infine is the only new one. None of them is a verb and none of them needs a preposition, so a day can be laid out end to end without another piece of grammar."
+    },
+    {
+      "tag": "delta",
+      "text": "Speech elides where this course does not. An Italian says m'alzo and writes mi alzo, and rung writes ONE spelling per display, always the full one, always with a straight apostrophe. Where an elided form is genuinely fixed — l'autobus, dell'acqua — it is one word with the apostrophe inside it, and it answers for nothing else."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "Di solito mi sveglio alle sette",
+      "cue": "I usually wake up at seven",
+      "literal": "Of usual me I-wake at-the seven",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "di solito",
+            "cue": "usually",
+            "tag": "free",
+            "forms": [],
+            "note": "One key of two words — solito alone is not taught here. It frames the whole sentence, so it goes at the front where English tucks \"usually\" beside the verb."
+          },
+          {
+            "display": "mi sveglio",
+            "cue": "I wake up",
+            "tag": "delta",
+            "forms": [
+              "ti svegli",
+              "si sveglia",
+              "ci svegliamo",
+              "vi svegliate",
+              "si svegliano"
+            ],
+            "note": "Waking is reflexive in Italian. Both halves move together: the pronoun changes with the person and so does the ending — mi sveglio, ti svegli, si sveglia."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "mi is not \"myself\" here. Nobody wakes themselves up on purpose — Italian simply marks this verb with a pronoun and English leaves it bare, which is why the pronoun is the piece a learner drops.",
+      "sound": "dee SO-lee-to mee SVE-lyo. The gli of sveglio is the soft ly of famiglia, not a hard g.",
+      "variations": [
+        {
+          "display": "Di solito mi sveglio presto",
+          "cue": "I usually wake up early",
+          "changed": "the clock time replaced by presto"
+        },
+        {
+          "display": "Ti svegli alle sette?",
+          "cue": "Do you wake up at seven?",
+          "changed": "the tu cell, asking"
+        },
+        {
+          "display": "Mia sorella si sveglia alle sette",
+          "cue": "My sister wakes up at seven",
+          "changed": "the third-person cell, about someone else"
+        }
+      ],
+      "mistake": {
+        "display": "Di solito sveglio alle sette",
+        "why": "The pronoun is part of the verb: Di solito mi sveglio alle sette."
+      },
+      "usage": "Saying what your morning normally is — the first thing anyone asks about a routine.",
+      "register": "neutral",
+      "mnemonic": "The pronoun comes first and moves with the person."
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "Mi alzo, mi lavo e mi vesto",
+      "cue": "I get up, I wash and I get dressed",
+      "literal": "Me I-raise, me I-wash and me I-dress",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi lavo",
+            "cue": "I wash",
+            "tag": "delta",
+            "forms": [
+              "ti lavi",
+              "si lava",
+              "ci laviamo",
+              "vi lavate",
+              "si lavano"
+            ],
+            "note": "One reflexive verb with its whole paradigm: only the pronoun and the ending move. Without the pronoun, lavare is washing something else — a plate, a car."
+          },
+          {
+            "display": "mi vesto",
+            "cue": "I get dressed",
+            "tag": "delta",
+            "forms": [
+              "ti vesti",
+              "si veste",
+              "ci vestiamo",
+              "vi vestite",
+              "si vestono"
+            ],
+            "note": "Two English words, one Italian verb. vestirsi is an -ire verb, so the loro cell is si vestono — the same set of endings as L1-M6's parto and partire."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "L1-M4's mi alzo is the same shape as the two after it, and the pronoun is repeated on every verb. Italian cannot say it once and let it carry across the list, the way English says \"I get up, wash and dress\".",
+      "sound": "mee AL-tso, mee LA-vo, e mee VES-to. The z of alzo is a hard ts.",
+      "variations": [
+        {
+          "display": "Mi lavo e mi vesto",
+          "cue": "I wash and get dressed",
+          "changed": "two steps instead of three"
+        },
+        {
+          "display": "Si alza, si lava e si veste",
+          "cue": "He gets up, washes and gets dressed",
+          "changed": "all three verbs in the third-person cell"
+        },
+        {
+          "display": "Ci laviamo e ci vestiamo",
+          "cue": "We wash and get dressed",
+          "changed": "the noi cell, where the pronoun is ci"
+        }
+      ],
+      "mistake": {
+        "display": "Mi alzo, lavo e vesto",
+        "why": "Each verb carries its own pronoun: Mi alzo, mi lavo e mi vesto."
+      },
+      "usage": "The three-step opening of almost every account of a day.",
+      "register": "neutral",
+      "mnemonic": "One verb, one pronoun. Never shared."
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "Poi faccio colazione e prendo l'autobus",
+      "cue": "Then I have breakfast and take the bus",
+      "literal": "Then I-make breakfast and I-take the-bus",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "colazione",
+            "cue": "breakfast",
+            "tag": "delta",
+            "forms": [
+              "colazioni"
+            ],
+            "note": "Italian MAKES breakfast rather than having it: fare colazione, with L1-M6's faccio doing one more of its jobs. It takes no article in the phrase."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Nothing here is reflexive, and that is worth noticing. Only a verb pointed back at its own subject takes the pronoun; faccio colazione and prendo l'autobus are plain verbs and adding mi would be wrong.",
+      "sound": "ko-la-TSYO-ne. The z is a ts and the stress lands on the o.",
+      "variations": [
+        {
+          "display": "Poi faccio colazione a casa",
+          "cue": "Then I have breakfast at home",
+          "changed": "where, instead of what comes next"
+        },
+        {
+          "display": "Prima faccio colazione, poi esco",
+          "cue": "First I have breakfast, then I go out",
+          "changed": "the two steps ordered explicitly"
+        },
+        {
+          "display": "Non faccio mai colazione",
+          "cue": "I never have breakfast",
+          "changed": "the negative frequency instead of the sequence"
+        }
+      ],
+      "mistake": {
+        "display": "Poi ho colazione e prendo l'autobus",
+        "why": "Breakfast is made, not had: Poi faccio colazione e prendo l'autobus."
+      },
+      "usage": "The middle of a morning, said in one breath.",
+      "register": "neutral",
+      "mnemonic": "Italian makes breakfast."
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "Non mangio mai a casa",
+      "cue": "I never eat at home",
+      "literal": "Not I-eat never at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mai",
+            "cue": "never · ever",
+            "tag": "interference",
+            "forms": [],
+            "note": "\"Never\" only works with non in front of the verb: non mangio mai. On its own mai means \"ever\", which is why the sentence is not negative without the non."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English forbids the second negative and Italian requires it. non … mai is one word split in two around the verb, and leaving out the non is the commonest mistake in this module.",
+      "sound": "mah-ee, one gliding syllable. non runs straight into the verb with no pause.",
+      "variations": [
+        {
+          "display": "Non vado mai al bar",
+          "cue": "I never go to the bar",
+          "changed": "a different verb and place"
+        },
+        {
+          "display": "Non bevo mai vino",
+          "cue": "I never drink wine",
+          "changed": "a different thing never done"
+        },
+        {
+          "display": "Mia sorella non mangia mai a casa",
+          "cue": "My sister never eats at home",
+          "changed": "about someone else, and the non still comes first"
+        }
+      ],
+      "mistake": {
+        "display": "Mangio mai a casa",
+        "why": "The non is compulsory: Non mangio mai a casa."
+      },
+      "usage": "Saying what you never do — and the non is what makes it true.",
+      "register": "neutral",
+      "mnemonic": "non before the verb, mai after it."
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "Vado spesso al bar di mattina",
+      "cue": "I often go to the bar in the morning",
+      "literal": "I-go often to-the bar of morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spesso",
+            "cue": "often",
+            "tag": "free",
+            "forms": [],
+            "note": "It sits right after the verb — vado spesso — because it colours the verb rather than framing the sentence. Nothing about it ever changes shape."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "spesso goes after the verb. Vado spesso is the neutral order; Spesso vado is grammatical but front-loads the sentence and makes a listener wait for a contrast that has to arrive.",
+      "sound": "SPES-so. Hold the double s — a single one would be a different word entirely.",
+      "variations": [
+        {
+          "display": "Vado spesso al cinema",
+          "cue": "I often go to the cinema",
+          "changed": "a different place"
+        },
+        {
+          "display": "Vado spesso al bar di sera",
+          "cue": "I often go to the bar in the evening",
+          "changed": "the evening instead of the morning"
+        },
+        {
+          "display": "Mio fratello va spesso al bar",
+          "cue": "My brother often goes to the bar",
+          "changed": "about someone else"
+        }
+      ],
+      "mistake": {
+        "display": "Vado spesso al bar in la mattina",
+        "why": "The time of day is di: Vado spesso al bar di mattina."
+      },
+      "usage": "Reporting a habit with a place in it, the way a neighbour would.",
+      "register": "neutral",
+      "mnemonic": "Verb first, spesso second."
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "Qualche volta mangio fuori con mia sorella",
+      "cue": "Sometimes I eat out with my sister",
+      "literal": "Some time I-eat outside with my sister",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qualche volta",
+            "cue": "sometimes",
+            "tag": "free",
+            "forms": [],
+            "note": "One key, and volta alone is not taught here. qualche is always followed by a SINGULAR noun even when the meaning is plural — never *qualche volte."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "qualche volta goes at the front like di solito, because it frames the whole sentence. spesso and mai never can: they belong to the verb and stay beside it.",
+      "sound": "KWAL-ke VOL-ta. The che is a hard k, as it always is before e and i.",
+      "variations": [
+        {
+          "display": "Qualche volta mangio fuori",
+          "cue": "Sometimes I eat out",
+          "changed": "without the company"
+        },
+        {
+          "display": "Qualche volta vado al mare",
+          "cue": "Sometimes I go to the seaside",
+          "changed": "a different outing"
+        },
+        {
+          "display": "Mangio fuori con mio fratello",
+          "cue": "I eat out with my brother",
+          "changed": "no frequency word at all, and a different person"
+        }
+      ],
+      "mistake": {
+        "display": "Qualche volte mangio fuori",
+        "why": "qualche takes a singular noun: Qualche volta mangio fuori."
+      },
+      "usage": "The middle frequency — more than never, less than often.",
+      "register": "neutral",
+      "mnemonic": "qualche is always singular."
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "Raramente torno a casa tardi",
+      "cue": "I rarely get home late",
+      "literal": "Rarely I-return at home late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "raramente",
+            "cue": "rarely",
+            "tag": "free",
+            "forms": [],
+            "note": "The -mente ending is English's -ly, built off the adjective raro. It is the one frequency word here a learner can construct rather than memorise."
+          },
+          {
+            "display": "torno",
+            "cue": "I go back · I get back",
+            "tag": "free",
+            "forms": [
+              "torni",
+              "torna",
+              "torniamo",
+              "tornano"
+            ],
+            "note": "L1-M10 taught tornare and its participle; this is the plain present. Going home takes a — torno a casa, never in casa."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "raramente can open the sentence like this or sit after the verb — torno raramente a casa tardi. Both are correct Italian; the front position is the emphatic one, and it is the safer place for a learner.",
+      "sound": "ra-ra-MEN-te. Every -mente word puts its stress on the men.",
+      "variations": [
+        {
+          "display": "Torno a casa tardi",
+          "cue": "I get home late",
+          "changed": "without the frequency word"
+        },
+        {
+          "display": "Raramente esco di sera",
+          "cue": "I rarely go out in the evening",
+          "changed": "a different rare habit"
+        },
+        {
+          "display": "Torno a casa presto",
+          "cue": "I get home early",
+          "changed": "early instead of late"
+        }
+      ],
+      "mistake": {
+        "display": "Raramente torno in casa tardi",
+        "why": "Home takes a: Raramente torno a casa tardi."
+      },
+      "usage": "Answering how often, when the honest answer is hardly ever.",
+      "register": "neutral",
+      "mnemonic": "-mente is -ly."
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "Ogni lunedì mi riposo a casa",
+      "cue": "Every Monday I rest at home",
+      "literal": "Every Monday me I-rest at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ogni",
+            "cue": "every",
+            "tag": "delta",
+            "forms": [],
+            "note": "Always with a SINGULAR noun and never with an article: ogni lunedì, not *ogni i lunedì. L1-M4's ogni giorno was this word waiting to be opened."
+          },
+          {
+            "display": "mi riposo",
+            "cue": "I rest",
+            "tag": "delta",
+            "forms": [
+              "ti riposi",
+              "si riposa",
+              "ci riposiamo",
+              "vi riposate",
+              "si riposano"
+            ],
+            "note": "Resting is reflexive too. Without the pronoun, riposare is what a field or a dough does; the pronoun is what makes it a person taking a rest."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "L1-M4's il lunedì states Mondays as a rule; ogni lunedì counts them one by one. Both are habitual and both are common — the difference is that ogni will not take an article and il lunedì is nothing but one.",
+      "sound": "O-nyee loo-ne-DEE. The gn is the ny of onion, and lunedì is stressed on its last syllable.",
+      "variations": [
+        {
+          "display": "Ogni domenica mi riposo",
+          "cue": "Every Sunday I rest",
+          "changed": "a different day"
+        },
+        {
+          "display": "Il lunedì mi riposo a casa",
+          "cue": "On Mondays I rest at home",
+          "changed": "the article form, saying the same thing"
+        },
+        {
+          "display": "Mio fratello si riposa a casa",
+          "cue": "My brother rests at home",
+          "changed": "the third-person cell"
+        }
+      ],
+      "mistake": {
+        "display": "Ogni i lunedì mi riposo a casa",
+        "why": "ogni never takes an article: Ogni lunedì mi riposo a casa."
+      },
+      "usage": "Naming the one day of the week that is different from the rest.",
+      "register": "neutral",
+      "mnemonic": "ogni: singular, no article."
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "Ci alziamo presto e facciamo colazione",
+      "cue": "We get up early and have breakfast",
+      "literal": "Us we-raise early and we-make breakfast",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ci alziamo",
+            "cue": "we get up",
+            "tag": "delta",
+            "forms": [
+              "vi alzate"
+            ],
+            "note": "The noi cell of L1-M4's mi alzo. Its pronoun is ci — the same little word as L2-M6's ci vediamo, standing in front of a verb again."
+          },
+          {
+            "display": "si alzano",
+            "cue": "they get up",
+            "tag": "free",
+            "forms": [],
+            "note": "The loro cell. si does double duty here: si alza is one person and si alzano is several, and only the verb ending tells them apart."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Every reflexive pronoun in this module is a word the course already owns — mi and ti from L2-M5, si from L2-M4, ci from L2-M6. Nothing new is being learned here except where they stand.",
+      "sound": "chee al-TSYA-mo. The ci is a soft ch, and alziamo keeps the hard ts of alzo.",
+      "variations": [
+        {
+          "display": "Ci alziamo presto ogni lunedì",
+          "cue": "We get up early every Monday",
+          "changed": "a day instead of what comes next"
+        },
+        {
+          "display": "Si alzano presto e fanno colazione",
+          "cue": "They get up early and have breakfast",
+          "changed": "the loro cell throughout"
+        },
+        {
+          "display": "Ci alziamo tardi la domenica",
+          "cue": "We get up late on Sundays",
+          "changed": "late, and on a Sunday"
+        }
+      ],
+      "mistake": {
+        "display": "Alziamo presto e facciamo colazione",
+        "why": "The noi pronoun is ci: Ci alziamo presto e facciamo colazione."
+      },
+      "usage": "Two people's morning, told as one.",
+      "register": "neutral",
+      "mnemonic": "noi takes ci. loro takes si."
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "Prima mi lavo, poi mi vesto, infine esco",
+      "cue": "First I wash, then I get dressed, finally I go out",
+      "literal": "First me I-wash, then me I-dress, at-last I-go-out",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "infine",
+            "cue": "finally · lastly",
+            "tag": "free",
+            "forms": [],
+            "note": "The last item of a list. L2-M10's alla fine says how a story ENDED; infine says a sequence has reached its last step."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "prima and dopo are L2-M4's direction words doing a time job, and neither needs a preposition standing alone like this. Only prima di in front of a verb takes one, and that is not what is happening here.",
+      "sound": "een-FEE-ne. Three even syllables with the stress in the middle.",
+      "variations": [
+        {
+          "display": "Prima mi lavo, poi mi vesto",
+          "cue": "First I wash, then I get dressed",
+          "changed": "two steps, with no last one"
+        },
+        {
+          "display": "Prima faccio colazione, infine esco",
+          "cue": "First I have breakfast, finally I go out",
+          "changed": "a different first step"
+        },
+        {
+          "display": "Mi lavo, mi vesto e infine esco",
+          "cue": "I wash, get dressed and finally go out",
+          "changed": "e instead of the sequencing words"
+        }
+      ],
+      "mistake": {
+        "display": "Prima mi lavo, poi mi vesto, finalmente esco",
+        "why": "finalmente is relief — at last! The last step of a list is infine: … infine esco."
+      },
+      "usage": "A sequence laid out plainly, which is what a routine is.",
+      "register": "neutral",
+      "mnemonic": "infine ends the list. finalmente ends the wait."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "Di solito mi sveglio alle sette",
+      "cue": "I usually wake up at seven"
+    },
+    {
+      "id": "L3-M1-C02",
+      "display": "Mi alzo, mi lavo e mi vesto",
+      "cue": "I get up, I wash and I get dressed"
+    },
+    {
+      "id": "L3-M1-C03",
+      "display": "Poi faccio colazione e prendo l'autobus",
+      "cue": "Then I have breakfast and take the bus"
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "Non mangio mai a casa",
+      "cue": "I never eat at home"
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "Vado spesso al bar di mattina",
+      "cue": "I often go to the bar in the morning"
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "Qualche volta mangio fuori con mia sorella",
+      "cue": "Sometimes I eat out with my sister"
+    },
+    {
+      "id": "L3-M1-C07",
+      "display": "Raramente torno a casa tardi",
+      "cue": "I rarely get home late"
+    },
+    {
+      "id": "L3-M1-C08",
+      "display": "Ogni lunedì mi riposo a casa",
+      "cue": "Every Monday I rest at home"
+    },
+    {
+      "id": "L3-M1-C09",
+      "display": "Ci alziamo presto e facciamo colazione",
+      "cue": "We get up early and have breakfast"
+    },
+    {
+      "id": "L3-M1-C10",
+      "display": "Prima mi lavo, poi mi vesto, infine esco",
+      "cue": "First I wash, then I get dressed, finally I go out"
+    },
+    {
+      "id": "L3-M1-C11",
+      "display": "Mia sorella si sveglia sempre tardi",
+      "cue": "My sister always wakes up late"
+    },
+    {
+      "id": "L3-M1-C12",
+      "display": "Non esco mai il sabato",
+      "cue": "I never go out on Saturdays"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

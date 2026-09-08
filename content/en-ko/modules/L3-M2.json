@@ -1,0 +1,695 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M2",
+  "title": "Work and study",
+  "job": "Explain what you do all day, and how",
+  "prerequisites": [
+    "L3-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "V-neun + N",
+      "V-(eu)n + N",
+      "V-(eu)l + N",
+      "je-ga + V-neun + N-eun + V-yo",
+      "N-eseo + N-euro + V-yo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE CLAUSE GOES IN FRONT OF THE NOUN, and there is no relative pronoun anywhere in it. English builds the noun first and hangs the clause off the back of it — the company THAT I work at. Korean builds the clause first and lands on the noun: je-ga ilhaneun hoesa. Every sentence in this module is that one reversal."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ENDING ON THE MODIFIER CARRIES THE TENSE. -neun is the present (ilhaneun hoesa, the company I work at), -(eu)n is the past (eoje bon yeonghwa, the film I saw yesterday), -(eu)l is what is still to come (naeil hal sukje, the homework I will do tomorrow). The main verb at the end of the sentence is free to stay in the present."
+    },
+    {
+      "tag": "interference",
+      "text": "INSIDE THE CLAUSE, NOTHING MARKS THE HEAD NOUN'S ROLE. je-ga ilhaneun hoesa has no -eseo on hoesa and no resumptive word standing in for it — the slot is simply left empty. The noun arrives at the end and takes whatever particle the OUTER sentence hands it, which is why hoesa-neun, hoesa-reul and hoesa-eseo are all possible after the same clause."
+    },
+    {
+      "tag": "delta",
+      "text": "A SUBJECT INSIDE THE CLAUSE TAKES -i/-ga AND NEVER -eun/-neun. A topic belongs to a whole sentence, and a modifier clause is not one — this is M1's law seen from the inside. And jeo changes shape before -ga: the clause subject is je-ga, never jeo-ga."
+    },
+    {
+      "tag": "interference",
+      "text": "ON A DESCRIPTIVE VERB, -(eu)n IS THE PRESENT. keun jip is the house that IS big, not the house that was big — so the same ending means past on an action verb and now on a descriptive one. L2-M2 shipped keun, jageun, gin and jjalbeun without ever saying this; here it has to be said."
+    },
+    {
+      "tag": "free",
+      "text": "The -(eu)l modifier is NOT new. hal, gal and meogeul are L1-M6's and bol is L2-M6's, all of them shapes of the -l geoyeyo future, and in front of a noun they do the same job with the geoyeyo taken away. Nothing is opened here; the shapes are only pointed at."
+    },
+    {
+      "tag": "free",
+      "text": "How you do the work is L2-M4's -(eu)ro doing its second job: keompyuteo-ro ilhaeyo, son-euro meogeoyo. Step-by-step instructions — first this, then that, and what it is for — belong to L4-M1, and no display here writes one. The productive honorific -si-, with its past and its own subject particle, is L3-M8's; this module uses only the -nim titles the course already owns."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M2-S01",
+      "display": "Je-ga ilhaneun hoesa-neun jip-eseo meoreoyo.",
+      "script": "제가 일하는 회사는 집에서 멀어요.",
+      "cue": "The company I work at is far from my house.",
+      "literal": "I-subject work-ing company-topic house-from is-far",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je-ga",
+            "script": "제가",
+            "cue": "I — as the subject of a clause",
+            "tag": "interference",
+            "forms": [
+              "je-ga"
+            ],
+            "note": "jeo changes to je in front of -ga, so the subject form is je-ga and never jeo-ga. Inside a modifier clause this is the only shape available: -neun cannot go there."
+          },
+          {
+            "display": "ilhaneun",
+            "script": "일하는",
+            "cue": "that (someone) works at · working",
+            "tag": "delta",
+            "forms": [
+              "ilhaneun"
+            ],
+            "note": "L1-M9's ilhaeyo wearing the present modifier -neun. It is written joined, with no hyphen, because in this course a hyphen means a particle boundary and nothing else."
+          },
+          {
+            "display": "hoesa",
+            "script": "회사",
+            "cue": "company · firm",
+            "tag": "free",
+            "forms": [
+              "hoesa",
+              "hoesa-neun",
+              "hoesa-eseo"
+            ],
+            "note": "The company you work for. It is the head noun of the clause in front of it, and the -neun on it is the OUTER sentence's, not anything the clause gave it."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "THERE IS NO WORD FOR 'THAT' OR 'WHICH'. Korean has no relative pronoun at all; the clause simply stands in front of its noun, and the ending on the clause verb is the only signal that a clause is there.",
+      "sound": "JE-ga il-HA-neun HOE-sa-neun JI-be-seo MEO-reo-yo. hoe is one syllable, close to English 'hwe'.",
+      "variations": [
+        {
+          "display": "Je-ga ilhaneun hoesa-neun keoyo.",
+          "script": "제가 일하는 회사는 커요.",
+          "cue": "The company I work at is big.",
+          "changed": "L2-M2's keoyo as the predicate"
+        },
+        {
+          "display": "Ilhaneun chingu-ga manayo.",
+          "script": "일하는 친구가 많아요.",
+          "cue": "A lot of my friends are working.",
+          "changed": "the clause with no subject inside it at all"
+        }
+      ],
+      "mistake": {
+        "display": "Hoesa je-ga ilhaneun jip-eseo meoreoyo.",
+        "script": "회사 제가 일하는 집에서 멀어요.",
+        "why": "The clause goes in FRONT of the noun: Je-ga ilhaneun hoesa-neun jip-eseo meoreoyo."
+      },
+      "usage": "Saying where you work, when the name of the place is not the answer.",
+      "register": "neutral",
+      "mnemonic": "Clause first, noun last."
+    },
+    {
+      "id": "L3-M2-S02",
+      "display": "Eoje bon yeonghwa-neun jeongmal joayo.",
+      "script": "어제 본 영화는 정말 좋아요.",
+      "cue": "The film I saw yesterday is really good.",
+      "literal": "yesterday saw film-topic really is-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bon",
+            "script": "본",
+            "cue": "that (someone) saw",
+            "tag": "delta",
+            "forms": [
+              "bon"
+            ],
+            "note": "L2-M6's bwayo wearing the PAST modifier -(eu)n. The tense sits here, so the sentence's own verb is free to stay in the present."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "THE TENSE IS ON THE MODIFIER, NOT ON THE MAIN VERB. bon says the seeing was yesterday; joayo says the film is good now. English has to conjugate both verbs and Korean conjugates only the one at the end.",
+      "sound": "EO-je bon YEONG-hwa-neun JEONG-mal JO-a-yo. joayo is written as it is said: the h of the stem is not heard.",
+      "variations": [
+        {
+          "display": "Eoje bon yeonghwa-neun gireoyo.",
+          "script": "어제 본 영화는 길어요.",
+          "cue": "The film I saw yesterday is long.",
+          "changed": "L2-M2's gireoyo as the predicate"
+        },
+        {
+          "display": "Oneul bon siheom-eun jeongmal gireoyo.",
+          "script": "오늘 본 시험은 정말 길어요.",
+          "cue": "The exam I took today was really long.",
+          "changed": "an exam instead of a film — Korean 'sees' both"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje boneun yeonghwa-neun jeongmal joasseoyo.",
+        "script": "어제 보는 영화는 정말 좋았어요.",
+        "why": "The tense belongs on the modifier: Eoje bon yeonghwa-neun jeongmal joayo."
+      },
+      "usage": "Recommending something you have already been to see.",
+      "register": "neutral",
+      "mnemonic": "Past on the modifier, present on the verb."
+    },
+    {
+      "id": "L3-M2-S03",
+      "display": "Naeil hal sukje-ga jeongmal manayo.",
+      "script": "내일 할 숙제가 정말 많아요.",
+      "cue": "I have a lot of homework to do tomorrow.",
+      "literal": "tomorrow will-do homework-subject really is-much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sukje",
+            "script": "숙제",
+            "cue": "homework",
+            "tag": "free",
+            "forms": [
+              "sukje",
+              "sukje-ga"
+            ],
+            "note": "Homework, and in Korean you DO it rather than write it. Here it is the head noun of hal — the work that is still to come."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "hal IS NOT A NEW SHAPE. It is L1-M6's hal geoyeyo with the geoyeyo taken away, standing in front of a noun instead. Korean did not invent a second future to build this with.",
+      "sound": "NAE-il hal SUK-je-ga JEONG-mal MA-na-yo. sukje is said suk-jje: the j tenses after the k.",
+      "variations": [
+        {
+          "display": "Naeil hal il-i jeongmal manayo.",
+          "script": "내일 할 일이 정말 많아요.",
+          "cue": "I have a lot to do tomorrow.",
+          "changed": "L1-M9's il as the head noun"
+        },
+        {
+          "display": "Oneul hal sukje-ga eopseoyo.",
+          "script": "오늘 할 숙제가 없어요.",
+          "cue": "I have no homework to do today.",
+          "changed": "eopseoyo, so the amount becomes none"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil haneun sukje-ga jeongmal manayo.",
+        "script": "내일 하는 숙제가 정말 많아요.",
+        "why": "Work still to come takes -(eu)l: Naeil hal sukje-ga jeongmal manayo."
+      },
+      "usage": "Explaining why you cannot come out tomorrow.",
+      "register": "neutral",
+      "mnemonic": "Still to come: -(eu)l."
+    },
+    {
+      "id": "L3-M2-S04",
+      "display": "Oneul haneun hoeui-neun jeongmal gireoyo.",
+      "script": "오늘 하는 회의는 정말 길어요.",
+      "cue": "The meeting we're having today is really long.",
+      "literal": "today do-ing meeting-topic really is-long",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "haneun",
+            "script": "하는",
+            "cue": "that (someone) does · doing",
+            "tag": "delta",
+            "forms": [
+              "haneun"
+            ],
+            "note": "L1-M4's haeyo with the present modifier. Its PAST modifier is never written bare in this course, because that shape is already L1-M8's han, the native one."
+          },
+          {
+            "display": "hoeui",
+            "script": "회의",
+            "cue": "meeting",
+            "tag": "free",
+            "forms": [
+              "hoeui",
+              "hoeui-neun",
+              "hoeui-ga",
+              "hoeui-e"
+            ],
+            "note": "A meeting at work. You HAVE one with haeyo, and you GO to one with L1-M7's -e: hoeui-e gayo."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "THE HEAD NOUN IS NOT NAMED INSIDE THE CLAUSE. You do not say hoeui-reul haneun hoeui — the object slot of haneun is left empty, and hoeui arrives at the end carrying the outer sentence's -neun.",
+      "sound": "O-neul HA-neun HOE-ui-neun JEONG-mal GI-reo-yo.",
+      "variations": [
+        {
+          "display": "Oneul haneun hoeui-ga jjalbayo.",
+          "script": "오늘 하는 회의가 짧아요.",
+          "cue": "The meeting we're having today is short.",
+          "changed": "jjalbayo, and -ga because it is news rather than the topic"
+        },
+        {
+          "display": "Hoeui-e ppalli gayo.",
+          "script": "회의에 빨리 가요.",
+          "cue": "I'm going to the meeting quickly.",
+          "changed": "no clause at all — the meeting as a destination, with M1's ppalli"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul hoeui-reul haneun hoeui-neun jeongmal gireoyo.",
+        "script": "오늘 회의를 하는 회의는 정말 길어요.",
+        "why": "The head noun is never repeated inside its own clause: Oneul haneun hoeui-neun jeongmal gireoyo."
+      },
+      "usage": "Complaining mildly about a working day.",
+      "register": "neutral",
+      "mnemonic": "The head noun leaves its slot empty."
+    },
+    {
+      "id": "L3-M2-S05",
+      "display": "Jeo-neun je-ga baeuneun sueop-eul joahaeyo.",
+      "script": "저는 제가 배우는 수업을 좋아해요.",
+      "cue": "I like the class I'm taking.",
+      "literal": "I-topic I-subject learn-ing class-object like",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baeuneun",
+            "script": "배우는",
+            "cue": "that (someone) learns · learning",
+            "tag": "delta",
+            "forms": [
+              "baeuneun"
+            ],
+            "note": "L1-M3's baewoyo with the present modifier. The stem is baeu-, so the modifier is baeuneun; baewoneun is not a shape this verb has."
+          },
+          {
+            "display": "sueop",
+            "script": "수업",
+            "cue": "class · lesson",
+            "tag": "free",
+            "forms": [
+              "sueop",
+              "sueop-eul",
+              "sueop-eun",
+              "sueop-i"
+            ],
+            "note": "One class or lesson. Here it takes -eul from the OUTER verb joahaeyo — nothing inside the clause gave it that particle."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "TWO SUBJECTS, TWO DIFFERENT PARTICLES. jeo-neun is the topic of the whole sentence; je-ga is the subject of the clause alone. A modifier clause has no topic, so -neun can never appear inside one.",
+      "sound": "JEO-neun JE-ga BAE-u-neun SU-eo-beul jo-a-HAE-yo. sueop-eul is said su-eo-beul.",
+      "variations": [
+        {
+          "display": "Je-ga baeuneun sueop-eun gireoyo.",
+          "script": "제가 배우는 수업은 길어요.",
+          "cue": "The class I'm taking is long.",
+          "changed": "the clause carrying the topic of its own sentence"
+        },
+        {
+          "display": "Jeo-neun hangungmal-eul baewoyo.",
+          "script": "저는 한국말을 배워요.",
+          "cue": "I learn Korean.",
+          "changed": "no clause at all — the plain sentence baeuneun was built from"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun jeo-neun baeuneun sueop-eul joahaeyo.",
+        "script": "저는 저는 배우는 수업을 좋아해요.",
+        "why": "The clause's subject takes -ga, and jeo becomes je: Jeo-neun je-ga baeuneun sueop-eul joahaeyo."
+      },
+      "usage": "Talking about your course to somebody outside it.",
+      "register": "neutral",
+      "mnemonic": "-neun outside, -ga inside."
+    },
+    {
+      "id": "L3-M2-S06",
+      "display": "Keun daehak-eseo gongbuhaeyo. Sueop-i jeongmal manayo.",
+      "script": "큰 대학에서 공부해요. 수업이 정말 많아요.",
+      "cue": "I study at a big university. There are a lot of classes.",
+      "literal": "big university-at study. class-subject really is-much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "daehak",
+            "script": "대학",
+            "cue": "university",
+            "tag": "free",
+            "forms": [
+              "daehak",
+              "daehak-eseo"
+            ],
+            "note": "A university. Studying happens there, so it takes -eseo; going there would take -e, which is L1-M7's law unchanged."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "keun IS THE SAME -(eu)n ENDING, AND HERE IT IS PRESENT. On an action verb -(eu)n is the past; on a descriptive verb like keuda it is now. keun daehak is the university that IS big, never the one that used to be.",
+      "sound": "keun DAE-ha-ge-seo gong-bu-HAE-yo. SU-eo-bi JEONG-mal MA-na-yo.",
+      "variations": [
+        {
+          "display": "Jageun daehak-eseo gongbuhaeyo.",
+          "script": "작은 대학에서 공부해요.",
+          "cue": "I study at a small university.",
+          "changed": "L2-M2's jageun, the same ending on the opposite word"
+        },
+        {
+          "display": "Daehak-eseo hangungmal-eul baewoyo.",
+          "script": "대학에서 한국말을 배워요.",
+          "cue": "I learn Korean at the university.",
+          "changed": "an object, with the place still on -eseo"
+        }
+      ],
+      "mistake": {
+        "display": "Keoyo daehak-eseo gongbuhaeyo.",
+        "script": "커요 대학에서 공부해요.",
+        "why": "A descriptive verb in front of a noun wears -(eu)n: Keun daehak-eseo gongbuhaeyo."
+      },
+      "usage": "Saying where you study.",
+      "register": "neutral",
+      "mnemonic": "keun is now, not then."
+    },
+    {
+      "id": "L3-M2-S07",
+      "display": "Eoje sseun bogoseo-neun jom jjalbayo.",
+      "script": "어제 쓴 보고서는 좀 짧아요.",
+      "cue": "The report I wrote yesterday is a bit short.",
+      "literal": "yesterday wrote report-topic a-bit is-short",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sseun",
+            "script": "쓴",
+            "cue": "that (someone) wrote",
+            "tag": "delta",
+            "forms": [
+              "sseun"
+            ],
+            "note": "The past modifier of sseuda, the verb inside L2-M1's sseojuseyo. The stem sseu- drops its vowel before the ending: sseun, not sseueun."
+          },
+          {
+            "display": "bogoseo",
+            "script": "보고서",
+            "cue": "report",
+            "tag": "free",
+            "forms": [
+              "bogoseo",
+              "bogoseo-neun",
+              "bogoseo-reul"
+            ],
+            "note": "A written report at work. It is the head noun of sseun, and the particle on it is always the outer sentence's — -neun here, -reul in the variation."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "A VERB ENDING IS NEVER HYPHENATED IN THIS COURSE. sseun, bon and ilhaneun are each one token, because the hyphen marks a particle boundary — which is also why the modifier -neun has nothing to do with L1-M1's topic particle -neun.",
+      "sound": "EO-je sseun BO-go-seo-neun jom JJAL-ba-yo. ss and jj are tense: held, with no puff of air after them.",
+      "variations": [
+        {
+          "display": "Eoje sseun bogoseo-reul juseyo.",
+          "script": "어제 쓴 보고서를 주세요.",
+          "cue": "Please give me the report you wrote yesterday.",
+          "changed": "L1-M3's juseyo, so the head noun takes -reul instead"
+        },
+        {
+          "display": "Oneul sseun bogoseo-neun gireoyo.",
+          "script": "오늘 쓴 보고서는 길어요.",
+          "cue": "The report I wrote today is long.",
+          "changed": "today, and the opposite length"
+        }
+      ],
+      "mistake": {
+        "display": "Eoje sseu-n bogoseo-neun jom jjalbayo.",
+        "script": "어제 쓰은 보고서는 좀 짧아요.",
+        "why": "The ending is welded on, never hyphenated: Eoje sseun bogoseo-neun jom jjalbayo."
+      },
+      "usage": "Handing work over, or apologising for it in advance.",
+      "register": "neutral",
+      "mnemonic": "No hyphen on a verb ending."
+    },
+    {
+      "id": "L3-M2-S08",
+      "display": "Naeil bol siheom-eun jom gireoyo.",
+      "script": "내일 볼 시험은 좀 길어요.",
+      "cue": "The exam I'm taking tomorrow is a bit long.",
+      "literal": "tomorrow will-see exam-topic a-bit is-long",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "siheom",
+            "script": "시험",
+            "cue": "exam · test",
+            "tag": "interference",
+            "forms": [
+              "siheom",
+              "siheom-eun",
+              "siheom-i",
+              "siheom-eul"
+            ],
+            "note": "Korean SEES an exam rather than taking one: siheom-eul bwayo. English's \"take a test\" maps onto the wrong verb here, which is why bol and bon are its modifiers."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "bol IS L2-M6's SHAPE, NOT A NEW ONE. It is the -(eu)l of bol geoyeyo standing in front of a noun instead of in front of geoyeyo — hal, gal, meogeul and bol were all this ending all along.",
+      "sound": "NAE-il bol SI-heo-meun jom GI-reo-yo. siheom-eun is said si-heo-meun.",
+      "variations": [
+        {
+          "display": "Naeil bol siheom-i eopseoyo.",
+          "script": "내일 볼 시험이 없어요.",
+          "cue": "I have no exam to take tomorrow.",
+          "changed": "eopseoyo, so there is none"
+        },
+        {
+          "display": "Eoje bon siheom-eun jjalbayo.",
+          "script": "어제 본 시험은 짧아요.",
+          "cue": "The exam I took yesterday was short.",
+          "changed": "the past modifier bon, set against the prospective bol"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil boneun siheom-eun jom gireoyo.",
+        "script": "내일 보는 시험은 좀 길어요.",
+        "why": "Something still to come takes -(eu)l: Naeil bol siheom-eun jom gireoyo."
+      },
+      "usage": "Explaining next week to a classmate.",
+      "register": "neutral",
+      "mnemonic": "bol geoyeyo, bol siheom — one ending."
+    },
+    {
+      "id": "L3-M2-S09",
+      "display": "Jeo-neun hoesa-eseo keompyuteo-ro ilhaeyo.",
+      "script": "저는 회사에서 컴퓨터로 일해요.",
+      "cue": "I work on a computer at the company.",
+      "literal": "I-topic company-at computer-by work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "keompyuteo",
+            "script": "컴퓨터",
+            "cue": "computer",
+            "tag": "free",
+            "forms": [
+              "keompyuteo",
+              "keompyuteo-ro"
+            ],
+            "note": "The tool takes L2-M4's -(eu)ro, the same particle that pointed a direction there: keompyuteo-ro ilhaeyo, son-euro meogeoyo."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "-(eu)ro IS ONE PARTICLE WITH TWO JOBS. L2-M4 taught it as 'towards' — oenjjok-euro — and it also means 'by means of'. Korean does not split them the way English splits 'to' from 'with'.",
+      "sound": "JEO-neun HOE-sa-e-seo KEOM-pyu-teo-ro il-HAE-yo.",
+      "variations": [
+        {
+          "display": "Jeo-neun jip-eseo keompyuteo-ro ilhaeyo.",
+          "script": "저는 집에서 컴퓨터로 일해요.",
+          "cue": "I work from home on a computer.",
+          "changed": "the place"
+        },
+        {
+          "display": "Son-euro meogeoyo.",
+          "script": "손으로 먹어요.",
+          "cue": "I eat with my hands.",
+          "changed": "L2-M5's son — the same particle in its after-a-consonant shape"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun hoesa-eseo keompyuteo-hago ilhaeyo.",
+        "script": "저는 회사에서 컴퓨터하고 일해요.",
+        "why": "A tool takes -(eu)ro: Jeo-neun hoesa-eseo keompyuteo-ro ilhaeyo. With -hago the computer would be coming along as company."
+      },
+      "usage": "Answering what your work actually involves.",
+      "register": "neutral",
+      "mnemonic": "-(eu)ro: the way there, and the way you do it."
+    },
+    {
+      "id": "L3-M2-S10",
+      "display": "Je-ga ilhaneun hoesa-neun keugo, sajangnim-eun chinjeolhaeyo.",
+      "script": "제가 일하는 회사는 크고, 사장님은 친절해요.",
+      "cue": "The company I work at is big, and the boss is kind.",
+      "literal": "I-subject work-ing company-topic is-big-and boss-topic is-kind",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sajangnim",
+            "script": "사장님",
+            "cue": "the boss · the company head",
+            "tag": "free",
+            "forms": [
+              "sajangnim",
+              "sajangnim-eun"
+            ],
+            "note": "L1-M1's -nim on sajang, built exactly as seonsaengnim is. The title carries the respect, so the sentence around it can stay in plain -yo."
+          }
+        ],
+        "rules": [
+          0,
+          6
+        ]
+      },
+      "trap": "TALKING ABOUT SOMEBODY RESPECTED IS NOT TALKING TO THEM. The -nim on sajangnim does the work here. The productive -si- that would put the respect on the VERB is a later module's, and this sentence deliberately does not reach for it.",
+      "sound": "JE-ga il-HA-neun HOE-sa-neun KEU-go, sa-JANG-ni-meun chin-jeol-HAE-yo. sajangnim-eun is said sa-jang-ni-meun.",
+      "variations": [
+        {
+          "display": "Sajangnim-eun jeongmal chinjeolhaeyo.",
+          "script": "사장님은 정말 친절해요.",
+          "cue": "The boss is really kind.",
+          "changed": "the second half alone, with M1's jeongmal"
+        },
+        {
+          "display": "Je-ga ilhaneun hoesa-neun jagayo.",
+          "script": "제가 일하는 회사는 작아요.",
+          "cue": "The company I work at is small.",
+          "changed": "jagayo, the opposite size"
+        }
+      ],
+      "mistake": {
+        "display": "Ilhaneun je-ga hoesa-neun keugo, sajangnim-eun chinjeolhaeyo.",
+        "script": "일하는 제가 회사는 크고, 사장님은 친절해요.",
+        "why": "The subject stands inside the clause, in front of its verb: Je-ga ilhaneun hoesa-neun keugo, sajangnim-eun chinjeolhaeyo."
+      },
+      "usage": "Describing where you work to somebody who asked about it.",
+      "register": "neutral",
+      "mnemonic": "The -nim carries the respect."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M2-C01",
+      "display": "Je-ga ilhaneun hoesa-neun jip-eseo meoreoyo.",
+      "script": "제가 일하는 회사는 집에서 멀어요.",
+      "cue": "The company I work at is far from my house."
+    },
+    {
+      "id": "L3-M2-C02",
+      "display": "Eoje bon yeonghwa-neun jeongmal joayo.",
+      "script": "어제 본 영화는 정말 좋아요.",
+      "cue": "The film I saw yesterday is really good."
+    },
+    {
+      "id": "L3-M2-C03",
+      "display": "Naeil hal sukje-ga jeongmal manayo.",
+      "script": "내일 할 숙제가 정말 많아요.",
+      "cue": "I have a lot of homework to do tomorrow."
+    },
+    {
+      "id": "L3-M2-C04",
+      "display": "Oneul haneun hoeui-neun jeongmal gireoyo.",
+      "script": "오늘 하는 회의는 정말 길어요.",
+      "cue": "The meeting we're having today is really long."
+    },
+    {
+      "id": "L3-M2-C05",
+      "display": "Jeo-neun je-ga baeuneun sueop-eul joahaeyo.",
+      "script": "저는 제가 배우는 수업을 좋아해요.",
+      "cue": "I like the class I'm taking."
+    },
+    {
+      "id": "L3-M2-C06",
+      "display": "Keun daehak-eseo gongbuhaeyo.",
+      "script": "큰 대학에서 공부해요.",
+      "cue": "I study at a big university."
+    },
+    {
+      "id": "L3-M2-C07",
+      "display": "Eoje sseun bogoseo-neun jom jjalbayo.",
+      "script": "어제 쓴 보고서는 좀 짧아요.",
+      "cue": "The report I wrote yesterday is a bit short."
+    },
+    {
+      "id": "L3-M2-C08",
+      "display": "Naeil bol siheom-eun jom gireoyo.",
+      "script": "내일 볼 시험은 좀 길어요.",
+      "cue": "The exam I'm taking tomorrow is a bit long."
+    },
+    {
+      "id": "L3-M2-C09",
+      "display": "Jeo-neun hoesa-eseo keompyuteo-ro ilhaeyo.",
+      "script": "저는 회사에서 컴퓨터로 일해요.",
+      "cue": "I work on a computer at the company."
+    },
+    {
+      "id": "L3-M2-C10",
+      "display": "Sajangnim-eun jeongmal chinjeolhaeyo.",
+      "script": "사장님은 정말 친절해요.",
+      "cue": "The boss is really kind."
+    },
+    {
+      "id": "L3-M2-C11",
+      "display": "Ilhaneun chingu-ga manayo.",
+      "script": "일하는 친구가 많아요.",
+      "cue": "A lot of my friends are working."
+    },
+    {
+      "id": "L3-M2-C12",
+      "display": "Naeil hal il-i eopseoyo.",
+      "script": "내일 할 일이 없어요.",
+      "cue": "I have nothing to do tomorrow."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
