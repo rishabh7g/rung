@@ -75,11 +75,6 @@ const LEVELS_FILES = readAll(
   }),
 );
 
-/** Ladder position of a module id, so `L1-M10` sorts after `L1-M2` rather than before it. */
-function moduleNumber(id: string): number {
-  return Number(/-M(\d+)$/.exec(id)?.[1] ?? 0);
-}
-
 function readAll(loaded: Record<string, string>): [file: string, json: unknown][] {
   return Object.entries(loaded)
     .map(([file, raw]): [string, unknown] => [file.replace('../../', ''), JSON.parse(raw)])
@@ -193,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 150 — nine L1 ladders, hi-mr L2 and L3, and the complete L2 of en-es, en-ar, hi-en and en-ru (#456)', () => {
+  it('finds all 152 — nine L1 ladders, hi-mr L2 and L3, the complete L2 of en-es, en-ar, hi-en and en-ru, and the first en-it L2 pair (#439)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -268,6 +263,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-it/modules/L1-M7.json',
       'content/en-it/modules/L1-M8.json',
       'content/en-it/modules/L1-M9.json',
+      'content/en-it/modules/L2-M1.json',
+      'content/en-it/modules/L2-M2.json',
       'content/en-ko/modules/L1-M1.json',
       'content/en-ko/modules/L1-M10.json',
       'content/en-ko/modules/L1-M2.json',
@@ -469,9 +466,12 @@ describe('ModuleContent against the modules that exist', () => {
    * or before that module.
    */
   it('teaches every apostrophe surface it writes — the en-it elision policy (#333)', () => {
+    // Ladder order is LEVEL first and then number: `moduleNumber` alone put L2-M1 in front of
+    // L1-M7, which is how the en-it L2 (#439) found this — `dov'è` is taught in L1 and was being
+    // checked against a set that did not yet contain it.
     const ladder = MODULE_FILES.filter(([name]) => name.includes('en-it'))
       .map(([file, json]) => [file, parseModule(json, file)] as const)
-      .sort(([, a], [, b]) => moduleNumber(a.id) - moduleNumber(b.id));
+      .sort(([, a], [, b]) => a.id.localeCompare(b.id, 'en', { numeric: true }));
     const taught = new Set<string>();
     let maxSpan = 1;
 

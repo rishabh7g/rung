@@ -1,0 +1,626 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M1",
+  "title": "Asking politely",
+  "job": "Requests, thanks, apologies in the right register",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Scusi / Scusa + , + <request>",
+      "Può / Puoi + V-inf + ?",
+      "Potrebbe / Potresti + V-inf + ?",
+      "Mi dispiace + , + <statement>",
+      "Grazie mille — Prego"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "POLITENESS RIDES THE VERB, not a pronoun. Italian normally leaves the subject out, so the polite form shows up as a THIRD-PERSON ending on a verb addressed to you: Può ripetere? beside Puoi ripetere?, Come sta? beside Come stai?. There is no word in the sentence that means \"you, politely\" — the ending is the whole of it, which is why every request in this module is authored twice."
+    },
+    {
+      "tag": "free",
+      "text": "The polite pronoun is Lei, written with a capital, and this course names it in prose and never writes it in a sentence. The reason is the index rather than taste: the engine lowercases every surface, so Lei folds onto lei — L1-M10's word for \"she\" — and first occurrence wins. A polite Lei in a display would send every courteous sentence in the course to a note about the third person feminine."
+    },
+    {
+      "tag": "interference",
+      "text": "ITALIAN SPLITS \"SORRY\" THREE WAYS and an English speaker reaches for one word. Scusi and Scusa ask to be excused BEFORE the fact — interrupting, getting past, stopping a stranger. Mi dispiace is regret for something that has already happened. Permesso asks leave to come in or to pass through. Saying Mi dispiace to get someone's attention is the commonest of these errors and lands as an apology for nothing."
+    },
+    {
+      "tag": "free",
+      "text": "Scusi and Senta are present SUBJUNCTIVE forms, and the subjunctive as a system belongs to L3. They arrive here as frozen politeness words, one at a time, and L3 will show them again as a paradigm. The conditional works the same way: L1-M3's vorrei was one frozen cell, and this module adds potrebbe and potresti and nothing else."
+    },
+    {
+      "tag": "delta",
+      "text": "potrebbe and potresti are a tier ABOVE può and puoi, and the extra length is the politeness — the same trade every language in this collection makes. Può ripetere? is perfectly courteous; Potrebbe ripetere? is what you use with someone you have just interrupted, or when the favour is real."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M1-S01",
+      "display": "Scusi, dov'è la stazione?",
+      "cue": "Excuse me, where is the station?",
+      "literal": "Excuse-yourself, where-is the station?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "scusi",
+            "cue": "excuse me (polite)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The polite form, and a frozen subjunctive — L3 will show the paradigm it comes from. It asks to be excused before the fact, never after it."
+          },
+          {
+            "display": "scusa",
+            "cue": "excuse me (to a friend)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tu form of the same word. The two differ by one letter and by everything about who you are talking to."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "The endings are the reverse of what an English speaker expects: the -i form is the polite one and the -a form is the familiar one. Nothing about the shapes suggests it, and there is no way round learning the pair.",
+      "sound": "SKOO-zee. Both vowels are pure and short, and the z is a soft dz — not the s of English \"excuse\".",
+      "variations": [
+        {
+          "display": "Scusa, dov'è la stazione?",
+          "cue": "Excuse me, where is the station?",
+          "changed": "to a friend, or to someone your own age"
+        },
+        {
+          "display": "Scusi, dov'è il bar?",
+          "cue": "Excuse me, where is the bar?",
+          "changed": "a different place"
+        },
+        {
+          "display": "Scusi, dov'è il cinema?",
+          "cue": "Excuse me, where is the cinema?",
+          "changed": "a different place"
+        }
+      ],
+      "mistake": {
+        "display": "Mi dispiace, dov'è la stazione?",
+        "why": "Nothing has gone wrong yet: Scusi, dov'è la stazione?"
+      },
+      "usage": "Stopping a stranger in the street. Scusi is the safe choice with anyone you do not know.",
+      "register": "formal",
+      "mnemonic": "Scusi to a stranger, scusa to a friend."
+    },
+    {
+      "id": "L2-M1-S02",
+      "display": "Può ripetere, per favore?",
+      "cue": "Could you repeat that, please?",
+      "literal": "Can-he/she repeat, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "può",
+            "cue": "can you (polite)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Third person of potere, addressed to you. There is no pronoun in the sentence and none is missing — the ending carries the whole address."
+          },
+          {
+            "display": "puoi",
+            "cue": "can you (to a friend)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tu form. The two differ by an i, which is the only signal in the sentence of who is being spoken to."
+          },
+          {
+            "display": "ripetere",
+            "cue": "to repeat",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive, which is what follows può and puoi. Stressed on the second syllable — ri-PE-te-re — not on the third as English \"repeat\" suggests."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Può is a third-person verb pointed at the person in front of you. An English speaker hears \"can he repeat?\" and looks for who \"he\" is; there is nobody, and that is the whole of Italian politeness.",
+      "sound": "PWO. One syllable, and the accent on the ò says the vowel is open and stressed.",
+      "variations": [
+        {
+          "display": "Puoi ripetere, per favore?",
+          "cue": "Can you repeat that, please?",
+          "changed": "to a friend"
+        },
+        {
+          "display": "Può parlare, per favore?",
+          "cue": "Could you speak, please?",
+          "changed": "a different infinitive"
+        },
+        {
+          "display": "Può ripetere?",
+          "cue": "Could you repeat that?",
+          "changed": "without per favore — still fine, a shade barer"
+        }
+      ],
+      "mistake": {
+        "display": "Può ripete, per favore?",
+        "why": "An infinitive follows può: Può ripetere, per favore?"
+      },
+      "usage": "In a shop, on a phone, anywhere you did not catch what was said.",
+      "register": "formal",
+      "mnemonic": "The ending picks the person, not a pronoun."
+    },
+    {
+      "id": "L2-M1-S03",
+      "display": "Potrebbe ripetere, per favore?",
+      "cue": "Would you mind repeating that, please?",
+      "literal": "Could-he/she repeat, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "potrebbe",
+            "cue": "could you (polite)",
+            "tag": "delta",
+            "forms": [],
+            "note": "A conditional, and one frozen cell of it — like L1-M3's vorrei. It is a tier above può, and the extra length is the politeness."
+          },
+          {
+            "display": "potresti",
+            "cue": "could you (to a friend)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tu conditional. Even among friends it softens a request that is a real favour rather than a small one."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "The double b of potrebbe is held, and it is the only thing separating it in speech from forms of the same verb that mean something else. Italian double consonants are length, not decoration.",
+      "sound": "po-TREB-be. The bb is one long b — stop, hold, release — and the beat sits on it.",
+      "variations": [
+        {
+          "display": "Potresti ripetere, per favore?",
+          "cue": "Could you repeat that, please?",
+          "changed": "to a friend"
+        },
+        {
+          "display": "Potrebbe parlare, per favore?",
+          "cue": "Could you speak, please?",
+          "changed": "a different infinitive"
+        },
+        {
+          "display": "Può ripetere, per favore?",
+          "cue": "Could you repeat that, please?",
+          "changed": "the plainer tier — courteous, simply shorter"
+        }
+      ],
+      "mistake": {
+        "display": "Potrebbe ripete, per favore?",
+        "why": "An infinitive follows potrebbe: Potrebbe ripetere, per favore?"
+      },
+      "usage": "When the favour is real, or when you have just interrupted someone.",
+      "register": "formal",
+      "mnemonic": "Longer verb, softer ask."
+    },
+    {
+      "id": "L2-M1-S04",
+      "display": "Posso prendere un caffè?",
+      "cue": "Can I have a coffee?",
+      "literal": "Can-I take a coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "posso",
+            "cue": "can I · may I",
+            "tag": "free",
+            "forms": [],
+            "note": "The io form of potere. It asks permission for yourself, so no address is involved and the sentence works with anyone."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "prendere is what Italian uses for having a drink or a meal — L1-M6's own verb. Avere here would mean owning the coffee rather than drinking it.",
+      "sound": "POS-so. The double s is held, and the o's are both short and pure.",
+      "variations": [
+        {
+          "display": "Posso prendere l'acqua?",
+          "cue": "Can I have the water?",
+          "changed": "a different thing, with the elided article"
+        },
+        {
+          "display": "Posso vedere il libro?",
+          "cue": "Can I see the book?",
+          "changed": "a different infinitive"
+        },
+        {
+          "display": "Puoi prendere un caffè",
+          "cue": "You can have a coffee",
+          "changed": "an offer rather than a request"
+        }
+      ],
+      "mistake": {
+        "display": "Posso prendo un caffè?",
+        "why": "An infinitive follows posso: Posso prendere un caffè?"
+      },
+      "usage": "At a bar or a table. Asking about yourself needs no register decision at all.",
+      "register": "neutral",
+      "mnemonic": "posso asks about me, può asks about you."
+    },
+    {
+      "id": "L2-M1-S05",
+      "display": "Mi dispiace, non posso",
+      "cue": "I'm sorry, I can't",
+      "literal": "To-me it-displeases, not I-can",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi dispiace",
+            "cue": "I'm sorry",
+            "tag": "delta",
+            "forms": [
+              "dispiace"
+            ],
+            "note": "One surface, built the way L1's mi piace is: literally \"it displeases me\". It is regret for something that has happened, never a way of getting attention."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Mi dispiace and Scusi are not interchangeable. Using Mi dispiace to stop a stranger apologises for something you have not done, and using Scusi after a real mistake is too light.",
+      "sound": "mee dees-PYA-che. The final -ce is CHE, and the whole phrase runs as one word.",
+      "variations": [
+        {
+          "display": "Mi dispiace molto",
+          "cue": "I'm very sorry",
+          "changed": "molto turns it up"
+        },
+        {
+          "display": "Mi dispiace, non posso oggi",
+          "cue": "I'm sorry, I can't today",
+          "changed": "a reason added"
+        },
+        {
+          "display": "Mi dispiace, non posso domani",
+          "cue": "I'm sorry, I can't tomorrow",
+          "changed": "a different day"
+        }
+      ],
+      "mistake": {
+        "display": "Scusi, non posso",
+        "why": "Declining is regret, not an interruption: Mi dispiace, non posso."
+      },
+      "usage": "Turning something down, or apologising for something already done.",
+      "register": "neutral",
+      "mnemonic": "Scusi before, mi dispiace after."
+    },
+    {
+      "id": "L2-M1-S06",
+      "display": "Permesso, posso passare?",
+      "cue": "Excuse me, can I get past?",
+      "literal": "Permission, can-I pass?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "permesso",
+            "cue": "may I come through",
+            "tag": "delta",
+            "forms": [],
+            "note": "The third of the three sorries, and the one English has no word for at all: it asks leave to enter a room or to move through people."
+          },
+          {
+            "display": "passare",
+            "cue": "to pass · to get by",
+            "tag": "free",
+            "forms": [],
+            "note": "Getting past someone or something. It also does time — Il tempo passa — but the physical sense is the one this module uses."
+          },
+          {
+            "display": "entrare",
+            "cue": "to come in · to enter",
+            "tag": "free",
+            "forms": [],
+            "note": "Going in. Permesso is what is said at a doorway before entrare is ever used, and often instead of it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Permesso is said on the way in, before anyone answers. It is not a question expecting a yes — it is the announcement that you are coming through, and standing waiting for permission is what marks a foreigner.",
+      "sound": "per-MES-so. Two double consonants' worth of length in one short word, and both are held.",
+      "variations": [
+        {
+          "display": "Permesso, posso entrare?",
+          "cue": "Excuse me, may I come in?",
+          "changed": "at a doorway rather than in a crowd"
+        },
+        {
+          "display": "Scusi, posso passare?",
+          "cue": "Excuse me, can I get past?",
+          "changed": "Scusi instead — also correct, and a shade more formal"
+        },
+        {
+          "display": "Posso passare, per favore?",
+          "cue": "Can I get past, please?",
+          "changed": "without Permesso"
+        }
+      ],
+      "mistake": {
+        "display": "Mi dispiace, posso passare?",
+        "why": "Nothing has gone wrong: Permesso, posso passare?"
+      },
+      "usage": "On a bus, in a crowd, at somebody's front door.",
+      "register": "neutral",
+      "mnemonic": "The third sorry, and English has no word for it."
+    },
+    {
+      "id": "L2-M1-S07",
+      "display": "Grazie mille! Prego",
+      "cue": "Thanks very much! — You're welcome",
+      "literal": "Thanks thousand! You-are-welcome",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "grazie mille",
+            "cue": "thanks a thousand · thanks very much",
+            "tag": "free",
+            "forms": [],
+            "note": "One surface, and literally \"a thousand thanks\" — L1-M10's mille doing the work English does with \"very much\". It sits above plain grazie without being formal."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "prego does several jobs and this is only one. It answers thanks, offers a seat, invites someone through a door, and asks a shop customer what they want — one word, and the situation says which.",
+      "sound": "GRA-tsee-e MEEL-le. The z of grazie is ts, and the ll of mille is held.",
+      "variations": [
+        {
+          "display": "Grazie mille, Anna",
+          "cue": "Thanks very much, Anna",
+          "changed": "a name after the comma"
+        },
+        {
+          "display": "Grazie, prego",
+          "cue": "Thanks — you're welcome",
+          "changed": "the plain exchange"
+        },
+        {
+          "display": "Grazie mille! Prego, prego",
+          "cue": "Thanks very much! — Not at all",
+          "changed": "prego doubled, which is warmer"
+        }
+      ],
+      "mistake": {
+        "display": "Mille grazie! Prego",
+        "why": "The ordinary order is grazie mille — the other exists but is rarer."
+      },
+      "usage": "Real thanks, for something that took someone trouble.",
+      "register": "neutral",
+      "mnemonic": "A thousand thanks, and prego answers all of them."
+    },
+    {
+      "id": "L2-M1-S08",
+      "display": "Senta, scusi, dov'è il bar?",
+      "cue": "Excuse me, where's the bar?",
+      "literal": "Listen, excuse-yourself, where-is the bar?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "senta",
+            "cue": "excuse me · listen (polite)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Another frozen subjunctive, and it opens rather than apologises. Its tu form is senti, which is the most common opener in Italian conversation."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Senta is not rude, though \"listen!\" in English would be. It simply flags that you are about to ask something, and Italians use it constantly.",
+      "sound": "SEN-ta. Two syllables, the first stressed, and the e is open.",
+      "variations": [
+        {
+          "display": "Senta, scusi, dov'è la stazione?",
+          "cue": "Excuse me, where's the station?",
+          "changed": "a different place"
+        },
+        {
+          "display": "Scusi, senta, posso passare?",
+          "cue": "Excuse me — can I get past?",
+          "changed": "the two openers in the other order"
+        },
+        {
+          "display": "Senta, per favore",
+          "cue": "Excuse me, please",
+          "changed": "the opener alone, holding someone for a moment"
+        }
+      ],
+      "mistake": {
+        "display": "Senti, scusi, dov'è il bar?",
+        "why": "Keep one address: Senta, scusi or Senti, scusa."
+      },
+      "usage": "Getting a waiter's or a shopkeeper's attention.",
+      "register": "formal",
+      "mnemonic": "Senta opens, scusi apologises."
+    },
+    {
+      "id": "L2-M1-S09",
+      "display": "Come sta? Sto bene, grazie",
+      "cue": "How are you? — I'm fine, thanks",
+      "literal": "How is-he/she-doing? I-am-doing well, thanks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sta",
+            "cue": "you are (polite) · he/she is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The third person of stare, and L1-M10's Come stai? in its polite dress. The verb is the same; only the ending has moved."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The answer does not change with the address. Whether you were asked Come sta? or Come stai?, you answer Sto bene — the io form is the same in both worlds.",
+      "sound": "KO-me STA. Both words end open, and sta is one clear syllable.",
+      "variations": [
+        {
+          "display": "Come sta, Anna?",
+          "cue": "How are you, Anna?",
+          "changed": "a name after the comma"
+        },
+        {
+          "display": "Come stai? Sto bene",
+          "cue": "How are you? — I'm fine",
+          "changed": "the tu address, from L1-M10"
+        },
+        {
+          "display": "Come sta? Non sto bene",
+          "cue": "How are you? — I'm not well",
+          "changed": "the honest answer"
+        }
+      ],
+      "mistake": {
+        "display": "Come sta? Sta bene, grazie",
+        "why": "Answer about yourself: Come sta? Sto bene, grazie."
+      },
+      "usage": "The polite opening, with anyone you address as Lei.",
+      "register": "formal",
+      "mnemonic": "The question moves address. The answer never does."
+    },
+    {
+      "id": "L2-M1-S10",
+      "display": "Scusi, potrebbe aiutarmi?",
+      "cue": "Excuse me, could you help me?",
+      "literal": "Excuse-yourself, could-he/she help-me?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aiutarmi",
+            "cue": "to help me",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word: the infinitive aiutare with mi stuck on the end and its final e dropped. Italian attaches an object to the back of an infinitive rather than putting it in front."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "The object joins the verb and becomes part of the same word. Mi aiutare is not Italian; aiutarmi is one token and one surface, which is why the bare mi is not what a learner needs here.",
+      "sound": "a-yoo-TAR-mee. Four syllables, the stress on the third, and the r is tapped once.",
+      "variations": [
+        {
+          "display": "Scusa, potresti aiutarmi?",
+          "cue": "Excuse me, could you help me?",
+          "changed": "to a friend, both words moving together"
+        },
+        {
+          "display": "Potrebbe aiutarmi, per favore?",
+          "cue": "Could you help me, please?",
+          "changed": "per favore instead of the opener"
+        },
+        {
+          "display": "Scusi, può aiutarmi?",
+          "cue": "Excuse me, can you help me?",
+          "changed": "the plainer tier"
+        }
+      ],
+      "mistake": {
+        "display": "Scusi, potrebbe mi aiutare?",
+        "why": "The object rides on the infinitive: Scusi, potrebbe aiutarmi?"
+      },
+      "usage": "Asking a stranger for real help — the sentence a lost traveller needs.",
+      "register": "formal",
+      "mnemonic": "The object rides on the back of the infinitive."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M1-C01",
+      "display": "Scusi, dov'è la stazione?",
+      "cue": "Excuse me, where is the station?"
+    },
+    {
+      "id": "L2-M1-C02",
+      "display": "Può ripetere, per favore?",
+      "cue": "Could you repeat that, please?"
+    },
+    {
+      "id": "L2-M1-C03",
+      "display": "Potrebbe ripetere, per favore?",
+      "cue": "Would you mind repeating that, please?"
+    },
+    {
+      "id": "L2-M1-C04",
+      "display": "Posso prendere un caffè?",
+      "cue": "Can I have a coffee?"
+    },
+    {
+      "id": "L2-M1-C05",
+      "display": "Mi dispiace, non posso",
+      "cue": "I'm sorry, I can't"
+    },
+    {
+      "id": "L2-M1-C06",
+      "display": "Permesso, posso passare?",
+      "cue": "Excuse me, can I get past?"
+    },
+    {
+      "id": "L2-M1-C07",
+      "display": "Grazie mille! Prego",
+      "cue": "Thanks very much! — You're welcome"
+    },
+    {
+      "id": "L2-M1-C08",
+      "display": "Senta, scusi, dov'è il bar?",
+      "cue": "Excuse me, where's the bar?"
+    },
+    {
+      "id": "L2-M1-C09",
+      "display": "Come sta? Sto bene, grazie",
+      "cue": "How are you? — I'm fine, thanks"
+    },
+    {
+      "id": "L2-M1-C10",
+      "display": "Scusi, potrebbe aiutarmi?",
+      "cue": "Excuse me, could you help me?"
+    },
+    {
+      "id": "L2-M1-C11",
+      "display": "Scusa, potresti aiutarmi?",
+      "cue": "Excuse me, could you help me?"
+    },
+    {
+      "id": "L2-M1-C12",
+      "display": "Permesso, posso entrare?",
+      "cue": "Excuse me, may I come in?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

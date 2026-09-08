@@ -358,6 +358,27 @@ two of them plain spelling slips (`brata` for `bráta`, `ona` for `oná`) that t
 precisely because an unmarked vowel is a different index key. The en-ru baseline stays at 20. **The
 native gate is still unmet**: docs/64 ends in open questions 1–32, a fresh en-ru L2 chain.
 
+**en-it starts its second level (#439, 2026-09-08).** `L2-M1` _Asking politely_ and `L2-M2`
+_Describing people_ are authored against the briefs of #430
+(`docs/57-en-it-L2-brief-decisions.md`), backed by `docs/65-llm-review-en-it-L2.md`; a strict
+`npm run build` emits `en-it: 12 modules (L1-M1..M10, L2-M1..M2)`. M1 teaches the polite **verb**
+rather than the polite pronoun, which is what makes Italian unlike every other course here: the
+language is pro-drop, so politeness is a third-person ending on a verb pointed at the person in
+front of you, and every request is authored in both addresses side by side. **`Lei` never reaches a
+display** — `normalizeSurface` lowercases, so it would fold onto L1-M10's `lei` ("she") and first
+occurrence wins; it is named in prose and nowhere else. The three-way split of "sorry" is the
+module's best content, and its `Permesso` trap says the thing a phrasebook will not: it announces
+rather than asks. M2 puts features on `avere` (`è trenta` is the mistake block), teaches the
+possessive law in both halves at once — the article stays, except before a singular family member,
+and returns in the plural — and states plainly that `essere`/`stare` is **not** the Spanish split,
+so an author who has read the en-es briefs does not import the wrong law. The `-co` plural fork
+(`amici` soft, `bianchi` hard, `amiche` hard in the same word) is taught as vocabulary, because that
+is what it is. The wave also exposed a latent test defect only a second level could reach:
+`src/course/types.test.ts`'s elision case sorted the ladder by module number alone, so `L2-M1` came
+before `L1-M7` and `dov'è` was checked against a set that did not yet teach it; the comparator now
+sorts level-then-number. **The native gate is still unmet**: docs/65 ends in open questions 1–10, a
+fresh en-it L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

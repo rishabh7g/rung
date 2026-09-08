@@ -1,0 +1,828 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": [
+    "L2-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "<person> + è + Adj",
+      "<person> + ha + i/gli/le + N + Adj",
+      "mio/mia + N-family",
+      "il mio / la mia + N",
+      "<person> + sta + bene / male"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "FEATURES TAKE AVERE, NOT ESSERE: ha i capelli lunghi, ha gli occhi verdi, ha trent'anni. English switches verbs halfway — \"has green eyes\" but \"is thirty\" — and Italian does not. Age is where the mistake lands: è trenta is the word-for-word translation and is not Italian."
+    },
+    {
+      "tag": "interference",
+      "text": "essere against stare, and it is NOT the Spanish split. Italian's stare covers health and how someone is doing — Come sta?, Sto bene — and a handful of fixed uses. Identity, origin, character AND location all go to essere: Sono a Roma, where Spanish would use estar. The working rule: essere for everything except how you FEEL and how things are GOING."
+    },
+    {
+      "tag": "delta",
+      "text": "A POSSESSIVE KEEPS ITS ARTICLE — il mio libro, la mia casa, i miei amici — EXCEPT before a singular family member: mio fratello, mia sorella. Put the family member in the plural and the article comes back: i miei fratelli. English drops the article always and Spanish drops it always, so both halves of this are delta and they have to be learnt together."
+    },
+    {
+      "tag": "interference",
+      "text": "The -co plural forks and nothing predicts which way. amico goes to amici with a SOFT c, simpatico to simpatici, but bianco goes to bianchi with the hard sound kept by an h. Each plural is learnt with its word, which is why every one of them sits in its own row's forms rather than under a rule."
+    },
+    {
+      "tag": "free",
+      "text": "The article is part of the feature frame: ha i capelli lunghi, not ha suoi capelli lunghi. Italian says \"has THE hair long\", and the possessive is left out because whose hair it is was never in doubt."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "Mio fratello è alto",
+      "cue": "My brother is tall",
+      "literal": "My brother is tall",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mio",
+            "cue": "my (masculine singular)",
+            "tag": "delta",
+            "forms": [],
+            "note": "No article in front of it, because fratello is one family member. Anywhere else it would be il mio — il mio libro, il mio caffè."
+          },
+          {
+            "display": "miei",
+            "cue": "my (masculine plural)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural, and the article comes back with it: i miei fratelli. The exception covers only a family member in the singular."
+          },
+          {
+            "display": "fratello",
+            "cue": "brother",
+            "tag": "free",
+            "forms": [
+              "fratelli"
+            ],
+            "note": "Its plural fratelli also means \"brothers and sisters\" together, which is what Italian says where English needs \"siblings\"."
+          },
+          {
+            "display": "alto",
+            "cue": "tall · high",
+            "tag": "free",
+            "forms": [
+              "alta",
+              "alti",
+              "alte"
+            ],
+            "note": "Four endings, agreeing with the person described. It covers a tall person and a high wall alike."
+          },
+          {
+            "display": "basso",
+            "cue": "short (in height) · low",
+            "tag": "interference",
+            "forms": [
+              "bassa",
+              "bassi",
+              "basse"
+            ],
+            "note": "alto's opposite, and the word for a short PERSON. A short length is corto, and mixing them is the commonest slip here."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "No article, and none is missing. Mio fratello is complete because fratello is one family member — il mio fratello sounds wrong to an Italian ear in a way that is hard to explain and impossible to miss.",
+      "sound": "MEE-o fra-TEL-lo. The double l of fratello is held, and the o's are short and pure.",
+      "variations": [
+        {
+          "display": "Mia sorella è alta",
+          "cue": "My sister is tall",
+          "changed": "feminine throughout — three words move together"
+        },
+        {
+          "display": "Mio fratello è basso",
+          "cue": "My brother is short",
+          "changed": "the opposite height"
+        },
+        {
+          "display": "I miei fratelli sono alti",
+          "cue": "My brothers are tall",
+          "changed": "plural, and the article comes back"
+        }
+      ],
+      "mistake": {
+        "display": "Il mio fratello è alto",
+        "why": "A singular family member drops the article: Mio fratello è alto."
+      },
+      "usage": "Describing family — the first thing anyone asks about.",
+      "register": "neutral",
+      "mnemonic": "One relative, no article. Two, and it returns."
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "Mia sorella è giovane",
+      "cue": "My sister is young",
+      "literal": "My sister is young",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mia",
+            "cue": "my (feminine singular)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The feminine of mio, and it follows the same article rule: mia sorella bare, la mia casa with the article."
+          },
+          {
+            "display": "mie",
+            "cue": "my (feminine plural)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The feminine plural, and the article returns here too: le mie sorelle. Four forms in all — mio, mia, miei, mie."
+          },
+          {
+            "display": "sorella",
+            "cue": "sister",
+            "tag": "free",
+            "forms": [
+              "sorelle"
+            ],
+            "note": "Regular, with the -a plural in -e. Unlike fratelli, sorelle never covers a mixed group."
+          },
+          {
+            "display": "giovane",
+            "cue": "young",
+            "tag": "free",
+            "forms": [
+              "giovani"
+            ],
+            "note": "An adjective ending in -e, so it has only TWO forms rather than four: giovane and giovani, whatever the gender."
+          },
+          {
+            "display": "anziano",
+            "cue": "elderly",
+            "tag": "delta",
+            "forms": [
+              "anziana",
+              "anziani",
+              "anziane"
+            ],
+            "note": "The courteous word for an old person. vecchio exists and is blunter — used of a person it can sting."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "giovane has two endings and alto has four. Which an adjective has depends on how it ends, and the -e adjectives are the easier half of the language.",
+      "sound": "JO-va-ne. The gi is a soft j, and the stress sits on the first syllable.",
+      "variations": [
+        {
+          "display": "Mio fratello è giovane",
+          "cue": "My brother is young",
+          "changed": "masculine — and giovane does not move"
+        },
+        {
+          "display": "Mia madre è anziana",
+          "cue": "My mother is elderly",
+          "changed": "a four-form adjective, which does move"
+        },
+        {
+          "display": "Le mie sorelle sono giovani",
+          "cue": "My sisters are young",
+          "changed": "plural, with the article back"
+        }
+      ],
+      "mistake": {
+        "display": "Mia sorella è giovana",
+        "why": "giovane has no feminine form: Mia sorella è giovane."
+      },
+      "usage": "Talking about family, or about people at work.",
+      "register": "neutral",
+      "mnemonic": "-o adjectives have four forms, -e adjectives two."
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "Il mio amico è simpatico",
+      "cue": "My friend is nice",
+      "literal": "The my friend is nice",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "amico",
+            "cue": "friend (male)",
+            "tag": "interference",
+            "forms": [
+              "amici"
+            ],
+            "note": "The plural is amici with a SOFT c, said a-MEE-chee. There is no rule that predicts it — bianco goes the other way."
+          },
+          {
+            "display": "amica",
+            "cue": "friend (female)",
+            "tag": "free",
+            "forms": [
+              "amiche"
+            ],
+            "note": "The feminine plural keeps the HARD c with an h: amiche. So the masculine softens and the feminine does not, in the same word."
+          },
+          {
+            "display": "simpatico",
+            "cue": "nice · likeable",
+            "tag": "delta",
+            "forms": [
+              "simpatica",
+              "simpatici",
+              "simpatiche"
+            ],
+            "note": "Not \"sympathetic\". It is the ordinary word for someone good company, and it is the compliment Italians actually pay."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The article is back, because amico is not a family member. Il mio amico and mio fratello sit side by side and the difference is only what kind of person is named.",
+      "sound": "a-MEE-ko, and in the plural a-MEE-chee. The c changes sound and the spelling does not warn you.",
+      "variations": [
+        {
+          "display": "La mia amica è simpatica",
+          "cue": "My friend is nice",
+          "changed": "a female friend, and everything moves with her"
+        },
+        {
+          "display": "I miei amici sono simpatici",
+          "cue": "My friends are nice",
+          "changed": "plural, with the soft c in both words"
+        },
+        {
+          "display": "Il mio amico è gentile",
+          "cue": "My friend is kind",
+          "changed": "a different quality"
+        }
+      ],
+      "mistake": {
+        "display": "Mio amico è simpatico",
+        "why": "Only a family member drops the article: Il mio amico è simpatico."
+      },
+      "usage": "Introducing or describing the people around you.",
+      "register": "neutral",
+      "mnemonic": "amici soft, amiche hard — one word, both ways."
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "Mio padre ha i capelli bianchi",
+      "cue": "My father has white hair",
+      "literal": "My father has the hairs white",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "padre",
+            "cue": "father",
+            "tag": "free",
+            "forms": [
+              "padri"
+            ],
+            "note": "The neutral word. papà is what a child says and what an adult says warmly, and both are ordinary."
+          },
+          {
+            "display": "madre",
+            "cue": "mother",
+            "tag": "free",
+            "forms": [
+              "madri"
+            ],
+            "note": "padre's pair, with mamma beside it in the same way papà stands beside padre."
+          },
+          {
+            "display": "capelli",
+            "cue": "hair (on the head)",
+            "tag": "delta",
+            "forms": [
+              "capello"
+            ],
+            "note": "PLURAL in Italian — the hairs. The singular capello means one single hair, so hair on a head is always capelli."
+          },
+          {
+            "display": "bianco",
+            "cue": "white",
+            "tag": "interference",
+            "forms": [
+              "bianca",
+              "bianchi",
+              "bianche"
+            ],
+            "note": "The plural keeps the hard c with an h — bianchi — where amico softened to amici. The same ending, two outcomes, and only the word says which."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "There is an article where English has a possessive: ha I capelli, never ha suoi capelli. Italian says \"has the hair\" because whose hair it is was never in question.",
+      "sound": "ka-PEL-lee bee-AN-kee. The double l is held, and the ch of bianchi is a hard k.",
+      "variations": [
+        {
+          "display": "Mia madre ha i capelli bianchi",
+          "cue": "My mother has white hair",
+          "changed": "a different parent — nothing else moves"
+        },
+        {
+          "display": "Ha i capelli bianchi",
+          "cue": "He has white hair",
+          "changed": "no subject named, which is the ordinary way"
+        },
+        {
+          "display": "Mia figlia ha i capelli bianchi",
+          "cue": "My daughter has white hair",
+          "changed": "a different relative"
+        }
+      ],
+      "mistake": {
+        "display": "Mio padre è capelli bianchi",
+        "why": "Features take avere: Mio padre ha i capelli bianchi."
+      },
+      "usage": "Describing someone so they can be picked out of a crowd.",
+      "register": "neutral",
+      "mnemonic": "Italian has THE hair, not YOUR hair."
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "Ha gli occhi verdi",
+      "cue": "He has green eyes",
+      "literal": "Has the eyes green",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gli",
+            "cue": "the (masculine plural, before a vowel or s+consonant)",
+            "tag": "interference",
+            "forms": [],
+            "note": "The third masculine plural article, beside i. It appears before a vowel or an awkward cluster — gli occhi, gli studenti — where i would be unsayable."
+          },
+          {
+            "display": "occhi",
+            "cue": "eyes",
+            "tag": "free",
+            "forms": [
+              "occhio"
+            ],
+            "note": "The cch is a long hard k. Like capelli, eyes come in the plural by default, and the singular occhio is one eye."
+          },
+          {
+            "display": "verde",
+            "cue": "green",
+            "tag": "free",
+            "forms": [
+              "verdi"
+            ],
+            "note": "An -e adjective, so two forms only. Green eyes are verdi, and the ending matches occhi rather than the person."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Which article to use is decided by the SOUND that follows, not by meaning. gli occhi and i capelli are both masculine plural — occhi simply starts with a vowel.",
+      "sound": "lyee OK-kee VER-dee. gli is one sound, a soft ly, and the g is not heard separately.",
+      "variations": [
+        {
+          "display": "Mia sorella ha gli occhi verdi",
+          "cue": "My sister has green eyes",
+          "changed": "a subject named"
+        },
+        {
+          "display": "Ha i capelli bianchi e gli occhi verdi",
+          "cue": "He has white hair and green eyes",
+          "changed": "both features, and both articles in one line"
+        },
+        {
+          "display": "Mio fratello ha gli occhi verdi",
+          "cue": "My brother has green eyes",
+          "changed": "a different relative"
+        }
+      ],
+      "mistake": {
+        "display": "Ha i occhi verdi",
+        "why": "A vowel takes gli: Ha gli occhi verdi."
+      },
+      "usage": "Describing a face — and it is a compliment in Italy more often than not.",
+      "register": "neutral",
+      "mnemonic": "The sound picks the article."
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "Mio figlio ha trent'anni",
+      "cue": "My son is thirty",
+      "literal": "My son has thirty-years",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "figlio",
+            "cue": "son",
+            "tag": "free",
+            "forms": [
+              "figli"
+            ],
+            "note": "The gl is the same soft ly as in gli. Its plural figli also covers sons and daughters together, as fratelli does."
+          },
+          {
+            "display": "figlia",
+            "cue": "daughter",
+            "tag": "free",
+            "forms": [
+              "figlie"
+            ],
+            "note": "The feminine, and its plural is only daughters. Italian's mixed-group plurals always take the masculine."
+          },
+          {
+            "display": "trent'anni",
+            "cue": "thirty (of age)",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word, because the elision joins them: trenta plus anni loses the a. The apostrophe sits inside the token and the whole thing is a single surface."
+          },
+          {
+            "display": "anni",
+            "cue": "years",
+            "tag": "free",
+            "forms": [
+              "anno"
+            ],
+            "note": "Age in Italian is a number of years HAD. Ten years old is dieci anni, and the noun is always there."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Age uses avere, and this is the mistake to expect: è trenta is a word-for-word translation of \"is thirty\" and means nothing. You HAVE thirty years.",
+      "sound": "tren-TAN-nee. The apostrophe is not a pause — the two words run together as one, with the double n held.",
+      "variations": [
+        {
+          "display": "Mia figlia ha trent'anni",
+          "cue": "My daughter is thirty",
+          "changed": "a daughter — the age frame does not move"
+        },
+        {
+          "display": "Mio figlio ha dieci anni",
+          "cue": "My son is ten",
+          "changed": "a number that does not elide, so two words"
+        },
+        {
+          "display": "Ha venti anni",
+          "cue": "He is twenty",
+          "changed": "no subject named"
+        }
+      ],
+      "mistake": {
+        "display": "Mio figlio è trenta",
+        "why": "Age is had, not been: Mio figlio ha trent'anni."
+      },
+      "usage": "Saying how old someone is, which comes up early in every Italian conversation.",
+      "register": "neutral",
+      "mnemonic": "You have your years, you do not be them."
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "Il mio amico è molto gentile",
+      "cue": "My friend is very kind",
+      "literal": "The my friend is very kind",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gentile",
+            "cue": "kind · polite",
+            "tag": "free",
+            "forms": [
+              "gentili"
+            ],
+            "note": "An -e adjective. It covers kindness and good manners at once, which is why Molto gentile is the standard answer to a favour."
+          },
+          {
+            "display": "bravo",
+            "cue": "good at something · well-behaved",
+            "tag": "interference",
+            "forms": [
+              "brava",
+              "bravi",
+              "brave"
+            ],
+            "note": "Not \"brave\", and not a shout at the opera when it is used this way. È bravo means he is good at what he does."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Character goes to essere, not stare. That is where Italian and Spanish part company: an Italian says è simpatico and è gentile where Spanish would reach for estar in some of the same places.",
+      "sound": "jen-TEE-le. The ge is soft, and the stress is on the middle syllable.",
+      "variations": [
+        {
+          "display": "La mia amica è molto gentile",
+          "cue": "My friend is very kind",
+          "changed": "a female friend — gentile does not move"
+        },
+        {
+          "display": "Il mio amico è molto bravo",
+          "cue": "My friend is very good at it",
+          "changed": "a four-form adjective, which does move"
+        },
+        {
+          "display": "Sono molto gentili",
+          "cue": "They are very kind",
+          "changed": "plural, and the adjective takes its one other form"
+        }
+      ],
+      "mistake": {
+        "display": "Il mio amico sta molto gentile",
+        "why": "Character takes essere: Il mio amico è molto gentile."
+      },
+      "usage": "Praising someone, and thanking them — Molto gentile is a complete reply.",
+      "register": "neutral",
+      "mnemonic": "essere for what you are, stare for how you are."
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "Mio marito è magro",
+      "cue": "My husband is thin",
+      "literal": "My husband is thin",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "marito",
+            "cue": "husband",
+            "tag": "free",
+            "forms": [
+              "mariti"
+            ],
+            "note": "A family member, so no article: mio marito. It is the only word for it — Italian has no equivalent of \"partner\" in ordinary speech."
+          },
+          {
+            "display": "moglie",
+            "cue": "wife",
+            "tag": "free",
+            "forms": [
+              "mogli"
+            ],
+            "note": "Its plural drops the e: mogli. The gl is the soft ly of figlio and gli."
+          },
+          {
+            "display": "magro",
+            "cue": "thin · slim",
+            "tag": "free",
+            "forms": [
+              "magra",
+              "magri",
+              "magre"
+            ],
+            "note": "Neutral to complimentary of a person, unlike English \"thin\" which can be either. It also describes lean meat."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "marito and moglie are family members, so both drop the article. il mio marito is what a learner writes and what an Italian never says.",
+      "sound": "MA-gro. Two syllables, the r tapped once, and the g fully hard.",
+      "variations": [
+        {
+          "display": "Mia moglie è magra",
+          "cue": "My wife is slim",
+          "changed": "feminine throughout"
+        },
+        {
+          "display": "Mio marito è alto e magro",
+          "cue": "My husband is tall and thin",
+          "changed": "two adjectives joined with e"
+        },
+        {
+          "display": "Mia moglie è molto simpatica",
+          "cue": "My wife is very nice",
+          "changed": "character rather than build"
+        }
+      ],
+      "mistake": {
+        "display": "Il mio marito è magro",
+        "why": "A singular family member drops the article: Mio marito è magro."
+      },
+      "usage": "Introducing a partner, or describing one to somebody who has not met them.",
+      "register": "neutral",
+      "mnemonic": "Family in the singular, article gone."
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "Tuo fratello sta bene?",
+      "cue": "Is your brother well?",
+      "literal": "Your brother is-doing well?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tuo",
+            "cue": "your (masculine, to a friend)",
+            "tag": "free",
+            "forms": [],
+            "note": "The tu possessive, and it follows mio's rule exactly: tuo fratello bare, il tuo libro with the article."
+          },
+          {
+            "display": "tua",
+            "cue": "your (feminine, to a friend)",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine. Every possessive in Italian agrees with what is owned, never with the owner."
+          },
+          {
+            "display": "suo",
+            "cue": "his · her (masculine thing owned)",
+            "tag": "interference",
+            "forms": [],
+            "note": "One word for his and hers, because it agrees with the THING. suo figlio is his son or her son, and only the context says which."
+          },
+          {
+            "display": "sua",
+            "cue": "his · her (feminine thing owned)",
+            "tag": "interference",
+            "forms": [],
+            "note": "sua figlia is his daughter or her daughter. English chooses by the owner; Italian chooses by what is owned, and the two systems never line up."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "This is stare, not essere, because it asks about health. Tuo fratello è bene is not Italian — being well is something you DO, and the verb records that.",
+      "sound": "TOO-o fra-TEL-lo sta BE-ne. tuo is two syllables, not one.",
+      "variations": [
+        {
+          "display": "Tua sorella sta bene?",
+          "cue": "Is your sister well?",
+          "changed": "feminine"
+        },
+        {
+          "display": "Suo figlio sta bene?",
+          "cue": "Is his son well?",
+          "changed": "a third person, and the word does not say whose"
+        },
+        {
+          "display": "Sua figlia sta bene?",
+          "cue": "Is her daughter well?",
+          "changed": "feminine, and still ambiguous about the owner"
+        }
+      ],
+      "mistake": {
+        "display": "Tuo fratello è bene?",
+        "why": "Health takes stare: Tuo fratello sta bene?"
+      },
+      "usage": "Asking after someone's family, which is expected rather than nosy.",
+      "register": "informal",
+      "mnemonic": "The possessive agrees with the thing, not the owner."
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "Mia sorella ha i capelli lunghi e neri",
+      "cue": "My sister has long black hair",
+      "literal": "My sister has the hairs long and black",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lungo",
+            "cue": "long",
+            "tag": "interference",
+            "forms": [
+              "lunga",
+              "lunghi",
+              "lunghe"
+            ],
+            "note": "The -go plural keeps its hard g with an h — lunghi — the same trick bianco used. Of a person's height it is never used; that is alto."
+          },
+          {
+            "display": "nero",
+            "cue": "black",
+            "tag": "free",
+            "forms": [
+              "nera",
+              "neri",
+              "nere"
+            ],
+            "note": "Regular, with four ordinary endings. Of hair Italians often say castani for dark brown, and reserve neri for genuinely black."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "Both adjectives agree with capelli and neither agrees with the sister. The feature frame puts everything after the noun and matches it, whoever the sentence is about.",
+      "sound": "LOON-ghee NE-ree. The gh is a hard g, and the double n of neri is single — one tap.",
+      "variations": [
+        {
+          "display": "Mia sorella ha i capelli lunghi",
+          "cue": "My sister has long hair",
+          "changed": "one feature instead of two"
+        },
+        {
+          "display": "Ha i capelli neri",
+          "cue": "She has black hair",
+          "changed": "no subject, and the other adjective"
+        },
+        {
+          "display": "Mio fratello ha i capelli lunghi",
+          "cue": "My brother has long hair",
+          "changed": "a different person — the adjectives do not move"
+        }
+      ],
+      "mistake": {
+        "display": "Mia sorella ha i capelli lunga e nera",
+        "why": "The adjectives agree with capelli: i capelli lunghi e neri."
+      },
+      "usage": "A full description — enough to find someone in a station.",
+      "register": "neutral",
+      "mnemonic": "The adjectives follow the hair, not the head it is on."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M2-C01",
+      "display": "Mio fratello è alto",
+      "cue": "My brother is tall"
+    },
+    {
+      "id": "L2-M2-C02",
+      "display": "Mia sorella è giovane",
+      "cue": "My sister is young"
+    },
+    {
+      "id": "L2-M2-C03",
+      "display": "Il mio amico è simpatico",
+      "cue": "My friend is nice"
+    },
+    {
+      "id": "L2-M2-C04",
+      "display": "Mio padre ha i capelli bianchi",
+      "cue": "My father has white hair"
+    },
+    {
+      "id": "L2-M2-C05",
+      "display": "Ha gli occhi verdi",
+      "cue": "He has green eyes"
+    },
+    {
+      "id": "L2-M2-C06",
+      "display": "Mio figlio ha trent'anni",
+      "cue": "My son is thirty"
+    },
+    {
+      "id": "L2-M2-C07",
+      "display": "Il mio amico è molto gentile",
+      "cue": "My friend is very kind"
+    },
+    {
+      "id": "L2-M2-C08",
+      "display": "Mio marito è magro",
+      "cue": "My husband is thin"
+    },
+    {
+      "id": "L2-M2-C09",
+      "display": "Tuo fratello sta bene?",
+      "cue": "Is your brother well?"
+    },
+    {
+      "id": "L2-M2-C10",
+      "display": "Mia sorella ha i capelli lunghi e neri",
+      "cue": "My sister has long black hair"
+    },
+    {
+      "id": "L2-M2-C11",
+      "display": "I miei amici sono simpatici",
+      "cue": "My friends are nice"
+    },
+    {
+      "id": "L2-M2-C12",
+      "display": "Mia figlia ha trent'anni",
+      "cue": "My daughter is thirty"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
