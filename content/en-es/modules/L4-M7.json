@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M7",
+  "title": "Official talk",
+  "job": "Announcements, offices and counters: the formal register you hear",
+  "prerequisites": ["L4-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 7,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present", "preterite", "perfect", "future", "usted imperative", "present subjunctive"],
+    "allowedPatterns": [
+      "Se ruega a + <N> + que + <subjunctive>",
+      "Queda prohibido + V-inf",
+      "El/La + <person> + deberá + V-inf",
+      "Fue + V-participle + en + <year>",
+      "Pase a la ventanilla + <number>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The impersonal se L3-M8 taught at a counter — se paga, se firma — widens here into the announcement: se ruega, se prohíbe. When a person is named, the frame is se ruega a + PERSON + que + SUBJUNCTIVE, and the verb after que agrees with the people asked, not with the sign."
+    },
+    {
+      "tag": "delta",
+      "text": "The passive with ser — fue construida, ha sido cancelado — is the WRITTEN twin of the impersonal se, not a replacement for it. It belongs on plaques, timetables and notices. Say fue construido about your own flat and you sound like a monument."
+    },
+    {
+      "tag": "free",
+      "text": "The third-person future is how an obligation is worded on paper: el pasajero deberá presentar el documento. It is not a prediction and not a command — it is a rule, and the plural deberán works the same way."
+    },
+    {
+      "tag": "interference",
+      "text": "English officialese uses the passive for exactly these jobs — passengers are requested to… — so you arrive over-equipped and reach for a Spanish passive where the actual sign says se ruega a los pasajeros. When in doubt at this rung, use se."
+    },
+    {
+      "tag": "interference",
+      "text": "Spanish official talk is SHORTER than English expects. The friendly next please! is the bare, complete El siguiente, por favor, and Pase is a whole sentence. Waiting for more words is how a learner misses the one that was addressed to them."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M7-S01",
+      "display": "Se ruega a los pasajeros que pasen al andén número dos.",
+      "cue": "Passengers are asked to go to platform two.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se ruega",
+            "cue": "it is requested · passengers are asked",
+            "tag": "delta",
+            "forms": ["se ruega"],
+            "note": "The politest thing a loudspeaker can say. It stays singular however many people are addressed, because grammatically nobody is doing the asking."
+          },
+          {
+            "display": "pasajero",
+            "cue": "passenger",
+            "tag": "free",
+            "forms": ["pasajero", "pasajeros"],
+            "note": "The word every station and airport uses for you. Readable on sight from English, which is the gift this whole module runs on."
+          },
+          {
+            "display": "andén",
+            "cue": "platform",
+            "tag": "free",
+            "forms": ["andén"],
+            "note": "The platform of a railway station. The accent is on the last syllable and the plural moves it: andenes, with no accent at all."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "que pasen, not que pasan. The people asked have not moved yet, and se ruega que is a request, so the subjunctive is compulsory here in the same way it was after cuando in L4-M6.",
+      "sound": "se RRWE-ga. The r at the start of ruega is the rolled one, which is what makes the phrase carry across a concourse.",
+      "variations": [
+        {
+          "display": "Se ruega a los pasajeros que pasen a la puerta dos.",
+          "cue": "Passengers are asked to go to gate two.",
+          "changed": "a platform becomes a gate"
+        },
+        {
+          "display": "Se ruega a los pasajeros que pasen al andén número nueve.",
+          "cue": "Passengers are asked to go to platform nine.",
+          "changed": "the number"
+        }
+      ],
+      "mistake": {
+        "display": "Se ruegan a los pasajeros que pasen al andén dos.",
+        "why": "se ruegan tries to agree with the passengers. Nothing agrees with them: the impersonal se has no subject to count, so the verb stays se ruega whoever is being addressed."
+      },
+      "usage": "Heard, not said. A learner produces this sentence roughly never and needs to catch it at speed on their first morning in a station.",
+      "register": "formal",
+      "mnemonic": "se ruega asks nobody in particular, so it never changes shape."
+    },
+    {
+      "id": "L4-M7-S02",
+      "display": "Queda prohibido fumar en la estación de autobuses.",
+      "cue": "Smoking is prohibited in the bus station.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "queda prohibido",
+            "cue": "is prohibited",
+            "tag": "delta",
+            "forms": ["queda prohibido"],
+            "note": "The sign version of no. queda here is not remains in the ordinary sense — the pair is fixed, and what follows is always a bare infinitive."
+          },
+          {
+            "display": "fumar",
+            "cue": "to smoke · smoking",
+            "tag": "free",
+            "forms": ["fumar"],
+            "note": "The infinitive does the work English does with -ing: fumar is both to smoke and smoking, and no other form appears on a sign."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "English writes no smoking with a noun. Spanish writes the verb, and prohibido fumando is not a thing anyone says.",
+      "sound": "KEH-da pro-ee-BEE-do. The h of prohibido is silent, so the o and the i sit next to each other.",
+      "variations": [
+        {
+          "display": "Queda prohibido fumar en la estación de tren.",
+          "cue": "Smoking is prohibited in the railway station.",
+          "changed": "which station"
+        },
+        {
+          "display": "Queda prohibido fumar en la puerta de salida.",
+          "cue": "Smoking is prohibited at the departure gate.",
+          "changed": "where the ban applies"
+        }
+      ],
+      "mistake": {
+        "display": "Queda prohibido fuma en la estación de autobuses.",
+        "why": "fuma is a command, so the sign now orders you to smoke and forbids nothing. Only the infinitive can follow queda prohibido."
+      },
+      "usage": "Read off a wall. The spoken equivalent between people is aquí no se puede fumar, which is a different register entirely.",
+      "register": "formal",
+      "mnemonic": "After prohibido, the verb never bends."
+    },
+    {
+      "id": "L4-M7-S03",
+      "display": "El pasajero deberá presentar el documento en la puerta de salida.",
+      "cue": "Passengers must present their document at the departure gate.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deberá",
+            "cue": "must · shall (as a written rule)",
+            "tag": "delta",
+            "forms": ["deberá"],
+            "note": "The future of deber, used for an obligation rather than a prediction. The plural deberán does the same job when the rule names more than one person."
+          },
+          {
+            "display": "presentar",
+            "cue": "to present · to show",
+            "tag": "free",
+            "forms": ["presentar"],
+            "note": "The official word for showing a document. Between people the verb is enseñar or simply dar, and presentar would sound like paperwork."
+          },
+          {
+            "display": "salida",
+            "cue": "departure · exit · way out",
+            "tag": "free",
+            "forms": ["salida"],
+            "note": "From salir. One word for three English ones, and the board that says SALIDAS is the departures board. Its opposite on the same board is llegadas."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "English says passengers must in the plural and their document for one document each. Spanish writes el pasajero, singular, and el documento with a plain article — no possessive.",
+      "sound": "de-be-RA. The accent is the whole tense: debera with no accent is not a word, and debe is the ordinary present.",
+      "variations": [
+        {
+          "display": "El pasajero deberá presentar el billete en la puerta.",
+          "cue": "Passengers must present their ticket at the gate.",
+          "changed": "what has to be shown"
+        },
+        {
+          "display": "El pasajero deberá presentar el documento en la ventanilla dos.",
+          "cue": "Passengers must present their document at counter two.",
+          "changed": "where"
+        }
+      ],
+      "mistake": {
+        "display": "El pasajero tiene que presentar el documento en la puerta de salida.",
+        "why": "Not wrong, and a person would say it — but on a printed notice it reads as somebody talking rather than as a rule. deberá is what the paper uses."
+      },
+      "usage": "Printed on a boarding card or a notice. Nobody says it aloud, and a learner who does sounds like a form.",
+      "register": "formal",
+      "mnemonic": "A rule on paper speaks in the future."
+    },
+    {
+      "id": "L4-M7-S04",
+      "display": "La estación fue construida en primavera y abierta en verano.",
+      "cue": "The station was built in spring and opened in summer.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "construido",
+            "cue": "built",
+            "tag": "delta",
+            "forms": ["construido", "construida"],
+            "note": "A participle after fue agrees with the thing, like an adjective: la estación fue construida, el andén fue construido. That is the difference from the perfect, where it never moves."
+          },
+          {
+            "display": "abierto",
+            "cue": "opened · open",
+            "tag": "free",
+            "forms": ["abierto", "abierta"],
+            "note": "The irregular participle of abrir, which L4-M1 taught as abre. It doubles as the adjective on a shop door, and there it agrees too."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "In L3-M7's perfect — ha abierto — the participle is frozen. In this passive it agrees. Same word, two behaviours, and the auxiliary is what decides.",
+      "sound": "konss-trooEE-da. Four syllables, with the stress on the ee.",
+      "variations": [
+        {
+          "display": "Esta estación fue construida en primavera.",
+          "cue": "This station was built in spring.",
+          "changed": "the second half is dropped"
+        },
+        {
+          "display": "La estación fue abierta en verano.",
+          "cue": "The station was opened in summer.",
+          "changed": "only the opening is reported"
+        }
+      ],
+      "mistake": {
+        "display": "La estación fue construido en primavera y abierto en verano.",
+        "why": "Both participles have been left in the masculine. After ser they are adjectives and la estación is feminine, so both have to end in -a."
+      },
+      "usage": "A plaque, a guidebook or a news item. This is the one shape in the module a learner might genuinely write.",
+      "register": "formal",
+      "mnemonic": "After ser, the participle dresses to match."
+    },
+    {
+      "id": "L4-M7-S05",
+      "display": "El tren de las ocho ha sido cancelado por una huelga.",
+      "cue": "The eight o'clock train has been cancelled because of a strike.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ha sido",
+            "cue": "has been",
+            "tag": "delta",
+            "forms": ["ha sido", "han sido"],
+            "note": "The perfect of ser, and the passive that a station board actually uses for today's news. sido is the participle of ser and appears nowhere else."
+          },
+          {
+            "display": "cancelado",
+            "cue": "cancelled",
+            "tag": "free",
+            "forms": ["cancelado"],
+            "note": "Readable on sight, and the word you need before any other on a board. With a feminine noun it becomes cancelada, exactly as construida did."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "por here is the agent — because of a strike, by a strike. This is the fourth job L3-M2's por has been given, and the passive is the only one where English writes by.",
+      "sound": "a SEE-do kan-se-LA-do. Four flat syllables in cancelado, with no English stress on the first.",
+      "variations": [
+        {
+          "display": "El tren de las nueve ha sido cancelado.",
+          "cue": "The nine o'clock train has been cancelled.",
+          "changed": "the time, and the reason is dropped"
+        },
+        {
+          "display": "El autobús de las ocho ha sido cancelado.",
+          "cue": "The eight o'clock bus has been cancelled.",
+          "changed": "the vehicle"
+        }
+      ],
+      "mistake": {
+        "display": "El tren de las ocho ha cancelado por una huelga.",
+        "why": "Without sido the train is doing the cancelling. The auxiliary ha is not enough on its own — a passive needs ha sido."
+      },
+      "usage": "A departure board, a text message from a rail company, a loudspeaker. Between people you would hear han cancelado el tren instead.",
+      "register": "formal",
+      "mnemonic": "ha alone acts; ha sido is acted upon."
+    },
+    {
+      "id": "L4-M7-S06",
+      "display": "Pase a la ventanilla número dos, por favor.",
+      "cue": "Go to counter two, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pase",
+            "cue": "go through · come in · step up",
+            "tag": "free",
+            "forms": ["pase", "pasen"],
+            "note": "The usted command of pasar, and one of the most useful words in an office. Alone at a door it means come in; at a counter it means you are next."
+          },
+          {
+            "display": "ventanilla",
+            "cue": "counter · service window",
+            "tag": "free",
+            "forms": ["ventanilla"],
+            "note": "Literally a little ventana, and it is the window you queue at in a bank, a station or a town hall. Never used for a window in a house."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "Pase on its own is a complete sentence, and it is the whole of what is said to you. A learner listening for a longer instruction hears nothing and stands still.",
+      "sound": "PA-se ben-ta-NEE-ya. The double l is a y, so it is not ventaneela.",
+      "variations": [
+        {
+          "display": "Pase a la ventanilla número nueve, por favor.",
+          "cue": "Go to counter nine, please.",
+          "changed": "the number"
+        },
+        {
+          "display": "Pasen a la ventanilla dos, por favor.",
+          "cue": "Go to counter two, please.",
+          "changed": "to more than one person"
+        }
+      ],
+      "mistake": {
+        "display": "Pasa a la ventanilla número dos, por favor.",
+        "why": "pasa is the tú command. A clerk who has never met you does not use it, and hearing it from behind a counter would be a small shock."
+      },
+      "usage": "A clerk to a stranger. The one thing in this module a learner will say back is gracias.",
+      "register": "formal",
+      "mnemonic": "One word, one whole instruction."
+    },
+    {
+      "id": "L4-M7-S07",
+      "display": "Atención: el tren de las nueve llega con retraso al andén dos.",
+      "cue": "Attention: the nine o'clock train is arriving late at platform two.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "atención",
+            "cue": "attention",
+            "tag": "free",
+            "forms": ["atención"],
+            "note": "The word that opens an announcement, and the signal to start listening. It is also what a sign says where English writes CAUTION."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "llega is the plain present and means is arriving right now, not arrives every day. Spanish announcements use the present where English uses is arriving, and the timetable sense is carried by de las nueve.",
+      "sound": "a-ten-SYON. Stress on the last syllable, and the accent on the o is what says so.",
+      "variations": [
+        {
+          "display": "Atención: el autobús llega con retraso.",
+          "cue": "Attention: the bus is arriving late.",
+          "changed": "the vehicle, and the platform is dropped"
+        },
+        {
+          "display": "Atención: el tren de las ocho llega al andén nueve.",
+          "cue": "Attention: the eight o'clock train is arriving at platform nine.",
+          "changed": "the train is on time"
+        }
+      ],
+      "mistake": {
+        "display": "Atención: el tren de las nueve llegará con retraso al andén dos.",
+        "why": "Not wrong, but it pushes the arrival into the future and out of the present moment. A live announcement about a train already coming in uses llega."
+      },
+      "usage": "A loudspeaker. retraso, which L4-M2 taught as an excuse, is here a fact on a board.",
+      "register": "formal",
+      "mnemonic": "atención means the sentence after it is for you."
+    },
+    {
+      "id": "L4-M7-S08",
+      "display": "El siguiente, por favor. Espere un momento.",
+      "cue": "Next, please. Wait a moment.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "siguiente",
+            "cue": "next (in a queue)",
+            "tag": "free",
+            "forms": ["siguiente"],
+            "note": "One form for both genders — el siguiente, la siguiente — and the article is what tells you which person is meant. With no noun at all it means the next one."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "This is the whole sentence. English pads it — next please, who's next, can I help the next person — and a learner waiting for that padding stays in the queue while somebody else steps up.",
+      "sound": "see-GYEN-te. Three syllables; the gui is a hard g with a silent u.",
+      "variations": [
+        {
+          "display": "El siguiente, por favor.",
+          "cue": "Next, please.",
+          "changed": "nothing but the second half, which is not needed"
+        },
+        {
+          "display": "La siguiente, por favor. Espere un momento.",
+          "cue": "Next, please. Wait a moment.",
+          "changed": "the next person is a woman"
+        }
+      ],
+      "mistake": {
+        "display": "El próximo persona, por favor.",
+        "why": "Two faults at once: persona is feminine, so it would need la próxima, and a counter says el siguiente with no noun at all."
+      },
+      "usage": "A counter, a market stall, a doctor's waiting room. espere here is L3-M8's, doing exactly the job it was bought for.",
+      "register": "formal",
+      "mnemonic": "The shortest sentence in the station is aimed at you."
+    },
+    {
+      "id": "L4-M7-S09",
+      "display": "Se prohíbe fumar en el andén y en la estación.",
+      "cue": "Smoking is prohibited on the platform and in the station.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se prohíbe",
+            "cue": "is prohibited · is not allowed",
+            "tag": "delta",
+            "forms": ["se prohíbe"],
+            "note": "The impersonal se of L3-M8's se paga, doing the job of a sign. Set beside queda prohibido it is the slightly plainer of the two, and commoner."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The accent on prohíbe is not decoration: it breaks the o and the i apart so the word has four syllables. Without it the vowels would run together and the stress would land elsewhere.",
+      "sound": "se pro-EE-be. The h is silent and the accented i takes the stress.",
+      "variations": [
+        {
+          "display": "Se prohíbe fumar en la puerta de la estación.",
+          "cue": "Smoking is prohibited at the station entrance.",
+          "changed": "where"
+        },
+        {
+          "display": "Se prohíbe fumar en el tren.",
+          "cue": "Smoking is prohibited on the train.",
+          "changed": "one place instead of two"
+        }
+      ],
+      "mistake": {
+        "display": "Se prohibe fumar en el andén y en la estación.",
+        "why": "The accent has been dropped. It is a spelling error rather than a grammar one, and it is the single commonest one on this word."
+      },
+      "usage": "A sign. Between people the same idea is aquí no se puede fumar, which is L2-M4's se puede rather than this.",
+      "register": "formal",
+      "mnemonic": "se prohíbe forbids without naming anybody."
+    },
+    {
+      "id": "L4-M7-S10",
+      "display": "Tome el billete y pase a la próxima ventanilla.",
+      "cue": "Take the ticket and go to the next counter.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "billete",
+            "cue": "ticket · banknote",
+            "tag": "free",
+            "forms": ["billete"],
+            "note": "A ticket in Spain, and also a banknote. In much of Latin America the ticket is a boleto or a pasaje, and billete stays with the money."
+          },
+          {
+            "display": "próximo",
+            "cue": "next · nearest",
+            "tag": "free",
+            "forms": ["próximo", "próxima"],
+            "note": "Agrees with its noun, unlike siguiente. In a queue the two are interchangeable; about time, próximo is the one that means the coming one."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "próxima ventanilla and ventanilla siguiente are both good Spanish, but próximo has to agree and siguiente never does. Getting that backwards is the only real hazard in the pair.",
+      "sound": "TO-me. PROK-see-ma, stressed on the first syllable, which the accent marks.",
+      "variations": [
+        {
+          "display": "Tome el documento y pase a la próxima ventanilla.",
+          "cue": "Take the document and go to the next counter.",
+          "changed": "what you are handed"
+        },
+        {
+          "display": "Tome el billete y espere aquí.",
+          "cue": "Take the ticket and wait here.",
+          "changed": "what happens next"
+        }
+      ],
+      "mistake": {
+        "display": "Tome el billete y pase a la próximo ventanilla.",
+        "why": "próximo has been left masculine in front of a feminine noun. siguiente would have been safe here, which is exactly why the two are worth telling apart."
+      },
+      "usage": "A clerk handing you a numbered slip. This is the module's most likely real encounter and the hardest to catch at speed.",
+      "register": "formal",
+      "mnemonic": "próximo agrees; siguiente never does."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M7-C01", "display": "Se ruega a los pasajeros que pasen al andén dos.", "cue": "Passengers are asked to go to platform two." },
+    { "id": "L4-M7-C02", "display": "Queda prohibido fumar en la estación.", "cue": "Smoking is prohibited in the station." },
+    { "id": "L4-M7-C03", "display": "El pasajero deberá presentar el billete.", "cue": "Passengers must present their ticket." },
+    { "id": "L4-M7-C04", "display": "Esta estación fue construida en primavera.", "cue": "This station was built in spring." },
+    { "id": "L4-M7-C05", "display": "El tren de las nueve ha sido cancelado.", "cue": "The nine o'clock train has been cancelled." },
+    { "id": "L4-M7-C06", "display": "Pase a la ventanilla número dos.", "cue": "Go to counter two." },
+    { "id": "L4-M7-C07", "display": "Atención: el autobús llega con retraso al andén.", "cue": "Attention: the bus is arriving late at the platform." },
+    { "id": "L4-M7-C08", "display": "El siguiente, por favor.", "cue": "Next, please." },
+    { "id": "L4-M7-C09", "display": "Se prohíbe fumar en la puerta de salida.", "cue": "Smoking is prohibited at the departure gate." },
+    { "id": "L4-M7-C10", "display": "Tome el documento y espere en la ventanilla.", "cue": "Take the document and wait at the counter." },
+    { "id": "L4-M7-C11", "display": "La próxima salida es a las ocho.", "cue": "The next departure is at eight." },
+    { "id": "L4-M7-C12", "display": "El pasajero deberá esperar en el andén.", "cue": "Passengers must wait on the platform." }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

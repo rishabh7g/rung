@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M6",
+  "title": "Before and after",
+  "job": "Time clauses: while, until, since, already, not yet",
+  "prerequisites": ["L4-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["present", "Perfekt"],
+    "allowedPatterns": [
+      "Bevor ich + <verb-final> + , + V-2 + ich",
+      "Während ich + <verb-final> + , + V-2 + ich",
+      "Ich warte + , + bis + <verb-final>",
+      "Seitdem ich hier wohne + , + V-2 + ich",
+      "Ich bin noch nicht fertig + , + aber + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "GERMAN SPLITS THE PHRASE FROM THE CLAUSE, and you already own half of every pair. English while, until, before and since each introduce either a noun or a whole clause; German uses a different word for each. während plus a noun is L3-M8's genitive preposition, während plus a subject and a verb is the conjunction written here. seit plus a noun is L3-M7's; seitdem plus a clause is this module's. bis plus a time is L2-M6's goodbye; bis plus a clause is until. The half you own is not the half this module teaches."
+    },
+    {
+      "tag": "delta",
+      "text": "ALL SIX CONJUNCTIONS ARE VERB-FINAL. bevor, während, seitdem, bis, sobald and solange send the verb of their own clause to the end, exactly as weil and dass do (L1-M9). Put that clause first and the whole clause counts as position one, so the main clause inverts behind the comma: Bevor ich ins Büro gehe, trinke ich einen Kaffee — comma, verb, subject. That is L3-M3's fronting law, now with six more words that trigger it."
+    },
+    {
+      "tag": "delta",
+      "text": "bevor TAKES THE SAME TENSE IN BOTH HALVES. English shifts the tense across the join — before I leave I will have had a coffee — and German refuses to: both verbs stay in the present, or both go into the Perfekt together. There is no sequence of tenses to keep, and an anglophone who builds one has written a sentence no German would."
+    },
+    {
+      "tag": "delta",
+      "text": "seitdem PAIRS WITH THE PRESENT for anything still going on. English needs a perfect — since I have lived here — and German uses the plain present: Seitdem ich hier wohne, fahre ich weniger Auto. This is L3-M7's seit rule doing its second job, on a clause instead of a noun, and it is the only tense seitdem takes while the state continues."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ASPECT ADVERBS ARE ONE SYSTEM, and it is the half of this module that is not a clause at all. schon is already, noch is still, noch nicht is not yet, nicht mehr is no longer. English carries three of those four with a perfect tense and a negation; German carries all four with a small adverb and a plain present. nicht mehr sits exactly where nicht sits, at the end of the middle field."
+    },
+    {
+      "tag": "delta",
+      "text": "erst IS THE ONE WITH NO ENGLISH WORD AT ALL. erst um acht is not until eight; schon um acht is as early as eight. Same clock time, two opposite judgements about it, and English needs a negation to say one of them. erst is L4-M1's row and keeps its note there; schon is L2-M2's, inside the noch row. This module writes both and opens neither."
+    },
+    {
+      "tag": "interference",
+      "text": "bis IS WRITTEN HERE AND OPENS NO ROW. L2-M6 owns bis, in the goodbye Bis Freitag, so a learner tapping bis during practice is shown that note rather than this one. Both seats are the same until — the older note is incomplete, not wrong — and this sentence's own deconstruction still puts the conjunction on the page in front of the learner."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M6-S01",
+      "display": "Bevor ich ins Büro gehe, trinke ich einen Kaffee",
+      "cue": "Before I go to the office, I have a coffee",
+      "literal": "Before I into-the office go, drink I a coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bevor",
+            "cue": "before (conjunction)",
+            "tag": "delta",
+            "forms": ["bevor"],
+            "note": "Verb-final, and both halves keep the SAME tense: Bevor ich gehe, trinke ich. Never *bevor ich werde gehen."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "English shifts the tense across before — before I leave I will have a coffee. German leaves both verbs in the present and the order alone carries the sequence.",
+      "sound": "buh-FOR ikh ins bue-ROH GAY-uh, TRIN-kuh ikh EYE-nun KA-fay.",
+      "variations": [
+        {
+          "display": "Ich trinke einen Kaffee, bevor ich ins Büro gehe",
+          "cue": "I have a coffee before I go to the office",
+          "changed": "The bevor clause moved to the back, so nothing is fronted and the main clause keeps its plain V-2 order: Ich trinke."
+        }
+      ],
+      "mistake": {
+        "display": "Bevor ich werde ins Büro gehen, trinke ich einen Kaffee",
+        "why": "German has no sequence of tenses after bevor. The present does the work in both halves; a future here is English grammar wearing German words."
+      },
+      "usage": "Describing the fixed order of two everyday things.",
+      "register": "neutral",
+      "mnemonic": "bevor puts the verb last and the tense unchanged."
+    },
+    {
+      "id": "L4-M6-S02",
+      "display": "Während ich koche, kann ich nicht gleichzeitig telefonieren",
+      "cue": "While I am cooking I cannot be on the phone at the same time",
+      "literal": "While I cook, can I not at-the-same-time telephone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gleichzeitig",
+            "cue": "at the same time, simultaneously",
+            "tag": "free",
+            "forms": ["gleichzeitig"],
+            "note": "The adverb that spells out what während already implies. It sits in the middle field, never first: kann ich nicht gleichzeitig …"
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "während plus a noun is the genitive preposition of L3-M8 (während der Woche). Here it takes a subject and a verb, and the verb goes to the end.",
+      "sound": "VAY-rent ikh KOKH-uh, kan ikh nikht GLYKH-tsy-tikh tay-lay-fo-NEE-run.",
+      "variations": [
+        {
+          "display": "Ich kann nicht gleichzeitig kochen und telefonieren",
+          "cue": "I cannot cook and be on the phone at the same time",
+          "changed": "No clause at all: two infinitives under one modal, and gleichzeitig alone carries the simultaneity."
+        }
+      ],
+      "mistake": {
+        "display": "Während ich koche, kann ich nicht telefonieren gleichzeitig",
+        "why": "gleichzeitig is a middle-field adverb, not a tail. It belongs before the infinitive that closes the bracket, never after it."
+      },
+      "usage": "Turning down a call, or explaining why two things do not fit into one moment.",
+      "register": "neutral",
+      "mnemonic": "während holds two clocks in one clause."
+    },
+    {
+      "id": "L4-M6-S03",
+      "display": "Wir müssen eine Stunde warten, bis der Zug kommt",
+      "cue": "We have to wait an hour until the train comes",
+      "literal": "We must an hour wait, until the train comes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Stunde",
+            "cue": "hour",
+            "tag": "free",
+            "forms": ["Stunde", "Stunden"],
+            "note": "Feminine: die Stunde, eine Stunde. A length of time takes no preposition in German — eine Stunde warten, not *für eine Stunde."
+          }
+        ],
+        "rules": [0, 1, 6]
+      },
+      "trap": "bis here is the conjunction until, not the goodbye Bis Freitag that L2-M6 taught. Same word, and tapping it in practice will show you that older note.",
+      "sound": "veer MUE-sun EYE-nuh SHTOON-duh VAR-tun, bis dair tsook KOMT.",
+      "variations": [
+        {
+          "display": "Wir warten hier, bis der Zug kommt",
+          "cue": "We are waiting here until the train comes",
+          "changed": "The length drops out and the modal with it; bis and its verb-final clause are untouched."
+        }
+      ],
+      "mistake": {
+        "display": "Wir müssen eine Stunde warten, bis kommt der Zug",
+        "why": "bis is a subordinating conjunction, so its own verb goes to the very end: bis der Zug kommt. Only a main clause puts the verb second."
+      },
+      "usage": "On a platform, telling somebody how long the wait is.",
+      "register": "neutral",
+      "mnemonic": "bis holds the door open until the verb arrives last."
+    },
+    {
+      "id": "L4-M6-S04",
+      "display": "Seitdem ich hier wohne, fahre ich weniger Auto",
+      "cue": "Since I have been living here I drive less",
+      "literal": "Since I here live, drive I less car",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "seitdem",
+            "cue": "since, ever since (conjunction)",
+            "tag": "delta",
+            "forms": ["seitdem"],
+            "note": "Takes a clause and the PRESENT while the state lasts: Seitdem ich hier wohne. With a noun the word is seit (L3-M7)."
+          },
+          {
+            "display": "weniger",
+            "cue": "less, fewer",
+            "tag": "free",
+            "forms": ["weniger"],
+            "note": "The comparative of wenig, and it never changes its ending: weniger Auto, weniger Zeit, weniger Leute."
+          }
+        ],
+        "rules": [0, 1, 3]
+      },
+      "trap": "English needs a perfect after since — since I have lived here. German uses the plain present, because the living is still going on.",
+      "sound": "ZYT-daym ikh here VOH-nuh, FAA-ruh ikh VAY-nig-er OW-toh.",
+      "variations": [
+        {
+          "display": "Seitdem ich hier wohne, gehe ich mehr zu Fuß",
+          "cue": "Since I have been living here I walk more",
+          "changed": "mehr for weniger — the other end of the same comparison, and the seitdem clause is untouched."
+        }
+      ],
+      "mistake": {
+        "display": "Seitdem ich hier gewohnt habe, fahre ich weniger Auto",
+        "why": "A Perfekt after seitdem says the living has stopped. While it is still true, German keeps the present — the tense is what marks it as ongoing."
+      },
+      "usage": "Explaining a change that started at a point and is still true.",
+      "register": "neutral",
+      "mnemonic": "seitdem starts the clock and the present keeps it running."
+    },
+    {
+      "id": "L4-M6-S05",
+      "display": "Ich bin noch nicht fertig, aber es dauert nicht lange",
+      "cue": "I am not ready yet, but it will not take long",
+      "literal": "I am still not ready, but it lasts not long",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "noch nicht",
+            "cue": "not yet",
+            "tag": "delta",
+            "forms": ["noch nicht"],
+            "note": "Two words German keeps in this order, and together they are one idea. Its opposite is schon: schon fertig against noch nicht fertig."
+          },
+          {
+            "display": "dauert",
+            "cue": "takes, lasts",
+            "tag": "free",
+            "forms": ["dauert", "dauern"],
+            "note": "Impersonal: es dauert lange, es dauert eine Stunde. German uses the present for something still to come — no will needed."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English says not yet with a perfect — I have not finished yet. German says it with the present and two small adverbs, and nothing about the tense changes.",
+      "sound": "ikh bin nokh nikht FAIR-tikh, AA-ber es DOW-ert nikht LANG-uh.",
+      "variations": [
+        {
+          "display": "Ich bin schon fertig, es dauert nicht mehr lange",
+          "cue": "I am ready already; it will not take much longer",
+          "changed": "schon replaces noch nicht and nicht mehr replaces nicht — the same sentence moved to the far end of the aspect system."
+        }
+      ],
+      "mistake": {
+        "display": "Ich bin nicht noch fertig, aber es dauert nicht lange",
+        "why": "The order is fixed: noch nicht is not yet, nicht noch is nothing at all. German writes the still before the not."
+      },
+      "usage": "Asking somebody to give you another minute.",
+      "register": "neutral",
+      "mnemonic": "noch nicht: the still comes first, the not comes second."
+    },
+    {
+      "id": "L4-M6-S06",
+      "display": "Ich arbeite nicht mehr in Berlin, sondern zu Hause",
+      "cue": "I no longer work in Berlin, but at home",
+      "literal": "I work not more in Berlin, but-rather at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nicht mehr",
+            "cue": "no longer, not any more",
+            "tag": "delta",
+            "forms": ["nicht mehr"],
+            "note": "One idea in two words, and it sits where nicht sits. Its opposite is noch: Ich arbeite noch hier against Ich arbeite nicht mehr hier."
+          },
+          {
+            "display": "sondern",
+            "cue": "but rather (after a negative)",
+            "tag": "interference",
+            "forms": ["sondern"],
+            "note": "The but that corrects a no. After nicht, German needs sondern, not aber: nicht in Berlin, sondern zu Hause."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English has one but and German has two. aber adds a contrast to something true; sondern replaces something you just denied, and only a negative can license it.",
+      "sound": "ikh AR-by-tuh nikht mair in ber-LEEN, ZON-dern tsoo HOW-zuh.",
+      "variations": [
+        {
+          "display": "Ich arbeite noch in Berlin, aber nicht mehr jeden Tag",
+          "cue": "I still work in Berlin, but no longer every day",
+          "changed": "noch for nicht mehr in the first half, so the second half takes aber — nothing was denied for sondern to correct."
+        }
+      ],
+      "mistake": {
+        "display": "Ich arbeite nicht mehr in Berlin, aber zu Hause",
+        "why": "The first half denied Berlin, so the second half is a replacement, not a contrast. A replacement after a negative takes sondern."
+      },
+      "usage": "Correcting somebody's picture of where you are these days.",
+      "register": "neutral",
+      "mnemonic": "aber adds, sondern replaces — and only a no can call for sondern."
+    },
+    {
+      "id": "L4-M6-S07",
+      "display": "Sobald ich zu Hause bin, rufe ich Sie an",
+      "cue": "As soon as I am home I will call you",
+      "literal": "As-soon-as I at home am, call I you on",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sobald",
+            "cue": "as soon as",
+            "tag": "delta",
+            "forms": ["sobald"],
+            "note": "Verb-final like bevor, and like bevor it stays in the present for something still to come: Sobald ich zu Hause bin."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "English cannot use a future after as soon as either, but it can in the main clause: I will call. German simply leaves both halves in the present.",
+      "sound": "zoh-BALT ikh tsoo HOW-zuh bin, ROO-fuh ikh zee AN.",
+      "variations": [
+        {
+          "display": "Ich rufe Sie an, sobald ich zu Hause bin",
+          "cue": "I will call you as soon as I am home",
+          "changed": "The clause moved to the back; the separable prefix an still closes the main clause, and nothing else moves."
+        }
+      ],
+      "mistake": {
+        "display": "Sobald ich werde zu Hause sein, rufe ich Sie an",
+        "why": "sobald behaves like bevor: the present carries the future. A werde here is the English will translated word for word."
+      },
+      "usage": "Promising to get back to somebody the moment you can.",
+      "register": "formal",
+      "mnemonic": "sobald is bevor pointing the other way, with the same tense."
+    },
+    {
+      "id": "L4-M6-S08",
+      "display": "Solange es regnet, bleiben wir hier",
+      "cue": "As long as it is raining we are staying here",
+      "literal": "As-long-as it rains, stay we here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "solange",
+            "cue": "as long as, for as long as",
+            "tag": "delta",
+            "forms": ["solange"],
+            "note": "The conjunction is written solid; so lange as two words is the adverb so long. Verb-final, and it marks a condition that lasts."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "solange is one word and so lange is two, and the space changes the part of speech. The conjunction never takes a space.",
+      "sound": "zoh-LANG-uh es RAYG-net, BLY-bun veer here.",
+      "variations": [
+        {
+          "display": "Wir bleiben hier, solange es regnet",
+          "cue": "We are staying here as long as it is raining",
+          "changed": "The clause moved behind, so the main clause opens with its subject and needs no inversion."
+        }
+      ],
+      "mistake": {
+        "display": "Solange es regnet, wir bleiben hier",
+        "why": "A fronted clause fills position one, so the main verb must come next: bleiben wir, not wir bleiben. This is the comma-verb-subject law."
+      },
+      "usage": "Deciding to sit something out.",
+      "register": "neutral",
+      "mnemonic": "solange: one word, one stretch of time."
+    },
+    {
+      "id": "L4-M6-S09",
+      "display": "Inzwischen ist es schon halb neun",
+      "cue": "By now it is already half past eight",
+      "literal": "Meanwhile is it already half nine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "inzwischen",
+            "cue": "by now, meanwhile, in the meantime",
+            "tag": "free",
+            "forms": ["inzwischen"],
+            "note": "Marks the time that has passed since something else. In first position it inverts the verb, like every fronted adverb."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "halb neun is half past EIGHT — German counts towards the coming hour, not back from the past one. That is L2-M6's clock, still true here.",
+      "sound": "in-TSVISH-un ist es shone halp NOYN.",
+      "variations": [
+        {
+          "display": "Inzwischen ist es erst halb neun",
+          "cue": "It is only half past eight so far",
+          "changed": "erst for schon: the same clock time judged as early rather than late. erst is L4-M1's row and keeps its note there."
+        }
+      ],
+      "mistake": {
+        "display": "Inzwischen es ist schon halb neun",
+        "why": "inzwischen is in first position, so the verb takes second and the subject follows it: Inzwischen ist es. V-2 does not care that the first word is an adverb."
+      },
+      "usage": "Noticing out loud that time has got away from you.",
+      "register": "neutral",
+      "mnemonic": "inzwischen is the gap between then and now, in one word."
+    },
+    {
+      "id": "L4-M6-S10",
+      "display": "Am Ende des Tages bin ich immer müde",
+      "cue": "At the end of the day I am always tired",
+      "literal": "At-the end of-the day am I always tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ende",
+            "cue": "end",
+            "tag": "free",
+            "forms": ["Ende"],
+            "note": "Neuter: das Ende. am Ende is the fixed phrase for in the end, and it takes the dative without thinking about it."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "des Tages is L3-M8's genitive, not a new case. The whole phrase am Ende des Tages is learnt as one shape.",
+      "sound": "am EN-duh des TAA-gus bin ikh IM-er MUE-duh.",
+      "variations": [
+        {
+          "display": "Am Ende der Woche bin ich immer müde",
+          "cue": "At the end of the week I am always tired",
+          "changed": "des Tages becomes der Woche — the same genitive on a feminine noun, which takes der."
+        }
+      ],
+      "mistake": {
+        "display": "Am Ende von dem Tag bin ich immer müde",
+        "why": "von dem is not wrong German, but the fixed phrase is genitive: am Ende des Tages. In a set phrase the genitive is what a reader expects."
+      },
+      "usage": "Summing up a long day.",
+      "register": "neutral",
+      "mnemonic": "am Ende closes the day the way bis closes the wait."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M6-C01",
+      "display": "Bevor ich ins Büro gehe, trinke ich einen Kaffee",
+      "cue": "Before I go to the office, I have a coffee"
+    },
+    {
+      "id": "L4-M6-C02",
+      "display": "Während ich koche, kann ich nicht gleichzeitig telefonieren",
+      "cue": "While I am cooking I cannot be on the phone at the same time"
+    },
+    {
+      "id": "L4-M6-C03",
+      "display": "Wir müssen eine Stunde warten, bis der Zug kommt",
+      "cue": "We have to wait an hour until the train comes"
+    },
+    {
+      "id": "L4-M6-C04",
+      "display": "Seitdem ich hier wohne, fahre ich weniger Auto",
+      "cue": "Since I have been living here I drive less"
+    },
+    {
+      "id": "L4-M6-C05",
+      "display": "Ich bin noch nicht fertig, aber es dauert nicht lange",
+      "cue": "I am not ready yet, but it will not take long"
+    },
+    {
+      "id": "L4-M6-C06",
+      "display": "Ich arbeite nicht mehr in Berlin, sondern zu Hause",
+      "cue": "I no longer work in Berlin, but at home"
+    },
+    {
+      "id": "L4-M6-C07",
+      "display": "Sobald ich zu Hause bin, rufe ich Sie an",
+      "cue": "As soon as I am home I will call you"
+    },
+    {
+      "id": "L4-M6-C08",
+      "display": "Solange es regnet, bleiben wir hier",
+      "cue": "As long as it is raining we are staying here"
+    },
+    {
+      "id": "L4-M6-C09",
+      "display": "Inzwischen ist es schon halb neun",
+      "cue": "By now it is already half past eight"
+    },
+    {
+      "id": "L4-M6-C10",
+      "display": "Am Ende des Tages bin ich immer müde",
+      "cue": "At the end of the day I am always tired"
+    },
+    {
+      "id": "L4-M6-C11",
+      "display": "Sobald der Zug kommt, gehen wir zusammen",
+      "cue": "As soon as the train comes we will go together"
+    },
+    {
+      "id": "L4-M6-C12",
+      "display": "Ich wohne nicht mehr hier, sondern in München",
+      "cue": "I no longer live here, but in Munich"
+    }
+  ],
+  "exitTest": { "generateCount": 2, "comprehendCount": 3 }
+}

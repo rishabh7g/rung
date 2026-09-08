@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M6",
+  "title": "Before and after",
+  "job": "Time clauses: while, until, since, already, not yet",
+  "prerequisites": ["L4-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 8,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["present_simple", "future_simple", "present_perfect", "simple_past"],
+    "allowedPatterns": [
+      "I will + V + when + <present clause>",
+      "<clause> + until + <present clause>",
+      "As soon as + <present> + , + <will + V>",
+      "I have not + V-pp + yet",
+      "I have been here since + <point in time>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "समय वाले उपवाक्य में भविष्य नहीं आता. अंग्रेज़ी भविष्य को सिर्फ़ एक बार दिखाती है, मुख्य वाक्य में: I will call you when I get home — कभी when I will get home नहीं. यही क़ायदा L3-M4 ने if के लिए तय किया था; यहाँ वह when, before, after, until, as soon as और by the time तक फैलता है."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी दोनों हिस्सों में भविष्य लगाती है — जब मैं पहुँचूँगा तब फ़ोन करूँगा — इसलिए सीधा अनुवाद सही हिंदी और ग़लत अंग्रेज़ी देता है. अंग्रेज़ी में जब वाला आधा present में रहता है, चाहे बात कल की ही क्यों न हो."
+    },
+    {
+      "tag": "free",
+      "text": "तीन क्रिया-विशेषण और उनकी तय जगहें: already बीच में आता है (I have already eaten), yet वाक्य के आख़िर में और सिर्फ़ सवाल या नकार में (I have not eaten yet), और still मुख्य क्रिया से पहले पर be के बाद (I still work here / He is still here). already और still L3-M10 के हैं; इस पाठ में yet खुलता है."
+    },
+    {
+      "tag": "free",
+      "text": "since दो तरह से चलता है. L3-M7 ने since + समय-बिंदु सिखाया था (since October). यहाँ since + पूरा उपवाक्य है: since I came to Delhi — since वाले आधे में simple past और मुख्य आधे में perfect. तक का सीधा जोड़ीदार until है, और till उसी का बोलचाल वाला रूप."
+    },
+    {
+      "tag": "free",
+      "text": "समय वाला उपवाक्य पहले भी आ सकता है और बाद में भी, दोनों भाषाओं में — क्रम आज़ाद है. फ़र्क़ सिर्फ़ इतना है कि अंग्रेज़ी में उसे आगे रखने पर बीच में कॉमा लगता है: As soon as the rain stops, I will call you."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M6-S01",
+      "display": "As soon as the rain stops, I will call you.",
+      "cue": "बारिश रुकते ही मैं आपको फ़ोन करूँगा.",
+      "literal": "जैसे ही जल्द जैसे वह बारिश रुकती है, मैं करूँगा फ़ोन तुम्हें.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as soon as",
+            "cue": "जैसे ही",
+            "tag": "delta",
+            "forms": ["as soon as"],
+            "note": "तीनों शब्द एक साथ चलते हैं. इसके बाद वाला आधा present में रहता है — stops, कभी will stop नहीं."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "As soon as the rain will stop मत लिखिए. भविष्य सिर्फ़ will call में है, दो बार नहीं आता.",
+      "sound": "as soon as बोलचाल में जुड़कर अ-सून-अज़ जैसा सुनाई देता है.",
+      "variations": [
+        {
+          "display": "As soon as the rain stops, we will go.",
+          "cue": "बारिश रुकते ही हम चलेंगे.",
+          "changed": "दूसरा आधा छोटा हुआ"
+        },
+        {
+          "display": "I will call you as soon as the rain stops.",
+          "cue": "बारिश रुकते ही मैं आपको फ़ोन करूँगा.",
+          "changed": "समय वाला आधा पीछे गया, कॉमा हट गया"
+        },
+        {
+          "display": "As soon as the work finishes, I will eat.",
+          "cue": "काम ख़त्म होते ही मैं खाऊँगा.",
+          "changed": "बारिश की जगह काम"
+        }
+      ],
+      "mistake": {
+        "display": "As soon as the rain will stop, I will call you",
+        "why": "समय वाले आधे में will नहीं आता. वहाँ present रखिए: stops."
+      },
+      "usage": "किसी काम के तुरंत बाद कुछ करने का वादा करते समय.",
+      "register": "neutral",
+      "mnemonic": "as soon as के बाद present — भविष्य सिर्फ़ एक बार."
+    },
+    {
+      "id": "L4-M6-S02",
+      "display": "I will wait here until the doctor is free.",
+      "cue": "मैं यहाँ तब तक रुकूँगा जब तक डॉक्टर ख़ाली नहीं हो जाते.",
+      "literal": "मैं करूँगा इंतज़ार यहाँ तक वह डॉक्टर है ख़ाली.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "until",
+            "cue": "जब तक",
+            "tag": "delta",
+            "forms": ["until"],
+            "note": "उस पल तक, जब तक बात चलती रहे. आगे present आता है, will कभी नहीं."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "until the doctor will be free मत कहिए. until के आगे भविष्य नहीं आता.",
+      "sound": "until में पहला हिस्सा दबा रहता है — अन्-टिल्.",
+      "variations": [
+        {
+          "display": "I will wait until you call.",
+          "cue": "जब तक आप फ़ोन नहीं करते, मैं रुकूँगा.",
+          "changed": "डॉक्टर की जगह आप"
+        },
+        {
+          "display": "We will wait here until the rain stops.",
+          "cue": "बारिश रुकने तक हम यहाँ रुकेंगे.",
+          "changed": "मैं की जगह हम, और डॉक्टर की जगह बारिश"
+        },
+        {
+          "display": "I will not go until the work finishes.",
+          "cue": "काम ख़त्म होने तक मैं नहीं जाऊँगा.",
+          "changed": "मुख्य आधा नकार में"
+        }
+      ],
+      "mistake": {
+        "display": "I will wait here until the doctor will be free",
+        "why": "until के बाद present आता है. भविष्य पहले ही will wait में आ चुका है."
+      },
+      "usage": "इंतज़ार की सीमा बताते समय — कब तक.",
+      "register": "neutral",
+      "mnemonic": "until = तक, और तक के आगे present."
+    },
+    {
+      "id": "L4-M6-S03",
+      "display": "The bank is open till five, so I will go after work.",
+      "cue": "बैंक पाँच बजे तक खुला है, तो मैं काम के बाद जाऊँगा.",
+      "literal": "वह बैंक है खुला तक पाँच, तो मैं जाऊँगा बाद काम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "till",
+            "cue": "तक",
+            "tag": "free",
+            "forms": ["till"],
+            "note": "till और until एक ही हैं. till बोलचाल में ज़्यादा चलता है, until लिखने और औपचारिक बात में."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "till को until से अलग अर्थ मत दीजिए; फ़र्क़ सिर्फ़ सुर का है, अर्थ का नहीं.",
+      "sound": "till छोटा और कड़ा है — टिल्, एक ही झटके में.",
+      "variations": [
+        {
+          "display": "The shop is open till nine.",
+          "cue": "दुकान नौ बजे तक खुली है.",
+          "changed": "बैंक की जगह दुकान"
+        },
+        {
+          "display": "The office is open till five.",
+          "cue": "दफ़्तर पाँच बजे तक खुला है.",
+          "changed": "बैंक की जगह दफ़्तर"
+        },
+        {
+          "display": "I will wait till Monday.",
+          "cue": "मैं सोमवार तक इंतज़ार करूँगा.",
+          "changed": "समय की जगह दिन"
+        }
+      ],
+      "mistake": {
+        "display": "The bank is open until to five, so I will go after work",
+        "why": "until या till के आगे to नहीं आता. सीधा समय लिखिए: till five."
+      },
+      "usage": "दुकान, दफ़्तर या बैंक का खुलने का समय बताते समय.",
+      "register": "informal",
+      "mnemonic": "till = until का छोटा भाई."
+    },
+    {
+      "id": "L4-M6-S04",
+      "display": "Have you eaten your lunch? Not yet, but I will eat at home.",
+      "cue": "क्या आपने खाना खा लिया? अभी नहीं, पर मैं घर पर खाऊँगा.",
+      "literal": "क्या तुमने खाया अपना खाना? नहीं अभी, पर मैं खाऊँगा पर घर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "not yet",
+            "cue": "अभी नहीं",
+            "tag": "delta",
+            "forms": ["not yet"],
+            "note": "पूरे सवाल का छोटा जवाब. दोनों शब्द साथ चलते हैं और अकेले खड़े रह सकते हैं."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "Not still मत कहिए. अभी तक नहीं का छोटा जवाब हमेशा Not yet है.",
+      "sound": "Not yet में पहला t दब जाता है — नॉट्-येट् एक ही साँस में.",
+      "variations": [
+        {
+          "display": "Have you eaten? Not yet.",
+          "cue": "खाना खाया? अभी नहीं.",
+          "changed": "सबसे छोटा रूप"
+        },
+        {
+          "display": "Not yet, but I will call you.",
+          "cue": "अभी नहीं, पर मैं आपको फ़ोन करूँगा.",
+          "changed": "दूसरा आधा बदला"
+        },
+        {
+          "display": "Have you finished the work? Not yet.",
+          "cue": "काम ख़त्म हुआ? अभी नहीं.",
+          "changed": "खाने की जगह काम"
+        }
+      ],
+      "mistake": {
+        "display": "Have you eaten your lunch? Not still",
+        "why": "छोटा जवाब Not yet है. still का काम अलग है — वह जारी रहना बताता है."
+      },
+      "usage": "किसी ने पूछा कि हो गया क्या, और अभी नहीं हुआ.",
+      "register": "informal",
+      "mnemonic": "अभी तक नहीं — Not yet, बस दो शब्द."
+    },
+    {
+      "id": "L4-M6-S05",
+      "display": "By the time I finish, the office will be closed.",
+      "cue": "जब तक मैं ख़त्म करूँगा, दफ़्तर बंद हो चुका होगा.",
+      "literal": "तक वह समय मैं ख़त्म करता, वह दफ़्तर होगा बंद.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "by the time",
+            "cue": "जब तक",
+            "tag": "delta",
+            "forms": ["by the time"],
+            "note": "चारों शब्द साथ चलते हैं. आगे present आता है और मुख्य आधे में will — तब तक हो चुका होगा."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "By the time I will finish मत लिखिए. by the time के आगे present ही रहता है.",
+      "sound": "by the time में the दबकर द रह जाता है — बाइ-द-टाइम्.",
+      "variations": [
+        {
+          "display": "By the time we get home, the shop will be closed.",
+          "cue": "जब तक हम घर पहुँचेंगे, दुकान बंद हो चुकी होगी.",
+          "changed": "मैं की जगह हम"
+        },
+        {
+          "display": "By the time you call, I will be free.",
+          "cue": "जब तक आप फ़ोन करेंगे, मैं ख़ाली हो चुका होऊँगा.",
+          "changed": "दूसरा आधा बदला"
+        },
+        {
+          "display": "By the time I finish, it will be late.",
+          "cue": "जब तक मैं ख़त्म करूँगा, देर हो चुकी होगी.",
+          "changed": "दफ़्तर की जगह देर"
+        }
+      ],
+      "mistake": {
+        "display": "By the time I will finish, the office will be closed",
+        "why": "समय वाले आधे में will नहीं आता. वहाँ finish रखिए."
+      },
+      "usage": "यह बताते समय कि एक काम पूरा होते-होते दूसरा हो चुका होगा.",
+      "register": "neutral",
+      "mnemonic": "By the time — तब तक, और तब तक के आगे present."
+    },
+    {
+      "id": "L4-M6-S06",
+      "display": "Since I came to Delhi I have not met him yet.",
+      "cue": "जब से मैं दिल्ली आया हूँ, अब तक उनसे नहीं मिला.",
+      "literal": "जब से मैं आया को दिल्ली मैं हूँ नहीं मिला अभी तक.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yet",
+            "cue": "अभी तक",
+            "tag": "delta",
+            "forms": ["yet"],
+            "note": "वाक्य के आख़िर में आता है और सिर्फ़ नकार या सवाल में. सीधे वाक्य में इसकी जगह already है."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "I still did not meet him मत लिखिए. अभी तक नहीं के लिए अंग्रेज़ी perfect और yet लेती है.",
+      "sound": "yet का t आख़िर में लगभग रुक जाता है — येट्.",
+      "variations": [
+        {
+          "display": "I have not met him yet.",
+          "cue": "मैं अब तक उनसे नहीं मिला.",
+          "changed": "since वाला आधा हट गया"
+        },
+        {
+          "display": "Since I came to Delhi I have not seen the market.",
+          "cue": "जब से मैं दिल्ली आया हूँ, बाज़ार नहीं देखा.",
+          "changed": "मिलना की जगह देखना"
+        },
+        {
+          "display": "Have you met the manager yet?",
+          "cue": "क्या आप मैनेजर से मिल चुके हैं?",
+          "changed": "नकार की जगह सवाल"
+        }
+      ],
+      "mistake": {
+        "display": "Since I came to Delhi I still did not meet him",
+        "why": "अभी तक नहीं के लिए perfect और yet चाहिए: I have not met him yet."
+      },
+      "usage": "दिल्ली आने के बाद से अब तक क्या नहीं हुआ, यह बताते समय.",
+      "register": "neutral",
+      "mnemonic": "yet आख़िर में, और सिर्फ़ नहीं या क्या के साथ."
+    },
+    {
+      "id": "L4-M6-S07",
+      "display": "During the meeting I did not speak, but I asked later.",
+      "cue": "बैठक के दौरान मैं कुछ नहीं बोला, पर बाद में पूछा.",
+      "literal": "दौरान वह बैठक मैं किया नहीं बोलना, पर मैंने पूछा बाद में.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "during",
+            "cue": "के दौरान",
+            "tag": "delta",
+            "forms": ["during"],
+            "note": "आगे हमेशा संज्ञा आती है, उपवाक्य नहीं: during the meeting. पूरी क्रिया के लिए while है, जो L3-M10 का है."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "During I was working मत लिखिए. उपवाक्य के लिए while है, during के लिए सिर्फ़ नाम.",
+      "sound": "during में पहला हिस्सा भारी है — ड्यूर्-इंग्.",
+      "variations": [
+        {
+          "display": "During the class I did not speak.",
+          "cue": "कक्षा के दौरान मैं कुछ नहीं बोला.",
+          "changed": "बैठक की जगह कक्षा"
+        },
+        {
+          "display": "During the meeting he asked about the deadline.",
+          "cue": "बैठक के दौरान उन्होंने आख़िरी तारीख़ के बारे में पूछा.",
+          "changed": "मैं की जगह वह"
+        },
+        {
+          "display": "I did not speak during the meeting.",
+          "cue": "मैं बैठक के दौरान कुछ नहीं बोला.",
+          "changed": "during वाला आधा पीछे गया"
+        }
+      ],
+      "mistake": {
+        "display": "During I was in the meeting, I did not speak",
+        "why": "during के आगे संज्ञा आती है. उपवाक्य के साथ while लिखिए."
+      },
+      "usage": "किसी बैठक, कक्षा या यात्रा के भीतर की बात बताते समय.",
+      "register": "neutral",
+      "mnemonic": "during के आगे नाम, while के आगे काम."
+    },
+    {
+      "id": "L4-M6-S08",
+      "display": "Whenever I go to the market, I have tea afterwards.",
+      "cue": "जब भी मैं बाज़ार जाता हूँ, उसके बाद चाय पीता हूँ.",
+      "literal": "जब भी मैं जाता को वह बाज़ार, मैं पीता चाय उसके बाद.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "whenever",
+            "cue": "जब भी",
+            "tag": "free",
+            "forms": ["whenever"],
+            "note": "when का हर-बार वाला रूप. आदत बताता है, इसलिए आगे present ही रहता है."
+          },
+          {
+            "display": "afterwards",
+            "cue": "उसके बाद",
+            "tag": "free",
+            "forms": ["afterwards"],
+            "note": "वाक्य के आख़िर में आता है और अकेला खड़ा रहता है — आगे कोई संज्ञा नहीं लेता."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "Whenever I will go मत लिखिए; whenever के आगे present ही रहता है.",
+      "sound": "whenever में ज़ोर बीच पर है — वेन्-ए-वर्.",
+      "variations": [
+        {
+          "display": "Whenever I go to Delhi, I visit my uncle.",
+          "cue": "जब भी मैं दिल्ली जाता हूँ, चाचा से मिलता हूँ.",
+          "changed": "बाज़ार की जगह दिल्ली"
+        },
+        {
+          "display": "Whenever I have money, I buy books.",
+          "cue": "जब भी मेरे पास पैसे होते हैं, मैं किताबें ख़रीदता हूँ.",
+          "changed": "पूरा दूसरा उदाहरण"
+        },
+        {
+          "display": "I have tea afterwards.",
+          "cue": "मैं उसके बाद चाय पीता हूँ.",
+          "changed": "whenever वाला आधा हट गया"
+        }
+      ],
+      "mistake": {
+        "display": "Whenever I will go to the market, I have tea afterwards",
+        "why": "whenever के आगे भविष्य नहीं आता. present रखिए: whenever I go."
+      },
+      "usage": "हर बार होने वाली आदत बताते समय.",
+      "register": "neutral",
+      "mnemonic": "whenever = जब भी, और आगे present."
+    },
+    {
+      "id": "L4-M6-S09",
+      "display": "So far the work is good. Meanwhile you can wait here.",
+      "cue": "अब तक काम अच्छा है. इस बीच आप यहाँ रुक सकते हैं.",
+      "literal": "अब तक वह काम है अच्छा. इस बीच तुम सकते इंतज़ार यहाँ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "so far",
+            "cue": "अब तक",
+            "tag": "free",
+            "forms": ["so far"],
+            "note": "शुरू से इस पल तक. दोनों शब्द साथ चलते हैं और आम तौर पर वाक्य के आगे बैठते हैं."
+          },
+          {
+            "display": "meanwhile",
+            "cue": "इस बीच",
+            "tag": "free",
+            "forms": ["meanwhile"],
+            "note": "दो कामों को एक ही समय में रखता है. वाक्य के शुरू में आता है और आगे कॉमा ले सकता है."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "Meanwhile को during मत बनाइए. during के आगे संज्ञा आती है; meanwhile अकेला पूरे वाक्य के आगे बैठता है.",
+      "sound": "meanwhile के दोनों हिस्से बराबर हैं — मीन्-वाइल्.",
+      "variations": [
+        {
+          "display": "So far the work is good.",
+          "cue": "अब तक काम अच्छा है.",
+          "changed": "दूसरा आधा हट गया"
+        },
+        {
+          "display": "Meanwhile you can wait in the office.",
+          "cue": "इस बीच आप दफ़्तर में रुक सकते हैं.",
+          "changed": "यहाँ की जगह दफ़्तर"
+        },
+        {
+          "display": "So far I have not met the manager.",
+          "cue": "अब तक मैं मैनेजर से नहीं मिला.",
+          "changed": "सादे वाक्य की जगह perfect"
+        }
+      ],
+      "mistake": {
+        "display": "During you can wait here",
+        "why": "during के आगे संज्ञा चाहिए. यहाँ Meanwhile you can wait here सही है."
+      },
+      "usage": "काम की अब तक की हालत बताकर सामने वाले को कुछ करने को कहते समय.",
+      "register": "neutral",
+      "mnemonic": "so far अब तक, meanwhile इस बीच."
+    },
+    {
+      "id": "L4-M6-S10",
+      "display": "After the meeting I went home. I will call you later.",
+      "cue": "बैठक के बाद मैं घर चला गया. मैं आपको बाद में फ़ोन करूँगा.",
+      "literal": "बाद वह बैठक मैं गया घर. मैं करूँगा फ़ोन तुम्हें बाद में.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "after",
+            "cue": "के बाद",
+            "tag": "free",
+            "forms": ["after"],
+            "note": "before का जोड़ीदार, जो L3-M10 का है. आगे संज्ञा भी आ सकती है और पूरा उपवाक्य भी: after I finish."
+          },
+          {
+            "display": "later",
+            "cue": "बाद में",
+            "tag": "free",
+            "forms": ["later"],
+            "note": "अकेला खड़ा रहता है और वाक्य के आख़िर में आता है. इसका उल्टा earlier L4-M3 का है."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "After I will finish मत लिखिए. after के आगे भी present रहता है, जैसे when के आगे.",
+      "sound": "later का t अमेरिकी बोली में d जैसा हो जाता है — लेइ-डर्.",
+      "variations": [
+        {
+          "display": "After the class I went home.",
+          "cue": "कक्षा के बाद मैं घर चला गया.",
+          "changed": "बैठक की जगह कक्षा"
+        },
+        {
+          "display": "I will call you later.",
+          "cue": "मैं आपको बाद में फ़ोन करूँगा.",
+          "changed": "पहला आधा हट गया"
+        },
+        {
+          "display": "After I finish, I will call you.",
+          "cue": "ख़त्म करने के बाद मैं आपको फ़ोन करूँगा.",
+          "changed": "संज्ञा की जगह पूरा उपवाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "After I will finish the work, I will call you",
+        "why": "after के आगे will नहीं आता. present रखिए: after I finish."
+      },
+      "usage": "एक काम के बाद दूसरा काम बताते समय.",
+      "register": "neutral",
+      "mnemonic": "before पीछे, after आगे — दोनों के आगे present."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M6-C01",
+      "display": "As soon as the rain stops, I will call you.",
+      "cue": "बारिश रुकते ही मैं आपको फ़ोन करूँगा."
+    },
+    {
+      "id": "L4-M6-C02",
+      "display": "I will wait here until the doctor is free.",
+      "cue": "मैं यहाँ तब तक रुकूँगा जब तक डॉक्टर ख़ाली नहीं हो जाते."
+    },
+    {
+      "id": "L4-M6-C03",
+      "display": "The bank is open till five.",
+      "cue": "बैंक पाँच बजे तक खुला है."
+    },
+    {
+      "id": "L4-M6-C04",
+      "display": "Have you eaten your lunch? Not yet.",
+      "cue": "क्या आपने खाना खा लिया? अभी नहीं."
+    },
+    {
+      "id": "L4-M6-C05",
+      "display": "By the time I finish, the office will be closed.",
+      "cue": "जब तक मैं ख़त्म करूँगा, दफ़्तर बंद हो चुका होगा."
+    },
+    {
+      "id": "L4-M6-C06",
+      "display": "I have not met him yet.",
+      "cue": "मैं अब तक उनसे नहीं मिला."
+    },
+    {
+      "id": "L4-M6-C07",
+      "display": "During the meeting I did not speak.",
+      "cue": "बैठक के दौरान मैं कुछ नहीं बोला."
+    },
+    {
+      "id": "L4-M6-C08",
+      "display": "Whenever I go to the market, I have tea.",
+      "cue": "जब भी मैं बाज़ार जाता हूँ, चाय पीता हूँ."
+    },
+    {
+      "id": "L4-M6-C09",
+      "display": "Meanwhile you can wait here.",
+      "cue": "इस बीच आप यहाँ रुक सकते हैं."
+    },
+    {
+      "id": "L4-M6-C10",
+      "display": "I will call you later.",
+      "cue": "मैं आपको बाद में फ़ोन करूँगा."
+    },
+    {
+      "id": "L4-M6-C11",
+      "display": "So far the work is good.",
+      "cue": "अब तक काम अच्छा है."
+    },
+    {
+      "id": "L4-M6-C12",
+      "display": "After the meeting I went home.",
+      "cue": "बैठक के बाद मैं घर चला गया."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M6",
+  "title": "Before and after",
+  "job": "Time clauses: while, until, since, already, not yet",
+  "prerequisites": ["L4-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["simple_present_imperfective", "simple_past", "simple_future_perfective"],
+    "allowedPatterns": [
+      "Poká + <imperfective clause> + , + <imperfective clause>",
+      "Poká ne + <perfective clause> + , + <clause>",
+      "Poslé tovó kak + <clause> + , + <clause>",
+      "Péred tem kak + V-inf + , + <clause>",
+      "Ya zdes' + s + <N-genitive>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Two events pinned to each other, not to the clock. poká is WHILE and takes the IMPERFECTIVE on both sides — two stretches running alongside. poká ne is UNTIL and takes the PERFECTIVE — the one event that ends the wait. That aspect pairing is not a new law: it is L2-M10's rule read off a time clause instead of a bare verb, which is why this module can afford to spend its whole budget on the connectors."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ne IN poká ne NEGATES NOTHING. Podozhdíte, poká ya ne vernús' is wait UNTIL I come back — not wait while I do not come back. Read as English reads it the sentence means the opposite of what you meant, and a learner who distrusts the ne simply refuses to write it. Treat poká ne as one word with a hole in the middle: the subject and any other words slot in between, as in poká ya ne vernús'."
+    },
+    {
+      "tag": "delta",
+      "text": "RUSSIAN HAS NO PERFECT. I have been waiting an hour is Ya zhdu uzhé chas — a plain present plus an adverb, with no have and no been. L3-M7 said this once about pain; here it is the general rule. The tense you want is the tense the action is IN: still going on means present, over means past. Nothing is missing from the Russian, and there is no form to hunt for."
+    },
+    {
+      "tag": "delta",
+      "text": "English SINCE is two words in Russian and the split is by what follows it. A POINT in time takes s plus the GENITIVE: s utrá, since this morning. A stretch reaching back from a moment already mentioned takes s tekh por, since then. Both sit with an ordinary present or past — again, no perfect."
+    },
+    {
+      "tag": "delta",
+      "text": "Three time adverbs that English builds with different words. uzhé is ALREADY; yeshchyó ne is NOT YET; and uzhé ne is NOT ANY MORE — the same uzhé, with ne, and nothing added. Each pair is one meaning and is learnt whole: reading uzhé ne as already not gives nothing."
+    },
+    {
+      "tag": "free",
+      "text": "Where English costs nothing: poslé tovó kak and péred tem kak stand exactly where after and before stand, at the front of the clause they govern, with the comma L3-M3 already made compulsory. Bare poslé takes the GENITIVE of a noun (poslé obéda) and chérez takes the ACCUSATIVE for time ahead (chérez chas, in an hour)."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M6-S01",
+      "display": "Poká ya rabótayu, oná chitáyet knígu.",
+      "script": "Пока я работаю, она читает книгу.",
+      "cue": "While I'm working, she reads a book.",
+      "literal": "While I work, she reads book.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poká",
+            "script": "пока",
+            "cue": "while",
+            "tag": "delta",
+            "forms": ["poká"],
+            "note": "While, of two stretches running side by side. Both clauses stay IMPERFECTIVE: nothing here reaches an end. With ne after it the word means until instead."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "poká is not when. kogdá (L2-M10) puts one event at another's moment; poká holds two stretches open at once, which is why neither verb may be perfective.",
+      "sound": "pa-KA — two syllables, stress on the second, and the unstressed first o is a plain ah.",
+      "variations": [
+        {
+          "display": "Poká ya rabótayu, oná spit.",
+          "script": "Пока я работаю, она спит.",
+          "cue": "While I'm working, she's asleep.",
+          "changed": "a different stretch in the second clause — still imperfective"
+        },
+        {
+          "display": "Poká oná chitáyet, ya rabótayu.",
+          "script": "Пока она читает, я работаю.",
+          "cue": "While she's reading, I work.",
+          "changed": "the two clauses swapped, which changes nothing but the emphasis"
+        }
+      ],
+      "mistake": {
+        "display": "Poká ya rabótayu, oná prochitála knígu.",
+        "script": "Пока я работаю, она прочитала книгу.",
+        "why": "The perfective prochitála closes the book, and poká has no room for a closed event — it is a window, not a moment. Either chitáyet inside poká, or kogdá with the perfective."
+      },
+      "usage": "Saying what someone else is doing during the stretch you are busy.",
+      "register": "neutral",
+      "mnemonic": "poká holds the door open; nothing perfective fits through it."
+    },
+    {
+      "id": "L4-M6-S02",
+      "display": "Podozhdíte, poká ya ne vernús'.",
+      "script": "Подождите, пока я не вернусь.",
+      "cue": "Wait until I come back.",
+      "literal": "Wait, until I not return.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poká ne",
+            "script": "пока не",
+            "cue": "until",
+            "tag": "interference",
+            "forms": ["poká ne"],
+            "note": "Until. The ne is part of the connector and negates nothing; the verb after it is PERFECTIVE, because it is the event that ends the waiting."
+          },
+          {
+            "display": "vernús'",
+            "script": "вернусь",
+            "cue": "I'll come back",
+            "tag": "delta",
+            "forms": ["vernús'", "vernyótes'", "vernút'sya"],
+            "note": "Perfective future of vernút'sya, to come back. Its past cells are already taught: vernúlsya and vernúlas' are L2-M10's, vernúlis' is L3-M10's."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Do not drop the ne to make the sentence look sane. Podozhdíte, poká ya vernús' is not the polite version of this — it is a sentence a Russian has to stop and re-read.",
+      "sound": "ver-NUS — stress on the u, and the final s' is soft, the tongue flat against the palate.",
+      "variations": [
+        {
+          "display": "Podozhdíte, poká ne pridyót vrach.",
+          "script": "Подождите, пока не придёт врач.",
+          "cue": "Wait until the doctor comes.",
+          "changed": "poká ne standing next to its verb, which is where it usually sits"
+        },
+        {
+          "display": "Podozhdí, poká ya ne vernús'.",
+          "script": "Подожди, пока я не вернусь.",
+          "cue": "Wait until I come back.",
+          "changed": "the ty form of the command — the connector is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "Podozhdíte, poká ya vernús'.",
+        "script": "Подождите, пока я вернусь.",
+        "why": "Without ne this is poká, while, with a perfective verb it cannot take — a stretch with a finish line in it. The ne is what turns while into until, and it is not optional."
+      },
+      "usage": "Leaving someone somewhere and asking them to stay put.",
+      "register": "formal",
+      "mnemonic": "Russian waits until NOT-yet-back; the ne is the not, and it belongs to the waiting."
+    },
+    {
+      "id": "L4-M6-S03",
+      "display": "Poslé tovó kak on ushyól, ya pozvoníla Ánne.",
+      "script": "После того как он ушёл, я позвонила Анне.",
+      "cue": "After he left, I rang Anna.",
+      "literal": "After that as he left, I rang to-Anna.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poslé tovó kak",
+            "script": "после того как",
+            "cue": "after (something happened)",
+            "tag": "free",
+            "forms": ["poslé tovó kak"],
+            "note": "After, in front of a whole clause. Three words that behave as one and never come apart. For a noun rather than a clause, plain poslé plus the genitive does the job."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "The three words are a unit — tovó is not pointing at anything and kak is not how. Translating them one at a time gives after that as, which is not English and not Russian either.",
+      "sound": "pas-LYE ta-VO kak — four beats run together, and the middle word is spelt with g but said with v.",
+      "variations": [
+        {
+          "display": "Poslé tovó kak on ushyól, ya rabótal dólgo.",
+          "script": "После того как он ушёл, я работал долго.",
+          "cue": "After he left, I worked for a long time.",
+          "changed": "an imperfective stretch after the perfective step"
+        },
+        {
+          "display": "Poslé tovó kak oná prishlá, my poshlí v kafé.",
+          "script": "После того как она пришла, мы пошли в кафе.",
+          "cue": "After she arrived, we went to a café.",
+          "changed": "two perfective steps, one after the other"
+        }
+      ],
+      "mistake": {
+        "display": "Poslé on ushyól, ya pozvoníla Ánne.",
+        "script": "После он ушёл, я позвонила Анне.",
+        "why": "Bare poslé cannot govern a clause — it wants a noun in the genitive. In front of he left it needs its other two words: poslé tovó kak."
+      },
+      "usage": "Ordering two past events when the second depends on the first being over.",
+      "register": "neutral",
+      "mnemonic": "poslé alone takes a thing; poslé tovó kak takes a whole story."
+    },
+    {
+      "id": "L4-M6-S04",
+      "display": "Péred tem kak otvétit', podúmayte.",
+      "script": "Перед тем как ответить, подумайте.",
+      "cue": "Before answering, think it over.",
+      "literal": "Before that as to-answer, think.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "péred tem kak",
+            "script": "перед тем как",
+            "cue": "before (doing something)",
+            "tag": "free",
+            "forms": ["péred tem kak"],
+            "note": "Before, and where the two subjects are the same it is followed by the INFINITIVE, not a full clause — péred tem kak otvétit', before answering."
+          },
+          {
+            "display": "otvétit'",
+            "script": "ответить",
+            "cue": "to answer",
+            "tag": "free",
+            "forms": ["otvétit'"],
+            "note": "The infinitive of the verb L3-M5 taught in the past, otvétil and otvétila; those two cells stay L3-M5's and only the infinitive opens here."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "English before answering has an -ing; Russian has an infinitive. There is no form of otvétit' that behaves like answering, and nothing to build.",
+      "sound": "PYE-rit tyem kak — the first word is front-stressed and its final d hardens to a t.",
+      "variations": [
+        {
+          "display": "Péred tem kak otvétit', ya vsegdá dúmayu.",
+          "script": "Перед тем как ответить, я всегда думаю.",
+          "cue": "Before answering, I always think.",
+          "changed": "a habit in the main clause instead of a command"
+        },
+        {
+          "display": "Péred tem kak spat', ya chitáyu knígu.",
+          "script": "Перед тем как спать, я читаю книгу.",
+          "cue": "Before going to sleep, I read a book.",
+          "changed": "a different infinitive in the same slot"
+        }
+      ],
+      "mistake": {
+        "display": "Péred otvétit', podúmayte.",
+        "script": "Перед ответить, подумайте.",
+        "why": "Bare péred is a preposition and cannot stand in front of a verb at all. The connector that can is the three-word péred tem kak."
+      },
+      "usage": "Advice, instructions, and anything printed above a form.",
+      "register": "formal",
+      "mnemonic": "Before an ACTION, Russian names the action with its plain infinitive — no -ing to build."
+    },
+    {
+      "id": "L4-M6-S05",
+      "display": "Ya zdes' s utrá, i óchen' ustál.",
+      "script": "Я здесь с утра, и очень устал.",
+      "cue": "I've been here since this morning, and I'm very tired.",
+      "literal": "I here since morning, and very tired.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "utrá",
+            "script": "утра",
+            "cue": "morning (after s)",
+            "tag": "delta",
+            "forms": ["utrá", "útro"],
+            "note": "The genitive s takes for a point in time: s utrá, since this morning. Note the stress moves off the first syllable — útro but s utrá."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "There is no verb in the Russian at all, and none is missing. I have been here needs a have and a been in English; Russian needs only Ya zdes' plus the point the being started from.",
+      "sound": "s oot-RA — the s leans on the next word and the stress lands on the final a.",
+      "variations": [
+        {
+          "display": "Ya zdes' s utrá.",
+          "script": "Я здесь с утра.",
+          "cue": "I've been here since this morning.",
+          "changed": "the bare frame, with nothing hung on it"
+        },
+        {
+          "display": "Oná zdes' s utrá, i óchen' ustála.",
+          "script": "Она здесь с утра, и очень устала.",
+          "cue": "She's been here since this morning, and she's very tired.",
+          "changed": "a woman speaking, so ustál becomes ustála"
+        }
+      ],
+      "mistake": {
+        "display": "Ya byl zdes' s utrá, i óchen' ustál.",
+        "script": "Я был здесь с утра, и очень устал.",
+        "why": "Correct Russian, and it says something else: with byl you have left. The present tense is what keeps you standing there, which is exactly the work English gives to have been."
+      },
+      "usage": "Explaining, with some feeling, how long you have already been somewhere.",
+      "register": "neutral",
+      "mnemonic": "Still true, still present tense — Russian marks the start and lets the tense say it is not over."
+    },
+    {
+      "id": "L4-M6-S06",
+      "display": "Ya zhdu vas uzhé chas.",
+      "script": "Я жду вас уже час.",
+      "cue": "I've been waiting for you for an hour.",
+      "literal": "I wait you already hour.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zhdu",
+            "script": "жду",
+            "cue": "I wait, I'm waiting",
+            "tag": "delta",
+            "forms": ["zhdu", "zhdyót", "zhdat'"],
+            "note": "Present of zhdat', to wait. It takes its object bare — zhdu vas, no preposition, where English needs for."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "Two English habits to drop at once: the perfect (have been waiting) and the for in waiting FOR you. Russian has neither — a present tense and a bare object.",
+      "sound": "zhdoo — one syllable, and the zh is the s of pleasure said hard, straight into the d.",
+      "variations": [
+        {
+          "display": "Ya zhdu vas uzhé dva chasá.",
+          "script": "Я жду вас уже два часа.",
+          "cue": "I've been waiting for you for two hours.",
+          "changed": "a longer stretch, and the counted form of chas"
+        },
+        {
+          "display": "On zhdyót vas zdes'.",
+          "script": "Он ждёт вас здесь.",
+          "cue": "He's waiting for you here.",
+          "changed": "the third person of the same verb"
+        }
+      ],
+      "mistake": {
+        "display": "Ya zhdal vas uzhé chas.",
+        "script": "Я ждал вас уже час.",
+        "why": "The past says the waiting is over and you have gone. If you are still standing there, the tense that says so is the present — uzhé alone carries the whole hour."
+      },
+      "usage": "Said with an edge, to someone an hour late.",
+      "register": "neutral",
+      "mnemonic": "Still waiting means still present; uzhé does the work of have been."
+    },
+    {
+      "id": "L4-M6-S07",
+      "display": "Oná yeshchyó ne prishlá, i ya bespokóyus'.",
+      "script": "Она ещё не пришла, и я беспокоюсь.",
+      "cue": "She hasn't come yet, and I'm worried.",
+      "literal": "She still not came, and I worry.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeshchyó ne",
+            "script": "ещё не",
+            "cue": "not yet",
+            "tag": "delta",
+            "forms": ["yeshchyó ne"],
+            "note": "Not yet, learnt whole. L1-M8's yeshchyó on its own is still or more; with ne in front of a perfective past it says the thing has not happened so far."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English puts yet at the END of the sentence; Russian puts yeshchyó ne in front of the verb and never at the end. She hasn't come yet is Oná yeshchyó ne prishlá, word for word not-yet came.",
+      "sound": "yish-CHO nye — the shch is a long soft sh, and the two words run together as one.",
+      "variations": [
+        {
+          "display": "On yeshchyó ne prishyól.",
+          "script": "Он ещё не пришёл.",
+          "cue": "He hasn't come yet.",
+          "changed": "a man arriving, so prishlá becomes prishyól"
+        },
+        {
+          "display": "Oná yeshchyó ne pozvoníla.",
+          "script": "Она ещё не позвонила.",
+          "cue": "She hasn't rung yet.",
+          "changed": "a different perfective under the same not-yet"
+        }
+      ],
+      "mistake": {
+        "display": "Oná ne prishlá yeshchyó.",
+        "script": "Она не пришла ещё.",
+        "why": "Heard, but it reads as an afterthought tacked on. The pair belongs together and in front of the verb; splitting it is what an English speaker does on the first day and stops doing on the second."
+      },
+      "usage": "Reporting that someone expected has still not turned up.",
+      "register": "neutral",
+      "mnemonic": "Not-yet is one word in Russian's head: yeshchyó ne, glued, and always before the verb."
+    },
+    {
+      "id": "L4-M6-S08",
+      "display": "Ya uzhé ne zhivú v Moskvé.",
+      "script": "Я уже не живу в Москве.",
+      "cue": "I don't live in Moscow any more.",
+      "literal": "I already not live in Moscow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uzhé ne",
+            "script": "уже не",
+            "cue": "not any more",
+            "tag": "delta",
+            "forms": ["uzhé ne"],
+            "note": "Not any more. Two words the learner already owns — L2-M5's uzhé and L1-M3's ne — meaning something neither of them means alone. Take it whole."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "already not is a dead end. uzhé ne is not any more, and English builds that idea out of a third word (more) that has no counterpart here at all.",
+      "sound": "oo-ZHE nye — stress on the second syllable of uzhé, and the zh is soft-edged but not palatal.",
+      "variations": [
+        {
+          "display": "Ya uzhé ne rabótayu tam.",
+          "script": "Я уже не работаю там.",
+          "cue": "I don't work there any more.",
+          "changed": "a different thing that has stopped being true"
+        },
+        {
+          "display": "On uzhé ne zhivyót zdes'.",
+          "script": "Он уже не живёт здесь.",
+          "cue": "He doesn't live here any more.",
+          "changed": "the third person, and here instead of Moscow"
+        }
+      ],
+      "mistake": {
+        "display": "Ya ne zhivú v Moskvé ból'she.",
+        "script": "Я не живу в Москве больше.",
+        "why": "Built out of L2-M9's ból'she, more, the way English builds it — and it lands as a heavier, arguing sentence. The plain way to say it is uzhé ne in front of the verb."
+      },
+      "usage": "Correcting an assumption someone still holds about you.",
+      "register": "neutral",
+      "mnemonic": "uzhé ne: already-not, which is Russian for not any longer."
+    },
+    {
+      "id": "L4-M6-S09",
+      "display": "S tekh por on ne zvoníl.",
+      "script": "С тех пор он не звонил.",
+      "cue": "He hasn't rung since then.",
+      "literal": "Since those times he not rang.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "s tekh por",
+            "script": "с тех пор",
+            "cue": "since then, ever since",
+            "tag": "delta",
+            "forms": ["s tekh por"],
+            "note": "Since then — three words taken whole, pointing back at a moment already mentioned. For a named point in time use s plus the genitive instead: s utrá."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English since covers both jobs; Russian splits them. s utrá needs a noun in the genitive; s tekh por needs no noun at all, because the moment is one you have already given.",
+      "sound": "s tyekh POR — three short words, the stress at the end, and the s glued to the front.",
+      "variations": [
+        {
+          "display": "S tekh por oná ne rabótayet.",
+          "script": "С тех пор она не работает.",
+          "cue": "She hasn't worked since then.",
+          "changed": "a present tense — the state is still running"
+        },
+        {
+          "display": "S tekh por my ne býli tam.",
+          "script": "С тех пор мы не были там.",
+          "cue": "We haven't been there since then.",
+          "changed": "a past that has simply not happened again"
+        }
+      ],
+      "mistake": {
+        "display": "S tot vrémeni on ne zvoníl.",
+        "script": "С тот времени он не звонил.",
+        "why": "An attempt to build since that time out of parts. The phrase Russian actually uses is frozen — s tekh por — and nothing about it is assembled fresh."
+      },
+      "usage": "Closing off a stretch that began with something you have just described.",
+      "register": "neutral",
+      "mnemonic": "s tekh por: from those times — a fixed three-word since-then that never changes shape."
+    },
+    {
+      "id": "L4-M6-S10",
+      "display": "Ya pozvonyú vam poslé obéda, chérez dva chasá.",
+      "script": "Я позвоню вам после обеда, через два часа.",
+      "cue": "I'll ring you after lunch, in two hours' time.",
+      "literal": "I will-ring to-you after lunch, through two hours.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poslé",
+            "script": "после",
+            "cue": "after (a thing)",
+            "tag": "free",
+            "forms": ["poslé"],
+            "note": "After, in front of a noun in the GENITIVE. L2-M10 taught the phrase poslé étovo whole; the bare preposition, free to take any noun, opens here."
+          },
+          {
+            "display": "obéda",
+            "script": "обеда",
+            "cue": "lunch (after poslé)",
+            "tag": "free",
+            "forms": ["obéd", "obéda"],
+            "note": "Lunch, the midday meal. The -a is the genitive poslé demands; the dictionary form is obéd."
+          },
+          {
+            "display": "chérez",
+            "script": "через",
+            "cue": "in, after (a stretch from now)",
+            "tag": "delta",
+            "forms": ["chérez"],
+            "note": "Time ahead, measured from now, with the ACCUSATIVE: chérez chas, in an hour. English says in; poslé would say after some other event, which is a different claim."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "English uses in for both in an hour and in the morning. Russian splits them: chérez chas is a stretch counted forward from now, and v is what puts you inside a time.",
+      "sound": "CHE-riz — front-stressed, and the final z softens towards the word after it.",
+      "variations": [
+        {
+          "display": "Ya pozvonyú vam poslé rabóty.",
+          "script": "Я позвоню вам после работы.",
+          "cue": "I'll ring you after work.",
+          "changed": "another noun in the genitive after poslé"
+        },
+        {
+          "display": "Ya vernús' chérez chas.",
+          "script": "Я вернусь через час.",
+          "cue": "I'll be back in an hour.",
+          "changed": "chérez on its own, with no after-clause beside it"
+        }
+      ],
+      "mistake": {
+        "display": "Ya pozvonyú vam v dva chasá.",
+        "script": "Я позвоню вам в два часа.",
+        "why": "Correct Russian saying something else: v dva chasá is at two o'clock, a point on the clock. chérez dva chasá is two hours from now, whatever the clock says."
+      },
+      "usage": "Promising a call and pinning it to both an event and a stretch.",
+      "register": "formal",
+      "mnemonic": "poslé looks back at an event; chérez counts forward from this minute."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M6-C01",
+      "display": "Poká ya rabótayu, oná chitáyet gazétu.",
+      "script": "Пока я работаю, она читает газету.",
+      "cue": "While I'm working, she reads the paper."
+    },
+    {
+      "id": "L4-M6-C02",
+      "display": "Podozhdíte, poká ya ne vernús'.",
+      "script": "Подождите, пока я не вернусь.",
+      "cue": "Wait until I come back."
+    },
+    {
+      "id": "L4-M6-C03",
+      "display": "Poslé tovó kak on ushyól, my poshlí domóy.",
+      "script": "После того как он ушёл, мы пошли домой.",
+      "cue": "After he left, we went home."
+    },
+    {
+      "id": "L4-M6-C04",
+      "display": "Péred tem kak otvétit', podúmayte.",
+      "script": "Перед тем как ответить, подумайте.",
+      "cue": "Before answering, think it over."
+    },
+    {
+      "id": "L4-M6-C05",
+      "display": "Ya zdes' s utrá.",
+      "script": "Я здесь с утра.",
+      "cue": "I've been here since this morning."
+    },
+    {
+      "id": "L4-M6-C06",
+      "display": "Ya zhdu vas uzhé chas.",
+      "script": "Я жду вас уже час.",
+      "cue": "I've been waiting for you for an hour."
+    },
+    {
+      "id": "L4-M6-C07",
+      "display": "Oná yeshchyó ne prishlá.",
+      "script": "Она ещё не пришла.",
+      "cue": "She hasn't come yet."
+    },
+    {
+      "id": "L4-M6-C08",
+      "display": "Ya uzhé ne zhivú v Moskvé.",
+      "script": "Я уже не живу в Москве.",
+      "cue": "I don't live in Moscow any more."
+    },
+    {
+      "id": "L4-M6-C09",
+      "display": "S tekh por on ne zvoníl.",
+      "script": "С тех пор он не звонил.",
+      "cue": "He hasn't rung since then."
+    },
+    {
+      "id": "L4-M6-C10",
+      "display": "Ya pozvonyú vam chérez chas.",
+      "script": "Я позвоню вам через час.",
+      "cue": "I'll ring you in an hour."
+    },
+    {
+      "id": "L4-M6-C11",
+      "display": "Poká ne pridyót vrach, ya búdu zdes'.",
+      "script": "Пока не придёт врач, я буду здесь.",
+      "cue": "I'll be here until the doctor comes."
+    },
+    {
+      "id": "L4-M6-C12",
+      "display": "On zhdyót vas poslé obéda.",
+      "script": "Он ждёт вас после обеда.",
+      "cue": "He's waiting for you after lunch."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

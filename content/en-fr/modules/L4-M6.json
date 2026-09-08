@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M6",
+  "title": "Before and after",
+  "job": "Time clauses: while, until, since, already, not yet",
+  "prerequisites": ["L4-M1", "L4-M2", "L4-M3", "L4-M4", "L4-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["présent", "passé composé", "subjonctif présent", "infinitif passé"],
+    "allowedPatterns": [
+      "Avant de + V-inf + , + <clause>",
+      "Après avoir + <participle> + , + <clause>",
+      "Jusqu'à ce que + <subjunctive>",
+      "Depuis que + <clause>",
+      "Ça fait + <duration> + que + <clause>",
+      "Tu as déjà + <participle> + ?  /  Je n'ai pas encore + <participle>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ONE SUBJECT TAKES AN INFINITIVE, TWO SUBJECTS TAKE A CLAUSE. This is the whole system and English has nothing like it. If the two halves share a subject, French uses avant de + infinitive, après avoir + participle, sans + infinitive: Avant de partir, je dois signer. If the subjects differ, the connector grows a que and takes a full clause: avant que, jusqu'à ce que, depuis que, une fois que, tant que, lorsque. Decide who is doing what BEFORE you choose the connector."
+    },
+    {
+      "tag": "delta",
+      "text": "AFTER EATING IS A PAST INFINITIVE, NOT AN -ING. English puts the -ing form after after; French puts avoir (or être) in the infinitive and the participle after it — après avoir mangé, après avoir signé. The auxiliary is L2-M10's list unchanged, so a verb that takes être takes it here too. There is no bare après + infinitive in French at all."
+    },
+    {
+      "tag": "delta",
+      "text": "TWO CONNECTORS BEND THE VERB, THE REST DO NOT. avant que and jusqu'à ce que take L4-M5's subjunctive — the ils stem minus -ent plus -e — because the second event has not happened yet: jusqu'à ce que le train soit prêt. depuis que, une fois que, tant que and lorsque take the plain indicative, because what they name is real. Nothing is memorised: it is the same list of triggers L4-M5 opened, read one connector at a time."
+    },
+    {
+      "tag": "interference",
+      "text": "FOR TWO HOURS BREAKS THREE WAYS IN FRENCH. pendant deux heures when the stretch is over and done (J'ai travaillé ici pendant deux ans). depuis deux ans when it is still running, with the PRESENT — L3-M7's rule, and French needs no perfect for it. ça fait deux ans que … for that same still-running fact turned round to the front. One English preposition, three French shapes, and the test is only whether the stretch has stopped."
+    },
+    {
+      "tag": "interference",
+      "text": "AGO IS il y a, THE SAME THREE WORDS AS THERE IS. L1-M7 taught il y a for there is; used of time it means ago, and it goes in FRONT of the duration where English puts ago behind it: il y a deux ans, two years ago. Nothing else changes and there is no second word to learn — it is one phrase doing two jobs, which is why the whole thing is written out here rather than opened again."
+    },
+    {
+      "tag": "delta",
+      "text": "déjà AND pas encore SIT INSIDE THE PASSÉ COMPOSÉ. They go between the auxiliary and the participle, where English puts already and not yet at either end of the clause: Tu as déjà mangé ? / Je n'ai pas encore mangé. And pas encore is a negator like any other, so it is written with its ne — j'ai pas encore is speech, never the page (docs/58 §4)."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M6-S01",
+      "display": "Avant de partir, je dois signer ce document",
+      "cue": "Before leaving, I have to sign this document",
+      "literal": "Before of to-leave, I must sign this document",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avant de",
+            "cue": "before (doing something)",
+            "tag": "delta",
+            "forms": ["avant de"],
+            "note": "Before a VERB, avant grows a de and the verb stays an infinitive. Bare avant, of a date, is L3-M8's — avant le cinq. Two jobs, and only this one takes de."
+          },
+          {
+            "display": "avant que",
+            "cue": "before (someone else does something)",
+            "tag": "delta",
+            "forms": ["avant que"],
+            "note": "When the second half has its OWN subject, avant de cannot be used: avant que takes a clause, and that clause takes the subjunctive."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English says before leaving with no preposition inside it. French cannot: avant partir is not a shape the language has, and de is the piece an English speaker drops every time.",
+      "sound": "ah-VAHN duh par-TEER, zhuh dwah see-NYAY suh doh-kew-MAHN. The n of avant is nasal and never sounded; the de runs straight into partir with no pause at all.",
+      "variations": [
+        {
+          "display": "Avant que le bureau soit fermé, je dois signer",
+          "cue": "Before the office is closed, I have to sign",
+          "changed": "two subjects now, so the connector grows que and the verb goes subjunctive"
+        },
+        {
+          "display": "Avant de payer, je dois voir le document",
+          "cue": "Before paying, I have to see the document",
+          "changed": "another verb in the same infinitive slot"
+        }
+      ],
+      "mistake": {
+        "display": "Avant partir, je dois signer ce document",
+        "why": "avant with no de is the date preposition, and it cannot stand in front of a verb. Before a verb it is always avant de partir."
+      },
+      "usage": "Ordering the two things you have to do, in one breath, at a counter or a desk.",
+      "register": "neutral",
+      "mnemonic": "Before a verb, avant needs its de."
+    },
+    {
+      "id": "L4-M6-S02",
+      "display": "Après avoir signé le document, je suis parti",
+      "cue": "After signing the document, I left",
+      "literal": "After to-have signed the document, I am left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "après avoir",
+            "cue": "after (having done)",
+            "tag": "delta",
+            "forms": ["après avoir"],
+            "note": "The past infinitive: avoir stays uninflected and the participle follows. English uses an -ing here; French has no bare après + infinitive at all."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "After signing looks like one word plus -ing, so a learner writes après signer. French needs the auxiliary in there: the action is finished before the second one starts, and avoir is what says so.",
+      "sound": "ah-PREH ah-VWAHR see-NYAY luh doh-kew-MAHN, zhuh swee par-TEE. The s of après is silent, and avoir signé runs as one four-syllable block.",
+      "variations": [
+        {
+          "display": "Après avoir mangé, je suis rentré",
+          "cue": "After eating, I went home",
+          "changed": "a different participle in the same slot"
+        },
+        {
+          "display": "Après avoir vu le film, je suis rentré",
+          "cue": "After seeing the film, I went home",
+          "changed": "the participle takes an object of its own"
+        }
+      ],
+      "mistake": {
+        "display": "Après signer le document, je suis parti",
+        "why": "après never takes a bare infinitive. The infinitive has to be a PAST one — après avoir signé — because the signing is over before the leaving starts."
+      },
+      "usage": "Telling somebody the order two of your own actions came in, without making two sentences of it.",
+      "register": "neutral",
+      "mnemonic": "après avoir, then the participle."
+    },
+    {
+      "id": "L4-M6-S03",
+      "display": "Je reste ici jusqu'à ce que le train soit prêt",
+      "cue": "I'm staying here until the train is ready",
+      "literal": "I stay here until this that the train be ready",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jusqu'à ce que",
+            "cue": "until (something happens)",
+            "tag": "delta",
+            "forms": ["jusqu'à ce que"],
+            "note": "Three words and one connector. Because what follows has not happened yet, the verb after it is L4-M5's subjunctive: soit, vienne, parte."
+          },
+          {
+            "display": "jusqu'à",
+            "cue": "until, as far as",
+            "tag": "free",
+            "forms": ["jusqu'à"],
+            "note": "In front of a TIME or a PLACE the connector stays short: jusqu'à cinq heures, jusqu'à Paris. The ce que is only there when a clause follows."
+          },
+          {
+            "display": "en attendant",
+            "cue": "in the meantime",
+            "tag": "free",
+            "forms": ["en attendant"],
+            "note": "The same wait with nothing after it. It stands alone at the front of a sentence and needs neither que nor a subjunctive."
+          },
+          {
+            "display": "prêt",
+            "cue": "ready",
+            "tag": "free",
+            "forms": ["prêt"],
+            "note": "Said of a thing or a person that is set to go. It follows être, as content and fatigué do."
+          }
+        ],
+        "rules": [2, 0]
+      },
+      "trap": "English until takes an ordinary verb — until the train is ready — so a learner writes jusqu'à ce que le train est prêt. The one connector that always bends the verb is this one.",
+      "sound": "zhuh rest ee-SEE zhews-kah suh kuh luh tran swah PREH. jusqu'à ce que is four quick syllables with no stress on any of them; the t of prêt is silent.",
+      "variations": [
+        {
+          "display": "Je reste ici jusqu'à cinq heures",
+          "cue": "I'm staying here until five o'clock",
+          "changed": "a time replaces the clause, so ce que disappears"
+        },
+        {
+          "display": "En attendant, je reste ici",
+          "cue": "In the meantime, I'm staying here",
+          "changed": "the wait has no end named at all"
+        }
+      ],
+      "mistake": {
+        "display": "Je reste ici jusqu'à ce que le train est prêt",
+        "why": "est is the indicative. jusqu'à ce que points at something that has not happened, and that is exactly the mood L4-M5 opened: soit, not est."
+      },
+      "usage": "Telling someone how long you intend to stay put, on a platform or in a waiting room.",
+      "register": "neutral",
+      "mnemonic": "ce que, so the verb bends."
+    },
+    {
+      "id": "L4-M6-S04",
+      "display": "Depuis que je travaille ici, je suis plus content",
+      "cue": "Since I've been working here, I'm happier",
+      "literal": "Since that I work here, I am more happy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "depuis que",
+            "cue": "since (something started)",
+            "tag": "delta",
+            "forms": ["depuis que"],
+            "note": "Bare depuis takes a duration and is L3-M7's — depuis deux ans. In front of a CLAUSE it needs que, and the clause stays in the plain present."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "English switches to a perfect here — since I have been working — and French does not move at all. The present says both that it started then and that it is still true.",
+      "sound": "duh-pwee kuh zhuh tra-VYE ee-SEE, zhuh swee plew kohn-TAHN. depuis is two syllables, and the s at its end is silent before the k of que.",
+      "variations": [
+        {
+          "display": "Depuis que je travaille à Paris, je prends le train",
+          "cue": "Since I've been working in Paris, I take the train",
+          "changed": "the place changes and the tense still does not"
+        },
+        {
+          "display": "Depuis que je travaille ici, je rentre tard",
+          "cue": "Since I've been working here, I get home late",
+          "changed": "a different consequence in the second half"
+        }
+      ],
+      "mistake": {
+        "display": "Depuis je travaille ici, je suis plus content",
+        "why": "bare depuis expects a length of time, not a clause. With a subject and a verb behind it, it has to be depuis que."
+      },
+      "usage": "Naming the change that a new job, a new town or a new habit made to your life.",
+      "register": "neutral",
+      "mnemonic": "A clause behind depuis buys a que."
+    },
+    {
+      "id": "L4-M6-S05",
+      "display": "Ça fait deux ans que je travaille ici",
+      "cue": "I've been working here for two years",
+      "literal": "It makes two years that I work here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ça fait",
+            "cue": "it's been (so long)",
+            "tag": "delta",
+            "forms": ["ça fait"],
+            "note": "The duration-first way of saying the same thing as depuis. The length comes straight after it and the clause hangs off a que."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English builds this on the person — I have been working. French builds it on the clock: ça fait carries the time, and the person only appears after que, in the present.",
+      "sound": "sah feh duh-ZAHN kuh zhuh tra-VYE ee-SEE. deux ans links across the x, which is heard as a z; ça fait itself is two flat syllables.",
+      "variations": [
+        {
+          "display": "Ça fait deux heures que je suis là",
+          "cue": "I've been here for two hours",
+          "changed": "the duration is hours and the verb is être"
+        },
+        {
+          "display": "Ça fait trois jours qu'il pleut",
+          "cue": "It's been raining for three days",
+          "changed": "the que elides in front of il"
+        }
+      ],
+      "mistake": {
+        "display": "Ça fait deux ans que j'ai travaillé ici",
+        "why": "the passé composé closes the stretch, which is the opposite of what this shape says. A stretch still running keeps the present: que je travaille ici."
+      },
+      "usage": "Answering how long have you been…? without doing arithmetic out loud.",
+      "register": "neutral",
+      "mnemonic": "Time first, que, then the present."
+    },
+    {
+      "id": "L4-M6-S06",
+      "display": "Tu as déjà signé le formulaire ?",
+      "cue": "Have you already signed the form?",
+      "literal": "You have already signed the form?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "déjà",
+            "cue": "already, yet",
+            "tag": "delta",
+            "forms": ["déjà"],
+            "note": "It sits between the auxiliary and the participle, never at the end. In a question it is what English says with yet: have you signed yet?"
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "English lets already drift to the end of the clause, and yet is a different word again. French has one word and one seat for it: straight after as or avez.",
+      "sound": "tew ah day-ZHAH see-NYAY luh for-mew-LEHR. The question rides on the rising tone alone, and the space before the question mark is French typography, not a typo.",
+      "variations": [
+        {
+          "display": "Vous avez déjà vu ce film ?",
+          "cue": "Have you already seen this film?",
+          "changed": "vous instead of tu, and the seat of déjà does not move"
+        },
+        {
+          "display": "Tu as déjà vu le document ?",
+          "cue": "Have you already seen the document?",
+          "changed": "another participle in the same slot"
+        }
+      ],
+      "mistake": {
+        "display": "Tu as signé déjà le formulaire ?",
+        "why": "déjà after the participle is the English word order carried across. It belongs between the auxiliary and the participle: tu as déjà signé."
+      },
+      "usage": "Checking whether somebody has got round to a thing yet, without sounding as if you are chasing them.",
+      "register": "informal",
+      "mnemonic": "déjà lives between the two verb halves."
+    },
+    {
+      "id": "L4-M6-S07",
+      "display": "Je n'ai pas encore signé le document",
+      "cue": "I haven't signed the document yet",
+      "literal": "I not-have not yet signed the document",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pas encore",
+            "cue": "not yet",
+            "tag": "delta",
+            "forms": ["pas encore"],
+            "note": "Two words, one meaning, and the same seat as déjà. Bare encore, meaning again or still, is L2-M5's — this pair is the negative answer to déjà."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "English puts yet at the very end of the clause. French puts pas encore in the middle, and the participle comes after it — never Je n'ai pas signé encore.",
+      "sound": "zhuh nay pah-zahn-KOR see-NYAY luh doh-kew-MAHN. pas encore links across the s, heard as a z, so the two words run as one.",
+      "variations": [
+        {
+          "display": "Je n'ai pas encore mangé ce matin",
+          "cue": "I haven't eaten yet this morning",
+          "changed": "a different participle, with the time at the end"
+        },
+        {
+          "display": "Je n'ai pas encore vu le film",
+          "cue": "I haven't seen the film yet",
+          "changed": "another participle in the same seat"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai pas encore signé le document",
+        "why": "the ne is dropped in speech and never on the page. pas encore is a negator like every other, so the written line is je n'ai pas encore."
+      },
+      "usage": "Admitting a thing is still outstanding, which is politer than saying you forgot.",
+      "register": "neutral",
+      "mnemonic": "pas encore takes déjà's seat."
+    },
+    {
+      "id": "L4-M6-S08",
+      "display": "J'ai travaillé à Paris pendant deux ans",
+      "cue": "I worked in Paris for two years",
+      "literal": "I-have worked at Paris during two years",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pendant",
+            "cue": "for (a finished stretch)",
+            "tag": "interference",
+            "forms": ["pendant"],
+            "note": "The duration preposition, for a stretch that has stopped. It takes a length of time, not a clause — pendant que, with a clause, is L3-M10's."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English says for two years whether the job is over or not. French makes you decide: pendant closes it, depuis keeps it open. Choosing pendant tells the listener you left.",
+      "sound": "zhay tra-vah-YAY ah pah-REE pahn-DAHN duh-ZAHN. Both syllables of pendant are nasal, and the t is silent.",
+      "variations": [
+        {
+          "display": "J'ai attendu pendant deux heures",
+          "cue": "I waited for two hours",
+          "changed": "a shorter stretch and a different verb"
+        },
+        {
+          "display": "J'ai travaillé ici pendant trois ans",
+          "cue": "I worked here for three years",
+          "changed": "the place and the count"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai travaillé à Paris depuis deux ans",
+        "why": "depuis says the stretch is still running, and the passé composé says it stopped. The two contradict each other: a finished stretch takes pendant."
+      },
+      "usage": "Giving the length of a job or a stay that is behind you, on a form or in an interview.",
+      "register": "neutral",
+      "mnemonic": "pendant closes it, depuis keeps it open."
+    },
+    {
+      "id": "L4-M6-S09",
+      "display": "Je suis arrivé ici il y a deux ans",
+      "cue": "I arrived here two years ago",
+      "literal": "I am arrived here it there has two years",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "il y a deux ans",
+            "cue": "two years ago",
+            "tag": "interference",
+            "forms": ["il y a deux ans"],
+            "note": "ago is il y a — the same three words L1-M7 taught as there is — and it goes in FRONT of the duration, where English puts ago behind it."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "There is no French word for ago at all. A learner hunts for one, finds nothing, and reaches for depuis — which says the opposite: still running, rather than over and dated.",
+      "sound": "zhuh swee-zah-ree-VAY ee-SEE eel ee ah duh-ZAHN. il y a runs together as eel-ya in speech, and the whole phrase is one unstressed run.",
+      "variations": [
+        {
+          "display": "Je suis arrivé ici il y a deux heures",
+          "cue": "I arrived here two hours ago",
+          "changed": "the unit of time inside the same frame"
+        },
+        {
+          "display": "Je suis parti il y a deux ans",
+          "cue": "I left two years ago",
+          "changed": "the verb, and the auxiliary stays être"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis arrivé ici depuis deux ans",
+        "why": "depuis deux ans means I have been here for two years and am still arriving, which is nonsense. A dated, finished event takes il y a."
+      },
+      "usage": "Dating your arrival, a move or a change when somebody asks when.",
+      "register": "neutral",
+      "mnemonic": "il y a goes in front; ago goes behind."
+    },
+    {
+      "id": "L4-M6-S10",
+      "display": "Une fois que le bureau est fermé, il faut attendre",
+      "cue": "Once the office is closed, you have to wait",
+      "literal": "One time that the office is closed, it needs to-wait",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "une fois que",
+            "cue": "once (something has happened)",
+            "tag": "free",
+            "forms": ["une fois que"],
+            "note": "The moment a state is reached. Because that state is real rather than hoped for, the verb after it stays indicative: est, not soit."
+          },
+          {
+            "display": "tant que",
+            "cue": "as long as, while",
+            "tag": "free",
+            "forms": ["tant que"],
+            "note": "The same frame for a state that lasts rather than one that starts. Also indicative, and it can be swapped straight in for une fois que."
+          },
+          {
+            "display": "lorsque",
+            "cue": "when",
+            "tag": "free",
+            "forms": ["lorsque"],
+            "note": "The written twin of L2-M10's quand: same meaning, same indicative, one degree more formal. It is what a notice or a letter writes."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Once, as long as and when all bend the verb in no English sentence, and none of these three bends it in French either — the two that do are avant que and jusqu'à ce que. Do not spread the subjunctive across the whole family.",
+      "sound": "ewn fwah kuh luh bew-ROH eh fair-MAY, eel foh ah-TAHN-druh. lorsque is two syllables, lor-skuh, with no vowel between the r and the s.",
+      "variations": [
+        {
+          "display": "Tant que le bureau est fermé, il faut attendre",
+          "cue": "As long as the office is closed, you have to wait",
+          "changed": "the moment becomes a stretch"
+        },
+        {
+          "display": "Lorsque le bureau est fermé, il faut attendre",
+          "cue": "When the office is closed, you have to wait",
+          "changed": "the formal written when, in the same slot"
+        }
+      ],
+      "mistake": {
+        "display": "Une fois que le bureau soit fermé, il faut attendre",
+        "why": "the subjunctive belongs to avant que and jusqu'à ce que only. une fois que names something that is actually the case, so it takes est."
+      },
+      "usage": "Explaining a rule that depends on the clock — opening hours, a deadline, a closed counter.",
+      "register": "neutral",
+      "mnemonic": "Only avant que and jusqu'à ce que bend it."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L4-M6-C01", "display": "Avant de partir, je dois signer ce document", "cue": "Before leaving, I have to sign this document" },
+    { "id": "L4-M6-C02", "display": "Avant de manger, je dois travailler", "cue": "Before eating, I have to work" },
+    { "id": "L4-M6-C03", "display": "Après avoir signé, je suis parti", "cue": "After signing, I left" },
+    { "id": "L4-M6-C04", "display": "Je reste ici jusqu'à ce que le train soit prêt", "cue": "I'm staying here until the train is ready" },
+    { "id": "L4-M6-C05", "display": "En attendant, je reste au bureau", "cue": "In the meantime, I'm staying at the office" },
+    { "id": "L4-M6-C06", "display": "Depuis que je travaille ici, je rentre tard", "cue": "Since I've been working here, I get home late" },
+    { "id": "L4-M6-C07", "display": "Ça fait deux heures que je suis là", "cue": "I've been here for two hours" },
+    { "id": "L4-M6-C08", "display": "Vous avez déjà vu ce film ?", "cue": "Have you already seen this film?" },
+    { "id": "L4-M6-C09", "display": "Je n'ai pas encore vu le document", "cue": "I haven't seen the document yet" },
+    { "id": "L4-M6-C10", "display": "J'ai attendu pendant deux heures", "cue": "I waited for two hours" },
+    { "id": "L4-M6-C11", "display": "Je suis arrivé ici il y a deux ans", "cue": "I arrived here two years ago" },
+    { "id": "L4-M6-C12", "display": "Tant que le bureau est fermé, il faut attendre", "cue": "As long as the office is closed, you have to wait" }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

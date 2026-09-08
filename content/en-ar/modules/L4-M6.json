@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M6",
+  "title": "Before and after",
+  "job": "Time clauses: while, until, since, already, not yet",
+  "prerequisites": [
+    "L4-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_past",
+      "simple_present",
+      "future"
+    ],
+    "allowedPatterns": [
+      "qabla an + V-subjunctive + , + V-past",
+      "baʿda an + V-past + , + V-past",
+      "V + ḥattā + V-subjunctive",
+      "athnāʾ + al- + <maṣdar>",
+      "lam + V-jussive + baʿd"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The particle an is what turns a preposition into a conjunction: qabla an, baʿda an, ilā an. L3-M1's qabla and baʿda took a noun; with an behind them a whole verb clause follows."
+    },
+    {
+      "tag": "delta",
+      "text": "qabla an always takes a present-shaped verb, even when the sentence around it is past: qabla an adhhab ilā al-ʿamal, sharibtu al-qahwa. What has not happened yet cannot be past, and that stays true when the not-yet sits inside a memory."
+    },
+    {
+      "tag": "delta",
+      "text": "baʿda an takes the PAST when the event is past: baʿda an akaltu, dhahabtu ilā al-maktab. The two conjunctions are built alike and differ in what follows them, and the difference is real rather than stylistic."
+    },
+    {
+      "tag": "delta",
+      "text": "ḥattā, until, takes a present-shaped verb for something still ahead — ḥattā yaṣil al-qiṭār — and a past for something reached: ḥattā waṣala al-qiṭār. ilā an does the same job and swaps with it."
+    },
+    {
+      "tag": "free",
+      "text": "athnāʾ and khilāl are the NOMINAL while, and the shape a careful speaker uses: each takes al- plus a noun or a maṣdar and never a verb — athnāʾ al-ijtimāʿ, khilāl al-akl."
+    },
+    {
+      "tag": "interference",
+      "text": "English while covers a stretch and a point alike. Arabic splits them, and the split is already yours: L3-M10's baynamā for a stretch, ʿindamā for a point, and ḥīna naming the moment."
+    },
+    {
+      "tag": "free",
+      "text": "ALREADY is L3-M7's qad in front of a past verb — qad waṣaltu — and nothing new. NOT YET is lam plus the jussive with baʿd at the end of the clause: lam yaṣil baʿd."
+    },
+    {
+      "tag": "interference",
+      "text": "baʿd, yet, and baʿda, after, differ by one written vowel. baʿd closes a clause and takes nothing; baʿda opens one and takes a noun or the particle an. Read the vowel or you will write baʿda at the end of a clause."
+    },
+    {
+      "tag": "interference",
+      "text": "English drops the subject of a time clause — before going out, after eating. Arabic must have a finite verb with a person on it: qabla an adhhab, before I go. This is the same mismatch L4-M1 met with li-."
+    },
+    {
+      "tag": "interference",
+      "text": "English since is one word for a start-point and for a reason. L3-M7's mundhu is only the start-point — adrus al-ʿarabiyya mundhu sana — and the reason word is L4-M2's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M6-S01",
+      "display": "qabla an adhhab ilā al-ʿamal, sharibtu al-qahwa",
+      "script": "قبل أن أذهب إلى العمل، شربت القهوة",
+      "cue": "Before I went to work, I drank coffee",
+      "literal": "Before that I-go to the-work, I-drank the-coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qabla an",
+            "script": "قبل أن",
+            "cue": "before (+ a clause)",
+            "tag": "delta",
+            "forms": [
+              "qabla an"
+            ],
+            "note": "L3-M1's qabla took a noun: qabla an-nawm. The particle an turns it into a conjunction and a whole verb clause follows."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          8
+        ]
+      },
+      "trap": "English agrees its tenses — before I WENT to work. Arabic does not: the verb after qabla an stays present-shaped however far in the past the sentence sits.",
+      "sound": "QAB-la an ADH-hab: an is a light unstressed syllable that leans onto the verb; do not pause after it.",
+      "variations": [
+        {
+          "display": "qabla an anām, qaraʾtu al-kitāb",
+          "script": "قبل أن أنام، قرأت الكتاب",
+          "cue": "Before I slept, I read the book",
+          "changed": "the clause under qabla an: going to work becomes going to sleep"
+        },
+        {
+          "display": "qabla an adhhab ilā as-sūq, akaltu",
+          "script": "قبل أن أذهب إلى السوق، أكلت",
+          "cue": "Before I went to the market, I ate",
+          "changed": "where the first clause goes, and a bare past alone in the second"
+        }
+      ],
+      "mistake": {
+        "display": "qabla an dhahabtu ilā al-ʿamal, sharibtu al-qahwa",
+        "script": "قبل أن ذهبت إلى العمل، شربت القهوة",
+        "why": "A past verb after qabla an. What has not happened yet cannot be past, and that stays true inside a memory — the shape is adhhab even when the telling is."
+      },
+      "usage": "Putting two events of a past day in order, the earlier one second.",
+      "register": "neutral",
+      "mnemonic": "qabla an = before + a clause; the verb behind it never goes back."
+    },
+    {
+      "id": "L4-M6-S02",
+      "display": "baʿda an akaltu, dhahabtu ilā al-maktab",
+      "script": "بعد أن أكلت، ذهبت إلى المكتب",
+      "cue": "After I ate, I went to the office",
+      "literal": "After that I-ate, I-went to the-office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baʿda an",
+            "script": "بعد أن",
+            "cue": "after (+ a clause)",
+            "tag": "delta",
+            "forms": [
+              "baʿda an"
+            ],
+            "note": "The twin of qabla an, built the same way on L3-M1's baʿda — but this one takes the PAST when the event is past."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          8
+        ]
+      },
+      "trap": "The pair looks symmetrical and is not. qabla an takes a present-shaped verb and baʿda an takes a past one, and no English rule predicts which is which.",
+      "sound": "BAʿ-da an a-KAL-tu: the ʿayn in baʿda is a squeeze in the throat, not the hamza catch of qabla an.",
+      "variations": [
+        {
+          "display": "baʿda an waṣala al-qiṭār, dhahabtu ilā al-bayt",
+          "script": "بعد أن وصل القطار، ذهبت إلى البيت",
+          "cue": "After the train arrived, I went home",
+          "changed": "a third-person subject inside the time clause"
+        },
+        {
+          "display": "baʿda an akaltu, dhahabnā ilā as-sūq",
+          "script": "بعد أن أكلت، ذهبنا إلى السوق",
+          "cue": "After I ate, we went to the market",
+          "changed": "we, not I, in the second clause — the two clauses need not share a subject"
+        }
+      ],
+      "mistake": {
+        "display": "baʿda an ākul, dhahabtu ilā al-maktab",
+        "script": "بعد أن آكل، ذهبت إلى المكتب",
+        "why": "A present-shaped verb after baʿda an for an event that is over. The symmetry with qabla an is the trap: only qabla an holds the present."
+      },
+      "usage": "Telling a day in order, one clause hanging off the last.",
+      "register": "neutral",
+      "mnemonic": "baʿda an looks back, so its verb looks back too."
+    },
+    {
+      "id": "L4-M6-S03",
+      "display": "sa-antaẓir hunā ḥattā yaṣil al-qiṭār",
+      "script": "سأنتظر هنا حتى يصل القطار",
+      "cue": "I will wait here until the train arrives",
+      "literal": "Will-I-wait here until he-arrives the-train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḥattā",
+            "script": "حتى",
+            "cue": "until",
+            "tag": "delta",
+            "forms": [
+              "ḥattā"
+            ],
+            "note": "until. A present-shaped verb behind it means the event is still ahead; a past verb means it was reached. Both are ordinary."
+          },
+          {
+            "display": "sa-antaẓir",
+            "script": "سأنتظر",
+            "cue": "I will wait",
+            "tag": "free",
+            "forms": [
+              "sa-antaẓir",
+              "antaẓir"
+            ],
+            "note": "L2-M10's intaẓartu in the present, with L1-M6's sa- written joined in front of it."
+          },
+          {
+            "display": "yaṣil",
+            "script": "يصل",
+            "cue": "he arrives",
+            "tag": "free",
+            "forms": [
+              "yaṣil",
+              "aṣil",
+              "taṣil"
+            ],
+            "note": "The present of L2-M10's waṣala. No mood ending is written, so the shape after ḥattā and after lam is the same three letters."
+          }
+        ],
+        "rules": [
+          3,
+          8
+        ]
+      },
+      "trap": "English puts a present tense after until for a future event too (until the train arrives), so this one transfers — but the trap is the past: Arabic really does switch to waṣala once the waiting is over.",
+      "sound": "sa-an-ta-ZIR ḥat-TĀ: the doubled t in ḥattā is held, a beat longer than a single one.",
+      "variations": [
+        {
+          "display": "sa-antaẓir hunā ḥattā taṣil al-ḥāfila",
+          "script": "سأنتظر هنا حتى تصل الحافلة",
+          "cue": "I will wait here until the bus arrives",
+          "changed": "a feminine subject, so the verb takes the t- prefix"
+        },
+        {
+          "display": "antaẓir hunā ḥattā yaṣil al-mudīr",
+          "script": "أنتظر هنا حتى يصل المدير",
+          "cue": "I am waiting here until the manager arrives",
+          "changed": "the plain present without sa-, so the waiting is now"
+        }
+      ],
+      "mistake": {
+        "display": "sa-antaẓir hunā ḥattā waṣala al-qiṭār",
+        "script": "سأنتظر هنا حتى وصل القطار",
+        "why": "A past verb behind ḥattā for something that has not happened. The past is for a point already reached; the wait ahead needs yaṣil."
+      },
+      "usage": "Saying how long you will stay put.",
+      "register": "neutral",
+      "mnemonic": "ḥattā looks both ways: yaṣil ahead, waṣala behind."
+    },
+    {
+      "id": "L4-M6-S04",
+      "display": "intaẓartu ilā an waṣala al-qiṭār",
+      "script": "انتظرت إلى أن وصل القطار",
+      "cue": "I waited until the train arrived",
+      "literal": "I-waited to that he-arrived the-train",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ilā an",
+            "script": "إلى أن",
+            "cue": "until (+ a clause)",
+            "tag": "free",
+            "forms": [
+              "ilā an"
+            ],
+            "note": "The third of the an conjunctions, and the plainest: L1-M4's ilā plus an. It swaps with ḥattā here with no change of meaning."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English until is one word for both jobs. Arabic has two words that overlap — ḥattā and ilā an — and neither is the wrong one here.",
+      "sound": "in-ta-ẓAR-tu i-lā an: the ẓ is a heavy d-like sound made with the tongue flat, not the light z of English.",
+      "variations": [
+        {
+          "display": "intaẓartu ḥattā waṣala al-qiṭār",
+          "script": "انتظرت حتى وصل القطار",
+          "cue": "I waited until the train arrived",
+          "changed": "ḥattā in place of ilā an — the same sentence, the other word"
+        },
+        {
+          "display": "intaẓartu ilā an waṣalat al-ḥāfila",
+          "script": "انتظرت إلى أن وصلت الحافلة",
+          "cue": "I waited until the bus arrived",
+          "changed": "a feminine past subject, so the verb takes -at"
+        }
+      ],
+      "mistake": {
+        "display": "intaẓartu ilā waṣala al-qiṭār",
+        "script": "انتظرت إلى وصل القطار",
+        "why": "ilā with no an. Without the particle it is still the preposition to, and a verb cannot follow it — an is the whole hinge."
+      },
+      "usage": "Closing a wait that is already over.",
+      "register": "neutral",
+      "mnemonic": "ilā an = ilā plus the hinge; drop an and you are back to a preposition."
+    },
+    {
+      "id": "L4-M6-S05",
+      "display": "athnāʾ al-ijtimāʿ, saʾalanī al-mudīr ʿan al-ʿamal",
+      "script": "أثناء الاجتماع، سألني المدير عن العمل",
+      "cue": "During the meeting, the manager asked me about the work",
+      "literal": "During the-meeting, he-asked-me the-manager about the-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "athnāʾ",
+            "script": "أثناء",
+            "cue": "during",
+            "tag": "free",
+            "forms": [
+              "athnāʾ"
+            ],
+            "note": "The nominal while: it takes al- plus a noun, never a verb. Where English says while we met, careful Arabic says during the meeting."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "English while attaches to a clause; athnāʾ cannot. Reaching for while and translating it word for word produces athnāʾ with a verb behind it, which is not a sentence.",
+      "sound": "ath-NĀʾ: the th is the soft one of English thin, and the word ends on a hamza — a catch, not a vowel that trails off.",
+      "variations": [
+        {
+          "display": "athnāʾ al-akl, saʾalanī abī ʿan al-madrasa",
+          "script": "أثناء الأكل، سألني أبي عن المدرسة",
+          "cue": "During the meal, my father asked me about school",
+          "changed": "a maṣdar behind athnāʾ — L4-M1's al-akl, the eating"
+        },
+        {
+          "display": "khilāl al-ijtimāʿ, saʾalanī al-mudīr ʿan al-ʿamal",
+          "script": "خلال الاجتماع، سألني المدير عن العمل",
+          "cue": "During the meeting, the manager asked me about the work",
+          "changed": "khilāl for athnāʾ — the same slot, the same meaning"
+        }
+      ],
+      "mistake": {
+        "display": "athnāʾ adhhab ilā al-ʿamal, sharibtu al-qahwa",
+        "script": "أثناء أذهب إلى العمل، شربت القهوة",
+        "why": "A verb behind athnāʾ. It is a preposition-shaped word and needs a noun; for a verb the sentence wants baynamā."
+      },
+      "usage": "The register a careful speaker uses for a stretch of time.",
+      "register": "formal",
+      "mnemonic": "athnāʾ takes a thing, baynamā takes a doing."
+    },
+    {
+      "id": "L4-M6-S06",
+      "display": "khilāl al-akl, lā ataḥaddath kathīran",
+      "script": "خلال الأكل، لا أتحدث كثيراً",
+      "cue": "During the meal, I do not talk much",
+      "literal": "During the-eating, not I-talk much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khilāl",
+            "script": "خلال",
+            "cue": "during, over the course of",
+            "tag": "free",
+            "forms": [
+              "khilāl"
+            ],
+            "note": "athnāʾ's twin, and interchangeable with it here. Both take al- plus a noun; neither takes a verb."
+          },
+          {
+            "display": "ataḥaddath",
+            "script": "أتحدث",
+            "cue": "I talk",
+            "tag": "free",
+            "forms": [
+              "ataḥaddath",
+              "taḥaddathnā"
+            ],
+            "note": "I talk, I speak with someone. No mood ending is written, so the plain present ends on the bare consonant."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "English during and while are two words for one idea and a learner picks by feel. Arabic picks by what follows: a noun after khilāl, a clause after baynamā.",
+      "sound": "khi-LĀL: the kh is the rasp at the back of the throat, the same sound as in L1's akh.",
+      "variations": [
+        {
+          "display": "khilāl an-nawm, lā ataḥaddath",
+          "script": "خلال النوم، لا أتحدث",
+          "cue": "During sleep, I do not talk",
+          "changed": "L3-M1's maṣdar an-nawm behind khilāl"
+        },
+        {
+          "display": "athnāʾ al-akl, lā ataḥaddath kathīran",
+          "script": "أثناء الأكل، لا أتحدث كثيراً",
+          "cue": "During the meal, I do not talk much",
+          "changed": "athnāʾ for khilāl — the pair really is a swap"
+        }
+      ],
+      "mistake": {
+        "display": "khilāl ākul, lā ataḥaddath",
+        "script": "خلال آكل، لا أتحدث",
+        "why": "A verb behind khilāl. Like athnāʾ it wants the maṣdar — the eating, al-akl — not the I-eat."
+      },
+      "usage": "Saying what you do or avoid across a stretch of time.",
+      "register": "neutral",
+      "mnemonic": "khilāl and athnāʾ both eat nouns."
+    },
+    {
+      "id": "L4-M6-S07",
+      "display": "ḥīna dhahabtu ilā al-maktab, kāna al-mudīr hunāka",
+      "script": "حين ذهبت إلى المكتب، كان المدير هناك",
+      "cue": "When I went to the office, the manager was there",
+      "literal": "At-the-time I-went to the-office, was the-manager there",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḥīna",
+            "script": "حين",
+            "cue": "when, at the moment that",
+            "tag": "free",
+            "forms": [
+              "ḥīna"
+            ],
+            "note": "A third word for when, beside L3-M10's ʿindamā and baynamā. It names the moment, and unlike athnāʾ it takes a clause."
+          }
+        ],
+        "rules": [
+          5,
+          8
+        ]
+      },
+      "trap": "English when covers a point and a stretch alike, so a learner reaches for one word. Arabic has three and they are not free variants: ḥīna and ʿindamā mark a point, baynamā a stretch.",
+      "sound": "ḤĪ-na: the ḥ is the breathy h made deep in the throat, not the light h of hunāka in the same sentence.",
+      "variations": [
+        {
+          "display": "ʿindamā dhahabtu ilā al-maktab, kāna al-mudīr hunāka",
+          "script": "عندما ذهبت إلى المكتب، كان المدير هناك",
+          "cue": "When I went to the office, the manager was there",
+          "changed": "L3-M10's ʿindamā for ḥīna — the everyday word for the same point"
+        },
+        {
+          "display": "baynamā kuntu fī al-maktab, waṣala al-mudīr",
+          "script": "بينما كنت في المكتب، وصل المدير",
+          "cue": "While I was at the office, the manager arrived",
+          "changed": "baynamā, and with it a stretch instead of a point"
+        }
+      ],
+      "mistake": {
+        "display": "ḥīna fī al-maktab, kāna al-mudīr hunāka",
+        "script": "حين في المكتب، كان المدير هناك",
+        "why": "A bare prepositional phrase after ḥīna. English drops the verb of a time clause — when at the office — and Arabic cannot: a finite verb with a person on it is required."
+      },
+      "usage": "Pinning one past event to the moment of another.",
+      "register": "neutral",
+      "mnemonic": "ḥīna is the hour of it: a point, and a clause."
+    },
+    {
+      "id": "L4-M6-S08",
+      "display": "lam yaṣil al-qiṭār baʿd",
+      "script": "لم يصل القطار بعد",
+      "cue": "The train has not arrived yet",
+      "literal": "Not he-arrived the-train yet",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lam yaṣil",
+            "script": "لم يصل",
+            "cue": "he has not arrived",
+            "tag": "delta",
+            "forms": [
+              "lam yaṣil"
+            ],
+            "note": "L3-M4's lam with the jussive: one particle makes the whole past negative and the verb keeps its present shape."
+          },
+          {
+            "display": "baʿd",
+            "script": "بعد",
+            "cue": "yet (at the end of a clause)",
+            "tag": "interference",
+            "forms": [
+              "baʿd"
+            ],
+            "note": "yet. It closes the clause and takes nothing. It is baʿda without its final vowel and is a different word — see S02."
+          }
+        ],
+        "rules": [
+          6,
+          7
+        ]
+      },
+      "trap": "English has not arrived yet is three words of machinery. Arabic is lam in front and baʿd behind, and nothing in the middle changes.",
+      "sound": "lam ya-ṢIL baʿd: baʿd ends on a hard stop after the ʿayn — no trailing -a, which is the whole difference from baʿda.",
+      "variations": [
+        {
+          "display": "lam yaṣil al-mudīr baʿd",
+          "script": "لم يصل المدير بعد",
+          "cue": "The manager has not arrived yet",
+          "changed": "the subject only — the frame holds still around it"
+        },
+        {
+          "display": "lam taṣil al-ḥāfila baʿd",
+          "script": "لم تصل الحافلة بعد",
+          "cue": "The bus has not arrived yet",
+          "changed": "a feminine subject, so the jussive takes the t- prefix"
+        }
+      ],
+      "mistake": {
+        "display": "lam yaṣil al-qiṭār baʿda",
+        "script": "لم يصل القطار بعدَ",
+        "why": "baʿda at the end of a clause. baʿda is the preposition after and needs a noun or an behind it; the yet word is baʿd, and the vowel is the only thing telling them apart."
+      },
+      "usage": "Reporting that something expected is still outstanding.",
+      "register": "neutral",
+      "mnemonic": "baʿda opens and takes something; baʿd closes and takes nothing."
+    },
+    {
+      "id": "L4-M6-S09",
+      "display": "qad waṣala al-qiṭār, wa lākin lam yaṣil ṣadīqī baʿd",
+      "script": "قد وصل القطار، ولكن لم يصل صديقي بعد",
+      "cue": "The train has already arrived, but my friend has not arrived yet",
+      "literal": "Already he-arrived the-train, and but not he-arrives my-friend yet",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qad waṣala",
+            "script": "قد وصل",
+            "cue": "he has already arrived",
+            "tag": "free",
+            "forms": [
+              "qad waṣala",
+              "qad waṣaltu",
+              "qad akaltu"
+            ],
+            "note": "L3-M7's qad in front of a past verb is already. Nothing new is being opened here; the frame is named so that its opposite, lam … baʿd, has something to stand against."
+          }
+        ],
+        "rules": [
+          6,
+          7
+        ]
+      },
+      "trap": "English already and not yet are a pair of adverbs. Arabic answers with two unlike machines: a particle in front for already, and a negative plus a word at the end for not yet.",
+      "sound": "qad WA-ṣa-la: qad is short and clipped, and the stress stays on the verb behind it.",
+      "variations": [
+        {
+          "display": "qad waṣaltu, wa lākin lam yaṣil ṣadīqī baʿd",
+          "script": "قد وصلت، ولكن لم يصل صديقي بعد",
+          "cue": "I have already arrived, but my friend has not arrived yet",
+          "changed": "the first person in the already half"
+        },
+        {
+          "display": "qad waṣala al-mudīr, wa lākin lam yabdaʾ al-ijtimāʿ baʿd",
+          "script": "قد وصل المدير، ولكن لم يبدأ الاجتماع بعد",
+          "cue": "The manager has already arrived, but the meeting has not started yet",
+          "changed": "a different pair of events in the same two halves"
+        }
+      ],
+      "mistake": {
+        "display": "waṣala al-qiṭār qad, wa lākin lam yaṣil ṣadīqī baʿd",
+        "script": "وصل القطار قد، ولكن لم يصل صديقي بعد",
+        "why": "qad after the verb. It is a particle that only ever stands in front; the word that goes at the end of a clause is baʿd, and only in the negative half."
+      },
+      "usage": "Giving good news and bad news about the same wait.",
+      "register": "neutral",
+      "mnemonic": "qad in front = already; baʿd at the back = not yet."
+    },
+    {
+      "id": "L4-M6-S10",
+      "display": "qad waṣaltu ilā al-maktab, wa lākin lam yabdaʾ al-ijtimāʿ baʿd",
+      "script": "قد وصلت إلى المكتب، ولكن لم يبدأ الاجتماع بعد",
+      "cue": "I have already arrived at the office, but the meeting has not started yet",
+      "literal": "Already I-arrived to the-office, and but not he-starts the-meeting yet",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yabdaʾ",
+            "script": "يبدأ",
+            "cue": "he starts",
+            "tag": "free",
+            "forms": [
+              "yabdaʾ",
+              "abdaʾ",
+              "tabdaʾ"
+            ],
+            "note": "The present of L3-M10's bada'a. It ends on a hamza, and under lam it keeps exactly this shape."
+          }
+        ],
+        "rules": [
+          1,
+          6,
+          7
+        ]
+      },
+      "trap": "English needs a perfect on both halves — have arrived, has not started. Arabic marks the first with qad and a past, and the second with lam and a present shape, and the two halves look nothing alike.",
+      "sound": "yab-DAʾ: the final hamza is a clean stop; the word does not trail into a vowel.",
+      "variations": [
+        {
+          "display": "qad waṣaltu ilā al-bayt, wa lākin lam yabdaʾ al-akl baʿd",
+          "script": "قد وصلت إلى البيت، ولكن لم يبدأ الأكل بعد",
+          "cue": "I have already arrived home, but the meal has not started yet",
+          "changed": "the pair of events, kept in the same frame"
+        },
+        {
+          "display": "qad waṣala al-mudīr, wa lākin lam abdaʾ baʿd",
+          "script": "قد وصل المدير، ولكن لم أبدأ بعد",
+          "cue": "The manager has already arrived, but I have not started yet",
+          "changed": "the first person under lam, with no subject noun at all"
+        }
+      ],
+      "mistake": {
+        "display": "qad waṣaltu ilā al-maktab, wa lākin al-ijtimāʿ lam yabdaʾ baʿda",
+        "script": "قد وصلت إلى المكتب، ولكن الاجتماع لم يبدأ بعدَ",
+        "why": "baʿda again for baʿd. The clause is closed by baʿd; baʿda would leave the ear waiting for a noun that never comes."
+      },
+      "usage": "Reporting in when you are early and nothing has happened.",
+      "register": "neutral",
+      "mnemonic": "Two halves, two machines: qad + past, lam + present + baʿd."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M6-C01",
+      "display": "qabla an adhhab ilā al-ʿamal, sharibtu al-qahwa",
+      "script": "قبل أن أذهب إلى العمل، شربت القهوة",
+      "cue": "Before I went to work, I drank coffee"
+    },
+    {
+      "id": "L4-M6-C02",
+      "display": "baʿda an akaltu, dhahabtu ilā al-maktab",
+      "script": "بعد أن أكلت، ذهبت إلى المكتب",
+      "cue": "After I ate, I went to the office"
+    },
+    {
+      "id": "L4-M6-C03",
+      "display": "sa-antaẓir hunā ḥattā yaṣil al-qiṭār",
+      "script": "سأنتظر هنا حتى يصل القطار",
+      "cue": "I will wait here until the train arrives"
+    },
+    {
+      "id": "L4-M6-C04",
+      "display": "intaẓartu ilā an waṣala al-qiṭār",
+      "script": "انتظرت إلى أن وصل القطار",
+      "cue": "I waited until the train arrived"
+    },
+    {
+      "id": "L4-M6-C05",
+      "display": "athnāʾ al-ijtimāʿ, saʾalanī al-mudīr ʿan al-ʿamal",
+      "script": "أثناء الاجتماع، سألني المدير عن العمل",
+      "cue": "During the meeting, the manager asked me about the work"
+    },
+    {
+      "id": "L4-M6-C06",
+      "display": "khilāl al-akl, lā ataḥaddath kathīran",
+      "script": "خلال الأكل، لا أتحدث كثيراً",
+      "cue": "During the meal, I do not talk much"
+    },
+    {
+      "id": "L4-M6-C07",
+      "display": "ḥīna dhahabtu ilā al-maktab, kāna al-mudīr hunāka",
+      "script": "حين ذهبت إلى المكتب، كان المدير هناك",
+      "cue": "When I went to the office, the manager was there"
+    },
+    {
+      "id": "L4-M6-C08",
+      "display": "lam yaṣil al-qiṭār baʿd",
+      "script": "لم يصل القطار بعد",
+      "cue": "The train has not arrived yet"
+    },
+    {
+      "id": "L4-M6-C09",
+      "display": "qad waṣala al-qiṭār, wa lākin lam yaṣil ṣadīqī baʿd",
+      "script": "قد وصل القطار، ولكن لم يصل صديقي بعد",
+      "cue": "The train has already arrived, but my friend has not arrived yet"
+    },
+    {
+      "id": "L4-M6-C10",
+      "display": "qad waṣaltu, wa lākin lam yabdaʾ al-ijtimāʿ baʿd",
+      "script": "قد وصلت، ولكن لم يبدأ الاجتماع بعد",
+      "cue": "I have already arrived, but the meeting has not started yet"
+    },
+    {
+      "id": "L4-M6-C11",
+      "display": "adrus al-ʿarabiyya mundhu sana",
+      "script": "أدرس العربية منذ سنة",
+      "cue": "I have been studying Arabic since a year ago"
+    },
+    {
+      "id": "L4-M6-C12",
+      "display": "baynamā kuntu adrus, waṣala ṣadīqī",
+      "script": "بينما كنت أدرس، وصل صديقي",
+      "cue": "While I was studying, my friend arrived"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

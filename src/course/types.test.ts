@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 315 — nine L1-L3 ladders and L4-M1..M5 on every course (#528, #538-#546)', () => {
+  it('finds all 326 — nine L1-L3 ladders, and L4 closing course by course (#537, #552-#562)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -225,6 +225,7 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L4-M3.json',
       'content/en-ar/modules/L4-M4.json',
       'content/en-ar/modules/L4-M5.json',
+      'content/en-ar/modules/L4-M6.json',
       'content/en-de/modules/L1-M1.json',
       'content/en-de/modules/L1-M10.json',
       'content/en-de/modules/L1-M2.json',
@@ -260,6 +261,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-de/modules/L4-M3.json',
       'content/en-de/modules/L4-M4.json',
       'content/en-de/modules/L4-M5.json',
+      'content/en-de/modules/L4-M6.json',
+      'content/en-de/modules/L4-M7.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
@@ -295,6 +298,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L4-M3.json',
       'content/en-es/modules/L4-M4.json',
       'content/en-es/modules/L4-M5.json',
+      'content/en-es/modules/L4-M6.json',
+      'content/en-es/modules/L4-M7.json',
       'content/en-fr/modules/L1-M1.json',
       'content/en-fr/modules/L1-M10.json',
       'content/en-fr/modules/L1-M2.json',
@@ -330,6 +335,7 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-fr/modules/L4-M3.json',
       'content/en-fr/modules/L4-M4.json',
       'content/en-fr/modules/L4-M5.json',
+      'content/en-fr/modules/L4-M6.json',
       'content/en-it/modules/L1-M1.json',
       'content/en-it/modules/L1-M10.json',
       'content/en-it/modules/L1-M2.json',
@@ -365,6 +371,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-it/modules/L4-M3.json',
       'content/en-it/modules/L4-M4.json',
       'content/en-it/modules/L4-M5.json',
+      'content/en-it/modules/L4-M6.json',
+      'content/en-it/modules/L4-M7.json',
       'content/en-ko/modules/L1-M1.json',
       'content/en-ko/modules/L1-M10.json',
       'content/en-ko/modules/L1-M2.json',
@@ -435,6 +443,7 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ru/modules/L4-M3.json',
       'content/en-ru/modules/L4-M4.json',
       'content/en-ru/modules/L4-M5.json',
+      'content/en-ru/modules/L4-M6.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',
@@ -505,6 +514,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-mr/modules/L4-M3.json',
       'content/hi-mr/modules/L4-M4.json',
       'content/hi-mr/modules/L4-M5.json',
+      'content/hi-mr/modules/L4-M6.json',
+      'content/hi-mr/modules/L4-M7.json',
     ]);
   });
 
@@ -556,7 +567,7 @@ describe('ModuleContent against the modules that exist', () => {
   it('keeps the romanized course readable: display is the romanization, script the native line', () => {
     const romanized = MODULE_FILES.filter(([name]) => name.includes('en-ar'));
 
-    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(35);
+    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(36);
     for (const [file, json] of romanized) {
       const module = parseModule(json, file);
 
