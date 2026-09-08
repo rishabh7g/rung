@@ -27,14 +27,15 @@ Every new or replaced item was authored **from the module's own cumulative surfa
 (`matchSurfaces` + `tokenizeSurface`, `src/engine/surface.ts`) against the emitted
 `public/content/en-es/index/L1-M*.json` before commit. All 120 items resolve with **zero misses**,
 so `checkComprehensionPool` — the build's own gate — stays silent, and the [Q3] pool sweep in
-`tools/content-build.test.ts` still passes.
+`tools/content-build.test.ts` passed. That file was deleted with the rest of the suite on 2026-08-30 (#370); the build's own gate is what holds this
+line today.
 
 **The index proof was run, not assumed.** Pools are never indexed (`content-build` indexes what is
 taught, never what the exit ritual shows), so `public/content/en-es/index/*.json` saved before the
 rebuild and rebuilt after it are **byte-for-byte identical**: 0 keys lost, 0 moved, 0 added,
 `maxSpan` unchanged.
 
-**The contract is now pinned.** `tools/content-build.test.ts` gained a test
+**The contract was pinned.** `tools/content-build.test.ts` — removed since — gained a test
 (`keeps every en-es pool item fresh — 12 per module, none equal to any hero sentence (#289)`)
 asserting both halves — pool ≥ 12 per module, and no pool display case-insensitively equal to ANY
 hero sentence of the course (a stronger read than "its own module", and the acceptance criterion

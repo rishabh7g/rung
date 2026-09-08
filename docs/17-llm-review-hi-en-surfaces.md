@@ -134,8 +134,9 @@ cumulative index), `maxSpan` M1 1 → 2, M2–M5 2 and M6–M10 3 unchanged.
 
 ## What #288 inherits
 
-`tools/content-build.test.ts` gains hi-en's two seams, twins of the other three courses', and
-hi-en joins the [Q3] sentence-and-pool sweep (now four courses):
+`tools/content-build.test.ts` gained hi-en's two seams, twins of the other three courses', and
+hi-en joined the [Q3] sentence-and-pool sweep (four courses at the time). That file was later deleted with the rest of the suite on 2026-08-30 (#370)
+— `tools/shown-surfaces.test.ts` (#491) is the standing ratchet in its place, per course and by count rather than by row:
 
 1. **every hi-en variation line** swept against *its own module's* index, pinned at
    twenty-seven decided misses — eight `priya` lines and `jaipur` (names in variations), five

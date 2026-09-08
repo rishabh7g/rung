@@ -18,8 +18,8 @@ per sentence and the verification stamp (506 insertions, 6 deletions, all six th
 ## Method
 
 The constraint #286 inherits from #282: a variation a learner reads in M1 has only M1's cumulative
-index behind it, and `tools/content-build.test.ts` sweeps every hi-mr variation line against the
-index of the module that shows it, pinned at three decided misses. So every third variation was
+index behind it, and `tools/content-build.test.ts` — since deleted with the rest of the suite on 2026-08-30 (#370) — swept every hi-mr variation
+line against the index of the module that showed it, pinned at three decided misses. So every third variation was
 authored **from the module's own cumulative surface set** (26 → 47 → 67 → 105 → 135 → 151 → 172 →
 194 → 212 → 215 keys) and swept through the real engine (`matchSurfaces` + `tokenizeSurface`,
 `src/engine/surface.ts`) against the emitted `public/content/hi-mr/index/L1-M*.json` before and
@@ -29,7 +29,8 @@ after authoring.
 proper noun `प्रिया` (M1-S01, #282's exemption 0) and the two recorded exemptions `पाच` (M8-S07)
 and `बोललो` (M9-S04) — all in *pre-existing* lines. No new line leans on any of them, no new
 proper noun was introduced anywhere (`रोहन` is an indexed row and appears only where every
-module's index already carries it), and the pin in `tools/content-build.test.ts` is untouched.
+module's index already carries it), and the pin in `tools/content-build.test.ts` (removed since)
+was untouched.
 
 **The additions-only index proof is trivial this time, and was still run.** Variations are never
 indexed (`content-build` indexes what is taught, never what is shown), so
@@ -282,11 +283,11 @@ the walk-away (M3's नको closing an M8 frame).
 ## Verification
 
 - variation sweep through the real engine, per module: **300/300 lines, zero new misses** — the
-  only misses are the three pinned in `tools/content-build.test.ts`, unchanged
+  only misses are the three pinned in `tools/content-build.test.ts` (removed since), unchanged
 - `public/content/hi-mr/index/*.json` before vs after `npm run content:build`: **byte-identical**
   (variations are never indexed; the additions-only invariant holds with nothing to prove)
 - `npx vitest run tools/content-build.test.ts tools/validate.test.ts` → **106/106** (the hi-mr
-  sweep and paradigm-seam pins among them)
+  sweep and paradigm-seam pins among them; both files removed since)
 - `scripts/verify.sh` → `TYPES ok | LINT ok | TEST 1331/1331 ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok`
 - `npm run budget` → `course:hi-mr` **339.3 → 344.6 KiB** gzip against 360 (precache:hi-mr
   553.9 → 559.2 against 590); shell and the other three courses unmoved

@@ -12,7 +12,7 @@ ended at 13), joining the 101 already outstanding across the five earlier hi-en 
 
 This is issue **#292**. Going in, hi-en's comprehension pools held 90 items — M1–M3 at eight,
 M4/M5/M6/M9 at nine, M7/M8/M10 at ten. Coming out they hold **120: twelve per module**, the
-per-module counts now pinned in `tools/content-build.test.ts`. Pool size is retry freshness
+per-module counts pinned at the time in `tools/content-build.test.ts`, a file since deleted with the rest of the suite on 2026-08-30 (#370). Pool size is retry freshness
 (`src/engine/comprehension.ts`: at `comprehendCount` 2, twelve items are six fresh exit attempts
 before recycling, up from four at eight). **Nothing else moved**: no sentence, no variation, no
 word row, no rule — the diff inside each module is appended pool objects only, plus the trailing
@@ -108,7 +108,7 @@ subjects — C09 joins objects — with M9's `here` and M10's `today`).
 - `public/content/hi-en/index/*.json` before vs after rebuild: **byte-identical** (md5-verified,
   10/10 files)
 - `npx vitest run tools/content-build.test.ts` → 82/82, including the new #292 pin
-  (twelve per module, none a hero)
+  (twelve per module, none a hero); that file has since been removed
 - `scripts/verify.sh` → `TYPES ok | LINT ok | TEST 1332/1332 ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok`
 - Payload, measured: `course:hi-en` **352.0 → 352.5 KiB** gzip (+0.5 KiB for 30 cued items),
   `precache:hi-en` 566.5 → **567.1 KiB**; shell and the other three courses unmoved, every font

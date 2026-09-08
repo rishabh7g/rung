@@ -130,7 +130,7 @@ false of the other's sentence.
   alone: every sentence has at least one structural variation (a person shift, a question, a
   gender switch, or a subject swapped for a name).
 - `src/course/types.test.ts` — the field-language walk above, plus the stress-mark scan.
-- `src/course/enRuAuthored.test.tsx` — the dev-build smoke, by test and never by a browser: the
+- `src/course/enRuAuthored.test.tsx` (that file was deleted with the rest of the suite on 2026-08-30 (#370), so this section is the record of the walk, not a walk anyone can re-run) — the dev-build smoke, by test and never by a browser: the
   Ladder in English chrome, both module lists as ten cards each, Sentence Detail with a `lang="ru"`
   hero over an `lang="en"` document and the gloss paragraph present, and four Why-panel taps
   landing on the rows this document says they land on.

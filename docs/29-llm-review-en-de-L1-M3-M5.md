@@ -196,7 +196,7 @@ modules write are other shapes of the same verb (`möchten`, `esse`, `trinke`, `
   — "Ship the ladder in order." That is exactly what has happened, because #362 and #363 were run in
   parallel. Nothing was faked green to hide it: no `verified: false`, no edit to another course, no
   pool item softened.
-- `npx vitest run tools/content-build.test.ts` → 9 failures, all downstream of the same gap. Those
+- `npx vitest run tools/content-build.test.ts` (a file since deleted with the rest of the suite on 2026-08-30 (#370)) → 9 failures, all downstream of the same gap. Those
   cases run their own DEV build over the real content root, that build now aborts, and so the files
   they then read (`hi-mr/index/L1-M1.json`, `en-ar/index/L1-M1.json`, `en-es/index/L1-M1.json`,
   `hi-en/index/L1-M2.json`, `hi-mr/levels.json`) are never emitted. Not one of them names a module

@@ -22,9 +22,9 @@ it. Keep engineering-owned notes here.
 ## Rules
 
 1. **Style exclusively against `design/tokens.css`.** Load it and use `var(--*)`
-   only. No hard-coded hex, px, or font names in components. `src/styleContract.test.ts`
-   enforces this mechanically, with two narrow exemptions where a token is impossible rather
-   than merely unused (#243): a `px` literal in a media-query PRELUDE (`@media (min-width:
+   only. No hard-coded hex, px, or font names in components. A style-contract test enforced this
+   mechanically until it was deleted on 2026-08-30 (#370) — it is a review rule now — with two
+   narrow exemptions where a token is impossible rather than merely unused (#243): a `px` literal in a media-query PRELUDE (`@media (min-width:
    768px)` — CSS forbids `var(--*)` in a media condition), and a `px` literal in a
    custom-property DEFINITION inside `src/styles/tokenOverrides.css` (that file is the one
    sanctioned place to change a `design/tokens.css` value, and changing a length means writing
@@ -176,7 +176,7 @@ the token, never a raw px.**
 the notch's strip genuinely does substitute for its top padding.
 
 The `0px` inside the `env()` fallback is the one place a `px` literal is not a design decision —
-`src/styleContract.test.ts` exempts a zero length, and only a zero, for that reason.
+the style-contract test exempted a zero length, and only a zero, for that reason.
 
 ## Divergence — kickers in Devanagari (2026-08-30, #351)
 
@@ -200,9 +200,9 @@ design/tokens.md §2: **"`--font-devanagari` Mukta 400–700 — all Devanagari"
 --text-kicker-sm: 600 10px/1.2 var(--font-kicker);
 ```
 
-It is a NAMED role rather than two literal stacks, so the two slots cannot drift apart and
-`src/fonts.test.ts`'s `familiesByRole()` — which reads `--font-*` out of both sheets — sees it the
-way it sees every other family. The weight it asks Mukta for is 600, which the bundle already
+It is a NAMED role rather than two literal stacks, so the two slots cannot drift apart and the
+fonts test's `familiesByRole()` — which read `--font-*` out of both sheets — saw it the way it saw
+every other family. The weight it asks Mukta for is 600, which the bundle already
 carries: `--text-l2-card` and `--text-l2-list` render Mukta 600 today, so this adds a use of an
 existing cut rather than a cut.
 
@@ -247,9 +247,9 @@ the four raised roles survives on colour, not size — they were already differe
 `--ink-*` tint each one is painted at (`design/tokens.md` §1), never by weight, so four roles
 landing on one size is not a new dependency, it makes an existing one load-bearing.
 
-`src/fonts.test.ts` asserts every non-kicker `--text-*` token — the design package's plus the
-override's — resolves to at least 16px, so a future ramp entry added below the floor fails the
-same way. Walked the six stylesheets that consume the four raised tokens
+The fonts test asserted every non-kicker `--text-*` token — the design package's plus the
+override's — resolved to at least 16px, so a ramp entry added below the floor failed the same way;
+since that test was cut, the floor is a review rule. Walked the six stylesheets that consume the four raised tokens
 (`ladder-screen.css`, `comprehension-screen.css`, `RitualScreen.module.css`,
 `module-screen.css`, `sentence-screen.css`, `boot-screens.css`) for the layout
 consequence: every caption/micro/secondary use is either a short closed-vocabulary count/label

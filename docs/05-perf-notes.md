@@ -54,9 +54,9 @@ runtime route the active course warms (§4.8).*
 
 1. **Weights trimmed to the ramp** — the `--text-*` shorthands in design/tokens.css render
    exactly Mukta 400/600/700, Barlow 400, Barlow Condensed 600/700. Mukta 500, Barlow 500/600
-   and Barlow Condensed 500 were bundled headroom nothing rendered; `src/fonts.test.ts` now
-   fails on unused faces in either direction (missing AND surplus), so headroom cannot creep
-   back silently.
+   and Barlow Condensed 500 were bundled headroom nothing rendered; the fonts test failed on
+   unused faces in either direction (missing AND surplus), so headroom could not creep back
+   silently. That test was deleted on 2026-08-30 (#370) and headroom is now caught by review.
 2. **Whole-family imports replaced by subset files** — `main.tsx` imports
    `@fontsource/<pkg>/latin-<weight>.css` instead of `<weight>.css`, which kills every
    `vietnamese` subset (nothing in this product is Vietnamese) and every `latin-ext` in the
@@ -133,9 +133,11 @@ Every file in `dist/` has exactly **one owner** (`attribute()` in `tools/payload
   data table (`SCRIPT_BY_LANGUAGE_TAG`) keyed by BCP-47 tag, never by course id (Invariant 1).
 - **`splash`** — the iOS startup set, never precached and never fetched by the app (#115).
 
-The rows are unions of owners, so **adding a course cannot move another course's row** —
-`tools/payload-budget.test.ts` proves it by adding a throwaway course to a fake `dist/` and
-asserting every other row is byte-identical.
+The rows are unions of owners, so **adding a course cannot move another course's row** — the
+budget's own test proved it by adding a throwaway course to a fake `dist/` and asserting every
+other row was byte-identical. It was cut on 2026-08-30 (#370); the property is structural (a row
+is a union over `attribute()`), and the BUDGET stage still fails on an `unmetered` file or a
+precache list that disagrees with `shell`.
 
 Two of the rows answer the two questions `total` conflated:
 
@@ -317,8 +319,9 @@ for a printed size that grew:
    times the effort. `first-paint` — that is the 2 s gate itself; stop and fix it before shipping.
    `unmetered` — a new asset class arrived; give it an owner in `attribute()` and a row.
 2. **Cut the bytes where they are charged.** For a course's fonts: drop a weight for that script
-   (needs design sign-off — `src/fonts.test.ts` goes red if the `--text-*` ramp still asks for it),
-   or subset to the shipped word index rather than all authored strings. For the shell: split a
+   (needs design sign-off — the deleted fonts test went red if the `--text-*` ramp still asked for
+   it, so this one is on the reviewer now), or subset to the shipped word index rather than all
+   authored strings. For the shell: split a
    route out of the bundle, or drop a UI face.
 3. **Move bytes off the critical path** (helps `first-paint`, not the precache): a face only course
    text renders must stay `unicode-range`-routed and `font-display: swap`, never preloaded — §5.2

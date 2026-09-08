@@ -15,13 +15,14 @@
  *
  * **The mark is not redrawn here.** `src/shell/RailsMark.tsx` says its geometry is the ticket's
  * verbatim SVG and is not to be redrawn, so this script *reads that component* and lifts the
- * `<line>`/`<rect>` elements out of it — the same source-scan idiom as `src/fonts.test.ts` and
- * `src/styleContract.test.ts`. Change the mark in the header and the icons follow it or the
+ * `<line>`/`<rect>` elements out of it — the same source-scan idiom the deleted fonts and
+ * style-contract tests used. Change the mark in the header and the icons follow it or the
  * parse fails loudly; there is no second copy of those five shapes anywhere.
  *
  * The colours the component defers to the page for — `currentColor` on the rails, the accent bar
  * — are resolved from `design/tokens.css` (`tools/tokens.ts`), because a PNG cannot hold a
- * `var()` and a hand-typed hex here is the drift `src/styleContract.test.ts` exists to stop.
+ * `var()` and a hand-typed hex here is the drift the style-token scan existed to stop — that scan
+ * was cut on 2026-08-30, so the discipline is the only thing left holding it.
  *
  * Since #115 the component carries the RATIFIED construction grid (design/tokens.md §6.4, the
  * formal spec #69 delivered), so these icons are the final brand set, not placeholders. The iOS

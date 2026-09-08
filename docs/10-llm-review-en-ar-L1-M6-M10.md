@@ -336,7 +336,8 @@ same shape and diverging mid-course costs more than the wart. Each is an open qu
 - `vitest run tools/validate.test.ts tools/content-build.test.ts src/course/types.test.ts` →
   **128/128 ok**, with the pinned inventories in `src/course/types.test.ts` (25 → 30 module files,
   en-ar romanization rule now covering 10) and `tools/content-build.test.ts` (dev-build shipped
-  list, build line and emitted-file list) extended to all ten en-ar modules
+  list, build line and emitted-file list) extended to all ten en-ar modules. The first two of those
+  files were deleted with the rest of the suite on 2026-08-30 (#370)
 - Full suite `vitest run` → **1188/1188 ok, 59 files** — run once because #217/PR #219 changed the
   module-list screen layer on `main`; nothing in that change touches content, and nothing here
   touches the screen layer

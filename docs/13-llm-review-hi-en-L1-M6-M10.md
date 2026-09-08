@@ -65,7 +65,7 @@ level-level `draft: true` is #273's to drop, as en-es's was #195's).
    `in front of` (M7), `How much`, `How many`, `Can I have` (M8) and `See you` (M10) are whole rows;
    the bare parts `going`, `there`, `next` (M6's own row, not M7's), `front`, `much`, `many`, `can`
    are unclaimed, and `to`, `is`, `how`, `have`, `see`, `you` stay with M3, M1, M2, M4, M5 and M2
-   respectively — pinned in `tools/content-build.test.ts`.
+   respectively — pinned at the time in `tools/content-build.test.ts`, a file since deleted with the rest of the suite on 2026-08-30 (#370).
 
 ## The slogan traps, and what was written instead
 
@@ -125,8 +125,9 @@ comes later in its own module, and no declared row is shadowed (every one of the
 least one key). M10's turns were walked as the resolver sees them — one token stream across the
 sentence boundaries — and no multi-token key straddles a full stop (the only spans that fire are the
 ones authored: `good morning`, `thank you`, `going to`, `can i have`, `got up`, `see you`). The same
-landings are pinned in `tools/content-build.test.ts` ("lands hi-en M6–M10 on the rows the briefs
-assigned") and rendered through the real Why panel in `src/course/hiEnAuthored.test.tsx`.
+landings were pinned in `tools/content-build.test.ts` ("lands hi-en M6–M10 on the rows the briefs
+assigned") and rendered through the real Why panel in `src/course/hiEnAuthored.test.tsx`. Both
+files were deleted with the rest of the suite on 2026-08-30 (#370).
 
 ### L1-M6 — 126 surfaces cumulative, maxSpan 2
 
@@ -281,8 +282,8 @@ the next module of this course.
   verbs — extend those rows' `forms` in their own files if L2 writes them), `him`, `his`, `its`,
   `these`, `those`, `too`, `meet`, `won't`, `isn't`, `doesn't` (M4 owns it — yes; `wasn't` no),
   `hundred`, `three`, `six`, `now`, `well`, `thirsty`, `bye`, `bus`, `there` (bare), `going`
-  (bare), `much`, `many`, `can`, `front`. `tools/content-build.test.ts` pins a subset of these as
-  absent after M10.
+  (bare), `much`, `many`, `can`, `front`. `tools/content-build.test.ts` pinned a subset of these
+  as absent after M10, until that file was deleted with the rest of the suite on 2026-08-30 (#370).
 
 ## Authoring calls outside the briefs' letter (recorded so L2 and #273 do not "fix" them back)
 
@@ -357,7 +358,8 @@ Self-review of the drafts, plus the audit above, changed these things before the
   excluded by the gate`
 - `npx vitest run src/course/types.test.ts src/course/hiEnAuthored.test.tsx
   tools/content-build.test.ts tools/validate.test.ts tools/generate-prompt.test.ts
-  src/screens/SettingsScreen.test.tsx` → **241/241 green** (`types.test.ts` inventory now 40 files,
+  src/screens/SettingsScreen.test.tsx` — every file there except `src/course/types.test.ts` was
+  deleted with the rest of the suite on 2026-08-30 (#370) — → **241/241 green** (`types.test.ts` inventory now 40 files,
   the hi-en language law asserted over ten; `content-build.test.ts` dev build ships ten, the new
   M6–M10 landing test; `hiEnAuthored` walks the module list, Sentence Detail and Why panel of all
   five — M10's turns render whole in a card, and the panel walks a turn token by token across its

@@ -282,10 +282,11 @@ Self-review of the drafts, plus the audit above, changed six things:
 - `npm run content:build -- --with-unverified --with-fixtures` → `en-es: 10 modules (L1-M1..M10)`,
   indexes 116 → 139 → 160 → 185 → 197 surfaces
 - `npx vitest run tools/validate.test.ts tools/content-build.test.ts src/course/types.test.ts` →
-  **118/118 green**; the full suite → **1133/1133 green**
+  **118/118 green**; the full suite → **1133/1133 green**. The first two files were deleted with the rest of the suite on 2026-08-30 (#370)
 - `npm run typecheck`, `npx eslint .`, `npx prettier --check .` → clean
 - Pinned inventories updated: `MODULE_FILES` in `src/course/types.test.ts` (and its title), and in
-  `tools/content-build.test.ts` the shipped map, the summary line and the emitted-file list
+  `tools/content-build.test.ts` — deleted since — the shipped map, the summary line and the
+  emitted-file list
 - `content/en-es/levels.json`: M6–M10 gain `hasContent: true` and lose `draft`; the L1 `draftNote`
   now says all ten are authored and none has had a native pass
 - **Live dev-build smoke**, headless Chromium against a dev `dist/` with the course switched to

@@ -292,7 +292,8 @@ open question below rather than a silent decision.
   `index L1-M5: 132 surfaces`, and **no `warn … carries no script line`**
 - `vitest run tools/validate.test.ts tools/content-build.test.ts src/course/types.test.ts` →
   **123/123 ok**, with the pinned inventories in `src/course/types.test.ts` and
-  `tools/content-build.test.ts` extended to the five en-ar module files
+  `tools/content-build.test.ts` extended to the five en-ar module files. The first two of those
+  files were deleted with the rest of the suite on 2026-08-30 (#370)
 - Rule reachability: **8/8 in M5** (was 6/8 before this pass), 9/9 in M3, 8/8 in M4 — every rule
   every module declares is cited by at least one sentence, so every rule reaches a screen
 - `content/en-ar/levels.json`: L1-M1..M5 all `hasContent: true`, no `draft` key on any of them

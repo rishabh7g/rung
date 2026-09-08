@@ -62,7 +62,8 @@ module: **three variations on every sentence** (#288's bar, no exemptions taken)
    tokens, with the person-shifted shapes in `forms` (`ti chiami · si chiama`;
    `ti piace · gli piace`; `ti piacciono · gli piacciono`). The index confirms the point of them:
    there is no `mi` key anywhere in the course, so no later module has to own one, and the Why
-   panel over `Mi piace molto la musica` returns four rows and not five (`enItAuthored.test.tsx`).
+   panel over `Mi piace molto la musica` returns four rows and not five (`enItAuthored.test.tsx`,
+   deleted since).
 5. **Homographs.** `sono` is ONE row (M1-S02) and its note is written true of every seat it takes:
    "I am", the `loro` form "they are", and the helper of M5's `sono andato`. Its "they are" seat is
    already exercised in M1-S10's third variation (`I libri sono buoni`). `la` is the feminine
@@ -160,7 +161,7 @@ open question below, because it constrains M8.
 
 ## Smoke — by test, never a browser
 
-`src/course/enItAuthored.test.tsx` boots the real `<App />` over the authored tree
+`src/course/enItAuthored.test.tsx` (that file was deleted with the rest of the suite on 2026-08-30 (#370), so this section is the record of the walk, not a walk anyone can re-run) booted the real `<App />` over the authored tree
 (`content/en-it/`) with an index folded in-test by the engine's own surface rule, and walks: the
 Ladder (ten rungs, M1 current, one CTA, English chrome, `lang="en"`); each authored module's list
 (ten cards, hrefs in ladder order); Sentence Detail for every authored `S01` (Italian hero under

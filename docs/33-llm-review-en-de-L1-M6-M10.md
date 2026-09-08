@@ -172,8 +172,8 @@ the briefs care about:
 - `npm run content:build -- --with-unverified --with-fixtures` — **FAILS**, expected. See below.
 - `vitest run src/course/types.test.ts` — 94 passed, including the new en-de decisions test and the
   widened `MODULE_FILES` inventory (75 files).
-- `vitest run src/course/enDeAuthored.test.tsx` — 13 passed. This is the dev-build smoke the issue
-  asks for, done by test rather than by a browser (CLAUDE.md bans Playwright and Chromium on the
+- `vitest run src/course/enDeAuthored.test.tsx` (that file was deleted with the rest of the suite on 2026-08-30 (#370), so this section is the record of the walk, not a walk anyone can re-run) — 13 passed. This was the dev-build
+  smoke the issue asked for, done by test rather than by a browser (CLAUDE.md bans Playwright and Chromium on the
   Pi): the real `<App />` booted over the AUTHORED tree, ten cards for each of the five rungs
   (M10's turns rendering whole, one card per turn), Sentence Detail on M6-S01, M7-S08, M9-S08 and
   M10-S02, and the Why panel on four pool items. It reads `content/en-de/` off disk and folds the
@@ -199,7 +199,7 @@ um · wasser
 `nach` and `hause` appear separately because M5's `nach Hause` span is absent, so the resolver
 falls back to the bare tokens; both disappear the moment M5 lands.
 
-The nine failing vitest cases are all in `tools/content-build.test.ts` and are all downstream of
+The nine failing vitest cases are all in `tools/content-build.test.ts` — a file since deleted with the rest of the suite on 2026-08-30 (#370) — and are all downstream of
 that one dev build: `passes the three authored bundles as they ship`, `ships all seven courses'
 L1-M1..M10 on a dev build too`, the three `lands hi-en on the rows the briefs assigned` cases,
 `indexes hi-mr cumulatively`, `indexes the romanized course in Latin script`, `handles a

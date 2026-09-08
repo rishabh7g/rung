@@ -132,8 +132,8 @@ writes.
 
 ## Smoke — by test, never a browser
 
-`src/course/enItAuthored.test.tsx` derives its module list from the files on disk, so the three new
-rungs were walked the moment they landed: each module's list renders its ten sentences as ten
+`src/course/enItAuthored.test.tsx` (that file was deleted with the rest of the suite on 2026-08-30 (#370), so this section is the record of the walk, not a walk anyone can re-run) derived its module list from the files on disk, so the
+three new rungs were walked the moment they landed: each module's list renders its ten sentences as ten
 cards, and each module's `S01` renders with an Italian hero under `lang="it"`, an English gloss
 paragraph present, and the document still `lang="en"`.
 

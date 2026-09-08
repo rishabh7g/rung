@@ -115,8 +115,9 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
   switch) and marks only the exceptions below it, because `lang` inherits: every L2 surface
   carries `l2Written(course).display.lang` — `ar-Latn` in a romanized course, since the letters
   are Latin — the quiet native `script` line carries `l2Tag`, and `glossEn` carries `en`. L1 copy
-  carries nothing and inherits the document. `src/langLaw.test.tsx` scans `src/` and fails on an
-  L2 surface rendered by an element that declares no language.
+  carries nothing and inherits the document. A scan over `src/` failed on an L2 surface rendered
+  by an element that declared no language; it was deleted with the render-level suite on
+  2026-08-30 (#370), so the law is a review rule now.
 - **L2 direction (#196)** — a row also declares `l2Dir`, which way the L2 runs IN ITS OWN SCRIPT
   (`rtl` for `ar`, `ltr` for `mr`/`es`). It is NOT `dir`: `dir` is the course as the learner meets
   it, and en-ar is `dir: 'ltr'` (English chrome, romanized sentence) with `l2Dir: 'rtl'` (the quiet
@@ -125,8 +126,9 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
   because Latin letters are — so no render site can take the tag without the direction. Declared,
   never `dir="auto"`: the browser's first-strong-character guess resolves an Arabic sentence that
   opens with a Latin word or a digit as `ltr` and throws its terminal punctuation to the far end.
-  Both validators reject a missing or malformed `l2Dir`, and `src/langLaw.test.tsx` scans for a
-  taught surface rendered without a direction the same way it scans for one without a language.
+  Both validators still reject a missing or malformed `l2Dir`; the same deleted scan looked for a
+  taught surface rendered without a direction the way it looked for one without a language, and
+  nothing looks for either today.
 - **courses.json / strings.json** — §4. strings.json has a FIXED key list
   (cue label, reveal labels, practice copy, ritual arc copy incl. resource rows
   + hold label, retry copy, ordinal, pending-authoring note, verdict line,
@@ -134,7 +136,8 @@ rung/ (repo name: shidi — GitHub redirects; local dir may keep its name)
   list is `src/course/stringsKeys.ts`, declared once: the app's `Strings` type
   derives from it and `tools/strings-check.ts` validates against the same array.
   Screens read microcopy with `useStrings()` and nothing else; the shell owns no
-  copy, and `src/shellPurity.test.ts` fails on any course script under `src/`.
+  copy, and no course script may appear under `src/` — the scan that failed on one was deleted on
+  2026-08-30 (#370); README's "What TEST actually runs" section has the full list of what went.
 - **State v12** — §F8 verbatim (localStorage `rung:state`):
   `{ stateVersion: 12, activeCourse, courses: { <id>: { modules, production,
   reviewQueue, sessionCount, studied, session } }, settings }`. The per-course
