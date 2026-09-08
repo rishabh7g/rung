@@ -1455,7 +1455,7 @@ over ~25 minutes on a 1s linear width transition, and then stopping.
   the tick says.
 
 Fidelity: the prototype samples every 8s and hides the tick at `phase === 'done'`; both are matched
-in spirit (15s, and gone at the summary). The `1s linear` is the one value in `Tick.module.css`
+in spirit (15s, and gone at the summary). The `1s linear` is the one value in `tick.css`
 that is not a token — the design package states it in prose only (tokens.md §5) and `tokens.css`
 carries just `--motion-tick-cap: 25min` — so it is written once, commented, and recorded for #117.
 Verified at 360px in headless Chrome inside a real hi-mr session, driving `performance.now()`

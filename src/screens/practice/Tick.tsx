@@ -30,7 +30,7 @@
  */
 import { useEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import { useAppStore } from '../../state/store.ts';
-import styles from './Tick.module.css';
+import './tick.css';
 
 /**
  * `--motion-tick-cap: 25min` — the tick fills once over ~25 minutes, then stops (tokens.md §5).
@@ -111,7 +111,7 @@ export function Tick({ active }: TickProps) {
 
   return (
     <div
-      className={styles.track}
+      className="tick-track"
       data-slot="elapsedTick"
       // Ambience, not information. There is no text to read here and nothing to announce: a
       // screen reader that narrated a session's elapsed time would be inventing the one number
@@ -121,7 +121,7 @@ export function Tick({ active }: TickProps) {
       // number it cannot compute, so every value in the stylesheet stays a token.
       style={{ '--tick-fraction': filled } as CSSProperties}
     >
-      <div className={styles.fill} />
+      <div className="tick-fill" />
     </div>
   );
 }

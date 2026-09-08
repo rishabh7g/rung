@@ -4,7 +4,7 @@
    is already the session column's gutter (`Session.module.css`, --space-6), so only the 8px gap
    under the chips is set here. */
 
-.track {
+.tick-track {
   height: var(--tick-height);
   margin-top: var(--space-2);
   background: var(--tick-track);
@@ -19,7 +19,7 @@
    — there is no duration token to reach for, and `--motion-unlock` happening to be 1000ms is a
    coincidence about the unlock beat, not this. Recorded for #117 with the rest of the fidelity
    notes; if the design package ever names it, this is the single line that changes. */
-.fill {
+.tick-fill {
   height: var(--tick-height);
   width: calc(var(--tick-fraction, 0) * 100%);
   background: var(--tick-fill);
@@ -30,7 +30,7 @@
    the movement — it is the whole of what this component says — so it stays; only the sliding
    between two widths goes, and the bar steps to its new fill instead of gliding to it. */
 @media (prefers-reduced-motion: reduce) {
-  .fill {
+  .tick-fill {
     transition: none;
   }
 }
