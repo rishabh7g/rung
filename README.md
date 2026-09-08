@@ -301,6 +301,63 @@ job without them, `bad` among them: L1-M2 owns only the whole surface `not bad`,
 (`with`), fixed in content. **The native gate is still unmet**: docs/63 ends in open questions
 1–25, a fresh hi-en L2 chain.
 
+**en-ru starts its second level (#438, 2026-09-08).** `L2-M1` _Asking politely_ and `L2-M2`
+_Describing people_ are authored against the briefs of #429
+(`docs/56-en-ru-L2-brief-decisions.md`), backed by `docs/64-llm-review-en-ru-L2.md`; a strict
+`npm run build` emits `en-ru: 12 modules (L1-M1..M10, L2-M1..M2)`. M1's grammar is the **aspect of
+an imperative** — L1 shipped the pairs and never taught the choice — with `skazhíte` and
+`govoríte` on separate rows, as the L1 aspect-partner policy requires and as this module's own
+lesson needs. Two other things land there: Russian's **subjectless sentence** (`Mne núzhno
+rabótat'`, `Mózhno vódu?`), named once so M3 and M8 do not meet it as fresh idioms; and the polite
+**negative question**, which is softer in Russian and reads as doubt or complaint to an English
+ear. M2 opens the long adjective with all four nominative cells in one row's `forms`, and states
+the split L1 left implicit: `ustál` was a short-form adjective all along, and the short form is not
+a shortening of the long one. `mat'` and `doch'` are taught as words rather than as examples,
+because they are the only two feminine nouns of their shape in the course. One seam correction:
+`u nevó` and `u neyó` ride as whole two-token surfaces, because bare `u` is taught nowhere — L1-M8
+authored `u menyá` and `u vas` the same way, and matching it is both the fix and the better
+teaching. **The native gate is still unmet**: docs/64 ends in open questions 1–10, a fresh en-ru L2
+chain.
+
+**en-ru reaches the middle of L2 (#447, 2026-09-08).** `L2-M3` _Describing things_, `L2-M4`
+_Getting around_ and `L2-M5` _Food and hosting_ ship against the same briefs; a strict
+`npm run build` emits `en-ru: 15 modules (L1-M1..M10, L2-M1..M5)`. M3 makes Russian's central
+difficulty visible and frames it honestly as **bookkeeping rather than a new idea** — the adjective
+agrees in gender, number and case, and the whole paradigm lives in one row's `forms`. The genitive
+arrives doing three jobs at once (absence, amount, "of") and pays a debt L1 left open: `pyat'
+rubléy` and `pyat' chasóv` were genitive plurals all along, said for two levels without a reason.
+M4 gives that case a fourth job (`do`) and adds the contrast that carries the module — `v` and `na`
+take the accusative for motion and the prepositional for location — plus the split English never
+makes, `idtí` on foot against `yékhat'` by vehicle, with no neutral verb to fall back on. M5 spends
+M1's aspect decision: a host is always imperfective, and M4's perfective `povernite` sits two rungs
+earlier so the level shows the same speaker choosing both. Because L2 never edits an L1 file, every
+new shape of an L1 noun is **a row of its own pointing back** (`vodý`, `cháya`, `sákhara`,
+`khléba`, `magazína`, `rabótu`). One wave-1 correction travelled with this wave: M1's `bol'shóye`
+row had taken the whole paradigm and was trimmed to the single neuter cell it teaches, so M3 owns
+the adjective. Four ratchet findings, all fixed in content; the en-ru baseline stays at 20. **The
+native gate is still unmet**: docs/64 now ends in open questions 1–20.
+
+**en-ru's second level closes (#456, 2026-09-08).** `L2-M6` _Making plans together_ through
+`L2-M10` _Telling what happened_ complete the ladder; `content/en-ru/levels.json` drops the L2 draft
+flag and a strict `npm run build` emits `en-ru: 20 modules (L1-M1..M10, L2-M1..M10)`. M6 finally
+opens **`ty`**, held back through all of L1 on the argument that guessing wrong with a stranger is
+rude while guessing wrong with a friend is merely stiff — and it names the thing English has no
+equivalent for: the move from `vy` to `ty` is negotiated out loud, not drifted into. M7 turns M3's
+genitive of absence on a person (`Yevó net dóma`) and makes its register a rule about **not
+knowing** rather than about politeness — `vy` throughout, because you do not know who picked up. M8
+carries the level's best rule: in `Mne núzhen bilét` the thing NEEDED is the subject and `núzhen`
+agrees with it, which with `U menyá bolít golová` and L1-M8's `u menyá yest'` makes three
+constructions on one habit — the person is never the subject of their own need, having or pain; and
+the complaint delta runs the **opposite way from English**, because a hedged Russian complaint reads
+as evasive. M9 spends M3's case a fifth time on "than", and shows `deshyóvyy` losing its yó in
+`deshévle` — not an exception to the yó rule but the rule itself. M10 teaches aspect at length and
+kills the slogan: `Ya dva chasá chitál` is bounded and imperfective, `Ya prochitál za dva chasá` is
+perfective, and the reading took the same two hours; the diagnostic is one the learner already owns,
+that the perfective has no present. Fifteen ratchet findings across the wave, all fixed in content —
+two of them plain spelling slips (`brata` for `bráta`, `ona` for `oná`) that the acute catches
+precisely because an unmarked vowel is a different index key. The en-ru baseline stays at 20. **The
+native gate is still unmet**: docs/64 ends in open questions 1–32, a fresh en-ru L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

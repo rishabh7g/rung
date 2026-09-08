@@ -1,0 +1,774 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": [
+    "L2-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "Mne + , + pozháluysta + , + N-acc",
+      "Sadítes'! Ugoshcháytes'!",
+      "Vam chay ili kófe?",
+      "Net + , + spasíbo + , + ya syt / sytá",
+      "Cháshka cháya + , + pozháluysta"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THIS IS WHERE M1'S ASPECT DECISION IS SPENT. A host speaks in the IMPERFECTIVE — Sadítes', Prokhodíte, Ugoshcháytes', Beríte — and the perfective in the same seat lands as an order rather than as hospitality. It is the clearest evidence in the course that aspect is about how an action is being PRESENTED and not about how long it takes: sitting down takes the same three seconds either way."
+    },
+    {
+      "tag": "delta",
+      "text": "ORDERING IS M1'S DATIVE PLUS L1-M3'S ACCUSATIVE, and there is no verb at all: Mne, pozháluysta, sup — \"to me, please, soup\". That is what a Russian says at a counter. Ya khochú sup is grammatical and blunter than English \"I want\", so the verbless frame is the polite one. Register carried by shape again, exactly as M1 promised."
+    },
+    {
+      "tag": "free",
+      "text": "The genitive of quantity is M3's rule in the field: cháshka cháya, stakán vodý, nemnógo sákhara, mnógo khléba. It is one rule, not two — a container or a word of amount is followed by the genitive — and the only thing new here is which nouns it lands on."
+    },
+    {
+      "tag": "interference",
+      "text": "REFUSING WITHOUT OFFENCE. In Russian hosting, an offer is expected to be repeated, so a single Net, spasíbo is heard as politeness rather than as a decision. The refusal that lands adds a reason: Net, spasíbo, ya uzhé syt. The reverse is worth knowing too — a guest who accepts the first offer of a third helping has not been rude, and no host reads it as greed."
+    },
+    {
+      "tag": "free",
+      "text": "syt and sytá are SHORT-form adjectives, the kind M2 named: they agree with the speaker and cannot stand in front of a noun. A man says ya syt and a woman ya sytá, and there is no way to avoid choosing."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "Sadítes', pozháluysta!",
+      "script": "Садитесь, пожалуйста!",
+      "cue": "Do sit down, please!",
+      "literal": "Be-seating-yourself, please!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sadítes'",
+            "script": "садитесь",
+            "cue": "sit down (host's form)",
+            "tag": "delta",
+            "forms": [
+              "sadítes'"
+            ],
+            "note": "The imperfective imperative — an invitation, not an instruction. Its perfective partner exists and in this seat would sound like a command to sit."
+          },
+          {
+            "display": "prokhodíte",
+            "script": "проходите",
+            "cue": "come in · come through",
+            "tag": "delta",
+            "forms": [
+              "prokhodíte"
+            ],
+            "note": "The other half of a Russian welcome, and imperfective for the same reason. It is said at a door where English says \"come in\"."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "M1 taught that a request is perfective. Hosting is the exception that proves what aspect really means: nothing about the ACTION has changed, only how it is being offered.",
+      "sound": "sa-DI-tyes' pa-ZHA-lsta. The final -s' is the reflexive ending and is soft, which is why the word ends on a hiss rather than a hard s.",
+      "variations": [
+        {
+          "display": "Prokhodíte, pozháluysta!",
+          "script": "Проходите, пожалуйста!",
+          "cue": "Do come in, please!",
+          "changed": "at the door rather than at the table"
+        },
+        {
+          "display": "Sadítes'!",
+          "script": "Садитесь!",
+          "cue": "Sit down!",
+          "changed": "without pozháluysta — still warm, because the aspect carries it"
+        },
+        {
+          "display": "Prokhodíte i sadítes'",
+          "script": "Проходите и садитесь",
+          "cue": "Come in and sit down",
+          "changed": "both invitations in one breath"
+        }
+      ],
+      "mistake": {
+        "display": "Sadítes' i beríte bystro",
+        "script": "Садитесь и берите быстро",
+        "why": "A host does not hurry a guest: Prokhodíte i sadítes'."
+      },
+      "usage": "Said at the door of every Russian home, usually twice.",
+      "register": "neutral",
+      "mnemonic": "A host is always imperfective."
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "Ugoshcháytes', pozháluysta!",
+      "script": "Угощайтесь, пожалуйста!",
+      "cue": "Please help yourself!",
+      "literal": "Be-treating-yourself, please!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ugoshcháytes'",
+            "script": "угощайтесь",
+            "cue": "help yourself",
+            "tag": "delta",
+            "forms": [
+              "ugoshcháytes'"
+            ],
+            "note": "Literally \"treat yourself\", and it is the standard invitation over food. Imperfective, reflexive, and said as often as the plates are passed."
+          },
+          {
+            "display": "beríte",
+            "script": "берите",
+            "cue": "take · have some",
+            "tag": "free",
+            "forms": [
+              "beríte"
+            ],
+            "note": "The imperfective of taking, and the blunter half of the same invitation. Beríte khleb is warm; the perfective in that seat would not be."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The shch is one sound and takes a moment to say. Splitting it into sh plus ch makes the word unrecognisable, and it is a word a guest hears constantly.",
+      "sound": "u-ga-SHCHAY-tyes'. The shch is long and soft throughout, made with the tongue flat against the palate.",
+      "variations": [
+        {
+          "display": "Beríte, pozháluysta!",
+          "script": "Берите, пожалуйста!",
+          "cue": "Do have some, please!",
+          "changed": "the simpler invitation"
+        },
+        {
+          "display": "Beríte khleb, pozháluysta",
+          "script": "Берите хлеб, пожалуйста",
+          "cue": "Do have some bread, please",
+          "changed": "a named thing after it"
+        },
+        {
+          "display": "Ugoshcháytes'! Óchen' vkúsno",
+          "script": "Угощайтесь! Очень вкусно",
+          "cue": "Help yourself! It's very good",
+          "changed": "an invitation plus a verdict"
+        }
+      ],
+      "mistake": {
+        "display": "Ugoshcháytes' sup",
+        "script": "Угощайтесь суп",
+        "why": "The verb is reflexive and takes no object: Ugoshcháytes', pozháluysta."
+      },
+      "usage": "Over the table, when the food arrives and whenever a guest slows down.",
+      "register": "neutral",
+      "mnemonic": "Treat yourself — the invitation is a reflexive."
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "Mne, pozháluysta, sup",
+      "script": "Мне, пожалуйста, суп",
+      "cue": "Soup for me, please",
+      "literal": "To-me, please, soup",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sup",
+            "script": "суп",
+            "cue": "soup",
+            "tag": "free",
+            "forms": [
+              "sup",
+              "súpa"
+            ],
+            "note": "Masculine and inanimate, so its accusative is identical to its nominative — M3's free half of the grid, and the reason this order needs no ending at all."
+          },
+          {
+            "display": "nam",
+            "script": "нам",
+            "cue": "to us · for us",
+            "tag": "free",
+            "forms": [
+              "nam"
+            ],
+            "note": "The dative of my, beside M1's mne and L1-M2's vam. One syllable, so no stress mark, and it orders for a table rather than a person."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "There is no verb, and adding one makes the request longer without making it politer. Ya khochú sup is correct and blunter than an English \"I want soup\".",
+      "sound": "mnye pa-ZHA-lsta sup. The middle word collapses to two syllables in speech; nobody says all four.",
+      "variations": [
+        {
+          "display": "Mne, pozháluysta, chay",
+          "script": "Мне, пожалуйста, чай",
+          "cue": "Tea for me, please",
+          "changed": "a different thing ordered"
+        },
+        {
+          "display": "Mne, pozháluysta, rýbu",
+          "script": "Мне, пожалуйста, рыбу",
+          "cue": "The fish for me, please",
+          "changed": "feminine, so the accusative shows"
+        },
+        {
+          "display": "Nam, pozháluysta, sup i khleb",
+          "script": "Нам, пожалуйста, суп и хлеб",
+          "cue": "Soup and bread for us, please",
+          "changed": "two of us, so the dative moves"
+        }
+      ],
+      "mistake": {
+        "display": "Ya, pozháluysta, sup",
+        "script": "Я, пожалуйста, суп",
+        "why": "The person ordering goes in the dative: Mne, pozháluysta, sup."
+      },
+      "usage": "At a counter or a canteen. It is the shortest complete order the language has.",
+      "register": "neutral",
+      "mnemonic": "The food comes TO you, so mne."
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "Vam chay ili kófe?",
+      "script": "Вам чай или кофе?",
+      "cue": "Tea or coffee for you?",
+      "literal": "To-you tea or coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "myáso",
+            "script": "мясо",
+            "cue": "meat",
+            "tag": "free",
+            "forms": [
+              "myáso",
+              "myása"
+            ],
+            "note": "Neuter, so the accusative is the same as the nominative. The mya is one soft syllable, not two."
+          },
+          {
+            "display": "rýba",
+            "script": "рыба",
+            "cue": "fish",
+            "tag": "free",
+            "forms": [
+              "rýba",
+              "rýbu",
+              "rýby"
+            ],
+            "note": "Feminine, and the accusative rýbu is visibly different — which is why fish is the useful word for showing the case at a table."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The offer is a dative with no verb, exactly like the order in the sentence before. Host and guest use the same shape, and only the pronoun changes.",
+      "sound": "vam chay i-li KO-fye. kófe is stressed on the first syllable and never changes, whatever follows.",
+      "variations": [
+        {
+          "display": "Vam myáso ili rýbu?",
+          "script": "Вам мясо или рыбу?",
+          "cue": "Meat or fish for you?",
+          "changed": "the accusative shows on the feminine one only"
+        },
+        {
+          "display": "Vam chay?",
+          "script": "Вам чай?",
+          "cue": "Tea for you?",
+          "changed": "one option, and enough"
+        },
+        {
+          "display": "Mne chay, pozháluysta",
+          "script": "Мне чай, пожалуйста",
+          "cue": "Tea for me, please",
+          "changed": "the answer, on the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Vy chay ili kófe?",
+        "script": "Вы чай или кофе?",
+        "why": "The person offered to goes in the dative: Vam chay ili kófe?"
+      },
+      "usage": "The first question in any Russian kitchen, and it is not really a question.",
+      "register": "neutral",
+      "mnemonic": "Offers and orders share one shape."
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "Net, spasíbo, ya uzhé syt",
+      "script": "Нет, спасибо, я уже сыт",
+      "cue": "No, thank you, I've had enough",
+      "literal": "No, thanks, I already full",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "syt",
+            "script": "сыт",
+            "cue": "full (said by a man)",
+            "tag": "delta",
+            "forms": [
+              "syt"
+            ],
+            "note": "A short-form adjective, so it agrees with the speaker and cannot stand in front of a noun. One syllable, so no stress mark."
+          },
+          {
+            "display": "sytá",
+            "script": "сыта",
+            "cue": "full (said by a woman)",
+            "tag": "delta",
+            "forms": [
+              "sytá"
+            ],
+            "note": "The feminine of syt, with the stress on the ending. There is no way to avoid choosing between the two."
+          },
+          {
+            "display": "uzhé",
+            "script": "уже",
+            "cue": "already",
+            "tag": "free",
+            "forms": [
+              "uzhé"
+            ],
+            "note": "It is what turns a refusal into a reason. Net, spasíbo alone will be heard as politeness and the plate will be filled again."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "A bare Net, spasíbo is not a decision in Russian — it is the polite first move, and the host is expected to offer again. The reason is what makes the refusal land.",
+      "sound": "nyet spa-SI-ba ya u-ZHE syt. The zh is hard, so uzhé sounds u-ZHY rather than u-ZHE.",
+      "variations": [
+        {
+          "display": "Net, spasíbo, ya uzhé sytá",
+          "script": "Нет, спасибо, я уже сыта",
+          "cue": "No, thank you, I've had enough",
+          "changed": "said by a woman, so the feminine short form"
+        },
+        {
+          "display": "Net, spasíbo",
+          "script": "Нет, спасибо",
+          "cue": "No, thank you",
+          "changed": "no reason — and the offer will come again"
+        },
+        {
+          "display": "Spasíbo, óchen' vkúsno",
+          "script": "Спасибо, очень вкусно",
+          "cue": "Thank you, it was very good",
+          "changed": "praise instead of a refusal"
+        }
+      ],
+      "mistake": {
+        "display": "Net, spasíbo, ya uzhé sýtyy",
+        "script": "Нет, спасибо, я уже сытый",
+        "why": "The predicate takes the short form: ya uzhé syt."
+      },
+      "usage": "Declining a third helping. Say the reason, or expect a fourth.",
+      "register": "neutral",
+      "mnemonic": "A refusal without a reason is not a refusal."
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "Óchen' vkúsno, spasíbo!",
+      "script": "Очень вкусно, спасибо!",
+      "cue": "It's delicious, thank you!",
+      "literal": "Very tasty, thanks!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vkúsno",
+            "script": "вкусно",
+            "cue": "tasty · delicious",
+            "tag": "delta",
+            "forms": [
+              "vkúsno"
+            ],
+            "note": "A flat word like M4's dalekó — it agrees with nothing and needs no subject. Óchen' vkúsno is a whole sentence and the standard compliment."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "There is no \"it\" and no \"is\". A flat word plus óchen' is the entire sentence, which is why the compliment is so short and so often repeated.",
+      "sound": "O-chin' VKUS-na. The vk cluster starts the word with no vowel in front of it, which English mouths want to add.",
+      "variations": [
+        {
+          "display": "Vkúsno!",
+          "script": "Вкусно!",
+          "cue": "Delicious!",
+          "changed": "one word, said with the mouth full"
+        },
+        {
+          "display": "Sup óchen' vkúsnyy",
+          "script": "Суп очень вкусный",
+          "cue": "The soup is very tasty",
+          "changed": "the long adjective, agreeing with a named dish"
+        },
+        {
+          "display": "Rýba óchen' vkúsnaya",
+          "script": "Рыба очень вкусная",
+          "cue": "The fish is very tasty",
+          "changed": "feminine, so the long form moves"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto óchen' vkúsno kníga",
+        "script": "Это очень вкусно книга",
+        "why": "A flat word cannot stand in front of a noun: Éhto óchen' vkúsnaya kníga."
+      },
+      "usage": "Said at least twice during any meal, and its absence is noticed.",
+      "register": "neutral",
+      "mnemonic": "Flat word, no subject, whole sentence."
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "Dáyte mne sol', pozháluysta",
+      "script": "Дайте мне соль, пожалуйста",
+      "cue": "Pass me the salt, please",
+      "literal": "Give to-me salt, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sol'",
+            "script": "соль",
+            "cue": "salt",
+            "tag": "interference",
+            "forms": [
+              "sol'",
+              "sóli"
+            ],
+            "note": "Feminine, ending in a consonant plus a soft sign — the M2 pattern again, after mat', doch' and M4's ploshchad'. The ending never says the gender."
+          },
+          {
+            "display": "tarélka",
+            "script": "тарелка",
+            "cue": "plate",
+            "tag": "free",
+            "forms": [
+              "tarélka",
+              "tarélku",
+              "tarélki"
+            ],
+            "note": "Feminine and regular, so the accusative shows. A plate of soup is tarélka súpa — M3's genitive again."
+          },
+          {
+            "display": "peredáyte",
+            "script": "передайте",
+            "cue": "pass (across a table)",
+            "tag": "free",
+            "forms": [
+              "peredáyte"
+            ],
+            "note": "dáyte with pere- on the front, which adds \"across\". Perfective, because passing the salt is one act — the aspect rule from M1 still running."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "sol' is feminine and its accusative is identical to its nominative — soft-sign feminines do not change here, unlike tarélka, which becomes tarélku. Two feminine nouns, two behaviours.",
+      "sound": "DAY-tye mnye sol' pa-ZHA-lsta. The l of sol' is soft and the word ends without a vowel after it.",
+      "variations": [
+        {
+          "display": "Dáyte mne tarélku, pozháluysta",
+          "script": "Дайте мне тарелку, пожалуйста",
+          "cue": "Pass me a plate, please",
+          "changed": "a regular feminine, so the accusative moves"
+        },
+        {
+          "display": "Dáyte mne khleb, pozháluysta",
+          "script": "Дайте мне хлеб, пожалуйста",
+          "cue": "Pass me the bread, please",
+          "changed": "masculine and inanimate — nothing changes"
+        },
+        {
+          "display": "Peredáyte sol', pozháluysta",
+          "script": "Передайте соль, пожалуйста",
+          "cue": "Pass the salt, please",
+          "changed": "the verb for passing across a table"
+        }
+      ],
+      "mistake": {
+        "display": "Dáyte mne sóli, pozháluysta",
+        "script": "Дайте мне соли, пожалуйста",
+        "why": "The whole thing is an object, not an amount: Dáyte mne sol', pozháluysta."
+      },
+      "usage": "At the table, and the perfective is right because it is one act.",
+      "register": "neutral",
+      "mnemonic": "Soft-sign feminines do not move in the accusative."
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "Óvoshchi óchen' vkúsnyye",
+      "script": "Овощи очень вкусные",
+      "cue": "The vegetables are very good",
+      "literal": "Vegetables very tasty",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vkúsnyy",
+            "script": "вкусный",
+            "cue": "tasty (long form)",
+            "tag": "free",
+            "forms": [
+              "vkúsnyy",
+              "vkúsnaya",
+              "vkúsnoye",
+              "vkúsnyye"
+            ],
+            "note": "The long adjective behind the flat vkúsno. The flat one is a whole sentence on its own; this one has to agree with a named dish."
+          },
+          {
+            "display": "óvoshchi",
+            "script": "овощи",
+            "cue": "vegetables",
+            "tag": "free",
+            "forms": [
+              "óvoshchi",
+              "ovoshchéy"
+            ],
+            "note": "Plural in ordinary use, like the English word. The singular ovoshch exists and is heard almost only in a shop's labelling."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "A plural noun takes the plural adjective ending and nothing else changes. The grid has a fourth column and this is it — one ending for every gender at once.",
+      "sound": "O-va-shchi O-chin' VKUS-ny-ye. The shch is long, and the unstressed o's reduce to a.",
+      "variations": [
+        {
+          "display": "Óvoshchi zdes' óchen' deshyóvyye",
+          "script": "Овощи здесь очень дешёвые",
+          "cue": "The vegetables here are very cheap",
+          "changed": "M3's adjective in the same plural cell"
+        },
+        {
+          "display": "Zdes' mnógo ovoshchéy",
+          "script": "Здесь много овощей",
+          "cue": "There are a lot of vegetables here",
+          "changed": "a word of amount, so the genitive plural"
+        },
+        {
+          "display": "Myáso óchen' vkúsnoye",
+          "script": "Мясо очень вкусное",
+          "cue": "The meat is very good",
+          "changed": "neuter, so the third cell"
+        }
+      ],
+      "mistake": {
+        "display": "Óvoshchi óchen' vkúsnyy",
+        "script": "Овощи очень вкусный",
+        "why": "A plural noun takes the plural ending: Óvoshchi óchen' vkúsnyye."
+      },
+      "usage": "Praising part of a meal rather than the whole of it.",
+      "register": "neutral",
+      "mnemonic": "One plural ending covers all three genders."
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "Príyatnogo appetíta!",
+      "script": "Приятного аппетита!",
+      "cue": "Enjoy your meal!",
+      "literal": "Of-pleasant of-appetite!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "príyatnogo appetíta",
+            "script": "приятного аппетита",
+            "cue": "enjoy your meal",
+            "tag": "free",
+            "forms": [
+              "príyatnogo appetíta"
+            ],
+            "note": "One whole surface, and neither of its words is opened. It is a genitive of wishing — \"[I wish you] of a pleasant appetite\" — and the frame behind it is not taught at this level."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Both words are genitive because the wishing verb has been dropped. That frame is real and productive, and it is not this level's — the phrase rides whole so neither word is claimed.",
+      "sound": "pri-YAT-na-va a-pi-TI-ta. The -ogo ending is said -ava, with the g as a v, exactly as in M2's yevó.",
+      "variations": [
+        {
+          "display": "Príyatnogo appetíta, Iván!",
+          "script": "Приятного аппетита, Иван!",
+          "cue": "Enjoy your meal, Ivan!",
+          "changed": "a name after the comma"
+        },
+        {
+          "display": "Sadítes'! Príyatnogo appetíta!",
+          "script": "Садитесь! Приятного аппетита!",
+          "cue": "Sit down! Enjoy your meal!",
+          "changed": "the host's two lines together"
+        },
+        {
+          "display": "Spasíbo! Príyatnogo appetíta!",
+          "script": "Спасибо! Приятного аппетита!",
+          "cue": "Thank you! And you!",
+          "changed": "the answer, which is the same phrase back"
+        }
+      ],
+      "mistake": {
+        "display": "Príyatnyy appetít!",
+        "script": "Приятный аппетит!",
+        "why": "The phrase is fixed in the genitive: Príyatnogo appetíta!"
+      },
+      "usage": "Said to anyone about to eat, including strangers in a canteen.",
+      "register": "neutral",
+      "mnemonic": "A whole phrase, not two words."
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "Schyot, pozháluysta",
+      "script": "Счёт, пожалуйста",
+      "cue": "The bill, please",
+      "literal": "Bill, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "schyot",
+            "script": "счёт",
+            "cue": "the bill · the account",
+            "tag": "interference",
+            "forms": [
+              "schyot",
+              "schyóta"
+            ],
+            "note": "Carries a yó, which must be written. The sch at the start is said as one long soft sound, so the word begins the same way as ugoshcháytes' does in its middle."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The word is one syllable and its stressed vowel is the yó, so the mark is doing no work of choice here — it is doing the work of spelling, which is why the rule says every time.",
+      "sound": "shchot. Two letters at the front, one long sound, and no vowel between them.",
+      "variations": [
+        {
+          "display": "Mózhno schyot, pozháluysta?",
+          "script": "Можно счёт, пожалуйста?",
+          "cue": "Could I have the bill, please?",
+          "changed": "M1's mózhno in front — softer"
+        },
+        {
+          "display": "Dáyte schyot, pozháluysta",
+          "script": "Дайте счёт, пожалуйста",
+          "cue": "Give me the bill, please",
+          "changed": "with the verb — no less polite, simply fuller"
+        },
+        {
+          "display": "Schyot, pozháluysta. Spasíbo",
+          "script": "Счёт, пожалуйста. Спасибо",
+          "cue": "The bill, please. Thank you",
+          "changed": "the whole exchange in one line"
+        }
+      ],
+      "mistake": {
+        "display": "Schet, pozháluysta",
+        "script": "Счет, пожалуйста",
+        "why": "The yó is written every time: Schyot, pozháluysta."
+      },
+      "usage": "In a café or restaurant. A one-word sentence, and nobody expects more.",
+      "register": "neutral",
+      "mnemonic": "One syllable, one long sound, one yó."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M5-C01",
+      "display": "Sadítes', pozháluysta!",
+      "script": "Садитесь, пожалуйста!",
+      "cue": "Do sit down, please!"
+    },
+    {
+      "id": "L2-M5-C02",
+      "display": "Ugoshcháytes', pozháluysta!",
+      "script": "Угощайтесь, пожалуйста!",
+      "cue": "Please help yourself!"
+    },
+    {
+      "id": "L2-M5-C03",
+      "display": "Mne, pozháluysta, sup",
+      "script": "Мне, пожалуйста, суп",
+      "cue": "Soup for me, please"
+    },
+    {
+      "id": "L2-M5-C04",
+      "display": "Vam chay ili kófe?",
+      "script": "Вам чай или кофе?",
+      "cue": "Tea or coffee for you?"
+    },
+    {
+      "id": "L2-M5-C05",
+      "display": "Net, spasíbo, ya uzhé syt",
+      "script": "Нет, спасибо, я уже сыт",
+      "cue": "No, thank you, I've had enough"
+    },
+    {
+      "id": "L2-M5-C06",
+      "display": "Óchen' vkúsno, spasíbo!",
+      "script": "Очень вкусно, спасибо!",
+      "cue": "It's delicious, thank you!"
+    },
+    {
+      "id": "L2-M5-C07",
+      "display": "Dáyte mne sol', pozháluysta",
+      "script": "Дайте мне соль, пожалуйста",
+      "cue": "Pass me the salt, please"
+    },
+    {
+      "id": "L2-M5-C08",
+      "display": "Óvoshchi óchen' vkúsnyye",
+      "script": "Овощи очень вкусные",
+      "cue": "The vegetables are very good"
+    },
+    {
+      "id": "L2-M5-C09",
+      "display": "Príyatnogo appetíta!",
+      "script": "Приятного аппетита!",
+      "cue": "Enjoy your meal!"
+    },
+    {
+      "id": "L2-M5-C10",
+      "display": "Schyot, pozháluysta",
+      "script": "Счёт, пожалуйста",
+      "cue": "The bill, please"
+    },
+    {
+      "id": "L2-M5-C11",
+      "display": "Beríte khleb, pozháluysta",
+      "script": "Берите хлеб, пожалуйста",
+      "cue": "Do have some bread, please"
+    },
+    {
+      "id": "L2-M5-C12",
+      "display": "Mne, pozháluysta, rýbu",
+      "script": "Мне, пожалуйста, рыбу",
+      "cue": "The fish for me, please"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

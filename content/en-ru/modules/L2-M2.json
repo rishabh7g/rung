@@ -1,0 +1,868 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": [
+    "L2-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "On/Oná + Adj-long",
+      "Yevó/Yeyó zovút + <name>",
+      "U nevó/neyó yest' + N",
+      "Éhto moy/moyá + N",
+      "On + Adj-short"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE LONG ADJECTIVE ARRIVES, and L1 set it up without saying so. ustál, ustála and ustáli (L1-M2) are SHORT-form adjectives, which can only stand where English puts them after \"is\"; rússkiy (L1-M1) is a long one. This module teaches the long form and its four nominative endings — vysókiy · vysókaya · vysókoye · vysókiye — which stand both in front of a noun and after the missing \"is\". The short form is not a shortening of the long one, and only a handful of adjectives use it in everyday speech: ustál, svobóden, zányat, rad."
+    },
+    {
+      "tag": "free",
+      "text": "There is still NO COPULA. On vysókiy is two words and complete, exactly as L1-M1's Ya studént was. The adjective's ending does all the work the English \"is\" would have done, which is why choosing it correctly matters more here than in any module so far."
+    },
+    {
+      "tag": "delta",
+      "text": "yevó and yeyó each carry TWO jobs: \"his\" and \"him\", \"her\" and \"her\". Russian's genitive and accusative pronouns are also its possessives, so one word covers what English splits. After a preposition they take an n-, which is why u nevó and u neyó look different from yevó and yeyó — same words, one spelling rule."
+    },
+    {
+      "tag": "free",
+      "text": "POSSESSION EXTENDS L1-M8's FRAME to other people: U nevó yest' brat is literally \"at him there is a brother\". That is the same oblique-person habit as M1's Mne núzhno — the person is not the subject. Yevó zovút Iván extends L1-M1's Menyá zovút the same way: the pattern is already the learner's, and only the pronoun is new."
+    },
+    {
+      "tag": "interference",
+      "text": "Two words in this module's family set are irregular and are taught as words rather than as examples of anything. mat' and doch' are feminine nouns ending in a consonant plus a soft sign, and they decline unlike anything else in the course — their shapes are in their rows and no rule claims they are regular. And vesyólyy carries a yó, which must be written: one word, one spelling."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "Moy brat vysókiy",
+      "script": "Мой брат высокий",
+      "cue": "My brother is tall",
+      "literal": "My brother tall",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vysókiy",
+            "script": "высокий",
+            "cue": "tall (long form)",
+            "tag": "delta",
+            "forms": [
+              "vysókiy",
+              "vysókaya",
+              "vysókoye",
+              "vysókiye"
+            ],
+            "note": "The four nominative shapes of a long adjective: masculine, feminine, neuter, plural. One row holds the whole paradigm, and M3 will add its case shapes here rather than open a second row."
+          },
+          {
+            "display": "brat",
+            "script": "брат",
+            "cue": "brother",
+            "tag": "free",
+            "forms": [
+              "brat",
+              "bráta",
+              "brátu"
+            ],
+            "note": "Masculine, and regular. The shapes here are the ones the level shows: subject, object or possessed, recipient."
+          },
+          {
+            "display": "moy",
+            "script": "мой",
+            "cue": "my (masculine)",
+            "tag": "delta",
+            "forms": [
+              "moy"
+            ],
+            "note": "The masculine \"my\". It agrees with what is owned, never with the owner — moy brat whoever is speaking."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "There is no word for \"is\" and none is missing. Two words are the whole sentence, and the -iy ending is what tells you the sentence is about a masculine person.",
+      "sound": "moy brat vy-SO-kiy. The y of vysókiy is the hard back vowel, made with the tongue pulled back — not the ee of English \"see\".",
+      "variations": [
+        {
+          "display": "Moyá sestrá vysókaya",
+          "script": "Моя сестра высокая",
+          "cue": "My sister is tall",
+          "changed": "feminine throughout — both the possessive and the adjective move"
+        },
+        {
+          "display": "On vysókiy",
+          "script": "Он высокий",
+          "cue": "He is tall",
+          "changed": "a pronoun instead of a named person"
+        },
+        {
+          "display": "Moy brat ne vysókiy",
+          "script": "Мой брат не высокий",
+          "cue": "My brother is not tall",
+          "changed": "negated with ne in front of the adjective"
+        }
+      ],
+      "mistake": {
+        "display": "Moy sestrá vysókiy",
+        "script": "Мой сестра высокий",
+        "why": "sestrá is feminine, so both words move with it: Moyá sestrá vysókaya."
+      },
+      "usage": "Describing family — the first thing anyone is asked about.",
+      "register": "neutral",
+      "mnemonic": "The endings follow the noun, not the speaker."
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "Moyá sestrá molodáya",
+      "script": "Моя сестра молодая",
+      "cue": "My sister is young",
+      "literal": "My sister young",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "molodóy",
+            "script": "молодой",
+            "cue": "young",
+            "tag": "free",
+            "forms": [
+              "molodóy",
+              "molodáya",
+              "molodóye",
+              "molodýye"
+            ],
+            "note": "A long adjective whose stress sits on the ending, so every shape keeps the mark on the last syllable. That is a real pattern, not an accident of this word."
+          },
+          {
+            "display": "sestrá",
+            "script": "сестра",
+            "cue": "sister",
+            "tag": "free",
+            "forms": [
+              "sestrá",
+              "sestrý",
+              "sestré"
+            ],
+            "note": "Feminine and regular. Stress on the ending here too, which is why the first e reduces almost to i in speech."
+          },
+          {
+            "display": "moyá",
+            "script": "моя",
+            "cue": "my (feminine)",
+            "tag": "delta",
+            "forms": [
+              "moyá"
+            ],
+            "note": "The feminine \"my\", and its own row rather than a cell of moy's — the L1 policy keeps a form a learner must choose between on a row of its own."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Both endings are stressed, which is unusual and audible. molodáya is ma-la-DA-ya, and the two unstressed o's reduce to a — the spelling is the only place they survive.",
+      "sound": "ma-YA sist-RA ma-la-DA-ya. Four unstressed vowels reduce in a row, which is what makes Russian sound faster than it is.",
+      "variations": [
+        {
+          "display": "Moy brat molodóy",
+          "script": "Мой брат молодой",
+          "cue": "My brother is young",
+          "changed": "masculine throughout"
+        },
+        {
+          "display": "Oná molodáya",
+          "script": "Она молодая",
+          "cue": "She is young",
+          "changed": "a pronoun instead of a named person"
+        },
+        {
+          "display": "Moyá sestrá óchen' molodáya",
+          "script": "Моя сестра очень молодая",
+          "cue": "My sister is very young",
+          "changed": "óchen' added in front of the adjective"
+        }
+      ],
+      "mistake": {
+        "display": "Moyá sestrá molodóy",
+        "script": "Моя сестра молодой",
+        "why": "The adjective agrees with sestrá: Moyá sestrá molodáya."
+      },
+      "usage": "Describing family, and the shape every answer about age starts from.",
+      "register": "neutral",
+      "mnemonic": "Where the stress falls, it stays."
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "Yevó zovút Iván",
+      "script": "Его зовут Иван",
+      "cue": "His name is Ivan",
+      "literal": "Him they-call Ivan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yevó",
+            "script": "его",
+            "cue": "him · his",
+            "tag": "delta",
+            "forms": [
+              "yevó"
+            ],
+            "note": "One word, two jobs: the object \"him\" and the possessive \"his\". After a preposition it becomes nevó, which is the same word wearing a spelling rule."
+          },
+          {
+            "display": "yeyó",
+            "script": "её",
+            "cue": "her · hers",
+            "tag": "delta",
+            "forms": [
+              "yeyó"
+            ],
+            "note": "The feminine twin, and it too covers both jobs. The yó must be written — one word, one spelling."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The spelling lies about the sound: его is said yi-VO, with a v where the letter г stands. That is a rule of the language rather than an exception, and it holds in every genitive ending in -ого.",
+      "sound": "yi-VO za-VUT i-VAN. The stress is on the last syllable of yevó, and the g is a v.",
+      "variations": [
+        {
+          "display": "Yeyó zovút Ánna",
+          "script": "Её зовут Анна",
+          "cue": "Her name is Anna",
+          "changed": "the feminine pronoun"
+        },
+        {
+          "display": "Menyá zovút Iván",
+          "script": "Меня зовут Иван",
+          "cue": "My name is Ivan",
+          "changed": "back to L1-M1's version — the same frame, a different person"
+        },
+        {
+          "display": "Kak yevó zovút?",
+          "script": "Как его зовут?",
+          "cue": "What is his name?",
+          "changed": "the question, with kak rather than chto"
+        }
+      ],
+      "mistake": {
+        "display": "On zovút Iván",
+        "script": "Он зовут Иван",
+        "why": "The frame takes the object form: Yevó zovút Iván."
+      },
+      "usage": "Introducing someone who is not present, or asking about them.",
+      "register": "neutral",
+      "mnemonic": "Nobody has a name in Russian — they call you one."
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "U nevó yest' brat",
+      "script": "У него есть брат",
+      "cue": "He has a brother",
+      "literal": "At him there-is brother",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "u nevó",
+            "script": "у него",
+            "cue": "at him — he has",
+            "tag": "interference",
+            "forms": [
+              "u nevó",
+              "nevó"
+            ],
+            "note": "yevó with an n- in front, which every preposition puts there. It rides as a whole surface beside L1-M8's u menyá, and the n- is a spelling rule with nothing to work out."
+          },
+          {
+            "display": "u neyó",
+            "script": "у неё",
+            "cue": "at her — she has",
+            "tag": "interference",
+            "forms": [
+              "u neyó",
+              "neyó"
+            ],
+            "note": "The same rule on yeyó. u neyó, never u yeyó — and the yó is written here too."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "This is L1-M8's u menyá yest' with a different person in it, not a new idiom. The owner is never the subject in Russian: the thing owned is.",
+      "sound": "u nyi-VO yest' brat. Same v-for-g as in yevó, and yest' ends soft.",
+      "variations": [
+        {
+          "display": "U neyó yest' sestrá",
+          "script": "У неё есть сестра",
+          "cue": "She has a sister",
+          "changed": "the feminine pronoun and a different relative"
+        },
+        {
+          "display": "U nevó yest' klyuch",
+          "script": "У него есть ключ",
+          "cue": "He has a key",
+          "changed": "a thing rather than a person"
+        },
+        {
+          "display": "U nevó net biléta",
+          "script": "У него нет билета",
+          "cue": "He hasn't got a ticket",
+          "changed": "the negative, which puts the thing in the genitive"
+        }
+      ],
+      "mistake": {
+        "display": "U yevó yest' brat",
+        "script": "У его есть брат",
+        "why": "A preposition puts an n- in front: U nevó yest' brat."
+      },
+      "usage": "Talking about someone else's family, car, job or trouble.",
+      "register": "neutral",
+      "mnemonic": "A preposition adds an n. Every time."
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "Éhto moy otéts",
+      "script": "Это мой отец",
+      "cue": "This is my father",
+      "literal": "This my father",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "otéts",
+            "script": "отец",
+            "cue": "father",
+            "tag": "free",
+            "forms": [
+              "otéts",
+              "ottsá",
+              "ottsú"
+            ],
+            "note": "The e disappears whenever an ending is added — otéts but ottsá. That vanishing vowel is common in Russian masculines and is worth expecting."
+          },
+          {
+            "display": "mat'",
+            "script": "мать",
+            "cue": "mother",
+            "tag": "interference",
+            "forms": [
+              "mat'",
+              "máteri"
+            ],
+            "note": "Feminine, ending in a consonant plus a soft sign, and irregular: an -er- appears in every shape but this one. Learn it as a word, not as an example."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "Éhto does not agree with anything. It is a flat pointing word, so Éhto moy otéts and Éhto moyá mat' both start the same way — only what follows moves.",
+      "sound": "EH-ta moy a-TYETS. The final o of éhto reduces to a, and the ts of otéts is one sound, not two.",
+      "variations": [
+        {
+          "display": "Éhto moyá mat'",
+          "script": "Это моя мать",
+          "cue": "This is my mother",
+          "changed": "feminine, and an irregular noun"
+        },
+        {
+          "display": "Éhto moy syn",
+          "script": "Это мой сын",
+          "cue": "This is my son",
+          "changed": "a different masculine relative"
+        },
+        {
+          "display": "Éhto ne moy otéts",
+          "script": "Это не мой отец",
+          "cue": "This is not my father",
+          "changed": "negated, with ne before what it denies"
+        }
+      ],
+      "mistake": {
+        "display": "Éhta moyá mat'",
+        "script": "Эта моя мать",
+        "why": "The pointing word does not agree here: Éhto moyá mat'."
+      },
+      "usage": "Handing round a photograph, or introducing someone at a door.",
+      "register": "neutral",
+      "mnemonic": "Éhto never moves. Everything after it does."
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "Éhto moy syn i moyá doch'",
+      "script": "Это мой сын и моя дочь",
+      "cue": "This is my son and my daughter",
+      "literal": "This my son and my daughter",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "syn",
+            "script": "сын",
+            "cue": "son",
+            "tag": "free",
+            "forms": [
+              "syn",
+              "sýna",
+              "synovyá"
+            ],
+            "note": "Masculine, with an irregular plural in -ovyá. The singular shapes are ordinary."
+          },
+          {
+            "display": "doch'",
+            "script": "дочь",
+            "cue": "daughter",
+            "tag": "interference",
+            "forms": [
+              "doch'",
+              "dócheri"
+            ],
+            "note": "mat's twin in every way: feminine, consonant plus soft sign, and an -er- appearing in every shape but this one. The two are learnt together."
+          },
+          {
+            "display": "moyó",
+            "script": "моё",
+            "cue": "my (neuter)",
+            "tag": "free",
+            "forms": [
+              "moyó"
+            ],
+            "note": "The neuter \"my\", for words like pis'mó and útro. Written with the yó, and stressed on the ending."
+          },
+          {
+            "display": "moí",
+            "script": "мои",
+            "cue": "my (plural)",
+            "tag": "free",
+            "forms": [
+              "moí"
+            ],
+            "note": "The plural \"my\", for more than one of anything, whatever their gender: moí knígi, moí druz'yá."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "mat' and doch' are the only two nouns of this shape in the course, and they behave the same way. Meeting them as a pair is the cheapest way to keep them.",
+      "sound": "EH-ta moy syn i ma-YA doch. Both syn and doch' are one syllable, so neither takes a stress mark.",
+      "variations": [
+        {
+          "display": "Éhto moyá doch'",
+          "script": "Это моя дочь",
+          "cue": "This is my daughter",
+          "changed": "one person instead of two"
+        },
+        {
+          "display": "Éhto moyó pis'mó",
+          "script": "Это моё письмо",
+          "cue": "This is my letter",
+          "changed": "a neuter noun, so the neuter possessive"
+        },
+        {
+          "display": "Éhto moí knígi",
+          "script": "Это мои книги",
+          "cue": "These are my books",
+          "changed": "plural, and one possessive covers every gender"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto moy doch'",
+        "script": "Это мой дочь",
+        "why": "doch' is feminine despite ending in a consonant: Éhto moyá doch'."
+      },
+      "usage": "Introducing children, or naming who is in a photograph.",
+      "register": "neutral",
+      "mnemonic": "A soft sign after a consonant on a person: feminine, and irregular."
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "Éhto moyá zhená",
+      "script": "Это моя жена",
+      "cue": "This is my wife",
+      "literal": "This my wife",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zhená",
+            "script": "жена",
+            "cue": "wife",
+            "tag": "free",
+            "forms": [
+              "zhená",
+              "zhený",
+              "zhené"
+            ],
+            "note": "Feminine and regular, with the stress on the ending. The zh is the sound in the middle of English \"measure\"."
+          },
+          {
+            "display": "muzh",
+            "script": "муж",
+            "cue": "husband",
+            "tag": "free",
+            "forms": [
+              "muzh",
+              "múzha",
+              "múzhu"
+            ],
+            "note": "Masculine, one syllable, so no stress mark. It also means \"man\" in older and formal Russian, which is where the word comes from."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "zh is always hard in Russian, whatever vowel follows. zhená sounds zhy-NA and not zhi-NA, which is why the spelling with e is no guide to the sound.",
+      "sound": "EH-ta ma-YA zhy-NA. Three unstressed vowels, all reduced, and the stress lands only at the end.",
+      "variations": [
+        {
+          "display": "Éhto moy muzh",
+          "script": "Это мой муж",
+          "cue": "This is my husband",
+          "changed": "masculine throughout"
+        },
+        {
+          "display": "Moyá zhená dóma",
+          "script": "Моя жена дома",
+          "cue": "My wife is at home",
+          "changed": "a statement of where rather than who"
+        },
+        {
+          "display": "Éhto ne moyá zhená",
+          "script": "Это не моя жена",
+          "cue": "This is not my wife",
+          "changed": "negated"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto moy zhená",
+        "script": "Это мой жена",
+        "why": "zhená is feminine: Éhto moyá zhená."
+      },
+      "usage": "Introducing a partner, which in Russian is done with these two words and no others.",
+      "register": "neutral",
+      "mnemonic": "zh is always hard, whatever vowel follows."
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "Moy drug óchen' dóbryy",
+      "script": "Мой друг очень добрый",
+      "cue": "My friend is very kind",
+      "literal": "My friend very kind",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "drug",
+            "script": "друг",
+            "cue": "friend (male)",
+            "tag": "delta",
+            "forms": [
+              "drug",
+              "drúga",
+              "druz'yá"
+            ],
+            "note": "A male friend, or a friend of unspecified sex. The plural is irregular — druz'yá — and the g softens to z' in it."
+          },
+          {
+            "display": "podrúga",
+            "script": "подруга",
+            "cue": "friend (female)",
+            "tag": "delta",
+            "forms": [
+              "podrúga",
+              "podrúgi",
+              "podrúge"
+            ],
+            "note": "A female friend. Russian splits what English keeps as one word, so the sex of a friend is unavoidable rather than optional."
+          },
+          {
+            "display": "dóbryy",
+            "script": "добрый",
+            "cue": "kind · good-hearted",
+            "tag": "free",
+            "forms": [
+              "dóbryy",
+              "dóbraya",
+              "dóbroye",
+              "dóbryye"
+            ],
+            "note": "The long form of the word L1-M10 met inside dóbryy den' and dóbroye útro. Now it is a describing word in its own right, with its own paradigm."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "M1's bud'te dobrý used the SHORT form of this word, with the stress on the ending. dóbryy is the long form, stressed on the stem. Same adjective, two shapes, two stresses.",
+      "sound": "moy druk O-chin' DO-bryy. A final g goes voiceless and comes out as k, which is why drug ends in a k sound.",
+      "variations": [
+        {
+          "display": "Moyá podrúga óchen' dóbraya",
+          "script": "Моя подруга очень добрая",
+          "cue": "My friend is very kind",
+          "changed": "a female friend, and everything moves with her"
+        },
+        {
+          "display": "Moy drug dóbryy i úmnyy",
+          "script": "Мой друг добрый и умный",
+          "cue": "My friend is kind and clever",
+          "changed": "two adjectives joined with i"
+        },
+        {
+          "display": "On óchen' dóbryy",
+          "script": "Он очень добрый",
+          "cue": "He is very kind",
+          "changed": "a pronoun instead of a named person"
+        }
+      ],
+      "mistake": {
+        "display": "Moyá drug óchen' dóbraya",
+        "script": "Моя друг очень добрая",
+        "why": "A female friend is podrúga: Moyá podrúga óchen' dóbraya."
+      },
+      "usage": "Talking about the people around you — and the word chosen already says their sex.",
+      "register": "neutral",
+      "mnemonic": "drug for him, podrúga for her. No neutral option."
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "Oná úmnaya i vesyólaya",
+      "script": "Она умная и весёлая",
+      "cue": "She is clever and cheerful",
+      "literal": "She clever and cheerful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "úmnyy",
+            "script": "умный",
+            "cue": "clever · intelligent",
+            "tag": "free",
+            "forms": [
+              "úmnyy",
+              "úmnaya",
+              "úmnoye",
+              "úmnyye"
+            ],
+            "note": "Stressed on the stem, so every shape keeps the mark in the same place. It is a warm word, closer to \"bright\" than to \"clever\"."
+          },
+          {
+            "display": "vesyólyy",
+            "script": "весёлый",
+            "cue": "cheerful · merry",
+            "tag": "interference",
+            "forms": [
+              "vesyólyy",
+              "vesyólaya",
+              "vesyóloye",
+              "vesyólyye"
+            ],
+            "note": "The yó is written in every shape, because the yó rule is about one word having one spelling. The stress always sits on it — a yó is never unstressed."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "A yó carries the stress by definition. So a word with one needs no other mark, and a word written with e where a yó belongs is telling the reader the wrong syllable.",
+      "sound": "a-NA UM-na-ya i vi-SYO-la-ya. The yó is the yo of English \"yonder\", and it is where the beat falls.",
+      "variations": [
+        {
+          "display": "On úmnyy i vesyólyy",
+          "script": "Он умный и весёлый",
+          "cue": "He is clever and cheerful",
+          "changed": "masculine, so both adjectives move"
+        },
+        {
+          "display": "Moyá sestrá óchen' úmnaya",
+          "script": "Моя сестра очень умная",
+          "cue": "My sister is very clever",
+          "changed": "a named person and one adjective"
+        },
+        {
+          "display": "Oná vesyólaya",
+          "script": "Она весёлая",
+          "cue": "She is cheerful",
+          "changed": "one adjective only"
+        }
+      ],
+      "mistake": {
+        "display": "Oná úmnyy i vesyólyy",
+        "script": "Она умный и весёлый",
+        "why": "Both adjectives follow oná: Oná úmnaya i vesyólaya."
+      },
+      "usage": "Character rather than looks — and these two are the compliments people actually pay.",
+      "register": "neutral",
+      "mnemonic": "A yó is always stressed, so it never needs a mark of its own."
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "Moy otéts stáryy, no khoróshiy",
+      "script": "Мой отец старый, но хороший",
+      "cue": "My father is old, but good",
+      "literal": "My father old, but good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stáryy",
+            "script": "старый",
+            "cue": "old",
+            "tag": "free",
+            "forms": [
+              "stáryy",
+              "stáraya",
+              "stároye",
+              "stáryye"
+            ],
+            "note": "Used of people and of things alike. Of a person it is blunter than English \"old\" and is usually softened or avoided to someone's face."
+          },
+          {
+            "display": "khoróshiy",
+            "script": "хороший",
+            "cue": "good",
+            "tag": "free",
+            "forms": [
+              "khoróshiy",
+              "khoróshaya",
+              "khorósheye",
+              "khoróshiye"
+            ],
+            "note": "The adjective behind L1-M2's khoroshó. The neuter ending is -eye rather than -oye, because sh cannot be followed by o here — a spelling rule, not a different word."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "khoróshiy's neuter is khorósheye and not khoróshoye. After the hushing consonants, an unstressed o is written e — the same rule that makes so many adjective tables look irregular when they are not.",
+      "sound": "moy a-TYETS STA-ryy no kha-RO-shiy. The kh is the sound at the end of Scottish \"loch\", made further back than an English h.",
+      "variations": [
+        {
+          "display": "Moy otéts stáryy",
+          "script": "Мой отец старый",
+          "cue": "My father is old",
+          "changed": "the first half alone"
+        },
+        {
+          "display": "Éhto khoróshiy magazín",
+          "script": "Это хороший магазин",
+          "cue": "This is a good shop",
+          "changed": "in front of a noun rather than after the missing \"is\""
+        },
+        {
+          "display": "Oná stáraya, no óchen' vesyólaya",
+          "script": "Она старая, но очень весёлая",
+          "cue": "She is old, but very cheerful",
+          "changed": "feminine, with óchen' on the second adjective"
+        }
+      ],
+      "mistake": {
+        "display": "Moy otéts stáryy, no khoróshoye",
+        "script": "Мой отец старый, но хорошое",
+        "why": "Both adjectives describe otéts: Moy otéts stáryy, no khoróshiy."
+      },
+      "usage": "A real description, with a but in it — which is how people actually talk about their families.",
+      "register": "neutral",
+      "mnemonic": "Long adjectives stand both in front of a noun and alone after it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M2-C01",
+      "display": "Moy brat vysókiy",
+      "script": "Мой брат высокий",
+      "cue": "My brother is tall"
+    },
+    {
+      "id": "L2-M2-C02",
+      "display": "Moyá sestrá molodáya",
+      "script": "Моя сестра молодая",
+      "cue": "My sister is young"
+    },
+    {
+      "id": "L2-M2-C03",
+      "display": "Yevó zovút Iván",
+      "script": "Его зовут Иван",
+      "cue": "His name is Ivan"
+    },
+    {
+      "id": "L2-M2-C04",
+      "display": "U nevó yest' brat",
+      "script": "У него есть брат",
+      "cue": "He has a brother"
+    },
+    {
+      "id": "L2-M2-C05",
+      "display": "Éhto moy otéts",
+      "script": "Это мой отец",
+      "cue": "This is my father"
+    },
+    {
+      "id": "L2-M2-C06",
+      "display": "Éhto moy syn i moyá doch'",
+      "script": "Это мой сын и моя дочь",
+      "cue": "This is my son and my daughter"
+    },
+    {
+      "id": "L2-M2-C07",
+      "display": "Éhto moyá zhená",
+      "script": "Это моя жена",
+      "cue": "This is my wife"
+    },
+    {
+      "id": "L2-M2-C08",
+      "display": "Moy drug óchen' dóbryy",
+      "script": "Мой друг очень добрый",
+      "cue": "My friend is very kind"
+    },
+    {
+      "id": "L2-M2-C09",
+      "display": "Oná úmnaya i vesyólaya",
+      "script": "Она умная и весёлая",
+      "cue": "She is clever and cheerful"
+    },
+    {
+      "id": "L2-M2-C10",
+      "display": "Moy otéts stáryy, no khoróshiy",
+      "script": "Мой отец старый, но хороший",
+      "cue": "My father is old, but good"
+    },
+    {
+      "id": "L2-M2-C11",
+      "display": "U neyó yest' sestrá",
+      "script": "У неё есть сестра",
+      "cue": "She has a sister"
+    },
+    {
+      "id": "L2-M2-C12",
+      "display": "Yeyó zovút Ánna",
+      "script": "Её зовут Анна",
+      "cue": "Her name is Anna"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

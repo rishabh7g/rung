@@ -1,0 +1,737 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M10",
+  "title": "Telling what happened",
+  "job": "A four-sentence account in the past",
+  "prerequisites": [
+    "L2-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "Snachála + V-perfective-past + , + potóm + V-perfective-past",
+      "Ya + V-imperfective-past + , + kogdá + V-perfective-past",
+      "Býlo + Adv + , + poéhtomu + V-perfective-past",
+      "V kontsé + V-perfective-past"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ASPECT AT LENGTH, and this is where L1's pairs finally get their rule. The perfective presents an action as a COMPLETED WHOLE with a result and moves the account forward a step; the imperfective presents it as a process, a repetition, or simply names the activity, and it paints the standing situation. Ya prochitál gazétu i poshyól domóy against Ya chitál gazétu, kogdá on pozvoníl."
+    },
+    {
+      "tag": "interference",
+      "text": "THE SLOGAN TO KILL: \"perfective is completed, imperfective is ongoing\". It breaks on the first real account. Ya dva chasá chitál is bounded and imperfective; Ya prochitál za dva chasá is perfective; the reading took the same two hours. What differs is how the clause is being USED in the telling — as a whole with a result, or as background and process. Duration does not decide it, and neither does repetition."
+    },
+    {
+      "tag": "free",
+      "text": "One fact makes aspect visible, and the learner already has it: THE PERFECTIVE HAS NO PRESENT TENSE. L1-M6's napishú, pozvonyú and kuplyú are futures for exactly that reason. Use it as a test rather than memorising pairs — if a form has no present, it is perfective."
+    },
+    {
+      "tag": "free",
+      "text": "The sequencers are the honest new spend: snachála, kogdá, v kontsé, poslé étovo, joining L1-M10's potóm, i, a and no. Everything else in these accounts is recombination, and each account is four short sentences rather than one long one."
+    },
+    {
+      "tag": "free",
+      "text": "Nothing new is opened. Reflexive verbs stay out as a system — L1-M9's nrávitsya and this module's vernúlsya ride as vocabulary and the -sya rule is L3's — and so do the conditional by, participles, and prefixed motion verbs beyond L1's po- and pri-."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M10-S01",
+      "display": "Snachála ya výpil chay. Potóm ya poshyól na rabótu",
+      "script": "Сначала я выпил чай. Потом я пошёл на работу",
+      "cue": "First I drank tea. Then I went to work",
+      "literal": "At-first I drank-up tea. Then I went to work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "snachála",
+            "script": "сначала",
+            "cue": "first · at first",
+            "tag": "free",
+            "forms": [
+              "snachála"
+            ],
+            "note": "Opens an account. It is one word built from \"from the beginning\", and it pairs with potóm as naturally as English's first pairs with then."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "výpil is perfective — the tea got drunk and the account moves on. L1-M5 shipped it beside p'yu without saying why the two look unrelated; this is why.",
+      "sound": "sna-CHA-la ya VY-pil chay. The vy- prefix takes the stress off the stem, which is what perfective prefixes usually do.",
+      "variations": [
+        {
+          "display": "Snachála ya výpil chay. Potóm ya poshyól domóy",
+          "script": "Сначала я выпил чай. Потом я пошёл домой",
+          "cue": "First I drank tea. Then I went home",
+          "changed": "a different destination"
+        },
+        {
+          "display": "Snachála oná výpila chay",
+          "script": "Сначала она выпила чай",
+          "cue": "First she drank tea",
+          "changed": "a woman, so the past agrees with her"
+        },
+        {
+          "display": "Ya výpil chay i poshyól na rabótu",
+          "script": "Я выпил чай и пошёл на работу",
+          "cue": "I drank tea and went to work",
+          "changed": "joined with i instead of split in two"
+        }
+      ],
+      "mistake": {
+        "display": "Snachála ya pil chay. Potóm ya poshyól na rabótu",
+        "script": "Сначала я пил чай. Потом я пошёл на работу",
+        "why": "A step in an account is perfective: Snachála ya výpil chay."
+      },
+      "usage": "Telling someone how the morning went.",
+      "register": "neutral",
+      "mnemonic": "A step forward is perfective."
+    },
+    {
+      "id": "L2-M10-S02",
+      "display": "Ya chitál gazétu, kogdá on pozvoníl",
+      "script": "Я читал газету, когда он позвонил",
+      "cue": "I was reading the paper when he called",
+      "literal": "I was-reading paper, when he called",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kogdá",
+            "script": "когда",
+            "cue": "when",
+            "tag": "delta",
+            "forms": [
+              "kogdá"
+            ],
+            "note": "It glues the two aspects together: the background before it, the event after it. It also asks a question — Kogdá vy prishlí? — and the word is the same."
+          },
+          {
+            "display": "chitál",
+            "script": "читал",
+            "cue": "was reading (imperfective past)",
+            "tag": "delta",
+            "forms": [
+              "chitál",
+              "chitála"
+            ],
+            "note": "L1-M3's chitát' in the past. Imperfective, so it paints the standing situation rather than moving the account — its partner prochitál is what finishes the paper."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Both halves are past and neither is more past than the other. The imperfective is the background and the perfective the event, and that is a choice about the telling rather than about the clock.",
+      "sound": "ya chi-TAL ga-ZYE-tu kag-DA on paz-va-NIL. Every verb in the line is stressed on its last syllable.",
+      "variations": [
+        {
+          "display": "Ya chitála gazétu, kogdá on pozvoníl",
+          "script": "Я читала газету, когда он позвонил",
+          "cue": "I was reading the paper when he called",
+          "changed": "said by a woman"
+        },
+        {
+          "display": "Ya rabótal, kogdá oná pozvoníla",
+          "script": "Я работал, когда она позвонила",
+          "cue": "I was working when she called",
+          "changed": "a different background and a different caller"
+        },
+        {
+          "display": "Ya prochitál gazétu i poshyól domóy",
+          "script": "Я прочитал газету и пошёл домой",
+          "cue": "I read the paper and went home",
+          "changed": "both perfective — two steps, no background"
+        }
+      ],
+      "mistake": {
+        "display": "Ya prochitál gazétu, kogdá on pozvoníl",
+        "script": "Я прочитал газету, когда он позвонил",
+        "why": "The background clause is imperfective: Ya chitál gazétu, kogdá on pozvoníl."
+      },
+      "usage": "Explaining what you were in the middle of.",
+      "register": "neutral",
+      "mnemonic": "Background imperfective, event perfective."
+    },
+    {
+      "id": "L2-M10-S03",
+      "display": "Ya dva chasá chitál. Potóm ya prochitál knígu",
+      "script": "Я два часа читал. Потом я прочитал книгу",
+      "cue": "I read for two hours. Then I finished the book",
+      "literal": "I two hours was-reading. Then I read-through book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prochitál",
+            "script": "прочитал",
+            "cue": "read through (perfective past)",
+            "tag": "delta",
+            "forms": [
+              "prochitál",
+              "prochitála"
+            ],
+            "note": "chitál's partner, and its own row — aspect partners never share one. The pro- says the reading reached its end, which is the result the account needs."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The first clause has a duration in it and is IMPERFECTIVE anyway. \"Ongoing\" is not what the imperfective means — two hours is as bounded as anything gets, and the clause is still about the process.",
+      "sound": "ya dva cha-SA chi-TAL. pa-TOM ya pra-chi-TAL KNI-gu. The two forms of the verb differ only in the prefix and where the stress sits.",
+      "variations": [
+        {
+          "display": "Ya dva chasá rabótal",
+          "script": "Я два часа работал",
+          "cue": "I worked for two hours",
+          "changed": "a different activity, the same bounded imperfective"
+        },
+        {
+          "display": "Ya prochitál knígu za dva chasá",
+          "script": "Я прочитал книгу за два часа",
+          "cue": "I read the book in two hours",
+          "changed": "perfective, with the same two hours in it"
+        },
+        {
+          "display": "Oná dva chasá chitála",
+          "script": "Она два часа читала",
+          "cue": "She read for two hours",
+          "changed": "a woman as the subject"
+        }
+      ],
+      "mistake": {
+        "display": "Ya dva chasá prochitál",
+        "script": "Я два часа прочитал",
+        "why": "A stretch of time takes the imperfective: Ya dva chasá chitál."
+      },
+      "usage": "Saying how long something took, and then that it got finished.",
+      "register": "neutral",
+      "mnemonic": "Duration does not decide aspect."
+    },
+    {
+      "id": "L2-M10-S04",
+      "display": "Vcherá býlo khólodno, poéhtomu ya ostálsya dóma",
+      "script": "Вчера было холодно, поэтому я остался дома",
+      "cue": "Yesterday it was cold, so I stayed at home",
+      "literal": "Yesterday was cold, therefore I stayed home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ostálsya",
+            "script": "остался",
+            "cue": "stayed (said of a man)",
+            "tag": "free",
+            "forms": [
+              "ostálsya",
+              "ostálas'"
+            ],
+            "note": "Another -sya verb arriving as vocabulary. The reflexive system is L3's; here it is simply the word for staying put."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Býlo khólodno has no subject at all — it is the same shape as M1's Mne núzhno, and the past of it is just býlo. The weather is the fourth thing in this course with no subject.",
+      "sound": "vchi-RA BY-la KHO-lad-na pa-EH-ta-mu ya as-TAL-sya DO-ma. Three unstressed o's reduce to a in poéhtomu alone.",
+      "variations": [
+        {
+          "display": "Vcherá býlo zhárko, poéhtomu ya ostálsya dóma",
+          "script": "Вчера было жарко, поэтому я остался дома",
+          "cue": "Yesterday it was hot, so I stayed at home",
+          "changed": "the other extreme"
+        },
+        {
+          "display": "Býlo khólodno, poéhtomu oná ostálas' dóma",
+          "script": "Было холодно, поэтому она осталась дома",
+          "cue": "It was cold, so she stayed at home",
+          "changed": "a woman, and the -sya becomes -s'"
+        },
+        {
+          "display": "Vcherá býlo khólodno",
+          "script": "Вчера было холодно",
+          "cue": "Yesterday it was cold",
+          "changed": "the first half alone"
+        }
+      ],
+      "mistake": {
+        "display": "Vcherá byl khólodno, poéhtomu ya ostálsya dóma",
+        "script": "Вчера был холодно, поэтому я остался дома",
+        "why": "A subjectless past takes the neuter: Vcherá býlo khólodno."
+      },
+      "usage": "Explaining why a plan did not happen.",
+      "register": "neutral",
+      "mnemonic": "No subject means the neuter past."
+    },
+    {
+      "id": "L2-M10-S05",
+      "display": "Ya uvídel Ivána v magazíne. My poshlí v kafé",
+      "script": "Я увидел Ивана в магазине. Мы пошли в кафе",
+      "cue": "I saw Ivan in the shop. We went to a café",
+      "literal": "I caught-sight Ivan in shop. We went into café",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uvídel",
+            "script": "увидел",
+            "cue": "caught sight of (said by a man)",
+            "tag": "delta",
+            "forms": [
+              "uvídel",
+              "uvídela"
+            ],
+            "note": "The perfective of seeing: the moment of noticing. L1-M5's saw is its imperfective partner and names the activity of looking at something."
+          },
+          {
+            "display": "kafé",
+            "script": "кафе",
+            "cue": "café",
+            "tag": "interference",
+            "forms": [
+              "kafé"
+            ],
+            "note": "Indeclinable, like M4's metró and kinó. Borrowed words ending in a stressed vowel behave this way as a class."
+          },
+          {
+            "display": "my",
+            "script": "мы",
+            "cue": "we",
+            "tag": "free",
+            "forms": [
+              "my"
+            ],
+            "note": "One syllable, so no stress mark. L1 built we-are and we-will from other words and never opened the pronoun itself; an account needs it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "uvídel is a moment and saw is a stretch. Both are \"saw\" in English, and only the aspect says which kind of seeing happened.",
+      "sound": "ya u-VI-dil i-VA-na v ma-ga-ZI-nye. my pash-LI v ka-FE. The stress of kafé is on the last syllable and the word never moves.",
+      "variations": [
+        {
+          "display": "Ya uvídela Ivána v magazíne",
+          "script": "Я увидела Ивана в магазине",
+          "cue": "I saw Ivan in the shop",
+          "changed": "said by a woman"
+        },
+        {
+          "display": "My poshlí v kafé",
+          "script": "Мы пошли в кафе",
+          "cue": "We went to a café",
+          "changed": "the second half alone"
+        },
+        {
+          "display": "Ya uvídel Ánnu na úlitse",
+          "script": "Я увидел Анну на улице",
+          "cue": "I saw Anna in the street",
+          "changed": "a different person and place"
+        }
+      ],
+      "mistake": {
+        "display": "Ya uvídel Iván v magazíne",
+        "script": "Я увидел Иван в магазине",
+        "why": "An animate masculine name takes its accusative: Ya uvídel Ivána."
+      },
+      "usage": "The chance meeting, which is how half of all accounts start.",
+      "register": "neutral",
+      "mnemonic": "A moment of seeing is perfective."
+    },
+    {
+      "id": "L2-M10-S06",
+      "display": "On skazál, chto vsyó khoroshó",
+      "script": "Он сказал, что всё хорошо",
+      "cue": "He said everything was fine",
+      "literal": "He said, that everything well",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "skazál",
+            "script": "сказал",
+            "cue": "said (said of a man)",
+            "tag": "delta",
+            "forms": [
+              "skazál",
+              "skazála"
+            ],
+            "note": "The perfective past of M1's skazhíte. Its imperfective partner govoríl means \"was saying\" or \"used to say\", and is a different row."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The clause after chto keeps the tense it was SPOKEN in. He said \"vsyó khoroshó\", so the report says vsyó khoroshó — Russian does not shift the tense back the way English does. The full reported-speech system is L3's; this much is safe because nothing shifts.",
+      "sound": "on ska-ZAL shto vsyo kha-ra-SHO. chto is shto, and vsyo is one syllable with a yó in it.",
+      "variations": [
+        {
+          "display": "Oná skazála, chto vsyó khoroshó",
+          "script": "Она сказала, что всё хорошо",
+          "cue": "She said everything was fine",
+          "changed": "a woman as the subject"
+        },
+        {
+          "display": "On skazál, chto on dóma",
+          "script": "Он сказал, что он дома",
+          "cue": "He said he was at home",
+          "changed": "a present tense inside the report, unshifted"
+        },
+        {
+          "display": "Oná skazála, chto oná ustála",
+          "script": "Она сказала, что она устала",
+          "cue": "She said she was tired",
+          "changed": "L1-M2's short-form adjective inside the report"
+        }
+      ],
+      "mistake": {
+        "display": "On skazál, chto vsyó bylo khoroshó",
+        "script": "Он сказал, что всё было хорошо",
+        "why": "Russian keeps the tense that was spoken: On skazál, chto vsyó khoroshó."
+      },
+      "usage": "Passing on what someone told you.",
+      "register": "neutral",
+      "mnemonic": "Russian does not shift the tense back."
+    },
+    {
+      "id": "L2-M10-S07",
+      "display": "Snachála my rabótali. Poslé étovo my poshlí domóy",
+      "script": "Сначала мы работали. После этого мы пошли домой",
+      "cue": "First we worked. After that we went home",
+      "literal": "At-first we worked. After this we went home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poslé étovo",
+            "script": "после этого",
+            "cue": "after that",
+            "tag": "free",
+            "forms": [
+              "poslé étovo"
+            ],
+            "note": "A whole surface. poslé takes the genitive — M3's case again — and étovo is the genitive of éhto, said with a v where the g stands."
+          },
+          {
+            "display": "rabótali",
+            "script": "работали",
+            "cue": "worked (plural past)",
+            "tag": "free",
+            "forms": [
+              "rabótal",
+              "rabótala",
+              "rabótali"
+            ],
+            "note": "The plural past: one ending for every gender, which makes my and oní the easy subjects. Imperfective, so it names the activity rather than finishing it."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "rabótali is imperfective and names the activity — we did some working. Nothing was completed and nothing needs to have been, which is why an account can hold both aspects without contradiction.",
+      "sound": "sna-CHA-la my ra-BO-ta-li. PO-slye E-ta-va my pash-LI da-MOY. The -ogo of étovo is said -ava.",
+      "variations": [
+        {
+          "display": "Snachála my rabótali. Potóm my poshlí domóy",
+          "script": "Сначала мы работали. Потом мы пошли домой",
+          "cue": "First we worked. Then we went home",
+          "changed": "the shorter sequencer"
+        },
+        {
+          "display": "Poslé étovo ya poshyól v magazín",
+          "script": "После этого я пошёл в магазин",
+          "cue": "After that I went to the shop",
+          "changed": "one person, and a different destination"
+        },
+        {
+          "display": "Oní rabótali dva chasá",
+          "script": "Они работали два часа",
+          "cue": "They worked for two hours",
+          "changed": "a duration on the same imperfective"
+        }
+      ],
+      "mistake": {
+        "display": "Snachála my rabótali. Poslé éhto my poshlí domóy",
+        "script": "Сначала мы работали. После это мы пошли домой",
+        "why": "poslé takes the genitive: poslé étovo."
+      },
+      "usage": "Telling a longer story, where potóm has already been used once.",
+      "register": "neutral",
+      "mnemonic": "poslé takes the genitive, like do."
+    },
+    {
+      "id": "L2-M10-S08",
+      "display": "V kontsé ya vernúlsya domóy",
+      "script": "В конце я вернулся домой",
+      "cue": "In the end I went back home",
+      "literal": "In end I returned home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kontsé",
+            "script": "конце",
+            "cue": "the end (prepositional)",
+            "tag": "free",
+            "forms": [
+              "konéts",
+              "kontsé"
+            ],
+            "note": "The e vanishes when an ending is added — konéts but kontsé — exactly as it does in M2's otéts and ottsá. It is a pattern rather than a quirk."
+          },
+          {
+            "display": "vernúlsya",
+            "script": "вернулся",
+            "cue": "went back (said of a man)",
+            "tag": "free",
+            "forms": [
+              "vernúlsya",
+              "vernúlas'"
+            ],
+            "note": "Perfective, and reflexive in form only — the -sya adds nothing you can translate. Vocabulary, not a system; the -sya rule is L3's."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "domóy has no preposition, exactly as in L1-M5. It is the motion form of dóma, and the pair is the one place in the course where a place word has two shapes and no case behind them.",
+      "sound": "v kan-TSE ya vir-NUL-sya da-MOY. The ts is one sound, and the whole line falls to its last syllable.",
+      "variations": [
+        {
+          "display": "V kontsé oná vernúlas' domóy",
+          "script": "В конце она вернулась домой",
+          "cue": "In the end she went back home",
+          "changed": "a woman, so -sya becomes -s'"
+        },
+        {
+          "display": "V kontsé my poshlí domóy",
+          "script": "В конце мы пошли домой",
+          "cue": "In the end we went home",
+          "changed": "a plural subject and a simpler verb"
+        },
+        {
+          "display": "Ya vernúlsya v sem' chasóv",
+          "script": "Я вернулся в семь часов",
+          "cue": "I got back at seven o'clock",
+          "changed": "M6's clock time on the end"
+        }
+      ],
+      "mistake": {
+        "display": "V kontsé ya vernúlsya v domóy",
+        "script": "В конце я вернулся в домой",
+        "why": "domóy takes no preposition: V kontsé ya vernúlsya domóy."
+      },
+      "usage": "Closing an account, which Russian does with a marked last step.",
+      "register": "neutral",
+      "mnemonic": "A vanishing e is a pattern, not a quirk."
+    },
+    {
+      "id": "L2-M10-S09",
+      "display": "Ya poteryál klyuch, poéhtomu ya pozvoníl brátu",
+      "script": "Я потерял ключ, поэтому я позвонил брату",
+      "cue": "I lost my key, so I called my brother",
+      "literal": "I lost key, therefore I called to-brother",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "brátu",
+            "script": "брату",
+            "cue": "to my brother (dative)",
+            "tag": "delta",
+            "forms": [
+              "brátu"
+            ],
+            "note": "M2's brat in the dative, because pozvonít' takes it — the same demand as pomóch' in M1 and pozvonyú in M7. One verb class, one case."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Both verbs are perfective and the account moves twice. poéhtomu joins them as cause and effect, and neither clause is background to the other.",
+      "sound": "ya pa-ti-RYAL klyuch pa-EH-ta-mu ya paz-va-NIL BRA-tu. The dative -u is unstressed and short.",
+      "variations": [
+        {
+          "display": "Ya poteryála klyuch, poéhtomu ya pozvoníla brátu",
+          "script": "Я потеряла ключ, поэтому я позвонила брату",
+          "cue": "I lost my key, so I called my brother",
+          "changed": "said by a woman — both verbs move"
+        },
+        {
+          "display": "Ya poteryál bilét, poéhtomu ya ostálsya dóma",
+          "script": "Я потерял билет, поэтому я остался дома",
+          "cue": "I lost my ticket, so I stayed at home",
+          "changed": "a different problem and a different consequence"
+        },
+        {
+          "display": "Ya pozvoníl brátu vécherom",
+          "script": "Я позвонил брату вечером",
+          "cue": "I called my brother in the evening",
+          "changed": "the second half alone, with a time"
+        }
+      ],
+      "mistake": {
+        "display": "Ya poteryál klyuch, poéhtomu ya pozvoníl brat",
+        "script": "Я потерял ключ, поэтому я позвонил брат",
+        "why": "pozvonít' takes the dative: ya pozvoníl brátu."
+      },
+      "usage": "The shape of most bad-day stories: a thing went wrong, so I did something.",
+      "register": "neutral",
+      "mnemonic": "Calling goes TO someone. Dative."
+    },
+    {
+      "id": "L2-M10-S10",
+      "display": "Snachála býlo khólodno. Potóm my výpili chay. V kontsé my poshlí domóy",
+      "script": "Сначала было холодно. Потом мы выпили чай. В конце мы пошли домой",
+      "cue": "First it was cold. Then we drank tea. In the end we went home",
+      "literal": "At-first was cold. Then we drank-up tea. In end we went home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "govoríl",
+            "script": "говорил",
+            "cue": "was saying · used to say",
+            "tag": "delta",
+            "forms": [
+              "govoríl",
+              "govoríla"
+            ],
+            "note": "skazál's imperfective partner, on its own row as every aspect pair is. It names the activity of talking; skazál names one thing said."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Three sentences, three steps, and every verb after the first is perfective. The one imperfective is býlo, which is the standing situation the steps happen inside.",
+      "sound": "sna-CHA-la BY-la KHO-lad-na. pa-TOM my VY-pi-li chay. v kan-TSE my pash-LI da-MOY. Short sentences and a clear beat on each.",
+      "variations": [
+        {
+          "display": "Snachála býlo khólodno. Potóm my výpili chay",
+          "script": "Сначала было холодно. Потом мы выпили чай",
+          "cue": "First it was cold. Then we drank tea",
+          "changed": "two steps instead of three"
+        },
+        {
+          "display": "Potóm my výpili chay. V kontsé my poshlí domóy",
+          "script": "Потом мы выпили чай. В конце мы пошли домой",
+          "cue": "Then we drank tea. In the end we went home",
+          "changed": "the last two steps"
+        },
+        {
+          "display": "On govoríl, no ya ne slýshal",
+          "script": "Он говорил, но я не слышал",
+          "cue": "He was talking, but I couldn't hear",
+          "changed": "two imperfectives — a situation, not an account"
+        }
+      ],
+      "mistake": {
+        "display": "Snachála býlo khólodno. Potóm my pili chay. V kontsé my poshlí domóy",
+        "script": "Сначала было холодно. Потом мы пили чай. В конце мы пошли домой",
+        "why": "A step in an account is perfective: Potóm my výpili chay."
+      },
+      "usage": "The whole shape of an account: a situation, some steps, an end.",
+      "register": "neutral",
+      "mnemonic": "The background stands still. The steps move."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M10-C01",
+      "display": "Snachála ya výpil chay. Potóm ya poshyól na rabótu",
+      "script": "Сначала я выпил чай. Потом я пошёл на работу",
+      "cue": "First I drank tea. Then I went to work"
+    },
+    {
+      "id": "L2-M10-C02",
+      "display": "Ya chitál gazétu, kogdá on pozvoníl",
+      "script": "Я читал газету, когда он позвонил",
+      "cue": "I was reading the paper when he called"
+    },
+    {
+      "id": "L2-M10-C03",
+      "display": "Ya prochitál knígu za dva chasá",
+      "script": "Я прочитал книгу за два часа",
+      "cue": "I read the book in two hours"
+    },
+    {
+      "id": "L2-M10-C04",
+      "display": "Vcherá býlo khólodno, poéhtomu ya ostálsya dóma",
+      "script": "Вчера было холодно, поэтому я остался дома",
+      "cue": "Yesterday it was cold, so I stayed at home"
+    },
+    {
+      "id": "L2-M10-C05",
+      "display": "Ya uvídel Ivána v magazíne. My poshlí v kafé",
+      "script": "Я увидел Ивана в магазине. Мы пошли в кафе",
+      "cue": "I saw Ivan in the shop. We went to a café"
+    },
+    {
+      "id": "L2-M10-C06",
+      "display": "On skazál, chto vsyó khoroshó",
+      "script": "Он сказал, что всё хорошо",
+      "cue": "He said everything was fine"
+    },
+    {
+      "id": "L2-M10-C07",
+      "display": "Snachála my rabótali. Poslé étovo my poshlí domóy",
+      "script": "Сначала мы работали. После этого мы пошли домой",
+      "cue": "First we worked. After that we went home"
+    },
+    {
+      "id": "L2-M10-C08",
+      "display": "V kontsé ya vernúlsya domóy",
+      "script": "В конце я вернулся домой",
+      "cue": "In the end I went back home"
+    },
+    {
+      "id": "L2-M10-C09",
+      "display": "Ya poteryál klyuch, poéhtomu ya pozvoníl brátu",
+      "script": "Я потерял ключ, поэтому я позвонил брату",
+      "cue": "I lost my key, so I called my brother"
+    },
+    {
+      "id": "L2-M10-C10",
+      "display": "Snachála býlo khólodno. Potóm my výpili chay",
+      "script": "Сначала было холодно. Потом мы выпили чай",
+      "cue": "First it was cold. Then we drank tea"
+    },
+    {
+      "id": "L2-M10-C11",
+      "display": "Oná skazála, chto vsyó khoroshó",
+      "script": "Она сказала, что всё хорошо",
+      "cue": "She said everything was fine"
+    },
+    {
+      "id": "L2-M10-C12",
+      "display": "Ya dva chasá chitál",
+      "script": "Я два часа читал",
+      "cue": "I read for two hours"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

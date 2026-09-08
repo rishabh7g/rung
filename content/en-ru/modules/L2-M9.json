@@ -1,0 +1,768 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M9",
+  "title": "Comparing and choosing",
+  "job": "More, less, better — stating a preference",
+  "prerequisites": [
+    "L2-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "A + Adj-comparative + B-gen",
+      "A + Adj-comparative + , + chem + B",
+      "sámyy + Adj + N",
+      "Kakóy vy predpochitáyete?",
+      "Éhtot + N + lúchshe"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE COMPARATIVE IS ONE ENDING plus a short list of irregulars, and the irregulars are the ones actually used: lúchshe, khúzhe, ból'she, mén'she, dorózhe, deshévle, výshe, molózhe. The ending is -yeye (interésneye), and the slogan it invites has to be killed: \"add -yeye\" produces khoroshéye, which is not a word. Learn the list as vocabulary and the ending as a rule."
+    },
+    {
+      "tag": "delta",
+      "text": "\"THAN\" IS THE GENITIVE, and this is the level's fourth spend of M3's case: Moskvá ból'she Peterbúrga, On výshe menyá. It is what a Russian says, it is shorter, and it costs no new word at all. chem is the always-available alternative and becomes the required one when the two things compared are not both bare nouns — Segódnya teplée, chem vcherá."
+    },
+    {
+      "tag": "free",
+      "text": "The superlative is sámyy plus the adjective, and sámyy declines along with it: sámyy bol'shóy górod, sámaya interésnaya kníga. It is the easy half of the module and a rest point after the comparatives — two words, both agreeing, nothing irregular."
+    },
+    {
+      "tag": "interference",
+      "text": "lúchshe serves BOTH khoroshó (\"well\") and khoróshiy (\"good\"), so On igráyet lúchshe and Éhtot chay lúchshe use one word for what English splits into \"better\" twice over. And the double comparative is the error even native speakers are teased for: bóleye lúchshe is wrong, because lúchshe is already the comparative."
+    },
+    {
+      "tag": "interference",
+      "text": "éhtot is NOT L1-M1's éhto. éhto is \"this is\" and never changes; éhtot means \"this\" in front of a noun and declines with it — éhtot chay, éhta kníga, éhti knígi. Merging them would send every choice in the course to a note about identifying things. kakóy (\"which, what kind of\") declines like an adjective and is a sibling of L1-M9's chto, not a form of it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M9-S01",
+      "display": "Éhtot chay lúchshe",
+      "script": "Этот чай лучше",
+      "cue": "This tea is better",
+      "literal": "This tea better",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "éhtot",
+            "script": "этот",
+            "cue": "this (in front of a noun)",
+            "tag": "interference",
+            "forms": [
+              "éhtot",
+              "éhta",
+              "éhto",
+              "éhti"
+            ],
+            "note": "A different word from L1-M1's éhto, which is \"this is\" and never changes. This one agrees with the noun it points at, exactly as an adjective does."
+          },
+          {
+            "display": "lúchshe",
+            "script": "лучше",
+            "cue": "better",
+            "tag": "delta",
+            "forms": [
+              "lúchshe"
+            ],
+            "note": "Irregular, and it does two jobs: better as a quality and better as a manner. English needs \"better\" for both too, which is the one place the two languages agree here."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "The neuter of éhtot is éhto, which is spelled exactly like L1-M1's pointing word. They are still two different words, and only the sentence around them says which is meant.",
+      "sound": "EH-tat chay LUCH-she. The final o of éhtot reduces to a, which is why the two words sound less alike than they look.",
+      "variations": [
+        {
+          "display": "Éhta kníga lúchshe",
+          "script": "Эта книга лучше",
+          "cue": "This book is better",
+          "changed": "feminine, so the pointing word moves"
+        },
+        {
+          "display": "Éhtot chay khúzhe",
+          "script": "Этот чай хуже",
+          "cue": "This tea is worse",
+          "changed": "the opposite verdict"
+        },
+        {
+          "display": "Éhti knígi lúchshe",
+          "script": "Эти книги лучше",
+          "cue": "These books are better",
+          "changed": "plural — one form for every gender"
+        }
+      ],
+      "mistake": {
+        "display": "Éhtot chay bóleye lúchshe",
+        "script": "Этот чай более лучше",
+        "why": "lúchshe is already comparative: Éhtot chay lúchshe."
+      },
+      "usage": "Choosing between two things in front of you.",
+      "register": "neutral",
+      "mnemonic": "éhto identifies. éhtot points."
+    },
+    {
+      "id": "L2-M9-S02",
+      "display": "Éhta kníga interésneye",
+      "script": "Эта книга интереснее",
+      "cue": "This book is more interesting",
+      "literal": "This book more-interesting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "interésneye",
+            "script": "интереснее",
+            "cue": "more interesting",
+            "tag": "free",
+            "forms": [
+              "interésneye"
+            ],
+            "note": "The regular comparative: -yeye on the stem, and one form for every gender and number. Comparatives do not agree, which makes them the easiest thing in the module."
+          },
+          {
+            "display": "khúzhe",
+            "script": "хуже",
+            "cue": "worse",
+            "tag": "delta",
+            "forms": [
+              "khúzhe"
+            ],
+            "note": "lúchshe's opposite, and irregular in the same way. It answers both plókho (\"badly\") and plokhóy (\"bad\")."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "A comparative never agrees with anything. interésneye is the same word for a book, a film or two books — which is a genuine rest after M3's grid.",
+      "sound": "EH-ta KNI-ga in-ti-RYES-ni-ye. The ending is two syllables and unstressed, so it trails off.",
+      "variations": [
+        {
+          "display": "Éhtot górod interésneye",
+          "script": "Этот город интереснее",
+          "cue": "This city is more interesting",
+          "changed": "masculine — and the comparative does not move"
+        },
+        {
+          "display": "Éhta kníga khúzhe",
+          "script": "Эта книга хуже",
+          "cue": "This book is worse",
+          "changed": "an irregular comparative"
+        },
+        {
+          "display": "Éhti knígi interésneye",
+          "script": "Эти книги интереснее",
+          "cue": "These books are more interesting",
+          "changed": "plural — the comparative still does not move"
+        }
+      ],
+      "mistake": {
+        "display": "Éhta kníga interésnaya",
+        "script": "Эта книга интересная",
+        "why": "A comparison needs the comparative: Éhta kníga interésneye."
+      },
+      "usage": "Recommending one of two.",
+      "register": "neutral",
+      "mnemonic": "Comparatives never agree."
+    },
+    {
+      "id": "L2-M9-S03",
+      "display": "Éhtot bilét dorózhe",
+      "script": "Этот билет дороже",
+      "cue": "This ticket is more expensive",
+      "literal": "This ticket dearer",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dorózhe",
+            "script": "дороже",
+            "cue": "more expensive",
+            "tag": "delta",
+            "forms": [
+              "dorózhe"
+            ],
+            "note": "M3's dorogóy with the g softened to zh. That consonant change is what makes so many comparatives look irregular when the ending is regular."
+          },
+          {
+            "display": "deshévle",
+            "script": "дешевле",
+            "cue": "cheaper",
+            "tag": "delta",
+            "forms": [
+              "deshévle"
+            ],
+            "note": "M3's deshyóvyy, and note the yó is GONE: the stress has moved, and a yó cannot be unstressed. The spelling records the sound."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "deshyóvyy becomes deshévle, losing its yó. That is not an exception to the yó rule — it is the rule: a yó is always stressed, so when the stress leaves, so does the yó.",
+      "sound": "EH-tat bi-LYET da-RO-zhe. The zh is hard, which pulls the e after it back.",
+      "variations": [
+        {
+          "display": "Éhtot bilét deshévle",
+          "script": "Этот билет дешевле",
+          "cue": "This ticket is cheaper",
+          "changed": "the opposite, and the yó disappears with the stress"
+        },
+        {
+          "display": "Éhta kníga dorózhe",
+          "script": "Эта книга дороже",
+          "cue": "This book is more expensive",
+          "changed": "feminine — the comparative is unchanged"
+        },
+        {
+          "display": "Metró deshévle",
+          "script": "Метро дешевле",
+          "cue": "The metro is cheaper",
+          "changed": "M4's indeclinable noun, which changes nothing either"
+        }
+      ],
+      "mistake": {
+        "display": "Éhtot bilét bóleye dorogóy",
+        "script": "Этот билет более дорогой",
+        "why": "The one-word comparative is what is said: Éhtot bilét dorózhe."
+      },
+      "usage": "In a ticket office, comparing two options.",
+      "register": "neutral",
+      "mnemonic": "The stress leaves, the yó leaves with it."
+    },
+    {
+      "id": "L2-M9-S04",
+      "display": "Moy brat výshe menyá",
+      "script": "Мой брат выше меня",
+      "cue": "My brother is taller than me",
+      "literal": "My brother taller of-me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "výshe",
+            "script": "выше",
+            "cue": "taller · higher",
+            "tag": "delta",
+            "forms": [
+              "výshe"
+            ],
+            "note": "M2's vysókiy, with the k softened to sh. It covers height of a person and of a building alike."
+          },
+          {
+            "display": "chem",
+            "script": "чем",
+            "cue": "than",
+            "tag": "free",
+            "forms": [
+              "chem"
+            ],
+            "note": "The word for \"than\", always available and required when the two things compared are not both bare nouns: Segódnya teplée, chem vcherá."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "There is no word for \"than\" here at all. The genitive menyá is the comparison — the fifth job M3's case does — and it is shorter and more idiomatic than the chem version beside it.",
+      "sound": "moy brat VY-she mi-NYA. The y of výshe is the hard back vowel, and the sh in front of it keeps it there.",
+      "variations": [
+        {
+          "display": "Moy brat výshe, chem ya",
+          "script": "Мой брат выше, чем я",
+          "cue": "My brother is taller than I am",
+          "changed": "the chem version — correct, and a shade heavier"
+        },
+        {
+          "display": "Moyá sestrá výshe menyá",
+          "script": "Моя сестра выше меня",
+          "cue": "My sister is taller than me",
+          "changed": "a different subject; the comparative does not move"
+        },
+        {
+          "display": "Moy brat molózhe menyá",
+          "script": "Мой брат моложе меня",
+          "cue": "My brother is younger than me",
+          "changed": "a different comparison"
+        }
+      ],
+      "mistake": {
+        "display": "Moy brat výshe chem menyá",
+        "script": "Мой брат выше чем меня",
+        "why": "Either the genitive or chem, not both: výshe menyá or výshe, chem ya."
+      },
+      "usage": "Comparing people, which in Russian is done with the genitive by default.",
+      "register": "neutral",
+      "mnemonic": "The genitive IS \"than\"."
+    },
+    {
+      "id": "L2-M9-S05",
+      "display": "Moy brat molózhe menyá",
+      "script": "Мой брат моложе меня",
+      "cue": "My brother is younger than me",
+      "literal": "My brother younger of-me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "molózhe",
+            "script": "моложе",
+            "cue": "younger",
+            "tag": "free",
+            "forms": [
+              "molózhe"
+            ],
+            "note": "M2's molodóy with the d softened to zh and the stress pulled back onto the stem — two changes at once, which is why it is on the irregular list."
+          },
+          {
+            "display": "stárshe",
+            "script": "старше",
+            "cue": "older",
+            "tag": "free",
+            "forms": [
+              "stárshe"
+            ],
+            "note": "molózhe's opposite, and M2's stáryy behind it. Of people it is the ordinary word; stareye is used of things."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "molodóy is stressed on the ending and molózhe on the stem. The stress moves in most comparatives, and the mark is the only record of it.",
+      "sound": "moy brat ma-LO-zhe mi-NYA. Only the first o of molózhe reduces; the stressed one is fully sounded.",
+      "variations": [
+        {
+          "display": "Moyá sestrá molózhe menyá",
+          "script": "Моя сестра моложе меня",
+          "cue": "My sister is younger than me",
+          "changed": "a different subject"
+        },
+        {
+          "display": "On molózhe, chem moy brat",
+          "script": "Он моложе, чем мой брат",
+          "cue": "He is younger than my brother",
+          "changed": "chem, because the second half is two words"
+        },
+        {
+          "display": "Moy otéts stárshe menyá",
+          "script": "Мой отец старше меня",
+          "cue": "My father is older than me",
+          "changed": "the opposite comparison"
+        }
+      ],
+      "mistake": {
+        "display": "Moy brat molodéye menyá",
+        "script": "Мой брат молодее меня",
+        "why": "This one is irregular: Moy brat molózhe menyá."
+      },
+      "usage": "Placing family members by age, which is the first thing anyone asks.",
+      "register": "neutral",
+      "mnemonic": "Most comparatives move the stress."
+    },
+    {
+      "id": "L2-M9-S06",
+      "display": "Zdes' ból'she vodý, chem tam",
+      "script": "Здесь больше воды, чем там",
+      "cue": "There is more water here than there",
+      "literal": "Here more of-water, than there",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ból'she",
+            "script": "больше",
+            "cue": "more · bigger",
+            "tag": "delta",
+            "forms": [
+              "ból'she"
+            ],
+            "note": "The comparative of both mnógo (\"much\") and bol'shóy (\"big\"), so it means \"more\" and \"bigger\" alike. Like mnógo, it takes the genitive."
+          },
+          {
+            "display": "mén'she",
+            "script": "меньше",
+            "cue": "less · smaller",
+            "tag": "delta",
+            "forms": [
+              "mén'she"
+            ],
+            "note": "ból'she's opposite, and doubled the same way: less and smaller. M3's málen'kiy has no separate comparative of its own."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "chem is required here because the second half is tam, not a noun. That is the line between the two \"than\" constructions, and it is the only rule about them worth carrying.",
+      "sound": "zdyes' BOL'-she va-DY chem tam. The soft sign in ból'she is heard as a softening of the l.",
+      "variations": [
+        {
+          "display": "Zdes' mén'she vodý, chem tam",
+          "script": "Здесь меньше воды, чем там",
+          "cue": "There is less water here than there",
+          "changed": "the opposite quantity"
+        },
+        {
+          "display": "Zdes' ból'she khléba",
+          "script": "Здесь больше хлеба",
+          "cue": "There is more bread here",
+          "changed": "no comparison stated, and still a genitive after it"
+        },
+        {
+          "display": "Moskvá ból'she",
+          "script": "Москва больше",
+          "cue": "Moscow is bigger",
+          "changed": "ból'she meaning bigger rather than more"
+        }
+      ],
+      "mistake": {
+        "display": "Zdes' ból'she vodá, chem tam",
+        "script": "Здесь больше вода, чем там",
+        "why": "A word of amount takes the genitive: ból'she vodý."
+      },
+      "usage": "Comparing two places, two shops, two portions.",
+      "register": "neutral",
+      "mnemonic": "ból'she is more and bigger at once."
+    },
+    {
+      "id": "L2-M9-S07",
+      "display": "Éhto sámaya interésnaya kníga",
+      "script": "Это самая интересная книга",
+      "cue": "This is the most interesting book",
+      "literal": "This most interesting book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sámyy",
+            "script": "самый",
+            "cue": "the most",
+            "tag": "free",
+            "forms": [
+              "sámyy",
+              "sámaya",
+              "sámoye",
+              "sámyye"
+            ],
+            "note": "The superlative is two words and both agree with the noun. Nothing is irregular here — after the comparatives, this is the module's rest point."
+          },
+          {
+            "display": "interésnyy",
+            "script": "интересный",
+            "cue": "interesting",
+            "tag": "free",
+            "forms": [
+              "interésnyy",
+              "interésnaya",
+              "interésnoye",
+              "interésnyye"
+            ],
+            "note": "The positive behind interésneye, with M3's four cells. The superlative needs the positive, not the comparative."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "sámyy takes the ordinary adjective after it, never the comparative. sámaya interésneye is wrong for the same reason bóleye lúchshe is — one comparison per phrase.",
+      "sound": "EH-ta SA-ma-ya in-ti-RYES-na-ya KNI-ga. Four words, and the two long ones rhyme at the end.",
+      "variations": [
+        {
+          "display": "Éhto sámyy bol'shóy górod",
+          "script": "Это самый большой город",
+          "cue": "This is the biggest city",
+          "changed": "masculine throughout"
+        },
+        {
+          "display": "Éhto sámaya dorogáya kníga",
+          "script": "Это самая дорогая книга",
+          "cue": "This is the most expensive book",
+          "changed": "a different quality"
+        },
+        {
+          "display": "Éhto sámyy deshyóvyy bilét",
+          "script": "Это самый дешёвый билет",
+          "cue": "This is the cheapest ticket",
+          "changed": "M3's adjective, with its yó back because the stress is back"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto sámaya interésneye kníga",
+        "script": "Это самая интереснее книга",
+        "why": "The superlative takes the ordinary adjective: sámaya interésnaya kníga."
+      },
+      "usage": "Recommending the best of several — in a shop, a menu, a shelf.",
+      "register": "neutral",
+      "mnemonic": "Two words, both agreeing, nothing irregular."
+    },
+    {
+      "id": "L2-M9-S08",
+      "display": "Kakóy chay vy predpochitáyete?",
+      "script": "Какой чай вы предпочитаете?",
+      "cue": "Which tea do you prefer?",
+      "literal": "Which tea you prefer?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kakóy",
+            "script": "какой",
+            "cue": "which · what kind of",
+            "tag": "delta",
+            "forms": [
+              "kakóy",
+              "kakáya",
+              "kakóye",
+              "kakíye"
+            ],
+            "note": "It declines like an adjective and agrees with its noun. It is a sibling of L1-M9's chto, not a form of it — chto asks what a thing is, kakóy asks which one."
+          },
+          {
+            "display": "predpochitáyu",
+            "script": "предпочитаю",
+            "cue": "I prefer",
+            "tag": "free",
+            "forms": [
+              "predpochitáyu",
+              "predpochitáyete"
+            ],
+            "note": "Takes an accusative noun or an infinitive. A long word, and the ordinary alternative is simply lúchshe — Chay lúchshe, tea is better."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "kakóy agrees, chto does not. Kakáya kníga? asks which book; Chto éhto? asks what a thing is, and they are never swapped.",
+      "sound": "ka-KOY chay vy prit-pa-chi-TA-yi-tye. The verb is six syllables and only the fifth carries.",
+      "variations": [
+        {
+          "display": "Kakáya kníga vam nrávitsya?",
+          "script": "Какая книга вам нравится?",
+          "cue": "Which book do you like?",
+          "changed": "feminine, and L1-M9's frame"
+        },
+        {
+          "display": "Ya predpochitáyu chay",
+          "script": "Я предпочитаю чай",
+          "cue": "I prefer tea",
+          "changed": "the answer, with an accusative noun"
+        },
+        {
+          "display": "Kakóy bilét deshévle?",
+          "script": "Какой билет дешевле?",
+          "cue": "Which ticket is cheaper?",
+          "changed": "a comparative in the question"
+        }
+      ],
+      "mistake": {
+        "display": "Chto chay vy predpochitáyete?",
+        "script": "Что чай вы предпочитаете?",
+        "why": "Choosing among things takes kakóy: Kakóy chay vy predpochitáyete?"
+      },
+      "usage": "Offering a choice — in a shop, at a table, on a menu.",
+      "register": "neutral",
+      "mnemonic": "chto asks what. kakóy asks which."
+    },
+    {
+      "id": "L2-M9-S09",
+      "display": "Ya predpochitáyu chay, a ne kófe",
+      "script": "Я предпочитаю чай, а не кофе",
+      "cue": "I prefer tea, not coffee",
+      "literal": "I prefer tea, and not coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "predpochitáyete",
+            "script": "предпочитаете",
+            "cue": "you prefer",
+            "tag": "free",
+            "forms": [
+              "predpochitáyete"
+            ],
+            "note": "The vy cell. Its ty cell would be predpochitáyesh', with M6's -esh' ending — the pattern holds even on a word this long."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "a ne is the contrastive \"not\", not the plain one. L1-M10's a is \"and\" with a turn in it, and this is that same a doing the turning.",
+      "sound": "ya prit-pa-chi-TA-yu chay a nye KO-fye. The a is unstressed and almost disappears into the pause.",
+      "variations": [
+        {
+          "display": "Ya predpochitáyu kófe, a ne chay",
+          "script": "Я предпочитаю кофе, а не чай",
+          "cue": "I prefer coffee, not tea",
+          "changed": "the other way round"
+        },
+        {
+          "display": "Ya predpochitáyu chay",
+          "script": "Я предпочитаю чай",
+          "cue": "I prefer tea",
+          "changed": "without the contrast"
+        },
+        {
+          "display": "Vy predpochitáyete chay ili kófe?",
+          "script": "Вы предпочитаете чай или кофе?",
+          "cue": "Do you prefer tea or coffee?",
+          "changed": "the question, with M4's ili"
+        }
+      ],
+      "mistake": {
+        "display": "Ya predpochitáyu chay, no ne kófe",
+        "script": "Я предпочитаю чай, но не кофе",
+        "why": "The contrast takes a: chay, a ne kófe."
+      },
+      "usage": "Stating a preference clearly, which Russian does without hedging.",
+      "register": "neutral",
+      "mnemonic": "a turns. no objects."
+    },
+    {
+      "id": "L2-M9-S10",
+      "display": "Éhtot magazín lúchshe, no dorózhe",
+      "script": "Этот магазин лучше, но дороже",
+      "cue": "This shop is better, but more expensive",
+      "literal": "This shop better, but dearer",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "górod",
+            "script": "город",
+            "cue": "city · town",
+            "tag": "free",
+            "forms": [
+              "górod",
+              "góroda",
+              "górode"
+            ],
+            "note": "Masculine, stem-stressed in the singular. Its plural moves the stress right off — gorodá — which is the same pattern as M4's poyezdá."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Two comparatives on one subject and neither agrees with anything. After M3's grid this is genuinely easy, and saying so is part of the lesson.",
+      "sound": "EH-tat ma-ga-ZIN LUCH-she no da-RO-zhe. The two comparatives both end in the same unstressed -e.",
+      "variations": [
+        {
+          "display": "Éhtot magazín khúzhe, no deshévle",
+          "script": "Этот магазин хуже, но дешевле",
+          "cue": "This shop is worse, but cheaper",
+          "changed": "both verdicts reversed"
+        },
+        {
+          "display": "Éhtot górod ból'she, no khúzhe",
+          "script": "Этот город больше, но хуже",
+          "cue": "This city is bigger, but worse",
+          "changed": "a different subject and a different pair"
+        },
+        {
+          "display": "Éhtot magazín sámyy deshyóvyy",
+          "script": "Этот магазин самый дешёвый",
+          "cue": "This shop is the cheapest",
+          "changed": "the superlative instead of a comparison"
+        }
+      ],
+      "mistake": {
+        "display": "Éhtot magazín lúchshiy, no dorózhe",
+        "script": "Этот магазин лучший, но дороже",
+        "why": "A comparison takes the comparative: Éhtot magazín lúchshe, no dorózhe."
+      },
+      "usage": "The honest recommendation, with the catch attached.",
+      "register": "neutral",
+      "mnemonic": "Comparatives never agree — which makes them the easy part."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M9-C01",
+      "display": "Éhtot chay lúchshe",
+      "script": "Этот чай лучше",
+      "cue": "This tea is better"
+    },
+    {
+      "id": "L2-M9-C02",
+      "display": "Éhta kníga interésneye",
+      "script": "Эта книга интереснее",
+      "cue": "This book is more interesting"
+    },
+    {
+      "id": "L2-M9-C03",
+      "display": "Éhtot bilét dorózhe",
+      "script": "Этот билет дороже",
+      "cue": "This ticket is more expensive"
+    },
+    {
+      "id": "L2-M9-C04",
+      "display": "Moy brat výshe menyá",
+      "script": "Мой брат выше меня",
+      "cue": "My brother is taller than me"
+    },
+    {
+      "id": "L2-M9-C05",
+      "display": "Moy brat molózhe menyá",
+      "script": "Мой брат моложе меня",
+      "cue": "My brother is younger than me"
+    },
+    {
+      "id": "L2-M9-C06",
+      "display": "Zdes' ból'she vodý, chem tam",
+      "script": "Здесь больше воды, чем там",
+      "cue": "There is more water here than there"
+    },
+    {
+      "id": "L2-M9-C07",
+      "display": "Éhto sámaya interésnaya kníga",
+      "script": "Это самая интересная книга",
+      "cue": "This is the most interesting book"
+    },
+    {
+      "id": "L2-M9-C08",
+      "display": "Kakóy chay vy predpochitáyete?",
+      "script": "Какой чай вы предпочитаете?",
+      "cue": "Which tea do you prefer?"
+    },
+    {
+      "id": "L2-M9-C09",
+      "display": "Ya predpochitáyu chay, a ne kófe",
+      "script": "Я предпочитаю чай, а не кофе",
+      "cue": "I prefer tea, not coffee"
+    },
+    {
+      "id": "L2-M9-C10",
+      "display": "Éhtot magazín lúchshe, no dorózhe",
+      "script": "Этот магазин лучше, но дороже",
+      "cue": "This shop is better, but more expensive"
+    },
+    {
+      "id": "L2-M9-C11",
+      "display": "Éhto sámyy deshyóvyy bilét",
+      "script": "Это самый дешёвый билет",
+      "cue": "This is the cheapest ticket"
+    },
+    {
+      "id": "L2-M9-C12",
+      "display": "Kakóy bilét deshévle?",
+      "script": "Какой билет дешевле?",
+      "cue": "Which ticket is cheaper?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
