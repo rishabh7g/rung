@@ -48,18 +48,18 @@ npm run dev     # http://localhost:5173
 
 ### `scripts/verify.sh` — one line, or one failure
 
-The gate before every PR (docs/01-plan.md §8). Run it from anywhere; it finds the repo root
-itself:
+The gate before every merge to `main` (docs/01-plan.md §8). Run it from anywhere; it finds the repo
+root itself:
 
 ```bash
 scripts/verify.sh          # everything
-scripts/verify.sh --fast   # everything except BUILD
+scripts/verify.sh --fast   # everything except BUILD and BUDGET
 ```
 
 A green run says exactly one thing, and exits 0:
 
 ```
-TYPES ok | LINT ok | TEST 142/142 ok | CONTENT ok | BUILD ok
+TYPES ok | LINT ok | TEST 408/408 ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok
 ```
 
 | Step | Exit | Command |
@@ -68,7 +68,9 @@ TYPES ok | LINT ok | TEST 142/142 ok | CONTENT ok | BUILD ok
 | LINT | 20 | `npm run lint`, then `npx prettier --check .` — **either one failing is exit 20** |
 | TEST | 30 | `npm run test`; the segment carries vitest's own count |
 | CONTENT | 40 | `npm run content:build` — schema validation, word index and the strings check in one |
+| FONTS | 45 | `npm run fonts:build` — the per-course subsets (#113); skips like CONTENT |
 | BUILD | 50 | `npx vite build`; omitted entirely with `--fast` |
+| BUDGET | 60 | `npm run budget` — the payload report and its audits over `dist/`; omitted with `--fast` |
 
 Steps run in that order and the **first failure stops the run**, so a red run names exactly one
 thing: `FAIL <STEP> (exit <code>)`, the last 20 lines of that step's log, and the path to the
@@ -79,7 +81,7 @@ FAIL TYPES (exit 10)
 
 src/App.tsx(9,9): error TS2322: Type 'number' is not assignable to type 'string'.
 
-log: /home/rrish/dev/shidi/.verify/types.log
+log: /Users/rrish/Documents/code/rung/.verify/types.log
 ```
 
 Every step writes `.verify/<step>.log` (gitignored), and **the directory is wiped at the start of
@@ -91,8 +93,9 @@ Two things worth knowing before you read a result:
 - **BUILD is `vite build`, not `npm run build`.** The npm script's `prebuild` would re-run tsc and
   `content:build`, so a content failure would resurface as `FAIL BUILD` long after CONTENT passed.
   The harness runs each thing once, under its own name.
-- **CONTENT judges the exit code, never the output.** A strict build correctly ships nothing today
-  (see the gate table below) and exits 0 — that is `CONTENT ok`, not an empty-output failure.
+- **CONTENT judges the exit code, never the output.** A strict build that correctly drops every
+  module of a course (see the gate table below) still exits 0 — that is `CONTENT ok`, not an
+  empty-output failure.
 
 The harness has its own tests (`scripts/verify.test.ts`): they run it in a tmp dir against fake
 `npm`/`npx` shims, because a test that really shelled out to `npm run test` would run vitest inside
@@ -101,6 +104,37 @@ vitest.
 **This is the gate.** Run `bash scripts/verify.sh` locally before merging to `main`; there is no
 CI job. There is deliberately no separate lint/test/build pipeline to keep in sync. When a run is
 red, each step's full log is in `.verify/<step>.log`.
+
+### What TEST actually runs — ten files, and the suite that was cut
+
+**The suite was cut in half on 2026-08-30, in two commits, and the sections below say so wherever
+they used to lean on a file that went.** `02a45dd` (#362–#365) removed the render-level suite —
+every `*.test.tsx` that mounted a screen or a component — and `5365eaa` (#370) cut what remained to
+three files. Both were deliberate. Neither touched the prose here, so until #497 this README named
+twenty test files that had been deleted; every one of them existed once, and none was invented.
+Ten files run today:
+
+| File | What it proves |
+|---|---|
+| `scripts/verify.test.ts` | the harness's own step order, summary line, failure block and exit codes, in a tmp dir against fake `npm`/`npx` |
+| `src/course/types.test.ts` | every module and ladder in `content/` walked key by key against `types.ts`, plus the `FORCED_DUPLICATES` ownership map |
+| `src/engine/leitner.test.ts` | the review scheduler's boxes, intervals and per-session picks |
+| `src/state/store.test.ts` | the persisted document: migrations, the persisted slice, and what the progression engine is fed |
+| `tools/course-briefs.test.ts` | the briefs against the ladders they mirror, and the decisions en-ko's settle (#109, #376) |
+| `tools/css-classes.test.ts` | the flat CSS namespace (#496) — see below |
+| `tools/delta-index.test.ts` | `fold(deltas) === the cumulative index`, exactly, for every shipped module (#424) |
+| `tools/module-ids.test.ts` | the five-level id grammar in all four places that spell it |
+| `tools/register.test.ts` | the sentence-register enum stayed closed when `formal` widened it (#422) |
+| `tools/shown-surfaces.test.ts` | the shown-but-untaught count per course may fall, never rise (#491) |
+
+**`tools/css-classes.test.ts` is the only test in the repo that looks at styling at all**, and it
+runs in the TEST stage like the rest. It reads the shipped stylesheets back and fails on three
+things: a class name defined in two files, an `@keyframes` name defined in two files, and a
+surviving `*.module.css` or a component importing a styles object from a stylesheet. Its first case
+injects a duplicate `.ladder-head` and requires it to be found, so a clean result from it means
+something. It does **not** check tokens, spacing, font faces, or anything a screen renders. The
+files that once did were deleted by the two commits above and have not been replaced; where a
+section below states one of those rules, it states a rule the repo follows, not one it enforces.
 
 ### The content gate — why `dev` and `build` see different content
 
@@ -276,19 +310,20 @@ teaches). M6 and M10 got their honest paradigm answer: three M6 rows now carry s
 every `[]` left behind is a per-row decision on the record — M6's own rule says -णार never
 changes, and M10's re-teach rows leave each paradigm on the first-teach row that owns its index
 key. **Additions only**: the hi-mr index grew 206 → **215** surfaces with 0 keys lost and 0 keys
-moved. `tools/content-build.test.ts` now sweeps every hi-mr variation line against its own
-module's index and pins the three remaining misses (the proper noun `प्रिया` and the two
-exemptions), so a new variation that resolves nowhere fails the suite. The reasoning, row by row,
-is `docs/15-llm-review-hi-mr-surfaces.md`.
+moved. A sweep of every hi-mr variation line against its own module's index, pinning the three
+remaining misses (the proper noun `प्रिया` and the two exemptions), ran at the time and was cut
+with the rest of the suite on 2026-08-30; `tools/shown-surfaces.test.ts` (#491) holds that line
+now, per course and by count rather than by row. The reasoning, row by row, is
+`docs/15-llm-review-hi-mr-surfaces.md`.
 
 **No fixture course again (#273, 2026-08-24; then #331, #337 and #343, 2026-08-30).** All seven
 courses ship — en-fr, en-it and en-ru were each authored behind the gate and graduated the same
 way, below — and no module in the repo
 is unverified, so `npm run dev` and `npm run build` contain the same modules — the two
-relaxations are still enforced and still tested (`tools/content-build.test.ts` builds synthetic
-fixture rows and unverified modules and watches them be dropped), they simply have nothing in
-this repo to relax. The two most recent courses were each authored behind them, one after the
-other. The fourth: **hi-en — Hindi (L1) → English
+relaxations are still enforced by `tools/content-build.ts` itself, they simply have nothing in
+this repo to relax. (The test that built synthetic fixture rows and unverified modules and watched
+them be dropped went with the suite on 2026-08-30; the gate it covered did not.) The two most
+recent courses were each authored behind them, one after the other. The fourth: **hi-en — Hindi (L1) → English
 (L2)** entered as #267's manifest row with `fixture: true`, a 3 × 10 ladder
 (`content/hi-en/levels.json`) and a Hindi strings bundle, so until #273 a strict build reported
 `hi-en: 0 modules — fixture course, excluded by the gate` and did not emit the course, while a
@@ -302,10 +337,11 @@ L1-M3, L1-M4 and L1-M5** (14 + 25 + 15 word rows; the cumulative index now runs 
 → 108 surfaces, M1–M2's counts having moved by two because M5 extended M1's one `be` row with
 `was · were` in M1's own file, as the briefs require), flipped all three, and reviewed them in
 `docs/12-llm-review-hi-en-L1-M3-M5.md`. Both reviews are LLM reviews on the owner's authority,
-each ending in its open questions for a fluent-English pass; `src/course/hiEnAuthored.test.tsx`
-is the dev-build smoke over all five rungs (no browser runs on this host), and
-`tools/content-build.test.ts` pins which row every seam key (`be`, `to`, `do`, `the`, `have`,
-`in` / `on` / `at`, `get up`, `did`, …) lands on. **#272 authored L1-M6…M10** (Tomorrow, Where things are, Numbers & shopping,
+each ending in its open questions for a fluent-English pass. A dev-build smoke over all five rungs
+(no browser runs on this host) and a pin on which row every seam key (`be`, `to`, `do`, `the`,
+`have`, `in` / `on` / `at`, `get up`, `did`, …) lands on both ran at the time; both went with the
+suite on 2026-08-30, and the seams are now held only by the index the build emits.
+**#272 authored L1-M6…M10** (Tomorrow, Where things are, Numbers & shopping,
 Feelings & opinions, Connected talk — 16 + 17 + 17 + 16 + 13 word rows; the cumulative index now runs
 108 → 126 → 148 → 171 → 188 → **202** surfaces, `maxSpan` 3 for `in front of` / `Can I have`), flipped
 all five — **all ten L1 rungs are authored** — and reviewed them in
@@ -364,11 +400,11 @@ now resolve (`te gusta`/`le gusta`, `te gustan`/`le gustan`, `quiere`, `español
 resolve by landing on a row headed by a different word (`profesor`, `buenas tardes`, `hermano`), and
 M5's nine verb rows plus M10's three now carry their taught paradigms. **Additions only**: the
 en-es index grew 197 → **227** surfaces with 0 keys lost and 0 keys moved — every pre-existing
-surface still resolves to the same `{moduleId, sentenceId, wordIdx}`. `tools/content-build.test.ts`
-now sweeps every en-es variation line against its own module's index and pins the ten remaining
-misses (two proper nouns, four forward references, the four tokens of the three exemptions), so a
-new variation that resolves nowhere fails the suite. The reasoning, row by row, is
-`docs/14-llm-review-en-es-surfaces.md`.
+surface still resolves to the same `{moduleId, sentenceId, wordIdx}`. The sweep of every en-es
+variation line against its own module's index pinned the ten remaining misses at the time (two
+proper nouns, four forward references, the four tokens of the three exemptions); it was cut on
+2026-08-30, and `tools/shown-surfaces.test.ts` (#491) is what a new variation resolving nowhere
+fails today. The reasoning, row by row, is `docs/14-llm-review-en-es-surfaces.md`.
 
 **en-ar ships (#202, 2026-08-13) — the product has three courses, and one of them is a new
 script.** Ten L1 rungs authored against ten briefs (#198–#201), reviewed in `docs/07-llm-review-
@@ -398,11 +434,11 @@ exemptions: `marḥaban` (a sibling greeting sharing no word with its row — th
 out** — indexing it would hand its hyphen part `an` to M2 and steal M3-S03's own key, so it stays
 prose (module rule 5), with bare `ṣabāḥ` a forward reference that resolves from M4 on.
 **Additions only**: the en-ar index grew 275 → **283** surfaces with 0 keys lost and 0 keys moved.
-`tools/content-build.test.ts` now sweeps every en-ar variation line against its own module's index
-and pins the six remaining misses (two proper nouns, the two exemptions' four tokens), so a new
-variation that resolves nowhere fails the suite — which is what #287's third-variation pass
-inherits, with the four …-īn keys it wants already in the index. The reasoning, row by row, is
-`docs/16-llm-review-en-ar-surfaces.md`, and its 8 open questions join the 61 across the three
+The same sweep pinned en-ar's six remaining misses (two proper nouns, the two exemptions' four
+tokens), so a new variation that resolved nowhere failed the suite — which is what #287's
+third-variation pass inherited, with the four …-īn keys it wants already in the index. That sweep
+was cut on 2026-08-30; `tools/shown-surfaces.test.ts` (#491) is the standing ratchet. The
+reasoning, row by row, is `docs/16-llm-review-en-ar-surfaces.md`, and its 8 open questions join the 61 across the three
 earlier en-ar reviews.
 
 **hi-en ships (#273, 2026-08-24) — the fourth course, and the first whose L2 is English.** Ten L1 rungs authored against ten briefs (#269 — `tools/course-briefs.ts`,
@@ -493,10 +529,11 @@ multi-token surfaces, homograph owners). **#334 authored L1-M1 and L1-M2** (21 +
 **#336 L1-M6…M10** (13 + 17 + 13 + 11 + 12); the cumulative index runs 37 → 55 → 76 → 105 → 128 →
 161 → 185 → 207 → 223 → **245** surfaces, `maxSpan` 3 for `un po' di`, `un chilo di` and
 `a che ora`. Every sentence carries three variations and every module twelve pool items, authored
-in from the first rung rather than retrofitted (#288, #292). `src/course/enItAuthored.test.tsx` is
-the dev-build smoke over all ten rungs — no browser runs on this host — and
-`src/course/types.test.ts` walks every en-it display the way the resolver does, so an apostrophe
-surface with no word row behind it fails the suite by name.
+in from the first rung rather than retrofitted (#288, #292). A dev-build smoke over all ten rungs
+covered it at the time — no browser runs on this host — and it went with the render-level suite on
+2026-08-30. `src/course/types.test.ts` survives, and it is what pins the elision seam the index
+cannot: every en-it display must carry the straight apostrophe, since `src/engine/surface.ts` folds
+the curly one and `display` has to settle on one spelling.
 
 **en-it ships (#337, 2026-08-30) — the product has five courses.** Ten L1 rungs authored against
 ten briefs, reviewed in `docs/28-llm-review-en-it-L1-M1-M2.md`,
@@ -731,8 +768,10 @@ blank screen for the learner, not an English word.
 
 The list lives in the **course layer** and the build imports it, not the other way round: the
 runtime is the side that must not break, and a `tools/` module the app bundle imports is how a
-second copy of the list gets born. `src/course/stringsKeys.test.ts` fails if either table is ever
-declared twice.
+second copy of the list gets born. The test that failed if either table was ever declared twice
+went with the suite on 2026-08-30; `STRINGS_PLACEHOLDERS` being `Record<StringsKey, …>` still makes
+a key added to one table and not the other a `tsc` failure, but nothing now checks for a second
+copy of the list itself.
 
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
 (`ritual.check.copy`), and reports four things, always naming course **and** key:
@@ -822,26 +861,25 @@ The app knows a manifest, not a language pair (PRD-engineering §8 F0). Boot ord
 
 Adding a course stays "a folder plus a manifest row": nothing in the shell names a course id.
 
-### Shell purity — the guard that keeps that true
+### Shell purity — the rule that keeps that true
 
-`src/shellPurity.test.ts` scans every shipped file under `src/` for a course's script — Devanagari
-(hi-mr) or Arabic (en-ar) — and fails naming file and line. Copy that got hardcoded is copy no
-course can translate, so the rule is mechanical rather than a review habit, and it counts comments
-too: a doc comment is where a pasted string waits before it becomes code. Script examples belong
-in tests, which the scan skips along with `src/test/` fixtures.
+No shipped file under `src/` may carry a course's script — Devanagari (hi-mr) or Arabic (en-ar).
+Copy that got hardcoded is copy no course can translate, and it counts comments too: a doc comment
+is where a pasted string waits before it becomes code. English shell furniture (the boot error
+copy, a Settings header) stays permitted — the rule is about course scripts, not about English.
 
-English shell furniture (the boot error copy, later a Settings header) stays permitted — the guard
-is about course scripts, not about English. The exemption list in that file is **empty**; the one
-entry anyone anticipates is the `/dev/type` font page (#85), and adding it will be a conscious
-line in that ticket's diff.
+**This was a scan over every shipped file, and the scan was deleted on 2026-08-30 (#370).** It is a
+review rule now, with nothing failing a run when it is broken. Restoring it is a `tools/` job, the
+shape `tools/css-classes.ts` uses — read the shipped tree, name the file and line — and it is not
+open work today.
 
 ### The silence guard — the app plays nothing and records nothing
 
-`src/silence.test.ts` is the same shape of scan for invariant **[D1]** ("the app plays no audio,
-records nothing", PRD-engineering §1): no shipped file under `src/` may name a sound API —
-playback (`Audio` and its contexts, `<audio>`, `<video>`), synthesis (`speechSynthesis`,
-`SpeechSynthesisUtterance`) or capture (`MediaRecorder`, `getUserMedia`) — and a violation fails
-naming file, line and API.
+Invariant **[D1]** ("the app plays no audio, records nothing", PRD-engineering §1) is the same
+shape of rule: no shipped file under `src/` may name a sound API — playback (`Audio` and its
+contexts, `<audio>`, `<video>`), synthesis (`speechSynthesis`, `SpeechSynthesisUtterance`) or
+capture (`MediaRecorder`, `getUserMedia`). The scan that enforced it, naming file, line and API,
+was deleted alongside the shell-purity one on 2026-08-30.
 
 It landed with the **Read phase** (#97, retired by #388) because that phase was where the
 temptation landed: it asked the learner to say the sentence out loud, and the obvious "help" is a
@@ -869,9 +907,9 @@ date in the whole document is `passedAt` on a passed module.
 - `src/state/types.ts` — the shape, plus `STATE_VERSION`. Nothing else declares it.
 - `src/state/clock.ts` — `Clock = () => string` and `systemClock`, **the only place in the app
   that constructs a date**. Actions that need a stamp take a `Clock` and default to it, so the
-  engine stays pure and testable without fake timers. `clock.test.ts` scans every shipped file
-  under `src/` and fails naming the file and line that reached for the wall clock — the same
-  mechanical guard as shell purity, for the same reason.
+  engine stays pure and testable without fake timers. A scan over every shipped file under `src/`
+  used to name the file and line that reached for the wall clock — the same mechanical guard as
+  shell purity, and gone with it on 2026-08-30.
 - `src/state/store.ts` — `useAppStore`, persisted with `version: 6` and a wired `migrate` stub
   (its doc comment is the contract for the real v5 → v6 wrap, which ships with export/import in
   P4). It stays **thin, and free of rules**: `ensureCourse` (idempotent — an existing course
@@ -916,12 +954,14 @@ handed all refuse and write nothing — and it stamps `passedAt` from the inject
 `markStudied` marks, and cannot unlock: reading every module in the ladder leaves every status
 exactly where it was.
 
-`src/state/unlockPath.test.ts` is that promise's mechanical half, in three parts: it slices every
-action out of `store.ts` **by name** and fails if more than one contains a write to `modules`; it
-*calls* every action against a course with a passed rung and fails if any but `passRitual` changes
-the map (the call table is asserted to cover the store's whole action surface, so a new action
-cannot skip the check by being new); and it scans every shipped file for a `setState` call, because
-an action list is not a gate if a screen can write past it.
+That promise had a mechanical half — a file that sliced every action out of `store.ts` **by name**
+and failed if more than one wrote `modules`, called every action against a course with a passed rung
+and failed if any but `passRitual` changed the map, and scanned every shipped file for a `setState`
+call, because an action list is not a gate if a screen can write past it. It was deleted on
+2026-08-30 (#370). What survives is `src/state/store.test.ts`, which tests `passRitual`'s
+**behaviour** — it passes the current rung, stamps it from the clock, and refuses a rung further up,
+an already-passed module and a sealed level. That is the promise checked from the outside; nothing
+now stops a *second* action from growing a write to `modules`.
 
 ### The production counters — the one number that opens the exit ritual
 
@@ -948,13 +988,16 @@ a learner who did nothing wrong — and undo is not missing by oversight, becaus
 Next rather than on the tap ([D11]), which is where a mis-tap is corrected. A count above two is
 kept as it is: two is what the ritual asks for, not a cap on practice.
 
-`src/state/productionCounters.test.ts` is that promise's mechanical half, in the same three parts as
-`unlockPath.test.ts`: it slices every action out of `store.ts` **by name** and fails if more than one
-writes `production`, then reads that one for any arithmetic that could lower a counter (`--`, `-=`,
-a subtraction, a reset, a `delete`, even a careful `Math.max(0, …)` floor); it *calls* every action
-the store exposes against a seeded counter — twice through, so a refusal is covered too — and fails
-if any of them moves it, or moves it down; and it scans every shipped file for a counter write
-outside the store. Introduce `Math.max(0, produced - 1)` in the action and thirteen tests go red.
+That promise had a mechanical half too, in the same three parts as the unlock path's: it sliced
+every action out of `store.ts` **by name** and failed if more than one wrote `production`, read that
+one for any arithmetic that could lower a counter (`--`, `-=`, a subtraction, a reset, a `delete`,
+even a careful `Math.max(0, …)` floor), called every action against a seeded counter and failed if
+any moved it down, and scanned every shipped file for a counter write outside the store. It was
+deleted on 2026-08-30 (#370). `src/state/store.test.ts`'s `recordProduction` block survives and
+checks the counting behaviour — one got-it, then two on the same sentence, and the engine turning
+that into `exit_available`. Introduce `Math.max(0, produced - 1)` in the action and **three** tests
+go red, where thirteen once did; the "only one action writes it, and no screen writes past it" half
+is review only now.
 
 **Routing (PRD-engineering §8 F4): only Produce got-its count.** A Review-phase mark feeds the
 Leitner queue (`applyMark` — a box and a countdown) and never these counters; they are different
@@ -1025,25 +1068,27 @@ that snapshot is lossless resume (#99, further below), and the ✕ is one of the
 scrolls; `<main>` is the one scroll area, `overflow-y: auto; overflow-x: hidden;
 overscroll-behavior: contain`. Every safe area is written `max(var(--space-N),
 env(safe-area-inset-*))` — a phone gets its real inset, and a desktop browser, where every inset
-is 0, still gets the design's padding. `src/shell/layout.test.ts` pins both from the CSS source,
-because jsdom resolves neither `env()` nor `max()`; the numbers themselves are checked in a
-browser at 360px and 430px, which is the ticket's acceptance criterion.
+is 0, still gets the design's padding. Both were pinned from the CSS source, because jsdom resolves
+neither `env()` nor `max()`; that file was deleted on 2026-08-30 (#370) and nothing pins them now.
+The numbers themselves were checked in a browser at 360px and 430px, which was the ticket's
+acceptance criterion.
 
 Two rules the scaffold bakes in, before you write a component:
 
 - **Tokens only.** `src/main.tsx` imports `design/tokens.css` *in place* — `design/`
   is read-only and re-copied wholesale, so importing it directly means token updates
   land with zero copy step. Style with `var(--*)`; no hard-coded hex, px or font names
-  anywhere in `src/` (`docs/design-contract.md`) — `src/styleContract.test.ts` scans every
-  stylesheet the app ships and fails naming the file and line, the same mechanical shape as
-  shell purity and the clock guard.
+  anywhere in `src/` (`docs/design-contract.md`). A scan over every shipped stylesheet used to fail
+  naming the file and line, the same mechanical shape as shell purity and the clock guard; it went
+  on 2026-08-30 (#370), so this is a review rule. The one styling check that does run is
+  `tools/css-classes.test.ts` (#496), and it looks at class-name collisions, not at tokens.
 - **One brand constant.** `src/brand.ts` exports `BRAND` — the only place the product
   name lives. Page title, manifest and export filenames all read from it.
 - **Content has a contract.** `content/schema/module.schema.json` (JSON Schema draft
   2020-12) is the frozen shape of a module; `tools/validate.ts` adds the checks a schema
   cannot express (filename ↔ id, the 10-sentence / pool ≥ 6 budget and its `fixture: true`
   relaxation, full enrichment for M1–M3, rule-index ranges). Run `npm run content:validate`
-  before opening any content PR — one line per file, then `CONTENT <n>/<m> ok`.
+  before committing any content change — one line per file, then `CONTENT <n>/<m> ok`.
 - **Content ships through a gate.** `tools/content-build.ts` runs that validator over every
   module and emits `public/content/` — see the gate table above. Never import from `content/`
   in `src/`: the app reads `public/content/` (via `fetch`), which is the only tree the gate
@@ -1074,15 +1119,16 @@ Three things it is responsible for keeping true:
 
 - **A locked rung is not a control.** No link, no button, no `tabindex` — the row is text, a
   hollow marker and a lock at 50% opacity. "The ladder is visible; the rungs are sealed"
-  (PRD-design §3.2) is a DOM fact, asserted per rung in `LadderScreen.test.tsx`, not a CSS one:
-  `pointer-events: none` would still leave a link for a screen reader to offer.
+  (PRD-design §3.2) is a DOM fact, not a CSS one: `pointer-events: none` would still leave a link
+  for a screen reader to offer. It was asserted per rung by the Ladder's render test, which went
+  with the render-level suite on 2026-08-30 (#362–#365).
 - **A sealed level answers honestly, in counts.** Only sealed cells are `<button>`s (the active
   cell is the screen you are on; a control with nothing to do is not one), and tapping one raises
   the shared toast (`src/shell/Toast.tsx` — the timer is the control, the region is always mounted
   so a screen reader hears the change, and #106's course-switch toast reuses both) with the sealed
   level and how many rungs below it remain.
 - **Counts, never time.** No `%`, no date, no streak, no "due" — asserted over the rendered screen
-  in both a fresh and a mid-journey state.
+  in both a fresh and a mid-journey state, until that render test went on 2026-08-30.
 - **The one celebration is a moment, not a state.** A verdict hands the screen a one-shot flag and
   the newly opened rung plays the unlock beat once; the Ladder spends the flag as it lands, so a
   reload has nothing to replay and a revisit never carried one (#103, below).
@@ -1127,15 +1173,17 @@ screen derives from — so it moves when the facts do: `markStudied` on first mo
 is stored, and it holds no state of its own.
 
 **The stage guides; it never gates** (the invariant, PRD-design §6.2). The bottom nav's Practice
-tab is untouched at every stage — asserted per stage in `LadderScreen.test.tsx` — three of the
-four stages offer Practice from the card itself, and no stage locks a route. The primary is the
+tab is untouched at every stage — asserted per stage until the render-level suite went on
+2026-08-30 — three of the four stages offer Practice from the card itself, and no stage locks a
+route. The primary is the
 one **filled** object in the whole view (`--cta-height` 48px, solid accent); secondaries are
 `--btn-secondary-height`, ghosts `--ghost-height` and always `white-space: nowrap`
 (design/tokens.md §3, §4).
 
 Every label is the course's (`strings.json` — the seven `rungCard.*` keys above), so the card
-carries no learner-facing English of its own; `ladder/RungCard.test.tsx` renders all four stages
-and fails if the prototype's wording reaches the screen. The card's title is deliberately **not**
+carries no learner-facing English of its own. The render test that walked all four stages and
+failed if the prototype's wording reached the screen went on 2026-08-30, so that one is review too.
+The card's title is deliberately **not**
 a link any more: the primary CTA is the way into a rung, and a `pending` rung has no module to
 open at all.
 
@@ -1151,7 +1199,7 @@ Two more divergences from the prototype, on top of the Ladder's:
 
 `src/screens/ModuleScreen.tsx` (#88; PRD-design §6.4, PRD §8 F2) is a rung's ten sentences,
 browsable and quiet: nothing to answer, nothing to get wrong, no control that judges anything.
-Four things it owes, and each is a test:
+Four things it owes. Each was a test until the render-level suite went on 2026-08-30:
 
 - **A guard.** `/module/:id` is a real deep link — HashRouter, installable PWA — so any id can
   arrive. A locked rung, an id the ladder does not list, and a rung whose module this build never
@@ -1159,8 +1207,9 @@ Four things it owes, and each is a test:
   That is the same answer the rung card gives by having no link to offer.
 - **`markStudied`, once, on first open.** The `studied` flag is what flips the rung card behind it
   from "Start with the module" to "Practice" [D22], so *opening this screen* is what moves the
-  Ladder. It is idempotent in the store, which is what lets an effect fire it; the test proves the
-  call count is 1 across re-renders, and that reading a rung passes nothing (Invariant 1).
+  Ladder. It is idempotent in the store, which is what lets an effect fire it; the test proved the
+  call count was 1 across re-renders, and that reading a rung passes nothing (Invariant 1) — which
+  `src/state/store.test.ts`'s `markStudied` block still checks from the store's side.
 - **Rows, each a door into Sentence Detail.** A row is the L2 `display`, its `cue` (+ the quiet
   `script` line in romanized courses), its production dot and a chevron — hairline-separated, not
   framed (#403: ten registration-marks plates in a column were ten things each claiming to be the
@@ -1192,8 +1241,8 @@ Three divergences from the prototype, on top of the Ladder's and the card's:
   call PR #139 made for the rung card's pair.
 
 The one place the app overrides a font shorthand's family is the quiet script line, which takes
-`--font-script-fallback` (design/tokens.md §2) — so `src/styleContract.test.ts` bans a face by
-*name* and allows `font-family: var(--…)`, which is the opposite of one.
+`--font-script-fallback` (design/tokens.md §2) — which is why the deleted style scan banned a face
+by *name* and allowed `font-family: var(--…)`, that being the opposite of one.
 
 ### Sentence Detail — two tiers, one order each, and the mnemonic last
 
@@ -1294,7 +1343,8 @@ whole product is built around, and it runs in one direction:
 | `revealed` | the L2 `display` (+ the quiet `script` line in romanized courses), the "why" slot, the question, and the self-mark — **no Next** | [revealed](docs/images/reveal-revealed-360.png) · [romanized](docs/images/reveal-romanized-360.png) |
 | `marked` | Next, entering over `--motion-next-appear` the moment a mark exists | [marked](docs/images/reveal-marked-360.png) |
 
-Four things it promises, and each is a test (`RevealCard.test.tsx`, `SelfMark.test.tsx`):
+Four things it promises. Each was a test until the render-level suite went on 2026-08-30
+(#362–#365); the assertions are recorded here because the code still has to honour them:
 
 - **Next is HIDDEN, not disabled** [D11]. A disabled Next is the app telling the learner what it
   is waiting for; an absent one leaves the mark as the only thing on screen to do. It is not in
@@ -1304,7 +1354,8 @@ Four things it promises, and each is a test (`RevealCard.test.tsx`, `SelfMark.te
   default: the mark is the learner's honest act, and lighting a segment before they touched it
   would be the app answering for them. Unselected is transparent with inherited ink; selected
   fills `--mark-got-bg` / `--mark-miss-bg` with `--mark-fg` (design/tokens.md §6) — green and red
-  exist here and in no other component, which the stylesheet test enforces selector by selector.
+  exist here and in no other component — enforced selector by selector by the stylesheet test, until
+  that went too.
 - **No input element anywhere in the tree**, in any of the three states (Invariant 6). The recall
   happens in the learner's head, mouth or notebook — the dashed `--border-dashed-world` plate is
   the app saying exactly that — so the design system's own segmented control (a `<label>` around a
@@ -1314,8 +1365,9 @@ Four things it promises, and each is a test (`RevealCard.test.tsx`, `SelfMark.te
   the parent decides what that costs — `applyMark` for a Review mark, `recordProduction` for a
   Produce one (#95), routed by the session machine (#96). The mark commits on Next, not on the tap,
   so a learner who marks
-  "missed", thinks again and marks "got it" sends one result: the one they meant. A test reads both
-  source files and fails on `useAppStore`, `localStorage` or `sessionStorage`.
+  "missed", thinks again and marks "got it" sends one result: the one they meant. A test used to
+  read both source files and fail on `useAppStore`, `localStorage` or `sessionStorage`; it is one of
+  the twenty that went on 2026-08-30.
 
 The card holds its state keyed by `sentenceId`, so a new sentence is a new card whatever the
 parent does about keys — the one failure worth ruling out is the next cue arriving with the last
@@ -1480,14 +1532,14 @@ over ~25 minutes on a 1s linear width transition, and then stopping.
 - **It is ambience, not a readout.** The node holds no text in any state, is `aria-hidden`, and has
   no live region — nothing announces or displays how long has passed, how long is left, or how long
   a session should be. A bar you can *read* is a session with a target, and a target is a calendar
-  with one day in it (Invariant 2). The test asserts `textContent === ''` after 13 and after 53
-  simulated minutes.
-- **`performance.now()`, and no date anywhere.** `src/state/clock.test.ts` fails on a date
-  constructed outside `clock.ts`, and this component keeps that guard whole rather than asking for
-  an exemption: it reads a **duration** off the monotonic timer — milliseconds since a moment
-  inside this session — which cannot answer what day it is and does not move for a clock change, a
-  timezone or a DST hop. The guard's own doc comment now carries that argument, and the scanner has
-  a test proving `performance.now()` is not a violation. Neither pattern was removed.
+  with one day in it (Invariant 2). Its test asserted `textContent === ''` after 13 and after 53
+  simulated minutes, and went with the render-level suite on 2026-08-30.
+- **`performance.now()`, and no date anywhere.** The clock scan failed on a date constructed
+  outside `clock.ts`, and this component kept that guard whole rather than asking for an exemption:
+  it reads a **duration** off the monotonic timer — milliseconds since a moment inside this session
+  — which cannot answer what day it is and does not move for a clock change, a timezone or a DST
+  hop. That argument outlives the scan, which went on 2026-08-30 along with the case proving
+  `performance.now()` was not a violation.
 - **Session-relative, never persisted.** The origin lives in a ref; state v6 carries no timestamp
   but `passedAt`, and the export contract is unchanged. Closing the app does not resume a
   stopwatch — the next session's bar starts empty, which is honest: the tick is about the sitting,
@@ -1538,8 +1590,9 @@ text anywhere** in this app — no inputs at all (Invariant 6) — so the snapsh
 - **A resume is not a session.** Continue restores the index and the queue and calls
   `startSession` *not at all* — no second `sessionCount`, no second `tickSession`. Charging a
   learner a session for closing their tab, or bringing the whole review queue due twice on one
-  sitting's work, is what the single-caller contract (#96) exists to prevent, and a test walks
-  start → kill → resume → finish asserting `sessionCount === 1` and one tick throughout. **New
+  sitting's work, is what the single-caller contract (#96) exists to prevent. A test walked
+  start → kill → resume → finish asserting `sessionCount === 1` and one tick throughout; it went
+  with the suite on 2026-08-30, and the contract is a code rule now. **New
   session** is the quiet line under it: it drops the snapshot and spends a fresh one (2, and a
   second tick).
 - **The snapshot's queue IS the resumed plan, verbatim.** The cards were chosen against a queue
@@ -1709,16 +1762,17 @@ prototype pulls Mukta off Google Fonts; a PWA that works on a plane cannot
 (`design/pwa-checklist.md` §2). `vite.config.ts` strips the `.woff` fallback @fontsource writes
 beside each `.woff2`, so `dist/` carries woff2 only — the service worker precaches all of it.
 
-**`src/fonts.test.ts` is the guard.** A weight the ramp asks for and the bundle lacks is not an
-error: the browser synthesises the face and nobody is told. So the test reads the `--text-*`
-shorthands out of `design/tokens.css`, derives every (family, weight) the product renders, and
-fails naming any that `main.tsx` does not import. That is how Barlow Condensed **700** got
-bundled — `--text-brand` is the wordmark and it is 700.
+**The guard for that is gone, and this is the failure mode it covered.** A weight the ramp asks for
+and the bundle lacks is not an error: the browser synthesises the face and nobody is told. The test
+read the `--text-*` shorthands out of `design/tokens.css`, derived every (family, weight) the
+product renders, and failed naming any that `main.tsx` did not import — that is how Barlow
+Condensed **700** got bundled, `--text-brand` being the wordmark at 700. It was deleted on
+2026-08-30 (#370), so a missing weight now ships silently and is caught, if at all, by eye.
 
 **`#/dev/type`** is the font specimen: the Devanagari matrix at 18/22/26/32px × 400–700, the
 romanization diacritics, the kickers. It is **development only** — `src/dev/typeRoute.tsx`
 imports it dynamically inside an `import.meta.env.DEV` branch, so no chunk, no CSS and no
-Devanagari reaches `dist/` — and it is the single entry in `shellPurity.test.ts`'s allowlist.
+Devanagari reaches `dist/` — and it was the single entry in the shell-purity scan's allowlist.
 
 Findings, screenshots, the shipped byte count and the one real gap — the romanization's `ā ī ū ḥ
 ṣ ḍ ṭ ẓ ʾ ʿ` are outside Mukta's `unicode-range` and fall through to the system face, now that
@@ -1755,16 +1809,16 @@ worker skips waiting, claims the page and reloads it — this product never asks
 about versions — and `cleanupOutdatedCaches` deletes the previous build's precache on activate
 (the course caches are not precaches and survive it, which is the point).
 
-- **The manifest is the checklist.** `design/pwa-checklist.md` §3.1 prints the exact JSON, and
-  `tools/pwa.test.ts` **parses that block out of the checklist** and deep-equals it against what
-  the build ships. The name comes from `src/brand.ts`, both colours and `<meta name="theme-color">`
-  from `design/tokens.css` `--color-bg` (`tools/tokens.ts`) — a manifest cannot drift from the
-  app's own paper ground.
+- **The manifest is the checklist.** `design/pwa-checklist.md` §3.1 prints the exact JSON, and a
+  test parsed that block out of the checklist and deep-equalled it against what the build shipped —
+  deleted on 2026-08-30 (#370), so the two can now drift apart without a run going red. The name
+  comes from `src/brand.ts`, both colours and `<meta name="theme-color">` from `design/tokens.css`
+  `--color-bg` (`tools/tokens.ts`) — a manifest cannot drift from the app's own paper ground.
 - **The icons are the header mark, read not redrawn.** `tools/make-icons.ts` reads
   `src/shell/RailsMark.tsx`, lifts its five shapes, resolves `currentColor` and the accent token
   out of `design/tokens.css`, and rasterises 192 / 512 / maskable-512 / apple-touch-180 /
   favicon-32 onto the paper ground (`npm run icons:build`; PNGs committed). The maskable safe
-  zone is asserted as arithmetic, not eyeballed.
+  zone is arithmetic in `inkBox`, not eyeballed.
 - **`npm run dev` is untouched** — `devOptions.enabled: false`, so no worker is generated or
   served in development and HMR is never fighting a cache. The worker exists in `build` and
   `preview` only.
@@ -1786,8 +1840,9 @@ again.
 
 - **How it deploys:** every push to `main` runs `.github/workflows/deploy.yml` — `npm ci` →
   `VITE_BASE=/rung/ npm run build` → `upload-pages-artifact` → `deploy-pages`. Pages' source is
-  **GitHub Actions** (no `gh-pages` branch, nothing committed). CI runs beside it as the gate;
-  the deploy workflow publishes and does not re-verify.
+  **GitHub Actions** (no `gh-pages` branch, nothing committed). There is no CI workflow beside it —
+  `scripts/verify.sh`, run locally before the merge, is the gate; the deploy workflow publishes and
+  does not re-verify.
 - **How to redeploy:** Actions → **Deploy** → *Run workflow* (`workflow_dispatch`). Same commit,
   fresh artifact — no empty commit needed.
 - **The sub-path is a build input, not a constant.** A project site serves from `/rung/`, so
@@ -1796,17 +1851,19 @@ again.
   rewrite, and the manifest `id`/`start_url`/icons plus the worker's registration scope through
   `tools/pwa.ts`. Default is `/`, so `npm run dev` and `npm run preview` are unchanged. HashRouter
   keeps every route in the fragment, so there is no 404-rewrite to configure.
-- **The live site ships hi-mr L1-M1..M10, and nothing that has not been reviewed.** The deploy
+- **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. The ten L1 modules now carry
-  `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review — the
-  native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to make
-  the demo look fuller would still be lying to the one person this is for.
+  content" boot screen, because no module had cleared the gate. Nine courses now ship — hi-mr 30
+  modules, en-es / en-ar / hi-en 20 each, en-ru / en-it / en-fr / en-de / en-ko 10 each — every one
+  carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
+  The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
+  make the demo look fuller would still be lying to the one person this is for.
 
 ## How work happens
 
-- Every change is a **GitHub issue**; one PR per issue; PR title references the
-  issue; **squash-merge**; `main` is always deployable.
+- Every change is a **GitHub issue**, worked on a short-lived branch off `main` and merged straight
+  into it — **no pull requests**. The commit message carries `Closes #<N>`, so the issue closes when
+  the commit lands. Delete the branch after merging; `main` is always deployable.
 - Issues live in milestones **P0–P5** (+ **Design follow-ups**, Rishabh). Labels:
   one `epic:*` + `type:*` + `phase:*` per issue (see design/github-issues-checklist.md).
 - **Picking your next ticket:** open issues in the lowest unfinished milestone
@@ -1818,7 +1875,8 @@ again.
 
 ## Quick facts
 
-- Stack: Vite + React + TypeScript PWA; all state in `localStorage`; content is
-  static, native-speaker-verified JSON. Details and rationale: `docs/01-plan.md`.
+- Stack: Vite + React + TypeScript PWA; all state in `localStorage`; content is static JSON,
+  LLM-reviewed on the owner's authority — the native-speaker gate is a stricter bar and is unmet.
+  Details and rationale: `docs/01-plan.md`.
 - The app only ever gives deterministic, pre-authored feedback (Invariant 4).
   Novel sentences are verified by humans via a designed copy-paste hand-off.

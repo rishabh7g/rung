@@ -14,8 +14,9 @@
  *
  * Two tables, welded together by the type system: `STRINGS_KEYS` is the list, and
  * `STRINGS_PLACEHOLDERS` is `Record<StringsKey, …>`, so a key added to one without the other
- * fails `tsc`. Nothing else in the repo may hold a second copy of either —
- * `stringsKeys.test.ts` proves there is exactly one declaration of each.
+ * fails `tsc`. Nothing else in the repo may hold a second copy of either. The test that proved
+ * exactly one declaration of each existed went with the suite on 2026-08-30 (#370); the rule holds
+ * by `tsc` and by review, not by a test.
  *
  * Keys are DOT-PATHS into a nested object: `ritual.stepTitle.check` is the path to
  * `{"ritual":{"stepTitle":{"check":…}}}`, which is how the authored files are written. The checker
