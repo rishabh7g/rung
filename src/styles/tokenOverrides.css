@@ -100,7 +100,7 @@
   /* Content column measure: the house UI standard caps the content column at a 720px reading
      measure from 1024px up, centred — roughly 75 characters at 16px. Below 1024px the content
      stays fluid; the cap applies only inside the min-width: 1024px query where it is used
-     (AppShell.module.css `.screen > *`). docs/design-contract.md "Content column measure" (#248). */
+     (app-shell.css `.screen > *`). docs/design-contract.md "Content column measure" (#248). */
   --content-max: 720px;
 
   /* Left rail: the width the bottom bar becomes at >=768px, icon + label, in place of the

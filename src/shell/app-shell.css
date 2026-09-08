@@ -5,7 +5,7 @@
    (design/pwa-checklist.md §2). The bottom bar is the other case and adds its inset instead
    (BottomNav.module.css, #265) — max there discarded the design token on iOS. */
 
-.app {
+.shell-app {
   /* 100dvh, never 100vh: a mobile URL bar shrinks the viewport and 100vh does not notice
      (design/pwa-checklist.md §2). The 100% line ahead of it is the fallback for engines with
      no dvh — the html/body/#root chain is 100% tall. */
@@ -17,7 +17,7 @@
   overflow: hidden;
 }
 
-.header {
+.shell-header {
   flex: none;
   display: flex;
   align-items: center;
@@ -28,13 +28,12 @@
 }
 
 /* During a session the chrome is gone — the safe area is not. */
-.headerImmersive {
-  composes: header;
+.shell-header-immersive {
   border-bottom: none;
 }
 
 /* The brand lockup: mark + lowercase wordmark, --font-heading at the brand size. */
-.brand {
+.shell-brand {
   margin: 0;
   display: flex;
   align-items: center;
@@ -43,19 +42,19 @@
   color: var(--color-text);
 }
 
-.mark {
+.shell-mark {
   flex: none;
   width: var(--brand-mark);
   height: var(--brand-mark);
 }
 
-.screenTitle {
+.shell-screen-title {
   margin: 0;
   min-width: 0;
   font: var(--text-screen-title);
 }
 
-.iconButton {
+.shell-icon-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -73,19 +72,17 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.back {
-  composes: iconButton;
+.shell-back {
   /* pull the chevron's box back to the header's edge, leaving the target its full size */
   margin-left: calc(-1 * var(--space-3));
 }
 
-.pause {
-  composes: iconButton;
+.shell-pause {
   /* top right, and the only thing in the row */
   margin-left: auto;
 }
 
-.icon {
+.shell-icon {
   width: var(--icon-ui);
   height: var(--icon-ui);
   stroke-width: var(--icon-stroke);
@@ -95,7 +92,7 @@
    mobile — same visual order as before the wrapper existed, `<main>` above the bottom bar.
    `row-reverse` at >=768px puts the SECOND DOM child (the nav) at the main-start (the left),
    without reordering `<main>` and `<BottomNav>` in the markup. */
-.body {
+.shell-body {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -105,26 +102,25 @@
 /* Inside a rung the bar is gone on a phone (BottomNav.module.css), and the home indicator's strip
    goes with it — so the column takes the inset the bar was carrying (#265). It is padding on the
    flex parent rather than on the scroll area, because what needs lifting is the screen's sticky
-   footer: a sticky element's bottom is the SCROLLPORT's edge, which padding on `.screen` would not
+   footer: a sticky element's bottom is the SCROLLPORT's edge, which padding on `.shell-screen` would not
    move. */
-.bodyInsideRung {
-  composes: body;
+.shell-body-inside-rung {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 @media (min-width: 768px) {
-  .body {
+  .shell-body {
     flex-direction: row-reverse;
   }
 
   /* The rail is still there at this width, and carrying its own inset. */
-  .bodyInsideRung {
+  .shell-body-inside-rung {
     padding-bottom: 0;
   }
 }
 
 /* The one scroll area: every screen scrolls its own column (design/pwa-checklist.md §1). */
-.screen {
+.shell-screen {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
@@ -134,10 +130,10 @@
 }
 
 /* From 1024px up, cap the content column at the reading measure and centre it — the scroll area
-   itself (.screen, above) stays full width, so the scrollbar sits at the window edge. Below
+   itself (.shell-screen, above) stays full width, so the scrollbar sits at the window edge. Below
    1024px the content stays fluid; the cap applies only in this query, one direction. */
 @media (min-width: 1024px) {
-  .screen > * {
+  .shell-screen > * {
     max-width: var(--content-max);
     margin-inline: auto;
   }

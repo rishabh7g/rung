@@ -162,7 +162,7 @@ own inset added underneath. The house UI standard's figure is a 65px bar; `--spa
 `design/tokens.css`, so it computes ~1px under. Immaterial, and rule 1 above decides it: **use
 the token, never a raw px.**
 
-**The header is the other case and does not change.** `AppShell.module.css` keeps
+**The header is the other case and does not change.** `app-shell.css` keeps
 `padding-top: max(var(--space-3), env(safe-area-inset-top))`: nothing sits above the header, so
 the notch's strip genuinely does substitute for its top padding.
 
@@ -275,7 +275,7 @@ full window, a line of body text running the whole width of a laptop screen. The
 (`rrish-learning-base/playbooks/ui-baseline.md` §3, §11, §16) caps it at a 720px reading measure,
 centred, from 1024px up; below that the content stays fluid.
 
-`src/styles/tokenOverrides.css` defines `--content-max: 720px`. `src/shell/AppShell.module.css`
+`src/styles/tokenOverrides.css` defines `--content-max: 720px`. `src/shell/app-shell.css`
 applies it inside `@media (min-width: 1024px) { .screen > * { max-width: var(--content-max);
 margin-inline: auto; } }` — one direction, and on the content INSIDE the scroll area (`.screen`),
 not on `.screen` itself, so the scroll area stays full width and the scrollbar sits at the window

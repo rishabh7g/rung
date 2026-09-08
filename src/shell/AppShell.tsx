@@ -44,7 +44,7 @@ import { RailsMark } from './RailsMark.tsx';
 import { useImmersive } from './immersive.tsx';
 import { PRACTICE_PATH, backTarget, matchShellRoute } from './routes.tsx';
 import { ScrollAreaContext } from './scrollArea.tsx';
-import styles from './AppShell.module.css';
+import './app-shell.css';
 
 export function AppShell() {
   const { immersive, exitSession } = useImmersive();
@@ -76,32 +76,32 @@ export function AppShell() {
   }
 
   return (
-    <div className={styles.app}>
-      <header className={immersive ? styles.headerImmersive : styles.header}>
+    <div className="shell-app">
+      <header className={immersive ? 'shell-header-immersive shell-header' : 'shell-header'}>
         {immersive ? (
           <button
             type="button"
-            className={styles.pause}
+            className="shell-pause shell-icon-button"
             onClick={pauseSession}
             aria-label={strings['a11y.pauseSession']}
           >
-            <X className={styles.icon} />
+            <X className="shell-icon" />
           </button>
         ) : route?.chrome === 'back' ? (
           <>
             <button
               type="button"
-              className={styles.back}
+              className="shell-back shell-icon-button"
               onClick={() => void navigate(back.path)}
               aria-label={back.label}
             >
-              <ChevronLeft className={styles.icon} />
+              <ChevronLeft className="shell-icon" />
             </button>
-            <h1 className={styles.screenTitle}>{route.label}</h1>
+            <h1 className="shell-screen-title">{route.label}</h1>
           </>
         ) : (
-          <h1 className={styles.brand}>
-            <RailsMark className={styles.mark} />
+          <h1 className="shell-brand">
+            <RailsMark className="shell-mark" />
             {BRAND}
           </h1>
         )}
@@ -114,8 +114,8 @@ export function AppShell() {
           hidden, the column below the header takes that inset instead — otherwise the sentence
           pager, which is sticky at the bottom of its own scroll area and has no inset of its own,
           would sit under the home indicator on exactly the screens this hides the bar on. */}
-      <div className={insideRung ? styles.bodyInsideRung : styles.body}>
-        <main className={styles.screen} ref={setScreen}>
+      <div className={insideRung ? 'shell-body-inside-rung shell-body' : 'shell-body'}>
+        <main className="shell-screen" ref={setScreen}>
           <ScrollAreaContext.Provider value={screen}>
             <Outlet />
           </ScrollAreaContext.Provider>
