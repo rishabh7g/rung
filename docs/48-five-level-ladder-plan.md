@@ -91,7 +91,7 @@ invent 25 words. That is the dangerous one, because it does not error.
   runs to the cell's right edge, eating the inline padding — legible, flush, not clipped
   (`docs/images/ladder-five-levels-360.png`). At 430 px it is comfortable
   (`…-430.png`). The active cell (label plus ten squares) is narrower than a sealed one.
-- Optional polish, one line in `LevelStrip.module.css`: cell padding `--space-3` → `--space-2`, or
+- Optional polish, one line in `level-strip.css`: cell padding `--space-3` → `--space-2`, or
   the head's gap. hi-mr and hi-en print `Level n` in mixed case, which is narrower still.
 - Everything else derives from the list: `currentRungId`, `levelSealed` (cascades: L3–L5 sealed
   while L2 is), the sealed toast's `{remaining}` (counts every unpassed rung below), the position

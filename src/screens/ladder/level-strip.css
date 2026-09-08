@@ -2,12 +2,12 @@
    design/tokens.md §6 "Level strip cell": active = 2px top bar --color-accent, label
    --color-accent-700; sealed = no bar, label --color-neutral-600 + lock icon. */
 
-.strip {
+.level-strip {
   display: flex;
   border-bottom: var(--border-hairline);
 }
 
-.cell {
+.level-cell {
   flex: 1;
   min-width: 0;
   /* A cell is a control when it is sealed, so every cell clears the WCAG floor. */
@@ -34,25 +34,24 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.cell + .cell {
+.level-cell + .level-cell {
   border-left: var(--border-hairline);
 }
 
 /* "You are here": the 2px accent bar. --tick-height is the design package's only 2px length —
    the contract forbids writing the number, and a --level-bar-h token would have to come from
    design/tokens.css, which is read-only here (docs/design-contract.md). Flagged in #86's PR. */
-.cellActive {
-  composes: cell;
+.level-cell-active {
   border-top-color: var(--color-accent);
 }
 
-.head {
+.level-head {
   display: flex;
   align-items: center;
   gap: var(--space-1);
 }
 
-.label {
+.level-label {
   font: var(--text-kicker-sm);
   letter-spacing: var(--kicker-tracking);
   text-transform: uppercase;
@@ -60,12 +59,11 @@
   color: var(--color-accent-700);
 }
 
-.labelSealed {
-  composes: label;
+.level-label-sealed {
   color: var(--color-neutral-600);
 }
 
-.lock {
+.level-lock {
   flex: none;
   width: var(--icon-inline);
   height: var(--icon-inline);
@@ -75,33 +73,29 @@
 
 /* Under the label, across the chip — the level's rungs at a glance. A sealed chip renders none
    (see the component): its lock is the whole of what it has to say. */
-.squares {
+.level-squares {
   display: flex;
   gap: var(--space-1);
   align-self: stretch;
 }
 
-.square {
+.level-square {
   flex: 1;
   height: var(--level-square-h);
 }
 
-.squarePassed {
-  composes: square;
+.level-square-passed {
   background: var(--dot-done);
 }
 
-.squareCurrent {
-  composes: square;
+.level-square-current {
   background: var(--level-current);
 }
 
-.squarePending {
-  composes: square;
+.level-square-pending {
   background: var(--dot-pending);
 }
 
-.squareSealed {
-  composes: square;
+.level-square-sealed {
   background: var(--level-sealed);
 }

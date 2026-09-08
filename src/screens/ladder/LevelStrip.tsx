@@ -32,7 +32,7 @@
 import { Lock } from 'lucide-react';
 import { interpolate, useStrings } from '../../course/strings.ts';
 import './unlock-beat.css';
-import styles from './LevelStrip.module.css';
+import './level-strip.css';
 
 /** What one mini square says about one rung. Ten per cell, in ladder order. */
 export type SquareState = 'passed' | 'current' | 'pending' | 'sealed';
@@ -62,20 +62,20 @@ export function LevelStrip({ cells, onSealedTap }: LevelStripProps) {
   const strings = useStrings();
 
   return (
-    <div className={styles.strip}>
+    <div className="level-strip">
       {cells.map((cell) => {
         const body = (
           <>
-            <span className={styles.head}>
-              <span className={cell.sealed ? styles.labelSealed : styles.label}>
+            <span className="level-head">
+              <span className={cell.sealed ? 'level-label-sealed level-label' : 'level-label'}>
                 {interpolate(strings['levelStrip.level'], { level: cell.level })}
               </span>
-              {cell.sealed && <Lock className={styles.lock} aria-hidden="true" />}
+              {cell.sealed && <Lock className="level-lock" aria-hidden="true" />}
             </span>
             {/* A sealed level draws no squares: ten identical greyed boxes said nothing the
                 lock does not, and they were most of the strip's height (#398). */}
             {!cell.sealed && (
-              <span className={styles.squares}>
+              <span className="level-squares">
                 {cell.squares.map((square, index) => (
                   <span key={index} className={SQUARE_CLASS[square]} />
                 ))}
@@ -85,7 +85,7 @@ export function LevelStrip({ cells, onSealedTap }: LevelStripProps) {
         );
 
         const className = [
-          cell.active ? styles.cellActive : styles.cell,
+          cell.active ? 'level-cell-active level-cell' : 'level-cell',
           cell.unsealed === true ? 'unlock-beat' : null,
         ]
           .filter(Boolean)
@@ -118,8 +118,8 @@ export function LevelStrip({ cells, onSealedTap }: LevelStripProps) {
 
 /** One composed class per square state — the CSS does the sharing (`composes: square`). */
 const SQUARE_CLASS: Readonly<Record<SquareState, string | undefined>> = {
-  passed: styles.squarePassed,
-  current: styles.squareCurrent,
-  pending: styles.squarePending,
-  sealed: styles.squareSealed,
+  passed: 'level-square-passed level-square',
+  current: 'level-square-current level-square',
+  pending: 'level-square-pending level-square',
+  sealed: 'level-square-sealed level-square',
 };
