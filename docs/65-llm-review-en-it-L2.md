@@ -92,3 +92,78 @@ Clean on both modules at first build. The en-it baseline stays at 17.
    black hair. Confirm.
 10. **`marito` and `moglie`** (M2-S08). The note says Italian has no ordinary equivalent of
     "partner". Confirm for current usage.
+
+## Wave 2 — L2-M3, L2-M4, L2-M5 (#448)
+
+Three rungs against the briefs of #430. The wave's spine is the elision policy: three separate
+modules turn on the fact that an apostrophe fuses two words into ONE index key.
+
+### The elision, three times
+
+- **`bell'uomo`** (M3-S04). The brief lists `bell'` as a fresh key, and it cannot be one: the
+  shortened `bello` fuses with its noun and the engine sees a single token, exactly as it does with
+  L1's `l'acqua` and `dov'è`. The row is `bell'uomo`, with a note saying there is no separate
+  `bell'` for anything to resolve through. `bel`, `bei` and `begli` are ordinary separate words and
+  do have their own rows.
+- **`l'angolo` and `l'autobus`** (M4-S05, M4-S06). Both are authored, and `autobus` is authored
+  separately beside `l'autobus` because the fused form does not answer for the bare one. Three
+  shapes of one noun end up in the module — `l'autobus` with the article, `autobus` bare after `in`,
+  `gli autobus` in the plural — and none is derivable from the others.
+- **`dell'acqua` and `un'altra`** (M5-S04, M5-S08). The partitive elides, and its fused form does not
+  answer for L1-M8's `l'acqua`; by the end of M5 the course holds `acqua`, `l'acqua`, `d'acqua` and
+  `dell'acqua` as four keys. `un'altra` carries the apostrophe and `un altro` does not, which is one
+  of the few places in Italian where the apostrophe records gender.
+
+### Seam corrections against the real index
+
+The M3 brief lists `bianco`, `verde`, `nero` and `lungo` among its fresh keys. All four were opened
+by L2-M2, which needed them for hair and eyes, so M3 teaches `rosso`, `giallo`, `blu`, `rosa` and
+`viola` and re-shows the rest. Nothing is lost: the `-co` fork is still demonstrated, on `sporco`
+against `amico`.
+
+### Where each module spends its budget
+
+M3 states the grid as a summary of what L1 already shipped — four cells for `-o`, two for `-e` — and
+refuses the shortcut that "-o is masculine": that is about nouns, and it is false there too. The
+invariable colours are its best fact, because they are nouns pressed into service and a noun keeps
+its shape. `bello`'s apocope is taught against the ARTICLE rather than against gender, which is the
+only framing that makes four shapes into one rule.
+
+M4 speaks the polite third person throughout and spends M1's frozen imperatives (`Giri`, `Prenda`,
+`Vada`). Transport takes `in` and walking takes `a`, given as a list rather than a principle because
+that is what it is. `Come si va…?` uses the impersonal `si`, free only because L1 authored
+`si chiama` as a whole phrase.
+
+M5 opens the clitics, and the index chooses which: `lo`, `li`, `mi` and `ti` are teachable because
+`la`, `le`, `i` and `gli` are already L1-M1's ARTICLES, and `mi` and `ti` are free only because L1
+wrote `mi chiamo`, `mi piace` and `ti chiami` whole. The placement rule — the clitic goes before the
+verb — is the reverse of English in every sentence it touches. The present tense doing the future's
+work (`Prendo un caffè`) is named here and pointed forward at M6.
+
+### The ratchet
+
+Four findings across the wave (`bell'uomo`, `io`, `buon`, `così`), each fixed by opening the row the
+module actually needed. The en-it baseline stays at 17.
+
+### Open questions for the native pass
+
+11. **The invariable colours** (M3-S02). Confirm `le case rosa` and `i libri blu` are what is said,
+    and that no speaker regularises them.
+12. **`bel` / `bell'` / `bei` / `begli`** (M3-S03, S04). Confirm the article-tracking rule holds
+    without exceptions a learner will meet, and that `begli occhi` is ordinary rather than literary.
+13. **`sporchi` against `amici`** (M3-S07). Confirm the fork really is unpredictable and that no
+    stress rule covers it for these two.
+14. **`Vada sempre dritto`** (M4-S03). Confirm `sempre` is near-compulsory in the phrase, and that
+    `diritto` and `dritto` are interchangeable here.
+15. **`a piedi`** (M4-S07). Confirm it is the only member of the transport set taking `a`.
+16. **`È lontano?`** (M4-S08). The module keeps `lontano` invariable as an adverb. Confirm a native
+    would not say `È lontana?` of a feminine subject.
+17. **`Come si va a…?`** (M4-S09). Confirm it beats `Come faccio ad arrivare a…?` in the street.
+18. **`Prendo il pesce`** (M5-S02). Confirm the present is what a waiter hears, and that `Prenderò`
+    would sound odd rather than merely formal.
+19. **`Lo prendo io`** (M5-S05). Confirm the trailing `io` reads as contrast rather than as
+    emphasis-for-its-own-sake.
+20. **`Sono a posto`** (M5-S07). Confirm it is current and not regional, and that `Basta così` is
+    the gentler of the two.
+21. **`della verdura`** (M5-S10). Confirm the singular is right where English is plural, and that
+    `delle verdure` would mean kinds rather than quantity.

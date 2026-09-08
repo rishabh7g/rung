@@ -379,6 +379,25 @@ before `L1-M7` and `dov'è` was checked against a set that did not yet teach it;
 sorts level-then-number. **The native gate is still unmet**: docs/65 ends in open questions 1–10, a
 fresh en-it L2 chain.
 
+**en-it reaches the middle of L2 (#448, 2026-09-08).** `L2-M3` _Describing things_, `L2-M4`
+_Getting around_ and `L2-M5` _Food and hosting_ ship against the same briefs; a strict
+`npm run build` emits `en-it: 15 modules (L1-M1..M10, L2-M1..M5)`. The wave's spine is **the elision
+policy**, which three separate modules turn on: an apostrophe fuses two words into one index key, so
+`bell'uomo` is a row and `bell'` cannot be one; `l'autobus` does not answer for `autobus` and both
+are authored; and by the end of M5 the course holds `acqua`, `l'acqua`, `d'acqua` and `dell'acqua`
+as four distinct keys. M3 states the adjective grid as a **summary of what L1 already shipped** —
+four cells for `-o`, two for `-e` — refuses the shortcut that "-o is masculine", and teaches
+`bello`'s apocope against the ARTICLE rather than the gender, which is the only framing that makes
+four shapes into one rule; its best fact is the invariable colours, which are nouns pressed into
+service and keep their own shape. M4 spends M1's frozen imperatives and gives transport as a list
+rather than a principle, because `in` for everything and `a` for feet is exactly that. M5 opens the
+clitics, and **the index chooses which**: `lo`, `li`, `mi` and `ti` are teachable only because
+`la`, `le`, `i` and `gli` are already L1-M1's articles and because L1 wrote `mi chiamo` and
+`ti chiami` as whole phrases. Four brief seams were corrected — `bianco`, `verde`, `nero` and
+`lungo` were opened by L2-M2 for hair and eyes, so M3 re-shows them and teaches the `-co` fork on
+`sporco` against `amico` instead. Four ratchet findings, all fixed by opening the row the module
+needed. **The native gate is still unmet**: docs/65 now ends in open questions 1–21.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

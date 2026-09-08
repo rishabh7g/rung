@@ -1,0 +1,709 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": [
+    "L2-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Per me + , + un/una + N",
+      "Prendo + il/la + N",
+      "Vorrei + del/della + N",
+      "Lo prendo / Li prendo",
+      "No + , + grazie + , + <reason>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PRESENT TENSE DOES THE FUTURE'S WORK. Prendo un caffè is \"I'll have a coffee\", said at the counter about the next thirty seconds — not Prenderò, which exists and would sound like a prediction. Italian uses the present for anything arranged or immediate, and M6 will use the same habit for plans."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PARTITIVE ARTICLE ARRIVES: del pane, della carne, dei libri — di fused with the article, meaning \"some\". L1 shipped di, d'acqua and un po' di and never combined them, so the fusion is the news and the meaning is already known. Each fused form is its own index key, and dell'acqua does not answer for L1-M8's l'acqua."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CLITIC GOES BEFORE THE VERB, where English puts the object after it: Il pane? Lo prendo. I libri? Li voglio. That is the whole placement rule at this level, and it is the reverse of the English order in every sentence it appears in."
+    },
+    {
+      "tag": "free",
+      "text": "Only some clitics are taught here, and the index decides which: lo, li, mi and ti are free words, while la, le, i and gli are already L1-M1's ARTICLES and could never be first-taught as pronouns. The feminine and indirect forms are named in prose and belong to L3. mi and ti are free at all because L1 taught mi chiamo, mi piace and ti chiami as whole phrases."
+    },
+    {
+      "tag": "interference",
+      "text": "REFUSING WITHOUT OFFENCE: an Italian host offers again, and a bare No is heard as an opening rather than as an answer. The refusal that lands adds a reason and a warm word — No, grazie, sono a posto · Basta così, grazie · Magari più tardi. Saying only No and expecting it to end the matter is what leaves a guest with a full plate."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "Per me un caffè, per favore",
+      "cue": "A coffee for me, please",
+      "literal": "For me a coffee, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "per me",
+            "cue": "for me",
+            "tag": "free",
+            "forms": [],
+            "note": "One whole thing, and the ordinary way to order at a table where several people are choosing. It needs no verb at all."
+          },
+          {
+            "display": "conto",
+            "cue": "the bill",
+            "tag": "free",
+            "forms": [
+              "conti"
+            ],
+            "note": "What you ask for at the end. Il conto, per favore is the complete sentence, and the waiter will not bring it unless you ask."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "There is no verb and none is needed. Per me un caffè is a complete order, and it is what Italians say when the table is ordering one after another.",
+      "sound": "per ME oon kaf-FE. Both stresses fall at the end, which is what makes it sound like a choice rather than a statement.",
+      "variations": [
+        {
+          "display": "Per me una pizza, per favore",
+          "cue": "A pizza for me, please",
+          "changed": "a feminine noun"
+        },
+        {
+          "display": "Il conto, per favore",
+          "cue": "The bill, please",
+          "changed": "the end of the meal"
+        },
+        {
+          "display": "Per me un caffè",
+          "cue": "A coffee for me",
+          "changed": "without per favore — normal at a bar"
+        }
+      ],
+      "mistake": {
+        "display": "Per io un caffè, per favore",
+        "why": "After a preposition it is me: Per me un caffè, per favore."
+      },
+      "usage": "At a table with other people, when the waiter reaches you.",
+      "register": "neutral",
+      "mnemonic": "No verb, and none missing."
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "Prendo il pesce, grazie",
+      "cue": "I'll have the fish, thanks",
+      "literal": "I-take the fish, thanks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pesce",
+            "cue": "fish",
+            "tag": "free",
+            "forms": [
+              "pesci"
+            ],
+            "note": "The sce is a soft sh: PE-she. Its plural pesci is said PE-shee, and both are one sound rather than two."
+          },
+          {
+            "display": "carne",
+            "cue": "meat",
+            "tag": "free",
+            "forms": [
+              "carni"
+            ],
+            "note": "Feminine, and singular in ordinary use. It covers all meat, where English often names the animal instead."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Prendo is a present tense doing the work of English's \"I'll have\". Prenderò is a real future and would sound like a forecast about yourself rather than an order.",
+      "sound": "PREN-do eel PE-she. The sc before an e or i is always sh in Italian.",
+      "variations": [
+        {
+          "display": "Prendo la carne, grazie",
+          "cue": "I'll have the meat, thanks",
+          "changed": "a feminine noun"
+        },
+        {
+          "display": "Prendo la pizza",
+          "cue": "I'll have the pizza",
+          "changed": "without grazie"
+        },
+        {
+          "display": "Prendo un caffè, grazie",
+          "cue": "I'll have a coffee, thanks",
+          "changed": "un rather than il — one of them rather than the one on the menu"
+        }
+      ],
+      "mistake": {
+        "display": "Prenderò il pesce, grazie",
+        "why": "The present orders: Prendo il pesce, grazie."
+      },
+      "usage": "Ordering from a menu. The present tense is what makes it sound decided.",
+      "register": "neutral",
+      "mnemonic": "The present orders. The future predicts."
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "Vorrei del pane, per favore",
+      "cue": "I'd like some bread, please",
+      "literal": "I-would-like of-the bread, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "del",
+            "cue": "some (masculine)",
+            "tag": "delta",
+            "forms": [],
+            "note": "di fused with il. It means \"some\" — an unspecified amount — and it is one word rather than two."
+          },
+          {
+            "display": "della",
+            "cue": "some (feminine)",
+            "tag": "delta",
+            "forms": [],
+            "note": "di fused with la. della carne, della pizza. The fusion is regular and every article has one."
+          },
+          {
+            "display": "dei",
+            "cue": "some (masculine plural)",
+            "tag": "free",
+            "forms": [
+              "delle"
+            ],
+            "note": "di fused with i, and delle with le. In the plural the partitive is simply the ordinary word for \"some\": dei libri, delle case."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The meaning is already the learner's — L1 taught un po' di for \"a bit of\". What is new is that di and the article fuse into one word, and the fused form is what the index sees.",
+      "sound": "vor-RAY del PA-ne. The double r of vorrei is rolled slightly longer than a single one.",
+      "variations": [
+        {
+          "display": "Vorrei della carne, per favore",
+          "cue": "I'd like some meat, please",
+          "changed": "feminine, so a different fusion"
+        },
+        {
+          "display": "Vorrei dell'acqua, per favore",
+          "cue": "I'd like some water, please",
+          "changed": "a vowel, so the fusion elides too"
+        },
+        {
+          "display": "Vorrei dei libri",
+          "cue": "I'd like some books",
+          "changed": "plural"
+        }
+      ],
+      "mistake": {
+        "display": "Vorrei di pane, per favore",
+        "why": "di fuses with the article: Vorrei del pane, per favore."
+      },
+      "usage": "Asking for more of something at a table, or ordering an unspecified amount.",
+      "register": "neutral",
+      "mnemonic": "di plus the article, welded into one word."
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "Vorrei dell'acqua, per favore",
+      "cue": "I'd like some water, please",
+      "literal": "I-would-like of-the-water, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dell'acqua",
+            "cue": "some water",
+            "tag": "interference",
+            "forms": [],
+            "note": "The fusion elides in front of a vowel and becomes ONE index key. It does not answer for L1-M8's l'acqua, and neither answers for the other."
+          },
+          {
+            "display": "bicchiere",
+            "cue": "glass",
+            "tag": "free",
+            "forms": [
+              "bicchieri"
+            ],
+            "note": "A drinking glass. The cch is a long hard k, so it is beek-KYE-re — nothing like the English word it is sometimes mistaken for."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Three shapes of one noun now live in the course: acqua, l'acqua, d'acqua and dell'acqua. Each is its own key because the apostrophe fuses, and none is derivable from the others by rule.",
+      "sound": "del-LAK-kwa. The apostrophe is a join and not a pause, and the qu is kw.",
+      "variations": [
+        {
+          "display": "Vorrei un bicchiere d'acqua",
+          "cue": "I'd like a glass of water",
+          "changed": "a container, with L1-M8's own fusion"
+        },
+        {
+          "display": "Vorrei del pane, per favore",
+          "cue": "I'd like some bread, please",
+          "changed": "a masculine noun with no elision"
+        },
+        {
+          "display": "Prendo dell'acqua",
+          "cue": "I'll have some water",
+          "changed": "ordering rather than asking"
+        }
+      ],
+      "mistake": {
+        "display": "Vorrei della acqua, per favore",
+        "why": "A vowel takes the elision: Vorrei dell'acqua, per favore."
+      },
+      "usage": "At a table, and it is what a waiter expects rather than a bare acqua.",
+      "register": "neutral",
+      "mnemonic": "The apostrophe joins, and the join is a word."
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "Il pane? Lo prendo io",
+      "cue": "The bread? I'll take it",
+      "literal": "The bread? It I-take I",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lo",
+            "cue": "it · him (object)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The masculine object clitic, and it goes BEFORE the verb. Il pane? Lo prendo — where English says \"I'll take it\" with the object after."
+          },
+          {
+            "display": "li",
+            "cue": "them (masculine)",
+            "tag": "delta",
+            "forms": [],
+            "note": "lo's plural. The feminine pair — la and le — are L1-M1's articles already, so this course teaches the law on the masculine and names the rest in prose."
+          },
+          {
+            "display": "io",
+            "cue": "I (emphatic)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The subject pronoun, and it is optional. Writing it MARKS a contrast — Lo prendo io means I'll take it, as opposed to somebody else."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The clitic sits in front of the verb and nothing separates them. Prendo lo is not Italian, and the order is the reverse of English's in every sentence a clitic appears in.",
+      "sound": "lo PREN-do EE-o. lo is short and unstressed and leans onto the verb behind it.",
+      "variations": [
+        {
+          "display": "I libri? Li prendo io",
+          "cue": "The books? I'll take them",
+          "changed": "plural, so the clitic moves"
+        },
+        {
+          "display": "Il pane? Lo prendo",
+          "cue": "The bread? I'll take it",
+          "changed": "without io — which was only there for emphasis"
+        },
+        {
+          "display": "Il pesce? Lo prendo io",
+          "cue": "The fish? I'll take it",
+          "changed": "a different thing"
+        }
+      ],
+      "mistake": {
+        "display": "Il pane? Prendo lo",
+        "why": "The clitic goes in front: Il pane? Lo prendo."
+      },
+      "usage": "Sorting out who is having what, at a table or in a shop.",
+      "register": "neutral",
+      "mnemonic": "The clitic goes first, always."
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "Mi porta il conto, per favore?",
+      "cue": "Could you bring me the bill, please?",
+      "literal": "To-me you-bring the bill, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi",
+            "cue": "to me · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "Free to be taught here only because L1 authored mi chiamo, mi piace and mi alzo as WHOLE phrases. It goes in front of the verb, like lo."
+          },
+          {
+            "display": "ti",
+            "cue": "to you · you (to a friend)",
+            "tag": "free",
+            "forms": [],
+            "note": "mi's pair, and free for the same reason — L1's ti chiami and ti piace were whole surfaces. Ti porto il conto, I'll bring you the bill."
+          },
+          {
+            "display": "porta",
+            "cue": "brings · you bring (polite)",
+            "tag": "free",
+            "forms": [
+              "porto",
+              "porti"
+            ],
+            "note": "Carrying something to someone. It is also the noun for a door, spelled identically, and only the sentence says which."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "This is a question made only by intonation — the words are a statement. Italian asks a great many questions this way, and the polite third person makes it a request rather than an observation.",
+      "sound": "mee POR-ta eel KON-to. The voice rises on the last syllable and nothing else marks the question.",
+      "variations": [
+        {
+          "display": "Mi porta dell'acqua, per favore?",
+          "cue": "Could you bring me some water, please?",
+          "changed": "a partitive object"
+        },
+        {
+          "display": "Ti porto il conto",
+          "cue": "I'll bring you the bill",
+          "changed": "the other clitic, and the other direction"
+        },
+        {
+          "display": "Mi porta il pane, per favore?",
+          "cue": "Could you bring me the bread, please?",
+          "changed": "a different thing"
+        }
+      ],
+      "mistake": {
+        "display": "Porta mi il conto, per favore?",
+        "why": "The clitic goes in front: Mi porta il conto, per favore?"
+      },
+      "usage": "Asking a waiter for anything at all.",
+      "register": "formal",
+      "mnemonic": "L1's whole phrases left mi and ti free."
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "No, grazie, sono a posto",
+      "cue": "No thanks, I'm fine",
+      "literal": "No, thanks, I-am at place",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "posto",
+            "cue": "place · seat",
+            "tag": "delta",
+            "forms": [
+              "posti"
+            ],
+            "note": "Sono a posto is a whole idea — \"I'm all right, I don't need more\". The noun on its own is a place or a seat: un posto libero."
+          },
+          {
+            "display": "basta",
+            "cue": "that's enough",
+            "tag": "free",
+            "forms": [],
+            "note": "A verb used as a whole sentence. Basta così, grazie is the gentler version and the one to use at a table."
+          },
+          {
+            "display": "così",
+            "cue": "like this · that way",
+            "tag": "free",
+            "forms": [],
+            "note": "Basta così is \"enough like this\" — the così is what makes it gentle. Without it, Basta on its own can sound like an order to stop."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "A bare No will be heard as the first move rather than the last. An Italian host expects to offer again, so the refusal has to carry a reason or a warm word to stop the plate being filled.",
+      "sound": "SO-no a PO-sto. The o's are all short and open, and the phrase runs as one.",
+      "variations": [
+        {
+          "display": "Basta così, grazie",
+          "cue": "That's enough, thanks",
+          "changed": "the other standard refusal"
+        },
+        {
+          "display": "No, grazie, sono a posto",
+          "cue": "No thanks, I'm fine",
+          "changed": "the same, said after a second offer"
+        },
+        {
+          "display": "Grazie, basta così",
+          "cue": "Thanks, that's plenty",
+          "changed": "thanks first, which is warmer"
+        }
+      ],
+      "mistake": {
+        "display": "No, sono a posto",
+        "why": "The thanks is what makes it a refusal rather than a rebuff: No, grazie, sono a posto."
+      },
+      "usage": "Declining a second or third helping. Expect to say it twice.",
+      "register": "neutral",
+      "mnemonic": "No alone is an opening, not an answer."
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "Vorrei un'altra bottiglia, per favore",
+      "cue": "I'd like another bottle, please",
+      "literal": "I-would-like an-other bottle, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "un'altra",
+            "cue": "another (feminine)",
+            "tag": "interference",
+            "forms": [],
+            "note": "The FEMININE indefinite elides and takes an apostrophe; the masculine does not. un'altra bottiglia against un altro bicchiere — one of the few places Italian's apostrophe carries gender."
+          },
+          {
+            "display": "altro",
+            "cue": "other · another",
+            "tag": "free",
+            "forms": [
+              "altra",
+              "altri",
+              "altre"
+            ],
+            "note": "The ordinary four cells. The apostrophe only appears when the feminine un runs into it — everywhere else the word stands alone."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "un altro has no apostrophe and un'altra does. The masculine un was never uno to begin with, so there is nothing to elide; the feminine una loses its a, and the apostrophe records it.",
+      "sound": "oo-NAL-tra. The apostrophe is a join, and the whole thing is three syllables.",
+      "variations": [
+        {
+          "display": "Vorrei un altro bicchiere",
+          "cue": "I'd like another glass",
+          "changed": "masculine — and no apostrophe"
+        },
+        {
+          "display": "Un'altra pizza, per favore",
+          "cue": "Another pizza, please",
+          "changed": "without the verb"
+        },
+        {
+          "display": "Vorrei un'altra bottiglia d'acqua",
+          "cue": "I'd like another bottle of water",
+          "changed": "with L1-M8's fusion on the end"
+        }
+      ],
+      "mistake": {
+        "display": "Vorrei un altra bottiglia, per favore",
+        "why": "The feminine elides: Vorrei un'altra bottiglia, per favore."
+      },
+      "usage": "Asking for a refill of anything.",
+      "register": "neutral",
+      "mnemonic": "The apostrophe is on the feminine one."
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "Buon appetito!",
+      "cue": "Enjoy your meal!",
+      "literal": "Good appetite!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "buon",
+            "cue": "good (shortened, before a noun)",
+            "tag": "delta",
+            "forms": [],
+            "note": "buono apocopated in front of a masculine noun, exactly as M3's bello shortens to bel. No apostrophe here, because nothing has been elided."
+          },
+          {
+            "display": "appetito",
+            "cue": "appetite",
+            "tag": "free",
+            "forms": [],
+            "note": "Buon appetito is said to anyone about to eat, including strangers, and answering Grazie, altrettanto — thanks, same to you — is the expected reply."
+          },
+          {
+            "display": "dolce",
+            "cue": "dessert · sweet",
+            "tag": "free",
+            "forms": [
+              "dolci"
+            ],
+            "note": "Both the course at the end of a meal and the adjective \"sweet\", which is an -e adjective with two cells."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "buono shortens to buon in front of the noun, exactly as bello shortens to bel — the same apocope M3 taught, on a different word and with no apostrophe.",
+      "sound": "bwon ap-pe-TEE-to. The double p is held, and buon is one syllable.",
+      "variations": [
+        {
+          "display": "Buon appetito, Anna!",
+          "cue": "Enjoy your meal, Anna!",
+          "changed": "a name after the comma"
+        },
+        {
+          "display": "Prendo un dolce",
+          "cue": "I'll have a dessert",
+          "changed": "ordering the last course"
+        },
+        {
+          "display": "Il dolce è molto buono",
+          "cue": "The dessert is very good",
+          "changed": "buono in full, after the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Buono appetito!",
+        "why": "It shortens in front of the noun: Buon appetito!"
+      },
+      "usage": "Said at every table, and its absence is noticed.",
+      "register": "neutral",
+      "mnemonic": "buono shortens where bello does."
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "Vorrei della verdura e una forchetta",
+      "cue": "I'd like some vegetables and a fork",
+      "literal": "I-would-like of-the vegetable and a fork",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "verdura",
+            "cue": "vegetables",
+            "tag": "delta",
+            "forms": [
+              "verdure"
+            ],
+            "note": "SINGULAR in Italian where English is plural — della verdura, some vegetable-matter. The plural verdure means kinds of vegetable rather than more of them."
+          },
+          {
+            "display": "forchetta",
+            "cue": "fork",
+            "tag": "free",
+            "forms": [
+              "forchette"
+            ],
+            "note": "The ch is a hard k, kept there by the h — the same spelling trick as M3's bianchi and sporchi."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "verdura is singular and \"vegetables\" is plural, so the partitive is della and not delle. Translating the English number gives the wrong article as well as the wrong noun.",
+      "sound": "ver-DOO-ra for-KET-ta. The double t of forchetta is held.",
+      "variations": [
+        {
+          "display": "Vorrei della verdura",
+          "cue": "I'd like some vegetables",
+          "changed": "one thing only"
+        },
+        {
+          "display": "Mi porta una forchetta, per favore?",
+          "cue": "Could you bring me a fork, please?",
+          "changed": "a request with the clitic"
+        },
+        {
+          "display": "Vorrei del pesce e della verdura",
+          "cue": "I'd like some fish and some vegetables",
+          "changed": "two partitives, one masculine and one feminine"
+        }
+      ],
+      "mistake": {
+        "display": "Vorrei delle verdura e una forchetta",
+        "why": "verdura is singular: Vorrei della verdura."
+      },
+      "usage": "Ordering a side dish, and asking for what is missing from the table.",
+      "register": "neutral",
+      "mnemonic": "Italian counts vegetables as one thing."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M5-C01",
+      "display": "Per me un caffè, per favore",
+      "cue": "A coffee for me, please"
+    },
+    {
+      "id": "L2-M5-C02",
+      "display": "Prendo il pesce, grazie",
+      "cue": "I'll have the fish, thanks"
+    },
+    {
+      "id": "L2-M5-C03",
+      "display": "Vorrei del pane, per favore",
+      "cue": "I'd like some bread, please"
+    },
+    {
+      "id": "L2-M5-C04",
+      "display": "Vorrei dell'acqua, per favore",
+      "cue": "I'd like some water, please"
+    },
+    {
+      "id": "L2-M5-C05",
+      "display": "Il pane? Lo prendo io",
+      "cue": "The bread? I'll take it"
+    },
+    {
+      "id": "L2-M5-C06",
+      "display": "Mi porta il conto, per favore?",
+      "cue": "Could you bring me the bill, please?"
+    },
+    {
+      "id": "L2-M5-C07",
+      "display": "No, grazie, sono a posto",
+      "cue": "No thanks, I'm fine"
+    },
+    {
+      "id": "L2-M5-C08",
+      "display": "Vorrei un'altra bottiglia, per favore",
+      "cue": "I'd like another bottle, please"
+    },
+    {
+      "id": "L2-M5-C09",
+      "display": "Buon appetito!",
+      "cue": "Enjoy your meal!"
+    },
+    {
+      "id": "L2-M5-C10",
+      "display": "Vorrei della verdura e una forchetta",
+      "cue": "I'd like some vegetables and a fork"
+    },
+    {
+      "id": "L2-M5-C11",
+      "display": "I libri? Li prendo io",
+      "cue": "The books? I'll take them"
+    },
+    {
+      "id": "L2-M5-C12",
+      "display": "Basta così, grazie",
+      "cue": "That's enough, thanks"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
