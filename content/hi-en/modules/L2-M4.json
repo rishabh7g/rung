@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": [
+    "L2-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "Excuse me + , + how do I get to + <place>?",
+      "Turn left / Turn right / Go straight",
+      "Take the + <ordinal> + left",
+      "Get on / Get off + the + N",
+      "I go to + <place> + by + N-transport"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "get on, get off, get in, get out of — इनमें दूसरा शब्द कोई अलग परसर्ग नहीं, क्रिया का ही हिस्सा है. न उसे छोड़ा जा सकता है, न अपनी मर्ज़ी से बदला. हिंदी का एक चढ़ना यहाँ दो में बँटता है: बस पर get on, गाड़ी में get in."
+    },
+    {
+      "tag": "interference",
+      "text": "सवारी के साथ कोई article नहीं आता: by bus, by train, by car. by the bus ग़लत है. इसी तरह go to work, go to school, go to bed — यहाँ काम का नाम लिया जा रहा है, इमारत का नहीं. पर go to the shop, go to the bank, go to the market में the आता है, क्योंकि वे जगहें हैं."
+    },
+    {
+      "tag": "delta",
+      "text": "रास्ता बताते वक़्त कर्ता नहीं लगता: Turn left. You turn left कहना ज़रूरी नहीं और थोड़ा भारी लगता है. हिंदी के बाएँ मुड़िए की तरह ही सीधा हुक्म है, बस अंग्रेज़ी में आदर वाला रूप अलग नहीं होता."
+    },
+    {
+      "tag": "free",
+      "text": "अजनबी से बात Excuse me से शुरू होती है — M1 वाला औज़ार यहाँ मैदान में है. सीधा Where is the station? बदतमीज़ी नहीं है, पर काफ़ी रूखा लगता है."
+    },
+    {
+      "tag": "interference",
+      "text": "अकेला get बहुत काम करता है: get a ticket यानी लेना, get to the station यानी पहुँचना. L1 ने सिर्फ़ get up सिखाया था, वह पूरा टुकड़ा था — अकेला get यहाँ पहली बार आ रहा है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "Excuse me, how do I get to the station?",
+      "cue": "माफ़ कीजिए, स्टेशन कैसे पहुँचूँ?",
+      "literal": "माफ़ करें मुझे, कैसे करता हूँ मैं पहुँचना तक वह स्टेशन?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "get",
+            "cue": "पहुँचना · लेना",
+            "tag": "interference",
+            "forms": [
+              "gets"
+            ],
+            "note": "यहाँ get to का मतलब पहुँचना है. यही get टिकट लेने में भी चलता है — get a ticket. एक क्रिया, कई काम."
+          },
+          {
+            "display": "station",
+            "cue": "स्टेशन",
+            "tag": "free",
+            "forms": [
+              "stations"
+            ],
+            "note": "रेल या बस का अड्डा. जगह है, इसलिए the के साथ आता है: the station."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "how do I get to… एक तैयार साँचा है, कोई एक शब्द नहीं. जगह का नाम बदलिए, बाक़ी जस का तस रखिए.",
+      "sound": "Excuse me आपस में जुड़ जाता है — इक्स्क्यूज़्मी.",
+      "variations": [
+        {
+          "display": "Excuse me, how do I get to the market?",
+          "cue": "माफ़ कीजिए, बाज़ार कैसे पहुँचूँ?",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "How do I get to the bank?",
+          "cue": "बैंक कैसे पहुँचूँ?",
+          "changed": "Excuse me हटा, थोड़ा रूखा"
+        },
+        {
+          "display": "Excuse me, how do I get to the shop?",
+          "cue": "माफ़ कीजिए, दुकान कैसे पहुँचूँ?",
+          "changed": "दूसरी जगह"
+        }
+      ],
+      "mistake": {
+        "display": "Excuse me, how I get to the station?",
+        "why": "सवाल में do चाहिए: how do I get to the station?"
+      },
+      "usage": "सड़क पर अजनबी से रास्ता पूछने का सबसे सुरक्षित वाक्य.",
+      "register": "neutral",
+      "mnemonic": "साँचा वही, जगह बदलती है."
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "Turn left and go straight",
+      "cue": "बाएँ मुड़िए और सीधे जाइए",
+      "literal": "मुड़ो बाएँ और जाओ सीधा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "turn",
+            "cue": "मुड़ना",
+            "tag": "free",
+            "forms": [
+              "turns"
+            ],
+            "note": "दिशा बदलना. हुक्म में कर्ता नहीं लगता, इसलिए सीधे turn से शुरू."
+          },
+          {
+            "display": "left",
+            "cue": "बाएँ",
+            "tag": "free",
+            "forms": [],
+            "note": "दिशा. turn left में इसके आगे कोई the नहीं आता, पर the second left में आता है."
+          },
+          {
+            "display": "right",
+            "cue": "दाएँ",
+            "tag": "interference",
+            "forms": [],
+            "note": "left का उल्टा. यही शब्द सही के लिए भी चलता है — That is right. दिशा या दुरुस्ती, वाक्य से तय होता है."
+          },
+          {
+            "display": "straight",
+            "cue": "सीधा",
+            "tag": "free",
+            "forms": [],
+            "note": "मुड़े बिना. go straight में straight क्रिया के पीछे बैठता है, आगे नहीं."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "You turn left कहने की ज़रूरत नहीं. हुक्म में कर्ता ग़ायब रहता है, और यह रूखा नहीं लगता.",
+      "sound": "straight में gh बिलकुल चुप है — स्ट्रेट.",
+      "variations": [
+        {
+          "display": "Turn right here",
+          "cue": "यहाँ दाएँ मुड़िए",
+          "changed": "उल्टी दिशा"
+        },
+        {
+          "display": "Go straight and turn left",
+          "cue": "सीधे जाइए और बाएँ मुड़िए",
+          "changed": "क्रम बदला"
+        },
+        {
+          "display": "Do not turn left here",
+          "cue": "यहाँ बाएँ मत मुड़िए",
+          "changed": "हुक्म का नकार, do not से"
+        }
+      ],
+      "mistake": {
+        "display": "Turn to left and go straight",
+        "why": "turn left में कोई to नहीं आता: Turn left and go straight."
+      },
+      "usage": "रास्ता बताने का सबसे आम जोड़ा.",
+      "register": "neutral",
+      "mnemonic": "हुक्म में कर्ता नहीं."
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "Turn right at the traffic light",
+      "cue": "बत्ती पर दाएँ मुड़िए",
+      "literal": "मुड़ो दाएँ पर वह बत्ती",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "traffic light",
+            "cue": "बत्ती · सिग्नल",
+            "tag": "free",
+            "forms": [
+              "traffic lights"
+            ],
+            "note": "दो शब्द, एक ही चीज़. भारत में सिग्नल कहा जाता है, पर बाहर signal का मतलब और होता है."
+          },
+          {
+            "display": "corner",
+            "cue": "नुक्कड़ · कोना",
+            "tag": "free",
+            "forms": [
+              "corners"
+            ],
+            "note": "दो सड़कों का मोड़. at the corner — जगह बताने में at ही आता है, on नहीं."
+          },
+          {
+            "display": "crossing",
+            "cue": "चौराहा · क्रॉसिंग",
+            "tag": "free",
+            "forms": [
+              "crossings"
+            ],
+            "note": "जहाँ सड़कें कटती हैं या जहाँ से पैदल पार करते हैं."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "जगह की निशानी के आगे at आता है — at the corner, at the traffic light. in या on यहाँ नहीं चलते.",
+      "sound": "traffic light में दोनों शब्दों का ज़ोर पहले पर है — ट्रैफ़िक लाइट.",
+      "variations": [
+        {
+          "display": "Turn left at the corner",
+          "cue": "नुक्कड़ पर बाएँ मुड़िए",
+          "changed": "दूसरी निशानी"
+        },
+        {
+          "display": "Go straight to the crossing",
+          "cue": "चौराहे तक सीधे जाइए",
+          "changed": "to से मंज़िल"
+        },
+        {
+          "display": "Turn right at the crossing",
+          "cue": "चौराहे पर दाएँ मुड़िए",
+          "changed": "दूसरी निशानी"
+        }
+      ],
+      "mistake": {
+        "display": "Turn right on the traffic light",
+        "why": "निशानी के आगे at आता है: Turn right at the traffic light."
+      },
+      "usage": "शहर में रास्ता बताने का रोज़ का तरीक़ा.",
+      "register": "neutral",
+      "mnemonic": "निशानी पर at."
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "The station is not far from here",
+      "cue": "स्टेशन यहाँ से दूर नहीं है",
+      "literal": "वह स्टेशन है नहीं दूर से यहाँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "far",
+            "cue": "दूर",
+            "tag": "interference",
+            "forms": [],
+            "note": "सीधे वाक्य में अकेला far कम आता है. It is far कहने से ज़्यादा आम है It is a long way — पर सवाल और नकार में far ही चलता है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "far की आदत much जैसी है: सवाल और नकार में सहज, सीधे वाक्य में अटपटा.",
+      "sound": "far में r ब्रिटिश बोली में लगभग चुप है — फ़ाa.",
+      "variations": [
+        {
+          "display": "The bank is far from here",
+          "cue": "बैंक यहाँ से दूर है",
+          "changed": "नकार हटा"
+        },
+        {
+          "display": "The market is not far",
+          "cue": "बाज़ार दूर नहीं है",
+          "changed": "from here हटा"
+        },
+        {
+          "display": "Is the station far from here?",
+          "cue": "क्या स्टेशन यहाँ से दूर है?",
+          "changed": "सवाल, is आगे"
+        }
+      ],
+      "mistake": {
+        "display": "The station is not far to here",
+        "why": "दूरी की शुरुआत from से नापी जाती है: not far from here."
+      },
+      "usage": "रास्ता पूछने वाले को तसल्ली देना.",
+      "register": "neutral",
+      "mnemonic": "सवाल-नकार में far सहज."
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "The shop is opposite the bank",
+      "cue": "दुकान बैंक के सामने है",
+      "literal": "वह दुकान है सामने वह बैंक",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "opposite",
+            "cue": "सामने",
+            "tag": "delta",
+            "forms": [],
+            "note": "आमने-सामने, सड़क के दोनों ओर. in front of अलग है — वह आगे खड़ा होना है, आमना-सामना नहीं."
+          },
+          {
+            "display": "across from",
+            "cue": "सामने · दूसरी तरफ़",
+            "tag": "free",
+            "forms": [],
+            "note": "opposite का अमेरिकी जोड़ीदार, मतलब वही. दो शब्द साथ चलते हैं, अकेला across यहाँ नहीं आता."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "L1-M7 का in front of और यह opposite एक नहीं हैं. कार के आगे खड़ी बाइक in front of है; सड़क पार वाली दुकान opposite है.",
+      "sound": "opposite में ज़ोर पहले हिस्से पर — ऑपज़िट.",
+      "variations": [
+        {
+          "display": "The shop is across from the bank",
+          "cue": "दुकान बैंक के सामने है",
+          "changed": "अमेरिकी रूप"
+        },
+        {
+          "display": "The bank is opposite the station",
+          "cue": "बैंक स्टेशन के सामने है",
+          "changed": "दूसरी जोड़ी"
+        },
+        {
+          "display": "The shop is on this road",
+          "cue": "दुकान इसी सड़क पर है",
+          "changed": "सड़क बताना, on से"
+        }
+      ],
+      "mistake": {
+        "display": "The shop is opposite to the bank",
+        "why": "opposite के बाद to नहीं आता: The shop is opposite the bank."
+      },
+      "usage": "किसी जगह को दूसरी जगह के सहारे समझाना.",
+      "register": "neutral",
+      "mnemonic": "सड़क पार opposite, आगे खड़ा in front of."
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "I go to work by bus",
+      "cue": "मैं बस से काम पर जाता हूँ",
+      "literal": "मैं जाता हूँ तक काम से बस",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "by",
+            "cue": "से",
+            "tag": "delta",
+            "forms": [],
+            "note": "सवारी बताने वाला by. इसके बाद कोई article नहीं आता — by bus, by car, by train."
+          },
+          {
+            "display": "bus",
+            "cue": "बस",
+            "tag": "free",
+            "forms": [
+              "buses"
+            ],
+            "note": "बहुवचन में -es लगता है, सिर्फ़ -s नहीं: buses."
+          },
+          {
+            "display": "train",
+            "cue": "रेल · ट्रेन",
+            "tag": "free",
+            "forms": [
+              "trains"
+            ],
+            "note": "by train में कोई article नहीं, पर the train पर चढ़ने की बात हो तो the आता है."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "by के बाद the लगाना सबसे आम ग़लती है. by the bus ग़लत, by bus सही — यहाँ किसी ख़ास बस की नहीं, तरीक़े की बात है.",
+      "sound": "bus का u हिंदी के अ जैसा है — बस, बुस नहीं.",
+      "variations": [
+        {
+          "display": "I go to work by train",
+          "cue": "मैं रेल से काम पर जाता हूँ",
+          "changed": "दूसरी सवारी"
+        },
+        {
+          "display": "She goes to school by bus",
+          "cue": "वह बस से स्कूल जाती है",
+          "changed": "दूसरा कर्ता, goes"
+        },
+        {
+          "display": "I go to the market by car",
+          "cue": "मैं गाड़ी से बाज़ार जाता हूँ",
+          "changed": "जगह है, इसलिए the आया"
+        }
+      ],
+      "mistake": {
+        "display": "I go to work by the bus",
+        "why": "सवारी के आगे article नहीं: I go to work by bus."
+      },
+      "usage": "रोज़ का आना-जाना बताना.",
+      "register": "neutral",
+      "mnemonic": "by के बाद कुछ नहीं."
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "Get on the bus at the station",
+      "cue": "स्टेशन पर बस में चढ़िए",
+      "literal": "चढ़ो पर वह बस पर वह स्टेशन",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "get on",
+            "cue": "चढ़ना",
+            "tag": "delta",
+            "forms": [
+              "gets on"
+            ],
+            "note": "बस, रेल, हवाई जहाज़ — बड़ी सवारी में चढ़ना. on यहाँ अलग परसर्ग नहीं, क्रिया का हिस्सा है."
+          },
+          {
+            "display": "get off",
+            "cue": "उतरना",
+            "tag": "delta",
+            "forms": [
+              "gets off"
+            ],
+            "note": "get on का उल्टा. उतरने की जगह बतानी हो तो get off at the market."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "हिंदी का चढ़ना अंग्रेज़ी में दो हिस्सों में बँटा है — बस पर get on, गाड़ी में get in. यह बँटवारा याद करने का है, सोचकर निकालने का नहीं.",
+      "sound": "get on जुड़कर गेटॉन बोला जाता है.",
+      "variations": [
+        {
+          "display": "Get off the bus at the market",
+          "cue": "बाज़ार पर बस से उतरिए",
+          "changed": "उल्टी क्रिया"
+        },
+        {
+          "display": "Get on the train here",
+          "cue": "यहाँ रेल में चढ़िए",
+          "changed": "दूसरी सवारी"
+        },
+        {
+          "display": "Do not get off here",
+          "cue": "यहाँ मत उतरिए",
+          "changed": "हुक्म का नकार"
+        }
+      ],
+      "mistake": {
+        "display": "Get in the bus at the station",
+        "why": "बस में चढ़ना get on है: Get on the bus at the station."
+      },
+      "usage": "किसी को सफ़र समझाते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "बड़ी सवारी पर on."
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "Get in the car, please",
+      "cue": "गाड़ी में बैठिए, प्लीज़",
+      "literal": "बैठो में वह गाड़ी, प्लीज़",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "get in",
+            "cue": "बैठना · अंदर आना",
+            "tag": "delta",
+            "forms": [
+              "gets in"
+            ],
+            "note": "छोटी सवारी के लिए — गाड़ी, टैक्सी. get on यहाँ नहीं चलता."
+          },
+          {
+            "display": "get out of",
+            "cue": "उतरना · बाहर निकलना",
+            "tag": "delta",
+            "forms": [
+              "gets out of"
+            ],
+            "note": "get in का उल्टा, और इसमें तीनों शब्द साथ चलते हैं. get out the car ग़लत है."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "उतरने के दोनों रूपों में फ़र्क़ है: बस से get off, गाड़ी से get out of. off अकेला चलता है, out को of चाहिए.",
+      "sound": "get out of तीनों जुड़कर गेटाउडव जैसा सुनाई देता है.",
+      "variations": [
+        {
+          "display": "Get out of the car",
+          "cue": "गाड़ी से उतरिए",
+          "changed": "उल्टी क्रिया"
+        },
+        {
+          "display": "Get in the car and wait",
+          "cue": "गाड़ी में बैठिए और रुकिए",
+          "changed": "दूसरा हुक्म जुड़ा"
+        },
+        {
+          "display": "Do not get in the car",
+          "cue": "गाड़ी में मत बैठिए",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "Get out the car",
+        "why": "get out के साथ of ज़रूरी है: Get out of the car."
+      },
+      "usage": "गाड़ी में किसी को बुलाना — please के बिना यह हुक्म जैसा लगता है.",
+      "register": "neutral",
+      "mnemonic": "छोटी सवारी में in, उससे बाहर out of."
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "Take the second left",
+      "cue": "दूसरा मोड़ बाएँ लीजिए",
+      "literal": "लो वह दूसरा बाएँ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "second",
+            "cue": "दूसरा",
+            "tag": "delta",
+            "forms": [],
+            "note": "गिनती का क्रम बताने वाला रूप. two गिनती है, second क्रम — और इसके आगे the हमेशा आता है."
+          },
+          {
+            "display": "road",
+            "cue": "सड़क",
+            "tag": "free",
+            "forms": [
+              "roads"
+            ],
+            "note": "सड़क पर होने के लिए on आता है: on this road."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "the second left में left संज्ञा बन गया है — बाएँ वाला मोड़. यह वही left है जो turn left में दिशा थी.",
+      "sound": "second में c स की तरह — सेकंड.",
+      "variations": [
+        {
+          "display": "Take the second right",
+          "cue": "दूसरा मोड़ दाएँ लीजिए",
+          "changed": "दूसरी दिशा"
+        },
+        {
+          "display": "Take the second road on the left",
+          "cue": "बाएँ की दूसरी सड़क लीजिए",
+          "changed": "पूरा रूप, road के साथ"
+        },
+        {
+          "display": "Take the second left and go straight",
+          "cue": "दूसरा मोड़ बाएँ लीजिए और सीधे जाइए",
+          "changed": "दूसरा हुक्म जुड़ा"
+        }
+      ],
+      "mistake": {
+        "display": "Take second left",
+        "why": "क्रम वाले शब्द के आगे the ज़रूरी है: Take the second left."
+      },
+      "usage": "रास्ता बताने का छोटा, पक्का तरीक़ा.",
+      "register": "neutral",
+      "mnemonic": "क्रम के आगे the."
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "Where can I buy a ticket?",
+      "cue": "टिकट कहाँ से मिलेगा?",
+      "literal": "कहाँ सकता हूँ मैं ख़रीदना एक टिकट?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ticket",
+            "cue": "टिकट",
+            "tag": "free",
+            "forms": [
+              "tickets"
+            ],
+            "note": "गिना जाता है, इसलिए a ticket और two tickets दोनों चलते हैं."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "हिंदी कहाँ से मिलेगा में कर्ता ही नहीं होता. अंग्रेज़ी को I चाहिए — Where can I buy…, वरना वाक्य अधूरा है.",
+      "sound": "ticket का दूसरा t अमेरिकी बोली में हल्का — टिकिट.",
+      "variations": [
+        {
+          "display": "Where can I buy tickets?",
+          "cue": "टिकट कहाँ से मिलेंगे?",
+          "changed": "बहुवचन, a हटा"
+        },
+        {
+          "display": "Can I buy a ticket here?",
+          "cue": "क्या यहाँ से टिकट मिल सकता है?",
+          "changed": "हाँ-ना वाला सवाल"
+        },
+        {
+          "display": "I want to buy a ticket",
+          "cue": "मुझे टिकट ख़रीदना है",
+          "changed": "सवाल की जगह बयान"
+        }
+      ],
+      "mistake": {
+        "display": "Where I can buy a ticket?",
+        "why": "सवाल में can कर्ता से पहले आता है: Where can I buy a ticket?"
+      },
+      "usage": "स्टेशन या बस अड्डे पर पहला सवाल.",
+      "register": "neutral",
+      "mnemonic": "सवाल में can आगे, I पीछे."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "Excuse me, how do I get to the station?",
+      "cue": "माफ़ कीजिए, स्टेशन कैसे पहुँचूँ?"
+    },
+    {
+      "id": "L2-M4-C02",
+      "display": "Turn left and go straight",
+      "cue": "बाएँ मुड़िए और सीधे जाइए"
+    },
+    {
+      "id": "L2-M4-C03",
+      "display": "Turn right at the traffic light",
+      "cue": "बत्ती पर दाएँ मुड़िए"
+    },
+    {
+      "id": "L2-M4-C04",
+      "display": "The station is not far from here",
+      "cue": "स्टेशन यहाँ से दूर नहीं है"
+    },
+    {
+      "id": "L2-M4-C05",
+      "display": "The shop is opposite the bank",
+      "cue": "दुकान बैंक के सामने है"
+    },
+    {
+      "id": "L2-M4-C06",
+      "display": "I go to work by bus",
+      "cue": "मैं बस से काम पर जाता हूँ"
+    },
+    {
+      "id": "L2-M4-C07",
+      "display": "Get on the bus at the station",
+      "cue": "स्टेशन पर बस में चढ़िए"
+    },
+    {
+      "id": "L2-M4-C08",
+      "display": "Get out of the car",
+      "cue": "गाड़ी से उतरिए"
+    },
+    {
+      "id": "L2-M4-C09",
+      "display": "Take the second left",
+      "cue": "दूसरा मोड़ बाएँ लीजिए"
+    },
+    {
+      "id": "L2-M4-C10",
+      "display": "Where can I buy a ticket?",
+      "cue": "टिकट कहाँ से मिलेगा?"
+    },
+    {
+      "id": "L2-M4-C11",
+      "display": "The shop is across from the crossing",
+      "cue": "दुकान चौराहे के सामने है"
+    },
+    {
+      "id": "L2-M4-C12",
+      "display": "She goes to school by train",
+      "cue": "वह रेल से स्कूल जाती है"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

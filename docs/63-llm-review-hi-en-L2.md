@@ -92,3 +92,73 @@ being taught, and `younger` as a genuine comparative of `young`. The hi-en basel
 6. **`cousin brother`** (M2-S09). Named in a mistake block as Indian English. Confirm the phrasing
    of the `why` does not read as a rebuke of the learner's own variety, which rule 5 of M1 is
    written to avoid.
+
+## Wave 2 — L2-M3, L2-M4, L2-M5 (#446)
+
+Three rungs against the briefs of #428. The wave's spine is the countable/uncountable split, which
+M3 states as a law, M4 leaves alone, and M5 re-opens in the field.
+
+### Two seam claims the brief got wrong, corrected against the rebuilt index
+
+- **`brown` is not M3's to open.** The M3 brief lists it among the module's fresh keys, but
+  L2-M2-S03 (`He's got brown eyes`) already owns it. M3 teaches `red`, `blue`, `green`, `black`,
+  `white` and `yellow` and leaves `brown` where it is; nothing in the module needs it.
+- **`bread` is M3's, not M5's.** Both briefs claim it. M3 comes first and needs it for the counter
+  frame (`a piece of bread`), so M3 owns the row and M5-S04 and M5-S07 simply re-show it. M5's
+  uncountable row is `salt`, which does the same work at the table.
+
+### Two rows the briefs do not list and the module cannot do without
+
+`bus` and `train` (M4-S06). The brief's transport patterns are `I go to <place> by N-transport` and
+`Get on / Get off + the + N`, and the only vehicle L1 owns is `car` — which takes `get in`, not
+`get on`, so the module's central contrast could not be shown at all without one of them. Both are
+opened as ordinary rows in S06, where the zero-article rule is taught, and the ratchet confirms
+nothing else in the wave leans on an untaught surface.
+
+### The countability law, and why M5 does not contradict it
+
+M3 states it once: an uncountable noun names a KIND rather than units, so it takes `some`,
+`a lot of` and a counter, never `a` and never `-s`. M5-S09 (`Two teas, please`) looks like the
+exception a learner will seize on, and the module says explicitly that it is not one — the cup is
+being counted and simply not spoken. That is why `tea` gets a second row in M5 carrying only
+`teas` in its `forms`: L1-M1 still owns the bare `tea`, and the plural is a new key that belongs to
+the module teaching why it exists.
+
+`much` and `many` are taught the way they are actually used rather than the way they are usually
+explained: they live in questions and negatives, and a positive statement takes `a lot of`. The
+mistake block on M3-S09 is `I have got much money`, which is the sentence the textbook rule
+produces.
+
+### The register half
+
+M5 is M1's politeness law paying off. `Would you like…?` and `I'd like…` are the same `would` in two
+seats, and rule 4 keeps the would-like sense off L1-M1's `like` row — the multi-token surface
+carries the note, so the verb `like` (`I like tea`) is never overwritten. Rule 2 runs the refusal
+delta in both directions, which is rarer than the usual one-way note: a ritual first refusal does
+not survive translation, and neither does a host's duty to insist.
+
+### The ratchet
+
+Clean on all three modules at first build — the first wave in this course to need no content fix
+after the check. The hi-en baseline stays at 30.
+
+### Open questions for the native pass
+
+7. **`The station is not far from here`** (M4-S04). The note claims bare `far` is awkward in a
+   positive statement and that `a long way` is the natural form. Confirm, and confirm the claim is
+   not too strong for a course this early.
+8. **`opposite` vs `across from`** (M4-S05). Given as British and American forms of one meaning.
+   Confirm they are interchangeable in the direction-giving frame, and that `opposite` without `to`
+   is right in both varieties.
+9. **`Get in the car`** (M4-S08). Authored without `to`. Confirm `get in the car` and
+   `get into the car` are both current and that the shorter one is the right default.
+10. **`Two teas, please`** (M5-S09). Confirm this is unremarkable in a café in both varieties, and
+    that `Two teas` does not read as clipped without `Can I have`.
+11. **`Could you pass the salt to me?`** (M5-S07). Named in the mistake block as less natural than
+    `pass me the salt`, with the `why` saying it is not wrong. Confirm the ranking.
+12. **`I'm full`** (M5-S05). Confirm it is the ordinary way to decline more food and carries no
+    hint of complaint, and that `My stomach is full` really does read as non-native.
+13. **`cheap` on a person** (M3-S06). The trap says it is close to an insult. Confirm the strength
+    of that claim for both varieties.
+14. **`a piece of advice`** (M3-S07). Given as the counter for `advice`. Confirm it is still current
+    speech rather than a textbook survival.

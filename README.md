@@ -227,6 +227,23 @@ opens here, which lifts an L1 ban on the record — and `src/course/types.test.t
 when no L1 job needed one, is now scoped to the level that made it. **The native gate is still
 unmet**: docs/63 ends in open questions 1–6, a fresh hi-en L2 chain.
 
+**hi-en reaches the middle of L2 (#446, 2026-09-08).** `L2-M3` _Describing things_, `L2-M4`
+_Getting around_ and `L2-M5` _Food and hosting_ ship against the same briefs; a strict
+`npm run build` emits `hi-en: 15 modules (L1-M1..M10, L2-M1..M5)`. The wave's spine is the
+countable/uncountable split, which has **no counterpart in Hindi at all**: M3 states it once (an
+uncountable noun names a kind rather than units, so `some`, `a lot of` and a counter — never `a`,
+never `-s`), and M5 re-opens it in the field, where `Two teas, please` looks like the exception and
+is not. `much` and `many` are taught as they are used rather than as they are explained: they live
+in questions and negatives, and a positive statement takes `a lot of`. M5 is M1's politeness law
+paying off — `Would you like…?` and `I'd like…` are one `would` in two seats, and the refusal
+delta runs in **both directions**, because a ritual first refusal does not survive translation and
+neither does a host's duty to insist. Two brief seams were corrected against the rebuilt index
+(`brown` is already L2-M2's, and `bread` is M3's rather than M5's), and `bus` and `train` were
+opened as rows the briefs omit but the transport contrast — `get on` a bus, `get in` a car —
+cannot be shown without. The ratchet was clean on all three at first build, the first hi-en wave
+to need no content fix after the check. **The native gate is still unmet**: docs/63 now ends in
+open questions 1–14.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

@@ -193,7 +193,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 132 — nine L1 ladders, hi-mr L2 and L3, en-es L2, the en-ar L2, and the first hi-en L2 pair (#437)', () => {
+  it('finds all 135 — nine L1 ladders, hi-mr L2 and L3, en-es L2, the en-ar L2, and hi-en L2-M1..M5 (#437, #446)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -300,6 +300,9 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-en/modules/L1-M9.json',
       'content/hi-en/modules/L2-M1.json',
       'content/hi-en/modules/L2-M2.json',
+      'content/hi-en/modules/L2-M3.json',
+      'content/hi-en/modules/L2-M4.json',
+      'content/hi-en/modules/L2-M5.json',
       'content/hi-mr/modules/L1-M1.json',
       'content/hi-mr/modules/L1-M10.json',
       'content/hi-mr/modules/L1-M2.json',
@@ -512,9 +515,10 @@ describe('ModuleContent against the modules that exist', () => {
     const devanagari = /\p{Script=Devanagari}/u;
     const latinOnly = /^[^\p{Script=Devanagari}]+$/u;
 
-    expect(hiEn.length, 'the hi-en modules this rule is written for (#270-#272 L1; #437 L2)').toBe(
-      12,
-    );
+    expect(
+      hiEn.length,
+      'the hi-en modules this rule is written for (#270-#272 L1; #437, #446 L2)',
+    ).toBe(15);
     for (const [file, json] of hiEn) {
       const module = parseModule(json, file);
 
