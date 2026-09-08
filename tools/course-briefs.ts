@@ -1584,6 +1584,100 @@
  * M8–M10: 10), pools are authored to 12, M1–M3 ship fully enriched (validator law, any level),
  * and M10's items are four-sentence accounts.
  *
+ * ## en-ar L2: the decisions, taken against the finished L1 (#427)
+ *
+ * Planned against the REAL cumulative L1 index — **287 surfaces through L1-M10, maxSpan 3**,
+ * rebuilt and read — and against the spoken pass (`docs/42`). Recorded in
+ * `docs/54-en-ar-L2-brief-decisions.md` and repeated in the module notes, because a prompt only
+ * ever shows an author the notes.
+ *
+ * ### 1. MSA stays, and the dialect question is finally answered — PROSE ONLY
+ *
+ * The variety decision (#198) is not reopened: L2 is spoken-simple MSA, pause forms, no case
+ * endings, no passive, no `lam`/`laysa` beyond the one cell M7 is given below. What L2 must
+ * settle is the pressure L1 never felt, because L1 never made a phone call or sat at a table: at
+ * those two moments the MSA line is understood everywhere and said by nobody. `al-ḥāfila` is the
+ * bus in every Arabic newspaper and `al-bāṣ` is the bus every passenger says; `hal turīd
+ * al-mazīd?` is correct and stiff where a host says something shorter. **The rule: a dialect form
+ * may be NAMED in `usage` prose, in words, and may never appear in `display`, in `script`, in
+ * `forms`, or in a pool item.** It is the L1 rule ("where the MSA form sounds formal in the
+ * street, `usage` says so in words") applied to the two modules that make it bite, and it keeps
+ * the index — which is what `script` and `forms` feed — monolingual in MSA. M4, M5 and M7 each
+ * carry one such line and no more; a module that needed a second would be teaching the wrong
+ * variety.
+ *
+ * ### 2. Register — en-ar has no `tú`/`usted` split, and that is the decision
+ *
+ * Every other L2 in this repo spends its M1 on an address contrast. Arabic's second person forks
+ * by GENDER, not by politeness — `anta`/`anti`, `ismuka`/`ismuki`, `ḥāluka`/`ḥāluki` — and L1
+ * taught that fork from M1 onward, so there is no `tú`/`usted` decision to take. What replaces it
+ * is a much narrower one: MSA is ALREADY the formal register of the language, so the chip (#422)
+ * marks only the ceremonial end — `law samaḥta`, `tafaḍḍal`, `as-salāmu ʿalaykum`,
+ * `shukran jazīlan` chip `formal`; everything else stays `neutral`; and **`informal` is unused in
+ * this course**, because the forms that would earn it are the dialect forms decision 1 keeps out
+ * of `display`. Say that in the notes rather than leaving a later author to wonder whether the
+ * value was forgotten. The gendered pair, meanwhile, is a rest point by now: every request in M1
+ * is authored `-ka`/`-ki`, and the learner has done this since L1-M1.
+ *
+ * ### 3. Agreement at length — three laws, all cutting against English, all stated TRUE
+ *
+ * "Agreement at length" is M3's job line, and Arabic's version of it is the most counter-intuitive
+ * grammar in any course here. The briefs state each law in full because each has a memorable false
+ * version an author will otherwise reach for:
+ *
+ * - **A plural of NON-HUMAN things takes feminine SINGULAR agreement** — `al-kutub jamīla`, "the
+ *   books, she is beautiful"; `as-sayyārāt kabīra`. Only human plurals take plural adjectives
+ *   (`al-mudarrisūn mashghūlūn`). The slogan to kill is the silent one: "plural noun, plural
+ *   adjective", which is English's law and is wrong in Arabic more often than it is right.
+ * - **A verb placed BEFORE its subject stays singular** — `dhahaba al-awlād ilā as-sūq`, never
+ *   `*dhahabū al-awlād`; it agrees in gender only. M10 owns this one, because a four-sentence
+ *   account with named people cannot dodge verb-first order the way L1's pronoun subjects did.
+ * - **The `afʿal` comparative is invariable** — `hiya akbar min ukhtihā`, no feminine, no plural,
+ *   after nine modules in which every adjective bent. M9 owns it.
+ *
+ * ### 4. Seams — the hyphen laws carry, and L2 adds four collisions of its own
+ *
+ * `surfaceIndexKeys` still indexes a hyphenated surface AND each hyphen part, first occurrence
+ * winning, so the L1 clitic owners stand: `al` (M1), `bi` (M2), `sa` (M6), `li` (M9), and the
+ * multi-token saves (`ṣabāḥ al-khayr`, `min faḍlika`) keep their bare words free. L2's own:
+ *
+ * - **`min` is "than".** The comparative's "than" is spelled exactly like L1-M1's "from", whose
+ *   row owns the key forever. M9 therefore points back and opens no row, and M1's chain is worth
+ *   seeing whole: L1-M8 indexed `min faḍlika` as a phrase precisely so that `min` stayed L1-M1's,
+ *   and now a third job arrives on the same note.
+ * - **`man` is not `min`.** "Who" and "from" differ by one short vowel, and short vowels are
+ *   always written (the romanization contract) — so they are two keys only as long as no author
+ *   gets lazy. M7 opens `man` and its note names the collision.
+ * - **`afʿal` is a PATTERN, not a meaning.** M3's colours are `aḥmar`, `azraq`, `aswad` and M9's
+ *   comparatives are `akbar`, `arkhaṣ`, `aghlā` — the same shape, and `aḥmar` is not "redder".
+ *   M9's rule says the root decides, so that M3's colours do not retroactively become
+ *   comparatives in a learner's head.
+ * - **`laysa` enters at M7, as ONE frozen cell.** L1 banned it, and rightly; but a phone call's
+ *   whole business is absence, `lā` cannot negate a nominal sentence, and `huwa ghayr mawjūd` is
+ *   an evasion. So M7 gets `laysa`/`laysat` in the third person only, taught as vocabulary with
+ *   its conjugation named as L3's. This is the one L1 prohibition L2 lifts, and it is lifted
+ *   narrowly and on the record.
+ *
+ * ### Why the en-ar L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim; the brief adds which English→Arabic delta each
+ * job carries, sequenced so each pressure point lands where its job needs it: the imperative and
+ * its prosthetic vowel in M1 (`tadhhab` → `idhhab`, and initial hamza stays unwritten, so the
+ * romanization contract does the work); the third-person free pronouns `huwa`/`hiya` and the
+ * `-hā` suffix in M2, which L1 never needed because a verb prefix carried the person; the three
+ * plural systems and the definiteness rule that turns `al-bayt al-kabīr` (a phrase) into
+ * `al-bayt kabīr` (a sentence) in M3; the imperative on motion verbs and `ʿalā al-yamīn` in M4;
+ * `tafaḍḍal` — one word for five English hosting acts — in M5; the ordinal clock (`as-sāʿa
+ * al-khāmisa`) and `an` + verb in M6; `man`, `laysa` and `ālū` in M7; `ʿindī` doing its third job
+ * (`ʿindī ṣudāʿ`) in M8; `afʿal` and `min` in M9; and in M10 the perfect as the narrative tense,
+ * `kāna` + imperfect for the background, and verb-first order with its singular agreement. Kept
+ * deliberately OUT of L2 and named where it would be reached for: the full case system, the
+ * passive, `lam` and `laysa` beyond M7's cell, `qad`, the jussive, the dual beyond L1-M8's
+ * counted pair and M3's recognition row, and broken plurals as a derivational SYSTEM — they stay
+ * vocabulary, listed in the `forms` of the row that teaches the singular. Bounds climb 8 → 10
+ * (M1–M3: 8, M4–M7: 9, M8–M10: 10), pools are authored to 12, M1–M3 ship fully enriched, and
+ * M10's items are four-sentence accounts with every person suffix written in full.
+ *
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -2779,6 +2873,215 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         'A turn is where the register is most tempting to break: keep every sentence in the same spoken-simple MSA the course has used since M1, and put "in Cairo you would hear something else" in usage, never in display.',
       ],
       maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M1': {
+      id: 'L2-M1',
+      title: 'Asking politely',
+      job: 'Requests, thanks, apologies in the right register',
+      patterns: [
+        'V-imperative + min faḍlika/faḍliki',
+        'law samaḥta/samaḥti + , + <request>',
+        'hal yumkinuka/yumkinuki + an + V?',
+        'aʿṭinī + al- + N + min faḍlika',
+        'shukran jazīlan — ʿafwan',
+      ],
+      notes: [
+        "REGISTER, decided for the whole level and repeated here because a prompt only ever shows an author the notes (full record: docs/54-en-ar-L2-brief-decisions.md). Arabic's second person forks by GENDER, not by politeness — anta/anti, ismuka/ismuki — and L1 taught that fork from its first module, so this course has no tú/usted decision to take and this module does not spend itself on one. MSA is already the language's formal register, so #422's chip marks only the ceremonial end: law samaḥta, tafaḍḍal, shukran jazīlan and as-salāmu ʿalaykum chip `formal`, everything else stays `neutral`, and `informal` is UNUSED in en-ar — the forms that would earn it are dialect forms, which never reach display. Say that in a note; a value that is missing on purpose should look deliberate.",
+        "The grammar of the module is the imperative, and it falls out of a verb the learner already has: take the ta- form, drop the prefix, and if what is left cannot start a word, put a vowel in front — tadhhab → idhhab, tashrab → ishrab, taktub → uktub, ta'kul → kul. Word-initial hamza is not written (the romanization contract), so these are spelled with a plain vowel and each is one clean key. The feminine adds -ī: idhhabī, ishrabī. English has one imperative for everyone; Arabic has four, and this module authors the two the course uses.",
+        'Softening is lexical, not grammatical, and that is the delta: Arabic does not have a polite verb form above the imperative, so politeness is bought with min faḍlika (L1-M8\'s phrase, re-taught here and owned there), law samaḥta ("if you would permit" — the everyday please of a request made to a stranger), and the question frame hal yumkinuka an…? ("is it possible for you to…"), which is the softest of the three and the one that survives being said to anyone. An imperative alone is not rude; an imperative with nothing around it is abrupt, and that distinction belongs in usage.',
+        'Thanks and apology: shukran (L1-M2) climbs to shukran jazīlan, and both are the adverbial -an the scheme exempts from the no-case-endings law, alongside ghadan and dāʾiman. ʿafwan (L1-M10) answers thanks AND excuses an interruption — one word, two jobs, its row already L1\'s. āsif / āsifa is regret for something done; lā baʾsa is "no harm done", and mushkila is deliberately left for M8, which needs it as a noun in its own right.',
+        'INDEX SEAM: idhhab, ishrab, kul, uktub, aʿṭinī, samaḥta, samaḥti, law, yumkinuka, yumkinuki, jazīlan, āsif, āsifa and baʾsa are fresh keys. min faḍlika stays L1-M8\'s multi-token surface, and the reason is worth restating in the note, because the whole chain is about to pay off a third time: that phrase was indexed whole so that min stayed L1-M1\'s "from", and M9\'s comparative "than" will land on that same row. Write āsif with the initial hamza UNWRITTEN and baʾsa with the medial hamza written as ʾ — never a plain apostrophe, never a curly quote, or the two hamza classes stop round-tripping.',
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M2': {
+      id: 'L2-M2',
+      title: 'Describing people',
+      job: 'Appearance, character, relationships',
+      patterns: [
+        'huwa/hiya + Adj',
+        'hādhā/hādhihi + N + -ī',
+        'ʿindī + N',
+        'ismuhā + <name>',
+        'N + N-ī  (iḍāfa)',
+      ],
+      notes: [
+        'The third person finally stands on its own two feet. L1 never needed huwa or hiya — the ya-/ta- prefix carried the person inside the verb, and a nominal sentence about someone used their name — so this module opens both, plus the -hā suffix that pairs with L1-M7\'s -hu: ismuhā, baytuhā, ʿindahā, sayyāratuhā. The nominal sentence still has NO copula (huwa ṭawīl, "he tall"), which is L1-M1\'s law meeting a new subject: transfer, a rest point, and worth saying so rather than re-teaching it as news.',
+        'Possession is a preposition, not a verb, and this is the module to say why: ʿind- (L1-M7) is literally "at", which is exactly why it takes the possessive suffixes rather than conjugating, and why its past is kāna ʿindī (L1-M5\'s kāna). The slogan to kill is "ʿindī means I have" — memorable, and it leaves an author with no way to explain ʿindahā or the past. Relationship by iḍāfa is the other half: bayt ṣadīqī, ism ukhtī — two nouns in a row, the first NEVER taking al-, which L1-M7 taught and this module drills on people.',
+        'The family and person set: akh, ukht, ab, umm, ibn, bint, ṣadīq, ṣadīqa, zawj, zawja; ṭawīl, qaṣīr, shābb, laṭīf, karīm, dhakī. Author them as gendered pairs so M3 inherits a grid. kabīr is L1-M3\'s key ("big"), and "old" of a person is kabīr fī as-sinn — the same row, its note true of both jobs, and no second row opened for the age reading.',
+        'Character adjectives are where an author reaches for the English "is" and finds nothing: hiya laṭīfa jiddan is three words and one of them is "very" (jiddan, L1-M3, another adverbial -an). Keep the sentences nominal here; the verb comes back in M4 and M10. Tag every gendered pair delta ONCE and then treat it as the rest point it has become — the learner has been marking -a since L1-M1\'s ṭālib / ṭāliba.',
+        "INDEX SEAM: huwa, hiya, ismuhā, baytuhā, ʿindahā, akh, ukht, ab, umm, ibn, bint, zawj, zawja, ṭawīl, qaṣīr, shābb, laṭīf, karīm, dhakī and sinn are fresh keys. The person suffixes attach with NO hyphen, unlike the al-/bi-/li-/sa- clitics, so each suffixed shape is its own single key and belongs in the forms list of the row that teaches the bare word — the pattern L1-M7 set with baytī · baytuka · baytuki · baytuhu. hādhā and hādhihi stay L1-M8's rows; ṣadīq is fresh here even though ṣadīqa is not yet taught anywhere — author both cells on the one row.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M3': {
+      id: 'L2-M3',
+      title: 'Describing things',
+      job: 'Size, colour, quality — agreement at length',
+      patterns: [
+        'al- + N + al- + Adj   (a phrase)',
+        'al- + N + Adj   (a sentence)',
+        'al- + N-pl + Adj-f-sg',
+        'N + Adj + jiddan',
+        'hādhā + N + aḥmar',
+      ],
+      notes: [
+        'THE law of the module, and the most counter-intuitive grammar in any course in this repo: **a plural of NON-HUMAN things takes feminine SINGULAR agreement.** al-kutub jamīla — "the books, she is beautiful"; as-sayyārāt kabīra; al-buyūt qadīma. Only a plural of PEOPLE takes a plural adjective: al-mudarrisūn mashghūlūn. English has no such split, so the silent slogan an author brings — "plural noun, plural adjective" — is wrong in Arabic more often than it is right. State the law with both halves and spend the module\'s mistakes here.',
+        'The definiteness rule, which turns three words into either a phrase or a sentence depending on one al-: al-bayt al-kabīr is "the big house" (the adjective matches the noun in definiteness) and al-bayt kabīr is "the house is big" (it does not, so the sentence has a predicate). L1-M3 shipped the first shape; this module pays off the pair, and it is the single most useful thing in the level, because it is how Arabic says "is" without a verb.',
+        "Three plural systems, taught as vocabulary and not as derivation: sound masculine -ūn on human nouns (mudarrisūn), sound feminine -āt (sayyārāt, mudarrisāt, riyālāt — L1-M8 shipped two of these), and BROKEN plurals, which reshape the word from inside (kitāb → kutub, L1-M8; bayt → buyūt; walad → awlād; lawn → alwān). A broken plural lives in the forms of the row that teaches its singular — never in a row of its own — and no rule in this course claims the pattern is predictable, because it is not. The dual (L1-M8's kitābān, sayyāratān) is re-shown, not re-taught, with docs/42's usage line about spoken kitābayn standing.",
+        'Colours follow the afʿal / faʿlāʾ pattern: aḥmar / ḥamrāʾ, azraq / zarqāʾ, aswad / sawdāʾ, abyaḍ / bayḍāʾ, akhḍar / khaḍrāʾ. Two warnings belong in the note. The feminine is NOT the -a the learner has been writing since L1-M1, so the pattern must be shown as a pair rather than derived. And afʿal is the same shape M9 will use for the comparative — aḥmar is not "redder" — so this row says the shape is a pattern and the root decides the meaning, and M9\'s row says it back.',
+        "INDEX SEAM: jadīd, qadīm, naẓīf, ṭawīl (M2's, re-taught for things), aḥmar, ḥamrāʾ, azraq, zarqāʾ, aswad, sawdāʾ, abyaḍ, akhḍar, buyūt, awlād, alwān, mudarrisūn are fresh keys. Every faʿlāʾ feminine carries a FINAL hamza written as ʾ — ḥamrāʾ, never ḥamra — which is the same contract that keeps māʾ apart from mā; drop it and two colours merge into one entry. kutub, sayyārāt and riyālāt stay L1-M8's rows, and the al-'d shapes index their bare parts onto those same rows, which is what makes al-kutub resolvable at all.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M4': {
+      id: 'L2-M4',
+      title: 'Getting around',
+      job: 'Directions, transport, asking the way',
+      patterns: [
+        'ʿafwan + , + ayna + al- + N?',
+        'kayfa adhhab ilā + al- + N?',
+        'V-imperative + ʿalā al-yamīn / ʿalā al-yasār',
+        'ilā al-amām + thumma + <direction>',
+        'adhhab bi- + al- + N-transport',
+      ],
+      notes: [
+        'Directions are M1\'s imperative spent in the street: idhhab, khudh ("take" — a fresh verb whose imperative is irregular enough to be taught as a shape, not derived), and the frame that lets a learner ask without conjugating anything, kayfa adhhab ilā…? ("how do I go to…"). ayna (L1-M7) and kayfa (L1-M2) are both re-taught and owned elsewhere; ilā is L1-M4\'s. This module owns the direction words, not the question words.',
+        'The direction phrases hang off ʿalā (L1-M7): ʿalā al-yamīn, ʿalā al-yasār, and ilā al-amām for straight on. Each indexes its bare parts too — yamīn, yasār, amām (the last already L1-M7\'s "in front of", re-teaching itself as "forward") — so the rows carry notes true of the phrase and of the bare word alike, which is the al- law L1 set in its first module. hunā ("here") is fresh and pairs with L1-M7\'s hunāka.',
+        'Transport is where decision 1 of this level bites for the first time: the MSA word for a bus is al-ḥāfila, and the word every passenger in every Arab city says is al-bāṣ. Display, script, forms and pool take al-ḥāfila; ONE usage line names al-bāṣ in words. That is the whole dialect policy — prose only, never a field the index reads — and this module is one of the three that is allowed to use it. The rest: al-qiṭār, al-maḥaṭṭa, al-maṭār, sayyārat ujra (a taxi, and an iḍāfa the learner can now parse), as-sayyāra (L1-M3, with its sun letter).',
+        'bi- for the means of travel (adhhab bi-al-ḥāfila) is the same bi- L1-M2 taught inside bi-khayr and L1-M8 inside bi-kam — one key, three jobs, and its row is M2\'s. This is the strongest example in the course of why the hyphen law matters: a learner who met bi only inside "well" and "how much" is now told what it actually means, on the row where it has lived all along.',
+        "INDEX SEAM: khudh, yamīn, yasār, amām (as \"forward\"), hunā, ḥāfila, qiṭār, maḥaṭṭa, maṭār, ujra, bayna, warāʾ and jānib are fresh keys; bi-jānib indexes bi onto M2's row and jānib onto this module's. ʿalā, hunāka, ayna and amām-as-\"in front of\" stay L1-M7's; ilā stays L1-M4's; kayfa stays L1-M2's. Place names never index (#61), so anchor every direction on a common noun (al-maḥaṭṭa, as-sūq) and not on a city.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M5': {
+      id: 'L2-M5',
+      title: 'Food and hosting',
+      job: 'Ordering, offering, refusing without offence',
+      patterns: [
+        'tafaḍḍal / tafaḍḍalī',
+        'urīd + al- + N + min faḍlika',
+        'hal turīd + al- + N?',
+        'lā shukran + , + anā shabʿān/shabʿāna',
+        'al-ḥisāb min faḍlika',
+      ],
+      notes: [
+        'tafaḍḍal / tafaḍḍalī is the most useful word in this module and possibly in the course: it hands something over, invites someone in, offers a seat, gives permission and says "after you" — five English acts, one Arabic word, chipped `formal` and said by everyone. Teach it as a whole gesture rather than as a verb form, and let usage carry the range; a learner who leaves this module with only tafaḍḍal has still gained more than a page of vocabulary.',
+        "Ordering recycles almost everything: urīd (L1-M1), min faḍlika (L1-M8), the numbers and their gender polarity (L1-M8), hādhā / hādhihi (L1-M8) for pointing at a menu. The honest new spend is the food itself — laḥm, samak, khuḍār, ruzz, ḥulw, ṭabaq, al-ḥisāb — and the offer question hal turīd…? (L1-M3's turīd inside L1-M2's hal), which is a rest point dressed as a new frame.",
+        'Refusing without offence is the cultural half of the job and it needs a rule, not a phrase list: in Arab hosting an offer is EXPECTED to be repeated, so a single lā shukran is heard as politeness rather than as a decision, and the refusal that lands adds a reason — lā shukran, anā shabʿān ("I am full"). The reverse also matters: a host who accepts the first refusal has under-hosted. Put the law in usage, keep display to the sentences themselves, and do not moralise in a rule.',
+        "This module's dialect line (decision 1, second of three): the MSA offer hal turīd al-mazīd? is correct and stiff at a real table. ONE usage line may name what a host actually says; display, script, forms and pool stay MSA. And alḥamdu lillāh after eating is not religious vocabulary here — it is what a guest says when the meal ends, and its usage line should say exactly that.",
+        "INDEX SEAM: tafaḍḍal, tafaḍḍalī, laḥm, samak, khuḍār, ruzz, ḥulw, ṭabaq, ḥisāb, shabʿān, shabʿāna and mazīd are fresh keys. lā stays L1-M3's, shukran L1-M2's, min faḍlika L1-M8's phrase, urīd / turīd / turīdīn L1-M1's and L1-M3's rows. alḥamdu lillāh rides as ONE multi-token surface — the tool that keeps al and lillāh from being spent here — exactly as as-salāmu ʿalaykum does in L1-M2.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M6': {
+      id: 'L2-M6',
+      title: 'Making plans together',
+      job: 'Invitations, suggestions, settling a time',
+      patterns: [
+        'hal turīd an nadhhab ilā + al- + N?',
+        'limādhā lā + V-naḥnu + ?',
+        'as-sāʿa + al-<ordinal>',
+        'sa-nakūn hunāka + fī as-sāʿa + al-<ordinal>',
+        'muwāfiq — in shāʾ allāh',
+      ],
+      notes: [
+        "The suggestion frame is an + a verb, and L1 already shipped an inside urīd an ashrab (L1-M3) — so the delta is not the particle but the person: hal turīd an nadhhab…? asks with YOU and answers with WE, which is the shape every invitation in Arabic takes. limādhā lā nadhhab…? (\"why don't we go\") reuses L1-M9's limādhā and L1-M3's lā for a job neither has done before; say so, because it looks like new grammar and is not.",
+        "The clock is the vocabulary spend and it is genuinely new: time takes ORDINALS in the feminine, agreeing with as-sāʿa — as-sāʿa al-wāḥida, ath-thāniya, ath-thālitha, ar-rābiʿa, al-khāmisa — where L1-M8 taught only cardinals and their gender polarity. Two things fall out of it, and both belong in the note: this is the course's densest run of sun letters (ath-, ar-, as-), which are SPELLING and not just sound; and the half and quarter are joined with wa — wa an-niṣf, wa ar-rubʿ — the same free-standing wa L1-M1 owns.",
+        'Agreeing and hedging: muwāfiq / muwāfiqa ("agreed"), ṭayyib (L1-M10), and in shāʾ allāh, which L1-M6 already taught as a future marker. Its second job belongs here and belongs in usage rather than in a rule: in speech it is also how a soft no is given, so a plan sealed only with in shāʾ allāh is not sealed. That is a fact about the language, stated without comment, and it is exactly the kind of thing a learner cannot get from a table of verbs.',
+        'Days and horizons come from L1 where they can: ghadan, al-usbūʿ al-qādim and baʿd aẓ-ẓuhr are all L1-M6\'s, re-shown here. The new ones are the day names the plan needs (al-jumʿa, as-sabt, al-aḥad) and mawʿid ("an appointment"). Keep the module\'s own future in sa- (L1-M6, and docs/42 demoted sawfa to recognition) — no new tense is opened to settle a time.',
+        "INDEX SEAM: mawʿid, muwāfiq, muwāfiqa, sāʿa, wāḥida (as an ordinal — L1-M8's wāḥida is the cardinal \"one\" and owns the key, so this note points back rather than opening a second row), thāniya, thālitha, rābiʿa, khāmisa, niṣf, rubʿ, jumʿa, sabt, aḥad are fresh keys. an stays L1-M3's row, limādhā L1-M9's, lā L1-M3's, wa L1-M1's, in shāʾ allāh L1-M6's whole-phrase surface. Write every sun-letter assimilation (ath-thāniya, never al-thāniya): the build sees two different words, and half the module's keys are at stake. Two assimilated articles are themselves fresh hyphen-part keys — ath and ar, joining L1's as, ash, aṣ, aẓ and aṭ — so the first row to carry each defines the article, not just the word.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M7': {
+      id: 'L2-M7',
+      title: 'On the phone',
+      job: 'Calls and messages — openings, closings, taking a message',
+      patterns: [
+        'ālū + , + man maʿī?',
+        'hal + <name> + mawjūd/mawjūda?',
+        'laysa mawjūdan + , + <offer>',
+        'hal yumkinuka an tatruka risāla?',
+        'sa-attaṣil bika/biki + ghadan',
+      ],
+      notes: [
+        'man is this module\'s key and its note must name the collision it walks into: man ("who") and min ("from", L1-M1\'s) differ by one short vowel, and short vowels are ALWAYS written in this course precisely so that pairs like this stay two words. Write man maʿī? ("who is with me", the Arabic for "who\'s calling") with its vowel every time; an author who slips writes min maʿī and the learner is sent to a note about origins for the rest of the course.',
+        "laysa enters here, and it is the one L1 prohibition this level lifts. L1 banned lam and laysa outright and was right to; but a phone call's entire business is absence, lā cannot negate a nominal sentence, and huwa ghayr mawjūd is an evasion. So M7 gets laysa and laysat in the THIRD PERSON ONLY, taught as two vocabulary items rather than as a verb, with the rest of the paradigm named in the note as L3's. Nothing else in L2 may use it.",
+        'The opening is a loanword and the course should say so plainly: ālū is what every Arabic speaker says when picking up, from the French, and there is no MSA alternative anybody uses. This is decision 1\'s third and last permitted dialect-adjacent line — ālū is in display because it IS the standard telephone opening, while the everyday word for a mobile (which varies by country) stays in usage prose beside the MSA hātif. mawjūd / mawjūda ("present, available") carries the rest of the call.',
+        "Messages recycle the level's own tools: hal yumkinuka an…? is M1's softener, an + verb is M6's frame, tatruka and tatakallam are L1-M10's verb doing new work, and sa- (L1-M6) promises the call back. risāla and raqm are the two nouns worth spending on. mashghūl (L1-M6, \"busy\") comes back at exactly the moment it is most useful — the line is busy, the person is busy — one row, both jobs, and the note is already true of them.",
+        "INDEX SEAM: ālū, man, laysa, laysat, mawjūd, mawjūda, risāla, raqm, hātif, attaṣil and tatruka are fresh keys. min stays L1-M1's and must never be written where man is meant. maʿī, maʿaka and maʿaki stay L1-M10's rows, doing the phone's \"with me\" here. bika / biki index bi onto L1-M2's row, as every bi- clitic in the course does.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M8': {
+      id: 'L2-M8',
+      title: 'When something goes wrong',
+      job: 'Problems, asking for help, complaining calmly',
+      patterns: [
+        'ʿindī + mushkila',
+        'hādhā lā yaʿmal',
+        'sāʿidnī min faḍlika',
+        'aḥtāj ilā + al- + N',
+        'ʿafwan + , + hunāka mushkila fī + al- + N',
+      ],
+      notes: [
+        'ʿind- does its third job here and earns its rule at last: ʿindī mushkila ("I have a problem"), ʿindī ṣudāʿ ("I have a headache"). The slogan to kill is "ʿindī means I have" — memorable, and it leaves an author unable to explain ʿindahā, or the past kāna ʿindī, or why there is no verb to conjugate. The law: ʿind- is a PREPOSITION meaning "at", it takes the possessive suffixes exactly as bayt does, and Arabic expresses having by locating a thing at a person. State that and the whole family falls out.',
+        'Negation of a verb is L1-M3\'s lā + imperfect, re-used rather than re-taught: hādhā lā yaʿmal ("this doesn\'t work"). The nominal negation the module might reach for is M7\'s laysa, and it stays there — this module names it and does not use it, which is what keeps the lift narrow. The past goes through L1-M5\'s perfect: nasītu ("I forgot"), ḍāʿa ("it got lost"), taʾakhkhartu ("I was late"), with every person suffix written in full.',
+        "Asking for help is M1's imperative on a new verb — sāʿidnī, with the -nī object suffix the learner met in M1's aʿṭinī — plus the noun musāʿada and aḥtāj ilā (\"I need\", which takes ilā, L1-M4's, and not a bare object: *aḥtāj māʾ is the error English produces). Author the pair so the learner sees the same root twice: sāʿidnī and musāʿada.",
+        'Complaining calmly is the job\'s real content and it is a register lesson: Arabic complains through the frame, not through volume — ʿafwan (L1-M10) opens it, hunāka mushkila states it, and min faḍlika closes it. An unframed hādhā lā yaʿmal is an accusation. hunāka is doing its existential job here ("there is"), which is a second job for L1-M7\'s location row — point back at that row, and write the note true of both, because no L2 row can take the key.',
+        "INDEX SEAM: mushkila, mushkilāt, yaʿmal, sāʿidnī, musāʿada, aḥtāj, ṣudāʿ, ḥumma, nasītu, ḍāʿa and taʾakhkhartu are fresh keys. ʿindī, ʿindaka, ʿindaki and ʿindahu stay L1-M7's row (ʿindahā is M2's addition to it); hunāka stays L1-M7's; lā stays L1-M3's; ʿafwan and min faḍlika stay L1-M10's and L1-M8's. taʾakhkhartu carries a MEDIAL hamza written ʾ, like masāʾ and baʾsa — the class that must never be a plain apostrophe.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M9': {
+      id: 'L2-M9',
+      title: 'Comparing and choosing',
+      job: 'More, less, better — stating a preference',
+      patterns: [
+        'A + afʿal + min + B',
+        'afʿal + N   (the superlative)',
+        'ufaḍḍil + al- + N',
+        'ayy + N + turīd?',
+        'hādhā akthar min dhālika',
+      ],
+      notes: [
+        "The comparative is one shape and it does not bend: afʿal, from the root, invariable for gender and number — huwa akbar min akhīhi and hiya akbar min ukhtihā use the SAME word, after nine modules in which every adjective took an -a. That is the delta, and it is a relief rather than a burden: akbar, aṣghar, aṭwal, aqṣar, arkhaṣ (from L1-M8's rakhīṣ), aghlā (from ghālī), aḥsan, asraʿ. Show each beside the plain adjective the learner already owns.",
+        '"Than" is min, and the key is L1-M1\'s "from". This is the third job to land on that one row — origin in L1-M1, the phrase min faḍlika indexed whole in L1-M8 to protect it, and comparison here — and under first-occurrence-wins no row this module writes can take it. So M9 points back explicitly and opens nothing, and the note the learner sees is L1-M1\'s: make sure the brief for that row is written to bear this weight.',
+        'The superlative is the SAME afʿal in an iḍāfa with an indefinite singular — akbar bayt, "the biggest house", literally "biggest of a house" — or al-akbar standing alone. English has two endings and two words (-er, -est, more, most); Arabic has one shape doing both jobs, and which one is meant is decided by what follows. That is the rule; "add al- for the superlative" is the slogan that breaks on akbar bayt.',
+        'The warning M3 was written to set up: afʿal is a PATTERN, not a meaning. aḥmar, azraq and aswad have the same shape and are colours, not comparatives — nothing is "redder" here — because the root decides and the pattern is shared. Say it in this module as well as in M3, since a learner meeting akbar after alwān will otherwise generalise in the wrong direction.',
+        "Choosing: ufaḍḍil (\"I prefer\"), ayy / ayya (\"which\" — a sibling of L1-M7's ayna and L1-M4's matā, cross-referenced and merged with neither), and akthar / aqall for quantity. INDEX SEAM: akbar, aṣghar, aṭwal, aqṣar, arkhaṣ, aghlā, aḥsan, asraʿ, akthar, aqall, ufaḍḍil and ayy are fresh keys. min stays L1-M1's; dhālika stays L1-M9's; kabīr, rakhīṣ and ghālī stay L1-M3's and L1-M8's, each comparative row pointing back at the adjective it is built from rather than restating it.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M10': {
+      id: 'L2-M10',
+      title: 'Telling what happened',
+      job: 'A four-sentence account in the past',
+      patterns: [
+        'V-perfect + <subject> + ilā + al- + N',
+        'dhahabtu + ilā + al- + N + wa + V-perfect',
+        'kāna + <subject> + V-imperfect',
+        'thumma + V-perfect + , + lākin + <statement>',
+      ],
+      notes: [
+        "Each item is an ACCOUNT of exactly four short sentences, not one long one, and the per-sentence bound applies to each sentence inside it. The perfect is Arabic's narrative tense and L1-M5 already taught its suffix conjugation, so almost every verb here is a known verb in a known cell — write every person suffix IN FULL (dhahabtu · dhahabta · dhahabti · dhahaba · dhahabat), which is the one place the no-case-endings law makes an exception, because those suffixes carry the person and not the case.",
+        "THE delta of the module, and the reason a four-sentence account needs it: **a verb placed before its subject stays SINGULAR.** dhahaba al-awlād ilā as-sūq — never dhahabū al-awlād — agreeing in gender only (dhahabat al-banāt). L1 dodged this entirely by using pronoun subjects, where the question cannot arise. It is the mirror of M3's non-human-plural law: Arabic's agreement is decided by position and by what kind of thing the subject is, not by number alone. Spend the mistakes here.",
+        'Background versus event, and Arabic solves it with a verb rather than a tense: kāna (L1-M5) plus the IMPERFECT gives the standing situation — kuntu ashrab al-qahwa ʿindamā ittaṣala ("I was drinking coffee when he called") — while the bare perfect moves the story on one step. This is the whole of L2\'s past-tense apparatus. qad, lam and the passive stay OUT and are named here as L3\'s, so a later author does not import them into an account that does not need them.',
+        'Build the accounts from scenes the ladder supports: a plan that failed (M6 + M8), a call at the wrong moment (M7), a meal (M5), directions that went wrong (M4). Join them with what L1-M10 shipped — thumma, lākin, ayḍan, wa — plus baʿda dhālika and fī an-nihāya. The honest new spend is the third-person perfect cells a story needs: qāla, raʾā, waṣala, ittaṣala, and their feminine partners.',
+        "INDEX SEAM: qultu, qāla, qālat, raʾaytu, raʾā, waṣaltu, waṣala, ittaṣala, dhahabat, akalat, nihāya and ʿindamā are fresh keys, each a new CELL of a verb whose row lives elsewhere where one exists — its note points back to the first-teach row and no L1 or earlier-L2 file is edited to accommodate it. kāna, kuntu, kunta and kunti stay L1-M5's row, which is where the background frame belongs. raʾaytu carries a medial hamza written ʾ; qultu is spelled with the ū collapsed to u, and the row's forms carry both cells so the account resolves.",
+      ],
+      maxWordsPerSentence: 10,
       newWordCap: NEW_WORD_CAP,
     },
   },
