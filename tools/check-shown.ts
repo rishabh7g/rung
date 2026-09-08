@@ -155,11 +155,27 @@ for (const s of module_.sentences) {
             ' learner is shown — this row is only worth keeping if the sentence needs the word',
         );
       }
+      /**
+       * A row collides when the key it OPENS — its own whole surface — is one another row of this
+       * module already earned, whether as a whole surface or as a hyphen PART. `surfaceIndexKeys`
+       * splits hyphens, so `ʿalā ar-raghm min` silently buys `raghm` and `peut-être` silently buys
+       * `peut`; a later row opening that word as its own display is unreachable, and this map was
+       * blind to it while it held whole surfaces alone. en-ar's L4-M4 wave found the case by
+       * reasoning about the emitter rather than by running this check, which is the wrong way
+       * round.
+       *
+       * Only the whole key is TESTED, though every earned key is RECORDED. Part against part is
+       * not a defect and flagging it is noise: en-ar's `al-` article makes every definite noun
+       * donate `al`, so two ordinary nouns in one module would read as a collision. Nobody taps a
+       * bound article — the learner taps the word.
+       */
       const row = `${s.id} "${w.display}"`;
-      const first = mine.get(key);
-      if (first === undefined) mine.set(key, { row, note: w.note });
-      else if (first.row !== row && first.note !== w.note)
-        collisions.set(key, `${first.row} and ${row}`);
+      const opened = mine.get(key);
+      if (opened !== undefined && opened.row !== row && opened.note !== w.note)
+        collisions.set(key, `${opened.row} and ${row}`);
+      for (const earned of surfaceIndexKeys(key)) {
+        if (!mine.has(earned)) mine.set(earned, { row, note: w.note });
+      }
     }
   }
 }
