@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M10",
+  "title": "Telling what happened",
+  "job": "A four-sentence account in the past",
+  "prerequisites": [
+    "L2-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "preterite",
+      "imperfect",
+      "present"
+    ],
+    "allowedPatterns": [
+      "<imperfect background> + , + <preterite event>",
+      "<preterite event> + y + <preterite event>",
+      "<preterite event> + porque + <imperfect reason>",
+      "Al final + , + <preterite event>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "The imperfect paints the standing situation the story happens against — what was already going on, what things were like — and the preterite moves the account forward one completed step. \"The preterite is for completed actions and the imperfect for ongoing ones\" is the slogan, and it breaks on the first real account."
+    },
+    {
+      "tag": "delta",
+      "text": "Duration does not decide it. Ayer comí a las ocho is completed; Comía cuando llamaste is background for the call, and neither is longer than the other. What decides is the ROLE the clause plays in the telling."
+    },
+    {
+      "tag": "delta",
+      "text": "había is the imperfect of hay, and it never changes for number: había un problema, había dos problemas. It is what a scene is set with."
+    },
+    {
+      "tag": "free",
+      "text": "An account is joined with the words the course already has: y, pero, entonces, después, luego, porque, and al final for the last step."
+    },
+    {
+      "tag": "interference",
+      "text": "Once the subject is established Spanish keeps dropping it. A yo at the head of every sentence in an account reads as insistence, not as neutral telling."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M10-S01",
+      "display": "Ayer fui al médico. Era tarde. No había nadie. Al final hablé con el médico.",
+      "cue": "Yesterday I went to the doctor. It was late. There was nobody there. In the end I spoke to the doctor.",
+      "literal": "Yesterday I-went to-the doctor. Was late. Not there-was nobody. At-the end I-spoke with the doctor.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tarde",
+            "cue": "late",
+            "tag": "free",
+            "forms": [],
+            "note": "The bare word inside M4's por la tarde, doing its own job at last: era tarde means the hour was late."
+          },
+          {
+            "display": "había",
+            "cue": "there was · there were",
+            "tag": "delta",
+            "forms": [],
+            "note": "The imperfect of hay, and it never changes for number: había un problema, había dos problemas. It sets a scene rather than moving a story."
+          },
+          {
+            "display": "nadie",
+            "cue": "nobody",
+            "tag": "delta",
+            "forms": [],
+            "note": "Needs the no in front of the verb as well: no había nadie. Spanish stacks its negatives where English refuses to."
+          },
+          {
+            "display": "Al final",
+            "cue": "in the end",
+            "tag": "free",
+            "forms": [],
+            "note": "Two words as one, and the last step of an account almost always takes it."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Two imperfects set the scene and two preterites move the story. Swap them and the account reads as a list of unrelated facts.",
+      "sound": "a-BI-a for había, three syllables with the h silent and the accent breaking the i away from the a.",
+      "variations": [
+        {
+          "display": "Ayer fui a la tienda. Era tarde. No había nadie. Al final hablé con mi hermana.",
+          "cue": "Yesterday I went to the shop. It was late. There was nobody there. In the end I spoke to my sister.",
+          "changed": "a different errand in the same shape"
+        },
+        {
+          "display": "Fui al médico porque me duele la cabeza.",
+          "cue": "I went to the doctor because my head hurts.",
+          "changed": "one sentence, with the reason in the present"
+        },
+        {
+          "display": "No había nadie en la calle.",
+          "cue": "There was nobody in the street.",
+          "changed": "the scene-setting line on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Ayer fui al médico. Fue tarde. No hubo nadie.",
+        "why": "Being late and being empty are the standing situation, so they take the imperfect: era tarde, no había nadie."
+      },
+      "usage": "The everyday account of a small errand. Four short sentences, and none of them names the speaker.",
+      "register": "neutral",
+      "mnemonic": "Scene in the imperfect, steps in the preterite."
+    },
+    {
+      "id": "L2-M10-S02",
+      "display": "Ayer llamé a mi hermana. Estaba en casa. Hablamos mucho. Fue muy bien.",
+      "cue": "Yesterday I called my sister. She was at home. We talked a lot. It went very well.",
+      "literal": "Yesterday I-called to my sister. Was at home. We-spoke much. Went very well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "llamé",
+            "cue": "I called",
+            "tag": "delta",
+            "forms": [
+              "llamé",
+              "llamó"
+            ],
+            "note": "The past of M7's llamo, and the accent carries the person: llamé is I, llamó is he or she."
+          },
+          {
+            "display": "Hablamos",
+            "cue": "we talked",
+            "tag": "delta",
+            "forms": [],
+            "note": "For an -ar verb the we-form is the same in the present and the past — hablamos means both, and only the sentence says which."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "hablamos is the present AND the past. Spanish is content to let the story decide, and this is one of the few places it does that.",
+      "sound": "ya-ME, stressed at the end, which is what the accent marks.",
+      "variations": [
+        {
+          "display": "Ayer llamé a mi hermano. Estaba en el trabajo.",
+          "cue": "Yesterday I called my brother. He was at work.",
+          "changed": "someone else, somewhere else"
+        },
+        {
+          "display": "Mi hermana llamó ayer.",
+          "cue": "My sister called yesterday.",
+          "changed": "the other person doing the calling, and the accent moves"
+        },
+        {
+          "display": "Hablamos mucho y fue muy bien.",
+          "cue": "We talked a lot and it went very well.",
+          "changed": "the two halves joined with y"
+        }
+      ],
+      "mistake": {
+        "display": "Ayer llamé a mi hermana. Estuvo en casa.",
+        "why": "Where she was is the standing situation: estaba en casa. The preterite would make being at home an event."
+      },
+      "usage": "A phone call recounted. The personal a before mi hermana is L1-M4's, doing exactly its job.",
+      "register": "neutral",
+      "mnemonic": "The accent is the person, in the past as in the present."
+    },
+    {
+      "id": "L2-M10-S03",
+      "display": "El sábado fui al cine. La película era muy buena. Después comí en casa. Estaba cansado.",
+      "cue": "On Saturday I went to the cinema. The film was very good. Afterwards I ate at home. I was tired.",
+      "literal": "The Saturday I-went to-the cinema. The film was very good. Afterwards I-ate at home. Was tired.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "era",
+            "cue": "was",
+            "tag": "interference",
+            "forms": [],
+            "note": "The imperfect of ser, for what something WAS LIKE. fue, its preterite, would make the film's goodness an event rather than a quality."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "era and fue are both \"was\". era describes; fue happens. The film's quality is a description and the outing is an event.",
+      "sound": "E-ra, two syllables, with one tapped r.",
+      "variations": [
+        {
+          "display": "El domingo fui al cine. La película era muy buena.",
+          "cue": "On Sunday I went to the cinema. The film was very good.",
+          "changed": "another day"
+        },
+        {
+          "display": "Después comí en casa y estaba muy cansado.",
+          "cue": "Afterwards I ate at home and I was very tired.",
+          "changed": "the last two sentences joined with y"
+        },
+        {
+          "display": "La película no era buena.",
+          "cue": "The film wasn't good.",
+          "changed": "the description in the negative"
+        }
+      ],
+      "mistake": {
+        "display": "La película fue muy buena.",
+        "why": "Being good is what the film WAS LIKE, so it takes era. fue would report the film as a completed happening."
+      },
+      "usage": "A weekend recounted on Monday. Four sentences and not one pronoun.",
+      "register": "neutral",
+      "mnemonic": "era describes, fue happens."
+    },
+    {
+      "id": "L2-M10-S04",
+      "display": "Perdí la llave. No estaba en casa. Entonces fui a la tienda. Al final llegué tarde.",
+      "cue": "I lost the key. It wasn't at home. So I went to the shop. In the end I arrived late.",
+      "literal": "I-lost the key. Not was at home. Then I-went to the shop. At-the end I-arrived late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "llegué",
+            "cue": "I arrived",
+            "tag": "delta",
+            "forms": [
+              "llegué",
+              "llegó"
+            ],
+            "note": "llegar in the past. The u is written to keep the g hard before the é — a spelling rule, like cruce for cruzo, and not a sound change."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "llegué has a u nobody says. Without it the g would soften, and llegé would be a different sound entirely.",
+      "sound": "ye-GE, with a hard g. The u is silent and is there only to keep it that way.",
+      "variations": [
+        {
+          "display": "Perdí el teléfono. Entonces llamé a mi hermana.",
+          "cue": "I lost my phone. So I called my sister.",
+          "changed": "a different loss, and a different response"
+        },
+        {
+          "display": "Llegué muy tarde al cine.",
+          "cue": "I arrived at the cinema very late.",
+          "changed": "one sentence, with the place named"
+        },
+        {
+          "display": "Llegó tarde porque no había metro.",
+          "cue": "He arrived late because there was no metro.",
+          "changed": "the he-form, and había giving the reason"
+        }
+      ],
+      "mistake": {
+        "display": "Al final llegé tarde.",
+        "why": "The u keeps the g hard: llegué. Spanish spells around its own sound rules."
+      },
+      "usage": "A bad morning told in four sentences. entonces is what turns the list into a story.",
+      "register": "neutral",
+      "mnemonic": "A silent u guards a hard g."
+    },
+    {
+      "id": "L2-M10-S05",
+      "display": "Ayer trabajé mucho. Estaba muy cansado. No comí nada. Fui a casa temprano.",
+      "cue": "Yesterday I worked a lot. I was very tired. I didn't eat anything. I went home early.",
+      "literal": "Yesterday I-worked much. Was very tired. Not I-ate nothing. I-went to home early.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nada",
+            "cue": "nothing · anything",
+            "tag": "delta",
+            "forms": [],
+            "note": "Like nadie, it wants a no in front of the verb: no comí nada. Two negatives, and Spanish means them both. The row is L1-M3's."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "no comí nada is not a double negative that cancels. Spanish stacks negatives and each one strengthens the last.",
+      "sound": "NA-da, with the d soft between vowels.",
+      "variations": [
+        {
+          "display": "Ayer trabajé mucho y estaba muy cansado.",
+          "cue": "Yesterday I worked a lot and I was very tired.",
+          "changed": "the first two joined with y"
+        },
+        {
+          "display": "No comí nada porque estaba cansado.",
+          "cue": "I didn't eat anything because I was tired.",
+          "changed": "porque, with the reason in the imperfect"
+        },
+        {
+          "display": "Fui a casa muy temprano.",
+          "cue": "I went home very early.",
+          "changed": "the last step on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Comí nada.",
+        "why": "nada needs the no: no comí nada. On its own it answers a question — ¿Qué comiste? Nada."
+      },
+      "usage": "The day recounted at the end of it. Every clause is about the speaker, and not one of them says so.",
+      "register": "neutral",
+      "mnemonic": "Spanish stacks its negatives and means them all."
+    },
+    {
+      "id": "L2-M10-S06",
+      "display": "Mi hermano llamó ayer. Estaba en el trabajo. Hablamos un poco. Luego fui al médico.",
+      "cue": "My brother called yesterday. I was at work. We talked a little. Then I went to the doctor.",
+      "literal": "My brother called yesterday. Was at the work. We-spoke a little. Then I-went to-the doctor.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "llamó",
+            "cue": "he called",
+            "tag": "delta",
+            "forms": [],
+            "note": "The he-she past of llamar, and the accent has moved to the o. The row for llamar is S02's."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Two different people in four sentences and no pronoun for either. The verb endings carry it, and adding él would sound like a correction.",
+      "sound": "ya-MO, stressed at the end. The only difference from llamé is the vowel under the accent.",
+      "variations": [
+        {
+          "display": "Mi hermana llamó ayer.",
+          "cue": "My sister called yesterday.",
+          "changed": "the other sibling, same verb form"
+        },
+        {
+          "display": "Llamó porque estaba en casa.",
+          "cue": "He called because he was at home.",
+          "changed": "porque and the imperfect reason"
+        },
+        {
+          "display": "Hablamos un poco y luego fui al médico.",
+          "cue": "We talked a little and then I went to the doctor.",
+          "changed": "the last two joined with y"
+        }
+      ],
+      "mistake": {
+        "display": "Mi hermano llamó ayer. Estuve en el trabajo.",
+        "why": "Being at work is the situation the call arrived into: estaba. estuve would make it a separate event."
+      },
+      "usage": "A day with two people in it. The subject changes twice and is never named after the first line.",
+      "register": "neutral",
+      "mnemonic": "é is me, ó is them."
+    },
+    {
+      "id": "L2-M10-S07",
+      "display": "El domingo hice sopa. Estaba muy caliente. Mi madre dijo que estaba buena. Comimos en casa.",
+      "cue": "On Sunday I made soup. It was very hot. My mother said it was good. We ate at home.",
+      "literal": "The Sunday I-made soup. Was very hot. My mother said that was good. We-ate at home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dijo",
+            "cue": "said",
+            "tag": "delta",
+            "forms": [
+              "dijo",
+              "dije"
+            ],
+            "note": "decir in the past, and it is irregular enough to learn as a shape: dije, dijo. The row for decir is M7's diga."
+          },
+          {
+            "display": "Comimos",
+            "cue": "we ate",
+            "tag": "free",
+            "forms": [],
+            "note": "For an -er verb the past we-form is -imos, and unlike hablamos it is not also the present: comemos is now, comimos is then."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "dijo que estaba buena keeps the imperfect after the reporting verb. English says \"said it was good\" and Spanish does the same, which is a rest point.",
+      "sound": "DI-ho, with the j a breathy h. ko-MI-mos, stressed in the middle.",
+      "variations": [
+        {
+          "display": "Mi madre dijo que estaba muy buena.",
+          "cue": "My mother said it was very good.",
+          "changed": "the reported line on its own"
+        },
+        {
+          "display": "Dije que no era mi llave.",
+          "cue": "I said it wasn't my key.",
+          "changed": "the I-form of dijo, with an imperfect after it"
+        },
+        {
+          "display": "El domingo comimos en casa.",
+          "cue": "On Sunday we ate at home.",
+          "changed": "the last step, with the day in front"
+        }
+      ],
+      "mistake": {
+        "display": "Mi madre dijo que fue buena.",
+        "why": "How the soup was is a description, so it stays imperfect after dijo: dijo que estaba buena."
+      },
+      "usage": "A meal recounted. Reported speech proper is a later level; this is just a verb and a que.",
+      "register": "neutral",
+      "mnemonic": "Report a description and it stays a description."
+    },
+    {
+      "id": "L2-M10-S08",
+      "display": "Ayer no pude quedar. Estaba muy ocupado. Llamé a mi amigo. Quedamos el viernes.",
+      "cue": "Yesterday I couldn't meet up. I was very busy. I called my friend. We're meeting on Friday.",
+      "literal": "Yesterday not I-could to-meet. Was very busy. I-called to my friend. We-meet the Friday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pude",
+            "cue": "I could",
+            "tag": "delta",
+            "forms": [
+              "pude",
+              "pudo"
+            ],
+            "note": "poder in the past, and irregular: pude, pudo — no accent, and the stress on the first syllable, which is unusual for a past form."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The last sentence is in the present and is about the future. M6's arrangement present, arriving at the end of a past account.",
+      "sound": "PU-de, stressed on the first syllable — which is why it carries no accent, unlike llamé.",
+      "variations": [
+        {
+          "display": "No pude ir al médico.",
+          "cue": "I couldn't go to the doctor.",
+          "changed": "a different thing prevented"
+        },
+        {
+          "display": "No pudo quedar porque estaba ocupada.",
+          "cue": "She couldn't meet up because she was busy.",
+          "changed": "the she-form, with the reason in the imperfect"
+        },
+        {
+          "display": "Quedamos el viernes, ¿vale?",
+          "cue": "We'll meet on Friday, OK?",
+          "changed": "M6's closing, tacked on"
+        }
+      ],
+      "mistake": {
+        "display": "Ayer no podía quedar. Estuve muy ocupado.",
+        "why": "Not being able is what happened; being busy is why. The two tenses are the wrong way round here."
+      },
+      "usage": "Apologising for a missed plan and making a new one, which is how these conversations actually end.",
+      "register": "neutral",
+      "mnemonic": "The account ends in the present, because the plan is still ahead."
+    },
+    {
+      "id": "L2-M10-S09",
+      "display": "Fui a la plaza. No había nadie. Primero comí algo. Después fui al cine.",
+      "cue": "I went to the square. There was nobody there. First I ate something. Afterwards I went to the cinema.",
+      "literal": "I-went to the square. Not there-was nobody. First I-ate something. Afterwards I-went to-the cinema.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Primero",
+            "cue": "first",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's primera, standing alone as an adverb. With nothing to agree with, it takes the masculine shape."
+          },
+          {
+            "display": "algo",
+            "cue": "something",
+            "tag": "delta",
+            "forms": [],
+            "note": "The opposite of nada, and unlike nada it needs no negative anywhere: comí algo."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "primero, después and al final are what hold four sentences together. Without them the same four are a list.",
+      "sound": "AL-go, with a hard g. pri-ME-ro, with two tapped r sounds.",
+      "variations": [
+        {
+          "display": "Primero comí algo y después fui al cine.",
+          "cue": "First I ate something and afterwards I went to the cinema.",
+          "changed": "the two steps joined into one sentence"
+        },
+        {
+          "display": "No comí nada, no tengo hambre.",
+          "cue": "I didn't eat anything, I'm not hungry.",
+          "changed": "algo's opposite, with the reason in the present"
+        },
+        {
+          "display": "Fui a la plaza pero no había nadie.",
+          "cue": "I went to the square but there was nobody there.",
+          "changed": "pero setting the two halves against each other"
+        }
+      ],
+      "mistake": {
+        "display": "Primero comí algo. Después no comí algo.",
+        "why": "In the negative it becomes nada: no comí nada. algo and nada are not interchangeable."
+      },
+      "usage": "An afternoon recounted. The sequencers are doing more work here than any of the verbs.",
+      "register": "neutral",
+      "mnemonic": "algo in the positive, nada in the negative."
+    },
+    {
+      "id": "L2-M10-S10",
+      "display": "Ayer trabajé mucho y llegué tarde. No comí nada. Estaba muy cansado. Al final fui a casa.",
+      "cue": "Yesterday I worked a lot and arrived late. I didn't eat anything. I was very tired. In the end I went home.",
+      "literal": "Yesterday I-worked much and I-arrived late. Not I-ate nothing. Was very tired. At-the end I-went to home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cansado",
+            "cue": "tired",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective, and it agrees with the speaker: cansado for a man, cansada for a woman. The row is L1-M9's."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "Nothing new is opened in this sentence, and that is deliberate. An account is recombination, and a module that ended by teaching something would have missed the point.",
+      "sound": "The whole account runs at one pace, with a small pause at each full stop and none inside a clause.",
+      "variations": [
+        {
+          "display": "Ayer trabajé mucho y llegué muy tarde.",
+          "cue": "Yesterday I worked a lot and arrived very late.",
+          "changed": "the first two steps alone"
+        },
+        {
+          "display": "Estaba muy cansada, al final fui a casa.",
+          "cue": "I was very tired, in the end I went home.",
+          "changed": "a woman speaking, and the adjective follows her"
+        },
+        {
+          "display": "No comí nada porque llegué muy tarde.",
+          "cue": "I didn't eat anything because I arrived very late.",
+          "changed": "porque joining the two, reason last"
+        }
+      ],
+      "mistake": {
+        "display": "Yo trabajé mucho, yo llegué tarde, yo no comí nada.",
+        "why": "Once the speaker is established Spanish keeps dropping the pronoun. Three yos in a row reads as insistence."
+      },
+      "usage": "The whole module in one item: two levels of vocabulary, four sentences, and no new word anywhere.",
+      "register": "neutral",
+      "mnemonic": "Say who once, and let the endings carry the rest."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M10-C01",
+      "display": "Ayer fui al médico. Era tarde. No había nadie.",
+      "cue": "Yesterday I went to the doctor. It was late. There was nobody there."
+    },
+    {
+      "id": "L2-M10-C02",
+      "display": "Ayer llamé a mi hermana. Estaba en casa.",
+      "cue": "Yesterday I called my sister. She was at home."
+    },
+    {
+      "id": "L2-M10-C03",
+      "display": "La película era muy buena.",
+      "cue": "The film was very good."
+    },
+    {
+      "id": "L2-M10-C04",
+      "display": "Al final llegué tarde.",
+      "cue": "In the end I arrived late."
+    },
+    {
+      "id": "L2-M10-C05",
+      "display": "No comí nada porque estaba cansado.",
+      "cue": "I didn't eat anything because I was tired."
+    },
+    {
+      "id": "L2-M10-C06",
+      "display": "Mi hermano llamó ayer.",
+      "cue": "My brother called yesterday."
+    },
+    {
+      "id": "L2-M10-C07",
+      "display": "Mi madre dijo que estaba buena.",
+      "cue": "My mother said it was good."
+    },
+    {
+      "id": "L2-M10-C08",
+      "display": "Ayer no pude quedar, estaba muy ocupado.",
+      "cue": "Yesterday I couldn't meet up, I was very busy."
+    },
+    {
+      "id": "L2-M10-C09",
+      "display": "Primero comí algo y después fui al cine.",
+      "cue": "First I ate something and afterwards I went to the cinema."
+    },
+    {
+      "id": "L2-M10-C10",
+      "display": "Estaba muy cansado. Al final fui a casa.",
+      "cue": "I was very tired. In the end I went home."
+    },
+    {
+      "id": "L2-M10-C11",
+      "display": "Fui a la plaza pero no había nadie.",
+      "cue": "I went to the square but there was nobody there."
+    },
+    {
+      "id": "L2-M10-C12",
+      "display": "Llegó tarde porque no había metro.",
+      "cue": "He arrived late because there was no metro."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

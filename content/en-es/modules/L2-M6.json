@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": [
+    "L2-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "¿Quieres + V-inf + ?",
+      "¿Vamos a + <place> + ?",
+      "Podemos + V-inf",
+      "¿A qué hora? — A las + <number> + y media/cuarto",
+      "Vale + , + <arrangement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The we-form ends in -amos, -emos or -imos: hablamos, comemos, podemos. It is the last person the course was missing, and vamos — which M6 of the level below already taught — is its irregular star."
+    },
+    {
+      "tag": "interference",
+      "text": "A suggestion is the plain we-form, said as a question: ¿Vamos al cine? English needs \"shall we\" or \"let's\" and Spanish has no equivalent to translate — reaching for one produces nothing that works."
+    },
+    {
+      "tag": "delta",
+      "text": "A settled arrangement is spoken in the PRESENT: Mañana como con mi hermana. English does the same with its own present continuous, so the habit transfers; the time word carries the future, not the verb."
+    },
+    {
+      "tag": "delta",
+      "text": "The clock counts up to the half hour with y: a las ocho y media, a las nueve y cuarto. Past the half hour Spanish counts down with menos, which this course leaves to M9."
+    },
+    {
+      "tag": "free",
+      "text": "A day takes el: el sábado, el viernes. With the article it can mean either this coming one or every one, and the sentence decides."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "¿Vamos al cine mañana?",
+      "cue": "Shall we go to the cinema tomorrow?",
+      "literal": "Go-we to-the cinema tomorrow?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cine",
+            "cue": "cinema",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine: el cine, and a plus el fuses to al. The word is the building and the art form alike."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "No word for \"shall\" and none for \"let's\". The we-form said as a question is the whole suggestion.",
+      "sound": "SI-ne in Latin America, THI-ne in most of Spain. Both are standard and neither is a mistake.",
+      "variations": [
+        {
+          "display": "¿Vamos a la plaza?",
+          "cue": "Shall we go to the square?",
+          "changed": "a feminine place, so no fusion happens"
+        },
+        {
+          "display": "¿Vamos al cine el sábado?",
+          "cue": "Shall we go to the cinema on Saturday?",
+          "changed": "a day instead of mañana"
+        },
+        {
+          "display": "Vamos al cine esta noche.",
+          "cue": "We're going to the cinema tonight.",
+          "changed": "said flat, it stops being a suggestion and becomes a plan"
+        }
+      ],
+      "mistake": {
+        "display": "¿Vamos a el cine mañana?",
+        "why": "a and el always fuse: al cine. There is no situation in which they stand apart."
+      },
+      "usage": "The everyday invitation among friends. The question mark does all the work.",
+      "register": "informal",
+      "mnemonic": "Ask the we-form and you have suggested something."
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "¿Quieres comer conmigo el sábado?",
+      "cue": "Do you want to eat with me on Saturday?",
+      "literal": "Want(you) to-eat with-me the Saturday?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "conmigo",
+            "cue": "with me",
+            "tag": "delta",
+            "forms": [
+              "conmigo",
+              "contigo"
+            ],
+            "note": "con and mí fused into one word, and it is the only place that happens: conmigo, contigo. con él and con mi hermana stay two words."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "con mí is not Spanish. The two words have grown together and there is no way to pull them apart.",
+      "sound": "kon-MI-go, stressed in the middle, and said as one word because it is one.",
+      "variations": [
+        {
+          "display": "¿Quieres comer conmigo mañana?",
+          "cue": "Do you want to eat with me tomorrow?",
+          "changed": "tomorrow instead of a named day"
+        },
+        {
+          "display": "Quiero comer contigo.",
+          "cue": "I want to eat with you.",
+          "changed": "the other fused form, said as a statement"
+        },
+        {
+          "display": "¿Quieres quedar conmigo el viernes?",
+          "cue": "Do you want to meet up with me on Friday?",
+          "changed": "a different thing to do together"
+        }
+      ],
+      "mistake": {
+        "display": "¿Quieres comer con mí el sábado?",
+        "why": "con and mí fuse: conmigo. The unfused version does not exist."
+      },
+      "usage": "An invitation to one person. Warmer than ¿Vamos…?, because it names who you want there.",
+      "register": "informal",
+      "mnemonic": "Two words that never learnt to stand apart."
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "Podemos quedar a las ocho.",
+      "cue": "We can meet at eight.",
+      "literal": "Can-we to-meet at the eight.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Podemos",
+            "cue": "we can",
+            "tag": "delta",
+            "forms": [],
+            "note": "The we-form of poder, and the stem does NOT change: podemos, not puedemos, because the stress falls on the ending. The row for poder is M1's."
+          },
+          {
+            "display": "quedar",
+            "cue": "to meet up",
+            "tag": "delta",
+            "forms": [
+              "quedar",
+              "quedamos"
+            ],
+            "note": "To arrange to meet, and it has no single English word — \"meet up\" is the nearest. It is the verb every plan in Spain is made with."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "podemos breaks the ue you learnt in M1, and it breaks it for a reason: the stress has moved off the stem.",
+      "sound": "po-DE-mos. Hearing the o rather than the ue is how you know the person changed.",
+      "variations": [
+        {
+          "display": "Podemos quedar el viernes.",
+          "cue": "We can meet up on Friday.",
+          "changed": "a day rather than an hour"
+        },
+        {
+          "display": "Podemos comer en casa.",
+          "cue": "We can eat at home.",
+          "changed": "a different thing to do, same frame"
+        },
+        {
+          "display": "No podemos quedar mañana.",
+          "cue": "We can't meet up tomorrow.",
+          "changed": "the refusal, with no in front"
+        }
+      ],
+      "mistake": {
+        "display": "Puedemos quedar a las ocho.",
+        "why": "The stem only changes when the stress lands on it. In the we-form it does not: podemos."
+      },
+      "usage": "How a plan gets made rather than suggested. Podemos offers without pressing.",
+      "register": "informal",
+      "mnemonic": "Stress moves off the stem and the ue goes with it."
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "¿A qué hora quedamos?",
+      "cue": "What time shall we meet?",
+      "literal": "At what hour meet-we?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quedamos",
+            "cue": "shall we meet · we meet",
+            "tag": "delta",
+            "forms": [],
+            "note": "The we-form of quedar, and the same word is the question and the answer: ¿Quedamos a las ocho? — Quedamos a las ocho. The row for quedar is S03's."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The same form asks and settles. Spanish needs no extra word to turn the suggestion into the arrangement.",
+      "sound": "ke-DA-mos. The stress is on the middle syllable, as it is in podemos.",
+      "variations": [
+        {
+          "display": "¿Dónde quedamos?",
+          "cue": "Where shall we meet?",
+          "changed": "the place rather than the time"
+        },
+        {
+          "display": "¿Quedamos el sábado?",
+          "cue": "Shall we meet on Saturday?",
+          "changed": "the whole question in three words"
+        },
+        {
+          "display": "Quedamos en la plaza.",
+          "cue": "We'll meet in the square.",
+          "changed": "the answer, and en for the place"
+        }
+      ],
+      "mistake": {
+        "display": "¿A qué hora quedaremos?",
+        "why": "The present does the job: ¿A qué hora quedamos? A future tense here sounds like a forecast rather than a plan."
+      },
+      "usage": "The second message of any plan. The first one proposed it; this one pins it down.",
+      "register": "informal",
+      "mnemonic": "One form, and it both asks and agrees."
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "A las ocho y media.",
+      "cue": "At half past eight.",
+      "literal": "At the eight and half.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "media",
+            "cue": "half",
+            "tag": "delta",
+            "forms": [],
+            "note": "Feminine because the hour is: las ocho y media. It counts up from the hour just said, so this is half past eight and never half past seven."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Spanish counts up to the half hour and English says \"past\". The hour named is the one already struck.",
+      "sound": "ME-dya, two syllables, with the i gliding into the a.",
+      "variations": [
+        {
+          "display": "A las diez y media.",
+          "cue": "At half past ten.",
+          "changed": "a different hour, same half"
+        },
+        {
+          "display": "Quedamos a las ocho y media.",
+          "cue": "We'll meet at half past eight.",
+          "changed": "the time inside the plan"
+        },
+        {
+          "display": "¿A las ocho y media, en la plaza?",
+          "cue": "Half past eight, in the square?",
+          "changed": "time and place in one question"
+        }
+      ],
+      "mistake": {
+        "display": "A las ocho y medio.",
+        "why": "media agrees with the feminine hora hiding behind las: y media."
+      },
+      "usage": "Half past is the commonest time anyone arranges anything for.",
+      "register": "neutral",
+      "mnemonic": "The hour you name is the one already gone."
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "A las nueve y cuarto.",
+      "cue": "At quarter past nine.",
+      "literal": "At the nine and quarter.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nueve",
+            "cue": "nine",
+            "tag": "free",
+            "forms": [],
+            "note": "The ue glides as it does in puedo and nuevo. It never changes shape."
+          },
+          {
+            "display": "cuarto",
+            "cue": "quarter",
+            "tag": "delta",
+            "forms": [],
+            "note": "Masculine here, unlike media, because it is a quarter of an hour and not a half of one: y cuarto. It is also the word for a room, and the sentence says which."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "media is feminine and cuarto is masculine, in the same frame. There is no rule joining them; they are two words that behave differently.",
+      "sound": "NWE-ve, KWAR-to — both with the same glide, one after the other.",
+      "variations": [
+        {
+          "display": "A las diez y cuarto.",
+          "cue": "At quarter past ten.",
+          "changed": "another hour"
+        },
+        {
+          "display": "¿Quedamos a las nueve y cuarto?",
+          "cue": "Shall we meet at quarter past nine?",
+          "changed": "the time inside the question"
+        },
+        {
+          "display": "A las nueve y media.",
+          "cue": "At half past nine.",
+          "changed": "the half hour of the same hour"
+        }
+      ],
+      "mistake": {
+        "display": "A las nueve y cuarta.",
+        "why": "cuarto does not agree with the hour: y cuarto, always. media does, and that asymmetry is simply how it is."
+      },
+      "usage": "Quarter past is arranged; quarter to needs menos, which this course leaves to M9.",
+      "register": "neutral",
+      "mnemonic": "Half agrees, quarter does not."
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "Vale, nos vemos el viernes.",
+      "cue": "OK, see you on Friday.",
+      "literal": "OK, ourselves we-see the Friday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Vale",
+            "cue": "OK",
+            "tag": "delta",
+            "forms": [],
+            "note": "Spain's agreement word, said constantly and about anything. Mexico says sale and much of Latin America says está bien; all three are understood everywhere."
+          },
+          {
+            "display": "viernes",
+            "cue": "Friday",
+            "tag": "free",
+            "forms": [],
+            "note": "Already ends in -s in the singular, like lunes and martes, so the plural changes only the article: el viernes, los viernes."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "viernes is not a plural. The days ending in -s look plural and are not, until the article says otherwise.",
+      "sound": "BA-le, with a b sound at the start — Spanish v and b are the same letter to the ear.",
+      "variations": [
+        {
+          "display": "Vale, nos vemos mañana.",
+          "cue": "OK, see you tomorrow.",
+          "changed": "tomorrow instead of a named day"
+        },
+        {
+          "display": "Vale, hasta el sábado.",
+          "cue": "OK, see you Saturday.",
+          "changed": "the other way of signing off with a day"
+        },
+        {
+          "display": "Vale, quedamos a las ocho.",
+          "cue": "OK, we'll meet at eight.",
+          "changed": "agreement followed by the arrangement itself"
+        }
+      ],
+      "mistake": {
+        "display": "Vale, nos vemos los viernes.",
+        "why": "los viernes means every Friday. For this coming one it is el viernes."
+      },
+      "usage": "The last message of the exchange. In Spain vale ends almost every plan ever made.",
+      "register": "informal",
+      "mnemonic": "el for this one, los for every one."
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "Mañana como con mi hermana.",
+      "cue": "I'm eating with my sister tomorrow.",
+      "literal": "Tomorrow I-eat with my sister.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "como",
+            "cue": "I eat",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plain present, doing the future's job. The row is L1-M4's; what is new is that mañana in front of it is enough to make the sentence a plan."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "No future tense anywhere, and none is needed. The time word carries it, exactly as English's \"I'm eating tomorrow\" does.",
+      "sound": "KO-mo, and it is not M2's cómo — that one has an accent and asks a question.",
+      "variations": [
+        {
+          "display": "El sábado como con mi hermano.",
+          "cue": "I'm eating with my brother on Saturday.",
+          "changed": "a named day, and the other sibling"
+        },
+        {
+          "display": "Mañana voy al cine.",
+          "cue": "I'm going to the cinema tomorrow.",
+          "changed": "another verb in the same arrangement present"
+        },
+        {
+          "display": "Mañana no como en casa.",
+          "cue": "I'm not eating at home tomorrow.",
+          "changed": "the negative, and a place instead of a person"
+        }
+      ],
+      "mistake": {
+        "display": "Mañana cómo con mi hermana.",
+        "why": "The accent turns it into the question word. como eats; cómo asks how."
+      },
+      "usage": "A settled plan, stated rather than proposed. The listener is being told, not asked.",
+      "register": "neutral",
+      "mnemonic": "Put a time in front and the present becomes a plan."
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "El domingo por la tarde, ¿vale?",
+      "cue": "Sunday afternoon, OK?",
+      "literal": "The Sunday for the afternoon, OK?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "domingo",
+            "cue": "Sunday",
+            "tag": "free",
+            "forms": [
+              "domingo",
+              "domingos"
+            ],
+            "note": "Unlike viernes it takes a plural -s: los domingos. Days are not capitalised in Spanish."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "No capital letter. Days, months and languages are all lower case in Spanish, and capitalising them is the most visible English habit there is.",
+      "sound": "do-MIN-go, with a hard g, and the n fully said before it.",
+      "variations": [
+        {
+          "display": "El domingo por la mañana, ¿vale?",
+          "cue": "Sunday morning, OK?",
+          "changed": "the other end of the day"
+        },
+        {
+          "display": "El viernes por la noche.",
+          "cue": "Friday night.",
+          "changed": "a different day and a different part of it"
+        },
+        {
+          "display": "Los domingos como en casa.",
+          "cue": "On Sundays I eat at home.",
+          "changed": "the plural, which turns one day into every one"
+        }
+      ],
+      "mistake": {
+        "display": "El Domingo por la tarde.",
+        "why": "domingo is not capitalised. Nor is any day, month or language in Spanish."
+      },
+      "usage": "Half a plan, offered for agreement. ¿vale? at the end is how Spain asks whether that suits you.",
+      "register": "informal",
+      "mnemonic": "Lower case, always — the days are just words."
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "El fin de semana no puedo, lo siento.",
+      "cue": "I can't at the weekend, I'm sorry.",
+      "literal": "The end of week not I-can, it I-feel.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fin de semana",
+            "cue": "weekend",
+            "tag": "free",
+            "forms": [],
+            "note": "Three words as one: the end of the week. Masculine, because fin is: el fin de semana."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "Spanish spells out what English compresses into one word. There is no single word for weekend.",
+      "sound": "The three run together — fin-de-se-MA-na — with one stress, on the last word.",
+      "variations": [
+        {
+          "display": "El fin de semana voy al cine.",
+          "cue": "I'm going to the cinema at the weekend.",
+          "changed": "a plan rather than a refusal"
+        },
+        {
+          "display": "El fin de semana no puedo quedar.",
+          "cue": "I can't meet up at the weekend.",
+          "changed": "the refusal with the verb named"
+        },
+        {
+          "display": "El domingo no puedo, lo siento.",
+          "cue": "I can't on Sunday, I'm sorry.",
+          "changed": "one day instead of the whole weekend"
+        }
+      ],
+      "mistake": {
+        "display": "La fin de semana no puedo.",
+        "why": "fin is masculine, so it is el fin de semana."
+      },
+      "usage": "Turning an invitation down. Adding lo siento is what keeps it warm, and it is expected.",
+      "register": "informal",
+      "mnemonic": "The end of the week, spelled out."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M6-C01",
+      "display": "¿Vamos al cine mañana?",
+      "cue": "Shall we go to the cinema tomorrow?"
+    },
+    {
+      "id": "L2-M6-C02",
+      "display": "¿Quieres comer conmigo el sábado?",
+      "cue": "Do you want to eat with me on Saturday?"
+    },
+    {
+      "id": "L2-M6-C03",
+      "display": "Podemos quedar a las ocho.",
+      "cue": "We can meet at eight."
+    },
+    {
+      "id": "L2-M6-C04",
+      "display": "¿A qué hora quedamos?",
+      "cue": "What time shall we meet?"
+    },
+    {
+      "id": "L2-M6-C05",
+      "display": "A las ocho y media.",
+      "cue": "At half past eight."
+    },
+    {
+      "id": "L2-M6-C06",
+      "display": "A las nueve y cuarto.",
+      "cue": "At quarter past nine."
+    },
+    {
+      "id": "L2-M6-C07",
+      "display": "Vale, nos vemos el viernes.",
+      "cue": "OK, see you on Friday."
+    },
+    {
+      "id": "L2-M6-C08",
+      "display": "Mañana como con mi hermana.",
+      "cue": "I'm eating with my sister tomorrow."
+    },
+    {
+      "id": "L2-M6-C09",
+      "display": "El domingo por la tarde, ¿vale?",
+      "cue": "Sunday afternoon, OK?"
+    },
+    {
+      "id": "L2-M6-C10",
+      "display": "El fin de semana no puedo, lo siento.",
+      "cue": "I can't at the weekend, I'm sorry."
+    },
+    {
+      "id": "L2-M6-C11",
+      "display": "¿Dónde quedamos?",
+      "cue": "Where shall we meet?"
+    },
+    {
+      "id": "L2-M6-C12",
+      "display": "Podemos quedar el domingo.",
+      "cue": "We can meet up on Sunday."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M9",
+  "title": "Comparing and choosing",
+  "job": "More, less, better — stating a preference",
+  "prerequisites": [
+    "L2-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "A + es + más/menos + Adj + que + B",
+      "el/la + más + Adj",
+      "A + es + mejor/peor + que + B",
+      "¿Cuál prefieres? — Prefiero + este/esta",
+      "Este + N + es + Adj + , + pero + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The comparative is two words around an unchanged adjective: más caro que, menos caro que. English forks between -er and \"more\" and Spanish never does — the adjective itself does not move."
+    },
+    {
+      "tag": "delta",
+      "text": "The superlative adds the article to the same frame: el más caro, la más barata. Nothing else changes."
+    },
+    {
+      "tag": "interference",
+      "text": "mejor and peor replace más bueno and más malo, and mejor serves bien as well — canta mejor is \"sings better\". \"mejor is the comparative of bueno\" is only half of it."
+    },
+    {
+      "tag": "delta",
+      "text": "este and esta point at what is here and agree with the noun: este libro, esta tienda, estas manzanas. They are not L1-M1's ésta-less está — the accent and the position keep them apart."
+    },
+    {
+      "tag": "free",
+      "text": "cuál asks you to pick from a set that both speakers know about: ¿Cuál prefieres? qué asks openly. English uses \"which\" and \"what\" the same way."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M9-S01",
+      "display": "Este libro es más caro.",
+      "cue": "This book is more expensive.",
+      "literal": "This book is more expensive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Este",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [
+              "este",
+              "esta",
+              "estos",
+              "estas"
+            ],
+            "note": "Points at what is near, and agrees with the noun: este libro, esta tienda. Nothing about it is like L1-M1's esto."
+          },
+          {
+            "display": "más",
+            "cue": "more",
+            "tag": "delta",
+            "forms": [],
+            "note": "Goes in front of the adjective and leaves it alone: más caro, más grande, más difícil. It carries an accent, which separates it from mas, an old word for \"but\" nobody says."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The adjective does not change at all. English has caro → more expensive AND grande → bigger; Spanish has one shape for both.",
+      "sound": "MAS, one syllable, and the accent marks meaning rather than stress.",
+      "variations": [
+        {
+          "display": "Esta tienda es más cara.",
+          "cue": "This shop is more expensive.",
+          "changed": "feminine, and both words follow it"
+        },
+        {
+          "display": "Este libro es más grande.",
+          "cue": "This book is bigger.",
+          "changed": "a two-cell adjective, and más still does the work"
+        },
+        {
+          "display": "Estos libros son más caros.",
+          "cue": "These books are more expensive.",
+          "changed": "plural throughout"
+        }
+      ],
+      "mistake": {
+        "display": "Este libro es más carro.",
+        "why": "caro with one r is expensive; carro with two is a cart or a car. The r is the whole difference."
+      },
+      "usage": "The everyday comparison, with the second thing left unsaid because it is obvious.",
+      "register": "neutral",
+      "mnemonic": "más goes in front and the adjective never moves."
+    },
+    {
+      "id": "L2-M9-S02",
+      "display": "El metro es más rápido que el autobús.",
+      "cue": "The metro is faster than the bus.",
+      "literal": "The metro is more fast than the bus.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rápido",
+            "cue": "fast",
+            "tag": "free",
+            "forms": [
+              "rápido",
+              "rápida",
+              "rápidos",
+              "rápidas"
+            ],
+            "note": "Four shapes. The accent marks a stress two syllables from the end, as in teléfono and número."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "que here is not M5's \"that\" and not M4's qué. Same spelling, and the sentence decides which job it is doing.",
+      "sound": "RA-pi-do, stressed on the first syllable, with the initial r rolled.",
+      "variations": [
+        {
+          "display": "El autobús es menos rápido que el metro.",
+          "cue": "The bus is less fast than the metro.",
+          "changed": "the comparison turned round with menos"
+        },
+        {
+          "display": "Este metro es más rápido.",
+          "cue": "This metro is faster.",
+          "changed": "the second thing left unsaid"
+        },
+        {
+          "display": "El metro es muy rápido.",
+          "cue": "The metro is very fast.",
+          "changed": "muy instead of más — no comparison at all"
+        }
+      ],
+      "mistake": {
+        "display": "El metro es más rápido de el autobús.",
+        "why": "The word for \"than\" is que. de appears in a superlative — el más rápido de la ciudad — and nowhere else here."
+      },
+      "usage": "Comparing two named things. The que is what makes the second one appear.",
+      "register": "neutral",
+      "mnemonic": "más … que, and nothing between them changes."
+    },
+    {
+      "id": "L2-M9-S03",
+      "display": "Esta tienda es menos cara.",
+      "cue": "This shop is less expensive.",
+      "literal": "This shop is less expensive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Esta",
+            "cue": "this",
+            "tag": "interference",
+            "forms": [],
+            "note": "The feminine of este, and it is NOT M2's está — that one has an accent and is a verb. Esta tienda está cerca has both in one sentence. The row for este is S01's."
+          },
+          {
+            "display": "menos",
+            "cue": "less",
+            "tag": "delta",
+            "forms": [],
+            "note": "The mirror of más, and it works exactly the same way: menos caro, menos rápido. It ends in -s in the singular and never changes."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "esta and está are one accent apart and sit in the same sentence shapes. Dropping it turns a pointing word into a verb.",
+      "sound": "ME-nos, and the two words of esta and está are told apart only by where the stress falls.",
+      "variations": [
+        {
+          "display": "Este café es menos caro.",
+          "cue": "This coffee is less expensive.",
+          "changed": "masculine, and both words move"
+        },
+        {
+          "display": "Esta tienda está cerca.",
+          "cue": "This shop is nearby.",
+          "changed": "esta and está in one sentence, doing different jobs"
+        },
+        {
+          "display": "Es menos caro que el otro.",
+          "cue": "It's less expensive than the other one.",
+          "changed": "M5's otro standing alone as \"the other one\""
+        }
+      ],
+      "mistake": {
+        "display": "Está tienda es menos cara.",
+        "why": "The pointing word carries no accent: esta tienda. With one it is the verb."
+      },
+      "usage": "Softer than saying something is cheap, which is why shops use it and customers do not.",
+      "register": "neutral",
+      "mnemonic": "No accent points; an accent is a verb."
+    },
+    {
+      "id": "L2-M9-S04",
+      "display": "Es la tienda más barata de la calle.",
+      "cue": "It's the cheapest shop in the street.",
+      "literal": "Is the shop most cheap of the street.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "barata",
+            "cue": "cheap",
+            "tag": "free",
+            "forms": [
+              "barato",
+              "barata",
+              "baratos",
+              "baratas"
+            ],
+            "note": "Four shapes, and the everyday opposite of caro. It carries none of the English suggestion that a cheap thing is a poor one."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The group takes de, not en: la más barata DE la calle. English says \"in\" and Spanish says \"of\".",
+      "sound": "ba-RA-ta, with a single tapped r in the middle.",
+      "variations": [
+        {
+          "display": "Es el libro más barato.",
+          "cue": "It's the cheapest book.",
+          "changed": "masculine, and the group left unsaid"
+        },
+        {
+          "display": "Es la tienda más cara de la calle.",
+          "cue": "It's the most expensive shop in the street.",
+          "changed": "the opposite superlative"
+        },
+        {
+          "display": "Son las manzanas más baratas.",
+          "cue": "They're the cheapest apples.",
+          "changed": "plural, and everything agrees with it"
+        }
+      ],
+      "mistake": {
+        "display": "Es la tienda más barata en la calle.",
+        "why": "A superlative marks its group with de: la más barata de la calle."
+      },
+      "usage": "How a shop is recommended. The de-phrase is what makes it a claim rather than an opinion.",
+      "register": "neutral",
+      "mnemonic": "The best OF a group, never IN it."
+    },
+    {
+      "id": "L2-M9-S05",
+      "display": "Este café es mejor.",
+      "cue": "This coffee is better.",
+      "literal": "This coffee is better.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mejor",
+            "cue": "better",
+            "tag": "interference",
+            "forms": [
+              "mejor",
+              "mejores"
+            ],
+            "note": "Replaces más bueno, which nobody says, and it also serves bien: habla mejor is \"speaks better\". One word where English has two."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "No más in front of it. mejor already carries the comparison, exactly as English's \"better\" does.",
+      "sound": "me-HOR, stressed at the end, with the j a breathy h.",
+      "variations": [
+        {
+          "display": "Este café es mejor que el otro.",
+          "cue": "This coffee is better than the other one.",
+          "changed": "the second thing named with que"
+        },
+        {
+          "display": "Es el mejor café de la calle.",
+          "cue": "It's the best coffee in the street.",
+          "changed": "the superlative, which is the same word with an article"
+        },
+        {
+          "display": "Esta tienda es mejor que la otra.",
+          "cue": "This shop is better than the other one.",
+          "changed": "mejor with the second thing named"
+        }
+      ],
+      "mistake": {
+        "display": "Este café es más mejor.",
+        "why": "mejor is already a comparison. más doubles it, exactly as English's \"more better\" does."
+      },
+      "usage": "The commonest comparison anyone makes, and the one most often said with nothing after it.",
+      "register": "neutral",
+      "mnemonic": "One word for better and for more good."
+    },
+    {
+      "id": "L2-M9-S06",
+      "display": "La sopa está peor hoy.",
+      "cue": "The soup is worse today.",
+      "literal": "The soup is worse today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "peor",
+            "cue": "worse",
+            "tag": "delta",
+            "forms": [
+              "peor",
+              "peores"
+            ],
+            "note": "The mirror of mejor, replacing más malo and also serving mal. One shape for either gender."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "estar, because today's soup is a state rather than what soup is. es peor would be a claim about soup in general.",
+      "sound": "pe-OR, two syllables — the e and the o do not glide together.",
+      "variations": [
+        {
+          "display": "Este café es peor que el otro.",
+          "cue": "This coffee is worse than the other one.",
+          "changed": "ser, because it is a quality and not a state"
+        },
+        {
+          "display": "Hoy estoy peor.",
+          "cue": "I'm worse today.",
+          "changed": "about a person, and still estar"
+        },
+        {
+          "display": "Es la peor tienda de la calle.",
+          "cue": "It's the worst shop in the street.",
+          "changed": "the superlative, in front of the noun"
+        }
+      ],
+      "mistake": {
+        "display": "La sopa está más mala hoy.",
+        "why": "más malo is not what people say: peor. The same rule that gives mejor for bueno."
+      },
+      "usage": "A complaint made gently, because it compares rather than accuses.",
+      "register": "neutral",
+      "mnemonic": "peor is to malo what mejor is to bueno."
+    },
+    {
+      "id": "L2-M9-S07",
+      "display": "Mi hermano es menor.",
+      "cue": "My brother is younger.",
+      "literal": "My brother is younger.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "menor",
+            "cue": "younger",
+            "tag": "delta",
+            "forms": [
+              "menor",
+              "menores"
+            ],
+            "note": "The partner of M2's mayor, and it works the same way: one shape, no más in front, and it is about age rather than size."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "menor and mayor rank people; más pequeño and más grande measure them. Spanish keeps the two jobs apart and English does not.",
+      "sound": "me-NOR, stressed at the end, exactly like mejor and peor.",
+      "variations": [
+        {
+          "display": "Mi hermana es menor que mi hermano.",
+          "cue": "My sister is younger than my brother.",
+          "changed": "the comparison completed with que"
+        },
+        {
+          "display": "Mi hermano menor es muy alto.",
+          "cue": "My younger brother is very tall.",
+          "changed": "menor after the noun, saying which brother"
+        },
+        {
+          "display": "Mis hermanos son menores.",
+          "cue": "My brothers are younger.",
+          "changed": "plural, which adds -es"
+        }
+      ],
+      "mistake": {
+        "display": "Mi hermano es más menor.",
+        "why": "menor already compares. más doubles it, as it would with mejor."
+      },
+      "usage": "Family talk. mayor and menor are how siblings are ranked, and the ages themselves often never come up.",
+      "register": "neutral",
+      "mnemonic": "mayor and menor rank; grande and pequeño measure."
+    },
+    {
+      "id": "L2-M9-S08",
+      "display": "¿Cuál prefieres, la sopa o el pan?",
+      "cue": "Which do you prefer, the soup or the bread?",
+      "literal": "Which prefer(you), the soup or the bread?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Cuál",
+            "cue": "which",
+            "tag": "delta",
+            "forms": [
+              "cuál",
+              "cuáles"
+            ],
+            "note": "Picks from a set both speakers know about. qué asks openly — ¿Qué quieres? — and the two are not interchangeable."
+          },
+          {
+            "display": "prefieres",
+            "cue": "you prefer",
+            "tag": "delta",
+            "forms": [
+              "prefiero",
+              "prefieres",
+              "prefiere",
+              "preferir"
+            ],
+            "note": "preferir, with the e→ie change M1 named: prefiero, prefieres, prefiere, but preferir. The third time this course has met that pattern."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "cuál carries an accent because it asks. The unaccented cual joins clauses and does not appear in this course.",
+      "sound": "KWAL, one syllable. pre-FYE-res, stressed on the ie.",
+      "variations": [
+        {
+          "display": "¿Cuál prefieres?",
+          "cue": "Which do you prefer?",
+          "changed": "the set left unsaid because it is in front of you"
+        },
+        {
+          "display": "¿Cuál es más barato?",
+          "cue": "Which is cheaper?",
+          "changed": "cuál with the comparison instead of the verb"
+        },
+        {
+          "display": "¿Cuáles prefieres?",
+          "cue": "Which ones do you prefer?",
+          "changed": "the plural, when the set has more than two"
+        }
+      ],
+      "mistake": {
+        "display": "¿Qué prefieres, la sopa o el pan?",
+        "why": "With the choice named in front of you it is cuál. qué would be asking what kind of thing you like."
+      },
+      "usage": "A waiter, a shopkeeper, a friend at a table. The or-list is what makes cuál the right word.",
+      "register": "informal",
+      "mnemonic": "cuál picks from a set; qué asks into the air."
+    },
+    {
+      "id": "L2-M9-S09",
+      "display": "Prefiero el pescado, es mejor.",
+      "cue": "I prefer the fish, it's better.",
+      "literal": "I-prefer the fish, is better.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Prefiero",
+            "cue": "I prefer",
+            "tag": "delta",
+            "forms": [],
+            "note": "The I-form, with the ie the whole verb takes when the stress lands on it. The row for preferir is S08's."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The second clause has no subject at all. Once the fish has been named, Spanish stops naming it.",
+      "sound": "pre-FYE-ro, and the stress moving to the ending in preferir is what flattens it back to an e.",
+      "variations": [
+        {
+          "display": "Prefiero la sopa.",
+          "cue": "I prefer the soup.",
+          "changed": "the reason left off"
+        },
+        {
+          "display": "Prefiero el café, es más barato.",
+          "cue": "I prefer the coffee, it's cheaper.",
+          "changed": "a different reason, using más"
+        },
+        {
+          "display": "No prefiero nada, me gusta todo.",
+          "cue": "I don't prefer anything, I like it all.",
+          "changed": "the refusal to choose"
+        }
+      ],
+      "mistake": {
+        "display": "Preferio el pescado.",
+        "why": "The stem takes ie when the stress falls on it: prefiero."
+      },
+      "usage": "Answering a choice. Naming the reason is what turns a preference into a recommendation.",
+      "register": "neutral",
+      "mnemonic": "Stress the stem and the e breaks into ie."
+    },
+    {
+      "id": "L2-M9-S10",
+      "display": "Estas manzanas son las más baratas.",
+      "cue": "These apples are the cheapest.",
+      "literal": "These apples are the most cheap.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Estas",
+            "cue": "these",
+            "tag": "delta",
+            "forms": [],
+            "note": "The feminine plural of este. The row is S01's, and this is the cell a market sentence needs most."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "The article in las más baratas is not the one in front of manzanas. A superlative always carries its own, even when the noun already had one.",
+      "sound": "ES-tas, stressed on the first syllable, which is what keeps it clear of está.",
+      "variations": [
+        {
+          "display": "Estos libros son los más caros.",
+          "cue": "These books are the most expensive.",
+          "changed": "masculine plural throughout"
+        },
+        {
+          "display": "Estas manzanas son mejores.",
+          "cue": "These apples are better.",
+          "changed": "mejor in the plural, which adds -es"
+        },
+        {
+          "display": "Estas son las más baratas.",
+          "cue": "These are the cheapest.",
+          "changed": "the noun dropped once everyone can see it"
+        }
+      ],
+      "mistake": {
+        "display": "Estas manzanas son más baratas de todas.",
+        "why": "A superlative needs its article: las más baratas de todas."
+      },
+      "usage": "A market. Pointing and comparing in one sentence is most of what happens at a stall.",
+      "register": "neutral",
+      "mnemonic": "The superlative brings its own article."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M9-C01",
+      "display": "Este libro es más caro.",
+      "cue": "This book is more expensive."
+    },
+    {
+      "id": "L2-M9-C02",
+      "display": "El metro es más rápido que el autobús.",
+      "cue": "The metro is faster than the bus."
+    },
+    {
+      "id": "L2-M9-C03",
+      "display": "Esta tienda es menos cara.",
+      "cue": "This shop is less expensive."
+    },
+    {
+      "id": "L2-M9-C04",
+      "display": "Es la tienda más barata de la calle.",
+      "cue": "It's the cheapest shop in the street."
+    },
+    {
+      "id": "L2-M9-C05",
+      "display": "Este café es mejor.",
+      "cue": "This coffee is better."
+    },
+    {
+      "id": "L2-M9-C06",
+      "display": "La sopa está peor hoy.",
+      "cue": "The soup is worse today."
+    },
+    {
+      "id": "L2-M9-C07",
+      "display": "Mi hermano es menor.",
+      "cue": "My brother is younger."
+    },
+    {
+      "id": "L2-M9-C08",
+      "display": "¿Cuál prefieres, la sopa o el pan?",
+      "cue": "Which do you prefer, the soup or the bread?"
+    },
+    {
+      "id": "L2-M9-C09",
+      "display": "Prefiero el pescado, es mejor.",
+      "cue": "I prefer the fish, it's better."
+    },
+    {
+      "id": "L2-M9-C10",
+      "display": "Estas manzanas son las más baratas.",
+      "cue": "These apples are the cheapest."
+    },
+    {
+      "id": "L2-M9-C11",
+      "display": "Es el mejor café de la calle.",
+      "cue": "It's the best coffee in the street."
+    },
+    {
+      "id": "L2-M9-C12",
+      "display": "¿Cuál es más barato?",
+      "cue": "Which is cheaper?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
