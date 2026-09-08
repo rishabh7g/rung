@@ -22,7 +22,7 @@
 import { useEffect, useState } from 'react';
 import { interpolate, useStrings } from '../../course/strings.ts';
 import { formatBytes } from './formatBytes.ts';
-import styles from './StorageLine.module.css';
+import './storage-line.css';
 
 export default function StorageLine() {
   const strings = useStrings();
@@ -31,7 +31,7 @@ export default function StorageLine() {
   if (estimate === null) return null;
 
   return (
-    <p className={styles.line}>
+    <p className="storage-line">
       {interpolate(strings['settings.storage.meter'], {
         used: formatBytes(estimate.usage),
         quota: formatBytes(estimate.quota),
