@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M2",
+  "title": "Work and study",
+  "job": "Explain what you do all day, and how",
+  "prerequisites": [
+    "L3-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present_simple",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "I am + a/an + <job>",
+      "I work at + <place>",
+      "The + <uncountable> + is + Adj",
+      "I made a mistake  (never *did a mistake)",
+      "I have + a lot of + <uncountable>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "पेशा बताते वक़्त उसके आगे a या an आना ही आना है — I am an engineer, she is a teacher, I am a student. हिंदी में मैं इंजीनियर हूँ के आगे कुछ नहीं आता, इसलिए यहीं हर बार a गिर जाता है और वाक्य ख़बर की सुर्ख़ी जैसा लगने लगता है. कौन-सा लगेगा, यह आवाज़ बताती है: a manager, an engineer."
+    },
+    {
+      "tag": "interference",
+      "text": "कुछ संज्ञाएँ अंग्रेज़ी में गिनी ही नहीं जातीं — work, homework, information, advice, equipment, luggage, furniture, news. इन पर न -s लगता है और न आगे a आता है: a lot of work, some advice, some information. informations और advices अंग्रेज़ी में हैं ही नहीं. गिनना ही हो तो a piece of information, a piece of advice."
+    },
+    {
+      "tag": "delta",
+      "text": "news दिखने में बहुवचन है और बरतने में एकवचन — The news is good, न कि The news are good. a news भी कुछ नहीं होता; some news या a piece of news कहिए. यही धोखा homework और equipment नहीं देते, क्योंकि उनके आख़िर में -s है ही नहीं."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी का करना अकेले दोनों काम कर लेता है, अंग्रेज़ी उन्हें दो क्रियाओं में बाँटती है और कोई नियम नहीं बताती — सूची ही याद करनी पड़ती है. do के साथ: work, homework, business, a job. make के साथ: a mistake, a decision, money, a phone call. इसीलिए do a mistake ग़लत है और make a mistake सही."
+    },
+    {
+      "tag": "free",
+      "text": "काम-धंधे के शब्द जैसे के तैसे चलते हैं — colleague, manager, salary, deadline, degree, job. इनमें सीखने को कुछ नया नहीं है; बस याद रहे कि ये सब गिने जाते हैं, इसलिए आगे a आता है और एक से ज़्यादा पर -s: two colleagues, three deadlines."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M2-S01",
+      "display": "I am an engineer. I like my job.",
+      "cue": "मैं इंजीनियर हूँ. मुझे अपना काम पसंद है.",
+      "literal": "मैं हूँ एक इंजीनियर. मैं पसंद-करता मेरा काम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "job",
+            "cue": "नौकरी · काम",
+            "tag": "delta",
+            "forms": [
+              "job",
+              "jobs"
+            ],
+            "note": "गिना जाता है, इसलिए a my या the ज़रूरी: I like my job. यही work का गिना-जाने वाला जोड़ीदार है."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "पेशे के आगे a या an गिराना इस पाठ की सबसे आम ग़लती है. I am engineer अंग्रेज़ी में अधूरा है, चाहे बाक़ी सब सही हो.",
+      "sound": "engineer पर ज़ोर आख़िरी हिस्से पर है — एंजिनियर.",
+      "variations": [
+        {
+          "display": "I am a teacher. I like my job.",
+          "cue": "मैं शिक्षक हूँ. मुझे अपना काम पसंद है.",
+          "changed": "दूसरा पेशा, इसलिए an की जगह a"
+        },
+        {
+          "display": "My sister is an engineer.",
+          "cue": "मेरी बहन इंजीनियर है.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "I like my job very much.",
+          "cue": "मुझे अपना काम बहुत पसंद है.",
+          "changed": "पसंद पर ज़ोर"
+        }
+      ],
+      "mistake": {
+        "display": "I am engineer",
+        "why": "पेशे के आगे a या an आता है: I am an engineer."
+      },
+      "usage": "अपना परिचय देना — नए दफ़्तर या नए शहर में.",
+      "register": "neutral",
+      "mnemonic": "पेशे के आगे हमेशा एक a."
+    },
+    {
+      "id": "L3-M2-S02",
+      "display": "I work at a bank. My colleagues are very kind.",
+      "cue": "मैं एक बैंक में काम करता हूँ. मेरे साथी बहुत भले हैं.",
+      "literal": "मैं काम-करता पर एक बैंक. मेरे साथी हैं बहुत भले.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "colleague",
+            "cue": "साथी · सहकर्मी",
+            "tag": "free",
+            "forms": [
+              "colleague",
+              "colleagues"
+            ],
+            "note": "काम का साथी, दोस्त ज़रूरी नहीं. गिना जाता है, इसलिए एक से ज़्यादा पर -s: two colleagues."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "जगह के आगे at आता है, in नहीं — I work at a bank. in किसी शहर या मैदान के लिए बचा रहता है.",
+      "sound": "colleague के आख़िर के ue चुप हैं — कॉलीग.",
+      "variations": [
+        {
+          "display": "I work at a shop.",
+          "cue": "मैं एक दुकान पर काम करता हूँ.",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "My colleague is very kind.",
+          "cue": "मेरा साथी बहुत भला है.",
+          "changed": "एक साथी, इसलिए is"
+        },
+        {
+          "display": "My brother works at a bank.",
+          "cue": "मेरा भाई एक बैंक में काम करता है.",
+          "changed": "दूसरा कर्ता, works पर -s"
+        }
+      ],
+      "mistake": {
+        "display": "My colleagues is very kind",
+        "why": "एक से ज़्यादा हों तो are आता है: My colleagues are very kind."
+      },
+      "usage": "यह बताना कि आप कहाँ काम करते हैं.",
+      "register": "neutral",
+      "mnemonic": "साथी गिने जाते हैं, काम नहीं."
+    },
+    {
+      "id": "L3-M2-S03",
+      "display": "My manager gives me a lot of work.",
+      "cue": "मेरा मैनेजर मुझे बहुत काम देता है.",
+      "literal": "मेरा मैनेजर देता मुझे बहुत सारा काम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "manager",
+            "cue": "मैनेजर · अफ़सर",
+            "tag": "free",
+            "forms": [
+              "manager",
+              "managers"
+            ],
+            "note": "गिना जाता है: a manager, two managers. दफ़्तर में यही चलता है; boss ज़्यादा बेतकल्लुफ़ है."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "work वही शब्द है जो L1-M4 में क्रिया था — I work at a bank. यहाँ वह संज्ञा है और गिना नहीं जाता: न -s लगता है, न आगे a आता है. गिनती करनी हो तो two jobs या a lot of work.",
+      "sound": "work का or गहरा है — वर्क, वॉर्क नहीं.",
+      "variations": [
+        {
+          "display": "My manager gives me some work.",
+          "cue": "मेरा मैनेजर मुझे थोड़ा काम देता है.",
+          "changed": "बहुत की जगह थोड़ा"
+        },
+        {
+          "display": "My manager gives my brother a lot of work.",
+          "cue": "मेरा मैनेजर मेरे भाई को बहुत काम देता है.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "My managers give me a lot of work.",
+          "cue": "मेरे मैनेजर मुझे बहुत काम देते हैं.",
+          "changed": "एक से ज़्यादा मैनेजर, give से -s हटा"
+        }
+      ],
+      "mistake": {
+        "display": "My manager gives me many works",
+        "why": "work गिना नहीं जाता: My manager gives me a lot of work."
+      },
+      "usage": "अपने दिन का बोझ बताना.",
+      "register": "neutral",
+      "mnemonic": "काम तौला जाता है, गिना नहीं."
+    },
+    {
+      "id": "L3-M2-S04",
+      "display": "I have a lot of homework today. The news is not good.",
+      "cue": "आज मेरे पास बहुत होमवर्क है. ख़बर अच्छी नहीं है.",
+      "literal": "मैं रखता बहुत सारा होमवर्क आज. वह ख़बर है नहीं अच्छी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "homework",
+            "cue": "घर का काम · होमवर्क",
+            "tag": "interference",
+            "forms": [],
+            "note": "गिना नहीं जाता, बिलकुल work की तरह. homeworks और a homework दोनों ग़लत — a lot of homework, some homework."
+          },
+          {
+            "display": "news",
+            "cue": "ख़बर · समाचार",
+            "tag": "interference",
+            "forms": [],
+            "note": "आख़िर का -s धोखा है: यह बहुवचन नहीं है और क्रिया एकवचन लेती है — The news is good."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "दो अलग जाल एक ही वाक्य में. homework पर -s कभी नहीं लगता, और news पर -s पहले से है पर वह गिनती का नहीं है.",
+      "sound": "news में ew लंबा है और आख़िर में ज़ की आवाज़ आती है — न्यूज़.",
+      "variations": [
+        {
+          "display": "I have a lot of homework today.",
+          "cue": "आज मेरे पास बहुत होमवर्क है.",
+          "changed": "सिर्फ़ पहला आधा"
+        },
+        {
+          "display": "The news is good today.",
+          "cue": "आज ख़बर अच्छी है.",
+          "changed": "ख़बर अच्छी"
+        },
+        {
+          "display": "My sister has a lot of homework.",
+          "cue": "मेरी बहन के पास बहुत होमवर्क है.",
+          "changed": "दूसरा कर्ता, has के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "The news are not good",
+        "why": "news दिखने में बहुवचन है, बरतने में एकवचन: The news is not good."
+      },
+      "usage": "पढ़ाई का बोझ और दिन की ख़बर, एक साँस में.",
+      "register": "neutral",
+      "mnemonic": "news का -s गिनती का नहीं."
+    },
+    {
+      "id": "L3-M2-S05",
+      "display": "The equipment in this office is new.",
+      "cue": "इस दफ़्तर का सामान नया है.",
+      "literal": "वह सामान में यह दफ़्तर है नया.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "equipment",
+            "cue": "सामान · औज़ार",
+            "tag": "interference",
+            "forms": [],
+            "note": "गिना नहीं जाता — equipments कभी नहीं. एक चीज़ के लिए उसका अपना नाम लीजिए: a computer, a phone."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "बिना गिनी संज्ञा हमेशा एकवचन क्रिया लेती है. The equipment is new सही, The equipment are new ग़लत — चाहे सामान कितना भी हो.",
+      "sound": "equipment पर ज़ोर बीच वाले हिस्से पर है — इक्विप्मेंट.",
+      "variations": [
+        {
+          "display": "The equipment in this shop is new.",
+          "cue": "इस दुकान का सामान नया है.",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "The equipment is not new.",
+          "cue": "सामान नया नहीं है.",
+          "changed": "नकार, छोटा किया"
+        },
+        {
+          "display": "The furniture in this office is new.",
+          "cue": "इस दफ़्तर का फ़र्नीचर नया है.",
+          "changed": "एक और बिना गिना शब्द"
+        }
+      ],
+      "mistake": {
+        "display": "The equipments in this office are new",
+        "why": "equipment गिना नहीं जाता और क्रिया एकवचन लेता है: The equipment in this office is new."
+      },
+      "usage": "नए दफ़्तर या नई दुकान के बारे में बताना.",
+      "register": "neutral",
+      "mnemonic": "बिना गिना सामान, एकवचन क्रिया."
+    },
+    {
+      "id": "L3-M2-S06",
+      "display": "Today I made a mistake at work.",
+      "cue": "आज मुझसे काम पर एक ग़लती हो गई.",
+      "literal": "आज मैंने बनाई एक ग़लती पर काम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "made",
+            "cue": "किया · बनाया",
+            "tag": "interference",
+            "forms": [
+              "make",
+              "makes",
+              "made"
+            ],
+            "note": "make का बीता रूप, नियम से बाहर. ग़लती, फ़ैसला, पैसा और फ़ोन इसी के साथ आते हैं, do के साथ नहीं."
+          },
+          {
+            "display": "mistake",
+            "cue": "ग़लती",
+            "tag": "free",
+            "forms": [
+              "mistake",
+              "mistakes"
+            ],
+            "note": "गिनी जाती है, इसलिए आगे a आता है: a mistake, two mistakes. हिंदी की ग़लती की जाती है, अंग्रेज़ी की बनाई जाती है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "यही हिंदी बोलने वाले की सबसे पहचानी जाने वाली फिसलन है. करना दोनों की जगह चल जाता है, इसलिए do a mistake मुँह से निकल जाता है — सही सिर्फ़ make a mistake है.",
+      "sound": "made का a लंबा है — मेड, मैड नहीं.",
+      "variations": [
+        {
+          "display": "Today I made a mistake.",
+          "cue": "आज मुझसे एक ग़लती हो गई.",
+          "changed": "छोटा किया"
+        },
+        {
+          "display": "My colleague made a mistake today.",
+          "cue": "आज मेरे साथी से एक ग़लती हो गई.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "I make a lot of mistakes.",
+          "cue": "मुझसे बहुत ग़लतियाँ होती हैं.",
+          "changed": "रोज़ की आदत, इसलिए सादा रूप और बहुवचन"
+        }
+      ],
+      "mistake": {
+        "display": "Today I did a mistake at work",
+        "why": "ग़लती के साथ make आता है: Today I made a mistake at work."
+      },
+      "usage": "दफ़्तर में अपनी चूक मान लेना.",
+      "register": "neutral",
+      "mnemonic": "ग़लती बनती है, की नहीं जाती."
+    },
+    {
+      "id": "L3-M2-S07",
+      "display": "My manager makes the decisions here.",
+      "cue": "यहाँ फ़ैसले मेरा मैनेजर करता है.",
+      "literal": "मेरा मैनेजर बनाता वे फ़ैसले यहाँ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "decision",
+            "cue": "फ़ैसला",
+            "tag": "free",
+            "forms": [
+              "decision",
+              "decisions"
+            ],
+            "note": "गिना जाता है और make के साथ चलता है: make a decision. do a decision अंग्रेज़ी में है ही नहीं."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "फ़ैसला और ग़लती दोनों make की सूची में हैं, और काम तथा होमवर्क दोनों do की. सूची छोटी है — दोनों तरफ़ चार-चार शब्द याद रखिए.",
+      "sound": "decision के बीच का si ज़ जैसा है — डिसिज़न.",
+      "variations": [
+        {
+          "display": "My manager makes the decisions.",
+          "cue": "फ़ैसले मेरा मैनेजर करता है.",
+          "changed": "छोटा किया"
+        },
+        {
+          "display": "I make the decisions here.",
+          "cue": "यहाँ फ़ैसले मैं करता हूँ.",
+          "changed": "दूसरा कर्ता, make से -s हटा"
+        },
+        {
+          "display": "My colleague makes a decision every day.",
+          "cue": "मेरा साथी हर रोज़ एक फ़ैसला करता है.",
+          "changed": "एक फ़ैसला, रोज़ की आदत"
+        }
+      ],
+      "mistake": {
+        "display": "My manager does the decisions here",
+        "why": "फ़ैसला make होता है: My manager makes the decisions here."
+      },
+      "usage": "दफ़्तर में कौन क्या तय करता है, यह बताना.",
+      "register": "neutral",
+      "mnemonic": "make की सूची: ग़लती, फ़ैसला, पैसा, फ़ोन."
+    },
+    {
+      "id": "L3-M2-S08",
+      "display": "The deadline is on Friday. I do a lot of work.",
+      "cue": "आख़िरी तारीख़ शुक्रवार को है. मैं बहुत काम करता हूँ.",
+      "literal": "वह आख़िरी-तारीख़ है पर शुक्रवार. मैं करता बहुत सारा काम.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deadline",
+            "cue": "आख़िरी तारीख़",
+            "tag": "free",
+            "forms": [
+              "deadline",
+              "deadlines"
+            ],
+            "note": "गिनी जाती है: a deadline, two deadlines. दिन बताने के लिए आगे on आता है — the deadline is on Friday."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "काम do की सूची में है — I do a lot of work — जबकि पिछली दो पंक्तियों की ग़लती और फ़ैसला make की सूची में थे. एक ही करना, दो अलग क्रियाएँ.",
+      "sound": "deadline का पहला हिस्सा डेड है, डीड नहीं — डेडलाइन.",
+      "variations": [
+        {
+          "display": "The deadline is on Monday.",
+          "cue": "आख़िरी तारीख़ सोमवार को है.",
+          "changed": "दूसरा दिन"
+        },
+        {
+          "display": "The deadline is not on Friday.",
+          "cue": "आख़िरी तारीख़ शुक्रवार को नहीं है.",
+          "changed": "नकार, is के बाद not"
+        },
+        {
+          "display": "I do a lot of work every day.",
+          "cue": "मैं हर रोज़ बहुत काम करता हूँ.",
+          "changed": "रोज़ की आदत जोड़ी"
+        }
+      ],
+      "mistake": {
+        "display": "The deadline is in Friday",
+        "why": "दिन के आगे on आता है: The deadline is on Friday."
+      },
+      "usage": "काम कब तक ख़त्म करना है, यह बताना.",
+      "register": "neutral",
+      "mnemonic": "दिन पर on, काम पर do."
+    },
+    {
+      "id": "L3-M2-S09",
+      "display": "My sister has a degree in English. I want to apply too.",
+      "cue": "मेरी बहन के पास अंग्रेज़ी की डिग्री है. मैं भी अर्ज़ी देना चाहता हूँ.",
+      "literal": "मेरी बहन रखती एक डिग्री में अंग्रेज़ी. मैं चाहता को अर्ज़ी-देना भी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "degree",
+            "cue": "डिग्री",
+            "tag": "free",
+            "forms": [
+              "degree",
+              "degrees"
+            ],
+            "note": "गिनी जाती है, इसलिए आगे a आता है. विषय इसके बाद in से जुड़ता है: a degree in English."
+          },
+          {
+            "display": "apply",
+            "cue": "अर्ज़ी देना",
+            "tag": "delta",
+            "forms": [
+              "apply",
+              "applies"
+            ],
+            "note": "अकेला भी खड़ा हो जाता है — I want to apply. वह पर -y हटकर -ies आता है: she applies."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "degree गिनी जाती है, इसलिए has degree अधूरा है. आगे a चाहिए ही — बिलकुल पेशे वाले a की तरह.",
+      "sound": "degree पर ज़ोर दूसरे हिस्से पर है — डिग्री.",
+      "variations": [
+        {
+          "display": "My brother has a degree in English.",
+          "cue": "मेरे भाई के पास अंग्रेज़ी की डिग्री है.",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "I have a degree in English.",
+          "cue": "मेरे पास अंग्रेज़ी की डिग्री है.",
+          "changed": "दूसरा कर्ता, have के साथ"
+        },
+        {
+          "display": "I want to apply today.",
+          "cue": "मैं आज अर्ज़ी देना चाहता हूँ.",
+          "changed": "वक़्त जोड़ा"
+        }
+      ],
+      "mistake": {
+        "display": "My sister has degree in English",
+        "why": "गिनी जाने वाली एक चीज़ के आगे a आता है: My sister has a degree in English."
+      },
+      "usage": "पढ़ाई और नौकरी की बात एक साथ करना.",
+      "register": "neutral",
+      "mnemonic": "डिग्री एक चीज़ है — आगे a."
+    },
+    {
+      "id": "L3-M2-S10",
+      "display": "My salary is not very big. I study English at night.",
+      "cue": "मेरी तनख़्वाह बहुत बड़ी नहीं है. मैं रात को अंग्रेज़ी पढ़ता हूँ.",
+      "literal": "मेरी तनख़्वाह है नहीं बहुत बड़ी. मैं पढ़ता अंग्रेज़ी पर रात.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "salary",
+            "cue": "तनख़्वाह",
+            "tag": "free",
+            "forms": [
+              "salary",
+              "salaries"
+            ],
+            "note": "गिनी जाती है — two salaries — पर money नहीं: पैसे पर -s कभी नहीं लगता."
+          },
+          {
+            "display": "study",
+            "cue": "पढ़ाई करना",
+            "tag": "free",
+            "forms": [
+              "study",
+              "studies"
+            ],
+            "note": "किताब पढ़ना read है, विषय सीखना study. वह पर -y हटकर -ies आता है: she studies."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "तनख़्वाह के लिए big या small चलता है, much नहीं. My salary is not very big सही, My salary is not very much ग़लत.",
+      "sound": "salary के तीनों हिस्से हल्के हैं और ज़ोर पहले पर — सैलरी.",
+      "variations": [
+        {
+          "display": "My salary is not very big.",
+          "cue": "मेरी तनख़्वाह बहुत बड़ी नहीं है.",
+          "changed": "सिर्फ़ पहला आधा"
+        },
+        {
+          "display": "I study English every day.",
+          "cue": "मैं हर रोज़ अंग्रेज़ी पढ़ता हूँ.",
+          "changed": "रात की जगह रोज़"
+        },
+        {
+          "display": "My sister studies English at night.",
+          "cue": "मेरी बहन रात को अंग्रेज़ी पढ़ती है.",
+          "changed": "दूसरा कर्ता, studies पर -ies"
+        }
+      ],
+      "mistake": {
+        "display": "I study English in night",
+        "why": "रात के आगे at आता है: I study English at night."
+      },
+      "usage": "काम के बाद की पढ़ाई बताना.",
+      "register": "neutral",
+      "mnemonic": "रात पर at, सुबह पर in."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M2-C01",
+      "display": "I am an engineer. I like my job.",
+      "cue": "मैं इंजीनियर हूँ. मुझे अपना काम पसंद है."
+    },
+    {
+      "id": "L3-M2-C02",
+      "display": "My sister is a teacher.",
+      "cue": "मेरी बहन शिक्षक है."
+    },
+    {
+      "id": "L3-M2-C03",
+      "display": "I work at a bank with my colleague.",
+      "cue": "मैं अपने साथी के साथ एक बैंक में काम करता हूँ."
+    },
+    {
+      "id": "L3-M2-C04",
+      "display": "My manager gives me a lot of work.",
+      "cue": "मेरा मैनेजर मुझे बहुत काम देता है."
+    },
+    {
+      "id": "L3-M2-C05",
+      "display": "I have a lot of homework today.",
+      "cue": "आज मेरे पास बहुत होमवर्क है."
+    },
+    {
+      "id": "L3-M2-C06",
+      "display": "The news is not good today.",
+      "cue": "आज ख़बर अच्छी नहीं है."
+    },
+    {
+      "id": "L3-M2-C07",
+      "display": "The equipment in this shop is new.",
+      "cue": "इस दुकान का सामान नया है."
+    },
+    {
+      "id": "L3-M2-C08",
+      "display": "Today I made a mistake at work.",
+      "cue": "आज मुझसे काम पर एक ग़लती हो गई."
+    },
+    {
+      "id": "L3-M2-C09",
+      "display": "My colleague makes the decisions here.",
+      "cue": "यहाँ फ़ैसले मेरा साथी करता है."
+    },
+    {
+      "id": "L3-M2-C10",
+      "display": "The deadline is on Monday.",
+      "cue": "आख़िरी तारीख़ सोमवार को है."
+    },
+    {
+      "id": "L3-M2-C11",
+      "display": "I have a degree in English. I want to apply.",
+      "cue": "मेरे पास अंग्रेज़ी की डिग्री है. मैं अर्ज़ी देना चाहता हूँ."
+    },
+    {
+      "id": "L3-M2-C12",
+      "display": "My salary is not very big.",
+      "cue": "मेरी तनख़्वाह बहुत बड़ी नहीं है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

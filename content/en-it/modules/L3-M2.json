@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M2",
+  "title": "Work and study",
+  "job": "Explain what you do all day, and how",
+  "prerequisites": [
+    "L3-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Faccio + <job>  /  Sono + <job>",
+      "Lavoro in + <place>  /  Lavoro per + <company>",
+      "Studio + <subject> + all'università",
+      "Devo + V-inf",
+      "Mi occupo di + <N>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "THE ARTICLE VANISHES BEFORE A BARE PROFESSION. After essere, Italian names a job with nothing in front of it — sono insegnante, sono studente — and English puts an article there every time. Then the article comes STRAIGHT BACK the moment an adjective arrives: sono un bravo insegnante. Both halves run against the English habit, and this is the sentence a work module says most often."
+    },
+    {
+      "tag": "delta",
+      "text": "The prepositions of work are convention, not logic, so they are learned as a closed list of four: lavoro IN un ufficio, lavoro PER una ditta, lavoro DA casa, studio ALL'UNIVERSITÀ. in is L1-M7's row doing its usual job; per is new and means \"for\" in the sense of an employer. There is no rule underneath these — asking why will not help, and the list is short."
+    },
+    {
+      "tag": "delta",
+      "text": "DOVERE, POTERE AND VOLERE TAKE A BARE INFINITIVE. devo lavorare, posso studiare, voglio tornare — nothing goes between the two verbs. No to, no di, no che, and never *devo di lavorare. English needs \"to\" and Spanish needs nothing either, so this is the rare place where Italian is the simpler of the two."
+    },
+    {
+      "tag": "free",
+      "text": "devo is a real verb where L1-M3's vorrei is a frozen piece of politeness. vorrei is one cell of a tense the course has not opened yet (it is L3-M4's); devo, devi, deve, dobbiamo, dovete, devono is a whole present tense that conjugates like any other. L2-M1's posso and L1-M3's voglio are the same kind of verb, met earlier for their own jobs."
+    },
+    {
+      "tag": "delta",
+      "text": "An Italian verb owns its preposition and English's does not match. mi occupo DI — you are occupied WITH something — is learned whole, exactly as a phrase and not as a verb plus a choice. The pronoun in front of it is the same reflexive marker L3-M1 opened, and the di after it is not optional."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M2-S01",
+      "display": "Sono insegnante, non sono studente",
+      "cue": "I'm a teacher, not a student",
+      "literal": "I-am teacher, not I-am student",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "insegnante",
+            "cue": "teacher",
+            "tag": "delta",
+            "forms": [
+              "insegnanti"
+            ],
+            "note": "An -e noun, so one shape for a man and a woman and -i in the plural. After essere it stands bare: sono insegnante, with no article at all."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "L1-M1's studente behaves the same way and always did — sono studente carried no article there either. This module is where the pattern is named rather than only shown.",
+      "sound": "een-se-NYAN-te. The gn is the ny of onion, and the stress falls on the nyan.",
+      "variations": [
+        {
+          "display": "Mia sorella è insegnante",
+          "cue": "My sister is a teacher",
+          "changed": "about someone else, and still no article"
+        },
+        {
+          "display": "Mio fratello è medico",
+          "cue": "My brother is a doctor",
+          "changed": "a different profession, the same bare shape"
+        },
+        {
+          "display": "Non sono insegnante, sono studente",
+          "cue": "I'm not a teacher, I'm a student",
+          "changed": "the two halves swapped"
+        }
+      ],
+      "mistake": {
+        "display": "Sono un insegnante, non sono uno studente",
+        "why": "A bare profession takes no article: Sono insegnante, non sono studente."
+      },
+      "usage": "The first thing said about yourself at work, and the first place English leaks in.",
+      "register": "neutral",
+      "mnemonic": "Bare job, no article."
+    },
+    {
+      "id": "L3-M2-S02",
+      "display": "Sono un bravo insegnante di italiano",
+      "cue": "I'm a good Italian teacher",
+      "literal": "I-am a good teacher of Italian",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "medico",
+            "cue": "doctor",
+            "tag": "free",
+            "forms": [
+              "medici"
+            ],
+            "note": "A profession like any other, and it follows the same rule: sono medico bare, sono un bravo medico once an adjective is there."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The adjective is what brings the article back, and nothing else does. Sono insegnante has none; Sono un bravo insegnante has one; and di italiano at the end changes nothing, because it describes the subject taught, not the teacher.",
+      "sound": "so-no oon BRA-vo een-se-NYAN-te. bravo takes the stress off the article entirely.",
+      "variations": [
+        {
+          "display": "Sono una brava insegnante",
+          "cue": "I'm a good teacher",
+          "changed": "feminine — the noun holds still, the article and adjective move"
+        },
+        {
+          "display": "È un bravo medico",
+          "cue": "He's a good doctor",
+          "changed": "a different profession, third person"
+        },
+        {
+          "display": "Sono insegnante di italiano",
+          "cue": "I'm an Italian teacher",
+          "changed": "no adjective, so no article"
+        }
+      ],
+      "mistake": {
+        "display": "Sono bravo insegnante",
+        "why": "An adjective brings the article back: Sono un bravo insegnante."
+      },
+      "usage": "Saying what you are good at without a hint of apology, which is normal here.",
+      "register": "neutral",
+      "mnemonic": "Adjective in, article back."
+    },
+    {
+      "id": "L3-M2-S03",
+      "display": "Lavoro in un ufficio con due colleghi",
+      "cue": "I work in an office with two colleagues",
+      "literal": "I-work in an office with two colleagues",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ufficio",
+            "cue": "office",
+            "tag": "free",
+            "forms": [
+              "uffici"
+            ],
+            "note": "The plural drops one i — uffici, not *ufficii — as every -cio noun does. With no article at all, in ufficio means \"at work\" rather than a particular room."
+          },
+          {
+            "display": "collega",
+            "cue": "colleague",
+            "tag": "delta",
+            "forms": [
+              "colleghi",
+              "colleghe"
+            ],
+            "note": "One shape for both sexes in the singular and two in the plural: colleghi for men or a mixed group, colleghe for women only. The h keeps the g hard."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "A workplace takes in, not a. Vado a casa but lavoro in un ufficio, and the preposition belongs to the phrase rather than to any rule you could work out.",
+      "sound": "oof-FEE-cho. The double f is held, and the cio is a soft cho with a silent i.",
+      "variations": [
+        {
+          "display": "Lavoro in un ufficio piccolo",
+          "cue": "I work in a small office",
+          "changed": "the office described"
+        },
+        {
+          "display": "Lavoro con due colleghe",
+          "cue": "I work with two colleagues",
+          "changed": "an all-female group, so the other plural"
+        },
+        {
+          "display": "Il mio capo lavora in ufficio",
+          "cue": "My boss works at the office",
+          "changed": "someone else, and no article after in"
+        }
+      ],
+      "mistake": {
+        "display": "Lavoro a un ufficio con due colleghi",
+        "why": "A workplace takes in: Lavoro in un ufficio con due colleghi."
+      },
+      "usage": "Answering where you work, in the first sentence anyone gets.",
+      "register": "neutral",
+      "mnemonic": "in an office, at home."
+    },
+    {
+      "id": "L3-M2-S04",
+      "display": "Lavoro per una ditta italiana",
+      "cue": "I work for an Italian company",
+      "literal": "I-work for a firm Italian",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "per",
+            "cue": "for",
+            "tag": "free",
+            "forms": [],
+            "note": "The employer preposition, and the same per already inside L1-M8's per favore and L2-M5's per me. Here it stands alone with a company after it."
+          },
+          {
+            "display": "ditta",
+            "cue": "company · firm",
+            "tag": "free",
+            "forms": [
+              "ditte"
+            ],
+            "note": "What an Italian says for an ordinary business, especially a smaller one. azienda is the word on the letterhead; ditta is the word in the conversation."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "per names who employs you and in names where you are. Lavoro per una ditta and lavoro in una ditta are both correct and mean different things — the first is a contract, the second is a building.",
+      "sound": "per OO-na DEET-ta. The double t of ditta is held, and per keeps a clear e.",
+      "variations": [
+        {
+          "display": "Lavoro per una ditta grande",
+          "cue": "I work for a big company",
+          "changed": "the company described"
+        },
+        {
+          "display": "Lavoro in una ditta italiana",
+          "cue": "I work in an Italian company",
+          "changed": "in instead of per — the place, not the employer"
+        },
+        {
+          "display": "Mia sorella lavora per un bar",
+          "cue": "My sister works for a bar",
+          "changed": "about someone else"
+        }
+      ],
+      "mistake": {
+        "display": "Lavoro a una ditta italiana",
+        "why": "An employer takes per: Lavoro per una ditta italiana."
+      },
+      "usage": "The half of the question about work that names who pays you.",
+      "register": "neutral",
+      "mnemonic": "per pays you. in houses you."
+    },
+    {
+      "id": "L3-M2-S05",
+      "display": "Qualche volta lavoro da casa",
+      "cue": "Sometimes I work from home",
+      "literal": "Some time I-work from house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "da casa",
+            "cue": "from home",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key of two words, with no article inside it — never *da la casa. It is the third of the four work prepositions and the only one with no article after it."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "a casa is going or being home and da casa is working out of it. The two are one letter apart and the preposition is the whole difference.",
+      "sound": "da KA-za. The s of casa is a soft z between two vowels.",
+      "variations": [
+        {
+          "display": "Di solito lavoro da casa",
+          "cue": "I usually work from home",
+          "changed": "a stronger frequency"
+        },
+        {
+          "display": "Lavoro da casa il lunedì",
+          "cue": "I work from home on Mondays",
+          "changed": "a named day instead of a frequency word"
+        },
+        {
+          "display": "Non lavoro mai da casa",
+          "cue": "I never work from home",
+          "changed": "the negative, with L3-M1's non … mai"
+        }
+      ],
+      "mistake": {
+        "display": "Qualche volta lavoro da la casa",
+        "why": "The phrase carries no article: Qualche volta lavoro da casa."
+      },
+      "usage": "The answer everyone now gives to how the week is arranged.",
+      "register": "neutral",
+      "mnemonic": "da casa, no article."
+    },
+    {
+      "id": "L3-M2-S06",
+      "display": "Devo lavorare anche il sabato",
+      "cue": "I have to work on Saturdays too",
+      "literal": "I-must to-work also the Saturday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "devo",
+            "cue": "I have to · I must",
+            "tag": "delta",
+            "forms": [
+              "devi",
+              "deve",
+              "dobbiamo",
+              "dovete",
+              "devono"
+            ],
+            "note": "A full present tense, unlike L1-M3's vorrei, which is one frozen cell of a tense not yet opened. The verb after it is a bare infinitive with nothing in between."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Nothing goes between devo and lavorare. English needs \"to\" and the pull to translate it is strong, but *devo di lavorare and *devo a lavorare are both wrong — the two verbs simply touch.",
+      "sound": "DE-vo la-vo-RA-re. Both words are stressed on the syllable before last.",
+      "variations": [
+        {
+          "display": "Devo lavorare anche la domenica",
+          "cue": "I have to work on Sundays too",
+          "changed": "a different day"
+        },
+        {
+          "display": "Dobbiamo lavorare anche il sabato",
+          "cue": "We have to work on Saturdays too",
+          "changed": "the noi cell"
+        },
+        {
+          "display": "Non devo lavorare il sabato",
+          "cue": "I don't have to work on Saturdays",
+          "changed": "the negative"
+        }
+      ],
+      "mistake": {
+        "display": "Devo di lavorare anche il sabato",
+        "why": "A modal takes the bare infinitive: Devo lavorare anche il sabato."
+      },
+      "usage": "Explaining the week you actually have, rather than the one on paper.",
+      "register": "neutral",
+      "mnemonic": "Two verbs, nothing between."
+    },
+    {
+      "id": "L3-M2-S07",
+      "display": "Oggi c'è una riunione in ufficio",
+      "cue": "There's a meeting at the office today",
+      "literal": "Today there-is a meeting in office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "riunione",
+            "cue": "meeting",
+            "tag": "free",
+            "forms": [
+              "riunioni"
+            ],
+            "note": "Four syllables, ri-u-nio-ne, with the u fully sounded. An -e noun, so its plural is riunioni."
+          },
+          {
+            "display": "capo",
+            "cue": "boss",
+            "tag": "free",
+            "forms": [
+              "capi"
+            ],
+            "note": "The word an office actually uses, for a woman as well — il mio capo either way. It also means \"head\", which is where the sense comes from."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "in ufficio has no article and in un ufficio has one. Bare, it means at work in general; with un, it means inside some particular office — and both appear in this module on purpose.",
+      "sound": "ree-oo-NYO-ne. Four syllables, and the i and u are both heard.",
+      "variations": [
+        {
+          "display": "Oggi c'è una riunione con il capo",
+          "cue": "There's a meeting with the boss today",
+          "changed": "who is in it"
+        },
+        {
+          "display": "Domani c'è una riunione",
+          "cue": "There's a meeting tomorrow",
+          "changed": "when, and no place named"
+        },
+        {
+          "display": "Ci sono due riunioni oggi",
+          "cue": "There are two meetings today",
+          "changed": "plural, so ci sono"
+        }
+      ],
+      "mistake": {
+        "display": "Oggi c'è una riunione in un ufficio",
+        "why": "At work in general is bare: Oggi c'è una riunione in ufficio."
+      },
+      "usage": "The line that reorganises a day, said in a corridor.",
+      "register": "neutral",
+      "mnemonic": "in ufficio is at work. in un ufficio is in a room."
+    },
+    {
+      "id": "L3-M2-S08",
+      "display": "Non posso lavorare, devo studiare per un esame",
+      "cue": "I can't work, I have to study for an exam",
+      "literal": "Not I-can to-work, I-must to-study for an exam",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "esame",
+            "cue": "exam",
+            "tag": "free",
+            "forms": [
+              "esami"
+            ],
+            "note": "Masculine despite the -e, so un esame and gli esami. The s between vowels is a soft z: e-ZA-me."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "posso is L2-M1's may-I word doing its plain \"can\" job here, and it takes the same bare infinitive as devo. One rule covers all three modals — posso lavorare, devo studiare, voglio tornare.",
+      "sound": "non POS-so la-vo-RA-re. The double s is held, and the two verbs run together.",
+      "variations": [
+        {
+          "display": "Non posso uscire, devo studiare",
+          "cue": "I can't go out, I have to study",
+          "changed": "a different thing given up"
+        },
+        {
+          "display": "Devo studiare per un esame",
+          "cue": "I have to study for an exam",
+          "changed": "only the second half"
+        },
+        {
+          "display": "Posso studiare a casa",
+          "cue": "I can study at home",
+          "changed": "the positive, and where"
+        }
+      ],
+      "mistake": {
+        "display": "Non posso di lavorare, devo di studiare",
+        "why": "Both modals take the bare infinitive: Non posso lavorare, devo studiare."
+      },
+      "usage": "Turning something down with the reason attached, which is the polite shape.",
+      "register": "neutral",
+      "mnemonic": "posso, devo, voglio — all bare after."
+    },
+    {
+      "id": "L3-M2-S09",
+      "display": "Studio all'università e voglio una laurea",
+      "cue": "I study at university and I want a degree",
+      "literal": "I-study at-the-university and I-want a degree",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "all'università",
+            "cue": "at university",
+            "tag": "delta",
+            "forms": [],
+            "note": "ONE key with the elision inside it and a straight apostrophe, answering for nothing else. It is the fourth of the four work prepositions, and the article is compulsory."
+          },
+          {
+            "display": "laurea",
+            "cue": "degree",
+            "tag": "free",
+            "forms": [
+              "lauree"
+            ],
+            "note": "Stressed on the first syllable, LAU-re-a, not on the e. It names the qualification; the graduate is a laureato."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "English drops the article — \"at university\" — and Italian will not. all'università is a fused a + la and it is never *a università.",
+      "sound": "al-loo-nee-ver-see-TA. One long run of syllables, with the stress on the final à.",
+      "variations": [
+        {
+          "display": "Studio italiano all'università",
+          "cue": "I study Italian at university",
+          "changed": "the subject named"
+        },
+        {
+          "display": "Voglio una laurea in italiano",
+          "cue": "I want a degree in Italian",
+          "changed": "only the second half, with the subject"
+        },
+        {
+          "display": "Mia sorella studia all'università",
+          "cue": "My sister studies at university",
+          "changed": "about someone else"
+        }
+      ],
+      "mistake": {
+        "display": "Studio a università e voglio una laurea",
+        "why": "The article is fused in and compulsory: Studio all'università."
+      },
+      "usage": "The student's half of the same question — what you do all day.",
+      "register": "neutral",
+      "mnemonic": "all'università keeps its article. English does not."
+    },
+    {
+      "id": "L3-M2-S10",
+      "display": "Mi occupo di stipendi in ufficio",
+      "cue": "I deal with salaries at the office",
+      "literal": "Me I-occupy of salaries in office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mi occupo di",
+            "cue": "I deal with · I look after",
+            "tag": "delta",
+            "forms": [
+              "ti occupi di",
+              "si occupa di",
+              "ci occupiamo di"
+            ],
+            "note": "One key with its preposition inside it: you are occupied WITH something. The di is not a choice and the phrase is learned whole."
+          },
+          {
+            "display": "stipendio",
+            "cue": "salary",
+            "tag": "free",
+            "forms": [
+              "stipendi"
+            ],
+            "note": "The monthly pay, and the plural drops one i as ufficio's does. It is a neutral office word, not a delicate one."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The pronoun is L3-M1's reflexive marker again, and it moves with the person — mi occupo, si occupa. What does not move is the di: it is welded to the phrase.",
+      "sound": "mee OK-koo-po dee. The double c is held, and the stress is on the ok.",
+      "variations": [
+        {
+          "display": "Mi occupo di stipendi",
+          "cue": "I deal with salaries",
+          "changed": "without the place"
+        },
+        {
+          "display": "Il mio capo si occupa di stipendi",
+          "cue": "My boss deals with salaries",
+          "changed": "the third-person cell"
+        },
+        {
+          "display": "Mi occupo di esami all'università",
+          "cue": "I deal with exams at the university",
+          "changed": "a different job in a different place"
+        }
+      ],
+      "mistake": {
+        "display": "Mi occupo stipendi in ufficio",
+        "why": "The preposition is part of the phrase: Mi occupo di stipendi in ufficio."
+      },
+      "usage": "Saying what you actually do, once the job title has not explained it.",
+      "register": "neutral",
+      "mnemonic": "occupied WITH — the di never leaves."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M2-C01",
+      "display": "Sono insegnante, non sono studente",
+      "cue": "I'm a teacher, not a student"
+    },
+    {
+      "id": "L3-M2-C02",
+      "display": "Sono un bravo insegnante di italiano",
+      "cue": "I'm a good Italian teacher"
+    },
+    {
+      "id": "L3-M2-C03",
+      "display": "Lavoro in un ufficio con due colleghi",
+      "cue": "I work in an office with two colleagues"
+    },
+    {
+      "id": "L3-M2-C04",
+      "display": "Lavoro per una ditta italiana",
+      "cue": "I work for an Italian company"
+    },
+    {
+      "id": "L3-M2-C05",
+      "display": "Qualche volta lavoro da casa",
+      "cue": "Sometimes I work from home"
+    },
+    {
+      "id": "L3-M2-C06",
+      "display": "Devo lavorare anche il sabato",
+      "cue": "I have to work on Saturdays too"
+    },
+    {
+      "id": "L3-M2-C07",
+      "display": "Oggi c'è una riunione in ufficio",
+      "cue": "There's a meeting at the office today"
+    },
+    {
+      "id": "L3-M2-C08",
+      "display": "Non posso lavorare, devo studiare per un esame",
+      "cue": "I can't work, I have to study for an exam"
+    },
+    {
+      "id": "L3-M2-C09",
+      "display": "Studio all'università e voglio una laurea",
+      "cue": "I study at university and I want a degree"
+    },
+    {
+      "id": "L3-M2-C10",
+      "display": "Mi occupo di stipendi in ufficio",
+      "cue": "I deal with salaries at the office"
+    },
+    {
+      "id": "L3-M2-C11",
+      "display": "Il mio capo lavora da casa",
+      "cue": "My boss works from home"
+    },
+    {
+      "id": "L3-M2-C12",
+      "display": "Dobbiamo parlare con il capo",
+      "cue": "We have to talk to the boss"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "D'habitude je + me + V + à + <hour>",
+      "D'abord … ensuite … puis … enfin …",
+      "Je ne + V + jamais",
+      "Je me lève + , + je me lave + et + je m'habille",
+      "Tous les jours je + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A REFLEXIVE VERB CARRIES ITS OWN LITTLE PRONOUN, AND IT GOES BEFORE THE VERB: je me lave, tu te laves, elle se lave, nous nous lavons, vous vous lavez, ils se lavent. The verb itself is ordinary; only that word in front is new, and it is the same me and te L2-M5 taught as objects. English marks almost none of these — it just says wash, get up, go to bed — so the pronoun is the whole delta."
+    },
+    {
+      "tag": "delta",
+      "text": "me, te and se elide to m', t' and s' before a vowel or a silent h: je m'habille, tu t'habilles, elle s'habille. This is obligatory, not a shortcut, and it is written as one word with the apostrophe inside it — the same spelling law as d'habitude and l'après-midi."
+    },
+    {
+      "tag": "interference",
+      "text": "A FREQUENCY ADVERB FOLLOWS THE VERB: je bois souvent un café, je vais rarement au cinéma. English puts it in front — I often drink, I rarely go — and a learner who copies that word order writes je souvent bois, which no French speaker says. d'habitude, parfois and chaque matin open the sentence just as happily, because they set the whole clause rather than colour the verb."
+    },
+    {
+      "tag": "interference",
+      "text": "jamais NEEDS ITS ne: je ne mange jamais. jamais is not a negative word on its own — the pair ne … jamais is, exactly as ne … pas is. Speech drops the ne and you will hear je mange jamais, but writing it that way produces something no French text contains, so write both halves every time."
+    },
+    {
+      "tag": "free",
+      "text": "The sequencing spine is already yours — d'abord, ensuite (L2-M10), puis (L1-M10), enfin — and a whole day runs in the present with nothing else added. The passé composé tells what happened yesterday; the present tells what happens every day, however long the account gets."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "D'habitude je me lève à sept heures",
+      "cue": "I usually get up at seven",
+      "literal": "Of habit I me raise at seven hours",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "d'habitude",
+            "cue": "usually",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key with its apostrophe inside: de + habitude. It opens the sentence and sets the whole account as a habit. The bare habitude is a noun you do not need here."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "me lève is not I lift myself. French marks the verb with a pronoun where English changes verb altogether — rise becomes get up — and the me carries no stress and never translates.",
+      "sound": "da-bee-TÜD zhuh muh LEHV a set UR. The d' and habitude run together as one word and the h is silent.",
+      "variations": [
+        {
+          "display": "D'habitude je me lève tard",
+          "cue": "I usually get up late",
+          "changed": "a later time"
+        },
+        {
+          "display": "Je me lève à sept heures",
+          "cue": "I get up at seven",
+          "changed": "the frequency word dropped"
+        }
+      ],
+      "mistake": {
+        "display": "D'habitude je lève à sept heures",
+        "why": "lever without the pronoun means lifting something else. Your own getting up needs me: D'habitude je me lève à sept heures."
+      },
+      "usage": "The opening line of any account of your day.",
+      "register": "neutral",
+      "mnemonic": "d'habitude opens the day; the me stays glued in front of the verb."
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "Je me réveille tôt mais je me lève tard",
+      "cue": "I wake up early but I get up late",
+      "literal": "I me wake early but I me raise late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me réveille",
+            "cue": "I wake up",
+            "tag": "delta",
+            "forms": [
+              "me réveille",
+              "te réveilles",
+              "se réveille"
+            ],
+            "note": "Waking and getting up are two verbs in French too: je me réveille is the eyes opening, je me lève is the feet on the floor."
+          },
+          {
+            "display": "tôt",
+            "cue": "early",
+            "tag": "free",
+            "forms": [],
+            "note": "The opposite of L2-M10's tard, and just as free: it goes where tard goes. Final t silent — toh."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "réveiller somebody and lever somebody are things you do TO them. Both need the pronoun before they say anything about you, and the pair is not interchangeable in French any more than in English.",
+      "sound": "zhuh muh ray-VEY toh meh zhuh muh LEHV tar. The final t of tôt and the d of tard are both silent.",
+      "variations": [
+        {
+          "display": "Je me réveille tôt et je travaille",
+          "cue": "I wake up early and I work",
+          "changed": "a plain second clause"
+        },
+        {
+          "display": "Ma sœur se réveille tard",
+          "cue": "My sister wakes up late",
+          "changed": "a different person, so me becomes se"
+        }
+      ],
+      "mistake": {
+        "display": "Je réveille tôt mais je me lève tard",
+        "why": "réveiller on its own wakes somebody else up. Waking yourself needs the pronoun: Je me réveille tôt."
+      },
+      "usage": "The honest version of your morning, when the two do not happen together.",
+      "register": "neutral",
+      "mnemonic": "réveille is the eyes, lève is the feet."
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "D'abord je me lave, ensuite je m'habille",
+      "cue": "First I wash, then I get dressed",
+      "literal": "First I me wash, next I me-dress",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me lave",
+            "cue": "I wash",
+            "tag": "delta",
+            "forms": [
+              "me lave",
+              "te laves",
+              "se lave"
+            ],
+            "note": "laver is to wash something; me lave washes ME. The pronoun changes with the person and never moves: tu te laves, elle se lave."
+          },
+          {
+            "display": "m'habille",
+            "cue": "I get dressed",
+            "tag": "delta",
+            "forms": [
+              "m'habille",
+              "t'habilles",
+              "s'habille"
+            ],
+            "note": "me + habille, written as one elided key. The h of habiller is silent, so me must become m' — je me habille is not a slower way of saying it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "The elision is obligatory. A silent h counts as a vowel for every rule French has, so habiller behaves exactly like a word starting with a.",
+      "sound": "da-BOR zhuh muh LAHV, ahn-SWEET zhuh ma-BEEY. The h of m'habille is silent and the ill is a y.",
+      "variations": [
+        {
+          "display": "D'abord je me lave, puis je m'habille",
+          "cue": "First I wash, then I get dressed",
+          "changed": "puis instead of ensuite"
+        },
+        {
+          "display": "Je me lave et je m'habille",
+          "cue": "I wash and I get dressed",
+          "changed": "the sequencing dropped"
+        }
+      ],
+      "mistake": {
+        "display": "D'abord je me lave, ensuite je me habille",
+        "why": "The h of habiller is silent, so the pronoun elides: ensuite je m'habille."
+      },
+      "usage": "Two steps of a morning in one line, which is what the sequencing words are for.",
+      "register": "neutral",
+      "mnemonic": "Before a vowel the pronoun loses its own vowel."
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "Le matin je bois souvent un café",
+      "cue": "In the morning I often drink a coffee",
+      "literal": "The morning I drink often a coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "souvent",
+            "cue": "often",
+            "tag": "delta",
+            "forms": [],
+            "note": "It goes AFTER the verb — je bois souvent — where English puts often in front of it. Final t silent: soo-VAHN."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "je souvent bois is the word order English hands a learner, and it is the one order French will not take. The adverb waits until the verb has been said.",
+      "sound": "luh ma-TAN zhuh bwa soo-VAHN un ka-FAY. The en of souvent is the nasal of dans.",
+      "variations": [
+        {
+          "display": "Le soir je bois souvent un thé",
+          "cue": "In the evening I often drink a tea",
+          "changed": "a different time of day"
+        },
+        {
+          "display": "Je bois souvent de l'eau",
+          "cue": "I often drink water",
+          "changed": "a different drink"
+        }
+      ],
+      "mistake": {
+        "display": "Le matin je souvent bois un café",
+        "why": "The frequency word follows the verb: Le matin je bois souvent un café."
+      },
+      "usage": "Describing what usually, but not always, happens.",
+      "register": "neutral",
+      "mnemonic": "Verb first, frequency second."
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "Je ne mange jamais le matin",
+      "cue": "I never eat in the morning",
+      "literal": "I not eat never the morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jamais",
+            "cue": "never",
+            "tag": "interference",
+            "forms": [],
+            "note": "It needs the ne in front of the verb: je NE mange JAMAIS. jamais alone is not a negative word — the pair is, exactly like ne … pas."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Speech drops the ne and you will hear je mange jamais all day long. Write it that way and you have produced something no French text contains, so the written half stays.",
+      "sound": "zhuh nuh mahnzh zha-MEH luh ma-TAN. The s of jamais is silent.",
+      "variations": [
+        {
+          "display": "Je ne mange jamais le soir",
+          "cue": "I never eat in the evening",
+          "changed": "a different time of day"
+        },
+        {
+          "display": "Je ne bois jamais de café le matin",
+          "cue": "I never drink coffee in the morning",
+          "changed": "a drink, where the negative turns du into de"
+        }
+      ],
+      "mistake": {
+        "display": "Je mange jamais le matin",
+        "why": "jamais keeps its ne however speech treats it: Je ne mange jamais le matin."
+      },
+      "usage": "Stating a habit you do not have.",
+      "register": "neutral",
+      "mnemonic": "ne … jamais is one word split around the verb."
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "L'après-midi je me repose à la maison",
+      "cue": "In the afternoon I rest at home",
+      "literal": "The-afternoon I me rest at the house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "l'après-midi",
+            "cue": "the afternoon · in the afternoon",
+            "tag": "delta",
+            "forms": [],
+            "note": "One key with its elision inside: le + après-midi. As a time expression it stands alone, with no preposition in front of it at all."
+          },
+          {
+            "display": "me repose",
+            "cue": "I rest",
+            "tag": "delta",
+            "forms": [
+              "me repose",
+              "te reposes",
+              "se repose"
+            ],
+            "note": "Same shape as me lave: reposer rests something, me repose rests ME. tu te reposes, il se repose."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English says in the afternoon and French says the afternoon. l'après-midi carries the time by itself, exactly as le matin and le soir do, and en l'après-midi is not French at all.",
+      "sound": "la-preh-mee-DEE zhuh muh ruh-POHZ a la meh-ZON. The s of après is silent.",
+      "variations": [
+        {
+          "display": "Le soir je me repose à la maison",
+          "cue": "In the evening I rest at home",
+          "changed": "a different part of the day"
+        },
+        {
+          "display": "L'après-midi je ne travaille pas",
+          "cue": "In the afternoon I don't work",
+          "changed": "negated instead"
+        }
+      ],
+      "mistake": {
+        "display": "En l'après-midi je me repose à la maison",
+        "why": "The time expression needs no preposition in front of it: L'après-midi je me repose à la maison."
+      },
+      "usage": "The middle of a day, between the morning and the evening.",
+      "register": "neutral",
+      "mnemonic": "l'après-midi is already in the afternoon."
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "Parfois je mange une pomme le soir",
+      "cue": "Sometimes I eat an apple in the evening",
+      "literal": "Sometimes I eat an apple the evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parfois",
+            "cue": "sometimes",
+            "tag": "free",
+            "forms": [],
+            "note": "One of the two frequency words free to open a sentence — Parfois je mange — or to follow the verb — je mange parfois. Both are ordinary."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "parfois moves freely — in front of the clause or after the verb, with nothing else changing. souvent and rarement stay after the verb in ordinary speech, and jamais never goes anywhere without its ne.",
+      "sound": "par-FWA zhuh mahnzh ün pom luh SWAR. The oi is wa and the final s is silent.",
+      "variations": [
+        {
+          "display": "Je mange parfois une pomme le soir",
+          "cue": "I sometimes eat an apple in the evening",
+          "changed": "parfois after the verb instead of in front"
+        },
+        {
+          "display": "Parfois je bois du thé le soir",
+          "cue": "Sometimes I drink tea in the evening",
+          "changed": "a different thing"
+        }
+      ],
+      "mistake": {
+        "display": "Parfois je mange un pomme le soir",
+        "why": "pomme is feminine and L1-M3 taught it so: Parfois je mange une pomme le soir."
+      },
+      "usage": "An occasional habit, said without committing to it.",
+      "register": "neutral",
+      "mnemonic": "parfois may lead; souvent may not."
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "Je vais rarement au cinéma",
+      "cue": "I rarely go to the cinema",
+      "literal": "I go rarely to-the cinema",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rarement",
+            "cue": "rarely",
+            "tag": "free",
+            "forms": [],
+            "note": "French builds adverbs the way English builds -ly: rare + ment. It sits after the verb, exactly like souvent — je vais rarement."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "rarement is a plain negative-ish word and takes no ne. Only jamais drags the ne along with it, which is why it is the one that trips people.",
+      "sound": "zhuh veh rar-MAHN o see-nay-MA. The e of rarement is swallowed: rar-MAHN.",
+      "variations": [
+        {
+          "display": "Je vais rarement au marché",
+          "cue": "I rarely go to the market",
+          "changed": "a different place"
+        },
+        {
+          "display": "Je vais souvent au cinéma",
+          "cue": "I often go to the cinema",
+          "changed": "the opposite frequency"
+        }
+      ],
+      "mistake": {
+        "display": "Je rarement vais au cinéma",
+        "why": "The adverb waits for the verb: Je vais rarement au cinéma."
+      },
+      "usage": "Saying something happens, but hardly ever.",
+      "register": "neutral",
+      "mnemonic": "-ment is -ly with the same job."
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "Je me couche toujours à dix heures",
+      "cue": "I always go to bed at ten",
+      "literal": "I me lay always at ten hours",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me couche",
+            "cue": "I go to bed",
+            "tag": "delta",
+            "forms": [
+              "me couche",
+              "te couches",
+              "se couche",
+              "nous nous couchons",
+              "vous vous couchez",
+              "se couchent"
+            ],
+            "note": "The whole person set on one verb: je me couche, tu te couches, elle se couche, nous nous couchons, vous vous couchez, ils se couchent."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "coucher somebody is what you do to a child at bedtime. The pronoun is the only thing that turns it into your own going to bed, and dropping it changes who is put to bed.",
+      "sound": "zhuh muh KOOSH too-ZHOOR a deez UR. The x of dix links onto heures as a z.",
+      "variations": [
+        {
+          "display": "Ma sœur se couche tard",
+          "cue": "My sister goes to bed late",
+          "changed": "a different person, so me becomes se"
+        },
+        {
+          "display": "Tu te couches à dix heures ?",
+          "cue": "Do you go to bed at ten?",
+          "changed": "a question to somebody you know well, so me becomes te"
+        }
+      ],
+      "mistake": {
+        "display": "Je couche toujours à dix heures",
+        "why": "Without me it says you put somebody else to bed: Je me couche toujours à dix heures."
+      },
+      "usage": "The last line of the day, and the one a host asks about.",
+      "register": "neutral",
+      "mnemonic": "No pronoun, no bed of your own."
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "Chaque matin je bois un thé",
+      "cue": "Every morning I drink a tea",
+      "literal": "Each morning I drink a tea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chaque",
+            "cue": "each · every",
+            "tag": "delta",
+            "forms": [],
+            "note": "chaque takes a SINGULAR noun, always: chaque matin, never chaque matins. L1-M4's tous les jours says the same thing with a plural."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "English every takes a singular and all takes a plural, and French splits them the same way. What English does not do is offer two everyday idioms for one daily habit — chaque matin and tous les matins are both ordinary.",
+      "sound": "shak ma-TAN zhuh bwa un TAY. chaque is one syllable, shak.",
+      "variations": [
+        {
+          "display": "Tous les jours je bois un thé",
+          "cue": "Every day I drink a tea",
+          "changed": "tous les jours instead of chaque matin"
+        },
+        {
+          "display": "Chaque matin je bois un café",
+          "cue": "Every morning I drink a coffee",
+          "changed": "a different drink"
+        }
+      ],
+      "mistake": {
+        "display": "Chaque matins je bois un thé",
+        "why": "chaque is followed by a singular: Chaque matin je bois un thé."
+      },
+      "usage": "Closing an account of your day with the thing that never changes.",
+      "register": "neutral",
+      "mnemonic": "chaque counts one at a time."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "Le matin je me lave et je m'habille",
+      "cue": "In the morning I wash and get dressed"
+    },
+    {
+      "id": "L3-M1-C02",
+      "display": "D'abord je bois un café, ensuite je travaille",
+      "cue": "First I drink a coffee, then I work"
+    },
+    {
+      "id": "L3-M1-C03",
+      "display": "Je ne travaille jamais le dimanche",
+      "cue": "I never work on Sundays"
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "Parfois je vais au cinéma avec ma sœur",
+      "cue": "Sometimes I go to the cinema with my sister"
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "Ma mère se couche tard. Mon père se couche tôt",
+      "cue": "My mother goes to bed late. My father goes to bed early"
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "Chaque matin je travaille à la maison",
+      "cue": "Every morning I work at home"
+    },
+    {
+      "id": "L3-M1-C07",
+      "display": "L'après-midi je travaille et le soir je me repose",
+      "cue": "In the afternoon I work and in the evening I rest"
+    },
+    {
+      "id": "L3-M1-C08",
+      "display": "Je me réveille souvent tard",
+      "cue": "I often wake up late"
+    },
+    {
+      "id": "L3-M1-C09",
+      "display": "Tu te laves le matin ou le soir ?",
+      "cue": "Do you wash in the morning or in the evening?"
+    },
+    {
+      "id": "L3-M1-C10",
+      "display": "Je vais rarement au marché le lundi",
+      "cue": "I rarely go to the market on Mondays"
+    },
+    {
+      "id": "L3-M1-C11",
+      "display": "D'habitude je mange à sept heures, mais parfois je mange tard",
+      "cue": "I usually eat at seven, but sometimes I eat late"
+    },
+    {
+      "id": "L3-M1-C12",
+      "display": "Je ne bois jamais de thé le matin",
+      "cue": "I never drink tea in the morning"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

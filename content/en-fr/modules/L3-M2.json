@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M2",
+  "title": "Work and study",
+  "job": "Explain what you do all day, and how",
+  "prerequisites": [
+    "L3-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present",
+      "infinitive after a modal"
+    ],
+    "allowedPatterns": [
+      "Je suis + <job>",
+      "Je travaille dans + <place>  /  chez + <company>",
+      "Je fais des études de + <subject>",
+      "Je dois + V-inf",
+      "Il faut + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "NO ARTICLE AFTER être WITH A BARE PROFESSION: je suis professeur, elle est journaliste, il est étudiant. English puts one in — I am A teacher — and a learner puts it in twice a sentence. The article comes back the moment an adjective arrives, and the frame changes with it: c'est un bon professeur, never il est un bon professeur."
+    },
+    {
+      "tag": "delta",
+      "text": "chez TAKES A PERSON OR AN ORGANISATION AND NEVER A PLACE-NOUN: chez le médecin, chez mon père, chez moi, chez une grande entreprise. A building or a place takes L1-M7's dans or L1-M4's à — dans un bureau, à la gare. English has no single word for it and reaches for at the … 's, which is exactly the line a learner cannot guess."
+    },
+    {
+      "tag": "interference",
+      "text": "THE MODALS TAKE A BARE INFINITIVE: je dois travailler, je peux venir, je veux partir, il faut partir. Nothing goes between the two verbs — no de, no à — while English carries a to in have to and want to. L2-M1's peux and L1-M3's veux are the same three-verb family; only dois is new."
+    },
+    {
+      "tag": "delta",
+      "text": "il faut is the subjectless one. il faut travailler says the work has to be done and names nobody at all, where je dois travailler puts the obligation on me. L2-M4 shipped il faut for directions and it does the same job here; the il is a placeholder and stands for no person."
+    },
+    {
+      "tag": "interference",
+      "text": "études is PLURAL where English study is singular: je fais des études de français, never une étude. And travail is the noun beside L1-M4's travaille — un travail is a job, le travail is the work itself — so the verb and the noun are two different words to write."
+    },
+    {
+      "tag": "delta",
+      "text": "A SUBJECT AFTER de STANDS BARE: des études de français, une licence de musique, un examen de français. Nothing goes between de and the subject — no article, no plural — where English says a degree IN French and an exam IN music, with a different preposition each time."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M2-S01",
+      "display": "Je suis professeur et ma sœur est journaliste",
+      "cue": "I'm a teacher and my sister is a journalist",
+      "literal": "I am teacher and my sister is journalist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "professeur",
+            "cue": "teacher",
+            "tag": "delta",
+            "forms": [
+              "professeur",
+              "professeurs"
+            ],
+            "note": "After être the job stands bare, with no un in front of it. Shortened to prof in everyday speech, for the person and the subject alike."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The article is not optional here, it is wrong. Je suis un professeur reads as picking one teacher out of a group, which is never what somebody asking your job wants to know.",
+      "sound": "zhuh swee pro-feh-SUR ay ma SUR eh zhoor-na-LEEST. The double s is a hard s.",
+      "variations": [
+        {
+          "display": "Ma sœur est étudiante",
+          "cue": "My sister is a student",
+          "changed": "one job, and still no article"
+        },
+        {
+          "display": "C'est un bon professeur",
+          "cue": "He's a good teacher",
+          "changed": "an adjective arrives, so the article returns and the frame becomes c'est"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis un professeur",
+        "why": "A bare profession after être takes no article: Je suis professeur."
+      },
+      "usage": "The answer to what do you do, which is the second question anybody asks.",
+      "register": "neutral",
+      "mnemonic": "être plus a job needs nothing between them."
+    },
+    {
+      "id": "L3-M2-S02",
+      "display": "Je travaille dans un bureau",
+      "cue": "I work in an office",
+      "literal": "I work in an office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bureau",
+            "cue": "office · desk",
+            "tag": "delta",
+            "forms": [
+              "bureau",
+              "bureaux"
+            ],
+            "note": "One word for the room and the desk in it, and its plural is bureaux — the -x plural L2-M2's vieux and L2-M3's beaux already showed."
+          },
+          {
+            "display": "travail",
+            "cue": "work · job",
+            "tag": "interference",
+            "forms": [],
+            "note": "The noun beside L1-M4's verb travaille, and spelt differently: un travail is a job, le travail is the work itself."
+          },
+          {
+            "display": "entreprise",
+            "cue": "company · business",
+            "tag": "free",
+            "forms": [
+              "entreprise",
+              "entreprises"
+            ],
+            "note": "Feminine, and the ordinary word for a company of any size. A société is the same thing on paper, in the legal sense."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "A place takes dans or à, not chez. dans un bureau, dans une entreprise, à la gare — chez waits for the next sentence, where a person turns up.",
+      "sound": "zhuh tra-VYE dahn un bü-RO. The ail of travaille is a y sound and the eau is a pure o.",
+      "variations": [
+        {
+          "display": "Je travaille dans une entreprise",
+          "cue": "I work in a company",
+          "changed": "the company instead of the room"
+        },
+        {
+          "display": "J'aime mon travail",
+          "cue": "I like my job",
+          "changed": "the job itself, as a noun"
+        }
+      ],
+      "mistake": {
+        "display": "Je travaille dans un travaille",
+        "why": "The noun and the verb are two words: the verb is travaille and the job is un travail."
+      },
+      "usage": "Saying where you work when the place matters more than the employer.",
+      "register": "neutral",
+      "mnemonic": "travaille is what you do, travail is what it is."
+    },
+    {
+      "id": "L3-M2-S03",
+      "display": "Je travaille chez un médecin",
+      "cue": "I work at a doctor's",
+      "literal": "I work at-the-place-of a doctor",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chez",
+            "cue": "at the place of · at …'s",
+            "tag": "delta",
+            "forms": [],
+            "note": "It takes a PERSON or an organisation, never a place-noun: chez le médecin, chez moi, chez mon père. A building takes dans or à instead."
+          },
+          {
+            "display": "médecin",
+            "cue": "doctor",
+            "tag": "free",
+            "forms": [
+              "médecin",
+              "médecins"
+            ],
+            "note": "Masculine whoever the doctor is, and the c is soft: mayd-SAN. Un docteur is the title in front of a name."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "chez un médecin is the surgery, chez moi is my flat, chez une entreprise is that firm's premises. English has to say at the doctor's, at my place, at that company — three phrasings for one French word, which is why no English habit produces it.",
+      "sound": "zhuh tra-VYE shay un mayd-SAN. The z of chez is silent unless a vowel follows it.",
+      "variations": [
+        {
+          "display": "Je travaille chez moi le lundi",
+          "cue": "I work from home on Mondays",
+          "changed": "a person — me — instead of a job"
+        },
+        {
+          "display": "Je vais chez le médecin demain",
+          "cue": "I'm going to the doctor's tomorrow",
+          "changed": "going there rather than working there"
+        }
+      ],
+      "mistake": {
+        "display": "Je travaille chez un bureau",
+        "why": "chez never takes a place-noun. The room takes dans: je travaille dans un bureau."
+      },
+      "usage": "Saying who you work for when it is a person or a firm rather than a building.",
+      "register": "neutral",
+      "mnemonic": "chez needs somebody, not somewhere."
+    },
+    {
+      "id": "L3-M2-S04",
+      "display": "Mon collègue est très sympa",
+      "cue": "My colleague is really nice",
+      "literal": "My colleague is very nice",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "collègue",
+            "cue": "colleague",
+            "tag": "free",
+            "forms": [
+              "collègue",
+              "collègues"
+            ],
+            "note": "One spelling for a man and a woman; only the article in front moves — mon collègue, ma collègue. The grave accent marks the open e."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "sympa is short for sympathique and is what an office actually says. It does not mean sympathetic, which is compatissant — a false friend hiding inside a word you will hear twenty times a day.",
+      "sound": "mon ko-LEG eh treh sam-PA. The è is open, as in there.",
+      "variations": [
+        {
+          "display": "Mon collègue est journaliste",
+          "cue": "My colleague is a journalist",
+          "changed": "his job, still with no article"
+        },
+        {
+          "display": "Ma collègue est très gentille",
+          "cue": "My colleague is very kind",
+          "changed": "a woman, so only the article changes"
+        }
+      ],
+      "mistake": {
+        "display": "Mon collègue est un journaliste",
+        "why": "A bare job after être drops the article: Mon collègue est journaliste."
+      },
+      "usage": "Describing the people you work with, which is half of any work conversation.",
+      "register": "neutral",
+      "mnemonic": "collègue is one word for either colleague."
+    },
+    {
+      "id": "L3-M2-S05",
+      "display": "Mon patron est dans son bureau",
+      "cue": "My boss is in his office",
+      "literal": "My boss is in his office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "patron",
+            "cue": "boss",
+            "tag": "free",
+            "forms": [
+              "patron",
+              "patronne",
+              "patrons"
+            ],
+            "note": "The woman in charge is la patronne, with the n doubled and sounded. The word is ordinary and carries none of the weight of English patron."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English patron is a customer or a sponsor; French patron is the person who employs you. Nothing in the spelling warns you, and the two meanings never overlap.",
+      "sound": "mon pa-TRON eh dahn son bü-RO. The on of patron is nasal and the n is not said.",
+      "variations": [
+        {
+          "display": "Ma patronne est dans son bureau",
+          "cue": "My boss is in her office",
+          "changed": "a woman, so patron becomes patronne"
+        },
+        {
+          "display": "Mon patron travaille beaucoup",
+          "cue": "My boss works a lot",
+          "changed": "what he does instead of where he is"
+        }
+      ],
+      "mistake": {
+        "display": "Mon patron est dans sa bureau",
+        "why": "bureau is masculine, and the possessive follows the noun and not the owner: dans son bureau."
+      },
+      "usage": "Ordinary office talk — where somebody is, and who they are.",
+      "register": "neutral",
+      "mnemonic": "A patron pays you; a customer is a client."
+    },
+    {
+      "id": "L3-M2-S06",
+      "display": "Je dois travailler ce soir",
+      "cue": "I have to work this evening",
+      "literal": "I must work this evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dois",
+            "cue": "I have to · I must",
+            "tag": "interference",
+            "forms": [
+              "dois",
+              "doit",
+              "devons",
+              "devez",
+              "doivent"
+            ],
+            "note": "The infinitive follows bare: je dois travailler, never je dois DE travailler. English have TO puts a word there and French puts nothing."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "L2-M1's je voudrais is a worn-down politeness with its own frozen shape; dois, peux and veux are the plain present of three ordinary verbs, and all four take the same bare infinitive after them.",
+      "sound": "zhuh dwa tra-va-YAY suh SWAR. dois rhymes with moi and the s is silent.",
+      "variations": [
+        {
+          "display": "Je dois partir à sept heures",
+          "cue": "I have to leave at seven",
+          "changed": "a different infinitive after it"
+        },
+        {
+          "display": "Nous devons travailler ce soir",
+          "cue": "We have to work this evening",
+          "changed": "we instead of I, so dois becomes devons"
+        }
+      ],
+      "mistake": {
+        "display": "Je dois de travailler ce soir",
+        "why": "Nothing goes between a modal and its infinitive: Je dois travailler ce soir."
+      },
+      "usage": "Turning down an invitation, which is what this sentence is usually for.",
+      "register": "neutral",
+      "mnemonic": "Two verbs, nothing between them."
+    },
+    {
+      "id": "L3-M2-S07",
+      "display": "Je ne peux pas venir à la réunion",
+      "cue": "I can't come to the meeting",
+      "literal": "I not can not come at the meeting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "réunion",
+            "cue": "meeting",
+            "tag": "free",
+            "forms": [
+              "réunion",
+              "réunions"
+            ],
+            "note": "Feminine, and both e's are sounded: ray-ü-NYON. It covers everything from two people at a desk to a whole company."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "peux is L2-M1's word, where it asked for help. Here it is the plain modal and takes the infinitive bare — je ne peux pas venir — and the ne and pas wrap the MODAL, not the second verb.",
+      "sound": "zhuh nuh puh pa vuh-NEER a la ray-ü-NYON. The ne is written even where a speaker swallows it.",
+      "variations": [
+        {
+          "display": "Je ne peux pas travailler demain",
+          "cue": "I can't work tomorrow",
+          "changed": "a different infinitive"
+        },
+        {
+          "display": "Je dois aller à la réunion",
+          "cue": "I have to go to the meeting",
+          "changed": "an obligation instead of a refusal"
+        }
+      ],
+      "mistake": {
+        "display": "Je ne peux pas de venir à la réunion",
+        "why": "The infinitive follows bare, and the negative wraps the modal: Je ne peux pas venir à la réunion."
+      },
+      "usage": "Declining something at work, where a reason usually follows.",
+      "register": "neutral",
+      "mnemonic": "ne and pas go round the verb that bends."
+    },
+    {
+      "id": "L3-M2-S08",
+      "display": "Je fais des études de français",
+      "cue": "I'm studying French",
+      "literal": "I do some studies of French",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "études",
+            "cue": "studies",
+            "tag": "interference",
+            "forms": [
+              "études"
+            ],
+            "note": "Always plural in this frame: je fais des études de français. English studying is one word and French needs three, with faire doing the verb's work."
+          },
+          {
+            "display": "licence",
+            "cue": "bachelor's degree",
+            "tag": "interference",
+            "forms": [
+              "licence",
+              "licences"
+            ],
+            "note": "The first university degree, three years long — not a licence to do something, which is un permis. J'ai une licence de français."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "There is no verb to study here. French says faire des études for the course of study and travailler for the evening's revision, and neither of them is étudier in ordinary speech.",
+      "sound": "zhuh feh day-zay-TÜD duh frahn-SEH. The s of des links onto études as a z.",
+      "variations": [
+        {
+          "display": "Je fais des études de musique",
+          "cue": "I'm studying music",
+          "changed": "a different subject"
+        },
+        {
+          "display": "J'ai une licence de français",
+          "cue": "I have a degree in French",
+          "changed": "the degree instead of the studying"
+        }
+      ],
+      "mistake": {
+        "display": "Je fais une étude de français",
+        "why": "une étude is a single piece of research. A course of study is plural: je fais des études de français."
+      },
+      "usage": "Said by a student, and by anybody explaining how they got where they are.",
+      "register": "neutral",
+      "mnemonic": "Studies are plural, always."
+    },
+    {
+      "id": "L3-M2-S09",
+      "display": "J'ai un examen de français la semaine prochaine",
+      "cue": "I have a French exam next week",
+      "literal": "I-have an exam of French the week next",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "examen",
+            "cue": "exam",
+            "tag": "free",
+            "forms": [
+              "examen",
+              "examens"
+            ],
+            "note": "The final en is nasal and the x is a gz: eg-za-MAN. Passer un examen is to SIT one; réussir is to pass it."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "passer un examen is to sit it, not to pass it. A learner who says j'ai passé l'examen has said nothing about the result, and réussir is the verb that carries the good news.",
+      "sound": "zhay un eg-za-MAN duh frahn-SEH la suh-MEN pro-SHEN. The x is voiced, gz, not ks.",
+      "variations": [
+        {
+          "display": "J'ai un examen de musique demain",
+          "cue": "I have a music exam tomorrow",
+          "changed": "a different subject, and a nearer day"
+        },
+        {
+          "display": "Mon fils a un examen demain",
+          "cue": "My son has an exam tomorrow",
+          "changed": "somebody else has it"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai un examen en français la semaine prochaine",
+        "why": "The subject follows de: un examen de français. en français would say the paper is written in French, not what it is on."
+      },
+      "usage": "The reason you are busy, at school and at work alike.",
+      "register": "neutral",
+      "mnemonic": "You sit an exam in French; you pass it in English."
+    },
+    {
+      "id": "L3-M2-S10",
+      "display": "Il faut travailler pour un bon salaire",
+      "cue": "You have to work for a good salary",
+      "literal": "It is-necessary to-work for a good salary",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "salaire",
+            "cue": "salary · pay",
+            "tag": "free",
+            "forms": [
+              "salaire",
+              "salaires"
+            ],
+            "note": "Masculine, and it covers a wage of any kind. Asking somebody theirs is as rude in French as in English, so it is said about jobs, not people."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "il faut names nobody. It is not he must and the il stands for no person at all — the same empty il as il y a and il pleut. When you mean yourself, je dois is the sentence to write.",
+      "sound": "eel fo tra-va-YAY poor un bon sa-LEHR. The t of faut is silent.",
+      "variations": [
+        {
+          "display": "Il faut partir à sept heures",
+          "cue": "We have to leave at seven",
+          "changed": "a different infinitive after it"
+        },
+        {
+          "display": "Je dois travailler pour un bon salaire",
+          "cue": "I have to work for a good salary",
+          "changed": "je dois, which names who is obliged"
+        }
+      ],
+      "mistake": {
+        "display": "Il faut de travailler pour un bon salaire",
+        "why": "il faut takes the infinitive bare, like the modals: Il faut travailler pour un bon salaire."
+      },
+      "usage": "A general truth about work, said without pointing at anybody.",
+      "register": "neutral",
+      "mnemonic": "il faut obliges everybody and nobody."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M2-C01",
+      "display": "Je suis professeur et je travaille beaucoup",
+      "cue": "I'm a teacher and I work a lot"
+    },
+    {
+      "id": "L3-M2-C02",
+      "display": "Mon collègue travaille chez un médecin",
+      "cue": "My colleague works at a doctor's"
+    },
+    {
+      "id": "L3-M2-C03",
+      "display": "Je dois partir, j'ai une réunion",
+      "cue": "I have to go, I have a meeting"
+    },
+    {
+      "id": "L3-M2-C04",
+      "display": "Le patron est dans son bureau avec ma collègue",
+      "cue": "The boss is in his office with my colleague"
+    },
+    {
+      "id": "L3-M2-C05",
+      "display": "Je fais des études de français et j'ai un examen",
+      "cue": "I'm studying French and I have an exam"
+    },
+    {
+      "id": "L3-M2-C06",
+      "display": "D'habitude je travaille chez moi le lundi",
+      "cue": "I usually work from home on Mondays"
+    },
+    {
+      "id": "L3-M2-C07",
+      "display": "Il faut travailler tous les jours",
+      "cue": "You have to work every day"
+    },
+    {
+      "id": "L3-M2-C08",
+      "display": "Ma sœur a une licence de musique",
+      "cue": "My sister has a degree in music"
+    },
+    {
+      "id": "L3-M2-C09",
+      "display": "Je ne peux pas venir, je dois travailler",
+      "cue": "I can't come, I have to work"
+    },
+    {
+      "id": "L3-M2-C10",
+      "display": "Mon entreprise est très grande",
+      "cue": "My company is very big"
+    },
+    {
+      "id": "L3-M2-C11",
+      "display": "Je vais chez le médecin, je suis fatigué",
+      "cue": "I'm going to the doctor's, I'm tired"
+    },
+    {
+      "id": "L3-M2-C12",
+      "display": "Le matin je vais au bureau et je travaille",
+      "cue": "In the morning I go to the office and I work"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

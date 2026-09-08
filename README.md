@@ -602,6 +602,46 @@ and not one word saying who. The ratchet held at en-ko 12 across all ten modules
 roughly a hundred findings fixed in content across the three waves and no baseline raised. **The
 native gate is still unmet**: docs/68 ends in open questions 1–47, a fresh en-ko L2 chain.
 
+**Every course is briefed for L3 (#462–#469, 2026-09-08).** hi-mr's L3 briefs were written first
+(#452, `docs/50`); the other eight follow, in `docs/69` through `docs/76`. Every seam in all eighty
+briefs was pinned against the **real folded cumulative index** — en-es 477 surfaces, en-ar 508,
+hi-en 513, en-fr 542, en-ru 588, en-it 642, en-de 467, en-ko 539 — rather than against the
+commissioning issue, and in several courses the index contradicted the plan. That is the discipline
+`docs/53` §0 set when it found #426's premise about `usted` was false: **the issue text is a plan,
+the index is the fact.** en-de's plan called `weil`, `dass` and `wenn` an L3 debt; L1-M9 and L1-M10
+own all three WITH their verb-final law, so M3 teaches what L1 actually left standing — the
+subordinate clause standing first, with the main verb landing straight after the comma. en-ko's
+`docs/34` assigned bare `mal` to an L1 row that never wrote it, and L2-M2's brief listed a `-kkeseo`
+pattern no sentence ever shipped.
+
+Each level's job is to pay what its L2 wrote down and withheld, and the eight lists are now closed:
+**por/para, the subjunctive, the conditional, `tan … como`, the object clitics and the perfect**
+(en-es); **`lam` and the jussive, `qad`, and one cell of the case system** (en-ar); **reported
+speech, conditionals, the passive, relative clauses, the past perfect and `used to`** (hi-en); **the
+instrumental, reflexives as a system, the conditional `by`, numbers above a hundred and the prefixed
+motion verbs** (en-ru); **the congiuntivo, the conditional, reported speech and object `la`/`le`**
+(en-it); **the subjunctive, the conditional, reported speech and object `le`/`la`/`les`** (en-fr);
+**the attributive declension, Konjunktiv II, the Plusquamperfekt, the genitive, relative clauses and
+the `werden` passive** (en-de); **the verb modifier, `-(eu)myeon`, `-dago`, the honorific at length
+and `-deon`** (en-ko). What each level does NOT take is named in the brief that touches its edge, so
+nothing falls between L3 and L4.
+
+Two index collisions predicted at L2 are paid here exactly as predicted, with a **multi-token
+surface**: `tan … como` (because `como` is L1-M4's "I eat") and the Romance object clitics spelled
+like L1-M1's articles — `la vi`, `l'ho vista`, `je l'ai vue`. That tool is why `maxSpan` is 3, and 4
+in en-fr.
+
+**The first L3 wave lands on six courses (#471–#476, 2026-09-08).** `L3-M1` _Your day, in detail_
+and `L3-M2` _Work and study_ ship for en-es, en-ar, hi-en, en-ru, en-it and en-fr; a strict
+`npm run build` emits `22 modules (L1-M1..M10, L2-M1..M10, L3-M1..M2)` for each. The twelve modules
+were authored **in parallel, one agent per course**, which is possible because a module file is the
+only thing an authoring wave writes — the shared files (`levels.json`, the inventory test, the
+reviews) are updated once, afterwards. Every one of the six waves found at least one seam claim in
+its own brief that was false against the real index, and each correction is now recorded in the
+brief itself, marked as the wave that found it. The shown-surface ratchet held at **every course's
+existing baseline** with no finding at all. Reviews: `docs/77` through `docs/82`. **The native gate
+is still unmet**, as everywhere in this repo.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

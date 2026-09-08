@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M2",
+  "title": "Work and study",
+  "job": "Explain what you do all day, and how",
+  "prerequisites": [
+    "L3-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Trabajo para + <company> + , + por + <hours>",
+      "Estudio para + V-inf",
+      "Tengo que + V-inf",
+      "Sé + V-inf + , + pero + no conozco + N",
+      "Hay que + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "Both are \"for\", and that is the whole of the trouble. para points FORWARD — to a purpose, a destination, a recipient, a deadline: estudio para aprobar, es para el viernes. por points at what is BEHIND or AROUND the action — a cause, an exchange, a stretch of time, a route: trabajo por el sueldo, por la mañana."
+    },
+    {
+      "tag": "delta",
+      "text": "para is not a new word here. L2-M5 bought it for a recipient — para mí, para ti — and this is the same word doing the rest of its job. Nothing about that first use stops being true."
+    },
+    {
+      "tag": "interference",
+      "text": "saber is a FACT or a SKILL and takes a clause or an infinitive: sé dónde está, sé hablar español. conocer is ACQUAINTANCE and takes a person, a place or a thing: conozco a mi jefe, conozco la empresa. English's single \"know\" hides the split, and work is where both are needed in one breath."
+    },
+    {
+      "tag": "delta",
+      "text": "A person as the direct object takes an a in front of them: conozco a mi jefe. A thing takes none: conozco la empresa. The a translates to nothing at all and is not optional."
+    },
+    {
+      "tag": "delta",
+      "text": "Three obligation frames, and what differs is WHO is obliged. tengo que + infinitive is personal — I have to. hay que + infinitive is impersonal — one has to, anybody here has to. debo + infinitive is a duty, and the most formal of the three. They are not interchangeable."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M2-S01",
+      "display": "Trabajo para una empresa. Trabajo por el sueldo.",
+      "cue": "I work for a company. I work for the money.",
+      "literal": "I-work for a company. I-work for the pay.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "por",
+            "cue": "for · because of · through",
+            "tag": "interference",
+            "forms": [],
+            "note": "The cause, the exchange, the stretch or the route: trabajo por el sueldo. por la mañana and por favor were bought whole, and this is the bare word underneath them."
+          },
+          {
+            "display": "empresa",
+            "cue": "company",
+            "tag": "free",
+            "forms": [],
+            "note": "The ordinary word for a company, of any size. compañía exists and mostly sounds like a translation of the English."
+          },
+          {
+            "display": "sueldo",
+            "cue": "pay · salary",
+            "tag": "free",
+            "forms": [],
+            "note": "The pay itself, month by month, rather than money in general. Asking after someone's sueldo is as blunt in Spanish as in English."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Same verb, same English \"for\", two different Spanish words. para names who the work goes to; por names what the speaker gets back for it.",
+      "sound": "por is one tapped r and no more; it never lengthens into the English \"pour\". em-PRE-sa, stressed in the middle.",
+      "variations": [
+        {
+          "display": "Trabajo para una empresa grande.",
+          "cue": "I work for a big company.",
+          "changed": "the company sized, with para untouched"
+        },
+        {
+          "display": "No trabajo hoy por un problema.",
+          "cue": "I'm not working today because of a problem.",
+          "changed": "por doing its cause job instead of its exchange job"
+        }
+      ],
+      "mistake": {
+        "display": "Trabajo por una empresa.",
+        "why": "The company is where the work goes, so it takes para: trabajo para una empresa. por una empresa says you are working on the company's behalf, or in its place."
+      },
+      "usage": "How the job gets described the first time someone asks. The second sentence is a joke people make, and it is also the grammar lesson.",
+      "register": "neutral",
+      "mnemonic": "para points ahead, por points behind."
+    },
+    {
+      "id": "L3-M2-S02",
+      "display": "Estudio para aprobar el examen. Es para el viernes.",
+      "cue": "I'm studying to pass the exam. It's due Friday.",
+      "literal": "I-study for to-pass the exam. Is for the Friday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aprobar",
+            "cue": "to pass",
+            "tag": "interference",
+            "forms": [],
+            "note": "Not \"approve\": aprobar un examen is to PASS it, and that is the everyday sense. The approving sense needs a committee behind it."
+          },
+          {
+            "display": "examen",
+            "cue": "exam",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural pulls the accent mark on, exámenes, because the stress stays put while a syllable is added. The sound does not move."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "para here is a purpose and there a deadline, in two sentences running. Both are the same forward-pointing word, and neither of them could be por.",
+      "sound": "a-pro-BAR, stressed at the end. e-KSA-men, with the x as a full ks and the stress on the middle.",
+      "variations": [
+        {
+          "display": "Estudio para aprobar.",
+          "cue": "I'm studying to pass.",
+          "changed": "the object dropped, leaving the bare purpose"
+        },
+        {
+          "display": "Es para mi jefe.",
+          "cue": "It's for my boss.",
+          "changed": "para back on L2-M5's job, naming a recipient"
+        }
+      ],
+      "mistake": {
+        "display": "Estudio por aprobar el examen.",
+        "why": "Passing is the goal the studying points at, so it takes para: estudio para aprobar. por would make the exam the reason it already happened."
+      },
+      "usage": "Said by anyone with a deadline. The three uses of para stacked here — purpose, deadline, recipient — are the whole of its half of the system.",
+      "register": "neutral",
+      "mnemonic": "The goal takes para, always."
+    },
+    {
+      "id": "L3-M2-S03",
+      "display": "Mi horario es bueno. No trabajo por la mañana.",
+      "cue": "My hours are good. I don't work in the morning.",
+      "literal": "My timetable is good. Not I-work by the morning.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "horario",
+            "cue": "hours · timetable",
+            "tag": "free",
+            "forms": [],
+            "note": "The hours you work or the timetable you follow, as one thing: mi horario es bueno. A single clock hour is L1-M4's hora."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "por la mañana was bought whole in L1-M4 and nothing about it changes. The por inside it is the same por as S01's, doing the stretch-of-time job.",
+      "sound": "o-RA-rio, with the h silent as always and one tapped r.",
+      "variations": [
+        {
+          "display": "Mi horario es malo.",
+          "cue": "My hours are bad.",
+          "changed": "the judgement reversed"
+        },
+        {
+          "display": "Trabajo por la noche.",
+          "cue": "I work at night.",
+          "changed": "the stretch of the day moved"
+        }
+      ],
+      "mistake": {
+        "display": "Mi hora es buena.",
+        "why": "hora is one hour on the clock. The shape of a working week is el horario."
+      },
+      "usage": "Answering what the job is actually like, which is the question after what the job is.",
+      "register": "neutral",
+      "mnemonic": "hora is one, horario is all of them."
+    },
+    {
+      "id": "L3-M2-S04",
+      "display": "Sé hablar español, pero no sé dónde está el jefe.",
+      "cue": "I can speak Spanish, but I don't know where the boss is.",
+      "literal": "I-know to-speak Spanish, but not I-know where is the boss.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Sé",
+            "cue": "I know · I can",
+            "tag": "delta",
+            "forms": [],
+            "note": "saber for a fact or a skill: sé dónde está, sé hablar español. The accent is doing real work — bare se is L2-M4's word and a different one."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Both halves are saber and only one of them is \"know\" in English. sé hablar is a skill, and English reaches for \"can\" there, which is why puedo hablar gets built instead.",
+      "sound": "SE, one syllable, and the accent marks the word rather than the stress — there is only one syllable to stress.",
+      "variations": [
+        {
+          "display": "Sé hablar español.",
+          "cue": "I can speak Spanish.",
+          "changed": "the skill on its own"
+        },
+        {
+          "display": "No sé dónde está la estación.",
+          "cue": "I don't know where the station is.",
+          "changed": "the fact half, with a different thing not known"
+        }
+      ],
+      "mistake": {
+        "display": "Conozco hablar español.",
+        "why": "A skill is saber: sé hablar español. conocer never takes a verb after it at all."
+      },
+      "usage": "The two things a new colleague most often has to say in one breath — what they can do and what they have not learnt yet.",
+      "register": "neutral",
+      "mnemonic": "A skill or a fact is saber; a face or a place is conocer."
+    },
+    {
+      "id": "L3-M2-S05",
+      "display": "Conozco a mi jefe, pero no conozco la empresa.",
+      "cue": "I know my boss, but I don't know the company.",
+      "literal": "I-know to my boss, but not I-know the company.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Conozco",
+            "cue": "I know",
+            "tag": "interference",
+            "forms": [],
+            "note": "Acquaintance — a person, a place or a thing you have met: conozco a mi jefe. A fact or a skill is sé, and English's one \"know\" hides that split."
+          },
+          {
+            "display": "jefe",
+            "cue": "boss",
+            "tag": "free",
+            "forms": [],
+            "note": "What people actually say, with no softer word expected in its place. jefa for a woman."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The a in front of mi jefe is there because he is a person, and it disappears in front of la empresa. It translates to nothing, so English never prompts for it.",
+      "sound": "ko-NOS-ko, and the z of conozco is an s across most of the Spanish-speaking world. HE-fe, with the j a breathy h.",
+      "variations": [
+        {
+          "display": "Conozco a tu jefe.",
+          "cue": "I know your boss.",
+          "changed": "whose boss, with the personal a still there"
+        },
+        {
+          "display": "No conozco esta empresa.",
+          "cue": "I don't know this company.",
+          "changed": "the company pointed at, and still no a"
+        }
+      ],
+      "mistake": {
+        "display": "Conozco mi jefe.",
+        "why": "A person as the object takes an a: conozco a mi jefe. Leaving it out is the single most audible mark of an English speaker."
+      },
+      "usage": "Placing yourself in a new job — who you have met against what you have not learnt.",
+      "register": "neutral",
+      "mnemonic": "A person earns an a."
+    },
+    {
+      "id": "L3-M2-S06",
+      "display": "Tengo que trabajar el sábado por la mañana.",
+      "cue": "I have to work on Saturday morning.",
+      "literal": "I-have that to-work the Saturday by the morning.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Tengo que",
+            "cue": "I have to",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M2's tengo and L2-M5's que, learnt as one piece. The que is never dropped: tengo trabajar is not a sentence."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English hears \"I have\" plus \"to work\" and reaches for tengo trabajar. The que is the joint, and Spanish never leaves it out.",
+      "sound": "TEN-go ke, with the que a clean ke and no w sound in it at all.",
+      "variations": [
+        {
+          "display": "Tengo que estudiar hoy.",
+          "cue": "I have to study today.",
+          "changed": "what has to be done"
+        },
+        {
+          "display": "Tengo que ir al banco.",
+          "cue": "I have to go to the bank.",
+          "changed": "an errand instead of work"
+        }
+      ],
+      "mistake": {
+        "display": "Tengo trabajar el sábado.",
+        "why": "The frame is tengo que + infinitive, and the que is structural: tengo que trabajar el sábado."
+      },
+      "usage": "The complaint everybody makes about a weekend. Personal obligation, so it names who: the ending does.",
+      "register": "neutral",
+      "mnemonic": "tengo QUE — the que is the joint."
+    },
+    {
+      "id": "L3-M2-S07",
+      "display": "Aquí hay que trabajar mucho. Y tengo que estudiar también.",
+      "cue": "Here you have to work hard. And I have to study as well.",
+      "literal": "Here there-is that to-work much. And I-have that to-study also.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hay que",
+            "cue": "one has to · you have to",
+            "tag": "delta",
+            "forms": [],
+            "note": "The impersonal obligation. It names nobody, so there is nothing in it to conjugate: hay que trabajar, whoever is doing the working."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The English \"you\" in \"here you have to work hard\" is nobody in particular, and hay que is how Spanish says that. tú would turn it into an instruction to one person.",
+      "sound": "ai ke, two quick syllables and no pause between them.",
+      "variations": [
+        {
+          "display": "Aquí hay que trabajar mucho.",
+          "cue": "Here you have to work hard.",
+          "changed": "the impersonal half on its own"
+        },
+        {
+          "display": "Hay que hablar con el jefe.",
+          "cue": "Someone has to talk to the boss.",
+          "changed": "an obligation with nobody assigned to it"
+        }
+      ],
+      "mistake": {
+        "display": "Aquí tienes que trabajar mucho.",
+        "why": "That tells one listener what to do. A fact about the place is hay que trabajar mucho."
+      },
+      "usage": "Describing a workplace to somebody outside it. The two frames sit side by side here so the difference is audible.",
+      "register": "neutral",
+      "mnemonic": "hay que obliges nobody, tengo que obliges me."
+    },
+    {
+      "id": "L3-M2-S08",
+      "display": "Debo hablar con mi jefe hoy.",
+      "cue": "I ought to speak to my boss today.",
+      "literal": "I-owe to-speak with my boss today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Debo",
+            "cue": "I ought to · I must",
+            "tag": "delta",
+            "forms": [],
+            "note": "A duty rather than a pressure, and the most formal of the three frames: debo hablar con mi jefe. No que after it, unlike tengo que."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "debo takes the infinitive bare. The que that tengo que and hay que both need is not part of this one, and adding it is what the other two frames teach a learner to do.",
+      "sound": "DE-bo, with the b soft between vowels — closer to a v made with both lips.",
+      "variations": [
+        {
+          "display": "Debo estudiar más.",
+          "cue": "I ought to study more.",
+          "changed": "a duty to oneself rather than to someone else"
+        },
+        {
+          "display": "Debo hablar con mi madre.",
+          "cue": "I ought to speak to my mother.",
+          "changed": "who is owed the conversation"
+        }
+      ],
+      "mistake": {
+        "display": "Debo que hablar con mi jefe.",
+        "why": "debo takes the infinitive with nothing between: debo hablar. Only tengo and hay bring a que."
+      },
+      "usage": "Said when the obligation comes from inside — a thing that ought to be done, not a thing somebody is demanding.",
+      "register": "neutral",
+      "mnemonic": "tengo que, hay que — debo alone."
+    },
+    {
+      "id": "L3-M2-S09",
+      "display": "La reunión es a las nueve. Tengo que ir.",
+      "cue": "The meeting is at nine. I have to go.",
+      "literal": "The meeting is at the nine. I-have that to-go.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "reunión",
+            "cue": "meeting",
+            "tag": "free",
+            "forms": [],
+            "note": "The accent sits on the o and disappears in the plural, reuniones, because the added syllable puts the stress where the rules already expect it."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "An event at a time takes es, not está. Where something IS uses está; when something happens uses es, and a meeting is a happening.",
+      "sound": "re-u-NION, four vowels in a row and every one of them said. The accent breaks the o away from the i.",
+      "variations": [
+        {
+          "display": "La reunión es a las ocho.",
+          "cue": "The meeting is at eight.",
+          "changed": "the hour"
+        },
+        {
+          "display": "Tengo que ir a la reunión.",
+          "cue": "I have to go to the meeting.",
+          "changed": "the obligation given its destination"
+        }
+      ],
+      "mistake": {
+        "display": "La reunión está a las nueve.",
+        "why": "An event that happens at a time takes ser: la reunión es a las nueve. está would be asking where the meeting is standing."
+      },
+      "usage": "The two lines that end most work conversations. Nothing here is new except the noun.",
+      "register": "neutral",
+      "mnemonic": "An event happens, so it is es."
+    },
+    {
+      "id": "L3-M2-S10",
+      "display": "Estudio una carrera y trabajo para una empresa. Hay que trabajar mucho.",
+      "cue": "I'm doing a degree and I work for a company. It takes a lot of work.",
+      "literal": "I-study a degree-course and I-work for a company. There-is that to-work much.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carrera",
+            "cue": "degree course",
+            "tag": "interference",
+            "forms": [],
+            "note": "Not \"career\": una carrera is the degree you are studying, what English calls a course or a major. A working life is a trayectoria."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "carrera and \"career\" are the same word with different jobs, and the sentence around it does not warn you: estudio una carrera can only be about a degree.",
+      "sound": "ka-RRE-ra, and the double r is rolled while the single one is one tap. The difference is a whole word elsewhere in Spanish.",
+      "variations": [
+        {
+          "display": "Estudio una carrera muy larga.",
+          "cue": "I'm doing a very long degree.",
+          "changed": "the degree described"
+        },
+        {
+          "display": "Hay que trabajar mucho aquí.",
+          "cue": "You have to work hard here.",
+          "changed": "the impersonal half alone, with the place moved to the end"
+        }
+      ],
+      "mistake": {
+        "display": "Tengo una carrera en una empresa.",
+        "why": "That says you hold a degree at a company. A working life at a firm is not a carrera, and Spanish would name the job instead."
+      },
+      "usage": "The whole module in one item: a false friend, both halves of por and para, and an obligation nobody is assigned.",
+      "register": "neutral",
+      "mnemonic": "You study a carrera; you do not have one."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M2-C01",
+      "display": "Trabajo para una empresa. Trabajo por el sueldo.",
+      "cue": "I work for a company. I work for the money."
+    },
+    {
+      "id": "L3-M2-C02",
+      "display": "Estudio para aprobar el examen.",
+      "cue": "I'm studying to pass the exam."
+    },
+    {
+      "id": "L3-M2-C03",
+      "display": "Es para el viernes.",
+      "cue": "It's due Friday."
+    },
+    {
+      "id": "L3-M2-C04",
+      "display": "Mi horario es bueno. No trabajo por la mañana.",
+      "cue": "My hours are good. I don't work in the morning."
+    },
+    {
+      "id": "L3-M2-C05",
+      "display": "Sé hablar español, pero no sé dónde está el jefe.",
+      "cue": "I can speak Spanish, but I don't know where the boss is."
+    },
+    {
+      "id": "L3-M2-C06",
+      "display": "Conozco a mi jefe, pero no conozco la empresa.",
+      "cue": "I know my boss, but I don't know the company."
+    },
+    {
+      "id": "L3-M2-C07",
+      "display": "Tengo que trabajar el sábado por la mañana.",
+      "cue": "I have to work on Saturday morning."
+    },
+    {
+      "id": "L3-M2-C08",
+      "display": "Aquí hay que trabajar mucho.",
+      "cue": "Here you have to work hard."
+    },
+    {
+      "id": "L3-M2-C09",
+      "display": "Debo hablar con mi jefe hoy.",
+      "cue": "I ought to speak to my boss today."
+    },
+    {
+      "id": "L3-M2-C10",
+      "display": "La reunión es a las nueve. Tengo que ir.",
+      "cue": "The meeting is at nine. I have to go."
+    },
+    {
+      "id": "L3-M2-C11",
+      "display": "Estudio una carrera y trabajo para una empresa.",
+      "cue": "I'm doing a degree and I work for a company."
+    },
+    {
+      "id": "L3-M2-C12",
+      "display": "No trabajo hoy por un problema en la empresa.",
+      "cue": "I'm not working today because of a problem at the company."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M2",
+  "title": "Work and study",
+  "job": "Explain what you do all day, and how",
+  "prerequisites": [
+    "L3-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present_imperfective"
+    ],
+    "allowedPatterns": [
+      "Ya rabótayu + <profession-instrumental>",
+      "Ya rabótayu s + <N-instrumental>",
+      "Ya uchús' v + <N-prepositional>",
+      "Ya zanimáyus' + <N-instrumental>",
+      "U menyá + <N-nominative>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE INSTRUMENTAL OPENS HERE — the fifth case, and the last one this ladder needs for a while. Its endings are regular enough to state in one line: -om on a masculine or neuter noun (inzhenérom, spórtom), -oy on a feminine one or on any noun ending in -a (kollégoy, rabótoy), -im on the adjective in front of it (rússkim yazykóm). When the ending is the stressed syllable it is written -óm, as in vrachóm."
+    },
+    {
+      "tag": "interference",
+      "text": "THERE IS NO WORD FOR \"AS\". Ya rabótayu inzhenérom is \"I work as an engineer\", and the whole of the \"as\" is the -om on the end. An English speaker reaches for kak, and kak inzhenér is a real Russian phrase meaning something else — \"the way an engineer would\". The case does the job a preposition does in English, which is the single loudest thing in this module."
+    },
+    {
+      "tag": "delta",
+      "text": "s + INSTRUMENTAL is \"together with\": s kollégoy, s drúgom. The preposition is exactly what an English speaker expects and the ENDING is what they forget, so the two are learned as one thing. s never appears with a plain nominative — if you can say \"with\" in English, the Russian noun after it has to change shape."
+    },
+    {
+      "tag": "free",
+      "text": "s grows a vowel before an awkward cluster: so mnoy, not s mnoy. It is the same preposition with a syllable added so the mouth can get through it, and Russian does the same with v/vo and k/ko. Hearing so and filing it as a new word is the only mistake available here."
+    },
+    {
+      "tag": "delta",
+      "text": "zanimát'sya TAKES THE INSTRUMENTAL WITH NO PREPOSITION AT ALL: zanimáyus' spórtom, zanimáyus' rússkim yazykóm. It is \"I occupy myself with X\", and the \"with\" is again inside the ending. Putting s in front of it changes the meaning to doing the activity in someone's company. Note also that it is L3-M1's -sya particle doing ordinary work — the row for that shape is there, not here."
+    },
+    {
+      "tag": "free",
+      "text": "Three verbs, three jobs, and they do not overlap: rabótayu is what you are paid for, uchús' is where you are enrolled, zanimáyus' is what you occupy yourself with. All three stay present and imperfective throughout this module — it is L1-M4's habitual grown up, not a new tense."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M2-S01",
+      "display": "Ya rabótayu inzhenérom v Moskvé",
+      "script": "Я работаю инженером в Москве",
+      "cue": "I work as an engineer in Moscow",
+      "literal": "I work engineer-with in Moscow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "inzhenérom",
+            "script": "инженером",
+            "cue": "as an engineer",
+            "tag": "delta",
+            "forms": [
+              "inzhenér",
+              "inzhenérom"
+            ],
+            "note": "The plain form is inzhenér; the -om ending IS the English \"as\". You would use inzhenér to say what someone is, and inzhenérom to say what they do for a living."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "There is no word for \"as\" that you have forgotten — the ending carries all of it. Reaching for kak produces a comparison instead of a job.",
+      "sound": "ya ra-BO-ta-yu in-zhy-NYE-ram v mask-VYE. The -om is unstressed and reduces to -am, so what you hear is the stem plus a swallowed syllable.",
+      "variations": [
+        {
+          "display": "Ya rabótayu vrachóm v Moskvé",
+          "script": "Я работаю врачом в Москве",
+          "cue": "I work as a doctor in Moscow",
+          "changed": "a different profession"
+        },
+        {
+          "display": "Ya rabótayu inzhenérom dóma",
+          "script": "Я работаю инженером дома",
+          "cue": "I work as an engineer from home",
+          "changed": "where, rather than what"
+        }
+      ],
+      "mistake": {
+        "display": "Ya rabótayu kak inzhenér",
+        "script": "Я работаю как инженер",
+        "why": "kak turns it into a comparison — working the way an engineer works. The job itself takes the instrumental: Ya rabótayu inzhenérom."
+      },
+      "usage": "Answering what you do for a living.",
+      "register": "neutral",
+      "mnemonic": "The ending is the \"as\"."
+    },
+    {
+      "id": "L3-M2-S02",
+      "display": "Moyá sestrá rabótayet vrachóm",
+      "script": "Моя сестра работает врачом",
+      "cue": "My sister works as a doctor",
+      "literal": "My sister works doctor-with",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vrachóm",
+            "script": "врачом",
+            "cue": "as a doctor",
+            "tag": "delta",
+            "forms": [
+              "vrachóm"
+            ],
+            "note": "L2-M8's vrach in the instrumental. After the hushing ch the ending is written -om, and here it is the stressed syllable, so the stress moves off the stem."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "vrach has no everyday feminine form: a woman is a vrach and works vrachóm. Nothing in the profession word says she — only sestrá does.",
+      "sound": "ma-YA ses-TRA ra-BO-ta-yet vra-CHOM. vrachóm is stressed on the ending, unlike inzhenérom, so the two do not rhyme.",
+      "variations": [
+        {
+          "display": "Moy brat rabótayet vrachóm",
+          "script": "Мой брат работает врачом",
+          "cue": "My brother works as a doctor",
+          "changed": "a brother instead of a sister"
+        },
+        {
+          "display": "Moyá sestrá rabótayet inzhenérom",
+          "script": "Моя сестра работает инженером",
+          "cue": "My sister works as an engineer",
+          "changed": "a different profession"
+        }
+      ],
+      "mistake": {
+        "display": "Moyá sestrá rabótayet vrach",
+        "script": "Моя сестра работает врач",
+        "why": "The nominative names what she IS; the job she works takes the instrumental. Moyá sestrá rabótayet vrachóm."
+      },
+      "usage": "Saying what somebody in your family does.",
+      "register": "neutral",
+      "mnemonic": "vrach becomes vrachóm, and the stress moves with it."
+    },
+    {
+      "id": "L3-M2-S03",
+      "display": "Ya rabótayu s kollégoy, a inogdá s drúgom",
+      "script": "Я работаю с коллегой, а иногда с другом",
+      "cue": "I work with a colleague, and sometimes with a friend",
+      "literal": "I work with colleague-INSTR, and sometimes with friend-INSTR",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "s",
+            "script": "с",
+            "cue": "with",
+            "tag": "delta",
+            "forms": [
+              "s"
+            ],
+            "note": "\"Together with\", and it always takes the instrumental. It is a single letter said joined to the next word, so listen for it inside s-kollégoy rather than as a beat of its own."
+          },
+          {
+            "display": "kollégoy",
+            "script": "коллегой",
+            "cue": "with a colleague",
+            "tag": "delta",
+            "forms": [
+              "kolléga",
+              "kollégoy"
+            ],
+            "note": "The plain form kolléga ends in -a and means a man just as often as a woman. The -oy is the ending that -a demands, whoever the colleague is."
+          },
+          {
+            "display": "drúgom",
+            "script": "другом",
+            "cue": "with a friend",
+            "tag": "delta",
+            "forms": [
+              "drúgom"
+            ],
+            "note": "L2-M2's drug in the instrumental. A masculine noun takes -om and the stress stays where the nominative had it: drug, drúga, drúgom."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "kolléga looks feminine and is not. The ending you put on it follows the -a it ends in, not the person it names.",
+      "sound": "ya ra-BO-ta-yu s ka-LYE-gay, a i-nag-DA s DRU-gam. Both endings are unstressed, which is exactly why they get dropped.",
+      "variations": [
+        {
+          "display": "Ya rabótayu s kollégoy kázhdyy den'",
+          "script": "Я работаю с коллегой каждый день",
+          "cue": "I work with a colleague every day",
+          "changed": "every day, and the friend dropped"
+        },
+        {
+          "display": "Ya rédko rabótayu s drúgom",
+          "script": "Я редко работаю с другом",
+          "cue": "I rarely work with a friend",
+          "changed": "rarely, and only the friend"
+        }
+      ],
+      "mistake": {
+        "display": "Ya rabótayu s kolléga, a inogdá s drug",
+        "script": "Я работаю с коллега, а иногда с друг",
+        "why": "s never leaves the noun in its plain form: Ya rabótayu s kollégoy, a inogdá s drúgom."
+      },
+      "usage": "Describing who you sit beside at work.",
+      "register": "neutral",
+      "mnemonic": "s always brings an ending with it."
+    },
+    {
+      "id": "L3-M2-S04",
+      "display": "Moy nachál'nik óchen' dóbryy",
+      "script": "Мой начальник очень добрый",
+      "cue": "My boss is very kind",
+      "literal": "My boss very kind",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nachál'nik",
+            "script": "начальник",
+            "cue": "boss · head",
+            "tag": "free",
+            "forms": [
+              "nachál'nik"
+            ],
+            "note": "The person in charge of a department or a shift. It is neutral in tone: no Russian hears it as \"chief\" or as a complaint, and it is what you would say to their face."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "No verb, and none is missing. Russian's present tense of \"to be\" is silence, which the ladder has relied on since L1-M1.",
+      "sound": "moy na-CHAL-nik O-chen DO-bryy. The soft sign in -l'nik keeps the l light, close to the l in \"million\".",
+      "variations": [
+        {
+          "display": "Moy nachál'nik rabótayet dóma",
+          "script": "Мой начальник работает дома",
+          "cue": "My boss works from home",
+          "changed": "what he does rather than what he is"
+        },
+        {
+          "display": "Moyá sestrá óchen' dóbraya",
+          "script": "Моя сестра очень добрая",
+          "cue": "My sister is very kind",
+          "changed": "a woman, so the adjective turns feminine"
+        }
+      ],
+      "mistake": {
+        "display": "Moy nachál'nik yest' óchen' dóbryy",
+        "script": "Мой начальник есть очень добрый",
+        "why": "There is no \"is\" to insert — yest' is for having and existing, not for linking. Moy nachál'nik óchen' dóbryy."
+      },
+      "usage": "Describing the people you work under.",
+      "register": "neutral",
+      "mnemonic": "The boss needs no verb."
+    },
+    {
+      "id": "L3-M2-S05",
+      "display": "Ya uchús' v universitéte",
+      "script": "Я учусь в университете",
+      "cue": "I study at university",
+      "literal": "I study-self in university",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uchús'",
+            "script": "учусь",
+            "cue": "I study · I am a student",
+            "tag": "delta",
+            "forms": [
+              "uchús'"
+            ],
+            "note": "It names WHERE you are enrolled, never what subject. Another -s' verb — L3-M1's particle, doing the same job of marking a verb that takes no object."
+          },
+          {
+            "display": "universitéte",
+            "script": "университете",
+            "cue": "at university",
+            "tag": "free",
+            "forms": [
+              "universitét",
+              "universitéte"
+            ],
+            "note": "The plain form is universitét; the -e is the prepositional after v, the case L1-M7 taught on kómnate. The word itself transfers whole from English."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "uchús' cannot take the subject as an object. \"I study Russian\" needs zanimáyus' and the instrumental, or a different verb entirely.",
+      "sound": "ya u-CHUS v u-ni-vyer-si-TYE-tye. The stress in universitéte sits on the -té-, two syllables from the end.",
+      "variations": [
+        {
+          "display": "Ya uchús' i rabótayu",
+          "script": "Я учусь и работаю",
+          "cue": "I study and I work",
+          "changed": "two verbs, and no place named"
+        },
+        {
+          "display": "Inogdá ya uchús' dóma",
+          "script": "Иногда я учусь дома",
+          "cue": "Sometimes I study at home",
+          "changed": "sometimes, and at home"
+        }
+      ],
+      "mistake": {
+        "display": "Ya uchú v universitéte",
+        "script": "Я учу в университете",
+        "why": "Without the particle the verb means \"I teach\", which is the opposite claim. Ya uchús' v universitéte."
+      },
+      "usage": "Saying what you are enrolled in.",
+      "register": "neutral",
+      "mnemonic": "uchús' says where, not what."
+    },
+    {
+      "id": "L3-M2-S06",
+      "display": "Ya zanimáyus' spórtom vécherom",
+      "script": "Я занимаюсь спортом вечером",
+      "cue": "I do sport in the evening",
+      "literal": "I occupy-self sport-with in-the-evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zanimáyus'",
+            "script": "занимаюсь",
+            "cue": "I do · I occupy myself with",
+            "tag": "delta",
+            "forms": [
+              "zanimáyus'"
+            ],
+            "note": "\"I occupy myself with\" — and what you occupy yourself with goes straight into the instrumental with no preposition, exactly as a profession does after rabótayu."
+          },
+          {
+            "display": "spórtom",
+            "script": "спортом",
+            "cue": "with sport",
+            "tag": "free",
+            "forms": [
+              "sport",
+              "spórtom"
+            ],
+            "note": "The plain form sport is the borrowed English word, unchanged. The -om is the same ending inzhenérom takes, and it is unstressed here."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "No s in front of it. s means \"in the company of a person\"; the instrumental after zanimáyus' is what the activity actually IS.",
+      "sound": "ya za-ni-MA-yus SPOR-tam VYE-cha-ram. Three words, and each one loses its final vowel to reduction.",
+      "variations": [
+        {
+          "display": "Ya chásto zanimáyus' spórtom",
+          "script": "Я часто занимаюсь спортом",
+          "cue": "I often do sport",
+          "changed": "often, and no time of day"
+        },
+        {
+          "display": "Ya nikogdá ne zanimáyus' spórtom",
+          "script": "Я никогда не занимаюсь спортом",
+          "cue": "I never do sport",
+          "changed": "never, with its obligatory ne"
+        }
+      ],
+      "mistake": {
+        "display": "Ya zanimáyus' s spórtom vécherom",
+        "script": "Я занимаюсь с спортом вечером",
+        "why": "zanimát'sya needs no preposition at all: Ya zanimáyus' spórtom vécherom."
+      },
+      "usage": "Saying what you do after work.",
+      "register": "neutral",
+      "mnemonic": "Occupy yourself WITH — and say no \"with\"."
+    },
+    {
+      "id": "L3-M2-S07",
+      "display": "Ya zanimáyus' rússkim yazykóm dóma",
+      "script": "Я занимаюсь русским языком дома",
+      "cue": "I study Russian at home",
+      "literal": "I occupy-self russian-with language-with at-home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rússkim",
+            "script": "русским",
+            "cue": "with Russian (adj.)",
+            "tag": "delta",
+            "forms": [
+              "rússkim"
+            ],
+            "note": "L1-M1's rússkiy in the instrumental. The adjective takes -im and the noun takes -om, and they must agree: an adjective never keeps its plain form beside a changed noun."
+          },
+          {
+            "display": "yazykóm",
+            "script": "языком",
+            "cue": "with the language",
+            "tag": "delta",
+            "forms": [
+              "yazykóm"
+            ],
+            "note": "L1-M4's yazýk in the instrumental. The stress moves onto the ending, so it is written -óm, exactly as it is in vrachóm."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "Both halves change. Russian never puts a case on the noun and leaves the adjective in front of it alone.",
+      "sound": "ya za-ni-MA-yus RUS-kim ya-zy-KOM DO-ma. The two instrumentals end differently — -im then -óm — and only the second is stressed.",
+      "variations": [
+        {
+          "display": "Vécherom ya zanimáyus' rússkim yazykóm",
+          "script": "Вечером я занимаюсь русским языком",
+          "cue": "In the evening I study Russian",
+          "changed": "in the evening rather than at home"
+        },
+        {
+          "display": "Ya rédko zanimáyus' rússkim yazykóm",
+          "script": "Я редко занимаюсь русским языком",
+          "cue": "I rarely study Russian",
+          "changed": "rarely, and no place"
+        }
+      ],
+      "mistake": {
+        "display": "Ya zanimáyus' rússkiy yazýk dóma",
+        "script": "Я занимаюсь русский язык дома",
+        "why": "Both words go into the instrumental together: Ya zanimáyus' rússkim yazykóm dóma."
+      },
+      "usage": "Telling a Russian speaker how you are learning.",
+      "register": "neutral",
+      "mnemonic": "The adjective follows its noun's case."
+    },
+    {
+      "id": "L3-M2-S08",
+      "display": "Moyá zarpláta ne óchen' bol'sháya",
+      "script": "Моя зарплата не очень большая",
+      "cue": "My salary is not very big",
+      "literal": "My salary not very big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zarpláta",
+            "script": "зарплата",
+            "cue": "salary · pay",
+            "tag": "free",
+            "forms": [
+              "zarpláta"
+            ],
+            "note": "One word squeezed out of \"wage payment\", and the everyday one. A Russian says zarpláta where an English speaker picks between pay, salary and wages."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "ne stands in front of what it denies. There is no verb here for it to attach to, so it denies óchen' bol'sháya and that is the whole negation.",
+      "sound": "ma-YA zar-PLA-ta nye O-chen bal-SHA-ya. ne is unstressed and leans on the word after it, almost as one word.",
+      "variations": [
+        {
+          "display": "Moyá zarpláta óchen' bol'sháya",
+          "script": "Моя зарплата очень большая",
+          "cue": "My salary is very big",
+          "changed": "the negative dropped"
+        },
+        {
+          "display": "Moyá zarpláta ne bol'sháya",
+          "script": "Моя зарплата не большая",
+          "cue": "My salary is not big",
+          "changed": "very removed, so the claim gets blunter"
+        }
+      ],
+      "mistake": {
+        "display": "Moy zarpláta ne óchen' bol'shóy",
+        "script": "Мой зарплата не очень большой",
+        "why": "zarpláta ends in -a and is feminine, so everything around it must agree. Moyá zarpláta ne óchen' bol'sháya."
+      },
+      "usage": "Deflecting a question about money without a number.",
+      "register": "neutral",
+      "mnemonic": "One word for all of pay."
+    },
+    {
+      "id": "L3-M2-S09",
+      "display": "Závtra u menyá soveshchániye",
+      "script": "Завтра у меня совещание",
+      "cue": "Tomorrow I have a meeting",
+      "literal": "Tomorrow at me meeting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "soveshchániye",
+            "script": "совещание",
+            "cue": "meeting (at work)",
+            "tag": "free",
+            "forms": [
+              "soveshchániye"
+            ],
+            "note": "A work meeting with an agenda. Meeting a friend is L2-M6's vstrétimsya, and the two never swap: no Russian has a soveshchániye in a café."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "u menyá is L1-M8's \"I have\", doing the same job with a diary entry instead of a possession. There is still no verb for having.",
+      "sound": "ZAV-tra u me-NYA sa-vye-SHCHA-ni-ye. The shch is one long soft sound, not a sh followed by a ch.",
+      "variations": [
+        {
+          "display": "Závtra u menyá soveshchániye v Moskvé",
+          "script": "Завтра у меня совещание в Москве",
+          "cue": "Tomorrow I have a meeting in Moscow",
+          "changed": "where the meeting is"
+        },
+        {
+          "display": "Sevódnya u menyá soveshchániye",
+          "script": "Сегодня у меня совещание",
+          "cue": "Today I have a meeting",
+          "changed": "today instead of tomorrow"
+        }
+      ],
+      "mistake": {
+        "display": "Závtra ya iméyu soveshchániye",
+        "script": "Завтра я имею совещание",
+        "why": "Russian has no everyday verb for having, and imét' sounds like a form. Závtra u menyá soveshchániye."
+      },
+      "usage": "Turning down an invitation by naming what is in the diary.",
+      "register": "neutral",
+      "mnemonic": "A meeting is AT you, not had by you."
+    },
+    {
+      "id": "L3-M2-S10",
+      "display": "Vy khotíte rabótat' so mnoy?",
+      "script": "Вы хотите работать со мной?",
+      "cue": "Would you like to work with me?",
+      "literal": "You want to-work with me-INSTR?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "so",
+            "script": "со",
+            "cue": "with (before a cluster)",
+            "tag": "free",
+            "forms": [
+              "so"
+            ],
+            "note": "s with a vowel added so the mouth can manage the next word: so mnoy, never s mnoy. It is the same preposition, and Russian does the same with v/vo and k/ko."
+          },
+          {
+            "display": "mnoy",
+            "script": "мной",
+            "cue": "with me",
+            "tag": "delta",
+            "forms": [
+              "mnoy"
+            ],
+            "note": "The instrumental of ya. Every pronoun has one, and this is the one to learn first because so mnoy is said constantly."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "s mnoy is unsayable rather than merely wrong, and a learner who has only met s will build it. The extra o is not a second word to memorise.",
+      "sound": "vy kha-TI-tye ra-BO-tat sa MNOY. so is unstressed and reduces to sa, so the pair sounds like one word, sa-MNOY.",
+      "variations": [
+        {
+          "display": "Ty khóchesh' rabótat' so mnoy?",
+          "script": "Ты хочешь работать со мной?",
+          "cue": "Do you want to work with me?",
+          "changed": "ty, to someone you already know well"
+        },
+        {
+          "display": "Vy khotíte rabótat' s kollégoy?",
+          "script": "Вы хотите работать с коллегой?",
+          "cue": "Would you like to work with a colleague?",
+          "changed": "with a colleague, so plain s comes back"
+        }
+      ],
+      "mistake": {
+        "display": "Vy khotíte rabótat' s mnoy?",
+        "script": "Вы хотите работать с мной?",
+        "why": "Before mnoy the preposition grows its vowel: Vy khotíte rabótat' so mnoy?"
+      },
+      "usage": "Proposing a project to someone at work you address as vy.",
+      "register": "formal",
+      "mnemonic": "so mnoy, always with the o."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M2-C01",
+      "display": "Ya rabótayu inzhenérom",
+      "script": "Я работаю инженером",
+      "cue": "I work as an engineer"
+    },
+    {
+      "id": "L3-M2-C02",
+      "display": "Moy brat rabótayet vrachóm",
+      "script": "Мой брат работает врачом",
+      "cue": "My brother works as a doctor"
+    },
+    {
+      "id": "L3-M2-C03",
+      "display": "Ya rabótayu s kollégoy",
+      "script": "Я работаю с коллегой",
+      "cue": "I work with a colleague"
+    },
+    {
+      "id": "L3-M2-C04",
+      "display": "Moy nachál'nik rabótayet dóma",
+      "script": "Мой начальник работает дома",
+      "cue": "My boss works from home"
+    },
+    {
+      "id": "L3-M2-C05",
+      "display": "Ya uchús' v universitéte",
+      "script": "Я учусь в университете",
+      "cue": "I study at university"
+    },
+    {
+      "id": "L3-M2-C06",
+      "display": "Ya zanimáyus' spórtom vécherom",
+      "script": "Я занимаюсь спортом вечером",
+      "cue": "I do sport in the evening"
+    },
+    {
+      "id": "L3-M2-C07",
+      "display": "Závtra u menyá soveshchániye v Moskvé",
+      "script": "Завтра у меня совещание в Москве",
+      "cue": "Tomorrow I have a meeting in Moscow"
+    },
+    {
+      "id": "L3-M2-C08",
+      "display": "On khóchet rabótat' so mnoy",
+      "script": "Он хочет работать со мной",
+      "cue": "He wants to work with me"
+    },
+    {
+      "id": "L3-M2-C09",
+      "display": "Moy drug rabótayet inzhenérom",
+      "script": "Мой друг работает инженером",
+      "cue": "My friend works as an engineer"
+    },
+    {
+      "id": "L3-M2-C10",
+      "display": "Ya uchús' i rabótayu",
+      "script": "Я учусь и работаю",
+      "cue": "I study and I work"
+    },
+    {
+      "id": "L3-M2-C11",
+      "display": "Moyá zarpláta ne bol'sháya",
+      "script": "Моя зарплата не большая",
+      "cue": "My salary is not big"
+    },
+    {
+      "id": "L3-M2-C12",
+      "display": "Vécherom ya zanimáyus' rússkim yazykóm",
+      "script": "Вечером я занимаюсь русским языком",
+      "cue": "In the evening I study Russian"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
