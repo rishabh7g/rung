@@ -214,9 +214,9 @@ describe('en-es L2: the decisions its briefs settle (#426)', () => {
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
   const notes = l2.flatMap(([, brief]) => brief.notes).join('\n');
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -292,6 +292,64 @@ describe('en-es L2: the decisions its briefs settle (#426)', () => {
     expect(notes).toMatch(/subjunctive/);
     // M10's shape is the job line's own words, and it opens nothing new.
     expect(all['L2-M10']?.notes.join('\n')).toMatch(/exactly four short sentences/);
+  });
+});
+
+describe('en-es L3: the decisions its briefs settle (#462)', () => {
+  const all = COURSE_BRIEFS['en-es'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  /**
+   * The bounds climb 10 → 11 → 12, continuing L2's 8 → 10 and matching hi-mr's L3 (#452). They are
+   * pinned because a prompt renders them verbatim into `complexity`, so a wrong number here
+   * becomes a wrong number in ten module files.
+   */
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * Everything `docs/53` §4 named as withheld from L2 has an owner here, and the owner is named in
+   * the notes — an author only ever sees the notes. A piece that lost its owner between the two
+   * levels would be a piece no module ever teaches.
+   */
+  it('gives every piece L2 withheld an owner', () => {
+    expect(all['L3-M2']?.notes.join('\n'), 'por vs para').toMatch(/por AGAINST para/);
+    expect(all['L3-M3']?.notes.join('\n'), 'the subjunctive').toMatch(/SUBJUNCTIVE OPENS HERE/);
+    expect(all['L3-M3']?.notes.join('\n'), 'tan … como').toMatch(/tan … como/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the conditional').toMatch(/conditional -ría/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the -ré future').toMatch(/-ré future/);
+    expect(all['L3-M5']?.notes.join('\n'), 'the object clitics').toMatch(/OBJECT CLITICS/);
+    expect(all['L3-M7']?.notes.join('\n'), 'the perfect').toMatch(/PERFECT OPENS HERE/);
+  });
+
+  /**
+   * The two index collisions `docs/53` §3 predicted are paid the way it said they would be — with
+   * a MULTI-TOKEN surface, because `como` is L1-M4's verb and `la`/`los`/`las` are L1-M1's
+   * articles. A brief that taught either as a bare key would mint a note nobody is ever shown.
+   */
+  it('pays its two predicted collisions with whole surfaces', () => {
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/indexed WHOLE/);
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/MULTI-TOKEN surfaces/);
+    expect(notes).toMatch(/maxSpan is 3/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  /** L4 is where the level stops, and each brief that touches its edge says so. */
+  it('names what it defers to L4', () => {
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/named as L4/);
+    expect(all['L3-M4']?.notes.join('\n')).toMatch(/L4-M3/);
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/L4/);
+    expect(all['L3-M8']?.notes.join('\n')).toMatch(/L4/);
   });
 });
 
