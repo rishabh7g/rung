@@ -2166,6 +2166,111 @@
  * authored to 12, M1–M3 ship fully enriched, and M10's items are four-sentence accounts in the
  * Perfekt.
  *
+ * ## en-ko L2: the decisions, taken against the finished L1 (#433)
+ *
+ * Planned against the REAL cumulative L1 index — **185 surfaces through L1-M10, maxSpan 2**,
+ * rebuilt and read. Recorded in `docs/60-en-ko-L2-brief-decisions.md` and repeated in the module
+ * notes. The eight L1 decisions carry unchanged: Revised Romanization transcribing pronunciation,
+ * pure ASCII, no stress marks ever, the particle hyphen with the host keeping its isolation shape,
+ * `jeo` never `na`, and Hangul confined to `script`.
+ *
+ * ### 1. The speech level meets the honorifics — `-yo` stays, `-si-` becomes productive
+ *
+ * L1's decision 3 settled the speech level course-wide: this course speaks the `-yo` style, the
+ * plain style is never written, and the formal `-mnida` style appears in exactly two frozen
+ * phrases (`gamsahamnida`, `mannaseo bangapseumnida`) taught as fixed units. Nothing there is
+ * reopened. What L2 must add is the OTHER axis, which L1 could only gesture at: the honorific
+ * `-si-`, which raises the SUBJECT rather than the listener, and which L1 shipped inside five
+ * whole phrases — `annyeonghaseyo`, `juseyo`, `gaseyo`, `gyeseyo`, `jinaeseyo` — with the
+ * productive rule named as deferred.
+ *
+ * **M1 makes it productive.** `-(eu)seyo` is `-si-` plus `-eoyo`, and once a learner can build it
+ * they can be polite to anyone about anyone: `anjeuseyo`, `gidaryeojuseyo`, `malsseumhaseyo`. Two
+ * consequences the briefs state rather than discover. Some verbs do not take the infix at all and
+ * have a **separate honorific word** — `meokda` → `deusida`, `itda` → `gyesida`, `jada` →
+ * `jumusida`, `malhada` → `malsseumhasida` — and those are four vocabulary rows, not a rule (M5
+ * and M7 spend them, and L1-M2's `gyeseyo` is already one of them, which the notes point back at).
+ * And the honorific is about the person the sentence is ABOUT, so a learner never uses it of
+ * themselves: `jeo-neun gayo`, never `*jeo-neun gaseyo`. That is the module's mistake block.
+ *
+ * The chip (#422): a line whose SUBJECT is honoured chips `formal`, plain `-yo` stays `neutral`,
+ * and **`informal` is never used in en-ko L2**, because the forms that would earn it are `banmal`
+ * — the plain style L1 banned and this level does not lift. Say so in a note, so a value missing
+ * on purpose reads as deliberate. `-(seu)pnida` likewise stays named-in-`usage` only; `content/
+ * en-ko/levels.json` puts "Official talk" at L4-M7, and that is where it is heard.
+ *
+ * ### 2. What L1 deferred, and which of it L2 collects
+ *
+ * L1's header listed what it withheld. L2 takes exactly three of them and leaves the rest:
+ *
+ * - **`-go isseoyo`, the progressive, opens at M7** — a phone call is happening NOW, which is the
+ *   same argument hi-mr's M7 makes for `-toy` and en-it's for `stare` + gerundio. It is also the
+ *   one place the three courses agree while en-fr and en-de have no progressive at all.
+ * - **`mot`, the inability negative, opens at M8** — a problem report is where "can't" is needed,
+ *   and the law is a clean pair with L1-M3's `an`: `an` is don't or won't, `mot` is can't.
+ * - **`-(eu)llae-yo`, the invitation ending, opens at M6** — plans are what it is for.
+ *
+ * Left deferred and named where they would be reached for: `-gess-` as a future (M6 uses L1-M6's
+ * `-l geoyeyo` and opens no second one); the long negative `-ji anayo`; the plain style entirely;
+ * `-(eu)psida`, which belongs to the `-mnida` level and travels with it; reported speech `-dago`;
+ * `-deon`; and the double past `-eoss-eoss-`.
+ *
+ * ### 3. "Agreement at length" in a language with no agreement — M3 teaches the particles
+ *
+ * Korean marks no gender, no number and no article, so M3's job line cannot mean what it means in
+ * the Romance courses. What Korean marks instead is ROLE, on the particle, and L1 shipped every
+ * one of them — `-i/-ga`, `-eun/-neun`, `-eul/-reul`, `-do`, `-e`, `-eseo` — across six modules
+ * without ever laying them side by side. M3 assembles the grid and teaches the one distinction L1
+ * could only gesture at: **topic `-eun/-neun` against subject `-i/-ga`**, which is the hardest
+ * thing in beginner Korean and the thing no English sentence marks at all.
+ *
+ * The second half of M3 is the attributive: a descriptive verb becomes a modifier with `-(eu)n`
+ * (`keun jip`, `joeun chingu`), which is how Korean does the job English gives an adjective. M2
+ * opens it and M3 walks it, and between them they replace the four-cell grid the other courses
+ * spend M3 on. The slogan to refuse is "Korean has no plurals": it has `-deul`, it simply does not
+ * require it, and the true rule is that number is optional and marked only when it matters.
+ *
+ * ### 4. Two number systems, one rule, stated at M5
+ *
+ * L1-M8 shipped native numbers with counters (`han jan`, `du gae`, `se myeong`) and Sino numbers
+ * for money (`ocheon won`, `samcheon won`) and never said which is which. **M5 states it: native
+ * numbers count things with a counter, Sino numbers do money, minutes, dates and anything above
+ * ninety-nine** — and M6 immediately spends it on the clock, where the fork is at its most visible
+ * and most useful: the hour is native (`du si`) and the minutes are Sino (`samsip bun`), in one
+ * breath. A learner who has been saying both since L1-M8 without knowing why gets the rule that
+ * explains what they already have, which is worth more than three that only add.
+ *
+ * ### 5. The seams — the particle hyphen holds, and the Hangul line is still unbundled
+ *
+ * `surfaceIndexKeys` indexes a hyphenated surface AND each part, so `chaek-eul` keeps `chaek` free
+ * and every new particle joins that way. L2's own: `-ro/-euro` (M4, direction), `-boda` (M9,
+ * comparison), `-kkaji` (M4), `-hago` (M9), `-eoya` (M8). The homograph owners L1 set stand — `i`
+ * is M1's subject particle and the demonstrative stays hyphenated as `i-geo`, `cha` is tea and the
+ * car word stays out, `mal` is "word" — and L2 adds two: `deo` is M5's ("more", in an offer) and
+ * M9's comparative points back at it rather than opening a row; `bae` stays out as a fruit so that
+ * M5's `bae bulleoyo` ("full") can use the belly reading.
+ *
+ * The Hangul `script` line still renders from a system face and bundles no font: `tools/font-
+ * subset.ts` cannot subset `@fontsource/noto-sans-kr`, which splits Korean across ~120 numbered
+ * range files per weight. That is #382, it is unchanged by this level, and it is recorded here so
+ * that nobody reads the absence of a font change as an oversight.
+ *
+ * ### Why the en-ko L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim. The productive `-(eu)seyo` and the `-a/eo juseyo`
+ * request in M1; the double-subject sentence (`jeo-neun ki-ga keoyo`) and the four-way sibling
+ * split — Korean has no word for "older brother" that does not encode the speaker's own gender —
+ * in M2; the particle grid and the attributive `-(eu)n` in M3; `-ro` and `-reul tada` in M4, where
+ * riding a bus takes an object particle rather than a preposition; the two number systems and the
+ * honorific `deusida` in M5; `-(eu)llae-yo` and the native/Sino clock in M6; `yeoboseyo` — an
+ * honorific imperative of "to look", M1's rule visible in one word — and `-go isseoyo` in M7;
+ * `mot` and `-eoya dwaeyo` in M8; `-boda`, which puts the standard BEFORE the adjective, in M9;
+ * and the account in M10, whose real lesson is that Korean drops every subject after the topic is
+ * set — a zero anaphora far stronger than Spanish's pro-drop. Bounds climb 8 → 10 (M1–M3: 8,
+ * M4–M7: 9, M8–M10: 10) — higher than L1's 4 → 7, because a request and an account need the
+ * adverbials L1 could do without — pools are authored to 12, M1–M3 ship fully enriched, and M10's
+ * items are four-sentence accounts in `-eoss-`.
+ *
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -5914,6 +6019,215 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "Language of the fields holds to the last turn: ENGLISH in every teaching field, the ROMANIZATION in every L2 slot, Hangul only in script, glossEn on every sentence, and literal wherever a turn's order moves — which, with two clauses and a verb at the end of each, is most of them.",
       ],
       maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M1': {
+      id: 'L2-M1',
+      title: 'Asking politely',
+      job: 'Requests, thanks, apologies in the right register',
+      patterns: [
+        'jom + N-eul/reul + juseyo',
+        'V-a/eo + juseyo',
+        'V-(eu)seyo',
+        'V-(eu)l su isseoyo?',
+        'gomawoyo / gamsahamnida',
+      ],
+      notes: [
+        'SPEECH LEVEL AND HONORIFICS, decided for the whole level and repeated here because a prompt only ever shows an author the notes (full record: docs/60-en-ko-L2-brief-decisions.md; the eight L1 decisions carry unchanged — Revised Romanization, pure ASCII, no stress marks ever, the particle hyphen with the host keeping its isolation shape, jeo never na, Hangul only in script). L1 settled the speech level: this course speaks the -yo style, the plain style is never written, and -mnida appears in two frozen phrases. That is not reopened. What this module adds is the OTHER axis: the honorific -si-, which raises the SUBJECT of the sentence rather than the listener.',
+        'L1 shipped -si- inside five whole phrases — annyeonghaseyo, juseyo, gaseyo, gyeseyo, jinaeseyo — with the rule named as deferred. This module makes it productive: -(eu)seyo is -si- plus -eoyo, so anjeuseyo, gidaryeojuseyo and malsseumhaseyo are buildable rather than memorised. THE mistake block: the honorific is about the person the sentence is ABOUT, so a learner never uses it of themselves. jeo-neun gayo is right and jeo-neun gaseyo is wrong, and an English speaker who has learnt that -(eu)seyo means polite will get this backwards on their first try.',
+        "The request itself is -a/eo juseyo, literally do-it-and-give-me: dowajuseyo (please help), gidaryeojuseyo (please wait), sseojuseyo (please write it). juseyo is L1-M3's row and each fused form is its own single token, so the new rows point back at it rather than re-teaching it. jom is the softener that goes in front of almost any request, and it is the single most useful politeness word in the language: literally a little, functionally please. The softer alternative is the ability question, V-(eu)l su isseoyo, which is L1-M6's -l shape doing a new job.",
+        'Thanks and apology finally get their -yo forms, which pays off the speech-level decision visibly: gomawoyo is the -yo thanks and gamsahamnida (L1-M2) is the frozen formal one, so the learner sees the two levels side by side for the first time and can be told which is which. Apology splits the same way, mianhaeyo against joesonghamnida, and gwaenchanayo (it is fine) answers both. The chip: a line whose subject is honoured chips `formal`, plain -yo stays `neutral`, and `informal` is NEVER used in this course, because the forms that would earn it are banmal, which L1 banned and this level does not lift. Say that, so a value missing on purpose reads as deliberate.',
+        "INDEX SEAM: jom, dowajuseyo, gidaryeojuseyo, sseojuseyo, anjeuseyo, malsseumhaseyo, gomawoyo, mianhaeyo, joesonghamnida, gwaenchanayo, su and -(eu)seyo are fresh keys. juseyo stays L1-M3's row, gamsahamnida stays L1-M2's frozen phrase, and annyeonghaseyo, gaseyo and gyeseyo stay L1-M2's. Every fused request form is ONE whitespace token and therefore one clean key; do not hyphenate it, because the hyphen in this course is reserved for a particle boundary and would mint the junk key juseyo twice over.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M2': {
+      id: 'L2-M2',
+      title: 'Describing people',
+      job: 'Appearance, character, relationships',
+      patterns: [
+        'N-eun/neun + N-i/ga + Adj-verb-yo',
+        'N-eun/neun + Adj-verb-yo',
+        'Adj-(eu)n + N',
+        'je + N-eun/neun + N-ieyo',
+        'N-kkeseo + gyeseyo',
+      ],
+      notes: [
+        "THE structure of the module, and Korean's signature sentence: the DOUBLE SUBJECT. jeo-neun ki-ga keoyo means I am tall, and it is built as for-me, the-height is-big — a topic, then a subject, then a predicate. English has no version of this and every learner tries to build I-am-tall with a copula instead. L1 already shipped the pieces (L1-M9's joayo, masisseoyo, bappayo are all descriptive verbs, and L1-M1's -eun/-neun and -i/-ga are the particles), so the sentence is assembly rather than new grammar. Say so and spend the mistakes on the shape.",
+        'Korean adjectives ARE verbs, which is the fact that makes the sentence above possible: keoyo, jagayo, yeppeoyo, chinjeolhaeyo conjugate exactly like action verbs and need no copula at all. L1 taught four of them without naming the class. Name it, and then teach the attributive form the class needs to modify a noun: -(eu)n turns a descriptive verb into a modifier that goes BEFORE the noun — keun jip, joeun chingu, yeppeun saram. M3 walks the same ending at length.',
+        "The family set is where Korean is richer than English and the delta runs the other way, so the module must not present it as extra vocabulary to memorise: hyeong and nuna are what a MAN calls his older brother and sister, oppa and eonni are what a WOMAN calls hers, and there is no word for older brother that does not encode the speaker's own gender. dongsaeng covers a younger sibling of either. Author the four in one screen with the speaker named in each cue, or the learner will file them as synonyms.",
+        "Honorific kinship and the honorific of existence: eomeoni and abeoji are the respectful words and eomma and appa are what a child says; -nim raises a title (L1-M1's seonsaengnim is already one); and gyesida is the separate honorific verb for a person being somewhere, which L1-M2 shipped as gyeseyo. That is M1's decision in the field — four verbs have a whole different honorific word rather than an infix — so point back at L1-M2's row and at M1's rule instead of opening anything.",
+        "INDEX SEAM: keoyo, keun, jagayo, jageun, yeppeoyo, yeppeun, chinjeolhaeyo, ki, meori, nun, hyeong, nuna, oppa, eonni, dongsaeng, eomeoni, abeoji, eomma, appa, gajok and -(eu)n are fresh keys. nun is the eye here and the snow reading stays OUT of the course, which is L1's homograph discipline continued. joayo, masisseoyo, bappayo and pigonhaeyo stay L1-M9's rows; gyeseyo stays L1-M2's; seonsaengnim, ssi, saram and chingu stay L1-M1's; je and jeo stay L1-M1's. Each descriptive verb's attributive shape belongs in the SAME row's forms as its -yo shape, because they are one word.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M3': {
+      id: 'L2-M3',
+      title: 'Describing things',
+      job: 'Size, colour, quality — agreement at length',
+      patterns: [
+        'N-eun/neun + Adj-verb-yo',
+        'N-i/ga + Adj-verb-yo',
+        'Adj-(eu)n + N + -eul/reul + V-yo',
+        'Adj-verb-go + Adj-verb-yo',
+        'i-geo-neun + Adj-(eu)n + N-ieyo',
+      ],
+      notes: [
+        "Korean marks no gender, no number and no article, so this module's job line cannot mean what it means in the Romance courses. What Korean marks instead is ROLE, on the particle, and L1 shipped every one of them across six modules without ever laying them side by side: -i/-ga, -eun/-neun, -eul/-reul, -do, -e, -eseo. This module assembles the grid. That is the honest reading of agreement at length in a language with no agreement, and it should be stated in the first note so an author does not go looking for endings that do not exist.",
+        'THE distinction, and it is the hardest thing in beginner Korean because no English sentence marks it: topic -eun/-neun against subject -i/-ga. The working law, stated as what each DOES rather than as a translation. The topic sets what the sentence is about and often implies a contrast with something else (i chaek-eun bissayo — this book, at least, is expensive); the subject simply identifies who or what does or is the thing, and is what a brand-new piece of information takes (nuga wasseoyo? chingu-ga wasseoyo). Author minimal pairs, and let the pool test which particle a context wants.',
+        "The attributive -(eu)n from M2 at length: ppalgan sagwa, keun jip, joeun chaek. Add -go for stacking two descriptions in one clause — keugo joayo, ssago masisseoyo — which is L1-M3's own -go (meokgo, masigo) doing a second job, so point back at that row rather than opening one. Together these two endings are what this course has instead of an adjective grid, and a module that taught them well has taught the whole of Korean description.",
+        "Colours are the vocabulary spend and they are descriptive verbs like everything else, with irregular attributives worth authoring as pairs: ppalgayo / ppalgan, paraeyo / paran, norayo / noran, kkamayo / kkaman, hayayo / hayan. The other qualities: gilda / gin, jjalpda / jjalbeun, mugeoweoyo, gabyeoweoyo, ssayo, bissayo (which pays back L1-M8's price sentences). The slogan to refuse is Korean has no plurals: it has -deul, it simply does not require it, and the true rule is that number is optional and is marked only when it matters.",
+        "INDEX SEAM: ppalgayo, ppalgan, paraeyo, paran, norayo, kkamayo, hayayo, gilda-shapes, ssayo, bissayo, mugeoweoyo, gabyeoweoyo and -deul are fresh keys. -i, -ga, -eun, -neun, -eul, -reul and -do stay L1-M1's and L1-M3's rows and this module re-teaches them as a system; -go stays L1-M3's; i-geo stays L1-M1's, and the bare i remains the SUBJECT PARTICLE's key, which is why the demonstrative is written hyphenated and never bare. cha stays tea (L1-M1) and the car word stays out of the course.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M4': {
+      id: 'L2-M4',
+      title: 'Getting around',
+      job: 'Directions, transport, asking the way',
+      patterns: [
+        'N-e + eotteoke + gayo?',
+        'N-(eu)ro + gaseyo',
+        'N-eul/reul + tayo',
+        'N-eseo + naeryeoyo',
+        'yeogi-eseo + N-kkaji',
+      ],
+      notes: [
+        "The particle pair L1 shipped and never contrasted: -e marks a DESTINATION or a static location (hakgyo-e gayo, jip-e isseoyo) and -eseo marks where an ACTION happens (hakgyo-eseo gongbuhaeyo). L1-M7 taught both and this is the module whose job forces the difference into the open, because a direction is a destination and a bus stop is where something happens. Point back at L1-M7's rows, state the law, and let the pool test it.",
+        "-(eu)ro is the module's own particle and it means toward: oenjjok-euro gaseyo, i-jjok-euro oseyo. It is a third member of the -e / -eseo family and a learner should meet it as such rather than as an idiom. -kkaji (up to, as far as) joins it for the span from here to there, with -buteo named in usage as its partner and not shown.",
+        'Riding takes an OBJECT particle, which English speakers never guess: beoseu-reul tayo, jihacheol-eul tayo — literally the bus, ride it — where English says ride ON a bus. Getting off is naerida with -eseo. Author the pair together, because they are the two halves of every journey and they take different particles for a reason the learner can see once it is pointed out.',
+        "Directions reuse M1's honorific imperative in the field: gaseyo, oseyo, doraseyo, geonneoseyo, and the vocabulary oenjjok, oreunjjok, jjuk, ap, dwi, geonneopyeon, sageori, jeongnyujang, yeok. This module speaks -yo throughout with the honorific on the imperatives, chipped `formal` where the subject is the listener being honoured. Word order does the rest of the work: Korean is verb-final and a direction sentence is one long adverbial chain ending in the verb, which is exactly why this level's bound climbs to nine here.",
+        "INDEX SEAM: -ro, -euro, -kkaji, tayo, naeryeoyo, oenjjok, oreunjjok, jjuk, ap, dwi, geonneopyeon, sageori, jeongnyujang, yeok, beoseu, jihacheol, taeksi, gicha, eotteoke and oseyo are fresh keys, each particle carrying its hyphen so the host noun stays free — checked against the emitted index, first occurrence winning. -e and -eseo stay L1-M7's rows; eodi and eodi-e stay L1-M7's; gaseyo stays L1-M2's; wi-e and yeop-e stay L1-M7's. Place names never index (#61), so anchor every direction on a common noun.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M5': {
+      id: 'L2-M5',
+      title: 'Food and hosting',
+      job: 'Ordering, offering, refusing without offence',
+      patterns: [
+        'N + <native number> + <counter> + juseyo',
+        'N-i/ga + <Sino number> + won-ieyo',
+        'deo + deuseyo',
+        'jal + meogeosseumnida',
+        'gwaenchanayo + , + bae + bulleoyo',
+      ],
+      notes: [
+        'THE rule of the module, and L1 shipped both halves without it: Korean has TWO number systems, and L1-M8 used native numbers with counters (han jan, du gae, se myeong) and Sino numbers for money (ocheon won, samcheon won) in the same module without saying which is which. The law: **native numbers count things and always take a counter; Sino numbers do money, minutes, dates and anything above ninety-nine.** M6 spends this immediately on the clock, where both appear in one breath. A rule that explains what a learner already has is worth three that only add.',
+        "The counters this module adds to L1-M8's gae, myeong and jan: byeong for bottles, geureut for bowls, inbun for portions. A counter is not optional in Korean the way a measure word is optional in English, and the order is fixed — noun, number, counter — which is the reverse of English's number-then-noun. Author them against the food the module teaches so the drill is grammar rather than vocabulary.",
+        "The honorific verb set arrives at the table, which is M1's decision made visible: meokda has a separate honorific word, deusida, so a host says deuseyo and masitge deuseyo and never *meogeuseyo. This is the clearest case of the four irregular honorifics (with gyesida, jumusida and malsseumhasida), and a table is where a learner meets it first. jal meogeosseumnida is said after eating and is a THIRD frozen -mnida phrase beside L1-M2's two: flag it as frozen in its note, exactly as they are, so the level's speech-level decision stays intact.",
+        'Refusing without offence, with the cultural half stated and not moralised: in Korean hosting the offer is repeated and a bare aniyo is heard as politeness rather than as a decision, so the refusal that lands adds a reason (gwaenchanayo, bae bulleoyo). The other half a learner needs is the etiquette that has no English equivalent: the younger person pours for the older, and a glass is received with two hands. Put both in usage; no rule judges either culture.',
+        "INDEX SEAM: byeong, geureut, inbun, deuseyo, deo, mani, jogeum, bae, bulleoyo, gogi, saengseon, yachae, bap-sang, mul-kkeut and sikdang are fresh keys. deo is this module's key and means more in an offer; M9's comparative points back at it rather than opening a row. bae is the belly here and the fruit reading stays OUT of the course, which is L1's homograph discipline continued. gae, myeong, jan, hana, han, dul, du, se and set stay L1-M8's rows; juseyo stays L1-M3's; bap and mul stay L1-M3's; gwaenchanayo stays M1's.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M6': {
+      id: 'L2-M6',
+      title: 'Making plans together',
+      job: 'Invitations, suggestions, settling a time',
+      patterns: [
+        'gachi + V-(eu)llae-yo?',
+        'eonje + V-l geoyeyo?',
+        '<native number> + si + <Sino number> + bun-e',
+        'N-yoil-e + sigan + isseoyo?',
+        'joayo + , + geuraeyo',
+      ],
+      notes: [
+        "-(eu)llae-yo is the invitation ending and L1 named it as deferred; plans are what it is for, so it opens here. gachi bap meogeullae-yo? is the everyday Korean invitation, and it differs from a plain question in exactly the way English let's differs from will you — it asks the listener's wish rather than a fact. No second future is opened: L1-M6's -l geoyeyo carries the plan itself, and -gess- stays deferred and is named in this note so a later author does not import it. -(eu)psida belongs to the -mnida level and travels with it, so it is named in usage and never written.",
+        "THE clock, and it is where M5's number rule pays for itself in one breath: the HOUR is a native number with the counter -si and the MINUTES are a Sino number with -bun. du si samsip bun is half past two, and it uses both systems in four syllables. There is no rule beyond the one M5 stated, which is the point: this module is where a learner sees that the rule was worth learning. Author several times in a row so the fork becomes automatic.",
+        "The days are a closed set built on one root — woryoil, hwayoil, suyoil, mogyoil, geumyoil, toyoil, iryoil — and -yoil is the shared ending, which makes seven words cost about two. Point that out; a learner who sees the pattern will not memorise seven. -e marks the day as well as the hour (woryoil-e, du si-e), which is L1-M7's particle doing a fourth job and needs no new row.",
+        'Plans are made among friends, but this course still speaks -yo: there is no informal tier to switch to, because banmal is not written in en-ko L2 at all. So the register move here is the OPPOSITE of the other eight courses — the module stays `neutral` throughout and the friendliness is carried by the ending (-(eu)llae-yo rather than an honorific imperative) and by gachi. Say so, because an author who has read the other L2 briefs will look for a `informal` chip and must be told it is deliberately absent.',
+        "INDEX SEAM: -(eu)llae-yo, gachi, eonje, sigan, si, bun, woryoil, hwayoil, suyoil, mogyoil, geumyoil, toyoil, iryoil, yoil, geuraeyo, yaksok and manayo are fresh keys. joayo stays L1-M9's row, doing sounds-good here — a second job, pointed back at, never re-opened; -l geoyeyo, gal, hal and meogeul stay L1-M6's; naeil stays L1-M6's; oneul stays L1-M4's; -e stays L1-M7's; the native and Sino numerals stay L1-M8's.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M7': {
+      id: 'L2-M7',
+      title: 'On the phone',
+      job: 'Calls and messages — openings, closings, taking a message',
+      patterns: [
+        'yeoboseyo',
+        'N-ssi + gyeseyo?',
+        'jigeum + V-go isseoyo',
+        'jamsiman-yo',
+        'najunge + jeonhwahalgeyo',
+      ],
+      notes: [
+        "yeoboseyo is how Korea answers a phone and it is M1's rule visible inside a single word: it is an honorific imperative of a verb meaning to look here. A learner told that will remember both the word and the rule; a learner given it as an unanalysable noise learns one word. The call then runs on honorifics throughout — Kim seonsaengnim gyeseyo? asks whether the teacher is (honourably) there, using the separate honorific verb L1-M2 already shipped as gyeseyo — so this module is the payoff of M1's whole decision and chips `formal` on every honoured-subject line.",
+        "-go isseoyo, the progressive, opens here, and L1 named it as deferred for exactly this moment: a call is happening NOW. jigeum bap meokgo isseoyo, jeonhwahago isseoyo. The -go is L1-M3's own linking ending in a new frame, so point back rather than opening a family. The delta worth stating: Korean's plain -yo present already covers a habitual action, so -go isseoyo is reserved for what is genuinely in progress — the same restriction en-it puts on its gerundio, while en-fr and en-de have no progressive at all.",
+        "Absence uses the negation the course already owns: an gyeseyo (L1-M3's an) — literally is-not honourably-present — which is how a Korean office says he is not in. Note that the honorific stays even in the negative and even about someone absent, because it is about the person, not the situation. jamsiman-yo (one moment) is the hold, and it is a noun with -yo stuck on, which is worth one line: -yo also politens a fragment, not only a verb.",
+        "Taking a message needs no new tense: memo, jeonhwa beonho, jeonhwahaesseoyo (L1-M5's past). Reported speech (-dago) is L3's and is named as deferred here, which is why a message is passed on with the words themselves. -l-geyo (najunge jeonhwahalgeyo, I'll call later) is a promise ending built on L1-M6's -l shape; teach it as one item, not as a system.",
+        "INDEX SEAM: yeoboseyo, jeonhwa, jeonhwahaeyo, beonho, memo, jigeum, jamsiman-yo, najunge, -go isseoyo and -l-geyo are fresh keys. gyeseyo stays L1-M2's row, an stays L1-M3's, -go stays L1-M3's, ssi and seonsaengnim stay L1-M1's, -eoss- stays L1-M5's. jamsiman-yo carries a hyphen at a real morpheme boundary, so the index also holds jamsiman and yo — check the emitted index rather than assuming, as L1's decision 2 requires.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M8': {
+      id: 'L2-M8',
+      title: 'When something goes wrong',
+      job: 'Problems, asking for help, complaining calmly',
+      patterns: [
+        'N-i/ga + an + dwaeyo',
+        'N-eul/reul + ireobeoryeosseoyo',
+        'N-i/ga + apayo',
+        'mot + V-yo',
+        'V-eoya + dwaeyo',
+      ],
+      notes: [
+        "mot opens here, and L1 named it as deferred with one mention: it is the INABILITY negative, and it pairs cleanly with L1-M3's an. The law in one line: an is do not or will not, mot is cannot. mot gayo means something is stopping me and an gayo means I am choosing not to, and English's single can't and won't hide the difference. This is the module's first mistake block, and a problem report is the only place in the ladder where both are needed in the same breath.",
+        'Pain and malfunction both use the double-subject sentence M2 taught: meori-ga apayo (my head hurts, literally as-for-me the-head hurts) and i-geo-ga an dwaeyo (this does not work). apayo is a descriptive verb like everything in M2 and M3, so the module opens no new class — it applies one. Say so; a learner who sees the third use of a structure learns it, and a learner given three idioms learns three.',
+        "-eoya dwaeyo is the obligation ending: gayaa dwaeyo, gidaryeoya dwaeyo. It is built on the same -a/-eo stem the course has been conjugating since L1-M4, so the shape is familiar and only the frame is new. Paired with M1's dowajuseyo and the ability question V-(eu)l su isseoyo, that is the whole kit a problem needs, and no new tense is opened.",
+        "Complaining calmly, and Korean's answer is the honorific rather than the hedge: the softening comes from jom (M1's), from joesonghajiman (I am sorry but), and from keeping the honorific on the person you are complaining TO. Raising your voice with a stranger is a heavier breach in Korean than in English, and the repair is the ending, not the volume. State that in usage, without judging either language, and let the mistake block show the too-blunt version rather than the over-hedged one.",
+        "INDEX SEAM: mot, dwaeyo, an-dwaeyo-shapes, gojang, ireobeoryeosseoyo, apayo, apeun, dachyeosseoyo, byeongwon, yak, joesonghajiman and -eoya are fresh keys. an stays L1-M3's row and this module's note must be true of the an / mot pair without editing it. meori stays M2's, jom stays M1's, dowajuseyo stays M1's, -eoss- stays L1-M5's, -i and -ga stay L1-M1's.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M9': {
+      id: 'L2-M9',
+      title: 'Comparing and choosing',
+      job: 'More, less, better — stating a preference',
+      patterns: [
+        'A-neun/eun + B-boda + Adj-verb-yo',
+        'A-neun/eun + B-boda + deo + Adj-verb-yo',
+        'N + jung-eseo + gajang + Adj-(eu)n + N',
+        'eoneu + N-i/ga + deo + joayo?',
+        'jeo-neun + N-eul/reul + deo + joahaeyo',
+      ],
+      notes: [
+        "-boda is the comparison particle and the WORD ORDER is the delta: it attaches to the thing compared AGAINST, and that phrase comes first — Seoul-i Busan-boda keoyo, literally Seoul, than-Busan, is-big. English puts the standard last (bigger than Busan) and Korean puts it in the middle before the predicate, which is where a verb-final language puts everything. deo (more) is optional and usually present; it is M5's row doing its second job, so this module points back rather than opening one.",
+        "The superlative is gajang or jeil in front of the descriptive verb — gajang keoyo, jeil masisseoyo — with the group marked by jung-eseo (among). Both words mean the same thing and jeil is the more colloquial; say that rather than inventing a distinction. Nothing declines and nothing agrees, which is the relief this course keeps offering and should keep naming: Korean's difficulty is in the particles and the endings, never in the shapes of its adjectives.",
+        "The topic particle does a second job here and it is the one that finally explains it: -eun/-neun marks CONTRAST, which is exactly what a comparison is. i-geo-neun bissayo, geugeo-neun ssayo — this one is expensive, that one is cheap. M3 taught the topic/subject distinction as a law; this module is where a learner sees why it was worth the trouble. Point back at M3's rows and add no new particle for contrast.",
+        "Stating a preference: deo joahaeyo (like more) is how Korean says prefer, on L1-M1's joahaeyo row — there is no separate verb, which is the mirror image of en-de's lieber and worth naming as such. Choosing needs eoneu (which) and geot / geo (thing, and L1-M1's i-geo already contains it), plus -hago for joining two options. eoneu is a sibling of L1-M9's wae and L1-M8's myeot: cross-reference all three and merge none.",
+        "INDEX SEAM: -boda, gajang, jeil, jung-eseo, eoneu, -hago, deol, geugeo and geot are fresh keys. deo stays M5's row; joahaeyo and i-geo stay L1-M1's; -eun and -neun stay L1-M1's; joayo stays L1-M9's; bissayo and ssayo stay M3's. -boda carries its hyphen at a particle boundary like every other particle in this course, so the index holds boda as well and the bare host stays free — the guarantee the hyphen was chosen for.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M10': {
+      id: 'L2-M10',
+      title: 'Telling what happened',
+      job: 'A four-sentence account in the past',
+      patterns: [
+        'meonjeo + V-eosseoyo',
+        'geu daeum-e + V-eosseoyo',
+        'V-go + V-eosseoyo',
+        'V-aseo/eoseo + V-eosseoyo',
+      ],
+      notes: [
+        "Each item is an ACCOUNT of exactly four short sentences, not one long one, and the per-sentence bound applies to each sentence inside it. The past is L1-M5's -eoss- and no new tense is opened; the honest new spend is the sequencers — meonjeo, geu daeum-e, machimnae — beside L1-M10's geurigo and hajiman.",
+        'THE lesson of the module, and it is not a tense: Korean drops every subject once the topic is set, far more thoroughly than Spanish drops a pronoun. A four-sentence account in Korean names the speaker once, in the first clause, and then says nothing about who is doing anything for three more sentences — and a learner who repeats jeo-neun four times has written something that reads as insistent or as a list of unrelated facts. State it as the rule the account is built on and let the pool test the version with too many pronouns.',
+        "-aseo/-eoseo does a second job here and it is worth its own rule: L1-M9 taught it as because, and in a narrative it also means and then, for two events where the first leads into the second — sijang-e gaseo gwa-reul sasseoyo (I went to the market and bought fruit). The neighbouring ending -go simply joins two events with no such link. Point back at L1-M9's row rather than opening a second one, and author a minimal pair so the difference is visible.",
+        "Korean has no perfect / imperfect split, which is worth saying out loud because four other courses in this repo spend their whole M10 on one: -eoss- covers everything English divides between the past simple and the present perfect, and it also carries a RESULT reading — gasseoyo can mean has gone and so is not here. That is the only subtlety, and it is one sentence's worth. What replaces the aspect lesson is the zero-anaphora lesson above.",
+        "Nothing new is opened. -deon, the double past -eoss-eoss-, reported speech -dago and the plain style all stay OUT and are named here as L3's. INDEX SEAM: meonjeo, geu, daeum, geu daeum-e, machimnae, sasseoyo, gasseoyo (L1-M6's gal family in the past) and the -eoss- cells an account needs are fresh keys, each pointing back at its verb's row rather than editing an L1 file. -eoss- and its shipped cells stay L1-M5's; -aseo and -eoseo stay L1-M9's; -go stays L1-M3's; geurigo, hajiman, geunde and geureonde stay L1-M10's; eoje stays L1-M5's.",
+      ],
+      maxWordsPerSentence: 10,
       newWordCap: NEW_WORD_CAP,
     },
   },

@@ -72,18 +72,11 @@ describe('en-ko: the decisions its briefs settle (#373, #376)', () => {
     .flatMap((brief) => [...brief.patterns, ...brief.notes, brief.title, brief.job])
     .join('\n');
 
-  it('covers exactly L1-M1..L1-M10', () => {
+  it('covers exactly L1-M1..L2-M10 — L2 was added by #433', () => {
     expect(Object.keys(COURSE_BRIEFS['en-ko'] ?? {})).toEqual([
-      'L1-M1',
-      'L1-M2',
-      'L1-M3',
-      'L1-M4',
-      'L1-M5',
-      'L1-M6',
-      'L1-M7',
-      'L1-M8',
-      'L1-M9',
-      'L1-M10',
+      ...['L1', 'L2'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
     ]);
   });
 
@@ -145,8 +138,15 @@ describe('en-ko: the decisions its briefs settle (#373, #376)', () => {
     expect(everything).toMatch(/-eul\/reul/);
   });
 
-  it('keeps the deferred list deferred — the shapes L1 names but never writes', () => {
-    const notes = briefs.flatMap((brief) => brief.notes).join('\n');
+  /**
+   * The shapes L1 names but never writes. L2 later collected `-go isseoyo` (#433, at M7), so the
+   * check is scoped to the L1 briefs — where the deferral was made and must still be visible.
+   */
+  it('keeps the deferred list deferred in the L1 briefs', () => {
+    const notes = Object.entries(COURSE_BRIEFS['en-ko'] ?? {})
+      .filter(([id]) => id.startsWith('L1-'))
+      .flatMap(([, brief]) => brief.notes)
+      .join('\n');
     for (const deferred of ['-go isseoyo', '-gess-', '-ji anayo']) {
       expect(notes, `${deferred} is named`).toContain(deferred);
     }
@@ -683,6 +683,63 @@ describe('en-de L2: the decisions its briefs settle (#432)', () => {
     expect(all['L2-M6']?.notes.join('\n')).toMatch(/der Morgen \("the morning"\) folds onto/);
     expect(all['L2-M8']?.notes.join('\n')).toMatch(/kein negates a noun/);
     expect(all['L2-M9']?.notes.join('\n')).toMatch(/the fold KEEPS umlauts/);
+    for (const [id, brief] of l2) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+});
+
+describe('en-ko L2: the decisions its briefs settle (#433)', () => {
+  const all = COURSE_BRIEFS['en-ko'] ?? {};
+  const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
+
+  it('climbs its bounds 8 → 9 → 10 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L2-M1', 'L2-M2', 'L2-M3']) expect(bound(id), id).toBe(8);
+    for (const id of ['L2-M4', 'L2-M5', 'L2-M6', 'L2-M7']) expect(bound(id), id).toBe(9);
+    for (const id of ['L2-M8', 'L2-M9', 'L2-M10']) expect(bound(id), id).toBe(10);
+  });
+
+  /**
+   * L1 settled the speech level and shipped `-si-` inside five whole phrases. M1 makes it
+   * productive — and the mistake that follows immediately is using it about yourself.
+   */
+  it('makes the honorific productive at M1 and forbids it of the speaker', () => {
+    const m1 = all['L2-M1']?.notes.join('\n') ?? '';
+    expect(m1).toMatch(/This module makes it productive/);
+    expect(m1).toMatch(/jeo-neun gayo is right and jeo-neun gaseyo is wrong/);
+    expect(m1).toMatch(/`formal`/);
+    expect(m1).toMatch(/`informal` is NEVER used in this course/);
+    // The four verbs with a separate honorific word are vocabulary, not a rule.
+    expect(m1).toMatch(/separate honorific word|honorific -si-|raises the SUBJECT/);
+    expect(all['L2-M5']?.notes.join('\n')).toMatch(/meokda has a separate honorific word, deusida/);
+  });
+
+  /** Exactly three of L1's deferrals are collected, and the rest are named again. */
+  it('collects `-go isseoyo`, `mot` and `-(eu)llae-yo`, and leaves the rest deferred', () => {
+    expect(all['L2-M7']?.notes.join('\n')).toMatch(/-go isseoyo, the progressive, opens here/);
+    expect(all['L2-M8']?.notes.join('\n')).toMatch(/mot opens here/);
+    expect(all['L2-M6']?.notes.join('\n')).toMatch(/-\(eu\)llae-yo is the invitation ending/);
+    expect(all['L2-M6']?.notes.join('\n')).toMatch(/-gess- stays deferred/);
+    expect(all['L2-M10']?.notes.join('\n')).toMatch(/-deon, the double past -eoss-eoss-/);
+  });
+
+  /** What "agreement at length" means in a language with none, and the number rule L1 owed. */
+  it('spends M3 on the particle grid and states the two number systems at M5', () => {
+    const m3 = all['L2-M3']?.notes.join('\n') ?? '';
+    expect(m3).toMatch(/Korean marks no gender, no number and no article/);
+    expect(m3).toMatch(/topic -eun\/-neun against subject -i\/-ga/);
+    expect(all['L2-M5']?.notes.join('\n')).toMatch(/native numbers count things/);
+    expect(all['L2-M6']?.notes.join('\n')).toMatch(/HOUR is a native number/);
+  });
+
+  it('assigns every new particle and homograph an owner, in the notes', () => {
+    // `deo` is M5's and M9 points back; `bae` and `nun` take one reading each, as L1 ruled.
+    expect(all['L2-M5']?.notes.join('\n')).toMatch(/bae is the belly here/);
+    expect(all['L2-M2']?.notes.join('\n')).toMatch(/nun is the eye here/);
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/M5's row doing its second job/);
+    // M10's real lesson is not a tense.
+    expect(all['L2-M10']?.notes.join('\n')).toMatch(/Korean drops every subject/);
     for (const [id, brief] of l2) {
       expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
     }
