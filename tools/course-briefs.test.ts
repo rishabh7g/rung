@@ -602,9 +602,9 @@ describe('en-ru L2: the decisions its briefs settle (#429)', () => {
   const all = COURSE_BRIEFS['en-ru'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+  it('covers exactly L1-M1..L3-M10 — three levels, thirty modules', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2'].flatMap((level) =>
+      ...['L1', 'L2', 'L3'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -660,6 +660,58 @@ describe('en-ru L2: the decisions its briefs settle (#429)', () => {
     for (const [id, brief] of l2) {
       expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
     }
+  });
+});
+
+describe('en-ru L3: the decisions its briefs settle (#465)', () => {
+  const all = COURSE_BRIEFS['en-ru'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('climbs its bounds 10 → 11 → 12 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+  });
+
+  /**
+   * `docs/56`'s "What L2 withholds" list is the level's plan. Every piece L3 takes has an owner
+   * named in the notes, because an author only ever sees the notes.
+   */
+  it('gives every piece L2 withheld an owner', () => {
+    expect(all['L3-M2']?.notes.join('\n'), 'the instrumental').toMatch(/INSTRUMENTAL OPENS HERE/);
+    expect(all['L3-M1']?.notes.join('\n'), 'reflexives as a system').toMatch(/REFLEXIVE VERBS/);
+    expect(all['L3-M4']?.notes.join('\n'), 'the conditional by').toMatch(/CONDITIONAL by OPENS/);
+    expect(all['L3-M8']?.notes.join('\n'), 'numbers above a hundred').toMatch(/above a hundred/);
+    expect(all['L3-M10']?.notes.join('\n'), 'prefixed motion verbs').toMatch(/PREFIXED MOTION/);
+    expect(all['L3-M10']?.notes.join('\n'), 'khodíl / yézdil').toMatch(/khodíl/);
+  });
+
+  /**
+   * The comma before a subordinate clause is grammar in Russian rather than style, and it is
+   * stated once at M3 and pointed back at twice — the same discipline the seams use.
+   */
+  it('states the comma law once and points back at it', () => {
+    expect(all['L3-M3']?.notes.join('\n')).toMatch(/COMMA IS OBLIGATORY/);
+    expect(all['L3-M5']?.notes.join('\n')).toMatch(/M3's comma law/);
+    expect(all['L3-M9']?.notes.join('\n')).toMatch(/M3's law/);
+  });
+
+  /** The stress rule (#355) and the quiet Cyrillic line are the course's law, restated for L3. */
+  it('restates the stress and script law', () => {
+    expect(notes).toMatch(/STRESS IS WRITTEN ON EVERY POLYSYLLABLE/);
+    expect(notes).toMatch(/script line/);
+  });
+
+  it('names its seam in every module but the last', () => {
+    for (const [id, brief] of l3.filter(([id]) => id !== 'L3-M10')) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  it('names what it defers to L4', () => {
+    expect(all['L3-M10']?.notes.join('\n'), 'determinate/indeterminate').toMatch(/L4/);
   });
 });
 
