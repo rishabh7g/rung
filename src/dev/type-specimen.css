@@ -4,30 +4,30 @@
    classes' specificity so they override the weight baked into a `font:` shorthand whatever order
    the file ends up in. */
 
-.page {
+.specimen-page {
   min-height: 100%;
   padding: var(--space-6);
   background: var(--color-bg);
   color: var(--color-text);
 }
 
-.title {
+.specimen-title {
   margin: 0 0 var(--space-2);
   font: var(--text-screen-title);
 }
 
-.lede {
+.specimen-lede {
   margin: 0 0 var(--space-8);
   max-width: 62ch;
   font: var(--text-secondary);
   color: var(--ink-75);
 }
 
-.section {
+.specimen-section {
   margin-bottom: var(--space-8);
 }
 
-.sectionHead {
+.specimen-section-head {
   margin: 0 0 var(--space-4);
   font: var(--text-kicker);
   letter-spacing: var(--kicker-tracking);
@@ -35,17 +35,17 @@
   color: var(--color-accent-700);
 }
 
-.block {
+.specimen-block {
   margin-bottom: var(--space-6);
 }
 
-.blockHead {
+.specimen-block-head {
   margin: 0 0 var(--space-2);
   font: var(--text-micro);
   color: var(--ink-65);
 }
 
-.row {
+.specimen-row {
   display: flex;
   align-items: baseline;
   gap: var(--space-4);
@@ -53,7 +53,7 @@
   border-top: var(--border-hairline);
 }
 
-.rowLabel {
+.specimen-row-label {
   flex: none;
   width: 4ch;
   font: var(--text-micro);
@@ -72,68 +72,68 @@
 /* ── Devanagari · Mukta ─────────────────────────────────────────────── */
 
 /* The family, the 1.6 line-height and the never-italic rule all arrive with the token. */
-.devanagari {
+.specimen-devanagari {
   font: var(--text-l2-cue);
 }
 
 /* The body-role floor (tokens.md §2). The shorthand above sets a unitless line-height, so it
    stays 1.6 of whatever size overrides it. */
-.s18 {
+.specimen-s18 {
   font-size: var(--devanagari-min-size);
 }
 
-.s22 {
+.specimen-s22 {
   font: var(--text-l2-list);
 }
 
-.s26 {
+.specimen-s26 {
   font: var(--text-l2-card);
 }
 
-.s32 {
+.specimen-s32 {
   font: var(--text-l2-hero);
 }
 
 /* ── Latin · Barlow / Barlow Condensed ──────────────────────────────── */
 
-.body {
+.specimen-body {
   font: var(--text-body);
 }
 
-.secondary {
+.specimen-secondary {
   font: var(--text-secondary);
 }
 
-.kickerLg {
+.specimen-kicker-lg {
   font: var(--text-kicker);
   letter-spacing: var(--kicker-tracking);
   text-transform: uppercase;
 }
 
-.kickerSm {
+.specimen-kicker-sm {
   font: var(--text-kicker-sm);
   letter-spacing: var(--kicker-tracking);
   text-transform: uppercase;
 }
 
-.brand {
+.specimen-brand {
   font: var(--text-brand);
 }
 
-.screenTitle {
+.specimen-screen-title {
   font: var(--text-screen-title);
 }
 
 /* ── Weights — the matrix's other axis ──────────────────────────────── */
 
-.specimen.w400 {
+.specimen.specimen-w400 {
   font-weight: 400;
 }
 
-.specimen.w600 {
+.specimen.specimen-w600 {
   font-weight: 600;
 }
 
-.specimen.w700 {
+.specimen.specimen-w700 {
   font-weight: 700;
 }
