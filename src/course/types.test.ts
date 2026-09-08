@@ -832,6 +832,13 @@ describe('ModuleContent against the modules that exist', () => {
      * the level as well as the rule. L2-M5 (#451) adds the second and last of them, `jal
      * meogeosseumnida` — said after eating, frozen exactly as L1-M2's two are, and named as frozen
      * in its own note. Any -mnida beyond these four is still a style slip.
+     *
+     * Through L3, that is. **L4-M7 "Official talk" unfreezes the level** (#527, `docs/93`): its
+     * whole job is `-(seu)pnida`, `-(seu)pnikka`, `-(eu)sipsio` and `-(eu)psida` as a productive
+     * system — the announcement register a learner HEARS, at the station and on the intercom — so
+     * on L4 and above a -mnida form is the content rather than a slip. The gate is therefore
+     * scoped to the levels that froze it, and NOT deleted: L1 through L3 still hold the line, and
+     * a course whose L2 sentence reaches for `hamnida` still fails here.
      */
     const FROZEN_FORMAL = new Set(['gamsahamnida', 'mannaseo bangapseumnida']);
     const FROZEN_FORMAL_L2 = new Set([...FROZEN_FORMAL, 'joesonghamnida', 'jal meogeosseumnida']);
@@ -887,9 +894,10 @@ describe('ModuleContent against the modules that exist', () => {
           expect(PLAIN_STYLE.has(token), `${at} writes the plain-style "${token}"`).toBe(false);
           if (token.endsWith('mnida')) {
             const phrase = normalizeSurface(target.display);
+            const frozenLevel = /^L[123]-/.test(module.id);
             const allowed = module.id.startsWith('L1-') ? FROZEN_FORMAL : FROZEN_FORMAL_L2;
             expect(
-              [...allowed].some((frozen) => phrase.includes(frozen)),
+              !frozenLevel || [...allowed].some((frozen) => phrase.includes(frozen)),
               `${at} writes a -mnida form outside the frozen phrases this level allows`,
             ).toBe(true);
           }
