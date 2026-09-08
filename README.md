@@ -581,6 +581,27 @@ particle's key came true on the first build, and the demonstrative is now writte
 everywhere — `i-jjok`, `i-sikdang` — as L1-M1's `i-geo` already was. The ratchet held at en-ko 12.
 **The native gate is still unmet**: docs/68 ends in open questions 1–27, a fresh en-ko L2 chain.
 
+**en-ko completes its L2 — and so does every course (#460, 2026-09-08).** `L2-M6` through `L2-M10`
+land together, `npm run build` emits `en-ko: 20 modules (L1-M1..M10, L2-M1..M10)`, and **all nine
+courses now have a complete second level**. M6 is where M5's number rule pays for itself in one
+breath: **the hour is a native number with `-si` and the minutes are a Sino number with `-bun`**, so
+`du si samsip bun` uses both systems in four syllables. It also moves the OPPOSITE way from the
+other eight courses on register — every other L2 chips `informal` when friends make plans, and en-ko
+has no informal tier to switch into, because banmal is not written in this course at all. M7 pays
+back M1's whole decision inside one word: `yeoboseyo` is an honorific imperative meaning "look
+here". It opens **`-go isseoyo`**, reserved for what is genuinely in progress because the plain `-yo`
+present already covers a habit, and it notes that `-yo` politens a fragment and not only a verb.
+M8's law is one line — **`an` is "do not", `mot` is "cannot"** — where English's single "can't"
+hides the difference, and its complaining note is that **Korean softens with the honorific rather
+than the hedge**. M9's delta is word order: `-boda` attaches to the thing compared against and comes
+before the predicate, nothing declines and nothing agrees, and there is **no Korean verb for
+"prefer"** — `deo joahaeyo`, the mirror image of German's `lieber`. M10 refuses the lesson four other
+courses spend their M10 on: **Korean has no perfect/imperfect split**, and what replaces it is that
+**Korean drops every subject once the topic is set** — its final item is two sentences, three verbs
+and not one word saying who. The ratchet held at en-ko 12 across all ten modules of the level, with
+roughly a hundred findings fixed in content across the three waves and no baseline raised. **The
+native gate is still unmet**: docs/68 ends in open questions 1–47, a fresh en-ko L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

@@ -1,0 +1,707 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M10",
+  "title": "Telling what happened",
+  "job": "A four-sentence account in the past",
+  "prerequisites": [
+    "L2-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "meonjeo + V-eosseoyo",
+      "geu daeum-e + V-eosseoyo",
+      "V-go + V-eosseoyo",
+      "V-aseo/eoseo + V-eosseoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE LESSON OF THIS MODULE IS NOT A TENSE. Korean DROPS EVERY SUBJECT once the topic is set, and far more thoroughly than Spanish drops a pronoun. A four-sentence account names the speaker ONCE, in the first clause, and then says nothing about who is doing anything for three more sentences. A learner who repeats jeo-neun four times has written something that reads as insistent, or as a list of unrelated facts about a stranger."
+    },
+    {
+      "tag": "free",
+      "text": "-aseo/-eoseo does a second job here. L1-M9 taught it as \"because\"; in a narrative it also means AND THEN, for two events where the first leads into the second — sijang-e gaseo gwail-eul sasseoyo, \"I went to the market and bought fruit\". The neighbouring -go simply joins two events with no such link, and the pair is worth an author's minimal pair."
+    },
+    {
+      "tag": "interference",
+      "text": "KOREAN HAS NO PERFECT / IMPERFECT SPLIT, which is worth saying out loud because four other courses in this repo spend their whole M10 on one. L1-M5's -eoss- covers everything English divides between the past simple and the present perfect, and it also carries a RESULT reading: gasseoyo can mean \"has gone\", and so is not here. That is the only subtlety, and it is one sentence's worth."
+    },
+    {
+      "tag": "free",
+      "text": "Each item is an ACCOUNT of three or four short sentences, not one long one, and the per-sentence bound applies to each sentence inside it. Nearly every word has already been met; the honest new spend is the sequencers — meonjeo, geu daeum-e, machimnae — beside L1-M10's geurigo and hajiman."
+    },
+    {
+      "tag": "free",
+      "text": "Nothing new is opened beyond that. -deon, the double past -eoss-eoss-, reported speech -dago and the plain style all stay OUT and belong to L3. A learner who can tell what happened in four sentences with no pronouns in them has everything this level promised."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M10-S01",
+      "display": "Meonjeo ilhaesseoyo. Geu daeum-e jip-e gasseoyo.",
+      "script": "먼저 일했어요. 그 다음에 집에 갔어요.",
+      "cue": "First I worked. Then I went home.",
+      "literal": "first worked. that next-at house-to went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meonjeo",
+            "script": "먼저",
+            "cue": "first (of all)",
+            "tag": "free",
+            "forms": [
+              "meonjeo"
+            ],
+            "note": "The opener of an account, and it goes at the very front. L1-M10's geurigo and this word are the two ends of a short story."
+          },
+          {
+            "display": "geu daeum-e",
+            "script": "그 다음에",
+            "cue": "after that · then",
+            "tag": "free",
+            "forms": [
+              "geu daeum-e",
+              "geu",
+              "daeum"
+            ],
+            "note": "Literally 'at that next', with L1-M7's -e on the end. geu is the 'that' of geugeo, standing in front of a noun."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "NEITHER SENTENCE SAYS WHO. The speaker is understood from the situation and Korean simply leaves the subject out — putting jeo-neun in both would sound insistent, as though somebody had disputed it.",
+      "sound": "MEON-jeo il-HAE-sseo-yo. geu DAE-eu-me JI-be GA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Meonjeo bap-eul meogeosseoyo.",
+          "script": "먼저 밥을 먹었어요.",
+          "cue": "First I ate.",
+          "changed": "L1-M5's past of eating"
+        },
+        {
+          "display": "Geu daeum-e jip-e gasseoyo.",
+          "script": "그 다음에 집에 갔어요.",
+          "cue": "Then I went home.",
+          "changed": "the second step on its own"
+        },
+        {
+          "display": "Jeo-neun meonjeo ilhaesseoyo.",
+          "script": "저는 먼저 일했어요.",
+          "cue": "I worked first.",
+          "changed": "with the topic named, which an account does once at most"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun meonjeo ilhaesseoyo. Jeo-neun jip-e gasseoyo.",
+        "script": "저는 먼저 일했어요. 저는 집에 갔어요.",
+        "why": "An account names the speaker once at most: Meonjeo ilhaesseoyo. Geu daeum-e jip-e gasseoyo."
+      },
+      "usage": "Opening an account of a day.",
+      "register": "neutral",
+      "mnemonic": "Say who once. Then stop saying it."
+    },
+    {
+      "id": "L2-M10-S02",
+      "display": "Sijang-e gaseo gwail-eul sasseoyo.",
+      "script": "시장에 가서 과일을 샀어요.",
+      "cue": "I went to the market and bought some fruit.",
+      "literal": "market-to went-and-then fruit-object bought",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sijang",
+            "script": "시장",
+            "cue": "market",
+            "tag": "free",
+            "forms": [
+              "sijang",
+              "sijang-e",
+              "sijang-eseo"
+            ],
+            "note": "An open market rather than a shop. Going there takes -e and buying there would take -eseo, which is M4's law once more."
+          },
+          {
+            "display": "gaseo",
+            "script": "가서",
+            "cue": "went and then",
+            "tag": "delta",
+            "forms": [
+              "gaseo",
+              "sasseoyo"
+            ],
+            "note": "L1-M9's -aseo doing its second job: not 'because' here but AND THEN, where the first event leads into the second. It carries no tense of its own."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "-aseo carries NO TENSE. The past sits on the last verb only, and the first clause stays in its plain shape — which is one fewer thing to conjugate, not one more.",
+      "sound": "SI-jang-e GA-seo GWA-i-reul SA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Sijang-e gago gwail-eul sasseoyo.",
+          "script": "시장에 가고 과일을 샀어요.",
+          "cue": "I went to the market and I bought fruit.",
+          "changed": "-go, which joins the two with no link between them"
+        },
+        {
+          "display": "Sijang-e gaseo sagwa-reul sasseoyo.",
+          "script": "시장에 가서 사과를 샀어요.",
+          "cue": "I went to the market and bought apples.",
+          "changed": "L1-M8's apples"
+        },
+        {
+          "display": "Sijang-eseo gwail-eul sasseoyo.",
+          "script": "시장에서 과일을 샀어요.",
+          "cue": "I bought fruit at the market.",
+          "changed": "-eseo, because buying happens there"
+        }
+      ],
+      "mistake": {
+        "display": "Sijang-e gasseoseo gwail-eul sasseoyo.",
+        "script": "시장에 갔어서 과일을 샀어요.",
+        "why": "-aseo takes no tense: Sijang-e gaseo gwail-eul sasseoyo."
+      },
+      "usage": "The middle of an account, where one thing leads to another.",
+      "register": "neutral",
+      "mnemonic": "-aseo links. -go only lists."
+    },
+    {
+      "id": "L2-M10-S03",
+      "display": "Chingu-reul mannago yeonghwa-reul bwasseoyo.",
+      "script": "친구를 만나고 영화를 봤어요.",
+      "cue": "I met a friend and we watched a film.",
+      "literal": "friend-object meet-and film-object watched",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bwasseoyo",
+            "script": "봤어요",
+            "cue": "watched · saw",
+            "tag": "free",
+            "forms": [
+              "bwasseoyo",
+              "mannago",
+              "mannaseo",
+              "mannasseoyo",
+              "chingu-reul"
+            ],
+            "note": "M6's bwayo in L1-M5's past. Watching a film and seeing a person are the same verb, and M6's mannada supplies the rest of the account's shapes: mannago, mannaseo, mannasseoyo."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "-go joins two events and says nothing about how they are related. Swap in -aseo and the meeting becomes the reason for the film — a difference English carries with 'and then' rather than with 'and'.",
+      "sound": "CHIN-gu-reul man-NA-go YEONG-hwa-reul BWA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-reul mannaseo yeonghwa-reul bwasseoyo.",
+          "script": "친구를 만나서 영화를 봤어요.",
+          "cue": "I met a friend and then we watched a film.",
+          "changed": "-aseo, so the meeting leads into the film"
+        },
+        {
+          "display": "Yeonghwa-reul bwasseoyo.",
+          "script": "영화를 봤어요.",
+          "cue": "I watched a film.",
+          "changed": "the second event on its own"
+        },
+        {
+          "display": "Chingu-reul mannago bap-eul meogeosseoyo.",
+          "script": "친구를 만나고 밥을 먹었어요.",
+          "cue": "I met a friend and we ate.",
+          "changed": "eating instead"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-reul mannasseogo yeonghwa-reul bwasseoyo.",
+        "script": "친구를 만났어고 영화를 봤어요.",
+        "why": "-go takes no tense either: Chingu-reul mannago yeonghwa-reul bwasseoyo."
+      },
+      "usage": "Telling somebody how an evening went.",
+      "register": "neutral",
+      "mnemonic": "Only the last verb carries the tense."
+    },
+    {
+      "id": "L2-M10-S04",
+      "display": "Machimnae jip-e wasseoyo.",
+      "script": "마침내 집에 왔어요.",
+      "cue": "In the end I got home.",
+      "literal": "finally house-to came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "machimnae",
+            "script": "마침내",
+            "cue": "finally · in the end",
+            "tag": "free",
+            "forms": [
+              "machimnae"
+            ],
+            "note": "The closer of an account, and it carries a small sense of at last — which is why it is not simply the fourth geu daeum-e."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "wasseoyo is 'came' and gasseoyo is 'went', and Korean picks by where the SPEAKER is now. Telling the story at home, you came home; telling it elsewhere, you went.",
+      "sound": "ma-CHIM-nae JI-be WA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Machimnae jip-e gasseoyo.",
+          "script": "마침내 집에 갔어요.",
+          "cue": "In the end I went home.",
+          "changed": "told from somewhere other than home"
+        },
+        {
+          "display": "Machimnae chingu-reul mannasseoyo.",
+          "script": "마침내 친구를 만났어요.",
+          "cue": "In the end I met my friend.",
+          "changed": "a different last step"
+        },
+        {
+          "display": "Jip-e wasseoyo.",
+          "script": "집에 왔어요.",
+          "cue": "I got home.",
+          "changed": "without the closer"
+        }
+      ],
+      "mistake": {
+        "display": "Machimnae jip-eseo wasseoyo.",
+        "script": "마침내 집에서 왔어요.",
+        "why": "A destination takes -e: Machimnae jip-e wasseoyo."
+      },
+      "usage": "Closing an account — the last thing that happened.",
+      "register": "neutral",
+      "mnemonic": "Come or go, decided by where you are standing."
+    },
+    {
+      "id": "L2-M10-S05",
+      "display": "Eoje bappaseo mot gasseoyo.",
+      "script": "어제 바빠서 못 갔어요.",
+      "cue": "I was busy yesterday, so I couldn't go.",
+      "literal": "yesterday being-busy cannot went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gasseoyo",
+            "script": "갔어요",
+            "cue": "went",
+            "tag": "free",
+            "forms": [
+              "gasseoyo"
+            ],
+            "note": "L1-M6's gada in L1-M5's past. It also carries a RESULT reading — gasseoyo can mean 'has gone', and so is not here."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Here -aseo is L1-M9's 'because' and not the narrative 'and then'. Both readings are the same ending, and only the sentence tells you which — a reason clause always comes FIRST, exactly as L1-M9 said.",
+      "sound": "EO-je bap-PA-seo mot GA-sseo-yo. The pp is tense.",
+      "variations": [
+        {
+          "display": "Bappaseo mot gasseoyo.",
+          "script": "바빠서 못 갔어요.",
+          "cue": "I was busy, so I couldn't go.",
+          "changed": "without the day"
+        },
+        {
+          "display": "Eoje an gasseoyo.",
+          "script": "어제 안 갔어요.",
+          "cue": "I didn't go yesterday.",
+          "changed": "M8's an — a choice rather than an obstacle"
+        },
+        {
+          "display": "Pigonhaeseo jip-e gasseoyo.",
+          "script": "피곤해서 집에 갔어요.",
+          "cue": "I was tired, so I went home.",
+          "changed": "L1-M9's tired, in the same because-frame"
+        }
+      ],
+      "mistake": {
+        "display": "Mot gasseoyo bappaseo.",
+        "script": "못 갔어요 바빠서.",
+        "why": "The reason comes first: Eoje bappaseo mot gasseoyo."
+      },
+      "usage": "Apologising afterwards for not turning up.",
+      "register": "neutral",
+      "mnemonic": "The reason always comes first."
+    },
+    {
+      "id": "L2-M10-S06",
+      "display": "Jigeum jip-e gasseoyo.",
+      "script": "지금 집에 갔어요.",
+      "cue": "He's gone home.",
+      "literal": "now house-to went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wasseoyo",
+            "script": "왔어요",
+            "cue": "came · has come",
+            "tag": "free",
+            "forms": [
+              "wasseoyo"
+            ],
+            "note": "The past of oda, which M3 already met. Like gasseoyo it carries a result: wasseoyo can mean 'has arrived, and is here'."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "THIS IS THE RESULT READING. gasseoyo with jigeum does not mean he went just now — it means he has gone, and so is not here. Korean's one past covers what English splits between two tenses.",
+      "sound": "JI-geum JI-be GA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Jigeum wasseoyo.",
+          "script": "지금 왔어요.",
+          "cue": "He's just arrived.",
+          "changed": "coming, with the same result reading"
+        },
+        {
+          "display": "Eoje jip-e gasseoyo.",
+          "script": "어제 집에 갔어요.",
+          "cue": "He went home yesterday.",
+          "changed": "with a past time word, so the plain past reading"
+        },
+        {
+          "display": "Kim seonsaengnim-i jip-e gasseoyo.",
+          "script": "김 선생님이 집에 갔어요.",
+          "cue": "Mr Kim has gone home.",
+          "changed": "M7's Mr Kim named"
+        }
+      ],
+      "mistake": {
+        "display": "Jigeum jip-e gago isseoyo.",
+        "script": "지금 집에 가고 있어요.",
+        "why": "The result is the past: Jigeum jip-e gasseoyo. The progressive would mean he is on his way."
+      },
+      "usage": "Said on the phone, when the person wanted has left.",
+      "register": "neutral",
+      "mnemonic": "One past, two English tenses."
+    },
+    {
+      "id": "L2-M10-S07",
+      "display": "Meonjeo yak-eul meokgo jasseoyo.",
+      "script": "먼저 약을 먹고 잤어요.",
+      "cue": "First I took my medicine, then I slept.",
+      "literal": "first medicine-object eat-and slept",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meokgo",
+            "script": "먹고",
+            "cue": "ate, and",
+            "tag": "free",
+            "forms": [
+              "meokgo"
+            ],
+            "note": "L1-M3's linking -go, joining two events in order and carrying no tense. The last verb does all the tense work."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Two verbs, one tense, and no subject anywhere. That is what a Korean account looks like, and a learner who adds jeo-neun to each half has doubled the length and lost the register.",
+      "sound": "MEON-jeo YA-geul MEOK-go JA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Yak-eul meokgo jasseoyo.",
+          "script": "약을 먹고 잤어요.",
+          "cue": "I took my medicine and slept.",
+          "changed": "without the sequencer"
+        },
+        {
+          "display": "Meonjeo yak-eul meogeosseoyo.",
+          "script": "먼저 약을 먹었어요.",
+          "cue": "First I took my medicine.",
+          "changed": "one step only"
+        },
+        {
+          "display": "Bap-eul meokgo yak-eul meogeosseoyo.",
+          "script": "밥을 먹고 약을 먹었어요.",
+          "cue": "I ate and then took my medicine.",
+          "changed": "the same verb twice, which Korean does not mind"
+        }
+      ],
+      "mistake": {
+        "display": "Meonjeo yak-eul meogeosseogo jasseoyo.",
+        "script": "먼저 약을 먹었어고 잤어요.",
+        "why": "-go takes no tense: Meonjeo yak-eul meokgo jasseoyo."
+      },
+      "usage": "Telling a doctor what you did.",
+      "register": "neutral",
+      "mnemonic": "Two verbs, one tense, no subject."
+    },
+    {
+      "id": "L2-M10-S08",
+      "display": "Sijang-eseo gwail-eul sasseoyo. Jom bissasseoyo.",
+      "script": "시장에서 과일을 샀어요. 좀 비쌌어요.",
+      "cue": "I bought fruit at the market. It was a bit expensive.",
+      "literal": "market-at fruit-object bought. a-little was-expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bissasseoyo",
+            "script": "비쌌어요",
+            "cue": "was expensive",
+            "tag": "free",
+            "forms": [
+              "bissasseoyo",
+              "ssasseoyo"
+            ],
+            "note": "M3's bissayo in the past — a descriptive verb takes -eoss- exactly as an action verb does, which is one system where English has two."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "jom is M1's softener doing narrative work: 'a bit expensive' is a complaint made gently, and dropping it makes the sentence flatly critical of whoever sold you the fruit.",
+      "sound": "SI-jang-e-seo GWA-i-reul SA-sseo-yo. jom bi-SSA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Sijang-eseo gwail-eul sasseoyo. Ssasseoyo.",
+          "script": "시장에서 과일을 샀어요. 쌌어요.",
+          "cue": "I bought fruit at the market. It was cheap.",
+          "changed": "the other verdict"
+        },
+        {
+          "display": "Jom bissasseoyo.",
+          "script": "좀 비쌌어요.",
+          "cue": "It was a bit expensive.",
+          "changed": "the second half alone"
+        },
+        {
+          "display": "Sijang-eseo sagwa-reul sasseoyo.",
+          "script": "시장에서 사과를 샀어요.",
+          "cue": "I bought apples at the market.",
+          "changed": "L1-M8's apples"
+        }
+      ],
+      "mistake": {
+        "display": "Sijang-e gwail-eul sasseoyo.",
+        "script": "시장에 과일을 샀어요.",
+        "why": "Buying happens somewhere: Sijang-eseo gwail-eul sasseoyo."
+      },
+      "usage": "An account of an errand, with a verdict on it.",
+      "register": "neutral",
+      "mnemonic": "Describing verbs take the past too."
+    },
+    {
+      "id": "L2-M10-S09",
+      "display": "Chingu-ga wasseoyo. Geurigo gachi bap-eul meogeosseoyo.",
+      "script": "친구가 왔어요. 그리고 같이 밥을 먹었어요.",
+      "cue": "A friend came. And we ate together.",
+      "literal": "friend-subject came. and together rice-object ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gachi",
+            "script": "같이",
+            "cue": "together",
+            "tag": "free",
+            "forms": [
+              "gachi"
+            ],
+            "note": "M6's invitation word doing plain adverb work. Nothing in the second sentence says who 'we' are — the friend in the first sentence is still in force."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The second sentence has no subject at all, and it means 'we' — the friend from the first sentence plus the speaker. Korean carries that across a full stop, which English cannot do without a pronoun.",
+      "sound": "CHIN-gu-ga WA-sseo-yo. GEU-ri-go GA-chi BA-beul meo-GEO-sseo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga wasseoyo.",
+          "script": "친구가 왔어요.",
+          "cue": "A friend came.",
+          "changed": "the first half alone"
+        },
+        {
+          "display": "Gachi bap-eul meogeosseoyo.",
+          "script": "같이 밥을 먹었어요.",
+          "cue": "We ate together.",
+          "changed": "the second half, still with no subject"
+        },
+        {
+          "display": "Chingu-ga wasseoyo. Hajiman gachi mot meogeosseoyo.",
+          "script": "친구가 왔어요. 하지만 같이 못 먹었어요.",
+          "cue": "A friend came. But we couldn't eat together.",
+          "changed": "L1-M10's hajiman and M8's mot"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga wasseoyo. Geurigo uri-ga gachi bap-eul meogeosseoyo.",
+        "script": "친구가 왔어요. 그리고 우리가 같이 밥을 먹었어요.",
+        "why": "The subject is already understood: Geurigo gachi bap-eul meogeosseoyo."
+      },
+      "usage": "Telling somebody about an evening, briefly.",
+      "register": "neutral",
+      "mnemonic": "The subject carries across the full stop."
+    },
+    {
+      "id": "L2-M10-S10",
+      "display": "Meonjeo sijang-e gaseo gwail-eul sasseoyo. Machimnae jip-e wasseoyo.",
+      "script": "먼저 시장에 가서 과일을 샀어요. 마침내 집에 왔어요.",
+      "cue": "First I went to the market and bought fruit. In the end I got home.",
+      "literal": "first market-to went-and-then fruit-object bought. finally house-to came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gwail-eul",
+            "script": "과일을",
+            "cue": "fruit (as object)",
+            "tag": "free",
+            "forms": [
+              "gwail-eul"
+            ],
+            "note": "M9's gwail with the object particle. In an account the objects are named and the SUBJECT never is, which is the shape the whole module is for."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "Two sentences, three verbs, and not one word saying who. That is a complete Korean account, and it is what the module has been building to — the tense was never the difficulty.",
+      "sound": "MEON-jeo SI-jang-e GA-seo GWA-i-reul SA-sseo-yo. ma-CHIM-nae JI-be WA-sseo-yo.",
+      "variations": [
+        {
+          "display": "Meonjeo sijang-e gaseo gwail-eul sasseoyo.",
+          "script": "먼저 시장에 가서 과일을 샀어요.",
+          "cue": "First I went to the market and bought fruit.",
+          "changed": "the first half alone"
+        },
+        {
+          "display": "Machimnae jip-e wasseoyo.",
+          "script": "마침내 집에 왔어요.",
+          "cue": "In the end I got home.",
+          "changed": "the close alone"
+        },
+        {
+          "display": "Meonjeo sijang-e gasseoyo. Geu daeum-e jip-e wasseoyo.",
+          "script": "먼저 시장에 갔어요. 그 다음에 집에 왔어요.",
+          "cue": "First I went to the market. Then I got home.",
+          "changed": "two plain steps instead of a linked one"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun meonjeo sijang-e gaseo jeo-neun gwail-eul sasseoyo.",
+        "script": "저는 먼저 시장에 가서 저는 과일을 샀어요.",
+        "why": "An account names the speaker once at most: Meonjeo sijang-e gaseo gwail-eul sasseoyo."
+      },
+      "usage": "A whole small story, told the way Korean tells one.",
+      "register": "neutral",
+      "mnemonic": "Three verbs. No subject. That is the lesson."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M10-C01",
+      "display": "Meonjeo ilhaesseoyo.",
+      "script": "먼저 일했어요.",
+      "cue": "First I worked."
+    },
+    {
+      "id": "L2-M10-C02",
+      "display": "Geu daeum-e jip-e gasseoyo.",
+      "script": "그 다음에 집에 갔어요.",
+      "cue": "Then I went home."
+    },
+    {
+      "id": "L2-M10-C03",
+      "display": "Sijang-e gaseo gwail-eul sasseoyo.",
+      "script": "시장에 가서 과일을 샀어요.",
+      "cue": "I went to the market and bought fruit."
+    },
+    {
+      "id": "L2-M10-C04",
+      "display": "Chingu-reul mannago yeonghwa-reul bwasseoyo.",
+      "script": "친구를 만나고 영화를 봤어요.",
+      "cue": "I met a friend and we watched a film."
+    },
+    {
+      "id": "L2-M10-C05",
+      "display": "Machimnae jip-e wasseoyo.",
+      "script": "마침내 집에 왔어요.",
+      "cue": "In the end I got home."
+    },
+    {
+      "id": "L2-M10-C06",
+      "display": "Eoje bappaseo mot gasseoyo.",
+      "script": "어제 바빠서 못 갔어요.",
+      "cue": "I was busy yesterday, so I couldn't go."
+    },
+    {
+      "id": "L2-M10-C07",
+      "display": "Jigeum jip-e gasseoyo.",
+      "script": "지금 집에 갔어요.",
+      "cue": "He's gone home."
+    },
+    {
+      "id": "L2-M10-C08",
+      "display": "Meonjeo yak-eul meokgo jasseoyo.",
+      "script": "먼저 약을 먹고 잤어요.",
+      "cue": "First I took my medicine, then I slept."
+    },
+    {
+      "id": "L2-M10-C09",
+      "display": "Sijang-eseo gwail-eul sasseoyo. Jom bissasseoyo.",
+      "script": "시장에서 과일을 샀어요. 좀 비쌌어요.",
+      "cue": "I bought fruit at the market. It was a bit expensive."
+    },
+    {
+      "id": "L2-M10-C10",
+      "display": "Chingu-ga wasseoyo. Geurigo gachi bap-eul meogeosseoyo.",
+      "script": "친구가 왔어요. 그리고 같이 밥을 먹었어요.",
+      "cue": "A friend came. And we ate together."
+    },
+    {
+      "id": "L2-M10-C11",
+      "display": "Pigonhaeseo jip-e gasseoyo.",
+      "script": "피곤해서 집에 갔어요.",
+      "cue": "I was tired, so I went home."
+    },
+    {
+      "id": "L2-M10-C12",
+      "display": "Machimnae chingu-reul mannasseoyo.",
+      "script": "마침내 친구를 만났어요.",
+      "cue": "In the end I met my friend."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

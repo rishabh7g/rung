@@ -244,3 +244,153 @@ surfaces no module has yet earned.
     `aniyo` really does not end an offer, and that `bae bulleoyo` is the reason that lands.
 27. **Two hands** (M5-S10). Confirm the etiquette as described, including whether it applies to
     receiving anything or only to drink.
+
+## Wave 3 — L2-M6 … L2-M10 (#460)
+
+The level closes, and with it the milestone: `npm run build` emits `en-ko: 20 modules (L1-M1..M10,
+L2-M1..M10)`, and **all nine courses now have a complete second level**.
+
+### L2-M6 "Making plans together" — where M5's number rule pays for itself
+
+`-(eu)llae-yo` is the invitation ending L1 named as deferred, and plans are what it is for. `gachi
+bap meogeullae-yo?` is the everyday Korean invitation, and it differs from a plain question exactly
+as English "shall we" differs from "will you" — it asks the listener's WISH rather than a fact.
+
+The clock is the module's real prize. **The hour is a native number with `-si`; the minutes are a
+Sino number with `-bun`.** `du si samsip bun` uses both systems in four syllables, and there is no
+rule beyond the one M5 already stated — which is the point of putting them side by side.
+
+The days are a closed set on one root: `woryoil`, `hwayoil`, `suyoil`, `mogyoil`, `geumyoil`,
+`toyoil`, `iryoil`. Seven words cost about two, and the week is the old planets in order.
+
+**Register: this module moves the OPPOSITE way from the other eight courses.** Every other L2 chips
+`informal` when friends make plans; en-ko has no informal tier to switch into, because banmal is not
+written in this course at all. So it stays `neutral` throughout and the friendliness is carried by
+the ending and by `gachi`. An author reading the other briefs will look for the chip; it is
+deliberately absent, and the rule says so.
+
+### L2-M7 "On the phone" — M1's decision, paid back in one word
+
+`yeoboseyo` is an honorific imperative of a verb meaning "look here". A learner told that remembers
+the word AND the rule; a learner given it as an unanalysable noise learns one word. The call then
+runs on honorifics throughout — `Kim seonsaengnim gyeseyo?`, `an gyeseyo` — so this module is the
+payoff of M1's whole decision, and it is where M2's separate honorific verb earns its keep.
+
+**`-go isseoyo`, the progressive, opens here** and L1 named it as deferred for exactly this moment.
+The delta worth stating: Korean's plain `-yo` present already covers a habitual action, so
+`-go isseoyo` is reserved for what is genuinely in progress — the same restriction en-it puts on its
+gerundio, where en-fr and en-de have no progressive at all.
+
+`jamsiman-yo` earns its own line: it is a NOUN with `-yo` stuck on. **`-yo` politens a fragment, not
+only a verb**, which is how Korean is polite in two syllables where English needs a clause.
+
+`-l-geyo` is a PROMISE and `-l geoyeyo` is only a plan, and the difference is first-person: you
+cannot promise on somebody else's behalf, and Korean grammar refuses to let you.
+
+### L2-M8 "When something goes wrong" — `an` against `mot`
+
+The law in one line: **`an` is "do not" or "will not"; `mot` is "cannot".** `mot gayo` means
+something is stopping me and `an gayo` means I am choosing not to, and English's single "can't"
+hides the difference. A problem report is the only place in the ladder where both are needed in the
+same breath.
+
+Pain and malfunction both use M2's double subject — `meori-ga apayo`, `i-geo-ga an dwaeyo` — so the
+module opens no new class: it APPLIES one for the third time. A learner who sees a structure three
+times learns the structure; a learner given three idioms learns three idioms.
+
+Complaining calmly, and **Korean's answer is the honorific rather than the hedge**: the softening is
+`jom`, `joesonghajiman`, and keeping the honorific on the person you are complaining to. Raising
+your voice with a stranger is a heavier breach in Korean than in English, and the repair is the
+ending, not the volume.
+
+### L2-M9 "Comparing and choosing" — the word order is the delta
+
+`-boda` attaches to the thing compared AGAINST, and that phrase comes in the middle, before the
+predicate: `i-geo-ga geugeo-boda bissayo`. English puts the standard last; Korean puts it where a
+verb-final language puts everything.
+
+**Nothing declines and nothing agrees.** A comparative is the plain descriptive verb with a particle
+somewhere else in the sentence, which is the relief this course keeps offering and keeps naming.
+
+And the module that finally explains M3: **the topic particle marks CONTRAST, and a comparison is
+contrast.** `i-geo-neun bissayo, geugeo-neun ssayo`. M3 taught the law; here a learner sees what it
+was for.
+
+Stating a preference is `deo joahaeyo` — "like more" — because **there is no Korean verb for
+"prefer"**. That is the mirror image of German's `lieber`, where an adverb carries what English gives
+to a verb, and the review names it as such.
+
+### L2-M10 "Telling what happened" — and the lesson is not a tense
+
+Four other courses in this repo spend their whole M10 on a perfect/imperfect split. **Korean has
+none**: `-eoss-` covers everything English divides between the past simple and the present perfect,
+and it also carries a RESULT reading — `gasseoyo` can mean "has gone, and so is not here". That is
+one sentence's worth.
+
+What replaces the aspect lesson is the real one: **Korean drops every subject once the topic is
+set**, far more thoroughly than Spanish drops a pronoun. A four-sentence account names the speaker
+once, in the first clause, and then says nothing about who is doing anything for three more
+sentences. S10 is two sentences, three verbs, and not one word saying who. A learner who repeats
+`jeo-neun` four times has written something that reads as insistent or as a list of unrelated facts,
+and the mistake plates show exactly that.
+
+`-aseo/-eoseo` does a second job here — L1-M9's "because" is also the narrative "and then" — with
+`-go` beside it joining two events and claiming no link at all. S02 and S03 are the minimal pair the
+brief asked for.
+
+### The ratchet, and the run
+
+`tools/shown-surfaces.test.ts` held at **en-ko 12** across all ten modules of the level — the
+baseline it opened with. Across the three waves roughly a hundred findings were fixed in content and
+none by raising a number: particle shapes added to the row that owns their host, pairs put on one
+row where the briefs ask for them anyway, and variations rewritten off surfaces no module had yet
+earned.
+
+### The milestone closes
+
+Nine courses, nine complete second levels. The `-mnida` set stands at four frozen phrases and will
+not grow; the demonstrative is written joined everywhere; and the particle hyphen has held the
+invariant it was chosen for — the bare host of every particle-marked noun still has an index key of
+its own.
+
+### Open questions for the native pass
+
+28. **`-(eu)llae-yo`** (M6-S01). Confirm `gachi bap meogeullae-yo?` is the ordinary invitation, and
+    that it is safe with somebody you address with `-yo` but do not know well.
+29. **`halb`-style clock forms** (M6-S04). Confirm `du si samsip bun` is how a time is said, and that
+    nobody mixes the systems in ordinary speech.
+30. **The register decision** (M6, rule 3). Confirm that among friends of similar age, `-yo` with
+    `-(eu)llae-yo` reads as friendly rather than distant — this is the module where the course's ban
+    on banmal is most exposed.
+31. **`yaksok isseoyo`** (M6-S07). Confirm it declines an invitation completely, and that nobody asks
+    what the arrangement is.
+32. **`yeoboseyo`** (M7-S01). Confirm the "look here" etymology is right, and that the word is
+    genuinely restricted to the telephone.
+33. **`-go isseoyo`** (M7, rule 1). Confirm it is reserved for what is in progress, and that
+    `bap meogeoyo` alone is what a speaker says for a habit.
+34. **`jamsiman-yo`** (M7-S05). Confirm the bare `jamsiman` really is impolite rather than merely
+    brisk.
+35. **`eotteoke dwaeyo`** (M7-S06). Confirm it is softer than `mwoyeyo` for asking a name or a
+    number, and that it is what a stranger uses.
+36. **`-l-geyo` against `-l geoyeyo`** (M7-S08). Confirm the promise/plan split, and that `-l-geyo`
+    is genuinely first-person only.
+37. **`an` against `mot`** (M8, rule 0). The wave's most load-bearing claim. Confirm the split as
+    stated, and that a listener really does hear which one was used.
+38. **`ireobeoryeosseoyo`** (M8-S04). Confirm `-beorida` adds the regret the note claims, and that
+    leaving it out sounds oddly unbothered.
+39. **Eating medicine** (M8-S06). Confirm `yak-eul meokda` is the only ordinary way to say it.
+40. **`joesonghajiman`** (M8-S07). Confirm it opens a complaint, and that the plain
+    `i-geo-ga gojang-ieyo` after it is not rude.
+41. **`-boda` word order** (M9, rule 0). Confirm the standard always precedes the predicate, with no
+    common alternative order.
+42. **`gajang` against `jeil`** (M9-S03, S04). Confirm they are interchangeable and that `jeil` is
+    the more colloquial.
+43. **`deol`** (M9-S02). Confirm Korean really does prefer to say the other thing is `deo`, and that
+    `deol` is comparatively rare.
+44. **`sae`** (M9-S10). Confirm it is modifier-only, and that `saeyo` does not exist.
+45. **Zero anaphora** (M10, rule 0). The lesson the whole module is built on. Confirm a four-sentence
+    account names the speaker once at most, and that repeating `jeo-neun` reads as insistent.
+46. **`-aseo` as "and then"** (M10-S02, S03). Confirm the narrative reading beside the causal one,
+    and that the `-go` contrast is as flat as the module says.
+47. **The result reading** (M10-S06). Confirm `jigeum jip-e gasseoyo` means "has gone", and that a
+    listener does not hear it as "went just now".
