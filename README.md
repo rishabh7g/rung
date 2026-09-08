@@ -190,19 +190,24 @@ modules, 249 new surfaces, and the en-es baseline still at 10 — every variatio
 an untaught word was rewritten rather than baselined, and most of them were reaching for another
 cell of a verb the module already taught.
 
-**en-ar starts its second level (#436, 2026-09-08).** `L2-M1` _Asking politely_ and `L2-M2`
-_Describing people_ are authored against the briefs of #427
+**en-ar starts its second level (#436, #445, 2026-09-08).** `L2-M1` _Asking politely_ through
+`L2-M5` _Food and hosting_ are authored against the briefs of #427
 (`docs/54-en-ar-L2-brief-decisions.md`) and carry `verified: true` on the standing authority,
 backed by `docs/62-llm-review-en-ar-L2.md`; a strict `npm run build` emits
-`en-ar: 12 modules (L1-M1..M10, L2-M1..M2)`. M1 makes the imperative productive (`tashrab` →
+`en-ar: 15 modules (L1-M1..M10, L2-M1..M5)`. M1 makes the imperative productive (`tashrab` →
 `ishrab`, `taʾkul` → `kul`) and buys politeness with words rather than with a verb form Arabic does
 not have; M2 opens `huwa`/`hiya`, which L1 never needed because a verb prefix carried the person,
 and gives `ʿind-` its rule — a PREPOSITION meaning "at", which is why it takes suffixes rather than
 conjugating. **Authoring found something the briefs did not**: `samaḥta` and `samaḥti` are one
 spelling in unvowelled Arabic and two in the romanization, so this course's two lines carry
 different amounts of information — the romanized line names the addressee and the quiet line does
-not. That is now a rule of the module, and no other course in this repo can teach it. **The native
-gate is still unmet**: docs/62 ends in open questions 1–7, a fresh en-ar L2 chain.
+not. That is now a rule of the module, and no other course in this repo can teach it. M3 states the three agreement laws and gives each its own
+sentence — including one that separates the shape of a plural from the humanity of its noun, which
+is what makes the law usable rather than merely odd — and M4 finally explains the `bi-` the learner
+has been saying inside `bi-khayr` since L1-M2. A second finding is recorded in docs/62 as a
+discipline rather than a rule: **an `al-`'d form is its own index key**, so every en-ar word row
+lists both shapes, and the ratchet caught seven surfaces in one module before it became a habit.
+**The native gate is still unmet**: docs/62 ends in open questions 1–13, a fresh en-ar L2 chain.
 
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by

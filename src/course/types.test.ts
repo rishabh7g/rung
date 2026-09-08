@@ -193,7 +193,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 122 — nine L1 ladders, hi-mr L2 and L3, en-es L2, and the first en-ar L2 pair (#436)', () => {
+  it('finds all 125 — nine L1 ladders, hi-mr L2 and L3, en-es L2, and en-ar L2-M1..M5 (#445)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -207,6 +207,9 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L1-M9.json',
       'content/en-ar/modules/L2-M1.json',
       'content/en-ar/modules/L2-M2.json',
+      'content/en-ar/modules/L2-M3.json',
+      'content/en-ar/modules/L2-M4.json',
+      'content/en-ar/modules/L2-M5.json',
       // en-de was authored a rung at a time — #362 M1-M2, #363 M3-M5, #364 M6-M10 — and this
       // list saw it half-written twice on the way. It is whole now: eight courses, ten rungs
       // each, and the eighth still behind `fixture: true` until #365.
@@ -371,7 +374,7 @@ describe('ModuleContent against the modules that exist', () => {
   it('keeps the romanized course readable: display is the romanization, script the native line', () => {
     const romanized = MODULE_FILES.filter(([name]) => name.includes('en-ar'));
 
-    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(12);
+    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(15);
     for (const [file, json] of romanized) {
       const module = parseModule(json, file);
 

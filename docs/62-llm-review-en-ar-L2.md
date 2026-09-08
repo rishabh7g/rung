@@ -63,7 +63,63 @@ not a variation problem at all but a word row whose `display` was the bare `sinn
 showed the assimilated form. Every one was fixed in content. The en-ar baseline stays at 6, and
 `sayyārat` — one of the six — is re-shown in an M2 variation without being added to.
 
+## Wave 2 — L2-M3, L2-M4, L2-M5 (#445)
+
+### L2-M3 "Describing things"
+
+The three agreement laws `docs/54` demanded are all here, and S04 and S09 are the two sentences
+that make them usable rather than merely odd. S02 gives the non-human plural (`al-kutub jamīla`,
+feminine singular); S04 gives the human plural (`al-mudarrisūn mashghūlūn`); S09 gives a BROKEN
+plural that is nonetheless human (`al-awlād laṭīfūn`), which is the sentence that separates the
+two questions properly — the shape of the plural and the humanity of the noun are not the same
+question, and a learner who has only seen S02 and S04 will think they are.
+
+S03's second variation is worth pausing on: `as-sayyāra kabīra` and `as-sayyārāt kabīra` take the
+SAME adjective. That is the law paying the learner back rather than costing them.
+
+The definiteness rule (S01) is taught as what it is — one `al-` turning a phrase into a sentence —
+and the mistake block is the phrase, not an ungrammatical string, because the error a learner
+makes here produces something correct that means something else.
+
+### L2-M4 "Getting around"
+
+`bi-` finally gets its rule (S06), and it is the payoff of a decision L1 made three levels ago:
+the learner has been saying it inside `bi-khayr` since M2 and `bi-kam` since M8 without being told
+what it means. The elision rule is stated in the same sentence — `bi-al-ḥāfila` written, `bil-`
+said — because the two lines disagree here in exactly the way M1's rule 5 described.
+
+The dialect line is spent (S04's `al-ḥāfila` note names `al-bāṣ` and no sentence writes it), which
+uses one of the three `docs/54` allows for the whole level.
+
+### L2-M5 "Food and hosting"
+
+`tafaḍḍal` gets its own sentence and its own note, because five English acts in one word is not a
+vocabulary item. The hosting law is stated as a fact about how a refusal WORKS rather than as
+etiquette: a single `lā shukran` is heard as politeness, so the refusal that lands adds a reason.
+
+S03 and S08 are an authored pair the module needs: `hal turīd samak?` (a kind, no article) against
+`hal turīdīn al-ḥulw?` (the one on the table, with it). They look identical otherwise, and the
+article is the whole difference.
+
+`alḥamdu lillāh` (S09) is taught with its everyday uses first and its religious reading not at
+all, which is the honest description: it answers `kayfa ḥāluka`, ends a meal and marks any small
+relief.
+
+### The al-'d surface — a systematic finding, recorded because it will recur
+
+The ratchet caught seven surfaces in M3 alone, and they were all the same thing: **an `al-`'d form
+is its own index key**, so a word row whose `display` is the bare noun does not teach the definite
+one the sentence actually shows. `al-buyūt`, `al-aḥmar`, `al-mudarris`, `al-lawn`, `bi-al-qiṭār`
+and `bi-al-ḥāfila` all failed this way, and `as-sayyārāt` and `al-bāb` needed rows of their own —
+new SHAPES of L1 lexemes, deconstructed here per the level's forms policy.
+
+The fix is mechanical and belongs in the authoring habit rather than in a rule: **every en-ar word
+row lists both shapes in `forms`**, and a row for an `al-`'d form of an L1 word is opened in the L2
+module that first shows it. L1 set the pattern (`al-qahwa` with `qahwa` in its `forms`) and this
+wave is where the pattern had to become a discipline. No baseline moved; en-ar stays at 6.
+
 ### Open questions for the native pass
+
 
 1. **`law samaḥta` against `min faḍlika`.** The module treats them as interchangeable softeners
    with `law samaḥta` fronting a request and `min faḍlika` closing one. Confirm that division
@@ -82,3 +138,17 @@ showed the assimilated form. Every one was fixed in content. The en-ar baseline 
 7. **The two lines disagreeing** (M1 rule 5). The module teaches that the romanization carries the
    addressee's gender and the Arabic does not. Confirm that is the right thing to tell a learner
    this early, rather than a fact to leave until they read unvowelled text for themselves.
+8. **`al-awlād` for a mixed group** (M3-S09). Authored as covering children of either kind, with
+   the masculine plural adjective. Confirm that is neutral rather than reading as "the boys".
+9. **`ʿalā al-yamīn` for turning** (M4-S03). The module gives the sides as nouns needing `ʿalā`.
+   Confirm a direction-giver would not more naturally say `ʿalā yamīnika`.
+10. **`bi-al-ḥāfila` written unelided** (M4-S06). The course's rule, applied. Confirm it does not
+    look wrong to a reader who has only ever seen `bil-ḥāfila`.
+11. **`al-mazīd min ash-shāy`** (M5-S10). The `usage` already admits this is the correct MSA and
+    not what a host says. A native pass should give the shorter form for the record, even though
+    the course will not write it.
+12. **`hādhā aṭ-ṭabaq laṭīf`** (M5-S07). `laṭīf` is used of a dish. Confirm it is idiomatic of
+    food rather than of people and weather alone.
+13. **`alḥamdu lillāh` as the default answer** (M5-S09). Authored as the commonest reply to
+    `kayfa ḥāluka`. Confirm it has not been displaced by `bi-khayr` in everyday speech, which is
+    what L1-M2 teaches.
