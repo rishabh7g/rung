@@ -971,11 +971,14 @@ quoting because a later wave will want to know they were tested rather than assu
   list was checked cell by cell with `content:owner` before it was written.
 - **`tools/shown-surfaces.test.ts`: 11/11, en-ru held at 20.** Neither raised nor lowered. The
   twenty are older findings and are not this wave's to move.
-- **`npm run content:validate`: `CONTENT 445/445 ok`** — every module file in `content/`, these five
+- **`npm run content:validate`: `CONTENT 448/448 ok`** — every module file in `content/`, these five
   included. The denominator moved during the wave as sibling waves landed in the same checkout;
   what matters is that it equals the numerator.
-- **`src/course/types.test.ts`: 465 of 466.** The one red case is the module census
-  (`finds all 444 …`), which is the parent's to update and is red because these five files exist.
+- **`src/course/types.test.ts`: every en-ru assertion green.** Two cases were red on the final
+  run and neither is en-ru's: the module census (`finds all 448 …`), which is the parent's to update
+  and is red precisely because these five files exist, and hi-en's lane case (#270), which was a
+  sibling wave's file mid-flight. On the run before it, with hi-en momentarily settled, the file was
+  465 of 466 with only the census red.
   Every other assertion passes, including the en-ru lane case (#353): `display` Latin, `script`
   Cyrillic, not one Cyrillic character in a romanized or English field, every acute precomposed and
   NFC, and every sentence carrying `literal`, `sound`, `usage`, `mnemonic` and a `mistake` with its

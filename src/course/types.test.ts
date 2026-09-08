@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 448 — nine L1-L4 ladders, and L5 closing course by course (#581, #590-#597)', () => {
+  it('finds all 449 — eight complete five-level ladders, and en-ar one rung short (#581, #590-#597)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -580,6 +580,7 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-en/modules/L4-M8.json',
       'content/hi-en/modules/L4-M9.json',
       'content/hi-en/modules/L5-M1.json',
+      'content/hi-en/modules/L5-M10.json',
       'content/hi-en/modules/L5-M2.json',
       'content/hi-en/modules/L5-M3.json',
       'content/hi-en/modules/L5-M4.json',
@@ -828,7 +829,7 @@ describe('ModuleContent against the modules that exist', () => {
       'the hi-en modules this rule is written for (#270-#272 L1; #437, #446, #455 L2; #473, #482,' +
         ' #548 L3; #531 L4). The count guards the walk BELOW it, and vitest aborts the case here —' +
         ' so a stale number silently stops every language law in this block from running at all.',
-    ).toBe(49);
+    ).toBe(50);
     for (const [file, json] of hiEn) {
       const module = parseModule(json, file);
 
