@@ -1966,6 +1966,103 @@
  * in M10. Bounds climb 8 → 10 (M1–M3: 8, M4–M7: 9, M8–M10: 10), pools are authored to 12, M1–M3
  * ship fully enriched, and M10's items are four-sentence accounts.
  *
+ * ## en-fr L2: the decisions, taken against the finished L1 (#431)
+ *
+ * Planned against the REAL cumulative L1 index — **175 surfaces through L1-M10, maxSpan 4** (the
+ * widest span in the repo, and it is `à côté de la`), rebuilt and read. Recorded in
+ * `docs/58-en-fr-L2-brief-decisions.md` and repeated in the module notes. The L1 decisions carry
+ * unchanged: elision keeps the apostrophe INSIDE a token (`j'ai`, `c'est`, `l'eau` are single
+ * keys), accents are letters and capitals keep them, questions are intonation and fronted question
+ * words, and every homograph has a named owner.
+ *
+ * ### 1. Register — `tu` enters at M1, as a paradigm, and the switch has a VERB
+ *
+ * L1's decision 1 was explicit: every second-person line is `vous`, `tu` and its forms stay out of
+ * `display` and out of every `forms` list, and M2's notes name `tu` in prose as what a later level
+ * owes the learner. This is that level. M1 opens the whole paradigm — `tu es`, `tu as`, `tu veux`,
+ * `tu peux`, `tu vas`, `tu fais`, `tu te lèves`, `s'il te plaît` — and the law is the one L1
+ * recorded: `vous` is never wrong with a stranger, a shopkeeper, an official or a new colleague;
+ * `tu` is for friends, family, children, and people who have offered it.
+ *
+ * The fact English has no equivalent of, and it belongs in `usage` rather than in a rule: French
+ * has VERBS for this — `tutoyer` and `vouvoyer` — and the switch is asked for out loud (`On peut
+ * se tutoyer?`), the way Russian asks `Davay na ty`. A learner who knows only that `tu` is
+ * "informal" will switch too early. Which module speaks which: M4 (the street), M7 (the phone) and
+ * M8 (staff and strangers) are `vous` throughout; M6's plans are `tu`; M1 shows the pair; M2, M3,
+ * M5 and M9 follow the scene and say which in `usage`. The chip (#422), whose `formal` value L1's
+ * own decision anticipated: `tu` frames chip `informal`, `vous` plus the elaborated request
+ * (`Pourriez-vous…?` is L3's, so here it is `Est-ce que vous pouvez…?` and `je voudrais`) chips
+ * `formal`, and a line safe with either stays `neutral`.
+ *
+ * **`je voudrais` enters at M1**, and only as a frozen cell. L1 kept it out by name — "it is the
+ * conditional of `vouloir`, a whole tense spent on politeness the course already buys with `s'il
+ * vous plaît`" — and the ordering job at M5 needs it. So it arrives as ONE word with a note saying
+ * what tense it belongs to and that the tense itself is **L3-M4's**. Nothing else conditional
+ * appears in L2; `pourriez` and `j'aimerais` are named and not written.
+ *
+ * ### 2. The negated partitive — the rule L1 set up perfectly and could not state
+ *
+ * L1-M3 taught `du`, `de la` and `des` and L1-M3 taught `ne … pas`, and it never put them in the
+ * same sentence. M5 does: **after a negation every partitive collapses to `de`** — `Je ne veux pas
+ * de café`, `Il n'y a pas de pain` — which is one of the few French rules with no exceptions worth
+ * teaching a learner, and which produces `*Je ne veux pas du café` in every English speaker who
+ * has not been told. It is M5's headline and it costs one new key.
+ *
+ * ### 3. Clitics — `me`, `te`, `moi`, `toi` only, because `le`/`la`/`les` are L1-M1's ARTICLES
+ *
+ * The third time this repo takes the same ruling in the same level: en-es on `lo`/`me`/`te`, en-it
+ * on `lo`/`li`/`mi`/`ti`, and now en-fr. `le`, `la` and `les` are L1-M1's articles and first
+ * occurrence wins, so the identically-spelled object pronouns can never be first-taught. M5
+ * teaches the system on `me` and `te` and on the stressed `moi` / `toi` (`Pour moi, un café`), and
+ * names the direct-object series as L3's. `en` and `y` as PRONOUNS are deferred too, and for a
+ * second reason: `en` is M4's preposition (`en bus`, `en France`), so the pronoun would land on a
+ * note about transport.
+ *
+ * The French addition, mirroring en-it's `aiutarmi`: elision fuses a clitic to what follows, so
+ * `m'aider` is ONE key rather than `me` + `aider`. M8 owns it and its note says where the `me`
+ * went.
+ *
+ * ### 4. `ne` is written, and the spoken drop is named in prose
+ *
+ * Real spoken French drops `ne` — `Il est pas là`, `Je sais pas` — and this course writes it, in
+ * every `display`, every `forms` entry and every pool item. The reason is the index rather than
+ * prescription: a course that wrote both would fork `n'est pas` and `est pas` into two surfaces
+ * for one negation, and a learner tapping either would get half the rule. **One `usage` line at
+ * M7 names the drop**, because a phone call is where the learner will first hear it, and no other
+ * module carries one. Same shape as en-ar's dialect rule and hi-en's Indian-English rule; the
+ * three courses should read alike.
+ *
+ * ### 5. What L2 withholds, and what M10 finally teaches
+ *
+ * Out, named where it would be reached for: the **subjunctive** (`il faut que` — M4 ships `il
+ * faut` + infinitive as a frozen impersonal and stops there); the **conditional** as a system
+ * (L3-M4, with `je voudrais` the single frozen exception); the **plus-que-parfait**; **reported
+ * speech**; **object `le`/`la`/`les`, `en` and `y`**; and the **full inversion system** — `est-ce
+ * que` is the everyday question marker this level teaches, and inversion appears only inside the
+ * frozen request frames.
+ *
+ * M10 takes the decision L1 set up: L1-M5 shipped the passé composé with BOTH auxiliaries and with
+ * participle agreement (`je suis allée`, `elle est restée`) and never taught the choice against the
+ * **imparfait**, which opens here. The imparfait paints the standing situation; the passé composé
+ * moves the account one completed step. It is the same law and the same dead slogan as en-es's,
+ * en-ru's and en-it's M10 — "one is for completed actions, the other for ongoing ones" — and the
+ * four courses say it in the same words. The auxiliary law is stated at last: `être` for the
+ * movement and change-of-state verbs and for reflexives, with the participle agreeing with the
+ * SUBJECT; `avoir` for everything else, with no agreement.
+ *
+ * ### Why the en-fr L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim. `tu` as a paradigm and `est-ce que` in M1;
+ * `avoir` for age and features and the possessive that agrees with the THING (`sa voiture` is his
+ * or her car alike) in M2; the four-cell grid, the BAGS adjectives that precede, and their
+ * pre-vowel shapes (`un bel appartement`) in M3; `à` / `en` / `au` for places and `en bus` against
+ * `à pied` for transport in M4, with `il faut` as a frozen impersonal; the negated partitive and
+ * the clitics in M5; `on` as the everyday "we" in M6 — the single most useful thing in the level —
+ * ; `Allô` and the absence of any continuous tense in M7; `avoir mal à` and `m'aider` in M8;
+ * `meilleur` against `mieux` in M9, which is Italian's split rather than Spanish's merge; and the
+ * imparfait in M10. Bounds climb 8 → 10 (M1–M3: 8, M4–M7: 9, M8–M10: 10), pools are authored to
+ * 12, M1–M3 ship fully enriched, and M10's items are four-sentence accounts.
+ *
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -4851,6 +4948,215 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "Language of the fields holds to the last turn: ENGLISH in every teaching field — rules[].text, note, trap, sound, changed, why, usage, mnemonic, cue — French only in display and forms, glossEn on every sentence, and literal wherever a turn's order moves. The register holds too: vous to the end, tu never written.",
       ],
       maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M1': {
+      id: 'L2-M1',
+      title: 'Asking politely',
+      job: 'Requests, thanks, apologies in the right register',
+      patterns: [
+        'Est-ce que vous pouvez + V-inf + ?',
+        'Est-ce que tu peux + V-inf + ?',
+        "Je voudrais + un/une + N + , + s'il vous plaît",
+        'Excusez-moi + , + <request>',
+        'Merci beaucoup — De rien',
+      ],
+      notes: [
+        "REGISTER, decided for the whole level and repeated here because a prompt only ever shows an author the notes (full record: docs/58-en-fr-L2-brief-decisions.md; the L1 decisions carry unchanged — elision keeps the apostrophe inside a token, accents are letters and capitals keep them, every homograph has a named owner). L1's decision 1 was explicit: every second-person line was vous, tu stayed out of display and out of every forms list, and M2's notes named it in prose as what a later level owed. This is that level. The paradigm opens here — tu es, tu as, tu veux, tu peux, tu vas, tu fais, s'il te plaît — and the law is L1's: vous is never wrong with a stranger, a shopkeeper, an official or a new colleague; tu is for friends, family, children and people who have offered it. tu frames chip `informal`, vous plus the elaborated request chips `formal`, a line safe with either stays `neutral`.",
+        'The fact English has nothing like, and it belongs in usage rather than in a rule: French has VERBS for this — tutoyer and vouvoyer — and the switch is asked for out loud (On peut se tutoyer?), the way Russian asks Davay na ty. A learner who knows only that tu is "informal" switches too early. Note also the shape that makes tu easy: for most verbs the tu form is the je form plus -s, and for vouloir and pouvoir it is spelled identically (je veux / tu veux, je peux / tu peux) — a rest point hiding inside a new paradigm.',
+        "je voudrais enters here and ONLY as a frozen cell. L1 kept it out by name — it is the conditional of vouloir, a whole tense spent on politeness the course already buys with s'il vous plaît — and M5's ordering job needs it. So it arrives as one word, with a note saying which tense it belongs to and that the tense is L3-M4's. pourriez and j'aimerais are named in the same note and never written. This is the same discipline en-it applies to vorrei and en-ar to laysa: ship the word, defer the system, say so.",
+        'Questions get their everyday marker: est-ce que in front of a statement turns it into a question and changes nothing else — Est-ce que vous avez du pain? — which is exactly the tool an English speaker needs, since English fronts do/are and French otherwise moves nothing. Inversion (Pouvez-vous…?) appears in this level ONLY inside the frozen request frames, and the inversion system is named as deferred. L1 asked with intonation and with fronted question words; both continue.',
+        "INDEX SEAM: tu, es, as, veux (the tu cell — same spelling as L1-M3's je cell, so the row lists both and the note says they are identical), peux, pouvez, vas, fais, voudrais, est-ce que, excusez-moi, excuse-moi, pardon, désolé, désolée, beaucoup, de rien and s'il te plaît are fresh keys. est-ce que splits on its hyphen into qu'est and ce as well as indexing whole — three keys pointing at one row, the en-ar hyphen law in French — so author it once and let the parts inherit. s'il vous plaît stays L1-M8's whole surface, merci stays L1-M2's, and the bare s'il in s'il te plaît is a new key of its own.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M2': {
+      id: 'L2-M2',
+      title: 'Describing people',
+      job: 'Appearance, character, relationships',
+      patterns: [
+        'Il/Elle est + Adj',
+        'Il/Elle a + les + N + Adj',
+        'Elle a + <number> + ans',
+        'mon/ma/mes + N-family',
+        'son/sa/ses + N',
+      ],
+      notes: [
+        "Age takes AVOIR, not être: elle a trente ans, not *elle est trente. L1-M9 already shipped an and ans, so the noun is the learner's and only the verb choice is new — and it is the single most reliable English error in French. Features take avoir too (il a les cheveux bruns, elle a les yeux verts), with the definite article where English wants a possessive: les cheveux, never *ses cheveux, in this frame.",
+        'THE delta of the module: a French possessive agrees with the THING POSSESSED, not with the owner. sa voiture is his car AND her car; son frère is her brother AND his. English marks the owner and French marks the noun, so a learner reaching for a masculine word to mean "his" gets it exactly backwards. Spend the mistakes here, and author pairs where the owner\'s gender changes and the possessive does not.',
+        'The euphonic quirk that follows immediately: before a vowel the FEMININE possessive borrows the masculine shape — mon amie, ton école, son adresse — because French will not put ma before a vowel. It is not a gender change and a rule that says so will confuse the learner in M3; say that the sound decides the spelling, which is the same instinct behind bel and vieil in the next module.',
+        'The family and person set: frère, sœur, père, mère, fils, fille, mari, femme, ami, amie, enfant; and the adjectives grand (L1-M10, doing size here), petit, jeune, vieux, gentil, sympa, intelligent. femme carries two jobs — "woman" and "wife" — on one row, and fille carries "girl" and "daughter": author each note true of both, because no second row can take the key. sœur is written with the œ ligature and the index keeps it, so sœur and soeur would be TWO keys — write the ligature every time.',
+        "INDEX SEAM: a (the avoir cell — L1-M5 owns ai and avez, and this third-person cell is fresh), ans-with-a-number, mon, ma, mes, ton, ta, tes, son, sa, ses, frère, sœur, père, mère, fils, fille, mari, femme, ami, amie, enfant, cheveux, yeux, petit, jeune, vieux, gentil, sympa and intelligent are fresh keys. il and elle stay L1-M10's rows; grand and grande stay L1-M10's; est stays L1-M1's. Every adjective row carries the four cells this level shows, and M3 adds nothing to them but the irregular shapes.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M3': {
+      id: 'L2-M3',
+      title: 'Describing things',
+      job: 'Size, colour, quality — agreement at length',
+      patterns: [
+        'Le/La + N + est + Adj',
+        'Les + N-pl + sont + Adj-pl',
+        'un/une + N + Adj',
+        'un beau + N   /   un bel + N-vowel',
+        "C'est + très + Adj",
+      ],
+      notes: [
+        '"At length" is the grid, and French\'s has a silent half an author must still spell: -e for the feminine, -s for the plural, -es for both — grand · grande · grands · grandes, where three of the four sound identical. An adjective already ending in -e adds nothing for gender (rouge, jaune, jeune) and one ending in -s adds nothing for the plural (gris, français). Say plainly that agreement here is almost entirely a WRITING rule, because a learner who cannot hear it will not believe it matters — and the index does, since grand and grande are two keys.',
+        'Position, and it is the reverse of English: the adjective normally FOLLOWS the noun (une voiture rouge, un livre intéressant), and a small closed set precedes it — beau, joli, jeune, vieux, bon, mauvais, grand, petit, gros, nouveau. The memorable summary is beauty, age, goodness, size; the true statement is that it is a LIST and not a rule, so teach the list. Two of them change meaning with position (un grand homme is a great man, un homme grand is a tall one), which is worth one line and no more.',
+        "The three irregulars with a pre-vowel shape: beau → bel, nouveau → nouvel, vieux → vieil before a masculine noun starting with a vowel — un bel appartement, un nouvel ami, un vieil homme — with the feminine going belle, nouvelle, vieille. It is the same instinct as M2's mon amie: French avoids the vowel clash and changes the spelling to do it. Each shape is its own index key, so all of them are authored here and cross-referenced.",
+        "Colours are the vocabulary spend and one of them refuses to bend: rouge, jaune and rose are -e adjectives (number only); bleu, vert, noir, gris take all four cells; blanc goes to blanche; and marron and orange are INVARIABLE, because they are nouns doing an adjective's work — les chaussures marron. très (L1-M10) modifies an adjective and beaucoup modifies a verb: *très j'aime is the error and j'aime beaucoup is the repair, which is the same pair en-es teaches as muy and mucho.",
+        "INDEX SEAM: beau, bel, belle, beaux, nouveau, nouvel, nouvelle, vieux, vieille, joli, mauvais, gros, rouge, bleu, bleue, vert, verte, noir, blanc, blanche, jaune, gris, marron, long, court, propre, sale, lourd and léger are fresh keys, each row carrying the cells this level shows. grand, grande, bon and bonne stay L1-M10's rows; très stays L1-M10's; cher and chère stay L1-M8's. beau and bel are different keys, not variants of one spelling — the elision-adjacent seam that L1 met in l'eau and c'est.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M4': {
+      id: 'L2-M4',
+      title: 'Getting around',
+      job: 'Directions, transport, asking the way',
+      patterns: [
+        'Pardon + , + où est + le/la + N + ?',
+        'Tournez à gauche / à droite',
+        'Allez tout droit + , + puis + <direction>',
+        'Je vais à + <place> / en + <country>',
+        'Il faut + V-inf',
+      ],
+      notes: [
+        "This module speaks vous throughout, chipped `formal`, and its imperative is free: the vous imperative is the present tense with the pronoun removed — vous tournez → Tournez, vous allez → Allez, vous prenez → Prenez, vous continuez → Continuez. Every one of those present forms is already L1's or M1's, so the module's grammar costs nothing and the budget goes to the prepositions and the vocabulary. The tu imperative (tourne, va, prends) is named in usage and not shown, because the scene is a stranger in the street.",
+        'THE preposition set, and French forks where English says one word. For places: à + a town (à Paris), en + a feminine country (en France, en Inde), au + a masculine country (au Japon), aux + a plural one. For transport: EN for anything you get inside (en bus, en train, en voiture, en avion) and À for anything you sit on or use with your body (à pied, à vélo, à moto). That second rule is genuinely reliable and worth stating as a rule rather than a list. à, au and en are all L1 keys (M4, M7 and — for en — this module opens the bare preposition), so the notes point back where they must.',
+        'The trap the module must catch: droite is "right" and tout droit is "straight on", one letter and a whole different direction. Author them in the same sentence at least once, and put the pair in a mistake block; a learner who hears them as the same word will turn where they should not. à gauche and à droite ride as two-token surfaces, which keeps L1-M4\'s à on its own row — the tool en-es uses for a la derecha, in French.',
+        "il faut enters as a FROZEN impersonal plus an infinitive: Il faut tourner à gauche, Il faut prendre le bus. It is the most useful obligation frame in the language and it costs one word; il faut QUE plus a subjunctive is L3's and is named here as deferred, so a later author does not import the tense with the word.",
+        "INDEX SEAM: tournez, allez (L1-M6's row — point back), prenez, continuez, gauche, à gauche, à droite, droite, droit, tout droit, rue, place, coin, feu, gare, arrêt, bus, train, voiture (L1-M3's row), métro, avion, vélo, pied, à pied, loin, faut and en (the bare preposition) are fresh keys where they are not already owned. il y a, près de, à côté de and their du / de la partners stay L1-M7's surfaces — the four-token ones are the widest in the repo and are re-shown, not re-taught. Town and country names never index (#61), so anchor every direction on a common noun.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M5': {
+      id: 'L2-M5',
+      title: 'Food and hosting',
+      job: 'Ordering, offering, refusing without offence',
+      patterns: [
+        "Je voudrais + du/de la/des + N + , + s'il vous plaît",
+        'Je ne veux pas de + N',
+        'Pour moi + , + un/une + N',
+        'Encore + du/de la + N + ?',
+        "L'addition + , + s'il vous plaît",
+      ],
+      notes: [
+        "THE rule of the module, and L1 set it up perfectly without ever stating it: L1-M3 taught du, de la and des, and L1-M3 taught ne … pas, and the two never met in one sentence. They meet here. **After a negation every partitive collapses to de** — Je ne veux pas DE café, Il n'y a pas DE pain, Je ne mange pas DE viande. It is one of the few French rules with no exception worth a learner's time, and *Je ne veux pas du café is what every English speaker writes who has not been told. One rule, one mistake block, one new key.",
+        "Ordering is M1's frozen je voudrais plus L1's partitives, and the register point is worth making: Je veux un café is grammatical and lands as a demand, exactly as Do you want…? does in English. Je voudrais and Pour moi are what people say. The stressed pronoun moi arrives here for that frame and it is the module's other structural item: French has a second set of pronouns for standing alone and for following a preposition — moi, toi — where the subject forms je and tu cannot go.",
+        "The clitic system opens narrowly, and the index decides how: me and te are free keys, but le, la and les are L1-M1's ARTICLES, so the identically spelled direct-object pronouns can never be first-taught in this course. Teach the placement law on me and te (Vous pouvez me donner…?) and on the stressed moi / toi, name the direct-object series in prose as L3's, and never write a display sentence that needs one. en and y as pronouns are deferred too, and for a second reason: en is M4's preposition.",
+        "Offering and refusing: encore du café? carries the offer — and it is chosen deliberately so that plus stays free for M9's comparative, the same protection en-es gives más by offering otro. A refusal in French is softened by a compliment rather than by a reason (Non merci, c'était très bon · C'est très gentil, mais ça va), and a host offers once or twice rather than insisting; say so in usage, and note that this is a genuinely different shape from the Indian and Russian hosting the other courses describe.",
+        "INDEX SEAM: moi, toi, me, te, de (the negated-partitive one — L1-M1 owns de as \"of/from\", so this note points back and the rule is written around that row), encore, addition, viande, poisson, légumes, riz (L1-M8's), dessert, verre, assiette, gentil (M2's) and désirez are fresh keys. du, de la, des and ne … pas stay L1-M3's rows; s'il vous plaît stays L1-M8's; je voudrais stays M1's.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M6': {
+      id: 'L2-M6',
+      title: 'Making plans together',
+      job: 'Invitations, suggestions, settling a time',
+      patterns: [
+        'On va + à + <place> + ?',
+        'Tu es libre + <day> + ?',
+        'Ça te dit de + V-inf + ?',
+        'On se voit à + <hour>',
+        "D'accord + , + à + <day>",
+      ],
+      notes: [
+        "on is the single most useful thing in this level, and it is the reason M6 exists where it does: in everyday French on IS \"we\" — On va au cinéma?, On se voit demain?, Qu'est-ce qu'on fait? — and it takes the third-person singular verb, so every form the learner needs is already theirs from L1's il and elle sentences. nous exists and is written; in speech it is the formal or emphatic one. Teach on as the default and name nous in usage; a course that taught nous allons first would give the learner a sentence they will rarely hear.",
+        "Plans are made among friends: tu and on throughout, chipped `informal` where the frame is tu-only, and the vous of M4 and M7 deliberately absent — an invitation in vous reads as a business appointment. The suggestion frames are Ça te dit de…?, On peut…, Tu veux…? and the plain question On y va?, and none of them needs a new tense: L1-M6's aller plus an infinitive already carries the future.",
+        "The clock and the calendar: à sept heures is L1-M4's, and this module adds et demie, et quart and the days L1 did not teach (mardi, mercredi, jeudi, vendredi, samedi, dimanche beside L1-M4's le lundi). moins le quart is real and deliberately NOT shown — moins is M9's key and its comparative note must be its first — so a usage line names it and M9 delivers the word. The article makes a day habitual: le lundi (L1-M4, a two-token surface) is Mondays in general and bare lundi is this coming Monday, which is a distinction English makes with a plural.",
+        'Agreeing and settling: d\'accord (one key, the apostrophe inside it), ça marche, super, à demain, à lundi. The à of à demain is L1-M4\'s row doing a third job — "see you at" — so point back rather than opening anything; the phrase itself is the useful unit and belongs in usage as the standard sign-off.',
+        "INDEX SEAM: on, se, dit, libre, mardi, mercredi, jeudi, vendredi, samedi, dimanche, demie, quart, d'accord, marche, super, cinéma and ensemble are fresh keys. le lundi stays L1-M4's two-token surface and bare lundi is a fresh key of its own — say that in the note, because the learner has met the phrase for two levels without meeting the word. tu and te stay M1's and M5's rows; va, vais and allez stay L1-M6's; heures and à quelle heure stay L1-M4's.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M7': {
+      id: 'L2-M7',
+      title: 'On the phone',
+      job: 'Calls and messages — openings, closings, taking a message',
+      patterns: [
+        "Allô + ? + C'est + <name> + à l'appareil",
+        'Je voudrais parler à + <name>',
+        "Il n'est pas là + . + Je peux laisser un message?",
+        'Ne quittez pas',
+        'Je vous rappelle + <time>',
+      ],
+      notes: [
+        "The opening is fixed and small: Allô? answers the phone and nothing else in French — it is not a greeting at a door — and the identification is C'est Rohan à l'appareil, where L1-M8's c'est does the work and à l'appareil is the phrase that makes it a phone call. This module speaks vous throughout, chipped `formal`, for a reason worth one honest line: you cannot see who picked up.",
+        'THE delta of the module is an absence: **French has no continuous tense.** Je parle covers "I speak" and "I am speaking" alike, so a learner who reaches for an -ing equivalent finds none, and être en train de parler is emphatic ("right in the middle of") rather than the default. This is the exact opposite of en-it\'s M7, where a call is what finally motivates stare + gerundio, and it is worth saying so plainly: two neighbouring languages, opposite answers.',
+        "Negation around the compound frames the whole call: Il n'est pas là, Je ne peux pas, Ne quittez pas — L1-M3's ne … pas with the elided n' L1-M5 already showed in n'ai. And here is the level's one dialect-shaped line: spoken French drops the ne (Il est pas là, Je sais pas), and this course writes it everywhere, in display, forms and pool alike, because writing both would fork one negation into two surfaces. ONE usage line here names the drop — a phone call is where a learner first hears it — and no other module carries one.",
+        "Taking a message needs no new tense: laisser un message, rappeler, le numéro, ne quittez pas, and the past is L1-M5's passé composé (Il a appelé). Reported speech — Il a dit que… — is L3's and is named here as deferred, which is why a message is passed on with the words themselves.",
+        "INDEX SEAM: allô, appareil, à l'appareil, parler (L1-M5's parlé is the participle — the infinitive is fresh and its row points at it), quittez, laisser, message, numéro, rappelle, rappeler, là and appelé are fresh keys. à l'appareil carries an elision inside it and is one key; là is a fresh key and is NOT L1's la article — the accent is the whole difference, and the L1 accent rule is what keeps them apart. c'est stays L1-M8's, ne … pas and n' stay L1-M3's and L1-M5's, je voudrais stays M1's, vous stays L1-M1's.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M8': {
+      id: 'L2-M8',
+      title: 'When something goes wrong',
+      job: 'Problems, asking for help, complaining calmly',
+      patterns: [
+        'Ça ne marche pas',
+        "J'ai perdu + mon/ma + N",
+        "J'ai mal à la + N",
+        "Vous pouvez m'aider + , + s'il vous plaît?",
+        'Il y a un problème avec + le/la + N',
+      ],
+      notes: [
+        "avoir mal à is the frame a problem needs and it is built from parts the learner owns: L1-M9's avoir-idioms (j'ai faim, j'ai froid, j'ai soif), M4's à contracting to au and à la, and M2's rule that the article stands where English wants a possessive — J'ai mal à la tête, J'ai mal au dos, never *à ma tête. Say that it is the same avoir the learner has been using for hunger and cold since L1-M9; French treats a state as something you HAVE, and this is the fourth member of a family, not a new idiom.",
+        "m'aider is ONE key to the index and that is the French thing here: elision fuses a clitic to what follows, so m'aider, t'aider and l'addition are single surfaces rather than two words each. Author m'aider on its own row with a note saying where the me went, because a learner who met me in front of a verb at M5 will look for it here and not find it. Vous pouvez m'aider? is the module's core request — M1's frame with M5's clitic glued on.",
+        "The past here is L1-M5's passé composé and nothing more: J'ai perdu mon billet, J'ai oublié mon téléphone, Le train est parti (être, because it is movement — M10 states the auxiliary law; here it is used and pointed forward). No plus-que-parfait, no subjunctive, and no conditional beyond M1's frozen je voudrais, which is why a complaint here is framed rather than hedged.",
+        "Complaining calmly, and French's answer differs from English's: the softening comes from the opening (Excusez-moi, il y a un problème…) and from Malheureusement, not from weakening the claim. Directness about the fault itself is normal and is not rude; an English speaker's \"there seems to be a slight issue\" reads as evasive rather than as polite. Say what the language does, put the over-hedged version in the mistake block, and judge neither.",
+        "INDEX SEAM: marche (M6's row — \"it works\" and ça marche are the same word, so point back), perdu, oublié, cassé, mal, tête, dos, m'aider, aider, aide, problème, malheureusement, clé, billet and téléphone are fresh keys. j'ai, ai and avez stay L1-M5's rows; il y a stays L1-M7's; ne … pas stays L1-M3's; excusez-moi stays M1's; au and à la stay L1-M7's and M4's. mal is a fresh key and its note must be true of j'ai mal and of the adverb alike, since no later row can take it.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M9': {
+      id: 'L2-M9',
+      title: 'Comparing and choosing',
+      job: 'More, less, better — stating a preference',
+      patterns: [
+        'A + est + plus + Adj + que + B',
+        'A + est + moins + Adj + que + B',
+        'le/la plus + Adj',
+        'A + est + meilleur que + B',
+        'Je préfère + ce/cette + N',
+      ],
+      notes: [
+        'The comparative is two words around an unchanged adjective — plus grand que, moins cher que, aussi grand que — where English forks between -er and "more". Nothing bends but the adjective\'s own agreement, which M3 already taught. The superlative adds the article to the same frame (le plus grand, la moins chère) and marks the group with de and not "in": le plus grand de la ville. That preposition is the half English speakers miss.',
+        'que is L1-M9\'s key, where it means "that" (je pense que…), so the comparative que lands on that row and this module points back rather than opening a second one — the discipline en-es applies to que and en-it to che, in the third Romance course. plus and moins are this module\'s own keys, and plus has a pronunciation fork worth a sound line rather than a rule: silent -s in plus grand, sounded in plus de and in the standalone plus.',
+        'meilleur against mieux is French keeping apart what English merges, exactly as Italian keeps migliore from meglio and unlike Spanish\'s single mejor: meilleur is the adjective (C\'est le meilleur restaurant) and mieux is the adverb (On mange mieux ici). *plus bon and *plus bien are the errors the slogan "add plus" produces. Cross-reference the en-it split in the note if it helps an author see the pattern; the three courses do not agree here and pretending they do would teach a false symmetry.',
+        "Choosing needs the demonstratives and a question word that agrees: ce / cet / cette / ces (with cet before a vowel, the same euphonic instinct as M2's mon amie and M3's bel) and quel / quelle / quels / quelles, which is an adjective and bends with its noun — Quel livre? Quelle voiture? The standalone forms celui-ci and lequel are named and deferred to L3; a learner can choose with quel and a noun, and does not need two systems in one module. préférer takes a noun or an infinitive.",
+        "INDEX SEAM: plus, moins, aussi (L1-M10's row — \"also\" and the aussi … que of equality are the same word, so point back and write the note true of both), meilleur, meilleure, mieux, pire, préfère, préférer, ce, cet, cette, ces, quel, quelle and ville are fresh keys. que stays L1-M9's; très and bon stay L1-M10's; cher stays L1-M8's. beaucoup (M3's) is not a synonym for plus and its note should say so.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M10': {
+      id: 'L2-M10',
+      title: 'Telling what happened',
+      job: 'A four-sentence account in the past',
+      patterns: [
+        '<imparfait background> + , + <passé composé event>',
+        "D'abord + <passé composé> + , + ensuite + <passé composé>",
+        'Il y avait + <N> + , + alors + <passé composé>',
+        'Enfin + <passé composé>',
+      ],
+      notes: [
+        "Each item is an ACCOUNT of exactly four short sentences, not one long one, and the per-sentence bound applies to each sentence inside it. Nearly every word comes from L1 and from M1–M9; the honest new spend is the imparfait itself — c'était, il y avait, je faisais, il pleuvait, j'étais, j'avais — and the sequencers d'abord, ensuite and enfin beside L1-M10's puis, et puis and alors.",
+        "THE decision of the module: L1-M5 shipped the passé composé with BOTH auxiliaries and with participle agreement (je suis allée, elle est restée) and never taught the choice against the imparfait, which opens here. The law, and it must be the true one — the imparfait paints the standing situation the story happens against (what was already going on, what things were like, the weather, a habit, an age) and the passé composé moves the account forward one completed step at a time. Il était tard et il n'y avait personne. Alors j'ai appelé Anne.",
+        'The slogan to kill is the one en-es, en-ru and en-it kill in their own M10s, and the four courses should say it in the same words: "one is for completed actions and the other for ongoing ones". It breaks on the first real account. Hier j\'ai mangé à huit heures is completed; Je mangeais quand tu as appelé is not "ongoing" in any objective sense — it is background for the call; Quand j\'étais petit, j\'allais toujours à la mer is a habit and not a duration. What decides it is the ROLE the clause plays in the telling. Author the pairs so the same event appears in both roles.',
+        'The auxiliary law gets stated at last, because an account cannot avoid it: être for the movement and change-of-state verbs (aller, venir, partir, rester, rentrer, arriver — L1-M5 and L1-M10 shipped four of them) and for reflexives, with the participle agreeing with the SUBJECT in gender and number; avoir for everything else, with no agreement at all. L1 taught the agreement by example in allée and restée; this is where the rule behind it is written down.',
+        "Nothing new is opened. The plus-que-parfait, the subjunctive, the conditional beyond M1's frozen je voudrais, and reported speech all stay OUT and are named here as L3's. INDEX SEAM: c'était, étais, était, avais, avait, il y avait, faisais, pleuvait, d'abord, ensuite, enfin, personne, quand and the imparfait cells an account needs are fresh keys, each pointing back at its verb's L1 row rather than editing it. c'était carries an elision and is one key, distinct from L1-M8's c'est. puis, et puis, alors, aussi and mais stay L1-M10's; hier stays L1-M5's; parce que and donc stay L1-M9's.",
+      ],
+      maxWordsPerSentence: 10,
       newWordCap: NEW_WORD_CAP,
     },
   },
