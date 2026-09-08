@@ -57,3 +57,8 @@ exit table or `.verify/<stage>.log` is a five-repo change rather than a rung one
 - **A red BUDGET is never a size** — none has failed it since #304. It fails when a shipped file has no
   owner (`unmetered`) or the emitted worker's precache list disagrees with the `shell` row: give the
   file an owner in `owner()` in `tools/payload-budget.ts`, there is no limit to raise.
+- **There are no CSS modules and the namespace is flat** (#496): a component imports its stylesheet
+  for the side effect and writes the class as a string (`className="ladder-head"`), so every class
+  name carries a component prefix. `tools/css-classes.ts` fails TEST naming the name and both files
+  when two stylesheets share one — the fix is a prefix, never an exemption. Reintroducing a
+  `*.module.css` fails the same file's tree walk.

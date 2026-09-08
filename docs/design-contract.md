@@ -39,6 +39,15 @@ it. Keep engineering-owned notes here.
 4. **Mobile rules are not optional** — `design/pwa-checklist.md` §1 records what
    the design already guarantees (44px tap targets, 16px selects to stop iOS
    focus-zoom, reduced-motion support). Keep them true.
+5. **Every class name carries a component prefix, because the namespace is flat** (#496).
+   `src/` has no CSS modules: a component imports its stylesheet for the side effect
+   (`import './ladder-screen.css';`) and writes the class as a string
+   (`className="ladder-head"`). The prefix is what a module's hashed name used to be — before
+   the migration the thirty modules declared 324 selectors under 199 names, with `head` in
+   eight files and `title` and `kicker` in seven, and every one of those duplicates would now
+   be one component restyling another. `tools/css-classes.ts` reads the shipped CSS back and
+   fails TEST naming the name and both files; there is no exemption to add, only a prefix to
+   fix. Add a stylesheet and give its names the prefix its neighbours use.
 
 ## Note on the two PRD sets
 

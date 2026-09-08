@@ -8,8 +8,25 @@
  * requires it to be found. An empty answer from a check never shown to be capable of a non-empty
  * one is not evidence.
  */
+import { readFileSync, readdirSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { classesIn, collisions, definitions, keyframesIn, stylesheets } from './css-classes.ts';
+
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
+/** Every file under `dir`, repo-relative and sorted — the tree walk the last block asserts over. */
+function sourceFiles(dir: string): string[] {
+  return readdirSync(dir, { withFileTypes: true })
+    .flatMap((entry) => {
+      const full = path.join(dir, entry.name);
+      return entry.isDirectory() ? sourceFiles(full) : [path.relative(REPO_ROOT, full)];
+    })
+    .sort();
+}
+
+const read = (file: string): string => readFileSync(path.join(REPO_ROOT, file), 'utf8');
 
 describe('the collision check finds collisions', () => {
   it('names a class two stylesheets share, and the files sharing it', () => {
@@ -59,5 +76,31 @@ describe('the shipped stylesheets', () => {
 
   it('define every @keyframes in exactly one file', () => {
     expect(collisions(keyframes)).toEqual([]);
+  });
+});
+
+/**
+ * The migration's other half: `stylesheets()` skips `*.module.css`, so the collision check above is
+ * only worth as much as this. A single CSS module reintroduced anywhere under `src/` would be
+ * invisible to it — hashed names, no collisions, and a component styled on the one axis the check
+ * cannot see.
+ */
+describe('no CSS module remains under src/ (#496)', () => {
+  const files = sourceFiles(path.join(REPO_ROOT, 'src'));
+
+  it('walks the tree it claims to — the file list holds this very repo’s stylesheets', () => {
+    expect(files).toContain('src/shell/toast.css');
+    expect(files).toContain('src/shell/Toast.tsx');
+  });
+
+  it('has no *.module.css file', () => {
+    expect(files.filter((file) => file.endsWith('.module.css'))).toEqual([]);
+  });
+
+  it('has no component importing a styles object from a stylesheet', () => {
+    const importers = files
+      .filter((file) => /\.tsx?$/.test(file))
+      .filter((file) => /^import\s+\w+\s+from\s+'[^']*\.css'/m.test(read(file)));
+    expect(importers).toEqual([]);
   });
 });

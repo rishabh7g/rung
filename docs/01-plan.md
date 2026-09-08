@@ -63,7 +63,7 @@ See design/PRD-engineering.md §4 for the diagram. Essentials:
 | Vite + React 18 + TypeScript strict | unchanged |
 | react-router (HashRouter) | works on any static host + offline |
 | zustand + persist (version 8, migrations v5→v6→v7→v8) | matches state-v8 contract |
-| **design/tokens.css** loaded globally; CSS Modules for layout | tokens are the single styling source — no hard-coded hex/px/font names (docs/design-contract.md) |
+| **design/tokens.css** loaded globally; prefixed global stylesheets for layout (CSS Modules until #496) | tokens are the single styling source — no hard-coded hex/px/font names (docs/design-contract.md) |
 | vite-plugin-pwa (or ~20-line vanilla SW) | offline per design/pwa-checklist.md — shell precached, active course cache-first (#211) |
 | vitest (jsdom environment) | engine is test-first |
 | ajv via tsx CLIs in tools/ | schema v5 + strings validation |
