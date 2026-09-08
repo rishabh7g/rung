@@ -358,11 +358,22 @@ the 0.4 safe radius. The test that asserted it as a number went with the render-
 **The splash set** (`npm run splash:build` → `scripts/generate-splash.ts`) is the checklist §3.3 item
 #90 deferred. iOS ignores the manifest's `background_color`, so a cold standalone launch flashes
 white unless an `apple-touch-startup-image` matches the device's EXACT size. Eleven portrait
-iPhone viewports (SE → 17 Pro Max, ~70 KiB in total, `public/icons/splash/`), each the header
+iPhone viewports (SE → 17 Pro Max, ~60 KiB in total, `public/icons/splash/`), each the header
 lockup at 5% of the screen height — mark read out of `RailsMark.tsx` by generate-icons' parser, the
-wordmark `BRAND` set in the real Barlow Condensed 700 (converted woff2 → TTF at generation time
-because Pango reads no woff2), `--color-text` on exactly `--color-bg`. No iPad rows and no
-landscape: the product targets P1's phone and the manifest pins `orientation: portrait`.
+wordmark `BRAND` set in the real Barlow Condensed 700, `--color-text` on exactly `--color-bg`. No
+iPad rows and no landscape: the product targets P1's phone and the manifest pins
+`orientation: portrait`.
+
+**The wordmark is outlines, not text, since #502.** It used to go through sharp's `text` input —
+Pango, so fontconfig, so a family-NAME lookup against whatever faces the host has installed, with
+a silent substitution when the lookup misses. On a host with no fontconfig config the script wrote
+all eleven PNGs in a default grotesque and still printed `SPLASH 11/11 ok`; measured against the
+font file, neither the shipped set nor a fresh run on this machine had ever been Barlow Condensed
+(231 px of ink at `fontPx` 146 is what the face gives, against 360 shipped and 306 regenerated).
+`BRAND` is now shaped by HarfBuzz straight out of `@fontsource`'s woff2 and emitted as `<path>`
+elements, which puts it on the same SVG-to-raster path that already makes the icons byte-identical
+across hosts — there is no font stack left in it to fall back to. `scripts/generate-splash.test.ts`
+pins it: the smallest committed PNG must equal what the generator regenerates, byte for byte.
 
 Three deliberate boundaries. Each had a test in the render-level suite cut on 2026-08-30
 (#362–#365), so the first is a review rule now; `tools/payload-budget.ts` still meters and bounds
