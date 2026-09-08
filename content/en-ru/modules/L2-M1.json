@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M1",
+  "title": "Asking politely",
+  "job": "Requests, thanks, apologies in the right register",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "V-imperative-perfective + , + pozháluysta",
+      "Dáyte mne + N-acc + , + pozháluysta",
+      "Vy ne mózhete + V-inf + ?",
+      "Mne núzhno + N/V-inf",
+      "Bol'shóye spasíbo — Ne za chto"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE ASPECT OF AN IMPERATIVE is the lesson of this module, and L1 shipped the pairs without ever teaching the choice. The perfective asks for ONE act and is the shape of an ordinary request: Skazhíte, pozháluysta. The imperfective says proceed, keep going, this is how it is done: Govoríte po-rússki. The half an English speaker cannot guess is that a HOST uses the imperfective — Prokhodíte, Sadítes' — and that the perfective in that seat lands as an order rather than an invitation."
+    },
+    {
+      "tag": "delta",
+      "text": "RUSSIAN WRITES SENTENCES WITH NO SUBJECT, and a request is where an English speaker meets the shape head-on. Mne núzhno rabótat' is literally \"to me [is] necessary to work\"; Mózhno vódu? is \"[is it] permitted water?\". L1-M9's Mne nrávitsya was already this pattern and never said so. Meet it once here: M3's Zdes' net magazína and M8's Mne nuzhná pómoshch' are the same sentence type wearing different words."
+    },
+    {
+      "tag": "delta",
+      "text": "A NEGATIVE QUESTION IS MORE POLITE, which is the reverse of English. Vy ne mózhete mne pomóch'? is softer than Vy mózhete mne pomóch'?, because the ne leaves the hearer an unforced way out. An English ear reads \"can't you help me?\" as doubt or complaint; a Russian ear reads it as the careful version. Nothing about the words explains this — it simply has to be taken on."
+    },
+    {
+      "tag": "free",
+      "text": "REGISTER, decided for the level: vy is this course's default and ty appears in no display until M6, so this module is not an address contrast. What the `formal` chip marks here is the ELABORATED request — Búd'te dobrý, Vy ne mózhete…? — the ones that buy politeness with extra length. Plain vy to a stranger stays `neutral`, because it is the unmarked default of the language and not a tier above it."
+    },
+    {
+      "tag": "free",
+      "text": "The lexical moves. pozháluysta (L1-M3) does two jobs — please, and you're welcome — and Ne za chto is its warmer answer. bol'shóye spasíbo sits above L1-M2's plain spasíbo. izviníte (L1-M10) and prostíte are near-synonyms rather than a clean split: izviníte is the everyday one, prostíte the weightier apology, and both open a request to a stranger."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M1-S01",
+      "display": "Skazhíte, pozháluysta, gde magazín?",
+      "script": "Скажите, пожалуйста, где магазин?",
+      "cue": "Tell me, please, where is the shop?",
+      "literal": "Say-once, please, where shop?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "skazhíte",
+            "script": "скажите",
+            "cue": "tell me · say (one act)",
+            "tag": "delta",
+            "forms": [
+              "skazhíte"
+            ],
+            "note": "The perfective imperative: one act of telling, now. This is the shape of nearly every ordinary request, and its partner govoríte means something else."
+          },
+          {
+            "display": "govoríte",
+            "script": "говорите",
+            "cue": "speak · keep speaking",
+            "tag": "delta",
+            "forms": [
+              "govoríte"
+            ],
+            "note": "The imperfective imperative, and skazhíte's partner. It does not ask for one act — it says carry on, do it this way: Govoríte po-rússki."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The -te ending is nothing new — dáyte, izviníte and zdrávstvuyte all had it, and it is simply the vy imperative. What is new is the choice of stem, and that choice is the whole module.",
+      "sound": "ska-ZHI-tye. The final -te is soft and unstressed, and the whole word runs into pozháluysta, which loses most of its middle: pa-ZHA-lsta.",
+      "variations": [
+        {
+          "display": "Skazhíte, pozháluysta, gde stol?",
+          "script": "Скажите, пожалуйста, где стол?",
+          "cue": "Tell me, please, where is the table?",
+          "changed": "a different thing asked after, the frame untouched"
+        },
+        {
+          "display": "Govoríte po-rússki, pozháluysta",
+          "script": "Говорите по-русски, пожалуйста",
+          "cue": "Speak Russian, please",
+          "changed": "the imperfective — not one act, but how to go on"
+        },
+        {
+          "display": "Skazhíte, gde magazín?",
+          "script": "Скажите, где магазин?",
+          "cue": "Tell me, where is the shop?",
+          "changed": "without pozháluysta, and noticeably barer"
+        }
+      ],
+      "mistake": {
+        "display": "Govoríte, pozháluysta, gde magazín?",
+        "script": "Говорите, пожалуйста, где магазин?",
+        "why": "One act of telling is wanted, so the perfective: Skazhíte, pozháluysta, gde magazín?"
+      },
+      "usage": "Stopping a stranger in the street. The commonest opening in the language after zdrávstvuyte.",
+      "register": "neutral",
+      "mnemonic": "One act asks with skazhíte; a way of going on asks with govoríte."
+    },
+    {
+      "id": "L2-M1-S02",
+      "display": "Pomogíte mne, pozháluysta",
+      "script": "Помогите мне, пожалуйста",
+      "cue": "Help me, please",
+      "literal": "Help-once to-me, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pomogíte",
+            "script": "помогите",
+            "cue": "help me (one act)",
+            "tag": "free",
+            "forms": [
+              "pomogíte"
+            ],
+            "note": "The perfective imperative again, on a different verb. Its infinitive is pomóch', which is what a can-question needs."
+          },
+          {
+            "display": "pomóch'",
+            "script": "помочь",
+            "cue": "to help",
+            "tag": "interference",
+            "forms": [
+              "pomóch'"
+            ],
+            "note": "The infinitive, and it looks nothing like pomogíte. Russian verbs change their stem far more than English ones, so the two shapes are learnt as a pair."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "pomóch' takes the DATIVE, not the accusative: pomogíte mne, never pomogíte menyá. English \"help me\" gives no warning of this, and the error survives for years.",
+      "sound": "pa-ma-GHI-tye. Both unstressed o's reduce almost to a, which is why the stress mark matters more here than the spelling.",
+      "variations": [
+        {
+          "display": "Pomogíte, pozháluysta",
+          "script": "Помогите, пожалуйста",
+          "cue": "Help, please",
+          "changed": "no recipient named — still complete"
+        },
+        {
+          "display": "Vy mózhete mne pomóch'?",
+          "script": "Вы можете мне помочь?",
+          "cue": "Can you help me?",
+          "changed": "a question instead of an imperative, and the infinitive with it"
+        },
+        {
+          "display": "Pomogíte Ivánu, pozháluysta",
+          "script": "Помогите Ивану, пожалуйста",
+          "cue": "Help Ivan, please",
+          "changed": "a person in the dative rather than a pronoun"
+        }
+      ],
+      "mistake": {
+        "display": "Pomogíte menyá, pozháluysta",
+        "script": "Помогите меня, пожалуйста",
+        "why": "pomóch' governs the dative: Pomogíte mne, pozháluysta."
+      },
+      "usage": "Anywhere help is needed, from a heavy bag to a form you cannot read.",
+      "register": "neutral",
+      "mnemonic": "Help goes TO someone in Russian: mne, not menyá."
+    },
+    {
+      "id": "L2-M1-S03",
+      "display": "Vy ne mózhete mne pomóch'?",
+      "script": "Вы не можете мне помочь?",
+      "cue": "Could you help me?",
+      "literal": "You not can to-me to-help?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mózhete",
+            "script": "можете",
+            "cue": "you can · you are able",
+            "tag": "free",
+            "forms": [
+              "mózhete",
+              "mózhet",
+              "mogú"
+            ],
+            "note": "The vy form of the verb of ability. An infinitive follows it, exactly as in English — the difference is what the ne in front of it does."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The ne makes this SOFTER, not more doubtful. Translating it as \"can't you help me?\" imports an English complaint that no Russian hears in it.",
+      "sound": "vy nye MO-zhy-tye mnye pa-MOCH. The ne is unstressed and leans onto the verb, so the two run together as one word.",
+      "variations": [
+        {
+          "display": "Vy mózhete mne pomóch'?",
+          "script": "Вы можете мне помочь?",
+          "cue": "Can you help me?",
+          "changed": "without ne — correct, and a shade more direct"
+        },
+        {
+          "display": "Vy ne mózhete mne pomóch', pozháluysta?",
+          "script": "Вы не можете мне помочь, пожалуйста?",
+          "cue": "Could you help me, please?",
+          "changed": "pozháluysta added, softer again"
+        },
+        {
+          "display": "Vy ne mózhete rabótat' zdes'?",
+          "script": "Вы не можете работать здесь?",
+          "cue": "Could you work here?",
+          "changed": "a different infinitive after the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Vy ne mózhete mne pomogíte?",
+        "script": "Вы не можете мне помогите?",
+        "why": "mózhete is followed by an infinitive: Vy ne mózhete mne pomóch'?"
+      },
+      "usage": "The careful request to a stranger — a shop assistant, an official, someone busy.",
+      "register": "formal",
+      "mnemonic": "The ne is not doubt. It is room to say no."
+    },
+    {
+      "id": "L2-M1-S04",
+      "display": "Mne núzhno rabótat'",
+      "script": "Мне нужно работать",
+      "cue": "I need to work",
+      "literal": "To-me necessary to-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "núzhno",
+            "script": "нужно",
+            "cue": "[it is] necessary",
+            "tag": "delta",
+            "forms": [
+              "núzhno"
+            ],
+            "note": "Not a verb and not an adjective agreeing with anyone — a flat word meaning \"necessary\", with the person in the dative in front of it."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "There is NO subject in this sentence, and nothing is missing. English needs an I to hang the need on; Russian puts the person in the dative and lets the need stand alone.",
+      "sound": "mnye NUZH-na. The final o reduces to a, which is why núzhno and the feminine nuzhná are told apart by stress and not by the vowel.",
+      "variations": [
+        {
+          "display": "Mne núzhno chitát'",
+          "script": "Мне нужно читать",
+          "cue": "I need to read",
+          "changed": "a different infinitive"
+        },
+        {
+          "display": "Vam núzhno otdykhát'",
+          "script": "Вам нужно отдыхать",
+          "cue": "You need to rest",
+          "changed": "a different person, still in the dative"
+        },
+        {
+          "display": "Mne núzhno spat'",
+          "script": "Мне нужно спать",
+          "cue": "I need to sleep",
+          "changed": "a different infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Ya núzhno rabótat'",
+        "script": "Я нужно работать",
+        "why": "The person goes in the dative, not the nominative: Mne núzhno rabótat'."
+      },
+      "usage": "Explaining why you must leave, or why you cannot come.",
+      "register": "neutral",
+      "mnemonic": "Necessity is TO someone, not BY someone."
+    },
+    {
+      "id": "L2-M1-S05",
+      "display": "Mózhno vódu, pozháluysta?",
+      "script": "Можно воду, пожалуйста?",
+      "cue": "May I have some water, please?",
+      "literal": "Permitted water, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mózhno",
+            "script": "можно",
+            "cue": "may I · [it is] permitted",
+            "tag": "delta",
+            "forms": [
+              "mózhno"
+            ],
+            "note": "núzhno's twin: a flat word meaning \"permitted\", with no subject and often no verb at all. Mózhno vódu? is a complete, ordinary sentence."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "vódu is the accusative of vodá — the thing asked for is the object of a verb nobody says. The case survives even when the verb does not.",
+      "sound": "MOZH-na VO-du. Both final o's reduce to a, so the two words rhyme in a way the spelling hides.",
+      "variations": [
+        {
+          "display": "Mózhno kófe, pozháluysta?",
+          "script": "Можно кофе, пожалуйста?",
+          "cue": "May I have a coffee, please?",
+          "changed": "a different thing — and kófe never changes shape"
+        },
+        {
+          "display": "Mózhno chay?",
+          "script": "Можно чай?",
+          "cue": "May I have tea?",
+          "changed": "bare, the way it is said among friends"
+        },
+        {
+          "display": "Zdes' mózhno rabótat'?",
+          "script": "Здесь можно работать?",
+          "cue": "Is it allowed to work here?",
+          "changed": "permission rather than a request, with an infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Mózhno vodá, pozháluysta?",
+        "script": "Можно вода, пожалуйста?",
+        "why": "The thing asked for is an object: Mózhno vódu, pozháluysta?"
+      },
+      "usage": "Cafés, tables, doorways — the shortest polite request the language has.",
+      "register": "neutral",
+      "mnemonic": "No subject, no verb, still a sentence."
+    },
+    {
+      "id": "L2-M1-S06",
+      "display": "Búd'te dobrý, dáyte mne bilét",
+      "script": "Будьте добры, дайте мне билет",
+      "cue": "Would you be so kind, give me a ticket",
+      "literal": "Be kind, give to-me ticket",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "búd'te",
+            "script": "будьте",
+            "cue": "be (you, plural/polite)",
+            "tag": "free",
+            "forms": [
+              "búd'te"
+            ],
+            "note": "The imperative of the verb \"to be\", which L1 never needed because the present tense of that verb is simply absent. It exists only in this kind of set phrase."
+          },
+          {
+            "display": "dobrý",
+            "script": "добры",
+            "cue": "kind (short form, plural)",
+            "tag": "free",
+            "forms": [
+              "dobrý"
+            ],
+            "note": "A short-form adjective, the kind that can only stand as a predicate. M2 opens the long forms; this one arrives early because the phrase is fixed."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The stress moves off the stem: dóbryy has it on the first syllable, dobrý on the last. Same word, and the mark is the only thing that tells a reader which one is meant.",
+      "sound": "BUD'-tye da-BRY. The soft sign after d is audible — the d is palatalized, not followed by a vowel.",
+      "variations": [
+        {
+          "display": "Búd'te dobrý, dáyte mne vódu",
+          "script": "Будьте добры, дайте мне воду",
+          "cue": "Would you be so kind, give me some water",
+          "changed": "a different thing asked for"
+        },
+        {
+          "display": "Búd'te dobrý, pomogíte mne",
+          "script": "Будьте добры, помогите мне",
+          "cue": "Would you be so kind, help me",
+          "changed": "a different request behind the same opener"
+        },
+        {
+          "display": "Dáyte mne bilét, pozháluysta",
+          "script": "Дайте мне билет, пожалуйста",
+          "cue": "Give me a ticket, please",
+          "changed": "the plain version — perfectly polite, simply shorter"
+        }
+      ],
+      "mistake": {
+        "display": "Búd'te dóbryy, dáyte mne bilét",
+        "script": "Будьте добрый, дайте мне билет",
+        "why": "The phrase takes the short plural form: Búd'te dobrý."
+      },
+      "usage": "Ticket windows, counters, offices — the length is what makes it formal.",
+      "register": "formal",
+      "mnemonic": "Politeness bought with syllables."
+    },
+    {
+      "id": "L2-M1-S07",
+      "display": "Bol'shóye spasíbo, Iván!",
+      "script": "Большое спасибо, Иван!",
+      "cue": "Thank you very much, Ivan!",
+      "literal": "Big thanks, Ivan!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bol'shóye",
+            "script": "большое",
+            "cue": "big · great (neuter)",
+            "tag": "free",
+            "forms": [
+              "bol'shóye",
+              "bol'shóy",
+              "bol'sháya",
+              "bol'shíye"
+            ],
+            "note": "A long adjective in its neuter shape, because spasíbo is neuter. The four nominative cells are here; M2 teaches what they are."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The ending is chosen by spasíbo, not by the speaker. bol'shóy spasíbo is wrong for the same reason dóbroye den' was in L1-M10 — the describing word agrees with what it describes.",
+      "sound": "bal'-SHO-ye spa-SI-ba. The unstressed o of bol'- reduces to a, and the final o of spasíbo does the same.",
+      "variations": [
+        {
+          "display": "Bol'shóye spasíbo, Ánna!",
+          "script": "Большое спасибо, Анна!",
+          "cue": "Thank you very much, Anna!",
+          "changed": "a different name after the comma"
+        },
+        {
+          "display": "Spasíbo bol'shóye!",
+          "script": "Спасибо большое!",
+          "cue": "Thanks very much!",
+          "changed": "reversed — normal, and slightly warmer"
+        },
+        {
+          "display": "Bol'shóye spasíbo, vsyó khoroshó",
+          "script": "Большое спасибо, всё хорошо",
+          "cue": "Thank you very much, everything is fine",
+          "changed": "thanks plus a reassurance"
+        }
+      ],
+      "mistake": {
+        "display": "Bol'shóy spasíbo, Iván!",
+        "script": "Большой спасибо, Иван!",
+        "why": "spasíbo is neuter, so the adjective is neuter too: Bol'shóye spasíbo."
+      },
+      "usage": "Real thanks, for something that took someone trouble.",
+      "register": "neutral",
+      "mnemonic": "The ending belongs to the noun, not to you."
+    },
+    {
+      "id": "L2-M1-S08",
+      "display": "Ne za chto, Iván",
+      "script": "Не за что, Иван",
+      "cue": "Don't mention it, Ivan",
+      "literal": "Not for what, Ivan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "za",
+            "script": "за",
+            "cue": "for · behind",
+            "tag": "free",
+            "forms": [
+              "za"
+            ],
+            "note": "A preposition doing the work of \"for\" here. The whole phrase is fixed — literally \"there is nothing to thank for\" — and is not built afresh."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "chto is pronounced shto, and here it is unstressed on top of that, so the phrase comes out as one blurred word. Reading it letter by letter will not get you to what people say.",
+      "sound": "NYE-za-shta, all three run together with the stress on the first. Nobody says the words separately.",
+      "variations": [
+        {
+          "display": "Pozháluysta, ne za chto",
+          "script": "Пожалуйста, не за что",
+          "cue": "You're welcome, don't mention it",
+          "changed": "both answers together, which is common"
+        },
+        {
+          "display": "Da ne za chto",
+          "script": "Да не за что",
+          "cue": "Oh, don't mention it",
+          "changed": "da in front — warmer, waving the thanks away"
+        },
+        {
+          "display": "Ne za chto, Ánna",
+          "script": "Не за что, Анна",
+          "cue": "Don't mention it, Anna",
+          "changed": "a different name"
+        }
+      ],
+      "mistake": {
+        "display": "Ne za chto bol'shóye",
+        "script": "Не за что большое",
+        "why": "The phrase does not take an intensifier: Ne za chto."
+      },
+      "usage": "Answering thanks. pozháluysta does the same job and is the neutral one; this is the warmer.",
+      "register": "neutral",
+      "mnemonic": "Three words, one sound, no parts."
+    },
+    {
+      "id": "L2-M1-S09",
+      "display": "Prostíte, ya ne ponimáyu",
+      "script": "Простите, я не понимаю",
+      "cue": "I'm sorry, I don't understand",
+      "literal": "Forgive, I not understand",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prostíte",
+            "script": "простите",
+            "cue": "sorry · forgive me",
+            "tag": "free",
+            "forms": [
+              "prostíte"
+            ],
+            "note": "izviníte's near-synonym rather than its opposite number. izviníte is the everyday one; prostíte carries more weight, and both open a request to a stranger."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Do not look for a clean split between prostíte and izviníte. Speakers use both for both jobs, and a rule that assigns one to apologies and the other to attention-getting will be contradicted within a day.",
+      "sound": "pra-STI-tye. The o is unstressed and reduces to a, so the word begins pra- and not pro-.",
+      "variations": [
+        {
+          "display": "Izviníte, ya ne ponimáyu",
+          "script": "Извините, я не понимаю",
+          "cue": "Excuse me, I don't understand",
+          "changed": "the everyday near-synonym"
+        },
+        {
+          "display": "Prostíte, pozháluysta",
+          "script": "Простите, пожалуйста",
+          "cue": "I'm very sorry",
+          "changed": "the fuller apology, without a reason"
+        },
+        {
+          "display": "Prostíte, ya ne govoryú po-rússki",
+          "script": "Простите, я не говорю по-русски",
+          "cue": "Sorry, I don't speak Russian",
+          "changed": "the other thing this opener is used for"
+        }
+      ],
+      "mistake": {
+        "display": "Prostí, ya ne ponimáyu",
+        "script": "Прости, я не понимаю",
+        "why": "The vy form is the course's default: Prostíte, ya ne ponimáyu."
+      },
+      "usage": "The most useful sentence a beginner has — and it buys another try at being understood.",
+      "register": "neutral",
+      "mnemonic": "Two apologies, no clean line between them."
+    },
+    {
+      "id": "L2-M1-S10",
+      "display": "Skazhíte Ivánu, pozháluysta",
+      "script": "Скажите Ивану, пожалуйста",
+      "cue": "Tell Ivan, please",
+      "literal": "Say-once to-Ivan, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ivánu",
+            "script": "Ивану",
+            "cue": "to Ivan",
+            "tag": "delta",
+            "forms": [
+              "Iván",
+              "Ivánu"
+            ],
+            "note": "The dative of a masculine name: -u on the end. Same word as L1's Iván, in the shape a recipient takes."
+          },
+          {
+            "display": "Ánne",
+            "script": "Анне",
+            "cue": "to Anna",
+            "tag": "delta",
+            "forms": [
+              "Ánna",
+              "Ánne"
+            ],
+            "note": "The dative of a feminine name: the -a becomes -e. Two genders, two endings, one job."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "mne and vam were dative all along and looked like ordinary words. A NAME shows the case working, because the ending changes in front of you.",
+      "sound": "ska-ZHI-tye i-VA-nu. The added -u is unstressed and short, and the stress does not move off the a.",
+      "variations": [
+        {
+          "display": "Skazhíte Ánne, pozháluysta",
+          "script": "Скажите Анне, пожалуйста",
+          "cue": "Tell Anna, please",
+          "changed": "a feminine name, so a different dative ending"
+        },
+        {
+          "display": "Pomogíte Ivánu, pozháluysta",
+          "script": "Помогите Ивану, пожалуйста",
+          "cue": "Help Ivan, please",
+          "changed": "a different verb, the same case"
+        },
+        {
+          "display": "Dáyte Ivánu bilét",
+          "script": "Дайте Ивану билет",
+          "cue": "Give Ivan a ticket",
+          "changed": "two objects — the recipient in the dative, the thing in the accusative"
+        }
+      ],
+      "mistake": {
+        "display": "Skazhíte Iván, pozháluysta",
+        "script": "Скажите Иван, пожалуйста",
+        "why": "The person told is a recipient, so the dative: Skazhíte Ivánu, pozháluysta."
+      },
+      "usage": "Leaving word with someone — at a desk, on a phone, at a door.",
+      "register": "neutral",
+      "mnemonic": "A recipient takes -u if he is masculine, -e if she is feminine."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M1-C01",
+      "display": "Skazhíte, pozháluysta, gde magazín?",
+      "script": "Скажите, пожалуйста, где магазин?",
+      "cue": "Tell me, please, where is the shop?"
+    },
+    {
+      "id": "L2-M1-C02",
+      "display": "Pomogíte mne, pozháluysta",
+      "script": "Помогите мне, пожалуйста",
+      "cue": "Help me, please"
+    },
+    {
+      "id": "L2-M1-C03",
+      "display": "Vy ne mózhete mne pomóch'?",
+      "script": "Вы не можете мне помочь?",
+      "cue": "Could you help me?"
+    },
+    {
+      "id": "L2-M1-C04",
+      "display": "Mne núzhno rabótat'",
+      "script": "Мне нужно работать",
+      "cue": "I need to work"
+    },
+    {
+      "id": "L2-M1-C05",
+      "display": "Mózhno vódu, pozháluysta?",
+      "script": "Можно воду, пожалуйста?",
+      "cue": "May I have some water, please?"
+    },
+    {
+      "id": "L2-M1-C06",
+      "display": "Búd'te dobrý, dáyte mne bilét",
+      "script": "Будьте добры, дайте мне билет",
+      "cue": "Would you be so kind, give me a ticket"
+    },
+    {
+      "id": "L2-M1-C07",
+      "display": "Bol'shóye spasíbo, Iván!",
+      "script": "Большое спасибо, Иван!",
+      "cue": "Thank you very much, Ivan!"
+    },
+    {
+      "id": "L2-M1-C08",
+      "display": "Ne za chto, Iván",
+      "script": "Не за что, Иван",
+      "cue": "Don't mention it, Ivan"
+    },
+    {
+      "id": "L2-M1-C09",
+      "display": "Prostíte, ya ne ponimáyu",
+      "script": "Простите, я не понимаю",
+      "cue": "I'm sorry, I don't understand"
+    },
+    {
+      "id": "L2-M1-C10",
+      "display": "Skazhíte Ivánu, pozháluysta",
+      "script": "Скажите Ивану, пожалуйста",
+      "cue": "Tell Ivan, please"
+    },
+    {
+      "id": "L2-M1-C11",
+      "display": "Vam núzhno otdykhát'",
+      "script": "Вам нужно отдыхать",
+      "cue": "You need to rest"
+    },
+    {
+      "id": "L2-M1-C12",
+      "display": "Búd'te dobrý, pomogíte mne",
+      "script": "Будьте добры, помогите мне",
+      "cue": "Would you be so kind, help me"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

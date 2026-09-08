@@ -301,6 +301,24 @@ job without them, `bad` among them: L1-M2 owns only the whole surface `not bad`,
 (`with`), fixed in content. **The native gate is still unmet**: docs/63 ends in open questions
 1–25, a fresh hi-en L2 chain.
 
+**en-ru starts its second level (#438, 2026-09-08).** `L2-M1` _Asking politely_ and `L2-M2`
+_Describing people_ are authored against the briefs of #429
+(`docs/56-en-ru-L2-brief-decisions.md`), backed by `docs/64-llm-review-en-ru-L2.md`; a strict
+`npm run build` emits `en-ru: 12 modules (L1-M1..M10, L2-M1..M2)`. M1's grammar is the **aspect of
+an imperative** — L1 shipped the pairs and never taught the choice — with `skazhíte` and
+`govoríte` on separate rows, as the L1 aspect-partner policy requires and as this module's own
+lesson needs. Two other things land there: Russian's **subjectless sentence** (`Mne núzhno
+rabótat'`, `Mózhno vódu?`), named once so M3 and M8 do not meet it as fresh idioms; and the polite
+**negative question**, which is softer in Russian and reads as doubt or complaint to an English
+ear. M2 opens the long adjective with all four nominative cells in one row's `forms`, and states
+the split L1 left implicit: `ustál` was a short-form adjective all along, and the short form is not
+a shortening of the long one. `mat'` and `doch'` are taught as words rather than as examples,
+because they are the only two feminine nouns of their shape in the course. One seam correction:
+`u nevó` and `u neyó` ride as whole two-token surfaces, because bare `u` is taught nowhere — L1-M8
+authored `u menyá` and `u vas` the same way, and matching it is both the fix and the better
+teaching. **The native gate is still unmet**: docs/64 ends in open questions 1–10, a fresh en-ru L2
+chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on
