@@ -201,3 +201,170 @@ names, not by raising the baseline.
     flat beside it.
 22. **`satt`** (M5-S06). Confirm it is neutral rather than blunt, and that `voll` of a person who
     has eaten is genuinely wrong.
+
+## Wave 3 — L2-M6 … L2-M10 (#459)
+
+The level closes. A strict `npm run build` emits `en-de: 20 modules (L1-M1..M10, L2-M1..M10)`, and
+en-de is the eighth of nine courses with a complete second level.
+
+### L2-M6 "Making plans together" — the verb holds second place
+
+The module's grammar is that **the verb is SECOND in a main clause and "second" counts PHRASES**.
+Front a time and the subject moves behind the verb: `Am Samstag gehe ich ins Kino`, never `Am
+Samstag ich gehe`. English fronts a time and changes nothing, which is what makes this worth a
+module rather than a footnote — and it pays off three more times before the level ends (M9's `Am
+liebsten trinke ich Tee`, M10's whole account architecture).
+
+The companion rule is one line and nobody ever states it: **time comes before place.** `Am
+Donnerstag fahre ich nach Berlin`, and the English habit is the reverse.
+
+And then the trap that makes learners miss trains: **`halb neun` is half past EIGHT.** German counts
+toward the hour that is coming. There is no rule beyond the direction of the counting, and saying
+that plainly is worth more than a table. `Viertel nach` and `Viertel vor` behave like English and
+are deliberately shown beside it so the over-correction does not happen either.
+
+Register: `du` and `wir` throughout, `informal` where the frame is du-only. M4 and M7 speak `Sie`
+and this module deliberately does not — an invitation in `Sie` reads as a business appointment.
+
+### L2-M7 "On the phone" — the surname, and the tense that is not there
+
+The German telephone convention is a genuine cultural fact and it is the module's first sentence:
+**the person answering says their SURNAME** and the caller opens with `Guten Tag, hier ist …`. Every
+word was L1-M2's already; only the convention is new. A learner who does not expect a bare surname
+thinks they have dialled wrong.
+
+The delta German shares with French and not with Italian: **there is no continuous tense.** `Ich
+spreche` covers "I speak" and "I am speaking" alike, and `gerade` is an adverb doing a tense's job
+when "right now" matters. en-it's M7 is where a phone call finally motivates a progressive; this is
+where the absence of one has to be stated, and the two briefs should be read together.
+
+`Auf Wiederhören` is `Auf Wiedersehen` with the seeing swapped for hearing — a small joke the
+language makes that a learner remembers for years. It rides as a two-token surface beside L1-M2's,
+the multi-token tool keeping `auf` on L1-M4's row.
+
+`hinterlassen` is the useful contrast to `anrufen` and `zurückrufen`: it looks separable and is not,
+because `hinter-` is never stressed. The stress, not the spelling, is the rule.
+
+### L2-M8 "When something goes wrong" — the dative list, and kein against nicht
+
+**`helfen` takes the dative**, and it heads a short closed list — `helfen`, `danken`, `gefallen`,
+`gehören`, `passen` — that no rule predicts membership of. `Können Sie mir helfen?` is M1's bracket,
+M1's dative and M3's case in one sentence, which is the article grid earning its keep a second time.
+
+`Mir ist schlecht` has **no grammatical subject at all**, and L1-M9 already shipped one of these
+(`Mir ist kalt`) without naming the pattern. Naming it here makes the family fall out at once, and
+`Ich bin schlecht` — "I am a bad person" — is one of the costliest one-word slips in the course.
+
+**`kein` against `nicht`** is one of the few German rules with a clean statement, and L1 shipped both
+halves without ever making it: `kein` negates a noun that would take `ein` or no article, `nicht`
+negates everything else. The mistakes are spent here.
+
+Complaining calmly is a register lesson and German's answer is closer to Russian's than to English's:
+the softening is the OPENING (`Entschuldigung, …`) and the word `leider`, not a weakening of the
+claim. `Es funktioniert nicht` is normal and is not rude.
+
+### L2-M9 "Comparing and choosing" — a preference with no verb for it
+
+The comparative is `-er` and the standard is `als`. Two German particulars make it more than an
+English lookalike: many one-syllable adjectives take an **umlaut** (`alt → älter`, `groß → größer`,
+`jung → jünger`, `lang → länger`) and the fold KEEPS umlauts, so each comparative is a surface of its
+own; and the predicate superlative is `am -sten`, which takes no adjective ending and so fits inside
+this level's predicative-only rule.
+
+**`als` against `wie`** is the mistake block, and the module says honestly that native speakers
+produce `größer wie` constantly in speech, particularly in the south. A learner who hears it in
+Germany and then reads a rule pretending it never happens stops trusting the course.
+
+The module's best delta: **German states a preference with an ADVERB, not a verb.** `Ich trinke
+lieber Tee` is "I prefer tea" — literally "I drink more gladly tea" — where English needs the verb
+and Spanish `preferir`. `gern` (M1's), `lieber`, `am liebsten`: one word, three rungs, and the whole
+preference system is that.
+
+`welcher`/`welche`/`welches` and `dieser`/`diese`/`dieses` take the same endings as `der`/`die`/`das`,
+so choosing is M3's grid a third time rather than a new system.
+
+### L2-M10 "Telling what happened" — the Perfekt, and the relief
+
+The decision of the module is the true description of spoken German rather than a simplification:
+**the Perfekt is the spoken past for nearly every verb** — auxiliary in position two, participle at
+the very END, which is M1's bracket for the fourth time — **and `sein`, `haben` and the modals prefer
+the Präteritum**: `war`, `hatte`, `konnte`, `wollte`. That is exactly why L1-M5 shipped `war`,
+`waren`, `hatte` and `hatten` and no participle for either.
+
+The auxiliary law is meaning, not shape: `sein` for movement and change of state, `haben` for
+everything else. `geblieben` is the one worth naming, because staying is not movement and takes
+`sein` anyway.
+
+And the relief, said out loud because three courses in this repo say the opposite: **the German
+participle never agrees with anything.** en-es, en-fr and en-it all make theirs agree in one
+auxiliary or the other. A learner arriving from any Romance language will otherwise spend weeks
+hunting a rule that is not there.
+
+Separable participles wrap the `ge-` INSIDE — `angerufen`, `eingestiegen`, `aufgestanden` — and that
+is the one place a separable verb appears in this level without a modal in front of it. It is still
+one clean token, so M4's ruling holds.
+
+### Seven more rows the index had already spent
+
+The duplicate check fired again across this wave, and again every hit was fixed in content:
+`kommen` (L1-M1's — M8 opened `kommt` instead and pointed back), `warm` (L1-M9's — M10-S10 took
+`wärmer`, which ties M9's umlaut comparative into the account), `dass` and `zusammen` (L1-M9's and
+M5's — both fold into traps that were already carrying them), and `ist` (L1-M1's, caught while
+adding auxiliary forms). The pattern by now is settled: when the key is spent, the sentence is
+rebuilt on one the module can hold, or the teaching moves into prose.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` held at **en-de 11** across all five modules — the same baseline the
+level opened with. Roughly thirty findings came up across the wave and every one was fixed in
+content: rows opened where the module owned the teaching (`meinen`, `Stadt`, `kommt`, `vergessen`,
+`am -sten` as a family of forms), and variations rewritten onto taught surfaces where they did not
+(`könnte`, `für`, `Telefonnummer`, `Computer`, `Tasche`, `Zimmer`, `dabei`, `mehr` before M9 owned
+it).
+
+### A provenance field, corrected
+
+The five modules of #450 and #459 carry `"verifiedBy": "LLM review, authorised by repo owner"` —
+the form already used by en-ko's L1 — rather than naming a model. The claim the field makes is about
+the AUTHORITY behind the review, and that is the repo owner's either way; the model name adds
+nothing a reader of the content needs. M1 and M2 keep what they shipped with.
+
+### Open questions for the native pass
+
+23. **Verb-second with a fronted time** (M6, rule 0). Confirm `Am Samstag gehe ich ins Kino` is the
+    ordinary way to say it and not a marked one.
+24. **`halb neun`** (M6-S04). Confirm nobody hedges this in speech — that a German saying `halb
+    neun` always means 8:30 and never 9:30, in any region.
+25. **`Hast du Zeit?` against `Bist du frei?`** (M6-S02). Confirm the split, and that asking a friend
+    `Bist du am Mittwoch frei?` really does read oddly.
+26. **`Abgemacht`** (M6-S10). Confirm it is warm rather than businesslike between friends.
+27. **The surname answer** (M7, rule 0). Confirm it is still the norm on a landline and on a mobile
+    when the number is unknown, and whether a younger speaker now answers with `Hallo?`.
+28. **`hier ist`** (M7-S01). Confirm `das ist` is genuinely wrong on the phone rather than merely
+    unusual.
+29. **`Kann ich bitte Frau Weber sprechen?`** (M7-S02). Confirm the accusative version without `mit`
+    is what a switchboard expects.
+30. **`ausrichten` against `hinterlassen`** (M7-S05). Confirm the seats — that the one answering says
+    `ausrichten` and the caller says `hinterlassen`.
+31. **The dative verb list** (M8, rule 0). Confirm `helfen`, `danken`, `gefallen`, `gehören`,
+    `passen` is the right five to teach as the list, and nothing commoner is missing from it.
+32. **`Mir ist schlecht`** (M8-S04). Confirm `Ich bin schlecht` really does land as a statement about
+    character, which is how the trap sells it.
+33. **`kaputt`** (M8-S09). Confirm it is neutral to a landlord and carries no informality an English
+    ear would hear in it.
+34. **`Der Bus kommt leider nicht`** (M8-S08). Confirm `leider` inside the sentence is where a
+    speaker puts it.
+35. **`größer wie` in speech** (M9, rule 1). Confirm the module is right to say this openly, and that
+    the regional picture is as described.
+36. **`lieber` and `am liebsten`** (M9-S04, S05). Confirm there is genuinely no everyday verb for
+    "prefer" at this level, and that `bevorzugen` is as formal as the omission assumes.
+37. **`dieser` against `der`** (M9-S09). Confirm `dieser` is heavier than English "this" and that a
+    learner over-using it sounds translated.
+38. **The Präteritum/Perfekt split** (M10, rule 0). The wave's strongest structural claim. Confirm
+    `war`, `hatte`, `konnte` and `wollte` are what people say, and that `ich bin gewesen` and `ich
+    habe gekonnt` are as rare in speech as the module claims — including in the south, where the
+    picture is said to differ.
+39. **`geblieben` with `sein`** (M10-S04). Confirm the "change of where you are" framing is a fair
+    way to remember the list rather than a rationalisation.
+40. **The four-sentence account** (M10-S10). Confirm three fronted words with the verb second in each
+    reads as natural narration and not as a drill.

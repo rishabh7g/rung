@@ -519,6 +519,29 @@ lets a mistake display through only when its own `why` carries a real `ß`. The 
 en-de 11. **The native gate is still unmet**: docs/67 ends in open questions 1–22, a fresh en-de
 L2 chain.
 
+**en-de completes its L2 — eight of nine courses now have two levels (#459, 2026-09-08).** `L2-M6`
+through `L2-M10` land together and `npm run build` emits `en-de: 20 modules (L1-M1..M10,
+L2-M1..M10)`. M6 makes **verb-second** the module's grammar: the verb holds the second slot and
+"second" counts phrases, so fronting a time pushes the subject behind it — `Am Samstag gehe ich ins
+Kino` — which English never does, and which M9 and M10 both lean on again. It carries the trap most
+likely to make a learner miss a train: **`halb neun` is half past EIGHT**, because German counts
+toward the hour that is coming. M7 states the delta German shares with French and not with Italian —
+**there is no continuous tense**, and `gerade` is an adverb doing a tense's job — around the genuine
+cultural fact that **the person answering a German phone says their surname**. M8 teaches the short
+closed list of **dative verbs** (`helfen` heads it), names the subjectless family L1-M9 shipped
+without naming (`Mir ist schlecht`, where `Ich bin schlecht` is a statement about character), and
+finally states **`kein` against `nicht`**, one of the few German rules with a clean statement. M9's
+best delta is that **German states a preference with an adverb and not a verb** — `gern`, `lieber`,
+`am liebsten` — and it says openly that native speakers produce `größer wie` all the time, because a
+course that denies what a learner will hear stops being trusted. M10 takes the spoken past as it
+really is: **the Perfekt for nearly every verb, the Präteritum for `sein`, `haben` and the modals**,
+which is why L1-M5 shipped `war` and `hatte` with no participles — and it says out loud, for anyone
+arriving from Spanish, French or Italian, that **the German participle never agrees with anything**.
+The duplicate-row check fired seven more times and every hit was again fixed in content rather than
+allow-listed. The ratchet held at en-de 11 across all five modules, with roughly thirty findings
+fixed by opening rows the modules owned or rewriting variations onto taught surfaces. **The native
+gate is still unmet**: docs/67 ends in open questions 1–40, a fresh en-de L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on
