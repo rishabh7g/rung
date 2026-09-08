@@ -208,3 +208,89 @@ describe('hi-mr L3: the decisions its briefs settle (#452)', () => {
     expect(all['L3-M5']?.notes.join('\n')).toMatch(/बोललो/);
   });
 });
+
+describe('en-es L2: the decisions its briefs settle (#426)', () => {
+  const all = COURSE_BRIEFS['en-es'] ?? {};
+  const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
+  const notes = l2.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('covers exactly L1-M1..L2-M10 — two levels, twenty modules', () => {
+    expect(Object.keys(all)).toEqual([
+      ...['L1', 'L2'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    ]);
+  });
+
+  /**
+   * The bounds climb inside the level, continuing L1's 5 → 8. They are pinned because a prompt
+   * renders them verbatim into `complexity`, so a wrong number here becomes a wrong number in ten
+   * module files.
+   */
+  it('climbs its bounds 8 → 9 → 10 across the level', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L2-M1', 'L2-M2', 'L2-M3']) expect(bound(id), id).toBe(8);
+    for (const id of ['L2-M4', 'L2-M5', 'L2-M6', 'L2-M7']) expect(bound(id), id).toBe(9);
+    for (const id of ['L2-M8', 'L2-M9', 'L2-M10']) expect(bound(id), id).toBe(10);
+  });
+
+  /**
+   * The register decision governs the whole level and must reach an author, who only ever sees
+   * the notes: the chip from #422, and the correction that `usted` is L1-M2's and not new here.
+   */
+  it('states the register decision, the chip and the L1 correction in a NOTE', () => {
+    const m1 = all['L2-M1']?.notes.join('\n') ?? '';
+    expect(m1).toMatch(/`informal`/);
+    expect(m1).toMatch(/`formal`/);
+    expect(m1).toMatch(/`neutral`/);
+    // The premise #426 got wrong: L1-M2 already taught usted, so L2 teaches the FRAME.
+    expect(m1).toMatch(/L1-M2 already taught usted/);
+    expect(m1).toMatch(/slogan to kill: "usted is formal, tú is informal"/);
+    // Which module speaks which — the street, the phone and a complaint are usted; plans are tú.
+    expect(all['L2-M4']?.notes.join('\n')).toMatch(/usted throughout/);
+    expect(all['L2-M6']?.notes.join('\n')).toMatch(/tú and nosotros throughout/);
+  });
+
+  /**
+   * The two syllabus decisions the INDEX forced. If either disappears from a note, a later author
+   * writes the sentence that takes the key, and no row can take it back.
+   */
+  it('keeps `tan … como` and the feminine object clitics out, for index reasons', () => {
+    const m9 = all['L2-M9']?.notes.join('\n') ?? '';
+    expect(m9).toMatch(/tan … como is deliberately NOT taught/);
+    expect(m9).toMatch(/como is L1-M4's key/);
+    const m5 = all['L2-M5']?.notes.join('\n') ?? '';
+    expect(m5).toMatch(/la, los and las are L1-M1's ARTICLES/);
+    expect(m5).toMatch(/wait for L3/);
+    // And the whole-phrase tool that made `lo`, `me` and `le` available in the first place.
+    expect(all['L2-M1']?.notes.join('\n')).toMatch(/Lo siento is indexed WHOLE/);
+    expect(all['L2-M7']?.notes.join('\n')).toMatch(/Me llamo was indexed as a two-token surface/);
+  });
+
+  it('assigns every shared lexeme an owner, in the notes', () => {
+    // `bueno` is L1-M10's discourse marker, so the adjective is taught on its other three cells.
+    expect(all['L2-M2']?.notes.join('\n')).toMatch(/bueno/);
+    expect(all['L2-M3']?.notes.join('\n')).toMatch(/never shows masculine singular bueno/);
+    // `mayor` has two jobs and one row (M2's); M9 points back rather than opening a second.
+    expect(all['L2-M2']?.notes.join('\n')).toMatch(/mayor is this module's key/);
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/mayor is M2's key/);
+    // `que` carries the linker and the comparative on M5's row.
+    expect(all['L2-M5']?.notes.join('\n')).toMatch(/que is this module's key/);
+    expect(all['L2-M9']?.notes.join('\n')).toMatch(/que stays M5's row/);
+    // Every module names its index seam, the discipline docs/26 §4 set.
+    for (const [id, brief] of l2) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  /** The deferrals, and the one preposition that is allowed in early. */
+  it('defers the subjunctive, the perfect and por/para, and lets `para` in at M5 alone', () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/### 4\. What L2 withholds, and where each piece lands/);
+    expect(all['L2-M5']?.notes.join('\n')).toMatch(/para enters HERE/);
+    expect(all['L2-M5']?.notes.join('\n')).toMatch(/Bare por stays unowned/);
+    expect(all['L2-M8']?.notes.join('\n')).toMatch(/the perfect is L3/);
+    expect(notes).toMatch(/subjunctive/);
+    // M10's shape is the job line's own words, and it opens nothing new.
+    expect(all['L2-M10']?.notes.join('\n')).toMatch(/exactly four short sentences/);
+  });
+});

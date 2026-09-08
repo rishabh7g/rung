@@ -1474,6 +1474,116 @@
  * bound that actually bites is `newWordCap` — every particle, every ending and every counter is a
  * new surface.
  *
+ * ## en-es L2: the decisions, taken against the finished L1 (#426)
+ *
+ * The second L2 briefed, after hi-mr's (#295). Planned against the REAL cumulative L1 index —
+ * **228 surfaces through L1-M10, maxSpan 3**, rebuilt and read rather than remembered — and
+ * against the spoken-Spanish pass (docs/41). The four decisions below are recorded in
+ * `docs/53-en-es-L2-brief-decisions.md` and repeated in the module notes, because a prompt only
+ * ever shows an author the notes.
+ *
+ * ### 1. Register — `usted` is not new here, and the correction matters
+ *
+ * The issue that commissioned these briefs said L1 "kept `usted` out of every display". The index
+ * says otherwise, and rule 1 (check the example against the rule) applies to a brief's premises
+ * too: **L1-M2 teaches `usted` on a row of its own** (`¿Cómo está usted?`, `¿Es usted de la
+ * India?` are display sentences), and `es`, `está` and `quiere` each already carry "…and usted"
+ * in their notes. So L2 does not introduce the pronoun. What it settles is everything the pronoun
+ * alone never decided:
+ *
+ * - **The frame, not the pronoun, is where politeness lives.** `usted` is a grammatical address,
+ *   not a politeness dial: `Deme el pan, usted` is rude and `¿Me pones un café?` to a friend is
+ *   not. The tier the learner controls is the FRAME — a bare imperative, `¿Puede…?`, `¿Me da…?`,
+ *   `¿Me podría…?` (deferred, conditional is L3) — and M1 teaches the frames in both addresses
+ *   side by side. The slogan to kill: "`usted` is formal, `tú` is informal". In Spain `tú` is
+ *   ordinary with a shop assistant; across much of Colombia and Central America `usted` goes to a
+ *   grandchild out of affection. What is invariant is the AGREEMENT, so that is what a rule says.
+ * - **Which module speaks which.** M4 (asking the way), M7 (the phone) and M8 (a problem with a
+ *   stranger or staff) speak `usted`; M6 (plans with friends) speaks `tú`; M2, M3, M5 and M9 are
+ *   written in whichever the scene actually implies and say so in `usage`. M1 shows the pair.
+ * - **The chip carries it now** (#422): `tú`-only frames chip `informal`, the `usted` frames and
+ *   the `perdone` / `disculpe` end chip `formal`, everything safe with anyone stays `neutral`.
+ *   The tier the L1 briefs had to smuggle into `usage` prose is data from this level on.
+ * - **The paradigm `usted` drags in.** L1 gave the learner `es`, `está` and `quiere`; L2 owes the
+ *   rest of the third person, and it arrives as vocabulary rather than as a new system: `tiene`
+ *   (M2), `puede` (M1), `da` (M1), `dice` (M7), `prefiere` (M9), plus the `usted` imperative
+ *   (`perdone`, `disculpe`, `dígame`, `siga`, `gire`) which M1 opens and M4 and M7 spend.
+ *
+ * ### 2. Forms — L2 never edits an L1 file
+ *
+ * The additions-only invariant, structural exactly as in hi-mr: a new SHAPE of an L1 lexeme
+ * (`estamos`, `vamos a`, `quieres` in a new cell, `comía` in a narrative role) is deconstructed
+ * in the L2 module that first shows it, its note pointing back to the first-teach row, because
+ * the bare word's key is L1's forever and re-verifying frozen L1 files from every L2 issue would
+ * churn what the gate passed. Within L2 the discipline continues: a first-teach row lists the
+ * cells its LEVEL shows (plan the wave, not the module), `[]` stays honest for invariables and
+ * re-teaches, and one paradigm has ONE home.
+ *
+ * ### 3. Seams — the multi-token surface is Spanish's tool, and every collision has an owner
+ *
+ * maxSpan is 3 and stays 3. Where Marathi glues (`स्टेशनला`) Spanish SPANS, so the tool L1 built
+ * with `Me llamo`, `por favor` and `al lado de` — a phrase indexed whole, leaving its bare words
+ * free — is how L2 keeps a later module's word off an earlier module's note. First occurrence
+ * wins, so these are decided up front rather than discovered:
+ *
+ * - `a` is L1-M4's ("at eight", the personal `a`). Directions therefore index **`a la derecha`
+ *   and `a la izquierda` whole** (M4), and `todo recto` whole, because `todo` is L1-M8's.
+ * - `como` is L1-M4's "I eat". A comparison written `tan alto como` would land the learner on an
+ *   eating note — the `का` bug in Spanish — so **`tan … como` is kept out of L2 entirely** and
+ *   named as L3's in M9's notes. This is an index decision driving a syllabus decision, and it is
+ *   the clearest case in the repo of the two being the same decision.
+ * - `la`, `los`, `las` are L1-M1's ARTICLES. The direct-object clitics spelled identically can
+ *   therefore never be first-taught, so **L2 teaches the clitic system on `lo`, `me` and `te`
+ *   only** (M5), and `la`/`los`/`las` as objects wait for L3.
+ * - `bueno` is L1-M10's discourse "well, …". The adjective is taught on **`buena`, `buenos`,
+ *   `buenas`** (M3) and masculine singular `bueno` never appears in a display; `mejor` (M9) picks
+ *   the family up. The same trap in reverse is a gift to M7: the Mexican way to answer a phone is
+ *   `¿Bueno?`, which a usage line names and no display teaches.
+ * - `se` (M4, impersonal `¿Cómo se va…?`), `le` (M7, indirect object), `lo` (M5, direct object),
+ *   `que` (M5, the linker — its note true of the comparative job M9 spends), `luego` (M7),
+ *   `tarde` (M6), `día` (M6), `cerca` (M4) are all bare keys L1 left free precisely because it
+ *   indexed `se llama`, `le gusta`, `por favor`, `por qué`, `hasta luego`, `por la tarde`,
+ *   `todos los días` and `cerca de` whole. L2 spends them, one owner each.
+ * - `mañana` (L1-M6, "tomorrow"), `hora` (L1-M4), `hay` and `está` (L1-M7/M2), `qué` (L1-M4),
+ *   `nada` (L1-M3), `mal` (L1-M9), `muy` (L1-M8) and `mucho` (L1-M1) are re-taught by L2 modules
+ *   that own none of them. `hermano`, `malo`, `esta`, `cuál`, `quién` and `más` ARE free and are
+ *   assigned: M2, M3, M9, M9, M7, M9.
+ * - Accents are still letters (L1-M2's law), and L2 puts more weight on it than L1 did: `esta`
+ *   (this) beside `está` (is), `mas` never written for `más`, `si`/`sí`, `que`/`qué`, `cual` never
+ *   for `cuál`. A dropped accent here merges a demonstrative into a verb for the rest of the course.
+ * - Proper nouns never index (#61), so every direction, every call and every account anchors on a
+ *   common noun (`la plaza`, `la estación`, `el mensaje`), not on `Ana` or `México`.
+ *
+ * ### 4. What L2 withholds, and where each piece lands
+ *
+ * Named in the module that would otherwise reach for it, so a later author does not import it a
+ * level early: the **subjunctive** (L3-M3/M4 per `content/en-es/levels.json`) — M1's requests stop
+ * at `¿Puede…?` and never reach `Quiero que venga`; the **conditional** `podría`/`querría` (L3),
+ * which is why M1 and M8 buy politeness with frames rather than with a tense; the **perfect**
+ * `he perdido` (L3), so M8 and M10 tell a past with L1-M5's preterite; **`por` vs `para` as a
+ * system** (L3) — `para` enters at M5 for a recipient (`Para mí, una sopa`) and nothing else, and
+ * bare `por` stays unowned across the whole level, riding only inside `por favor`, `por qué` and
+ * `por eso`; **`tan … como`** (L3, for the index reason above); **object `la`/`los`/`las`** (L3,
+ * same reason); and the **future in `-ré`** beyond the three cells L1-M6 already shipped.
+ *
+ * ### Why the en-es L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim; the brief adds which English→Spanish delta each
+ * job carries, sequenced so each pressure point lands in the module whose job cannot be done
+ * without it: the stem-changing verbs and the request frames in M1 (L1 shipped `quiero`/`quieres`
+ * and `cuesta` without ever naming e→ie or o→ue; a request needs `puede`, so the law is named
+ * where it is first paid for); `tener` and the `ser`/`estar` MEANING pairs — `es listo` beside
+ * `está listo` — in M2, which is the honest sequel to L1-M2's split; the full four-cell agreement
+ * grid plus `grande`→`gran` in M3; the `hay`/`está` division and the `usted` imperative in M4;
+ * clitic pronouns and `para` in M5; the `nosotros` cell, the clock and the arrangement-present in
+ * M6; the gerund in M7, because a call is happening NOW and `Te llamo` finally pays off L1-M1's
+ * decision to index `Me llamo` whole; `doler` and `tener que` in M8, where `gustar` stops being a
+ * quirk and becomes a CLASS; the comparatives in M9; and in M10 the one thing an account cannot
+ * dodge — the division of labour between the preterite and the imperfect, whose endings L1-M5
+ * already taught and whose USE it deliberately did not. Bounds climb 8 → 10 (M1–M3: 8, M4–M7: 9,
+ * M8–M10: 10), pools are authored to 12, M1–M3 ship fully enriched (validator law, any level),
+ * and M10's items are four-sentence accounts.
+ *
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -2259,6 +2369,216 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         'A turn is where pro-drop is most tempting to break: once the person is established Spanish keeps dropping the pronoun, and a yo at the head of every sentence reads as insistence or contrast, not as neutral speech. That, not "Spanish drops pronouns", is the rule to state.',
       ],
       maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M1': {
+      id: 'L2-M1',
+      title: 'Asking politely',
+      job: 'Requests, thanks, apologies in the right register',
+      patterns: [
+        '¿Puede/Puedes + V-inf?',
+        '¿Me da/das + un/una + N?',
+        'Perdone/Disculpe + , + <request>',
+        'Lo siento + , + <statement>',
+        'Muchas gracias + , + <closing>',
+      ],
+      notes: [
+        'REGISTER, decided for the whole level and repeated here because a prompt only ever shows an author the notes (the full record is docs/53-en-es-L2-brief-decisions.md). L1-M2 already taught usted on a row of its own — ¿Cómo está usted? is a display sentence there, and the es / está / quiere notes already say "…and usted" — so this module does NOT introduce the pronoun. It teaches the FRAME, which is where politeness actually lives: a bare imperative, ¿Puede…?, ¿Me da…?. Write the same request in both addresses side by side — ¿Me pones un café? (a friend) beside ¿Me pone un café, por favor? (a counter) — and let #422\'s chip carry the tier: tú-only frames chip `informal`, the usted frames and the perdone / disculpe end chip `formal`, anything safe with either stays `neutral`.',
+        'The slogan to kill: "usted is formal, tú is informal". It is false in both directions — in Spain tú is ordinary with a shop assistant, and across much of Colombia and Central America usted goes to a grandchild out of affection. State the law that IS invariant instead: usted takes the él/ella verb form while still meaning "you" (usted puede, never *usted puedes), and the choice of address is a claim about the relationship, not a rung on a politeness ladder. Put the regional facts in usage, never in a rule.',
+        'The grammar of the module is the stem change, and L1 shipped both patterns without ever naming them: quiero / quieres (e→ie, L1-M1 and M3) and cuesta (o→ue, L1-M8). Name the law here because a request needs poder: puedo · puedes · puede, with the change in the STRESSED syllable and nowhere else — which is why the nosotros cell M6 teaches is podemos, not *puedemos. Tag it delta and point back at both L1 rows; this is a rest point disguised as new grammar.',
+        'Apology and thanks: Lo siento is regret for something that happened, Perdone / Perdona is asking to be excused before you interrupt, and Disculpe is the neutral street-and-counter form — English "sorry" covers all three and picking one by feel is the interference to spend a mistake on. Perdón (L1-M10\'s key) is re-taught here, not owned. Thanks climbs gracias (L1-M2) → muchas gracias → muchísimas gracias, and de nada (L1-M10) answers all three.',
+        "INDEX SEAM: puedo, puedes, puede, da, das, perdone, disculpe and siento are fresh keys. Lo siento is indexed WHOLE, as L1-M1 indexed Me llamo, so that the bare lo stays free for M5's direct object — a two-token surface is how this course keeps a later module off an earlier module's note. Muchas gracias likewise rides whole, leaving gracias L1-M2's. por favor stays L1-M8's row: it is re-shown in half the frames here and owned by none of them.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M2': {
+      id: 'L2-M2',
+      title: 'Describing people',
+      job: 'Appearance, character, relationships',
+      patterns: [
+        '<person> + es + Adj',
+        '<person> + está + Adj',
+        'Tengo/Tiene + un/una + N',
+        'Tiene + el/los + N + Adj',
+        'Es mi + N',
+      ],
+      notes: [
+        'The third pillar of English "to be": Spanish describes a feature with TENER, not with ser or estar — Tiene los ojos verdes, Tiene el pelo largo, where English says "has green eyes" but also "is tall-haired" in half its idioms. tener is irregular in the yo cell (tengo) and stem-changing everywhere else (tienes, tiene) — M1\'s e→ie law, paid a second time. The article where English wants a possessive is part of the frame: tiene EL pelo largo, not *su pelo.',
+        'ser and estar again, and this time the pair that changes MEANING rather than aspect: es listo (clever) beside está listo (ready); es aburrido (a boring person) beside está aburrido (bored right now). This is the honest sequel to L1-M2, which split identity from condition; with a character adjective the same split produces two different words in English, and that is the module\'s best mistake block. The L1 slogan stays dead — "permanent vs temporary" explains neither pair.',
+        'The family and person set: hermano (a FRESH key — L1-M4 taught only hermana / hermanas, and this row points back at it), padre, madre, padres, hijo, hija, amigo, amiga; alto, bajo, joven, mayor, delgado, moreno, rubio, simpático, amable; pelo, ojos. Author them in gendered pairs so M3 inherits a grid rather than a list.',
+        'mayor is this module\'s key, not M9\'s: it means "older" of a person here and "greater" as a comparative there, and first occurrence wins, so write the note true of both jobs now and let M9 cross-reference it. The same discipline governs bueno: its key is L1-M10\'s discourse "well, …", so a good PERSON is written buena persona or es muy amable, and masculine singular bueno never appears in a display in this course. M3 restates the rule for things.',
+        "INDEX SEAM: tengo, tienes, tiene, hermano, padre, madre, hijo, hija, amigo, amiga, alto, bajo, joven, mayor, listo, simpático, amable, pelo, ojos are fresh keys. está and es stay L1-M2's rows (their forms already carry están and son); this module re-teaches them and owns neither. Every adjective row lists the four cells the LEVEL shows — alto · alta · altos · altas — because a paradigm has one home, and M3 shows the grid rather than opening second rows.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M3': {
+      id: 'L2-M3',
+      title: 'Describing things',
+      job: 'Size, colour, quality — agreement at length',
+      patterns: [
+        'el/la + N + es + Adj',
+        'los/las + N-pl + son + Adj-pl',
+        'un/una + N + Adj',
+        'un gran + N + / + un + N + grande',
+        'Es + muy + Adj',
+      ],
+      notes: [
+        '"At length" is the job: L1 flashed corners of the grid (rojo / roja / rojos / rojas at M3, caro at M8, the -o/-a feelings at M9) and this module walks all of it. The law by ending, and it is the true one: an adjective in -o has four cells; one in -e or in a consonant (grande, verde, azul, fácil, joven) has TWO — it never marks gender, only number; one in -or, -án or a nationality adds -a (trabajador → trabajadora, español → española, which L1-M1 already shipped). The shortcut to refuse is "-o is masculine, -a is feminine": it is about NOUNS, it is false (el día, la mano, el problema), and it does not describe agreement at all.',
+        'The one shape change worth teaching: grande apocopates to gran before ANY singular noun, and the position moves the meaning — un gran libro is a great book, un libro grande is a big one. English does this with stress and word choice, so both halves are delta. Keep the rest of the position rule simple: the adjective follows the noun, and the exceptions are lexical, not a system to open here.',
+        'Colours are the vocabulary spend and they rehearse the split: negro, blanco, amarillo bend through four cells; verde and azul mark number only; rojo (L1-M3) is re-taught, not owned. Pair each colour with an L1 noun so the grid is drilled against words the learner already has — la puerta es azul, los libros son verdes.',
+        "muy against mucho, and the classic error to spend a mistake on: muy modifies an adjective (muy caro, muy fría), mucho modifies a verb or counts a noun (me gusta mucho, mucha agua). *Muy me gusta and *Es mucho caro are both wrong and both are literal English. Neither key is this module's — muy is L1-M8's and mucho is L1-M1's — so the note re-teaches the pair without opening a row.",
+        'The bueno rule, restated for things: the key is L1-M10\'s discourse "well, …", so this module writes buena, buenos, buenas freely and never shows masculine singular bueno in a display. When a masculine singular "good" is genuinely needed, the sentence takes está muy bien or es estupendo instead; M9\'s mejor picks the family up. malo is free and IS this module\'s, with L1-M9\'s mal (badly) cross-referenced in its note.',
+        "INDEX SEAM: grande, gran, grandes, negro, blanco, amarillo, verde, azul, largo, corto, nuevo, viejo, fácil, difícil, malo are fresh keys, each row carrying the cells this level shows. son stays L1-M2's (es's forms list). Accents are letters: fácil and difícil are written with them every time, or the index gains two words nobody meant.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M4': {
+      id: 'L2-M4',
+      title: 'Getting around',
+      job: 'Directions, transport, asking the way',
+      patterns: [
+        'Perdone + , + ¿dónde está + el/la + N?',
+        '¿Cómo se va a + el/la + N?',
+        'Siga/Gire/Cruce + <direction>',
+        'a la derecha / a la izquierda / todo recto',
+        'Voy en + N-transport',
+      ],
+      notes: [
+        "This module talks to strangers: usted throughout, chipped `formal`, and it is where M1's frames are spent in the field. The usted imperative is the new cell — siga, gire, cruce, tome, and perdone from M1 — formed from the yo stem with the OTHER vowel (sigo → siga, giro → gire), which is the shape the subjunctive will reuse in L3; say that it is coming and do not open it. A tú imperative (sigue, gira) is named in usage and never shown, because the street scene does not motivate it.",
+        'hay against está, the split L1-M7 set up and this module has to decide: hay introduces something whose existence is the news, and it never takes a definite article (Hay un banco en la plaza, ¿Hay una farmacia cerca?); está locates something both speakers already know (El banco está al lado de la plaza). *Hay el banco is the error, and it is the exact shape of English "there is the bank". Both keys are L1\'s — hay at M7, está at M2 — so this module owns neither and re-teaches both.',
+        'Impersonal se, and it is this module\'s key: ¿Cómo se va a la estación? — "how does one get there", the frame that lets a learner ask directions without conjugating anything. L1 kept the bare se free by indexing Me llamo, se llama and se levanta whole, so write the note true of BOTH jobs now — the impersonal here, the reflexive there — or M5\'s se acabó and every later impersonal lands on a note that is false of it.',
+        "The direction phrases are indexed WHOLE — a la derecha, a la izquierda, todo recto — because a is L1-M4's (\"at eight\", the personal a) and todo is L1-M8's, and a bare direction word would put the learner on either note. This is the same tool L1 used for al lado de. cerca and lejos stand bare and ARE this module's; cerca de stays L1-M7's phrase, so the note says which is which.",
+        "INDEX SEAM: se, siga, gire, cruce, tome, derecha, izquierda, recto, cerca, lejos, calle, plaza, esquina, estación, autobús, metro, tren, coche, taxi, primera, segunda are fresh keys. dónde, en, hay, al and al lado de stay L1-M7's; a stays L1-M4's. Place names (Madrid, la Gran Vía) never index (#61), so anchor every direction on a common noun.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M5': {
+      id: 'L2-M5',
+      title: 'Food and hosting',
+      job: 'Ordering, offering, refusing without offence',
+      patterns: [
+        'Para mí + , + un/una + N',
+        '¿Me pone/trae + un/una + N?',
+        '¿Quieres otro/otra + N?',
+        'No + , + gracias + , + <reason>',
+        'Creo que + <statement>',
+      ],
+      notes: [
+        "para enters HERE and does exactly one job in this level: the recipient. Para mí, una sopa is how a table orders, and para ti / para ella extend it. The por / para contrast is L3's and is named as deferred in this note, because L1 already refused it (L1-M9) and importing it now would spend the module's budget on a distinction none of the ten L2 jobs needs. Bare por stays unowned through the whole level — it appears only inside por favor, por qué and por eso.",
+        "The clitic pronoun system opens here, and the index decides its shape: me, te and lo are free keys, but la, los and las are L1-M1's ARTICLES, so a feminine or plural direct object can never be first-taught in this course. Teach the law on lo (¿El pan? Lo quiero caliente) and on me / te (¿Me pone un café?), say in the note that the feminine and plural forms exist and wait for L3, and never write a display sentence that needs them. The placement rule is the delta: the pronoun goes BEFORE the conjugated verb (Lo quiero), where English puts it after.",
+        "que is this module's key and it earns it twice: as the linker after a verb of thinking or saying (Creo que está frío, Dice que no viene) — which English can drop and Spanish never can, the interference to spend a mistake on — and as the second half of M9's comparative (más caro que). Write the note true of both jobs now; M9 points back rather than opening a second row. It is not L1-M4's qué: the accent is the whole difference, and dropping it merges a question word into a conjunction for the rest of the course.",
+        "Offering and refusing: otro / otra carries the offer (¿Quieres otro café?) precisely so that más stays free for M9's comparative — and note that otro takes NO article, so *un otro café is the error English speakers write. Refusing without offence is the cultural half of the job: a first no is often ritual, the accepted refusal adds a reason (No, gracias, ya he comido → in L2's tenses, No, gracias, no tengo hambre), and tener hambre / tener sed are tener doing the job English gives \"to be\" — M2's verb, a third time.",
+        "INDEX SEAM: para, lo, me, te, que, otro, otra, pone, trae, creo, dice, carne, pescado, verdura, arroz, postre, cuenta, vaso, plato, hambre, sed are fresh keys. Lo siento stays M1's whole-phrase row, which is what left bare lo free for this module. Me gusta, me llamo and por favor stay L1's whole-phrase rows; the bare me taught here is the clitic, and its note names all three so the learner is never told that me means only one thing.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M6': {
+      id: 'L2-M6',
+      title: 'Making plans together',
+      job: 'Invitations, suggestions, settling a time',
+      patterns: [
+        '¿Quieres + V-inf?',
+        '¿Vamos a + V-inf?',
+        'Podemos + V-inf',
+        '¿A qué hora?  — A las + <number> + y media/cuarto',
+        'Vale + , + <arrangement>',
+      ],
+      notes: [
+        "Plans are made among friends: tú and nosotros throughout, chipped `informal` where the frame is tú-only, and the register law of M1 applies in reverse — an usted invitation reads as a business appointment, which is M7's scene, not this one. Say so in usage.",
+        'The nosotros cell arrives, and it is the last person the course was missing: -amos / -emos / -imos (hablamos, comemos, vivimos, podemos, vamos). L1-M6 already shipped vamos inside vamos a — this module opens the cell properly and points back. The delta worth naming: Spanish makes a suggestion with the plain nosotros present (¿Vamos al cine?), where English needs "shall we" or "let\'s" — the auxiliary has no Spanish equivalent, and reaching for one is the error.',
+        'The arrangement present: a settled plan is spoken in the PRESENT (Mañana como con Ana, El sábado vamos a la playa), not only with L1-M6\'s voy a. English does the same thing ("I\'m eating with Ana tomorrow"), so this is transfer and a rest point — say so, and let the time word carry the future rather than the verb.',
+        'The clock is the vocabulary spend: tres, cuatro, cinco, seis, siete, nueve, once, doce beside L1-M8\'s uno, dos, ocho, diez; y media, y cuarto, en punto. The frame is ¿A qué hora…? — A las ocho, with a re-taught from L1-M4 ("before a clock time it is at") and hora from L1-M4 as well; neither is owned here. menos cuarto is real and is deliberately NOT shown: menos is M9\'s key and the comparative note it will carry must be its first, so a usage line names the clock use and M9 delivers it.',
+        "INDEX SEAM: día, tarde, podemos, comemos, vamos a (as the frame), quedamos, vale, tres, cuatro, cinco, seis, siete, nueve, once, doce, media, cuarto, fin de semana, viernes, domingo, cine are fresh keys. día and tarde are bare keys L1 left free by indexing todos los días, buenos días, todo el día and por la tarde whole — the note says so, because a learner who has met four phrases containing día has never met the word. mañana stays L1-M6's (\"tomorrow\"), and por la mañana stays L1-M4's phrase. cuarto is the clock's quarter here and not a room; the room word is not taught in this course. vale is Spain's — a usage line gives Mexico's sale and the neutral está bien, and no rule claims one is standard.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M7': {
+      id: 'L2-M7',
+      title: 'On the phone',
+      job: 'Calls and messages — openings, closings, taking a message',
+      patterns: [
+        '¿Dígame? — ¿Está + <name>?',
+        'Soy + <name> + , + ¿de parte de quién?',
+        'Estoy + V-ando/-iendo',
+        '¿Le puedo dejar un mensaje?',
+        'Te llamo + <time>',
+      ],
+      notes: [
+        'A business call speaks usted, chipped `formal`; a call to a friend keeps tú, and both belong in this module because the phone is where the choice is made blind — you cannot see who answered. The openings are regional and a rule must not pick one: ¿Dígame? and ¿Diga? in Spain, ¿Aló? through much of South America, and ¿Bueno? in Mexico. That last one is a gift the index arranged: bueno\'s key is L1-M10\'s discourse "well, …", so the phone answer is named in usage and never first-taught, and the learner meets it as a second job of a word they own.',
+        'The gerund, and this is the module that motivates it: a call happens NOW, so estar + -ando / -iendo finally has a job (Está hablando, Estoy comiendo, No puede ponerse, está trabajando). The delta is what it does NOT do — Spanish never uses it for the future the way English does. *Mañana estoy trabajando for "I\'m working tomorrow" is wrong, and the right sentence is M6\'s arrangement present, Mañana trabajo. Spend the mistake there, not on the formation.',
+        'Te llamo mañana is the payoff of a decision L1 made in its very first module: Me llamo was indexed as a two-token surface, which left llamo and llama free, so "I call you" and "my name is" are different keys with different notes. Write llamo\'s note so it says this out loud — the same verb, two jobs, told apart by the little pronoun — because a learner who has said Me llamo Rohan for ten modules will read Te llamo as "I name you" otherwise.',
+        "The indirect object le is this module's key (¿Le puedo dejar un mensaje?, Le digo que ha llamado → in L2's tenses, Le digo que llamó). L1 left it free by indexing le gusta whole, and the note must be true of both: le names the person something is done TO or FOR, which is exactly why gustar reads the way it does. decir is the verb: digo, dice, and the usted imperative dígame from M4's rule, irregular in the yo cell like tengo.",
+        "INDEX SEAM: le, llamo, llama, dígame, diga, digo, dice, mensaje, número, móvil, quién, ahora, luego, hablando, comiendo, ponerse are fresh keys. quién is qué's sibling (L1-M4) and cuál's (M9) — cross-reference all three, merge none. luego is free because L1-M10 indexed hasta luego whole. está is L1-M2's row doing availability here (¿Está Ana? = \"is Ana there?\"), a third job for a key this course does not own; say so rather than opening a row it cannot have.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M8': {
+      id: 'L2-M8',
+      title: 'When something goes wrong',
+      job: 'Problems, asking for help, complaining calmly',
+      patterns: [
+        'Me duele + el/la + N',
+        'No funciona + el/la + N',
+        '¿Me puede ayudar?',
+        'Tengo que + V-inf',
+        'Perdone + , + creo que hay un problema',
+      ],
+      notes: [
+        'doler is the structural payoff of the whole course: it is built exactly like gustar (L1-M1) — Me duele la cabeza, Me duelen los pies — so the thing that hurts is the SUBJECT and the verb agrees with it, while me only names who feels it. The lesson is not a second quirk; it is that gustar was never a quirk. Say that explicitly, name the class (gustar, doler, and the interesar / parecer the learner will meet in L3), and note the article where English wants a possessive: me duele LA cabeza, never *mi cabeza.',
+        "tener que + infinitive is the obligation frame, and it is this module's other new structure: Tengo que ir al médico. English \"have to\" is a near-perfect match, so this is transfer — but que is obligatory (*Tengo ir is the error) and que's row is M5's, re-taught here and owned there. hay que (impersonal obligation) is named in usage and left to L3.",
+        "Problems and calm complaint: no funciona, está roto / rota, se ha perdido → in L2's tenses, he perdido is OUT (the perfect is L3), so the past here is L1-M5's preterite: perdí el móvil, no llegó el paquete. The complaint frame is Perdone, creo que hay un error — M1's apology, M5's creo que, L1-M7's hay — and the module's job is that it stays calm: Spanish complains through the frame, not through volume, and an unsoftened No funciona reads as an accusation.",
+        'problema pays off a promise L1-M1\'s gender note made in passing: it is masculine despite the -a, because it is one of the Greek -ma nouns (el problema, el tema, el sistema). This is where the promise is kept, and it is the best evidence against the "-o/-a" shortcut the course has refused three times. Author it with its article every time.',
+        "INDEX SEAM: duele, duelen, ayudar, ayuda, funciona, roto, rota, problema, error, médico, cabeza, pies, paquete, tengo que (as the frame) are fresh keys. me stays M5's clitic row and le stays M7's; mal is L1-M9's (badly), re-taught here in me encuentro mal and owned there; malo stays M3's. This module speaks usted to staff and strangers, chipped `formal`, and tú only where the scene is a friend — the register law of M1, in the module where the temperature is highest.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M9': {
+      id: 'L2-M9',
+      title: 'Comparing and choosing',
+      job: 'More, less, better — stating a preference',
+      patterns: [
+        'A + es + más/menos + Adj + que + B',
+        'el/la + más + Adj',
+        'A + es + mejor/peor + que + B',
+        '¿Cuál prefieres? — Prefiero + este/esta',
+        'Este + N + es + Adj-er + , + pero + <statement>',
+      ],
+      notes: [
+        'The comparative is two words around the adjective and nothing else changes: más caro que, menos caro que — no ending, no vowel change, where English forks between -er and "more". The superlative adds the article to the same frame: el más caro, la más barata, and the group is marked with de, not "in" (el más caro DE la tienda) — that preposition is the delta English speakers miss.',
+        'tan … como is deliberately NOT taught, and the reason is worth stating in the note because it is the clearest case in this course of the index deciding the syllabus: como is L1-M4\'s key, where it means "I eat". A comparison written tan alto como would send the learner to an eating note for the rest of the course, and no later row can take the key back — first occurrence wins. Equality comparison is therefore L3\'s, where it can be authored with the seam planned for; a usage line may say the structure exists.',
+        'The irregular four, and the true law: mejor and peor replace *más bueno and *más malo, and mayor and menor replace *más grande / *más pequeño when the meaning is age or abstract size. mejor serves BOTH bueno and bien — Canta mejor is "sings better", from the adverb — which is the fact the slogan "mejor is the comparative of bueno" hides. mayor is M2\'s key ("older", of a person) and this note points back at it rather than opening a second row.',
+        'Choosing needs the demonstratives and the choice question: este, esta, estos, estas ("this one here") beside ese / esa, and ¿Cuál prefieres? against ¿Qué prefieres? — cuál picks from a known set, qué asks open. qué is L1-M4\'s key and cuál is fresh, so cross-reference and merge nothing. preferir is e→ie once more (prefiero, prefieres, prefiere): M1\'s law, its third payment, and by now a rest point.',
+        "INDEX SEAM: más, menos, mejor, peor, menor, barato, pequeño, prefiero, prefieres, cuál, este, esta, estos, estas are fresh keys. que stays M5's row, whose note was written true of this job for exactly this reason. esta and está are two keys ONLY while the accent is written — L1-M2's accent law at its sharpest, because here the two words sit in the same sentence shapes (Esta sopa está fría). mucho and muy stay L1's; más is not a synonym for either and its note should say so.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M10': {
+      id: 'L2-M10',
+      title: 'Telling what happened',
+      job: 'A four-sentence account in the past',
+      patterns: [
+        '<imperfect background> + , + <preterite event>',
+        '<preterite event> + y + <preterite event>',
+        '<preterite event> + porque + <imperfect reason>',
+        'Al final + , + <preterite event>',
+      ],
+      notes: [
+        'Each item is an ACCOUNT of exactly four short sentences, not one long one, and the per-sentence bound applies to each sentence inside it. Almost every word comes from L1 and from M1–M9; the honest new spend is the third-person preterite cells a story needs (dijo, tuvo, pudo, llegó, perdió, llamó, fue) and había, the imperfect of hay.',
+        'THE decision of the module, and the reason it exists: L1-M5 taught the preterite AND the imperfect endings and deliberately did not teach the CHOICE. Here it is, and the rule must be the true one — the imperfect paints the standing situation the story happens against (what was already going on, what things were like, the time, the weather, a habit), and the preterite moves the story forward one completed step at a time. Era tarde y no había nadie en la calle. Entonces llamé a Ana.',
+        'The slogan to kill, and it is the most damaging one in Spanish teaching: "the preterite is for completed actions, the imperfect for ongoing ones". It breaks on the first real account. Ayer comí a las ocho is completed and so is Comí allí todos los días de mi infancia if the speaker frames it as one bounded stretch; Comía cuando llamaste is not "ongoing" in any objective sense — it is background for the call. Duration does not decide it and repetition does not decide it; the ROLE the clause plays in the telling decides it. Author the pairs so the same event appears in both roles.',
+        'Build the accounts out of scenes the ladder already supports: a plan that fell through (M6 + M8), a call that came at the wrong time (M7), a meal that was wrong (M5 + M8), directions that failed (M4). Join them with the connectors L1-M10 shipped — y, pero, entonces, también — plus después (L1-M6), luego (M7) and al final. Keep pro-drop: once the subject is established the account keeps dropping it, and a yo at the head of every sentence reads as insistence, which is the rule L1-M10 stated and this module tests hardest.',
+        "Nothing new is opened here: no perfect (he llegado is L3), no conditional, no subjunctive, no tan … como. INDEX SEAM: dijo, tuvo, pudo, llegó, perdió, llamó, había and al final are fresh keys, each a new CELL of a verb whose bare row lives elsewhere — its note points back to the first-teach row (dijo → M7's dice, tuvo → M2's tiene, pudo → M1's puede) and no L1 or earlier-L2 file is edited to accommodate it. fue is already L1-M5's, and it answers for both ir and ser — say so, because an account uses both.",
+      ],
+      maxWordsPerSentence: 10,
       newWordCap: NEW_WORD_CAP,
     },
   },
