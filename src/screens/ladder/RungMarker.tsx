@@ -15,7 +15,7 @@
  * It is `aria-hidden`: the state it draws is already in the row's text ("passed") or its shape (a
  * locked row is not a link), and a screen reader announcing "image" three times per rung is noise.
  */
-import styles from './RungMarker.module.css';
+import './rung-marker.css';
 
 export type MarkerState = 'passed' | 'current' | 'locked';
 
@@ -27,19 +27,19 @@ export function RungMarker({ state }: RungMarkerProps) {
   return (
     <svg
       viewBox="0 0 19 19"
-      className={styles.marker}
+      className="marker"
       aria-hidden="true"
       focusable="false"
       xmlns="http://www.w3.org/2000/svg"
     >
       {state === 'passed' && (
         <>
-          <circle cx="9.5" cy="9.5" r="8.5" className={styles.disc} />
-          <path d="M5.5 9.8l2.6 2.6 5.4-5.6" className={styles.check} />
+          <circle cx="9.5" cy="9.5" r="8.5" className="marker-disc" />
+          <path d="M5.5 9.8l2.6 2.6 5.4-5.6" className="marker-check" />
         </>
       )}
-      {state === 'current' && <path d="M9.5 0v19M0 9.5h19" className={styles.crosshair} />}
-      {state === 'locked' && <circle cx="9.5" cy="9.5" r="8.5" className={styles.ring} />}
+      {state === 'current' && <path d="M9.5 0v19M0 9.5h19" className="marker-crosshair" />}
+      {state === 'locked' && <circle cx="9.5" cy="9.5" r="8.5" className="marker-ring" />}
     </svg>
   );
 }

@@ -11,23 +11,23 @@
   background: var(--color-bg);
 }
 
-.disc {
+.marker-disc {
   fill: var(--color-accent-600);
 }
 
 /* Cut out of the disc in the ground colour — never white (design/tokens.md §7 rule 2). */
-.check {
+.marker-check {
   fill: none;
   stroke: var(--color-bg);
   stroke-width: var(--icon-stroke);
 }
 
-.crosshair {
+.marker-crosshair {
   stroke: var(--color-accent);
   stroke-width: var(--icon-stroke);
 }
 
-.ring {
+.marker-ring {
   fill: none;
   stroke: var(--color-neutral-500);
   stroke-width: var(--icon-stroke);
