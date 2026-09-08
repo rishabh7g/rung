@@ -72,9 +72,9 @@ describe('en-ko: the decisions its briefs settle (#373, #376)', () => {
     .flatMap((brief) => [...brief.patterns, ...brief.notes, brief.title, brief.job])
     .join('\n');
 
-  it('covers exactly L1-M1..L4-M10 — L2 came with #433, L3 with #469, L4 with #527', () => {
+  it('covers exactly L1-M1..L5-M10 — L2 #433, L3 #469, L4 #527, L5 #571', () => {
     expect(Object.keys(COURSE_BRIEFS['en-ko'] ?? {})).toEqual([
-      ...['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ...['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -159,9 +159,9 @@ describe('hi-mr L3: the decisions its briefs settle (#452)', () => {
   const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
   const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
 
-  it('covers exactly L1-M1..L4-M10 — four levels, forty modules', () => {
+  it('covers exactly L1-M1..L5-M10 — five levels, fifty modules, the whole ladder', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ...['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -214,9 +214,9 @@ describe('en-es L2: the decisions its briefs settle (#426)', () => {
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
   const notes = l2.flatMap(([, brief]) => brief.notes).join('\n');
 
-  it('covers exactly L1-M1..L4-M10 — four levels, forty modules', () => {
+  it('covers exactly L1-M1..L5-M10 — five levels, fifty modules, the whole ladder', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ...['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -358,9 +358,9 @@ describe('en-ar L2: the decisions its briefs settle (#427)', () => {
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
   const notes = l2.flatMap(([, brief]) => brief.notes).join('\n');
 
-  it('covers exactly L1-M1..L4-M10 — four levels, forty modules', () => {
+  it('covers exactly L1-M1..L5-M10 — five levels, fifty modules, the whole ladder', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ...['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -482,9 +482,9 @@ describe('hi-en L2: the decisions its briefs settle (#428)', () => {
   const all = COURSE_BRIEFS['hi-en'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L4-M10 — four levels, forty modules', () => {
+  it('covers exactly L1-M1..L5-M10 — five levels, fifty modules, the whole ladder', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ...['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -602,9 +602,9 @@ describe('en-ru L2: the decisions its briefs settle (#429)', () => {
   const all = COURSE_BRIEFS['en-ru'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L4-M10 — four levels, forty modules', () => {
+  it('covers exactly L1-M1..L5-M10 — five levels, fifty modules, the whole ladder', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ...['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -719,9 +719,9 @@ describe('en-it L2: the decisions its briefs settle (#430)', () => {
   const all = COURSE_BRIEFS['en-it'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L4-M10 — four levels, forty modules', () => {
+  it('covers exactly L1-M1..L5-M10 — five levels, fifty modules, the whole ladder', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ...['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -836,9 +836,9 @@ describe('en-fr L2: the decisions its briefs settle (#431)', () => {
   const all = COURSE_BRIEFS['en-fr'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L4-M10 — four levels, forty modules', () => {
+  it('covers exactly L1-M1..L5-M10 — five levels, fifty modules, the whole ladder', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ...['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
@@ -953,9 +953,9 @@ describe('en-de L2: the decisions its briefs settle (#432)', () => {
   const all = COURSE_BRIEFS['en-de'] ?? {};
   const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
 
-  it('covers exactly L1-M1..L4-M10 — four levels, forty modules', () => {
+  it('covers exactly L1-M1..L5-M10 — five levels, fifty modules, the whole ladder', () => {
     expect(Object.keys(all)).toEqual([
-      ...['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ...['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     ]);
