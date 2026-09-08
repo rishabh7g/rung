@@ -68,7 +68,8 @@ module needs.
 - Every phrasal verb (`fill in`, `hand in`, `send off`) and every fixed frame (`a piece of`,
   `feel like`, `to be honest`, `I think so`, `if I were you`, `had better`, `every day`,
   `in the morning`) indexes **WHOLE**, so the bare `so`, `like`, `day`, `morning` and `were` keys
-  are not spent on a phrase. maxSpan stays 3.
+  are not spent on a phrase. maxSpan stays 3 at the time of writing — the L3-M1..M2 wave (#473)
+  then raised it to **4**, because `if I were you` is four tokens and indexes whole.
 - Each `-ing` / `-ed` adjective pair is ONE row with both shapes in its `forms`, because they are
   one word doing two jobs.
 - Every backshifted cell (M5) and every past participle (M8, M10) is its own key, deconstructed
