@@ -1,0 +1,725 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M1",
+  "title": "Asking politely",
+  "job": "Requests, thanks, apologies in the right register",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Können Sie mir bitte + N-acc + geben?",
+      "Kannst du mir bitte + V-inf + ?",
+      "Könnten Sie mir + V-inf + ?",
+      "Entschuldigung + , + <request>",
+      "Danke schön — Gern geschehen"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "DU OPENS HERE, and L1 held it back on purpose — and said why in advance. Sie takes the PLURAL verb, so its form is spelled exactly like the infinitive and cost the index nothing at all. du costs a second set of endings (bist, hast, kannst, möchtest, sprichst), its own imperative (komm, geh, gib, hilf) and dein, dich and dir. This module pays all of it. The law is L1's: Sie is never wrong with a stranger; du is for friends, family, children and anyone who has offered it."
+    },
+    {
+      "tag": "delta",
+      "text": "THE MODAL BRACKET is the grammar of this module and of the whole level. A modal is conjugated in position two and its infinitive goes to the very END of the clause: Können Sie mir bitte das Buch geben? Everything else sits in between. English keeps its verbs together and German splits them around the sentence, and every later module borrows this frame."
+    },
+    {
+      "tag": "free",
+      "text": "The dative arrives with the request, because a request has a recipient: mir, dir, Ihnen, uns. L1-M9's Mir ist kalt was already a dative sentence with no grammatical subject at all, and M8's Mir ist schlecht will be the same shape — one pattern rather than three idioms."
+    },
+    {
+      "tag": "free",
+      "text": "könnten is Konjunktiv II, and the mood belongs to L3. It enters as exactly ONE frozen cell — the politest request in the module — with the rest deferred. That is the treatment en-fr gives je voudrais and en-it gives vorrei: ship the word, defer the system, say so."
+    },
+    {
+      "tag": "interference",
+      "text": "GERMAN SPLITS \"SORRY\" IN TWO and English collapses them. Entschuldigung gets attention or excuses you BEFORE the fact — stopping someone, squeezing past. Es tut mir leid is regret for something that has happened, and it is a whole small sentence: literally \"it does me sorrow\"."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M1-S01",
+      "display": "Können Sie mir bitte helfen?",
+      "cue": "Could you help me, please?",
+      "literal": "Can you to-me please to-help?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "können",
+            "cue": "can (Sie / plural)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Spelled exactly like the infinitive, which is why Sie cost the index nothing in L1. An infinitive follows it at the END of the clause."
+          },
+          {
+            "display": "kann",
+            "cue": "can (ich, er, sie)",
+            "tag": "free",
+            "forms": [],
+            "note": "The ich and third-person cell, and the two are identical — ich kann, er kann. Modals lose their -e in the ich form, unlike every other verb."
+          },
+          {
+            "display": "helfen",
+            "cue": "to help",
+            "tag": "delta",
+            "forms": [],
+            "note": "It takes the DATIVE — mir helfen, never mich helfen. A small group of German verbs do, and this is the one a learner meets first."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The infinitive is at the far end of the sentence, after the recipient and after bitte. English puts \"help\" straight after \"can\", and German puts everything else in between first.",
+      "sound": "KUH-nen zee meer BIT-tuh HEL-fen. The ö of können is the rounded front vowel.",
+      "variations": [
+        {
+          "display": "Kannst du mir bitte helfen?",
+          "cue": "Can you help me, please?",
+          "changed": "to a friend — the verb and the pronoun move together"
+        },
+        {
+          "display": "Können Sie mir helfen?",
+          "cue": "Can you help me?",
+          "changed": "without bitte — still fine, a shade barer"
+        },
+        {
+          "display": "Könnten Sie mir bitte helfen?",
+          "cue": "Could you help me, please?",
+          "changed": "the politest tier"
+        }
+      ],
+      "mistake": {
+        "display": "Können Sie mich bitte helfen?",
+        "why": "helfen takes the dative: Können Sie mir bitte helfen?"
+      },
+      "usage": "Asking a stranger for help — the sentence a lost traveller needs.",
+      "register": "formal",
+      "mnemonic": "The infinitive waits at the end."
+    },
+    {
+      "id": "L2-M1-S02",
+      "display": "Kannst du mir bitte das Buch geben?",
+      "cue": "Can you give me the book, please?",
+      "literal": "Can you to-me please the book to-give?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "du",
+            "cue": "you (one friend)",
+            "tag": "delta",
+            "forms": [],
+            "note": "For friends, family, children and anyone who has offered it. L1 used Sie everywhere because guessing wrong upward costs nothing and guessing wrong downward does."
+          },
+          {
+            "display": "kannst",
+            "cue": "can (du)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The du cell of können, with the -st that every du form carries. The vowel changes too — kann, kannst — which is regular for modals."
+          },
+          {
+            "display": "geben",
+            "cue": "to give",
+            "tag": "free",
+            "forms": [],
+            "note": "It takes two objects: the person in the dative and the thing in the accusative — mir das Buch. The dative comes first when both are nouns or pronouns."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Two objects and both in the middle of the bracket. mir comes before das Buch, and the infinitive still waits at the end — three things English would have placed differently.",
+      "sound": "KANST doo meer BIT-tuh das BOOKH GAY-ben. The ch of Buch is the back sound of Scottish \"loch\".",
+      "variations": [
+        {
+          "display": "Können Sie mir bitte das Buch geben?",
+          "cue": "Could you give me the book, please?",
+          "changed": "to someone you do not know"
+        },
+        {
+          "display": "Kannst du mir das Buch geben?",
+          "cue": "Can you give me the book?",
+          "changed": "without bitte"
+        },
+        {
+          "display": "Kannst du mir bitte die Tasse geben?",
+          "cue": "Can you give me the cup, please?",
+          "changed": "a different thing"
+        }
+      ],
+      "mistake": {
+        "display": "Kannst du mir bitte geben das Buch?",
+        "why": "The infinitive goes last: Kannst du mir bitte das Buch geben?"
+      },
+      "usage": "At a table, or anywhere something is being handed over.",
+      "register": "informal",
+      "mnemonic": "Dative first, accusative second, infinitive last."
+    },
+    {
+      "id": "L2-M1-S03",
+      "display": "Könnten Sie mir bitte helfen?",
+      "cue": "Could you help me, please?",
+      "literal": "Could you to-me please to-help?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "könnten",
+            "cue": "could (Sie)",
+            "tag": "delta",
+            "forms": [],
+            "note": "One frozen cell of Konjunktiv II, a mood L3 opens. It is a tier above können, and the umlaut is the whole difference on the page."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "können and könnten differ by one letter and by a whole mood. The t is what makes it conditional, and it is easy to miss in speech as well as on the page.",
+      "sound": "KUHN-ten. The double n is held and the t before the ending is clearly sounded.",
+      "variations": [
+        {
+          "display": "Könnten Sie mir das Buch geben?",
+          "cue": "Could you give me the book?",
+          "changed": "a different request in the same tier"
+        },
+        {
+          "display": "Können Sie mir bitte helfen?",
+          "cue": "Can you help me, please?",
+          "changed": "the plainer tier — courteous, simply shorter"
+        },
+        {
+          "display": "Könnten Sie bitte kommen?",
+          "cue": "Could you come, please?",
+          "changed": "a different infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Könnten Sie mir bitte helfen können?",
+        "why": "One modal is enough: Könnten Sie mir bitte helfen?"
+      },
+      "usage": "When the favour is real, or when you have just interrupted someone.",
+      "register": "formal",
+      "mnemonic": "One extra t, one tier politer."
+    },
+    {
+      "id": "L2-M1-S04",
+      "display": "Bist du müde?",
+      "cue": "Are you tired?",
+      "literal": "Are you tired?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bist",
+            "cue": "are (du)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The du cell of sein, and it is irregular — bin, bist, ist, sind. Every du form ends in -st, and this one is no exception."
+          },
+          {
+            "display": "hast",
+            "cue": "have (du)",
+            "tag": "free",
+            "forms": [],
+            "note": "The du cell of haben. Hast du Zeit? is the ordinary way to ask whether someone is free."
+          },
+          {
+            "display": "dein",
+            "cue": "your (masculine/neuter)",
+            "tag": "free",
+            "forms": [],
+            "note": "The du possessive. It agrees with what is owned, exactly as mein does — dein Buch, dein Name."
+          },
+          {
+            "display": "deine",
+            "cue": "your (feminine/plural)",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine and plural shape. deine Schwester, deine Eltern — one form covers both."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Every du form ends in -st, without exception, and that single fact carries most of the paradigm. The stems change on some verbs and the ending never does.",
+      "sound": "bist doo MUE-duh. The ü is the rounded front vowel and the final e is a light uh.",
+      "variations": [
+        {
+          "display": "Hast du Zeit?",
+          "cue": "Have you got time?",
+          "changed": "a different verb"
+        },
+        {
+          "display": "Ist das dein Buch?",
+          "cue": "Is that your book?",
+          "changed": "the possessive"
+        },
+        {
+          "display": "Sind Sie müde?",
+          "cue": "Are you tired?",
+          "changed": "to someone you do not know"
+        }
+      ],
+      "mistake": {
+        "display": "Bist Sie müde?",
+        "why": "Sie takes sind: Sind Sie müde?"
+      },
+      "usage": "Asking after a friend, which German does directly.",
+      "register": "informal",
+      "mnemonic": "Every du form ends in -st."
+    },
+    {
+      "id": "L2-M1-S05",
+      "display": "Wie geht es dir?",
+      "cue": "How are you?",
+      "literal": "How goes it to-you?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dir",
+            "cue": "to you (dative) · you (accusative, as dich)",
+            "tag": "delta",
+            "forms": [
+              "dich"
+            ],
+            "note": "Two cells of one pronoun: dir where something is given or done TO you, dich where you are the direct object. mir and mich work the same way."
+          },
+          {
+            "display": "uns",
+            "cue": "us · to us",
+            "tag": "free",
+            "forms": [],
+            "note": "One form for both cases, which makes it the easy one. Es tut uns leid is \"we're sorry\"."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "There is no grammatical subject here — es is a placeholder and dir is the person. L1-M2's Wie geht es Ihnen? was already this shape, and L1-M9's Mir ist kalt was too.",
+      "sound": "vee gate es DEER. The es collapses to a light s in speech: wie geht's dir.",
+      "variations": [
+        {
+          "display": "Wie geht es Ihnen?",
+          "cue": "How are you?",
+          "changed": "to someone you do not know — L1-M2's own sentence"
+        },
+        {
+          "display": "Wie geht es dir heute?",
+          "cue": "How are you today?",
+          "changed": "with a time"
+        },
+        {
+          "display": "Wie geht es uns?",
+          "cue": "How are we doing?",
+          "changed": "about us"
+        }
+      ],
+      "mistake": {
+        "display": "Wie geht es du?",
+        "why": "The person is a recipient here: Wie geht es dir?"
+      },
+      "usage": "The everyday greeting between friends, and it expects an answer.",
+      "register": "informal",
+      "mnemonic": "No subject. The person is in the dative."
+    },
+    {
+      "id": "L2-M1-S06",
+      "display": "Möchtest du einen Kaffee?",
+      "cue": "Would you like a coffee?",
+      "literal": "Would-like you a coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "möchtest",
+            "cue": "would like (du)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The du cell of L1-M8's möchte. It is already polite in itself, which is why an offer needs nothing added to it."
+          },
+          {
+            "display": "willst",
+            "cue": "want (du)",
+            "tag": "interference",
+            "forms": [],
+            "note": "Blunter than möchtest, and closer to English \"want\" than the spelling suggests. Willst du einen Kaffee? is fine among close friends and abrupt anywhere else."
+          },
+          {
+            "display": "machst",
+            "cue": "do · make (du)",
+            "tag": "free",
+            "forms": [],
+            "note": "The du cell of machen. Was machst du? is both \"what are you doing\" and \"what do you do\", since German has no continuous."
+          },
+          {
+            "display": "kommst",
+            "cue": "come (du)",
+            "tag": "free",
+            "forms": [],
+            "note": "The du cell of kommen. Wann kommst du? is the question a plan ends on."
+          },
+          {
+            "display": "gehst",
+            "cue": "go (du)",
+            "tag": "free",
+            "forms": [],
+            "note": "The du cell of gehen. Like every other verb here it simply takes -st, and the stem does not change."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "möchtest is the polite offer and willst is not. The two are one letter apart in meaning and a long way apart in effect, and German makes the difference with the verb rather than with an extra word.",
+      "sound": "MUHKH-test doo IGH-nen KAF-fay. The ch of möchtest is the front sound, made near the palate.",
+      "variations": [
+        {
+          "display": "Willst du einen Kaffee?",
+          "cue": "Do you want a coffee?",
+          "changed": "blunter — for close friends only"
+        },
+        {
+          "display": "Was machst du heute?",
+          "cue": "What are you doing today?",
+          "changed": "a different verb"
+        },
+        {
+          "display": "Wann kommst du?",
+          "cue": "When are you coming?",
+          "changed": "another du form"
+        }
+      ],
+      "mistake": {
+        "display": "Möchtest Sie einen Kaffee?",
+        "why": "Sie takes möchten: Möchten Sie einen Kaffee?"
+      },
+      "usage": "Offering a friend a drink.",
+      "register": "informal",
+      "mnemonic": "möchtest offers, willst demands."
+    },
+    {
+      "id": "L2-M1-S07",
+      "display": "Komm bitte um acht Uhr",
+      "cue": "Please come at eight o'clock",
+      "literal": "Come please at eight o'clock",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "komm",
+            "cue": "come! (to a friend)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The du imperative: the verb stem, with no ending and no pronoun. It is shorter than any other form of the verb."
+          },
+          {
+            "display": "geh",
+            "cue": "go! (to a friend)",
+            "tag": "free",
+            "forms": [],
+            "note": "The same shape on gehen. Regular verbs simply drop everything after the stem."
+          },
+          {
+            "display": "gib",
+            "cue": "give! (to a friend)",
+            "tag": "interference",
+            "forms": [],
+            "note": "geben's stem CHANGES in the imperative — gib, not geb. The verbs that change their vowel for du do it here too."
+          },
+          {
+            "display": "hilf",
+            "cue": "help! (to a friend)",
+            "tag": "interference",
+            "forms": [],
+            "note": "helfen does the same — hilf, not helf. Both are on the small list of vowel-changing verbs, and both are on it for the same reason."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The du imperative has no pronoun and no ending, so it is the barest form of the verb there is. bitte is what keeps it from sounding like an order.",
+      "sound": "kom BIT-tuh oom akht oor. The imperative is one syllable and carries the beat.",
+      "variations": [
+        {
+          "display": "Geh bitte nach Hause",
+          "cue": "Please go home",
+          "changed": "a different verb"
+        },
+        {
+          "display": "Gib mir bitte das Buch",
+          "cue": "Please give me the book",
+          "changed": "a vowel-changing verb, with two objects"
+        },
+        {
+          "display": "Hilf mir bitte",
+          "cue": "Please help me",
+          "changed": "the other vowel-changer, with the dative"
+        }
+      ],
+      "mistake": {
+        "display": "Gebe mir bitte das Buch",
+        "why": "The imperative changes its vowel: Gib mir bitte das Buch."
+      },
+      "usage": "Telling a friend to do something. With bitte it is a request; without it, an instruction.",
+      "register": "informal",
+      "mnemonic": "The bare stem, and bitte does the rest."
+    },
+    {
+      "id": "L2-M1-S08",
+      "display": "Entschuldigung, sprichst du Deutsch?",
+      "cue": "Excuse me, do you speak German?",
+      "literal": "Excuse-me, speak you German?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Entschuldigung",
+            "cue": "excuse me · sorry",
+            "tag": "delta",
+            "forms": [],
+            "note": "A noun, so it takes a capital. It gets attention or excuses you before the fact, and it is not the word for regret."
+          },
+          {
+            "display": "sprichst",
+            "cue": "speak (du)",
+            "tag": "interference",
+            "forms": [],
+            "note": "sprechen changes its vowel for du: e becomes i. The same verbs that do this have the vowel change in their imperative too — sprich."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Entschuldigung is a noun and is capitalised. That is not emphasis — German capitalises every noun, and this word is one.",
+      "sound": "ent-SHOOL-dee-goong. Five syllables and the stress on the second.",
+      "variations": [
+        {
+          "display": "Entschuldigung, sprechen Sie Deutsch?",
+          "cue": "Excuse me, do you speak German?",
+          "changed": "to someone you do not know"
+        },
+        {
+          "display": "Entschuldigung, wo ist der Park?",
+          "cue": "Excuse me, where is the park?",
+          "changed": "a different question behind the same opener"
+        },
+        {
+          "display": "Sprichst du Deutsch?",
+          "cue": "Do you speak German?",
+          "changed": "without the opener — abrupt to a stranger"
+        }
+      ],
+      "mistake": {
+        "display": "Entschuldigung, sprechst du Deutsch?",
+        "why": "The vowel changes for du: sprichst du Deutsch?"
+      },
+      "usage": "Stopping a stranger. The safest opener in German.",
+      "register": "neutral",
+      "mnemonic": "Every noun takes a capital, this one included."
+    },
+    {
+      "id": "L2-M1-S09",
+      "display": "Es tut mir leid",
+      "cue": "I'm sorry",
+      "literal": "It does to-me sorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "leid",
+            "cue": "sorrow · sorry",
+            "tag": "delta",
+            "forms": [],
+            "note": "Part of a fixed whole. Es tut mir leid is literally \"it does me sorrow\", and the word is not used on its own at this level."
+          },
+          {
+            "display": "tut",
+            "cue": "does",
+            "tag": "free",
+            "forms": [],
+            "note": "The third-person cell of tun. It is one of the few German verbs whose ich form drops the -e as a modal's does."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "The person is in the DATIVE again — mir, not ich. That is the third time in this module, and it is the shape German uses whenever something happens TO someone.",
+      "sound": "es toot meer LIGHT. leid rhymes with English \"light\" and has nothing to do with \"lead\".",
+      "variations": [
+        {
+          "display": "Es tut mir leid, ich habe keine Zeit",
+          "cue": "I'm sorry, I haven't got time",
+          "changed": "with a reason"
+        },
+        {
+          "display": "Entschuldigung, es tut mir leid",
+          "cue": "Excuse me, I'm sorry",
+          "changed": "both words, which is common after a real mistake"
+        },
+        {
+          "display": "Es tut uns leid",
+          "cue": "We're sorry",
+          "changed": "about us"
+        }
+      ],
+      "mistake": {
+        "display": "Ich tut leid",
+        "why": "The person is a recipient: Es tut mir leid."
+      },
+      "usage": "Apologising for something already done, or turning something down.",
+      "register": "neutral",
+      "mnemonic": "It does ME sorrow."
+    },
+    {
+      "id": "L2-M1-S10",
+      "display": "Vielen Dank! Gern geschehen",
+      "cue": "Thank you very much! — You're welcome",
+      "literal": "Many thanks! Gladly happened",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vielen",
+            "cue": "many (in vielen Dank)",
+            "tag": "free",
+            "forms": [],
+            "note": "It carries an ending because Dank is in the accusative — the whole phrase is a shortened \"I give you many thanks\"."
+          },
+          {
+            "display": "Dank",
+            "cue": "thanks (noun)",
+            "tag": "free",
+            "forms": [],
+            "note": "The noun behind L1-M2's danke, and it takes a capital. Vielen Dank is a shade warmer than danke schön."
+          },
+          {
+            "display": "schön",
+            "cue": "nice · beautiful",
+            "tag": "free",
+            "forms": [],
+            "note": "In danke schön it is doing intensifier work rather than describing anything. On its own it means beautiful."
+          },
+          {
+            "display": "gern geschehen",
+            "cue": "you're welcome",
+            "tag": "free",
+            "forms": [
+              "gern",
+              "geschehen"
+            ],
+            "note": "One answer to thanks, and literally \"gladly done\". bitte answers thanks too, and is shorter and commoner."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "bitte does three jobs in German: please, here you are, and you're welcome. Gern geschehen is the fuller answer and bitte is what people mostly say.",
+      "sound": "FEE-len DANK. gern guh-SHAY-en. The v of vielen is an f.",
+      "variations": [
+        {
+          "display": "Danke schön!",
+          "cue": "Thank you!",
+          "changed": "the plainer thanks"
+        },
+        {
+          "display": "Danke schön! Gern geschehen",
+          "cue": "Thank you! — You're welcome",
+          "changed": "the whole exchange"
+        },
+        {
+          "display": "Vielen Dank, Anna!",
+          "cue": "Thank you very much, Anna!",
+          "changed": "a name after the comma"
+        }
+      ],
+      "mistake": {
+        "display": "Viele Dank! Gern geschehen",
+        "why": "The phrase is fixed in the accusative: Vielen Dank!"
+      },
+      "usage": "Real thanks, for something that took someone trouble.",
+      "register": "neutral",
+      "mnemonic": "bitte says please, here you are, and you're welcome."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M1-C01",
+      "display": "Können Sie mir bitte helfen?",
+      "cue": "Could you help me, please?"
+    },
+    {
+      "id": "L2-M1-C02",
+      "display": "Kannst du mir bitte das Buch geben?",
+      "cue": "Can you give me the book, please?"
+    },
+    {
+      "id": "L2-M1-C03",
+      "display": "Könnten Sie mir bitte helfen?",
+      "cue": "Could you help me, please?"
+    },
+    {
+      "id": "L2-M1-C04",
+      "display": "Bist du müde?",
+      "cue": "Are you tired?"
+    },
+    {
+      "id": "L2-M1-C05",
+      "display": "Wie geht es dir?",
+      "cue": "How are you?"
+    },
+    {
+      "id": "L2-M1-C06",
+      "display": "Möchtest du einen Kaffee?",
+      "cue": "Would you like a coffee?"
+    },
+    {
+      "id": "L2-M1-C07",
+      "display": "Komm bitte um acht Uhr",
+      "cue": "Please come at eight o'clock"
+    },
+    {
+      "id": "L2-M1-C08",
+      "display": "Entschuldigung, sprichst du Deutsch?",
+      "cue": "Excuse me, do you speak German?"
+    },
+    {
+      "id": "L2-M1-C09",
+      "display": "Es tut mir leid",
+      "cue": "I'm sorry"
+    },
+    {
+      "id": "L2-M1-C10",
+      "display": "Vielen Dank! Gern geschehen",
+      "cue": "Thank you very much! — You're welcome"
+    },
+    {
+      "id": "L2-M1-C11",
+      "display": "Hast du Zeit?",
+      "cue": "Have you got time?"
+    },
+    {
+      "id": "L2-M1-C12",
+      "display": "Gib mir bitte das Buch",
+      "cue": "Please give me the book"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

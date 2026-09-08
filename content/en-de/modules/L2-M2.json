@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": [
+    "L2-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Er/Sie ist + Adj",
+      "Seine + N + sind + Adj",
+      "Das ist mein/meine + N",
+      "Ihre + N + heißt + <name>",
+      "Der + N + von + <name>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "sie DOES THREE JOBS and this module opens no row for any of them — L1-M2 owns the key, with its note already true of all three. The separating rule is the VERB: sie ist is \"she is\" (singular), sie sind is \"they are\" (plural, lowercase), Sie sind is \"you are\" (plural, capital in the middle of a sentence). The index cannot see the capital and never will, so the verb is what a reader has to go by."
+    },
+    {
+      "tag": "delta",
+      "text": "The possessive \"her\" is taught on ihre ALONE — feminine and plural: ihre Schwester, ihre Kinder. That is a key nothing else holds, because L1 kept the possessive ihr out so that Ihr Name could own the polite \"your\". Where a masculine possession is needed, the sentence takes the von periphrasis — der Bruder von Anna — which is ordinary spoken German and not a workaround."
+    },
+    {
+      "tag": "free",
+      "text": "Every adjective in this level stands AFTER sein and takes no ending: Er ist groß, Seine Haare sind kurz, Ihre Augen sind blau. That is a decision rather than an oversight — an adjective in front of a noun has to be declined, and the declension is L3's. So features are stated predicatively and the module never writes ein netter Mann."
+    },
+    {
+      "tag": "interference",
+      "text": "das Mädchen is NEUTER despite meaning \"girl\", and it is the most famous fact about German gender. The reason is mechanical: -chen makes anything neuter, whatever it means. Gender is a property of the WORD and not of the thing, which is what makes it learnable at all."
+    },
+    {
+      "tag": "free",
+      "text": "Frau is L1-M2's key, where it is the title in Frau Weber — and it also means \"woman\" and \"wife\". One key, three readings, exactly as sie has three. Mann does the same: a man and a husband, with only the sentence to say which."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "Das ist mein Bruder",
+      "cue": "This is my brother",
+      "literal": "That is my brother",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Bruder",
+            "cue": "brother",
+            "tag": "free",
+            "forms": [
+              "Brüder"
+            ],
+            "note": "Its plural takes an umlaut and nothing else — Brüder. A capital, because every German noun has one."
+          },
+          {
+            "display": "Schwester",
+            "cue": "sister",
+            "tag": "free",
+            "forms": [
+              "Schwestern"
+            ],
+            "note": "Its plural adds -n. The sch is one sound, a sh, and the w after it is a v."
+          },
+          {
+            "display": "meine",
+            "cue": "my (feminine/plural)",
+            "tag": "free",
+            "forms": [
+              "mein"
+            ],
+            "note": "L1 showed ich heiße and mir but never the possessive itself. mein goes with a masculine or neuter noun and meine with a feminine or plural one."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Das does not agree with anything here. It is a flat pointing word, so Das ist mein Bruder and Das ist meine Schwester both start the same way — only what follows moves.",
+      "sound": "das ist mine BROO-der. The final -er is a light uh, not a rolled r.",
+      "variations": [
+        {
+          "display": "Das ist meine Schwester",
+          "cue": "This is my sister",
+          "changed": "feminine, so the possessive moves"
+        },
+        {
+          "display": "Das ist mein Vater",
+          "cue": "This is my father",
+          "changed": "a different relative"
+        },
+        {
+          "display": "Das sind meine Eltern",
+          "cue": "These are my parents",
+          "changed": "plural, and the verb moves with it"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist meine Bruder",
+        "why": "Bruder is masculine: Das ist mein Bruder."
+      },
+      "usage": "Introducing family, or handing round a photograph.",
+      "register": "neutral",
+      "mnemonic": "Das never moves. What follows does."
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "Mein Vater ist sehr nett",
+      "cue": "My father is very nice",
+      "literal": "My father is very nice",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Vater",
+            "cue": "father",
+            "tag": "free",
+            "forms": [
+              "Väter"
+            ],
+            "note": "The plural umlauts, as Bruder does. Papa stands beside it as it does in English."
+          },
+          {
+            "display": "Mutter",
+            "cue": "mother",
+            "tag": "free",
+            "forms": [
+              "Mütter"
+            ],
+            "note": "Vater's pair, and its plural umlauts the same way. Both are feminine-looking and only one of them is."
+          },
+          {
+            "display": "nett",
+            "cue": "nice · kind",
+            "tag": "free",
+            "forms": [],
+            "note": "After ist it takes NO ending at all, which is the level's rule. In front of a noun it would decline, and that is L3's."
+          },
+          {
+            "display": "sehr",
+            "cue": "very",
+            "tag": "free",
+            "forms": [],
+            "note": "It goes in front of the adjective and never changes. The h is silent and simply lengthens the vowel."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "nett has no ending here and would have one in front of a noun. That is the whole of the level's adjective decision, and it is why every description in en-de L2 is built with ist rather than with an article.",
+      "sound": "mine FAH-ter ist zair NET. The s of sehr is a z.",
+      "variations": [
+        {
+          "display": "Meine Mutter ist sehr nett",
+          "cue": "My mother is very nice",
+          "changed": "feminine — and nett still does not move"
+        },
+        {
+          "display": "Mein Vater ist sehr freundlich",
+          "cue": "My father is very friendly",
+          "changed": "a different quality"
+        },
+        {
+          "display": "Meine Eltern sind sehr nett",
+          "cue": "My parents are very nice",
+          "changed": "plural, and only the verb moves"
+        }
+      ],
+      "mistake": {
+        "display": "Mein Vater ist sehr netter",
+        "why": "After ist the adjective takes no ending: Mein Vater ist sehr nett."
+      },
+      "usage": "Talking about family, or about people at work.",
+      "register": "neutral",
+      "mnemonic": "After ist, no ending. Ever, at this level."
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "Sie ist meine Schwester",
+      "cue": "She is my sister",
+      "literal": "She is my sister",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Eltern",
+            "cue": "parents",
+            "tag": "free",
+            "forms": [],
+            "note": "Plural only — there is no singular. A single parent is ein Elternteil, which this level does not need."
+          },
+          {
+            "display": "Kind",
+            "cue": "child",
+            "tag": "free",
+            "forms": [
+              "Kinder"
+            ],
+            "note": "Neuter — das Kind — and its plural adds -er. The gender belongs to the word, not to the child."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "sie ist is \"she is\" and sie sind is \"they are\". The pronoun is identical and the VERB is what separates them — which is the whole of L1's decision 2, restated here where it finally matters.",
+      "sound": "zee ist MINE-uh SHVES-ter. The s at the start of sie is a z.",
+      "variations": [
+        {
+          "display": "Sie sind meine Eltern",
+          "cue": "They are my parents",
+          "changed": "the plural verb, so the pronoun means they"
+        },
+        {
+          "display": "Sie ist mein Kind",
+          "cue": "She is my child",
+          "changed": "a neuter noun, so the possessive drops its e"
+        },
+        {
+          "display": "Er ist mein Bruder",
+          "cue": "He is my brother",
+          "changed": "a man, where nothing is ambiguous"
+        }
+      ],
+      "mistake": {
+        "display": "Sie sind meine Schwester",
+        "why": "One sister takes the singular: Sie ist meine Schwester."
+      },
+      "usage": "Saying who someone is.",
+      "register": "neutral",
+      "mnemonic": "The verb says which sie you mean."
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "Ihre Schwester heißt Anna",
+      "cue": "Her sister is called Anna",
+      "literal": "Her sister is-called Anna",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ihre",
+            "cue": "her (feminine/plural)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The possessive \"her\", lowercase, and it is a different key from L1-M2's capital Ihr. Only the capital tells a reader which is meant, and only for feminine and plural things."
+          },
+          {
+            "display": "von",
+            "cue": "of · from",
+            "tag": "delta",
+            "forms": [],
+            "note": "der Bruder von Anna is \"Anna's brother\", and it is ordinary spoken German rather than a workaround. It takes the dative, which L3 will make visible."
+          },
+          {
+            "display": "heißt",
+            "cue": "is called",
+            "tag": "free",
+            "forms": [],
+            "note": "The third-person cell of L1-M1's heißen — that row owns the infinitive, and this is the shape a third person takes. German asks what someone is CALLED, and the ß is a long s."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Lowercase ihre is \"her\" and capital Ihre is \"your\". The index folds the case away, so the capital is the only signal a reader gets — which is exactly why L1 left this key free.",
+      "sound": "EE-ruh SHVES-ter highst AN-na. heißt has the ß, which is a long s.",
+      "variations": [
+        {
+          "display": "Ihre Kinder sind sehr nett",
+          "cue": "Her children are very nice",
+          "changed": "plural, where ihre covers both genders"
+        },
+        {
+          "display": "Der Bruder von Anna ist sehr nett",
+          "cue": "Anna's brother is very nice",
+          "changed": "the von frame, for a masculine possession"
+        },
+        {
+          "display": "Seine Schwester heißt Anna",
+          "cue": "His sister is called Anna",
+          "changed": "his rather than hers"
+        }
+      ],
+      "mistake": {
+        "display": "Ihr Schwester heißt Anna",
+        "why": "Schwester is feminine: Ihre Schwester heißt Anna."
+      },
+      "usage": "Talking about a third person's family.",
+      "register": "neutral",
+      "mnemonic": "The capital is the reader's only clue."
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "Seine Haare sind kurz",
+      "cue": "His hair is short",
+      "literal": "His hairs are short",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sein",
+            "cue": "his (masculine/neuter)",
+            "tag": "interference",
+            "forms": [],
+            "note": "The possessive \"his\", and it is spelled exactly like the infinitive \"to be\" — which L1 never indexed, only ist and sind. Two words, one spelling, and the sentence says which."
+          },
+          {
+            "display": "seine",
+            "cue": "his (feminine/plural)",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine and plural shape. seine Schwester, seine Haare — one form covers both."
+          },
+          {
+            "display": "Haare",
+            "cue": "hair (on the head)",
+            "tag": "delta",
+            "forms": [
+              "Haar"
+            ],
+            "note": "PLURAL in German — the hairs — so its verb and its adjective are plural too. The singular Haar is one single hair."
+          },
+          {
+            "display": "kurz",
+            "cue": "short",
+            "tag": "free",
+            "forms": [],
+            "note": "After sind it takes no ending, like every adjective in this level. The z is a ts."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Haare is plural and English's \"hair\" is singular, so the verb is sind and not ist. Translating the English number gets the verb wrong as well as the noun.",
+      "sound": "ZINE-uh HAA-ruh zint koorts. The final z of kurz is a ts.",
+      "variations": [
+        {
+          "display": "Ihre Haare sind kurz",
+          "cue": "Her hair is short",
+          "changed": "hers rather than his"
+        },
+        {
+          "display": "Seine Haare sind lang",
+          "cue": "His hair is long",
+          "changed": "the opposite"
+        },
+        {
+          "display": "Sein Haar ist kurz",
+          "cue": "His hair is short",
+          "changed": "the singular, which is stiffer and less usual"
+        }
+      ],
+      "mistake": {
+        "display": "Seine Haare ist kurz",
+        "why": "Haare is plural: Seine Haare sind kurz."
+      },
+      "usage": "Describing someone so they can be picked out.",
+      "register": "neutral",
+      "mnemonic": "German counts the hairs."
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "Ihre Augen sind blau",
+      "cue": "Her eyes are blue",
+      "literal": "Her eyes are blue",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Augen",
+            "cue": "eyes",
+            "tag": "free",
+            "forms": [
+              "Auge",
+              "grün"
+            ],
+            "note": "Its singular is Auge and its plural adds -n. The au is one gliding sound, as in English \"how\" — and grün, green, is the other colour this module shows."
+          },
+          {
+            "display": "blau",
+            "cue": "blue",
+            "tag": "free",
+            "forms": [],
+            "note": "After sind it takes no ending. The au is the same sound as in Augen, which makes the phrase easy to say."
+          },
+          {
+            "display": "lang",
+            "cue": "long",
+            "tag": "free",
+            "forms": [],
+            "note": "kurz's opposite. The ng is one sound at the back, with no separate g after it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Both Haare and Augen are plural and both take sind. German is consistent about this where English is not, and once the plural is seen the verb follows.",
+      "sound": "EE-ruh OW-gen zint BLOW. blau rhymes with English \"how\".",
+      "variations": [
+        {
+          "display": "Seine Augen sind blau",
+          "cue": "His eyes are blue",
+          "changed": "his rather than hers"
+        },
+        {
+          "display": "Ihre Augen sind grün",
+          "cue": "Her eyes are green",
+          "changed": "a different colour"
+        },
+        {
+          "display": "Ihre Haare sind lang",
+          "cue": "Her hair is long",
+          "changed": "a different feature"
+        }
+      ],
+      "mistake": {
+        "display": "Ihre Augen sind blaue",
+        "why": "After sind the adjective takes no ending: Ihre Augen sind blau."
+      },
+      "usage": "Describing a face, and it is a compliment more often than not.",
+      "register": "neutral",
+      "mnemonic": "No ending after sind, whatever the number."
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "Mein Sohn ist noch jung",
+      "cue": "My son is still young",
+      "literal": "My son is still young",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Sohn",
+            "cue": "son",
+            "tag": "free",
+            "forms": [
+              "Söhne"
+            ],
+            "note": "Its plural umlauts and adds -e. The h is silent and lengthens the o."
+          },
+          {
+            "display": "Tochter",
+            "cue": "daughter",
+            "tag": "free",
+            "forms": [
+              "Töchter"
+            ],
+            "note": "Its plural umlauts and adds nothing else, as Brüder does. The ch is the back sound."
+          },
+          {
+            "display": "jung",
+            "cue": "young",
+            "tag": "free",
+            "forms": [],
+            "note": "The j is a y. alt is its opposite and is already L1-M10's."
+          },
+          {
+            "display": "noch",
+            "cue": "still · yet",
+            "tag": "free",
+            "forms": [
+              "schon"
+            ],
+            "note": "Two jobs on one word: still in a statement, yet in a question. Its opposite is schon, already, and noch nicht is \"not yet\"."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "German has no continuous, so ist noch jung is the whole sentence. English would want \"is still\" as two ideas and German folds it into one adverb.",
+      "sound": "mine zohn ist nokh YOONG. The ch of noch is the back sound of Scottish \"loch\".",
+      "variations": [
+        {
+          "display": "Meine Tochter ist noch jung",
+          "cue": "My daughter is still young",
+          "changed": "feminine"
+        },
+        {
+          "display": "Mein Sohn ist schon alt",
+          "cue": "My son is already old",
+          "changed": "the other end, with a different adverb"
+        },
+        {
+          "display": "Meine Söhne sind noch jung",
+          "cue": "My sons are still young",
+          "changed": "plural, with the umlauted form"
+        }
+      ],
+      "mistake": {
+        "display": "Mein Sohn ist noch junge",
+        "why": "After ist the adjective takes no ending: Mein Sohn ist noch jung."
+      },
+      "usage": "Talking about children.",
+      "register": "neutral",
+      "mnemonic": "noch is still and yet at once."
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "Mein Freund ist sehr lustig",
+      "cue": "My friend is very funny",
+      "literal": "My friend is very funny",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Freund",
+            "cue": "friend (male) · boyfriend",
+            "tag": "interference",
+            "forms": [
+              "Freunde"
+            ],
+            "note": "mein Freund can mean a boyfriend as well as a friend. ein Freund von mir is the safer way to say the second thing."
+          },
+          {
+            "display": "Freundin",
+            "cue": "friend (female) · girlfriend",
+            "tag": "free",
+            "forms": [
+              "Freundinnen"
+            ],
+            "note": "The -in ending makes a feminine person out of almost any German job or role, and it doubles the n in the plural."
+          },
+          {
+            "display": "lustig",
+            "cue": "funny · cheerful",
+            "tag": "free",
+            "forms": [],
+            "note": "The final -ig is said -ich in standard German, with the front ch sound. That is regular for every -ig ending."
+          },
+          {
+            "display": "ruhig",
+            "cue": "quiet · calm",
+            "tag": "free",
+            "forms": [],
+            "note": "Another -ig word, said the same way. The h is silent and simply separates the two vowels."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "mein Freund is ambiguous in a way English's \"my friend\" is not, and Germans hear the second reading first. The fix is a longer phrase, not a different word.",
+      "sound": "mine FROYNT ist zair LOOS-tich. The eu is the oy of English \"boy\".",
+      "variations": [
+        {
+          "display": "Meine Freundin ist sehr lustig",
+          "cue": "My friend is very funny",
+          "changed": "a female friend, with the same ambiguity"
+        },
+        {
+          "display": "Mein Freund ist sehr ruhig",
+          "cue": "My friend is very quiet",
+          "changed": "a different quality"
+        },
+        {
+          "display": "Meine Freunde sind sehr lustig",
+          "cue": "My friends are very funny",
+          "changed": "plural"
+        }
+      ],
+      "mistake": {
+        "display": "Mein Freundin ist sehr lustig",
+        "why": "Freundin is feminine: Meine Freundin ist sehr lustig."
+      },
+      "usage": "Talking about the people around you.",
+      "register": "neutral",
+      "mnemonic": "-in makes a woman out of almost any role."
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "Das Mädchen ist sehr freundlich",
+      "cue": "The girl is very friendly",
+      "literal": "The girl is very friendly",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mädchen",
+            "cue": "girl",
+            "tag": "interference",
+            "forms": [],
+            "note": "NEUTER — das Mädchen — because -chen makes anything neuter whatever it means. Its plural is also Mädchen, since -chen never changes."
+          },
+          {
+            "display": "freundlich",
+            "cue": "friendly",
+            "tag": "free",
+            "forms": [],
+            "note": "Freund plus -lich, which builds adjectives out of nouns the way English's -ly does. The final ch is the front sound."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Gender is a property of the WORD and not of the person. das Mädchen is the most famous case, and the rule behind it is mechanical: -chen wins, every time.",
+      "sound": "das MAID-khen ist zair FROYNT-likh. The ä is close to the e of English \"bed\", held longer.",
+      "variations": [
+        {
+          "display": "Das Mädchen ist sehr ruhig",
+          "cue": "The girl is very quiet",
+          "changed": "a different quality"
+        },
+        {
+          "display": "Der Mann ist sehr freundlich",
+          "cue": "The man is very friendly",
+          "changed": "a masculine noun, where the gender matches"
+        },
+        {
+          "display": "Die Mädchen sind sehr freundlich",
+          "cue": "The girls are very friendly",
+          "changed": "plural — and the noun itself does not change"
+        }
+      ],
+      "mistake": {
+        "display": "Die Mädchen ist sehr freundlich",
+        "why": "One girl is neuter: Das Mädchen ist sehr freundlich."
+      },
+      "usage": "Describing someone, and the gender is the point.",
+      "register": "neutral",
+      "mnemonic": "-chen makes anything neuter."
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "Die Frau von Herrn Weber heißt Anna",
+      "cue": "Herr Weber's wife is called Anna",
+      "literal": "The woman of Herr Weber is-called Anna",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mann",
+            "cue": "man · husband",
+            "tag": "interference",
+            "forms": [
+              "Männer"
+            ],
+            "note": "Two readings on one word, exactly as Frau is a woman and a wife. Only the sentence says which, and der Mann von Anna is the second."
+          },
+          {
+            "display": "Herrn",
+            "cue": "Herr (after a preposition)",
+            "tag": "interference",
+            "forms": [],
+            "note": "Herr adds -n everywhere except as a bare subject — von Herrn Weber, Herrn Weber sehen. A small group of masculine nouns behaves this way."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "German's ordinary way of saying \"Herr Weber's wife\" is die Frau von Herrn Weber. The -s possessive exists — Herrn Webers Frau — and the von frame is what people say.",
+      "sound": "dee frow fon HAIRN VAY-ber highst AN-na. The v of von is an f.",
+      "variations": [
+        {
+          "display": "Der Mann von Anna ist sehr nett",
+          "cue": "Anna's husband is very nice",
+          "changed": "the other half of the pair"
+        },
+        {
+          "display": "Der Bruder von Anna ist sehr nett",
+          "cue": "Anna's brother is very nice",
+          "changed": "a different relative"
+        },
+        {
+          "display": "Ihre Schwester heißt Anna",
+          "cue": "Her sister is called Anna",
+          "changed": "the possessive, where the gender allows it"
+        }
+      ],
+      "mistake": {
+        "display": "Die Frau von Herr Weber heißt Anna",
+        "why": "Herr adds -n after a preposition: von Herrn Weber."
+      },
+      "usage": "Naming who someone is married to.",
+      "register": "neutral",
+      "mnemonic": "Herr adds an -n everywhere but the subject."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M2-C01",
+      "display": "Das ist mein Bruder",
+      "cue": "This is my brother"
+    },
+    {
+      "id": "L2-M2-C02",
+      "display": "Mein Vater ist sehr nett",
+      "cue": "My father is very nice"
+    },
+    {
+      "id": "L2-M2-C03",
+      "display": "Sie ist meine Schwester",
+      "cue": "She is my sister"
+    },
+    {
+      "id": "L2-M2-C04",
+      "display": "Ihre Schwester heißt Anna",
+      "cue": "Her sister is called Anna"
+    },
+    {
+      "id": "L2-M2-C05",
+      "display": "Seine Haare sind kurz",
+      "cue": "His hair is short"
+    },
+    {
+      "id": "L2-M2-C06",
+      "display": "Ihre Augen sind blau",
+      "cue": "Her eyes are blue"
+    },
+    {
+      "id": "L2-M2-C07",
+      "display": "Mein Sohn ist noch jung",
+      "cue": "My son is still young"
+    },
+    {
+      "id": "L2-M2-C08",
+      "display": "Mein Freund ist sehr lustig",
+      "cue": "My friend is very funny"
+    },
+    {
+      "id": "L2-M2-C09",
+      "display": "Das Mädchen ist sehr freundlich",
+      "cue": "The girl is very friendly"
+    },
+    {
+      "id": "L2-M2-C10",
+      "display": "Die Frau von Herrn Weber heißt Anna",
+      "cue": "Herr Weber's wife is called Anna"
+    },
+    {
+      "id": "L2-M2-C11",
+      "display": "Das sind meine Eltern",
+      "cue": "These are my parents"
+    },
+    {
+      "id": "L2-M2-C12",
+      "display": "Meine Tochter ist noch jung",
+      "cue": "My daughter is still young"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

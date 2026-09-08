@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 170 — nine L1 ladders, hi-mr L2 and L3, and the complete L2 of en-es, en-ar, hi-en, en-ru, en-it and en-fr (#458)', () => {
+  it('finds all 172 — nine L1 ladders, hi-mr L2 and L3, the complete L2 of en-es, en-ar, hi-en, en-ru, en-it and en-fr, and the first en-de L2 pair (#441)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -223,6 +223,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-de/modules/L1-M7.json',
       'content/en-de/modules/L1-M8.json',
       'content/en-de/modules/L1-M9.json',
+      'content/en-de/modules/L2-M1.json',
+      'content/en-de/modules/L2-M2.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
@@ -983,7 +985,12 @@ describe('ModuleContent against the modules that exist', () => {
       for (const sentence of module.sentences) {
         const at = sentence.id;
         expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
-        expect(sentence.register, `${at} register`).toBe('neutral');
+        // L1 is `neutral` throughout, because politeness above it rides `bitte` and the `usage`
+        // line. L2-M1 (#441) is chartered to open `du`, and a level that teaches two addresses has
+        // to chip which is which — so the flat assertion is scoped to the level that made it.
+        if (module.id.startsWith('L1-')) {
+          expect(sentence.register, `${at} register`).toBe('neutral');
+        }
         expect(sentence.sound, `${at} sound`).toMatch(/\S/);
         l2Slots.push([at, sentence.display]);
         for (const variation of sentence.variations ?? []) {
@@ -1009,15 +1016,23 @@ describe('ModuleContent against the modules that exist', () => {
         for (const raw of text.split(/[\s,.?!]+/)) {
           const token = raw.trim();
           if (token === '') continue;
-          expect(
-            DU_REGISTER.has(token.toLowerCase()),
-            `${where}: "${token}" is du-register, and this course speaks Sie`,
-          ).toBe(false);
-          // The capital is the reader's only signal, because the index cannot see it.
-          expect(
-            ['ihr', 'ihre', 'ihnen'].includes(token),
-            `${where}: "${token}" lost its capital`,
-          ).toBe(false);
+          // Decision 3 was L1's: `du` and its whole paradigm stayed out of every slot, mistake
+          // plates included, and the briefs named it as what a later level owed. L2-M1 pays it, so
+          // the ban holds over L1 only.
+          if (module.id.startsWith('L1-')) {
+            expect(
+              DU_REGISTER.has(token.toLowerCase()),
+              `${where}: "${token}" is du-register, and this course speaks Sie`,
+            ).toBe(false);
+          }
+          // The capital is the reader's only signal, because the index cannot see it. L2-M2 (#441)
+          // opens the POSSESSIVE `ihre` — "her" — which is correctly lowercase and is the one key
+          // L1 left free for it, so that word alone leaves the ban when the level that teaches it
+          // arrives. Polite `Ihr` and `Ihnen` keep their capitals everywhere.
+          const lostCapital = module.id.startsWith('L1-')
+            ? ['ihr', 'ihre', 'ihnen']
+            : ['ihr', 'ihnen'];
+          expect(lostCapital.includes(token), `${where}: "${token}" lost its capital`).toBe(false);
           // An all-caps word folds to a key no row owns — decision 2, pointing the other way.
           expect(
             token.length > 1 && token === token.toUpperCase() && /\p{L}/u.test(token),

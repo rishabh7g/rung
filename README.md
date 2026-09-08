@@ -476,6 +476,27 @@ because place names do not resolve in the index (#61) — which made the sentenc
 shows the feminine agreement the rule is about. Twenty-two ratchet findings, all fixed in content.
 **The native gate is still unmet**: docs/66 ends in open questions 1–35, a fresh en-fr L2 chain.
 
+**en-de starts its second level (#441, 2026-09-08).** `L2-M1` _Asking politely_ and `L2-M2`
+_Describing people_ are authored against the briefs of #432
+(`docs/59-en-de-L2-brief-decisions.md`), backed by `docs/67-llm-review-en-de-L2.md`; a strict
+`npm run build` emits `en-de: 12 modules (L1-M1..M10, L2-M1..M2)`. M1 pays **the most expensive
+register decision in the repo**: L1 spoke `Sie` and said in advance why it could afford to — `Sie`
+takes the plural verb, so its form is spelled exactly like the infinitive and cost the index
+nothing, while `du` costs a second set of endings, its own imperative and `dein`, `dich`, `dir`.
+This module pays all of it in one wave. Its grammar is the **modal bracket** — modal in position
+two, infinitive at the very end of the clause — which is the biggest word-order delta in the course
+and which M4, M6, M7 and M8 all borrow. M2 opens **no row for `sie`** in any of its three readings,
+restating instead the rule that the VERB is what separates them, because the index cannot see the
+capital and never will; and it teaches the possessive "her" on **`ihre` alone**, a key nothing else
+holds because L1 kept the possessive `ihr` out so `Ihr Name` could own the polite "your". Every
+adjective in the level stands after `sein` and takes no ending, said as a decision rather than left
+looking like an oversight. The wave scoped two more L1-shaped assertions in
+`src/course/types.test.ts` — the `du`-register ban and the flat `neutral` chip — and narrowed the
+lost-capital check so lowercase `ihre` is allowed at L2 while `Ihr` and `Ihnen` keep their capitals.
+That is the third time this milestone a second level has exposed a test encoding the level as well
+as the rule. **The native gate is still unmet**: docs/67 ends in open questions 1–10, a fresh en-de
+L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on
