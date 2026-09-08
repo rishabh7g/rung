@@ -23,7 +23,7 @@
  * of that is noise. The state is a `data-state` attribute rather than a class per state, so the
  * stylesheet holds the tokens (`--dot-done` / `--dot-pending`) and the DOM says what it means.
  */
-import styles from './ProductionDots.module.css';
+import './production-dots.css';
 
 interface ProductionDotsProps {
   /** `production[sentenceId]` — how many times this sentence has been self-marked got-it. */
@@ -32,8 +32,8 @@ interface ProductionDotsProps {
 
 export function ProductionDots({ produced }: ProductionDotsProps) {
   return (
-    <span className={styles.dots} aria-hidden="true">
-      <span className={styles.dot} data-state={produced >= 1 ? 'done' : 'pending'} />
+    <span className="production-dots" aria-hidden="true">
+      <span className="production-dot" data-state={produced >= 1 ? 'done' : 'pending'} />
     </span>
   );
 }
