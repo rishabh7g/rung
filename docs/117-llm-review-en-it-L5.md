@@ -670,3 +670,435 @@ apostrophe surface is written by this wave.
 138. **`L'importante è …` and how it lands** (M5-S07). The module teaches it as a neutral way of
      naming a priority. Confirm it does not carry a whiff of lecturing the listener, and say whether
      `L'importante è la salute` is as ordinary as this reviewer believes it to be.
+
+## Wave 3 — L5-M6 through L5-M10 (#594)
+
+The level's RANGE modules, and the last five rungs of the course: how to argue, how to hear what was
+not said, how to keep talking through a word you do not have, how to retell a story in the past
+people actually speak, and how to change register inside one piece. Authored against the briefs in
+`tools/course-briefs.ts` and against the REAL cumulative index, which this wave inherited from Wave
+2 rather than from L4: at the moment the five modules were written, `npm run content:owner -- en-it
+…` closed every one of its ~200 lookups with **1523 surfaces owned, folded over 45 modules through
+L5-M5**, at **`maxSpan` 4**. That is five modules deeper than the fold the L5 briefs were written
+against, and the difference is not cosmetic — it turned one of L5-M8's "fresh, confirmed free" keys
+into an owned one.
+
+**`maxSpan` does not move in this wave, and it is 4 rather than 3.** L5-M1 took it from 3 to 4 and
+nothing here is longer than four: `il fatto è che` is this wave's only four-token key, and it was
+confirmed free at span 4 before it was bought. Everything else stops at three:
+`in primo luogo`, `in secondo luogo`, `in conclusione`, `a meno che`, `pur essendo`, `volevo
+chiederti`, `in un certo senso`, `ci mancherebbe altro`, `come si dice`, `come si chiama`,
+`che vuol dire`, `una specie di`, `quella cosa che`, `nel senso che`, `che ne so`,
+`c'era una volta`, `per farla breve`, `sarei dovuto andare`, `cordiali saluti`, `dammi del tu`.
+Between them the five modules add **97 rows**: 24, 17, 22, 19 and 15, every one of them under the
+level's cap of 25 and the last two deliberately well under it.
+
+### L5-M6 "Arguing a position" — the trigger class, not the mood
+
+Ten displays:
+
+1. `In primo luogo, il fatto è che il problema non è il tempo`
+2. `In secondo luogo il lavoro è pesante. Ad esempio, nessuno dorme`
+3. `Benché tu abbia ragione, insisto: questa è la mia obiezione`
+4. `Sebbene sia difficile, nessuno può obiettare`
+5. `Nonostante tutto, ammetto una cosa: sbagliando ho capito il motivo`
+6. `D'altra parte il lavoro va avanti. Tuttavia, il tempo manca`
+7. `Essendo già tardi, decido domani, purché tu sia d'accordo`
+8. `Sostengo la stessa cosa, a meno che non ci sia un problema`
+9. `Pur essendo d'accordo, non cambia niente. Pur avendo ragione, non insisto`
+10. `In conclusione, lo spiego affinché sia tutto giusto, prima che sia tardi`
+
+What it teaches. **The trigger class** (rule 0, S03–S05, S07, S10): `benché`, `sebbene`,
+`nonostante`, `a meno che`, `purché`, `affinché` and `prima che`, with the fact the brief demanded
+stated in exactly its terms — *the mood here is grammatical AGREEMENT, not doubt*, and the speaker
+can be completely certain and the verb still goes to the congiuntivo. Not one congiuntivo FORM is
+bought: every one of them (`sia`, `abbia`) is L3-M3's, and no display anywhere in the module writes
+a congiuntivo imperfetto, which is the tense note 4 forbids. **The compressed concessive** (rule 1,
+S05, S07, S09): `pur essendo`, `pur`, `essendo`, `avendo`, `sbagliando` — the adverbial gerund
+L4-M6 deferred. **The scaffold** (rule 2, S01, S02, S06, S10): `in primo luogo`, `in secondo luogo`,
+`d'altra parte`, `tuttavia`, `in conclusione`, with `innanzitutto` carried as a FORM of the first
+rather than as a row of its own, so the module lands at 24 rows against a cap of 25.
+
+The two interference rules are the ones that cost something. `a meno che` (rule 3, S08) carries the
+expletive `non` written outside the key, resolving on L1-M3's `non` — the second sighting of the
+trick L4-M6 taught on `finché non`, and the note says so. `tuttavia` (rule 4, S06) opens its clause
+and cannot sit inside it, pointed back at L4-M2's positional law rather than re-derived, and the
+mistake plate for S06 is *the seam rather than the word*: `tuttavia` hung off a comma.
+
+`prima che` (S10) is the different-subject twin of L4-M6's `prima di`, which that brief named in one
+line and this module pays for. **24 rows**, `minWordsPerSentence` 6, `maxWordsPerSentence` 15.
+
+### L5-M7 "Between the lines" — the module that buys no grammar
+
+Ten displays:
+
+1. `Volevo chiederti un favore, se hai un momento`
+2. `Non è che potresti aiutarmi un momento?`
+3. `Senti, ti dispiacerebbe aspettare un momento?`
+4. `Disturbo? Per caso hai visto il mio telefono?`
+5. `Certo, come no: figuriamoci se arriva in orario`
+6. `Ci mancherebbe, non è un problema`
+7. `Lascia perdere, non era importante`
+8. `Diciamo che, in un certo senso, hai ragione`
+9. `Onestamente, non mi sembra una buona idea`
+10. `Davvero? Sul serio, diciamo che dipende`
+
+What it teaches. **Distance as tense** (rules 0 and 1, S01–S03): `volevo chiederti` indexes WHOLE
+over L4-M3's `volevo`, so the imperfetto-of-politeness lives in a rule and not in a row, exactly as
+the brief required; the conditional tier (`potresti`, `ti dispiacerebbe`) is L3-M4's and L2-M1's and
+is re-read rather than re-bought; `non è che` and `per caso` are the two frames that hand the hearer
+a ready-made no. The module buys **17 rows and no grammar at all**, which is the brief's own claim
+made literal. **Irony as lexicon** (rule 4, S05, S10): `certo`, `come no`, `figuriamoci`,
+`ci mancherebbe altro`, with `davvero` and `sul serio` added as the two markers that let a written
+line be checked or switched back to sincere. The sarcastic `bravo` gets NO row — L2-M2 owns it — and
+its second job is carried by rule 4 in one sentence, which is the tool L4-M7 had to use on `prego`.
+
+The three interference rules are the brief's three: politeness that grows by adding words against
+politeness that changes the tense (rule 2, and S02's mistake plate is a three-hedge pile-up);
+directness calibrated differently, with `mi passi il sale` named in the rule and deliberately not
+bought (rule 3); and written irony that cannot ride on tone (rule 4). Nothing here teaches teasing,
+which is L5-M2's, and nothing produces passive aggression: S05 and S10 are marked in their `usage`
+as recognition.
+
+**`non è che` takes the ordinary present throughout**, as note 4 demands, and rule 5 says so and
+sends the choice to the native gate rather than settling it — question 141 below.
+
+### L5-M8 "When words run out" — the last structural debt
+
+Ten displays:
+
+1. `Come si dice questo in italiano?`
+2. `Che vuol dire questa parola?`
+3. `Non ho capito: me lo puoi ripetere più piano?`
+4. `Dimmi tutto, e poi dimmelo ancora`
+5. `Ripetimi il numero. Ripetimelo, per favore`
+6. `Spiegami quella cosa che hai detto: voglio capire`
+7. `Come si chiama quel coso? È una specie di pane`
+8. `Te lo dico io: glielo spiego domani`
+9. `Che ne so? Non ne parlo mai`
+10. `Nel senso che intendevo un'altra cosa`
+
+What it teaches, in the brief's order and no other. **Rule 0, attachment**: the pronoun attaches to
+an infinitive, a tu imperative and a gerund and stands before a finite verb, and *the position is
+decided by the verb form and by nothing else* — S04's trap sets `dimmi` against `me lo dici` as the
+same words in the same relation. **Rule 1, the combined clitic**: indirect first, `mi`/`ti`/`ci`/`vi`
+change their vowel to `e`, `gli` + `lo` fuses to `glielo`. **Rule 2, `ne`**. Around them the
+paraphrase kit (rule 3) and the two things English gives no help with (rule 4: `mi lo` is not a
+form; `glielo` is one word for three English pronouns and there is no feminine).
+
+Every combined form is bought as its OWN key — `me lo`, `te lo`, `glielo`, `dimmelo`, `ripetimelo` —
+with a note naming the bare word underneath, which is the tool L3-M5 used for `l'ho vista`, and none
+of L1-M1's `la`/`le`, L2-M5's `lo` or L2-M2's `gli` is re-opened. Rule 5 carries the three named
+absences the brief lists: the Lei imperative `me lo dica` (every polite repair here stays on the
+finite frame), the `ci` of place with attachment, and L5-M1's `farcela`/`cavarsela`, explained as the
+machine already welded shut and not bought a second time.
+
+Two rows beyond the brief's list earn their place: `parola` (S02), without which `che vuol dire` has
+nothing to point at, and `più piano` (S03), because bare `piano` is unowned — see the seams below.
+**22 rows**, `maxWordsPerSentence` 12.
+
+### L5-M9 "Telling it your way" — read one tense, say the other
+
+Ten displays:
+
+1. `C'era una volta una bambina che abitava in un paese piccolo`
+2. `In questa fiaba la protagonista era una bambina`
+3. `Il personaggio disse una cosa strana e andò a casa`
+4. `Fu una storia lunga. Visse molti anni in città`
+5. `Quando sono arrivato, era partito da un'ora`
+6. `Avevo finito il lavoro quando è arrivata mia madre`
+7. `Sarei dovuto andare prima. Alla fine sono rimasto`
+8. `In breve, la morale della favola è questa`
+9. `Per farla breve, questa versione è la mia`
+10. `Ebbe paura, vide il mare, fece una cosa strana e venne a casa`
+
+What it teaches. **The passato remoto, receptively and only in the third person** (rule 0, S03, S04,
+S10): eight verbs bought as eight rows, each carrying its own plural as a FORM — `fu`/`furono`,
+`ebbe`/`ebbero`, `disse`/`dissero`, `fece`/`fecero`, `andò`/`andarono`, `venne`/`vennero`,
+`vide`/`videro`, `visse`/`vissero`. Sixteen surfaces, "about a dozen third-person forms and no more",
+for eight rows of the budget. The recognition-only limit is in the RULE text as note 4 demands, not
+in advice; no display puts a first- or second-person remoto in the learner's mouth, and both mistake
+plates that could (`Io dissi …`, `Ebbi paura …`) exist precisely to forbid it. **The trapassato,
+productively** (rules 1 and 2, S05, S06): `era partito` and `avevo finito` bought as TWO-TOKEN
+auxiliary-plus-participle keys so that neither L2-M10's `era`/`avevo` nor L3-M10's participles is
+re-taught, with `era partita` / `erano partiti` / `aveva finito` / `avevamo finito` carried as forms.
+**The last cell of the compound conditional** (rule 3, S07): `sarei dovuto andare`, indexing WHOLE
+over L4-M3's `sarei`, with `sarei dovuta andare` as its feminine form and the auxiliary rule stated —
+the verb at the END picks it.
+
+Rule 4 is the module's exercise: an English retelling keeps the source tense, an Italian one changes
+it, and every remoto row's note names the passato prossimo it becomes out loud (`disse` → `ha detto`,
+`fu` → `è stata`, `vide` → `ha visto`, `venne` → `è venuto`). `fiaba` carries `favola` and both
+plurals as forms rather than taking a second row. **19 rows**, `maxWordsPerSentence` 14.
+
+### L5-M10 "Your own voice" — the exit test of the whole course
+
+Ten pieces of eight sentences. The register switch is marked in every one, and in S03 it runs
+BACKWARDS — informal to formal — because the person being addressed changes:
+
+1. `Buongiorno. La ringrazio per il messaggio. Vorrei parlare del lavoro. Le dispiace? Diamoci del tu. Senti, ho un problema. Ne parlo domani. A presto.`
+2. `Buonasera. Mi permetta una parola. Il treno è in ritardo. Come sta? Adesso diamoci del tu. Come stai? Tutto bene? Ci vediamo domani.`
+3. `Salve. Sono un collega di Anna. Dammi del tu. Come va? Tutto bene, grazie. Adesso parlo con il capo. Buongiorno. Grazie mille.`
+4. `Egregio collega, buongiorno. Gentilmente, mi serve una risposta. Il documento è pronto. Grazie per il tempo. Cordiali saluti. Poi ci sentiamo. Ciao! A domani.`
+5. `Ciao! Come stai? Tutto bene qui. Il lavoro va avanti. Ci vediamo sabato? Dimmi tutto. Un abbraccio. A presto.`
+6. `Buongiorno. Prende un caffè? Volentieri, grazie. Adesso diamoci del tu. Senti, ti va un caffè? Volentieri! Ci vediamo al bar. A dopo.`
+7. `Buonasera. Il documento arriva domani, senz'altro. Grazie per il messaggio. Adesso diamoci del tu. Ciao, come stai? Tutto bene, grazie. Ci sentiamo dopo. Un saluto.`
+8. `Buongiorno. Resto a disposizione per il lavoro. Il documento è pronto. Grazie mille. Distinti saluti. Senti, poi ci vediamo? Dimmi quando. Ciao!`
+9. `Buongiorno. Spero di non disturbare. Ho un problema con il lavoro. Grazie per il tempo. Adesso diamoci del tu. Senti, speriamo bene. Ci vediamo domani. A presto.`
+10. `Buongiorno. Mi permetta un momento. Il problema è il tempo. Grazie mille. Adesso diamoci del tu. Ciao, tutto bene? Dimmi quando ci vediamo. A dopo.`
+
+The brief's four markers are named in rule 0 and every piece carries all four: the person of the verb
+(`come sta` against `come stai`, S02; `prende` against `ti va`, S06), the greeting and the closing
+(rule 3), the formulas of L5-M4 against the particles of L5-M2, and the LENGTH of the sentence — S10
+exists to make the last one visible, with three sentences of four or five words before the switch and
+three of two or three after it. Rule 2 carries the brief's second interference point: the move to tu
+is OFFERED and accepted, and `diamoci del tu` (L5-M3's) or `dammi del tu` is the hinge of eight of
+the ten pieces. S05 is the control: it never switches, so the others have something to be visible
+against.
+
+**It teaches no grammar, and the fifteen rows are greetings and sign-offs.** `salve`, `buonasera`,
+`mi permetta`, `gentilmente`, `cordiali saluti` (+ `distinti saluti` as a form), `a disposizione`,
+`senz'altro`, `spero` (+ `speriamo`), `ringrazio` (+ `la ringrazio`, `ti ringrazio`), `volentieri`,
+`dammi del tu`, `un abbraccio`, `un saluto`, `a presto`, `a dopo`. The brief asks a closing module to
+move the fold by fewer than fifteen; it moves it by **fifteen rows**, and by more surfaces than that
+only because three rows carry a second form. Everything else in all eighty sentences is owned by the
+forty-nine modules below, which is what the module is a test of.
+
+`Lei` appears in no display in any of the ten pieces, as the course's orthographic law requires — the
+polite address is carried entirely by third-person verbs (`sta`, `prende`, `permetta`, `dispiace`).
+`minWordsPerSentence` is **1** here rather than L4-M10's 3, because a one-word greeting (`Salve.`,
+`Buonasera.`, `Ciao!`) is a sentence of the piece and is the shortest thing the register scale has.
+
+### The brief seams, checked against the emitted index
+
+**L5-M8 §5 is wrong about one of its "fresh, confirmed free" keys, and the reason is the fold.**
+`npm run content:owner -- en-it ne "me lo" glielo dimmi "si dice" "come si dice" "si chiama" "come si chiama" "ne ho"` printed, at the fold this wave was written against:
+
+```
+ne	free       me lo	free      glielo	free     dimmi	free
+si dice	L5-M3      come si dice	free
+si chiama	L1-M1      come si chiama	free
+ne ho	L3-M5
+```
+
+Three things follow, and only the first is a correction.
+
+1. **`si dice` is L5-M3's, not free.** The brief lists it among "Fresh, confirmed free"; L5-M3
+   shipped it in Wave 2 of this same level, three modules before this one was authored. This is the
+   INDEX SEAM going stale in the most literal way available, and it is the same failure Wave 2
+   recorded for `boh` and `mah`. `si dice` takes no row here. `come si dice` is bought at three
+   tokens and indexes WHOLE over it, longest-match-first, so nothing is re-taught and nothing is
+   unreachable.
+2. **`come si chiama` is the same case and the brief did not flag it at all.** `si chiama` is
+   L1-M1's, from the introductions module, forty-eight modules below. The three-token key resolves
+   whole over it for exactly the reason the brief itself gives about `tomar el pelo` over `pelo`: an
+   owned single word never blocks a longer key that contains it. Bought, and the row's note points
+   back at L1-M1.
+3. **The brief is RIGHT that bare `ne` is unowned, and `docs/73` §2 is half-right rather than
+   wrong.** `ne` is free after forty-five modules, exactly as L4-M9's brief said. But `ne ho` is
+   **L3-M5's**, a two-token key: that module took `ne` inside a phrase and never as a bare row, which
+   is how the L3 decisions doc came to record `ne` as spent. The consequence is operational — a
+   display here writing `ne ho` would resolve to L3-M5 and never reach this module's row — so no
+   display in L5-M8 or L5-M10 writes it. `Non ne parlo mai` (S09) is what opens the bare key.
+
+**L5-M10 §6's index seam is the staler of the two, and by a wide margin.** The brief says the fold
+"reported 1350 surfaces over 40 modules through L4-M10 at maxSpan 3". Today `npm run content:owner`
+closes every run with:
+
+```
+1523 surfaces owned, folded over 45 modules through L5-M5
+```
+
+Both halves of the brief's claim have moved: 1350 → **1523**, 40 modules → **45**, and `maxSpan` 3 →
+**4**, which L5-M1 raised in Wave 1. The span matters and not only the count: `il fatto è che`, this
+wave's one four-token key, could not have been bought at all under the number the brief quotes. A
+later reader should take the fold from the tool and never from a brief.
+
+**L5-M6 §5, L5-M7 §5 and L5-M9 §5 are correct in every particular, including their counter-intuitive
+claims.** Checked and confirmed:
+
+```
+mangiando	L2-M7    parlando	L2-M7    essendo	free     avendo	free    sbagliando	free
+anche se	L3-M3     però	L4-M4     comunque	L4-M4    insomma	L4-M4
+è vero che	L4-M4     punto di vista	L4-M4    prima di	L4-M6    finché non	L4-M6
+infine	L3-M1      fatto	L3-M10    il fatto è che	free   d'accordo	L2-M6
+
+senti	free       senta	L2-M1     volevo	L4-M3    bravo	L2-M2    certo	free
+magari	L3-M3      forse	L3-M3     ti va	L2-M6    chissà	L4-M5   piuttosto	L4-M5
+
+raccontare	L4-M10   storia	L4-M10   a quel punto	L4-M10   per fortuna	L4-M10
+c'era	L2-M10     una volta	L4-M8   già	L4-M6     mentre	L3-M10   appena	L3-M10
+detto	L3-M5      finito	L3-M10   alla fine	L2-M10   sarei	L4-M3
+fu / furono / disse / dissero / andò / andarono / visse / vissero	all free
+```
+
+L5-M7's is the pleasing one: the brief predicted that `senti` would be free and `senta` owned, which
+runs opposite to the obvious guess, and the index agrees exactly. So `senti` is this module's to buy
+and its note points at L2-M1's `senta` rather than re-explaining the imperative.
+
+**What no brief warned about: five very ordinary words are unowned after forty-five modules, and
+three of them were caught only by asking.**
+
+```
+bambino	free      bambina	L4-M8    bambini	L4-M8
+te	free       tutti	free     aspetto	free    piano	free    so	free
+attenzione	L4-M7    l'attenzione	free
+```
+
+`bambino` is the sharpest: L4-M8 taught `bambina`, `bambine` and `bambini`, and the masculine
+singular has never been shown. L5-M9-S02 was drafted as *il protagonista era un bambino* and would
+have shipped a SHOWN-BUT-UNTAUGHT finding on the most innocent word in the sentence; it now reads
+`la protagonista era una bambina`, which also lets the row make its point that `protagonista` has one
+ending and two articles. `te` and `tutti` are free while `ti`, `te lo` and `tutto` are owned, which
+rules out `sono d'accordo con te` and `affinché tutti capiscano` as drafted; `aspetto` is free while
+`aspetta`, `aspetti`, `aspettare` and `aspettato` are owned; `piano` is free while L5-M1's
+`piano piano` is owned, which is why L5-M8 buys `più piano` as a two-token key rather than writing
+the bare word; and `so` is free while `non saprei` is owned, so `non so` cannot be written and
+`che ne so` is bought whole. `l'attenzione` against L4-M7's `attenzione` is the en-it elision law
+biting exactly as `src/course/types.test.ts` says it does — a display writing `grazie per
+l'attenzione` would have a word with no "why" — so L5-M10-S10 writes `Grazie mille` instead.
+
+**A paradigm-row hole was checked for and none was needed.** Every cell of the eight remoto rows in
+L5-M9 (`fu`, `furono`, `ebbe`, `ebbero`, `disse`, `dissero`, `fece`, `fecero`, `andò`, `andarono`,
+`venne`, `vennero`, `vide`, `videro`, `visse`, `vissero`) was queried individually before the forms
+lists were written, and all sixteen came back `free`: this tense is genuinely untouched below L5, so
+none of these rows swallows an owned cell the way L4-M3's `sarei` would have. The same check on
+`essendo`/`avendo` in L5-M6 found `mangiando` and `parlando` owned by L2-M7, which is why the
+`essendo` row's forms list holds `essendo` alone and rule 1 points at L2-M7 for the two the learner
+already has.
+
+### The ratchet
+
+`npm run content:shown -- en-it L5-M6`, `… L5-M7`, `… L5-M8`, `… L5-M9` and `… L5-M10` each print
+`clean — every shown surface resolves`, with **no RE-TEACH lines and no COLLIDES lines on any of the
+five**. Two of those were earned rather than given:
+
+- L5-M8's `coso` row first shipped with `cosa` in its `forms`, which the check reported as a
+  RE-TEACH against L1-M5. The word is in the row's NOTE, where it belongs — the note's whole job is
+  to separate `coso` from `cosa` — and out of the forms list, where it would have bought a key an
+  earlier module owns.
+- L5-M10 first carried `mi permetta` as a row on BOTH S02 and S10, which is a genuine
+  COLLIDES INSIDE THIS MODULE: two rows, one key, two different notes, so the second is unreachable.
+  The fix was to leave the row on S02, where the phrase is first shown, and give S10 the row it
+  actually needed — `a dopo`, the shortest close in the module and the last word of the course.
+  Not an exemption and not a duplicated note: a different surface.
+
+No file below L5 was touched, and no file of another course. Every new cell of an already-taught
+lexeme is a row of its own pointing back at its first teach: `senti` back at L2-M1's `senta`,
+`ripetimi` back at L2-M1's `ripetere`, `spiegami` back at L4-M2's `spiegare`, `ringrazio` back at
+L2-M1's `grazie`, `ti dispiacerebbe` back at L2-M1's `mi dispiace`, `dammi del tu` back at L5-M3's
+`diamoci del tu`, `figuriamoci` back at L5-M1's `figurati`, `ebbe` back at L2-M9's `ha paura`,
+`gentilmente` back at L2-M2's `gentile`, and `sarei dovuto andare` back at L4-M3's `avrei dovuto`.
+
+`npx vitest run tools/shown-surfaces.test.ts` passes **11/11** with **en-it holding at its baseline
+of 17**. The baseline is NOT lowered in this change: the seventeen findings are pre-existing, in
+modules this wave may not touch, and these five modules add none of their own.
+
+`npm run content:validate` reports `ok` on every module in the tree, these five included. The
+denominator moves as sibling waves land while this one is written: an early run in the session read
+`CONTENT 439/439 ok` and the run that cleared this change read **`CONTENT 447/447 ok`**.
+
+`npx vitest run src/course/types.test.ts` is red only on module-census counts belonging to somebody
+else. Three were red when this wave was written — the global `finds all …` list, the `en-ar` count
+(48 → 49) and the `hi-en` count (47 → 48); by the final run a sibling had already updated two of
+them, and the remaining two reds are the global list (444 declared, 448 files present) and `hi-en`
+(48 → 49). They move as sibling waves land and are the parent's to update. **Every en-it law in the
+file passes**, including the two that
+bite here — *keeps the Italian course the ordinary way round* (no `glossEn`, no `script`, no curly
+apostrophe in any display, form, variation or pool item, and a non-empty `note` on all 97 rows) and
+*teaches every apostrophe surface it writes*, which walks the whole ladder and finds this wave's
+`d'altra parte` and `senz'altro` answered by their own rows, and `un'altra`, `un'ora` and `d'accordo`
+answered by L2's and L4's.
+
+### Open questions for the native pass
+
+139. **`benché`, `sebbene` and `nonostante` as one interchangeable set** (M6-S03, S04, S05).
+     Continuing `docs/117` q138. The module treats the three as freely swappable and shows
+     `benché` ↔ `sebbene` in a variation pair. Confirm they really are interchangeable in speech,
+     and say whether any of the three is now mainly written — `sebbene` is the one this reviewer
+     suspects.
+
+140. **`a meno che non` with the expletive `non` obligatory** (M6-S08). The module states flatly
+     that the `non` is not optional and the mistake plate rejects `a meno che ci sia`. Confirm that
+     dropping it is genuinely wrong rather than merely colloquial, and say what a speaker would do
+     in fast speech.
+
+141. **`non è che` with the indicative** (M7-S02, rule 5). The brief refused to settle this and so
+     does the module: every `non è che` here takes the ordinary present (`non è che hai un
+     momento?`). Confirm the indicative is at least as common as the congiuntivo in speech, and say
+     whether the choice carries any difference in politeness or only in register.
+
+142. **`certo, come no` as the standard written sarcasm marker** (M7-S05). The module makes it the
+     canonical pair and teaches it for recognition only. Confirm the pair is still read as sarcasm
+     without any tone to help, and name a marker that would be commoner in a text message.
+
+143. **`disturbo?` as a whole apology** (M7-S04). The row claims the single word, asked at a door,
+     is the entire move and that the answer is normally `figurati` or `ci mancherebbe`. Confirm
+     both halves, and say whether `disturbo?` is now more common than `permesso?`.
+
+144. **`sul serio` doing two opposite jobs** (M7-S10). The trap says that as a question it doubts
+     and in front of a statement it insists, with only the punctuation between them. Confirm that
+     is a fair description, and say whether `davvero` splits the same way.
+
+145. **`più piano` heard as slower or as quieter** (M8-S03). The note says the request is heard as
+     either. Confirm that ambiguity is real, and say what a speaker would use if they specifically
+     meant more slowly and nothing else.
+
+146. **`coso` — how informal, and how gendered** (M8-S07). The row makes it masculine for any
+     object, informal, never written. Confirm the gender claim holds even for a feminine referent,
+     and say whether a woman is ever called `cosa` in the same way `coso` is used of a man.
+
+147. **The doubling in `dimmi` against the single m in `spiegami`** (M8-S04, S06). The module gives
+     the doubling to the four short imperatives (`di'`, `da'`, `fa'`, `sta'`, `va'`) and to nothing
+     else. Confirm the list is complete for a learner at this level, and say whether `dammi` and
+     `dimmi` are the only two they will ever actually need.
+
+148. **`glielo` with no feminine, taught as absolute** (M8-S08). The module states there is no
+     feminine version and rejects `le lo`. Confirm nothing regional or informal contradicts that,
+     and say whether `gliela`, `glieli` and `gliele` should have been shown here or are rightly
+     left out.
+
+149. **`nel senso che` as the standard repair** (M8-S10). The module makes it the frame for undoing
+     a misunderstanding you caused, with `intendevo` in the imperfetto. Confirm the tense choice,
+     and say whether `nel senso che` is neutral or already marks the speaker as under thirty.
+
+150. **The eight remoto verbs as the right eight** (M9-S03, S04, S10). The module ships
+     `fu`, `ebbe`, `disse`, `fece`, `andò`, `venne`, `vide`, `visse` with their plurals, for
+     recognition only. Confirm these are the eight a reader of an ordinary printed fairy tale meets
+     first, and name any that should have displaced one of them — `nacque` and `morì` were the two
+     considered and dropped.
+
+151. **`sarei dovuto andare` against `avrei dovuto andare`** (M9-S07). The module takes the essere
+     line and puts `avrei dovuto andare` on the mistake plate as *heard, and taught in some books*.
+     Confirm which one an educated speaker actually says, and whether the module has been too
+     prescriptive here.
+
+152. **`la morale` against `il morale`** (M9-S08). The trap makes the article the only thing
+     separating the lesson of a story from somebody's spirits. Confirm the split is that clean, and
+     say whether `la morale della favola` is still said outside of children's books.
+
+153. **`per farla breve` and its frozen `la`** (M9-S09). The note says the clitic refers to nothing
+     nameable and cannot be changed. Confirm `farlo breve` is genuinely not said, and say whether
+     `per farla breve` or `in breve` is the commoner cut in speech.
+
+154. **`salve` as the middle-distance greeting** (M10-S03). The module claims it is the only word
+     that sits between `ciao` and `buongiorno`. Confirm that reading, and say whether `salve` has
+     aged — this reviewer has seen it called both timeless and faintly bureaucratic.
+
+155. **`dammi del tu` against `diamoci del tu`** (M10-S03). The row splits them as one person's
+     offer about themselves against a mutual one. Confirm the split, and say which is heard more
+     often when the two speakers are of clearly different seniority.
+
+156. **`un saluto` as a middle-distance sign-off** (M10-S07). The module places it between
+     `cordiali saluti` and `un abbraccio`. Confirm the ordering, and say whether `un caro saluto`
+     is now the commoner form of the same move.
+
+157. **`mi permetta` as a live opening** (M10-S02, S10). The module makes it the most formal thing
+     it owns. Confirm it is still said rather than only written, and say what would be used in its
+     place in an ordinary office.
+
+158. **Whether a register switch inside eight sentences is realistic at all** (M10, all ten
+     pieces). This is the exit test of the whole course and it rests on an assumption no brief
+     proved: that a real Italian exchange offers, accepts and completes the move to `tu` inside a
+     single short piece. Confirm that happens, or say how many exchanges it usually takes — and if
+     it is normally slower, say which of the ten pieces reads as forced.

@@ -1,0 +1,632 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M10",
+  "title": "Your own voice",
+  "job": "A piece that changes register midway",
+  "prerequisites": [
+    "L5-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "<four sentences in one register> + Yésli chéstno + , + <four in another>",
+      "Chéstno govoryá + , + <clause>",
+      "Nu ládno + , + <clause>",
+      "<clause> + , + no vsyó-taki + <clause>",
+      "Seryózno + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "NOTHING NEW IS TAUGHT HERE, and that is deliberate: this is the exit of the level, of the ladder and of the product, and everything in the piece below is drawn from the forty modules under it. What the module adds is the PIVOT — a short, signalled turn from one voice to another inside a single stretch of speech. An item that needed a new word for its second half would have been mis-planned."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PIVOT PHRASES sit at the HEAD of the sentence and are set off by a comma: Yesli chestno … and Chestno govorya … turn from the public voice to the private one, Nu ladno … turns from the private one to the resigned. vsyo-taki is the odd one out — it lives INSIDE the clause, just in front of whatever survives the concession. The pivot is a discourse move, not a grammatical one, which is why it can sit at the top of the ladder with no grammar under it."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH SIGNALS THE SAME TURN THE SAME WAY — to be honest, look, all right then — at the head of the sentence and set off by a comma. The position transfers, the phrases transfer, and a learner recognises the move at once. Both places English fails are below, and neither of them is about the phrases themselves."
+    },
+    {
+      "tag": "interference",
+      "text": "THE PRONOUN HOLDS. Changing from vy to ty is an EVENT in Russian and is negotiated out loud — L2-M6's Davay na ty is how it is done. A piece that slides from vy to ty halfway through has not changed register; it has claimed a relationship the other person did not agree to. Change the tone as often as the piece needs; leave the pronoun where it started."
+    },
+    {
+      "tag": "free",
+      "text": "ENGLISH SPEAKERS SIGNAL INFORMALITY BY SHORTENING SENTENCES; RUSSIANS DO IT BY CHANGING WORDS. A second half that is merely shorter than the first has not changed register at all — it has only got faster. What moves across the piece below is which words are chosen, not how many of them there are, and the sentence lengths on either side of the pivot are deliberately the same."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M10-S01",
+      "display": "Ya rabótayu v shkóle, i éhto óchen' vázhno.",
+      "script": "Я работаю в школе, и это очень важно.",
+      "cue": "I work at a school, and it matters a great deal.",
+      "literal": "I work in school, and this very important.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "shkóla",
+            "script": "школа",
+            "cue": "school",
+            "tag": "free",
+            "forms": [
+              "shkóla",
+              "shkóle"
+            ],
+            "note": "A school. Front-stressed, and after v it goes to shkóle, the prepositional of place — v shkóle is at school, the same ending as v gorode."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "This is the public voice, and nothing in it is false. A pivot does not confess a lie — it changes which true things you are saying.",
+      "sound": "shkóle is SHKO-lye. The initial shk cluster takes no vowel in front of it, which English speakers keep wanting to add.",
+      "variations": [
+        {
+          "display": "Ya rabótayu v shkóle.",
+          "script": "Я работаю в школе.",
+          "cue": "I work at a school.",
+          "changed": "the fact alone, with the claim about it dropped"
+        },
+        {
+          "display": "Éhto óchen' vázhno.",
+          "script": "Это очень важно.",
+          "cue": "It matters a great deal.",
+          "changed": "the claim alone, with nothing under it"
+        }
+      ],
+      "mistake": {
+        "display": "Ya rabótayu v shkóla, i éhto óchen' vázhno.",
+        "script": "Я работаю в школа, и это очень важно.",
+        "why": "the dictionary form after v. Where something happens takes the prepositional, so it is v shkóle — the same ending as v górode."
+      },
+      "usage": "The opening of a piece said in public: the job, and why it is worth doing.",
+      "register": "formal",
+      "mnemonic": "The piece starts true and ends true; only the voice moves."
+    },
+    {
+      "id": "L5-M10-S02",
+      "display": "Éhto trúdno, no ya vsegdá dovólen.",
+      "script": "Это трудно, но я всегда доволен.",
+      "cue": "It's hard, but I'm always glad of it.",
+      "literal": "This hard, but I always pleased.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dovólen",
+            "script": "доволен",
+            "cue": "pleased; content",
+            "tag": "free",
+            "forms": [
+              "dovólen"
+            ],
+            "note": "Pleased with how something is. A short form, so it works as a predicate and not beside a noun; a woman says dovól'na."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English marks a formal register with longer words. Russian marks it with WHICH words, and these are short, ordinary ones said straight.",
+      "sound": "dovólen is da-VO-lyen, stressed in the middle, with a soft l before the final n.",
+      "variations": [
+        {
+          "display": "Ya vsegdá dovólen.",
+          "script": "Я всегда доволен.",
+          "cue": "I'm always glad of it.",
+          "changed": "the claim without the concession in front of it"
+        },
+        {
+          "display": "Éhto trúdno, no éhto vázhno.",
+          "script": "Это трудно, но это важно.",
+          "cue": "It's hard, but it matters.",
+          "changed": "the same concession answered with a different claim"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto trúdno, no ya vsegdá dovól'nyy.",
+        "script": "Это трудно, но я всегда довольный.",
+        "why": "the long form used as a predicate. dovólen is the short form and is what stands after ya; the long dovól'nyy has to sit beside a noun."
+      },
+      "usage": "Still the public voice: conceding the difficulty and holding the line anyway.",
+      "register": "formal",
+      "mnemonic": "Short form for a predicate: ya dovólen, never ya dovól'nyy."
+    },
+    {
+      "id": "L5-M10-S03",
+      "display": "Vsyó normál'no, i ya ne ustál.",
+      "script": "Всё нормально, и я не устал.",
+      "cue": "Everything's fine, and I'm not tired.",
+      "literal": "All fine, and I not tired.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "normál'no",
+            "script": "нормально",
+            "cue": "fine; all right",
+            "tag": "free",
+            "forms": [
+              "normál'no"
+            ],
+            "note": "Fine. Vsyó normál'no is the standard answer that nothing is wrong — not unremarkable, which is what the English cognate suggests."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "vsyó normál'no is not everything is normal in the English sense of unremarkable. It is the standard reply that nothing is wrong, and it is what you say when asked.",
+      "sound": "normál'no is nar-MAL'-na, stressed in the middle, with a soft l before the n.",
+      "variations": [
+        {
+          "display": "Vsyó normál'no.",
+          "script": "Всё нормально.",
+          "cue": "Everything's fine.",
+          "changed": "the whole answer on its own, which is how it is usually said"
+        },
+        {
+          "display": "Ya ne ustál.",
+          "script": "Я не устал.",
+          "cue": "I'm not tired.",
+          "changed": "the second half alone, which without the first sounds defensive"
+        }
+      ],
+      "mistake": {
+        "display": "Vsé normál'no, i ya ne ustál.",
+        "script": "Все нормально, и я не устал.",
+        "why": "vsé is everybody. Everything is fine is vsyó normál'no — the same one-vowel pair L5-M9 warned about, met here from the other side."
+      },
+      "usage": "The reply that keeps a conversation on the surface, which is exactly its job.",
+      "register": "formal",
+      "mnemonic": "vsyó normál'no is a door held closed, politely."
+    },
+    {
+      "id": "L5-M10-S04",
+      "display": "Seryózno, vy ne dolzhný tak rabótat'.",
+      "script": "Серьёзно, вы не должны так работать.",
+      "cue": "Seriously, you shouldn't work like that.",
+      "literal": "Seriously, you not must so to-work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "seryózno",
+            "script": "серьёзно",
+            "cue": "seriously",
+            "tag": "free",
+            "forms": [
+              "seryózno"
+            ],
+            "note": "Seriously. Its second vowel is the letter this course romanizes yó, and that letter is always the stressed syllable — so the acute sits on the yó itself."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "vy holds from here to the end of the piece. Marking the turn with seryózno is a register move; marking it by dropping to ty would be a different relationship.",
+      "sound": "seryózno is sye-RYOZ-na. The Russian letter romanized yó is always the stressed syllable, so the acute sits on it by rule.",
+      "variations": [
+        {
+          "display": "Seryózno, éhto vázhno.",
+          "script": "Серьёзно, это важно.",
+          "cue": "Seriously, this matters.",
+          "changed": "the same signal in front of a shorter claim"
+        },
+        {
+          "display": "Vy ne dolzhný tak rabótat'.",
+          "script": "Вы не должны так работать.",
+          "cue": "You shouldn't work like that.",
+          "changed": "the advice without the word that marks it as sincere"
+        }
+      ],
+      "mistake": {
+        "display": "Seryozno, vy ne dolzhný tak rabótat'.",
+        "script": "Серьёзно, вы не должны так работать.",
+        "why": "the stressed vowel written flat. The letter romanized yó always carries the stress in this course; writing it yo hides that and makes a second, wrong surface."
+      },
+      "usage": "Dropping the public register by one notch, while the pronoun stays exactly where it was.",
+      "register": "neutral",
+      "mnemonic": "The letter behind yó is always stressed, so seryózno can be spelled no other way."
+    },
+    {
+      "id": "L5-M10-S05",
+      "display": "Yésli chéstno, mne vsyó éhto nadoyélo.",
+      "script": "Если честно, мне всё это надоело.",
+      "cue": "Honestly, I've had enough of all this.",
+      "literal": "If honestly, to-me all this palled.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yésli chéstno",
+            "script": "если честно",
+            "cue": "honestly; if I'm honest",
+            "tag": "free",
+            "forms": [
+              "yésli chéstno"
+            ],
+            "note": "If I'm honest — the pivot into the private voice. Two words taken whole, so bare yésli still opens L3-M4's conditional."
+          },
+          {
+            "display": "nadoyélo",
+            "script": "надоело",
+            "cue": "am sick of; have had enough",
+            "tag": "free",
+            "forms": [
+              "nadoyélo"
+            ],
+            "note": "Have had enough of. The person takes the DATIVE: mne nadoyélo, literally it has palled to me. It is fatigue with a thing, not boredom."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "THE PIVOT. mne nadoyélo is not I am bored — it is I have had enough of this, and it is the first thing in the piece the public voice would not have said.",
+      "sound": "yésli chéstno is YES-li CHES-na. The t in chéstno is silent, which is why it sounds two letters shorter than it looks.",
+      "variations": [
+        {
+          "display": "Yésli chéstno, éhto trúdno.",
+          "script": "Если честно, это трудно.",
+          "cue": "Honestly, it's hard.",
+          "changed": "the pivot in front of a milder admission"
+        },
+        {
+          "display": "Mne vsyó éhto nadoyélo.",
+          "script": "Мне всё это надоело.",
+          "cue": "I've had enough of all this.",
+          "changed": "the admission with nothing signalling the turn"
+        }
+      ],
+      "mistake": {
+        "display": "Yésli chéstno, ya vsyó éhto nadoyél.",
+        "script": "Если честно, я всё это надоел.",
+        "why": "the speaker made the subject. nadoyélo puts the person in the DATIVE — mne nadoyélo — because the thing is what has palled, not the person."
+      },
+      "usage": "The turn itself. Signal it, then say the thing the first half was not saying.",
+      "register": "informal",
+      "mnemonic": "Things pall TO you: mne nadoyélo, never ya nadoyél."
+    },
+    {
+      "id": "L5-M10-S06",
+      "display": "Chéstno govoryá, ya óchen' ustál.",
+      "script": "Честно говоря, я очень устал.",
+      "cue": "To be honest, I'm very tired.",
+      "literal": "Honestly speaking, I very tired.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chéstno govoryá",
+            "script": "честно говоря",
+            "cue": "to be honest",
+            "tag": "free",
+            "forms": [
+              "chéstno govoryá"
+            ],
+            "note": "To be honest — the near twin of yésli chéstno, and the same pivot. The govoryá is L5-M9's invariable one, never a finite verb."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Chéstno govoryá and Yésli chéstno are near twins and both open the private voice. Neither is an apology for the half of the piece that came before it.",
+      "sound": "chéstno govoryá is CHES-na ga-va-RYA, and again the t in chéstno drops out entirely.",
+      "variations": [
+        {
+          "display": "Chéstno govoryá, éhto trúdno.",
+          "script": "Честно говоря, это трудно.",
+          "cue": "To be honest, it's hard.",
+          "changed": "the same pivot over a different admission"
+        },
+        {
+          "display": "Ya óchen' ustál.",
+          "script": "Я очень устал.",
+          "cue": "I'm very tired.",
+          "changed": "the admission bare, which without the signal sounds like a complaint"
+        }
+      ],
+      "mistake": {
+        "display": "Chéstno govoryú, ya óchen' ustál.",
+        "script": "Честно говорю, я очень устал.",
+        "why": "govoryú is I speak, a finite verb, so the sentence becomes I honestly say. The pivot takes the invariable govoryá, the same word as in L5-M9's koróche govoryá."
+      },
+      "usage": "The private voice, a second time — the register is now settled rather than turning.",
+      "register": "informal",
+      "mnemonic": "govoryá never conjugates; govoryú is a different sentence."
+    },
+    {
+      "id": "L5-M10-S07",
+      "display": "Nu ládno, éhto ne tak plókho.",
+      "script": "Ну ладно, это не так плохо.",
+      "cue": "All right then, it's not so bad.",
+      "literal": "Well fine, this not so bad.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nu ládno",
+            "script": "ну ладно",
+            "cue": "all right then; fine",
+            "tag": "free",
+            "forms": [
+              "nu ládno"
+            ],
+            "note": "All right then — the turn from honest to resigned. Whole, because nu is L5-M3's and ládno is L4-M5's, and the pair means more than either."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "This is the second turn, from honest to resigned, and English does the same thing in the same slot with all right then. What follows a Nu ládno is always a climb-down.",
+      "sound": "nu ládno is noo LAD-na, said fast and falling. The resignation lives in the fall, not in the words.",
+      "variations": [
+        {
+          "display": "Nu ládno, éhto normál'no.",
+          "script": "Ну ладно, это нормально.",
+          "cue": "All right then, it's fine.",
+          "changed": "the same climb-down landing somewhere milder"
+        },
+        {
+          "display": "Éhto ne tak plókho.",
+          "script": "Это не так плохо.",
+          "cue": "It's not so bad.",
+          "changed": "the verdict without the resignation in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "Nu ládno, éhto ne takóy plókho.",
+        "script": "Ну ладно, это не такой плохо.",
+        "why": "takóy is an adjective and needs a noun. In front of an adverb like plókho Russian uses tak: ne tak plókho."
+      },
+      "usage": "Talking yourself down off the honest thing you just said.",
+      "register": "informal",
+      "mnemonic": "Nu ládno always precedes a climb-down."
+    },
+    {
+      "id": "L5-M10-S08",
+      "display": "Éhto trúdno, no vsyó-taki ya dovólen.",
+      "script": "Это трудно, но всё-таки я доволен.",
+      "cue": "It's hard, but all the same I'm glad of it.",
+      "literal": "This hard, but all-the-same I pleased.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vsyó-taki",
+            "script": "всё-таки",
+            "cue": "all the same; still",
+            "tag": "free",
+            "forms": [
+              "vsyó-taki"
+            ],
+            "note": "All the same. It sits inside the clause rather than at its head, immediately before whatever survives the concession, and the taki half never stands alone."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "vsyó-taki does not open the sentence the way the other pivots do. It sits inside the clause, immediately in front of whatever survives the concession.",
+      "sound": "vsyó-taki is FSYO-ta-ki, stressed on the first half; the taki clitic never takes the stress off vsyó.",
+      "variations": [
+        {
+          "display": "No vsyó-taki ya dovólen.",
+          "script": "Но всё-таки я доволен.",
+          "cue": "But all the same, I'm glad of it.",
+          "changed": "the concession clause dropped, leaving only what survives it"
+        },
+        {
+          "display": "Vsyó-taki éhto vázhno.",
+          "script": "Всё-таки это важно.",
+          "cue": "All the same, it matters.",
+          "changed": "the same word in front of a different survivor"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto trúdno, no vsyó taki ya dovólen.",
+        "script": "Это трудно, но всё таки я доволен.",
+        "why": "the hyphen dropped. vsyó-taki is one hyphenated word; the taki half never stands alone, and written apart it is not a word of Russian at all."
+      },
+      "usage": "Saying the same thing as sentence two, in the voice the second half of the piece is in.",
+      "register": "informal",
+      "mnemonic": "vsyó-taki goes inside the clause, not at the head of it."
+    },
+    {
+      "id": "L5-M10-S09",
+      "display": "Ya chéstno vam skazál, chto ustál.",
+      "script": "Я честно вам сказал, что устал.",
+      "cue": "I told you honestly that I'm tired.",
+      "literal": "I honestly to-you said, that tired.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chéstno",
+            "script": "честно",
+            "cue": "honestly; frankly",
+            "tag": "free",
+            "forms": [
+              "chéstno"
+            ],
+            "note": "Honestly, as an ordinary adverb on a verb. The t is silent: CHES-na. Inside the pivot phrases it is the same word doing a bigger job."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "THE PRONOUN PLATE. The voice has turned twice and vam has not moved. A slide to tebé here would not be a register change — it would be a claim about the relationship.",
+      "sound": "chéstno is CHES-na: three consonants written in the middle and two heard, because the stn cluster loses its t.",
+      "variations": [
+        {
+          "display": "Ya chéstno vam skazál.",
+          "script": "Я честно вам сказал.",
+          "cue": "I told you honestly.",
+          "changed": "the report without the thing reported"
+        },
+        {
+          "display": "Chéstno, ya ustál.",
+          "script": "Честно, я устал.",
+          "cue": "Honestly, I'm tired.",
+          "changed": "the adverb doing the pivot's job on its own, one notch less formal"
+        }
+      ],
+      "mistake": {
+        "display": "Ya chéstno tebé skazál, chto ustál.",
+        "script": "Я честно тебе сказал, что устал.",
+        "why": "tebé is the ty form. The piece opened on vy, and the register change is in the TONE; moving to ty is a different relationship, and Russians agree to that out loud."
+      },
+      "usage": "The honest voice still addressing the same person, in the same pronoun, on purpose.",
+      "register": "informal",
+      "mnemonic": "Change the words, keep the pronoun."
+    },
+    {
+      "id": "L5-M10-S10",
+      "display": "Mne vsyó ravnó, no ya vsyó-taki rabótayu.",
+      "script": "Мне всё равно, но я всё-таки работаю.",
+      "cue": "I don't mind, but I still turn up and work.",
+      "literal": "To-me all equal, but I all-the-same work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vsyó ravnó",
+            "script": "всё равно",
+            "cue": "I don't mind; all the same",
+            "tag": "free",
+            "forms": [
+              "vsyó ravnó"
+            ],
+            "note": "It is all the same to me, and the person takes the DATIVE: mne vsyó ravnó. Said flat it is indifference; said warmly it is politeness."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "A second half that is only SHORTER has not changed register. Across this piece the sentence lengths barely moved; what moved was which words were chosen.",
+      "sound": "vsyó ravnó is fsyo rav-NO, with the stress at the very end of the second word.",
+      "variations": [
+        {
+          "display": "Mne vsyó ravnó.",
+          "script": "Мне всё равно.",
+          "cue": "I don't mind.",
+          "changed": "the whole thought in three words, which is how it usually arrives"
+        },
+        {
+          "display": "Ya vsyó-taki rabótayu.",
+          "script": "Я всё-таки работаю.",
+          "cue": "I still turn up and work.",
+          "changed": "the second half alone, where the concession is left implied"
+        }
+      ],
+      "mistake": {
+        "display": "Ya vsyó ravnó, no ya vsyó-taki rabótayu.",
+        "script": "Я всё равно, но я всё-таки работаю.",
+        "why": "vsyó ravnó takes the DATIVE for the person, exactly as nadoyélo does: mne vsyó ravnó. With ya there is nobody it is all the same to."
+      },
+      "usage": "The last line of the piece and of the ladder: the private voice, holding.",
+      "register": "informal",
+      "mnemonic": "mne vsyó ravnó and mne nadoyélo are the same shape: the feeling happens TO you."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M10-C01",
+      "display": "Ya rabótayu v shkóle.",
+      "script": "Я работаю в школе.",
+      "cue": "I work at a school."
+    },
+    {
+      "id": "L5-M10-C02",
+      "display": "Éhto trúdno, no ya dovólen.",
+      "script": "Это трудно, но я доволен.",
+      "cue": "It's hard, but I'm glad of it."
+    },
+    {
+      "id": "L5-M10-C03",
+      "display": "Vsyó normál'no.",
+      "script": "Всё нормально.",
+      "cue": "Everything's fine."
+    },
+    {
+      "id": "L5-M10-C04",
+      "display": "Seryózno, éhto vázhno.",
+      "script": "Серьёзно, это важно.",
+      "cue": "Seriously, this matters."
+    },
+    {
+      "id": "L5-M10-C05",
+      "display": "Yésli chéstno, mne nadoyélo.",
+      "script": "Если честно, мне надоело.",
+      "cue": "Honestly, I've had enough."
+    },
+    {
+      "id": "L5-M10-C06",
+      "display": "Chéstno govoryá, ya óchen' ustál.",
+      "script": "Честно говоря, я очень устал.",
+      "cue": "To be honest, I'm very tired."
+    },
+    {
+      "id": "L5-M10-C07",
+      "display": "Nu ládno, éhto ne tak plókho.",
+      "script": "Ну ладно, это не так плохо.",
+      "cue": "All right then, it's not so bad."
+    },
+    {
+      "id": "L5-M10-C08",
+      "display": "No vsyó-taki ya dovólen.",
+      "script": "Но всё-таки я доволен.",
+      "cue": "But all the same, I'm glad of it."
+    },
+    {
+      "id": "L5-M10-C09",
+      "display": "Ya chéstno vam skazál.",
+      "script": "Я честно вам сказал.",
+      "cue": "I told you honestly."
+    },
+    {
+      "id": "L5-M10-C10",
+      "display": "Mne vsyó ravnó.",
+      "script": "Мне всё равно.",
+      "cue": "I don't mind."
+    },
+    {
+      "id": "L5-M10-C11",
+      "display": "Vy ne dolzhný tak rabótat'.",
+      "script": "Вы не должны так работать.",
+      "cue": "You shouldn't work like that."
+    },
+    {
+      "id": "L5-M10-C12",
+      "display": "Yésli chéstno, éhto trúdno.",
+      "script": "Если честно, это трудно.",
+      "cue": "Honestly, it's hard."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

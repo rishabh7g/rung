@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M10",
+  "title": "Your own voice",
+  "job": "An eight-sentence piece that changes register midway",
+  "prerequisites": [
+    "L5-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 16,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "<eight-sentence piece, register changing once>",
+      "clause-yo. … + yeoreobun, + clause-(seu)pnida",
+      "<quoted -(seu)pnida line> + rago + haesseoyo. + geurigo + clause-yo",
+      "clause-neundeyo… + yeoreobun, + clause-(seu)pnida",
+      "geuttae-neun + clause-eosseoyo. + jigeum-eun + clause-yo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "REGISTER CHANGES WHEN THE ADDRESSEE CHANGES, NOT WHEN THE MOOD DOES. A speaker does not slide into -(seu)pnida because the subject turned serious. They change because they have turned to a room, stepped up to a counter, or begun to speak on the record."
+    },
+    {
+      "tag": "free",
+      "text": "SO THE TRIGGER HAS TO BE VISIBLE IN THE PIECE: a new addressee named, a threshold crossed, a quotation begun. A piece that changes ending with nothing to change it for is this module's failure mode."
+    },
+    {
+      "tag": "free",
+      "text": "THIS COURSE HAS EXACTLY TWO SPEECH LEVELS AND HERE THAT IS A FEATURE: plain -yo and L4-M7's deferential -(seu)pnida. Three shapes work — an account that ends formally, one that quotes an announcement, and one that begins formally and drops to -yo."
+    },
+    {
+      "tag": "delta",
+      "text": "-GESSEUMNIDA COMMITS. hagesseumnida is I will do it, deurigesseumnida is I will do it for you, and both are what a speaker says at the moment they take the floor. They are the only two surfaces this module adds."
+    },
+    {
+      "tag": "free",
+      "text": "THE OTHER AXES MOVE WITH IT. L3-M8's honorific -si- on the person spoken about, the formal chip, and L2-M2's address terms — together they make a switch read as a change of stance rather than of grammar."
+    },
+    {
+      "tag": "free",
+      "text": "THE WHOLE LEVEL MAY APPEAR: M1's idiom, at most one and only in the -yo half; M2's disclaimer; M3's -neyo and -jyo; M4's formula; M5's nominalised clause; M6's discourse frame; M7's hint; M8's repair; M9's frame narrator."
+    },
+    {
+      "tag": "interference",
+      "text": "AND SOME THINGS STILL MAY NOT: no dialect production, no new abstract noun, no written -(neu)nda, and no banmal — including inside a quotation, which is where a flustered narrator reaches for it first."
+    },
+    {
+      "tag": "free",
+      "text": "EIGHT SENTENCES IS A CEILING, NOT A TARGET. This is the last rung of the product and its exit is assembly rather than acquisition, so the spend is two surfaces and everything else is reused."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M10-S01",
+      "display": "Oneul chingu-ga gyeolhon-eul haesseoyo. Jeongmal joasseoyo. Geurigo je-ga chuksa-reul haesseoyo. Yeoreobun, jinjja gamsahamnida. Chingu-reul wihayeo geonbae-reul hagesseumnida.",
+      "script": "오늘 친구가 결혼을 했어요. 정말 좋았어요. 그리고 제가 축사를 했어요. 여러분, 진짜 감사합니다. 친구를 위하여 건배를 하겠습니다.",
+      "cue": "A friend got married today. It was lovely. And I gave the toast. Everyone, thank you sincerely. I will raise a glass to my friend.",
+      "literal": "today friend married. really was-good. and I gave-the-speech. everyone, truly thank-DEF. friend-for toast will-do-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hagesseumnida",
+            "script": "하겠습니다",
+            "cue": "I will do it (deferential)",
+            "tag": "delta",
+            "forms": [
+              "hagesseumnida"
+            ],
+            "note": "The deferential I will: -gesseumnida on a verb stem. It is what a speaker says at the moment they take the floor, which is why it marks the switch rather than following it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "English would carry the shift in words — a warmer vocabulary for the room. Korean carries it in the ending alone, and yeoreobun is what tells the listener the ending is about to change.",
+      "sound": "O-neul CHIN-gu-ga GYEOL-ho-neul HAE-sseo-yo. JEONG-mal JO-a-sseo-yo. GEU-ri-go JE-ga CHUK-sa-reul HAE-sseo-yo. YEO-reo-bun, JIN-jja GAM-sa-ham-ni-da. CHIN-gu-reul WI-ha-yeo GEON-bae-reul HA-ge-sseum-ni-da.",
+      "variations": [
+        {
+          "display": "Yeoreobun, jinjja gamsahamnida.",
+          "script": "여러분, 진짜 감사합니다.",
+          "cue": "Everyone, thank you sincerely.",
+          "changed": "the formal half alone: the moment of the turn"
+        },
+        {
+          "display": "Chingu-reul wihayeo geonbae-reul haeyo.",
+          "script": "친구를 위하여 건배를 해요.",
+          "cue": "Let us drink to my friend.",
+          "changed": "back to -yo: the same toast at a table, not to a room"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul chingu-ga gyeolhon-eul hasyeotseumnida. Jeongmal joasseumnida.",
+        "script": "오늘 친구가 결혼을 하셨습니다. 정말 좋았습니다.",
+        "why": "The whole account has gone deferential because the day was important. Nothing has changed about who is being spoken to, so nothing should have changed about the ending."
+      },
+      "usage": "Telling a friend about a day, and then standing up at it.",
+      "register": "neutral",
+      "mnemonic": "yeoreobun is the doorway; the ending changes as you go through it."
+    },
+    {
+      "id": "L5-M10-S02",
+      "display": "Eoje yeok-eseo ilhaesseoyo. Saram-deul-i manhi wasseoyo. Geuraeseo bangsong-eul haesseoyo. \"Yeoreobun, annae malsseum deurigesseumnida. Gicha-ga jamsi hu-e chulbalhamnida.\" Ijen jip-e wasseoyo. Pigonhaeyo.",
+      "script": "어제 역에서 일했어요. 사람들이 많이 왔어요. 그래서 방송을 했어요. \"여러분, 안내 말씀 드리겠습니다. 기차가 잠시 후에 출발합니다.\" 이젠 집에 왔어요. 피곤해요.",
+      "cue": "I was working at the station yesterday. A lot of people came. So I made an announcement. Everyone, here is an announcement: the train departs shortly. Now I am home. I am tired.",
+      "literal": "yesterday station-at worked. people-SUBJ many came. so broadcast-OBJ did. everyone, guidance word will-give-DEF. train-SUBJ moment after-at departs-DEF. now house-to came. am-tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deurigesseumnida",
+            "script": "드리겠습니다",
+            "cue": "I will do it for you (deferential)",
+            "tag": "delta",
+            "forms": [
+              "deurigesseumnida"
+            ],
+            "note": "hagesseumnida done for somebody else: deurida is the humble give, so this is I will do it for you. malsseum deurigesseumnida opens almost every formal address."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "The quoted announcement is deferential and the sentences around it are not, and that is correct. A quotation carries its own footing, so the register inside the marks says nothing about the register outside them.",
+      "sound": "EO-je YEO-ge-seo IL-hae-sseo-yo. SA-ram-deu-ri MA-ni WA-sseo-yo. GEU-rae-seo BANG-song-eul HAE-sseo-yo. YEO-reo-bun, AN-nae MAL-sseum DEU-ri-ge-sseum-ni-da. GI-cha-ga JAM-si HU-e CHUL-bal-ham-ni-da. I-jen JI-be WA-sseo-yo. PI-gon-hae-yo.",
+      "variations": [
+        {
+          "display": "Yeoreobun, annae malsseum deurigesseumnida.",
+          "script": "여러분, 안내 말씀 드리겠습니다.",
+          "cue": "Everyone, here is an announcement.",
+          "changed": "the announcement's opening line alone"
+        },
+        {
+          "display": "Gicha-ga jamsi hu-e gayo.",
+          "script": "기차가 잠시 후에 가요.",
+          "cue": "The train leaves shortly.",
+          "changed": "the same fact in -yo: said to one person on the platform"
+        }
+      ],
+      "mistake": {
+        "display": "Geuraeseo bangsong-eul haesseumnida. Yeoreobun, annae malsseum deurigesseumnida.",
+        "script": "그래서 방송을 했습니다. 여러분, 안내 말씀 드리겠습니다.",
+        "why": "The narration has been dragged up to the level of the thing being narrated. You are telling a friend about your shift; only the words inside the quotation marks were said to a station."
+      },
+      "usage": "Telling somebody what you had to announce at work.",
+      "register": "neutral",
+      "mnemonic": "The quotation keeps its own level; you keep yours."
+    },
+    {
+      "id": "L5-M10-S03",
+      "display": "Oneul hoesa-eseo hoeui-ga isseoyo. Jeo-neun jom bappeundeyo. Sajangnim-kkeseo \"Jigeum sijakhapsida\" rago malsseumhasyeosseoyo. Yeoreobun, je-ga bogoseo-reul malsseum deurigesseumnida.",
+      "script": "오늘 회사에서 회의가 있어요. 저는 좀 바쁜데요. 사장님께서 \"지금 시작합시다\"라고 말씀하셨어요. 여러분, 제가 보고서를 말씀 드리겠습니다.",
+      "cue": "There is a meeting at work today. I am a bit busy, though. The director said, let us begin now. Everyone, I will present the report.",
+      "literal": "today company-at meeting-SUBJ exists. I-TOP a-bit am-busy-but. director-HON.SUBJ now let-us-start-QUOT said-HON. everyone, I-SUBJ report-OBJ word will-give-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deurigesseumnida",
+            "script": "드리겠습니다",
+            "cue": "I will do it for you (deferential)",
+            "tag": "delta",
+            "forms": [
+              "deurigesseumnida"
+            ],
+            "note": "hagesseumnida done for somebody else: deurida is the humble give, so this is I will do it for you. malsseum deurigesseumnida opens almost every formal address."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "L4-M5's trailing -neundeyo in the second sentence is a hedge to a friend, and it could not survive the switch. Once you are addressing the room the hedging goes and the ending carries the politeness instead.",
+      "sound": "O-neul HOE-sa-e-seo HOE-ui-ga I-sseo-yo. JEO-neun jom BAP-peun-de-yo. SA-jang-nim-kke-seo JI-geum SI-ja-kap-si-da ra-go MAL-sseum-ha-syeo-sseo-yo. YEO-reo-bun, JE-ga BO-go-seo-reul MAL-sseum DEU-ri-ge-sseum-ni-da.",
+      "variations": [
+        {
+          "display": "Je-ga bogoseo-reul malhaeyo.",
+          "script": "제가 보고서를 말해요.",
+          "cue": "I will go through the report.",
+          "changed": "the same act in -yo: to two colleagues, not to a room"
+        },
+        {
+          "display": "Yeoreobun, je-ga bogoseo-reul malsseum deurigesseumnida.",
+          "script": "여러분, 제가 보고서를 말씀 드리겠습니다.",
+          "cue": "Everyone, I will present the report.",
+          "changed": "the formal half alone: standing up"
+        }
+      ],
+      "mistake": {
+        "display": "Yeoreobun, je-ga bogoseo-reul malsseum deurigesseundeyo.",
+        "script": "여러분, 제가 보고서를 말씀 드리겠는데요.",
+        "why": "The hedge has been carried through the switch. -neundeyo softens between equals; in front of a room it undercuts the very footing the deferential ending just claimed."
+      },
+      "usage": "Standing up in a meeting you have been dreading.",
+      "register": "neutral",
+      "mnemonic": "Hedge to a friend, commit to a room."
+    },
+    {
+      "id": "L5-M10-S04",
+      "display": "Yeoreobun, annyeonghaseyo. Jamsiman gidaryeo jusipsio. Oneul jal hagesseumnida. Geurigo sueop-i kkeunnasseoyo. Chingu-ga jeonhwahaesseoyo. Ijen gwaenchanayo. Jeongmal pigonhaeyo.",
+      "script": "여러분, 안녕하세요. 잠시만 기다려 주십시오. 오늘 잘 하겠습니다. 그리고 수업이 끝났어요. 친구가 전화했어요. 이젠 괜찮아요. 정말 피곤해요.",
+      "cue": "Everyone, hello. Please wait just a moment. I will do my best today. And then the class ended. A friend called. Now it is fine. I am really tired.",
+      "literal": "everyone, hello. a-moment wait give-DEF. today well will-do-DEF. and class-SUBJ ended. friend-SUBJ phoned. now is-fine. really am-tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hagesseumnida",
+            "script": "하겠습니다",
+            "cue": "I will do it (deferential)",
+            "tag": "delta",
+            "forms": [
+              "hagesseumnida"
+            ],
+            "note": "The deferential I will: -gesseumnida on a verb stem. It is what a speaker says at the moment they take the floor, which is why it marks the switch rather than following it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "This is the hard direction and the useful one: starting formal and dropping to -yo. English has no equivalent move, because English never held the level in the first place.",
+      "sound": "YEO-reo-bun, AN-nyeong-ha-se-yo. JAM-si-man GI-da-ryeo JU-sip-si-o. O-neul jal HA-ge-sseum-ni-da. GEU-ri-go SU-eo-bi KKEUN-na-sseo-yo. CHIN-gu-ga JEON-hwa-hae-sseo-yo. I-jen GWAEN-cha-na-yo. JEONG-mal PI-gon-hae-yo.",
+      "variations": [
+        {
+          "display": "Yeoreobun, annyeonghaseyo.",
+          "script": "여러분, 안녕하세요.",
+          "cue": "Everyone, hello.",
+          "changed": "the opening alone: the room still in front of you"
+        },
+        {
+          "display": "Ijen gwaenchanayo. Jeongmal pigonhaeyo.",
+          "script": "이젠 괜찮아요. 정말 피곤해요.",
+          "cue": "Now it is fine. I am really tired.",
+          "changed": "the second half alone: the room gone, and the level with it"
+        }
+      ],
+      "mistake": {
+        "display": "Yeoreobun, annyeonghaseyo. Oneul jal hagesseumnida. Geurigo sueop-i kkeunnatseumnida. Jeongmal pigonhamnida.",
+        "script": "여러분, 안녕하세요. 오늘 잘 하겠습니다. 그리고 수업이 끝났습니다. 정말 피곤합니다.",
+        "why": "The level never came back down. Once the class is over and you are talking about your own tiredness there is no room being addressed, and holding -(seu)pnida there sounds like a speech to nobody."
+      },
+      "usage": "Coming off a stage and back into a conversation.",
+      "register": "formal",
+      "mnemonic": "The room arrives, the level rises; the room leaves, it falls."
+    },
+    {
+      "id": "L5-M10-S05",
+      "display": "Yennal-e-neun hangugeo-reul mothaesseoyo. Geuttae-neun jeongmal himdeureosseoyo. Jigeum-eun hakgyo-eseo ilhaeyo. Yeoreobun, oneul jeongmal gamsahamnida. Ijen jal hagesseumnida.",
+      "script": "옛날에는 한국어를 못했어요. 그때는 정말 힘들었어요. 지금은 학교에서 일해요. 여러분, 오늘 정말 감사합니다. 이젠 잘 하겠습니다.",
+      "cue": "In the old days I could not speak Korean. It was really hard then. Now I work at a school. Everyone, thank you very much today. From now on I will do my best.",
+      "literal": "old-days-at-TOP Korean-OBJ could-not. that-time-TOP really was-hard. now-TOP school-at work. everyone, today really thank-DEF. now well will-do-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hagesseumnida",
+            "script": "하겠습니다",
+            "cue": "I will do it (deferential)",
+            "tag": "delta",
+            "forms": [
+              "hagesseumnida"
+            ],
+            "note": "The deferential I will: -gesseumnida on a verb stem. It is what a speaker says at the moment they take the floor, which is why it marks the switch rather than following it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "L4-M8's geuttae-neun and L3-M9's jigeum-eun move the account through time and change nothing about the register. Time is not a trigger; the room at the end is.",
+      "sound": "YEN-na-re-neun HAN-gu-geo-reul MO-tae-sseo-yo. GEU-ttae-neun JEONG-mal HIM-deu-reo-sseo-yo. JI-geu-meun HAK-gyo-e-seo IL-hae-yo. YEO-reo-bun, O-neul JEONG-mal GAM-sa-ham-ni-da. I-jen jal HA-ge-sseum-ni-da.",
+      "variations": [
+        {
+          "display": "Geuttae-neun jeongmal himdeureosseoyo.",
+          "script": "그때는 정말 힘들었어요.",
+          "cue": "It was really hard then.",
+          "changed": "the past half alone, still in -yo"
+        },
+        {
+          "display": "Jigeum-eun hakgyo-eseo ilhaeyo.",
+          "script": "지금은 학교에서 일해요.",
+          "cue": "Now I work at a school.",
+          "changed": "the present half: the same level, a different time"
+        }
+      ],
+      "mistake": {
+        "display": "Yennal-e-neun hangugeo-reul mothaesseumnida. Geuttae-neun jeongmal himdeureotseumnida.",
+        "script": "옛날에는 한국어를 못했습니다. 그때는 정말 힘들었습니다.",
+        "why": "The account has gone formal because it turned to something serious. Seriousness is not a trigger; nothing about the listener has changed yet."
+      },
+      "usage": "An account of how far you have come, ending in front of the people who got you there.",
+      "register": "neutral",
+      "mnemonic": "Time moves; the level waits for a listener."
+    },
+    {
+      "id": "L5-M10-S06",
+      "display": "Oneul jangnyesik-e gasseoyo. Jeo-neun jom seulpeosseoyo. Saram-deul-i manhi wasseoyo. Yeoreobun, je-ga malsseum deurigesseumnida. Samga goin-ui myeongbog-eul bimnida.",
+      "script": "오늘 장례식에 갔어요. 저는 좀 슬펐어요. 사람들이 많이 왔어요. 여러분, 제가 말씀 드리겠습니다. 삼가 고인의 명복을 빕니다.",
+      "cue": "I went to a funeral today. I was a little sad. A great many people came. Everyone, let me say a word. May the departed rest in peace.",
+      "literal": "today funeral-to went. I-TOP a-bit was-sad. people-SUBJ many came. everyone, I-SUBJ word will-give-DEF. respectfully departed-of peace-OBJ pray-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deurigesseumnida",
+            "script": "드리겠습니다",
+            "cue": "I will do it for you (deferential)",
+            "tag": "delta",
+            "forms": [
+              "deurigesseumnida"
+            ],
+            "note": "hagesseumnida done for somebody else: deurida is the humble give, so this is I will do it for you. malsseum deurigesseumnida opens almost every formal address."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "L5-M4's formula is fixed and can only be said at this level, so the switch is not a choice here. The piece has to reach the room before the formula can be spoken at all.",
+      "sound": "O-neul JANG-nye-si-ge GA-sseo-yo. JEO-neun jom SEUL-peo-sseo-yo. SA-ram-deu-ri MA-ni WA-sseo-yo. YEO-reo-bun, JE-ga MAL-sseum DEU-ri-ge-sseum-ni-da. SAM-ga GO-i-nui MYEONG-bo-geul BIM-ni-da.",
+      "variations": [
+        {
+          "display": "Samga goin-ui myeongbog-eul bimnida.",
+          "script": "삼가 고인의 명복을 빕니다.",
+          "cue": "May the departed rest in peace.",
+          "changed": "the formula alone, as L5-M4 froze it"
+        },
+        {
+          "display": "Jeo-neun jom seulpeosseoyo.",
+          "script": "저는 좀 슬펐어요.",
+          "cue": "I was a little sad.",
+          "changed": "the private half: what you tell one friend afterwards"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul jangnyesik-e gasseoyo. Samga goin-ui myeongbog-eul bimnida.",
+        "script": "오늘 장례식에 갔어요. 삼가 고인의 명복을 빕니다.",
+        "why": "The formula has been dropped into an account with nobody addressed. It is said to the room at the funeral, not reported afterwards, so the piece needs the turn before it."
+      },
+      "usage": "Recounting a day that had a fixed sentence in the middle of it.",
+      "register": "neutral",
+      "mnemonic": "The formula needs its room before it can be said."
+    },
+    {
+      "id": "L5-M10-S07",
+      "display": "Eoje hoeui-e gasseoyo. Bunwigi-ga an joasseoyo. Jeo-neun nunchi-ga eopseosseoyo. Sajangnim-kkeseo \"Yeoreobun, dasi hagesseumnida\" rago malsseumhasyeosseoyo. Ijen gwaenchanayo.",
+      "script": "어제 회의에 갔어요. 분위기가 안 좋았어요. 저는 눈치가 없었어요. 사장님께서 \"여러분, 다시 하겠습니다\"라고 말씀하셨어요. 이젠 괜찮아요.",
+      "cue": "I went to a meeting yesterday. The mood was not good. I could not read the room. The director said, everyone, we will do it again. Now it is fine.",
+      "literal": "yesterday meeting-to went. mood-SUBJ not was-good. I-TOP room-sense-SUBJ did-not-have. director-HON.SUBJ everyone, again will-do-DEF QUOT said-HON. now is-fine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hagesseumnida",
+            "script": "하겠습니다",
+            "cue": "I will do it (deferential)",
+            "tag": "delta",
+            "forms": [
+              "hagesseumnida"
+            ],
+            "note": "The deferential I will: -gesseumnida on a verb stem. It is what a speaker says at the moment they take the floor, which is why it marks the switch rather than following it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "The register changes inside the quotation marks and nowhere else. L3-M5's rago is the visible trigger here, and the sentence around it never leaves -yo.",
+      "sound": "EO-je HOE-ui-e GA-sseo-yo. BU-nwi-gi-ga an JO-a-sseo-yo. JEO-neun NUN-chi-ga EOP-seo-sseo-yo. SA-jang-nim-kke-seo YEO-reo-bun, DA-si HA-ge-sseum-ni-da ra-go MAL-sseum-ha-syeo-sseo-yo. I-jen GWAEN-cha-na-yo.",
+      "variations": [
+        {
+          "display": "Bunwigi-ga an joasseoyo.",
+          "script": "분위기가 안 좋았어요.",
+          "cue": "The mood was not good.",
+          "changed": "L5-M7's hint, held in the -yo half where it belongs"
+        },
+        {
+          "display": "Sajangnim-kkeseo malsseumhasyeosseoyo.",
+          "script": "사장님께서 말씀하셨어요.",
+          "cue": "The director spoke.",
+          "changed": "the quotation removed: the report with nothing quoted"
+        }
+      ],
+      "mistake": {
+        "display": "Sajangnim-kkeseo yeoreobun dasi hagesseumnida rago malsseumhasyeotseumnida. Ijen gwaenchanseumnida.",
+        "script": "사장님께서 여러분 다시 하겠습니다라고 말씀하셨습니다. 이젠 괜찮습니다.",
+        "why": "The level leaked out of the quotation and swallowed the rest of the piece. What was said to a room stays inside the marks; you are still talking to a friend."
+      },
+      "usage": "Reporting what somebody announced, without announcing it yourself.",
+      "register": "neutral",
+      "mnemonic": "Quotation marks are a wall the level cannot climb."
+    },
+    {
+      "id": "L5-M10-S08",
+      "display": "Eoje chingu-ga iyagi-reul haesseoyo. \"Yennal yennal-e halmeoni-ga sarasseoyo\" rago haesseoyo. Jeongmal jaemiisseosseoyo. Oneul hakgyo-eseo haksaeng-deul-i mureosseoyo. Yeoreobun, je-ga iyagi-reul malsseum deurigesseumnida. Yennal yennal-e halmeoni-ga sigol-e sarasseumnida.",
+      "script": "어제 친구가 이야기를 했어요. \"옛날 옛날에 할머니가 살았어요\"라고 했어요. 정말 재미있었어요. 오늘 학교에서 학생들이 물었어요. 여러분, 제가 이야기를 말씀 드리겠습니다. 옛날 옛날에 할머니가 시골에 살았습니다.",
+      "cue": "A friend told me a story yesterday. She said, once upon a time an old woman lived. It was really good. Today the students at school asked about it. Everyone, let me tell you the story. Once upon a time an old woman lived in the countryside.",
+      "literal": "yesterday friend-SUBJ story-OBJ did. once-upon-a-time grandmother-SUBJ lived QUOT said. really was-interesting. today school-at students-SUBJ asked. everyone, I-SUBJ story-OBJ word will-give-DEF. once-upon-a-time grandmother-SUBJ countryside-at lived-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deurigesseumnida",
+            "script": "드리겠습니다",
+            "cue": "I will do it for you (deferential)",
+            "tag": "delta",
+            "forms": [
+              "deurigesseumnida"
+            ],
+            "note": "hagesseumnida done for somebody else: deurida is the humble give, so this is I will do it for you. malsseum deurigesseumnida opens almost every formal address."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "L5-M9's tale is retold twice inside one piece, and only the ending moves between the two tellings. That is the whole claim of this module, laid out where it can be seen.",
+      "sound": "EO-je CHIN-gu-ga I-ya-gi-reul HAE-sseo-yo. YEN-nal YEN-na-re HAL-meo-ni-ga SA-ra-sseo-yo ra-go HAE-sseo-yo. JEONG-mal JAE-mi-i-sseo-sseo-yo. O-neul HAK-gyo-e-seo HAK-saeng-deu-ri MU-reo-sseo-yo. YEO-reo-bun, JE-ga I-ya-gi-reul MAL-sseum DEU-ri-ge-sseum-ni-da. YEN-nal YEN-na-re HAL-meo-ni-ga SI-go-re SA-ra-sseum-ni-da.",
+      "variations": [
+        {
+          "display": "Yennal yennal-e halmeoni-ga sigol-e sarasseoyo.",
+          "script": "옛날 옛날에 할머니가 시골에 살았어요.",
+          "cue": "Once upon a time an old woman lived in the countryside.",
+          "changed": "the friend's telling: the same tale in -yo"
+        },
+        {
+          "display": "Yennal yennal-e halmeoni-ga sigol-e sarasseumnida.",
+          "script": "옛날 옛날에 할머니가 시골에 살았습니다.",
+          "cue": "Once upon a time an old woman lived in the countryside.",
+          "changed": "the classroom telling: the same tale, the ending moved"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul hakgyo-eseo haksaeng-deul-i mureosseoyo. Yennal yennal-e halmeoni-ga sigol-e sarasseumnida.",
+        "script": "오늘 학교에서 학생들이 물었어요. 옛날 옛날에 할머니가 시골에 살았습니다.",
+        "why": "The level jumped with no turn in between. The students asking is not yet the trigger; addressing them is, and that is the sentence this piece cannot do without."
+      },
+      "usage": "Passing on a story you were told, to a room that asked for it.",
+      "register": "neutral",
+      "mnemonic": "Same tale twice: only the last syllables differ."
+    },
+    {
+      "id": "L5-M10-S09",
+      "display": "I-sikdang-eun jom geuraeyo. Cheotjjae, neomu bissayo. Duljjae, neomu meoreoyo. Geuraedo chingu-neun chanseong-ieyo. Yeoreobun, majimageuro je gyeollon-eul malsseum deurigesseumnida. Gamsahamnida.",
+      "script": "이 식당은 좀 그래요. 첫째, 너무 비싸요. 둘째, 너무 멀어요. 그래도 친구는 찬성이에요. 여러분, 마지막으로 제 결론을 말씀 드리겠습니다. 감사합니다.",
+      "cue": "This restaurant is a bit, you know. First, it is too expensive. Second, it is too far. Even so, my friend is for it. Everyone, lastly, let me give you my conclusion. Thank you.",
+      "literal": "this-restaurant-TOP a-bit is-that-way. firstly, too is-expensive. secondly, too is-far. even-so friend-TOP agreement-is. everyone, lastly my conclusion-OBJ word will-give-DEF. thank-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deurigesseumnida",
+            "script": "드리겠습니다",
+            "cue": "I will do it for you (deferential)",
+            "tag": "delta",
+            "forms": [
+              "deurigesseumnida"
+            ],
+            "note": "hagesseumnida done for somebody else: deurida is the humble give, so this is I will do it for you. malsseum deurigesseumnida opens almost every formal address."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "L5-M6's frame and L5-M7's decline sit in the -yo half and stay there. A case is argued at the level you are already speaking, and only the summing-up turns to the room.",
+      "sound": "i SIK-dang-eun jom GEU-rae-yo. CHEOT-jjae, NEO-mu BI-ssa-yo. DUL-jjae, NEO-mu MEO-reo-yo. GEU-rae-do CHIN-gu-neun CHAN-seong-i-e-yo. YEO-reo-bun, MA-ji-ma-geu-ro je GYEOL-lo-neul MAL-sseum DEU-ri-ge-sseum-ni-da. GAM-sa-ham-ni-da.",
+      "variations": [
+        {
+          "display": "Majimageuro je gyeollon-eul malhaeyo.",
+          "script": "마지막으로 제 결론을 말해요.",
+          "cue": "Lastly, I will give my conclusion.",
+          "changed": "the close in -yo: three people at a table"
+        },
+        {
+          "display": "I-sikdang-eun jom geuraeyo.",
+          "script": "이 식당은 좀 그래요.",
+          "cue": "This restaurant is a bit, you know.",
+          "changed": "L5-M7's decline alone, in the half that owns it"
+        }
+      ],
+      "mistake": {
+        "display": "I-sikdang-eun jom geureomnida. Cheotjjae, neomu bissamnida.",
+        "script": "이 식당은 좀 그렇습니다. 첫째, 너무 비쌉니다.",
+        "why": "Arguing in the deferential level to sound authoritative is the register mistake L5-M6 warns about. The frame is direct; the ending stays where the conversation is."
+      },
+      "usage": "Making a case at a table and then summing it up for the room.",
+      "register": "neutral",
+      "mnemonic": "Argue in -yo, conclude to the room."
+    },
+    {
+      "id": "L5-M10-S10",
+      "display": "Oneul hakgyo-eseo gongbuhaesseoyo. Jeongmal himdeureosseoyo. Geuraedo jaemiisseosseoyo. Sueop-i kkeunnasseoyo. Geurigo saram-deul-i manhi wasseoyo. Yeoreobun, jeongmal gamsahamnida. Jal hagesseumnida.",
+      "script": "오늘 학교에서 공부했어요. 정말 힘들었어요. 그래도 재미있었어요. 수업이 끝났어요. 그리고 사람들이 많이 왔어요. 여러분, 정말 감사합니다. 잘 하겠습니다.",
+      "cue": "I studied at school today. It was really hard. Even so, it was good. The class ended. And then a lot of people came. Everyone, thank you very much. I will do my best.",
+      "literal": "today school-at studied. really was-hard. even-so was-interesting. class-SUBJ ended. and people-SUBJ many came. everyone, really thank-DEF. well will-do-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hagesseumnida",
+            "script": "하겠습니다",
+            "cue": "I will do it (deferential)",
+            "tag": "delta",
+            "forms": [
+              "hagesseumnida"
+            ],
+            "note": "The deferential I will: -gesseumnida on a verb stem. It is what a speaker says at the moment they take the floor, which is why it marks the switch rather than following it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7
+        ]
+      },
+      "trap": "Seven sentences and one new word between them. The last rung of this course is assembly: everything here was bought on a rung below, and the only thing being learnt is when the ending moves.",
+      "sound": "O-neul HAK-gyo-e-seo GONG-bu-hae-sseo-yo. JEONG-mal HIM-deu-reo-sseo-yo. GEU-rae-do JAE-mi-i-sseo-sseo-yo. SU-eo-bi KKEUN-na-sseo-yo. GEU-ri-go SA-ram-deu-ri MA-ni WA-sseo-yo. YEO-reo-bun, JEONG-mal GAM-sa-ham-ni-da. jal HA-ge-sseum-ni-da.",
+      "variations": [
+        {
+          "display": "Yeoreobun, jeongmal gamsahamnida.",
+          "script": "여러분, 정말 감사합니다.",
+          "cue": "Everyone, thank you very much.",
+          "changed": "the turn alone: the sentence the whole piece was built towards"
+        },
+        {
+          "display": "Jeongmal gomawoyo.",
+          "script": "정말 고마워요.",
+          "cue": "Thank you very much.",
+          "changed": "L1-M2's thanks in -yo: to one person, not to a room"
+        }
+      ],
+      "mistake": {
+        "display": "Oneul hakgyo-eseo gongbuhaesseoyo. Jal hagesseumnida. Jeongmal himdeureosseoyo.",
+        "script": "오늘 학교에서 공부했어요. 잘 하겠습니다. 정말 힘들었어요.",
+        "why": "The level rose for one sentence and fell again with nobody addressed on either side. A switch with no trigger is the failure mode of this module, and it reads as a slip rather than as a move."
+      },
+      "usage": "Closing an account by turning to the people in it.",
+      "register": "neutral",
+      "mnemonic": "Assemble what you have; move the ending once, on purpose."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M10-C01",
+      "display": "Yeoreobun, gamsahamnida.",
+      "script": "여러분, 감사합니다.",
+      "cue": "Everyone, thank you."
+    },
+    {
+      "id": "L5-M10-C02",
+      "display": "Chingu-reul wihayeo geonbae-reul hagesseumnida.",
+      "script": "친구를 위하여 건배를 하겠습니다.",
+      "cue": "I will raise a glass to my friend."
+    },
+    {
+      "id": "L5-M10-C03",
+      "display": "Yeoreobun, annae malsseum deurigesseumnida.",
+      "script": "여러분, 안내 말씀 드리겠습니다.",
+      "cue": "Everyone, here is an announcement."
+    },
+    {
+      "id": "L5-M10-C04",
+      "display": "Gicha-ga jamsi hu-e chulbalhamnida.",
+      "script": "기차가 잠시 후에 출발합니다.",
+      "cue": "The train departs shortly."
+    },
+    {
+      "id": "L5-M10-C05",
+      "display": "Jeo-neun jom bappeundeyo.",
+      "script": "저는 좀 바쁜데요.",
+      "cue": "I am a bit busy, though."
+    },
+    {
+      "id": "L5-M10-C06",
+      "display": "Yeoreobun, jal hagesseumnida.",
+      "script": "여러분, 잘 하겠습니다.",
+      "cue": "Everyone, I will do my best."
+    },
+    {
+      "id": "L5-M10-C07",
+      "display": "Geuttae-neun jeongmal himdeureosseoyo.",
+      "script": "그때는 정말 힘들었어요.",
+      "cue": "It was really hard then."
+    },
+    {
+      "id": "L5-M10-C08",
+      "display": "Jigeum-eun hakgyo-eseo ilhaeyo.",
+      "script": "지금은 학교에서 일해요.",
+      "cue": "Now I work at a school."
+    },
+    {
+      "id": "L5-M10-C09",
+      "display": "Samga goin-ui myeongbog-eul bimnida.",
+      "script": "삼가 고인의 명복을 빕니다.",
+      "cue": "May the departed rest in peace."
+    },
+    {
+      "id": "L5-M10-C10",
+      "display": "Yennal yennal-e halmeoni-ga sigol-e sarasseumnida.",
+      "script": "옛날 옛날에 할머니가 시골에 살았습니다.",
+      "cue": "Once upon a time an old woman lived in the countryside."
+    },
+    {
+      "id": "L5-M10-C11",
+      "display": "Ijen chingu-ga wasseoyo. Bunwigi-ga joayo.",
+      "script": "이젠 친구가 왔어요. 분위기가 좋아요.",
+      "cue": "Now a friend has come. The mood is good."
+    },
+    {
+      "id": "L5-M10-C12",
+      "display": "Je-ga bogoseo-reul malsseum deurigesseumnida.",
+      "script": "제가 보고서를 말씀 드리겠습니다.",
+      "cue": "I will present the report."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

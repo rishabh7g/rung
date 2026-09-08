@@ -1,0 +1,658 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M9",
+  "title": "Telling it your way",
+  "job": "Retell a known story in your own register",
+  "prerequisites": ["L5-M1", "L5-M2", "L5-M3", "L5-M4", "L5-M5", "L5-M6", "L5-M7", "L5-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present_simple", "simple_past"],
+    "allowedPatterns": [
+      "A + <noun> + finds + <object> + .",
+      "They say + (that) + <clause> + .",
+      "It is said that + <clause> + .",
+      "In short + , + <clause> + .",
+      "Apparently + <clause> + ."
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "क़िस्सा दोहराने के दो गियर हैं और बीच में गियर बदलना मना है. पहला गियर सादा वर्तमान है — कहानी, फ़िल्म, चुटकुला और लोककथा अंग्रेज़ी में वर्तमान में सुनाई जाती है: A farmer finds gold. He tells nobody. दूसरा गियर सादा भूत है, उस बात के लिए जो सचमुच हुई. जो भी चुनें, पहले वाक्य से आख़िरी वाक्य तक वही चलेगा."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी एक ही क़िस्से में वर्तमान और भूत के बीच आराम से फिसलती है — किसान को सोना मिलता है, उसने किसी को नहीं बताया. अंग्रेज़ी में यही फिसलन साफ़ ग़लती है, और सीखने वाले को अपनी ही ग़लती सुनाई नहीं देती. सुनाते हुए पहले वाक्य की क्रिया याद रखिए; बाक़ी सब उसी के पीछे चलेंगी."
+    },
+    {
+      "tag": "delta",
+      "text": "क़िस्सा किसका है, यह अंग्रेज़ी अलग निशानों से बताती है: They say … (लोग कहते हैं), It is said that … (कहा जाता है, किताबी), Apparently … (सुना है). तीनों बोलने वाले को क़िस्से से एक क़दम दूर रखते हैं — यानी मैं इसकी ज़मानत नहीं ले रहा. यह L3-M5 की सुनाई हुई बात वाली आदत है, बस एक वाक्य पर नहीं, पूरे क़िस्से पर लगी हुई."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी में क़िस्सा फैलाकर सुनाया जाता है और घूम-फिरकर वहीं लौटता है; अंग्रेज़ी सुनने वाला उम्मीद करता है कि क़िस्सा अपनी बात तक पहुँचे और रुक जाए. इसलिए in short और at the end शिष्टाचार के शब्द नहीं हैं, क़िस्से की शक्ल हैं. लंबाई ख़ुद चुनिए — एक वाक्य में या दस में — पर चुनकर उसी पर टिकिए."
+    },
+    {
+      "tag": "delta",
+      "text": "क़िस्से का पूरा सामान पहले से आपका है और यह मॉड्यूल उसे दोबारा नहीं सिखाता: at first · but then · suddenly · it turned out · luckily · noticed (L4-M10), story · in the end · while · already · still · before (L3-M10), said · told · finally (L2-M10). यहाँ बस दो नई चीज़ें हैं — गियर और मालिक. सीधी बात वाली एक पंक्ति हो तो उसे L4-M10 वाले ही तरीक़े से उद्धरण में रखिए."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M9-S01",
+      "display": "Once upon a time a farmer is very poor. One day he finds gold in the forest.",
+      "cue": "एक बार की बात है, एक किसान बहुत ग़रीब है. एक दिन उसे जंगल में सोना मिलता है.",
+      "literal": "एक बार ऊपर एक समय एक किसान है बहुत ग़रीब. एक दिन वह पाता सोना में वह जंगल.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "once upon a time",
+            "cue": "एक बार की बात है",
+            "tag": "delta",
+            "forms": ["once upon a time"],
+            "note": "चारों शब्द एक इकाई हैं और सिर्फ़ लोककथा की शुरुआत में आते हैं. असल बात सुनाते समय यह नहीं लगाया जाता."
+          },
+          {
+            "display": "farmer",
+            "cue": "किसान",
+            "tag": "free",
+            "forms": ["farmer", "farmers"],
+            "note": "खेती करने वाला. काम बताने वाले नामों में -er लगता है — farm से farmer, teach से teacher."
+          },
+          {
+            "display": "one day",
+            "cue": "एक दिन",
+            "tag": "delta",
+            "forms": ["one day"],
+            "note": "क़िस्से में वह मोड़ जहाँ से कुछ नया शुरू होता है. गिनती वाला एक दिन नहीं — कौन सा दिन, यह कभी नहीं बताया जाता."
+          },
+          {
+            "display": "finds",
+            "cue": "मिलता है",
+            "tag": "delta",
+            "forms": ["finds", "find", "finding"],
+            "note": "क़िस्से वाले वर्तमान में तीसरे पुरुष के साथ -s लगता है. भूतकाल found L2-M8 का है."
+          },
+          {
+            "display": "gold",
+            "cue": "सोना",
+            "tag": "free",
+            "forms": ["gold"],
+            "note": "यह गिना नहीं जाता, इसलिए न a आता है न golds बनता है. सोने की चीज़ के लिए a gold ring कहते हैं."
+          },
+          {
+            "display": "forest",
+            "cue": "जंगल",
+            "tag": "free",
+            "forms": ["forest", "forests"],
+            "note": "पेड़ों से भरी जगह. लोककथाओं में यही वह जगह है जहाँ कहानी का मोड़ आता है."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "पूरा क़िस्सा वर्तमान में है, इसलिए is और finds दोनों वर्तमान में हैं. एक भी was या found घुसते ही गियर टूट जाता है.",
+      "sound": "once upon a में तीनों शब्द जुड़ जाते हैं — वन्-सु-पॉ-ना-टाइम्.",
+      "variations": [
+        {
+          "display": "Once upon a time a farmer is very poor.",
+          "cue": "एक बार की बात है, एक किसान बहुत ग़रीब है.",
+          "changed": "सिर्फ़ शुरुआत"
+        },
+        {
+          "display": "One day he finds gold in the forest.",
+          "cue": "एक दिन उसे जंगल में सोना मिलता है.",
+          "changed": "सिर्फ़ मोड़"
+        },
+        {
+          "display": "A farmer finds gold. He is very poor.",
+          "cue": "एक किसान को सोना मिलता है. वह बहुत ग़रीब है.",
+          "changed": "उलटे क्रम में"
+        }
+      ],
+      "mistake": {
+        "display": "Once upon a time a farmer was very poor. One day he finds gold in the forest.",
+        "why": "पहला वाक्य भूत में और दूसरा वर्तमान में — यही गियर टूटना है. दोनों वर्तमान में रखिए या दोनों भूत में."
+      },
+      "usage": "कोई लोककथा या पुरानी सुनी हुई कहानी शुरू करते समय.",
+      "register": "neutral",
+      "mnemonic": "Once upon a time — और उसके बाद पूरा क़िस्सा एक ही गियर में."
+    },
+    {
+      "id": "L5-M9-S02",
+      "display": "They say the wife tells everyone in the village. In the end the king takes the gold.",
+      "cue": "लोग कहते हैं कि पत्नी सबको बता देती है. आख़िर में राजा सोना ले लेता है.",
+      "literal": "वे कहते वह पत्नी बताती हरेक में वह गाँव. में वह अंत वह राजा लेता वह सोना.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "they say",
+            "cue": "लोग कहते हैं",
+            "tag": "delta",
+            "forms": ["they say"],
+            "note": "क़िस्सा अपना नहीं, सुना हुआ है — यही इसका पूरा काम है. यहाँ they किसी ख़ास लोगों की तरफ़ इशारा नहीं करता."
+          },
+          {
+            "display": "wife",
+            "cue": "पत्नी",
+            "tag": "free",
+            "forms": ["wife", "wives"],
+            "note": "बहुवचन में f बदलकर v हो जाता है — wives, wifes नहीं. पति के लिए husband अलग शब्द है."
+          },
+          {
+            "display": "everyone",
+            "cue": "सब",
+            "tag": "delta",
+            "forms": ["everyone", "everybody"],
+            "note": "दिखता बहुवचन है पर क्रिया एकवचन लेता है — everyone knows, everyone know नहीं."
+          },
+          {
+            "display": "king",
+            "cue": "राजा",
+            "tag": "free",
+            "forms": ["king", "kings", "queen"],
+            "note": "लोककथा का सबसे आम किरदार. रानी के लिए queen — दोनों के आगे किसी ख़ास कहानी में the आता है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "They say के बाद that लगाया भी जा सकता है और छोड़ा भी. दोनों सही हैं, पर बोलचाल में अक्सर छूट जाता है.",
+      "sound": "wife में f की आवाज़ है, पर wives में वही v बन जाती है.",
+      "variations": [
+        {
+          "display": "They say the wife tells everyone.",
+          "cue": "लोग कहते हैं कि पत्नी सबको बता देती है.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "The wife tells everyone in the village.",
+          "cue": "पत्नी गाँव में सबको बता देती है.",
+          "changed": "बिना they say"
+        },
+        {
+          "display": "They say that the king takes the gold.",
+          "cue": "लोग कहते हैं कि राजा सोना ले लेता है.",
+          "changed": "that के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "They say the wife tells everyone in the village. In the end the king took the gold.",
+        "why": "पहला वाक्य वर्तमान में है और दूसरा भूत में चला गया. एक क़िस्सा, एक गियर."
+      },
+      "usage": "सुनी-सुनाई कहानी सुनाते समय, जब उसकी ज़िम्मेदारी अपने ऊपर न लेनी हो.",
+      "register": "neutral",
+      "mnemonic": "They say = क़िस्सा मेरा नहीं, सबका है."
+    },
+    {
+      "id": "L5-M9-S03",
+      "display": "It is said that the farmer is clever. In this story he is the hero.",
+      "cue": "कहा जाता है कि वह किसान चतुर है. इस कहानी में वही नायक है.",
+      "literal": "यह है कहा गया कि वह किसान है चतुर. में यह कहानी वह है वह नायक.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "it is said",
+            "cue": "कहा जाता है",
+            "tag": "delta",
+            "forms": ["it is said"],
+            "note": "They say का किताबी रूप. तीनों शब्द साथ चलते हैं और आगे लगभग हमेशा that आता है."
+          },
+          {
+            "display": "clever",
+            "cue": "चतुर",
+            "tag": "delta",
+            "forms": ["clever", "cleverer"],
+            "note": "अपनी अक़्ल से रास्ता निकाल लेने वाला. intelligent पढ़ाई-लिखाई की अक़्ल है, clever तरकीब की."
+          },
+          {
+            "display": "hero",
+            "cue": "नायक",
+            "tag": "free",
+            "forms": ["hero", "heroes"],
+            "note": "कहानी का मुख्य किरदार. बहुवचन heroes है, heros नहीं — और औरत के लिए भी आजकल hero ही चलता है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "It is said that किताबी है और They say बोलचाल का. एक ही क़िस्से में दोनों मिलाने से सुनने वाले को रजिस्टर का झटका लगता है.",
+      "sound": "clever में दूसरा हिस्सा दब जाता है — क्लेव्-अर्.",
+      "variations": [
+        {
+          "display": "They say the farmer is clever.",
+          "cue": "लोग कहते हैं कि किसान चतुर है.",
+          "changed": "बोलचाल वाला रूप"
+        },
+        {
+          "display": "In this story he is the hero.",
+          "cue": "इस कहानी में वही नायक है.",
+          "changed": "सिर्फ़ दूसरा हिस्सा"
+        },
+        {
+          "display": "It is said that the king is clever.",
+          "cue": "कहा जाता है कि राजा चतुर है.",
+          "changed": "दूसरा किरदार"
+        }
+      ],
+      "mistake": {
+        "display": "It is say that the farmer is clever. In this story he is the hero.",
+        "why": "जुमला It is said है — कहा गया वाला रूप. It is say कोई शक्ल नहीं बनती."
+      },
+      "usage": "किताबी या रस्मी अंदाज़ में कोई पुरानी कहानी सुनाते समय.",
+      "register": "formal",
+      "mnemonic": "It is said = किताब वाला They say."
+    },
+    {
+      "id": "L5-M9-S04",
+      "display": "Apparently the king is rich and greedy. At the end he takes everything.",
+      "cue": "सुना है कि राजा अमीर और लालची है. आख़िर में वह सब कुछ ले लेता है.",
+      "literal": "ज़ाहिरन वह राजा है अमीर और लालची. पर वह अंत वह लेता सब कुछ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rich",
+            "cue": "अमीर",
+            "tag": "free",
+            "forms": ["rich", "richer"],
+            "note": "poor (L4-M8) का उलटा. लोककथा में यही जोड़ी सबसे ज़्यादा आमने-सामने रखी जाती है."
+          },
+          {
+            "display": "greedy",
+            "cue": "लालची",
+            "tag": "free",
+            "forms": ["greedy", "greed"],
+            "note": "जिसे जितना मिले उतना कम लगे. लोककथा का सबसे आम ऐब, और अक्सर वही किरदार को ले डूबता है."
+          },
+          {
+            "display": "at the end",
+            "cue": "आख़िर में",
+            "tag": "interference",
+            "forms": ["at the end"],
+            "note": "यह किसी चीज़ के आख़िरी हिस्से की बात करता है — at the end of the story. आख़िरकार वाले मानी के लिए in the end (L3-M10) है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "at the end और in the end एक नहीं हैं. जगह का आख़िरी सिरा at the end, और नतीजा in the end.",
+      "sound": "greedy में दोनों e मिलकर एक लंबी ई बनाते हैं — ग्री-डी.",
+      "variations": [
+        {
+          "display": "The king is rich and greedy.",
+          "cue": "राजा अमीर और लालची है.",
+          "changed": "बिना apparently"
+        },
+        {
+          "display": "At the end he takes everything.",
+          "cue": "आख़िर में वह सब कुछ ले लेता है.",
+          "changed": "सिर्फ़ अंत"
+        },
+        {
+          "display": "In the end the greedy king has nobody.",
+          "cue": "आख़िरकार लालची राजा के पास कोई नहीं रहता.",
+          "changed": "नतीजे वाला रूप"
+        }
+      ],
+      "mistake": {
+        "display": "Apparently the king is rich and greedy. In the end of the story he takes everything.",
+        "why": "किसी चीज़ के आख़िरी हिस्से के लिए at the end of the story आता है. in the end अकेला चलता है, of के साथ नहीं."
+      },
+      "usage": "सुनी हुई कहानी में किसी किरदार का ऐब बताते समय.",
+      "register": "neutral",
+      "mnemonic": "at the end = किनारा; in the end = नतीजा."
+    },
+    {
+      "id": "L5-M9-S05",
+      "display": "This is my version of the story. My grandmother tells it another way. Her ending is not the same.",
+      "cue": "यह मेरा तरीक़ा है यह कहानी सुनाने का. मेरी दादी इसे दूसरी तरह सुनाती हैं. उनका अंत अलग है.",
+      "literal": "यह है मेरा रूप का वह कहानी. मेरी दादी सुनाती यह दूसरा तरीक़ा. उसका अंत है नहीं वह वही.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "version",
+            "cue": "रूप",
+            "tag": "delta",
+            "forms": ["version", "versions"],
+            "note": "एक ही कहानी के अलग-अलग रूप. किसी को सही या ग़लत कहे बिना फ़र्क़ बताने का शब्द है."
+          },
+          {
+            "display": "another",
+            "cue": "दूसरा",
+            "tag": "delta",
+            "forms": ["another"],
+            "note": "an और other जुड़कर एक शब्द बनते हैं. आगे हमेशा एकवचन आता है — another way, another versions नहीं."
+          },
+          {
+            "display": "ending",
+            "cue": "अंत",
+            "tag": "free",
+            "forms": ["ending", "endings"],
+            "note": "कहानी का आख़िरी हिस्सा. end जगह या वक़्त का सिरा है, ending ख़ास तौर पर क़िस्से का अंत."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "another के आगे बहुवचन नहीं आता. दो और चाहिए हों तो two other ways कहिए, another two ways नहीं.",
+      "sound": "version में si ज़् जैसा निकलता है — वर्-ज़न्.",
+      "variations": [
+        {
+          "display": "This is my version of the story.",
+          "cue": "यह मेरा तरीक़ा है यह कहानी सुनाने का.",
+          "changed": "सिर्फ़ पहला हिस्सा"
+        },
+        {
+          "display": "My grandmother tells it another way.",
+          "cue": "मेरी दादी इसे दूसरी तरह सुनाती हैं.",
+          "changed": "सिर्फ़ दूसरा हिस्सा"
+        },
+        {
+          "display": "Her version has another ending.",
+          "cue": "उनके रूप का अंत अलग है.",
+          "changed": "छोटा जोड़"
+        }
+      ],
+      "mistake": {
+        "display": "This is my version of the story. My grandmother tells it another ways.",
+        "why": "another के बाद हमेशा एकवचन आता है — another way. बहुवचन चाहिए तो other ways कहिए."
+      },
+      "usage": "जब वही कहानी किसी और से अलग सुनी हो और फ़र्क़ बताना हो.",
+      "register": "neutral",
+      "mnemonic": "another = an + other, और आगे हमेशा एक."
+    },
+    {
+      "id": "L5-M9-S06",
+      "display": "This legend is simple. A king lives in a forest. He is rich but he is not happy.",
+      "cue": "यह किंवदंती सीधी है. एक राजा जंगल में रहता है. वह अमीर है पर ख़ुश नहीं है.",
+      "literal": "यह किंवदंती है सादी. एक राजा रहता में एक जंगल. वह है अमीर पर वह है नहीं ख़ुश.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "legend",
+            "cue": "किंवदंती",
+            "tag": "free",
+            "forms": ["legend", "legends"],
+            "note": "वह पुरानी कहानी जिसे लोग सच मानते आए हैं. story आम कहानी है, legend वह जो पीढ़ियों से चली आ रही हो."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "तीनों वाक्य वर्तमान में हैं. legend सुनाते हुए भूतकाल में फिसलना सबसे आम ग़लती है, क्योंकि बात पुरानी लगती है.",
+      "sound": "legend में g ज् जैसा है — लेज्-अन्ड्.",
+      "variations": [
+        {
+          "display": "This legend is simple.",
+          "cue": "यह किंवदंती सीधी है.",
+          "changed": "सिर्फ़ शुरुआत"
+        },
+        {
+          "display": "A king lives in a forest.",
+          "cue": "एक राजा जंगल में रहता है.",
+          "changed": "सिर्फ़ बीच का वाक्य"
+        },
+        {
+          "display": "He is rich but he is not happy.",
+          "cue": "वह अमीर है पर ख़ुश नहीं है.",
+          "changed": "सिर्फ़ आख़िरी वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "This legend is simple. A king lived in a forest. He is rich but he is not happy.",
+        "why": "बीच वाला वाक्य भूत में चला गया. पुरानी कहानी भी वर्तमान में सुनाई जाती है, अगर पहला वाक्य वर्तमान में है."
+      },
+      "usage": "गाँव या ख़ानदान की कोई पुरानी कहानी छोटा करके सुनाते समय.",
+      "register": "neutral",
+      "mnemonic": "legend = पुरानी कहानी, पर गियर वही वर्तमान."
+    },
+    {
+      "id": "L5-M9-S07",
+      "display": "A farmer found gold. He told nobody. The wife told everyone. In the end the king took it.",
+      "cue": "एक किसान को सोना मिला. उसने किसी को नहीं बताया. पत्नी ने सबको बता दिया. आख़िरकार राजा उसे ले गया.",
+      "literal": "एक किसान पाया सोना. उसने बताया कोई नहीं. वह पत्नी बताया हरेक. में वह अंत वह राजा लिया यह.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nobody",
+            "cue": "कोई नहीं",
+            "tag": "interference",
+            "forms": ["nobody", "no one"],
+            "note": "इसमें नहीं पहले से शामिल है, इसलिए क्रिया सीधी रहती है — He told nobody, He did not tell nobody नहीं."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "यही क़िस्सा S01 में वर्तमान में था और यहाँ पूरा भूत में है. दोनों सही हैं — ग़लत सिर्फ़ बीच में गियर बदलना है.",
+      "sound": "nobody में ज़ोर पहले हिस्से पर है — नो-बडी.",
+      "variations": [
+        {
+          "display": "A farmer found gold. He told nobody.",
+          "cue": "एक किसान को सोना मिला. उसने किसी को नहीं बताया.",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "A farmer finds gold. He tells nobody.",
+          "cue": "एक किसान को सोना मिलता है. वह किसी को नहीं बताता.",
+          "changed": "वर्तमान वाला गियर"
+        },
+        {
+          "display": "In the end the king took it.",
+          "cue": "आख़िरकार राजा उसे ले गया.",
+          "changed": "सिर्फ़ अंत"
+        }
+      ],
+      "mistake": {
+        "display": "A farmer found gold. He did not tell nobody. The wife told everyone.",
+        "why": "nobody में नहीं पहले से है, इसलिए did not के साथ दोहरा हो जाता है. He told nobody या He did not tell anybody — एक ही चुनिए."
+      },
+      "usage": "वही क़िस्सा भूतकाल में सुनाते समय, जैसे किसी ने सचमुच किया हो.",
+      "register": "neutral",
+      "mnemonic": "nobody में ना पहले से बैठा है."
+    },
+    {
+      "id": "L5-M9-S08",
+      "display": "In short, the moral is simple. Money is not everything.",
+      "cue": "छोटे में, सीख सीधी है. पैसा ही सब कुछ नहीं.",
+      "literal": "में छोटा, वह सीख है सादी. पैसा है नहीं सब कुछ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in short",
+            "cue": "छोटे में",
+            "tag": "delta",
+            "forms": ["in short"],
+            "note": "दोनों शब्द एक इकाई हैं और आगे अल्पविराम आता है. इसके बाद क़िस्से की पूरी बात एक वाक्य में आती है."
+          },
+          {
+            "display": "moral",
+            "cue": "सीख",
+            "tag": "free",
+            "forms": ["moral", "morals"],
+            "note": "कहानी के आख़िर में निकलने वाली बात. The moral is … से शुरू करना सबसे सीधा तरीक़ा है."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "moral के आगे the आता है क्योंकि वह इसी कहानी की सीख है. A moral is simple अजीब लगता है.",
+      "sound": "moral में ज़ोर पहले हिस्से पर है और दूसरा दब जाता है — मॉर्-अल्.",
+      "variations": [
+        {
+          "display": "The moral is simple.",
+          "cue": "सीख सीधी है.",
+          "changed": "बिना जोड़ के"
+        },
+        {
+          "display": "In short, money is not everything.",
+          "cue": "छोटे में, पैसा ही सब कुछ नहीं.",
+          "changed": "सीधे सीख पर"
+        },
+        {
+          "display": "In short, the greedy king has no gold at the end.",
+          "cue": "छोटे में, लालची राजा के पास आख़िर में सोना नहीं रहता.",
+          "changed": "दूसरी सीख"
+        }
+      ],
+      "mistake": {
+        "display": "In short, moral is simple. Money is not everything.",
+        "why": "moral गिना जाने वाला शब्द है, इसलिए उसके आगे the चाहिए — the moral is simple."
+      },
+      "usage": "क़िस्सा ख़त्म करते समय, जब उसकी बात एक पंक्ति में रखनी हो.",
+      "register": "neutral",
+      "mnemonic": "In short = क़िस्से का ब्रेक."
+    },
+    {
+      "id": "L5-M9-S09",
+      "display": "Apparently there is another version. In that version the hero is a woman.",
+      "cue": "सुना है कि इसका एक और रूप भी है. उस रूप में नायक एक औरत है.",
+      "literal": "ज़ाहिरन वहाँ है दूसरा रूप. में वह रूप वह नायक है एक औरत.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "woman",
+            "cue": "औरत",
+            "tag": "delta",
+            "forms": ["woman", "women"],
+            "note": "बहुवचन में लिखावट में सिर्फ़ a बदलकर e होता है, पर आवाज़ पहले हिस्से में बदलती है — विम्-इन्."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "एक औरत के लिए भी hero ही चलता है. heroine पुराना पड़ चुका है और आजकल कम सुनाई देता है.",
+      "sound": "woman वुम्-अन् है और women विम्-इन् — फ़र्क़ पहले हिस्से में है, आख़िरी में नहीं.",
+      "variations": [
+        {
+          "display": "There is another version.",
+          "cue": "इसका एक और रूप भी है.",
+          "changed": "बिना apparently"
+        },
+        {
+          "display": "In that version the hero is a woman.",
+          "cue": "उस रूप में नायक एक औरत है.",
+          "changed": "सिर्फ़ दूसरा हिस्सा"
+        },
+        {
+          "display": "They say there is another ending.",
+          "cue": "लोग कहते हैं कि एक और अंत भी है.",
+          "changed": "they say के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "Apparently there is another version. In that version the hero is a women.",
+        "why": "एक औरत के लिए woman है; women बहुवचन है. लिखावट में सिर्फ़ एक अक्षर का फ़र्क़ है, इसलिए यह ग़लती आम है."
+      },
+      "usage": "जब वही कहानी किसी और रूप में सुनी हो और उसका फ़र्क़ बताना हो.",
+      "register": "neutral",
+      "mnemonic": "woman एक, women कई."
+    },
+    {
+      "id": "L5-M9-S10",
+      "display": "A poor farmer goes to the city. He finds work in a shop. In the end he is rich. They say he still helps the village. That is the tale.",
+      "cue": "एक ग़रीब किसान शहर जाता है. उसे एक दुकान में काम मिलता है. आख़िरकार वह अमीर हो जाता है. लोग कहते हैं कि वह आज भी गाँव की मदद करता है. यही वह क़िस्सा है.",
+      "literal": "एक ग़रीब किसान जाता को वह शहर. वह पाता काम में एक दुकान. में वह अंत वह है अमीर. वे कहते वह अब भी मदद करता वह गाँव. वह है वह क़िस्सा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tale",
+            "cue": "क़िस्सा",
+            "tag": "free",
+            "forms": ["tale", "tales"],
+            "note": "story का ही भाई, पर सुनाई जाने वाली पुरानी कहानी के लिए. folk tale यानी लोककथा — यही इसका सबसे आम जोड़ा है."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "पाँचों वाक्य वर्तमान में हैं, आख़िरी भी. That was the tale लिखते ही पूरा क़िस्सा एक गियर पीछे खिसक जाता है.",
+      "sound": "tale और tail की आवाज़ एक ही है — टेल्, पर लिखावट अलग.",
+      "variations": [
+        {
+          "display": "A poor farmer goes to the city.",
+          "cue": "एक ग़रीब किसान शहर जाता है.",
+          "changed": "सिर्फ़ शुरुआत"
+        },
+        {
+          "display": "In the end he is rich.",
+          "cue": "आख़िरकार वह अमीर हो जाता है.",
+          "changed": "सिर्फ़ नतीजा"
+        },
+        {
+          "display": "In short, a poor farmer is rich at the end.",
+          "cue": "छोटे में, एक ग़रीब किसान आख़िर में अमीर है.",
+          "changed": "पूरा क़िस्सा एक वाक्य में"
+        }
+      ],
+      "mistake": {
+        "display": "A poor farmer goes to the city. He found work in a shop. In the end he is rich.",
+        "why": "बीच वाला वाक्य भूत में चला गया. एक क़िस्से में एक ही गियर — या तो सब goes, finds, is, या सब went, found, was."
+      },
+      "usage": "पूरा क़िस्सा छोटा करके सुनाते समय, जब सुनने वाले के पास कम वक़्त हो.",
+      "register": "neutral",
+      "mnemonic": "पाँच वाक्य, एक गियर — यही पूरा हुनर है."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M9-C01",
+      "display": "Once upon a time a farmer is very poor.",
+      "cue": "एक बार की बात है, एक किसान बहुत ग़रीब है."
+    },
+    {
+      "id": "L5-M9-C02",
+      "display": "One day he finds gold in the forest.",
+      "cue": "एक दिन उसे जंगल में सोना मिलता है."
+    },
+    {
+      "id": "L5-M9-C03",
+      "display": "They say the wife tells everyone.",
+      "cue": "लोग कहते हैं कि पत्नी सबको बता देती है."
+    },
+    {
+      "id": "L5-M9-C04",
+      "display": "In the end the king takes the gold.",
+      "cue": "आख़िर में राजा सोना ले लेता है."
+    },
+    {
+      "id": "L5-M9-C05",
+      "display": "It is said that the farmer is clever.",
+      "cue": "कहा जाता है कि वह किसान चतुर है."
+    },
+    {
+      "id": "L5-M9-C06",
+      "display": "Apparently the king is rich and greedy.",
+      "cue": "सुना है कि राजा अमीर और लालची है."
+    },
+    {
+      "id": "L5-M9-C07",
+      "display": "This is my version of the story.",
+      "cue": "यह मेरा तरीक़ा है यह कहानी सुनाने का."
+    },
+    {
+      "id": "L5-M9-C08",
+      "display": "Her ending is not the same.",
+      "cue": "उनका अंत अलग है."
+    },
+    {
+      "id": "L5-M9-C09",
+      "display": "A king lives in a forest.",
+      "cue": "एक राजा जंगल में रहता है."
+    },
+    {
+      "id": "L5-M9-C10",
+      "display": "He told nobody.",
+      "cue": "उसने किसी को नहीं बताया."
+    },
+    {
+      "id": "L5-M9-C11",
+      "display": "In short, the moral is simple.",
+      "cue": "छोटे में, सीख सीधी है."
+    },
+    {
+      "id": "L5-M9-C12",
+      "display": "In that version the hero is a woman.",
+      "cue": "उस रूप में नायक एक औरत है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

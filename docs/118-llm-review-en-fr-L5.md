@@ -737,3 +737,405 @@ no `glossEn`, declared keys only, every `deconstruction.rules` index in range.
 140. **`chacun` as the abstract talker's word for people** (M5). Given as singular always, taking no
      article. Confirm, and say whether `chacun compte` and `chacun est différent` are sentences a
      French speaker would produce or only ones they would understand.
+
+## Wave 3 — L5-M6 through L5-M10 (#595)
+
+The level's closing five, and the course's: how to argue, how to hear what was not said, what to do
+when the word will not come, how to retell something written in a tense you will never say, and —
+last — how to change register on purpose inside one piece. Authored against the briefs
+`tools/course-briefs.ts` carries for these five rungs and reviewed, as waves 1 and 2 were, against
+the REAL emitted index rather than the briefs' account of it. Every call to
+`npm run content:owner -- en-fr …` in this wave closed with the same footer:
+
+```
+1127 surfaces owned, folded over 45 modules through L5-M5
+```
+
+**1127 surfaces, 45 modules, through L5-M5.** Wave 2's paragraph above says *1043 surfaces, 42
+modules, through L5-M2*, and wave 1's says *981, 40, through L4-M10*; both are stale by three rungs
+and this one will be too. The deepest emitted index file is now
+`public/content/en-fr/index/L5-M5.json` and it still carries **`maxSpan: 8`**. That number is load
+bearing here for the second time: L5-M10's `si vous voyez ce que je veux dire` is EXACTLY eight
+tokens — the deepest key on this ladder — and had wave 1 not moved the fold from 6 to 8 for its
+idioms, the last module's most characteristic line could never have matched.
+
+The five modules spend **25, 20, 19, 22 and 14 word rows** against a `newWordCap` of 25 throughout.
+The descending shape is deliberate and is what the briefs asked for: L5-M6 is the level's densest
+module and L5-M10 is an exit module, whose honest spend is a handful of sign-offs and two nouns.
+
+### L5-M6 "Arguing a position" — a structured case, objections answered
+
+The ten displays, in order:
+
+1. `D'une part c'est utile, d'autre part c'est trop cher`
+2. `Bien que ce soit vrai, ce n'est pas une preuve`
+3. `C'est tellement cher que je ne peux pas. Néanmoins, c'est utile`
+4. `Il y a tant de gens que c'est difficile`
+5. `Quoique ce soit juste, je ne suis pas d'accord. Au contraire`
+6. `Malgré le prix, c'est la meilleure solution. Autrement dit, c'est utile`
+7. `Que pensez-vous de cette idée ?`
+8. `Certains sont pour, d'autres sont contre. Or, la plupart ne disent rien`
+9. `C'est cher, si bien que personne ne vient. En effet, c'est le problème`
+10. `Premièrement c'est utile. Deuxièmement, ce n'est pas cher. En conclusion, c'est suffisant`
+
+It takes the three things L4 left here, and takes them as ONE lesson rather than three lists.
+**CONCESSION** is `bien que` and `quoique` with the subjunctive (S02, S05) and `malgré` with a bare
+noun and no clause at all (S06). **RESULT** is `tellement … que`, `tant de … que`, `si bien que`,
+`au point que` and `de sorte que` (S03, S04, S09). The two are deliberately adjacent, because rule 0
+states the thing the briefs asked for by NAME rather than by pattern: `bien que` bends the verb
+because what it concedes is not being asserted, and a result clause does not bend because the result
+actually happened. Both mistake plates say it from the other side — `Bien que c'est vrai` on S02, and
+`si bien que personne ne vienne` on S09 — so the error is shown facing in both directions.
+
+**INVERSION** lands on S07 alone and is framed as a REGISTER rather than a grammar: rule 3 says
+`est-ce que` stays correct everywhere and is what you say out loud, and the trap says a learner who
+inverts everywhere sounds like a nineteenth-century novel. The module's single inverted key
+(`que pensez-vous`, with `qu'en pensez-vous` and `comment expliquer que` on the same row) is the
+whole purchase — the brief's finding that inversion is almost free in the index held exactly, and is
+recorded below.
+
+`or` gets the module's sharpest interference treatment: its own rule, its own row tagged
+`interference`, and a mistake plate whose only change is `Ou` for `Or`. It is the level's second
+false friend after L4-M4's `actuellement` and the first that inverts the meaning of a whole argument
+rather than one word. The outline runs on `premièrement` / `deuxièmement` / `troisièmement`,
+`d'une part` / `d'autre part` and `en conclusion` / `pour conclure` / `en résumé`, with rule 4
+pointing back at L2-M10's `d'abord`, `ensuite`, `enfin` and saying what separates them: those three
+NARRATE and these ARGUE. The past and imperfect subjunctive are named as not-taken in rule 6, in the
+module a reader would expect to meet them in.
+
+### L5-M7 "Between the lines" — implication, sarcasm, indirect requests
+
+The ten displays, in order:
+
+1. `Ce n'est pas mal, ton idée`
+2. `Mine de rien, ce n'est pas terrible, sérieux`
+3. `Tu n'aurais pas un stylo ?`
+4. `Mais si, je te l'avais dit`
+5. `Tu aurais pu me le dire, quand même`
+6. `Passe-le-moi, ce n'est pas grave`
+7. `Je vous l'envoie tout de suite`
+8. `Il fait un peu froid ici, non ?`
+9. `Ça ne te dérangerait pas de fermer la porte ?`
+10. `Cela dit, je vois le sous-entendu`
+
+Two systems, and the second is grammar. **LITOTES** is S01 and S02: `pas mal`, `pas faux` and
+`pas bête` on one row, and `pas terrible` on its own with rule 1 to itself, because it is the one
+that reverses. That separation is the module's main authoring decision — putting `pas terrible` on
+the praise row would have given four surfaces one note, and the note would have been false for a
+quarter of them. **TWO OBJECT PRONOUNS** are S04, S05, S06 and S07: `me le` / `te le` / `le lui` in
+statements, and the flip after a positive imperative in `passe-le-moi` / `donne-le-moi` /
+`dis-le-moi`. Rule 3 ties that flip back to L4-M1's positive-versus-negative pronoun rule rather than
+presenting it as a new fact.
+
+**Rule 6 says out loud that this course has no audio, and that the constraint is content.** The
+brief asked for exactly that, and it is honoured in the material as well as in the prose: every
+ironic line here is recoverable from the words and the situation alone. S08's
+`Il fait un peu froid ici, non ?` is the test case — the sentence is literally true, the request is
+entirely in where it is said, and the `non ?` hands the noticing to the other person. Nothing in the
+module needs a voice to land, and the lines that would have have been left out rather than faked.
+
+`si` is handled the way the brief demanded: `content:owner` reports `si → L3-M4` as the conditional
+*if*, so the contradicting *si* can never have a bare row. It is taken whole as `mais si` and `si si`
+on one row (S04) with rule 4 naming the homograph, and the mistake plate contrasts `Mais oui` with
+`Mais si` so a learner meets the wrong answer as well as the right one.
+
+### L5-M8 "When words run out" — paraphrase, ask what something means, repair a misunderstanding
+
+The ten displays, in order:
+
+1. `C'est un truc qui sert à ouvrir les bouteilles`
+2. `Comment on dit ça en français ?`
+3. `Qu'est-ce que ça veut dire, ce mot ?`
+4. `C'est le machin dont je parle`
+5. `Ce n'est pas ce que je voulais dire`
+6. `Je me suis mal exprimé, excusez-moi`
+7. `Je n'ai pas compris, vous pouvez répéter ?`
+8. `Vous pouvez expliquer autrement, plus lentement ?`
+9. `C'est-à-dire que je ne trouve pas le mot`
+10. `Ça s'écrit comment ? Vous pouvez épeler ?`
+
+Authored as a survival kit, in the brief's words, and not as a grammar chapter — but the grammar is
+there and is stated by ROLE. Rule 0 says `qui` is the SUBJECT of its clause and `que` the OBJECT, and
+rule 1 says in as many words that English's who/which cut runs at right angles to it, so the English
+instinct is wrong half the time rather than merely unhelpful. Rule 2 covers the error a learner
+actually makes most: English DROPS the relative and French never may. `dont` is the module's one
+genuinely fresh bare relative (S04), taught by looking at the VERB — if it takes `de`, the relative is
+`dont` — and `ce dont` is named in rule 7 and left shut, exactly as the brief asked.
+
+Around the relative sit the placeholders (`machin`, with `truc` and `chose` on the same row) and the
+four repair moves of rule 5: ask for the word (S02), ask what a word means (S03), ask for a repeat or
+a rewording (S07, S08), take back what came out wrong (S05, S06). S08 is the one worth defending:
+the brief wanted `plus lentement`, and the module pairs it with `expliquer autrement`, because a
+repeat at the same speed helps nobody and a rewording is the request a French speaker will act on.
+`épeler` appears as a REQUEST made of the other person (S10) and the alphabet is not taught, per the
+brief. `lequel`, `duquel` and `auquel` are named as not-taken in rule 7.
+
+### L5-M9 "Telling it your way" — retell a known story in your own register
+
+The ten displays, in order:
+
+1. `Il était une fois un roi et une reine`
+2. `Dans l'histoire, le roi alla dans la forêt`
+3. `Le loup vint et le roi prit le château`
+4. `Il fut roi, et il eut raison`
+5. `Dans le conte, il dit non au roi`
+6. `En gros, je raconte une histoire de roi`
+7. `Et là, le personnage est parti dans la forêt`
+8. `Dans l'histoire il prit le château, mais moi je dirais qu'il est parti`
+9. `Bref, voilà la fin de l'histoire`
+10. `Voilà ma version de l'histoire, en gros`
+
+The passé simple is taken as **recognition only and in the third person only**: `alla`/`allèrent`,
+`vint`/`vinrent`, `prit`/`prirent`, `fut`/`furent`, `eut`/`eurent`. The brief asked for the
+not-produced rule to be said twice, and it is: rule 0 states it, and S04's mistake plate
+(`Je fus roi quand j'étais petit`) is a second statement of the same law with a first person in it,
+after S02's plate has already struck out `Hier, je alla`. Rule 1 carries the mapping that is the
+actual skill — read `il alla`, say `il est allé` — and names L4-M7's futur simple as the precedent.
+
+**S08 is the module in one line.** `Dans l'histoire il prit le château, mais moi je dirais qu'il est
+parti` holds both tenses in one sentence: the page's `prit` untouched, and the speaker's half in the
+passé composé. Its mistake plate is the same sentence with `qu'il partit`, which is the failure the
+whole module exists to prevent.
+
+**The `dit` homograph is handled by never opening a row for it.** `content:owner` reports
+`dit  L2-M6`, and the third-person passé simple of `dire` is spelt identically to the present and to
+the participle L2-M6 owns. So S05 takes `il dit` as a two-token key, rule 5 explains the collapse,
+and the mistake plate strikes out the invented `il disa` — which is how a learner tries to make the
+form regular when nobody has told them it is already there. The retelling furniture around it is
+`il était une fois`, `en gros` (with `du genre` and `genre` on the same row), `et là`, `bref`,
+`voilà`, `raconte`, `version` and `fin`/`morale`; everything else is L1-M10, L2-M10, L3-M10 and
+L4-M10 re-used and pointed back at, and no new narrative connector was opened.
+
+### L5-M10 "Your own voice" — a piece that changes register midway
+
+The ten displays, in order:
+
+1. `Bonjour madame, je vous remercie`
+2. `Je voudrais vous parler de ce poste`
+3. `Pour être honnête, l'entretien a été difficile`
+4. `En revanche, le travail est vraiment intéressant`
+5. `C'est un bon poste, si vous voyez ce que je veux dire`
+6. `On se tutoie ? Entre nous, c'est plus simple`
+7. `Du coup, on se voit demain ?`
+8. `Par contre, le chef est un peu relou`
+9. `Si tu veux, un café ?`
+10. `Bref, à plus. Bonne journée`
+
+One speaker, one interview, and the turn at S06. Five sentences in `vous`, the offer, four in `tu`.
+The brief asked for the switch to be MOTIVATED by something inside the account, and the motivation is
+S03 and S05: the candidate admits the interview was hard (`pour être honnête`) and then says
+something and leaves half of it unsaid (`si vous voyez ce que je veux dire`). Only after those two
+does `on se tutoie ?` read as plausible rather than performed.
+
+**All four carriers move, and the module says so.** Rule 0 names them — address pronoun, connector,
+lexis, sentence shape — and S08 is the sentence built to prove it: `par contre` for `en revanche`,
+`chef` for a formal title, `relou` for `pénible`, `un peu` doing the hedging. Four familiar choices
+in eight words, **and not one of them is the pronoun.** Its mistake plate is the same line opened
+with `Toutefois`, which is one written connector against one break-room adjective — the collision
+this module exists to name. S01's plate does the same at the other end (`Salut` with `vous`), and
+S05's plate breaks the switch by a single sentence (`si tu vois` one line before the offer).
+
+**Rule 4 is the statement the brief asked for and the clearest thing this course can say about
+itself.** English carries register on contraction; French carries it on the dropped `ne`; and this
+course writes the `ne` in both halves by its own law (`docs/58` §4). So the most audible marker of
+familiar French is unavailable to any display in this module, and the switch a learner can SEE is
+carried by pronoun, connector and lexis instead. It arrives in the last module of the course, where a
+learner is finally equipped to hear what is missing.
+
+The module opens **fourteen rows and nothing structural**: `je vous remercie`, `poste`,
+`pour être honnête`, `entretien`, `vraiment`, `si vous voyez ce que je veux dire`, `entre nous`,
+`simple`, `on se voit`, `chef`, `si tu veux`, `un café`, `à plus`/`à bientôt` and `bonne journée`.
+Every carrier it leans on was already paid for: `vous` L1-M2, `tu` L2-M1, `on`/`nous` L2-M6,
+`en revanche`/`par contre`/`quand même` L4-M4, `du coup` L4-M2, `madame` L4-M7, `travail` L3-M2, and
+`salut`/`boulot`/`relou`/`on se tutoie` L5-M3.
+
+### The seams the briefs got wrong, and what `content:owner` actually said
+
+**1. The wave's own working assumption about the emitted index was wrong, and it was wrong in the
+useful direction.** This wave began believing `public/content/` was current through L4-M10 and that
+`content:owner` could therefore not see waves 1 and 2. It can. Every call printed
+`folded over 45 modules through L5-M5`, and `public/content/en-fr/index/` holds an `L5-M5.json`
+whose `cumulativeThrough` is 45 entries long. That is the single most valuable correction this wave
+has to offer, because it is what let the next four findings be found by asking instead of by
+guessing.
+
+**2. L5-M8's brief lists `ce qui` and `ce que` as free. Both are L5-M5's.**
+
+```
+ce qui	L5-M5
+ce que	L5-M5
+```
+
+The brief was written before wave 2 shipped and could not have known. The consequence is small and
+real: S05's `Ce n'est pas ce que je voulais dire` shows `ce que` and teaches nothing for it, because
+L5-M5's row is what a learner tapping it is shown. The trap on S05 says so in as many words rather
+than pretending the pair is new here.
+
+**3. L5-M8's brief says `c'est-à-dire` BUYS bare `dire`. It does not — `dire` is L5-M5's.**
+
+```
+c'est-à-dire	free   [parts: c'est → L1-M8, à → L1-M4, dire → L5-M5]
+```
+
+The brief's instruction was to "take it deliberately, and write the note for the bare infinitive
+rather than only for the hyphenated whole". That instruction is now impossible to carry out: every
+one of the three hyphen parts is owned before this module reaches them, so the purchase is the whole
+key and nothing else. The note on S09 is written for the connector alone, which is what the surface
+actually earns.
+
+**4. L5-M8's brief left `qu'est-ce que` conditional, and the condition resolved.** It said: "if
+L5-M2 has already taken `qu'est-ce que` whole, this is a re-use; if it has not, this module buys bare
+`qu'est`. The two modules must not both open it, and whichever ships first owns it." L5-M2 shipped
+first:
+
+```
+qu'est-ce que	L5-M2   [parts: qu'est → L5-M2, ce → L2-M1]
+qu'est-ce que ça veut dire	free   [parts: qu'est → L5-M2, ce → L2-M1]
+```
+
+So L5-M8 buys nothing there and S03 re-uses the L5-M2 key. The brief's conditional worked exactly as
+a brief's conditional should, and is recorded here so the next wave does not re-litigate it.
+
+**5. L5-M10's standing warning was right about the mechanism and wrong about two names on its list.**
+It warned that `salut`, `bref`, `monsieur`, `dire`, `par`, `dont`, `qu'est-ce que` and the L5-M3
+register twins would all have been taken by the time this module was authored. Six of the eight had:
+
+```
+salut	L5-M3        boulot	L5-M3        bagnole	L5-M3        on se tutoie	L5-M3
+monsieur	L5-M4    par	L5-M4         dire	L5-M5        qu'est-ce que	L5-M2
+```
+
+But `bref  free` and `dont  free` at the moment they were read, because the modules that take them —
+L5-M9 and L5-M8 — are in THIS wave and the index cannot see a module that has not been built.
+`tools/check-shown.ts` can, and does: it folds `L5-M1` through the module under test off disk, which
+is why L5-M10 showing `Bref, à plus` resolves against L5-M9's row and needs no purchase. **The
+lesson for a later wave is that `content:owner` and `content:shown` answer different questions, and
+only the second one knows about your siblings.**
+
+**6. Everything else in the four remaining briefs held, and two claims held that were worth
+re-checking.** L5-M6's forty-one named surfaces were all still `free`, `par exemple` included; its
+outline finding held (`d'abord  L2-M10`, `ensuite  L2-M10`, `enfin  L2-M10`); and its inversion
+finding held in full —
+
+```
+que pensez-vous	free   [parts: pensez → L1-M9, vous → L1-M2]
+avez-vous	free   [parts: avez → L1-M5, vous → L1-M2]
+n'est-ce pas	free   [parts: n'est → L2-M7, ce → L2-M1]
+puis-je	free   [parts: puis → L1-M10, je → L1-M1]
+```
+
+— every hyphen part owned, so an inverted question strands no bare word. L5-M7's seam held entirely,
+and one detail is worth adding to it: the brief records `aurais → L4-M3`, and the ELIDED `n'aurais`
+is L4-M3's too, which is why `tu n'aurais pas` is a purchase of the whole key and of nothing under
+it. L5-M9's seam held, `dit  L2-M6` included, and `pris  L2-M10` besides — so `prit` needed a row of
+its own while the spoken `il a pris` needed nothing at all.
+
+**7. Three surfaces were contested INSIDE this wave and had to be allocated by hand.** `cela dit` is
+offered by both L5-M7's and L5-M10's briefs; it went to L5-M7. `voilà` is offered by both L5-M9's and
+L5-M10's; it went to L5-M9. `en résumé` sits on L5-M6's `en conclusion` row, so L5-M9's `version` row
+takes only the bare noun `résumé`. Nothing was taught twice and no module re-opened another's key.
+
+**8. `content:shown` caught what reasoning missed, six times, and every one was in a `variation`.**
+`l'envoie` and `dérangerait` in L5-M7, `vend`, `quoi` and `s'écrit` in L5-M8, `ils`/`rois` in L5-M9.
+Variations are scanned exactly as displays are and are the easiest place in a module to leak an
+untaught surface, because they are written last and read least. Two were fixed by adding the elided
+form to the row that already owned the phrase, three by changing the variation, and one — `quoi` —
+by opening a row that turned out to be worth having on its own (`ça veut dire quoi ?`,
+`ça sert à quoi ?`, the question word speech leaves at the end).
+
+### The ratchet
+
+`npx vitest run tools/shown-surfaces.test.ts` → **11/11**, with `en-fr` holding at its baseline of
+**20**. No baseline was lowered and none was raised. `npm run content:validate` → **`CONTENT n/n
+ok`**, every module passing (the total climbed from 443 to 448 across this wave's runs as the
+sibling courses landed theirs, which is why the figure is not quoted as a number here).
+`npm run content:shown -- en-fr <module>` prints `clean — every shown surface resolves` for all
+five, with **no RE-TEACH lines at all** — which is a first for this course at L5, and is the direct
+result of finding out that `content:owner` could already see waves 1 and 2.
+
+`npx vitest run src/course/types.test.ts` is red only on CENSUS assertions — the module-file list and
+the per-course counts for `en-ar` and `hi-en` — none of which are en-fr's, all of which are the
+parent's to reconcile, and all of which moved between this wave's first and last run as the sibling
+waves landed. Every language law in that file passes, `keeps en-fr to the decisions its briefs
+settled: straight apostrophes, vous (#327)` included: straight apostrophes throughout, no `glossEn`
+anywhere, and the L1-scoped `tu` ban untouched by a level that spends four sentences in `tu` on
+purpose.
+
+### Open questions for the native pass
+
+141. **`or` as a written-only pivot** (M6). Rule 2 and S08 give it as the turn word an argument uses,
+     and the module places it only in writing-shaped sentences. Confirm that a French speaker uses
+     `or` in speech at all, and if so in what kind of speech — a seminar, an argument in a kitchen,
+     neither.
+
+142. **`quoique` and `bien que` as genuinely interchangeable** (M6). S05's second variation swaps one
+     for the other and claims the swap "changes nothing at all". Confirm, and say whether `quoique`
+     carries any register or regional colour that `bien que` does not.
+
+143. **`d'une part` as a promise that must be kept** (M6). S01's trap says half the pair alone
+     "sounds like a sentence you abandoned". Confirm that a French speaker really would hear an
+     unanswered `d'une part` as incomplete, rather than as ordinary loose speech.
+
+144. **`en effet` as agreement rather than restatement** (M6). Rule 5 and S09 give it as *yes, and
+     here is why*. Confirm the boundary against `en fait` (L4-M4's) and say whether a learner who
+     uses `en effet` where `en fait` belongs sounds wrong or merely formal.
+
+145. **The claim that `pas mal` is praise rather than faint praise** (M7). S01's trap says answering
+     an idea with `c'est bien` can land flatter than `pas mal`. Confirm, and say whether that holds
+     for a colleague's work as well as for a friend's cooking.
+
+146. **`pas terrible` reversing, and how reliably** (M7). Rule 1 rests on `terrible` meaning *great*
+     in speech. Confirm that reading, and say whether `pas terrible` is ever heard with the literal
+     *not terrible* sense — for instance after someone has just said something was terrible.
+
+147. **`sérieux` as a sentence-final interjection** (M7). S02 puts it at the end as *honestly*.
+     Confirm the position, and say whether it reads as young — the module tags the sentence informal
+     but makes no age claim, and L5-M3 was careful to.
+
+148. **The answer to `ça ne te dérangerait pas` running backwards** (M7). S09's trap says the willing
+     answer is `non`. Confirm, and say what a French speaker actually says when they want to agree
+     warmly rather than merely say no.
+
+149. **`machin` and `truc` as equally ordinary** (M8). S04's row puts them on one note as
+     interchangeable masculines. Confirm, and say whether either is markedly more dismissive of the
+     object or of the listener.
+
+150. **`ça s'écrit comment ?` against `comment ça s'écrit ?`** (M8). S10 puts the question word at the
+     end and the trap calls that what speech does. Confirm, and say whether the fronted version is
+     merely more careful or actually more common in a shop or a doctor's waiting room.
+
+151. **`je me suis mal exprimé` as the everyday repair** (M8). S06 gives it as short and ordinary.
+     Confirm, and say whether it is heard between friends or only in settings where the speaker has
+     something to lose.
+
+152. **The passé simple forms chosen, and whether they are the right five** (M9). The module takes
+     `fut`, `eut`, `alla`, `prit` and `vint` plus the plurals. Confirm these are the five a learner
+     will actually meet first in a tale or a news column, and name any sixth that outranks one of
+     them.
+
+153. **`il dit` read as a past inside a tale** (M9). Rule 5 says the surroundings are the only signal.
+     Confirm that a French reader resolves it without effort, and say whether a learner who reads it
+     as a present loses anything a native would notice.
+
+154. **`et là` licensing the historic present** (M9). Rule 4 and S07's second variation give it as the
+     marker that changes lane. Confirm, and say whether `et là` is compatible with a passé composé
+     clause in the same breath, which S07's main display assumes it is.
+
+155. **`ma version` as an ordinary sign-off for a retelling** (M9). S10 closes the module on it.
+     Confirm that a French speaker would end a retelling this way rather than with something like
+     `voilà, c'est à peu près ça`.
+
+156. **The whole of M10's turn, judged as one piece.** Ten sentences, one speaker, `vous` to `tu` at
+     S06. Confirm that the motivation in S03 and S05 is enough to make the offer plausible, that the
+     four familiar sentences really do read as one register rather than as a formal speaker using
+     familiar words, and — the question this course cannot answer for itself — whether a piece with
+     the `ne` written throughout can be heard as familiar French at all, or whether rule 4's
+     admission is in fact an admission that the second half is unachievable in writing.
+
+157. **`chef` as the neutral word for a boss** (M10). S08's row gives it for the head of anything and
+     puts L3-M2's `patron` aside as the owner. Confirm, and say whether `chef` said about your own
+     manager to a near-stranger is as unremarkable as the module assumes.
+
+158. **`à plus` with the `s` sounded** (M10). S10's `sound` line claims the `s` is pronounced in the
+     goodbye and nowhere else `plus` appears. Confirm — this is the one purely phonetic claim in the
+     wave and the course has no audio to check it against.
