@@ -118,7 +118,64 @@ row lists both shapes in `forms`**, and a row for an `al-`'d form of an L1 word 
 module that first shows it. L1 set the pattern (`al-qahwa` with `qahwa` in its `forms`) and this
 wave is where the pattern had to become a discipline. No baseline moved; en-ar stays at 6.
 
+## Wave 3 — L2-M6…L2-M10 (#454) — the level closes
+
+The last five rungs take en-ar to twenty modules. The level's `draft` flag comes off in the same
+change.
+
+### L2-M6 "Making plans together"
+
+S01 opens the module without one new word: `hal turīd an nadhhab…?` is `hal` from L1-M2, `an` from
+L1-M3 and `nadhhab` from L1-M4, and the invitation is the rearrangement. S02's `limādhā lā` is
+L1-M9's question word doing a job it has never done. The clock is where the spend goes, and it is
+also the course's densest run of sun letters — `as-sāʿa`, `ath-thāniya`, `an-niṣf`, `ar-rubʿ`,
+`as-sabt` — with rule 3 saying plainly that the assimilation is spelling and not just sound,
+because the build reads `al-thāniya` and `ath-thāniya` as different words.
+
+`ar-rābiʿa` and `ar-rubʿ` share a root (S05), and the note says so: four, fourth and quarter are
+one family. That is Arabic being easy for once, and the module says so rather than letting it pass.
+
+### L2-M7 "On the phone"
+
+`man` against `min` (S01) is the sentence the romanization's short-vowel rule was written for, and
+the trap says as much. `laysa` enters in the third person only (S03, S04), which is the one L1
+prohibition this level lifts — and S04 is worth noticing because the Arabic line DOES distinguish
+`laysa` from `laysat`, where M1's `samaḥta`/`samaḥti` it does not. The two lines part company
+selectively, and this module shows both halves of that.
+
+### L2-M8 "When something goes wrong"
+
+`ʿind-` gets the slogan refused again in a rule, and S01's trap is where the payoff lands: there
+is nothing here that conjugates, and the past is `kāna ʿindī`. S07 introduces verb-first order
+early — `ḍāʿa al-miftāḥ`, the key loses itself — and its mistake block explains why the
+subject-first version is grammatical and wrong for the job, which is what M10 makes a rule of.
+
+### L2-M9 "Comparing and choosing"
+
+The comparative does not bend, and S01's second variation is the sentence that proves it: two
+feminine nouns and `akbar` unmoved. `min` does its third job (S02) on L1-M1's row, and this module
+opens nothing for it — the chain from `min` (origin) through `min faḍlika` (indexed whole to
+protect it) to `min` (than) is now complete.
+
+S10 is the module's own test of rule 3: `al-aḥmar` and `aṣghar` in one sentence, same pattern,
+different jobs.
+
+### L2-M10 "Telling what happened"
+
+Verb-first agreement is the module's law and S03 is built to teach it: `dhahaba al-awlād` singular
+before the subject, `akalū` and `rajaʿū` plural after it, in the same account about the same
+children. Its two variations put the halves side by side. S09 adds the qualification that matters:
+GENDER still agrees when number does not — `dhahabat ummī` — so the position rule suspends the
+plural alone.
+
+**A self-caught brief violation.** M10's first draft used `lam` twice (`lam ajidhu`, `lam
+adhhab`), and `docs/54` bans `lam` for this level. Both sentences were rewritten rather than the
+ban quietly relaxed: S04's third clause became `kāna fī as-sūq` and S05's became `kuntu fī
+al-bayt`. The ratchet is what surfaced it — `lam` appeared as an untaught surface — which is a
+second job the rule turns out to do.
+
 ### Open questions for the native pass
+
 
 
 1. **`law samaḥta` against `min faḍlika`.** The module treats them as interchangeable softeners
@@ -152,3 +209,22 @@ wave is where the pattern had to become a discipline. No baseline moved; en-ar s
 13. **`alḥamdu lillāh` as the default answer** (M5-S09). Authored as the commonest reply to
     `kayfa ḥāluka`. Confirm it has not been displaced by `bi-khayr` in everyday speech, which is
     what L1-M2 teaches.
+14. **`limādhā lā nadhhab`** (M6-S02). Authored as an invitation. Confirm it does not read as a
+    genuine complaint about why the group has not gone.
+15. **The ordinal clock** (M6-S03…S05). `as-sāʿa al-khāmisa` is given as the everyday way to tell
+    the time. Confirm the ordinal rather than the cardinal is what people actually say, and that
+    `wa an-niṣf` is not now `wa nuṣṣ` in speech everywhere.
+16. **`ālū`** (M7-S01). Written in `display` as the standard phone opening, on the grounds that it
+    has no MSA rival anybody uses. Confirm this is right, and that `naʿam` or the answerer's name
+    is not commoner.
+17. **`laysa mawjūd` without the accusative** (M7-S03). The course drops case endings, so `laysa`
+    is followed by an unmarked predicate where formal MSA would write `mawjūdan`. Confirm this
+    reads as spoken-simple rather than as an error.
+18. **`ḍāʿa al-miftāḥ`** (M8-S07). Authored as the way to report a loss without blaming anyone.
+    Confirm `aḍaʿtu al-miftāḥ` is not what a speaker would actually say about their own key.
+19. **`qāla ṣadīqī:` with a colon** (M10-S06). Reported speech is deferred, so the quotation is
+    punctuated rather than grammaticalised. Confirm the colon is idiomatic in written MSA and does
+    not look like a translation artefact.
+20. **`kāna al-jaww bārid`** (M10-S01) and the other `kāna` predicates. Written without the
+    accusative `-an` throughout, per the course's rule. This is the single decision a native
+    reader is most likely to flag, and it is deliberate.

@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": [
+    "L2-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present",
+      "past",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "ʿindī mushkila fī + al- + N",
+      "hādhā lā yaʿmal",
+      "sāʿidnī min faḍlika",
+      "aḥtāj ilā + N",
+      "ʿafwan + , + hunāka mushkila fī + al- + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "\"ʿindī means I have\" is memorable and leaves you unable to explain ʿindahā, or the past kāna ʿindī, or why there is no verb to conjugate. The law: ʿind- is a PREPOSITION meaning \"at\", and Arabic expresses having by locating a thing at a person."
+    },
+    {
+      "tag": "free",
+      "text": "Negating a verb is lā, exactly as M3 of the level below taught: hādhā lā yaʿmal. laysa, which M7 opened, is for a sentence with no verb, and this module names it and does not use it."
+    },
+    {
+      "tag": "delta",
+      "text": "aḥtāj takes ilā before what is needed: aḥtāj ilā musāʿada. A bare object after it is the English shape and it is wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "An imperative can carry its object: sāʿidnī is \"help me\" in one word, built like M1's aʿṭinī. The -nī is the same \"me\" in both."
+    },
+    {
+      "tag": "interference",
+      "text": "Arabic complains through the frame, not through volume: ʿafwan, hunāka mushkila… An unframed statement of the fault is an accusation, and framing it costs two words."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "ʿindī mushkila fī al-bayt",
+      "script": "عندي مشكلة في البيت",
+      "cue": "I have a problem at home",
+      "literal": "At-me problem in the-house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mushkila",
+            "script": "مشكلة",
+            "cue": "problem",
+            "tag": "free",
+            "forms": [
+              "mushkila",
+              "al-mushkila"
+            ],
+            "note": "Feminine, and indefinite here because the problem is news. With al- it becomes the problem you were already discussing."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "ʿindī is not a verb, and this is the sentence to notice it in: there is nothing here that conjugates, and the past would be kāna ʿindī with kāna doing all the work.",
+      "sound": "MUSH-ki-la, three short syllables with the stress at the front.",
+      "variations": [
+        {
+          "display": "ʿindī mushkila fī as-sayyāra",
+          "script": "عندي مشكلة في السيارة",
+          "cue": "I have a problem with the car",
+          "changed": "fī naming what the problem is with"
+        },
+        {
+          "display": "ʿindahā mushkila kabīra",
+          "script": "عندها مشكلة كبيرة",
+          "cue": "She has a big problem",
+          "changed": "M2's suffix, and an adjective after the noun"
+        },
+        {
+          "display": "kāna ʿindī mushkila ams",
+          "script": "كان عندي مشكلة أمس",
+          "cue": "I had a problem yesterday",
+          "changed": "kāna carrying the past, since ʿind- cannot"
+        }
+      ],
+      "mistake": {
+        "display": "anā ʿindī mushkila fī al-bayt",
+        "script": "أنا عندي مشكلة في البيت",
+        "why": "The suffix already says who. anā in front is the English shape and reads as insistence."
+      },
+      "usage": "Opening a complaint about a thing rather than a person, which is the polite order.",
+      "register": "neutral",
+      "mnemonic": "The problem is AT you, not owned by you."
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "hādhā lā yaʿmal",
+      "script": "هذا لا يعمل",
+      "cue": "This doesn't work",
+      "literal": "This not it-works",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaʿmal",
+            "script": "يعمل",
+            "cue": "it works · he works",
+            "tag": "free",
+            "forms": [
+              "yaʿmal",
+              "taʿmal"
+            ],
+            "note": "Built on the same three letters as M4's al-ʿamal, \"work\", from the level below. Of a machine it means functions; of a person, is employed."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "lā, not laysa. There is a verb here, so the ordinary negative does the job — and M7's laysa is only for sentences without one.",
+      "sound": "YAʿ-mal, with the ʿayn tightening the throat after the first vowel.",
+      "variations": [
+        {
+          "display": "al-hātif lā yaʿmal",
+          "script": "الهاتف لا يعمل",
+          "cue": "The phone doesn't work",
+          "changed": "the thing named instead of pointed at"
+        },
+        {
+          "display": "hādhihi lā taʿmal",
+          "script": "هذه لا تعمل",
+          "cue": "This one doesn't work",
+          "changed": "a feminine thing, so the verb takes ta-"
+        },
+        {
+          "display": "as-sayyāra lā taʿmal al-yawm",
+          "script": "السيارة لا تعمل اليوم",
+          "cue": "The car isn't working today",
+          "changed": "a feminine noun, and a time"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā laysa yaʿmal",
+        "script": "هذا ليس يعمل",
+        "why": "laysa negates a sentence with no verb. Here there is one, so it is lā yaʿmal."
+      },
+      "usage": "Reporting a fault. On its own it is flat, and S05 shows how to soften it.",
+      "register": "neutral",
+      "mnemonic": "A verb takes lā; a sentence without one takes laysa."
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "sāʿidnī min faḍlika",
+      "script": "ساعدني من فضلك",
+      "cue": "Help me, please",
+      "literal": "Help(you-m)-me from your-favour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sāʿidnī",
+            "script": "ساعدني",
+            "cue": "help me (to a man)",
+            "tag": "delta",
+            "forms": [
+              "sāʿidnī",
+              "sāʿidīnī"
+            ],
+            "note": "An imperative with -nī glued on, built exactly like M1's aʿṭinī. The feminine adds -ī before the -nī: sāʿidīnī."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "One word for two English ones, and the object is inside it. Arabic never lets a pronoun stand loose after a verb.",
+      "sound": "SĀ-ʿid-nī, with the ʿayn in the middle and the stress at the front.",
+      "variations": [
+        {
+          "display": "sāʿidīnī min faḍliki",
+          "script": "ساعديني من فضلك",
+          "cue": "Help me, please (to a woman)",
+          "changed": "the feminine, which the script shows"
+        },
+        {
+          "display": "sāʿidnī, law samaḥta",
+          "script": "ساعدني، لو سمحت",
+          "cue": "Help me, please",
+          "changed": "M1's other softener"
+        },
+        {
+          "display": "hal yumkinuka an tusāʿidanī?",
+          "script": "هل يمكنك أن تساعدني؟",
+          "cue": "Could you help me?",
+          "changed": "M1's softest frame, which is what to use with a stranger"
+        }
+      ],
+      "mistake": {
+        "display": "sāʿid nī min faḍlika",
+        "script": "ساعد ني من فضلك",
+        "why": "The pronoun is part of the word: sāʿidnī."
+      },
+      "usage": "Direct, and softened by min faḍlika. With someone you have not spoken to, the third variation is better.",
+      "register": "neutral",
+      "mnemonic": "The me is inside the verb."
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "aḥtāj ilā musāʿada",
+      "script": "أحتاج إلى مساعدة",
+      "cue": "I need help",
+      "literal": "I-need to help",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aḥtāj",
+            "script": "أحتاج",
+            "cue": "I need",
+            "tag": "delta",
+            "forms": [
+              "aḥtāj",
+              "taḥtāj"
+            ],
+            "note": "Takes ilā before what is needed, which English does not lead you to expect. It is stronger than urīd: a want against a need."
+          },
+          {
+            "display": "musāʿada",
+            "script": "مساعدة",
+            "cue": "help",
+            "tag": "free",
+            "forms": [
+              "musāʿada",
+              "al-musāʿada"
+            ],
+            "note": "The noun from the same three letters as sāʿidnī. Seeing the pair side by side is worth more than learning either alone."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "aḥtāj māʾ is not Arabic. The verb reaches its object through ilā, and dropping it is the English shape.",
+      "sound": "aḥ-TĀJ, with the ḥ deep and the stress on the long ā.",
+      "variations": [
+        {
+          "display": "aḥtāj ilā miftāḥ",
+          "script": "أحتاج إلى مفتاح",
+          "cue": "I need a key",
+          "changed": "a thing rather than help"
+        },
+        {
+          "display": "hal taḥtāj ilā musāʿada?",
+          "script": "هل تحتاج إلى مساعدة؟",
+          "cue": "Do you need help?",
+          "changed": "offered rather than asked for"
+        },
+        {
+          "display": "aḥtāj ilā al-musāʿada al-ān",
+          "script": "أحتاج إلى المساعدة الآن",
+          "cue": "I need the help now",
+          "changed": "with al-, so it is the help already offered"
+        }
+      ],
+      "mistake": {
+        "display": "aḥtāj musāʿada",
+        "script": "أحتاج مساعدة",
+        "why": "aḥtāj takes ilā: aḥtāj ilā musāʿada."
+      },
+      "usage": "Stronger than urīd, and used when something has actually gone wrong.",
+      "register": "neutral",
+      "mnemonic": "Need reaches through ilā."
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "ʿindī ṣudāʿ al-yawm",
+      "script": "عندي صداع اليوم",
+      "cue": "I have a headache today",
+      "literal": "At-me headache the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṣudāʿ",
+            "script": "صداع",
+            "cue": "headache",
+            "tag": "free",
+            "forms": [
+              "ṣudāʿ",
+              "aṣ-ṣudāʿ"
+            ],
+            "note": "One word for the whole thing, where English needs two. ṣ is emphatic and s is a sun letter, so al- would assimilate: aṣ-ṣudāʿ."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The same ʿind- frame does a problem, a car and a headache. Arabic locates all three at the person, which is why one frame covers them.",
+      "sound": "ṣu-DĀʿ, with the ṣ emphatic and a catch of the throat at the very end.",
+      "variations": [
+        {
+          "display": "ʿindahā ṣudāʿ al-yawm",
+          "script": "عندها صداع اليوم",
+          "cue": "She has a headache today",
+          "changed": "M2's suffix"
+        },
+        {
+          "display": "kāna ʿindī ṣudāʿ ams",
+          "script": "كان عندي صداع أمس",
+          "cue": "I had a headache yesterday",
+          "changed": "kāna carrying the past"
+        },
+        {
+          "display": "ʿindī ṣudāʿ, aḥtāj ilā musāʿada",
+          "script": "عندي صداع، أحتاج إلى مساعدة",
+          "cue": "I have a headache, I need help",
+          "changed": "the complaint and the request together"
+        }
+      ],
+      "mistake": {
+        "display": "anā ṣudāʿ al-yawm",
+        "script": "أنا صداع اليوم",
+        "why": "That says you ARE a headache. It is a noun, and Arabic locates it at you: ʿindī ṣudāʿ."
+      },
+      "usage": "At a pharmacy, at a desk, to a friend. The same frame as every other complaint in the module.",
+      "register": "neutral",
+      "mnemonic": "One frame for every kind of trouble."
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "nasītu al-miftāḥ fī al-bayt",
+      "script": "نسيت المفتاح في البيت",
+      "cue": "I forgot the key at home",
+      "literal": "I-forgot the-key in the-house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nasītu",
+            "script": "نسيت",
+            "cue": "I forgot",
+            "tag": "delta",
+            "forms": [
+              "nasītu",
+              "nasīta",
+              "nasiya"
+            ],
+            "note": "The perfect with -tu, \"I\", written in full as the course's romanization requires. The Arabic line is نسيت for nasītu and nasīta alike."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "Another place where the two lines carry different information: نسيت is I forgot, you forgot and she forgot. Only the romanization says which.",
+      "sound": "na-SĪ-tu, with the stress on the long ī.",
+      "variations": [
+        {
+          "display": "nasītu ar-risāla fī al-bayt",
+          "script": "نسيت الرسالة في البيت",
+          "cue": "I forgot the letter at home",
+          "changed": "M7's risāla as the object"
+        },
+        {
+          "display": "nasītu raqm al-hātif",
+          "script": "نسيت رقم الهاتف",
+          "cue": "I forgot the phone number",
+          "changed": "M7's two-noun possession as the object"
+        },
+        {
+          "display": "hal nasīta al-miftāḥ?",
+          "script": "هل نسيت المفتاح؟",
+          "cue": "Did you forget the key?",
+          "changed": "the you-form, which the Arabic line spells identically"
+        }
+      ],
+      "mistake": {
+        "display": "nasī al-miftāḥ fī al-bayt",
+        "script": "نسي المفتاح في البيت",
+        "why": "The person-suffix carries the person and is never dropped: nasītu for I."
+      },
+      "usage": "The commonest small disaster there is, and the past tense here is L1-M5's doing exactly its job.",
+      "register": "neutral",
+      "mnemonic": "The suffix is the person, and the script does not show it."
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "ḍāʿa al-miftāḥ fī as-sūq",
+      "script": "ضاع المفتاح في السوق",
+      "cue": "The key got lost in the market",
+      "literal": "Got-lost the-key in the-market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḍāʿa",
+            "script": "ضاع",
+            "cue": "got lost",
+            "tag": "delta",
+            "forms": [
+              "ḍāʿa",
+              "ḍāʿat"
+            ],
+            "note": "The thing does the losing, not the person: ḍāʿa al-miftāḥ. Arabic has no comfortable way to say \"I lost it\" that puts the blame on you."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "The verb comes FIRST and the key is its subject. That word order is ordinary in Arabic and impossible in English, and M10 makes a rule of it.",
+      "sound": "ḌĀ-ʿa, with the ḍ emphatic and the ʿayn closing it.",
+      "variations": [
+        {
+          "display": "ḍāʿat ar-risāla",
+          "script": "ضاعت الرسالة",
+          "cue": "The letter got lost",
+          "changed": "a feminine subject, so the verb takes -at"
+        },
+        {
+          "display": "ḍāʿa al-miftāḥ, aḥtāj ilā musāʿada",
+          "script": "ضاع المفتاح، أحتاج إلى مساعدة",
+          "cue": "The key got lost, I need help",
+          "changed": "the problem and the request together"
+        },
+        {
+          "display": "hal ḍāʿa al-miftāḥ?",
+          "script": "هل ضاع المفتاح؟",
+          "cue": "Did the key get lost?",
+          "changed": "asked, with hal in front and the verb still first"
+        }
+      ],
+      "mistake": {
+        "display": "al-miftāḥ ḍāʿa fī as-sūq",
+        "script": "المفتاح ضاع في السوق",
+        "why": "That is grammatical and puts the emphasis on the key rather than on what happened. Verb first is the neutral order, and M10 states the rule."
+      },
+      "usage": "Reporting a loss without accusing anybody, including yourself.",
+      "register": "neutral",
+      "mnemonic": "In Arabic the key loses itself."
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "ʿafwan, hunāka mushkila fī al-ḥisāb",
+      "script": "عفوا، هناك مشكلة في الحساب",
+      "cue": "Excuse me, there's a problem with the bill",
+      "literal": "Pardon, there problem in the-bill",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hunāka",
+            "script": "هناك",
+            "cue": "there is",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's row from the level below, announcing rather than pointing — the same second job M4 of this level gave it."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Three softeners before the fault is named: ʿafwan, hunāka rather than a direct accusation, and mushkila rather than the thing that is wrong. That is how Arabic complains.",
+      "sound": "ʿAF-wan, and hu-NĀ-ka, both from the level below.",
+      "variations": [
+        {
+          "display": "ʿafwan, hunāka mushkila fī al-ḥisāb, min faḍlika",
+          "script": "عفوا، هناك مشكلة في الحساب، من فضلك",
+          "cue": "Excuse me, there's a problem with the bill, please",
+          "changed": "one softener more, which is not too many"
+        },
+        {
+          "display": "hunāka mushkila fī as-sayyāra",
+          "script": "هناك مشكلة في السيارة",
+          "cue": "There's a problem with the car",
+          "changed": "a different thing at fault"
+        },
+        {
+          "display": "law samaḥta, hunāka mushkila",
+          "script": "لو سمحت، هناك مشكلة",
+          "cue": "Excuse me, there's a problem",
+          "changed": "M1's other opener, and the fault unnamed"
+        }
+      ],
+      "mistake": {
+        "display": "al-ḥisāb khaṭaʾ",
+        "script": "الحساب خطأ",
+        "why": "Naming the fault flatly is an accusation. The frame is what makes it a complaint someone can act on."
+      },
+      "usage": "At a till, a counter or a table. The complaint is about the bill and not about whoever wrote it, and Arabic keeps it that way.",
+      "register": "formal",
+      "mnemonic": "Frame first, fault second."
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "lā astaṭīʿ an adhhab al-yawm",
+      "script": "لا أستطيع أن أذهب اليوم",
+      "cue": "I can't go today",
+      "literal": "Not I-am-able that I-go the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "astaṭīʿ",
+            "script": "أستطيع",
+            "cue": "I am able",
+            "tag": "free",
+            "forms": [
+              "astaṭīʿ",
+              "tastaṭīʿ"
+            ],
+            "note": "The verb for being able, and it takes an before the second verb like every other one in this course. M1's yumkinuka is the impersonal way to say the same thing."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "lā astaṭīʿ is about ability and yumkinuka is about possibility. English's \"can\" covers both, and Arabic keeps them in different sentences.",
+      "sound": "as-ta-ṬĪʿ, with the ṭ emphatic and the ʿayn closing the word.",
+      "variations": [
+        {
+          "display": "lā astaṭīʿ an adhhab ghadan",
+          "script": "لا أستطيع أن أذهب غدا",
+          "cue": "I can't go tomorrow",
+          "changed": "a different day"
+        },
+        {
+          "display": "hal tastaṭīʿ an tusāʿidanī?",
+          "script": "هل تستطيع أن تساعدني؟",
+          "cue": "Are you able to help me?",
+          "changed": "asked of someone else, with S10's verb"
+        },
+        {
+          "display": "āsif, lā astaṭīʿ",
+          "script": "آسف، لا أستطيع",
+          "cue": "Sorry, I can't",
+          "changed": "M1's apology, and the second verb left off"
+        }
+      ],
+      "mistake": {
+        "display": "lā astaṭīʿ adhhab al-yawm",
+        "script": "لا أستطيع أذهب اليوم",
+        "why": "an is obligatory between two verbs, for the fourth time in this level."
+      },
+      "usage": "Refusing something you have been asked to do. The apology in the third variation is what makes it warm.",
+      "register": "neutral",
+      "mnemonic": "Able is a verb; possible is a frame."
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "hal yumkinuka an tusāʿidanī?",
+      "script": "هل يمكنك أن تساعدني؟",
+      "cue": "Could you help me?",
+      "literal": "Question is-possible-for-you that you-help-me?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tusāʿidanī",
+            "script": "تساعدني",
+            "cue": "you help me",
+            "tag": "delta",
+            "forms": [
+              "tusāʿidanī",
+              "tusāʿida"
+            ],
+            "note": "The ta- form of the verb behind S03's sāʿidnī, with the same -nī glued on the end. One word carrying a subject, a verb and an object."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The whole request is M1's frame with this module's verb in it. Nothing about the politeness is new, which is what a last rung should show.",
+      "sound": "tu-SĀ-ʿi-da-nī, five syllables, and every one of them said.",
+      "variations": [
+        {
+          "display": "hal yumkinuki an tusāʿidanī?",
+          "script": "هل يمكنك أن تساعديني؟",
+          "cue": "Could you help me? (to a woman)",
+          "changed": "the feminine, and this time the verb shows it in the script"
+        },
+        {
+          "display": "hal yumkinuka an tusāʿida ṣadīqī?",
+          "script": "هل يمكنك أن تساعد صديقي؟",
+          "cue": "Could you help my friend?",
+          "changed": "someone else helped, so the -nī comes off"
+        },
+        {
+          "display": "sāʿidnī min faḍlika",
+          "script": "ساعدني من فضلك",
+          "cue": "Help me, please",
+          "changed": "the blunter version, from S03"
+        }
+      ],
+      "mistake": {
+        "display": "hal yumkinuka an tusāʿid nī?",
+        "script": "هل يمكنك أن تساعد ني؟",
+        "why": "The -nī glues on: tusāʿidanī. It has done so in every sentence of this course that has one."
+      },
+      "usage": "The politest request in the module, and the one to use with a stranger. S03 is what you say to a friend.",
+      "register": "formal",
+      "mnemonic": "Subject, verb and object in one word."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M8-C01",
+      "display": "ʿindī mushkila fī al-bayt",
+      "script": "عندي مشكلة في البيت",
+      "cue": "I have a problem at home"
+    },
+    {
+      "id": "L2-M8-C02",
+      "display": "hādhā lā yaʿmal",
+      "script": "هذا لا يعمل",
+      "cue": "This doesn't work"
+    },
+    {
+      "id": "L2-M8-C03",
+      "display": "sāʿidnī min faḍlika",
+      "script": "ساعدني من فضلك",
+      "cue": "Help me, please"
+    },
+    {
+      "id": "L2-M8-C04",
+      "display": "aḥtāj ilā musāʿada",
+      "script": "أحتاج إلى مساعدة",
+      "cue": "I need help"
+    },
+    {
+      "id": "L2-M8-C05",
+      "display": "ʿindī ṣudāʿ al-yawm",
+      "script": "عندي صداع اليوم",
+      "cue": "I have a headache today"
+    },
+    {
+      "id": "L2-M8-C06",
+      "display": "nasītu al-miftāḥ fī al-bayt",
+      "script": "نسيت المفتاح في البيت",
+      "cue": "I forgot the key at home"
+    },
+    {
+      "id": "L2-M8-C07",
+      "display": "ḍāʿa al-miftāḥ fī as-sūq",
+      "script": "ضاع المفتاح في السوق",
+      "cue": "The key got lost in the market"
+    },
+    {
+      "id": "L2-M8-C08",
+      "display": "ʿafwan, hunāka mushkila fī al-ḥisāb",
+      "script": "عفوا، هناك مشكلة في الحساب",
+      "cue": "Excuse me, there's a problem with the bill"
+    },
+    {
+      "id": "L2-M8-C09",
+      "display": "lā astaṭīʿ an adhhab al-yawm",
+      "script": "لا أستطيع أن أذهب اليوم",
+      "cue": "I can't go today"
+    },
+    {
+      "id": "L2-M8-C10",
+      "display": "hal yumkinuka an tusāʿidanī?",
+      "script": "هل يمكنك أن تساعدني؟",
+      "cue": "Could you help me?"
+    },
+    {
+      "id": "L2-M8-C11",
+      "display": "al-hātif lā yaʿmal",
+      "script": "الهاتف لا يعمل",
+      "cue": "The phone doesn't work"
+    },
+    {
+      "id": "L2-M8-C12",
+      "display": "kāna ʿindī ṣudāʿ ams",
+      "script": "كان عندي صداع أمس",
+      "cue": "I had a headache yesterday"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
