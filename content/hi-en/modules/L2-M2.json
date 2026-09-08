@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": [
+    "L2-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "<person> + is + Adj",
+      "<person> + 's got + <feature>",
+      "My + N + is + Adj",
+      "<person>'s + N + is + <name>",
+      "a + Adj + Adj + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "अंग्रेज़ी के विशेषण कभी नहीं बदलते. लंबा · लंबी · लंबे हिंदी में तीन रूप हैं; अंग्रेज़ी में एक ही tall — a tall man, a tall woman, tall women. दो स्तर की आदत छोड़नी है: लिंग और वचन, दोनों."
+    },
+    {
+      "tag": "delta",
+      "text": "विशेषण संज्ञा के आगे आता है और कभी पीछे नहीं: a tall man. हिंदी भी यही करती है, इसलिए यह आसान हिस्सा है — मुश्किल सिर्फ़ यह है कि रूप नहीं बदलता."
+    },
+    {
+      "tag": "interference",
+      "text": "have, know, like, want जैसी क्रियाएँ -ing नहीं लेतीं. He is having brown eyes ग़लत है — He's got brown eyes या He has brown eyes सही. भारतीय अंग्रेज़ी में यह आम है, पर बाहर नहीं चलता."
+    },
+    {
+      "tag": "delta",
+      "text": "किसी का कुछ बताने के लिए नाम के पीछे 's लगता है: my brother's name. यह एक नया शब्द बनाता है — brother और brother's अलग-अलग हैं — और हिंदी का का/की/के यहाँ पीछे नहीं, आगे वाले शब्द पर बैठता है."
+    },
+    {
+      "tag": "interference",
+      "text": "अंग्रेज़ी रिश्तों में हिंदी से ग़रीब है. cousin एक ही शब्द है चचेरे, ममेरे, फुफेरे और मौसेरे सबके लिए; uncle और aunt चार-चार हिंदी शब्दों को समेटते हैं; brother में बड़ा-छोटा नहीं है, इसलिए बड़ा भाई के लिए older brother कहना पड़ता है."
+    },
+    {
+      "tag": "free",
+      "text": "has got और 's got एक ही बात हैं, और बोलचाल में हमेशा छोटा रूप. M10 ने he's got और she's got सिखा दिए थे; यहाँ वही काम कर रहे हैं."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "My brother is tall",
+      "cue": "मेरा भाई लंबा है",
+      "literal": "मेरा भाई है लंबा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tall",
+            "cue": "लंबा · लंबी · लंबे",
+            "tag": "interference",
+            "forms": [
+              "taller",
+              "tallest"
+            ],
+            "note": "एक ही रूप, हमेशा. हिंदी के तीन रूपों की जगह अंग्रेज़ी में सिर्फ़ tall — आदमी, औरत, कई लोग, सबके लिए वही."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "यहाँ कुछ बदलने को है ही नहीं, और यही मुश्किल है. दो स्तर की आदत — लिंग और वचन — एक साथ छोड़नी पड़ती है.",
+      "sound": "tall में a लंबा और गोल है — टॉल, टैल नहीं.",
+      "variations": [
+        {
+          "display": "My sister is tall",
+          "cue": "मेरी बहन लंबी है",
+          "changed": "बहन के लिए भी वही tall"
+        },
+        {
+          "display": "My brothers are tall",
+          "cue": "मेरे भाई लंबे हैं",
+          "changed": "बहुवचन में are, पर tall फिर भी वही"
+        },
+        {
+          "display": "My brother is not tall",
+          "cue": "मेरा भाई लंबा नहीं है",
+          "changed": "नकार, is के बाद not"
+        }
+      ],
+      "mistake": {
+        "display": "My sister is talli",
+        "why": "अंग्रेज़ी विशेषण में लिंग नहीं होता: My sister is tall."
+      },
+      "usage": "किसी का हुलिया बताना. अंग्रेज़ी में यह सामने खड़े आदमी के बारे में भी कहा जा सकता है.",
+      "register": "neutral",
+      "mnemonic": "हिंदी के तीन रूप, अंग्रेज़ी का एक."
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "She's got long hair",
+      "cue": "उसके बाल लंबे हैं",
+      "literal": "उसके-पास-है लंबे बाल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "long",
+            "cue": "लंबा (नाप में)",
+            "tag": "interference",
+            "forms": [],
+            "note": "नाप का लंबा — बाल, रास्ता, किताब. आदमी के क़द के लिए tall है, और दोनों को मिलाना सबसे आम ग़लती है."
+          },
+          {
+            "display": "hair",
+            "cue": "बाल",
+            "tag": "delta",
+            "forms": [],
+            "note": "सिर के सारे बालों के लिए एकवचन — long hair, कभी hairs नहीं. hairs का मतलब अलग-अलग गिरे हुए बाल होता है."
+          },
+          {
+            "display": "got",
+            "cue": "पास होना (has got में)",
+            "tag": "free",
+            "forms": [
+              "got",
+              "'s got",
+              "has got",
+              "have got"
+            ],
+            "note": "M10 के he's got और i've got का वही got, अब अलग से. has got और 's got एक ही बात हैं, और बोलचाल में हमेशा छोटा रूप."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "hair एकवचन है, और यही चौंकाता है: हिंदी बाल को बहुवचन मानती है, अंग्रेज़ी एक ढेर मानती है.",
+      "sound": "hair में h साफ़ बोला जाता है — हेअर, और आख़िर में हल्का र.",
+      "variations": [
+        {
+          "display": "He's got long hair",
+          "cue": "उसके बाल लंबे हैं",
+          "changed": "आदमी के लिए, और कुछ नहीं बदला"
+        },
+        {
+          "display": "My sister has got long hair",
+          "cue": "मेरी बहन के बाल लंबे हैं",
+          "changed": "पूरा रूप, नाम के साथ"
+        },
+        {
+          "display": "I have got long hair",
+          "cue": "मेरे बाल लंबे हैं",
+          "changed": "अपने बारे में, M10 का पूरा रूप"
+        }
+      ],
+      "mistake": {
+        "display": "She's got long hairs",
+        "why": "सिर के बाल हमेशा एकवचन: long hair. hairs का मतलब गिरे हुए अलग-अलग बाल है."
+      },
+      "usage": "हुलिया बताने का सबसे आम साँचा. is की जगह has got आता है, और यही अंग्रेज़ी की आदत है.",
+      "register": "neutral",
+      "mnemonic": "बाल एक ढेर हैं, गिनती नहीं."
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "He's got brown eyes",
+      "cue": "उसकी आँखें भूरी हैं",
+      "literal": "उसके-पास-हैं भूरी आँखें",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "brown",
+            "cue": "भूरा",
+            "tag": "free",
+            "forms": [],
+            "note": "रंग भी विशेषण हैं और वे भी नहीं बदलते: brown eyes, a brown book."
+          },
+          {
+            "display": "eyes",
+            "cue": "आँखें",
+            "tag": "free",
+            "forms": [
+              "eye",
+              "eyes"
+            ],
+            "note": "hair के उलट यह गिनने-लायक है, और आँखें दो होती हैं इसलिए लगभग हमेशा बहुवचन: brown eyes."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "hair एकवचन और eyes बहुवचन, एक ही तरह के वाक्य में. अंग्रेज़ी यहाँ कोई नियम नहीं दे रही — यह बस ऐसा ही है.",
+      "sound": "eyes में आख़िरी s की आवाज़ ज़ है — आइज़.",
+      "variations": [
+        {
+          "display": "She's got brown eyes",
+          "cue": "उसकी आँखें भूरी हैं",
+          "changed": "औरत के लिए, विशेषण वही"
+        },
+        {
+          "display": "He's got brown hair",
+          "cue": "उसके बाल भूरे हैं",
+          "changed": "बाल — और वह एकवचन है"
+        },
+        {
+          "display": "My sister has got brown eyes",
+          "cue": "मेरी बहन की आँखें भूरी हैं",
+          "changed": "पूरा रूप, नाम के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "He is having brown eyes",
+        "why": "have -ing नहीं लेती: He's got brown eyes या He has brown eyes."
+      },
+      "usage": "हुलिया. दूसरी variation दोनों नियम एक साथ दिखाती है — बाल एकवचन, आँखें बहुवचन.",
+      "register": "neutral",
+      "mnemonic": "आँखें गिनी जाती हैं, बाल नहीं."
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "My brother's name is Rohan",
+      "cue": "मेरे भाई का नाम रोहन है",
+      "literal": "मेरे भाई-का नाम है रोहन",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "brother's",
+            "cue": "भाई का",
+            "tag": "delta",
+            "forms": [],
+            "note": "brother के पीछे 's लगते ही यह एक नया शब्द बन जाता है, और अंग्रेज़ी इसे brother से अलग गिनती है — किसी भी संज्ञा के साथ यही निशान चलता है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "'s का एक और काम भी है — he's का मतलब he is या he has होता है (M6, M10). तीनों एक ही निशान हैं, और सिर्फ़ वाक्य बताता है कौन-सा.",
+      "sound": "brother's में आख़िरी आवाज़ ज़ है — ब्रदर्ज़.",
+      "variations": [
+        {
+          "display": "My brother's name is not Rohan",
+          "cue": "मेरे भाई का नाम रोहन नहीं है",
+          "changed": "नकार जोड़कर"
+        },
+        {
+          "display": "My brother's book is new",
+          "cue": "मेरे भाई की किताब नई है",
+          "changed": "नाम की जगह कोई चीज़ — निशान वही"
+        },
+        {
+          "display": "My brother's name is Rohan and he is tall",
+          "cue": "मेरे भाई का नाम रोहन है और वह लंबा है",
+          "changed": "दो बातें एक साथ"
+        }
+      ],
+      "mistake": {
+        "display": "My brother name is Rohan",
+        "why": "'s छूट गया. किसी का कुछ बताने के लिए brother's चाहिए."
+      },
+      "usage": "परिचय कराना. अंग्रेज़ी में यह हिंदी से छोटा पड़ता है, क्योंकि का का काम एक निशान कर देता है.",
+      "register": "neutral",
+      "mnemonic": "का पीछे चिपकता है, अलग नहीं खड़ा रहता."
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "My father is a teacher",
+      "cue": "मेरे पिता जी अध्यापक हैं",
+      "literal": "मेरा पिता है एक अध्यापक",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "father",
+            "cue": "पिता · अब्बा · पापा",
+            "tag": "free",
+            "forms": [
+              "father",
+              "fathers"
+            ],
+            "note": "औपचारिक शब्द. रोज़मर्रा में dad कहा जाता है, जैसे हिंदी में पापा."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "पेशे के आगे a ज़रूरी है — a teacher — भले हिंदी में कुछ न आता हो. यह M1 का नियम है, यहाँ फिर.",
+      "sound": "father में th की आवाज़ नरम है, द के पास — फ़ादर.",
+      "variations": [
+        {
+          "display": "My mother is a doctor",
+          "cue": "मेरी माँ डॉक्टर हैं",
+          "changed": "दूसरा रिश्ता और दूसरा पेशा"
+        },
+        {
+          "display": "My father is a doctor",
+          "cue": "मेरे पिता जी डॉक्टर हैं",
+          "changed": "दूसरा पेशा"
+        },
+        {
+          "display": "My father is very kind",
+          "cue": "मेरे पिता जी बहुत दयालु हैं",
+          "changed": "पेशे की जगह स्वभाव"
+        }
+      ],
+      "mistake": {
+        "display": "My father is teacher",
+        "why": "पेशे के आगे a आता है: My father is a teacher."
+      },
+      "usage": "अपने बारे में बताना. ध्यान दीजिए कि अंग्रेज़ी में teacher स्त्री और पुरुष दोनों के लिए एक ही है.",
+      "register": "neutral",
+      "mnemonic": "पेशा हमेशा a के साथ."
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "My mother is very kind",
+      "cue": "मेरी माँ बहुत दयालु हैं",
+      "literal": "मेरी माँ है बहुत दयालु",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mother",
+            "cue": "माँ · अम्मी · मम्मी",
+            "tag": "free",
+            "forms": [
+              "mother",
+              "mothers"
+            ],
+            "note": "औपचारिक शब्द; रोज़मर्रा में mum या mom. father की तरह ही."
+          },
+          {
+            "display": "kind",
+            "cue": "दयालु · नेक",
+            "tag": "free",
+            "forms": [],
+            "note": "स्वभाव का विशेषण, और यह भी नहीं बदलता. एक दूसरा kind भी है जिसका मतलब क़िस्म होता है — वाक्य बताता है कौन-सा."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "हिंदी में माँ के लिए बहुवचन आदर से लगता है — हैं. अंग्रेज़ी में आदर के लिए बहुवचन नहीं होता: is ही रहेगा.",
+      "sound": "kind में i लंबा है — काइंड.",
+      "variations": [
+        {
+          "display": "My father is very kind",
+          "cue": "मेरे पिता जी बहुत दयालु हैं",
+          "changed": "दूसरा रिश्ता"
+        },
+        {
+          "display": "My parents are very kind",
+          "cue": "मेरे माता-पिता बहुत दयालु हैं",
+          "changed": "बहुवचन, तो are"
+        },
+        {
+          "display": "She is not very kind",
+          "cue": "वह बहुत दयालु नहीं है",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "My mother are very kind",
+        "why": "एक व्यक्ति के लिए is. अंग्रेज़ी आदर के लिए बहुवचन नहीं करती."
+      },
+      "usage": "किसी का स्वभाव बताना. अंग्रेज़ी में यह तारीफ़ सबसे आम है.",
+      "register": "neutral",
+      "mnemonic": "आदर से क्रिया नहीं बदलती."
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "They are my parents",
+      "cue": "वे मेरे माता-पिता हैं",
+      "literal": "वे हैं मेरे माता-पिता",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parents",
+            "cue": "माता-पिता",
+            "tag": "delta",
+            "forms": [
+              "parent",
+              "parents"
+            ],
+            "note": "एक शब्द, दोनों के लिए, और लगभग हमेशा बहुवचन. हिंदी दो शब्द जोड़ती है; अंग्रेज़ी के पास एक ही है."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "parents को हिंदी की तरह दो हिस्सों में तोड़ा नहीं जा सकता. एक parent का मतलब माँ या पिता — कौन-सा, यह वाक्य नहीं बताता.",
+      "sound": "parents में पहला हिस्सा भारी है — पेअरन्ट्स.",
+      "variations": [
+        {
+          "display": "They are my sisters",
+          "cue": "वे मेरी बहनें हैं",
+          "changed": "बहनें, और parents की जगह"
+        },
+        {
+          "display": "My parents are very kind",
+          "cue": "मेरे माता-पिता बहुत दयालु हैं",
+          "changed": "स्वभाव, बहुवचन में"
+        },
+        {
+          "display": "They are my brothers",
+          "cue": "वे मेरे भाई हैं",
+          "changed": "दूसरा रिश्ता, बहुवचन में"
+        }
+      ],
+      "mistake": {
+        "display": "They are my parent",
+        "why": "माता-पिता दो हैं, इसलिए parents. एक parent का मतलब सिर्फ़ एक होता है."
+      },
+      "usage": "परिचय कराना. दूसरी variation ध्यान देने लायक है — बहुवचन पेशे के आगे a नहीं आता.",
+      "register": "neutral",
+      "mnemonic": "एक शब्द, दो लोग."
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "My sister is young",
+      "cue": "मेरी बहन छोटी है",
+      "literal": "मेरी बहन है छोटी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "young",
+            "cue": "छोटा · जवान",
+            "tag": "interference",
+            "forms": [
+              "young",
+              "younger"
+            ],
+            "note": "उम्र में छोटा. नाप में छोटा small है, और दोनों को मिलाना हिंदी वाले की सबसे आम फिसलन है."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "छोटी बहन के लिए younger sister कहना पड़ता है — अंग्रेज़ी के sister में उम्र नहीं है. young अकेला सिर्फ़ जवान बताता है, रिश्ते का क्रम नहीं.",
+      "sound": "young में y साफ़ है और g चुप — यंग.",
+      "variations": [
+        {
+          "display": "My brother is young",
+          "cue": "मेरा भाई छोटा है",
+          "changed": "दूसरा रिश्ता"
+        },
+        {
+          "display": "My younger sister is a teacher",
+          "cue": "मेरी छोटी बहन अध्यापिका है",
+          "changed": "younger — यही बताता है कि कौन-सी बहन"
+        },
+        {
+          "display": "They are young",
+          "cue": "वे जवान हैं",
+          "changed": "बहुवचन, और विशेषण फिर भी वही"
+        }
+      ],
+      "mistake": {
+        "display": "My sister is small",
+        "why": "small नाप बताता है, उम्र नहीं. उम्र के लिए young, और छोटी बहन के लिए younger sister."
+      },
+      "usage": "परिवार की बात. दूसरी variation वह शब्द देती है जिसकी हिंदी वाले को सबसे ज़्यादा ज़रूरत पड़ती है.",
+      "register": "neutral",
+      "mnemonic": "young उम्र है, small नाप."
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "He is my cousin",
+      "cue": "वह मेरा चचेरा भाई है",
+      "literal": "वह है मेरा चचेरा-भाई",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cousin",
+            "cue": "चचेरा · ममेरा · फुफेरा · मौसेरा भाई या बहन",
+            "tag": "interference",
+            "forms": [
+              "cousin",
+              "cousins"
+            ],
+            "note": "एक शब्द, आठ हिंदी शब्दों का काम. लड़का है या लड़की, यह भी नहीं बताता — बताना हो तो अलग से कहना पड़ता है."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "यहाँ अंग्रेज़ी हिंदी से ग़रीब है, और यह भी एक अंतर है — हर बार अंग्रेज़ी ज़्यादा नहीं माँगती, कभी-कभी कम बता पाती है.",
+      "sound": "cousin में ou की आवाज़ अ है — कज़िन, कज़ीन नहीं.",
+      "variations": [
+        {
+          "display": "She is my cousin",
+          "cue": "वह मेरी चचेरी बहन है",
+          "changed": "लड़की — और cousin वही रहा"
+        },
+        {
+          "display": "They are my cousins",
+          "cue": "वे मेरे चचेरे भाई-बहन हैं",
+          "changed": "बहुवचन"
+        },
+        {
+          "display": "My cousin is a doctor",
+          "cue": "मेरा चचेरा भाई डॉक्टर है",
+          "changed": "पेशे के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "He is my cousin brother",
+        "why": "cousin brother भारतीय अंग्रेज़ी में आम है और बाहर नहीं चलता. सिर्फ़ cousin काफ़ी है."
+      },
+      "usage": "परिचय. यह mistake भारतीय पाठक के लिए ख़ास है — cousin brother यहाँ हर दिन सुनाई देता है और विदेश में नहीं.",
+      "register": "neutral",
+      "mnemonic": "एक cousin, आठ रिश्ते."
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "My uncle has got two sons",
+      "cue": "मेरे चाचा के दो बेटे हैं",
+      "literal": "मेरे चाचा के-पास-हैं दो बेटे",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uncle",
+            "cue": "चाचा · ताऊ · मामा · फूफा",
+            "tag": "interference",
+            "forms": [
+              "uncle",
+              "uncles"
+            ],
+            "note": "चार हिंदी शब्दों का एक जवाब. कौन-सा, यह बताना हो तो my father's brother जैसा पूरा वाक्य बनाना पड़ता है."
+          },
+          {
+            "display": "sons",
+            "cue": "बेटे",
+            "tag": "free",
+            "forms": [
+              "son",
+              "sons"
+            ],
+            "note": "गिनने-लायक, इसलिए दो होने पर -s. daughter इसका जोड़ा है."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "इस मॉड्यूल का कुछ भी नया नहीं है सिवाय शब्दों के — has got M10 का है, two M8 का, और -s M3 का. आख़िरी सीढ़ी यही होनी चाहिए.",
+      "sound": "uncle में c की आवाज़ क है — अंकल.",
+      "variations": [
+        {
+          "display": "My uncle has got two brothers",
+          "cue": "मेरे चाचा के दो भाई हैं",
+          "changed": "दूसरा रिश्ता, वही गिनती"
+        },
+        {
+          "display": "My uncle has got a son",
+          "cue": "मेरे चाचा का एक बेटा है",
+          "changed": "एक ही बेटा, तो a"
+        },
+        {
+          "display": "My uncle is very kind",
+          "cue": "मेरे चाचा बहुत दयालु हैं",
+          "changed": "रिश्ता वही, बात स्वभाव की"
+        }
+      ],
+      "mistake": {
+        "display": "My uncle has got two son",
+        "why": "दो हैं, इसलिए sons. गिनती के बाद -s ज़रूरी है."
+      },
+      "usage": "परिवार का ब्योरा. अंग्रेज़ी को चाचा और मामा में फ़र्क़ बताने के लिए पूरा वाक्य चाहिए, और यही इस मॉड्यूल की आख़िरी बात है.",
+      "register": "neutral",
+      "mnemonic": "एक uncle, चार रिश्ते — और बताना हो तो पूरा वाक्य."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M2-C01",
+      "display": "My brother is tall",
+      "cue": "मेरा भाई लंबा है"
+    },
+    {
+      "id": "L2-M2-C02",
+      "display": "She's got long hair",
+      "cue": "उसके बाल लंबे हैं"
+    },
+    {
+      "id": "L2-M2-C03",
+      "display": "He's got brown eyes",
+      "cue": "उसकी आँखें भूरी हैं"
+    },
+    {
+      "id": "L2-M2-C04",
+      "display": "My brother's name is Rohan",
+      "cue": "मेरे भाई का नाम रोहन है"
+    },
+    {
+      "id": "L2-M2-C05",
+      "display": "My father is a teacher",
+      "cue": "मेरे पिता जी अध्यापक हैं"
+    },
+    {
+      "id": "L2-M2-C06",
+      "display": "My mother is very kind",
+      "cue": "मेरी माँ बहुत दयालु हैं"
+    },
+    {
+      "id": "L2-M2-C07",
+      "display": "They are my parents",
+      "cue": "वे मेरे माता-पिता हैं"
+    },
+    {
+      "id": "L2-M2-C08",
+      "display": "My sister is young",
+      "cue": "मेरी बहन छोटी है"
+    },
+    {
+      "id": "L2-M2-C09",
+      "display": "He is my cousin",
+      "cue": "वह मेरा चचेरा भाई है"
+    },
+    {
+      "id": "L2-M2-C10",
+      "display": "My uncle has got two sons",
+      "cue": "मेरे चाचा के दो बेटे हैं"
+    },
+    {
+      "id": "L2-M2-C11",
+      "display": "My sister has got brown eyes",
+      "cue": "मेरी बहन की आँखें भूरी हैं"
+    },
+    {
+      "id": "L2-M2-C12",
+      "display": "My parents are very kind",
+      "cue": "मेरे माता-पिता बहुत दयालु हैं"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

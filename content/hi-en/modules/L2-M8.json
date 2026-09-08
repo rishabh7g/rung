@@ -1,0 +1,641 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": [
+    "L2-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "present_perfect"
+    ],
+    "allowedPatterns": [
+      "I've lost + my + N",
+      "The + N + doesn't work",
+      "Can you help me + , + please?",
+      "I'm afraid + <statement>",
+      "It seems there is a problem"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "यहाँ एक नया रूप खुल रहा है और सिर्फ़ एक काम के लिए: have या has के साथ क्रिया का तीसरा रूप, जब बीती बात का असर अभी बाक़ी हो. I've lost my key — चाबी तब खोई, दिक़्क़त अब है. यही वह जगह है जहाँ अंग्रेज़ी बोलने वाले इसे सचमुच बरतते हैं."
+    },
+    {
+      "tag": "interference",
+      "text": "इसे हाल की बात का रूप कहना ग़लत है और उसी से I've lost it yesterday जैसी ग़लती निकलती है. असल नियम यह है कि यह रूप अभी की बात करता है, इसलिए इसके साथ बीता हुआ वक़्त कभी नहीं आ सकता. कल की बात करनी हो तो I lost my key yesterday — सीधा बीता रूप."
+    },
+    {
+      "tag": "interference",
+      "text": "अंग्रेज़ी में शिकायत घुमाकर की जाती है. जो हिंदी में सीधा और सामान्य लगता है — यह काम नहीं कर रहा, आपने ग़लत दिया — वह अंग्रेज़ी में हमलावर सुनाई देता है. नरमी लाने वाले शब्द ही असल सामान हैं: I'm afraid…, It seems…, Sorry to bother you, but… और नियम यह है कि शिकायत जितनी बड़ी, ढाँचा उतना नरम."
+    },
+    {
+      "tag": "free",
+      "text": "should और shouldn't सलाह देते हैं, हुक्म नहीं. You should call the bank में ज़ोर नहीं है, राय है — और यही इसे must से अलग करता है, जो इस स्तर पर नहीं खुल रहा."
+    },
+    {
+      "tag": "free",
+      "text": "इस रूप के बाक़ी काम — I've been to Delhi जैसा तजुर्बा और I've lived here for a year जैसी अवधि — यहाँ नहीं खुल रहे. वे L3 के हैं, और इस पाठ का कोई वाक्य उन्हें नहीं छूता."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "I've lost my key",
+      "cue": "मेरी चाबी खो गई है",
+      "literal": "मैंने खोई है मेरी चाबी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "I've",
+            "cue": "मैंने ... है",
+            "tag": "delta",
+            "forms": [
+              "I have"
+            ],
+            "note": "I have का छोटा रूप. यहाँ have अपने आप में रखना नहीं बता रहा — वह अगले शब्द के साथ मिलकर एक ही रूप बनाता है."
+          },
+          {
+            "display": "lost",
+            "cue": "खोया",
+            "tag": "delta",
+            "forms": [],
+            "note": "lose का तीसरा रूप, और बीता रूप भी यही है. I lost my key कल की बात है; I've lost my key अभी की दिक़्क़त."
+          },
+          {
+            "display": "wallet",
+            "cue": "बटुआ",
+            "tag": "free",
+            "forms": [
+              "wallets"
+            ],
+            "note": "जेब वाला बटुआ. purse ज़्यादातर औरतों के बटुए या थैले के लिए चलता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "I've lost my key yesterday ग़लत है. यह रूप अभी की बात करता है, इसलिए बीता हुआ वक़्त इसके साथ नहीं बैठ सकता.",
+      "sound": "I've एक ही झटके में — आइव.",
+      "variations": [
+        {
+          "display": "I've lost my wallet",
+          "cue": "मेरा बटुआ खो गया है",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "I have lost my key",
+          "cue": "मेरी चाबी खो गई है",
+          "changed": "पूरा रूप, ज़रा औपचारिक"
+        },
+        {
+          "display": "She's lost her key",
+          "cue": "उसकी चाबी खो गई है",
+          "changed": "दूसरा कर्ता, has का छोटा रूप"
+        }
+      ],
+      "mistake": {
+        "display": "I've lost my key yesterday",
+        "why": "बीता वक़्त हो तो सीधा बीता रूप: I lost my key yesterday."
+      },
+      "usage": "दिक़्क़त बताने का सबसे आम पहला वाक्य.",
+      "register": "neutral",
+      "mnemonic": "असर अभी हो तो have + तीसरा रूप."
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "I haven't got my ticket",
+      "cue": "मेरे पास मेरा टिकट नहीं है",
+      "literal": "मैं नहीं रखता मेरा टिकट",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "haven't",
+            "cue": "नहीं ... है",
+            "tag": "free",
+            "forms": [
+              "have not"
+            ],
+            "note": "have not का छोटा रूप. have got का नकार यही है, और बोलचाल में पूरा रूप कम सुनाई देता है."
+          },
+          {
+            "display": "hasn't",
+            "cue": "नहीं ... है",
+            "tag": "free",
+            "forms": [
+              "has not"
+            ],
+            "note": "haven't का वह रूप जो he, she और it के साथ आता है. दोनों अलग शब्द हैं, एक दूसरे की जगह नहीं ले सकते."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "L1-M10 का have got रखने की बात करता था. यहाँ वही जोड़ी नकार में है, और अगले वाक्य में यही have तीसरे रूप के साथ बिलकुल दूसरा काम करेगा.",
+      "sound": "haven't में t लगभग दब जाता है — हैवन्ट.",
+      "variations": [
+        {
+          "display": "He hasn't got my ticket",
+          "cue": "उसके पास मेरा टिकट नहीं है",
+          "changed": "दूसरा कर्ता, hasn't"
+        },
+        {
+          "display": "I haven't got any money",
+          "cue": "मेरे पास पैसे नहीं हैं",
+          "changed": "नकार में any"
+        },
+        {
+          "display": "We haven't got the tickets",
+          "cue": "हमारे पास टिकट नहीं हैं",
+          "changed": "बहुवचन"
+        }
+      ],
+      "mistake": {
+        "display": "He haven't got my ticket",
+        "why": "he के साथ hasn't आता है: He hasn't got my ticket."
+      },
+      "usage": "स्टेशन या दफ़्तर में कमी बताना.",
+      "register": "neutral",
+      "mnemonic": "he · she · it के साथ hasn't."
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "The bus hasn't come",
+      "cue": "बस अभी तक नहीं आई है",
+      "literal": "वह बस नहीं आई है",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "again",
+            "cue": "फिर से",
+            "tag": "free",
+            "forms": [],
+            "note": "वाक्य के आख़िर में बैठता है, शुरू में नहीं. शिकायत में यही शब्द थकान जोड़ता है — hasn't come again."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "come का तीसरा रूप come ही है, बदलता नहीं. इसीलिए यह वाक्य बीते रूप जैसा दिखता है और है नहीं.",
+      "sound": "hasn't come में दोनों जुड़ जाते हैं — हैज़न्ट्कम.",
+      "variations": [
+        {
+          "display": "The train hasn't come",
+          "cue": "रेल अभी तक नहीं आई है",
+          "changed": "दूसरी सवारी"
+        },
+        {
+          "display": "The bus hasn't come again",
+          "cue": "बस फिर नहीं आई है",
+          "changed": "again से शिकायत"
+        },
+        {
+          "display": "The bus has not come",
+          "cue": "बस अभी तक नहीं आई है",
+          "changed": "पूरा रूप"
+        }
+      ],
+      "mistake": {
+        "display": "The bus hasn't came",
+        "why": "come का तीसरा रूप come है: The bus hasn't come."
+      },
+      "usage": "इंतज़ार करते हुए, या देर की वजह बताते हुए.",
+      "register": "neutral",
+      "mnemonic": "come तीनों जगह come."
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "The window is broken",
+      "cue": "खिड़की टूटी हुई है",
+      "literal": "वह खिड़की है टूटी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "broken",
+            "cue": "टूटा हुआ",
+            "tag": "delta",
+            "forms": [],
+            "note": "break का तीसरा रूप, पर यहाँ यह विशेषण की तरह बैठा है — हालत बता रहा है, काम नहीं. इसलिए is के बाद आता है."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "is broken में कौन तोड़ा, यह नहीं बताया जा रहा — और यही शिकायत को नरम रखता है. You broke the window कहना सीधा इल्ज़ाम है.",
+      "sound": "broken दो हिस्सों में — ब्रोकन.",
+      "variations": [
+        {
+          "display": "The door is broken",
+          "cue": "दरवाज़ा टूटा हुआ है",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "The chair is not broken",
+          "cue": "कुर्सी टूटी हुई नहीं है",
+          "changed": "नकार"
+        },
+        {
+          "display": "The windows are broken",
+          "cue": "खिड़कियाँ टूटी हुई हैं",
+          "changed": "बहुवचन में are"
+        }
+      ],
+      "mistake": {
+        "display": "The window is break",
+        "why": "हालत के लिए तीसरा रूप चाहिए: The window is broken."
+      },
+      "usage": "किसी चीज़ की ख़राबी बताना, बिना किसी पर इल्ज़ाम लगाए.",
+      "register": "neutral",
+      "mnemonic": "किसने तोड़ा, यह न कहना ही नरमी है."
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "The phone doesn't work",
+      "cue": "फ़ोन काम नहीं कर रहा",
+      "literal": "वह फ़ोन नहीं करता काम",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "problem",
+            "cue": "दिक़्क़त",
+            "tag": "free",
+            "forms": [
+              "problems"
+            ],
+            "note": "गिना जाता है, इसलिए a problem. There is a problem with… वाला ढाँचा सबसे नरम शिकायत है."
+          },
+          {
+            "display": "with",
+            "cue": "के साथ · में",
+            "tag": "free",
+            "forms": [],
+            "note": "किसी चीज़ में दिक़्क़त बतानी हो तो a problem with the phone आता है, in नहीं. साथ होने के लिए भी यही शब्द है — tea with sugar."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "मशीन की ख़राबी के लिए is not working नहीं, doesn't work चलता है. यह हालत है, इस पल का काम नहीं.",
+      "sound": "doesn't में oe की आवाज़ अ है — डज़न्ट.",
+      "variations": [
+        {
+          "display": "The car doesn't work",
+          "cue": "गाड़ी काम नहीं कर रही",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "There is a problem with the phone",
+          "cue": "फ़ोन में कोई दिक़्क़त है",
+          "changed": "और नरम ढाँचा"
+        },
+        {
+          "display": "The phone doesn't work again",
+          "cue": "फ़ोन फिर काम नहीं कर रहा",
+          "changed": "again से थकान"
+        }
+      ],
+      "mistake": {
+        "display": "The phone is not working from yesterday",
+        "why": "हालत बतानी हो तो: The phone doesn't work."
+      },
+      "usage": "दुकान, दफ़्तर या होटल में ख़राबी बताना.",
+      "register": "neutral",
+      "mnemonic": "मशीन के लिए doesn't work."
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "I'm afraid the bus is late",
+      "cue": "अफ़सोस, बस देर से है",
+      "literal": "मैं हूँ डरा हुआ वह बस है देर",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "afraid",
+            "cue": "अफ़सोस है · डर है",
+            "tag": "interference",
+            "forms": [],
+            "note": "I'm afraid में डर नहीं है. यह बुरी ख़बर के आगे लगने वाला तकिया है — मुझे कहते हुए अच्छा नहीं लग रहा."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "इसका शब्द-दर-शब्द अनुवाद डर पर ले जाएगा और वहाँ कुछ नहीं है. इसे बुरी ख़बर का दरवाज़ा मानिए.",
+      "sound": "afraid में ज़ोर दूसरे हिस्से पर — अफ़्रेड.",
+      "variations": [
+        {
+          "display": "I'm afraid the train is late",
+          "cue": "अफ़सोस, रेल देर से है",
+          "changed": "दूसरी सवारी"
+        },
+        {
+          "display": "I am afraid there is a problem",
+          "cue": "अफ़सोस, कोई दिक़्क़त है",
+          "changed": "पूरा रूप, दिक़्क़त की ख़बर"
+        },
+        {
+          "display": "I'm afraid I can't help you",
+          "cue": "अफ़सोस, मैं आपकी मदद नहीं कर सकता",
+          "changed": "मना करना"
+        }
+      ],
+      "mistake": {
+        "display": "I am afraid from the bus is late",
+        "why": "इसके बाद सीधी बात आती है: I'm afraid the bus is late."
+      },
+      "usage": "बुरी ख़बर देना — दफ़्तर, दुकान, फ़ोन, हर जगह.",
+      "register": "neutral",
+      "mnemonic": "बुरी ख़बर से पहले I'm afraid."
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "Sorry to bother you, but I need help",
+      "cue": "माफ़ कीजिए तकलीफ़ दे रहा हूँ, पर मुझे मदद चाहिए",
+      "literal": "माफ़ी तक तकलीफ़ देना तुम्हें, पर मैं ज़रूरत रखता हूँ मदद",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bother",
+            "cue": "तकलीफ़ देना",
+            "tag": "free",
+            "forms": [
+              "bothers"
+            ],
+            "note": "Sorry to bother you एक तैयार टुकड़ा है और अजनबी से बात शुरू करने का सबसे नरम रास्ता — M4 वाले Excuse me से एक क़दम आगे."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "यह माफ़ी नहीं माँग रहा, रास्ता बना रहा है. अंग्रेज़ी में मदद माँगने से पहले यह सीढ़ी आम है और इसे छोड़ देना रूखा लगता है.",
+      "sound": "bother में th नरम है — बॉदर.",
+      "variations": [
+        {
+          "display": "Sorry to bother you",
+          "cue": "माफ़ कीजिए तकलीफ़ दे रहा हूँ",
+          "changed": "अकेला टुकड़ा"
+        },
+        {
+          "display": "Sorry to bother you, but I have a problem",
+          "cue": "माफ़ कीजिए, पर मुझे एक दिक़्क़त है",
+          "changed": "दिक़्क़त बताना"
+        },
+        {
+          "display": "Sorry to bother you, but the door is broken",
+          "cue": "माफ़ कीजिए, पर दरवाज़ा टूटा हुआ है",
+          "changed": "ख़राबी बताना"
+        }
+      ],
+      "mistake": {
+        "display": "Sorry for bothering you, but I need help",
+        "why": "तैयार टुकड़ा Sorry to bother you है; दूसरा रूप ज़्यादा भारी लगता है."
+      },
+      "usage": "अजनबी या मसरूफ़ आदमी से मदद माँगने की शुरुआत.",
+      "register": "neutral",
+      "mnemonic": "माँगने से पहले एक सीढ़ी."
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "It seems there is a problem",
+      "cue": "लगता है कोई दिक़्क़त है",
+      "literal": "यह लगता है वहाँ है एक दिक़्क़त",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "seems",
+            "cue": "लगता है",
+            "tag": "delta",
+            "forms": [
+              "seem"
+            ],
+            "note": "यह शिकायत को अंदाज़े में बदल देता है. There is a problem इल्ज़ाम है; It seems there is a problem बात है."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "यहाँ का it किसी चीज़ की तरफ़ इशारा नहीं कर रहा. वह सिर्फ़ जगह भर रहा है, क्योंकि अंग्रेज़ी वाक्य कर्ता के बिना नहीं चलता.",
+      "sound": "seems के आख़िर में ज़ की आवाज़ — सीम्ज़.",
+      "variations": [
+        {
+          "display": "It seems there is a problem with the door",
+          "cue": "लगता है दरवाज़े में कोई दिक़्क़त है",
+          "changed": "चीज़ का नाम जुड़ा"
+        },
+        {
+          "display": "There is a problem",
+          "cue": "एक दिक़्क़त है",
+          "changed": "सीधा, इसलिए भारी"
+        },
+        {
+          "display": "It seems the bus is late",
+          "cue": "लगता है बस देर से है",
+          "changed": "दूसरी ख़बर"
+        }
+      ],
+      "mistake": {
+        "display": "Seems there is a problem",
+        "why": "अंग्रेज़ी को कर्ता चाहिए: It seems there is a problem."
+      },
+      "usage": "शिकायत को अंदाज़े की शक्ल देना — सबसे नरम रास्ता.",
+      "register": "neutral",
+      "mnemonic": "it seems — इल्ज़ाम नहीं, अंदाज़ा."
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "You should call the bank",
+      "cue": "तुम्हें बैंक फ़ोन करना चाहिए",
+      "literal": "तुम चाहिए फ़ोन करना वह बैंक",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "should",
+            "cue": "चाहिए",
+            "tag": "delta",
+            "forms": [],
+            "note": "सलाह देता है, हुक्म नहीं. can और will की तरह इसके बाद सादी क्रिया आती है और कर्ता से इसका रूप नहीं बदलता."
+          },
+          {
+            "display": "shouldn't",
+            "cue": "नहीं चाहिए",
+            "tag": "free",
+            "forms": [
+              "should not"
+            ],
+            "note": "should का नकार. यह मना नहीं करता, राय देता है — इसीलिए यह शिकायत के इस पाठ में बैठता है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "You should call के बाद to नहीं आता. should के बाद क्रिया सादी रहती है, ठीक can और will की तरह.",
+      "sound": "should का l चुप है — शुड.",
+      "variations": [
+        {
+          "display": "You shouldn't call the bank",
+          "cue": "तुम्हें बैंक फ़ोन नहीं करना चाहिए",
+          "changed": "नकार"
+        },
+        {
+          "display": "You should call again",
+          "cue": "तुम्हें फिर फ़ोन करना चाहिए",
+          "changed": "again के साथ"
+        },
+        {
+          "display": "She should call the doctor",
+          "cue": "उसे डॉक्टर को फ़ोन करना चाहिए",
+          "changed": "दूसरा कर्ता, रूप वही"
+        }
+      ],
+      "mistake": {
+        "display": "You should to call the bank",
+        "why": "should के बाद सादी क्रिया आती है: You should call the bank."
+      },
+      "usage": "किसी की दिक़्क़त पर राय देना.",
+      "register": "neutral",
+      "mnemonic": "should के बाद सादी क्रिया."
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "I couldn't open the door, but I found my key",
+      "cue": "मैं दरवाज़ा नहीं खोल सका, पर मुझे चाबी मिल गई",
+      "literal": "मैं नहीं सका खोलना वह दरवाज़ा, पर मैंने पाई मेरी चाबी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "couldn't",
+            "cue": "नहीं सका",
+            "tag": "delta",
+            "forms": [
+              "could not"
+            ],
+            "note": "can't का बीता रूप. M1 का could शाइस्तगी के लिए था; यहाँ वही शब्द बीते वक़्त की नाकामी बता रहा है."
+          },
+          {
+            "display": "found",
+            "cue": "मिला · पाया",
+            "tag": "delta",
+            "forms": [],
+            "note": "find का बीता और तीसरा रूप, दोनों यही. lost का उल्टा — खोई चीज़ मिल जाए तो I found it."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "यह पूरा वाक्य बीते रूप में है, इसलिए यहाँ have नहीं आया. जो बात ख़त्म हो चुकी उसके लिए सीधा बीता रूप ही चलता है.",
+      "sound": "couldn't में l चुप है — कुडन्ट.",
+      "variations": [
+        {
+          "display": "I couldn't open the door",
+          "cue": "मैं दरवाज़ा नहीं खोल सका",
+          "changed": "पहला हिस्सा अकेला"
+        },
+        {
+          "display": "I found my wallet",
+          "cue": "मुझे मेरा बटुआ मिल गया",
+          "changed": "दूसरा हिस्सा अकेला"
+        },
+        {
+          "display": "She couldn't open the window",
+          "cue": "वह खिड़की नहीं खोल सकी",
+          "changed": "दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "I couldn't opened the door",
+        "why": "couldn't के बाद सादी क्रिया आती है: I couldn't open the door."
+      },
+      "usage": "जो हुआ वह बताना — दिक़्क़त और उसका अंजाम, दोनों.",
+      "register": "neutral",
+      "mnemonic": "बात ख़त्म हो तो सीधा बीता रूप."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M8-C01",
+      "display": "I've lost my key",
+      "cue": "मेरी चाबी खो गई है"
+    },
+    {
+      "id": "L2-M8-C02",
+      "display": "I haven't got my ticket",
+      "cue": "मेरे पास मेरा टिकट नहीं है"
+    },
+    {
+      "id": "L2-M8-C03",
+      "display": "The bus hasn't come",
+      "cue": "बस अभी तक नहीं आई है"
+    },
+    {
+      "id": "L2-M8-C04",
+      "display": "The window is broken",
+      "cue": "खिड़की टूटी हुई है"
+    },
+    {
+      "id": "L2-M8-C05",
+      "display": "The phone doesn't work",
+      "cue": "फ़ोन काम नहीं कर रहा"
+    },
+    {
+      "id": "L2-M8-C06",
+      "display": "I'm afraid the bus is late",
+      "cue": "अफ़सोस, बस देर से है"
+    },
+    {
+      "id": "L2-M8-C07",
+      "display": "Sorry to bother you, but I need help",
+      "cue": "माफ़ कीजिए तकलीफ़ दे रहा हूँ, पर मुझे मदद चाहिए"
+    },
+    {
+      "id": "L2-M8-C08",
+      "display": "It seems there is a problem",
+      "cue": "लगता है कोई दिक़्क़त है"
+    },
+    {
+      "id": "L2-M8-C09",
+      "display": "You should call the bank",
+      "cue": "तुम्हें बैंक फ़ोन करना चाहिए"
+    },
+    {
+      "id": "L2-M8-C10",
+      "display": "I couldn't open the door, but I found my key",
+      "cue": "मैं दरवाज़ा नहीं खोल सका, पर मुझे चाबी मिल गई"
+    },
+    {
+      "id": "L2-M8-C11",
+      "display": "I've lost my wallet",
+      "cue": "मेरा बटुआ खो गया है"
+    },
+    {
+      "id": "L2-M8-C12",
+      "display": "There is a problem with the phone",
+      "cue": "फ़ोन में कोई दिक़्क़त है"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": [
+    "L2-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "Hello + , + this is + <name>",
+      "Can I speak to + <name> + , + please?",
+      "Can I take a message?",
+      "I'll call you back + , + <time>",
+      "<statement> + , + aren't you? / isn't he?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "हिंदी में एक ही पूँछ सब जगह चलती है — ना, है ना. अंग्रेज़ी हर बार नई पूँछ बनाती है: वाक्य वाली सहायक क्रिया उठाकर उसका उल्टा कर देती है. You are coming, aren't you? · He doesn't like tea, does he? · You will call, won't you? कोई पूँछ याद नहीं करनी होती, हर पूँछ बनानी होती है — और जो सहायक चाहिए वह वाक्य में पहले से मौजूद है."
+    },
+    {
+      "tag": "free",
+      "text": "isn't it? हर वाक्य के पीछे लगाना भारतीय अंग्रेज़ी में बिलकुल आम है और उसमें ग़लत नहीं है. बाहर की अंग्रेज़ी में वह नहीं चलता, और यही वह एक पूँछ है जिस तक हिंदी का ना सीधे ले जाता है. इसलिए यहाँ बनी हुई पूँछ सिखाई जा रही है — किसी की बोली को ग़लत कहने के लिए नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "फ़ोन पर अपना नाम this is से बताया जाता है, I am से नहीं. मैं रोहन बोल रहा हूँ का सीधा अनुवाद I am Rohan दरवाज़े पर मिलने जैसा लगता है, फ़ोन जैसा नहीं. this is दो शब्दों का एक टुकड़ा है और फ़ोन का अपना है."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी के बोलना और कहना अंग्रेज़ी में चार में बँटते हैं, और फ़र्क़ आगे आने वाले शब्द से तय होता है. tell के बाद आदमी आता है — tell me, tell Rohan. say के बाद आदमी नहीं आता — say me ग़लत है, say something to me सही. speak और talk काम की बात करते हैं — speak English, talk to my brother."
+    },
+    {
+      "tag": "free",
+      "text": "संदेश यहाँ Can I take a message? से लिया जाता है और He called से आगे बढ़ाया जाता है, जो L1-M5 वाला बीता हुआ रूप है. He said that he would call वाला ढाँचा L3-M5 का है और यहाँ जान-बूझकर नहीं खोला गया."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "Hello, this is Rohan",
+      "cue": "हैलो, मैं रोहन बोल रहा हूँ",
+      "literal": "हैलो, यह है रोहन",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "this is",
+            "cue": "मैं बोल रहा हूँ",
+            "tag": "delta",
+            "forms": [],
+            "note": "फ़ोन का अपना टुकड़ा. मिलते वक़्त यही this is किसी और का परिचय कराता है — This is my brother — पर फ़ोन पर यह ख़ुद का नाम है."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "I am Rohan फ़ोन पर अटपटा लगता है. वहाँ this is ही चलता है, और यह याद करने की बात है, समझने की नहीं.",
+      "sound": "this is जुड़कर दिसिज़ सुनाई देता है.",
+      "variations": [
+        {
+          "display": "Hello, this is Rohan Sharma",
+          "cue": "हैलो, मैं रोहन शर्मा बोल रहा हूँ",
+          "changed": "पूरा नाम, ज़रा औपचारिक"
+        },
+        {
+          "display": "Hi, this is Rohan",
+          "cue": "हाय, मैं रोहन बोल रहा हूँ",
+          "changed": "दोस्ताना शुरुआत"
+        },
+        {
+          "display": "Hello, this is my brother",
+          "cue": "हैलो, यह मेरे भाई हैं",
+          "changed": "किसी और का परिचय"
+        }
+      ],
+      "mistake": {
+        "display": "Hello, I am Rohan speaking",
+        "why": "फ़ोन पर this is चलता है: Hello, this is Rohan."
+      },
+      "usage": "फ़ोन उठाते या करते ही पहला वाक्य.",
+      "register": "neutral",
+      "mnemonic": "फ़ोन पर this is."
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "Can I speak to Rohan, please?",
+      "cue": "क्या मैं रोहन से बात कर सकता हूँ?",
+      "literal": "सकता हूँ मैं बोलना तक रोहन, प्लीज़?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "speak",
+            "cue": "बोलना",
+            "tag": "interference",
+            "forms": [
+              "speaks",
+              "speaking"
+            ],
+            "note": "आदमी से बात करनी हो तो speak to आता है, सीधा speak नहीं. भाषा के साथ to नहीं लगता — speak English."
+          },
+          {
+            "display": "talk",
+            "cue": "बात करना",
+            "tag": "free",
+            "forms": [
+              "talks",
+              "talking"
+            ],
+            "note": "speak का दोस्ताना जोड़ीदार, और यह भी to लेता है — talk to my brother. फ़ोन पर दोनों चलते हैं."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Can I speak Rohan? ग़लत है. आदमी के आगे to ज़रूरी है, और यही चूक हिंदी के रोहन से बात से आती है.",
+      "sound": "speak का ee लंबा — स्पीक.",
+      "variations": [
+        {
+          "display": "Can I speak to your brother, please?",
+          "cue": "क्या मैं आपके भाई से बात कर सकता हूँ?",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "Can I talk to Rohan, please?",
+          "cue": "क्या मैं रोहन से बात कर सकता हूँ?",
+          "changed": "talk से, ज़रा दोस्ताना"
+        },
+        {
+          "display": "I want to speak to the doctor",
+          "cue": "मुझे डॉक्टर से बात करनी है",
+          "changed": "सवाल की जगह बयान"
+        }
+      ],
+      "mistake": {
+        "display": "Can I speak Rohan, please?",
+        "why": "आदमी के आगे to आता है: Can I speak to Rohan, please?"
+      },
+      "usage": "फ़ोन पर किसी को बुलवाना.",
+      "register": "neutral",
+      "mnemonic": "आदमी से speak to, भाषा में speak."
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "Can I take a message?",
+      "cue": "क्या मैं संदेश ले लूँ?",
+      "literal": "सकता हूँ मैं लेना एक संदेश?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "message",
+            "cue": "संदेश",
+            "tag": "free",
+            "forms": [
+              "messages"
+            ],
+            "note": "संदेश लेने वाला take करता है और देने वाला leave करता है — Can I leave a message? दोनों तरफ़ के तैयार वाक्य हैं."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "यहाँ take का मतलब लिख लेना है. L1-M3 का take और M4 का take the second left, तीनों एक ही क्रिया के तीन काम हैं.",
+      "sound": "message में ज़ोर पहले हिस्से पर — मेसिज.",
+      "variations": [
+        {
+          "display": "Can I take a message, please?",
+          "cue": "क्या मैं संदेश ले लूँ?",
+          "changed": "please से नरम"
+        },
+        {
+          "display": "I can take a message",
+          "cue": "मैं संदेश ले सकता हूँ",
+          "changed": "सवाल की जगह पेशकश"
+        },
+        {
+          "display": "Can he take a message?",
+          "cue": "क्या वह संदेश ले सकता है?",
+          "changed": "दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "Can I take message?",
+        "why": "गिनी जाने वाली चीज़ अकेली नहीं आती: Can I take a message?"
+      },
+      "usage": "जिससे बात करनी थी वह मौजूद न हो तो.",
+      "register": "neutral",
+      "mnemonic": "लेने वाला take, देने वाला leave."
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "He is not in at the moment",
+      "cue": "वह अभी यहाँ नहीं हैं",
+      "literal": "वह है नहीं अंदर पर वह पल",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "moment",
+            "cue": "पल · अभी",
+            "tag": "free",
+            "forms": [
+              "moments"
+            ],
+            "note": "at the moment यानी अभी. यह पूरा टुकड़ा है और now से ज़रा नरम लगता है."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "यहाँ in का मतलब अंदर नहीं, मौजूद है. L1-M4 वाला in ही है, बस नया काम कर रहा है — He is not in यानी वह दफ़्तर में नहीं हैं.",
+      "sound": "at the moment जुड़कर अट्दमोमन्ट सुनाई देता है.",
+      "variations": [
+        {
+          "display": "She is not in at the moment",
+          "cue": "वह अभी यहाँ नहीं हैं",
+          "changed": "दूसरा कर्ता"
+        },
+        {
+          "display": "He is not in",
+          "cue": "वह यहाँ नहीं हैं",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "He is on the phone at the moment",
+          "cue": "वह अभी फ़ोन पर हैं",
+          "changed": "दूसरी वजह"
+        }
+      ],
+      "mistake": {
+        "display": "He is not here in this moment",
+        "why": "तैयार टुकड़ा at the moment है: He is not in at the moment."
+      },
+      "usage": "फ़ोन उठाकर बताना कि जिसे चाहिए वह मौजूद नहीं.",
+      "register": "neutral",
+      "mnemonic": "not in — मौजूद नहीं."
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "I'll call you back tonight",
+      "cue": "मैं तुम्हें आज रात फ़ोन करूँगा",
+      "literal": "मैं करूँगा फ़ोन तुम्हें वापस आज रात",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "back",
+            "cue": "वापस",
+            "tag": "delta",
+            "forms": [],
+            "note": "call back यानी जवाबी फ़ोन. back क्रिया के पीछे बैठता है और यहाँ पीछे की जगह नहीं, लौटकर करना बता रहा है."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "call you back में back आदमी के बाद आता है. call back you ग़लत है, और यही क्रम याद रखने की बात है.",
+      "sound": "I'll एक ही झटके में — आइल.",
+      "variations": [
+        {
+          "display": "I'll call you back tomorrow",
+          "cue": "मैं तुम्हें कल फ़ोन करूँगा",
+          "changed": "दूसरा वक़्त"
+        },
+        {
+          "display": "I'll call you back in the morning",
+          "cue": "मैं तुम्हें सुबह फ़ोन करूँगा",
+          "changed": "दिन का हिस्सा, in के साथ"
+        },
+        {
+          "display": "She'll call you back",
+          "cue": "वह तुम्हें फ़ोन करेंगी",
+          "changed": "दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "I'll call back you tonight",
+        "why": "आदमी बीच में आता है: I'll call you back tonight."
+      },
+      "usage": "बात अभी न हो सके तो यही वादा किया जाता है.",
+      "register": "neutral",
+      "mnemonic": "call you back — आदमी बीच में."
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "Hold on a moment, please",
+      "cue": "ज़रा रुकिए",
+      "literal": "पकड़े रहो एक पल, प्लीज़",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hold on",
+            "cue": "रुकिए · लाइन पर रहिए",
+            "tag": "delta",
+            "forms": [
+              "holds on"
+            ],
+            "note": "M4 वाले get on की तरह दो शब्दों की एक क्रिया. फ़ोन पर इसका मतलब है फ़ोन मत रखिए."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Wait भी चलता है पर फ़ोन पर hold on ही सुनाई देता है. दोनों में फ़र्क़ शाइस्तगी का नहीं, आदत का है.",
+      "sound": "hold on जुड़कर होल्डॉन सुनाई देता है.",
+      "variations": [
+        {
+          "display": "Hold on, please",
+          "cue": "ज़रा रुकिए",
+          "changed": "छोटा रूप"
+        },
+        {
+          "display": "Hold on a moment",
+          "cue": "एक पल रुकिए",
+          "changed": "please हटा"
+        },
+        {
+          "display": "Can you hold on, please?",
+          "cue": "क्या आप ज़रा रुक सकते हैं?",
+          "changed": "सवाल, इसलिए नरम"
+        }
+      ],
+      "mistake": {
+        "display": "Hold a moment, please",
+        "why": "on क्रिया का हिस्सा है: Hold on a moment, please."
+      },
+      "usage": "फ़ोन पर किसी को थामकर रखना.",
+      "register": "neutral",
+      "mnemonic": "फ़ोन पर hold on."
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "Sorry, wrong number",
+      "cue": "माफ़ कीजिए, ग़लत नंबर",
+      "literal": "माफ़ी, ग़लत नंबर",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wrong number",
+            "cue": "ग़लत नंबर",
+            "tag": "free",
+            "forms": [],
+            "note": "दो शब्दों का तैयार टुकड़ा. फ़ोन कटने से पहले यही कहा जाता है, और इसमें किसी का क़सूर नहीं गिना जाता."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "यह पूरा वाक्य नहीं है और होना भी नहीं चाहिए. फ़ोन पर छोटे टुकड़े चलते हैं, और यह उनमें सबसे आम है.",
+      "sound": "wrong में w चुप है — रॉन्ग.",
+      "variations": [
+        {
+          "display": "Sorry, this is the wrong number",
+          "cue": "माफ़ कीजिए, यह ग़लत नंबर है",
+          "changed": "पूरा वाक्य"
+        },
+        {
+          "display": "I think this is a wrong number",
+          "cue": "मुझे लगता है यह ग़लत नंबर है",
+          "changed": "I think से नरम"
+        },
+        {
+          "display": "Sorry, wrong number, bye",
+          "cue": "माफ़ कीजिए, ग़लत नंबर, बाय",
+          "changed": "बात ख़त्म"
+        }
+      ],
+      "mistake": {
+        "display": "Sorry, number is wrong",
+        "why": "तैयार टुकड़ा wrong number है: Sorry, wrong number."
+      },
+      "usage": "ग़लत नंबर लगने पर दोनों तरफ़ से यही कहा जाता है.",
+      "register": "neutral",
+      "mnemonic": "दो शब्द, बात ख़त्म."
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "Can you tell Rohan, please?",
+      "cue": "क्या आप रोहन को बता देंगे?",
+      "literal": "सकते हैं आप बताना रोहन, प्लीज़?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tell",
+            "cue": "बताना",
+            "tag": "interference",
+            "forms": [
+              "tells",
+              "telling"
+            ],
+            "note": "इसके तुरंत बाद आदमी आता है और कोई to नहीं लगता: tell Rohan, tell me, tell him. यही इसे say से अलग करता है."
+          },
+          {
+            "display": "him",
+            "cue": "उसे · उसको",
+            "tag": "free",
+            "forms": [],
+            "note": "he का वह रूप जो क्रिया के बाद आता है. L1-M6 की her का जोड़ीदार — tell him, call him."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "tell के बाद आदमी सीधे आता है, say के बाद कभी नहीं. tell Rohan सही, say Rohan ग़लत — और say को आदमी तक पहुँचना हो तो to चाहिए.",
+      "sound": "tell का l साफ़ सुनाई देता है — टेल.",
+      "variations": [
+        {
+          "display": "Can you tell my brother, please?",
+          "cue": "क्या आप मेरे भाई को बता देंगे?",
+          "changed": "दूसरा आदमी"
+        },
+        {
+          "display": "Please tell him",
+          "cue": "उसे बता दीजिए",
+          "changed": "सीधा हुक्म, him के साथ"
+        },
+        {
+          "display": "Can you say that to Rohan?",
+          "cue": "क्या आप यह रोहन से कह देंगे?",
+          "changed": "say, इसलिए to ज़रूरी"
+        }
+      ],
+      "mistake": {
+        "display": "Can you say Rohan, please?",
+        "why": "say के बाद आदमी नहीं आता: Can you tell Rohan, please?"
+      },
+      "usage": "संदेश आगे पहुँचाने को कहना.",
+      "register": "neutral",
+      "mnemonic": "tell के बाद आदमी, say के बाद बात."
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "This is your phone, isn't it?",
+      "cue": "यह तुम्हारा फ़ोन है ना?",
+      "literal": "यह है तुम्हारा फ़ोन, नहीं है यह?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "phone",
+            "cue": "फ़ोन",
+            "tag": "free",
+            "forms": [
+              "phones"
+            ],
+            "note": "बात करने के लिए on the phone आता है, in नहीं. फ़ोन करने के लिए call ही चलता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "पूँछ वाक्य से बनती है. यहाँ is था, इसलिए isn't it? — अगर are होता तो aren't you?, और will होता तो won't you?",
+      "sound": "isn't it जुड़कर इज़्निट सुनाई देता है.",
+      "variations": [
+        {
+          "display": "You are coming on Sunday, aren't you?",
+          "cue": "तुम रविवार को आ रहे हो ना?",
+          "changed": "are, इसलिए aren't you"
+        },
+        {
+          "display": "He doesn't like tea, does he?",
+          "cue": "उसे चाय पसंद नहीं है ना?",
+          "changed": "नकार, इसलिए सीधी पूँछ"
+        },
+        {
+          "display": "You will call me, won't you?",
+          "cue": "तुम मुझे फ़ोन करोगे ना?",
+          "changed": "will, इसलिए won't you"
+        }
+      ],
+      "mistake": {
+        "display": "You are coming on Sunday, isn't it?",
+        "why": "पूँछ वाक्य की सहायक से बनती है: aren't you?"
+      },
+      "usage": "पक्का करना, बिना सीधा सवाल पूछे. भारतीय अंग्रेज़ी की isn't it? हर जगह चलती है, बाहर नहीं.",
+      "register": "informal",
+      "mnemonic": "जो सहायक वाक्य में, वही पूँछ में."
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "Say that to Rohan, please",
+      "cue": "यह रोहन से कह दीजिए",
+      "literal": "कहो वह तक रोहन, प्लीज़",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "say",
+            "cue": "कहना",
+            "tag": "interference",
+            "forms": [
+              "says",
+              "saying"
+            ],
+            "note": "इसके बाद बात आती है, आदमी नहीं. आदमी तक पहुँचाना हो तो to लगाना पड़ता है — say that to Rohan."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "say me ग़लत है और यह सबसे आम फिसलन है, क्योंकि हिंदी का मुझे कहो दोनों तरफ़ चलता है. या tell me कहिए या say that to me.",
+      "sound": "says की आवाज़ say से नहीं मिलती — सेज़, सेइज़ नहीं.",
+      "variations": [
+        {
+          "display": "Say that to him, please",
+          "cue": "यह उससे कह दीजिए",
+          "changed": "नाम की जगह him"
+        },
+        {
+          "display": "Tell Rohan, please",
+          "cue": "रोहन को बता दीजिए",
+          "changed": "tell, इसलिए to नहीं"
+        },
+        {
+          "display": "Do not say that to Rohan",
+          "cue": "यह रोहन से मत कहिए",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "Say Rohan that, please",
+        "why": "say को आदमी तक to से पहुँचाया जाता है: Say that to Rohan, please."
+      },
+      "usage": "किसी से कोई बात आगे कहने को कहना.",
+      "register": "neutral",
+      "mnemonic": "say को to चाहिए, tell को नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M7-C01",
+      "display": "Hello, this is Rohan",
+      "cue": "हैलो, मैं रोहन बोल रहा हूँ"
+    },
+    {
+      "id": "L2-M7-C02",
+      "display": "Can I speak to Rohan, please?",
+      "cue": "क्या मैं रोहन से बात कर सकता हूँ?"
+    },
+    {
+      "id": "L2-M7-C03",
+      "display": "Can I take a message?",
+      "cue": "क्या मैं संदेश ले लूँ?"
+    },
+    {
+      "id": "L2-M7-C04",
+      "display": "He is not in at the moment",
+      "cue": "वह अभी यहाँ नहीं हैं"
+    },
+    {
+      "id": "L2-M7-C05",
+      "display": "I'll call you back tonight",
+      "cue": "मैं तुम्हें आज रात फ़ोन करूँगा"
+    },
+    {
+      "id": "L2-M7-C06",
+      "display": "Hold on a moment, please",
+      "cue": "ज़रा रुकिए"
+    },
+    {
+      "id": "L2-M7-C07",
+      "display": "Sorry, wrong number",
+      "cue": "माफ़ कीजिए, ग़लत नंबर"
+    },
+    {
+      "id": "L2-M7-C08",
+      "display": "Can you tell Rohan, please?",
+      "cue": "क्या आप रोहन को बता देंगे?"
+    },
+    {
+      "id": "L2-M7-C09",
+      "display": "This is your phone, isn't it?",
+      "cue": "यह तुम्हारा फ़ोन है ना?"
+    },
+    {
+      "id": "L2-M7-C10",
+      "display": "Say that to Rohan, please",
+      "cue": "यह रोहन से कह दीजिए"
+    },
+    {
+      "id": "L2-M7-C11",
+      "display": "You will call me, won't you?",
+      "cue": "तुम मुझे फ़ोन करोगे ना?"
+    },
+    {
+      "id": "L2-M7-C12",
+      "display": "He is on the phone at the moment",
+      "cue": "वह अभी फ़ोन पर हैं"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

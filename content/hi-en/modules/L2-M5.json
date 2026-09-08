@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": [
+    "L2-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "Would you like + some + N?",
+      "I'd like + a/an + N + , + please",
+      "Can I have + the + N + , + please?",
+      "No + , + thanks + , + <reason>",
+      "Could you pass me + the + N?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "मेज़बान Would you like…? कहता है और मेहमान I'd like… . Do you want some tea? व्याकरण से सही है पर सुनने में रूखा, कहीं-कहीं चुनौती जैसा लगता है — जबकि क्या आप चाय लेंगे? हिंदी में बिलकुल सामान्य है. M1 का नियम यहाँ नक़द मिल रहा है: शाइस्तगी लंबे और घुमावदार साँचे से आती है, अलग क्रिया से नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "सवाल में any आता है और पेशकश में some — Have you got any sugar? पर Would you like some tea? पेशकश हाँ की उम्मीद रखती है, इसलिए वहाँ some ही बैठता है. नकार में भी any: I have not got any bread."
+    },
+    {
+      "tag": "interference",
+      "text": "मना करना दोनों तरफ़ से समझना है. भारत में पहली ना अक्सर रस्म होती है और मेज़बान से ज़िद की उम्मीद रहती है; अंतरराष्ट्रीय अंग्रेज़ी में No, thanks को सीधे मान लिया जाता है, और दुबारा ज़ोर देना मेहमाननवाज़ी नहीं, दबाव लगता है. इसलिए ना के साथ एक नरम वजह जोड़िए और एक बार पूछकर छोड़ दीजिए."
+    },
+    {
+      "tag": "free",
+      "text": "a coffee और two teas कैफ़े में रोज़ चलते हैं और M3 का नियम तोड़ते नहीं. गिनती प्याले पर है, चीज़ पर नहीं — दो प्याले चाय. यही मशीन a glass of water में खुली हुई दिखती है."
+    },
+    {
+      "tag": "interference",
+      "text": "would, will का पिछला रूप नहीं है. I'd like का मतलब मुझे चाहिए है, आगे का इरादा नहीं — और यह L1-M1 वाले like से अलग बात है. I like tea आदत बताता है, I'd like tea अभी का ऑर्डर है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "Would you like some tea?",
+      "cue": "क्या आप चाय लेंगे?",
+      "literal": "चाहेंगे आप कुछ चाय?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "would you like",
+            "cue": "क्या आप लेंगे",
+            "tag": "delta",
+            "forms": [],
+            "note": "मेज़बान का तैयार साँचा, तीनों शब्द साथ. यहाँ का like आदत वाला like नहीं है — I like tea अलग बात है."
+          },
+          {
+            "display": "would",
+            "cue": "चाहना का नरम रूप",
+            "tag": "interference",
+            "forms": [],
+            "note": "will का पिछला रूप नहीं. यह वाक्य को नरम और कम सीधा बनाता है, ठीक वैसे जैसे can को could बनाता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Do you want some tea? ग़लत नहीं है, पर मेज़बानी में रूखा लगता है. हिंदी से सीधा अनुवाद यहीं फिसलता है.",
+      "sound": "would का l बिलकुल चुप है — वुड.",
+      "variations": [
+        {
+          "display": "Would you like some coffee?",
+          "cue": "क्या आप कॉफ़ी लेंगे?",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "Would you like a cup of tea?",
+          "cue": "क्या आप एक प्याला चाय लेंगे?",
+          "changed": "प्याला गिना गया"
+        },
+        {
+          "display": "Would you like some water?",
+          "cue": "क्या आप पानी लेंगे?",
+          "changed": "दूसरी बिना गिनी चीज़"
+        }
+      ],
+      "mistake": {
+        "display": "Would you like any tea?",
+        "why": "पेशकश में some आता है: Would you like some tea?"
+      },
+      "usage": "मेहमान के आते ही कहा जाने वाला पहला वाक्य.",
+      "register": "neutral",
+      "mnemonic": "पेशकश में some, सवाल में any."
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "I'd like a cup of tea, please",
+      "cue": "मुझे एक प्याला चाय चाहिए",
+      "literal": "मैं चाहूँगा एक प्याला का चाय, प्लीज़",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "I'd",
+            "cue": "मैं चाहूँगा",
+            "tag": "delta",
+            "forms": [
+              "I would"
+            ],
+            "note": "I would का छोटा रूप, और ऑर्डर देने में लगभग हमेशा यही छोटा रूप चलता है."
+          },
+          {
+            "display": "plate",
+            "cue": "थाली · प्लेट",
+            "tag": "free",
+            "forms": [
+              "plates"
+            ],
+            "note": "गिनी जाने वाली चीज़, और बिना गिनी चीज़ों को गिनने का पैमाना भी: a plate of rice."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "I want a cup of tea सही अंग्रेज़ी है पर होटल में बच्चों जैसा लगता है. ऑर्डर I'd like से दिया जाता है.",
+      "sound": "I'd एक ही अक्षर जैसा — आइड.",
+      "variations": [
+        {
+          "display": "I'd like some water, please",
+          "cue": "मुझे थोड़ा पानी चाहिए",
+          "changed": "बिना गिनी चीज़, some के साथ"
+        },
+        {
+          "display": "I'd like a plate of rice, please",
+          "cue": "मुझे एक थाली चावल चाहिए",
+          "changed": "दूसरा पैमाना"
+        },
+        {
+          "display": "I'd like two cups of tea, please",
+          "cue": "मुझे दो प्याले चाय चाहिए",
+          "changed": "गिनती प्याले पर"
+        }
+      ],
+      "mistake": {
+        "display": "I like a cup of tea, please",
+        "why": "आदत नहीं, माँग है: I'd like a cup of tea, please."
+      },
+      "usage": "होटल, कैफ़े या किसी के घर में अपनी बात रखना.",
+      "register": "neutral",
+      "mnemonic": "I like आदत, I'd like ऑर्डर."
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "Can I have the menu, please?",
+      "cue": "क्या मुझे मेन्यू मिल सकता है?",
+      "literal": "सकता हूँ मैं रखना वह मेन्यू, प्लीज़?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "menu",
+            "cue": "मेन्यू",
+            "tag": "free",
+            "forms": [
+              "menus"
+            ],
+            "note": "मेज़ पर एक ही होता है, इसलिए the menu. पहली बार माँगते वक़्त a menu भी चलता है."
+          },
+          {
+            "display": "bill",
+            "cue": "बिल",
+            "tag": "interference",
+            "forms": [
+              "bills"
+            ],
+            "note": "अमेरिका में इसी काग़ज़ को check कहते हैं. bill वहाँ नोट के लिए भी चलता है — a ten dollar bill."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "L1-M8 का Can I have यहाँ भी पूरा टुकड़ा है. Give me the menu व्याकरण से सही है पर हुक्म जैसा लगता है.",
+      "sound": "menu में ज़ोर पहले हिस्से पर — मेन्यू.",
+      "variations": [
+        {
+          "display": "Can I have the bill, please?",
+          "cue": "क्या मुझे बिल मिल सकता है?",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "Can I have the menu?",
+          "cue": "क्या मुझे मेन्यू मिल सकता है?",
+          "changed": "please हटा, थोड़ा रूखा"
+        },
+        {
+          "display": "Can I have a menu, please?",
+          "cue": "क्या मुझे एक मेन्यू मिल सकता है?",
+          "changed": "the की जगह a"
+        }
+      ],
+      "mistake": {
+        "display": "Can I have menu, please?",
+        "why": "गिनी जाने वाली चीज़ अकेली नहीं आती: Can I have the menu, please?"
+      },
+      "usage": "होटल में बैठते ही और खाने के बाद.",
+      "register": "neutral",
+      "mnemonic": "पहले menu, आख़िर में bill."
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "Have you got any bread?",
+      "cue": "क्या तुम्हारे पास कोई रोटी है?",
+      "literal": "रखते हो तुम कोई रोटी?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "any",
+            "cue": "कोई · कुछ भी",
+            "tag": "delta",
+            "forms": [],
+            "note": "खुले सवाल और नकार का शब्द. गिनी और बिना गिनी दोनों पर चलता है, और इसके बाद -s वाली संज्ञा भी आ सकती है."
+          },
+          {
+            "display": "salt",
+            "cue": "नमक",
+            "tag": "interference",
+            "forms": [],
+            "note": "गिना नहीं जाता, M3 वाले bread की तरह. salts कभी नहीं; चाहिए तो some salt या a little salt."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "some और any की बँटाई सवाल-बयान से नहीं, इरादे से होती है. जानकारी माँगनी हो तो any, देनी हो तो some.",
+      "sound": "any में a की आवाज़ ए है — एनी, ऐनी नहीं.",
+      "variations": [
+        {
+          "display": "Have you got any salt?",
+          "cue": "क्या तुम्हारे पास नमक है?",
+          "changed": "दूसरी बिना गिनी चीज़"
+        },
+        {
+          "display": "I have not got any bread",
+          "cue": "मेरे पास रोटी नहीं है",
+          "changed": "नकार, यहाँ भी any"
+        },
+        {
+          "display": "Have you got any vegetables?",
+          "cue": "क्या तुम्हारे पास सब्ज़ियाँ हैं?",
+          "changed": "गिनी जाने वाली चीज़, बहुवचन में"
+        }
+      ],
+      "mistake": {
+        "display": "Have you got some bread?",
+        "why": "खुले सवाल में any आता है: Have you got any bread?"
+      },
+      "usage": "रसोई में या दुकान पर पूछताछ.",
+      "register": "informal",
+      "mnemonic": "जानना हो तो any, देना हो तो some."
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "No, thanks, I'm full",
+      "cue": "नहीं, शुक्रिया, मेरा पेट भरा है",
+      "literal": "नहीं, शुक्रिया, मैं हूँ भरा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "full",
+            "cue": "पेट भरा",
+            "tag": "interference",
+            "forms": [],
+            "note": "खाने के बाद के लिए यही शब्द है. I am full सामान्य है; भारत में आम My stomach is full बाहर अजीब लगता है."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "अकेला No काफ़ी नहीं. अंग्रेज़ी में ना के साथ एक छोटी वजह जोड़ी जाती है, वरना वह नाराज़गी जैसी लगती है.",
+      "sound": "full का u किताब वाले u जैसा — फ़ुल, फ़ूल नहीं.",
+      "variations": [
+        {
+          "display": "No, thanks, I am full",
+          "cue": "नहीं, शुक्रिया, मेरा पेट भरा है",
+          "changed": "पूरा रूप, ज़रा औपचारिक"
+        },
+        {
+          "display": "No, thanks, I am not hungry",
+          "cue": "नहीं, शुक्रिया, मुझे भूख नहीं है",
+          "changed": "दूसरी वजह"
+        },
+        {
+          "display": "I'm full, thanks",
+          "cue": "मेरा पेट भरा है, शुक्रिया",
+          "changed": "क्रम बदला, No हटा"
+        }
+      ],
+      "mistake": {
+        "display": "No, thanks, I have full",
+        "why": "full विशेषण है, इसलिए am चाहिए: No, thanks, I am full."
+      },
+      "usage": "मेज़बान को नरमी से रोकना — और एक बार कह देने के बाद ज़िद की उम्मीद न रखें.",
+      "register": "neutral",
+      "mnemonic": "ना के साथ एक वजह."
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "Would you like some vegetables?",
+      "cue": "क्या आप सब्ज़ी लेंगे?",
+      "literal": "चाहेंगे आप कुछ सब्ज़ियाँ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vegetables",
+            "cue": "सब्ज़ी",
+            "tag": "interference",
+            "forms": [
+              "vegetable"
+            ],
+            "note": "हिंदी की सब्ज़ी एकवचन है, अंग्रेज़ी में खाने की बात हो तो लगभग हमेशा बहुवचन: some vegetables."
+          },
+          {
+            "display": "chicken",
+            "cue": "मुर्ग़ा · चिकन",
+            "tag": "delta",
+            "forms": [
+              "chickens"
+            ],
+            "note": "खाने के मायने में गिना नहीं जाता — some chicken. ज़िंदा परिंदों की बात हो तब two chickens चलता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "एक ही शब्द दोनों तरफ़ है: थाली में chicken बिना गिना, दरबे में chickens गिने हुए. किस्म बनाम इकाई वाला वही नियम.",
+      "sound": "vegetables तीन हिस्सों में बोला जाता है — वेज्टबल्ज़.",
+      "variations": [
+        {
+          "display": "Would you like some chicken?",
+          "cue": "क्या आप चिकन लेंगे?",
+          "changed": "दूसरी चीज़, बिना गिनी"
+        },
+        {
+          "display": "Would you like some rice?",
+          "cue": "क्या आप चावल लेंगे?",
+          "changed": "दूसरी बिना गिनी चीज़"
+        },
+        {
+          "display": "Would you like a lot of rice?",
+          "cue": "क्या आप बहुत चावल लेंगे?",
+          "changed": "मात्रा जोड़ी"
+        }
+      ],
+      "mistake": {
+        "display": "Would you like some vegetable?",
+        "why": "खाने की सब्ज़ी बहुवचन में आती है: Would you like some vegetables?"
+      },
+      "usage": "खाने की मेज़ पर दूसरा दौर पूछना.",
+      "register": "neutral",
+      "mnemonic": "थाली में chicken, दरबे में chickens."
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "Could you pass me the salt?",
+      "cue": "ज़रा नमक देंगे?",
+      "literal": "सकेंगे आप बढ़ाना मुझे वह नमक?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pass",
+            "cue": "बढ़ाना · पकड़ाना",
+            "tag": "delta",
+            "forms": [
+              "passes"
+            ],
+            "note": "मेज़ पर कोई चीज़ उठाकर देना. give भी चलता है पर मेज़ पर pass ही सुनाई देता है."
+          },
+          {
+            "display": "spoon",
+            "cue": "चम्मच",
+            "tag": "free",
+            "forms": [
+              "spoons"
+            ],
+            "note": "गिना जाता है. नाप के लिए भी चलता है — a spoon of sugar."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "M1 का could यहाँ काम कर रहा है. Can you pass me the salt? भी ठीक है, could बस ज़रा और नरम है.",
+      "sound": "pass का a ब्रिटिश बोली में लंबा — पास; अमेरिकी में छोटा — पैस.",
+      "variations": [
+        {
+          "display": "Could you pass me the bread?",
+          "cue": "ज़रा रोटी देंगे?",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "Can you pass me the salt?",
+          "cue": "नमक देंगे?",
+          "changed": "can से, ज़रा कम नरम"
+        },
+        {
+          "display": "Could you pass me a spoon?",
+          "cue": "ज़रा एक चम्मच देंगे?",
+          "changed": "गिनी जाने वाली चीज़, a के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "Could you pass the salt to me?",
+        "why": "pass me the salt ज़्यादा सहज है, हालाँकि यह रूप ग़लत नहीं."
+      },
+      "usage": "खाने की मेज़ पर सबसे आम माँग.",
+      "register": "neutral",
+      "mnemonic": "मेज़ पर pass, हाथ में give."
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "Can I have a glass of water?",
+      "cue": "क्या मुझे एक गिलास पानी मिल सकता है?",
+      "literal": "सकता हूँ मैं रखना एक गिलास का पानी?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "glass",
+            "cue": "गिलास",
+            "tag": "interference",
+            "forms": [
+              "glasses"
+            ],
+            "note": "बहुवचन में -es लगता है. यही शब्द काँच के लिए भी है, और glasses का मतलब चश्मा भी होता है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "पानी गिना नहीं जाता, गिलास गिना जाता है. इसलिए -s हमेशा glass पर लगता है, water पर कभी नहीं.",
+      "sound": "glass का ज़ोर एक ही झटके में — ग्लास, गिलास नहीं.",
+      "variations": [
+        {
+          "display": "Can I have two glasses of water?",
+          "cue": "क्या मुझे दो गिलास पानी मिल सकते हैं?",
+          "changed": "गिनती गिलास पर"
+        },
+        {
+          "display": "I'd like a glass of water, please",
+          "cue": "मुझे एक गिलास पानी चाहिए",
+          "changed": "ऑर्डर वाला साँचा"
+        },
+        {
+          "display": "Can I have a glass of water, please?",
+          "cue": "क्या मुझे एक गिलास पानी मिल सकता है?",
+          "changed": "please से नरम"
+        }
+      ],
+      "mistake": {
+        "display": "Can I have a water?",
+        "why": "पानी गिना नहीं जाता: Can I have a glass of water?"
+      },
+      "usage": "होटल में, दफ़्तर में, किसी के घर में — रोज़ का वाक्य.",
+      "register": "neutral",
+      "mnemonic": "गिनती बरतन पर."
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "Two teas, please",
+      "cue": "दो चाय, प्लीज़",
+      "literal": "दो चायें, प्लीज़",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tea",
+            "cue": "चाय",
+            "tag": "delta",
+            "forms": [
+              "teas"
+            ],
+            "note": "कैफ़े में two teas का मतलब दो प्याले चाय है. नियम टूटा नहीं — बरतन गिना जा रहा है, चीज़ नहीं, और वह छिपा हुआ है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "M3 का नियम अभी-अभी सीखा है, इसलिए यह उसका अपवाद लगता है. है नहीं — a coffee, two teas में प्याला बोला नहीं जाता, बस समझा जाता है.",
+      "sound": "teas का s ज़ की तरह — टीज़.",
+      "variations": [
+        {
+          "display": "Two teas and one coffee, please",
+          "cue": "दो चाय और एक कॉफ़ी, प्लीज़",
+          "changed": "दूसरी चीज़ जुड़ी"
+        },
+        {
+          "display": "Can I have two teas, please?",
+          "cue": "क्या मुझे दो चाय मिल सकती हैं?",
+          "changed": "पूरा सवाल"
+        },
+        {
+          "display": "One tea, please",
+          "cue": "एक चाय, प्लीज़",
+          "changed": "एक ही, इसलिए -s नहीं"
+        }
+      ],
+      "mistake": {
+        "display": "Two tea, please",
+        "why": "यहाँ प्याले गिने जा रहे हैं: Two teas, please."
+      },
+      "usage": "काउंटर पर सबसे छोटा और सबसे आम ऑर्डर.",
+      "register": "informal",
+      "mnemonic": "प्याला छिपा है, -s उसी का है."
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "No, thanks, that is enough",
+      "cue": "नहीं, शुक्रिया, इतना काफ़ी है",
+      "literal": "नहीं, शुक्रिया, वह है काफ़ी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "enough",
+            "cue": "काफ़ी · बस",
+            "tag": "interference",
+            "forms": [],
+            "note": "संज्ञा के आगे आता है — enough rice — पर विशेषण के पीछे: good enough. वर्तनी और आवाज़ का मेल यहाँ टूटता है."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "यह वाक्य आख़िरी है, रस्मी नहीं. भारत में पहली ना के बाद ज़िद की उम्मीद रहती है; यहाँ मेज़बान इसे मान लेगा और दुबारा नहीं पूछेगा.",
+      "sound": "enough का gh फ़ की तरह बोला जाता है — इनफ़.",
+      "variations": [
+        {
+          "display": "No, thanks, I am full",
+          "cue": "नहीं, शुक्रिया, मेरा पेट भरा है",
+          "changed": "दूसरी वजह"
+        },
+        {
+          "display": "That is enough, thanks",
+          "cue": "इतना काफ़ी है, शुक्रिया",
+          "changed": "No हटा, नरम"
+        },
+        {
+          "display": "Thank you, that is enough",
+          "cue": "शुक्रिया, इतना काफ़ी है",
+          "changed": "ज़रा औपचारिक"
+        }
+      ],
+      "mistake": {
+        "display": "No, thanks, that is enough only",
+        "why": "यहाँ only नहीं आता: No, thanks, that is enough."
+      },
+      "usage": "मेज़बान के परोसते वक़्त रोकना — और मेज़बान की तरफ़ से: एक बार पूछना काफ़ी है.",
+      "register": "neutral",
+      "mnemonic": "एक ना, एक वजह, बात ख़त्म."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M5-C01",
+      "display": "Would you like some tea?",
+      "cue": "क्या आप चाय लेंगे?"
+    },
+    {
+      "id": "L2-M5-C02",
+      "display": "I'd like a cup of tea, please",
+      "cue": "मुझे एक प्याला चाय चाहिए"
+    },
+    {
+      "id": "L2-M5-C03",
+      "display": "Can I have the menu, please?",
+      "cue": "क्या मुझे मेन्यू मिल सकता है?"
+    },
+    {
+      "id": "L2-M5-C04",
+      "display": "Have you got any bread?",
+      "cue": "क्या तुम्हारे पास कोई रोटी है?"
+    },
+    {
+      "id": "L2-M5-C05",
+      "display": "No, thanks, I'm full",
+      "cue": "नहीं, शुक्रिया, मेरा पेट भरा है"
+    },
+    {
+      "id": "L2-M5-C06",
+      "display": "Would you like some vegetables?",
+      "cue": "क्या आप सब्ज़ी लेंगे?"
+    },
+    {
+      "id": "L2-M5-C07",
+      "display": "Could you pass me the salt?",
+      "cue": "ज़रा नमक देंगे?"
+    },
+    {
+      "id": "L2-M5-C08",
+      "display": "Can I have a glass of water?",
+      "cue": "क्या मुझे एक गिलास पानी मिल सकता है?"
+    },
+    {
+      "id": "L2-M5-C09",
+      "display": "Two teas, please",
+      "cue": "दो चाय, प्लीज़"
+    },
+    {
+      "id": "L2-M5-C10",
+      "display": "No, thanks, that is enough",
+      "cue": "नहीं, शुक्रिया, इतना काफ़ी है"
+    },
+    {
+      "id": "L2-M5-C11",
+      "display": "Can I have the bill, please?",
+      "cue": "क्या मुझे बिल मिल सकता है?"
+    },
+    {
+      "id": "L2-M5-C12",
+      "display": "I'd like a plate of rice, please",
+      "cue": "मुझे एक थाली चावल चाहिए"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

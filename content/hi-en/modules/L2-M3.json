@@ -1,0 +1,694 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M3",
+  "title": "Describing things",
+  "job": "Size, colour, quality — agreement at length",
+  "prerequisites": [
+    "L2-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "The + N + is + Adj",
+      "a + Adj + Adj + N",
+      "some + N-uncountable",
+      "a lot of + N",
+      "a + <counter> + of + N-uncountable"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "अंग्रेज़ी की संज्ञाएँ दो हिस्सों में बँटी हैं और हिंदी में यह बँटवारा है ही नहीं. सामान, फल, सलाह हिंदी में गिने जाते हैं; luggage, fruit, advice, information, furniture, bread, money, water, hair अंग्रेज़ी में नहीं गिने जाते. ये किस्म बताते हैं, इकाई नहीं — इसलिए न a लगता है, न -s."
+    },
+    {
+      "tag": "delta",
+      "text": "much और many का असली नियम वह नहीं जो आमतौर पर सिखाया जाता है. ये सवालों और नकार में रहते हैं — Is there much sugar? · I have not got many pens. सीधे वाक्य में a lot of आता है: I have got a lot of money. I have much money अंग्रेज़ी नहीं है."
+    },
+    {
+      "tag": "delta",
+      "text": "एक से ज़्यादा विशेषण हों तो क्रम तय है: राय → आकार → उम्र → रंग → देश → सामान → संज्ञा. a big red car सही, a red big car ग़लत. हिंदी में यह क्रम खुला है, इसलिए कान से पकड़ में नहीं आता — काम की बात यही है कि आकार रंग से पहले."
+    },
+    {
+      "tag": "free",
+      "text": "रंग भी सिर्फ़ विशेषण हैं, इसलिए M2 का नियम यहाँ भी चलता है: कोई रूप नहीं बदलता. a red car, red cars, a red bag — हमेशा red."
+    },
+    {
+      "tag": "interference",
+      "text": "a lot of एक ही टुकड़ा है, तीनों शब्द साथ. न a lot ऑफ़ अलग करके सोचें, न many informations जैसा बहुवचन बनाएँ — जो गिना नहीं जाता उस पर -s कभी नहीं लगता."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M3-S01",
+      "display": "The bag is heavy",
+      "cue": "बैग भारी है",
+      "literal": "वह बैग है भारी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "heavy",
+            "cue": "भारी",
+            "tag": "free",
+            "forms": [
+              "heavier",
+              "heaviest"
+            ],
+            "note": "वज़न के लिए. विशेषण है, इसलिए बैग एक हो या कई, रूप वही रहता है."
+          },
+          {
+            "display": "light",
+            "cue": "हल्का",
+            "tag": "interference",
+            "forms": [],
+            "note": "heavy का उल्टा. यही शब्द रोशनी के लिए भी चलता है — the light is on. एक ही वर्तनी, दो काम; कौन-सा, यह वाक्य बताता है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "भारी · भारे जैसा कुछ नहीं. heavy एक ही रूप में रहता है, चाहे आगे बैग हो या कुर्सियाँ.",
+      "sound": "heavy में h बोलना ज़रूरी है — ऐवी नहीं, हेवी.",
+      "variations": [
+        {
+          "display": "The box is light",
+          "cue": "डिब्बा हल्का है",
+          "changed": "उल्टा विशेषण, बाक़ी ढाँचा वही"
+        },
+        {
+          "display": "The bag is not heavy",
+          "cue": "बैग भारी नहीं है",
+          "changed": "नकार, is के बाद not"
+        },
+        {
+          "display": "The chairs are heavy",
+          "cue": "कुर्सियाँ भारी हैं",
+          "changed": "बहुवचन में are, पर heavy वही"
+        }
+      ],
+      "mistake": {
+        "display": "The bag is heavys",
+        "why": "विशेषण पर कभी -s नहीं लगता: The bag is heavy."
+      },
+      "usage": "सामान उठाते या पकड़ाते वक़्त सबसे आम वाक्य.",
+      "register": "neutral",
+      "mnemonic": "वज़न बदलता है, शब्द नहीं."
+    },
+    {
+      "id": "L2-M3-S02",
+      "display": "This shop is very small",
+      "cue": "यह दुकान बहुत छोटी है",
+      "literal": "यह दुकान है बहुत छोटी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "small",
+            "cue": "छोटा · छोटी",
+            "tag": "interference",
+            "forms": [
+              "smaller",
+              "smallest"
+            ],
+            "note": "आकार के लिए. उम्र के लिए नहीं — छोटा भाई younger brother है, small brother नहीं."
+          },
+          {
+            "display": "big",
+            "cue": "बड़ा · बड़ी",
+            "tag": "free",
+            "forms": [
+              "bigger",
+              "biggest"
+            ],
+            "note": "small का उल्टा. यही शब्द अहमियत के लिए भी चलता है — a big day."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "बड़ा भाई के लिए big brother नहीं चलता, older brother चलता है. आकार और उम्र अंग्रेज़ी में अलग शब्द लेते हैं.",
+      "sound": "small में l सुनाई देता है — स्मॉल, स्माल नहीं.",
+      "variations": [
+        {
+          "display": "This shop is very big",
+          "cue": "यह दुकान बहुत बड़ी है",
+          "changed": "उल्टा विशेषण"
+        },
+        {
+          "display": "The shops are small",
+          "cue": "दुकानें छोटी हैं",
+          "changed": "बहुवचन, विशेषण फिर भी वही"
+        },
+        {
+          "display": "This shop is not big",
+          "cue": "यह दुकान बड़ी नहीं है",
+          "changed": "नकार"
+        }
+      ],
+      "mistake": {
+        "display": "This shop is very smaller",
+        "why": "very के साथ तुलना वाला रूप नहीं आता: This shop is very small."
+      },
+      "usage": "जगह या चीज़ का आकार बताना.",
+      "register": "neutral",
+      "mnemonic": "small आकार का, young उम्र का."
+    },
+    {
+      "id": "L2-M3-S03",
+      "display": "I have got a big red car",
+      "cue": "मेरे पास एक बड़ी लाल गाड़ी है",
+      "literal": "मैं पास रखता हूँ एक बड़ी लाल गाड़ी",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "red",
+            "cue": "लाल",
+            "tag": "free",
+            "forms": [],
+            "note": "रंग भी सिर्फ़ विशेषण है: a red car, red cars — रूप कभी नहीं बदलता."
+          },
+          {
+            "display": "black",
+            "cue": "काला · काली",
+            "tag": "free",
+            "forms": [],
+            "note": "हिंदी के काला · काली · काले तीनों की जगह एक black."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "a red big car ग़लत है. आकार रंग से पहले आता है, और यह क्रम अंग्रेज़ी में तय है — हिंदी में खुला.",
+      "sound": "car में r अमेरिकी बोली में सुनाई देता है, ब्रिटिश में लगभग नहीं — कार · काa.",
+      "variations": [
+        {
+          "display": "I have got a big black car",
+          "cue": "मेरे पास एक बड़ी काली गाड़ी है",
+          "changed": "रंग बदला, क्रम वही"
+        },
+        {
+          "display": "I have got a small red car",
+          "cue": "मेरे पास एक छोटी लाल गाड़ी है",
+          "changed": "आकार बदला"
+        },
+        {
+          "display": "She has got a red car",
+          "cue": "उसके पास एक लाल गाड़ी है",
+          "changed": "दूसरा कर्ता, has got"
+        }
+      ],
+      "mistake": {
+        "display": "I have got a red big car",
+        "why": "आकार रंग से पहले: I have got a big red car."
+      },
+      "usage": "अपनी चीज़ का ब्यौरा देना.",
+      "register": "neutral",
+      "mnemonic": "पहले कितना बड़ा, फिर किस रंग का."
+    },
+    {
+      "id": "L2-M3-S04",
+      "display": "The door is white and clean",
+      "cue": "दरवाज़ा सफ़ेद और साफ़ है",
+      "literal": "वह दरवाज़ा है सफ़ेद और साफ़",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "white",
+            "cue": "सफ़ेद",
+            "tag": "free",
+            "forms": [],
+            "note": "रंग. और से जोड़ने पर दोनों विशेषण अपने-अपने रूप में रहते हैं — कुछ नहीं बदलता."
+          },
+          {
+            "display": "clean",
+            "cue": "साफ़",
+            "tag": "delta",
+            "forms": [],
+            "note": "हालत बताता है. यही शब्द क्रिया भी है — clean the table का मतलब मेज़ साफ़ करो."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "and से दो विशेषण जोड़ते वक़्त क्रम वाला नियम नहीं लगता — वह सिर्फ़ बिना and के लगातार विशेषणों पर है.",
+      "sound": "white में wh हवा वाला w है — व्हाइट, वाइट नहीं.",
+      "variations": [
+        {
+          "display": "The door is not clean",
+          "cue": "दरवाज़ा साफ़ नहीं है",
+          "changed": "नकार"
+        },
+        {
+          "display": "The window is white",
+          "cue": "खिड़की सफ़ेद है",
+          "changed": "दूसरी चीज़, एक ही विशेषण"
+        },
+        {
+          "display": "The windows are white",
+          "cue": "खिड़कियाँ सफ़ेद हैं",
+          "changed": "बहुवचन में are"
+        }
+      ],
+      "mistake": {
+        "display": "The door is white clean",
+        "why": "दो अलग बातें जोड़नी हों तो and चाहिए: The door is white and clean."
+      },
+      "usage": "किसी चीज़ की हालत बताना.",
+      "register": "neutral",
+      "mnemonic": "रंग और हालत — बीच में and."
+    },
+    {
+      "id": "L2-M3-S05",
+      "display": "My blue bag is dirty",
+      "cue": "मेरा नीला बैग गंदा है",
+      "literal": "मेरा नीला बैग है गंदा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "blue",
+            "cue": "नीला",
+            "tag": "free",
+            "forms": [],
+            "note": "रंग, संज्ञा के आगे. My blue bag में blue बैग को पहचानता है, हालत नहीं बताता."
+          },
+          {
+            "display": "dirty",
+            "cue": "गंदा",
+            "tag": "free",
+            "forms": [],
+            "note": "clean का उल्टा. -y पर ख़त्म होता है पर यह बहुवचन नहीं है, विशेषण ही है."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "एक ही वाक्य में दो विशेषण दो अलग काम कर रहे हैं: blue पहचान रहा है, dirty ख़बर दे रहा है. इसलिए एक आगे है और एक is के बाद.",
+      "sound": "dirty में अमेरिकी बोली का t लगभग d जैसा — डर्डी.",
+      "variations": [
+        {
+          "display": "My blue bag is clean",
+          "cue": "मेरा नीला बैग साफ़ है",
+          "changed": "उल्टी हालत"
+        },
+        {
+          "display": "My black bag is dirty",
+          "cue": "मेरा काला बैग गंदा है",
+          "changed": "रंग बदला"
+        },
+        {
+          "display": "My bag is not dirty",
+          "cue": "मेरा बैग गंदा नहीं है",
+          "changed": "नकार, रंग हटा"
+        }
+      ],
+      "mistake": {
+        "display": "My bag blue is dirty",
+        "why": "विशेषण संज्ञा के आगे आता है: My blue bag is dirty."
+      },
+      "usage": "किस वाली चीज़, यह बताते हुए उसकी हालत कहना.",
+      "register": "neutral",
+      "mnemonic": "पहचान आगे, ख़बर is के बाद."
+    },
+    {
+      "id": "L2-M3-S06",
+      "display": "The green apples are cheap",
+      "cue": "हरे सेब सस्ते हैं",
+      "literal": "वे हरे सेब हैं सस्ते",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "green",
+            "cue": "हरा",
+            "tag": "free",
+            "forms": [],
+            "note": "रंग. बहुवचन सेबों के आगे भी green ही रहता है — greens नहीं."
+          },
+          {
+            "display": "yellow",
+            "cue": "पीला",
+            "tag": "free",
+            "forms": [],
+            "note": "रंग. पहला हिस्सा ये है, दूसरा लो — येलो."
+          },
+          {
+            "display": "cheap",
+            "cue": "सस्ता",
+            "tag": "interference",
+            "forms": [
+              "cheaper",
+              "cheapest"
+            ],
+            "note": "दाम के लिए. आदमी के लिए कहें तो अपमान है — घटिया. चीज़ों तक ही रखें."
+          },
+          {
+            "display": "expensive",
+            "cue": "महँगा",
+            "tag": "free",
+            "forms": [],
+            "note": "cheap का उल्टा. लंबा शब्द है पर costly से कहीं ज़्यादा चलता है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "cheap दाम पर सस्ता है, इंसान पर घटिया. He is cheap कह देना तारीफ़ नहीं, गाली के क़रीब है.",
+      "sound": "cheap का ee लंबा है — चीप. chip छोटा है और दूसरा शब्द है.",
+      "variations": [
+        {
+          "display": "The yellow apples are cheap",
+          "cue": "पीले सेब सस्ते हैं",
+          "changed": "रंग बदला"
+        },
+        {
+          "display": "The green apples are expensive",
+          "cue": "हरे सेब महँगे हैं",
+          "changed": "उल्टा दाम"
+        },
+        {
+          "display": "The green apple is cheap",
+          "cue": "हरा सेब सस्ता है",
+          "changed": "एकवचन में is"
+        }
+      ],
+      "mistake": {
+        "display": "The greens apples are cheap",
+        "why": "विशेषण बहुवचन नहीं होता: The green apples are cheap."
+      },
+      "usage": "बाज़ार में दाम पर राय देना.",
+      "register": "neutral",
+      "mnemonic": "सेब कई, हरा एक ही."
+    },
+    {
+      "id": "L2-M3-S07",
+      "display": "I need some advice",
+      "cue": "मुझे कुछ सलाह चाहिए",
+      "literal": "मैं ज़रूरत रखता हूँ कुछ सलाह",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "advice",
+            "cue": "सलाह",
+            "tag": "interference",
+            "forms": [],
+            "note": "गिनी नहीं जाती. an advice और advices दोनों ग़लत — some advice, a lot of advice. गिनना ही हो तो a piece of advice."
+          },
+          {
+            "display": "information",
+            "cue": "जानकारी",
+            "tag": "interference",
+            "forms": [],
+            "note": "यह भी गिनी नहीं जाती. informations कभी नहीं, चाहे कितनी भी बातें हों."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "हिंदी में सलाहें और जानकारियाँ बन जाती हैं, अंग्रेज़ी में नहीं. ये किस्म के नाम हैं, इकाई के नहीं — इसलिए न a, न -s.",
+      "sound": "advice में आख़िरी आवाज़ स है, ज़ नहीं — अड्वाइस.",
+      "variations": [
+        {
+          "display": "I need some information",
+          "cue": "मुझे कुछ जानकारी चाहिए",
+          "changed": "दूसरी बिना गिनी संज्ञा"
+        },
+        {
+          "display": "I want some advice",
+          "cue": "मुझे कुछ सलाह चाहिए",
+          "changed": "need की जगह want"
+        },
+        {
+          "display": "I need a lot of information",
+          "cue": "मुझे बहुत जानकारी चाहिए",
+          "changed": "some की जगह a lot of"
+        }
+      ],
+      "mistake": {
+        "display": "I need some advices",
+        "why": "advice गिनी नहीं जाती: I need some advice."
+      },
+      "usage": "मदद माँगने की शुरुआत — दफ़्तर और दोस्ती दोनों में.",
+      "register": "neutral",
+      "mnemonic": "किस्म का नाम, इसलिए न a न -s."
+    },
+    {
+      "id": "L2-M3-S08",
+      "display": "I have got a lot of luggage",
+      "cue": "मेरे पास बहुत सामान है",
+      "literal": "मैं पास रखता हूँ बहुत का सामान",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a lot of",
+            "cue": "बहुत सारा",
+            "tag": "delta",
+            "forms": [],
+            "note": "तीन शब्द, एक ही टुकड़ा. गिनी और बिना गिनी दोनों तरह की संज्ञाओं पर चलता है, और सीधे वाक्य में यही आता है."
+          },
+          {
+            "display": "luggage",
+            "cue": "सामान",
+            "tag": "interference",
+            "forms": [],
+            "note": "गिना नहीं जाता. two luggages ग़लत — two bags या two pieces of luggage."
+          },
+          {
+            "display": "furniture",
+            "cue": "फ़र्नीचर",
+            "tag": "interference",
+            "forms": [],
+            "note": "यह भी गिना नहीं जाता. furnitures कभी नहीं; एक चीज़ के लिए a table, a chair कहते हैं."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "सामान हिंदी में गिना जाता है, luggage नहीं. सूटकेस गिनने हों तो bags गिनें, luggage को नहीं.",
+      "sound": "luggage दो हिस्सों में — लग·इज. आख़िर में ए की आवाज़ नहीं.",
+      "variations": [
+        {
+          "display": "We have got a lot of furniture",
+          "cue": "हमारे पास बहुत फ़र्नीचर है",
+          "changed": "दूसरा कर्ता, दूसरी बिना गिनी संज्ञा"
+        },
+        {
+          "display": "I have got a lot of books",
+          "cue": "मेरे पास बहुत किताबें हैं",
+          "changed": "गिनी जाने वाली संज्ञा, बहुवचन में"
+        },
+        {
+          "display": "She has got a lot of luggage",
+          "cue": "उसके पास बहुत सामान है",
+          "changed": "has got के साथ, दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "I have got a lot of luggages",
+        "why": "luggage गिना नहीं जाता: I have got a lot of luggage."
+      },
+      "usage": "सफ़र में, टैक्सी या गाड़ी में जगह की बात करते हुए.",
+      "register": "neutral",
+      "mnemonic": "a lot of सब पर चलता है, -s सब पर नहीं."
+    },
+    {
+      "id": "L2-M3-S09",
+      "display": "Have you got much money?",
+      "cue": "क्या तुम्हारे पास ज़्यादा पैसे हैं?",
+      "literal": "रखते हो तुम ज़्यादा पैसा?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "much",
+            "cue": "ज़्यादा",
+            "tag": "delta",
+            "forms": [],
+            "note": "बिना गिनी संज्ञा के साथ, और लगभग हमेशा सवाल या नकार में. सीधे वाक्य में इसकी जगह a lot of आता है."
+          },
+          {
+            "display": "many",
+            "cue": "कई",
+            "tag": "delta",
+            "forms": [],
+            "note": "much का गिनी-संज्ञा वाला जोड़ीदार, वही सवाल-नकार की आदत: many books, पर सीधे वाक्य में a lot of books."
+          },
+          {
+            "display": "money",
+            "cue": "पैसा",
+            "tag": "interference",
+            "forms": [],
+            "note": "गिना नहीं जाता, इसलिए monies नहीं और verb भी एकवचन: the money is here. हिंदी के पैसे से यहीं फ़र्क़ पड़ता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "L1-M8 में how much और how many पूरे टुकड़े थे. अकेले much और many यहाँ पहली बार आ रहे हैं, और उनका घर सवाल और नकार है.",
+      "sound": "much का ch चम्मच वाला च है — मच.",
+      "variations": [
+        {
+          "display": "Have you got much sugar?",
+          "cue": "क्या तुम्हारे पास ज़्यादा चीनी है?",
+          "changed": "दूसरी बिना गिनी संज्ञा"
+        },
+        {
+          "display": "Have you got many books?",
+          "cue": "क्या तुम्हारे पास कई किताबें हैं?",
+          "changed": "गिनी संज्ञा, इसलिए many"
+        },
+        {
+          "display": "I have got a lot of money",
+          "cue": "मेरे पास बहुत पैसे हैं",
+          "changed": "सीधा वाक्य, इसलिए a lot of"
+        }
+      ],
+      "mistake": {
+        "display": "I have got much money",
+        "why": "सीधे वाक्य में much नहीं चलता: I have got a lot of money."
+      },
+      "usage": "पैसे की बात सीधे पूछना क़रीबी लोगों में ही ठीक है.",
+      "register": "informal",
+      "mnemonic": "सवाल में much, ख़बर में a lot of."
+    },
+    {
+      "id": "L2-M3-S10",
+      "display": "Can I have a piece of bread?",
+      "cue": "क्या मुझे एक रोटी मिल सकती है?",
+      "literal": "सकता हूँ मैं रखना एक टुकड़ा का रोटी?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "piece",
+            "cue": "टुकड़ा",
+            "tag": "delta",
+            "forms": [
+              "pieces"
+            ],
+            "note": "बिना गिनी संज्ञा को गिनने का तरीक़ा: a piece of bread, two pieces of advice. गिनती piece पर बैठती है, bread पर नहीं."
+          },
+          {
+            "display": "bread",
+            "cue": "रोटी · ब्रेड",
+            "tag": "interference",
+            "forms": [],
+            "note": "गिना नहीं जाता. a bread और two breads दोनों ग़लत — a piece of bread, some bread."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "-s हमेशा गिनने वाले शब्द पर लगता है. two pieces of bread में pieces बहुवचन है, bread नहीं.",
+      "sound": "piece और peace एक ही तरह बोले जाते हैं — पीस.",
+      "variations": [
+        {
+          "display": "Can I have a piece of bread, please?",
+          "cue": "क्या मुझे एक रोटी मिल सकती है, प्लीज़?",
+          "changed": "please से नरम"
+        },
+        {
+          "display": "Can I have two pieces of bread?",
+          "cue": "क्या मुझे दो रोटियाँ मिल सकती हैं?",
+          "changed": "गिनती piece पर, bread पर नहीं"
+        },
+        {
+          "display": "Can I have a kilo of rice?",
+          "cue": "क्या मुझे एक किलो चावल मिल सकते हैं?",
+          "changed": "दूसरा नापने वाला शब्द"
+        }
+      ],
+      "mistake": {
+        "display": "Can I have two breads?",
+        "why": "bread गिना नहीं जाता: Can I have two pieces of bread?"
+      },
+      "usage": "मेज़ पर या दुकान पर माँगने का सीधा और शाइस्ता तरीक़ा.",
+      "register": "neutral",
+      "mnemonic": "गिनती टुकड़े पर, चीज़ पर नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M3-C01",
+      "display": "The bag is heavy",
+      "cue": "बैग भारी है"
+    },
+    {
+      "id": "L2-M3-C02",
+      "display": "This shop is very small",
+      "cue": "यह दुकान बहुत छोटी है"
+    },
+    {
+      "id": "L2-M3-C03",
+      "display": "I have got a big red car",
+      "cue": "मेरे पास एक बड़ी लाल गाड़ी है"
+    },
+    {
+      "id": "L2-M3-C04",
+      "display": "The door is white and clean",
+      "cue": "दरवाज़ा सफ़ेद और साफ़ है"
+    },
+    {
+      "id": "L2-M3-C05",
+      "display": "My blue bag is dirty",
+      "cue": "मेरा नीला बैग गंदा है"
+    },
+    {
+      "id": "L2-M3-C06",
+      "display": "The green apples are cheap",
+      "cue": "हरे सेब सस्ते हैं"
+    },
+    {
+      "id": "L2-M3-C07",
+      "display": "I need some advice",
+      "cue": "मुझे कुछ सलाह चाहिए"
+    },
+    {
+      "id": "L2-M3-C08",
+      "display": "I have got a lot of luggage",
+      "cue": "मेरे पास बहुत सामान है"
+    },
+    {
+      "id": "L2-M3-C09",
+      "display": "Have you got much money?",
+      "cue": "क्या तुम्हारे पास ज़्यादा पैसे हैं?"
+    },
+    {
+      "id": "L2-M3-C10",
+      "display": "Can I have a piece of bread?",
+      "cue": "क्या मुझे एक रोटी मिल सकती है?"
+    },
+    {
+      "id": "L2-M3-C11",
+      "display": "The yellow book is expensive",
+      "cue": "पीली किताब महँगी है"
+    },
+    {
+      "id": "L2-M3-C12",
+      "display": "We have got a lot of furniture",
+      "cue": "हमारे पास बहुत फ़र्नीचर है"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M1",
+  "title": "Asking politely",
+  "job": "Requests, thanks, apologies in the right register",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "Please + V + <object>",
+      "Can you + V + <object>?",
+      "Could you + V + <object>?",
+      "Would you mind + V-ing?",
+      "Excuse me + , + <request>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "हिंदी विनती को क्रिया में बदलती है — दे · दो · दीजिए. अंग्रेज़ी में एक ही you है और एक ही क्रिया-रूप. विनम्रता शब्दों से और वाक्य के आकार से आती है: Give me → Please give me → Can you give me → Could you give me → Would you mind giving me."
+    },
+    {
+      "tag": "delta",
+      "text": "नियम यह है: अंग्रेज़ी विनती को सवाल बनाकर और लंबा करके विनम्र बनाती है. क्रिया कभी नहीं बदलती. दीजिए को imperative + please समझकर Do it, please कहना व्याकरण से सही और सुनने में रूखा है."
+    },
+    {
+      "tag": "delta",
+      "text": "can और could के बाद क्रिया अपने सादे रूप में रहती है — Can you give…, Could you open… — बीच में to नहीं आता."
+    },
+    {
+      "tag": "delta",
+      "text": "Would you mind के बाद क्रिया में -ing लगता है: Would you mind waiting? यह अकेली विनती है जिसमें क्रिया का रूप बदलता है, और सबसे विनम्र भी यही है."
+    },
+    {
+      "tag": "interference",
+      "text": "sorry और excuse me अलग हैं. sorry उस बात के लिए जो हो चुकी; excuse me उस बात के लिए जो होने वाली है — रास्ता माँगना, टोकना, अजनबी से कुछ पूछना. हिंदी का माफ़ कीजिए दोनों करता है."
+    },
+    {
+      "tag": "free",
+      "text": "kindly और do the needful भारतीय अंग्रेज़ी में बिलकुल सामान्य हैं और ग़लत नहीं. पर बाहर के पाठक को पुराने या अटपटे लगते हैं, इसलिए यह कोर्स please लिखता है और उन्हें सिर्फ़ नाम लेता है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M1-S01",
+      "display": "Give me the book",
+      "cue": "मुझे किताब दो",
+      "literal": "दो मुझे वह किताब",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Give",
+            "cue": "दो · दीजिए · दे",
+            "tag": "interference",
+            "forms": [
+              "give",
+              "gives"
+            ],
+            "note": "एक ही रूप — दे, दो और दीजिए तीनों के लिए. हिंदी तीन सीढ़ियाँ चढ़ती है, अंग्रेज़ी एक भी नहीं; विनम्रता आगे-पीछे के शब्दों से आती है."
+          },
+          {
+            "display": "me",
+            "cue": "मुझे · मुझको",
+            "tag": "delta",
+            "forms": [],
+            "note": "I का वह रूप जो क्रिया के बाद आता है: Give me, not Give I. जिसे कुछ दिया जाए, वह me है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "यह वाक्य रूखा नहीं है, पर नंगा है. अकेला imperative दोस्त से ठीक है, अजनबी से नहीं — और आगे के चार वाक्य यही सीढ़ी चढ़ते हैं.",
+      "sound": "give में g कठोर है, ज नहीं — गिव. me लंबा है: मी.",
+      "variations": [
+        {
+          "display": "Give me the pen",
+          "cue": "मुझे पेन दो",
+          "changed": "चीज़ बदली, साँचा वही"
+        },
+        {
+          "display": "Give me some water",
+          "cue": "मुझे थोड़ा पानी दो",
+          "changed": "गिनने-लायक नहीं, इसलिए the की जगह some"
+        },
+        {
+          "display": "Give me two books",
+          "cue": "मुझे दो किताबें दो",
+          "changed": "गिनती जोड़कर — किताब बहुवचन हो गई"
+        }
+      ],
+      "mistake": {
+        "display": "Give I the book",
+        "why": "क्रिया के बाद I नहीं आता, me आता है: Give me the book."
+      },
+      "usage": "दोस्त, भाई-बहन, अपनी उम्र का कोई. अजनबी से यही बात S03 या S04 के साँचे में कहिए.",
+      "register": "informal",
+      "mnemonic": "देने वाला I, पाने वाला me."
+    },
+    {
+      "id": "L2-M1-S02",
+      "display": "Please give me the book",
+      "cue": "कृपया मुझे किताब दो",
+      "literal": "कृपया दो मुझे वह किताब",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Please",
+            "cue": "कृपया · प्लीज़",
+            "tag": "free",
+            "forms": [],
+            "note": "M8 की पंक्ति, अब विनती के आगे. आदेश के शुरू में या आख़िर में — दोनों जगह चलता है, और मतलब वही रहता है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "please लगाने से आदेश नरम होता है, विनती नहीं बनता. विनती तब बनता है जब वाक्य सवाल बन जाए — यह S03 का काम है.",
+      "sound": "please लंबा है — प्लीज़, और आख़िर में ज़ की आवाज़, स नहीं.",
+      "variations": [
+        {
+          "display": "Please give me some water",
+          "cue": "कृपया मुझे थोड़ा पानी दो",
+          "changed": "गिनने-लायक नहीं चीज़, तो some"
+        },
+        {
+          "display": "Give me the book, please",
+          "cue": "मुझे किताब दो, प्लीज़",
+          "changed": "please आख़िर में — बात वही, थोड़ा और सहज"
+        },
+        {
+          "display": "Please wait here",
+          "cue": "कृपया यहाँ रुको",
+          "changed": "दूसरी क्रिया, वही साँचा"
+        }
+      ],
+      "mistake": {
+        "display": "Please you give me the book",
+        "why": "आदेश में you नहीं आता: Please give me the book. क्रिया अकेली खड़ी रहती है."
+      },
+      "usage": "दुकान, दफ़्तर, घर — कहीं भी. रूखा नहीं है, पर अजनबी के लिए अब भी सबसे नीचे की सीढ़ी है.",
+      "register": "neutral",
+      "mnemonic": "please आदेश को नरम करता है, सवाल नहीं बनाता."
+    },
+    {
+      "id": "L2-M1-S03",
+      "display": "Can you give me the book?",
+      "cue": "क्या तुम मुझे किताब दे सकते हो?",
+      "literal": "सकते-हो तुम दो मुझे वह किताब?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Can",
+            "cue": "सकना",
+            "tag": "delta",
+            "forms": [
+              "can",
+              "can't"
+            ],
+            "note": "अकेला कभी नहीं आता — हमेशा किसी और क्रिया के साथ, और वह क्रिया अपने सादे रूप में रहती है: Can you give, Can you wait. बीच में to नहीं."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "यहाँ आप सचमुच सामर्थ्य नहीं पूछ रहे. Can you…? माँगने का सामान्य तरीक़ा है, और सुनने वाला इसे विनती ही समझता है.",
+      "sound": "can तेज़ बोलने में लगभग कन हो जाता है — कैन नहीं.",
+      "variations": [
+        {
+          "display": "Can you wait here?",
+          "cue": "क्या तुम यहाँ रुक सकते हो?",
+          "changed": "दूसरी क्रिया, वही साँचा"
+        },
+        {
+          "display": "Can you open the door?",
+          "cue": "क्या तुम दरवाज़ा खोल सकते हो?",
+          "changed": "एक और क्रिया, फिर भी सादा रूप"
+        },
+        {
+          "display": "Can you give me some water, please?",
+          "cue": "क्या तुम मुझे थोड़ा पानी दे सकते हो?",
+          "changed": "please जोड़कर एक सीढ़ी और ऊपर"
+        }
+      ],
+      "mistake": {
+        "display": "Can you to give me the book?",
+        "why": "can के बाद to नहीं आता: Can you give me the book?"
+      },
+      "usage": "रोज़मर्रा की विनती — दोस्त, सहकर्मी, दुकानदार. यही सबसे ज़्यादा बोला जाने वाला रूप है.",
+      "register": "neutral",
+      "mnemonic": "can के पीछे क्रिया नंगी आती है, to के बिना."
+    },
+    {
+      "id": "L2-M1-S04",
+      "display": "Could you give me the book?",
+      "cue": "क्या आप मुझे किताब देंगे?",
+      "literal": "सकेंगे आप दो मुझे वह किताब?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Could",
+            "cue": "सकेंगे · सकते हैं (विनम्र)",
+            "tag": "delta",
+            "forms": [],
+            "note": "can का विनम्र रूप. यह भूतकाल नहीं है — यहाँ सिर्फ़ दूरी बनाता है, और दूरी ही अंग्रेज़ी में विनम्रता है. क्रिया फिर भी सादी रहती है."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "could का भूतकाल वाला अर्थ इस वाक्य में बिलकुल नहीं है. अंग्रेज़ी विनती को वर्तमान से हटाकर विनम्र बनाती है — यह हिंदी नहीं करती.",
+      "sound": "could में l चुप है — कुड, कूल्ड नहीं.",
+      "variations": [
+        {
+          "display": "Could you wait here, please?",
+          "cue": "क्या आप यहाँ रुकेंगे?",
+          "changed": "please के साथ, सबसे ऊपर की सीढ़ी के पास"
+        },
+        {
+          "display": "Could you open the window?",
+          "cue": "क्या आप खिड़की खोलेंगे?",
+          "changed": "दूसरी क्रिया"
+        },
+        {
+          "display": "Could you help me?",
+          "cue": "क्या आप मेरी मदद करेंगे?",
+          "changed": "मदद माँगना, वही साँचा"
+        }
+      ],
+      "mistake": {
+        "display": "Could you gave me the book?",
+        "why": "could भूतकाल नहीं बनाता. उसके बाद क्रिया सादी रहती है: Could you give…?"
+      },
+      "usage": "अजनबी, अफ़सर, ग्राहक-सेवा. दफ़्तर की चिट्ठी में यही रूप चलता है.",
+      "register": "formal",
+      "mnemonic": "could दूर करता है, और दूरी ही विनम्रता है."
+    },
+    {
+      "id": "L2-M1-S05",
+      "display": "Would you mind waiting?",
+      "cue": "क्या आप रुक जाएँगे?",
+      "literal": "चाहेंगे आप बुरा-मानना रुकना?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Would you mind",
+            "cue": "क्या आपको एतराज़ होगा",
+            "tag": "delta",
+            "forms": [],
+            "note": "तीन शब्द, एक इकाई. शब्दशः \"क्या आप बुरा मानेंगे\" — इसीलिए इसका सीधा जवाब No होता है, Yes नहीं. सबसे विनम्र विनती यही है."
+          },
+          {
+            "display": "waiting",
+            "cue": "रुकना",
+            "tag": "interference",
+            "forms": [
+              "wait",
+              "waiting"
+            ],
+            "note": "Would you mind के बाद क्रिया में -ing लगता है, सादा रूप नहीं. यही एक जगह है जहाँ विनती क्रिया का रूप बदलती है."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "जवाब उलटा होता है. No, not at all का मतलब है \"ठीक है, रुक जाऊँगा\" — और Yes का मतलब है \"मुझे एतराज़ है\".",
+      "sound": "would में भी l चुप है — वुड. mind में d हल्का सा दबा रहता है.",
+      "variations": [
+        {
+          "display": "Would you mind opening the window?",
+          "cue": "क्या आप खिड़की खोल देंगे?",
+          "changed": "दूसरी क्रिया, और उसमें भी -ing"
+        },
+        {
+          "display": "Would you mind helping me?",
+          "cue": "क्या आप मेरी मदद कर देंगे?",
+          "changed": "मदद माँगना, सबसे विनम्र रूप में"
+        },
+        {
+          "display": "Would you mind waiting here?",
+          "cue": "क्या आप यहाँ रुक जाएँगे?",
+          "changed": "जगह जोड़कर"
+        }
+      ],
+      "mistake": {
+        "display": "Would you mind to wait?",
+        "why": "mind के बाद -ing आता है, to नहीं: Would you mind waiting?"
+      },
+      "usage": "जब आप किसी को असुविधा देने जा रहे हों. दफ़्तर और दुकान दोनों में सबसे सुरक्षित.",
+      "register": "formal",
+      "mnemonic": "mind के पीछे -ing, और जवाब उलटा."
+    },
+    {
+      "id": "L2-M1-S06",
+      "display": "Excuse me, where is the shop?",
+      "cue": "सुनिए, दुकान कहाँ है?",
+      "literal": "माफ़-कीजिए, कहाँ है वह दुकान?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Excuse me",
+            "cue": "सुनिए · ज़रा माफ़ कीजिए",
+            "tag": "interference",
+            "forms": [],
+            "note": "दो शब्द, एक इकाई. यह उस बात के लिए है जो होने वाली है — टोकना, रास्ता माँगना, कुछ पूछना. जो हो चुकी उसके लिए sorry है."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "अजनबी से बात शुरू करने के लिए sorry नहीं, excuse me. अभी कुछ हुआ ही नहीं जिसका अफ़सोस हो.",
+      "sound": "excuse me में s की आवाज़ ज़ जैसी है — इक्सक्यूज़ मी.",
+      "variations": [
+        {
+          "display": "Excuse me, where is the market?",
+          "cue": "सुनिए, बाज़ार कहाँ है?",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "Excuse me, can you help me?",
+          "cue": "सुनिए, क्या आप मेरी मदद करेंगे?",
+          "changed": "पूछने की जगह मदद माँगना"
+        },
+        {
+          "display": "Excuse me, could you wait?",
+          "cue": "सुनिए, क्या आप रुकेंगे?",
+          "changed": "S04 का साँचा, टोकने के बाद"
+        }
+      ],
+      "mistake": {
+        "display": "Sorry, where is the shop?",
+        "why": "अभी कुछ हुआ नहीं जिसका अफ़सोस हो. अजनबी को टोकना excuse me है."
+      },
+      "usage": "सड़क, दुकान, स्टेशन. किसी भी अजनबी से बात का पहला शब्द.",
+      "register": "neutral",
+      "mnemonic": "excuse me पहले, sorry बाद में."
+    },
+    {
+      "id": "L2-M1-S07",
+      "display": "Sorry, I can't help you",
+      "cue": "माफ़ करना, मैं तुम्हारी मदद नहीं कर सकता",
+      "literal": "माफ़ी, मैं नहीं-सकता मदद तुम्हें",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "can't",
+            "cue": "नहीं सकता · नहीं सकती",
+            "tag": "delta",
+            "forms": [
+              "can't",
+              "cannot",
+              "can not"
+            ],
+            "note": "can का नकार, एक ही शब्द. cannot भी लिखा जाता है और मतलब वही है; बोलचाल में हमेशा can't."
+          },
+          {
+            "display": "help",
+            "cue": "मदद करना",
+            "tag": "free",
+            "forms": [
+              "help",
+              "helps",
+              "helping"
+            ],
+            "note": "इसके बाद सीधे व्यक्ति आता है — help me, help you — बीच में कोई शब्द नहीं. संज्ञा भी यही है: I need help."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "यहाँ sorry सही है, excuse me नहीं — मना करना एक ऐसी बात है जो हो रही है, इसलिए अफ़सोस बनता है.",
+      "sound": "can't में a लंबा है — कान्ट. can और can't को अलग करने का यही एक तरीक़ा है.",
+      "variations": [
+        {
+          "display": "Sorry, I can't wait",
+          "cue": "माफ़ करना, मैं रुक नहीं सकता",
+          "changed": "दूसरी क्रिया"
+        },
+        {
+          "display": "I can't open the door",
+          "cue": "मैं दरवाज़ा नहीं खोल सकता",
+          "changed": "बिना माफ़ी के, सिर्फ़ एक बात"
+        },
+        {
+          "display": "Sorry, I can't help you today",
+          "cue": "माफ़ करना, मैं आज तुम्हारी मदद नहीं कर सकता",
+          "changed": "समय जोड़कर — मना करना थोड़ा नरम हो गया"
+        }
+      ],
+      "mistake": {
+        "display": "Sorry, I don't can help you",
+        "why": "can का नकार can't है, don't नहीं. can को किसी और सहायक की ज़रूरत नहीं."
+      },
+      "usage": "मना करना. कारण जोड़ देना अंग्रेज़ी में भी वैसा ही नरम करता है जैसा हिंदी में.",
+      "register": "neutral",
+      "mnemonic": "can का नकार अपने अंदर है — can't."
+    },
+    {
+      "id": "L2-M1-S08",
+      "display": "Thanks a lot",
+      "cue": "बहुत शुक्रिया",
+      "literal": "धन्यवाद एक बहुत",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Thanks a lot",
+            "cue": "बहुत शुक्रिया · बहुत धन्यवाद",
+            "tag": "free",
+            "forms": [],
+            "note": "तीन शब्द, एक इकाई. M2 के thank you से एक क़दम ऊपर, और बोलचाल में सबसे आम. लिखने में thank you very much."
+          }
+        ],
+        "rules": []
+      },
+      "trap": "a lot यहाँ गिनती नहीं कर रहा. यह पूरा वाक्यांश एक साथ चलता है और इसके टुकड़े अलग से काम नहीं आते.",
+      "sound": "a lot में t लगभग ग़ायब हो जाता है — थैंक्स-अ-लॉ.",
+      "variations": [
+        {
+          "display": "Thanks a lot, I can't wait",
+          "cue": "बहुत शुक्रिया, मैं रुक नहीं सकता",
+          "changed": "धन्यवाद के बाद एक कारण"
+        },
+        {
+          "display": "Thanks a lot, can you wait?",
+          "cue": "बहुत शुक्रिया, क्या तुम रुकोगे?",
+          "changed": "धन्यवाद के बाद एक और विनती"
+        },
+        {
+          "display": "Thanks a lot, please wait here",
+          "cue": "बहुत शुक्रिया, कृपया यहाँ रुकिए",
+          "changed": "धन्यवाद और विनती एक साथ"
+        }
+      ],
+      "mistake": {
+        "display": "Thanks a lots",
+        "why": "यह जुड़ा हुआ वाक्यांश है और बदलता नहीं: Thanks a lot."
+      },
+      "usage": "कहीं भी. दोस्त से भी और दुकानदार से भी.",
+      "register": "neutral",
+      "mnemonic": "तीन शब्द, एक धन्यवाद."
+    },
+    {
+      "id": "L2-M1-S09",
+      "display": "Excuse me, can you open the window?",
+      "cue": "सुनिए, क्या आप खिड़की खोलेंगे?",
+      "literal": "माफ़-कीजिए, सकते-हो तुम खोलो वह खिड़की?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "open",
+            "cue": "खोलना",
+            "tag": "free",
+            "forms": [
+              "open",
+              "opens",
+              "opening"
+            ],
+            "note": "क्रिया भी और विशेषण भी — The shop is open. यहाँ क्रिया है, और can के बाद इसलिए सादी है."
+          },
+          {
+            "display": "window",
+            "cue": "खिड़की",
+            "tag": "free",
+            "forms": [
+              "window",
+              "windows"
+            ],
+            "note": "गिनने-लायक चीज़, इसलिए अकेली हो तो the या a ज़रूरी. door की तरह ही चलती है."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "दो हिस्से, दो काम: excuse me ध्यान माँगता है, can you…? काम माँगता है. अंग्रेज़ी में विनती अकसर दो टुकड़ों में आती है.",
+      "sound": "open में o लंबा है — ओऊपन, और दूसरा हिस्सा लगभग अन.",
+      "variations": [
+        {
+          "display": "Excuse me, can you open the door?",
+          "cue": "सुनिए, क्या आप दरवाज़ा खोलेंगे?",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "Could you open the window, please?",
+          "cue": "क्या आप खिड़की खोलेंगे?",
+          "changed": "टोके बिना, सीधे विनम्र सीढ़ी पर"
+        },
+        {
+          "display": "Excuse me, can you give me some water?",
+          "cue": "सुनिए, क्या आप मुझे थोड़ा पानी देंगे?",
+          "changed": "S01 की क्रिया, इस साँचे में"
+        }
+      ],
+      "mistake": {
+        "display": "Excuse me, can you opening the door?",
+        "why": "can के बाद क्रिया सादी रहती है: can you open. -ing सिर्फ़ mind के बाद आता है."
+      },
+      "usage": "बस, ट्रेन, दफ़्तर. दोनों हिस्से मिलकर विनती को पूरा करते हैं.",
+      "register": "neutral",
+      "mnemonic": "पहले ध्यान माँगिए, फिर काम."
+    },
+    {
+      "id": "L2-M1-S10",
+      "display": "Could you wait here, please?",
+      "cue": "क्या आप यहाँ रुकेंगे?",
+      "literal": "सकेंगे आप रुको यहाँ, कृपया?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wait",
+            "cue": "रुकना · इंतज़ार करना",
+            "tag": "delta",
+            "forms": [],
+            "note": "किसी का इंतज़ार करना हो तो wait for लगता है — wait for me — पर अकेला wait भी पूरा वाक्य बनाता है. रूप S05 के waiting का सादा रूप है."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "इस मॉड्यूल में कुछ भी नया नहीं है — could, wait, please और here सब पहले आ चुके. यही आख़िरी सीढ़ी का काम है.",
+      "sound": "wait में ai लंबा है — वेइट, और t साफ़ सुनाई देता है.",
+      "variations": [
+        {
+          "display": "Could you wait, please?",
+          "cue": "क्या आप रुकेंगे?",
+          "changed": "जगह हटाकर, सबसे छोटा रूप"
+        },
+        {
+          "display": "Can you wait here?",
+          "cue": "क्या तुम यहाँ रुकोगे?",
+          "changed": "एक सीढ़ी नीचे, दोस्त के लिए"
+        },
+        {
+          "display": "Please wait here",
+          "cue": "कृपया यहाँ रुकिए",
+          "changed": "सबसे नीचे की सीढ़ी — आदेश, नरम किया हुआ"
+        }
+      ],
+      "mistake": {
+        "display": "Could you waiting here, please?",
+        "why": "could के बाद क्रिया सादी रहती है: Could you wait…?"
+      },
+      "usage": "दफ़्तर, अस्पताल, दुकान. तीनों variations एक ही बात की तीन सीढ़ियाँ हैं — यही इस मॉड्यूल का पूरा पाठ है.",
+      "register": "formal",
+      "mnemonic": "एक बात, पाँच सीढ़ियाँ, और क्रिया एक भी बार नहीं बदली."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M1-C01",
+      "display": "Give me the book",
+      "cue": "मुझे किताब दो"
+    },
+    {
+      "id": "L2-M1-C02",
+      "display": "Please give me the book",
+      "cue": "कृपया मुझे किताब दो"
+    },
+    {
+      "id": "L2-M1-C03",
+      "display": "Can you give me the book?",
+      "cue": "क्या तुम मुझे किताब दे सकते हो?"
+    },
+    {
+      "id": "L2-M1-C04",
+      "display": "Could you give me the book?",
+      "cue": "क्या आप मुझे किताब देंगे?"
+    },
+    {
+      "id": "L2-M1-C05",
+      "display": "Would you mind waiting?",
+      "cue": "क्या आप रुक जाएँगे?"
+    },
+    {
+      "id": "L2-M1-C06",
+      "display": "Excuse me, where is the shop?",
+      "cue": "सुनिए, दुकान कहाँ है?"
+    },
+    {
+      "id": "L2-M1-C07",
+      "display": "Sorry, I can't help you",
+      "cue": "माफ़ करना, मैं तुम्हारी मदद नहीं कर सकता"
+    },
+    {
+      "id": "L2-M1-C08",
+      "display": "Thanks a lot",
+      "cue": "बहुत शुक्रिया"
+    },
+    {
+      "id": "L2-M1-C09",
+      "display": "Excuse me, can you open the window?",
+      "cue": "सुनिए, क्या आप खिड़की खोलेंगे?"
+    },
+    {
+      "id": "L2-M1-C10",
+      "display": "Could you wait here, please?",
+      "cue": "क्या आप यहाँ रुकेंगे?"
+    },
+    {
+      "id": "L2-M1-C11",
+      "display": "Can you open the door?",
+      "cue": "क्या तुम दरवाज़ा खोल सकते हो?"
+    },
+    {
+      "id": "L2-M1-C12",
+      "display": "Would you mind helping me?",
+      "cue": "क्या आप मेरी मदद कर देंगे?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

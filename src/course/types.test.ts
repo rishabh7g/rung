@@ -193,7 +193,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 130 — nine L1 ladders, hi-mr L2 and L3, en-es L2, and the en-ar L2 (#454)', () => {
+  it('finds all 140 — nine L1 ladders, hi-mr L2 and L3, and the complete L2 of en-es, en-ar and hi-en (#455)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -298,6 +298,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-en/modules/L1-M7.json',
       'content/hi-en/modules/L1-M8.json',
       'content/hi-en/modules/L1-M9.json',
+      'content/hi-en/modules/L2-M1.json',
+      'content/hi-en/modules/L2-M10.json',
+      'content/hi-en/modules/L2-M2.json',
+      'content/hi-en/modules/L2-M3.json',
+      'content/hi-en/modules/L2-M4.json',
+      'content/hi-en/modules/L2-M5.json',
+      'content/hi-en/modules/L2-M6.json',
+      'content/hi-en/modules/L2-M7.json',
+      'content/hi-en/modules/L2-M8.json',
+      'content/hi-en/modules/L2-M9.json',
       'content/hi-mr/modules/L1-M1.json',
       'content/hi-mr/modules/L1-M10.json',
       'content/hi-mr/modules/L1-M2.json',
@@ -512,8 +522,8 @@ describe('ModuleContent against the modules that exist', () => {
 
     expect(
       hiEn.length,
-      'the ten hi-en L1 modules (#270: L1-M1..M2; #271: L1-M3..M5; #272: L1-M6..M10)',
-    ).toBe(10);
+      'the hi-en modules this rule is written for (#270-#272 L1; #437, #446, #455 L2)',
+    ).toBe(20);
     for (const [file, json] of hiEn) {
       const module = parseModule(json, file);
 
@@ -525,11 +535,16 @@ describe('ModuleContent against the modules that exist', () => {
       for (const sentence of module.sentences) {
         const at = sentence.id;
         expect(sentence.display, at).toMatch(latinOnly);
-        // A contracted `is`/`has` on a pronoun or question word is sanctioned; a possessive `'s`
-        // on a noun never is (`Rohan's` would be a fresh surface no L1 job needs).
-        expect(sentence.display, `${at} straight apostrophe, no possessive`).not.toMatch(
-          /’|(?<!\b(?:[Ii]t|[Ww]hat|[Ww]here|[Tt]here|[Ss]he|[Hh]e|[Tt]hat))'s\b/,
-        );
+        // Straight apostrophe always. The possessive `'s` is banned in L1 — a contracted
+        // `is`/`has` on a pronoun or question word is sanctioned and a possessive on a noun is
+        // not, because `Rohan's` would be a fresh surface no L1 job needs — and L2-M2 lifts that
+        // ban on the record (`docs/55` §3), so the check is scoped to the level that made it.
+        expect(sentence.display, `${at} straight apostrophe`).not.toMatch(/’/);
+        if (module.id.startsWith('L1-')) {
+          expect(sentence.display, `${at} no possessive in L1`).not.toMatch(
+            /(?<!\b(?:[Ii]t|[Ww]hat|[Ww]here|[Tt]here|[Ss]he|[Hh]e|[Tt]hat))'s\b/,
+          );
+        }
         expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
         expect(sentence.literal, `${at} literal`).toMatch(devanagari);
         for (const field of ['cue', 'sound', 'usage', 'mnemonic'] as const) {

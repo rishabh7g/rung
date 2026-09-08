@@ -1,0 +1,641 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": [
+    "L2-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "present_continuous"
+    ],
+    "allowedPatterns": [
+      "Let's + V",
+      "Shall we + V?",
+      "How about + N?",
+      "Are you free on + <day>?",
+      "I am meeting + <person> + at + <time>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "आगे की बात L1-M6 में तय हो चुकी है — will वादे का, going to इरादे का, और be + -ing तय हो चुके कार्यक्रम का. यह पाठ वह दुबारा नहीं सिखाता; यह उसके ऊपर बैठने वाले सुझाव के साँचे सिखाता है: Let's go, Shall we go?, How about…?, Are you free on Friday?"
+    },
+    {
+      "tag": "interference",
+      "text": "वक़्त के आगे हिंदी में एक ही पर लगता है, अंग्रेज़ी में तीन रास्ते हैं. घड़ी के वक़्त पर at — at seven. दिन या तारीख़ पर on — on Friday. महीने, साल या दिन के हिस्से पर in — in the morning, in the evening. और फिर at night, जो इस बँटवारे को तोड़ता है और बस याद करना पड़ता है."
+    },
+    {
+      "tag": "interference",
+      "text": "साढ़े आठ में आठ बोला जाता है, half past eight में भी आठ — पर आधे घंटे की गिनती उलटी तरफ़ जा सकती है. quarter to ten का मतलब पौने दस है, दस नहीं. जो शब्द पहले बोला जाता है वह घंटा नहीं, फ़ासला है — इसी से लोग एक घंटा पहले पहुँच जाते हैं."
+    },
+    {
+      "tag": "free",
+      "text": "Let's और How about दोस्तों के बीच के हैं. Shall we? और Are you free…? दोनों तरफ़ चलते हैं और अजनबी या अफ़सर के साथ भी ठीक हैं. फ़ोन और दफ़्तर वाला ढंग M7 का है."
+    },
+    {
+      "tag": "delta",
+      "text": "Let's असल में let us है, और इसका मतलब है कि कहने वाला भी साथ चल रहा है. You go और Let's go में यही फ़र्क़ है — दूसरे में सुझाव देने वाला भी शामिल है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "Let's go to the market",
+      "cue": "चलो बाज़ार चलते हैं",
+      "literal": "चलो जाएँ तक वह बाज़ार",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "let's",
+            "cue": "चलो · चलते हैं",
+            "tag": "delta",
+            "forms": [
+              "let us"
+            ],
+            "note": "let us का छोटा रूप, और बोलचाल में पूरा रूप लगभग नहीं आता. इसके बाद क्रिया का सादा रूप आता है — let's go, let's eat."
+          },
+          {
+            "display": "Sunday",
+            "cue": "रविवार",
+            "tag": "free",
+            "forms": [
+              "Sundays"
+            ],
+            "note": "दिनों के नाम बड़े अक्षर से लिखे जाते हैं, हमेशा. आगे on आता है — on Sunday."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Let's में कहने वाला भी शामिल है. सिर्फ़ दूसरे को भेजना हो तो Go to the market कहेंगे, Let's नहीं.",
+      "sound": "Let's एक ही झटके में — लेट्स.",
+      "variations": [
+        {
+          "display": "Let's go to the shop",
+          "cue": "चलो दुकान चलते हैं",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "Let's eat at home",
+          "cue": "चलो घर पर खाते हैं",
+          "changed": "दूसरी क्रिया"
+        },
+        {
+          "display": "Let's go to the market on Sunday",
+          "cue": "चलो रविवार को बाज़ार चलते हैं",
+          "changed": "दिन जुड़ा, on के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "Let's to go to the market",
+        "why": "let's के बाद सादी क्रिया आती है: Let's go to the market."
+      },
+      "usage": "दोस्तों में सुझाव देने का सबसे सीधा तरीक़ा.",
+      "register": "informal",
+      "mnemonic": "Let's में मैं भी शामिल."
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "Shall we go on Friday?",
+      "cue": "क्या हम शुक्रवार को चलें?",
+      "literal": "चलें हम पर शुक्रवार?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "shall",
+            "cue": "चलें · करें",
+            "tag": "delta",
+            "forms": [],
+            "note": "आजकल यह लगभग सिर्फ़ Shall we…? और Shall I…? में बचा है, और वहाँ सुझाव या पेशकश का मतलब देता है — आगे की बात नहीं."
+          },
+          {
+            "display": "Friday",
+            "cue": "शुक्रवार",
+            "tag": "free",
+            "forms": [
+              "Fridays"
+            ],
+            "note": "दिन का नाम, बड़े अक्षर से. हर शुक्रवार कहना हो तो on Fridays."
+          },
+          {
+            "display": "Saturday",
+            "cue": "शनिवार",
+            "tag": "free",
+            "forms": [
+              "Saturdays"
+            ],
+            "note": "Saturday और Sunday मिलकर weekend कहलाते हैं, जो भारत के हफ़्ते से अलग हो सकता है."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "Shall we go? में shall आगे की बात नहीं कर रहा, सुझाव दे रहा है. Will we go? इसकी जगह नहीं ले सकता — वह सवाल ही और है.",
+      "sound": "shall का a छोटा है — शैल.",
+      "variations": [
+        {
+          "display": "Shall we go on Saturday?",
+          "cue": "क्या हम शनिवार को चलें?",
+          "changed": "दूसरा दिन"
+        },
+        {
+          "display": "Shall we eat at home?",
+          "cue": "क्या हम घर पर खाएँ?",
+          "changed": "दूसरी क्रिया"
+        },
+        {
+          "display": "Shall we take the train?",
+          "cue": "क्या हम रेल लें?",
+          "changed": "सवारी का सुझाव"
+        }
+      ],
+      "mistake": {
+        "display": "Shall we going on Friday?",
+        "why": "shall के बाद सादी क्रिया आती है: Shall we go on Friday?"
+      },
+      "usage": "सुझाव देने का वह रूप जो अजनबी के साथ भी चलता है.",
+      "register": "neutral",
+      "mnemonic": "Shall we — सुझाव, इरादा नहीं."
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "How about a cup of tea?",
+      "cue": "एक प्याला चाय हो जाए?",
+      "literal": "कैसा रहे एक प्याला का चाय?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "how about",
+            "cue": "कैसा रहे",
+            "tag": "delta",
+            "forms": [
+              "what about"
+            ],
+            "note": "दो शब्द, एक ही टुकड़ा. इसके बाद संज्ञा आती है या -ing वाली क्रिया, सादी क्रिया कभी नहीं."
+          },
+          {
+            "display": "free",
+            "cue": "ख़ाली · फ़ुरसत में",
+            "tag": "interference",
+            "forms": [],
+            "note": "यहाँ मुफ़्त नहीं, फ़ुरसत में. दाम की बात हो तो भी यही शब्द चलता है — it is free — और मतलब वाक्य से तय होता है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "How about go? ग़लत है. इसके बाद या तो चीज़ आती है या -ing वाली क्रिया — How about tea?, How about going?",
+      "sound": "how about जुड़कर हाउअबाउट सुनाई देता है.",
+      "variations": [
+        {
+          "display": "How about Friday?",
+          "cue": "शुक्रवार कैसा रहे?",
+          "changed": "दिन के लिए"
+        },
+        {
+          "display": "How about the market on Sunday?",
+          "cue": "रविवार को बाज़ार कैसा रहे?",
+          "changed": "जगह और दिन"
+        },
+        {
+          "display": "How about a glass of water?",
+          "cue": "एक गिलास पानी हो जाए?",
+          "changed": "दूसरी पेशकश"
+        }
+      ],
+      "mistake": {
+        "display": "How about we go to the market?",
+        "why": "इसके बाद चीज़ या -ing आती है: How about the market?"
+      },
+      "usage": "हल्का सुझाव, दोस्तों में.",
+      "register": "informal",
+      "mnemonic": "How about के बाद चीज़ या -ing."
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "Are you free on Saturday?",
+      "cue": "क्या तुम शनिवार को ख़ाली हो?",
+      "literal": "हो तुम ख़ाली पर शनिवार?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sure",
+            "cue": "ज़रूर",
+            "tag": "free",
+            "forms": [],
+            "note": "हाँ कहने का गरम तरीक़ा. अकेला Yes थोड़ा सूखा लगता है; Sure में साथ चलने की तैयारी दिखती है."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "दिन के आगे on लगता है, at नहीं. at सिर्फ़ घड़ी के वक़्त के लिए है.",
+      "sound": "sure का पहला हिस्सा श जैसा — शुअ.",
+      "variations": [
+        {
+          "display": "Are you free on Sunday?",
+          "cue": "क्या तुम रविवार को ख़ाली हो?",
+          "changed": "दूसरा दिन"
+        },
+        {
+          "display": "Are you free tomorrow?",
+          "cue": "क्या तुम कल ख़ाली हो?",
+          "changed": "दिन की जगह कल"
+        },
+        {
+          "display": "I am not free on Friday",
+          "cue": "मैं शुक्रवार को ख़ाली नहीं हूँ",
+          "changed": "जवाब, नकार में"
+        }
+      ],
+      "mistake": {
+        "display": "Are you free at Saturday?",
+        "why": "दिन के आगे on आता है: Are you free on Saturday?"
+      },
+      "usage": "किसी को बुलाने से पहले का सवाल — मना करना आसान रखता है.",
+      "register": "neutral",
+      "mnemonic": "दिन पर on, घड़ी पर at."
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "Yes, sure, that sounds good",
+      "cue": "हाँ ज़रूर, अच्छा लगता है",
+      "literal": "हाँ, ज़रूर, वह लगता है अच्छा",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sounds",
+            "cue": "लगता है",
+            "tag": "delta",
+            "forms": [
+              "sound"
+            ],
+            "note": "यहाँ सुनने की बात नहीं, राय की है. That sounds good यानी बात जँचती है — यह तैयार जवाब है, बनाया हुआ वाक्य नहीं."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "That sounds good का हिंदी में शब्द-दर-शब्द अनुवाद अटपटा लगेगा. इसे एक ही टुकड़ा मानकर याद रखिए.",
+      "sound": "sounds के आख़िर में ड्ज़ की आवाज़ — साउंड्ज़.",
+      "variations": [
+        {
+          "display": "Sure, that sounds good",
+          "cue": "ज़रूर, अच्छा लगता है",
+          "changed": "Yes हटा"
+        },
+        {
+          "display": "That sounds very good",
+          "cue": "बहुत अच्छा लगता है",
+          "changed": "very से ज़ोर"
+        },
+        {
+          "display": "Yes, sure, see you then",
+          "cue": "हाँ ज़रूर, फिर मिलते हैं",
+          "changed": "बात ख़त्म करना"
+        }
+      ],
+      "mistake": {
+        "display": "Yes, sure, that is sounding good",
+        "why": "sound जैसी क्रियाएँ -ing नहीं लेतीं: that sounds good."
+      },
+      "usage": "किसी के सुझाव पर हामी भरना.",
+      "register": "informal",
+      "mnemonic": "जँच गया — that sounds good."
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "I am free at seven o'clock",
+      "cue": "मैं सात बजे ख़ाली हूँ",
+      "literal": "मैं हूँ ख़ाली पर सात बजे",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "o'clock",
+            "cue": "बजे",
+            "tag": "delta",
+            "forms": [],
+            "note": "सिर्फ़ पूरे घंटे के साथ आता है. सात बजकर दस के लिए seven ten कहा जाता है, o'clock नहीं."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "o'clock में जो निशान है वह of का बचा हुआ हिस्सा है — of the clock. इसे भूलकर oclock लिखना आम ग़लती है.",
+      "sound": "o'clock में ज़ोर दूसरे हिस्से पर — अक्लॉक.",
+      "variations": [
+        {
+          "display": "I am free at nine o'clock",
+          "cue": "मैं नौ बजे ख़ाली हूँ",
+          "changed": "दूसरा वक़्त"
+        },
+        {
+          "display": "The class starts at ten o'clock",
+          "cue": "क्लास दस बजे शुरू होती है",
+          "changed": "दूसरा कर्ता"
+        },
+        {
+          "display": "Are you free at five o'clock?",
+          "cue": "क्या तुम पाँच बजे ख़ाली हो?",
+          "changed": "सवाल"
+        }
+      ],
+      "mistake": {
+        "display": "I am free on seven o'clock",
+        "why": "घड़ी के वक़्त पर at आता है: at seven o'clock."
+      },
+      "usage": "मिलने का वक़्त तय करना.",
+      "register": "neutral",
+      "mnemonic": "पूरा घंटा हो तभी o'clock."
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "The film starts at half past eight",
+      "cue": "फ़िल्म साढ़े आठ बजे शुरू होती है",
+      "literal": "वह फ़िल्म शुरू होती पर आधा बाद आठ",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "half past",
+            "cue": "साढ़े",
+            "tag": "free",
+            "forms": [],
+            "note": "आधा घंटा बीत चुका. यहाँ हिंदी और अंग्रेज़ी एक ही घंटा बोलते हैं — साढ़े आठ, half past eight."
+          },
+          {
+            "display": "quarter past",
+            "cue": "सवा",
+            "tag": "free",
+            "forms": [],
+            "note": "पंद्रह मिनट बीत चुके. quarter past nine यानी सवा नौ — यहाँ भी घंटा वही रहता है."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "half past और quarter past में घंटा नहीं बदलता, इसलिए ये आसान आधे हैं. मुश्किल quarter to है, जो अगले घंटे का नाम लेता है.",
+      "sound": "half में l चुप है — हाफ़.",
+      "variations": [
+        {
+          "display": "The film starts at half past seven",
+          "cue": "फ़िल्म साढ़े सात बजे शुरू होती है",
+          "changed": "दूसरा घंटा"
+        },
+        {
+          "display": "The class starts at quarter past nine",
+          "cue": "क्लास सवा नौ बजे शुरू होती है",
+          "changed": "पंद्रह मिनट"
+        },
+        {
+          "display": "I get up at half past five",
+          "cue": "मैं साढ़े पाँच बजे उठता हूँ",
+          "changed": "रोज़ की आदत"
+        }
+      ],
+      "mistake": {
+        "display": "The film starts at eight half",
+        "why": "आधे की बात पहले आती है: at half past eight."
+      },
+      "usage": "कार्यक्रम का वक़्त बताना.",
+      "register": "neutral",
+      "mnemonic": "past हो तो घंटा वही."
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "The train goes at quarter to ten",
+      "cue": "रेल पौने दस बजे जाती है",
+      "literal": "वह रेल जाती पर चौथाई तक दस",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quarter to",
+            "cue": "पौने",
+            "tag": "interference",
+            "forms": [],
+            "note": "पंद्रह मिनट बाक़ी. quarter to ten यानी पौने दस — यहाँ अगले घंटे का नाम लिया जाता है, बीते हुए का नहीं."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "यही जगह है जहाँ लोग एक घंटा पहले पहुँच जाते हैं. quarter to ten दस बजे नहीं, नौ बजकर पैंतालीस पर है — नाम अगले घंटे का है, वक़्त पिछले का.",
+      "sound": "quarter में qu क्व की तरह — क्वॉर्टर.",
+      "variations": [
+        {
+          "display": "The train goes at quarter to nine",
+          "cue": "रेल पौने नौ बजे जाती है",
+          "changed": "दूसरा घंटा"
+        },
+        {
+          "display": "The bus goes at quarter past ten",
+          "cue": "बस सवा दस बजे जाती है",
+          "changed": "past, इसलिए घंटा वही"
+        },
+        {
+          "display": "I go to work at quarter to eight",
+          "cue": "मैं पौने आठ बजे काम पर जाता हूँ",
+          "changed": "रोज़ की आदत"
+        }
+      ],
+      "mistake": {
+        "display": "The train goes at quarter to nine forty five",
+        "why": "एक ही तरीक़ा चुनिए: at quarter to ten या at nine forty five."
+      },
+      "usage": "सवारी का वक़्त बताना — यहाँ ग़लती महँगी पड़ती है.",
+      "register": "neutral",
+      "mnemonic": "to हो तो अगला घंटा बोलो."
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "I am meeting my friend in the evening",
+      "cue": "मैं शाम को अपने दोस्त से मिल रहा हूँ",
+      "literal": "मैं हूँ मिल रहा मेरा दोस्त में वह शाम",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "evening",
+            "cue": "शाम",
+            "tag": "free",
+            "forms": [
+              "evenings"
+            ],
+            "note": "दिन का हिस्सा है, इसलिए in the evening. सुबह और दोपहर भी यही रास्ता लेते हैं."
+          },
+          {
+            "display": "night",
+            "cue": "रात",
+            "tag": "interference",
+            "forms": [
+              "nights"
+            ],
+            "note": "यह अकेला है जो नियम तोड़ता है: at night, in the night नहीं. दिन के बाक़ी हिस्सों की तरह नहीं चलता, बस याद रखना पड़ता है."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "am meeting यहाँ अभी चल रहा काम नहीं बता रहा — तय हो चुका कार्यक्रम बता रहा है. यह L1-M6 वाला ही रूप है, नए काम पर.",
+      "sound": "evening तीन हिस्सों में नहीं, दो में — ईव्निंग.",
+      "variations": [
+        {
+          "display": "I am meeting my friend at night",
+          "cue": "मैं रात को अपने दोस्त से मिल रहा हूँ",
+          "changed": "night, इसलिए at"
+        },
+        {
+          "display": "I am meeting my brother in the morning",
+          "cue": "मैं सुबह अपने भाई से मिल रहा हूँ",
+          "changed": "दिन का दूसरा हिस्सा"
+        },
+        {
+          "display": "We are meeting at seven o'clock",
+          "cue": "हम सात बजे मिल रहे हैं",
+          "changed": "घड़ी का वक़्त, at"
+        }
+      ],
+      "mistake": {
+        "display": "I am meeting my friend in the night",
+        "why": "रात अकेली at लेती है: at night."
+      },
+      "usage": "तय हो चुका कार्यक्रम बताना.",
+      "register": "neutral",
+      "mnemonic": "सुबह-शाम in, रात at."
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "I think you'd like this film",
+      "cue": "मुझे लगता है यह फ़िल्म तुम्हें पसंद आएगी",
+      "literal": "मैं सोचता हूँ तुम चाहोगे यह फ़िल्म",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "you'd",
+            "cue": "तुम चाहोगे",
+            "tag": "free",
+            "forms": [
+              "you would"
+            ],
+            "note": "you would का छोटा रूप, ठीक I'd की तरह. यहाँ यह सुझाव को नरम बना रहा है — पक्की बात नहीं, अंदाज़ा है."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "I think से शुरू करना कमज़ोरी नहीं, शाइस्तगी है. अंग्रेज़ी में सीधी राय के आगे यह तकिया आम है.",
+      "sound": "you'd एक ही झटके में — यूड.",
+      "variations": [
+        {
+          "display": "I think you'd like this shop",
+          "cue": "मुझे लगता है यह दुकान तुम्हें पसंद आएगी",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "I think you'd like the market",
+          "cue": "मुझे लगता है बाज़ार तुम्हें पसंद आएगा",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "You'd like this film",
+          "cue": "यह फ़िल्म तुम्हें पसंद आएगी",
+          "changed": "I think हटा, ज़्यादा सीधा"
+        }
+      ],
+      "mistake": {
+        "display": "I think you will like this film very much",
+        "why": "सुझाव में you'd नरम है; will यहाँ ज़रूरत से ज़्यादा पक्का लगता है."
+      },
+      "usage": "किसी को कुछ करने की सलाह देना, बिना दबाव डाले.",
+      "register": "informal",
+      "mnemonic": "would नरम, will पक्का."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M6-C01",
+      "display": "Let's go to the market",
+      "cue": "चलो बाज़ार चलते हैं"
+    },
+    {
+      "id": "L2-M6-C02",
+      "display": "Shall we go on Friday?",
+      "cue": "क्या हम शुक्रवार को चलें?"
+    },
+    {
+      "id": "L2-M6-C03",
+      "display": "How about a cup of tea?",
+      "cue": "एक प्याला चाय हो जाए?"
+    },
+    {
+      "id": "L2-M6-C04",
+      "display": "Are you free on Saturday?",
+      "cue": "क्या तुम शनिवार को ख़ाली हो?"
+    },
+    {
+      "id": "L2-M6-C05",
+      "display": "Yes, sure, that sounds good",
+      "cue": "हाँ ज़रूर, अच्छा लगता है"
+    },
+    {
+      "id": "L2-M6-C06",
+      "display": "I am free at seven o'clock",
+      "cue": "मैं सात बजे ख़ाली हूँ"
+    },
+    {
+      "id": "L2-M6-C07",
+      "display": "The film starts at half past eight",
+      "cue": "फ़िल्म साढ़े आठ बजे शुरू होती है"
+    },
+    {
+      "id": "L2-M6-C08",
+      "display": "The train goes at quarter to ten",
+      "cue": "रेल पौने दस बजे जाती है"
+    },
+    {
+      "id": "L2-M6-C09",
+      "display": "I am meeting my friend in the evening",
+      "cue": "मैं शाम को अपने दोस्त से मिल रहा हूँ"
+    },
+    {
+      "id": "L2-M6-C10",
+      "display": "I think you'd like this film",
+      "cue": "मुझे लगता है यह फ़िल्म तुम्हें पसंद आएगी"
+    },
+    {
+      "id": "L2-M6-C11",
+      "display": "I am meeting my friend at night",
+      "cue": "मैं रात को अपने दोस्त से मिल रहा हूँ"
+    },
+    {
+      "id": "L2-M6-C12",
+      "display": "Let's go to the market on Sunday",
+      "cue": "चलो रविवार को बाज़ार चलते हैं"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
