@@ -21,7 +21,7 @@
 /* The prototype's header row, minus the chevron and the screen name the shell owns (#84, #117):
    the kicker on the left, the counts hard right. Identical to the arc's, deliberately — part 1
    and part 2 are one ritual. */
-.head {
+.comprehension-head {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
@@ -29,7 +29,7 @@
   border-bottom: var(--border-hairline);
 }
 
-.kicker {
+.comprehension-kicker {
   flex: 1;
   min-width: 0;
   margin: 0;
@@ -42,7 +42,7 @@
 /* The item's position inside the attempt — `1 / 2`, as counts, the same call the module list's
    `n / total` makes (#88). It used to sit behind a `2 / 2 ·` part count from the two-part ritual
    (#402). The ramp's floor rung: the two shades below it were 2.75 : 1 and 2.42 : 1 (#185). */
-.position {
+.comprehension-position {
   flex: none;
   margin: 0;
   font: var(--text-caption);

@@ -49,7 +49,7 @@ import { handover, HOME_PATH, VERDICT_PATH } from '../shell/routes.tsx';
 import { ComprehensionItem } from './comprehension/ComprehensionItem.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
 import { useProgression } from './useProgression.ts';
-import styles from './ComprehensionScreen.module.css';
+import './comprehension-screen.css';
 
 /**
  * The route's component: it answers "which rung, if any", "was the hold paid" and "is the ritual
@@ -65,7 +65,7 @@ export default function ComprehensionScreen() {
 
   // Nothing honest to draw yet: the ladder decides whether this screen may exist at all. The
   // shell's frame is already up, so it waits rather than flashing a test it may have to replace.
-  if (!ready) return <section className={styles.comprehension} aria-busy="true" />;
+  if (!ready) return <section className="comprehension" aria-busy="true" />;
   if (rung === null) return <Navigate to={HOME_PATH} replace />;
 
   return <ComprehensionTest moduleId={rung} open={open} />;
@@ -90,7 +90,7 @@ function ComprehensionTest({ moduleId, open }: ComprehensionTestProps) {
    * into a redirect. The arc waits on the same fact for the same reason (#100).
    */
   if (module.data === null && module.error === null) {
-    return <section className={styles.comprehension} aria-busy="true" />;
+    return <section className="comprehension" aria-busy="true" />;
   }
 
   /**
@@ -217,15 +217,15 @@ function ComprehensionRound({ moduleId, pool, count }: ComprehensionRoundProps) 
   }
 
   return (
-    <section className={styles.comprehension}>
-      <div className={styles.head}>
+    <section className="comprehension">
+      <div className="comprehension-head">
         {/* Structural furniture, like the module list's `M1 · MODULE` — raised on #71. */}
-        <p className={styles.kicker}>{rungLabel(moduleId)} · EXIT RITUAL</p>
+        <p className="comprehension-kicker">{rungLabel(moduleId)} · EXIT RITUAL</p>
         {/* Counts, never time: which item of how many. It used to be prefixed `2 / 2 ·` — "part
             2 of 2" — from when a write step preceded comprehension; that part went with #348/#349
             and its count with #402. Two fractions side by side were a code nobody was given. */}
         {item !== undefined && (
-          <p className={styles.position}>
+          <p className="comprehension-position">
             {attempt.idx + 1} / {attempt.items.length}
           </p>
         )}
