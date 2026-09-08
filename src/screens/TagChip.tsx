@@ -21,13 +21,13 @@
  */
 import { TriangleAlert } from 'lucide-react';
 import type { Tag } from '../course/types.ts';
-import styles from './TagChip.module.css';
+import './tag-chip.css';
 
 /** One token pair per tag (design/tokens.md §1) — the stylesheet holds them, this picks one. */
 const CHIP_CLASS: Readonly<Record<Tag, string | undefined>> = {
-  free: styles.chipFree,
-  delta: styles.chipDelta,
-  interference: styles.chipInterference,
+  free: 'tag-chip-free tag-chip',
+  delta: 'tag-chip-delta tag-chip',
+  interference: 'tag-chip-interference tag-chip',
 };
 
 interface TagChipProps {
@@ -37,7 +37,7 @@ interface TagChipProps {
 export function TagChip({ tag }: TagChipProps) {
   return (
     <span className={CHIP_CLASS[tag]}>
-      {tag === 'interference' && <TriangleAlert className={styles.icon} aria-hidden="true" />}
+      {tag === 'interference' && <TriangleAlert className="tag-icon" aria-hidden="true" />}
       {tag}
     </span>
   );

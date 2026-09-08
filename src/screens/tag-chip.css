@@ -9,7 +9,7 @@
  * the `--devanagari-min-size` floor that pushed the module list's WORD chips to 18px (#117,
  * until #217 took the chips off the card altogether) has nothing to hold up here.
  */
-.chip {
+.tag-chip {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
@@ -20,14 +20,12 @@
   white-space: nowrap;
 }
 
-.chipFree {
-  composes: chip;
+.tag-chip-free {
   background: var(--tag-free-bg);
   color: var(--tag-free-fg);
 }
 
-.chipDelta {
-  composes: chip;
+.tag-chip-delta {
   background: var(--tag-delta-bg);
   color: var(--tag-delta-fg);
 }
@@ -35,14 +33,13 @@
 /* The one amber chip the design package sanctions (design/tokens.md §1: "interference traps +
    ⚠ tag chips only"). The callout's own fill and border are a different pair — see
    SentenceScreen.module.css, where the trap is the only loud object on the screen. */
-.chipInterference {
-  composes: chip;
+.tag-chip-interference {
   background: var(--interference-tag-bg);
   color: var(--interference-tag-fg);
 }
 
 /* Decoration: it repeats the word beside it, so it is aria-hidden in the component. */
-.icon {
+.tag-icon {
   flex: none;
   width: var(--icon-inline);
   height: var(--icon-inline);
