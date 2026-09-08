@@ -1,0 +1,816 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": [
+    "L2-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "N-e + eotteoke + gayo?",
+      "N-(eu)ro + gaseyo",
+      "N-eul/reul + tayo",
+      "N-eseo + naeryeoyo",
+      "yeogi-eseo + N-kkaji"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PARTICLE PAIR L1 SHIPPED AND NEVER CONTRASTED. -e marks a DESTINATION or a static location — hakgyo-e gayo, jip-e isseoyo — and -eseo marks where an ACTION happens: hakgyo-eseo gongbuhaeyo. L1-M7 taught both without the law, and this is the module whose job forces it open, because a direction is a destination and a bus stop is a place where something happens."
+    },
+    {
+      "tag": "free",
+      "text": "-(eu)ro is this module's own particle and it means TOWARD: oenjjok-euro gaseyo, i-jjok-euro oseyo. Meet it as a third member of the -e / -eseo family rather than as an idiom. -kkaji, \"up to\" or \"as far as\", joins it for the span from here to there; its partner -buteo (\"from\") is named in usage and not shown."
+    },
+    {
+      "tag": "interference",
+      "text": "RIDING TAKES AN OBJECT PARTICLE, and no English speaker guesses it: beoseu-reul tayo, jihacheol-eul tayo — literally \"the bus, ride it\" — where English rides ON a bus. Getting off is naerida, and it takes -eseo, because getting off happens somewhere. The two halves of every journey take different particles, and the reason is visible once it is pointed out."
+    },
+    {
+      "tag": "free",
+      "text": "Directions reuse M1's honorific imperative in the field — gaseyo, oseyo, doraseyo, geonneoseyo — chipped formal, because the listener is the one being honoured. Korean is VERB-FINAL, so a direction is one long adverbial chain with the verb at the end of it, which is exactly why the per-sentence bound climbs here."
+    },
+    {
+      "tag": "free",
+      "text": "eotteoke asks HOW, and it is the whole of the question a lost traveller needs: N-e eotteoke gayo? — how do I get to N? It is not a request and takes no juseyo; asking the way is a question, and the answer comes back as an imperative."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "Yeok-e eotteoke gayo?",
+      "script": "역에 어떻게 가요?",
+      "cue": "How do I get to the station?",
+      "literal": "station-to how go?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yeok",
+            "script": "역",
+            "cue": "station (train, subway)",
+            "tag": "free",
+            "forms": [
+              "yeok",
+              "yeok-e",
+              "yeok-eseo",
+              "yeok-i",
+              "yeok-eun",
+              "yeok-euro",
+              "yeok-kkaji"
+            ],
+            "note": "A rail or subway station, and a bus stop is a jeongnyujang — the two words are never swapped. Its particle shapes are all here because this is the module that contrasts them."
+          },
+          {
+            "display": "eotteoke",
+            "script": "어떻게",
+            "cue": "how",
+            "tag": "delta",
+            "forms": [
+              "eotteoke"
+            ],
+            "note": "The question word for a method, and it sits right in front of the verb. The h in the middle is written and barely heard."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "-e and not -eseo, because the station is where you are GOING rather than where anything is happening. That is the whole law of the pair, and this sentence is the cleanest place to see it.",
+      "sound": "YEO-ge eo-TTEO-ke KA-yo. eotteoke runs as three quick syllables.",
+      "variations": [
+        {
+          "display": "Hakgyo-e eotteoke gayo?",
+          "script": "학교에 어떻게 가요?",
+          "cue": "How do I get to the school?",
+          "changed": "L1-M7's school"
+        },
+        {
+          "display": "Jeongnyujang-e eotteoke gayo?",
+          "script": "정류장에 어떻게 가요?",
+          "cue": "How do I get to the bus stop?",
+          "changed": "a bus stop instead"
+        },
+        {
+          "display": "Yeok-i eodi-e isseoyo?",
+          "script": "역이 어디에 있어요?",
+          "cue": "Where is the station?",
+          "changed": "asking where rather than how, with L1-M7's eodi"
+        }
+      ],
+      "mistake": {
+        "display": "Yeok-eseo eotteoke gayo?",
+        "script": "역에서 어떻게 가요?",
+        "why": "A destination takes -e: Yeok-e eotteoke gayo?"
+      },
+      "usage": "The first sentence to have ready in a city you do not know.",
+      "register": "neutral",
+      "mnemonic": "-e is where you are going. -eseo is where it happens."
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "Oenjjok-euro gaseyo.",
+      "script": "왼쪽으로 가세요.",
+      "cue": "Go left.",
+      "literal": "left-toward go-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "oenjjok",
+            "script": "왼쪽",
+            "cue": "left (side)",
+            "tag": "free",
+            "forms": [
+              "oenjjok",
+              "oenjjok-euro",
+              "oreunjjok",
+              "oreunjjok-euro"
+            ],
+            "note": "oen plus jjok, 'side'. oreunjjok is the right, built the same way, and both take -euro to mean toward."
+          },
+          {
+            "display": "euro",
+            "script": "으로",
+            "cue": "toward · in the direction of",
+            "tag": "delta",
+            "forms": [
+              "euro",
+              "-euro",
+              "-ro"
+            ],
+            "note": "A third member of L1's -e and -eseo family: not a destination and not a place of action, but a DIRECTION. After a vowel it shortens to -ro."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "-euro is a direction and not a destination, so it says which way to head rather than where to end up. Yeok-euro gaseyo sends somebody toward the station; Yeok-e gaseyo sends them to it.",
+      "sound": "OEN-jjo-geu-ro ka-SE-yo. The jj is tense, made with the throat tightened.",
+      "variations": [
+        {
+          "display": "Oreunjjok-euro gaseyo.",
+          "script": "오른쪽으로 가세요.",
+          "cue": "Go right.",
+          "changed": "the other side"
+        },
+        {
+          "display": "Jjuk gaseyo.",
+          "script": "쭉 가세요.",
+          "cue": "Go straight on.",
+          "changed": "straight ahead, which needs no particle at all"
+        },
+        {
+          "display": "Yeok-euro gaseyo.",
+          "script": "역으로 가세요.",
+          "cue": "Head toward the station.",
+          "changed": "a landmark to steer by rather than a turn"
+        }
+      ],
+      "mistake": {
+        "display": "Oenjjok-e gaseyo.",
+        "script": "왼쪽에 가세요.",
+        "why": "A direction takes -euro: Oenjjok-euro gaseyo."
+      },
+      "usage": "Given as an answer, and heard far more often than said.",
+      "register": "formal",
+      "mnemonic": "-e arrives. -euro points."
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "Jjuk gago sageori-eseo doraseyo.",
+      "script": "쭉 가고 사거리에서 도세요.",
+      "cue": "Go straight, then turn at the crossroads.",
+      "literal": "straight go-and crossroads-at turn-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jjuk",
+            "script": "쭉",
+            "cue": "straight on",
+            "tag": "free",
+            "forms": [
+              "jjuk",
+              "gago"
+            ],
+            "note": "An adverb and nothing else — no particle, no ending. It is the word every direction starts with, and M3's -go stacks what comes after it: jjuk gago."
+          },
+          {
+            "display": "sageori",
+            "script": "사거리",
+            "cue": "crossroads",
+            "tag": "free",
+            "forms": [
+              "sageori",
+              "sageori-eseo",
+              "sageori-e"
+            ],
+            "note": "Literally 'four street'. Turning is an action that happens there, which is why it takes -eseo and not -e."
+          },
+          {
+            "display": "doraseyo",
+            "script": "도세요",
+            "cue": "please turn",
+            "tag": "free",
+            "forms": [
+              "doraseyo"
+            ],
+            "note": "The honorific imperative of dolda, to turn. M1's ending in the field, doing the ordinary work of directions."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "sageori-eseo and not sageori-e, because the turning HAPPENS at the crossroads rather than ending there. Every verb of doing takes -eseo, and every verb of going takes -e.",
+      "sound": "jjook KA-go sa-geo-ri-e-seo TO-se-yo. M3's -go is stacking the two halves.",
+      "variations": [
+        {
+          "display": "Jjuk gaseyo.",
+          "script": "쭉 가세요.",
+          "cue": "Go straight on.",
+          "changed": "the first half alone"
+        },
+        {
+          "display": "Sageori-eseo oenjjok-euro gaseyo.",
+          "script": "사거리에서 왼쪽으로 가세요.",
+          "cue": "Turn left at the crossroads.",
+          "changed": "a direction instead of the turn verb"
+        },
+        {
+          "display": "Sageori-eseo geonneoseyo.",
+          "script": "사거리에서 건너세요.",
+          "cue": "Cross at the crossroads.",
+          "changed": "crossing instead of turning"
+        }
+      ],
+      "mistake": {
+        "display": "Jjuk gago sageori-e doraseyo.",
+        "script": "쭉 가고 사거리에 도세요.",
+        "why": "An action happens at -eseo: sageori-eseo doraseyo."
+      },
+      "usage": "A whole direction, given in one breath.",
+      "register": "formal",
+      "mnemonic": "Going takes -e. Doing takes -eseo."
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "Beoseu-reul tayo.",
+      "script": "버스를 타요.",
+      "cue": "I take the bus.",
+      "literal": "bus-object ride",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "beoseu",
+            "script": "버스",
+            "cue": "bus",
+            "tag": "free",
+            "forms": [
+              "beoseu",
+              "beoseu-reul",
+              "beoseu-neun",
+              "beoseu-ga",
+              "taeksi",
+              "taeksi-reul"
+            ],
+            "note": "From the English word, said in three syllables, and taeksi beside it. It takes the OBJECT particle with tayo, which is the module's real surprise."
+          },
+          {
+            "display": "tayo",
+            "script": "타요",
+            "cue": "ride · take (a vehicle)",
+            "tag": "delta",
+            "forms": [
+              "tayo",
+              "taseyo"
+            ],
+            "note": "It takes what you ride as a direct OBJECT — beoseu-reul tayo, literally 'the bus, ride it'. English rides ON a bus; Korean simply rides it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "-reul and never -e. An English speaker reaches for a preposition here every single time, and Korean has none to offer: the vehicle is the object of the verb.",
+      "sound": "BEO-seu-reul TA-yo. The eu is the flat vowel, not an oo.",
+      "variations": [
+        {
+          "display": "Jihacheol-eul tayo.",
+          "script": "지하철을 타요.",
+          "cue": "I take the subway.",
+          "changed": "the subway, which ends in a consonant so the particle is -eul"
+        },
+        {
+          "display": "Taeksi-reul tayo.",
+          "script": "택시를 타요.",
+          "cue": "I take a taxi.",
+          "changed": "a taxi"
+        },
+        {
+          "display": "Beoseu-reul taseyo.",
+          "script": "버스를 타세요.",
+          "cue": "Take the bus.",
+          "changed": "the honorific imperative — given as advice"
+        }
+      ],
+      "mistake": {
+        "display": "Beoseu-e tayo.",
+        "script": "버스에 타요.",
+        "why": "What you ride is an object: Beoseu-reul tayo."
+      },
+      "usage": "Answering how you get to work.",
+      "register": "neutral",
+      "mnemonic": "You do not ride ON it. You ride IT."
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "Yeok-eseo naeryeoyo.",
+      "script": "역에서 내려요.",
+      "cue": "I get off at the station.",
+      "literal": "station-at get-off",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naeryeoyo",
+            "script": "내려요",
+            "cue": "get off · get out",
+            "tag": "free",
+            "forms": [
+              "naeryeoyo",
+              "naeriseyo"
+            ],
+            "note": "The other half of every journey, and it takes -eseo because getting off HAPPENS at the station. tayo and naeryeoyo take different particles for a visible reason."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Getting on takes an object and getting off takes a place. beoseu-reul tayo, jeongnyujang-eseo naeryeoyo — two halves of one trip, two different particles, and the law of §1 explains both.",
+      "sound": "YEO-ge-seo NAE-ryeo-yo. The ryeo is one syllable.",
+      "variations": [
+        {
+          "display": "Jeongnyujang-eseo naeryeoyo.",
+          "script": "정류장에서 내려요.",
+          "cue": "I get off at the bus stop.",
+          "changed": "a bus stop"
+        },
+        {
+          "display": "Yeok-eseo naeriseyo.",
+          "script": "역에서 내리세요.",
+          "cue": "Get off at the station.",
+          "changed": "the honorific imperative, as an instruction"
+        },
+        {
+          "display": "Sageori-eseo naeryeoyo.",
+          "script": "사거리에서 내려요.",
+          "cue": "I get off at the crossroads.",
+          "changed": "the crossroads"
+        }
+      ],
+      "mistake": {
+        "display": "Yeok-e naeryeoyo.",
+        "script": "역에 내려요.",
+        "why": "Getting off happens somewhere: Yeok-eseo naeryeoyo."
+      },
+      "usage": "Telling somebody where to leave the bus.",
+      "register": "neutral",
+      "mnemonic": "On takes an object. Off takes a place."
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "Yeogi-eseo yeok-kkaji meoreoyo?",
+      "script": "여기에서 역까지 멀어요?",
+      "cue": "Is it far from here to the station?",
+      "literal": "here-from station-up-to is-far?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kkaji",
+            "script": "까지",
+            "cue": "up to · as far as",
+            "tag": "free",
+            "forms": [
+              "kkaji",
+              "-kkaji",
+              "hakgyo-kkaji"
+            ],
+            "note": "The far end of a span. Its partner is -buteo, 'from', which this level does not show — -eseo does that job in a sentence like this one."
+          },
+          {
+            "display": "meoreoyo",
+            "script": "멀어요",
+            "cue": "is far",
+            "tag": "free",
+            "forms": [
+              "meoreoyo",
+              "meon",
+              "gakkawoyo"
+            ],
+            "note": "A descriptive verb like every other. gakkawoyo is 'is near', and the two are asked and answered as a pair."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "-eseo here is 'from' and not 'at', which is the same particle doing a second job. A span needs both ends and Korean marks them differently: -eseo on the start, -kkaji on the finish.",
+      "sound": "YEO-gi-e-seo YEOK-kka-ji MEO-reo-yo. The kk is tense.",
+      "variations": [
+        {
+          "display": "Yeogi-eseo yeok-kkaji gakkawoyo.",
+          "script": "여기에서 역까지 가까워요.",
+          "cue": "It's near from here to the station.",
+          "changed": "the answer"
+        },
+        {
+          "display": "Jip-eseo hakgyo-kkaji meoreoyo.",
+          "script": "집에서 학교까지 멀어요.",
+          "cue": "It's far from home to school.",
+          "changed": "L1-M7's house and school"
+        },
+        {
+          "display": "Yeok-kkaji eotteoke gayo?",
+          "script": "역까지 어떻게 가요?",
+          "cue": "How do I get as far as the station?",
+          "changed": "with the how-question"
+        }
+      ],
+      "mistake": {
+        "display": "Yeogi-eseo yeok-e meoreoyo?",
+        "script": "여기에서 역에 멀어요?",
+        "why": "The far end of a span takes -kkaji: yeok-kkaji."
+      },
+      "usage": "Asked before deciding whether to walk.",
+      "register": "neutral",
+      "mnemonic": "-eseo starts it. -kkaji finishes it."
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "Geonneopyeon-e isseoyo.",
+      "script": "건너편에 있어요.",
+      "cue": "It's on the other side.",
+      "literal": "opposite-side-at exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geonneopyeon",
+            "script": "건너편",
+            "cue": "the other side · opposite",
+            "tag": "free",
+            "forms": [
+              "geonneopyeon",
+              "geonneopyeon-e"
+            ],
+            "note": "geonneo-, to cross, plus -pyeon, side. It takes -e because being somewhere is a location and not an action."
+          },
+          {
+            "display": "geonneoseyo",
+            "script": "건너세요",
+            "cue": "please cross",
+            "tag": "free",
+            "forms": [
+              "geonneoseyo"
+            ],
+            "note": "The honorific imperative from the same stem. Cross the road and you are at the geonneopyeon — the two words are one family."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "-e and not -eseo, because isseoyo is being somewhere rather than doing something. Every sentence with isseoyo takes -e, without exception at this level.",
+      "sound": "geon-neo-PYEO-ne i-SSEO-yo. The nn is held.",
+      "variations": [
+        {
+          "display": "Geonneopyeon-e yeok-i isseoyo.",
+          "script": "건너편에 역이 있어요.",
+          "cue": "The station is on the other side.",
+          "changed": "naming what is there"
+        },
+        {
+          "display": "Geonneoseyo.",
+          "script": "건너세요.",
+          "cue": "Cross over.",
+          "changed": "the instruction that gets you there"
+        },
+        {
+          "display": "Ap-e isseoyo.",
+          "script": "앞에 있어요.",
+          "cue": "It's straight ahead.",
+          "changed": "in front instead of opposite"
+        }
+      ],
+      "mistake": {
+        "display": "Geonneopyeon-eseo isseoyo.",
+        "script": "건너편에서 있어요.",
+        "why": "isseoyo is a location: Geonneopyeon-e isseoyo."
+      },
+      "usage": "Pointing across a road.",
+      "register": "neutral",
+      "mnemonic": "isseoyo always takes -e. Always."
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "Jeongnyujang-eun ap-e isseoyo.",
+      "script": "정류장은 앞에 있어요.",
+      "cue": "The bus stop is up ahead.",
+      "literal": "bus-stop-topic front-at exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jeongnyujang",
+            "script": "정류장",
+            "cue": "bus stop",
+            "tag": "free",
+            "forms": [
+              "jeongnyujang",
+              "jeongnyujang-e",
+              "jeongnyujang-eun",
+              "jeongnyujang-eseo"
+            ],
+            "note": "A bus stop, never a train station — that is the yeok. Its four particle shapes are here because a stop is somewhere you go, wait and get off."
+          },
+          {
+            "display": "ap",
+            "script": "앞",
+            "cue": "front · ahead",
+            "tag": "free",
+            "forms": [
+              "ap",
+              "ap-e",
+              "dwi",
+              "dwi-e"
+            ],
+            "note": "Ahead, with dwi for behind — the pair sits alongside L1-M7's wi and yeop, and all four take -e the same way."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "ap-e is 'in front' relative to where you both are, not to the bus stop. Korean position words point from the SPEAKER unless a noun is named in front of them.",
+      "sound": "jeong-nyu-JANG-eun A-pe i-SSEO-yo. The p of ap runs into the particle.",
+      "variations": [
+        {
+          "display": "Jeongnyujang-eun dwi-e isseoyo.",
+          "script": "정류장은 뒤에 있어요.",
+          "cue": "The bus stop is behind us.",
+          "changed": "behind instead"
+        },
+        {
+          "display": "Yeok-eun ap-e isseoyo.",
+          "script": "역은 앞에 있어요.",
+          "cue": "The station is up ahead.",
+          "changed": "the station"
+        },
+        {
+          "display": "Jeongnyujang-eseo beoseu-reul tayo.",
+          "script": "정류장에서 버스를 타요.",
+          "cue": "I take the bus at the stop.",
+          "changed": "-eseo, because riding happens there"
+        }
+      ],
+      "mistake": {
+        "display": "Jeongnyujang-eun ap-eseo isseoyo.",
+        "script": "정류장은 앞에서 있어요.",
+        "why": "A location takes -e: Jeongnyujang-eun ap-e isseoyo."
+      },
+      "usage": "Given while pointing, and understood without the pointing.",
+      "register": "neutral",
+      "mnemonic": "Position words point from you."
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "Jihacheol-i ppallayo.",
+      "script": "지하철이 빨라요.",
+      "cue": "The subway is faster.",
+      "literal": "subway-subject is-fast",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jihacheol",
+            "script": "지하철",
+            "cue": "subway",
+            "tag": "free",
+            "forms": [
+              "jihacheol",
+              "jihacheol-i",
+              "jihacheol-eul",
+              "gicha",
+              "gicha-ga"
+            ],
+            "note": "Literally 'under-ground iron'. gicha is a train between cities, and the two are not the same thing in Korean any more than in English."
+          },
+          {
+            "display": "ppallayo",
+            "script": "빨라요",
+            "cue": "is fast",
+            "tag": "free",
+            "forms": [
+              "ppallayo",
+              "ppareun"
+            ],
+            "note": "A descriptive verb, so nothing follows it. Its modifier is ppareun — ppareun gicha, a fast train."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Nothing here says 'faster' — Korean states it flat and lets the choice supply the comparison. M9 is where a real comparative arrives; until then, two flat statements do the work.",
+      "sound": "ji-ha-CHEO-ri ppal-LA-yo. The ll is held for two beats.",
+      "variations": [
+        {
+          "display": "Beoseu-ga ssayo.",
+          "script": "버스가 싸요.",
+          "cue": "The bus is cheaper.",
+          "changed": "M3's cheap, on the other option"
+        },
+        {
+          "display": "Jihacheol-eul tayo.",
+          "script": "지하철을 타요.",
+          "cue": "I take the subway.",
+          "changed": "riding it"
+        },
+        {
+          "display": "Gicha-ga ppallayo.",
+          "script": "기차가 빨라요.",
+          "cue": "The train is fast.",
+          "changed": "an intercity train"
+        }
+      ],
+      "mistake": {
+        "display": "Jihacheol-i ppareun-ieyo.",
+        "script": "지하철이 빠른이에요.",
+        "why": "ppallayo is the whole predicate: Jihacheol-i ppallayo."
+      },
+      "usage": "Choosing between two ways of getting there.",
+      "register": "neutral",
+      "mnemonic": "Two flat statements do a comparison, until M9."
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "I-jjok-euro oseyo.",
+      "script": "이쪽으로 오세요.",
+      "cue": "Come this way.",
+      "literal": "this-side-toward come-honorific",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "i-jjok",
+            "script": "이쪽",
+            "cue": "this way · this side",
+            "tag": "free",
+            "forms": [
+              "i-jjok",
+              "i-jjok-euro",
+              "jjok",
+              "yeogi-ro"
+            ],
+            "note": "The demonstrative is written joined to its noun, because a bare i is the SUBJECT PARTICLE's key and would collide with it. yeogi-ro is the same -ro after a vowel."
+          },
+          {
+            "display": "oseyo",
+            "script": "오세요",
+            "cue": "please come",
+            "tag": "free",
+            "forms": [
+              "oseyo",
+              "wayo"
+            ],
+            "note": "The honorific imperative of oda, to come — M1's ending again. wayo is its plain -yo shape, which M3 met as wasseoyo in the past."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "Korean writes the demonstrative next to what it points at, and this course joins them with a hyphen for a reason the index forces: a bare i is already the subject particle, so i chaek written apart would put a particle where a word should be.",
+      "sound": "i-JJO-geu-ro o-SE-yo. The jj is tense and the whole phrase runs level.",
+      "variations": [
+        {
+          "display": "Oenjjok-euro oseyo.",
+          "script": "왼쪽으로 오세요.",
+          "cue": "Come to the left.",
+          "changed": "a side instead of a demonstrative"
+        },
+        {
+          "display": "Yeogi-ro oseyo.",
+          "script": "여기로 오세요.",
+          "cue": "Come here.",
+          "changed": "M1's yeogi, and -ro because it ends in a vowel"
+        },
+        {
+          "display": "I-jjok-euro gaseyo.",
+          "script": "이쪽으로 가세요.",
+          "cue": "Go this way.",
+          "changed": "going rather than coming"
+        }
+      ],
+      "mistake": {
+        "display": "I-jjok-e oseyo.",
+        "script": "이쪽에 오세요.",
+        "why": "A direction takes -euro: I-jjok-euro oseyo."
+      },
+      "usage": "Said by whoever is showing you in.",
+      "register": "formal",
+      "mnemonic": "After a vowel -euro shortens to -ro."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "Yeok-e eotteoke gayo?",
+      "script": "역에 어떻게 가요?",
+      "cue": "How do I get to the station?"
+    },
+    {
+      "id": "L2-M4-C02",
+      "display": "Oenjjok-euro gaseyo.",
+      "script": "왼쪽으로 가세요.",
+      "cue": "Go left."
+    },
+    {
+      "id": "L2-M4-C03",
+      "display": "Jjuk gaseyo.",
+      "script": "쭉 가세요.",
+      "cue": "Go straight on."
+    },
+    {
+      "id": "L2-M4-C04",
+      "display": "Beoseu-reul tayo.",
+      "script": "버스를 타요.",
+      "cue": "I take the bus."
+    },
+    {
+      "id": "L2-M4-C05",
+      "display": "Yeok-eseo naeryeoyo.",
+      "script": "역에서 내려요.",
+      "cue": "I get off at the station."
+    },
+    {
+      "id": "L2-M4-C06",
+      "display": "Yeogi-eseo yeok-kkaji meoreoyo?",
+      "script": "여기에서 역까지 멀어요?",
+      "cue": "Is it far from here to the station?"
+    },
+    {
+      "id": "L2-M4-C07",
+      "display": "Geonneopyeon-e isseoyo.",
+      "script": "건너편에 있어요.",
+      "cue": "It's on the other side."
+    },
+    {
+      "id": "L2-M4-C08",
+      "display": "Jeongnyujang-eun ap-e isseoyo.",
+      "script": "정류장은 앞에 있어요.",
+      "cue": "The bus stop is up ahead."
+    },
+    {
+      "id": "L2-M4-C09",
+      "display": "Jihacheol-i ppallayo.",
+      "script": "지하철이 빨라요.",
+      "cue": "The subway is faster."
+    },
+    {
+      "id": "L2-M4-C10",
+      "display": "I-jjok-euro oseyo.",
+      "script": "이쪽으로 오세요.",
+      "cue": "Come this way."
+    },
+    {
+      "id": "L2-M4-C11",
+      "display": "Oreunjjok-euro gaseyo.",
+      "script": "오른쪽으로 가세요.",
+      "cue": "Go right."
+    },
+    {
+      "id": "L2-M4-C12",
+      "display": "Jeongnyujang-eseo beoseu-reul tayo.",
+      "script": "정류장에서 버스를 타요.",
+      "cue": "I take the bus at the stop."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

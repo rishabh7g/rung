@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 182 — nine L1 ladders, hi-mr L2 and L3, eight complete L2 ladders, and the first en-ko pair (#442)', () => {
+  it('finds all 185 — nine L1 ladders, hi-mr L2 and L3, eight complete L2 ladders, and en-ko L2-M1..M5 (#451)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -305,6 +305,9 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ko/modules/L1-M9.json',
       'content/en-ko/modules/L2-M1.json',
       'content/en-ko/modules/L2-M2.json',
+      'content/en-ko/modules/L2-M3.json',
+      'content/en-ko/modules/L2-M4.json',
+      'content/en-ko/modules/L2-M5.json',
       'content/en-ru/modules/L1-M1.json',
       'content/en-ru/modules/L1-M10.json',
       'content/en-ru/modules/L1-M2.json',
@@ -744,10 +747,12 @@ describe('ModuleContent against the modules that exist', () => {
      * side for the first time: gomawoyo against gamsahamnida, mianhaeyo against joesonghamnida.
      * L1 could hold the line at two because it never taught the pair; a level that does cannot,
      * and this is the fourth time in the milestone a second level has exposed a test that encoded
-     * the level as well as the rule. Any -mnida beyond these is still a style slip.
+     * the level as well as the rule. L2-M5 (#451) adds the second and last of them, `jal
+     * meogeosseumnida` — said after eating, frozen exactly as L1-M2's two are, and named as frozen
+     * in its own note. Any -mnida beyond these four is still a style slip.
      */
     const FROZEN_FORMAL = new Set(['gamsahamnida', 'mannaseo bangapseumnida']);
-    const FROZEN_FORMAL_L2 = new Set([...FROZEN_FORMAL, 'joesonghamnida']);
+    const FROZEN_FORMAL_L2 = new Set([...FROZEN_FORMAL, 'joesonghamnida', 'jal meogeosseumnida']);
     /**
      * Every particle this course writes. A bare one as its own whitespace token would break the
      * ground the index decision stands on — see the case comment.

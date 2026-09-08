@@ -560,6 +560,27 @@ so `joesonghamnida` joins them at L2 and nowhere else. That is the fourth time t
 second level has exposed a test encoding the level as well as the rule. **The native gate is still
 unmet**: docs/68 ends in open questions 1–12, a fresh en-ko L2 chain.
 
+**en-ko reaches the halfway mark of its L2 (#451, 2026-09-08).** `L2-M3` _Describing things_,
+`L2-M4` _Getting around_ and `L2-M5` _Food and hosting_ land, and `npm run build` emits `en-ko: 15
+modules (L1-M1..M10, L2-M1..M5)`. M3's job line cannot mean what it means in the Romance courses,
+and saying so is the module: **Korean marks no gender, no number and no article — what it marks is
+ROLE, on the particle**, and L1 shipped all six of them across six modules without ever laying them
+side by side. It also refuses a slogan out loud: "Korean has no plurals" is false, because Korean
+has `-deul` and simply does not require it. M4 opens the pair L1 taught and never contrasted — `-e`
+for a destination, `-eseo` for where an action happens — and the thing no English speaker guesses:
+**riding takes an object particle**, `beoseu-reul tayo`, "the bus, ride it", while getting off takes
+`-eseo` because it happens somewhere. M5 states the law that explains what a learner already has:
+**native numbers count things and always take a counter, Sino numbers do money and dates**, which
+L1-M8 used in one module without ever naming. The honorific verb set arrives at the table —
+`meokda` has a whole separate word, `deusida`, so a host says `deuseyo` and never `meogeuseyo` — and
+the hosting note is stated rather than moralised: in Korea the offer is repeated, a bare `aniyo` is
+heard as politeness, and the refusal that lands carries a reason. The `-mnida` set is widened once
+more and closed at four: `jal meogeosseumnida` joins L1's two and M1's `joesonghamnida`, frozen
+exactly as they are. The briefs' prediction that a bare `i` would collide with the subject
+particle's key came true on the first build, and the demonstrative is now written joined
+everywhere — `i-jjok`, `i-sikdang` — as L1-M1's `i-geo` already was. The ratchet held at en-ko 12.
+**The native gate is still unmet**: docs/68 ends in open questions 1–27, a fresh en-ko L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on
