@@ -326,3 +326,275 @@ no later rung to absorb it.
      correct grammar, the right particle and no laugh actually lands as joking — because if the
      marking needs prosody the course does not teach, M2's job line is only half deliverable, and
      that is a finding L5 has no later module to absorb.
+
+---
+
+## Wave 2 — L5-M3, L5-M4 and L5-M5 (#583)
+
+The level's RANGE modules: **L5-M3 "How they say it there"**, **L5-M4 "Formal occasions"** and
+**L5-M5 "Big questions"**, written against the briefs in
+[`docs/105-en-ar-L5-brief-decisions.md`](105-en-ar-L5-brief-decisions.md) and shipped
+`verified: true` with their signature in the same change.
+
+**The index this wave was written against.** Every ownership call below was taken at
+
+```
+1177 surfaces owned, folded over 42 modules through L5-M2
+```
+
+— which is wave 1's fold plus wave 1's own two modules. It is two readings past what `docs/105` §0
+was planned to (*1095 surfaces, 39 modules through `L4-M9`*) and one past what wave 1 authored to
+(*1113 / 40 / `L4-M10`*). This matters for the brief's index seams, which name a count and a module
+and go stale in that order: **the fold is deeper than any brief in this course says it is**, and
+where the two disagreed the tool won.
+
+### L5-M3 — How they say it there
+
+Ten displays:
+
+1. `al-fuṣḥā lugha wāḥida, wa al-lahajāt kathīra`
+2. `fī ash-shām yaqūlūn kalima wa fī al-maghrib yaqūlūn ukhrā`
+3. `hādhihi al-kalima shāmiyya, wa laysat fuṣḥā`
+4. `al-ʿāmmiyya ṣaʿba ʿalā al-ajnabī fī al-khalīj wa fī al-maghrib`
+5. `jīl al-kibār yaqūl kalimāt qadīma`
+6. `ash-shabāb yatakallamūn bi-uslūb mukhtalif`
+7. `hādhā kalām shaʿbī, wa laysa fuṣḥā`
+8. `fī kull balad nabra mukhtalifa, wa hādhā ʿādī`
+9. `huwa yatakallam al-fuṣḥā ʿumūman, wa hādhā ʿādī`
+10. `hādhā ash-shakhṣ yaqūl kalima shāmiyya, yaʿnī huwa min ash-shām`
+
+**What it teaches.** The metalinguistic vocabulary of variation — `al-fuṣḥā`, `al-ʿāmmiyya`,
+`lahja`, `jīl`, `ash-shabāb`, `al-kibār`, `kalām`, `uslūb`, `nabra` — and one piece of productive
+grammar: the **nisba**, the `-ī` the ladder has used since L1-M1's `al-Hind`, named here as a rule
+for the first time, with the feminine `-iyya`. Every display line is MSA. The dialect forms the
+module is *about* are named and described, never spoken (#198): the deliverable is that a learner
+can say *that word is Levantine* or *that is what older people say* without having to produce any of
+it. Rule 3 carries the brief's honest line — MSA is a passport rather than a disguise; it gets you
+through everywhere and it never makes you a local.
+
+Two verb rows are new shapes of owned lexemes and carry notes pointing back: `yaqūlūn` (L3-M5's
+`yaqūl`) and `yatakallamūn` (L1-M10's `yatakallam`). Neither touches a file below L5.
+
+25 rows across the ten sentences, at the brief's `newWordCap: 25`. M3 is inside the M1–M3
+enrichment band, so all five blocks are on all ten sentences.
+
+### L5-M4 — Formal occasions
+
+Ten displays:
+
+1. `al-marḥūm kāna ṣadīqī, raḥimahu allāh`
+2. `at-taʿāzī, aʿẓama allāh ajrakum`
+3. `al-baqāʾ li-llāh / shakara allāh saʿyakum`
+4. `alf mabrūk ʿalā az-zawāj / bārakallāh fīk`
+5. `at-tahāni ʿalā an-najāḥ, wa anta muwaffaq`
+6. `sayyidātī wa sādatī, ashkurukum ʿalā hādhā ash-sharaf`
+7. `khiṭāb al-ʿurs kāna jamīl`
+8. `sayyidātī wa sādatī, nakhb al-ʿurs`
+9. `al-ḥuzn kabīr fī hādhihi al-janāza`
+10. `ashkurukum ʿalā al-ḥuḍūr, wa hādhā sharaf lī`
+
+**What it teaches.** The **optative** — a past-shaped verb doing a performative job — named
+precisely because it is the one place this course writes a perfect that is not past: `raḥimahu`,
+`aʿẓama`, `shakara`, `bārakallāh`. Rule 0 says plainly that no new shape is being taught, the
+morphology is L1-M5's and only the JOB is new, which is what keeps a learner from hearing a fourth
+tense. The second system is L4-M7's plural of politeness coming home: `ashkurukum`, `ajrakum`,
+`saʿyakum`, `tafaḍḍalū`, and M2's vocative at its formal end in `yā sayyidātī`.
+
+**The pairs are pairs.** The brief's `<formula> / <the obligatory reply>` pattern is taken
+literally, and the slash survives tokenisation — `tokenizeSurface` strips edge punctuation and drops
+the resulting empty token, so `al-baqāʾ li-llāh / shakara allāh saʿyakum` indexes as five words with
+no stray key. S03 and S04 each carry both halves on the hero line; S03's mistake plate is the
+learner's real error, which is answering a condolence with `shukran` and stopping.
+
+24 rows. `allāh` is bought here and its note answers for every later occurrence in the course, as
+the brief instructed: written about the word, not about the condolence, and rule 1 says these are
+social formulae used by speakers of every background in the region — the course teaches the
+formula, not a faith.
+
+### L5-M5 — Big questions
+
+Ten displays:
+
+1. `al-ḥurriyya muhimma, wa al-ʿadāla ahamm`
+2. `al-ʿadāla asās al-mujtamaʿ`
+3. `aṣ-ṣadāqa ahamm min al-māl, wa as-saʿāda ahamm min al-ʿamal`
+4. `ūmin bi-al-ʿadāla, wa aʿtaqid anna al-ḥayāt ṣaʿba`
+5. `al-īmān qīma, wa al-ʿaql qīma ukhrā`
+6. `mā maʿnā al-ḥaqīqa fī hādhā al-ʿālam?`
+7. `aḍ-ḍamīr aṣl al-ʿadāla`
+8. `al-insān ahamm min al-mujtamaʿ? hādhā suʾāl qadīm`
+9. `at-taʾrīkh khulāṣa, wa laysa kull al-ḥaqīqa`
+10. `aʿtaqid anna al-qiyam ahamm min kull shayʾ`
+
+**What it teaches.** The **generic article** — `al-` on an abstract noun means the thing in
+general — stated in both directions and given its own mistake plate (`ḥurriyya muhimma`, S01),
+because English drops its article in exactly the place Arabic demands one and over-reads it coming
+back. The second system is the **belief pair**: `ūmin bi-` is believe IN and `aʿtaqid anna` is
+believe THAT; S04 puts both in one sentence so the split is forced, and S10's mistake plate is the
+merge (`aʿtaqid bi-anna`). `aʿtaqid` gets no row — it is L3-M3's, coming back with its second
+complement, exactly as the brief required. Rule 3 says the thing that is true and rarely said: the
+nominal sentence does all the work here, so abstract Arabic is structurally *easier* than a learner
+expects.
+
+21 rows plus one deliberate point-back row (below). Comparison is L2-M9's machinery re-used whole;
+hedging stays L4-M5's and defending a position stays M6's.
+
+### Seams — where the brief and the index disagreed
+
+Every line below is what `npm run content:owner -- en-ar …` printed at
+`1177 surfaces owned, folded over 42 modules through L5-M2`.
+
+1. **`gharīb` is not fresh.** M3 §5 lists it among "Fresh and free". The tool:
+
+   ```
+   gharīb	L4-M10
+   ```
+
+   It is owned, so it may be shown without a row and a row for it would have been a re-teach.
+   S07's second variation shows it and buys nothing.
+
+2. **`khalāṣ` is free and still unusable.** M3 §5 lists it as fresh. The tool agrees
+   (`khalāṣ	free`) — and it is dropped anyway. As a discourse particle (*that's it, enough, fine*)
+   it is colloquial, and §2's ratified law forbids a dialect form in `display`. The brief's own
+   note 4 is what rules it out; the index cannot see the problem. Recorded here so a later wave
+   does not "restore" it as an oversight.
+
+3. **`kathīra` is not `kathīran`.** M3 §5 points `kathīran → L1-M1` and says nothing about the
+   adjective. `kathīra	free`, `kathīr	free` — a different key, untaught. `content:shown` caught it
+   on the first run (`SHOWN-BUT-UNTAUGHT L5-M3-S01: kathīra`) and it now has its own row with a
+   note pointing back at L1-M1's adverb.
+
+4. **`qadīm` and `qadīma` are L5-M1's, not free.** `qadīm	L5-M1`, `qadīma	L5-M1`. M3 shows both
+   (S05, S06's first variation) and rows neither — a case where the wave-1 modules, which no
+   published brief mentions, are already load-bearing for wave 2.
+
+5. **`allāh` really is free after forty-two modules.** The brief's most surprising claim survives
+   contact with the tool:
+
+   ```
+   allāh	free
+   in shāʾ allāh	L1-M6
+   ```
+
+   `surfaceIndexKeys` splits hyphens only, so the three-token key never donated `allāh` or `shāʾ`.
+   M4 buys it, and its note is written about the word.
+
+6. **`alf mabrūk` is free although both its words are owned.** `alf	L3-M8`, `mabrūk	L3-M9`,
+   `alf mabrūk	free`. Confirmed as the brief predicted, and it is the model for how a formula is
+   indexed here: one row, one key, two words already paid for. `al-baqāʾ li-llāh` does the same
+   thing over four parts (`al → L1-M1, baqāʾ → free, li → L1-M9, llāh → free`) for one key.
+
+7. **M5's own worked example uses two words its index seam does not list.** §3 quotes
+   `al-ḥurriyya asās kull shayʾ`. The §5 fresh list names `aṣl` but not `asās`, and never mentions
+   `shayʾ`. Both are free (`asās	free`, `shayʾ	free`, `kull shayʾ	free`) and both had to be bought
+   as rows. `kull	L3-M9` was fine.
+
+8. **`mā` is unbought.** `mā	free` after forty-two modules — so `mā maʿnā` could not be assembled
+   out of owned parts. It is bought as a two-token form on the `maʿnā` row, which is also what
+   keeps a bare `mā` off the ratchet: the module never shows it alone.
+
+9. **The definite form is always a separate key, and this is the trap that shapes every row in
+   M5.** `al-fuṣḥā	free [parts: al → L1-M1, fuṣḥā → free]` — the article form earns `fuṣḥā` as a
+   *part*, so a second row whose whole display is `fuṣḥā` would collide inside the module and be
+   unreachable. Every abstract-noun row therefore carries the definite, the bare and, where the
+   module shows it, the `bi-al-` form on **one** row: `["al-ʿadāla", "ʿadāla", "bi-al-ʿadāla"]`.
+   `bi-al-ʿadāla	free [parts: bi → L1-M2, al → L1-M1, ʿadāla → free]` confirms the whole form was
+   never bought by the preposition.
+
+10. **`aḍ-` was an unbought article part.** `aḍ-ḍamīr	free [parts: aḍ → free, ḍamīr → free]` — the
+    ḍ sun-letter assimilation had never been indexed in forty-two modules. M5's `aḍ-ḍamīr` row buys
+    it as a part, the way `ash-` (L1-M2), `as-` (L1-M2), `aṣ-` (L1-M4), `an-` (L1-M3), `at-`
+    (L3-M6), `az-` (L3-M7), `ar-` (L2-M5) and `aẓ-` (L1-M6) already were.
+
+11. **Point-backs the briefs list that these modules never needed:** `ism`, `tafaḍḍalū` (shown in a
+    variation, not rowed), `min faḍlikum`, `ḥaḍratuka`, `ʿīd`, `khayr`, `bi-khayr`, `shukran`
+    (shown in a mistake plate only), `nās`, `ṭayyib`, `ḥasanan`, `lugha` (shown in M3-S01),
+    `aẓunn`, `ṣaḥīḥ`, `khaṭaʾ`, `afḍal`, `ayy`. Listed so a later wave knows they were checked and
+    left alone rather than missed.
+
+### The ratchet
+
+`npm run content:shown -- en-ar` is **clean** on all three modules. `en-ar` holds at its baseline of
+6 in `tools/shown-surfaces.test.ts`; no baseline was raised, and none could honestly be lowered —
+the six pre-existing findings are all below L5.
+
+- **No `COLLIDES INSIDE THIS MODULE` anywhere.** The rows that could have collided were merged
+  instead: `mukhtalif`/`mukhtalifa` is one row, not two; `sayyidātī wa sādatī` is one row carrying
+  the whole phrase and both singles; `al-kalima` carries `kalima` and `kalimāt`; `al-qiyam` carries
+  `qiyam`, `qīma` and `al-qīma`.
+- **One deliberate `RE-TEACH`**, and it is the one the brief asked for:
+
+  ```
+  RE-TEACH L5-M5-S09 "at-ta'rīkh": L3-M8 owns the key …
+  RE-TEACH L5-M5-S09 "ta'rīkh": L3-M8 owns the key …
+  ```
+
+  `taʾrīkh	L3-M8`, bought there as the date on a form. M5 §5 is explicit that the abstract sense
+  is the same key and gets a point-back row with a note true of both, never a second row. The row
+  is kept because S09 needs the word; the note is written so that L3-M8's note, which is what a
+  learner actually sees on the tap, is not contradicted by it. (Note the tool's own output folds
+  the hamza to `'` — `at-ta'rīkh` — which is why a grep for `taʾrīkh` over the index would have
+  missed it. The tool is the authority, not the grep.)
+- **Paradigm holes.** M3's nisba row lists eight cells — `shāmiyya, shāmī, miṣriyya, miṣrī,
+  maghribiyya, maghribī, khalījiyya, khalījī` — and every one was checked with `content:owner`
+  before the list was written; all eight are free. Two cells were deliberately kept **off** it:
+  `miṣr	L1-M9`, the place name the nisba is built from, which stays L1-M9's; and `shaʿbī`/`baladī`,
+  which are the S07 row's and would have made the second row unreachable. `qadīm`/`qadīma` got no
+  row at all, because L5-M1 owns both cells.
+- **No file below L5 was touched, and no other course was touched.**
+
+### Open questions for the native pass
+
+Continuing the chain; the last number in `docs/105` and in this file was 128.
+
+129. **A module about dialect that may not write one** (M3, all of it). The ratified MSA law (#198)
+     means every display line here is `al-fuṣḥā` and the varieties are named, never produced.
+     Confirm the deliverable is real: that a learner who can say `hādhihi al-kalima shāmiyya` and
+     nothing Levantine has been given something usable, rather than a vocabulary for describing a
+     skill they do not have. If the honest answer is no, the finding belongs to the level, not to
+     M3, because no later module can absorb it.
+130. **The three regions** (M3 §5). The brief says pick three, and this module picked `ash-shām`,
+     `al-khalīj` and `al-maghrib`, with `miṣr` (L1-M9) already owned and used in a variation.
+     Confirm those four are the ones a learner actually needs to name, and that `ash-shām` is the
+     ordinary word for the region rather than a bookish one where `sūrī` or `lubnānī` would be
+     said.
+131. **The eight nisba cells** (M3-S03). Confirm `khalījiyya` and `maghribiyya` are said, not just
+     derivable, and that a word — not a person — is naturally described with the feminine
+     (`kalima shāmiyya`). If the feminine of a place nisba is only ever used of people, the
+     module's central row is teaching a paradigm with a hole in it that nobody flagged.
+132. **`yaʿnī` inside an MSA-only course** (M3-S10). It is the commonest discourse particle in
+     every spoken variety. Confirm it is also unmarked in `al-fuṣḥā`, so that this course is not
+     shipping, in the very module that forbids dialect, a word a listener would hear as `ʿāmmiyya`.
+133. **`khalāṣ` withheld** (M3; seam 2 above). Confirm the judgement that it cannot ship in
+     `display` because it is a dialect particle. If a native reader considers it ordinary MSA, the
+     brief's fresh list was right and this wave was over-cautious — and the row should come back.
+134. **The condolence pair** (M4-S03). Confirm `al-baqāʾ li-llāh` is answered by
+     `shakara allāh saʿyakum` in life and not only in books, and that the same reply answers
+     `aʿẓama allāh ajrakum` (which is how S03's second variation teaches it). If the two formulae
+     take different answers, the module has taught a wrong pair, which is exactly the error §3 of
+     the brief says is worse than saying nothing.
+135. **`bārakallāh fīk` as the answer to `alf mabrūk`** (M4-S04). Confirm this is what is actually
+     heard, rather than `allāh yubārik fīk`, which is what a learner will meet. If the latter is
+     the live form, M4 teaches a reply nobody says at the one moment a reply is obligatory.
+136. **Writing `bārakallāh` as one romanized token** (M4-S04). The `script` line is two words,
+     `بارك الله`, and the `display` is one token so that the phrase indexes whole. Confirm the
+     romanization convention is acceptable to a reader who knows the script — this is the first
+     place in the course where `display` and `script` disagree about a word boundary.
+137. **`at-tahāni` written against `alf mabrūk` spoken** (M4-S05). The module claims a register
+     split: the plural noun on a card and in a speech, the formula in the mouth. Confirm it, and
+     confirm `anta muwaffaq` reads as a compliment rather than as faint praise.
+138. **The toast** (M4-S08). Confirm that `nakhb` names a real occasion across the region rather
+     than one country's habit, and that `nakhb al-ʿurs` — with no verb and no glass named — is what
+     is said standing up. The brief lists `nakhb` as fresh; nothing in the index can say whether
+     the moment exists.
+139. **The generic article's mistake plate** (M5-S01). Confirm `ḥurriyya muhimma` is genuinely
+     unusable rather than merely marked or poetic. The whole rule is stated on the strength of that
+     plate, and if the bare noun is available in any register the rule as written is too strong.
+140. **`ūmin bi-` against `aʿtaqid anna`** (M5-S04, S10). Confirm the split is as absolute as rule
+     2 says: that `ūmin anna` is impossible rather than merely uncommon, and that `aʿtaqid bi-anna`
+     is the error the plate calls it. If either is acceptable, the module's central delta softens
+     into a preference and should be re-tagged.
+141. **`aḍ-ḍamīr` as a neutral word** (M5-S07). The trap line claims it carries no religious or
+     secular loading and is used the same way by everybody. Confirm — this is the one place in
+     three modules where the course makes a claim about a word's social colouring that the index
+     cannot check.
