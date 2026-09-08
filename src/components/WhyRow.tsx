@@ -19,7 +19,7 @@
 import type { L2Written } from '../course/manifest.ts';
 import type { Word } from '../course/types.ts';
 import { TagChip } from '../screens/TagChip.tsx';
-import styles from './WhyRow.module.css';
+import './why-row.css';
 
 interface WhyRowProps {
   word: Word;
@@ -29,15 +29,15 @@ interface WhyRowProps {
 
 export function WhyRow({ word, l2 }: WhyRowProps) {
   return (
-    <li className={styles.row}>
-      <p className={styles.head}>
-        <span className={styles.display} dir={l2?.display.dir} lang={l2?.display.lang}>
+    <li className="why-row">
+      <p className="why-row-head">
+        <span className="why-row-display" dir={l2?.display.dir} lang={l2?.display.lang}>
           {word.display}
         </span>
-        <span className={styles.cue}>{word.cue}</span>
+        <span className="why-row-cue why-row-course-prose">{word.cue}</span>
         <TagChip tag={word.tag} />
       </p>
-      {word.note !== undefined && <p className={styles.note}>{word.note}</p>}
+      {word.note !== undefined && <p className="why-row-note why-row-course-prose">{word.note}</p>}
     </li>
   );
 }

@@ -14,19 +14,19 @@
  * half, inside a card that already carries the answer at 26px. What it buys is a "why" a learner
  * can actually read in Devanagari — which is the entire feature.
  */
-.courseProse {
+.why-row-course-prose {
   font: var(--text-l2-cue);
   font-size: var(--devanagari-min-size);
 }
 
 /* No border and no fill: the rows are separated by the panel's gap, and the panel's own top
    hairline is the only rule in the expansion (the prototype's `border-top` + column gap). */
-.row {
+.why-row {
   display: flex;
   flex-direction: column;
 }
 
-.head {
+.why-row-head {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -38,26 +38,24 @@
    line where the prototype and §2 already agree. The prototype's 52px/40px alignment columns are
    dropped: there is no token for either, and a wrapping Devanagari word needs the width more than
    the rows need a shared left edge. */
-.display {
+.why-row-display {
   font: var(--text-l2-list);
   font-size: var(--devanagari-min-size);
 }
 
-.cue {
-  composes: courseProse;
+.why-row-cue {
   color: var(--ink-70);
 }
 
 /* The chip ends the row — `margin-inline-start: auto`, so an RTL course flips it. */
-.head > :last-child {
+.why-row-head > :last-child {
   margin-inline-start: auto;
 }
 
 /* The note sits under the head as its second line. The prototype's 60% ink; `--ink-75` since
    #185, the top text rung — the quiet ramp starts at 65% now, and the note is a step above the
    cue above it, not level with it. */
-.note {
-  composes: courseProse;
+.why-row-note {
   margin: var(--space-1) 0 0;
   color: var(--ink-75);
 }
