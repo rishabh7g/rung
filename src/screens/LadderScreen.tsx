@@ -48,7 +48,7 @@ import { RungMarker } from './ladder/RungMarker.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
 import { useRungProduction } from './useExitAvailable.ts';
 import { useProgression } from './useProgression.ts';
-import styles from './LadderScreen.module.css';
+import './ladder-screen.css';
 
 export default function LadderScreen() {
   const strings = useStrings();
@@ -75,7 +75,7 @@ export default function LadderScreen() {
   // The shell's frame is already up, so the screen waits rather than inventing a state.
   const plan = levels.data?.levels;
   if (plan === undefined || !ready) {
-    return <section className={styles.ladder} aria-busy="true" />;
+    return <section className="ladder" aria-busy="true" />;
   }
 
   const statuses = deriveStatuses(input);
@@ -89,7 +89,7 @@ export default function LadderScreen() {
       : plan.findIndex((level) => level.modules.some((module) => module.id === current));
   const active = plan[activeIndex];
   // Unreachable past `parseLevels` (a ladder with no levels never loads); TypeScript cannot know.
-  if (active === undefined) return <section className={styles.ladder} aria-busy="true" />;
+  if (active === undefined) return <section className="ladder" aria-busy="true" />;
 
   const level = activeIndex + 1;
   const total = active.modules.length;
@@ -148,23 +148,23 @@ export default function LadderScreen() {
   };
 
   return (
-    <section className={styles.ladder}>
+    <section className="ladder">
       {/* The position line and the strip stay put while the rungs scroll, as they do in the
           prototype — there they sit outside the scroll area, here they are sticky inside the
           shell's one scroll column (design/pwa-checklist.md §1). */}
-      <div className={styles.head}>
+      <div className="ladder-head">
         {/* The only numbers on the screen: counts, never time. The prototype puts this line in
             the Ladder's own header row; the shell's brand header is screen-agnostic (#84), so it
             renders as the screen's first row — reconciled in #117. Its words are the course's
             since #351; only the numbers in it are the shell's. */}
-        <p className={styles.position}>
+        <p className="ladder-position">
           {interpolate(strings['ladder.positionLine'], { level, passed, total })}
         </p>
 
         <LevelStrip cells={cells} onSealedTap={sealedTap} />
       </div>
 
-      <div className={styles.body}>
+      <div className="ladder-body">
         {/* THE ACTION, FIRST (#396). The rung card answers "what do I do now", so it goes where
             the eye lands rather than behind however many rungs the learner has already climbed —
             at 360px its CTA used to fall below the fold. The ladder under it is still the
@@ -180,7 +180,7 @@ export default function LadderScreen() {
           />
         )}
 
-        <ol className={styles.rungs}>
+        <ol className="ladder-rungs">
           {active.modules.map((module) =>
             module.id === current ? (
               // A ROW, not a second card: the card above IS this rung, and drawing it twice is
@@ -282,11 +282,11 @@ interface RungProps {
  */
 function CurrentRung({ moduleId, title }: Omit<RungProps, 'job'>) {
   return (
-    <li className={styles.rowCurrent}>
+    <li className="ladder-row-current ladder-row">
       <RungMarker state="current" />
-      <span className={styles.rowText}>
-        <span className={styles.rowTitle}>
-          {rungLabel(moduleId)} · <span className={styles.rowTitleContent}>{title}</span>
+      <span className="ladder-row-text">
+        <span className="ladder-row-title">
+          {rungLabel(moduleId)} · <span className="ladder-row-title-content">{title}</span>
         </span>
       </span>
     </li>
@@ -299,15 +299,15 @@ function PassedRung({ moduleId, title, job }: RungProps) {
 
   return (
     <li>
-      <Link className={styles.row} to={`/module/${moduleId}`}>
+      <Link className="ladder-row" to={`/module/${moduleId}`}>
         <RungMarker state="passed" />
-        <span className={styles.rowText}>
-          <span className={styles.rowTitle}>
-            {rungLabel(moduleId)} · <span className={styles.rowTitleContent}>{title}</span>
+        <span className="ladder-row-text">
+          <span className="ladder-row-title">
+            {rungLabel(moduleId)} · <span className="ladder-row-title-content">{title}</span>
           </span>
-          <span className={styles.rowJob}>{job}</span>
+          <span className="ladder-row-job">{job}</span>
         </span>
-        <span className={styles.passedLabel}>{strings['ladder.passed']}</span>
+        <span className="ladder-passed-label">{strings['ladder.passed']}</span>
       </Link>
     </li>
   );
@@ -320,14 +320,14 @@ function PassedRung({ moduleId, title, job }: RungProps) {
  */
 function LockedRung({ moduleId, title }: Omit<RungProps, 'job'>) {
   return (
-    <li className={styles.rowLocked}>
+    <li className="ladder-row-locked ladder-row">
       <RungMarker state="locked" />
-      <span className={styles.rowText}>
-        <span className={styles.rowTitle}>
-          {rungLabel(moduleId)} · <span className={styles.rowTitleContent}>{title}</span>
+      <span className="ladder-row-text">
+        <span className="ladder-row-title">
+          {rungLabel(moduleId)} · <span className="ladder-row-title-content">{title}</span>
         </span>
       </span>
-      <Lock className={styles.rowLock} aria-hidden="true" />
+      <Lock className="ladder-row-lock" aria-hidden="true" />
     </li>
   );
 }
