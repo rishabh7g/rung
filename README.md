@@ -452,6 +452,26 @@ a **compliment** rather than a reason, with a host who offers once or twice and 
 ratchet findings, all fixed in content. **The native gate is still unmet**: docs/66 now ends in open
 questions 1–21.
 
+**en-fr's second level closes (#458, 2026-09-08).** `L2-M6` _Making plans together_ through
+`L2-M10` _Telling what happened_ complete the ladder; `content/en-fr/levels.json` drops the L2 draft
+flag and a strict `npm run build` emits `en-fr: 20 modules (L1-M1..M10, L2-M1..M10)`. M6's best fact
+is `on`: in everyday French it IS "we", and it takes the **third-person singular verb**, so every
+form the learner needs is already theirs from L1's `il` and `elle` sentences. M7's delta is an
+**absence** — French has no continuous tense at all, so `Je parle` covers "I speak" and "I am
+speaking" alike and there is no `-ing` equivalent to reach for; that is the exact opposite of
+en-it's M7, where a call is what finally motivates `stare + gerundio`, and the review says so. The
+level's one dialect line lives there too: spoken French drops the `ne`, and this course writes it
+everywhere because writing both would fork one negation into two index surfaces. M8's `avoir mal à`
+is the **fourth member of a family** the learner has had since L1-M9's `j'ai faim`, and `m'aider` is
+one index key because the elision welds the pronoun onto the verb rather than moving it. M9 keeps
+`meilleur` apart from `mieux` — where Italian agrees with French and Spanish does not — and marks a
+superlative's group with `de` and never "in". M10 states the auxiliary law and kills the two-pasts
+slogan in the same words the other three M10s use. Two seam corrections: `quel` was returned to M9
+after an M7 draft borrowed it, and M9's comparison was rebuilt on `la ville` and `le village`
+because place names do not resolve in the index (#61) — which made the sentence better, since it now
+shows the feminine agreement the rule is about. Twenty-two ratchet findings, all fixed in content.
+**The native gate is still unmet**: docs/66 ends in open questions 1–35, a fresh en-fr L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

@@ -148,3 +148,75 @@ variation. The en-fr baseline stays at 20.
     encore?`.
 21. **The compliment-shaped refusal** (M5-S06). Confirm `C'est très gentil, mais ça va` is current
     and that a French host really does stop after one or two offers.
+
+## Wave 3 — L2-M6 through L2-M10 (#458)
+
+Five rungs, and the level closes. A strict build emits `en-fr: 20 modules`.
+
+### What each module spends its budget on
+
+- **M6 Making plans together.** `on` is the most useful thing in the level: in everyday French it IS
+  "we", and it takes the **third-person singular verb**, so every form the learner needs is already
+  theirs from L1's `il` and `elle` sentences. `nous` is written and taught in one variation and
+  named as the formal one. The article on a day means "every" — `le lundi` against bare `lundi` —
+  and the learner has been saying L1-M4's phrase for two levels without meeting the word inside it.
+- **M7 On the phone.** The module's delta is an **absence**: French has no continuous tense at all,
+  so `Je parle` covers "I speak" and "I am speaking" alike and a learner reaching for an `-ing`
+  equivalent finds none. That is the exact opposite of en-it's M7, where a call is what finally
+  motivates `stare + gerundio` — two neighbouring languages, opposite answers, and the review says
+  so. The level's one dialect line lives here too: spoken French drops the `ne`, and this course
+  writes it everywhere because writing both would fork one negation into two surfaces.
+- **M8 When something goes wrong.** `avoir mal à` is the **fourth member of a family** the learner
+  has had since L1-M9's `j'ai faim` — French treats a state as something you have — and the article
+  stands where English wants a possessive. `m'aider` is one index key, because the elision fuses the
+  pronoun onto the verb: the pronoun has not moved from where M5 put it, it has been welded on.
+- **M9 Comparing and choosing.** The comparative is two words around an **unchanged** adjective, so
+  the module's real content is `meilleur` against `mieux` — French keeping apart what English merges,
+  where Italian agrees and Spanish does not. The superlative marks its group with `de` and not
+  "in", which is the half English speakers miss.
+- **M10 Telling what happened.** The two pasts, and the slogan killed in the same words en-es's,
+  en-ru's and en-it's M10s use: what decides the tense is the ROLE the clause plays in the telling.
+  `Quand j'étais petit, j'allais toujours à la mer` is the case that breaks "ongoing" most clearly.
+  The auxiliary law is written down at last, and `rester` is flagged as the place it has to be
+  learnt rather than reasoned out.
+
+### Two seam corrections made against the real index
+
+- **`quel` belongs to M9, so M7 gave it up.** The M7 draft asked `C'est quel numéro?`, which would
+  have taken M9's key two modules early. The sentence is now `C'est le bon numéro?`, which teaches
+  M3's front-adjective rule instead and needs nothing new.
+- **Place names do not resolve.** `Lyon` and `Marseille` are not taught anywhere and #61 keeps proper
+  nouns out of the index, so M9's comparison is built on `la ville` and `le village` instead — which
+  is better content anyway, since the sentence now shows the feminine agreement the rule is about.
+
+### The ratchet
+
+Twenty-two findings across the wave, each fixed by opening the row the module needed or by
+rewriting the line. The en-fr baseline stays at 20.
+
+### Open questions for the native pass
+
+22. **`on` as the default "we"** (M6-S01). Confirm `nous allons` really is the marked one in speech,
+    across registers and generations.
+23. **`Ça te dit de…?`** (M6-S02). Confirm it is the everyday invitation and not dated.
+24. **`le lundi` against `lundi`** (M6-S07). Confirm the article carries "every" and that
+    `tous les lundis` is not simply commoner.
+25. **`Allô?`** (M7-S01). Confirm it is phone-only and universal.
+26. **`à l'appareil`** (M7-S01). Confirm it is current rather than formal or dated.
+27. **The `ne` drop** (M7, rule 3). Confirm the course's decision to write `ne` everywhere does not
+    leave a learner unable to parse what they hear.
+28. **`avoir mal à`** (M8-S03, S04). Confirm the article is compulsory and `à ma tête` is genuinely
+    wrong rather than merely unusual.
+29. **`Malheureusement`** (M8-S09). Confirm it is the softener a complaint uses, and that the
+    direct claim after it is not heard as blunt.
+30. **`meilleur` / `mieux`** (M9-S04, S05). Confirm natives keep them apart consistently in speech.
+31. **`le plus grand de la ville`** (M9-S03). Confirm `de` and not `dans`, and that no speaker says
+    the second.
+32. **`préférer` + `à`** (M9-S09). Confirm the `à` frame is ordinary speech rather than written
+    French.
+33. **`rester` taking `être`** (M10-S03). Confirm, and confirm the module's framing — that French
+    counts staying as a change of state — is not misleading.
+34. **`beaucoup de monde`** (M10-S07). Confirm the singular holds and that `beaucoup de gens` is the
+    alternative rather than a correction.
+35. **The accounts** (M10, all ten). Confirm each reads as something a person would say, and flag
+    any that reads as a grammar exercise.
