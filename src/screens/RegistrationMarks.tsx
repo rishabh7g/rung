@@ -12,13 +12,13 @@
  * nothing about an object's state is in them, and the size and ink come from tokens in the
  * stylesheet rather than from attributes here (docs/design-contract.md rule 1).
  */
-import styles from './RegistrationMarks.module.css';
+import './registration-marks.css';
 
 const CORNERS = [
-  styles.markTopLeft,
-  styles.markTopRight,
-  styles.markBottomLeft,
-  styles.markBottomRight,
+  'reg-mark-top-left reg-mark',
+  'reg-mark-top-right reg-mark',
+  'reg-mark-bottom-left reg-mark',
+  'reg-mark-bottom-right reg-mark',
 ];
 
 export function RegistrationMarks() {
@@ -33,7 +33,7 @@ export function RegistrationMarks() {
           focusable="false"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path className={styles.markLine} d="M8 0v16M0 8h16" />
+          <path className="reg-mark-line" d="M8 0v16M0 8h16" />
         </svg>
       ))}
     </>
