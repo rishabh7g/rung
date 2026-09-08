@@ -337,6 +337,27 @@ row had taken the whole paradigm and was trimmed to the single neuter cell it te
 the adjective. Four ratchet findings, all fixed in content; the en-ru baseline stays at 20. **The
 native gate is still unmet**: docs/64 now ends in open questions 1–20.
 
+**en-ru's second level closes (#456, 2026-09-08).** `L2-M6` _Making plans together_ through
+`L2-M10` _Telling what happened_ complete the ladder; `content/en-ru/levels.json` drops the L2 draft
+flag and a strict `npm run build` emits `en-ru: 20 modules (L1-M1..M10, L2-M1..M10)`. M6 finally
+opens **`ty`**, held back through all of L1 on the argument that guessing wrong with a stranger is
+rude while guessing wrong with a friend is merely stiff — and it names the thing English has no
+equivalent for: the move from `vy` to `ty` is negotiated out loud, not drifted into. M7 turns M3's
+genitive of absence on a person (`Yevó net dóma`) and makes its register a rule about **not
+knowing** rather than about politeness — `vy` throughout, because you do not know who picked up. M8
+carries the level's best rule: in `Mne núzhen bilét` the thing NEEDED is the subject and `núzhen`
+agrees with it, which with `U menyá bolít golová` and L1-M8's `u menyá yest'` makes three
+constructions on one habit — the person is never the subject of their own need, having or pain; and
+the complaint delta runs the **opposite way from English**, because a hedged Russian complaint reads
+as evasive. M9 spends M3's case a fifth time on "than", and shows `deshyóvyy` losing its yó in
+`deshévle` — not an exception to the yó rule but the rule itself. M10 teaches aspect at length and
+kills the slogan: `Ya dva chasá chitál` is bounded and imperfective, `Ya prochitál za dva chasá` is
+perfective, and the reading took the same two hours; the diagnostic is one the learner already owns,
+that the perfective has no present. Fifteen ratchet findings across the wave, all fixed in content —
+two of them plain spelling slips (`brata` for `bráta`, `ona` for `oná`) that the acute catches
+precisely because an unmarked vowel is a different index key. The en-ru baseline stays at 20. **The
+native gate is still unmet**: docs/64 ends in open questions 1–32, a fresh en-ru L2 chain.
+
 **The surface pass (#282, 2026-08-24) closed the gap between what hi-mr teaches and what it
 shows** — the twin of en-es's #281. Seven surfaces appeared in variation lines and were taught by
 no word row; five now resolve (`झोपणार` on M4's झोपतो row, `दुकानाजवळ` on M7's दुकान row, `जाऊ` on

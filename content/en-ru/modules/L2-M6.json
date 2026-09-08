@@ -1,0 +1,811 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": [
+    "L2-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present",
+      "simple_future",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "Davay + V-1pl-future",
+      "Ty svobóden / svobódna + v subbótu?",
+      "Vo skól'ko? — V pyat' chasóv",
+      "Ty khóchesh' + N + ?",
+      "Khoroshó + , + do závtra"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "TY ENTERS HERE, and the level held it back on purpose: a learner who guesses wrong with a stranger is rude, while a learner who guesses wrong with a friend is merely stiff, so L1 taught vy and showed ty in no display at all. Plans are made with friends, which is what pays for it. With ty come tebyá and tebé, the -esh' ending on every verb the course owns, and the singular imperative — skazhí where a stranger got skazhíte."
+    },
+    {
+      "tag": "free",
+      "text": "The move from vy to ty is NEGOTIATED OUT LOUD in Russian — Davay na ty — rather than drifted into. Knowing only that ty is \"informal\" is what makes a learner switch too early and land somewhere between presumptuous and childish. The real trigger is age and closeness, agreed between the two people, and once agreed it does not go back."
+    },
+    {
+      "tag": "delta",
+      "text": "Davay is the suggestion particle and takes the first-person PLURAL of the future: Davay poydyóm, Davay vstrétimsya. Davayte is its vy partner, so the pair drills the module's register point as well as its grammar. English \"let's\" is one word for both addresses; Russian's carries the address with it."
+    },
+    {
+      "tag": "interference",
+      "text": "TIME FORKS BY PREPOSITION. A clock hour takes v — v pyat' chasóv, with L1-M4's chasóv and L1-M8's pyat' already owned. A day takes v too, and there the feminine accusative shows: v subbótu. But a part of the day takes NOTHING: útrom, vécherom, dnyóm, nóch'yu are frozen instrumental forms L1-M4 taught as words, and there is no pattern in them to copy — exactly as M4 said of peshkóm."
+    },
+    {
+      "tag": "free",
+      "text": "Two words that look alike are different kinds of thing. skazhí and skazhíte are ONE verb in two addresses and share a row. skazhíte and govoríte are aspect partners and never share one. The test is simple: if choosing between them is choosing whom you are talking to, it is one word; if it is choosing how the action is presented, it is two."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "Davay poydyóm v kinó",
+      "script": "Давай пойдём в кино",
+      "cue": "Let's go to the cinema",
+      "literal": "Give we-will-go into cinema",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "davay",
+            "script": "давай",
+            "cue": "let's (to one friend)",
+            "tag": "delta",
+            "forms": [
+              "davay"
+            ],
+            "note": "Literally \"give\", used as a suggestion particle. It carries the address with it, which English's \"let's\" does not."
+          },
+          {
+            "display": "davayte",
+            "script": "давайте",
+            "cue": "let's (to more than one, or politely)",
+            "tag": "delta",
+            "forms": [
+              "davayte"
+            ],
+            "note": "davay's vy partner. Same word, different address — so the two share nothing but a stem and are chosen the way skazhí and skazhíte are."
+          },
+          {
+            "display": "poydyóm",
+            "script": "пойдём",
+            "cue": "let's go · we'll go",
+            "tag": "free",
+            "forms": [
+              "poydyóm"
+            ],
+            "note": "The first-person plural of L1-M5's poydú. Carries a yó and therefore the stress. After davay this is a suggestion, not a prediction."
+          },
+          {
+            "display": "kinó",
+            "script": "кино",
+            "cue": "the cinema · a film",
+            "tag": "interference",
+            "forms": [
+              "kinó"
+            ],
+            "note": "Indeclinable, like M4's metró and kófe — v kinó whatever the case. It means both the building and the art form."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "davay is followed by a FUTURE, not by an infinitive. Davay idtí is wrong, and the mistake comes straight from English's \"let's go\", where the verb has no ending at all.",
+      "sound": "da-VAY pay-DYOM v ki-NO. Three stresses in a row on the last syllable, which is what makes the line sound like an invitation.",
+      "variations": [
+        {
+          "display": "Davayte poydyóm v kinó",
+          "script": "Давайте пойдём в кино",
+          "cue": "Let's go to the cinema",
+          "changed": "to more than one person, or politely"
+        },
+        {
+          "display": "Davay poydyóm v magazín",
+          "script": "Давай пойдём в магазин",
+          "cue": "Let's go to the shop",
+          "changed": "a different destination, still motion"
+        },
+        {
+          "display": "Davay vstrétimsya závtra",
+          "script": "Давай встретимся завтра",
+          "cue": "Let's meet tomorrow",
+          "changed": "a different suggestion"
+        }
+      ],
+      "mistake": {
+        "display": "Davay idtí v kinó",
+        "script": "Давай идти в кино",
+        "why": "davay takes the plural future: Davay poydyóm v kinó."
+      },
+      "usage": "Between friends. Said to a stranger it would be presumptuous, and davayte is what that situation needs.",
+      "register": "informal",
+      "mnemonic": "davay plus we-will, never plus to-do."
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "Davay vstrétimsya v subbótu",
+      "script": "Давай встретимся в субботу",
+      "cue": "Let's meet on Saturday",
+      "literal": "Give we-will-meet into Saturday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vstrétimsya",
+            "script": "встретимся",
+            "cue": "let's meet · we'll meet",
+            "tag": "free",
+            "forms": [
+              "vstrétimsya"
+            ],
+            "note": "A reflexive verb — the -sya on the end makes it \"meet each other\". The reflexive system itself is L3's; this arrives as a word."
+          },
+          {
+            "display": "subbóta",
+            "script": "суббота",
+            "cue": "Saturday",
+            "tag": "free",
+            "forms": [
+              "subbóta",
+              "subbótu",
+              "subbóty"
+            ],
+            "note": "Feminine, so its accusative shows: v subbótu. Days of the week are not capitalised in Russian, which is the reverse of English."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The day takes the ACCUSATIVE after v, so subbóta becomes subbótu. It is the same v as M4's motion — Russian treats a day as something you go into.",
+      "sound": "da-VAY VSTRYE-tim-sya v su-BO-tu. The vstr cluster starts the word with no vowel, which English mouths want to soften.",
+      "variations": [
+        {
+          "display": "Davay vstrétimsya v voskresén'ye",
+          "script": "Давай встретимся в воскресенье",
+          "cue": "Let's meet on Sunday",
+          "changed": "a neuter day, so nothing visible changes"
+        },
+        {
+          "display": "Davayte vstrétimsya v ponedél'nik",
+          "script": "Давайте встретимся в понедельник",
+          "cue": "Let's meet on Monday",
+          "changed": "the polite address and a masculine day"
+        },
+        {
+          "display": "Davay vstrétimsya vécherom",
+          "script": "Давай встретимся вечером",
+          "cue": "Let's meet in the evening",
+          "changed": "a part of the day — no preposition at all"
+        }
+      ],
+      "mistake": {
+        "display": "Davay vstrétimsya v subbóta",
+        "script": "Давай встретимся в суббота",
+        "why": "A day after v takes the accusative: v subbótu."
+      },
+      "usage": "Fixing a day. The hour comes in the next breath.",
+      "register": "informal",
+      "mnemonic": "Into a day, so accusative."
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "Ty svobóden v subbótu?",
+      "script": "Ты свободен в субботу?",
+      "cue": "Are you free on Saturday?",
+      "literal": "You free into Saturday?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ty",
+            "script": "ты",
+            "cue": "you (one friend)",
+            "tag": "delta",
+            "forms": [
+              "ty"
+            ],
+            "note": "For one person you are close to. L1 taught vy for everyone because guessing wrong with a stranger is the costly mistake; this is the module where the other half arrives."
+          },
+          {
+            "display": "svobóden",
+            "script": "свободен",
+            "cue": "free (said of a man)",
+            "tag": "delta",
+            "forms": [
+              "svobóden",
+              "svobódny"
+            ],
+            "note": "A short-form adjective, like M2's ustál and M5's syt: it agrees with the person and cannot stand in front of a noun."
+          },
+          {
+            "display": "svobódna",
+            "script": "свободна",
+            "cue": "free (said of a woman)",
+            "tag": "delta",
+            "forms": [
+              "svobódna"
+            ],
+            "note": "The feminine short form. Asking a woman with svobóden is heard immediately, and there is no neutral option."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Which form to use is decided by the person being ASKED, not by the person asking. A man asking a woman says svobódna.",
+      "sound": "ty sva-BO-din v su-BO-tu. The stress of both content words falls on the same vowel sound, which makes the question easy to hear.",
+      "variations": [
+        {
+          "display": "Ty svobódna v subbótu?",
+          "script": "Ты свободна в субботу?",
+          "cue": "Are you free on Saturday?",
+          "changed": "asking a woman"
+        },
+        {
+          "display": "Vy svobódny v voskresén'ye?",
+          "script": "Вы свободны в воскресенье?",
+          "cue": "Are you free on Sunday?",
+          "changed": "the polite address, so the plural short form"
+        },
+        {
+          "display": "Ya svobóden v ponedél'nik",
+          "script": "Я свободен в понедельник",
+          "cue": "I'm free on Monday",
+          "changed": "the answer"
+        }
+      ],
+      "mistake": {
+        "display": "Ty svobódnyy v subbótu?",
+        "script": "Ты свободный в субботу?",
+        "why": "The predicate takes the short form: Ty svobóden v subbótu?"
+      },
+      "usage": "The question that opens every plan between friends.",
+      "register": "informal",
+      "mnemonic": "The short form agrees with whoever it is about."
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "V voskresén'ye ya svobóden",
+      "script": "В воскресенье я свободен",
+      "cue": "On Sunday I'm free",
+      "literal": "Into Sunday I free",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "voskresén'ye",
+            "script": "воскресенье",
+            "cue": "Sunday",
+            "tag": "free",
+            "forms": [
+              "voskresén'ye",
+              "voskresén'ya"
+            ],
+            "note": "Neuter, so its accusative is the same as its nominative and nothing visible happens after v. The word means \"resurrection\"."
+          },
+          {
+            "display": "ponedél'nik",
+            "script": "понедельник",
+            "cue": "Monday",
+            "tag": "free",
+            "forms": [
+              "ponedél'nik"
+            ],
+            "note": "Masculine and inanimate, so its accusative is its nominative too. Literally \"the day after the not-doing\" — after voskresén'ye."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Two of the three days shown change nothing after v, and only subbóta does. That is not the days behaving differently — it is the accusative being invisible on neuters and inanimate masculines, exactly as M3 said.",
+      "sound": "v vas-kri-SYEN'-ye ya sva-BO-din. Four unstressed vowels in the first word, all reduced.",
+      "variations": [
+        {
+          "display": "V ponedél'nik ya rabótayu",
+          "script": "В понедельник я работаю",
+          "cue": "On Monday I work",
+          "changed": "a masculine day and a different verb"
+        },
+        {
+          "display": "V subbótu ya svobóden",
+          "script": "В субботу я свободен",
+          "cue": "On Saturday I'm free",
+          "changed": "the feminine day, where the ending shows"
+        },
+        {
+          "display": "V voskresén'ye ya dóma",
+          "script": "В воскресенье я дома",
+          "cue": "On Sunday I'm at home",
+          "changed": "where rather than whether"
+        }
+      ],
+      "mistake": {
+        "display": "Na voskresén'ye ya svobóden",
+        "script": "На воскресенье я свободен",
+        "why": "A day of the week takes v: V voskresén'ye ya svobóden."
+      },
+      "usage": "Answering the question above, or offering a day before being asked.",
+      "register": "neutral",
+      "mnemonic": "Only the feminine day shows its ending."
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "Vo skól'ko? V pyat' chasóv",
+      "script": "Во сколько? В пять часов",
+      "cue": "At what time? At five o'clock",
+      "literal": "Into how-much? Into five of-hours",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vo skól'ko",
+            "script": "во сколько",
+            "cue": "at what time",
+            "tag": "interference",
+            "forms": [
+              "vo skól'ko"
+            ],
+            "note": "A whole surface, beside L1-M8's skól'ko stóit. The vo is v with a vowel added, because v skól'ko would be unsayable — spelling following the mouth."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "chasóv is the genitive plural, and it is there because pyat' is a word of amount — M3's rule, said in L1-M4 without a reason and now explained. The learner has been saying it correctly for two levels.",
+      "sound": "va SKOL'-ka? v pyat' cha-SOF. The final v of chasóv goes voiceless, so the word ends in an f.",
+      "variations": [
+        {
+          "display": "Vo skól'ko vy búdete dóma?",
+          "script": "Во сколько вы будете дома?",
+          "cue": "What time will you be home?",
+          "changed": "a full question, with L1-M6's future"
+        },
+        {
+          "display": "V sem' chasóv",
+          "script": "В семь часов",
+          "cue": "At seven o'clock",
+          "changed": "a different hour, the same genitive plural"
+        },
+        {
+          "display": "Davay vstrétimsya v pyat' chasóv",
+          "script": "Давай встретимся в пять часов",
+          "cue": "Let's meet at five o'clock",
+          "changed": "the hour inside a suggestion"
+        }
+      ],
+      "mistake": {
+        "display": "V skól'ko? V pyat' chasóv",
+        "script": "В сколько? В пять часов",
+        "why": "A cluster takes the longer form: Vo skól'ko?"
+      },
+      "usage": "The second half of settling a plan, after the day is agreed.",
+      "register": "neutral",
+      "mnemonic": "A cluster ahead means vo, not v."
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "Ty khóchesh' chay ili kófe?",
+      "script": "Ты хочешь чай или кофе?",
+      "cue": "Do you want tea or coffee?",
+      "literal": "You want tea or coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khóchesh'",
+            "script": "хочешь",
+            "cue": "you want (to a friend)",
+            "tag": "delta",
+            "forms": [
+              "khóchesh'"
+            ],
+            "note": "The ty form of the verb L1-M3 taught as khochú and khotíte. The -esh' ending is what every ty form is built on."
+          },
+          {
+            "display": "znáyesh'",
+            "script": "знаешь",
+            "cue": "you know (to a friend)",
+            "tag": "free",
+            "forms": [
+              "znáyesh'"
+            ],
+            "note": "The same -esh' ending on a regular verb. Ty znáyesh'? on its own is \"you know what?\" and opens a piece of news."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The soft sign on the end of every ty form is not decoration and is not silent — it softens the sh, and dropping it in writing is the commonest slip a learner makes here.",
+      "sound": "ty KHO-chish' chay i-li KO-fye. The kh is the Scottish \"loch\" sound, and the ch that follows is soft.",
+      "variations": [
+        {
+          "display": "Ty znáyesh', gde magazín?",
+          "script": "Ты знаешь, где магазин?",
+          "cue": "Do you know where the shop is?",
+          "changed": "a different verb, and a question inside a question"
+        },
+        {
+          "display": "Ty rabótayesh' závtra?",
+          "script": "Ты работаешь завтра?",
+          "cue": "Are you working tomorrow?",
+          "changed": "another -esh' verb"
+        },
+        {
+          "display": "Vy khotíte chay ili kófe?",
+          "script": "Вы хотите чай или кофе?",
+          "cue": "Would you like tea or coffee?",
+          "changed": "the polite address — L1's form, unchanged"
+        }
+      ],
+      "mistake": {
+        "display": "Ty khotíte chay ili kófe?",
+        "script": "Ты хотите чай или кофе?",
+        "why": "ty takes the -esh' form: Ty khóchesh' chay ili kófe?"
+      },
+      "usage": "At home with a friend. M5's Vam chay ili kófe? is the same offer to a guest you address as vy.",
+      "register": "informal",
+      "mnemonic": "ty always ends the verb in -esh'."
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "Ty rabótayesh' v subbótu?",
+      "script": "Ты работаешь в субботу?",
+      "cue": "Are you working on Saturday?",
+      "literal": "You work into Saturday?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rabótayesh'",
+            "script": "работаешь",
+            "cue": "you work (to a friend)",
+            "tag": "free",
+            "forms": [
+              "rabótayesh'"
+            ],
+            "note": "The ty cell of L1-M1's rabótat'. A regular verb, and the ending is the only thing that has changed."
+          },
+          {
+            "display": "chitáyesh'",
+            "script": "читаешь",
+            "cue": "you read (to a friend)",
+            "tag": "free",
+            "forms": [
+              "chitáyesh'"
+            ],
+            "note": "The ty cell of L1-M3's chitát'. Same ending again — this is the point at which the pattern stops needing to be learnt word by word."
+          },
+          {
+            "display": "búdesh'",
+            "script": "будешь",
+            "cue": "you will be (to a friend)",
+            "tag": "free",
+            "forms": [
+              "búdesh'"
+            ],
+            "note": "The ty cell of L1-M6's búdu and búdete. It also builds the imperfective future, which M10 will need."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Russian has no separate continuous, so this one question is both \"do you work\" and \"are you working\". Only the day at the end says which is meant.",
+      "sound": "ty ra-BO-ta-yish' v su-BO-tu. The -yesh' ending is one syllable and easy to swallow; keeping it audible is what makes the address clear.",
+      "variations": [
+        {
+          "display": "Ty chitáyesh' gazétu?",
+          "script": "Ты читаешь газету?",
+          "cue": "Are you reading the paper?",
+          "changed": "a different verb, with an accusative object"
+        },
+        {
+          "display": "Ty búdesh' dóma závtra?",
+          "script": "Ты будешь дома завтра?",
+          "cue": "Will you be at home tomorrow?",
+          "changed": "the future"
+        },
+        {
+          "display": "Vy rabótayete v subbótu?",
+          "script": "Вы работаете в субботу?",
+          "cue": "Are you working on Saturday?",
+          "changed": "the polite address"
+        }
+      ],
+      "mistake": {
+        "display": "Ty rabótayete v subbótu?",
+        "script": "Ты работаете в субботу?",
+        "why": "ty takes -esh': Ty rabótayesh' v subbótu?"
+      },
+      "usage": "Finding out whether a friend is free, without asking directly.",
+      "register": "informal",
+      "mnemonic": "One ending, every regular verb."
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "Pozvoní mne závtra, pozháluysta",
+      "script": "Позвони мне завтра, пожалуйста",
+      "cue": "Call me tomorrow, please",
+      "literal": "Call to-me tomorrow, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pozvoní",
+            "script": "позвони",
+            "cue": "call (to a friend)",
+            "tag": "delta",
+            "forms": [
+              "pozvoní",
+              "pozvoníte"
+            ],
+            "note": "The singular imperative. It shares a row with L1-M6's pozvoníte because they are ONE verb in two addresses — unlike an aspect pair, which never shares a row."
+          },
+          {
+            "display": "skazhí",
+            "script": "скажи",
+            "cue": "tell me (to a friend)",
+            "tag": "delta",
+            "forms": [
+              "skazhí",
+              "skazhíte"
+            ],
+            "note": "M1's skazhíte in the ty address, on the same row for the same reason. Its aspect partner govorí is a different word and lives elsewhere."
+          },
+          {
+            "display": "day",
+            "script": "дай",
+            "cue": "give (to a friend)",
+            "tag": "free",
+            "forms": [
+              "day",
+              "dáyte"
+            ],
+            "note": "L1-M8's dáyte in the ty address. One syllable, so no stress mark — and it is the shortest imperative in the language."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Dropping the -te is not a shortening; it is a change of address. Saying pozvoní to a stranger is exactly as wrong as saying pozvoníte to a close friend, and only one of the two is rude.",
+      "sound": "paz-va-NI mnye ZAV-tra pa-ZHA-lsta. Both o's of pozvoní reduce, so only the last syllable carries.",
+      "variations": [
+        {
+          "display": "Skazhí mne, pozháluysta",
+          "script": "Скажи мне, пожалуйста",
+          "cue": "Tell me, please",
+          "changed": "a different verb in the same address"
+        },
+        {
+          "display": "Day mne knígu, pozháluysta",
+          "script": "Дай мне книгу, пожалуйста",
+          "cue": "Give me the book, please",
+          "changed": "the shortest imperative, with an accusative object"
+        },
+        {
+          "display": "Pozvoníte mne závtra, pozháluysta",
+          "script": "Позвоните мне завтра, пожалуйста",
+          "cue": "Call me tomorrow, please",
+          "changed": "the polite address — the -te is back"
+        }
+      ],
+      "mistake": {
+        "display": "Pozvoní vam závtra, pozháluysta",
+        "script": "Позвони вам завтра, пожалуйста",
+        "why": "The address has to match: Pozvoní mne závtra or Pozvoníte mne závtra."
+      },
+      "usage": "Between friends. Even here pozháluysta is normal — the address is informal, the request still polite.",
+      "register": "informal",
+      "mnemonic": "-te is not politeness. It is plural, and vy borrows it."
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "Ya tebé pozvonyú vécherom",
+      "script": "Я тебе позвоню вечером",
+      "cue": "I'll call you in the evening",
+      "literal": "I to-you will-call in-evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tebé",
+            "script": "тебе",
+            "cue": "to you (one friend)",
+            "tag": "delta",
+            "forms": [
+              "tebé"
+            ],
+            "note": "The dative of ty, beside M1's mne and L1-M2's vam. pozvonít' takes the dative, exactly as pomóch' does."
+          },
+          {
+            "display": "tebyá",
+            "script": "тебя",
+            "cue": "you (object, one friend)",
+            "tag": "delta",
+            "forms": [
+              "tebyá"
+            ],
+            "note": "The accusative and genitive of ty, beside L1-M1's menyá. Ya tebyá ne ponimáyu is the sentence it turns up in most."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "vécherom takes no preposition at all. It is a frozen instrumental, a word rather than a pattern — the same warning M4 gave about peshkóm, and the instrumental proper is still L3's.",
+      "sound": "ya ti-BYE paz-va-NYU VYE-chi-ram. Only vécherom is stressed on its first syllable; everything else runs late.",
+      "variations": [
+        {
+          "display": "Ya tebyá ne ponimáyu",
+          "script": "Я тебя не понимаю",
+          "cue": "I don't understand you",
+          "changed": "the object form instead of the dative"
+        },
+        {
+          "display": "Ya vam pozvonyú vécherom",
+          "script": "Я вам позвоню вечером",
+          "cue": "I'll call you in the evening",
+          "changed": "the polite address"
+        },
+        {
+          "display": "Ya tebé pozvonyú závtra útrom",
+          "script": "Я тебе позвоню завтра утром",
+          "cue": "I'll call you tomorrow morning",
+          "changed": "two time words, neither with a preposition"
+        }
+      ],
+      "mistake": {
+        "display": "Ya tebé pozvonyú v vécherom",
+        "script": "Я тебе позвоню в вечером",
+        "why": "A part of the day takes no preposition: Ya tebé pozvonyú vécherom."
+      },
+      "usage": "Closing a plan with a promise to confirm it.",
+      "register": "informal",
+      "mnemonic": "Parts of the day take nothing at all."
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "Khoroshó, do závtra!",
+      "script": "Хорошо, до завтра!",
+      "cue": "All right, see you tomorrow!",
+      "literal": "Well, until tomorrow!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "do závtra",
+            "script": "до завтра",
+            "cue": "see you tomorrow",
+            "tag": "free",
+            "forms": [
+              "do závtra"
+            ],
+            "note": "M4's do plus L1-M6's závtra, riding as one farewell. L1-M1's do svidániya is built the same way — \"until the seeing again\"."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "khoroshó has been in the course since L1-M2 meaning \"well\". Here it means \"all right, agreed\", which is a second job and not a second word — its row admits both.",
+      "sound": "kha-ra-SHO da ZAV-tra. Both o's of khoroshó reduce to a, so only the last one is fully sounded.",
+      "variations": [
+        {
+          "display": "Khoroshó, do subbóty!",
+          "script": "Хорошо, до субботы!",
+          "cue": "All right, see you on Saturday!",
+          "changed": "a day, in the genitive after do"
+        },
+        {
+          "display": "Khoroshó, do voskresén'ya!",
+          "script": "Хорошо, до воскресенья!",
+          "cue": "All right, see you on Sunday!",
+          "changed": "a neuter day, and its genitive does show"
+        },
+        {
+          "display": "Do závtra!",
+          "script": "До завтра!",
+          "cue": "See you tomorrow!",
+          "changed": "the farewell alone"
+        }
+      ],
+      "mistake": {
+        "display": "Khoroshó, do subbótu!",
+        "script": "Хорошо, до субботу!",
+        "why": "do takes the genitive: do subbóty."
+      },
+      "usage": "Ending the conversation that made the plan.",
+      "register": "neutral",
+      "mnemonic": "do means until, and takes the genitive."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M6-C01",
+      "display": "Davay poydyóm v kinó",
+      "script": "Давай пойдём в кино",
+      "cue": "Let's go to the cinema"
+    },
+    {
+      "id": "L2-M6-C02",
+      "display": "Davay vstrétimsya v subbótu",
+      "script": "Давай встретимся в субботу",
+      "cue": "Let's meet on Saturday"
+    },
+    {
+      "id": "L2-M6-C03",
+      "display": "Ty svobóden v subbótu?",
+      "script": "Ты свободен в субботу?",
+      "cue": "Are you free on Saturday?"
+    },
+    {
+      "id": "L2-M6-C04",
+      "display": "V voskresén'ye ya svobóden",
+      "script": "В воскресенье я свободен",
+      "cue": "On Sunday I'm free"
+    },
+    {
+      "id": "L2-M6-C05",
+      "display": "Vo skól'ko? V pyat' chasóv",
+      "script": "Во сколько? В пять часов",
+      "cue": "At what time? At five o'clock"
+    },
+    {
+      "id": "L2-M6-C06",
+      "display": "Ty khóchesh' chay ili kófe?",
+      "script": "Ты хочешь чай или кофе?",
+      "cue": "Do you want tea or coffee?"
+    },
+    {
+      "id": "L2-M6-C07",
+      "display": "Ty rabótayesh' v subbótu?",
+      "script": "Ты работаешь в субботу?",
+      "cue": "Are you working on Saturday?"
+    },
+    {
+      "id": "L2-M6-C08",
+      "display": "Pozvoní mne závtra, pozháluysta",
+      "script": "Позвони мне завтра, пожалуйста",
+      "cue": "Call me tomorrow, please"
+    },
+    {
+      "id": "L2-M6-C09",
+      "display": "Ya tebé pozvonyú vécherom",
+      "script": "Я тебе позвоню вечером",
+      "cue": "I'll call you in the evening"
+    },
+    {
+      "id": "L2-M6-C10",
+      "display": "Khoroshó, do závtra!",
+      "script": "Хорошо, до завтра!",
+      "cue": "All right, see you tomorrow!"
+    },
+    {
+      "id": "L2-M6-C11",
+      "display": "Davay vstrétimsya v pyat' chasóv",
+      "script": "Давай встретимся в пять часов",
+      "cue": "Let's meet at five o'clock"
+    },
+    {
+      "id": "L2-M6-C12",
+      "display": "Ty búdesh' dóma závtra?",
+      "script": "Ты будешь дома завтра?",
+      "cue": "Will you be at home tomorrow?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

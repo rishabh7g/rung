@@ -1,0 +1,743 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": [
+    "L2-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "U menyá probléma",
+      "Ne rabótayet + N",
+      "Mne núzhen / nuzhná / núzhno + N",
+      "U menyá bolít + N",
+      "Ya poteryál / poteryála + N-acc"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE THING NEEDED IS THE SUBJECT, and this is the module's best rule because English hides it completely. Mne núzhen bilét, Mne nuzhná pómoshch', Mne núzhno vrémya — núzhen agrees with the THING, and the person sits in the dative. \"I need a ticket\" has the person as subject and shows none of it. This is M1's dative frame with agreement switched on, and it is where Russian's habit of putting the person in an oblique case stops being a curiosity."
+    },
+    {
+      "tag": "delta",
+      "text": "U menyá bolít golová is the same habit again: the body part is the SUBJECT — bolít agrees with it, bolyát for two — and the person is in the genitive after u, exactly as in L1-M8's u menyá yest'. Three constructions, one shape: the person is never the subject of their own need, their own having, or their own pain."
+    },
+    {
+      "tag": "interference",
+      "text": "The past tense agrees with the SUBJECT, which L1-M5 taught with kupíl and kupíla. A problem report drills it at length: Ya poteryál said by a man, Ya poteryála by a woman — and On poteryál, Oná poteryála when the subject is someone else. It is the subject, not the speaker; those coincide only when the subject is ya."
+    },
+    {
+      "tag": "delta",
+      "text": "COMPLAINING RUNS THE OPPOSITE WAY FROM ENGLISH. Russian complains directly, and the hedged English complaint — \"I'm afraid there seems to be a small problem\" — reads as evasive rather than as polite. What carries politeness is M1's frame in front and then a plain statement: Izviníte, pozháluysta, u menyá probléma. A learner who softens a Russian complaint the English way will not be understood as polite."
+    },
+    {
+      "tag": "free",
+      "text": "núzhen, nuzhná and núzhno are one word's cells and share M1's row, because they are not aspect partners — choosing between them is choosing what the thing needed is, not how an action is presented. That is M6's test running again."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "Izviníte, u menyá probléma",
+      "script": "Извините, у меня проблема",
+      "cue": "Excuse me, I have a problem",
+      "literal": "Excuse, at me problem",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "probléma",
+            "script": "проблема",
+            "cue": "problem",
+            "tag": "free",
+            "forms": [
+              "probléma",
+              "problémy"
+            ],
+            "note": "Feminine. Note there is no yest' — u menyá probléma, not u menyá yest' probléma, because a problem is not a possession."
+          },
+          {
+            "display": "k sozhaléniyu",
+            "script": "к сожалению",
+            "cue": "unfortunately",
+            "tag": "free",
+            "forms": [
+              "k sozhaléniyu"
+            ],
+            "note": "A whole surface, and the one hedge Russian does use. It reports a fact regretfully; it does not soften a demand."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The politeness is entirely in izviníte, and after it the statement is flat. Softening the problem itself is what makes an English speaker sound evasive here.",
+      "sound": "iz-vi-NI-tye u mi-NYA pra-BLYE-ma. The o of probléma reduces to a, so the word starts pra-.",
+      "variations": [
+        {
+          "display": "U menyá probléma",
+          "script": "У меня проблема",
+          "cue": "I have a problem",
+          "changed": "without the opener — abrupt, but not rude"
+        },
+        {
+          "display": "K sozhaléniyu, u menyá probléma",
+          "script": "К сожалению, у меня проблема",
+          "cue": "Unfortunately, I have a problem",
+          "changed": "the one hedge the language uses"
+        },
+        {
+          "display": "Prostíte, u menyá probléma",
+          "script": "Простите, у меня проблема",
+          "cue": "Sorry, I have a problem",
+          "changed": "M1's other opener"
+        }
+      ],
+      "mistake": {
+        "display": "Izviníte, u menyá yest' probléma",
+        "script": "Извините, у меня есть проблема",
+        "why": "A problem is not a possession: u menyá probléma."
+      },
+      "usage": "Opening any complaint — at a counter, a hotel desk, an office.",
+      "register": "neutral",
+      "mnemonic": "Polite opener, plain statement."
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "Mne núzhen bilét",
+      "script": "Мне нужен билет",
+      "cue": "I need a ticket",
+      "literal": "To-me necessary ticket",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "núzhen",
+            "script": "нужен",
+            "cue": "needed (masculine)",
+            "tag": "delta",
+            "forms": [
+              "núzhen"
+            ],
+            "note": "The masculine cell of M1's núzhno. It agrees with the THING needed — bilét — and not with the person, who is in the dative."
+          },
+          {
+            "display": "nuzhná",
+            "script": "нужна",
+            "cue": "needed (feminine)",
+            "tag": "delta",
+            "forms": [
+              "nuzhná"
+            ],
+            "note": "The feminine cell, stressed on the ending. Mne nuzhná pómoshch' — help is feminine, so the word for \"needed\" is too."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Which form to use is decided by what is NEEDED. A man saying Mne nuzhná pómoshch' is right, and a woman saying Mne núzhen bilét is right — the speaker's own gender never enters it.",
+      "sound": "mnye NU-zhyn bi-LYET. The zh is hard, which pulls the e after it back towards y.",
+      "variations": [
+        {
+          "display": "Mne nuzhná pómoshch'",
+          "script": "Мне нужна помощь",
+          "cue": "I need help",
+          "changed": "a feminine thing needed"
+        },
+        {
+          "display": "Mne núzhno vrémya",
+          "script": "Мне нужно время",
+          "cue": "I need time",
+          "changed": "a neuter thing — M1's original cell"
+        },
+        {
+          "display": "Vam núzhen bilét?",
+          "script": "Вам нужен билет?",
+          "cue": "Do you need a ticket?",
+          "changed": "a question, and a different person in the dative"
+        }
+      ],
+      "mistake": {
+        "display": "Mne núzhno pómoshch'",
+        "script": "Мне нужно помощь",
+        "why": "pómoshch' is feminine, so: Mne nuzhná pómoshch'."
+      },
+      "usage": "Saying what you need. The commonest sentence at any counter.",
+      "register": "neutral",
+      "mnemonic": "It agrees with the thing, never with you."
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "Mne nuzhná vásha pómoshch'",
+      "script": "Мне нужна ваша помощь",
+      "cue": "I need your help",
+      "literal": "To-me necessary your help",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pómoshch'",
+            "script": "помощь",
+            "cue": "help",
+            "tag": "interference",
+            "forms": [
+              "pómoshch'",
+              "pómoshchi"
+            ],
+            "note": "Feminine, ending in a consonant plus a soft sign — after M2's mat' and doch', M4's ploshchad' and M5's sol'. The ending never says the gender."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Two words agree with pómoshch' here and neither of them is a verb: nuzhná and vásha. The noun is running the whole sentence from the end of it.",
+      "sound": "mnye nuzh-NA VA-sha PO-mashch'. The shch is one long soft sound, as in M5's ugoshcháytes'.",
+      "variations": [
+        {
+          "display": "Mne nuzhná pómoshch'",
+          "script": "Мне нужна помощь",
+          "cue": "I need help",
+          "changed": "without saying whose"
+        },
+        {
+          "display": "Vam nuzhná pómoshch'?",
+          "script": "Вам нужна помощь?",
+          "cue": "Do you need help?",
+          "changed": "the offer, which is what a stranger says"
+        },
+        {
+          "display": "Mne núzhen vash telefón",
+          "script": "Мне нужен ваш телефон",
+          "cue": "I need your phone",
+          "changed": "a masculine thing, so both words move"
+        }
+      ],
+      "mistake": {
+        "display": "Ya nuzhná vásha pómoshch'",
+        "script": "Я нужна ваша помощь",
+        "why": "The person needing goes in the dative: Mne nuzhná vásha pómoshch'."
+      },
+      "usage": "Asking for real help rather than a small favour — M1's pomogíte is for the small ones.",
+      "register": "neutral",
+      "mnemonic": "The noun runs the sentence from the end."
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "U menyá bolít golová",
+      "script": "У меня болит голова",
+      "cue": "I have a headache",
+      "literal": "At me hurts head",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bolít",
+            "script": "болит",
+            "cue": "hurts (one thing)",
+            "tag": "delta",
+            "forms": [
+              "bolít",
+              "bolyát"
+            ],
+            "note": "It agrees with the body part, not with the person: bolít for one, bolyát for two. The person is in the genitive after u, as in L1-M8's u menyá yest'."
+          },
+          {
+            "display": "golová",
+            "script": "голова",
+            "cue": "head",
+            "tag": "free",
+            "forms": [
+              "golová",
+              "gólovu"
+            ],
+            "note": "End-stressed in the nominative and stem-stressed in the accusative — the stress moves, and the mark is the only thing that records it."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The head is doing the hurting and you are merely where it is happening. That is the third construction in this course built on the same habit, after u menyá yest' and Mne núzhen.",
+      "sound": "u mi-NYA ba-LIT ga-la-VA. Four unstressed o's in a row, all reduced to a, and only the last syllable of each word carries.",
+      "variations": [
+        {
+          "display": "U menyá bolyát nógi",
+          "script": "У меня болят ноги",
+          "cue": "My legs hurt",
+          "changed": "two of them, so the verb goes plural"
+        },
+        {
+          "display": "U nevó bolít golová",
+          "script": "У него болит голова",
+          "cue": "He has a headache",
+          "changed": "a different person, in the genitive"
+        },
+        {
+          "display": "U menyá bolít nogá",
+          "script": "У меня болит нога",
+          "cue": "My leg hurts",
+          "changed": "one of them, so the verb goes back to the singular"
+        }
+      ],
+      "mistake": {
+        "display": "Ya bolít golová",
+        "script": "Я болит голова",
+        "why": "The person goes after u in the genitive: U menyá bolít golová."
+      },
+      "usage": "At a doctor's, or as a reason for going home early.",
+      "register": "neutral",
+      "mnemonic": "The pain is the subject. You are the place."
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "U menyá bolyát nógi",
+      "script": "У меня болят ноги",
+      "cue": "My legs hurt",
+      "literal": "At me hurt legs",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nógi",
+            "script": "ноги",
+            "cue": "legs · feet",
+            "tag": "interference",
+            "forms": [
+              "nogá",
+              "nógi"
+            ],
+            "note": "One word for the leg and the foot; Russian does not split them. The stress moves between singular and plural, which is common in this class of noun."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "nogá and nógi differ only in where the stress falls — and that difference is singular against plural, which is why the mark is not decoration.",
+      "sound": "u mi-NYA ba-LYAT NO-gi. The plural pulls the stress onto the first syllable, the reverse of the singular.",
+      "variations": [
+        {
+          "display": "U neyó bolyát nógi",
+          "script": "У неё болят ноги",
+          "cue": "Her legs hurt",
+          "changed": "a different person"
+        },
+        {
+          "display": "U menyá bolít golová i bolyát nógi",
+          "script": "У меня болит голова и болят ноги",
+          "cue": "My head aches and my legs hurt",
+          "changed": "both, and each verb agrees separately"
+        },
+        {
+          "display": "U vas bolít golová?",
+          "script": "У вас болит голова?",
+          "cue": "Have you got a headache?",
+          "changed": "a question about someone else"
+        }
+      ],
+      "mistake": {
+        "display": "U menyá bolít nógi",
+        "script": "У меня болит ноги",
+        "why": "Two legs take the plural verb: U menyá bolyát nógi."
+      },
+      "usage": "After a day of walking, which in a Russian city is most days.",
+      "register": "neutral",
+      "mnemonic": "One hurts, two hurt — the verb counts them."
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "Ya poteryál bilét",
+      "script": "Я потерял билет",
+      "cue": "I've lost my ticket",
+      "literal": "I lost ticket",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poteryál",
+            "script": "потерял",
+            "cue": "lost (said by a man)",
+            "tag": "delta",
+            "forms": [
+              "poteryál"
+            ],
+            "note": "The past agrees with the SUBJECT. When the subject is ya that means the speaker, but On poteryál is a man whoever is telling it."
+          },
+          {
+            "display": "poteryála",
+            "script": "потеряла",
+            "cue": "lost (said by a woman)",
+            "tag": "delta",
+            "forms": [
+              "poteryála"
+            ],
+            "note": "The feminine past, the same -a L1-M5 put on kupíla. Russian has no separate perfect, so this covers \"lost\" and \"have lost\" alike."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Russian has no \"have lost\". This one past covers both, and the situation says which English would use — which is why the cue here is a perfect and the literal is not.",
+      "sound": "ya pa-ti-RYAL bi-LYET. Both o and e of poteryál reduce, so only the last syllable is fully sounded.",
+      "variations": [
+        {
+          "display": "Ya poteryála bilét",
+          "script": "Я потеряла билет",
+          "cue": "I've lost my ticket",
+          "changed": "said by a woman"
+        },
+        {
+          "display": "On poteryál klyuch",
+          "script": "Он потерял ключ",
+          "cue": "He's lost the key",
+          "changed": "someone else, and the past agrees with him"
+        },
+        {
+          "display": "Oná poteryála telefón",
+          "script": "Она потеряла телефон",
+          "cue": "She's lost her phone",
+          "changed": "a woman as the subject"
+        }
+      ],
+      "mistake": {
+        "display": "Oná poteryál telefón",
+        "script": "Она потерял телефон",
+        "why": "The past agrees with the subject: Oná poteryála telefón."
+      },
+      "usage": "At a lost-property desk, or explaining why you cannot board.",
+      "register": "neutral",
+      "mnemonic": "The past agrees with the subject, not the speaker."
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "Ne rabótayet telefón",
+      "script": "Не работает телефон",
+      "cue": "The phone isn't working",
+      "literal": "Not works telephone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rabótayet",
+            "script": "работает",
+            "cue": "works (of a machine)",
+            "tag": "delta",
+            "forms": [
+              "rabótayet"
+            ],
+            "note": "L1-M1's verb for a person having a job, doing a second job here for a machine functioning. One word, two uses, and its row stays L1's."
+          },
+          {
+            "display": "slomálsya",
+            "script": "сломался",
+            "cue": "has broken",
+            "tag": "free",
+            "forms": [
+              "slomálsya",
+              "slomálas'"
+            ],
+            "note": "A past with -sya on it — \"broke itself\", which is how Russian avoids naming who broke it. The reflexive system is L3's; this arrives as a word."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The verb comes first. Ne rabótayet telefón puts the fault in front and the thing after it, which is the neutral order for reporting something wrong — Telefón ne rabótayet is fine too, and sounds more like an answer than a report.",
+      "sound": "nye ra-BO-ta-yit ti-li-FON. The ne is unstressed and leans onto the verb.",
+      "variations": [
+        {
+          "display": "Telefón ne rabótayet",
+          "script": "Телефон не работает",
+          "cue": "The phone isn't working",
+          "changed": "the other order — an answer rather than a report"
+        },
+        {
+          "display": "Ne rabótayet lift",
+          "script": "Не работает лифт",
+          "cue": "The lift isn't working",
+          "changed": "a different thing"
+        },
+        {
+          "display": "Moy telefón slomálsya",
+          "script": "Мой телефон сломался",
+          "cue": "My phone has broken",
+          "changed": "broken rather than merely not working"
+        }
+      ],
+      "mistake": {
+        "display": "Telefón ne rabótat'",
+        "script": "Телефон не работать",
+        "why": "The verb has to be finite: Telefón ne rabótayet."
+      },
+      "usage": "Reporting a fault. Said plainly, and heard as plain.",
+      "register": "neutral",
+      "mnemonic": "One verb for a job and for a machine."
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "K sozhaléniyu, mashína slomálas'",
+      "script": "К сожалению, машина сломалась",
+      "cue": "Unfortunately, the car has broken down",
+      "literal": "To regret, car broke-itself",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lift",
+            "script": "лифт",
+            "cue": "lift · elevator",
+            "tag": "free",
+            "forms": [
+              "lift",
+              "lífta"
+            ],
+            "note": "One syllable, so no stress mark. It is the thing most often reported broken in a Russian block of flats."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "slomálas' is feminine because mashína is, and the -sya has become -s' after a vowel. That is a spelling rule of the reflexive ending and not a different word.",
+      "sound": "k sa-zha-LYE-ni-yu ma-SHY-na sla-MA-las'. The k is a single consonant with no vowel, attached to the front of the next word.",
+      "variations": [
+        {
+          "display": "Mashína slomálas'",
+          "script": "Машина сломалась",
+          "cue": "The car has broken down",
+          "changed": "without the hedge"
+        },
+        {
+          "display": "K sozhaléniyu, lift ne rabótayet",
+          "script": "К сожалению, лифт не работает",
+          "cue": "Unfortunately, the lift isn't working",
+          "changed": "not working rather than broken"
+        },
+        {
+          "display": "Moy telefón slomálsya vcherá",
+          "script": "Мой телефон сломался вчера",
+          "cue": "My phone broke yesterday",
+          "changed": "masculine, and a time"
+        }
+      ],
+      "mistake": {
+        "display": "K sozhaléniyu, mashína slomálsya",
+        "script": "К сожалению, машина сломался",
+        "why": "mashína is feminine: mashína slomálas'."
+      },
+      "usage": "Explaining why you are late or why something cannot happen.",
+      "register": "neutral",
+      "mnemonic": "The thing broke itself. Nobody is named."
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "Pomogíte mne, pozháluysta, u menyá probléma",
+      "script": "Помогите мне, пожалуйста, у меня проблема",
+      "cue": "Please help me, I have a problem",
+      "literal": "Help to-me, please, at me problem",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vrach",
+            "script": "врач",
+            "cue": "doctor",
+            "tag": "free",
+            "forms": [
+              "vrach",
+              "vrachá"
+            ],
+            "note": "The working word for a doctor. L1-M2's dóktor exists but is mostly how a patient addresses one, not what the job is called."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "M1's request frame and this module's plain statement, in one breath. That is the whole shape of a Russian complaint: the politeness in front, the fact behind.",
+      "sound": "pa-ma-GHI-tye mnye pa-ZHA-lsta u mi-NYA pra-BLYE-ma. Two long words, and the pause is at the comma.",
+      "variations": [
+        {
+          "display": "Pomogíte, pozháluysta, mne núzhen vrach",
+          "script": "Помогите, пожалуйста, мне нужен врач",
+          "cue": "Please help, I need a doctor",
+          "changed": "the need frame instead of the problem"
+        },
+        {
+          "display": "Izviníte, mne nuzhná pómoshch'",
+          "script": "Извините, мне нужна помощь",
+          "cue": "Excuse me, I need help",
+          "changed": "the other opener and the feminine need"
+        },
+        {
+          "display": "U menyá probléma. Ne rabótayet telefón",
+          "script": "У меня проблема. Не работает телефон",
+          "cue": "I have a problem. The phone isn't working",
+          "changed": "the statement plus the fault"
+        }
+      ],
+      "mistake": {
+        "display": "Pomogíte menyá, pozháluysta, u menyá probléma",
+        "script": "Помогите меня, пожалуйста, у меня проблема",
+        "why": "pomóch' takes the dative: Pomogíte mne, pozháluysta."
+      },
+      "usage": "When something has gone properly wrong and you need a stranger's help.",
+      "register": "neutral",
+      "mnemonic": "Politeness in front, fact behind."
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "Ya poteryála súmku. Chto délat'?",
+      "script": "Я потеряла сумку. Что делать?",
+      "cue": "I've lost my bag. What should I do?",
+      "literal": "I lost bag. What to-do?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "súmka",
+            "script": "сумка",
+            "cue": "bag · handbag",
+            "tag": "free",
+            "forms": [
+              "súmka",
+              "súmku",
+              "súmki"
+            ],
+            "note": "Feminine, so the accusative shows: súmku. It covers a handbag, a shopping bag and a rucksack alike."
+          },
+          {
+            "display": "délat'",
+            "script": "делать",
+            "cue": "to do · to make",
+            "tag": "free",
+            "forms": [
+              "délat'"
+            ],
+            "note": "The imperfective of doing. Chto délat'? is a fixed question with no subject — the same shape as M7's Chto peredát'?"
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Chto délat'? has no \"should\" and no \"I\" in it, and it is not a rhetorical question. It is what a Russian actually asks when they want to be told the next step.",
+      "sound": "ya pa-ti-RYA-la SUM-ku. shto DYE-lat'? The second half is two words and both are short.",
+      "variations": [
+        {
+          "display": "Ya poteryál súmku. Chto délat'?",
+          "script": "Я потерял сумку. Что делать?",
+          "cue": "I've lost my bag. What should I do?",
+          "changed": "said by a man"
+        },
+        {
+          "display": "Ya poteryála klyuch",
+          "script": "Я потеряла ключ",
+          "cue": "I've lost the key",
+          "changed": "a masculine object — the verb does not care"
+        },
+        {
+          "display": "U menyá probléma. Chto délat'?",
+          "script": "У меня проблема. Что делать?",
+          "cue": "I have a problem. What should I do?",
+          "changed": "the problem frame in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "Ya poteryála súmka. Chto délat'?",
+        "script": "Я потеряла сумка. Что делать?",
+        "why": "The thing lost is an object: Ya poteryála súmku."
+      },
+      "usage": "At a police station, a lost-property office, or to anyone standing nearby.",
+      "register": "neutral",
+      "mnemonic": "Chto délat'? — no subject, and a real question."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M8-C01",
+      "display": "Izviníte, u menyá probléma",
+      "script": "Извините, у меня проблема",
+      "cue": "Excuse me, I have a problem"
+    },
+    {
+      "id": "L2-M8-C02",
+      "display": "Mne núzhen bilét",
+      "script": "Мне нужен билет",
+      "cue": "I need a ticket"
+    },
+    {
+      "id": "L2-M8-C03",
+      "display": "Mne nuzhná vásha pómoshch'",
+      "script": "Мне нужна ваша помощь",
+      "cue": "I need your help"
+    },
+    {
+      "id": "L2-M8-C04",
+      "display": "U menyá bolít golová",
+      "script": "У меня болит голова",
+      "cue": "I have a headache"
+    },
+    {
+      "id": "L2-M8-C05",
+      "display": "U menyá bolyát nógi",
+      "script": "У меня болят ноги",
+      "cue": "My legs hurt"
+    },
+    {
+      "id": "L2-M8-C06",
+      "display": "Ya poteryál bilét",
+      "script": "Я потерял билет",
+      "cue": "I've lost my ticket"
+    },
+    {
+      "id": "L2-M8-C07",
+      "display": "Ne rabótayet telefón",
+      "script": "Не работает телефон",
+      "cue": "The phone isn't working"
+    },
+    {
+      "id": "L2-M8-C08",
+      "display": "K sozhaléniyu, mashína slomálas'",
+      "script": "К сожалению, машина сломалась",
+      "cue": "Unfortunately, the car has broken down"
+    },
+    {
+      "id": "L2-M8-C09",
+      "display": "Pomogíte mne, pozháluysta, u menyá probléma",
+      "script": "Помогите мне, пожалуйста, у меня проблема",
+      "cue": "Please help me, I have a problem"
+    },
+    {
+      "id": "L2-M8-C10",
+      "display": "Ya poteryála súmku. Chto délat'?",
+      "script": "Я потеряла сумку. Что делать?",
+      "cue": "I've lost my bag. What should I do?"
+    },
+    {
+      "id": "L2-M8-C11",
+      "display": "Mne núzhno vrémya",
+      "script": "Мне нужно время",
+      "cue": "I need time"
+    },
+    {
+      "id": "L2-M8-C12",
+      "display": "K sozhaléniyu, lift ne rabótayet",
+      "script": "К сожалению, лифт не работает",
+      "cue": "Unfortunately, the lift isn't working"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

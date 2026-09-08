@@ -188,3 +188,83 @@ baseline stays at 20.
     reads as polite rather than curt.
 20. **`ya uzhé syt`** (M5-S05). Confirm it is the ordinary refusal and carries no complaint, and
     that the ritual repeat of an offer described in rule 3 still holds today.
+
+## Wave 3 — L2-M6 through L2-M10 (#456)
+
+Five rungs, and the level closes. A strict build emits `en-ru: 20 modules`.
+
+### What each module spends its budget on
+
+- **M6 Making plans together.** `ty` enters, and the level held it back on purpose: guessing wrong
+  with a stranger is rude, guessing wrong with a friend is merely stiff, so L1 taught `vy` and
+  showed `ty` in no display at all. The usage half is the thing English has nothing like — the move
+  from `vy` to `ty` is **negotiated out loud** (`Davay na ty`) rather than drifted into. Rule 4
+  states a distinction this module is the first to need both halves of: `skazhí`/`skazhíte` are one
+  word in two addresses and share a row; `skazhíte`/`govoríte` are aspect partners and never do.
+- **M7 On the phone.** The genitive of absence turned on a person (`Yevó net dóma`) — M3's
+  construction for the third time, and the module says so rather than presenting it as a new idiom.
+  Register here is a rule about **not knowing**, not about politeness: `vy` throughout, because you
+  do not know who has picked up, so M6's `ty` is deliberately absent.
+- **M8 When something goes wrong.** `Mne núzhen bilét` is the level's best rule, because English
+  hides it completely: the thing needed is the SUBJECT and `núzhen` agrees with it. With
+  `U menyá bolít golová` and L1-M8's `u menyá yest'` that makes three constructions on one habit —
+  the person is never the subject of their own need, their own having, or their own pain. The
+  complaint delta runs the **opposite way from English**: Russian complains directly, and the hedged
+  English complaint reads as evasive.
+- **M9 Comparing and choosing.** "Than" is the genitive — M3's case for the fifth time — with `chem`
+  named as the alternative and as the requirement when the compared halves are not both bare nouns.
+  `deshyóvyy` → `deshévle` loses its yó, which is not an exception to the yó rule but the rule
+  itself: a yó is always stressed, so when the stress leaves, the yó leaves with it.
+- **M10 Telling what happened.** Aspect at length, and the slogan killed: `Ya dva chasá chitál` is
+  bounded and imperfective, `Ya prochitál za dva chasá` is perfective, and the reading took the same
+  two hours. The diagnostic the learner already owns is that **the perfective has no present** —
+  which is why L1-M6's `napishú` and `pozvonyú` are futures.
+
+### Rows the briefs do not list, and one they mis-scope
+
+- **`my`.** The pronoun "we" was never opened: L1 built `we are` and `we will` from other words, and
+  an account cannot be told without it. Opened in M10-S05.
+- **`vo skól'ko` rides whole.** The M6 seam lists `vo` as the fresh key, but bare `skól'ko` is not
+  taught anywhere — L1-M8 authored `skól'ko stóit` and `skól'ko stóyat` as whole surfaces. Matching
+  L1's shape is both the fix and the better teaching, exactly as with wave 1's `u nevó`.
+- **`kakóy` belongs to M9, so M7 gave it up.** The M7 draft asked `Kakóy vash nómer telefóna?`,
+  which would have taken M9's key three modules early. The sentence is now
+  `Skazhíte vash nómer telefóna, pozháluysta`, which uses M1's imperative and teaches the same
+  genitive.
+- Smaller additions the modules could not do without: `Ánnu` (M7 — the accusative of a name, with
+  `Ivána` beside it), `nómer`, `stárshe` (M9), `lift`, `vrach`, `súmka`, `délat'` (M8), and
+  `do závtra` as a whole farewell (M6).
+
+### The ratchet
+
+Nine findings across the wave, every one fixed in content: `skól'ko`, `ánnu`, `kakóy`, `ivána`,
+`vashevó`, `brata`, `nepravil'nyy`, `dlya`/`ánny`, `sumku`, `film`, `stárshe`, `my`, `rabótal`,
+`ona`, `slýshal`. Two of those were plain spelling slips the scheme itself catches —
+`brata` for `bráta` and `ona` for `oná` — which is the acute doing the job #355 gave it: an
+unmarked vowel is a different index key, not a typo. The en-ru baseline stays at 20.
+
+### Open questions for the native pass
+
+21. **`Davay na ty`** (M6, rule 1). Confirm the negotiation is still explicit in current usage and
+    across generations, and that a younger speaker does not simply start.
+22. **`Davay poydyóm v kinó`** (M6-S01). Confirm the plural future after `davay` is the ordinary
+    form rather than `davay v kinó` on its own.
+23. **`Vo skól'ko?`** (M6-S05). Confirm it beats `V kakóye vrémya?` in speech.
+24. **`Alló` vs `Da` vs `Slúshayu`** (M7-S01). Confirm `alló` is the neutral default and `slúshayu`
+    reads as an office rather than as old-fashioned.
+25. **`Chto peredát'?`** (M7-S04). Confirm the bare infinitive question is what is actually said,
+    and that it does not sound clipped.
+26. **The claim that `vy` holds on the phone** (M7, rule 3). Confirm a caller uses `vy` even with a
+    friend's household until they know who answered.
+27. **`Mne núzhen vrach`** (M8-S09). Confirm `vrach` rather than `dóktor` in an emergency, and that
+    the note's split between the two is right.
+28. **The direct complaint** (M8, rule 3). The module claims a hedged complaint reads as evasive in
+    Russian. Confirm the strength of that, and whether `k sozhaléniyu` is the one hedge that does
+    land.
+29. **`výshe menyá` over `výshe, chem ya`** (M9-S04). Confirm the genitive is the spoken default.
+30. **`predpochitáyu`** (M9-S08). Confirm it is not too bookish for a café, and that
+    `Chay lúchshe` is what people mostly say instead.
+31. **`On skazál, chto vsyó khoroshó`** (M10-S06). The module claims Russian does not shift the
+    tense back. Confirm, and confirm this much reported speech is safe without the L3 system.
+32. **The accounts** (M10, all ten). Confirm each reads as something a person would say, and flag
+    any that reads as a grammar exercise.

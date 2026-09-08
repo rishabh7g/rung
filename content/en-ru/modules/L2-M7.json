@@ -1,0 +1,753 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": [
+    "L2-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present",
+      "simple_past",
+      "simple_future",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "Alló + . + Éhto + <name>",
+      "Mózhno + <name>-acc + ?",
+      "Yevó / Yeyó net + . + Chto peredát'?",
+      "Ya vam pozvonyú + <time>",
+      "Podozhdíte + , + pozháluysta"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE GENITIVE OF ABSENCE, TURNED ON A PERSON. M3 taught net plus the genitive for a thing that is not here; a person who is not here takes exactly the same shape, and M2's yevó and yeyó are already genitive. Yevó net dóma, Yeyó seychás net. Three modules, one construction — and a learner who meets it a third time as a new idiom has learnt nothing from the first two."
+    },
+    {
+      "tag": "delta",
+      "text": "Russian answers the phone with Alló and identifies with Éhto Iván — the same \"this is\" move English makes. Ya Iván sounds like an introduction at a door, which is the mistake to expect. Éhto is L1-M1's own word doing its own job, so nothing new is opened for it."
+    },
+    {
+      "tag": "delta",
+      "text": "ASPECT ON THE PHONE, and it is the level's third payment. Ya vam pozvonyú is perfective — one call, a promise. Ya búdu vam zvonít' is the imperfective future — I'll be calling, repeatedly. The pair shows what L1-M6 could only assert: the perfective has NO present tense, which is why pozvonyú is a future and not \"I am calling\"."
+    },
+    {
+      "tag": "free",
+      "text": "REGISTER ON THE PHONE is a rule about not knowing rather than about politeness: vy is the default even with someone you would ty in person, because you do not know who has picked up. So this module is written in vy throughout, and M6's ty is deliberately absent from it."
+    },
+    {
+      "tag": "free",
+      "text": "A message is taken with Chto peredát'? and passed on with On zvoníl — the past L1-M6 already owns. On skazál, chto… is reported speech and belongs to L3; nothing here reaches for it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "Alló! Éhto Iván",
+      "script": "Алло! Это Иван",
+      "cue": "Hello! This is Ivan",
+      "literal": "Hello! This Ivan",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alló",
+            "script": "алло",
+            "cue": "hello (on the phone)",
+            "tag": "delta",
+            "forms": [
+              "alló"
+            ],
+            "note": "Only on the phone. Zdrávstvuyte is for meeting someone; alló is for answering, and using either in the other place is heard at once."
+          },
+          {
+            "display": "slúshayu",
+            "script": "слушаю",
+            "cue": "speaking · I'm listening",
+            "tag": "free",
+            "forms": [
+              "slúshayu"
+            ],
+            "note": "The other way of answering, and slightly more formal. Literally \"I am listening\", which is what an office says instead of alló."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Ya Iván is what a learner reaches for and it sounds like an introduction at a door. On a phone Russian says Éhto Iván, exactly as English says \"this is\".",
+      "sound": "a-LO. Both l's are hard and the stress is on the second syllable — the word is not said the way English \"hello\" is.",
+      "variations": [
+        {
+          "display": "Alló! Éhto Ánna",
+          "script": "Алло! Это Анна",
+          "cue": "Hello! This is Anna",
+          "changed": "a different name"
+        },
+        {
+          "display": "Da, slúshayu",
+          "script": "Да, слушаю",
+          "cue": "Yes, speaking",
+          "changed": "the more formal answer"
+        },
+        {
+          "display": "Alló! Éhto moy brat",
+          "script": "Алло! Это мой брат",
+          "cue": "Hello! This is my brother",
+          "changed": "identifying someone else"
+        }
+      ],
+      "mistake": {
+        "display": "Alló! Ya Iván",
+        "script": "Алло! Я Иван",
+        "why": "On the phone Russian uses éhto: Alló! Éhto Iván."
+      },
+      "usage": "Picking up, or opening a call you have made.",
+      "register": "neutral",
+      "mnemonic": "alló is only ever a phone."
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "Mózhno Ánnu, pozháluysta?",
+      "script": "Можно Анну, пожалуйста?",
+      "cue": "May I speak to Anna, please?",
+      "literal": "Permitted Anna, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ánnu",
+            "script": "Анну",
+            "cue": "Anna (as an object)",
+            "tag": "delta",
+            "forms": [
+              "Ánna",
+              "Ánnu",
+              "Ánne",
+              "Ivána"
+            ],
+            "note": "The accusative of a name. Feminine names in -a take -u; a masculine name is animate, so its accusative looks like its genitive — Ivána."
+          },
+          {
+            "display": "nómer",
+            "script": "номер",
+            "cue": "number",
+            "tag": "free",
+            "forms": [
+              "nómer",
+              "nómera"
+            ],
+            "note": "A telephone number, a hotel room, a size — one word for all three. Its plural moves the stress to the ending: nomerá."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "M1's mózhno again, with no verb after it. The name is an accusative, so a feminine one changes: Ánna becomes Ánnu, and a masculine name would not move at all.",
+      "sound": "MOZH-na AN-nu pa-ZHA-lsta. The double n is held slightly longer than a single one, which is audible in Russian and not in English.",
+      "variations": [
+        {
+          "display": "Mózhno Ivána, pozháluysta?",
+          "script": "Можно Ивана, пожалуйста?",
+          "cue": "May I speak to Ivan, please?",
+          "changed": "a masculine name — animate, so its accusative does move"
+        },
+        {
+          "display": "Mózhno váshevo bráta?",
+          "script": "Можно вашего брата?",
+          "cue": "May I speak to your brother?",
+          "changed": "a relative rather than a name"
+        },
+        {
+          "display": "Éhto ne moy nómer",
+          "script": "Это не мой номер",
+          "cue": "This is not my number",
+          "changed": "what is said when the number is wrong"
+        }
+      ],
+      "mistake": {
+        "display": "Mózhno Ánna, pozháluysta?",
+        "script": "Можно Анна, пожалуйста?",
+        "why": "The person asked for is an object: Mózhno Ánnu, pozháluysta?"
+      },
+      "usage": "Asking for someone when a third person answers.",
+      "register": "neutral",
+      "mnemonic": "mózhno plus an object, no verb needed."
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "Yevó net dóma",
+      "script": "Его нет дома",
+      "cue": "He's not at home",
+      "literal": "Of-him no at-home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "peredát'",
+            "script": "передать",
+            "cue": "to pass on · to take (a message)",
+            "tag": "free",
+            "forms": [
+              "peredát'"
+            ],
+            "note": "The infinitive of M5's peredáyte. Chto peredát'? is what a Russian says where English says \"can I take a message?\" — and it too has no subject."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "This is M3's Zdes' net magazína with a person in it, and yevó was already genitive when M2 taught it. Nothing new has happened, which is exactly the point.",
+      "sound": "yi-VO nyet DO-ma. The g of его is a v, and net takes a beat of its own.",
+      "variations": [
+        {
+          "display": "Yeyó seychás net",
+          "script": "Её сейчас нет",
+          "cue": "She's not here at the moment",
+          "changed": "the feminine, and a time word"
+        },
+        {
+          "display": "Yevó net. Chto peredát'?",
+          "script": "Его нет. Что передать?",
+          "cue": "He's not here. Can I take a message?",
+          "changed": "the whole exchange in one line"
+        },
+        {
+          "display": "Yeyó net dóma",
+          "script": "Её нет дома",
+          "cue": "She's not at home",
+          "changed": "the feminine"
+        }
+      ],
+      "mistake": {
+        "display": "On net dóma",
+        "script": "Он нет дома",
+        "why": "The absent person goes in the genitive: Yevó net dóma."
+      },
+      "usage": "Answering a call for someone who is out.",
+      "register": "neutral",
+      "mnemonic": "Absent people go in the genitive too."
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "Chto peredát'? Ya zapishú",
+      "script": "Что передать? Я запишу",
+      "cue": "Can I take a message? I'll write it down",
+      "literal": "What to-pass-on? I will-write-down",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "soobshchéniye",
+            "script": "сообщение",
+            "cue": "message",
+            "tag": "free",
+            "forms": [
+              "soobshchéniye",
+              "soobshchéniya"
+            ],
+            "note": "The noun, used mostly of a written or recorded message. A spoken one passed on by a person is simply peredát' — the verb, not the noun."
+          },
+          {
+            "display": "zapishú",
+            "script": "запишу",
+            "cue": "I'll write it down",
+            "tag": "free",
+            "forms": [
+              "zapishú"
+            ],
+            "note": "L1-M6's napishú with a different prefix: za- means down onto something. Perfective, so it is a future — the rule that makes aspect visible."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "Chto peredát'? has no subject and no \"can I\". It is a bare question word plus an infinitive, and it is the whole of what a Russian says here.",
+      "sound": "shto pi-ri-DAT'? ya za-pi-SHU. chto is said shto, which L1-M9 established and which never varies.",
+      "variations": [
+        {
+          "display": "Chto peredát'?",
+          "script": "Что передать?",
+          "cue": "Can I take a message?",
+          "changed": "the question alone"
+        },
+        {
+          "display": "Ya zapishú vash nómer",
+          "script": "Я запишу ваш номер",
+          "cue": "I'll write down your number",
+          "changed": "a named thing to write down"
+        },
+        {
+          "display": "Ya zapishú soobshchéniye",
+          "script": "Я запишу сообщение",
+          "cue": "I'll write the message down",
+          "changed": "the noun rather than the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Mózhno ya peredáyu soobshchéniye?",
+        "script": "Можно я передаю сообщение?",
+        "why": "The fixed question is short: Chto peredát'?"
+      },
+      "usage": "Offering to take a message. Two words, and nobody expects more.",
+      "register": "neutral",
+      "mnemonic": "Question word plus infinitive, no subject."
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "Ya vam pozvonyú vécherom",
+      "script": "Я вам позвоню вечером",
+      "cue": "I'll call you this evening",
+      "literal": "I to-you will-call in-evening",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zvonít'",
+            "script": "звонить",
+            "cue": "to call (repeatedly, or as an activity)",
+            "tag": "delta",
+            "forms": [
+              "zvonít'"
+            ],
+            "note": "The imperfective partner of pozvonít'. It has a present tense — ya zvonyú, I am calling — which the perfective does not, and that is the diagnostic."
+          },
+          {
+            "display": "perezvonyú",
+            "script": "перезвоню",
+            "cue": "I'll call back",
+            "tag": "free",
+            "forms": [
+              "perezvonyú"
+            ],
+            "note": "pozvonyú with pere- on the front, which adds \"back\" or \"again\" — the same prefix as M5's peredáyte."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "pozvonyú is a promise of ONE call, and it is a future only because the perfective has no present. Ya búdu vam zvonít' means something else — I'll be calling, more than once.",
+      "sound": "ya vam paz-va-NYU VYE-chi-ram. The verb runs to its last syllable, which is where the whole sentence lands.",
+      "variations": [
+        {
+          "display": "Ya vam perezvonyú",
+          "script": "Я вам перезвоню",
+          "cue": "I'll call you back",
+          "changed": "the prefix that means back"
+        },
+        {
+          "display": "Ya vam pozvonyú závtra",
+          "script": "Я вам позвоню завтра",
+          "cue": "I'll call you tomorrow",
+          "changed": "a different time"
+        },
+        {
+          "display": "On zvoníl vam útrom",
+          "script": "Он звонил вам утром",
+          "cue": "He called you this morning",
+          "changed": "the imperfective past — the fact of a call, not its result"
+        }
+      ],
+      "mistake": {
+        "display": "Ya vas pozvonyú vécherom",
+        "script": "Я вас позвоню вечером",
+        "why": "pozvonít' takes the dative: Ya vam pozvonyú vécherom."
+      },
+      "usage": "Closing a call you cannot finish now.",
+      "register": "neutral",
+      "mnemonic": "No present tense means perfective."
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "Podozhdíte minútku, pozháluysta",
+      "script": "Подождите минутку, пожалуйста",
+      "cue": "Hold on a moment, please",
+      "literal": "Wait a-little-minute, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "podozhdíte",
+            "script": "подождите",
+            "cue": "wait · hold on",
+            "tag": "free",
+            "forms": [
+              "podozhdíte",
+              "podozhdí"
+            ],
+            "note": "Perfective, because waiting a moment is one act. Its ty form podozhdí shares this row — one verb, two addresses, as M6's rule 4 set out."
+          },
+          {
+            "display": "minútku",
+            "script": "минутку",
+            "cue": "a moment · just a minute",
+            "tag": "delta",
+            "forms": [
+              "minútka",
+              "minútku"
+            ],
+            "note": "A diminutive of minúta, and the diminutive is what makes it friendly rather than curt. Russian softens by shrinking the noun, where English adds a word."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Russian softens this request by making the minute SMALLER, not by adding please — though please is there too. That is a move English has no equivalent for, and it runs through the whole language.",
+      "sound": "pa-dazh-DI-tye mi-NUT-ku pa-ZHA-lsta. The zhd cluster is said as written, with no vowel between.",
+      "variations": [
+        {
+          "display": "Podozhdíte, pozháluysta",
+          "script": "Подождите, пожалуйста",
+          "cue": "Hold on, please",
+          "changed": "without the minute"
+        },
+        {
+          "display": "Minútku, pozháluysta",
+          "script": "Минутку, пожалуйста",
+          "cue": "One moment, please",
+          "changed": "without the verb — and complete"
+        },
+        {
+          "display": "Podozhdí minútku",
+          "script": "Подожди минутку",
+          "cue": "Hold on a moment",
+          "changed": "the ty address, to a friend"
+        }
+      ],
+      "mistake": {
+        "display": "Podozhdíte minúta, pozháluysta",
+        "script": "Подождите минута, пожалуйста",
+        "why": "The waited time is an object: Podozhdíte minútku, pozháluysta."
+      },
+      "usage": "On the phone, at a counter, in a doorway.",
+      "register": "neutral",
+      "mnemonic": "Russian softens by shrinking the noun."
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "Skazhíte vash nómer telefóna, pozháluysta",
+      "script": "Скажите ваш номер телефона, пожалуйста",
+      "cue": "Tell me your phone number, please",
+      "literal": "Say-once your number of-telephone, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "telefón",
+            "script": "телефон",
+            "cue": "telephone",
+            "tag": "free",
+            "forms": [
+              "telefón",
+              "telefóna",
+              "telefóne"
+            ],
+            "note": "The genitive telefóna is doing M3's \"of\" job — number of telephone. Two nouns side by side, and the second one carries the of."
+          },
+          {
+            "display": "vash",
+            "script": "ваш",
+            "cue": "your (polite or plural)",
+            "tag": "free",
+            "forms": [
+              "vash",
+              "vásha",
+              "váshe",
+              "váshi",
+              "váshevo"
+            ],
+            "note": "The vy possessive, beside M2's moy. It agrees with what is owned, never with the owner — vash nómer whoever is being addressed."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "nómer telefóna is a genitive, exactly like M4's ostanóvka avtóbusa. Once the pattern is seen, every \"X of Y\" in the language is the same shape.",
+      "sound": "ska-ZHI-tye vash NO-mir ti-li-FO-na. Three unstressed vowels in telefóna, all reduced to something near i.",
+      "variations": [
+        {
+          "display": "Skazhíte vash nómer, pozháluysta",
+          "script": "Скажите ваш номер, пожалуйста",
+          "cue": "Tell me your number, please",
+          "changed": "shorter, and enough on a phone"
+        },
+        {
+          "display": "Éhto moy nómer telefóna",
+          "script": "Это мой номер телефона",
+          "cue": "This is my phone number",
+          "changed": "the answer, with M2's possessive"
+        },
+        {
+          "display": "Ya zapishú vash nómer telefóna",
+          "script": "Я запишу ваш номер телефона",
+          "cue": "I'll write down your phone number",
+          "changed": "the whole thing as an object"
+        }
+      ],
+      "mistake": {
+        "display": "Skazhíte vash nómer telefón, pozháluysta",
+        "script": "Скажите ваш номер телефон, пожалуйста",
+        "why": "The second noun goes in the genitive: nómer telefóna."
+      },
+      "usage": "Exchanging numbers, which in Russian is done with this exact question.",
+      "register": "neutral",
+      "mnemonic": "X of Y: the Y goes genitive."
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "Izviníte, ya vas ne slýshu",
+      "script": "Извините, я вас не слышу",
+      "cue": "Sorry, I can't hear you",
+      "literal": "Excuse, I you not hear",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "slýshu",
+            "script": "слышу",
+            "cue": "I hear",
+            "tag": "interference",
+            "forms": [
+              "slýshu",
+              "slýshite",
+              "slýshal",
+              "slýshala"
+            ],
+            "note": "Hearing rather than listening — slúshayu is the deliberate one. Russian keeps them apart where English can use \"hear\" for both."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Russian says \"I do not hear you\", where English says \"I can't hear you\". There is no mózhno or mogú in it, and adding one makes the sentence sound like a complaint about permission.",
+      "sound": "iz-vi-NI-tye ya vas nye SLY-shu. The y of slýshu is the hard back vowel, and the sh in front of it forces it further back still.",
+      "variations": [
+        {
+          "display": "Ya vas ne slýshu",
+          "script": "Я вас не слышу",
+          "cue": "I can't hear you",
+          "changed": "without the apology"
+        },
+        {
+          "display": "Vy menyá slýshite?",
+          "script": "Вы меня слышите?",
+          "cue": "Can you hear me?",
+          "changed": "the question, and the pronouns swap"
+        },
+        {
+          "display": "Izviníte, ya vas ne ponimáyu",
+          "script": "Извините, я вас не понимаю",
+          "cue": "Sorry, I don't understand you",
+          "changed": "understanding rather than hearing"
+        }
+      ],
+      "mistake": {
+        "display": "Izviníte, ya ne mogú vas slýshat'",
+        "script": "Извините, я не могу вас слышать",
+        "why": "Russian says it plainly: Izviníte, ya vas ne slýshu."
+      },
+      "usage": "On a bad line — and it is heard as a fact about the line, not a complaint about the speaker.",
+      "register": "neutral",
+      "mnemonic": "No \"can\" in it. Just \"I don't hear\"."
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "On zvoníl vam útrom",
+      "script": "Он звонил вам утром",
+      "cue": "He called you this morning",
+      "literal": "He was-calling to-you in-morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zvoníl",
+            "script": "звонил",
+            "cue": "he called (the fact of it)",
+            "tag": "delta",
+            "forms": [
+              "zvoníl",
+              "zvoníla"
+            ],
+            "note": "The imperfective past: a call happened. L1-M6's pozvoníl is the perfective and says the call got through — the difference is result, not length."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "This is how a message is passed on, and no reported speech is needed. On skazál, chto… exists and belongs to L3; here the fact of the call is the whole message.",
+      "sound": "on zva-NIL vam U-tram. The past ending -l is barely more than a touch of the tongue.",
+      "variations": [
+        {
+          "display": "Oná zvoníla vam útrom",
+          "script": "Она звонила вам утром",
+          "cue": "She called you this morning",
+          "changed": "a woman, so the past agrees with her"
+        },
+        {
+          "display": "On pozvoníl vécherom",
+          "script": "Он позвонил вечером",
+          "cue": "He called in the evening",
+          "changed": "the perfective — the call got through"
+        },
+        {
+          "display": "On zvoníl vam vcherá",
+          "script": "Он звонил вам вчера",
+          "cue": "He called you yesterday",
+          "changed": "a different time"
+        }
+      ],
+      "mistake": {
+        "display": "On zvoníla vam útrom",
+        "script": "Он звонила вам утром",
+        "why": "The past agrees with the subject: On zvoníl vam útrom."
+      },
+      "usage": "Telling someone who rang while they were out.",
+      "register": "neutral",
+      "mnemonic": "The past agrees with whoever did it."
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "Khoroshó, spasíbo. Do svidániya",
+      "script": "Хорошо, спасибо. До свидания",
+      "cue": "All right, thank you. Goodbye",
+      "literal": "Well, thanks. Until the-seeing-again",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vsevó dóbrogo",
+            "script": "всего доброго",
+            "cue": "all the best",
+            "tag": "free",
+            "forms": [
+              "vsevó dóbrogo"
+            ],
+            "note": "A whole surface, and another genitive of wishing like M5's Príyatnogo appetíta. Neither of its words is opened, because the frame behind them is L3's."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "A Russian call ends with more words than an English one, not fewer. Ending on spasíbo alone is heard as cutting someone off, and do svidániya is the minimum.",
+      "sound": "kha-ra-SHO spa-SI-ba da svi-DA-ni-ya. The whole closing runs as one long fall.",
+      "variations": [
+        {
+          "display": "Spasíbo. Vsevó dóbrogo",
+          "script": "Спасибо. Всего доброго",
+          "cue": "Thank you. All the best",
+          "changed": "the warmer closing"
+        },
+        {
+          "display": "Khoroshó. Do svidániya",
+          "script": "Хорошо. До свидания",
+          "cue": "All right. Goodbye",
+          "changed": "without the thanks"
+        },
+        {
+          "display": "Do svidániya. Ya vam perezvonyú",
+          "script": "До свидания. Я вам перезвоню",
+          "cue": "Goodbye. I'll call you back",
+          "changed": "a promise on the way out"
+        }
+      ],
+      "mistake": {
+        "display": "Khoroshó, spasíbo. Poká",
+        "script": "Хорошо, спасибо. Пока",
+        "why": "Poká is for friends; a vy call ends with do svidániya."
+      },
+      "usage": "Ending a call. The closing is longer than an English one and skipping it is noticed.",
+      "register": "neutral",
+      "mnemonic": "A call ends on more words, not fewer."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M7-C01",
+      "display": "Alló! Éhto Iván",
+      "script": "Алло! Это Иван",
+      "cue": "Hello! This is Ivan"
+    },
+    {
+      "id": "L2-M7-C02",
+      "display": "Mózhno Ánnu, pozháluysta?",
+      "script": "Можно Анну, пожалуйста?",
+      "cue": "May I speak to Anna, please?"
+    },
+    {
+      "id": "L2-M7-C03",
+      "display": "Yevó net dóma",
+      "script": "Его нет дома",
+      "cue": "He's not at home"
+    },
+    {
+      "id": "L2-M7-C04",
+      "display": "Chto peredát'? Ya zapishú",
+      "script": "Что передать? Я запишу",
+      "cue": "Can I take a message? I'll write it down"
+    },
+    {
+      "id": "L2-M7-C05",
+      "display": "Ya vam pozvonyú vécherom",
+      "script": "Я вам позвоню вечером",
+      "cue": "I'll call you this evening"
+    },
+    {
+      "id": "L2-M7-C06",
+      "display": "Podozhdíte minútku, pozháluysta",
+      "script": "Подождите минутку, пожалуйста",
+      "cue": "Hold on a moment, please"
+    },
+    {
+      "id": "L2-M7-C07",
+      "display": "Skazhíte vash nómer telefóna, pozháluysta",
+      "script": "Скажите ваш номер телефона, пожалуйста",
+      "cue": "Tell me your phone number, please"
+    },
+    {
+      "id": "L2-M7-C08",
+      "display": "Izviníte, ya vas ne slýshu",
+      "script": "Извините, я вас не слышу",
+      "cue": "Sorry, I can't hear you"
+    },
+    {
+      "id": "L2-M7-C09",
+      "display": "On zvoníl vam útrom",
+      "script": "Он звонил вам утром",
+      "cue": "He called you this morning"
+    },
+    {
+      "id": "L2-M7-C10",
+      "display": "Khoroshó, spasíbo. Do svidániya",
+      "script": "Хорошо, спасибо. До свидания",
+      "cue": "All right, thank you. Goodbye"
+    },
+    {
+      "id": "L2-M7-C11",
+      "display": "Yeyó seychás net",
+      "script": "Её сейчас нет",
+      "cue": "She's not here at the moment"
+    },
+    {
+      "id": "L2-M7-C12",
+      "display": "Ya vam perezvonyú",
+      "script": "Я вам перезвоню",
+      "cue": "I'll call you back"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
