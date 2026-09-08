@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": [
+    "L3-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "clause-(eu)n/neun + geot gatayo",
+      "V-ji + anayo",
+      "V-ji + mothaeyo",
+      "clause-(eu)nikka + clause",
+      "N + ttaemune + clause",
+      "majayo / geureoke saenggakhaeyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "AN OPINION IS BUILT AS A HEDGE. M2's modifier, then geot, then gatayo: I-sikdang-i joeun geot gatayo. The flat I-sikdang-i joayo is not a stronger version of the same opinion — it is a claim about fact. In Korean the hedge is what makes a sentence a view rather than a report."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH SOFTENS WITH A WORD, KOREAN WITH A SHAPE. English states the claim flat and hangs 'I think' or 'kind of' on the front of it. Korean rebuilds the sentence: the verb wears the modifier ending and geot gatayo closes it, with no separate word for thinking anywhere in it."
+    },
+    {
+      "tag": "delta",
+      "text": "THE LONG NEGATIVE PUTS THE NEGATION AT THE END. L1-M3's an sits in FRONT of the verb; -ji anayo puts the denial after the listener has heard what is being denied. an joayo and jochi anayo say the same thing and land differently, which is why a disagreement takes the long one."
+    },
+    {
+      "tag": "delta",
+      "text": "-ji mothaeyo IS THE LONG FORM OF L2-M8's mot. gaji anayo is a choice and gaji mothaeyo is an obstacle, exactly as an gayo and mot gayo already were. No third negative is opened here: the short forms stay where L1-M3 and L2-M8 taught them."
+    },
+    {
+      "tag": "delta",
+      "text": "-(eu)nikka AND -aseo ARE NOT INTERCHANGEABLE. Both give a reason, but only -(eu)nikka may be followed by a request, a suggestion or an order: Bi-ga onikka taeksi-reul taseyo. L1-M9's -aseo may not. -(eu)nikka also presents its reason as something the speaker is asserting, which is why it can sound blunt to somebody older."
+    },
+    {
+      "tag": "delta",
+      "text": "ttaemune TAKES A NOUN. Bi ttaemune an gasseoyo — because of the rain. If the reason is a verb it takes -aseo or -(eu)nikka instead; ttaemune never attaches to one. English says 'because it rained' and 'because of the rain' with almost the same words, and Korean uses two different pieces of grammar."
+    },
+    {
+      "tag": "free",
+      "text": "THE HONORIFIC IS THE HEDGE. Disagreeing with somebody older keeps -(eu)seyo on the listener and reaches for L2-M1's jom and L2-M8's joesonghajiman; those lines chip formal and everything else stays neutral. informal is absent for the reason M1 gives — the forms that would earn it are banmal. Conjecture with -gess- is L3-M6's, and jal moreugesseoyo here is one frozen phrase rather than that ending opened early."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "I-sikdang-i joeun geot gatayo.",
+      "script": "이 식당이 좋은 것 같아요.",
+      "cue": "I think this restaurant is good.",
+      "literal": "this-restaurant-subject good-that thing seems",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "joeun",
+            "script": "좋은",
+            "cue": "good — in front of a noun",
+            "tag": "delta",
+            "forms": [
+              "joeun"
+            ],
+            "note": "L1-M9's joayo wearing M2's -(eu)n. On a describing verb that ending is the PRESENT, so joeun is what is good now, never what used to be."
+          },
+          {
+            "display": "geot gatayo",
+            "script": "것 같아요",
+            "cue": "it seems that · I think",
+            "tag": "delta",
+            "forms": [
+              "geot gatayo"
+            ],
+            "note": "L2-M9's geot plus gatayo, learnt as one closing frame. It follows a modifier ending and never a finished -yo verb."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "A FLAT SENTENCE IS NOT A MILDER OPINION. I-sikdang-i joayo states a fact about the restaurant. Korean marks a view by rebuilding the sentence around geot gatayo, so the hedge is what makes it an opinion at all.",
+      "sound": "i-SIK-dang-i JO-eun geot GA-ta-yo. sikdang is said sik-ttang, and joeun is said jo-eun: the h of the stem is not heard in front of a vowel.",
+      "variations": [
+        {
+          "display": "I-sikdang-i joayo.",
+          "script": "이 식당이 좋아요.",
+          "cue": "This restaurant is good.",
+          "changed": "the flat assertion the hedge is built on"
+        },
+        {
+          "display": "I-sikdang-i bissan geot gatayo.",
+          "script": "이 식당이 비싼 것 같아요.",
+          "cue": "I think this restaurant is expensive.",
+          "changed": "L2-M3's bissan — the same ending on a different describing verb"
+        }
+      ],
+      "mistake": {
+        "display": "I-sikdang-i joayo geot gatayo.",
+        "script": "이 식당이 좋아요 것 같아요.",
+        "why": "geot gatayo follows the MODIFIER, never the finished verb: I-sikdang-i joeun geot gatayo."
+      },
+      "usage": "Giving your view of a place when somebody asked what you thought.",
+      "register": "neutral",
+      "mnemonic": "Modifier, geot, gatayo."
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "Jeo-neun geureoke saenggakhaeyo.",
+      "script": "저는 그렇게 생각해요.",
+      "cue": "I think so.",
+      "literal": "I-topic that-way think",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geureoke",
+            "script": "그렇게",
+            "cue": "so · that way",
+            "tag": "delta",
+            "forms": [
+              "geureoke"
+            ],
+            "note": "Stands for the whole thing just said, and it goes in front of the verb like M1's frequency words. The stem ends in h, which turns the following consonant aspirate: geu-reo-ke."
+          },
+          {
+            "display": "saenggakhaeyo",
+            "script": "생각해요",
+            "cue": "think",
+            "tag": "delta",
+            "forms": [
+              "saenggakhaeyo",
+              "saenggakhaji",
+              "saenggakhaesseoyo"
+            ],
+            "note": "A noun plus haeyo, built exactly as gongbuhaeyo is. It closes the sentence, so what you think comes BEFORE it and never after."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "ENGLISH PUTS 'I THINK' IN FRONT; KOREAN PUTS IT LAST. The verb is always the end of a Korean sentence, so the thinking closes it. There is no shape in which saenggakhaeyo comes before what is thought.",
+      "sound": "JEO-neun geu-REO-ke saeng-ga-KAE-yo.",
+      "variations": [
+        {
+          "display": "Jeo-neun geureoke saenggakhaesseoyo.",
+          "script": "저는 그렇게 생각했어요.",
+          "cue": "I thought so.",
+          "changed": "the past — the ending moves and nothing else does"
+        },
+        {
+          "display": "Chingu-neun geureoke saenggakhaeyo.",
+          "script": "친구는 그렇게 생각해요.",
+          "cue": "My friend thinks so.",
+          "changed": "a different subject, with M1's -neun on a friend the listener already knows"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun saenggakhaeyo i-sikdang-i joayo.",
+        "script": "저는 생각해요 이 식당이 좋아요.",
+        "why": "That is English order. Korean either hedges the claim — I-sikdang-i joeun geot gatayo — or states it and then closes with Jeo-neun geureoke saenggakhaeyo."
+      },
+      "usage": "Agreeing with what somebody has just said.",
+      "register": "neutral",
+      "mnemonic": "The thinking comes last."
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "Majayo. Bibimbap-i masinneun geot gatayo.",
+      "script": "맞아요. 비빔밥이 맛있는 것 같아요.",
+      "cue": "That's right. I think the bibimbap is good.",
+      "literal": "is-correct. bibimbap-subject tasty-that thing seems",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "majayo",
+            "script": "맞아요",
+            "cue": "that's right · that's correct",
+            "tag": "interference",
+            "forms": [
+              "majayo"
+            ],
+            "note": "Its subject is the STATEMENT, not you. Jeo-neun majayo would say that you yourself are correct; agreeing is Majayo, or Jeo-neun geureoke saenggakhaeyo."
+          },
+          {
+            "display": "masinneun",
+            "script": "맛있는",
+            "cue": "that is tasty",
+            "tag": "delta",
+            "forms": [
+              "masinneun"
+            ],
+            "note": "L2-M5's masisseoyo wearing the present modifier. The t of the stem meets the n of the ending and is said as n, and this course writes what is said."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "majayo IS A WHOLE ANSWER ON ITS OWN. It takes no subject and no jeo-neun; the thing it calls correct is whatever the other person has just said.",
+      "sound": "MA-ja-yo. bi-BIM-ba-bi ma-SIN-neun geot GA-ta-yo.",
+      "variations": [
+        {
+          "display": "Bibimbap-i masisseoyo.",
+          "script": "비빔밥이 맛있어요.",
+          "cue": "The bibimbap is good.",
+          "changed": "the flat assertion, with no hedge on it"
+        },
+        {
+          "display": "I-sikdang-i masinneun geot gatayo.",
+          "script": "이 식당이 맛있는 것 같아요.",
+          "cue": "I think this restaurant is good.",
+          "changed": "the restaurant rather than the dish"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun majayo.",
+        "script": "저는 맞아요.",
+        "why": "majayo says the STATEMENT is right: Majayo. To say that you think so too, Jeo-neun geureoke saenggakhaeyo."
+      },
+      "usage": "Agreeing, and then adding a view of your own.",
+      "register": "neutral",
+      "mnemonic": "majayo answers; it does not describe you."
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "Jeo-neun geureoke saenggakhaji anayo.",
+      "script": "저는 그렇게 생각하지 않아요.",
+      "cue": "I don't think so.",
+      "literal": "I-topic that-way think-not do-not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anayo",
+            "script": "않아요",
+            "cue": "does not — the long negative",
+            "tag": "delta",
+            "forms": [
+              "anayo",
+              "anasseoyo"
+            ],
+            "note": "The second half of the long negative: the verb takes -ji and anayo carries the denial at the end. It is one token, because a hyphen in this course means a particle."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "THE NEGATION ARRIVES LAST. The listener hears the whole of what you are denying and only then hears that you deny it, which is exactly why a disagreement is built this way rather than with the short an.",
+      "sound": "JEO-neun geu-REO-ke saeng-ga-ka-ji A-na-yo. anayo is said a-na-yo: the h of the ending is not heard.",
+      "variations": [
+        {
+          "display": "Jeo-neun geureoke saenggakhaji anasseoyo.",
+          "script": "저는 그렇게 생각하지 않았어요.",
+          "cue": "I didn't think so.",
+          "changed": "the past, carried by anayo rather than by the verb in front of it"
+        },
+        {
+          "display": "Chingu-neun geureoke saenggakhaji anayo.",
+          "script": "친구는 그렇게 생각하지 않아요.",
+          "cue": "My friend doesn't think so.",
+          "changed": "a different subject"
+        }
+      ],
+      "mistake": {
+        "display": "Jeo-neun an geureoke saenggakhaeyo.",
+        "script": "저는 안 그렇게 생각해요.",
+        "why": "The short an goes directly in front of the VERB, never in front of an adverb — and a disagreement takes the long form: geureoke saenggakhaji anayo."
+      },
+      "usage": "Disagreeing without saying that anybody is wrong.",
+      "register": "neutral",
+      "mnemonic": "-ji first, anayo last."
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "I-geo-neun jochi anayo.",
+      "script": "이거는 좋지 않아요.",
+      "cue": "This one isn't good.",
+      "literal": "this-thing-topic good-not is-not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jochi",
+            "script": "좋지",
+            "cue": "good — with the long negative's ending",
+            "tag": "delta",
+            "forms": [
+              "jochi"
+            ],
+            "note": "joayo's stem plus -ji. The stem ends in h, which turns the j aspirate, so it is said and written jochi — the same change you already heard in geureoke."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "an joayo AND jochi anayo SAY THE SAME THING. The short an is L1-M3's and sits in front; the long form is this module's and lands at the end. Neither is stronger — the long one lets the listener hear the word before the refusal.",
+      "sound": "I-geo-neun JO-chi A-na-yo.",
+      "variations": [
+        {
+          "display": "I-geo-neun an joayo.",
+          "script": "이거는 안 좋아요.",
+          "cue": "This one isn't good.",
+          "changed": "L1-M3's short negative, saying the same thing from the front"
+        },
+        {
+          "display": "Yeonghwa-ga jochi anayo.",
+          "script": "영화가 좋지 않아요.",
+          "cue": "The film isn't good.",
+          "changed": "a film rather than the thing in front of you"
+        }
+      ],
+      "mistake": {
+        "display": "I-geo-neun joayo anayo.",
+        "script": "이거는 좋아요 않아요.",
+        "why": "The long negative takes the -ji shape of the verb, never the finished one: I-geo-neun jochi anayo."
+      },
+      "usage": "Turning something down politely when you have been shown it.",
+      "register": "neutral",
+      "mnemonic": "an in front, anayo at the end."
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "Oneul-eun bappeunikka gaji mothaeyo.",
+      "script": "오늘은 바쁘니까 가지 못해요.",
+      "cue": "I'm busy today, so I can't go.",
+      "literal": "today-topic is-busy-since go-not cannot",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bappeunikka",
+            "script": "바쁘니까",
+            "cue": "since (I) am busy",
+            "tag": "delta",
+            "forms": [
+              "bappeunikka"
+            ],
+            "note": "L1-M9's bappayo with -(eu)nikka. The stem is bappeu-, and the eu comes back in front of this ending even though bappaseo drops it."
+          },
+          {
+            "display": "gaji",
+            "script": "가지",
+            "cue": "go — with the long negative's ending",
+            "tag": "free",
+            "forms": [
+              "gaji"
+            ],
+            "note": "L1-M4's gayo with -ji. One shape serves both long negatives: gaji anayo does not go, gaji mothaeyo cannot."
+          },
+          {
+            "display": "mothaeyo",
+            "script": "못해요",
+            "cue": "cannot",
+            "tag": "delta",
+            "forms": [
+              "mothaeyo",
+              "mothaesseoyo"
+            ],
+            "note": "The long form of L2-M8's mot. mot gayo and gaji mothaeyo both say cannot; the long one puts the refusal after the verb it refuses."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "CANNOT IS NOT WILL NOT. gaji anayo is a choice and gaji mothaeyo is an obstacle. English hides both under 'I'm not going', so in Korean the pair has to be chosen deliberately every time.",
+      "sound": "O-neu-reun BA-ppeu-ni-kka GA-ji mo-TAE-yo. mothaeyo is said mo-tae-yo, with the t aspirated.",
+      "variations": [
+        {
+          "display": "Oneul-eun bappaseo gaji mothaeyo.",
+          "script": "오늘은 바빠서 가지 못해요.",
+          "cue": "I'm busy today, so I can't go.",
+          "changed": "L1-M9's -aseo, which says the same thing when only a statement follows"
+        },
+        {
+          "display": "Oneul-eun bappeunikka naeil gallae-yo?",
+          "script": "오늘은 바쁘니까 내일 갈래요?",
+          "cue": "I'm busy today — shall we go tomorrow?",
+          "changed": "a suggestion after the reason, which only -(eu)nikka allows"
+        }
+      ],
+      "mistake": {
+        "display": "Gaji mothaeyo oneul-eun bappeunikka.",
+        "script": "가지 못해요 오늘은 바쁘니까.",
+        "why": "The reason comes FIRST in Korean and the main clause follows it: Oneul-eun bappeunikka gaji mothaeyo."
+      },
+      "usage": "Turning down an invitation with the reason attached.",
+      "register": "neutral",
+      "mnemonic": "Reason first, verb last."
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "Bi-ga onikka taeksi-reul taseyo.",
+      "script": "비가 오니까 택시를 타세요.",
+      "cue": "It's raining, so take a taxi.",
+      "literal": "rain-subject comes-since taxi-object ride",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bi",
+            "script": "비",
+            "cue": "rain",
+            "tag": "free",
+            "forms": [
+              "bi",
+              "bi-ga"
+            ],
+            "note": "Rain, and in Korean it COMES rather than falls: bi-ga wayo. The bare bi is the shape ttaemune attaches to in the next sentence."
+          },
+          {
+            "display": "onikka",
+            "script": "오니까",
+            "cue": "since (it) comes",
+            "tag": "delta",
+            "forms": [
+              "onikka"
+            ],
+            "note": "L2-M3's wayo on its stem o-, with -(eu)nikka. This is the reason ending that a request may follow; L1-M9's -aseo may not be used that way."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "-aseo CANNOT CARRY A REQUEST. Bi-ga waseo taeksi-reul taseyo is broken Korean. When what follows the reason is a request, a suggestion or an order, the reason has to be -(eu)nikka.",
+      "sound": "BI-ga O-ni-kka TAEK-si-reul TA-se-yo. taeksi is said taek-ssi.",
+      "variations": [
+        {
+          "display": "Bi-ga onikka gachi gallae-yo?",
+          "script": "비가 오니까 같이 갈래요?",
+          "cue": "It's raining — shall we go together?",
+          "changed": "a suggestion after the reason instead of an order"
+        },
+        {
+          "display": "Bi-ga wayo.",
+          "script": "비가 와요.",
+          "cue": "It's raining.",
+          "changed": "the plain statement the reason clause was built from"
+        }
+      ],
+      "mistake": {
+        "display": "Bi-ga waseo taeksi-reul taseyo.",
+        "script": "비가 와서 택시를 타세요.",
+        "why": "A request may not follow -aseo: Bi-ga onikka taeksi-reul taseyo."
+      },
+      "usage": "Telling somebody older or senior what to do about the weather, politely.",
+      "register": "formal",
+      "mnemonic": "A request needs -(eu)nikka."
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "Bi ttaemune hakgyo-e gaji mothaesseoyo.",
+      "script": "비 때문에 학교에 가지 못했어요.",
+      "cue": "I couldn't go to school because of the rain.",
+      "literal": "rain because-of school-to go-not could-not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ttaemune",
+            "script": "때문에",
+            "cue": "because of",
+            "tag": "interference",
+            "forms": [
+              "ttaemune"
+            ],
+            "note": "It attaches to a NOUN and never to a verb. English says 'because it rained' and 'because of the rain' with almost the same words; Korean uses two different pieces of grammar."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "ttaemune NEEDS A NOUN IN FRONT OF IT. There is no way to put a finished verb there. If the reason is a thing it takes ttaemune; if the reason is a verb it takes -aseo or -(eu)nikka.",
+      "sound": "BI ttae-MU-ne HAK-gyo-e GA-ji mo-TAE-sseo-yo. hakgyo-e is said hak-kkyo-e.",
+      "variations": [
+        {
+          "display": "Sigan ttaemune gaji mothaesseoyo.",
+          "script": "시간 때문에 가지 못했어요.",
+          "cue": "I couldn't go because of the time.",
+          "changed": "L2-M6's sigan as the noun reason"
+        },
+        {
+          "display": "Bi ttaemune hakgyo-e gaji anasseoyo.",
+          "script": "비 때문에 학교에 가지 않았어요.",
+          "cue": "I didn't go to school because of the rain.",
+          "changed": "the plain long negative — a choice rather than an obstacle"
+        }
+      ],
+      "mistake": {
+        "display": "Bi-ga wasseoyo ttaemune hakgyo-e gaji mothaesseoyo.",
+        "script": "비가 왔어요 때문에 학교에 가지 못했어요.",
+        "why": "ttaemune takes a noun: Bi ttaemune hakgyo-e gaji mothaesseoyo. A verb reason would be Bi-ga waseo."
+      },
+      "usage": "Explaining an absence after the fact.",
+      "register": "neutral",
+      "mnemonic": "A noun in front of ttaemune."
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "Hoksi geugeo-neun teulliji anayo?",
+      "script": "혹시 그거는 틀리지 않아요?",
+      "cue": "Isn't that wrong, by any chance?",
+      "literal": "by-any-chance that-thing-topic wrong-not is-not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hoksi",
+            "script": "혹시",
+            "cue": "by any chance · perhaps",
+            "tag": "delta",
+            "forms": [
+              "hoksi"
+            ],
+            "note": "It opens a question and softens the whole of it. It is not a word for 'maybe' inside a statement: it stands at the front and warns that a question is coming."
+          },
+          {
+            "display": "teullyeoyo",
+            "script": "틀려요",
+            "cue": "is wrong",
+            "tag": "delta",
+            "forms": [
+              "teullyeoyo",
+              "teulliji"
+            ],
+            "note": "The opposite of majayo, and its subject is the statement too. Flat, it is blunt to somebody you do not know well, which is what hoksi and the negative question are for."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "A NEGATIVE QUESTION IS THE POLITE DISAGREEMENT. Korean asks whether the thing is not wrong rather than saying that it is, and hoksi at the front makes even that tentative. English piles up qualifiers instead; Korean changes the sentence.",
+      "sound": "HOK-si GEU-geo-neun teul-LI-ji A-na-yo? hoksi is said hok-ssi.",
+      "variations": [
+        {
+          "display": "Geugeo-neun teullyeoyo.",
+          "script": "그거는 틀려요.",
+          "cue": "That's wrong.",
+          "changed": "the flat version, with none of the softening"
+        },
+        {
+          "display": "Hoksi sigan-i eopseoyo?",
+          "script": "혹시 시간이 없어요?",
+          "cue": "Do you not have time, by any chance?",
+          "changed": "hoksi opening an ordinary question"
+        }
+      ],
+      "mistake": {
+        "display": "Geugeo-neun teullyeoyo!",
+        "script": "그거는 틀려요!",
+        "why": "Flat, that corrects the person rather than the statement. Hoksi geugeo-neun teulliji anayo? leaves them room."
+      },
+      "usage": "Correcting somebody you do not know well, without saying so outright.",
+      "register": "neutral",
+      "mnemonic": "Ask whether it is not, rather than say that it is."
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "Joesonghajiman, jeo-neun jal moreugesseoyo.",
+      "script": "죄송하지만, 저는 잘 모르겠어요.",
+      "cue": "I'm sorry, but I really don't know.",
+      "literal": "I-am-sorry-but I-topic well do-not-know",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "moreugesseoyo",
+            "script": "모르겠어요",
+            "cue": "I don't know · I couldn't say",
+            "tag": "delta",
+            "forms": [
+              "moreugesseoyo"
+            ],
+            "note": "One frozen phrase, always with jal in front of it. The -gess- inside it belongs to L3-M6 and is not opened here; this shape is learnt whole."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "jal moreugesseoyo IS NOT 'I KNOW IT BADLY'. jal here softens rather than measures, and the phrase is the polite way to decline an opinion. Korean stacks no further qualifier on top of it.",
+      "sound": "joe-song-HA-ji-man, JEO-neun jal mo-reu-GE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Jeo-neun jal moreugesseoyo.",
+          "script": "저는 잘 모르겠어요.",
+          "cue": "I don't really know.",
+          "changed": "without the apology, among people you know"
+        },
+        {
+          "display": "Joesonghajiman, jeo-neun geureoke saenggakhaji anayo.",
+          "script": "죄송하지만, 저는 그렇게 생각하지 않아요.",
+          "cue": "I'm sorry, but I don't think so.",
+          "changed": "the same opening carrying a disagreement instead"
+        }
+      ],
+      "mistake": {
+        "display": "Joesonghajiman, jeo-neun jom jeongmal jal moreugesseoyo.",
+        "script": "죄송하지만, 저는 좀 정말 잘 모르겠어요.",
+        "why": "Korean does not stack softeners. joesonghajiman and jal moreugesseoyo are already the whole hedge: Joesonghajiman, jeo-neun jal moreugesseoyo."
+      },
+      "usage": "Declining to give an opinion to somebody older or senior.",
+      "register": "formal",
+      "mnemonic": "One softener is the whole hedge."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M3-C01",
+      "display": "I-sikdang-i joeun geot gatayo.",
+      "script": "이 식당이 좋은 것 같아요.",
+      "cue": "I think this restaurant is good."
+    },
+    {
+      "id": "L3-M3-C02",
+      "display": "Jeo-neun geureoke saenggakhaeyo.",
+      "script": "저는 그렇게 생각해요.",
+      "cue": "I think so."
+    },
+    {
+      "id": "L3-M3-C03",
+      "display": "Bibimbap-i masinneun geot gatayo.",
+      "script": "비빔밥이 맛있는 것 같아요.",
+      "cue": "I think the bibimbap is good."
+    },
+    {
+      "id": "L3-M3-C04",
+      "display": "Jeo-neun geureoke saenggakhaji anayo.",
+      "script": "저는 그렇게 생각하지 않아요.",
+      "cue": "I don't think so."
+    },
+    {
+      "id": "L3-M3-C05",
+      "display": "I-geo-neun jochi anayo.",
+      "script": "이거는 좋지 않아요.",
+      "cue": "This one isn't good."
+    },
+    {
+      "id": "L3-M3-C06",
+      "display": "Oneul-eun bappeunikka gaji mothaeyo.",
+      "script": "오늘은 바쁘니까 가지 못해요.",
+      "cue": "I'm busy today, so I can't go."
+    },
+    {
+      "id": "L3-M3-C07",
+      "display": "Bi-ga onikka taeksi-reul taseyo.",
+      "script": "비가 오니까 택시를 타세요.",
+      "cue": "It's raining, so take a taxi."
+    },
+    {
+      "id": "L3-M3-C08",
+      "display": "Bi ttaemune hakgyo-e gaji mothaesseoyo.",
+      "script": "비 때문에 학교에 가지 못했어요.",
+      "cue": "I couldn't go to school because of the rain."
+    },
+    {
+      "id": "L3-M3-C09",
+      "display": "Hoksi geugeo-neun teulliji anayo?",
+      "script": "혹시 그거는 틀리지 않아요?",
+      "cue": "Isn't that wrong, by any chance?"
+    },
+    {
+      "id": "L3-M3-C10",
+      "display": "Joesonghajiman, jeo-neun jal moreugesseoyo.",
+      "script": "죄송하지만, 저는 잘 모르겠어요.",
+      "cue": "I'm sorry, but I really don't know."
+    },
+    {
+      "id": "L3-M3-C11",
+      "display": "Bi-ga onikka gachi gallae-yo?",
+      "script": "비가 오니까 같이 갈래요?",
+      "cue": "It's raining — shall we go together?"
+    },
+    {
+      "id": "L3-M3-C12",
+      "display": "Sigan ttaemune gaji mothaesseoyo.",
+      "script": "시간 때문에 가지 못했어요.",
+      "cue": "I couldn't go because of the time."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

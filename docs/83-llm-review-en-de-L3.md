@@ -287,3 +287,210 @@ written around them.
 14. **`studieren` against `lernen`** (M2-S07). The wave's strongest lexical claim: that `studieren`
     only ever means a course of university study, so revising for tomorrow is `lernen`. Confirm,
     along with `an der Uni` rather than `in der Uni`, and that `Uni` is what everybody says.
+
+## Wave 2 — L3-M3, L3-M4, L3-M5 (#486)
+
+Authored against the same briefs and the same `docs/75`, and reviewed against the REAL cumulative
+index rather than against the briefs' account of it: **512 surfaces through L3-M2**, growing to
+**527 after M3, 544 after M4 and 560 after M5**. A strict `npm run content:build` emits
+`en-de: 25 modules (L1-M1..M10, L2-M1..M10, L3-M1..M5)` with `CONTENT 209/209 ok`, and
+`tools/shown-surfaces.test.ts` holds en-de at **11** with no finding in any of the three files.
+The spend is 15, 17 and 16 keys against a `newWordCap` of 25 — the wave never came near it, because
+its subject is word ORDER and a mood, and neither is bought with vocabulary.
+
+`maxSpan` holds at 3, and this is the first en-de wave where that ceiling was actually touched
+rather than merely respected. Wave 1 minted nothing but single tokens and said so. M3 mints
+`Meiner Meinung nach` and M4 mints `An deiner Stelle`, both three whitespace tokens, both indexed
+whole so the greedy longest-match walk takes them in one bite. Each sits on a phrase the learner
+cannot usefully decompose — `nach` following its noun is not L2-M4's `nach`, and `deiner` exists in
+the ladder nowhere else — so the joined key is the only honest one. Neither pushes past 3, and
+nothing in the level needs a fourth token.
+
+### L3-M3 "Opinions with reasons" — the clause that stands first
+
+`docs/75` §3 is the section this module is built on, and the wave confirmed both of its corrections
+against the fold before writing a line. `weil` and `dass` are **L1-M9**'s and `wenn` is
+**L1-M10**'s, law included: L1-M9's rules already state that a subordinating conjunction sends the
+finite verb last while `denn`, `und`, `aber` and `oder` leave it second. **M3 therefore opens no row
+for any of the three and never presents verb-final order as news.** What it teaches instead is the
+one thing L1 left standing — the subordinate clause standing FIRST, and the inversion that forces:
+
+    Weil ich müde bin, bleibe ich zu Hause
+
+Rule 0 says it in the terms a learner needs: the whole clause is the first element, so the main verb
+takes the second seat, which is now the seat straight after the comma. **The two verbs end up side
+by side across that comma**, `bin` and `bleibe`, one closing its clause and one opening the next, and
+English has no equivalent of that shape at all. Rule 1 is the error the shape produces —
+`Weil ich müde bin, ich gehe nach Hause` — and it is the module's mistake plate on S01, with the
+brief's own canonical sentence (`gehe ich nach Hause`) kept as that sentence's first variation so the
+two shapes sit one line apart.
+
+The module's economy is `obwohl` against `trotzdem` on **one pair of facts**. S02 is
+`Obwohl es teuer ist, kaufe ich es`; S03 is `Es ist teuer. Trotzdem kaufe ich es`. Same two facts,
+two structures, and the word chosen decides where the verb goes — a conjunction that fronts its
+clause, or an adverb that fronts itself and inverts exactly the way L1-M9's `deshalb` does. Rule 2
+points back at `deshalb` and at L1-M10's `dann` and `also` rather than restating either, which is
+what keeps the module inside its budget.
+
+Softening is done by the FRAME, per `docs/75` and the same law L2-M1 stated for requests: the spend
+is `Meiner Meinung nach` — a postposition governing the dative, whose `meiner` is L3-M2's, and which
+fronts and therefore inverts — plus the four agreeing and disagreeing frames, `Das stimmt`,
+`Da stimme ich zu`, `Du hast Recht` and `Das sehe ich anders`. Three of the four front something that
+is not the subject, so the module gets to show inversion four more times without spending a rule on
+it. `Ich weiß` landing on **L2-M3's `weiß`, the colour white**, is rule 5 and nothing else — the seam
+is written once, no rival row is opened, and S10's variation `Ehrlich gesagt weiß ich nicht` is where
+a learner will meet it.
+
+### L3-M4 "If and then" — one mood, six words
+
+`docs/59` §5 named this module in advance and the wave took it literally: **six cells and no
+paradigm.** `wäre`, `hätte`, `könnte`, `sollte`, `müsste`, and `würde` plus an infinitive for
+everything else. Rule 1 carries the fact that stops a learner inventing forms — an ordinary verb's
+direct Konjunktiv II is spelled like its Präteritum and nobody says it, so there is no spoken
+`ich führe` — and the module then never writes one.
+
+Real against unreal sits on **L1-M10's `wenn`**, owned, and no row is opened for it. The pair is
+authored side by side inside S01: the display is the unreal `Wenn ich Zeit hätte, würde ich kommen`
+and its first variation is the real `Wenn ich Zeit habe, komme ich`. That ordering is a decision.
+The news is the mood, and putting the unreal in the display puts the two Konjunktiv II forms where
+the module wants them — `hätte` and `würde` meeting across the comma, in exactly the seats `bin` and
+`bleibe` occupied one module earlier. **M3's law and M4's mood are the same sentence shape**, and
+rule 3 says so rather than re-deriving the word order.
+
+Every cell took **its own row**, which is `docs/75` §4's policy for a shape whose base is L1's or
+L2's, and which this module applies eleven times: `wäre` and `wären` point back at L1-M5's `war` and
+`waren`, `hätte` and `hätten` at `hatte` and `hatten`, `könnte` at L2-M1's `könnten`, `sollte` at
+L2-M6's `sollen`, `müsste` at L2-M4's `müssen`, and `würde`, `würden` and `würdest` at nothing at
+all, because `werden` is not taught until L3-M9. One judgement call inside that: **`solltest` is a
+`forms` entry on the `sollte` row rather than a row of its own**, where `hätten` took a row beside
+`hätte`. The reason is what each shape needs to point AT. `hätte` and `hätten` point back at two
+different L1-M5 rows and are shown in two different sentences, S01 and S08; `solltest` points at the
+same single L2-M6 `sollen` as its own citation form and is shown in the sentence that opens it. A row
+is worth opening where it gives a learner a pointer they could not otherwise get.
+
+`möchte` being itself a Konjunktiv II, of `mögen`, is the retro-explanation `docs/75` asked for, and
+it sits in rule 4 rather than in a row, because L1-M3 owns the key and has since the third module of
+the course. The past counterfactual is named as **L4-M3's** in rule 5 and no display uses it;
+`falls` stays out entirely; `wenn` against `als` for time is handed to M5 in the same rule.
+
+### L3-M5 "What someone said" — the gift, and the one word that splits
+
+The brief asked for the no-backshift rule to be sold loudly, and rule 1 is the only rule in this
+level written with a shout in it: **GERMAN DOES NOT BACKSHIFT.** `Ich komme morgen` reported is
+`Er hat gesagt, dass er morgen kommt`, and the mistake plate on S01 is the backshifted version an
+English speaker builds instead. It is the cheapest lesson in the level and the module spends a
+sentence, a trap, a variation and a mistake on it anyway, because a learner will not believe it.
+
+The genuinely fresh structure is the indirect question, and it splits two ways. A yes/no question
+becomes `ob` (S02); a w-question keeps its own w-word and moves nothing but the verb (S03, S04, S09),
+so `wann`, `wo` and `was` stay their L1 and L2 rows and **this module opens none of them**. The
+interference rule spends itself on one word: English's `if` does two jobs, and
+`Er hat gefragt, wenn ich Zeit habe` reports no question at all. The test the rule gives a learner is
+the one that actually works — if "whether" fits in the English, it is `ob`.
+
+The Plusquamperfekt costs the index almost nothing, exactly as `docs/75` predicted: `hatte`,
+`hatten`, `war` and `waren` are L1-M5's and are re-shown here as auxiliaries rather than re-opened,
+and the only participle the module had to mint is `genommen`, which no row owned. `nachdem` is the
+one time clause taken, because it is the conjunction that FORCES the tense gap; `bevor`, `während`,
+`seitdem` and `bis` stay L4-M6's and are named as such. `als` against `wenn` is rule 7 and two
+pointers, never two rows. **Konjunktiv I is named as L4-M7's in rule 8 and never authored** — the
+module says in as many words that everyday spoken German reports with the plain indicative, so that a
+learner who meets `er sei` in a newspaper knows what they are looking at and knows they were not
+short-changed.
+
+### The seam the brief did not predict: `Antwort` and `antworten`
+
+`docs/75` §4 lists the collisions this level meets and the M5 brief lists eleven fresh keys, and one
+collision is in neither list because it is not between this module and an earlier one — **it is
+inside a single sentence.** `die Antwort` has the plural `die Antworten`, which the fold lowercases
+to `antworten`, which is spelt exactly like the infinitive of the verb. S08 teaches both the noun and
+the verb, so the first draft carried `Antworten` in the noun's `forms` and `antworten` as a row of
+its own, and those are **one key with two rows** — the second unreachable, which on this course is a
+defect and not a device.
+
+Two things follow, and both are worth recording for the next wave.
+
+- **The plural was dropped, not the verb row.** `Antworten` came out of the noun's `forms` and the
+  note now says the plural is spelt like the verb below it. The verb keeps the row because it is the
+  one that carries a fact a learner needs — `antworten` takes the person in the DATIVE and never a
+  direct object, `Er hat mir geantwortet` — and a plural noun carries nothing.
+- **`npm run content:shown` cannot see this class of collision.** It folds every module up to and
+  including the one under test and reports a row whose key an EARLIER module owns; two rows inside
+  the same module are invisible to it. The check that caught it is `src/course/types.test.ts`'s en-de
+  guard, which walks every row of every module and asserts one seat per key. On this course a clean
+  `content:shown` is necessary and is not sufficient, and an author who stops at it will ship an
+  unreachable row.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` held at **en-de 11** across all three modules, with **no finding at
+all** — not one shown-but-untaught surface in any file. Two near-misses were caught by
+`npm run content:shown` while the modules were still drafts, and both are the same class of error: a
+verb the ladder owns in its citation form and in one participle, reached for in a person-form nobody
+has opened. `wohnt` in an M5 variation was the one that fired (L1-M1 owns `wohne` and `wohnen`, not
+`wohnt`); `arbeitet` was caught by hand before it was written, on the same reasoning. The fix in both
+cases was to route the sentence around the missing shape rather than to mint it —
+`dass er aus Berlin kommt` says the same thing out of keys the ladder already has.
+
+**The re-teach count for this wave is zero, across three modules and 48 new keys.** That makes the
+en-de L3 chain 5-for-5 with none, against L2's fourteen, and the method is unchanged from Wave 1: the
+spent keys are folded and read BEFORE the sentence is drafted, not after. Three routings around spent
+keys are worth naming because the next wave will meet the same class:
+
+- **`meiner` is L3-M2's** (feminine dative "my"), so `Meiner Meinung nach` is indexed as one
+  three-token surface on the `Meinung` row and no possessive row is opened.
+- **`guter` is L3-M2's**, so M3-S09's `ein guter Grund` opens a row for `Grund` alone; the adjective
+  resolves to the module below, which is where it was taught and where it belongs.
+- **`sagen` and `gesagt` are L2-M10's** and `sagt` is not, so M5-S01 opens `sagt` and points back
+  rather than re-opening the lemma — the same policy L2-M9 used for `alt` and `älter`.
+
+One shared file is left untouched and is named here so it is not mistaken for a content failure:
+`src/course/types.test.ts` carries a literal list of the 206 module files that existed before this
+wave and now finds 209. That list is not this wave's to edit.
+
+### Open questions for the native pass
+
+15. **`Da stimme ich zu`** (M3-S06). Confirm this is what somebody says in a meeting rather than the
+    bare `Ich stimme zu`, and whether `Da bin ich ganz deiner Meinung` has displaced it in speech.
+16. **`Das sehe ich anders`** (M3-S07). The module sells it as the polite German no. Confirm it is
+    heard as polite rather than as cold, and that it works with somebody you address as `Sie`.
+17. **`Recht` with a capital** (M3-S08). `Du hast Recht` is authored with the noun capitalised.
+    Confirm the capital is what a German writer uses now, and that lowercase `recht haben` is not the
+    commoner spelling in ordinary correspondence.
+18. **`Meiner Meinung nach` in speech** (M3-S04). Confirm it is said aloud rather than only written,
+    and whether `Ich finde` — which L1-M9 already ships — carries the whole job in conversation.
+19. **`Ehrlich gesagt`** (M3-S10). Confirm the frame takes no comma after it, and that
+    `Ehrlich gesagt bin ich nicht sicher` is the ordinary hedge rather than `Ich bin mir nicht sicher`
+    with the reflexive this course has not taught.
+20. **`trotzdem` after a full stop** (M3-S03). The display writes two sentences. Confirm a speaker
+    really does stop there, rather than joining with `aber trotzdem` or an `und`.
+21. **The six cells and nothing else** (M4, rule 0). The strongest structural claim in the wave: that
+    `wäre`, `hätte`, `könnte`, `sollte`, `müsste` and `würde` cover everyday unreal German. Confirm,
+    and name any seventh a speaker uses often enough that its absence is felt — `wüsste` and `käme`
+    are the two candidates.
+22. **`müsste` against `sollte`** (M4-S05). The module says `sollte` is somebody else's advice and
+    `müsste` is what you already know you owe. Confirm the split is real and that neither is heard as
+    the other.
+23. **`An deiner Stelle`** (M4-S03). Confirm this is what a German says where English says "if I were
+    you", and that `Wenn ich du wäre` is heard as a translation rather than as ordinary.
+24. **`Ich hätte gern einen Termin`** (M4-S07). Confirm it is one tier above `Ich möchte` rather than
+    a different meaning, and that a surgery expects it on the telephone.
+25. **`zwei Kaffee` uncounted** (M4-S08). The trap says German counts the servings and adds no
+    ending. Confirm, including whether `zwei Kaffees` is heard at all.
+26. **`sonst` and its seat** (M4-S09). Confirm `sonst kommst du zu spät` is the ordinary order, and
+    that `sonst` never behaves as a conjunction in speech.
+27. **No backshift, tested to destruction** (M5, rule 1). Confirm there is no everyday register in
+    which a German speaker DOES shift the tense back when reporting, and that
+    `Er hat gesagt, dass er morgen kommt` sounds unremarkable for something said yesterday.
+28. **Dropping `dass`** (M5, rule 0). The rule says speech often drops it and the verb returns to
+    second place. Confirm how common that is, and whether the module should have shown it in a display
+    rather than in a rule.
+29. **`nachdem` and the tense gap** (M5-S05). Confirm German really is stricter than English here, and
+    that `Nachdem ich gegessen habe, bin ich gegangen` is heard as wrong rather than as casual.
+30. **`erzählen` against `sagen`** (M5-S07). The module says news you pass on is `erzählen` and that
+    `Sie hat mir gesagt` is flat rather than wrong. Confirm the line between them, and that `erzählen`
+    takes the person in the dative in every register.
+31. **`antworten` with no direct object** (M5-S08). Confirm `Er hat mir geantwortet` is the only
+    shape, and that `Er hat meine Frage geantwortet` is impossible rather than merely rare.
+32. **`Als ich klein war`** (M5-S10). Confirm this is how a speaker opens a childhood story, and that
+    `Geschichten erzählen` is what a parent is said to have done rather than `vorlesen`.

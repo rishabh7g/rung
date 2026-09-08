@@ -1,0 +1,571 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": [
+    "L3-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Weil + <verb-final> + , + V-2 + ich",
+      "Obwohl + <verb-final> + , + V-2 + ich",
+      "<statement> + . + Trotzdem + V-2 + ich",
+      "Meiner Meinung nach + V-2 + <rest>",
+      "Das stimmt + , + aber + <clause>",
+      "Da stimme ich zu + , + weil + <verb-final>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The subordinate clause can stand FIRST, and that is this module's one new shape. L1-M9 already said a subordinating conjunction sends its finite verb to the end of its own clause; nothing about that changes. What changes is where the clause sits. Put it in front and the WHOLE clause becomes the first element of the main clause, so the main verb still takes the second seat — which is now the seat straight after the comma — and the subject follows it: Weil ich müde bin, bleibe ich zu Hause. The two verbs end up side by side across the comma, bin and bleibe, one closing its clause and one opening the next. English has no equivalent of that at all."
+    },
+    {
+      "tag": "interference",
+      "text": "English says \"Because I'm tired, I'm going home\" and leaves the main clause untouched, so the sentence an English speaker builds first is Weil ich müde bin, ich gehe nach Hause — every time. It is the commonest German word-order error at this level. The fronted clause has already used up the first element, so ich cannot stand there too: the verb comes first after the comma and the subject comes after the verb. If you can say Deshalb gehe ich nach Hause, you can already say this — L1-M9's deshalb inverts for exactly the same reason."
+    },
+    {
+      "tag": "delta",
+      "text": "obwohl and trotzdem say the same thing and are built in opposite ways, which is the whole module in one pair. obwohl is a conjunction, so it sends its verb last and its clause can front: Obwohl es teuer ist, kaufe ich es. trotzdem is an adverb, so it takes a seat in the main clause and inverts when it fronts, exactly as L1-M10's dann and also do: Es ist teuer. Trotzdem kaufe ich es. Same two facts, two structures, and the word you choose decides where the verb goes."
+    },
+    {
+      "tag": "delta",
+      "text": "Meiner Meinung nach is a fixed opinion frame, and nach is a POSTPOSITION in it — it follows the noun instead of leading it, and it governs the dative, which is where L3-M2's meiner comes from. Front it and the verb inverts like any other first element: Meiner Meinung nach ist das Buch zu lang. It can also sit in the middle field with nothing moving: Das Buch ist meiner Meinung nach zu lang. Softening is done by the FRAME, not by weakening the claim — the same law L2-M1 stated for requests and L2-M8 for complaints."
+    },
+    {
+      "tag": "delta",
+      "text": "Agreeing and disagreeing are set phrases, and three of the four front something that is not the subject, so all three invert. Das stimmt is said of a STATEMENT and takes no person. Du hast Recht is said of a PERSON, and German has right where English is right — haben, never sein. Da stimme ich zu is zustimmen split the way L3-M1 split every separable verb, and its stranded zu is L1-M8's zu, one key doing a second job. Das sehe ich anders is the polite refusal, with the object fronted and the verb still second."
+    },
+    {
+      "tag": "free",
+      "text": "Ich weiß lands on the colour white. weiß is L2-M3's, opened for Das Auto ist weiß, and the fold merges the verb with it — one key, two words, and only the sentence says which you are looking at. Nothing new is being taught here and no second row exists to find: tapping the weiß of Ehrlich gesagt weiß ich nicht answers with the colour. Read the seat, not the spelling."
+    },
+    {
+      "tag": "free",
+      "text": "Every comma in front of a joined clause is obligatory in German writing — L1-M9's rule, and this module writes more of them than any module before it. German commas mark clause boundaries and never pauses, so the comma after Weil ich müde bin is doing grammar, not breathing, and the comma before weil in Da stimme ich zu, weil das Buch gut ist is there whether you would pause or not."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "Weil ich müde bin, bleibe ich zu Hause",
+      "cue": "Because I'm tired, I'm staying home",
+      "literal": "because I tired am, stay I at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bleibe",
+            "cue": "stay (I stay)",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M10's bleiben with the ich ending, and here it is the word that meets bin across the comma: bin, bleibe."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          6
+        ]
+      },
+      "trap": "The comma is not a pause you may build around. Everything to its left is one single element of the sentence to its right, so the next thing written must be the verb.",
+      "sound": "vile ikh MUE-duh bin, BLY-buh ikh tsoo HOW-zuh. weil rhymes with English \"vile\", and the comma is not spoken as a stop.",
+      "variations": [
+        {
+          "display": "Weil ich müde bin, gehe ich nach Hause",
+          "cue": "Because I'm tired, I'm going home",
+          "changed": "a different main verb in the same seat, straight after the comma"
+        },
+        {
+          "display": "Weil es kalt ist, bleibe ich zu Hause",
+          "cue": "Because it's cold, I'm staying home",
+          "changed": "a different reason, and the shape does not move"
+        }
+      ],
+      "mistake": {
+        "display": "Weil ich müde bin, ich bleibe zu Hause",
+        "why": "The fronted clause is already the first element, so ich cannot be: Weil ich müde bin, bleibe ich zu Hause."
+      },
+      "usage": "Turning down an evening without making an excuse of it.",
+      "register": "neutral",
+      "mnemonic": "Verb, comma, verb. The two of them touch."
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "Obwohl es teuer ist, kaufe ich es",
+      "cue": "Even though it's expensive, I'm buying it",
+      "literal": "although it expensive is, buy I it",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "obwohl",
+            "cue": "although · even though",
+            "tag": "delta",
+            "forms": [],
+            "note": "A conjunction like L1-M9's weil, so its verb goes last: Obwohl es teuer ist. It concedes a point instead of giving a reason for one."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          6
+        ]
+      },
+      "trap": "English lets you say \"although it's expensive\" and then start the main clause any way you like. German does not: the concession has taken the first seat, and the verb takes the second.",
+      "sound": "op-VOLE ess TOY-er ist, COW-fuh ikh ess. The b of obwohl is said as a p, and the stress is on the second syllable.",
+      "variations": [
+        {
+          "display": "Obwohl das Buch teuer ist, kaufe ich es",
+          "cue": "Even though the book is expensive, I'm buying it",
+          "changed": "a named subject inside the fronted clause"
+        },
+        {
+          "display": "Obwohl ich müde bin, gehe ich ins Kino",
+          "cue": "Even though I'm tired, I'm going to the cinema",
+          "changed": "the same shape on L1-M7's Kino"
+        }
+      ],
+      "mistake": {
+        "display": "Obwohl es teuer ist, ich kaufe es",
+        "why": "The fronted clause counts as the first element: Obwohl es teuer ist, kaufe ich es."
+      },
+      "usage": "Buying something you have just admitted is a bad idea.",
+      "register": "neutral",
+      "mnemonic": "obwohl bends the clause. The main verb still lands second."
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "Es ist teuer. Trotzdem kaufe ich es",
+      "cue": "It's expensive. I'm buying it anyway",
+      "literal": "it is expensive. nevertheless buy I it",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trotzdem",
+            "cue": "even so · anyway",
+            "tag": "delta",
+            "forms": [],
+            "note": "An adverb, not a conjunction: it takes a seat inside its own clause and inverts when it fronts, exactly as L1-M9's deshalb does."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "trotzdem and obwohl translate the same English sentence and can never be swapped. One joins two clauses with a comma; the other stands inside a clause of its own and needs a full stop or an und in front of it.",
+      "sound": "ess ist TOY-er. TROTS-daym COW-fuh ikh ess. The tz is a ts, and the stress is on the first syllable.",
+      "variations": [
+        {
+          "display": "Das Buch ist teuer. Trotzdem kaufe ich es",
+          "cue": "The book is expensive. I'm buying it anyway",
+          "changed": "the same pair of facts with the book named"
+        },
+        {
+          "display": "Ich bin müde. Trotzdem gehe ich ins Kino",
+          "cue": "I'm tired. I'm going to the cinema anyway",
+          "changed": "a different pair of facts, same two structures"
+        }
+      ],
+      "mistake": {
+        "display": "Es ist teuer. Trotzdem ich kaufe es",
+        "why": "A fronted adverb keeps the verb in second place: Trotzdem kaufe ich es."
+      },
+      "usage": "Conceding the objection and doing it anyway — the most German move there is.",
+      "register": "neutral",
+      "mnemonic": "Obwohl joins. Trotzdem stands alone and inverts."
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "Meiner Meinung nach ist das Buch zu lang",
+      "cue": "In my opinion the book is too long",
+      "literal": "my opinion after is the book too long",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Meinung",
+            "cue": "opinion",
+            "tag": "delta",
+            "forms": [
+              "Meiner Meinung nach"
+            ],
+            "note": "Feminine, die Meinung. In the frame Meiner Meinung nach the nach FOLLOWS its noun and takes the dative, which is where L3-M2's meiner comes from."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "It is not L2-M8's meinen, the verb \"to mean\". Meinung is a noun with a capital, and the frame around it is fixed — no article, no other preposition, and nach always at the end of it.",
+      "sound": "MY-ner MY-noong nakh ist das bookh tsoo lang. nach has the back ch, the same one as in Buch.",
+      "variations": [
+        {
+          "display": "Meiner Meinung nach ist das nicht wichtig",
+          "cue": "In my opinion that isn't important",
+          "changed": "L3-M2's wichtig, and the inversion is unchanged"
+        },
+        {
+          "display": "Das Buch ist meiner Meinung nach zu lang",
+          "cue": "The book is, in my opinion, too long",
+          "changed": "the frame moved into the middle field, where nothing inverts"
+        }
+      ],
+      "mistake": {
+        "display": "Meiner Meinung nach das Buch ist zu lang",
+        "why": "The frame is the first element, so the verb comes next: Meiner Meinung nach ist das Buch zu lang."
+      },
+      "usage": "Marking a claim as yours, in writing or in a meeting.",
+      "register": "formal",
+      "mnemonic": "nach comes after the Meinung, and the verb comes after nach."
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "Das stimmt, aber das Buch ist zu teuer",
+      "cue": "That's true, but the book is too expensive",
+      "literal": "that is-right, but the book is too expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stimmt",
+            "cue": "that's right · that's true",
+            "tag": "delta",
+            "forms": [],
+            "note": "Said of a STATEMENT and never of a person: Das stimmt. Negated it is Das stimmt nicht, which is the softest way German has of saying no."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "aber is L1-M10's coordinating word, so nothing inverts after it and the second clause is built exactly as it would stand alone. Only the subordinating words move a verb.",
+      "sound": "das SHTIMT, AH-ber das bookh ist tsoo TOY-er. The st of stimmt is sht.",
+      "variations": [
+        {
+          "display": "Das stimmt nicht",
+          "cue": "That's not right",
+          "changed": "negated, which is how German disagrees gently"
+        },
+        {
+          "display": "Das stimmt, aber ich sehe das anders",
+          "cue": "That's true, but I see it differently",
+          "changed": "the disagreement frame in the second half"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist Recht, aber das Buch ist zu teuer",
+        "why": "Recht goes with a person and haben: Du hast Recht. Of a statement German says Das stimmt."
+      },
+      "usage": "Granting the point before you take it apart.",
+      "register": "neutral",
+      "mnemonic": "A statement stimmt. A person hat Recht."
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "Da stimme ich zu, weil das Buch gut ist",
+      "cue": "I agree with that, because the book is good",
+      "literal": "there agree I to, because the book good is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stimme",
+            "cue": "agree (I agree)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb of zustimmen, split as L3-M1 splits every separable verb: stimme second, zu last. Its zu is L1-M8's key doing a second job."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          6
+        ]
+      },
+      "trap": "The reason clause is behind the main clause here, and nothing inverts: Da stimme ich zu is already inverted because Da fronted, not because weil is coming. Move the weil clause to the front and the main clause has to be rebuilt.",
+      "sound": "dah SHTIM-uh ikh tsoo, vile das bookh goot ist. The zu at the end is unstressed and belongs to stimme, not to what follows.",
+      "variations": [
+        {
+          "display": "Da stimme ich zu",
+          "cue": "I agree with that",
+          "changed": "the frame on its own, with no reason attached"
+        },
+        {
+          "display": "Ich stimme dir zu, weil du Recht hast",
+          "cue": "I agree with you, because you're right",
+          "changed": "L2-M1's dir as the person agreed with"
+        }
+      ],
+      "mistake": {
+        "display": "Ich zustimme dir, weil du Recht hast",
+        "why": "A separable verb never stands whole in the second seat: Ich stimme dir zu, weil du Recht hast."
+      },
+      "usage": "Backing somebody up in a meeting and saying why.",
+      "register": "formal",
+      "mnemonic": "Da stimme ich … zu. The zu waits at the end."
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "Das sehe ich anders, weil es zu teuer ist",
+      "cue": "I see that differently, because it's too expensive",
+      "literal": "that see I differently, because it too expensive is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anders",
+            "cue": "differently",
+            "tag": "delta",
+            "forms": [],
+            "note": "An adverb, so it never takes an adjective ending — Das sehe ich anders, not anderes. Das sehe ich anders is the polite German no."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          6
+        ]
+      },
+      "trap": "Das is the OBJECT here, not the subject, and it has been fronted for emphasis. The verb still takes the second seat, so ich lands after it — the same law that runs the fronted clause of this whole module.",
+      "sound": "das ZAY-uh ikh AHN-ders, vile ess tsoo TOY-er ist. sehe begins with a z sound.",
+      "variations": [
+        {
+          "display": "Das sehe ich anders",
+          "cue": "I see that differently",
+          "changed": "the refusal alone, with the reason left unsaid"
+        },
+        {
+          "display": "Ich sehe das anders, weil das Buch zu lang ist",
+          "cue": "I see it differently, because the book is too long",
+          "changed": "the object back in its ordinary seat, so nothing inverts"
+        }
+      ],
+      "mistake": {
+        "display": "Das ich sehe anders, weil es zu teuer ist",
+        "why": "Fronting the object does not give the subject the second seat: Das sehe ich anders."
+      },
+      "usage": "Disagreeing with somebody you would rather not offend.",
+      "register": "neutral",
+      "mnemonic": "Front the object, and the subject moves behind the verb."
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "Du hast Recht, das Buch ist wirklich gut",
+      "cue": "You're right, the book really is good",
+      "literal": "you have right, the book is really good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Recht",
+            "cue": "right (in \"to be right\")",
+            "tag": "interference",
+            "forms": [],
+            "note": "German HAS right where English IS right: Du hast Recht, Sie haben Recht. Built with sein it is not weak German, it is not German."
+          },
+          {
+            "display": "wirklich",
+            "cue": "really",
+            "tag": "free",
+            "forms": [],
+            "note": "Stands in the middle field like L3-M1's oft and manchmal: das Buch ist wirklich gut. Front it and the verb keeps its second seat."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Recht is a noun and keeps its capital, and it takes no article in this phrase. Du hast das Recht is a different sentence about a legal entitlement.",
+      "sound": "doo hast rekht, das bookh ist VEERK-likh goot. Both ch sounds here are the front one, made near the teeth.",
+      "variations": [
+        {
+          "display": "Sie haben Recht",
+          "cue": "You're right",
+          "changed": "said to somebody you address as Sie"
+        },
+        {
+          "display": "Du hast Recht, aber es ist zu teuer",
+          "cue": "You're right, but it's too expensive",
+          "changed": "agreement first, objection second"
+        }
+      ],
+      "mistake": {
+        "display": "Du bist Recht, das Buch ist wirklich gut",
+        "why": "German has right rather than being it: Du hast Recht."
+      },
+      "usage": "Conceding to a friend, out loud, before you add anything.",
+      "register": "informal",
+      "mnemonic": "Recht is something you HAVE."
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "Natürlich ist das ein guter Grund",
+      "cue": "Of course that's a good reason",
+      "literal": "naturally is that a good reason",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "natürlich",
+            "cue": "of course · naturally",
+            "tag": "free",
+            "forms": [],
+            "note": "An adverb that fronts, so the verb stays second: Natürlich ist das ein guter Grund. It also stands unmoved in the middle field."
+          },
+          {
+            "display": "Grund",
+            "cue": "reason",
+            "tag": "delta",
+            "forms": [
+              "Gründe"
+            ],
+            "note": "Masculine, der Grund, plural die Gründe with an umlaut. It is the reason itself, where L1-M9's warum is the question that asks for one."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Fronting natürlich is not optional decoration — the moment it stands first the verb has to come next, and das drops in behind it. English keeps \"of course\" outside the sentence and changes nothing.",
+      "sound": "na-TUER-likh ist das ine GOO-ter groont. Grund ends in a hard t sound, not a d.",
+      "variations": [
+        {
+          "display": "Das ist natürlich ein guter Grund",
+          "cue": "That is of course a good reason",
+          "changed": "the adverb in the middle field, where nothing inverts"
+        },
+        {
+          "display": "Ich habe zwei Gründe",
+          "cue": "I have two reasons",
+          "changed": "the plural, with the umlaut L2-M2's Mütter and Väter already showed"
+        }
+      ],
+      "mistake": {
+        "display": "Natürlich das ist ein guter Grund",
+        "why": "A fronted adverb takes the first seat, so the verb takes the second: Natürlich ist das ein guter Grund."
+      },
+      "usage": "Accepting somebody's reason without accepting their conclusion.",
+      "register": "neutral",
+      "mnemonic": "Front it and the verb follows it. Every time."
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "Ehrlich gesagt bin ich nicht sicher",
+      "cue": "To be honest, I'm not sure",
+      "literal": "honestly said am I not sure",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ehrlich",
+            "cue": "honest · honestly",
+            "tag": "free",
+            "forms": [],
+            "note": "With L2-M10's gesagt it makes the frame Ehrlich gesagt, which fronts and inverts. The h after the e is silent and only stretches the vowel."
+          },
+          {
+            "display": "sicher",
+            "cue": "sure · certain",
+            "tag": "free",
+            "forms": [],
+            "note": "After sein it takes no ending: Ich bin nicht sicher. It is the hedge German uses where English says \"I'm not sure\"."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "Ehrlich gesagt is two words and one element, so the verb comes after the pair and not after ehrlich. There is no comma in it, and none is needed after it.",
+      "sound": "AIR-likh guh-ZAHKT bin ikh nikht ZIKH-er. The ch of sicher and of nicht is the front one.",
+      "variations": [
+        {
+          "display": "Ehrlich gesagt weiß ich nicht",
+          "cue": "To be honest, I don't know",
+          "changed": "the verb weiß, which shares its key with L2-M3's colour white"
+        },
+        {
+          "display": "Ich bin nicht sicher, weil das Buch zu lang ist",
+          "cue": "I'm not sure, because the book is too long",
+          "changed": "the hedge with its reason behind it"
+        }
+      ],
+      "mistake": {
+        "display": "Ehrlich gesagt ich bin nicht sicher",
+        "why": "The fronted frame is the first element: Ehrlich gesagt bin ich nicht sicher."
+      },
+      "usage": "Softening a claim you are about to make anyway.",
+      "register": "informal",
+      "mnemonic": "Two words, one seat, then the verb."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M3-C01",
+      "display": "Weil ich müde bin, bleibe ich zu Hause",
+      "cue": "Because I'm tired, I'm staying home"
+    },
+    {
+      "id": "L3-M3-C02",
+      "display": "Obwohl es teuer ist, kaufe ich es",
+      "cue": "Even though it's expensive, I'm buying it"
+    },
+    {
+      "id": "L3-M3-C03",
+      "display": "Es ist teuer. Trotzdem kaufe ich es",
+      "cue": "It's expensive. I'm buying it anyway"
+    },
+    {
+      "id": "L3-M3-C04",
+      "display": "Meiner Meinung nach ist das Buch zu lang",
+      "cue": "In my opinion the book is too long"
+    },
+    {
+      "id": "L3-M3-C05",
+      "display": "Das stimmt, aber das Buch ist zu teuer",
+      "cue": "That's true, but the book is too expensive"
+    },
+    {
+      "id": "L3-M3-C06",
+      "display": "Da stimme ich zu, weil das Buch gut ist",
+      "cue": "I agree with that, because the book is good"
+    },
+    {
+      "id": "L3-M3-C07",
+      "display": "Das sehe ich anders, weil es zu teuer ist",
+      "cue": "I see that differently, because it's too expensive"
+    },
+    {
+      "id": "L3-M3-C08",
+      "display": "Du hast Recht, das Buch ist wirklich gut",
+      "cue": "You're right, the book really is good"
+    },
+    {
+      "id": "L3-M3-C09",
+      "display": "Natürlich ist das ein guter Grund",
+      "cue": "Of course that's a good reason"
+    },
+    {
+      "id": "L3-M3-C10",
+      "display": "Ehrlich gesagt bin ich nicht sicher",
+      "cue": "To be honest, I'm not sure"
+    },
+    {
+      "id": "L3-M3-C11",
+      "display": "Weil das Buch zu lang ist, kaufe ich es nicht",
+      "cue": "Because the book is too long, I'm not buying it"
+    },
+    {
+      "id": "L3-M3-C12",
+      "display": "Obwohl du Recht hast, sehe ich das anders",
+      "cue": "Even though you're right, I see it differently"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

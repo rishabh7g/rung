@@ -107,10 +107,22 @@ for (const item of module_.comprehensionPool) scan(item.display, item.id);
 
 /** A row whose key an earlier module owns resolves to that module's note, not to this one. */
 const reteaches = new Set<string>();
+/**
+ * A key TWO ROWS OF THIS MODULE both open. The en-de L3-M3..M5 wave (#486) found this class the
+ * hard way: `Antworten`, the plural of `die Antwort`, folds to exactly `antworten`, the verb's
+ * infinitive, and one sentence taught both. The fold cannot tell them apart, so the second row is
+ * unreachable — and the re-teach check above could not see it, because `taught` is built from the
+ * modules BEFORE this one. `src/course/types.test.ts` caught it only because en-de asserts one
+ * owner per surface; the other eight courses have no such guard, which is why this reports for all
+ * nine, and why it FAILS rather than merely reporting: unlike a re-teach, no course wants it.
+ */
+const collisions = new Map<string, string>();
+const mine = new Map<string, string>();
 for (const s of module_.sentences) {
   for (const w of s.deconstruction.words) {
     for (const surface of [w.display, ...(w.forms ?? [])]) {
       const key = normalizeSurface(surface);
+      if (key === '') continue;
       const owner = taught.get(key);
       if (owner !== undefined && owner !== module_.id) {
         reteaches.add(
@@ -118,11 +130,21 @@ for (const s of module_.sentences) {
             ' learner is shown — this row is only worth keeping if the sentence needs the word',
         );
       }
+      const row = `${s.id} "${w.display}"`;
+      const first = mine.get(key);
+      if (first === undefined) mine.set(key, row);
+      else if (first !== row) collisions.set(key, `${first} and ${row}`);
     }
   }
 }
 
 for (const r of reteaches) console.log(r);
+for (const [key, where] of collisions) {
+  findings.push(
+    `COLLIDES INSIDE THIS MODULE "${key}": ${where} — the fold cannot tell them apart, so the` +
+      ' second row is unreachable. One row, or two different surfaces.',
+  );
+}
 if (findings.length === 0) {
   const tail = reteaches.size === 0 ? '' : `, ${reteaches.size} re-teach(es) reported above`;
   console.log(`${moduleId}: clean — every shown surface resolves${tail}`);

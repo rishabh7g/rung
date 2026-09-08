@@ -1,0 +1,647 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M4",
+  "title": "If and then",
+  "job": "Conditions, wishes, advice",
+  "prerequisites": [
+    "L3-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "clause-(eu)myeon + clause",
+      "N-i/ga + isseumyeon + V-(eu)seyo",
+      "V-neun + ge + eottaeyo?",
+      "V-(eu)myeon + an + dwaeyo",
+      "V-(eu)myeon + joayo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ONE ENDING COVERS if AND whenever. -(eu)myeon is the whole conditional: Sigan-i isseumyeon gachi gayo is both 'if you have time' and 'whenever you have time', and only what is around it decides which. M3's hoksi may stand in front to mark the doubtful reading, and in speech it is optional."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ENDING PICKS ITS SHAPE FROM THE STEM, NOT FROM THE MEANING. A stem ending in a vowel takes -myeon: gamyeon, omyeon, hamyeon, apeumyeon. A stem ending in a consonant takes -eumyeon: isseumyeon, eopseumyeon, joeumyeon. It is welded on with no hyphen, because in this course a hyphen means a particle and nothing else."
+    },
+    {
+      "tag": "interference",
+      "text": "THE CONDITION COMES FIRST, ALWAYS. English is free to trail it — 'take some medicine if your head hurts' — and Korean is not. The -(eu)myeon clause opens the sentence and the main clause finishes it. There is no shape in which the two are reversed."
+    },
+    {
+      "tag": "delta",
+      "text": "PROHIBITION IS THE CONDITIONAL PLUS L2-M8's an dwaeyo. Neutge gamyeon an dwaeyo is literally 'if you go late, it does not become'. The negation belongs to dwaeyo and never to the condition: an gamyeon dwaeyo would say the opposite — that not going is fine."
+    },
+    {
+      "tag": "delta",
+      "text": "THE WISH IS THE CONDITIONAL PLUS joayo. Nalssi-ga joeumyeon joayo is 'if the weather is good, it is good', and that is how Korean hopes for something. There is no verb for hoping anywhere in it, which is why an English speaker never guesses this shape."
+    },
+    {
+      "tag": "free",
+      "text": "ADVICE IS ASSEMBLED FROM WHAT THE COURSE ALREADY OWNS. -neun ge eottaeyo? is M2's modifier, the noun-maker ge and L2-M6's eottaeyo; direct advice is L2-M1's -(eu)seyo; obligation is L2-M8's -eoya dwaeyo. This module reaches back three times and forward none, and the -(eu)seyo lines chip formal while everything else stays neutral."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT THIS MODULE DOES NOT OPEN. The past counterfactual — if I had gone, I would have seen it — is L4-M3's. -(eu)myeonseo, meaning while, is L4-M6's. Conjecture with -gess- is L3-M6's. And 'let us' is -(eu)psida, which belongs to the -mnida speech level and travels with it to L4-M7: a suggestion here is L2-M6's -(eu)llae-yo or the advice frame, never that."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M4-S01",
+      "display": "Sigan-i isseumyeon gachi gayo.",
+      "script": "시간이 있으면 같이 가요.",
+      "cue": "If you have time, let's go together.",
+      "literal": "time-subject there-is-if together go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "isseumyeon",
+            "script": "있으면",
+            "cue": "if there is · whenever there is",
+            "tag": "delta",
+            "forms": [
+              "isseumyeon"
+            ],
+            "note": "L1-M3's isseoyo with -(eu)myeon. The stem iss- ends in a consonant, so the ending brings its eu along: isseumyeon, never issmyeon."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "ONE ENDING, TWO ENGLISH WORDS. This sentence is 'if you have time' and 'whenever you have time' at once. Korean has nothing to choose between, so a learner looking for the difference is looking for something that is not there.",
+      "sound": "SI-ga-ni I-sseu-myeon GA-chi GA-yo. isseumyeon is said i-sseu-myeon, and gachi is said ga-chi.",
+      "variations": [
+        {
+          "display": "Sigan-i isseumyeon gachi meogeoyo.",
+          "script": "시간이 있으면 같이 먹어요.",
+          "cue": "If you have time, let's eat together.",
+          "changed": "L1-M3's meogeoyo as the main clause"
+        },
+        {
+          "display": "Hoksi sigan-i isseumyeon jeonhwahaseyo.",
+          "script": "혹시 시간이 있으면 전화하세요.",
+          "cue": "If by any chance you have time, give me a call.",
+          "changed": "M3's hoksi in front, which marks the doubtful reading"
+        }
+      ],
+      "mistake": {
+        "display": "Sigan-i isseoyo myeon gachi gayo.",
+        "script": "시간이 있어요 면 같이 가요.",
+        "why": "There is no separate word for 'if'. The ending is welded onto the stem: Sigan-i isseumyeon gachi gayo."
+      },
+      "usage": "Inviting somebody without putting them on the spot.",
+      "register": "neutral",
+      "mnemonic": "if and whenever are one ending."
+    },
+    {
+      "id": "L3-M4-S02",
+      "display": "Bi-ga omyeon jip-eseo swieoyo.",
+      "script": "비가 오면 집에서 쉬어요.",
+      "cue": "Whenever it rains, I rest at home.",
+      "literal": "rain-subject comes-if house-at rest",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "omyeon",
+            "script": "오면",
+            "cue": "if it comes · whenever it comes",
+            "tag": "delta",
+            "forms": [
+              "omyeon"
+            ],
+            "note": "M3's bi-ga wayo built on the stem o-, which ends in a vowel, so the ending is the plain -myeon: omyeon."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "THIS IS THE SAME ENDING AS S01, READ THE OTHER WAY. Nothing in the Korean marks a habit rather than a one-off; the main clause is a habit, so the condition is read as 'whenever'. Put hoksi in front and the same words become 'if'.",
+      "sound": "BI-ga O-myeon JI-be-seo SWI-eo-yo.",
+      "variations": [
+        {
+          "display": "Bi-ga omyeon taeksi-reul tayo.",
+          "script": "비가 오면 택시를 타요.",
+          "cue": "Whenever it rains, I take a taxi.",
+          "changed": "a different habit in the main clause"
+        },
+        {
+          "display": "Bi-ga omyeon jip-e isseoyo.",
+          "script": "비가 오면 집에 있어요.",
+          "cue": "Whenever it rains, I stay at home.",
+          "changed": "L1-M3's isseoyo, with L1-M7's -e for being somewhere"
+        }
+      ],
+      "mistake": {
+        "display": "Bi-neun omyeon jip-eseo swieoyo.",
+        "script": "비는 오면 집에서 쉬어요.",
+        "why": "Rain arriving in the account is news, so it takes -ga: Bi-ga omyeon jip-eseo swieoyo. With -neun it would be the topic of the whole sentence, which M1's law does not allow here."
+      },
+      "usage": "Describing what you usually do in bad weather.",
+      "register": "neutral",
+      "mnemonic": "Same ending, the context reads it."
+    },
+    {
+      "id": "L3-M4-S03",
+      "display": "Hoeui-e neutge gamyeon an dwaeyo.",
+      "script": "회의에 늦게 가면 안 돼요.",
+      "cue": "You mustn't be late for the meeting.",
+      "literal": "meeting-to late go-if not become",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gamyeon",
+            "script": "가면",
+            "cue": "if (you) go",
+            "tag": "delta",
+            "forms": [
+              "gamyeon"
+            ],
+            "note": "L1-M4's gayo with -myeon. The stem ga- ends in a vowel, so no eu is added — the same reason omyeon and hamyeon look the way they do."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "KOREAN FORBIDS BY SAYING IT DOES NOT BECOME. There is no word for 'must not' here at all: the prohibition is this module's condition plus L2-M8's an dwaeyo, assembled out of two things you already have.",
+      "sound": "HOE-ui-e NEUT-ge GA-myeon an DWAE-yo. neutge is said neut-kke.",
+      "variations": [
+        {
+          "display": "Hakgyo-e neutge gamyeon an dwaeyo.",
+          "script": "학교에 늦게 가면 안 돼요.",
+          "cue": "You mustn't be late for school.",
+          "changed": "school rather than the meeting"
+        },
+        {
+          "display": "Neutge gamyeon an dwaeyo.",
+          "script": "늦게 가면 안 돼요.",
+          "cue": "You mustn't go late.",
+          "changed": "no place named at all — the bare prohibition"
+        }
+      ],
+      "mistake": {
+        "display": "Hoeui-e neutge an gamyeon dwaeyo.",
+        "script": "회의에 늦게 안 가면 돼요.",
+        "why": "The negation belongs to dwaeyo, not to the condition. As written this says the opposite — that not going late is fine. Hoeui-e neutge gamyeon an dwaeyo."
+      },
+      "usage": "Telling a colleague what the rule is.",
+      "register": "neutral",
+      "mnemonic": "Condition, then an dwaeyo."
+    },
+    {
+      "id": "L3-M4-S04",
+      "display": "Hakgyo-eseo jeonhwa-reul hamyeon an dwaeyo.",
+      "script": "학교에서 전화를 하면 안 돼요.",
+      "cue": "You mustn't make phone calls at school.",
+      "literal": "school-at telephone-object do-if not become",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hamyeon",
+            "script": "하면",
+            "cue": "if (you) do",
+            "tag": "delta",
+            "forms": [
+              "hamyeon"
+            ],
+            "note": "L1-M4's haeyo with -myeon, on the stem ha-. Every -hada verb builds its condition this way, so gongbuhamyeon and jeonhwahamyeon come free with it."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "THE eu IS NOT A CHOICE. A stem ending in a vowel takes -myeon and a stem ending in a consonant takes -eumyeon. haeumyeon is not a milder or more careful version of hamyeon; it is not a shape the language has.",
+      "sound": "HAK-gyo-e-seo JEON-hwa-reul HA-myeon an DWAE-yo.",
+      "variations": [
+        {
+          "display": "Yeogi-eseo jeonhwa-reul hamyeon an dwaeyo.",
+          "script": "여기에서 전화를 하면 안 돼요.",
+          "cue": "You mustn't make phone calls here.",
+          "changed": "L2-M1's yeogi-eseo, so the rule is about this room"
+        },
+        {
+          "display": "Jip-eseo hamyeon dwaeyo.",
+          "script": "집에서 하면 돼요.",
+          "cue": "It's fine if you do it at home.",
+          "changed": "dwaeyo without the an — permission instead of prohibition"
+        }
+      ],
+      "mistake": {
+        "display": "Hakgyo-eseo jeonhwa-reul haeumyeon an dwaeyo.",
+        "script": "학교에서 전화를 해으면 안 돼요.",
+        "why": "The stem ha- ends in a vowel, so it takes the plain -myeon: Hakgyo-eseo jeonhwa-reul hamyeon an dwaeyo."
+      },
+      "usage": "Saying what is not allowed somewhere.",
+      "register": "neutral",
+      "mnemonic": "Vowel stem, plain -myeon."
+    },
+    {
+      "id": "L3-M4-S05",
+      "display": "Byeongwon-e ganeun ge eottaeyo?",
+      "script": "병원에 가는 게 어때요?",
+      "cue": "How about going to the hospital?",
+      "literal": "hospital-to going thing how-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ganeun",
+            "script": "가는",
+            "cue": "that (one) goes · going",
+            "tag": "free",
+            "forms": [
+              "ganeun"
+            ],
+            "note": "L1-M4's gayo wearing M2's present modifier -neun. Nothing new is opened here; the modifier is doing exactly what ilhaneun and haneun already did."
+          },
+          {
+            "display": "ge",
+            "script": "게",
+            "cue": "the thing of — turns a clause into a noun",
+            "tag": "delta",
+            "forms": [
+              "ge"
+            ],
+            "note": "It follows a modifier and makes the whole clause into a thing, which eottaeyo can then ask about. A finished -yo verb can never stand in front of it."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "ADVICE IN KOREAN ASKS ABOUT A THING. English asks about an action — 'how about going' — and Korean builds the going into a noun with ge first, then asks how that thing is. The modifier ending is what makes the noun possible.",
+      "sound": "BYEONG-wo-ne GA-neun ge eo-TTAE-yo?",
+      "variations": [
+        {
+          "display": "Naeil byeongwon-e ganeun ge eottaeyo?",
+          "script": "내일 병원에 가는 게 어때요?",
+          "cue": "How about going to the hospital tomorrow?",
+          "changed": "a day added in front of the clause"
+        },
+        {
+          "display": "Byeongwon-e ganeun ge joayo.",
+          "script": "병원에 가는 게 좋아요.",
+          "cue": "Going to the hospital is the good option.",
+          "changed": "joayo instead of the question — advice stated rather than offered"
+        }
+      ],
+      "mistake": {
+        "display": "Byeongwon-e gayo ge eottaeyo?",
+        "script": "병원에 가요 게 어때요?",
+        "why": "ge follows the MODIFIER, exactly as M3's geot gatayo does: Byeongwon-e ganeun ge eottaeyo?"
+      },
+      "usage": "Suggesting something to a friend who is unwell.",
+      "register": "neutral",
+      "mnemonic": "Modifier, ge, eottaeyo."
+    },
+    {
+      "id": "L3-M4-S06",
+      "display": "Meori-ga apeumyeon yak-eul deuseyo.",
+      "script": "머리가 아프면 약을 드세요.",
+      "cue": "If your head hurts, take some medicine.",
+      "literal": "head-subject hurts-if medicine-object take",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "apeumyeon",
+            "script": "아프면",
+            "cue": "if (it) hurts",
+            "tag": "delta",
+            "forms": [
+              "apeumyeon"
+            ],
+            "note": "L2-M8's apayo with -myeon. The stem is apeu-, which ends in a vowel, so the eu here is the stem's own and not the ending's."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "THE CONDITION CANNOT TRAIL. English says 'take some medicine if your head hurts' just as happily as the other order; Korean has only the one order, with the condition opening the sentence.",
+      "sound": "MEO-ri-ga A-peu-myeon YA-geul DEU-se-yo. yak-eul is said ya-geul.",
+      "variations": [
+        {
+          "display": "Bae-ga apeumyeon byeongwon-e gaseyo.",
+          "script": "배가 아프면 병원에 가세요.",
+          "cue": "If your stomach hurts, go to the hospital.",
+          "changed": "L2-M5's bae, and L2-M4's gaseyo as the advice"
+        },
+        {
+          "display": "Meori-ga apeumyeon jip-eseo swieoyo.",
+          "script": "머리가 아프면 집에서 쉬어요.",
+          "cue": "If your head hurts, rest at home.",
+          "changed": "a plain -yo main clause instead of the honorific one"
+        }
+      ],
+      "mistake": {
+        "display": "Yak-eul deuseyo meori-ga apeumyeon.",
+        "script": "약을 드세요 머리가 아프면.",
+        "why": "The condition opens the sentence: Meori-ga apeumyeon yak-eul deuseyo. Korean never trails it after the main clause."
+      },
+      "usage": "Advising somebody older or senior who is unwell.",
+      "register": "formal",
+      "mnemonic": "Condition first, advice second."
+    },
+    {
+      "id": "L3-M4-S07",
+      "display": "Sigan-i eopseumyeon jigeum gaya dwaeyo.",
+      "script": "시간이 없으면 지금 가야 돼요.",
+      "cue": "If there's no time, we have to go now.",
+      "literal": "time-subject there-is-not-if now go-must become",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eopseumyeon",
+            "script": "없으면",
+            "cue": "if there is not",
+            "tag": "delta",
+            "forms": [
+              "eopseumyeon"
+            ],
+            "note": "L1-M3's eopseoyo with -(eu)myeon. The stem eops- ends in a consonant, so it takes the eu shape, exactly as isseumyeon does."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "THE OBLIGATION IS NOT NEW. gaya dwaeyo is L2-M8's, unchanged and unhyphenated; all this module adds is a condition in front of it. Korean did not grow a second way to say 'have to' for conditional sentences.",
+      "sound": "SI-ga-ni EOP-seu-myeon JI-geum GA-ya DWAE-yo. eopseumyeon is said eop-sseu-myeon.",
+      "variations": [
+        {
+          "display": "Sigan-i eopseumyeon taeksi-reul taseyo.",
+          "script": "시간이 없으면 택시를 타세요.",
+          "cue": "If there's no time, take a taxi.",
+          "changed": "advice instead of obligation"
+        },
+        {
+          "display": "Sigan-i isseumyeon jip-eseo swieoyo.",
+          "script": "시간이 있으면 집에서 쉬어요.",
+          "cue": "If there's time, rest at home.",
+          "changed": "the positive condition, on the same noun"
+        }
+      ],
+      "mistake": {
+        "display": "Sigan-i eopseumyeon jigeum ga dwaeyo.",
+        "script": "시간이 없으면 지금 가 돼요.",
+        "why": "The -eoya is not optional: Sigan-i eopseumyeon jigeum gaya dwaeyo."
+      },
+      "usage": "Deciding out loud when the clock has run down.",
+      "register": "neutral",
+      "mnemonic": "Condition plus gaya dwaeyo."
+    },
+    {
+      "id": "L3-M4-S08",
+      "display": "Sigan-i eopseoyo? Geureomyeon taeksi-reul taseyo.",
+      "script": "시간이 없어요? 그러면 택시를 타세요.",
+      "cue": "You don't have time? Then take a taxi.",
+      "literal": "time-subject there-is-not? if-that-is-so taxi-object ride",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geureomyeon",
+            "script": "그러면",
+            "cue": "then · in that case",
+            "tag": "delta",
+            "forms": [
+              "geureomyeon"
+            ],
+            "note": "The same stem as M3's geureoke, wearing this module's -myeon: literally 'if that is so'. It is the one place the conditional stands alone as a whole word."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "KOREAN'S 'THEN' IS A CONDITIONAL. geureomyeon is not a sequencing word like L2-M10's geu daeum-e — it takes what the other person just said and makes it the condition of what you are about to say.",
+      "sound": "SI-ga-ni EOP-seo-yo? geu-REO-myeon TAEK-si-reul TA-se-yo.",
+      "variations": [
+        {
+          "display": "Sigan-i isseoyo? Geureomyeon gachi gayo.",
+          "script": "시간이 있어요? 그러면 같이 가요.",
+          "cue": "You have time? Then let's go together.",
+          "changed": "the opposite answer, and an invitation after it"
+        },
+        {
+          "display": "Geureomyeon naeil gallae-yo?",
+          "script": "그러면 내일 갈래요?",
+          "cue": "Then shall we go tomorrow?",
+          "changed": "L2-M6's -(eu)llae-yo, which is this course's way of suggesting"
+        }
+      ],
+      "mistake": {
+        "display": "Sigan-i eopseoyo? Geureoke taeksi-reul taseyo.",
+        "script": "시간이 없어요? 그렇게 택시를 타세요.",
+        "why": "geureoke is 'that way' and says how something is done. 'Then' is the conditional: Geureomyeon taeksi-reul taseyo."
+      },
+      "usage": "Reacting to what somebody has just told you.",
+      "register": "formal",
+      "mnemonic": "then is if-that-is-so."
+    },
+    {
+      "id": "L3-M4-S09",
+      "display": "Naeil nalssi-ga joeumyeon jeongmal joayo.",
+      "script": "내일 날씨가 좋으면 정말 좋아요.",
+      "cue": "I really hope the weather is good tomorrow.",
+      "literal": "tomorrow weather-subject good-if really is-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nalssi",
+            "script": "날씨",
+            "cue": "weather",
+            "tag": "free",
+            "forms": [
+              "nalssi",
+              "nalssi-ga"
+            ],
+            "note": "The weather. It is what M3's bi arrives in, and it takes -ga here because it is the subject of the condition rather than the topic of the sentence."
+          },
+          {
+            "display": "joeumyeon",
+            "script": "좋으면",
+            "cue": "if (it) is good",
+            "tag": "delta",
+            "forms": [
+              "joeumyeon"
+            ],
+            "note": "L1-M9's joayo with -(eu)myeon. The stem joh- ends in a consonant, so the eu shape is used and the h is not heard: jo-eu-myeon."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "KOREAN HOPES BY SAYING 'IF X, GOOD'. There is no verb for hoping in this sentence. English needs one and puts it first; Korean builds the wish out of the condition it already has, with joayo closing it.",
+      "sound": "NAE-il NAL-ssi-ga JO-eu-myeon JEONG-mal JO-a-yo.",
+      "variations": [
+        {
+          "display": "Bi-ga an omyeon joayo.",
+          "script": "비가 안 오면 좋아요.",
+          "cue": "I hope it doesn't rain.",
+          "changed": "L1-M3's short an inside the condition"
+        },
+        {
+          "display": "Naeil nalssi-ga joeumyeon gachi gayo.",
+          "script": "내일 날씨가 좋으면 같이 가요.",
+          "cue": "If the weather is good tomorrow, let's go together.",
+          "changed": "an ordinary condition instead of the wish"
+        }
+      ],
+      "mistake": {
+        "display": "Naeil nalssi-ga joayo joayo.",
+        "script": "내일 날씨가 좋아요 좋아요.",
+        "why": "The wish is built on the CONDITIONAL: Naeil nalssi-ga joeumyeon jeongmal joayo. A finished verb cannot stand in the condition slot."
+      },
+      "usage": "Saying what you are hoping for, without asking for it.",
+      "register": "neutral",
+      "mnemonic": "If it is good, it is good."
+    },
+    {
+      "id": "L3-M4-S10",
+      "display": "Maeil undonghaneun ge eottaeyo? Geureomyeon jeongmal joayo.",
+      "script": "매일 운동하는 게 어때요? 그러면 정말 좋아요.",
+      "cue": "How about exercising every day? Then it's really good.",
+      "literal": "every-day exercising thing how-is? if-that-is-so really is-good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "undonghaneun",
+            "script": "운동하는",
+            "cue": "that (one) exercises · exercising",
+            "tag": "free",
+            "forms": [
+              "undonghaneun"
+            ],
+            "note": "M1's undonghaeyo wearing M2's present modifier. Every -hada verb builds it the same way, which is why ge can be hung on any of them."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "'LET'S' IS NOT AVAILABLE HERE. The ending an English speaker reaches for is -(eu)psida, and it belongs to the formal speech level this course does not speak. Korean offers the idea as a question instead, and that is what -neun ge eottaeyo? is for.",
+      "sound": "MAE-il un-dong-HA-neun ge eo-TTAE-yo? geu-REO-myeon JEONG-mal JO-a-yo.",
+      "variations": [
+        {
+          "display": "Maeil undonghaneun ge eottaeyo?",
+          "script": "매일 운동하는 게 어때요?",
+          "cue": "How about exercising every day?",
+          "changed": "the advice on its own, with nothing after it"
+        },
+        {
+          "display": "Jaju undonghaneun ge joayo.",
+          "script": "자주 운동하는 게 좋아요.",
+          "cue": "Exercising often is the good option.",
+          "changed": "M1's jaju, and the advice stated rather than offered"
+        }
+      ],
+      "mistake": {
+        "display": "Maeil undonghapsida.",
+        "script": "매일 운동합시다.",
+        "why": "-(eu)psida belongs to the formal speech level, which this course does not teach. The suggestion is Maeil undonghaneun ge eottaeyo?"
+      },
+      "usage": "Offering somebody a change of habit without pushing it.",
+      "register": "neutral",
+      "mnemonic": "Offer it as a question."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M4-C01",
+      "display": "Sigan-i isseumyeon gachi gayo.",
+      "script": "시간이 있으면 같이 가요.",
+      "cue": "If you have time, let's go together."
+    },
+    {
+      "id": "L3-M4-C02",
+      "display": "Bi-ga omyeon jip-eseo swieoyo.",
+      "script": "비가 오면 집에서 쉬어요.",
+      "cue": "Whenever it rains, I rest at home."
+    },
+    {
+      "id": "L3-M4-C03",
+      "display": "Hoeui-e neutge gamyeon an dwaeyo.",
+      "script": "회의에 늦게 가면 안 돼요.",
+      "cue": "You mustn't be late for the meeting."
+    },
+    {
+      "id": "L3-M4-C04",
+      "display": "Hakgyo-eseo jeonhwa-reul hamyeon an dwaeyo.",
+      "script": "학교에서 전화를 하면 안 돼요.",
+      "cue": "You mustn't make phone calls at school."
+    },
+    {
+      "id": "L3-M4-C05",
+      "display": "Byeongwon-e ganeun ge eottaeyo?",
+      "script": "병원에 가는 게 어때요?",
+      "cue": "How about going to the hospital?"
+    },
+    {
+      "id": "L3-M4-C06",
+      "display": "Meori-ga apeumyeon yak-eul deuseyo.",
+      "script": "머리가 아프면 약을 드세요.",
+      "cue": "If your head hurts, take some medicine."
+    },
+    {
+      "id": "L3-M4-C07",
+      "display": "Sigan-i eopseumyeon jigeum gaya dwaeyo.",
+      "script": "시간이 없으면 지금 가야 돼요.",
+      "cue": "If there's no time, we have to go now."
+    },
+    {
+      "id": "L3-M4-C08",
+      "display": "Sigan-i eopseoyo? Geureomyeon taeksi-reul taseyo.",
+      "script": "시간이 없어요? 그러면 택시를 타세요.",
+      "cue": "You don't have time? Then take a taxi."
+    },
+    {
+      "id": "L3-M4-C09",
+      "display": "Naeil nalssi-ga joeumyeon jeongmal joayo.",
+      "script": "내일 날씨가 좋으면 정말 좋아요.",
+      "cue": "I really hope the weather is good tomorrow."
+    },
+    {
+      "id": "L3-M4-C10",
+      "display": "Maeil undonghaneun ge eottaeyo?",
+      "script": "매일 운동하는 게 어때요?",
+      "cue": "How about exercising every day?"
+    },
+    {
+      "id": "L3-M4-C11",
+      "display": "Bae-ga apeumyeon byeongwon-e gaseyo.",
+      "script": "배가 아프면 병원에 가세요.",
+      "cue": "If your stomach hurts, go to the hospital."
+    },
+    {
+      "id": "L3-M4-C12",
+      "display": "Bi-ga an omyeon joayo.",
+      "script": "비가 안 오면 좋아요.",
+      "cue": "I hope it doesn't rain."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

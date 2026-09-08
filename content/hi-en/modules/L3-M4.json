@@ -1,0 +1,644 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M4",
+  "title": "If and then",
+  "job": "Conditions, wishes, advice",
+  "prerequisites": [
+    "L3-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present_simple",
+      "simple_future",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "If + <present> + , + <will + V>",
+      "If + <past> + , + <would + V>",
+      "Unless + <present> + , + <clause>",
+      "If I were you + , + I would + V",
+      "You should + V  /  You could + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "if के आधे वाक्य में will कभी नहीं आता. शर्त सादे वर्तमान में रहती है और भविष्य दूसरे आधे में — If it rains, I will stay at home. हिंदी दोनों आधों में आगे का वक़्त दिखाती है (अगर बारिश होगी तो मैं घर पर रहूँगा), इसलिए *If it will rain सही हिंदी की सीधी नक़ल है और भारतीय अंग्रेज़ी की सबसे आम शर्त वाली ग़लती. एक ही नियम, और यह पूरे पाठ से भारी है."
+    },
+    {
+      "tag": "delta",
+      "text": "दो ही शर्तें यहाँ हैं. पहली सच्ची है — if + सादा वर्तमान, फिर will: If you come early, we will eat together. दूसरी अभी-की-कल्पना है — if + बीता रूप, फिर would: If I had time, I would come. बीता रूप यहाँ बीते वक़्त की बात नहीं कर रहा, बस कल्पना का निशान है. यही would L2-M5 वाला would like है, दूसरी नौकरी पर. तीसरी शर्त (if I had known, I would have come) L4-M3 की है और यहाँ नहीं आती."
+    },
+    {
+      "tag": "interference",
+      "text": "unless का मतलब ही if + not है: Unless you leave early = अगर तुम जल्दी नहीं निकले तो. इसलिए उसके साथ दूसरा नकार नहीं आता — *unless you don't leave मतलब उलट देता है. हिंदी का जब तक … नहीं नकार को साथ रखता है, और ठीक वहीं यह जाल बिछता है."
+    },
+    {
+      "tag": "delta",
+      "text": "सलाह के लिए तीन तैयार साँचे हैं. If I were you, I would … जमा हुआ टुकड़ा है — I के साथ were अंग्रेज़ी में सिर्फ़ यहीं बचा है, और इसे नियम बनाकर समझाना फ़ायदे से महँगा पड़ता है. You should … (L2-M8) साधारण सलाह है और had better उससे सख़्त — उसमें चेतावनी है कि न मानो तो नुक़सान होगा."
+    },
+    {
+      "tag": "free",
+      "text": "if वाला आधा पहले भी आ सकता है और बाद में भी, हिंदी की तरह ही. पहले आए तो बीच में कौमा लगता है — If you call me, I will answer — और बाद में आए तो कौमा नहीं: I will answer if you call me. इसमें कुछ नया सीखना नहीं है, बस लिखते वक़्त कौमा याद रखना है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M4-S01",
+      "display": "If it rains, I will stay at home.",
+      "cue": "अगर बारिश हुई तो मैं घर पर रहूँगा.",
+      "literal": "अगर यह बरसता, मैं रहूँगा ठहर पर घर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "if",
+            "cue": "अगर · तो",
+            "tag": "interference",
+            "forms": [
+              "if"
+            ],
+            "note": "शर्त वाले अपने आधे में will कभी नहीं लेता: If it rains, न कि *If it will rain. हाँ-ना वाला सवाल सुनाने में यही if whether का काम करता है."
+          },
+          {
+            "display": "rain",
+            "cue": "बारिश · बारिश होना",
+            "tag": "delta",
+            "forms": [
+              "rain",
+              "rains"
+            ],
+            "note": "मौसम की बात it से शुरू होती है — It rains, It is raining. हिंदी की तरह बारिश अकेली कर्ता नहीं बनती."
+          },
+          {
+            "display": "stay",
+            "cue": "रहना · ठहरना",
+            "tag": "free",
+            "forms": [
+              "stay",
+              "stays",
+              "stayed"
+            ],
+            "note": "जगह पर बने रहना: stay at home, stay here. रहने-सहने वाला रहना नहीं, वह live है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "हिंदी दोनों आधों में आगे का वक़्त दिखाती है — बारिश होगी … रहूँगा. अंग्रेज़ी सिर्फ़ दूसरे आधे में दिखाती है.",
+      "sound": "rains में s ज़ का सा बोला जाता है — रेन्ज़.",
+      "variations": [
+        {
+          "display": "If it rains, we will stay at home.",
+          "cue": "अगर बारिश हुई तो हम घर पर रहेंगे.",
+          "changed": "दूसरा कर्ता"
+        },
+        {
+          "display": "I will stay at home if it rains.",
+          "cue": "अगर बारिश हुई तो मैं घर पर रहूँगा.",
+          "changed": "if वाला आधा बाद में, कौमा हटा"
+        },
+        {
+          "display": "If it rains, I will not go to the market.",
+          "cue": "अगर बारिश हुई तो मैं बाज़ार नहीं जाऊँगा.",
+          "changed": "दूसरे आधे में नकार"
+        }
+      ],
+      "mistake": {
+        "display": "If it will rain, I will stay at home",
+        "why": "if के आधे में will नहीं आता: If it rains, I will stay at home."
+      },
+      "usage": "मौसम देखकर दिन का इरादा बताना.",
+      "register": "neutral",
+      "mnemonic": "if के आधे में will नहीं."
+    },
+    {
+      "id": "L3-M4-S02",
+      "display": "If you come early, we will eat together.",
+      "cue": "अगर तुम जल्दी आए तो हम साथ खाएँगे.",
+      "literal": "अगर तुम आते जल्दी, हम खाएँगे साथ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "together",
+            "cue": "साथ · मिलकर",
+            "tag": "free",
+            "forms": [
+              "together"
+            ],
+            "note": "क्रिया के बाद आता है और अकेला खड़ा रहता है: we will eat together. इसके आगे with नहीं लगता."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "आने की बात आगे की है, फिर भी come सादा ही रहता है. आगे का वक़्त सिर्फ़ will eat में दिखता है.",
+      "sound": "together पर ज़ोर बीच वाले हिस्से पर है — टुगेदर.",
+      "variations": [
+        {
+          "display": "If you come early, we will eat at home.",
+          "cue": "अगर तुम जल्दी आए तो हम घर पर खाएँगे.",
+          "changed": "दूसरी जगह"
+        },
+        {
+          "display": "We will eat together if you come early.",
+          "cue": "अगर तुम जल्दी आए तो हम साथ खाएँगे.",
+          "changed": "if वाला आधा बाद में"
+        },
+        {
+          "display": "If they come early, we will eat together.",
+          "cue": "अगर वे जल्दी आए तो हम साथ खाएँगे.",
+          "changed": "दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "If you will come early, we will eat together",
+        "why": "if के आधे में will नहीं आता: If you come early, we will eat together."
+      },
+      "usage": "किसी को जल्दी बुलाने के लिए वजह देना.",
+      "register": "informal",
+      "mnemonic": "शर्त सादी, नतीजा will वाला."
+    },
+    {
+      "id": "L3-M4-S03",
+      "display": "Unless you leave early, you will miss the train.",
+      "cue": "जब तक तुम जल्दी नहीं निकले, गाड़ी छूट जाएगी.",
+      "literal": "जब-तक-नहीं तुम निकलते जल्दी, तुम चूकोगे वह गाड़ी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "unless",
+            "cue": "जब तक … नहीं · अगर … नहीं",
+            "tag": "interference",
+            "forms": [
+              "unless"
+            ],
+            "note": "इसी में नकार छिपा है — unless you leave = अगर तुम नहीं निकले. इसलिए साथ में दूसरा नकार नहीं आता."
+          },
+          {
+            "display": "miss",
+            "cue": "छूट जाना · चूकना",
+            "tag": "delta",
+            "forms": [
+              "miss",
+              "misses",
+              "missed"
+            ],
+            "note": "गाड़ी, बस या वक़्त के लिए: you will miss the train. हिंदी में गाड़ी छूटती है, अंग्रेज़ी में आदमी चूकता है."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "जब तक … नहीं की नक़ल में unless के साथ नकार जोड़ देना मतलब उलट देता है. *Unless you don't leave early ग़लत है.",
+      "sound": "unless पर ज़ोर दूसरे हिस्से पर है — अन्लेस.",
+      "variations": [
+        {
+          "display": "Unless you leave early, you will miss the bus.",
+          "cue": "जब तक तुम जल्दी नहीं निकले, बस छूट जाएगी.",
+          "changed": "दूसरी सवारी"
+        },
+        {
+          "display": "If you don't leave early, you will miss the train.",
+          "cue": "अगर तुम जल्दी नहीं निकले तो गाड़ी छूट जाएगी.",
+          "changed": "unless की जगह if … not"
+        },
+        {
+          "display": "You will miss the train unless you leave early.",
+          "cue": "जब तक तुम जल्दी नहीं निकले, गाड़ी छूट जाएगी.",
+          "changed": "unless वाला आधा बाद में"
+        }
+      ],
+      "mistake": {
+        "display": "Unless you don't leave early, you will miss the train",
+        "why": "unless में नकार पहले से है: Unless you leave early, you will miss the train."
+      },
+      "usage": "किसी को जल्दी निकलने के लिए चेताना.",
+      "register": "neutral",
+      "mnemonic": "unless में नहीं पहले से बैठा है."
+    },
+    {
+      "id": "L3-M4-S04",
+      "display": "If I had time, I would come.",
+      "cue": "अगर मेरे पास वक़्त होता तो मैं आता.",
+      "literal": "अगर मैं रखता वक़्त, मैं आता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "time",
+            "cue": "वक़्त · समय",
+            "tag": "delta",
+            "forms": [
+              "time"
+            ],
+            "note": "गिना नहीं जाता, इसलिए a नहीं आता: I have time, I don't have time. होना नहीं, रखना — हिंदी का मेरे पास वक़्त है यहाँ have बनता है."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "had यहाँ बीते वक़्त की बात नहीं कर रहा. वह सिर्फ़ बता रहा है कि बात अभी की कल्पना है, सच्चाई नहीं.",
+      "sound": "would में l चुप है — वुड, वोल्ड नहीं.",
+      "variations": [
+        {
+          "display": "If I had time, I would help you.",
+          "cue": "अगर मेरे पास वक़्त होता तो मैं तुम्हारी मदद करता.",
+          "changed": "दूसरा नतीजा"
+        },
+        {
+          "display": "If I had more money, I would buy a car.",
+          "cue": "अगर मेरे पास ज़्यादा पैसे होते तो मैं गाड़ी ख़रीदता.",
+          "changed": "दूसरी कल्पना"
+        },
+        {
+          "display": "I would come if I had time.",
+          "cue": "अगर मेरे पास वक़्त होता तो मैं आता.",
+          "changed": "if वाला आधा बाद में"
+        }
+      ],
+      "mistake": {
+        "display": "If I would have time, I would come",
+        "why": "if के आधे में would भी नहीं आता: If I had time, I would come."
+      },
+      "usage": "न आ पाने का नरम बहाना देना.",
+      "register": "neutral",
+      "mnemonic": "कल्पना में had, नतीजे में would."
+    },
+    {
+      "id": "L3-M4-S05",
+      "display": "If I were you, I would call the manager.",
+      "cue": "मैं तुम्हारी जगह होता तो मैनेजर को फ़ोन करता.",
+      "literal": "अगर मैं होता तुम, मैं फ़ोन-करता वह मैनेजर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "if I were you",
+            "cue": "मैं तुम्हारी जगह होता तो",
+            "tag": "delta",
+            "forms": [
+              "if I were you"
+            ],
+            "note": "चारों शब्द जमे हुए हैं. I के साथ was नहीं, were — अंग्रेज़ी में यह जोड़ी सिर्फ़ यहीं बची है, इसलिए इसे टुकड़े में याद रखिए."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "I के साथ हर जगह was आता है, पर यहाँ नहीं. *If I was you बोलचाल में सुनाई देता है और सलाह वाले साँचे में were ही सही है.",
+      "sound": "were छोटा और दबा हुआ है — वर, वियर नहीं.",
+      "variations": [
+        {
+          "display": "If I were you, I would not wait.",
+          "cue": "मैं तुम्हारी जगह होता तो इंतज़ार नहीं करता.",
+          "changed": "नतीजे में नकार"
+        },
+        {
+          "display": "If I were you, I would take the train.",
+          "cue": "मैं तुम्हारी जगह होता तो गाड़ी से जाता.",
+          "changed": "दूसरी सलाह"
+        },
+        {
+          "display": "If I were you, I would call the doctor.",
+          "cue": "मैं तुम्हारी जगह होता तो डॉक्टर को फ़ोन करता.",
+          "changed": "दूसरा आदमी"
+        }
+      ],
+      "mistake": {
+        "display": "If I am you, I would call the manager",
+        "why": "यह साँचा जमा हुआ है: If I were you, I would call the manager."
+      },
+      "usage": "किसी को सलाह देना, बिना हुक्म चलाए.",
+      "register": "neutral",
+      "mnemonic": "सलाह में were, हमेशा."
+    },
+    {
+      "id": "L3-M4-S06",
+      "display": "You had better leave early.",
+      "cue": "तुम जल्दी निकल जाओ तो अच्छा है.",
+      "literal": "तुम रखते बेहतर निकलना जल्दी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "had better",
+            "cue": "… ही अच्छा है · वरना मुश्किल होगी",
+            "tag": "delta",
+            "forms": [
+              "had better"
+            ],
+            "note": "दोनों शब्द साथ चलते हैं और आगे सादी क्रिया आती है — had better leave, न कि had better to leave. should से सख़्त है."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "had यहाँ भी बीते वक़्त का नहीं है. यह जमा हुआ टुकड़ा है और आगे to नहीं लेता.",
+      "sound": "बोलचाल में had दब जाता है — यू'ड बेटर.",
+      "variations": [
+        {
+          "display": "You had better take the train.",
+          "cue": "तुम गाड़ी से चले जाओ तो अच्छा है.",
+          "changed": "दूसरी सलाह"
+        },
+        {
+          "display": "You should leave early.",
+          "cue": "तुम्हें जल्दी निकलना चाहिए.",
+          "changed": "नरम सलाह, बिना चेतावनी"
+        },
+        {
+          "display": "We had better go home.",
+          "cue": "हम घर चले जाएँ तो अच्छा है.",
+          "changed": "दूसरा कर्ता"
+        }
+      ],
+      "mistake": {
+        "display": "You had better to leave early",
+        "why": "had better के बाद सादी क्रिया आती है: You had better leave early."
+      },
+      "usage": "किसी को चेतावनी वाली सलाह देना — देर हुई तो नुक़सान है.",
+      "register": "informal",
+      "mnemonic": "had better के बाद to नहीं."
+    },
+    {
+      "id": "L3-M4-S07",
+      "display": "Don't worry. If you leave early, you will get the train.",
+      "cue": "फ़िक्र मत करो. अगर तुम जल्दी निकले तो गाड़ी मिल जाएगी.",
+      "literal": "मत फ़िक्र-करो. अगर तुम निकलते जल्दी, तुम पाओगे वह गाड़ी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "worry",
+            "cue": "फ़िक्र करना",
+            "tag": "delta",
+            "forms": [
+              "worry",
+              "worries"
+            ],
+            "note": "क्रिया है: Don't worry, I worry about my brother. फ़िक्र होना नहीं, फ़िक्र करना — इसलिए am worry कहीं नहीं."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Don't worry पूरा वाक्य है और इसमें कर्ता नहीं दिखता. हुक्म वाले वाक्य में you छिपा रहता है.",
+      "sound": "worry में o अ की तरह — वरी, वॉरी नहीं.",
+      "variations": [
+        {
+          "display": "Don't worry. If you leave early, you will get the bus.",
+          "cue": "फ़िक्र मत करो. अगर तुम जल्दी निकले तो बस मिल जाएगी.",
+          "changed": "दूसरी सवारी"
+        },
+        {
+          "display": "Don't worry. I will call you tomorrow.",
+          "cue": "फ़िक्र मत करो. मैं तुम्हें कल फ़ोन करूँगा.",
+          "changed": "बिना शर्त वाला भरोसा"
+        },
+        {
+          "display": "If you leave early, you will get the train.",
+          "cue": "अगर तुम जल्दी निकले तो गाड़ी मिल जाएगी.",
+          "changed": "सिर्फ़ शर्त वाला आधा"
+        }
+      ],
+      "mistake": {
+        "display": "Don't worry. If you will leave early, you will get the train",
+        "why": "if के आधे में will नहीं आता: If you leave early, you will get the train."
+      },
+      "usage": "किसी को तसल्ली देना और साथ में रास्ता भी बताना.",
+      "register": "informal",
+      "mnemonic": "फ़िक्र की जाती है, होती नहीं."
+    },
+    {
+      "id": "L3-M4-S08",
+      "display": "If you don't hurry, you will miss the bus.",
+      "cue": "अगर तुमने जल्दी नहीं की तो बस छूट जाएगी.",
+      "literal": "अगर तुम नहीं जल्दी-करते, तुम चूकोगे वह बस.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hurry",
+            "cue": "जल्दी करना",
+            "tag": "delta",
+            "forms": [
+              "hurry",
+              "hurries"
+            ],
+            "note": "क्रिया है, इसलिए नकार do not लेता है: If you don't hurry. जल्दी वाला early अलग शब्द है — वह वक़्त बताता है."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "यही बात unless से भी कही जा सकती है — Unless you hurry, you will miss the bus — पर दोनों में से नकार एक ही जगह रहेगा.",
+      "sound": "hurry में u अ की तरह — हरी, ह्यूरी नहीं.",
+      "variations": [
+        {
+          "display": "Unless you hurry, you will miss the bus.",
+          "cue": "जब तक तुमने जल्दी नहीं की, बस छूट जाएगी.",
+          "changed": "if … not की जगह unless"
+        },
+        {
+          "display": "If you don't hurry, you will miss the train.",
+          "cue": "अगर तुमने जल्दी नहीं की तो गाड़ी छूट जाएगी.",
+          "changed": "दूसरी सवारी"
+        },
+        {
+          "display": "If we don't hurry, we will miss the film.",
+          "cue": "अगर हमने जल्दी नहीं की तो फ़िल्म छूट जाएगी.",
+          "changed": "दूसरा कर्ता और दूसरा नतीजा"
+        }
+      ],
+      "mistake": {
+        "display": "Unless you don't hurry, you will miss the bus",
+        "why": "एक ही जगह नकार: If you don't hurry … या Unless you hurry …"
+      },
+      "usage": "घर से निकलते वक़्त किसी को हड़काना.",
+      "register": "informal",
+      "mnemonic": "नकार if के साथ, unless के साथ नहीं."
+    },
+    {
+      "id": "L3-M4-S09",
+      "display": "If you study every day, you will pass the exam.",
+      "cue": "अगर तुम रोज़ पढ़ोगे तो इम्तिहान निकल जाएगा.",
+      "literal": "अगर तुम पढ़ते हर रोज़, तुम पार-करोगे वह इम्तिहान.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "exam",
+            "cue": "इम्तिहान · परीक्षा",
+            "tag": "free",
+            "forms": [
+              "exam",
+              "exams"
+            ],
+            "note": "गिना जाता है, इसलिए the या an ज़रूरी: pass the exam, take an exam. देना नहीं, take — give the exam का मतलब पर्चा बनाना है."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "पढ़ने की बात आगे की है, फिर भी study सादा रहता है. *If you will study यहाँ भी ग़लत है.",
+      "sound": "exam पर ज़ोर दूसरे हिस्से पर है — इग्ज़ैम.",
+      "variations": [
+        {
+          "display": "If you study every day, you will pass.",
+          "cue": "अगर तुम रोज़ पढ़ोगे तो निकल जाओगे.",
+          "changed": "छोटा किया"
+        },
+        {
+          "display": "If he studies every day, he will pass the exam.",
+          "cue": "अगर वह रोज़ पढ़ेगा तो इम्तिहान निकल जाएगा.",
+          "changed": "दूसरा कर्ता, studies पर -s"
+        },
+        {
+          "display": "You will not pass the exam unless you study.",
+          "cue": "जब तक तुम नहीं पढ़ोगे, इम्तिहान नहीं निकलेगा.",
+          "changed": "unless वाला रूप"
+        }
+      ],
+      "mistake": {
+        "display": "If you will study every day, you will pass the exam",
+        "why": "if के आधे में will नहीं आता: If you study every day, you will pass the exam."
+      },
+      "usage": "किसी को पढ़ाई पर भरोसा दिलाना.",
+      "register": "neutral",
+      "mnemonic": "शर्त सादी, नतीजा will वाला."
+    },
+    {
+      "id": "L3-M4-S10",
+      "display": "If you call me, I will answer the phone.",
+      "cue": "अगर तुम फ़ोन करोगे तो मैं उठा लूँगा.",
+      "literal": "अगर तुम फ़ोन-करते मुझे, मैं जवाब-दूँगा वह फ़ोन.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "answer",
+            "cue": "जवाब देना · फ़ोन उठाना",
+            "tag": "delta",
+            "forms": [
+              "answer",
+              "answers",
+              "answered"
+            ],
+            "note": "आगे to नहीं लेता: answer the phone, answer me. फ़ोन उठाने के लिए अंग्रेज़ी उठाना नहीं, जवाब देना कहती है."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "if वाला आधा पहले आया तो बीच में कौमा लगता है, बाद में आया तो नहीं. I will answer the phone if you call me में कौमा नहीं.",
+      "sound": "answer में w चुप है — आन्सर.",
+      "variations": [
+        {
+          "display": "I will answer the phone if you call me.",
+          "cue": "अगर तुम फ़ोन करोगे तो मैं उठा लूँगा.",
+          "changed": "if वाला आधा बाद में, कौमा हटा"
+        },
+        {
+          "display": "If you call me, I will call you back.",
+          "cue": "अगर तुम फ़ोन करोगे तो मैं वापस कर लूँगा.",
+          "changed": "दूसरा नतीजा"
+        },
+        {
+          "display": "If you call me tomorrow, I will answer.",
+          "cue": "अगर तुम कल फ़ोन करोगे तो मैं जवाब दूँगा.",
+          "changed": "वक़्त जोड़ा"
+        }
+      ],
+      "mistake": {
+        "display": "If you will call me, I will answer the phone",
+        "why": "if के आधे में will नहीं आता: If you call me, I will answer the phone."
+      },
+      "usage": "किसी को फ़ोन करने के लिए कहना.",
+      "register": "neutral",
+      "mnemonic": "फ़ोन का जवाब दिया जाता है."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M4-C01",
+      "display": "If it rains, I will stay at home.",
+      "cue": "अगर बारिश हुई तो मैं घर पर रहूँगा."
+    },
+    {
+      "id": "L3-M4-C02",
+      "display": "If you come early, we will eat together.",
+      "cue": "अगर तुम जल्दी आए तो हम साथ खाएँगे."
+    },
+    {
+      "id": "L3-M4-C03",
+      "display": "Unless you leave early, you will miss the train.",
+      "cue": "जब तक तुम जल्दी नहीं निकले, गाड़ी छूट जाएगी."
+    },
+    {
+      "id": "L3-M4-C04",
+      "display": "If I had time, I would come.",
+      "cue": "अगर मेरे पास वक़्त होता तो मैं आता."
+    },
+    {
+      "id": "L3-M4-C05",
+      "display": "If I were you, I would call the manager.",
+      "cue": "मैं तुम्हारी जगह होता तो मैनेजर को फ़ोन करता."
+    },
+    {
+      "id": "L3-M4-C06",
+      "display": "You had better leave early.",
+      "cue": "तुम जल्दी निकल जाओ तो अच्छा है."
+    },
+    {
+      "id": "L3-M4-C07",
+      "display": "If you don't hurry, you will miss the bus.",
+      "cue": "अगर तुमने जल्दी नहीं की तो बस छूट जाएगी."
+    },
+    {
+      "id": "L3-M4-C08",
+      "display": "If you study every day, you will pass the exam.",
+      "cue": "अगर तुम रोज़ पढ़ोगे तो इम्तिहान निकल जाएगा."
+    },
+    {
+      "id": "L3-M4-C09",
+      "display": "If you call me, I will answer the phone.",
+      "cue": "अगर तुम फ़ोन करोगे तो मैं उठा लूँगा."
+    },
+    {
+      "id": "L3-M4-C10",
+      "display": "Don't worry. If it rains, we will stay at home.",
+      "cue": "फ़िक्र मत करो. अगर बारिश हुई तो हम घर पर रहेंगे."
+    },
+    {
+      "id": "L3-M4-C11",
+      "display": "If I had more money, I would buy a car.",
+      "cue": "अगर मेरे पास ज़्यादा पैसे होते तो मैं गाड़ी ख़रीदता."
+    },
+    {
+      "id": "L3-M4-C12",
+      "display": "Unless you help me, I will not finish this work.",
+      "cue": "जब तक तुम मदद नहीं करोगे, यह काम पूरा नहीं होगा."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

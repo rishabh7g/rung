@@ -1,0 +1,575 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M4",
+  "title": "If and then",
+  "job": "Conditions, wishes, advice",
+  "prerequisites": [
+    "L3-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present",
+      "Konjunktiv II (present)"
+    ],
+    "allowedPatterns": [
+      "Wenn ich Zeit habe + , + komme ich",
+      "Wenn ich Zeit hätte + , + würde ich kommen",
+      "Du solltest + V-inf",
+      "Ich hätte gern + N-acc",
+      "An deiner Stelle + würde ich + V-inf",
+      "Es wäre besser + , + wenn + <verb-final> + würdest"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "English marks the unreal by moving the TENSE back a step — \"if I had time\" about today, not about yesterday — and German marks it by changing the MOOD. The mood is the Konjunktiv II, and the cells a speaker actually uses are few enough to learn as words rather than as a table: wäre, hätte, könnte, sollte, müsste, and würde for everything else. Learn those six and you can say every unreal thing this level needs. There is no paradigm to memorise here and none is given, because the six are where the whole everyday language lives."
+    },
+    {
+      "tag": "delta",
+      "text": "sein, haben and the modals build the mood DIRECTLY — Ich wäre froh, Ich hätte Zeit, Du solltest schlafen, Ich müsste mehr lernen, Könnte ich bitte …? — and almost every other verb reaches for würde plus its infinitive instead: Ich würde nach Berlin fahren. The reason is worth knowing, because it stops you inventing forms: an ordinary verb's direct Konjunktiv II is spelled like its Präteritum, so nobody says it. There is no ich führe in a spoken sentence, and a learner who builds one is not heard as formal, only as strange."
+    },
+    {
+      "tag": "delta",
+      "text": "Real and unreal sit on the SAME word, L1-M10's wenn, and the verbs are what tell them apart. Real: Wenn ich Zeit habe, komme ich — plain present in both halves, and it means the thing may well happen. Unreal: Wenn ich Zeit hätte, würde ich kommen — Konjunktiv II in both halves, and it means it will not. Both halves match: a wenn-clause in the mood is not finished until the main clause is in it too."
+    },
+    {
+      "tag": "delta",
+      "text": "A fronted wenn-clause is L3-M3's law meeting this module's mood, and nothing about the word order is new. The whole clause is the first element, so the main verb comes straight after the comma and the subject follows it: Wenn ich Zeit hätte, würde ich kommen. Two Konjunktiv II forms end up side by side across that comma, hätte and würde, exactly where bin and bleibe stood in the last module."
+    },
+    {
+      "tag": "free",
+      "text": "Advice and wishes are what this mood is FOR at this level, and they are the sentences a learner will actually reach for: Du solltest zum Arzt gehen, An deiner Stelle würde ich warten, Ich hätte gern einen Termin. One thing you already own is explained by all of this: L1-M3's möchte is itself a Konjunktiv II, of mögen, which is why it has always sounded politer than a bare will. könnte is L2-M1's könnten in another person, and that row is where the key lives."
+    },
+    {
+      "tag": "free",
+      "text": "This module writes exactly ONE tense of the mood. The past counterfactual — Wenn ich Zeit gehabt hätte, wäre ich gekommen, the thing that did not happen and now cannot — exists and is taught later, at L4-M3. Do not build it here, and do not reach for falls, which is a written stand-in for wenn this course leaves out. wenn against als for past time is L3-M5's business, not this module's."
+    },
+    {
+      "tag": "delta",
+      "text": "sonst is \"otherwise\", and it carries a whole unspoken clause: Du solltest jetzt gehen, sonst kommst du zu spät. It is an adverb, so it takes the first seat of its own clause and the verb takes the second, the way L3-M3's trotzdem does. English can leave \"otherwise\" outside the sentence and change nothing; German cannot."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M4-S01",
+      "display": "Wenn ich Zeit hätte, würde ich kommen",
+      "cue": "If I had time, I'd come",
+      "literal": "if I time had, would I come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hätte",
+            "cue": "had · would have (unreal)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The Konjunktiv II of L1-M5's haben, built straight from hatte with an umlaut. It says the having is not real, not that it is past."
+          },
+          {
+            "display": "würde",
+            "cue": "would",
+            "tag": "delta",
+            "forms": [],
+            "note": "The all-purpose unreal auxiliary. It takes an infinitive at the end of the clause: würde ich kommen. Almost every verb but sein, haben and the modals uses it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "English moves the tense back and German does not. hätte is not a past tense: this sentence is about today, and L1-M5's hatte is the one that is actually about yesterday.",
+      "sound": "ven ikh tsite HET-uh, VUER-duh ikh KOM-en. hätte has the short open ä of English \"bet\"; hatte has an a.",
+      "variations": [
+        {
+          "display": "Wenn ich Zeit habe, komme ich",
+          "cue": "If I have time, I'll come",
+          "changed": "real instead of unreal — plain present in both halves"
+        },
+        {
+          "display": "Wenn ich Zeit hätte, würde ich mitkommen",
+          "cue": "If I had time, I'd come along",
+          "changed": "L3-M1's mitkommen as the infinitive würde takes"
+        }
+      ],
+      "mistake": {
+        "display": "Wenn ich Zeit hätte, ich würde kommen",
+        "why": "The fronted clause is the first element, so the verb comes after the comma: Wenn ich Zeit hätte, würde ich kommen."
+      },
+      "usage": "Turning down an invitation and meaning it kindly.",
+      "register": "neutral",
+      "mnemonic": "hätte on the left, würde on the right. Both unreal, both at the comma."
+    },
+    {
+      "id": "L3-M4-S02",
+      "display": "Ich wäre froh, wenn das Buch billiger wäre",
+      "cue": "I'd be glad if the book were cheaper",
+      "literal": "I would-be glad, if the book cheaper would-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wäre",
+            "cue": "would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "The Konjunktiv II of L2-M2's sein, built from L1-M5's war with an umlaut. Ich wäre froh is a wish, not a report."
+          },
+          {
+            "display": "wären",
+            "cue": "would be (we · they · you formal)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural of wäre, from waren: Wir wären sehr froh. The -n is the only thing that changes, exactly as in war and waren."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Both halves are in the mood. A learner who writes Ich wäre froh, wenn das Buch billiger ist has mixed a wish with a fact, and German hears the join.",
+      "sound": "ikh VAIR-uh froh, ven das bookh BIL-ig-er VAIR-uh. wäre has a long ä, close to the vowel of English \"air\".",
+      "variations": [
+        {
+          "display": "Wir wären sehr froh",
+          "cue": "We'd be very glad",
+          "changed": "the plural cell, and no condition attached"
+        },
+        {
+          "display": "Ich wäre gern zu Hause",
+          "cue": "I'd like to be at home",
+          "changed": "gern turning the wish into a preference"
+        }
+      ],
+      "mistake": {
+        "display": "Ich wäre froh, wenn das Buch billiger ist",
+        "why": "An unreal wenn-clause stays in the mood: wenn das Buch billiger wäre."
+      },
+      "usage": "Saying what you want without asking anybody for it.",
+      "register": "neutral",
+      "mnemonic": "war gives wäre. waren gives wären. Two dots, one mood."
+    },
+    {
+      "id": "L3-M4-S03",
+      "display": "An deiner Stelle würde ich warten",
+      "cue": "If I were you, I'd wait",
+      "literal": "in your place would I wait",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "An deiner Stelle",
+            "cue": "if I were you",
+            "tag": "delta",
+            "forms": [],
+            "note": "Three words taken whole — literally \"in your position\", on L3-M2's Stelle. It fronts, so the verb comes next and ich lands behind it."
+          },
+          {
+            "display": "warten",
+            "cue": "to wait",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive würde takes, sitting at the end of the clause. Waiting FOR something uses auf, which this course leaves for later."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "German does not build this on an if-clause at all. Wenn ich du wäre exists but is heard as a translation; the phrase a German reaches for is An deiner Stelle, and it is a prepositional phrase, not a clause.",
+      "sound": "an DY-ner SHTELL-uh VUER-duh ikh VAR-ten.",
+      "variations": [
+        {
+          "display": "An deiner Stelle würde ich das nicht machen",
+          "cue": "If I were you, I wouldn't do that",
+          "changed": "negated, which is the commonest form of this advice"
+        },
+        {
+          "display": "An deiner Stelle würde ich einen Arzt anrufen",
+          "cue": "If I were you, I'd ring a doctor",
+          "changed": "L3-M1's anrufen as the infinitive at the end"
+        }
+      ],
+      "mistake": {
+        "display": "An deiner Stelle ich würde warten",
+        "why": "The fronted phrase takes the first seat, so the verb takes the second: An deiner Stelle würde ich warten."
+      },
+      "usage": "Giving advice to a friend without telling them what to do.",
+      "register": "informal",
+      "mnemonic": "Stand in their Stelle, and the verb comes straight after it."
+    },
+    {
+      "id": "L3-M4-S04",
+      "display": "Du solltest zum Arzt gehen",
+      "cue": "You should go to the doctor",
+      "literal": "you should to-the doctor go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sollte",
+            "cue": "should",
+            "tag": "delta",
+            "forms": [
+              "solltest"
+            ],
+            "note": "The Konjunktiv II of L2-M6's sollen, and the ordinary German word for should. soll is an instruction from somebody; sollte is advice."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "solltest is not weaker than English \"should\" — it is exactly it. The blunt soll of L2-M6 is the one that means somebody has told you to, and swapping them changes who is doing the deciding.",
+      "sound": "doo ZOLL-test tsoom artst GAY-en. The double l is short and the o stays short with it.",
+      "variations": [
+        {
+          "display": "Du solltest nicht so viel arbeiten",
+          "cue": "You shouldn't work so much",
+          "changed": "negated advice, with the infinitive still last"
+        },
+        {
+          "display": "Du solltest mehr schlafen",
+          "cue": "You should sleep more",
+          "changed": "a different infinitive in the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Du sollst zum Arzt gehen",
+        "why": "That says somebody has ordered it. Advice is the Konjunktiv II: Du solltest zum Arzt gehen."
+      },
+      "usage": "Told to a friend who has been complaining for a week.",
+      "register": "informal",
+      "mnemonic": "soll is an order. sollte is an opinion."
+    },
+    {
+      "id": "L3-M4-S05",
+      "display": "Ich müsste mehr lernen, aber ich bin müde",
+      "cue": "I ought to study more, but I'm tired",
+      "literal": "I would-have-to more learn, but I am tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "müsste",
+            "cue": "ought to · really should",
+            "tag": "delta",
+            "forms": [],
+            "note": "The Konjunktiv II of L2-M4's müssen. muss is a hard necessity; müsste admits the thing is necessary and that you are not doing it."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "müsste and sollte are not the same advice. sollte is what somebody else would recommend; müsste is what you already know you owe, said about yourself.",
+      "sound": "ikh MUESS-tuh mair LAIR-nen, AH-ber ikh bin MUE-duh. The ü of müsste is short — lips rounded, tongue where an ee is.",
+      "variations": [
+        {
+          "display": "Ich müsste mehr arbeiten",
+          "cue": "I ought to work more",
+          "changed": "a different infinitive, and no excuse attached"
+        },
+        {
+          "display": "Ich müsste jetzt gehen",
+          "cue": "I really ought to go now",
+          "changed": "the phrase you say when you are still sitting down"
+        }
+      ],
+      "usage": "The German for admitting something and not doing it.",
+      "register": "neutral",
+      "mnemonic": "muss is doing it. müsste is meaning to."
+    },
+    {
+      "id": "L3-M4-S06",
+      "display": "Könnte ich bitte die Rechnung haben?",
+      "cue": "Could I have the bill, please?",
+      "literal": "could I please the bill have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "könnte",
+            "cue": "could",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M1's könnten in the ich cell, same mood. Fronting the verb makes a question, and the Konjunktiv II is what makes it a request rather than a demand."
+          },
+          {
+            "display": "würden",
+            "cue": "would (you formal · we · they)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural and Sie cell of würde: Würden Sie mir bitte helfen? It is the politest way German has of asking for anything."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "The present-tense Kann ich die Rechnung haben? is not rude, but it is flat. The mood is what carries the politeness here, and it costs one letter.",
+      "sound": "KUEN-tuh ikh BIT-uh dee REKH-noong HAH-ben. The ö of könnte is short, lips rounded on an e.",
+      "variations": [
+        {
+          "display": "Würden Sie mir bitte helfen?",
+          "cue": "Would you help me, please?",
+          "changed": "the Sie cell, and the request aimed at the other person"
+        },
+        {
+          "display": "Könnte ich bitte die Speisekarte haben?",
+          "cue": "Could I have the menu, please?",
+          "changed": "L2-M5's Speisekarte in the same request"
+        }
+      ],
+      "usage": "At the end of a meal, to somebody you do not know.",
+      "register": "formal",
+      "mnemonic": "kann asks. könnte asks nicely."
+    },
+    {
+      "id": "L3-M4-S07",
+      "display": "Ich hätte gern einen Termin",
+      "cue": "I'd like an appointment",
+      "literal": "I would-have gladly an appointment",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Termin",
+            "cue": "appointment",
+            "tag": "delta",
+            "forms": [],
+            "note": "Masculine, der Termin, and it is a fixed slot in a diary — at a surgery, an office or a bank — not an English \"date\"."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Ich hätte gern is one tier above L1-M3's Ich möchte, not a different meaning. Counters and offices expect it; a café is happy with either.",
+      "sound": "ikh HET-uh gairn INE-en ter-MEEN. Termin stresses its second syllable.",
+      "variations": [
+        {
+          "display": "Ich hätte gern einen Kaffee",
+          "cue": "I'd like a coffee",
+          "changed": "the same frame across a counter"
+        },
+        {
+          "display": "Ich hätte gern einen Termin am Montag",
+          "cue": "I'd like an appointment on Monday",
+          "changed": "L1-M4's am Montag pinning the day"
+        }
+      ],
+      "usage": "The first sentence of every phone call to a German surgery.",
+      "register": "formal",
+      "mnemonic": "hätte gern — would-have gladly. Two words, one wish."
+    },
+    {
+      "id": "L3-M4-S08",
+      "display": "Wir hätten gern zwei Kaffee",
+      "cue": "We'd like two coffees",
+      "literal": "we would-have gladly two coffee",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hätten",
+            "cue": "would have (we · they · you formal)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural of hätte, from L1-M5's hatten. Wir hätten gern is what a table orders with, and the verb is the only word that changes."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Kaffee stays singular after a number when it is the drink being ordered. German counts the servings, not the cups, and does not add an ending here.",
+      "sound": "veer HET-en gairn tsvy KAH-fay.",
+      "variations": [
+        {
+          "display": "Wir hätten gern die Rechnung",
+          "cue": "We'd like the bill",
+          "changed": "L2-M5's Rechnung in the same order"
+        },
+        {
+          "display": "Wir hätten mehr Zeit",
+          "cue": "We'd have more time",
+          "changed": "the same cell doing plain unreal work, with no gern"
+        }
+      ],
+      "usage": "Ordering for a table rather than for yourself.",
+      "register": "formal",
+      "mnemonic": "hatte, hätte. hatten, hätten. The dots do the mood."
+    },
+    {
+      "id": "L3-M4-S09",
+      "display": "Du solltest jetzt gehen, sonst kommst du zu spät",
+      "cue": "You should go now, otherwise you'll be late",
+      "literal": "you should now go, otherwise come you too late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sonst",
+            "cue": "otherwise · or else",
+            "tag": "delta",
+            "forms": [],
+            "note": "An adverb carrying a whole unspoken clause. It takes the first seat and the verb takes the second: sonst kommst du zu spät."
+          },
+          {
+            "display": "jetzt",
+            "cue": "now",
+            "tag": "free",
+            "forms": [],
+            "note": "Sits in the middle field with the other time words, and the tz is a ts: Du solltest jetzt gehen."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "sonst is not a conjunction and does not send its verb to the end. It behaves exactly like L3-M3's trotzdem — first seat taken, verb second, subject third.",
+      "sound": "doo ZOLL-test yetst GAY-en, zonst KOMST doo tsoo SHPAIT. jetzt begins with a y sound.",
+      "variations": [
+        {
+          "display": "Du solltest jetzt gehen",
+          "cue": "You should go now",
+          "changed": "the advice alone, with the consequence left off"
+        },
+        {
+          "display": "Wir müssen jetzt gehen, sonst kommen wir zu spät",
+          "cue": "We have to go now, otherwise we'll be late",
+          "changed": "a real necessity instead of advice, and the plural throughout"
+        }
+      ],
+      "mistake": {
+        "display": "Du solltest jetzt gehen, sonst du kommst zu spät",
+        "why": "sonst takes the first seat, so the verb comes next: sonst kommst du zu spät."
+      },
+      "usage": "Said at a door, to somebody who is not moving.",
+      "register": "informal",
+      "mnemonic": "sonst first, verb second. Same as trotzdem."
+    },
+    {
+      "id": "L3-M4-S10",
+      "display": "Es wäre besser, wenn du mehr schlafen würdest",
+      "cue": "It would be better if you slept more",
+      "literal": "it would-be better, if you more sleep would",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "würdest",
+            "cue": "would (you)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The du cell of würde, and here it is inside a wenn-clause, so it goes LAST — behind its own infinitive: wenn du mehr schlafen würdest."
+          },
+          {
+            "display": "schlafen",
+            "cue": "to sleep",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive the würde frame takes. Ich schlafe is the plain present; this module only ever uses the citation form."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "In a subordinate clause the finite verb is last, and würdest is the finite one — so the infinitive schlafen comes BEFORE it. In the main clause the order is the other way round: würde ich schlafen.",
+      "sound": "ess VAIR-uh BESS-er, ven doo mair SHLAH-fen VUER-dest. schlafen begins with a shl.",
+      "variations": [
+        {
+          "display": "Es wäre besser, wenn du früh schlafen würdest",
+          "cue": "It would be better if you slept early",
+          "changed": "L1-M4's früh inside the wenn-clause"
+        },
+        {
+          "display": "Es wäre besser, wenn wir zu Hause bleiben würden",
+          "cue": "It would be better if we stayed at home",
+          "changed": "the plural cell, and L2-M10's bleiben as the infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Es wäre besser, wenn du würdest mehr schlafen",
+        "why": "A wenn-clause puts its finite verb last, behind the infinitive: wenn du mehr schlafen würdest."
+      },
+      "usage": "Advice softened twice over — a wish frame around a condition.",
+      "register": "neutral",
+      "mnemonic": "Main clause: würde first, verb last. wenn-clause: both at the end, würdest behind."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M4-C01",
+      "display": "Wenn ich Zeit hätte, würde ich kommen",
+      "cue": "If I had time, I'd come"
+    },
+    {
+      "id": "L3-M4-C02",
+      "display": "Ich wäre froh, wenn das Buch billiger wäre",
+      "cue": "I'd be glad if the book were cheaper"
+    },
+    {
+      "id": "L3-M4-C03",
+      "display": "An deiner Stelle würde ich warten",
+      "cue": "If I were you, I'd wait"
+    },
+    {
+      "id": "L3-M4-C04",
+      "display": "Du solltest zum Arzt gehen",
+      "cue": "You should go to the doctor"
+    },
+    {
+      "id": "L3-M4-C05",
+      "display": "Ich müsste mehr lernen, aber ich bin müde",
+      "cue": "I ought to study more, but I'm tired"
+    },
+    {
+      "id": "L3-M4-C06",
+      "display": "Könnte ich bitte die Rechnung haben?",
+      "cue": "Could I have the bill, please?"
+    },
+    {
+      "id": "L3-M4-C07",
+      "display": "Ich hätte gern einen Termin",
+      "cue": "I'd like an appointment"
+    },
+    {
+      "id": "L3-M4-C08",
+      "display": "Wir hätten gern zwei Kaffee",
+      "cue": "We'd like two coffees"
+    },
+    {
+      "id": "L3-M4-C09",
+      "display": "Du solltest jetzt gehen, sonst kommst du zu spät",
+      "cue": "You should go now, otherwise you'll be late"
+    },
+    {
+      "id": "L3-M4-C10",
+      "display": "Es wäre besser, wenn du mehr schlafen würdest",
+      "cue": "It would be better if you slept more"
+    },
+    {
+      "id": "L3-M4-C11",
+      "display": "Wenn ich mehr Zeit hätte, würde ich mehr lesen",
+      "cue": "If I had more time, I'd read more"
+    },
+    {
+      "id": "L3-M4-C12",
+      "display": "An deiner Stelle würde ich einen Termin machen",
+      "cue": "If I were you, I'd make an appointment"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

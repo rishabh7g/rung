@@ -197,3 +197,231 @@ earlier module already owns or one they open themselves. No baseline moved in ei
     none of the edge an English ear might hear in "boss".
 14. **`soveshchániye` against `vstrécha`** (M2-S09). Confirm the work-meeting reading, and that the
     note's claim — no Russian has a `soveshchániye` in a café — holds as firmly as it is stated.
+
+## Wave 2 — L3-M3, L3-M4, L3-M5 (#483)
+
+Authored against the same briefs (#465) and the same decisions (`docs/72`), continuing wave 1's
+voice. A dev build emits `en-ru: 25 modules (L1-M1..M10, L2-M1..M10, L3-M1..M5)` and
+`CONTENT 209/209 ok`; the cumulative index runs 621 → 642 → 656 → **672 surfaces**, maxSpan
+unchanged. The course's laws carry: romanized `display`, Cyrillic on the quiet `script` line, a
+precomposed acute on every polysyllable, `vy` as the default register, and no `glossEn` anywhere
+(the pair has English on one side, so the build forbids it).
+
+### L3-M3 "Opinions with reasons" — the comma becomes a spelling rule
+
+`docs/72` §3 promised the comma law would be *stated* here and pointed back at twice. Stating it is
+the whole module, and what makes it stick is that the law is shown doing three different jobs
+rather than one: it fences a `chto` clause (S01, S05, S06, S09), it closes a `khotyá` clause before
+the main one opens (S07), and it sets off a parenthetical opener — `po-móyemu`, `navérnoye`, a bare
+`kázhetsya` — at the head of its sentence (S02, S08). Those are two rules in the file, 0 and 1,
+because a learner told only about subordinate clauses will not predict the comma after
+`Po-móyemu`, and a learner told only about openers will not predict the one before `chto`. Rule 1
+says the part that is easiest to get wrong on paper: an opener parked *inside* a sentence takes a
+comma on **both** sides.
+
+The claim that carries the module is about status rather than shape: **a missing comma here is a
+spelling mistake, not a matter of taste.** That is a strong thing to tell a beginner, so the module
+demonstrates it rather than asserting it — S01's mistake plate is the comma-less sentence and
+nothing else, which is the smallest possible way to show that the comma *is* the error.
+
+`soglásen` is the level's first short-form adjective, and the module got a better deal than the
+brief expected by teaching **three** of them instead of one. `soglásen` / `soglásna` / `soglásny`
+(S03), `uvéren` / `uvérena` (S06) and `prav` / `pravá` / `právy` (S09) are one rule (rule 2) with
+three rows under it, and the third earns its place twice over: `vy právy` is where a learner
+discovers that `vy`'s politeness is a plural all the way down — the same plural `vy khotíte` has
+carried since L1-M3 — and `pravá` is where the stress moves onto the ending, which an unaccented
+romanization would hide completely. M6 still gets `rad` as `docs/72` §4 says; it now points back at
+a family rather than at a single word.
+
+`potomú chto` is the other half of the job and it needed **no row at all** (see the seams below).
+Rule 3 therefore carries the whole fact — two words, one conjunction, comma in front of the pair —
+and S04's plate is the split version, `potomú, chto`, which is the error a learner who has met bare
+`chto` will actually produce. The module's cheapest good sentence is S10, `Pochemú vy tak
+dúmayete?`: four words, one of them new, and it is the question that makes every other sentence in
+the module answerable.
+
+### L3-M4 "If and then" — the rule that saves a Spanish learner ruins a Russian one
+
+Two conditional machines, taught in that order, and both of them are subtractions. The real one
+first: **the future goes in both halves.** `Yésli búdet vrémya, ya pozvonyú` is word for word "if
+there will be time, I will call", and rule 0 is tagged `interference` because the English habit here
+is not vagueness but a *rule someone was taught* — never use the future after "if" — which produces
+a wrong sentence with total confidence. S01's plate is `Yésli yest' vrémya`, the shape that habit
+builds, and the `why` says the thing that matters: it is not clumsy Russian, it is a **habit instead
+of a plan**, which is a different sentence.
+
+The counterfactual is the relief `docs/72` §2 promised, and the module says so out loud in rule 1:
+**past tense plus `by`, in both halves, with not one new ending.** Three sentences run it — S04
+(`býlo vrémya`), S05 (`býli dén'gi`) and S10 (`byl vrachóm`) — and three rather than one is
+deliberate, because the only thing a learner can get wrong is *forgetting the second `by`*, and
+S10's plate is exactly that. S04's `trap` names the difficulty from the other side: a learner
+expecting a fresh paradigm goes looking for one and finds nothing, which feels like a gap rather
+than a gift.
+
+The impersonal modals are the module's other half, and they split into two rules where the brief
+had one. Rule 2 is the dative-subject frame — `mne nádo`, `vam nádo`, no nominative anywhere,
+L2-M1's `mne núzhno` grown up. Rule 3 is the agreement fact, and it is where `dólzhen` parts company
+with the rest: it is the one modal here that **agrees** (`dólzhen` / `dolzhná` / `dolzhný`, exactly
+like M3's `soglásen`) and the one that takes a **nominative** subject, so `ya dólzhen` and `mne
+nádo` are opposite shapes carrying nearly the same meaning. S06's plate is `Mne dólzhen`, the
+crossing of the two. `mózhno` and `nel'zyá` close the rule by agreeing with nothing at all, and
+`nel'zyá` gets the fact a sign-reader needs: it already contains its negative, so `ne mózhno`
+(S08's plate) is not a thing.
+
+Rule 4 is a `free` tag doing real work: `nádo` and `núzhno` overlap almost completely, and the one
+difference worth carrying is what may follow — `nádo` takes an infinitive, `núzhno` also takes a
+noun (`mne núzhen bilét`, L2-M8's row, untouched). That is `docs/72` §4's seam honoured exactly:
+`núzhno` stays L2-M1's and `nádo`'s note says how the two differ.
+
+The module's own find: **`dén'gi` is a plural**, and `býli dén'gi` is a sentence a learner can get
+wrong twice — once for the verb and once for the `by`. It rides in the daydream sentence because
+that is the sentence every learner wants early, which makes it the cheapest place to put a fact they
+would otherwise meet cold.
+
+### L3-M5 "What someone said" — the tense that does not move, and the particle that will not move
+
+**Russian does not backshift**, and rule 0 is tagged `interference` for the same reason M4's rule 0
+is: English's sequence of tenses is not a stylistic habit but a rule speakers apply without
+noticing. `On skazál, chto on bólen` is "he said he was ill" with a present-tense Russian clause,
+and S01's plate — `chto on byl bólen` — earns its space because it is **grammatical Russian that
+says something else**: ill at some earlier time, and presumably better now. That is the strongest
+form a plate can take, and it is the form wave 1 identified in M1. The rule gets three
+demonstrations across three tenses, so a learner sees it is about *keeping* rather than about the
+present: S03 keeps a present (`ne mogú` for "couldn't"), S04's second variation and S10 keep a
+**future** (`pridú` for "would come"), and S07 keeps a verbless present (`éhto právda` for "it was
+true").
+
+`li` is the module's hardest single item, as the brief said, and it took two sentences rather than
+one. S05 is the bare form (`svobóden li ya`) and S08 the polite `ne … li` (`ne zanyát li ya`), and
+the second carries a fact the first cannot: **the `ne` is not a negative.** Rule 2 states the
+position law — `li` follows the FIRST word of its clause and nowhere else — and the two plates
+attack it from the only two available angles: S05's puts `li` first, S08's puts it third. What makes
+the rule teachable rather than arbitrary is the consequence stated in the traps: because `li` is a
+second-position particle, **the word being asked about has to move to the front to carry it**, which
+is why `svobóden` leads a clause whose subject is `ya`. A wh-question needs none of this, and S04
+says so — `gde` stays put, and only the comma is added.
+
+The comma law's second tour (rule 1) is quiet on purpose. `docs/72` §3 wants it predictable by M9,
+so the rule here says it is the same fence on a third kind of clause and spends its plate (S04) on a
+reported *question*, which is where a learner is likeliest to think the rule has lapsed.
+
+Rule 3 is the dative of the person told, and it turned out to be a larger job than the brief allowed
+for — `yemú`, `yey` and `im` are taught nowhere below (see the seams), so this module opens all
+three. Having to row them was a gift: S02, S03 and S10 now carry one fact between them that a single
+row could not have shown, which is that Russian has **one** shape where English has two ("told her"
+and "said to her"), with no preposition in either. S02's plate is the invented preposition, `skazál
+k yey`.
+
+Rule 4 keeps `sprosíl` and `poprosíl` apart, which English does not: `sprosíl` asks a question,
+`poprosíl` asks a favour, and a request is an infinitive rather than a clause — no `chto`, no comma.
+S06's plate builds the clause anyway, because that is what an English speaker reaching for "asked me
+that I would call" produces. `chtóby` stays out of L3 entirely; nothing in the module needs it and
+the brief does not ask for it.
+
+### Four seams the brief had wrong, corrected against the real index
+
+Every seam was re-derived against the real cumulative index before each module was written, and four
+of the briefs' claims did not survive it. Wave 1's lesson repeats itself in all four: **a brief is
+written in the spelling an author reaches for, and the index key is not that spelling.**
+
+- **`potomú chto` is not a fresh key — L1-M9 owns it, whole.** The M3 brief lists it among the fresh
+  keys beside `schitáyu` and `soglásen`. It is already in the module's own allowed-vocabulary list,
+  indexed as the two-token key `docs/72` §4 specifies. So M3 opens **no row** for it: the
+  comma-before-the-pair fact lives in rule 3, where it belongs anyway, and the module spends the row
+  it saved on `právda` instead. The brief was right about `dúmayu`, which stays L1-M9's.
+- **`mózhno` is not a fresh key — L2-M1 owns it.** The M4 brief pairs it with `nel'zyá` as though
+  both were new. Only `nel'zyá` is. That correction is why M4 teaches a smoking verb at all: S07
+  needed a row of its own, so `kurít'` became the module's word there, and it then pays for itself
+  by giving S08's `nel'zyá` something to prohibit and the module its sign-reading pair.
+- **`yemú` and `yey` are not L2-M1's — nothing below teaches them.** The M5 brief says the two "stay
+  L2-M1's row and this module adds no cell to them", and the index disagrees flatly: L2-M1 taught
+  `mne`, and L1/L2 between them taught the noun datives (`ivánu`, `ánne`, `brátu`, `ottsú`,
+  `podrúge`, `sestré`) and `vam`, `nam`, `tebé` — but **no third-person dative pronoun exists in
+  this course**. M5 opens `yemú`, `yey` and `im` as three rows. This is the wave's most consequential
+  correction: written to the brief, the module would have shipped three sentences resting on a word
+  no rung teaches.
+- **Bare `skól'ko` is untaught.** L1-M8 indexed `skól'ko stóit` and `skól'ko stóyat` **whole**, on
+  purpose, so the bare word has no owner at all. M5-S09 wanted `skól'ko éhto stóit` — one word slid
+  into the middle of the frozen phrase — and found the gap. The row it opens says exactly that, and
+  the trap names the learner's version of the problem: the phrase was learned as a lump, so
+  splitting it feels illegal when it is not.
+
+Two smaller ones, recorded because they are the same class of error. The M4 brief writes the past
+cells as `bylo` and `poshól`; the index spells them **`býlo`** and **`poshyól`**, under this
+course's `yó`-for-ё rule and its acute law. And `pozvonít'` (M5-S06) and `pomóg` (M4-S10) are both
+fresh keys whose lemmas are taught: L1-M6 shipped `pozvonyú` / `pozvoníl` / `pozvoníte` / `pozvoní`
+without the infinitive, and L2-M1 shipped `pomóch'` / `pomogíte` without a past. Both are new rows
+here rather than edits to an earlier file, per `docs/72` §4.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` held at **en-ru 20** across all three modules, and this wave, like
+wave 1, produced **no finding at all**: `npm run content:shown -- en-ru L3-M3` (and M4, and M5)
+each reports `clean — every shown surface resolves`, with **no RE-TEACH lines either**, because no
+row in any of the three re-opens a key an earlier module owns. Every surface the three modules show
+is one an earlier module owns or one they open themselves. No baseline moved in either direction,
+and the fifty-one surfaces the wave adds (621 → 672) are all rowed.
+
+The audit no tool runs was scripted again, over this wave's three modules and over wave 1's two as a
+control, covering `display`, `forms` and the inline Russian quoted in the English prose — `note`,
+`trap`, `sound`, `usage`, `mnemonic`, `mistake.why`, `changed`, `literal` and the rule texts. Three
+laws, all clean: **no Cyrillic in a romanized field** (the homoglyph defect — Cyrillic `а е и о с р
+х` are invisible inside Latin text and fork an index key), **no decomposed accent anywhere** (every
+acute precomposed, every string NFC), and **no polysyllabic token without its acute**, counted as
+runs of vowels with `y` treated as a glide before a plain vowel so that `ya`, `yésli` and
+`priyátnogo` are scanned correctly rather than under-counted. The prose sweep is the half that
+matters, because those strings are typed by hand rather than lifted from a display.
+
+### Open questions for the native pass
+
+15. **`schitáyu` against `dúmayu`** (M3-S01). Confirm `schitáyu` is the ordinary verb for an opinion
+    a speaker is ready to defend, and that it is not too bookish for speech.
+16. **The comma as spelling** (M3, rule 0). The wave's most load-bearing claim about status rather
+    than shape. Confirm a missing comma before `chto` reads to an ordinary reader as an error rather
+    than as informality.
+17. **`po-móyemu`** (M3-S02). Confirm it is the softener a Russian actually reaches for, and that it
+    is not noticeably more written, or more dated, than `mne kázhetsya`.
+18. **`právda` as a bare predicate** (M3-S03). Confirm `éhto právda` is what is said. The module
+    deliberately never writes the negative, because `neprávda` is one word and the two-word form
+    carries a contrast a beginner does not need — confirm that avoidance was right.
+19. **Three short forms as one family** (M3, rule 2). Confirm `soglásen`, `uvéren` and `prav` really
+    do behave alike for a learner, and that `vy právy` (never `vy prav`) is exceptionless.
+20. **The comma before `potomú chto`** (M3, rule 3; S04). Confirm the comma sits in front of the pair
+    in ordinary writing, and say whether `potomú, chto` is a real alternative with a different
+    emphasis that a learner will meet in print and be confused by.
+21. **`navérnoye`** (M3-S08). Confirm it reads as "probably" rather than "almost certainly", and that
+    the comma after it is obligatory in current practice rather than merely usual.
+22. **The future in both halves** (M4, rule 0; S01). The module's loudest claim. Confirm `Yésli búdet
+    vrémya, ya pozvonyú` is the ordinary sentence, and that `Yésli yest' vrémya` genuinely shifts it
+    to a habit rather than simply sounding foreign.
+23. **`by` in both halves** (M4, rule 1; S10). Confirm the particle is required in both, and that
+    `Yésli ya byl vrachóm, ya by …` lands as a claim about the past rather than as a conditional
+    with a word missing.
+24. **`nádo` against `núzhno`** (M4, rule 4). Confirm they are interchangeable where both fit, that
+    `nádo` is the more spoken of the two, and that the infinitive/noun split is the right single line
+    to give a learner.
+25. **`dólzhen`'s weight** (M4-S06). Confirm `Ya dólzhen rabótat' sevódnya` is an ordinary way to name
+    an obligation to a colleague, and does not sound heavier than the situation warrants.
+26. **`dén'gi` as a plural** (M4-S05). Confirm `býli dén'gi` is what is said, and that no singular
+    exists for a learner to be tempted by.
+27. **`mózhno` and `nel'zyá` with no subject** (M4-S07, S08). Confirm `Zdes' mózhno kurít'?` is how
+    permission is asked of a room, and that `Vam nel'zyá rabótat'` is the natural way to aim the
+    prohibition at one person without sounding like a sign.
+28. **`opázdyvayu`** (M4-S09). Confirm the present imperfective is what a person actually says on the
+    way out of a door, and that no perfective is wanted there.
+29. **No backshift** (M5, rule 0; S01). The wave's other load-bearing claim. Confirm `On skazál, chto
+    on bólen` is heard as "he said he was ill", and that `chto on byl bólen` really does report a
+    different fact rather than being a heavier way of saying the same one.
+30. **`li` in second position** (M5, rule 2; S05, S08). The module's hardest item. Confirm both
+    `svobóden li ya` and `ne zanyát li ya` are natural, and say which a speaker reaches for first —
+    the module teaches the bare form as the plain one and `ne … li` as the polite one.
+31. **`bólen` against `bolít`** (M5-S01). Confirm `bólen` is the everyday way to report that a person
+    is ill, that it does not read as clinical, and that the seam back to L2-M8's `bolít` — a body
+    part, not a person — is drawn where a learner needs it.
+32. **`sprosíl` against `poprosíl`** (M5, rule 4; S06). Confirm the split is as clean as stated, and
+    that `poprosíla menyá pozvonít'` needs no `chtóby` at this level.
+33. **`skól'ko` split from `stóit`** (M5-S09). Confirm `skól'ko éhto stóit` is the ordinary order, and
+    that `skól'ko stóit éhto` is odd rather than merely marked — the plate says the second one.
+34. **The dative pronouns** (M5-S02, S03, S10). Confirm `yemú`, `yey` and `im` carry the whole of
+    English's "told him" and "said to him" with no preposition, and that the slot straight after the
+    reporting verb, before the comma, is where a speaker puts them.

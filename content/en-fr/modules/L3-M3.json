@@ -1,0 +1,576 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": [
+    "L3-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present",
+      "present subjunctive (four cells only)",
+      "infinitive after il faut and after a modal"
+    ],
+    "allowedPatterns": [
+      "Je pense que + <indicative>",
+      "Je ne pense pas que + <subjunctive>",
+      "À mon avis + , + <clause>",
+      "Je suis d'accord + , + même si + <clause>",
+      "Il faut que + <subjunctive>",
+      "Il faut + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "que IS NEVER DROPPED. English throws the that away — I think it's true, I believe he's right — and does it so often that leaving it in sounds stiff. French cannot: je pense QUE c'est vrai, je crois QUE oui, il faut QUE j'aille. A clause hanging after pense with no que is not a sentence, and this is the single commonest thing an English speaker leaves out of a French opinion."
+    },
+    {
+      "tag": "delta",
+      "text": "A DOUBT BENDS THE VERB ON THE OTHER SIDE OF que. je pense que c'est vrai keeps the ordinary est; je ne pense pas que ce SOIT vrai swaps it for the subjunctive. This module opens four cells and no more — soit (être), ait (avoir), puisse (pouvoir), aille (aller) — because those four verbs carry most of what anybody actually doubts. The mood as a system, with its endings and its other triggers, is L4's job. Learn these four as words, not as a paradigm."
+    },
+    {
+      "tag": "delta",
+      "text": "il faut que TAKES THE SUBJUNCTIVE — AND THE ESCAPE HATCH IS WORTH AS MUCH AS THE RULE. L2-M4 shipped il faut plus a bare infinitive and stopped: il faut partir names nobody and needs no subjunctive at all, and it is what a French speaker says whenever nobody in particular is meant. The moment you name WHO, que arrives and the verb bends: il faut que j'aille. A learner who reaches for il faut que every time has made their own life harder than a French speaker's."
+    },
+    {
+      "tag": "interference",
+      "text": "même si TAKES THE INDICATIVE. It looks exactly like a place for the subjunctive and is not one: même si c'est cher, never même si ce soit cher. The difference is real rather than arbitrary — même si GRANTS something (even if it is expensive, and let us say it is), where je ne pense pas que DOUBTS it. You do not bend a verb you have just conceded."
+    },
+    {
+      "tag": "delta",
+      "text": "THE SOFTENER GOES AT THE FRONT AND THE CLAIM STAYS PLAIN. à mon avis, peut-être, je ne suis pas sûr — French marks an opinion as an opinion and then states it flatly. English hedges the claim itself (it might perhaps be a little expensive), and doing that in French reads as evasive rather than polite. Neither language is the careful one; they put the care in different places."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ne IS WRITTEN, EVERY TIME. je ne pense pas que, je ne suis pas sûr, il n'y a pas — speech drops the ne so completely that you will hear je pense pas all day, and writing it that way produces something no French text contains. Both halves are true and a learner needs both: hear the short one, write the long one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "Je pense que c'est vrai",
+      "cue": "I think it's true",
+      "literal": "I think that it-is true",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vrai",
+            "cue": "true",
+            "tag": "free",
+            "forms": [
+              "vrai",
+              "vraie"
+            ],
+            "note": "An ordinary adjective, so it takes an e for a feminine noun. C'est vrai on its own is the everyday that's right, said back to somebody."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English drops the that and French cannot drop the que. Je pense c'est vrai is the sentence an English habit builds, and it is not French — the two clauses need que between them to be joined at all.",
+      "sound": "zhuh pahns kuh say VREH. The que is barely a sound, a swallowed kuh, which is exactly why it goes missing in writing.",
+      "variations": [
+        {
+          "display": "Je pense que c'est cher",
+          "cue": "I think it's expensive",
+          "changed": "a different verdict in the same frame"
+        },
+        {
+          "display": "Marc pense que c'est vrai",
+          "cue": "Marc thinks it's true",
+          "changed": "somebody else's opinion, so only the subject moves"
+        }
+      ],
+      "mistake": {
+        "display": "Je pense c'est vrai",
+        "why": "The two clauses need que to join: Je pense que c'est vrai."
+      },
+      "usage": "The plain statement of an opinion, and the frame every other sentence in this module bends.",
+      "register": "neutral",
+      "mnemonic": "English may drop that; French may not drop que."
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "Je ne pense pas que ce soit vrai",
+      "cue": "I don't think it's true",
+      "literal": "I not think not that it be true",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "soit",
+            "cue": "(it) be — subjunctive of est",
+            "tag": "delta",
+            "forms": [],
+            "note": "The doubting shape of est. je pense que c'est vrai keeps est; je ne pense pas que ce soit vrai swaps it. Its t is never sounded."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "The negative is on the first verb and the change is on the second. je ne pense pas is ordinary present — nothing new there — and what actually moves is est becoming soit, on the far side of the que.",
+      "sound": "zhuh nuh pahns pa kuh suh swa VREH. soit rhymes with moi and its final t is silent.",
+      "variations": [
+        {
+          "display": "Je pense que c'est vrai",
+          "cue": "I think it's true",
+          "changed": "the positive, which keeps the plain est"
+        },
+        {
+          "display": "Je ne pense pas que ce soit cher",
+          "cue": "I don't think it's expensive",
+          "changed": "a different adjective on the same cell"
+        }
+      ],
+      "mistake": {
+        "display": "Je ne pense pas que c'est vrai",
+        "why": "The doubt bends the verb after que: Je ne pense pas que ce soit vrai."
+      },
+      "usage": "Disagreeing without saying anybody is wrong, which is what this frame is for.",
+      "register": "neutral",
+      "mnemonic": "Doubt on the left bends the verb on the right."
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "Je ne pense pas que Marc ait raison",
+      "cue": "I don't think Marc is right",
+      "literal": "I not think not that Marc have reason",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ait",
+            "cue": "(he) have — subjunctive of a",
+            "tag": "delta",
+            "forms": [],
+            "note": "The doubting shape of a. Marc a raison in the positive, que Marc ait raison after a doubt. The t is written and never sounded."
+          },
+          {
+            "display": "raison",
+            "cue": "reason · being right",
+            "tag": "interference",
+            "forms": [
+              "raison",
+              "raisons"
+            ],
+            "note": "French HAS reason where English IS right: il a raison. The verb underneath is avoir, which is why the doubt turns a into ait and not est into soit."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "être is the wrong verb here from the start. Il est raison is not French — being right is something you HAVE, il a raison — so the doubting shape you need is ait, and a learner who reaches for soit has picked the wrong verb rather than the wrong mood.",
+      "sound": "zhuh nuh pahns pa kuh mark eh ray-ZON. ait is just eh, and the on of raison is nasal.",
+      "variations": [
+        {
+          "display": "Je pense que Marc a raison",
+          "cue": "I think Marc is right",
+          "changed": "the positive, so a stays as it is"
+        },
+        {
+          "display": "Je ne pense pas que ma sœur ait raison",
+          "cue": "I don't think my sister is right",
+          "changed": "a different person on the same cell"
+        }
+      ],
+      "mistake": {
+        "display": "Je ne pense pas que Marc est raison",
+        "why": "Two things at once: being right is avoir raison, and the doubt bends it — que Marc ait raison."
+      },
+      "usage": "Disagreeing with a person rather than with a claim, which needs a softer frame in French as in English.",
+      "register": "neutral",
+      "mnemonic": "In French you HAVE reason."
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "Je ne pense pas que ma sœur puisse venir",
+      "cue": "I don't think my sister can come",
+      "literal": "I not think not that my sister be-able to-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "puisse",
+            "cue": "(she) can — subjunctive of peux",
+            "tag": "delta",
+            "forms": [],
+            "note": "The doubting shape of the can verb. The infinitive after it still stands bare, exactly as after dois and peux: puisse venir, never puisse de venir."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "L3-M2's law survives the mood: nothing goes between the modal and its infinitive. The verb bends, the bare infinitive after it does not move at all, and no de or à appears to mark the join.",
+      "sound": "zhuh nuh pahns pa kuh ma sur pwees vuh-NEER. puisse is one syllable, pweess.",
+      "variations": [
+        {
+          "display": "Je pense que ma sœur va venir",
+          "cue": "I think my sister is coming",
+          "changed": "the positive, with no doubt to bend anything"
+        },
+        {
+          "display": "Je ne pense pas que Marc puisse venir",
+          "cue": "I don't think Marc can come",
+          "changed": "a different person on the same cell"
+        }
+      ],
+      "mistake": {
+        "display": "Je ne pense pas que ma sœur peut venir",
+        "why": "The doubt bends the modal: Je ne pense pas que ma sœur puisse venir."
+      },
+      "usage": "Answering for somebody else when you are not certain, which is most of arranging anything.",
+      "register": "neutral",
+      "mnemonic": "The mood bends the modal, not the infinitive."
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "Il faut que j'aille à la gare",
+      "cue": "I have to go to the station",
+      "literal": "It is-necessary that I-go to the station",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aille",
+            "cue": "(I / he) go — subjunctive of vais and va",
+            "tag": "delta",
+            "forms": [
+              "aille",
+              "j'aille"
+            ],
+            "note": "One cell serving je and il alike, so vais and va both land on it. After je it elides and is written as a single word: j'aille."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "L2-M4 shipped il faut with a bare infinitive and stopped. il faut que is what you reach for the moment you must say WHO — and naming the person is what costs the subjunctive. Nothing else about the sentence has changed.",
+      "sound": "eel fo kuh ZHY a la GAR. The t of faut is silent, and j'aille is one syllable, zhy, rhyming with eye.",
+      "variations": [
+        {
+          "display": "Il faut que Marc aille à la gare",
+          "cue": "Marc has to go to the station",
+          "changed": "somebody else, so the elision goes and aille stands alone"
+        },
+        {
+          "display": "Il faut aller à la gare",
+          "cue": "We have to go to the station",
+          "changed": "nobody named, so the infinitive does it and no subjunctive is needed"
+        }
+      ],
+      "mistake": {
+        "display": "Il faut que je vais à la gare",
+        "why": "il faut que bends the verb: Il faut que j'aille à la gare. If you would rather not, drop the que: Il faut aller à la gare."
+      },
+      "usage": "Excusing yourself, which is the sentence's commonest job — an obligation with you inside it.",
+      "register": "neutral",
+      "mnemonic": "Name the person and pay the subjunctive."
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "À mon avis, ce film est trop long",
+      "cue": "In my opinion, this film is too long",
+      "literal": "To my opinion, this film is too long",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "à mon avis",
+            "cue": "in my opinion",
+            "tag": "delta",
+            "forms": [],
+            "note": "Three words with no verb in them, and the cheapest softener French has. The preposition is à, not dans — the phrase is frozen and does not take the English one."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Dans mon avis is the English preposition showing through the French. It is à, always, and the whole phrase is frozen: à mon avis, à son avis, and nothing else fits the slot.",
+      "sound": "a mon-na-VEE, suh feelm eh tro LONG. The n of mon links onto avis and is sounded there.",
+      "variations": [
+        {
+          "display": "À mon avis, ce film est très bon",
+          "cue": "In my opinion, this film is very good",
+          "changed": "the same frame with a warmer verdict"
+        },
+        {
+          "display": "À mon avis, il faut partir",
+          "cue": "In my opinion, we should go",
+          "changed": "an opinion about what to do rather than about a thing"
+        }
+      ],
+      "mistake": {
+        "display": "Dans mon avis, ce film est trop long",
+        "why": "The phrase takes à and only à: À mon avis, ce film est trop long."
+      },
+      "usage": "Opening a verdict at any register — it needs no verb, so it costs nothing to say.",
+      "register": "neutral",
+      "mnemonic": "The opinion is à yours, not in it."
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "Il faut partir, il n'y a pas beaucoup de temps",
+      "cue": "We have to go, there isn't much time",
+      "literal": "It is-necessary to-leave, there not-there has not much of time",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "temps",
+            "cue": "time",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, and the s is there in the singular already: le temps. The same word does the weather too, which is a second job and not a second word."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "This is the escape hatch, and it is the half of the module a learner is likeliest to forget. il faut plus an infinitive names nobody, needs no que and needs no subjunctive — and it is what a French speaker says whenever nobody in particular is meant.",
+      "sound": "eel fo par-TEER, eel nya pa bo-koo duh TAHN. The ps of temps is silent; only the nasal an is left.",
+      "variations": [
+        {
+          "display": "Il faut partir tôt",
+          "cue": "We have to leave early",
+          "changed": "shorter, and still no subjunctive anywhere in it"
+        },
+        {
+          "display": "Il faut que j'aille au travail",
+          "cue": "I have to go to work",
+          "changed": "a person named, so que and the bent verb both come back"
+        }
+      ],
+      "mistake": {
+        "display": "Il faut que partir",
+        "why": "que needs a subject after it. Either drop it — Il faut partir — or name somebody: Il faut que j'aille au travail."
+      },
+      "usage": "Hurrying a group along, with the reason attached in the second half.",
+      "register": "neutral",
+      "mnemonic": "No name, no que, no subjunctive."
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "Je suis d'accord, même si c'est cher",
+      "cue": "I agree, even though it's expensive",
+      "literal": "I am in-agreement, even if it-is expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "même si",
+            "cue": "even if · even though",
+            "tag": "interference",
+            "forms": [],
+            "note": "Two words that never bend the verb after them: même si c'est cher. It grants the thing rather than doubting it, so the plain indicative is what follows."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "même si is the counterweight to the whole module. It looks like the perfect place for a subjunctive and takes the plain indicative, because you are not doubting the price — you have just conceded it.",
+      "sound": "zhuh swee da-KOR, mem see say SHEHR. The ê of même is an open e, said twice.",
+      "variations": [
+        {
+          "display": "Je suis d'accord, même si c'est loin",
+          "cue": "I agree, even though it's far",
+          "changed": "a different reservation after the comma"
+        },
+        {
+          "display": "Je ne suis pas d'accord",
+          "cue": "I don't agree",
+          "changed": "the refusal, with ne and pas wrapped round suis"
+        }
+      ],
+      "mistake": {
+        "display": "Je suis d'accord, même si ce soit cher",
+        "why": "même si takes the indicative: Je suis d'accord, même si c'est cher."
+      },
+      "usage": "Agreeing with a reservation attached, which is how most agreement actually sounds.",
+      "register": "neutral",
+      "mnemonic": "même si grants; it does not doubt."
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "Je ne suis pas sûr, mais je crois que oui",
+      "cue": "I'm not sure, but I think so",
+      "literal": "I not am not sure, but I believe that yes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sûr",
+            "cue": "sure · certain",
+            "tag": "interference",
+            "forms": [
+              "sûr",
+              "sûre"
+            ],
+            "note": "The circumflex is the whole difference from L1-M7's sur, on top of: sur la table against je suis sûr. A woman writes sûre."
+          },
+          {
+            "display": "crois",
+            "cue": "I believe · I think",
+            "tag": "free",
+            "forms": [
+              "crois",
+              "croit",
+              "croyez"
+            ],
+            "note": "Interchangeable with pense for an opinion, and commoner in speech. It takes que exactly as pense does."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          5
+        ]
+      },
+      "trap": "je crois que oui is a whole answer and English has no word-for-word version of it — I believe that yes is not English. The que is doing the same joining job it does after pense, with oui standing in for the clause.",
+      "sound": "zhuh nuh swee pa SÜR, meh zhuh krwa kuh WEE. crois rhymes with moi, and the ü of sûr is the pursed lip vowel.",
+      "variations": [
+        {
+          "display": "Je ne suis pas sûre, mais je crois que oui",
+          "cue": "I'm not sure, but I think so",
+          "changed": "a woman speaking, so sûr takes its e"
+        },
+        {
+          "display": "Je crois que non",
+          "cue": "I don't think so",
+          "changed": "the other answer, and still only three words"
+        }
+      ],
+      "mistake": {
+        "display": "Je ne suis pas sûr, mais je crois oui",
+        "why": "que is not optional after crois: je crois que oui."
+      },
+      "usage": "The honest half-answer, and the softener a speaker reaches for when they will not commit.",
+      "register": "neutral",
+      "mnemonic": "sûr wears a hat; sur does not."
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "C'est peut-être vrai, mais je ne suis pas d'accord",
+      "cue": "It may be true, but I don't agree",
+      "literal": "It-is maybe true, but I not am not in-agreement",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "peut-être",
+            "cue": "maybe · perhaps",
+            "tag": "delta",
+            "forms": [],
+            "note": "One hyphenated word, and it sits after the verb: c'est peut-être vrai. Written apart, peut être is two words meaning can be."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "The hyphen is the only thing on the page separating maybe from can be. peut-être vrai is perhaps true; peut être vrai is can be true, and nothing else in the sentence warns you which one you have written.",
+      "sound": "say puh-TETR vreh, meh zhuh nuh swee pa da-KOR. The final re of être is barely there.",
+      "variations": [
+        {
+          "display": "C'est peut-être cher",
+          "cue": "It may be expensive",
+          "changed": "a shorter guess, with the same word after the verb"
+        },
+        {
+          "display": "Je ne suis pas d'accord, mais c'est peut-être vrai",
+          "cue": "I don't agree, but it may be true",
+          "changed": "the two halves swapped, so the concession comes last"
+        }
+      ],
+      "mistake": {
+        "display": "C'est peut être vrai",
+        "why": "The hyphen is not optional: peut-être is maybe, peut être is can be."
+      },
+      "usage": "Conceding a point before disagreeing with it, which is the politest disagreement French has.",
+      "register": "neutral",
+      "mnemonic": "A hyphen makes it a maybe."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M3-C01",
+      "display": "À mon avis, ce livre est très bon",
+      "cue": "In my opinion, this book is very good"
+    },
+    {
+      "id": "L3-M3-C02",
+      "display": "Je ne pense pas que ce soit cher",
+      "cue": "I don't think it's expensive"
+    },
+    {
+      "id": "L3-M3-C03",
+      "display": "Il faut que j'aille au travail",
+      "cue": "I have to go to work"
+    },
+    {
+      "id": "L3-M3-C04",
+      "display": "Je crois que Marc a raison",
+      "cue": "I think Marc is right"
+    },
+    {
+      "id": "L3-M3-C05",
+      "display": "Je ne suis pas sûr, mais c'est peut-être vrai",
+      "cue": "I'm not sure, but it may be true"
+    },
+    {
+      "id": "L3-M3-C06",
+      "display": "Je suis d'accord, même si c'est loin",
+      "cue": "I agree, even though it's far"
+    },
+    {
+      "id": "L3-M3-C07",
+      "display": "Il n'y a pas beaucoup de temps",
+      "cue": "There isn't much time"
+    },
+    {
+      "id": "L3-M3-C08",
+      "display": "Je ne pense pas que Marc puisse venir",
+      "cue": "I don't think Marc can come"
+    },
+    {
+      "id": "L3-M3-C09",
+      "display": "À mon avis, il faut partir tôt",
+      "cue": "In my opinion, we should leave early"
+    },
+    {
+      "id": "L3-M3-C10",
+      "display": "C'est vrai, mais je ne suis pas d'accord",
+      "cue": "That's true, but I don't agree"
+    },
+    {
+      "id": "L3-M3-C11",
+      "display": "Je ne pense pas que Marc ait le temps",
+      "cue": "I don't think Marc has the time"
+    },
+    {
+      "id": "L3-M3-C12",
+      "display": "Il faut travailler, même si c'est tard",
+      "cue": "We have to work, even though it's late"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

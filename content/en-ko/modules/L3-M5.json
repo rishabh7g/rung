@@ -1,0 +1,688 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M5",
+  "title": "What someone said",
+  "job": "Reporting other people's words",
+  "prerequisites": [
+    "L3-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "N-i/ga + clause-dago + haesseoyo",
+      "N-irago + haesseoyo",
+      "V-(eu)rago + haesseoyo",
+      "V-jago + haesseoyo",
+      "V-nyago + mureosseoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-dago REPORTS, AND WHAT IT ATTACHES TO IS THE PLAIN STYLE. gayo becomes gandago and masisseoyo becomes masitdago, so the plain form finally appears on the page here — BOUND inside a report, never as a sentence anybody says. L3 does not lift the ban this course opened with: banmal is still never written free-standing, jeo is still never na, and informal is still never chipped anywhere."
+    },
+    {
+      "tag": "delta",
+      "text": "AN ACTION VERB INSERTS AN n, A DESCRIBING VERB DOES NOT. ondago, gandago and baeundago against masitdago, jotago and eopdago. That is the one shape rule of the module, and it splits the verbs the same way M2's -neun and -(eu)n already did."
+    },
+    {
+      "tag": "free",
+      "text": "KOREAN DOES NOT BACKSHIFT. What the person said stays in the tense they said it in: Chingu-ga naeil ondago haesseoyo is 'my friend said he is coming tomorrow', with the present exactly as spoken. English moves the tense back one step and Korean never does, so there is nothing here to learn except to stop doing it."
+    },
+    {
+      "tag": "interference",
+      "text": "WHAT DOES CHANGE IS THE PERSON. The jeo inside the quote becomes whoever you are reporting, and then it simply disappears, because M1's law says a subject the listener already knows is not named again. Leaving jeo in reports your own words instead of theirs."
+    },
+    {
+      "tag": "delta",
+      "text": "FIVE SHAPES, SORTED BY WHAT WAS SAID RATHER THAN BY WHO SAID IT. A statement takes -dago, a noun with the copula takes -(i)rago, a command takes -(eu)rago, a suggestion takes -jago and a question takes -nyago. All five then hand off to one ordinary verb: L1-M5's haesseoyo for said, and mureosseoyo for asked."
+    },
+    {
+      "tag": "delta",
+      "text": "A REPORTED COMMAND LOSES ITS POLITENESS ENDING. The teacher said oseyo, and the report is orago; L2-M1's -(eu)seyo cannot survive inside one. The respect is carried by the title and by the register chip instead. A reported suggestion is -jago, which is also where M4's missing 'let us' finally has somewhere to go."
+    },
+    {
+      "tag": "free",
+      "text": "HONORIFICS INSIDE A REPORT USE ONLY WHAT THE COURSE ALREADY OWNS. malsseum is the word for a raised person's speech, against mal for everybody else's. The productive past honorific -(eu)syeosseoyo and the honorific subject particle -kkeseo are L3-M8's and are not borrowed early. Reports of an elder's words chip formal and everything else stays neutral."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M5-S01",
+      "display": "Chingu-ga naeil ondago haesseoyo.",
+      "script": "친구가 내일 온다고 했어요.",
+      "cue": "My friend said he's coming tomorrow.",
+      "literal": "friend-subject tomorrow comes-that said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ondago",
+            "script": "온다고",
+            "cue": "that (he) is coming",
+            "tag": "delta",
+            "forms": [
+              "ondago"
+            ],
+            "note": "L2-M3's wayo in its plain shape onda, plus -dago. The plain style is only ever seen bound inside a report like this; it is never a sentence you say."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "KOREAN DOES NOT BACKSHIFT. English turns 'I'm coming tomorrow' into 'he was coming tomorrow'; Korean keeps the present the friend actually used. Moving the tense back is the single commonest English habit in this module.",
+      "sound": "CHIN-gu-ga NAE-il ON-da-go HAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga oneul ondago haesseoyo.",
+          "script": "친구가 오늘 온다고 했어요.",
+          "cue": "My friend said he's coming today.",
+          "changed": "the day inside the quote"
+        },
+        {
+          "display": "Minsu-neun naeil ondago haesseoyo.",
+          "script": "민수는 내일 온다고 했어요.",
+          "cue": "Minsu said he's coming tomorrow.",
+          "changed": "a named speaker, with M1's -neun on somebody already in the account"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga naeil watdago haesseoyo.",
+        "script": "친구가 내일 왔다고 했어요.",
+        "why": "That is the English backshift. He said he is coming, so the report keeps the present: Chingu-ga naeil ondago haesseoyo."
+      },
+      "usage": "Passing on what somebody told you about their plans.",
+      "register": "neutral",
+      "mnemonic": "The tense stays as it was said."
+    },
+    {
+      "id": "L3-M5-S02",
+      "display": "Chingu-ga i-sikdang-i masitdago haesseoyo.",
+      "script": "친구가 이 식당이 맛있다고 했어요.",
+      "cue": "My friend said this restaurant is good.",
+      "literal": "friend-subject this-restaurant-subject is-tasty-that said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "masitdago",
+            "script": "맛있다고",
+            "cue": "that (it) is tasty",
+            "tag": "delta",
+            "forms": [
+              "masitdago"
+            ],
+            "note": "L2-M5's masisseoyo in its plain shape masitda, plus -go. A describing verb takes the bare -da, with no n inserted the way ondago has one."
+          },
+          {
+            "display": "jotago",
+            "script": "좋다고",
+            "cue": "that (it) is good",
+            "tag": "delta",
+            "forms": [
+              "jotago"
+            ],
+            "note": "L1-M9's joayo reported. The stem ends in h, which turns the following d aspirate, so it is said and written jotago — the same change as M3's jochi."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "-dago ATTACHES TO THE PLAIN STEM, NOT TO THE -yo FORM. There is no masisseoyo-dago. Every report in this module is built by stripping the -yo sentence back to its plain shape first, and that is the whole of the work.",
+      "sound": "CHIN-gu-ga i-SIK-dang-i ma-SIT-da-go HAE-sseo-yo. masitdago is said ma-sit-tta-go.",
+      "variations": [
+        {
+          "display": "Chingu-ga bibimbap-i masitdago haesseoyo.",
+          "script": "친구가 비빔밥이 맛있다고 했어요.",
+          "cue": "My friend said the bibimbap is good.",
+          "changed": "the dish rather than the restaurant"
+        },
+        {
+          "display": "Chingu-ga i-sikdang-i jotago haesseoyo.",
+          "script": "친구가 이 식당이 좋다고 했어요.",
+          "cue": "My friend said this restaurant is good.",
+          "changed": "jotago, a second describing verb on the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga i-sikdang-i masisseoyo-dago haesseoyo.",
+        "script": "친구가 이 식당이 맛있어요다고 했어요.",
+        "why": "-dago goes on the plain stem, never on the finished -yo verb: Chingu-ga i-sikdang-i masitdago haesseoyo."
+      },
+      "usage": "Recommending somewhere on somebody else's word.",
+      "register": "neutral",
+      "mnemonic": "Strip to the plain stem first."
+    },
+    {
+      "id": "L3-M5-S03",
+      "display": "Chingu-ga hangungmal-eul baeundago haesseoyo.",
+      "script": "친구가 한국말을 배운다고 했어요.",
+      "cue": "My friend said she's learning Korean.",
+      "literal": "friend-subject Korean-object learns-that said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baeundago",
+            "script": "배운다고",
+            "cue": "that (she) is learning",
+            "tag": "delta",
+            "forms": [
+              "baeundago"
+            ],
+            "note": "L1-M3's baewoyo reported. It is an action verb, so the plain shape inserts an n before the -da: baeunda, then baeundago."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "THE I INSIDE THE QUOTE DISAPPEARS. She said jeo-neun hangungmal-eul baewoyo. Reported, the jeo is not replaced by another pronoun — it is simply dropped, because chingu-ga at the head has already said whose learning it is.",
+      "sound": "CHIN-gu-ga han-gung-ma-reul BAE-un-da-go HAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Dongsaeng-i hangungmal-eul baeundago haesseoyo.",
+          "script": "동생이 한국말을 배운다고 했어요.",
+          "cue": "My younger sibling said they're learning Korean.",
+          "changed": "L2-M2's dongsaeng as the speaker"
+        },
+        {
+          "display": "Chingu-ga daehak-eseo baeundago haesseoyo.",
+          "script": "친구가 대학에서 배운다고 했어요.",
+          "cue": "My friend said she's learning at the university.",
+          "changed": "M2's daehak-eseo inside the quote instead of the object"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga jeo-neun hangungmal-eul baeundago haesseoyo.",
+        "script": "친구가 저는 한국말을 배운다고 했어요.",
+        "why": "The jeo inside the quote is your friend, not you, so it drops: Chingu-ga hangungmal-eul baeundago haesseoyo."
+      },
+      "usage": "Telling somebody what a friend is up to.",
+      "register": "neutral",
+      "mnemonic": "The person changes; the tense does not."
+    },
+    {
+      "id": "L3-M5-S04",
+      "display": "Minsu-neun haksaeng-irago haesseoyo.",
+      "script": "민수는 학생이라고 했어요.",
+      "cue": "Minsu said he's a student.",
+      "literal": "Minsu-topic student-is-that said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "haksaeng-irago",
+            "script": "학생이라고",
+            "cue": "that (he) is a student",
+            "tag": "delta",
+            "forms": [
+              "haksaeng-irago"
+            ],
+            "note": "L1-M1's haksaeng-ieyo reported. The copula takes -irago after a consonant, and the hyphen sits where it always does in this course: at the copula boundary."
+          },
+          {
+            "display": "uisa-rago",
+            "script": "의사라고",
+            "cue": "that (she) is a doctor",
+            "tag": "delta",
+            "forms": [
+              "uisa-rago"
+            ],
+            "note": "The same ending after a vowel, where the i drops: uisa-rago, not uisa-irago. It is the copula's own allomorph pair, exactly as -ieyo and -yeyo already were."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "A NOUN REPORT IS NOT A -dago REPORT. What is being reported here is a copula sentence, so the ending is -(i)rago. English uses the same 'that' for both, which is why the choice has to be made on the Korean side.",
+      "sound": "MIN-su-neun hak-saeng-I-ra-go HAE-sseo-yo. haksaeng-irago is said hak-saeng-i-ra-go.",
+      "variations": [
+        {
+          "display": "Yuna-neun uisa-rago haesseoyo.",
+          "script": "유나는 의사라고 했어요.",
+          "cue": "Yuna said she's a doctor.",
+          "changed": "a vowel-final noun, so the ending loses its i"
+        },
+        {
+          "display": "Minsu-neun je-ga haksaeng-irago haesseoyo.",
+          "script": "민수는 제가 학생이라고 했어요.",
+          "cue": "Minsu said that I'm a student.",
+          "changed": "a clause subject inside the report, which takes M2's je-ga"
+        }
+      ],
+      "mistake": {
+        "display": "Minsu-neun haksaeng-ieyo-dago haesseoyo.",
+        "script": "민수는 학생이에요다고 했어요.",
+        "why": "A noun report takes the copula's own ending: Minsu-neun haksaeng-irago haesseoyo."
+      },
+      "usage": "Repeating how somebody introduced themselves.",
+      "register": "neutral",
+      "mnemonic": "Noun plus copula: -(i)rago."
+    },
+    {
+      "id": "L3-M5-S05",
+      "display": "Seonsaengnim-i naeil orago haesseoyo.",
+      "script": "선생님이 내일 오라고 했어요.",
+      "cue": "The teacher said to come tomorrow.",
+      "literal": "teacher-subject tomorrow come-that said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "orago",
+            "script": "오라고",
+            "cue": "that (you) should come — a reported order",
+            "tag": "delta",
+            "forms": [
+              "orago"
+            ],
+            "note": "L2-M4's oseyo reported. The command loses its -(eu)seyo entirely: orago is what the report keeps, and the respect moves onto the title instead."
+          },
+          {
+            "display": "gidarirago",
+            "script": "기다리라고",
+            "cue": "that (you) should wait — a reported order",
+            "tag": "delta",
+            "forms": [
+              "gidarirago"
+            ],
+            "note": "L2-M8's gidaryeoyo in the same shape. A stem ending in a vowel takes plain -rago, so gidarirago and orago are built identically."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "THE POLITENESS DOES NOT SURVIVE THE REPORT. She said oseyo and you say orago. That is not rudeness: an ending like -(eu)seyo belongs to the sentence somebody actually spoke, and a report is your sentence, not theirs.",
+      "sound": "seon-SAENG-ni-mi NAE-il O-ra-go HAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Seonsaengnim-i jom gidarirago haesseoyo.",
+          "script": "선생님이 좀 기다리라고 했어요.",
+          "cue": "The teacher said to wait a moment.",
+          "changed": "a different order, with L2-M1's jom inside the quote"
+        },
+        {
+          "display": "Chingu-ga naeil orago haesseoyo.",
+          "script": "친구가 내일 오라고 했어요.",
+          "cue": "My friend said to come tomorrow.",
+          "changed": "a friend rather than a teacher — the same words, a neutral line"
+        }
+      ],
+      "mistake": {
+        "display": "Seonsaengnim-i naeil oseyo-rago haesseoyo.",
+        "script": "선생님이 내일 오세요라고 했어요.",
+        "why": "A reported order takes the bare command form: Seonsaengnim-i naeil orago haesseoyo."
+      },
+      "usage": "Passing on an instruction from somebody senior.",
+      "register": "formal",
+      "mnemonic": "A reported order drops the -(eu)seyo."
+    },
+    {
+      "id": "L3-M5-S06",
+      "display": "Chingu-ga gachi gajago haesseoyo.",
+      "script": "친구가 같이 가자고 했어요.",
+      "cue": "My friend said let's go together.",
+      "literal": "friend-subject together let-us-go-that said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gajago",
+            "script": "가자고",
+            "cue": "that (we) should go — a reported suggestion",
+            "tag": "delta",
+            "forms": [
+              "gajago"
+            ],
+            "note": "The reported shape of a suggestion. This is where 'let us' finally lands in this course: free-standing it would need -(eu)psida, which is L4-M7's, but reported it is simply -jago."
+          },
+          {
+            "display": "meokjago",
+            "script": "먹자고",
+            "cue": "that (we) should eat — a reported suggestion",
+            "tag": "delta",
+            "forms": [
+              "meokjago"
+            ],
+            "note": "L1-M3's meogeoyo in the same shape. The ending is -jago on any stem, with nothing added for a consonant: meokjago, gajago."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "REPORTING A SUGGESTION IS EASIER THAN MAKING ONE. M4 could not write 'let us' at all, because the ending for it belongs to a speech level this course does not teach. Inside a report there is no such problem: -jago is the whole of it.",
+      "sound": "CHIN-gu-ga GA-chi GA-ja-go HAE-sseo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga gachi meokjago haesseoyo.",
+          "script": "친구가 같이 먹자고 했어요.",
+          "cue": "My friend said let's eat together.",
+          "changed": "eating rather than going"
+        },
+        {
+          "display": "Dongsaeng-i gachi gajago haesseoyo.",
+          "script": "동생이 같이 가자고 했어요.",
+          "cue": "My younger sibling said let's go together.",
+          "changed": "a different speaker"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga gachi gallae-yo-jago haesseoyo.",
+        "script": "친구가 같이 갈래요자고 했어요.",
+        "why": "The report takes the plain suggestion form on its own: Chingu-ga gachi gajago haesseoyo."
+      },
+      "usage": "Telling somebody what was proposed.",
+      "register": "neutral",
+      "mnemonic": "A reported let-us is -jago."
+    },
+    {
+      "id": "L3-M5-S07",
+      "display": "Chingu-ga naeil onyago mureosseoyo.",
+      "script": "친구가 내일 오냐고 물었어요.",
+      "cue": "My friend asked whether I'm coming tomorrow.",
+      "literal": "friend-subject tomorrow comes-whether asked",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "onyago",
+            "script": "오냐고",
+            "cue": "whether (you) are coming",
+            "tag": "delta",
+            "forms": [
+              "onyago"
+            ],
+            "note": "A reported question. There is no separate word for 'whether' or 'if' anywhere in it: the ending -nyago carries the whole of that job."
+          },
+          {
+            "display": "ganyago",
+            "script": "가냐고",
+            "cue": "whether (you) are going",
+            "tag": "delta",
+            "forms": [
+              "ganyago"
+            ],
+            "note": "The same ending on L1-M4's gayo. It goes straight onto the stem, so ganyago and onyago are built the same way."
+          },
+          {
+            "display": "mureosseoyo",
+            "script": "물었어요",
+            "cue": "asked",
+            "tag": "delta",
+            "forms": [
+              "mureosseoyo"
+            ],
+            "note": "The second and last verb the module needs. A reported question hands off to mureosseoyo, while everything else in this module hands off to haesseoyo."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "THERE IS NO WORD FOR 'WHETHER'. English needs one to report a yes-or-no question and Korean puts the whole of it in the ending. A learner who goes looking for the missing word will not find one, because -nyago already said it.",
+      "sound": "CHIN-gu-ga NAE-il O-nya-go mu-REO-sseo-yo. mureosseoyo is said mu-reo-sseo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga eodi-e ganyago mureosseoyo.",
+          "script": "친구가 어디에 가냐고 물었어요.",
+          "cue": "My friend asked where I'm going.",
+          "changed": "L1-M7's eodi-e, so it becomes a where-question"
+        },
+        {
+          "display": "Chingu-ga oneul onyago mureosseoyo.",
+          "script": "친구가 오늘 오냐고 물었어요.",
+          "cue": "My friend asked whether I'm coming today.",
+          "changed": "the day inside the question"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga naeil wayo mureosseoyo.",
+        "script": "친구가 내일 와요 물었어요.",
+        "why": "A reported question takes -nyago on the plain stem, never the finished -yo verb: Chingu-ga naeil onyago mureosseoyo."
+      },
+      "usage": "Relaying a question somebody put to you.",
+      "register": "neutral",
+      "mnemonic": "Asked, not said: mureosseoyo."
+    },
+    {
+      "id": "L3-M5-S08",
+      "display": "Chingu mal-i majayo.",
+      "script": "친구 말이 맞아요.",
+      "cue": "My friend is right.",
+      "literal": "friend word-subject is-correct",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mal",
+            "script": "말",
+            "cue": "what somebody said · their words",
+            "tag": "delta",
+            "forms": [
+              "mal",
+              "mal-i",
+              "mal-eun"
+            ],
+            "note": "Korean judges the WORDS rather than the person: chingu mal-i majayo, my friend's words are correct. Saying chingu-ga majayo would grade the friend instead."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "KOREAN AGREES WITH THE WORDS, NOT THE PERSON. English says 'my friend is right' and Korean makes the speech the subject of M3's majayo. There is no possessive particle in between either: chingu mal-i, two nouns simply stood next to each other.",
+      "sound": "CHIN-gu MA-ri MA-ja-yo. mal-i is said ma-ri.",
+      "variations": [
+        {
+          "display": "Chingu mal-eun hangsang majayo.",
+          "script": "친구 말은 항상 맞아요.",
+          "cue": "My friend is always right.",
+          "changed": "M1's hangsang, and the topic particle because the words are already in the account"
+        },
+        {
+          "display": "Chingu mal-i teullyeoyo.",
+          "script": "친구 말이 틀려요.",
+          "cue": "My friend is wrong.",
+          "changed": "M3's teullyeoyo, the other half of the pair"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-ga majayo.",
+        "script": "친구가 맞아요.",
+        "why": "majayo grades what was said: Chingu mal-i majayo. With chingu-ga it would be claiming the friend is the correct one."
+      },
+      "usage": "Backing somebody up in an argument you were not part of.",
+      "register": "neutral",
+      "mnemonic": "The words are right, not the person."
+    },
+    {
+      "id": "L3-M5-S09",
+      "display": "Seonsaengnim malsseum-eun hangsang majayo.",
+      "script": "선생님 말씀은 항상 맞아요.",
+      "cue": "What the teacher says is always right.",
+      "literal": "teacher honoured-words-topic always is-correct",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "malsseum",
+            "script": "말씀",
+            "cue": "what a respected person said",
+            "tag": "delta",
+            "forms": [
+              "malsseum",
+              "malsseum-eun",
+              "malsseum-i"
+            ],
+            "note": "The honorific twin of mal, and the same word inside L2-M1's malsseumhaseyo. A teacher's words are malsseum; using mal about them is the error, not merely the plainer choice."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "malsseum IS NOT A POLITER TONE, IT IS A DIFFERENT WORD. English has one noun for speech and adjusts the sentence around it. Korean swaps the noun itself, and the swap is obligatory once the speaker is somebody you raise.",
+      "sound": "seon-SAENG-nim MAL-sseu-meun HANG-sang MA-ja-yo. malsseum-eun is said mal-sseu-meun.",
+      "variations": [
+        {
+          "display": "Seonsaengnim malsseum-i majayo.",
+          "script": "선생님 말씀이 맞아요.",
+          "cue": "What the teacher says is right.",
+          "changed": "-i rather than -eun, because the words are new to the account"
+        },
+        {
+          "display": "Chingu mal-eun hangsang majayo.",
+          "script": "친구 말은 항상 맞아요.",
+          "cue": "My friend is always right.",
+          "changed": "the plain mal, on somebody you do not raise"
+        }
+      ],
+      "mistake": {
+        "display": "Seonsaengnim mal-eun hangsang majayo.",
+        "script": "선생님 말은 항상 맞아요.",
+        "why": "A teacher's words are malsseum: Seonsaengnim malsseum-eun hangsang majayo."
+      },
+      "usage": "Agreeing with somebody senior when they are not in the room.",
+      "register": "formal",
+      "mnemonic": "Their words are malsseum."
+    },
+    {
+      "id": "L3-M5-S10",
+      "display": "Seonsaengnim-i naeil siheom-i eopdago haesseoyo.",
+      "script": "선생님이 내일 시험이 없다고 했어요.",
+      "cue": "The teacher said there's no exam tomorrow.",
+      "literal": "teacher-subject tomorrow exam-subject there-is-not-that said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eopdago",
+            "script": "없다고",
+            "cue": "that there isn't",
+            "tag": "delta",
+            "forms": [
+              "eopdago"
+            ],
+            "note": "L1-M3's eopseoyo reported. It behaves like a describing verb, so the plain shape is the bare eopda with no n inserted: eopdago."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "EVERYTHING IN THIS SENTENCE IS THE MODULE AT ONCE. The teacher's tomorrow stays tomorrow, her present stays present, her jeo is gone, the ending is the describing-verb shape, and the only thing that moved is the register — which is on the chip and on the title, not on the verb.",
+      "sound": "seon-SAENG-ni-mi NAE-il SI-heo-mi EOP-da-go HAE-sseo-yo. eopdago is said eop-tta-go.",
+      "variations": [
+        {
+          "display": "Chingu-ga naeil siheom-i eopdago haesseoyo.",
+          "script": "친구가 내일 시험이 없다고 했어요.",
+          "cue": "My friend said there's no exam tomorrow.",
+          "changed": "a friend as the source — the same words, a neutral line"
+        },
+        {
+          "display": "Seonsaengnim-i oneul siheom-i eopdago haesseoyo.",
+          "script": "선생님이 오늘 시험이 없다고 했어요.",
+          "cue": "The teacher said there's no exam today.",
+          "changed": "the day inside the quote"
+        }
+      ],
+      "mistake": {
+        "display": "Seonsaengnim-i naeil siheom-i eopseotdago haesseoyo.",
+        "script": "선생님이 내일 시험이 없었다고 했어요.",
+        "why": "The backshift again. She said there is none tomorrow, so the report keeps the present: Seonsaengnim-i naeil siheom-i eopdago haesseoyo."
+      },
+      "usage": "Passing on news from a class you were both in.",
+      "register": "formal",
+      "mnemonic": "Only the person moves."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M5-C01",
+      "display": "Chingu-ga naeil ondago haesseoyo.",
+      "script": "친구가 내일 온다고 했어요.",
+      "cue": "My friend said he's coming tomorrow."
+    },
+    {
+      "id": "L3-M5-C02",
+      "display": "Chingu-ga i-sikdang-i masitdago haesseoyo.",
+      "script": "친구가 이 식당이 맛있다고 했어요.",
+      "cue": "My friend said this restaurant is good."
+    },
+    {
+      "id": "L3-M5-C03",
+      "display": "Chingu-ga hangungmal-eul baeundago haesseoyo.",
+      "script": "친구가 한국말을 배운다고 했어요.",
+      "cue": "My friend said she's learning Korean."
+    },
+    {
+      "id": "L3-M5-C04",
+      "display": "Minsu-neun haksaeng-irago haesseoyo.",
+      "script": "민수는 학생이라고 했어요.",
+      "cue": "Minsu said he's a student."
+    },
+    {
+      "id": "L3-M5-C05",
+      "display": "Seonsaengnim-i naeil orago haesseoyo.",
+      "script": "선생님이 내일 오라고 했어요.",
+      "cue": "The teacher said to come tomorrow."
+    },
+    {
+      "id": "L3-M5-C06",
+      "display": "Chingu-ga gachi gajago haesseoyo.",
+      "script": "친구가 같이 가자고 했어요.",
+      "cue": "My friend said let's go together."
+    },
+    {
+      "id": "L3-M5-C07",
+      "display": "Chingu-ga naeil onyago mureosseoyo.",
+      "script": "친구가 내일 오냐고 물었어요.",
+      "cue": "My friend asked whether I'm coming tomorrow."
+    },
+    {
+      "id": "L3-M5-C08",
+      "display": "Chingu mal-i majayo.",
+      "script": "친구 말이 맞아요.",
+      "cue": "My friend is right."
+    },
+    {
+      "id": "L3-M5-C09",
+      "display": "Seonsaengnim malsseum-eun hangsang majayo.",
+      "script": "선생님 말씀은 항상 맞아요.",
+      "cue": "What the teacher says is always right."
+    },
+    {
+      "id": "L3-M5-C10",
+      "display": "Seonsaengnim-i naeil siheom-i eopdago haesseoyo.",
+      "script": "선생님이 내일 시험이 없다고 했어요.",
+      "cue": "The teacher said there's no exam tomorrow."
+    },
+    {
+      "id": "L3-M5-C11",
+      "display": "Yuna-neun uisa-rago haesseoyo.",
+      "script": "유나는 의사라고 했어요.",
+      "cue": "Yuna said she's a doctor."
+    },
+    {
+      "id": "L3-M5-C12",
+      "display": "Chingu-ga eodi-e ganyago mureosseoyo.",
+      "script": "친구가 어디에 가냐고 물었어요.",
+      "cue": "My friend asked where I'm going."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

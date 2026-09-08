@@ -190,3 +190,202 @@ module already owns or one they open themselves. No baseline moved in either dir
 13. **`I work at a bank`** (M2-S02). `for` is unavailable until M7, so the module teaches `at` for a
     workplace and reserves `in` for a city. Confirm a learner restricted to `at` for the next five
     modules never sounds odd naming an employer.
+
+## Wave 2 — L3-M3, L3-M4, L3-M5 (#482)
+
+Authored against the same briefs and the same `docs/71` decisions, each module's prompt regenerated
+from the REAL index after the one before it shipped — 564 surfaces through L3-M2, 580 through
+L3-M3, 603 through L3-M4, 622 through L3-M5. A dev build emits
+`hi-en: 25 modules (L1-M1..M10, L2-M1..M10, L3-M1..M5)` and `CONTENT 209/209 ok`.
+
+Wave 1 opened the level on `docs/71` §1's asymmetry. This wave is where it stops being a framing
+device and starts choosing sentences: all three modules teach a shape English **forbids** where
+Hindi allows it, and in every one of them the learner's wrong sentence is a correct Hindi sentence
+wearing English words. `I think it isn't true` is मुझे लगता है कि यह सही नहीं है. `If it will rain`
+is अगर बारिश होगी. `She asked where was I living` is उसने पूछा कि मैं कहाँ रह रहा था. None of the
+thirty mistake plates in this wave had to be invented.
+
+### L3-M3 "Opinions with reasons" — a negative that climbs, and a verb that is not an adjective
+
+Negative raising is the module's spine and it is the rarest kind of delta this repo teaches: both
+English sentences are grammatical, and only one of them is what a speaker says. `I don't think it's
+true` moves the negative up onto the reporting verb; `I think it isn't true` leaves it where Hindi
+leaves it and lands as emphasis — a flat contradiction where a mild disagreement was meant. A
+learner who never raises does not sound wrong once; they sound combative in every disagreement they
+ever have. That is why S01 opens the module with the bare frame, and why the raising is repeated
+under two different softeners (S07 `To be honest, I don't think it's good.`, S10 `I'm not sure, but
+I don't think it's true.`) rather than taught once: the failure is a habit, not a fact.
+
+`agree` is the module's `interference` row and the plate is the single most-produced error in
+Indian English opinion talk. `*I am agree with you` is not a slip — मैं सहमत हूँ is built from an
+adjective and a copula, and the learner is translating faithfully. The row carries the whole
+paradigm (`agree`, `agrees`, `agreed`) so the tap answers with a verb, and the prepositions stay in
+`rules[1]` where a list belongs: `agree with` a person, `agree on` a plan, `agree to` a request.
+`disagree` gets its own row at S03 with the same shape and the same plate, because a learner who
+has repaired `*I am agree` reliably produces `*I am disagree` a week later.
+
+The clause-for-a-word delta (`I think so`, `I hope so`, `I'm afraid not`) is small, very frequent,
+and easy to get wrong in the teaching: `I think the shop is open` is not an error, it is merely
+heavy, and the module says so in `rules[2]` instead of plating it as wrong. All three frames are
+indexed **whole**, which is the seam decision doing real work — `so` is L1-M9's row and `afraid` is
+L2-M8's, so a bare row for either would be an unreachable note, while the three-token keys are
+fresh and win the resolver's longest-match walk outright.
+
+Softening closes the module and it is stated as a shape rather than as politeness: English hedges
+the **frame** and states the claim plainly. S10 is the item that carries it — `I'm not sure, but I
+think you are wrong.` — and its plate is the Indian-English softener the learner already owns,
+`…you are wrong only`, which softens the claim rather than the frame and reads as evasion to an
+English ear.
+
+### The `right` row that was never opened, and the `seems` the brief had stale
+
+Two seam corrections, both of the kind Wave 1 met with `work`.
+
+`right` is **L2-M4's** row, where it is a direction. The natural opinion display is `You are
+right`, and a second row for the opinion sense would be a note nobody is ever shown, while editing
+L2-M4 is forbidden. So the module does not write `right` at all: `true` (S01) and `wrong` (S10)
+carry both poles instead, and they are better rows anyway — `That's not true` is the negative a
+disagreement actually reaches for, and `wrong` is fresh because L2-M7 owns only the joined key
+`wrong number`, never the bare word.
+
+The brief's INDEX SEAM note lists `seems` among M3's fresh keys. It is **not fresh**: `seem` and
+`seems` are both L2-M8's, taught in the problems module. The module therefore opens no row for it
+and does not show it, and the raising rule names `seem` in prose beside `think` and `believe` so
+the fact still reaches a reader. Eight of the brief's nine seam claims held; this one did not, and
+the M6–M10 wave should read it as corrected here.
+
+### L3-M4 "If and then" — one rule that outweighs the module
+
+`docs/71` calls no-`will`-after-`if` worth more than the rest of the module put together, and the
+authoring took that literally: it is `rules[0]`, it is on six of the ten sentences' rule lists, and
+five of the ten plates are the same error in different clothes. The reason it earns that much room
+is that Hindi marks the future in **both** halves — अगर बारिश होगी तो मैं घर पर रहूँगा — so `*If it
+will rain, I will stay at home` is not a learner reaching past their grammar; it is a learner
+applying their grammar correctly. Nothing else in this level is so completely a translation
+artefact, and nothing else is so mechanically repairable: one half loses its `will` and the
+sentence is right.
+
+Two conditionals and no more. The first is real (`If you come early, we will eat together`), the
+second is unreal-now (`If I had time, I would come`), and the third is named in `rules[1]` as
+L4-M3's rather than smuggled in. The second conditional's own trap is that `had` is not doing past
+time — S04's trap says so directly, because a learner who reads `had` as a tense will not believe
+the sentence is about today. `would` opens no row: it is L2-M5's `would like` doing a second job,
+so the rule points back at it, exactly as the seam requires.
+
+`unless` is the module's second `interference` row and the trap is set by Hindi's जब तक … नहीं,
+which keeps its negative. `unless` has swallowed one, so `*Unless you don't leave early` reverses
+the sentence. S03 and S08 are deliberately the same content twice — `Unless you leave early…` and
+`If you don't hurry…` — so the learner sees the two ways of saying it beside each other and can
+count the negatives in each.
+
+Advice is the job line and the module spends almost nothing on it, because the learner already owns
+`should` (L2-M8) and `could` (L2-M1). Two frames were added: `If I were you` and `had better`, both
+frozen, both plated (`*If I am you`, `*You had better to leave early`).
+
+### The frozen phrase that moved maxSpan, and it is a real correction to `docs/71` §3
+
+`docs/71` §3 asks for `if I were you` to be indexed **WHOLE** — so that the bare `were` key stays
+L1-M1's — and in the same sentence says **maxSpan stays 3**. Those two cannot both be true:
+`if I were you` is four tokens, and indexing it whole makes hi-en's emitted `maxSpan` **4**. The
+authoring obeyed the WHOLE half, because that is the half the M4 brief repeats in the note an
+author actually reads, and because the alternative is worse in a way the reader can feel: without
+the whole key, a learner tapping `were` inside the advice frame is shown L1-M1's note — `were` as
+the plural past of `be` — which is the wrong fact at the exact moment they asked. `had better`
+costs nothing by comparison: `had` and `better` are both already owned, so the joined two-token key
+is fresh and longest-match-first hands the tap to the phrase.
+
+Nothing in the repo pins the number — `maxSpan` is emitted, and the two `maxSpan is 3` assertions
+in `tools/course-briefs.test.ts` are about other courses' brief TEXT, not about this index — so the
+build is green either way. The parenthetical in `docs/71` §3 is simply stale for hi-en and should
+read 4.
+
+### L3-M5 "What someone said" — the module that asks a learner to unlearn
+
+Reported questions are the hardest thing in this level and the difficulty is structural: every
+other delta in the wave adds a rule, and this one **removes** one. English inverts in a direct
+question (`Where are you living?`) and un-inverts in a reported one (`She asked where I was
+living`). Hindi inverts in neither, so the learner has spent two levels installing inversion as
+*the rule for questions* and now has to switch it off in exactly one place. S01 and S07 carry it —
+`asked` and `wondered` — and S07 exists mainly to say that the un-inversion is a property of the
+reporting frame rather than of the word `asked`.
+
+`said` against `told` is the module's second `interference` rule and it opens **no rows at all**:
+both are L2-M10's, and what M5 adds is not the words but their objects. `told` needs a person;
+`said` refuses one. कहा does both jobs at once with a dative (उसने मुझसे कहा), which is why the two
+swap in both directions — S03 plates `*He told that…` and S04 plates `*He said me that…`, and the
+pair is deliberately split across two consecutive items so neither reads as the only error.
+
+Backshift is taught and then immediately bounded, which is the half that usually goes missing. The
+step back is `rules[2]` (`is → was`, `will → would`, `have`/`has → had`, `went → had gone`) and the
+exception is `rules[3]`: what is still true does not move. S05 is the exception's own item — `She
+said she lives in Delhi.` — with a trap saying what the backshifted version would imply instead
+(that she has moved). A learner drilled only on the step produces `She said she lived in Delhi`
+about someone who has not gone anywhere, which is worse than the error the drill prevents.
+
+Every backshifted cell is its own row and edits nothing below it: `was living` (S01), `would come`
+(S03), `had gone` (S04), `was working` / `were working` (S08), `had finished` (S09), `was coming`
+(S10). The brief named the first three; the other three were opened for the same reason and by the
+same rule. One row the brief did not anticipate is `live` itself (S05): the backshift **exception**
+needs a still-true present, and `lives` was taught by no module in the ladder — the course had
+`stay` only from L3-M4 and nothing at all for बसना. So M5 opens `live` with the full paradigm and
+its note draws the line against `stay`, which is the pair Hindi collapses into one verb.
+
+`whether` is the module's other fresh row, and `if` is not re-opened: it is M4's, one module back,
+which is why M4's `if` note was written to be true of both jobs — the conditional half and the
+reported yes/no question — rather than of the conditional alone. That is the seam `docs/71` §3
+asked for, met inside this wave rather than left to a later one.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` held at **hi-en 30** across all three modules, and the wave produced
+no finding at all — the second consecutive wave with none. Four surfaces were caught by
+`npm run content:shown` during authoring and repaired in the content rather than in a baseline:
+`comes` and `be` in two L3-M4 variations (replaced with `they come` and a display that needs no
+copula, since bare `be` is taught nowhere in this ladder), and `working` and `his` in two L3-M5
+variations — the first fixed by adding `were working` to the `was working` cell's `forms`, which is
+the honest repair because it is the same backshifted cell in the plural, and the second by dropping
+a possessive the course has never taught. No baseline moved in either direction.
+
+### Open questions for the native pass
+
+14. **Negative raising's reach** (M3, rule 0; S01). Confirm `I think it isn't true` really is heard
+    as emphatic contradiction rather than as neutral, and that the raising is as obligatory with
+    `believe` and `seem` as the rule claims it is with `think`.
+15. **`agree` prepositions** (M3, rule 1). Confirm `agree with` a person / `agree on` a plan /
+    `agree to` a request is the split a speaker actually makes, and that `agree to a plan` is not so
+    ordinary that teaching the three as separate makes a learner hesitate.
+16. **`I'm afraid not`** (M3-S06). Confirm it is everyday spoken English across registers rather
+    than a service-counter formula, and that a learner using it with a friend does not sound stiff.
+17. **`though` at the end** (M3-S09). Confirm the trailing `though` is unremarkable in speech at
+    this level, and that `although` really is impossible in that final position rather than merely
+    rare.
+18. **The `only` plate** (M3-S10). The module plates Indian English's own softener,
+    `…you are wrong only`. Confirm that plating a feature of a variety the learner's whole
+    community speaks is the right call here, and that the review doc rather than the module is
+    where that judgement should be recorded.
+19. **`true` and `wrong` without `right`** (M3-S01, S10). `right` is L2-M4's direction row and could
+    not be re-rowed. Confirm a learner who can say `That's not true` and `You are wrong`, but has
+    never been shown `You are right`, is not left with a visible hole for the next five modules.
+20. **No `will` after `if`, and its limits** (M4, rule 0). Confirm the rule as stated has no
+    everyday counterexample a learner will meet — the `If you will wait a moment` politeness use is
+    deliberately not taught, and the question is whether its absence will mislead.
+21. **`unless` and its second negative** (M4, rule 2; S03, S08). Confirm `*Unless you don't leave
+    early` reverses the meaning for a listener rather than merely sounding clumsy, and that teaching
+    `unless` and `if … not` as interchangeable at this rung is safe.
+22. **`had better`** (M4-S06). Confirm it is current spoken English rather than dated, that the
+    warning sense is heard, and that the contracted `you'd better` is what a learner should aim at.
+23. **`If I were you` as a frozen phrase** (M4-S05). Confirm that teaching `were` here with no
+    subjunctive explanation, while `*If I was you` is widely said, leaves the learner in the right
+    place.
+24. **Reported-question un-inversion** (M5, rule 0; S01, S07). Confirm `*She asked where was I
+    living` is heard immediately as wrong, and that the un-inversion holds after every reporting
+    verb a learner at this rung will use, not only `ask` and `wonder`.
+25. **The backshift exception** (M5, rule 3; S05). Confirm `She said she lives in Delhi` is the
+    ordinary sentence and `She said she lived in Delhi` genuinely implies she has moved, rather than
+    both being freely available.
+26. **`whether` against `if`** (M5-S02). Confirm they are interchangeable in the reported yes/no
+    question at this level, and that `whether` is not so formal that showing it as the hero display
+    misleads.
+27. **`live` against `stay`** (M5-S05). Hindi collapses both into रहना, and M4 taught `stay` first.
+    Confirm the split as the notes draw it, and that Indian English's `I am staying in Delhi` for
+    residence is a variety feature the module is right to leave unplated.

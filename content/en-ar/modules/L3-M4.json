@@ -1,0 +1,638 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M4",
+  "title": "If and then",
+  "job": "Conditions, wishes, advice",
+  "prerequisites": [
+    "L3-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_past",
+      "simple_present",
+      "future"
+    ],
+    "allowedPatterns": [
+      "idhā + V-past + , + sa-V",
+      "idhā + V-past + , + lā tadhhab",
+      "law + V-past + , + la-V-past",
+      "lam + V-jussive",
+      "lā tadhhab / lā tadhhabī + <complement>",
+      "min al-afḍal + an + V",
+      "yajibu + an + V",
+      "laytanī + V-past"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "idhā and law both take the PAST behind them, whatever the English says. idhā dhahabtu is \"if I go\" and law dhahabtu is \"if I had gone\" — the same verb shape twice, and the particle in front is what fixes the time. Reaching for the present after idhā is the first mistake an English speaker makes here."
+    },
+    {
+      "tag": "delta",
+      "text": "The split between them is real and not a matter of style. idhā is for what may well happen: idhā dhahabtu ilā as-sūq, sa-ashtarī al-khubz — the shopping is still open. law is for what did not: law dhahabtu ilā al-maṭʿam, la-akaltu as-samak — the dinner never took place. English says \"if\" for both and leans on its verb tenses to tell them apart; Arabic tells you in the first word."
+    },
+    {
+      "tag": "interference",
+      "text": "law is L2-M1's word, not a new one. You met it in law samaḥta, \"if you please\", and it is the same \"if\" doing its ordinary job. A learner who filed it away as half of a polite phrase will not recognise it here, which is the only difficulty in it."
+    },
+    {
+      "tag": "delta",
+      "text": "law's answer clause wears la- on the front of it: la-akaltu, la-kuntu, la-akalnā. That one letter is the whole of Arabic's conditional — there is no separate mood to learn and nothing to conjugate, which is a real relief: the Romance languages spend a chapter on what Arabic spends a prefix on."
+    },
+    {
+      "tag": "delta",
+      "text": "lam is the negative past, and it is a particle standing in front of a PRESENT-shaped verb: lam adhhab, \"I didn't go\". The verb it holds is in the jussive, which this course writes exactly like the ordinary present for a sound verb — adhhab stays adhhab — and shortens for a hollow one: akūn becomes akun, anām becomes anam. That shortening is the only place the mood can be seen, and it is the only job the jussive is opened for here. The mood itself is L4's."
+    },
+    {
+      "tag": "interference",
+      "text": "\"Don't go\" is lā plus that same jussive: lā tadhhab to a man, lā tadhhabī to a woman. It is NOT the imperative with a negative in front — L2-M4's idhhab has no negative form at all — so lā idhhab, the shape English leads you to, does not exist in Arabic."
+    },
+    {
+      "tag": "free",
+      "text": "Advice needs no new grammar. L3-M2's yajibu an and min al-afḍal an are both impersonal frames with L1-M3's an behind them, and the person turns up only in the verb at the far end. an takes the subjunctive and never shortens — yajibu an tanām, with the ā kept — which is exactly what lam does not do."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M4-S01",
+      "display": "idhā dhahabtu ilā as-sūq, sa-ashtarī al-khubz",
+      "script": "إذا ذهبت إلى السوق، سأشتري الخبز",
+      "cue": "If I go to the market, I'll buy the bread",
+      "literal": "If I-went to the-market, I-will-buy the-bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idhā",
+            "script": "إذا",
+            "cue": "if (something that may happen)",
+            "tag": "delta",
+            "forms": [],
+            "note": "\"If\", for what is still open. The verb behind it is PAST whatever the English says: idhā dhahabtu is \"if I go\", not \"if I went\"."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English puts a present after \"if\" — if I go. Arabic puts a past there and means the future by it, so dhahabtu behind idhā is not a report about yesterday.",
+      "sound": "i-DHAA dha-HAB-tu — idhā ends on a long -ā that runs straight into the verb, with no pause between the two.",
+      "variations": [
+        {
+          "display": "idhā dhahabtu ilā al-maṭʿam, sa-ākul as-samak",
+          "script": "إذا ذهبت إلى المطعم، سآكل السمك",
+          "cue": "If I go to the restaurant, I'll eat the fish",
+          "changed": "where and what: the market becomes the restaurant, buying becomes eating"
+        },
+        {
+          "display": "idhā dhahabta ilā as-sūq, sa-adhhab maʿaka",
+          "script": "إذا ذهبت إلى السوق، سأذهب معك",
+          "cue": "If you go to the market, I'll go with you",
+          "changed": "the person in the condition: dhahabtu (I) becomes dhahabta (you-m)"
+        }
+      ],
+      "mistake": {
+        "display": "idhā adhhab ilā as-sūq, sa-ashtarī al-khubz",
+        "script": "إذا أذهب إلى السوق، سأشتري الخبز",
+        "why": "This is English's \"if I go\" carried across word for word. idhā holds a past-shaped verb and nothing else: idhā dhahabtu ilā as-sūq."
+      },
+      "usage": "The plain open condition — a plan that depends on something, and the sentence the module's whole first half is built from.",
+      "register": "neutral",
+      "mnemonic": "idhā looks back to talk about forward."
+    },
+    {
+      "id": "L3-M4-S02",
+      "display": "idhā kunta taʿbān, lā tadhhab ilā al-ʿamal",
+      "script": "إذا كنت تعبان، لا تذهب إلى العمل",
+      "cue": "If you're tired, don't go to work (to a man)",
+      "literal": "If you-were tired, not you-go to the-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lā tadhhab",
+            "script": "لا تذهب",
+            "cue": "don't go",
+            "tag": "interference",
+            "forms": [
+              "lā tadhhab",
+              "lā tadhhabī",
+              "lā taʾkul"
+            ],
+            "note": "L1-M3's lā in front of the present-shaped verb — lā tadhhab to a man, lā tadhhabī to a woman. L2-M4's imperative idhhab has no negative at all, so lā idhhab does not exist."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "English builds \"don't go\" out of its imperative, so an English speaker reaches for idhhab and puts lā in front. Arabic switches shape entirely: the negative order is the present-tense verb, not the command.",
+      "sound": "laa TADH-hab — the lā is short and leans onto the verb, exactly as it does in front of an ordinary present.",
+      "variations": [
+        {
+          "display": "idhā kunti taʿbāna, lā tadhhabī ilā al-ʿamal",
+          "script": "إذا كنت تعبانة، لا تذهبي إلى العمل",
+          "cue": "If you're tired, don't go to work (to a woman)",
+          "changed": "everything turns feminine at once: kunti, taʿbāna, lā tadhhabī"
+        },
+        {
+          "display": "idhā kunta taʿbān, lā taʾkul kathīran",
+          "script": "إذا كنت تعبان، لا تأكل كثيرًا",
+          "cue": "If you're tired, don't eat a lot",
+          "changed": "the advice: the verb behind lā becomes eating"
+        }
+      ],
+      "mistake": {
+        "display": "idhā kunta taʿbān, lā idhhab ilā al-ʿamal",
+        "script": "إذا كنت تعبان، لا اذهب إلى العمل",
+        "why": "English negates its command word, so this negates idhhab. Arabic has no negative imperative: the order is given with the present-shaped verb — lā tadhhab."
+      },
+      "usage": "The module's job line in one sentence — a condition in front and advice behind it.",
+      "register": "neutral",
+      "mnemonic": "To tell someone to do it, command; to tell them not to, describe."
+    },
+    {
+      "id": "L3-M4-S03",
+      "display": "lam adhhab ilā al-madrasa ams",
+      "script": "لم أذهب إلى المدرسة أمس",
+      "cue": "I didn't go to school yesterday",
+      "literal": "Not I-go to the-school yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lam",
+            "script": "لم",
+            "cue": "did not (negative past)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The negative past — and the verb behind it is PRESENT-shaped, not past: lam adhhab, never lam dhahabtu. lam alone carries the time, exactly as English's \"did\" does."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English marks the past twice over — did go — and then drops it on the second word. Arabic marks it once, on lam, and the verb stays in its present shape: lam adhhab.",
+      "sound": "lam AD-hab — lam is one short clipped syllable and never takes a stress of its own.",
+      "variations": [
+        {
+          "display": "lam ashrab al-qahwa al-yawm",
+          "script": "لم أشرب القهوة اليوم",
+          "cue": "I didn't drink the coffee today",
+          "changed": "the verb behind lam, which does not change shape for it"
+        },
+        {
+          "display": "lam yadhhab ilā al-ʿamal ams",
+          "script": "لم يذهب إلى العمل أمس",
+          "cue": "He didn't go to work yesterday",
+          "changed": "the person, which is still the prefix on the verb: a- becomes ya-"
+        }
+      ],
+      "mistake": {
+        "display": "lam dhahabtu ilā al-madrasa ams",
+        "script": "لم ذهبت إلى المدرسة أمس",
+        "why": "English's \"didn't go\" has a past somewhere in it, so a learner puts the past-tense verb behind lam. lam already is the past: lam adhhab."
+      },
+      "usage": "The everyday way to deny that something happened, and what a speaker actually says.",
+      "register": "neutral",
+      "mnemonic": "lam holds the past so the verb does not have to."
+    },
+    {
+      "id": "L3-M4-S04",
+      "display": "lam akun mashghūl al-yawm",
+      "script": "لم أكن مشغول اليوم",
+      "cue": "I wasn't busy today",
+      "literal": "Not I-be busy the-day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akun",
+            "script": "أكن",
+            "cue": "I be (the shortened form behind lam)",
+            "tag": "delta",
+            "forms": [
+              "akun",
+              "takun",
+              "yakun"
+            ],
+            "note": "L1-M6's akūn with its long vowel cut short — the jussive, and behind lam it is the only shape allowed: lam akun, lam takun, lam yakun."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Nothing in English shortens here, so the vowel is what a learner keeps. akūn is the ordinary form and akun is the one lam takes, and the difference is a held vowel against a clipped one.",
+      "sound": "lam A-kun — two clipped syllables in a row, and the u is short enough to nearly vanish.",
+      "variations": [
+        {
+          "display": "lam yakun mawjūd ams",
+          "script": "لم يكن موجود أمس",
+          "cue": "He wasn't there yesterday",
+          "changed": "the person: akun (I) becomes yakun (he)"
+        },
+        {
+          "display": "lam takun mashghūla ams",
+          "script": "لم تكن مشغولة أمس",
+          "cue": "She wasn't busy yesterday",
+          "changed": "takun covers both she and you-m, and the adjective is what tells you which"
+        }
+      ],
+      "mistake": {
+        "display": "lam akūn mashghūl al-yawm",
+        "script": "لم أكون مشغول اليوم",
+        "why": "The ordinary form kept where the jussive is wanted. This is the one place in the course a vowel length is grammar rather than spelling: lam akun."
+      },
+      "usage": "How you say you were not something — the past of the verbless sentence, which has no verb to negate otherwise.",
+      "register": "neutral",
+      "mnemonic": "lam cuts the vowel short."
+    },
+    {
+      "id": "L3-M4-S05",
+      "display": "lam anam ams, li-ʾannī kuntu mashghūl",
+      "script": "لم أنم أمس، لأني كنت مشغول",
+      "cue": "I didn't sleep yesterday, because I was busy",
+      "literal": "Not I-sleep yesterday, because-I I-was busy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anam",
+            "script": "أنم",
+            "cue": "I sleep (the shortened form behind lam)",
+            "tag": "delta",
+            "forms": [
+              "anam",
+              "tanam",
+              "yanam"
+            ],
+            "note": "L1-M9's anām with the long ā cut short, the same jussive shortening as akun. Only hollow verbs do it; lam ashrab and lam adhhab do not move at all."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "Two verbs with two different jobs sit side by side here: anam is shortened because lam holds it, and kuntu is an ordinary past because li-ʾannī does not.",
+      "sound": "lam A-nam — three short syllables in a row, and the whole clause is over before the reason starts.",
+      "variations": [
+        {
+          "display": "lam yanam ams, li-ʾannahu kāna mashghūl",
+          "script": "لم ينم أمس، لأنه كان مشغول",
+          "cue": "He didn't sleep yesterday, because he was busy",
+          "changed": "both halves turn to he: yanam, and L1-M9's li-ʾannahu"
+        },
+        {
+          "display": "lam anam fī al-layl",
+          "script": "لم أنم في الليل",
+          "cue": "I didn't sleep at night",
+          "changed": "the reason dropped, leaving the bare denial"
+        }
+      ],
+      "mistake": {
+        "display": "lā anam ams",
+        "script": "لا أنام أمس",
+        "why": "lā denies a present or a habit — lā anām is \"I don't sleep\". A denial about yesterday needs the other negative: lam anam ams."
+      },
+      "usage": "A denial with its reason attached, which is L3-M3's shape running underneath a new negative.",
+      "register": "neutral",
+      "mnemonic": "lā for now, lam for then."
+    },
+    {
+      "id": "L3-M4-S06",
+      "display": "law dhahabtu ilā al-maṭʿam, la-akaltu as-samak",
+      "script": "لو ذهبت إلى المطعم، لأكلت السمك",
+      "cue": "If I had gone to the restaurant, I would have eaten the fish",
+      "literal": "If I-went to the-restaurant, would I-ate the-fish",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "la-akaltu",
+            "script": "لأكلت",
+            "cue": "I would have eaten",
+            "tag": "delta",
+            "forms": [
+              "la-akaltu",
+              "la-dhahabtu",
+              "la-kuntu",
+              "la-akalnā"
+            ],
+            "note": "L2-M3's akaltu with la- glued to its front — the answer to law. That one letter is Arabic's whole conditional: there is no separate mood behind it."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "English needs four words for the answer — I would have eaten — and Arabic needs one letter and a past tense. Nothing else in the clause changes at all.",
+      "sound": "law dha-HAB-tu … la-a-KAL-tu — law is one syllable with the aw of \"how\", and the la- leans forward onto its verb like sa- does.",
+      "variations": [
+        {
+          "display": "law kunta hunā ams, la-akalnā maʿan",
+          "script": "لو كنت هنا أمس، لأكلنا معًا",
+          "cue": "If you had been here yesterday, we would have eaten together",
+          "changed": "both halves turn plural at the end: la-akalnā, and L1-M10's maʿan"
+        },
+        {
+          "display": "law lam akun mashghūl, la-dhahabtu maʿaka",
+          "script": "لو لم أكن مشغول، لذهبت معك",
+          "cue": "If I hadn't been busy, I would have gone with you",
+          "changed": "the condition is negated, so lam and its shortened akun go inside law"
+        }
+      ],
+      "mistake": {
+        "display": "law adhhab ilā al-maṭʿam, sa-ākul as-samak",
+        "script": "لو أذهب إلى المطعم، سآكل السمك",
+        "why": "This treats law as idhā and builds an open condition out of it. law is for what did NOT happen: past on both sides, and la- on the answer — law dhahabtu … la-akaltu."
+      },
+      "usage": "The regret sentence. It is also how a wish is said, because Arabic gives you no other frame for one.",
+      "register": "neutral",
+      "mnemonic": "law is the road not taken; la- is what was down it."
+    },
+    {
+      "id": "L3-M4-S07",
+      "display": "laytanī dhahabtu maʿaka ams",
+      "script": "ليتني ذهبت معك أمس",
+      "cue": "I wish I had gone with you yesterday",
+      "literal": "If-only-me I-went with-you yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laytanī",
+            "script": "ليتني",
+            "cue": "if only I, I wish I",
+            "tag": "delta",
+            "forms": [
+              "laytanī",
+              "layta"
+            ],
+            "note": "One of L3-M3's sisters of anna, so the pronoun attaches for the same reason: laytanī, never layta anā. The verb behind it is past, exactly as after law."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "layta will not hold a free pronoun any more than anna will. The -nī on the end is the accusative M3 opened, turning up on a second particle.",
+      "sound": "LAY-ta-nee — three light syllables, and the -nī at the end carries the person the way -ī does in ismī.",
+      "variations": [
+        {
+          "display": "laytanī kuntu hunāka",
+          "script": "ليتني كنت هناك",
+          "cue": "I wish I had been there",
+          "changed": "the verb: going becomes being, and kuntu is the past of it"
+        },
+        {
+          "display": "laytanī lam adhhab",
+          "script": "ليتني لم أذهب",
+          "cue": "I wish I hadn't gone",
+          "changed": "the wish is negated, and lam does that job inside layta"
+        }
+      ],
+      "mistake": {
+        "display": "laytanī adhhab maʿaka ams",
+        "script": "ليتني أذهب معك أمس",
+        "why": "English says \"I wish I went\" with a present-looking verb and this copies the look. layta takes the past like law: laytanī dhahabtu maʿaka ams."
+      },
+      "usage": "The wish, and it is the same grammar as the regret — Arabic does not separate the two.",
+      "register": "neutral",
+      "mnemonic": "layta wears its pronoun, just as anna does."
+    },
+    {
+      "id": "L3-M4-S08",
+      "display": "min al-afḍal an tadhhab ghadan",
+      "script": "من الأفضل أن تذهب غدًا",
+      "cue": "It's better that you go tomorrow",
+      "literal": "From the-better that you-go tomorrow",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-afḍal",
+            "script": "الأفضل",
+            "cue": "the better (thing)",
+            "tag": "free",
+            "forms": [
+              "al-afḍal",
+              "afḍal"
+            ],
+            "note": "The afʿal shape of L2-M9, on the root behind ufaḍḍil: \"better\". min al-afḍal an is impersonal like yajibu an — nobody is named in it."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English's \"you'd better\" has a you in it and this frame has none. The person appears only in tadhhab, at the far end of the sentence.",
+      "sound": "min al-AF-ḍal an TADH-hab — the ḍ is the heavy one of min faḍlika, which is the same root doing a different job.",
+      "variations": [
+        {
+          "display": "min al-afḍal an tanām al-ān",
+          "script": "من الأفضل أن تنام الآن",
+          "cue": "It's better that you sleep now",
+          "changed": "the advice, with the long ā of tanām kept because an is not lam"
+        },
+        {
+          "display": "min al-afḍal an nadhhab bi-al-qiṭār",
+          "script": "من الأفضل أن نذهب بالقطار",
+          "cue": "It's better that we go by train",
+          "changed": "the person: you becomes we, and the frame does not move"
+        }
+      ],
+      "mistake": {
+        "display": "anā min al-afḍal an adhhab",
+        "script": "أنا من الأفضل أن أذهب",
+        "why": "English pushes the person to the front — I'd better go — and this does the same. The frame is impersonal, like L3-M2's yajibu: min al-afḍal an adhhab."
+      },
+      "usage": "The gentlest advice in the module: it recommends without ordering, which is what yajibu does.",
+      "register": "neutral",
+      "mnemonic": "al-afḍal names nobody; the verb at the end does."
+    },
+    {
+      "id": "L3-M4-S09",
+      "display": "hādhihi naṣīḥa jayyida, shukran jazīlan",
+      "script": "هذه نصيحة جيدة، شكرًا جزيلًا",
+      "cue": "That's good advice, thank you very much",
+      "literal": "This(f) advice good(f), thanks abundant",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naṣīḥa",
+            "script": "نصيحة",
+            "cue": "a piece of advice",
+            "tag": "free",
+            "forms": [
+              "naṣīḥa",
+              "an-naṣīḥa"
+            ],
+            "note": "\"Advice\" — countable in Arabic where English's is not, so \"a good advice\" is right here: naṣīḥa jayyida. n is a sun letter, so the article is an-."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English has no \"a\" for advice and Arabic does, so hādhihi naṣīḥa is one piece of it. Counting advice is the normal thing to do here, not a mistake.",
+      "sound": "na-ṢEE-ḥa — heavy ṣ in the middle and the breathy ḥ behind it, and the -a goes quiet unless a second noun follows.",
+      "variations": [
+        {
+          "display": "an-naṣīḥa mumtāza, shukran",
+          "script": "النصيحة ممتازة، شكرًا",
+          "cue": "The advice is excellent, thank you",
+          "changed": "the article goes on, and n assimilates it to an-"
+        },
+        {
+          "display": "hādhihi naṣīḥa sayyiʾa",
+          "script": "هذه نصيحة سيئة",
+          "cue": "This is bad advice",
+          "changed": "the judgement flips, using L3-M3's sayyiʾa"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā naṣīḥa jayyida",
+        "script": "هذا نصيحة جيدة",
+        "why": "naṣīḥa is feminine, so the demonstrative in front of it has to be too. English's \"this\" has one form and Arabic's has two: hādhihi naṣīḥa jayyida."
+      },
+      "usage": "What you say back when somebody has given you advice, and it closes the exchange politely.",
+      "register": "neutral",
+      "mnemonic": "One naṣīḥa, one piece — Arabic counts what English cannot."
+    },
+    {
+      "id": "L3-M4-S10",
+      "display": "yajibu an tanām, li-ʾanna hādhā ḍarūrī",
+      "script": "يجب أن تنام، لأن هذا ضروري",
+      "cue": "You must sleep, because this is necessary",
+      "literal": "It-is-necessary that you-sleep, because this necessary",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḍarūrī",
+            "script": "ضروري",
+            "cue": "necessary",
+            "tag": "free",
+            "forms": [
+              "ḍarūrī",
+              "ḍarūriyya"
+            ],
+            "note": "\"Necessary\" — ḍarūrī of a masculine thing, ḍarūriyya of a feminine one. It is the adjective behind L3-M2's yajibu, which is the verb of the same idea."
+          }
+        ],
+        "rules": [
+          6,
+          2
+        ]
+      },
+      "trap": "The two ways of saying it sit in one sentence: yajibu an is the verb of necessity and ḍarūrī is the adjective. Neither needs the other, and putting a pronoun in front of yajibu is still wrong.",
+      "sound": "ḍa-roo-REE — the heavy ḍ at the front, and the -ī at the end is long and stressed, not the possessive -ī of ismī.",
+      "variations": [
+        {
+          "display": "yajibu an tadhhab, li-ʾanna hādhā ḍarūrī",
+          "script": "يجب أن تذهب، لأن هذا ضروري",
+          "cue": "You must go, because this is necessary",
+          "changed": "the verb behind an, which the frame does not touch"
+        },
+        {
+          "display": "lā tadhhab al-yawm, hādhā laysa ḍarūrī",
+          "script": "لا تذهب اليوم، هذا ليس ضروري",
+          "cue": "Don't go today, this isn't necessary",
+          "changed": "the advice reverses, and L2-M7's laysa denies the adjective"
+        }
+      ],
+      "mistake": {
+        "display": "yajibu an tanam, li-ʾanna hādhā ḍarūrī",
+        "script": "يجب أن تنم، لأن هذا ضروري",
+        "why": "The shortened form belongs to lam, not to an. lam tanam is right and yajibu an tanam is not: an keeps the long vowel — yajibu an tanām."
+      },
+      "usage": "The strongest advice the module gives, and the reason clause is what stops it sounding like an order.",
+      "register": "neutral",
+      "mnemonic": "lam shortens; an does not."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M4-C01",
+      "display": "idhā kunta jawʿān, sa-ākul maʿaka",
+      "script": "إذا كنت جوعان، سآكل معك",
+      "cue": "If you're hungry, I'll eat with you"
+    },
+    {
+      "id": "L3-M4-C02",
+      "display": "idhā dhahabta ilā as-sūq, sa-adhhab maʿaka",
+      "script": "إذا ذهبت إلى السوق، سأذهب معك",
+      "cue": "If you go to the market, I'll go with you"
+    },
+    {
+      "id": "L3-M4-C03",
+      "display": "lam adhhab ilā al-ʿamal ams",
+      "script": "لم أذهب إلى العمل أمس",
+      "cue": "I didn't go to work yesterday"
+    },
+    {
+      "id": "L3-M4-C04",
+      "display": "lam akun mawjūd fī al-bayt",
+      "script": "لم أكن موجود في البيت",
+      "cue": "I wasn't at home"
+    },
+    {
+      "id": "L3-M4-C05",
+      "display": "lam anam, li-ʾannī kuntu mashghūl",
+      "script": "لم أنم، لأني كنت مشغول",
+      "cue": "I didn't sleep, because I was busy"
+    },
+    {
+      "id": "L3-M4-C06",
+      "display": "law dhahabtu maʿaka, la-akaltu as-samak",
+      "script": "لو ذهبت معك، لأكلت السمك",
+      "cue": "If I had gone with you, I would have eaten the fish"
+    },
+    {
+      "id": "L3-M4-C07",
+      "display": "law kunta hunā, la-kuntu saʿīd",
+      "script": "لو كنت هنا، لكنت سعيد",
+      "cue": "If you had been here, I would have been happy"
+    },
+    {
+      "id": "L3-M4-C08",
+      "display": "laytanī kuntu ṭālib fī al-jāmiʿa",
+      "script": "ليتني كنت طالب في الجامعة",
+      "cue": "I wish I were a student at the university"
+    },
+    {
+      "id": "L3-M4-C09",
+      "display": "lā tadhhab ilā as-sūq al-yawm",
+      "script": "لا تذهب إلى السوق اليوم",
+      "cue": "Don't go to the market today"
+    },
+    {
+      "id": "L3-M4-C10",
+      "display": "min al-afḍal an tashrab al-māʾ, hādhā ḍarūrī",
+      "script": "من الأفضل أن تشرب الماء، هذا ضروري",
+      "cue": "It's better that you drink the water, this is necessary"
+    },
+    {
+      "id": "L3-M4-C11",
+      "display": "hādhihi naṣīḥa mumtāza, shukran",
+      "script": "هذه نصيحة ممتازة، شكرًا",
+      "cue": "This is excellent advice, thank you"
+    },
+    {
+      "id": "L3-M4-C12",
+      "display": "laytanī lam adhhab ilā as-sūq",
+      "script": "ليتني لم أذهب إلى السوق",
+      "cue": "I wish I hadn't gone to the market"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

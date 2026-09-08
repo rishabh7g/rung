@@ -1,0 +1,590 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M5",
+  "title": "What someone said",
+  "job": "Reporting other people's words",
+  "prerequisites": [
+    "L3-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "passato prossimo — the reporting verb (ha detto, ha chiesto)",
+      "imperfetto — the backshifted clause, L2-M10's tense in a second seat",
+      "present"
+    ],
+    "allowedPatterns": [
+      "Ha detto che + <imperfetto>",
+      "Mi ha chiesto se + <imperfetto>",
+      "Mi ha chiesto + <wh-word> + <imperfetto>",
+      "Mi ha detto di + V-inf",
+      "<clitic + avere + participle> + <when/where>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "REPORTING MOVES THE TENSE BACK ONE STEP, AND ITALIAN'S STEP IS THE IMPERFETTO. Dice che è stanco becomes Ha detto che era stanco; dice che vuole tornare becomes Ha detto che voleva tornare. English does exactly the same thing — \"he says he is\" becomes \"he said he was\" — so the move itself is free. The only new part is which past Italian reaches for, and it is L2-M10's, doing a second job here rather than a new one."
+    },
+    {
+      "tag": "interference",
+      "text": "A YES/NO QUESTION IS REPORTED WITH SE, NEVER WITH CHE. Mi ha chiesto SE avevo tempo — never mi ha chiesto che avevo tempo. English pours \"that\" after every verb of saying and then quietly switches to \"if\" for a question, so the switch is invisible to a learner and the wrong word arrives by habit. A wh-question keeps its own word instead: mi ha chiesto DOVE lavoravo, mi ha chiesto QUANDO tornavo. Same se as L3-M4's, different job."
+    },
+    {
+      "tag": "delta",
+      "text": "A REQUEST IS NOT A CLAUSE AT ALL: it becomes di plus an infinitive. Mi ha detto DI aspettare, mi ha chiesto DI richiamare. English keeps a person in it — \"he told me to wait\" — and Italian does not need one after the mi. This is the same di as L1-M9's penso di and L3-M3's escape hatch, doing the job it always does: gluing an infinitive to the verb in front of it."
+    },
+    {
+      "tag": "delta",
+      "text": "THE OBJECT CLITICS ARE SPELLED EXACTLY LIKE THE ARTICLES, so this course never teaches them bare. la and le have been L1-M1's articles since the first rung and they stay that way; the object words are taught welded to the verb they lean on — l'ho vista, li ho visti, le ho parlato, ne ho — one key each, with the elision inside it and a straight apostrophe. It is the same tool as a destra and più tardi, and it is why a learner is never asked to tell two identical words apart on sight."
+    },
+    {
+      "tag": "interference",
+      "text": "THE PARTICIPLE AGREES WITH A PRECEDING DIRECT-OBJECT CLITIC AND WITH NOTHING ELSE ON AVERE. L'ho vista (a woman), li ho visti (them) — but Ho visto Anna, with no agreement at all, because the object comes AFTER. And le ho parlato never agrees whoever le is, because le is indirect: you speak TO her. The limit matters as much as the rule; a learner who takes the pattern as \"participles agree\" will bend every one in the account, and L1-M5's essere agreement is a separate law with its own reason."
+    },
+    {
+      "tag": "delta",
+      "text": "NE IS A WORD ENGLISH DOES NOT HAVE. Ne ho due is \"I have two OF THEM\", and the of-them is compulsory in Italian where English simply drops it — \"I have two\" on its own is not sayable here. It leans on the verb like the other clitics and it is taught the same way, welded to it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M5-S01",
+      "display": "Ha detto che era molto stanco",
+      "cue": "He said he was very tired",
+      "literal": "He-has said that he-was very tired",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "detto",
+            "cue": "said",
+            "tag": "delta",
+            "forms": [],
+            "note": "The participle of dire, irregular and short — never dicuto. Ha detto is the whole reporting verb, and what follows it steps back a tense."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The step back is free, because English takes it too — \"he said he was\", not \"he said he is\". What is not free is which past: Italian takes the imperfetto here and never the passato prossimo, so ha detto che è stato stanco says something else entirely.",
+      "sound": "a DET-to ke E-ra. The double t of detto is held, and era is stressed on its first syllable.",
+      "variations": [
+        {
+          "display": "Ha detto che era contento",
+          "cue": "He said he was happy",
+          "changed": "what was reported"
+        },
+        {
+          "display": "Ha detto che aveva un problema",
+          "cue": "He said he had a problem",
+          "changed": "a different backshifted cell"
+        },
+        {
+          "display": "Mi ha detto che era stanco",
+          "cue": "He told me he was tired",
+          "changed": "with the mi — told ME"
+        }
+      ],
+      "mistake": {
+        "display": "Ha detto che è molto stanco",
+        "why": "Reporting steps the clause back: Ha detto che era molto stanco."
+      },
+      "usage": "The opening line of every account of a conversation you were in.",
+      "register": "neutral",
+      "mnemonic": "ha detto che → the imperfetto."
+    },
+    {
+      "id": "L3-M5-S02",
+      "display": "Mi ha detto che voleva tornare a casa",
+      "cue": "He told me he wanted to go home",
+      "literal": "To-me he-has said that he-wanted to-return at home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "voleva",
+            "cue": "he wanted",
+            "tag": "delta",
+            "forms": [],
+            "note": "The imperfetto of voglio, vuoi and vuole, and what dice che vuole becomes once ha detto stands in front of it. It still takes a bare infinitive."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "mi here is the person told, not a reflexive: mi ha detto is \"he told ME\". L3-M1's mi alzo points a verb back at its own subject and this mi points it at somebody else — one family of little words, two jobs, exactly as L3-M1's rule warned.",
+      "sound": "mee a DET-to ke vo-LE-va. voleva is stressed on the LE, and the whole thing runs as one phrase.",
+      "variations": [
+        {
+          "display": "Mi ha detto che voleva restare",
+          "cue": "He told me he wanted to stay",
+          "changed": "what he wanted"
+        },
+        {
+          "display": "Ha detto che voleva parlare con il capo",
+          "cue": "He said he wanted to talk to the boss",
+          "changed": "no mi, so nobody is told in particular"
+        },
+        {
+          "display": "Mi ha detto che andava a Roma",
+          "cue": "He told me he was going to Rome",
+          "changed": "a different backshifted verb"
+        }
+      ],
+      "mistake": {
+        "display": "Mi ha detto che voleva di tornare a casa",
+        "why": "volere takes the bare infinitive in any tense: Mi ha detto che voleva tornare a casa."
+      },
+      "usage": "Passing on what somebody told you, with the person they told left in.",
+      "register": "neutral",
+      "mnemonic": "vuole → voleva. Same verb, one step back."
+    },
+    {
+      "id": "L3-M5-S03",
+      "display": "Mi ha chiesto se avevo tempo",
+      "cue": "She asked me if I had time",
+      "literal": "To-me she-has asked if I-had time",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chiesto",
+            "cue": "asked",
+            "tag": "delta",
+            "forms": [],
+            "note": "The participle of chiedere, and it keeps nothing of the infinitive's look. Ha chiesto is asked a QUESTION; ha detto di is asked FOR something."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English says \"asked me if\" and then says \"told me that\", and a learner carries the that across into the question: mi ha chiesto che avevo tempo is the commonest wrong sentence in this module. A reported yes/no question takes se and nothing else.",
+      "sound": "mee a KYES-to se a-VE-vo. chiesto opens with a ky, not a ch as in church.",
+      "variations": [
+        {
+          "display": "Mi ha chiesto se avevo i soldi",
+          "cue": "She asked me if I had the money",
+          "changed": "what was asked about"
+        },
+        {
+          "display": "Mi ha chiesto se ero stanco",
+          "cue": "She asked me if I was tired",
+          "changed": "a different backshifted cell"
+        },
+        {
+          "display": "Mi ha chiesto se lavoravo oggi",
+          "cue": "She asked me if I was working today",
+          "changed": "a verb rather than a state"
+        }
+      ],
+      "mistake": {
+        "display": "Mi ha chiesto che avevo tempo",
+        "why": "A reported yes/no question takes se: Mi ha chiesto se avevo tempo."
+      },
+      "usage": "Reporting the question somebody put to you, which is half of any account of a call.",
+      "register": "neutral",
+      "mnemonic": "Question → se. Statement → che."
+    },
+    {
+      "id": "L3-M5-S04",
+      "display": "Mi ha chiesto dove lavoravo e quando tornavo",
+      "cue": "She asked me where I worked and when I was coming back",
+      "literal": "To-me she-has asked where I-worked and when I-returned",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tornavo",
+            "cue": "I was coming back",
+            "tag": "free",
+            "forms": [
+              "tornava"
+            ],
+            "note": "The imperfetto of L1-M10's torno, built exactly as L2-M10's lavoravo is. Nothing new happens to it in a reported question — it is the ordinary backshift."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "A wh-question keeps its own word and does not take se. dove stays dove and quando stays quando; only a yes/no question needs the se, and mixing the two is the other half of S03's error.",
+      "sound": "DO-ve la-vo-RA-vo e KWAN-do tor-NA-vo. The two imperfetto verbs rhyme, which is the point.",
+      "variations": [
+        {
+          "display": "Mi ha chiesto dove lavoravo",
+          "cue": "She asked me where I worked",
+          "changed": "only the first question"
+        },
+        {
+          "display": "Mi ha chiesto quando tornavo",
+          "cue": "She asked me when I was coming back",
+          "changed": "only the second"
+        },
+        {
+          "display": "Mi ha chiesto quando tornava mia sorella",
+          "cue": "She asked me when my sister was coming back",
+          "changed": "who was coming back"
+        }
+      ],
+      "mistake": {
+        "display": "Mi ha chiesto se dove lavoravo",
+        "why": "A wh-word replaces the se, it does not join it: Mi ha chiesto dove lavoravo."
+      },
+      "usage": "Reporting the two questions a stranger always asks, in one line.",
+      "register": "neutral",
+      "mnemonic": "se for yes/no. dove and quando for the rest."
+    },
+    {
+      "id": "L3-M5-S05",
+      "display": "Mi ha detto di aspettare qui",
+      "cue": "He told me to wait here",
+      "literal": "To-me he-has said of to-wait here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aspettare",
+            "cue": "to wait · to wait for",
+            "tag": "interference",
+            "forms": [],
+            "note": "It swallows English's \"for\": aspettare l'autobus, never aspettare per. The verb carries the whole meaning and needs no preposition after it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "A reported request is not a clause. English builds \"he told me TO wait\" out of a person and an infinitive; Italian puts the person in the mi and then hangs the infinitive off di, with no che and no second subject anywhere.",
+      "sound": "as-pet-TA-re. The double t is held and the stress sits on the TA.",
+      "variations": [
+        {
+          "display": "Mi ha detto di richiamare più tardi",
+          "cue": "He told me to call back later",
+          "changed": "what was asked for"
+        },
+        {
+          "display": "Mi ha detto di aspettare in ufficio",
+          "cue": "He told me to wait at the office",
+          "changed": "where"
+        },
+        {
+          "display": "Mi ha chiesto di aspettare",
+          "cue": "He asked me to wait",
+          "changed": "asked rather than told, and the same di"
+        }
+      ],
+      "mistake": {
+        "display": "Mi ha detto che aspettare qui",
+        "why": "A request takes di and an infinitive: Mi ha detto di aspettare qui."
+      },
+      "usage": "The message you pass on from a receptionist, a colleague or a friend.",
+      "register": "neutral",
+      "mnemonic": "Told to do → detto di + infinitive."
+    },
+    {
+      "id": "L3-M5-S06",
+      "display": "L'ho vista ieri in ufficio",
+      "cue": "I saw her yesterday at the office",
+      "literal": "Her-I-have seen yesterday in office",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "l'ho vista",
+            "cue": "I saw her",
+            "tag": "delta",
+            "forms": [],
+            "note": "ONE key with the elision inside it and a straight apostrophe. The l' underneath is the object her, not L1-M1's article la, which is why the phrase is taught whole and never split."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "The word for her is spelled la, exactly like the article a learner has been reading since L1-M1, and in front of ho it elides to l' so even the spelling disappears. That is why this course never asks you to recognise the bare word: the phrase is the unit.",
+      "sound": "lo VEE-sta. l'ho is one syllable — the h is silent — so the whole thing is three beats, lo-VEE-sta.",
+      "variations": [
+        {
+          "display": "L'ho vista stamattina",
+          "cue": "I saw her this morning",
+          "changed": "when"
+        },
+        {
+          "display": "L'ho vista al bar con Anna",
+          "cue": "I saw her at the bar with Anna",
+          "changed": "where, and who with"
+        },
+        {
+          "display": "Non l'ho vista ieri",
+          "cue": "I didn't see her yesterday",
+          "changed": "negated, with the non in front of the whole thing"
+        }
+      ],
+      "mistake": {
+        "display": "Ho visto la ieri in ufficio",
+        "why": "The object leans on the verb in front of it: L'ho vista ieri in ufficio."
+      },
+      "usage": "The line that starts most gossip and most alibis.",
+      "register": "neutral",
+      "mnemonic": "l'ho vista — one word, not three."
+    },
+    {
+      "id": "L3-M5-S07",
+      "display": "Li ho visti al bar stamattina",
+      "cue": "I saw them at the bar this morning",
+      "literal": "Them I-have seen at-the bar this-morning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "li ho visti",
+            "cue": "I saw them",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural of l'ho vista, and the participle moves with it: visti for them, vista for her. li is L2-M5's word doing the object job it always did."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Both ends move at once. The clitic picks the people — l' for her, li for them — and the participle follows it, so vista and visti are not a choice made twice but one agreement made once, at the front of the phrase.",
+      "sound": "lee o VEES-tee. No elision here: li keeps its i in front of ho, unlike la.",
+      "variations": [
+        {
+          "display": "Li ho visti al cinema",
+          "cue": "I saw them at the cinema",
+          "changed": "where"
+        },
+        {
+          "display": "Li ho visti ieri con i miei amici",
+          "cue": "I saw them yesterday with my friends",
+          "changed": "when, and who with"
+        },
+        {
+          "display": "Non li ho visti stamattina",
+          "cue": "I didn't see them this morning",
+          "changed": "negated"
+        }
+      ],
+      "mistake": {
+        "display": "Li ho visto al bar stamattina",
+        "why": "The participle agrees with the clitic in front of it: Li ho visti al bar stamattina."
+      },
+      "usage": "Reporting a sighting of a group, and the plural half of the same rule.",
+      "register": "neutral",
+      "mnemonic": "l' → vista. li → visti."
+    },
+    {
+      "id": "L3-M5-S08",
+      "display": "Le ho parlato al telefono ieri",
+      "cue": "I spoke to her on the phone yesterday",
+      "literal": "To-her I-have spoken at-the telephone yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "le ho parlato",
+            "cue": "I spoke to her",
+            "tag": "delta",
+            "forms": [],
+            "note": "The le here is TO her, not the plural article of L1-M1. It never elides in front of ho and the participle never agrees with it, because it is indirect."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "This is where the agreement rule stops. le is indirect — you speak TO somebody — so parlato stays parlato however many women are involved, and le ho parlata is wrong. Only a preceding DIRECT object moves the participle.",
+      "sound": "le o par-LA-to. le keeps its e in front of ho: never l'ho parlato.",
+      "variations": [
+        {
+          "display": "Le ho parlato ieri",
+          "cue": "I spoke to her yesterday",
+          "changed": "without the phone"
+        },
+        {
+          "display": "Le ho parlato in ufficio stamattina",
+          "cue": "I spoke to her at the office this morning",
+          "changed": "where and when"
+        },
+        {
+          "display": "Non le ho parlato oggi",
+          "cue": "I haven't spoken to her today",
+          "changed": "negated"
+        }
+      ],
+      "mistake": {
+        "display": "L'ho parlata al telefono ieri",
+        "why": "You speak TO somebody, so the clitic is le and nothing agrees: Le ho parlato al telefono ieri."
+      },
+      "usage": "The other half of an account of a phone call — who you spoke to, not who you saw.",
+      "register": "neutral",
+      "mnemonic": "Spoken TO her: le, and no agreement."
+    },
+    {
+      "id": "L3-M5-S09",
+      "display": "Vuoi i biglietti? Ne ho due",
+      "cue": "Do you want the tickets? I've got two",
+      "literal": "You-want the tickets? Of-them I-have two",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ne ho",
+            "cue": "I have (of them)",
+            "tag": "delta",
+            "forms": [],
+            "note": "ne is \"of them\" and English drops it. Ho due on its own is not a sentence in Italian: the ne is what the two are two OF, and it leans on the verb."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "English says \"I've got two\" and stops. Italian cannot: without the ne there is nothing for due to count, and Ho due lands as an unfinished sentence a listener waits for the end of.",
+      "sound": "ne o DOO-e. ne ho is two quick beats — the h is silent — and due is fully two syllables.",
+      "variations": [
+        {
+          "display": "Ne ho due",
+          "cue": "I've got two of them",
+          "changed": "the answer on its own"
+        },
+        {
+          "display": "Vuoi i biglietti? Ne ho tre",
+          "cue": "Do you want the tickets? I've got three",
+          "changed": "how many"
+        },
+        {
+          "display": "Ne ho due, ma sono vecchi",
+          "cue": "I've got two of them, but they're old",
+          "changed": "with something said about them"
+        }
+      ],
+      "mistake": {
+        "display": "Vuoi i biglietti? Ho due",
+        "why": "A counted thing needs its ne: Vuoi i biglietti? Ne ho due."
+      },
+      "usage": "Answering how many you have of something already named, which is what ne is for.",
+      "register": "neutral",
+      "mnemonic": "ne = of them, and it is never dropped."
+    },
+    {
+      "id": "L3-M5-S10",
+      "display": "Ho visto Anna ieri, e l'ho vista anche oggi",
+      "cue": "I saw Anna yesterday, and I saw her today too",
+      "literal": "I-have seen Anna yesterday, and her-I-have seen also today",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "visto",
+            "cue": "seen",
+            "tag": "free",
+            "forms": [],
+            "note": "The plain participle of vedere, and the shape it keeps whenever the object comes after it: ho visto Anna, ho visto i miei amici. Nothing agrees."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "One sentence, both halves of the law. The object after the verb leaves the participle alone — ho visto Anna — and the same object in front of it as a clitic moves it — l'ho vista. Position is the whole rule, and it is the half a learner drops first.",
+      "sound": "o VEES-to AN-na. visto and vista differ only in the last vowel, and that vowel is doing all the grammar.",
+      "variations": [
+        {
+          "display": "Ho visto Anna al bar",
+          "cue": "I saw Anna at the bar",
+          "changed": "just the unagreeing half"
+        },
+        {
+          "display": "L'ho vista anche oggi",
+          "cue": "I saw her today too",
+          "changed": "just the agreeing half"
+        },
+        {
+          "display": "Ho visto i miei amici ieri",
+          "cue": "I saw my friends yesterday",
+          "changed": "a plural object, still after the verb, still visto"
+        }
+      ],
+      "mistake": {
+        "display": "Ho vista Anna ieri, e l'ho visto anche oggi",
+        "why": "Both halves are the wrong way round: Ho visto Anna ieri, e l'ho vista anche oggi."
+      },
+      "usage": "The module's whole rule said once, in a sentence somebody would actually say.",
+      "register": "neutral",
+      "mnemonic": "Object after: visto. Object in front: vista."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M5-C01",
+      "display": "Ha detto che era molto stanco",
+      "cue": "He said he was very tired"
+    },
+    {
+      "id": "L3-M5-C02",
+      "display": "Mi ha detto che voleva tornare a casa",
+      "cue": "He told me he wanted to go home"
+    },
+    {
+      "id": "L3-M5-C03",
+      "display": "Mi ha chiesto se avevo tempo",
+      "cue": "She asked me if I had time"
+    },
+    {
+      "id": "L3-M5-C04",
+      "display": "Mi ha chiesto dove lavoravo e quando tornavo",
+      "cue": "She asked me where I worked and when I was coming back"
+    },
+    {
+      "id": "L3-M5-C05",
+      "display": "Mi ha detto di aspettare qui",
+      "cue": "He told me to wait here"
+    },
+    {
+      "id": "L3-M5-C06",
+      "display": "L'ho vista ieri in ufficio",
+      "cue": "I saw her yesterday at the office"
+    },
+    {
+      "id": "L3-M5-C07",
+      "display": "Li ho visti al bar stamattina",
+      "cue": "I saw them at the bar this morning"
+    },
+    {
+      "id": "L3-M5-C08",
+      "display": "Le ho parlato al telefono ieri",
+      "cue": "I spoke to her on the phone yesterday"
+    },
+    {
+      "id": "L3-M5-C09",
+      "display": "Vuoi i biglietti? Ne ho due",
+      "cue": "Do you want the tickets? I've got two"
+    },
+    {
+      "id": "L3-M5-C10",
+      "display": "Ho visto Anna ieri, e l'ho vista anche oggi",
+      "cue": "I saw Anna yesterday, and I saw her today too"
+    },
+    {
+      "id": "L3-M5-C11",
+      "display": "Mi ha detto di richiamare più tardi",
+      "cue": "He told me to call back later"
+    },
+    {
+      "id": "L3-M5-C12",
+      "display": "Ha detto che aveva un problema",
+      "cue": "He said he had a problem"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

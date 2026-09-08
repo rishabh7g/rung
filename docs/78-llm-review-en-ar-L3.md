@@ -181,3 +181,181 @@ checked against the fold: `ʿamal`, `al-yawm` and `adhhab` are L1-M4's, `dhālik
     twins and this is where that could break.
 13. **`rātib al-mudīr kabīr`** (M2-S06). Confirm `kabīr` is what modifies a salary, and that saying
     this about a named person's pay is as unremarkable as the `usage` line assumes.
+
+## Wave 2 — L3-M3, L3-M4, L3-M5 (#481)
+
+Authored against the same briefs (#463) and `docs/70`, continuing wave 1's voice. The wave opens on
+the emitted index through L3-M2 — **561 surfaces** — and closes with `en-ar: 25 modules
+(L1-M1..M10, L2-M1..M10, L3-M1..M5)` and `CONTENT 209/209 ok`. Bounds climb as `docs/70` §4 fixes
+them: M3 at 10 words, M4 and M5 at 11.
+
+The wave's five brief corrections all have one root, and it is the same root wave 1 found: **the
+briefs were written in textbook MSA and this course is not written in it.** `docs/54`'s
+no-case-endings law and `docs/34`'s hamza rules together decide more of these three modules'
+spelling than any decision taken here.
+
+### L3-M3 "Opinions with reasons" — one cell of the case system, opened where it can be seen
+
+The module's law is `anna`, and the honest version of it is narrower than the brief's. The brief's
+worked example was `aʿtaqidu anna al-kitāba jamīlun` — an indicative `-u`, an accusative `-a` and a
+nominative `-un`, none of which this course writes. So the module states the case and then says
+where it is visible: **the accusative is why a pronoun has to attach.** `annahā` and `annahu` are
+the cell made audible, `anna hiya` does not exist, and a definite noun behind `anna` looks exactly
+as it did before — which is what `rules[1]` says in as many words, following L3-M1's rule 2 on the
+genitive precisely. That is one cell, on one trigger, and nothing else of the system opens.
+
+`rules[0]` carries the part a learner can act on: **what follows `anna` is a noun or an attached
+pronoun and never a verb.** Every mistake plate in the module is built on a sentence Arabic really
+rejects — `anna hiya ṣaʿba` (S02), `anna yakūn khaṭaʾ` (S07), `anna dhahabat hind` (S08) — and S08
+is the item that tests it rather than states it: Arabic's ordinary sentence may lead with its verb,
+and behind `anna` it may not.
+
+The softeners are the module's `interference` rule, and the claim is about WHERE the politeness sits
+rather than how much of it there is. `fī raʾyī`, `rubbamā` and `lā aʿtaqid` all stand outside the
+sentence and leave it whole; English hedges inside the claim. S06's plate is the stacked hedge
+`aʿtaqid rubbamā hādhā ṣaʿb`, which is the English habit in Arabic words, and the rule refuses to
+grade either language: they put the politeness in different places.
+
+### L3-M4 "If and then" — two ifs, and the one job the jussive is opened for
+
+`idhā` against `law` is stated as a real split rather than a register: `idhā` for what is still
+open, `law` for what did not happen. **Both take the past whatever the English says**, which is
+`rules[0]` and S01's plate (`idhā adhhab`), and it is the first thing an English speaker gets wrong.
+`law` is L2-M1's word and gets no row: `rules[2]` points back at `law samaḥta` and says the polite
+phrase is this same "if", because a learner who filed it away as half of "please" will not otherwise
+recognise it.
+
+The jussive opens for `lam` and for the prohibition, and the module is careful about what a learner
+can actually SEE. For a sound verb this course writes the jussive and the ordinary present
+identically — `lam adhhab` is `adhhab` — so the mood is invisible there and the module says so.
+Where it is visible is the hollow verb, and that is where the two rows went: **`akūn` becomes
+`akun`, `anām` becomes `anam`** (S04, S05), with S04's plate being the long vowel kept. This is the
+one place in the course where a vowel length is grammar rather than spelling, and S10's plate closes
+the loop from the other side — `yajibu an tanam` is wrong because `an` is not `lam`.
+
+The prohibition is the module's `interference`: **`lā tadhhab` is not the imperative negated.**
+L2-M4's `idhhab` has no negative form at all, so `lā idhhab` — the shape English leads you straight
+to — does not exist, and S02's plate is exactly that.
+
+`la-` is the whole of Arabic's conditional and the module says that as a relief rather than a fact:
+one letter on the answer clause, no mood to conjugate, where the Romance courses spend a module.
+`laytanī` (S07) is carried in as one of M3's sisters of `anna` rather than as new machinery — the
+`-nī` attaches for the accusative reason M3 already opened — which is what lets the wish and the
+regret share one grammar.
+
+### L3-M5 "What someone said" — the relief, stated as a relief
+
+**Arabic does not backshift**, and the module spends its two loudest blocks on making that a fact
+rather than a permission. `rules[1]` is the `interference` one and it is the sharper half: pulling
+the tense back does not sound stiff in Arabic, it reports something else. `qāla innahu kāna marīḍ`
+says he was ill earlier and presumably is not now, so S02's plate is not a style note — the learner
+who writes it has passed on the wrong message. S09 runs the same law over a past inside a report:
+English has "she hadn't slept" and Arabic has only the one past, so `kānat lam tanam` is two pasts
+where one belongs.
+
+`inna` is taught as `anna`'s twin rather than as a second particle, and M3's law is restated on it
+whole — noun or attached pronoun, never a bare verb, `innahu`/`innahā`/`innahum` attaching for the
+accusative. The split the module does enforce is which verb takes which: **`qāla` takes `inna`,
+`aʿtaqid` and `akhbaranī` take `anna`**, and S07 and S10 each carry a plate for the wrong one.
+
+The reported question is the second law and it is one line: **a yes/no question takes `hal` or
+`mā idhā` and never `anna`** (S04, S05), while a wh-question keeps its own word (S06). S04's plate
+is `saʾalanī anna ʿindī waqt`, which reports a statement, and S05's is bare `idhā`, which builds a
+condition — the two ways English's "if" leads a learner wrong, one each.
+
+Two smaller things. `akhbaranī` and `saʾalanī` carry the "me" inside them and `qāla` does not, so
+S03's plate is the doubled me (`akhbaranī lī`) and S08's is the attached one (`qālanī`); the module
+calls the difference between `qāla lī` and `akhbaranī` one of warmth rather than of grammar, which
+is question 29. And `mādhā` is presented as L1-M9's `limādhā` with the `li-` taken off, so the
+wh-question costs one word and no rule.
+
+### Five brief corrections, and what the modules did instead
+
+Each was checked against the emitted index or against a shipped module before it was overridden.
+
+- **`aʿtaqidu` keeps no `-u`, and no noun takes an ending.** The brief's `aʿtaqidu anna al-kitāba
+  jamīlun` carries three endings this course does not write. Every 1sg imperfect the ladder owns is
+  bare — `adhhab`, `ashrab`, `ākul`, `aʿmal`, `adrus`, `anām` — so the module writes `aʿtaqid`,
+  `aẓunn` and `aqūl`, and M5 writes `yaqūl` where the brief wrote `yaqūlu`. `yajibu` and `yumkinu`
+  stay frozen citation forms, as wave 1 fixed them.
+- **`li-ʾanna`, `fī raʾyī` and `muwāfiq` are not fresh keys.** The brief's `INDEX SEAM` listed all
+  three. `li-ʾanna` (with `li-ʾannī`, `li-ʾannaka`, `li-ʾannaki`, `li-ʾannahu`) and `fī raʾyī` are
+  L1-M9's, and `muwāfiq`/`muwāfiqa` are L2-M6's. So M3 opens **no row** for any of them: the
+  point-backs went into `rules[2]`, `rules[4]` and `rules[5]`, where a learner is actually shown
+  them, and the words are used across six displays without a dead row anywhere.
+- **`anna` is fresh only because of the initial-hamza rule.** The index already owns `'anna`,
+  `'annahu`, `'annaka`, `'annaki` and `'annī` — as the hyphen PARTS of L1-M9's `li-ʾanna`, per
+  `docs/34`'s clitic law. This course does not write word-initial hamza (`anā`, `an`, `ams`,
+  `ākul`), so bare `anna` normalises to `anna` and is genuinely unowned, while `li-ʾanna` keeps its
+  medial `ʾ`. The two spellings of one particle are named in `rules[2]` rather than left to be
+  noticed, and question 16 is whether that is enough.
+- **`lastu muwāfiqan` became `lastu muwāfiq`.** The brief wrote the accusative predicate. L2-M7
+  shipped `huwa laysa mawjūd` and `hiya laysat mawjūda` with no ending at all, and L2-M1's rule 4
+  states the governing principle: the written `-an` survives *because it is lexical rather than
+  grammatical*. `muwāfiqan` after `lastu` is grammatical, so it goes, and `rules[5]` points at
+  L2-M7 for the precedent. This is the correction most likely to be reversed by a native pass, and
+  it is question 17.
+- **M4's jussive cells, and M5's bare `mā`.** The brief named `adhhab`, `tafʿal` and `arā` as fresh
+  jussive keys: `adhhab` is L1-M4's and is *identical* in the jussive here, and `tafʿal` and `arā`
+  are taught by no module at all. So M4 shows the jussive on the verbs where it is visible —
+  `akun`, `takun`, `yakun`, `anam`, `yanam` — and says in `rules[4]` that a sound verb does not
+  move. M5's brief calls bare `mā` "L1's question word"; the ladder has never taught it (only
+  `māʾ`, water). `mā idhā` is still indexed WHOLE, which keeps `mā` unspent for whoever needs it.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` held at **en-ar 6** across all three modules, with **no finding at
+all** — every display, variation and pool item resolves. `npm run content:shown` reports two
+RE-TEACH lines and both are deliberate: `laysa` and `laysat` sit in M3-S05's `lastu` paradigm so a
+learner sees the three cells together, and L2-M7 keeps the key and the note, which is the point-back
+the brief asked for made structural rather than written twice.
+
+Everything else shown was opened by a row in the module showing it or already owned upstream:
+`hādhā` and `hādhihi` L1-M8's, `ghālī`, `ghāliya` and `rakhīṣ` L1-M8's, `muhimma`, `ṣaʿb`, `sahl`
+and `jamīla` L1-M9's, `lākin` and `ayḍan` L1-M10's, `kunta`/`kuntu`/`kāna` L2-M3's, `hunā` and
+`hunāka` L2-M4's, `mawjūd` and `laysa` L2-M7's, `al-ḥisāb` and `as-samak` L2-M8's, `mumtāz` and
+`qālat` L2-M10's, and `al-imtiḥān`, `al-jāmiʿa` and `yajibu` L3-M2's. Three whole-surface keys were
+minted rather than spending a bare word: `lā aʿtaqid` (M3), `lā tadhhab` (M4) and `mā idhā` (M5).
+
+### Open questions for the native pass
+
+14. **The bare imperfect** (M3, throughout; M5-S07, S10). The course writes `aʿtaqid`, `aẓunn`,
+    `aqūl` and `yaqūl` with no indicative `-u`. Confirm this reads as ordinary speech rather than as
+    clipped, and that a reporting frame in particular does not want the ending back.
+15. **The accusative shown only on the pronoun** (M3, rule 2). Confirm a learner who never writes
+    `al-kitāba` is nevertheless heard as correct in ordinary speech, and that the attaching pronoun
+    is where a native would say the case is actually audible.
+16. **`anna` beside `li-ʾanna`** (M3, rule 3). The initial-hamza convention gives one particle two
+    spellings on the page. Confirm a learner reads them as one word, and say whether the note
+    should be louder than it is.
+17. **`lastu muwāfiq`** (M3-S05). The book form is `lastu muwāfiqan`. Confirm the bare predicate is
+    what is heard, and say whether this is the place the course's no-endings law finally costs more
+    than it saves. This is the wave's most reversible decision.
+18. **`aẓunn` against `aʿtaqid`** (M3-S08). Confirm which a speaker reaches for first, and whether
+    `aẓunn` carries more doubt than the module's `usage` implies.
+19. **`hādhā khaṭaʾ`** (M3-S07). Confirm the bare noun predicate is what is said for "this is a
+    mistake", rather than `hādhā ghayr ṣaḥīḥ`.
+20. **`idhā` + past for a future** (M4-S01). Confirm `idhā dhahabtu ilā as-sūq` is what a speaker
+    says, and that the present after `idhā` is genuinely wrong rather than merely colloquial.
+21. **`lam` against `mā` + past** (M4-S03). `docs/70` §2 asserts `lam` is what a speaker actually
+    says. Confirm, and say whether it differs by region.
+22. **`lā tadhhab` as advice** (M4-S02). Confirm the bare prohibition is not too blunt for the
+    register the module claims, and whether `min al-afḍal an lā tadhhab` is the commoner softening.
+23. **`laytanī`** (M4-S07). Confirm it is current speech rather than literary, and whether
+    `yā laytanī` is what is actually said.
+24. **`min al-afḍal an`** (M4-S08). Confirm it is the everyday "you'd better", and that `al-afḍal`
+    is not heard as a comparative still waiting for its `min`.
+25. **`naṣīḥa` counted** (M4-S09). Confirm `naṣīḥa jayyida` for a single piece of advice, and that
+    a speaker would not reach for the plural here.
+26. **`inna` after saying, `anna` after telling** (M5, rule 3; S03, S07, S10). The module enforces
+    the split and plates the wrong one twice. Confirm it is real in speech rather than a written
+    convention, and whether `qāla anna` simply passes.
+27. **No backshift as a change of meaning** (M5, rules 1–2; S02, S09). The module claims
+    `qāla innahu kāna marīḍ` reports something different rather than sounding heavy. Confirm the
+    meaning really moves.
+28. **`mā idhā` against `hal`** (M5-S05). Confirm both are used in a reported question, which one a
+    speaker reaches for, and whether framing `mā idhā` as "more careful" is right.
+29. **`qāla lī` against `akhbaranī`** (M5-S08). The module calls the difference warmth rather than
+    grammar. Confirm, and say whether either is marked in ordinary speech.
+30. **`khabar` counted** (M5-S09). Confirm `khabar sayyiʾ` is how a single piece of bad news is
+    named, and that the `akhbaranī` root connection is one a speaker would recognise.

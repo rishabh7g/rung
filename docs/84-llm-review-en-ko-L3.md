@@ -253,3 +253,296 @@ the fact; this one had none to fix.
 14. **`sajangnim` in a plain `-yo` sentence** (M2-S10). Confirm that talking ABOUT a company head
     with the `-nim` title and no `-si-` on the verb is safe rather than curt, and that `sajangnim` is
     the head of the company rather than any manager.
+
+## Wave 2 — L3-M3, L3-M4, L3-M5 (#487)
+
+Authored against the briefs regenerated module by module — `npm run content:prompt -- en-ko L3-M3`
+at **583 surfaces**, `L3-M4` at 606, `L3-M5` at 619 — and reviewed against the emitted fold rather
+than against the briefs' account of it. The course closes the wave at **641 surfaces**, `maxSpan`
+still **2**, and `npm run content:build` (strict, no flags) emits
+`en-ko: 25 modules (L1-M1..M10, L2-M1..M10, L3-M1..M5)` with `CONTENT 209/209 ok`. The three
+modules add 23, 13 and 22 keys.
+
+`maxSpan` holds at 2 for the reason wave 1 gave and one new one. The reason wave 1 gave is the
+romanization law: a verb ending is never hyphenated, so `isseumyeon`, `gamyeon`, `ondago`,
+`masitdago`, `onyago` and `gajago` are each one clean token and the level's endings mint no bare
+keys. The new one is that this wave adds the level's ONLY multi-token surface, `geot gatayo`
+(M3-S01), indexed whole — so bare `geot` stays L2-M9's row and `gatayo` stays free underneath it,
+exactly as `docs/76` §4 planned it.
+
+### The romanization ruling this wave had to make: where the h is written and where it aspirates
+
+`docs/34` §1.1 says word-internal sound changes are written because RR transcribes, and §5 ships
+`jota` beside `joayo` as two shapes of the same stem. This wave is the first to need that rule in
+bulk, and it needed it in two directions at once, so the line is drawn here rather than left to the
+next author:
+
+- **A stem-final h aspirates the consonant after it, and the aspirate is what gets written.**
+  좋지 is `jochi`, not `joji`; 좋다고 is `jotago`; 그렇게 is `geureoke`. This is RR's own rule and it
+  is already the course's practice through `jota`.
+- **An h that OPENS a following morpheme keeps its letter.** `saenggakhaeyo` (M3), `mothaeyo` (M3)
+  and every `-hada` verb already shipped — `gongbuhaeyo`, `jeonhwahaeyo`, `undonghaeyo` — are one
+  family, and RR's own carve-out for a substantive followed by h is what they stand on.
+
+**The M3 brief spells the long negative `joji anayo`, and that is the first of this wave's seam
+corrections.** The module writes **`jochi anayo`**, teaches the change in the `jochi` note by
+pointing at `geureoke` — where the same aspiration is already visible on the page — and keeps the
+brief's minimal pair intact, because `an joayo` against `jochi anayo` is exactly the lesson. It
+matters for the reason wave 1's `je-ga` did: a brief's example is the line an author copies most
+literally, and this one would have taught a spelling no Korean says.
+
+### L3-M3 "Opinions with reasons" — the hedge is not decoration, it is the sentence
+
+`docs/76` names the module's frame as M2's modifier doing its first real job, and the module is
+right to open on the minimal pair rather than on the ending. Rule 0 says the thing an English
+speaker will not believe: **`I-sikdang-i joayo` is not a blunter version of `I-sikdang-i joeun geot
+gatayo`** — it is a claim about fact, and the hedge is what makes the sentence a view at all. Rule
+1 states the delta as a shape against a word: English states the claim flat and hangs "I think" on
+the front; Korean rebuilds the sentence and needs no word for thinking anywhere in it. S02's trap
+closes that loop from the other side — the verb ends a Korean sentence, so `saenggakhaeyo` cannot
+come before what is thought, and S02's plate is exactly the English order.
+
+The long negative is taught as PLACEMENT rather than meaning, which is the brief's own framing and
+the right one. S05 is the pair on one word — `an joayo` in the variation, `jochi anayo` in the
+display — and its trap refuses to grade either as stronger: the long form simply lets the listener
+hear the word before the refusal, which is why a disagreement takes it. S06 then separates the two
+long negatives on the axis English hides — `gaji anayo` is a choice, `gaji mothaeyo` is an
+obstacle, and "I'm not going" covers both — and points back at L1-M3's `an` and L2-M8's `mot`
+without opening a third negative.
+
+The reasons are the module's hardest content and it spends two displays on them rather than one.
+S06 writes `bappeunikka` and S07 writes `onikka`, so `-(eu)nikka` is seen on two stems before the
+law is tested; **the law is that only `-(eu)nikka` may be followed by a request, a suggestion or an
+order**, and S07's plate is `Bi-ga waseo taeksi-reul taseyo`, which is the sentence an author who
+learnt `-aseo` in L1-M9 would write. S06's variation pays the other half by putting a `-(eu)llae-yo`
+suggestion after the reason. `ttaemune` lands at S08 with the `interference` tag it deserves:
+English says "because it rained" and "because of the rain" with almost the same words, and Korean
+uses two different pieces of grammar.
+
+A second seam correction rides here. **`bappeunikka`, not the `bappa-` shape the brief's `-aseo`
+example would suggest.** The stem is `bappeu-`, and L1-M9's `bappaseo` drops that vowel while
+`-(eu)nikka` does not, so the two reason endings on one verb look different on purpose. The
+`bappeunikka` note says so.
+
+The agree, disagree and soften frames cost almost nothing and teach a lot. `majayo` is tagged
+`interference` because **its subject is the statement, not you** — `Jeo-neun majayo` claims that
+you are the correct one, and that is S03's plate. `teullyeoyo` gets the same treatment from the
+polite side: S09 disagrees by asking whether the thing is not wrong, with `hoksi` in front, and its
+trap names the English habit it replaces — piling up qualifiers instead of changing the sentence.
+S10 closes on `jal moreugesseoyo`, taught as one frozen phrase with its note saying outright that
+the `-gess-` inside it is L3-M6's and is not being opened.
+
+**One thing the brief asked for that the module does not do.** The generated `complexity` block
+offers `clause + -dago + saenggakhaeyo` as an allowed pattern. `-dago` is M5's, deferred there
+explicitly by both L2-M7 and L2-M10 and handed to M5 by `docs/76` §3, and the M3 guidance prose
+never mentions it — the pattern list reached across two modules on its own. The module replaced it
+with `N + ttaemune + clause` and `V-ji + mothaeyo`, and M5 opens `-dago` where it was always meant
+to. Recorded because that pattern list is pinned by `tools/course-briefs.test.ts` and a later
+reader will otherwise trust it.
+
+### L3-M4 "If and then" — one ending, bought once and spent three ways
+
+This is the cheapest module of the level and the brief is right that it should be. `-(eu)myeon` is
+THE WHOLE CONDITIONAL — rule 0 says Korean does not split "if" from "whenever" and that only the
+surroundings decide — and S01 and S02 are the same ending read the two ways, with M3's `hoksi`
+available in front to force the doubtful reading. That pairing is the module's best teaching,
+because a learner hunting for the difference is hunting for something that is not there.
+
+Rule 1 is the only genuinely new mechanics in the file: **the ending picks its shape from the stem,
+not from the meaning.** `gamyeon`, `omyeon`, `hamyeon` and `apeumyeon` against `isseumyeon`,
+`eopseumyeon` and `joeumyeon`. S04's trap states the negative fact plainly — `haeumyeon` is not a
+more careful `hamyeon`, it is not a shape the language has — and the plate writes it, because that
+is what an English speaker who has seen the ending written with its bracket will produce.
+
+The three spends are all assembly, and the module says so each time. **Prohibition** is the
+condition plus L2-M8's `an dwaeyo`, and S03's plate is the error that proves the parse:
+`neutge an gamyeon dwaeyo` says the opposite — that not going late is fine — because the negation
+belongs to `dwaeyo` and never to the condition. **The wish** is the condition plus `joayo`, and
+S09's trap is the one an English speaker never guesses: there is no verb for hoping in
+`Naeil nalssi-ga joeumyeon jeongmal joayo` at all. **Obligation** is L2-M8's `-eoya dwaeyo`
+untouched (S07), with a trap saying Korean did not grow a second "have to" for conditional
+sentences.
+
+Advice costs two keys, `ganeun` and **`ge`**, and `ge` is the only new grammar in it: it follows a
+modifier and turns the clause into a thing that `eottaeyo` can ask about. S05's trap frames it as
+the reversal it is — English asks about an action, Korean builds the action into a noun first — and
+its plate is the same error `geot gatayo` catches in M3, which is the right cross-reference to make
+while both are fresh. `geureomyeon` at S08 is the quiet find of the module: it is M3's `geureoke`
+stem wearing this module's ending, so Korean's "then" is literally *if that is so*, and the plate
+sets it against `geureoke` to show that "that way" is a different word.
+
+The L4 fences are stated in content rather than only in the brief, and one of them is stated as a
+mistake plate, which is better. S10's plate is **`Maeil undonghapsida`** — the "let us" an author
+and a learner both reach for — with the `why` naming `-(eu)psida` as belonging to the `-mnida`
+speech level this course does not teach. Rule 6 fences the past counterfactual (L4-M3),
+`-(eu)myeonseo` (L4-M6) and `-gess-` (L3-M6) beside it.
+
+Two brief entries were already spent before this module ran. The M4 INDEX SEAM lists `hoksi` and
+"bi is fresh if a display needs weather" as fresh keys; **M3 took both**, because the briefs were
+written as ten independent notes and the wave authors them in order. Neither is a defect — M4 uses
+each correctly as somebody else's key — but a reader comparing the brief against the fold should
+know why those two are missing from M4's thirteen.
+
+### L3-M5 "What someone said" — the plain style appears, and the ban does not move
+
+This is the level's most exposed decision and the module leads with it. Rule 0 states the grammar
+and the prohibition IN THE SAME SENTENCE: `-dago` attaches to the plain style, so `gayo` becomes
+`ondago` and `masisseoyo` becomes `masitdago` and the plain form is finally on the page — bound
+inside a report, never as a sentence anybody says — and L3 does not lift the L1 ban. Banmal is
+still never free-standing, `jeo` is still never `na`, and `informal` is still chipped nowhere in
+this course. That had to be one rule rather than two, because an author reading only the first half
+would read the plain stem as permission.
+
+Rule 1 is the shape law and it is worth its line: **an action verb inserts an n and a describing
+verb does not.** `ondago`, `gandago`, `baeundago` against `masitdago`, `jotago`, `eopdago`. It
+splits the verbs exactly where M2's `-neun` and `-(eu)n` already split them, which is the second
+time in the level that one distinction has paid twice.
+
+The gift is tagged `free` and taught twice from the error side, which is the right allocation for
+something whose only difficulty is unlearning. **Korean does not backshift**: S01's plate is
+`naeil watdago` and S10's is `naeil siheom-i eopseotdago`, and both `why` lines say the same thing
+in the learner's own terms — he said he IS coming, so the report keeps the present. Rule 3 then
+carries the half that does move: the `jeo` inside the quote is not swapped for another pronoun, it
+is simply dropped, because M1's law already says a subject the listener knows is not named again.
+S03's plate leaves it in and reports the speaker's own learning instead of the friend's.
+
+The five shapes get one display each, sorted by what was said rather than by who said it, which is
+the sort a learner has to internalise: `-dago` (S01–S03), `-(i)rago` (S04), `-(eu)rago` (S05),
+`-jago` (S06), `-nyago` (S07). S04 teaches the copula's allomorph pair on one sentence —
+`haksaeng-irago` after a consonant, `uisa-rago` after a vowel — and the hyphen sits at the copula
+boundary exactly where `haksaeng-ieyo` already put it, so `haksaeng` keeps L1-M1's key and `irago`
+is the only new one that surface mints. S07 is where the second verb earns its place: a reported
+question hands off to `mureosseoyo` rather than `haesseoyo`, and its trap names the missing word —
+**there is no Korean for "whether"**, the ending is the whole of it.
+
+S05 carries the register decision. **A reported command loses its politeness ending**: the teacher
+said `oseyo` and the report is `orago`. The trap refuses to let that read as rudeness — an ending
+like `-(eu)seyo` belongs to the sentence somebody actually spoke, and a report is your sentence,
+not theirs — and the respect moves onto the title and the chip. S06 then collects M4's debt: "let
+us" had nowhere to go there, because `-(eu)psida` is L4-M7's, and inside a report it is simply
+`-jago`. That is the two modules of this wave paying each other, and it is the best argument for
+authoring them together.
+
+`mal` and `malsseum` close the module. **`mal` is free**, as `docs/76` §4's first correction
+predicted and as the fold confirms: `hangungmal` is one whole token of L1-M1's and donates nothing.
+S08 spends it on the fact English hides — **Korean agrees with the WORDS, not the person**, so
+`chingu mal-i majayo` and never `chingu-ga majayo` — and there is no possessive particle between
+the two nouns either. S09 gives `malsseum` its own row and its own trap: it is not a politer tone,
+it is a different word, and once the speaker is somebody you raise the swap is obligatory. The
+productive `-(eu)syeosseoyo` and `-kkeseo` stay M8's and are named as deferred rather than borrowed.
+
+### The seam corrections, and one key left open
+
+**`jeo-ga` came back, and the ratchet caught it.** M5-S04's second variation was authored as
+`Minsu-neun jeo-ga haksaeng-irago haesseoyo` — the same error wave 1 corrected in M2's brief,
+reappearing in a wave that had read the correction. `npm run content:shown -- en-ko L3-M5` reported
+it as the file's only SHOWN-BUT-UNTAUGHT surface, because `je-ga` is a key and `jeo-ga` is not, and
+the fix was one word. Two things are worth recording. The first is that the Hangul `script` line was
+already correct while the romanization was wrong, which is the exact failure mode a transcription
+course is exposed to. The second is that the check caught it **because wave 1 opened `je-ga` as a
+row**: the index is what made the error mechanically visible, and a course that had left the
+alternation untaught would have shipped it.
+
+**`wanyago` is not how 왔냐고 is said.** The M5 brief lists it among the module's fresh keys; the
+surface is pronounced *wannyago* — the past marker resolves to t and then assimilates to n in front
+of the ending — and `docs/34` §1.1 requires that to be written, as `hangungmal` already is. This
+wave **avoided the past reported question entirely**: S07 writes `onyago` and `ganyago`, both of
+which are clean, so the key stays open for the module that wants to teach the assimilation as well
+as the ending. That is wave 1's `meokneun` play repeated deliberately, and for the same reason — a
+first written assimilation deserves a display built to make it audible.
+
+**One assimilation this wave did write, and did build a display for.** `masinneun` (M3-S03) is
+맛있는 said as it sounds, the t of the stem meeting the n of the ending, and the row's note says so
+in content. Wave 1 left `meongneun` open precisely so that the first assimilated modifier could
+arrive with a sentence around it; M3 needed a tasty-modifier for the hedge, so it took the debt and
+paid it in the same row. `masitge` (L2-M5) and `masitdago` (M5-S02) are the same stem written with
+`t` before a consonant that does not assimilate, so the three surfaces together are the rule.
+
+**Register, reconciled rather than assumed.** The M3 brief says the elder-disagreement lines chip
+`formal`; `docs/76` §2 says `formal` means an honoured SUBJECT, and wave 1 argued hard that the
+chip must keep that meaning for M8's sake. The two are reconciled by making the formal-chipped
+lines actually carry `-(eu)seyo` on the listener: M3-S07 `taseyo`, M4-S06 `deuseyo`, M4-S08
+`taseyo`. M3-S10 (`Joesonghajiman, jeo-neun jal moreugesseoyo`) chips `formal` on the strength of
+L2-M8-S07's shipped precedent, where a `joesonghajiman` line does the same. M5-S05, S09 and S10
+chip `formal` because their subject is a `seonsaengnim`, which is L2-M2-S08's precedent. Eight of
+the thirty sentences chip `formal`, twenty-two `neutral`, and `informal` appears nowhere — stated
+in M3 rule 6 and again in M5 rule 0, so the absence reads as a decision at both ends of the wave.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` holds en-ko at **12** across all three modules, unchanged since the
+course opened and unchanged by 58 new keys. The one finding the wave produced — M5's `jeo-ga` — was
+found by `npm run content:shown` before the build ran and fixed in the authoring pass, so the
+emitted count never moved.
+
+The discipline is `docs/68`'s, applied before the build rather than after it, and it is what made
+the particle work free: every particle shape a display shows was authored into the `forms` of the
+row that owns its host. `bi` carries `bi-ga`; `nalssi` carries `nalssi-ga`; `mal` carries `mal-i`
+and `mal-eun`; `malsseum` carries `malsseum-eun` and `malsseum-i`. Where the host belongs to an
+earlier module, the wave routed around the missing shape instead of opening a row on somebody
+else's noun — `jeo-do`, `gogi-ga`, `saengseon-i`, `hoeui-eseo` and `sukje-reul` were each wanted at
+some point by some display and none of them exists in the fold, so none of them was written. That
+is wave 1's rule restated: **a particle shape is free when the module owns the noun and costs a row
+when it does not.**
+
+`npx vitest run src/course/types.test.ts` keeps every en-ko guard green — no Hangul outside
+`script`, pure ASCII throughout, no bare particle as its own token, no plain-style pronoun, and
+`-mnida` still at exactly its four frozen phrases. The one failing assertion in that file is the
+206-file census, which enumerates every module in the repo by name and needs the three new rows;
+that is a count, not a content defect, and it belongs to whoever lands the wave.
+
+### Open questions for the native pass
+
+15. **The hedge against the flat assertion** (M3, rule 0 and S01). Confirm that
+    `I-sikdang-i joayo` really does read as a claim about fact rather than as a blunter opinion,
+    and that a Korean speaker giving a view of a restaurant reaches for `geot gatayo` by default.
+16. **`jochi anayo`** (M3-S05, and the ruling above). Confirm the aspiration is what a speaker says
+    and what a reader expects to see romanized — `jochi` rather than `joji` for 좋지 — and,
+    separately, that `saenggakhaeyo` and `mothaeyo` are the shapes to write rather than
+    `saenggakaeyo` and `motaeyo`. These are one decision seen from two sides and both halves need a
+    native eye.
+17. **`an joayo` against `jochi anayo`** (M3, rule 2 and S05). Confirm the two are genuinely
+    interchangeable in meaning, that neither is stronger, and that a disagreement really does
+    prefer the long form in ordinary speech.
+18. **`-(eu)nikka` before a request** (M3, rule 4 and S07). Confirm `Bi-ga waseo taeksi-reul taseyo`
+    is heard as wrong rather than merely awkward, and that the block holds for a suggestion
+    (`gallae-yo?`) as firmly as for an order.
+19. **`bappeunikka`** (M3-S06). Confirm the stem vowel comes back before this ending while
+    `bappaseo` drops it, and that a speaker would not say `bappanikka`.
+20. **`majayo` and `teullyeoyo` taking the statement as subject** (M3-S03, S09; M5-S08). Confirm
+    `Jeo-neun majayo` and `Chingu-ga majayo` are both wrong in the way the modules say, and that
+    `Chingu mal-i majayo` is what a speaker actually says.
+21. **`jal moreugesseoyo` as frozen** (M3-S10). Confirm `jal` here softens rather than measures,
+    that the phrase is not felt as containing a live `-gess-`, and that stacking `jom` or
+    `jeongmal` onto it is as odd as the plate says.
+22. **The one conditional covering if and whenever** (M4, rule 0 and S01–S02). Confirm a speaker
+    hears no ambiguity in `Sigan-i isseumyeon gachi gayo`, and that `hoksi` in front is what marks
+    the doubtful reading rather than a separate ending.
+23. **`geureomyeon`** (M4-S08). Confirm it is the ordinary "then" of conversation, that it is not
+    interchangeable with L2-M10's `geu daeum-e`, and that `geureoke` in its place is heard as an
+    error rather than as a shrug.
+24. **The wish** (M4, rule 4 and S09). Confirm `Naeil nalssi-ga joeumyeon jeongmal joayo` is how a
+    speaker hopes for something, and whether an adult would more often say it with
+    `-(eu)myeon joagesseoyo` — which would put the shape inside M6's `-gess-` rather than here.
+25. **`-neun ge eottaeyo?`** (M4-S05, S10). Confirm it is the everyday way to offer advice to a
+    friend and to somebody senior alike, and that the bare `ge` is written and heard as its own
+    word rather than as part of the modifier.
+26. **The plain style bound inside a report** (M5, rule 0). The wave's most exposed decision.
+    Confirm that a learner who has only ever seen `ondago` and `masitdago` inside `-dago` reports
+    is in no danger of producing the bare plain form as a sentence, and that nothing in this module
+    reads as permission to use banmal.
+27. **The action against describing split** (M5, rule 1). Confirm `ondago`, `gandago` and
+    `baeundago` against `masitdago`, `jotago` and `eopdago`, and that there is no verb at this
+    level where the split is unclear to a speaker.
+28. **No backshift** (M5, rule 2, S01 and S10). Confirm `Chingu-ga naeil ondago haesseoyo` is
+    exactly "my friend said he is coming tomorrow", and that a past inside the quote would be heard
+    as reporting a past event rather than as English's tense agreement.
+29. **A reported command losing `-(eu)seyo`** (M5-S05). Confirm `Seonsaengnim-i naeil orago
+    haesseoyo` is safe rather than curt when the teacher is not present, and how much is lost by
+    not having M8's honorific infix available to write the fuller form.
+30. **`wannyago`** (M5-S07, and the seam correction above). The wave avoided 왔냐고 rather than
+    write it. Confirm the assimilation is real and that `wannyago` is the transcription, so the
+    module that opens the past reported question knows what it is opening.
+31. **`mal` against `malsseum`** (M5-S08, S09). Confirm the swap is obligatory rather than
+    preferred once the speaker is raised, that `seonsaengnim mal-eun` is heard as an error, and
+    that `chingu mal-i` with no particle between the two nouns is what a speaker says.

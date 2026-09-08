@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M4",
+  "title": "If and then",
+  "job": "Conditions, wishes, advice",
+  "prerequisites": [
+    "L3-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present_imperfective",
+      "simple_future",
+      "simple_past",
+      "conditional (past + by)"
+    ],
+    "allowedPatterns": [
+      "Yésli + <future> + , + <future>",
+      "Yésli by + <past> + , + <subject> + by + <past>",
+      "Mne / vam + nádo + V-inf",
+      "<subject-nominative> + dólzhen / dolzhná / dolzhný + V-inf",
+      "Mózhno / nel'zyá + V-inf"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "THE FUTURE GOES IN BOTH HALVES, and this is the module's loudest fact because English forbids exactly what Russian requires. Yésli búdet vrémya, ya pozvonyú is word for word \"if there WILL BE time, I will call\". A learner drilled on \"never use the future after if\" — the rule that saves a Spanish learner — gets this wrong in the opposite direction and produces a habit where they meant a plan. The yésli clause is fenced with M3's comma like any other."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CONDITIONAL IS THE PAST TENSE PLUS by, and that is the entire machine: yésli by + past in the first half, subject + by + past in the second. There is no conditional MOOD to conjugate and not one new ending to learn, which is worth saying out loud as a relief — other languages spend a whole module on this. by carries no stress of its own and leans on the word in front of it, so what you hear is yésli-by and ya-by."
+    },
+    {
+      "tag": "delta",
+      "text": "The impersonal modals are DATIVE-SUBJECT frames — the family L2-M1 opened with mne núzhno. mne nádo, vam nádo: the person who needs is in the dative, the verb stays an infinitive, and there is no nominative subject anywhere in the sentence. English makes \"you\" the subject of \"you need\", so vy nádo is the error waiting to happen."
+    },
+    {
+      "tag": "delta",
+      "text": "dólzhen is the one modal here that AGREES — dólzhen, dolzhná, dolzhný — exactly like M3's soglásen, and like soglásen it takes a NOMINATIVE subject: ya dólzhen, never mne dólzhen. mózhno and nel'zyá agree with nothing because they have no subject at all and never take one, which is precisely what makes them the two most useful words on a sign. nel'zyá already contains its negative, so it is never preceded by ne."
+    },
+    {
+      "tag": "free",
+      "text": "nádo and L2-M1's núzhno overlap almost completely and nothing here needs relearning: where both fit they mean the same thing. The small difference is what can follow — nádo takes an infinitive, while núzhno also takes a noun (mne núzhen bilét). nádo is the one you hear more in speech."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M4-S01",
+      "display": "Yésli búdet vrémya, ya pozvonyú",
+      "script": "Если будет время, я позвоню",
+      "cue": "If there's time, I'll call",
+      "literal": "If will-be time, I will-call",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yésli",
+            "script": "если",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [
+              "yésli"
+            ],
+            "note": "\"If\". Its clause is fenced with a comma exactly as M3's chto and khotyá are — and what follows it is the FUTURE, not the present."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English says \"if there IS time\" and forbids the future after \"if\". Russian says \"if there WILL BE time\" and requires it. The rule that saves you in another language ruins you here.",
+      "sound": "YES-li BU-dyet VRYE-mya, ya paz-va-NYU. yésli takes its stress on the first syllable and runs straight into the word after it.",
+      "variations": [
+        {
+          "display": "Yésli búdet vrémya, ya prochitáyu knígu",
+          "script": "Если будет время, я прочитаю книгу",
+          "cue": "If there's time, I'll read the book",
+          "changed": "a different plan in the second half"
+        },
+        {
+          "display": "Yésli búdet dozhd', ya poydú domóy",
+          "script": "Если будет дождь, я пойду домой",
+          "cue": "If it rains, I'll go home",
+          "changed": "a different condition"
+        }
+      ],
+      "mistake": {
+        "display": "Yésli yest' vrémya, ya pozvonyú",
+        "script": "Если есть время, я позвоню",
+        "why": "\"If there is time\" is the English tense showing through, and in Russian it says something else — a habit rather than a plan. Both halves face the future: Yésli búdet vrémya, ya pozvonyú."
+      },
+      "usage": "Making a plan that depends on something.",
+      "register": "neutral",
+      "mnemonic": "Both halves face the future."
+    },
+    {
+      "id": "L3-M4-S02",
+      "display": "Yésli búdet khoróshaya pogóda, my poydyóm peshkóm",
+      "script": "Если будет хорошая погода, мы пойдём пешком",
+      "cue": "If the weather is good, we'll walk",
+      "literal": "If will-be good weather, we will-go on-foot",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pogóda",
+            "script": "погода",
+            "cue": "weather",
+            "tag": "free",
+            "forms": [
+              "pogóda"
+            ],
+            "note": "\"Weather\", a plain feminine noun. It is the SUBJECT of búdet here, so Russian says \"if good weather will be\" where English says \"if it is nice\"."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "There is no \"it\" in the Russian. pogóda is the subject and búdet is its verb, so English's empty \"it\" has nothing at all to turn into.",
+      "sound": "YES-li BU-dyet kha-RO-sha-ya pa-GO-da, my pay-DYOM pesh-KOM. pogóda is stressed in the middle, so its first o reduces to a.",
+      "variations": [
+        {
+          "display": "Yésli búdet khoróshaya pogóda, my poydyóm v kafé",
+          "script": "Если будет хорошая погода, мы пойдём в кафе",
+          "cue": "If the weather is good, we'll go to a café",
+          "changed": "a destination instead of a manner"
+        },
+        {
+          "display": "Yésli búdet khoróshaya pogóda, ya poydú peshkóm",
+          "script": "Если будет хорошая погода, я пойду пешком",
+          "cue": "If the weather is good, I'll walk",
+          "changed": "one person instead of two"
+        }
+      ],
+      "mistake": {
+        "display": "Yésli pogóda búdet khoróshiy, my poydyóm peshkóm",
+        "script": "Если погода будет хороший, мы пойдём пешком",
+        "why": "pogóda is feminine, so the adjective is khoróshaya. The ending follows the noun and nothing else — L2-M2's rule, unchanged."
+      },
+      "usage": "Planning around something you cannot control.",
+      "register": "neutral",
+      "mnemonic": "The weather is the subject, not an \"it\"."
+    },
+    {
+      "id": "L3-M4-S03",
+      "display": "Yésli vy ustáli, vam nádo otdokhnút'",
+      "script": "Если вы устали, вам надо отдохнуть",
+      "cue": "If you're tired, you need to rest",
+      "literal": "If you tired, to-you necessary to-rest",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nádo",
+            "script": "надо",
+            "cue": "need to, have to",
+            "tag": "delta",
+            "forms": [
+              "nádo"
+            ],
+            "note": "The person who needs goes in the DATIVE — mne nádo, vam nádo — and the sentence has no subject at all. L2-M1's mne núzhno is the same frame."
+          },
+          {
+            "display": "otdokhnút'",
+            "script": "отдохнуть",
+            "cue": "to rest, to take a rest",
+            "tag": "delta",
+            "forms": [
+              "otdokhnút'"
+            ],
+            "note": "The perfective partner of L1-M6's otdykhát': one rest with an end to it, which is what advice means. L2-M10's aspect rule doing ordinary work."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English makes \"you\" the subject of \"you need\". Russian makes the need impersonal and puts you in the dative: vam nádo, never vy nádo.",
+      "sound": "YES-li vy us-TA-li, vam NA-da at-dakh-NUT'. nádo is stressed on the first syllable and its final o reduces to a.",
+      "variations": [
+        {
+          "display": "Yésli vy ustáli, vam nádo spat'",
+          "script": "Если вы устали, вам надо спать",
+          "cue": "If you're tired, you need to sleep",
+          "changed": "sleep instead of rest"
+        },
+        {
+          "display": "Mne nádo otdokhnút'",
+          "script": "Мне надо отдохнуть",
+          "cue": "I need to rest",
+          "changed": "advice turned into a statement about the speaker"
+        }
+      ],
+      "mistake": {
+        "display": "Yésli vy ustáli, vy nádo otdokhnút'",
+        "script": "Если вы устали, вы надо отдохнуть",
+        "why": "nádo takes no nominative subject whatever. The person goes in the dative: vam nádo otdokhnút'."
+      },
+      "usage": "Giving advice without giving an order.",
+      "register": "neutral",
+      "mnemonic": "The need is impersonal; you are only its dative."
+    },
+    {
+      "id": "L3-M4-S04",
+      "display": "Yésli by u menyá býlo vrémya, ya by poshyól",
+      "script": "Если бы у меня было время, я бы пошёл",
+      "cue": "If I had time, I'd go",
+      "literal": "If would at me was time, I would went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "by",
+            "script": "бы",
+            "cue": "would (the conditional particle)",
+            "tag": "delta",
+            "forms": [
+              "by"
+            ],
+            "note": "The whole conditional machine: past tense plus by, in BOTH halves. Nothing conjugates and no ending is new. by never takes stress and leans on the word before it."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "There is no conditional to learn, and that is the trap: a learner expecting a fresh set of endings hunts for something that is not there. The past tense you already have, plus by, is all of it.",
+      "sound": "YES-li by u me-NYA BY-la VRYE-mya, ya by pa-SHOL. by is unstressed and glues onto the word in front of it — YES-li-by, ya-by.",
+      "variations": [
+        {
+          "display": "Yésli by u menyá býlo vrémya, ya by pozvoníl",
+          "script": "Если бы у меня было время, я бы позвонил",
+          "cue": "If I had time, I'd call",
+          "changed": "a call instead of a trip"
+        },
+        {
+          "display": "Yésli by u neyó býlo vrémya, oná by poshlá",
+          "script": "Если бы у неё было время, она бы пошла",
+          "cue": "If she had time, she'd go",
+          "changed": "a woman, so the past form changes with her"
+        }
+      ],
+      "mistake": {
+        "display": "Yésli by u menyá yest' vrémya, ya by poshyól",
+        "script": "Если бы у меня есть время, я бы пошёл",
+        "why": "A by clause cannot hold a present tense. Both halves go past: Yésli by u menyá býlo vrémya, ya by poshyól."
+      },
+      "usage": "Talking about the thing you would do if life were otherwise.",
+      "register": "neutral",
+      "mnemonic": "Past plus by, twice."
+    },
+    {
+      "id": "L3-M4-S05",
+      "display": "Yésli by u menyá býli dén'gi, ya by kupíl mashínu",
+      "script": "Если бы у меня были деньги, я бы купил машину",
+      "cue": "If I had money, I'd buy a car",
+      "literal": "If would at me were monies, I would bought car",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dén'gi",
+            "script": "деньги",
+            "cue": "money",
+            "tag": "delta",
+            "forms": [
+              "dén'gi"
+            ],
+            "note": "\"Money\", and Russian counts it as a PLURAL: býli dén'gi, never býlo. English treats money as one uncountable mass; Russian treats it as many."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "dén'gi is plural, so its verb is plural too — býli dén'gi. Writing býlo dén'gi is the English singular leaking straight through.",
+      "sound": "YES-li by u me-NYA BY-li DYEN'-gi, ya by ku-PIL ma-SHY-nu. dén'gi is stressed on the first syllable and the soft sign softens the n before it.",
+      "variations": [
+        {
+          "display": "Yésli by u menyá býli dén'gi, ya by kupíl bilét",
+          "script": "Если бы у меня были деньги, я бы купил билет",
+          "cue": "If I had money, I'd buy a ticket",
+          "changed": "something cheaper bought"
+        },
+        {
+          "display": "Yésli by u neyó býli dén'gi, oná by kupíla mashínu",
+          "script": "Если бы у неё были деньги, она бы купила машину",
+          "cue": "If she had money, she'd buy a car",
+          "changed": "a woman, so both past forms change"
+        }
+      ],
+      "mistake": {
+        "display": "Yésli by u menyá býlo dén'gi, ya by kupíl mashínu",
+        "script": "Если бы у меня было деньги, я бы купил машину",
+        "why": "dén'gi is plural and takes býli. Russian counts money the way English counts coins."
+      },
+      "usage": "The daydream sentence — the one every learner wants early.",
+      "register": "neutral",
+      "mnemonic": "Money is a plural in Russian."
+    },
+    {
+      "id": "L3-M4-S06",
+      "display": "Ya dólzhen rabótat' sevódnya",
+      "script": "Я должен работать сегодня",
+      "cue": "I have to work today",
+      "literal": "I obliged to-work today",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dólzhen",
+            "script": "должен",
+            "cue": "must, have to (said by a man)",
+            "tag": "delta",
+            "forms": [
+              "dólzhen",
+              "dolzhná",
+              "dolzhný"
+            ],
+            "note": "The one modal here that AGREES, exactly like M3's soglásen: dólzhen, dolzhná, dolzhný. The stress moves off the o in the feminine and the plural."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "dólzhen is an obligation you owe rather than a need you feel — nearer \"I am obliged\" than nádo. And unlike nádo it wants a NOMINATIVE subject: ya dólzhen, not mne dólzhen.",
+      "sound": "ya DOL-zhen ra-BO-tat' se-VOD-nya. The feminine dolzhná moves the stress to the ending — dalzh-NA — so the two forms do not rhyme.",
+      "variations": [
+        {
+          "display": "Oná dolzhná rabótat' sevódnya",
+          "script": "Она должна работать сегодня",
+          "cue": "She has to work today",
+          "changed": "a woman, so the ending and the stress both move"
+        },
+        {
+          "display": "My dolzhný rabótat' sevódnya",
+          "script": "Мы должны работать сегодня",
+          "cue": "We have to work today",
+          "changed": "a group"
+        }
+      ],
+      "mistake": {
+        "display": "Mne dólzhen rabótat' sevódnya",
+        "script": "Мне должен работать сегодня",
+        "why": "dólzhen agrees with a nominative subject, so it takes ya rather than mne. The dative belongs to nádo and núzhno."
+      },
+      "usage": "Naming an obligation — to a colleague, or as an excuse.",
+      "register": "neutral",
+      "mnemonic": "dólzhen agrees; nádo does not."
+    },
+    {
+      "id": "L3-M4-S07",
+      "display": "Izviníte, zdes' mózhno kurít'?",
+      "script": "Извините, здесь можно курить?",
+      "cue": "Excuse me, is smoking allowed here?",
+      "literal": "Excuse-me, here possible to-smoke?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kurít'",
+            "script": "курить",
+            "cue": "to smoke",
+            "tag": "free",
+            "forms": [
+              "kurít'"
+            ],
+            "note": "An ordinary infinitive, and it sits after mózhno and nel'zyá unchanged — those two words take nothing but an infinitive after them."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "There is no \"I\" and no \"you\" to put in. mózhno asks whether the thing is allowed at all, so the question covers everybody in the room at once.",
+      "sound": "iz-vi-NI-tye, zdyes' MOZH-na ku-RIT'? mózhno is stressed on the first syllable and its final o reduces to a.",
+      "variations": [
+        {
+          "display": "Izviníte, zdes' mózhno rabótat'?",
+          "script": "Извините, здесь можно работать?",
+          "cue": "Excuse me, may one work here?",
+          "changed": "a different activity"
+        },
+        {
+          "display": "Zdes' mózhno kurít'?",
+          "script": "Здесь можно курить?",
+          "cue": "Is smoking allowed here?",
+          "changed": "the bare question, with no opener"
+        }
+      ],
+      "mistake": {
+        "display": "Izviníte, ya mózhno kurít'?",
+        "script": "Извините, я можно курить?",
+        "why": "mózhno has no subject at all — that is the whole point of it. Drop the ya: Zdes' mózhno kurít'?"
+      },
+      "usage": "Asking permission of a room rather than of a person.",
+      "register": "neutral",
+      "mnemonic": "mózhno asks the room."
+    },
+    {
+      "id": "L3-M4-S08",
+      "display": "Net, zdes' nel'zyá kurít'",
+      "script": "Нет, здесь нельзя курить",
+      "cue": "No, smoking isn't allowed here",
+      "literal": "No, here not-possible to-smoke",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nel'zyá",
+            "script": "нельзя",
+            "cue": "may not, must not",
+            "tag": "delta",
+            "forms": [
+              "nel'zyá"
+            ],
+            "note": "The exact negative of mózhno and just as subjectless. It is the word on every sign, and like mózhno it takes nothing but an infinitive."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "It never takes a ne in front of it. nel'zyá already contains the negative, and mózhno has no ne form to build one from.",
+      "sound": "nyet, zdyes' nil'-ZYA ku-RIT'. nel'zyá is stressed on the last syllable — the mirror of mózhno, which is stressed on its first.",
+      "variations": [
+        {
+          "display": "Zdes' nel'zyá rabótat'",
+          "script": "Здесь нельзя работать",
+          "cue": "Working isn't allowed here",
+          "changed": "a different prohibition"
+        },
+        {
+          "display": "Vam nel'zyá rabótat', potomú chto vy ustáli",
+          "script": "Вам нельзя работать, потому что вы устали",
+          "cue": "You mustn't work, because you're tired",
+          "changed": "a prohibition aimed at one person, with M3's reason attached"
+        }
+      ],
+      "mistake": {
+        "display": "Net, zdes' ne mózhno kurít'",
+        "script": "Нет, здесь не можно курить",
+        "why": "mózhno has no ne form. Its negative is a separate word: nel'zyá."
+      },
+      "usage": "Refusing, or reading a sign out loud.",
+      "register": "neutral",
+      "mnemonic": "mózhno's opposite is another word, not a ne."
+    },
+    {
+      "id": "L3-M4-S09",
+      "display": "Mne nádo idtí, potomú chto ya opázdyvayu",
+      "script": "Мне надо идти, потому что я опаздываю",
+      "cue": "I have to go, because I'm running late",
+      "literal": "To-me necessary to-go, because-that I am-being-late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "opázdyvayu",
+            "script": "опаздываю",
+            "cue": "I'm running late",
+            "tag": "delta",
+            "forms": [
+              "opázdyvayu"
+            ],
+            "note": "One verb where English needs three words. Imperfective and present, so it is the state you are in right now rather than something that has already happened."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English has no single verb here, so a learner assembles one out of \"I am late\" and reaches for pózdno. That is an adverb with no verb inside it, and it does not say this.",
+      "sound": "mnye NA-da it-TI, pa-ta-MU shto ya a-PAZ-dy-va-yu. opázdyvayu is five syllables with the stress early, so the tail runs fast and flat.",
+      "variations": [
+        {
+          "display": "Mne nádo idtí, potomú chto ya ustál",
+          "script": "Мне надо идти, потому что я устал",
+          "cue": "I have to go, because I'm tired",
+          "changed": "a different reason"
+        },
+        {
+          "display": "Ya opázdyvayu na rabótu",
+          "script": "Я опаздываю на работу",
+          "cue": "I'm running late for work",
+          "changed": "the verb alone, with what you are late for"
+        }
+      ],
+      "mistake": {
+        "display": "Mne nádo idtí, potomú chto ya yest' pózdno",
+        "script": "Мне надо идти, потому что я есть поздно",
+        "why": "There is no \"to be\" to conjugate and pózdno is an adverb, not a state you can be in. The verb you want is one word: opázdyvayu."
+      },
+      "usage": "Leaving in a hurry, politely.",
+      "register": "neutral",
+      "mnemonic": "One Russian verb for three English words."
+    },
+    {
+      "id": "L3-M4-S10",
+      "display": "Yésli by ya byl vrachóm, ya by vam pomóg",
+      "script": "Если бы я был врачом, я бы вам помог",
+      "cue": "If I were a doctor, I'd help you",
+      "literal": "If would I was doctor-with, I would to-you helped",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pomóg",
+            "script": "помог",
+            "cue": "helped (a man)",
+            "tag": "delta",
+            "forms": [
+              "pomóg",
+              "pomoglá"
+            ],
+            "note": "The past of L2-M1's pomóch', irregular in one small way: no -l in the masculine. A woman says pomoglá, and the person helped stays dative — vam pomóg."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "\"If I were\" is Russian's ordinary past plus by — byl, with nothing special about it. English's \"were\" is the last shred of a subjunctive that Russian never needed.",
+      "sound": "YES-li by ya byl vra-CHOM, ya by vam pa-MOK. A final g is said k, so pomóg comes out pa-MOK.",
+      "variations": [
+        {
+          "display": "Yésli by ya bylá vrachóm, ya by vam pomoglá",
+          "script": "Если бы я была врачом, я бы вам помогла",
+          "cue": "If I were a doctor, I'd help you (a woman speaking)",
+          "changed": "a woman, so both past forms change"
+        },
+        {
+          "display": "Yésli by on byl vrachóm, on by vam pomóg",
+          "script": "Если бы он был врачом, он бы вам помог",
+          "cue": "If he were a doctor, he'd help you",
+          "changed": "he instead of I"
+        }
+      ],
+      "mistake": {
+        "display": "Yésli ya byl vrachóm, ya by vam pomóg",
+        "script": "Если я был врачом, я бы вам помог",
+        "why": "by is missing from the first half, which turns the wish into a claim about the past. The particle goes in BOTH halves: yésli by … , ya by …"
+      },
+      "usage": "Wishing you could do more than you can.",
+      "register": "neutral",
+      "mnemonic": "byl plus by is the whole subjunctive."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M4-C01",
+      "display": "Yésli búdet vrémya, ya pozvonyú",
+      "script": "Если будет время, я позвоню",
+      "cue": "If there's time, I'll call"
+    },
+    {
+      "id": "L3-M4-C02",
+      "display": "Yésli búdet khoróshaya pogóda, my poydyóm peshkóm",
+      "script": "Если будет хорошая погода, мы пойдём пешком",
+      "cue": "If the weather is good, we'll walk"
+    },
+    {
+      "id": "L3-M4-C03",
+      "display": "Yésli vy ustáli, vam nádo otdokhnút'",
+      "script": "Если вы устали, вам надо отдохнуть",
+      "cue": "If you're tired, you need to rest"
+    },
+    {
+      "id": "L3-M4-C04",
+      "display": "Yésli by u menyá býlo vrémya, ya by poshyól",
+      "script": "Если бы у меня было время, я бы пошёл",
+      "cue": "If I had time, I'd go"
+    },
+    {
+      "id": "L3-M4-C05",
+      "display": "Yésli by u menyá býli dén'gi, ya by kupíl mashínu",
+      "script": "Если бы у меня были деньги, я бы купил машину",
+      "cue": "If I had money, I'd buy a car"
+    },
+    {
+      "id": "L3-M4-C06",
+      "display": "Ya dólzhen rabótat' sevódnya",
+      "script": "Я должен работать сегодня",
+      "cue": "I have to work today"
+    },
+    {
+      "id": "L3-M4-C07",
+      "display": "Zdes' mózhno kurít'?",
+      "script": "Здесь можно курить?",
+      "cue": "Is smoking allowed here?"
+    },
+    {
+      "id": "L3-M4-C08",
+      "display": "Zdes' nel'zyá kurít'",
+      "script": "Здесь нельзя курить",
+      "cue": "Smoking isn't allowed here"
+    },
+    {
+      "id": "L3-M4-C09",
+      "display": "Mne nádo idtí, potomú chto ya opázdyvayu",
+      "script": "Мне надо идти, потому что я опаздываю",
+      "cue": "I have to go, because I'm running late"
+    },
+    {
+      "id": "L3-M4-C10",
+      "display": "Yésli by ya byl vrachóm, ya by vam pomóg",
+      "script": "Если бы я был врачом, я бы вам помог",
+      "cue": "If I were a doctor, I'd help you"
+    },
+    {
+      "id": "L3-M4-C11",
+      "display": "Oná dolzhná rabótat' sevódnya",
+      "script": "Она должна работать сегодня",
+      "cue": "She has to work today"
+    },
+    {
+      "id": "L3-M4-C12",
+      "display": "Vam nel'zyá rabótat', potomú chto vy ustáli",
+      "script": "Вам нельзя работать, потому что вы устали",
+      "cue": "You mustn't work, because you're tired"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

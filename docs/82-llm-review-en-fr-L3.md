@@ -192,3 +192,224 @@ authoring wave rather than after it.
     verb that carries the result.
 14. **`il faut` against `on doit`** (M2-S10). Confirm `il faut` plus an infinitive is what a speaker
     uses for a general truth about work, and whether `on doit` is in fact commoner in speech.
+
+## Wave 2 — L3-M3, L3-M4, L3-M5 (#485)
+
+Authored against the same briefs and the same `docs/74` decisions, and again reviewed against the
+REAL cumulative index rather than the briefs' account of it: **599 surfaces through L3-M2**, growing
+to 619 after M3, 640 after M4 and **662 after M5**. A dev build emits
+`en-fr: 25 modules (L1-M1..M10, L2-M1..M10, L3-M1..M5)` with `CONTENT 209/209 ok`, and
+`npm run content:shown` reports every one of the three modules `clean`, with **no re-teach either**.
+
+`maxSpan` stays 4 and this is the wave that finally spends it. Until now the only four-token key in
+the course was L1-M7's `à côté de la`; M5 adds four more — `je lui ai parlé`, `je leur ai parlé`,
+`je les ai vus`, `je les ai vues` — which is exactly the span `docs/74` §3 said the object clitics
+would need when it wrote that the multi-token tool is "the reason `maxSpan` is 4". The tool was
+sized for this module two issues before the module existed.
+
+### L3-M3 "Opinions with reasons" — two triggers, and the escape hatch beside them
+
+The subjunctive opens on four cells and refuses to become a paradigm. `soit`, `ait`, `puisse` and
+`aille` are authored as WORDS, each with `forms: []` except `aille`, and rule 1 says so in as many
+letters: *learn these four as words, not as a paradigm*, with the mood as a system named as L4's.
+That is the only way to open a mood in a ten-sentence module without the module becoming about
+conjugation, and it is what `docs/58` §5 asked for.
+
+The module's loudest rule is not the subjunctive at all. **`que` is never dropped**, and it is rule
+0 because it is the error an English speaker makes in every single frame the module teaches:
+`je pense que`, `je crois que`, `il faut que`. English throws *that* away so habitually that leaving
+it in sounds stiff, and `Je pense c'est vrai` is the sentence the habit builds. Putting it first also
+makes the subjunctive cheaper to state, because by the time rule 1 arrives the learner has already
+been told there is a `que` and a second clause on the far side of it — all rule 1 has to add is that
+the doubt bends the verb over there.
+
+The escape hatch got its own sentence rather than a footnote. S05 is `Il faut que j'aille à la gare`
+and S07 is `Il faut partir, il n'y a pas beaucoup de temps`, and S07's trap says the thing the brief
+insisted on: **`il faut` plus an infinitive names nobody, needs no `que` and needs no subjunctive,
+and it is what a speaker says whenever nobody in particular is meant.** S05's own mistake plate ends
+by offering the way out — *if you would rather not, drop the `que`* — so the two halves of the
+decision are on the same screen as the rule.
+
+`même si` is the counterweight and it is placed where a counterweight belongs, three sentences after
+the last subjunctive cell, with S08's trap making the argument rather than asserting the rule:
+**you do not bend a verb you have just conceded.** That is a reason a learner can carry to a trigger
+this module never taught, which an exception list is not.
+
+**Two deliberate refusals are worth recording, because both were tempting.** The brief lists
+`je ne suis pas sûr` among the softeners, and `je ne suis pas sûr QUE` is a third subjunctive
+trigger; S09 ships the bare softener with a comma — `Je ne suis pas sûr, mais je crois que oui` —
+and leaves the trigger family closed, because `docs/74` chartered exactly two. And `je dirais`, also
+on the brief's softener list, is a conditionnel: it was deferred to M4 rather than pre-empting a
+tense one module early. Neither refusal costs the module anything a learner needs today.
+
+### The second hyphen the index bought without being asked
+
+Wave 1 recorded `l'après-midi` quietly opening `midi`. `peut-être` does it again, and this time the
+parts are load-bearing: `surfaceIndexKeys` indexed `peut-être`, **`peut`** and **`être`**, so a
+`peut` that no row describes now resolves, for the rest of the course, to a row whose cue reads
+"maybe · perhaps".
+
+The consequence was immediate and was paid one module later. M4 needed the present of *can* for
+S05's positive counterpart and **did not write it**: the variation is `Il pourrait m'aider`, not
+`Il peut m'aider`, and the mistake plate is a spelling error rather than a `peux`/`pourrais`
+contrast. This is the second time in two waves that a hyphen has committed the course to something
+no author chose, and it is now a pattern rather than an accident: **on this course a hyphenated
+surface should be assumed to spend its parts, and the seam note should say which parts.** The module
+that wants to teach `il peut` will find the key spent by L3-M3 and must point back at it.
+
+### L3-M4 "If and then" — the seam note was wrong about the apostrophe
+
+The M4 brief charters `s'il` as a fresh key. **It is not one.** L2-M1-S06 owns it, inside
+`s'il te plaît`'s `forms`, and that row's note already reads *"the `s'il` is `si` plus `il`, elided
+into one token"* — the exact fact M4 was chartered to teach, sitting in the course since L2 and
+pointing the right way. So M4 opened `si` alone, put `s'ils` in its `forms`, and wrote the fusion
+into `si`'s note and into rule 1; no row was opened for `s'il`, and `content:shown` reports no
+re-teach as a result. A learner who taps `s'il` in `S'il pleut` is shown L2-M1's note, and it is the
+right note. This is the second wave running in which checking a seam sentence against the emitted
+index changed what the module was allowed to write.
+
+Three more keys the brief did not mention had to be opened, all of them the same shape — an elision
+the tokenizer sees as one token where the parts are already taught. **`j'avais`** (M4-S07) is the
+clearest: `avais` is L2-M10's, `j'ai`, `j'étais` and `j'allais` are all keys, and `j'avais` was
+simply never written. `CLAUDE.md`'s rule covers it exactly — a new shape of an older lexeme gets its
+own row in the module that first shows it, with a note back at the first-teach row — and that is how
+it was authored. `pleut` (beside L2-M10's `pleuvait`), `reste` (beside L1-M6's `rester`) and `vient`
+(beside L1-M10's `venir`) are the same move without the apostrophe.
+
+The tense itself is stated once and never re-derived: **the conditionnel is the futur stem plus the
+imparfait endings.** S06 is where it is visible on the page, because `parlerais` is `parler` with
+L2-M10's `-ais` on the end and nothing removed, and rule 2 names the four short stems — `devr-`,
+`pourr-`, `ser-`, `viendr-` — as the whole of what has to be learnt separately. Rule 3 is the payoff
+`docs/58` §5 promised: **L2-M1's `je voudrais` was this tense all along**, and S10 puts `j'aimerais`
+and `je voudrais` on one screen as variations of each other so the claim is visible rather than
+asserted.
+
+The counterfactual frame is single, as chartered, and the interference is stated as an ORDER rather
+than as a mood: `si` takes the imparfait, the wish takes the conditionnel, and `si je viendrais` is
+the English *if I would* showing through. The `si j'avais eu … j'aurais …` version is named as
+L4-M3's inside rule 4 and appears nowhere in the content.
+
+`à ta place` is indexed whole, which leaves L2-M4's bare `place` untouched, and M3's `même si`
+did not spend bare `si` — confirmed against the emitted index before M4 was written, not after.
+
+### L3-M5 "What someone said" — the clitics, and a rule the ear cannot supply
+
+Three shapes carry the whole module and they are taught as three, because choosing between them is
+the error surface: **`que` reports a statement, `si` reports a yes/no question, and a request is not
+a clause at all** but `de` plus an infinitive. S04's trap says it in one line, and S03's mistake
+plate is `Il m'a demandé QUE j'avais le temps` — the sentence English word order builds. `si` is
+M4's key doing a second job, and M4's note was amended in this same wave so that it is true of the
+reporting job too, exactly as the brief required.
+
+The backshift opens nothing. `venait`, `pouvait` and `partais` are new cells of verbs the learner
+has, sitting in L2-M10's imparfait, and rule 0 says the tense is one the learner already owns in a
+second seat. English performs the same shift, so the machinery transfers and only the obligation
+does not — which is why the module spends its plates on the clitics instead.
+
+**The object clitics arrive as multi-token surfaces and the reason is stated on the row, not in a
+comment.** `je l'ai vue`, `je les ai vus`, `je les connais`, `je lui ai parlé`, `je leur ai parlé` —
+each its own key, each with a `forms` list that carries the contrast it exists to teach
+(`je l'ai vue` / `je l'ai vu`; `je les connais` / `je le connais` / `je la connais`). `le`, `la` and
+`les` stay L1-M1's articles and no row touches them, which is the collision `docs/58` predicted and
+`docs/74` §3 priced. Rule 3 makes the delta the POSITION rather than the word: English puts the
+object after the verb and cannot do otherwise, so `je les connais` has nothing in the learner's own
+language to attach to.
+
+The participle agreement is the wave's best-placed rule and the hardest to teach honestly, because
+**every ending it turns on is silent.** `vu`, `vue`, `vus` and `vues` are one sound. Rule 5 states
+the rule and then states the limit in the same breath — `j'ai vu la voiture` has the object after
+the participle and takes no agreement, and neither does `je lui ai parlé`, because `lui` is
+indirect — and S08's trap makes the limit the whole point: *no agreement here, and that is the limit
+of the rule rather than an exception to it.* A learner who has just met `je l'ai vue` will want to
+write `parlée`, and the sentence that stops them is the one that comes immediately after.
+
+`lui` and `leur` are opened as bare rows as well as inside their verbs, because the fact worth
+knowing about them is a gap rather than a form: **they do not show gender.** `Je lui ai parlé` is
+*I spoke to him* or *to her* with nothing in the sentence to say which — English marks the gender and
+drops the *to*, French drops the gender and keeps the *to* inside the word. S10 closes on the other
+half of `leur`, which is two words spelled the same: the pronoun never takes an `s`, the possessive
+does, and only what follows tells them apart.
+
+### The seam corrections this wave made, collected
+
+The M5 brief also names **`voulait`** as a fresh key. It is not: M4 opened it one module earlier, in
+the same wave, inside `voulais`'s `forms`, and M5-S02's variation points back at it rather than
+opening a second row. And **`demandé` cannot be shown without `m'a` being shown** — `m'` is L2-M5's
+key, but `m'a` is a single token to the tokenizer and no module had ever written it — so `m'a` was
+opened as its own row with a note back at L2-M5. `qu'il` and `qu'elle` needed the same treatment
+against L1-M9's `que`. Four of the wave's corrections are the same kind of thing: an apostrophe
+makes a new token out of two taught words, and a seam note written from the grammar rather than from
+the emitted index will miss every one of them.
+
+### Both course laws held
+
+The `ne` is written in every display, every variation and every pool line across all three modules —
+checked by script rather than by eye, over every line carrying `pas`, `jamais`, `rien` or
+`personne` — with the deliberate exceptions living only on mistake plates (M5-S02's
+`qu'elle peut pas venir`, which exists to be struck out and whose `why` writes the `ne` back in).
+Every elided form is one key with a STRAIGHT apostrophe inside it: `j'aille`, `s'ils`, `j'avais`,
+`j'aimerais`, `qu'il`, `qu'elle`, `m'a`, `d'attendre`, `je l'ai vue`. No file in the wave contains a
+curly apostrophe.
+
+### The ratchet
+
+`tools/shown-surfaces.test.ts` held at **en-fr 20** across all three modules, with **no finding in
+any of them** — `npm run content:shown` reports `clean` for M3, M4 and M5 and reports no re-teach
+either, which is a stricter result than wave 1's and is owed to the same discipline: every seam
+sentence was checked against the emitted index before the module was written, and four of them were
+wrong.
+
+One thing outside `content/` goes red on this wave and is not a content defect:
+`src/course/types.test.ts` pins the module-file list at **206**, and three new files make it 209.
+The list is a single shared array that every parallel authoring wave touches, so it is updated once
+by whoever lands the waves rather than three times by their authors.
+
+### Open questions for the native pass
+
+15. **`il faut que` against `il faut` plus an infinitive** (M3-S05 and S07). The module's central
+    claim is that the infinitive is what a speaker reaches for whenever nobody in particular is
+    meant, and that `il faut que j'aille` is reserved for naming the person. Confirm the split, and
+    confirm `il faut que j'aille à la gare` is what somebody actually says rather than `je dois
+    aller à la gare`.
+16. **`à mon avis`** (M3-S06). Confirm it is the everyday softener rather than a written one, and
+    where `selon moi` and `je trouve que` sit beside it — the module teaches neither.
+17. **`même si` with the indicative** (M3-S08 and rule 3). Confirm the subjunctive after it is
+    genuinely wrong rather than merely rarer, including after a `même si` that is plainly
+    hypothetical.
+18. **`je crois que oui`** (M3-S09). Confirm it is an ordinary whole answer, that `je crois que non`
+    is its equal, and that `crois` really is commoner than `pense` in speech as the note claims.
+19. **`je ne suis pas sûr` held back from its `que`** (M3-S09). The module ships the bare softener
+    and refuses the third trigger. Confirm a speaker does use it bare, with a comma, as often as the
+    module implies.
+20. **`peut-être` after the verb** (M3-S10). Confirm `c'est peut-être vrai` is the ordinary position,
+    and say how common the fronted `peut-être que` — named in the note and never shown — really is.
+21. **`ait raison`** (M3-S03). The subjunctive of `avoir raison` after `je ne pense pas que`.
+    Confirm a speaker says it rather than reaching for a frame that avoids the mood.
+22. **`s'il` against `si elle`** (M4-S02 and S03, rule 1). The module's loudest claim: the fusion
+    reaches `il` and `ils` and stops. Confirm `s'elle` and `s'on` appear at no register at all,
+    including informal messaging.
+23. **`à ta place`** (M4-S06). Confirm it is the ordinary frame for *if I were you*, and how it
+    compares with `si j'étais toi`, which the module never shows.
+24. **`j'aimerais` against `je voudrais`** (M4-S10). Confirm they are interchangeable for declining
+    an invitation, and whether either carries a register the note does not name.
+25. **`ce serait`** (M4-S08). Confirm the empty `ce` is obligatory and that `il serait super` is
+    wrong rather than odd.
+26. **`tu devrais` and `tu pourrais` as everyday advice** (M4-S04 and S05). Confirm the conditionnel
+    is what a speaker actually uses, and that `tu devrais de` — the plate's error — is a real
+    learner error rather than an invented one.
+27. **`demandé` as a false friend** (M5-S03). Confirm it never carries the force of English
+    *demanded*, and that `exigé`, named in the note and never taught, is the word that does.
+28. **The obligatory backshift** (M5-S01 and rule 0). Confirm `il a dit qu'il vient` is genuinely
+    not written, and say whether speech tolerates it when the arrangement still stands — this is the
+    claim most likely to be stricter on the page than in the ear.
+29. **A reported request with `de`** (M5-S05). Confirm `il m'a dit d'attendre` is the ordinary shape,
+    and whether `de` is ever dropped in speech the way English drops *that*.
+30. **The participle agreement in practice** (M5-S06, S07 and rule 5). The wave's strongest
+    writing-only claim. Confirm educated writing still observes it after a preceding direct object,
+    and say plainly whether it is fading — the course teaches it as a rule and a learner deserves to
+    know if it is one that natives themselves miss.
+31. **`connais` for people** (M5-S09). Confirm the note's claim that the verb is for people and
+    places rather than facts, and that `je les connais bien, ce sont mes amis` is how somebody
+    vouches for a person.
+32. **`leur` invariable as a pronoun** (M5-S10). Confirm `je leurs ai parlé` is an error natives
+    make on the page, and that the pronoun/possessive split is the way to teach the two.
