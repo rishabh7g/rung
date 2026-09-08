@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": [
+    "L2-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "<Surname> + . — Guten Tag + , + hier ist + <name>",
+      "Kann ich bitte + <person> + sprechen?",
+      "Er/Sie ist nicht da",
+      "Kann ich eine Nachricht hinterlassen?",
+      "Auf Wiederhören"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PERSON ANSWERING SAYS THEIR SURNAME. Not hello — Weber. The caller then opens with Guten Tag, hier ist … and their own name. Both words are L1-M2's already, so nothing here is new except the convention, and the convention is the whole lesson: a learner who answers a German phone with Hallo? is not wrong but sounds like a stranger, and one who does not expect a bare surname will think they have dialled wrong and hang up."
+    },
+    {
+      "tag": "interference",
+      "text": "THERE IS NO CONTINUOUS TENSE. Ich spreche covers \"I speak\" and \"I am speaking\" alike, and a learner reaching for an -ing form finds nothing there to reach for. When \"right now\" genuinely matters, the word that carries it is gerade — Er telefoniert gerade — and that is an adverb doing a tense's job, not a tense."
+    },
+    {
+      "tag": "free",
+      "text": "Separable verbs are everywhere in this scene — anrufen, zurückrufen — and every one of them rides UNSPLIT behind a modal, exactly as M4 ruled: Ich möchte Sie morgen zurückrufen, Kann ich eine Nachricht hinterlassen? The split form Ich rufe Sie zurück exists and is ordinary; it stays out of the displays until M10, where the participle finally licenses it. hinterlassen is the useful contrast — it looks separable and is not, because hinter- is never stressed."
+    },
+    {
+      "tag": "free",
+      "text": "This module speaks Sie throughout and chips formal, for the honest reason that YOU CANNOT SEE WHO PICKED UP. A phone is the one situation where the register question is settled before it is asked, and that is worth saying rather than leaving a learner to guess."
+    },
+    {
+      "tag": "delta",
+      "text": "Auf Wiederhören is the closing, and it is L1-M2's Auf Wiedersehen with the seeing swapped for HEARING — a small joke the language makes and a learner remembers for years. Say Auf Wiedersehen on the phone and nothing breaks; say Auf Wiederhören in person and it is funny. Reported speech (Er hat gesagt, dass …) is L3's, which is why a message here is passed on with the words themselves."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "Guten Tag, hier ist Frau Weber",
+      "cue": "Hello, this is Ms Weber",
+      "literal": "Good day, here is Mrs Weber",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hier ist",
+            "cue": "this is (on the phone)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two words that go together and mean one thing. German says \"here is\" where English says \"this is\" — and never das ist, which would be pointing at somebody in the room."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The person who ANSWERS says only their surname — Weber. — and the caller is the one who greets. An English speaker expecting a hello first will hear a bare name and think the line is wrong.",
+      "sound": "GOO-ten tahk, heer ist frow VAY-ber. Frau rhymes with English \"cow\".",
+      "variations": [
+        {
+          "display": "Guten Morgen, hier ist Frau Weber",
+          "cue": "Good morning, this is Ms Weber",
+          "changed": "before midday"
+        },
+        {
+          "display": "Guten Tag, Weber",
+          "cue": "Hello — Weber speaking",
+          "changed": "the bare surname, which is how the call is answered"
+        },
+        {
+          "display": "Hier ist Frau Weber",
+          "cue": "This is Ms Weber",
+          "changed": "without the greeting, once the call is under way"
+        }
+      ],
+      "mistake": {
+        "display": "Guten Tag, das ist Frau Weber",
+        "why": "On the phone it is hier ist: Guten Tag, hier ist Frau Weber."
+      },
+      "usage": "Opening a call — said before anything is asked.",
+      "register": "formal",
+      "mnemonic": "On a German phone you are HERE, not this."
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "Kann ich bitte Frau Weber sprechen?",
+      "cue": "Could I speak to Ms Weber, please?",
+      "literal": "Can I please Mrs Weber speak?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wer",
+            "cue": "who",
+            "tag": "free",
+            "forms": [],
+            "note": "The question word for a person, and it changes shape by case like an article — wer, wen, wem. Only the nominative wer is needed at this level."
+          },
+          {
+            "display": "Apparat",
+            "cue": "line · handset",
+            "tag": "free",
+            "forms": [],
+            "note": "Wer ist am Apparat? is the telephone's own word for the line, kept from the days of the machine itself. It is heard far more often than it is said."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "sprechen takes the person DIRECTLY here — Frau Weber sprechen, with no mit. Adding mit is also correct German but changes the frame, and the accusative version is what a switchboard expects.",
+      "sound": "kan ikh BIT-tuh frow VAY-ber SHPREKH-en. sp at the start of a word is shp.",
+      "variations": [
+        {
+          "display": "Wer ist am Apparat?",
+          "cue": "Who's speaking?",
+          "changed": "asked by the person who answered"
+        },
+        {
+          "display": "Kann ich bitte mit Frau Weber sprechen?",
+          "cue": "Could I speak with Ms Weber, please?",
+          "changed": "with mit, which is equally correct"
+        },
+        {
+          "display": "Ich möchte bitte Frau Weber sprechen",
+          "cue": "I'd like to speak to Ms Weber, please",
+          "changed": "a statement, which a switchboard takes just as well"
+        }
+      ],
+      "mistake": {
+        "display": "Kann ich bitte zu Frau Weber sprechen?",
+        "why": "It is sprechen with no zu: Kann ich bitte Frau Weber sprechen?"
+      },
+      "usage": "Asking to be put through.",
+      "register": "formal",
+      "mnemonic": "You speak a person in German, not to one."
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "Sie ist gerade nicht da",
+      "cue": "She isn't here right now",
+      "literal": "She is just-now not there",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gerade",
+            "cue": "right now · just",
+            "tag": "delta",
+            "forms": [],
+            "note": "German has no continuous tense, so gerade is what carries \"right now\" when the moment matters. Er arbeitet is both \"he works\" and \"he is working\"; gerade forces the second."
+          },
+          {
+            "display": "da",
+            "cue": "there · here (present)",
+            "tag": "free",
+            "forms": [],
+            "note": "Ist sie da? asks whether somebody is present, whichever end of the line you are on. It is the one German word that means both \"here\" and \"there\" and lets context sort it out."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Sie ist nicht hier would be a statement about the room you are standing in. On a phone the word is da, and it means present at all rather than present at a place.",
+      "sound": "zee ist guh-RAH-duh nikht dah. The stress of gerade lands on the RAH.",
+      "variations": [
+        {
+          "display": "Er ist gerade nicht da",
+          "cue": "He isn't here right now",
+          "changed": "a masculine colleague"
+        },
+        {
+          "display": "Sie ist da",
+          "cue": "She's here",
+          "changed": "the answer that puts the call through"
+        },
+        {
+          "display": "Sie ist heute nicht da",
+          "cue": "She isn't in today",
+          "changed": "a whole day rather than a moment"
+        }
+      ],
+      "mistake": {
+        "display": "Sie ist nicht hier gerade",
+        "why": "On the phone it is da, and gerade sits before the negation: Sie ist gerade nicht da."
+      },
+      "usage": "The first thing you hear when the person you want is out.",
+      "register": "formal",
+      "mnemonic": "gerade is the tense German does not have."
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "Kann ich eine Nachricht hinterlassen?",
+      "cue": "Can I leave a message?",
+      "literal": "Can I a message behind-leave?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Nachricht",
+            "cue": "message",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine — eine Nachricht — and it is news as well as a message: die Nachrichten are the television news."
+          },
+          {
+            "display": "hinterlassen",
+            "cue": "to leave (behind)",
+            "tag": "interference",
+            "forms": [],
+            "note": "It LOOKS separable and is not, because hinter- is never stressed. Nothing ever splits off it, which makes it the useful contrast to anrufen and zurückrufen."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "hinterlassen never splits, where anrufen does. The rule behind it is stress, not spelling: a prefix that carries the stress separates and one that does not never will.",
+      "sound": "kan ikh EYE-nuh NAHKH-rikht hin-ter-LAS-sen. The stress on the LAS is what makes it inseparable.",
+      "variations": [
+        {
+          "display": "Kann ich bitte eine Nachricht hinterlassen?",
+          "cue": "Can I leave a message, please?",
+          "changed": "with bitte inside the bracket"
+        },
+        {
+          "display": "Ich möchte eine Nachricht hinterlassen",
+          "cue": "I'd like to leave a message",
+          "changed": "a statement rather than a question"
+        },
+        {
+          "display": "Ich kann eine Nachricht hinterlassen",
+          "cue": "I can leave a message",
+          "changed": "a statement rather than a question"
+        }
+      ],
+      "mistake": {
+        "display": "Kann ich eine Nachricht hinterlasse?",
+        "why": "The infinitive is whole at the end: Kann ich eine Nachricht hinterlassen?"
+      },
+      "usage": "Said when the person you called is out.",
+      "register": "formal",
+      "mnemonic": "The stress decides. hinter- never splits."
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "Kann ich etwas ausrichten?",
+      "cue": "Can I pass on a message?",
+      "literal": "Can I something out-direct?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ausrichten",
+            "cue": "to pass on (a message)",
+            "tag": "free",
+            "forms": [],
+            "note": "The offer made from the other side of the call — you leave a message, they pass it on. Separable, and kept whole here because kann sends it to the end."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "ausrichten is what the person answering says and hinterlassen is what the caller says. Swapping them is understood and marks you at once as someone who learned the words but not the seats.",
+      "sound": "kan ikh ET-vas OWS-rikh-ten. aus rhymes with English \"house\".",
+      "variations": [
+        {
+          "display": "Kann ich Frau Weber etwas ausrichten?",
+          "cue": "Can I pass anything on to Ms Weber?",
+          "changed": "naming the person the message is for"
+        },
+        {
+          "display": "Ich kann etwas ausrichten",
+          "cue": "I can pass a message on",
+          "changed": "an offer rather than a question"
+        },
+        {
+          "display": "Möchten Sie etwas ausrichten?",
+          "cue": "Would you like to leave word?",
+          "changed": "asked of the caller"
+        }
+      ],
+      "mistake": {
+        "display": "Kann ich etwas hinterlassen?",
+        "why": "The one taking the message says ausrichten: Kann ich etwas ausrichten?"
+      },
+      "usage": "Offered by whoever picked up, before the caller has to ask.",
+      "register": "formal",
+      "mnemonic": "You leave it. They pass it on."
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "Er telefoniert gerade",
+      "cue": "He's on the phone right now",
+      "literal": "He telephones just-now",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "telefonieren",
+            "cue": "to be on the phone",
+            "tag": "free",
+            "forms": [
+              "telefoniert"
+            ],
+            "note": "Not \"to telephone somebody\" — that is anrufen. telefonieren is the state of being on a call, which is why it needs no object at all."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Er telefoniert has no object and cannot take one. To say you rang a person the verb is anrufen: Ich rufe ihn an, or unsplit behind a modal as M4 has it.",
+      "sound": "air tay-lay-fo-NEERT guh-RAH-duh. Verbs in -ieren always stress the ee.",
+      "variations": [
+        {
+          "display": "Sie telefoniert gerade",
+          "cue": "She's on the phone right now",
+          "changed": "the other reading of sie, decided by the verb"
+        },
+        {
+          "display": "Er telefoniert",
+          "cue": "He's on the phone",
+          "changed": "without gerade, where the moment is obvious"
+        },
+        {
+          "display": "Er telefoniert gerade mit Frau Weber",
+          "cue": "He's on the phone with Ms Weber right now",
+          "changed": "naming who, with M4's mit"
+        }
+      ],
+      "mistake": {
+        "display": "Er ist telefonieren",
+        "why": "There is no continuous tense: Er telefoniert gerade."
+      },
+      "usage": "The commonest reason somebody cannot come to the phone.",
+      "register": "formal",
+      "mnemonic": "anrufen takes a person. telefonieren takes nobody."
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "Ich möchte Sie morgen zurückrufen",
+      "cue": "I'd like to call you back tomorrow",
+      "literal": "I would-like you tomorrow back-call",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zurückrufen",
+            "cue": "to call back",
+            "tag": "free",
+            "forms": [],
+            "note": "zurück plus rufen, and zurück carries the stress, so it separates: Ich rufe Sie zurück. Behind möchte it stays whole and goes to the end, which is the level's rule."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The split form Ich rufe Sie zurück is the ordinary way to say this and it is deliberately not shown yet. Recognise it; the level keeps separable verbs behind a modal until M10 gives the participle.",
+      "sound": "ikh MUEKH-tuh zee MOR-gen tsoo-RUEK-roo-fen. zurück has its stress on the RUEK.",
+      "variations": [
+        {
+          "display": "Ich möchte Sie später zurückrufen",
+          "cue": "I'd like to call you back later",
+          "changed": "later today instead"
+        },
+        {
+          "display": "Können Sie mich morgen zurückrufen?",
+          "cue": "Could you call me back tomorrow?",
+          "changed": "asking rather than offering"
+        },
+        {
+          "display": "Ich möchte Sie morgen anrufen",
+          "cue": "I'd like to call you tomorrow",
+          "changed": "a first call rather than a return one"
+        }
+      ],
+      "mistake": {
+        "display": "Ich möchte Sie morgen zurück rufen",
+        "why": "It is one word behind a modal: Ich möchte Sie morgen zurückrufen."
+      },
+      "usage": "Closing a call you will have to finish another time.",
+      "register": "formal",
+      "mnemonic": "Whole behind a modal. Split when it stands alone."
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "Wie ist Ihre Nummer?",
+      "cue": "What's your number?",
+      "literal": "How is your number?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Nummer",
+            "cue": "number",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, and a phone number is read out digit by digit or in pairs, never as one long figure the way English sometimes does."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "German asks WIE ist Ihre Nummer, not was. The same wie asks a name — Wie heißen Sie? — and using was there is the mistake L1-M1 already warned about.",
+      "sound": "vee ist EE-ruh NOOM-mer. The double m is held.",
+      "variations": [
+        {
+          "display": "Wie ist Ihre Nummer, bitte?",
+          "cue": "What's your number, please?",
+          "changed": "with bitte on the end"
+        },
+        {
+          "display": "Wie ist deine Nummer?",
+          "cue": "What's your number?",
+          "changed": "M1's du cell, to a friend"
+        },
+        {
+          "display": "Haben Sie meine Nummer?",
+          "cue": "Do you have my number?",
+          "changed": "asking rather than giving"
+        }
+      ],
+      "mistake": {
+        "display": "Was ist Ihre Nummer?",
+        "why": "German asks with wie: Wie ist Ihre Nummer?"
+      },
+      "usage": "Taking down a callback number.",
+      "register": "formal",
+      "mnemonic": "wie asks a name and a number alike."
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "Entschuldigung, ich bin falsch verbunden",
+      "cue": "Sorry, I've got the wrong number",
+      "literal": "Excuse-me, I am wrongly connected",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "falsch",
+            "cue": "wrong",
+            "tag": "free",
+            "forms": [],
+            "note": "The opposite of richtig, and it never softens: das ist falsch is a flat statement of fact, not an accusation."
+          },
+          {
+            "display": "verbunden",
+            "cue": "connected",
+            "tag": "free",
+            "forms": [],
+            "note": "The past participle of verbinden, used here as a plain adjective. falsch verbunden is fixed and is what both ends say when a call goes astray."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "German blames the CONNECTION and not the caller: literally \"I am wrongly connected\". There is no equivalent of \"I've got the wrong number\", and a learner who builds one will be understood and will sound translated.",
+      "sound": "ent-SHOOL-di-goong, ikh bin falsh fer-BOON-den. falsch ends in a sh.",
+      "variations": [
+        {
+          "display": "Sie sind falsch verbunden",
+          "cue": "You've got the wrong number",
+          "changed": "said to the caller instead"
+        },
+        {
+          "display": "Entschuldigung, falsch verbunden",
+          "cue": "Sorry — wrong number",
+          "changed": "the short form, which is what people actually say"
+        },
+        {
+          "display": "Ich glaube, ich bin falsch verbunden",
+          "cue": "I think I've got the wrong number",
+          "changed": "hedged, before hanging up"
+        }
+      ],
+      "mistake": {
+        "display": "Entschuldigung, ich habe die falsche Nummer",
+        "why": "The connection is what is wrong: Entschuldigung, ich bin falsch verbunden."
+      },
+      "usage": "Said the moment you realise, and it ends the call politely.",
+      "register": "formal",
+      "mnemonic": "The line is wrong, not you."
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "Vielen Dank, auf Wiederhören",
+      "cue": "Thank you very much, goodbye",
+      "literal": "Many thanks, on again-hearing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "auf Wiederhören",
+            "cue": "goodbye (on the phone)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's Auf Wiedersehen with the seeing swapped for hearing, because you never saw them. It is the telephone's own goodbye and is used nowhere else."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Auf Wiedersehen on the phone passes without comment. Auf Wiederhören said face to face is a joke, and everyone will hear it as one.",
+      "sound": "FEE-len dank, owf VEE-der-hue-ren. The ö of hören is said with rounded lips and a long ay behind them.",
+      "variations": [
+        {
+          "display": "Danke, auf Wiederhören",
+          "cue": "Thanks, goodbye",
+          "changed": "the shorter thanks"
+        },
+        {
+          "display": "Auf Wiederhören",
+          "cue": "Goodbye",
+          "changed": "on its own, which is enough"
+        },
+        {
+          "display": "Vielen Dank, auf Wiedersehen",
+          "cue": "Thank you very much, goodbye",
+          "changed": "the everyday goodbye, which nobody minds on a phone"
+        }
+      ],
+      "mistake": {
+        "display": "Vielen Dank, tschüss",
+        "why": "A formal call closes with auf Wiederhören: Vielen Dank, auf Wiederhören."
+      },
+      "usage": "Closing a call to somebody you address as Sie.",
+      "register": "formal",
+      "mnemonic": "You never saw them. So you hear them again, not see them."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M7-C01",
+      "display": "Guten Tag, hier ist Frau Weber",
+      "cue": "Hello, this is Ms Weber"
+    },
+    {
+      "id": "L2-M7-C02",
+      "display": "Kann ich bitte Frau Weber sprechen?",
+      "cue": "Could I speak to Ms Weber, please?"
+    },
+    {
+      "id": "L2-M7-C03",
+      "display": "Sie ist gerade nicht da",
+      "cue": "She isn't here right now"
+    },
+    {
+      "id": "L2-M7-C04",
+      "display": "Er telefoniert gerade",
+      "cue": "He's on the phone right now"
+    },
+    {
+      "id": "L2-M7-C05",
+      "display": "Kann ich eine Nachricht hinterlassen?",
+      "cue": "Can I leave a message?"
+    },
+    {
+      "id": "L2-M7-C06",
+      "display": "Kann ich etwas ausrichten?",
+      "cue": "Can I pass on a message?"
+    },
+    {
+      "id": "L2-M7-C07",
+      "display": "Ich möchte Sie morgen zurückrufen",
+      "cue": "I'd like to call you back tomorrow"
+    },
+    {
+      "id": "L2-M7-C08",
+      "display": "Wie ist Ihre Nummer?",
+      "cue": "What's your number?"
+    },
+    {
+      "id": "L2-M7-C09",
+      "display": "Entschuldigung, ich bin falsch verbunden",
+      "cue": "Sorry, I've got the wrong number"
+    },
+    {
+      "id": "L2-M7-C10",
+      "display": "Vielen Dank, auf Wiederhören",
+      "cue": "Thank you very much, goodbye"
+    },
+    {
+      "id": "L2-M7-C11",
+      "display": "Wer ist am Apparat?",
+      "cue": "Who's speaking?"
+    },
+    {
+      "id": "L2-M7-C12",
+      "display": "Sie ist heute nicht da",
+      "cue": "She isn't in today"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

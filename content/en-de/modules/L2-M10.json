@@ -1,0 +1,624 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M10",
+  "title": "Telling what happened",
+  "job": "A four-sentence account in the past",
+  "prerequisites": [
+    "L2-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present",
+      "past"
+    ],
+    "allowedPatterns": [
+      "Zuerst + habe ich + <N> + V-participle",
+      "Dann + bin ich + <place> + gegangen",
+      "Es war + Adj + , + also + <clause>",
+      "Schließlich + habe ich + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PERFEKT IS THE SPOKEN PAST for nearly every verb: haben or sein in position two, the participle at the very END, which is M1's bracket for the fourth time. AND sein, haben and the modals prefer the PRÄTERITUM: war, hatte, konnte, wollte. That split is exactly why L1-M5 shipped war, waren, hatte and hatten and no participle for either — a course teaching ich bin gewesen as the everyday past would be teaching a form Germans rarely say."
+    },
+    {
+      "tag": "delta",
+      "text": "THE AUXILIARY LAW: sein goes with MOVEMENT and CHANGE OF STATE — gegangen, gefahren, gekommen, geblieben, aufgestanden (L1-M4 shipped that last one) — and haben takes everything else. geblieben is the one worth naming, because staying is not movement and takes sein anyway; German counts it as a change of where you are."
+    },
+    {
+      "tag": "free",
+      "text": "AND THE RELIEF, because three courses in this repo say the opposite: THE GERMAN PARTICIPLE NEVER AGREES WITH ANYTHING. en-es, en-fr and en-it all make their participle agree in one auxiliary or the other; German simply does not. A learner arriving from any Romance language should be told so out loud, because they will otherwise spend weeks looking for a rule that is not there."
+    },
+    {
+      "tag": "free",
+      "text": "Participle formation is regular enough to state. WEAK: ge- plus the stem plus -t — gemacht, gearbeitet, gesagt. STRONG: ge- plus a often-changed stem plus -en — gegangen, gegessen, getrunken, gesehen. SEPARABLE: the ge- goes INSIDE — angerufen, eingestiegen, aufgestanden. That last shape is the one place a separable verb appears in this level without a modal in front of it, and it is still one clean token, so M4's ruling holds."
+    },
+    {
+      "tag": "free",
+      "text": "Each item here is an ACCOUNT of three or four short sentences, not one long one, and nearly every word in it has already been met. The honest new spend is the sequencers — zuerst, danach, schließlich, beside L1-M10's dann and also — and the participles an account needs. The Plusquamperfekt, Konjunktiv II beyond M1's frozen könnten, the passive and reported speech all stay OUT and belong to L3."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M10-S01",
+      "display": "Zuerst habe ich gearbeitet. Dann bin ich nach Hause gegangen",
+      "cue": "First I worked. Then I went home",
+      "literal": "First have I worked. Then am I to house gone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zuerst",
+            "cue": "first (of all)",
+            "tag": "free",
+            "forms": [],
+            "note": "The opener of an account, and fronting it pushes the subject behind the verb exactly as M6's day did. L1-M10's dann and this word are the two ends of a short story."
+          },
+          {
+            "display": "habe ich",
+            "cue": "have I (the Perfekt, fronted)",
+            "tag": "delta",
+            "forms": [
+              "bin ich",
+              "hat"
+            ],
+            "note": "The auxiliary holds second place and the participle waits at the end. Front anything at all and the subject moves behind it — and the auxiliary is whichever of haben and sein the verb takes."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Two auxiliaries in two sentences, and the verb decides which: arbeiten takes haben, gehen takes sein because it is movement. There is no choosing and no drift between them.",
+      "sound": "tsoo-AIRST HAH-buh ikh guh-AR-buy-tet. dan bin ikh nakh HOW-zuh guh-GANG-en.",
+      "variations": [
+        {
+          "display": "Zuerst habe ich gegessen. Dann bin ich gegangen",
+          "cue": "First I ate. Then I left",
+          "changed": "two of L1-M5's participles"
+        },
+        {
+          "display": "Ich habe zuerst gearbeitet",
+          "cue": "I worked first",
+          "changed": "no fronting, so the subject stays in front"
+        },
+        {
+          "display": "Zuerst bin ich nach Hause gegangen",
+          "cue": "First I went home",
+          "changed": "one step only, with sein"
+        }
+      ],
+      "mistake": {
+        "display": "Zuerst ich habe gearbeitet",
+        "why": "The auxiliary holds second place: Zuerst habe ich gearbeitet."
+      },
+      "usage": "Opening an account of a day, an evening, a journey.",
+      "register": "neutral",
+      "mnemonic": "Auxiliary second. Participle last. Always."
+    },
+    {
+      "id": "L2-M10-S02",
+      "display": "Es war spät. Also bin ich nach Hause gefahren",
+      "cue": "It was late. So I drove home",
+      "literal": "It was late. So am I to house driven",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gefahren",
+            "cue": "driven · travelled",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's fahren as a strong participle — ge- plus the stem plus -en, and the vowel does not change here. Movement, so it takes sein."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "war and not ist gewesen. sein prefers the Präteritum in speech, which is why L1-M5 taught war and no participle for it at all — the everyday German past of \"to be\" is one word.",
+      "sound": "es var shpayt. AL-zo bin ikh nakh HOW-zuh guh-FAH-ren. spät has a long ay.",
+      "variations": [
+        {
+          "display": "Es war spät. Also bin ich gegangen",
+          "cue": "It was late. So I left",
+          "changed": "on foot instead"
+        },
+        {
+          "display": "Es war kalt. Also bin ich nach Hause gefahren",
+          "cue": "It was cold. So I drove home",
+          "changed": "a different reason"
+        },
+        {
+          "display": "Ich bin nach Hause gefahren",
+          "cue": "I drove home",
+          "changed": "the step on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Es ist spät gewesen. Also bin ich nach Hause gefahren",
+        "why": "sein prefers the Präteritum: Es war spät."
+      },
+      "usage": "The middle of an account, where a state explains a move.",
+      "register": "neutral",
+      "mnemonic": "sein and haben stay in the Präteritum. Everything else goes Perfekt."
+    },
+    {
+      "id": "L2-M10-S03",
+      "display": "Danach habe ich Frau Weber angerufen",
+      "cue": "After that I called Ms Weber",
+      "literal": "After-that have I Mrs Weber up-called",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "danach",
+            "cue": "after that",
+            "tag": "free",
+            "forms": [],
+            "note": "A step later in the same account, and it is heavier than dann — danach marks a real gap where dann is only the next thing."
+          },
+          {
+            "display": "angerufen",
+            "cue": "called (on the phone)",
+            "tag": "delta",
+            "forms": [],
+            "note": "M4's anrufen with the ge- INSIDE it: an + ge + rufen. Every separable verb builds its participle this way, and the result is still one token."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The ge- goes in the MIDDLE of a separable verb and nowhere else. geanrufen is the form an English speaker builds by rule, and it does not exist.",
+      "sound": "dah-NAKH HAH-buh ikh frow VAY-ber AN-guh-roo-fen. The stress of angerufen is on the AN.",
+      "variations": [
+        {
+          "display": "Danach habe ich sie angerufen",
+          "cue": "After that I called her",
+          "changed": "a pronoun instead of a name"
+        },
+        {
+          "display": "Dann habe ich Frau Weber angerufen",
+          "cue": "Then I called Ms Weber",
+          "changed": "dann, which is lighter"
+        },
+        {
+          "display": "Danach bin ich eingestiegen",
+          "cue": "After that I got on",
+          "changed": "another separable verb, and this one takes sein"
+        }
+      ],
+      "mistake": {
+        "display": "Danach habe ich Frau Weber geanrufen",
+        "why": "The ge- goes inside: Danach habe ich Frau Weber angerufen."
+      },
+      "usage": "Moving an account along one step.",
+      "register": "neutral",
+      "mnemonic": "an-ge-rufen. The ge- climbs inside."
+    },
+    {
+      "id": "L2-M10-S04",
+      "display": "Ich bin zu Hause geblieben. Es war sehr kalt",
+      "cue": "I stayed at home. It was very cold",
+      "literal": "I am at house stayed. It was very cold",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geblieben",
+            "cue": "stayed",
+            "tag": "interference",
+            "forms": [
+              "bleiben"
+            ],
+            "note": "Staying is not movement and it takes sein anyway. German counts it as a change of WHERE YOU ARE, which is the honest way to remember the whole sein list."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "bleiben takes sein even though nothing moved. Learn the auxiliary with the verb rather than from the meaning — the meaning gets this one wrong.",
+      "sound": "ikh bin tsoo HOW-zuh guh-BLEE-ben. es var zair kalt.",
+      "variations": [
+        {
+          "display": "Ich bin zu Hause geblieben",
+          "cue": "I stayed at home",
+          "changed": "the step on its own"
+        },
+        {
+          "display": "Wir sind zu Hause geblieben",
+          "cue": "We stayed at home",
+          "changed": "M6's wir, with the plural auxiliary"
+        },
+        {
+          "display": "Es war kalt. Also bin ich zu Hause geblieben",
+          "cue": "It was cold. So I stayed at home",
+          "changed": "the reason in front"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe zu Hause geblieben",
+        "why": "bleiben takes sein: Ich bin zu Hause geblieben."
+      },
+      "usage": "Explaining why an evening did not happen.",
+      "register": "neutral",
+      "mnemonic": "Staying counts as movement. Learn it with the verb."
+    },
+    {
+      "id": "L2-M10-S05",
+      "display": "Schließlich habe ich das Buch gelesen",
+      "cue": "Finally I read the book",
+      "literal": "Finally have I the book read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "schließlich",
+            "cue": "finally · in the end",
+            "tag": "free",
+            "forms": [],
+            "note": "The closer of an account. It carries a small sense of at last, which is why it is not simply the fourth dann."
+          },
+          {
+            "display": "gelesen",
+            "cue": "read (past)",
+            "tag": "free",
+            "forms": [
+              "lesen"
+            ],
+            "note": "A strong participle whose stem does not change: ge- plus les plus -en. Reading is not movement, so it takes haben."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "schließlich has TWO l's and an ß, and it is the longest word in the level. Writing schliesslich gives the index a key no row owns, exactly as M3 warned about Strasse.",
+      "sound": "SHLEES-likh HAH-buh ikh das BOOKH guh-LAY-zen. The ß is a sharp s.",
+      "variations": [
+        {
+          "display": "Schließlich bin ich nach Hause gegangen",
+          "cue": "Finally I went home",
+          "changed": "movement, so sein"
+        },
+        {
+          "display": "Schließlich habe ich gegessen",
+          "cue": "Finally I ate",
+          "changed": "one of L1-M5's participles"
+        },
+        {
+          "display": "Ich habe schließlich das Buch gelesen",
+          "cue": "I read the book in the end",
+          "changed": "no fronting"
+        }
+      ],
+      "mistake": {
+        "display": "Schliesslich habe ich das Buch gelesen",
+        "why": "The ß is never respelled: Schließlich habe ich das Buch gelesen."
+      },
+      "usage": "Closing an account — the last thing that happened.",
+      "register": "neutral",
+      "mnemonic": "schließlich ends it. And it keeps its ß."
+    },
+    {
+      "id": "L2-M10-S06",
+      "display": "Ich habe den Zug gesehen. Dann bin ich eingestiegen",
+      "cue": "I saw the train. Then I got on",
+      "literal": "I have the train seen. Then am I in-climbed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gesehen",
+            "cue": "seen",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's sehen as a strong participle, and the stem does not change. Seeing is not movement, so it takes haben."
+          },
+          {
+            "display": "eingestiegen",
+            "cue": "got on · boarded",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's einsteigen with the ge- inside and the stem vowel changed: ein + ge + stiegen. Boarding is movement, so it takes sein."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "Two participles, two auxiliaries, one sentence apart. sehen takes haben and einsteigen takes sein, and nothing about their shapes says so — only what they mean.",
+      "sound": "ikh HAH-buh dayn tsook guh-ZAY-en. dan bin ikh INE-guh-shtee-gen.",
+      "variations": [
+        {
+          "display": "Ich habe den Bus gesehen",
+          "cue": "I saw the bus",
+          "changed": "M4's bus instead"
+        },
+        {
+          "display": "Dann bin ich in den Zug eingestiegen",
+          "cue": "Then I got on the train",
+          "changed": "naming the train, with M4's accusative of motion"
+        },
+        {
+          "display": "Ich habe Frau Weber gesehen",
+          "cue": "I saw Ms Weber",
+          "changed": "a person instead of a thing"
+        }
+      ],
+      "mistake": {
+        "display": "Dann habe ich eingestiegen",
+        "why": "Boarding is movement: Dann bin ich eingestiegen."
+      },
+      "usage": "The middle of a journey told afterwards.",
+      "register": "neutral",
+      "mnemonic": "Meaning picks the auxiliary. Shape tells you nothing."
+    },
+    {
+      "id": "L2-M10-S07",
+      "display": "Sie ist gekommen. Wir haben zusammen gegessen",
+      "cue": "She came. We ate together",
+      "literal": "She is come. We have together eaten",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gekommen",
+            "cue": "came",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's kommen as a strong participle, with the vowel back to o. Coming is movement, so it takes sein — and the participle does not change for sie."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "THE PARTICIPLE DOES NOT AGREE. Spanish, French and Italian would all change something here for a feminine subject; German changes nothing at all, ever, in either auxiliary. M5's zusammen is doing its plain adverb job beside it.",
+      "sound": "zee ist guh-KOM-men. veer HAH-ben tsoo-ZAM-men guh-GESS-en.",
+      "variations": [
+        {
+          "display": "Er ist gekommen",
+          "cue": "He came",
+          "changed": "a masculine subject, and the participle is identical"
+        },
+        {
+          "display": "Sie sind gekommen",
+          "cue": "They came",
+          "changed": "the plural reading of sie, decided by the verb"
+        },
+        {
+          "display": "Wir haben zusammen gearbeitet",
+          "cue": "We worked together",
+          "changed": "a weak participle, and haben"
+        }
+      ],
+      "mistake": {
+        "display": "Sie ist gekommene",
+        "why": "The German participle never agrees: Sie ist gekommen."
+      },
+      "usage": "Telling somebody how an evening went.",
+      "register": "neutral",
+      "mnemonic": "Nothing agrees. Nothing ever agrees."
+    },
+    {
+      "id": "L2-M10-S08",
+      "display": "Ich konnte nicht kommen. Ich hatte keine Zeit",
+      "cue": "I couldn't come. I had no time",
+      "literal": "I could not come. I had no time",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "konnte",
+            "cue": "could · was able to",
+            "tag": "delta",
+            "forms": [
+              "wollte"
+            ],
+            "note": "M1's können in the Präteritum, because the modals stay there in speech just as sein and haben do. Ich habe nicht kommen können exists and is rare."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The modals do NOT go into the Perfekt in ordinary speech. konnte, wollte, musste are what people say, and a learner building ich habe gekonnt is technically producing German that nobody uses.",
+      "sound": "ikh KON-tuh nikht KOM-men. ikh HAT-tuh KY-nuh tsite.",
+      "variations": [
+        {
+          "display": "Ich wollte kommen",
+          "cue": "I wanted to come",
+          "changed": "wollen in the same tense"
+        },
+        {
+          "display": "Ich konnte nicht kommen",
+          "cue": "I couldn't come",
+          "changed": "the excuse on its own"
+        },
+        {
+          "display": "Ich hatte keine Zeit",
+          "cue": "I had no time",
+          "changed": "the reason on its own, with M8's kein"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe nicht kommen gekonnt",
+        "why": "A modal stays in the Präteritum: Ich konnte nicht kommen."
+      },
+      "usage": "Apologising afterwards for not turning up.",
+      "register": "neutral",
+      "mnemonic": "Modals stay behind. konnte, wollte, musste."
+    },
+    {
+      "id": "L2-M10-S09",
+      "display": "Er hat gesagt, dass er kommt",
+      "cue": "He said he's coming",
+      "literal": "He has said, that he comes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gesagt",
+            "cue": "said",
+            "tag": "free",
+            "forms": [
+              "sagen"
+            ],
+            "note": "A weak participle — ge- plus sag plus -t. What he actually said is passed on with the words themselves; changing them is L3's business."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "L1-M9's dass sends its verb to the END of its own clause, exactly as weil does, and the comma in front of it is not optional. German commas are grammar rather than breathing, which is the opposite of the English habit.",
+      "sound": "air hat guh-ZAHKT, das air komt. dass has a short a and a sharp s.",
+      "variations": [
+        {
+          "display": "Sie hat gesagt, dass sie kommt",
+          "cue": "She said she's coming",
+          "changed": "a feminine subject, participle unchanged"
+        },
+        {
+          "display": "Er hat gesagt, dass er keine Zeit hat",
+          "cue": "He said he has no time",
+          "changed": "a longer clause, verb still at the end"
+        },
+        {
+          "display": "Er hat das gesagt",
+          "cue": "He said that",
+          "changed": "no clause at all"
+        }
+      ],
+      "mistake": {
+        "display": "Er hat gesagt dass er kommt",
+        "why": "dass takes a comma in front: Er hat gesagt, dass er kommt."
+      },
+      "usage": "Passing a message on — M7's call, told afterwards.",
+      "register": "neutral",
+      "mnemonic": "dass sends the verb away. And it brings a comma."
+    },
+    {
+      "id": "L2-M10-S10",
+      "display": "Zuerst war es kalt. Dann habe ich Tee getrunken. Schließlich war mir wärmer",
+      "cue": "First it was cold. Then I drank tea. In the end I was warmer",
+      "literal": "First was it cold. Then have I tea drunk. Finally was to-me warmer",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wärmer",
+            "cue": "warmer",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's warm with M9's umlaut comparative, inside M8's subjectless family: Mir war wärmer, with war second and no subject anywhere."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Three sentences, three fronted words, and the verb second in every one of them. That is the whole architecture of a German account, and it is visible here in one line.",
+      "sound": "tsoo-AIRST var es kalt. dan HAH-buh ikh tay guh-TROONK-en. SHLEES-likh var meer VAIR-mer.",
+      "variations": [
+        {
+          "display": "Zuerst war es kalt. Dann habe ich Tee getrunken",
+          "cue": "First it was cold. Then I drank tea",
+          "changed": "two steps instead of three"
+        },
+        {
+          "display": "Schließlich war mir wärmer",
+          "cue": "In the end I was warmer",
+          "changed": "the close on its own, still with no subject"
+        },
+        {
+          "display": "Zuerst war es kalt. Schließlich war mir wärmer",
+          "cue": "First it was cold. In the end I was warmer",
+          "changed": "the two states, with the step between them left out"
+        }
+      ],
+      "mistake": {
+        "display": "Schließlich ich war wärmer",
+        "why": "The verb holds second place: Schließlich war mir wärmer."
+      },
+      "usage": "A whole small story, told the way German tells one.",
+      "register": "neutral",
+      "mnemonic": "Front what you like. The verb still comes second."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M10-C01",
+      "display": "Zuerst habe ich gearbeitet",
+      "cue": "First I worked"
+    },
+    {
+      "id": "L2-M10-C02",
+      "display": "Dann bin ich nach Hause gegangen",
+      "cue": "Then I went home"
+    },
+    {
+      "id": "L2-M10-C03",
+      "display": "Es war spät. Also bin ich nach Hause gefahren",
+      "cue": "It was late. So I drove home"
+    },
+    {
+      "id": "L2-M10-C04",
+      "display": "Danach habe ich Frau Weber angerufen",
+      "cue": "After that I called Ms Weber"
+    },
+    {
+      "id": "L2-M10-C05",
+      "display": "Ich bin zu Hause geblieben",
+      "cue": "I stayed at home"
+    },
+    {
+      "id": "L2-M10-C06",
+      "display": "Schließlich habe ich das Buch gelesen",
+      "cue": "Finally I read the book"
+    },
+    {
+      "id": "L2-M10-C07",
+      "display": "Dann bin ich eingestiegen",
+      "cue": "Then I got on"
+    },
+    {
+      "id": "L2-M10-C08",
+      "display": "Sie ist gekommen. Wir haben zusammen gegessen",
+      "cue": "She came. We ate together"
+    },
+    {
+      "id": "L2-M10-C09",
+      "display": "Ich konnte nicht kommen. Ich hatte keine Zeit",
+      "cue": "I couldn't come. I had no time"
+    },
+    {
+      "id": "L2-M10-C10",
+      "display": "Er hat gesagt, dass er kommt",
+      "cue": "He said he's coming"
+    },
+    {
+      "id": "L2-M10-C11",
+      "display": "Ich habe den Zug gesehen",
+      "cue": "I saw the train"
+    },
+    {
+      "id": "L2-M10-C12",
+      "display": "Schließlich war mir wärmer",
+      "cue": "In the end I was warmer"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

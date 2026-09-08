@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M3",
+  "title": "Describing things",
+  "job": "Size, colour, quality — agreement at length",
+  "prerequisites": [
+    "L2-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Der/Die/Das + N + ist + Adj",
+      "Ich sehe + den/die/das + N",
+      "Ich gebe + dem/der/dem + N + <thing>",
+      "Ein/Eine/Ein + N + ist + Adj",
+      "Das ist kein/keine/kein + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "GERMAN'S AGREEMENT LIVES IN THE ARTICLE, not on the adjective. The grid is der / die / das in the nominative, den / die / das in the accusative, and dem / der / dem in the dative, with ein, eine, einen, einem, einer and the kein series beside them. L1 shipped every one of those words across five modules without ever laying them out; this is where they become a table."
+    },
+    {
+      "tag": "delta",
+      "text": "AND HERE IS WHAT THE GRID BUYS: because the case is marked on the article, German word order is FREE in a way English's is not. Den Apfel esse ich is an ordinary sentence meaning \"I'm eating the apple\", with the object first — den says it is the object, so the position no longer has to. English marks its object by position alone, and this is the deepest structural delta in the course."
+    },
+    {
+      "tag": "free",
+      "text": "Adjectives stay PREDICATIVE throughout this level — Das Auto ist rot — where they take no ending at all. The attributive declension (ein guter Mann, der gute Mann, guter Wein: three declensions chosen by what stands in front) is too large to sit beside a module teaching colours, and it belongs to L3."
+    },
+    {
+      "tag": "interference",
+      "text": "GENDER IS A PROPERTY OF THE WORD and is not predictable from meaning. das Mädchen is neuter; der Löffel and die Gabel sit at the same table with different genders. Learn every noun with its article, and refuse the shortcuts — a rule that fails on the first table setting is worse than no rule."
+    },
+    {
+      "tag": "free",
+      "text": "weiß carries an ß and the index KEEPS it, so Maße and Masse are two different keys. Never respell it ss, and never write a display in capitals: a shouted STRASSE folds to a key no row owns."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M3-S01",
+      "display": "Das Auto ist rot",
+      "cue": "The car is red",
+      "literal": "The car is red",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rot",
+            "cue": "red",
+            "tag": "free",
+            "forms": [],
+            "note": "After ist it takes no ending, and it never will at this level. In front of a noun it would decline, and that is L3's."
+          },
+          {
+            "display": "Auto",
+            "cue": "car",
+            "tag": "free",
+            "forms": [
+              "Autos"
+            ],
+            "note": "Neuter — das Auto — and its plural simply adds -s, which is unusual in German and comes from the word being borrowed."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The gender is in das and nowhere else. rot tells you nothing about the car, which is exactly why the article has to be learnt with the noun.",
+      "sound": "das OW-toh ist ROHT. The final t of rot is fully sounded.",
+      "variations": [
+        {
+          "display": "Der Tisch ist rot",
+          "cue": "The table is red",
+          "changed": "a masculine noun, so a different article"
+        },
+        {
+          "display": "Die Tür ist blau",
+          "cue": "The door is blue",
+          "changed": "a feminine noun and a different colour"
+        },
+        {
+          "display": "Das Auto ist blau",
+          "cue": "The car is blue",
+          "changed": "a different colour"
+        }
+      ],
+      "mistake": {
+        "display": "Das Auto ist rote",
+        "why": "After ist the adjective takes no ending: Das Auto ist rot."
+      },
+      "usage": "Naming which one you mean, in a car park or a shop.",
+      "register": "neutral",
+      "mnemonic": "The article carries the gender. The adjective carries nothing."
+    },
+    {
+      "id": "L2-M3-S02",
+      "display": "Die Tür ist grün",
+      "cue": "The door is green",
+      "literal": "The door is green",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "schwarz",
+            "cue": "black",
+            "tag": "free",
+            "forms": [],
+            "note": "The sch is one sound, a sh, and the final z is a ts. Four letters at the front and one sound out of them."
+          },
+          {
+            "display": "weiß",
+            "cue": "white",
+            "tag": "interference",
+            "forms": [],
+            "note": "The ß is a long s and the index keeps it — weiss would be a different key entirely. It is also spelled weiss in Switzerland, which this course does not write."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "Tür is feminine and Auto is neuter, and there is nothing about a door or a car that says so. The article is a fact about the word.",
+      "sound": "dee TUER ist GRUEN. Both words carry the ü, and it is the same sound in each.",
+      "variations": [
+        {
+          "display": "Die Tür ist schwarz",
+          "cue": "The door is black",
+          "changed": "a different colour"
+        },
+        {
+          "display": "Das Auto ist weiß",
+          "cue": "The car is white",
+          "changed": "a neuter noun and the ß colour"
+        },
+        {
+          "display": "Der Stuhl ist grün",
+          "cue": "The chair is green",
+          "changed": "a masculine noun"
+        }
+      ],
+      "mistake": {
+        "display": "Das Auto ist weiss",
+        "why": "The ß is never respelled: Das Auto ist weiß."
+      },
+      "usage": "Describing anything by its colour.",
+      "register": "neutral",
+      "mnemonic": "ß is a letter and the index knows it."
+    },
+    {
+      "id": "L2-M3-S03",
+      "display": "Ich sehe den Apfel",
+      "cue": "I see the apple",
+      "literal": "I see the apple",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sehe",
+            "cue": "I see",
+            "tag": "free",
+            "forms": [
+              "sehen",
+              "sieht"
+            ],
+            "note": "sehen changes its vowel for du and for the third person — du siehst, er sieht — as sprechen and geben do."
+          },
+          {
+            "display": "gelb",
+            "cue": "yellow",
+            "tag": "free",
+            "forms": [],
+            "note": "The g is hard and the b at the end goes to a p sound. German devoices every final b, d and g."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "der becomes den when the noun is the object, and ONLY in the masculine. die, das and the plural die look identical in both cases, which is why the masculine is where the accusative is visible at all.",
+      "sound": "ikh ZAY-uh dayn AP-fel. The ch of ich is the front sound, made near the palate.",
+      "variations": [
+        {
+          "display": "Ich sehe die Tür",
+          "cue": "I see the door",
+          "changed": "feminine — where nothing visibly changes"
+        },
+        {
+          "display": "Ich sehe das Auto",
+          "cue": "I see the car",
+          "changed": "neuter — where nothing changes either"
+        },
+        {
+          "display": "Der Apfel ist gelb",
+          "cue": "The apple is yellow",
+          "changed": "the same noun as a subject, so der comes back"
+        }
+      ],
+      "mistake": {
+        "display": "Ich sehe der Apfel",
+        "why": "The object takes den: Ich sehe den Apfel."
+      },
+      "usage": "Saying what you can see, which is where the accusative first shows.",
+      "register": "neutral",
+      "mnemonic": "Only the masculine shows its accusative."
+    },
+    {
+      "id": "L2-M3-S04",
+      "display": "Den Apfel esse ich",
+      "cue": "I'm eating the apple",
+      "literal": "The apple eat I",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "braun",
+            "cue": "brown",
+            "tag": "free",
+            "forms": [],
+            "note": "The au is the same sound as in Auto and blau. Of hair and eyes German says braun where English also says brown."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The object is first and the subject is third, and the sentence still means what S03 meant. den is what makes that possible — English would have to say \"the apple eats me\" and mean it.",
+      "sound": "dayn AP-fel ES-suh ikh. The stress lands on Apfel, which is what puts it first.",
+      "variations": [
+        {
+          "display": "Ich esse den Apfel",
+          "cue": "I'm eating the apple",
+          "changed": "the ordinary order — same meaning"
+        },
+        {
+          "display": "Den Kaffee trinke ich",
+          "cue": "I'm drinking the coffee",
+          "changed": "a different object first"
+        },
+        {
+          "display": "Das Auto sehe ich",
+          "cue": "I can see the car",
+          "changed": "a neuter object, where the article does not change"
+        }
+      ],
+      "mistake": {
+        "display": "Der Apfel esse ich",
+        "why": "The object takes den wherever it stands: Den Apfel esse ich."
+      },
+      "usage": "Putting the important thing first, which German does far more freely than English.",
+      "register": "neutral",
+      "mnemonic": "The article says who does what. Position is free."
+    },
+    {
+      "id": "L2-M3-S05",
+      "display": "Ich gebe dem Mann das Buch",
+      "cue": "I'm giving the man the book",
+      "literal": "I give to-the man the book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gebe",
+            "cue": "I give",
+            "tag": "free",
+            "forms": [
+              "gibt"
+            ],
+            "note": "M1 opened the infinitive geben and the imperative gib. This is the ich cell, and the third person gibt changes its vowel as they do."
+          },
+          {
+            "display": "einem",
+            "cue": "a (masculine/neuter dative)",
+            "tag": "free",
+            "forms": [],
+            "note": "The indefinite dative, matching dem. einem Mann, einem Kind — the ending mirrors the definite article throughout."
+          },
+          {
+            "display": "einer",
+            "cue": "a (feminine dative)",
+            "tag": "free",
+            "forms": [],
+            "note": "The feminine dative, matching der. einer Frau — and that is the cell that makes der ambiguous on the page."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The recipient comes FIRST and the thing second: dem Mann das Buch. Two objects and no preposition between them, and the cases are the only thing keeping them apart.",
+      "sound": "ikh GAY-buh daym MAN das BOOKH. dem and den differ by one consonant and by a whole case.",
+      "variations": [
+        {
+          "display": "Ich gebe der Frau das Buch",
+          "cue": "I'm giving the woman the book",
+          "changed": "a feminine recipient — and der is now a dative"
+        },
+        {
+          "display": "Ich gebe einem Mann das Buch",
+          "cue": "I'm giving a man the book",
+          "changed": "the indefinite, which mirrors the definite exactly"
+        },
+        {
+          "display": "Ich gebe einer Frau das Buch",
+          "cue": "I'm giving a woman the book",
+          "changed": "the feminine indefinite dative"
+        }
+      ],
+      "mistake": {
+        "display": "Ich gebe den Mann das Buch",
+        "why": "The recipient takes the dative: Ich gebe dem Mann das Buch."
+      },
+      "usage": "Handing something over, and the shape every request in M1 was built on.",
+      "register": "neutral",
+      "mnemonic": "Recipient first, thing second, no preposition."
+    },
+    {
+      "id": "L2-M3-S06",
+      "display": "Der Kollegin gebe ich das Buch",
+      "cue": "I'm giving the book to the colleague",
+      "literal": "To-the colleague give I the book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Kollegin",
+            "cue": "colleague (a woman)",
+            "tag": "delta",
+            "forms": [
+              "Kollege"
+            ],
+            "note": "die Kollegin is feminine, so its dative article is der — the very three letters that make der Kollege a SUBJECT. The gender of the noun behind the article is what decides which cell you are in."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "der Kollegin is a DATIVE and der Kollege is a nominative. The same three letters, and the gender of the noun behind them is what decides — which is why a noun has to be learnt with its article.",
+      "sound": "dair kol-LAY-gin GAY-buh ikh das BOOKH. Kollegin takes its stress on the LAY.",
+      "variations": [
+        {
+          "display": "Ich gebe der Kollegin das Buch",
+          "cue": "I'm giving the book to the colleague",
+          "changed": "the ordinary order — same meaning"
+        },
+        {
+          "display": "Dem Mann gebe ich das Buch",
+          "cue": "I'm giving the man the book",
+          "changed": "a masculine recipient, where the dative is unmistakable"
+        },
+        {
+          "display": "Der Kollege gibt mir das Buch",
+          "cue": "The colleague is giving me the book",
+          "changed": "der as a subject — the same word, the other reading"
+        }
+      ],
+      "mistake": {
+        "display": "Die Kollegin gebe ich das Buch",
+        "why": "The recipient takes the dative: Der Kollegin gebe ich das Buch."
+      },
+      "usage": "Putting the recipient first, which German does when they are the point.",
+      "register": "neutral",
+      "mnemonic": "der on a man is a subject. der on a woman is a recipient."
+    },
+    {
+      "id": "L2-M3-S07",
+      "display": "Das ist kein Apfel",
+      "cue": "That's not an apple",
+      "literal": "That is no apple",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sauber",
+            "cue": "clean",
+            "tag": "free",
+            "forms": [],
+            "note": "After ist it takes no ending. The au is the same sound again, and the -er at the end is a light uh."
+          },
+          {
+            "display": "schmutzig",
+            "cue": "dirty",
+            "tag": "free",
+            "forms": [],
+            "note": "The -ig ending is said -ich, with the front ch sound, exactly as lustig and ruhig were in M2."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "German negates a noun with kein rather than with nicht. nicht negates a verb or an adjective; kein negates a thing, and it declines exactly like ein.",
+      "sound": "das ist kine AP-fel. kein rhymes with English \"mine\".",
+      "variations": [
+        {
+          "display": "Das ist keine Tür",
+          "cue": "That's not a door",
+          "changed": "feminine, so keine"
+        },
+        {
+          "display": "Das ist kein Auto",
+          "cue": "That's not a car",
+          "changed": "neuter, which looks like the masculine"
+        },
+        {
+          "display": "Der Tisch ist nicht sauber",
+          "cue": "The table isn't clean",
+          "changed": "an adjective, so nicht rather than kein"
+        }
+      ],
+      "mistake": {
+        "display": "Das ist nicht ein Apfel",
+        "why": "A noun is negated with kein: Das ist kein Apfel."
+      },
+      "usage": "Correcting someone about what a thing is.",
+      "register": "neutral",
+      "mnemonic": "kein negates a thing, nicht negates everything else."
+    },
+    {
+      "id": "L2-M3-S08",
+      "display": "Der Tisch ist nicht sauber",
+      "cue": "The table isn't clean",
+      "literal": "The table is not clean",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "schwer",
+            "cue": "heavy · difficult",
+            "tag": "interference",
+            "forms": [],
+            "note": "Two readings on one word: heavy of a box, difficult of a task. Only the sentence says which, and both are ordinary."
+          },
+          {
+            "display": "leicht",
+            "cue": "light · easy",
+            "tag": "free",
+            "forms": [],
+            "note": "schwer's opposite in both readings at once — light in weight and easy to do. The eicht is said like English \"ikes\" with a ch on the end."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "nicht goes AFTER the verb and before the adjective. It is not where English puts \"not\", and its position is one of the things German fixes rather than leaves free.",
+      "sound": "dair TISH ist nikht ZOW-ber. The ch of nicht is the front sound.",
+      "variations": [
+        {
+          "display": "Der Tisch ist schmutzig",
+          "cue": "The table is dirty",
+          "changed": "the positive, with the opposite word"
+        },
+        {
+          "display": "Das Buch ist nicht schwer",
+          "cue": "The book isn't heavy",
+          "changed": "a different quality"
+        },
+        {
+          "display": "Das Buch ist leicht",
+          "cue": "The book is light",
+          "changed": "the opposite, and it also means easy"
+        }
+      ],
+      "mistake": {
+        "display": "Der Tisch nicht ist sauber",
+        "why": "nicht follows the verb: Der Tisch ist nicht sauber."
+      },
+      "usage": "In a kitchen, a hotel room, or an argument about the washing-up.",
+      "register": "neutral",
+      "mnemonic": "kein for a thing, nicht after the verb."
+    },
+    {
+      "id": "L2-M3-S09",
+      "display": "Die Straße ist sehr breit",
+      "cue": "The street is very wide",
+      "literal": "The street is very wide",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "breit",
+            "cue": "wide",
+            "tag": "free",
+            "forms": [
+              "schmal"
+            ],
+            "note": "Width, where M2 opened length on Haare — breit and its opposite schmal. Both stay predicative here and take no ending after ist."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "Straße keeps its ß. Writing Strasse gives the index a key no row owns, and it is the single most common respelling an English keyboard produces.",
+      "sound": "dee SHTRAA-suh ist zair BRITE. The st at the start of a German word is sht, and ei is said eye.",
+      "variations": [
+        {
+          "display": "Die Straße ist schmal",
+          "cue": "The street is narrow",
+          "changed": "the opposite"
+        },
+        {
+          "display": "Das Buch ist sehr lang",
+          "cue": "The book is very long",
+          "changed": "M2's length word on a neuter noun"
+        },
+        {
+          "display": "Die Straße ist nicht breit",
+          "cue": "The street isn't wide",
+          "changed": "negated"
+        }
+      ],
+      "mistake": {
+        "display": "Die Strasse ist sehr breit",
+        "why": "The ß is never respelled: Die Straße ist sehr breit."
+      },
+      "usage": "Describing a place, or warning someone about a walk.",
+      "register": "neutral",
+      "mnemonic": "Strasse is a key with no row behind it."
+    },
+    {
+      "id": "L2-M3-S10",
+      "display": "Ein Buch ist nicht teuer",
+      "cue": "A book isn't expensive",
+      "literal": "A book is not expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Löffel",
+            "cue": "spoon",
+            "tag": "interference",
+            "forms": [],
+            "note": "Masculine — der Löffel — while die Gabel at the same table is feminine. Nothing about either object says so, which is the module's point."
+          },
+          {
+            "display": "Gabel",
+            "cue": "fork",
+            "tag": "free",
+            "forms": [
+              "Gabeln"
+            ],
+            "note": "Feminine, and its plural adds -n. Most German nouns ending in -el are masculine, which makes this one worth noticing."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "der Löffel and die Gabel sit next to each other on a table with different genders. A rule that predicted gender from meaning would have to explain that, and none does.",
+      "sound": "ine BOOKH ist nikht TOY-er. The eu of teuer is the oy of English \"boy\".",
+      "variations": [
+        {
+          "display": "Ein Buch ist billig",
+          "cue": "A book is cheap",
+          "changed": "the positive, with L1-M8's opposite"
+        },
+        {
+          "display": "Eine Gabel ist nicht teuer",
+          "cue": "A fork isn't expensive",
+          "changed": "a feminine noun, so eine"
+        },
+        {
+          "display": "Ein Löffel ist billig",
+          "cue": "A spoon is cheap",
+          "changed": "a masculine noun, which looks like the neuter"
+        }
+      ],
+      "mistake": {
+        "display": "Eine Löffel ist billig",
+        "why": "Löffel is masculine: Ein Löffel ist billig."
+      },
+      "usage": "Talking about prices in general rather than about one thing.",
+      "register": "neutral",
+      "mnemonic": "Two things on one table, two genders, no reason."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M3-C01",
+      "display": "Das Auto ist rot",
+      "cue": "The car is red"
+    },
+    {
+      "id": "L2-M3-C02",
+      "display": "Die Tür ist grün",
+      "cue": "The door is green"
+    },
+    {
+      "id": "L2-M3-C03",
+      "display": "Ich sehe den Apfel",
+      "cue": "I see the apple"
+    },
+    {
+      "id": "L2-M3-C04",
+      "display": "Den Apfel esse ich",
+      "cue": "I'm eating the apple"
+    },
+    {
+      "id": "L2-M3-C05",
+      "display": "Ich gebe dem Mann das Buch",
+      "cue": "I'm giving the man the book"
+    },
+    {
+      "id": "L2-M3-C06",
+      "display": "Der Frau gebe ich das Buch",
+      "cue": "I'm giving the woman the book"
+    },
+    {
+      "id": "L2-M3-C07",
+      "display": "Das ist kein Apfel",
+      "cue": "That's not an apple"
+    },
+    {
+      "id": "L2-M3-C08",
+      "display": "Der Tisch ist nicht sauber",
+      "cue": "The table isn't clean"
+    },
+    {
+      "id": "L2-M3-C09",
+      "display": "Die Straße ist sehr lang",
+      "cue": "The street is very long"
+    },
+    {
+      "id": "L2-M3-C10",
+      "display": "Ein Buch ist nicht teuer",
+      "cue": "A book isn't expensive"
+    },
+    {
+      "id": "L2-M3-C11",
+      "display": "Das Auto ist weiß",
+      "cue": "The car is white"
+    },
+    {
+      "id": "L2-M3-C12",
+      "display": "Ich gebe der Frau das Buch",
+      "cue": "I'm giving the woman the book"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

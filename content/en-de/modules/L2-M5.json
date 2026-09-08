@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": [
+    "L2-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Ich möchte + einen/eine/ein + N + , + bitte",
+      "Bringen Sie mir bitte + den/die/das + N",
+      "Möchten Sie noch + N + ?",
+      "Nein danke + , + ich bin satt",
+      "Die Rechnung + , + bitte"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "Ordering is L1's own vocabulary in a new seat: L1-M3's möchte, M3's accusative article, and M1's dative recipient — Bringen Sie mir bitte die Rechnung. Ich will exists and is blunter than English \"I want\" quite is, so möchte is what this course writes."
+    },
+    {
+      "tag": "interference",
+      "text": "A GERMAN REFUSAL IS TAKEN AT FACE VALUE, and this is the opposite of the Indian, Russian and Italian hosting the other courses in this collection describe. An offer is made once or twice; insisting past a Nein, danke is the impolite move rather than the hospitable one. So the refusal needs no elaborate softening — Nein danke, ich bin satt is complete and warm enough."
+    },
+    {
+      "tag": "delta",
+      "text": "Zusammen oder getrennt? is asked at every German table: together or separately. A learner who has never heard the question will not understand the answer they are expected to give, and there is no equivalent moment in a British or American restaurant."
+    },
+    {
+      "tag": "free",
+      "text": "das Essen lands on L1-M3's essen row and cannot do otherwise — the index folds case away, so the noun and the verb are one key. Its note is true of \"to eat\" and \"the meal\" alike, and this module writes no new row for it. Write the capital anyway: the index cannot see it, and the reader can."
+    },
+    {
+      "tag": "free",
+      "text": "noch is the offer word — Möchten Sie noch Kaffee? — and it is chosen deliberately so that mehr stays free for M9's comparative. That is the same protection en-es gives más by offering otro and en-fr gives plus by offering encore."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "Ich möchte einen Kaffee, bitte",
+      "cue": "I'd like a coffee, please",
+      "literal": "I would-like a coffee, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Speisekarte",
+            "cue": "menu",
+            "tag": "free",
+            "forms": [
+              "Speisekarten"
+            ],
+            "note": "Speise plus Karte — a food card. Feminine, because Karte is, and the last part always decides."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "einen is the masculine ACCUSATIVE, and it is the only cell of ein that is visibly different. Kaffee is masculine, so the order shows the case — a feminine or neuter thing would hide it.",
+      "sound": "ikh MUEKH-tuh IGH-nen KAF-fay. The ch of möchte is the front sound.",
+      "variations": [
+        {
+          "display": "Ich möchte eine Suppe, bitte",
+          "cue": "I'd like a soup, please",
+          "changed": "a feminine noun, where the accusative is invisible"
+        },
+        {
+          "display": "Ich möchte ein Glas Wasser, bitte",
+          "cue": "I'd like a glass of water, please",
+          "changed": "a neuter noun, and two nouns with no word between them"
+        },
+        {
+          "display": "Ich möchte die Speisekarte, bitte",
+          "cue": "I'd like the menu, please",
+          "changed": "the definite article"
+        }
+      ],
+      "mistake": {
+        "display": "Ich möchte ein Kaffee, bitte",
+        "why": "The object takes einen: Ich möchte einen Kaffee, bitte."
+      },
+      "usage": "Ordering anything at a counter or a table.",
+      "register": "neutral",
+      "mnemonic": "Only the masculine shows its accusative."
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "Bringen Sie mir bitte die Rechnung",
+      "cue": "Could you bring me the bill, please?",
+      "literal": "Bring you to-me please the bill",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bringen",
+            "cue": "to bring",
+            "tag": "free",
+            "forms": [
+              "bringt"
+            ],
+            "note": "It takes two objects like geben: the person in the dative, the thing in the accusative. Regular in the present, though its past is not."
+          },
+          {
+            "display": "Rechnung",
+            "cue": "the bill",
+            "tag": "free",
+            "forms": [
+              "Rechnungen"
+            ],
+            "note": "Feminine — every German noun in -ung is. It is also an invoice or a calculation, from rechnen, to reckon."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The imperative and the ordinary sentence use the same words in a different order. Sie bringen mir is a statement; Bringen Sie mir is a request, and only the position of the verb says which.",
+      "sound": "BRING-en zee meer BIT-tuh dee REKH-noong. The ch of Rechnung is the back sound.",
+      "variations": [
+        {
+          "display": "Bringen Sie mir bitte die Speisekarte",
+          "cue": "Could you bring me the menu, please?",
+          "changed": "the other thing a table asks for"
+        },
+        {
+          "display": "Die Rechnung, bitte",
+          "cue": "The bill, please",
+          "changed": "the short version — perfectly polite"
+        },
+        {
+          "display": "Können Sie mir bitte die Rechnung bringen?",
+          "cue": "Could you bring me the bill, please?",
+          "changed": "M1's modal bracket, so the infinitive goes last"
+        }
+      ],
+      "mistake": {
+        "display": "Bringen Sie mich bitte die Rechnung",
+        "why": "The recipient takes the dative: Bringen Sie mir bitte die Rechnung."
+      },
+      "usage": "Asking a waiter for anything.",
+      "register": "formal",
+      "mnemonic": "Verb first is a request. Verb second is a statement."
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "Ich möchte den Fisch, bitte",
+      "cue": "I'd like the fish, please",
+      "literal": "I would-like the fish, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Fisch",
+            "cue": "fish",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, so den in the accusative. Its plural is Fische, and the sch is one sound."
+          },
+          {
+            "display": "Fleisch",
+            "cue": "meat",
+            "tag": "free",
+            "forms": [],
+            "note": "Neuter — das Fleisch — and it has no ordinary plural. The ei is the sound of English \"eye\"."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Fisch and Fleisch differ by two letters and by a whole gender: der Fisch, das Fleisch. There is no reason, and both are on the same menu.",
+      "sound": "ikh MUEKH-tuh dayn FISH. The final sch is one sound, a sh.",
+      "variations": [
+        {
+          "display": "Ich möchte das Fleisch, bitte",
+          "cue": "I'd like the meat, please",
+          "changed": "a neuter noun, where the accusative is invisible"
+        },
+        {
+          "display": "Ich möchte den Salat, bitte",
+          "cue": "I'd like the salad, please",
+          "changed": "another masculine noun"
+        },
+        {
+          "display": "Ich möchte das Gemüse, bitte",
+          "cue": "I'd like the vegetables, please",
+          "changed": "a neuter noun that is singular in German"
+        }
+      ],
+      "mistake": {
+        "display": "Ich möchte der Fisch, bitte",
+        "why": "The object takes den: Ich möchte den Fisch, bitte."
+      },
+      "usage": "Ordering from a menu.",
+      "register": "neutral",
+      "mnemonic": "der Fisch, das Fleisch, and no reason for either."
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "Das Gemüse ist sehr gut",
+      "cue": "The vegetables are very good",
+      "literal": "The vegetable is very good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Gemüse",
+            "cue": "vegetables",
+            "tag": "delta",
+            "forms": [],
+            "note": "SINGULAR in German — das Gemüse — where English is plural, so its verb is ist. The Ge- prefix makes a collective out of a thing, as Gebäck does with baking."
+          },
+          {
+            "display": "Salat",
+            "cue": "salad · lettuce",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine. It covers the dish and the leaf alike, so ein Salat can be either."
+          },
+          {
+            "display": "Reis",
+            "cue": "rice",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, and singular like Gemüse. The ei is the sound of English \"eye\", so it is not said like the English word."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Gemüse takes ist and not sind. Translating the English plural gets the verb wrong as well as the noun, and the Ge- prefix is the signal that it is a collective.",
+      "sound": "das guh-MUE-zuh ist zair GOOT. The s between vowels is a z.",
+      "variations": [
+        {
+          "display": "Der Salat ist sehr gut",
+          "cue": "The salad is very good",
+          "changed": "a masculine noun"
+        },
+        {
+          "display": "Der Reis ist sehr gut",
+          "cue": "The rice is very good",
+          "changed": "another singular collective"
+        },
+        {
+          "display": "Das Essen ist sehr gut",
+          "cue": "The food is very good",
+          "changed": "L1-M3's essen doing its noun job"
+        }
+      ],
+      "mistake": {
+        "display": "Das Gemüse sind sehr gut",
+        "why": "Gemüse is singular: Das Gemüse ist sehr gut."
+      },
+      "usage": "Praising part of a meal — and the compliment is expected.",
+      "register": "neutral",
+      "mnemonic": "Ge- makes a collective, and a collective is singular."
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "Möchten Sie noch Kaffee?",
+      "cue": "Would you like more coffee?",
+      "literal": "Would-like you still coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Kuchen",
+            "cue": "cake",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, and its plural is also Kuchen — nouns in -en rarely change. The ch is the back sound."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "noch is M2's \"still\" in its other seat: at a table it is the OFFER word, and nothing follows it. noch Kaffee is an unspecified amount, exactly as English's \"more coffee\" is, and adding einen would make it one more cup specifically.",
+      "sound": "MUEKH-ten zee nokh KAF-fay. The ch of noch is the back sound and the ch of möchten is the front one — in one sentence.",
+      "variations": [
+        {
+          "display": "Möchten Sie noch Kuchen?",
+          "cue": "Would you like more cake?",
+          "changed": "a different thing offered"
+        },
+        {
+          "display": "Möchtest du noch Kaffee?",
+          "cue": "Would you like more coffee?",
+          "changed": "to a friend, with M1's du cell"
+        },
+        {
+          "display": "Möchten Sie noch einen Kaffee?",
+          "cue": "Would you like another coffee?",
+          "changed": "one more cup specifically, so the article comes back"
+        }
+      ],
+      "mistake": {
+        "display": "Möchten Sie mehr Kaffee?",
+        "why": "The offer word is noch: Möchten Sie noch Kaffee?"
+      },
+      "usage": "Offering a refill — at home, or at a table.",
+      "register": "formal",
+      "mnemonic": "noch offers. mehr compares."
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "Nein danke, ich bin satt",
+      "cue": "No thanks, I've had enough",
+      "literal": "No thanks, I am full",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "satt",
+            "cue": "full (after eating)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Only about food, and it is a normal thing to say. voll means full of something and is never used of a person who has eaten."
+          },
+          {
+            "display": "vielleicht",
+            "cue": "maybe",
+            "tag": "free",
+            "forms": [],
+            "note": "The hedge that softens a refusal into a not-now. It sits right after the danke and needs nothing else around it."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "This is a complete refusal and it will be taken as one. A German host offers once or twice and stops, so there is nothing to soften and no reason to expect a second offer.",
+      "sound": "nine DAN-kuh ikh bin ZAT. satt has a short a and a held t.",
+      "variations": [
+        {
+          "display": "Nein danke, vielleicht später",
+          "cue": "No thanks, maybe later",
+          "changed": "a hedge rather than a reason"
+        },
+        {
+          "display": "Danke, ich bin satt",
+          "cue": "Thanks, I've had enough",
+          "changed": "without the Nein, which is warmer"
+        },
+        {
+          "display": "Nein danke, das Essen war sehr gut",
+          "cue": "No thanks, the food was very good",
+          "changed": "with a compliment on the way out"
+        }
+      ],
+      "mistake": {
+        "display": "Nein danke, ich bin voll",
+        "why": "After eating it is satt: Nein danke, ich bin satt."
+      },
+      "usage": "Declining a second helping — once is enough.",
+      "register": "neutral",
+      "mnemonic": "satt for food. voll for a container."
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "Bringen Sie mir bitte einen Teller",
+      "cue": "Could you bring me a plate, please?",
+      "literal": "Bring you to-me please a plate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Teller",
+            "cue": "plate",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, so einen in the accusative. Its plural is also Teller — the -er ending does not change."
+          },
+          {
+            "display": "Glas",
+            "cue": "glass",
+            "tag": "free",
+            "forms": [
+              "Gläser"
+            ],
+            "note": "Neuter — das Glas — and its plural umlauts and adds -er. ein Glas Wasser is a glass of water, with no word between the nouns."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Two objects again, and the dative comes first. mir before einen Teller, exactly as M3's dem Mann came before das Buch — the frame has not changed, only the words in it.",
+      "sound": "BRING-en zee meer BIT-tuh IGH-nen TEL-ler. The double l is held.",
+      "variations": [
+        {
+          "display": "Bringen Sie mir bitte ein Glas Wasser",
+          "cue": "Could you bring me a glass of water, please?",
+          "changed": "a neuter noun and a measure"
+        },
+        {
+          "display": "Bringen Sie mir bitte eine Gabel",
+          "cue": "Could you bring me a fork, please?",
+          "changed": "a feminine noun, from M3"
+        },
+        {
+          "display": "Bringen Sie mir bitte einen Löffel",
+          "cue": "Could you bring me a spoon, please?",
+          "changed": "another masculine noun"
+        }
+      ],
+      "mistake": {
+        "display": "Bringen Sie mir bitte ein Teller",
+        "why": "The object takes einen: Bringen Sie mir bitte einen Teller."
+      },
+      "usage": "Asking for what is missing from the table.",
+      "register": "formal",
+      "mnemonic": "Recipient first, thing second, and only the masculine shows."
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "Zusammen oder getrennt?",
+      "cue": "Together or separately?",
+      "literal": "Together or separated?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zusammen",
+            "cue": "together",
+            "tag": "free",
+            "forms": [],
+            "note": "Invariable. Zusammen, bitte is the whole answer, and it means one bill for the table."
+          },
+          {
+            "display": "getrennt",
+            "cue": "separately",
+            "tag": "free",
+            "forms": [],
+            "note": "The participle of trennen, used as an adverb. Getrennt, bitte means each person pays for what they had."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The waiter asks and expects one word back. There is no equivalent moment in a British or American restaurant, and a learner who has not heard the question will not know it is their turn.",
+      "sound": "tsoo-ZAM-men OH-der guh-TRENT. The z at the front is a ts.",
+      "variations": [
+        {
+          "display": "Zusammen, bitte",
+          "cue": "Together, please",
+          "changed": "the answer"
+        },
+        {
+          "display": "Getrennt, bitte",
+          "cue": "Separately, please",
+          "changed": "the other answer"
+        },
+        {
+          "display": "Die Rechnung, bitte. Zusammen",
+          "cue": "The bill, please. Together",
+          "changed": "both moves in one line"
+        }
+      ],
+      "mistake": {
+        "display": "Zusammen oder getrennt, bitte?",
+        "why": "The waiter asks it plainly: Zusammen oder getrennt?"
+      },
+      "usage": "Asked at the end of every German meal, and the answer is one word.",
+      "register": "formal",
+      "mnemonic": "One bill or several — and you have to choose."
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "Das Essen war sehr lecker, danke",
+      "cue": "The food was delicious, thank you",
+      "literal": "The food was very tasty, thanks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lecker",
+            "cue": "tasty · delicious",
+            "tag": "delta",
+            "forms": [],
+            "note": "The word for food and drink and nothing else. gut is correct but flat; lecker is what a host wants to hear, and it takes no ending at all after ist or war."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "das Essen and essen are one index key. The capital is the only thing separating them on the page and the index cannot see it — which is why the row's note has to cover both readings.",
+      "sound": "das ES-sen var zair LECK-er, DAN-kuh. war is L1-M5's past of sein.",
+      "variations": [
+        {
+          "display": "Das Essen ist sehr lecker",
+          "cue": "The food is delicious",
+          "changed": "said during the meal rather than after"
+        },
+        {
+          "display": "Der Kuchen war sehr lecker, danke",
+          "cue": "The cake was delicious, thank you",
+          "changed": "one dish rather than the meal"
+        },
+        {
+          "display": "Vielen Dank, das Essen war sehr gut",
+          "cue": "Thank you very much, the food was very good",
+          "changed": "with M1's fuller thanks in front, and the flatter word"
+        }
+      ],
+      "mistake": {
+        "display": "Die Essen war sehr lecker, danke",
+        "why": "Essen is neuter: Das Essen war sehr lecker, danke."
+      },
+      "usage": "Said on the way out, and its absence is noticed.",
+      "register": "neutral",
+      "mnemonic": "lecker is for food. Nothing else is lecker."
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "Ich möchte ein Glas Wasser, bitte",
+      "cue": "I'd like a glass of water, please",
+      "literal": "I would-like a glass water, please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Messer",
+            "cue": "knife",
+            "tag": "free",
+            "forms": [],
+            "note": "Neuter — das Messer — where der Löffel and die Gabel beside it are masculine and feminine. Three at one setting, three genders, and no rule behind it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "ein Glas Wasser has NO word between the two nouns. German puts a measure straight in front of what is measured, where English needs \"of\" — eine Tasse Kaffee, ein Kilo Äpfel.",
+      "sound": "ine glahs VAS-ser. The W is a v and the double s is held.",
+      "variations": [
+        {
+          "display": "Ich möchte eine Tasse Kaffee, bitte",
+          "cue": "I'd like a cup of coffee, please",
+          "changed": "a feminine measure, from L1-M8"
+        },
+        {
+          "display": "Ich möchte ein Glas Wasser und ein Messer",
+          "cue": "I'd like a glass of water and a knife",
+          "changed": "two things, both neuter"
+        },
+        {
+          "display": "Bringen Sie mir bitte ein Glas Wasser",
+          "cue": "Could you bring me a glass of water, please?",
+          "changed": "the request frame"
+        }
+      ],
+      "mistake": {
+        "display": "Ich möchte ein Glas von Wasser, bitte",
+        "why": "A measure needs no word after it: ein Glas Wasser."
+      },
+      "usage": "At any table, and the water is not free unless you ask for tap water.",
+      "register": "neutral",
+      "mnemonic": "A measure goes straight in front of what it measures."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M5-C01",
+      "display": "Ich möchte einen Kaffee, bitte",
+      "cue": "I'd like a coffee, please"
+    },
+    {
+      "id": "L2-M5-C02",
+      "display": "Bringen Sie mir bitte die Rechnung",
+      "cue": "Could you bring me the bill, please?"
+    },
+    {
+      "id": "L2-M5-C03",
+      "display": "Ich möchte den Fisch, bitte",
+      "cue": "I'd like the fish, please"
+    },
+    {
+      "id": "L2-M5-C04",
+      "display": "Das Gemüse ist sehr gut",
+      "cue": "The vegetables are very good"
+    },
+    {
+      "id": "L2-M5-C05",
+      "display": "Möchten Sie noch Kaffee?",
+      "cue": "Would you like more coffee?"
+    },
+    {
+      "id": "L2-M5-C06",
+      "display": "Nein danke, ich bin satt",
+      "cue": "No thanks, I've had enough"
+    },
+    {
+      "id": "L2-M5-C07",
+      "display": "Bringen Sie mir bitte einen Teller",
+      "cue": "Could you bring me a plate, please?"
+    },
+    {
+      "id": "L2-M5-C08",
+      "display": "Zusammen oder getrennt?",
+      "cue": "Together or separately?"
+    },
+    {
+      "id": "L2-M5-C09",
+      "display": "Das Essen war sehr gut, danke",
+      "cue": "The food was very good, thank you"
+    },
+    {
+      "id": "L2-M5-C10",
+      "display": "Ich möchte ein Glas Wasser, bitte",
+      "cue": "I'd like a glass of water, please"
+    },
+    {
+      "id": "L2-M5-C11",
+      "display": "Die Rechnung, bitte",
+      "cue": "The bill, please"
+    },
+    {
+      "id": "L2-M5-C12",
+      "display": "Möchten Sie noch Kuchen?",
+      "cue": "Would you like more cake?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

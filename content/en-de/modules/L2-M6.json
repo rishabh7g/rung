@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": [
+    "L2-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Wollen wir + V-inf + ?",
+      "Hast du am + <day> + Zeit?",
+      "Um wie viel Uhr? — Um halb neun",
+      "Morgen gehe ich + <place>",
+      "Abgemacht + , + bis + <day>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE VERB IS SECOND in a German main clause, and \"second\" counts PHRASES, not words. Ich gehe am Samstag ins Kino and Am Samstag gehe ich ins Kino are both ordinary — front the time and the subject moves behind the verb — while Am Samstag ich gehe is not German at all. English fronts a time and changes nothing, which is why this is the module's grammar and not a footnote."
+    },
+    {
+      "tag": "free",
+      "text": "The companion rule, and it is one line: when a time and a place both appear, TIME COMES FIRST. Am Donnerstag fahre ich nach Berlin, never the other way round. English prefers the reverse order and nobody ever says so out loud."
+    },
+    {
+      "tag": "interference",
+      "text": "halb neun IS HALF PAST EIGHT. German counts toward the hour that is coming, where English counts back from the one that has gone: halb acht is 7:30, halb neun is 8:30, halb zehn is 9:30. There is no rule to learn beyond the direction of the counting, and this is the single mistake in the course most likely to make a learner miss a train. Viertel nach and Viertel vor behave exactly like English and are not the problem."
+    },
+    {
+      "tag": "free",
+      "text": "Plans are made among friends, so this module speaks du and wir and chips informal where the frame is du-only. M4 and M7 speak Sie and this one deliberately does not: an invitation in Sie reads as a business appointment. The suggestion frame is M1's modal bracket with wir — Wollen wir ins Kino gehen? Sollen wir um acht essen? — so no new structure is opened and the budget goes to the clock and the word order."
+    },
+    {
+      "tag": "interference",
+      "text": "der Morgen (\"the morning\"), morgen (\"tomorrow\") and morgens (\"in the mornings\") are one index key and two relatives of it, because the fold cannot see the capital. L1-M6's morgen owns the key and everything here lands on it; the sentence around it is what tells a reader which one is meant."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "Wollen wir ins Kino gehen?",
+      "cue": "Shall we go to the cinema?",
+      "literal": "Want we into-the cinema go?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wollen",
+            "cue": "to want to",
+            "tag": "delta",
+            "forms": [],
+            "note": "With wir in front it is not \"do we want\" but \"shall we\" — the ordinary German invitation. The infinitive gehen waits at the very end, which is M1's bracket again."
+          },
+          {
+            "display": "wir",
+            "cue": "we",
+            "tag": "free",
+            "forms": [],
+            "note": "Its verb form is spelled exactly like the infinitive — wir gehen, wir wollen — so wir costs the index nothing new, the same bargain Sie struck in L1."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Wollen wir …? is an INVITATION, not a question about desire. A learner translating it as \"do we want to\" will hear a strange sentence where a German hears the most normal offer there is.",
+      "sound": "VOLL-en veer ins KEE-no GAY-en. The w of wollen and wir is a v.",
+      "variations": [
+        {
+          "display": "Wollen wir essen gehen?",
+          "cue": "Shall we go out to eat?",
+          "changed": "two infinitives, both at the end"
+        },
+        {
+          "display": "Sollen wir ins Kino gehen?",
+          "cue": "Should we go to the cinema?",
+          "changed": "sollen, which asks for a decision rather than offers"
+        },
+        {
+          "display": "Wollen wir am Samstag ins Kino gehen?",
+          "cue": "Shall we go to the cinema on Saturday?",
+          "changed": "with a day inside the bracket"
+        }
+      ],
+      "mistake": {
+        "display": "Wollen wir gehen ins Kino?",
+        "why": "The infinitive goes to the end: Wollen wir ins Kino gehen?"
+      },
+      "usage": "Suggesting something to a friend — the default invitation.",
+      "register": "neutral",
+      "mnemonic": "Wollen wir opens the offer. The infinitive closes it."
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "Hast du am Mittwoch Zeit?",
+      "cue": "Are you free on Wednesday?",
+      "literal": "Have you on-the Wednesday time?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mittwoch",
+            "cue": "Wednesday",
+            "tag": "free",
+            "forms": [],
+            "note": "Literally mid-week, and it is the only German day without a -tag on the end. Every day is masculine, so it is am Mittwoch with L1-M4's am."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "German asks whether you HAVE time, not whether you are free. Bist du frei? is a question about being unattached or off work, and asking it about Wednesday evening will get you an odd look.",
+      "sound": "hast doo am MITT-vokh tsite. Zeit begins with a ts and rhymes with English \"kite\".",
+      "variations": [
+        {
+          "display": "Hast du am Sonntag Zeit?",
+          "cue": "Are you free on Sunday?",
+          "changed": "a different day"
+        },
+        {
+          "display": "Haben Sie am Mittwoch Zeit?",
+          "cue": "Are you free on Wednesday?",
+          "changed": "to someone you address as Sie"
+        },
+        {
+          "display": "Hast du morgen Zeit?",
+          "cue": "Are you free tomorrow?",
+          "changed": "tomorrow, which takes no am at all"
+        }
+      ],
+      "mistake": {
+        "display": "Bist du am Mittwoch frei?",
+        "why": "Time is something you have: Hast du am Mittwoch Zeit?"
+      },
+      "usage": "Opening a plan — asked before anything is proposed.",
+      "register": "informal",
+      "mnemonic": "You HAVE time in German. You are not free."
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "Um wie viel Uhr treffen wir uns?",
+      "cue": "What time shall we meet?",
+      "literal": "At how much clock meet we us?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "viel",
+            "cue": "much · a lot",
+            "tag": "free",
+            "forms": [],
+            "note": "Um wie viel Uhr is the fixed way to ask a time — literally \"at how much o'clock\". It is three words and none of them can be dropped."
+          },
+          {
+            "display": "treffen",
+            "cue": "to meet",
+            "tag": "delta",
+            "forms": [
+              "treffe"
+            ],
+            "note": "Meeting is reflexive in German: wir treffen UNS, literally \"we meet us\". Leave the uns out and the sentence is waiting for an object that never comes."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "sich treffen needs its pronoun. Wir treffen um acht is not a shorter way of saying it — it is an unfinished sentence, and the uns is what finishes it.",
+      "sound": "oom vee feel oor TREFF-en veer oons. viel is said feel, with an f.",
+      "variations": [
+        {
+          "display": "Wann treffen wir uns?",
+          "cue": "When shall we meet?",
+          "changed": "wann, which asks about the day as well"
+        },
+        {
+          "display": "Um wie viel Uhr gehen wir?",
+          "cue": "What time are we going?",
+          "changed": "a verb that needs no uns"
+        },
+        {
+          "display": "Wo treffen wir uns?",
+          "cue": "Where shall we meet?",
+          "changed": "the place instead of the time"
+        }
+      ],
+      "mistake": {
+        "display": "Um wie viel Uhr treffen wir?",
+        "why": "Meeting is reflexive: Um wie viel Uhr treffen wir uns?"
+      },
+      "usage": "The second thing asked, once the day is agreed.",
+      "register": "neutral",
+      "mnemonic": "We meet US. The uns is not optional."
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "Um halb neun",
+      "cue": "At half past eight",
+      "literal": "At half nine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "halb",
+            "cue": "half (counting toward the coming hour)",
+            "tag": "interference",
+            "forms": [],
+            "note": "halb neun is 8:30, NOT 9:30. German is halfway TO nine where English is half past eight. The number you say is the hour ahead of you, not the one behind."
+          },
+          {
+            "display": "neun",
+            "cue": "nine",
+            "tag": "free",
+            "forms": [
+              "zehn"
+            ],
+            "note": "L1-M8 counted to eight for prices; the clock needs the rest. zehn beside it, so halb zehn is half past nine."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "This is the mistake that makes people miss trains. halb neun said by a German means 20:30, and an English speaker who hears \"half nine\" and arrives at 21:30 has waited an hour alone.",
+      "sound": "oom halp noyn. The b of halb is said as a p, and eu and äu are both said oy.",
+      "variations": [
+        {
+          "display": "Um halb acht",
+          "cue": "At half past seven",
+          "changed": "an hour earlier — the number still runs ahead"
+        },
+        {
+          "display": "Um halb zehn",
+          "cue": "At half past nine",
+          "changed": "an hour later"
+        },
+        {
+          "display": "Um neun",
+          "cue": "At nine",
+          "changed": "the hour itself, where the counting question does not arise"
+        }
+      ],
+      "mistake": {
+        "display": "Um halb neun, also um neun Uhr dreißig",
+        "why": "halb neun is 8:30: um halb neun, also um acht Uhr dreißig."
+      },
+      "usage": "Settling a time — and the one to repeat back in digits if it matters.",
+      "register": "neutral",
+      "mnemonic": "halb runs AHEAD. halb neun is 8:30."
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "Am Samstag gehe ich ins Kino",
+      "cue": "On Saturday I'm going to the cinema",
+      "literal": "On-the Saturday go I into-the cinema",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Samstag",
+            "cue": "Saturday",
+            "tag": "free",
+            "forms": [
+              "Sonnabend"
+            ],
+            "note": "Samstag in the south and west and increasingly everywhere; Sonnabend is the northern and eastern word and is worth recognising rather than saying."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The time is first and so the SUBJECT moves behind the verb. Am Samstag ich gehe is the sentence an English speaker builds, and it is not German — the verb holds the second slot no matter what stands in the first.",
+      "sound": "am ZAMS-tahk GAY-uh ikh ins KEE-no. The s at the start of Samstag is a z.",
+      "variations": [
+        {
+          "display": "Ich gehe am Samstag ins Kino",
+          "cue": "I'm going to the cinema on Saturday",
+          "changed": "the ordinary order — same meaning, no fronting"
+        },
+        {
+          "display": "Am Sonntag gehe ich ins Kino",
+          "cue": "On Sunday I'm going to the cinema",
+          "changed": "a different day, same shape"
+        },
+        {
+          "display": "Morgen gehe ich ins Kino",
+          "cue": "Tomorrow I'm going to the cinema",
+          "changed": "with L1-M6's morgen in the first slot"
+        }
+      ],
+      "mistake": {
+        "display": "Am Samstag ich gehe ins Kino",
+        "why": "The verb holds second place: Am Samstag gehe ich ins Kino."
+      },
+      "usage": "Announcing a plan, with the day as the point of the sentence.",
+      "register": "neutral",
+      "mnemonic": "Whatever comes first, the verb comes second."
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "Sollen wir um acht essen?",
+      "cue": "Shall we eat at eight?",
+      "literal": "Should we at eight eat?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sollen",
+            "cue": "should · shall",
+            "tag": "delta",
+            "forms": [
+              "soll"
+            ],
+            "note": "sollen asks someone else to DECIDE, where wollen offers. Sollen wir …? hands the choice over; Wollen wir …? puts one on the table."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "sollen is not \"should\" in the advice sense. Du sollst is close to an instruction from somebody else, and Ich soll arbeiten means I have been told to, not that it would be wise.",
+      "sound": "ZOLL-en veer oom acht ESS-en. The ch of acht is the back sound, scraped rather than said.",
+      "variations": [
+        {
+          "display": "Wollen wir um acht essen?",
+          "cue": "Shall we eat at eight?",
+          "changed": "an offer rather than a question about the decision"
+        },
+        {
+          "display": "Sollen wir um halb neun essen?",
+          "cue": "Shall we eat at half past eight?",
+          "changed": "with the counting-ahead half hour"
+        },
+        {
+          "display": "Sollen wir ins Kino gehen?",
+          "cue": "Shall we go to the cinema?",
+          "changed": "a different plan, same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Sollen wir essen um acht?",
+        "why": "The infinitive goes to the end: Sollen wir um acht essen?"
+      },
+      "usage": "Handing a decision to the other person, politely.",
+      "register": "neutral",
+      "mnemonic": "wollen offers. sollen asks you to decide."
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "Wir treffen uns um Viertel nach acht",
+      "cue": "We're meeting at a quarter past eight",
+      "literal": "We meet us at quarter after eight",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Viertel",
+            "cue": "quarter",
+            "tag": "free",
+            "forms": [],
+            "note": "Viertel nach and Viertel vor behave exactly like English, and only halb runs ahead. nach is M4's row doing the clock's \"past\", and vor is L1-M7's doing its \"to\"."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Only halb counts forward. A learner who has been burned by halb neun and then guesses that Viertel nach acht must be 7:45 has over-corrected — the quarters are the easy ones.",
+      "sound": "veer TREFF-en oons oom FEER-tel nakh acht. Viertel starts with an f.",
+      "variations": [
+        {
+          "display": "Wir treffen uns um Viertel vor neun",
+          "cue": "We're meeting at a quarter to nine",
+          "changed": "vor, which is \"to\" on a clock"
+        },
+        {
+          "display": "Wir treffen uns um halb neun",
+          "cue": "We're meeting at half past eight",
+          "changed": "the half hour, which does count ahead"
+        },
+        {
+          "display": "Treffen wir uns um Viertel nach acht?",
+          "cue": "Shall we meet at a quarter past eight?",
+          "changed": "as a question, with the verb in front"
+        }
+      ],
+      "mistake": {
+        "display": "Wir treffen uns um Viertel nach halb neun",
+        "why": "A quarter past eight is Viertel nach acht."
+      },
+      "usage": "Confirming a time that is not on the hour.",
+      "register": "neutral",
+      "mnemonic": "The quarters behave. Only halb runs ahead."
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "Am Sonntag habe ich frei",
+      "cue": "I'm off on Sunday",
+      "literal": "On-the Sunday have I free",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Sonntag",
+            "cue": "Sunday",
+            "tag": "free",
+            "forms": [],
+            "note": "The shops are shut and this is a fact about the day, not a preference. It is why Sonntag turns up in every plan a German makes for the weekend."
+          },
+          {
+            "display": "frei",
+            "cue": "free · off (work)",
+            "tag": "free",
+            "forms": [],
+            "note": "frei haben is time off work. It is not the frei of \"free of charge\", which is kostenlos, and not the free of Hast du Zeit?"
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "frei haben is about work and nothing else. Ist der Platz frei? asks whether a seat is taken, and neither of them will answer whether somebody is available this evening — that question is Hast du Zeit?",
+      "sound": "am ZONN-tahk HAH-buh ikh fry. frei rhymes with English \"fry\".",
+      "variations": [
+        {
+          "display": "Am Samstag habe ich frei",
+          "cue": "I'm off on Saturday",
+          "changed": "a different day"
+        },
+        {
+          "display": "Ich habe am Sonntag frei",
+          "cue": "I'm off on Sunday",
+          "changed": "the ordinary order, with no fronting"
+        },
+        {
+          "display": "Am Sonntag habe ich keine Zeit",
+          "cue": "I have no time on Sunday",
+          "changed": "the other answer, with L1-M3's kein"
+        }
+      ],
+      "mistake": {
+        "display": "Am Sonntag bin ich frei",
+        "why": "Time off is something you have: Am Sonntag habe ich frei."
+      },
+      "usage": "Answering an invitation before a time is proposed.",
+      "register": "neutral",
+      "mnemonic": "You HAVE time off, not are it."
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "Am Donnerstag fahre ich nach Berlin",
+      "cue": "On Thursday I'm going to Berlin",
+      "literal": "On-the Thursday travel I to Berlin",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Donnerstag",
+            "cue": "Thursday",
+            "tag": "free",
+            "forms": [],
+            "note": "Thunder's day — the same god behind English Thursday, which makes it the easiest German day to keep. Donner is thunder and is worth hearing inside it."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "TIME comes before PLACE in German, which is the reverse of the English habit. Ich fahre nach Berlin am Donnerstag is understandable and is not what a German says.",
+      "sound": "am DONN-ers-tahk FAH-ruh ikh nakh ber-LEEN. Berlin takes its stress on the second syllable.",
+      "variations": [
+        {
+          "display": "Ich fahre am Donnerstag nach Berlin",
+          "cue": "I'm going to Berlin on Thursday",
+          "changed": "no fronting, and the time is still before the place"
+        },
+        {
+          "display": "Am Mittwoch fahre ich nach Berlin",
+          "cue": "On Wednesday I'm going to Berlin",
+          "changed": "a different day"
+        },
+        {
+          "display": "Am Donnerstag fahre ich mit dem Zug",
+          "cue": "On Thursday I'm going by train",
+          "changed": "M4's mit + dative instead of a destination"
+        }
+      ],
+      "mistake": {
+        "display": "Ich fahre nach Berlin am Donnerstag",
+        "why": "Time comes before place: Ich fahre am Donnerstag nach Berlin."
+      },
+      "usage": "Saying where you will be, when the day is what matters.",
+      "register": "neutral",
+      "mnemonic": "Time, then place. Always that way round."
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "Abgemacht, bis Freitag",
+      "cue": "Agreed — see you Friday",
+      "literal": "Agreed, until Friday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "abgemacht",
+            "cue": "agreed · it's a deal",
+            "tag": "delta",
+            "forms": [],
+            "note": "One word closes a plan in German, and it is warmer than it looks — abgemacht between friends is a handshake, not a contract."
+          },
+          {
+            "display": "bis",
+            "cue": "until · see you",
+            "tag": "free",
+            "forms": [],
+            "note": "bis Freitag, bis morgen, bis später: bis plus when is the whole goodbye. It says the meeting is settled, so it is never said to a stranger."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "bis Freitag is a farewell and it PROMISES the meeting. Say it to somebody you might see on Friday and they will expect you; Auf Wiedersehen is the goodbye with nothing attached.",
+      "sound": "AP-guh-macht, biss FRY-tahk. The b of ab is said as a p.",
+      "variations": [
+        {
+          "display": "Abgemacht, bis Samstag",
+          "cue": "Agreed — see you Saturday",
+          "changed": "a different day"
+        },
+        {
+          "display": "Abgemacht, bis morgen",
+          "cue": "Agreed — see you tomorrow",
+          "changed": "with L1-M6's morgen"
+        },
+        {
+          "display": "Gut, bis Freitag",
+          "cue": "Good — see you Friday",
+          "changed": "a plainer close"
+        }
+      ],
+      "mistake": {
+        "display": "Abgemacht, auf Freitag",
+        "why": "The farewell takes bis: Abgemacht, bis Freitag."
+      },
+      "usage": "Ending the conversation once the day and time are fixed.",
+      "register": "informal",
+      "mnemonic": "abgemacht closes it. bis names the next time."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M6-C01",
+      "display": "Wollen wir ins Kino gehen?",
+      "cue": "Shall we go to the cinema?"
+    },
+    {
+      "id": "L2-M6-C02",
+      "display": "Sollen wir um acht essen?",
+      "cue": "Shall we eat at eight?"
+    },
+    {
+      "id": "L2-M6-C03",
+      "display": "Hast du am Mittwoch Zeit?",
+      "cue": "Are you free on Wednesday?"
+    },
+    {
+      "id": "L2-M6-C04",
+      "display": "Um halb neun",
+      "cue": "At half past eight"
+    },
+    {
+      "id": "L2-M6-C05",
+      "display": "Um Viertel vor neun",
+      "cue": "At a quarter to nine"
+    },
+    {
+      "id": "L2-M6-C06",
+      "display": "Am Samstag gehe ich ins Kino",
+      "cue": "On Saturday I'm going to the cinema"
+    },
+    {
+      "id": "L2-M6-C07",
+      "display": "Am Sonntag habe ich frei",
+      "cue": "I'm off on Sunday"
+    },
+    {
+      "id": "L2-M6-C08",
+      "display": "Am Donnerstag fahre ich nach Berlin",
+      "cue": "On Thursday I'm going to Berlin"
+    },
+    {
+      "id": "L2-M6-C09",
+      "display": "Abgemacht, bis Freitag",
+      "cue": "Agreed — see you Friday"
+    },
+    {
+      "id": "L2-M6-C10",
+      "display": "Wir treffen uns um halb zehn",
+      "cue": "We're meeting at half past nine"
+    },
+    {
+      "id": "L2-M6-C11",
+      "display": "Um wie viel Uhr treffen wir uns?",
+      "cue": "What time shall we meet?"
+    },
+    {
+      "id": "L2-M6-C12",
+      "display": "Morgen gehe ich ins Kino",
+      "cue": "Tomorrow I'm going to the cinema"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

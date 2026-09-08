@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 170 — nine L1 ladders, hi-mr L2 and L3, and the complete L2 of en-es, en-ar, hi-en, en-ru, en-it and en-fr (#458)', () => {
+  it('finds all 180 — nine L1 ladders, hi-mr L2 and L3, and the complete L2 of every course but en-ko (#459)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -223,6 +223,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-de/modules/L1-M7.json',
       'content/en-de/modules/L1-M8.json',
       'content/en-de/modules/L1-M9.json',
+      'content/en-de/modules/L2-M1.json',
+      'content/en-de/modules/L2-M10.json',
+      'content/en-de/modules/L2-M2.json',
+      'content/en-de/modules/L2-M3.json',
+      'content/en-de/modules/L2-M4.json',
+      'content/en-de/modules/L2-M5.json',
+      'content/en-de/modules/L2-M6.json',
+      'content/en-de/modules/L2-M7.json',
+      'content/en-de/modules/L2-M8.json',
+      'content/en-de/modules/L2-M9.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
@@ -977,20 +987,36 @@ describe('ModuleContent against the modules that exist', () => {
     for (const [file, json] of enDe) {
       const module = parseModule(json, file);
 
-      /** Every L2 slot, mistake plates included — the register ban reaches all of them. */
-      const l2Slots: [where: string, text: string][] = [];
+      /**
+       * Every L2 slot, mistake plates included — the register ban reaches all of them. The third
+       * element marks the one slot the ß check has to let through: a mistake plate whose whole
+       * subject IS the respelling, which has to write `weiss` to strike it out.
+       */
+      const l2Slots: [where: string, text: string, showsTheRespelling?: boolean][] = [];
       for (const item of module.comprehensionPool) l2Slots.push([item.id, item.display]);
       for (const sentence of module.sentences) {
         const at = sentence.id;
         expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
-        expect(sentence.register, `${at} register`).toBe('neutral');
+        // L1 is `neutral` throughout, because politeness above it rides `bitte` and the `usage`
+        // line. L2-M1 (#441) is chartered to open `du`, and a level that teaches two addresses has
+        // to chip which is which — so the flat assertion is scoped to the level that made it.
+        if (module.id.startsWith('L1-')) {
+          expect(sentence.register, `${at} register`).toBe('neutral');
+        }
         expect(sentence.sound, `${at} sound`).toMatch(/\S/);
         l2Slots.push([at, sentence.display]);
         for (const variation of sentence.variations ?? []) {
           l2Slots.push([`${at} variation`, variation.display]);
         }
         if (sentence.mistake !== undefined) {
-          l2Slots.push([`${at} mistake`, sentence.mistake.display]);
+          // L2-M3 (#450) teaches the ß, and the plate that teaches it spells the error out. The
+          // `why` carrying a real ß is what separates a deliberate demonstration from an author
+          // who typed around the character: a plate that respells without correcting it still fails.
+          l2Slots.push([
+            `${at} mistake`,
+            sentence.mistake.display,
+            sentence.mistake.why.includes('ß'),
+          ]);
         }
         sentence.deconstruction.words.forEach((word, wordIdx) => {
           const row = `${module.id} ${at} w${wordIdx}`;
@@ -1005,28 +1031,38 @@ describe('ModuleContent against the modules that exist', () => {
         });
       }
 
-      for (const [where, text] of l2Slots) {
+      for (const [where, text, showsTheRespelling] of l2Slots) {
         for (const raw of text.split(/[\s,.?!]+/)) {
           const token = raw.trim();
           if (token === '') continue;
-          expect(
-            DU_REGISTER.has(token.toLowerCase()),
-            `${where}: "${token}" is du-register, and this course speaks Sie`,
-          ).toBe(false);
-          // The capital is the reader's only signal, because the index cannot see it.
-          expect(
-            ['ihr', 'ihre', 'ihnen'].includes(token),
-            `${where}: "${token}" lost its capital`,
-          ).toBe(false);
+          // Decision 3 was L1's: `du` and its whole paradigm stayed out of every slot, mistake
+          // plates included, and the briefs named it as what a later level owed. L2-M1 pays it, so
+          // the ban holds over L1 only.
+          if (module.id.startsWith('L1-')) {
+            expect(
+              DU_REGISTER.has(token.toLowerCase()),
+              `${where}: "${token}" is du-register, and this course speaks Sie`,
+            ).toBe(false);
+          }
+          // The capital is the reader's only signal, because the index cannot see it. L2-M2 (#441)
+          // opens the POSSESSIVE `ihre` — "her" — which is correctly lowercase and is the one key
+          // L1 left free for it, so that word alone leaves the ban when the level that teaches it
+          // arrives. Polite `Ihr` and `Ihnen` keep their capitals everywhere.
+          const lostCapital = module.id.startsWith('L1-')
+            ? ['ihr', 'ihre', 'ihnen']
+            : ['ihr', 'ihnen'];
+          expect(lostCapital.includes(token), `${where}: "${token}" lost its capital`).toBe(false);
           // An all-caps word folds to a key no row owns — decision 2, pointing the other way.
           expect(
             token.length > 1 && token === token.toUpperCase() && /\p{L}/u.test(token),
             `${where}: "${token}" is all capitals`,
           ).toBe(false);
         }
-        expect(text, `${where}: ß is never respelled with a double s`).not.toMatch(
-          /heisse|heissen|strasse|gross|dreissig|weiss/i,
-        );
+        if (showsTheRespelling !== true) {
+          expect(text, `${where}: ß is never respelled with a double s`).not.toMatch(
+            /heisse|heissen|strasse|gross|dreissig|weiss/i,
+          );
+        }
       }
 
       // The orthography is WRITTEN, not transcribed away. A blanket /ae|oe|ue/ ban was tried and

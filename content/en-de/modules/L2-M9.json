@@ -1,0 +1,640 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M9",
+  "title": "Comparing and choosing",
+  "job": "More, less, better — stating a preference",
+  "prerequisites": [
+    "L2-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "A + ist + Adj-er + als + B",
+      "A + ist + so + Adj + wie + B",
+      "A + ist am + Adj-sten",
+      "Ich trinke lieber + N",
+      "Welcher/Welche/Welches + N + ?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The comparative is -er and the standard is als: größer als, billiger als, älter als. Two things make it more than an English lookalike. First, many one-syllable adjectives take an UMLAUT in the comparative — alt → älter, groß → größer, jung → jünger, lang → länger — and the fold KEEPS umlauts, so alter and älter are two separate index keys and each comparative is a surface of its own. Second, the predicate superlative is am -sten — Berlin ist am größten — which takes no adjective ending and so fits inside this level's predicative-only rule."
+    },
+    {
+      "tag": "interference",
+      "text": "als AGAINST wie. A comparison of UNEQUALS takes als (größer als) and a comparison of EQUALS takes so … wie (so groß wie). größer wie is the error — and it should be said honestly that native speakers produce it constantly in speech, particularly in the south. A learner who hears it in Germany and then reads a rule pretending it never happens stops trusting the course. The written standard is als, and that is what this module teaches."
+    },
+    {
+      "tag": "delta",
+      "text": "GERMAN STATES A PREFERENCE WITH AN ADVERB, NOT A VERB. Ich trinke lieber Tee is \"I prefer tea\", literally \"I drink more gladly tea\" — where English needs the verb \"prefer\" and Spanish preferir. gern is the positive of that ladder (M1 opened it), lieber the comparative, am liebsten the superlative, and the whole preference system is that one word changing shape."
+    },
+    {
+      "tag": "free",
+      "text": "The irregulars are the ones actually used: gut → besser → am besten, viel → mehr → am meisten, gern → lieber → am liebsten. Three ladders, learnt whole, and they cover most of what a learner will ever need to compare."
+    },
+    {
+      "tag": "free",
+      "text": "Choosing needs two declining words — welcher / welche / welches (\"which\") and dieser / diese / dieses (\"this\") — and both take THE SAME ENDINGS as der / die / das. That is M3's grid a third time rather than a new system, and saying so is worth more than a second table. Adjectives stay predicative here as everywhere in this level: Welches Auto ist billiger? and never a declined attributive comparative, which is L3's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M9-S01",
+      "display": "Berlin ist größer als München",
+      "cue": "Berlin is bigger than Munich",
+      "literal": "Berlin is bigger than Munich",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "größer",
+            "cue": "bigger",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M10's groß with an umlaut and -er. The fold keeps umlauts, so groß and größer are two separate keys and each has to be met on its own."
+          },
+          {
+            "display": "als",
+            "cue": "than",
+            "tag": "free",
+            "forms": [],
+            "note": "The standard of an UNEQUAL comparison, and it is one word with no article after it. It is also \"when\" in a past clause, which is L3's business."
+          },
+          {
+            "display": "München",
+            "cue": "Munich",
+            "tag": "free",
+            "forms": [],
+            "note": "Its own city's name for itself, and the English Munich is nowhere near it. The ü is said with the lips of an oo and the tongue of an ee."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Many short adjectives take an umlaut in the comparative and there is no way to predict which: alt → älter, groß → größer, jung → jünger, lang → länger, but klein → kleiner with no umlaut at all.",
+      "sound": "ber-LEEN ist GRUE-ser als MUEN-khen. The ß of größer is a sharp s.",
+      "variations": [
+        {
+          "display": "München ist kleiner als Berlin",
+          "cue": "Munich is smaller than Berlin",
+          "changed": "the other way round, and kleiner takes no umlaut"
+        },
+        {
+          "display": "Berlin ist billiger als München",
+          "cue": "Berlin is cheaper than Munich",
+          "changed": "L1-M8's billig, also without an umlaut"
+        },
+        {
+          "display": "Ist Berlin größer als München?",
+          "cue": "Is Berlin bigger than Munich?",
+          "changed": "as a question"
+        }
+      ],
+      "mistake": {
+        "display": "Berlin ist größer wie München",
+        "why": "An unequal comparison takes als: Berlin ist größer als München."
+      },
+      "usage": "Comparing two places, two prices, two anything.",
+      "register": "neutral",
+      "mnemonic": "Unequal takes als. Equal takes wie."
+    },
+    {
+      "id": "L2-M9-S02",
+      "display": "Mein Bruder ist so groß wie ich",
+      "cue": "My brother is as tall as me",
+      "literal": "My brother is so tall as I",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "so",
+            "cue": "as · so",
+            "tag": "free",
+            "forms": [],
+            "note": "It is the first half of the equal comparison and cannot be dropped: so groß wie, never groß wie. On its own it is \"so\" — so gut, so kalt."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "An EQUAL comparison takes so … wie and an unequal one takes als. Mixing them is the commonest German error there is, made by Germans too — but the written standard is clear and this is the one to learn.",
+      "sound": "mine BROO-der ist zo grohs vee ikh. groß has a long o and ends in a sharp s.",
+      "variations": [
+        {
+          "display": "Mein Bruder ist so alt wie ich",
+          "cue": "My brother is the same age as me",
+          "changed": "age instead of height"
+        },
+        {
+          "display": "Mein Bruder ist nicht so groß wie ich",
+          "cue": "My brother isn't as tall as me",
+          "changed": "negated, and still so … wie"
+        },
+        {
+          "display": "Berlin ist so teuer wie München",
+          "cue": "Berlin is as expensive as Munich",
+          "changed": "two places instead of two people"
+        }
+      ],
+      "mistake": {
+        "display": "Mein Bruder ist so groß als ich",
+        "why": "An equal comparison takes wie: Mein Bruder ist so groß wie ich."
+      },
+      "usage": "Saying two things match — in size, age, price or anything measured.",
+      "register": "neutral",
+      "mnemonic": "so … wie for a match. -er … als for a gap."
+    },
+    {
+      "id": "L2-M9-S03",
+      "display": "Berlin ist am größten",
+      "cue": "Berlin is the biggest",
+      "literal": "Berlin is at-the biggest",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "am größten",
+            "cue": "the biggest (in a predicate)",
+            "tag": "delta",
+            "forms": [
+              "am teuersten",
+              "am billigsten",
+              "am schnellsten",
+              "am ältesten"
+            ],
+            "note": "L1-M4's am doing the superlative — one key, two jobs, and the note is true of both. am plus -sten needs no adjective ending, which is why it fits this level."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "This shape only works AFTER sein. In front of a noun the superlative declines — die größte Stadt — and that is L3's, so every superlative in this module stands in a predicate.",
+      "sound": "ber-LEEN ist am GRUES-ten. The st here is st and not sht, because it is not at the start of a word.",
+      "variations": [
+        {
+          "display": "München ist am teuersten",
+          "cue": "Munich is the most expensive",
+          "changed": "a different adjective"
+        },
+        {
+          "display": "Welche Stadt ist am größten?",
+          "cue": "Which city is the biggest?",
+          "changed": "asked rather than stated"
+        },
+        {
+          "display": "Berlin ist am billigsten",
+          "cue": "Berlin is the cheapest",
+          "changed": "the other end of the scale"
+        }
+      ],
+      "mistake": {
+        "display": "Berlin ist der größte",
+        "why": "After sein it is am -sten: Berlin ist am größten."
+      },
+      "usage": "Picking the top of a list, once the list is understood.",
+      "register": "neutral",
+      "mnemonic": "am -sten after sein. The declined one is L3's."
+    },
+    {
+      "id": "L2-M9-S04",
+      "display": "Ich trinke lieber Tee",
+      "cue": "I prefer tea",
+      "literal": "I drink more-gladly tea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lieber",
+            "cue": "rather · preferably",
+            "tag": "delta",
+            "forms": [],
+            "note": "M1's gern one rung up. German has no verb for \"prefer\" — the preference lives in this adverb, and the verb stays whatever you are actually doing."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "There is no German verb for \"prefer\" at this level. The preference is carried by lieber and the verb goes on saying what you drink, eat or do — which is why the sentence looks like an ordinary one until you notice the extra word.",
+      "sound": "ikh TRINK-uh LEE-ber tay. Tee is one long ay.",
+      "variations": [
+        {
+          "display": "Ich trinke lieber Kaffee",
+          "cue": "I prefer coffee",
+          "changed": "the other drink"
+        },
+        {
+          "display": "Ich gehe lieber zu Fuß",
+          "cue": "I'd rather walk",
+          "changed": "M4's zu Fuß, with a different verb"
+        },
+        {
+          "display": "Trinken Sie lieber Tee oder Kaffee?",
+          "cue": "Would you rather have tea or coffee?",
+          "changed": "offered as a choice"
+        }
+      ],
+      "mistake": {
+        "display": "Ich preferiere Tee",
+        "why": "The preference rides on lieber: Ich trinke lieber Tee."
+      },
+      "usage": "Answering an offer without refusing it.",
+      "register": "neutral",
+      "mnemonic": "German prefers with an adverb, not a verb."
+    },
+    {
+      "id": "L2-M9-S05",
+      "display": "Am liebsten trinke ich Tee",
+      "cue": "Most of all I like tea",
+      "literal": "At-the most-gladly drink I tea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "am liebsten",
+            "cue": "most of all · best of all",
+            "tag": "free",
+            "forms": [],
+            "note": "The top of the gern ladder — gern, lieber, am liebsten. Fronted here, so M6's rule applies and the subject moves behind the verb."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Fronting am liebsten pushes ich behind the verb, exactly as M6's day did. Am liebsten ich trinke Tee is the English order and is not German.",
+      "sound": "am LEEP-sten TRINK-uh ikh tay. The b of liebsten is said as a p.",
+      "variations": [
+        {
+          "display": "Ich trinke am liebsten Tee",
+          "cue": "I like tea best of all",
+          "changed": "the ordinary order, no fronting"
+        },
+        {
+          "display": "Am liebsten gehe ich ins Kino",
+          "cue": "Most of all I like going to the cinema",
+          "changed": "M6's cinema, same frame"
+        },
+        {
+          "display": "Was trinken Sie am liebsten?",
+          "cue": "What do you like drinking most?",
+          "changed": "asked of somebody else"
+        }
+      ],
+      "mistake": {
+        "display": "Am liebsten ich trinke Tee",
+        "why": "The verb holds second place: Am liebsten trinke ich Tee."
+      },
+      "usage": "Naming a favourite, when a whole list is on the table.",
+      "register": "neutral",
+      "mnemonic": "gern, lieber, am liebsten. One word, three rungs."
+    },
+    {
+      "id": "L2-M9-S06",
+      "display": "Der Zug ist besser als der Bus",
+      "cue": "The train is better than the bus",
+      "literal": "The train is better than the bus",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "besser",
+            "cue": "better",
+            "tag": "free",
+            "forms": [
+              "am besten"
+            ],
+            "note": "gut → besser → am besten, and it is irregular in exactly the way English's good → better → best is. The two languages inherited the same oddity."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "der Bus keeps its nominative article after als, because als compares two things in the SAME case. It is not a preposition and takes nothing of its own.",
+      "sound": "dair tsook ist BESS-er als dair boos. Zug begins with a ts.",
+      "variations": [
+        {
+          "display": "Der Zug ist am besten",
+          "cue": "The train is best",
+          "changed": "the top of the ladder"
+        },
+        {
+          "display": "Der Bus ist besser als nichts",
+          "cue": "The bus is better than nothing",
+          "changed": "a fixed phrase German shares with English"
+        },
+        {
+          "display": "Was ist besser, der Zug oder der Bus?",
+          "cue": "Which is better, the train or the bus?",
+          "changed": "asked as a choice"
+        }
+      ],
+      "mistake": {
+        "display": "Der Zug ist besser als den Bus",
+        "why": "als compares in the same case: Der Zug ist besser als der Bus."
+      },
+      "usage": "Choosing between two ways of getting there.",
+      "register": "neutral",
+      "mnemonic": "gut, besser, am besten — the same shape as English."
+    },
+    {
+      "id": "L2-M9-S07",
+      "display": "Ich habe mehr Zeit als du",
+      "cue": "I have more time than you",
+      "literal": "I have more time than you",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mehr",
+            "cue": "more (in quantity)",
+            "tag": "interference",
+            "forms": [
+              "am meisten"
+            ],
+            "note": "viel → mehr → am meisten. It is a QUANTITY word and never an offer: M5's Möchten Sie noch Kaffee? is the offer, and mehr there would be wrong."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "mehr compares and noch offers, which is the pair M5 set up in advance. Möchten Sie mehr Kaffee? is the mistake that module already named, and this is the module that explains why.",
+      "sound": "ikh HAH-buh mair tsite als doo. mehr rhymes with English \"air\".",
+      "variations": [
+        {
+          "display": "Ich habe mehr Zeit als Sie",
+          "cue": "I have more time than you",
+          "changed": "to somebody you address as Sie"
+        },
+        {
+          "display": "Du hast mehr Geld als ich",
+          "cue": "You have more money than me",
+          "changed": "the other way round"
+        },
+        {
+          "display": "Ich habe am meisten Zeit",
+          "cue": "I have the most time",
+          "changed": "the superlative, stated rather than asked"
+        }
+      ],
+      "mistake": {
+        "display": "Möchten Sie mehr Kaffee?",
+        "why": "An offer takes noch: Möchten Sie noch Kaffee?"
+      },
+      "usage": "Comparing quantities — time, money, work.",
+      "register": "neutral",
+      "mnemonic": "noch offers. mehr compares."
+    },
+    {
+      "id": "L2-M9-S08",
+      "display": "Welches Auto ist billiger?",
+      "cue": "Which car is cheaper?",
+      "literal": "Which car is cheaper?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "welches",
+            "cue": "which (neuter)",
+            "tag": "free",
+            "forms": [
+              "welcher",
+              "welche"
+            ],
+            "note": "It takes exactly the endings of der / die / das, so M3's grid answers it: welcher Zug, welche Stadt, welches Auto. No new system, only a new stem."
+          },
+          {
+            "display": "billiger",
+            "cue": "cheaper",
+            "tag": "free",
+            "forms": [
+              "kleiner"
+            ],
+            "note": "L1-M8's billig with a plain -er and no umlaut. Two-syllable adjectives almost never take one, which is half the guesswork gone."
+          },
+          {
+            "display": "Stadt",
+            "cue": "city · town",
+            "tag": "free",
+            "forms": [
+              "Städte"
+            ],
+            "note": "Feminine, and its plural takes the umlaut: die Städte. It covers a village and a capital alike — German has no separate word for a town."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "The comparative here stands AFTER ist and so takes no further ending. In front of the noun it would decline — das billigere Auto — and that shape is L3's.",
+      "sound": "VEL-khes OW-toh ist BILL-ig-er. The ch of welches is the front sound.",
+      "variations": [
+        {
+          "display": "Welcher Zug ist billiger?",
+          "cue": "Which train is cheaper?",
+          "changed": "a masculine noun, so welcher"
+        },
+        {
+          "display": "Welche Stadt ist größer?",
+          "cue": "Which city is bigger?",
+          "changed": "a feminine noun, so welche"
+        },
+        {
+          "display": "Welches Auto ist am billigsten?",
+          "cue": "Which car is the cheapest?",
+          "changed": "the superlative"
+        }
+      ],
+      "mistake": {
+        "display": "Welche Auto ist billiger?",
+        "why": "Auto is neuter: Welches Auto ist billiger?"
+      },
+      "usage": "Narrowing a choice down to two.",
+      "register": "neutral",
+      "mnemonic": "welcher takes der's endings. All of them."
+    },
+    {
+      "id": "L2-M9-S09",
+      "display": "Dieser Zug ist schneller",
+      "cue": "This train is faster",
+      "literal": "This train is faster",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dieser",
+            "cue": "this (masculine)",
+            "tag": "free",
+            "forms": [
+              "diese",
+              "dieses"
+            ],
+            "note": "The same endings again — dieser, diese, dieses — and German uses it far less than English uses \"this\". der Zug with a nod at it usually does the job."
+          },
+          {
+            "display": "schneller",
+            "cue": "faster",
+            "tag": "free",
+            "forms": [
+              "schnell"
+            ],
+            "note": "schnell plus -er, no umlaut. It is the word for a fast train, a quick answer and a short walk alike."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "dieser is heavier in German than \"this\" is in English. Pointing at something and saying der Zug is the ordinary way; dieser marks a real contrast with another one.",
+      "sound": "DEE-zer tsook ist SHNELL-er. The s of dieser is a z.",
+      "variations": [
+        {
+          "display": "Diese Stadt ist größer",
+          "cue": "This city is bigger",
+          "changed": "a feminine noun, so diese"
+        },
+        {
+          "display": "Dieses Auto ist schneller",
+          "cue": "This car is faster",
+          "changed": "a neuter noun, so dieses"
+        },
+        {
+          "display": "Dieser Zug ist am schnellsten",
+          "cue": "This train is the fastest",
+          "changed": "the superlative"
+        }
+      ],
+      "mistake": {
+        "display": "Diese Zug ist schneller",
+        "why": "Zug is masculine: Dieser Zug ist schneller."
+      },
+      "usage": "Choosing between two that are both in front of you.",
+      "register": "neutral",
+      "mnemonic": "dieser is a contrast. der is a nod."
+    },
+    {
+      "id": "L2-M9-S10",
+      "display": "Mein Bruder ist älter als ich",
+      "cue": "My brother is older than me",
+      "literal": "My brother is older than I",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "älter",
+            "cue": "older",
+            "tag": "delta",
+            "forms": [
+              "jünger",
+              "länger"
+            ],
+            "note": "alt, jung and lang all take the umlaut in the comparative, and the fold keeps it — so alt and älter are two keys, met separately, with nothing to warn you which words do this."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "als takes the NOMINATIVE, so it is als ich and never als mich. English's \"than me\" is what makes the German look wrong to a learner, and the German is what is right here.",
+      "sound": "mine BROO-der ist EL-ter als ikh. The ä of älter is the e of English \"bet\".",
+      "variations": [
+        {
+          "display": "Meine Schwester ist jünger als ich",
+          "cue": "My sister is younger than me",
+          "changed": "the other direction, and another umlaut"
+        },
+        {
+          "display": "Mein Bruder ist am ältesten",
+          "cue": "My brother is the oldest",
+          "changed": "the superlative"
+        },
+        {
+          "display": "Der Zug ist länger als der Bus",
+          "cue": "The train is longer than the bus",
+          "changed": "lang with its umlaut, on two things instead of two people"
+        }
+      ],
+      "mistake": {
+        "display": "Mein Bruder ist älter als mich",
+        "why": "als compares in the nominative: Mein Bruder ist älter als ich."
+      },
+      "usage": "Placing yourself in a family, which is asked more often than you would expect.",
+      "register": "neutral",
+      "mnemonic": "als ich, never als mich."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M9-C01",
+      "display": "Berlin ist größer als München",
+      "cue": "Berlin is bigger than Munich"
+    },
+    {
+      "id": "L2-M9-C02",
+      "display": "Mein Bruder ist so groß wie ich",
+      "cue": "My brother is as tall as me"
+    },
+    {
+      "id": "L2-M9-C03",
+      "display": "Berlin ist am größten",
+      "cue": "Berlin is the biggest"
+    },
+    {
+      "id": "L2-M9-C04",
+      "display": "Ich trinke lieber Tee",
+      "cue": "I prefer tea"
+    },
+    {
+      "id": "L2-M9-C05",
+      "display": "Am liebsten trinke ich Tee",
+      "cue": "Most of all I like tea"
+    },
+    {
+      "id": "L2-M9-C06",
+      "display": "Der Zug ist besser als der Bus",
+      "cue": "The train is better than the bus"
+    },
+    {
+      "id": "L2-M9-C07",
+      "display": "Ich habe mehr Zeit als du",
+      "cue": "I have more time than you"
+    },
+    {
+      "id": "L2-M9-C08",
+      "display": "Welches Auto ist billiger?",
+      "cue": "Which car is cheaper?"
+    },
+    {
+      "id": "L2-M9-C09",
+      "display": "Dieser Zug ist schneller",
+      "cue": "This train is faster"
+    },
+    {
+      "id": "L2-M9-C10",
+      "display": "Mein Bruder ist älter als ich",
+      "cue": "My brother is older than me"
+    },
+    {
+      "id": "L2-M9-C11",
+      "display": "Welcher Zug ist billiger?",
+      "cue": "Which train is cheaper?"
+    },
+    {
+      "id": "L2-M9-C12",
+      "display": "Der Zug ist am besten",
+      "cue": "The train is best"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

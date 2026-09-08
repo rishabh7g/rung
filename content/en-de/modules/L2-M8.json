@@ -1,0 +1,642 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": [
+    "L2-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Es funktioniert nicht",
+      "Ich habe + mein/meine + N + verloren",
+      "Können Sie mir helfen?",
+      "Mir ist schlecht / Ich habe Kopfschmerzen",
+      "Entschuldigung + , + es gibt ein Problem"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "helfen TAKES THE DATIVE, and it is not alone: helfen, danken, gefallen, gehören and passen all take a dative object where English takes a plain one. Ich helfe Ihnen, never Ich helfe Sie. No rule predicts membership, so it is learnt as a list — a short one — and this is M3's article grid earning its keep a second time."
+    },
+    {
+      "tag": "delta",
+      "text": "Mir ist schlecht has NO GRAMMATICAL SUBJECT AT ALL. L1-M9 already shipped one of these — Mir ist kalt — without naming the pattern; naming it here makes the whole family fall out at once: Mir ist warm, Mir ist schlecht, Mir tut der Kopf weh. German, Russian and Italian all put the person in an oblique case for how they feel, and a learner shown the connection back to L1-M9 learns one thing instead of four."
+    },
+    {
+      "tag": "interference",
+      "text": "kein AGAINST nicht, and L1 shipped both halves without ever stating the rule. kein negates a noun that would take ein or no article at all: Ich habe kein Geld, Das ist kein Problem. nicht negates everything else — a verb, an adjective, or a noun that already has a definite article: Es funktioniert nicht, Der Bus kommt nicht. It is one of the few German rules with a clean statement, and an English speaker who has only \"not\" will reach for nicht everywhere."
+    },
+    {
+      "tag": "free",
+      "text": "Complaining calmly is a register lesson, and German's answer is closer to Russian's than to English's: the softening is the OPENING — Entschuldigung, … — and the word leider, not a weakening of the claim itself. Es funktioniert nicht is a normal thing to say and is not rude. An English speaker's \"there seems to be a slight issue\" reads as evasive rather than polite, and neither language is being judged here."
+    },
+    {
+      "tag": "free",
+      "text": "Body parts take a DEFINITE article where English takes a possessive: Mir tut der Kopf weh, not mein Kopf. The dative already says whose it is, so the possessive would be saying it twice. Ich habe Kopfschmerzen is the other way to say the same thing and is if anything commoner."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "Es funktioniert nicht",
+      "cue": "It doesn't work",
+      "literal": "It functions not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "funktionieren",
+            "cue": "to work (of a thing)",
+            "tag": "free",
+            "forms": [
+              "funktioniert"
+            ],
+            "note": "Only of machines and arrangements. A person who works is arbeiten, and using funktionieren of somebody is as strange in German as it would be in English."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "This is not rude. German states the fault plainly and puts any softening at the front of the sentence, so a learner hedging it into \"there seems to be a small problem\" sounds evasive rather than polite.",
+      "sound": "es foonk-tsyo-NEERT nikht. The ti of funktioniert is a ts.",
+      "variations": [
+        {
+          "display": "Es funktioniert heute nicht",
+          "cue": "It isn't working today",
+          "changed": "about today rather than in general"
+        },
+        {
+          "display": "Die Uhr funktioniert nicht",
+          "cue": "The clock doesn't work",
+          "changed": "naming the thing"
+        },
+        {
+          "display": "Entschuldigung, es funktioniert nicht",
+          "cue": "Sorry, it doesn't work",
+          "changed": "with the softening where German puts it — at the front"
+        }
+      ],
+      "mistake": {
+        "display": "Es funktioniert kein",
+        "why": "kein negates a noun, nicht a verb: Es funktioniert nicht."
+      },
+      "usage": "Reporting a fault — at a counter, a machine, a rented flat.",
+      "register": "neutral",
+      "mnemonic": "Machines funktionieren. People arbeiten."
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "Können Sie mir helfen?",
+      "cue": "Could you help me?",
+      "literal": "Can you to-me help?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Hilfe",
+            "cue": "help (the noun)",
+            "tag": "free",
+            "forms": [],
+            "note": "Hilfe! on its own is the shout for emergencies and nothing less. For ordinary trouble the sentence is the verb one, and the noun stays out of it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "helfen takes MIR and never mich. It heads a short closed list — helfen, danken, gefallen, gehören, passen — where German uses the dative and English a plain object, and no rule tells you which verbs are on it.",
+      "sound": "KUE-nen zee meer HELF-en. The ö of können is said with rounded lips.",
+      "variations": [
+        {
+          "display": "Können Sie mir bitte helfen?",
+          "cue": "Could you please help me?",
+          "changed": "with bitte inside the bracket"
+        },
+        {
+          "display": "Kannst du mir helfen?",
+          "cue": "Can you help me?",
+          "changed": "M1's du cell, to a friend"
+        },
+        {
+          "display": "Hilfe!",
+          "cue": "Help!",
+          "changed": "the emergency shout, and only that"
+        }
+      ],
+      "mistake": {
+        "display": "Können Sie mich helfen?",
+        "why": "helfen takes the dative: Können Sie mir helfen?"
+      },
+      "usage": "The sentence to have ready before you need it.",
+      "register": "formal",
+      "mnemonic": "You help TO somebody in German."
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "Ich habe meinen Schlüssel verloren",
+      "cue": "I've lost my key",
+      "literal": "I have my key lost",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meinen",
+            "cue": "my (masculine accusative)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The possessive takes the SAME endings as ein, so M3's grid decides it: der Schlüssel is the object here, so mein grows the accusative -en."
+          },
+          {
+            "display": "Schlüssel",
+            "cue": "key",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine, and its plural is also Schlüssel. The ü is said with the lips of an oo and the tongue of an ee."
+          },
+          {
+            "display": "verlieren",
+            "cue": "to lose",
+            "tag": "free",
+            "forms": [
+              "verloren"
+            ],
+            "note": "Its participle verloren goes to the very end, which is M1's bracket doing the past. ver- is never stressed, so nothing splits off it."
+          },
+          {
+            "display": "vergessen",
+            "cue": "to forget · forgotten",
+            "tag": "free",
+            "forms": [],
+            "note": "Spelled the same as an infinitive and as a participle, because ver- verbs take no ge-. Losing a key and forgetting one are different sentences with the same shape."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The participle waits at the END, exactly as an infinitive does behind a modal. Ich habe verloren meinen Schlüssel is the English order and is not German.",
+      "sound": "ikh HAH-buh MY-nen SHLUE-sel fer-LOR-en. The sch is one sound.",
+      "variations": [
+        {
+          "display": "Ich habe meine Uhr verloren",
+          "cue": "I've lost my watch",
+          "changed": "a feminine thing, so meine"
+        },
+        {
+          "display": "Ich habe meinen Schlüssel vergessen",
+          "cue": "I've forgotten my key",
+          "changed": "left behind rather than lost"
+        },
+        {
+          "display": "Haben Sie meinen Schlüssel?",
+          "cue": "Do you have my key?",
+          "changed": "asked at a desk"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe verloren meinen Schlüssel",
+        "why": "The participle goes to the end: Ich habe meinen Schlüssel verloren."
+      },
+      "usage": "At a lost-property desk, a hotel, or a neighbour's door.",
+      "register": "neutral",
+      "mnemonic": "The participle waits at the end, like an infinitive."
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "Mir ist schlecht",
+      "cue": "I feel sick",
+      "literal": "To-me is bad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "schlecht",
+            "cue": "bad · unwell",
+            "tag": "delta",
+            "forms": [],
+            "note": "Mir ist schlecht is nausea and nothing else. Es ist schlecht, with a subject, is a judgement about a thing — one adjective, two sentences that share no meaning at all."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "There is no subject here and there cannot be one. Ich bin schlecht means you are a bad person, and it is one of the most costly single-word slips an English speaker can make in German.",
+      "sound": "meer ist shlekht. schlecht ends with the front ch, said like a hissed h.",
+      "variations": [
+        {
+          "display": "Mir ist kalt",
+          "cue": "I'm cold",
+          "changed": "L1-M9's sentence, now with the pattern named"
+        },
+        {
+          "display": "Mir ist warm",
+          "cue": "I'm warm",
+          "changed": "the other end of the same family"
+        },
+        {
+          "display": "Ist Ihnen schlecht?",
+          "cue": "Do you feel sick?",
+          "changed": "asked of somebody else, still with no subject"
+        }
+      ],
+      "mistake": {
+        "display": "Ich bin schlecht",
+        "why": "How you feel takes the dative: Mir ist schlecht."
+      },
+      "usage": "On a bus, in a waiting room — and it is understood immediately.",
+      "register": "neutral",
+      "mnemonic": "Ich bin schlecht is a confession. Mir ist schlecht is nausea."
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "Ich habe Kopfschmerzen",
+      "cue": "I have a headache",
+      "literal": "I have head-pains",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Kopfschmerzen",
+            "cue": "headache",
+            "tag": "free",
+            "forms": [
+              "Kopf",
+              "Bauchschmerzen"
+            ],
+            "note": "Kopf plus Schmerzen, pains — and it is always plural, because German counts the aches. Bauchschmerzen is the same shape on the stomach."
+          },
+          {
+            "display": "weh",
+            "cue": "sore (in wehtun)",
+            "tag": "free",
+            "forms": [],
+            "note": "Mir tut der Kopf weh is the other way to say it, and the body part takes DER and not mein — the dative has already said whose head it is."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The body part takes a definite article: Mir tut der Kopf weh, never mein Kopf. The dative says whose it is, and the possessive would be saying it a second time.",
+      "sound": "ikh HAH-buh KOPF-shmer-tsen. The z of Schmerzen is a ts.",
+      "variations": [
+        {
+          "display": "Mir tut der Kopf weh",
+          "cue": "My head hurts",
+          "changed": "the dative version, with der and not mein"
+        },
+        {
+          "display": "Ich habe Bauchschmerzen",
+          "cue": "I have a stomach ache",
+          "changed": "a different part of the same word"
+        },
+        {
+          "display": "Haben Sie Kopfschmerzen?",
+          "cue": "Do you have a headache?",
+          "changed": "asked of somebody else"
+        }
+      ],
+      "mistake": {
+        "display": "Mir tut mein Kopf weh",
+        "why": "The body part takes the article: Mir tut der Kopf weh."
+      },
+      "usage": "At a chemist, or explaining why you are going home.",
+      "register": "neutral",
+      "mnemonic": "The dative owns the head. der, not mein."
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "Entschuldigung, es gibt ein Problem",
+      "cue": "Excuse me, there's a problem",
+      "literal": "Excuse-me, it gives a problem",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Problem",
+            "cue": "problem",
+            "tag": "free",
+            "forms": [
+              "Probleme"
+            ],
+            "note": "Neuter — ein Problem — and Kein Problem is the everyday \"no worries\", which is the same word doing far friendlier work."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The politeness is the OPENING and not a weakening of the claim. Entschuldigung in front makes the whole complaint courteous, so the problem itself can be stated flatly.",
+      "sound": "ent-SHOOL-di-goong, es gipt ine pro-BLAYM. Problem takes its stress on the BLAYM.",
+      "variations": [
+        {
+          "display": "Es gibt ein Problem mit dem Bus",
+          "cue": "There's a problem with the bus",
+          "changed": "naming what, with M4's mit"
+        },
+        {
+          "display": "Kein Problem",
+          "cue": "No problem",
+          "changed": "the friendly answer, with kein on a noun"
+        },
+        {
+          "display": "Entschuldigung, es gibt hier ein Problem",
+          "cue": "Excuse me, there's a problem here",
+          "changed": "pointing at the place"
+        }
+      ],
+      "mistake": {
+        "display": "Entschuldigung, es ist ein Problem",
+        "why": "Existence is es gibt: Entschuldigung, es gibt ein Problem."
+      },
+      "usage": "Opening a complaint at a desk, calmly and without apology for the fact itself.",
+      "register": "neutral",
+      "mnemonic": "Say sorry first. Then say it plainly."
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "Ich habe kein Geld",
+      "cue": "I have no money",
+      "literal": "I have no money",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Geld",
+            "cue": "money",
+            "tag": "free",
+            "forms": [],
+            "note": "Neuter and never plural — kein Geld, not keine Gelder. It is the clearest case of the kein rule, because the noun would take no article at all."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "kein and not nicht, because Geld here would carry no article of its own. Ich habe nicht Geld is the sentence an English speaker builds from \"not\", and it is wrong every time.",
+      "sound": "ikh HAH-buh kine gelt. The d of Geld is said as a t.",
+      "variations": [
+        {
+          "display": "Ich habe keine Zeit",
+          "cue": "I have no time",
+          "changed": "a feminine noun, so keine"
+        },
+        {
+          "display": "Ich habe heute kein Geld",
+          "cue": "I have no money today",
+          "changed": "about today rather than in general"
+        },
+        {
+          "display": "Das Geld ist nicht da",
+          "cue": "The money isn't there",
+          "changed": "a definite noun, so nicht comes back"
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe nicht Geld",
+        "why": "A bare noun is negated with kein: Ich habe kein Geld."
+      },
+      "usage": "At a till that takes cash only — and it is said without embarrassment.",
+      "register": "neutral",
+      "mnemonic": "kein eats a noun. nicht eats everything else."
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "Der Bus kommt leider nicht",
+      "cue": "The bus isn't coming, unfortunately",
+      "literal": "The bus comes unfortunately not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "leider",
+            "cue": "unfortunately",
+            "tag": "free",
+            "forms": [],
+            "note": "The one softener German reaches for, and it sits inside the sentence rather than in front of it. Leider nicht on its own is a complete and gentle no."
+          },
+          {
+            "display": "kommt",
+            "cue": "comes · is coming",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's kommen in its third person. Of a bus or a train it means arriving at all, not arriving here — Der Bus kommt nicht is the announcement you will hear."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Der Bus is definite, so it takes NICHT — and kommen of a bus means arriving at all rather than arriving here. Swap in a bare noun and the negation changes with it: Es gibt keinen Bus.",
+      "sound": "dair boos komt LY-der nikht. leider rhymes with English \"wider\".",
+      "variations": [
+        {
+          "display": "Der Zug kommt leider nicht",
+          "cue": "The train isn't coming, unfortunately",
+          "changed": "M4's Zug instead"
+        },
+        {
+          "display": "Leider nicht",
+          "cue": "Unfortunately not",
+          "changed": "on its own, as a whole answer"
+        },
+        {
+          "display": "Der Bus kommt heute nicht",
+          "cue": "The bus isn't coming today",
+          "changed": "a plain fact, with no softening"
+        }
+      ],
+      "mistake": {
+        "display": "Der Bus kommt kein",
+        "why": "A definite noun's verb is negated with nicht: Der Bus kommt leider nicht."
+      },
+      "usage": "Heard on a platform, and said when passing the news on.",
+      "register": "neutral",
+      "mnemonic": "leider is the whole apology German needs."
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "Die Heizung ist kaputt",
+      "cue": "The heating is broken",
+      "literal": "The heating is broken",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kaputt",
+            "cue": "broken",
+            "tag": "free",
+            "forms": [],
+            "note": "Blunt, everyday and not at all rude — it is what a landlord expects to hear. Its stress is on the second syllable, which is unusual for so short a word."
+          },
+          {
+            "display": "Heizung",
+            "cue": "heating",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine, from heiß. Nouns in -ung are feminine without exception, which is the one gender rule in German worth memorising."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "kaputt sounds informal to an English ear and is not. Saying Die Heizung funktioniert nicht is equally correct and no more polite — German has no softer word here, because none is wanted.",
+      "sound": "dee HY-tsoong ist ka-POOT. The stress falls on the POOT.",
+      "variations": [
+        {
+          "display": "Die Heizung funktioniert nicht",
+          "cue": "The heating doesn't work",
+          "changed": "the verb version, no politer and no ruder"
+        },
+        {
+          "display": "Der Schlüssel ist kaputt",
+          "cue": "The key is broken",
+          "changed": "a masculine thing"
+        },
+        {
+          "display": "Entschuldigung, die Heizung ist kaputt",
+          "cue": "Excuse me, the heating is broken",
+          "changed": "with the softening at the front"
+        }
+      ],
+      "mistake": {
+        "display": "Die Heizung ist kaputte",
+        "why": "A predicative adjective takes no ending: Die Heizung ist kaputt."
+      },
+      "usage": "To a landlord, a hotel desk, a caretaker.",
+      "register": "neutral",
+      "mnemonic": "Nouns in -ung are feminine. All of them."
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "Ich brauche einen Arzt",
+      "cue": "I need a doctor",
+      "literal": "I need a doctor",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "brauchen",
+            "cue": "to need",
+            "tag": "free",
+            "forms": [
+              "brauche"
+            ],
+            "note": "It takes M3's accusative — einen Arzt — and it is a plain verb, not a modal, so a following verb would need zu. At this level it takes nouns only."
+          },
+          {
+            "display": "Arzt",
+            "cue": "doctor",
+            "tag": "free",
+            "forms": [
+              "Ärztin"
+            ],
+            "note": "Masculine, and the feminine is Ärztin with the umlaut. Both are one index key apart, because the fold keeps umlauts."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "brauchen is not a modal, whatever it looks like. Ich brauche gehen is not German; a verb after it needs zu, and that construction belongs to a later level.",
+      "sound": "ikh BROW-khuh EYE-nen artst. brauche rhymes with English \"cow\" in its first part.",
+      "variations": [
+        {
+          "display": "Ich brauche Hilfe",
+          "cue": "I need help",
+          "changed": "the noun, with no article at all"
+        },
+        {
+          "display": "Ich brauche eine Ärztin",
+          "cue": "I need a doctor",
+          "changed": "a woman, so eine and the umlaut"
+        },
+        {
+          "display": "Brauchen Sie einen Arzt?",
+          "cue": "Do you need a doctor?",
+          "changed": "asked of somebody else"
+        }
+      ],
+      "mistake": {
+        "display": "Ich brauche ein Arzt",
+        "why": "brauchen takes the accusative: Ich brauche einen Arzt."
+      },
+      "usage": "The sentence worth knowing before you need it.",
+      "register": "neutral",
+      "mnemonic": "brauchen is not a modal. It takes things, not verbs."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M8-C01",
+      "display": "Es funktioniert nicht",
+      "cue": "It doesn't work"
+    },
+    {
+      "id": "L2-M8-C02",
+      "display": "Können Sie mir helfen?",
+      "cue": "Could you help me?"
+    },
+    {
+      "id": "L2-M8-C03",
+      "display": "Ich habe meinen Schlüssel verloren",
+      "cue": "I've lost my key"
+    },
+    {
+      "id": "L2-M8-C04",
+      "display": "Mir ist schlecht",
+      "cue": "I feel sick"
+    },
+    {
+      "id": "L2-M8-C05",
+      "display": "Ich habe Kopfschmerzen",
+      "cue": "I have a headache"
+    },
+    {
+      "id": "L2-M8-C06",
+      "display": "Mir tut der Kopf weh",
+      "cue": "My head hurts"
+    },
+    {
+      "id": "L2-M8-C07",
+      "display": "Entschuldigung, es gibt ein Problem",
+      "cue": "Excuse me, there's a problem"
+    },
+    {
+      "id": "L2-M8-C08",
+      "display": "Ich habe kein Geld",
+      "cue": "I have no money"
+    },
+    {
+      "id": "L2-M8-C09",
+      "display": "Der Bus kommt leider nicht",
+      "cue": "The bus isn't coming, unfortunately"
+    },
+    {
+      "id": "L2-M8-C10",
+      "display": "Die Heizung ist kaputt",
+      "cue": "The heating is broken"
+    },
+    {
+      "id": "L2-M8-C11",
+      "display": "Ich brauche einen Arzt",
+      "cue": "I need a doctor"
+    },
+    {
+      "id": "L2-M8-C12",
+      "display": "Kein Problem",
+      "cue": "No problem"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
