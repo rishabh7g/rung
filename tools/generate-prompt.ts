@@ -117,6 +117,30 @@ function scriptSection(course: CourseRow): string {
   ].join('\n');
 }
 
+/**
+ * The FOLD of every index file the prior module's `cumulativeThrough` names (#424).
+ *
+ * Since delta indexes landed, a file's `surfaces` carries only what THAT module is the first to
+ * teach; `surfaceCount` and `maxSpan` stayed cumulative. Reading `surfaces` alone therefore hands
+ * the prompt one module's delta while the header promises the whole ladder — for en-es L3-M1 that
+ * was fifteen words offered where the learner has met 477, and an author who trusted it would
+ * write a module out of L2-M10's leftovers. So the prompt folds, exactly as the runtime resolver
+ * does, and `surfaceCount` is the check that the fold is complete.
+ */
+export function foldIndex(
+  last: WordIndexFile,
+  load: (moduleId: string) => WordIndexFile,
+): WordIndexFile {
+  const surfaces: WordIndexFile['surfaces'] = {};
+  for (const moduleId of last.cumulativeThrough) {
+    const part = moduleId === last.moduleId ? last : load(moduleId);
+    for (const [surface, entry] of Object.entries(part.surfaces)) {
+      surfaces[surface] ??= entry;
+    }
+  }
+  return { ...last, surfaces };
+}
+
 function vocabularySection(
   course: CourseRow,
   brief: ModuleBrief,
@@ -326,7 +350,13 @@ export function generatePrompt(options: GenerateOptions): PromptReport {
   if (prior !== null) {
     const indexFile = path.join(builtRoot, courseId, 'index', `${prior}.json`);
     try {
-      index = JSON.parse(readFileSync(indexFile, 'utf8')) as WordIndexFile;
+      index = foldIndex(
+        JSON.parse(readFileSync(indexFile, 'utf8')) as WordIndexFile,
+        (moduleId_) =>
+          JSON.parse(
+            readFileSync(path.join(builtRoot, courseId, 'index', `${moduleId_}.json`), 'utf8'),
+          ) as WordIndexFile,
+      );
     } catch {
       return fail([
         `missing cumulative index ${path.relative(REPO_ROOT, indexFile)} — the prompt needs the`,
