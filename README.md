@@ -56,10 +56,11 @@ scripts/verify.sh          # everything
 scripts/verify.sh --fast   # everything except BUILD and BUDGET
 ```
 
-A green run says exactly one thing, and exits 0:
+A green run says exactly one thing, and exits 0 — the TEST segment carrying that run's own
+passed/total count, so `n/n` below is the shape rather than a sample:
 
 ```
-TYPES ok | LINT ok | TEST 408/408 ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok
+TYPES ok | LINT ok | TEST n/n ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok
 ```
 
 | Step | Exit | Command |

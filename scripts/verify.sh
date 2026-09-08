@@ -3,7 +3,11 @@
 #
 # One line when everything passes, one failure block when it doesn't:
 #
-#   TYPES ok | LINT ok | TEST 120/120 ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok
+#   TYPES ok | LINT ok | TEST n/n ok | CONTENT ok | FONTS ok | BUILD ok | BUDGET ok
+#
+# `n/n` is the shape, not a sample: the TEST segment carries whatever count the
+# run itself produced, so nothing here quotes a passing total that the next new
+# test would falsify.
 #
 # Steps run in order and the FIRST failure stops the run, so a red run names
 # exactly one thing. Every step's stdout+stderr goes to .verify/<step>.log
