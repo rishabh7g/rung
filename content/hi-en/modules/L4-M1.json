@@ -1,0 +1,689 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "imperative",
+      "present_simple",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "First + <imperative> + . + Then + <imperative>",
+      "<imperative> + <object> + to + V   (purpose)",
+      "<imperative> + so that + <clause>",
+      "Make sure + (that) + <clause>",
+      "Do not + V + — it will + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "हुक्म देते समय अंग्रेज़ी कर्ता गिरा देती है — यही अकेली जगह है जहाँ वह ऐसा करती है. क्रिया का सादा रूप ही पूरा वाक्य है: Open the door. Add the salt. L1-M10 ने सिखाया था कि कर्ता कभी नहीं गिरता; यह उसी नियम का इकलौता अपवाद है, और यह हिंदी के खोलो · डालो जैसा ही सीधा है."
+    },
+    {
+      "tag": "delta",
+      "text": "किसी क़दम का मक़सद बताने के लिए अंग्रेज़ी to + सादी क्रिया लगाती है — Boil the water to make the tea. यह वही to है जो L1-M3 में want to के साथ आया था; यहाँ उसकी नई नौकरी है और उस पंक्ति पर हाथ नहीं लगता. के लिए को for + -ing मत बनाइए: for making the tea ग़लत है. for + -ing सिर्फ़ किसी चीज़ का काम बताता है — a machine for washing clothes — किसी आदमी का इरादा नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "जब मक़सद का अपना कर्ता हो तो to नहीं चलता; तब so that + पूरा उपवाक्य आता है: Close the door so that the child does not wake up. so L1-M9 का नतीजा वाला शब्द है और that भी L1-M9 का, पर so that एक जुड़ा हुआ टुकड़ा है और उसका काम मक़सद बताना है. in order to वही सादा to है, बस भारी और लिखित रूप में, और उसके बाद सादी क्रिया ही आती है."
+    },
+    {
+      "tag": "delta",
+      "text": "Make sure (that) + पूरा वाक्य एक जाँच है, क़दम नहीं — Make sure that you sign the form; बोलचाल में that गिर जाता है. मना करने के लिए Do not + सादी क्रिया आती है: Do not stop here. दोनों में कर्ता वैसे ही ग़ायब रहता है जैसे सीधे हुक्म में."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी हुक्म को क्रिया में ही तौलती है — कर · करो · कीजिए, तू · तुम · आप के साथ. अंग्रेज़ी के पास एक ही सादा रूप है और अदब वह आस-पास के शब्दों से ख़रीदती है: Press it → Please press it → Could you press it? यह L2-M1 का नियम है, यहाँ हुक्मों पर दोबारा चल रहा है. इसलिए Open the door अपने आप रूखा नहीं है; उसे नरम please और could you बनाते हैं."
+    },
+    {
+      "tag": "free",
+      "text": "क्रम के शब्द पहले से आपके हैं — first, then, next, after that, finally — और क़दमों का क्रम दोनों भाषाओं में एक जैसा चलता है: पहले … फिर … उसके बाद … आख़िर में. इनमें कुछ नया नहीं जुड़ता; नया सिर्फ़ यह है कि अब ये किसी और को काम बताने में लगते हैं."
+    },
+    {
+      "tag": "free",
+      "text": "turn L2-M4 का दिशा वाला शब्द है — Turn left. उसी शब्द का दूसरा काम है किसी चीज़ को घुमाना: Turn the key. पंक्ति वहीं L2-M4 पर रहती है और आपका टैप वहीं जाकर उतरेगा; यह पाठ सिर्फ़ नया इस्तेमाल दिखाता है."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "First cut the vegetables. Then add the salt.",
+      "cue": "पहले सब्ज़ियाँ काटिए. फिर नमक डालिए.",
+      "literal": "पहले काटो सब्ज़ियाँ. फिर डालो नमक.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cut",
+            "cue": "काटना",
+            "tag": "free",
+            "forms": [
+              "cut",
+              "cuts"
+            ],
+            "note": "काटना. हुक्म में सादा रूप ही चलता है — Cut the vegetables. इसका बीता हुआ रूप भी cut ही है, बदलता नहीं."
+          },
+          {
+            "display": "add",
+            "cue": "डालना",
+            "tag": "free",
+            "forms": [
+              "add",
+              "adds",
+              "added"
+            ],
+            "note": "डालना या जोड़ना. खाने में कुछ डालने के लिए यही शब्द है — Add the salt. put in कहने की ज़रूरत नहीं."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "यहाँ You cut the vegetables मत लिखिए. हुक्म में कर्ता ग़ायब रहता है — L1-M10 का कर्ता कभी नहीं गिरता वाला नियम यहीं एक बार टूटता है.",
+      "sound": "cut का u छोटा और कटा हुआ है — कट, काट नहीं. vegetables में बीच का e गिर जाता है: वेज्टबल्ज़.",
+      "variations": [
+        {
+          "display": "First cut the vegetables. Then add the water.",
+          "cue": "पहले सब्ज़ियाँ काटिए. फिर पानी डालिए.",
+          "changed": "नमक की जगह पानी"
+        },
+        {
+          "display": "Please cut the vegetables.",
+          "cue": "सब्ज़ियाँ काट दीजिए.",
+          "changed": "please से वही हुक्म नरम हो गया"
+        },
+        {
+          "display": "Do not cut the bread now.",
+          "cue": "अभी ब्रेड मत काटिए.",
+          "changed": "मना करने वाला रूप — Do not + सादी क्रिया"
+        }
+      ],
+      "mistake": {
+        "display": "You cut the vegetables first",
+        "why": "हुक्म में You नहीं आता. First cut the vegetables — क्रिया से ही वाक्य शुरू होता है."
+      },
+      "usage": "रसोई में किसी को तरीक़ा बताना — घर पर या काम पर.",
+      "register": "neutral",
+      "mnemonic": "हुक्म में क्रिया सबसे आगे, कर्ता ग़ायब."
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "Boil the water to make the tea.",
+      "cue": "चाय बनाने के लिए पानी उबालिए.",
+      "literal": "उबालो पानी बनाने-को चाय.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "boil",
+            "cue": "उबालना",
+            "tag": "free",
+            "forms": [
+              "boil",
+              "boils",
+              "boiled"
+            ],
+            "note": "उबालना, और उबलना भी — Boil the water. पानी ख़ुद उबल रहा हो तो The water boils."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Boil the water for making the tea ग़लत है. मक़सद के लिए to + क्रिया आती है, for + -ing नहीं.",
+      "sound": "boil में oi एक ही आवाज़ है — बॉइल, बो-इल नहीं.",
+      "variations": [
+        {
+          "display": "Boil the water to make the rice.",
+          "cue": "चावल बनाने के लिए पानी उबालिए.",
+          "changed": "चाय की जगह चावल"
+        },
+        {
+          "display": "Boil the water in order to make the tea.",
+          "cue": "चाय बनाने के लिए पानी उबालिए.",
+          "changed": "to की जगह उसका भारी रूप in order to"
+        },
+        {
+          "display": "First boil the water. Then make the tea.",
+          "cue": "पहले पानी उबालिए. फिर चाय बनाइए.",
+          "changed": "मक़सद की जगह दो अलग क़दम"
+        }
+      ],
+      "mistake": {
+        "display": "Boil the water for making the tea",
+        "why": "मक़सद बताने के लिए to + क्रिया चलती है: to make the tea. for + -ing किसी चीज़ का काम बताता है, किसी आदमी का इरादा नहीं."
+      },
+      "usage": "चाय बनाने का तरीक़ा बताना — किसी नए साथी को.",
+      "register": "neutral",
+      "mnemonic": "मक़सद पूछो तो जवाब में to."
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "Mix the rice and the vegetables properly.",
+      "cue": "चावल और सब्ज़ियाँ ठीक से मिलाइए.",
+      "literal": "मिलाओ चावल और सब्ज़ियाँ ठीक-से.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mix",
+            "cue": "मिलाना",
+            "tag": "free",
+            "forms": [
+              "mix",
+              "mixes",
+              "mixed"
+            ],
+            "note": "मिलाना — दो चीज़ों को एक कर देना. Mix the rice and the vegetables. बीता हुआ रूप mixed."
+          },
+          {
+            "display": "properly",
+            "cue": "ठीक से",
+            "tag": "free",
+            "forms": [],
+            "note": "ठीक से, जैसा होना चाहिए वैसा. यह कर्म के बाद बैठता है — Mix it properly. अच्छे से का सबसे सीधा अनुवाद यही है."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "properly कर्म के बाद आता है, क्रिया और कर्म के बीच नहीं. Mix properly the rice ग़लत है — पहले क्या, फिर कैसे.",
+      "sound": "properly में दो r लिखे हैं पर एक ही सुनाई देता है — प्रॉपर्ली.",
+      "variations": [
+        {
+          "display": "Mix the rice and the vegetables slowly.",
+          "cue": "चावल और सब्ज़ियाँ धीरे-धीरे मिलाइए.",
+          "changed": "ठीक से की जगह धीरे-धीरे"
+        },
+        {
+          "display": "Mix it properly.",
+          "cue": "इसे ठीक से मिलाइए.",
+          "changed": "पूरे कर्म की जगह it"
+        },
+        {
+          "display": "Do not mix the sugar and the salt.",
+          "cue": "चीनी और नमक मत मिलाइए.",
+          "changed": "मना करने वाला रूप"
+        }
+      ],
+      "mistake": {
+        "display": "Mix properly the rice",
+        "why": "तरीक़ा बताने वाला शब्द कर्म के बाद आता है: Mix the rice properly."
+      },
+      "usage": "खाना बनाते हुए किसी को क़दम समझाना.",
+      "register": "neutral",
+      "mnemonic": "पहले क्या, फिर कैसे."
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "Pour the water slowly so that the cup is not too full.",
+      "cue": "पानी धीरे-धीरे उँडेलिए ताकि प्याला ज़्यादा न भर जाए.",
+      "literal": "उँडेलो पानी धीरे-धीरे ताकि प्याला है नहीं बहुत भरा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pour",
+            "cue": "उँडेलना",
+            "tag": "free",
+            "forms": [
+              "pour",
+              "pours",
+              "poured"
+            ],
+            "note": "उँडेलना — किसी बहने वाली चीज़ को डालना. Pour the water. सूखी चीज़ के लिए add चलता है, pour नहीं."
+          },
+          {
+            "display": "slowly",
+            "cue": "धीरे-धीरे",
+            "tag": "free",
+            "forms": [],
+            "note": "धीरे-धीरे. slow के आगे -ly जुड़कर तरीक़ा बताने वाला शब्द बनता है और वह कर्म के बाद आता है — Pour it slowly."
+          },
+          {
+            "display": "so that",
+            "cue": "ताकि",
+            "tag": "delta",
+            "forms": [],
+            "note": "ताकि. इसके बाद पूरा वाक्य आता है, सादी क्रिया नहीं — so that the cup is not too full."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "so that के बाद पूरा वाक्य चाहिए. so that not too full अधूरा है — कर्ता और क्रिया दोनों लिखिए: the cup is not too full.",
+      "sound": "pour और poor की आवाज़ लगभग एक है — पोर. slowly में w चुप है: स्लोली.",
+      "variations": [
+        {
+          "display": "Pour the water slowly so that it is not too full.",
+          "cue": "पानी धीरे-धीरे उँडेलिए ताकि वह ज़्यादा न भरे.",
+          "changed": "प्याले की जगह it"
+        },
+        {
+          "display": "Pour the water carefully.",
+          "cue": "पानी सँभालकर उँडेलिए.",
+          "changed": "मक़सद हटा, सिर्फ़ तरीक़ा बचा"
+        },
+        {
+          "display": "Pour the tea slowly so that the cup is not too full.",
+          "cue": "चाय धीरे-धीरे उँडेलिए ताकि प्याला ज़्यादा न भरे.",
+          "changed": "पानी की जगह चाय"
+        }
+      ],
+      "mistake": {
+        "display": "Pour the water slowly for the cup is not too full",
+        "why": "जिस मक़सद का अपना कर्ता हो उसके लिए so that आता है, for नहीं: so that the cup is not too full."
+      },
+      "usage": "किसी को सावधानी वाला क़दम बताना.",
+      "register": "neutral",
+      "mnemonic": "मक़सद का अपना कर्ता हो तो so that."
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "Close the door carefully so that the child does not wake up.",
+      "cue": "दरवाज़ा सँभालकर बंद कीजिए ताकि बच्चा जाग न जाए.",
+      "literal": "बंद-करो दरवाज़ा सँभालकर ताकि बच्चा करता नहीं जागना.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "close",
+            "cue": "बंद करना",
+            "tag": "free",
+            "forms": [
+              "close",
+              "closes",
+              "closed"
+            ],
+            "note": "बंद करना — open का उलटा. Close the door. दुकान के बंद होने में भी यही शब्द चलता है: The shop closes at nine."
+          },
+          {
+            "display": "carefully",
+            "cue": "सँभालकर",
+            "tag": "free",
+            "forms": [],
+            "note": "सँभालकर, ध्यान से. यह कर्म के बाद आता है — Close it carefully. careful हालत बताता है, carefully तरीक़ा."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "यहाँ to नहीं चल सकता. जागना बच्चे को है और बंद आप कर रहे हैं — मक़सद का कर्ता बदलते ही so that ज़रूरी हो जाता है.",
+      "sound": "क्रिया वाले close में s की आवाज़ ज़ है — क्लोज़; नज़दीक वाले close में वही s स बोला जाता है.",
+      "variations": [
+        {
+          "display": "Close the window carefully.",
+          "cue": "खिड़की सँभालकर बंद कीजिए.",
+          "changed": "दरवाज़े की जगह खिड़की, मक़सद हटा"
+        },
+        {
+          "display": "Close the door so that the child does not wake up.",
+          "cue": "दरवाज़ा बंद कीजिए ताकि बच्चा जाग न जाए.",
+          "changed": "carefully हटा दिया"
+        },
+        {
+          "display": "Close the door slowly so that the child does not wake up.",
+          "cue": "दरवाज़ा धीरे-धीरे बंद कीजिए ताकि बच्चा जाग न जाए.",
+          "changed": "carefully की जगह slowly"
+        }
+      ],
+      "mistake": {
+        "display": "Close the door carefully to the child does not wake up",
+        "why": "जब मक़सद का कर्ता अलग हो तो to नहीं चलता: so that the child does not wake up."
+      },
+      "usage": "घर में किसी को धीरे से काम करने को कहना.",
+      "register": "neutral",
+      "mnemonic": "कर्ता बदले तो so that."
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "Make sure that you sign the form.",
+      "cue": "पक्का कर लीजिए कि आप फ़ॉर्म पर दस्तख़त करें.",
+      "literal": "पक्का-करो कि तुम दस्तख़त-करो फ़ॉर्म.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "make sure",
+            "cue": "पक्का कर लेना",
+            "tag": "delta",
+            "forms": [],
+            "note": "पक्का कर लेना. इसके बाद that + पूरा वाक्य आता है, और बोलचाल में that गिर भी जाता है — Make sure you sign it."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Make sure to sign और Make sure that you sign दोनों चलते हैं, पर Make sure of sign नहीं. of के बाद क्रिया नहीं आती.",
+      "sound": "sure में s की आवाज़ श है — शुअ. make sure बोलने में एक ही टुकड़े जैसा लगता है: मेक्शुअ.",
+      "variations": [
+        {
+          "display": "Make sure you sign the form.",
+          "cue": "पक्का कर लीजिए कि आप फ़ॉर्म पर दस्तख़त करें.",
+          "changed": "that गिरा दिया — बोलचाल में यही आम है"
+        },
+        {
+          "display": "Make sure that you sign the second form.",
+          "cue": "पक्का कर लीजिए कि आप दूसरे फ़ॉर्म पर दस्तख़त करें.",
+          "changed": "पहले की जगह दूसरा फ़ॉर्म"
+        },
+        {
+          "display": "Make sure that the name is right.",
+          "cue": "पक्का कर लीजिए कि नाम सही है.",
+          "changed": "जाँच अब नाम की है, काम की नहीं"
+        }
+      ],
+      "mistake": {
+        "display": "Make sure the sign the form",
+        "why": "make sure के बाद या तो that + पूरा वाक्य आता है या to + क्रिया: Make sure that you sign the form."
+      },
+      "usage": "किसी को दफ़्तर या बैंक का काम समझाना.",
+      "register": "neutral",
+      "mnemonic": "make sure जाँच है, क़दम नहीं."
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "Do not stop here — it will be a problem.",
+      "cue": "यहाँ मत रुकिए — दिक़्क़त हो जाएगी.",
+      "literal": "करो नहीं रुको यहाँ — यह होगा एक दिक़्क़त.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "stop",
+            "cue": "रुकना",
+            "tag": "free",
+            "forms": [
+              "stop",
+              "stops",
+              "stopped"
+            ],
+            "note": "रुकना और रोकना, दोनों — Do not stop here. गाड़ी रोकनी हो तो Stop the car. बीता हुआ रूप stopped, दो p के साथ."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "मना करने में Not stop here मत लिखिए. सादी क्रिया के आगे do not चाहिए: Do not stop here.",
+      "sound": "बोलचाल में do not सिमटकर don't हो जाता है — डोन्ट; लिखने में दोनों चलते हैं.",
+      "variations": [
+        {
+          "display": "Do not stop the car here.",
+          "cue": "गाड़ी यहाँ मत रोकिए.",
+          "changed": "अब रोकने वाला काम — कर्म जुड़ गया"
+        },
+        {
+          "display": "Do not open the door — it will be cold.",
+          "cue": "दरवाज़ा मत खोलिए — ठंड हो जाएगी.",
+          "changed": "दूसरी क्रिया और दूसरा नतीजा"
+        },
+        {
+          "display": "Please do not stop here.",
+          "cue": "कृपया यहाँ मत रुकिए.",
+          "changed": "please से मनाही नरम हुई"
+        }
+      ],
+      "mistake": {
+        "display": "Not stop here",
+        "why": "अंग्रेज़ी में मनाही do not से बनती है: Do not stop here. अकेला not सादी क्रिया को नहीं रोक सकता."
+      },
+      "usage": "सड़क पर या दफ़्तर में किसी को रोकना.",
+      "register": "neutral",
+      "mnemonic": "मनाही से पहले do not."
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "Press the key twice to open the door.",
+      "cue": "दरवाज़ा खोलने के लिए चाबी दो बार दबाइए.",
+      "literal": "दबाओ चाबी दो-बार खोलने-को दरवाज़ा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "press",
+            "cue": "दबाना",
+            "tag": "free",
+            "forms": [
+              "press",
+              "presses",
+              "pressed"
+            ],
+            "note": "दबाना — बटन, चाबी या घंटी. Press the key. ज़ोर से धकेलना push है, पर बटन के लिए press ही चलता है."
+          },
+          {
+            "display": "twice",
+            "cue": "दो बार",
+            "tag": "free",
+            "forms": [],
+            "note": "दो बार. two times कहने की ज़रूरत नहीं, एक ही शब्द है — Press it twice. यह वाक्य के आख़िर में बैठता है."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          6
+        ]
+      },
+      "trap": "दो बार के लिए two times मत लिखिए. अंग्रेज़ी में इसका अपना शब्द twice है, और तीन बार से आगे three times चलता है.",
+      "sound": "twice का c स बोला जाता है — ट्वाइस, ट्वाइक नहीं.",
+      "variations": [
+        {
+          "display": "Turn the key slowly to open the door.",
+          "cue": "दरवाज़ा खोलने के लिए चाबी धीरे-धीरे घुमाइए.",
+          "changed": "दबाने की जगह घुमाना — turn का दूसरा काम"
+        },
+        {
+          "display": "Press the key twice.",
+          "cue": "चाबी दो बार दबाइए.",
+          "changed": "मक़सद हटा दिया"
+        },
+        {
+          "display": "Press it twice to open the door.",
+          "cue": "दरवाज़ा खोलने के लिए इसे दो बार दबाइए.",
+          "changed": "चाबी की जगह it"
+        }
+      ],
+      "mistake": {
+        "display": "Press the key two times for open the door",
+        "why": "दो बार twice है, और मक़सद to + क्रिया से आता है: Press the key twice to open the door."
+      },
+      "usage": "कोई मशीन या ताला चलाना सिखाना.",
+      "register": "neutral",
+      "mnemonic": "twice एक शब्द, two times नहीं."
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "Ask a person the way in order to get to the market.",
+      "cue": "बाज़ार पहुँचने के लिए किसी से रास्ता पूछिए.",
+      "literal": "पूछो एक आदमी रास्ता के-लिए पहुँचना बाज़ार.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "way",
+            "cue": "रास्ता",
+            "tag": "free",
+            "forms": [
+              "way",
+              "ways"
+            ],
+            "note": "रास्ता, और तरीक़ा भी — Ask the way to the market. road सड़क है; way वह रास्ता है जो आपको पहुँचाता है."
+          },
+          {
+            "display": "in order to",
+            "cue": "के लिए",
+            "tag": "delta",
+            "forms": [],
+            "note": "के लिए का भारी, लिखित रूप. इसके बाद सादी क्रिया आती है — in order to get to the market. मतलब सादे to जैसा ही है."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "in order to के बाद सादी क्रिया आती है, पूरा वाक्य नहीं. in order to you get ग़लत है — वाक्य लाना हो तो so that लिखिए.",
+      "sound": "order में r हल्का है — ऑडर; in order to बोलने में जुड़ जाता है: इन-ऑ-डर-टु.",
+      "variations": [
+        {
+          "display": "Ask a person the way to the market.",
+          "cue": "किसी से बाज़ार का रास्ता पूछिए.",
+          "changed": "in order to हटा — सीधा रास्ता पूछना"
+        },
+        {
+          "display": "Ask a person the way in order to get to the station.",
+          "cue": "स्टेशन पहुँचने के लिए किसी से रास्ता पूछिए.",
+          "changed": "बाज़ार की जगह स्टेशन"
+        },
+        {
+          "display": "Ask a person the way to get to the market.",
+          "cue": "बाज़ार पहुँचने के लिए किसी से रास्ता पूछिए.",
+          "changed": "in order to की जगह सादा to"
+        }
+      ],
+      "mistake": {
+        "display": "Ask a person the way for get to the market",
+        "why": "मक़सद for से नहीं आता: in order to get to the market, या सादा to get to the market."
+      },
+      "usage": "रास्ता पूछने का तरीक़ा बताना — नए शहर में.",
+      "register": "neutral",
+      "mnemonic": "in order to = भारी to."
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "Read the first step. Be careful — the box is heavy.",
+      "cue": "पहला क़दम पढ़िए. सावधान रहिए — डिब्बा भारी है.",
+      "literal": "पढ़ो पहला क़दम. रहो सावधान — डिब्बा है भारी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "step",
+            "cue": "क़दम",
+            "tag": "free",
+            "forms": [
+              "step",
+              "steps"
+            ],
+            "note": "क़दम — किसी तरीक़े का एक हिस्सा. Read the first step. गिनती में steps: There are five steps."
+          },
+          {
+            "display": "careful",
+            "cue": "सावधान",
+            "tag": "free",
+            "forms": [],
+            "note": "सावधान. Be careful पूरा वाक्य है और चेतावनी का सबसे आम रूप. इसके आगे -ly लगते ही यह carefully बन जाता है."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Be careful में be ज़रूरी है. You are careful हुक्म नहीं, हालत की ख़बर है — चेताना हो तो Be careful लिखिए.",
+      "sound": "careful में care की आवाज़ केअ है — केअफ़ुल; car वाली आ यहाँ नहीं आती.",
+      "variations": [
+        {
+          "display": "Read the first step carefully.",
+          "cue": "पहला क़दम ध्यान से पढ़िए.",
+          "changed": "चेतावनी की जगह तरीक़ा"
+        },
+        {
+          "display": "Read the second step. Be careful — the box is heavy.",
+          "cue": "दूसरा क़दम पढ़िए. सावधान रहिए — डिब्बा भारी है.",
+          "changed": "पहले की जगह दूसरा क़दम"
+        },
+        {
+          "display": "Be careful — the box is very heavy.",
+          "cue": "सावधान रहिए — डिब्बा बहुत भारी है.",
+          "changed": "सिर्फ़ चेतावनी बची, very से ज़ोर"
+        }
+      ],
+      "mistake": {
+        "display": "Careful the box is heavy",
+        "why": "चेतावनी का पूरा रूप Be careful है, और उसके बाद वाला वाक्य अलग से आता है: Be careful — the box is heavy."
+      },
+      "usage": "किसी को भारी या नाज़ुक चीज़ पकड़ाते हुए.",
+      "register": "neutral",
+      "mnemonic": "चेतावनी में be ज़रूरी."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "First cut the vegetables.",
+      "cue": "पहले सब्ज़ियाँ काटिए."
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "Boil the water to make the tea.",
+      "cue": "चाय बनाने के लिए पानी उबालिए."
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "Add one spoon of sugar.",
+      "cue": "एक चम्मच चीनी डालिए."
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "Mix it properly.",
+      "cue": "इसे ठीक से मिलाइए."
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "Pour the water slowly.",
+      "cue": "पानी धीरे-धीरे उँडेलिए."
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "Close the door so that the child does not wake up.",
+      "cue": "दरवाज़ा बंद कीजिए ताकि बच्चा जाग न जाए."
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "Make sure that you sign the form.",
+      "cue": "पक्का कर लीजिए कि आप फ़ॉर्म पर दस्तख़त करें."
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "Do not stop here.",
+      "cue": "यहाँ मत रुकिए."
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "Press the key twice.",
+      "cue": "चाबी दो बार दबाइए."
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "Ask a person the way to the market.",
+      "cue": "किसी से बाज़ार का रास्ता पूछिए."
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "Read the first step carefully.",
+      "cue": "पहला क़दम ध्यान से पढ़िए."
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "Be careful — the box is heavy.",
+      "cue": "सावधान रहिए — डिब्बा भारी है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

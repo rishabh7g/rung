@@ -1,0 +1,656 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "instruction infinitive"
+    ],
+    "allowedPatterns": [
+      "Zuerst + <Akk> + <Infinitiv am Ende>",
+      "Bitte + nicht + <Infinitiv>",
+      "Das Wasser + zehn Minuten + kochen lassen",
+      "Erst + V-2 + ich + , + dann + V-2 + ich",
+      "Das ist + zum + <Infinitiv als Nomen>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE INSTRUCTION INFINITIVE. A recipe, a sign and a package do not conjugate the verb at all: it stays an infinitive and it goes to the very end of the clause. Bitte die Tür schließen. Bitte hier nicht rauchen. Zwiebeln klein schneiden. The line is addressed to nobody, which is exactly why a notice uses it, and an anglophone reads it as a broken sentence until somebody says it is a form."
+    },
+    {
+      "tag": "delta",
+      "text": "German has THREE ways to give an instruction and they are chosen by AUDIENCE, not by politeness. (1) The Sie-imperative, verb first with Sie behind it — Gehen Sie geradeaus — which is L2-M4's and is not re-taught here. (2) The bare-stem imperative for one familiar person, L2-M1's. (3) The instruction infinitive above, for a reader nobody has met. A sign that picks (1) sounds as if it were speaking to you personally; a colleague addressed with (3) sounds like a label."
+    },
+    {
+      "tag": "delta",
+      "text": "lassen + INFINITIVE is how German says let something happen: Das Wasser zehn Minuten kochen lassen. The governed verb keeps its infinitive and lassen follows it at the clause end, so the pair reads backwards to an English eye — kochen lassen, never lassen kochen. Lassen Sie es zehn Minuten stehen is the same construction with a person addressed."
+    },
+    {
+      "tag": "interference",
+      "text": "GERMAN HAS NO GERUND. Where English writes for cutting or before cooking, German either capitalises the infinitive and uses it as a neuter noun — das Öffnen, zum Schneiden, beim Kochen — or reaches for the purpose frame um … zu, which is L3-M1's and is not restated here. Any infinitive can become that noun, and the capital letter is the only thing that changes about it."
+    },
+    {
+      "tag": "free",
+      "text": "The ladder of steps is already yours: zuerst, danach and schließlich (L2-M10), dann (L1-M10), plus this module's erst … dann and anschließend. Every one of them FRONTS, so a conjugated verb comes straight after it — Erst schneide ich die Zwiebeln — while an instruction infinitive has no conjugated verb to move and the sequencing word simply opens the line."
+    },
+    {
+      "tag": "free",
+      "text": "What stays out, and where it lives. A separable prefix leaves its verb only when the verb is CONJUGATED (L3-M1); an instruction infinitive is not, so einschalten and ausschalten are written whole at the end of the clause. damit for a purpose with a different subject is L4-M2's. The passive a manual really prefers — Der Deckel wird abgenommen — is L4-M7's. man is L3-M9's and may be used freely."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "Zuerst die Zwiebeln klein schneiden",
+      "cue": "First chop the onions small",
+      "literal": "first the onions small cut",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Zwiebeln",
+            "cue": "onions",
+            "tag": "free",
+            "forms": [
+              "Zwiebeln",
+              "Zwiebel"
+            ],
+            "note": "die Zwiebel is one, die Zwiebeln is more than one, and a recipe almost always writes the plural: Zwiebeln klein schneiden."
+          },
+          {
+            "display": "schneiden",
+            "cue": "to cut, to chop",
+            "tag": "delta",
+            "forms": [
+              "schneiden",
+              "schneide",
+              "schneidet"
+            ],
+            "note": "The infinitive schneiden is what a recipe writes. schneide is I cut and schneidet is he or she cuts — one word doing three jobs."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English chop the onions is an imperative with a subject nobody writes. German schneiden here is not an imperative at all: it is the plain infinitive, and it must sit last.",
+      "sound": "TSOO-airst dee TSVEE-buln kline SHNY-dun.",
+      "variations": [
+        {
+          "display": "Zuerst das Brot klein schneiden",
+          "cue": "First cut the bread small",
+          "changed": "The object changes; the infinitive still lands at the end of the line."
+        }
+      ],
+      "mistake": {
+        "display": "Zuerst schneiden Sie die Zwiebeln klein",
+        "why": "Correct German, wrong medium. That is the Sie-imperative (L2-M4) and it addresses a person; a recipe addresses nobody and writes the infinitive."
+      },
+      "usage": "The first line of a recipe, or a step printed on a card.",
+      "register": "neutral",
+      "mnemonic": "A recipe talks to nobody, so the verb never gets an ending."
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "Bitte hier nicht rauchen",
+      "cue": "Please do not smoke here",
+      "literal": "please here not smoke",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rauchen",
+            "cue": "to smoke",
+            "tag": "free",
+            "forms": [
+              "rauchen",
+              "raucht"
+            ],
+            "note": "rauchen is the infinitive, and on a sign it is the whole verb: Bitte hier nicht rauchen. nicht comes immediately before it, never after."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English puts do not at the front. German puts nicht directly before the infinitive and the infinitive last, so the negation and the verb travel together at the end.",
+      "sound": "BIT-uh heer nikht ROW-khun.",
+      "variations": [
+        {
+          "display": "Bitte die Tür nicht öffnen",
+          "cue": "Please do not open the door",
+          "changed": "A different verb with an object; nicht still sits directly before the infinitive."
+        }
+      ],
+      "mistake": {
+        "display": "Bitte rauchen Sie hier nicht",
+        "why": "Grammatical, but now a person is speaking to you. A sign has no speaker, so it writes the infinitive and leaves Sie out altogether."
+      },
+      "usage": "A notice on a wall, a door or a table.",
+      "register": "neutral",
+      "mnemonic": "Sign German has no subject and no ending — bitte, nicht, verb, done."
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "Das Wasser zehn Minuten kochen lassen",
+      "cue": "Let the water boil for ten minutes",
+      "literal": "the water ten minutes boil let",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Minuten",
+            "cue": "minutes",
+            "tag": "free",
+            "forms": [
+              "Minuten",
+              "Minute"
+            ],
+            "note": "eine Minute, zehn Minuten. A stretch of time in a recipe takes no preposition at all: zehn Minuten kochen lassen."
+          },
+          {
+            "display": "kochen",
+            "cue": "to boil, to cook",
+            "tag": "free",
+            "forms": [
+              "kochen",
+              "koche",
+              "kocht"
+            ],
+            "note": "kochen is both to boil something and to cook a meal. The pot on the stove and the person standing at it use the same verb."
+          },
+          {
+            "display": "lassen",
+            "cue": "to let",
+            "tag": "delta",
+            "forms": [
+              "lassen",
+              "lässt"
+            ],
+            "note": "lassen plus an infinitive means let it happen. The governed verb keeps its infinitive and lassen comes after it: kochen lassen."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "English says let the water boil, with let first. German puts lassen LAST, behind the verb it governs: kochen lassen.",
+      "sound": "das VAS-uh tsayn mi-NOO-tun KOKH-un LAS-un.",
+      "variations": [
+        {
+          "display": "Die Suppe zehn Minuten kochen lassen",
+          "cue": "Let the soup simmer for ten minutes",
+          "changed": "A different thing on the stove; the pair of infinitives at the end does not move."
+        }
+      ],
+      "mistake": {
+        "display": "Das Wasser zehn Minuten lassen kochen",
+        "why": "The two infinitives are in English order. German is kochen lassen — the governed verb first and lassen behind it."
+      },
+      "usage": "A cookbook step, or the back of a packet.",
+      "register": "neutral",
+      "mnemonic": "Whatever you let happen goes in front of lassen."
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "Das Messer ist zum Schneiden",
+      "cue": "The knife is for cutting",
+      "literal": "the knife is for-the cutting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zum Schneiden",
+            "cue": "for cutting",
+            "tag": "interference",
+            "forms": [
+              "zum Schneiden"
+            ],
+            "note": "zu + dem = zum, and the capitalised infinitive behind it is a noun. This is German's for cutting; there is no -ing form anywhere to reach for."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "There is no gerund in German. for cutting is never für schneiden — it is zum Schneiden, with a capital S because the infinitive has become a noun.",
+      "sound": "das MESS-uh ist tsoom SHNY-dun.",
+      "variations": [
+        {
+          "display": "Der Topf ist zum Kochen",
+          "cue": "The pot is for cooking",
+          "changed": "A different tool, and a different infinitive turned into a noun."
+        }
+      ],
+      "mistake": {
+        "display": "Das Messer ist für Schneiden",
+        "why": "für takes a noun, and a bare infinitive is not one yet. The purpose of a thing is zum plus the capitalised infinitive."
+      },
+      "usage": "Explaining what an object is for — a label, a kitchen, a shop.",
+      "register": "neutral",
+      "mnemonic": "Capital letter and zum in front: the verb has become a noun."
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "Zum Öffnen bitte hier drücken",
+      "cue": "To open, press here",
+      "literal": "for-the opening please here press",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "öffnen",
+            "cue": "to open",
+            "tag": "free",
+            "forms": [
+              "öffnen",
+              "öffnet"
+            ],
+            "note": "öffnen is the infinitive; capitalised as das Öffnen it is the act of opening. One word, both jobs, and the capital is the whole difference."
+          },
+          {
+            "display": "drücken",
+            "cue": "to press, to push",
+            "tag": "free",
+            "forms": [
+              "drücken",
+              "drückt"
+            ],
+            "note": "drücken is what you do to a button or a door that says push. On a sign it stands alone at the end of the line."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "English writes to open with an infinitive; German writes zum Öffnen with a noun. The two look alike and are built the opposite way round.",
+      "sound": "tsoom ERF-nun BIT-uh heer DRUEK-un.",
+      "variations": [
+        {
+          "display": "Zum Schließen bitte langsam drücken",
+          "cue": "To close, press slowly",
+          "changed": "The other half of the pair, with a manner word in front of the verb."
+        }
+      ],
+      "mistake": {
+        "display": "Zum öffnen bitte hier drücken",
+        "why": "A nominalised infinitive is a noun and every German noun takes a capital: zum Öffnen. Lowercase, the sign is not saying anything."
+      },
+      "usage": "Printed on a machine, a door or a packet.",
+      "register": "neutral",
+      "mnemonic": "zum plus a capital letter names the activity."
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "Erst schneide ich die Zwiebeln, dann koche ich die Suppe",
+      "cue": "First I cut the onions, then I cook the soup",
+      "literal": "first cut I the onions, then cook I the soup",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "erst",
+            "cue": "first (of all)",
+            "tag": "delta",
+            "forms": [
+              "erst"
+            ],
+            "note": "erst … dann is the spoken pair for two steps. Fronted, erst takes first position and pushes the verb to second: Erst schneide ich."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "erst and zuerst are interchangeable in a list of steps, but not with a clock time: erst um acht means not until eight, which zuerst never does.",
+      "sound": "airst SHNY-duh ikh dee TSVEE-buln, dan KOKH-uh ikh dee ZOO-puh.",
+      "variations": [
+        {
+          "display": "Erst koche ich die Suppe, dann schneide ich das Brot",
+          "cue": "First I cook the soup, then I cut the bread",
+          "changed": "The two steps swap; each verb still comes second in its own half."
+        }
+      ],
+      "mistake": {
+        "display": "Erst ich schneide die Zwiebeln",
+        "why": "erst fills the first position, so the verb takes the second and the subject follows it: Erst schneide ich."
+      },
+      "usage": "Talking a friend or a colleague through what you are about to do.",
+      "register": "neutral",
+      "mnemonic": "erst, then the verb, then you."
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "Bitte das Fenster schließen und das Licht ausschalten",
+      "cue": "Please close the window and switch off the light",
+      "literal": "please the window close and the light off-switch",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Fenster",
+            "cue": "window",
+            "tag": "free",
+            "forms": [
+              "Fenster"
+            ],
+            "note": "das Fenster is neuter and its plural is spelled the same, die Fenster; only the article moves."
+          },
+          {
+            "display": "schließen",
+            "cue": "to close, to shut",
+            "tag": "free",
+            "forms": [
+              "schließen",
+              "schließt"
+            ],
+            "note": "schließen is the partner of öffnen and keeps its ß in every form written here: schließen, schließt."
+          },
+          {
+            "display": "Licht",
+            "cue": "light",
+            "tag": "free",
+            "forms": [
+              "Licht"
+            ],
+            "note": "das Licht is the light itself. Switching it is the verb's job: das Licht ausschalten, das Licht einschalten."
+          },
+          {
+            "display": "ausschalten",
+            "cue": "to switch off",
+            "tag": "delta",
+            "forms": [
+              "ausschalten"
+            ],
+            "note": "aus- is the prefix and it stays attached while the verb is an infinitive. It leaves only when the verb is conjugated (L3-M1)."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "English strands the particle — switch the light off. German does the opposite in the infinitive: the prefix is glued on and the whole word goes last.",
+      "sound": "BIT-uh das FEN-stuh SHLEE-sun oont das likht OWS-shal-tun.",
+      "variations": [
+        {
+          "display": "Bitte das Fenster öffnen und das Licht einschalten",
+          "cue": "Please open the window and switch on the light",
+          "changed": "Both halves flip to their opposites; the shape of the line is identical."
+        }
+      ],
+      "mistake": {
+        "display": "Bitte das Licht aus schalten",
+        "why": "ausschalten is one word here. The prefix separates only from a CONJUGATED verb — Ich schalte das Licht aus — never from an infinitive."
+      },
+      "usage": "A note left for whoever leaves the room last.",
+      "register": "neutral",
+      "mnemonic": "No ending on the verb means no split in the prefix."
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "Zuerst den Herd einschalten, dann das Salz in den Topf geben",
+      "cue": "First switch on the stove, then put the salt in the pot",
+      "literal": "first the stove on-switch, then the salt in the pot give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Herd",
+            "cue": "cooker, stove",
+            "tag": "free",
+            "forms": [
+              "Herd"
+            ],
+            "note": "der Herd is the appliance you cook on. den Herd is the accusative, because it is the thing being switched on."
+          },
+          {
+            "display": "einschalten",
+            "cue": "to switch on",
+            "tag": "delta",
+            "forms": [
+              "einschalten"
+            ],
+            "note": "ein- here is not the number one; it is the prefix that means on. Whole in the infinitive, split when the verb is conjugated (L3-M1)."
+          },
+          {
+            "display": "Salz",
+            "cue": "salt",
+            "tag": "free",
+            "forms": [
+              "Salz"
+            ],
+            "note": "das Salz drops its article in a recipe list — Salz in den Topf geben — and keeps it when you point at the packet."
+          },
+          {
+            "display": "Topf",
+            "cue": "pot, pan",
+            "tag": "free",
+            "forms": [
+              "Topf"
+            ],
+            "note": "der Topf, and in den Topf is motion into it, so the accusative den (L1-M7). in dem Topf would mean already inside."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Written with the officialese hyphen, Ein- und Ausschalten cannot be looked up at all: spell einschalten and ausschalten out in full.",
+      "sound": "TSOO-airst dayn hairt INE-shal-tun, dan das zalts in dayn topf GAY-bun.",
+      "variations": [
+        {
+          "display": "Zuerst den Herd einschalten, dann das Wasser in den Topf geben",
+          "cue": "First switch on the stove, then put the water in the pot",
+          "changed": "A different thing goes into the pot; both infinitives stay at their clause ends."
+        }
+      ],
+      "mistake": {
+        "display": "Zuerst einschalten den Herd",
+        "why": "The instruction infinitive goes to the very end. Everything it governs — den Herd — comes in front of it."
+      },
+      "usage": "A recipe's opening step, or a note taped to the cooker.",
+      "register": "neutral",
+      "mnemonic": "Objects first, verb last: the infinitive closes the line."
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "Vorsichtig rühren und zehn Minuten warten",
+      "cue": "Stir carefully and wait ten minutes",
+      "literal": "carefully stir and ten minutes wait",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vorsichtig",
+            "cue": "careful, carefully",
+            "tag": "interference",
+            "forms": [
+              "vorsichtig"
+            ],
+            "note": "vorsichtig is both careful and carefully. German adds nothing to make an adverb of an adjective, so there is no ending to look for."
+          },
+          {
+            "display": "rühren",
+            "cue": "to stir",
+            "tag": "free",
+            "forms": [
+              "rühren",
+              "rührt"
+            ],
+            "note": "rühren is what a spoon does in a pot. umrühren adds thoroughly; plain rühren is what a recipe writes."
+          },
+          {
+            "display": "langsam",
+            "cue": "slow, slowly",
+            "tag": "free",
+            "forms": [
+              "langsam"
+            ],
+            "note": "langsam is the opposite of L2-M9's schnell and behaves the same way: one form does duty as the adjective and the adverb."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English needs -ly for carefully; German uses the bare adjective. An ending added here would make the word describe a noun instead.",
+      "sound": "for-ZIKH-tikh RUE-run oont tsayn mi-NOO-tun VAR-tun.",
+      "variations": [
+        {
+          "display": "Langsam rühren und zehn Minuten warten",
+          "cue": "Stir slowly and wait ten minutes",
+          "changed": "The manner word changes; nothing else in the line moves."
+        }
+      ],
+      "mistake": {
+        "display": "Vorsichtiglich rühren",
+        "why": "There is no -lich to add. vorsichtig already is the adverb, and an invented ending marks a learner instantly."
+      },
+      "usage": "The middle of a recipe, where the care matters more than the timing.",
+      "register": "neutral",
+      "mnemonic": "A German adverb is just the adjective, standing still."
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "Jeder Schritt ist einfach, und anschließend ist alles fertig",
+      "cue": "Every step is simple, and after that everything is done",
+      "literal": "every step is simple, and afterwards is everything ready",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Schritt",
+            "cue": "step",
+            "tag": "free",
+            "forms": [
+              "Schritt",
+              "Schritte"
+            ],
+            "note": "der Schritt is one step of a set of instructions — Schritt eins, Schritt zwei — and also a step you take walking."
+          },
+          {
+            "display": "einfach",
+            "cue": "simple, easy",
+            "tag": "free",
+            "forms": [
+              "einfach"
+            ],
+            "note": "einfach is simple, and standing alone in a sentence it also means just: Einfach warten."
+          },
+          {
+            "display": "anschließend",
+            "cue": "afterwards, next",
+            "tag": "free",
+            "forms": [
+              "anschließend"
+            ],
+            "note": "anschließend is written German's danach. Fronted, it pushes the verb to second place: anschließend ist alles fertig."
+          },
+          {
+            "display": "fertig",
+            "cue": "ready, finished",
+            "tag": "free",
+            "forms": [
+              "fertig"
+            ],
+            "note": "fertig is done rather than made: Das Essen ist fertig. In this position it never takes an ending."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "und does not count as a position and moves nothing, but anschließend does — so the verb comes straight after it: und anschließend ist alles fertig.",
+      "sound": "YAY-duh shrit ist INE-fakh, oont AN-shlee-sunt ist AL-us FAIR-tikh.",
+      "variations": [
+        {
+          "display": "Jeder Schritt ist einfach, und anschließend ist die Suppe fertig",
+          "cue": "Every step is simple, and after that the soup is done",
+          "changed": "alles gives way to a named thing; the verb stays second."
+        }
+      ],
+      "mistake": {
+        "display": "Jeder Schritt ist einfach, und anschließend alles ist fertig",
+        "why": "anschließend fills the first position, so ist must come second and alles after it."
+      },
+      "usage": "Closing a set of instructions, spoken or written.",
+      "register": "neutral",
+      "mnemonic": "Front a time word and the verb follows it immediately."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "Bitte die Tür schließen",
+      "cue": "Please close the door"
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "Bitte hier nicht rauchen",
+      "cue": "Please do not smoke here"
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "Das Wasser zehn Minuten kochen lassen",
+      "cue": "Let the water boil for ten minutes"
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "Das Messer ist zum Schneiden",
+      "cue": "The knife is for cutting"
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "Zum Öffnen bitte hier drücken",
+      "cue": "To open, press here"
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "Erst schneide ich die Zwiebeln, dann koche ich die Suppe",
+      "cue": "First I cut the onions, then I cook the soup"
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "Bitte das Fenster schließen und das Licht ausschalten",
+      "cue": "Please close the window and switch off the light"
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "Zuerst den Herd einschalten",
+      "cue": "First switch on the stove"
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "Vorsichtig rühren und zehn Minuten warten",
+      "cue": "Stir carefully and wait ten minutes"
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "Jeder Schritt ist einfach",
+      "cue": "Every step is simple"
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "Anschließend das Salz in den Topf geben",
+      "cue": "Then put the salt in the pot"
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "Langsam und vorsichtig schneiden",
+      "cue": "Cut slowly and carefully"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

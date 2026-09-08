@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": ["L4-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["simple_past", "simple_present", "habitual_present"],
+    "allowedPatterns": [
+      "N-मुळे + clause",
+      "clause + म्हणून + clause",
+      "clause. त्यामुळे + clause",
+      "clause + कारण + clause",
+      "clause + पण + clause"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-मुळे welds onto a NOUN, and the noun goes oblique first: पाऊस → पावसामुळे, काम → कामामुळे, गर्दी → गर्दीमुळे (an -ई noun does not change). Hindi says it in three words — बारिश की वजह से — and Marathi says it in one. This is L4-M1's welding lesson again, on a noun instead of a verb."
+    },
+    {
+      "tag": "free",
+      "text": "The division of labour is the whole grammar of this module, and three of its four pieces are already owned. -मुळे takes a NOUN. कारण (L1-M9) takes the reason CLAUSE and follows the consequence: मी आलो नाही, कारण मला ताप होता. म्हणून (L1-M9) follows the reason and introduces the consequence: पाऊस आला, म्हणून मी घरी थांबलो. Same slots as Hindi क्योंकि and इसलिए."
+    },
+    {
+      "tag": "delta",
+      "text": "त्यामुळे and यामुळे open a NEW sentence whose cause is the sentence before it — that is what carries an explanation across a full stop, which no module below this one could do. त्यामुळे points back at what was just said; यामुळे points at the thing right here."
+    },
+    {
+      "tag": "interference",
+      "text": "Hindi's तो in a consequence (तो मैं नहीं आया) invites Marathi तर — and तर is the CONDITIONAL's word (L3-M4: जर … तर). A consequence takes म्हणून or त्यामुळे, never तर. It is the one place here where a Hindi instinct produces a Marathi sentence that means something else."
+    },
+    {
+      "tag": "free",
+      "text": "पण is 'but', Hindi पर / लेकिन with no delta at all — one word, one slot, nothing to unlearn. Thirty modules of this course did without it; it is bought here because a paragraph that only explains and never contrasts is not yet a paragraph. Consequences are told with झाला / झालं / झाली, never with a passive."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "पावसामुळे मला उशीर झाला",
+      "cue": "बारिश की वजह से मुझे देर हो गई",
+      "glossEn": "I was late because of the rain",
+      "literal": "बारिश-की-वजह-से मुझे देर हुई",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "पावसामुळे",
+            "cue": "बारिश की वजह से",
+            "tag": "delta",
+            "forms": ["पावसामुळे"],
+            "note": "पाऊस (L3-M4) goes oblique to पावसा-, then -मुळे welds on. Hindi needs three words for it; Marathi writes one and puts it first."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "पाऊस सीधा नहीं जुड़ता — पहले पावसा- बनता है, फिर -मुळे. यही ओब्लीक मोड़ हर संज्ञा पर लगता है.",
+      "sound": "पावसामुळे = पाव‑सा‑मु‑ळे, ज़ोर 'सा' पर. आख़िरी ळ मराठी वाली है.",
+      "variations": [
+        {
+          "display": "पावसामुळे मी घरी थांबलो",
+          "cue": "बारिश की वजह से मैं घर पर रुक गया",
+          "changed": "नतीजा बदला — उशीर झाला → घरी थांबलो. वजह वाला हिस्सा वैसा ही आगे बैठा है."
+        },
+        {
+          "display": "गर्दीमुळे मला उशीर झाला",
+          "cue": "भीड़ की वजह से मुझे देर हो गई",
+          "changed": "वजह बदली — पाऊस → गर्दी (L3-M9). वही -मुळे, दूसरी संज्ञा पर."
+        }
+      ],
+      "mistake": {
+        "display": "पाऊसमुळे मला उशीर झाला",
+        "why": "संज्ञा को मोड़ा नहीं. -मुळे लगाने से पहले पाऊस को पावसा- करना पड़ता है: पावसामुळे."
+      },
+      "usage": "देर, ग़ैरहाज़िरी या बदले हुए प्लान की वजह बताते वक़्त — सबसे रोज़मर्रा की माफ़ी.",
+      "register": "neutral",
+      "mnemonic": "की वजह से → -मुळे. तीन शब्द एक पूँछ में."
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "गर्दीमुळे मी लवकर घरी आलो",
+      "cue": "भीड़ की वजह से मैं जल्दी घर आ गया",
+      "glossEn": "I came home early because of the crowd",
+      "literal": "भीड़-की-वजह-से मैं जल्दी घर आया",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "गर्दीमुळे",
+            "cue": "भीड़ की वजह से",
+            "tag": "delta",
+            "forms": ["गर्दीमुळे"],
+            "note": "गर्दी (L3-M9) + -मुळे. A noun that already ends in -ई does not bend at all: गर्दी → गर्दीमुळे, where पाऊस had to become पावसा-."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "हर संज्ञा नहीं बदलती. -ई पर ख़त्म होने वाली संज्ञा जैसी की तैसी रहती है — यही पावसामुळे और गर्दीमुळे का फ़र्क़ है.",
+      "sound": "गर्दीमुळे = गर्‑दी‑मु‑ळे. 'दी' लंबा, बाक़ी हलके.",
+      "variations": [
+        {
+          "display": "गर्दीमुळे ती लवकर घरी आली",
+          "cue": "भीड़ की वजह से वह जल्दी घर आ गई",
+          "changed": "कर्ता औरत — आलो → आली, पर गर्दीमुळे बिलकुल वैसा ही. वजह वाला रूप कभी नहीं बदलता."
+        },
+        {
+          "display": "कामामुळे मी लवकर घरी आलो",
+          "cue": "काम की वजह से मैं जल्दी घर आ गया",
+          "changed": "वजह बदली — गर्दी → काम (L1-M4), और काम को कामा- मोड़ना पड़ा."
+        }
+      ],
+      "mistake": {
+        "display": "गर्दीच्या मुळे मी लवकर घरी आलो",
+        "why": "-मुळे को अलग शब्द बना दिया और बीच में -च्या घुसा दिया. यह एक ही जुड़ा हुआ शब्द है: गर्दीमुळे."
+      },
+      "usage": "बाज़ार, स्टेशन या सण के दिन का हाल बताते वक़्त.",
+      "register": "neutral",
+      "mnemonic": "-ई वाली संज्ञा नहीं झुकती: गर्दी + मुळे, सीधा."
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "काल पाऊस आला, म्हणून मी घरी थांबलो",
+      "cue": "कल बारिश आई, इसलिए मैं घर पर रुक गया",
+      "glossEn": "It rained yesterday, so I stayed at home",
+      "literal": "कल बारिश आई, इसलिए मैं घर रुका",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "थांबलो",
+            "cue": "रुक गया",
+            "tag": "delta",
+            "forms": ["थांबलो"],
+            "note": "थांबणे in the past, first person: I stopped, I stayed put. L2-M4 taught the imperative थांबा; the -लो ending is L1-M5's."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "हिंदी 'तो मैं रुक गया' कहने का मन करेगा. मराठी तर शर्त का शब्द है (L3-M4) — नतीजे के लिए म्हणून चाहिए.",
+      "sound": "थांबलो = थां‑ब‑लो, पहला अक्षर नाक से. म्हणून = म्ह‑णून, म के बाद हलकी ह.",
+      "variations": [
+        {
+          "display": "काल पाऊस आला, म्हणून मी आलो नाही",
+          "cue": "कल बारिश आई, इसलिए मैं नहीं आया",
+          "changed": "नतीजा बदला — थांबलो → आलो नाही. म्हणून वहीं, वजह और नतीजे के बीच."
+        },
+        {
+          "display": "काल पाऊस आला, त्यामुळे मी घरी थांबलो",
+          "cue": "कल बारिश आई, उस वजह से मैं घर पर रुक गया",
+          "changed": "म्हणून की जगह त्यामुळे — मतलब वही, पर त्यामुळे नया वाक्य भी खोल सकता है."
+        }
+      ],
+      "mistake": {
+        "display": "काल पाऊस आला, तर मी घरी थांबलो",
+        "why": "हिंदी का 'तो' मराठी तर बन गया. तर सिर्फ़ जर के साथ शर्त बताता है; नतीजा म्हणून या त्यामुळे लाता है."
+      },
+      "usage": "कल क्या हुआ यह बताते वक़्त — वजह पहले, नतीजा बाद में, हिंदी जैसा ही क्रम.",
+      "register": "neutral",
+      "mnemonic": "इसलिए = म्हणून. वजह पहले, म्हणून बीच में, नतीजा आख़िर में."
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "मी काल फक्त थोडा वेळ थांबलो, कारण मला ताप होता",
+      "cue": "मैं कल सिर्फ़ थोड़ी देर रुका, क्योंकि मुझे बुख़ार था",
+      "glossEn": "I stayed only a short while yesterday, because I had a fever",
+      "literal": "मैं कल सिर्फ़ थोड़ा वक़्त रुका, क्योंकि मुझे बुख़ार था",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "फक्त",
+            "cue": "सिर्फ़, केवल",
+            "tag": "free",
+            "forms": ["फक्त"],
+            "note": "Only, just. It sits in front of what it limits: फक्त थोडा वेळ, only a little while. Hindi सिर्फ़ in exactly the same place."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "कारण नतीजे के बाद आता है, वजह से पहले — बिलकुल हिंदी क्योंकि की तरह. म्हणून उल्टी तरफ़ बैठता है.",
+      "sound": "फक्त = फक्‑त, क् और त जुड़े हुए, बीच में स्वर नहीं.",
+      "variations": [
+        {
+          "display": "मी काल आलो नाही, कारण मला ताप होता",
+          "cue": "मैं कल नहीं आया, क्योंकि मुझे बुख़ार था",
+          "changed": "नतीजा छोटा किया — फक्त वाला हिस्सा हटा. कारण वाला जोड़ वैसा ही."
+        },
+        {
+          "display": "ती काल आली नाही, कारण तिला बरं वाटत नाही",
+          "cue": "वह कल नहीं आई, क्योंकि उसकी तबीयत ठीक नहीं है",
+          "changed": "कर्ता और वजह दोनों बदले — तिला (L3-M4), वाटत (L3-M3). कारण का काम वही."
+        }
+      ],
+      "mistake": {
+        "display": "कारण मला ताप होता, मी काल फक्त थोडा वेळ थांबलो",
+        "why": "कारण को वाक्य के आगे रख दिया. मराठी में कारण नतीजे के बाद आता है; अगर वजह पहले कहनी है तो म्हणून चाहिए."
+      },
+      "usage": "अपनी बात की सफ़ाई देते वक़्त — पहले क्या किया, फिर क्यों.",
+      "register": "neutral",
+      "mnemonic": "कारण पीछे, म्हणून बीच में. दोनों के बीच नतीजा किधर है, यही तय करता है."
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "कामामुळे मला सुट्टी मिळाली नाही",
+      "cue": "काम की वजह से मुझे छुट्टी नहीं मिली",
+      "glossEn": "I did not get any leave because of work",
+      "literal": "काम-की-वजह-से मुझे छुट्टी मिली नहीं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "कामामुळे",
+            "cue": "काम की वजह से",
+            "tag": "delta",
+            "forms": ["कामामुळे"],
+            "note": "काम (L1-M4) goes oblique to कामा-, then -मुळे. The same weld as पावसामुळे, on a noun ending in a consonant."
+          },
+          {
+            "display": "मिळाली",
+            "cue": "मिली",
+            "tag": "delta",
+            "forms": ["मिळाली"],
+            "note": "मिळणे in the past, agreeing with सुट्टी (feminine). L2-M5 taught मिळेल; what is got is the subject here, and the getter takes -ला."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "मिळणे में पाने वाला कर्ता नहीं है. जो चीज़ मिली वही क्रिया से मेल खाती है: सुट्टी मिळाली, पैसे मिळाले.",
+      "sound": "कामामुळे = का‑मा‑मु‑ळे, दो लंबे 'आ' के बाद हलका मुळे.",
+      "variations": [
+        {
+          "display": "गर्दीमुळे मला जागा मिळाली नाही",
+          "cue": "भीड़ की वजह से मुझे जगह नहीं मिली",
+          "changed": "वजह और चीज़ दोनों बदलीं — गर्दीमुळे, जागा. मिळाली वैसी की वैसी, क्योंकि जागा भी स्त्रीलिंग है."
+        },
+        {
+          "display": "कामामुळे मला उशीर झाला",
+          "cue": "काम की वजह से मुझे देर हो गई",
+          "changed": "नतीजा बदला — सुट्टी न मिलना → उशीर झाला. वजह वही."
+        }
+      ],
+      "mistake": {
+        "display": "काममुळे मला सुट्टी मिळाली नाही",
+        "why": "काम को मोड़ा नहीं. व्यंजन पर ख़त्म होने वाली संज्ञा -आ लेकर झुकती है: काम → कामा- → कामामुळे."
+      },
+      "usage": "छुट्टी, देर या न आ पाने की वजह बताते वक़्त — दफ़्तर की सबसे आम लाइन.",
+      "register": "neutral",
+      "mnemonic": "काम + आ + मुळे. व्यंजन वाली संज्ञा पहले 'आ' पहनती है."
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "काल खूप पाऊस आला. त्यामुळे रस्ता बंद झाला.",
+      "cue": "कल बहुत बारिश हुई. उस वजह से रास्ता बंद हो गया.",
+      "glossEn": "It rained heavily yesterday. Because of that, the road was closed.",
+      "literal": "कल बहुत बारिश आई. उस-वजह-से रास्ता बंद हुआ.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "त्यामुळे",
+            "cue": "उस वजह से, इसलिए",
+            "tag": "delta",
+            "forms": ["त्यामुळे"],
+            "note": "Because of that. Unlike म्हणून it opens a NEW sentence, with the sentence before it as its cause — that is how an explanation crosses a full stop."
+          },
+          {
+            "display": "रस्ता",
+            "cue": "रास्ता",
+            "tag": "free",
+            "forms": ["रस्ता"],
+            "note": "Road, masculine. रस्ता बंद झाला is what a speaker says; the barricade's sign says something else, and that shape is not this level's."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "नतीजा झाला/झालं/झाली से बनता है — रस्ता बंद झाला. 'बंद किया गया' वाला रूप यहाँ नहीं आता.",
+      "sound": "त्यामुळे = त्या‑मु‑ळे. त् और य जुड़े हुए, पहला अक्षर एक ही झटके में.",
+      "variations": [
+        {
+          "display": "काल खूप पाऊस आला. त्यामुळे मी घरी थांबलो.",
+          "cue": "कल बहुत बारिश हुई. उस वजह से मैं घर पर रुक गया.",
+          "changed": "दूसरे वाक्य का नतीजा बदला. त्यामुळे अब भी पिछले पूरे वाक्य को वजह मानता है."
+        },
+        {
+          "display": "काल खूप गर्दी होती. त्यामुळे मला उशीर झाला.",
+          "cue": "कल बहुत भीड़ थी. उस वजह से मुझे देर हो गई.",
+          "changed": "वजह वाला वाक्य बदला — पाऊस → गर्दी. दो वाक्यों का जोड़ वैसा ही."
+        }
+      ],
+      "mistake": {
+        "display": "काल खूप पाऊस आला. म्हणून रस्ता बंद झाला.",
+        "why": "म्हणून एक ही वाक्य के भीतर वजह और नतीजा जोड़ता है. पूर्णविराम के बाद नया वाक्य खोलने के लिए त्यामुळे चाहिए."
+      },
+      "usage": "जब बात दो वाक्यों में फैली हो — ख़बर, हाल-चाल, कोई क़िस्सा.",
+      "register": "neutral",
+      "mnemonic": "पूर्णविराम के बाद त्यामुळे, वाक्य के भीतर म्हणून."
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "मला जायचं होतं, पण गाडी आली नाही",
+      "cue": "मुझे जाना था, पर गाड़ी नहीं आई",
+      "glossEn": "I wanted to go, but the vehicle did not come",
+      "literal": "मुझे जाना था, पर गाड़ी आई नहीं",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "पण",
+            "cue": "पर, लेकिन",
+            "tag": "free",
+            "forms": ["पण"],
+            "note": "But — Hindi पर or लेकिन with nothing at all to unlearn. It stands between two clauses and turns the second against the first."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "पण मुफ़्त है — कोई मोड़, कोई पूँछ, कोई अपवाद नहीं. सिर्फ़ इतना कि इस कोर्स में यह अब तक आया ही नहीं था.",
+      "sound": "पण = प‑ण, छोटा और सपाट. आख़िरी ण मूर्धन्य है, न नहीं.",
+      "variations": [
+        {
+          "display": "मला जायचं होतं, पण मला वेळ नाही",
+          "cue": "मुझे जाना था, पर मेरे पास वक़्त नहीं है",
+          "changed": "दूसरा हिस्सा बदला — गाडी न आना → वेळ न होना (L3-M4). पण वहीं बीच में."
+        },
+        {
+          "display": "मला चहा हवा होता, पण दूध संपलं",
+          "cue": "मुझे चाय चाहिए थी, पर दूध ख़त्म हो गया",
+          "changed": "दोनों हिस्से बदले — हवा (L1-M3), संपलं (L2-M8). जोड़ वही एक शब्द."
+        }
+      ],
+      "mistake": {
+        "display": "मला जायचं होतं, कारण गाडी आली नाही",
+        "why": "उलटा जोड़ लगा दिया. कारण वजह बताता है, पण उलटी बात जोड़ता है — यहाँ गाड़ी न आना जाने की वजह नहीं, रुकावट है."
+      },
+      "usage": "अधूरे प्लान की बात करते वक़्त — इरादा एक तरफ़, हक़ीक़त दूसरी तरफ़.",
+      "register": "neutral",
+      "mnemonic": "पर = पण. एक शब्द, कोई बदलाव नहीं."
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "गर्दी होती, पण मला जागा मिळाली",
+      "cue": "भीड़ थी, पर मुझे जगह मिल गई",
+      "glossEn": "It was crowded, but I got a seat",
+      "literal": "भीड़ थी, पर मुझे जगह मिली",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "जागा",
+            "cue": "जगह",
+            "tag": "free",
+            "forms": ["जागा"],
+            "note": "Room, or a place to sit — feminine, which is why मिळाली agrees with it. जागा मिळाली is the everyday I got a seat."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "जागा दिखने में पुल्लिंग जैसा लगता है, पर है स्त्रीलिंग — इसलिए मिळाली, मिळाला नहीं.",
+      "sound": "जागा = जा‑गा, दोनों अक्षर लंबे और खुले.",
+      "variations": [
+        {
+          "display": "गर्दी होती, पण मी लवकर आलो",
+          "cue": "भीड़ थी, पर मैं जल्दी आ गया",
+          "changed": "दूसरा हिस्सा बदला — जागा मिळाली → लवकर आलो. उलटी बात वैसी ही खड़ी है."
+        },
+        {
+          "display": "पाऊस आला, पण मला जागा मिळाली",
+          "cue": "बारिश आई, पर मुझे जगह मिल गई",
+          "changed": "पहला हिस्सा बदला — गर्दी → पाऊस. पण दोनों तरफ़ को जोड़ता ही रहता है."
+        }
+      ],
+      "mistake": {
+        "display": "गर्दी होती, पण मला जागा मिळाला",
+        "why": "क्रिया को पुल्लिंग कर दिया. जागा स्त्रीलिंग है, इसलिए मिळाली — जैसे सुट्टी मिळाली."
+      },
+      "usage": "भीड़भाड़ का हाल बताते वक़्त, जब नतीजा उम्मीद के उलट निकला हो.",
+      "register": "neutral",
+      "mnemonic": "जागा स्त्रीलिंग है. मिळाली उसी के साथ मेल खाती है."
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "तो आला नाही. यामुळे सगळे नाराज झाले.",
+      "cue": "वह नहीं आया. इस वजह से सब नाराज़ हो गए.",
+      "glossEn": "He did not come. Because of this, everyone was upset.",
+      "literal": "वह आया नहीं. इस-वजह-से सब नाराज़ हुए.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "यामुळे",
+            "cue": "इस वजह से",
+            "tag": "delta",
+            "forms": ["यामुळे"],
+            "note": "Because of this. त्यामुळे points back at something already told; यामुळे points at the thing right here in front of both speakers."
+          },
+          {
+            "display": "नाराज",
+            "cue": "नाराज़",
+            "tag": "free",
+            "forms": ["नाराज"],
+            "note": "Upset, displeased — the same word in both languages. It takes होणे: नाराज झाले, नाराज होऊ नका."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "यामुळे और त्यामुळे का फ़र्क़ इशारे का है, दूरी का नहीं — हा/ही की तरह पास, तो/ती की तरह दूर.",
+      "sound": "यामुळे = या‑मु‑ळे. नाराज में ज हिंदी जैसा ही, नुक़्ता नहीं लिखा जाता.",
+      "variations": [
+        {
+          "display": "ती आली नाही. यामुळे सगळे नाराज झाले.",
+          "cue": "वह नहीं आई. इस वजह से सब नाराज़ हो गए.",
+          "changed": "कर्ता औरत — आला → आली. यामुळे वाला दूसरा वाक्य वैसा ही."
+        },
+        {
+          "display": "तो आला नाही. त्यामुळे मी एकटा गेलो.",
+          "cue": "वह नहीं आया. उस वजह से मैं अकेला गया.",
+          "changed": "इशारा और नतीजा दोनों बदले — यामुळे → त्यामुळे, और एकटा (L3-M6)."
+        }
+      ],
+      "mistake": {
+        "display": "तो आला नाही. तर सगळे नाराज झाले.",
+        "why": "फिर वही हिंदी 'तो'. तर शर्त का शब्द है; दो वाक्यों को वजह-नतीजे से जोड़ने के लिए यामुळे या त्यामुळे चाहिए."
+      },
+      "usage": "किसी की ग़ैरहाज़िरी का असर बताते वक़्त — दफ़्तर, घर, कोई समारोह.",
+      "register": "neutral",
+      "mnemonic": "यह वजह → यामुळे. वह वजह → त्यामुळे."
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "तो सुद्धा आला नाही, म्हणून मी एकटा गेलो",
+      "cue": "वह भी नहीं आया, इसलिए मैं अकेला गया",
+      "glossEn": "He did not come either, so I went alone",
+      "literal": "वह भी आया नहीं, इसलिए मैं अकेला गया",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "सुद्धा",
+            "cue": "भी",
+            "tag": "free",
+            "forms": ["सुद्धा"],
+            "note": "Also, too. It follows the word it adds: तो सुद्धा, him too — exactly where Hindi भी stands, so nothing moves."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "सुद्धा जिस शब्द को जोड़ता है उसके तुरंत बाद बैठता है, वाक्य के आख़िर में नहीं.",
+      "sound": "सुद्धा = सुद्‑धा, द् और ध जुड़े हुए, दूसरा अक्षर भारी.",
+      "variations": [
+        {
+          "display": "ती सुद्धा आली नाही, म्हणून मी एकटी गेले",
+          "cue": "वह भी नहीं आई, इसलिए मैं अकेली गई",
+          "changed": "दोनों कर्ता औरतें — आली, एकटी (L3-M6), गेले. सुद्धा और म्हणून वैसे ही."
+        },
+        {
+          "display": "मित्र सुद्धा आला नाही, म्हणून मी एकटा गेलो",
+          "cue": "दोस्त भी नहीं आया, इसलिए मैं अकेला गया",
+          "changed": "कौन नहीं आया वह बदला — तो → मित्र (L2-M2). सुद्धा उसी के पीछे चला गया."
+        }
+      ],
+      "mistake": {
+        "display": "तो आला नाही सुद्धा, म्हणून मी एकटा गेलो",
+        "why": "सुद्धा को वाक्य के आख़िर में डाल दिया. यह उस शब्द से चिपकता है जिसे जोड़ना है: तो सुद्धा."
+      },
+      "usage": "पूरी बात का आख़िरी टुकड़ा जोड़ते वक़्त — 'वह भी नहीं आया' के बाद जो हुआ.",
+      "register": "neutral",
+      "mnemonic": "भी = सुद्धा, और जगह भी वही: जिसके साथ, उसके पीछे."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "पावसामुळे मला उशीर झाला",
+      "cue": "बारिश की वजह से मुझे देर हो गई"
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "गर्दीमुळे मी लवकर घरी आलो",
+      "cue": "भीड़ की वजह से मैं जल्दी घर आ गया"
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "काल पाऊस आला, म्हणून मी घरी थांबलो",
+      "cue": "कल बारिश आई, इसलिए मैं घर पर रुक गया"
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "मी काल आलो नाही, कारण मला ताप होता",
+      "cue": "मैं कल नहीं आया, क्योंकि मुझे बुख़ार था"
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "कामामुळे मला सुट्टी मिळाली नाही",
+      "cue": "काम की वजह से मुझे छुट्टी नहीं मिली"
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "काल खूप पाऊस आला. त्यामुळे रस्ता बंद झाला.",
+      "cue": "कल बहुत बारिश हुई. उस वजह से रास्ता बंद हो गया."
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "मला जायचं होतं, पण गाडी आली नाही",
+      "cue": "मुझे जाना था, पर गाड़ी नहीं आई"
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "गर्दी होती, पण मला जागा मिळाली",
+      "cue": "भीड़ थी, पर मुझे जगह मिल गई"
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "तो आला नाही. यामुळे सगळे नाराज झाले.",
+      "cue": "वह नहीं आया. इस वजह से सब नाराज़ हो गए."
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "तो सुद्धा आला नाही, म्हणून मी एकटा गेलो",
+      "cue": "वह भी नहीं आया, इसलिए मैं अकेला गया"
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "पावसामुळे मी घरी थांबलो",
+      "cue": "बारिश की वजह से मैं घर पर रुक गया"
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "कामामुळे मला उशीर झाला",
+      "cue": "काम की वजह से मुझे देर हो गई"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present",
+      "tu imperative",
+      "infinitive after pour or de"
+    ],
+    "allowedPatterns": [
+      "D'abord + <tu-imperative> + , + ensuite + <tu-imperative>",
+      "<tu-imperative> + - + <pronoun>",
+      "Pour + V-inf + , + <tu-imperative>",
+      "Il suffit de + V-inf",
+      "Ne + <tu-imperative> + pas"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE TU IMPERATIVE IS THE TU PRESENT WITH THE PRONOUN TAKEN OFF, AND AN -er VERB LOSES ITS -s AS WELL. tu regardes gives Regarde, tu écoutes gives Écoute, tu commences gives Commence. tu prends gives Prends and tu mets gives Mets, which keep theirs, because that -s is not an -er -s. aller is the exception inside the exception: Va, with the s coming back only in Vas-y."
+    },
+    {
+      "tag": "interference",
+      "text": "THE POSITIVE ORDER TRANSFERS FREE AND THE NEGATIVE ONE DOES NOT. English puts don't in front and changes nothing else about the verb. French wraps it in two words: Ne commence pas, N'oublie pas. The ne is written every time, exactly as it has been since L1-M3, and speech dropping it changes nothing about what this course writes."
+    },
+    {
+      "tag": "delta",
+      "text": "A PRONOUN GOES BEHIND A POSITIVE ORDER ON A HYPHEN, AND JUMPS BACK IN FRONT WHEN THE ORDER TURNS NEGATIVE. Mets-le becomes Ne le mets pas: the pronoun moves, and the hyphen disappears with the move. Behind the verb me also grows into moi, which is why it is Écoute-moi and never Écoute-me."
+    },
+    {
+      "tag": "free",
+      "text": "pour + INFINITIVE IS EXACTLY ENGLISH'S to ... . Appuie ici pour ouvrir la porte. The verb after pour never conjugates and never agrees with anybody, and pour itself is L2-M5's word doing the same job it always did. Nothing is being re-opened here; the infinitive behind it is the whole news."
+    },
+    {
+      "tag": "free",
+      "text": "il suffit de + INFINITIVE IS you just have to ... . It is a frozen frame with nobody in it, exactly like il faut: the il names no one, and whatever follows de stays an infinitive. English needs a person for this sentence and French refuses to supply one."
+    },
+    {
+      "tag": "delta",
+      "text": "D'abord ... ensuite ... puis ... ORDERS THE STEPS, AND THEY ARE L2-M10'S AND L1-M10'S WORDS. Nothing new is opened by the ordering itself. What is new is that each slot now holds an ORDER rather than a statement, which is the whole difference between describing a routine and handing somebody one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "D'abord regarde la recette, ensuite coupe le pain",
+      "cue": "First look at the recipe, then cut the bread",
+      "literal": "First look the recipe, then cut the bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "regarde",
+            "cue": "look · look at",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tu imperative of regarder: tu regardes with the pronoun gone and the -s gone with it. It takes no preposition — regarde la recette, never regarde à."
+          },
+          {
+            "display": "recette",
+            "cue": "recipe",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: la recette. Nothing to do with English receipt, which is un reçu — the two words split centuries ago and mean different things now."
+          },
+          {
+            "display": "coupe",
+            "cue": "cut",
+            "tag": "delta",
+            "forms": [],
+            "note": "Imperative of couper, an -er verb, so the -s goes: tu coupes gives Coupe. The final e is silent and the p in front of it is not."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "English looks AT the recipe; French looks it. regarder carries its object bare, so a regarde à la recette is the commonest first-week error, and it survives all the way into L4 if nobody names it.",
+      "sound": "dah-BOR ruh-GARD la ruh-SET, ahn-SWEET koop luh PAN. The final e of regarde and of coupe is silent; the d and the p in front of them are heard.",
+      "variations": [
+        {
+          "display": "D'abord coupe le pain, ensuite ajoute le sel",
+          "cue": "First cut the bread, then add the salt",
+          "changed": "the same frame, two other steps in it"
+        },
+        {
+          "display": "Regarde la recette, puis coupe le pain",
+          "cue": "Look at the recipe, then cut the bread",
+          "changed": "d'abord and ensuite come off, and puis alone still orders the two"
+        }
+      ],
+      "mistake": {
+        "display": "D'abord regardes la recette",
+        "why": "The -er imperative drops the -s: Regarde, not Regardes. That -s belongs to tu regardes, and tu is exactly what has gone."
+      },
+      "usage": "The opening line of any set of steps you hand to somebody you say tu to.",
+      "register": "informal",
+      "mnemonic": "Take away tu, and take the -s with it."
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "Prends la casserole et mets l'eau sur le feu",
+      "cue": "Take the pan and put the water on the heat",
+      "literal": "Take the pan and put the-water on the fire",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prends",
+            "cue": "take",
+            "tag": "delta",
+            "forms": [],
+            "note": "Imperative of prendre. Not an -er verb, so the -s STAYS: tu prends gives Prends. L2-M4 taught the infinitive; this is the order built from it."
+          },
+          {
+            "display": "casserole",
+            "cue": "saucepan · pan",
+            "tag": "interference",
+            "forms": [],
+            "note": "Feminine: la casserole. It is a pan on a hob, not the baked dish English calls a casserole — that is un gratin."
+          },
+          {
+            "display": "mets",
+            "cue": "put",
+            "tag": "delta",
+            "forms": [],
+            "note": "Imperative of mettre, which is not an -er verb either, so its -s stays too: tu mets gives Mets. The -ts at the end is silent."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Prends and Mets look like they ought to shed an -s the way Regarde does. They do not. Only -er verbs lose it, and prendre and mettre are not -er verbs.",
+      "sound": "prahn la kas-ROL ay MEH loh sewr luh FUH. The -ds of prends and the -ts of mets are both silent, so both orders end on their vowel.",
+      "variations": [
+        {
+          "display": "Prends la casserole et mets le sel",
+          "cue": "Take the pan and put the salt in",
+          "changed": "the same pair of orders, with something else going in"
+        },
+        {
+          "display": "Mets l'eau sur le feu, puis prends la casserole",
+          "cue": "Put the water on the heat, then take the pan",
+          "changed": "the two orders swap, and nothing about their spelling moves"
+        }
+      ],
+      "mistake": {
+        "display": "Prend la casserole",
+        "why": "prendre keeps its -s in the tu imperative: Prends. Only -er verbs drop it."
+      },
+      "usage": "Step two of a recipe, said to somebody standing at the same worktop.",
+      "register": "informal",
+      "mnemonic": "Only -er verbs pay the -s."
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "Ajoute le sel, puis attends cinq minutes",
+      "cue": "Add the salt, then wait five minutes",
+      "literal": "Add the salt, then wait five minutes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ajoute",
+            "cue": "add",
+            "tag": "delta",
+            "forms": [],
+            "note": "Imperative of ajouter, an -er verb: tu ajoutes gives Ajoute, with the -s gone. Adding TO something is ajouter à, but a bare object needs nothing."
+          },
+          {
+            "display": "sel",
+            "cue": "salt",
+            "tag": "free",
+            "forms": [],
+            "note": "Masculine: le sel. Le sel et le poivre is the pair, in the same order English says salt and pepper."
+          },
+          {
+            "display": "attends",
+            "cue": "wait",
+            "tag": "delta",
+            "forms": [],
+            "note": "Imperative of attendre, L3-M5's verb: not an -er verb, so the -s stays. It takes no preposition — attends cinq minutes, never attends pour."
+          },
+          {
+            "display": "minutes",
+            "cue": "minutes",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: une minute, cinq minutes. The plural -s is silent, so the singular and the plural sound identical."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "English waits FOR five minutes. French waits five minutes flat: attendre takes its object with no preposition at all, and the same is true of the person you are waiting for.",
+      "sound": "a-ZHOOT luh SEL, pwee a-TAHN sank mee-NEWT. attends ends on a nasal vowel with nothing after it.",
+      "variations": [
+        {
+          "display": "Ajoute le sel, puis attends",
+          "cue": "Add the salt, then wait",
+          "changed": "the wait loses its length and the order still stands"
+        },
+        {
+          "display": "Coupe le pain, puis attends cinq minutes",
+          "cue": "Cut the bread, then wait five minutes",
+          "changed": "another first step in front of the same wait"
+        }
+      ],
+      "mistake": {
+        "display": "Ajoutes le sel",
+        "why": "ajouter is an -er verb, so its tu imperative drops the -s: Ajoute."
+      },
+      "usage": "The line that turns a list of ingredients into a set of steps.",
+      "register": "informal",
+      "mnemonic": "French waits minutes, not for minutes."
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "Appuie ici pour ouvrir la porte",
+      "cue": "Press here to open the door",
+      "literal": "Press here for to-open the door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "appuie",
+            "cue": "press",
+            "tag": "delta",
+            "forms": [],
+            "note": "Imperative of appuyer, an -er verb, so no -s. You press ON a thing — appuie sur le bouton — but a place needs nothing: appuie ici."
+          },
+          {
+            "display": "ouvrir",
+            "cue": "to open",
+            "tag": "free",
+            "forms": [],
+            "note": "The infinitive, because pour never takes a conjugated verb. ouvrir conjugates like an -er verb — tu ouvres — so its own order drops the -s the same way: Ouvre."
+          },
+          {
+            "display": "porte",
+            "cue": "door",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: la porte. Spelled exactly like the tu imperative of porter, to carry, so the sentence around it is what tells you which one you have."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "pour here is not a because and not English's for. Pour ouvrir is the PURPOSE of the pressing — to open — and a learner translating for opening lands on a shape French does not use.",
+      "sound": "a-PWEE ee-SEE poor oo-VREER la PORT. appuie is two syllables, not three.",
+      "variations": [
+        {
+          "display": "Appuie ici pour ouvrir",
+          "cue": "Press here to open",
+          "changed": "the door drops off and the purpose stands alone"
+        },
+        {
+          "display": "Pour ouvrir la porte, appuie ici",
+          "cue": "To open the door, press here",
+          "changed": "the purpose leads and the order follows it"
+        }
+      ],
+      "mistake": {
+        "display": "Appuie ici pour ouvres la porte",
+        "why": "pour is always followed by the infinitive: pour ouvrir. Nothing after pour is ever conjugated."
+      },
+      "usage": "Written on machines and said at doors — the shape of every instruction that explains itself.",
+      "register": "neutral",
+      "mnemonic": "pour hands the next verb its infinitive."
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "Ne commence pas tout de suite, attends encore",
+      "cue": "Don't start right away, wait a bit longer",
+      "literal": "Not start not all of following, wait again",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "commence",
+            "cue": "start · begin",
+            "tag": "delta",
+            "forms": [],
+            "note": "Imperative of commencer, an -er verb: no -s. Wrapped in ne ... pas here, and the verb itself does not change one letter for the negative."
+          },
+          {
+            "display": "tout de suite",
+            "cue": "right away · straight away",
+            "tag": "free",
+            "forms": [],
+            "note": "One key, three words, said as one. It means immediately — a learner reaching for it to mean in a while has it exactly backwards."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "English negates an order with one word in front of it: don't start. French wraps the verb in two, ne ... pas, and the ne is never dropped in writing however freely speech drops it.",
+      "sound": "nuh ko-MAHNS pah too duh SWEET, a-TAHN ahn-KOR. tout de suite runs together as one three-beat word.",
+      "variations": [
+        {
+          "display": "Ne coupe pas le pain tout de suite",
+          "cue": "Don't cut the bread right away",
+          "changed": "the same wrapper around another order"
+        },
+        {
+          "display": "Commence tout de suite",
+          "cue": "Start right away",
+          "changed": "the wrapper comes off and the order turns positive"
+        }
+      ],
+      "mistake": {
+        "display": "Commence pas tout de suite",
+        "why": "Speech drops the ne; writing does not. Ne commence pas is what this course writes, every time."
+      },
+      "usage": "Said to somebody who has already picked up the knife.",
+      "register": "informal",
+      "mnemonic": "ne in front, pas behind, the order in the middle."
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "Mets-le sur la table, mais ne le mets pas ici",
+      "cue": "Put it on the table, but don't put it here",
+      "literal": "Put-it on the table, but not it put not here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mets-le",
+            "cue": "put it",
+            "tag": "delta",
+            "forms": [],
+            "note": "Whole: the order and its object joined by a hyphen. That le is L3-M5's object pronoun — it, not L1-M1's article the — and it sits behind the verb only while the order is positive."
+          }
+        ],
+        "rules": [
+          2,
+          1
+        ]
+      },
+      "trap": "The hyphen is not decoration and it does not survive the negative. Mets-le becomes Ne le mets pas: the pronoun moves in front of the verb and the hyphen disappears with the move.",
+      "sound": "meh-LUH sewr la TABL, meh nuh luh meh pah ee-SEE. Behind the verb that le is said LUH, full and stressed; in front of it, it almost vanishes.",
+      "variations": [
+        {
+          "display": "Mets-le ici",
+          "cue": "Put it here",
+          "changed": "one order, one pronoun, nothing else"
+        },
+        {
+          "display": "Ne le mets pas sur la table",
+          "cue": "Don't put it on the table",
+          "changed": "the negative alone, with the pronoun back in front and no hyphen"
+        }
+      ],
+      "mistake": {
+        "display": "Ne mets-le pas ici",
+        "why": "The hyphen goes when the order turns negative, and the pronoun goes in front of the verb: Ne le mets pas ici."
+      },
+      "usage": "The half-sentence a learner has to build twice before it stops feeling backwards.",
+      "register": "informal",
+      "mnemonic": "Positive pushes the pronoun back; negative pulls it forward."
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "Il suffit de tourner la clé pour ouvrir la porte",
+      "cue": "You just have to turn the key to open the door",
+      "literal": "It suffices of to-turn the key for to-open the door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "il suffit de",
+            "cue": "you just have to · all it takes is",
+            "tag": "free",
+            "forms": [],
+            "note": "One frozen key, three words. The il names nobody, exactly like the il of il faut, and whatever follows de stays an infinitive."
+          }
+        ],
+        "rules": [
+          4,
+          3
+        ]
+      },
+      "trap": "There is no you in it. French says il suffit de and English has to supply a person — you just have to — so the two sentences never line up word for word.",
+      "sound": "eel sew-FEE duh toor-NAY la KLAY poor oo-VREER la PORT. The t of suffit is silent and the de runs straight on.",
+      "variations": [
+        {
+          "display": "Il suffit de tourner la clé",
+          "cue": "You just have to turn the key",
+          "changed": "the purpose drops off and the frame stands alone"
+        },
+        {
+          "display": "Pour ouvrir la porte, il suffit de tourner la clé",
+          "cue": "To open the door, you just have to turn the key",
+          "changed": "the purpose leads and the frame follows it"
+        }
+      ],
+      "mistake": {
+        "display": "Il suffit de tournes la clé",
+        "why": "de hands the next verb its infinitive: il suffit de tourner. Nothing after it is ever conjugated."
+      },
+      "usage": "How you tell somebody a machine is simpler than it looks.",
+      "register": "neutral",
+      "mnemonic": "il suffit de, then an infinitive, always."
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "Continue tout droit, ensuite tourne à droite",
+      "cue": "Keep going straight on, then turn right",
+      "literal": "Continue all straight, then turn to right",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "continue",
+            "cue": "keep going · carry on",
+            "tag": "delta",
+            "forms": [],
+            "note": "Imperative of continuer, an -er verb: no -s. One French word for what English needs two of, and the final e is silent."
+          },
+          {
+            "display": "tourne",
+            "cue": "turn",
+            "tag": "delta",
+            "forms": [],
+            "note": "Imperative of tourner, L2-M4's verb: tu tournes gives Tourne. L2-M4 named this form and refused to write it, because it was speaking to a stranger."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Continue is spelled like the English word and is not read like it: three syllables, stress at the end, and a silent e that English pronounces.",
+      "sound": "kon-tee-NEW too DRWAH, ahn-SWEET TOORN a DRWAT.",
+      "variations": [
+        {
+          "display": "Continue tout droit",
+          "cue": "Keep going straight on",
+          "changed": "the second step comes off"
+        },
+        {
+          "display": "Tourne à droite, ensuite continue tout droit",
+          "cue": "Turn right, then keep going straight on",
+          "changed": "the two steps swap places"
+        }
+      ],
+      "mistake": {
+        "display": "Continues tout droit",
+        "why": "continuer is an -er verb, so its tu imperative has no -s: Continue."
+      },
+      "usage": "Directions given to somebody you are on tu terms with — a friend, a child, a brother.",
+      "register": "informal",
+      "mnemonic": "Third syllable, silent e: kon-tee-NEW."
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "Écoute-moi bien et n'oublie pas la page trois",
+      "cue": "Listen to me carefully and don't forget page three",
+      "literal": "Listen-me well and not-forget not the page three",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "écoute-moi",
+            "cue": "listen to me",
+            "tag": "delta",
+            "forms": [],
+            "note": "Whole: Écoute plus its object on a hyphen. Behind a positive order me becomes moi, L2-M1's stressed form, and écouter takes its object with no a in front of it."
+          },
+          {
+            "display": "n'oublie",
+            "cue": "don't forget",
+            "tag": "interference",
+            "forms": [],
+            "note": "ne elides to n' before a vowel and is still fully there. oublie is the -er imperative of oublier, and the pas lands after it."
+          },
+          {
+            "display": "page",
+            "cue": "page",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: la page. The number follows it with no preposition at all — la page trois, never la page de trois."
+          }
+        ],
+        "rules": [
+          2,
+          1,
+          0
+        ]
+      },
+      "trap": "Listen to me is three words in English and the to is not one of them in French. écouter carries its object directly, so écoute à moi is wrong twice over: wrong preposition, wrong pronoun.",
+      "sound": "ay-koot-MWAH bee-AN ay noo-BLEE pah la pahzh TRWAH. The n' of n'oublie is heard, and it is the only thing carrying the negative into the ear.",
+      "variations": [
+        {
+          "display": "Écoute-moi bien",
+          "cue": "Listen to me carefully",
+          "changed": "the second half comes off"
+        },
+        {
+          "display": "N'oublie pas la page trois",
+          "cue": "Don't forget page three",
+          "changed": "the negative order alone, with its n' still written"
+        }
+      ],
+      "mistake": {
+        "display": "Écoute-me bien",
+        "why": "Behind a positive order the pronoun takes its stressed shape: Écoute-moi."
+      },
+      "usage": "A teacher to a class, a parent to a child — the register the vous imperative of L2-M4 could never reach.",
+      "register": "informal",
+      "mnemonic": "Behind the verb, me grows into moi."
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "Vas-y, appelle le bureau et demande la recette",
+      "cue": "Go on, call the office and ask for the recipe",
+      "literal": "Go-there, call the office and ask the recipe",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vas-y",
+            "cue": "go on · go ahead",
+            "tag": "interference",
+            "forms": [],
+            "note": "The one place aller's imperative takes its -s back: Va on its own, Vas-y with the y behind it. Literally go there, and used where English says go on."
+          },
+          {
+            "display": "appelle",
+            "cue": "call",
+            "tag": "delta",
+            "forms": [],
+            "note": "Imperative of appeler, an -er verb, so no -s — but the l doubles before the silent ending: nous appelons keeps one, tu appelles and Appelle take two."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "demander is ask FOR, and it takes no preposition: demande la recette. A demande pour la recette is English showing straight through the French.",
+      "sound": "va-ZEE, a-PEL luh bew-ROH ay duh-MAHND la ruh-SET. The s of vas-y is heard as a z, which is the whole reason it is written.",
+      "variations": [
+        {
+          "display": "Vas-y, appelle le bureau",
+          "cue": "Go on, call the office",
+          "changed": "the second order comes off"
+        },
+        {
+          "display": "Appelle le bureau et demande la recette",
+          "cue": "Call the office and ask for the recipe",
+          "changed": "vas-y drops, and the pair of orders stands on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Va-y, appelle le bureau",
+        "why": "aller's imperative takes its -s back before y, so the two can be said at all: Vas-y."
+      },
+      "usage": "The push you give somebody who is hesitating, and the commonest thing said just before a phone call.",
+      "register": "informal",
+      "mnemonic": "Va alone; Vas-y together."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "Regarde la recette",
+      "cue": "Look at the recipe"
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "D'abord coupe le pain, ensuite ajoute le sel",
+      "cue": "First cut the bread, then add the salt"
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "Prends la casserole et mets l'eau sur le feu",
+      "cue": "Take the pan and put the water on the heat"
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "Appuie ici pour ouvrir la porte",
+      "cue": "Press here to open the door"
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "Ne commence pas tout de suite",
+      "cue": "Don't start right away"
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "Attends cinq minutes, puis continue",
+      "cue": "Wait five minutes, then carry on"
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "Mets-le sur la table",
+      "cue": "Put it on the table"
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "Ne le mets pas ici",
+      "cue": "Don't put it here"
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "Il suffit de tourner la clé",
+      "cue": "You just have to turn the key"
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "Continue tout droit, ensuite tourne à droite",
+      "cue": "Keep going straight on, then turn right"
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "Écoute-moi bien et n'oublie pas la page trois",
+      "cue": "Listen to me carefully and don't forget page three"
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "Vas-y, appelle le bureau",
+      "cue": "Go on, call the office"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

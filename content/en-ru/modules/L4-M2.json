@@ -1,0 +1,628 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": [
+    "L4-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present_imperfective",
+      "simple_past",
+      "simple_future_perfective"
+    ],
+    "allowedPatterns": [
+      "Íz-za + <N-genitive> + <clause>",
+      "Blagodaryá + <N-dative> + <clause>",
+      "Tak kak + <clause> + , + <clause>",
+      "<clause> + , + tak chto + <clause>",
+      "<clause> + , + poéhtomu + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The two cause prepositions carry POLARITY, which English does not. Íz-za takes the GENITIVE and states the cause of something bad: íz-za dozhdyá, because of the rain. Blagodaryá takes the DATIVE, states the cause of something good, and is literally a form of thanking: blagodaryá vam, thanks to you. Both cases are already yours — the genitive from L2-M3 and L3-M8, the dative from L2-M1 and L3-M7 — so this module opens two prepositions and no case at all."
+    },
+    {
+      "tag": "delta",
+      "text": "A reason can now be FRONTED. Tak kak opens the sentence with its cause — Tak kak byl dozhd', ya ostálsya dóma — where L1-M9's potomú chto can only trail behind the result. That is the whole of the range this module adds: a paragraph can start from its reason instead of arriving at it, and the comma closes the fronted clause before the main one starts."
+    },
+    {
+      "tag": "free",
+      "text": "Three connectors map onto English with no shift of role at all: tak chto is so, poéhtomu is therefore, znáchit is so then. The one thing to hold is punctuation, which is grammar in this course for the third level running: the comma goes BEFORE tak chto, exactly as it goes before potomú chto. poéhtomu is not a conjunction — it is an adverb, so its clause is a full clause and it can move inside it: ya poéhtomu opozdál."
+    },
+    {
+      "tag": "interference",
+      "text": "English because of is polarity-neutral and does both jobs, so a learner reaches for íz-za every time and produces íz-za vashey pómoshchi — because of your help — which lands as an accusation rather than a thank-you. Good outcome, blagodaryá plus the dative. Bad outcome, íz-za plus the genitive. There is no neutral one, and choosing wrongly says something you did not mean."
+    },
+    {
+      "tag": "free",
+      "text": "What is genuinely new is that a cause can be a NOUN and not only a clause. L1-M9 could only say potomú chto byl dozhd' — because it was raining. Now the same cause fits in two words, íz-za dozhdyá, and the sentence has room left for its result. That is what lets three or four sentences hold together by cause rather than by time."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "Íz-za dozhdyá my ne poshlí na rabótu.",
+      "script": "Из-за дождя мы не пошли на работу.",
+      "cue": "Because of the rain we did not go to work.",
+      "literal": "Because-of of-rain we not went to work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "íz-za",
+            "script": "из-за",
+            "cue": "because of",
+            "tag": "delta",
+            "forms": [
+              "íz-za"
+            ],
+            "note": "The cause of something BAD, and it takes the genitive: íz-za dozhdyá. Written with a hyphen, and stressed on the first half: EEZ-za."
+          },
+          {
+            "display": "dozhdyá",
+            "script": "дождя",
+            "cue": "of the rain",
+            "tag": "free",
+            "forms": [
+              "dozhdyá"
+            ],
+            "note": "Genitive of L1-M5's dozhd', which is the form íz-za demands. The stress moves onto the ending: dazh-DYA."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English because of the rain hides the case entirely. Russian shows it: the noun after íz-za is never the dictionary form.",
+      "sound": "EEZ-za dazh-DYA. The two words run together into one stress group, with the hyphen carrying no pause.",
+      "variations": [
+        {
+          "display": "Íz-za dozhdyá ya ostálsya dóma.",
+          "script": "Из-за дождя я остался дома.",
+          "cue": "Because of the rain I stayed at home.",
+          "changed": "one person, and a different result"
+        },
+        {
+          "display": "My ne poshlí na rabótu íz-za dozhdyá.",
+          "script": "Мы не пошли на работу из-за дождя.",
+          "cue": "We did not go to work because of the rain.",
+          "changed": "the cause moved to the end"
+        }
+      ],
+      "mistake": {
+        "display": "Íz-za dozhd' my ne poshlí na rabótu.",
+        "script": "Из-за дождь мы не пошли на работу.",
+        "why": "íz-za takes the genitive: dozhdyá. dozhd' is the dictionary form and cannot stand after this preposition."
+      },
+      "usage": "Explaining a plan that fell through, with the reason first.",
+      "register": "neutral",
+      "mnemonic": "íz-za is bad news in the genitive."
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "Blagodaryá vam ya vsyó pónyal.",
+      "script": "Благодаря вам я всё понял.",
+      "cue": "Thanks to you I understood everything.",
+      "literal": "Thanks-to to-you I everything understood.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "blagodaryá",
+            "script": "благодаря",
+            "cue": "thanks to",
+            "tag": "delta",
+            "forms": [
+              "blagodaryá"
+            ],
+            "note": "The cause of something GOOD, and it takes the dative: blagodaryá vam. It is literally a form of thanking, which is the whole mnemonic."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English thanks to and because of are interchangeable in the mouth of a careless speaker. Here they are two different words and only one of them thanks anybody.",
+      "sound": "bla-ga-da-RYA — four syllables, all light, and the stress right at the end.",
+      "variations": [
+        {
+          "display": "Blagodaryá vrachú ya chúvstvuyu sebyá khoroshó.",
+          "script": "Благодаря врачу я чувствую себя хорошо.",
+          "cue": "Thanks to the doctor I feel well.",
+          "changed": "a person named instead of you"
+        },
+        {
+          "display": "Blagodaryá vam vsyó khoroshó.",
+          "script": "Благодаря вам всё хорошо.",
+          "cue": "Thanks to you everything is fine.",
+          "changed": "the result with no verb at all"
+        }
+      ],
+      "mistake": {
+        "display": "Íz-za vas ya vsyó pónyal.",
+        "script": "Из-за вас я всё понял.",
+        "why": "íz-za states the cause of something bad, so this thanks you by accusing you. A good outcome takes blagodaryá and the dative."
+      },
+      "usage": "Thanking somebody for the result rather than for the act.",
+      "register": "neutral",
+      "mnemonic": "blagodaryá begins with thank — and thanking takes the dative."
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "Tak kak byl dozhd', ya ostálsya dóma.",
+      "script": "Так как был дождь, я остался дома.",
+      "cue": "Since it was raining, I stayed at home.",
+      "literal": "So as was rain, I stayed at-home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tak kak",
+            "script": "так как",
+            "cue": "since, as",
+            "tag": "delta",
+            "forms": [
+              "tak kak"
+            ],
+            "note": "Fronts the reason: Tak kak byl dozhd', … . L1-M9's potomú chto can only trail, so this is the word that lets a paragraph open with its cause."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "English since also means from that time, so a learner hesitates. tak kak has no time reading at all: it is only ever a reason.",
+      "sound": "tak-KAK, two flat syllables, and the comma after dozhd' is a real pause.",
+      "variations": [
+        {
+          "display": "Ya ostálsya dóma, potomú chto byl dozhd'.",
+          "script": "Я остался дома, потому что был дождь.",
+          "cue": "I stayed at home because it was raining.",
+          "changed": "the reason trailing, with L1-M9's connector"
+        },
+        {
+          "display": "Tak kak ya ustál, ya poshyól spat'.",
+          "script": "Так как я устал, я пошёл спать.",
+          "cue": "Since I was tired, I went to bed.",
+          "changed": "a different reason and a different result"
+        }
+      ],
+      "mistake": {
+        "display": "Tak kak byl dozhd' ya ostálsya dóma.",
+        "script": "Так как был дождь я остался дома.",
+        "why": "The fronted reason closes with a comma. Without it the two clauses run together and the main one never announces itself."
+      },
+      "usage": "Opening an explanation with its reason, in speech or in a message.",
+      "register": "neutral",
+      "mnemonic": "tak kak opens; potomú chto follows."
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "Ya óchen' ustál, tak chto ya poshyól spat'.",
+      "script": "Я очень устал, так что я пошёл спать.",
+      "cue": "I was very tired, so I went to bed.",
+      "literal": "I very tired, so that I went to-sleep.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tak chto",
+            "script": "так что",
+            "cue": "so",
+            "tag": "delta",
+            "forms": [
+              "tak chto"
+            ],
+            "note": "The result, not the reason. The comma goes BEFORE it, exactly as it does before potomú chto: ya ustál, tak chto ya poshyól spat'."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English so does the work of both tak chto and potomú chto depending on where you put it. Russian keeps them apart: tak chto only ever introduces what followed.",
+      "sound": "tak-SHTO. The ch is pronounced sh here, the same way it is in chto and in chtóby.",
+      "variations": [
+        {
+          "display": "Ya óchen' ustál, poéhtomu ya poshyól spat'.",
+          "script": "Я очень устал, поэтому я пошёл спать.",
+          "cue": "I was very tired, therefore I went to bed.",
+          "changed": "poéhtomu instead of tak chto"
+        },
+        {
+          "display": "Lift slomálsya, tak chto ya poshyól peshkóm.",
+          "script": "Лифт сломался, так что я пошёл пешком.",
+          "cue": "The lift broke, so I went on foot.",
+          "changed": "a different cause and a different result"
+        }
+      ],
+      "mistake": {
+        "display": "Ya óchen' ustál tak chto ya poshyól spat'.",
+        "script": "Я очень устал так что я пошёл спать.",
+        "why": "The comma goes before tak chto, never inside it. Punctuation here is grammar: without it the connector has no clause to join."
+      },
+      "usage": "Telling somebody what followed from how you felt.",
+      "register": "neutral",
+      "mnemonic": "Comma, then tak chto, then what happened."
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "Prichína odná: lift slomálsya, poéhtomu ya opozdál.",
+      "script": "Причина одна: лифт сломался, поэтому я опоздал.",
+      "cue": "There is one reason: the lift broke, therefore I was late.",
+      "literal": "Reason one: lift broke, therefore I was-late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prichína",
+            "script": "причина",
+            "cue": "the reason, the cause",
+            "tag": "free",
+            "forms": [
+              "prichína"
+            ],
+            "note": "The noun for a cause. Prichína odná — there is one reason — is the ordinary way to announce the explanation that comes next."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English needs there is before a reason. Russian needs nothing: Prichína odná is a complete sentence, as every present-tense is-sentence has been since L1.",
+      "sound": "pri-CHEE-na ad-NA, then a pause at the colon. pa-EH-ta-mu keeps its stress on the second syllable.",
+      "variations": [
+        {
+          "display": "Lift slomálsya, poéhtomu ya opozdál.",
+          "script": "Лифт сломался, поэтому я опоздал.",
+          "cue": "The lift broke, therefore I was late.",
+          "changed": "the announcement dropped"
+        },
+        {
+          "display": "Lift slomálsya, ya poéhtomu opozdál.",
+          "script": "Лифт сломался, я поэтому опоздал.",
+          "cue": "The lift broke, I was therefore late.",
+          "changed": "poéhtomu moved inside its clause, which only an adverb may do"
+        }
+      ],
+      "mistake": {
+        "display": "Prichína odná: lift slomálsya, potomú chto ya opozdál.",
+        "script": "Причина одна: лифт сломался, потому что я опоздал.",
+        "why": "That turns the halves round and says being late broke the lift. A consequence takes poéhtomu; potomú chto introduces a cause."
+      },
+      "usage": "Owning up to something at work, with the reason stated once and plainly.",
+      "register": "neutral",
+      "mnemonic": "poéhtomu is an adverb, so it can move; tak chto cannot."
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "Ivána net dóma, znáchit on na rabóte.",
+      "script": "Ивана нет дома, значит он на работе.",
+      "cue": "Ivan is not at home, so he must be at work.",
+      "literal": "Of-Ivan not at-home, means he at work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "znáchit",
+            "script": "значит",
+            "cue": "so then, that means",
+            "tag": "free",
+            "forms": [
+              "znáchit"
+            ],
+            "note": "A conclusion you DRAW, not a result you caused. From the verb to mean, and it sits in exactly the seat English gives so then."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English so covers both halves of this module. znáchit is the half that reasons backwards: nothing was made to happen, something was worked out.",
+      "sound": "ZNA-chit, stress on the first syllable, and the final t is soft.",
+      "variations": [
+        {
+          "display": "Vas net dóma, znáchit vy na rabóte.",
+          "script": "Вас нет дома, значит вы на работе.",
+          "cue": "You are not at home, so you must be at work.",
+          "changed": "spoken to the person themselves"
+        },
+        {
+          "display": "Avtóbusa net, znáchit ya poydú peshkóm.",
+          "script": "Автобуса нет, значит я пойду пешком.",
+          "cue": "There is no bus, so I will walk.",
+          "changed": "a conclusion about what to do next"
+        }
+      ],
+      "mistake": {
+        "display": "Ivána net dóma, tak chto on na rabóte.",
+        "script": "Ивана нет дома, так что он на работе.",
+        "why": "tak chto states a result something caused; znáchit states a conclusion you drew. His being out did not send him to work."
+      },
+      "usage": "Working something out aloud from what you can see.",
+      "register": "neutral",
+      "mnemonic": "znáchit reasons backwards; tak chto moves forwards."
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "Íz-za pogódy ya opozdál, no blagodaryá vam vsyó khoroshó.",
+      "script": "Из-за погоды я опоздал, но благодаря вам всё хорошо.",
+      "cue": "Because of the weather I was late, but thanks to you everything is fine.",
+      "literal": "Because-of of-weather I was-late, but thanks-to to-you everything good.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pogódy",
+            "script": "погоды",
+            "cue": "of the weather",
+            "tag": "free",
+            "forms": [
+              "pogódy"
+            ],
+            "note": "Genitive of L3-M4's pogóda, because íz-za demands it. A feminine -a noun swaps to -y, the same change as rabóta to rabóty."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "One English sentence would use because of twice here. Russian cannot: the bad half and the good half take different prepositions and different cases.",
+      "sound": "pa-GO-dy keeps L3-M4's stress; the two halves of the sentence pivot on no, which takes no stress at all.",
+      "variations": [
+        {
+          "display": "Íz-za pogódy ya opozdál.",
+          "script": "Из-за погоды я опоздал.",
+          "cue": "Because of the weather I was late.",
+          "changed": "the bad half alone"
+        },
+        {
+          "display": "Blagodaryá pómoshchi vsyó khoroshó.",
+          "script": "Благодаря помощи всё хорошо.",
+          "cue": "Thanks to the help everything is fine.",
+          "changed": "the good half, with a thing rather than a person"
+        }
+      ],
+      "mistake": {
+        "display": "Blagodaryá pogódy ya opozdál.",
+        "script": "Благодаря погоды я опоздал.",
+        "why": "Two errors at once: blagodaryá is for good outcomes, and it takes the dative. A bad cause is íz-za plus the genitive."
+      },
+      "usage": "One message that both apologises and thanks — the commonest shape this module has.",
+      "register": "neutral",
+      "mnemonic": "Bad, íz-za and genitive. Good, blagodaryá and dative."
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "Blagodaryá drúgu ya kupíl deshyóvyy bilét.",
+      "script": "Благодаря другу я купил дешёвый билет.",
+      "cue": "Thanks to a friend I bought a cheap ticket.",
+      "literal": "Thanks-to to-friend I bought cheap ticket.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "drúgu",
+            "script": "другу",
+            "cue": "to a friend",
+            "tag": "free",
+            "forms": [
+              "drúgu"
+            ],
+            "note": "Dative of L2-M2's drug, because blagodaryá demands it. Besides k, blagodaryá is the only common preposition in this course that takes the dative."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "English thanks to my friend shows nothing. The Russian ending is the whole grammar of the phrase, and it is the dative every time.",
+      "sound": "DRU-gu, stress unmoved from drug, and the ending is a short -u.",
+      "variations": [
+        {
+          "display": "Blagodaryá drúgu ya kupíl bilét.",
+          "script": "Благодаря другу я купил билет.",
+          "cue": "Thanks to a friend I bought a ticket.",
+          "changed": "the adjective dropped"
+        },
+        {
+          "display": "Blagodaryá sestré ya kupíl deshyóvyy bilét.",
+          "script": "Благодаря сестре я купил дешёвый билет.",
+          "cue": "Thanks to my sister I bought a cheap ticket.",
+          "changed": "a different person in the same dative seat"
+        }
+      ],
+      "mistake": {
+        "display": "Blagodaryá drúga ya kupíl deshyóvyy bilét.",
+        "script": "Благодаря друга я купил дешёвый билет.",
+        "why": "drúga is the genitive, which is what íz-za would take. blagodaryá takes the dative: drúgu."
+      },
+      "usage": "Saying who to credit for a good outcome.",
+      "register": "neutral",
+      "mnemonic": "k vrachú, blagodaryá drúgu — the same ending twice."
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "Íz-za rabóty ya rédko otdykháyu, poéhtomu ya vsegdá ustál.",
+      "script": "Из-за работы я редко отдыхаю, поэтому я всегда устал.",
+      "cue": "Because of work I rarely rest, therefore I am always tired.",
+      "literal": "Because-of of-work I rarely rest, therefore I always tired.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rabóty",
+            "script": "работы",
+            "cue": "of work",
+            "tag": "free",
+            "forms": [
+              "rabóty"
+            ],
+            "note": "Genitive of L1-M7's rabóta, the form íz-za takes. Do not reach for the accusative rabótu: a preposition of cause never governs it."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English work needs no article and no ending, so nothing signals the case. In Russian the same noun has appeared as rabóta, rabóte, rabótu and now rabóty, and only the last one fits here.",
+      "sound": "ra-BO-ty. The stress stays on the middle syllable through the whole paradigm.",
+      "variations": [
+        {
+          "display": "Íz-za rabóty ya rédko otdykháyu.",
+          "script": "Из-за работы я редко отдыхаю.",
+          "cue": "Because of work I rarely rest.",
+          "changed": "the cause and its effect, with no third clause"
+        },
+        {
+          "display": "Ya rédko otdykháyu, poéhtomu ya vsegdá ustál.",
+          "script": "Я редко отдыхаю, поэтому я всегда устал.",
+          "cue": "I rarely rest, therefore I am always tired.",
+          "changed": "the cause left unstated"
+        }
+      ],
+      "mistake": {
+        "display": "Íz-za rabótu ya rédko otdykháyu.",
+        "script": "Из-за работу я редко отдыхаю.",
+        "why": "That is the accusative, the form an object takes. íz-za takes the genitive: íz-za rabóty."
+      },
+      "usage": "The complaint about work that every conversation eventually reaches.",
+      "register": "neutral",
+      "mnemonic": "íz-za rabóty, not rabótu — a cause is never an object."
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "Byl sil'nyy dozhd', tak chto ya ostálsya dóma i chitál knígu.",
+      "script": "Был сильный дождь, так что я остался дома и читал книгу.",
+      "cue": "There was heavy rain, so I stayed at home and read a book.",
+      "literal": "Was strong rain, so that I stayed at-home and read book.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sil'nyy",
+            "script": "сильный",
+            "cue": "strong, heavy",
+            "tag": "free",
+            "forms": [
+              "sil'nyy",
+              "sil'naya",
+              "sil'noye"
+            ],
+            "note": "Strong — and with weather it is English heavy: sil'nyy dozhd'. An ordinary -yy adjective, so sil'naya and sil'noye follow without surprises."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English says heavy rain and strong coffee with two different words. Russian uses sil'nyy for both, and heavy is only how English says it.",
+      "sound": "SEEL-nyy, and the soft sign keeps the l soft — not the SIL of English silly.",
+      "variations": [
+        {
+          "display": "Byl sil'nyy dozhd', poéhtomu ya ostálsya dóma.",
+          "script": "Был сильный дождь, поэтому я остался дома.",
+          "cue": "There was heavy rain, therefore I stayed at home.",
+          "changed": "poéhtomu instead of tak chto"
+        },
+        {
+          "display": "Byl dozhd', tak chto ya ostálsya dóma.",
+          "script": "Был дождь, так что я остался дома.",
+          "cue": "It was raining, so I stayed at home.",
+          "changed": "the adjective dropped and the account shortened"
+        }
+      ],
+      "mistake": {
+        "display": "Byl sil'nyy dozhd', tak kak ya ostálsya dóma.",
+        "script": "Был сильный дождь, так как я остался дома.",
+        "why": "tak kak introduces a reason, not a result — this says the rain happened because you stayed in. The result takes tak chto or poéhtomu."
+      },
+      "usage": "Holding a small account together by cause: weather, decision, evening.",
+      "register": "neutral",
+      "mnemonic": "tak kak leads with why; tak chto ends with what followed."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "Íz-za dozhdyá ya ostálsya dóma.",
+      "script": "Из-за дождя я остался дома.",
+      "cue": "Because of the rain I stayed at home."
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "Blagodaryá vam vsyó khoroshó.",
+      "script": "Благодаря вам всё хорошо.",
+      "cue": "Thanks to you everything is fine."
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "Tak kak lift slomálsya, ya poshyól peshkóm.",
+      "script": "Так как лифт сломался, я пошёл пешком.",
+      "cue": "Since the lift broke, I went on foot."
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "Ya óchen' ustál, tak chto ya poshyól spat'.",
+      "script": "Я очень устал, так что я пошёл спать.",
+      "cue": "I was very tired, so I went to bed."
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "Avtóbusa net, znáchit ya poydú peshkóm.",
+      "script": "Автобуса нет, значит я пойду пешком.",
+      "cue": "There is no bus, so I will walk."
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "Íz-za rabóty ya rédko otdykháyu.",
+      "script": "Из-за работы я редко отдыхаю.",
+      "cue": "Because of work I rarely rest."
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "Blagodaryá drúgu ya kupíl deshyóvyy bilét.",
+      "script": "Благодаря другу я купил дешёвый билет.",
+      "cue": "Thanks to a friend I bought a cheap ticket."
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "Byl sil'nyy dozhd', poéhtomu ya ostálsya dóma.",
+      "script": "Был сильный дождь, поэтому я остался дома.",
+      "cue": "There was heavy rain, therefore I stayed at home."
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "Prichína odná: ya opozdál na rabótu.",
+      "script": "Причина одна: я опоздал на работу.",
+      "cue": "There is one reason: I was late for work."
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "Íz-za pogódy póyezd opozdál.",
+      "script": "Из-за погоды поезд опоздал.",
+      "cue": "Because of the weather the train was late."
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "Tak kak ya bólen, ya ne poydú na rabótu.",
+      "script": "Так как я болен, я не пойду на работу.",
+      "cue": "Since I am ill, I will not go to work."
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "Blagodaryá sestré ya kupíl deshyóvyy bilét.",
+      "script": "Благодаря сестре я купил дешёвый билет.",
+      "cue": "Thanks to my sister I bought a cheap ticket."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
