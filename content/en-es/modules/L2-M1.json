@@ -1,0 +1,683 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M1",
+  "title": "Asking politely",
+  "job": "Requests, thanks, apologies in the right register",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "present",
+      "imperative",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "¿Puede/Puedes + V-inf?",
+      "¿Me da/das + un/una + N?",
+      "Perdone/Disculpe + , + <request>",
+      "Lo siento + , + <statement>",
+      "Muchas gracias + , + <closing>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "Politeness in Spanish lives in the FRAME, not in the pronoun. A bare imperative is blunt, ¿Me da…? is ordinary, ¿Puede…? is softer still — and the verb never changes to carry any of it. \"usted is formal, tú is informal\" is false in both directions: in Spain tú is ordinary with a shop assistant, and across much of Colombia usted goes to a grandchild out of affection."
+    },
+    {
+      "tag": "delta",
+      "text": "What IS invariant: usted takes the él/ella verb form while still meaning \"you\" — usted puede, never usted puedes. Choosing usted is a claim about the relationship, not a rung on a politeness ladder."
+    },
+    {
+      "tag": "delta",
+      "text": "poder changes its stem when the stress lands on it: puedo · puedes · puede, but the infinitive stays poder. L1 already showed this twice without naming it — quiero/quieres (M1, M3) and cuesta (M8) — so the pattern is old and only the name is new."
+    },
+    {
+      "tag": "free",
+      "text": "After puede or puedes the second verb stays in its dictionary form: ¿Puede abrir…? English does the same thing after \"can\", so there is nothing to relearn."
+    },
+    {
+      "tag": "interference",
+      "text": "English \"sorry\" covers three different Spanish moves. Lo siento is regret for something that has happened. Perdone or Perdona asks to be excused before you interrupt. Disculpe is the neutral street-and-counter form for stopping a stranger."
+    },
+    {
+      "tag": "delta",
+      "text": "me goes in front of the verb and names who the thing is for: ¿Me da un café? English puts \"me\" after the verb and Spanish never does."
+    },
+    {
+      "tag": "delta",
+      "text": "A request is written as a question between ¿ … ? even when it is an order in disguise. The question mark is what makes it a request rather than an instruction."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M1-S01",
+      "display": "¿Me da un café, por favor?",
+      "cue": "Could I have a coffee, please?",
+      "literal": "To-me give(you-polite) a coffee, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Me",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [
+              "me",
+              "te"
+            ],
+            "note": "Names who the thing is for, and it stands in FRONT of the verb: ¿Me da…? You have met it glued inside me llamo and me gusta (M1); this is the bare word. te is its tú partner."
+          },
+          {
+            "display": "da",
+            "cue": "gives · you give (polite)",
+            "tag": "delta",
+            "forms": [
+              "da",
+              "das",
+              "dar"
+            ],
+            "note": "dar, to give, in the he-she-usted form. ¿Me da un café? is literally \"do you give me a coffee\" — the everyday way to order. das is the tú form, dar the dictionary one."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5,
+          6
+        ]
+      },
+      "trap": "There is no word for \"could\" here. Spanish asks in the plain present and lets the question mark and the frame carry the politeness.",
+      "sound": "The d of da is soft between vowels — nearer the th of \"this\" than an English d.",
+      "variations": [
+        {
+          "display": "¿Me da un vaso de agua?",
+          "cue": "Could I have a glass of water?",
+          "changed": "the same frame, a different thing asked for"
+        },
+        {
+          "display": "¿Me da dos cafés, por favor?",
+          "cue": "Could I have two coffees, please?",
+          "changed": "a number in front, and the noun turns plural"
+        },
+        {
+          "display": "¿Me da un poco de pan?",
+          "cue": "Could I have a little bread?",
+          "changed": "un poco de measures out an amount instead of counting one"
+        }
+      ],
+      "mistake": {
+        "display": "¿Da me un café?",
+        "why": "me never follows a conjugated verb: ¿Me da un café? It only moves behind a verb in its dictionary form, as in darme."
+      },
+      "usage": "A counter, a bar, a shop — anyone serving you whom you do not know. Warm and completely ordinary; nobody hears it as curt.",
+      "register": "formal",
+      "mnemonic": "Me first, verb second — Spanish asks who it is for before it asks for it."
+    },
+    {
+      "id": "L2-M1-S02",
+      "display": "¿Me das un café?",
+      "cue": "Can you get me a coffee?",
+      "literal": "To-me give(you) a coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "das",
+            "cue": "you give",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tú form of dar: the -s is the tú ending you have had since eres and estás (M2). Same request as S01, said to someone you would call by their first name. The row for dar is S01's."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The switch from das to da is the whole difference between the two sentences. Nothing else moves — no extra word, no politer verb.",
+      "sound": "das ends in a soft s that is never buzzed; it is the s of \"sit\", not of \"is\".",
+      "variations": [
+        {
+          "display": "¿Me das un poco de leche?",
+          "cue": "Can you give me a little milk?",
+          "changed": "asking a friend for something at their table"
+        },
+        {
+          "display": "¿Me das el libro?",
+          "cue": "Can you give me the book?",
+          "changed": "el, because it is a book you both already know about"
+        },
+        {
+          "display": "¿Me das una manzana, por favor?",
+          "cue": "Can you give me an apple, please?",
+          "changed": "por favor is welcome with tú too — it is not the formal marker"
+        }
+      ],
+      "mistake": {
+        "display": "¿Me das usted un café?",
+        "why": "usted takes da, not das. Pick one address and let the verb match it."
+      },
+      "usage": "A friend, a sibling, someone your own age. In Spain also a shop assistant you have seen before.",
+      "register": "informal",
+      "mnemonic": "One letter, one relationship: das to a friend, da to everyone else."
+    },
+    {
+      "id": "L2-M1-S03",
+      "display": "¿Puede abrir la ventana?",
+      "cue": "Could you open the window?",
+      "literal": "Can(you-polite) to-open the window?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Puede",
+            "cue": "can · you can (polite)",
+            "tag": "delta",
+            "forms": [
+              "puedo",
+              "puedes",
+              "puede",
+              "poder"
+            ],
+            "note": "poder, to be able to. The o becomes ue wherever the stress lands on it — puedo, puedes, puede — and goes back to o when it does not: poder. Same change as M8's cuesta."
+          },
+          {
+            "display": "abrir",
+            "cue": "to open",
+            "tag": "free",
+            "forms": [],
+            "note": "The dictionary form, unchanged after puede exactly as it is after \"can\" in English. Spanish adds no word for \"to\" here."
+          },
+          {
+            "display": "ventana",
+            "cue": "window",
+            "tag": "free",
+            "forms": [
+              "ventana",
+              "ventanas"
+            ],
+            "note": "Feminine: la ventana, las ventanas."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "puede looks like it should mean \"he can\" and here it means \"can you\". It is the usted form, and it is the softest ordinary way to ask for anything.",
+      "sound": "PWE-de — the ue is one gliding sound, not two syllables.",
+      "variations": [
+        {
+          "display": "¿Puede abrir la puerta?",
+          "cue": "Could you open the door?",
+          "changed": "same frame, a door instead of a window"
+        },
+        {
+          "display": "¿Puede hablar un poco?",
+          "cue": "Could you speak a little?",
+          "changed": "any dictionary-form verb slots in after puede"
+        },
+        {
+          "display": "¿Puede esperar aquí?",
+          "cue": "Could you wait here?",
+          "changed": "a request to do nothing is still a request"
+        }
+      ],
+      "mistake": {
+        "display": "¿Puede a abrir la ventana?",
+        "why": "Nothing stands between puede and the second verb. English's \"to\" has no Spanish equivalent to write."
+      },
+      "usage": "The all-purpose polite request: a stranger, an official, someone at a desk. Softer than ¿Me da…? because it asks whether they can rather than telling them to.",
+      "register": "formal",
+      "mnemonic": "puede asks permission of the world; the second verb just waits in the dictionary."
+    },
+    {
+      "id": "L2-M1-S04",
+      "display": "¿Puedes abrir la puerta?",
+      "cue": "Can you open the door?",
+      "literal": "Can(you) to-open the door?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Puedes",
+            "cue": "you can",
+            "tag": "delta",
+            "forms": [],
+            "note": "The tú form of poder, and the stem still changes: puedes, not podes. The -s is the tú ending. The row for poder is S03's."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "The stem change survives the change of person. Every form you say out loud has ue; only the dictionary form poder keeps the o.",
+      "sound": "PWE-des, stressed on the first syllable like puede.",
+      "variations": [
+        {
+          "display": "¿Puedes esperar un momento?",
+          "cue": "Can you wait a moment?",
+          "changed": "the same wait, asked of a friend"
+        },
+        {
+          "display": "¿Puedes comer un poco?",
+          "cue": "Can you eat a little?",
+          "changed": "any dictionary-form verb slots in after puedes"
+        },
+        {
+          "display": "No puedes abrir la ventana.",
+          "cue": "You can't open the window.",
+          "changed": "no in front turns the question into a plain refusal"
+        }
+      ],
+      "mistake": {
+        "display": "¿Podes abrir la puerta?",
+        "why": "The o becomes ue when the stress falls on it: puedes. (podés with an accent is real River Plate Spanish, and a different address again.)"
+      },
+      "usage": "A friend or family. The frame is the same as S03's; only the address has moved.",
+      "register": "informal",
+      "mnemonic": "Stress the stem and the o breaks into ue."
+    },
+    {
+      "id": "L2-M1-S05",
+      "display": "No puedo, lo siento.",
+      "cue": "I can't, I'm sorry.",
+      "literal": "Not I-can, it I-feel.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "puedo",
+            "cue": "I can",
+            "tag": "delta",
+            "forms": [],
+            "note": "The I-form of poder, with the same ue. The row for poder is S03's; this is its first-person cell."
+          },
+          {
+            "display": "lo siento",
+            "cue": "I'm sorry",
+            "tag": "interference",
+            "forms": [],
+            "note": "Two words travelling together, literally \"I feel it\". REGRET for something that has happened or that you are refusing — never the way to stop a stranger, which is Disculpe."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "Lo siento apologises for a fact. Say it to get someone's attention and you have said \"I regret\" to a person who has not yet heard your question.",
+      "sound": "The two words run together in speech — lo-SYEN-to — with the stress on the middle syllable.",
+      "variations": [
+        {
+          "display": "Lo siento, no puedo hablar.",
+          "cue": "I'm sorry, I can't talk.",
+          "changed": "the apology in front, and a reason after"
+        },
+        {
+          "display": "No puedo, lo siento mucho.",
+          "cue": "I can't, I'm very sorry.",
+          "changed": "mucho makes the regret bigger"
+        },
+        {
+          "display": "Lo siento, estoy muy ocupado.",
+          "cue": "I'm sorry, I'm very busy.",
+          "changed": "a state as the reason, from M2's estar"
+        }
+      ],
+      "mistake": {
+        "display": "Siento, no puedo.",
+        "why": "The lo is not optional: lo siento. Without it the verb is left hanging with nothing to feel."
+      },
+      "usage": "Refusing anything: an invitation, a favour, a request you cannot meet. Warm rather than formal, and safe with anyone.",
+      "register": "neutral",
+      "mnemonic": "You feel IT — lo — and the it is the thing you cannot do."
+    },
+    {
+      "id": "L2-M1-S06",
+      "display": "Perdone, ¿dónde está el baño?",
+      "cue": "Excuse me, where's the toilet?",
+      "literal": "Excuse(you-polite), where is the bathroom?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Perdone",
+            "cue": "excuse me (polite)",
+            "tag": "interference",
+            "forms": [
+              "perdone",
+              "perdona"
+            ],
+            "note": "Asks to be excused BEFORE the fact: interrupting, stopping someone, pushing past. perdona is the tú form. Not Lo siento, which regrets what has already happened."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "English opens both an apology and an interruption with \"sorry\". Spanish opens the interruption with Perdone or Disculpe and keeps Lo siento for regret.",
+      "sound": "per-DO-ne, three syllables, the r tapped once against the roof of the mouth.",
+      "variations": [
+        {
+          "display": "Perdone, ¿dónde está la tienda?",
+          "cue": "Excuse me, where's the shop?",
+          "changed": "the same opener, a different place"
+        },
+        {
+          "display": "Perdona, ¿puedes esperar?",
+          "cue": "Sorry, can you wait?",
+          "changed": "the tú form, and the question that follows it moves too"
+        },
+        {
+          "display": "Perdone, no puedo esperar.",
+          "cue": "Excuse me, I can't wait.",
+          "changed": "excusing yourself as you leave, not as you arrive"
+        }
+      ],
+      "mistake": {
+        "display": "Lo siento, ¿dónde está el baño?",
+        "why": "You have not done anything to regret yet. Opening a question to a stranger is Perdone or Disculpe."
+      },
+      "usage": "Anywhere you need a stranger's attention. Said with the head slightly lowered; it is the first word of half the conversations a traveller has.",
+      "register": "formal",
+      "mnemonic": "Perdone comes BEFORE the trouble; lo siento comes after it."
+    },
+    {
+      "id": "L2-M1-S07",
+      "display": "Disculpe, ¿puede repetir?",
+      "cue": "Sorry, could you say that again?",
+      "literal": "Excuse(you-polite), can(you-polite) to-repeat?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Disculpe",
+            "cue": "excuse me (polite)",
+            "tag": "free",
+            "forms": [
+              "disculpe",
+              "disculpa"
+            ],
+            "note": "The neutral counter-and-street form, interchangeable with Perdone almost everywhere and slightly more common in Latin America. disculpa is the tú form."
+          },
+          {
+            "display": "repetir",
+            "cue": "to repeat",
+            "tag": "free",
+            "forms": [],
+            "note": "Dictionary form after puede, like abrir in S03."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "There is no polite verb form to reach for. The politeness is Disculpe plus the question, and the verb stays exactly as it would be in a plain statement.",
+      "sound": "dis-KUL-pe. The final e is always said; it never falls silent the way an English one does.",
+      "variations": [
+        {
+          "display": "Disculpe, ¿puede repetir, por favor?",
+          "cue": "Sorry, could you say that again, please?",
+          "changed": "por favor softens it one step further"
+        },
+        {
+          "display": "Disculpa, ¿puedes repetir?",
+          "cue": "Sorry, can you say that again?",
+          "changed": "both words move to tú together"
+        },
+        {
+          "display": "Disculpe, no puedo esperar.",
+          "cue": "Sorry, I can't wait.",
+          "changed": "excusing yourself instead of asking for something"
+        }
+      ],
+      "mistake": {
+        "display": "Disculpe, ¿puede repite?",
+        "why": "After puede the verb stays in its dictionary form: repetir. repite is what you say when you are telling someone to do it."
+      },
+      "usage": "The single most useful sentence in a language you are still learning. Nobody minds hearing it twice.",
+      "register": "formal",
+      "mnemonic": "Disculpe opens the door and repetir waits in the dictionary."
+    },
+    {
+      "id": "L2-M1-S08",
+      "display": "Muchas gracias, muy amable.",
+      "cue": "Thank you very much, that's very kind.",
+      "literal": "Many thanks, very kind.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Muchas gracias",
+            "cue": "thank you very much",
+            "tag": "free",
+            "forms": [],
+            "note": "Two words travelling as one, a step above M2's gracias and below muchísimas gracias. Both words are plural because gracias itself is."
+          },
+          {
+            "display": "amable",
+            "cue": "kind",
+            "tag": "delta",
+            "forms": [],
+            "note": "One shape for a man and a woman alike: adjectives in -e mark number only — amable, amables. Muy amable on its own is a complete thank-you."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Muy amable is a whole sentence in Spanish. Adding a subject and a verb to it makes it sound like a report rather than a thank-you.",
+      "sound": "a-MA-ble, stressed on the middle syllable; the b is soft, almost a v.",
+      "variations": [
+        {
+          "display": "Muchas gracias, hasta mañana.",
+          "cue": "Thank you very much, see you tomorrow.",
+          "changed": "thanks and a goodbye in one breath"
+        },
+        {
+          "display": "Gracias, muy amable.",
+          "cue": "Thanks, that's very kind.",
+          "changed": "the shorter thanks with the same closing"
+        },
+        {
+          "display": "Gracias, hasta luego.",
+          "cue": "Thanks, see you.",
+          "changed": "the shorter thanks, and the everyday sign-off"
+        }
+      ],
+      "mistake": {
+        "display": "Mucho gracias.",
+        "why": "gracias is feminine and plural, so it takes muchas. mucho never changes when it means \"a lot\" after a verb, but here it is counting the thanks."
+      },
+      "usage": "Anywhere. Adding muy amable turns a transaction into a small kindness, and it costs two words.",
+      "register": "neutral",
+      "mnemonic": "Thanks are plural in Spanish, so the many that counts them is plural too."
+    },
+    {
+      "id": "L2-M1-S09",
+      "display": "¿Puede esperar un momento?",
+      "cue": "Could you wait a moment?",
+      "literal": "Can(you-polite) to-wait a moment?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "esperar",
+            "cue": "to wait",
+            "tag": "free",
+            "forms": [],
+            "note": "Dictionary form after puede, like abrir and repetir. It covers waiting AND hoping, and the sentence says which."
+          },
+          {
+            "display": "momento",
+            "cue": "moment",
+            "tag": "free",
+            "forms": [
+              "momento",
+              "momentos"
+            ],
+            "note": "Masculine: un momento. Un momento, por favor on its own is a whole sentence — Spanish hands over the noun and leaves the verb out."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "Un momento, por favor has no verb at all. Spanish hands over the noun where English reaches for \"just give me a moment\".",
+      "sound": "es-pe-RAR, stressed on the last syllable; the r at the end is tapped, not rolled.",
+      "variations": [
+        {
+          "display": "Un momento, por favor.",
+          "cue": "One moment, please.",
+          "changed": "the same request with the verb left out entirely"
+        },
+        {
+          "display": "¿Puedes esperar un momento?",
+          "cue": "Can you wait a moment?",
+          "changed": "the same wait, asked of a friend"
+        },
+        {
+          "display": "No puedo esperar.",
+          "cue": "I can't wait.",
+          "changed": "the refusal, built from S05's frame"
+        }
+      ],
+      "mistake": {
+        "display": "¿Puede esperar una momento?",
+        "why": "momento is masculine despite what the -o might suggest about the article: un momento. The article is learnt with the noun, always."
+      },
+      "usage": "On the phone, at a counter, in a doorway. Safe with anyone, and it buys you as much time as you need.",
+      "register": "formal",
+      "mnemonic": "A moment is a thing you can hand someone — so Spanish just hands it over."
+    },
+    {
+      "id": "L2-M1-S10",
+      "display": "¿Me puede dar un vaso de agua?",
+      "cue": "Could you give me a glass of water?",
+      "literal": "To-me can(you-polite) to-give a glass of water?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dar",
+            "cue": "to give",
+            "tag": "delta",
+            "forms": [],
+            "note": "The dictionary form of da and das. When a request has two verbs, the little me climbs to the FRONT of both of them: ¿Me puede dar…? — not between them. The row for dar is S01's."
+          },
+          {
+            "display": "vaso",
+            "cue": "glass",
+            "tag": "free",
+            "forms": [
+              "vaso",
+              "vasos"
+            ],
+            "note": "Masculine: un vaso. A drinking glass; the material is a different word."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          5,
+          6
+        ]
+      },
+      "trap": "me jumps to the very front, past the verb that is conjugated. English keeps \"me\" next to \"give\" and Spanish moves it as far left as it can go.",
+      "sound": "The whole question runs as one phrase — me-PWE-de-DAR — with two stresses and no pause.",
+      "variations": [
+        {
+          "display": "¿Me puede dar un café?",
+          "cue": "Could you give me a coffee?",
+          "changed": "the softest of the three coffee requests in this module"
+        },
+        {
+          "display": "¿Me puedes dar un vaso de leche?",
+          "cue": "Can you give me a glass of milk?",
+          "changed": "the same shape said to a friend"
+        },
+        {
+          "display": "¿Me puede dar dos manzanas?",
+          "cue": "Could you give me two apples?",
+          "changed": "a number, and the noun goes plural"
+        }
+      ],
+      "mistake": {
+        "display": "¿Puede dar me un vaso de agua?",
+        "why": "me never stands alone after a verb. Either it goes in front of everything — ¿Me puede dar…? — or it glues onto the dictionary form as darme."
+      },
+      "usage": "The politest of the module's requests, and the one to use when you are asking a stranger for a favour rather than for a service.",
+      "register": "formal",
+      "mnemonic": "Two verbs, one little me — and it runs to the front of the queue."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M1-C01",
+      "display": "¿Me da un café, por favor?",
+      "cue": "Could I have a coffee, please?"
+    },
+    {
+      "id": "L2-M1-C02",
+      "display": "¿Me das un vaso de agua?",
+      "cue": "Can you give me a glass of water?"
+    },
+    {
+      "id": "L2-M1-C03",
+      "display": "¿Puede abrir la puerta?",
+      "cue": "Could you open the door?"
+    },
+    {
+      "id": "L2-M1-C04",
+      "display": "¿Puedes abrir la ventana?",
+      "cue": "Can you open the window?"
+    },
+    {
+      "id": "L2-M1-C05",
+      "display": "No puedo, lo siento.",
+      "cue": "I can't, I'm sorry."
+    },
+    {
+      "id": "L2-M1-C06",
+      "display": "Perdone, ¿dónde está la tienda?",
+      "cue": "Excuse me, where's the shop?"
+    },
+    {
+      "id": "L2-M1-C07",
+      "display": "Disculpe, ¿puede repetir?",
+      "cue": "Sorry, could you say that again?"
+    },
+    {
+      "id": "L2-M1-C08",
+      "display": "Muchas gracias, muy amable.",
+      "cue": "Thank you very much, that's very kind."
+    },
+    {
+      "id": "L2-M1-C09",
+      "display": "¿Puede esperar un momento?",
+      "cue": "Could you wait a moment?"
+    },
+    {
+      "id": "L2-M1-C10",
+      "display": "¿Me puede dar un poco de pan?",
+      "cue": "Could you give me a little bread?"
+    },
+    {
+      "id": "L2-M1-C11",
+      "display": "Lo siento, no puedo esperar.",
+      "cue": "I'm sorry, I can't wait."
+    },
+    {
+      "id": "L2-M1-C12",
+      "display": "Perdone, ¿puede repetir?",
+      "cue": "Excuse me, could you say that again?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
