@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M3",
+  "title": "Describing things",
+  "job": "Size, colour, quality — agreement at length",
+  "prerequisites": ["L2-M2"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": ["present"],
+    "allowedPatterns": [
+      "el/la + N + es + Adj",
+      "los/las + N-pl + son + Adj-pl",
+      "un/una + N + Adj",
+      "un gran + N   /   un + N + grande",
+      "Es + muy + Adj"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "An adjective in -o has four shapes and one in -e or a consonant has two: negro · negra · negros · negras, but azul · azules and grande · grandes. The second kind never marks gender at all."
+    },
+    {
+      "tag": "interference",
+      "text": "\"-o is masculine, -a is feminine\" is about nouns, not agreement, and it is false anyway: el día, la mano, el problema. Learn every noun with its article and let the adjective follow the noun."
+    },
+    {
+      "tag": "delta",
+      "text": "grande shortens to gran in front of any singular noun, and the position changes the meaning: un gran libro is a great book, un libro grande is a big one."
+    },
+    {
+      "tag": "interference",
+      "text": "muy modifies an adjective and mucho modifies a verb: muy caro, but me gusta mucho. Me gusta muy and es mucho caro are both wrong, and both are word-for-word English."
+    },
+    {
+      "tag": "delta",
+      "text": "The adjective normally FOLLOWS the noun: una casa nueva, un libro negro. English puts it first and never inflects it, so both halves are new."
+    },
+    {
+      "tag": "free",
+      "text": "ser describes what a thing IS LIKE and estar reports the state it is in: el libro es nuevo, la sopa está fría. It is the same split M2 drew for people."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M3-S01",
+      "display": "La puerta es azul.",
+      "cue": "The door is blue.",
+      "literal": "The door is blue.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "azul",
+            "cue": "blue",
+            "tag": "delta",
+            "forms": ["azul", "azules"],
+            "note": "Ends in a consonant, so it never marks gender: la puerta azul, el libro azul. Only number moves it, and then it adds -es."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "No feminine to write. A learner who has just met negro/negra will look for azula, and there is no such word.",
+      "sound": "a-SUL, stressed on the last syllable. In most of Spain the z of azul is still an s here, because it is spelled with a z only in azul's cousins.",
+      "variations": [
+        {
+          "display": "El libro es azul.",
+          "cue": "The book is blue.",
+          "changed": "a masculine thing, and the adjective does not move"
+        },
+        {
+          "display": "La mesa es azul.",
+          "cue": "The table is blue.",
+          "changed": "another feminine noun, same one shape"
+        },
+        {
+          "display": "Es una puerta azul.",
+          "cue": "It's a blue door.",
+          "changed": "the adjective after the noun rather than after the verb"
+        }
+      ],
+      "mistake": {
+        "display": "La puerta es azula.",
+        "why": "azul has no feminine. An adjective ending in a consonant takes one shape for both genders."
+      },
+      "usage": "Neutral description of a thing. The commonest kind of sentence there is.",
+      "register": "neutral",
+      "mnemonic": "Consonant endings do not bend for gender — only for number."
+    },
+    {
+      "id": "L2-M3-S02",
+      "display": "Las puertas son azules.",
+      "cue": "The doors are blue.",
+      "literal": "The doors are blue.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "azules",
+            "cue": "blue (more than one)",
+            "tag": "delta",
+            "forms": [],
+            "note": "A consonant-ending adjective takes -es in the plural, not -s. The row for azul is S01's."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Three words change at once — las, son, azules — and English changes only the noun. Every plural in Spanish moves everything that agrees with it.",
+      "sound": "a-SU-les. The stress stays on the same syllable as in azul, so the word grows to the right.",
+      "variations": [
+        {
+          "display": "Los libros son azules.",
+          "cue": "The books are blue.",
+          "changed": "masculine plural — and still one shape for the adjective"
+        },
+        {
+          "display": "Las mesas son azules.",
+          "cue": "The tables are blue.",
+          "changed": "another feminine plural"
+        },
+        {
+          "display": "Las puertas no son azules.",
+          "cue": "The doors aren't blue.",
+          "changed": "no in front of the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Las puertas son azuls.",
+        "why": "A word ending in a consonant adds -es: azules. Bare -s only goes on a word that already ends in a vowel."
+      },
+      "usage": "Neutral. The plural is where Spanish agreement is most visible and English's least.",
+      "register": "neutral",
+      "mnemonic": "Vowel takes -s, consonant takes -es."
+    },
+    {
+      "id": "L2-M3-S03",
+      "display": "Es una casa grande.",
+      "cue": "It's a big house.",
+      "literal": "Is a house big.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "grande",
+            "cue": "big",
+            "tag": "delta",
+            "forms": ["grande", "grandes"],
+            "note": "Ends in -e, so one shape for both genders: un libro grande, una casa grande. The plural is grandes."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "The adjective goes AFTER the noun. una grande casa is the English order and it is not Spanish — except when it means something else, which is S04.",
+      "sound": "GRAN-de. The d between vowels is soft, closer to the th of \"this\".",
+      "variations": [
+        {
+          "display": "Es un libro grande.",
+          "cue": "It's a big book.",
+          "changed": "masculine, and the adjective stays the same"
+        },
+        {
+          "display": "Son casas grandes.",
+          "cue": "They're big houses.",
+          "changed": "plural, and grande adds -s because it ends in a vowel"
+        },
+        {
+          "display": "La casa es muy grande.",
+          "cue": "The house is very big.",
+          "changed": "the adjective moved behind the verb, with muy in front"
+        }
+      ],
+      "mistake": {
+        "display": "Es una grande casa.",
+        "why": "After the noun for size: una casa grande. Before the noun it becomes gran and means something else entirely."
+      },
+      "usage": "Neutral. grande is the everyday word for big of almost anything.",
+      "register": "neutral",
+      "mnemonic": "Behind the noun it measures; in front of it, it praises."
+    },
+    {
+      "id": "L2-M3-S04",
+      "display": "Es una gran casa.",
+      "cue": "It's a great house.",
+      "literal": "Is a great house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gran",
+            "cue": "great",
+            "tag": "interference",
+            "forms": [],
+            "note": "grande with its ending cut off, and it only happens in front of a singular noun. It no longer means big: un gran libro is a great book. The row for grande is S03's."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "The same word, two positions, two meanings. English uses two different words — big and great — and Spanish moves one.",
+      "sound": "GRAN, one syllable, and the n is fully said before the next word.",
+      "variations": [
+        {
+          "display": "Es un gran libro.",
+          "cue": "It's a great book.",
+          "changed": "masculine, and gran does not change for it"
+        },
+        {
+          "display": "Es una gran tienda.",
+          "cue": "It's a great shop.",
+          "changed": "another feminine noun in the same frame"
+        },
+        {
+          "display": "Es un gran amigo.",
+          "cue": "He's a great friend.",
+          "changed": "gran about a person, which is where it is commonest"
+        }
+      ],
+      "mistake": {
+        "display": "Es una gran casa, muy gran.",
+        "why": "gran only stands in front of a noun. On its own, after the verb, it is grande: es muy grande."
+      },
+      "usage": "Praise rather than measurement. Un gran amigo is warm; un amigo grande is a tall one.",
+      "register": "neutral",
+      "mnemonic": "Cut the ending, change the meaning."
+    },
+    {
+      "id": "L2-M3-S05",
+      "display": "El libro es negro.",
+      "cue": "The book is black.",
+      "literal": "The book is black.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "negro",
+            "cue": "black",
+            "tag": "delta",
+            "forms": ["negro", "negra", "negros", "negras"],
+            "note": "Four shapes, like rojo in M3 of the level below: el libro negro, la mesa negra, los libros negros."
+          }
+        ],
+        "rules": [0, 1, 5]
+      },
+      "trap": "The ending tracks the noun, not the thing's colour or the speaker. la mesa negra is the same black as el libro negro.",
+      "sound": "NE-gro. One tapped r, and the g is hard as in \"go\".",
+      "variations": [
+        {
+          "display": "La mesa es negra.",
+          "cue": "The table is black.",
+          "changed": "feminine, so the adjective ends in -a"
+        },
+        {
+          "display": "Los libros son negros.",
+          "cue": "The books are black.",
+          "changed": "masculine plural, everything moves together"
+        },
+        {
+          "display": "Las puertas son negras.",
+          "cue": "The doors are black.",
+          "changed": "feminine plural, the fourth cell"
+        }
+      ],
+      "mistake": {
+        "display": "La mesa es negro.",
+        "why": "The adjective agrees with the noun it describes: negra. Nothing about the speaker enters into it."
+      },
+      "usage": "Neutral. The four-cell grid is easiest to see on a colour, which is why the module drills one.",
+      "register": "neutral",
+      "mnemonic": "Four cells, and the noun picks which."
+    },
+    {
+      "id": "L2-M3-S06",
+      "display": "El pan no es malo.",
+      "cue": "The bread isn't bad.",
+      "literal": "The bread not is bad.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "malo",
+            "cue": "bad",
+            "tag": "delta",
+            "forms": ["malo", "mala", "malos", "malas"],
+            "note": "Four shapes. It is the adjective; M9's mal is the adverb — está mal is \"it's going badly\", es malo is \"it is a bad thing\"."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "malo and mal are not the same word. One describes a thing, the other describes how something is going.",
+      "sound": "MA-lo, with a clear forward l — never the dark l English puts at the end of \"pal\".",
+      "variations": [
+        {
+          "display": "La sopa no es mala.",
+          "cue": "The soup isn't bad.",
+          "changed": "feminine, and the adjective follows"
+        },
+        {
+          "display": "Es un libro malo.",
+          "cue": "It's a bad book.",
+          "changed": "the adjective after the noun instead of after the verb"
+        },
+        {
+          "display": "Las manzanas no son malas.",
+          "cue": "The apples aren't bad.",
+          "changed": "plural throughout"
+        }
+      ],
+      "mistake": {
+        "display": "El pan no es mal.",
+        "why": "mal never describes a thing. The adjective is malo, and it agrees."
+      },
+      "usage": "Understatement. No es malo is warmer praise in Spanish than \"it's not bad\" usually is in English.",
+      "register": "neutral",
+      "mnemonic": "malo describes the bread; mal describes the day."
+    },
+    {
+      "id": "L2-M3-S07",
+      "display": "Es un libro nuevo.",
+      "cue": "It's a new book.",
+      "literal": "Is a book new.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nuevo",
+            "cue": "new",
+            "tag": "delta",
+            "forms": ["nuevo", "nueva", "nuevos", "nuevas"],
+            "note": "Four shapes. After the noun it means newly made; in front of it, un nuevo libro, it means another one — the same shift gran makes."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "un libro nuevo is a book that is new. un nuevo libro is another book by the same author. Position again.",
+      "sound": "NWE-vo — the ue is one gliding sound, and the v is said with both lips, not the teeth.",
+      "variations": [
+        {
+          "display": "Es una casa nueva.",
+          "cue": "It's a new house.",
+          "changed": "feminine noun, feminine adjective"
+        },
+        {
+          "display": "Son libros nuevos.",
+          "cue": "They're new books.",
+          "changed": "plural, and the article disappears with son"
+        },
+        {
+          "display": "La tienda es nueva.",
+          "cue": "The shop is new.",
+          "changed": "after the verb, describing rather than naming"
+        }
+      ],
+      "mistake": {
+        "display": "Es un nuevo libro.",
+        "why": "That is grammatical and means \"another book\". For a book that is new, put nuevo after it."
+      },
+      "usage": "Neutral. The pre-noun reading is common in speech, so the position is worth getting right early.",
+      "register": "neutral",
+      "mnemonic": "Behind the noun it is fresh; in front of it, it is next."
+    },
+    {
+      "id": "L2-M3-S08",
+      "display": "La casa es vieja y pequeña.",
+      "cue": "The house is old and small.",
+      "literal": "The house is old and small.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vieja",
+            "cue": "old",
+            "tag": "interference",
+            "forms": ["viejo", "vieja", "viejos", "viejas"],
+            "note": "Old of a THING. About a person Spanish says mayor (M2) — viejo about someone's age is blunt at best."
+          },
+          {
+            "display": "pequeña",
+            "cue": "small",
+            "tag": "delta",
+            "forms": ["pequeño", "pequeña", "pequeños", "pequeñas"],
+            "note": "The opposite of grande, and unlike grande it has all four shapes. The ñ is its own letter and its own sound."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "Two adjectives joined by y, and BOTH agree. English inflects neither and Spanish inflects every one.",
+      "sound": "pe-KE-ña. The ñ is the ny of \"canyon\", one sound and not two.",
+      "variations": [
+        {
+          "display": "El libro es viejo y pequeño.",
+          "cue": "The book is old and small.",
+          "changed": "masculine, and both adjectives move"
+        },
+        {
+          "display": "Las casas son viejas.",
+          "cue": "The houses are old.",
+          "changed": "feminine plural, one adjective"
+        },
+        {
+          "display": "Es una casa pequeña pero nueva.",
+          "cue": "It's a small but new house.",
+          "changed": "pero sets the two descriptions against each other"
+        }
+      ],
+      "mistake": {
+        "display": "La casa es vieja y pequeño.",
+        "why": "Both adjectives describe la casa, so both are feminine: vieja y pequeña. Agreement does not stop at the first one."
+      },
+      "usage": "Neutral about things. About a person, swap vieja for mayor.",
+      "register": "neutral",
+      "mnemonic": "Every adjective in the sentence answers to the same noun."
+    },
+    {
+      "id": "L2-M3-S09",
+      "display": "Me gusta mucho, pero es muy caro.",
+      "cue": "I like it a lot, but it's very expensive.",
+      "literal": "To-me pleases much, but is very expensive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mucho",
+            "cue": "a lot",
+            "tag": "interference",
+            "forms": [],
+            "note": "Modifies the VERB and never an adjective: me gusta mucho. In front of a noun it counts it and then it agrees — muchas gracias, from M1."
+          },
+          {
+            "display": "muy",
+            "cue": "very",
+            "tag": "interference",
+            "forms": [],
+            "note": "Modifies an ADJECTIVE and never a verb: muy caro, muy grande. It never changes shape."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English \"very\" and \"a lot\" are almost interchangeable and Spanish's are not. muy goes with adjectives, mucho with verbs, and neither ever swaps.",
+      "sound": "MU-cho with the ch of \"church\"; MWI, one syllable, for muy.",
+      "variations": [
+        {
+          "display": "Me gusta mucho el libro.",
+          "cue": "I really like the book.",
+          "changed": "the thing liked named at the end"
+        },
+        {
+          "display": "Es muy caro, pero me gusta.",
+          "cue": "It's very expensive, but I like it.",
+          "changed": "the halves swapped around pero"
+        },
+        {
+          "display": "No es muy caro.",
+          "cue": "It isn't very expensive.",
+          "changed": "the negative, with muy untouched"
+        }
+      ],
+      "mistake": {
+        "display": "Me gusta muy.",
+        "why": "muy cannot stand with a verb: me gusta mucho. And es mucho caro is the same error the other way round."
+      },
+      "usage": "The shape of half the opinions anyone gives about a thing they are looking at.",
+      "register": "neutral",
+      "mnemonic": "muy leans on an adjective, mucho leans on a verb."
+    },
+    {
+      "id": "L2-M3-S10",
+      "display": "Las manzanas son buenas.",
+      "cue": "The apples are good.",
+      "literal": "The apples are good.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "buenas",
+            "cue": "good",
+            "tag": "delta",
+            "forms": ["buena", "buenas", "buenos"],
+            "note": "Four cells in principle, and this course writes three: the masculine singular is spelled like M10's bueno, the word that opens a sentence with \"well, …\". Say es estupendo or está muy bien instead."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "The one adjective in this module you cannot write in every cell. It is a spelling collision, not a grammar rule, and it is worth knowing about.",
+      "sound": "BWE-nas — the ue glides exactly as it does in puedo and nuevo.",
+      "variations": [
+        {
+          "display": "La sopa es buena.",
+          "cue": "The soup is good.",
+          "changed": "feminine singular, the cell this module teaches first"
+        },
+        {
+          "display": "Los libros son buenos.",
+          "cue": "The books are good.",
+          "changed": "masculine plural, which is safe to write"
+        },
+        {
+          "display": "Es una buena tienda.",
+          "cue": "It's a good shop.",
+          "changed": "in front of the noun, where buena often goes"
+        }
+      ],
+      "mistake": {
+        "display": "Las manzanas son buenos.",
+        "why": "manzanas is feminine, so the adjective is buenas. The plural does not make everything masculine."
+      },
+      "usage": "Everyday approval. In front of a noun it is warmer; after it, more of a judgement.",
+      "register": "neutral",
+      "mnemonic": "Three cells you write, one you say another way."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L2-M3-C01", "display": "La puerta es azul.", "cue": "The door is blue." },
+    { "id": "L2-M3-C02", "display": "Los libros son azules.", "cue": "The books are blue." },
+    { "id": "L2-M3-C03", "display": "Es una casa grande.", "cue": "It's a big house." },
+    { "id": "L2-M3-C04", "display": "Es un gran libro.", "cue": "It's a great book." },
+    { "id": "L2-M3-C05", "display": "La mesa es negra.", "cue": "The table is black." },
+    { "id": "L2-M3-C06", "display": "El pan no es malo.", "cue": "The bread isn't bad." },
+    { "id": "L2-M3-C07", "display": "Es una casa nueva.", "cue": "It's a new house." },
+    { "id": "L2-M3-C08", "display": "La casa es vieja y pequeña.", "cue": "The house is old and small." },
+    { "id": "L2-M3-C09", "display": "Es muy caro, pero me gusta.", "cue": "It's very expensive, but I like it." },
+    { "id": "L2-M3-C10", "display": "Las manzanas son buenas.", "cue": "The apples are good." },
+    { "id": "L2-M3-C11", "display": "Es una tienda pequeña.", "cue": "It's a small shop." },
+    { "id": "L2-M3-C12", "display": "Los libros nuevos son muy caros.", "cue": "The new books are very expensive." }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

@@ -1,0 +1,638 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": [
+    "L2-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "Para mí + , + un/una + N",
+      "¿Me pone/trae + un/una + N?",
+      "¿Quieres otro/otra + N?",
+      "No + , + gracias + , + <reason>",
+      "Creo que + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "para names who something is for: para mí, para ti. It is the only job para does in this level — the por/para contrast is a whole system and waits."
+    },
+    {
+      "tag": "interference",
+      "text": "mí with an accent is \"me\" after a preposition; mi without one is \"my\". Para mi and para mí are two different sentences, and only the accent tells them apart."
+    },
+    {
+      "tag": "delta",
+      "text": "An object pronoun goes BEFORE the conjugated verb: lo quiero, me pone. English puts the object after the verb and Spanish never does."
+    },
+    {
+      "tag": "interference",
+      "text": "otro never takes an article. Un otro café is the English \"another\" translated word for word, and it is wrong: ¿Quieres otro café?"
+    },
+    {
+      "tag": "delta",
+      "text": "que joins a verb of thinking or saying to what follows it, and it cannot be dropped: creo que está frío. English leaves \"that\" out all the time and Spanish never does."
+    },
+    {
+      "tag": "interference",
+      "text": "Hunger and thirst are things you HAVE in Spanish: tengo hambre, tengo sed. Estoy hambre is not a sentence, and it is what English produces."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "Para mí, una sopa, por favor.",
+      "cue": "Soup for me, please.",
+      "literal": "For me, a soup, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Para",
+            "cue": "for",
+            "tag": "delta",
+            "forms": [],
+            "note": "Names the person something is for. That is the only job it does in this level; the por/para contrast is a system and it waits for later."
+          },
+          {
+            "display": "mí",
+            "cue": "me",
+            "tag": "interference",
+            "forms": [
+              "mí",
+              "ti"
+            ],
+            "note": "The shape \"me\" takes after a preposition, and the accent is what separates it from mi, \"my\". ti is the same for someone you call tú, and it takes no accent at all."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "No verb anywhere. Spanish orders by naming who it is for and what it is, and adding a verb makes it sound like a report.",
+      "sound": "MI, one clean syllable, and the accent marks meaning rather than stress here.",
+      "variations": [
+        {
+          "display": "Para mí, un café, por favor.",
+          "cue": "A coffee for me, please.",
+          "changed": "a different order in the same frame"
+        },
+        {
+          "display": "Para ti, una sopa.",
+          "cue": "Soup for you.",
+          "changed": "ti, which carries no accent"
+        },
+        {
+          "display": "Para mí, agua, por favor.",
+          "cue": "Water for me, please.",
+          "changed": "no article at all, because it is not being counted"
+        }
+      ],
+      "mistake": {
+        "display": "Para mi, una sopa.",
+        "why": "Without the accent mi means \"my\", so the sentence reads \"for my\". The accent is not decoration."
+      },
+      "usage": "How a table orders. The waiter goes round and each person says their para mí.",
+      "register": "neutral",
+      "mnemonic": "The accent turns my into me."
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "¿Me pone un café, por favor?",
+      "cue": "Could I have a coffee, please?",
+      "literal": "To-me put(polite) a coffee, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pone",
+            "cue": "puts · pours",
+            "tag": "free",
+            "forms": [
+              "pone",
+              "pones"
+            ],
+            "note": "poner, to put. At a bar it means to pour or serve, and ¿Me pone…? is what people actually say in Spain where a book would offer ¿Me da…?"
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The verb means \"put\". Nothing in the sentence says \"have\" or \"could\", and the frame carries all of it.",
+      "sound": "PO-ne. The n is fully said and the final e never falls silent.",
+      "variations": [
+        {
+          "display": "¿Me pone dos cafés?",
+          "cue": "Could I have two coffees?",
+          "changed": "a number, and the noun goes plural"
+        },
+        {
+          "display": "¿Me pone un poco de leche?",
+          "cue": "Could I have a little milk?",
+          "changed": "un poco de measuring instead of counting"
+        },
+        {
+          "display": "¿Me pones un café?",
+          "cue": "Can you get me a coffee?",
+          "changed": "the tú form, to someone you know"
+        }
+      ],
+      "mistake": {
+        "display": "¿Pone me un café?",
+        "why": "me goes in front of the conjugated verb: ¿Me pone…? It never follows one."
+      },
+      "usage": "A bar in Spain. In Latin America ¿Me da…? or ¿Me trae…? is commoner, and both are understood everywhere.",
+      "register": "formal",
+      "mnemonic": "At a bar they do not give you a coffee, they put you one."
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "¿El pan? Lo quiero caliente.",
+      "cue": "The bread? I want it warm.",
+      "literal": "The bread? It I-want warm.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Lo",
+            "cue": "it",
+            "tag": "delta",
+            "forms": [],
+            "note": "Stands for a masculine thing already named, and it goes in FRONT of the verb: lo quiero. The feminine and plural forms are spelled like the articles, so this course teaches the rule on lo alone."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "lo quiero, not quiero lo. The pronoun climbs in front of the verb and stays there.",
+      "sound": "The two words run together — lo-KYE-ro — with no pause between them.",
+      "variations": [
+        {
+          "display": "¿El café? Lo quiero muy caliente.",
+          "cue": "The coffee? I want it very hot.",
+          "changed": "another masculine thing, and muy in front"
+        },
+        {
+          "display": "¿El pan? No lo quiero.",
+          "cue": "The bread? I don't want it.",
+          "changed": "no in front of everything, including the pronoun"
+        },
+        {
+          "display": "¿Lo quieres frío?",
+          "cue": "Do you want it cold?",
+          "changed": "asked as a question, in the tú form"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero lo caliente.",
+        "why": "The pronoun goes before the verb: lo quiero caliente."
+      },
+      "usage": "Answering a question about something already on the table. Naming the thing again would be heavy.",
+      "register": "neutral",
+      "mnemonic": "The little word runs ahead of the verb."
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "¿Quieres otro café?",
+      "cue": "Do you want another coffee?",
+      "literal": "Want(you) another coffee?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "otro",
+            "cue": "another",
+            "tag": "interference",
+            "forms": [
+              "otro",
+              "otra",
+              "otros",
+              "otras"
+            ],
+            "note": "Never takes an article. Un otro café is English translated word for word and it is wrong; otro already carries the \"an\"."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "English needs \"an\" inside \"another\" and Spanish forbids it. This is the whole lesson of the sentence.",
+      "sound": "O-tro, two beats, with the tr said as one quick tap.",
+      "variations": [
+        {
+          "display": "¿Quieres otra sopa?",
+          "cue": "Do you want another soup?",
+          "changed": "feminine, so the word ends in -a"
+        },
+        {
+          "display": "¿Quiere otro café?",
+          "cue": "Would you like another coffee?",
+          "changed": "the usted form, at a table you do not know"
+        },
+        {
+          "display": "No, gracias, no quiero otro.",
+          "cue": "No thanks, I don't want another.",
+          "changed": "otro standing alone, with the noun left out"
+        }
+      ],
+      "mistake": {
+        "display": "¿Quieres un otro café?",
+        "why": "otro takes no article: otro café. The un is already inside it."
+      },
+      "usage": "The offer a host makes, and it is made more than once. See S05 for what a refusal has to do.",
+      "register": "informal",
+      "mnemonic": "otro is already \"an other\" — do not buy the an twice."
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "No, gracias, no tengo mucha hambre.",
+      "cue": "No thanks, I'm not very hungry.",
+      "literal": "No, thanks, not I-have much hunger.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mucha",
+            "cue": "much · a lot of",
+            "tag": "delta",
+            "forms": [],
+            "note": "M1's mucho counting a feminine noun, so it agrees: mucha hambre, mucha agua. Its row is L1-M1's; this is the shape that row never showed."
+          },
+          {
+            "display": "hambre",
+            "cue": "hunger",
+            "tag": "interference",
+            "forms": [],
+            "note": "A noun, so Spanish HAS it: tengo hambre. Feminine, but it takes el in the singular like el agua, because it starts with a stressed a."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "estoy hambre is not a sentence in any dialect. Hunger, thirst, cold and fear are all things you have.",
+      "sound": "AM-bre. The h is silent, as it is in every Spanish word.",
+      "variations": [
+        {
+          "display": "No, gracias, no tengo hambre.",
+          "cue": "No thanks, I'm not hungry.",
+          "changed": "the flat refusal, without mucha"
+        },
+        {
+          "display": "Tengo hambre y sed.",
+          "cue": "I'm hungry and thirsty.",
+          "changed": "both nouns on one tengo"
+        },
+        {
+          "display": "¿Tienes hambre?",
+          "cue": "Are you hungry?",
+          "changed": "the question, and still with tener"
+        }
+      ],
+      "mistake": {
+        "display": "No, gracias, no estoy hambre.",
+        "why": "hambre is a noun and estar cannot take one. It is tengo hambre."
+      },
+      "usage": "A refusal that lands. A bare No, gracias will be heard as politeness and the offer will come again.",
+      "register": "neutral",
+      "mnemonic": "You do not BE hungry in Spanish; you HAVE hunger."
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "Creo que la sopa está fría.",
+      "cue": "I think the soup is cold.",
+      "literal": "I-think that the soup is cold.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Creo",
+            "cue": "I think",
+            "tag": "free",
+            "forms": [
+              "creo",
+              "crees",
+              "cree"
+            ],
+            "note": "creer, to think or believe. Softer than pienso for an opinion about a fact, and it is what people reach for first."
+          },
+          {
+            "display": "que",
+            "cue": "that",
+            "tag": "interference",
+            "forms": [],
+            "note": "Joins the thinking to what is thought, and it is never dropped: creo QUE está fría. It carries no accent — M4's qué, which asks, does."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English drops \"that\" so often it feels optional. In Spanish leaving que out is not a style choice; the sentence breaks.",
+      "sound": "KE, one syllable, with a plain k — the u in que is never said.",
+      "variations": [
+        {
+          "display": "Creo que el café está frío.",
+          "cue": "I think the coffee is cold.",
+          "changed": "a masculine thing, so the adjective moves"
+        },
+        {
+          "display": "Creo que es muy caro.",
+          "cue": "I think it's very expensive.",
+          "changed": "ser, because it is a quality and not a state"
+        },
+        {
+          "display": "No creo que está frío.",
+          "cue": "I don't think it's cold.",
+          "changed": "the negative, which in careful Spanish would go further still"
+        }
+      ],
+      "mistake": {
+        "display": "Creo la sopa está fría.",
+        "why": "que is obligatory after a verb of thinking: creo que la sopa está fría."
+      },
+      "usage": "How a complaint starts at a table — softly, and about the food rather than the person.",
+      "register": "neutral",
+      "mnemonic": "Spanish never leaves the that out."
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "¿Me trae la cuenta, por favor?",
+      "cue": "Could I have the bill, please?",
+      "literal": "To-me brings(polite) the bill, please?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trae",
+            "cue": "brings",
+            "tag": "free",
+            "forms": [
+              "trae",
+              "traes"
+            ],
+            "note": "traer, to bring. ¿Me trae…? is the standard way to ask for anything to be brought to a table, everywhere Spanish is spoken."
+          },
+          {
+            "display": "cuenta",
+            "cue": "bill",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: la cuenta. In Latin America you will also hear la nota; la cuenta is understood everywhere."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "la cuenta, with the article. Asking for cuenta with nothing in front of it sounds like an accounting term.",
+      "sound": "TRA-e is two syllables, not one. KWEN-ta, with the ue gliding as always.",
+      "variations": [
+        {
+          "display": "¿Me trae un vaso de agua?",
+          "cue": "Could you bring me a glass of water?",
+          "changed": "something else brought to the table"
+        },
+        {
+          "display": "¿Me trae otro café, por favor?",
+          "cue": "Could you bring me another coffee, please?",
+          "changed": "otro from S04, in this frame"
+        },
+        {
+          "display": "La cuenta, por favor.",
+          "cue": "The bill, please.",
+          "changed": "the shortest it gets, and perfectly polite"
+        }
+      ],
+      "mistake": {
+        "display": "¿Trae me la cuenta?",
+        "why": "me goes in front: ¿Me trae la cuenta? The pronoun never follows a conjugated verb."
+      },
+      "usage": "The last sentence of a meal. In Spain you have to ask; the bill will not arrive by itself.",
+      "register": "formal",
+      "mnemonic": "Nothing comes to a Spanish table until you ask for it."
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "Tengo sed, ¿me da un vaso de agua?",
+      "cue": "I'm thirsty, could I have a glass of water?",
+      "literal": "I-have thirst, to-me give(polite) a glass of water?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sed",
+            "cue": "thirst",
+            "tag": "interference",
+            "forms": [],
+            "note": "A noun, like hambre, and you HAVE it: tengo sed. Feminine: la sed."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "Two clauses and no \"and\" between them. Spanish is happy to let a comma carry the join here.",
+      "sound": "SED, one syllable, and the final d is barely there — softer than an English d.",
+      "variations": [
+        {
+          "display": "Tengo sed, ¿me pone un agua?",
+          "cue": "I'm thirsty, could I have a water?",
+          "changed": "M5's own verb instead of dar"
+        },
+        {
+          "display": "¿Tienes sed?",
+          "cue": "Are you thirsty?",
+          "changed": "the question, in the tú form"
+        },
+        {
+          "display": "No tengo sed, gracias.",
+          "cue": "I'm not thirsty, thanks.",
+          "changed": "the refusal that names its reason"
+        }
+      ],
+      "mistake": {
+        "display": "Estoy sed.",
+        "why": "sed is a noun, so it goes with tener: tengo sed."
+      },
+      "usage": "Everyday. Naming the reason before the request is what makes it warm rather than abrupt.",
+      "register": "neutral",
+      "mnemonic": "Hunger and thirst are both things you carry."
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "Quiero carne y verdura, por favor.",
+      "cue": "I'd like meat and vegetables, please.",
+      "literal": "I-want meat and vegetable, please.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carne",
+            "cue": "meat",
+            "tag": "free",
+            "forms": [],
+            "note": "Feminine: la carne. Uncountable in Spanish as in English, so it takes no article when you are naming the kind."
+          },
+          {
+            "display": "verdura",
+            "cue": "vegetables",
+            "tag": "delta",
+            "forms": [
+              "verdura",
+              "verduras"
+            ],
+            "note": "Singular in Spanish where English is plural: la verdura is vegetables as a kind. verduras counts individual ones."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "verdura is singular. English speakers reach for the plural because their own word only exists in it.",
+      "sound": "KAR-ne, with one tapped r. ver-DU-ra, with two.",
+      "variations": [
+        {
+          "display": "Quiero carne, por favor.",
+          "cue": "I'd like meat, please.",
+          "changed": "one thing rather than two"
+        },
+        {
+          "display": "Para mí, verdura.",
+          "cue": "Vegetables for me.",
+          "changed": "the same order in S01's frame"
+        },
+        {
+          "display": "No quiero carne, quiero pescado.",
+          "cue": "I don't want meat, I want fish.",
+          "changed": "a refusal with an alternative"
+        }
+      ],
+      "mistake": {
+        "display": "Quiero la carne y las verduras.",
+        "why": "With the articles you are asking for particular ones you can see. To name the kind, leave them out."
+      },
+      "usage": "Ordering from a menu that offers a choice. The articles come back when you point at something.",
+      "register": "neutral",
+      "mnemonic": "Name a kind and drop the article."
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "¿Te gusta el pescado?",
+      "cue": "Do you like fish?",
+      "literal": "To-you pleases the fish?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pescado",
+            "cue": "fish",
+            "tag": "delta",
+            "forms": [],
+            "note": "Fish as food. A fish still swimming is a pez, and the two are different words — the one on the plate has been caught."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "el pescado, with the article, even though English says just \"fish\". gustar always takes one in front of the thing liked.",
+      "sound": "pes-KA-do, and the d between vowels is the soft th of \"this\".",
+      "variations": [
+        {
+          "display": "¿Te gusta la carne?",
+          "cue": "Do you like meat?",
+          "changed": "a feminine noun, so the article moves"
+        },
+        {
+          "display": "Me gusta mucho el pescado.",
+          "cue": "I really like fish.",
+          "changed": "the answer, with mucho on the verb"
+        },
+        {
+          "display": "No me gusta la verdura.",
+          "cue": "I don't like vegetables.",
+          "changed": "the negative, with no in front of everything"
+        }
+      ],
+      "mistake": {
+        "display": "¿Te gusta pescado?",
+        "why": "gustar needs the article: ¿Te gusta el pescado? Leaving it out is the English shape."
+      },
+      "usage": "What a host asks before deciding what to cook. The answer is expected to be honest.",
+      "register": "informal",
+      "mnemonic": "gustar always brings the article with it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M5-C01",
+      "display": "Para mí, una sopa, por favor.",
+      "cue": "Soup for me, please."
+    },
+    {
+      "id": "L2-M5-C02",
+      "display": "¿Me pone un café, por favor?",
+      "cue": "Could I have a coffee, please?"
+    },
+    {
+      "id": "L2-M5-C03",
+      "display": "¿El pan? Lo quiero caliente.",
+      "cue": "The bread? I want it warm."
+    },
+    {
+      "id": "L2-M5-C04",
+      "display": "¿Quieres otro café?",
+      "cue": "Do you want another coffee?"
+    },
+    {
+      "id": "L2-M5-C05",
+      "display": "No, gracias, no tengo mucha hambre.",
+      "cue": "No thanks, I'm not very hungry."
+    },
+    {
+      "id": "L2-M5-C06",
+      "display": "Creo que la sopa está fría.",
+      "cue": "I think the soup is cold."
+    },
+    {
+      "id": "L2-M5-C07",
+      "display": "¿Me trae la cuenta, por favor?",
+      "cue": "Could I have the bill, please?"
+    },
+    {
+      "id": "L2-M5-C08",
+      "display": "Tengo sed, ¿me da un vaso de agua?",
+      "cue": "I'm thirsty, could I have a glass of water?"
+    },
+    {
+      "id": "L2-M5-C09",
+      "display": "Quiero carne y verdura, por favor.",
+      "cue": "I'd like meat and vegetables, please."
+    },
+    {
+      "id": "L2-M5-C10",
+      "display": "¿Te gusta el pescado?",
+      "cue": "Do you like fish?"
+    },
+    {
+      "id": "L2-M5-C11",
+      "display": "Para mí, agua, por favor.",
+      "cue": "Water for me, please."
+    },
+    {
+      "id": "L2-M5-C12",
+      "display": "Creo que es muy caro.",
+      "cue": "I think it's very expensive."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

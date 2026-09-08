@@ -76,7 +76,70 @@ pool-token rule does not see, and both were fixed in content rather than by movi
 
 The en-es baseline stays at 10 and is unchanged by this wave.
 
+
+## Wave 2 — L2-M3, L2-M4, L2-M5 (#444)
+
+Reviewed against the cumulative index at each rung: 291 surfaces through L2-M2, and the wave
+carries the course to L2-M5.
+
+### L2-M3 "Describing things"
+
+The four-cell grid is drilled on a colour (S05) and the two-cell class on `azul` (S01, S02),
+which is the split the job line means by "at length". Three rulings from `docs/53` were paid here:
+
+- **`bueno` never appears in a display, and S10 says why in its own note.** The row is authored on
+  `buenas` with `forms` `buena · buenas · buenos` and no masculine singular, because that key is
+  L1-M10's discourse "well, …". The note tells the learner what to say instead rather than leaving
+  a hole they will fall into.
+- **`gran` against `grande`** (S03, S04) is taught as one word in two positions rather than as two
+  words, and `nuevo` (S07) gets the same treatment in its own note — the position shift is a
+  pattern, not a quirk of one adjective.
+- **`muy` against `mucho`** (S09) is authored with both rows in one sentence, because the error is
+  a swap and a swap needs both halves visible.
+
+`malo` (S06) is this module's key, with its note already distinguishing it from L1-M9's `mal`.
+
+### L2-M4 "Getting around"
+
+`hay` against `está` (S01, S02) is the module's law and the mistake block is the exact English
+shape — `¿Hay la tienda…?`, "there is the shop". The polite imperative is taught as a recipe from
+the I-form (`sigo` → `siga`, `giro` → `gire`, `cruzo` → `cruce`, `tomo` → `tome`) with a note in
+rule 1 that L3's subjunctive will reuse the shape, so the level ships the words and names the
+system rather than hiding the connection.
+
+The seam decisions held: `a la derecha`, `a la izquierda` and `todo recto` are authored as
+whole-phrase rows, keeping L1-M4's `a` and L1-M8's `todo` where they are; bare `se` (S06) is this
+module's key with its note true of the impersonal and pointing at `se llama`.
+
+One spelling rule earned its own sentence: `cruzo` → `cruce` (S09), because Spanish never writes
+`ze` and a learner who does not know that will write `cruze` forever.
+
+### L2-M5 "Food and hosting"
+
+`para` enters for the recipient and nothing else (S01), with the `por`/`para` contrast named as
+deferred in rule 0 — and bare `por` still appears nowhere in the level. The clitic law is taught
+on `lo` (S03) with the note saying plainly why `la`, `los` and `las` are not offered.
+
+Two things the module gets to say that a vocabulary list could not: `otro` takes no article (S04),
+which is the whole sentence's lesson; and `que` after a verb of thinking is obligatory (S06),
+where English drops "that" so freely that it feels optional.
+
+The refusal (S05) was rewritten during authoring, and for the better. Its first draft was
+`No, gracias, no tengo hambre`, which put `mucha` in a variation where no row owned it. Rather
+than delete the variation, the display became `No, gracias, no tengo mucha hambre` and `mucha`
+got a row of its own pointing back at L1-M1's `mucho` — which is exactly the level's forms policy
+(a new SHAPE of an L1 lexeme is deconstructed in the L2 module that first shows it) doing its job
+for the first time in this course.
+
+### The ratchet, again
+
+Three more rounds of variation-only surfaces were caught and fixed in content: `banco` and
+`más rápido` in M4, `ya`, `nos` and `mucha` in M5. `banco` was promoted into M4-S02's display,
+which is a better existence question than the shop it replaced; `mucha` became the row described
+above; the rest were rewritten out. The en-es baseline stays at 10.
+
 ### Open questions for the native pass
+
 
 1. **`¿Me da un café?` as the default counter frame.** The module makes it the ordinary way to
    order in Spain. In much of Latin America `¿Me regala un café?` or `Me da un café, por favor`
@@ -95,3 +158,14 @@ The en-es baseline stays at 10 and is unchanged by this wave.
    `es` reads as the same person rather than as a new subject.
 6. **`mayor` without an age** (S09). `Mi hermana es mayor` is authored as complete. A native pass
    should confirm it does not want `mayor que yo`.
+7. **`Tome el autobús`** (M4-S07). In Spain `coja` is commoner for catching a bus and the note
+   says so. Confirm that `tomar` reads as neutral rather than as a foreigner's word there.
+8. **`¿Me pone un café?`** (M5-S02). Authored as the Spanish bar default with `¿Me da…?` and
+   `¿Me trae…?` named as the wider forms. Check the note does not overstate how regional it is.
+9. **`Creo que está fría`** (M5-S06). The negative variation writes `No creo que está frío`,
+   which careful Spanish would put in the subjunctive. The variation's `changed` line says so;
+   confirm the indicative is what people actually say, or the variation should go.
+10. **`verdura` singular** (M5-S09). Authored as the kind-word with `verduras` counting
+    individual ones. Confirm a menu would not simply say `verduras`.
+11. **`un agua`** (M5-S08 variation). Written with `un` because the noun starts with a stressed
+    a. Confirm `un agua` rather than `una agua` in a bar order.
