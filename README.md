@@ -213,6 +213,53 @@ Three things the waves found that were nobody's charter:
   en-ko's `joji anayo` is not how 좋지 is said. The emitted index wins over the brief, always, and
   the correction is recorded rather than absorbed.
 
+**All nine courses reach five levels (#490–#597, 2026-09-08) — 450 modules, and the ladder rung
+count is what PRD §5 says it is.** L4 _Nuance_ and L5 _Voice_ were briefed (#500–#508 and
+#563–#571, decisions in `docs/85`–`docs/93` and `docs/103`–`docs/111`) and authored
+(`docs/94`–`docs/102`, `docs/112`–`docs/120`) in three waves each — M1–M2, M3–M5, M6–M10 — nine
+courses in parallel per wave, each agent owning `content/<course>/modules/` and its own review doc
+and nothing else. A strict `npm run build` emits **50 modules on every course**, cumulative indexes
+closing at hi-mr 1005, en-es 1225, en-ar 1473, hi-en 1352, en-ru 1145, en-it 1661, en-fr 1313,
+en-de 1170, en-ko 1384 surfaces. All nine shown-surface baselines held again — hi-mr 7, en-es 10,
+en-ar 6, hi-en 30, en-ru 20, en-it 17, en-fr 20, en-de 11, en-ko 12 — across 180 new modules; not
+one was raised. Every `levels.json` draft flag and all 221 module-level `draft` placeholders are
+gone, because a placeholder row means a module nobody has authored and none is left.
+
+What the last two levels changed about the process:
+
+- **Worktrees were the wrong isolation.** `isolation: worktree` branches from `main`, not from the
+  working branch, so every L3 agent read a checkout one wave stale and four review docs were
+  rewritten rather than appended. L4 and L5 ran nine agents in the shared checkout on disjoint
+  path ownership, forbidden from anything that writes `public/content/`; the parent builds once
+  before a wave and once after. No doc was lost after the switch, and the append is now checked
+  with `git diff --numstat` before every commit.
+- **The index question has two answers and they are different questions.** `npm run content:owner`
+  (new here, `tools/index-owner.ts`) folds the emitted delta index and sees only what has been
+  built; `npm run content:shown` folds the on-disk modules of the level being written and sees
+  unbuilt siblings. Six agents hand-rolled the same fold in one afternoon before the tool existed,
+  and the first hand-rolled draft folded 24 surfaces instead of 785 because `readdirSync` sorts
+  `L1-M10.json` before `L1-M2.json`.
+- **A paradigm row must have a hole wherever a lower level owns that cell.** Found in en-it, where
+  `avrei` can carry its whole paradigm and `sarei` cannot, because `sarebbe` is L3-M4's. A full
+  paradigm over an owned cell makes the row unreachable — the same first-occurrence-wins defect the
+  L3 waves found, arriving through the front door.
+- **The collision defect was swept out of L1 and L2, not just kept out of L4 and L5.** The rule
+  `tools/check-shown.ts` learned at L3 was pointed at the shipped foundation: 421 `forms` entries
+  across 47 files mechanically, then 24 same-display collisions across 16 files by judgement. Two
+  of those merges made a note truer than either row had been — hi-mr L1-M1's आवडते, and en-ko
+  L1-M5's `bap`, whose row claimed the noun is bare while its own S09 says `bap-eul`.
+- **A font decision was reversed on evidence.** `docs/34` §8 called en-ko's unrendered `script`
+  line an honest defect; `@fontsource/noto-sans-kr` does ship the Korean cut, so 529 KiB of source
+  subsets to 20,492 bytes for 294 syllables and the line renders. `tools/font-coverage.test.ts`
+  (new) reads the cmap of every generated cut and fails on a harvested, target-claimed character no
+  bundled file draws — it found en-fr's `sœur`, U+0153 claimed by a `latin-ext` target while living
+  in the `latin` file.
+
+**The native-speaker gate is still unmet, and it is now the only thing between this ladder and a
+learner who should trust it.** Every one of the eighteen L4/L5 review docs ends in numbered open
+questions for it, and no authoring wave may close one by rewriting a shipped module.
+
+
 **hi-mr reaches three levels (#452, #461, #470, #479, 2026-09-07) — the first L3 anywhere.** All
 ten L3 rungs — `L3-M1`…`L3-M10`, _Fluency_ — are authored against the briefs of #452
 (`docs/50-hi-mr-L3-brief-decisions.md`, the first level in this repo planned against a verified
