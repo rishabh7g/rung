@@ -45,20 +45,28 @@
   font-size: var(--devanagari-min-size);
 }
 
+/* The rung this session climbed, named — a muted caption over the CTA, in the register of the
+   count above it. It states a fact the app has already written; the CTA under it is the way to
+   go and see it. */
+.summary-climbed {
+  margin: auto 0 0;
+  font: var(--text-caption);
+  color: var(--ink-65);
+}
+
 /**
- * The way on to the exit ritual (#315), shown only when the rung is produced out — the solid-accent
- * primary block CTA at `--cta-height`, the one filled object in the system (design/tokens.md §3).
+ * The climb to the Ladder — the solid-accent primary block CTA at `--cta-height`, the one filled
+ * object in the system (design/tokens.md §3), and the control that carries the unlock beat.
  *
- * It takes the `margin-top: auto` that used to push the back link to the bottom, so the pair sits
- * together at the foot of the column with the loud one on top: when the ritual is open it is the
- * screen's action, and "back to the ladder" is the way past it.
+ * It is the screen's action when there is one, so it sits at the foot of the column with the
+ * line above it; `.summary-climbed` takes the `margin-top: auto` on its behalf, so the pair sits
+ * together rather than drifting apart across the free space.
  */
-.summary-to-ritual {
+.summary-climb {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: var(--cta-height);
-  margin-top: auto;
   padding: var(--space-2) var(--space-3);
   background: var(--color-accent);
   border: var(--border-hairline);
@@ -73,7 +81,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.summary-to-ritual:active {
+.summary-climb:active {
   background: var(--color-accent-700);
   border-color: var(--color-accent-700);
 }
@@ -97,12 +105,4 @@
   /* kills the 300ms double-tap-zoom delay (design/pwa-checklist.md §1) */
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-}
-
-/* Both links carry `margin-top: auto` so that EITHER can be the thing pinned to the foot of the
-   column. When the ritual CTA is there they would otherwise share the free space between them and
-   drift apart, so the one that follows it gives its own claim up: the pair sits together at the
-   bottom, spaced by the column's gap, loud one on top. */
-.summary-to-ritual + .summary-back {
-  margin-top: 0;
 }

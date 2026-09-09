@@ -16,8 +16,8 @@
  *      "The ladder is visible; the rungs are sealed" (PRD-design §3.2) is a DOM fact here.
  *   4. **The pending line** — how many rungs of the level are still to climb, counts only.
  *
- * And one thing that is not a state but a moment: **the unlock beat** (#103). A ritual that has
- * just passed hands this screen a one-shot flag naming the rung it climbed, and the newly current
+ * And one thing that is not a state but a moment: **the unlock beat** (#103). A Practice session
+ * that has just climbed a rung hands this screen a one-shot flag naming it, and the newly current
  * rung — plus, at a level boundary, the cell that just unsealed — plays the product's single
  * celebration, once (`useUnlockBeat` below; PRD-design §3.6, §12.3 [Q4]).
  *
@@ -31,7 +31,7 @@
  * **Nothing on this screen is a source of truth.** `src/engine/progression.ts` answers every
  * question it asks — which rung is current, which levels are sealed, what state each module is in
  * — from the input `progressionInput` assembles out of the store, which is the same input
- * `passRitual` guards with. A count rendered here and a rule enforced there cannot disagree,
+ * `passRung` guards with. A count rendered here and a rule enforced there cannot disagree,
  * because they are the same derivation.
  */
 import { useEffect, useRef, useState } from 'react';
@@ -46,7 +46,7 @@ import { LevelStrip, type LevelCell, type SquareState } from './ladder/LevelStri
 import { RungCard } from './ladder/RungCard.tsx';
 import { RungMarker } from './ladder/RungMarker.tsx';
 import { rungLabel } from './ladder/rungLabel.ts';
-import { useRungProduction } from './useExitAvailable.ts';
+import { useRungProduction } from './useRungProduction.ts';
 import { useProgression } from './useProgression.ts';
 import './ladder-screen.css';
 
@@ -54,7 +54,7 @@ export default function LadderScreen() {
   const strings = useStrings();
   const toast = useToast();
   // Loads the ladder, hands it to the store, and assembles the engine's input — the same input
-  // `passRitual` guards writes with (`./useProgression.ts`), production counters included, so the
+  // `passRung` guards writes with (`./useProgression.ts`), production counters included, so the
   // rung card's `exit_ready` stage is read here rather than injected (#95).
   const { levels, input, ready } = useProgression();
   // The current rung's per-sentence counters, for the card's dots row (§6.1). Asked here rather
@@ -98,7 +98,7 @@ export default function LadderScreen() {
   /**
    * **Where the beat lands, derived like everything else on this screen.**
    *
-   * The flag names the rung the ritual just passed; the beat belongs to what that pass OPENED —
+   * The flag names the rung the session just passed; the beat belongs to what that pass OPENED —
    * the newly current rung, which is the whole of it on an ordinary rung. At a level boundary the
    * pass unsealed a level as well (the seal rule, PRD-design §5: every module of the previous
    * level passed), and the recommendation on [Q4] is the same beat on the level cell and on its
@@ -211,7 +211,7 @@ export default function LadderScreen() {
  * **The unlock beat, read once and consumed** (#103) — the product's one celebration, and the
  * whole of what keeps it to one.
  *
- * The Verdict's "climb to the ladder" carries a flag naming the rung it just passed
+ * The session summary's "climb to the ladder" carries a flag naming the rung it just passed
  * (`passedRung`, `shell/routes.tsx`); this reads it on mount and then **replaces the history
  * entry with one that carries nothing**. Two things follow, and they are the requirement:
  *
@@ -222,7 +222,7 @@ export default function LadderScreen() {
  *     reload, a back tap onto this entry, or a re-mount reads the replaced entry and finds
  *     nothing. The flag is gone from history, not merely ignored.
  *
- * Returns the module id the ritual passed, or `null` for every other way of arriving here — which
+ * Returns the module id the session passed, or `null` for every other way of arriving here — which
  * is every way but one.
  */
 function useUnlockBeat(): string | null {

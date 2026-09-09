@@ -6,8 +6,8 @@ no backend, no accounts, no audio, no runtime AI. Built by one person, for one
 friend.
 
 *rung* (formerly *Shidi*, शिडी — Marathi for "ladder") names the core metaphor: a
-fixed sequence of 10 modules ("rungs"), each exited through its own ritual — every
-sentence guessed right at least once in practice, then two fresh sentences understood.
+fixed sequence of 10 modules ("rungs"), each climbed by working it: one Practice
+session over the rung's ten sentences, and the rung above opens on the last card.
 
 ## Start here
 
@@ -1219,12 +1219,12 @@ a key added to one table and not the other a `tsc` failure, but nothing now chec
 copy of the list itself.
 
 `tools/strings-check.ts` runs per course, flattens the nested file onto dot-paths
-(`ritual.check.copy`), and reports four things, always naming course **and** key:
+(`settings.tick.title`), and reports four things, always naming course **and** key:
 
-- **missing key** — the 70 canonical paths must all be there;
+- **missing key** — every canonical path must be there;
 - **empty or non-string value** — a present-but-blank key is a missing key with extra steps;
-- **unknown key** — the typo tripwire; `ritual.check.plate` would otherwise sit quietly beside a
-  missing `plateLabel`;
+- **unknown key** — the typo tripwire; `settings.tick.titel` would otherwise sit quietly beside a
+  missing `title`;
 - **placeholder mismatch** — a value carries exactly its canonical `{placeholders}`
   (`{sentenceCount} {maxWords} {ordinal} {n} {nextModule} {to} {from} {level} {remaining}
   {total} {count} {phase}`), so a translation cannot
@@ -1244,16 +1244,24 @@ above them and the Next that does not exist until one is chosen) and two the "wh
 (#94 — `why.show`, `.hide`: the toggle's two labels, because it names what it will do) and seven
 the session forced (#96, cut to that count by #388/#389 — `practice.*`: the hub's title, the count
 of cards the next tap serves and the one Start label, and the summary's title, its one score line,
-its way on to the ritual and its way back) and two lossless resume forced (#99 — `practice.resumeContinue`,
+its way on and its way back) and two lossless resume forced (#99 — `practice.resumeContinue`,
 `.resumeNew`: the two ways out of an open session) and two the
 press-and-hold forced (#101 — `ritual.confirm.done`, `.toComprehension`: what the control says
 once it is signed, and the way on to part 2 — the prototype writes both in English for every
 course, which is the shell owning a learner-facing sentence) and five the Verdict forced
 (#103 — `verdict.checkSentence`, `.checkChecked`, `.checkComprehension`, `.honesty`, `.toLadder`:
 the three checklist lines the ritual ends on, the honesty line under them, and the CTA that climbs
-back to the ladder). All fifty-six are
+back to the ladder). All of them are
 **draft values pending the Sync-3 freeze** (#71). The alternative each time was a
 learner-facing line hardcoded in the shell, which is the one thing this list exists to prevent.
+
+**And the list shrinks the same way.** Retiring the exit ritual took ten keys with it — `cueLabel`,
+`revealLabelComprehend`, `retry.title`/`.pending`, `rungCard.exitRitual`,
+`practice.summaryToRitual`, `hint.production` and three of the five `verdict.*` — because a key
+no surface renders is a line nine courses are asked to translate for nobody. The two that
+survived moved rather than died: `verdict.passedRung` and `verdict.toLadder` are said on the
+session summary now and are named for it (`practice.climbedRung`, `practice.climbToLadder`),
+keeping every course's own words for a screen that still says the same thing.
 
 `why.openFull` is deliberately **not** `module.openFull`: one opens a sentence from a browsing
 list, the other leaves a running session for it. A course may well word them the same; sharing the
@@ -1360,10 +1368,10 @@ date in the whole document is `passedAt` on a passed module.
   P4). It stays **thin, and free of rules**: `ensureCourse` (idempotent — an existing course
   returns the same object, so no write can blank a ladder), `setActiveCourse` (a bare pointer swap;
   the learner-facing switch flow with its toast is #106), `setSetting`, `setLadder` /`markStudied` /
-  `passRitual` (progression, below — every rule they obey is derived in the engine),
+  `passRung` (progression, below — every rule they obey is derived in the engine),
   `recordProduction` (the counters, below), the session's three (`startSession`, `recordReview`,
-  `setSession` — below), and `_reset()` for dev and tests. `completeRitual` (#103) adds none of its
-  own: it calls `passRitual` and rides its single write.
+  `setSession` — below), and `_reset()` for dev and tests. `completeRung` (#103) adds none of its
+  own: it calls `passRung` and rides its single write.
 
 `store.test.ts` pins the initial shape against the literal the PRD prints, so drift is a red test
 rather than a discovery; the rest of it proves per-course isolation, a round trip through storage,
@@ -1378,21 +1386,27 @@ derived, never stored"):
 
 | | |
 |---|---|
-| `deriveStatuses(input)` | every module by status — `locked` · `unlocked` · `in_progress` · `exit_available` · `passed` |
+| `deriveStatuses(input)` | every module by status — `locked` · `unlocked` · `in_progress` · `passed` |
 | `levelSealed(input, level)` | the **seal rule** (PRD-design §5): a level unlocks only when *every* module of the previous level is passed |
 | `currentRungId(input)` | the first non-passed rung of the first unsealed, incomplete level — `null` on a finished ladder |
-| `rungStage(input, id)` | the staged rung card [D22]: `!hasContent` → `pending`, `!studied` → `fresh`, `exitAvailable` → `exit_ready`, else `studied` |
+| `rungStage(input, id)` | the staged rung card [D22]: `!hasContent` → `pending`, `!studied` → `fresh`, else `studied` |
 
-`ladderFromLevels(levels)` turns a course's `levels.json` into the engine's ladder; the two live
-facts arrive as **injected predicates** — `studied(id)` (the per-course flag) and `exitAvailable(id)`
-(every sentence produced ≥ 2×, below). `progressionInput(state, courseId)` in the store assembles one
-from what a course actually holds, and the screens derive from the same input the store guards with.
+`ladderFromLevels(levels)` turns a course's `levels.json` into the engine's ladder; the one live
+fact arrives as an **injected predicate**, `studied(id)` (the per-course flag).
+`progressionInput(state, courseId)` in the store assembles one from what a course actually holds,
+and the screens derive from the same input the store guards with.
+
+There used to be a second predicate, `exitAvailable(id)` — every sentence of the rung marked —
+and with it a fourth module status (`exit_available`) and a fourth rung stage (`exit_ready`,
+whose CTA opened the exit ritual). All three went when the ritual did: a rung is climbed by
+finishing a Practice session, so the counters gate nothing and the state a rung would have sat
+in between "worked through" and "passed" no longer exists.
 
 Sealing counts a rung whose module has not been authored yet — hi-mr ships 2 of L1's 10 today, so L2
 stays sealed until the other 8 exist and are passed. That is the rule working: there is nothing to
 climb through a rung with no module.
 
-**One unlock path (Invariant 1).** `passRitual(courseId, moduleId, clock?)` is the only action in the
+**One unlock path (Invariant 1).** `passRung(courseId, moduleId, clock?)` is the only action in the
 app that writes `modules`. It throws unless the module *is* that course's current rung — a rung
 further up, a module already passed, a sealed level, or a course whose ladder the store has not been
 handed all refuse and write nothing — and it stamps `passedAt` from the injected `Clock`.
@@ -1401,37 +1415,36 @@ exactly where it was.
 
 That promise had a mechanical half — a file that sliced every action out of `store.ts` **by name**
 and failed if more than one wrote `modules`, called every action against a course with a passed rung
-and failed if any but `passRitual` changed the map, and scanned every shipped file for a `setState`
+and failed if any but `passRung` changed the map, and scanned every shipped file for a `setState`
 call, because an action list is not a gate if a screen can write past it. It was deleted on
-2026-08-30 (#370). What survives is `src/state/store.test.ts`, which tests `passRitual`'s
+2026-08-30 (#370). What survives is `src/state/store.test.ts`, which tests `passRung`'s
 **behaviour** — it passes the current rung, stamps it from the clock, and refuses a rung further up,
 an already-passed module and a sealed level. That is the promise checked from the outside; nothing
 now stops a *second* action from growing a write to `modules`.
 
-### The production counters — the one number that opens the exit ritual
+### The production counters — the record of a rung said back
 
-`exit_available` is a single line of the PRD — "all sentences self-marked got-it ≥ 2×"
-(PRD-engineering §8 F1) — and it is the thing standing between the learner and the rung's exit
-ritual. Three pieces carry it (#95), on purpose: the rule is pure, the write is one action, and the
-join between them is a hook, because the answer needs a fact from each side of the app.
+`production[sentenceId]` counts the times a sentence of the current rung has been self-marked
+got-it in Practice. Two pieces carry it (#95): the reading is pure, the write is one action.
 
 | | |
 |---|---|
-| `src/engine/exit.ts` | pure — `exitAvailable(sentenceIds, production)` (every id ≥ `MARKS_PER_SENTENCE`, which is 1) and `started(sentenceIds, production)` (any id ≥ 1), plus `PRODUCTIONS_PER_SENTENCE`, the `2` the module list's dots and its `n / 20` count read too |
+| `src/engine/production.ts` | pure — `producedTimes(production, id)` (defensive: this map comes back from `localStorage`), `marked(production, id)`, and `MARKS_PER_SENTENCE`, the `1` the module list's dots and its `n / 10` count read |
 | `recordProduction(courseId, sentenceId)` | the store's counter action: `production[sentenceId] += 1`, and nothing else |
-| `src/screens/useExitAvailable.ts` | the join — this course's counters (state) against the current rung's sentence ids (content, loaded through the content layer's cache), handed to `progressionInput` as the real predicate |
+| `src/screens/useRungProduction.ts` | the join for the rung card's dots row — this course's counters (state) against the current rung's sentence ids (content, loaded through the content layer's cache) |
 
-**An empty sentence list answers `false`**, never the vacuous "every sentence of nothing". That is
-what a caller says while a module file is in flight, or when it will not load at all, and answering
-"ready" there would open the exit ritual on a module nobody has read. The same reasoning is why the
-hook answers for **one module — the rung it was given**: the engine only ever asks about the current
-rung, and a module whose sentences have not been loaded is a module nobody can claim is finished.
+**It gates nothing.** It used to be the whole of `exit_available` — "all sentences self-marked
+got-it" (PRD-engineering §8 F1) — the line standing between the learner and the rung's exit
+ritual, and `screens/useExitAvailable.ts` injected that answer into `progressionInput` so every
+screen derived one. The ritual is gone and the climb is finishing a Practice session, so the
+predicate, the injection seam and the hook's old name went with it. What is left is a drawing:
+a full dot on every card of the module list is the rung said back whole.
 
 **The counters only ever count up.** There is no decrement, no reset, no undo and no ceiling: the
-only arithmetic in the action is `+ 1`. A number that can fall is a rung that can close again under
-a learner who did nothing wrong — and undo is not missing by oversight, because the mark commits on
-Next rather than on the tap ([D11]), which is where a mis-tap is corrected. A count above two is
-kept as it is: two is what the ritual asks for, not a cap on practice.
+only arithmetic in the action is `+ 1`. A number that can fall is work a learner did that the app
+forgets — and undo is not missing by oversight, because the mark commits on Next rather than on
+the tap ([D11]), which is where a mis-tap is corrected. A count above the mark is kept as it is:
+the threshold is what a dot can draw, not a cap on practice.
 
 That promise had a mechanical half too, in the same three parts as the unlock path's: it sliced
 every action out of `store.ts` **by name** and failed if more than one wrote `production`, read that
@@ -1439,8 +1452,8 @@ one for any arithmetic that could lower a counter (`--`, `-=`, a subtraction, a 
 even a careful `Math.max(0, …)` floor), called every action against a seeded counter and failed if
 any moved it down, and scanned every shipped file for a counter write outside the store. It was
 deleted on 2026-08-30 (#370). `src/state/store.test.ts`'s `recordProduction` block survives and
-checks the counting behaviour — one got-it, then two on the same sentence, and the engine turning
-that into `exit_available`. Introduce `Math.max(0, produced - 1)` in the action and **three** tests
+checks the counting behaviour — one got-it, then two on the same sentence, and a fully marked rung
+still sitting at `in_progress`. Introduce `Math.max(0, produced - 1)` in the action and **three** tests
 go red, where thirteen once did; the "only one action writes it, and no screen writes past it" half
 is review only now.
 
@@ -1474,11 +1487,11 @@ which is why the same queue serves the same list whichever order it happens to b
 seeded permutations assert it).
 
 **Enrolment policy: a sentence enters review when its module is PASSED** — production ends,
-maintenance begins. Until then the sentences are the current rung's Produce work (the ≥ 2×
-counters), and scheduling them for review too would be the same work twice under two names. The
-call site is the exit ritual's pass action (`completeRitual`, #103), which enrols in the very write
-that marks the module passed; this module states the policy and stays pure — no React, no storage,
-no clock, every function returning a new array.
+maintenance begins. Until then Practice already serves every sentence of the current rung each
+session, and scheduling them for review too would be the same work twice under two names. The
+call site is the pass action (`completeRung`, #103), which the last card of a Practice session
+makes and which enrols in the very write that marks the module passed; this module states the
+policy and stays pure — no React, no storage, no clock, every function returning a new array.
 
 ### The app shell — one frame, three headers, one flag
 
@@ -1491,7 +1504,7 @@ knows about and the chrome does not cannot happen.
 | | |
 |---|---|
 | `/` | Ladder (#86) — home, first run, and where an unknown route lands |
-| `/module/:id` · `/sentence/:id` · `/ritual` · `/comprehension` · `/verdict` | children of the active rung: **back header** to the Ladder |
+| `/module/:id` · `/sentence/:id` | children of the active rung: **back header** to the Ladder |
 | `/practice` · `/settings` | the other two tabs: **brand header** |
 
 **HashRouter, not BrowserRouter.** The product is a static, zero-backend, installable PWA — a
@@ -1545,7 +1558,7 @@ Two rules the scaffold bakes in, before you write a component:
 engine becomes a screen: the position line, a compact strip of level chips, the current rung's
 card, and the rungs of the active level under it. Every one of those is **derived on render** —
 `deriveStatuses`, `currentRungId`, `levelSealed` off the very `progressionInput` the store guards
-`passRitual` with (#83). A count on this screen and a rule in that action cannot disagree, because
+`passRung` with (#83). A count on this screen and a rule in that action cannot disagree, because
 they are one derivation.
 
 [ladder-mid-360.png](docs/images/ladder-mid-360.png) — mid-climb at 360px.
@@ -1574,16 +1587,16 @@ Three things it is responsible for keeping true:
   level and how many rungs below it remain.
 - **Counts, never time.** No `%`, no date, no streak, no "due" — asserted over the rendered screen
   in both a fresh and a mid-journey state, until that render test went on 2026-08-30.
-- **The one celebration is a moment, not a state.** A verdict hands the screen a one-shot flag and
-  the newly opened rung plays the unlock beat once; the Ladder spends the flag as it lands, so a
-  reload has nothing to replay and a revisit never carried one (#103, below).
+- **The one celebration is a moment, not a state.** A finished Practice session hands the screen a
+  one-shot flag and the newly opened rung plays the unlock beat once; the Ladder spends the flag
+  as it lands, so a reload has nothing to replay and a revisit never carried one (#103, below).
 
 Loading that ladder and handing it to the store is `src/screens/useProgression.ts`, which the
 Ladder and the module list both start with: it fetches `levels.json`, calls `setLadder` from an
-effect when it resolves — which is what gives `passRitual` a rung to check against — joins on the
-real `exitAvailable` predicate (`useExitAvailable`, above: the current rung's counters against its
-sentence ids, so no screen has an injection point to get it wrong with), and returns the assembled
-`progressionInput` plus a `ready` flag. Screens draw nothing until that flag is up
+effect when it resolves — which is what gives `passRung` a rung to check against — and returns the
+assembled `progressionInput` plus a `ready` flag. It used to join on a fourth thing, the
+`exitAvailable` predicate the engine took injected; nothing is gated on the counters now, so the
+input is whole and there is no injection point left to get wrong. Screens draw nothing until that flag is up
 (`aria-busy`), because an empty input would render a *finished* ladder. It is a hook rather than
 a line in the Ladder because a deep link (`#/module/L1-M1`) reaches a guarded screen with the
 Ladder never having mounted.
@@ -1608,18 +1621,23 @@ the kicker, the title at `--text-rung-title`, the job, and **one CTA set, chosen
 |---|---|---|
 | `fresh` | "Start with the module" → `/module/:id` | the note: read it once, Practice picks up from there |
 | `studied` | "Practice" → `/practice` | ghost "revisit the module" → `/module/:id` |
-| `exit_ready` | "Exit ritual — open" → `/ritual` | Practice and Module drop to secondary |
 | `pending` | — (nothing to open) | the `pendingAuthoring` note + ghost "practice earlier rungs" |
+
+There was a fourth, `exit_ready`: production complete, "Exit ritual — open" as the loud action
+pointing at `/ritual`, with Practice and Module dropped to secondary. The ritual is gone and
+Practice is the whole of the climb, so a worked-through rung offers exactly what a studied one
+does — the tab that passes it.
 
 The stage is `rungStage(input, id)` off the same `progressionInput` every other number on the
 screen derives from — so it moves when the facts do: `markStudied` on first module open flips
-`fresh` → `studied` (#88), and the got-it that brings every sentence of the rung to 2× flips
-`studied` → `exit_ready` (#95 — read live off the counters, not injected). Nothing about the card
-is stored, and it holds no state of its own.
+`fresh` → `studied` (#88), and a finished Practice session passes the rung out of the card
+altogether. Nothing about the card is stored, and it holds no state of its own. The dots row
+beside the stages is the production counters, read live through `screens/useRungProduction.ts`
+(#95) — a record of the rung, not a door.
 
 **The stage guides; it never gates** (the invariant, PRD-design §6.2). The bottom nav's Practice
 tab is untouched at every stage — asserted per stage until the render-level suite went on
-2026-08-30 — three of the four stages offer Practice from the card itself, and no stage locks a
+2026-08-30 — the `studied` stage offers Practice from the card itself, and no stage locks a
 route. The primary is the
 one **filled** object in the whole view (`--cta-height` 48px, solid accent); secondaries are
 `--btn-secondary-height`, ghosts `--ghost-height` and always `white-space: nowrap`
@@ -1637,9 +1655,6 @@ Two more divergences from the prototype, on top of the Ladder's:
 - **The card's copy and its button labels are Mukta at the 18px floor**, not 11–12px Barlow and
   14px Barlow Condensed. Same reason as the Ladder's prose, one step further: a CTA label is
   course copy too, and hi-mr's is Devanagari. Raised with the rest for #117.
-- **The two `exit_ready` secondaries are `--btn-secondary-height` (46px)**, where the prototype
-  writes 44 inline; design/tokens.md §4 is the rule of record and both clear `--tap-min`.
-
 ### The module list — read the rung, and nothing else
 
 `src/screens/ModuleScreen.tsx` (#88; PRD-design §6.4, PRD §8 F2) is a rung's ten sentences,
@@ -1663,7 +1678,7 @@ Four things it owes. Each was a test until the render-level suite went on 2026-0
   exactly one screen. `module/ProductionDots.tsx` draws each sentence's 6px dot off
   `production[sentenceId]` (0 / 1), and the header's `n / 10` counts the same map — both
   **read-only** here, live off what `recordProduction` writes (#95), so a column of full dots down
-  the list is the exit ritual unlocking, one sentence at a time.
+  the list is the rung said back whole, one sentence at a time.
   [module-rows-360.png](docs/images/module-rows-360.png) — mid-climb at 360px, 1.41 screens where
   the plates were 1.72.
 - **Where the learner was.** The scroll offset survives a detour into Sentence Detail, in
@@ -1831,12 +1846,12 @@ Four divergences from the prototype, three of them the same wall:
 - **No label over the cue.** The prototype writes a 10px uppercase kicker naming the L1; the card
   drew `cueLabel` there as course prose until the Practice audit (2026-09-05) took it off — the
   reveal button already names the other language, and a label naming the learner's own one fifteen
-  times a session was the same fact on every card. `cueLabel` still renders on Comprehension, where
-  the cue is the L2.
+  times a session was the same fact on every card. Comprehension went on printing it, because
+  there the cue was the L2; that screen is gone, and the key with it.
 - **The 2px cue rule is `var(--tick-height)`**, the design package's only 2px length — the stand-in
   the level strip's bar already takes (#86).
 - **The kicker row and the position count are not on the card.** They belong to the session that
-  renders it (#96), which is also what keeps the card usable in the ritual.
+  renders it (#96), which is what kept the card reusable across screens.
 
 `prefers-reduced-motion` collapses both movements (the 300ms reveal, the 200ms Next), asserted off
 the stylesheet — and the 200ms is the entrance, not a delay: Next exists the instant the mark does.
@@ -1881,11 +1896,12 @@ Fidelity: the rows are the 18px Mukta floor again (seventh recurrence, #117) whe
 writes 11.5–15px, and the prototype's 52px/40px alignment columns are dropped — there is no token
 for either, and a wrapping Devanagari word needs the width more than the rows need a shared left
 edge. `TagChip` keeps the design's own 9.5–11px band, because its label is English furniture.
-### The session — one queue, one card, and one rule about marks
+### The session — one queue, one card, and the climb at the end of it
 
 `/practice` is the hub and the immersive session that runs from it (#96, remade by #386–#389; PRD
-§8 F3, PRD-design §6.3, flow 3): **fifteen cards, every one the same card**, with the learner's
-position snapshotted per course from the first one.
+§8 F3, PRD-design §6.3, flow 3): **up to fifteen cards, every one the same card**, with the
+learner's position snapshotted per course from the first one — and **the last card climbs the
+rung**.
 
 The card is the cue in the language the learner already speaks, a reveal control, and then the
 answer with a got-it / missed self-mark under it. Choosing a mark commits the card and advances.
@@ -1898,47 +1914,58 @@ That is the whole interaction: no phases, no chips, no pager, no cue toggle, no 
 | `startSession` / `recordReview` / `recordProduction` / `setSession` | the store's session actions — the count and the tick, the two marks, and the position |
 | `src/screens/PracticeScreen.tsx` | the hub: the rung, how many cards, one button |
 | `src/screens/practice/Session.tsx` | the session: the cards, the mark routing, the snapshot |
-| `src/screens/practice/SessionSummary.tsx` | the score, and the way on |
+| `src/screens/practice/SessionSummary.tsx` | the score, the rung climbed, and the way up |
 
 | the hub | a card, revealed | the summary |
 |---|---|---|
 | [practice-hub-360.png](docs/images/practice-hub-360.png) | [practice-card-360.png](docs/images/practice-card-360.png) | [practice-summary-360.png](docs/images/practice-summary-360.png) |
 
 - **What a session holds.** The current rung's sentences, whole and in the module's own order —
-  ten in every shipped module, never trimmed, because the exit gate needs all of them — plus up to
-  **five** from earlier, passed rungs, interleaved one after every two rung cards. Fifteen, always:
-  where the ladder holds fewer than fifteen distinct cards (the first rung, where nothing has been
-  passed) the tail repeats the rung from its first sentence, so a learner always knows how long a
-  session is. `CARDS_PER_SESSION` and `REVIEWS_PER_SESSION` are the two numbers, both in
-  `engine/session.ts`.
+  ten in every shipped module, never trimmed — plus up to **five** from earlier, passed rungs,
+  interleaved one after every two rung cards. Fifteen where the ladder holds fifteen, and fewer
+  where it does not: **the first rung's session is ten cards**, because nothing has been passed
+  behind it. `CARDS_PER_SESSION` and `REVIEWS_PER_SESSION` are the two numbers, both in
+  `engine/session.ts`. The plan used to pad a short ladder up to fifteen by repeating the rung
+  from its first sentence; those five repeats taught nothing, and once the last card became the
+  climb they stood between the learner and a rung they had already worked through.
+- **The last card is the pass** (Invariant 1). `Session.tsx` calls `completeRung(courseId, rungId,
+  rungIds)` in an effect the moment the session reaches its summary — the module to `passed`, its
+  sentences enrolled into review, one write — and the summary names the rung and hands the Ladder
+  the unlock beat. A ref and the passed set keep it to one write: the first is what this mount has
+  already done (`StrictMode` invokes the effect twice), the second what the ladder says (`passRung`
+  throws for a rung that is no longer current). A session run on a finished ladder climbs nothing
+  and says nothing about it.
 - **The routing contract is the ticket** (PRD §8 F3), and it is decided by the SENTENCE, not by
   where the learner is. A got-it on a sentence of the **current rung** goes to the production
   counters (`recordProduction`) and **never** to the queue; a miss on one writes nothing at all. A
   mark on a sentence from an **earlier rung** goes to the Leitner queue (`recordReview` →
   `applyMark`) and **never** to the counters. They are different numbers answering different
-  questions — what is being *built* against what is being *kept* — and crossing them would open a
-  rung's exit ritual on sentences nobody worked. `RevealCard` and `SelfMark` import no store by
+  questions — what is being *built* against what is being *kept* — and crossing them would credit a
+  rung with sentences nobody worked. `RevealCard` and `SelfMark` import no store by
   design, so `Session.tsx` is the only place that knows.
-- **Marking is idempotent.** A sentence already at the gate writes nothing, which is what makes a
-  repeated card free: the counter is a fact about the sentence, not a tally of taps. Counters never
-  decrement, here or anywhere.
+- **Marking is idempotent.** A sentence already at the mark writes nothing: the counter is a fact
+  about the sentence, not a tally of taps. Counters never decrement, here or anywhere. A miss does
+  not cost the rung either — the climb is finishing the session, and every card, marked either
+  way, is one card nearer the end of it.
 - **One session, counted once.** `startSession` increments `sessionCount`, ticks the queue
   (`tickSession`), plans, and writes the opening snapshot in a single write, and it is the only
   action that does any of it. That is what lossless resume (#99) rests on: restoring a snapshot
   must not charge a learner a session for closing their tab, or bring the whole queue due twice in
   one day's work.
 - **The plan is taken once, and the hub previews it with the same function.** `planSession` runs
-  against the queue *after* the tick, so the hub's "15 sentences to guess" is the session that will
-  actually be served. Which earlier-rung sentences is `leitner.ts`'s answer: `dueItems` first, in
+  against the queue *after* the tick, so the count the hub promises is the session that will
+  actually be served — ten on a first rung, fifteen once there is material behind it. Which earlier-rung sentences is `leitner.ts`'s answer: `dueItems` first, in
   its urgency order, and when fewer than five are due the remaining slots take the closest-to-due
   (`reviewPicks`) rather than shortening the session.
 - **A first rung is an honest state, not an empty screen.** With nothing passed there is nothing
-  earlier to serve, so the session is the rung and its repeats — no empty card, no "nothing due"
+  earlier to serve, so the session is the rung: ten cards, no empty card, no "nothing due"
   message, and nothing to explain, because there is no second section whose absence needs
   accounting for.
 - **The summary is one count** (Invariant 2): how many the learner got, out of how many were
   served, from one template in the course bundle so the numbers sit where the language puts them.
-  No duration, no percentage, no date. The gentle elapsed tick (numberless, 2px) is #98's.
+  No duration, no percentage, no date. Under it, the rung the session just climbed and the CTA
+  that carries the unlock beat to the Ladder — a statement and a way up, never an offer, because
+  the pass has already been written. The gentle elapsed tick (numberless, 2px) is #98's.
 - **The snapshot is a position and the cards it indexes** — `{idx, queue}`, written on every
   advance and cleared at the summary — plus a flush on `visibilitychange`/`pagehide` so a page that
   goes away mid-card is not one advance stale (#99). The queue is written down rather than derived
@@ -1960,9 +1987,8 @@ symptom, and the mark went back to being the gate. `ReadPhase.tsx`, `PhaseChips.
 `ResumeBanner.tsx` are gone; state v11 drops the snapshot's `phase` with them.
 
 Fidelity: the summary's score is a sentence rather than the prototype's
-label-and-right-aligned-number, and the prototype's "the exit ritual is open" block appears only
-when the rung is actually complete — that unlock is the Ladder's rung card, and this is a link to
-it, never a second gate.
+label-and-right-aligned-number, and where the prototype puts an "the exit ritual is open" block
+the product states the rung it just climbed.
 
 ### The gentle elapsed tick — the only time affordance, and it has no numbers
 
@@ -2063,118 +2089,68 @@ Continue → the same card, `sessionCount` still 1 → active course swapped to 
 own hub, its own Start, hi-mr's snapshot untouched) → swapped back → the same offer, the same card,
 still one session.
 
-### The exit ritual's arc — retired
+### The exit ritual — retired
 
-`/ritual` used to open on a three-step arc — **write** the 11th sentence in a notebook, **check** it
-yourself, **confirm** by holding a control for ~900ms — and hand over to comprehension as "part 2".
-#348 retired the check step and #349 retired notebook writing, taking the write step, the hold and
-`RitualScreen.tsx` / `HoldToConfirm.tsx` with them. **The exit ritual is comprehension alone**, and
-`/ritual` renders it directly. Two vestiges survived until #402 — a `2 / 2 ·` part count in the
-head, and a full interstitial screen between a missed round and the fresh one — and #400 removed
-the Verdict's receipt line for the 11th sentence, which certified a step the learner was never
-asked to take. Nothing in this section's former text describes current behaviour.
+For most of the app's life a rung was climbed through a **ritual**, and it was the only unlock
+path. It ran in `/ritual` and `/verdict`: two sentences from the module's comprehension pool, read
+for meaning, revealed against the scripted answer and self-marked — any "not quite" redrawing two
+fresh sentences, unlimited, with nothing counted against the learner — and then a verdict screen
+that made the single write. What opened it was the production counters: `exit_available`, every
+sentence of the rung self-marked got-it, derived in `engine/exit.ts` and joined to the module's
+sentence ids by `screens/useExitAvailable.ts`.
 
-### Comprehension — the same self-mark, and a retry that always deals fresh sentences
+It had shrunk twice before it went. `/ritual` first opened on a three-step arc — **write** the 11th
+sentence in a notebook, **check** it yourself, **confirm** by holding a control for ~900ms — and
+handed over to comprehension as "part 2"; #348 retired the check step and #349 retired notebook
+writing, taking the write step, the hold, `RitualScreen.tsx` and `HoldToConfirm.tsx` with them.
+#402 took the last two vestiges, a `2 / 2 ·` part count and the interstitial between a missed round
+and the fresh one, and #400 removed the Verdict's receipt line for a sentence the learner was no
+longer asked to write.
 
-`/ritual` is the exit ritual, and it is comprehension (#102, cut to one part by #348/#349/#402;
-PRD §8 F7, PRD-design §6.6 flow 6): two sentences from the rung's pool, read for meaning, revealed
-against the scripted answer, self-marked — and **any "not quite" redraws two NEW sentences at once,
-unlimited, with nothing counted against the learner**.
+**Now the session is the ritual.** Finishing a Practice session climbs the rung, on its last card
+(`screens/practice/Session.tsx` → `completeRung`), so there is no gate to open and no second screen
+to open it on. What went with it: both routes and their screens, `engine/comprehension.ts`, the
+`exitAvailable` predicate and the `exit_available` / `exit_ready` states it fed, the `handover` /
+`cameFrom` hand-over tokens, and the ten `strings.json` keys those screens rendered. What stayed:
+the counters, as a record rather than a door; the comprehension pool in the authored content and
+the shipped module files, because it is authored work across nine courses and retiring it is a
+content change; and the two lines the ritual ended on, which the summary now says
+(`practice.climbedRung`, `practice.climbToLadder`).
 
-| file | what it is |
-|---|---|
-| `src/screens/ComprehensionScreen.tsx` | the guard, the head's count, the attempt, the redraw, and the pass seam |
-| `src/screens/comprehension/ComprehensionItem.tsx` | one item: the line, the reveal, the model answer, the self-mark, and the two redraw notes |
-| `src/engine/comprehension.ts` | the draw: no repeats, exclusion until the pool exhausts, then recycling |
+### The pass and the unlock beat — one write, and the one celebration
 
-[comprehension-item-360.png](docs/images/comprehension-item-360.png) ·
-[comprehension-revealed-360.png](docs/images/comprehension-revealed-360.png) ·
-[comprehension-redrawn-360.png](docs/images/comprehension-redrawn-360.png)
-— the line under test, its revealed answer, and the fresh round's first card announcing itself
-where an interstitial used to stand, all at 360px.
-
-- **The guard is the exit gate itself.** `/ritual` is a real deep link, so what makes it
-  legitimate is the one fact the ladder already derives: the current rung is `exit_available` —
-  every one of its sentences marked got-it at least once (`useProgression`, #95). A stale entry — a
-  rung passed since, a rung not yet at the gate — lands back on that rung's module. There is no
-  hand-over token any more: the hold that used to write one went with the write step (#348/#349),
-  and the pass at the far end still travels as `handover('comprehension')` into the Verdict, which
-  is the one seam left.
-- **The retry algorithm is `drawItems`, and the PRD's AC is arithmetic.** Fresh items are drawn
-  excluding every id already used this visit; when the pool cannot fill an attempt it recycles,
-  **minus the attempt just played** — dealing back the two sentences that went wrong would read as
-  the app marking them. A pool of 6 (the authored floor, `POOL_MIN`) therefore supports **≥ 3 fresh
-  attempts before recycling**, which is PRD §8 F5's acceptance criterion tested twice: over the
-  pure function against an injected random source, and over the real screen, where three attempts
-  deal six distinct sentences.
-- **Nothing is stored on a failed round** (Invariant 4). The attempt lives in one component cell
-  that dies with the screen; the marks are dropped on the way into the redraw; there is no
-  attempt count, no failure count and no history — absent, not hidden, so there is no number a
-  screen could render even by accident. The redraw's two notes (`retry.pending` on the items after
-  a miss, `retry.title` on the fresh round's first card) say the same thing on the third redraw as
-  on the first (#402 — there is no interstitial screen between rounds any more).
-- **The controls are the product's own.** `SelfMark` verbatim (#93) — the same two segments, the
-  same fills, and the mark that commits itself through the commit window (#313) — and `WhyPanel`
-  (#94) on the reveal, which
-  resolves a pool item against its module's word index (`moduleIdOf` now reads `-C<nn>` ids as well
-  as `-S<nn>`; the schema fixes both shapes). The reveal itself is this screen's own, because it
-  runs the other way round: Practice reveals the L2 for an L1 cue, Comprehension reveals the L1 for
-  an L2 line (`revealLabelComprehend`), and `RevealCard`'s header says why that is not a third mode
-  there.
-- **The pass is a seam, not a write.** Two "same meaning" marks navigate to `/verdict` carrying the
-  same kind of token (`handover('comprehension')`); the module's `passed`, the next rung's unlock
-  and the beat are #103's, on the screen that receives it. This one writes nothing at all.
-
-Verified live at 360px in headless Chrome against `npm run dev` (en-es, M4 at the gate): the head
-reads `1 / 2` and no part count; a "Missed" puts the pending note on the next item; finishing that
-round lands at once on a fresh round's first card carrying "Fresh sentences, once more." with two
-sentences disjoint from the first pair; and two "Got it" marks land on `#/verdict` showing
-`M4 · Passed` and one receipt line.
-
-### The verdict and the unlock beat — the ritual's one write, and the one celebration
-
-`/verdict` is where the exit ritual ends and **the only place in the app a module passes** (#103;
-PRD §8 F5, F1; PRD-design §6.7 flow 7). The arc holds no state, the hold's number dies with it,
-Comprehension writes nothing on a failed round — and then this screen records everything the
-ritual ever records: the rung passes, and the sentences it taught enter the review queue.
+`completeRung` is **the only place in the app a module passes** (#103; PRD §8 F5, F1), and the
+session's last card is its only caller.
 
 | file | what it is |
 |---|---|
-| `src/screens/VerdictScreen.tsx` | the guard, the receipt, the write on arrival, the way back |
-| `src/state/store.ts` — `completeRitual` | pass + enrol, in one persisted document |
+| `src/screens/practice/Session.tsx` | the effect that calls it, guarded by a ref and by the passed set |
+| `src/state/store.ts` — `completeRung` | pass + enrol, in one persisted document |
+| `src/screens/practice/SessionSummary.tsx` | the rung named, and the CTA that carries the flag |
 | `src/screens/ladder/unlock-beat.css` | the beat: 1000ms, accent-200 flash, 10px settle, once |
 | `src/shell/routes.tsx` — `passedRung`/`justPassed` | the one-shot navigation flag |
 
-[verdict-360.png](docs/images/verdict-360.png) ·
 [unlock-beat-360.png](docs/images/unlock-beat-360.png) ·
 [unlock-settled-360.png](docs/images/unlock-settled-360.png) ·
 [unseal-beat-360.png](docs/images/unseal-beat-360.png)
-— the receipt, the beat landing on the rung that just opened, the same card a second later, and
-the level-boundary beat on the cell that unsealed plus its first rung, all at 360px.
+— the beat landing on the rung that just opened, the same card a second later, and the
+level-boundary beat on the cell that unsealed plus its first rung, all at 360px.
 
-- **One action, one write, and the asymmetry is the reason.** `completeRitual(courseId, moduleId,
-  sentenceIds, clock?)` **delegates the pass to `passRitual`** — still the only writer of `modules`
+- **One action, one write, and the asymmetry is the reason.** `completeRung(courseId, moduleId,
+  sentenceIds, clock?)` **delegates the pass to `passRung`** — still the only writer of `modules`
   (Invariant 1) — and hands it the enrolment to carry, so both land in the same `set` and the same
   `localStorage` document. A document holding a passed module whose sentences never enrolled would
-  be **unrecoverable**: `passRitual` refuses a rung that is no longer current, so those sentences
+  be **unrecoverable**: `passRung` refuses a rung that is no longer current, so those sentences
   would never come up for review again. The reverse costs nothing — `enrol` is idempotent (#92).
   `store.test.ts` counts the `setItem` calls (exactly one) and re-reads every document ever
-  written, asserting none holds a pass without its enrolment; the live walk instruments
-  `Storage.prototype.setItem` in the browser and asserts the same thing.
-- **The pass happens on arrival, not on the button.** The comprehension is what earned it, and a
-  learner who closes the app on this screen has still climbed the rung. The button's job is the
+  written, asserting none holds a pass without its enrolment.
+- **The pass happens when the session ends, not on the button.** The work is what earned it, and a
+  learner who closes the app on the summary has still climbed the rung. The CTA's job is the
   celebration.
-- **The entry is spent on arrival.** Comprehension's token (`handover('comprehension')`) is read
-  once and then cleared from the history entry, because `history.state` outlives a reload — a token
-  left in it would let a refresh mint a second verdict for whichever rung had become current. A
-  deep link, a refresh or a back tap lands on the Ladder; a rung that was never produced out lands
-  on `/ritual`, which sends the learner to the work.
-- **The receipt is one line, not a score** — comprehension 2 of 2 — and it is the course's
-  (`verdict.checkComprehension`). The number is the module's own `exitTest.comprehendCount`, so a
-  module that asked for three would read "3 of 3" with no code change. There used to be a second
-  line, "the 11th sentence — written in your notebook"; #400 removed it, because the ritual has had
-  no such step since #348/#349 and a receipt for work the app never asked for is a false one. The
-  `ordinal` key went with it.
+- **It cannot write twice.** A ref holds what this mount has already done — under `StrictMode` the
+  effect is invoked twice against one render, where asking the store would ask it before it had
+  been told — and the passed set holds what the ladder says, because `passRung` throws for a rung
+  that is no longer current. A session on a finished ladder climbs nothing and says nothing.
 - **The beat plays once, and cannot be replayed.** "Climb to the ladder" carries a one-shot flag
   naming the rung just passed; the Ladder reads it on mount, plays the beat on the rung that pass
   **opened**, and immediately replaces its own entry with a stateless one. So a reload has nothing
@@ -2187,17 +2163,6 @@ the level-boundary beat on the cell that unsealed plus its first rung, all at 36
   left is what the Ladder would have shown anyway: the rung, open.
 - **Level status stays derived** (F1). Nothing about the unseal is stored: `levelSealed` reads the
   passed set, the beat reads a navigation flag, and both are gone the moment the learner looks away.
-
-Verified live at 360px in headless Chrome against `npm run dev` (hi-mr), with the ten L1-M1
-counters seeded and **real CDP touch input**: the ~900ms hold hands over, two "same meaning" marks
-land on `#/verdict` with the token already spent, the receipt reads `Comprehension 2 में से 2.`
-from the real bundle, storage shows
-`L1-M1 passed` with **all ten sentences enrolled at box 1 due in 1**, and of the five documents
-written across the whole walk **zero** hold a pass without its enrolment. "सीढ़ी पर चढ़ो" lands on
-the Ladder with the beat on M2's card (`1s cubic-bezier(0.2, 0.7, 0.3, 1)`), the flag already
-consumed; leaving and coming back shows **0** beats. Seeded at 10 of 10, the beat is on the LEVEL 2
-cell **and** L2-M1; at 9 of 10 the strip is untouched; under `prefers-reduced-motion` both collapse
-to `animation-name: none`.
 
 ### The fonts — bundled, because offline is the product
 

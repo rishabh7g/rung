@@ -9,7 +9,7 @@
  *      ALWAYS there while the flag is up: an immersive screen with no way out is the failure
  *      this shell exists to make impossible. Tapping it ends the session and lands on the
  *      Practice hub.
- *   2. **A child of the rung** (Module, Sentence Detail, the ritual screens) → a back chevron
+ *   2. **A child of the rung** (Module, Sentence Detail) → a back chevron
  *      plus the screen's name. Where the chevron goes is the route table's answer
  *      (`backTarget`), not this file's: the Ladder for all of them but Sentence Detail, which
  *      returns to the module it was opened from, offset and open cards intact (#88, #89).
@@ -17,8 +17,8 @@
  *      from `src/brand.ts`, the one place the product name lives.
  *
  * **The nav renders for 3, and on a phone only for 3.** Immersion hides it entirely; below 768px
- * a child of the rung hides it too, which is the prototype's `navPad` reconciled (#117). A module,
- * a sentence and the ritual are work the learner opened deliberately, and each of them already
+ * a child of the rung hides it too, which is the prototype's `navPad` reconciled (#117). A module
+ * and a sentence are work the learner opened deliberately, and each of them already
  * carries its way out in the header — so the bar underneath was three destinations nobody asked
  * for, spending a sixth of a 320px screen on them. The tabs keep it, because a tab with no nav is
  * a screen with no way off it.
@@ -52,9 +52,9 @@ export function AppShell() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const route = matchShellRoute(pathname);
-  // Inside a rung — the `back` chrome is exactly that set (Module, Sentence, the ritual, the
-  // verdict), so the nav's phone rule is the header's own rule read a second time rather than a
-  // second list of routes to keep in step with this one.
+  // Inside a rung — the `back` chrome is exactly that set (Module, Sentence), so the nav's phone
+  // rule is the header's own rule read a second time rather than a second list of routes to
+  // keep in step with this one.
   const insideRung = route?.chrome === 'back';
   const back = backTarget(pathname);
   // Published to the screens through `ScrollAreaContext`: the frame owns the only scroll area,

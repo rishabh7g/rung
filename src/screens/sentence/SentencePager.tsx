@@ -11,7 +11,7 @@
  * sentence before this one, and on the FIRST sentence a HAND-BACK to the module behind this one on
  * the ladder (`handBackAt`, resolved by `useLadderHandOver`) rather than a dead control. It stays
  * a disabled button wherever there is nothing behind: the first module of the ladder, a previous
- * rung the ladder has locked or left mid-ritual, and the moment before that module's file has
+ * rung the ladder has locked, and the moment before that module's file has
  * arrived. Those are the cases where the old asymmetry was telling the truth.
  *
  * **The trailing slot** is a HAND-OVER on the last sentence, not a dead button (#367). Reaching

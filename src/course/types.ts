@@ -122,7 +122,15 @@ export interface Complexity {
   newWordCap: number;
 }
 
-/** How many novel sentences and comprehension items the exit ritual asks for. */
+/**
+ * How many novel sentences and comprehension items a module authors for.
+ *
+ * **The app reads neither any more.** They sized the exit ritual — the comprehension test that
+ * used to stand between a worked rung and the next one — and the ritual is gone: a rung is
+ * climbed by finishing a Practice session. The fields stay in the schema, the authored files and
+ * the build because the pool is authored content nine courses over and `tools/validate.ts` still
+ * holds it to its shape; retiring it is a content change, not a screen one.
+ */
 export interface ExitTest {
   generateCount: number;
   comprehendCount: number;

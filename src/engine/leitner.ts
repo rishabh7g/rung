@@ -18,9 +18,9 @@
  * maintenance begins: while a module is the current rung, Practice already serves every one of its
  * sentences each session (`engine/session.ts`), so scheduling them for review as well would be the
  * same work twice under two names. Passing the module is the moment the sentences stop being
- * something to learn and start being something to keep. The call itself lives in the exit ritual's
- * pass action (#103, `completeRitual`) — this module states the policy and implements `enrol`;
- * it wires nothing.
+ * something to learn and start being something to keep. The call itself lives in the pass action
+ * (#103, `completeRung`), which the last card of a Practice session makes — this module states
+ * the policy and implements `enrol`; it wires nothing.
  */
 
 /**
@@ -128,7 +128,7 @@ export function reviewPicks(queue: readonly ReviewItem[], max: number): ReviewIt
  *
  * A `sentenceId` the queue does not hold changes nothing. Only passed rungs are enrolled, and a
  * mark on a sentence of the CURRENT rung belongs to the exit counters instead — `recordProduction`
- * in the store, `exitAvailable` in `engine/exit.ts` (#95) — which are a different number in a
+ * in the store, read through `engine/production.ts` (#95) — which are a different number in a
  * different place. The routing is the caller's (`screens/practice/Session.tsx`, #388): an
  * earlier-rung mark comes here and NEVER to the counters, a current-rung got-it goes there and
  * never here.

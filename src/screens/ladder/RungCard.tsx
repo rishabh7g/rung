@@ -2,14 +2,18 @@
  * The staged rung card [D22] (#87) — the current rung as one blueprint object, and **one clear
  * action inside it** (PRD-design §6.2, §7; PRD-engineering §8 F1).
  *
- * Four stages, one CTA set each, and the set is the whole of what the card offers:
+ * Three stages, one CTA set each, and the set is the whole of what the card offers:
  *
  * | stage | primary | beside it |
  * |---|---|---|
  * | `fresh` | "Start with the module" → `/module/:id` | — |
  * | `studied` | "Practice" → `/practice` | ghost "revisit the module" → `/module/:id` |
- * | `exit_ready` | "Exit ritual — open" → `/ritual` | Practice and Module drop to secondary |
  * | `pending` | — | — (an unauthored rung offers nothing, and says nothing about it) |
+ *
+ * There was a fourth, `exit_ready`: production complete, and "Exit ritual — open" as the loud
+ * action pointing at `/ritual`. The ritual is gone and the climb is finishing a Practice
+ * session, so a worked-through rung offers exactly what a studied one does — the tab that
+ * passes it.
  *
  * **The stage guides; it never gates** (the product invariant, and the reason this is a card and
  * not a wizard). Every stage leaves the bottom nav's Practice tab exactly where it was, two of
@@ -17,11 +21,14 @@
  * that changes between stages is which action is loud.
  *
  * `rungStage(input, id)` decides which one, in `src/engine/progression.ts` — derived from the same
- * `progressionInput` the store guards `passRitual` with, never stored. This component takes the
+ * `progressionInput` the store guards `passRung` with, never stored. This component takes the
  * answer and renders it; it holds no state and reads none. The stage flips because the engine's
- * inputs changed: `markStudied` on first module open turns `fresh` into `studied` (#88), and the
- * last got-it that brings every sentence to 1× turns `studied` into `exit_ready` — the production
- * counters, read live through `screens/useExitAvailable.ts` (#95).
+ * inputs changed: `markStudied` on first module open turns `fresh` into `studied` (#88), and a
+ * finished Practice session passes the rung out of the card altogether.
+ *
+ * The dots row beside the stages is the production counters, read live through
+ * `screens/useRungProduction.ts` (#95). It is a record of how much of the rung has been said
+ * back correctly, and nothing on this card is gated on it.
  *
  * **Every label is the course's** (`strings.json`, PRD §4) — the shell has no copy of its own, so
  * a Marathi learner reads Hindi here and an Arabic learner reads English, without this file
@@ -36,10 +43,9 @@
  */
 import { Link } from 'react-router-dom';
 import { interpolate, useStrings } from '../../course/strings.ts';
-import { MARKS_PER_SENTENCE } from '../../engine/exit.ts';
+import { MARKS_PER_SENTENCE } from '../../engine/production.ts';
 import type { RungStage } from '../../engine/progression.ts';
-import { PRACTICE_PATH, RITUAL_PATH } from '../../shell/routes.tsx';
-import { HintLine } from '../../shell/useHint.tsx';
+import { PRACTICE_PATH } from '../../shell/routes.tsx';
 import { ProductionDots } from '../module/ProductionDots.tsx';
 import { RegistrationMarks } from '../RegistrationMarks.tsx';
 import { rungLabel } from './rungLabel.ts';
@@ -114,15 +120,6 @@ export function RungCard({
         </div>
       )}
 
-      {/**
-       * What the dots are counting towards (#319), said once per install. The row draws the one
-       * mark per sentence and the `n / 10` beside them, and neither says what reaching them
-       * DOES — the card's stages act on it ([D22]: the primary becomes the exit ritual) without
-       * ever having named the rule. This names it, on the first rung card the learner meets, and
-       * never again.
-       */}
-      {production.length > 0 && <HintLine hint="production" className="rung-hint" />}
-
       {stage === 'fresh' && (
         <Link className="rung-primary rung-action rung-label" to={modulePath}>
           {strings['rungCard.startModule']}
@@ -137,23 +134,6 @@ export function RungCard({
           <div className="rung-ghost-row">
             <Link className="rung-ghost rung-action rung-label" to={modulePath}>
               {strings['rungCard.revisitModule']}
-            </Link>
-          </div>
-        </>
-      )}
-
-      {stage === 'exit_ready' && (
-        <>
-          <Link className="rung-primary rung-action rung-label" to={RITUAL_PATH}>
-            {strings['rungCard.exitRitual']}
-          </Link>
-          {/* Neither drops away — the ritual is the loud action, not the only one. */}
-          <div className="rung-secondary-row">
-            <Link className="rung-secondary rung-action rung-label" to={PRACTICE_PATH}>
-              {strings['rungCard.practice']}
-            </Link>
-            <Link className="rung-secondary rung-action rung-label" to={modulePath}>
-              {strings['rungCard.module']}
             </Link>
           </div>
         </>

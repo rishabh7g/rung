@@ -13,7 +13,7 @@
  * and the state the learner sees are then the same state.
  *
  * The nav is not rendered at all during an immersive session, and it is **dropped on a phone
- * while the learner is inside a rung** — a module, a sentence, the ritual, the verdict. Both
+ * while the learner is inside a rung** — a module, a sentence. Both
  * decisions are `AppShell`'s; this file only takes the second one as a prop, because the first is
  * "there is no nav" and the second is "there is a nav, and this viewport is not where it goes".
  *

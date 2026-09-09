@@ -5,7 +5,7 @@
  * It stays THIN, and the rules stay out of it. It owns which course is active, the per-course
  * subtree existing at all, settings, the two writes progression needs (#83), the production
  * counters (#95), the review queue and the session snapshot (#96, #103) — and every rule those
- * obey is derived in `src/engine/` (`progression.ts`, `exit.ts`, `leitner.ts`), which the store
+ * obey is derived in `src/engine/` (`progression.ts`, `session.ts`, `leitner.ts`), which the store
  * asks rather than reimplements. The course-switch flow (#106) writes through this same shape:
  * `switchCourse` below is its one store-side write, and the toast is the Settings screen's.
  *
@@ -15,10 +15,10 @@
  *     Nothing in this file deletes or rewrites a course subtree, and `ensureCourse` returns the
  *     state untouched when the course is already there — so a re-boot, a switch, and a
  *     course that has temporarily vanished from a build all leave the stored ladders alone.
- *   • **One unlock path (Invariant 1).** `passRitual` is the only action that writes `modules`,
- *     and it refuses any module that is not the current rung. `completeRitual` — the end of the
- *     exit ritual, and the only place in the app a module passes — calls THROUGH it rather than
- *     beside it, carrying the review enrolment into its single write. `unlockPath.test.ts` proves
+ *   • **One unlock path (Invariant 1).** `passRung` is the only action that writes `modules`,
+ *     and it refuses any module that is not the current rung. `completeRung` — the last card
+ *     of a Practice session, and the only place in the app a module passes — calls THROUGH it
+ *     rather than beside it, carrying the review enrolment into its single write. `unlockPath.test.ts` proves
  *     both — mechanically over this file's source, and behaviourally over every action the store
  *     exposes.
  *   • **The production counters only ever count up.** `recordProduction` is their one writer and
@@ -85,7 +85,7 @@ export function initialState(): AppState {
  * It is held here and **never persisted** (`persistedSlice` takes the four state keys and nothing
  * else) because a build's ladder is derived from what that build shipped: a stored copy would
  * outlive its content and answer questions about rungs that no longer exist. The course layer sets
- * it from `levels.json` when it resolves (`ladderFromLevels`), and until it does, `passRitual` has
+ * it from `levels.json` when it resolves (`ladderFromLevels`), and until it does, `passRung` has
  * no ladder to check a rung against — so nothing can pass. A ladder the store has not been given is
  * not a ladder anyone can climb.
  */
@@ -147,16 +147,18 @@ export interface AppActions {
    */
   markStudied: (courseId: CourseId, moduleId: ModuleId) => void;
   /**
-   * One self-marked got-it, counted: `production[sentenceId]` goes up by one (PRD §8 F1 —
-   * `exit_available` is every sentence of a module at ≥ 2×). See the comment block on the
-   * implementation for the increment-only rule and how it is proved.
+   * One self-marked got-it, counted: `production[sentenceId]` goes up by one (PRD §8 F1). It
+   * is the per-sentence record the module list and the rung card draw
+   * (`engine/production.ts`), and it gates nothing — the rung is climbed by finishing a
+   * Practice session. See the comment block on the implementation for the increment-only
+   * rule and how it is proved.
    *
    * **Who may call it (PRD §8 F4, the routing contract).** ONLY a **Produce**-phase got-it.
    * A **Review**-phase mark is the Leitner scheduler's — `applyMark` in `engine/leitner.ts`,
    * which moves a box and a countdown and touches no counter here — and the two are different
    * numbers in different places for a reason: Review measures what is being kept, production
-   * measures what is being built. Counting a review as production would open the exit ritual on a
-   * rung the learner has not produced at all.
+   * measures what is being built. Counting a review as production would draw a rung as worked
+   * through that the learner has not produced at all.
    *
    * The distinction belongs to the caller, because nothing below it can see which rung a card came
    * from: the self-mark control is deliberately identical everywhere it appears
@@ -173,8 +175,8 @@ export interface AppActions {
    * answer into state.
    *
    * **It never touches `production`.** A review measures what is being kept and production
-   * measures what is being built, and counting a review as production would open the exit ritual
-   * on a rung the learner has not worked at all. A `sentenceId` the queue does not hold changes
+   * measures what is being built, and counting a review as production would credit a rung the
+   * learner has not worked at all. A `sentenceId` the queue does not hold changes
    * nothing — a current-rung mark misrouted here is a no-op rather than a silent write somewhere
    * else.
    */
@@ -211,34 +213,38 @@ export interface AppActions {
    *
    * `enrolment` is the review queue this same write also lays down, derived from the one it
    * replaces. It exists so a pass and its enrolment are ONE persisted document rather than two
-   * (`completeRitual` below is its only caller, and passes `enrol`); it is typed as a queue
+   * (`completeRung` below is its only caller, and passes `enrol`); it is typed as a queue
    * transform precisely so a caller cannot smuggle anything else — least of all a `modules`
    * entry — into the pass's write.
    */
-  passRitual: (
+  passRung: (
     courseId: CourseId,
     moduleId: ModuleId,
     clock?: Clock,
     enrolment?: (reviewQueue: readonly ReviewItem[]) => readonly ReviewItem[],
   ) => void;
   /**
-   * **The exit ritual, completed** (#103, PRD §8 F5): the module passes, and the sentences it
-   * taught enter the review queue — one action, one write, and the only place either happens at
-   * the end of a ritual.
+   * **The rung, climbed** (#103, PRD §8 F5): the module passes, and the sentences it taught
+   * enter the review queue — one action, one write, and the only place either happens.
    *
-   * It writes nothing itself. The pass is `passRitual`'s (the single unlock path, Invariant 1 —
+   * Its one caller is the Practice session's last card (`screens/practice/Session.tsx`).
+   * There used to be a whole ritual in between — a comprehension test on `/ritual` and a
+   * verdict screen that made this call — and the pass is the same pass without it: what the
+   * learner did to earn it is now the session itself.
+   *
+   * It writes nothing itself. The pass is `passRung`'s (the single unlock path, Invariant 1 —
    * so a module that is not the current rung throws out of here exactly as it throws out of
    * there, having written neither the pass nor the enrolment), and the queue is `enrol`'s
    * (`engine/leitner.ts`, which owns the policy this call makes: **a sentence enters review when
    * its module is passed**, because that is when production ends and maintenance begins).
    *
-   * **Atomic, and that is the point.** Both halves ride in `passRitual`'s single `set`, so
+   * **Atomic, and that is the point.** Both halves ride in `passRung`'s single `set`, so
    * storage never holds a passed module whose sentences are not enrolled. That intermediate state
-   * would be unrecoverable rather than untidy: `passRitual` refuses a module the learner has
+   * would be unrecoverable rather than untidy: `passRung` refuses a module the learner has
    * already passed, so those sentences would have no second chance to be enrolled and would never
    * come up for review again. `enrol` is idempotent, so the reverse — a replay — costs nothing.
    */
-  completeRitual: (
+  completeRung: (
     courseId: CourseId,
     moduleId: ModuleId,
     sentenceIds: readonly SentenceId[],
@@ -275,17 +281,14 @@ export type AppStore = AppState & LoadedContent & AppActions;
  * `studied` flags. Exported because the screens derive from the same input the store guards with:
  * the Ladder (#86) and the rung card (#87) read `deriveStatuses`/`rungStage` off this.
  *
- * `exitAvailable` stays **injected** rather than derived here, because half of its answer is
- * content: "every sentence self-marked got-it ≥ 2×" needs the module's sentence ids, which live in
- * `modules/<id>.json` and never in the store. `screens/useExitAvailable.ts` (#95) joins the two —
- * this course's counters and the current rung's sentences — through `engine/exit.ts`, and passes
- * the real predicate in. The `() => false` default is what a caller holding no sentence list can
- * honestly say: you cannot claim every sentence is produced when you do not know what they are.
+ * It used to take a third, injected fact — `exitAvailable`, "every sentence of this rung marked" —
+ * because half of that answer was content the store never holds. Nothing asks it any more: the
+ * exit ritual it gated is gone, and a rung is climbed by finishing a Practice session. What the
+ * engine needs is entirely in this document.
  */
 export function progressionInput(
   state: AppState & LoadedContent,
   courseId: CourseId,
-  exitAvailable: (moduleId: ModuleId) => boolean = () => false,
 ): ProgressionInput {
   const course = state.courses[courseId];
 
@@ -293,7 +296,6 @@ export function progressionInput(
     levels: state.ladders[courseId] ?? [],
     passed: new Set(Object.keys(course?.modules ?? {})),
     studied: (moduleId) => course?.studied[moduleId] === true,
-    exitAvailable,
   };
 }
 
@@ -566,16 +568,16 @@ export const useAppStore = create<AppStore>()(
        * THE PRODUCTION COUNTERS — ONE WRITER, AND IT ONLY EVER COUNTS UP.
        *
        * One self-marked got-it on a sentence of the current rung, counted, and that is the entire
-       * action. `exit_available` is "every sentence of the module marked" (PRD §8 F1,
-       * `MARKS_PER_SENTENCE`), so this number is what opens the exit ritual — and a number that can
-       * fall is a rung that can close again under a learner who did nothing wrong. So there is no
+       * action. It is a record of what the learner has said back correctly (PRD §8 F1,
+       * `MARKS_PER_SENTENCE`), drawn as the dot per sentence and the module's `n / 10` — and a
+       * number that can fall is work a learner did that the app forgets. So there is no
        * decrement, no reset, no undo and no ceiling: the only arithmetic in here is `+ 1`.
        *
        * Undo is not missing by oversight. The mark commits through the commit window
        * ([D11], `components/SelfMark`), which is where a mis-tap is corrected; past that, the
        * counter is a record of work the learner says they did, and the app does not argue with it.
-       * A count above the threshold is kept exactly as it is: it is what the ritual asks for, not
-       * a cap on practice.
+       * A count above the threshold is kept exactly as it is: the threshold is what a dot can
+       * draw, not a cap on practice.
        *
        * `productionCounters.test.ts` is the mechanical half — it slices this file by action and
        * fails if a second one writes `production`, reads this body for any arithmetic that could
@@ -701,15 +703,15 @@ export const useAppStore = create<AppStore>()(
        * INVARIANT 1 — THE SINGLE UNLOCK PATH.
        *
        * This action is the ONLY writer of `modules` in the app. Nothing else marks a module
-       * passed: not a screen, not a migration, not a debug helper. "Progression only through the
-       * generative exit ritual, learner-confirmed" (PRD §2 Invariant 1) is a product promise, and
+       * passed: not a screen, not a migration, not a debug helper. "Progression only by working
+       * the rung, learner-confirmed" (PRD §2 Invariant 1) is a product promise, and
        * a promise with two implementations is a promise with none — so it has one, here, and
        * `unlockPath.test.ts` fails if a second one is ever written.
        *
        * The rule it enforces: the module must BE the course's current rung, as
        * `src/engine/progression.ts` derives it from the ladder and the passed set. Anything else
        * throws and writes nothing — a module further up (there is no skipping a rung), a module
-       * already passed (the ritual has moved on), a module of a sealed level, or any module at all
+       * already passed (the ladder has moved on), a module of a sealed level, or any module at all
        * when the store has not been handed that course's ladder yet.
        *
        * What it writes is one entry: `{status: 'passed', passedAt}`. `passedAt` comes from the
@@ -717,16 +719,16 @@ export const useAppStore = create<AppStore>()(
        * module list, never a schedule (Invariant 2), and injectable so a test pins it without
        * touching global time.
        *
-       * #103 wraps this: `completeRitual` enrols the module's sentences into the review queue in
+       * `completeRung` wraps this: it enrols the module's sentences into the review queue in
        * THIS write, by handing the queue transform in as `enrolment` — it calls through here
        * rather than writing beside it, which is what keeps the pass and its enrolment one
        * document and keeps this the only action with a `modules` write in it.
        * ---------------------------------------------------------------------------------- */
-      passRitual: (courseId, moduleId, clock = systemClock, enrolment) => {
+      passRung: (courseId, moduleId, clock = systemClock, enrolment) => {
         const current = currentRungId(progressionInput(get(), courseId));
         if (current !== moduleId) {
           throw new Error(
-            `passRitual: ${moduleId} is not ${courseId}'s current rung (${current ?? 'no rung is current'}) — the exit ritual is the only unlock path (Invariant 1)`,
+            `passRung: ${moduleId} is not ${courseId}'s current rung (${current ?? 'no rung is current'}) — working the rung is the only unlock path (Invariant 1)`,
           );
         }
 
@@ -751,21 +753,21 @@ export const useAppStore = create<AppStore>()(
       },
 
       /* ------------------------------------------------------------------------------------
-       * THE END OF THE RITUAL — ONE ACTION, ONE WRITE, AND NEITHER HALF WITHOUT THE OTHER.
+       * THE CLIMB — ONE ACTION, ONE WRITE, AND NEITHER HALF WITHOUT THE OTHER.
        *
-       * The pass is delegated (Invariant 1: `passRitual` is the single unlock path, and this is
+       * The pass is delegated (Invariant 1: `passRung` is the single unlock path, and this is
        * its one caller in the app), and the enrolment rides in the same `set` as the queue
        * transform it is given. `enrol` is `engine/leitner.ts`'s and idempotent — a module passed
        * long ago whose ids are already in the queue keeps its boxes and its countdowns.
        *
        * The order of the two facts in storage is the whole reason they share a write. A document
        * holding a PASSED module whose sentences never enrolled is unrecoverable: the pass cannot
-       * be replayed (`passRitual` refuses a rung that is no longer current), so that module's
+       * be replayed (`passRung` refuses a rung that is no longer current), so that module's
        * sentences would sit outside review forever. One write has no such in-between —
        * `store.test.ts` counts the `setItem` calls and reads the single document back.
        * ---------------------------------------------------------------------------------- */
-      completeRitual: (courseId, moduleId, sentenceIds, clock = systemClock) =>
-        get().passRitual(courseId, moduleId, clock, (reviewQueue) =>
+      completeRung: (courseId, moduleId, sentenceIds, clock = systemClock) =>
+        get().passRung(courseId, moduleId, clock, (reviewQueue) =>
           enrol(reviewQueue, [...sentenceIds]),
         ),
 

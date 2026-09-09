@@ -54,6 +54,8 @@ import './practice-screen.css';
 
 /** What one run of the session needs: the rung it belongs to, and the cards it serves. */
 interface Run {
+  /** The module the run's last card climbs — captured at Begin, so the pass cannot drift. */
+  rungId: string | null;
   rungIds: readonly string[];
   plan: SessionPlan;
   resume?: { idx: number };
@@ -72,7 +74,7 @@ export default function PracticeScreen() {
 
   const rung = ready ? currentRungId(input) : null;
   const stage = rung === null ? null : rungStage(input, rung);
-  // The rung's own module, for the sentences the session serves and the gate it writes.
+  // The rung's own module, for the sentences the session serves and the pass its last card writes.
   // `useModules` fails silently, which is the right answer here: a rung whose file will not load
   // offers no session, and the screens that render that module report the failure properly (#79).
   const modules = useModules(rung === null ? [] : [rung]);
@@ -85,6 +87,7 @@ export default function PracticeScreen() {
     return (
       <Session
         courseId={course.id}
+        rungId={run.rungId}
         rungIds={run.rungIds}
         plan={run.plan}
         resume={run.resume}
@@ -112,7 +115,7 @@ export default function PracticeScreen() {
     if (!startable) return;
 
     const plan = startSession(course.id, sentenceIds);
-    setRun({ rungIds: sentenceIds, plan });
+    setRun({ rungId: rung, rungIds: sentenceIds, plan });
     enterSession();
   };
 
@@ -120,6 +123,7 @@ export default function PracticeScreen() {
     if (!startable || !isResumable(snapshot)) return;
 
     setRun({
+      rungId: rung,
       rungIds: sentenceIds,
       plan: resumePlan(snapshot),
       resume: { idx: snapshot.idx },

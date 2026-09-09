@@ -29,7 +29,7 @@
  * **Both directions are guarded by `isOpenableRung`** — the openability test the screen applies
  * to itself — because a hand-over that lands on `Navigate to={HOME_PATH}` is worse than a disabled
  * button. A locked or pending rung either side is reachable in real life: passing L1-M10 without
- * having passed L1-M4 leaves L2 sealed, so L2-M1 is locked, and a rung mid-ritual is not readable.
+ * having passed L1-M4 leaves L2 sealed, so L2-M1 is locked.
  */
 import { useModules } from '../../course/content.ts';
 import type { Sentence } from '../../course/types.ts';
@@ -39,7 +39,7 @@ import { rungStage, type ModuleStatus, type ProgressionInput } from '../../engin
 export type Statuses = Record<string, ModuleStatus> | undefined;
 
 /**
- * The same guard the module list keeps (#88): a rung the ladder has locked, or one mid-ritual, has
+ * The same guard the module list keeps (#88): a rung the ladder has locked has
  * no readable sentences however the learner arrives at one.
  */
 export function isOpenableRung(

@@ -18,8 +18,8 @@
  * exactly one declaration of each existed went with the suite on 2026-08-30 (#370); the rule holds
  * by `tsc` and by review, not by a test.
  *
- * Keys are DOT-PATHS into a nested object: `ritual.stepTitle.check` is the path to
- * `{"ritual":{"stepTitle":{"check":…}}}`, which is how the authored files are written. The checker
+ * Keys are DOT-PATHS into a nested object: `settings.tick.title` is the path to
+ * `{"settings":{"tick":{"title":…}}}`, which is how the authored files are written. The checker
  * flattens before comparing.
  *
  * NOT FROZEN. The Sync-3 freeze (#71) — which held this list identical to PRD-design §8.2 — was
@@ -48,16 +48,11 @@
  * are about; the removals live in `docs/design-contract.md`.
  */
 export const STRINGS_KEYS = [
-  'cueLabel',
   'revealLabel',
-  'revealLabelComprehend',
-  'retry.title',
-  'retry.pending',
   'ladder.sealedToast',
   'rungCard.startModule',
   'rungCard.practice',
   'rungCard.revisitModule',
-  'rungCard.exitRitual',
   'rungCard.module',
   'sentence.trapHead',
   'sentence.pocketIt',
@@ -73,19 +68,16 @@ export const STRINGS_KEYS = [
   'why.show',
   'why.hide',
   'hint.recall',
-  'hint.production',
   'practice.hubTitle',
   'practice.hubCount',
   'practice.begin',
   'practice.summaryTitle',
   'practice.summaryScore',
-  'practice.summaryToRitual',
+  'practice.climbedRung',
+  'practice.climbToLadder',
   'practice.backToLadder',
   'practice.resumeContinue',
   'practice.resumeNew',
-  'verdict.checkComprehension',
-  'verdict.line',
-  'verdict.toLadder',
   'settings.importReplace',
   'settings.importConfirm',
   'settings.importCancel',
@@ -100,8 +92,6 @@ export const STRINGS_KEYS = [
   'ladder.passed',
   'levelStrip.level',
   'rungCard.currentRung',
-  'verdict.ritualComplete',
-  'verdict.passedRung',
   'settings.title',
   'settings.kicker.course',
   'settings.kicker.practice',
@@ -136,40 +126,23 @@ export type StringsKey = (typeof STRINGS_KEYS)[number];
  * empty one, so "did anyone decide about placeholders?" is never an open question.
  */
 export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]>> = {
-  cueLabel: [],
   revealLabel: [],
-  revealLabelComprehend: [],
-  /**
-   * The retry's two lines (#318, #402) — both on the ITEM, because there is no interstitial any
-   * more: a round with a miss in it redraws the moment it ends, and the fresh round's first card
-   * says so. There used to be a whole screen between the two rounds — a kicker, a title and one
-   * button, three phrasings of "again" for the learner to tap through — and #402 took it out.
-   *
-   * `retry.pending` is said on the items AFTER a miss, mid-round: the redraw is already certain,
-   * and the learner finishing the remaining item deserves to know they are practising rather than
-   * still being tested. `retry.title` is said once more on the fresh round's first card. Neither
-   * names a count, an item or a failure — the marks are dropped on the way into the redraw, so
-   * there is nothing to count with even if a line wanted to (Invariant 4).
-   */
-  'retry.title': [],
-  'retry.pending': [],
   /** The sealed level, and how many rungs below it are left — the honest half of the seal rule. */
   'ladder.sealedToast': ['{level}', '{remaining}'],
   /**
    * The staged rung card [D22] — one CTA set per stage, and a label for every control in it.
    * None of them interpolates: a button label that needed a runtime value would be a sentence.
-   * `rungCard.practice` is deliberately shared by the `studied` primary and the `exit_ready`
-   * secondary, because it is the same tab either way.
+   * `rungCard.practice` is the `studied` stage's primary, and `rungCard.module` the module link
+   * beside it.
    *
-   * Five, not the seven #87 minted: the fresh rung's note went with the read-once copy on #228,
-   * and `practiceEarlier` — the pending stage's "practice earlier rungs" link — went with the
-   * pending branch itself, which #228 removed because the Practice hub has nothing to serve for
-   * an unauthored rung. The key outlived its only render site by five PRs and went on #233.
+   * Four, not the seven #87 minted: the fresh rung's note went with the read-once copy on #228,
+   * `practiceEarlier` — the pending stage's "practice earlier rungs" link — went with the
+   * pending branch itself on #228, and `exitRitual` went when the ritual did. A stage that no
+   * longer exists cannot render a label.
    */
   'rungCard.startModule': [],
   'rungCard.practice': [],
   'rungCard.revisitModule': [],
-  'rungCard.exitRitual': [],
   'rungCard.module': [],
   /**
    * Sentence Detail (#89) — the five things the screen says in its own right. Its ten section
@@ -267,7 +240,7 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
   'why.show': [],
   'why.hide': [],
   /**
-   * The show-once hints (#319) — the three facts the product is built on, and the only copy in the
+   * The show-once hint (#319) — the fact the product is built on, and the only copy in the
    * app that is allowed to be instructional.
    *
    * #225–#233 removed the app's read-once prose on the argument that an instruction which never
@@ -278,18 +251,18 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * (`shell/hints.ts`), so the thirty-first session sees the clean screen #225 asked for and the
    * first one is not left guessing.
    *
-   * One per surface, and each is the fact that surface cannot show by itself: `recall` that the
-   * guess happens in the learner's head before the reveal (the reveal card), `production` that one
-   * got-it per sentence opens the rung's exit ritual (the rung card's dots row). There was a third,
-   * `check` — that the checking is the learner's own — on the ritual's deliberately empty step 2;
-   * #348 retired that step and the key with it, because a hint whose surface is gone is a thing
-   * said nowhere.
+   * One per surface, and it is the fact that surface cannot show by itself: `recall`, that the
+   * guess happens in the learner's head before the reveal (the reveal card). There were three.
+   * `check` — that the checking is the learner's own — sat on the ritual's deliberately empty
+   * step 2 and went with that step on #348; `production` told the rung card's dots row what it
+   * was counting towards, and went when the answer became "nothing": the counters are a record
+   * of the rung now, and the climb is finishing a Practice session. A hint whose fact is no
+   * longer true is worse than one whose surface is gone.
    *
-   * None interpolates: the counts they are about are drawn beside them, and a hint that carried a
+   * It does not interpolate: the count it is about is drawn beside it, and a hint that carried a
    * number would be a status line rather than a thing said once.
    */
   'hint.recall': [],
-  'hint.production': [],
   /**
    * The session (#388) — the Practice hub and the summary (PRD §8 F3, PRD-design §6.3). Nine keys
    * now, and the rule that put every one of them here is the same as the module list's: the
@@ -324,21 +297,24 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    */
   'practice.summaryScore': ['{count}', '{total}'],
   /**
-   * The way on when that count is the whole rung (#315) — the exit ritual, offered at the one
-   * moment the learner has just earned it.
+   * **The climb** — the rung the session just passed, and the way up to the ladder.
    *
-   * The summary deliberately carried no such line before: the ritual is the Ladder's loud action
-   * ([D22] `exit_ready`), and offering an unlock from two places is how one of them ends up out of
-   * step with the rule. It still is — this is a LINK, not a second gate. `exit_available` is
-   * derived in one place (`engine/progression.ts`) and re-asked by the route's own guard, so a
-   * summary that offered the ritual wrongly would land on the module exactly as a typed URL does.
-   * What changes is only that the app stops going quiet at the moment the next step opens.
+   * These two are the exit ritual's last words, kept when the ritual went. They were
+   * `verdict.passedRung` and `verdict.toLadder`, said on a screen reached by passing a
+   * comprehension test; the pass now lands on the session's last card, so the same two lines are
+   * said on the summary and the keys moved to the screen that says them. There was a third here,
+   * `practice.summaryToRitual` — the link ON to that test — and it went with the route.
    *
-   * It does not interpolate, and since the Practice audit (2026-09-05) it does not announce: the
-   * score line above it is the explanation, so the link says only what it does — "Begin the exit
-   * ritual" — rather than "the exit ritual is open — begin it".
+   * `climbedRung` takes the shell-rendered `{rung}` label ("M3", from `rungLabel`) the card's
+   * kicker does, never an id the course must parse. It is a separate key from `ladder.passed`
+   * because one is a row's status marker in a list and the other is a screen's announcement, and
+   * a course may want a fuller word for the second. `climbToLadder` is the CTA that fires the
+   * unlock beat.
    */
-  'practice.summaryToRitual': [],
+  'practice.climbedRung': ['{rung}'],
+  'practice.climbToLadder': [],
+  /** The way back when the session climbed nothing — a finished ladder, or a rung with no
+   * sentences to serve. */
   'practice.backToLadder': [],
   /**
    * Lossless resume (#99, PRD §8 F4) — the hub's offer when the course has a session still open.
@@ -355,29 +331,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    */
   'practice.resumeContinue': [],
   'practice.resumeNew': [],
-  /**
-   * The Verdict (#103) — the pass receipt and the way back to the ladder (PRD-design §6.7
-   * flow 7). The prototype writes them in English for every course, which is what a prototype does
-   * and what this product cannot: they are the last words of the ritual, and the ritual is the
-   * course's.
-   *
-   * **One receipt line, not two** (#400). There was a `checkSentence` for "the 11th sentence —
-   * written in your notebook", and an `ordinal` key to say "11th" in the course's own word. The
-   * ritual has had no such step since #348/#349 retired notebook writing, so the line was a
-   * receipt for work the app never asked for — a false one — and both keys went with it.
-   *
-   * `checkComprehension` carries `{count}` of `{total}`, both from the module's own
-   * `exitTest.comprehendCount` — every item was marked "same meaning", because anything else is a
-   * retry rather than a verdict — so a module that asked for three items reads "3 of 3" with no
-   * code change. Two names rather than one repeated, so a course can put them in its own order —
-   * Hindi says "of {total}, {count}" — the way `practice.summaryScore` already does.
-   *
-   * `verdict.toLadder` is the CTA that fires the unlock beat.
-   */
-  'verdict.checkComprehension': ['{count}', '{total}'],
-  /** The rung that just opened. */
-  'verdict.line': ['{nextModule}'],
-  'verdict.toLadder': [],
   /**
    * The Backup section's four (#108, PRD §8 F6/F7) — what the learner reads around the one door
    * back in. `importReplace` is the confirm's consequence line, kept when the explainer above the
@@ -442,14 +395,6 @@ export const STRINGS_PLACEHOLDERS: Readonly<Record<StringsKey, readonly string[]
    * `rungLabel`), never an id the course must parse.
    */
   'rungCard.currentRung': ['{rung}'],
-  /**
-   * The Verdict's two head lines (#103) — the kicker that says the ritual is over, and the rung
-   * it was over for. `passedRung` takes the same shell-rendered `{rung}` the card's kicker does;
-   * it is a separate key from `ladder.passed` because one is a row's status marker in a list and
-   * the other is a screen's title, and a course may want a fuller word for the second.
-   */
-  'verdict.ritualComplete': [],
-  'verdict.passedRung': ['{rung}'],
   /**
    * **Settings, all of it** (#105, #107, #108; cut to this by #392–#394) — the screen a learner
    * opens to change their course, which is the one screen that cannot be in a language they may

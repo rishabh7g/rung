@@ -1,17 +1,15 @@
 /**
  * The production dot (#88, #349; PRD-design §7, design/tokens.md §4 "Production dots 6px").
  *
- * One sentence's whole progress, in one 6px square: **marked read**, or not yet. One, because one
- * is the number the exit ritual asks for — every sentence self-marked got-it ≥ 1× makes a module
- * `exit_available` (PRD §8 F1) — so a row of full dots down the module list is literally the exit
- * unlocking, with no bar, no percentage and no date anywhere near it (Invariant 2).
+ * One sentence's whole progress, in one 6px square: **marked read**, or not yet. A row of full
+ * dots down the module list is the whole rung said back correctly, with no bar, no percentage
+ * and no date anywhere near it (Invariant 2).
  *
- * **There were two of them** until #349, because the ritual asked for two produced passes and the
- * pair drew "got it once / got it twice". Retiring notebook writing retired Produce and moved the
- * gate to a single marked read-through, and the drawing follows the rule rather than the other way
- * round: a second square that could never mean anything would be the app implying a step it no
- * longer has. The name stays `ProductionDots` because the counters it reads are still
- * `production` on disk (`state/types.ts` — #349 changed who writes them, not what they count).
+ * **There were two of them** until #349, because the exit ritual asked for two produced passes
+ * and the pair drew "got it once / got it twice". The ritual is gone entirely now — a rung is
+ * climbed by finishing a Practice session — so the dot gates nothing and reports instead: it is
+ * a record of the work, which is what it always drew. The name stays `ProductionDots` because
+ * the counters it reads are still `production` on disk (`state/types.ts`).
  *
  * **It only reads.** The counters are written by the Practice loop's Read got-its, through the
  * store's one writer (`recordProduction`, #95); this draws whatever `production[sentenceId]`

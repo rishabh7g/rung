@@ -1,15 +1,13 @@
 /**
- * The show-once hints (#319) — the three facts the product runs on, said once each and then never
- * again.
+ * The show-once hint (#319) — the fact the product runs on, said once and then never again.
  *
  * **Why there is anything here at all.** #225–#233 stripped the app's instructional copy on a
  * sound argument: a line that never changes is read once and skimmed thirty times, and a product
  * whose screens are mostly explanation is a product that does not trust its own shapes. But the
  * app also has no onboarding by design ([D21]: first run lands on the Ladder), and the two
  * decisions together left a first-run learner told none of the things the product is built on —
- * that the recall happens outside the app, that one marked sentence apiece opens a rung's exit
- * ritual, that the checking in the ritual is theirs. The shapes say it eventually; nothing said it
- * once.
+ * above all that the recall happens in their head, before the reveal. The shapes say it
+ * eventually; nothing said it once.
  *
  * A hint is the resolution of that: it renders on its surface the first time that surface is used,
  * and never again on this install. The thirty-first session is exactly the clean screen #225 asked
@@ -41,12 +39,14 @@
 /**
  * The hints, one per surface. The values are the `hint.*` keys they render.
  *
- * There were three until #348. `check` belonged to the exit ritual's deliberately empty check
- * step — the one that told a first-run learner the checking was theirs to do, outside the app —
- * and that step went with the whole write half of the ritual when the product retired notebook
- * writing. A hint whose surface no longer exists is a key nothing can render.
+ * There were three. `check` belonged to the exit ritual's deliberately empty check step — the
+ * one that told a first-run learner the checking was theirs to do, outside the app — and went
+ * with that step on #348. `production` sat on the rung card's dots row and named what the dots
+ * were counting towards: the rung's exit ritual. The ritual is gone and the climb is finishing a
+ * Practice session, so the dots count towards nothing and the hint went with the rule it stated.
+ * A hint whose fact is no longer true is worse than a hint whose surface is gone.
  */
-export type Hint = 'recall' | 'production';
+export type Hint = 'recall';
 
 /**
  * `rung:hint:<name>` — its own namespace beside the store's `rung:state` and the module view's

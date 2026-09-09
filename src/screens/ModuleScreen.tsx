@@ -9,7 +9,7 @@
  *      route is reachable with any id in it. A rung the ladder has locked, an id the ladder does
  *      not list, and a rung whose module this build never shipped all land back on the Ladder —
  *      the same answer the rung card gives by having no link to offer. Invariant 1 lives in
- *      `passRitual`; this is the screen not pretending otherwise.
+ *      `passRung`; this is the screen not pretending otherwise.
  *   2. **`markStudied`, once, on first open.** The `studied` flag is what turns the rung card
  *      from "Start with the module" into "Practice" [D22] — so opening this screen is what moves
  *      the Ladder, and it is idempotent in the store, which is what lets an effect fire it.
@@ -19,7 +19,7 @@
  *      expands nor holds any per-card state. Each carries its production dots, which live off
  *      `courses[<id>].production`, written by a Practice got-it through the store's one counter
  *      action (`recordProduction`, #95). This screen only reads them: a full dot on every card is
- *      the rung's exit ritual open, drawn one sentence at a time.
+ *      the whole rung said back correctly, drawn one sentence at a time.
  *   4. **Where the learner was.** The scroll offset survives a detour into Sentence Detail, in
  *      `sessionStorage` and never in the store (`module/moduleView.ts`).
  *
@@ -42,7 +42,7 @@ import { l2Written } from '../course/manifest.ts';
 import { useStrings } from '../course/strings.ts';
 import { useModule } from '../course/content.ts';
 import { ContentErrorScreen } from '../course/BootScreens.tsx';
-import { MARKS_PER_SENTENCE } from '../engine/exit.ts';
+import { MARKS_PER_SENTENCE, marked as isMarked } from '../engine/production.ts';
 import { deriveStatuses, rungStage } from '../engine/progression.ts';
 import { useAppStore } from '../state/store.ts';
 import { PRACTICE_PATH, HOME_PATH } from '../shell/routes.tsx';
@@ -154,9 +154,7 @@ function ModuleList({ moduleId }: ModuleListProps) {
   // so summing them would let one sentence read four times carry the module past a total that
   // means "every sentence is done". Capping each at the gate is what keeps `n / 10` an answer to
   // "how much of this rung is read through".
-  const marked = sentences.filter(
-    (sentence) => (production?.[sentence.id] ?? 0) >= MARKS_PER_SENTENCE,
-  ).length;
+  const marked = sentences.filter((sentence) => isMarked(production ?? {}, sentence.id)).length;
 
   return (
     <section className="module">
@@ -167,9 +165,8 @@ function ModuleList({ moduleId }: ModuleListProps) {
           <h2 className="module-title">{module.data.title}</h2>
         </div>
         {/* Counts, never time (Invariant 2): got-its across the module, out of the one per
-            sentence the exit ritual asks for (`MARKS_PER_SENTENCE`, the same constant the exit
-            rule reads — one since #349, so this reads `n / 10` where it read `n / 20`). Written
-            by Read got-its; read here. */}
+            sentence a dot can draw (`MARKS_PER_SENTENCE`, the same constant the dots read).
+            Written by Practice got-its on this rung; read here. */}
         <p className="module-count">
           {marked} / {sentences.length * MARKS_PER_SENTENCE}
         </p>

@@ -3,10 +3,15 @@
  * first card (PRD §8 F3).
  *
  * **A session is ONE list.** The learner is shown an L1 cue, guesses the sentence in the language
- * they are learning, reveals, and self-marks — fifteen times, and then the session is over. There
- * is no phase, no second section, and nothing on a card but the mark. This module answers what is
- * in that list and in what order, and nothing else — the store owns when it runs and what it
- * writes (`startSession`), the screen owns what it looks like (`screens/practice/Session.tsx`).
+ * they are learning, reveals, and self-marks — up to fifteen times, and then the session is over.
+ * There is no phase, no second section, and nothing on a card but the mark. This module answers
+ * what is in that list and in what order, and nothing else — the store owns when it runs and what
+ * it writes (`startSession`), the screen owns what it looks like (`screens/practice/Session.tsx`).
+ *
+ * **The last card of a session climbs the rung**, so the length of this list is the length of a
+ * rung's work: `screens/practice/Session.tsx` passes the current module the moment the final mark
+ * lands. There is no exit ritual behind it any more, and therefore nothing here may serve a card
+ * the learner has not been given honestly.
  *
  * **It used to be two queues, and the shape of the screen followed the shape of this file.** Review
  * served up to five due cards and then "Read" walked the rung with a pager, a cue toggle and no
@@ -29,12 +34,17 @@
 import { reviewPicks, type ReviewItem } from './leitner.ts';
 
 /**
- * How many cards one session serves — **15**, always, whatever the ladder holds.
+ * The **most** cards one session serves — 15: the rung (ten sentences in every shipped module)
+ * plus a third again of earlier material.
  *
- * A fixed number is the point. A session whose length depends on how much happens to be due is a
- * session the learner cannot plan around, and "how long is this?" was one of the questions the old
- * two-section Practice could not answer. Fifteen is the rung (ten sentences in every shipped
- * module) plus a third again of earlier material.
+ * It used to be an exact count, and the plan padded a short ladder up to it by repeating the rung
+ * from its first sentence. The padding is gone. On the very first rung nothing has been passed, so
+ * there is no earlier material to serve, and the last five slots were the same ten sentences dealt
+ * a second time — five cards that taught nothing and, now that the final mark of a session climbs
+ * the rung (`screens/practice/Session.tsx`), five cards standing between the learner and a rung
+ * they had already worked through. So the first session is ten cards, and every session after it
+ * is fifteen: the count is what the ladder honestly holds, and the hub promises exactly that
+ * number (`previewSession`) rather than a number made up of repeats.
  */
 export const CARDS_PER_SESSION = 15;
 
@@ -60,7 +70,7 @@ export interface SessionPlanInput {
 
 /** The session's cards, in serving order. */
 export interface SessionPlan {
-  /** Every card this session serves. `CARDS_PER_SESSION` of them whenever the rung has content. */
+  /** Every card this session serves — at most `CARDS_PER_SESSION`, and never a repeat. */
   cardIds: string[];
 }
 
@@ -70,8 +80,8 @@ export interface SessionPlan {
  * Three steps, in this order, and the order is the whole of the design:
  *
  *   1. **The rung, whole, in the module's own order.** Ten sentences in every shipped module.
- *      Never trimmed and never reordered — the module teaches them in that sequence, and the exit
- *      ritual opens on having marked all of them.
+ *      Never trimmed and never reordered — the module teaches them in that sequence, and the last
+ *      card of the session is what climbs the rung.
  *   2. **Up to five from earlier rungs**, chosen by `reviewPicks` — due first, in the scheduler's
  *      urgency order, then the closest-to-due if fewer than five are actually due. The top-up is
  *      what makes the count fixed rather than "however much the queue happened to owe today", and
@@ -80,19 +90,17 @@ export interface SessionPlan {
  *      `R R P R R P R R P R R P R R P`. Not five old cards and then ten new ones — that is two
  *      sections with the labels taken off, and this session has one.
  *
- * And then **padded to fifteen** if the ladder simply does not hold fifteen distinct cards yet: on
- * the very first rung nothing has been passed, so there is nothing earlier to serve, and the last
- * five slots repeat the rung from its first sentence. A repeat lands at least ten cards after its
- * original, which is far enough to be a second attempt rather than an echo. Marking is idempotent
- * (`screens/practice/Session.tsx`), so a repeat costs the exit gate nothing.
+ * And that is all: a ladder that does not hold fifteen distinct cards yet serves fewer. The first
+ * rung has nothing passed behind it, so its session is the ten sentences of the module and stops
+ * there — see `CARDS_PER_SESSION` for why the five repeats that used to fill it went.
  *
  * A rung id that somehow also sits in the review queue is served once, in its rung position.
  * Enrolment happens at pass (`leitner.ts`), so the current rung is never enrolled — but an
  * imported queue (PRD §8 F7) can carry anything, and a card served twice in one session because
  * two lists both claimed it is not a thing this function will do.
  *
- * With no current rung — the ladder complete — there is nothing to pad from, so the session is
- * whatever the queue offers. The hub does not offer that session; this function still answers.
+ * With no current rung — the ladder complete — the session is whatever the queue offers. The hub
+ * does not offer that session; this function still answers.
  */
 export function planSession({ queue, rungIds }: SessionPlanInput): SessionPlan {
   const rung = unique(rungIds);
@@ -106,7 +114,7 @@ export function planSession({ queue, rungIds }: SessionPlanInput): SessionPlan {
     (item) => item.sentenceId,
   );
 
-  return { cardIds: pad(interleave(rung, past), rung) };
+  return { cardIds: interleave(rung, past) };
 }
 
 /**
@@ -131,20 +139,6 @@ function interleave(rung: readonly string[], past: readonly string[]): string[] 
   // the end rather than being dropped. A dropped card is a card the hub promised and the session
   // never served.
   return [...cards, ...past.slice(next)];
-}
-
-/**
- * Up to `CARDS_PER_SESSION`, repeating the rung from its first sentence. A rung with no sentences
- * pads to nothing: there is no material to repeat, and inventing some is not this module's job.
- */
-function pad(cards: readonly string[], rung: readonly string[]): string[] {
-  if (rung.length === 0) return [...cards];
-
-  const padded = [...cards];
-  for (let index = 0; padded.length < CARDS_PER_SESSION; index += 1) {
-    padded.push(rung[index % rung.length] as string);
-  }
-  return padded;
 }
 
 /** First occurrence wins, order kept. */

@@ -9,7 +9,7 @@ import {
   progressionInput,
   useAppStore,
 } from './store.ts';
-import { exitAvailable } from '../engine/exit.ts';
+import { marked } from '../engine/production.ts';
 import { currentRungId, deriveStatuses, ladderFromLevels } from '../engine/progression.ts';
 import { levelsFixture } from '../test/courseContent.ts';
 import { STATE_VERSION, type CourseState } from './types.ts';
@@ -260,21 +260,17 @@ describe('recordProduction', () => {
     expect(useAppStore.getState().courses['hi-mr']?.production).toEqual({ 'L1-M1-S01': 2 });
   });
 
-  it('is what makes a rung exit-available, through the engine and never on its own', () => {
+  it('records what a rung has said back, and unlocks nothing on the way', () => {
     bootHiMr();
-    const sentences = ['L1-M1-S01', 'L1-M1-S02'];
-    const ready = () =>
-      exitAvailable(sentences, useAppStore.getState().courses['hi-mr']?.production ?? {});
+    const counters = () => useAppStore.getState().courses['hi-mr']?.production ?? {};
 
-    expect(ready()).toBe(false);
+    expect(marked(counters(), 'L1-M1-S01')).toBe(false);
 
     useAppStore.getState().recordProduction('hi-mr', 'L1-M1-S01');
-    // One sentence marked is not a rung: the gate is one mark APIECE (#349), not one in total.
-    expect(ready()).toBe(false);
-
+    expect(marked(counters(), 'L1-M1-S01')).toBe(true);
+    // The counters are a record, never a door: a whole rung marked passes nothing, because the
+    // climb is finishing a Practice session and `completeRung` is the one write that does it.
     useAppStore.getState().recordProduction('hi-mr', 'L1-M1-S02');
-    expect(ready()).toBe(true);
-    // …and it did not unlock anything on the way: the ritual is still the only path (Invariant 1).
     expect(useAppStore.getState().courses['hi-mr']?.modules).toEqual({});
     expect(deriveStatuses(progressionInput(useAppStore.getState(), 'hi-mr'))['L1-M1']).toBe(
       'unlocked',
@@ -295,11 +291,11 @@ describe('recordProduction', () => {
   });
 });
 
-describe('passRitual (Invariant 1 — the only unlock path)', () => {
+describe('passRung (Invariant 1 — the only unlock path)', () => {
   it('passes the current rung and stamps it from the clock it was given', () => {
     bootHiMr();
 
-    useAppStore.getState().passRitual('hi-mr', 'L1-M1', fixedClock);
+    useAppStore.getState().passRung('hi-mr', 'L1-M1', fixedClock);
 
     expect(useAppStore.getState().courses['hi-mr']?.modules).toEqual({
       'L1-M1': { status: 'passed', passedAt: AT },
@@ -314,7 +310,7 @@ describe('passRitual (Invariant 1 — the only unlock path)', () => {
     vi.setSystemTime(1_770_000_000_000);
     bootHiMr();
 
-    useAppStore.getState().passRitual('hi-mr', 'L1-M1');
+    useAppStore.getState().passRung('hi-mr', 'L1-M1');
 
     expect(useAppStore.getState().courses['hi-mr']?.modules['L1-M1']?.passedAt).toBe(
       '2026-02-02T02:40:00.000Z',
@@ -325,7 +321,7 @@ describe('passRitual (Invariant 1 — the only unlock path)', () => {
   it('moves the ladder on: the next rung becomes current, fresh again', () => {
     bootHiMr();
 
-    useAppStore.getState().passRitual('hi-mr', 'L1-M1', fixedClock);
+    useAppStore.getState().passRung('hi-mr', 'L1-M1', fixedClock);
 
     const statuses = deriveStatuses(progressionInput(useAppStore.getState(), 'hi-mr'));
     expect(currentRungId(progressionInput(useAppStore.getState(), 'hi-mr'))).toBe('L1-M2');
@@ -337,7 +333,7 @@ describe('passRitual (Invariant 1 — the only unlock path)', () => {
     bootHiMr();
     const before = useAppStore.getState().courses;
 
-    expect(() => useAppStore.getState().passRitual('hi-mr', 'L1-M2', fixedClock)).toThrow(
+    expect(() => useAppStore.getState().passRung('hi-mr', 'L1-M2', fixedClock)).toThrow(
       /not hi-mr's current rung \(L1-M1\)/,
     );
     // The whole course map, by reference: a refusal is not a write.
@@ -345,13 +341,13 @@ describe('passRitual (Invariant 1 — the only unlock path)', () => {
     expect(useAppStore.getState().courses['hi-mr']?.modules).toEqual({});
   });
 
-  it('refuses a module the learner already passed — the ritual has moved on', () => {
+  it('refuses a module the learner already passed — the ladder has moved on', () => {
     bootHiMr();
-    useAppStore.getState().passRitual('hi-mr', 'L1-M1', fixedClock);
+    useAppStore.getState().passRung('hi-mr', 'L1-M1', fixedClock);
     const passed = useAppStore.getState().courses['hi-mr']?.modules;
 
     expect(() =>
-      useAppStore.getState().passRitual('hi-mr', 'L1-M1', () => '2026-09-09T09:09:09.000Z'),
+      useAppStore.getState().passRung('hi-mr', 'L1-M1', () => '2026-09-09T09:09:09.000Z'),
     ).toThrow(/current rung \(L1-M2\)/);
     expect(useAppStore.getState().courses['hi-mr']?.modules).toBe(passed);
   });
@@ -359,7 +355,7 @@ describe('passRitual (Invariant 1 — the only unlock path)', () => {
   it('refuses everything when the store has no ladder for that course', () => {
     useAppStore.getState().ensureCourse('hi-mr');
 
-    expect(() => useAppStore.getState().passRitual('hi-mr', 'L1-M1', fixedClock)).toThrow(
+    expect(() => useAppStore.getState().passRung('hi-mr', 'L1-M1', fixedClock)).toThrow(
       /no rung is current/,
     );
     expect(useAppStore.getState().courses['hi-mr']?.modules).toEqual({});
@@ -376,23 +372,23 @@ describe('passRitual (Invariant 1 — the only unlock path)', () => {
       { modules: [{ id: 'L2-M1', hasContent: true }] },
     ]);
     bootHiMr(ladder);
-    const { passRitual } = useAppStore.getState();
+    const { passRung } = useAppStore.getState();
 
-    passRitual('hi-mr', 'L1-M1', fixedClock);
-    expect(() => passRitual('hi-mr', 'L2-M1', fixedClock)).toThrow(/current rung \(L1-M2\)/);
-    passRitual('hi-mr', 'L1-M2', fixedClock);
+    passRung('hi-mr', 'L1-M1', fixedClock);
+    expect(() => passRung('hi-mr', 'L2-M1', fixedClock)).toThrow(/current rung \(L1-M2\)/);
+    passRung('hi-mr', 'L1-M2', fixedClock);
 
     expect(currentRungId(progressionInput(useAppStore.getState(), 'hi-mr'))).toBe('L2-M1');
   });
 
   it('passes in one course only — the other ladders do not move (Invariant 8)', () => {
     bootHiMr();
-    const { ensureCourse, setLadder, passRitual } = useAppStore.getState();
+    const { ensureCourse, setLadder, passRung } = useAppStore.getState();
     ensureCourse('en-ar');
     setLadder('en-ar', ladderFromLevels(levelsFixture('en-ar').levels));
     const enAr = useAppStore.getState().courses['en-ar'];
 
-    passRitual('hi-mr', 'L1-M1', fixedClock);
+    passRung('hi-mr', 'L1-M1', fixedClock);
 
     expect(useAppStore.getState().courses['en-ar']).toBe(enAr);
     expect(useAppStore.getState().courses['en-ar']).toEqual(emptyCourseState());
@@ -401,17 +397,17 @@ describe('passRitual (Invariant 1 — the only unlock path)', () => {
 });
 
 /**
- * `completeRitual` (#103) — the end of the exit ritual: the module passes AND its sentences enter
- * review, in ONE persisted document.
+ * `completeRung` (#103) — the end of a Practice session: the module passes AND its sentences
+ * enter review, in ONE persisted document.
  *
  * The atomicity is the point, and it is asymmetric. A document holding a passed module whose
- * sentences never enrolled is **unrecoverable** — `passRitual` refuses a rung that is no longer
+ * sentences never enrolled is **unrecoverable** — `passRung` refuses a rung that is no longer
  * current, so there is no second chance to enrol them and they never come up for review again —
  * while a replay costs nothing, because `enrol` is idempotent. So the storage spy counts writes:
  * exactly one, carrying both facts.
  */
-describe('completeRitual (the ritual’s one write)', () => {
-  /** The sentences a rung teaches, as the Verdict reads them off the module file. */
+describe('completeRung (the climb’s one write)', () => {
+  /** The sentences a rung teaches, as the session reads them off the module file. */
   const SENTENCES = ['L1-M1-S01', 'L1-M1-S02'];
 
   /** The course subtree as it sits in storage — the bytes a reload would restore. */
@@ -424,7 +420,7 @@ describe('completeRitual (the ritual’s one write)', () => {
     bootHiMr();
     const before = storage.writes.length;
 
-    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES, fixedClock);
+    useAppStore.getState().completeRung('hi-mr', 'L1-M1', SENTENCES, fixedClock);
 
     // ONE write. Two would mean a moment — however short — in which storage held one half.
     expect(storage.writes.length - before).toBe(1);
@@ -440,10 +436,10 @@ describe('completeRitual (the ritual’s one write)', () => {
   it('never writes a passed module without its enrolment — every document holds both or neither', () => {
     bootHiMr();
 
-    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES, fixedClock);
+    useAppStore.getState().completeRung('hi-mr', 'L1-M1', SENTENCES, fixedClock);
 
     // Every document this course has ever been in, read back: the pass and the enrolment are
-    // either both there or both absent. A half-written ritual would show up here as the one
+    // either both there or both absent. A half-written climb would show up here as the one
     // document that has the module and an empty queue.
     for (const document of storage.writes) {
       const course = storedCourse(document);
@@ -455,7 +451,7 @@ describe('completeRitual (the ritual’s one write)', () => {
   it('enters the queue at box 1, due next session — a rung passed today is not reviewed today', () => {
     bootHiMr();
 
-    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES, fixedClock);
+    useAppStore.getState().completeRung('hi-mr', 'L1-M1', SENTENCES, fixedClock);
 
     expect(useAppStore.getState().courses['hi-mr']?.reviewQueue).toEqual([
       { sentenceId: 'L1-M1-S01', box: 1, dueInSessions: 1 },
@@ -465,11 +461,11 @@ describe('completeRitual (the ritual’s one write)', () => {
 
   it('leaves an already-enrolled sentence exactly where it is (enrol is idempotent)', () => {
     bootHiMr();
-    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES, fixedClock);
+    useAppStore.getState().completeRung('hi-mr', 'L1-M1', SENTENCES, fixedClock);
     // A session's worth of review: S01 promoted to box 2 and bought three sessions.
     useAppStore.getState().recordReview('hi-mr', 'L1-M1-S01', true);
 
-    useAppStore.getState().completeRitual('hi-mr', 'L1-M2', ['L1-M1-S01', 'L1-M2-S01'], fixedClock);
+    useAppStore.getState().completeRung('hi-mr', 'L1-M2', ['L1-M1-S01', 'L1-M2-S01'], fixedClock);
 
     expect(useAppStore.getState().courses['hi-mr']?.reviewQueue).toEqual([
       { sentenceId: 'L1-M1-S01', box: 2, dueInSessions: 3 },
@@ -484,10 +480,10 @@ describe('completeRitual (the ritual’s one write)', () => {
     const writes = storage.writes.length;
 
     expect(() =>
-      useAppStore.getState().completeRitual('hi-mr', 'L1-M2', ['L1-M2-S01'], fixedClock),
+      useAppStore.getState().completeRung('hi-mr', 'L1-M2', ['L1-M2-S01'], fixedClock),
     ).toThrow(/not hi-mr's current rung \(L1-M1\)/);
 
-    // The guard is `passRitual`'s, and it runs before the write — so nothing reached storage at
+    // The guard is `passRung`'s, and it runs before the write — so nothing reached storage at
     // all, not even the enrolment (Invariant 1: one unlock path, one place it is checked).
     expect(useAppStore.getState().courses).toBe(before);
     expect(storage.writes.length).toBe(writes);
@@ -498,7 +494,7 @@ describe('completeRitual (the ritual’s one write)', () => {
     vi.setSystemTime(1_770_000_000_000);
     bootHiMr();
 
-    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES);
+    useAppStore.getState().completeRung('hi-mr', 'L1-M1', SENTENCES);
 
     expect(useAppStore.getState().courses['hi-mr']?.modules['L1-M1']?.passedAt).toBe(
       '2026-02-02T02:40:00.000Z',
@@ -509,7 +505,7 @@ describe('completeRitual (the ritual’s one write)', () => {
   it('enrols nothing when the rung teaches nothing, and still passes it', () => {
     bootHiMr();
 
-    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', [], fixedClock);
+    useAppStore.getState().completeRung('hi-mr', 'L1-M1', [], fixedClock);
 
     expect(useAppStore.getState().courses['hi-mr']?.modules['L1-M1']?.status).toBe('passed');
     expect(useAppStore.getState().courses['hi-mr']?.reviewQueue).toEqual([]);
@@ -521,7 +517,7 @@ describe('completeRitual (the ritual’s one write)', () => {
     ensureCourse('en-ar');
     const enAr = useAppStore.getState().courses['en-ar'];
 
-    useAppStore.getState().completeRitual('hi-mr', 'L1-M1', SENTENCES, fixedClock);
+    useAppStore.getState().completeRung('hi-mr', 'L1-M1', SENTENCES, fixedClock);
 
     expect(useAppStore.getState().courses['en-ar']).toBe(enAr);
   });
@@ -531,7 +527,7 @@ describe('progressionInput', () => {
   it('reads the passed set off the modules map and the flags off studied', () => {
     bootHiMr();
     useAppStore.getState().markStudied('hi-mr', 'L1-M1');
-    useAppStore.getState().passRitual('hi-mr', 'L1-M1', fixedClock);
+    useAppStore.getState().passRung('hi-mr', 'L1-M1', fixedClock);
 
     const input = progressionInput(useAppStore.getState(), 'hi-mr');
 
@@ -540,21 +536,19 @@ describe('progressionInput', () => {
     expect(input.studied('L1-M2')).toBe(false);
   });
 
-  it('reports nothing exit-ready without a predicate — the counters alone cannot answer', () => {
+  it('leaves the counters out of it — a fully marked rung is still in progress', () => {
     bootHiMr();
-    // Every sentence of the fixture's L1-M1, produced twice: the store still says false, because
-    // "every sentence" is a fact about the module file, which is content the store never holds.
-    // `screens/useExitAvailable.ts` is what injects the answer (#95).
+    useAppStore.getState().markStudied('hi-mr', 'L1-M1');
+    // Every sentence of the fixture's L1-M1, produced twice. The input carries no predicate for
+    // it any more: the exit ritual the counters used to open is gone, so there is nothing for a
+    // screen to inject and nothing for the engine to derive from them.
     for (const sentenceId of ['L1-M1-S01', 'L1-M1-S02', 'L1-M1-S01', 'L1-M1-S02']) {
       useAppStore.getState().recordProduction('hi-mr', sentenceId);
     }
 
-    expect(progressionInput(useAppStore.getState(), 'hi-mr').exitAvailable('L1-M1')).toBe(false);
-    expect(
-      progressionInput(useAppStore.getState(), 'hi-mr', (id) => id === 'L1-M1').exitAvailable(
-        'L1-M1',
-      ),
-    ).toBe(true);
+    expect(deriveStatuses(progressionInput(useAppStore.getState(), 'hi-mr'))['L1-M1']).toBe(
+      'in_progress',
+    );
   });
 
   it('answers for a course the store has never seen without creating it', () => {

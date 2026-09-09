@@ -1,6 +1,18 @@
 /**
  * The session (#388; PRD §8 F3, PRD-design §6.3, flow 3) — the 20–30 minutes the whole product is
- * built around, running immersive: fifteen cards, one after another, ending on a score.
+ * built around, running immersive: up to fifteen cards, one after another, ending on a score and
+ * on the rung climbed.
+ *
+ * **THE LAST CARD CLIMBS THE RUNG, AND THAT IS THE WHOLE OF PROGRESSION NOW.** There used to be
+ * an exit ritual between the two: a comprehension test on `/ritual`, drawn from the module's own
+ * pool, and a verdict screen behind it that made the write. It was reached from the rung card,
+ * from this summary, and only once the counters said every sentence of the rung had been marked.
+ * All of it is gone. Finishing the session IS the climb — one write, `completeRung`, in the
+ * effect below — and the summary announces it rather than offering a way on.
+ *
+ * The counters have not gone with it: a got-it on a card of this rung still writes
+ * `recordProduction`, and that number is still what the module list and the rung card draw. It
+ * is a record of the work, not a door in front of it (`engine/production.ts`).
  *
  * **Every card is the same card, and there is exactly one thing to do on it.** The learner reads
  * the cue in the language they already speak, guesses the sentence in the language they are
@@ -31,19 +43,19 @@
  *
  * | the card is | a got-it writes | a miss writes | and never to |
  * |---|---|---|---|
- * | a sentence of THIS rung | `recordProduction` — the counter that opens the exit ritual | nothing | the review queue |
- * | a sentence of an EARLIER rung | `recordReview` → `applyMark` (box + countdown) | `recordReview` (back to box 1) | the exit counters |
+ * | a sentence of THIS rung | `recordProduction` — the rung's own counter | nothing | the review queue |
+ * | a sentence of an EARLIER rung | `recordReview` → `applyMark` (box + countdown) | `recordReview` (back to box 1) | the rung's counters |
  *
  * They are different numbers answering different questions — the counters measure what has been
  * built on the rung being climbed, the queue measures what is being kept from the rungs below —
- * and crossing them would open a rung's exit ritual on sentences the learner never worked.
+ * and crossing them would credit a rung with sentences the learner never worked.
  *
- * **A miss on a this-rung card writes nothing at all**, and that is the gate being honest rather
- * than an omission. The sentence comes round again in a later session; the ritual waits until the
- * learner has actually had it right once. Marking is IDEMPOTENT: a sentence already at the gate
- * writes nothing, so a repeated card (the session pads with rung sentences when the ladder holds
- * fewer than fifteen — `engine/session.ts`) cannot inflate a counter. The number is a fact about
- * the sentence, not a tally of taps.
+ * **A miss on a this-rung card writes nothing at all**, and that is the counter being honest
+ * rather than an omission: the sentence comes round again in a later session, and the dot waits
+ * until the learner has actually had it right once. Marking is IDEMPOTENT — a sentence already
+ * at the mark writes nothing — so the number is a fact about the sentence, not a tally of taps.
+ * A miss does not cost the rung: the climb is finishing the session, and every card, marked
+ * either way, is one card nearer the end of it.
  *
  * **The position is snapshotted per course on every advance** (PRD §8 F7 — `session`), written
  * through `setSession` and cleared at the summary. Nothing else about a session persists: what the
@@ -71,7 +83,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import { useModules } from '../../course/content.ts';
 import type { L2Written } from '../../course/manifest.ts';
 import type { Sentence } from '../../course/types.ts';
-import { MARKS_PER_SENTENCE, exitAvailable } from '../../engine/exit.ts';
+import { marked } from '../../engine/production.ts';
 import type { SessionPlan } from '../../engine/session.ts';
 import { RevealCard, type RevealResult } from '../../components/RevealCard.tsx';
 import { WhyPanel } from '../../components/WhyPanel.tsx';
@@ -102,7 +114,12 @@ interface Live {
 
 interface SessionProps {
   courseId: string;
-  /** The rung being practised — which of the cards a mark should count towards its exit gate. */
+  /**
+   * The rung being practised — the module this session's last card climbs. `null` on a finished
+   * ladder, where there is nothing left to pass and the session is review only.
+   */
+  rungId: string | null;
+  /** Its sentences, in the module's own order — which cards count towards its counters. */
   rungIds: readonly string[];
   /** What this session serves, taken once at `startSession` (`engine/session.ts`). */
   plan: SessionPlan;
@@ -115,11 +132,16 @@ interface SessionProps {
   l2?: L2Written;
 }
 
-export function Session({ courseId, rungIds, plan, resume, l2 }: SessionProps) {
+export function Session({ courseId, rungId, rungIds, plan, resume, l2 }: SessionProps) {
   const recordReview = useAppStore((store) => store.recordReview);
   const recordProduction = useAppStore((store) => store.recordProduction);
+  const completeRung = useAppStore((store) => store.completeRung);
   const setSession = useAppStore((store) => store.setSession);
   const production = useAppStore((store) => store.courses[courseId]?.production) ?? NO_COUNTERS;
+  /** Is the rung already in the passed set? Only ever true if this write has already landed. */
+  const alreadyPassed = useAppStore(
+    (store) => rungId !== null && store.courses[courseId]?.modules[rungId] !== undefined,
+  );
 
   const cards = plan.cardIds;
 
@@ -231,7 +253,7 @@ export function Session({ courseId, rungIds, plan, resume, l2 }: SessionProps) {
       if (inRung.has(sentenceId)) {
         // The exit gate. Got-its only, and only up to the threshold — re-marking a sentence
         // already at the gate writes nothing (#95, and the counters never decrement).
-        if (gotIt && (production[sentenceId] ?? 0) < MARKS_PER_SENTENCE) {
+        if (gotIt && !marked(production, sentenceId)) {
           recordProduction(courseId, sentenceId);
         }
       } else {
@@ -249,17 +271,50 @@ export function Session({ courseId, rungIds, plan, resume, l2 }: SessionProps) {
     [cards.length, courseId, inRung, production, recordProduction, recordReview],
   );
 
+  /* ----------------------------------------------------------------- the climb */
+
+  /**
+   * **THE PASS** — the rung this session was run on, climbed the moment its last card is marked
+   * (Invariant 1: `passRung` is the single unlock path, and `completeRung` is its one caller).
+   *
+   * It is an effect rather than part of `onMark` because it is a write about the session having
+   * ENDED, not about the card that ended it: `live.done` is the fact, and a mark that happened to
+   * be the fifteenth is only how the fact came about. Reading it here also means a resumed session
+   * climbs on its own last card exactly as an uninterrupted one does — the two reach `done`
+   * through the same state.
+   *
+   * A ref, and the passed set, guard it from writing twice. They answer different questions and
+   * both are needed: `climbed` is what THIS mount has already done (under `StrictMode` the effect
+   * is invoked twice against one render, where asking the store would ask it before it had been
+   * told), and `alreadyPassed` is what the ladder says (a remount of a finished session must not
+   * call `passRung` for a rung that has moved into the passed set, because it throws).
+   *
+   * `completeRung` carries the enrolment in the same write: production on this rung ends here, and
+   * maintenance of its sentences begins (`engine/leitner.ts`). No clock is passed — the app takes
+   * `systemClock`, the one date-construction site (`state/clock.ts`).
+   */
+  const climbed = useRef(false);
+
+  useEffect(() => {
+    if (!live.done || climbed.current) return;
+    if (rungId === null || rungIds.length === 0 || alreadyPassed) return;
+    climbed.current = true;
+
+    completeRung(courseId, rungId, rungIds);
+  }, [live.done, rungId, rungIds, alreadyPassed, courseId, completeRung]);
+
   /* ------------------------------------------------------------------ the screen */
 
   const sentenceId = cards[live.idx];
   const sentence = sentenceId === undefined ? undefined : sentences.get(sentenceId);
   const fromRung = sentenceId === undefined ? undefined : moduleIdOf(sentenceId);
+
   /**
-   * Whether the rung is worked through — the summary's link to the ritual. The engine's own
-   * predicate, not a re-count of it: `exitAvailable` is what the Ladder and the route's guard ask,
-   * so the summary can never offer the ritual on a different arithmetic (Practice audit).
+   * Whether reaching the end of this session climbs a rung. A session run on a finished ladder
+   * (or on a rung whose module served no sentences) has no module to pass, and its summary is a
+   * score and nothing more.
    */
-  const ritualOpen = exitAvailable(rungIds, production);
+  const climbs = rungId !== null && rungIds.length > 0;
 
   return (
     <section className="session">
@@ -271,7 +326,7 @@ export function Session({ courseId, rungIds, plan, resume, l2 }: SessionProps) {
       <Tick active={!live.done} />
 
       {live.done && (
-        <SessionSummary gotIt={live.gotIt} total={cards.length} ritualOpen={ritualOpen} />
+        <SessionSummary gotIt={live.gotIt} total={cards.length} climbed={climbs ? rungId : null} />
       )}
 
       {!live.done && sentence !== undefined && sentenceId !== undefined && (

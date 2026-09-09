@@ -9,18 +9,19 @@
  * status derived, never stored"), and a stored "current rung" is the same bug with a shorter fuse.
  *
  * `src/engine/` is pure TypeScript: no React, no storage, no clock. That is what lets these rules be
- * tested as a table of inputs, and it is why the two live facts this engine needs arrive as
- * **predicates the caller injects**:
+ * tested as a table of inputs, and it is why the one live fact this engine needs arrives as a
+ * **predicate the caller injects**: `studied(id)`, the per-course `studied` flag, set on first
+ * module open (state v6, #82).
  *
- *   • `studied(id)` — the per-course `studied` flag, set on first module open (state v6, #82).
- *   • `exitAvailable(id)` — every sentence self-marked got-it ≥ 2× (PRD §8 F1). Injected rather
- *     than computed here because half of its answer is content: `src/engine/exit.ts` holds the
- *     rule, the store holds the counters, the module file holds the sentence ids they are counted
- *     against, and `screens/useExitAvailable.ts` (#95) is where the three meet. A caller with no
- *     sentence list passes `() => false`, which is what "nothing to check" honestly means.
+ * There was a second, `exitAvailable(id)` — every sentence of the rung self-marked got-it, which
+ * was the whole of the gate in front of the exit ritual. The ritual is gone (a rung is climbed by
+ * finishing a Practice session, on its last card), so the states and stages that named it are gone
+ * with it: there is no `exit_available` status and no `exit_ready` CTA, because there is nothing
+ * left for a learner to open. The counters themselves are still written and still drawn — they are
+ * a record of the rung rather than a door (`src/engine/production.ts`).
  *
  * **The single unlock path is not here.** This module can say which rung is current; only
- * `passRitual` in `src/state/store.ts` can make one passed (Invariant 1), and it asks this module
+ * `passRung` in `src/state/store.ts` can make one passed (Invariant 1), and it asks this module
  * the question before it writes. Keeping the rule pure and the write in one place is the whole
  * arrangement: a screen that wants to unlock something has nothing here to call.
  */
@@ -51,8 +52,6 @@ export interface ProgressionInput {
   /** Module ids the learner has passed. In state v6 that is exactly `courses[id].modules`' keys. */
   passed: ReadonlySet<string>;
   studied: (moduleId: string) => boolean;
-  /** All sentences produced ≥ 2× — injected; the predicate is `exit.ts` + the counters (#95). */
-  exitAvailable: (moduleId: string) => boolean;
 }
 
 /**
@@ -76,14 +75,18 @@ export function ladderFromLevels(
 /* ------------------------------------------------------------------ the rules */
 
 /**
- * Module states, `locked` → `passed` (PRD §8 F1). Only the current rung is ever one of the three
+ * Module states, `locked` → `passed` (PRD §8 F1). Only the current rung is ever one of the two
  * middle states; everything ahead of it is `locked`, and `passed` is the only one read from state
  * rather than derived from position.
+ *
+ * There was a third middle state, `exit_available` — the rung worked through, its exit ritual
+ * open. Nothing opens now: the pass lands on the last card of a Practice session, so the moment a
+ * rung would have entered that state it is either still `in_progress` or already `passed`.
  */
-export type ModuleStatus = 'locked' | 'unlocked' | 'in_progress' | 'exit_available' | 'passed';
+export type ModuleStatus = 'locked' | 'unlocked' | 'in_progress' | 'passed';
 
-/** The current rung card's four stages [D22] — one clear action each (PRD-design §6.2). */
-export type RungStage = 'fresh' | 'studied' | 'exit_ready' | 'pending';
+/** The current rung card's three stages [D22] — one clear action each (PRD-design §6.2). */
+export type RungStage = 'fresh' | 'studied' | 'pending';
 
 /**
  * The seal rule (PRD-design §5): **a level unlocks only when every module of the previous level is
@@ -130,8 +133,8 @@ export function currentRungId(input: ProgressionInput): string | null {
 
 /**
  * Every module in the ladder, by status (PRD §8 F1). Passed modules read from state; the current
- * rung is `unlocked` → `in_progress` (studied) → `exit_available` (all sentences produced ≥ 2×);
- * everything else — later in this level, in a level above, in a sealed level — is `locked`.
+ * rung is `unlocked` → `in_progress` (studied); everything else — later in this level, in a level
+ * above, in a sealed level — is `locked`.
  *
  * The Ladder renders straight off this map, so a rung that is not in it is a rung the ladder does
  * not list.
@@ -153,25 +156,26 @@ export function deriveStatuses(input: ProgressionInput): Record<string, ModuleSt
   return statuses;
 }
 
-/** The three states only the current rung can be in. */
+/** The two states only the current rung can be in. */
 function currentRungStatus(input: ProgressionInput, moduleId: string): ModuleStatus {
-  if (input.exitAvailable(moduleId)) return 'exit_available';
-  if (input.studied(moduleId)) return 'in_progress';
-  return 'unlocked';
+  return input.studied(moduleId) ? 'in_progress' : 'unlocked';
 }
 
 /**
- * Which of the four staged CTAs a rung card shows [D22], in the order the decision is actually made
- * (PRD §8 F1, PRD-design §6.2):
+ * Which of the three staged CTAs a rung card shows [D22], in the order the decision is actually
+ * made (PRD §8 F1, PRD-design §6.2):
  *
- *   1. `pending`   — the module is listed but not authored: a note only, no action to offer.
- *   2. `fresh`     — not studied: "Start with the module".
- *   3. `exit_ready` — production complete: "Exit ritual — open".
- *   4. `studied`   — otherwise: Practice primary, "revisit the module" as a ghost link.
+ *   1. `pending` — the module is listed but not authored: a note only, no action to offer.
+ *   2. `fresh`   — not studied: "Start with the module".
+ *   3. `studied` — otherwise: Practice primary, "revisit the module" as a ghost link.
  *
- * `pending` comes first because content is the precondition for the other three: a rung with no
- * module cannot be read, practised, or exited, whatever the flags say. A module the ladder does not
- * list reads as `pending` for the same reason.
+ * `pending` comes first because content is the precondition for the other two: a rung with no
+ * module cannot be read or practised, whatever the flags say. A module the ladder does not list
+ * reads as `pending` for the same reason.
+ *
+ * There was a fourth, `exit_ready` — production complete, "Exit ritual — open" as the primary. The
+ * ritual is gone and Practice is the whole of the climb, so a worked-through rung offers exactly
+ * what a studied one does: another session, which is the thing that passes it.
  *
  * Stages **guide, never gate** (Invariant: phases guide) — this is the card's copy, not a lock. The
  * Practice tab stays reachable at every stage.
@@ -179,7 +183,6 @@ function currentRungStatus(input: ProgressionInput, moduleId: string): ModuleSta
 export function rungStage(input: ProgressionInput, moduleId: string): RungStage {
   if (!hasContent(input, moduleId)) return 'pending';
   if (!input.studied(moduleId)) return 'fresh';
-  if (input.exitAvailable(moduleId)) return 'exit_ready';
   return 'studied';
 }
 

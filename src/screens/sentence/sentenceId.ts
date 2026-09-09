@@ -11,10 +11,11 @@
  * **A comprehension item's id answers the same way** (`L1-M1-C01` → `L1-M1`, #102): the schema
  * fixes that shape just as tightly (`poolItemId`, `<moduleId>-C<nn>`), and the question the
  * callers ask is the same one — which module's word index teaches this line. The exit ritual's
- * comprehension items are the reason: `WhyPanel` (#94) resolves whatever it is shown against the
- * index of the module the line came from, and a pool item comes from a module like a sentence
- * does. Nothing else changes with the letter: `/sentence/L1-M1-C01` finds no such sentence in the
- * module and lands on the module list, which is where an id that names nothing readable belongs.
+ * comprehension items were the reason, and the pool outlived the screens that dealt it: the ids
+ * are still in the shipped module files, and `WhyPanel` (#94) still resolves whatever it is
+ * shown against the index of the module the line came from. Nothing else changes with the
+ * letter: `/sentence/L1-M1-C01` finds no such sentence in the module and lands on the module
+ * list, which is where an id that names nothing readable belongs.
  *
  * A string that is neither answers `null` rather than a guess: `/sentence/S1` is a real thing a
  * HashRouter deep link can carry, and "no module" is the honest answer that sends the screen (and

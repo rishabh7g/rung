@@ -352,7 +352,7 @@ describe('reviewPicks — filling the earlier-rung slots', () => {
   });
 });
 
-describe('planSession — one list, fifteen cards', () => {
+describe('planSession — one list, at most fifteen cards', () => {
   const ten = rung('L1-M3', 10);
 
   it('interleaves one earlier-rung card after every two rung cards', () => {
@@ -390,32 +390,35 @@ describe('planSession — one list, fifteen cards', () => {
     expect(earlier).toEqual(idsOf(dueItems(queue, REVIEWS_PER_SESSION)));
   });
 
-  it('reaches past what is due rather than serving a shorter session', () => {
+  it('reaches past what is due rather than leaving an earlier-rung slot empty', () => {
     const queue = [...due('L1-M1-S01'), item('L1-M1-S02', 2, 3), item('L1-M1-S03', 3, 7)];
     const { cardIds } = planSession({ queue, rungIds: ten });
     const earlier = cardIds.filter((id) => !ten.includes(id));
 
-    expect(cardIds).toHaveLength(CARDS_PER_SESSION);
+    // Three in the queue, three served — the top-up reaches past due, but it cannot invent a
+    // fourth card, so the session is thirteen rather than a padded fifteen.
+    expect(cardIds).toHaveLength(13);
     expect(earlier).toEqual(['L1-M1-S01', 'L1-M1-S02', 'L1-M1-S03']);
   });
 
-  it('pads with the rung itself on the first rung, where nothing has been passed', () => {
-    const { cardIds } = planSession({ queue: [], rungIds: ten });
-
-    expect(cardIds).toHaveLength(CARDS_PER_SESSION);
-    expect(cardIds.slice(0, 10)).toEqual(ten);
-    // The repeats start at the rung's first sentence, ten cards after it was first served.
-    expect(cardIds.slice(10)).toEqual(ten.slice(0, 5));
+  it('serves the rung and stops on the first rung, where nothing has been passed', () => {
+    // No padding: the five repeats that used to fill the session to fifteen taught nothing,
+    // and now that finishing a session climbs the rung they would stand between the learner
+    // and a rung already worked through.
+    expect(planSession({ queue: [], rungIds: ten }).cardIds).toEqual(ten);
   });
 
-  it('serves every rung sentence at least once, whatever the queue holds — the exit gate needs them all', () => {
+  it('serves every rung sentence exactly once, whatever the queue holds', () => {
     for (const queue of [[], due('L1-M1-S01'), due(...rung('L1-M1', 20))]) {
       const { cardIds } = planSession({ queue, rungIds: ten });
-      for (const sentenceId of ten) expect(cardIds).toContain(sentenceId);
+      for (const sentenceId of ten) {
+        expect(cardIds.filter((id) => id === sentenceId)).toHaveLength(1);
+      }
+      expect(cardIds.length).toBeLessThanOrEqual(CARDS_PER_SESSION);
     }
   });
 
-  it('never trims a rung longer than the session, and never pads past the cap', () => {
+  it('never trims a rung longer than the session', () => {
     const long = rung('L1-M3', 18);
     const { cardIds } = planSession({ queue: due('L1-M1-S01'), rungIds: long });
 
@@ -425,7 +428,7 @@ describe('planSession — one list, fifteen cards', () => {
   it('never spends an earlier-rung slot on a sentence the rung already serves', () => {
     // Enrolment happens at pass, so the current rung is never in the queue — but an imported
     // queue can carry anything (PRD §8 F7). A fourteen-sentence rung leaves exactly one slot, and
-    // it must go to the card that is genuinely from an earlier rung. No padding runs here.
+    // it must go to the card that is genuinely from an earlier rung.
     const long = rung('L1-M3', 14);
     const queue = due('L1-M3-S02', 'L1-M1-S01');
     const { cardIds } = planSession({ queue, rungIds: long });

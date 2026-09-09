@@ -44,8 +44,9 @@
  * inside the answer plate, under the display, which is where the prototype puts it; an unfilled
  * slot renders nothing at all.
  *
- * Comprehension (#101) shares the `SelfMark` and the gate, not this card: it reveals the L1 rather
- * than the L2 and labels its own reveal out of `revealLabelComprehend`, in its own layout.
+ * The exit ritual's comprehension screen (#101) shared the `SelfMark` and the gate, not this card:
+ * it revealed the L1 rather than the L2, in its own layout and with its own reveal label. Both
+ * went with the ritual, and this card is the only reveal in the app.
  *
  * **No `mode` prop.** Which rung a card came from changes what the parent DOES with the mark,
  * never what this card renders — the one thing a mode ever picked was the per-phase nudge, and
@@ -134,9 +135,9 @@ export function RevealCard({
     <section className="reveal-card">
       <div className="reveal-cue">
         {/* No label over the cue (Practice audit, 2026-09-05). `cueLabel` used to name the learner's
-            own language above every one of the fifteen cues — the reveal button already names the
-            other one, and the accent rule is the cue's whole frame. Comprehension still prints the
-            label, because there the cue is the L2 and the language IS the surprise. */}
+            own language above every one of the cues — the reveal button already names the other
+            one, and the accent rule is the cue's whole frame. Comprehension went on printing it,
+            because there the cue was the L2; that screen is gone, and so is the key. */}
         <p className="reveal-cue-text">{cue}</p>
       </div>
 

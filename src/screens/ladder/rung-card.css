@@ -124,25 +124,6 @@
   border-color: var(--color-accent-700);
 }
 
-/* exit_ready only: Practice and Module side by side under the ritual. */
-.rung-secondary-row {
-  display: flex;
-  gap: var(--space-2);
-  margin-top: var(--space-2);
-}
-
-/* --btn-secondary-height (46px) is design/tokens.md §4's secondary; the prototype writes 44 inline
-   on this pair. The token is the rule of record and clears --tap-min either way. */
-.rung-secondary {
-  flex: 1;
-  min-height: var(--btn-secondary-height);
-  border-color: var(--color-divider);
-}
-
-.rung-secondary:active {
-  background: color-mix(in srgb, var(--color-text) 14%, transparent);
-}
-
 .rung-ghost-row {
   display: flex;
   justify-content: center;
@@ -162,12 +143,4 @@
 
 .rung-ghost:active {
   background: color-mix(in srgb, var(--color-accent) 18%, transparent);
-}
-
-/* The show-once production hint (#319) — what the dots row above it is counting towards, said
-   once per install and never again. Muted caption, under the dots, above the stage's CTA. */
-.rung-hint {
-  margin: var(--space-2) 0 0;
-  font: var(--text-caption);
-  color: var(--ink-65);
 }

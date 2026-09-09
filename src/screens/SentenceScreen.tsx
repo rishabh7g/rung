@@ -31,7 +31,8 @@
  * lives, and `SentenceScreen.test.tsx` scans it.
  *
  * **It writes nothing.** Reading a sentence marks nothing and unlocks nothing: the module list is
- * what flips `studied` [D22] (#88), the ritual is the only unlock path (Invariant 1). This screen
+ * what flips `studied` [D22] (#88), a finished Practice session is the only unlock path
+ * (Invariant 1). This screen
  * reads the module file, the ladder and the production counters, and moves between sentences.
  *
  * Two divergences from the prototype, both the shell's shape rather than this screen's, and both

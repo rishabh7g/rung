@@ -36,7 +36,8 @@ export const STATE_VERSION = 12;
 /**
  * A passed module. `status` is a one-member union on purpose: a module is in this map because
  * the learner passed it, or it is not in the map at all. There is no failure to record — the
- * only way in is the exit ritual (Invariant 1), and nothing else in the app writes here.
+ * only way in is finishing a Practice session on that rung (Invariant 1), and nothing else in the
+ * app writes here.
  */
 export interface ModuleProgress {
   status: 'passed';
@@ -78,7 +79,7 @@ export interface CourseState {
   /**
    * Times each sentence of a rung has been self-marked got-it in Practice. **Counters never
    * decrement**: `recordProduction` is their one writer and its only arithmetic is `+ 1`. Every
-   * sentence at ≥ 1 is `exit_available` (F1).
+   * sentence at ≥ 1 is a rung said back whole (F1).
    *
    * The field is still called `production` because it is on disk under that name and the numbers
    * in it are the same numbers. Three tickets have moved WHO writes them — Produce's got-it became
