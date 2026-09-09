@@ -1,0 +1,761 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M4",
+  "title": "Formal occasions",
+  "job": "Toasts, speeches, condolences, ceremonies",
+  "prerequisites": [
+    "L5-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "presente, L1-M6's, which is where a formula is delivered",
+      "the passive with essere plus a participle: è stato, è stata",
+      "the passive with venire, present only: viene consegnato",
+      "condizionale of politeness in one lexeme, vorrei, L1-M3's"
+    ],
+    "allowedPatterns": [
+      "Auguri a + <N> + !",
+      "<N> + viene + <participio>",
+      "<N> + è stato + <participio>",
+      "Le mie sentite condoglianze",
+      "Vorrei ringraziare + <N> + a nome di + <N>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PASSIVE, AT LAST, AND IT HAS TWO AUXILIARIES. essere plus a past participle states a completed event or the state it left behind: il premio è stato consegnato. venire plus the same participle stages it as a PROCESS, and that is the ceremonial one: il premio viene consegnato. The participle agrees with the subject under both — premiato for a man, premiata for a woman — so a passive sentence carries two agreements, not one."
+    },
+    {
+      "tag": "delta",
+      "text": "VENIRE CANNOT FORM THE COMPOUND TENSES, AND THAT LIMIT IS THE WHOLE DIFFICULTY. viene consegnato is a sentence; è venuto consegnato is not one, and no Italian will repair it for you because there is nothing there to repair. Anywhere you want a past passive, essere is the only auxiliary there is: è stato consegnato. venire's passive lives in the present and the future and nowhere else."
+    },
+    {
+      "tag": "free",
+      "text": "THE FORMULAS ARE LEARNED WHOLE AND NEVER ASSEMBLED. auguri, congratulazioni, condoglianze, un brindisi, cin cin, alla salute, evviva. Each is a fixed noise fitted to one occasion; none of them is built out of its parts at the moment of saying it, and a formula improvised on the spot is heard as an improvisation."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH CONGRATULATIONS SPLITS IN TWO AND THE SEAM IS TIME. auguri is for what is still ahead of you — a wedding, a birthday, a new job, a journey. congratulazioni is for what you have already pulled off — a degree, a prize, a promotion. To a bride and groom it is AUGURI, because the marriage is in front of them, and congratulazioni to a couple is precisely the error an English speaker makes."
+    },
+    {
+      "tag": "interference",
+      "text": "CONDOLENCES ARE FORMULAIC HERE, AND IMPROVISING READS AS CARELESS. English rewards you for finding your own words at a funeral; Italian expects le mie sentite condoglianze, and the sincerity is carried by saying the right thing rather than a new thing. Beside it, for somebody you are close to, ti sono vicino — L2-M4's vicino doing the warm half of the work."
+    },
+    {
+      "tag": "free",
+      "text": "THE CONNECTIVES AND THE OPENINGS OF A SPEECH BELONG TO WRITING. poiché for since, pertanto for therefore, inoltre for furthermore: they are what a prepared text sounds like and they would be strange across a table. Egregio opens a formal letter to one person and carissimi a warm one to several. A spoken toast, by contrast, is two words: cin cin."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M4-S01",
+      "display": "Auguri di cuore! Evviva gli sposi!",
+      "cue": "Warmest wishes! Long live the newlyweds!",
+      "literal": "Wishes of heart! Hurrah the spouses!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "auguri",
+            "cue": "best wishes",
+            "tag": "interference",
+            "forms": [
+              "auguri"
+            ],
+            "note": "Wishes for what is still ahead: a wedding, a birthday, a journey. Plural in form and never singular, and it is what you say to a bride and groom."
+          },
+          {
+            "display": "di cuore",
+            "cue": "warmly, from the heart",
+            "tag": "free",
+            "forms": [
+              "di cuore"
+            ],
+            "note": "Added to a formula to warm it. Literally of heart: Italian says it with di where English says from."
+          },
+          {
+            "display": "evviva",
+            "cue": "hurrah, long live",
+            "tag": "free",
+            "forms": [
+              "evviva"
+            ],
+            "note": "A cheer raised to somebody, from e viva welded into one word. It takes a noun straight after it and no verb at all."
+          },
+          {
+            "display": "sposi",
+            "cue": "bride and groom, newlyweds",
+            "tag": "free",
+            "forms": [
+              "sposi",
+              "sposo",
+              "sposa"
+            ],
+            "note": "The couple on the day, taken as a pair. gli sposi is the two of them together; the singular names one of them."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "auguri, not congratulazioni. The marriage is in front of them, and Italian sorts these two words by whether the thing has happened yet.",
+      "sound": "ow-GOO-ree, three syllables and the au is one of them. ev-VEE-va, with the double v held.",
+      "variations": [
+        {
+          "display": "Auguri!",
+          "cue": "Best wishes!",
+          "changed": "alone, which covers most occasions"
+        },
+        {
+          "display": "Auguri di cuore",
+          "cue": "Warmest wishes",
+          "changed": "without the cheer after it"
+        },
+        {
+          "display": "Evviva gli sposi!",
+          "cue": "Long live the newlyweds!",
+          "changed": "the cheer alone, raised at the table"
+        }
+      ],
+      "mistake": {
+        "display": "Congratulazioni agli sposi!",
+        "why": "congratulazioni is for what is already done. A wedding is the beginning of the thing being wished for, so the word is auguri."
+      },
+      "usage": "At a wedding, raising a glass or signing the card.",
+      "register": "neutral",
+      "mnemonic": "auguri looks forward; congratulazioni looks back."
+    },
+    {
+      "id": "L5-M4-S02",
+      "display": "Congratulazioni per il premio; inoltre, è un grande onore",
+      "cue": "Congratulations on the prize; and what is more, it is a great honour",
+      "literal": "Congratulations for the prize; furthermore, is a great honour",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "congratulazioni",
+            "cue": "congratulations",
+            "tag": "interference",
+            "forms": [
+              "congratulazioni"
+            ],
+            "note": "For something already achieved: a prize, a degree, a promotion. Plural like auguri, and the two are never interchangeable."
+          },
+          {
+            "display": "premio",
+            "cue": "prize, award",
+            "tag": "free",
+            "forms": [
+              "premio"
+            ],
+            "note": "A prize or an award. The verb behind it, premiare, gives premiato and premiata — the participle this module's passive uses."
+          },
+          {
+            "display": "inoltre",
+            "cue": "furthermore, moreover",
+            "tag": "free",
+            "forms": [
+              "inoltre"
+            ],
+            "note": "A written connective adding a second point. In conversation it sounds like a prepared text, which is exactly where it belongs."
+          },
+          {
+            "display": "onore",
+            "cue": "honour",
+            "tag": "free",
+            "forms": [
+              "onore"
+            ],
+            "note": "Masculine despite the -e ending, so un grande onore. It is the word a speech reaches for when thanking the room."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          5
+        ]
+      },
+      "trap": "per, not su. Italian congratulates FOR the thing, so congratulazioni sul premio is the English preposition wearing Italian clothes.",
+      "sound": "con-gra-tu-la-TSYO-nee: six syllables, and the zi is ts. o-NO-re, stress in the middle.",
+      "variations": [
+        {
+          "display": "Congratulazioni!",
+          "cue": "Congratulations!",
+          "changed": "alone, which is how it is usually said"
+        },
+        {
+          "display": "Congratulazioni per il premio",
+          "cue": "Congratulations on the prize",
+          "changed": "without the second clause"
+        },
+        {
+          "display": "È un grande onore",
+          "cue": "It is a great honour",
+          "changed": "the second half alone, as a reply"
+        }
+      ],
+      "mistake": {
+        "display": "Auguri per il premio!",
+        "why": "The prize has been won. auguri wishes you well for what is coming; something already achieved takes congratulazioni."
+      },
+      "usage": "A prize-giving, a graduation, a promotion — spoken, or written on the card.",
+      "register": "formal",
+      "mnemonic": "Prize in hand: congratulazioni."
+    },
+    {
+      "id": "L5-M4-S03",
+      "display": "Le mie sentite condoglianze, ti sono vicino",
+      "cue": "My heartfelt condolences, I am here for you",
+      "literal": "The my felt condolences, to-you I-am near",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "condoglianze",
+            "cue": "condolences",
+            "tag": "free",
+            "forms": [
+              "condoglianze",
+              "sentite condoglianze"
+            ],
+            "note": "Plural only, and formulaic: le mie sentite condoglianze is the whole thing, with sentite meaning deeply felt rather than heard."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "Do not improvise. English rewards finding your own words at a funeral; Italian expects the formula, and a fresh sentence reads as not knowing what to say.",
+      "sound": "con-do-LYAN-tse: the gli is the ly of million, and the ze is ts.",
+      "variations": [
+        {
+          "display": "Le mie condoglianze",
+          "cue": "My condolences",
+          "changed": "without sentite, which is the shorter formula"
+        },
+        {
+          "display": "Sentite condoglianze",
+          "cue": "Heartfelt condolences",
+          "changed": "the two words a card carries"
+        },
+        {
+          "display": "Ti sono vicino",
+          "cue": "I am here for you",
+          "changed": "the warm half alone, for somebody you know well"
+        }
+      ],
+      "mistake": {
+        "display": "La mia condoglianza",
+        "why": "The word has no singular in use. It is condoglianze, plural, and the possessive in front of it is le mie."
+      },
+      "usage": "Said at a funeral, or written in a message to somebody who has lost a family member.",
+      "register": "formal",
+      "mnemonic": "Grief takes the plural and the fixed words."
+    },
+    {
+      "id": "L5-M4-S04",
+      "display": "Facciamo un brindisi! Cin cin!",
+      "cue": "Let's have a toast! Cheers!",
+      "literal": "We-make a toast! Chin chin!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "brindisi",
+            "cue": "a toast",
+            "tag": "free",
+            "forms": [
+              "brindisi"
+            ],
+            "note": "The toast itself, as a thing you make: fare un brindisi. Same form singular and plural, like every noun that ends in unstressed -i."
+          },
+          {
+            "display": "cin cin",
+            "cue": "cheers",
+            "tag": "free",
+            "forms": [
+              "cin cin"
+            ],
+            "note": "The clink of two glasses, said as they go up. Two words, always doubled, and never written as one."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "An Italian spoken toast is two words. The English instinct to make a short speech belongs to the written brindisi, not to the moment the glasses meet.",
+      "sound": "BRIN-dee-see, stress on the first syllable. chin CHIN, both syllables as in the English chin.",
+      "variations": [
+        {
+          "display": "Un brindisi!",
+          "cue": "A toast!",
+          "changed": "the noun alone, as a proposal"
+        },
+        {
+          "display": "Cin cin!",
+          "cue": "Cheers!",
+          "changed": "the clink alone, which is its usual size"
+        },
+        {
+          "display": "Facciamo un brindisi",
+          "cue": "Let's have a toast",
+          "changed": "without the cheer after it"
+        }
+      ],
+      "mistake": {
+        "display": "Facciamo un cin cin",
+        "why": "cin cin is not a noun and takes no article. It is the noise you make with the glass; the thing you make is un brindisi."
+      },
+      "usage": "At the table, when somebody stands up or the glasses come together.",
+      "register": "informal",
+      "mnemonic": "You make a brindisi and you say cin cin."
+    },
+    {
+      "id": "L5-M4-S05",
+      "display": "Brindiamo alla salute, cin cin!",
+      "cue": "Let's drink to good health, cheers!",
+      "literal": "We-toast to-the health, chin chin!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "brindiamo",
+            "cue": "let's drink a toast",
+            "tag": "free",
+            "forms": [
+              "brindiamo",
+              "brindare"
+            ],
+            "note": "The we form of brindare, used as an invitation. It takes a: you toast TO something, never toast the thing itself."
+          },
+          {
+            "display": "alla salute",
+            "cue": "to your health",
+            "tag": "free",
+            "forms": [
+              "alla salute",
+              "salute"
+            ],
+            "note": "The stock thing to toast to, learned whole. salute on its own is also what you say when somebody sneezes."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "alla, not a. What is toasted takes the definite article welded onto the preposition, which is why it is alla salute and never a salute.",
+      "sound": "brin-DYA-mo. al-la sa-LOO-te, with the double l held and the final e sounded.",
+      "variations": [
+        {
+          "display": "Brindiamo!",
+          "cue": "Let's toast!",
+          "changed": "the invitation alone"
+        },
+        {
+          "display": "Alla salute!",
+          "cue": "To your health!",
+          "changed": "the toast alone, which is a whole utterance"
+        },
+        {
+          "display": "Brindiamo alla salute",
+          "cue": "Let's drink to health",
+          "changed": "without the clink after it"
+        }
+      ],
+      "mistake": {
+        "display": "Brindiamo la salute",
+        "why": "brindare needs its a. Without it health becomes the direct object, and you are toasting health rather than drinking to it."
+      },
+      "usage": "Raising a glass at a table, formal or not.",
+      "register": "neutral",
+      "mnemonic": "Toast TO something: brindare takes a."
+    },
+    {
+      "id": "L5-M4-S06",
+      "display": "Il premio viene consegnato oggi, pertanto brindiamo",
+      "cue": "The prize is presented today, so let's raise a glass",
+      "literal": "The prize comes handed-over today, therefore we-toast",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "viene",
+            "cue": "is (passive auxiliary); comes",
+            "tag": "delta",
+            "forms": [
+              "viene"
+            ],
+            "note": "The third person of venire, first taught at L4-M5. With a participle after it, it stages a passive as a process rather than a result."
+          },
+          {
+            "display": "consegnato",
+            "cue": "handed over, presented",
+            "tag": "free",
+            "forms": [
+              "consegnato",
+              "consegnata"
+            ],
+            "note": "The past participle of consegnare. It agrees with the subject of the passive: consegnato for il premio, consegnata for una medaglia."
+          },
+          {
+            "display": "pertanto",
+            "cue": "therefore",
+            "tag": "free",
+            "forms": [
+              "pertanto"
+            ],
+            "note": "A written connective drawing a conclusion. Like inoltre it belongs to a prepared speech and would be odd across a table."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5
+        ]
+      },
+      "trap": "venire cannot go into a compound tense. viene consegnato is a sentence; è venuto consegnato is not one, and a past passive must switch to essere.",
+      "sound": "VYEH-ne. con-se-NYA-to: the gn is the ny of canyon.",
+      "variations": [
+        {
+          "display": "Il premio viene consegnato",
+          "cue": "The prize is presented",
+          "changed": "without the day or the conclusion"
+        },
+        {
+          "display": "Viene consegnato oggi",
+          "cue": "It is presented today",
+          "changed": "the passive alone"
+        },
+        {
+          "display": "Il premio è stato consegnato",
+          "cue": "The prize was presented",
+          "changed": "the same event in the past, where essere is the only auxiliary"
+        }
+      ],
+      "mistake": {
+        "display": "Il premio è venuto consegnato",
+        "why": "This is the sentence the rule exists to stop. venire builds no compound passive at all, so the past of viene consegnato is è stato consegnato."
+      },
+      "usage": "A programme, an announcement, a ceremony under way.",
+      "register": "formal",
+      "mnemonic": "venire stages the handing over; essere reports it done."
+    },
+    {
+      "id": "L5-M4-S07",
+      "display": "Mia madre è stata premiata ieri",
+      "cue": "My mother was given the award yesterday",
+      "literal": "My mother is been awarded yesterday",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "è stato",
+            "cue": "was (passive auxiliary)",
+            "tag": "delta",
+            "forms": [
+              "è stato",
+              "è stata"
+            ],
+            "note": "essere plus stato, the auxiliary a past passive takes. It agrees with the subject: è stato for a man, è stata for a woman."
+          },
+          {
+            "display": "premiata",
+            "cue": "awarded, given a prize",
+            "tag": "free",
+            "forms": [
+              "premiata",
+              "premiato"
+            ],
+            "note": "The past participle of premiare, from premio. It agrees with whoever won: premiata for her, premiato for him."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Two agreements in one sentence, not one. stata agrees with madre and so does premiata — leave either as the -o form and you have written a man.",
+      "sound": "eh STA-ta pre-MYA-ta: the two -ata endings chime, which is the agreement doing its work out loud.",
+      "variations": [
+        {
+          "display": "È stata premiata",
+          "cue": "She was given the award",
+          "changed": "the passive alone"
+        },
+        {
+          "display": "Mio padre è stato premiato",
+          "cue": "My father was given the award",
+          "changed": "the masculine, with both endings moved"
+        },
+        {
+          "display": "Mia madre è stata premiata",
+          "cue": "My mother was given the award",
+          "changed": "without the day"
+        }
+      ],
+      "mistake": {
+        "display": "Mia madre è stato premiato",
+        "why": "Both participles agree with madre, and madre is feminine. One -o ending is a slip; two of them says the sentence was assembled out of English."
+      },
+      "usage": "Reporting a ceremony, in speech or in a printed programme.",
+      "register": "formal",
+      "mnemonic": "The subject decides both endings."
+    },
+    {
+      "id": "L5-M4-S08",
+      "display": "Egregio signore, carissimi amici, vorrei ringraziare",
+      "cue": "Dear Sir, dearest friends, I would like to say thank you",
+      "literal": "Distinguished sir, dearest friends, I-would-like to-thank",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "egregio",
+            "cue": "Dear (formal, to one person)",
+            "tag": "free",
+            "forms": [
+              "egregio",
+              "egregia"
+            ],
+            "note": "The opening of a formal letter to one named person. It is written rather than spoken, and it is far stiffer than the English Dear."
+          },
+          {
+            "display": "carissimi",
+            "cue": "dearest (to several people)",
+            "tag": "free",
+            "forms": [
+              "carissimi",
+              "carissima"
+            ],
+            "note": "A warm opening to a group: the -issimo of caro, taught at L1-M10, in the plural. Warm where egregio is stiff."
+          },
+          {
+            "display": "ringraziare",
+            "cue": "to thank",
+            "tag": "free",
+            "forms": [
+              "ringraziare"
+            ],
+            "note": "The verb behind grazie (L1-M2). A speech says vorrei ringraziare rather than grazie, because a formula wants a whole clause."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "Do not open a letter with caro to somebody you have never met. caro is for people you know; a stranger with a title gets egregio, and the slip is visible on the page.",
+      "sound": "e-GREH-jo, with a soft g. ca-RIS-see-mee, with the double s held. rin-gra-TSYA-re, the zi as ts.",
+      "variations": [
+        {
+          "display": "Carissimi amici",
+          "cue": "Dearest friends",
+          "changed": "the warm opening alone"
+        },
+        {
+          "display": "Egregio signore",
+          "cue": "Dear Sir",
+          "changed": "the formal opening alone"
+        },
+        {
+          "display": "Vorrei ringraziare",
+          "cue": "I would like to thank",
+          "changed": "the clause a speech actually begins with"
+        }
+      ],
+      "mistake": {
+        "display": "Caro signore, vorrei ringraziare",
+        "why": "caro to a stranger is too close. A formal letter opens Egregio, and caro waits until you know the person."
+      },
+      "usage": "The first line of a speech, or of a formal letter.",
+      "register": "formal",
+      "mnemonic": "egregio for a stranger, carissimi for a room of friends."
+    },
+    {
+      "id": "L5-M4-S09",
+      "display": "Vorrei parlare a nome di mia madre, in qualità di figlia",
+      "cue": "I would like to speak on my mother's behalf, as her daughter",
+      "literal": "I-would-like to-speak at name of my mother, in quality of daughter",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a nome di",
+            "cue": "on behalf of",
+            "tag": "free",
+            "forms": [
+              "a nome di"
+            ],
+            "note": "Learned whole. Literally in the name of: Italian uses a where English uses on, and no article comes between di and the person."
+          },
+          {
+            "display": "in qualità di",
+            "cue": "in the capacity of, as",
+            "tag": "free",
+            "forms": [
+              "in qualità di"
+            ],
+            "note": "States the role you are speaking from. No article after di and none before qualità either — the whole phrase is frozen."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "in qualità di takes no article. in qualità di una figlia is the English a leaking through; the role is named bare.",
+      "sound": "a NO-me dee. in kwa-li-TA dee, with the stress on the final a, which the accent marks.",
+      "variations": [
+        {
+          "display": "A nome di mia madre",
+          "cue": "On my mother's behalf",
+          "changed": "the phrase alone"
+        },
+        {
+          "display": "In qualità di figlia",
+          "cue": "As her daughter",
+          "changed": "the role alone"
+        },
+        {
+          "display": "Vorrei parlare a nome di mia madre",
+          "cue": "I'd like to speak on my mother's behalf",
+          "changed": "without the role"
+        }
+      ],
+      "mistake": {
+        "display": "Vorrei parlare in nome di una figlia",
+        "why": "Two slips in one line: the phrase is a nome di and not in nome di, and in qualità di never takes an article after it."
+      },
+      "usage": "Standing up at a ceremony to speak for somebody who is not speaking.",
+      "register": "formal",
+      "mnemonic": "a nome di says for whom; in qualità di says as what."
+    },
+    {
+      "id": "L5-M4-S10",
+      "display": "Poiché è tardi, il discorso è finito",
+      "cue": "Since it is late, the speech is over",
+      "literal": "Since is late, the speech is finished",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poiché",
+            "cue": "since, because",
+            "tag": "free",
+            "forms": [
+              "poiché"
+            ],
+            "note": "A written since, giving a reason already accepted. Speech uses perché; the accent on the final e is where the stress falls."
+          },
+          {
+            "display": "discorso",
+            "cue": "speech",
+            "tag": "free",
+            "forms": [
+              "discorso",
+              "discorsi"
+            ],
+            "note": "A speech, the thing somebody stands up to give. Also a line of argument, much as English discourse can be."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "poiché is not perché. perché also answers a question — why? — and poiché never does; it only introduces a reason nobody is disputing.",
+      "sound": "poy-KEH, stressed on the last syllable and the ch hard. dis-COR-so.",
+      "variations": [
+        {
+          "display": "Poiché è tardi",
+          "cue": "Since it is late",
+          "changed": "the reason alone"
+        },
+        {
+          "display": "Il discorso è finito",
+          "cue": "The speech is over",
+          "changed": "the conclusion alone"
+        },
+        {
+          "display": "Il discorso è finito, pertanto brindiamo",
+          "cue": "The speech is over, so let's toast",
+          "changed": "the conclusion carrying the other connective"
+        }
+      ],
+      "mistake": {
+        "display": "Poiche è tardi, il discorso è finito",
+        "why": "poiché carries an acute accent on the e, and without it the word is not a word. The accent also tells you the stress is on the end."
+      },
+      "usage": "Closing a speech, or writing one.",
+      "register": "formal",
+      "mnemonic": "poiché opens the reason; pertanto closes it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M4-C01",
+      "display": "Auguri di cuore!",
+      "cue": "Warmest wishes!"
+    },
+    {
+      "id": "L5-M4-C02",
+      "display": "Evviva gli sposi!",
+      "cue": "Long live the newlyweds!"
+    },
+    {
+      "id": "L5-M4-C03",
+      "display": "Congratulazioni per il premio!",
+      "cue": "Congratulations on the prize!"
+    },
+    {
+      "id": "L5-M4-C04",
+      "display": "Le mie sentite condoglianze",
+      "cue": "My heartfelt condolences"
+    },
+    {
+      "id": "L5-M4-C05",
+      "display": "Ti sono vicino",
+      "cue": "I am here for you"
+    },
+    {
+      "id": "L5-M4-C06",
+      "display": "Facciamo un brindisi! Cin cin!",
+      "cue": "Let's have a toast! Cheers!"
+    },
+    {
+      "id": "L5-M4-C07",
+      "display": "Brindiamo alla salute!",
+      "cue": "Let's drink to good health!"
+    },
+    {
+      "id": "L5-M4-C08",
+      "display": "Il premio viene consegnato oggi",
+      "cue": "The prize is presented today"
+    },
+    {
+      "id": "L5-M4-C09",
+      "display": "Mia madre è stata premiata",
+      "cue": "My mother was given the award"
+    },
+    {
+      "id": "L5-M4-C10",
+      "display": "Egregio signore, carissimi amici",
+      "cue": "Dear Sir, dearest friends"
+    },
+    {
+      "id": "L5-M4-C11",
+      "display": "Vorrei ringraziare a nome di mia madre",
+      "cue": "I would like to thank you on my mother's behalf"
+    },
+    {
+      "id": "L5-M4-C12",
+      "display": "Poiché è tardi, il discorso è finito",
+      "cue": "Since it is late, the speech is over"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

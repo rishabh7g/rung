@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M2",
+  "title": "Humour and teasing",
+  "job": "Banter, irony, and when not to",
+  "prerequisites": [
+    "L5-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "habitual_past"
+    ],
+    "allowedPatterns": [
+      "yā + <kin term with -ī> + , + <teasing clause>",
+      "kuntu amzaḥ + faqaṭ",
+      "hal anta jādd",
+      "anta + ka- + <comic comparison>",
+      "lā tuʾākhidhnī + , + <retraction>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "yā is the vocative particle: it takes a noun and marks the whole utterance as addressed and familiar. It never changes shape, whoever it is aimed at, and this module is where the course buys it once for good."
+    },
+    {
+      "tag": "free",
+      "text": "yā akhī and yā ʿammī are said to people who are neither your brother nor your uncle. The kin term with -ī is the address, not a claim about the family — akhī to someone your own age, ʿammī to a man clearly older."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH BANTER IS OFTEN UNMARKED; ARABIC BANTER IS USUALLY MARKED. Deadpan works in English precisely because nothing signals it. The same flat delivery here — no yā, no laugh, no amzaḥ anywhere near it — reads as a plain insult."
+    },
+    {
+      "tag": "delta",
+      "text": "kuntu amzaḥ is L4-M8's kāna plus an imperfect doing a NEW JOB, not a new tense. It is the retraction, and the module is a matched pair: the tease and the take-back, never one without the other."
+    },
+    {
+      "tag": "free",
+      "text": "lā tuʾākhidhnī is L4-M1's negative imperative on a fixed verb — do not hold it against me. It is stored as a formula, and it buys the second or two you need before the retraction itself."
+    },
+    {
+      "tag": "free",
+      "text": "hal anta jādd? is L1-M2's question particle over an owned frame, and it is the listener's move: it asks whether the marking was there and got missed, instead of deciding what the speaker meant."
+    },
+    {
+      "tag": "interference",
+      "text": "The SUBJECT MATTER moves. English teasing about a friend's family, appearance or wealth is ordinary; those are exactly the three places offence lives here. Knowing when not to is half of this skill."
+    },
+    {
+      "tag": "delta",
+      "text": "Banter is the MARKED case — it says out loud that it is a joke. Sarcasm is the same words with the marking taken away, and it belongs to L5-M7, not here. L4-M5's hedge stays honest and is not irony either."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M2-S01",
+      "display": "yā akhī, anta ẓarīf jiddan",
+      "script": "يا أخي، أنت ظريف جدًا",
+      "cue": "My friend, you are very funny.",
+      "literal": "O my-brother, you witty very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yā",
+            "script": "يا",
+            "cue": "O — the particle of address",
+            "tag": "delta",
+            "forms": [
+              "yā"
+            ],
+            "note": "The vocative particle. It takes a noun and marks the whole utterance as addressed and familiar, and it never changes shape for anyone."
+          },
+          {
+            "display": "akhī",
+            "script": "أخي",
+            "cue": "my brother — said to a friend",
+            "tag": "free",
+            "forms": [
+              "akhī"
+            ],
+            "note": "L2-M2's akh with -ī on it. Said to someone who is not your brother it means roughly mate: the kin word is the address, not a claim."
+          },
+          {
+            "display": "ẓarīf",
+            "script": "ظريف",
+            "cue": "witty, good company",
+            "tag": "free",
+            "forms": [
+              "ẓarīf",
+              "ẓarīfa"
+            ],
+            "note": "Witty and pleasant with it. It praises the person, where muḍḥik praises the joke."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English can tease with no marking at all. Arabic usually marks it, and yā plus a kin term is the marking — without it, the same words can be heard as a flat assessment of somebody's character.",
+      "sound": "yā akh-Ī: the yā is drawn out and the -ī takes the stress. ẓ is the heavy dh, made with the tongue flat against the roof of the mouth.",
+      "variations": [
+        {
+          "display": "yā ʿammī, anta ẓarīf jiddan",
+          "script": "يا عمي، أنت ظريف جدًا",
+          "cue": "Uncle, you are very funny.",
+          "changed": "the kin term; ʿammī is what you use to an older man"
+        },
+        {
+          "display": "anta ẓarīf jiddan, yā akhī",
+          "script": "أنت ظريف جدًا، يا أخي",
+          "cue": "You are very funny, my friend.",
+          "changed": "the address moves to the end, which is where it goes when the tease comes first"
+        }
+      ],
+      "mistake": {
+        "display": "anta ẓarīf jiddan",
+        "script": "أنت ظريف جدًا",
+        "why": "Correct Arabic, and unmarked. With no yā and no kin term anywhere near it, a foreigner saying this flat can be heard as a verdict on someone rather than as banter."
+      },
+      "usage": "Between friends, right after somebody has said something funny.",
+      "register": "informal",
+      "mnemonic": "No yā, no joke."
+    },
+    {
+      "id": "L5-M2-S02",
+      "display": "kuntu amzaḥ faqaṭ, yā ʿammī",
+      "script": "كنت أمزح فقط، يا عمي",
+      "cue": "I was only joking, uncle.",
+      "literal": "I-was I-joke only, O my-uncle",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "amzaḥ",
+            "script": "أمزح",
+            "cue": "I joke, I am joking",
+            "tag": "free",
+            "forms": [
+              "amzaḥ",
+              "tamzaḥ",
+              "yamzaḥ",
+              "mazaḥ"
+            ],
+            "note": "To joke. kuntu amzaḥ is L4-M8's kāna plus an imperfect — I was joking — which is a new job for an owned shape, not a new tense."
+          },
+          {
+            "display": "ʿammī",
+            "script": "عمي",
+            "cue": "my uncle — said to an older man",
+            "tag": "free",
+            "forms": [
+              "ʿammī",
+              "ʿamm"
+            ],
+            "note": "Paternal uncle, used to any man clearly older than you. It carries warmth and deference at once, which akhī does not."
+          }
+        ],
+        "rules": [
+          3,
+          1
+        ]
+      },
+      "trap": "I was only joking transfers exactly — same words, same beat. It is the one move in this module a learner already owns in English, and the timing is the same: immediately, before the silence sets.",
+      "sound": "KUN-tu AM-zaḥ fa-QAṬ: the ḥ of amzaḥ is the breathy h from the throat, and faqaṭ lands on the heavy ṭ.",
+      "variations": [
+        {
+          "display": "kuntu amzaḥ faqaṭ, yā akhī",
+          "script": "كنت أمزح فقط، يا أخي",
+          "cue": "I was only joking, my friend.",
+          "changed": "the kin term, to someone your own age"
+        },
+        {
+          "display": "kāna yamzaḥ faqaṭ",
+          "script": "كان يمزح فقط",
+          "cue": "He was only joking.",
+          "changed": "the person — said about somebody else, to defuse it for them"
+        }
+      ],
+      "mistake": {
+        "display": "amzaḥ faqaṭ",
+        "script": "أمزح فقط",
+        "why": "The bare present says I joke, only — a habit. The retraction needs kuntu in front of it: the joke is being put in the past, which is what taking it back means."
+      },
+      "usage": "The instant a tease does not land. Say it before anyone answers.",
+      "register": "informal",
+      "mnemonic": "kuntu puts the joke behind you."
+    },
+    {
+      "id": "L5-M2-S03",
+      "display": "hal anta jādd yā akhī?",
+      "script": "هل أنت جاد يا أخي؟",
+      "cue": "Are you serious, my friend?",
+      "literal": "Question you serious O my-brother?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jādd",
+            "script": "جاد",
+            "cue": "serious, in earnest",
+            "tag": "free",
+            "forms": [
+              "jādd",
+              "jādda"
+            ],
+            "note": "Serious in the sense of not joking. It is the listener's word: it asks whether the marking was there and got missed."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "In English are you serious? is often itself sarcastic. Here it is a plain question and it is the polite way out of an ambiguity — asking, rather than deciding what the other person meant.",
+      "sound": "HAL AN-ta JĀDD: the doubled dd at the end is held, and hal keeps a short flat vowel of its own.",
+      "variations": [
+        {
+          "display": "hal anta jādd al-ān?",
+          "script": "هل أنت جاد الآن؟",
+          "cue": "Are you serious right now?",
+          "changed": "al-ān pins the question to this moment"
+        },
+        {
+          "display": "hal huwa jādd?",
+          "script": "هل هو جاد؟",
+          "cue": "Is he serious?",
+          "changed": "asking about a third person instead of the one in front of you"
+        }
+      ],
+      "mistake": {
+        "display": "anta jādd?",
+        "script": "أنت جاد؟",
+        "why": "Dropping hal leaves the question to intonation alone, and this course teaches no intonation. In writing, or to someone you do not know, it reads as an accusation rather than a question."
+      },
+      "usage": "When you cannot tell whether what you just heard was a joke.",
+      "register": "neutral",
+      "mnemonic": "Ask jādd before you answer."
+    },
+    {
+      "id": "L5-M2-S04",
+      "display": "yā akhī, anta ka-al-ustādh: tatakallam kathīran",
+      "script": "يا أخي، أنت كالأستاذ: تتكلم كثيرًا",
+      "cue": "My friend, you are like a professor: you talk a lot.",
+      "literal": "O my-brother, you like-the-professor: you-speak much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ka-al-ustādh",
+            "script": "كالأستاذ",
+            "cue": "like a professor",
+            "tag": "free",
+            "forms": [
+              "ka-al-ustādh",
+              "al-ustādh",
+              "ustādh"
+            ],
+            "note": "L4-M5's ka- written joined to al-ustādh, the professor. The comic comparison is the module's one open slot: pick a role, not a person."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "A comparison is not by itself a joke here. It is the yā akhī in front of it that marks the whole thing as banter; the same comparison delivered flat is simply a complaint about how much someone talks.",
+      "sound": "ka-al-us-TĀDH: ka- is written joined, so the comparison is one written word, and the dh at the end is the soft th of this.",
+      "variations": [
+        {
+          "display": "yā akhī, anta ka-al-ʿuṣfūr: tatakallam kathīran",
+          "script": "يا أخي، أنت كالعصفور: تتكلم كثيرًا",
+          "cue": "My friend, you are like a bird: you talk a lot.",
+          "changed": "the comparison — L5-M1's bird in place of the professor"
+        },
+        {
+          "display": "anta ka-al-ustādh, yā ʿammī",
+          "script": "أنت كالأستاذ، يا عمي",
+          "cue": "You are like a professor, uncle.",
+          "changed": "the address moves behind the tease and softens it"
+        }
+      ],
+      "mistake": {
+        "display": "anta ka-al-ustādh",
+        "script": "أنت كالأستاذ",
+        "why": "Unmarked, and about somebody's manner. Stripped of the yā it stops being a tease and becomes an opinion — which is exactly the class of remark this module's third rule warns about."
+      },
+      "usage": "Teasing a friend who is holding forth. Roles are safe ground; family, looks and money are not.",
+      "register": "informal",
+      "mnemonic": "Compare the role, never the family."
+    },
+    {
+      "id": "L5-M2-S05",
+      "display": "lā tuʾākhidhnī, kuntu amzaḥ faqaṭ",
+      "script": "لا تؤاخذني، كنت أمزح فقط",
+      "cue": "Don't hold it against me — I was only joking.",
+      "literal": "Not you-blame-me, I-was I-joke only",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lā tuʾākhidhnī",
+            "script": "لا تؤاخذني",
+            "cue": "don't hold it against me",
+            "tag": "free",
+            "forms": [
+              "lā tuʾākhidhnī"
+            ],
+            "note": "Stored whole. It is L4-M1's lā plus a jussive, with -nī for me on the end; the hamza in the middle is a hamza, never an ʿayn."
+          }
+        ],
+        "rules": [
+          4,
+          3
+        ]
+      },
+      "trap": "English apologises for the joke — sorry, that came out wrong. Arabic asks the listener not to charge it to your account, which is a request rather than an admission, and it is milder for it.",
+      "sound": "lā tu-ʾĀ-khi-dh-nī: the ʾ is the catch in the throat, not the ʿ. Four syllables, and the stress sits on the long ā.",
+      "variations": [
+        {
+          "display": "lā tuʾākhidhnī yā akhī, kuntu amzaḥ",
+          "script": "لا تؤاخذني يا أخي، كنت أمزح",
+          "cue": "Don't hold it against me, my friend — I was joking.",
+          "changed": "the address is added inside the retraction"
+        },
+        {
+          "display": "lā tuʾākhidhnī, kāna hādhā mazaḥ faqaṭ",
+          "script": "لا تؤاخذني، كان هذا مزاح فقط",
+          "cue": "Don't hold it against me — that was only a joke.",
+          "changed": "the noun mazaḥ instead of the verb, which puts the joke at a distance"
+        }
+      ],
+      "mistake": {
+        "display": "lā tuʾākhidhnī",
+        "script": "لا تؤاخذني",
+        "why": "On its own it asks for forgiveness without saying what for, and the listener has to guess. The formula is only half a move: the retraction that follows it is the other half."
+      },
+      "usage": "After a tease has visibly missed — the pause before anyone speaks.",
+      "register": "informal",
+      "mnemonic": "Ask for the charge to be dropped, then say what it was."
+    },
+    {
+      "id": "L5-M2-S06",
+      "display": "hādhihi an-nukta muḍḥika jiddan",
+      "script": "هذه النكتة مضحكة جدًا",
+      "cue": "This joke is very funny.",
+      "literal": "This the-joke funny very",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "an-nukta",
+            "script": "النكتة",
+            "cue": "the joke",
+            "tag": "free",
+            "forms": [
+              "an-nukta",
+              "nukta"
+            ],
+            "note": "A joke as an item — one you tell, not the act of joking. n is a sun letter, so the article assimilates: an-nukta."
+          },
+          {
+            "display": "muḍḥik",
+            "script": "مضحك",
+            "cue": "funny, laugh-making",
+            "tag": "free",
+            "forms": [
+              "muḍḥik",
+              "muḍḥika"
+            ],
+            "note": "Funny in the sense of producing a laugh, so it describes the joke. ẓarīf describes the person instead."
+          }
+        ],
+        "rules": [
+          7,
+          2
+        ]
+      },
+      "trap": "muḍḥik and ẓarīf both come out as funny in English and they are not interchangeable: one is a verdict on the joke, the other on the company. Calling a person muḍḥik can land as calling them ridiculous.",
+      "sound": "an-NUK-ta MUḌ-ḥi-ka: the ḍ is the heavy d, and the ḥ behind it is the breathy throat h — two hard sounds in one word.",
+      "variations": [
+        {
+          "display": "hādhihi an-nukta laysat muḍḥika",
+          "script": "هذه النكتة ليست مضحكة",
+          "cue": "This joke is not funny.",
+          "changed": "L2-M7's laysat negates the nominal sentence"
+        },
+        {
+          "display": "hādhā muḍḥik jiddan",
+          "script": "هذا مضحك جدًا",
+          "cue": "That's very funny.",
+          "changed": "the joke is not named, only judged"
+        }
+      ],
+      "mistake": {
+        "display": "hādhihi an-nukta ẓarīfa jiddan",
+        "script": "هذه النكتة ظريفة جدًا",
+        "why": "ẓarīf is about a person's company. Applied to a joke it says something closer to charming, which is not the compliment a teller is waiting for."
+      },
+      "usage": "Answering a joke somebody has just told you.",
+      "register": "informal",
+      "mnemonic": "muḍḥik the joke, ẓarīf the person."
+    },
+    {
+      "id": "L5-M2-S07",
+      "display": "ḍaḥika ṣadīqī wa lam yaḍḥak al-mudīr",
+      "script": "ضحك صديقي ولم يضحك المدير",
+      "cue": "My friend laughed and the manager did not.",
+      "literal": "Laughed my-friend and not he-laughs the-manager",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḍaḥika",
+            "script": "ضحك",
+            "cue": "he laughed",
+            "tag": "free",
+            "forms": [
+              "ḍaḥika",
+              "yaḍḥak",
+              "aḍḥak"
+            ],
+            "note": "To laugh. The past is ḍaḥika, the present yaḍḥak, and L3-M4's lam puts the present shape into the past negative: lam yaḍḥak."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "The sentence is the module's warning in miniature. A joke that works on one listener and not on another is not a language failure — it is a reading of who is in the room, and that reading is what marking is for.",
+      "sound": "ḌA-ḥi-ka: the ḍ is the heavy d and the ḥ the breathy throat h. lam ya-ḌḤAK keeps both, back to back.",
+      "variations": [
+        {
+          "display": "ḍaḥika al-mudīr ayḍan",
+          "script": "ضحك المدير أيضًا",
+          "cue": "The manager laughed too.",
+          "changed": "the outcome, and ayḍan adds him to the laughter"
+        },
+        {
+          "display": "ḍaḥika abī wa lam yaḍḥak ṣadīqī",
+          "script": "ضحك أبي ولم يضحك صديقي",
+          "cue": "My father laughed and my friend did not.",
+          "changed": "who laughed and who did not"
+        }
+      ],
+      "mistake": {
+        "display": "ḍaḥika ṣadīqī wa mā ḍaḥika al-mudīr",
+        "script": "ضحك صديقي وما ضحك المدير",
+        "why": "mā in front of a past verb is L5-M1's fossil, alive inside a proverb and not in ordinary speech. The everyday past negative is lam plus the present shape."
+      },
+      "usage": "Reporting how a joke went — usually as a warning to whoever is about to try another.",
+      "register": "neutral",
+      "mnemonic": "Read the room before the punchline."
+    },
+    {
+      "id": "L5-M2-S08",
+      "display": "lā tamzaḥ maʿa al-mudīr, huwa thaqīl ad-damm",
+      "script": "لا تمزح مع المدير، هو ثقيل الدم",
+      "cue": "Don't joke with the manager — he has no sense of humour.",
+      "literal": "Not you-joke with the-manager, he heavy the-blood",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "thaqīl ad-damm",
+            "script": "ثقيل الدم",
+            "cue": "humourless, heavy going",
+            "tag": "free",
+            "forms": [
+              "thaqīl ad-damm"
+            ],
+            "note": "Heavy of blood — the exact opposite of L5-M1's khafīf ad-damm, and the same stored iḍāfa. Said about someone, never to them."
+          }
+        ],
+        "rules": [
+          6,
+          2
+        ]
+      },
+      "trap": "English calls the same person a bad sport or humourless, and both are mild. thaqīl ad-damm is harsher than it looks in translation: it is a judgement on somebody's whole company, which is why it is said behind their back.",
+      "sound": "tha-QĪL ad-DAMM: th is the soft th of think, and the article assimilates to the sun letter d so the m is doubled and held.",
+      "variations": [
+        {
+          "display": "lā tamzaḥ maʿa ar-rajul, huwa thaqīl ad-damm",
+          "script": "لا تمزح مع الرجل، هو ثقيل الدم",
+          "cue": "Don't joke with the man — he has no sense of humour.",
+          "changed": "who is being warned about"
+        },
+        {
+          "display": "al-mudīr thaqīl ad-damm",
+          "script": "المدير ثقيل الدم",
+          "cue": "The manager has no sense of humour.",
+          "changed": "the warning is dropped and only the verdict is left"
+        }
+      ],
+      "mistake": {
+        "display": "yā mudīr, anta thaqīl ad-damm",
+        "script": "يا مدير، أنت ثقيل الدم",
+        "why": "Marking it with yā does not make it a tease. This is one of the things the module says not to do: the vocative softens a joke about a role, it does not license a verdict on the person hearing it."
+      },
+      "usage": "Warning a colleague before they try a joke on somebody who will not take it.",
+      "register": "informal",
+      "mnemonic": "Light blood jokes; heavy blood does not."
+    },
+    {
+      "id": "L5-M2-S09",
+      "display": "ʿalā fikra, anā lā amzaḥ al-ān",
+      "script": "على فكرة، أنا لا أمزح الآن",
+      "cue": "By the way, I am not joking now.",
+      "literal": "On an-idea, I not I-joke now",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿalā fikra",
+            "script": "على فكرة",
+            "cue": "by the way",
+            "tag": "free",
+            "forms": [
+              "ʿalā fikra"
+            ],
+            "note": "The conversational aside, stored as one phrase. The bare noun fikra is L3-M3's idea and keeps its own meaning; only the two words together mean by the way."
+          }
+        ],
+        "rules": [
+          7,
+          3
+        ]
+      },
+      "trap": "By the way in English often introduces something trivial. ʿalā fikra just as often introduces the serious thing somebody has been circling, and here it is doing exactly that: taking the marking off on purpose.",
+      "sound": "ʿa-LĀ FIK-ra: the ʿ is the tight throat sound at the very start, and fikra is two clean syllables with no long vowel.",
+      "variations": [
+        {
+          "display": "ʿalā fikra, kuntu amzaḥ faqaṭ",
+          "script": "على فكرة، كنت أمزح فقط",
+          "cue": "By the way, I was only joking.",
+          "changed": "the aside carries the retraction instead"
+        },
+        {
+          "display": "ʿalā fikra, hādhihi laysat nukta",
+          "script": "على فكرة، هذه ليست نكتة",
+          "cue": "By the way, this is not a joke.",
+          "changed": "the same move said about the utterance rather than about you"
+        }
+      ],
+      "mistake": {
+        "display": "ʿalā al-fikra, anā lā amzaḥ",
+        "script": "على الفكرة، أنا لا أمزح",
+        "why": "The article breaks the phrase. With al- on it you have said on the idea, which is L3-M3's noun doing its ordinary job; the aside exists only in the bare two-word form."
+      },
+      "usage": "Turning banter off deliberately, so that what comes next is heard straight.",
+      "register": "informal",
+      "mnemonic": "Two words together, or nothing."
+    },
+    {
+      "id": "L5-M2-S10",
+      "display": "as-sukhriya laysat mazaḥ, yā akhī",
+      "script": "السخرية ليست مزاح، يا أخي",
+      "cue": "Sarcasm is not joking, my friend.",
+      "literal": "The-sarcasm not-she joking, O my-brother",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "as-sukhriya",
+            "script": "السخرية",
+            "cue": "sarcasm, mockery",
+            "tag": "free",
+            "forms": [
+              "as-sukhriya",
+              "sukhriya"
+            ],
+            "note": "Mockery at somebody's expense. It is named here to be ruled out: banter says out loud that it is a joke, and this does not."
+          }
+        ],
+        "rules": [
+          7,
+          6
+        ]
+      },
+      "trap": "English treats sarcasm as one of the ordinary registers of friendship. Here it is a separate and colder thing, and a foreigner reaching for it lands in it by accident whenever the marking is missing.",
+      "sound": "as-SUKH-ri-ya: the article assimilates to the sun letter s, and the kh is the throat-clearing sound in the middle.",
+      "variations": [
+        {
+          "display": "as-sukhriya laysat mazaḥ",
+          "script": "السخرية ليست مزاح",
+          "cue": "Sarcasm is not joking.",
+          "changed": "the address is dropped and the line becomes a flat statement"
+        },
+        {
+          "display": "hādhihi sukhriya wa laysat nukta",
+          "script": "هذه سخرية وليست نكتة",
+          "cue": "That is mockery, not a joke.",
+          "changed": "the judgement is made about one particular remark"
+        }
+      ],
+      "mistake": {
+        "display": "as-sukhriya mazaḥ jiddan",
+        "script": "السخرية مزاح جدًا",
+        "why": "It is not a matter of degree. Banter and sarcasm differ by whether the joke is marked at all, not by how strong it is, and calling one a lot of the other misses the distinction the module is built on."
+      },
+      "usage": "Drawing the line out loud — usually to somebody who has just crossed it.",
+      "register": "neutral",
+      "mnemonic": "Marked is banter; unmarked is not."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M2-C01",
+      "display": "yā akhī, anta ẓarīf jiddan",
+      "script": "يا أخي، أنت ظريف جدًا",
+      "cue": "My friend, you are very funny."
+    },
+    {
+      "id": "L5-M2-C02",
+      "display": "kuntu amzaḥ faqaṭ, yā ʿammī",
+      "script": "كنت أمزح فقط، يا عمي",
+      "cue": "I was only joking, uncle."
+    },
+    {
+      "id": "L5-M2-C03",
+      "display": "hal anta jādd yā akhī?",
+      "script": "هل أنت جاد يا أخي؟",
+      "cue": "Are you serious, my friend?"
+    },
+    {
+      "id": "L5-M2-C04",
+      "display": "yā akhī, anta ka-al-ustādh: tatakallam kathīran",
+      "script": "يا أخي، أنت كالأستاذ: تتكلم كثيرًا",
+      "cue": "My friend, you are like a professor: you talk a lot."
+    },
+    {
+      "id": "L5-M2-C05",
+      "display": "lā tuʾākhidhnī, kuntu amzaḥ faqaṭ",
+      "script": "لا تؤاخذني، كنت أمزح فقط",
+      "cue": "Don't hold it against me — I was only joking."
+    },
+    {
+      "id": "L5-M2-C06",
+      "display": "hādhihi an-nukta muḍḥika jiddan",
+      "script": "هذه النكتة مضحكة جدًا",
+      "cue": "This joke is very funny."
+    },
+    {
+      "id": "L5-M2-C07",
+      "display": "ḍaḥika ṣadīqī wa lam yaḍḥak al-mudīr",
+      "script": "ضحك صديقي ولم يضحك المدير",
+      "cue": "My friend laughed and the manager did not."
+    },
+    {
+      "id": "L5-M2-C08",
+      "display": "lā tamzaḥ maʿa al-mudīr, huwa thaqīl ad-damm",
+      "script": "لا تمزح مع المدير، هو ثقيل الدم",
+      "cue": "Don't joke with the manager — he has no sense of humour."
+    },
+    {
+      "id": "L5-M2-C09",
+      "display": "ʿalā fikra, anā lā amzaḥ al-ān",
+      "script": "على فكرة، أنا لا أمزح الآن",
+      "cue": "By the way, I am not joking now."
+    },
+    {
+      "id": "L5-M2-C10",
+      "display": "as-sukhriya laysat mazaḥ, yā akhī",
+      "script": "السخرية ليست مزاح، يا أخي",
+      "cue": "Sarcasm is not joking, my friend."
+    },
+    {
+      "id": "L5-M2-C11",
+      "display": "kuntu amzaḥ faqaṭ, yā akhī",
+      "script": "كنت أمزح فقط، يا أخي",
+      "cue": "I was only joking, my friend."
+    },
+    {
+      "id": "L5-M2-C12",
+      "display": "hādhihi an-nukta laysat muḍḥika",
+      "script": "هذه النكتة ليست مضحكة",
+      "cue": "This joke is not funny."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

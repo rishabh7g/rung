@@ -1,0 +1,670 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M10",
+  "title": "Your own voice",
+  "job": "An eight-sentence piece that changes register midway",
+  "prerequisites": [
+    "L5-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "presente, L1-M6's - the whole module, because a register switch is a present-tense act",
+      "third-person polite verbs, L2-M1's and L4-M7's: prende, sta, permetta",
+      "tu imperatives, L4-M1's, with L5-M8's attached pronouns: dimmi, dammi",
+      "condizionale presente, L3-M4's vorrei, for the one formal request that needs it"
+    ],
+    "allowedPatterns": [
+      "<apertura formale> + . + <tre frasi formali> + .",
+      "Diamoci del tu + . + <quattro frasi informali> + .",
+      "<clause formale> + , + ma + <clause informale>",
+      "Senti + , + <chiusura informale>",
+      "<formula L5-M4> + → + <particella L5-M2>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ITALIAN MARKS REGISTER ON THE VERB'S PERSON, AND FOUR THINGS CARRY THE SWITCH. One: the person of the verb - come sta against come stai - which is visible in every single sentence. Two: the greeting and the closing. Three: the formulas of L5-M4 against the particles of L5-M2. Four: the length of the sentence itself. Change all four together and the switch is legible; change one and it is not."
+    },
+    {
+      "tag": "interference",
+      "text": "AN ENGLISH SPEAKER MARKS REGISTER WITH VOCABULARY AND CONTRACTIONS, SO THEY EXPECT A WORD-LEVEL JOB. In Italian it is grammatical: the verb declares the address in every clause, whether you meant it to or not. A learner who swaps formal words for warm ones and leaves the verbs alone has not switched register - they have written a formal piece with friendly nouns in it."
+    },
+    {
+      "tag": "interference",
+      "text": "THE MOVE TO TU IS OFFERED AND ACCEPTED, NOT TAKEN. An English speaker warms up unilaterally - first names, contractions, no announcement. In Italian somebody says diamoci del tu or dammi del tu and the other agrees, and a piece that simply starts using tu halfway through reads as presumption rather than as warmth. The offer is the hinge of every piece in this module."
+    },
+    {
+      "tag": "free",
+      "text": "THE OPENINGS AND CLOSINGS ARE PAIRS, AND THEY MUST MATCH THE VERBS BETWEEN THEM. buongiorno and buonasera open at any distance; salve opens at a middle distance nothing else covers. cordiali saluti and distinti saluti close a formal note. un abbraccio, un saluto and a presto close a familiar one. A formal opening over tu verbs, or ciao over a third-person verb, is the commonest visible failure here."
+    },
+    {
+      "tag": "interference",
+      "text": "A FORMAL ITALIAN SENTENCE IS LONGER, NOT MERELY POLITER. English written and spoken registers sit further apart than Italian's two spoken ones, so an English speaker under-uses length as a marker. Resto a disposizione per il lavoro is formal partly because it is six words; ciao is informal partly because it is one."
+    },
+    {
+      "tag": "free",
+      "text": "THIS MODULE TEACHES NO NEW GRAMMAR AND IT IS NOT SUPPOSED TO. Every tense, mood, pronoun and formula a register switch needs was bought below: the tu imperatives of L4-M1, the third-person polite verbs of L2-M1 and L4-M7, the formulas of L5-M4, the particles of L5-M2, the repairs of L5-M8, senti from L5-M7, comunque and insomma from L4-M4. The fourteen words here are greetings and sign-offs, and the exit test of the whole course is whether the other forty-nine modules hold."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M10-S01",
+      "display": "Buongiorno. La ringrazio per il messaggio. Vorrei parlare del lavoro. Le dispiace? Diamoci del tu. Senti, ho un problema. Ne parlo domani. A presto.",
+      "cue": "Good morning. Thank you for the message. I would like to talk about the work. Do you mind? Let us use tu. Listen, I have a problem. I will talk about it tomorrow. See you soon.",
+      "literal": "Good-day. The I-thank for the message. I would-like to talk of-the work. To-you displeases? Let-us-give of-the tu. Listen, I have a problem. Of-it I talk tomorrow. To soon.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ringrazio",
+            "cue": "I thank you",
+            "tag": "free",
+            "forms": [
+              "ringrazio",
+              "la ringrazio",
+              "ti ringrazio"
+            ],
+            "note": "The verb behind L2-M1's grazie. la ringrazio is the polite one and ti ringrazio the familiar one, and the pronoun in front is the whole difference."
+          },
+          {
+            "display": "a presto",
+            "cue": "see you soon",
+            "tag": "free",
+            "forms": [
+              "a presto"
+            ],
+            "note": "A closing that works at both distances, which is why it is useful in a piece that has just changed register. It commits to nothing more than the next contact."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "The switch happens at Diamoci del tu and nowhere else. Everything before it is third person, everything after it is tu, and the sentence in between is what buys the right.",
+      "sound": "la rin-GRA-zio. a PRES-to.",
+      "variations": [
+        {
+          "display": "La ringrazio per il messaggio",
+          "cue": "Thank you for the message",
+          "changed": "the polite half alone"
+        },
+        {
+          "display": "Ti ringrazio per il messaggio",
+          "cue": "Thanks for the message",
+          "changed": "the same thanks after the switch"
+        },
+        {
+          "display": "A presto",
+          "cue": "See you soon",
+          "changed": "the closing on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Buongiorno. Ti ringrazio per il messaggio. Vorrei parlare del lavoro. Diamoci del tu.",
+        "why": "The tu arrives before it is offered. ti ringrazio in sentence two makes Diamoci del tu three sentences later meaningless, because the switch has already happened without permission."
+      },
+      "usage": "A message to a colleague you have not met, that ends as one to somebody you have.",
+      "register": "formal",
+      "mnemonic": "the offer comes before the tu, never after."
+    },
+    {
+      "id": "L5-M10-S02",
+      "display": "Buonasera. Mi permetta una parola. Il treno è in ritardo. Come sta? Adesso diamoci del tu. Come stai? Tutto bene? Ci vediamo domani.",
+      "cue": "Good evening. Allow me a word. The train is late. How are you? Now let us use tu. How are you? All well? See you tomorrow.",
+      "literal": "Good-evening. To-me allow a word. The train is in delay. How are-you? Now let-us-give of-the tu. How are-you? All well? Us we-see tomorrow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "buonasera",
+            "cue": "good evening",
+            "tag": "free",
+            "forms": [
+              "buonasera"
+            ],
+            "note": "One word, from about four in the afternoon. It opens at any distance, exactly as buongiorno does, and neither of them commits you to a register."
+          },
+          {
+            "display": "mi permetta",
+            "cue": "allow me, if I may",
+            "tag": "free",
+            "forms": [
+              "mi permetta"
+            ],
+            "note": "A third-person polite imperative, learned whole. It asks for the floor without asking a question, and it is the most formal thing in this module."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "Come sta and Come stai are the same question in two registers. Read on their own they look interchangeable; inside a piece they are the switch itself, and nothing else in these two sentences moves.",
+      "sound": "buo-na-SE-ra, four syllables. mi per-MET-ta, double t held.",
+      "variations": [
+        {
+          "display": "Mi permetta una parola",
+          "cue": "Allow me a word",
+          "changed": "the formal opening alone"
+        },
+        {
+          "display": "Come sta?",
+          "cue": "How are you?",
+          "changed": "the polite question"
+        },
+        {
+          "display": "Come stai?",
+          "cue": "How are you?",
+          "changed": "the same question, after the switch"
+        }
+      ],
+      "mistake": {
+        "display": "Buonasera. Mi permetta una parola. Come stai?",
+        "why": "mi permetta is third-person polite and come stai is tu. Two sentences apart with no offer between them, they contradict each other, and the Italian ear hears it immediately."
+      },
+      "usage": "Waiting on a platform with somebody you half know, and the wait getting long enough to warm up.",
+      "register": "formal",
+      "mnemonic": "the verb's person is the register; the words around it are decoration."
+    },
+    {
+      "id": "L5-M10-S03",
+      "display": "Salve. Sono un collega di Anna. Dammi del tu. Come va? Tutto bene, grazie. Adesso parlo con il capo. Buongiorno. Grazie mille.",
+      "cue": "Hello. I am a colleague of Anna's. Call me tu. How is it going? All well, thanks. Now I am talking to the boss. Good morning. Thank you very much.",
+      "literal": "Hello. I-am a colleague of Anna. Give-me of-the tu. How goes? All well, thanks. Now I-speak with the boss. Good-day. Thanks thousand.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "salve",
+            "cue": "hello",
+            "tag": "free",
+            "forms": [
+              "salve"
+            ],
+            "note": "The greeting that is neither ciao nor buongiorno. It fits a stranger you are not being formal with, and it is the only word in Italian that sits exactly in the middle."
+          },
+          {
+            "display": "dammi del tu",
+            "cue": "call me tu, let us drop the formality",
+            "tag": "free",
+            "forms": [
+              "dammi del tu"
+            ],
+            "note": "The offer made by ONE person about themselves, where L5-M3's diamoci del tu is made about both. Same hinge, different generosity."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "This piece runs the switch BACKWARDS: it opens informal and closes formal, because the person being addressed changes halfway. The register follows the listener, not the speaker's mood.",
+      "sound": "SAL-ve, two syllables. DAM-mi del TU, the double m welded as in L5-M8's dimmi.",
+      "variations": [
+        {
+          "display": "Salve",
+          "cue": "Hello",
+          "changed": "the middle-distance greeting alone"
+        },
+        {
+          "display": "Dammi del tu",
+          "cue": "Call me tu",
+          "changed": "the offer alone"
+        },
+        {
+          "display": "Diamoci del tu",
+          "cue": "Let us use tu with each other",
+          "changed": "the mutual version, which is L5-M3's"
+        }
+      ],
+      "mistake": {
+        "display": "Ciao. Sono un collega di Anna. Dammi del tu.",
+        "why": "ciao has already taken the tu that the third sentence is offering. The offer only means something after a greeting that did not assume it, which is exactly the job salve does."
+      },
+      "usage": "Arriving somewhere new, introducing yourself, then turning to somebody senior.",
+      "register": "neutral",
+      "mnemonic": "salve sits in the middle so you do not have to choose yet."
+    },
+    {
+      "id": "L5-M10-S04",
+      "display": "Egregio collega, buongiorno. Gentilmente, mi serve una risposta. Il documento è pronto. Grazie per il tempo. Cordiali saluti. Poi ci sentiamo. Ciao! A domani.",
+      "cue": "Dear colleague, good morning. Kindly, I need an answer. The document is ready. Thank you for your time. Best regards. We will speak later. Bye! See you tomorrow.",
+      "literal": "Distinguished colleague, good-day. Kindly, to-me serves an answer. The document is ready. Thanks for the time. Cordial greetings. Then us we-hear. Bye! To tomorrow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gentilmente",
+            "cue": "kindly, please",
+            "tag": "free",
+            "forms": [
+              "gentilmente"
+            ],
+            "note": "The formal please. Built on L2-M2's gentile, and it belongs in writing: said out loud to a friend it sounds like a complaint."
+          },
+          {
+            "display": "cordiali saluti",
+            "cue": "best regards, yours sincerely",
+            "tag": "free",
+            "forms": [
+              "cordiali saluti",
+              "distinti saluti"
+            ],
+            "note": "The standard written close. distinti saluti is a degree colder and more distant; neither of them is ever said out loud."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "Cordiali saluti closes the formal half and everything after it is a different piece of writing. The two registers are not blended here - they are stacked, and the sign-off is the seam.",
+      "sound": "gen-til-MEN-te, five syllables. cor-DIA-li sa-LU-ti.",
+      "variations": [
+        {
+          "display": "Gentilmente, mi serve una risposta",
+          "cue": "Kindly, I need an answer",
+          "changed": "the formal request alone"
+        },
+        {
+          "display": "Cordiali saluti",
+          "cue": "Best regards",
+          "changed": "the close on its own"
+        },
+        {
+          "display": "Distinti saluti",
+          "cue": "Yours faithfully",
+          "changed": "the colder close"
+        }
+      ],
+      "mistake": {
+        "display": "Egregio collega, buongiorno. Gentilmente, mi serve una risposta. Un abbraccio.",
+        "why": "un abbraccio over Egregio is a register collision. A formal opening wants cordiali saluti; the embrace belongs to a piece that never used Egregio at all."
+      },
+      "usage": "A short work email that ends with a line to the same person as a friend.",
+      "register": "formal",
+      "mnemonic": "the sign-off has to agree with the opening, like an adjective."
+    },
+    {
+      "id": "L5-M10-S05",
+      "display": "Ciao! Come stai? Tutto bene qui. Il lavoro va avanti. Ci vediamo sabato? Dimmi tutto. Un abbraccio. A presto.",
+      "cue": "Hi! How are you? All well here. Work is going along. Shall we meet on Saturday? Tell me everything. A hug. See you soon.",
+      "literal": "Hi! How are-you? All well here. The work goes ahead. Us we-see Saturday? Tell-me all. An embrace. To soon.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "un abbraccio",
+            "cue": "a hug - as a sign-off",
+            "tag": "free",
+            "forms": [
+              "un abbraccio"
+            ],
+            "note": "How a message to a friend ends in writing. It is not a description of anything and nobody hugs; it is simply the warmest ordinary close Italian has."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "This piece never switches, and that is what it is for: eight sentences that stay informal, so the switch in the others is visible against something.",
+      "sound": "un ab-BRAC-cio, the double c held and the cio as CHO.",
+      "variations": [
+        {
+          "display": "Un abbraccio",
+          "cue": "A hug",
+          "changed": "the sign-off alone"
+        },
+        {
+          "display": "Ci vediamo sabato?",
+          "cue": "Shall we meet on Saturday?",
+          "changed": "the plan alone"
+        },
+        {
+          "display": "Dimmi tutto",
+          "cue": "Tell me everything",
+          "changed": "L5-M8's imperative doing register work"
+        }
+      ],
+      "mistake": {
+        "display": "Ciao! Come sta? Tutto bene qui.",
+        "why": "come sta is the polite third person and ciao is not. One sentence in, the piece is already addressing two different people."
+      },
+      "usage": "A message to somebody you actually know, start to finish.",
+      "register": "informal",
+      "mnemonic": "short sentences ARE the register."
+    },
+    {
+      "id": "L5-M10-S06",
+      "display": "Buongiorno. Prende un caffè? Volentieri, grazie. Adesso diamoci del tu. Senti, ti va un caffè? Volentieri! Ci vediamo al bar. A dopo.",
+      "cue": "Good morning. Will you have a coffee? Gladly, thank you. Now let us use tu. Listen, do you fancy a coffee? Love to! See you at the bar. See you later.",
+      "literal": "Good-day. Takes a coffee? Gladly, thanks. Now let-us-give of-the tu. Listen, to-you goes a coffee? Gladly! Us we-see at-the bar. To later.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "volentieri",
+            "cue": "gladly, I would love to",
+            "tag": "free",
+            "forms": [
+              "volentieri"
+            ],
+            "note": "The one-word yes to an offer. It works at both distances unchanged, which makes it the safest acceptance in the language."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The same offer twice, once in each register: Prende un caffè? and Ti va un caffè?. Only the verb moved, and volentieri answers both without changing at all.",
+      "sound": "vo-len-TIE-ri, four syllables, stress on TIE.",
+      "variations": [
+        {
+          "display": "Volentieri, grazie",
+          "cue": "Gladly, thank you",
+          "changed": "the polite acceptance"
+        },
+        {
+          "display": "Senti, ti va un caffè?",
+          "cue": "Listen, do you fancy a coffee?",
+          "changed": "the informal offer"
+        },
+        {
+          "display": "Ci vediamo al bar",
+          "cue": "See you at the bar",
+          "changed": "the plan that closes it"
+        }
+      ],
+      "mistake": {
+        "display": "Buongiorno. Prende un caffè? Senti, ti va un caffè?",
+        "why": "Nothing offered the tu. Prende is third-person polite and senti is tu, and without diamoci del tu between them the second offer is a stranger being over-familiar."
+      },
+      "usage": "A coffee invitation that turns two colleagues into two people who have coffee.",
+      "register": "neutral",
+      "mnemonic": "volentieri never has to choose a register."
+    },
+    {
+      "id": "L5-M10-S07",
+      "display": "Buonasera. Il documento arriva domani, senz'altro. Grazie per il messaggio. Adesso diamoci del tu. Ciao, come stai? Tutto bene, grazie. Ci sentiamo dopo. Un saluto.",
+      "cue": "Good evening. The document will arrive tomorrow, without fail. Thank you for the message. Now let us use tu. Hi, how are you? All well, thanks. We will speak later. Regards.",
+      "literal": "Good-evening. The document arrives tomorrow, without other. Thanks for the message. Now let-us-give of-the tu. Hi, how are-you? All well, thanks. Us we-hear later. A greeting.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "senz'altro",
+            "cue": "certainly, without fail",
+            "tag": "free",
+            "forms": [
+              "senz'altro"
+            ],
+            "note": "A promise, not an opinion. The elision is part of the token - senz'altro is one word and does not resolve through altro - and it is a shade more formal than certo."
+          },
+          {
+            "display": "un saluto",
+            "cue": "regards, best wishes",
+            "tag": "free",
+            "forms": [
+              "un saluto",
+              "saluti"
+            ],
+            "note": "The middle-distance sign-off, as salve is the middle-distance greeting. Warmer than cordiali saluti and cooler than un abbraccio."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "un saluto closes a piece that started formal and ended familiar, which is exactly what it is for. Neither cordiali saluti nor un abbraccio would fit what this piece became.",
+      "sound": "sen-ZAL-tro, one word with the stress on ZAL. un sa-LU-to.",
+      "variations": [
+        {
+          "display": "Il documento arriva domani, senz'altro",
+          "cue": "The document will arrive tomorrow, without fail",
+          "changed": "the promise alone"
+        },
+        {
+          "display": "Un saluto",
+          "cue": "Regards",
+          "changed": "the middle-distance close"
+        },
+        {
+          "display": "Ci sentiamo dopo",
+          "cue": "We will speak later",
+          "changed": "the plan that precedes it"
+        }
+      ],
+      "mistake": {
+        "display": "Buonasera. Il documento arriva domani, senz'altro. Cordiali saluti. Ciao, come stai?",
+        "why": "The formal close lands before the informal half starts, so the piece signs off and then keeps talking. The sign-off has to be the last thing, and it has to match what came before it."
+      },
+      "usage": "A work message that finishes the business and then asks after the person.",
+      "register": "neutral",
+      "mnemonic": "the sign-off reports where the piece ENDED, not where it began."
+    },
+    {
+      "id": "L5-M10-S08",
+      "display": "Buongiorno. Resto a disposizione per il lavoro. Il documento è pronto. Grazie mille. Distinti saluti. Senti, poi ci vediamo? Dimmi quando. Ciao!",
+      "cue": "Good morning. I remain available for the work. The document is ready. Thank you very much. Yours faithfully. Listen, shall we meet later? Tell me when. Bye!",
+      "literal": "Good-day. I-remain at disposition for the work. The document is ready. Thanks thousand. Distinguished greetings. Listen, then us we-see? Tell-me when. Bye!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a disposizione",
+            "cue": "available, at your disposal",
+            "tag": "free",
+            "forms": [
+              "a disposizione"
+            ],
+            "note": "Half of the fixed formula resto a disposizione, which closes a formal message by offering more. It is written far more often than it is said."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "Distinti saluti is the coldest close in the module and Ciao is the warmest, four sentences apart. The piece works because the switch is announced by Senti, which is L5-M7's.",
+      "sound": "a dis-po-si-ZIO-ne, six syllables, and the stress on ZIO.",
+      "variations": [
+        {
+          "display": "Resto a disposizione per il lavoro",
+          "cue": "I remain available for the work",
+          "changed": "the formal offer alone"
+        },
+        {
+          "display": "Senti, poi ci vediamo?",
+          "cue": "Listen, shall we meet later?",
+          "changed": "the informal half alone"
+        },
+        {
+          "display": "Dimmi quando",
+          "cue": "Tell me when",
+          "changed": "the tu imperative that only the second half allows"
+        }
+      ],
+      "mistake": {
+        "display": "Buongiorno. Resto a disposizione per il lavoro. Dimmi quando.",
+        "why": "dimmi is a tu imperative under a formal opening with nothing between them. The switch needs a marker - senti, or an offer of the tu - or the sentence simply contradicts the one above it."
+      },
+      "usage": "The formal note you have to write, with the real message added at the bottom.",
+      "register": "formal",
+      "mnemonic": "a disposizione offers more without promising anything."
+    },
+    {
+      "id": "L5-M10-S09",
+      "display": "Buongiorno. Spero di non disturbare. Ho un problema con il lavoro. Grazie per il tempo. Adesso diamoci del tu. Senti, speriamo bene. Ci vediamo domani. A presto.",
+      "cue": "Good morning. I hope I am not interrupting. I have a problem with the work. Thank you for your time. Now let us use tu. Listen, let us hope for the best. See you tomorrow. See you soon.",
+      "literal": "Good-day. I-hope of not to-disturb. I-have a problem with the work. Thanks for the time. Now let-us-give of-the tu. Listen, we-hope well. Us we-see tomorrow. To soon.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spero",
+            "cue": "I hope",
+            "tag": "free",
+            "forms": [
+              "spero",
+              "speriamo"
+            ],
+            "note": "Spero di non disturbare is the formal apology for arriving; speriamo bene is the informal shrug at whatever comes next. Same verb, two registers, and only the sentence around it moves."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "One verb appears in both halves of this piece, and it is the proof of rule 1: the WORD did not change register, the sentence did.",
+      "sound": "SPE-ro. spe-RIA-mo, three syllables with the stress on RIA.",
+      "variations": [
+        {
+          "display": "Spero di non disturbare",
+          "cue": "I hope I am not interrupting",
+          "changed": "the formal half"
+        },
+        {
+          "display": "Speriamo bene",
+          "cue": "Let us hope for the best",
+          "changed": "the informal half, same verb"
+        },
+        {
+          "display": "Ho un problema con il lavoro",
+          "cue": "I have a problem with the work",
+          "changed": "the business itself, which is register-neutral"
+        }
+      ],
+      "mistake": {
+        "display": "Buongiorno. Speriamo bene. Ho un problema con il lavoro.",
+        "why": "speriamo bene is a shrug between friends. Over buongiorno and a problem you are about to raise formally, it reads as not caring about the answer."
+      },
+      "usage": "Bringing a problem to somebody senior, and leaving on easier terms than you arrived.",
+      "register": "neutral",
+      "mnemonic": "the same word, two registers: the sentence decides."
+    },
+    {
+      "id": "L5-M10-S10",
+      "display": "Buongiorno. Mi permetta un momento. Il problema è il tempo. Grazie mille. Adesso diamoci del tu. Ciao, tutto bene? Dimmi quando ci vediamo. A dopo.",
+      "cue": "Good morning. Allow me a moment. The problem is time. Thank you very much. Now let us use tu. Hi, all well? Tell me when we are meeting. See you later.",
+      "literal": "Good-day. To-me allow a moment. The problem is the time. Thanks thousand. Now let-us-give of-the tu. Hi, all well? Tell-me when us we-see. To later.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a dopo",
+            "cue": "see you later",
+            "tag": "free",
+            "forms": [
+              "a dopo"
+            ],
+            "note": "The shortest close in the module, and the last word of the course. Two syllables against the three of mi permetta, which is rule 4 in miniature."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "Count the words on each side of the switch: three sentences of four or five words, then three of two or three. The length is doing as much of the marking as the verbs are.",
+      "sound": "mi per-MET-ta, the double t held. a DO-po, two light syllables.",
+      "variations": [
+        {
+          "display": "Mi permetta un momento",
+          "cue": "Allow me a moment",
+          "changed": "the formal request"
+        },
+        {
+          "display": "Dimmi quando ci vediamo",
+          "cue": "Tell me when we are meeting",
+          "changed": "the same request after the switch"
+        },
+        {
+          "display": "A dopo",
+          "cue": "See you later",
+          "changed": "the shortest close the course has"
+        }
+      ],
+      "mistake": {
+        "display": "Buongiorno. Mi permetta un momento. Dimmi quando ci vediamo. A dopo.",
+        "why": "The switch was never offered. Without Diamoci del tu the piece jumps from the most formal opening in the course to a tu imperative, which is the failure this whole module is a test for."
+      },
+      "usage": "The last piece of the course: open at the greatest distance the ladder can reach, and close at the smallest.",
+      "register": "neutral",
+      "mnemonic": "open long and formal, close short and warm - and say so in between."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M10-C01",
+      "display": "La ringrazio per il messaggio",
+      "cue": "Thank you for the message"
+    },
+    {
+      "id": "L5-M10-C02",
+      "display": "Ti ringrazio per il messaggio",
+      "cue": "Thanks for the message"
+    },
+    {
+      "id": "L5-M10-C03",
+      "display": "Mi permetta un momento",
+      "cue": "Allow me a moment"
+    },
+    {
+      "id": "L5-M10-C04",
+      "display": "Salve. Dammi del tu",
+      "cue": "Hello. Call me tu"
+    },
+    {
+      "id": "L5-M10-C05",
+      "display": "Gentilmente, mi serve una risposta",
+      "cue": "Kindly, I need an answer"
+    },
+    {
+      "id": "L5-M10-C06",
+      "display": "Cordiali saluti",
+      "cue": "Best regards"
+    },
+    {
+      "id": "L5-M10-C07",
+      "display": "Un abbraccio. A presto",
+      "cue": "A hug. See you soon"
+    },
+    {
+      "id": "L5-M10-C08",
+      "display": "Volentieri, grazie",
+      "cue": "Gladly, thank you"
+    },
+    {
+      "id": "L5-M10-C09",
+      "display": "Il documento arriva domani, senz'altro",
+      "cue": "The document will arrive tomorrow, without fail"
+    },
+    {
+      "id": "L5-M10-C10",
+      "display": "Resto a disposizione per il lavoro",
+      "cue": "I remain available for the work"
+    },
+    {
+      "id": "L5-M10-C11",
+      "display": "Spero di non disturbare",
+      "cue": "I hope I am not interrupting"
+    },
+    {
+      "id": "L5-M10-C12",
+      "display": "Buonasera. Come sta? Adesso diamoci del tu. Come stai?",
+      "cue": "Good evening. How are you? Now let us use tu. How are you?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

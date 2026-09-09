@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M10",
+  "title": "Your own voice",
+  "job": "An eight-sentence piece that changes register midway",
+  "prerequisites": ["L5-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present", "Perfekt", "Präteritum"],
+    "allowedPatterns": [
+      "<achtsätziges Stück mit einem Registerwechsel>",
+      "Sehr geehrte Damen und Herren + , + <Klausel>",
+      "Aber + ehrlich gesagt + , + <Klausel>",
+      "Und dann + V-2 + ich + <Rest>",
+      "So + , + und jetzt + <Klausel>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "EVERY ITEM HERE IS A PIECE, NOT A SENTENCE, AND THE PIVOT IS THE GRAMMAR. Each one begins in one register and ends in another, and the sentence where it turns is namable: this is where it turns, and this is the word that turns it. The per-sentence bound applies to each sentence INSIDE the piece, exactly as at L3-M10 and L4-M10. Eight sentences is a ceiling and not a target — a four-sentence piece with a clean pivot beats an eight-sentence one without."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH SHIFTS REGISTER THROUGH VOCABULARY; GERMAN SHIFTS IT THROUGH THE ADDRESS AND THE TENSE. English has no du/Sie and no written-against-spoken past, so an anglophone builds a register change out of adjectives and contractions and leaves Sie and the tense exactly where they were — and the piece does not actually move. In German the levers are: the address (L2-M1, L3-M1), the tense pair (L4-M8 against L2-M10), sentence length and subordination, the particles (L4-M5), and the formulae of L5-M4 against the idioms of L5-M1."
+    },
+    {
+      "tag": "interference",
+      "text": "AN ANGLOPHONE HEARS FORMAL GERMAN AS COLD AND REACHES TO WARM IT — and warming a German formal register with informal markers is precisely what marks a foreigner. Sehr geehrte Damen und Herren followed by a chatty naja in the next line is not friendly; it reads as somebody who does not know which room they are in. If you want the warmth, pivot deliberately and let the reader see you do it. That is what these pieces are."
+    },
+    {
+      "tag": "free",
+      "text": "THERE IS NOTHING STRUCTURALLY NEW IN THIS MODULE AND THERE MUST NOT BE. Every construction in it belongs to a module below: the address, the tenses, the particles, the ceremonial formulae, the idioms, the direct-speech mechanic. What is new is only that a single piece uses BOTH SIDES of one of those pairs and the change is meaningful rather than an error. This is the last rung of the ladder — a word it leaves unpaid is unpaid forever, so it spends twelve and no more."
+    },
+    {
+      "tag": "free",
+      "text": "THE REGISTER CHIP ON EACH ITEM NAMES WHERE THE PIECE LANDS, NOT WHERE IT STARTED. A piece that opens Sehr geehrte Damen und Herren and closes So, und jetzt möchte ich mein Geld zurück is marked informal, because that is the voice the reader is left with — and the whole point of the item is that the two are one piece. Read the WHEN TO USE IT line for where it began."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M10-S01",
+      "display": "Sehr geehrte Damen und Herren, ich habe seit Tagen keine Antwort. Ich habe schon oft gefragt. Ehrlich gesagt, jetzt reicht es mir. So, und jetzt möchte ich mein Geld zurück.",
+      "cue": "Dear Sir or Madam, I have had no answer for days. I have already asked repeatedly. Frankly, I have had enough. Right, and now I would like my money back.",
+      "literal": "Very honoured ladies and gentlemen, I have since days no answer. I have already often asked. Honestly said, now suffices it to-me. So, and now would-like I my money back.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "reicht",
+            "cue": "is enough, will do",
+            "tag": "delta",
+            "forms": ["reicht"],
+            "note": "Es reicht mir is I have had enough — impersonal, and much sharper than it looks. Said to a person's face it ends the conversation."
+          },
+          {
+            "display": "und jetzt",
+            "cue": "and now",
+            "tag": "free",
+            "forms": ["und jetzt"],
+            "note": "The pivot marker of this module, taken as a pair. After So it announces that the polite part is over and the demand is starting."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "An English complaint escalates through adjectives — unacceptable, extremely disappointed — and stays inside the formal register. German escalates by LEAVING it: the formulae stop, the sentences shorten, and es reicht mir arrives. Piling adjectives onto Sehr geehrte Damen und Herren changes nothing at all.",
+      "sound": "zair guh-AIR-tuh DAH-men unt HAIR-en … ETS-likh guh-ZAHKT, yetst RYKHT es meer. zo, unt yetst MUEKH-tuh ikh myn gelt tsoo-RUEK — the pitch drops flat at Ehrlich gesagt and stays down, which is the pivot made audible.",
+      "variations": [
+        {
+          "display": "Ehrlich gesagt, jetzt reicht es mir.",
+          "cue": "Frankly, I have had enough.",
+          "changed": "The pivot sentence on its own. Everything before it in the piece is the formal register, and everything after it is this voice."
+        }
+      ],
+      "mistake": {
+        "display": "Sehr geehrte Damen und Herren, naja, jetzt reicht es mir echt, aber mit freundlichen Grüßen",
+        "why": "The pivot has been smeared across the whole piece instead of happening at one point. A formal opening, a chatty particle, a flat demand and a formal close in four lines reads as somebody who cannot hear the difference."
+      },
+      "usage": "Begins as a third complaint letter to a company and ends as a person who has stopped writing letters. Send it only when you mean the last line.",
+      "register": "informal",
+      "mnemonic": "The formulae stop, the sentences shorten, and es reicht mir is the door closing."
+    },
+    {
+      "id": "L5-M10-S02",
+      "display": "Es tut mir leid für den Ärger. Ich habe den Termin vergessen. Das war mein Fehler. Aber ehrlich gesagt, Sie haben mich nie angerufen. Naja, jetzt ist es zu spät.",
+      "cue": "I am sorry for the trouble. I forgot the appointment. That was my mistake. But frankly, you never called me. Well, it is too late now.",
+      "literal": "It does to-me sorrow for the annoyance. I have the appointment forgotten. That was my mistake. But honestly said, you have me never called. Well, now is it too late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ärger",
+            "cue": "trouble, annoyance",
+            "tag": "free",
+            "forms": ["Ärger"],
+            "note": "Masculine, der Ärger — the annoyance itself, not the person causing it. für den Ärger is the standard apology for having caused inconvenience."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "An English apology that turns into a counter-accusation usually keeps apologising as it goes — I'm sorry, but I do think … German drops the apology entirely at aber and does not pick it up again. Half-apologising after the pivot reads as insincere in both languages, and in German it also reads as confused about register.",
+      "sound": "es toot meer lyt fuer dayn AIR-ger … AH-ber AIR-likh guh-ZAHKT, zee HAH-ben mikh nee AN-guh-roo-fen — the aber takes a real stress, which in a spoken apology is the moment the listener sits up.",
+      "variations": [
+        {
+          "display": "Es tut mir leid für den Ärger.",
+          "cue": "I am sorry for the trouble.",
+          "changed": "The apology alone, with no pivot behind it. This is the whole message when you actually mean it, and it is three words longer than most people think it needs to be."
+        }
+      ],
+      "mistake": {
+        "display": "Es tut mir leid, aber Sie haben mich nie angerufen, es tut mir wirklich leid",
+        "why": "The pivot is undone in the same breath. Once the piece has turned it stays turned; going back to the apology after the accusation makes both of them worthless."
+      },
+      "usage": "Begins as a genuine apology to a colleague and ends as a complaint. Useful, and dangerous — the second half is what the other person will remember.",
+      "register": "informal",
+      "mnemonic": "Everything before aber is the apology; nothing after it is."
+    },
+    {
+      "id": "L5-M10-S03",
+      "display": "Naja, das war doch nur ein Spaß. Sie verstehen mich ja. Aber im Ernst: Das war nicht witzig. Ich finde das wirklich nicht gut. Bitte machen Sie das nicht wieder.",
+      "cue": "Well, it was only a joke. You know what I mean. But seriously: that was not funny. I really do not think it is all right. Please do not do it again.",
+      "literal": "Well, that was after-all only a joke. You understand me indeed. But in earnest: That was not funny. I find that really not good. Please do you that not again.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Spaß",
+            "cue": "fun, a joke",
+            "tag": "free",
+            "forms": ["Spaß"],
+            "note": "Masculine, with an ß after a long a. L5-M1 owns the phrase Spaß machen; the bare noun is what you need for nur ein Spaß."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English lets a joke be withdrawn slowly — I mean, obviously, but seriously though. German marks it at one point, with im Ernst, and the sentences on either side belong to different registers. Trailing the withdrawal across three clauses leaves the listener unsure whether you are still joking, which is exactly the failure state.",
+      "sound": "na-YAH, das vahr dokh noor yn shpahs … AH-ber im ERNST: das vahr nikht VIT-sikh — the colon after im Ernst is a full stop in the voice, and the sentences after it are said slower.",
+      "variations": [
+        {
+          "display": "Aber im Ernst: Das war nicht witzig.",
+          "cue": "But seriously: that was not funny.",
+          "changed": "The pivot alone. im Ernst is L5-M2's, and this module only puts it at the seam of a piece rather than teaching it again."
+        }
+      ],
+      "mistake": {
+        "display": "Naja, das war doch nur ein Spaß, aber im Ernst war das nicht witzig, hahaha",
+        "why": "The pivot has been made and then cancelled. A laugh after im Ernst puts the whole piece back in the joke register, and the complaint is lost."
+      },
+      "usage": "Begins as somebody smoothing over their own joke and ends as somebody who did not find it funny. The pivot belongs to the second speaker, not the first.",
+      "register": "formal",
+      "mnemonic": "im Ernst is a hinge, not a hedge: the door only swings one way."
+    },
+    {
+      "id": "L5-M10-S04",
+      "display": "Sehr geehrte Damen und Herren, ich brauche einen neuen Termin. Der Montag ist leider nicht möglich. Also, mir ist der Tag eigentlich egal. Sagen Sie einfach Bescheid.",
+      "cue": "Dear Sir or Madam, I need a new appointment. Monday is unfortunately not possible. Anyway, the day really does not matter to me. Just let me know.",
+      "literal": "Very honoured ladies and gentlemen, I need a new appointment. The Monday is unfortunately not possible. So, to-me is the day actually all-the-same. Say you simply notice.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "egal",
+            "cue": "all the same, immaterial",
+            "tag": "delta",
+            "forms": ["egal"],
+            "note": "Takes a dative person: mir ist das egal. Neutral about a date and distinctly rude about a person's opinion, so the dative is what keeps it safe."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Das ist egal is not I do not care. With a dative — mir ist das egal — it is a genuine offer of flexibility. Without one it can land as a shrug at the whole subject, which in a booking email is the opposite of what you meant.",
+      "sound": "zair guh-AIR-tuh DAH-men unt HAIR-en … AL-zo, meer ist dair tahk y-GENT-likh ay-GAHL — egal takes its stress on the last syllable, ay-GAHL, and lengthening it is what makes it sound relaxed rather than dismissive.",
+      "variations": [
+        {
+          "display": "Also, mir ist der Tag eigentlich egal.",
+          "cue": "Anyway, the day really does not matter to me.",
+          "changed": "The pivot sentence. Also and eigentlich are both doing register work here — neither carries any information at all."
+        }
+      ],
+      "mistake": {
+        "display": "Sehr geehrte Damen und Herren, der Tag ist egal, sagen Sie Bescheid, mit freundlichen Grüßen",
+        "why": "The dative has gone, so egal now shrugs at the appointment rather than offering flexibility — and the formal frame is still standing around it, which makes the shrug louder."
+      },
+      "usage": "Begins as a formal booking request and ends as a colleague being easy to deal with. This is the most useful pivot in the module and the safest.",
+      "register": "informal",
+      "mnemonic": "egal needs a mir: without the person, the shrug is at the subject."
+    },
+    {
+      "id": "L5-M10-S05",
+      "display": "Sehr geehrte Damen und Herren, wir haben Ihre Frage gelesen. Alles ist wirklich gut. Machen Sie sich bitte keine Sorge. Und ehrlich gesagt: Ich hätte auch gefragt.",
+      "cue": "Dear Sir or Madam, we have read your question. Everything really is fine. Please do not worry. And frankly: I would have asked too.",
+      "literal": "Very honoured ladies and gentlemen, we have your question read. Everything is really good. Make you yourself please no worry. And honestly said: I would-have also asked.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Sorge",
+            "cue": "worry, concern",
+            "tag": "free",
+            "forms": ["Sorge"],
+            "note": "Feminine, die Sorge. Machen Sie sich keine Sorge is the fixed reassurance, and it is one of the few places German prefers the singular to the plural."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "An English reassurance stays official — please rest assured. German reassurance is at its most convincing when it stops being official, which is why the pivot here goes towards the personal rather than away from it. Ich hätte auch gefragt does more work than any formal sentence could.",
+      "sound": "… MAKH-en zee zikh BIT-tuh KY-nuh ZOR-guh. unt AIR-likh guh-ZAHKT: ikh HET-tuh owkh guh-FRAHKT — the colon before the last sentence is where the writer steps out from behind the company.",
+      "variations": [
+        {
+          "display": "Machen Sie sich bitte keine Sorge.",
+          "cue": "Please do not worry.",
+          "changed": "The reassurance on its own, still fully formal. Without the last sentence it is correct and slightly cold, which is the whole reason the piece pivots."
+        }
+      ],
+      "mistake": {
+        "display": "Sehr geehrte Damen und Herren, keine Sorge, alles ist gut, du musst dir keine Sorge machen",
+        "why": "The pivot has gone all the way to du inside a letter that opened with Sehr geehrte Damen und Herren. The address is the heaviest lever German has, and moving it mid-letter to a stranger is not a register shift but an error."
+      },
+      "usage": "Begins as a company answering a worried customer and ends as one person telling another they were right to ask. Sie stays throughout — the warmth comes from the content, not from the address.",
+      "register": "neutral",
+      "mnemonic": "Warm the content, never the address."
+    },
+    {
+      "id": "L5-M10-S06",
+      "display": "Liebe Gäste, ich möchte nur ein paar Worte sagen. Das Essen war toll. Wir danken Ihnen sehr. Naja, und ehrlich gesagt, ich bin ziemlich nervös. Aber jetzt trinken wir alle zusammen.",
+      "cue": "Dear guests, I would like to say just a few words. The food was wonderful. We thank you very much. Well, and to be honest, I am rather nervous. But now let us all have a drink together.",
+      "literal": "Dear guests, I would-like only a few words to-say. The food was great. We thank you very. Well, and honestly said, I am rather nervous. But now drink we all together.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "toll",
+            "cue": "great, wonderful",
+            "tag": "free",
+            "forms": ["toll"],
+            "note": "Warm, everyday and completely ordinary in a speech. It is the informal counterweight to L5-M4's formulae, and it is what makes this piece turn."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English speeches drop into confidence with a joke; German ones drop into it with an ADMISSION, and ich bin ziemlich nervös is the standard one. Translating an English self-deprecating joke usually produces something a German audience hears as strange rather than as modest.",
+      "sound": "LEE-buh GES-tuh, ikh MUEKH-tuh noor yn pahr VOR-tuh ZAH-gen … na-YAH, unt AIR-likh guh-ZAHKT, ikh bin TSEEM-likh ner-VUES — the naja is where the paper goes down.",
+      "variations": [
+        {
+          "display": "Naja, und ehrlich gesagt, ich bin ziemlich nervös.",
+          "cue": "Well, and to be honest, I am rather nervous.",
+          "changed": "The pivot sentence. Two particles and one admission, and the room relaxes — which is exactly what the formal half could not do."
+        }
+      ],
+      "mistake": {
+        "display": "Liebe Gäste, ich bin ziemlich nervös, naja, das Essen war toll, wir danken Ihnen sehr",
+        "why": "The pivot has been put first, so the piece runs the wrong way — informal to formal — and the thanks at the end sound like a retreat. A speech opens ceremonially and relaxes; it does not relax and then stiffen."
+      },
+      "usage": "Begins as a toast at a company dinner and ends as the person actually holding the glass. The order matters more than any word in it.",
+      "register": "informal",
+      "mnemonic": "Formulae first, admission second, drink third."
+    },
+    {
+      "id": "L5-M10-S07",
+      "display": "Erstens ist das nicht wahr. Zweitens habe ich das nie gesagt. Naja, vielleicht habe ich das doch gesagt. Ehrlich gesagt, Sie haben recht.",
+      "cue": "Firstly, that is not true. Secondly, I never said it. Well, maybe I did say it. Frankly, you are right.",
+      "literal": "Firstly is that not true. Secondly have I that never said. Well, perhaps have I that after-all said. Honestly said, you have right.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wahr",
+            "cue": "true",
+            "tag": "free",
+            "forms": ["wahr"],
+            "note": "The adjective, where L5-M2 owns the noun Wahrheit. Das ist nicht wahr is a flat denial and is a good deal stronger than English that is not true."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "The pivot here is carried by doch, which has no English word at all: vielleicht habe ich das DOCH gesagt means maybe I did say it after all, contradicting the speaker's own previous sentence. Leave the doch out and the piece merely repeats itself.",
+      "sound": "AIR-stens ist das nikht vahr. TSVY-tens HAH-buh ikh das nee guh-ZAHKT. na-YAH, fee-LYKHT HAH-buh ikh das dokh guh-ZAHKT — the doch takes the stress, and it is the whole turn.",
+      "variations": [
+        {
+          "display": "Naja, vielleicht habe ich das doch gesagt.",
+          "cue": "Well, maybe I did say it after all.",
+          "changed": "The pivot alone. One particle, one naja, and the argument the first two sentences were building is abandoned."
+        }
+      ],
+      "mistake": {
+        "display": "Erstens ist das nicht wahr, zweitens habe ich das nie gesagt, drittens haben Sie recht",
+        "why": "The concession has been numbered as if it were a third reason, which makes it sound like part of the case rather than the end of it. A pivot leaves the scaffolding behind; it does not take the next slot in it."
+      },
+      "usage": "Begins as L5-M6's structured case and ends as somebody dropping it. The numbered opening is what makes the collapse audible.",
+      "register": "informal",
+      "mnemonic": "Erstens, zweitens — and then no drittens: the missing ordinal is the pivot."
+    },
+    {
+      "id": "L5-M10-S08",
+      "display": "Vielen Dank für Ihre Hilfe. Das war wirklich nett. Und jetzt eine Frage: Haben Sie noch den Rest? Ich brauche das bis morgen.",
+      "cue": "Many thanks for your help. That was really kind. And now a question: do you still have the rest? I need it by tomorrow.",
+      "literal": "Many thanks for your help. That was really nice. And now a question: Have you still the rest? I need that until tomorrow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Rest",
+            "cue": "the rest, the remainder",
+            "tag": "free",
+            "forms": ["Rest"],
+            "note": "Masculine, der Rest, and countable in a way English the rest is not — der Rest vom Geld, der Rest der Woche. It never means a break."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Rest looks like the English word for a break and is not one. Ich brauche eine Pause is I need a rest; Ich brauche den Rest is I need the remainder. The false friend is complete — the two words share no meaning at all.",
+      "sound": "FEE-len dank fuer EE-ruh HIL-fuh … unt yetst Y-nuh FRAH-guh: HAH-ben zee nokh dayn rest? — the und jetzt is where the thanks stop and the ask begins, and a German listener hears it coming.",
+      "variations": [
+        {
+          "display": "Und jetzt eine Frage: Haben Sie noch den Rest?",
+          "cue": "And now a question: do you still have the rest?",
+          "changed": "The pivot alone. Und jetzt is doing exactly what it did in the first item of this module — announcing that the polite part has ended."
+        }
+      ],
+      "mistake": {
+        "display": "Vielen Dank für Ihre Hilfe, haben Sie noch den Rest, das war wirklich nett",
+        "why": "The request has been buried in the middle of the thanks, so neither register is visible. German puts the pivot at a seam and marks it; a request smuggled between two compliments reads as manipulative."
+      },
+      "usage": "Begins as a genuine thank-you and ends as the reason you wrote. Marking the seam with Und jetzt is what keeps it honest.",
+      "register": "neutral",
+      "mnemonic": "Say thank you, mark the seam, then ask."
+    },
+    {
+      "id": "L5-M10-S09",
+      "display": "Sehr geehrte Damen und Herren, hier ist noch ein Brief von mir. Die Rechnung ist immer noch falsch. Also, ich verstehe das wirklich nicht mehr. Bitte antworten Sie mir heute.",
+      "cue": "Dear Sir or Madam, here is another letter from me. The invoice is still wrong. Look, I really do not understand this any more. Please answer me today.",
+      "literal": "Very honoured ladies and gentlemen, here is still a letter from me. The invoice is always still wrong. So, I understand that really not more. Please answer you to-me today.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Brief",
+            "cue": "letter",
+            "tag": "free",
+            "forms": ["Brief"],
+            "note": "Masculine, der Brief, and only a letter you post — a letter of the alphabet is der Buchstabe. The two are not related in German at all."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "immer noch is still, with the immer adding the impatience — the invoice has been wrong all along and it is wrong now. Writing noch alone loses the whole complaint, and writing immer alone changes it to always, which is a different accusation.",
+      "sound": "zair guh-AIR-tuh DAH-men unt HAIR-en, heer ist nokh yn breef fon meer … AL-zo, ikh fair-SHTAY-uh das VEER-likh nikht mair — the Also at the pivot is said long and flat, and it is the sound of patience running out.",
+      "variations": [
+        {
+          "display": "Also, ich verstehe das wirklich nicht mehr.",
+          "cue": "Look, I really do not understand this any more.",
+          "changed": "The pivot alone. Also here is not therefore — it is the spoken discourse marker of L1-M10 arriving in a letter, which is exactly why it reads as a change of voice."
+        }
+      ],
+      "mistake": {
+        "display": "Sehr geehrte Damen und Herren, also ich verstehe das nicht, mit freundlichen Grüßen, liebe Grüße",
+        "why": "Two closings from two registers, one after the other. Pick the one the piece has landed in — a formal close after an informal pivot cancels the pivot, and both together cancels everything."
+      },
+      "usage": "Begins as the third formal letter about an invoice and ends as a person. Keep the Sie: it is the sentence structure and the Also that carry the shift, not the address.",
+      "register": "neutral",
+      "mnemonic": "Also in a letter is a raised voice with the grammar left intact."
+    },
+    {
+      "id": "L5-M10-S10",
+      "display": "Sehr geehrte Damen und Herren, wir danken Ihnen für den Abend. Ganz ehrlich, das Fest war wirklich toll. Wir haben viel gelacht. Mit freundlichen Grüßen.",
+      "cue": "Dear Sir or Madam, thank you for the evening. Honestly, the party was really great. We laughed a lot. Yours sincerely.",
+      "literal": "Very honoured ladies and gentlemen, we thank you for the evening. Quite honestly, the celebration was really great. We have much laughed. With friendly greetings.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ganz ehrlich",
+            "cue": "honestly, I mean it",
+            "tag": "free",
+            "forms": ["Ganz ehrlich"],
+            "note": "Two words, taken as a pair because ganz is L4-M5's and ehrlich is L3-M3's. Warmer than ehrlich gesagt and used to insist that a compliment is real."
+          },
+          {
+            "display": "Liebe Grüße",
+            "cue": "best wishes (informal close)",
+            "tag": "delta",
+            "forms": ["Liebe Grüße"],
+            "note": "The informal sign-off, against L5-M4's Mit freundlichen Grüßen. Choosing between them is the last register decision the course asks you to make."
+          }
+        ],
+        "rules": [0, 2, 4]
+      },
+      "trap": "This piece pivots the other way — informal in the middle, formal at the edges — and that is legitimate because the close is a FORM, not a feeling. An English writer who warms up in the middle usually warms the sign-off too; a German thank-you card can be warm inside a formal envelope, and often is.",
+      "sound": "… gants AIR-likh, das fest vahr VEER-likh tol. veer HAH-ben feel guh-LAKHT. mit FROYNT-likh-en GRUE-sen — the last line drops in pitch and slows, which is what a sign-off sounds like even when it is read silently.",
+      "variations": [
+        {
+          "display": "Ganz ehrlich, das Fest war wirklich toll. Liebe Grüße.",
+          "cue": "Honestly, the party was really great. Best wishes.",
+          "changed": "The formal frame is gone and the informal close replaces the formal one. Same content, one register throughout — and now it is a message to a friend rather than a card to a host."
+        }
+      ],
+      "mistake": {
+        "display": "Sehr geehrte Damen und Herren, ganz ehrlich, das Fest war toll, liebe Grüße",
+        "why": "The formal opening and the informal close belong to different pieces. If the card opens Sehr geehrte Damen und Herren it closes Mit freundlichen Grüßen; if it closes Liebe Grüße it never opened that way."
+      },
+      "usage": "The last item of the course, and the smallest pivot in it: a formal card with one warm sentence inside. Begins and ends formal, and the middle is where the person is.",
+      "register": "formal",
+      "mnemonic": "The envelope is a form; only the middle is a feeling."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L5-M10-C01", "display": "Ehrlich gesagt, jetzt reicht es mir.", "cue": "Frankly, I have had enough." },
+    { "id": "L5-M10-C02", "display": "Es tut mir leid für den Ärger.", "cue": "I am sorry for the trouble." },
+    { "id": "L5-M10-C03", "display": "Das war doch nur ein Spaß.", "cue": "It was only a joke." },
+    { "id": "L5-M10-C04", "display": "Mir ist der Tag eigentlich egal.", "cue": "The day really does not matter to me." },
+    { "id": "L5-M10-C05", "display": "Machen Sie sich bitte keine Sorge.", "cue": "Please do not worry." },
+    { "id": "L5-M10-C06", "display": "Das Essen war wirklich toll.", "cue": "The food was really wonderful." },
+    { "id": "L5-M10-C07", "display": "Ehrlich gesagt, Sie haben recht.", "cue": "Frankly, you are right." },
+    { "id": "L5-M10-C08", "display": "Das ist nicht wahr.", "cue": "That is not true." },
+    { "id": "L5-M10-C09", "display": "Und jetzt eine Frage: Haben Sie noch den Rest?", "cue": "And now a question: do you still have the rest?" },
+    { "id": "L5-M10-C10", "display": "Hier ist noch ein Brief von mir.", "cue": "Here is another letter from me." },
+    { "id": "L5-M10-C11", "display": "Ganz ehrlich, das Fest war sehr schön.", "cue": "Honestly, the party was very lovely." },
+    { "id": "L5-M10-C12", "display": "Liebe Grüße aus dem Büro.", "cue": "Best wishes from the office." }
+  ],
+  "exitTest": { "generateCount": 2, "comprehendCount": 4 }
+}

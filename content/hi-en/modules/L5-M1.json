@@ -1,0 +1,656 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M1",
+  "title": "Sayings and idioms",
+  "job": "The figurative everyday, and when it is used",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "present_simple",
+      "present_continuous",
+      "simple_past",
+      "future_simple",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "It was + a piece of cake + .",
+      "<subject> + <verb> + <object> + once in a while + .",
+      "<clause> + , + but + <clause with fixed phrase> + .",
+      "Never mind + , + <clause> + .",
+      "I know it + by heart + ."
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "अंग्रेज़ी का मुहावरा एक ही इकाई है — शब्द कई, पर याद एक साथ किए जाते हैं. उसके भीतर का कोई शब्द अपने पर्यायवाची से बदला नहीं जा सकता: a piece of cake की जगह a slice of cake कहते ही मुहावरा टूट जाता है और सिर्फ़ केक का टुकड़ा बच जाता है."
+    },
+    {
+      "tag": "delta",
+      "text": "भीतर का व्याकरण भी जमा हुआ है और उसे छुआ नहीं जाता. once in a while में while का अपना अर्थ नहीं चलता, इसलिए once in a time कुछ नहीं होता; out of the blue में blue बहुवचन नहीं बनता, इसलिए out of the blues ग़लत है. ज़ोर देने के लिए भीतर कुछ जोड़ना भी उतना ही टूटा हुआ है — a very big piece of cake ज़ोर नहीं, ग़लती है."
+    },
+    {
+      "tag": "free",
+      "text": "हर जमा हुआ समूह किसी एक शब्द-भेद की जगह लेता है. a piece of cake be के बाद संज्ञा की जगह बैठता है; once in a while और now and then क्रिया-विशेषण हैं और वाक्य के आरंभ या अंत में आते हैं; never mind, hang on और take it easy पूरी बात हैं, जिनके आगे-पीछे कुछ जोड़ने की ज़रूरत ही नहीं."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी का मुहावरा शब्द-दर-शब्द अंग्रेज़ी में नहीं जाता. सर मत खाओ का do not eat my head, दिमाग़ खा गया का he ate my brain और बाएँ हाथ का खेल का a game of the left hand — तीनों अंग्रेज़ी में या तो बेमानी हैं या अपमान. वाहन बदल जाता है, काम वही रहता है: बाएँ हाथ का खेल के लिए अंग्रेज़ी a piece of cake कहती है."
+    },
+    {
+      "tag": "free",
+      "text": "ये सब आम बोलचाल के हैं — दोस्तों, घर और दफ़्तर की साधारण बात में चलते हैं, पर L4-M7 वाली सरकारी भाषा में इनमें से एक भी नहीं आता. लंबे मुहावरे भी हैं — once in a blue moon यानी बहुत कम, off the top of my head यानी बिना सोचे — पर इस पाठ में उनका सिर्फ़ नाम लिया गया है, उन्हें दिखाया नहीं गया."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M1-S01",
+      "display": "This expression is an idiom. Do not take it literally.",
+      "cue": "यह अभिव्यक्ति एक मुहावरा है. इसे शाब्दिक अर्थ में मत लीजिए.",
+      "literal": "यह अभिव्यक्ति है एक मुहावरा. करो नहीं लेना इसे शाब्दिक रूप से.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "expression",
+            "cue": "अभिव्यक्ति, कहन",
+            "tag": "free",
+            "forms": [
+              "expression",
+              "expressions"
+            ],
+            "note": "जमे हुए शब्द-समूह के लिए यही आम शब्द है. saying भी अंग्रेज़ी में चलता है, पर वह L2-M7 की say वाली पंक्ति का रूप है, इसलिए यहाँ expression ही लिखिए."
+          },
+          {
+            "display": "idiom",
+            "cue": "मुहावरा",
+            "tag": "free",
+            "forms": [
+              "idiom",
+              "idioms"
+            ],
+            "note": "वह अभिव्यक्ति जिसका अर्थ उसके शब्दों से नहीं निकलता. हिंदी का मुहावरा ठीक यही चीज़ है, इसलिए यह समझ पहले से मौजूद है."
+          },
+          {
+            "display": "literally",
+            "cue": "शाब्दिक रूप से, शब्द-दर-शब्द",
+            "tag": "free",
+            "forms": [
+              "literally"
+            ],
+            "note": "मुहावरे के साथ यह लगभग हमेशा नकार में आता है: do not take it literally. विशेषण रूप literal है."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "पाठ का शीर्षक अंग्रेज़ी में saying भी कहलाता है, पर इस पूरे स्तर में वह शब्द नहीं लिखा जाता — expression लिखिए.",
+      "sound": "idiom तीन अक्षरों में बोला जाता है — इ-डि-अम्, और ज़ोर पहले ही अक्षर पर है.",
+      "variations": [
+        {
+          "display": "This expression is an idiom.",
+          "cue": "यह अभिव्यक्ति एक मुहावरा है.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "Do not take it literally.",
+          "cue": "इसे शाब्दिक अर्थ में मत लीजिए.",
+          "changed": "सिर्फ़ दूसरा वाक्य"
+        },
+        {
+          "display": "This idiom is an old expression.",
+          "cue": "यह मुहावरा एक पुरानी अभिव्यक्ति है.",
+          "changed": "दोनों शब्द जगह बदलकर"
+        }
+      ],
+      "mistake": {
+        "display": "This expression is an idiom. Do not take it literal",
+        "why": "literal विशेषण है; क्रिया के साथ क्रिया-विशेषण literally आता है."
+      },
+      "usage": "जब किसी जमे हुए शब्द-समूह के बारे में यह बताना हो कि उसका अर्थ उसके शब्दों से अलग है.",
+      "register": "neutral",
+      "mnemonic": "idiom = शब्द अलग, अर्थ अलग."
+    },
+    {
+      "id": "L5-M1-S02",
+      "display": "The exam was a piece of cake.",
+      "cue": "वह परीक्षा बहुत आसान थी.",
+      "literal": "वह परीक्षा थी एक टुकड़ा का केक.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "a piece of cake",
+            "cue": "बहुत आसान काम",
+            "tag": "interference",
+            "forms": [
+              "a piece of cake"
+            ],
+            "note": "चारों शब्द एक ही इकाई हैं और be के बाद संज्ञा की जगह बैठते हैं. हिंदी का बाएँ हाथ का खेल यही काम करता है, पर वाहन अलग है."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "बाएँ हाथ का खेल को शब्द-दर-शब्द a game of the left hand मत कीजिए; अंग्रेज़ी में वह कुछ नहीं कहता.",
+      "sound": "piece में बीच का स्वर लंबा है — पीस्, और cake केक् बोला जाता है.",
+      "variations": [
+        {
+          "display": "It was a piece of cake.",
+          "cue": "वह बहुत आसान था.",
+          "changed": "परीक्षा की जगह इशारे वाला it"
+        },
+        {
+          "display": "The exam was not a piece of cake.",
+          "cue": "वह परीक्षा आसान नहीं थी.",
+          "changed": "नकार के साथ"
+        },
+        {
+          "display": "This work is a piece of cake.",
+          "cue": "यह काम बहुत आसान है.",
+          "changed": "वर्तमान काल में"
+        }
+      ],
+      "mistake": {
+        "display": "The exam was a very big piece of cake",
+        "why": "मुहावरे के भीतर कुछ जोड़ा नहीं जाता, ज़ोर देने के लिए भी नहीं."
+      },
+      "usage": "किसी काम के सोच से कहीं आसान निकलने पर, दोस्तों या घर की बात में.",
+      "register": "informal",
+      "mnemonic": "केक का एक टुकड़ा — खाने में कोई मेहनत नहीं."
+    },
+    {
+      "id": "L5-M1-S03",
+      "display": "She called me out of the blue.",
+      "cue": "उसने अचानक ही मुझे फ़ोन कर दिया.",
+      "literal": "उसने फ़ोन किया मुझे बाहर का वह नीला.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "out of the blue",
+            "cue": "अचानक, बिना किसी सूचना के",
+            "tag": "interference",
+            "forms": [
+              "out of the blue"
+            ],
+            "note": "चारों शब्द एक इकाई हैं. blue यहाँ रंग नहीं है — रंग वाला blue L2-M3 की अपनी पंक्ति है और उसका अर्थ यहाँ नहीं चलता."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "blue यहाँ एकवचन ही रहता है. out of the blues कोई नहीं कहता.",
+      "sound": "out of the तीनों जुड़कर आउ-टव्-द सुनाई देते हैं, और blue ब्लू बोला जाता है.",
+      "variations": [
+        {
+          "display": "He called me out of the blue.",
+          "cue": "उसने अचानक ही मुझे फ़ोन कर दिया.",
+          "changed": "कर्ता बदलकर"
+        },
+        {
+          "display": "She came out of the blue.",
+          "cue": "वह अचानक आ गई.",
+          "changed": "आने की क्रिया के साथ"
+        },
+        {
+          "display": "Out of the blue, she called me.",
+          "cue": "अचानक ही उसने मुझे फ़ोन किया.",
+          "changed": "मुहावरा वाक्य के आरंभ में"
+        }
+      ],
+      "mistake": {
+        "display": "She called me out of the blues",
+        "why": "भीतर का व्याकरण जमा हुआ है; blue का बहुवचन नहीं बनता."
+      },
+      "usage": "जब कोई बात बिना किसी पूर्व सूचना के, अचानक हो जाए.",
+      "register": "neutral",
+      "mnemonic": "खुले नीले आसमान से सीधे — न बादल, न चेतावनी."
+    },
+    {
+      "id": "L5-M1-S04",
+      "display": "We go to the market once in a while.",
+      "cue": "हम कभी-कभी बाज़ार जाते हैं.",
+      "literal": "हम जाते हैं को वह बाज़ार एक बार में एक थोड़ी देर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "once in a while",
+            "cue": "कभी-कभी",
+            "tag": "free",
+            "forms": [
+              "once in a while"
+            ],
+            "note": "बीच-बीच में, पर कम. while का अपना अर्थ इसके भीतर नहीं चलता, इसलिए once in a time कुछ नहीं होता."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "यह क्रिया-विशेषण है, इसलिए वाक्य के अंत में या आरंभ में बैठता है, बीच में नहीं.",
+      "sound": "once का उच्चारण वन्स् है, ओन्स् नहीं.",
+      "variations": [
+        {
+          "display": "I go to the market once in a while.",
+          "cue": "मैं कभी-कभी बाज़ार जाता हूँ.",
+          "changed": "एकवचन कर्ता"
+        },
+        {
+          "display": "Once in a while we go to the market.",
+          "cue": "कभी-कभी हम बाज़ार जाते हैं.",
+          "changed": "मुहावरा वाक्य के आरंभ में"
+        },
+        {
+          "display": "We go there once in a while.",
+          "cue": "हम कभी-कभी वहाँ जाते हैं.",
+          "changed": "बाज़ार की जगह there"
+        }
+      ],
+      "mistake": {
+        "display": "We go to the market once in a time",
+        "why": "जमा हुआ रूप while के साथ है; time यहाँ नहीं चलता."
+      },
+      "usage": "आदत बताते समय, जब कोई काम कभी-कभार ही होता हो.",
+      "register": "neutral",
+      "mnemonic": "एक बार, थोड़ी देर में — यानी बहुत बार नहीं."
+    },
+    {
+      "id": "L5-M1-S05",
+      "display": "Now and then I think about my old school.",
+      "cue": "कभी-कभार मैं अपने पुराने स्कूल के बारे में सोचता हूँ.",
+      "literal": "अब और तब मैं सोचता हूँ के बारे में मेरा पुराना स्कूल.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "now and then",
+            "cue": "कभी-कभार",
+            "tag": "free",
+            "forms": [
+              "now and then"
+            ],
+            "note": "once in a while का ही साथी. अकेला now (L3-M6) 'अभी' है और अकेला then (L1-M10) क्रम बताता है; यहाँ तीनों शब्द एक इकाई हैं."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "इसके भीतर now का 'अभी' वाला अर्थ बिल्कुल नहीं बचता.",
+      "sound": "बीच का and दब जाता है — नाउ-अन्-देन् सुनाई देता है.",
+      "variations": [
+        {
+          "display": "Now and then I think about my school.",
+          "cue": "कभी-कभार मैं अपने स्कूल के बारे में सोचता हूँ.",
+          "changed": "पुराना हटाकर"
+        },
+        {
+          "display": "I think about my old school now and then.",
+          "cue": "मैं कभी-कभार अपने पुराने स्कूल के बारे में सोचता हूँ.",
+          "changed": "मुहावरा वाक्य के अंत में"
+        },
+        {
+          "display": "Now and then we go there.",
+          "cue": "कभी-कभार हम वहाँ जाते हैं.",
+          "changed": "छोटा वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "Now and than I think about my old school",
+        "why": "यह then है, than नहीं; दोनों का उच्चारण मिलता-जुलता है पर काम अलग है."
+      },
+      "usage": "बीच-बीच में होने वाली आदत बताते समय, बात-चीत में.",
+      "register": "neutral",
+      "mnemonic": "अभी और तब — यानी कभी-कभार."
+    },
+    {
+      "id": "L5-M1-S06",
+      "display": "Sooner or later he will tell you.",
+      "cue": "देर-सबेर वह तुम्हें बता ही देगा.",
+      "literal": "जल्दी या बाद में वह देगा बताना तुम्हें.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sooner or later",
+            "cue": "देर-सबेर",
+            "tag": "free",
+            "forms": [
+              "sooner or later"
+            ],
+            "note": "जो होना ही है उसके लिए. अकेला later (L4-M6) सिर्फ़ समय बताता है; तीनों शब्द मिलकर 'ज़रूर होगा' का भाव देते हैं."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "क्रम जमा हुआ है. later or sooner कोई नहीं कहता.",
+      "sound": "sooner में oo लंबा है — सू-नर्, और अंत का r बहुत हल्का है.",
+      "variations": [
+        {
+          "display": "Sooner or later she will tell you.",
+          "cue": "देर-सबेर वह तुम्हें बता ही देगी.",
+          "changed": "स्त्रीलिंग कर्ता"
+        },
+        {
+          "display": "He will tell you sooner or later.",
+          "cue": "वह तुम्हें देर-सबेर बता ही देगा.",
+          "changed": "मुहावरा वाक्य के अंत में"
+        },
+        {
+          "display": "Sooner or later you will know.",
+          "cue": "देर-सबेर तुम्हें पता चल ही जाएगा.",
+          "changed": "छोटा वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "Later or sooner he will tell you",
+        "why": "जमे हुए समूह के भीतर शब्दों का क्रम नहीं बदलता."
+      },
+      "usage": "जब यक़ीन हो कि बात होकर रहेगी, समय चाहे जो हो.",
+      "register": "neutral",
+      "mnemonic": "जल्दी हो या देर से — पर होगा ज़रूर."
+    },
+    {
+      "id": "L5-M1-S07",
+      "display": "I know it by heart. I do not need the book.",
+      "cue": "मुझे यह ज़बानी याद है. मुझे किताब की ज़रूरत नहीं.",
+      "literal": "मैं जानता हूँ इसे द्वारा दिल. मैं करता नहीं ज़रूरत वह किताब.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "by heart",
+            "cue": "ज़बानी, कंठस्थ",
+            "tag": "free",
+            "forms": [
+              "by heart"
+            ],
+            "note": "बिना देखे याद. हिंदी का 'ज़बानी याद' यही है, पर वाहन बदल जाता है — अंग्रेज़ी ज़बान की जगह दिल कहती है."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "जोड़ा by heart है. from heart या in heart कुछ नहीं होता.",
+      "sound": "heart में r बहुत हल्का है — हाट् जैसा सुनाई देता है.",
+      "variations": [
+        {
+          "display": "I know it by heart.",
+          "cue": "मुझे यह ज़बानी याद है.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "She knows it by heart.",
+          "cue": "उसे यह ज़बानी याद है.",
+          "changed": "अन्य पुरुष"
+        },
+        {
+          "display": "I know this book by heart.",
+          "cue": "मुझे यह किताब ज़बानी याद है.",
+          "changed": "कर्म बदलकर"
+        }
+      ],
+      "mistake": {
+        "display": "I know it from heart. I do not need the book",
+        "why": "जोड़ा by heart है; from यहाँ नहीं आता."
+      },
+      "usage": "जब कुछ बिना देखे याद हो — गीत, नंबर या पूरा पाठ.",
+      "register": "neutral",
+      "mnemonic": "दिल में लिखा हुआ — किताब की ज़रूरत नहीं."
+    },
+    {
+      "id": "L5-M1-S08",
+      "display": "He did not do it on purpose. Never mind, it was just bad luck.",
+      "cue": "उसने जान-बूझकर ऐसा नहीं किया. कोई बात नहीं, बस बुरी क़िस्मत थी.",
+      "literal": "उसने किया नहीं करना इसे पर उद्देश्य. कभी नहीं मन, यह था बस बुरा भाग्य.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on purpose",
+            "cue": "जान-बूझकर",
+            "tag": "free",
+            "forms": [
+              "on purpose"
+            ],
+            "note": "इरादे से किया गया काम. नकार के साथ सबसे ज़्यादा चलता है: he did not do it on purpose."
+          },
+          {
+            "display": "never mind",
+            "cue": "कोई बात नहीं, जाने दीजिए",
+            "tag": "free",
+            "forms": [
+              "never mind"
+            ],
+            "note": "पूरी बात है, इसलिए अकेली आती है. अकेला never (L1-M4) 'कभी नहीं' है और उसका अर्थ यहाँ बिल्कुल नहीं बचता."
+          },
+          {
+            "display": "luck",
+            "cue": "क़िस्मत, भाग्य",
+            "tag": "free",
+            "forms": [
+              "luck"
+            ],
+            "note": "अगणनीय संज्ञा है, इसलिए a luck नहीं होता. bad luck और good luck दोनों चलते हैं."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "never mind को माफ़ी मत समझिए; यह सिर्फ़ 'छोड़िए, कोई बात नहीं' कहता है.",
+      "sound": "purpose का दूसरा अक्षर दबा हुआ है — पर्-पस्, पर्-पोज़् नहीं.",
+      "variations": [
+        {
+          "display": "He did not do it on purpose.",
+          "cue": "उसने जान-बूझकर ऐसा नहीं किया.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "Never mind, it was bad luck.",
+          "cue": "कोई बात नहीं, बुरी क़िस्मत थी.",
+          "changed": "just हटाकर"
+        },
+        {
+          "display": "She did it on purpose.",
+          "cue": "उसने जान-बूझकर किया.",
+          "changed": "हाँ वाला रूप"
+        }
+      ],
+      "mistake": {
+        "display": "He did not do it with purpose. Never mind, it was just bad luck",
+        "why": "जोड़ा on purpose है; with यहाँ नहीं चलता."
+      },
+      "usage": "किसी की ग़लती को छोटा करते समय, दोस्ताना बात में.",
+      "register": "informal",
+      "mnemonic": "जान-बूझकर नहीं किया — तो कोई बात नहीं."
+    },
+    {
+      "id": "L5-M1-S09",
+      "display": "Hang on, I am coming. I am not late.",
+      "cue": "ज़रा रुकिए, मैं आ रहा हूँ. मुझे देर नहीं हुई है.",
+      "literal": "लटको पर, मैं हूँ आ रहा. मैं हूँ नहीं देर.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hang on",
+            "cue": "ज़रा रुको, एक मिनट",
+            "tag": "free",
+            "forms": [
+              "hang on"
+            ],
+            "note": "पूरी बात है और अकेली आती है. hang का 'लटकाना' वाला अर्थ इसके भीतर नहीं चलता, और यह सिर्फ़ बोलचाल का है."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "यह लिखने की भाषा नहीं है. काग़ज़ पर या सरकारी बात में hang on कभी नहीं आता.",
+      "sound": "दोनों शब्द जुड़ जाते हैं — हैं-गॉन् सुनाई देता है.",
+      "variations": [
+        {
+          "display": "Hang on, I am coming.",
+          "cue": "ज़रा रुकिए, मैं आ रहा हूँ.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "Hang on, she is coming.",
+          "cue": "ज़रा रुकिए, वह आ रही है.",
+          "changed": "अन्य पुरुष"
+        },
+        {
+          "display": "I am not late.",
+          "cue": "मुझे देर नहीं हुई है.",
+          "changed": "सिर्फ़ दूसरा वाक्य"
+        }
+      ],
+      "mistake": {
+        "display": "Hang up, I am coming. I am not late",
+        "why": "hang up का अर्थ फ़ोन काटना है; रुकने के लिए hang on आता है."
+      },
+      "usage": "आमने-सामने या फ़ोन पर, किसी को एक पल रोकने के लिए.",
+      "register": "informal",
+      "mnemonic": "फ़ोन पर 'ज़रा रुको' — hang on."
+    },
+    {
+      "id": "L5-M1-S10",
+      "display": "I am fed up with this work. Take it easy, he said.",
+      "cue": "मैं इस काम से तंग आ चुका हूँ. उसने कहा, आराम से लीजिए.",
+      "literal": "मैं हूँ खिलाया ऊपर के साथ यह काम. लो इसे आसान, उसने कहा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fed up",
+            "cue": "तंग आ जाना, ऊब जाना",
+            "tag": "free",
+            "forms": [
+              "fed up"
+            ],
+            "note": "be के बाद विशेषण की जगह बैठता है और आगे with लेता है: fed up with this work. from कभी नहीं आता."
+          },
+          {
+            "display": "take it easy",
+            "cue": "आराम से लीजिए, इतना मत सोचिए",
+            "tag": "free",
+            "forms": [
+              "take it easy"
+            ],
+            "note": "पूरी बात है. भीतर का it कभी बदलता नहीं — take this easy या take them easy कुछ नहीं होता."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "fed up के बाद with आता है, from नहीं.",
+      "sound": "fed up जुड़कर फ़े-डप् सुनाई देता है, और take it easy तीनों शब्द एक साँस में.",
+      "variations": [
+        {
+          "display": "I am fed up with this work.",
+          "cue": "मैं इस काम से तंग आ चुका हूँ.",
+          "changed": "सिर्फ़ पहला वाक्य"
+        },
+        {
+          "display": "She is fed up with this work.",
+          "cue": "वह इस काम से तंग आ चुकी है.",
+          "changed": "अन्य पुरुष"
+        },
+        {
+          "display": "Take it easy.",
+          "cue": "आराम से लीजिए.",
+          "changed": "सिर्फ़ मुहावरा"
+        }
+      ],
+      "mistake": {
+        "display": "I am fed up from this work. Take it easy, he said",
+        "why": "fed up के साथ with आता है; from हिंदी के 'से' की नक़ल है."
+      },
+      "usage": "थक या ऊब जाने पर, और सामने वाले को शांत करते समय.",
+      "register": "informal",
+      "mnemonic": "पेट भर गया — अब और नहीं."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M1-C01",
+      "display": "The exam was a piece of cake.",
+      "cue": "वह परीक्षा बहुत आसान थी."
+    },
+    {
+      "id": "L5-M1-C02",
+      "display": "She called me out of the blue.",
+      "cue": "उसने अचानक ही मुझे फ़ोन कर दिया."
+    },
+    {
+      "id": "L5-M1-C03",
+      "display": "We go there once in a while.",
+      "cue": "हम कभी-कभी वहाँ जाते हैं."
+    },
+    {
+      "id": "L5-M1-C04",
+      "display": "Now and then I think about my old school.",
+      "cue": "कभी-कभार मैं अपने पुराने स्कूल के बारे में सोचता हूँ."
+    },
+    {
+      "id": "L5-M1-C05",
+      "display": "Sooner or later he will tell you.",
+      "cue": "देर-सबेर वह तुम्हें बता ही देगा."
+    },
+    {
+      "id": "L5-M1-C06",
+      "display": "I know it by heart.",
+      "cue": "मुझे यह ज़बानी याद है."
+    },
+    {
+      "id": "L5-M1-C07",
+      "display": "He did not do it on purpose.",
+      "cue": "उसने जान-बूझकर ऐसा नहीं किया."
+    },
+    {
+      "id": "L5-M1-C08",
+      "display": "Never mind, it was just bad luck.",
+      "cue": "कोई बात नहीं, बस बुरी क़िस्मत थी."
+    },
+    {
+      "id": "L5-M1-C09",
+      "display": "Hang on, I am coming.",
+      "cue": "ज़रा रुकिए, मैं आ रहा हूँ."
+    },
+    {
+      "id": "L5-M1-C10",
+      "display": "I am fed up with this work.",
+      "cue": "मैं इस काम से तंग आ चुका हूँ."
+    },
+    {
+      "id": "L5-M1-C11",
+      "display": "Take it easy, we are not late.",
+      "cue": "आराम से लीजिए, हमें देर नहीं हुई है."
+    },
+    {
+      "id": "L5-M1-C12",
+      "display": "Do not take this idiom literally.",
+      "cue": "इस मुहावरे को शाब्दिक अर्थ में मत लीजिए."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

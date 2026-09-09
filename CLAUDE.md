@@ -56,7 +56,12 @@ header; `--fast` drops BUILD and BUDGET). Quote that line in the commit message.
   module that first shows it, with a note back at the first-teach row.
 - **A shown surface is a taught surface, ratcheted rather than advisory** (#491): the build prints
   `shown but untaught: …` per course and `tools/shown-surfaces.test.ts` pins each count — lower a baseline
-  in the commit that fixes the content, never raise one. Proper nouns (#61) and `mistake.display` are exempt.
+  in the commit that fixes the content, never raise one. `mistake.display` is exempt — it is wrong
+  by design and never read. **A proper noun is NOT exempt**: it rides unindexed (#61's known gap)
+  and is COUNTED, which is why `priyā`, `thomas`, `meyer` and `anna` sit inside the baselines. So a
+  display carrying an unindexed name raises the count and fails the ratchet — anchor on a common
+  noun, or give the name a row. This line said "exempt" until 2026-09-08 and misled three authoring
+  waves into planning displays around names they then had to rewrite.
 - **A red BUDGET is never a size** — none has failed it since #304. It fails when a shipped file has no
   owner (`unmetered`) or the emitted worker's precache list disagrees with the `shell` row: give the
   file an owner in `owner()` in `tools/payload-budget.ts`, there is no limit to raise.

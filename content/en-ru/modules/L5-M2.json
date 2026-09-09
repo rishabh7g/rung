@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M2",
+  "title": "Humour and teasing",
+  "job": "Banter, irony, and when not to",
+  "prerequisites": ["L5-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["simple_present_imperfective"],
+    "allowedPatterns": [
+      "Ya prósto shuchú",
+      "Ne obizháysya + , + <clause>",
+      "<subject> + smeyótsya nad + <N-instrumental>",
+      "Nu ty dayósh'",
+      "<name-diminutive> + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE DIMINUTIVE IS A SUFFIX, not an adjective, and it is a system rather than a word list. Three families carry nearly all of it: -ik and -chik on masculines (dom becomes dómik), -ka and -ochka on feminines (kníga becomes knízhka, sobáka becomes sobáchka), and the name series. The consonant in front often shifts as the suffix goes on — the g of kníga hardens into the zh of knízhka — so the derived word is learned as a word, not computed on the spot."
+    },
+    {
+      "tag": "delta",
+      "text": "THE NAME SERIES is the one a learner meets first and understands last. Iván is the passport: forms, teachers, strangers. Ványa is the friend, and it is what people who know him actually call him. Vánechka is affection or teasing, and which one it is depends entirely on the voice saying it. Every common Russian name has this series, and moving up or down it is the loudest thing you can do to somebody's name."
+    },
+    {
+      "tag": "delta",
+      "text": "smeyát'sya NAD plus the INSTRUMENTAL is the verb of laughing, and nad governs the instrumental exactly as L3-M2's rabótayu inzhenérom used it — so this opens a preposition and no new case at all. Two hard facts. First, nad plus instrumental is laughing AT and never laughing WITH: there is no Russian frame at all for laughing with somebody, and the warm version is said some other way. Second, before mnoy the preposition grows an o: nádo mnoy, never nad mnoy — the same o L3-M4's nádo happens to spell, and a different word entirely."
+    },
+    {
+      "tag": "interference",
+      "text": "A DIMINUTIVE IS INTIMACY, NOT POLITENESS, and this is the interference that costs a relationship rather than a mark. English softens with an adjective a speaker may skip — little brother, my dear — so an English speaker under-produces the suffix and sounds cold rather than neutral, then over-produces it in the one place it is wrong. Vánechka to a colleague is not a gentler Iván, it is a presumption; to a stranger it is a rudeness. And a diminutive on a THING rather than a person belittles it: knízhka of a serious book says the book is slight."
+    },
+    {
+      "tag": "free",
+      "text": "WHERE ENGLISH HELPS: Ya prósto shuchú is I am just joking, the same three words in the same order, and the move of disowning a joke that has landed badly exists in both languages unchanged. Ne obizháysya is take it the right way, and it is the standard opening for a tease you can see coming. Two boundaries: a sentence that means the opposite of itself is L5-M7's, not this module's — the jokes here are visibly jokes — and this course teaches no mat and no obscenity anywhere, which is said once here and not gestured at again."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M2-S01",
+      "display": "Ya prósto shuchú.",
+      "script": "Я просто шучу.",
+      "cue": "I'm just joking.",
+      "literal": "I simply joke.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "shuchú",
+            "script": "шучу",
+            "cue": "I joke",
+            "tag": "free",
+            "forms": ["shuchú", "shútish'"],
+            "note": "To joke. The ch of shuchú is the stem shifting under the I ending; ty gets the plain t back, shútish'. Only these two persons are taught here — this module is you and me."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "prósto here is just, not simply-in-an-easy-way. It is the word that turns a sentence from a claim into a retraction.",
+      "sound": "shuchú takes the stress on the last syllable, shoo-CHOO, while shútish' takes it on the first: SHOO-teesh.",
+      "variations": [
+        {
+          "display": "Ya shuchú.",
+          "script": "Я шучу.",
+          "cue": "I'm joking.",
+          "changed": "prósto dropped, which makes it a statement rather than an apology"
+        },
+        {
+          "display": "Ty shútish'?",
+          "script": "Ты шутишь?",
+          "cue": "Are you joking?",
+          "changed": "the person, and the stress moves to the front with it"
+        }
+      ],
+      "mistake": {
+        "display": "Ya prósto shútyu.",
+        "script": "Я просто шутю.",
+        "why": "The t kept in the I form because the infinitive has one. The stem shifts to ch in the first person: shuchú, and shútyu is not a Russian word."
+      },
+      "usage": "Taking a line back the moment you see it did not land.",
+      "register": "informal",
+      "mnemonic": "I joke with a CH, you joke with a T — the sound moves when the person does."
+    },
+    {
+      "id": "L5-M2-S02",
+      "display": "Ne obizháysya, ya prósto shuchú.",
+      "script": "Не обижайся, я просто шучу.",
+      "cue": "Don't take it the wrong way, I'm just joking.",
+      "literal": "Not take-offence, I simply joke.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ne obizháysya",
+            "script": "не обижайся",
+            "cue": "don't take it the wrong way",
+            "tag": "delta",
+            "forms": ["ne obizháysya"],
+            "note": "Taken whole: the ne is part of it, because nobody ever says the positive obizháysya. It is a two-word softener, said in front of the tease or straight after it."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "It is not don't be angry. It heads off offence taken at a joke, and using it after a real wrong sounds like you are calling the wrong a joke.",
+      "sound": "Five syllables with the stress on the third: ah-bee-ZHAY-sya, and the final -sya is a light -sa.",
+      "variations": [
+        {
+          "display": "Ya prósto shuchú, ne obizháysya.",
+          "script": "Я просто шучу, не обижайся.",
+          "cue": "I'm just joking, don't take it the wrong way.",
+          "changed": "the order, so the softener follows the retraction instead of leading it"
+        },
+        {
+          "display": "Ne obizháysya, Ványa.",
+          "script": "Не обижайся, Ваня.",
+          "cue": "Don't take it the wrong way, Vanya.",
+          "changed": "a name added, which is what makes it sound warm rather than managing"
+        }
+      ],
+      "mistake": {
+        "display": "Obizháysya, ya prósto shuchú.",
+        "script": "Обижайся, я просто шучу.",
+        "why": "The ne dropped on the theory that it is a separate word. It is not: without it the sentence orders somebody to take offence."
+      },
+      "usage": "Opening a tease you already know is close to the line.",
+      "register": "informal",
+      "mnemonic": "The ne is glued on — the phrase only exists in the negative."
+    },
+    {
+      "id": "L5-M2-S03",
+      "display": "On smeyótsya nádo mnoy.",
+      "script": "Он смеётся надо мной.",
+      "cue": "He's laughing at me.",
+      "literal": "He laughs over me.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "smeyótsya",
+            "script": "смеётся",
+            "cue": "laughs",
+            "tag": "delta",
+            "forms": ["smeyótsya", "smeyús'", "smeyósh'sya", "smeyát'sya"],
+            "note": "To laugh, and it is a -sya verb: the ending is part of the word. smeyús' for I, smeyósh'sya for ty, smeyótsya for he or she, smeyát'sya to name it."
+          },
+          {
+            "display": "nad",
+            "script": "над",
+            "cue": "at, over",
+            "tag": "delta",
+            "forms": ["nad", "nádo mnoy"],
+            "note": "Over — and with smeyát'sya it is laughing AT. It takes the instrumental, the case L3-M2 opened. Before mnoy it grows an o: nádo mnoy, which is not L3-M4's nádo."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "There is no Russian frame for laughing WITH somebody. smeyát'sya nad is always at, so it is an accusation unless the voice says otherwise.",
+      "sound": "smeyótsya carries the yó, smee-YOT-tsa, and the -tsya is one tight ts. In nádo mnoy the stress is really on mnoy; the o just makes the pair sayable.",
+      "variations": [
+        {
+          "display": "Ty smeyósh'sya nádo mnoy?",
+          "script": "Ты смеёшься надо мной?",
+          "cue": "Are you laughing at me?",
+          "changed": "the person, and with it the -sha ending that ty always takes"
+        },
+        {
+          "display": "Ne nádo smeyát'sya.",
+          "script": "Не надо смеяться.",
+          "cue": "Don't laugh.",
+          "changed": "the naming form after L3-M4's nádo — the same four letters as the preposition, a different word"
+        }
+      ],
+      "mistake": {
+        "display": "On smeyótsya nad mnoy.",
+        "script": "Он смеётся над мной.",
+        "why": "The o dropped because the dictionary form is nad. In front of mnoy the preposition is always nádo — nad mnoy is two consonant clusters nobody can say."
+      },
+      "usage": "Objecting, half seriously, when a tease has gone on too long.",
+      "register": "informal",
+      "mnemonic": "The laugh comes from ABOVE you, which is why it is never laughing with."
+    },
+    {
+      "id": "L5-M2-S04",
+      "display": "Nu ty dayósh'!",
+      "script": "Ну ты даёшь!",
+      "cue": "Well, you're something else!",
+      "literal": "Well you give!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nu ty dayósh'",
+            "script": "ну ты даёшь",
+            "cue": "you're something else",
+            "tag": "delta",
+            "forms": ["nu ty dayósh'"],
+            "note": "Three words taken as one: literally well, you give. Admiration, disbelief or mock outrage, and the tone decides which. It is frozen at ty and never said to a vy."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "The words mean nothing here. dayósh' is the verb to give and there is nothing given — take the phrase whole or it teaches you the wrong thing.",
+      "sound": "dayósh' has the yó and ends in a soft sh: da-YOSH. The nu in front is short and unstressed, almost swallowed.",
+      "variations": [
+        {
+          "display": "Nu ty dayósh'! Ya prósto shuchú.",
+          "script": "Ну ты даёшь! Я просто шучу.",
+          "cue": "You're something else! I'm just joking.",
+          "changed": "a retraction added behind it, in case the mock outrage read as real"
+        },
+        {
+          "display": "Ványa, nu ty dayósh'!",
+          "script": "Ваня, ну ты даёшь!",
+          "cue": "Vanya, you're something else!",
+          "changed": "the name in front, which is where it usually sits in speech"
+        }
+      ],
+      "mistake": {
+        "display": "Nu vy dayóte!",
+        "script": "Ну вы даёте!",
+        "why": "Made polite by moving it to vy. The phrase is frozen at ty, and it belongs to people who are already on ty terms."
+      },
+      "usage": "Reacting to a friend who has just done something outrageous or brilliant.",
+      "register": "informal",
+      "mnemonic": "Nothing is given and nothing is meant — the three words come as one."
+    },
+    {
+      "id": "L5-M2-S05",
+      "display": "Éhto ne dom, a dómik.",
+      "script": "Это не дом, а домик.",
+      "cue": "That's not a house, it's a little house.",
+      "literal": "This not house, but little-house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dom",
+            "script": "дом",
+            "cue": "house",
+            "tag": "free",
+            "forms": ["dom"],
+            "note": "House, and the base a diminutive needs beside it. Masculine and one syllable, so it carries no stress mark at all."
+          },
+          {
+            "display": "dómik",
+            "script": "домик",
+            "cue": "little house",
+            "tag": "delta",
+            "forms": ["dómik"],
+            "note": "dom plus the masculine -ik. Its own word with its own row, not a case shape of dom, and the stress stays where dom had it."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "ne X, a Y is the Russian not-X-but-Y frame from L1-M10, and a is the but that corrects rather than the but that objects.",
+      "sound": "dómik is DOH-myeek: the -ik ending softens the m in front of it, so it is not dom with a k stuck on.",
+      "variations": [
+        {
+          "display": "Éhto dómik.",
+          "script": "Это домик.",
+          "cue": "That's a little house.",
+          "changed": "the correction dropped, leaving a plain description"
+        },
+        {
+          "display": "Vot dom, a vot dómik.",
+          "script": "Вот дом, а вот домик.",
+          "cue": "Here's a house, and here's a little house.",
+          "changed": "the two put side by side rather than one denied for the other"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto ne dom, a málen'kiy dom.",
+        "script": "Это не дом, а маленький дом.",
+        "why": "The English fix — an adjective in front. It is correct Russian and says something else: a small house, with no warmth in it. The suffix is what carries the affection."
+      },
+      "usage": "Pointing at a cottage, a doll's house or a garden shed and naming it fondly.",
+      "register": "informal",
+      "mnemonic": "-ik is the masculine shrink ray: dom in, dómik out."
+    },
+    {
+      "id": "L5-M2-S06",
+      "display": "Vot kníga, a vot knízhka.",
+      "script": "Вот книга, а вот книжка.",
+      "cue": "Here's a book, and here's a little book.",
+      "literal": "Here book, and here little-book.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "knízhka",
+            "script": "книжка",
+            "cue": "little book",
+            "tag": "delta",
+            "forms": ["knízhka"],
+            "note": "kníga plus the feminine -ka, with the g hardening to zh on the way. A word of its own, and kníga keeps L1-M3's row."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "On a thing rather than a person, a diminutive can belittle. knízhka of somebody's serious book says the book is slight, and it will be heard that way.",
+      "sound": "The zh is the s of pleasure, KNEEZH-ka, and the initial kn is said with both letters — Russian has no silent k.",
+      "variations": [
+        {
+          "display": "Éhto ne kníga, a knízhka.",
+          "script": "Это не книга, а книжка.",
+          "cue": "That's not a book, it's a little book.",
+          "changed": "the same pair in the correcting frame from the sentence before"
+        },
+        {
+          "display": "Vot knízhka.",
+          "script": "Вот книжка.",
+          "cue": "Here's a little book.",
+          "changed": "the base word dropped, so only the fond form is left"
+        }
+      ],
+      "mistake": {
+        "display": "Vot kníga, a vot knígka.",
+        "script": "Вот книга, а вот книгка.",
+        "why": "The suffix bolted on without the consonant shift. -ka forces the g to zh, so it is knízhka; knígka is unpronounceable and does not exist."
+      },
+      "usage": "Showing a child a picture book beside a grown-up one.",
+      "register": "informal",
+      "mnemonic": "kníga loses its g to a zh on the way to becoming small."
+    },
+    {
+      "id": "L5-M2-S07",
+      "display": "Bol'sháya sobáka i málen'kaya sobáchka.",
+      "script": "Большая собака и маленькая собачка.",
+      "cue": "A big dog and a little doggie.",
+      "literal": "Big dog and small little-dog.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sobáka",
+            "script": "собака",
+            "cue": "dog",
+            "tag": "free",
+            "forms": ["sobáka"],
+            "note": "Dog, feminine, and the base the diminutive is built on. A diminutive with no base word beside it teaches nothing, which is why it gets its own row here."
+          },
+          {
+            "display": "sobáchka",
+            "script": "собачка",
+            "cue": "little dog, doggie",
+            "tag": "delta",
+            "forms": ["sobáchka"],
+            "note": "sobáka plus -ka, with the k hardening to ch. It is affection, not size — a huge dog somebody loves is still a sobáchka."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "málen'kaya sobáka and sobáchka are not the same sentence. The first measures the dog; the second says how the speaker feels about it.",
+      "sound": "sobáchka is sa-BACH-ka, the stress unmoved from sobáka, and the ch is the ch of church.",
+      "variations": [
+        {
+          "display": "Éhto ne sobáka, a sobáchka.",
+          "script": "Это не собака, а собачка.",
+          "cue": "That's not a dog, it's a little doggie.",
+          "changed": "the correcting frame again, now on a feminine pair"
+        },
+        {
+          "display": "Vot sobáchka.",
+          "script": "Вот собачка.",
+          "cue": "Here's a little doggie.",
+          "changed": "the pair reduced to the fond form alone"
+        }
+      ],
+      "mistake": {
+        "display": "Bol'sháya sobáchka i málen'kaya sobáka.",
+        "script": "Большая собачка и маленькая собака.",
+        "why": "Not wrong Russian, but not what was meant: it reads as a big dog somebody adores beside a small dog they do not. The suffix is feeling, and the adjective is size."
+      },
+      "usage": "Talking about dogs in a park, where the small one belongs to somebody you like.",
+      "register": "informal",
+      "mnemonic": "-ka is the feminine one, and it takes the last consonant with it: k to ch, g to zh."
+    },
+    {
+      "id": "L5-M2-S08",
+      "display": "Éhto Iván. Dlya menyá on Ványa.",
+      "script": "Это Иван. Для меня он Ваня.",
+      "cue": "This is Ivan. To me he's Vanya.",
+      "literal": "This Ivan. For me he Vanya.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Ványa",
+            "script": "Ваня",
+            "cue": "Vanya",
+            "tag": "delta",
+            "forms": ["Ványa"],
+            "note": "The friend's form of Iván, first taught on L1-M1's row. Not a nickname you invent: every common name has one fixed short form, and this is his."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "Ványa is not less respectful than Iván, it is closer. Using it about somebody you have not met says you know them, and that is what will be heard.",
+      "sound": "Two syllables, VAH-nya, and the final -ya is the soft n plus a light a rather than a separate y sound.",
+      "variations": [
+        {
+          "display": "Éhto Iván.",
+          "script": "Это Иван.",
+          "cue": "This is Ivan.",
+          "changed": "the passport name alone, which is what a stranger is given"
+        },
+        {
+          "display": "Dlya menyá on Ványa.",
+          "script": "Для меня он Ваня.",
+          "cue": "To me he's Vanya.",
+          "changed": "the introduction dropped, leaving only the claim of closeness"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto Iván. Dlya menyá on Ivánchik.",
+        "script": "Это Иван. Для меня он Иванчик.",
+        "why": "A diminutive suffix bolted onto the full name. The series is fixed and does not run through Iván — it goes Iván, Ványa, Vánechka."
+      },
+      "usage": "Introducing a friend and saying, in one line, how close you are.",
+      "register": "informal",
+      "mnemonic": "Iván is on the passport, Ványa is in the room."
+    },
+    {
+      "id": "L5-M2-S09",
+      "display": "Vánechka, ne obizháysya, ya prósto shuchú.",
+      "script": "Ванечка, не обижайся, я просто шучу.",
+      "cue": "Vanechka, don't take it the wrong way, I'm just joking.",
+      "literal": "Vanechka, not take-offence, I simply joke.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Vánechka",
+            "script": "Ванечка",
+            "cue": "Vanechka",
+            "tag": "interference",
+            "forms": ["Vánechka"],
+            "note": "The third step past Iván and Ványa: affection, or teasing, decided entirely by the voice. To a colleague it is a presumption and to a stranger a rudeness."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "This is the module's one real risk. Vánechka is intimacy, not extra politeness, and an English speaker reaches for it in exactly the place a Russian would not.",
+      "sound": "Stress on the first syllable and the rest very light: VAH-nyech-ka, three syllables run together.",
+      "variations": [
+        {
+          "display": "Vánechka, ya prósto shuchú.",
+          "script": "Ванечка, я просто шучу.",
+          "cue": "Vanechka, I'm just joking.",
+          "changed": "the softener dropped, because the name is already doing that work"
+        },
+        {
+          "display": "Ványa, ne obizháysya.",
+          "script": "Ваня, не обижайся.",
+          "cue": "Vanya, don't take it the wrong way.",
+          "changed": "one step back down the series, which is the safer of the two"
+        }
+      ],
+      "mistake": {
+        "display": "Ivánovich, ne obizháysya, ya prósto shuchú.",
+        "script": "Иванович, не обижайся, я просто шучу.",
+        "why": "The formal name pulled into a joke that only works between friends. Teasing and the respectful form of address do not sit in the same sentence."
+      },
+      "usage": "Teasing somebody you are genuinely close to, and taking it back in the same breath.",
+      "register": "informal",
+      "mnemonic": "Three steps up the ladder of a name, and the top one is only for people already at the top."
+    },
+    {
+      "id": "L5-M2-S10",
+      "display": "Éhto óchen' smeshnáya shútka.",
+      "script": "Это очень смешная шутка.",
+      "cue": "That's a very funny joke.",
+      "literal": "This very funny joke.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "shútka",
+            "script": "шутка",
+            "cue": "joke",
+            "tag": "free",
+            "forms": ["shútka"],
+            "note": "A joke, feminine, and the noun behind shuchú. Its -ka is part of the root here, not the diminutive suffix this module teaches."
+          },
+          {
+            "display": "smeshnóy",
+            "script": "смешной",
+            "cue": "funny",
+            "tag": "free",
+            "forms": ["smeshnóy", "smeshnáya"],
+            "note": "Funny, and it agrees like any adjective: smeshnóy for a masculine, smeshnáya for a feminine such as shútka. The stress sits on the ending."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "smeshnóy is funny-ha-ha. Funny-strange is stránnyy, and the L4-M10 verdict word for that is stránno.",
+      "sound": "Both the sh and the following consonant are said: smyesh-NOY, with the stress right at the end.",
+      "variations": [
+        {
+          "display": "Éhto smeshnáya shútka.",
+          "script": "Это смешная шутка.",
+          "cue": "That's a funny joke.",
+          "changed": "óchen' dropped, taking the enthusiasm down a step"
+        },
+        {
+          "display": "Ványa óchen' smeshnóy.",
+          "script": "Ваня очень смешной.",
+          "cue": "Vanya is very funny.",
+          "changed": "the adjective on a masculine person, so the ending goes back to -óy"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto óchen' smeshnóy shútka.",
+        "script": "Это очень смешной шутка.",
+        "why": "The dictionary form of the adjective left on a feminine noun. shútka is feminine, so it takes smeshnáya — agreement does not stop being required inside a compliment."
+      },
+      "usage": "Telling somebody their joke landed, which is the friendliest thing in this module.",
+      "register": "informal",
+      "mnemonic": "shútka is feminine, so the funny that goes with it ends in -aya."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M2-C01",
+      "display": "Ya prósto shuchú.",
+      "script": "Я просто шучу.",
+      "cue": "I'm just joking."
+    },
+    {
+      "id": "L5-M2-C02",
+      "display": "Ne obizháysya, Ványa.",
+      "script": "Не обижайся, Ваня.",
+      "cue": "Don't take it the wrong way, Vanya."
+    },
+    {
+      "id": "L5-M2-C03",
+      "display": "Ty smeyósh'sya nádo mnoy?",
+      "script": "Ты смеёшься надо мной?",
+      "cue": "Are you laughing at me?"
+    },
+    {
+      "id": "L5-M2-C04",
+      "display": "Nu ty dayósh'!",
+      "script": "Ну ты даёшь!",
+      "cue": "Well, you're something else!"
+    },
+    {
+      "id": "L5-M2-C05",
+      "display": "Éhto ne dom, a dómik.",
+      "script": "Это не дом, а домик.",
+      "cue": "That's not a house, it's a little house."
+    },
+    {
+      "id": "L5-M2-C06",
+      "display": "Vot kníga, a vot knízhka.",
+      "script": "Вот книга, а вот книжка.",
+      "cue": "Here's a book, and here's a little book."
+    },
+    {
+      "id": "L5-M2-C07",
+      "display": "Bol'sháya sobáka i málen'kaya sobáchka.",
+      "script": "Большая собака и маленькая собачка.",
+      "cue": "A big dog and a little doggie."
+    },
+    {
+      "id": "L5-M2-C08",
+      "display": "Vánechka, ne obizháysya.",
+      "script": "Ванечка, не обижайся.",
+      "cue": "Vanechka, don't take it the wrong way."
+    },
+    {
+      "id": "L5-M2-C09",
+      "display": "Éhto óchen' smeshnáya shútka.",
+      "script": "Это очень смешная шутка.",
+      "cue": "That's a very funny joke."
+    },
+    {
+      "id": "L5-M2-C10",
+      "display": "Moy drug Ványa óchen' smeshnóy.",
+      "script": "Мой друг Ваня очень смешной.",
+      "cue": "My friend Vanya is very funny."
+    },
+    {
+      "id": "L5-M2-C11",
+      "display": "Ty shútish'?",
+      "script": "Ты шутишь?",
+      "cue": "Are you joking?"
+    },
+    {
+      "id": "L5-M2-C12",
+      "display": "Ne nádo smeyát'sya nádo mnoy.",
+      "script": "Не надо смеяться надо мной.",
+      "cue": "Don't laugh at me."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

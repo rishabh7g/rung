@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M7",
+  "title": "Between the lines",
+  "job": "Implication, sarcasm, indirect requests",
+  "prerequisites": ["L5-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["simple_present", "simple_past"],
+    "allowedPatterns": [
+      "N-i/ga + jom + A-neyo",
+      "je-ga + V-(eu)lkkayo?",
+      "hoksi + N + isseuseyo?",
+      "clause-neundeyo…",
+      "nunchi-ga + isseoyo/eopseoyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A HINT IS A DESCRIPTION THAT STOPS. The ordinary Korean way to ask for what you are not entitled to ask for is to name the situation and say nothing else. bang-i jom chumneyo is close the window."
+    },
+    {
+      "tag": "free",
+      "text": "JOM IS NOT A LITTLE HERE. L2-M1's jom is the marker that turns a description into a request. Take it out and the same sentence is a complaint about the room."
+    },
+    {
+      "tag": "free",
+      "text": "-NEYO FRAMES IT AS JUST NOTICED. L5-M3's ending is the whole difference between a hint and a grievance: you have observed the cold, not held anybody responsible for it."
+    },
+    {
+      "tag": "delta",
+      "text": "V-(EU)LKKAYO OFFERS INSTEAD OF ASKING. Shall I? is a question about yourself, and so the least intrusive request the language has. L2-M6's -(eu)llaeyo invites the other person; this one volunteers you."
+    },
+    {
+      "tag": "interference",
+      "text": "AN ENGLISH SPEAKER HINTS BY CHOICE, A KOREAN SPEAKER BY DEFAULT. Anything directed upward is hinted, so saving hints for delicate moments leaves you blunt for the rest of the day."
+    },
+    {
+      "tag": "interference",
+      "text": "KOREAN SARCASM IS A FLAT POSITIVE SENTENCE. Learn to hear it and never attempt it: English-shaped sarcasm in Korean is heard as sincere or as rude, never as funny. This course teaches its reception only."
+    },
+    {
+      "tag": "free",
+      "text": "NUNCHI IS THE SKILL ITSELF, and Korean has a name for it. nunchi-ga isseoyo is reads the room; nunchi-ga eopseoyo is the standard thing said about somebody who does not."
+    },
+    {
+      "tag": "free",
+      "text": "JOM GEURAEYO IS A NO. Two words that mean nothing apart — a bit, it is that way — and together decline. L4-M5's jom eoryeoul geot gatayo is the fuller version and stays L4-M5's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M7-S01",
+      "display": "Bang-i jom chumneyo.",
+      "script": "방이 좀 춥네요.",
+      "cue": "It is a bit cold in here.",
+      "literal": "room-SUBJ a-bit is-cold-NOTICE",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bang",
+            "script": "방",
+            "cue": "room",
+            "tag": "free",
+            "forms": ["bang", "bang-i", "bang-eun"],
+            "note": "The room you are both standing in — which is why it can carry a request without one being made."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "English hears this as small talk about the weather indoors. In Korean it is the request, delivered whole, and an answer of yes, it is is a refusal.",
+      "sound": "BANG-i jom CHUM-ne-yo.",
+      "variations": [
+        {
+          "display": "Bang-i chumneyo.",
+          "script": "방이 춥네요.",
+          "cue": "The room is cold.",
+          "changed": "jom dropped: an observation, and no longer a request"
+        },
+        {
+          "display": "Bang-eun jom chumneyo.",
+          "script": "방은 좀 춥네요.",
+          "cue": "The room, at least, is a bit cold.",
+          "changed": "-eun for -i: the room set against something else"
+        }
+      ],
+      "mistake": {
+        "display": "Bang-i jom chuwoyo.",
+        "script": "방이 좀 추워요.",
+        "why": "Without -neyo the sentence states a fact you already knew, which reads as a complaint. -neyo says you have only just noticed, and that is what keeps the request light."
+      },
+      "usage": "Asking somebody senior to close a window without asking.",
+      "register": "neutral",
+      "mnemonic": "Say the room, not the favour."
+    },
+    {
+      "id": "L5-M7-S02",
+      "display": "Geureomyeon je-ga halkkayo?",
+      "script": "그러면 제가 할까요?",
+      "cue": "Then shall I do it?",
+      "literal": "in-that-case I-SUBJ do-shall?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "halkkayo",
+            "script": "할까요",
+            "cue": "shall I do it?",
+            "tag": "delta",
+            "forms": ["halkkayo", "galkkayo", "meogeulkkayo"],
+            "note": "A question you ask about yourself, so nothing is asked of anybody else. Attach -lkkayo to the same stem that takes L2-M1's su."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "English shall I? is stiff and old-fashioned; Korean -(eu)lkkayo is the everyday way to volunteer, and reaching instead for a plain I will do it takes the choice away from the person you are offering to.",
+      "sound": "GEU-reo-myeon JE-ga HAL-kka-yo?",
+      "variations": [
+        {
+          "display": "Geureomyeon je-ga galkkayo?",
+          "script": "그러면 제가 갈까요?",
+          "cue": "Then shall I go?",
+          "changed": "galkkayo for halkkayo: the same offer on a motion verb"
+        },
+        {
+          "display": "Je-ga meogeulkkayo?",
+          "script": "제가 먹을까요?",
+          "cue": "Shall I eat it?",
+          "changed": "a consonant stem, so -eulkkayo takes the linking vowel"
+        }
+      ],
+      "mistake": {
+        "display": "Geureomyeon je-ga hallaeyo?",
+        "script": "그러면 제가 할래요?",
+        "why": "L2-M6's -(eu)llaeyo asks what somebody else wants, so turning it on yourself asks your own preference out loud. The offer needs -(eu)lkkayo."
+      },
+      "usage": "Volunteering for a job nobody has assigned.",
+      "register": "neutral",
+      "mnemonic": "-lkkayo wonders aloud about yourself."
+    },
+    {
+      "id": "L5-M7-S03",
+      "display": "Hoksi sigan isseuseyo?",
+      "script": "혹시 시간 있으세요?",
+      "cue": "Do you happen to have a moment?",
+      "literal": "by-any-chance time exist-HON?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "isseuseyo",
+            "script": "있으세요",
+            "cue": "do you have (honorific)",
+            "tag": "delta",
+            "forms": ["isseuseyo"],
+            "note": "L1-M3's isseoyo carrying L3-M8's -si- for the person you are asking. The honorific is on them, never on your own time."
+          }
+        ],
+        "rules": [4, 0]
+      },
+      "trap": "English do you have a minute is already the whole request. So is this one — but hoksi is what makes it escapable, and dropping it turns a soft opening into a summons.",
+      "sound": "HOK-si SI-gan I-sseu-se-yo?",
+      "variations": [
+        {
+          "display": "Sigan isseuseyo?",
+          "script": "시간 있으세요?",
+          "cue": "Do you have a moment?",
+          "changed": "hoksi dropped: still polite, but no longer escapable"
+        },
+        {
+          "display": "Hoksi sigan isseoyo?",
+          "script": "혹시 시간 있어요?",
+          "cue": "Do you happen to have a moment?",
+          "changed": "the honorific removed: for somebody your own age"
+        }
+      ],
+      "mistake": {
+        "display": "Hoksi jeo-neun sigan isseuseyo?",
+        "script": "혹시 저는 시간 있으세요?",
+        "why": "The honorific raises whoever the sentence is about, and here that has to be the listener. Putting yourself in the subject slot raises you instead."
+      },
+      "usage": "Opening a request you are prepared to have refused.",
+      "register": "neutral",
+      "mnemonic": "hoksi leaves the door open; -seyo bows on the way in."
+    },
+    {
+      "id": "L5-M7-S04",
+      "display": "Chingu-neun nunchi-ga isseoyo.",
+      "script": "친구는 눈치가 있어요.",
+      "cue": "My friend reads a room well.",
+      "literal": "friend-TOP room-sense-SUBJ exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nunchi",
+            "script": "눈치",
+            "cue": "the reading of a room",
+            "tag": "delta",
+            "forms": ["nunchi", "nunchi-ga", "nunchi-reul"],
+            "note": "Korean's own name for the skill this module teaches: seeing what has not been said. It is had or not had, never done."
+          }
+        ],
+        "rules": [6, 4]
+      },
+      "trap": "English tact is about what you choose to say. nunchi is about what you manage to hear, so it is praised in a listener, not in a speaker.",
+      "sound": "CHIN-gu-neun NUN-chi-ga I-sseo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-neun nunchi-ga eopseoyo.",
+          "script": "친구는 눈치가 없어요.",
+          "cue": "My friend cannot read a room.",
+          "changed": "eopseoyo for isseoyo: the standard complaint"
+        },
+        {
+          "display": "Nunchi-reul bwayo.",
+          "script": "눈치를 봐요.",
+          "cue": "I am reading the room.",
+          "changed": "-reul with L2-M6's bwayo: watching for the unsaid"
+        }
+      ],
+      "mistake": {
+        "display": "Chingu-neun nunchi haeyo.",
+        "script": "친구는 눈치 해요.",
+        "why": "nunchi is not something you do. Korean has it or lacks it — nunchi-ga isseoyo, nunchi-ga eopseoyo — and only nunchi-reul bwayo puts it in motion."
+      },
+      "usage": "Saying why somebody is easy or hard to be around.",
+      "register": "neutral",
+      "mnemonic": "nun is the eye; nunchi is what the eye picks up."
+    },
+    {
+      "id": "L5-M7-S05",
+      "display": "Changmun-i yeollyeosseoyo. Bang-i jom chumneyo.",
+      "script": "창문이 열렸어요. 방이 좀 춥네요.",
+      "cue": "The window is open. It is a bit cold in here.",
+      "literal": "window-SUBJ opened. room-SUBJ a-bit is-cold-NOTICE",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "changmun",
+            "script": "창문",
+            "cue": "window",
+            "tag": "free",
+            "forms": ["changmun", "changmun-i", "changmun-eul"],
+            "note": "The thing the hint is really about. Naming it and then naming the cold is the whole request, in two sentences and no verbs of asking."
+          }
+        ],
+        "rules": [0, 1, 2]
+      },
+      "trap": "English would join these with so — the window is open, so it is cold. Korean leaves the join out on purpose: the gap between the two sentences is where the request sits.",
+      "sound": "CHANG-mu-ni YEOL-lyeo-sseo-yo. BANG-i jom CHUM-ne-yo.",
+      "variations": [
+        {
+          "display": "Changmun-eul yeollyeosseoyo.",
+          "script": "창문을 열었어요.",
+          "cue": "I opened the window.",
+          "changed": "-eul for -i: somebody did it, rather than it being so"
+        },
+        {
+          "display": "Changmun-i yeollyeosseoyo.",
+          "script": "창문이 열렸어요.",
+          "cue": "The window is open.",
+          "changed": "the second half withheld: a fact, and no request"
+        }
+      ],
+      "mistake": {
+        "display": "Changmun-i yeollyeosseoyo. Geuraeseo dadeuseyo.",
+        "script": "창문이 열렸어요. 그래서 닫으세요.",
+        "why": "Finishing the thought destroys it. Once the instruction is spoken the hint has become an order, and a polite ending does not undo that."
+      },
+      "usage": "Two flat observations, laid side by side for somebody to act on.",
+      "register": "neutral",
+      "mnemonic": "State the window, state the cold, stop talking."
+    },
+    {
+      "id": "L5-M7-S06",
+      "display": "Geunyang mureosseoyo. Gwaenchanayo.",
+      "script": "그냥 물었어요. 괜찮아요.",
+      "cue": "I was just asking. It is fine.",
+      "literal": "just asked. is-fine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geunyang",
+            "script": "그냥",
+            "cue": "just, for no reason",
+            "tag": "delta",
+            "forms": ["geunyang"],
+            "note": "It removes the motive from what you just said, which is how a hint is taken back when it has landed too hard."
+          }
+        ],
+        "rules": [4, 7]
+      },
+      "trap": "English just minimises the thing itself — it is just a question. geunyang says the question had no purpose behind it, which is the part that lets everybody off.",
+      "sound": "GEU-nyang MU-reo-sseo-yo. GWAEN-cha-na-yo.",
+      "variations": [
+        {
+          "display": "Geunyang gwaenchanayo.",
+          "script": "그냥 괜찮아요.",
+          "cue": "It is fine, really.",
+          "changed": "the asking dropped: a refusal of the offer"
+        },
+        {
+          "display": "Mureosseoyo.",
+          "script": "물었어요.",
+          "cue": "I asked.",
+          "changed": "geunyang gone, and with it the way out"
+        }
+      ],
+      "mistake": {
+        "display": "Geunyang mureosseoyo. Dwaesseoyo.",
+        "script": "그냥 물었어요. 됐어요.",
+        "why": "dwaesseoyo is curt where this sentence is trying to be kind, and L4-M2 already spent it on -ge dwaesseoyo, it came about. The polite decline is L2-M1's gwaenchanayo."
+      },
+      "usage": "Withdrawing a hint the moment it makes somebody uncomfortable.",
+      "register": "neutral",
+      "mnemonic": "geunyang empties the sentence of its reason."
+    },
+    {
+      "id": "L5-M7-S07",
+      "display": "Eojjeom geureoke jal haesseoyo?",
+      "script": "어쩜 그렇게 잘 했어요?",
+      "cue": "How on earth did you do it so well?",
+      "literal": "how-ever that-way well did?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eojjeom",
+            "script": "어쩜",
+            "cue": "how on earth, however did",
+            "tag": "interference",
+            "forms": ["eojjeom"],
+            "note": "Marks the sentence as an exclamation rather than a question. Said warmly it is real praise; said flat over a mistake it is the sarcasm to recognise and not to copy."
+          }
+        ],
+        "rules": [5, 4]
+      },
+      "trap": "The words are positive either way, and a course with no sound cannot show you the flat delivery that flips them. Hear this one; produce only the warm reading.",
+      "sound": "EO-jjeom GEU-reo-ke jal HAE-sseo-yo?",
+      "variations": [
+        {
+          "display": "Eojjeom geureoke jal haseyo?",
+          "script": "어쩜 그렇게 잘 하세요?",
+          "cue": "How on earth do you do it so well?",
+          "changed": "the honorific present: praise to somebody senior"
+        },
+        {
+          "display": "Geureoke jal haesseoyo?",
+          "script": "그렇게 잘 했어요?",
+          "cue": "Did you do it that well?",
+          "changed": "eojjeom dropped: a plain question, and no exclamation at all"
+        }
+      ],
+      "mistake": {
+        "display": "Eojjeom geureoke mot haesseoyo?",
+        "script": "어쩜 그렇게 못 했어요?",
+        "why": "Spelling the criticism out is not sarcasm in Korean, it is an insult. The flat delivery of the positive sentence is the whole device, and this is why a learner should only ever receive it."
+      },
+      "usage": "Reading a compliment that may not be one.",
+      "register": "neutral",
+      "mnemonic": "eojjeom throws its hands up — in delight, or not."
+    },
+    {
+      "id": "L5-M7-S08",
+      "display": "Ama eoryeoul geot gatayo.",
+      "script": "아마 어려울 것 같아요.",
+      "cue": "It would probably be difficult.",
+      "literal": "probably difficult-ADN thing seems",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ama",
+            "script": "아마",
+            "cue": "probably, I suppose",
+            "tag": "free",
+            "forms": ["ama"],
+            "note": "Layered on top of L3-M3's geot gatayo, it puts one more step between you and the thing you are about to decline."
+          }
+        ],
+        "rules": [4, 7]
+      },
+      "trap": "English probably reports a likelihood. Here it reports nothing about the world at all — it is distance, and the sentence it is attached to is a no.",
+      "sound": "A-ma EO-ryeo-ul geot GA-ta-yo.",
+      "variations": [
+        {
+          "display": "Eoryeoul geot gatayo.",
+          "script": "어려울 것 같아요.",
+          "cue": "It seems it would be difficult.",
+          "changed": "ama dropped: L4-M5's refusal at its own strength"
+        },
+        {
+          "display": "Ama gwaenchanayo.",
+          "script": "아마 괜찮아요.",
+          "cue": "It is probably fine.",
+          "changed": "the same hedge over an acceptance"
+        }
+      ],
+      "mistake": {
+        "display": "Ama an dwaeyo.",
+        "script": "아마 안 돼요.",
+        "why": "The hedge and the flat no cancel each other. If the answer is going to be refused outright, ama only makes it sound evasive; keep the hedge for the sentence that never says no."
+      },
+      "usage": "Declining something you have not been formally asked for.",
+      "register": "neutral",
+      "mnemonic": "ama steps back one pace before the sentence even starts."
+    },
+    {
+      "id": "L5-M7-S09",
+      "display": "Geugeo-neun jom geuraeyo.",
+      "script": "그거는 좀 그래요.",
+      "cue": "That one is... a bit, you know.",
+      "literal": "that-TOP a-bit is-that-way",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jom geuraeyo",
+            "script": "좀 그래요",
+            "cue": "it is a bit... (a refusal)",
+            "tag": "delta",
+            "forms": ["jom geuraeyo"],
+            "note": "Learn it whole. Neither word says no — a bit, it is like that — and together they are the everyday decline for an idea you will not name a fault in."
+          }
+        ],
+        "rules": [7, 4]
+      },
+      "trap": "English needs the adjective — it is a bit much, a bit expensive. Korean deliberately never supplies it, and supplying one turns a decline into a criticism.",
+      "sound": "GEU-geo-neun jom GEU-rae-yo.",
+      "variations": [
+        {
+          "display": "Igeo-neun jom geuraeyo.",
+          "script": "이거는 좀 그래요.",
+          "cue": "This one is a bit, you know.",
+          "changed": "the near demonstrative: the thing in your hand"
+        },
+        {
+          "display": "Jom geuraeyo.",
+          "script": "좀 그래요.",
+          "cue": "It is a bit, you know.",
+          "changed": "the subject dropped, as it usually is"
+        }
+      ],
+      "mistake": {
+        "display": "Geugeo-neun jom bissayo.",
+        "script": "그거는 좀 비싸요.",
+        "why": "This is a perfectly good sentence and a different act: it names the problem. jom geuraeyo refuses without naming one, which is what leaves the other person's idea intact."
+      },
+      "usage": "Turning down a suggestion in front of the person who made it.",
+      "register": "neutral",
+      "mnemonic": "A bit... that way. Nobody has to finish it."
+    },
+    {
+      "id": "L5-M7-S10",
+      "display": "Bunwigi-ga an joayo. Geunyang gayo.",
+      "script": "분위기가 안 좋아요. 그냥 가요.",
+      "cue": "The mood in here is not good. Let us just go.",
+      "literal": "atmosphere-SUBJ not is-good. just go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bunwigi",
+            "script": "분위기",
+            "cue": "mood, atmosphere",
+            "tag": "free",
+            "forms": ["bunwigi", "bunwigi-ga", "bunwigi-reul"],
+            "note": "The thing nunchi reads. Naming it is how two people agree about a room without either of them saying what happened in it."
+          }
+        ],
+        "rules": [6, 0]
+      },
+      "trap": "English says the mood is off and then explains. Korean names the mood and moves, and the explanation would be the rude part.",
+      "sound": "BU-nwi-gi-ga an JO-a-yo. GEU-nyang GA-yo.",
+      "variations": [
+        {
+          "display": "Bunwigi-ga joayo.",
+          "script": "분위기가 좋아요.",
+          "cue": "The mood in here is good.",
+          "changed": "the positive: the same reading, reported warmly"
+        },
+        {
+          "display": "Bunwigi-reul bwayo.",
+          "script": "분위기를 봐요.",
+          "cue": "Read the room.",
+          "changed": "-reul with bwayo: the mood as something to watch"
+        }
+      ],
+      "mistake": {
+        "display": "Bunwigi-ga an joayo. Waenyahamyeon sajangnim-i hwa-ga nasseoyo.",
+        "script": "분위기가 안 좋아요. 왜냐하면 사장님이 화가 났어요.",
+        "why": "L5-M6's bracket is exactly wrong here. A hint that supplies its own reason has stopped being a hint, and naming the person is what makes it repeatable against you."
+      },
+      "usage": "Getting a friend out of a room without saying why.",
+      "register": "neutral",
+      "mnemonic": "bunwigi is the weather in the room."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M7-C01",
+      "display": "Bang-i jom chumneyo.",
+      "script": "방이 좀 춥네요.",
+      "cue": "It is a bit cold in here."
+    },
+    {
+      "id": "L5-M7-C02",
+      "display": "Je-ga halkkayo?",
+      "script": "제가 할까요?",
+      "cue": "Shall I do it?"
+    },
+    {
+      "id": "L5-M7-C03",
+      "display": "Hoksi sigan isseuseyo?",
+      "script": "혹시 시간 있으세요?",
+      "cue": "Do you happen to have a moment?"
+    },
+    {
+      "id": "L5-M7-C04",
+      "display": "Nunchi-ga eopseoyo.",
+      "script": "눈치가 없어요.",
+      "cue": "He cannot read a room."
+    },
+    {
+      "id": "L5-M7-C05",
+      "display": "Changmun-i yeollyeosseoyo.",
+      "script": "창문이 열렸어요.",
+      "cue": "The window is open."
+    },
+    {
+      "id": "L5-M7-C06",
+      "display": "Geunyang mureosseoyo.",
+      "script": "그냥 물었어요.",
+      "cue": "I was just asking."
+    },
+    {
+      "id": "L5-M7-C07",
+      "display": "Eojjeom geureoke jal haesseoyo?",
+      "script": "어쩜 그렇게 잘 했어요?",
+      "cue": "How on earth did you do it so well?"
+    },
+    {
+      "id": "L5-M7-C08",
+      "display": "Ama eoryeoul geot gatayo.",
+      "script": "아마 어려울 것 같아요.",
+      "cue": "It would probably be difficult."
+    },
+    {
+      "id": "L5-M7-C09",
+      "display": "Geugeo-neun jom geuraeyo.",
+      "script": "그거는 좀 그래요.",
+      "cue": "That one is a bit, you know."
+    },
+    {
+      "id": "L5-M7-C10",
+      "display": "Bunwigi-ga an joayo.",
+      "script": "분위기가 안 좋아요.",
+      "cue": "The mood in here is not good."
+    },
+    {
+      "id": "L5-M7-C11",
+      "display": "Je-ga galkkayo?",
+      "script": "제가 갈까요?",
+      "cue": "Shall I go?"
+    },
+    {
+      "id": "L5-M7-C12",
+      "display": "Chingu-neun nunchi-ga isseoyo.",
+      "script": "친구는 눈치가 있어요.",
+      "cue": "My friend reads a room well."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

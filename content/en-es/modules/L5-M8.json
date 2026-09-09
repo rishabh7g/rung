@@ -1,0 +1,694 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M8",
+  "title": "When words run out",
+  "job": "Paraphrase, ask what something means, repair a misunderstanding",
+  "prerequisites": [
+    "L5-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 8,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "present",
+      "preterite",
+      "perfect",
+      "present subjunctive",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "Es una cosa que sirve para + V-inf",
+      "Busco algo que + <subjunctive>",
+      "¿Qué quiere decir + <word>? + / + ¿Cómo se dice + <word>?",
+      "Se me + ha olvidado + <N>",
+      "Perdona + , + no te he entendido + . + ¿Puedes repetir?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "When the thing you are describing has NOT been identified, the verb inside the relative clause goes subjunctive: busco algo que sirva, ¿hay alguien que hable español? You do not know the word, so the thing is unidentified by definition — the mood follows from the situation, not from a list."
+    },
+    {
+      "tag": "delta",
+      "text": "For a thing that exists and is known, the same clause takes the indicative: tengo algo que sirve para eso. That minimal pair — sirva against sirve — is the whole rule, and it never bends."
+    },
+    {
+      "tag": "delta",
+      "text": "The accidental se: se me olvidó la palabra, se me rompió el móvil. The thing becomes the grammatical subject and the person is a dative bystander — the word forgot itself to me. It is not an evasion of blame, it is the ordinary way Spanish reports an accident."
+    },
+    {
+      "tag": "delta",
+      "text": "This is a THIRD se, and it is not the other two. L3-M8's passive se (se firma aquí) and L4-M7's impersonal se (se dice que) both hide the doer. This one names the person, in the dative slot: se ME olvidó, se TE rompió."
+    },
+    {
+      "tag": "free",
+      "text": "The circumlocution frames are the point of the module: es una cosa que, sirve para, es como un, parecido a, no me sale la palabra. Put an ordinary noun inside a frame and two thousand words become an unlimited vocabulary."
+    },
+    {
+      "tag": "free",
+      "text": "The repair set works in both addresses and differs only in a verb ending: ¿puedes repetir? to a friend, ¿puede repetir? to a stranger. Perdona, no te he entendido; ¿cómo se dice?; ¿qué quiere decir?; más despacio, por favor."
+    },
+    {
+      "tag": "interference",
+      "text": "English marks nothing at all here. I need someone who speaks English is the same shape whoever it is, so nothing warns you that a choice is due, and alguien que habla slips out and the distinction is silently lost."
+    },
+    {
+      "tag": "interference",
+      "text": "English says I lost my ticket and puts the speaker in the subject slot. Perdí el billete is correct Spanish and sounds like a confession; se me perdió el billete is the default and sounds like an accident. And English sorry does three jobs Spanish splits between lo siento, perdona and ¿cómo?"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M8-S01",
+      "display": "Es una cosa que sirve para abrir botellas. No me sale la palabra.",
+      "cue": "It is a thing you use for opening bottles. The word will not come to me.",
+      "literal": "Is a thing that serves for to-open bottles. Not me comes-out the word.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "una cosa que",
+            "cue": "a thing that, a thingy for",
+            "tag": "delta",
+            "forms": [
+              "una cosa que"
+            ],
+            "note": "The opening frame of every paraphrase. What follows is a description, so the noun you cannot remember is never needed."
+          },
+          {
+            "display": "sirve para",
+            "cue": "is used for",
+            "tag": "delta",
+            "forms": [
+              "sirve para",
+              "sirven para"
+            ],
+            "note": "Always para plus an infinitive: sirve PARA abrir. Naming the job is the fastest way to describe a thing."
+          },
+          {
+            "display": "no me sale",
+            "cue": "it will not come to me",
+            "tag": "free",
+            "forms": [
+              "no me sale"
+            ],
+            "note": "Said about a word you know and cannot reach. It buys you a few seconds and tells the listener you have not finished."
+          },
+          {
+            "display": "palabra",
+            "cue": "word",
+            "tag": "free",
+            "forms": [
+              "palabra",
+              "palabras"
+            ],
+            "note": "Feminine: la palabra. Una palabra is one word; unas palabras, from L4, is a short speech."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "You already know how to do this in your own language. The only thing missing is the frames, and there are four of them — that sentence is the most useful thing in this module.",
+      "sound": "Cosa is KO-sa, and the s is always the sharp English s of see, never the z of rose.",
+      "variations": [
+        {
+          "display": "Es una cosa que sirve para abrir botellas.",
+          "cue": "It is a thing you use for opening bottles.",
+          "changed": "The frame alone. Complete, and enough to get you the word from anyone listening."
+        },
+        {
+          "display": "No me sale la palabra.",
+          "cue": "The word will not come to me.",
+          "changed": "The stall on its own, which is what you say while you build the description."
+        }
+      ],
+      "mistake": {
+        "display": "Es una cosa que sirve abrir botellas.",
+        "why": "sirve needs its para before the infinitive. Without it the sentence has two verbs and nothing joining them."
+      },
+      "usage": "Neutral, and usable with anyone. Nobody minds a description; what strands a conversation is stopping.",
+      "register": "neutral",
+      "mnemonic": "Describe the job, not the thing."
+    },
+    {
+      "id": "L5-M8-S02",
+      "display": "Necesito algo que sirva para esto. Busco una cosa pequeña.",
+      "cue": "I need something that will do for this. I am looking for something small.",
+      "literal": "I-need something that may-serve for this. I-seek a thing small.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sirva",
+            "cue": "may be of use",
+            "tag": "delta",
+            "forms": [
+              "sirva",
+              "sirvan"
+            ],
+            "note": "Subjunctive because the thing has not been identified. Compare tengo algo que SIRVE, for a thing you already have."
+          },
+          {
+            "display": "busco",
+            "cue": "I am looking for",
+            "tag": "free",
+            "forms": [
+              "busco",
+              "buscar",
+              "buscas"
+            ],
+            "note": "Takes no preposition: busco algo, never busco por algo. That is the commonest error a learner brings from English."
+          },
+          {
+            "display": "cosa",
+            "cue": "thing",
+            "tag": "free",
+            "forms": [
+              "cosa",
+              "cosas"
+            ],
+            "note": "The all-purpose noun. Feminine, and the one word that lets you talk about anything you cannot name."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          6
+        ]
+      },
+      "trap": "Necesito algo que sirve is the sentence a learner produces for years. English marks nothing here, so nothing tells you that not knowing which thing is exactly what puts the verb into the subjunctive.",
+      "sound": "Sirva is SIR-ba, with the Spanish v sounding like a soft b. Sirve and sirva differ only in that last vowel, so land it clearly.",
+      "variations": [
+        {
+          "display": "Necesito algo que sirva.",
+          "cue": "I need something that will do.",
+          "changed": "The unknown thing at its shortest, with the subjunctive doing all the work."
+        },
+        {
+          "display": "Tengo algo que sirve para esto.",
+          "cue": "I have something that does for this.",
+          "changed": "Known thing, indicative. The minimal pair of the module, one letter apart."
+        }
+      ],
+      "mistake": {
+        "display": "Busco por algo que sirve para esto.",
+        "why": "Two faults. buscar never takes por, and the thing is unidentified, so the verb must be sirva."
+      },
+      "usage": "Neutral. This is shop Spanish, hardware-store Spanish, and the sentence that gets you the thing when you cannot name it.",
+      "register": "neutral",
+      "mnemonic": "Unknown thing, subjunctive."
+    },
+    {
+      "id": "L5-M8-S03",
+      "display": "¿Hay alguien que hable español? Es que no te he entendido bien.",
+      "cue": "Is there anyone who speaks Spanish? The thing is, I did not catch what you said.",
+      "literal": "Is-there someone that may-speak Spanish? Is that not you I-have understood well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "entendido",
+            "cue": "understood",
+            "tag": "delta",
+            "forms": [
+              "entendido"
+            ],
+            "note": "The participle of entender. No te he entendido reports one moment; no te entiendo says you still do not."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          6
+        ]
+      },
+      "trap": "¿Hay alguien que habla español? is the version everyone builds first. You do not know whether such a person exists, so the clause is unidentified and hable is required.",
+      "sound": "Entendido is en-ten-DI-do, four even syllables with the stress on the third.",
+      "variations": [
+        {
+          "display": "¿Hay alguien que hable español?",
+          "cue": "Is there anyone who speaks Spanish?",
+          "changed": "The question alone, and the single most useful unidentified-antecedent sentence in the language."
+        },
+        {
+          "display": "No te he entendido bien.",
+          "cue": "I did not quite catch that.",
+          "changed": "The repair alone. Said at once, it keeps the conversation alive."
+        }
+      ],
+      "mistake": {
+        "display": "¿Hay alguien que habla español?",
+        "why": "habla is the indicative and assumes such a person exists. The whole point of the question is that you do not know, so it is hable."
+      },
+      "usage": "Neutral, and safe with strangers. Asking for help early costs nothing; the awkwardness comes from waiting.",
+      "register": "neutral",
+      "mnemonic": "Do not know who, so subjunctive."
+    },
+    {
+      "id": "L5-M8-S04",
+      "display": "Perdona, no te he entendido. ¿Puedes repetir otra vez más despacio?",
+      "cue": "Sorry, I did not catch that. Could you say it again more slowly?",
+      "literal": "Forgive, not you I-have understood. Can-you to-repeat another time more slowly?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "puedes repetir",
+            "cue": "could you say again",
+            "tag": "free",
+            "forms": [
+              "puedes repetir",
+              "puede repetir"
+            ],
+            "note": "Both addresses in one row: puedes to a friend, puede to a stranger. Only the verb ending moves."
+          },
+          {
+            "display": "otra vez",
+            "cue": "again",
+            "tag": "free",
+            "forms": [
+              "otra vez"
+            ],
+            "note": "Literally another time. Softer than de nuevo in speech, and the ordinary way to ask for a repeat."
+          },
+          {
+            "display": "despacio",
+            "cue": "slowly",
+            "tag": "free",
+            "forms": [
+              "despacio"
+            ],
+            "note": "An adverb already, so there is no despacia and no despaciamente. Más despacio is what you actually ask for."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "English sorry does three different jobs. Spanish splits them: lo siento is regret, perdona is excuse me, and for I did not hear you the word is perdona or simply ¿cómo? Choosing wrong is a small permanent tell.",
+      "sound": "Despacio is des-PA-thyo in Spain and des-PA-syo elsewhere; both are standard and neither stresses the final o.",
+      "variations": [
+        {
+          "display": "¿Puedes repetir más despacio?",
+          "cue": "Could you say it again more slowly?",
+          "changed": "The request at its shortest, and enough on its own."
+        },
+        {
+          "display": "¿Puede repetir más despacio, por favor?",
+          "cue": "Could you say it again more slowly, please?",
+          "changed": "The same sentence to a stranger: puede, plus por favor. Politeness lives in the frame, not in the pronoun."
+        }
+      ],
+      "mistake": {
+        "display": "Lo siento, no te he entendido, repite rápido.",
+        "why": "lo siento apologises for something you did wrong, which this is not, and rápido asks for the opposite of what you need."
+      },
+      "usage": "Both addresses, and this sentence is said as often to a clerk as to a friend. Nobody in Spanish minds being asked to repeat.",
+      "register": "neutral",
+      "mnemonic": "Perdona for the ear, lo siento for the heart."
+    },
+    {
+      "id": "L5-M8-S05",
+      "display": "Se me olvidó la palabra. Es como un vaso, pero pequeño.",
+      "cue": "The word has gone out of my head. It is like a glass, only small.",
+      "literal": "Itself to-me forgot the word. Is like a glass, but small.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se me olvidó",
+            "cue": "I forgot, it went out of my head",
+            "tag": "delta",
+            "forms": [
+              "se me olvidó",
+              "se me olvida",
+              "se me olvidan"
+            ],
+            "note": "La palabra is the subject here, not you: the word forgot itself to me. Change the person at me, not at the verb."
+          },
+          {
+            "display": "es como",
+            "cue": "it is like",
+            "tag": "free",
+            "forms": [
+              "es como",
+              "son como"
+            ],
+            "note": "Opens a comparison when the name will not come. Follow it with any noun the listener already knows."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          7
+        ]
+      },
+      "trap": "Olvidé la palabra is correct and sounds like a confession of carelessness. Se me olvidó is the default, and it reports the same event as an accident, which is how Spanish usually frames it.",
+      "sound": "Se me olvidó is said as one run, se-me-ol-bi-DO, with the stress right at the end.",
+      "variations": [
+        {
+          "display": "Se me olvidó la palabra.",
+          "cue": "The word has gone out of my head.",
+          "changed": "The accidental frame alone, which is the commonest sentence in this module."
+        },
+        {
+          "display": "Se me olvidan las palabras.",
+          "cue": "Words keep going out of my head.",
+          "changed": "Plural subject, so the verb moves to olvidan. The me does not change, because it never marks the subject."
+        }
+      ],
+      "mistake": {
+        "display": "Me olvidé la palabra y se me rompió el vaso ayer.",
+        "why": "The accidental frame is se me olvidó, with the thing as subject. Me olvidé needs de — me olvidé DE la palabra — and means something closer to I let it slip."
+      },
+      "usage": "Neutral, and much softer than the English equivalent. It is the polite way to say the word is gone.",
+      "register": "neutral",
+      "mnemonic": "The word forgot itself to me."
+    },
+    {
+      "id": "L5-M8-S06",
+      "display": "Se me rompió el móvil y no me acuerdo de la tienda.",
+      "cue": "My phone broke and I cannot remember the shop.",
+      "literal": "Itself to-me broke the mobile and not me I-remember of the shop.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "se me rompió",
+            "cue": "it broke on me",
+            "tag": "delta",
+            "forms": [
+              "se me rompió",
+              "se me rompen",
+              "se te rompió"
+            ],
+            "note": "Same third se as se me olvidó. Move the person at the middle word: se ME rompió, se TE rompió."
+          },
+          {
+            "display": "no me acuerdo",
+            "cue": "I cannot remember",
+            "tag": "free",
+            "forms": [
+              "no me acuerdo",
+              "me acuerdo"
+            ],
+            "note": "Takes de before what you have forgotten: no me acuerdo DE la tienda. Dropping the de is the usual slip."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Rompí el móvil says you broke it, and a Spanish listener hears an admission. Se me rompió says it broke, and nobody is being blamed — the difference is real and it is not politeness, it is the default.",
+      "sound": "Rompió opens with the strong rolled r, and the stress lands on the final syllable: rrom-PYO.",
+      "variations": [
+        {
+          "display": "Se me rompió el móvil.",
+          "cue": "My phone broke.",
+          "changed": "The accident on its own."
+        },
+        {
+          "display": "Se te rompió el móvil.",
+          "cue": "Your phone broke.",
+          "changed": "The person moves at the middle word, not at the verb: se ME rompió, se TE rompió."
+        }
+      ],
+      "mistake": {
+        "display": "No me acuerdo la tienda y se me rompió.",
+        "why": "acordarse needs its de. Without it the sentence reads as though the shop were the thing remembering."
+      },
+      "usage": "Neutral. Both halves are everyday spoken Spanish and neither is an excuse; the se frame is simply what a speaker reaches for.",
+      "register": "neutral",
+      "mnemonic": "It broke on me, not I broke it."
+    },
+    {
+      "id": "L5-M8-S07",
+      "display": "¿Qué quiere decir esto? ¿Cómo se dice en español?",
+      "cue": "What does this mean? How do you say it in Spanish?",
+      "literal": "What wants to-say this? How itself says in Spanish?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quiere decir",
+            "cue": "means",
+            "tag": "free",
+            "forms": [
+              "quiere decir",
+              "quieren decir"
+            ],
+            "note": "Literally wants to say. It is the everyday word for mean, and it is more spoken than significa."
+          },
+          {
+            "display": "cómo se dice",
+            "cue": "how do you say",
+            "tag": "free",
+            "forms": [
+              "cómo se dice"
+            ],
+            "note": "Impersonal se: nobody in particular says it. Follow it with en español, or point at the thing."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "These two questions face opposite ways. ¿Qué quiere decir? asks for the meaning of a word you have heard; ¿Cómo se dice? asks for a word you have not. Mixing them is the fastest way to confuse the person helping you.",
+      "sound": "Quiere decir runs together as KYE-re-de-THIR or KYE-re-de-SIR, with no pause between the two verbs.",
+      "variations": [
+        {
+          "display": "¿Qué quiere decir esto?",
+          "cue": "What does this mean?",
+          "changed": "The meaning question alone, with esto pointing at whatever you are stuck on."
+        },
+        {
+          "display": "¿Cómo se dice esto en español?",
+          "cue": "How do you say this in Spanish?",
+          "changed": "The word question, aimed the other way. Both are complete sentences."
+        }
+      ],
+      "mistake": {
+        "display": "¿Cómo quiere decir esto en español?",
+        "why": "The two frames have been crossed. Meaning is qué quiere decir; the word for something is cómo se dice."
+      },
+      "usage": "Both addresses without changing anything, because neither question has a person in it. That is part of why they are so useful.",
+      "register": "neutral",
+      "mnemonic": "Qué for meaning, cómo for the word."
+    },
+    {
+      "id": "L5-M8-S08",
+      "display": "Eso significa que la tienda no abre hoy. Es parecido a esto.",
+      "cue": "That means the shop is not open today. It is similar to this.",
+      "literal": "That means that the shop not opens today. Is similar to this.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "significa",
+            "cue": "means",
+            "tag": "free",
+            "forms": [
+              "significa",
+              "significan",
+              "significar",
+              "signifique"
+            ],
+            "note": "The formal twin of quiere decir. Use it for a sign or a written notice; quiere decir for anything spoken."
+          },
+          {
+            "display": "parecido a",
+            "cue": "similar to",
+            "tag": "free",
+            "forms": [
+              "parecido a",
+              "parecida a",
+              "parecidos a"
+            ],
+            "note": "Agrees with the thing described: una cosa parecida A esto. The a is fixed and never becomes de."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Significa and quiere decir are not interchangeable in register. A notice on a door significa something; a person talking to you quiere decir it, and using significa about speech sounds like a textbook.",
+      "sound": "Significa is sig-ni-FI-ka, and the g before an n keeps its hard sound.",
+      "variations": [
+        {
+          "display": "Eso significa que la tienda no abre hoy.",
+          "cue": "That means the shop is not open today.",
+          "changed": "Reading a sign out loud, which is where significa belongs."
+        },
+        {
+          "display": "Es una cosa parecida a esto.",
+          "cue": "It is something similar to this.",
+          "changed": "The comparison frame, with parecida agreeing with cosa."
+        }
+      ],
+      "mistake": {
+        "display": "Es parecido de esto y no significa nada.",
+        "why": "parecido takes a, never de. Spanish fixes the preposition to the adjective and there is nothing to reason out."
+      },
+      "usage": "Neutral. significa leans written and formal; the rest of the sentence is ordinary spoken Spanish.",
+      "register": "neutral",
+      "mnemonic": "Signs significan, people quieren decir."
+    },
+    {
+      "id": "L5-M8-S09",
+      "display": "No hay palabra que signifique eso. Quiero decir, no me acuerdo.",
+      "cue": "There is no word that means that. I mean, I cannot remember it.",
+      "literal": "Not there-is word that may-mean that. I-want to-say, not me I-remember.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quiero decir",
+            "cue": "I mean, what I mean is",
+            "tag": "free",
+            "forms": [
+              "quiero decir"
+            ],
+            "note": "Repairs your own sentence mid-flight. It buys time and signals that a better version is coming."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          6
+        ]
+      },
+      "trap": "The antecedent here does not merely go unidentified — it is denied outright. No hay palabra que exista at all, so signifique is not a choice; the indicative would claim the word is there.",
+      "sound": "Signifique ends in a hard k sound written que: sig-ni-FI-ke.",
+      "variations": [
+        {
+          "display": "No hay palabra que signifique eso.",
+          "cue": "There is no word that means that.",
+          "changed": "The denied antecedent alone, which is the strongest case for the subjunctive."
+        },
+        {
+          "display": "Hay una palabra que significa eso.",
+          "cue": "There is a word that means that.",
+          "changed": "The word exists, so the mood swings back to the indicative. One letter, and the claim reverses."
+        }
+      ],
+      "mistake": {
+        "display": "No hay palabra que significa eso.",
+        "why": "significa asserts the word exists, and the sentence has just said it does not. A denied antecedent always takes the subjunctive."
+      },
+      "usage": "Neutral. Correcting yourself out loud is normal in Spanish and quiero decir is how it is done.",
+      "register": "neutral",
+      "mnemonic": "No such thing, so subjunctive."
+    },
+    {
+      "id": "L5-M8-S10",
+      "display": "¿Cómo se llama esto en español? Se me olvida siempre.",
+      "cue": "What is this called in Spanish? I always forget it.",
+      "literal": "How itself calls this in Spanish? Itself to-me forgets always.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cómo se llama",
+            "cue": "what is it called",
+            "tag": "free",
+            "forms": [
+              "cómo se llama",
+              "cómo se llaman"
+            ],
+            "note": "The same se llama that L1-M1 used for names, now asked about a thing. Point at the object as you say it."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "¿Cómo se llama? and ¿Cómo se dice? both get you a word, and they are not the same request. The first asks for the name of the object in front of you; the second asks how to express an idea.",
+      "sound": "Llama is YA-ma across most of the Spanish-speaking world and SHA-ma in the River Plate. Both are standard.",
+      "variations": [
+        {
+          "display": "¿Cómo se llama esto?",
+          "cue": "What is this called?",
+          "changed": "Pointing does the rest. This is the shortest complete question in the module."
+        },
+        {
+          "display": "Se me olvida siempre.",
+          "cue": "I always forget it.",
+          "changed": "The accidental frame in the present, for something that keeps happening rather than something that happened once."
+        }
+      ],
+      "mistake": {
+        "display": "¿Cómo se llama esto? Siempre lo olvido a mí.",
+        "why": "The accidental frame is se me olvida, with the thing as subject. Lo olvido a mí doubles the person and belongs to no construction."
+      },
+      "usage": "Both addresses. Neither question has a person in it, so a market stall and a formal office get the same sentence.",
+      "register": "neutral",
+      "mnemonic": "Se llama the thing, se dice the idea."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M8-C01",
+      "display": "Es una cosa que sirve para comer.",
+      "cue": "It is a thing you use for eating."
+    },
+    {
+      "id": "L5-M8-C02",
+      "display": "Necesito algo que sirva para esto.",
+      "cue": "I need something that will do for this."
+    },
+    {
+      "id": "L5-M8-C03",
+      "display": "¿Hay alguien que hable español aquí?",
+      "cue": "Is there anyone here who speaks Spanish?"
+    },
+    {
+      "id": "L5-M8-C04",
+      "display": "Perdona, no te he entendido.",
+      "cue": "Sorry, I did not catch that."
+    },
+    {
+      "id": "L5-M8-C05",
+      "display": "¿Puedes repetir más despacio?",
+      "cue": "Could you say that again more slowly?"
+    },
+    {
+      "id": "L5-M8-C06",
+      "display": "Se me olvidó la palabra otra vez.",
+      "cue": "The word went out of my head again."
+    },
+    {
+      "id": "L5-M8-C07",
+      "display": "Se me rompió el móvil ayer.",
+      "cue": "My phone broke yesterday."
+    },
+    {
+      "id": "L5-M8-C08",
+      "display": "No me acuerdo de la tienda.",
+      "cue": "I cannot remember the shop."
+    },
+    {
+      "id": "L5-M8-C09",
+      "display": "¿Qué quiere decir esto?",
+      "cue": "What does this mean?"
+    },
+    {
+      "id": "L5-M8-C10",
+      "display": "¿Cómo se dice en español?",
+      "cue": "How do you say it in Spanish?"
+    },
+    {
+      "id": "L5-M8-C11",
+      "display": "Es como un vaso, pero pequeño.",
+      "cue": "It is like a glass, only small."
+    },
+    {
+      "id": "L5-M8-C12",
+      "display": "¿Cómo se llama esta cosa?",
+      "cue": "What is this thing called?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

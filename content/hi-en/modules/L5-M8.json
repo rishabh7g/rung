@@ -1,0 +1,623 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M8",
+  "title": "When words run out",
+  "job": "Paraphrase, ask what something means, repair a misunderstanding",
+  "prerequisites": ["L5-M1", "L5-M2", "L5-M3", "L5-M4", "L5-M5", "L5-M6", "L5-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["present_simple", "simple_past"],
+    "allowedPatterns": [
+      "It is the thing + you use to + <bare verb> + <object> + .",
+      "What does + <word> + mean + ?",
+      "Sorry + , + I did not catch that + .",
+      "Do you mean + <clause> + ?",
+      "In other words + , + <clause> + ."
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "जब शब्द न मिले तो चीज़ का काम बताइए, और वह वाक्य से जोड़िए बिना किसी जोड़ने वाले शब्द के: the thing you use to open bottles · the shop you buy medicine from. अंग्रेज़ी में जब जोड़ने वाला शब्द (who · which · that) उस अंदरूनी वाक्य का कर्म हो, तो वह गिराया जा सकता है — और बोलचाल में गिराया ही जाता है. यही ख़ाली जोड़ इस मॉड्यूल का असली औज़ार है."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी जो … वो का ढाँचा पहले से देती है, इसलिए ख़याल नया नहीं — शक्ल उलटी है. हिंदी अंदरूनी वाक्य को नाम से पहले रखती है और बाद में वो लौटाती है: जो आदमी बाल काटता है, वो. अंग्रेज़ी अंदरूनी वाक्य नाम के बाद रखती है और वो नहीं लौटाती. इसीलिए ग़लती दो तरह की निकलती है — Who cuts the hair, that man और The thing which you use it to open bottles."
+    },
+    {
+      "tag": "delta",
+      "text": "टूटी बात जोड़ने के चार क़दम, इसी क्रम में: इशारा (Sorry? · Pardon?), जगह ढूँढना (What does this word mean? · What do you call this?), पक्का करना (Do you mean …?), और दोबारा कहना (In other words … · Let me put it another way). पहले तीन में से कोई भी छोड़ देने पर बात वहीं अटकी रह जाती है."
+    },
+    {
+      "tag": "interference",
+      "text": "शब्द न मिलने पर हिंदी शब्द ज़ोर से दोहराना सबसे आम आदत है, और वह कभी काम नहीं करती. उसकी जगह चीज़ का काम बताइए — रंग, नाप, किस चीज़ के लिए है, कहाँ मिलती है. It is a sort of small box. It is used for money. — यह वाक्य कोई भी समझ लेगा, चाहे उसे असली शब्द पता हो या नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "इस मॉड्यूल का mean वही है जो L3-M1 ने सिखाया — What do you mean? सही, What are you meaning? ग़लत — और वह पुराना पन्ना यहाँ दोबारा नहीं खोला जाता. इसी तरह sorry (L1-M10), again (L2-M8), slowly (L4-M1) और understand (L3-M1) पहले से आपके हैं; यह मॉड्यूल उनसे नए जुमले बनाता है, नए शब्द नहीं."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M8-S01",
+      "display": "It is the thing you use to open bottles.",
+      "cue": "यह वह चीज़ है जिससे बोतलें खोलते हैं.",
+      "literal": "यह है वह चीज़ आप इस्तेमाल करते को खोलना बोतलें.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "thing",
+            "cue": "चीज़",
+            "tag": "free",
+            "forms": ["thing", "things"],
+            "note": "जिस चीज़ का नाम न आए उसके लिए यही शब्द है. the thing you use to … पूरे मॉड्यूल का साँचा है."
+          },
+          {
+            "display": "use",
+            "cue": "इस्तेमाल करना",
+            "tag": "delta",
+            "forms": ["use", "uses"],
+            "note": "अंदरूनी वाक्य में कर्ता आप ही रहते हैं — you use. used to open मत लिखिए: वह रूप L3-M10 की पुरानी आदत वाला है."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "thing के बाद कोई जोड़ने वाला शब्द नहीं आता और अंदर it भी नहीं लौटता. The thing which you use it to open bottles में दोनों ग़लतियाँ एक साथ हैं.",
+      "sound": "thing में th जीभ दाँतों के बीच से निकलता है और आख़िर में ng गूँजता है — थिंग्.",
+      "variations": [
+        {
+          "display": "It is the thing you use to open bottles.",
+          "cue": "यह वह चीज़ है जिससे बोतलें खोलते हैं.",
+          "changed": "पूरा साँचा"
+        },
+        {
+          "display": "It is the thing you use to cut hair.",
+          "cue": "यह वह चीज़ है जिससे बाल काटते हैं.",
+          "changed": "दूसरा काम"
+        },
+        {
+          "display": "What do you call this thing?",
+          "cue": "इस चीज़ को क्या कहते हैं?",
+          "changed": "सवाल के रूप में"
+        }
+      ],
+      "mistake": {
+        "display": "It is the thing which you use it to open bottles.",
+        "why": "जोड़ने वाला which और अंदर वाला it — दोनों में से एक ही रह सकता है, और बोलचाल में दोनों गिर जाते हैं."
+      },
+      "usage": "जब चीज़ का नाम याद न आए और उसका काम बताकर बात चलानी हो.",
+      "register": "neutral",
+      "mnemonic": "the thing you use to … — नाम की जगह काम."
+    },
+    {
+      "id": "L5-M8-S02",
+      "display": "What do you call this thing in English?",
+      "cue": "इस चीज़ को अंग्रेज़ी में क्या कहते हैं?",
+      "literal": "क्या करते आप बुलाना यह चीज़ में अंग्रेज़ी?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "what do you call",
+            "cue": "क्या कहते हैं",
+            "tag": "delta",
+            "forms": ["what do you call"],
+            "note": "चारों शब्द एक इकाई हैं और साथ ही चलते हैं. इसके बाद सीधे वह चीज़ आती है — this, that या उसका नाम."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "call के बाद to नहीं आता. What do you call to this? ग़लत है — सही रूप What do you call this? है.",
+      "sound": "what do you अक्सर जुड़कर वॉड्-यु जैसा निकलता है.",
+      "variations": [
+        {
+          "display": "What do you call this in English?",
+          "cue": "इसे अंग्रेज़ी में क्या कहते हैं?",
+          "changed": "बिना thing"
+        },
+        {
+          "display": "What do you call this shop?",
+          "cue": "इस दुकान को क्या कहते हैं?",
+          "changed": "दूसरी चीज़"
+        },
+        {
+          "display": "What does this word mean?",
+          "cue": "इस शब्द का क्या मतलब है?",
+          "changed": "शब्द का मतलब पूछना"
+        }
+      ],
+      "mistake": {
+        "display": "How do you call this thing in English?",
+        "why": "अंग्रेज़ी में यह सवाल What से शुरू होता है, How से नहीं. How do you say it in English? अलग सवाल है और वह भी चलता है."
+      },
+      "usage": "किसी चीज़ का अंग्रेज़ी नाम पूछते समय, बीच बातचीत में.",
+      "register": "neutral",
+      "mnemonic": "What do you call … — नाम माँगने की चाबी."
+    },
+    {
+      "id": "L5-M8-S03",
+      "display": "Sorry, I did not catch that. Can you say that again?",
+      "cue": "माफ़ कीजिए, मैं समझ नहीं पाया. क्या आप दोबारा कहेंगे?",
+      "literal": "माफ़ी, मैं किया नहीं पकड़ना वह. सकते आप कहना वह दोबारा?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "catch",
+            "cue": "समझ पाना",
+            "tag": "delta",
+            "forms": ["catch"],
+            "note": "यहाँ catch का मतलब पकड़ना नहीं, सुनकर समझ पाना है. इसका भूतकाल caught है, catched नहीं."
+          },
+          {
+            "display": "say that again",
+            "cue": "दोबारा कहिए",
+            "tag": "delta",
+            "forms": ["say that again"],
+            "note": "तीनों शब्द एक जुमला हैं. Can you या Could you के आगे लगाकर यह टूटी बात जोड़ने का सबसे सीधा तरीक़ा बन जाता है."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "I did not catch that कहने पर दोष अपने ऊपर रहता है, इसलिए यह शाइस्ता है. You did not speak clearly सुनने वाले पर दोष डालता है.",
+      "sound": "catch का tch एक ही च की आवाज़ है — कैच्.",
+      "variations": [
+        {
+          "display": "Sorry, I did not catch that.",
+          "cue": "माफ़ कीजिए, मैं समझ नहीं पाया.",
+          "changed": "सिर्फ़ इशारा"
+        },
+        {
+          "display": "Can you say that again?",
+          "cue": "क्या आप दोबारा कहेंगे?",
+          "changed": "सिर्फ़ माँग"
+        },
+        {
+          "display": "Sorry, can you say that again slowly?",
+          "cue": "माफ़ कीजिए, क्या आप दोबारा धीरे कहेंगे?",
+          "changed": "धीरे के साथ"
+        }
+      ],
+      "mistake": {
+        "display": "Sorry, I did not catched that. Can you say again that?",
+        "why": "catch का भूतकाल caught है, पर did not के बाद बिना बदला रूप catch ही आता है. और जुमला say that again है, say again that नहीं."
+      },
+      "usage": "जब कोई बात सुनाई तो दे पर समझ न आए, और बातचीत रोकनी न हो.",
+      "register": "neutral",
+      "mnemonic": "catch = कान से पकड़ना, हाथ से नहीं."
+    },
+    {
+      "id": "L5-M8-S04",
+      "display": "Pardon? Please repeat that word slowly.",
+      "cue": "जी? कृपया वह शब्द धीरे से दोहराइए.",
+      "literal": "माफ़ी? कृपया दोहराइए वह शब्द धीरे.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pardon",
+            "cue": "जी?",
+            "tag": "delta",
+            "forms": ["pardon"],
+            "note": "अकेला Pardon? का मतलब है मैंने सुना नहीं. यह Sorry? से थोड़ा ज़्यादा शाइस्ता है और आवाज़ ऊपर उठती है."
+          },
+          {
+            "display": "repeat",
+            "cue": "दोहराना",
+            "tag": "free",
+            "forms": ["repeat", "repeats", "repeated"],
+            "note": "दोबारा कहना. Repeat, please. रूखा लगता है — Please repeat या Can you say that again? बेहतर है."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "Pardon? के आख़िर में आवाज़ ऊपर जाती है. सपाट आवाज़ में यही शब्द माफ़ी माँगना बन जाता है, सवाल नहीं.",
+      "sound": "pardon में r हल्का है और ज़ोर पहले हिस्से पर — पार्-डन्.",
+      "variations": [
+        {
+          "display": "Pardon?",
+          "cue": "जी?",
+          "changed": "सिर्फ़ इशारा"
+        },
+        {
+          "display": "Please repeat that word.",
+          "cue": "कृपया वह शब्द दोहराइए.",
+          "changed": "बिना धीरे"
+        },
+        {
+          "display": "Sorry? Please repeat that word slowly.",
+          "cue": "जी? कृपया वह शब्द धीरे से दोहराइए.",
+          "changed": "pardon की जगह sorry"
+        }
+      ],
+      "mistake": {
+        "display": "Pardon? Please repeat again that word slowly.",
+        "why": "repeat में दोबारा का मतलब पहले से शामिल है, इसलिए साथ में again नहीं आता."
+      },
+      "usage": "जब बात सुनाई ही न दे — फ़ोन पर, भीड़ में या तेज़ बोलने वाले के साथ.",
+      "register": "formal",
+      "mnemonic": "Pardon? = एक शब्द में पूरा सवाल."
+    },
+    {
+      "id": "L5-M8-S05",
+      "display": "It is roughly the opposite of cheap.",
+      "cue": "यह मोटे तौर पर सस्ते का उलटा है.",
+      "literal": "यह है मोटे तौर पर वह उलटा का सस्ता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "roughly",
+            "cue": "मोटे तौर पर",
+            "tag": "delta",
+            "forms": ["roughly"],
+            "note": "जब बात पूरी सही न हो पर काम चल जाए. यह सुनने वाले को बता देता है कि आप नाप-तौलकर नहीं बोल रहे."
+          },
+          {
+            "display": "the opposite of",
+            "cue": "का उलटा",
+            "tag": "delta",
+            "forms": ["the opposite of"],
+            "note": "तीनों शब्द साथ चलते हैं और आगे of ही आता है, to नहीं. अकेला opposite (L2-M4) दिशा वाला शब्द है."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "उलटा बताना तब काम आता है जब सीधा शब्द भूल जाएँ. पर यह तभी चलेगा जब सुनने वाला उलटा शब्द जानता हो.",
+      "sound": "roughly में gh फ़ जैसा बोला जाता है — रफ़्-ली.",
+      "variations": [
+        {
+          "display": "It is the opposite of cheap.",
+          "cue": "यह सस्ते का उलटा है.",
+          "changed": "बिना roughly"
+        },
+        {
+          "display": "It is roughly the opposite of fast.",
+          "cue": "यह मोटे तौर पर तेज़ का उलटा है.",
+          "changed": "दूसरा उलटा"
+        },
+        {
+          "display": "It is a sort of expensive thing.",
+          "cue": "यह महँगी सी चीज़ है.",
+          "changed": "उलटे की जगह क़िस्म"
+        }
+      ],
+      "mistake": {
+        "display": "It is roughly the opposite to cheap.",
+        "why": "इस जुमले के साथ हमेशा of आता है. the opposite to कहीं नहीं चलता."
+      },
+      "usage": "जब शब्द याद न आए पर उसका उलटा याद हो.",
+      "register": "neutral",
+      "mnemonic": "the opposite of — हमेशा of, कभी to नहीं."
+    },
+    {
+      "id": "L5-M8-S06",
+      "display": "That does not make sense. Please explain it again.",
+      "cue": "इसका कोई मतलब नहीं बन रहा. कृपया दोबारा समझाइए.",
+      "literal": "वह करता नहीं बनाना मतलब. कृपया समझाइए यह दोबारा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "make sense",
+            "cue": "मतलब बनना",
+            "tag": "delta",
+            "forms": ["make sense", "makes sense"],
+            "note": "दोनों शब्द एक इकाई हैं और बीच में a या the नहीं आता. That makes sense भी उतना ही आम है — बात समझ आ गई."
+          },
+          {
+            "display": "explain",
+            "cue": "समझाना",
+            "tag": "delta",
+            "forms": ["explain", "explains", "explained"],
+            "note": "explain के बाद सीधे इंसान नहीं आता. explain it to me सही है, explain me it ग़लत — बात पहले, इंसान to के साथ बाद में."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "That does not make sense बात पर टिप्पणी है, इंसान पर नहीं. You are not clear सुनने वाले पर दोष डाल देता है.",
+      "sound": "make sense में दोनों s एक ही साँस में जुड़ जाते हैं — मेक्-सेन्स्.",
+      "variations": [
+        {
+          "display": "That makes sense.",
+          "cue": "यह बात समझ आ गई.",
+          "changed": "सीधा रूप"
+        },
+        {
+          "display": "Please explain it to me again.",
+          "cue": "कृपया मुझे दोबारा समझाइए.",
+          "changed": "to me के साथ"
+        },
+        {
+          "display": "Sorry, that does not make sense to me.",
+          "cue": "माफ़ कीजिए, मुझे इसका मतलब नहीं बन रहा.",
+          "changed": "अपनी तरफ़ से"
+        }
+      ],
+      "mistake": {
+        "display": "That does not make a sense. Please explain me it again.",
+        "why": "make sense के बीच में a नहीं आता, और explain के बाद इंसान सीधे नहीं आता — explain it to me."
+      },
+      "usage": "जब कही गई बात का सिरा ही न मिले, और बिना ताना दिए रुकना हो.",
+      "register": "neutral",
+      "mnemonic": "make sense — बीच में कुछ नहीं; explain — इंसान to के पीछे."
+    },
+    {
+      "id": "L5-M8-S07",
+      "display": "How do you spell that word? I am not clear.",
+      "cue": "वह शब्द कैसे लिखा जाता है? मुझे साफ़ नहीं हुआ.",
+      "literal": "कैसे करते आप हिज्जे वह शब्द? मैं हूँ नहीं साफ़.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spell",
+            "cue": "हिज्जे करना",
+            "tag": "delta",
+            "forms": ["spell", "spells", "spelled"],
+            "note": "एक-एक अक्षर बोलकर शब्द बताना. हिंदी में यह रोज़ की बात नहीं, अंग्रेज़ी में नाम और पते हमेशा इसी तरह पक्के किए जाते हैं."
+          },
+          {
+            "display": "clear",
+            "cue": "साफ़",
+            "tag": "delta",
+            "forms": ["clear", "clearly"],
+            "note": "बात साफ़ हो तो clear. I am not clear का मतलब मुझे समझ नहीं आया है — यह सामने वाले पर दोष नहीं डालता."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "यहाँ सवाल How से शुरू होता है, What से नहीं. What is the spelling? भी चलता है, पर बोलचाल में How do you spell it? ही आम है.",
+      "sound": "spell में sp एक साथ निकलता है और आगे कोई स्वर नहीं जुड़ता — स्पेल्.",
+      "variations": [
+        {
+          "display": "How do you spell that word?",
+          "cue": "वह शब्द कैसे लिखा जाता है?",
+          "changed": "सिर्फ़ सवाल"
+        },
+        {
+          "display": "How do you spell your name?",
+          "cue": "आपका नाम कैसे लिखा जाता है?",
+          "changed": "नाम के लिए"
+        },
+        {
+          "display": "Sorry, I am not clear.",
+          "cue": "माफ़ कीजिए, मुझे साफ़ नहीं हुआ.",
+          "changed": "सिर्फ़ दूसरा हिस्सा"
+        }
+      ],
+      "mistake": {
+        "display": "How do you spell that word? I am not clear it.",
+        "why": "clear के बाद it नहीं आता. I am not clear अपने आप में पूरा है, या I am not clear about it कहिए."
+      },
+      "usage": "फ़ोन पर या फ़ॉर्म भरते समय, जब नाम या शब्द पक्का करना हो.",
+      "register": "neutral",
+      "mnemonic": "spell = अक्षर-अक्षर; clear = मेरी तरफ़ साफ़ नहीं."
+    },
+    {
+      "id": "L5-M8-S08",
+      "display": "It is a sort of small box. It is used for money.",
+      "cue": "यह एक तरह का छोटा डिब्बा है. यह पैसे के लिए इस्तेमाल होता है.",
+      "literal": "यह है एक तरह का छोटा डिब्बा. यह है इस्तेमाल के लिए पैसा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sort of",
+            "cue": "एक तरह का",
+            "tag": "delta",
+            "forms": ["sort of"],
+            "note": "जब चीज़ पूरी तरह वैसी न हो पर उसी ख़ानदान की हो. a sort of के आगे सीधे चीज़ का नाम आता है."
+          },
+          {
+            "display": "used for",
+            "cue": "के लिए इस्तेमाल होता है",
+            "tag": "delta",
+            "forms": ["used for"],
+            "note": "काम बताने का दूसरा साँचा. आगे नाम आता है — used for money. काम बताना हो तो used for keeping money."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "used for और used to एक जैसे दिखते हैं पर अलग हैं. used to (L3-M10) पुरानी आदत बताता है — यहाँ हमेशा used for रखिए.",
+      "sound": "sort of में दोनों शब्द जुड़कर सॉर्-टव् जैसे निकलते हैं.",
+      "variations": [
+        {
+          "display": "It is a sort of small box.",
+          "cue": "यह एक तरह का छोटा डिब्बा है.",
+          "changed": "सिर्फ़ क़िस्म"
+        },
+        {
+          "display": "It is used for money.",
+          "cue": "यह पैसे के लिए इस्तेमाल होता है.",
+          "changed": "सिर्फ़ काम"
+        },
+        {
+          "display": "It is a sort of shop. It is used for medicine.",
+          "cue": "यह एक तरह की दुकान है. यह दवा के लिए है.",
+          "changed": "दूसरी चीज़"
+        }
+      ],
+      "mistake": {
+        "display": "It is a sort of small box. It is used to money.",
+        "why": "नाम के आगे used for आता है. used to पुरानी आदत वाला रूप है और यहाँ मतलब पूरा बदल देता है."
+      },
+      "usage": "किसी चीज़ का नाम न आने पर उसकी क़िस्म और काम बताते समय.",
+      "register": "neutral",
+      "mnemonic": "sort of = किस ख़ानदान का; used for = किस काम का."
+    },
+    {
+      "id": "L5-M8-S09",
+      "display": "In other words, it was a misunderstanding.",
+      "cue": "यानी कि, बात ग़लत समझी गई थी.",
+      "literal": "में दूसरे शब्द, यह था एक ग़लतफ़हमी.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in other words",
+            "cue": "यानी कि",
+            "tag": "delta",
+            "forms": ["in other words"],
+            "note": "तीनों शब्द एक इकाई हैं और आगे अल्पविराम आता है. इसके बाद वही बात दूसरे, आसान शब्दों में रखी जाती है."
+          },
+          {
+            "display": "misunderstanding",
+            "cue": "ग़लतफ़हमी",
+            "tag": "free",
+            "forms": ["misunderstanding", "misunderstandings"],
+            "note": "understand के आगे mis- लगने से उलटा मतलब बनता है. यह गिना जाता है — a misunderstanding सही है."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "In other words के बाद नई बात नहीं आती. वही बात दूसरे शब्दों में आती है — नई बात जोड़नी हो तो and या in fact चाहिए.",
+      "sound": "misunderstanding लंबा है और ज़ोर तीसरे हिस्से पर पड़ता है — मिस्-अन्-डर्-स्टैन्-डिंग्.",
+      "variations": [
+        {
+          "display": "It was a misunderstanding.",
+          "cue": "बात ग़लत समझी गई थी.",
+          "changed": "बिना जोड़ के"
+        },
+        {
+          "display": "In other words, we do not agree.",
+          "cue": "यानी कि, हम सहमत नहीं हैं.",
+          "changed": "दूसरी बात"
+        },
+        {
+          "display": "Sorry, it was my misunderstanding.",
+          "cue": "माफ़ कीजिए, यह मेरी ग़लतफ़हमी थी.",
+          "changed": "अपनी तरफ़ से"
+        }
+      ],
+      "mistake": {
+        "display": "In other word, it was a misunderstanding.",
+        "why": "जुमले में words बहुवचन ही रहता है. in other word कहीं नहीं चलता."
+      },
+      "usage": "जब अपनी बात दोबारा, आसान शब्दों में रखनी हो.",
+      "register": "neutral",
+      "mnemonic": "In other words — वही बात, नए कपड़ों में."
+    },
+    {
+      "id": "L5-M8-S10",
+      "display": "I mean this kind of shop. Listen to me again.",
+      "cue": "मेरा मतलब इस तरह की दुकान से है. मेरी बात दोबारा सुनिए.",
+      "literal": "मैं मतलब यह तरह का दुकान. सुनिए को मुझे दोबारा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "I mean",
+            "cue": "मेरा मतलब है",
+            "tag": "delta",
+            "forms": ["I mean"],
+            "note": "अपनी ही बात सुधारने का जुमला. यह माफ़ी नहीं है — बोलते-बोलते सही शब्द पर पहुँचने का आम तरीक़ा है."
+          },
+          {
+            "display": "kind of",
+            "cue": "तरह का",
+            "tag": "delta",
+            "forms": ["kind of"],
+            "note": "sort of का ही जुड़वाँ, दोनों एक जैसे चलते हैं. अकेला kind (L2-M2) दयालु के मानी में अलग शब्द है."
+          },
+          {
+            "display": "listen",
+            "cue": "सुनना",
+            "tag": "delta",
+            "forms": ["listen", "listens"],
+            "note": "listen के बाद to आता है — listen to me. hear (L5-M3) बिना कोशिश के सुनाई देना है, listen ध्यान लगाकर सुनना."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "listen के बाद to कभी नहीं छूटता. Listen me ग़लत है, Listen to me सही.",
+      "sound": "listen का t चुप है — लिस्-न्.",
+      "variations": [
+        {
+          "display": "I mean this kind of shop.",
+          "cue": "मेरा मतलब इस तरह की दुकान से है.",
+          "changed": "सिर्फ़ सुधार"
+        },
+        {
+          "display": "Listen to me again.",
+          "cue": "मेरी बात दोबारा सुनिए.",
+          "changed": "सिर्फ़ दूसरा हिस्सा"
+        },
+        {
+          "display": "I mean this sort of shop.",
+          "cue": "मेरा मतलब इस तरह की दुकान से है.",
+          "changed": "kind की जगह sort"
+        }
+      ],
+      "mistake": {
+        "display": "I mean this kind of shop. Listen me again.",
+        "why": "listen अकेला नहीं चलता, उसके साथ to चाहिए. सही रूप है Listen to me."
+      },
+      "usage": "जब सामने वाला ग़लत चीज़ समझ बैठा हो और बात दोबारा रखनी हो.",
+      "register": "informal",
+      "mnemonic": "I mean = अपनी बात का पेच कसना."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M8-C01",
+      "display": "It is the thing you use to open bottles.",
+      "cue": "यह वह चीज़ है जिससे बोतलें खोलते हैं."
+    },
+    {
+      "id": "L5-M8-C02",
+      "display": "What do you call this thing in English?",
+      "cue": "इस चीज़ को अंग्रेज़ी में क्या कहते हैं?"
+    },
+    {
+      "id": "L5-M8-C03",
+      "display": "Sorry, I did not catch that.",
+      "cue": "माफ़ कीजिए, मैं समझ नहीं पाया."
+    },
+    {
+      "id": "L5-M8-C04",
+      "display": "Can you say that again?",
+      "cue": "क्या आप दोबारा कहेंगे?"
+    },
+    {
+      "id": "L5-M8-C05",
+      "display": "Please repeat that word slowly.",
+      "cue": "कृपया वह शब्द धीरे से दोहराइए."
+    },
+    {
+      "id": "L5-M8-C06",
+      "display": "It is roughly the opposite of cheap.",
+      "cue": "यह मोटे तौर पर सस्ते का उलटा है."
+    },
+    {
+      "id": "L5-M8-C07",
+      "display": "That does not make sense.",
+      "cue": "इसका कोई मतलब नहीं बन रहा."
+    },
+    {
+      "id": "L5-M8-C08",
+      "display": "Please explain it again.",
+      "cue": "कृपया दोबारा समझाइए."
+    },
+    {
+      "id": "L5-M8-C09",
+      "display": "How do you spell that word?",
+      "cue": "वह शब्द कैसे लिखा जाता है?"
+    },
+    {
+      "id": "L5-M8-C10",
+      "display": "It is a sort of small box. It is used for money.",
+      "cue": "यह एक तरह का छोटा डिब्बा है. यह पैसे के लिए इस्तेमाल होता है."
+    },
+    {
+      "id": "L5-M8-C11",
+      "display": "In other words, it was a misunderstanding.",
+      "cue": "यानी कि, बात ग़लत समझी गई थी."
+    },
+    {
+      "id": "L5-M8-C12",
+      "display": "I mean this kind of shop.",
+      "cue": "मेरा मतलब इस तरह की दुकान से है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

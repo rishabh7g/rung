@@ -1,0 +1,465 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M7",
+  "title": "Between the lines",
+  "job": "Implication, sarcasm, indirect requests",
+  "prerequisites": ["L5-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["present", "Konjunktiv II"],
+    "allowedPatterns": [
+      "Es ist kalt hier + drinnen",
+      "Hätten Sie + vielleicht + <Akk> + ?",
+      "Es wäre schön + , + wenn + <verb-final>",
+      "Na super + , + jetzt + V-2 + <Rest>",
+      "Damit + will er sagen + , + dass + <verb-final>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "IMPLICATURE IS WHAT THE HEARER COMPUTES, AND THE SITUATION IS HALF THE SENTENCE. Es ist kalt hier drinnen is a statement of fact on the page and a request to shut the window in a room with an open window. Nothing in the words changes — the situation supplies the rest. So read the WHEN TO USE IT line on every sentence here as part of the sentence: without it these are ten unremarkable statements, and with it they are ten requests."
+    },
+    {
+      "tag": "delta",
+      "text": "GERMAN BUILDS AN INDIRECT REQUEST TWO WAYS, AND BOTH ARE ALREADY YOURS. First, the Konjunktiv II frame: Hätten Sie …?, Könnten Sie …?, Es wäre schön, wenn … — L3-M4 and L2-M1 paid for every verb in them, and this module only fixes the frames. Second, the bare statement of a problem: Es zieht, Es ist kalt hier drinnen — no request at all, and the hearer supplies it. The second is the more German of the two and the one an anglophone under-uses."
+    },
+    {
+      "tag": "interference",
+      "text": "THE CALIBRATION RUNS THE OPPOSITE WAY TO THE STEREOTYPE, AND IT RUNS BOTH WAYS AT ONCE. German conversation is MORE direct than English about wants and facts, so an English speaker who wraps a simple request in padding is read as evasive rather than polite. But German is NOT more direct about criticism of a person, and there the same speaker under-reads what was said to them. The rule of thumb: a German request for an OBJECT is usually direct; a German complaint about a PERSON is usually not."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH HEDGES BY PILING UP MODALS; GERMAN HEDGES WITH ONE VERB. I was just wondering if you might possibly have a moment is four hedges deep, and its German is Hätten Sie vielleicht einen Moment? — one Konjunktiv II verb and one vielleicht. A translated English hedge comes out roughly twice as long and sounds insincere. This is the same delta L4-M5 named for the modal particles, and the answer is the same one: use fewer of them than feels right."
+    },
+    {
+      "tag": "free",
+      "text": "SARCASM IS THE SAME MACHINERY INVERTED — a positive statement made in a situation that contradicts it. Na super is the flag, and it is the only word in this module that a hearer will read as sarcastic on its own. Everything else here needs the situation. Note where the boundary with L5-M2 runs: there the speaker will admit it was a joke, and here the speaker will admit nothing, which is what makes the device useful and also what makes it risky with a stranger."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M7-S01",
+      "display": "Es ist wirklich kalt hier drinnen.",
+      "cue": "It is really cold in here.",
+      "literal": "It is really cold here inside.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "drinnen",
+            "cue": "inside, in here",
+            "tag": "free",
+            "forms": ["drinnen"],
+            "note": "Where you are, not where you are going — drinnen is a place, hinein would be a direction. It pairs with draußen and closes hier down to this room."
+          },
+          {
+            "display": "Hinweis",
+            "cue": "a hint, a pointer",
+            "tag": "free",
+            "forms": ["Hinweis"],
+            "note": "Masculine, der Hinweis. Cooler than English hint: a Hinweis can be a printed notice as easily as a nudge, and it never implies coyness."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "English speakers add the request to be safe: It is cold in here, could you shut the window? In German the second half undoes the first — you have just explained your own hint, and the effect is closer to talking down than to being clear.",
+      "sound": "es ist VEER-likh kalt heer DRIN-nen — drinnen has a short i and a doubled n that stops the vowel dead, which is what separates it from the drinnen-drin pair a learner hears as one word.",
+      "variations": [
+        {
+          "display": "Es ist kalt hier drinnen. Das ist ein Hinweis.",
+          "cue": "It is cold in here. That is a hint.",
+          "changed": "The speaker names their own device, which in real life only happens when the first attempt failed. Useful for learning, fatal in a room."
+        }
+      ],
+      "mistake": {
+        "display": "Es ist kalt hier drinnen, also machen Sie das Fenster zu",
+        "why": "Not ungrammatical — but the implicature is now an order, and the drinnen has become pointless. Either state the problem or make the request; doing both reads as impatience."
+      },
+      "usage": "Said in a room with an open window, to somebody standing next to it. In a room with no window it is small talk about the weather and nothing more — the situation is what makes it a request.",
+      "register": "neutral",
+      "mnemonic": "drinnen is in here; the request is the part you leave out."
+    },
+    {
+      "id": "L5-M7-S02",
+      "display": "Hätten Sie vielleicht einen Moment für mich?",
+      "cue": "Would you have a moment for me, perhaps?",
+      "literal": "Would-have you perhaps a moment for me?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Hätten Sie",
+            "cue": "would you have",
+            "tag": "delta",
+            "forms": ["Hätten Sie"],
+            "note": "The request frame, learned whole. The Konjunktiv II hätten is L3-M4's; what is new is that the pair opens a question and needs no further softening."
+          },
+          {
+            "display": "stören",
+            "cue": "to disturb, to be in the way",
+            "tag": "free",
+            "forms": ["stören", "stört"],
+            "note": "Wider than English disturb: noise stört, a badly parked car stört, and Ich möchte nicht stören is the standard way of entering a room."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "An English speaker reaches for a second hedge — I was wondering whether you might perhaps have a moment. German gets one Konjunktiv II verb and one vielleicht, and a third softener makes the speaker sound as though they are asking for money.",
+      "sound": "HET-ten zee fee-LYKHT Y-nen mo-MENT fuer mikh — hätten is the front-rounded e of the umlaut, and the whole question rises only at the very end.",
+      "variations": [
+        {
+          "display": "Ich möchte Sie nicht stören.",
+          "cue": "I do not want to disturb you.",
+          "changed": "The request becomes an apology for making it. Said at a door, it IS the request — the hearer answers by inviting you in."
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe mich gefragt, ob Sie vielleicht möglicherweise einen Moment hätten",
+        "why": "Every hedge English would use, all at once. German stacks one: Hätten Sie vielleicht einen Moment? Anything longer is read as bad news coming."
+      },
+      "usage": "Asking a colleague or a stranger for their time. The für mich is what marks it as a favour rather than a booking.",
+      "register": "formal",
+      "mnemonic": "One Konjunktiv, one vielleicht, and stop."
+    },
+    {
+      "id": "L5-M7-S03",
+      "display": "Es wäre schön, wenn das Fenster offen wäre.",
+      "cue": "It would be nice if the window were open.",
+      "literal": "It would-be nice, if the window open would-be.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Es wäre schön",
+            "cue": "it would be nice",
+            "tag": "delta",
+            "forms": ["Es wäre schön"],
+            "note": "The softest request frame in the language, learned whole. It always takes a wenn-clause, and the wish stays unspoken as a wish about the world."
+          },
+          {
+            "display": "offen",
+            "cue": "open",
+            "tag": "free",
+            "forms": ["offen"],
+            "note": "The adjective, where L4-M1's öffnen is the verb. Also used of people — ein offenes Gespräch is a frank conversation."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "The frame needs the Konjunktiv II in BOTH halves: Es wäre schön, wenn das Fenster offen wäre. English drops into the indicative in the second half — if the window was open — and a German ear hears the mismatch immediately.",
+      "sound": "es VAIR-uh shuhn, ven das FEN-ster OF-fen VAIR-uh — the two wäre are identical and the sentence is built to rhyme with itself, which is why the frame is easy to remember.",
+      "variations": [
+        {
+          "display": "Es wäre schön, wenn Sie das Fenster schließen könnten.",
+          "cue": "It would be nice if you could close the window.",
+          "changed": "The wish now names a person and an action, so it is a real request wearing the frame. Noticeably more pointed than the version about the window alone."
+        }
+      ],
+      "mistake": {
+        "display": "Es wäre schön, wenn das Fenster offen ist",
+        "why": "The wenn-clause has fallen back into the indicative. Both halves of this frame stay in the Konjunktiv II: … offen wäre."
+      },
+      "usage": "A request you are not sure you are entitled to make. Because it names no person it is also the safest way to complain about something a colleague did.",
+      "register": "formal",
+      "mnemonic": "Two wäre, one wish, nobody named."
+    },
+    {
+      "id": "L5-M7-S04",
+      "display": "Na super, jetzt habe ich keine Lust mehr.",
+      "cue": "Oh great, now I do not feel like it any more.",
+      "literal": "Well super, now have I no desire more.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Na super",
+            "cue": "oh great (sarcastic)",
+            "tag": "delta",
+            "forms": ["Na super"],
+            "note": "Learned whole, and sarcastic by default — a genuinely pleased speaker says Super! without the na. The na is what turns it."
+          },
+          {
+            "display": "Lust",
+            "cue": "the inclination to do something",
+            "tag": "interference",
+            "forms": ["Lust"],
+            "note": "Feminine, and NOT English lust: Ich habe keine Lust is I do not feel like it. Completely ordinary, and used by children about homework."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "Lust looks like an English word it has nothing to do with, and the false friend runs one way only — a German hears no innuendo at all. Ich habe Lust auf Kaffee is I fancy a coffee.",
+      "sound": "na ZOO-per, yetst HAH-buh ikh KY-nuh loost mair — Na super falls away in pitch instead of rising, and that fall is the sarcasm. Said rising, it is sincere.",
+      "variations": [
+        {
+          "display": "Na super, jetzt ist das Fenster wieder offen.",
+          "cue": "Oh great, now the window is open again.",
+          "changed": "Same frame, different complaint. wieder is what tells you this has happened before, which is most of why the speaker is annoyed."
+        }
+      ],
+      "mistake": {
+        "display": "Na super, das ist wirklich super",
+        "why": "Sarcasm explained is sarcasm lost, and repeating super collapses the two readings into one. Na super stands alone and the situation carries it."
+      },
+      "usage": "Said to yourself, or to somebody on your side, about something that has just gone wrong. Said to the person who caused it, it is an open complaint — which may be what you want.",
+      "register": "informal",
+      "mnemonic": "The na is the eyebrow; without it super means super."
+    },
+    {
+      "id": "L5-M7-S05",
+      "display": "Damit will er sagen, dass er nicht kommen kann.",
+      "cue": "What he means by that is that he cannot come.",
+      "literal": "With-that wants he to-say, that he not come can.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "will",
+            "cue": "wants (to)",
+            "tag": "free",
+            "forms": ["will"],
+            "note": "The er/sie/es form of L2-M6's wollen, which is where the verb was taught. In will sagen it is not a want at all — it is what somebody means."
+          },
+          {
+            "display": "andeuten",
+            "cue": "to hint at, to imply",
+            "tag": "free",
+            "forms": ["andeuten"],
+            "note": "Separable — er deutet an — and this module teaches only the infinitive, which is the shape it takes after a modal: etwas andeuten wollen."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "German will is not English will. It is the present tense of to want, so Er will kommen is he wants to come, never he will come. The future here is simply the present: Er kommt morgen.",
+      "sound": "da-MIT vil air ZAH-gen, dass air nikht KOM-men kan — damit takes its stress at the back when it points at something already said, which is what it is doing here.",
+      "variations": [
+        {
+          "display": "Damit möchte er etwas andeuten.",
+          "cue": "He is trying to hint at something with that.",
+          "changed": "will sagen becomes andeuten, and the claim gets weaker: you are now saying he is hinting rather than telling the room what he meant."
+        }
+      ],
+      "mistake": {
+        "display": "Damit will er sagen, dass er kann nicht kommen",
+        "why": "The dass-clause sends both verbs to the end, in the order kommen kann. The mistake is L1-M9's word order, not this module's — but this frame is where it comes back."
+      },
+      "usage": "Translating somebody's implicature out loud for a third person. In front of the speaker themselves it is a challenge, so it is a sentence for afterwards.",
+      "register": "neutral",
+      "mnemonic": "will sagen — what he WANTS to say is what he MEANS."
+    },
+    {
+      "id": "L5-M7-S06",
+      "display": "Das ist eine Andeutung zwischen den Zeilen.",
+      "cue": "That is a hint between the lines.",
+      "literal": "That is a hint between the lines.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zwischen den Zeilen",
+            "cue": "between the lines",
+            "tag": "free",
+            "forms": ["zwischen den Zeilen"],
+            "note": "Three words, one phrase, fixed in the dative plural — never zwischen die Zeilen. Used of speech as readily as of writing."
+          },
+          {
+            "display": "Andeutung",
+            "cue": "a hint, an intimation",
+            "tag": "free",
+            "forms": ["Andeutung"],
+            "note": "Feminine like every -ung noun. An Andeutung is deliberate on the speaker's part, where a Hinweis may simply be something you noticed."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English reading between the lines is about the reader; German zwischen den Zeilen is more often about the writer, and saying it out loud accuses them of hiding something. It is not a neutral compliment on your own perceptiveness.",
+      "sound": "das ist Y-nuh AN-doy-toong TSVISH-en dayn TSY-len — Zeilen is TSY-len, lines on a page, and is a different word from Zeiten, times.",
+      "variations": [
+        {
+          "display": "Er sagt es zwischen den Zeilen.",
+          "cue": "He says it between the lines.",
+          "changed": "The noun becomes a verb with a person behind it. Now somebody is doing the hiding, which is a stronger claim than the flat description."
+        }
+      ],
+      "mistake": {
+        "display": "Das ist eine Andeutung zwischen die Zeilen",
+        "why": "zwischen takes the accusative only for movement. Nothing is moving here, so the phrase is dative and fixed: zwischen den Zeilen."
+      },
+      "usage": "Naming somebody's device, usually to a third party. Said to their face it is an invitation to say the thing plainly.",
+      "register": "neutral",
+      "mnemonic": "Die Zeilen are lines of text; you stand between them, so nothing moves and the dative stays."
+    },
+    {
+      "id": "L5-M7-S07",
+      "display": "Ausgerechnet heute ist der Chef nicht im Büro.",
+      "cue": "Of all days, the boss is not in the office today.",
+      "literal": "Of-all-things today is the boss not in-the office.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ausgerechnet",
+            "cue": "of all things, of all days",
+            "tag": "delta",
+            "forms": ["ausgerechnet"],
+            "note": "Marks a coincidence as unfair rather than merely unlikely. It sits directly in front of the word it complains about — ausgerechnet heute, ausgerechnet er."
+          },
+          {
+            "display": "Absicht",
+            "cue": "intention",
+            "tag": "free",
+            "forms": ["Absicht"],
+            "note": "Feminine, die Absicht. mit Absicht is on purpose and ohne Absicht is by accident, which is the pair a complaint usually needs."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "There is no single English word for ausgerechnet, so learners leave it out and the sentence loses its whole point. Der Chef ist heute nicht da is information; Ausgerechnet heute ist der Chef nicht da is a complaint.",
+      "sound": "OWS-guh-rekh-net HOY-tuh ist dair shef nikht im bue-ROH — five syllables, stress on the first, and the word carries the emotion of the sentence by itself.",
+      "variations": [
+        {
+          "display": "Das ist sicher keine Absicht.",
+          "cue": "That is surely not deliberate.",
+          "changed": "The complaint is withdrawn — or pretended to be withdrawn. Said after the first sentence, it is a second implicature rather than a retraction."
+        }
+      ],
+      "mistake": {
+        "display": "Heute ist der Chef ausgerechnet nicht im Büro",
+        "why": "ausgerechnet has drifted away from heute and now attaches to nothing. It goes immediately in front of the word being complained about, which here is the day."
+      },
+      "usage": "Complaining about timing without accusing anybody. It is the most useful single word in this module and the hardest to translate back.",
+      "register": "neutral",
+      "mnemonic": "ausgerechnet points forward: the very next word is the one that is unfair."
+    },
+    {
+      "id": "L5-M7-S08",
+      "display": "Das ist sozusagen ein Hinweis, aber nicht ganz klar.",
+      "cue": "That is a hint, so to speak, but not entirely clear.",
+      "literal": "That is so-to-say a hint, but not quite clear.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sozusagen",
+            "cue": "so to speak, as it were",
+            "tag": "free",
+            "forms": ["sozusagen"],
+            "note": "Flags the word you just used as approximate. One word, three pieces — so-zu-sagen — and it never takes a field of its own."
+          },
+          {
+            "display": "klar",
+            "cue": "clear",
+            "tag": "free",
+            "forms": ["klar"],
+            "note": "The adjective, and also the flat spoken yes: Klar! is of course. In this module it is the adjective — an implicature is by definition nicht ganz klar."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English so to speak apologises for a metaphor; German sozusagen more often marks a genuine approximation, and a German speaker will hear it as you being careful rather than as you being clever.",
+      "sound": "das ist zo-tsoo-ZAH-gen yn HIN-vys, AH-ber nikht gants klahr — sozusagen keeps its stress on the sagen, so the word ends on the emphasis.",
+      "variations": [
+        {
+          "display": "Das ist sozusagen ein Hinweis.",
+          "cue": "That is a hint, so to speak.",
+          "changed": "The second half goes and the sentence stops judging. Without aber nicht ganz klar it is a description; with it, it is a complaint about the hinter."
+        }
+      ],
+      "mistake": {
+        "display": "Das ist ein Hinweis sozusagen, aber nicht ganz klar",
+        "why": "Not wrong, but the German habit is to put sozusagen in front of the word it qualifies, not after it. At the end it reads as an afterthought that was not planned."
+      },
+      "usage": "Hedging your own reading of somebody else's hint. It buys you room to be wrong, which is exactly what this module's material needs.",
+      "register": "neutral",
+      "mnemonic": "so-zu-sagen — literally so to say, and it sits before what it is so-to-saying."
+    },
+    {
+      "id": "L5-M7-S09",
+      "display": "Es zieht hier. Das ist deutlich genug.",
+      "cue": "There is a draught in here. That is clear enough.",
+      "literal": "It draws here. That is clearly enough.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ziehen",
+            "cue": "to pull; (impersonal) to be draughty",
+            "tag": "delta",
+            "forms": ["ziehen", "zieht"],
+            "note": "Es zieht has no subject and no translation — it means there is a draught. On its own it is the shortest complete request in German: shut something."
+          },
+          {
+            "display": "deutlich",
+            "cue": "clear, unmistakable",
+            "tag": "free",
+            "forms": ["deutlich"],
+            "note": "Stronger than klar: deutlich is clear because it was MADE clear. Deutlich werden means to stop hinting, which is this module's other half."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "There is no it in Es zieht that refers to anything — the es is a placeholder, exactly like the one in Es regnet. Learners look for the subject and produce Der Wind zieht, which is a weather report rather than a request.",
+      "sound": "es TSEET heer. das ist DOYT-likh guh-NOOK — zieht is TSEET with a long ee, and the two words together are the whole utterance a German would actually say.",
+      "variations": [
+        {
+          "display": "Es zieht hier drinnen.",
+          "cue": "There is a draught in here.",
+          "changed": "The comment on the hint drops away and only the complaint is left, which is the version a German speaker actually uses. Two words and a room full of people close the window."
+        }
+      ],
+      "mistake": {
+        "display": "Der Wind zieht hier, machen Sie bitte das Fenster zu",
+        "why": "Two repairs of a sentence that needed none. Es zieht is impersonal and complete, and adding the request undoes the device the module is teaching."
+      },
+      "usage": "Said in a train, an office or a waiting room, to nobody in particular. Somebody will get up. It is the clearest evidence in this module that the bare problem outperforms the polite request.",
+      "register": "neutral",
+      "mnemonic": "Es zieht: the draught pulls, and the sentence pulls somebody out of their seat."
+    },
+    {
+      "id": "L5-M7-S10",
+      "display": "Ich möchte Sie wirklich nicht stören, aber es ist spät.",
+      "cue": "I really do not want to disturb you, but it is late.",
+      "literal": "I would-like you really not to-disturb, but it is late.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wohl kaum",
+            "cue": "hardly, surely not",
+            "tag": "delta",
+            "forms": ["wohl kaum"],
+            "note": "Taken as a pair, because bare wohl is L3-M6's and bare kaum is L4-M5's. Together they dismiss something as scarcely possible, drily and without raising the voice."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "The aber clause is where the request is, and English speakers put the real content in the first half instead. In German the apology comes first and carries no information; whatever follows aber is what you actually want.",
+      "sound": "ikh MUEKH-tuh zee VEER-likh nikht SHTUER-en, AH-ber es ist shpayt — the pitch drops on stören and lifts again on spät, which is where the listener hears the point.",
+      "variations": [
+        {
+          "display": "Sie stören wohl kaum.",
+          "cue": "You are hardly disturbing anyone.",
+          "changed": "The answer, not the request. wohl kaum brushes the apology aside — polite, and just dry enough that a listener checks whether it was meant."
+        }
+      ],
+      "mistake": {
+        "display": "Ich möchte Sie nicht stören, aber können Sie jetzt gehen",
+        "why": "The apology frame promises an implicature and then delivers an order, which is worse than either alone. If you are going to ask outright, drop the first half."
+      },
+      "usage": "Ending a visit that has gone on too long, or a meeting that has. The es ist spät does all the work and names nobody.",
+      "register": "formal",
+      "mnemonic": "Everything before aber is packaging; everything after it is the parcel."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L5-M7-C01", "display": "Es ist kalt hier drinnen.", "cue": "It is cold in here." },
+    { "id": "L5-M7-C02", "display": "Hätten Sie vielleicht einen Moment?", "cue": "Would you have a moment, perhaps?" },
+    { "id": "L5-M7-C03", "display": "Es wäre schön, wenn das Fenster offen wäre.", "cue": "It would be nice if the window were open." },
+    { "id": "L5-M7-C04", "display": "Na super, jetzt ist es kalt.", "cue": "Oh great, now it is cold." },
+    { "id": "L5-M7-C05", "display": "Damit will er etwas andeuten.", "cue": "He is hinting at something with that." },
+    { "id": "L5-M7-C06", "display": "Das ist eine Andeutung.", "cue": "That is a hint." },
+    { "id": "L5-M7-C07", "display": "Ausgerechnet heute ist der Chef nicht da.", "cue": "Of all days, the boss is not here today." },
+    { "id": "L5-M7-C08", "display": "Das ist sozusagen ein Hinweis.", "cue": "That is a hint, so to speak." },
+    { "id": "L5-M7-C09", "display": "Es zieht hier drinnen.", "cue": "There is a draught in here." },
+    { "id": "L5-M7-C10", "display": "Ich möchte Sie nicht stören.", "cue": "I do not want to disturb you." },
+    { "id": "L5-M7-C11", "display": "Er hat wohl kaum Lust.", "cue": "He hardly feels like it." },
+    { "id": "L5-M7-C12", "display": "Das ist keine Absicht.", "cue": "That is not deliberate." }
+  ],
+  "exitTest": { "generateCount": 2, "comprehendCount": 4 }
+}

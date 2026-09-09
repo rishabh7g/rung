@@ -1,0 +1,666 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M1",
+  "title": "Sayings and idioms",
+  "job": "The figurative everyday, and when it is used",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "présent",
+      "passé composé",
+      "impératif"
+    ],
+    "allowedPatterns": [
+      "J'en ai marre de + <noun>",
+      "Ça vaut le coup de + V-inf",
+      "Ce n'est pas la mer à boire",
+      "<clause> + , + comme on dit",
+      "Au sens propre + , + <literal> + ; + au sens figuré + , + <figurative>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "AN IDIOM IS ONE LEXICAL ITEM, NOT A SENTENCE TO BE PARSED. Every expression in this module is stored and retrieved whole: its parts do not carry their literal senses inside it, and it cannot be varied. poser un lapin does not become poser un lievre, ce n'est pas la mer a boire does not become la mer a nager, and en avoir marre has no bare j'ai marre. When you look one of these up, look up the whole thing — the index of this course carries them as single surfaces for exactly that reason."
+    },
+    {
+      "tag": "delta",
+      "text": "TWO CLASSES ARE PRODUCTIVE ENOUGH TO NAME. The learner has owned avoir + a BARE noun since L1 — avoir faim, avoir raison. The L5 class is avoir + a DETERMINED noun, where the article is welded on: avoir la flemme, avoir le cafard. Beside it sits en avoir + noun: en avoir marre, en avoir assez, where the en is a syllable of the item and not a pronoun you may drop. Dropping the article or the en does not make a shorter sentence; it makes a broken one."
+    },
+    {
+      "tag": "delta",
+      "text": "EVERY IDIOM CARRIES A REGISTER, AND THAT IS HALF THE TEACHING. en avoir marre is familiar but universal; avoir la flemme and avoir le cafard are familiar; ca vaut le coup and un coup de main are neutral; ce n'est pas la mer a boire is neutral and a little dated; revenons a nos moutons is neutral-formal and belongs to meetings. An idiom taught without its register is a trap rather than a gift — the words are right and the room is wrong."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH AND FRENCH ALMOST NEVER PICK THE SAME IMAGE. il pleut des cordes is not raining cats and dogs; couter les yeux de la tete is not costing an arm and a leg; revenons a nos moutons has no English twin at all. Where an English idiom does seem to translate word for word, suspect that the French does not exist. Translating the picture produces a sentence that is understandable, memorable and wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "DENSITY IS THE SECOND INTERFERENCE, AND IT IS THE ONE NOBODY WARNS ABOUT. A learner who has just met ten idioms uses all ten, and an idiom at the wrong density reads as a phrasebook rather than as a person. One per conversation is the honest figure. Two of this module's sentences deliberately stack two expressions in one line — they are teaching lines, showing how the items combine, not models of how often to reach for them."
+    },
+    {
+      "tag": "free",
+      "text": "THE ne IS ALWAYS WRITTEN (docs/58 section 4). Spoken French drops it constantly, and the idiom as it is actually said is c'est pas la mer a boire. This course writes ce n'est pas la mer a boire, ca ne vaut pas le coup and ne coute pas les yeux de la tete in full. The spoken drop is a fact about listening, and it lives in prose; every display, form and variation here carries its ne."
+    },
+    {
+      "tag": "delta",
+      "text": "au sens propre AND au sens figure ARE THE FRAME FOR TALKING ABOUT AN EXPRESSION AT ALL. propre on its own is L2-M3's clean; inside this frame it means the plain, first reading of the words, and au sens figure names the reading the idiom actually carries. litteralement is the plainer word for the first half. The frame is how a learner asks which reading is meant, and how a French speaker explains a saying to a foreigner."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M1-S01",
+      "display": "J'en ai marre de ce travail",
+      "cue": "I'm fed up with this job",
+      "literal": "I of-it have fed-up of this work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en avoir marre",
+            "cue": "to be fed up",
+            "tag": "delta",
+            "forms": [
+              "en avoir marre",
+              "j'en ai marre"
+            ],
+            "note": "Stored whole. The en is part of the idiom, not a pronoun you can drop: there is no bare j'ai marre. Familiar, but everybody says it."
+          },
+          {
+            "display": "en avoir assez",
+            "cue": "to have had enough",
+            "tag": "delta",
+            "forms": [
+              "en avoir assez",
+              "j'en ai assez"
+            ],
+            "note": "The same shape one register up. j'en ai assez is what you say to a colleague; j'en ai marre is what you say to a friend."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "English drops the pronoun — I'm fed up. French cannot: the en is inside the idiom, and j'ai marre is not a line a French speaker will accept.",
+      "sound": "zhahn ay MAR duh suh trah-VYE. marre rhymes with the English car; the double r is one flat sound, and the final e is silent.",
+      "variations": [
+        {
+          "display": "J'en ai marre de ce film",
+          "cue": "I'm fed up with this film",
+          "changed": "what you are fed up with"
+        },
+        {
+          "display": "J'en ai assez de ce travail",
+          "cue": "I've had enough of this job",
+          "changed": "the register — assez is the one that survives at work"
+        }
+      ],
+      "mistake": {
+        "display": "J'ai marre de ce travail",
+        "why": "the en is not decoration; it is a syllable of the idiom. Without it the line is not French, only a word that looks like an adjective."
+      },
+      "usage": "Saying you have had enough of something, to somebody you are on familiar terms with.",
+      "register": "informal",
+      "mnemonic": "marre never travels without en."
+    },
+    {
+      "id": "L5-M1-S02",
+      "display": "Ça vaut le coup de venir",
+      "cue": "It's worth coming",
+      "literal": "It is-worth the blow of to-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ça vaut le coup",
+            "cue": "it's worth it",
+            "tag": "delta",
+            "forms": [
+              "ça vaut le coup",
+              "ça ne vaut pas le coup"
+            ],
+            "note": "Whole. coup here is not a blow at all — the item means the effort pays. Add de and an infinitive to say worth what."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "coup is one of the busiest nouns in French and means nothing here on its own. Reading this as it is worth the blow is reading the parts of a single word.",
+      "sound": "sah voh luh KOO duh vuh-NEER. The p of coup is silent and vaut rhymes with the English oh.",
+      "variations": [
+        {
+          "display": "Ça ne vaut pas le coup de venir",
+          "cue": "It's not worth coming",
+          "changed": "the negative — and the ne is written"
+        },
+        {
+          "display": "Ça vaut le coup de donner un coup de main",
+          "cue": "It's worth lending a hand",
+          "changed": "what is worth doing"
+        }
+      ],
+      "mistake": {
+        "display": "Ça vaut le coût de venir",
+        "why": "coût, cost, is a different word, and the swap is a spelling mistake French speakers make too. The idiom is spelled coup and has nothing to do with price."
+      },
+      "usage": "Recommending something whose effort or price you think is repaid.",
+      "register": "neutral",
+      "mnemonic": "coup, not coût — the idiom weighs the try, not the bill."
+    },
+    {
+      "id": "L5-M1-S03",
+      "display": "Ce n'est pas la mer à boire",
+      "cue": "It's not that hard",
+      "literal": "This is not the sea to drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ce n'est pas la mer à boire",
+            "cue": "it's not that hard",
+            "tag": "delta",
+            "forms": [
+              "ce n'est pas la mer à boire"
+            ],
+            "note": "Whole, and negative by construction — there is no affirmative c'est la mer à boire. Neutral and slightly dated: a grandparent's register, warmly meant."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3,
+          5
+        ]
+      },
+      "trap": "English has no sea in it — it's not rocket science, it's not the end of the world. Translating the image back produces a French sentence nobody says.",
+      "sound": "suh neh pah lah MEHR ah BWAHR. The ne is written and, in careful speech, heard; fast speech drops it, and this course does not.",
+      "variations": [
+        {
+          "display": "Ce n'est pas la mer à boire, comme on dit",
+          "cue": "It's not that hard, as they say",
+          "changed": "the tag that flags it as a saying"
+        },
+        {
+          "display": "Non, ce n'est pas la mer à boire",
+          "cue": "No, it's not that hard",
+          "changed": "answering somebody who thinks it is"
+        }
+      ],
+      "mistake": {
+        "display": "Ce n'est pas la mer à nager",
+        "why": "an idiom cannot be varied. boire is a syllable of the item and not a verb you get to choose; a swapped word simply reads as an error."
+      },
+      "usage": "Telling somebody the task in front of them is smaller than they fear.",
+      "register": "neutral",
+      "mnemonic": "Nobody is asking you to drink the sea."
+    },
+    {
+      "id": "L5-M1-S04",
+      "display": "Il pleut des cordes, comme on dit",
+      "cue": "It's pouring, as they say",
+      "literal": "It rains some ropes, as one says",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "il pleut des cordes",
+            "cue": "it's pouring",
+            "tag": "delta",
+            "forms": [
+              "il pleut des cordes"
+            ],
+            "note": "Whole. The picture is ropes of water, not cats and dogs — the two languages chose different images for the same downpour."
+          },
+          {
+            "display": "comme on dit",
+            "cue": "as they say",
+            "tag": "free",
+            "forms": [
+              "comme on dit"
+            ],
+            "note": "The tag that marks the words before it as a set phrase rather than your own. It lets you use a saying while keeping a step back from it."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "raining cats and dogs has no French twin. A learner who translates it lands on a sentence that means nothing at all here.",
+      "sound": "eel pluh day KORD, kom ohn DEE. cordes ends on a d then silence; the final s is not heard.",
+      "variations": [
+        {
+          "display": "Il pleut des cordes",
+          "cue": "It's pouring",
+          "changed": "without the tag"
+        },
+        {
+          "display": "Il pleut des cordes ce soir",
+          "cue": "It's pouring tonight",
+          "changed": "when"
+        }
+      ],
+      "mistake": {
+        "display": "Il pleut des chats et des chiens",
+        "why": "the English image carried across word for word. It is guessable and it is not French; the picture French chose is ropes."
+      },
+      "usage": "Saying how hard it is raining, and — with the tag — nodding at the fact that this is the stock phrase.",
+      "register": "neutral",
+      "mnemonic": "French rain falls in ropes."
+    },
+    {
+      "id": "L5-M1-S05",
+      "display": "Au sens propre, des cordes ; au sens figuré, la pluie",
+      "cue": "Literally, ropes; figuratively, rain",
+      "literal": "At-the sense proper, some ropes ; at-the sense figurative, the rain",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "au sens propre",
+            "cue": "literally, in the plain sense",
+            "tag": "free",
+            "forms": [
+              "au sens propre"
+            ],
+            "note": "Whole. propre on its own is L2-M3's clean; inside this frame it means the first, plain reading of the words."
+          },
+          {
+            "display": "au sens figuré",
+            "cue": "figuratively",
+            "tag": "free",
+            "forms": [
+              "au sens figuré"
+            ],
+            "note": "Whole, and the other half of the pair. It names the reading an idiom actually carries, as against the one its words spell out."
+          },
+          {
+            "display": "cordes",
+            "cue": "ropes",
+            "tag": "free",
+            "forms": [
+              "corde",
+              "cordes"
+            ],
+            "note": "Ropes. The plural is what the rain idiom uses; one rope is une corde."
+          },
+          {
+            "display": "pluie",
+            "cue": "rain",
+            "tag": "free",
+            "forms": [
+              "pluie"
+            ],
+            "note": "Rain, the noun: la pluie. The verb il pleut is L3-M4's, and the two are worth keeping apart."
+          },
+          {
+            "display": "littéralement",
+            "cue": "literally",
+            "tag": "free",
+            "forms": [
+              "littéralement"
+            ],
+            "note": "The plainer everyday word for au sens propre. Unlike English literally it has not drifted into an intensifier."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "English literally has become an intensifier — I literally died. French littéralement has not; it still claims the words are true exactly as written.",
+      "sound": "oh sahn PROPR, day KORD ; oh sahn fee-gew-RAY, lah PLWEE. French puts a space before the semicolon.",
+      "variations": [
+        {
+          "display": "Au sens propre, un cafard ; au sens figuré, la tristesse",
+          "cue": "Literally, a cockroach; figuratively, sadness",
+          "changed": "the expression being pulled apart"
+        },
+        {
+          "display": "Littéralement, des cordes",
+          "cue": "Literally, ropes",
+          "changed": "the plainer word for the same half"
+        }
+      ],
+      "mistake": {
+        "display": "À sens propre, des cordes",
+        "why": "the frame is fixed. au sens propre is one item and its preposition does not move; à sens propre is not a French phrase at all."
+      },
+      "usage": "Pulling an expression apart to explain which of its two readings you mean.",
+      "register": "neutral",
+      "mnemonic": "Propre first, figuré second: the plain reading, then the real one."
+    },
+    {
+      "id": "L5-M1-S06",
+      "display": "Ce soir, j'ai la flemme",
+      "cue": "Tonight I can't be bothered",
+      "literal": "This evening, I-have the laziness",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avoir la flemme",
+            "cue": "to not feel like it",
+            "tag": "delta",
+            "forms": [
+              "avoir la flemme",
+              "j'ai la flemme",
+              "elle a la flemme"
+            ],
+            "note": "avoir + a DETERMINED noun: the la is welded on, unlike L1's avoir faim. Familiar, and said constantly."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "English has no noun for this — it says can't be bothered, with a verb. French carries it as a thing you have, so the line is built on avoir.",
+      "sound": "suh SWAHR, zhay lah FLEM. flemme rhymes with the English hem; the double m is one sound and the final e is silent.",
+      "variations": [
+        {
+          "display": "Ce soir, j'ai le cafard",
+          "cue": "Tonight I'm feeling low",
+          "changed": "which of the two avoir idioms you have"
+        },
+        {
+          "display": "Elle a la flemme ce soir",
+          "cue": "She can't be bothered tonight",
+          "changed": "who"
+        }
+      ],
+      "mistake": {
+        "display": "Ce soir, j'ai flemme",
+        "why": "the article is inside the idiom. avoir faim drops it and avoir la flemme does not — that difference is the whole point of the L5 class."
+      },
+      "usage": "Turning down an effort you could make but do not feel like making, among friends.",
+      "register": "informal",
+      "mnemonic": "faim without la, flemme with it."
+    },
+    {
+      "id": "L5-M1-S07",
+      "display": "Il m'a posé un lapin, j'ai le cafard",
+      "cue": "He stood me up; I'm feeling low",
+      "literal": "He me-has put a rabbit, I-have the cockroach",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poser un lapin",
+            "cue": "to stand somebody up",
+            "tag": "delta",
+            "forms": [
+              "poser un lapin",
+              "m'a posé un lapin"
+            ],
+            "note": "Whole. Nothing in it is negotiable — not the rabbit, not the verb. The person stood up arrives as a pronoun: il m'a posé un lapin."
+          },
+          {
+            "display": "avoir le cafard",
+            "cue": "to feel low",
+            "tag": "delta",
+            "forms": [
+              "avoir le cafard",
+              "j'ai le cafard"
+            ],
+            "note": "The module's second avoir + determined noun. The le is fixed, and no French ear sees the insect — only the mood."
+          },
+          {
+            "display": "cafard",
+            "cue": "cockroach",
+            "tag": "free",
+            "forms": [
+              "cafard"
+            ],
+            "note": "The insect, plainly. Knowing the literal word is what makes the idiom's picture visible, and that picture is one French itself has forgotten."
+          },
+          {
+            "display": "tristesse",
+            "cue": "sadness",
+            "tag": "free",
+            "forms": [
+              "tristesse"
+            ],
+            "note": "Sadness, the noun behind L1-M9's triste. It says plainly what avoir le cafard says figuratively."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3,
+          4
+        ]
+      },
+      "trap": "English stood up is passive: I was stood up. French is active, with the person who did not turn up as the subject — il m'a posé un lapin.",
+      "sound": "eel mah poh-ZAY uhn lah-PAN, zhay luh kah-FAR. The final d of cafard is silent.",
+      "variations": [
+        {
+          "display": "Elle m'a posé un lapin, j'ai le cafard",
+          "cue": "She stood me up; I'm feeling low",
+          "changed": "who did it"
+        },
+        {
+          "display": "Il m'a posé un lapin, j'en ai marre",
+          "cue": "He stood me up; I'm fed up",
+          "changed": "the reaction"
+        }
+      ],
+      "mistake": {
+        "display": "Il m'a posé un lièvre",
+        "why": "a hare is not a rabbit, and the idiom does not care about the animal because it cannot be varied at all. Swapping the noun deletes the meaning."
+      },
+      "usage": "Telling a friend somebody did not turn up, and what it left behind.",
+      "register": "informal",
+      "mnemonic": "A rabbit put down, a cockroach picked up."
+    },
+    {
+      "id": "L5-M1-S08",
+      "display": "Cette voiture coûte les yeux de la tête",
+      "cue": "That car costs a fortune",
+      "literal": "This car costs the eyes of the head",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "coûter les yeux de la tête",
+            "cue": "to cost a fortune",
+            "tag": "delta",
+            "forms": [
+              "coûter les yeux de la tête",
+              "coûte les yeux de la tête",
+              "ne coûte pas les yeux de la tête"
+            ],
+            "note": "Whole. The body parts inside it are L2-M2's and L2-M8's and mean nothing here — the item is about a price, not a face."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          5
+        ]
+      },
+      "trap": "English pays an arm and a leg; French pays the eyes out of its head. Neither image survives the crossing, and a ported one is merely strange.",
+      "sound": "set vwah-TEWR koot lay zyuh duh lah TET. The liaison in les yeux is obligatory: lay-ZYUH.",
+      "variations": [
+        {
+          "display": "Ce billet coûte les yeux de la tête",
+          "cue": "That ticket costs a fortune",
+          "changed": "what is expensive"
+        },
+        {
+          "display": "Cette voiture ne coûte pas les yeux de la tête",
+          "cue": "That car doesn't cost a fortune",
+          "changed": "the negative — the ne is written"
+        }
+      ],
+      "mistake": {
+        "display": "Cette voiture coûte un bras",
+        "why": "the English image word for word. French does not sell arms; it sells the eyes in your head, and only in that one fixed wording."
+      },
+      "usage": "Saying something is far too expensive, without naming a number.",
+      "register": "neutral",
+      "mnemonic": "France pays in eyes, England in arms."
+    },
+    {
+      "id": "L5-M1-S09",
+      "display": "Vous pouvez me donner un coup de main ?",
+      "cue": "Can you give me a hand?",
+      "literal": "You can me to-give a blow of hand ?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "un coup de main",
+            "cue": "a hand, a bit of help",
+            "tag": "delta",
+            "forms": [
+              "un coup de main"
+            ],
+            "note": "Whole, and a noun: you GIVE one — donner un coup de main. main on its own is L3-M7's hand and is not what this means."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "English asks with a verb — help me. French asks for a thing, un coup de main, and the verb that carries it is donner.",
+      "sound": "voo poo-VAY muh doh-NAY uhn koo duh MAN. French puts a space before the question mark.",
+      "variations": [
+        {
+          "display": "Vous pouvez me donner un coup de main, s'il vous plaît ?",
+          "cue": "Can you give me a hand, please?",
+          "changed": "the politeness"
+        },
+        {
+          "display": "Il peut me donner un coup de main",
+          "cue": "He can give me a hand",
+          "changed": "who is helping"
+        }
+      ],
+      "mistake": {
+        "display": "Vous pouvez me donner une main ?",
+        "why": "une main is a hand you could shake. The item is un coup de main and its coup cannot be lifted out of it."
+      },
+      "usage": "Asking for small, immediate help — carrying something, holding a door, finishing a job.",
+      "register": "neutral",
+      "mnemonic": "Ask for a coup de main, never for a main."
+    },
+    {
+      "id": "L5-M1-S10",
+      "display": "Revenons à nos moutons",
+      "cue": "Let's get back to the point",
+      "literal": "Let-us-return to our sheep",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "revenons à nos moutons",
+            "cue": "let's get back to the point",
+            "tag": "delta",
+            "forms": [
+              "revenons à nos moutons"
+            ],
+            "note": "Whole, and frozen in the nous imperative — there is no tu or vous version. Neutral to formal, and six centuries old."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "There is no English idiom here at all — back to the point, anyway, where were we. Anybody who translates the sheep is making a joke, not a sentence.",
+      "sound": "ruh-vuh-nohn ah noh moo-TOHN. The final s of moutons is silent and both o-n endings are nasal.",
+      "variations": [
+        {
+          "display": "Bon, revenons à nos moutons",
+          "cue": "Right, let's get back to the point",
+          "changed": "the word that closes the digression first"
+        },
+        {
+          "display": "Alors, revenons à nos moutons",
+          "cue": "So, let's get back to the point",
+          "changed": "the opener"
+        }
+      ],
+      "mistake": {
+        "display": "Revenez à nos moutons",
+        "why": "the item is frozen in revenons — us, together. A vous form turns a shared return into an order and stops being the expression."
+      },
+      "usage": "Bringing a meeting or a conversation back after it has wandered.",
+      "register": "formal",
+      "mnemonic": "The sheep are always ours, never yours."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M1-C01",
+      "display": "J'en ai marre de ce travail",
+      "cue": "I'm fed up with this job"
+    },
+    {
+      "id": "L5-M1-C02",
+      "display": "Ça vaut le coup de venir",
+      "cue": "It's worth coming"
+    },
+    {
+      "id": "L5-M1-C03",
+      "display": "Ce n'est pas la mer à boire",
+      "cue": "It's not that hard"
+    },
+    {
+      "id": "L5-M1-C04",
+      "display": "Il pleut des cordes, comme on dit",
+      "cue": "It's pouring, as they say"
+    },
+    {
+      "id": "L5-M1-C05",
+      "display": "Ce soir, j'ai la flemme",
+      "cue": "Tonight I can't be bothered"
+    },
+    {
+      "id": "L5-M1-C06",
+      "display": "Il m'a posé un lapin, j'ai le cafard",
+      "cue": "He stood me up; I'm feeling low"
+    },
+    {
+      "id": "L5-M1-C07",
+      "display": "Cette voiture coûte les yeux de la tête",
+      "cue": "That car costs a fortune"
+    },
+    {
+      "id": "L5-M1-C08",
+      "display": "Vous pouvez me donner un coup de main ?",
+      "cue": "Can you give me a hand?"
+    },
+    {
+      "id": "L5-M1-C09",
+      "display": "Revenons à nos moutons",
+      "cue": "Let's get back to the point"
+    },
+    {
+      "id": "L5-M1-C10",
+      "display": "J'en ai assez de ce travail",
+      "cue": "I've had enough of this job"
+    },
+    {
+      "id": "L5-M1-C11",
+      "display": "Ça ne vaut pas le coup de venir",
+      "cue": "It's not worth coming"
+    },
+    {
+      "id": "L5-M1-C12",
+      "display": "Au sens propre, des cordes ; au sens figuré, la pluie",
+      "cue": "Literally, ropes; figuratively, rain"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

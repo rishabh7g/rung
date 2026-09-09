@@ -1,0 +1,718 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M6",
+  "title": "Arguing a position",
+  "job": "A structured case, objections answered",
+  "prerequisites": [
+    "L5-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "presente, L1-M6's - every main verb of the ten is in it",
+      "congiuntivo presente after a conjunction that governs it: sia, abbia, all L3-M3's forms and no new ones",
+      "gerundio, used adverbially and never with stare: essendo, avendo, sbagliando",
+      "passato prossimo where the ladder already owns the participle: ho capito, ho finito"
+    ],
+    "allowedPatterns": [
+      "In primo luogo + , + <clause>",
+      "Benché + <congiuntivo> + , + <clause>",
+      "A meno che non + <congiuntivo>",
+      "Pur essendo + <Adj> + , + <clause>",
+      "D'altra parte + <clause> + . + Tuttavia + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THESE CONJUNCTIONS TAKE THE CONGIUNTIVO WHATEVER THE SENTENCE MEANS. benché, sebbene and nonostante concede; a meno che concedes an exception; purché sets a condition; affinché states a purpose; prima che is the different-subject twin of L4-M6's prima di. The mood here is grammatical AGREEMENT, not doubt: the speaker can be completely certain and the verb still goes to the congiuntivo. That is the one thing to carry over from L4-M5, where the same forms meant something."
+    },
+    {
+      "tag": "delta",
+      "text": "PUR PLUS THE GERUNDIO IS A WHOLE CONCESSION IN TWO WORDS. pur essendo d'accordo is although I agree; pur avendo ragione is although he is right. The gerund on its own is adverbial too - sbagliando ho capito, by getting it wrong I understood; essendo tardi, since it is late. You already own two of these forms: mangiando and parlando are L2-M7's, inside the stare plus gerundio progressive, and nothing about them changes here."
+    },
+    {
+      "tag": "free",
+      "text": "THE SCAFFOLD IS FIVE WORDS AND IT IS THE SHAPE OF THE WHOLE ARGUMENT. in primo luogo opens, in secondo luogo adds, d'altra parte turns, tuttavia answers the turn, in conclusione closes. innanzitutto is the everyday twin of in primo luogo. English signposts an argument with the same five moves in the same order, so nothing about the SHAPE has to be learned - only the words."
+    },
+    {
+      "tag": "interference",
+      "text": "A MENO CHE CARRIES AN EXTRA NON THAT ENGLISH DOES NOT SAY. a meno che non ci sia un problema is unless there is a problem, NOT unless there is not a problem. The non is expletive - it belongs to the conjunction and it negates nothing. This is the second sighting of the trick L4-M6 taught on finché non, and the second sighting is what makes it believable."
+    },
+    {
+      "tag": "interference",
+      "text": "TUTTAVIA OPENS ITS CLAUSE AND CANNOT SIT INSIDE IT. English however is mobile - the plan, however, failed - and tuttavia is not: it takes the front of the sentence, exactly as L4-M2's positional law said of the connectors it taught. Same law, new family. Put it first and stop looking for the comma-in-the-middle slot."
+    },
+    {
+      "tag": "interference",
+      "text": "BENCHÉ AND ALTHOUGH ARE NOT THE SAME KIND OF WORD, AND THERE IS NO MEANING UNDERNEATH TO REASON FROM. English although takes an ordinary verb; benché takes the congiuntivo because it is benché, full stop. A learner who hunts for a reason reads the concession as doubtful when the speaker is certain of it. Learn the list of triggers, not a theory."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M6-S01",
+      "display": "In primo luogo, il fatto è che il problema non è il tempo",
+      "cue": "First of all, the fact is that the problem is not time",
+      "literal": "In first place, the fact is that the problem not is the time",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in primo luogo",
+            "cue": "first of all, in the first place",
+            "tag": "free",
+            "forms": [
+              "in primo luogo",
+              "innanzitutto"
+            ],
+            "note": "The opening move of an argument, learned whole. innanzitutto is the everyday twin and says the same thing in one word."
+          },
+          {
+            "display": "il fatto è che",
+            "cue": "the fact is that",
+            "tag": "free",
+            "forms": [
+              "il fatto è che"
+            ],
+            "note": "Four words, one key. It sits on L3-M10's fatto but is learned whole, because it is a frame you drop a whole clause into."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "in primo luogo is not primo. The number word alone counts things; the three-word phrase orders an argument, and only the phrase does that job.",
+      "sound": "in PRI-mo LUO-go, four syllables in luogo run as two: LWO-go. il FAT-to E ke.",
+      "variations": [
+        {
+          "display": "Innanzitutto, il problema non è il tempo",
+          "cue": "First of all, the problem is not time",
+          "changed": "the one-word twin opens it"
+        },
+        {
+          "display": "Il fatto è che il problema non è il tempo",
+          "cue": "The fact is that the problem is not time",
+          "changed": "the frame alone, with no ordering word"
+        },
+        {
+          "display": "In primo luogo, il problema è il tempo",
+          "cue": "First of all, the problem is time",
+          "changed": "the claim turned positive"
+        }
+      ],
+      "mistake": {
+        "display": "Primo, il fatto è che il problema non è il tempo",
+        "why": "Primo alone is the number. Opening a case takes in primo luogo or innanzitutto; primo on its own reads as a list of objects, not an argument."
+      },
+      "usage": "Opening a case in a meeting, or the first line of an argument you have thought about.",
+      "register": "neutral",
+      "mnemonic": "first PLACE, not first thing: luogo is the place in the argument."
+    },
+    {
+      "id": "L5-M6-S02",
+      "display": "In secondo luogo il lavoro è pesante. Ad esempio, nessuno dorme",
+      "cue": "Secondly the work is heavy. For example, nobody sleeps",
+      "literal": "In second place the work is heavy. To example, nobody sleeps",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in secondo luogo",
+            "cue": "secondly, in the second place",
+            "tag": "free",
+            "forms": [
+              "in secondo luogo"
+            ],
+            "note": "The second rung of the scaffold, built exactly like in primo luogo. Italian keeps counting this way and does not switch to a different shape."
+          },
+          {
+            "display": "ad esempio",
+            "cue": "for example",
+            "tag": "free",
+            "forms": [
+              "ad esempio"
+            ],
+            "note": "The support move: it introduces the evidence for the point just made. ad rather than a before a vowel, and the pair is learned whole."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "ad esempio introduces evidence, never a new claim. If what follows is another point, it wants in secondo luogo instead.",
+      "sound": "in se-CON-do LWO-go. ad e-SEM-pio, four syllables, stress on SEM.",
+      "variations": [
+        {
+          "display": "In secondo luogo il lavoro è pesante",
+          "cue": "Secondly the work is heavy",
+          "changed": "the point without its example"
+        },
+        {
+          "display": "Ad esempio, nessuno dorme",
+          "cue": "For example, nobody sleeps",
+          "changed": "the example on its own"
+        }
+      ],
+      "mistake": {
+        "display": "In secondo, il lavoro è pesante",
+        "why": "luogo is not optional. The scaffold word is the whole three-word phrase; in secondo by itself is not Italian."
+      },
+      "usage": "Adding the second point of a case, then backing it with one concrete fact.",
+      "register": "neutral",
+      "mnemonic": "same frame, new number: primo, secondo, luogo stays."
+    },
+    {
+      "id": "L5-M6-S03",
+      "display": "Benché tu abbia ragione, insisto: questa è la mia obiezione",
+      "cue": "Although you are right, I insist: this is my objection",
+      "literal": "Although you have reason, I insist: this is the my objection",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "benché",
+            "cue": "although, even though",
+            "tag": "delta",
+            "forms": [
+              "benché"
+            ],
+            "note": "The concession word that forces the congiuntivo. abbia, not hai, and the speaker is not in doubt: the mood is agreement with benché, nothing more."
+          },
+          {
+            "display": "insisto",
+            "cue": "I insist, I stand by it",
+            "tag": "free",
+            "forms": [
+              "insisto",
+              "insistere"
+            ],
+            "note": "Holding your ground after a concession. It is not rude in Italian; it announces that the point survives what you have just admitted."
+          },
+          {
+            "display": "obiezione",
+            "cue": "objection",
+            "tag": "free",
+            "forms": [
+              "obiezione",
+              "obiezioni"
+            ],
+            "note": "The noun for the thing you raise against a claim. It names the move, which is what lets you announce it before you make it."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Benché tu hai ragione is wrong however certain you are. benché takes abbia whatever the sentence means; there is no meaning underneath to reason from.",
+      "sound": "ben-KÉ, stress on the accented final e. in-SIS-to. o-bie-ZIO-ne.",
+      "variations": [
+        {
+          "display": "Benché tu abbia ragione, insisto",
+          "cue": "Although you are right, I insist",
+          "changed": "the concession and the stand, with nothing named"
+        },
+        {
+          "display": "Sebbene tu abbia ragione, insisto",
+          "cue": "Although you are right, I insist",
+          "changed": "the other concession word, same mood"
+        },
+        {
+          "display": "Questa è la mia obiezione",
+          "cue": "This is my objection",
+          "changed": "the objection announced on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Benché hai ragione, insisto",
+        "why": "hai is the indicative. benché governs the congiuntivo unconditionally, so the verb has to be abbia even though the speaker is certain you are right."
+      },
+      "usage": "Conceding a point in a discussion and then holding your own anyway.",
+      "register": "neutral",
+      "mnemonic": "benché bends the verb, not the meaning."
+    },
+    {
+      "id": "L5-M6-S04",
+      "display": "Sebbene sia difficile, nessuno può obiettare",
+      "cue": "Although it is difficult, nobody can object",
+      "literal": "Although it be difficult, nobody can to object",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sebbene",
+            "cue": "although, even though",
+            "tag": "delta",
+            "forms": [
+              "sebbene"
+            ],
+            "note": "The twin of benché and slightly more written. Same trigger, same congiuntivo, and the two are interchangeable in an argument."
+          },
+          {
+            "display": "obiettare",
+            "cue": "to object, to raise an objection",
+            "tag": "free",
+            "forms": [
+              "obiettare",
+              "obietta",
+              "obietti"
+            ],
+            "note": "The verb beside the noun obiezione. obietta is he or she objects, obietti is you object; the infinitive is what follows può."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "nessuno può obiettare needs no second negative. L2-M10's nessuno already carries the negation when it stands in front of the verb.",
+      "sound": "seb-BE-ne, double b held. o-biet-TA-re, stress on TA.",
+      "variations": [
+        {
+          "display": "Sebbene sia difficile, nessuno obietta",
+          "cue": "Although it is difficult, nobody objects",
+          "changed": "the finite verb in place of can plus infinitive"
+        },
+        {
+          "display": "Benché sia difficile, nessuno può obiettare",
+          "cue": "Although it is difficult, nobody can object",
+          "changed": "the other concession word"
+        }
+      ],
+      "mistake": {
+        "display": "Sebbene è difficile, nessuno può obiettare",
+        "why": "è is the indicative and sebbene never takes it. The difficulty is a plain fact and the verb still has to be sia."
+      },
+      "usage": "Granting that something is hard while claiming the case is still watertight.",
+      "register": "formal",
+      "mnemonic": "sebbene and benché: two words, one mood."
+    },
+    {
+      "id": "L5-M6-S05",
+      "display": "Nonostante tutto, ammetto una cosa: sbagliando ho capito il motivo",
+      "cue": "In spite of everything, I admit one thing: by getting it wrong I understood the reason",
+      "literal": "Notwithstanding all, I admit one thing: mistaking I have understood the reason",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nonostante",
+            "cue": "in spite of, despite",
+            "tag": "delta",
+            "forms": [
+              "nonostante"
+            ],
+            "note": "Third of the concession words. Before a noun it needs nothing, as here; before a clause it takes the congiuntivo like benché and sebbene."
+          },
+          {
+            "display": "ammetto",
+            "cue": "I admit, I grant",
+            "tag": "free",
+            "forms": [
+              "ammetto",
+              "ammettere"
+            ],
+            "note": "The move that buys you the right to insist afterwards. An argument that admits nothing is heard as a speech, not a case."
+          },
+          {
+            "display": "sbagliando",
+            "cue": "by getting it wrong, through error",
+            "tag": "delta",
+            "forms": [
+              "sbagliando"
+            ],
+            "note": "The gerund used adverbially: it says HOW something happened. Same ending as L2-M7's mangiando and parlando, but with no stare in front of it."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "sbagliando ho capito is not I was making mistakes. The bare gerund with no stare says by doing it, and the tense comes from the other verb.",
+      "sound": "no-nos-TAN-te. am-MET-to, double m. sba-GLIAN-do, the gli as in L1's figlio.",
+      "variations": [
+        {
+          "display": "Nonostante tutto, ammetto una cosa",
+          "cue": "In spite of everything, I admit one thing",
+          "changed": "the admission with nothing after it"
+        },
+        {
+          "display": "Sbagliando ho capito il motivo",
+          "cue": "By getting it wrong I understood the reason",
+          "changed": "the gerund clause alone"
+        },
+        {
+          "display": "Pur sbagliando, non cambia niente",
+          "cue": "Even getting it wrong, nothing changes",
+          "changed": "pur in front turns the gerund into a concession"
+        }
+      ],
+      "mistake": {
+        "display": "Nonostante tutto, ammetto una cosa: sbagliavo e ho capito",
+        "why": "The imperfetto tells you he used to be wrong. The gerund is what says by getting it wrong, in one word and with no second clause."
+      },
+      "usage": "Conceding the one point that costs you something, before you go on.",
+      "register": "neutral",
+      "mnemonic": "-ando with stare is happening; -ando alone is how."
+    },
+    {
+      "id": "L5-M6-S06",
+      "display": "D'altra parte il lavoro va avanti. Tuttavia, il tempo manca",
+      "cue": "On the other hand the work is going ahead. However, there is no time",
+      "literal": "Of other part the work goes ahead. However, the time lacks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "d'altra parte",
+            "cue": "on the other hand",
+            "tag": "free",
+            "forms": [
+              "d'altra parte"
+            ],
+            "note": "The turn in an argument. The elision is part of the token: d'altra is one word and does not resolve through altra."
+          },
+          {
+            "display": "tuttavia",
+            "cue": "however, nevertheless",
+            "tag": "free",
+            "forms": [
+              "tuttavia"
+            ],
+            "note": "The answer to the turn. It OPENS its clause and never sits inside it, unlike English however."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "Il tempo, tuttavia, manca is the English shape. tuttavia goes first: Tuttavia, il tempo manca.",
+      "sound": "DAL-tra PAR-te, one breath. tut-ta-VI-a, stress on the VI.",
+      "variations": [
+        {
+          "display": "D'altra parte il lavoro va avanti",
+          "cue": "On the other hand the work is going ahead",
+          "changed": "the turn without its answer"
+        },
+        {
+          "display": "Tuttavia, il tempo manca",
+          "cue": "However, there is no time",
+          "changed": "the answer standing alone"
+        }
+      ],
+      "mistake": {
+        "display": "Il lavoro va avanti, tuttavia il tempo manca",
+        "why": "Not the word but the seam: tuttavia opens a NEW sentence. Hung off a comma it reads as ma with a suit on, and the contrast is lost."
+      },
+      "usage": "Turning your own argument round to look at the other side, then answering it.",
+      "register": "neutral",
+      "mnemonic": "tuttavia takes the front door."
+    },
+    {
+      "id": "L5-M6-S07",
+      "display": "Essendo già tardi, decido domani, purché tu sia d'accordo",
+      "cue": "It being late already, I will decide tomorrow, provided you agree",
+      "literal": "Being already late, I decide tomorrow, provided that you be in agreement",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "essendo",
+            "cue": "being, since it is",
+            "tag": "delta",
+            "forms": [
+              "essendo"
+            ],
+            "note": "The gerund of essere, used adverbially for a reason: essendo tardi is since it is late. It carries no subject pronoun of its own."
+          },
+          {
+            "display": "purché",
+            "cue": "provided that, as long as",
+            "tag": "delta",
+            "forms": [
+              "purché"
+            ],
+            "note": "A condition, not a concession, and it takes the same congiuntivo the concessions take. sia, never sei."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Essendo tardi has no subject pronoun and needs none. The gerund carries the subject of the main verb, or an impersonal it, and adding one breaks it.",
+      "sound": "es-SEN-do, double s. pur-KÉ, stress on the accented final e.",
+      "variations": [
+        {
+          "display": "Essendo già tardi, decido domani",
+          "cue": "It being late already, I will decide tomorrow",
+          "changed": "the reason without the condition"
+        },
+        {
+          "display": "Purché tu sia d'accordo, decido domani",
+          "cue": "Provided you agree, I will decide tomorrow",
+          "changed": "the condition moved to the front"
+        },
+        {
+          "display": "Avendo tempo, decido domani",
+          "cue": "Having time, I will decide tomorrow",
+          "changed": "the other gerund, on avere"
+        }
+      ],
+      "mistake": {
+        "display": "Essendo già tardi, decido domani, purché tu sei d'accordo",
+        "why": "sei is the indicative. purché is in the same trigger class as benché and sebbene, so the verb after it is sia."
+      },
+      "usage": "Putting off a decision and naming the one condition you need.",
+      "register": "neutral",
+      "mnemonic": "purché buys a promise, and it pays in congiuntivo."
+    },
+    {
+      "id": "L5-M6-S08",
+      "display": "Sostengo la stessa cosa, a meno che non ci sia un problema",
+      "cue": "I maintain the same thing, unless there is a problem",
+      "literal": "I maintain the same thing, to less that not there be a problem",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sostengo",
+            "cue": "I maintain, I hold, I argue",
+            "tag": "free",
+            "forms": [
+              "sostengo",
+              "sostenere"
+            ],
+            "note": "Stronger than penso and weaker than insisto: it says this is my position and I have reasons. The claim word of an argument."
+          },
+          {
+            "display": "a meno che",
+            "cue": "unless",
+            "tag": "interference",
+            "forms": [
+              "a meno che"
+            ],
+            "note": "Three words, one key, and the non that follows is not a negative. a meno che non piova is unless it rains."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The non after a meno che negates nothing. Reading it as a real negative flips the sentence: this says unless there IS a problem.",
+      "sound": "sos-TEN-go. a ME-no ke, three light words run together.",
+      "variations": [
+        {
+          "display": "Sostengo la stessa cosa",
+          "cue": "I maintain the same thing",
+          "changed": "the claim with no exception"
+        },
+        {
+          "display": "A meno che non ci sia un'altra obiezione, ho finito",
+          "cue": "Unless there is another objection, I have finished",
+          "changed": "the exception carrying the whole sentence"
+        }
+      ],
+      "mistake": {
+        "display": "Sostengo la stessa cosa, a meno che ci sia un problema",
+        "why": "The non is missing. It is not optional in written or careful Italian: a meno che comes with it, exactly as L4-M6's finché non does."
+      },
+      "usage": "Stating your position and naming the single thing that would change it.",
+      "register": "neutral",
+      "mnemonic": "a meno che non: the non is part of the word, not part of the meaning."
+    },
+    {
+      "id": "L5-M6-S09",
+      "display": "Pur essendo d'accordo, non cambia niente. Pur avendo ragione, non insisto",
+      "cue": "Even though I agree, nothing changes. Even though I am right, I do not insist",
+      "literal": "Even being in agreement, not changes nothing. Even having reason, not I insist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pur essendo",
+            "cue": "even being, although I am",
+            "tag": "delta",
+            "forms": [
+              "pur essendo"
+            ],
+            "note": "The compressed concession: two words where benché needs a whole clause with a congiuntivo in it. Learned whole, because it is used whole."
+          },
+          {
+            "display": "pur",
+            "cue": "even, although",
+            "tag": "delta",
+            "forms": [
+              "pur"
+            ],
+            "note": "pur in front of any gerund makes it concessive. Without pur, avendo ragione is because he is right; with it, although he is right."
+          },
+          {
+            "display": "avendo",
+            "cue": "having",
+            "tag": "delta",
+            "forms": [
+              "avendo"
+            ],
+            "note": "The gerund of avere. It gives a reason on its own and a concession behind pur, and it never takes a subject pronoun."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Pur essendo d'accordo has no che and no congiuntivo. It is the SHORT road round benché, not a version of it.",
+      "sound": "pur es-SEN-do. pur a-VEN-do, the r of pur runs straight into the vowel.",
+      "variations": [
+        {
+          "display": "Pur essendo d'accordo, non cambia niente",
+          "cue": "Even though I agree, nothing changes",
+          "changed": "the first half alone"
+        },
+        {
+          "display": "Pur avendo ragione, non insisto",
+          "cue": "Even though I am right, I do not insist",
+          "changed": "the second half alone"
+        },
+        {
+          "display": "Pur sbagliando, non cambia niente",
+          "cue": "Even getting it wrong, nothing changes",
+          "changed": "a third verb in the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Pur essendo che sono d'accordo, non cambia niente",
+        "why": "pur essendo IS the clause. Adding che and a finite verb builds the thing the phrase exists to avoid."
+      },
+      "usage": "Giving ground in the shortest form Italian has, usually in the middle of a longer point.",
+      "register": "neutral",
+      "mnemonic": "pur + -ando or -endo = although, in two words."
+    },
+    {
+      "id": "L5-M6-S10",
+      "display": "In conclusione, lo spiego affinché sia tutto giusto, prima che sia tardi",
+      "cue": "In conclusion, I am explaining it so that everything is right, before it is too late",
+      "literal": "In conclusion, it I explain so that be all right, before that be late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in conclusione",
+            "cue": "in conclusion, to sum up",
+            "tag": "free",
+            "forms": [
+              "in conclusione"
+            ],
+            "note": "The last rung of the scaffold. It announces that what follows is the close, so nobody has to guess whether you are still adding points."
+          },
+          {
+            "display": "affinché",
+            "cue": "so that, in order that",
+            "tag": "delta",
+            "forms": [
+              "affinché"
+            ],
+            "note": "Purpose, and another congiuntivo trigger. Two subjects: I explain so that IT is right; with one subject Italian uses per plus the infinitive."
+          },
+          {
+            "display": "prima che",
+            "cue": "before",
+            "tag": "delta",
+            "forms": [
+              "prima che"
+            ],
+            "note": "The different-subject twin of L4-M6's prima di. prima di partire when it is you leaving; prima che sia tardi when it is something else."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "prima di takes an infinitive and prima che takes a congiuntivo. The choice is made by whether the two verbs share a subject, not by the meaning.",
+      "sound": "in con-clu-SIO-ne. af-fin-KÉ, stress on the accented final e. PRI-ma ke.",
+      "variations": [
+        {
+          "display": "In conclusione, lo spiego affinché sia tutto giusto",
+          "cue": "In conclusion, I am explaining it so that everything is right",
+          "changed": "the close without the deadline"
+        },
+        {
+          "display": "Lo spiego prima che sia tardi",
+          "cue": "I am explaining it before it is too late",
+          "changed": "the deadline alone"
+        }
+      ],
+      "mistake": {
+        "display": "In conclusione, lo spiego affinché è tutto giusto",
+        "why": "affinché is a trigger like benché and purché. Purpose is never stated with the indicative, however certain the outcome."
+      },
+      "usage": "Closing a case: what you want out of it, and by when.",
+      "register": "neutral",
+      "mnemonic": "prima DI you, prima CHE it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M6-C01",
+      "display": "In primo luogo, il tempo manca",
+      "cue": "First of all, there is no time"
+    },
+    {
+      "id": "L5-M6-C02",
+      "display": "Il fatto è che nessuno capisce",
+      "cue": "The fact is that nobody understands"
+    },
+    {
+      "id": "L5-M6-C03",
+      "display": "In secondo luogo, il lavoro è pesante",
+      "cue": "Secondly, the work is heavy"
+    },
+    {
+      "id": "L5-M6-C04",
+      "display": "Benché sia difficile, insisto",
+      "cue": "Although it is difficult, I insist"
+    },
+    {
+      "id": "L5-M6-C05",
+      "display": "Sebbene tu abbia ragione, sostengo la stessa cosa",
+      "cue": "Although you are right, I maintain the same thing"
+    },
+    {
+      "id": "L5-M6-C06",
+      "display": "Nonostante tutto, ammetto una cosa",
+      "cue": "In spite of everything, I admit one thing"
+    },
+    {
+      "id": "L5-M6-C07",
+      "display": "D'altra parte, ad esempio, nessuno dorme",
+      "cue": "On the other hand, for example, nobody sleeps"
+    },
+    {
+      "id": "L5-M6-C08",
+      "display": "Tuttavia, in conclusione, il problema resta",
+      "cue": "However, in conclusion, the problem remains"
+    },
+    {
+      "id": "L5-M6-C09",
+      "display": "A meno che non ci sia un'altra obiezione",
+      "cue": "Unless there is another objection"
+    },
+    {
+      "id": "L5-M6-C10",
+      "display": "Purché tu sia d'accordo, essendo già tardi, decido domani",
+      "cue": "Provided you agree, it being late already, I will decide tomorrow"
+    },
+    {
+      "id": "L5-M6-C11",
+      "display": "Pur avendo ragione, nessuno può obiettare",
+      "cue": "Even though he is right, nobody can object"
+    },
+    {
+      "id": "L5-M6-C12",
+      "display": "Lo spiego affinché sia tutto giusto, prima che sia tardi",
+      "cue": "I am explaining it so that everything is right, before it is too late"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M5",
+  "title": "Big questions",
+  "job": "Values, beliefs, abstract talk",
+  "prerequisites": [
+    "L5-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 10,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "present",
+      "preterite",
+      "present subjunctive",
+      "perfect subjunctive",
+      "imperfect subjunctive"
+    ],
+    "allowedPatterns": [
+      "Lo + <Adj> + es que + <clause>",
+      "Me alegro de que + <present subjunctive>",
+      "Me alegro de que + haya + V-participle",
+      "Me molestó que + <imperfect subjunctive>",
+      "En el fondo + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A trigger of EMOTION or VALUE with a person inside it takes the subjunctive in the clause after it: me alegro de que vengas, me molesta que la gente no escuche, es una pena que no vinieran. L4-M4 bought the impersonal judgement (es importante que); what is new is that somebody is now doing the feeling."
+    },
+    {
+      "tag": "delta",
+      "text": "The subjunctive only appears when the two halves have DIFFERENT subjects. When the person feeling and the person doing are the same, Spanish drops the que and takes the infinitive: me alegro de venir, not me alegro de que vengo. That is the minimal pair of this module and it never bends."
+    },
+    {
+      "tag": "delta",
+      "text": "The TENSE of the subjunctive is chosen by the trigger, not by you. Present trigger, present subjunctive: me molesta que digan. Present trigger about something already done, perfect subjunctive: me alegro de que hayas venido. Past trigger, imperfect subjunctive: me molesto que dijeran."
+    },
+    {
+      "tag": "delta",
+      "text": "Lo plus an adjective makes an abstract noun out of nothing: lo importante, lo bueno, lo dificil, lo malo. It is how Spanish names a quality it has no noun for, and it is the opener that abstract talk runs on: lo importante es que, and then the claim."
+    },
+    {
+      "tag": "interference",
+      "text": "English uses the indicative under every single one of these triggers — I am glad you are coming — so nothing at all warns you that a choice is due. Me alegro de que vienes is the commonest error of this level, and it is invisible to the ear that made it."
+    },
+    {
+      "tag": "interference",
+      "text": "English has no lo. The important thing is a noun phrase with a dummy noun inside it, so a learner builds la cosa importante and is understood, and permanently marked. There is no noun in the Spanish at all: lo does the work a noun would do."
+    },
+    {
+      "tag": "free",
+      "text": "Register: an English speaker hedges an abstract claim to be polite — I suppose one might say. Spanish states the claim flat and hedges the FRAME instead: en el fondo, la verdad es que. L3-M3 and L4-M4 each said this; this is the third and last time, and it is the same law."
+    },
+    {
+      "tag": "free",
+      "text": "The machinery is here and the belief is yours. Nothing in this module argues for a position, and none of these topics is small talk with somebody you have just met: they are the two-in-the-morning conversation and the panel, and the address follows the scene."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M5-S01",
+      "display": "Lo importante es que la gente escuche, no que tenga razón.",
+      "cue": "The important thing is that people listen, not that they are right.",
+      "literal": "The important it-is that the people they-may-listen, not that they-may-have reason.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lo importante",
+            "cue": "the important thing · what matters",
+            "tag": "delta",
+            "forms": [
+              "lo importante"
+            ],
+            "note": "L4-M5 taught importante. Lo turns the bare adjective into a noun with no noun in it: the important thing, said in two words."
+          },
+          {
+            "display": "la gente",
+            "cue": "people",
+            "tag": "free",
+            "forms": [
+              "la gente"
+            ],
+            "note": "L3-M10 taught gente. It is singular in Spanish however many people it means, so the verb after it is singular: la gente escuche, not escuchen."
+          },
+          {
+            "display": "escuche",
+            "cue": "(that) they listen",
+            "tag": "delta",
+            "forms": [
+              "escuche"
+            ],
+            "note": "Present subjunctive of escuchar, sitting under lo importante es que. The -ar verb takes an -e ending here, the mirror of its indicative -a."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          5
+        ]
+      },
+      "trap": "La gente is singular. Every verb hanging off it is singular too, and this is the agreement an English speaker gets wrong first and longest.",
+      "sound": "Escuche is es-CU-che; the initial e is fully pronounced, so it is not skoo-che.",
+      "variations": [
+        {
+          "display": "Lo importante es que la gente escuche.",
+          "cue": "What matters is that people listen.",
+          "changed": "The claim without its contrast, which is the shape the pattern actually has: lo plus adjective, es que, then the claim."
+        }
+      ],
+      "mistake": {
+        "display": "La cosa importante es que la gente escucha.",
+        "why": "Two errors, and both are English showing through. There is no noun in the Spanish — lo importante, never la cosa importante — and es que here takes the subjunctive, escuche."
+      },
+      "usage": "Neutral. This is the opener of nearly every abstract claim in Spanish, and it works in a seminar and at a kitchen table without changing a word.",
+      "register": "neutral",
+      "mnemonic": "Lo plus an adjective is a noun with no noun in it."
+    },
+    {
+      "id": "L5-M5-S02",
+      "display": "Me alegro mucho de que vengas hoy a mi casa.",
+      "cue": "I am really glad you are coming to my house today.",
+      "literal": "Me I-gladden much of that you-may-come today to my house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me alegro",
+            "cue": "I am glad",
+            "tag": "delta",
+            "forms": [
+              "me alegro"
+            ],
+            "note": "Takes de before its que: me alegro DE que. The de is not optional and dropping it is the second commonest error in this pattern."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "English says I am glad you are coming, with a plain indicative. Spanish cannot: the moment there is a second subject, the verb after que goes subjunctive.",
+      "sound": "Alegro is a-LE-gro, and the g is hard, as in the English word grow.",
+      "variations": [
+        {
+          "display": "Me alegro de que vengas.",
+          "cue": "I am glad you are coming.",
+          "changed": "The pattern reduced to its bones — trigger, de que, subjunctive — with nothing else in the way."
+        }
+      ],
+      "mistake": {
+        "display": "Me alegro de que vienes hoy.",
+        "why": "Vienes is the indicative. Me alegro de que is a trigger of emotion with two subjects in it, so the verb after que must be vengas — this is the single commonest error of the level."
+      },
+      "usage": "Neutral, and warm without being effusive. It is what you say to somebody who has just told you good news about themselves.",
+      "register": "neutral",
+      "mnemonic": "Two subjects, one subjunctive."
+    },
+    {
+      "id": "L5-M5-S03",
+      "display": "Me alegro de que haya venido usted a la boda.",
+      "cue": "I am glad that you came to the wedding.",
+      "literal": "Me I-gladden of that there-may-have come you to the wedding.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "haya",
+            "cue": "(that) has · (that) have",
+            "tag": "delta",
+            "forms": [
+              "haya"
+            ],
+            "note": "L4-M3 taught venido and the perfect. Haya is the subjunctive of that same helper, and haya venido is the already-done version of vengas."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "The trigger is present and the thing wished about is finished, so the subjunctive goes perfect rather than past. Nothing in the trigger moves.",
+      "sound": "Haya has a silent h and the y is a soft consonant: A-ya, two syllables.",
+      "variations": [
+        {
+          "display": "Me alegro de que haya venido.",
+          "cue": "I am glad you came.",
+          "changed": "Without usted, which is how it is usually said — the form itself already says who."
+        }
+      ],
+      "mistake": {
+        "display": "Me alegro de que vino usted a la boda.",
+        "why": "Vino is the indicative past. When the trigger is an emotion the mood cannot be indicative at all, and because the coming is finished the form wanted is haya venido."
+      },
+      "usage": "Formal, with usted — this is the sentence for a wedding, a leaving lunch or a panel, said to somebody you would not call tu.",
+      "register": "formal",
+      "mnemonic": "Still happening takes vengas; already happened takes haya venido."
+    },
+    {
+      "id": "L5-M5-S04",
+      "display": "Me molestó mucho que dijeran eso de mi hermana ayer.",
+      "cue": "It really bothered me that they said that about my sister yesterday.",
+      "literal": "Me it-bothered much that they-might-say that of my sister yesterday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "me molestó",
+            "cue": "it bothered me",
+            "tag": "delta",
+            "forms": [
+              "me molestó"
+            ],
+            "note": "L3-M6 taught me molesta in the present. This is the same row in the past, and it is the tense of the TRIGGER that decides everything after que."
+          },
+          {
+            "display": "dijeran",
+            "cue": "(that) they said",
+            "tag": "delta",
+            "forms": [
+              "dijeran"
+            ],
+            "note": "Imperfect subjunctive of decir, built on the irregular stem dij-. The -se twin dijesen means exactly the same, as L5-M3 showed."
+          },
+          {
+            "display": "hiciera",
+            "cue": "(that) he did · (that) she did",
+            "tag": "delta",
+            "forms": [
+              "hiciera"
+            ],
+            "note": "The same form from hacer, on the stem hic-. Both are built from the they-form of the simple past, which is where every imperfect subjunctive comes from."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "A past trigger drags the whole clause back with it. You do not get to choose the tense after que; me molesta takes digan and me molesto takes dijeran.",
+      "sound": "Dijeran is di-HE-ran: the j is the throaty h of Spanish, and the stress is on the middle syllable.",
+      "variations": [
+        {
+          "display": "Me molestó que hiciera eso.",
+          "cue": "It bothered me that he did that.",
+          "changed": "The same past trigger with a different verb under it, so the shape shows through rather than the words."
+        }
+      ],
+      "mistake": {
+        "display": "Me molestó que dijeron eso.",
+        "why": "Dijeron is the plain past indicative. Under a trigger of feeling the clause is subjunctive whatever the tense, so a past trigger takes dijeran."
+      },
+      "usage": "Neutral. Said about something reported rather than to the person who did it; saying it to their face is a different conversation and a different register.",
+      "register": "neutral",
+      "mnemonic": "The trigger picks the tense, and you only pick the trigger."
+    },
+    {
+      "id": "L5-M5-S05",
+      "display": "En el fondo, la gente quiere libertad, justicia y respeto, nada más.",
+      "cue": "Deep down, people want freedom, justice and respect, nothing more.",
+      "literal": "In the bottom, the people it-wants freedom, justice and respect, nothing more.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en el fondo",
+            "cue": "deep down · when it comes down to it",
+            "tag": "free",
+            "forms": [
+              "en el fondo"
+            ],
+            "note": "The frame Spanish hedges with instead of hedging the claim. It goes at the front, with a comma, and what follows it is stated flat."
+          },
+          {
+            "display": "libertad",
+            "cue": "freedom",
+            "tag": "free",
+            "forms": [
+              "libertad"
+            ],
+            "note": "Feminine, like every Spanish noun ending in -dad: la libertad. Readable on sight, which is why the module can afford three of these in one line."
+          },
+          {
+            "display": "justicia",
+            "cue": "justice · fairness",
+            "tag": "free",
+            "forms": [
+              "justicia"
+            ],
+            "note": "Covers both the courts and plain fairness, so no es justo means that is not fair long before it means anything legal."
+          },
+          {
+            "display": "respeto",
+            "cue": "respect",
+            "tag": "free",
+            "forms": [
+              "respeto"
+            ],
+            "note": "El respeto, masculine. Not to be read as the verb respeto, I respect — same letters, and the article is what tells you which one is meant."
+          }
+        ],
+        "rules": [
+          6,
+          7
+        ]
+      },
+      "trap": "En el fondo hedges the frame, not the claim. Everything after the comma is said flat, with no softening at all, and softening it as well is what makes a learner sound evasive.",
+      "sound": "Libertad ends on a soft d that in Spain is barely there — li-ber-TA. The stress is on the last syllable in all three nouns here.",
+      "variations": [
+        {
+          "display": "En el fondo, todo es más difícil.",
+          "cue": "Deep down, it is all harder than that.",
+          "changed": "The frame carrying an ordinary sentence, to show that it is not tied to abstract nouns."
+        }
+      ],
+      "mistake": {
+        "display": "Creo que en el fondo la gente quiere quizás libertad.",
+        "why": "Hedging twice. Spanish puts the softening in the frame and then commits; stacking creo que, en el fondo and quizas is the English habit and it reads as having no view at all."
+      },
+      "usage": "Neutral, and this is the two-in-the-morning register: the frame buys you the right to state something large without seeming to lecture.",
+      "register": "neutral",
+      "mnemonic": "Hedge the frame, then say the thing straight."
+    },
+    {
+      "id": "L5-M5-S06",
+      "display": "Lo difícil no es hablar; lo difícil es escuchar de verdad.",
+      "cue": "The hard part is not talking; the hard part is really listening.",
+      "literal": "The difficult not it-is to-speak; the difficult it-is to-listen of truth.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lo difícil",
+            "cue": "the hard part · what is difficult",
+            "tag": "delta",
+            "forms": [
+              "lo difícil"
+            ],
+            "note": "L3-M3 taught dificil. The same lo trick as lo importante, and the adjective stays masculine singular however many people it is about."
+          },
+          {
+            "display": "escuchar",
+            "cue": "to listen",
+            "tag": "free",
+            "forms": [
+              "escuchar"
+            ],
+            "note": "Listening on purpose, as against oir, which is hearing whether you meant to. Takes a direct object with no preposition: escuchar a alguien."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "Lo never agrees with anything. It is not el and not la, and it stays lo even when the hard part is a woman, a group or a plural.",
+      "sound": "Dificil is di-FI-cil, stressed in the middle, and the written accent is what says so; without it the word would be read di-fi-CIL.",
+      "variations": [
+        {
+          "display": "Lo difícil es escuchar.",
+          "cue": "The hard part is listening.",
+          "changed": "One half of the contrast, which is complete on its own — the pattern does not need a second clause."
+        }
+      ],
+      "mistake": {
+        "display": "La difícil es escuchar de verdad.",
+        "why": "There is no gender here to agree with. Lo is the neuter article and takes a masculine singular adjective always, whatever the sentence is about."
+      },
+      "usage": "Neutral. The two-part contrast — lo X no es A, lo X es B — is how a claim is sharpened in Spanish without raising the voice.",
+      "register": "neutral",
+      "mnemonic": "Lo is neuter and agrees with nobody."
+    },
+    {
+      "id": "L5-M5-S07",
+      "display": "Es una pena que no vinieran a la boda de mi hermana.",
+      "cue": "It is a shame they did not come to my sister's wedding.",
+      "literal": "It-is a pity that not they-might-come to the wedding of my sister.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es una pena",
+            "cue": "it is a shame · what a pity",
+            "tag": "free",
+            "forms": [
+              "es una pena",
+              "qué pena"
+            ],
+            "note": "A trigger of value with no person in it, so it behaves exactly like the ones that have. Que pena is the same feeling as an exclamation."
+          },
+          {
+            "display": "vinieran",
+            "cue": "(that) they came",
+            "tag": "delta",
+            "forms": [
+              "vinieran"
+            ],
+            "note": "Imperfect subjunctive of venir, on the stem vin-. The trigger is present here and the clause is past, because the not-coming is over."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "A present trigger does not force a present subjunctive. It forces the subjunctive; the tense inside it still tracks when the thing happened.",
+      "sound": "Vinieran is vi-NYE-ran; the ie is one glide and the stress sits on it.",
+      "variations": [
+        {
+          "display": "Es una pena que no vinieran.",
+          "cue": "It is a shame they did not come.",
+          "changed": "The trigger and its clause with nothing after them, which is the whole pattern."
+        }
+      ],
+      "mistake": {
+        "display": "Es una pena que no vinieron.",
+        "why": "Vinieron is the plain past. Es una pena is a value judgement and every clause under one is subjunctive, so the form is vinieran."
+      },
+      "usage": "Neutral, and softer than it looks: es una pena is regret rather than blame, and it is what you say about people you are still fond of.",
+      "register": "neutral",
+      "mnemonic": "The trigger sets the mood; the facts still set the tense."
+    },
+    {
+      "id": "L5-M5-S08",
+      "display": "Me alegro de escuchar, y me alegro de que tú escuches también.",
+      "cue": "I am glad to be listening, and I am glad that you are listening too.",
+      "literal": "Me I-gladden of to-listen, and me I-gladden of that you you-may-listen too.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "escuches",
+            "cue": "(that) you listen",
+            "tag": "delta",
+            "forms": [
+              "escuches"
+            ],
+            "note": "The tu cell of the same subjunctive S01 used for la gente. It is here only because the second half changes subject; the first half needs no such form at all."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "This is the module's minimal pair inside one sentence. Same subject on both sides takes de plus the plain infinitive; a new subject takes de que plus the subjunctive. Nothing else moves.",
+      "sound": "Escuches is es-CU-ches, and the final -s is fully pronounced; it is what separates you listen from he listens.",
+      "variations": [
+        {
+          "display": "Me alegro de venir.",
+          "cue": "I am glad to be coming.",
+          "changed": "The same-subject half with a different verb: no que anywhere, and the infinitive straight after de."
+        }
+      ],
+      "mistake": {
+        "display": "Me alegro de que escucho también.",
+        "why": "One subject on both sides, so there is no que at all: me alegro de escuchar. Spanish never puts que between a feeling and the person already having it."
+      },
+      "usage": "Informal, tu — the two-in-the-morning conversation the whole module is built for. It is a compliment, and a warm one.",
+      "register": "informal",
+      "mnemonic": "One subject takes the infinitive; two subjects take que."
+    },
+    {
+      "id": "L5-M5-S09",
+      "display": "Lo bueno es que hoy el mundo puede hablar de estos valores.",
+      "cue": "The good thing is that today the world can talk about these values.",
+      "literal": "The good it-is that today the world it-can to-speak of these values.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "lo bueno",
+            "cue": "the good thing · the upside",
+            "tag": "delta",
+            "forms": [
+              "lo bueno",
+              "lo malo"
+            ],
+            "note": "L1-M10 taught bueno. Lo bueno and lo malo are the pair a Spanish speaker weighs a thing with: lo bueno de esto es que."
+          },
+          {
+            "display": "el mundo",
+            "cue": "the world",
+            "tag": "free",
+            "forms": [
+              "el mundo"
+            ],
+            "note": "Todo el mundo means everybody, not the whole planet, so the article is doing more work here than it looks like."
+          },
+          {
+            "display": "valores",
+            "cue": "values",
+            "tag": "free",
+            "forms": [
+              "valores"
+            ],
+            "note": "Plural in this sense, always: los valores. In the singular el valor is worth, or courage, which is a different word to a Spanish ear."
+          }
+        ],
+        "rules": [
+          3,
+          7
+        ]
+      },
+      "trap": "Es que here is indicative, not subjunctive. Lo bueno es que states a fact about the world; lo importante es que in S01 states a requirement, and only the second takes the subjunctive.",
+      "sound": "Valores is ba-LO-res: the v is the same sound as b, and the stress is on the middle syllable.",
+      "variations": [
+        {
+          "display": "Lo bueno es que el mundo puede cambiar.",
+          "cue": "The good thing is that the world can change.",
+          "changed": "The same frame carrying a plainer claim, so the pattern shows without the vocabulary."
+        }
+      ],
+      "mistake": {
+        "display": "Lo bueno es que hoy el mundo pueda hablar.",
+        "why": "Pueda would make it a wish or a requirement. Lo bueno es que reports something true, and reporting is indicative — this is the boundary between S01 and this sentence."
+      },
+      "usage": "Neutral, and usable in front of an audience: this is the panel half of the module, where lo bueno es que opens a considered answer.",
+      "register": "neutral",
+      "mnemonic": "Lo importante demands, so it takes the subjunctive; lo bueno reports, so it does not."
+    },
+    {
+      "id": "L5-M5-S10",
+      "display": "¿Tú crees que la vida tiene sentido? En el fondo, creo que sí.",
+      "cue": "Do you think life has meaning? Deep down, I think it does.",
+      "literal": "You you-believe that the life it-has sense? In the bottom, I-believe that yes.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vida",
+            "cue": "life",
+            "tag": "free",
+            "forms": [
+              "vida"
+            ],
+            "note": "Feminine: la vida. Asi es la vida is the fixed phrase every learner meets first, and it is the same word."
+          },
+          {
+            "display": "sentido",
+            "cue": "meaning · sense",
+            "tag": "free",
+            "forms": [
+              "sentido",
+              "el sentido"
+            ],
+            "note": "Tener sentido is to make sense, of an argument as much as of a life. It is also the sentido of L5-M4's sentido pesame, felt rather than meant."
+          }
+        ],
+        "rules": [
+          6,
+          7
+        ]
+      },
+      "trap": "Crees que takes the indicative because a question about belief is still a question about a fact. It is the NEGATIVE, no creo que, that flips to the subjunctive — and that belongs to L4-M5, not here.",
+      "sound": "Sentido is sen-TI-do, and the final d is soft, closer to the th of the English word this.",
+      "variations": [
+        {
+          "display": "¿Tú crees que tiene sentido?",
+          "cue": "Do you think it makes sense?",
+          "changed": "The everyday use of the same phrase, about an argument or a plan rather than about a life."
+        }
+      ],
+      "mistake": {
+        "display": "¿Tú crees que la vida tenga sentido?",
+        "why": "A plain question about what somebody believes is indicative: crees que tiene. The subjunctive would arrive with a negative in front, no creo que tenga, which is a different sentence."
+      },
+      "usage": "Informal, tu, and this is the hour the module was written for. It is not small talk; asked of somebody you met an hour ago it lands as strange rather than deep.",
+      "register": "informal",
+      "mnemonic": "Believing takes the indicative; it is doubting that changes the mood."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M5-C01",
+      "display": "Lo importante es que la gente escuche.",
+      "cue": "What matters is that people listen."
+    },
+    {
+      "id": "L5-M5-C02",
+      "display": "Me alegro de que vengas hoy.",
+      "cue": "I am glad you are coming today."
+    },
+    {
+      "id": "L5-M5-C03",
+      "display": "Me alegro de que haya venido usted.",
+      "cue": "I am glad you came."
+    },
+    {
+      "id": "L5-M5-C04",
+      "display": "Me molestó que dijeran eso.",
+      "cue": "It bothered me that they said that."
+    },
+    {
+      "id": "L5-M5-C05",
+      "display": "En el fondo, la gente quiere respeto.",
+      "cue": "Deep down, people want respect."
+    },
+    {
+      "id": "L5-M5-C06",
+      "display": "Lo difícil es escuchar de verdad.",
+      "cue": "The hard part is really listening."
+    },
+    {
+      "id": "L5-M5-C07",
+      "display": "Es una pena que no vinieran.",
+      "cue": "It is a shame they did not come."
+    },
+    {
+      "id": "L5-M5-C08",
+      "display": "Me alegro de escuchar y de que tú escuches.",
+      "cue": "I am glad to listen and that you listen."
+    },
+    {
+      "id": "L5-M5-C09",
+      "display": "Lo bueno es que el mundo puede cambiar.",
+      "cue": "The good thing is that the world can change."
+    },
+    {
+      "id": "L5-M5-C10",
+      "display": "¿Tú crees que la vida tiene sentido?",
+      "cue": "Do you think life has meaning?"
+    },
+    {
+      "id": "L5-M5-C11",
+      "display": "Me molestó que hiciera eso ayer.",
+      "cue": "It bothered me that he did that yesterday."
+    },
+    {
+      "id": "L5-M5-C12",
+      "display": "La libertad y la justicia son lo importante.",
+      "cue": "Freedom and justice are what matter."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

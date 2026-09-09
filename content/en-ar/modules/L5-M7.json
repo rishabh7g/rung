@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M7",
+  "title": "Between the lines",
+  "job": "Implication, sarcasm, indirect requests",
+  "prerequisites": [
+    "L5-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "<statement about the world> (= a request)",
+      "hal tamāniʿ + idhā + <clause>",
+      "laʿalla + <subject> + <predicate>",
+      "alā + V-imperfect + <complement>",
+      "<positive word> + , + <usage carries the irony>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A STATEMENT CAN BE THE WHOLE REQUEST. al-jaww ḥārr hunā is open the window, and nothing in it is request-shaped. Arabic leans on this harder than English does, and the listener is expected to act rather than to agree that the room is warm."
+    },
+    {
+      "tag": "free",
+      "text": "English is itself a heavily indirect language, so you are not learning to think indirectly — only to do it with different material. The moves you already make in English need Arabic words, not a new instinct."
+    },
+    {
+      "tag": "interference",
+      "text": "THE MARKING AXIS FLIPS FROM M2. Banter is MARKED — the frame announces the joke — and sarcasm is NOT marked at all. A learner fresh from M2 will try to signal irony, and a signalled irony is simply rudeness."
+    },
+    {
+      "tag": "delta",
+      "text": "laʿalla takes a noun or a pronoun suffix after it, exactly as inna (L3-M5) and anna (L3-M3) do. laʿallaka is laʿalla plus you, and no new shape is being opened — the cell is one L3 already paid for."
+    },
+    {
+      "tag": "delta",
+      "text": "alā plus an imperfect verb is a warm invitation. English won't you is nearly archaic and faintly cross, so a learner reads reproach into a sentence that carries none."
+    },
+    {
+      "tag": "free",
+      "text": "Write it alā, as ONE word. a-lā with a hyphen would buy a bare interrogative a as a key of its own, and that letter would then answer for every question-alif the course ever writes."
+    },
+    {
+      "tag": "interference",
+      "text": "could you possibly is a stack of English modals Arabic has no equivalent for. Its jobs are done three ways here: hal tamāniʿ, laʿalla, or a bare statement of fact — and none of them stacks."
+    },
+    {
+      "tag": "free",
+      "text": "SARCASM CANNOT BE WRITTEN IN THE DISPLAY LINE, even in principle. ʿaẓīm, rāʾiʿ and akīd are ordinary praise; only the situation turns them. That is why the irony of these sentences lives in usage and sound and never in the Arabic itself."
+    },
+    {
+      "tag": "free",
+      "text": "The polite request proper is bought and stays bought: law samaḥta is L2-M1's law and L2-M1's samaḥta, min faḍlika is L1-M8's, yumkinuka is L2-M1's. This module adds indirection, not politeness."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M7-S01",
+      "display": "al-jaww ḥārr hunā",
+      "script": "الجو حار هنا",
+      "cue": "It is hot in here.",
+      "literal": "the-weather hot here",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ḥārr",
+            "script": "حار",
+            "cue": "hot",
+            "tag": "free",
+            "forms": [
+              "ḥārr",
+              "ḥārra"
+            ],
+            "note": "Hot, of weather, food or a room — the opposite of L1-M5's bārid. ḥārra for a feminine noun: al-ghurfa ḥārra."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "An English speaker hears a remark and answers it — yes, it is. The sentence is a request: the expected reply is an opened window, not agreement about the temperature.",
+      "sound": "al-JAWW ends on a doubled w held for a beat. ḤĀRR opens on the tight throat-h and doubles the r at the end; ḥarr with a short a is the heat itself.",
+      "variations": [
+        {
+          "display": "al-jaww bārid hunā",
+          "script": "الجو بارد هنا",
+          "cue": "It is cold in here.",
+          "changed": "the complaint, and so the request — this one asks for the window shut"
+        },
+        {
+          "display": "al-qahwa ḥārra",
+          "script": "القهوة حارة",
+          "cue": "The coffee is hot.",
+          "changed": "what is hot — the same adjective, agreeing with a feminine noun"
+        }
+      ],
+      "mistake": {
+        "display": "hal tafta an-nāfidha min faḍlika",
+        "script": "هل تفتح النافذة من فضلك",
+        "why": "Not wrong, but it is a different act. The direct request is L2-M1's and is fully paid for; what this module teaches is the version that never asks, and swapping one for the other loses the whole point of the sentence."
+      },
+      "usage": "Between people who know each other, in a room where the window is obvious. On a stranger it is merely a remark.",
+      "register": "informal",
+      "mnemonic": "Say the temperature, mean the window."
+    },
+    {
+      "id": "L5-M7-S02",
+      "display": "hal tamāniʿ idhā fataḥtu an-nāfidha",
+      "script": "هل تمانع إذا فتحت النافذة",
+      "cue": "Do you mind if I open the window?",
+      "literal": "question you-mind if I-opened the-window",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hal tamāniʿ",
+            "script": "هل تمانع",
+            "cue": "do you mind",
+            "tag": "free",
+            "forms": [
+              "hal tamāniʿ",
+              "tamāniʿ"
+            ],
+            "note": "The softened ask, and it is one unit: L1-M2's hal plus the verb to object. tamāniʿīn to a woman. What follows it is idhā and a clause, never a bare noun."
+          },
+          {
+            "display": "fataḥtu",
+            "script": "فتحت",
+            "cue": "I opened",
+            "tag": "free",
+            "forms": [
+              "fataḥtu",
+              "aftaḥ"
+            ],
+            "note": "To open. After idhā the PAST is used for something not yet done — fataḥtu here is if I open. yaftaḥ, he opens, is L4-M1's and stays there."
+          }
+        ],
+        "rules": [
+          6,
+          8
+        ]
+      },
+      "trap": "English do you mind is answered by no when permission is granted, and a learner braces for the same reversal. Arabic answers it with tafaḍḍal or lā mushkila, so the trap is only in expecting the trap.",
+      "sound": "ta-MĀ-niʿ ends on the ʿayn, a squeeze rather than a vowel. fa-TAḤ-tu has the tight throat-h in the middle and the -tu of I on the end.",
+      "variations": [
+        {
+          "display": "hal tamāniʿ idhā fataḥtu al-bāb",
+          "script": "هل تمانع إذا فتحت الباب",
+          "cue": "Do you mind if I open the door?",
+          "changed": "what is being opened"
+        },
+        {
+          "display": "hal tamāniʿ idhā dhahabtu al-ān",
+          "script": "هل تمانع إذا ذهبت الآن",
+          "cue": "Do you mind if I go now?",
+          "changed": "the act asked about — the frame takes any past-form verb"
+        }
+      ],
+      "mistake": {
+        "display": "hal tamāniʿ an aftaḥ an-nāfidha",
+        "script": "هل تمانع أن أفتح النافذة",
+        "why": "hal tamāniʿ wants idhā and a clause. an plus a verb is the complement ismaḥ lī takes, and swapping the two frames is the commonest slip in this module."
+      },
+      "usage": "Asking for something small in someone else's space — a seat, a window, a light. Polite without being formal.",
+      "register": "neutral",
+      "mnemonic": "Do you mind IF — idhā, and a past-shaped verb."
+    },
+    {
+      "id": "L5-M7-S03",
+      "display": "laʿallaka mashghūl al-ān",
+      "script": "لعلك مشغول الآن",
+      "cue": "Perhaps you are busy right now.",
+      "literal": "perhaps-you busy the-now",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laʿalla",
+            "script": "لعل",
+            "cue": "perhaps, maybe",
+            "tag": "free",
+            "forms": [
+              "laʿalla",
+              "laʿallaka",
+              "laʿallahu"
+            ],
+            "note": "It takes a noun or a pronoun suffix after it, exactly as inna and anna do: laʿallaka perhaps you, laʿallahu perhaps he. Never a bare verb."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "English perhaps floats anywhere in the sentence and attaches to nothing. laʿalla must have a noun or a pronoun stuck to it immediately, so perhaps you are busy cannot be built by putting perhaps in front of you are busy.",
+      "sound": "la-ʿAL-la-ka doubles the l and carries an ʿayn after the first syllable. al-ĀN is said as one long vowel: lān.",
+      "variations": [
+        {
+          "display": "laʿallahu mashghūl al-ān",
+          "script": "لعله مشغول الآن",
+          "cue": "Perhaps he is busy right now.",
+          "changed": "who is busy — the pronoun rides on laʿalla, not before it"
+        },
+        {
+          "display": "laʿalla ṣadīqī mashghūl",
+          "script": "لعل صديقي مشغول",
+          "cue": "Perhaps my friend is busy.",
+          "changed": "a named noun instead of a pronoun suffix"
+        }
+      ],
+      "mistake": {
+        "display": "laʿalla anta mashghūl al-ān",
+        "script": "لعل أنت مشغول الآن",
+        "why": "The separate pronoun cannot follow laʿalla — it must be the suffix: laʿallaka. This is the same cell inna and anna opened in L3, and it behaves the same way."
+      },
+      "usage": "Withdrawing a request before it is refused, or reading someone's silence out loud so they do not have to explain it.",
+      "register": "neutral",
+      "mnemonic": "laʿalla never stands alone — something is always stuck to it."
+    },
+    {
+      "id": "L5-M7-S04",
+      "display": "alā tadhhab maʿanā ilā as-sūq",
+      "script": "ألا تذهب معنا إلى السوق",
+      "cue": "Won't you come with us to the market?",
+      "literal": "not-question you-go with-us to the-market",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alā",
+            "script": "ألا",
+            "cue": "won't you, why not",
+            "tag": "free",
+            "forms": [
+              "alā"
+            ],
+            "note": "The negative question, and it is warm rather than sharp. One word, never a-lā with a hyphen: the hyphen would buy a bare question-alif that answers for every later one."
+          },
+          {
+            "display": "maʿanā",
+            "script": "معنا",
+            "cue": "with us",
+            "tag": "free",
+            "forms": [
+              "maʿanā"
+            ],
+            "note": "L1-M5's maʿa with us stuck on the end. Arabic hangs its pronouns off the preposition rather than putting them beside it."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "English won't you come sounds either archaic or annoyed, so a learner avoids the form or hears a complaint in it. alā tadhhab is an ordinary friendly invitation and carries no edge at all.",
+      "sound": "a-LĀ is two beats with the stress on the long ā. ma-ʿa-NĀ squeezes the ʿayn between the two a's.",
+      "variations": [
+        {
+          "display": "alā tadhhab maʿanā ilā al-madrasa",
+          "script": "ألا تذهب معنا إلى المدرسة",
+          "cue": "Won't you come with us to the school?",
+          "changed": "where the invitation goes"
+        },
+        {
+          "display": "alā tadhhab maʿa ṣadīqī",
+          "script": "ألا تذهب مع صديقي",
+          "cue": "Won't you go with my friend?",
+          "changed": "with whom — maʿa takes a noun, maʿanā carries the pronoun"
+        }
+      ],
+      "mistake": {
+        "display": "alā tadhhab maʿa naḥnu ilā as-sūq",
+        "script": "ألا تذهب مع نحن إلى السوق",
+        "why": "The separate pronoun never follows a preposition. with us is one word, maʿanā, and the English two-word shape is what produces the mistake."
+      },
+      "usage": "Inviting someone you expect to say yes. Between friends, and warm; it is not the form for a first invitation to a stranger.",
+      "register": "informal",
+      "mnemonic": "alā, one word — and the pronoun rides on maʿa."
+    },
+    {
+      "id": "L5-M7-S05",
+      "display": "ismaḥ lī an aftaḥ al-bāb",
+      "script": "اسمح لي أن أفتح الباب",
+      "cue": "Allow me to open the door.",
+      "literal": "allow to-me that I-open the-door",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ismaḥ lī",
+            "script": "اسمح لي",
+            "cue": "allow me, let me",
+            "tag": "free",
+            "forms": [
+              "ismaḥ lī",
+              "ismaḥ"
+            ],
+            "note": "The imperative of the same verb law samaḥta is built from — L2-M1 bought both of those words, and this is the command form with L3-M5's lī after it."
+          }
+        ],
+        "rules": [
+          8,
+          6
+        ]
+      },
+      "trap": "English allow me is stiff and slightly grand. ismaḥ lī is neither: it is the everyday way of announcing that you are about to do something small in someone else's space.",
+      "sound": "is-MAḤ opens on a hamza and ends on the tight throat-h. lī is one long beat, and an aftaḥ runs together into a-nAF-taḥ.",
+      "variations": [
+        {
+          "display": "ismaḥ lī an aftaḥ an-nāfidha",
+          "script": "اسمح لي أن أفتح النافذة",
+          "cue": "Allow me to open the window.",
+          "changed": "what you are asking leave to do"
+        },
+        {
+          "display": "ismaḥ lī an adhhab al-ān",
+          "script": "اسمح لي أن أذهب الآن",
+          "cue": "Allow me to go now.",
+          "changed": "the act — an plus a verb is the frame's only complement"
+        }
+      ],
+      "mistake": {
+        "display": "ismaḥ lī idhā aftaḥ al-bāb",
+        "script": "اسمح لي إذا أفتح الباب",
+        "why": "idhā and a clause belong to hal tamāniʿ. ismaḥ lī takes an and a verb, and the two frames are not interchangeable even though English lets mind and allow share a complement."
+      },
+      "usage": "Announcing rather than asking — you have decided, and you are being courteous about it. Not a way of requesting permission you might be refused.",
+      "register": "neutral",
+      "mnemonic": "ismaḥ lī an — allow me THAT I."
+    },
+    {
+      "id": "L5-M7-S06",
+      "display": "ʿaẓīm, al-qiṭār mutaʾakhkhir",
+      "script": "عظيم، القطار متأخر",
+      "cue": "Great. The train is late.",
+      "literal": "great, the-train late",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿaẓīm",
+            "script": "عظيم",
+            "cue": "great, magnificent",
+            "tag": "free",
+            "forms": [
+              "ʿaẓīm"
+            ],
+            "note": "Genuine praise, and that is exactly why it can be turned: nothing in the word is ironic, only the situation it is said in."
+          }
+        ],
+        "rules": [
+          7,
+          2
+        ]
+      },
+      "trap": "An English speaker wants to mark the irony — a drawn-out great, a written so. Arabic marks nothing. The word stays flat and the situation does all the work, which is why a signalled version reads as rudeness rather than as a joke.",
+      "sound": "ʿa-ẒĪM opens on the ʿayn and holds the heavy ẓ. Said straight, with no lengthening: the flatter it is, the drier it reads.",
+      "variations": [
+        {
+          "display": "ʿaẓīm, al-jaww bārid",
+          "script": "عظيم، الجو بارد",
+          "cue": "Great. The weather is cold.",
+          "changed": "what has gone wrong behind the praise"
+        },
+        {
+          "display": "al-qiṭār mutaʾakhkhir",
+          "script": "القطار متأخر",
+          "cue": "The train is late.",
+          "changed": "the praise removed — the same news, with no attitude on it at all"
+        }
+      ],
+      "mistake": {
+        "display": "ʿaẓīm jiddan, al-qiṭār mutaʾakhkhir",
+        "script": "عظيم جدًا، القطار متأخر",
+        "why": "Intensifying the praise is the English instinct for signalling irony, and here it inverts the meaning: the listener hears you as pleased, or as mocking them personally. Flat is the ironic register."
+      },
+      "usage": "Only where the situation is plainly bad and shared. Said to someone who caused the problem it stops being irony and becomes an insult.",
+      "register": "informal",
+      "mnemonic": "Ordinary praise, terrible news, no signal at all."
+    },
+    {
+      "id": "L5-M7-S07",
+      "display": "hādhā ṣawt muzʿij",
+      "script": "هذا صوت مزعج",
+      "cue": "That is an annoying noise.",
+      "literal": "this sound annoying",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ṣawt",
+            "script": "صوت",
+            "cue": "sound, voice, noise",
+            "tag": "free",
+            "forms": [
+              "ṣawt",
+              "aṣ-ṣawt"
+            ],
+            "note": "One word for a voice, a sound and a noise; which one it is comes from the adjective beside it. The ṣ is the heavy s, which darkens the aw after it."
+          },
+          {
+            "display": "muzʿij",
+            "script": "مزعج",
+            "cue": "annoying, disturbing",
+            "tag": "free",
+            "forms": [
+              "muzʿij"
+            ],
+            "note": "Annoying in the sense of disturbing you — a noise, a message, a person's habit. It carries the ʿayn in the middle: muz-ʿij."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Like S01 this is a request wearing a statement's clothes: said in a room with a radio in it, it asks for the radio to be turned down. Answering that yes, it is rather annoying, misses what was asked.",
+      "sound": "ṢAWT is one syllable ending in a hard t, with the heavy ṣ darkening the vowel. muz-ʿIJ squeezes the ʿayn between the z and the i.",
+      "variations": [
+        {
+          "display": "hādhā ṣawt ʿaẓīm",
+          "script": "هذا صوت عظيم",
+          "cue": "That is a magnificent voice.",
+          "changed": "the adjective, and with it what ṣawt even means here"
+        },
+        {
+          "display": "al-jaww muzʿij al-yawm",
+          "script": "الجو مزعج اليوم",
+          "cue": "The weather is annoying today.",
+          "changed": "what is annoying — the adjective travels"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā ṣawt muzʿija",
+        "script": "هذا صوت مزعجة",
+        "why": "ṣawt is masculine, so muzʿij stays masculine. The -a ending looks like the safe choice because so many Arabic nouns are feminine, and this one is not."
+      },
+      "usage": "A complaint aimed at whoever can fix it. Between friends it is a request; to a stranger it is only an observation.",
+      "register": "informal",
+      "mnemonic": "One word for voice and for noise — the adjective decides."
+    },
+    {
+      "id": "L5-M7-S08",
+      "display": "huwa yaqūl naʿam, kaʾannahu yaqūl lā",
+      "script": "هو يقول نعم، كأنه يقول لا",
+      "cue": "He says yes as if he were saying no.",
+      "literal": "he says yes, as-if-he says no",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kaʾanna",
+            "script": "كأن",
+            "cue": "as if",
+            "tag": "free",
+            "forms": [
+              "kaʾanna",
+              "kaʾannahu",
+              "kaʾannaka"
+            ],
+            "note": "As if, and it takes a pronoun suffix like laʿalla and anna: kaʾannahu as if he, kaʾannaka as if you. It is the listener's tool — the way you report what someone meant."
+          }
+        ],
+        "rules": [
+          2,
+          7
+        ]
+      },
+      "trap": "This is the half of the module that protects you. A learner listening for words alone hears a yes; kaʾanna is how a speaker names the gap between what was said and what was meant.",
+      "sound": "ka-ʾAN-na-hu holds the hamza as a catch after the ka and doubles the n. The two yaqūl are said identically — nothing in the sound marks the second as the real one.",
+      "variations": [
+        {
+          "display": "huwa yaqūl naʿam, kaʾannahu yaqūl rubbamā",
+          "script": "هو يقول نعم، كأنه يقول ربما",
+          "cue": "He says yes as if he were saying maybe.",
+          "changed": "what the yes actually meant"
+        },
+        {
+          "display": "kaʾannaka mashghūl",
+          "script": "كأنك مشغول",
+          "cue": "As if you were busy.",
+          "changed": "the person, and the frame standing alone with no first half"
+        }
+      ],
+      "mistake": {
+        "display": "huwa yaqūl naʿam, kaʾanna huwa yaqūl lā",
+        "script": "هو يقول نعم، كأن هو يقول لا",
+        "why": "The separate pronoun cannot follow kaʾanna any more than it can follow laʿalla or inna. It is kaʾannahu, one word, and the English as if he shape is what invites the error."
+      },
+      "usage": "Reporting an exchange to a third person, or telling someone gently that you heard what they did not say.",
+      "register": "neutral",
+      "mnemonic": "kaʾanna, laʿalla, inna — all three take the suffix, never the free pronoun."
+    },
+    {
+      "id": "L5-M7-S09",
+      "display": "akīd, hādhā rāʾiʿ",
+      "script": "أكيد، هذا رائع",
+      "cue": "Sure. That is wonderful.",
+      "literal": "certain, this wonderful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "akīd",
+            "script": "أكيد",
+            "cue": "sure, certainly",
+            "tag": "free",
+            "forms": [
+              "akīd"
+            ],
+            "note": "An agreement word, said as a whole answer on its own. Flat, it is ordinary assent; in the wrong situation it is the driest thing in the module."
+          },
+          {
+            "display": "rāʾiʿ",
+            "script": "رائع",
+            "cue": "wonderful, splendid",
+            "tag": "free",
+            "forms": [
+              "rāʾiʿ",
+              "rāʾiʿa"
+            ],
+            "note": "Real enthusiasm, stronger than jayyid. Like ʿaẓīm it carries no irony of its own — the hamza sits between the ā and the i: rā-ʾiʿ."
+          }
+        ],
+        "rules": [
+          7,
+          2
+        ]
+      },
+      "trap": "Two praise words in a row is the strongest sarcasm the module can build, and it is built entirely out of compliments. A learner who reads only the display line will report this sentence as enthusiasm, and in half its uses that is exactly what it is.",
+      "sound": "a-KĪD is two beats, the second long. RĀ-ʾiʿ catches on the hamza and closes on the ʿayn — say it flat, and it turns; say it warm, and it does not.",
+      "variations": [
+        {
+          "display": "akīd, hādhā jayyid",
+          "script": "أكيد، هذا جيد",
+          "cue": "Sure, that is good.",
+          "changed": "the praise dialled down — and with it, the reach of the irony"
+        },
+        {
+          "display": "rāʾiʿ, shukran",
+          "script": "رائع، شكرًا",
+          "cue": "Wonderful, thank you.",
+          "changed": "the thanks added, which pins it to the sincere reading"
+        }
+      ],
+      "mistake": {
+        "display": "akīd, hādhā rāʾiʿ jiddan",
+        "script": "أكيد، هذا رائع جدًا",
+        "why": "jiddan pushes it over. Intensified praise is heard as sincere, or as mockery of the person rather than of the situation — the same trap as S06, and the same fix: leave it flat."
+      },
+      "usage": "Sincere between friends about good news; dry between friends about bad news. Never to someone who is responsible for what happened.",
+      "register": "informal",
+      "mnemonic": "Sure. Wonderful. Two compliments, and everything depends on the room."
+    },
+    {
+      "id": "L5-M7-S10",
+      "display": "hādhā ʿudhr, wa laysa jawāb",
+      "script": "هذا عذر، وليس جواب",
+      "cue": "That is an excuse, not an answer.",
+      "literal": "this excuse, and is-not answer",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ʿudhr",
+            "script": "عذر",
+            "cue": "excuse",
+            "tag": "free",
+            "forms": [
+              "ʿudhr",
+              "al-ʿudhr"
+            ],
+            "note": "The reason someone gives for not doing a thing. It opens on the ʿayn and holds the dh: ʿudh-r."
+          },
+          {
+            "display": "jawāb",
+            "script": "جواب",
+            "cue": "answer, reply",
+            "tag": "free",
+            "forms": [
+              "jawāb",
+              "al-jawāb"
+            ],
+            "note": "An answer to a question or to a demand. Not the same as a ḥall (L5-M6), which answers a problem rather than a person."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "This is the one flat sentence in the module and it is deliberate: after eight indirect frames, the direct line is what a speaker reaches for when indirection has been used against them.",
+      "sound": "ʿUDH-r begins with the ʿayn and ends on a consonant cluster — do not slip a vowel into it. ja-WĀB is two beats with the long ā.",
+      "variations": [
+        {
+          "display": "hādhā jawāb, wa laysa ʿudhr",
+          "script": "هذا جواب، وليس عذر",
+          "cue": "That is an answer, not an excuse.",
+          "changed": "which of the two the thing is — the frame reverses cleanly"
+        },
+        {
+          "display": "hādhā ʿudhr muzʿij",
+          "script": "هذا عذر مزعج",
+          "cue": "That is an annoying excuse.",
+          "changed": "the second half replaced by an adjective"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā ʿudhr, laysa jawāb",
+        "script": "هذا عذر، ليس جواب",
+        "why": "The wa is not optional here. Without it the two halves read as two separate sentences, and the contrast — that the one thing is being denied the name of the other — is lost."
+      },
+      "usage": "Said when the indirection has run out. It ends the softening rather than continuing it, so it costs something to say.",
+      "register": "neutral",
+      "mnemonic": "An excuse explains; an answer settles."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M7-C01",
+      "display": "al-jaww ḥārr hunā",
+      "script": "الجو حار هنا",
+      "cue": "It is hot in here."
+    },
+    {
+      "id": "L5-M7-C02",
+      "display": "hal tamāniʿ idhā fataḥtu al-bāb",
+      "script": "هل تمانع إذا فتحت الباب",
+      "cue": "Do you mind if I open the door?"
+    },
+    {
+      "id": "L5-M7-C03",
+      "display": "laʿallaka mashghūl",
+      "script": "لعلك مشغول",
+      "cue": "Perhaps you are busy."
+    },
+    {
+      "id": "L5-M7-C04",
+      "display": "alā tadhhab maʿanā",
+      "script": "ألا تذهب معنا",
+      "cue": "Won't you come with us?"
+    },
+    {
+      "id": "L5-M7-C05",
+      "display": "ismaḥ lī an aftaḥ an-nāfidha",
+      "script": "اسمح لي أن أفتح النافذة",
+      "cue": "Allow me to open the window."
+    },
+    {
+      "id": "L5-M7-C06",
+      "display": "ʿaẓīm, al-qiṭār mutaʾakhkhir",
+      "script": "عظيم، القطار متأخر",
+      "cue": "Great. The train is late."
+    },
+    {
+      "id": "L5-M7-C07",
+      "display": "hādhā ṣawt muzʿij",
+      "script": "هذا صوت مزعج",
+      "cue": "That is an annoying noise."
+    },
+    {
+      "id": "L5-M7-C08",
+      "display": "kaʾannahu yaqūl lā",
+      "script": "كأنه يقول لا",
+      "cue": "As if he were saying no."
+    },
+    {
+      "id": "L5-M7-C09",
+      "display": "akīd, hādhā rāʾiʿ",
+      "script": "أكيد، هذا رائع",
+      "cue": "Sure. That is wonderful."
+    },
+    {
+      "id": "L5-M7-C10",
+      "display": "hādhā ʿudhr, wa laysa jawāb",
+      "script": "هذا عذر، وليس جواب",
+      "cue": "That is an excuse, not an answer."
+    },
+    {
+      "id": "L5-M7-C11",
+      "display": "laʿallahu mashghūl al-ān",
+      "script": "لعله مشغول الآن",
+      "cue": "Perhaps he is busy right now."
+    },
+    {
+      "id": "L5-M7-C12",
+      "display": "al-qahwa ḥārra",
+      "script": "القهوة حارة",
+      "cue": "The coffee is hot."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

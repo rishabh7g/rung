@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M9",
+  "title": "Telling it your way",
+  "job": "Retell a known story in your own register",
+  "prerequisites": [
+    "L5-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "Zhil-byl + <N-nominative>",
+      "Odnázhdy + <perfective past>",
+      "I vot + <subject> + <narrative present>",
+      "Byválo + , + <subject> + V-imperfective-past",
+      "Koróche govoryá + , + <perfective past>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE NARRATIVE PRESENT, and it needs no new form at all — which is the whole reason it can be taught last. A Russian telling a past story switches to PRESENT-tense verbs for the vivid stretch and switches back afterwards: I vot on prikhodit i govorit … . Nothing is conjugated that has not been conjugated since L1-M4; what changes is where the listener is standing. Switch at a seam, never in the middle of a joined pair of clauses."
+    },
+    {
+      "tag": "delta",
+      "text": "byvalo is the storyteller's used-to: byvalo plus an ordinary IMPERFECTIVE PAST. It is invariable — no person, no number, no gender — and it sits at the head of the clause with a comma. Beside L3-M10's ranshe it is the warm one: ranshe reports that a habit existed, byvalo remembers it fondly, and that difference is the only reason to spend a word on it."
+    },
+    {
+      "tag": "free",
+      "text": "THE FRAME WORDS that open and close a told story. Zhil-byl … opens a FAIRY TALE and nothing else. Odnazhdy … starts the event the story turns on. I vot … hands the listener the vivid stretch. Koroche govorya … winds the whole thing up. None of them is grammar; all of them are signals about where in the telling you are, and a retelling without them sounds like a report."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH DOES THE SAME PRESENT-TENSE SWITCH IN THE SAME PLACE — so he walks in and says — so this device needs pointing at rather than explaining. Two ways English still misleads. It scaffolds a retelling with a connective at every seam (and then, after that, so anyway) where Russian carries the same joins with aspect and a bare i, so a word-for-word retelling is cluttered. And Zhil-byl is not once upon a time in general: it opens a fairy tale, and an anecdote about last Tuesday opened that way is a joke."
+    },
+    {
+      "tag": "free",
+      "text": "FREE INDIRECT STYLE — a character's thought written as narration rather than quoted — is nearly invisible in Russian, and that is a consequence of a rule the ladder already has. L3-M5's no-backshift rule keeps a reported thought in the tense it was thought in, so the seam between the teller's voice and the character's simply does not show. It is named here, and shown once, so a learner recognises it when a Russian does it to them."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M9-S01",
+      "display": "Zhil-byl odín starík, kotóryy óchen' mnógo rabótal.",
+      "script": "Жил-был один старик, который очень много работал.",
+      "cue": "There once was an old man who worked very hard.",
+      "literal": "Lived-was one old-man, who very much worked.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zhil-byl",
+            "script": "жил-был",
+            "cue": "there once was",
+            "tag": "free",
+            "forms": [
+              "zhil-byl"
+            ],
+            "note": "The fairy-tale opener, two imperfective pasts hyphened together: L4-M8's zhil and L1-M5's byl. Both are monosyllables, so neither takes an acute."
+          },
+          {
+            "display": "starík",
+            "script": "старик",
+            "cue": "old man",
+            "tag": "free",
+            "forms": [
+              "starík"
+            ],
+            "note": "An old man, stressed at the end. The standard first noun of a Russian fairy tale, which is why it is the one this module opens with."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "Zhil-byl is not once upon a time in any general sense. It opens a FAIRY TALE; using it for something that happened last Tuesday is a joke, whether or not you meant one.",
+      "sound": "zhil-byl is ZHIL-byl, two stressed monosyllables under one hyphen, so neither of them carries an acute.",
+      "variations": [
+        {
+          "display": "Zhil-byl odín starík.",
+          "script": "Жил-был один старик.",
+          "cue": "There once was an old man.",
+          "changed": "the opener with nothing behind it, which is how a tale really starts"
+        },
+        {
+          "display": "Odín starík óchen' mnógo rabótal.",
+          "script": "Один старик очень много работал.",
+          "cue": "An old man worked very hard.",
+          "changed": "the same fact with the fairy-tale opener taken off"
+        }
+      ],
+      "mistake": {
+        "display": "Zhilá-bylá odín starík, kotóryy óchen' mnógo rabótal.",
+        "script": "Жила-была один старик, который очень много работал.",
+        "why": "the feminine opener under a masculine noun. zhil-byl agrees with what follows: a starík takes zhil-byl, a skázka would take zhilá-bylá."
+      },
+      "usage": "Opening a fairy tale, and only a fairy tale.",
+      "register": "neutral",
+      "mnemonic": "zhil-byl is a signal, not a tense: it says what KIND of story is coming."
+    },
+    {
+      "id": "L5-M9-S02",
+      "display": "Odnázhdy on ustál i ne rabótal ves' den'.",
+      "script": "Однажды он устал и не работал весь день.",
+      "cue": "One day he got tired and didn't work all day.",
+      "literal": "Once he tired and not worked all day.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "odnázhdy",
+            "script": "однажды",
+            "cue": "one day; once",
+            "tag": "free",
+            "forms": [
+              "odnázhdy"
+            ],
+            "note": "Once, in the storyteller's sense — it starts the event the story turns on. Not a counted day, which would be odín den'."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English one day and one of the days sit next to each other. odnázhdy is only the storyteller's once — a counted day is odín den'.",
+      "sound": "odnázhdy is ad-NAZH-dy, stressed on the second syllable, with the zhd said as one cluster.",
+      "variations": [
+        {
+          "display": "Odnázhdy on ustál.",
+          "script": "Однажды он устал.",
+          "cue": "One day he got tired.",
+          "changed": "the shortest form of the once-upon-a-day move"
+        },
+        {
+          "display": "On ustál i ne rabótal ves' den'.",
+          "script": "Он устал и не работал весь день.",
+          "cue": "He got tired and didn't work all day.",
+          "changed": "the same event with nothing marking it as the start of a story"
+        }
+      ],
+      "mistake": {
+        "display": "Odín den' on ustál i ne rabótal ves' den'.",
+        "script": "Один день он устал и не работал весь день.",
+        "why": "odín den' is a counted day, one out of several. odnázhdy is the storyteller's once, and only it opens the event a story turns on."
+      },
+      "usage": "Naming the day the story starts, without saying which day it was.",
+      "register": "neutral",
+      "mnemonic": "odnázhdy starts a story; odín den' counts one."
+    },
+    {
+      "id": "L5-M9-S03",
+      "display": "I vot on prikhódit domóy i govorít, chto vsyó khoroshó.",
+      "script": "И вот он приходит домой и говорит, что всё хорошо.",
+      "cue": "And in he comes and says everything's fine.",
+      "literal": "And there he comes home and says, that all well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "i vot",
+            "script": "и вот",
+            "cue": "and so; and there",
+            "tag": "free",
+            "forms": [
+              "i vot"
+            ],
+            "note": "And so — the hand-off into the vivid stretch. Taken whole, so a tap on the bare particle still opens L4-M10's vot."
+          },
+          {
+            "display": "prikhódit",
+            "script": "приходит",
+            "cue": "comes; arrives",
+            "tag": "free",
+            "forms": [
+              "prikhódit"
+            ],
+            "note": "Comes, arrives on foot. Vocabulary here, not a grammar lesson: it rides inside the narrative present, and the prefix grid it belongs to is not opened."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English does exactly this — so he walks in and says — so recognise it rather than translate it. What English adds and Russian does not is a connective at every seam.",
+      "sound": "prikhódit is pri-KHO-dit, with the kh a scraped h. i vot is said as one light beat before the verb.",
+      "variations": [
+        {
+          "display": "I vot on prikhódit domóy.",
+          "script": "И вот он приходит домой.",
+          "cue": "And in he comes.",
+          "changed": "the switch into the present with nothing after it"
+        },
+        {
+          "display": "On prikhódit domóy i govorít.",
+          "script": "Он приходит домой и говорит.",
+          "cue": "He comes home and says.",
+          "changed": "the vivid stretch with the reported half cut off"
+        }
+      ],
+      "mistake": {
+        "display": "I vot on prikhódit domóy i skazál, chto vsyó khoroshó.",
+        "script": "И вот он приходит домой и сказал, что всё хорошо.",
+        "why": "one clause in the present and the next in the past. The narrative present is switched into and out of at a SEAM, never in the middle of a joined pair."
+      },
+      "usage": "The vivid stretch of a retelling — the part the listener is meant to watch happen.",
+      "register": "informal",
+      "mnemonic": "I vot moves the listener into the room, and the present tense keeps them there."
+    },
+    {
+      "id": "L5-M9-S04",
+      "display": "Byválo, my rabótali dóma ves' den'.",
+      "script": "Бывало, мы работали дома весь день.",
+      "cue": "We used to work at home all day.",
+      "literal": "Used-to, we worked at-home all day.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "byválo",
+            "script": "бывало",
+            "cue": "used to; would",
+            "tag": "free",
+            "forms": [
+              "byválo"
+            ],
+            "note": "The iterative particle. It is invariable and sits at the head with a comma, and the verb after it is an ordinary imperfective past."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "English used to is a fixed frame that carries the tense. byválo carries no tense at all — it is a particle beside an ordinary imperfective past, and what it adds is warmth.",
+      "sound": "byválo is by-VA-la, stressed in the middle, and it is followed by a small pause where the comma is.",
+      "variations": [
+        {
+          "display": "Byválo, my rabótali dóma.",
+          "script": "Бывало, мы работали дома.",
+          "cue": "We used to work at home.",
+          "changed": "the same habit with the day-long stretch left off"
+        },
+        {
+          "display": "Ránshe my rabótali dóma.",
+          "script": "Раньше мы работали дома.",
+          "cue": "We used to work at home.",
+          "changed": "L3-M10's plain used-to, which reports the habit with no warmth in it"
+        }
+      ],
+      "mistake": {
+        "display": "Býlo, my rabótali dóma ves' den'.",
+        "script": "Было, мы работали дома весь день.",
+        "why": "býlo is the plain past of to be. byválo is the iterative particle and never changes for person, number or gender — it is the same word in every sentence."
+      },
+      "usage": "Remembering a habit fondly inside a telling, rather than merely reporting it.",
+      "register": "informal",
+      "mnemonic": "ránshe reports the habit; byválo misses it."
+    },
+    {
+      "id": "L5-M9-S05",
+      "display": "Koróche govoryá, on skazál net.",
+      "script": "Короче говоря, он сказал нет.",
+      "cue": "Long story short, he said no.",
+      "literal": "Shorter speaking, he said no.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "koróche govoryá",
+            "script": "короче говоря",
+            "cue": "long story short",
+            "tag": "free",
+            "forms": [
+              "koróche govoryá"
+            ],
+            "note": "Long story short — the line that winds a telling up. Whole, because bare koróche is L5-M3's spoken filler and means something blunter."
+          },
+          {
+            "display": "govoryá",
+            "script": "говоря",
+            "cue": "speaking; putting it",
+            "tag": "free",
+            "forms": [
+              "govoryá"
+            ],
+            "note": "Speaking, as in putting it a certain way. It never stands alone: it lives inside a frozen pair with an adverb in front of it."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "koróche on its own is L5-M3's spoken filler and means get to the point — nearly a complaint. Adding govoryá makes it the line that closes a story you have been telling.",
+      "sound": "koróche govoryá is ka-RO-che ga-va-RYA, with the stress at the very end of the second word.",
+      "variations": [
+        {
+          "display": "Koróche govoryá, on ustál.",
+          "script": "Короче говоря, он устал.",
+          "cue": "Long story short, he was tired.",
+          "changed": "the same wrap-up over a different ending"
+        },
+        {
+          "display": "On skazál net.",
+          "script": "Он сказал нет.",
+          "cue": "He said no.",
+          "changed": "the ending with nothing marking it as the end"
+        }
+      ],
+      "mistake": {
+        "display": "Koróche, on skazál net.",
+        "script": "Короче, он сказал нет.",
+        "why": "koróche alone is the spoken filler that hurries somebody along. koróche govoryá is the teller's own wrap-up, and the govoryá is what makes it one."
+      },
+      "usage": "Winding up a telling: the sentence that says the story is over.",
+      "register": "informal",
+      "mnemonic": "Add govoryá and the filler becomes a closing line."
+    },
+    {
+      "id": "L5-M9-S06",
+      "display": "Éhto skázka, a ne právda.",
+      "script": "Это сказка, а не правда.",
+      "cue": "It's a fairy tale, not the truth.",
+      "literal": "This fairy-tale, and not truth.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "skázka",
+            "script": "сказка",
+            "cue": "fairy tale",
+            "tag": "free",
+            "forms": [
+              "skázka",
+              "skázki"
+            ],
+            "note": "A fairy tale. Front-stressed, and the z is said s before the k. The genitive skázki is what geróy takes after it."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English says a story, not the truth with but. Russian is not contrasting two true things here — the second half REPLACES the first, and Russian marks replacement with a, not no.",
+      "sound": "skázka is SKAZ-ka, front-stressed, and the z goes to s in front of the k.",
+      "variations": [
+        {
+          "display": "Éhto skázka.",
+          "script": "Это сказка.",
+          "cue": "It's a fairy tale.",
+          "changed": "the naming alone, with nothing denied"
+        },
+        {
+          "display": "Éhto ne právda.",
+          "script": "Это не правда.",
+          "cue": "That isn't true.",
+          "changed": "the denial alone, which is a much harder thing to say to somebody"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto skázka, no ne právda.",
+        "script": "Это сказка, но не правда.",
+        "why": "no is the contrastive but between two things that both hold. Here the second half replaces the first, and that is a's job, not no's."
+      },
+      "usage": "Saying what kind of thing you have just been told.",
+      "register": "neutral",
+      "mnemonic": "a replaces, no contrasts."
+    },
+    {
+      "id": "L5-M9-S07",
+      "display": "Geróy skázki vsegdá prav.",
+      "script": "Герой сказки всегда прав.",
+      "cue": "The hero of the tale is always right.",
+      "literal": "Hero of-tale always right.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geróy",
+            "script": "герой",
+            "cue": "hero",
+            "tag": "free",
+            "forms": [
+              "geróy"
+            ],
+            "note": "A hero, and also the main character of any story. Stressed at the end, and the g is hard."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "English keeps both nouns flat in the hero of the tale. Russian puts the second one in the GENITIVE: geróy skázki, with no word for of at all.",
+      "sound": "geróy is gye-ROY, stressed at the end with a hard g. skázki keeps its front stress.",
+      "variations": [
+        {
+          "display": "Geróy vsegdá prav.",
+          "script": "Герой всегда прав.",
+          "cue": "The hero is always right.",
+          "changed": "the claim about heroes in general instead of this tale's"
+        },
+        {
+          "display": "Geróy skázki ustál.",
+          "script": "Герой сказки устал.",
+          "cue": "The hero of the tale got tired.",
+          "changed": "the same possessive under an ordinary predicate"
+        }
+      ],
+      "mistake": {
+        "display": "Geróy skázka vsegdá prav.",
+        "script": "Герой сказка всегда прав.",
+        "why": "the dictionary form left standing where the of belongs. The hero OF the tale puts skázka into the genitive: geróy skázki."
+      },
+      "usage": "Commenting on the story you are telling, from outside it.",
+      "register": "neutral",
+      "mnemonic": "No word for of: the second noun just goes genitive."
+    },
+    {
+      "id": "L5-M9-S08",
+      "display": "I vot chto býlo dál'she.",
+      "script": "И вот что было дальше.",
+      "cue": "And here's what happened next.",
+      "literal": "And there what was further.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dál'she",
+            "script": "дальше",
+            "cue": "further; next",
+            "tag": "free",
+            "forms": [
+              "dál'she"
+            ],
+            "note": "Next, in a telling — what happened after that. Front-stressed, with a soft l, and it is the comparative of far."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English what happened next is a question by default. In a telling it is the teller's own line, and i vot in front is what tells the listener which of the two this is.",
+      "sound": "dál'she is DAL'-she, front-stressed, with a soft l you can hear before the sh.",
+      "variations": [
+        {
+          "display": "I vot chto býlo.",
+          "script": "И вот что было.",
+          "cue": "And here's what happened.",
+          "changed": "the frame with the forward-pointing word left off"
+        },
+        {
+          "display": "Chto býlo dál'she?",
+          "script": "Что было дальше?",
+          "cue": "What happened next?",
+          "changed": "the same words as the listener's question rather than the teller's line"
+        }
+      ],
+      "mistake": {
+        "display": "I vot chto býl dál'she.",
+        "script": "И вот что был дальше.",
+        "why": "chto is neuter, so the past-tense verb is býlo. býl would need a masculine noun standing where chto is."
+      },
+      "usage": "Holding the floor across a seam in the story.",
+      "register": "informal",
+      "mnemonic": "i vot in front turns the question into the answer."
+    },
+    {
+      "id": "L5-M9-S09",
+      "display": "Vsé govoryát, chto éhto právda.",
+      "script": "Все говорят, что это правда.",
+      "cue": "Everybody says it's true.",
+      "literal": "All say, that this truth.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vsé",
+            "script": "все",
+            "cue": "everybody; all of them",
+            "tag": "free",
+            "forms": [
+              "vsé"
+            ],
+            "note": "Everybody. Plural, so the verb is plural too: vsé govoryát. One letter from vsyó, everything, which takes a singular verb."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "vsé, everybody, and vsyó, everything, differ by one vowel and take different verbs. Everybody says is vsé govoryát; the singular govorít would need one person.",
+      "sound": "vsé is fsye, one syllable. vsyó is fsyo — the same consonants and a different vowel, and that is the whole difference.",
+      "variations": [
+        {
+          "display": "Vsé govoryát, chto éhto skázka.",
+          "script": "Все говорят, что это сказка.",
+          "cue": "Everybody says it's a fairy tale.",
+          "changed": "the same report with the opposite verdict inside it"
+        },
+        {
+          "display": "Éhto právda.",
+          "script": "Это правда.",
+          "cue": "It's true.",
+          "changed": "the claim on its own, with nobody credited for it"
+        }
+      ],
+      "mistake": {
+        "display": "Vsé govorít, chto éhto právda.",
+        "script": "Все говорит, что это правда.",
+        "why": "vsé is plural — all of them — so the verb is govoryát. A singular govorít would need vsyó or a single person in front of it."
+      },
+      "usage": "Handing a claim to the room instead of owning it — and the seam where free indirect style hides.",
+      "register": "neutral",
+      "mnemonic": "vsé are many and govoryát; vsyó is one thing and does not."
+    },
+    {
+      "id": "L5-M9-S10",
+      "display": "Vot tak skázka i koncháyetsya.",
+      "script": "Вот так сказка и кончается.",
+      "cue": "And that's how the tale ends.",
+      "literal": "There so fairy-tale and ends.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "koncháyetsya",
+            "script": "кончается",
+            "cue": "ends; comes to an end",
+            "tag": "free",
+            "forms": [
+              "koncháyetsya"
+            ],
+            "note": "Ends. Reflexive, because the story ends by itself and nobody ends it; the final -tsya is said -tsa."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "koncháyetsya is reflexive: the tale ends ITSELF and nobody ends it. English can say the story ends with nothing marking that at all.",
+      "sound": "koncháyetsya is kan-CHA-yet-sa, stressed in the middle, with the final -tsya said -tsa.",
+      "variations": [
+        {
+          "display": "Skázka koncháyetsya.",
+          "script": "Сказка кончается.",
+          "cue": "The tale ends.",
+          "changed": "the closing line stripped back to its verb"
+        },
+        {
+          "display": "Vot tak.",
+          "script": "Вот так.",
+          "cue": "That's how it goes.",
+          "changed": "the gesture alone, which closes a spoken story by itself"
+        }
+      ],
+      "mistake": {
+        "display": "Vot tak skázka i koncháyet.",
+        "script": "Вот так сказка и кончает.",
+        "why": "the -sya dropped. Without it something else would have to be ending the tale; with it the tale ends on its own, which is what a closing line says."
+      },
+      "usage": "The last line of a told story, said the way a Russian actually ends one.",
+      "register": "neutral",
+      "mnemonic": "The tale ends itself: koncháyetsya, never koncháyet."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M9-C01",
+      "display": "Zhil-byl odín starík.",
+      "script": "Жил-был один старик.",
+      "cue": "There once was an old man."
+    },
+    {
+      "id": "L5-M9-C02",
+      "display": "Odnázhdy on ustál.",
+      "script": "Однажды он устал.",
+      "cue": "One day he got tired."
+    },
+    {
+      "id": "L5-M9-C03",
+      "display": "I vot on prikhódit domóy.",
+      "script": "И вот он приходит домой.",
+      "cue": "And in he comes."
+    },
+    {
+      "id": "L5-M9-C04",
+      "display": "Byválo, my rabótali dóma.",
+      "script": "Бывало, мы работали дома.",
+      "cue": "We used to work at home."
+    },
+    {
+      "id": "L5-M9-C05",
+      "display": "Koróche govoryá, on skazál net.",
+      "script": "Короче говоря, он сказал нет.",
+      "cue": "Long story short, he said no."
+    },
+    {
+      "id": "L5-M9-C06",
+      "display": "Éhto skázka, a ne právda.",
+      "script": "Это сказка, а не правда.",
+      "cue": "It's a fairy tale, not the truth."
+    },
+    {
+      "id": "L5-M9-C07",
+      "display": "Geróy skázki vsegdá prav.",
+      "script": "Герой сказки всегда прав.",
+      "cue": "The hero of the tale is always right."
+    },
+    {
+      "id": "L5-M9-C08",
+      "display": "I vot chto býlo dál'she.",
+      "script": "И вот что было дальше.",
+      "cue": "And here's what happened next."
+    },
+    {
+      "id": "L5-M9-C09",
+      "display": "Vsé govoryát, chto éhto právda.",
+      "script": "Все говорят, что это правда.",
+      "cue": "Everybody says it's true."
+    },
+    {
+      "id": "L5-M9-C10",
+      "display": "Vot tak skázka i koncháyetsya.",
+      "script": "Вот так сказка и кончается.",
+      "cue": "And that's how the tale ends."
+    },
+    {
+      "id": "L5-M9-C11",
+      "display": "On prikhódit i govorít.",
+      "script": "Он приходит и говорит.",
+      "cue": "In he comes and says."
+    },
+    {
+      "id": "L5-M9-C12",
+      "display": "Koróche govoryá, éhto skázka.",
+      "script": "Короче говоря, это сказка.",
+      "cue": "Long story short, it's a fairy tale."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

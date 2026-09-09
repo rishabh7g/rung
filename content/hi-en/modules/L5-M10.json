@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M10",
+  "title": "Your own voice",
+  "job": "An eight-sentence piece that changes register midway",
+  "prerequisites": ["L5-M1", "L5-M2", "L5-M3", "L5-M4", "L5-M5", "L5-M6", "L5-M7", "L5-M8", "L5-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present_simple", "simple_past", "future_simple"],
+    "allowedPatterns": [
+      "<formal opening> + . + <formal clause> + . + <informal clause> + .",
+      "I am writing to + <verb> + <object> + .",
+      "To be honest + , + <clause> + .",
+      "<Latinate verb> + / + <phrasal verb> + .",
+      "Anyway + , + <clause> + ."
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "रजिस्टर एक स्विच नहीं, पाँच स्विच का गुच्छा है और वे सब एक साथ चलते हैं: छोटा रूप (I am / I'm), क्रिया का चुनाव (postpone / put off, discover / find out, attend / come to), वाक्य की चाल, नरम करने वाले शब्द (L4-M5 वाले, जो रस्मी आधे में आते हैं और रोज़मर्रा वाले में गिर जाते हैं), और कितना बिना कहे छोड़ा गया है (L5-M7 की सीढ़ी). आधा-बदला रजिस्टर — I am writing to inform you that I could not make it, mate — यही इस मॉड्यूल की अकेली बड़ी ग़लती है."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी में रजिस्टर सर्वनाम और क्रिया के अंत पर बैठा है — तू, तुम, आप और उनके साथ बदलती क्रिया, और ऊपर से संस्कृतनिष्ठ या फ़ारसीनिष्ठ शब्दों का चुनाव. अंग्रेज़ी में एक ही you है और क्रिया का अंत नहीं बदलता (L2-M2 वाला नियम, अब सीढ़ी के सिरे से देखा हुआ). इसलिए सीखने वाला अपना जाना-पहचाना स्विच दबाता है और कुछ नहीं होता — उसकी अंग्रेज़ी एक ही रजिस्टर में खड़ी रहती है जबकि उसे लगता है कि वह बदल चुकी है."
+    },
+    {
+      "tag": "delta",
+      "text": "मोड़ छोटे शब्दों से डाला जाता है और वे गिने-चुने हैं: Anyway · To be honest · Look · The truth is. इनमें से कोई एक आते ही सुनने वाला समझ जाता है कि अब रस्मी हिस्सा ख़त्म और असली बात शुरू. मोड़ के बाद बाक़ी चारों स्विच भी बदलने चाहिए — सिर्फ़ Anyway लगा देना और आगे वैसी ही रस्मी अंग्रेज़ी लिखते रहना आधा-बदला रजिस्टर है."
+    },
+    {
+      "tag": "delta",
+      "text": "लातीनी से आया शब्द रस्मी और छोटा देसी शब्द रोज़मर्रा का — यह काम का अंदाज़ा है, क़ानून नहीं. get हमेशा रोज़मर्रा का नहीं होता (get married) और receive हमेशा रस्मी नहीं. जोड़े याद रखिए, नियम नहीं: postpone / put off, discover / find out, attend / come to, inform / let you know."
+    },
+    {
+      "tag": "delta",
+      "text": "यह कोर्स का आख़िरी मॉड्यूल है और यह कुछ नया व्याकरण नहीं खोलता — यह पुराने पन्ने जोड़ता है. L5-M3 से रजिस्टर एक चुनाव है, L5-M4 से रस्मी ढाँचा, L5-M7 से इशारे की सीढ़ी, L4-M5 से नरमी, L4-M4 से however और on the other hand, L4-M7 से kindly और may. इनमें से कोई भी यहाँ दोबारा नहीं सिखाया जाता; सब इस्तेमाल होते हैं. shall अब भी हर वाक्य से बाहर है, जैसा L5-M4 में था."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M10-S01",
+      "display": "Dear Sir, I am writing to inform you of a problem. The room was very cold. The window was not closed. I would like an answer this week. Anyway, I am not angry. Your city is very good. To be honest, I like it here. Thanks for your help.",
+      "cue": "आदरणीय महोदय, मैं आपको एक समस्या की सूचना देने के लिए लिख रहा हूँ. कमरा बहुत ठंडा था. खिड़की बंद नहीं थी. मैं इस हफ़्ते जवाब चाहूँगा. ख़ैर, मैं नाराज़ नहीं हूँ. आपका शहर बहुत अच्छा है. सच कहूँ तो, मुझे यहाँ अच्छा लगता है. आपकी मदद के लिए शुक्रिया.",
+      "literal": "प्रिय महोदय, मैं हूँ लिख रहा को सूचित करना आपको का एक समस्या. वह कमरा था बहुत ठंडा. वह खिड़की थी नहीं बंद. मैं चाहूँगा एक जवाब यह हफ़्ता. ख़ैर, मैं हूँ नहीं नाराज़.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dear",
+            "cue": "आदरणीय",
+            "tag": "delta",
+            "forms": ["dear"],
+            "note": "चिट्ठी की रस्मी शुरुआत. यहाँ इसका प्यार वाला मतलब नहीं है — यह सिर्फ़ ख़त खोलने का पुराना ढाँचा है."
+          },
+          {
+            "display": "sir",
+            "cue": "महोदय",
+            "tag": "delta",
+            "forms": ["sir", "madam"],
+            "note": "नाम पता न हो तब. नाम पता हो तो Dear Mr Sharma लिखा जाता है, और बड़ा अक्षर हमेशा रहता है."
+          },
+          {
+            "display": "I am writing to",
+            "cue": "मैं लिखने के लिए लिख रहा हूँ",
+            "tag": "delta",
+            "forms": ["I am writing to"],
+            "note": "रस्मी ख़त की पहली पंक्ति का बना-बनाया ढाँचा. चारों शब्द साथ चलते हैं और आगे सीधे क्रिया आती है."
+          },
+          {
+            "display": "inform",
+            "cue": "सूचित करना",
+            "tag": "delta",
+            "forms": ["inform", "informs", "informed"],
+            "note": "tell का रस्मी जोड़ीदार. inform you of या inform you about — दोनों चलते हैं, inform you that भी."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "चौथे वाक्य तक सब रस्मी है और Anyway पर मोड़ आता है. मोड़ के बाद छोटे, सीधे वाक्य ही चलेंगे — वहाँ फिर से kindly या inform डालना आधा-बदला रजिस्टर है.",
+      "sound": "dear और sir दोनों में r हल्का है — डिअ, सर्.",
+      "variations": [
+        {
+          "display": "Dear Sir, I am writing to inform you of a problem.",
+          "cue": "आदरणीय महोदय, मैं आपको एक समस्या की सूचना देने के लिए लिख रहा हूँ.",
+          "changed": "सिर्फ़ रस्मी शुरुआत"
+        },
+        {
+          "display": "Anyway, I am not angry. To be honest, I like it here.",
+          "cue": "ख़ैर, मैं नाराज़ नहीं हूँ. सच कहूँ तो, मुझे यहाँ अच्छा लगता है.",
+          "changed": "सिर्फ़ रोज़मर्रा वाला आधा"
+        },
+        {
+          "display": "I am writing to inform you of a problem with the room.",
+          "cue": "मैं आपको कमरे की एक समस्या की सूचना देने के लिए लिख रहा हूँ.",
+          "changed": "एक ही वाक्य में"
+        }
+      ],
+      "mistake": {
+        "display": "Dear Sir, I am writing to inform you that the room was cold, and to be honest I am not angry, mate.",
+        "why": "एक ही वाक्य में रस्मी शुरुआत और रोज़मर्रा वाला अंत. मोड़ नए वाक्य से आता है, उसी वाक्य के बीच से नहीं."
+      },
+      "usage": "होटल या दफ़्तर को शिकायत लिखते समय, जब बात रखनी हो पर रिश्ता बिगाड़ना न हो.",
+      "register": "formal",
+      "mnemonic": "Dear Sir से Anyway तक — आठ वाक्य में एक मोड़."
+    },
+    {
+      "id": "L5-M10-S02",
+      "display": "Dear Sir, the meeting is postponed. I am writing to inform you about this. The next meeting is on Monday. We will send you the new time. Anyway, we had to put off the meeting. The manager is not well. We are very sorry about this. Thanks for your time.",
+      "cue": "आदरणीय महोदय, बैठक टाल दी गई है. मैं आपको इसकी सूचना देने के लिए लिख रहा हूँ. अगली बैठक सोमवार को है. हम आपको नया समय भेज देंगे. ख़ैर, हमें बैठक टालनी पड़ी. मैनेजर की तबीयत ठीक नहीं है. हमें इसका बहुत अफ़सोस है. आपके समय के लिए शुक्रिया.",
+      "literal": "प्रिय महोदय, वह बैठक है टाली गई. मैं हूँ लिख रहा को सूचित करना आपको बारे में यह. वह अगली बैठक है पर सोमवार. हम भेजेंगे आपको वह नया समय.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "postpone",
+            "cue": "टालना",
+            "tag": "delta",
+            "forms": ["postpone", "postponed", "postpones"],
+            "note": "आगे की तारीख़ पर खिसकाना. यह लातीनी से आया रस्मी शब्द है और चिट्ठी में यही चलता है."
+          },
+          {
+            "display": "put off",
+            "cue": "टाल देना",
+            "tag": "delta",
+            "forms": ["put off"],
+            "note": "postpone का रोज़मर्रा वाला जोड़ीदार. बीच में चीज़ आ सकती है — put the meeting off, पर तब दोनों शब्द अलग हो जाते हैं."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "रस्मी आधे में postpone और रोज़मर्रा वाले आधे में put off — दोनों का मतलब एक है, जगह अलग. एक ही आधे में दोनों मत मिलाइए.",
+      "sound": "postpone में ज़ोर दूसरे हिस्से पर है — पोस्ट्-पोन्.",
+      "variations": [
+        {
+          "display": "The meeting is postponed.",
+          "cue": "बैठक टाल दी गई है.",
+          "changed": "रस्मी रूप"
+        },
+        {
+          "display": "We had to put off the meeting.",
+          "cue": "हमें बैठक टालनी पड़ी.",
+          "changed": "रोज़मर्रा वाला रूप"
+        },
+        {
+          "display": "Anyway, we had to put off the meeting. The manager is not well.",
+          "cue": "ख़ैर, हमें बैठक टालनी पड़ी. मैनेजर की तबीयत ठीक नहीं है.",
+          "changed": "मोड़ के बाद वाला आधा"
+        }
+      ],
+      "mistake": {
+        "display": "Dear Sir, we put off the meeting. I am writing to inform you about this.",
+        "why": "रस्मी आधे में put off अटपटा है. चिट्ठी की पहली पंक्तियों में the meeting is postponed चाहिए."
+      },
+      "usage": "बैठक या मुलाक़ात टलने की ख़बर देते समय, जब वजह भी बतानी हो.",
+      "register": "formal",
+      "mnemonic": "postpone ख़त में, put off बात में."
+    },
+    {
+      "id": "L5-M10-S03",
+      "display": "Dear Sir, we did not receive your message. We discovered the problem yesterday. I am writing to inform you about it. We will find out more this week. Anyway, do not worry. It is a very small problem. To be honest, it was our mistake. Thanks for your help.",
+      "cue": "आदरणीय महोदय, हमें आपका संदेश नहीं मिला. हमें कल यह गड़बड़ी पता चली. मैं आपको इसकी सूचना देने के लिए लिख रहा हूँ. हम इस हफ़्ते और पता करेंगे. ख़ैर, फ़िक्र मत कीजिए. यह बहुत छोटी बात है. सच कहूँ तो, ग़लती हमारी थी. आपकी मदद के लिए शुक्रिया.",
+      "literal": "प्रिय महोदय, हम किया नहीं पाना आपका संदेश. हम खोजा वह गड़बड़ी कल. मैं हूँ लिख रहा को सूचित करना आपको बारे में यह.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "receive",
+            "cue": "मिलना",
+            "tag": "delta",
+            "forms": ["receive", "receives"],
+            "note": "get का रस्मी जोड़ीदार, ख़ास तौर पर चिट्ठी और सामान के लिए. लिखावट में ei है, ie नहीं."
+          },
+          {
+            "display": "discover",
+            "cue": "पता चलना",
+            "tag": "delta",
+            "forms": ["discover", "discovered", "discovers"],
+            "note": "जो छिपा था वह सामने आना. रोज़मर्रा में इसी की जगह find out आता है."
+          },
+          {
+            "display": "find out",
+            "cue": "पता करना",
+            "tag": "delta",
+            "forms": ["find out"],
+            "note": "discover का रोज़मर्रा वाला जोड़ीदार. find (L5-M9) चीज़ मिलना है, find out ख़बर मिलना."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "यही चिट्ठी दोनों जोड़े एक साथ दिखाती है — रस्मी आधे में receive और discover, मोड़ के बाद find out. जोड़ीदार बदलते ही रजिस्टर बदल जाता है.",
+      "sound": "receive में ei की आवाज़ लंबी ई है — रि-सीव्.",
+      "variations": [
+        {
+          "display": "We did not receive your message.",
+          "cue": "हमें आपका संदेश नहीं मिला.",
+          "changed": "रस्मी रूप"
+        },
+        {
+          "display": "We will find out more this week.",
+          "cue": "हम इस हफ़्ते और पता करेंगे.",
+          "changed": "रोज़मर्रा वाला रूप"
+        },
+        {
+          "display": "We discovered the problem yesterday.",
+          "cue": "हमें कल यह गड़बड़ी पता चली.",
+          "changed": "सिर्फ़ ख़बर"
+        }
+      ],
+      "mistake": {
+        "display": "Dear Sir, we did not get your message. We found out the problem yesterday.",
+        "why": "रस्मी चिट्ठी की शुरुआत में get और find out अटपटे हैं. वहाँ receive और discover चाहिए."
+      },
+      "usage": "किसी गड़बड़ी की सूचना देते समय, जब ग़लती अपनी हो.",
+      "register": "formal",
+      "mnemonic": "receive · discover ऊपर, get · find out नीचे."
+    },
+    {
+      "id": "L5-M10-S04",
+      "display": "Dear Sir, kindly attend the meeting on Monday. It is in the morning. Please come to the office at ten. I am writing to inform you of this. Anyway, everyone will come. We really need your help. It is a very important meeting. Thanks for your time.",
+      "cue": "आदरणीय महोदय, कृपया सोमवार की बैठक में उपस्थित रहें. वह सुबह है. कृपया दस बजे दफ़्तर आ जाइए. मैं आपको इसकी सूचना देने के लिए लिख रहा हूँ. ख़ैर, सब आ रहे हैं. हमें सचमुच आपकी मदद चाहिए. यह बहुत ज़रूरी बैठक है. आपके समय के लिए शुक्रिया.",
+      "literal": "प्रिय महोदय, कृपया उपस्थित होइए वह बैठक पर सोमवार. यह है में वह सुबह. कृपया आइए को वह दफ़्तर पर दस.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "attend",
+            "cue": "उपस्थित रहना",
+            "tag": "delta",
+            "forms": ["attend", "attended", "attends"],
+            "note": "बैठक, शादी या कक्षा में जाना. इसके बाद to नहीं आता — attend the meeting, attend to the meeting नहीं."
+          },
+          {
+            "display": "come to",
+            "cue": "आ जाना",
+            "tag": "delta",
+            "forms": ["come to"],
+            "note": "attend का रोज़मर्रा वाला जोड़ीदार. यहाँ to ज़रूरी है — come to the office, ठीक उलटा attend के."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "attend के साथ to नहीं और come के साथ to ज़रूरी — यही जोड़े की सबसे बड़ी फिसलन है.",
+      "sound": "attend में ज़ोर दूसरे हिस्से पर है — अ-टेन्ड्.",
+      "variations": [
+        {
+          "display": "Kindly attend the meeting on Monday.",
+          "cue": "कृपया सोमवार की बैठक में उपस्थित रहें.",
+          "changed": "रस्मी रूप"
+        },
+        {
+          "display": "Please come to the office at ten.",
+          "cue": "कृपया दस बजे दफ़्तर आ जाइए.",
+          "changed": "रोज़मर्रा वाला रूप"
+        },
+        {
+          "display": "Anyway, everyone will come.",
+          "cue": "ख़ैर, सब आ रहे हैं.",
+          "changed": "सिर्फ़ मोड़ के बाद"
+        }
+      ],
+      "mistake": {
+        "display": "Dear Sir, kindly attend to the meeting on Monday. Please come the office at ten.",
+        "why": "attend के बाद to नहीं आता और come के बाद to छूट नहीं सकता. दोनों जगह उलटा हो गया है."
+      },
+      "usage": "बैठक या समारोह का न्योता भेजते समय, जब बाद में गर्मजोशी भी दिखानी हो.",
+      "register": "formal",
+      "mnemonic": "attend बिना to, come to के साथ."
+    },
+    {
+      "id": "L5-M10-S05",
+      "display": "Dear Sir, this is a complaint about your shop. I did not receive my books. I asked again and again last week. Kindly send the books this week. Anyway, I am not angry with you. Your shop is very good. To be honest, I just want my books. Thanks, and regards.",
+      "cue": "आदरणीय महोदय, यह आपकी दुकान के बारे में एक शिकायत है. मुझे मेरी किताबें नहीं मिलीं. मैंने पिछले हफ़्ते बार-बार कहा. कृपया इस हफ़्ते किताबें भेज दीजिए. ख़ैर, मैं आपसे नाराज़ नहीं हूँ. आपकी दुकान बहुत अच्छी है. सच कहूँ तो, मुझे बस मेरी किताबें चाहिए. शुक्रिया, और नमस्कार.",
+      "literal": "प्रिय महोदय, यह है एक शिकायत बारे में आपकी दुकान. मैं किया नहीं पाना मेरी किताबें. मैंने पूछा फिर और फिर पिछला हफ़्ता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "complaint",
+            "cue": "शिकायत",
+            "tag": "delta",
+            "forms": ["complaint", "complaints"],
+            "note": "यह नाम वाला रूप है और गिना जाता है — a complaint. काम वाला रूप complain है, जिसके बाद about आता है."
+          },
+          {
+            "display": "regards",
+            "cue": "नमस्कार",
+            "tag": "delta",
+            "forms": ["regards"],
+            "note": "ख़त बंद करने का रस्मी शब्द, हमेशा बहुवचन में. अकेले Regards से लेकर Kind regards तक चलता है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "complaint नाम है, complain क्रिया. This is a complain ग़लत है और I want to complaint भी.",
+      "sound": "complaint में ai की आवाज़ ए है — कम्-प्लेन्ट्.",
+      "variations": [
+        {
+          "display": "This is a complaint about your shop.",
+          "cue": "यह आपकी दुकान के बारे में एक शिकायत है.",
+          "changed": "सिर्फ़ रस्मी शुरुआत"
+        },
+        {
+          "display": "To be honest, I just want my books.",
+          "cue": "सच कहूँ तो, मुझे बस मेरी किताबें चाहिए.",
+          "changed": "सिर्फ़ मोड़ के बाद"
+        },
+        {
+          "display": "Thanks, and regards.",
+          "cue": "शुक्रिया, और नमस्कार.",
+          "changed": "सिर्फ़ अंत"
+        }
+      ],
+      "mistake": {
+        "display": "Dear Sir, this is a complain about your shop. Thanks, and regard.",
+        "why": "नाम वाला रूप complaint है, complain नहीं. और ख़त के अंत में regards हमेशा बहुवचन रहता है."
+      },
+      "usage": "दुकान या सेवा की लिखित शिकायत में, जब रिश्ता बनाए रखना हो.",
+      "register": "formal",
+      "mnemonic": "complaint लिखी जाती है, complain किया जाता है."
+    },
+    {
+      "id": "L5-M10-S06",
+      "display": "Dear Sir, I cannot attend the meeting on Monday. I am writing to inform you of this. Kindly postpone it by one week. I will come to the office next week. Anyway, I am very sorry about this. The truth is, I am not well. My doctor says I must not work. Thanks for your help.",
+      "cue": "आदरणीय महोदय, मैं सोमवार की बैठक में नहीं आ सकूँगा. मैं आपको इसकी सूचना देने के लिए लिख रहा हूँ. कृपया इसे एक हफ़्ता आगे बढ़ा दीजिए. मैं अगले हफ़्ते दफ़्तर आ जाऊँगा. ख़ैर, मुझे इसका बहुत अफ़सोस है. सच बात यह है कि मेरी तबीयत ठीक नहीं है. मेरे डॉक्टर कहते हैं कि मुझे काम नहीं करना चाहिए. आपकी मदद के लिए शुक्रिया.",
+      "literal": "प्रिय महोदय, मैं नहीं सकता उपस्थित होना वह बैठक पर सोमवार. कृपया टालिए यह द्वारा एक हफ़्ता. वह सच है, मैं हूँ नहीं ठीक.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "the truth is",
+            "cue": "सच बात यह है कि",
+            "tag": "delta",
+            "forms": ["the truth is"],
+            "note": "मोड़ डालने वाला जुमला. तीनों शब्द साथ चलते हैं और इसके बाद वही बात आती है जो सचमुच कहनी थी."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "The truth is के बाद वाली बात छोटी और सीधी होनी चाहिए. उसके बाद फिर से kindly या inform लौट आना आधा-बदला रजिस्टर है.",
+      "sound": "truth में th जीभ दाँतों के बीच से निकलता है — ट्रूथ्.",
+      "variations": [
+        {
+          "display": "The truth is, I am not well.",
+          "cue": "सच बात यह है कि मेरी तबीयत ठीक नहीं है.",
+          "changed": "सिर्फ़ मोड़"
+        },
+        {
+          "display": "Kindly postpone it by one week.",
+          "cue": "कृपया इसे एक हफ़्ता आगे बढ़ा दीजिए.",
+          "changed": "सिर्फ़ रस्मी माँग"
+        },
+        {
+          "display": "To be honest, I am not well.",
+          "cue": "सच कहूँ तो, मेरी तबीयत ठीक नहीं है.",
+          "changed": "दूसरा मोड़ वाला जुमला"
+        }
+      ],
+      "mistake": {
+        "display": "Dear Sir, the truth is I cannot attend the meeting. Kindly postpone it by one week.",
+        "why": "पहली ही पंक्ति में मोड़ वाला जुमला रख देने पर बदलने के लिए कुछ बचता ही नहीं. मोड़ बीच में आता है, शुरू में नहीं."
+      },
+      "usage": "बैठक से ग़ैरहाज़िर रहने की सूचना देते समय, जब असली वजह निजी हो.",
+      "register": "formal",
+      "mnemonic": "The truth is — यहीं से ख़त इंसान बन जाता है."
+    },
+    {
+      "id": "L5-M10-S07",
+      "display": "Hi, how are you? I have a small problem. The shop did not send my books. I asked again last week. Look, I am very angry now. I will make a complaint. Anyway, do not worry about it. Thanks for your help.",
+      "cue": "नमस्ते, कैसे हो? मेरे साथ एक छोटी सी दिक़्क़त है. दुकान ने मेरी किताबें नहीं भेजीं. मैंने पिछले हफ़्ते फिर पूछा. देखो, अब मुझे बहुत ग़ुस्सा आ रहा है. मैं शिकायत करूँगा. ख़ैर, तुम इसकी फ़िक्र मत करो. तुम्हारी मदद के लिए शुक्रिया.",
+      "literal": "नमस्ते, कैसे हो तुम? मेरे पास है एक छोटी दिक़्क़त. वह दुकान किया नहीं भेजना मेरी किताबें. देखो, मैं हूँ बहुत नाराज़ अब.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "look",
+            "cue": "देखो",
+            "tag": "interference",
+            "forms": ["look", "looks"],
+            "note": "मोड़ वाला Look देखने की क्रिया नहीं है — इसका मतलब है अब सुनो, असली बात यह है. आगे हमेशा अल्पविराम आता है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "यह चिट्ठी उलटी दिशा में चलती है — रोज़मर्रा से शुरू होकर Look पर और तीखी हो जाती है. मोड़ हमेशा रस्मी से रोज़मर्रा की तरफ़ नहीं होता.",
+      "sound": "look में oo छोटा है — लुक्, न कि लूक्.",
+      "variations": [
+        {
+          "display": "Look, I am very angry now.",
+          "cue": "देखो, अब मुझे बहुत ग़ुस्सा आ रहा है.",
+          "changed": "सिर्फ़ मोड़"
+        },
+        {
+          "display": "Hi, how are you?",
+          "cue": "नमस्ते, कैसे हो?",
+          "changed": "सिर्फ़ रोज़मर्रा वाली शुरुआत"
+        },
+        {
+          "display": "I will make a complaint about the shop.",
+          "cue": "मैं दुकान की शिकायत करूँगा.",
+          "changed": "सिर्फ़ फ़ैसला"
+        }
+      ],
+      "mistake": {
+        "display": "Dear Sir, how are you? Look, I am very angry now.",
+        "why": "Dear Sir और how are you एक साथ नहीं चलते. दोस्त को लिखना हो तो Hi से शुरू कीजिए."
+      },
+      "usage": "दोस्त या साथी को लिखते समय, जब बात हल्की शुरू होकर गंभीर हो जाए.",
+      "register": "informal",
+      "mnemonic": "Look, … — यहाँ से असली बात शुरू."
+    },
+    {
+      "id": "L5-M10-S08",
+      "display": "Dear Sir, I am writing to inform you about the fees. We did not receive the money this month. Kindly send it this week. It is a small thing. Anyway, do not worry. Everyone is late this year. To be honest, we are also late. Yours sincerely.",
+      "cue": "आदरणीय महोदय, मैं आपको फ़ीस के बारे में सूचना देने के लिए लिख रहा हूँ. इस महीने हमें पैसा नहीं मिला. कृपया इसे इस हफ़्ते भेज दीजिए. यह छोटी सी बात है. ख़ैर, फ़िक्र मत कीजिए. इस साल सब देर से हैं. सच कहूँ तो, हम भी देर से हैं. आपका विश्वासपात्र.",
+      "literal": "प्रिय महोदय, मैं हूँ लिख रहा को सूचित करना आपको बारे में वह फ़ीस. हम किया नहीं पाना वह पैसा यह महीना. आपका सच्चाई से.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yours sincerely",
+            "cue": "आपका विश्वासपात्र",
+            "tag": "delta",
+            "forms": ["yours sincerely", "sincerely"],
+            "note": "ख़त बंद करने का सबसे रस्मी जोड़ा, नाम पता होने पर. Regards इससे हल्का है और रोज़ के काम में ज़्यादा चलता है."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Yours sincerely में yours पहले आता है और अपॉस्ट्रॉफ़ी नहीं लगती. Your's कोई शक्ल नहीं है.",
+      "sound": "sincerely में ज़ोर दूसरे हिस्से पर है — सिन्-सिअर्-ली.",
+      "variations": [
+        {
+          "display": "Yours sincerely.",
+          "cue": "आपका विश्वासपात्र.",
+          "changed": "सिर्फ़ रस्मी अंत"
+        },
+        {
+          "display": "Thanks, and regards.",
+          "cue": "शुक्रिया, और नमस्कार.",
+          "changed": "हल्का अंत"
+        },
+        {
+          "display": "Anyway, do not worry. Everyone is late this year.",
+          "cue": "ख़ैर, फ़िक्र मत कीजिए. इस साल सब देर से हैं.",
+          "changed": "सिर्फ़ मोड़ के बाद"
+        }
+      ],
+      "mistake": {
+        "display": "Dear Sir, I am writing to inform you about the fees. Anyway, do not worry. Your's sincerely.",
+        "why": "yours में कभी अपॉस्ट्रॉफ़ी नहीं लगती, और मोड़ के तुरंत बाद सबसे रस्मी अंत रखना रजिस्टर को दो टुकड़ों में तोड़ देता है."
+      },
+      "usage": "पैसे या फ़ीस की याद दिलाते समय, जब बात रस्मी रखनी हो पर दबाव न डालना हो.",
+      "register": "formal",
+      "mnemonic": "Yours sincerely — सबसे रस्मी दरवाज़ा बंद."
+    },
+    {
+      "id": "L5-M10-S09",
+      "display": "Dear Sir, unfortunately the meeting is postponed. I am writing to inform you of the new time. We will find out more this week. Kindly attend if you can. Anyway, do not worry about it. The truth is, we are very busy. Look, it is not a big problem. Thanks, and regards.",
+      "cue": "आदरणीय महोदय, अफ़सोस के साथ बता रहा हूँ कि बैठक टाल दी गई है. मैं आपको नया समय बताने के लिए लिख रहा हूँ. हम इस हफ़्ते और पता करेंगे. कृपया हो सके तो आइए. ख़ैर, इसकी फ़िक्र मत कीजिए. सच बात यह है कि हम बहुत व्यस्त हैं. देखिए, यह कोई बड़ी बात नहीं है. शुक्रिया, और नमस्कार.",
+      "literal": "प्रिय महोदय, अफ़सोस से वह बैठक है टाली गई. मैं हूँ लिख रहा को सूचित करना आपको का वह नया समय. देखिए, यह है नहीं एक बड़ी दिक़्क़त.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "unfortunately",
+            "cue": "अफ़सोस के साथ",
+            "tag": "delta",
+            "forms": ["unfortunately"],
+            "note": "बुरी ख़बर के आगे लगने वाला रस्मी निशान. रोज़मर्रा में इसकी जगह sorry या bad luck आता है."
+          }
+        ],
+        "rules": [0, 2, 3]
+      },
+      "trap": "यह चिट्ठी दोनों मोड़ एक साथ रखती है — The truth is और Look. दोनों एक ही तरफ़ ले जाते हैं, इसलिए एक ही काफ़ी है.",
+      "sound": "unfortunately लंबा है और ज़ोर दूसरे हिस्से पर — अन्-फ़ॉर्-चु-नट्-ली.",
+      "variations": [
+        {
+          "display": "Unfortunately the meeting is postponed.",
+          "cue": "अफ़सोस के साथ बता रहा हूँ कि बैठक टाल दी गई है.",
+          "changed": "सिर्फ़ बुरी ख़बर"
+        },
+        {
+          "display": "Look, it is not a big problem.",
+          "cue": "देखिए, यह कोई बड़ी बात नहीं है.",
+          "changed": "सिर्फ़ मोड़ के बाद"
+        },
+        {
+          "display": "Kindly attend if you can.",
+          "cue": "कृपया हो सके तो आइए.",
+          "changed": "सिर्फ़ रस्मी माँग"
+        }
+      ],
+      "mistake": {
+        "display": "Dear Sir, unfortunately the meeting is postponed. Look, the truth is, anyway do not worry.",
+        "why": "तीन मोड़ एक साथ रखने से कोई मोड़ नहीं बनता. आठ वाक्य के टुकड़े में एक ही मोड़ चलता है."
+      },
+      "usage": "बुरी ख़बर रस्मी अंदाज़ में देते समय, जब आख़िर में हल्का करना हो.",
+      "register": "formal",
+      "mnemonic": "एक टुकड़ा, एक मोड़."
+    },
+    {
+      "id": "L5-M10-S10",
+      "display": "Dear Sir, I am writing to inform you of my last day. I will leave the office next week. Kindly send my money before that. Anyway, I am very happy here. The truth is, I like this office very much. Look, I will see you again. Thanks for everything, my friend. Cheers, and thanks.",
+      "cue": "आदरणीय महोदय, मैं आपको अपने आख़िरी दिन की सूचना देने के लिए लिख रहा हूँ. मैं अगले हफ़्ते दफ़्तर छोड़ दूँगा. कृपया उससे पहले मेरा पैसा भेज दीजिए. ख़ैर, मैं यहाँ बहुत ख़ुश रहा. सच बात यह है कि मुझे यह दफ़्तर बहुत पसंद है. देखिए, मैं आपसे फिर मिलूँगा. सब कुछ के लिए शुक्रिया, मेरे दोस्त. चलिए, और शुक्रिया.",
+      "literal": "प्रिय महोदय, मैं हूँ लिख रहा को सूचित करना आपको का मेरा आख़िरी दिन. मैं छोड़ूँगा वह दफ़्तर अगला हफ़्ता. शुक्रिया के लिए सब कुछ, मेरे दोस्त.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cheers",
+            "cue": "चलिए",
+            "tag": "delta",
+            "forms": ["cheers"],
+            "note": "रोज़मर्रा का सबसे हल्का अंत, और शुक्रिया भी. यह हमेशा बहुवचन है और रस्मी ख़त में कभी नहीं आता."
+          }
+        ],
+        "rules": [0, 2, 4]
+      },
+      "trap": "यह पूरे कोर्स का आख़िरी टुकड़ा है और सबसे लंबा सफ़र तय करता है — Dear Sir से Cheers तक. दोनों सिरे सही हैं; ग़लत सिर्फ़ बीच में उन्हें मिला देना है.",
+      "sound": "cheers में ch च् और आख़िर में ज़् की आवाज़ है — चिअर्ज़्.",
+      "variations": [
+        {
+          "display": "I am writing to inform you of my last day.",
+          "cue": "मैं आपको अपने आख़िरी दिन की सूचना देने के लिए लिख रहा हूँ.",
+          "changed": "सिर्फ़ रस्मी शुरुआत"
+        },
+        {
+          "display": "Thanks for everything, my friend. Cheers, and thanks.",
+          "cue": "सब कुछ के लिए शुक्रिया, मेरे दोस्त. चलिए, और शुक्रिया.",
+          "changed": "सिर्फ़ रोज़मर्रा वाला अंत"
+        },
+        {
+          "display": "Look, I will see you again.",
+          "cue": "देखिए, मैं आपसे फिर मिलूँगा.",
+          "changed": "सिर्फ़ मोड़"
+        }
+      ],
+      "mistake": {
+        "display": "Dear Sir, cheers. I am writing to inform you of my last day. Yours sincerely.",
+        "why": "Cheers रस्मी शुरुआत के साथ नहीं चलता और उसके बाद Yours sincerely लौटना रजिस्टर को दो बार तोड़ देता है."
+      },
+      "usage": "नौकरी छोड़ते समय की आख़िरी चिट्ठी में, जब रस्मी सूचना भी देनी हो और विदा भी लेनी हो.",
+      "register": "formal",
+      "mnemonic": "Dear Sir से Cheers तक — यही पूरा कोर्स है."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M10-C01",
+      "display": "Dear Sir, I am writing to inform you of a problem.",
+      "cue": "आदरणीय महोदय, मैं आपको एक समस्या की सूचना देने के लिए लिख रहा हूँ."
+    },
+    {
+      "id": "L5-M10-C02",
+      "display": "Anyway, I am not angry.",
+      "cue": "ख़ैर, मैं नाराज़ नहीं हूँ."
+    },
+    {
+      "id": "L5-M10-C03",
+      "display": "The meeting is postponed.",
+      "cue": "बैठक टाल दी गई है."
+    },
+    {
+      "id": "L5-M10-C04",
+      "display": "We had to put off the meeting.",
+      "cue": "हमें बैठक टालनी पड़ी."
+    },
+    {
+      "id": "L5-M10-C05",
+      "display": "We did not receive your message.",
+      "cue": "हमें आपका संदेश नहीं मिला."
+    },
+    {
+      "id": "L5-M10-C06",
+      "display": "We will find out more this week.",
+      "cue": "हम इस हफ़्ते और पता करेंगे."
+    },
+    {
+      "id": "L5-M10-C07",
+      "display": "Kindly attend the meeting on Monday.",
+      "cue": "कृपया सोमवार की बैठक में उपस्थित रहें."
+    },
+    {
+      "id": "L5-M10-C08",
+      "display": "Please come to the office at ten.",
+      "cue": "कृपया दस बजे दफ़्तर आ जाइए."
+    },
+    {
+      "id": "L5-M10-C09",
+      "display": "This is a complaint about your shop.",
+      "cue": "यह आपकी दुकान के बारे में एक शिकायत है."
+    },
+    {
+      "id": "L5-M10-C10",
+      "display": "The truth is, I am not well.",
+      "cue": "सच बात यह है कि मेरी तबीयत ठीक नहीं है."
+    },
+    {
+      "id": "L5-M10-C11",
+      "display": "Look, I am very angry now.",
+      "cue": "देखो, अब मुझे बहुत ग़ुस्सा आ रहा है."
+    },
+    {
+      "id": "L5-M10-C12",
+      "display": "Thanks for everything, my friend.",
+      "cue": "सब कुछ के लिए शुक्रिया, मेरे दोस्त."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

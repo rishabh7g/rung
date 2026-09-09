@@ -1,0 +1,756 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M5",
+  "title": "Big questions",
+  "job": "Values, beliefs, abstract talk",
+  "prerequisites": [
+    "L5-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "presente, L1-M6's — every main verb here is in it, deliberately, so no congiuntivo imperfetto can arise",
+      "congiuntivo presente after an impersonal trigger: sia, abbia, possa, all L3-M3's"
+    ],
+    "allowedPatterns": [
+      "<articolo> + <N astratto> + è + <Adj>",
+      "È importante che + <congiuntivo>",
+      "Ciò che conta è + <N>",
+      "Credo in + <N>",
+      "La gente + <presente>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ITALIAN PUTS THE DEFINITE ARTICLE ON AN ABSTRACT NOUN AND ON A GENERIC PLURAL. La libertà è importante. La gente ha paura. Gli italiani parlano molto. English puts nothing there, which makes this the most reliable foreign-sounding error at this level and the hardest to be corrected on: the sentence is otherwise perfect, and nobody stops a perfect sentence to mention a missing la."
+    },
+    {
+      "tag": "delta",
+      "text": "THE IMPERSONAL TRIGGER TAKES THE MOOD L4-M5 OPENED, AND OPENS NOTHING NEW. è importante che, è giusto che and è normale che are a new TRIGGER CLASS on a paradigm you already own: sia, abbia and possa are L3-M3's forms and nothing about them changes here. Learn the three triggers and keep the verbs you have."
+    },
+    {
+      "tag": "free",
+      "text": "CIÒ CHE AND QUELLO CHE ARE HOW ITALIAN SAYS WHAT AS A THING. Ciò che conta è il rispetto — the thing that counts is respect. quello che is the everyday twin and ciò che the slightly more written one; l'importante è does the same job with an adjective instead of a clause. All three are learned whole, and none of them is the question word."
+    },
+    {
+      "tag": "interference",
+      "text": "CREDERE SPLITS THREE WAYS AND ONLY ONE OF THEM IS EXPENSIVE. credere in plus a noun is English believe in, exactly. credere che takes the congiuntivo. credere di plus an infinitive is what a speaker uses when both halves are theirs — credo di capire — and that is L3-M3's escape hatch, still the cheapest correct sentence you own. Reach for it rather than pushing every belief through the mood."
+    },
+    {
+      "tag": "interference",
+      "text": "THE TRANSPARENT VOCABULARY HIDES TWO WORDS THAT LIE. educato is polite, well brought up — not educated. sensibile is sensitive — not sensible. Both look like their English twin, both are used constantly, and both go wrong in the direction that makes you sound as though you meant something unkind. Two is the whole list worth memorising; a list of twenty would be forgotten by the next module."
+    },
+    {
+      "tag": "free",
+      "text": "THE ABSTRACT VOCABULARY IS LATINATE AND ALMOST FREE. libertà, giustizia, felicità, onestà, società: you can read them before you can say them, and in every one of the -tà words the accented final vowel is the stress and it never moves. Beside them ognuno for each person one at a time, chiunque for anyone at all, in fondo for deep down, and contare for both to count and to matter."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M5-S01",
+      "display": "La libertà è importante per la gente",
+      "cue": "Freedom matters to people",
+      "literal": "The freedom is important for the people",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "libertà",
+            "cue": "freedom, liberty",
+            "tag": "free",
+            "forms": [
+              "libertà"
+            ],
+            "note": "Feminine and invariable: the accented final a never changes, so one liberty and many are the same word. The article in front of it is this module's rule."
+          },
+          {
+            "display": "la gente",
+            "cue": "people",
+            "tag": "delta",
+            "forms": [
+              "la gente"
+            ],
+            "note": "Grammatically SINGULAR: la gente ha, never hanno. gente alone is L2-M10's; this row is the article-plus-noun that abstract talk actually uses."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "English drops the article on an abstract noun and Italian cannot. Libertà è importante is not a sentence an Italian would write; the la is obligatory.",
+      "sound": "lee-ber-TA, stress on the final a and the accent says so. la JEN-te, with a soft g.",
+      "variations": [
+        {
+          "display": "La libertà è importante",
+          "cue": "Freedom is important",
+          "changed": "the claim without the people"
+        },
+        {
+          "display": "Per la gente",
+          "cue": "For people",
+          "changed": "the phrase alone"
+        },
+        {
+          "display": "La giustizia è importante",
+          "cue": "Justice is important",
+          "changed": "the same frame on another abstract noun"
+        }
+      ],
+      "mistake": {
+        "display": "Liberta è importante per gente",
+        "why": "Three errors and all of them English: the abstract noun needs its la, gente needs its own la, and libertà without its accent is not the word."
+      },
+      "usage": "Saying what matters to you, in a conversation about nothing in the room.",
+      "register": "neutral",
+      "mnemonic": "An abstract noun always arrives with its article."
+    },
+    {
+      "id": "L5-M5-S02",
+      "display": "Ciò che conta è il rispetto",
+      "cue": "What counts is respect",
+      "literal": "That which counts is the respect",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ciò che",
+            "cue": "what, the thing that",
+            "tag": "free",
+            "forms": [
+              "ciò che",
+              "ciò"
+            ],
+            "note": "Two words for English what when it is not a question. ciò is a bare that-thing and che the relative; together they open a noun clause."
+          },
+          {
+            "display": "conta",
+            "cue": "counts, matters",
+            "tag": "free",
+            "forms": [
+              "conta",
+              "contare su"
+            ],
+            "note": "contare is both to count and to matter. With su after it, it is to count ON somebody, which is the other half of this row."
+          },
+          {
+            "display": "rispetto",
+            "cue": "respect",
+            "tag": "free",
+            "forms": [
+              "rispetto"
+            ],
+            "note": "Respect, masculine, so il rispetto with the article the abstract rule demands. The same word is also the noun in rispetto a, with regard to."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Ciò che conta è, not È ciò che conta. The clause is the subject and it comes first; putting the verb in front turns a statement into a shove.",
+      "sound": "CHO ke: ciò is one syllable. CON-ta. ris-PET-to, with the double t held.",
+      "variations": [
+        {
+          "display": "Ciò che conta",
+          "cue": "What counts",
+          "changed": "the clause alone"
+        },
+        {
+          "display": "Quello che conta è il rispetto",
+          "cue": "What counts is respect",
+          "changed": "the everyday twin in place of ciò che"
+        },
+        {
+          "display": "Il rispetto conta",
+          "cue": "Respect counts",
+          "changed": "the same claim without the clause"
+        }
+      ],
+      "mistake": {
+        "display": "Che cosa conta è il rispetto",
+        "why": "che cosa is the QUESTION what. As the subject of a statement Italian needs ciò che or quello che, which is exactly what the sentence is missing."
+      },
+      "usage": "Naming your own priority, in an argument or a quiet conversation.",
+      "register": "neutral",
+      "mnemonic": "ciò che opens the thing; the verb closes it."
+    },
+    {
+      "id": "L5-M5-S03",
+      "display": "È importante che ognuno abbia rispetto",
+      "cue": "It is important that everyone has respect",
+      "literal": "Is important that everyone may-have respect",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "è importante che",
+            "cue": "it is important that",
+            "tag": "delta",
+            "forms": [
+              "è importante che",
+              "importante"
+            ],
+            "note": "An impersonal trigger: everything after che goes into the congiuntivo. The bare adjective importante is in this row because the trigger is where it is first shown."
+          },
+          {
+            "display": "ognuno",
+            "cue": "everyone, each person",
+            "tag": "free",
+            "forms": [
+              "ognuno"
+            ],
+            "note": "Each one, taken singly, so the verb after it is singular. Where tutti is everybody as a crowd, ognuno is everybody one at a time."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The trigger takes the congiuntivo, not the present indicative. È importante che ognuno ha rispetto is the sentence an English speaker builds, and abbia is what the trigger demands.",
+      "sound": "eh im-por-TAN-te ke. o-NYOO-no: the gn is the ny of canyon.",
+      "variations": [
+        {
+          "display": "È importante",
+          "cue": "It is important",
+          "changed": "the adjective alone, with no clause after it"
+        },
+        {
+          "display": "È importante che ognuno abbia una casa",
+          "cue": "It is important that everyone has a home",
+          "changed": "another object under the same trigger"
+        },
+        {
+          "display": "È giusto che ognuno abbia rispetto",
+          "cue": "It is right that everyone has respect",
+          "changed": "a different trigger on the same clause"
+        }
+      ],
+      "mistake": {
+        "display": "È importante che ognuno ha rispetto",
+        "why": "ha is the indicative. Every one of these impersonal triggers takes the congiuntivo, and abbia is the form L3-M3 already taught you."
+      },
+      "usage": "Stating a principle, rather than describing a situation.",
+      "register": "neutral",
+      "mnemonic": "The trigger fires the mood; the mood is already yours."
+    },
+    {
+      "id": "L5-M5-S04",
+      "display": "È giusto che la gente abbia una casa",
+      "cue": "It is right that people have a home",
+      "literal": "Is right that the people may-have a house",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "è giusto che",
+            "cue": "it is right that",
+            "tag": "delta",
+            "forms": [
+              "è giusto che",
+              "giusto"
+            ],
+            "note": "The second impersonal trigger, taking the same mood. giusto alone is right or fair, and it is in this row because this is where it is first shown."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "la gente takes a SINGULAR verb: abbia, not abbiano. The noun feels plural in English and is singular in Italian, and the verb follows the Italian.",
+      "sound": "eh JOO-sto ke: the giu is joo. la JEN-te AB-bya.",
+      "variations": [
+        {
+          "display": "È giusto",
+          "cue": "That's right, that's fair",
+          "changed": "the adjective alone, as a verdict"
+        },
+        {
+          "display": "È giusto che ognuno abbia una casa",
+          "cue": "It is right that everyone has a home",
+          "changed": "each person instead of people"
+        },
+        {
+          "display": "Non è giusto",
+          "cue": "That's not fair",
+          "changed": "negated, which is how it is most often said"
+        }
+      ],
+      "mistake": {
+        "display": "È giusto che la gente abbiano una casa",
+        "why": "gente is singular in Italian however plural it feels in English, so the verb stays in the third person singular: abbia."
+      },
+      "usage": "Stating a principle about how things ought to be.",
+      "register": "neutral",
+      "mnemonic": "gente is one crowd, and Italian counts the crowd."
+    },
+    {
+      "id": "L5-M5-S05",
+      "display": "È normale che chiunque abbia paura",
+      "cue": "It is normal for anyone to be afraid",
+      "literal": "Is normal that anyone may-have fear",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "è normale che",
+            "cue": "it is normal that",
+            "tag": "delta",
+            "forms": [
+              "è normale che",
+              "normale"
+            ],
+            "note": "The third impersonal trigger. With è importante che and è giusto che it is the whole class this module opens, and the mood after all three is the same."
+          },
+          {
+            "display": "chiunque",
+            "cue": "anyone, whoever",
+            "tag": "free",
+            "forms": [
+              "chiunque"
+            ],
+            "note": "Anyone at all, and it takes the congiuntivo by itself. Where ognuno counts the people it names, chiunque names none of them."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "paura is had, not been. Italian says avere paura where English says be afraid, which is L3-M6's ha paura seen again under a trigger.",
+      "sound": "eh nor-MA-le ke. kyoon-KWEH: the chi is k and the qu is kw.",
+      "variations": [
+        {
+          "display": "È normale",
+          "cue": "That's normal",
+          "changed": "the adjective alone"
+        },
+        {
+          "display": "È normale che la gente abbia paura",
+          "cue": "It is normal for people to be afraid",
+          "changed": "people instead of anyone"
+        },
+        {
+          "display": "Chiunque abbia paura",
+          "cue": "Anyone who is afraid",
+          "changed": "the clause alone, where chiunque triggers the mood on its own"
+        }
+      ],
+      "mistake": {
+        "display": "È normale che chiunque ha paura",
+        "why": "chiunque and è normale che each demand the congiuntivo, so the indicative ha is wrong twice over inside one clause."
+      },
+      "usage": "Reassuring somebody, or generalising about how people are.",
+      "register": "neutral",
+      "mnemonic": "Three triggers, one mood."
+    },
+    {
+      "id": "L5-M5-S06",
+      "display": "Credo in questi valori: onestà e giustizia",
+      "cue": "I believe in these values: honesty and justice",
+      "literal": "I-believe in these values: honesty and justice",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "credo in",
+            "cue": "I believe in",
+            "tag": "free",
+            "forms": [
+              "credo in",
+              "credere in"
+            ],
+            "note": "credere plus in maps onto English believe in exactly. credo alone is L3-M3's I think; the in is what turns thinking into believing."
+          },
+          {
+            "display": "valori",
+            "cue": "values",
+            "tag": "free",
+            "forms": [
+              "valori",
+              "valore"
+            ],
+            "note": "Plural for the things somebody holds to; the singular valore is a value or a worth. Both come from valere, to be worth."
+          },
+          {
+            "display": "onestà",
+            "cue": "honesty",
+            "tag": "free",
+            "forms": [
+              "onestà"
+            ],
+            "note": "Feminine and invariable like libertà: the accented final a is the stress and it never moves. The adjective behind it is onesto."
+          },
+          {
+            "display": "giustizia",
+            "cue": "justice",
+            "tag": "free",
+            "forms": [
+              "giustizia"
+            ],
+            "note": "Justice, and also the courts as an institution. The adjective giusto sits in this module's second trigger row."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "credere in for a noun, credere che for a clause, credere di for an infinitive you own. Only the second takes the congiuntivo, and credo di is usually the cheaper sentence.",
+      "sound": "CRE-do een. va-LO-ree. o-nes-TA and jus-TEE-tsya, with the zi as ts.",
+      "variations": [
+        {
+          "display": "Credo in questi valori",
+          "cue": "I believe in these values",
+          "changed": "without the list after the colon"
+        },
+        {
+          "display": "Credo in questi valori: rispetto e onestà",
+          "cue": "I believe in these values: respect and honesty",
+          "changed": "a different pair listed"
+        },
+        {
+          "display": "Onestà e giustizia",
+          "cue": "Honesty and justice",
+          "changed": "the pair alone"
+        }
+      ],
+      "mistake": {
+        "display": "Credo questi valori",
+        "why": "Without in the verb becomes I believe these values, as if the values had told you something. Belief in a thing takes in; belief that something is so takes che."
+      },
+      "usage": "Saying what you stand for, when somebody has asked.",
+      "register": "neutral",
+      "mnemonic": "credere in points at a thing; credere che points at a claim."
+    },
+    {
+      "id": "L5-M5-S07",
+      "display": "L'importante è la felicità, non i soldi",
+      "cue": "What matters is happiness, not money",
+      "literal": "The-important is the happiness, not the money",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "l'importante è",
+            "cue": "what matters is",
+            "tag": "free",
+            "forms": [
+              "l'importante è"
+            ],
+            "note": "An adjective used as a noun, with the elision inside the token: l'importante is one word on the page and never folds back to importante."
+          },
+          {
+            "display": "felicità",
+            "cue": "happiness",
+            "tag": "free",
+            "forms": [
+              "felicità"
+            ],
+            "note": "Feminine, invariable, stressed on the final a. One of the -tà family with libertà and onestà, and all of them behave identically."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "L'importante is not a person or a thing — it is the important, used as a noun. English needs a whole clause, what matters, where Italian needs an article and an adjective.",
+      "sound": "lim-por-TAN-te eh: the elided article runs straight into the adjective. fe-lee-chee-TA, four syllables and the stress on the last.",
+      "variations": [
+        {
+          "display": "L'importante è la felicità",
+          "cue": "What matters is happiness",
+          "changed": "without the contrast"
+        },
+        {
+          "display": "L'importante è la salute",
+          "cue": "What matters is health",
+          "changed": "the frame on another noun"
+        },
+        {
+          "display": "Non i soldi",
+          "cue": "Not money",
+          "changed": "the contrast alone"
+        }
+      ],
+      "mistake": {
+        "display": "Importante è la felicità",
+        "why": "The article is what makes the adjective a noun. Without l' the sentence opens on a bare adjective and there is nothing for è to be about."
+      },
+      "usage": "Settling a disagreement about priorities, gently.",
+      "register": "neutral",
+      "mnemonic": "Put an article on an adjective and it becomes a thing."
+    },
+    {
+      "id": "L5-M5-S08",
+      "display": "Mia madre è educata, ma molto sensibile",
+      "cue": "My mother is polite, but very sensitive",
+      "literal": "My mother is polite, but very sensitive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "educato",
+            "cue": "polite, well brought up",
+            "tag": "interference",
+            "forms": [
+              "educato",
+              "educata"
+            ],
+            "note": "Well brought up, not educated. Somebody with three degrees and no manners is colto and maleducato, which is the trap in one phrase."
+          },
+          {
+            "display": "sensibile",
+            "cue": "sensitive",
+            "tag": "interference",
+            "forms": [
+              "sensibile"
+            ],
+            "note": "Easily moved or easily hurt, not sensible. Sensible in the English sense is ragionevole, and the two words describe different people."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Both words look like their English twin and neither means what the twin means. Calling somebody educato praises their manners, not their schooling.",
+      "sound": "e-du-CA-ta. sen-SEE-bee-le, four syllables and the stress on the second.",
+      "variations": [
+        {
+          "display": "È molto educata",
+          "cue": "She is very polite",
+          "changed": "the adjective alone, intensified"
+        },
+        {
+          "display": "Mio padre è educato",
+          "cue": "My father is polite",
+          "changed": "the masculine ending"
+        },
+        {
+          "display": "Educata ma sensibile",
+          "cue": "Polite but sensitive",
+          "changed": "the pair alone"
+        }
+      ],
+      "mistake": {
+        "display": "Mia madre è sensibile, cioè ragionevole",
+        "why": "sensibile is not sensible. The gloss in the second half is the English word leaking in; sensibile says she feels things keenly."
+      },
+      "usage": "Describing somebody, where the English cognate would mislead.",
+      "register": "neutral",
+      "mnemonic": "educato is manners; sensibile is feelings."
+    },
+    {
+      "id": "L5-M5-S09",
+      "display": "In fondo, quello che conta è la vita",
+      "cue": "Deep down, what counts is life",
+      "literal": "In bottom, that which counts is the life",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in fondo",
+            "cue": "deep down, after all",
+            "tag": "free",
+            "forms": [
+              "in fondo"
+            ],
+            "note": "Literally at the bottom. Opening a sentence it means when you get right down to it, and it softens whatever verdict follows."
+          },
+          {
+            "display": "quello che",
+            "cue": "what, the thing that",
+            "tag": "free",
+            "forms": [
+              "quello che"
+            ],
+            "note": "The everyday twin of ciò che and interchangeable with it here. quello alone is L2-M9's that one; the che turns it into a clause."
+          },
+          {
+            "display": "vita",
+            "cue": "life",
+            "tag": "free",
+            "forms": [
+              "vita",
+              "vite"
+            ],
+            "note": "Life, in the abstract and as somebody's own. It takes the article the abstract rule demands: la vita, never bare vita."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "in fondo is not deep inside a place. It is a discourse opener — when it all comes down to it — and reading it literally makes nonsense of the sentence.",
+      "sound": "een FON-do. KWEL-lo ke, with the double l held. VEE-ta.",
+      "variations": [
+        {
+          "display": "In fondo",
+          "cue": "After all, deep down",
+          "changed": "the opener alone"
+        },
+        {
+          "display": "Quello che conta è la vita",
+          "cue": "What counts is life",
+          "changed": "without the opener"
+        },
+        {
+          "display": "In fondo, la vita è bella",
+          "cue": "After all, life is beautiful",
+          "changed": "a verdict after the opener"
+        }
+      ],
+      "mistake": {
+        "display": "Nel fondo, quello che conta è la vita",
+        "why": "The phrase is frozen with in and no article. nel fondo would be at the bottom of an actual thing, which is not what the sentence is doing."
+      },
+      "usage": "Conceding a point, or summing one up, near the end of a conversation.",
+      "register": "neutral",
+      "mnemonic": "in fondo is where the argument settles."
+    },
+    {
+      "id": "L5-M5-S10",
+      "display": "La società parla di fede, di religione, di morte",
+      "cue": "Society talks about faith, about religion, about death",
+      "literal": "The society speaks of faith, of religion, of death",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "società",
+            "cue": "society",
+            "tag": "free",
+            "forms": [
+              "società"
+            ],
+            "note": "Feminine and invariable, another of the -tà family. It is also a company in the business sense, with no change of form."
+          },
+          {
+            "display": "fede",
+            "cue": "faith",
+            "tag": "free",
+            "forms": [
+              "fede"
+            ],
+            "note": "Faith, religious or otherwise, and also a wedding ring. Feminine, and it takes the article like every abstract noun here."
+          },
+          {
+            "display": "religione",
+            "cue": "religion",
+            "tag": "free",
+            "forms": [
+              "religione",
+              "religioni"
+            ],
+            "note": "Feminine despite the -e ending, like most nouns in -ione. The module names the topic and takes no position inside it."
+          },
+          {
+            "display": "morte",
+            "cue": "death",
+            "tag": "free",
+            "forms": [
+              "morte"
+            ],
+            "note": "Feminine: la morte. The abstract pair to la vita, and it takes the same obligatory article."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Four abstract nouns and four articles. English would drop every one of them — society talks about faith — and the dropped article is the most audible foreign habit at this level.",
+      "sound": "so-che-TA, three syllables and the stress on the last. FE-de, re-lee-JO-ne, MOR-te: all three sound the final e.",
+      "variations": [
+        {
+          "display": "La società parla di fede",
+          "cue": "Society talks about faith",
+          "changed": "one topic instead of three"
+        },
+        {
+          "display": "La gente parla di religione",
+          "cue": "People talk about religion",
+          "changed": "a different subject under the same rule"
+        },
+        {
+          "display": "La vita e la morte",
+          "cue": "Life and death",
+          "changed": "the pair alone, both with their articles"
+        }
+      ],
+      "mistake": {
+        "display": "Societa parla di fede, religione, morte",
+        "why": "The subject has lost its article and società has lost its accent. Both are the same habit: an English sentence carried across word for word."
+      },
+      "usage": "Naming what a conversation is about, before having it.",
+      "register": "neutral",
+      "mnemonic": "Every abstract noun brings its article to the table."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M5-C01",
+      "display": "La libertà è importante",
+      "cue": "Freedom is important"
+    },
+    {
+      "id": "L5-M5-C02",
+      "display": "Ciò che conta è il rispetto",
+      "cue": "What counts is respect"
+    },
+    {
+      "id": "L5-M5-C03",
+      "display": "È importante che ognuno abbia rispetto",
+      "cue": "It is important that everyone has respect"
+    },
+    {
+      "id": "L5-M5-C04",
+      "display": "È giusto che la gente abbia una casa",
+      "cue": "It is right that people have a home"
+    },
+    {
+      "id": "L5-M5-C05",
+      "display": "È normale che chiunque abbia paura",
+      "cue": "It is normal for anyone to be afraid"
+    },
+    {
+      "id": "L5-M5-C06",
+      "display": "Credo in questi valori",
+      "cue": "I believe in these values"
+    },
+    {
+      "id": "L5-M5-C07",
+      "display": "L'importante è la felicità",
+      "cue": "What matters is happiness"
+    },
+    {
+      "id": "L5-M5-C08",
+      "display": "Mia madre è educata, ma sensibile",
+      "cue": "My mother is polite, but sensitive"
+    },
+    {
+      "id": "L5-M5-C09",
+      "display": "In fondo, quello che conta è la vita",
+      "cue": "Deep down, what counts is life"
+    },
+    {
+      "id": "L5-M5-C10",
+      "display": "La società parla di fede",
+      "cue": "Society talks about faith"
+    },
+    {
+      "id": "L5-M5-C11",
+      "display": "La gente parla di religione e di morte",
+      "cue": "People talk about religion and death"
+    },
+    {
+      "id": "L5-M5-C12",
+      "display": "La vita, la morte, la fede",
+      "cue": "Life, death, faith"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

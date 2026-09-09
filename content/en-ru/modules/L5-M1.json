@@ -1,0 +1,577 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M1",
+  "title": "Sayings and idioms",
+  "job": "The figurative everyday, and when it is used",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["simple_present_imperfective", "simple_past"],
+    "allowedPatterns": [
+      "<clause> + , + i délo v shlyápe",
+      "Ne nádo délat' iz múkhi sloná",
+      "Ni púkha ni perá + ! + — + K chyórtu + !",
+      "U menyá rúki ne dokhódyat do + <N-genitive>",
+      "Ya sevódnya ne v svoyéy tarélke"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE FROZEN PHRASE, and the law is that it does not inflect. Four levels have taught you that Russian agrees — that a noun takes the case its slot asks for and an adjective follows it. An idiom is the one place that stops. ni púkha ni perá is a genitive that answers to no verb in your sentence; s lyógkim párom is an instrumental with nothing to govern it; ne v svoyéy tarélke keeps its own ne inside. None of them may be re-cased, re-ordered, made plural or negated from outside. Learn each one as a single long word that happens to be written with spaces."
+    },
+    {
+      "tag": "delta",
+      "text": "TWO OF THESE DEMAND AN ANSWER, and the answer is fixed. ni púkha ni perá is answered K chyórtu — to the devil — and by nothing else. s lyógkim párom is answered spasíbo, and by nothing else. This is why a course teaches idioms instead of listing them: an idiom with an obligatory reply is a two-turn item, and knowing only the first turn leaves you silent at the moment you are spoken to."
+    },
+    {
+      "tag": "interference",
+      "text": "AN ENGLISH IDIOM TRANSLATED WORD FOR WORD PRODUCES NOTHING IN RUSSIAN — not a wrong sentence, not a foreign-sounding one, just noise. There is no Russian gora out of a molehill and no Russian peas in a pod. The reverse is also true, which is why the literal line under each hero here reads as nonsense on purpose. And the sharpest case is the reply: answering ni púkha ni perá with spasíbo is grammatical, polite and wrong — thanking for the wish is held to cancel it, and it is the single most visible foreign move in this module."
+    },
+    {
+      "tag": "free",
+      "text": "THE PICTURE OFTEN CARRIES OVER, with the animals changed, and that is free money. délat' iz múkhi sloná is making a mountain out of a molehill with a fly and an elephant. kak dve kápli vodý is two peas in a pod with two drops of water. A learner who is shown the picture keeps the phrase, so read the literal line first and the cue second."
+    },
+    {
+      "tag": "delta",
+      "text": "REACH AND REGISTER decide half of when you may say these. rúki ne dokhódyat is what anybody says to anybody at any moment. s lyógkim párom belongs to exactly one situation — somebody has just come out of a bath or a banya — and said anywhere else it is a joke. And none of these is a poslovitsa: a full-sentence proverb like Tíshe yédesh', dál'she búdesh' is a different genre, quoted rather than used, and this course does not teach it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M1-S01",
+      "display": "Ya vsyó sdélal, i délo v shlyápe.",
+      "script": "Я всё сделал, и дело в шляпе.",
+      "cue": "I've done everything, and it's in the bag.",
+      "literal": "I everything did, and business in hat.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "délo v shlyápe",
+            "script": "дело в шляпе",
+            "cue": "it's in the bag",
+            "tag": "delta",
+            "forms": ["délo v shlyápe"],
+            "note": "Frozen: the business is in the hat — a job finished and safe. One lexeme written with spaces, never re-cased and never plural, whatever the sentence around it does."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "It reports a result, not a plan. Said before you have finished, it sounds like boasting; said after, it is exactly right.",
+      "sound": "The v leans forward onto the next word, so the last three come out as one breath: DYEH-la fshLYAH-pye.",
+      "variations": [
+        {
+          "display": "Oná vsyó sdélala, i délo v shlyápe.",
+          "script": "Она всё сделала, и дело в шляпе.",
+          "cue": "She's done everything, and it's in the bag.",
+          "changed": "the subject, so the past tense takes its feminine -a — the idiom itself does not move"
+        },
+        {
+          "display": "Vsyó sdélal — i délo v shlyápe.",
+          "script": "Всё сделал — и дело в шляпе.",
+          "cue": "All done — and it's in the bag.",
+          "changed": "the pronoun dropped, which is how it is actually said out loud"
+        }
+      ],
+      "mistake": {
+        "display": "Ya vsyó sdélal, i déla v shlyápakh.",
+        "script": "Я всё сделал, и дела в шляпах.",
+        "why": "Made plural because the jobs were plural. The idiom does not agree with anything — it is délo v shlyápe for one job, ten jobs or a whole year's work."
+      },
+      "usage": "Telling a friend the job is done and nothing can go wrong now.",
+      "register": "informal",
+      "mnemonic": "The answer was hidden in the hat — once it is in there, it is settled."
+    },
+    {
+      "id": "L5-M1-S02",
+      "display": "Ne nádo délat' iz múkhi sloná.",
+      "script": "Не надо делать из мухи слона.",
+      "cue": "Don't make a mountain out of a molehill.",
+      "literal": "Not necessary to-make out-of fly elephant.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "délat' iz múkhi sloná",
+            "script": "делать из мухи слона",
+            "cue": "to make a mountain out of a molehill",
+            "tag": "delta",
+            "forms": [
+              "délat' iz múkhi sloná",
+              "délayesh' iz múkhi sloná",
+              "délayet iz múkhi sloná"
+            ],
+            "note": "The one idiom here whose verb still conjugates: délat' becomes délayesh', délayet. The tail iz múkhi sloná never moves. Bare délat' is L2-M8's row."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "The English picture is a molehill and a mountain; the Russian one is a fly and an elephant. Carry the picture across, never the words.",
+      "sound": "múkhi opens with the rough kh of Scottish loch, and sloná puts its stress on the last syllable: slah-NAH.",
+      "variations": [
+        {
+          "display": "Ty vsegdá délayesh' iz múkhi sloná.",
+          "script": "Ты всегда делаешь из мухи слона.",
+          "cue": "You always make a mountain out of a molehill.",
+          "changed": "the verb conjugated to ty — the only part of this idiom that is allowed to move"
+        },
+        {
+          "display": "On délayet iz múkhi sloná.",
+          "script": "Он делает из мухи слона.",
+          "cue": "He makes a mountain out of a molehill.",
+          "changed": "third person, with the frozen tail untouched"
+        }
+      ],
+      "mistake": {
+        "display": "Ne nádo délat' iz mukh slonóv.",
+        "script": "Не надо делать из мух слонов.",
+        "why": "Both animals pluralised to match a lot of fuss. The count is fixed at one fly and one elephant however big the fuss is."
+      },
+      "usage": "Telling a friend, kindly, that the thing they are upset about is small.",
+      "register": "informal",
+      "mnemonic": "One fly in, one elephant out — the animals never change number."
+    },
+    {
+      "id": "L5-M1-S03",
+      "display": "U menyá rúki ne dokhódyat do rabóty.",
+      "script": "У меня руки не доходят до работы.",
+      "cue": "I never get round to the work.",
+      "literal": "At me hands not reach up-to work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rúki ne dokhódyat",
+            "script": "руки не доходят",
+            "cue": "I never get round to it",
+            "tag": "delta",
+            "forms": ["rúki ne dokhódyat"],
+            "note": "Literally the hands do not reach. Always plural rúki, always with its own ne; what is not reached follows do in the genitive. Bare rúki is L3-M7's body row."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "It is an excuse about time, not about ability. It says the day ran out, never that the job was too hard.",
+      "sound": "dokhódyat carries the same rough kh as múkhi, and the final -yat is a light dyet with no stress on it.",
+      "variations": [
+        {
+          "display": "Rúki ne dokhódyat do rabóty.",
+          "script": "Руки не доходят до работы.",
+          "cue": "I never get round to the work.",
+          "changed": "u menyá dropped — with no owner named it is understood as the speaker's"
+        },
+        {
+          "display": "Sevódnya u menyá rúki ne dokhódyat do rabóty.",
+          "script": "Сегодня у меня руки не доходят до работы.",
+          "cue": "Today I'm not getting round to the work.",
+          "changed": "sevódnya in front, narrowing an always to a today"
+        }
+      ],
+      "mistake": {
+        "display": "U menyá ruká ne dokhódit do rabóty.",
+        "script": "У меня рука не доходит до работы.",
+        "why": "Singularised, because English says my hand. The idiom is fixed in the plural, and one hand not reaching is a sentence about an arm."
+      },
+      "usage": "Apologising for something you keep meaning to do and never do.",
+      "register": "informal",
+      "mnemonic": "Two hands, both busy, neither of them reaching that far."
+    },
+    {
+      "id": "L5-M1-S04",
+      "display": "U menyá vsegdá rúki ne dokhódyat do písem.",
+      "script": "У меня всегда руки не доходят до писем.",
+      "cue": "I never get round to my letters.",
+      "literal": "At me always hands not reach up-to letters.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "písem",
+            "script": "писем",
+            "cue": "letters",
+            "tag": "free",
+            "forms": ["písem"],
+            "note": "Genitive plural of pis'mó, first taught in L1-M5. do asks for the genitive, and this is the shape it wants: do písem, as far as the letters."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "do takes the genitive here as it always has. The noun after it is never the dictionary form, so pis'mó cannot stand in this slot.",
+      "sound": "písem is two syllables with the stress on the first, and the e in the ending is a light ye: PEE-syem.",
+      "variations": [
+        {
+          "display": "Rúki ne dokhódyat do písem.",
+          "script": "Руки не доходят до писем.",
+          "cue": "I never get round to the letters.",
+          "changed": "the owner dropped, leaving the bare complaint"
+        },
+        {
+          "display": "U menyá rúki ne dokhódyat do písem i do rabóty.",
+          "script": "У меня руки не доходят до писем и до работы.",
+          "cue": "I get round to neither the letters nor the work.",
+          "changed": "two things not reached, joined with i and each keeping its own do"
+        }
+      ],
+      "mistake": {
+        "display": "U menyá rúki ne dokhódyat do pis'mó.",
+        "script": "У меня руки не доходят до письмо.",
+        "why": "The dictionary form left standing after do. The preposition governs the genitive, so it has to be do písem — or do pis'má for a single letter."
+      },
+      "usage": "Explaining to a friend why nobody has heard from you.",
+      "register": "informal",
+      "mnemonic": "do is a reach towards something, and what you reach towards is always genitive."
+    },
+    {
+      "id": "L5-M1-S05",
+      "display": "Ya sevódnya ne v svoyéy tarélke.",
+      "script": "Я сегодня не в своей тарелке.",
+      "cue": "I'm not myself today.",
+      "literal": "I today not in own plate.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ne v svoyéy tarélke",
+            "script": "не в своей тарелке",
+            "cue": "not myself, out of sorts",
+            "tag": "delta",
+            "forms": ["ne v svoyéy tarélke"],
+            "note": "Not in one's own plate — off form, not oneself today. The ne lives inside the idiom, so it is never dropped and never moved out in front of the verb."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "It reports a mood, not an illness and not a place. If you are actually ill, this is not the sentence.",
+      "sound": "svoyéy is two syllables, svah-YAY, and tarélke ends in a light -kye rather than a hard -ke.",
+      "variations": [
+        {
+          "display": "Oná sevódnya ne v svoyéy tarélke.",
+          "script": "Она сегодня не в своей тарелке.",
+          "cue": "She's not herself today.",
+          "changed": "the subject only — svoyéy already means whosever the sentence is, so nothing inside the idiom changes"
+        },
+        {
+          "display": "Ya ne v svoyéy tarélke.",
+          "script": "Я не в своей тарелке.",
+          "cue": "I'm not myself.",
+          "changed": "the day dropped, leaving it open-ended"
+        }
+      ],
+      "mistake": {
+        "display": "Ya sevódnya ne v moyéy tarélke.",
+        "script": "Я сегодня не в моей тарелке.",
+        "why": "svoyéy swapped for moyéy because English says my. The idiom is frozen with svoyéy, and it stays svoyéy whoever the subject is."
+      },
+      "usage": "Warning a friend, gently, that you are poor company today.",
+      "register": "informal",
+      "mnemonic": "Everyone has their own plate; today you are eating off somebody else's."
+    },
+    {
+      "id": "L5-M1-S06",
+      "display": "Oná i yeyó sestrá kak dve kápli vodý.",
+      "script": "Она и её сестра как две капли воды.",
+      "cue": "She and her sister are as alike as two peas in a pod.",
+      "literal": "She and her sister like two drops of-water.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kak dve kápli vodý",
+            "script": "как две капли воды",
+            "cue": "as alike as two peas in a pod",
+            "tag": "delta",
+            "forms": ["kak dve kápli vodý"],
+            "note": "Like two drops of water — the English two peas in a pod with the picture changed. Frozen at two drops: never three, never kápli vodá."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "It is about looking alike, not about thinking alike. Two people who agree about everything are not kak dve kápli vodý.",
+      "sound": "vodý takes its stress on the last syllable, vah-DYH, which is not where L2-M3's vodá put it.",
+      "variations": [
+        {
+          "display": "Moyá sestrá i ya kak dve kápli vodý.",
+          "script": "Моя сестра и я как две капли воды.",
+          "cue": "My sister and I are as alike as two peas in a pod.",
+          "changed": "the pair being compared — the idiom is untouched"
+        },
+        {
+          "display": "Mat' i sestrá kak dve kápli vodý.",
+          "script": "Мать и сестра как две капли воды.",
+          "cue": "Mother and sister are as alike as two peas in a pod.",
+          "changed": "two nouns instead of a pronoun and a noun, with no verb needed between them"
+        }
+      ],
+      "mistake": {
+        "display": "Oná i yeyó sestrá kak tri kápli vodý.",
+        "script": "Она и её сестра как три капли воды.",
+        "why": "Three drops for three sisters. The number is part of the phrase and does not count the people — it stays dve however many are alike."
+      },
+      "usage": "Remarking on a family resemblance you have just noticed.",
+      "register": "neutral",
+      "mnemonic": "Two drops of water, and nobody can say which one is which."
+    },
+    {
+      "id": "L5-M1-S07",
+      "display": "Závtra u menyá ekzámen, i ya ne v svoyéy tarélke.",
+      "script": "Завтра у меня экзамен, и я не в своей тарелке.",
+      "cue": "I have an exam tomorrow, and I'm not myself.",
+      "literal": "Tomorrow at me exam, and I not in own plate.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ekzámen",
+            "script": "экзамен",
+            "cue": "exam",
+            "tag": "free",
+            "forms": ["ekzámen"],
+            "note": "An exam. Masculine, stressed in the middle, and the thing ni púkha ni perá is wished at more often than anything else in Russian."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "u menyá ekzámen is how Russian says I have an exam — no verb at all, exactly as L1-M8 taught it.",
+      "sound": "The opening ek- is a plain e as in bed, and the stress lands on the middle: ek-ZAH-myen.",
+      "variations": [
+        {
+          "display": "Závtra u menyá ekzámen.",
+          "script": "Завтра у меня экзамен.",
+          "cue": "I have an exam tomorrow.",
+          "changed": "the second clause dropped, leaving the bare fact"
+        },
+        {
+          "display": "Sevódnya u menyá ekzámen, i ya ne v svoyéy tarélke.",
+          "script": "Сегодня у меня экзамен, и я не в своей тарелке.",
+          "cue": "I have an exam today, and I'm not myself.",
+          "changed": "the day, and nothing else"
+        }
+      ],
+      "mistake": {
+        "display": "Závtra ya iméyu ekzámen, i ya ne v svoyéy tarélke.",
+        "script": "Завтра я имею экзамен, и я не в своей тарелке.",
+        "why": "An English have dragged into Russian. Possession is u menyá plus the thing; a verb here reads as a translation, not as speech."
+      },
+      "usage": "Telling a friend why you are on edge, and inviting the wish that answers it.",
+      "register": "informal",
+      "mnemonic": "The exam is tomorrow, so the plate is somebody else's today."
+    },
+    {
+      "id": "L5-M1-S08",
+      "display": "Ni púkha ni perá! — K chyórtu!",
+      "script": "Ни пуха ни пера! — К чёрту!",
+      "cue": "Good luck! — Thanks!",
+      "literal": "Neither fluff nor feather! — To devil!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ni púkha ni perá",
+            "script": "ни пуха ни пера",
+            "cue": "good luck",
+            "tag": "delta",
+            "forms": ["ni púkha ni perá"],
+            "note": "Neither fluff nor feather — a hunter's wish for a bad bag, said to trick the luck. Said BEFORE the trial, never after, and it governs nothing in your sentence."
+          },
+          {
+            "display": "k chyórtu",
+            "script": "к чёрту",
+            "cue": "to the devil",
+            "tag": "delta",
+            "forms": ["k chyórtu"],
+            "note": "The one legal reply to ni púkha ni perá, and it is not rude. Bare k is L3-M7's; here it is welded to chyórtu and the pair is never split."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "Answering spasíbo is the visible foreign move. Thanking for the wish is held to cancel it, so the reply that sounds rudest is the polite one.",
+      "sound": "chyórtu is the yó of L1's yólka — CHOR-too — and the k in front of it is a single consonant leaning on the word.",
+      "variations": [
+        {
+          "display": "Ni púkha ni perá!",
+          "script": "Ни пуха ни пера!",
+          "cue": "Good luck!",
+          "changed": "only the wish, when the answer will come a beat later"
+        },
+        {
+          "display": "Závtra ekzámen. Ni púkha ni perá!",
+          "script": "Завтра экзамен. Ни пуха ни пера!",
+          "cue": "The exam's tomorrow. Good luck!",
+          "changed": "the reason said out loud before the wish"
+        }
+      ],
+      "mistake": {
+        "display": "Ni púkha ni perá! — Spasíbo!",
+        "script": "Ни пуха ни пера! — Спасибо!",
+        "why": "The polite English answer, and the one answer Russian does not allow here. Thanking accepts the luck and is said to undo it; the reply is K chyórtu."
+      },
+      "usage": "Wishing a friend luck the night before an exam, an interview or a first day.",
+      "register": "informal",
+      "mnemonic": "Wish them nothing, and they are sent to the devil for it — that is how the luck is fooled."
+    },
+    {
+      "id": "L5-M1-S09",
+      "display": "S lyógkim párom! — Spasíbo!",
+      "script": "С лёгким паром! — Спасибо!",
+      "cue": "Enjoy that just-bathed feeling! — Thank you!",
+      "literal": "With light steam! — Thanks!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "s lyógkim párom",
+            "script": "с лёгким паром",
+            "cue": "said to someone fresh from a bath",
+            "tag": "delta",
+            "forms": ["s lyógkim párom"],
+            "note": "With light steam — said to somebody who has just bathed, and only then. An instrumental with no verb over it, and the reply is spasíbo and nothing else."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "This one has a single situation. Said to somebody who has not just bathed, it is a joke, and everybody hears it as one.",
+      "sound": "lyógkim carries the yó, and the g in it is said as a k: LYOKH-kyeem, párom stressed on the first syllable.",
+      "variations": [
+        {
+          "display": "S lyógkim párom!",
+          "script": "С лёгким паром!",
+          "cue": "Enjoy that just-bathed feeling!",
+          "changed": "the wish on its own, before the answer comes"
+        },
+        {
+          "display": "Ty dóma? S lyógkim párom!",
+          "script": "Ты дома? С лёгким паром!",
+          "cue": "You're home? Enjoy that just-bathed feeling!",
+          "changed": "a question in front of it, the way it lands in a real doorway"
+        }
+      ],
+      "mistake": {
+        "display": "S lyógkim párom! — K chyórtu!",
+        "script": "С лёгким паром! — К чёрту!",
+        "why": "The right reply to the wrong wish. K chyórtu answers ni púkha ni perá only; this pair is answered spasíbo."
+      },
+      "usage": "Greeting somebody stepping out of the bath or back from the banya.",
+      "register": "informal",
+      "mnemonic": "Light steam, light thanks — this is the pair where spasíbo is correct."
+    },
+    {
+      "id": "L5-M1-S10",
+      "display": "Ty iz vánnoy? S lyógkim párom!",
+      "script": "Ты из ванной? С лёгким паром!",
+      "cue": "Out of the bath? Enjoy that fresh feeling!",
+      "literal": "You out-of bathroom? With light steam!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vánnoy",
+            "script": "ванной",
+            "cue": "the bathroom",
+            "tag": "free",
+            "forms": ["vánnoy"],
+            "note": "The bathroom in the shape iz asks for: iz vánnoy, out of the bathroom. It is an adjective by origin, which is why it ends like one rather than like a noun."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "vánnoy is the room; the wish is about the wash. Somebody who went in to find a towel does not get greeted with it.",
+      "sound": "The double n is held a moment longer than a single one, VAHN-nay, and the ending is a light -ay.",
+      "variations": [
+        {
+          "display": "Ty iz vánnoy?",
+          "script": "Ты из ванной?",
+          "cue": "Are you out of the bath?",
+          "changed": "the question alone, with the wish held back"
+        },
+        {
+          "display": "Ya iz vánnoy.",
+          "script": "Я из ванной.",
+          "cue": "I'm out of the bath.",
+          "changed": "the answer from the other side of the door"
+        }
+      ],
+      "mistake": {
+        "display": "Ty iz vánnaya? S lyógkim párom!",
+        "script": "Ты из ванная? С лёгким паром!",
+        "why": "The dictionary form left standing after iz. iz governs the genitive, and for this adjective-shaped noun that is vánnoy."
+      },
+      "usage": "Meeting somebody in the hall as they come out of the bathroom.",
+      "register": "informal",
+      "mnemonic": "Out of the room, into the wish — iz vánnoy, then s lyógkim párom."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M1-C01",
+      "display": "Oná vsyó sdélala, i délo v shlyápe.",
+      "script": "Она всё сделала, и дело в шляпе.",
+      "cue": "She's done everything, and it's in the bag."
+    },
+    {
+      "id": "L5-M1-C02",
+      "display": "Ty vsegdá délayesh' iz múkhi sloná.",
+      "script": "Ты всегда делаешь из мухи слона.",
+      "cue": "You always make a mountain out of a molehill."
+    },
+    {
+      "id": "L5-M1-C03",
+      "display": "U menyá rúki ne dokhódyat do písem.",
+      "script": "У меня руки не доходят до писем.",
+      "cue": "I never get round to my letters."
+    },
+    {
+      "id": "L5-M1-C04",
+      "display": "Sevódnya ya ne v svoyéy tarélke.",
+      "script": "Сегодня я не в своей тарелке.",
+      "cue": "I'm not myself today."
+    },
+    {
+      "id": "L5-M1-C05",
+      "display": "Moyá sestrá i ya kak dve kápli vodý.",
+      "script": "Моя сестра и я как две капли воды.",
+      "cue": "My sister and I are as alike as two peas in a pod."
+    },
+    {
+      "id": "L5-M1-C06",
+      "display": "Závtra ekzámen. Ni púkha ni perá!",
+      "script": "Завтра экзамен. Ни пуха ни пера!",
+      "cue": "The exam's tomorrow. Good luck!"
+    },
+    {
+      "id": "L5-M1-C07",
+      "display": "Ty dóma? S lyógkim párom!",
+      "script": "Ты дома? С лёгким паром!",
+      "cue": "You're home? Enjoy that just-bathed feeling!"
+    },
+    {
+      "id": "L5-M1-C08",
+      "display": "U menyá rúki ne dokhódyat do rabóty, potomú chto ya óchen' ustál.",
+      "script": "У меня руки не доходят до работы, потому что я очень устал.",
+      "cue": "I'm not getting round to the work, because I'm very tired."
+    },
+    {
+      "id": "L5-M1-C09",
+      "display": "On chásto délayet iz múkhi sloná.",
+      "script": "Он часто делает из мухи слона.",
+      "cue": "He often makes a mountain out of a molehill."
+    },
+    {
+      "id": "L5-M1-C10",
+      "display": "Ya sdélal vsyó, i délo v shlyápe.",
+      "script": "Я сделал всё, и дело в шляпе.",
+      "cue": "I've done it all, and it's in the bag."
+    },
+    {
+      "id": "L5-M1-C11",
+      "display": "Mat' i sestrá kak dve kápli vodý.",
+      "script": "Мать и сестра как две капли воды.",
+      "cue": "Mother and sister are as alike as two peas in a pod."
+    },
+    {
+      "id": "L5-M1-C12",
+      "display": "Ya ne v svoyéy tarélke, potomú chto závtra ekzámen.",
+      "script": "Я не в своей тарелке, потому что завтра экзамен.",
+      "cue": "I'm not myself, because the exam is tomorrow."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

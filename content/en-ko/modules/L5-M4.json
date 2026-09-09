@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M4",
+  "title": "Formal occasions",
+  "job": "Toasts, speeches, condolences, ceremonies",
+  "prerequisites": [
+    "L5-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 16,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "chukhahamnida",
+      "geonbae! + N-eul/reul + wihayeo",
+      "samga + goin-ui + myeongbog-eul + bimnida",
+      "saehae + bok + mani + badeuseyo",
+      "yeoreobun, + clause-(seu)pnida"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE FORMULA IS THE WHOLE OF IT. Samga goin-ui myeongbog-eul bimnida is said at every Korean funeral, word for word. A condolence a speaker builds themselves is wrong even when every word in it is right."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH CONDOLENCE IS IMPROVISED AND THE VARIATION IS THE SINCERITY. Korean condolence is recited, and the sincerity is in saying it correctly, once, and briefly. An English-shaped improvisation reads as a stranger talking too much."
+    },
+    {
+      "tag": "interference",
+      "text": "AN ENGLISH TOAST IS A SPEECH AND A KOREAN TOAST IS A WORD. Geonbae, or a noun plus wihayeo, and then everybody drinks. Anything longer has stopped being a toast and become a speech."
+    },
+    {
+      "tag": "delta",
+      "text": "-(SEU)PNIDA IS PRODUCED HERE, NOT MERELY HEARD. L4-M7 taught the deferential register as something spoken at you, at the station and on the intercom. On these occasions you say it yourself, and the grammar is L4-M7's unchanged."
+    },
+    {
+      "tag": "free",
+      "text": "N-EUL/REUL WIHAYEO IS THE ONE PRODUCTIVE FRAME THE LEVEL CAN AFFORD. For the sake of: the noun takes its ordinary object particle and wihayeo follows it. It is the toast's own shape and the spine of any short occasion speech."
+    },
+    {
+      "tag": "delta",
+      "text": "CHUKHAHAMNIDA DOES NOT STRETCH THE WAY CONGRATULATIONS DOES. It wants its occasion named in front of it — a marriage, a birthday, a graduation — and standing alone it is thinner in Korean than the English word is."
+    },
+    {
+      "tag": "free",
+      "text": "JUSIPSIO IS L1-M3'S JUSEYO IN THE DEFERENTIAL REGISTER. juseyo asks a person; jusipsio asks a room. Nothing else about the request changes, and the verb in front of it is unaffected."
+    },
+    {
+      "tag": "interference",
+      "text": "THE NEW YEAR GREETING IS RECEIVED, NOT WISHED. Saehae bok mani badeuseyo says receive much luck, where English wishes it to you. The verb belongs to the listener — and mani and badeuseyo are already L2-M5's, so the greeting costs two words."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M4-S01",
+      "display": "Gyeolhon-eul chukhahamnida.",
+      "script": "결혼을 축하합니다.",
+      "cue": "Congratulations on your marriage.",
+      "literal": "marriage-OBJ congratulate-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gyeolhon",
+            "script": "결혼",
+            "cue": "marriage, a wedding",
+            "tag": "free",
+            "forms": [
+              "gyeolhon",
+              "gyeolhon-eul",
+              "gyeolhon-i"
+            ],
+            "note": "The occasion, and the noun chukhahamnida wants in front of it. It covers both the ceremony and the state that follows."
+          },
+          {
+            "display": "chukhahamnida",
+            "script": "축하합니다",
+            "cue": "congratulations (deferential)",
+            "tag": "delta",
+            "forms": [
+              "chukhahamnida",
+              "chukhahaeyo",
+              "chukha"
+            ],
+            "note": "The congratulation, in the register an occasion asks for. Name the occasion in front of it: on its own it is thinner than the English word."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "English congratulations can stand alone at anything at all. chukhahamnida wants the occasion said first, and a bare one at a wedding sounds as though you had forgotten why you came.",
+      "sound": "GYEO-ro-neul CHU-ka-ham-ni-da.",
+      "variations": [
+        {
+          "display": "Saengil chukhahamnida.",
+          "script": "생일 축하합니다.",
+          "cue": "Happy birthday.",
+          "changed": "a different occasion, and this one is fixed without the particle"
+        },
+        {
+          "display": "Gyeolhon-eul chukhahaeyo.",
+          "script": "결혼을 축하해요.",
+          "cue": "Congratulations on your marriage.",
+          "changed": "the -yo register, for a friend rather than a room"
+        }
+      ],
+      "mistake": {
+        "display": "Chukhahamnida.",
+        "script": "축하합니다.",
+        "why": "Grammatical, and thin. Without gyeolhon-eul in front of it the congratulation names nothing, and at a wedding that is what it sounds like."
+      },
+      "usage": "At the reception desk of a wedding hall, to the family.",
+      "register": "formal",
+      "mnemonic": "Name the occasion, then congratulate it."
+    },
+    {
+      "id": "L5-M4-S02",
+      "display": "Geonbae! Gyeolhon-eul wihayeo!",
+      "script": "건배! 결혼을 위하여!",
+      "cue": "Cheers! To the marriage!",
+      "literal": "cheers! marriage-OBJ for-the-sake-of!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "geonbae",
+            "script": "건배",
+            "cue": "cheers, a toast",
+            "tag": "free",
+            "forms": [
+              "geonbae",
+              "geonbae-reul"
+            ],
+            "note": "The whole toast in one word. It is shouted, everybody answers it, and then everybody drinks — there is no speech attached."
+          },
+          {
+            "display": "wihayeo",
+            "script": "위하여",
+            "cue": "for, for the sake of",
+            "tag": "free",
+            "forms": [
+              "wihayeo"
+            ],
+            "note": "Follows a noun carrying -eul or -reul. It is the toast's own shape, and the frame any short occasion speech is built on."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "An English toast is a paragraph and this is the whole of the Korean one. Adding sentences to it does not make it warmer; it makes it a speech nobody asked for.",
+      "sound": "GEON-bae! GYEO-ro-neul WI-ha-yeo!",
+      "variations": [
+        {
+          "display": "Geonbae!",
+          "script": "건배!",
+          "cue": "Cheers!",
+          "changed": "the toast with nothing named"
+        },
+        {
+          "display": "Uri-reul wihayeo!",
+          "script": "우리를 위하여!",
+          "cue": "To us!",
+          "changed": "a pronoun in the frame instead of the occasion"
+        }
+      ],
+      "mistake": {
+        "display": "Geonbae! Gyeolhon wihayeo!",
+        "script": "건배! 결혼 위하여!",
+        "why": "wihayeo needs the object particle on the noun in front of it. Without -eul the frame has nothing to hold, and the toast comes out as two nouns side by side."
+      },
+      "usage": "Glass raised, at the table, once.",
+      "register": "formal",
+      "mnemonic": "Noun plus -eul, then wihayeo, then drink."
+    },
+    {
+      "id": "L5-M4-S03",
+      "display": "Saehae bok mani badeuseyo.",
+      "script": "새해 복 많이 받으세요.",
+      "cue": "Happy New Year.",
+      "literal": "new-year luck much receive-HON",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saehae",
+            "script": "새해",
+            "cue": "the new year",
+            "tag": "free",
+            "forms": [
+              "saehae"
+            ],
+            "note": "The turn of the year, said at both new years Korea keeps. It opens the greeting and never moves from the front of it."
+          },
+          {
+            "display": "bok",
+            "script": "복",
+            "cue": "luck, blessing, good fortune",
+            "tag": "free",
+            "forms": [
+              "bok",
+              "bok-eul"
+            ],
+            "note": "The luck the listener is told to receive. In this greeting it carries no particle at all, which is part of what makes the phrase fixed."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "English wishes the year to you; Korean tells you to receive the luck. The verb is the listener's, which is why it is badeuseyo and never a form of to be.",
+      "sound": "SAE-hae BOK MA-ni BA-deu-se-yo.",
+      "variations": [
+        {
+          "display": "Bok mani badeuseyo.",
+          "script": "복 많이 받으세요.",
+          "cue": "All the best.",
+          "changed": "the greeting with the year left off, usable any time"
+        },
+        {
+          "display": "Saehae bok mani badeuseyo. Gamsahamnida.",
+          "script": "새해 복 많이 받으세요. 감사합니다.",
+          "cue": "Happy New Year. Thank you.",
+          "changed": "the greeting with its ordinary answer beside it"
+        }
+      ],
+      "mistake": {
+        "display": "Saehae-e bok-i manseumnida.",
+        "script": "새해에 복이 많습니다.",
+        "why": "This reports that there is a lot of luck in the new year. The greeting is an instruction to the listener to receive it, and it is said whole or not at all."
+      },
+      "usage": "The first thing said to anybody, for the whole first week of the year.",
+      "register": "formal",
+      "mnemonic": "Receive the luck — do not wish it."
+    },
+    {
+      "id": "L5-M4-S04",
+      "display": "Samga goin-ui myeongbog-eul bimnida.",
+      "script": "삼가 고인의 명복을 빕니다.",
+      "cue": "My sincere condolences.",
+      "literal": "respectfully deceased-of afterlife-peace-OBJ pray-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "samga",
+            "script": "삼가",
+            "cue": "respectfully, humbly",
+            "tag": "free",
+            "forms": [
+              "samga"
+            ],
+            "note": "Opens the condolence and appears almost nowhere else. It is not an adverb a learner can move or reuse; it belongs to this sentence."
+          },
+          {
+            "display": "goin",
+            "script": "고인",
+            "cue": "the deceased",
+            "tag": "free",
+            "forms": [
+              "goin",
+              "goin-ui"
+            ],
+            "note": "The person who has died, named with distance rather than by name. -ui is the of that ties them to what follows."
+          },
+          {
+            "display": "myeongbok",
+            "script": "명복",
+            "cue": "peace in the next world",
+            "tag": "free",
+            "forms": [
+              "myeongbok",
+              "myeongbog-eul"
+            ],
+            "note": "What the sentence prays for. It exists in this formula and hardly anywhere else, which is why the phrase is learned whole."
+          },
+          {
+            "display": "bimnida",
+            "script": "빕니다",
+            "cue": "I pray, I wish",
+            "tag": "free",
+            "forms": [
+              "bimnida"
+            ],
+            "note": "The deferential form of to pray. It closes the condolence and is not a verb to build other sentences with."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "There is nothing to improvise here. The English instinct is to add — I cannot imagine, tell me if I can help — and every addition makes it worse. Say it once, briefly, and stop.",
+      "sound": "SAM-ga GO-i-nui MYEONG-bo-geul BIM-ni-da.",
+      "variations": [
+        {
+          "display": "Goin-ui myeongbog-eul bimnida.",
+          "script": "고인의 명복을 빕니다.",
+          "cue": "My condolences.",
+          "changed": "samga dropped, which is the only piece that ever is"
+        },
+        {
+          "display": "Samga goin-ui myeongbog-eul bimnida. Sangsim-i keusigetseumnida.",
+          "script": "삼가 고인의 명복을 빕니다. 상심이 크시겠습니다.",
+          "cue": "My sincere condolences. This must be a great grief.",
+          "changed": "the second formula added, which is as long as it goes"
+        }
+      ],
+      "mistake": {
+        "display": "Jeongmal joesonghamnida. Jeo-neun jeongmal seulpeoyo.",
+        "script": "정말 죄송합니다. 저는 정말 슬퍼요.",
+        "why": "Both sentences are correct Korean and neither belongs at a funeral. An improvised condolence puts the speaker's feeling in the room; the formula keeps it out, and that is the point of having one."
+      },
+      "usage": "Said once, at the door of the funeral hall, and then not repeated.",
+      "register": "formal",
+      "mnemonic": "Four words, in that order, every time."
+    },
+    {
+      "id": "L5-M4-S05",
+      "display": "Sangsim-i keusigetseumnida.",
+      "script": "상심이 크시겠습니다.",
+      "cue": "This must be a great grief for you.",
+      "literal": "grief-SUBJ be-big-HON-CONJECTURE-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sangsim",
+            "script": "상심",
+            "cue": "grief, a broken heart",
+            "tag": "free",
+            "forms": [
+              "sangsim",
+              "sangsim-i"
+            ],
+            "note": "The bereaved person's grief, named rather than asked about. It is the subject of the sentence, so the speaker never says I about it."
+          },
+          {
+            "display": "keusigetseumnida",
+            "script": "크시겠습니다",
+            "cue": "must be great (of another's feeling)",
+            "tag": "delta",
+            "forms": [
+              "keusigetseumnida"
+            ],
+            "note": "Big, with the honorific for the listener and the ending that guesses rather than claims. Learned inside this formula, not as a verb to reuse."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "Korean guesses at another person's feeling and never asserts it. The ending is what does that, and dropping it turns a condolence into a claim about somebody else's heart.",
+      "sound": "SANG-si-mi KEU-si-get-sseum-ni-da.",
+      "variations": [
+        {
+          "display": "Samga goin-ui myeongbog-eul bimnida.",
+          "script": "삼가 고인의 명복을 빕니다.",
+          "cue": "My sincere condolences.",
+          "changed": "the other formula, said to the same person on the same day"
+        },
+        {
+          "display": "Sangsim-i keusigetseumnida. Gamsahamnida.",
+          "script": "상심이 크시겠습니다. 감사합니다.",
+          "cue": "This must be a great grief. Thank you.",
+          "changed": "the exchange as it actually runs, both halves short"
+        }
+      ],
+      "mistake": {
+        "display": "Sangsim-i keoyo.",
+        "script": "상심이 커요.",
+        "why": "The register has collapsed and the guess has become a statement. Said to a bereaved person it tells them how they feel, in the voice you would use about the weather."
+      },
+      "usage": "To the family, standing, immediately after the bow.",
+      "register": "formal",
+      "mnemonic": "Guess at the grief; never announce it."
+    },
+    {
+      "id": "L5-M4-S06",
+      "display": "Jangnyesik-eseo-neun geureoke malhamnida.",
+      "script": "장례식에서는 그렇게 말합니다.",
+      "cue": "At a funeral that is what you say.",
+      "literal": "funeral-at-TOPIC like-that speak-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jangnyesik",
+            "script": "장례식",
+            "cue": "a funeral",
+            "tag": "free",
+            "forms": [
+              "jangnyesik",
+              "jangnyesik-eseo-neun",
+              "jangnyesik-e"
+            ],
+            "note": "The occasion that owns the condolence. -eseo-neun sets it against every other occasion, which is exactly what this sentence is doing."
+          },
+          {
+            "display": "malhamnida",
+            "script": "말합니다",
+            "cue": "one says, I say (deferential)",
+            "tag": "free",
+            "forms": [
+              "malhamnida"
+            ],
+            "note": "L5-M1's malhaeyo in the register this module produces. Same verb, same meaning; only the ending has moved."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "geureoke here points at the whole recited formula, not at a manner. The sentence is not about how to sound; it is about which words to use.",
+      "sound": "JANG-nye-si-ge-seo-neun GEU-reo-ke MAL-ham-ni-da.",
+      "variations": [
+        {
+          "display": "Jangnyesik-e gayo.",
+          "script": "장례식에 가요.",
+          "cue": "I am going to a funeral.",
+          "changed": "the plain locative, and the occasion as a destination"
+        },
+        {
+          "display": "Jangnyesik-eseo-neun geureoke malhaeyo.",
+          "script": "장례식에서는 그렇게 말해요.",
+          "cue": "At a funeral that is what you say.",
+          "changed": "the -yo register, explaining it to a friend rather than in the room"
+        }
+      ],
+      "mistake": {
+        "display": "Jangnyesik-eseo-neun geureoke malhaeyoseumnida.",
+        "script": "장례식에서는 그렇게 말해요습니다.",
+        "why": "Two endings on one verb. -(seu)pnida attaches to the stem, so a finished -yo form cannot carry it: the choice is malhaeyo or malhamnida, never both."
+      },
+      "usage": "Telling somebody who has never been what will be expected of them.",
+      "register": "formal",
+      "mnemonic": "Same verb, deferential ending."
+    },
+    {
+      "id": "L5-M4-S07",
+      "display": "Sonnim yeoreobun, jamsi gidaryeo jusipsio.",
+      "script": "손님 여러분, 잠시 기다려 주십시오.",
+      "cue": "Guests, please wait a moment.",
+      "literal": "guest everyone, a-moment wait give-DEF-REQUEST",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sonnim",
+            "script": "손님",
+            "cue": "a guest",
+            "tag": "free",
+            "forms": [
+              "sonnim",
+              "sonnim-deul"
+            ],
+            "note": "Everybody who came rather than everybody who is hosting. In front of yeoreobun it is how a host opens an address to the room."
+          },
+          {
+            "display": "gidaryeo",
+            "script": "기다려",
+            "cue": "wait (and then)",
+            "tag": "free",
+            "forms": [
+              "gidaryeo"
+            ],
+            "note": "The stem shape that jusipsio and juseyo both attach to. On its own it is not a finished sentence and never stands alone."
+          },
+          {
+            "display": "jusipsio",
+            "script": "주십시오",
+            "cue": "please (deferential request)",
+            "tag": "delta",
+            "forms": [
+              "jusipsio"
+            ],
+            "note": "L1-M3's juseyo raised to the register a room asks for. It asks a hall; juseyo asks a person, and nothing else about the request changes."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "This is a host's line, not an announcement. L4-M7 owns the station and the intercom; here the same register is being spoken by somebody standing in the room.",
+      "sound": "SON-nim YEO-reo-bun, JAM-si GI-da-ryeo JU-sip-si-o.",
+      "variations": [
+        {
+          "display": "Jamsi gidaryeo jusipsio.",
+          "script": "잠시 기다려 주십시오.",
+          "cue": "Please wait a moment.",
+          "changed": "the request without the address"
+        },
+        {
+          "display": "Jamsi gidaryeo juseyo.",
+          "script": "잠시 기다려 주세요.",
+          "cue": "Please wait a moment.",
+          "changed": "juseyo for jusipsio: one person instead of a room"
+        }
+      ],
+      "mistake": {
+        "display": "Sonnim yeoreobun, jamsi gidariseyo jusipsio.",
+        "script": "손님 여러분, 잠시 기다리세요 주십시오.",
+        "why": "A finished verb cannot take jusipsio. The request rides on the -eo stem, gidaryeo, and stacking a second ending in front of it leaves two verbs where there should be one."
+      },
+      "usage": "A host at a wedding hall, holding a room while something is set up.",
+      "register": "formal",
+      "mnemonic": "Stem plus jusipsio: asking a room."
+    },
+    {
+      "id": "L5-M4-S08",
+      "display": "Sillyehamnida. Chuksa-reul hamnida.",
+      "script": "실례합니다. 축사를 합니다.",
+      "cue": "Excuse me. I will give the congratulatory address.",
+      "literal": "excuse-me-DEF. congratulatory-speech-OBJ do-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sillyehamnida",
+            "script": "실례합니다",
+            "cue": "excuse me (deferential)",
+            "tag": "free",
+            "forms": [
+              "sillyehamnida"
+            ],
+            "note": "Said before taking a room's attention or crossing in front of people. It apologises for the interruption, not for a wrong."
+          },
+          {
+            "display": "chuksa",
+            "script": "축사",
+            "cue": "a congratulatory address",
+            "tag": "free",
+            "forms": [
+              "chuksa",
+              "chuksa-reul"
+            ],
+            "note": "The short speech given at a wedding or an opening. It is an occasion's own word, and it names the slot rather than the words in it."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "sillyehamnida is not joesonghamnida. L2-M1's word apologises for something done; this one asks permission for something about to be done, and a funeral takes neither.",
+      "sound": "SIL-lye-ham-ni-da. CHUK-ssa-reul HAM-ni-da.",
+      "variations": [
+        {
+          "display": "Sillyehamnida.",
+          "script": "실례합니다.",
+          "cue": "Excuse me.",
+          "changed": "the interruption alone"
+        },
+        {
+          "display": "Chuksa-reul hamnida.",
+          "script": "축사를 합니다.",
+          "cue": "I will give the congratulatory address.",
+          "changed": "the announcement with no apology in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "Joesonghamnida. Chuksa-reul hamnida.",
+        "script": "죄송합니다. 축사를 합니다.",
+        "why": "joesonghamnida apologises for a fault. Opening a wedding speech with it says something has gone wrong, when all you are doing is asking for the room."
+      },
+      "usage": "Stepping up to the microphone at a wedding.",
+      "register": "formal",
+      "mnemonic": "Sillye asks for the floor; joesong admits a fault."
+    },
+    {
+      "id": "L5-M4-S09",
+      "display": "Sonnim yeoreobun, hwanyeonghamnida.",
+      "script": "손님 여러분, 환영합니다.",
+      "cue": "Guests, welcome.",
+      "literal": "guest everyone, welcome-DEF",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hwanyeonghamnida",
+            "script": "환영합니다",
+            "cue": "welcome (deferential)",
+            "tag": "free",
+            "forms": [
+              "hwanyeonghamnida",
+              "hwanyeonghaeyo"
+            ],
+            "note": "The welcome a host gives a room at the start of an occasion. Said to the whole room at once, never to one arriving guest at a door."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Not the shopkeeper's welcome. That one is a different phrase built on L1-M9's eoseo, and using this one at a doorway sounds like an opening ceremony for a single customer.",
+      "sound": "SON-nim YEO-reo-bun, HWA-nyeong-ham-ni-da.",
+      "variations": [
+        {
+          "display": "Hwanyeonghamnida.",
+          "script": "환영합니다.",
+          "cue": "Welcome.",
+          "changed": "the welcome without the address"
+        },
+        {
+          "display": "Sonnim yeoreobun, hwanyeonghamnida. Gamsahamnida.",
+          "script": "손님 여러분, 환영합니다. 감사합니다.",
+          "cue": "Guests, welcome. Thank you.",
+          "changed": "the whole of a short opening, which is two sentences"
+        }
+      ],
+      "mistake": {
+        "display": "Sonnim yeoreobun, hwanyeonghaeyo jusipsio.",
+        "script": "손님 여러분, 환영해요 주십시오.",
+        "why": "jusipsio makes a request, and a welcome asks for nothing. The greeting is finished as it stands; adding the request form asks the guests to welcome themselves."
+      },
+      "usage": "First words from the front of the room, before anything else happens.",
+      "register": "formal",
+      "mnemonic": "Welcome the room, not the door."
+    },
+    {
+      "id": "L5-M4-S10",
+      "display": "Yeoreobun, uri-reul wihayeo geonbae!",
+      "script": "여러분, 우리를 위하여 건배!",
+      "cue": "Everyone — to us! Cheers!",
+      "literal": "everyone, us-OBJ for-the-sake-of cheers!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uri",
+            "script": "우리",
+            "cue": "we, us, our",
+            "tag": "free",
+            "forms": [
+              "uri",
+              "uri-reul"
+            ],
+            "note": "The word Korean reaches for where English would say my — my company, my family. In a toast it is who the glass is being raised for."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "The frame runs either way round: geonbae first, or the noun first and geonbae as the last word. What it never does is grow a sentence in the middle.",
+      "sound": "YEO-reo-bun, U-ri-reul WI-ha-yeo GEON-bae!",
+      "variations": [
+        {
+          "display": "Uri-reul wihayeo!",
+          "script": "우리를 위하여!",
+          "cue": "To us!",
+          "changed": "the frame alone, with the shout left off"
+        },
+        {
+          "display": "Yeoreobun, geonbae!",
+          "script": "여러분, 건배!",
+          "cue": "Everyone — cheers!",
+          "changed": "the shortest toast a host can give"
+        }
+      ],
+      "mistake": {
+        "display": "Yeoreobun, uri-reul wihayeo, oneul jeongmal gamsahamnida, geonbae!",
+        "script": "여러분, 우리를 위하여, 오늘 정말 감사합니다, 건배!",
+        "why": "Every word is right and it is no longer a toast. A Korean toast is a word with a noun in front of it; a thank-you in the middle turns it into the speech L5-M6 will teach."
+      },
+      "usage": "Standing, glass up, at the end of the meal rather than the start of a story.",
+      "register": "formal",
+      "mnemonic": "A noun, wihayeo, geonbae — and stop."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M4-C01",
+      "display": "Gyeolhon-eul chukhahamnida.",
+      "script": "결혼을 축하합니다.",
+      "cue": "Congratulations on your marriage."
+    },
+    {
+      "id": "L5-M4-C02",
+      "display": "Saengil chukhahamnida.",
+      "script": "생일 축하합니다.",
+      "cue": "Happy birthday."
+    },
+    {
+      "id": "L5-M4-C03",
+      "display": "Geonbae! Gyeolhon-eul wihayeo!",
+      "script": "건배! 결혼을 위하여!",
+      "cue": "Cheers! To the marriage!"
+    },
+    {
+      "id": "L5-M4-C04",
+      "display": "Saehae bok mani badeuseyo.",
+      "script": "새해 복 많이 받으세요.",
+      "cue": "Happy New Year."
+    },
+    {
+      "id": "L5-M4-C05",
+      "display": "Samga goin-ui myeongbog-eul bimnida.",
+      "script": "삼가 고인의 명복을 빕니다.",
+      "cue": "My sincere condolences."
+    },
+    {
+      "id": "L5-M4-C06",
+      "display": "Sangsim-i keusigetseumnida.",
+      "script": "상심이 크시겠습니다.",
+      "cue": "This must be a great grief for you."
+    },
+    {
+      "id": "L5-M4-C07",
+      "display": "Jangnyesik-eseo-neun geureoke malhamnida.",
+      "script": "장례식에서는 그렇게 말합니다.",
+      "cue": "At a funeral that is what you say."
+    },
+    {
+      "id": "L5-M4-C08",
+      "display": "Jamsi gidaryeo jusipsio.",
+      "script": "잠시 기다려 주십시오.",
+      "cue": "Please wait a moment."
+    },
+    {
+      "id": "L5-M4-C09",
+      "display": "Sillyehamnida.",
+      "script": "실례합니다.",
+      "cue": "Excuse me."
+    },
+    {
+      "id": "L5-M4-C10",
+      "display": "Chuksa-reul hamnida.",
+      "script": "축사를 합니다.",
+      "cue": "I will give the congratulatory address."
+    },
+    {
+      "id": "L5-M4-C11",
+      "display": "Sonnim yeoreobun, hwanyeonghamnida.",
+      "script": "손님 여러분, 환영합니다.",
+      "cue": "Guests, welcome."
+    },
+    {
+      "id": "L5-M4-C12",
+      "display": "Uri-reul wihayeo!",
+      "script": "우리를 위하여!",
+      "cue": "To us!"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M6",
+  "title": "Arguing a position",
+  "job": "A structured case, objections answered",
+  "prerequisites": [
+    "L5-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 9,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "present",
+      "preterite",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "No + <clause> + , sino + <N or phrase>",
+      "No solo + <clause> + , sino que + <clause>",
+      "En primer lugar + , + <clause> + . En segundo lugar + , + <clause>",
+      "Si bien + <clause> + , + <clause>",
+      "Alguien dira que + <objection> + . Ahora bien + , + <answer>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "pero and sino are both the English but, and Spanish will not let you choose by feel. pero ADDS to a claim that still stands: Es caro, pero lo compro. sino REPLACES a claim that has just been denied, and it needs that no in front of it: No es caro, sino barato. The test is mechanical — look for the no."
+    },
+    {
+      "tag": "delta",
+      "text": "When the replacement is a whole clause with its own verb, sino grows a que: No lo compré, sino que lo alquilé. One word replaced, sino; one verb replaced, sino que. Nothing else changes."
+    },
+    {
+      "tag": "delta",
+      "text": "no solo ... sino también is that same sino doing the work of English not only ... but also. The no at the front is what licenses the sino, exactly as in the rule above; it is one system, not an idiom to memorise."
+    },
+    {
+      "tag": "delta",
+      "text": "A spoken Spanish case names its parts out loud: en primer lugar, en segundo lugar for a numbered list, por una parte and por otra parte for two sides weighed against each other. L4-M4's por un lado and por otro lado are the same move in a conversation; these are the ones you use when you are holding the floor."
+    },
+    {
+      "tag": "delta",
+      "text": "Concede before you are contradicted. si bien and es cierto que open the concession, and en cambio, por el contrario, ahora bien and no obstante open the answer to it. Spanish argues by granting a named point and then turning, not by hedging every claim."
+    },
+    {
+      "tag": "interference",
+      "text": "English has ONE but. That is why No es caro pero barato survives for years in an otherwise good learner: nothing in English ever asked for the distinction, so nothing warns you a choice is due. Say the test out loud until it is automatic."
+    },
+    {
+      "tag": "interference",
+      "text": "English however floats — it can open, interrupt or close a sentence. sin embargo, no obstante and ahora bien OPEN one. A Spanish however dropped into the middle of a clause reads as translated English, and it is the commonest tell in an otherwise fluent argument."
+    },
+    {
+      "tag": "free",
+      "text": "Close the case explicitly. en resumen gathers what was said; en definitiva states what it comes to. Spanish expects the landing to be marked, and a case that simply stops sounds unfinished."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M6-S01",
+      "display": "No es caro, sino barato, y por eso lo compro.",
+      "cue": "It is not expensive, it is cheap, and that is why I am buying it.",
+      "literal": "Not is expensive, but-rather cheap, and for that it I-buy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sino",
+            "cue": "but rather",
+            "tag": "delta",
+            "forms": [
+              "sino"
+            ],
+            "note": "Only after a denial: No es caro, SINO barato. With no no in front of it, the word you want is pero."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "English says it is not expensive but cheap, and but there is pero to an English ear. It is not: the claim caro was denied and barato replaces it, so Spanish must have sino.",
+      "sound": "Sino is SEE-no, two flat syllables, and it never carries a written accent. Do not stress the second half.",
+      "variations": [
+        {
+          "display": "No es caro, sino muy barato.",
+          "cue": "It is not expensive, it is very cheap.",
+          "changed": "The pattern with nothing after it — denial, sino, replacement — which is the shape to keep in your head."
+        },
+        {
+          "display": "Es caro, pero lo compro.",
+          "cue": "It is expensive, but I am buying it.",
+          "changed": "The same sentence with pero: nothing has been denied, so the first claim still stands and both are true."
+        }
+      ],
+      "mistake": {
+        "display": "No es caro pero barato.",
+        "why": "pero adds to a claim that survives. Here caro was denied, so nothing survives to add to — the word must be sino."
+      },
+      "usage": "Neutral, and as ordinary in a kitchen as in a meeting. Nothing about sino is formal; it is simply the only word Spanish has for this job.",
+      "register": "neutral",
+      "mnemonic": "No first, sino second."
+    },
+    {
+      "id": "L5-M6-S02",
+      "display": "No llegué tarde, sino que salí muy temprano de casa.",
+      "cue": "I did not arrive late; I left home very early.",
+      "literal": "Not I-arrived late, but-rather that I-left very early of house.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sino que",
+            "cue": "but rather (before a whole clause)",
+            "tag": "delta",
+            "forms": [
+              "sino que"
+            ],
+            "note": "sino grows a que when what replaces the denied claim has its own verb: no lo compré, SINO QUE lo alquilé."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "A learner who has just learned sino drops the que and says sino salí. Spanish hears an unfinished sentence: a second verb needs the que to hang from.",
+      "sound": "Sino que runs together as SEE-no-ke, three light syllables with the stress on SEE.",
+      "variations": [
+        {
+          "display": "No llegué tarde, sino que salí temprano.",
+          "cue": "I did not arrive late; I left early.",
+          "changed": "Trimmed to the bones so the two verbs — llegué and salí — sit either side of sino que."
+        },
+        {
+          "display": "No es caro, sino barato.",
+          "cue": "It is not expensive, it is cheap.",
+          "changed": "One word replaced instead of a clause, so the que disappears again. That is the whole difference."
+        }
+      ],
+      "mistake": {
+        "display": "No llegué tarde, sino salí muy temprano.",
+        "why": "salí is a verb of its own, so the replacement is a clause and the que is not optional. sino alone can only replace a word or a phrase."
+      },
+      "usage": "Neutral. Very common when you are correcting somebody's account of what happened, which is why it opens an argument so often.",
+      "register": "neutral",
+      "mnemonic": "Second verb, second word."
+    },
+    {
+      "id": "L5-M6-S03",
+      "display": "No solo es barato, sino también muy rápido y muy fácil.",
+      "cue": "It is not only cheap, but also very fast and very easy.",
+      "literal": "Not only is cheap, but-rather also very fast and very easy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "no solo",
+            "cue": "not only",
+            "tag": "delta",
+            "forms": [
+              "no solo"
+            ],
+            "note": "Written no solo today; the older no solo with an accent on the o is still read everywhere and means exactly the same."
+          },
+          {
+            "display": "sino también",
+            "cue": "but also",
+            "tag": "delta",
+            "forms": [
+              "sino también"
+            ],
+            "note": "The partner of no solo. It is the ordinary sino of rule one: the no at the front is what earns it."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "English not only ... but also is a fixed pair and so is this one. What English never shows you is that the but half is sino and not pero, because the no at the front has already denied something.",
+      "sound": "No solo es barato runs as one phrase: no-SO-lo-es-ba-RA-to, with no pause after solo.",
+      "variations": [
+        {
+          "display": "No solo es barato, sino también rápido.",
+          "cue": "It is not only cheap, but also fast.",
+          "changed": "The pair alone, with one adjective on each side, which is how it is most often said."
+        },
+        {
+          "display": "Es barato y también muy rápido.",
+          "cue": "It is cheap and also very fast.",
+          "changed": "The same content without the pair. True, but flat — the pair is what makes it an argument rather than a list."
+        }
+      ],
+      "mistake": {
+        "display": "No solo es barato, pero también muy rápido.",
+        "why": "pero cannot follow a no solo. The pair is fixed: no solo asks for sino también and nothing else."
+      },
+      "usage": "Neutral, and the single most useful move in this module: it lets you make two points where the other person expected one.",
+      "register": "neutral",
+      "mnemonic": "No solo opens, sino también closes."
+    },
+    {
+      "id": "L5-M6-S04",
+      "display": "En primer lugar, es muy caro; en segundo lugar, no funciona bien.",
+      "cue": "In the first place, it is very expensive; in the second place, it does not work well.",
+      "literal": "In first place, is very expensive; in second place, not works well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en primer lugar",
+            "cue": "in the first place",
+            "tag": "delta",
+            "forms": [
+              "en primer lugar"
+            ],
+            "note": "Opens the case and promises a second part. Having said it, you owe the listener an en segundo lugar."
+          },
+          {
+            "display": "en segundo lugar",
+            "cue": "in the second place",
+            "tag": "delta",
+            "forms": [
+              "en segundo lugar"
+            ],
+            "note": "Pays off the promise. Spanish rarely goes past en tercer lugar out loud; two named parts is the spoken shape."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "These are not decoration. Once you say en primer lugar the listener is holding a slot open for the second point, and a case that never fills it sounds like it lost its nerve.",
+      "sound": "Primer drops the o of primero before a masculine noun: pri-MER lu-GAR, never primero lugar.",
+      "variations": [
+        {
+          "display": "En primer lugar, es muy caro.",
+          "cue": "In the first place, it is very expensive.",
+          "changed": "Half the pair. Said alone it is a promise, and the listener will wait for the rest."
+        },
+        {
+          "display": "Es muy caro y no funciona bien.",
+          "cue": "It is very expensive and it does not work well.",
+          "changed": "The same two facts with no architecture. They arrive as a complaint rather than as a case."
+        }
+      ],
+      "mistake": {
+        "display": "En primero lugar, es muy caro.",
+        "why": "primero shortens to primer in front of a masculine noun, exactly as bueno shortens to buen. lugar is masculine, so it is en primer lugar."
+      },
+      "usage": "Neutral, and slightly weighty: you use it when you have the floor and intend to keep it for a moment.",
+      "register": "neutral",
+      "mnemonic": "First place, second place, then land."
+    },
+    {
+      "id": "L5-M6-S05",
+      "display": "Por una parte es más barato; por otra parte, tarda mucho más.",
+      "cue": "On the one hand it is cheaper; on the other hand, it takes much longer.",
+      "literal": "For one part is more cheap; for other part, takes much more.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "por una parte",
+            "cue": "on the one hand",
+            "tag": "delta",
+            "forms": [
+              "por una parte"
+            ],
+            "note": "Weighs two sides against each other rather than listing them. L4-M4's por un lado is the same move in a conversation."
+          },
+          {
+            "display": "por otra parte",
+            "cue": "on the other hand",
+            "tag": "delta",
+            "forms": [
+              "por otra parte"
+            ],
+            "note": "The other pan of the scales. Its partner is por una parte; do not cross it with L4-M4's por un lado."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "en primer lugar and por una parte are not interchangeable. The first counts points that all support you; the second weighs a good side against a bad one, and it concedes something.",
+      "sound": "Parte is PAR-te, and the r is a single tap of the tongue, not the rolled rr of perro.",
+      "variations": [
+        {
+          "display": "Por una parte es barato; por otra parte, tarda mucho.",
+          "cue": "On the one hand it is cheap; on the other, it takes a long time.",
+          "changed": "One claim on each pan, which is the balance the pair is built for."
+        },
+        {
+          "display": "Es más barato, pero tarda mucho más.",
+          "cue": "It is cheaper, but it takes much longer.",
+          "changed": "The same weighing done with pero. Correct, and much less deliberate — you sound like you noticed rather than like you weighed."
+        }
+      ],
+      "mistake": {
+        "display": "Por una parte es más barato; por otro lado, tarda mucho.",
+        "why": "The two pairs do not mix. Open with por una parte and you close with por otra parte; open with por un lado and you close with por otro lado."
+      },
+      "usage": "Neutral. Reaching for it signals that you have already thought about the other side, which is why it buys you so much credit so cheaply.",
+      "register": "neutral",
+      "mnemonic": "One part, other part — keep the pair together."
+    },
+    {
+      "id": "L5-M6-S06",
+      "display": "Si bien es caro, en cambio funciona muy bien y no da problemas.",
+      "cue": "Although it is expensive, it works very well and gives no trouble.",
+      "literal": "If well is expensive, in exchange works very well and not gives problems.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si bien",
+            "cue": "although, granted that",
+            "tag": "delta",
+            "forms": [
+              "si bien"
+            ],
+            "note": "A concession, not a condition: it has nothing to do with the si of L3. It opens the clause you are granting."
+          },
+          {
+            "display": "en cambio",
+            "cue": "on the other hand, whereas",
+            "tag": "delta",
+            "forms": [
+              "en cambio"
+            ],
+            "note": "Turns to the other side after a concession. It opens its clause and never sits in the middle of one."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "si bien looks like if well and is neither. It is a single connector meaning granted that, and the clause after it is something you are conceding, not something you are supposing.",
+      "sound": "Si bien is said as two even syllables with no pause, see-BYEN, and the b is soft between vowels.",
+      "variations": [
+        {
+          "display": "Si bien es caro, funciona muy bien.",
+          "cue": "Although it is expensive, it works very well.",
+          "changed": "Without en cambio. The turn still happens, but nothing marks it, so it is easier to miss."
+        },
+        {
+          "display": "Es caro, pero funciona muy bien.",
+          "cue": "It is expensive, but it works very well.",
+          "changed": "The everyday version. si bien is what you reach for when you want the concession to sound deliberate."
+        }
+      ],
+      "mistake": {
+        "display": "Es caro, en cambio funciona muy bien y no da problemas.",
+        "why": "Nothing was conceded, so there is nothing to turn from. en cambio needs a granted point in front of it — si bien es caro — or it reads as a missing half."
+      },
+      "usage": "Neutral to slightly formal. si bien is at home in a meeting and a little heavy at a kitchen table, where aunque does the same job.",
+      "register": "neutral",
+      "mnemonic": "Grant it with si bien, turn it with en cambio."
+    },
+    {
+      "id": "L5-M6-S07",
+      "display": "Es cierto que cuesta más; por el contrario, el otro no funciona.",
+      "cue": "It is true that it costs more; on the contrary, the other one does not work.",
+      "literal": "Is true that costs more; for the contrary, the other not works.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "es cierto que",
+            "cue": "it is true that",
+            "tag": "delta",
+            "forms": [
+              "es cierto que"
+            ],
+            "note": "The three-token concession. L4-M4's two-word es cierto answers what somebody said; this one opens a point you concede yourself."
+          },
+          {
+            "display": "por el contrario",
+            "cue": "on the contrary",
+            "tag": "delta",
+            "forms": [
+              "por el contrario"
+            ],
+            "note": "Stronger than en cambio: it denies the expectation, not just the other side. Opens its clause."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "es cierto que is a move you make against yourself. You are not agreeing with anyone — you are granting the strongest thing the other side has, before they can say it, so that your answer lands harder.",
+      "sound": "Cierto begins with the Spanish soft c: THYER-to in Spain, SYER-to across Latin America. Both are standard.",
+      "variations": [
+        {
+          "display": "Es cierto que cuesta más.",
+          "cue": "It is true that it costs more.",
+          "changed": "The concession alone, left hanging. In speech it is nearly always followed by a turn."
+        },
+        {
+          "display": "Cuesta más, pero el otro no funciona.",
+          "cue": "It costs more, but the other one does not work.",
+          "changed": "The same two facts with no concession marked. It sounds like an excuse rather than an argument."
+        }
+      ],
+      "mistake": {
+        "display": "Es cierto que cuesta más, por el contrario el otro es caro.",
+        "why": "por el contrario denies what the listener expected. If the second clause simply adds another fact, the word wanted is además or a plain y."
+      },
+      "usage": "Neutral to formal. Conceding out loud is the cheapest courtesy in an argument and this is the phrase that does it.",
+      "register": "neutral",
+      "mnemonic": "Grant the best of it, then turn."
+    },
+    {
+      "id": "L5-M6-S08",
+      "display": "Alguien dice que es muy caro. Ahora bien, ¿cuánto cuesta esperar?",
+      "cue": "Somebody will say it is very expensive. That said, what does waiting cost?",
+      "literal": "Someone says that is very expensive. Now well, how-much costs to-wait?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ahora bien",
+            "cue": "that said, now then",
+            "tag": "delta",
+            "forms": [
+              "ahora bien"
+            ],
+            "note": "Raises the objection, then turns on it. Nothing to do with time: ahora here means now that we have said that."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "ahora bien has no now in it. A learner who reads it literally hears a change of time and misses that the speaker has just conceded a point and is about to answer it.",
+      "sound": "Said as one unit, a-o-ra-BYEN, with the h silent and the stress landing on BYEN.",
+      "variations": [
+        {
+          "display": "Ahora bien, ¿cuánto cuesta esperar?",
+          "cue": "That said, what does waiting cost?",
+          "changed": "The turn on its own, which is how it is usually heard: the objection was in the air already."
+        },
+        {
+          "display": "Alguien dice que es muy caro. Pero esperar también cuesta.",
+          "cue": "Somebody says it is very expensive. But waiting costs too.",
+          "changed": "The same answer with pero. It works, and it lands as a reflex rather than as a considered reply."
+        }
+      ],
+      "mistake": {
+        "display": "Es muy caro. Ahora bien esperar cuesta, ahora bien.",
+        "why": "ahora bien opens a sentence and appears once. Repeating it, or hanging it on the end like an English though, is the clearest sign of a case assembled out of connectors."
+      },
+      "usage": "Neutral to formal, and slightly theatrical: you are performing the move of taking the objection seriously.",
+      "register": "neutral",
+      "mnemonic": "Raise it yourself, then answer it."
+    },
+    {
+      "id": "L5-M6-S09",
+      "display": "No obstante, en cuanto a los datos, el argumento es muy bueno.",
+      "cue": "Nevertheless, as far as the figures go, the argument is a very good one.",
+      "literal": "Not obstacle, in how-much to the data, the argument is very good.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "no obstante",
+            "cue": "nevertheless",
+            "tag": "delta",
+            "forms": [
+              "no obstante"
+            ],
+            "note": "Opens the sentence, like L4-M2's sin embargo and never in the middle of a clause. It is the more formal of the two."
+          },
+          {
+            "display": "en cuanto a",
+            "cue": "as for, as far as ... goes",
+            "tag": "delta",
+            "forms": [
+              "en cuanto a"
+            ],
+            "note": "Narrows the ground to one topic before you claim anything about it. L3's bare en cuanto means as soon as; this one needs the a."
+          },
+          {
+            "display": "datos",
+            "cue": "figures, data",
+            "tag": "free",
+            "forms": [
+              "datos",
+              "dato"
+            ],
+            "note": "Plural in almost every use. Un dato is one single fact or figure, and it is countable."
+          },
+          {
+            "display": "argumento",
+            "cue": "argument, line of reasoning",
+            "tag": "free",
+            "forms": [
+              "argumento",
+              "argumentos"
+            ],
+            "note": "The reasoning, never the quarrel. A row between people is una discusión, and using argumento for that is a small permanent tell."
+          }
+        ],
+        "rules": [
+          6,
+          7
+        ]
+      },
+      "trap": "argumento is a false friend at exactly the wrong moment. In English an argument can be a fight; in Spanish un argumento is only ever the case you make, or the plot of a film.",
+      "sound": "Obstante keeps its b audible but soft: ob-STAN-te. The whole phrase is said quickly, no obs-TAN-te.",
+      "variations": [
+        {
+          "display": "No obstante, el argumento es muy bueno.",
+          "cue": "Nevertheless, the argument is a very good one.",
+          "changed": "Without the narrowing. The claim is now about everything, which is usually more than you can defend."
+        },
+        {
+          "display": "En cuanto a los datos, el argumento es muy bueno.",
+          "cue": "As far as the figures go, the argument is a very good one.",
+          "changed": "Without the turn. A narrowed claim with nothing conceded before it."
+        }
+      ],
+      "mistake": {
+        "display": "El argumento, no obstante, es muy bueno en cuanto los datos.",
+        "why": "Two faults at once: no obstante opens a sentence rather than interrupting one, and en cuanto a loses its meaning without the a."
+      },
+      "usage": "Formal end of neutral. This is meeting Spanish, and at a kitchen table no obstante would sound like you were reading aloud.",
+      "register": "formal",
+      "mnemonic": "Narrow the ground before you stand on it."
+    },
+    {
+      "id": "L5-M6-S10",
+      "display": "En resumen, hay dos pruebas y una objeción. En definitiva, el punto es claro.",
+      "cue": "To sum up, there are two pieces of evidence and one objection. All in all, the point is clear.",
+      "literal": "In summary, there-is two proofs and one objection. In definitive, the point is clear.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en resumen",
+            "cue": "to sum up",
+            "tag": "delta",
+            "forms": [
+              "en resumen"
+            ],
+            "note": "Gathers what was said. It promises that nothing new is coming, so do not introduce a fresh point after it."
+          },
+          {
+            "display": "en definitiva",
+            "cue": "all in all, when it comes down to it",
+            "tag": "delta",
+            "forms": [
+              "en definitiva"
+            ],
+            "note": "States what it all comes to. en resumen repeats; en definitiva concludes, and that is the whole difference."
+          },
+          {
+            "display": "prueba",
+            "cue": "piece of evidence, proof",
+            "tag": "free",
+            "forms": [
+              "prueba",
+              "pruebas"
+            ],
+            "note": "Also a test or a try. In an argument it is the evidence you put on the table."
+          },
+          {
+            "display": "objeción",
+            "cue": "objection",
+            "tag": "free",
+            "forms": [
+              "objeción",
+              "objeciones"
+            ],
+            "note": "Loses its written accent in the plural because the stress moves: objeción but objeciones."
+          },
+          {
+            "display": "punto",
+            "cue": "point",
+            "tag": "free",
+            "forms": [
+              "punto",
+              "puntos"
+            ],
+            "note": "The point you are making, and also the full stop at the end of a sentence."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "en resumen and en definitiva both translate as in short and they are not the same move. Say en resumen and the listener expects a recap; say en definitiva and they expect the verdict.",
+      "sound": "Objecion carries its accent on the last syllable, ob-je-SYON, and the j is the throaty Spanish jota.",
+      "variations": [
+        {
+          "display": "En resumen, hay dos pruebas y una objeción.",
+          "cue": "To sum up, there are two pieces of evidence and one objection.",
+          "changed": "The recap without the verdict, which leaves the listener waiting for you to land."
+        },
+        {
+          "display": "En definitiva, el punto es claro.",
+          "cue": "All in all, the point is clear.",
+          "changed": "The landing on its own. Enough to close a short case where nothing needs gathering first."
+        }
+      ],
+      "mistake": {
+        "display": "En resumen, el punto es claro y hay una objeción más.",
+        "why": "A new objection after en resumen breaks the promise the phrase made. Anything genuinely new belongs before the summary, not inside it."
+      },
+      "usage": "Neutral. Every spoken case in Spanish is expected to be landed out loud, and one of these two phrases is how you do it.",
+      "register": "neutral",
+      "mnemonic": "Gather with resumen, land with definitiva."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M6-C01",
+      "display": "No es barato, sino muy caro.",
+      "cue": "It is not cheap, it is very expensive."
+    },
+    {
+      "id": "L5-M6-C02",
+      "display": "No lo compro, sino que lo dejo aquí.",
+      "cue": "I am not buying it, I am leaving it here."
+    },
+    {
+      "id": "L5-M6-C03",
+      "display": "No solo es rápido, sino también fácil.",
+      "cue": "It is not only fast, but also easy."
+    },
+    {
+      "id": "L5-M6-C04",
+      "display": "En primer lugar, no hay tiempo.",
+      "cue": "In the first place, there is no time."
+    },
+    {
+      "id": "L5-M6-C05",
+      "display": "En segundo lugar, cuesta mucho más.",
+      "cue": "In the second place, it costs much more."
+    },
+    {
+      "id": "L5-M6-C06",
+      "display": "Por una parte es fácil; por otra parte, es caro.",
+      "cue": "On the one hand it is easy; on the other, it is expensive."
+    },
+    {
+      "id": "L5-M6-C07",
+      "display": "Si bien es tarde, en cambio hay tren.",
+      "cue": "Although it is late, there is a train."
+    },
+    {
+      "id": "L5-M6-C08",
+      "display": "Es cierto que hay problemas.",
+      "cue": "It is true that there are problems."
+    },
+    {
+      "id": "L5-M6-C09",
+      "display": "Ahora bien, ¿quién paga la reunión?",
+      "cue": "That said, who is paying for the meeting?"
+    },
+    {
+      "id": "L5-M6-C10",
+      "display": "No obstante, el argumento es bueno.",
+      "cue": "Nevertheless, the argument is a good one."
+    },
+    {
+      "id": "L5-M6-C11",
+      "display": "En cuanto a los datos, hay dos pruebas.",
+      "cue": "As far as the figures go, there are two pieces of evidence."
+    },
+    {
+      "id": "L5-M6-C12",
+      "display": "En definitiva, el punto es muy claro.",
+      "cue": "All in all, the point is very clear."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

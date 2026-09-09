@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M2",
+  "title": "Humour and teasing",
+  "job": "Banter, irony, and when not to",
+  "prerequisites": ["L5-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["present", "Perfekt", "Präteritum"],
+    "allowedPatterns": [
+      "Das war + nur ein Scherz",
+      "Das meinst du + doch nicht + im Ernst + ?",
+      "Er hat + über + <Akk> + gelacht",
+      "<ironische Aussage> + , + oder + ?",
+      "Bei + <Dat> + macht man + keine Witze"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "IRONY IN GERMAN IS CARRIED BY THE VOICE, NOT BY GRAMMAR. There is no ironic mood, no tag that flips a sentence, and no punctuation for it. Das war ja toll is praise or its opposite depending entirely on the pitch, and nothing in the written line will tell you which. That is why every ironic item in this module writes its contour into the sound line: an item whose irony you cannot hear has not been taught."
+    },
+    {
+      "tag": "free",
+      "text": "THE REPAIR IS PART OF THE JOKE, AND IT IS SAID PLAINLY. nur ein Scherz, nur Spaß, nicht ernst gemeint — German withdraws a remark with a short flat phrase and no embarrassment around it. English hedges (I was only kidding, no offence, sorry, I did not mean it). Learn the repair in the same breath as the joke: the risk of teasing in a second language is not being unfunny, it is not being able to say you did not mean it."
+    },
+    {
+      "tag": "interference",
+      "text": "TEASING FOLLOWS THE du LINE ALMOST EXACTLY. Where you would say Sie, you do not tease. An anglophone imports light self-deprecating irony into small talk with strangers as a lubricant; in German that reads as odd rather than as funny, and it does not warm the room. This is the first place since L2-M1 where the address you chose is a safety question and not a politeness one."
+    },
+    {
+      "tag": "delta",
+      "text": "ernst IS ONE WORD IN TWO SEATS. As an adjective it is lowercase and means serious: Das war nicht ernst gemeint. As a noun it is capitalised inside the fixed phrase im Ernst, which asks whether something is meant at all: Das meinst du nicht im Ernst? The word index cannot see the capital, so the row is opened on the adjective and the phrase is learned whole."
+    },
+    {
+      "tag": "free",
+      "text": "A MARKED JOKE IS REPAIRABLE; AN UNMARKED ONE IS NOT. Everything here is on the surface — the joke is signalled, the speaker will admit it was one, and the withdrawal is available. Implication and sarcasm, where nothing is marked and the hearer has to infer, are a different skill and belong to L5-M7. Do not reach for indirectness while you are still learning to say nur Spaß."
+    },
+    {
+      "tag": "free",
+      "text": "THIS COURSE STOPS SHORT OF THE VULGAR REGISTER. Real German banter between close friends uses words this ladder does not teach, and the line is drawn here deliberately rather than left for you to find by accident. Quatsch and frech are as sharp as it gets, and both are sayable at work."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M2-S01",
+      "display": "Das war doch nur ein Scherz.",
+      "cue": "That was only a joke.",
+      "literal": "That was surely only a joke.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Scherz",
+            "cue": "joke, jest",
+            "tag": "free",
+            "forms": ["Scherz", "Scherze"],
+            "note": "der Scherz. Slightly lighter and more formal than Witz: a Witz is told, a Scherz is made and then taken back."
+          },
+          {
+            "display": "nur Spaß",
+            "cue": "only fun, only kidding",
+            "tag": "free",
+            "forms": ["nur Spaß"],
+            "note": "The shortest withdrawal German has, and the most common spoken one. Said flat and without apology: it is a repair, not a confession."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "English softens a withdrawal with sorry. German does not: nur ein Scherz is the whole repair, and adding an apology to it suggests the joke was worse than it was.",
+      "sound": "das var dokh noor yn SHAIRTS — flat and quick, with no rise at the end; a rising contour here would sound like a plea.",
+      "variations": [
+        {
+          "display": "Das war nur Spaß.",
+          "cue": "That was only fun.",
+          "changed": "The spoken version: ein Scherz gives way to bare Spaß, which takes no article at all."
+        }
+      ],
+      "mistake": {
+        "display": "Das war nur ein Spaß",
+        "why": "Spaß takes no article in this phrase — it is nur Spaß, uncountable, the way fun is in English. ein belongs to Scherz and to Witz, not to Spaß."
+      },
+      "usage": "Said immediately after a remark landed harder than you meant, to somebody you are on du terms with.",
+      "register": "neutral",
+      "mnemonic": "Scherz is short, and so is its repair: four words and it is over."
+    },
+    {
+      "id": "L5-M2-S02",
+      "display": "Das meinst du doch nicht im Ernst?",
+      "cue": "You cannot be serious.",
+      "literal": "That mean you surely not in-the seriousness?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meinst",
+            "cue": "you mean",
+            "tag": "delta",
+            "forms": ["meinst", "meint"],
+            "note": "The du and er shapes of L2-M8's meinen, which keeps the infinitive. Careful: meinen is also my in the accusative, and the index cannot tell them apart."
+          },
+          {
+            "display": "im Ernst",
+            "cue": "seriously, in earnest",
+            "tag": "free",
+            "forms": ["im Ernst"],
+            "note": "Fixed, with the capital noun inside it and the article welded into im. It asks whether a remark was meant, not whether it was true."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "English you cannot be serious is a negated modal; German negates the meaning instead — du meinst das nicht im Ernst — and keeps doch, which is what turns it from an accusation into an invitation to laugh.",
+      "sound": "das MYNST doo dokh nikht im AIRNST? — the pitch climbs through meinst and lands high on Ernst; that rise is what makes it a question rather than a charge.",
+      "variations": [
+        {
+          "display": "Meinst du das im Ernst?",
+          "cue": "Do you mean that seriously?",
+          "changed": "The verb goes first and doch nicht drops away, so the question turns genuine: it now really is asking, rather than assuming the answer."
+        }
+      ],
+      "mistake": {
+        "display": "Das meinst du doch nicht in Ernst",
+        "why": "im is in plus dem and cannot be pulled apart here. in Ernst is not a shorter version of the phrase, it is a broken one."
+      },
+      "usage": "Answering a claim that is either outrageous or a joke, and offering the speaker the second reading.",
+      "register": "informal",
+      "mnemonic": "Ernst wears a capital because he is a noun standing inside im."
+    },
+    {
+      "id": "L5-M2-S03",
+      "display": "Er hat über den Witz nur gelacht.",
+      "cue": "He just laughed at the joke.",
+      "literal": "He has over the joke only laughed.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Witz",
+            "cue": "joke",
+            "tag": "free",
+            "forms": ["Witz", "Witze"],
+            "note": "der Witz: the joke you tell, with a punchline. einen Witz erzählen tells one; einen Witz machen makes one at somebody's expense."
+          },
+          {
+            "display": "lachen",
+            "cue": "to laugh",
+            "tag": "delta",
+            "forms": ["lachen", "lacht", "gelacht"],
+            "note": "The infinitive, the third person and the Perfekt. Its Präteritum lachte is L4-M10's and keeps its row there with the story tense."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English laughs AT a joke, and at is usually an; German uses über with the accusative here. The der of der Witz therefore becomes den, and nothing about at will predict that.",
+      "sound": "air hat UE-ber dayn VITS noor guh-LAKHT — the stress sits on gelacht, and the flatness of nur is what says he did not say anything else.",
+      "variations": [
+        {
+          "display": "Wir haben über den Witz gelacht.",
+          "cue": "We laughed at the joke.",
+          "changed": "The subject becomes wir, so hat becomes haben; gelacht does not move from the end."
+        }
+      ],
+      "mistake": {
+        "display": "Er hat über dem Witz nur gelacht",
+        "why": "über here takes the accusative den, not the dative dem. The dative would place him physically above the joke."
+      },
+      "usage": "Reporting how somebody took a remark — often as evidence that no harm was done.",
+      "register": "neutral",
+      "mnemonic": "lachte tells the story, gelacht tells the day: same laugh, two tenses, two levels."
+    },
+    {
+      "id": "L5-M2-S04",
+      "display": "Das war nicht ernst gemeint.",
+      "cue": "That was not meant seriously.",
+      "literal": "That was not serious meant.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nicht ernst gemeint",
+            "cue": "not meant seriously, not intended in earnest",
+            "tag": "free",
+            "forms": ["nicht ernst gemeint"],
+            "note": "The repair in its calmest form, and the one that works upwards: it is sayable to a boss, where nur Spaß would not be."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "English says I did not mean it, with a subject and an object. German drops both and lets the remark itself carry the phrase: das war nicht ernst gemeint.",
+      "sound": "das var nikht AIRNST guh-MYNT — level throughout and falling at the end; a repair that rises sounds as though it is asking permission.",
+      "variations": [
+        {
+          "display": "War das nicht ernst gemeint?",
+          "cue": "Was that not meant seriously?",
+          "changed": "The verb leads, so the repair becomes a question — the hearer checking, rather than the speaker withdrawing."
+        }
+      ],
+      "mistake": {
+        "display": "Das war nicht ernstlich gemeint",
+        "why": "ernstlich exists but means earnestly in a formal, almost legal sense. The fixed repair uses bare ernst, and swapping it makes the withdrawal sound like a document."
+      },
+      "usage": "The version to use when the person you teased outranks you, or when the joke has clearly gone wrong.",
+      "register": "neutral",
+      "mnemonic": "Three words, no subject: the remark apologises for itself."
+    },
+    {
+      "id": "L5-M2-S05",
+      "display": "War das ernst oder war das Ironie?",
+      "cue": "Was that serious or was that irony?",
+      "literal": "Was that serious or was that irony?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ernst",
+            "cue": "serious, in earnest",
+            "tag": "delta",
+            "forms": ["ernst"],
+            "note": "The adjective, lowercase. Its capitalised noun lives only inside im Ernst, and the index folds the two together, so this one row covers both readings."
+          },
+          {
+            "display": "Ironie",
+            "cue": "irony",
+            "tag": "free",
+            "forms": ["Ironie"],
+            "note": "die Ironie, stressed on the last syllable: ee-roh-NEE. The name of the thing, useful precisely when you could not hear it."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "English can ask were you being sarcastic; German asking war das Ironie? is a neutral request for information, not a complaint. Nobody is accused by it.",
+      "sound": "var das AIRNST OH-der var das ee-roh-NEE? — both halves rise, and the second rises higher; that second rise is the whole question.",
+      "variations": [
+        {
+          "display": "Das war Ironie, oder?",
+          "cue": "That was irony, was it not?",
+          "changed": "The two-part question collapses into a statement with oder tacked on — the everyday way of checking, and much gentler."
+        }
+      ],
+      "mistake": {
+        "display": "War das Ernst oder war das Ironie?",
+        "why": "Here ernst is the adjective and stays lowercase. The capital belongs to the noun, and the noun only appears inside im Ernst."
+      },
+      "usage": "Asked when a remark could be read either way and you would rather find out than guess.",
+      "register": "neutral",
+      "mnemonic": "Small ernst describes; capital Ernst only ever stands in im."
+    },
+    {
+      "id": "L5-M2-S06",
+      "display": "Mein Chef hat leider keinen Humor.",
+      "cue": "My boss unfortunately has no sense of humour.",
+      "literal": "My boss has unfortunately no humour.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Humor",
+            "cue": "sense of humour",
+            "tag": "interference",
+            "forms": ["Humor"],
+            "note": "der Humor, stressed on the second syllable: hoo-MOHR. German says Humor haben where English says to have a sense of humour."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "Humor is not the English humour of a funny thing — a joke is never Humor. It is the capacity to take one, which is why it is something a person has or lacks.",
+      "sound": "myn shef hat LY-der KY-nen hoo-MOHR.",
+      "variations": [
+        {
+          "display": "Hat dein Chef Humor?",
+          "cue": "Does your boss have a sense of humour?",
+          "changed": "A question, and keinen becomes nothing at all: German asks whether somebody has Humor with no article in front of it."
+        }
+      ],
+      "mistake": {
+        "display": "Mein Chef hat leider kein Humor",
+        "why": "Humor is masculine, and after hat it stands in the accusative: keinen. kein would be right for a neuter noun, which this is not."
+      },
+      "usage": "Explaining why you did not make the joke — the sentence that decides in advance who may be teased.",
+      "register": "informal",
+      "mnemonic": "Humor is something you have, not something you tell."
+    },
+    {
+      "id": "L5-M2-S07",
+      "display": "So ein Quatsch, das war doch nicht witzig!",
+      "cue": "What nonsense, that was not funny at all!",
+      "literal": "Such a nonsense, that was surely not funny!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Quatsch",
+            "cue": "nonsense, rubbish",
+            "tag": "free",
+            "forms": ["Quatsch"],
+            "note": "der Quatsch, and So ein Quatsch is its usual frame. Sharp but not crude: it dismisses the remark, never the person."
+          },
+          {
+            "display": "witzig",
+            "cue": "funny",
+            "tag": "free",
+            "forms": ["witzig"],
+            "note": "From Witz: funny because it was meant to be. lustig, L2-M2's word, is funny in the sense of cheerful, and is not its synonym here."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "lustig and witzig both come out as funny in English. A person telling jokes is witzig; a party is lustig, and calling a joke lustig says it was harmless rather than good.",
+      "sound": "zoh yn KVATSH, das var dokh nikht VIT-sikh! — the fall on KVATSH is steep, which is what keeps it playful rather than angry.",
+      "variations": [
+        {
+          "display": "Das war wirklich witzig.",
+          "cue": "That was really funny.",
+          "changed": "The negation goes, and the same word does the opposite job — with a flat contour it would come back out as irony."
+        }
+      ],
+      "mistake": {
+        "display": "So ein Quatsch, das war doch nicht lustig!",
+        "why": "lustig would say the joke failed to be cheerful. What is being denied is that it worked as a joke at all, and that is witzig."
+      },
+      "usage": "Batting away a tease among friends. It is itself part of the game, and is not a complaint.",
+      "register": "informal",
+      "mnemonic": "Witz makes witzig; Lust makes lustig — one is made, the other is felt."
+    },
+    {
+      "id": "L5-M2-S08",
+      "display": "Das soll doch Spaß machen, oder nicht?",
+      "cue": "This is supposed to be fun, is it not?",
+      "literal": "That shall surely fun make, or not?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Spaß machen",
+            "cue": "to be fun, to be enjoyable",
+            "tag": "interference",
+            "forms": ["Spaß machen"],
+            "note": "The thing is the subject: Das macht Spaß means that is fun. It never means to make a joke, which is einen Witz machen."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "The English subject is the person having fun; the German subject is the thing providing it. Ich mache Spaß does not mean I am having fun — it means I am kidding.",
+      "sound": "das zol dokh shpaas MAKH-en, OH-der nikht? — oder nicht rises at the end and asks for agreement rather than an answer.",
+      "variations": [
+        {
+          "display": "Soll das Spaß machen?",
+          "cue": "Is that supposed to be fun?",
+          "changed": "The verb leads and doch goes: without the particle the question turns cold, which is how the same words become a rebuke."
+        }
+      ],
+      "mistake": {
+        "display": "Ich soll doch Spaß machen, oder nicht?",
+        "why": "With ich as the subject the sentence says I am supposed to be joking. What is fun here is the activity, so das is the subject and stays one."
+      },
+      "usage": "Said when an evening or a game has turned unexpectedly serious — a reminder rather than a reproach.",
+      "register": "informal",
+      "mnemonic": "German fun is made BY the thing, not by the person enjoying it."
+    },
+    {
+      "id": "L5-M2-S09",
+      "display": "Sie ist oft frech, aber nicht komisch.",
+      "cue": "She is often cheeky, but not odd.",
+      "literal": "She is often cheeky, but not strange.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "frech",
+            "cue": "cheeky, impudent",
+            "tag": "free",
+            "forms": ["frech"],
+            "note": "The word for teasing that goes one step too far and is enjoyed anyway. Said of a child it is almost fond; said of a colleague it is a warning."
+          },
+          {
+            "display": "komisch",
+            "cue": "odd, strange (and only sometimes: comic)",
+            "tag": "interference",
+            "forms": ["komisch"],
+            "note": "In everyday German it means odd far more often than funny. Das ist komisch is usually a frown, not a laugh."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "komisch looks like comic and is the module's sharpest false friend: calling somebody's joke komisch tells them it was peculiar, which is not the compliment they heard.",
+      "sound": "zee ist oft FREKH, AA-ber nikht KOH-mish.",
+      "variations": [
+        {
+          "display": "Sie ist manchmal frech.",
+          "cue": "She is cheeky sometimes.",
+          "changed": "oft becomes manchmal and the contrast drops away, which softens the whole judgement."
+        }
+      ],
+      "mistake": {
+        "display": "Sie ist oft frech, aber nicht witzig",
+        "why": "witzig would say her teasing is not funny, which contradicts frech. komisch is the intended contrast: cheeky, yes, but never odd with it."
+      },
+      "usage": "Describing somebody whose teasing works — the line between frech and unpleasant is exactly what this sentence draws.",
+      "register": "informal",
+      "mnemonic": "komisch is a raised eyebrow; witzig is a laugh. They are not the same face."
+    },
+    {
+      "id": "L5-M2-S10",
+      "display": "Bei uns macht man über den Chef keine ironischen Witze.",
+      "cue": "Where we work, nobody makes ironic jokes about the boss.",
+      "literal": "With us makes one over the boss no ironic jokes.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ironisch",
+            "cue": "ironic",
+            "tag": "free",
+            "forms": ["ironisch", "ironischen"],
+            "note": "The adjective to Ironie. After keine in the accusative plural it takes -en: keine ironischen Witze."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "An anglophone reads a rule like this as stiffness. It is not: the du line decides who may be teased, and a boss you address as Sie is outside it whatever the mood in the room.",
+      "sound": "by oons makht man UE-ber dayn shef KY-nuh ee-ROH-nish-en VIT-suh.",
+      "variations": [
+        {
+          "display": "Bei der Arbeit macht man keine Witze.",
+          "cue": "At work people do not make jokes.",
+          "changed": "The target drops out and the place takes its seat: bei uns becomes bei der Arbeit, and the rule widens to the whole room."
+        }
+      ],
+      "mistake": {
+        "display": "Bei uns macht man über den Chef keine ironische Witze",
+        "why": "Witze is plural, so the adjective after keine takes -en: ironischen. The -e ending would be right before a singular feminine noun."
+      },
+      "usage": "Telling a newcomer where the line runs before they find it themselves.",
+      "register": "neutral",
+      "mnemonic": "If you would say Sie to them, keep the Witze to yourself."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L5-M2-C01", "display": "Das war doch nur ein Scherz", "cue": "That was only a joke" },
+    {
+      "id": "L5-M2-C02",
+      "display": "Das meinst du nicht im Ernst",
+      "cue": "You cannot mean that seriously"
+    },
+    {
+      "id": "L5-M2-C03",
+      "display": "Wir haben über den Witz gelacht",
+      "cue": "We laughed at the joke"
+    },
+    {
+      "id": "L5-M2-C04",
+      "display": "Das war nicht ernst gemeint",
+      "cue": "That was not meant seriously"
+    },
+    {
+      "id": "L5-M2-C05",
+      "display": "War das Ironie oder war das ernst?",
+      "cue": "Was that irony or was that serious?"
+    },
+    { "id": "L5-M2-C06", "display": "Mein Chef hat keinen Humor", "cue": "My boss has no humour" },
+    { "id": "L5-M2-C07", "display": "Der Witz war nicht witzig", "cue": "The joke was not funny" },
+    { "id": "L5-M2-C08", "display": "So ein Quatsch!", "cue": "What nonsense!" },
+    {
+      "id": "L5-M2-C09",
+      "display": "Das soll doch Spaß machen",
+      "cue": "This is supposed to be fun"
+    },
+    {
+      "id": "L5-M2-C10",
+      "display": "Sie ist oft frech, aber nett",
+      "cue": "She is often cheeky, but nice"
+    },
+    { "id": "L5-M2-C11", "display": "Das ist wirklich komisch", "cue": "That really is odd" },
+    {
+      "id": "L5-M2-C12",
+      "display": "Bei uns macht man keine ironischen Witze",
+      "cue": "Where we are, people do not make ironic jokes"
+    }
+  ],
+  "exitTest": { "generateCount": 2, "comprehendCount": 4 }
+}

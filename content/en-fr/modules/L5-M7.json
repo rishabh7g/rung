@@ -1,0 +1,565 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M7",
+  "title": "Between the lines",
+  "job": "Implication, sarcasm, indirect requests",
+  "prerequisites": ["L5-M1", "L5-M2", "L5-M3", "L5-M4", "L5-M5", "L5-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["présent", "conditionnel", "plus-que-parfait", "infinitif", "impératif"],
+    "allowedPatterns": [
+      "Tu n'aurais pas + <noun> + ?",
+      "Ce n'est pas + <negative adjective>",
+      "Je te l'avais dit",
+      "Tu aurais pu + V-inf",
+      "Il fait un peu froid ici + , + non ?"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "FRENCH PRAISES BY NEGATING THE OPPOSITE. ce n'est pas mal is that is good, pas faux is fair point, pas bête is that is sharp, il n'est pas bête is he is no fool. This is not English understatement being polite — it is the ordinary way to approve, and a flat c'est bien often sounds thinner than pas mal. The negation is real negation and keeps its ne, per docs/58 §4."
+    },
+    {
+      "tag": "interference",
+      "text": "ONE OF THEM REVERSES, AND IT IS THE ONE YOU WILL GET WRONG. pas terrible does NOT mean not terrible. It means not great — mildly bad, said kindly. terrible on its own is a word of praise in speech (c'était terrible, it was amazing), and the negation lands on that sense rather than on the English one. If you mean something was not awful, say ce n'est pas si mal."
+    },
+    {
+      "tag": "delta",
+      "text": "TWO OBJECT PRONOUNS IN A ROW, IN A FIXED ORDER. me / te / nous / vous come BEFORE le / la / les, and le / la / les come BEFORE lui / leur: je te l'avais dit, tu aurais pu me le dire, je vous l'envoie, je le lui donne. The order is the same whatever the verb and whatever the tense, and it does not follow English — give it to me has the two the other way round."
+    },
+    {
+      "tag": "delta",
+      "text": "AFTER A POSITIVE IMPERATIVE THE ORDER FLIPS AND THE PRONOUNS HANG OFF THE VERB WITH HYPHENS. donne-le-moi, passe-le-moi, dis-le-moi — verb, then the thing, then the person, and me becomes moi. This is L4-M1's positive-versus-negative pronoun rule doing a second job: make the order negative again (ne me le donne pas) and everything goes back in front of the verb."
+    },
+    {
+      "tag": "interference",
+      "text": "A NEGATIVE QUESTION IS ANSWERED WITH si, NOT oui. Tu n'as pas compris ? — Mais si. English answers with a bare yes and lets the tone do the contradicting; French has a dedicated word for it. This si is NOT L3-M4's conditional if — it is a different word with the same spelling, so this module never opens a bare si row and takes mais si and si si whole instead."
+    },
+    {
+      "tag": "free",
+      "text": "THE NEGATIVE QUESTION IS ALSO HOW YOU ASK FOR THINGS, AND ENGLISH DOES THE SAME. tu n'aurais pas un stylo ? is you wouldn't have a pen, would you — an offer to be refused, which is what makes it polite. The conditional versions are gentler still: ça ne te dérangerait pas de … ? and ça t'ennuierait de … ? A flat donne-moi un stylo is not rude, it is simply an order."
+    },
+    {
+      "tag": "interference",
+      "text": "THIS COURSE HAS NO AUDIO, AND FRENCH IRONY RIDES ON INTONATION. That is a real limit and this module works inside it: every line here is recoverable from the WORDS and the SITUATION alone — il fait un peu froid ici, non ? is a request to shut the window because of where it is said, not because of how. Anything that needs a voice to land has been left out rather than faked."
+    },
+    {
+      "tag": "delta",
+      "text": "WHAT THIS MODULE DOES NOT TAKE. The full clitic table with y and en in third position stays shut — L4-M9's il y en a remains one whole surface, and the six-column grid is named here as a gap rather than half-opened. Cooperative banter is L5-M2's and is MARKED as play; everything here is unmarked, which is the entire difference. And the module teaches you to RECOGNISE passive aggression, not to produce it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M7-S01",
+      "display": "Ce n'est pas mal, ton idée",
+      "cue": "That's not bad, your idea",
+      "literal": "This is not bad, your idea",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pas mal",
+            "cue": "not bad, i.e. good",
+            "tag": "delta",
+            "forms": ["pas mal", "pas faux", "pas bête"],
+            "note": "Approval by negating the opposite. pas faux concedes a point (fair enough), pas bête calls an idea sharp rather than merely acceptable."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "This is warmer than it looks. An English speaker hears not bad as faint praise; a French speaker hears pas mal as praise, full stop. Answering someone's idea with c'est bien can read as flatter than pas mal, which is the opposite of what the words say.",
+      "sound": "suh nay pah MAL, tohn ee-DAY. pas mal runs together as pah-MAL with no gap.",
+      "variations": [
+        {
+          "display": "Ce n'est pas faux",
+          "cue": "That's fair enough",
+          "changed": "conceding a point rather than praising an idea"
+        },
+        {
+          "display": "Ce n'est pas bête, ton idée",
+          "cue": "That's a sharp idea",
+          "changed": "pas bête, which praises the thinking rather than the result"
+        }
+      ],
+      "mistake": {
+        "display": "Ton idée n'est pas mauvaise",
+        "why": "grammatical, and it lands as a real criticism — you have said the idea is not BAD, which invites the question of whether it is good. pas mal is the fixed praise; building your own negation of an adjective is not the same move."
+      },
+      "usage": "Telling someone their idea is good, in the way a French speaker actually says it.",
+      "register": "informal",
+      "mnemonic": "pas mal is not faint praise; it is the praise."
+    },
+    {
+      "id": "L5-M7-S02",
+      "display": "Mine de rien, ce n'est pas terrible, sérieux",
+      "cue": "Without making a thing of it, it's not great, honestly",
+      "literal": "Appearance of nothing, this is not terrible, serious",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mine de rien",
+            "cue": "without making a thing of it",
+            "tag": "free",
+            "forms": ["mine de rien"],
+            "note": "Frozen: literally with the look of nothing. Flags that what follows is being slipped in rather than announced."
+          },
+          {
+            "display": "pas terrible",
+            "cue": "not great",
+            "tag": "interference",
+            "forms": ["pas terrible"],
+            "note": "The litotes that REVERSES: it means mildly bad, not not-terrible. In speech terrible on its own means amazing, and the negation lands on that."
+          },
+          {
+            "display": "sérieux",
+            "cue": "seriously, honestly",
+            "tag": "free",
+            "forms": ["sérieux"],
+            "note": "Tacked on the end as an interjection, marking the sentence as sincere rather than teasing. Same spelling in the singular and the plural."
+          }
+        ],
+        "rules": [1, 6]
+      },
+      "trap": "pas terrible is the one that runs backwards. Every other litotes here negates a bad word to say something good; this one negates a GOOD word — terrible in speech means great — and lands as a soft criticism. Hearing it as not terrible reverses the verdict of the sentence.",
+      "sound": "meen duh ree-YAN, suh nay pah tay-REE-bluh, say-ree-YUH. The final x of sérieux is silent.",
+      "variations": [
+        {
+          "display": "Ce n'est pas terrible, ton idée",
+          "cue": "Your idea isn't great",
+          "changed": "the criticism made direct"
+        },
+        {
+          "display": "Mine de rien, c'est difficile",
+          "cue": "Quietly, it's hard",
+          "changed": "what is being slipped in"
+        }
+      ],
+      "mistake": {
+        "display": "Ce n'est pas terrible, et c'est bien",
+        "why": "reading pas terrible as not terrible and then agreeing with it. The phrase is a complaint, so the second half contradicts the first. If you meant it was not awful, the sentence is ce n'est pas si mal."
+      },
+      "usage": "Registering a real reservation without turning it into an argument.",
+      "register": "informal",
+      "mnemonic": "terrible means great, so pas terrible means not great."
+    },
+    {
+      "id": "L5-M7-S03",
+      "display": "Tu n'aurais pas un stylo ?",
+      "cue": "You wouldn't have a pen, would you?",
+      "literal": "You not would have not a pen?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tu n'aurais pas",
+            "cue": "you wouldn't have",
+            "tag": "free",
+            "forms": ["tu n'aurais pas", "vous n'auriez pas"],
+            "note": "The negative conditional question used as a request: it offers the refusal in advance, which is what makes it polite. Taken whole; n'aurais is L4-M3's."
+          },
+          {
+            "display": "stylo",
+            "cue": "pen",
+            "tag": "free",
+            "forms": ["stylo", "stylos"],
+            "note": "Masculine, un stylo. The small borrowable object French uses in exactly this frame, the way English uses a pen or the time."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "This is the one place where English hands you the whole move: you wouldn't have a pen, would you is tu n'aurais pas un stylo, negative question and all. The only difference is the answer — if the other person does have one, they must say si, not oui.",
+      "sound": "too noh-RAY pah zan stee-LOH. The s of pas links onto un, pah-zan.",
+      "variations": [
+        {
+          "display": "Vous n'auriez pas un stylo ?",
+          "cue": "You wouldn't have a pen, would you?",
+          "changed": "the vous form, for someone you do not know"
+        },
+        {
+          "display": "Tu n'aurais pas une idée ?",
+          "cue": "You wouldn't have an idea, would you?",
+          "changed": "what is being asked for"
+        }
+      ],
+      "mistake": {
+        "display": "Tu aurais pas un stylo ?",
+        "why": "the ne is dropped everywhere in real speech and this course writes it everywhere, by its own law (docs/58 §4). The plate is here so you recognise the spoken shape without learning to write it."
+      },
+      "usage": "Borrowing something from someone without putting them on the spot.",
+      "register": "informal",
+      "mnemonic": "Ask in the negative and the refusal is already offered."
+    },
+    {
+      "id": "L5-M7-S04",
+      "display": "Mais si, je te l'avais dit",
+      "cue": "Yes I did — I'd told you",
+      "literal": "But yes, I to you it had said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mais si",
+            "cue": "yes it is / yes I did",
+            "tag": "interference",
+            "forms": ["mais si", "si si"],
+            "note": "Contradicts a negative question or a denial. This si is not L3-M4's if — a different word, same spelling — so both are taken whole."
+          },
+          {
+            "display": "je te l'avais dit",
+            "cue": "I'd told you",
+            "tag": "delta",
+            "forms": ["je te l'avais dit"],
+            "note": "Two pronouns in a row: te before l', person before thing. l' is le, elided before the vowel of avais."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "English answers a negative question with a bare yes and lets the voice carry the contradiction. French has a word for it and will not accept oui: to someone who says tu ne l'avais pas dit, the answer is mais si. Answering oui to a negative question sounds like you agreed with it.",
+      "sound": "may SEE, zhuh tuh lah-vay DEE. l'avais is two syllables, lah-vay, with no pause after the apostrophe.",
+      "variations": [
+        {
+          "display": "Si si, je te l'avais dit",
+          "cue": "Yes yes, I'd told you",
+          "changed": "si si, which is warmer and less combative than mais si"
+        },
+        {
+          "display": "Mais si, c'est utile",
+          "cue": "Yes it is, it's useful",
+          "changed": "what is being contradicted"
+        }
+      ],
+      "mistake": {
+        "display": "Mais oui, je t'avais le dit",
+        "why": "two errors that travel together. oui agrees with a positive question, so it cannot contradict a negative one — that is si. And the pronouns are te then le, never te then le split around the verb: je te l'avais dit."
+      },
+      "usage": "Standing your ground after someone says you never mentioned it.",
+      "register": "informal",
+      "mnemonic": "si is the yes that pushes back."
+    },
+    {
+      "id": "L5-M7-S05",
+      "display": "Tu aurais pu me le dire, quand même",
+      "cue": "You could have told me, honestly",
+      "literal": "You would have been able to me it say, all the same",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tu aurais pu",
+            "cue": "you could have",
+            "tag": "free",
+            "forms": ["tu aurais pu", "vous auriez pu"],
+            "note": "The reproach that is not a row: it names what you did not do without saying you were wrong. Built on L4-M3's aurais and pu."
+          },
+          {
+            "display": "me le",
+            "cue": "it to me",
+            "tag": "delta",
+            "forms": ["me le", "te le", "le lui"],
+            "note": "Person before thing — me le, te le — except with lui and leur, where the thing goes first: le lui. Both bare pronouns are L2-M5's and L3-M5's."
+          }
+        ],
+        "rules": [2, 7]
+      },
+      "trap": "The English order is the other way round: tell it to me puts the thing first. French puts me and te first and le, la, les second — me le dire — and then reverses that with lui and leur, giving le lui dire. The two halves of the rule contradict each other and both have to be learnt.",
+      "sound": "too oh-ray poo muh luh DEER, kahn MEM. me le runs as muh-luh, quickly and without stress.",
+      "variations": [
+        {
+          "display": "Vous auriez pu me le dire",
+          "cue": "You could have told me",
+          "changed": "the vous form, which makes the reproach cooler"
+        },
+        {
+          "display": "Tu aurais pu me le donner",
+          "cue": "You could have given it to me",
+          "changed": "the verb the two pronouns hang on"
+        }
+      ],
+      "mistake": {
+        "display": "Tu aurais pu le me dire, quand même",
+        "why": "le me is never a possible order. me, te, nous and vous always come first; le, la and les follow. The only pair where the thing leads is with lui and leur — le lui dire."
+      },
+      "usage": "Complaining about being left out, in a way that leaves the friendship intact.",
+      "register": "informal",
+      "mnemonic": "Person first — unless the person is lui or leur, and then the thing is."
+    },
+    {
+      "id": "L5-M7-S06",
+      "display": "Passe-le-moi, ce n'est pas grave",
+      "cue": "Pass it to me, it's no trouble",
+      "literal": "Pass it to me, this is not serious",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "passe-le-moi",
+            "cue": "pass it to me",
+            "tag": "delta",
+            "forms": ["passe-le-moi", "donne-le-moi", "dis-le-moi"],
+            "note": "After a positive order the pronouns follow the verb on hyphens and the order flips: thing, then person, and me becomes moi."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "Everything you just learnt about me le reverses here. In a statement it is tu me le passes; in a positive order it is passe-le-moi. Make the order negative and it swings back: ne me le passe pas. The hyphens are the signal that the flipped order is in force.",
+      "sound": "pass luh MWAH, suh nay pah GRAHV. The three pieces run as one word, pass-luh-mwah.",
+      "variations": [
+        {
+          "display": "Donne-le-moi, ce n'est pas grave",
+          "cue": "Give it to me, it's no trouble",
+          "changed": "the verb, with the same two pronouns behind it"
+        },
+        {
+          "display": "Dis-le-moi, ce n'est pas grave",
+          "cue": "Tell me, it's no trouble",
+          "changed": "dis-le-moi, which asks for the thing nobody wants to say"
+        }
+      ],
+      "mistake": {
+        "display": "Passe-moi-le, ce n'est pas grave",
+        "why": "the person cannot come last in a positive order. It is verb, thing, person: passe-le-moi. Passe-moi le stylo, with a real noun, is correct — the flip only concerns the two pronouns."
+      },
+      "usage": "Taking a job off someone's hands without making them feel they failed at it.",
+      "register": "informal",
+      "mnemonic": "Order it, and the thing jumps in front of the person."
+    },
+    {
+      "id": "L5-M7-S07",
+      "display": "Je vous l'envoie tout de suite",
+      "cue": "I'll send it to you right away",
+      "literal": "I to you it send all of following",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je vous l'envoie",
+            "cue": "I'm sending it to you",
+            "tag": "delta",
+            "forms": ["je vous l'envoie", "je te l'envoie"],
+            "note": "The same order again — vous before l' — and the present tense doing the work of a future, which is what French uses for something imminent."
+          },
+          {
+            "display": "envoyer",
+            "cue": "to send",
+            "tag": "free",
+            "forms": ["envoyer", "envoie"],
+            "note": "The verb under the frozen phrase: j'envoie, tu envoies. The y of the infinitive turns into an i whenever the ending is silent."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "French uses the plain present where English needs a future: je vous l'envoie is I will send it, not I am sending it as we speak. Reaching for a future tense here sounds like a promise about next week rather than something happening now.",
+      "sound": "zhuh voo lahn-VWAH too duh SWEET. l'envoie is two syllables, lahn-vwah.",
+      "variations": [
+        {
+          "display": "Je te l'envoie tout de suite",
+          "cue": "I'll send it to you right away",
+          "changed": "te for vous, for someone you know"
+        },
+        {
+          "display": "Je vous l'envoie",
+          "cue": "I'm sending it to you",
+          "changed": "the bare promise, with no timing on it"
+        }
+      ],
+      "mistake": {
+        "display": "Je l'envoie vous tout de suite",
+        "why": "both pronouns go in front of the verb, and vous comes first: je vous l'envoie. Nothing that is a pronoun ever sits after the verb in a statement — that only happens after a positive order."
+      },
+      "usage": "Closing a request politely by saying the thing is already on its way.",
+      "register": "neutral",
+      "mnemonic": "vous first, l' second, verb third — the order never moves."
+    },
+    {
+      "id": "L5-M7-S08",
+      "display": "Il fait un peu froid ici, non ?",
+      "cue": "It's a bit cold in here, isn't it?",
+      "literal": "It makes a little cold here, no?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "un peu froid",
+            "cue": "a bit cold",
+            "tag": "free",
+            "forms": ["un peu froid", "il fait froid"],
+            "note": "Weather is made rather than being: il fait froid, il fait chaud. un peu softens it into a remark rather than a complaint."
+          },
+          {
+            "display": "un peu",
+            "cue": "a bit",
+            "tag": "free",
+            "forms": ["un peu"],
+            "note": "The hedge that turns any statement into an opening. Before a noun it needs de: un peu de temps."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "The sentence says nothing about a window, and it is about the window. This is the whole module in one line: an indirect request is a true, mild statement said where its consequence is obvious, and the non ? at the end hands the other person the job of noticing.",
+      "sound": "eel fay an puh FRWAH ee-SEE, NOHN. un peu runs as an-puh, and the d of froid is silent.",
+      "variations": [
+        {
+          "display": "Il fait un peu chaud ici, non ?",
+          "cue": "It's a bit warm in here, isn't it?",
+          "changed": "the direction of the complaint"
+        },
+        {
+          "display": "Il fait froid ici",
+          "cue": "It's cold in here",
+          "changed": "the hedge and the tag removed, which makes it a complaint"
+        }
+      ],
+      "mistake": {
+        "display": "Il est un peu froid ici, non ?",
+        "why": "weather takes faire, not être. Il est froid describes a thing that is cold to the touch — a plate, a person — where il fait froid describes the air around you."
+      },
+      "usage": "Asking for the window to be shut without asking for anything at all.",
+      "register": "informal",
+      "mnemonic": "Weather is made: il fait, never il est."
+    },
+    {
+      "id": "L5-M7-S09",
+      "display": "Ça ne te dérangerait pas de fermer la porte ?",
+      "cue": "Would you mind closing the door?",
+      "literal": "That not to you would disturb not of to close the door?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ça ne te dérangerait pas",
+            "cue": "would you mind",
+            "tag": "free",
+            "forms": ["ça ne te dérangerait pas", "ça ne vous dérangerait pas", "ça t'ennuierait", "déranger"],
+            "note": "Negative plus conditional, the gentlest request French has. ça t'ennuierait is its twin; déranger on its own is to disturb."
+          },
+          {
+            "display": "fermer",
+            "cue": "to close",
+            "tag": "free",
+            "forms": ["fermer", "ferme"],
+            "note": "Whatever follows this frame is an infinitive, joined by de: de fermer, de venir. The opposite is L4-M1's ouvrir."
+          }
+        ],
+        "rules": [5]
+      },
+      "trap": "English would you mind is a question about the other person's feelings and so is this — which means yes and no run backwards. Someone happy to close the door answers non, ça ne me dérange pas: no, it does not bother me. A cheerful oui would be a refusal.",
+      "sound": "sah nuh tuh day-rahn-zhuh-RAY pah duh fair-MAY lah PORT. dérangerait is four syllables and the middle one is barely there.",
+      "variations": [
+        {
+          "display": "Ça ne vous dérangerait pas de fermer la porte ?",
+          "cue": "Would you mind closing the door?",
+          "changed": "the vous form, for a stranger"
+        },
+        {
+          "display": "Ça t'ennuierait de fermer la porte ?",
+          "cue": "Would it bother you to close the door?",
+          "changed": "ça t'ennuierait, which is lighter and more familiar"
+        }
+      ],
+      "mistake": {
+        "display": "Ça ne te dérangerait pas fermer la porte ?",
+        "why": "the infinitive after this frame needs de. It is a fixed joint — ça ne te dérangerait pas DE fermer — and dropping it leaves two verbs colliding with nothing between them."
+      },
+      "usage": "Asking for something you are fairly sure of getting, from someone who could say no.",
+      "register": "neutral",
+      "mnemonic": "Would it bother you — so the kind answer is no."
+    },
+    {
+      "id": "L5-M7-S10",
+      "display": "Cela dit, je vois le sous-entendu",
+      "cue": "That said, I can see what's being implied",
+      "literal": "That said, I see the under-heard",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cela dit",
+            "cue": "that said",
+            "tag": "free",
+            "forms": ["cela dit"],
+            "note": "Concedes what came before and turns it. Frozen — cela never becomes ça here, which is what keeps the phrase slightly formal."
+          },
+          {
+            "display": "je vois",
+            "cue": "I see, I get it",
+            "tag": "free",
+            "forms": ["je vois"],
+            "note": "Understanding rather than eyesight, exactly as in English. Said alone it acknowledges a point without agreeing with it."
+          },
+          {
+            "display": "sous-entendu",
+            "cue": "an implication",
+            "tag": "free",
+            "forms": ["sous-entendu", "insinuer"],
+            "note": "Literally under-heard: the thing said without being said. insinuer is the verb, and it is as unfriendly in French as in English."
+          }
+        ],
+        "rules": [6, 7]
+      },
+      "trap": "Naming the implication out loud ends the game. sous-entendu is what you say when you have decided to stop pretending you did not notice, so it is a move with consequences — much sharper than the English I see what you mean, which is merely agreement.",
+      "sound": "suh-lah DEE, zhuh vwah luh soo-zahn-tahn-DOO. The s of sous links onto entendu, soo-zahn.",
+      "variations": [
+        {
+          "display": "Cela dit, ce n'est pas faux",
+          "cue": "That said, it's fair enough",
+          "changed": "what follows the concession"
+        },
+        {
+          "display": "Je vois le sous-entendu",
+          "cue": "I can see what's being implied",
+          "changed": "the concession dropped, which makes it a challenge"
+        }
+      ],
+      "mistake": {
+        "display": "Ça dit, je vois le sous-entendu",
+        "why": "the phrase is frozen on cela, the written form of ça. ça dit is not a phrase at all — it reads as it says, and leaves the sentence with no connector."
+      },
+      "usage": "Telling someone you heard the thing they did not quite say.",
+      "register": "neutral",
+      "mnemonic": "sous-entendu — heard from underneath."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L5-M7-C01", "display": "Ce n'est pas mal", "cue": "That's not bad — that's good" },
+    { "id": "L5-M7-C02", "display": "Mine de rien, c'est difficile", "cue": "Quietly, it's hard" },
+    {
+      "id": "L5-M7-C03",
+      "display": "Tu n'aurais pas un stylo ?",
+      "cue": "You wouldn't have a pen, would you?"
+    },
+    { "id": "L5-M7-C04", "display": "Mais si, je te l'avais dit", "cue": "Yes I did — I'd told you" },
+    { "id": "L5-M7-C05", "display": "Tu aurais pu me le dire", "cue": "You could have told me" },
+    { "id": "L5-M7-C06", "display": "Passe-le-moi, s'il vous plaît", "cue": "Pass it to me, please" },
+    {
+      "id": "L5-M7-C07",
+      "display": "Je vous l'envoie tout de suite",
+      "cue": "I'll send it to you right away"
+    },
+    {
+      "id": "L5-M7-C08",
+      "display": "Il fait un peu froid ici, non ?",
+      "cue": "It's a bit cold in here, isn't it?"
+    },
+    {
+      "id": "L5-M7-C09",
+      "display": "Ça ne te dérangerait pas de fermer la porte ?",
+      "cue": "Would you mind closing the door?"
+    },
+    {
+      "id": "L5-M7-C10",
+      "display": "Cela dit, je vois le sous-entendu",
+      "cue": "That said, I can see what's being implied"
+    },
+    {
+      "id": "L5-M7-C11",
+      "display": "Ce n'est pas terrible, franchement",
+      "cue": "It's not great, honestly"
+    },
+    {
+      "id": "L5-M7-C12",
+      "display": "Donne-le-moi, ce n'est pas grave",
+      "cue": "Give it to me, it's no trouble"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

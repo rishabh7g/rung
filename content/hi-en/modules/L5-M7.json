@@ -1,0 +1,623 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M7",
+  "title": "Between the lines",
+  "job": "Implication, sarcasm, indirect requests",
+  "prerequisites": ["L5-M1", "L5-M2", "L5-M3", "L5-M4", "L5-M5", "L5-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": ["present_simple", "simple_past", "past_continuous"],
+    "allowedPatterns": [
+      "I was wondering + if + <clause> + .",
+      "Do you think + <subject> + could + <bare verb> + ?",
+      "It's a bit cold in here + .",
+      "It's up to you + .",
+      "Oh + , + brilliant + ."
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "अंग्रेज़ी में माँग जितनी दूर से रखी जाए, उतनी ही शाइस्ता मानी जाती है. सीढ़ी के चार पायदान हैं: सीधी बात (Shut the window), हालत बताना (It's a bit chilly in here), ताक़त पूछना (Could you shut the window?), और चाहत को वाक्य के अंदर छिपाना (I was wondering if you could shut the window). हर पायदान पर बोलने वाला माँग से एक क़दम और पीछे हट जाता है — और सुनने वाला उसी दूरी को शाइस्तगी पढ़ता है."
+    },
+    {
+      "tag": "interference",
+      "text": "हिंदी अंग्रेज़ी से कम घुमा-फिराकर नहीं बोलती — कमरे में ठंड है वही काम करता है जो It's a bit chilly in here करता है. उलटी बात दिशा की है, और वह काम बदलते ही पलट जाती है: माँगते समय अंग्रेज़ी ज़्यादा घुमाती है, और मना करते समय ज़्यादा सीधी होती है. No, sorry, I cannot come अंग्रेज़ी में पूरा शाइस्ता जवाब है, अधूरा नहीं."
+    },
+    {
+      "tag": "interference",
+      "text": "I will try · let's see · maybe later · I will let you know — ये हिंदी में नरम ना हैं, अंग्रेज़ी कान में हाँ हैं. सुनने वाला तारीख़ अपनी डायरी में लिख लेता है और फिर आपके न आने को वादा तोड़ना समझता है. इस मॉड्यूल की सबसे काम की एक लाइन यही है: मना करना हो तो No, sorry कहिए और वजह छोटी रखिए."
+    },
+    {
+      "tag": "delta",
+      "text": "अंग्रेज़ी का व्यंग्य सपाट चेहरे से बोला जाता है और लिखने में उसका कोई निशान नहीं बचता. Oh, brilliant · That's just what I needed · Well, that went well — तीनों का मतलब उलटा है, और वह मतलब सिर्फ़ आवाज़ के उतार-चढ़ाव से आता है. इसलिए इस मॉड्यूल का उसूल दो-तरफ़ा नहीं है: व्यंग्य पहचानिए, पर ख़ुद मत लिखिए — पढ़ने वाले तक उलटा मतलब पहुँचेगा ही नहीं."
+    },
+    {
+      "tag": "delta",
+      "text": "नरम करने वाले शब्द L4-M5 के हैं और यहाँ सिर्फ़ इस्तेमाल होते हैं, दोबारा नहीं सिखाए जाते — maybe · perhaps · not really · a bit · I would say. माँग के रूप भी पुराने हैं: could और can L2-M1 के, would L2-M5 का, would you mind L2-M1 का. यह मॉड्यूल उन्हें एक-दूसरे के ऊपर चढ़ाकर सीढ़ी बनाता है, नए सिरे से नहीं सिखाता."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M7-S01",
+      "display": "It's a bit chilly in here. Could you shut the window?",
+      "cue": "यहाँ थोड़ी ठंड है. क्या आप खिड़की बंद कर देंगे?",
+      "literal": "यह है एक थोड़ा ठंडा में यहाँ. सकते आप बंद करना वह खिड़की?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chilly",
+            "cue": "थोड़ी ठंड",
+            "tag": "delta",
+            "forms": ["chilly"],
+            "note": "कमरे या हवा की हल्की ठंड. cold (L3-M7) शरीर की ठंड के लिए है; जगह के लिए chilly ज़्यादा सही बैठता है."
+          },
+          {
+            "display": "shut",
+            "cue": "बंद करना",
+            "tag": "free",
+            "forms": ["shut"],
+            "note": "close (L4-M1) का रोज़मर्रा वाला भाई. इसका भूतकाल भी shut ही रहता है — shutted कोई शब्द नहीं."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "पहला वाक्य सिर्फ़ हालत बता रहा है, पर सुनने वाला उसे माँग पढ़ता है. अकेला It's a bit chilly in here भी अक्सर खिड़की बंद करा देता है.",
+      "sound": "chilly में ch चि जैसा और ll पर ज़ोर नहीं — चिल्-ई.",
+      "variations": [
+        {
+          "display": "It's a bit chilly in here.",
+          "cue": "यहाँ थोड़ी ठंड है.",
+          "changed": "सिर्फ़ इशारा"
+        },
+        {
+          "display": "Could you shut the window?",
+          "cue": "क्या आप खिड़की बंद कर देंगे?",
+          "changed": "सीधी माँग"
+        },
+        {
+          "display": "Shut the window.",
+          "cue": "खिड़की बंद करो.",
+          "changed": "सबसे सीधा रूप"
+        }
+      ],
+      "mistake": {
+        "display": "It's a bit cold in here. Shut the window.",
+        "why": "इशारा देकर फिर हुक्म देना दोनों का फ़ायदा मिटा देता है. या तो सिर्फ़ इशारा रखिए, या Could you से माँगिए."
+      },
+      "usage": "दफ़्तर या किसी के घर में, जब सीधे कहे बिना काम कराना हो.",
+      "register": "neutral",
+      "mnemonic": "ठंड बता दी, दरवाज़ा ख़ुद बंद हो जाएगा."
+    },
+    {
+      "id": "L5-M7-S02",
+      "display": "I was wondering if you could help me with this.",
+      "cue": "मैं सोच रहा था कि क्या आप इसमें मेरी मदद कर सकेंगे.",
+      "literal": "मैं था सोच रहा अगर आप सकते मदद करना मुझे साथ यह.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "I was wondering",
+            "cue": "मैं सोच रहा था",
+            "tag": "delta",
+            "forms": ["I was wondering"],
+            "note": "तीनों शब्द एक इकाई हैं. बीता हुआ रूप माँग को और दूर कर देता है — अभी की माँग नहीं, पहले से चल रहा ख़याल."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "यहाँ if शर्त नहीं बताता (वह L3-M4 का काम है), सवाल को वाक्य के अंदर रखता है. अंदर वाला हिस्सा सवाल नहीं रहता — if you could help सही है, if could you help ग़लत.",
+      "sound": "wondering में d लगभग नहीं सुनाई देता — वन्-डरिंग.",
+      "variations": [
+        {
+          "display": "I was wondering if you could come tomorrow.",
+          "cue": "मैं सोच रहा था कि क्या आप कल आ सकेंगे.",
+          "changed": "दूसरी माँग"
+        },
+        {
+          "display": "Could you help me with this?",
+          "cue": "क्या आप इसमें मेरी मदद कर सकते हैं?",
+          "changed": "एक पायदान नीचे"
+        },
+        {
+          "display": "Help me with this.",
+          "cue": "इसमें मेरी मदद करो.",
+          "changed": "सबसे सीधा रूप"
+        }
+      ],
+      "mistake": {
+        "display": "I was wondering if could you help me with this?",
+        "why": "if के बाद सीधा वाक्य आता है, सवाल का उलटफेर नहीं. और पूरे वाक्य के आख़िर में बिंदु आता है, प्रश्नचिह्न नहीं."
+      },
+      "usage": "बड़े या अजनबी से कोई ऐसा काम माँगते समय जो उन्हें करना ज़रूरी नहीं.",
+      "register": "formal",
+      "mnemonic": "I was wondering = माँग को बीते वक़्त में छिपा देना."
+    },
+    {
+      "id": "L5-M7-S03",
+      "display": "Do you think you could come a bit later?",
+      "cue": "क्या आपको लगता है कि आप थोड़ा बाद में आ सकेंगे?",
+      "literal": "करते आप सोचना आप सकते आना एक थोड़ा बाद?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "do you think",
+            "cue": "क्या आपको लगता है",
+            "tag": "delta",
+            "forms": ["do you think"],
+            "note": "तीनों शब्द एक साथ माँग के आगे लगते हैं और उसे राय पूछने में बदल देते हैं. इसके बाद could वाला हिस्सा ज्यों का त्यों रहता है."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "Do you think के बाद वाला हिस्सा सवाल नहीं रहता — could you नहीं, you could. प्रश्नचिह्न पूरे वाक्य के आख़िर में एक ही बार आता है.",
+      "sound": "do you अक्सर जुड़कर द्-यु जैसा निकलता है — द्-यु-थिंक्.",
+      "variations": [
+        {
+          "display": "Could you come a bit later?",
+          "cue": "क्या आप थोड़ा बाद में आ सकेंगे?",
+          "changed": "एक पायदान नीचे"
+        },
+        {
+          "display": "Do you think you could help me?",
+          "cue": "क्या आपको लगता है कि आप मेरी मदद कर सकेंगे?",
+          "changed": "दूसरी माँग"
+        },
+        {
+          "display": "Come a bit later.",
+          "cue": "थोड़ा बाद में आओ.",
+          "changed": "सबसे सीधा रूप"
+        }
+      ],
+      "mistake": {
+        "display": "Do you think could you come a bit later?",
+        "why": "Do you think ख़ुद सवाल बना चुका है, इसलिए आगे दोबारा उलटफेर नहीं होता. सही रूप है you could come."
+      },
+      "usage": "किसी से वक़्त या तरीक़ा बदलवाना हो, और मना करने की जगह छोड़नी हो.",
+      "register": "neutral",
+      "mnemonic": "Do you think … = माँग के आगे लगी नरम टोपी."
+    },
+    {
+      "id": "L5-M7-S04",
+      "display": "It's up to you. I don't mind.",
+      "cue": "यह आप पर है. मुझे कोई ऐतराज़ नहीं.",
+      "literal": "यह है ऊपर को आप. मैं नहीं ऐतराज़ करता.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "up to you",
+            "cue": "आप पर है",
+            "tag": "delta",
+            "forms": ["up to you"],
+            "note": "फ़ैसला सामने वाले के हाथ में सौंपने का जुमला. तीनों शब्द साथ चलते हैं और बीच में कुछ नहीं आता."
+          },
+          {
+            "display": "I don't mind",
+            "cue": "मुझे कोई ऐतराज़ नहीं",
+            "tag": "delta",
+            "forms": ["I don't mind"],
+            "note": "इसका मतलब मुझे परवाह नहीं नहीं है — इसका मतलब दोनों बातें मुझे मंज़ूर हैं. यह नरमी है, बेरुख़ी नहीं."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "It's up to you कहकर फिर अपनी पसंद बताना उलटा असर करता है. यह जुमला बोलने पर सचमुच फ़ैसला छोड़ना पड़ता है.",
+      "sound": "up to you में तीनों शब्द जुड़ जाते हैं — अप्-टु-यू.",
+      "variations": [
+        {
+          "display": "It's up to you.",
+          "cue": "यह आप पर है.",
+          "changed": "सिर्फ़ पहला हिस्सा"
+        },
+        {
+          "display": "I don't mind.",
+          "cue": "मुझे कोई ऐतराज़ नहीं.",
+          "changed": "सिर्फ़ जवाब"
+        },
+        {
+          "display": "I don't mind. It's up to you.",
+          "cue": "मुझे कोई ऐतराज़ नहीं. यह आप पर है.",
+          "changed": "उलटे क्रम में"
+        }
+      ],
+      "mistake": {
+        "display": "It's up to you. I don't mind, but I want the train.",
+        "why": "फ़ैसला सौंपकर तुरंत अपनी पसंद रख देना दोनों बातें झूठी कर देता है. एक ही चुनिए."
+      },
+      "usage": "जब सामने वाले को चुनने देना हो और सचमुच दोनों बातें मंज़ूर हों.",
+      "register": "informal",
+      "mnemonic": "up to you = गेंद उनके पाले में, और वापस मत माँगिए."
+    },
+    {
+      "id": "L5-M7-S05",
+      "display": "Oh, brilliant. That's just what I needed.",
+      "cue": "वाह, बहुत ख़ूब. यही तो मुझे चाहिए था.",
+      "literal": "ओह, शानदार. वह है बस जो मैं चाहता था.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "oh",
+            "cue": "वाह",
+            "tag": "free",
+            "forms": ["oh"],
+            "note": "आगे आने वाली बात का रंग बदलने वाला छोटा शब्द. व्यंग्य में यही टुकड़ा सबसे बड़ा इशारा होता है."
+          },
+          {
+            "display": "brilliant",
+            "cue": "बहुत ख़ूब",
+            "tag": "free",
+            "forms": ["brilliant"],
+            "note": "सीधे मानी में बहुत बढ़िया. Oh के साथ सपाट आवाज़ में बोला जाए तो उलटा मतलब निकलता है."
+          },
+          {
+            "display": "just what I needed",
+            "cue": "यही तो चाहिए था",
+            "tag": "delta",
+            "forms": ["just what I needed"],
+            "note": "चारों शब्द एक जुमला हैं. बोलचाल में यह अक्सर उलटे मानी में आता है — जब सचमुच वही चीज़ सबसे ग़ैर-ज़रूरी हो."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "लिखने में यह वाक्य सिर्फ़ तारीफ़ पढ़ा जाएगा. व्यंग्य का पूरा वज़न आवाज़ में है, इसलिए संदेश या चिट्ठी में इसे मत लिखिए.",
+      "sound": "brilliant में दो l एक ही आवाज़ हैं और ज़ोर पहले हिस्से पर — ब्रिल्-यन्ट्.",
+      "variations": [
+        {
+          "display": "Brilliant. That's just what I needed.",
+          "cue": "बहुत ख़ूब. यही तो मुझे चाहिए था.",
+          "changed": "बिना Oh के"
+        },
+        {
+          "display": "That's just what I needed.",
+          "cue": "यही तो मुझे चाहिए था.",
+          "changed": "सिर्फ़ दूसरा हिस्सा"
+        },
+        {
+          "display": "Oh, brilliant.",
+          "cue": "वाह, बहुत ख़ूब.",
+          "changed": "सिर्फ़ पहला हिस्सा"
+        }
+      ],
+      "mistake": {
+        "display": "Oh, brilliant. That's just what I need it.",
+        "why": "जुमले के आख़िर में it नहीं आता — जो चीज़ चाहिए थी वह what में पहले ही आ चुकी है."
+      },
+      "usage": "पहचानने के लिए, लिखने के लिए नहीं — जब कोई सपाट आवाज़ में तारीफ़ करे.",
+      "register": "informal",
+      "mnemonic": "Oh, brilliant — शब्द ऊपर, मतलब नीचे."
+    },
+    {
+      "id": "L5-M7-S06",
+      "display": "Well, that went well. Typical.",
+      "cue": "हाँ भई, ख़ूब हुआ. वही हुआ जो होना था.",
+      "literal": "अच्छा, वह गया अच्छा. आम बात.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "well",
+            "cue": "अच्छा",
+            "tag": "delta",
+            "forms": ["well"],
+            "note": "यह शब्द दो काम करता है — वाक्य के शुरू में सिर्फ़ साँस लेने का निशान, और क्रिया के बाद अच्छी तरह."
+          },
+          {
+            "display": "typical",
+            "cue": "वही हुआ जो होना था",
+            "tag": "delta",
+            "forms": ["typical"],
+            "note": "अकेला Typical अक्सर शिकायत है — यह तो हमेशा ऐसा ही होता है. सीधे मानी में इसका मतलब आम या रोज़ का है."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "यह वाक्य तभी बोला जाता है जब कुछ बिगड़ा हो. लिखने में इसका उलटा मतलब पहुँचता ही नहीं, इसलिए इसे सिर्फ़ सुनकर पहचानिए.",
+      "sound": "पहला well लंबा खिंचता है और दूसरा छोटा — वे-ल … वेल्.",
+      "variations": [
+        {
+          "display": "That went well.",
+          "cue": "ख़ूब हुआ.",
+          "changed": "सिर्फ़ बीच वाला हिस्सा"
+        },
+        {
+          "display": "Well, that did not go well.",
+          "cue": "हाँ भई, ठीक नहीं हुआ.",
+          "changed": "सीधी बात"
+        },
+        {
+          "display": "Typical.",
+          "cue": "वही हुआ जो होना था.",
+          "changed": "सिर्फ़ एक शब्द"
+        }
+      ],
+      "mistake": {
+        "display": "Well, that went good. Typical.",
+        "why": "जाना कैसा हुआ, यह बताने के लिए well चाहिए. good नाम वाले शब्दों के साथ आता है, क्रिया के बाद नहीं."
+      },
+      "usage": "पहचानने के लिए — जब कोई बिगड़ी बात पर सपाट आवाज़ में तारीफ़ करे.",
+      "register": "informal",
+      "mnemonic": "went well + सपाट आवाज़ = कुछ भी ठीक नहीं हुआ."
+    },
+    {
+      "id": "L5-M7-S07",
+      "display": "No, sorry, I cannot come. Thank you for asking.",
+      "cue": "नहीं, माफ़ कीजिए, मैं नहीं आ सकूँगा. पूछने के लिए शुक्रिया.",
+      "literal": "नहीं, माफ़ी, मैं नहीं सकता आना. धन्यवाद आप के लिए पूछना.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "thank you for asking",
+            "cue": "पूछने के लिए शुक्रिया",
+            "tag": "delta",
+            "forms": ["thank you for asking"],
+            "note": "मना करने के बाद जोड़ा जाने वाला बना-बनाया जुमला. यही वह चीज़ है जो साफ़ ना को रूखा नहीं होने देती."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "I will try · let's see · maybe later — ये अंग्रेज़ी कान में हाँ हैं. सुनने वाला आपका नाम लिख लेगा और आपके न आने को वादा तोड़ना समझेगा.",
+      "sound": "cannot में दोनों हिस्से बराबर हैं — कैन्-नॉट्, और छोटा रूप can't है.",
+      "variations": [
+        {
+          "display": "No, sorry, I cannot come.",
+          "cue": "नहीं, माफ़ कीजिए, मैं नहीं आ सकूँगा.",
+          "changed": "सिर्फ़ मना"
+        },
+        {
+          "display": "Sorry, I cannot come on Monday.",
+          "cue": "माफ़ कीजिए, मैं सोमवार को नहीं आ सकूँगा.",
+          "changed": "दिन के साथ"
+        },
+        {
+          "display": "Thank you for asking.",
+          "cue": "पूछने के लिए शुक्रिया.",
+          "changed": "सिर्फ़ शुक्रिया"
+        }
+      ],
+      "mistake": {
+        "display": "I will try. Let's see. Maybe later.",
+        "why": "हिंदी में यह नरम ना है, अंग्रेज़ी में हाँ. सुनने वाला इंतज़ार करेगा, इसलिए मना करना हो तो No, sorry कहिए."
+      },
+      "usage": "किसी भी न्योते या माँग को मना करते समय, चाहे बुलाने वाला बड़ा ही क्यों न हो.",
+      "register": "neutral",
+      "mnemonic": "साफ़ ना + छोटा शुक्रिया = पूरा शाइस्ता जवाब."
+    },
+    {
+      "id": "L5-M7-S08",
+      "display": "Apparently the shop is closed. Obviously I did not know.",
+      "cue": "लगता है दुकान बंद है. ज़ाहिर है मुझे पता नहीं था.",
+      "literal": "ज़ाहिरन वह दुकान है बंद. ज़ाहिर तौर पर मैं किया नहीं जानना.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "apparently",
+            "cue": "लगता है",
+            "tag": "delta",
+            "forms": ["apparently"],
+            "note": "जो बात किसी और से सुनी है, अपनी आँख से नहीं देखी. इससे बोलने वाला ख़बर की ज़िम्मेदारी अपने ऊपर नहीं लेता."
+          },
+          {
+            "display": "obviously",
+            "cue": "ज़ाहिर है",
+            "tag": "interference",
+            "forms": ["obviously"],
+            "note": "इसका मतलब है यह तो सबको पता होना चाहिए. सामने वाले की बात पर लगाने से ताना बन जाता है, इसलिए इसे अपनी ही बात पर रखिए."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "Obviously आप नहीं जानते सुनने में ताना है. दूसरे की जानकारी पर obviously मत लगाइए — अपनी बात पर लगाइए.",
+      "sound": "apparently में ज़ोर दूसरे हिस्से पर है — अ-पैर्-अन्ट्-ली.",
+      "variations": [
+        {
+          "display": "Apparently the shop is closed.",
+          "cue": "लगता है दुकान बंद है.",
+          "changed": "सिर्फ़ सुनी हुई बात"
+        },
+        {
+          "display": "The shop is closed.",
+          "cue": "दुकान बंद है.",
+          "changed": "अपनी आँखों देखी बात"
+        },
+        {
+          "display": "Obviously I did not know.",
+          "cue": "ज़ाहिर है मुझे पता नहीं था.",
+          "changed": "सिर्फ़ दूसरा हिस्सा"
+        }
+      ],
+      "mistake": {
+        "display": "Apparently the shop is closed. Obviously you did not know.",
+        "why": "obviously दूसरे पर लगते ही ताना बन जाता है — तुम्हें तो पता ही नहीं होगा. इसे अपनी बात पर ही रखिए."
+      },
+      "usage": "सुनी-सुनाई ख़बर देते समय, जब उसकी ज़िम्मेदारी अपने ऊपर न लेनी हो.",
+      "register": "neutral",
+      "mnemonic": "apparently = सुना है; obviously = अपनी बात पर, दूसरे पर नहीं."
+    },
+    {
+      "id": "L5-M7-S09",
+      "display": "That was a hint. Somehow I did not notice what you imply.",
+      "cue": "वह एक इशारा था. न जाने कैसे मैंने समझा ही नहीं कि आप क्या कहना चाह रहे हैं.",
+      "literal": "वह था एक इशारा. किसी तरह मैं किया नहीं समझना जो आप इशारा करते.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hint",
+            "cue": "इशारा",
+            "tag": "free",
+            "forms": ["hint", "hints"],
+            "note": "बात सीधे न कहकर उसका सिरा पकड़ा देना. drop a hint यानी इशारा छोड़ना, take a hint यानी इशारा पकड़ लेना."
+          },
+          {
+            "display": "somehow",
+            "cue": "न जाने कैसे",
+            "tag": "free",
+            "forms": ["somehow"],
+            "note": "जिसकी वजह न पता हो या न बतानी हो. दोनों टुकड़े जुड़कर एक शब्द बनते हैं, some how नहीं."
+          },
+          {
+            "display": "imply",
+            "cue": "कहना चाहना",
+            "tag": "delta",
+            "forms": ["imply", "implies", "implied"],
+            "note": "बोलने वाला जो कहे बिना कहता है. सुनने वाला जो समझता है उसके लिए infer है — दोनों को एक मत कीजिए."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "imply बोलने वाले का काम है और समझना सुनने वाले का. What are you implying? का मतलब है आप कहना क्या चाह रहे हैं — और यह अक्सर नाराज़गी में पूछा जाता है.",
+      "sound": "imply में ज़ोर दूसरे हिस्से पर है — इम्-प्लाई.",
+      "variations": [
+        {
+          "display": "That was a hint.",
+          "cue": "वह एक इशारा था.",
+          "changed": "सिर्फ़ पहला हिस्सा"
+        },
+        {
+          "display": "Somehow I did not notice it.",
+          "cue": "न जाने कैसे मैंने उसे समझा ही नहीं.",
+          "changed": "छोटा दूसरा हिस्सा"
+        },
+        {
+          "display": "What do you imply?",
+          "cue": "आप क्या कहना चाह रहे हैं?",
+          "changed": "सवाल के रूप में"
+        }
+      ],
+      "mistake": {
+        "display": "That was a hint. Somehow I did not notice what you infer.",
+        "why": "infer सुनने वाले का काम है. जो बात आपने बिना कहे कही, उसके लिए imply चाहिए."
+      },
+      "usage": "जब कोई इशारा चूक जाए और उसे बाद में मानना हो.",
+      "register": "neutral",
+      "mnemonic": "imply छोड़ने वाला, infer उठाने वाला."
+    },
+    {
+      "id": "L5-M7-S10",
+      "display": "Anyway, whatever you like is fine. If you say so.",
+      "cue": "ख़ैर, जो आपको ठीक लगे वही ठीक है. जैसा आप कहें.",
+      "literal": "वैसे भी, जो भी आप पसंद है ठीक. अगर आप कहते ऐसा.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anyway",
+            "cue": "ख़ैर",
+            "tag": "delta",
+            "forms": ["anyway"],
+            "note": "बात को यहीं छोड़कर आगे बढ़ने का निशान. इसके बाद अक्सर वही बात आती है जो सचमुच कहनी थी."
+          },
+          {
+            "display": "whatever",
+            "cue": "जो भी",
+            "tag": "delta",
+            "forms": ["whatever"],
+            "note": "इसके दो चेहरे हैं. वाक्य के अंदर यह जो भी है, पर अकेला Whatever. रूखा जवाब है — मुझे फ़र्क़ नहीं पड़ता."
+          },
+          {
+            "display": "if you say so",
+            "cue": "जैसा आप कहें",
+            "tag": "interference",
+            "forms": ["if you say so"],
+            "note": "चारों शब्द एक जुमला हैं. यह हामी नहीं है — इसमें छिपा है कि मैं मानता नहीं, पर बहस नहीं करूँगा."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "If you say so को हाँ मत समझिए. यह अधूरी हामी है और सुनने वाला इसे नाराज़गी पढ़ता है.",
+      "sound": "anyway में y हल्का है और ज़ोर पहले हिस्से पर — एन्-ई-वे.",
+      "variations": [
+        {
+          "display": "Whatever you like is fine.",
+          "cue": "जो आपको ठीक लगे वही ठीक है.",
+          "changed": "बिना anyway"
+        },
+        {
+          "display": "If you say so.",
+          "cue": "जैसा आप कहें.",
+          "changed": "सिर्फ़ अधूरी हामी"
+        },
+        {
+          "display": "Anyway, it is up to you.",
+          "cue": "ख़ैर, यह आप पर है.",
+          "changed": "पहले वाला जुमला"
+        }
+      ],
+      "mistake": {
+        "display": "Anyway, whatever. If you say so.",
+        "why": "अकेला whatever रूखा है और If you say so के साथ आकर पूरी बात नाराज़ लगती है. वाक्य के अंदर whatever you like रखिए."
+      },
+      "usage": "बहस ख़त्म करते समय, जब मानना नहीं है पर आगे नहीं बढ़ना.",
+      "register": "informal",
+      "mnemonic": "If you say so = हाँ जैसा दिखने वाला ना."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M7-C01",
+      "display": "It's a bit chilly in here.",
+      "cue": "यहाँ थोड़ी ठंड है."
+    },
+    {
+      "id": "L5-M7-C02",
+      "display": "Could you shut the window?",
+      "cue": "क्या आप खिड़की बंद कर देंगे?"
+    },
+    {
+      "id": "L5-M7-C03",
+      "display": "I was wondering if you could help me with this.",
+      "cue": "मैं सोच रहा था कि क्या आप इसमें मेरी मदद कर सकेंगे."
+    },
+    {
+      "id": "L5-M7-C04",
+      "display": "Do you think you could come a bit later?",
+      "cue": "क्या आपको लगता है कि आप थोड़ा बाद में आ सकेंगे?"
+    },
+    {
+      "id": "L5-M7-C05",
+      "display": "It's up to you.",
+      "cue": "यह आप पर है."
+    },
+    {
+      "id": "L5-M7-C06",
+      "display": "I don't mind.",
+      "cue": "मुझे कोई ऐतराज़ नहीं."
+    },
+    {
+      "id": "L5-M7-C07",
+      "display": "Oh, brilliant. That's just what I needed.",
+      "cue": "वाह, बहुत ख़ूब. यही तो मुझे चाहिए था."
+    },
+    {
+      "id": "L5-M7-C08",
+      "display": "Well, that went well. Typical.",
+      "cue": "हाँ भई, ख़ूब हुआ. वही हुआ जो होना था."
+    },
+    {
+      "id": "L5-M7-C09",
+      "display": "No, sorry, I cannot come.",
+      "cue": "नहीं, माफ़ कीजिए, मैं नहीं आ सकूँगा."
+    },
+    {
+      "id": "L5-M7-C10",
+      "display": "Apparently the shop is closed.",
+      "cue": "लगता है दुकान बंद है."
+    },
+    {
+      "id": "L5-M7-C11",
+      "display": "That was a hint. Somehow I did not notice it.",
+      "cue": "वह एक इशारा था. न जाने कैसे मैंने उसे समझा ही नहीं."
+    },
+    {
+      "id": "L5-M7-C12",
+      "display": "Anyway, whatever you like is fine.",
+      "cue": "ख़ैर, जो आपको ठीक लगे वही ठीक है."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

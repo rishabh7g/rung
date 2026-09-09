@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M6",
+  "title": "Arguing a position",
+  "job": "A structured case, objections answered",
+  "prerequisites": [
+    "L5-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "Na pérvyy vzglyad + <clause> + , + no na sámom déle + <clause>",
+      "Mózhno vozrazít' + , + chto + <clause>",
+      "Poskól'ku + <clause> + , + <clause>",
+      "<clause> + , + slédovatel'no + , + <clause>",
+      "Tem ne méneye + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE CONCESSION-REFUTATION PAIR is one sentence in two halves: Na pervyy vzglyad … , no na samom dele … . The first half states the view you are about to answer, accurately and without irony; the second half answers it. Russian argues this way in print and in public the way English does, and getting the halves in this order is most of what makes a case sound argued rather than asserted."
+    },
+    {
+      "tag": "delta",
+      "text": "THE BOOKISH CONNECTORS govern nothing. sledovatel'no (therefore), takim obrazom (thus), poskol'ku (since), vsledstviye and v rezul'tate (as a result), odnako (however), tem ne meneye (nevertheless) take no case and change no ending. All they cost is a comma — L3-M3's comma, which Russian sets before a subordinate clause and around an inserted connector. The whole teaching load here is register and slot, not grammar."
+    },
+    {
+      "tag": "interference",
+      "text": "REGISTER, not meaning, is where English misleads. Each of these connectors has a spoken twin the learner already owns: sledovatel'no is the written form of znachit (L4-M2), poskol'ku of potomu chto (L1-M9) and tak kak (L4-M2), v rezul'tate of poetomu (L1-M9). Saying sledovatel'no over dinner is as odd as saying hence. The spoken ones are not weaker or lazier — they are the right word in the right room."
+    },
+    {
+      "tag": "free",
+      "text": "odnako is the one connector here with a second, spoken life: standing alone it is an exclamation of surprise, Odnako! — well I never. That is not a formal use and it is not an argument connector; it is the same word doing a different job, and it is named here rather than hidden because a learner will hear it."
+    },
+    {
+      "tag": "delta",
+      "text": "TWO WRITTEN VARIANTS of things the learner already has. dlya togo chtoby is the heavy form of L4-M1's chtoby purpose clause — same meaning, printed register, and the three words are one frozen phrase. v techeniye plus the GENITIVE is the bookish duration phrase (v techeniye dnya, v techeniye nedeli). Each is shown beside the plain form it varies, never instead of it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M6-S01",
+      "display": "Na pérvyy vzglyad éhto prósto, no na sámom déle éhto trúdno.",
+      "script": "На первый взгляд это просто, но на самом деле это трудно.",
+      "cue": "At first glance it's simple, but in fact it's hard.",
+      "literal": "At first glance this simple, but at very deed this hard.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "na pérvyy vzglyad",
+            "script": "на первый взгляд",
+            "cue": "at first glance",
+            "tag": "free",
+            "forms": [
+              "na pérvyy vzglyad"
+            ],
+            "note": "At first glance. One frozen three-word phrase, so it is indexed whole; the bare ordinal pérvyy is not what this row teaches."
+          },
+          {
+            "display": "na sámom déle",
+            "script": "на самом деле",
+            "cue": "in fact; actually",
+            "tag": "free",
+            "forms": [
+              "na sámom déle"
+            ],
+            "note": "In fact. The second half of the concession pair, and a frozen phrase: literally in the very deed. It answers the view na pérvyy vzglyad just stated."
+          },
+          {
+            "display": "trúdno",
+            "script": "трудно",
+            "cue": "hard; difficult",
+            "tag": "free",
+            "forms": [
+              "trúdno"
+            ],
+            "note": "Hard, difficult — an impersonal adverb, so it needs no subject: Éhto trúdno, or just Trúdno."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English drops actually anywhere in a sentence. na sámom déle is the back half of a pair and wants na pérvyy vzglyad standing in front of it.",
+      "sound": "na pérvyy vzglyad runs together as na-PYER-vyy VZGLYAT, with the final d said as t. na sámom déle is na SA-mom DYE-lye.",
+      "variations": [
+        {
+          "display": "Na pérvyy vzglyad éhto prósto.",
+          "script": "На первый взгляд это просто.",
+          "cue": "At first glance it's simple.",
+          "changed": "the concession alone, with the refutation left unsaid"
+        },
+        {
+          "display": "Na sámom déle éhto trúdno.",
+          "script": "На самом деле это трудно.",
+          "cue": "In fact it's hard.",
+          "changed": "the refutation alone, which lands as blunt without the concession"
+        }
+      ],
+      "mistake": {
+        "display": "Na sámom déle éhto prósto, no na pérvyy vzglyad éhto trúdno.",
+        "script": "На самом деле это просто, но на первый взгляд это трудно.",
+        "why": "the halves swapped. na pérvyy vzglyad states the view you are about to answer, so it comes first; reversed, the sentence argues against itself."
+      },
+      "usage": "Written or public argument: state the opposing view fairly, then answer it.",
+      "register": "formal",
+      "mnemonic": "First the glance, then the truth: na pérvyy vzglyad … no na sámom déle …"
+    },
+    {
+      "id": "L5-M6-S02",
+      "display": "Mózhno vozrazít', chto éhto slíshkom dórogo.",
+      "script": "Можно возразить, что это слишком дорого.",
+      "cue": "One could object that it's too expensive.",
+      "literal": "Possible to-object, that this too expensive.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mózhno vozrazít'",
+            "script": "можно возразить",
+            "cue": "one could object",
+            "tag": "free",
+            "forms": [
+              "mózhno vozrazít'"
+            ],
+            "note": "One could object. L2-M1's mózhno plus the verb to object, taken whole because the pair is the frame; it always continues with chto."
+          },
+          {
+            "display": "slíshkom",
+            "script": "слишком",
+            "cue": "too (excessively)",
+            "tag": "free",
+            "forms": [
+              "slíshkom"
+            ],
+            "note": "Too, in the excessive sense: slíshkom dórogo is too expensive. Not the too that means also, which is tózhe."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English one might argue can stand without a that-clause. mózhno vozrazít' cannot: drop the chto and the phrase reads as objecting to the thing itself.",
+      "sound": "vozrazít' is va-zra-ZEET', stressed on the last syllable, with a soft final t.",
+      "variations": [
+        {
+          "display": "Mózhno vozrazít', chto éhto trúdno.",
+          "script": "Можно возразить, что это трудно.",
+          "cue": "One could object that it's hard.",
+          "changed": "a different objection inside the same frame"
+        },
+        {
+          "display": "Éhto slíshkom dórogo.",
+          "script": "Это слишком дорого.",
+          "cue": "It's too expensive.",
+          "changed": "the objection bare, without the frame that introduces it"
+        }
+      ],
+      "mistake": {
+        "display": "Mózhno vozrazít' éhto slíshkom dórogo.",
+        "script": "Можно возразить это слишком дорого.",
+        "why": "the chto dropped. mózhno vozrazít' takes a chto-clause; without it, éhto reads as the thing being objected to rather than as the objection."
+      },
+      "usage": "Answering the strongest objection before anyone in the room makes it.",
+      "register": "formal",
+      "mnemonic": "mózhno vozrazít' always takes chto — one may object THAT."
+    },
+    {
+      "id": "L5-M6-S03",
+      "display": "Poskól'ku éhto vázhno, my dolzhný rabótat' závtra.",
+      "script": "Поскольку это важно, мы должны работать завтра.",
+      "cue": "Since this is important, we have to work tomorrow.",
+      "literal": "Since this important, we must to-work tomorrow.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "poskól'ku",
+            "script": "поскольку",
+            "cue": "since; inasmuch as",
+            "tag": "free",
+            "forms": [
+              "poskól'ku"
+            ],
+            "note": "Since, in the reasoning sense. The written twin of tak kak, and like it it fronts the sentence comfortably: Poskól'ku …, … ."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "English since is also a time word (since Monday). Russian poskól'ku is only the reasoning one; the time sense is s plus the genitive.",
+      "sound": "poskól'ku is pas-KOL'-ku. The soft sign after the l is the whole difference from a hard l.",
+      "variations": [
+        {
+          "display": "Poskól'ku éhto vázhno, my rabótali.",
+          "script": "Поскольку это важно, мы работали.",
+          "cue": "Since it was important, we worked.",
+          "changed": "the same reason with a past-tense result"
+        },
+        {
+          "display": "Poskól'ku éhto trúdno, núzhno vrémya.",
+          "script": "Поскольку это трудно, нужно время.",
+          "cue": "Since it's hard, time is needed.",
+          "changed": "an impersonal main clause after the same connector"
+        }
+      ],
+      "mistake": {
+        "display": "Poskól'ku éhto vázhno my dolzhný rabótat' závtra.",
+        "script": "Поскольку это важно мы должны работать завтра.",
+        "why": "the comma gone. A fronted poskól'ku clause closes with a comma before the main clause, exactly as L3-M3 sets it."
+      },
+      "usage": "Written reasoning. In speech a Russian reaches for potomú chto or tak kak instead.",
+      "register": "formal",
+      "mnemonic": "poskól'ku is tak kak in a suit: same meaning, printed page."
+    },
+    {
+      "id": "L5-M6-S04",
+      "display": "Ya rabótal ves' den', slédovatel'no, ya ustál.",
+      "script": "Я работал весь день, следовательно, я устал.",
+      "cue": "I worked all day, therefore I'm tired.",
+      "literal": "I worked all day, consequently, I tired.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ves'",
+            "script": "весь",
+            "cue": "all of; the whole",
+            "tag": "free",
+            "forms": [
+              "ves'"
+            ],
+            "note": "The whole of a single thing: ves' den' is all day. Different from vsyó, which is everything, and from vsé, which is everybody."
+          },
+          {
+            "display": "slédovatel'no",
+            "script": "следовательно",
+            "cue": "therefore; consequently",
+            "tag": "free",
+            "forms": [
+              "slédovatel'no"
+            ],
+            "note": "Therefore. Front-stressed, and it sits between commas. Its spoken twin is znáchit, which is what a Russian actually says in a kitchen."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "English therefore can sit at the head with no comma behind it. slédovatel'no is an inserted word and takes a comma on both sides.",
+      "sound": "slédovatel'no is FRONT-stressed: SLYE-da-va-tyel'-na. Learners regularly say slyeda-VA-tyel'no, and that is wrong.",
+      "variations": [
+        {
+          "display": "Ya rabótal ves' den'.",
+          "script": "Я работал весь день.",
+          "cue": "I worked all day.",
+          "changed": "the premise on its own"
+        },
+        {
+          "display": "Ya ustál, slédovatel'no, ya ne rabótayu.",
+          "script": "Я устал, следовательно, я не работаю.",
+          "cue": "I'm tired, therefore I'm not working.",
+          "changed": "the same connector with the conclusion in the present"
+        }
+      ],
+      "mistake": {
+        "display": "Ya rabótal ves' den', poéhtomu slédovatel'no ya ustál.",
+        "script": "Я работал весь день, поэтому следовательно я устал.",
+        "why": "two connectors for one join. poéhtomu and slédovatel'no do the same job in different registers; pick one, and pick it by the room you are in."
+      },
+      "usage": "The written case, where the conclusion is drawn out loud from the premise.",
+      "register": "formal",
+      "mnemonic": "slédovatel'no is znáchit with its shoes on — same step, better shoes."
+    },
+    {
+      "id": "L5-M6-S05",
+      "display": "Tem ne méneye, ya s vámi ne soglásen.",
+      "script": "Тем не менее, я с вами не согласен.",
+      "cue": "Nevertheless, I don't agree with you.",
+      "literal": "By-that not less, I with you not agreeing.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tem ne méneye",
+            "script": "тем не менее",
+            "cue": "nevertheless",
+            "tag": "free",
+            "forms": [
+              "tem ne méneye"
+            ],
+            "note": "Nevertheless. Three words said as one; the ne inside is part of the phrase and negates nothing in the clause after it."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The ne inside tem ne méneye belongs to the phrase and negates nothing after it. The clause still needs its own ne, as this one has.",
+      "sound": "tem ne méneye is tyem nye MYE-nye-ye, said in one breath with the stress on the third word.",
+      "variations": [
+        {
+          "display": "Tem ne méneye, éhto vázhno.",
+          "script": "Тем не менее, это важно.",
+          "cue": "Nevertheless, it's important.",
+          "changed": "a short main clause after the same connector"
+        },
+        {
+          "display": "Ya s vámi ne soglásen.",
+          "script": "Я с вами не согласен.",
+          "cue": "I don't agree with you.",
+          "changed": "the disagreement without the concession in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "Ne méneye, ya s vámi ne soglásen.",
+        "script": "Не менее, я с вами не согласен.",
+        "why": "tem dropped. The phrase is three words and none of them is optional; ne méneye alone means no less and is not a connector at all."
+      },
+      "usage": "Conceding a point and then holding your ground anyway, in writing or in public.",
+      "register": "formal",
+      "mnemonic": "Three words, one connector: tem ne méneye is nevertheless, never not less."
+    },
+    {
+      "id": "L5-M6-S06",
+      "display": "Takím óbrazom, otsyúda sléduyet odín pravil'nyy vývod.",
+      "script": "Таким образом, отсюда следует один правильный вывод.",
+      "cue": "Thus, one correct conclusion follows from this.",
+      "literal": "Such way, from-here follows one correct conclusion.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "takím óbrazom",
+            "script": "таким образом",
+            "cue": "thus; in this way",
+            "tag": "free",
+            "forms": [
+              "takím óbrazom"
+            ],
+            "note": "Thus, in this way. Frozen in the instrumental, so neither word changes; it opens the sentence that draws the conclusion."
+          },
+          {
+            "display": "sléduyet",
+            "script": "следует",
+            "cue": "it follows",
+            "tag": "free",
+            "forms": [
+              "sléduyet"
+            ],
+            "note": "It follows. Impersonal, so the conclusion is its subject: Otsyúda sléduyet odín vývod — one conclusion follows from this."
+          },
+          {
+            "display": "pravil'nyy",
+            "script": "правильный",
+            "cue": "correct; right",
+            "tag": "free",
+            "forms": [
+              "pravil'nyy"
+            ],
+            "note": "Correct, of a thing rather than a person. A person who is right is prav, which is L3-M3's."
+          },
+          {
+            "display": "vývod",
+            "script": "вывод",
+            "cue": "conclusion",
+            "tag": "free",
+            "forms": [
+              "vývod"
+            ],
+            "note": "A conclusion, the thing an argument arrives at. Front-stressed: VÝ-vod."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "English says the conclusion is that …; Russian makes the conclusion the SUBJECT of sléduyet, so the verb agrees with vývod and not with the arguer.",
+      "sound": "óbrazom is O-bra-zam, front-stressed. sléduyet is SLYE-du-yet, and vývod is VÝ-vod.",
+      "variations": [
+        {
+          "display": "Otsyúda sléduyet odín vývod.",
+          "script": "Отсюда следует один вывод.",
+          "cue": "One conclusion follows from this.",
+          "changed": "the conclusion without the connector"
+        },
+        {
+          "display": "Takím óbrazom, éhto pravil'nyy vývod.",
+          "script": "Таким образом, это правильный вывод.",
+          "cue": "Thus, that's the right conclusion.",
+          "changed": "the connector with a plain naming clause instead"
+        }
+      ],
+      "mistake": {
+        "display": "Takím óbrazom, otsyúda sléduyut odín pravil'nyy vývod.",
+        "script": "Таким образом, отсюда следуют один правильный вывод.",
+        "why": "a plural verb under a singular subject. One vývod follows, so the verb is sléduyet; sléduyut would need vývody standing there."
+      },
+      "usage": "Closing a written case: the sentence that names what has been shown.",
+      "register": "formal",
+      "mnemonic": "takím óbrazom points forward at the vývod, and sléduyet agrees with it."
+    },
+    {
+      "id": "L5-M6-S07",
+      "display": "Vslédstviye dozhdyá my rabótali dóma v techéniye dnya.",
+      "script": "Вследствие дождя мы работали дома в течение дня.",
+      "cue": "Because of the rain we worked at home all day long.",
+      "literal": "In-consequence of-rain we worked at-home in course of-day.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vslédstviye",
+            "script": "вследствие",
+            "cue": "as a result of",
+            "tag": "free",
+            "forms": [
+              "vslédstviye"
+            ],
+            "note": "As a result of, and it takes the GENITIVE: vslédstviye dozhdyá. Stressed on the second syllable, not the first."
+          },
+          {
+            "display": "v techéniye",
+            "script": "в течение",
+            "cue": "during; over the course of",
+            "tag": "free",
+            "forms": [
+              "v techéniye"
+            ],
+            "note": "Over the course of, plus the GENITIVE: v techéniye dnya. The bookish duration phrase beside L4-M6's plain accusative of time."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "English because of and during both take a plain noun. Both of these take the GENITIVE, so dozhd' becomes dozhdyá and den' becomes dnya.",
+      "sound": "vslédstviye is stressed on its SECOND syllable, vslyed-STVI-ye. techéniye is tye-CHE-ni-ye.",
+      "variations": [
+        {
+          "display": "Vslédstviye dozhdyá my rabótali dóma.",
+          "script": "Вследствие дождя мы работали дома.",
+          "cue": "Because of the rain we worked at home.",
+          "changed": "the cause without the duration"
+        },
+        {
+          "display": "My rabótali dóma v techéniye dnya.",
+          "script": "Мы работали дома в течение дня.",
+          "cue": "We worked at home all day long.",
+          "changed": "the duration without the cause"
+        }
+      ],
+      "mistake": {
+        "display": "Vslédstviye dozhd' my rabótali dóma.",
+        "script": "Вследствие дождь мы работали дома.",
+        "why": "the dictionary form left standing. vslédstviye governs the genitive, so it is vslédstviye dozhdyá — the same ending L4-M2's iz-za takes."
+      },
+      "usage": "Reports, minutes, notices — the register that explains why something did not happen.",
+      "register": "formal",
+      "mnemonic": "Both of these prepositions eat a genitive: vslédstviye dozhdyá, v techéniye dnya."
+    },
+    {
+      "id": "L5-M6-S08",
+      "display": "Bezuslóvno, v rezul'táte vsyó býlo khoroshó.",
+      "script": "Безусловно, в результате всё было хорошо.",
+      "cue": "Certainly, in the end everything was fine.",
+      "literal": "Undoubtedly, in result all was well.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "v rezul'táte",
+            "script": "в результате",
+            "cue": "as a result",
+            "tag": "free",
+            "forms": [
+              "v rezul'táte"
+            ],
+            "note": "As a result. Stands alone as a connector, unlike vslédstviye, which always wants a genitive noun behind it."
+          },
+          {
+            "display": "bezuslóvno",
+            "script": "безусловно",
+            "cue": "certainly; undoubtedly",
+            "tag": "free",
+            "forms": [
+              "bezuslóvno"
+            ],
+            "note": "Certainly, undoubtedly. It concedes a point wholeheartedly, which is what makes the no that follows land."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "English certainly can be a grudging half-concession. bezuslóvno is not grudging: it grants the point completely, which is exactly what makes a following no land hard.",
+      "sound": "bezuslóvno is bye-zoos-LOV-na. rezul'táte is rye-zool'-TA-tye.",
+      "variations": [
+        {
+          "display": "V rezul'táte vsyó býlo khoroshó.",
+          "script": "В результате всё было хорошо.",
+          "cue": "In the end everything was fine.",
+          "changed": "the result without the concession"
+        },
+        {
+          "display": "Bezuslóvno, éhto vázhno.",
+          "script": "Безусловно, это важно.",
+          "cue": "Certainly, that's important.",
+          "changed": "the concession on its own, granting the other side its point"
+        }
+      ],
+      "mistake": {
+        "display": "Bezuslóvno, v rezul'tát vsyó býlo khoroshó.",
+        "script": "Безусловно, в результат всё было хорошо.",
+        "why": "the accusative under a static v. v rezul'táte is the prepositional and describes where things ended up, not motion into a result."
+      },
+      "usage": "Granting the other side its strongest point before answering it.",
+      "register": "formal",
+      "mnemonic": "bezuslóvno concedes everything, so the sentence after it has to earn its no."
+    },
+    {
+      "id": "L5-M6-S09",
+      "display": "Odnáko deystvítel'no trúdno rabótat' ves' den'.",
+      "script": "Однако действительно трудно работать весь день.",
+      "cue": "However, it really is hard to work all day.",
+      "literal": "However really hard to-work all day.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "odnáko",
+            "script": "однако",
+            "cue": "however",
+            "tag": "free",
+            "forms": [
+              "odnáko"
+            ],
+            "note": "However. It can open the clause or sit inside it between commas; standing alone it is a spoken cry of surprise instead."
+          },
+          {
+            "display": "deystvítel'no",
+            "script": "действительно",
+            "cue": "really; indeed",
+            "tag": "free",
+            "forms": [
+              "deystvítel'no"
+            ],
+            "note": "Really, indeed — it grants that something is so. Stressed on the third syllable: deyst-VI-tyel'-na."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "English however is only a connector. odnáko is that too, but standing alone with an exclamation mark it is a spoken cry of surprise — the same word, a different job.",
+      "sound": "odnáko is ad-NA-ka, stressed in the middle. deystvítel'no is deyst-VI-tyel'-na.",
+      "variations": [
+        {
+          "display": "Odnáko éhto trúdno.",
+          "script": "Однако это трудно.",
+          "cue": "However, it's hard.",
+          "changed": "the connector with the shortest possible clause"
+        },
+        {
+          "display": "Deystvítel'no, éhto slíshkom dórogo.",
+          "script": "Действительно, это слишком дорого.",
+          "cue": "Indeed, it really is too expensive.",
+          "changed": "the concession adverb granting the other side its fact"
+        }
+      ],
+      "mistake": {
+        "display": "No odnáko trúdno rabótat' ves' den'.",
+        "script": "Но однако трудно работать весь день.",
+        "why": "no and odnáko are the same however said twice. Russian takes one of them per clause, and odnáko is the written one."
+      },
+      "usage": "Turning the case after a concession, in the register of a printed argument.",
+      "register": "formal",
+      "mnemonic": "odnáko is the printed no; Odnáko! on its own is a raised eyebrow."
+    },
+    {
+      "id": "L5-M6-S10",
+      "display": "Naprótiv, dlya tovó chtóby rabótat' khoroshó, núzhno vrémya.",
+      "script": "Напротив, для того чтобы работать хорошо, нужно время.",
+      "cue": "On the contrary, in order to work well one needs time.",
+      "literal": "On-the-contrary, for that in-order-to to-work well, necessary time.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "naprótiv",
+            "script": "напротив",
+            "cue": "on the contrary",
+            "tag": "free",
+            "forms": [
+              "naprótiv"
+            ],
+            "note": "On the contrary. It does not merely disagree, it asserts the opposite, so what follows must be the opposite claim."
+          },
+          {
+            "display": "dlya tovó chtóby",
+            "script": "для того чтобы",
+            "cue": "in order to",
+            "tag": "free",
+            "forms": [
+              "dlya tovó chtóby"
+            ],
+            "note": "In order to — the heavy written form of L4-M1's plain chtóby. Three words, one phrase, and the middle word is the genitive of that."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "English on the contrary is often only a softer however. naprótiv asserts the OPPOSITE, so what follows it must actually be the opposite claim, not a milder one.",
+      "sound": "naprótiv is na-PRO-tif, with the final v said as f. dlya tovó chtóby is dlya ta-VO SHTO-by.",
+      "variations": [
+        {
+          "display": "Dlya tovó chtóby rabótat' khoroshó, núzhno vrémya.",
+          "script": "Для того чтобы работать хорошо, нужно время.",
+          "cue": "In order to work well, one needs time.",
+          "changed": "the purpose clause without the contrary turn"
+        },
+        {
+          "display": "Naprótiv, éhto óchen' prósto.",
+          "script": "Напротив, это очень просто.",
+          "cue": "On the contrary, it's very simple.",
+          "changed": "the contrary turn with the shortest opposite claim"
+        }
+      ],
+      "mistake": {
+        "display": "Naprótiv, dlya chtóby rabótat' khoroshó, núzhno vrémya.",
+        "script": "Напротив, для чтобы работать хорошо, нужно время.",
+        "why": "tovó dropped out of the middle. The written purpose phrase is all three words, dlya tovó chtóby; the plain form is chtóby alone, with no dlya in front of it."
+      },
+      "usage": "A written rebuttal that replaces the other side's claim rather than softening it.",
+      "register": "formal",
+      "mnemonic": "naprótiv promises the opposite; dlya tovó chtóby is chtóby in its Sunday clothes."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M6-C01",
+      "display": "Na pérvyy vzglyad éhto prósto.",
+      "script": "На первый взгляд это просто.",
+      "cue": "At first glance it's simple."
+    },
+    {
+      "id": "L5-M6-C02",
+      "display": "Na sámom déle éhto trúdno.",
+      "script": "На самом деле это трудно.",
+      "cue": "In fact it's hard."
+    },
+    {
+      "id": "L5-M6-C03",
+      "display": "Mózhno vozrazít', chto éhto dórogo.",
+      "script": "Можно возразить, что это дорого.",
+      "cue": "One could object that it's expensive."
+    },
+    {
+      "id": "L5-M6-C04",
+      "display": "Poskól'ku vrémeni net, ya rabótayu.",
+      "script": "Поскольку времени нет, я работаю.",
+      "cue": "Since there's no time, I'm working."
+    },
+    {
+      "id": "L5-M6-C05",
+      "display": "Ya ustál, slédovatel'no, ya ne rabótayu.",
+      "script": "Я устал, следовательно, я не работаю.",
+      "cue": "I'm tired, therefore I'm not working."
+    },
+    {
+      "id": "L5-M6-C06",
+      "display": "Takím óbrazom, éhto pravil'nyy vývod.",
+      "script": "Таким образом, это правильный вывод.",
+      "cue": "Thus, that's the right conclusion."
+    },
+    {
+      "id": "L5-M6-C07",
+      "display": "Tem ne méneye, ya ne soglásen.",
+      "script": "Тем не менее, я не согласен.",
+      "cue": "Nevertheless, I don't agree."
+    },
+    {
+      "id": "L5-M6-C08",
+      "display": "Odnáko éhto slíshkom dórogo.",
+      "script": "Однако это слишком дорого.",
+      "cue": "However, it's too expensive."
+    },
+    {
+      "id": "L5-M6-C09",
+      "display": "V rezul'táte vsyó býlo khoroshó.",
+      "script": "В результате всё было хорошо.",
+      "cue": "In the end everything was fine."
+    },
+    {
+      "id": "L5-M6-C10",
+      "display": "Vslédstviye dozhdyá my rabótali dóma.",
+      "script": "Вследствие дождя мы работали дома.",
+      "cue": "Because of the rain we worked at home."
+    },
+    {
+      "id": "L5-M6-C11",
+      "display": "Bezuslóvno, éhto óchen' vázhno.",
+      "script": "Безусловно, это очень важно.",
+      "cue": "Certainly, that's very important."
+    },
+    {
+      "id": "L5-M6-C12",
+      "display": "Dlya tovó chtóby rabótat', núzhno vrémya.",
+      "script": "Для того чтобы работать, нужно время.",
+      "cue": "In order to work, one needs time."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M8",
+  "title": "When words run out",
+  "job": "Paraphrase, ask what something means, repair a misunderstanding",
+  "prerequisites": [
+    "L5-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "mā maʿnā + hādhihi al-kalima",
+      "shayʾ mithl + <owned noun>",
+      "nawʿ min + al- + N",
+      "lam afham + , + hal yumkinuka an tuʿīd",
+      "kayfa taqūl + <English word> + bi-al-ʿarabiyya"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "REPAIR IS THREE FRAMES AND TWO VERBS. shayʾ mithl and nawʿ min describe around a gap; bi-ʿibāra ukhrā restates your own words; L5-M5's mā maʿnā asks about someone else's. Every pragmatic move here you have already made in some language."
+    },
+    {
+      "tag": "interference",
+      "text": "English repairs by APOLOGISING FIRST — sorry, I didn't catch that. An Arabic repair that opens with āsif every time reads as distress rather than as politeness. The direct question is the polite form here."
+    },
+    {
+      "tag": "interference",
+      "text": "English or HEDGES inside a paraphrase: a chair, or something. Arabic aw is a real disjunction and means one or the other. The hedging is done by mithl and nawʿ min, and aw softens nothing."
+    },
+    {
+      "tag": "delta",
+      "text": "TWO VERBS THE LADDER NEVER BOUGHT until this rung. afham is to understand what was said; aʿrif is to know. Thirty-nine modules ran with neither, so these notes are written for the whole course and not for this module."
+    },
+    {
+      "tag": "delta",
+      "text": "aʿrif is knowing a THING — a word, a street, a face. aʿlam is knowing THAT something is so, and anna follows it. English lets one verb do both and Arabic does not, so the choice is forced every time."
+    },
+    {
+      "tag": "free",
+      "text": "Bare mā does three jobs and this is where the course pays for it: what in a question, that which as a free relative, and the older negator you meet in a saying. L5-M1's proverbs index whole precisely so that this row could exist."
+    },
+    {
+      "tag": "free",
+      "text": "yusammā and tusammā, is called, are L4-M7's internal passive doing an ordinary conversational job. The official register you met at a counter is the same grammar you now need at a table."
+    },
+    {
+      "tag": "free",
+      "text": "This is NOT the indirect request. Asking what a word means is direct, and that is the point: M7's veiling would make a repair harder to answer rather than easier, and an apology (M4) would make it heavier."
+    },
+    {
+      "tag": "free",
+      "text": "kalima and kalimāt are L5-M3's, maʿnā and shayʾ are L5-M5's, mithl is L5-M1's. The new keys here are the PHRASES built on them — shayʾ mithl, nawʿ min, bi-ʿibāra ukhrā, kayfa taqūl — not the words inside."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M8-S01",
+      "display": "mā hādhā bi-al-ʿarabiyya",
+      "script": "ما هذا بالعربية",
+      "cue": "What is this in Arabic?",
+      "literal": "what this in-the-Arabic",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mā",
+            "script": "ما",
+            "cue": "what; that which; not",
+            "tag": "free",
+            "forms": [
+              "mā"
+            ],
+            "note": "Three jobs in one word: what in a question about a thing, that which as a relative, and an older not in a saying. Which one it is comes from the sentence around it."
+          },
+          {
+            "display": "bi-al-ʿarabiyya",
+            "script": "بالعربية",
+            "cue": "in Arabic",
+            "tag": "free",
+            "forms": [
+              "bi-al-ʿarabiyya"
+            ],
+            "note": "L1-M9's ʿarabiyya with bi- on the front: in the language, not from it. Said bil-ʿarabiyya, the article swallowed."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "mā asks about a THING and man asks about a person; English what covers both when it should not. Pointing at someone and saying mā hādhā is a real rudeness, not a grammar slip.",
+      "sound": "MĀ is one long beat. bi-al-ʿa-ra-BIY-ya collapses to bil-, and the ʿayn is squeezed shut before the ra.",
+      "variations": [
+        {
+          "display": "mā hādhihi bi-al-ʿarabiyya",
+          "script": "ما هذه بالعربية",
+          "cue": "What is this in Arabic?",
+          "changed": "the pointing word, agreeing with a feminine thing"
+        },
+        {
+          "display": "kayfa taqūl hādhā bi-al-ʿarabiyya",
+          "script": "كيف تقول هذا بالعربية",
+          "cue": "How do you say this in Arabic?",
+          "changed": "asking for the word rather than about the thing"
+        }
+      ],
+      "mistake": {
+        "display": "mā hādhā fī al-ʿarabiyya",
+        "script": "ما هذا في العربية",
+        "why": "fī is inside a place. A language takes bi-, so it is bi-al-ʿarabiyya — and the same bi- gives bi-al-inklīziyya for the other direction."
+      },
+      "usage": "Pointing at an object you cannot name. The most useful sentence in the level and the least embarrassing to say.",
+      "register": "neutral",
+      "mnemonic": "Point, and ask mā."
+    },
+    {
+      "id": "L5-M8-S02",
+      "display": "mā maʿnā hādhihi al-kalima. lam afham",
+      "script": "ما معنى هذه الكلمة. لم أفهم",
+      "cue": "What does this word mean? I did not understand.",
+      "literal": "what meaning-of this the-word. not I-understood",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "afham",
+            "script": "أفهم",
+            "cue": "I understand",
+            "tag": "free",
+            "forms": [
+              "afham",
+              "tafham",
+              "yafham",
+              "fahimtu"
+            ],
+            "note": "To understand what was said. lam afham, with L3-M4's lam, is the past: I did not follow. fahimtu is the plain past, I understood."
+          }
+        ],
+        "rules": [
+          3,
+          1
+        ]
+      },
+      "trap": "lam takes the PRESENT-shaped verb and makes it past: lam afham is I did not understand, never I do not understand. That pairing is L3-M4's and it is easy to unlearn after a level away from it.",
+      "sound": "maʿ-NĀ carries the ʿayn before the n. af-HAM keeps the h light — it is the soft h, not the tight one of ḥārr.",
+      "variations": [
+        {
+          "display": "mā maʿnā hādhihi al-kalima",
+          "script": "ما معنى هذه الكلمة",
+          "cue": "What does this word mean?",
+          "changed": "the second half dropped — the question stands alone"
+        },
+        {
+          "display": "fahimtu hādhihi al-kalima",
+          "script": "فهمت هذه الكلمة",
+          "cue": "I understood this word.",
+          "changed": "the report instead of the repair, in the plain past"
+        }
+      ],
+      "mistake": {
+        "display": "āsif, lam afham. mā maʿnā hādhihi al-kalima",
+        "script": "آسف، لم أفهم. ما معنى هذه الكلمة",
+        "why": "Nothing here is wrong, but the apology is the English habit and it changes the register: opening every repair with āsif reads as distress. Ask the question first; the apology is for when you have actually cost someone something."
+      },
+      "usage": "Mid-conversation, when one word has stopped you. It keeps the exchange alive rather than ending it.",
+      "register": "neutral",
+      "mnemonic": "lam plus the present shape — and the meaning is past."
+    },
+    {
+      "id": "L5-M8-S03",
+      "display": "lam afham, hal yumkinuka an tuʿīd",
+      "script": "لم أفهم، هل يمكنك أن تعيد",
+      "cue": "I did not understand — could you repeat?",
+      "literal": "not I-understood, question you-can that you-repeat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tuʿīd",
+            "script": "تعيد",
+            "cue": "you repeat, you say again",
+            "tag": "free",
+            "forms": [
+              "tuʿīd",
+              "uʿīd"
+            ],
+            "note": "To do a thing again — say it again, here. uʿīd is I repeat, which is what you say when you are the one being asked."
+          }
+        ],
+        "rules": [
+          1,
+          7
+        ]
+      },
+      "trap": "English softens this with a stack — could you possibly just repeat that. Arabic already has its softener in hal yumkinuka (L2-M1) and adding more only makes the sentence longer, not politer.",
+      "sound": "tu-ʿĪD has the ʿayn between the vowels and a long ī. an tuʿīd runs together: an-tu-ʿīd.",
+      "variations": [
+        {
+          "display": "hal yumkinuka an tuʿīd hādhihi al-kalima",
+          "script": "هل يمكنك أن تعيد هذه الكلمة",
+          "cue": "Could you repeat this word?",
+          "changed": "what is to be repeated, named"
+        },
+        {
+          "display": "lam afham, hal yumkinuka an taqūl hādhā bi-ʿibāra ukhrā",
+          "script": "لم أفهم، هل يمكنك أن تقول هذا بعبارة أخرى",
+          "cue": "I did not understand — could you say this in other words?",
+          "changed": "the repair asked for: another wording rather than the same one again"
+        }
+      ],
+      "mistake": {
+        "display": "lam afham, hal yumkinuka tuʿīd",
+        "script": "لم أفهم، هل يمكنك تعيد",
+        "why": "yumkinuka needs an before its verb. English can you repeat has no that in it, and the missing particle is the single most common slip in the frame."
+      },
+      "usage": "Anywhere, to anyone. It is the sentence that buys you a second attempt without costing you any face.",
+      "register": "neutral",
+      "mnemonic": "yumkinuka AN — the particle is not optional."
+    },
+    {
+      "id": "L5-M8-S04",
+      "display": "hal yumkinuka an taqūl hādhā bi-ʿibāra ukhrā",
+      "script": "هل يمكنك أن تقول هذا بعبارة أخرى",
+      "cue": "Could you say this in other words?",
+      "literal": "question you-can that you-say this in-phrase other",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bi-ʿibāra ukhrā",
+            "script": "بعبارة أخرى",
+            "cue": "in other words",
+            "tag": "free",
+            "forms": [
+              "bi-ʿibāra ukhrā",
+              "ʿibāra",
+              "al-ʿibāra"
+            ],
+            "note": "The restating frame, one unit. ukhrā is L4-M4's other, agreeing with the feminine ʿibāra — a phrase, a turn of words."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "English in other words usually introduces YOUR OWN restatement. Here it is being asked of someone else, and the difference is who does the work: this is a request, not a summary.",
+      "sound": "bi-ʿi-BĀ-ra keeps the ʿayn right after the bi. UKH-rā opens on the kh and ends long.",
+      "variations": [
+        {
+          "display": "hādhā ṣaḥīḥ, bi-ʿibāra ukhrā huwa mumkin",
+          "script": "هذا صحيح، بعبارة أخرى هو ممكن",
+          "cue": "That is right — in other words, it is possible.",
+          "changed": "the speaker restating their own words, which is the frame's other use"
+        },
+        {
+          "display": "hal yumkinuka an tuʿīd bi-ʿibāra ukhrā",
+          "script": "هل يمكنك أن تعيد بعبارة أخرى",
+          "cue": "Could you repeat that in other words?",
+          "changed": "repeat rather than say — the two verbs share the frame"
+        }
+      ],
+      "mistake": {
+        "display": "hal yumkinuka an taqūl hādhā bi-kalima ukhrā",
+        "script": "هل يمكنك أن تقول هذا بكلمة أخرى",
+        "why": "bi-kalima ukhrā asks for one different WORD, which is a much smaller request. The idiom is ʿibāra, a whole turn of phrase, and swapping the noun changes what you have asked for."
+      },
+      "usage": "When the words were clear and the meaning was not — a definition you followed and did not grasp.",
+      "register": "neutral",
+      "mnemonic": "Another PHRASE, not another word."
+    },
+    {
+      "id": "L5-M8-S05",
+      "display": "hādhā shayʾ mithl al-kursī",
+      "script": "هذا شيء مثل الكرسي",
+      "cue": "This is something like a chair.",
+      "literal": "this thing like the-chair",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "shayʾ mithl",
+            "script": "شيء مثل",
+            "cue": "something like",
+            "tag": "free",
+            "forms": [
+              "shayʾ mithl"
+            ],
+            "note": "The describing-around frame, and it is one key: L5-M5's shayʾ and L5-M1's mithl are both yours, but together they hedge, which neither does alone."
+          },
+          {
+            "display": "al-kursī",
+            "script": "الكرسي",
+            "cue": "the chair",
+            "tag": "free",
+            "forms": [
+              "al-kursī",
+              "kursī"
+            ],
+            "note": "A chair, and here only an example of the frame — the point is the hedge in front of it, not the furniture."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English hedges with or something at the END: a chair, or something. Arabic hedges at the FRONT and then names the thing plainly, so the softening arrives before the guess rather than after it.",
+      "sound": "SHAYʾ ends on a hamza — a clean stop, not a vowel. al-KUR-sī holds the long ī at the end.",
+      "variations": [
+        {
+          "display": "hādhā shayʾ mithl al-qāmūs",
+          "script": "هذا شيء مثل القاموس",
+          "cue": "This is something like a dictionary.",
+          "changed": "what it is being compared to"
+        },
+        {
+          "display": "hiya shayʾ mithl al-adawāt",
+          "script": "هي شيء مثل الأدوات",
+          "cue": "It is something like tools.",
+          "changed": "the thing being described, and a plural on the far side of the frame"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā al-kursī shayʾ mithl",
+        "script": "هذا الكرسي شيء مثل",
+        "why": "The frame cannot be stranded at the end. shayʾ mithl must come before the thing it likens to, and putting it last leaves a sentence that stops in the middle of a comparison."
+      },
+      "usage": "When you do not have the word and will not get it — the move that keeps you talking instead of stopping to look it up.",
+      "register": "neutral",
+      "mnemonic": "Hedge first, guess second."
+    },
+    {
+      "id": "L5-M8-S06",
+      "display": "huwa nawʿ min al-adawāt",
+      "script": "هو نوع من الأدوات",
+      "cue": "It is a kind of tool.",
+      "literal": "he kind of the-tools",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nawʿ min",
+            "script": "نوع من",
+            "cue": "a kind of, a sort of",
+            "tag": "free",
+            "forms": [
+              "nawʿ min",
+              "nawʿ"
+            ],
+            "note": "The other way around a gap: put the thing in a class instead of likening it to one. nawʿ alone is a kind, a type."
+          },
+          {
+            "display": "al-adawāt",
+            "script": "الأدوات",
+            "cue": "the tools, the instruments",
+            "tag": "free",
+            "forms": [
+              "al-adawāt",
+              "adawāt"
+            ],
+            "note": "Tools of any trade, and it is already plural — there is no need to make it more plural."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "nawʿ min takes the DEFINITE plural after it — nawʿ min al-adawāt, a kind of the tools — where English takes a bare singular, a kind of tool. The article is not optional and the singular is not available.",
+      "sound": "NAWʿ is one syllable with a diphthong, closing on the ʿayn. al-a-da-WĀT stresses the long ā near the end.",
+      "variations": [
+        {
+          "display": "huwa nawʿ min al-kutub",
+          "script": "هو نوع من الكتب",
+          "cue": "It is a kind of book.",
+          "changed": "the class it is put into"
+        },
+        {
+          "display": "hiya nawʿ min al-adawāt",
+          "script": "هي نوع من الأدوات",
+          "cue": "It is a kind of tool.",
+          "changed": "the subject — hiya for a feminine thing, and the frame does not move"
+        }
+      ],
+      "mistake": {
+        "display": "huwa nawʿ min adāt",
+        "script": "هو نوع من أداة",
+        "why": "A bare singular after min is the English shape. Arabic wants the definite plural of the class: nawʿ min al-adawāt. Getting this wrong is understood, but it marks the sentence as translated."
+      },
+      "usage": "Naming the category when the word itself is gone. It gets you further than shayʾ mithl when the thing has no close neighbour.",
+      "register": "neutral",
+      "mnemonic": "A kind of THE things — definite, and plural."
+    },
+    {
+      "id": "L5-M8-S07",
+      "display": "kayfa taqūl hādhihi al-kalima bi-al-ʿarabiyya",
+      "script": "كيف تقول هذه الكلمة بالعربية",
+      "cue": "How do you say this word in Arabic?",
+      "literal": "how you-say this the-word in-the-Arabic",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kayfa taqūl",
+            "script": "كيف تقول",
+            "cue": "how do you say",
+            "tag": "free",
+            "forms": [
+              "kayfa taqūl"
+            ],
+            "note": "L1-M2's kayfa and L3-M5's taqūl, welded into the asking-for-a-word frame. Tapped as a pair it is this question; tapped apart it is only how and he says."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "English how do you say is a set phrase and so is this — but the Arabic uses the ordinary you-form of the verb, not an impersonal one. You are asking THIS person, and the sentence says so.",
+      "sound": "KAY-fa ta-QŪL runs as four even beats with the long ū carrying the stress at the end.",
+      "variations": [
+        {
+          "display": "kayfa taqūl hādhā bi-al-ʿarabiyya",
+          "script": "كيف تقول هذا بالعربية",
+          "cue": "How do you say this in Arabic?",
+          "changed": "pointing at a thing rather than naming a word"
+        },
+        {
+          "display": "kayfa taqūl hādhihi al-ʿibāra",
+          "script": "كيف تقول هذه العبارة",
+          "cue": "How do you say this phrase?",
+          "changed": "a whole phrase instead of a single word"
+        }
+      ],
+      "mistake": {
+        "display": "kayfa yaqūl hādhihi al-kalima bi-al-ʿarabiyya",
+        "script": "كيف يقول هذه الكلمة بالعربية",
+        "why": "yaqūl is he says. The frame is addressed to the person in front of you, so it must be taqūl — and the slip turns a question into a remark about somebody absent."
+      },
+      "usage": "Asking for a word you know the meaning of but not the sound of. The mirror of S01, which asks about the thing.",
+      "register": "neutral",
+      "mnemonic": "How do YOU say it — taqūl, never yaqūl."
+    },
+    {
+      "id": "L5-M8-S08",
+      "display": "lā aʿrif hādhihi al-kalima",
+      "script": "لا أعرف هذه الكلمة",
+      "cue": "I do not know this word.",
+      "literal": "not I-know this the-word",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aʿrif",
+            "script": "أعرف",
+            "cue": "I know",
+            "tag": "free",
+            "forms": [
+              "aʿrif",
+              "taʿrif",
+              "yaʿrif",
+              "naʿrif"
+            ],
+            "note": "To know a THING or a person — a word, a street, a face. It is the verb the course ran thirty-nine modules without, and it is negated by lā, not by lam."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "English knows a word and knows that something is true with one verb. Arabic splits them: aʿrif for the word, aʿlam anna for the fact, and reaching for one where the other belongs is the level's most audible slip.",
+      "sound": "aʿ-RIF squeezes the ʿayn immediately after the opening a — it is not a-rif. The final f is light.",
+      "variations": [
+        {
+          "display": "lā aʿrif hādhihi al-ʿibāra",
+          "script": "لا أعرف هذه العبارة",
+          "cue": "I do not know this phrase.",
+          "changed": "what is unknown"
+        },
+        {
+          "display": "taʿrif hādhihi al-kalima",
+          "script": "تعرف هذه الكلمة",
+          "cue": "You know this word.",
+          "changed": "the person, and the negation dropped"
+        }
+      ],
+      "mistake": {
+        "display": "lam aʿrif hādhihi al-kalima",
+        "script": "لم أعرف هذه الكلمة",
+        "why": "lam makes it past — I did not know it, at some earlier moment. The present state, not knowing it now, is lā aʿrif, and this is the pair L3-M4 opened."
+      },
+      "usage": "Said plainly and without apology. It is information the other person needs, not a confession.",
+      "register": "neutral",
+      "mnemonic": "aʿrif a thing; lā for now, lam for then."
+    },
+    {
+      "id": "L5-M8-S09",
+      "display": "aʿlam anna hādhā ṣaḥīḥ, lākin lā afham al-farq",
+      "script": "أعلم أن هذا صحيح، لكن لا أفهم الفرق",
+      "cue": "I know that this is right, but I do not understand the difference.",
+      "literal": "I-know that this correct, but not I-understand the-difference",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aʿlam",
+            "script": "أعلم",
+            "cue": "I know (that)",
+            "tag": "free",
+            "forms": [
+              "aʿlam",
+              "taʿlam",
+              "naʿlam"
+            ],
+            "note": "Knowing that something is SO, and L3-M3's anna follows it. Where aʿrif takes a thing, aʿlam takes a whole clause."
+          },
+          {
+            "display": "al-farq",
+            "script": "الفرق",
+            "cue": "the difference",
+            "tag": "free",
+            "forms": [
+              "al-farq",
+              "farq"
+            ],
+            "note": "The difference between two things. It heads a possessive chain as readily as it takes bayna, between, after it; the r is tapped once, never rolled."
+          }
+        ],
+        "rules": [
+          4,
+          3
+        ]
+      },
+      "trap": "An English speaker uses know for both halves of this sentence and then wonders why the Arabic has two verbs. The split is the rule: a clause after aʿlam, a noun after aʿrif, and no overlap.",
+      "sound": "aʿ-LAM has the ʿayn straight after the a, like aʿrif. al-FARQ ends on a hard cluster: no vowel between the r and the q.",
+      "variations": [
+        {
+          "display": "aʿlam anna hādhā ṣaḥīḥ",
+          "script": "أعلم أن هذا صحيح",
+          "cue": "I know that this is right.",
+          "changed": "the second half dropped — aʿlam with its clause and nothing else"
+        },
+        {
+          "display": "lā afham al-farq tamāman",
+          "script": "لا أفهم الفرق تمامًا",
+          "cue": "I do not understand the difference at all.",
+          "changed": "the second half standing alone, with L3-M3's tamāman on it"
+        }
+      ],
+      "mistake": {
+        "display": "aʿrif anna hādhā ṣaḥīḥ, lākin lā afham al-farq",
+        "script": "أعرف أن هذا صحيح، لكن لا أفهم الفرق",
+        "why": "aʿrif wants a thing, not a clause. Once anna appears the verb must be aʿlam — this is the one place in the level where the English single verb costs you a wrong word rather than a wrong ending."
+      },
+      "usage": "The honest halfway repair: you followed the sentence and not the point, and saying which is which saves the other person guessing.",
+      "register": "neutral",
+      "mnemonic": "aʿlam THAT; aʿrif a thing."
+    },
+    {
+      "id": "L5-M8-S10",
+      "display": "hādhā yusammā qāmūs aw kitāb tarjama",
+      "script": "هذا يسمى قاموس أو كتاب ترجمة",
+      "cue": "This is called a dictionary, or a translation book.",
+      "literal": "this is-called dictionary or book translation",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yusammā",
+            "script": "يسمى",
+            "cue": "is called",
+            "tag": "free",
+            "forms": [
+              "yusammā",
+              "tusammā"
+            ],
+            "note": "L4-M7's internal passive doing an ordinary job: the counter grammar and the table grammar are the same. tusammā for a feminine thing."
+          },
+          {
+            "display": "qāmūs",
+            "script": "قاموس",
+            "cue": "dictionary",
+            "tag": "free",
+            "forms": [
+              "qāmūs",
+              "al-qāmūs"
+            ],
+            "note": "A dictionary, and one of the few classroom words worth saying out loud — the rest of that vocabulary is not what this module is for."
+          },
+          {
+            "display": "aw",
+            "script": "أو",
+            "cue": "or",
+            "tag": "free",
+            "forms": [
+              "aw"
+            ],
+            "note": "A REAL or: one thing or the other, and you must choose. It never means or something — that hedging is what shayʾ mithl and nawʿ min are for."
+          },
+          {
+            "display": "tarjama",
+            "script": "ترجمة",
+            "cue": "translation",
+            "tag": "free",
+            "forms": [
+              "tarjama",
+              "at-tarjama"
+            ],
+            "note": "A translation, the noun. It heads a possessive chain here — kitāb tarjama, a book of translation — so neither word carries an article."
+          }
+        ],
+        "rules": [
+          6,
+          2
+        ]
+      },
+      "trap": "English or something is a hedge and aw is not. hādhā qāmūs aw kitāb says you know it is exactly one of those two and are offering the pair — it does not say you are unsure what the thing is.",
+      "sound": "yu-sam-MĀ doubles the m and ends on the long ā. AW is one syllable, a clean diphthong, never two beats.",
+      "variations": [
+        {
+          "display": "hādhihi tusammā tarjama",
+          "script": "هذه تسمى ترجمة",
+          "cue": "This is called a translation.",
+          "changed": "the feminine of the passive, agreeing with hādhihi"
+        },
+        {
+          "display": "hādhā yusammā kursī",
+          "script": "هذا يسمى كرسي",
+          "cue": "This is called a chair.",
+          "changed": "what is being named — the frame answers S01's question"
+        }
+      ],
+      "mistake": {
+        "display": "hādhā yusammā shayʾ mithl qāmūs",
+        "script": "هذا يسمى شيء مثل قاموس",
+        "why": "yusammā names a thing exactly; shayʾ mithl says you cannot. The two frames answer opposite situations, and stacking them says both at once."
+      },
+      "usage": "Giving the word back — the reply to somebody else's S01. It is the other half of every repair in this module.",
+      "register": "neutral",
+      "mnemonic": "aw offers a choice; mithl admits a gap."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M8-C01",
+      "display": "mā hādhā bi-al-ʿarabiyya",
+      "script": "ما هذا بالعربية",
+      "cue": "What is this in Arabic?"
+    },
+    {
+      "id": "L5-M8-C02",
+      "display": "lam afham, hal yumkinuka an tuʿīd",
+      "script": "لم أفهم، هل يمكنك أن تعيد",
+      "cue": "I did not understand — could you repeat?"
+    },
+    {
+      "id": "L5-M8-C03",
+      "display": "hādhā shayʾ mithl al-kursī",
+      "script": "هذا شيء مثل الكرسي",
+      "cue": "This is something like a chair."
+    },
+    {
+      "id": "L5-M8-C04",
+      "display": "huwa nawʿ min al-adawāt",
+      "script": "هو نوع من الأدوات",
+      "cue": "It is a kind of tool."
+    },
+    {
+      "id": "L5-M8-C05",
+      "display": "kayfa taqūl hādhihi al-kalima",
+      "script": "كيف تقول هذه الكلمة",
+      "cue": "How do you say this word?"
+    },
+    {
+      "id": "L5-M8-C06",
+      "display": "lā aʿrif hādhihi al-kalima",
+      "script": "لا أعرف هذه الكلمة",
+      "cue": "I do not know this word."
+    },
+    {
+      "id": "L5-M8-C07",
+      "display": "aʿlam anna hādhā ṣaḥīḥ",
+      "script": "أعلم أن هذا صحيح",
+      "cue": "I know that this is right."
+    },
+    {
+      "id": "L5-M8-C08",
+      "display": "hādhā yusammā qāmūs",
+      "script": "هذا يسمى قاموس",
+      "cue": "This is called a dictionary."
+    },
+    {
+      "id": "L5-M8-C09",
+      "display": "lā afham al-farq",
+      "script": "لا أفهم الفرق",
+      "cue": "I do not understand the difference."
+    },
+    {
+      "id": "L5-M8-C10",
+      "display": "hal yumkinuka an taqūl hādhā bi-ʿibāra ukhrā",
+      "script": "هل يمكنك أن تقول هذا بعبارة أخرى",
+      "cue": "Could you say this in other words?"
+    },
+    {
+      "id": "L5-M8-C11",
+      "display": "fahimtu hādhihi al-kalima",
+      "script": "فهمت هذه الكلمة",
+      "cue": "I understood this word."
+    },
+    {
+      "id": "L5-M8-C12",
+      "display": "hādhā nawʿ min al-kutub",
+      "script": "هذا نوع من الكتب",
+      "cue": "This is a kind of book."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

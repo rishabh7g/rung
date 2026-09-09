@@ -1,0 +1,680 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M3",
+  "title": "How they say it there",
+  "job": "Regional and generational speech; what marks an outsider",
+  "prerequisites": [
+    "L5-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present_imperfective",
+      "simple_past",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "Nu + , + <clause>",
+      "Koróche + , + <clause>",
+      "<clause> + , + típa + <N>",
+      "V Moskvé govoryát + <word> + , + a v Peterbúrge + <word>",
+      "Privét + ! + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A DISCOURSE PARTICLE carries no propositional meaning, attaches to no case and never inflects. What it marks is the speaker's relation to what is being said: nu opens a turn, koroche cuts a story short, tipa quotes or approximates, kak by hedges, v obshchem sums up, slushay takes the floor. They are positionally free and cost the learner no grammar at all. What they cost is judgement, and that is the module."
+    },
+    {
+      "tag": "delta",
+      "text": "These words go DOWN the register and never up. tipa said to an official is worse than saying nothing at all. That is the same law L5-M2's diminutive runs on, and it is not restated here: the direction of drift is one law with two carriers, and the diminutive module is where it was opened."
+    },
+    {
+      "tag": "interference",
+      "text": "English has the same class of word and the same suspicion of it, so the mapping is almost exact: tipa is like, koroche is long story short, v obshchem is basically, kak by is sort of. A learner told that mapping produces them immediately. The interference is DENSITY. English speakers have been taught that fillers are bad speech and under-use them, and a Russian conversation without a single nu in it is audibly stiff."
+    },
+    {
+      "tag": "free",
+      "text": "The second half of this module is a vocabulary spend, not a system: podyezd against Petersburg's paradnaya for the entrance to a block of flats, bordyur against porebrik for a kerb, baton against bulka for a white loaf, shaurma against shaverma. The module reports what is said where and ranks nothing. Neither city speaks better Russian, and no word on this list is a dialect word in the old sense."
+    },
+    {
+      "tag": "delta",
+      "text": "kak by and v obshchem are indexed WHOLE, two tokens each, because their parts belong to other modules and mean something else there: bare kak is L1-M2's how, bare by is L3-M4's conditional particle, bare v is L1-M4's in. A learner tapping the hedge has to reach the hedge's note and not the conditional's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M3-S01",
+      "display": "Nu, ya prósto ne znáyu, chto skazát'.",
+      "script": "Ну, я просто не знаю, что сказать.",
+      "cue": "Well, I just don't know what to say.",
+      "literal": "Nu, I simply not know, what to-say.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nu",
+            "script": "ну",
+            "cue": "well; so",
+            "tag": "delta",
+            "forms": [
+              "nu"
+            ],
+            "note": "The turn-opener. It buys a beat before you answer and commits to nothing, and dropping it is what makes a Russian answer sound clipped. Unstressed, so it carries no acute."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "It is not the English well that means healthy, and it is not an interjection you can stress. nu is unstressed and leans forward onto the word after it.",
+      "sound": "One light syllable, noo, with no stress of its own: it runs straight into the next word, noo-ya.",
+      "variations": [
+        {
+          "display": "Nu, ya ne znáyu.",
+          "script": "Ну, я не знаю.",
+          "cue": "Well, I don't know.",
+          "changed": "the sentence cut to its bones, which is where nu is heard most"
+        },
+        {
+          "display": "Nu ládno, ya poydú.",
+          "script": "Ну ладно, я пойду.",
+          "cue": "Well OK, I'll go.",
+          "changed": "nu in front of an agreement rather than a hesitation"
+        }
+      ],
+      "mistake": {
+        "display": "Ya prósto ne znáyu, chto skazát', nu.",
+        "script": "Я просто не знаю, что сказать, ну.",
+        "why": "nu parked at the end. It opens a turn; at the end of a sentence a Russian hears an unfinished thought rather than a filler."
+      },
+      "usage": "Answering when you need a moment and do not want the silence to read as a refusal.",
+      "register": "informal",
+      "mnemonic": "nu is the running start, never the finish line."
+    },
+    {
+      "id": "L5-M3-S02",
+      "display": "Koróche, ya ne poshlá na rabótu.",
+      "script": "Короче, я не пошла на работу.",
+      "cue": "Long story short, I didn't go to work.",
+      "literal": "Shorter, I not went to work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "koróche",
+            "script": "короче",
+            "cue": "long story short; anyway",
+            "tag": "delta",
+            "forms": [
+              "koróche"
+            ],
+            "note": "Literally shorter. It announces that the speaker is cutting to the end of their own story, and what follows has to actually be the end."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "It is not a request for the other person to be brief. koroche is what the speaker does to their own story, never an instruction to anybody else.",
+      "sound": "Three syllables with the stress on the second, ka-RO-che, and the final -e is a light -ye.",
+      "variations": [
+        {
+          "display": "Koróche, ya ne poshlá.",
+          "script": "Короче, я не пошла.",
+          "cue": "Long story short, I didn't go.",
+          "changed": "the destination dropped, which is how it is usually said"
+        },
+        {
+          "display": "Nu koróche, ya ne poshlá na rabótu.",
+          "script": "Ну короче, я не пошла на работу.",
+          "cue": "Well, long story short, I didn't go to work.",
+          "changed": "nu stacked in front, which is ordinary and not redundant"
+        }
+      ],
+      "mistake": {
+        "display": "Búd'te koróche, ya ne poshlá na rabótu.",
+        "script": "Будьте короче, я не пошла на работу.",
+        "why": "koroche used as an order to the listener to be brief. It is not addressed to anybody; it describes what the speaker is about to do to their own account."
+      },
+      "usage": "Cutting a story you have realised is running long, among friends.",
+      "register": "informal",
+      "mnemonic": "koróche is the speaker's own scissors."
+    },
+    {
+      "id": "L5-M3-S03",
+      "display": "On kupíl mne podárok, típa knígu.",
+      "script": "Он купил мне подарок, типа книгу.",
+      "cue": "He bought me a present, like a book.",
+      "literal": "He bought me present, type book.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "típa",
+            "script": "типа",
+            "cue": "like; sort of",
+            "tag": "delta",
+            "forms": [
+              "típa"
+            ],
+            "note": "From the noun type. It approximates what follows, a book or something like one, and it also quotes another speaker, exactly as English like does in he was like, no."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "It is not the preposition like used for a real comparison. For that Russian uses kak; tipa only approximates or quotes, and it never appears in writing.",
+      "sound": "Two syllables with the stress on the first, TEE-pa.",
+      "variations": [
+        {
+          "display": "On kupíl mne típa podárok.",
+          "script": "Он купил мне типа подарок.",
+          "cue": "He bought me a sort-of present.",
+          "changed": "típa moved in front of the noun, which hedges the present itself"
+        },
+        {
+          "display": "Éhto típa podárok.",
+          "script": "Это типа подарок.",
+          "cue": "It's like a present.",
+          "changed": "the sentence stripped to the frame"
+        }
+      ],
+      "mistake": {
+        "display": "On kupíl mne podárok kak knígu.",
+        "script": "Он купил мне подарок как книгу.",
+        "why": "kak used where tipa was meant. kak compares two real things, so this says he bought the present in the manner of a book."
+      },
+      "usage": "Naming something you cannot or will not name exactly, among friends.",
+      "register": "informal",
+      "mnemonic": "típa is a type-of, never a like-a."
+    },
+    {
+      "id": "L5-M3-S04",
+      "display": "Ya kak by soglásen, no ne sovsém.",
+      "script": "Я как бы согласен, но не совсем.",
+      "cue": "I sort of agree, but not entirely.",
+      "literal": "I as if agreeing, but not entirely.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kak by",
+            "script": "как бы",
+            "cue": "sort of; kind of",
+            "tag": "delta",
+            "forms": [
+              "kak by"
+            ],
+            "note": "Two words taken as one hedge. Bare kak is L1-M2's how and bare by is L3-M4's conditional particle; together they mean sort of, which neither half carries alone."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "It is not the conditional. The by here softens a claim; it is not the by that builds ya by skazal, and it changes no verb form at all.",
+      "sound": "Two light syllables run together, kak-by, with no stress on either: the weight stays on the word they hedge.",
+      "variations": [
+        {
+          "display": "Ya kak by ponimáyu.",
+          "script": "Я как бы понимаю.",
+          "cue": "I sort of understand.",
+          "changed": "the hedge on a verb instead of on a predicate"
+        },
+        {
+          "display": "Éhto kak by ne probléma.",
+          "script": "Это как бы не проблема.",
+          "cue": "It's sort of not a problem.",
+          "changed": "the hedge in front of a negation, which softens the denial"
+        }
+      ],
+      "mistake": {
+        "display": "Ya kak soglásen, no ne sovsém.",
+        "script": "Я как согласен, но не совсем.",
+        "why": "by dropped on the theory that kak alone can hedge. Without by this reads as how agreeing, which is not Russian."
+      },
+      "usage": "Softening a position you hold but do not want to have to defend, among friends.",
+      "register": "informal",
+      "mnemonic": "kak by is a two-word word: split it and both halves mean something else."
+    },
+    {
+      "id": "L5-M3-S05",
+      "display": "V óbshchem, vsyó býlo khoroshó.",
+      "script": "В общем, всё было хорошо.",
+      "cue": "Basically, everything was fine.",
+      "literal": "In general, all was good.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "v óbshchem",
+            "script": "в общем",
+            "cue": "basically; all in all",
+            "tag": "delta",
+            "forms": [
+              "v óbshchem"
+            ],
+            "note": "Two words taken as one summariser. Bare v is L1-M4's in, so the phrase is indexed whole: tapping the summariser must not land on the preposition."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "It does not mean in general as a claim about the world. It sums up what has just been said, and it looks backwards, not outwards.",
+      "sound": "Three syllables in one breath, v-OP-shchem, with the v leaning on the next word and the stress on op.",
+      "variations": [
+        {
+          "display": "V óbshchem, ya soglásen.",
+          "script": "В общем, я согласен.",
+          "cue": "All in all, I agree.",
+          "changed": "a position summed up instead of an outcome"
+        },
+        {
+          "display": "V óbshchem, éhto ne probléma.",
+          "script": "В общем, это не проблема.",
+          "cue": "Basically, it's not a problem.",
+          "changed": "the summariser in front of a denial"
+        }
+      ],
+      "mistake": {
+        "display": "Óbshchem, vsyó býlo khoroshó.",
+        "script": "Общем, всё было хорошо.",
+        "why": "the v dropped as though it were a separate preposition. It is not: the summariser is both words, and obshchem alone is a case ending with nothing in front of it."
+      },
+      "usage": "Closing a story with its outcome, in speech.",
+      "register": "informal",
+      "mnemonic": "v óbshchem is the two-word full stop."
+    },
+    {
+      "id": "L5-M3-S06",
+      "display": "Slúshay, davay poydyóm domóy.",
+      "script": "Слушай, давай пойдём домой.",
+      "cue": "Listen, let's go home.",
+      "literal": "Listen, let-us we-go home.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "slúshay",
+            "script": "слушай",
+            "cue": "listen; hey",
+            "tag": "delta",
+            "forms": [
+              "slúshay",
+              "slúshayte"
+            ],
+            "note": "A take-the-floor marker, not an order to listen. slushay to one person you are ty with, slushayte to vy, and the choice is the same one L1-M2 taught."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Nobody is being told to listen. The word buys the speaker the next turn, the way English look or listen does at the start of a sentence.",
+      "sound": "Two syllables with the stress on the first, SLOO-shay. The vy form adds a light -te, SLOO-shay-tye.",
+      "variations": [
+        {
+          "display": "Slúshayte, éhto ne tak.",
+          "script": "Слушайте, это не так.",
+          "cue": "Listen, that's not so.",
+          "changed": "the vy form, for a stranger or a group"
+        },
+        {
+          "display": "Slúshay, ya ne znáyu.",
+          "script": "Слушай, я не знаю.",
+          "cue": "Listen, I don't know.",
+          "changed": "the marker in front of an admission rather than a proposal"
+        }
+      ],
+      "mistake": {
+        "display": "Slúshayte, davay poydyóm domóy.",
+        "script": "Слушайте, давай пойдём домой.",
+        "why": "the vy marker in front of the ty verb davay. The filler and the verb have to agree about who is being addressed; this sentence addresses two different people."
+      },
+      "usage": "Opening a turn when you want the floor, among friends.",
+      "register": "informal",
+      "mnemonic": "slúshay is a knock on the door, not an order."
+    },
+    {
+      "id": "L5-M3-S07",
+      "display": "Privét, Ványa! Kak delá?",
+      "script": "Привет, Ваня! Как дела?",
+      "cue": "Hi, Vanya! How are you?",
+      "literal": "Greeting, Vanya! How affairs?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "privét",
+            "script": "привет",
+            "cue": "hi; hello",
+            "tag": "delta",
+            "forms": [
+              "privét"
+            ],
+            "note": "The informal hello, finally its own row: L1-M2 named it only to warn against it. Say it to ty. To vy or a stranger it is zdravstvuyte, and privet there is a small insult."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "English hi is safe almost anywhere. privet is not: to a stranger, an official or anyone much older it reads as forced familiarity rather than warmth.",
+      "sound": "Two syllables with the stress on the second, pree-VYET, and the final t is soft.",
+      "variations": [
+        {
+          "display": "Privét! Kak delá?",
+          "script": "Привет! Как дела?",
+          "cue": "Hi! How are you?",
+          "changed": "the name dropped, which is the bare greeting"
+        },
+        {
+          "display": "Privét, ya dóma.",
+          "script": "Привет, я дома.",
+          "cue": "Hi, I'm home.",
+          "changed": "a greeting used as an arrival announcement, which is what it does at a door"
+        }
+      ],
+      "mistake": {
+        "display": "Privét, zdrávstvuyte!",
+        "script": "Привет, здравствуйте!",
+        "why": "both greetings at once. They belong to different people: privet to somebody you are ty with, zdravstvuyte to everybody else, and stacking them cancels the politeness of the second."
+      },
+      "usage": "Greeting a friend, in person or on the phone.",
+      "register": "informal",
+      "mnemonic": "privét is for people you already call ty."
+    },
+    {
+      "id": "L5-M3-S08",
+      "display": "V Moskvé govoryát podyézd, a v Peterbúrge — parádnaya.",
+      "script": "В Москве говорят подъезд, а в Петербурге — парадная.",
+      "cue": "In Moscow they say podyézd, and in Petersburg parádnaya.",
+      "literal": "In Moscow they-say entrance, and in Petersburg front-way.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "podyézd",
+            "script": "подъезд",
+            "cue": "entrance to a block of flats",
+            "tag": "free",
+            "forms": [
+              "podyézd"
+            ],
+            "note": "The entrance to a block of flats and the stairwell behind it. Moscow's word, and the default everywhere except Petersburg. Not a front door and not a porch."
+          },
+          {
+            "display": "parádnaya",
+            "script": "парадная",
+            "cue": "entrance to a block of flats (Petersburg)",
+            "tag": "free",
+            "forms": [
+              "parádnaya"
+            ],
+            "note": "Petersburg's word for the doorway a Muscovite calls a podyezd. It is a feminine adjective standing alone, so it takes adjective endings and not noun ones."
+          },
+          {
+            "display": "Peterbúrge",
+            "script": "Петербурге",
+            "cue": "Petersburg (after v)",
+            "tag": "free",
+            "forms": [
+              "Peterbúrge"
+            ],
+            "note": "Petersburg, in the prepositional that v demands. The stress falls on the third vowel, the boor, and never on the first."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Neither word is the correct one. A Muscovite in Petersburg who says podyezd is understood at once and marked at once: the pair reports geography, not quality.",
+      "sound": "podyézd is two syllables with the stress on the second, pad-YEZD, and the final d goes to a t. parádnaya is pa-RAD-na-ya.",
+      "variations": [
+        {
+          "display": "Gde zdes' podyézd?",
+          "script": "Где здесь подъезд?",
+          "cue": "Where's the entrance here?",
+          "changed": "the word in the question a visitor actually asks"
+        },
+        {
+          "display": "V Peterbúrge éhto parádnaya.",
+          "script": "В Петербурге это парадная.",
+          "cue": "In Petersburg that's a parádnaya.",
+          "changed": "one city named alone, without the contrast"
+        }
+      ],
+      "mistake": {
+        "display": "V Moskvé govoryát parádnaya, a v Peterbúrge podyézd.",
+        "script": "В Москве говорят парадная, а в Петербурге подъезд.",
+        "why": "the pair reversed. paradnaya is the Petersburg word, and a learner who swaps them marks themselves twice over."
+      },
+      "usage": "Reporting how the two cities differ, or asking for a doorway in one of them.",
+      "register": "neutral",
+      "mnemonic": "parádnaya has the parade in it: the grand Petersburg staircase."
+    },
+    {
+      "id": "L5-M3-S09",
+      "display": "V Moskvé éhto bordyúr, a v Peterbúrge porébrik.",
+      "script": "В Москве это бордюр, а в Петербурге поребрик.",
+      "cue": "In Moscow it's a bordyúr, and in Petersburg a porébrik.",
+      "literal": "In Moscow this kerb, and in Petersburg kerb.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bordyúr",
+            "script": "бордюр",
+            "cue": "kerb",
+            "tag": "free",
+            "forms": [
+              "bordyúr"
+            ],
+            "note": "The kerb at the edge of a pavement, in Moscow and in most of the country. From the French bordure, which is why it sounds like nothing else on this list."
+          },
+          {
+            "display": "porébrik",
+            "script": "поребрик",
+            "cue": "kerb (Petersburg)",
+            "tag": "free",
+            "forms": [
+              "porébrik"
+            ],
+            "note": "Petersburg's word for the same kerb. It is the pair Russians reach for first when the two cities' speech comes up, ahead of the doorway and the bread."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "It is not a difference of thing. Both words name one stone edge; only the city changes, and neither is an old regional dialect word.",
+      "sound": "bordyúr is bar-DYUR with the stress on the second syllable; porébrik is pa-RYEB-reek, also on the second.",
+      "variations": [
+        {
+          "display": "Zdes' govoryát porébrik.",
+          "script": "Здесь говорят поребрик.",
+          "cue": "Here they say porébrik.",
+          "changed": "the city pointed at by zdes' instead of named"
+        },
+        {
+          "display": "Éhto bordyúr, a ne porébrik.",
+          "script": "Это бордюр, а не поребрик.",
+          "cue": "That's a bordyúr, not a porébrik.",
+          "changed": "the pair set against each other inside one clause"
+        }
+      ],
+      "mistake": {
+        "display": "V Moskvé éhto porébrik, a v Peterbúrge bordyúr.",
+        "script": "В Москве это поребрик, а в Петербурге бордюр.",
+        "why": "the pair reversed, the same slip as the doorway. porebrik belongs to Petersburg."
+      },
+      "usage": "Reporting the best known of the two cities' word pairs. What a Russian would actually hear first is the vowel reduction and not the vocabulary, and this course has no audio and cannot teach that, so the words are where the difference is visible.",
+      "register": "neutral",
+      "mnemonic": "Petersburg's two words both open p-vowel-r: porébrik, parádnaya."
+    },
+    {
+      "id": "L5-M3-S10",
+      "display": "V Moskvé govoryát batón i shaurmá, a v Peterbúrge búlka i shavermá.",
+      "script": "В Москве говорят батон и шаурма, а в Петербурге булка и шаверма.",
+      "cue": "In Moscow they say batón and shaurmá, in Petersburg búlka and shavermá.",
+      "literal": "In Moscow they-say loaf and shawarma, and in Petersburg loaf and shawarma.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "batón",
+            "script": "батон",
+            "cue": "long white loaf",
+            "tag": "free",
+            "forms": [
+              "batón"
+            ],
+            "note": "A long white loaf, the standard Moscow word. Not the English baton and not a baguette: it is the ordinary shop loaf, sliced or whole."
+          },
+          {
+            "display": "búlka",
+            "script": "булка",
+            "cue": "white loaf (Petersburg)",
+            "tag": "free",
+            "forms": [
+              "búlka",
+              "búlku"
+            ],
+            "note": "Petersburg's word for that same white loaf. Elsewhere a bulka is a small sweet roll, so this is the one pair where the two cities disagree about the thing and not only the name."
+          },
+          {
+            "display": "shaurmá",
+            "script": "шаурма",
+            "cue": "shawarma",
+            "tag": "free",
+            "forms": [
+              "shaurmá"
+            ],
+            "note": "Shawarma in flatbread, with the Moscow spelling and stress. This and shaverma are one Arabic borrowing that reached the two cities separately."
+          },
+          {
+            "display": "shavermá",
+            "script": "шаверма",
+            "cue": "shawarma (Petersburg)",
+            "tag": "free",
+            "forms": [
+              "shavermá"
+            ],
+            "note": "Petersburg's shawarma. The same food with one syllable rearranged, and it is the pair a Petersburger will correct you on fastest."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "bulka is the one genuinely ambiguous word here: ask for a bulka in Moscow and you may be handed a small sweet bun rather than a loaf.",
+      "sound": "batón is ba-TON; búlka is BOOL-ka; shaurmá is sha-oor-MA and shavermá is sha-vyer-MA, both with the stress on the last syllable.",
+      "variations": [
+        {
+          "display": "Ya kupíl batón i búlku.",
+          "script": "Я купил батон и булку.",
+          "cue": "I bought a batón and a búlka.",
+          "changed": "both loaves in one basket, which is only possible outside Petersburg"
+        },
+        {
+          "display": "Zdes' govoryát shavermá, a ne shaurmá.",
+          "script": "Здесь говорят шаверма, а не шаурма.",
+          "cue": "Here they say shavermá, not shaurmá.",
+          "changed": "one pair alone, in the frame a local uses to correct a visitor"
+        }
+      ],
+      "mistake": {
+        "display": "V Moskvé govoryát shavermá, a v Peterbúrge shaurmá.",
+        "script": "В Москве говорят шаверма, а в Петербурге шаурма.",
+        "why": "the pair reversed again. shaverma is Petersburg's, and the v is the northern half of the pair."
+      },
+      "usage": "Buying bread or street food in either city, or explaining the difference to somebody.",
+      "register": "neutral",
+      "mnemonic": "Petersburg keeps the v in shavermá; Moscow drops it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M3-C01",
+      "display": "Nu, ya ne znáyu.",
+      "script": "Ну, я не знаю.",
+      "cue": "Well, I don't know."
+    },
+    {
+      "id": "L5-M3-C02",
+      "display": "Koróche, ya ne poshlá.",
+      "script": "Короче, я не пошла.",
+      "cue": "Long story short, I didn't go."
+    },
+    {
+      "id": "L5-M3-C03",
+      "display": "Éhto típa podárok.",
+      "script": "Это типа подарок.",
+      "cue": "It's like a present."
+    },
+    {
+      "id": "L5-M3-C04",
+      "display": "Ya kak by soglásen.",
+      "script": "Я как бы согласен.",
+      "cue": "I sort of agree."
+    },
+    {
+      "id": "L5-M3-C05",
+      "display": "V óbshchem, vsyó khoroshó.",
+      "script": "В общем, всё хорошо.",
+      "cue": "Basically, everything's fine."
+    },
+    {
+      "id": "L5-M3-C06",
+      "display": "Slúshay, davay poydyóm.",
+      "script": "Слушай, давай пойдём.",
+      "cue": "Listen, let's go."
+    },
+    {
+      "id": "L5-M3-C07",
+      "display": "Slúshayte, éhto ne tak.",
+      "script": "Слушайте, это не так.",
+      "cue": "Listen, that's not so."
+    },
+    {
+      "id": "L5-M3-C08",
+      "display": "Privét! Kak delá?",
+      "script": "Привет! Как дела?",
+      "cue": "Hi! How are you?"
+    },
+    {
+      "id": "L5-M3-C09",
+      "display": "Gde zdes' podyézd?",
+      "script": "Где здесь подъезд?",
+      "cue": "Where's the entrance here?"
+    },
+    {
+      "id": "L5-M3-C10",
+      "display": "V Peterbúrge éhto parádnaya.",
+      "script": "В Петербурге это парадная.",
+      "cue": "In Petersburg that's a parádnaya."
+    },
+    {
+      "id": "L5-M3-C11",
+      "display": "Ya kupíl batón i búlku.",
+      "script": "Я купил батон и булку.",
+      "cue": "I bought a batón and a búlka."
+    },
+    {
+      "id": "L5-M3-C12",
+      "display": "Zdes' govoryát shavermá, a ne shaurmá.",
+      "script": "Здесь говорят шаверма, а не шаурма.",
+      "cue": "Here they say shavermá, not shaurmá."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 360 — nine courses at four complete levels, L1-M1..L4-M10 (#537, #552-#562)', () => {
+  it('finds all 449 — eight complete five-level ladders, and en-ar one rung short (#581, #590-#597)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -230,6 +230,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L4-M7.json',
       'content/en-ar/modules/L4-M8.json',
       'content/en-ar/modules/L4-M9.json',
+      'content/en-ar/modules/L5-M1.json',
+      'content/en-ar/modules/L5-M10.json',
+      'content/en-ar/modules/L5-M2.json',
+      'content/en-ar/modules/L5-M3.json',
+      'content/en-ar/modules/L5-M4.json',
+      'content/en-ar/modules/L5-M5.json',
+      'content/en-ar/modules/L5-M6.json',
+      'content/en-ar/modules/L5-M7.json',
+      'content/en-ar/modules/L5-M8.json',
+      'content/en-ar/modules/L5-M9.json',
       'content/en-de/modules/L1-M1.json',
       'content/en-de/modules/L1-M10.json',
       'content/en-de/modules/L1-M2.json',
@@ -270,6 +280,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-de/modules/L4-M7.json',
       'content/en-de/modules/L4-M8.json',
       'content/en-de/modules/L4-M9.json',
+      'content/en-de/modules/L5-M1.json',
+      'content/en-de/modules/L5-M10.json',
+      'content/en-de/modules/L5-M2.json',
+      'content/en-de/modules/L5-M3.json',
+      'content/en-de/modules/L5-M4.json',
+      'content/en-de/modules/L5-M5.json',
+      'content/en-de/modules/L5-M6.json',
+      'content/en-de/modules/L5-M7.json',
+      'content/en-de/modules/L5-M8.json',
+      'content/en-de/modules/L5-M9.json',
       'content/en-es/modules/L1-M1.json',
       'content/en-es/modules/L1-M10.json',
       'content/en-es/modules/L1-M2.json',
@@ -310,6 +330,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-es/modules/L4-M7.json',
       'content/en-es/modules/L4-M8.json',
       'content/en-es/modules/L4-M9.json',
+      'content/en-es/modules/L5-M1.json',
+      'content/en-es/modules/L5-M10.json',
+      'content/en-es/modules/L5-M2.json',
+      'content/en-es/modules/L5-M3.json',
+      'content/en-es/modules/L5-M4.json',
+      'content/en-es/modules/L5-M5.json',
+      'content/en-es/modules/L5-M6.json',
+      'content/en-es/modules/L5-M7.json',
+      'content/en-es/modules/L5-M8.json',
+      'content/en-es/modules/L5-M9.json',
       'content/en-fr/modules/L1-M1.json',
       'content/en-fr/modules/L1-M10.json',
       'content/en-fr/modules/L1-M2.json',
@@ -350,6 +380,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-fr/modules/L4-M7.json',
       'content/en-fr/modules/L4-M8.json',
       'content/en-fr/modules/L4-M9.json',
+      'content/en-fr/modules/L5-M1.json',
+      'content/en-fr/modules/L5-M10.json',
+      'content/en-fr/modules/L5-M2.json',
+      'content/en-fr/modules/L5-M3.json',
+      'content/en-fr/modules/L5-M4.json',
+      'content/en-fr/modules/L5-M5.json',
+      'content/en-fr/modules/L5-M6.json',
+      'content/en-fr/modules/L5-M7.json',
+      'content/en-fr/modules/L5-M8.json',
+      'content/en-fr/modules/L5-M9.json',
       'content/en-it/modules/L1-M1.json',
       'content/en-it/modules/L1-M10.json',
       'content/en-it/modules/L1-M2.json',
@@ -390,6 +430,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-it/modules/L4-M7.json',
       'content/en-it/modules/L4-M8.json',
       'content/en-it/modules/L4-M9.json',
+      'content/en-it/modules/L5-M1.json',
+      'content/en-it/modules/L5-M10.json',
+      'content/en-it/modules/L5-M2.json',
+      'content/en-it/modules/L5-M3.json',
+      'content/en-it/modules/L5-M4.json',
+      'content/en-it/modules/L5-M5.json',
+      'content/en-it/modules/L5-M6.json',
+      'content/en-it/modules/L5-M7.json',
+      'content/en-it/modules/L5-M8.json',
+      'content/en-it/modules/L5-M9.json',
       'content/en-ko/modules/L1-M1.json',
       'content/en-ko/modules/L1-M10.json',
       'content/en-ko/modules/L1-M2.json',
@@ -430,6 +480,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ko/modules/L4-M7.json',
       'content/en-ko/modules/L4-M8.json',
       'content/en-ko/modules/L4-M9.json',
+      'content/en-ko/modules/L5-M1.json',
+      'content/en-ko/modules/L5-M10.json',
+      'content/en-ko/modules/L5-M2.json',
+      'content/en-ko/modules/L5-M3.json',
+      'content/en-ko/modules/L5-M4.json',
+      'content/en-ko/modules/L5-M5.json',
+      'content/en-ko/modules/L5-M6.json',
+      'content/en-ko/modules/L5-M7.json',
+      'content/en-ko/modules/L5-M8.json',
+      'content/en-ko/modules/L5-M9.json',
       'content/en-ru/modules/L1-M1.json',
       'content/en-ru/modules/L1-M10.json',
       'content/en-ru/modules/L1-M2.json',
@@ -470,6 +530,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ru/modules/L4-M7.json',
       'content/en-ru/modules/L4-M8.json',
       'content/en-ru/modules/L4-M9.json',
+      'content/en-ru/modules/L5-M1.json',
+      'content/en-ru/modules/L5-M10.json',
+      'content/en-ru/modules/L5-M2.json',
+      'content/en-ru/modules/L5-M3.json',
+      'content/en-ru/modules/L5-M4.json',
+      'content/en-ru/modules/L5-M5.json',
+      'content/en-ru/modules/L5-M6.json',
+      'content/en-ru/modules/L5-M7.json',
+      'content/en-ru/modules/L5-M8.json',
+      'content/en-ru/modules/L5-M9.json',
       'content/hi-en/modules/L1-M1.json',
       'content/hi-en/modules/L1-M10.json',
       'content/hi-en/modules/L1-M2.json',
@@ -510,6 +580,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-en/modules/L4-M7.json',
       'content/hi-en/modules/L4-M8.json',
       'content/hi-en/modules/L4-M9.json',
+      'content/hi-en/modules/L5-M1.json',
+      'content/hi-en/modules/L5-M10.json',
+      'content/hi-en/modules/L5-M2.json',
+      'content/hi-en/modules/L5-M3.json',
+      'content/hi-en/modules/L5-M4.json',
+      'content/hi-en/modules/L5-M5.json',
+      'content/hi-en/modules/L5-M6.json',
+      'content/hi-en/modules/L5-M7.json',
+      'content/hi-en/modules/L5-M8.json',
+      'content/hi-en/modules/L5-M9.json',
       'content/hi-mr/modules/L1-M1.json',
       'content/hi-mr/modules/L1-M10.json',
       'content/hi-mr/modules/L1-M2.json',
@@ -550,6 +630,16 @@ describe('ModuleContent against the modules that exist', () => {
       'content/hi-mr/modules/L4-M7.json',
       'content/hi-mr/modules/L4-M8.json',
       'content/hi-mr/modules/L4-M9.json',
+      'content/hi-mr/modules/L5-M1.json',
+      'content/hi-mr/modules/L5-M10.json',
+      'content/hi-mr/modules/L5-M2.json',
+      'content/hi-mr/modules/L5-M3.json',
+      'content/hi-mr/modules/L5-M4.json',
+      'content/hi-mr/modules/L5-M5.json',
+      'content/hi-mr/modules/L5-M6.json',
+      'content/hi-mr/modules/L5-M7.json',
+      'content/hi-mr/modules/L5-M8.json',
+      'content/hi-mr/modules/L5-M9.json',
     ]);
   });
 
@@ -601,7 +691,7 @@ describe('ModuleContent against the modules that exist', () => {
   it('keeps the romanized course readable: display is the romanization, script the native line', () => {
     const romanized = MODULE_FILES.filter(([name]) => name.includes('en-ar'));
 
-    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(40);
+    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(50);
     for (const [file, json] of romanized) {
       const module = parseModule(json, file);
 
@@ -740,7 +830,7 @@ describe('ModuleContent against the modules that exist', () => {
       'the hi-en modules this rule is written for (#270-#272 L1; #437, #446, #455 L2; #473, #482,' +
         ' #548 L3; #531 L4). The count guards the walk BELOW it, and vitest aborts the case here —' +
         ' so a stale number silently stops every language law in this block from running at all.',
-    ).toBe(40);
+    ).toBe(50);
     for (const [file, json] of hiEn) {
       const module = parseModule(json, file);
 

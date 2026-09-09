@@ -1,0 +1,590 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M8",
+  "title": "When words run out",
+  "job": "Paraphrase, ask what something means, repair a misunderstanding",
+  "prerequisites": ["L5-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": ["simple_present", "simple_past"],
+    "allowedPatterns": [
+      "geugeo + museun + tteus-ieyo?",
+      "N-eul/reul + hangungmal-lo + mworago + haeyo?",
+      "dasi + hanbeon + malsseumhae + juseyo",
+      "V-(neu)n + geo-reul + malhaeyo",
+      "je + mareun + clause"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "ASK ABOUT THE LANGUAGE, NOT AROUND IT. museun tteus-ieyo, hangungmal-lo mworago haeyo, dasi hanbeon, cheoncheonhi — a small closed set of questions that keeps a conversation open when the word is gone."
+    },
+    {
+      "tag": "delta",
+      "text": "WHEN THE NOUN IS MISSING, BUILD ONE. L5-M5's -neun geo does the work: jong-i-reul jareuneun geo, the thing that cuts paper. The modifier comes first and the head noun last, so you must know how the description ends before you start it."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH REPAIRS BY RESTATING, KOREAN BY CANCELLING. what I meant was becomes je mareun geuge anieyo — that is not it. It is blunter than three levels of politeness lead you to expect, and it is what a Korean speaker actually says."
+    },
+    {
+      "tag": "free",
+      "text": "MWORAGOYO IS A REPAIR REQUEST, NOT A CHALLENGE. Sorry, what? Delivered with English intonation it reads as what did you just say to me, and you will need it a dozen times a day."
+    },
+    {
+      "tag": "interference",
+      "text": "THE HEARING VERB IS DEULLYEOYO, NOT DEUREOYO. jal an deullyeoyo is I cannot hear you. L4-M6's deureoyo is to enter, and in this romanization the two are one letter apart."
+    },
+    {
+      "tag": "free",
+      "text": "-HAGO BISSEUSHAEYO COMPARES INSTEAD OF NAMING. It is similar to an apple will carry you further than a word you do not have."
+    },
+    {
+      "tag": "free",
+      "text": "FOR ONCE THIS IS TRANSFER, NOT DELTA. You already own every one of these strategies in English. The work here is in the words alone, which is why the module sits eighth and not first."
+    },
+    {
+      "tag": "free",
+      "text": "STAY IN -YO WHILE REPAIRING. A flustered learner drops register first, and a repair is exactly the moment your listener is paying most attention to it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M8-S01",
+      "display": "Geugeo museun tteus-ieyo?",
+      "script": "그거 무슨 뜻이에요?",
+      "cue": "What does that mean?",
+      "literal": "that what meaning-is?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "museun",
+            "script": "무슨",
+            "cue": "what kind of, which",
+            "tag": "free",
+            "forms": ["museun"],
+            "note": "It stands in front of a noun and never alone. L5-M1 taught tteus-ieyo, the meaning; museun is what turns it into a question."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "English what can stand by itself. museun cannot: it needs the noun it is asking about, so the question is always what kind of X rather than a bare what.",
+      "sound": "GEU-geo MU-seun TTEU-si-e-yo?",
+      "variations": [
+        {
+          "display": "Igeo museun tteus-ieyo?",
+          "script": "이거 무슨 뜻이에요?",
+          "cue": "What does this mean?",
+          "changed": "the near demonstrative: the word in front of you"
+        },
+        {
+          "display": "Museun tteus-ieyo?",
+          "script": "무슨 뜻이에요?",
+          "cue": "What does it mean?",
+          "changed": "the subject dropped, as it usually is"
+        }
+      ],
+      "mistake": {
+        "display": "Geugeo mwo tteus-ieyo?",
+        "script": "그거 뭐 뜻이에요?",
+        "why": "mwo is the standalone what and cannot lean on a following noun. In front of tteus the question word has to be museun."
+      },
+      "usage": "Stopping a conversation on one word without stopping the conversation.",
+      "register": "neutral",
+      "mnemonic": "museun always brings a noun with it."
+    },
+    {
+      "id": "L5-M8-S02",
+      "display": "Igeo-reul hangungmal-lo mworago haeyo?",
+      "script": "이거를 한국말로 뭐라고 해요?",
+      "cue": "What do you call this in Korean?",
+      "literal": "this-OBJ Korean-by what-QUOT do?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mworago",
+            "script": "뭐라고",
+            "cue": "as what, called what",
+            "tag": "delta",
+            "forms": ["mworago"],
+            "note": "mwo with L3-M5's quotative -rago: literally saying what. It asks for the name of a thing, and it always ends in haeyo."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "English calls it a call — what do you call this. Korean asks what it is said as, so the verb at the end is haeyo, to do or say, and never a verb of naming.",
+      "sound": "I-geo-reul HAN-gung-mal-lo MWO-ra-go HAE-yo?",
+      "variations": [
+        {
+          "display": "Igeo-reul hangungmal-lo mworago haseyo?",
+          "script": "이거를 한국말로 뭐라고 하세요?",
+          "cue": "What do you call this in Korean?",
+          "changed": "the honorific: asked of somebody senior"
+        },
+        {
+          "display": "Hangungmal-lo mworago haeyo?",
+          "script": "한국말로 뭐라고 해요?",
+          "cue": "What do you say in Korean?",
+          "changed": "the thing dropped: you are pointing at it anyway"
+        }
+      ],
+      "mistake": {
+        "display": "Igeo-reul hangungmal-lo mwo haeyo?",
+        "script": "이거를 한국말로 뭐 해요?",
+        "why": "Without -rago the question is what are you doing with this in Korean. The quotative is what makes mwo the name being asked for rather than the action."
+      },
+      "usage": "Getting the word out of the person you are talking to.",
+      "register": "neutral",
+      "mnemonic": "mwo plus rago: said as what?"
+    },
+    {
+      "id": "L5-M8-S03",
+      "display": "Dasi hanbeon malsseumhae juseyo. Bareum-i eoryeoweoyo.",
+      "script": "다시 한번 말씀해 주세요. 발음이 어려워요.",
+      "cue": "Please say that once more. The pronunciation is difficult.",
+      "literal": "again once speak-HON give. pronunciation-SUBJ is-difficult",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bareum",
+            "script": "발음",
+            "cue": "pronunciation",
+            "tag": "free",
+            "forms": ["bareum", "bareum-i", "bareum-eul"],
+            "note": "Naming what is hard turns a request to repeat into a reason to repeat. Said ba-reum, with the l of bal carried onto the second syllable."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "English sorry, again? is a whole request. Korean already has the frame — dasi hanbeon plus malsseumhae juseyo, and all four words were already owned — so the only new thing to learn is what to blame.",
+      "sound": "DA-si HAN-beon MAL-sseum-hae JU-se-yo. BA-reu-mi EO-ryeo-weo-yo.",
+      "variations": [
+        {
+          "display": "Dasi hanbeon malsseumhae juseyo.",
+          "script": "다시 한번 말씀해 주세요.",
+          "cue": "Please say that once more.",
+          "changed": "the reason withheld: still polite, and slightly barer"
+        },
+        {
+          "display": "Cheoncheonhi malsseumhae juseyo.",
+          "script": "천천히 말씀해 주세요.",
+          "cue": "Please say it slowly.",
+          "changed": "cheoncheonhi for dasi hanbeon: slower, not again"
+        }
+      ],
+      "mistake": {
+        "display": "Dasi hanbeon malhae juseyo.",
+        "script": "다시 한번 말해 주세요.",
+        "why": "malhaeyo is the plain verb, and asking a stranger to plainly say it again drops the honorific the request needs. malsseum is the raised form of the word itself."
+      },
+      "usage": "Asking a stranger to repeat, and giving them a reason to.",
+      "register": "neutral",
+      "mnemonic": "dasi hanbeon: again, one time."
+    },
+    {
+      "id": "L5-M8-S04",
+      "display": "Geu danueo-reul moreugesseoyo.",
+      "script": "그 단어를 모르겠어요.",
+      "cue": "I do not know that word.",
+      "literal": "that word-OBJ not-know-TENT",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "danueo",
+            "script": "단어",
+            "cue": "word",
+            "tag": "free",
+            "forms": ["danueo", "danueo-ga", "danueo-reul"],
+            "note": "The unit you ask about. L3-M5's mal is speech and what somebody said; danueo is the single dictionary item."
+          }
+        ],
+        "rules": [0, 6]
+      },
+      "trap": "English uses word for both the item and the thing somebody said — a word with you. Korean splits them: danueo for the item, mal for the utterance.",
+      "sound": "geu DA-nueo-reul MO-reu-ge-sseo-yo.",
+      "variations": [
+        {
+          "display": "Geu danueo-ga eoryeoweoyo.",
+          "script": "그 단어가 어려워요.",
+          "cue": "That word is difficult.",
+          "changed": "-ga for -reul: the word as the thing that is hard"
+        },
+        {
+          "display": "Danueo-reul moreugesseoyo.",
+          "script": "단어를 모르겠어요.",
+          "cue": "I do not know the word.",
+          "changed": "the demonstrative dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Geu mal-eul moreugesseoyo.",
+        "script": "그 말을 모르겠어요.",
+        "why": "This says you did not follow what was said, not that one word was new. If the problem is a single item, the noun is danueo."
+      },
+      "usage": "Admitting the gap precisely, so it can be filled precisely.",
+      "register": "neutral",
+      "mnemonic": "danueo is one entry in the dictionary."
+    },
+    {
+      "id": "L5-M8-S05",
+      "display": "Cheoncheonhi dasi seolmyeonghae juseyo.",
+      "script": "천천히 다시 설명해 주세요.",
+      "cue": "Please explain it again slowly.",
+      "literal": "slowly again explain give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "seolmyeonghaeyo",
+            "script": "설명해요",
+            "cue": "explain",
+            "tag": "free",
+            "forms": ["seolmyeonghaeyo", "seolmyeonghae"],
+            "note": "Asks for the idea again, where dasi hanbeon asks only for the same words again. The -hae form is what L1-M3's juseyo attaches to."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "English please explain can sound like a demand for justification. seolmyeonghae juseyo does not: it asks for the content, and the juseyo carries the whole politeness.",
+      "sound": "CHEON-cheon-hi DA-si SEOL-myeong-hae JU-se-yo.",
+      "variations": [
+        {
+          "display": "Dasi seolmyeonghae juseyo.",
+          "script": "다시 설명해 주세요.",
+          "cue": "Please explain it again.",
+          "changed": "cheoncheonhi dropped: the speed left to them"
+        },
+        {
+          "display": "Cheoncheonhi malsseumhae juseyo.",
+          "script": "천천히 말씀해 주세요.",
+          "cue": "Please say it slowly.",
+          "changed": "asking for the same words again, not for the idea"
+        }
+      ],
+      "mistake": {
+        "display": "Cheoncheonhi dasi seolmyeonghaeyo.",
+        "script": "천천히 다시 설명해요.",
+        "why": "Without juseyo this is an instruction, not a request — and given to somebody who was trying to help you, it lands badly. The favour verb is what makes it a favour."
+      },
+      "usage": "Asking for the idea again rather than the sentence.",
+      "register": "neutral",
+      "mnemonic": "seolmyeong lays it out; juseyo asks for it as a gift."
+    },
+    {
+      "id": "L5-M8-S06",
+      "display": "Jong-i-reul jareuneun geo-reul malhaeyo.",
+      "script": "종이를 자르는 거를 말해요.",
+      "cue": "I mean the thing that cuts paper.",
+      "literal": "paper-OBJ cut-ADN thing-OBJ say",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jong-i",
+            "script": "종이",
+            "cue": "paper",
+            "tag": "free",
+            "forms": ["jong-i", "jong-i-reul"],
+            "note": "An ordinary noun doing the work of a missing one: describe what the thing acts on, and the listener supplies the name."
+          },
+          {
+            "display": "jareuneun",
+            "script": "자르는",
+            "cue": "that cuts",
+            "tag": "delta",
+            "forms": ["jareuneun"],
+            "note": "L5-M5's -neun in front of geo, so the whole clause becomes a thing. The verb sits before the noun it describes, never after it."
+          }
+        ],
+        "rules": [1, 6]
+      },
+      "trap": "English builds the description backwards from the head — the thing that cuts paper. Korean builds it forwards into the head, so you must have the ending -neun geo planned before you open your mouth.",
+      "sound": "JONG-i-reul JA-reu-neun GEO-reul MAL-hae-yo.",
+      "variations": [
+        {
+          "display": "Jong-i-reul jareuneun geo-ga isseoyo.",
+          "script": "종이를 자르는 거가 있어요.",
+          "cue": "There is a thing that cuts paper.",
+          "changed": "-ga with isseoyo: the description as a subject"
+        },
+        {
+          "display": "Jareuneun geo-reul malhaeyo.",
+          "script": "자르는 거를 말해요.",
+          "cue": "I mean the thing that cuts.",
+          "changed": "the object dropped: a vaguer description"
+        }
+      ],
+      "mistake": {
+        "display": "Geo-reul malhaeyo jong-i-reul jareuneun.",
+        "script": "거를 말해요 종이를 자르는.",
+        "why": "The modifier can never follow its noun. Korean has no that-clause to hang off the end, so a description built in English order is not a sentence at all."
+      },
+      "usage": "Naming something you cannot name.",
+      "register": "neutral",
+      "mnemonic": "Describe first, then say thing."
+    },
+    {
+      "id": "L5-M8-S07",
+      "display": "Je mareun geuge anieyo.",
+      "script": "제 말은 그게 아니에요.",
+      "cue": "That is not what I meant.",
+      "literal": "my speech-TOP that-SUBJ is-not",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "je mareun",
+            "script": "제 말은",
+            "cue": "what I meant",
+            "tag": "delta",
+            "forms": ["je mareun"],
+            "note": "Two words, learnt whole: L3-M5's mal with -eun, as the topic of the repair. It opens the correction and the cancelling follows it."
+          },
+          {
+            "display": "geuge",
+            "script": "그게",
+            "cue": "that, that one",
+            "tag": "free",
+            "forms": ["geuge"],
+            "note": "The short form of geugeo-ga. Here it points at the wrong reading your listener has just taken, so that it can be refused."
+          }
+        ],
+        "rules": [2, 7]
+      },
+      "trap": "English repairs forwards — what I meant was. Korean repairs backwards: it points at the wrong reading and cancels it, and only then rebuilds. The bluntness is the convention, not rudeness.",
+      "sound": "je MA-reun GEU-ge A-ni-e-yo.",
+      "variations": [
+        {
+          "display": "Geuge anieyo.",
+          "script": "그게 아니에요.",
+          "cue": "That is not it.",
+          "changed": "the frame dropped: the cancel alone, and sharper for it"
+        },
+        {
+          "display": "Je mareun geugeo anieyo.",
+          "script": "제 말은 그거 아니에요.",
+          "cue": "What I meant is not that.",
+          "changed": "geugeo for geuge: the full demonstrative"
+        }
+      ],
+      "mistake": {
+        "display": "Je mareun mianhaeyo.",
+        "script": "제 말은 미안해요.",
+        "why": "je mareun opens a topic and needs something said about it. An apology in that slot leaves the misunderstanding standing, which is the one thing a repair must not do."
+      },
+      "usage": "Undoing a misreading you caused yourself.",
+      "register": "neutral",
+      "mnemonic": "My words: that is not it."
+    },
+    {
+      "id": "L5-M8-S08",
+      "display": "Geuge sagwa-hago bisseushaeyo.",
+      "script": "그게 사과하고 비슷해요.",
+      "cue": "It is similar to an apple.",
+      "literal": "that-SUBJ apple-with is-similar",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bisseushaeyo",
+            "script": "비슷해요",
+            "cue": "is similar",
+            "tag": "free",
+            "forms": ["bisseushaeyo", "bisseushan"],
+            "note": "Takes L2-M9's -hago on the thing compared to, never a separate word for to. bisseushan is the form that goes in front of a noun."
+          }
+        ],
+        "rules": [5, 1]
+      },
+      "trap": "English needs a preposition — similar to. Korean puts -hago on the noun instead, so nothing stands between the two things being compared.",
+      "sound": "GEU-ge SA-gwa-ha-go BI-sseu-tae-yo.",
+      "variations": [
+        {
+          "display": "Sagwa-hago bisseushaeyo.",
+          "script": "사과하고 비슷해요.",
+          "cue": "It is similar to an apple.",
+          "changed": "the subject dropped, as it usually is"
+        },
+        {
+          "display": "Geuge keopi-hago bisseushaeyo.",
+          "script": "그게 커피하고 비슷해요.",
+          "cue": "It is similar to coffee.",
+          "changed": "a different thing on the other side of -hago"
+        }
+      ],
+      "mistake": {
+        "display": "Geuge sagwa bisseushaeyo.",
+        "script": "그게 사과 비슷해요.",
+        "why": "Without -hago the two nouns simply sit side by side and nothing marks which is being compared to which. The particle is the whole comparison."
+      },
+      "usage": "Getting a thing across by what it resembles.",
+      "register": "neutral",
+      "mnemonic": "-hago ties the two together; bisseushaeyo says how close."
+    },
+    {
+      "id": "L5-M8-S09",
+      "display": "Mworagoyo? Jal an deullyeoyo.",
+      "script": "뭐라고요? 잘 안 들려요.",
+      "cue": "Sorry, what? I cannot hear you well.",
+      "literal": "what-QUOT-POL? well not is-heard",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mworagoyo",
+            "script": "뭐라고요",
+            "cue": "sorry, what?",
+            "tag": "interference",
+            "forms": ["mworagoyo"],
+            "note": "mworago with -yo on the end, which is what makes it a polite request rather than a demand. It asks for a repeat and nothing else."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "Said with the rise an English speaker gives what?, this reads as what did you just say to me. Keep it short and flat, and follow it with the reason — jal an deullyeoyo does that work.",
+      "sound": "MWO-ra-go-yo? jal an DEUL-lyeo-yo.",
+      "variations": [
+        {
+          "display": "Mworagoyo?",
+          "script": "뭐라고요?",
+          "cue": "Sorry, what?",
+          "changed": "the reason withheld: usable, and easier to misread"
+        },
+        {
+          "display": "Jal an deullyeoyo.",
+          "script": "잘 안 들려요.",
+          "cue": "I cannot hear you well.",
+          "changed": "the reason alone, with no question at all"
+        }
+      ],
+      "mistake": {
+        "display": "Mworagoyo? Jal an deureoyo.",
+        "script": "뭐라고요? 잘 안 들어요.",
+        "why": "deureoyo is L4-M6's to enter, so this says you are not going in properly. The passive deullyeoyo, L4-M2's, is the one that means a sound reaches you."
+      },
+      "usage": "Asking for a repeat without sounding challenged.",
+      "register": "neutral",
+      "mnemonic": "mworagoyo asks; deullyeoyo explains."
+    },
+    {
+      "id": "L5-M8-S10",
+      "display": "Hangungmal-lo cheoncheonhi malsseumhae juseyo.",
+      "script": "한국말로 천천히 말씀해 주세요.",
+      "cue": "Please say it slowly in Korean.",
+      "literal": "Korean-by slowly speak-HON give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hangungmal-lo",
+            "script": "한국말로",
+            "cue": "in Korean, by means of Korean",
+            "tag": "delta",
+            "forms": ["hangungmal-lo"],
+            "note": "L1-M1's hangungmal with the by-means-of particle. After the l of mal the particle is said and written -lo, not -ro."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "English in Korean uses the same in as in the room. Korean uses the instrument particle, the one that also says by bus and with a pen, because a language is a tool you say things through.",
+      "sound": "HAN-gung-mal-lo CHEON-cheon-hi MAL-sseum-hae JU-se-yo.",
+      "variations": [
+        {
+          "display": "Cheoncheonhi malsseumhae juseyo.",
+          "script": "천천히 말씀해 주세요.",
+          "cue": "Please say it slowly.",
+          "changed": "the language dropped: you are already in it"
+        },
+        {
+          "display": "Hangungmal-lo malsseumhae juseyo.",
+          "script": "한국말로 말씀해 주세요.",
+          "cue": "Please say it in Korean.",
+          "changed": "the speed left to them"
+        }
+      ],
+      "mistake": {
+        "display": "Hangungmal-e cheoncheonhi malsseumhae juseyo.",
+        "script": "한국말에 천천히 말씀해 주세요.",
+        "why": "L1-M4's -e is where something is, not what it is done through. A language is the instrument, so the particle has to be the one that carries by and with."
+      },
+      "usage": "Asking to stay in Korean rather than be rescued into English.",
+      "register": "neutral",
+      "mnemonic": "-lo is the tool; the language is the tool."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M8-C01",
+      "display": "Geugeo museun tteus-ieyo?",
+      "script": "그거 무슨 뜻이에요?",
+      "cue": "What does that mean?"
+    },
+    {
+      "id": "L5-M8-C02",
+      "display": "Igeo-reul hangungmal-lo mworago haeyo?",
+      "script": "이거를 한국말로 뭐라고 해요?",
+      "cue": "What do you call this in Korean?"
+    },
+    {
+      "id": "L5-M8-C03",
+      "display": "Dasi hanbeon malsseumhae juseyo.",
+      "script": "다시 한번 말씀해 주세요.",
+      "cue": "Please say that once more."
+    },
+    {
+      "id": "L5-M8-C04",
+      "display": "Bareum-i eoryeoweoyo.",
+      "script": "발음이 어려워요.",
+      "cue": "The pronunciation is difficult."
+    },
+    {
+      "id": "L5-M8-C05",
+      "display": "Geu danueo-reul moreugesseoyo.",
+      "script": "그 단어를 모르겠어요.",
+      "cue": "I do not know that word."
+    },
+    {
+      "id": "L5-M8-C06",
+      "display": "Cheoncheonhi seolmyeonghae juseyo.",
+      "script": "천천히 설명해 주세요.",
+      "cue": "Please explain it slowly."
+    },
+    {
+      "id": "L5-M8-C07",
+      "display": "Jong-i-reul jareuneun geo-reul malhaeyo.",
+      "script": "종이를 자르는 거를 말해요.",
+      "cue": "I mean the thing that cuts paper."
+    },
+    {
+      "id": "L5-M8-C08",
+      "display": "Je mareun geuge anieyo.",
+      "script": "제 말은 그게 아니에요.",
+      "cue": "That is not what I meant."
+    },
+    {
+      "id": "L5-M8-C09",
+      "display": "Geuge sagwa-hago bisseushaeyo.",
+      "script": "그게 사과하고 비슷해요.",
+      "cue": "It is similar to an apple."
+    },
+    {
+      "id": "L5-M8-C10",
+      "display": "Mworagoyo?",
+      "script": "뭐라고요?",
+      "cue": "Sorry, what?"
+    },
+    {
+      "id": "L5-M8-C11",
+      "display": "Jal an deullyeoyo.",
+      "script": "잘 안 들려요.",
+      "cue": "I cannot hear you well."
+    },
+    {
+      "id": "L5-M8-C12",
+      "display": "Hangungmal-lo mworago haeyo?",
+      "script": "한국말로 뭐라고 해요?",
+      "cue": "What do you say in Korean?"
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}

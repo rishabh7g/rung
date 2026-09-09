@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M9",
+  "title": "Telling it your way",
+  "job": "Retell a known story in your own register",
+  "prerequisites": ["L5-M1", "L5-M2", "L5-M3", "L5-M4", "L5-M5", "L5-M6", "L5-M7", "L5-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["présent", "imparfait", "passé composé", "passé simple"],
+    "allowedPatterns": [
+      "Il était une fois + <noun phrase>",
+      "En gros + , + <clause>",
+      "<clause> + , + et là + <passé composé>",
+      "Dans l'histoire + , + <third-person passé simple> + , + mais moi je dirais + <passé composé>",
+      "Bref + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE PASSÉ SIMPLE IS A READING TENSE AND THIS MODULE TEACHES IT AS ONE. Every form here is THIRD PERSON and every one is for RECOGNITION: il fut, il eut, il alla, il prit, il vint, and the plural in -èrent — ils allèrent, ils prirent. You will meet them in tales, novels and news writing, and you are never asked to produce one. The first and second persons are not taken at all: je fus and tu allas are for reading and this course does not even show them."
+    },
+    {
+      "tag": "delta",
+      "text": "THE MAPPING IS THE WHOLE SKILL. Every passé simple becomes a PASSÉ COMPOSÉ the moment you say it out loud: il alla becomes il est allé, il prit becomes il a pris, il fut becomes il a été. Read the tense, speak the other one. This is exactly how L4-M7 handled the futur simple — recognise the written form, reply in the form you already own — and it is why this module opens no new spoken grammar at all."
+    },
+    {
+      "tag": "interference",
+      "text": "NOTHING IN ENGLISH WARNS YOU. English writes its narratives in the same past it speaks them in — he went is he went, on the page and in the pub — so there is no reflex telling you that the tense in front of you is one you must not copy. A learner who copies it writes a text message that reads like Flaubert. The SHAPE to watch for is an -a, -it or -ut ending on a third person inside a written story."
+    },
+    {
+      "tag": "free",
+      "text": "THE FURNITURE A RETELLING RUNS ON, AND ALMOST NONE OF IT IS NEW. il était une fois opens a tale; en gros, du genre and genre approximate; bref cuts to the end; et là drives the next step; voilà closes. Everything else is already on the ladder: L1-M10's et puis, L2-M10's quand and toujours, L3-M10's c'était and au début, L4-M10's finalement, soudain, tout à coup and alors que. This module adds hedges, not connectors."
+    },
+    {
+      "tag": "interference",
+      "text": "BOTH LANGUAGES SLIP INTO THE PRESENT WHEN RETELLING, AND THE MOVE IS NOT INTERCHANGEABLE SENTENCE BY SENTENCE. English does so he walks in and …; French does et là, il arrive. The device transfers, but mixing it into a passé composé account at random is what makes a retelling sound unedited. Choose a lane for the stretch you are in, and let et là be the thing that marks the change of lane."
+    },
+    {
+      "tag": "delta",
+      "text": "THE ONE CELL THIS MODULE CANNOT OPEN IS THE ONE A TALE USES MOST. The third-person passé simple of dire is dit — spelt exactly like the present il dit and like the participle j'ai dit that L2-M6 already owns. The index cannot tell the three apart, so there is no dit row here at all: the tense note travels inside il dit, and L4-M10's il m'a dit is the spoken version. When you read il dit in a tale, it is a past."
+    },
+    {
+      "tag": "delta",
+      "text": "WHAT THIS MODULE DOES NOT TAKE. The passé simple in the first or second person, and the passé simple in anything you are asked to PRODUCE — it is a reading tense here and the mistake plate on S04 says so a second time. The imperfect subjunctive, qu'il fût, is its literary partner and this course never teaches it. And no new narrative connector: L3-M10, L4-M8 and L4-M10 already own the account's furniture between them."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M9-S01",
+      "display": "Il était une fois un roi et une reine",
+      "cue": "Once upon a time there was a king and a queen",
+      "literal": "It was one time a king and a queen",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "il était une fois",
+            "cue": "once upon a time",
+            "tag": "free",
+            "forms": ["il était une fois"],
+            "note": "The fixed opening of a French tale, taken whole. Built on L2-M10's était, and it never appears anywhere but at the start of a story."
+          },
+          {
+            "display": "roi",
+            "cue": "king",
+            "tag": "free",
+            "forms": ["roi", "reine", "rois", "reines"],
+            "note": "un roi, une reine — the pair a tale is furnished with. The final consonant of each is silent, so reine rhymes with L2-M2's pleine."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "Once upon a time is four words in both languages and the same fixed opening, so English gives it to you free. What it does not give you is the warning that everything AFTER this line, in a printed tale, will be in a tense you must not copy.",
+      "sound": "eel ay-tay oon FWAH an RWAH ay oon REN. il était runs together as ee-lay-tay.",
+      "variations": [
+        {
+          "display": "Il était une fois un loup",
+          "cue": "Once upon a time there was a wolf",
+          "changed": "who the tale is about"
+        },
+        {
+          "display": "Il était une fois une reine",
+          "cue": "Once upon a time there was a queen",
+          "changed": "the queen alone, which starts a different tale"
+        }
+      ],
+      "mistake": {
+        "display": "C'était une fois un roi et une reine",
+        "why": "the opening is frozen on il, not on ce. c'était une fois is not a phrase at all, and to a French ear the tale has not started."
+      },
+      "usage": "Starting a story everyone in the room already knows the shape of.",
+      "register": "neutral",
+      "mnemonic": "il était une fois — it was one time, and only ever at the start."
+    },
+    {
+      "id": "L5-M9-S02",
+      "display": "Dans l'histoire, le roi alla dans la forêt",
+      "cue": "In the story, the king went into the forest",
+      "literal": "In the story, the king went in the forest",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "l'histoire",
+            "cue": "the story",
+            "tag": "free",
+            "forms": ["l'histoire", "histoire"],
+            "note": "Feminine and the h is silent, so the article elides: l'histoire. Both a story and history, exactly as in English."
+          },
+          {
+            "display": "alla",
+            "cue": "(he) went — written past",
+            "tag": "delta",
+            "forms": ["alla", "allèrent"],
+            "note": "Passé simple of aller, third person only. Say it and it becomes il est allé; ils allèrent becomes ils sont allés."
+          },
+          {
+            "display": "forêt",
+            "cue": "forest",
+            "tag": "free",
+            "forms": ["forêt", "forêts"],
+            "note": "Feminine, la forêt. The circumflex marks an s that used to be there, which is why English kept forest."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "alla looks like a form of avoir and is not — it is aller. Two a's and a double l, and the meaning is went. The give-away is the shape rather than the stem: an -a ending on a third person, inside a written story, is a passé simple.",
+      "sound": "dahn lees-TWAHR, luh rwah ah-LAH dahn lah foh-RAY. The t of forêt is silent.",
+      "variations": [
+        {
+          "display": "Dans l'histoire, le roi est allé dans la forêt",
+          "cue": "In the story, the king went into the forest",
+          "changed": "the same event in the tense you would SAY it in"
+        },
+        {
+          "display": "Dans l'histoire, le loup alla dans la forêt",
+          "cue": "In the story, the wolf went into the forest",
+          "changed": "who does the going"
+        }
+      ],
+      "mistake": {
+        "display": "Hier, je alla dans la forêt",
+        "why": "two things at once, and both matter. The passé simple has no first person in this course, and it is not a tense you say about your own yesterday. Yesterday, out loud, is hier je suis allé."
+      },
+      "usage": "Reporting what happens in a printed story, using the tense the page uses.",
+      "register": "formal",
+      "mnemonic": "Ends in -a, sits on a third person, sits in a book: passé simple."
+    },
+    {
+      "id": "L5-M9-S03",
+      "display": "Le loup vint et le roi prit le château",
+      "cue": "The wolf came and the king took the castle",
+      "literal": "The wolf came and the king took the castle",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "loup",
+            "cue": "wolf",
+            "tag": "free",
+            "forms": ["loup", "loups"],
+            "note": "Masculine, and the p is silent — loo. The tale animal, the way the fox is in English fables."
+          },
+          {
+            "display": "vint",
+            "cue": "(he) came — written past",
+            "tag": "delta",
+            "forms": ["vint", "vinrent"],
+            "note": "Passé simple of venir. Spoken, it becomes il est venu. Not to be read as L3-M4's present vient — the a-sound is different."
+          },
+          {
+            "display": "prit",
+            "cue": "(he) took — written past",
+            "tag": "delta",
+            "forms": ["prit", "prirent"],
+            "note": "Passé simple of prendre, and spoken it becomes il a pris. L2-M10 already owns that participle pris."
+          },
+          {
+            "display": "château",
+            "cue": "castle",
+            "tag": "free",
+            "forms": ["château", "châteaux"],
+            "note": "Masculine, and the plural takes an x rather than an s. The circumflex is again an s that has gone."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "vint and vient differ by one letter and by one nasal vowel, and one is a written past while the other is an ordinary present. In a printed tale the past is the safe reading; in speech you will only ever hear the present.",
+      "sound": "luh LOO van ay luh rwah pree luh shah-TOH. vint is van, nasal; vient is vyan.",
+      "variations": [
+        {
+          "display": "Le loup est venu et le roi a pris le château",
+          "cue": "The wolf came and the king took the castle",
+          "changed": "the whole line moved into the spoken tense"
+        },
+        {
+          "display": "Les loups vinrent dans la forêt",
+          "cue": "The wolves came into the forest",
+          "changed": "the plural, which ends in -èrent or -inrent"
+        }
+      ],
+      "mistake": {
+        "display": "Le loup vint hier dans la forêt",
+        "why": "the tense is right and the sentence is not: hier belongs to something you are telling, and the passé simple belongs to something written. Put them together and you have a diary entry written like a fairy tale."
+      },
+      "usage": "Reading two events off the page in the order the page gives them.",
+      "register": "formal",
+      "mnemonic": "vint is van and is past; vient is vyan and is now."
+    },
+    {
+      "id": "L5-M9-S04",
+      "display": "Il fut roi, et il eut raison",
+      "cue": "He was king, and he was right",
+      "literal": "He was king, and he had reason",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fut",
+            "cue": "(he) was — written past",
+            "tag": "delta",
+            "forms": ["fut", "furent"],
+            "note": "Passé simple of être. Spoken it becomes il a été, which L5-M4 already owns. Three letters, and nothing about it looks like être."
+          },
+          {
+            "display": "eut",
+            "cue": "(he) had — written past",
+            "tag": "delta",
+            "forms": ["eut", "eurent"],
+            "note": "Passé simple of avoir, pronounced simply uh — the e is silent. Spoken it becomes il a eu."
+          }
+        ],
+        "rules": [0, 1, 6]
+      },
+      "trap": "fut and eut are the two you will meet most and the two that look least like their verbs. Neither carries a recognisable stem, so they have to be learnt as shapes: fut for was, eut for had, both third person, both on a page.",
+      "sound": "eel foo RWAH, ay eel uh ray-ZOHN. eut is one sound, uh, with the t silent.",
+      "variations": [
+        {
+          "display": "Il a été roi, et il a eu raison",
+          "cue": "He was king, and he was right",
+          "changed": "the same two facts, said aloud"
+        },
+        {
+          "display": "Le loup et le roi furent dans la forêt",
+          "cue": "The wolf and the king were in the forest",
+          "changed": "the plural, furent"
+        }
+      ],
+      "mistake": {
+        "display": "Je fus roi quand j'étais petit",
+        "why": "a second reminder, and it is the module's rule twice over: there is no first person passé simple to produce here. Talking about your own past, in speech, takes j'ai été or j'étais."
+      },
+      "usage": "Reading a summary line off a printed page — the shape a book uses to state a fact once.",
+      "register": "formal",
+      "mnemonic": "fut was, eut had — three letters each, and neither looks like its verb."
+    },
+    {
+      "id": "L5-M9-S05",
+      "display": "Dans le conte, il dit non au roi",
+      "cue": "In the tale, he said no to the king",
+      "literal": "In the tale, he said no to the king",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "conte",
+            "cue": "tale",
+            "tag": "free",
+            "forms": ["conte", "contes"],
+            "note": "A tale specifically — the printed, once-upon-a-time kind. histoire is the general word and covers anything you tell."
+          },
+          {
+            "display": "il dit",
+            "cue": "he said / he says",
+            "tag": "delta",
+            "forms": ["il dit"],
+            "note": "The homograph: in a tale this is a written past, in speech a present. Taken as a pair because bare dit is L2-M6's said."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "il dit is three tenses in one spelling — he says, he said in a tale, and the participle inside j'ai dit. Only the surroundings tell you which: inside a printed story it is a past, and out loud it is a present. L4-M10's il m'a dit is the version you say.",
+      "sound": "dahn luh KOHNT, eel dee nohn oh RWAH. The t of dit is silent, so it sounds exactly like the present.",
+      "variations": [
+        {
+          "display": "Dans le conte, il dit non au loup",
+          "cue": "In the tale, he said no to the wolf",
+          "changed": "who is refused"
+        },
+        {
+          "display": "Dans l'histoire, il dit non au roi",
+          "cue": "In the story, he said no to the king",
+          "changed": "histoire for conte, which widens it beyond fairy tales"
+        }
+      ],
+      "mistake": {
+        "display": "Dans le conte, il disa non au roi",
+        "why": "there is no such form. The passé simple of dire is simply dit — identical to the present — which is exactly why this module never opens a bare dit row and why the tense has to be read off the context."
+      },
+      "usage": "Quoting what a character did, in the tense the printed page is already using.",
+      "register": "formal",
+      "mnemonic": "il dit is the same three letters in every tense; the story tells you which."
+    },
+    {
+      "id": "L5-M9-S06",
+      "display": "En gros, je raconte une histoire de roi",
+      "cue": "Basically, I'm telling a story about a king",
+      "literal": "In big, I tell a story of king",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "en gros",
+            "cue": "basically, roughly",
+            "tag": "free",
+            "forms": ["en gros", "du genre", "genre"],
+            "note": "The approximators a retelling runs on. en gros summarises; du genre and genre stand in for a word you cannot be bothered to find."
+          },
+          {
+            "display": "raconte",
+            "cue": "(I) tell",
+            "tag": "free",
+            "forms": ["raconte", "raconter"],
+            "note": "The verb for telling a STORY, not for telling a person something. je te raconte, il raconte — never used for dire."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "raconter and dire are not interchangeable. raconter takes a story as its object and dire takes words: je raconte une histoire, but je dis non. English tell does both jobs, which is exactly why the wrong one comes out first.",
+      "sound": "ahn GROH, zhuh rah-KOHNT oon ees-TWAHR duh RWAH. The s of gros is silent.",
+      "variations": [
+        {
+          "display": "En gros, je raconte une histoire de loup",
+          "cue": "Basically, I'm telling a story about a wolf",
+          "changed": "the subject of the tale"
+        },
+        {
+          "display": "Je raconte une histoire, du genre un conte",
+          "cue": "I'm telling a story, a fairy tale sort of thing",
+          "changed": "du genre, which hedges the label rather than the content"
+        }
+      ],
+      "mistake": {
+        "display": "En gros, je dis une histoire de roi",
+        "why": "dire cannot take a story. You SAY words and you TELL a story: je raconte une histoire. The same split exists in English and is simply hidden by the one verb tell."
+      },
+      "usage": "Announcing what you are about to retell, and warning that it will be approximate.",
+      "register": "informal",
+      "mnemonic": "raconter carries stories; dire carries words."
+    },
+    {
+      "id": "L5-M9-S07",
+      "display": "Et là, le personnage est parti dans la forêt",
+      "cue": "And then the character went off into the forest",
+      "literal": "And there, the character is left in the forest",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "et là",
+            "cue": "and then, and at that point",
+            "tag": "delta",
+            "forms": ["et là"],
+            "note": "Marks the next step of a spoken account and hands it weight. Not a place word here: là is the moment, not the spot."
+          },
+          {
+            "display": "personnage",
+            "cue": "character (in a story)",
+            "tag": "interference",
+            "forms": ["personnage", "personnages"],
+            "note": "A character in a book or film, never a person's character. Masculine, despite L2-M10's feminine personne underneath it."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "personnage is not personality and not a person. It is the figure in the story; the person is personne and the character someone has is le caractère. Three words English happily blurs into one.",
+      "sound": "ay LAH, luh pair-so-NAHZH ay par-TEE dahn lah foh-RAY. et là is two clean syllables with a small stop between.",
+      "variations": [
+        {
+          "display": "Et là, le loup est parti dans la forêt",
+          "cue": "And then the wolf went off into the forest",
+          "changed": "who leaves"
+        },
+        {
+          "display": "Et là, le personnage dit non",
+          "cue": "And then the character says no",
+          "changed": "the historic present, which et là licenses"
+        }
+      ],
+      "mistake": {
+        "display": "Et là, le personnage alla dans la forêt",
+        "why": "et là belongs to a SPOKEN retelling and the passé simple belongs to a printed page. Putting them side by side is the exact mixture this module exists to prevent — say est parti, or write il alla, but never both in one breath."
+      },
+      "usage": "Moving your own retelling on to the next thing that happened.",
+      "register": "informal",
+      "mnemonic": "et là is a moment, not a place."
+    },
+    {
+      "id": "L5-M9-S08",
+      "display": "Dans l'histoire il prit le château, mais moi je dirais qu'il est parti",
+      "cue": "In the story he took the castle, but I'd say he left",
+      "literal": "In the story he took the castle, but me I would say that he is left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "moi je dirais",
+            "cue": "I'd say, personally",
+            "tag": "free",
+            "forms": ["moi je dirais", "je dirais"],
+            "note": "The doubled subject is ordinary speech and marks the opinion as YOURS against the book's. Conditional, so it hedges rather than claims."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "This is the module in one sentence: read the passé simple, answer in the passé composé. il prit stays as the page wrote it, and everything you add about it is in the tense you actually speak — qu'il est parti, never qu'il partit.",
+      "sound": "dahn lees-TWAHR eel pree luh shah-TOH, may mwah zhuh dee-RAY keel ay par-TEE. moi je runs as mwah-zhuh.",
+      "variations": [
+        {
+          "display": "Dans l'histoire il prit le château, mais moi je dirais autrement",
+          "cue": "In the story he took the castle, but I'd tell it differently",
+          "changed": "the disagreement left unspecified"
+        },
+        {
+          "display": "Dans le conte il vint, mais moi je dirais qu'il est parti",
+          "cue": "In the tale he came, but I'd say he left",
+          "changed": "the written verb being answered"
+        }
+      ],
+      "mistake": {
+        "display": "Dans l'histoire il prit le château, mais moi je dirais qu'il partit",
+        "why": "the second half is yours and yours is spoken, so it takes the passé composé: qu'il est parti. Copying the page's tense into your own opinion is what makes a retelling read like a pastiche."
+      },
+      "usage": "Disagreeing with the version everyone else has read.",
+      "register": "informal",
+      "mnemonic": "Their tense on the page, your tense in your mouth."
+    },
+    {
+      "id": "L5-M9-S09",
+      "display": "Bref, voilà la fin de l'histoire",
+      "cue": "Anyway, that's the end of the story",
+      "literal": "Brief, there is the end of the story",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bref",
+            "cue": "anyway, long story short",
+            "tag": "free",
+            "forms": ["bref"],
+            "note": "Cuts a retelling short and signals the end is coming. Said at the start of the sentence, never at the end."
+          },
+          {
+            "display": "voilà",
+            "cue": "there you have it",
+            "tag": "free",
+            "forms": ["voilà"],
+            "note": "Presents the thing it points at. Closing an account with voilà is the ordinary way to hand the floor back."
+          },
+          {
+            "display": "fin",
+            "cue": "end",
+            "tag": "free",
+            "forms": ["fin", "morale"],
+            "note": "la fin closes the tale; la morale is what it was for. Both feminine, and both what a French conte is expected to have."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "bref is a promise you have to keep. It announces that you are about to finish, so a French listener relaxes; carry on for another minute after it and the word has cost you the goodwill it bought.",
+      "sound": "BREF, vwah-LAH lah FAN duh lees-TWAHR. voilà is two syllables with the stress on the second.",
+      "variations": [
+        {
+          "display": "Bref, voilà la morale de l'histoire",
+          "cue": "Anyway, that's the moral of the story",
+          "changed": "the point rather than the ending"
+        },
+        {
+          "display": "Voilà la fin de l'histoire",
+          "cue": "That's the end of the story",
+          "changed": "the closing without the apology for length"
+        }
+      ],
+      "mistake": {
+        "display": "Voilà la fin de l'histoire, bref",
+        "why": "bref opens the sentence it shortens. Put at the end it has nothing left to cut, and it reads as if you had trailed off rather than finished."
+      },
+      "usage": "Landing a retelling that has gone on longer than you meant it to.",
+      "register": "informal",
+      "mnemonic": "bref goes in front, because it is a warning that the end is near."
+    },
+    {
+      "id": "L5-M9-S10",
+      "display": "Voilà ma version de l'histoire, en gros",
+      "cue": "That's my version of the story, roughly",
+      "literal": "There is my version of the story, in big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "version",
+            "cue": "version, my telling of it",
+            "tag": "free",
+            "forms": ["version", "résumé"],
+            "note": "ma version is my telling, and it claims nothing about being right. un résumé is the short one, and it is the same word English borrowed."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "This is the sentence that makes the whole module honest. You have read a tense you will never say and told the story in one you own; ma version admits the gap rather than hiding it, which is what a real retelling does in either language.",
+      "sound": "vwah-lah mah vair-SYOHN duh lees-TWAHR, ahn GROH. version ends in the nasal syohn, not in shun.",
+      "variations": [
+        {
+          "display": "Voilà ma version, en gros",
+          "cue": "That's my version, roughly",
+          "changed": "the story left unnamed, once it is obvious"
+        },
+        {
+          "display": "Voilà le résumé de l'histoire",
+          "cue": "That's the summary of the story",
+          "changed": "résumé, which claims to be short rather than personal"
+        }
+      ],
+      "mistake": {
+        "display": "Voilà mon version de l'histoire, en gros",
+        "why": "version is feminine — ma version, la version. The -ion ending is feminine almost without exception, which also covers solution, conclusion and question."
+      },
+      "usage": "Handing the story back with a note on how much of it is yours.",
+      "register": "informal",
+      "mnemonic": "Every -ion is feminine, version included."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M9-C01",
+      "display": "Il était une fois un roi et une reine",
+      "cue": "Once upon a time there was a king and a queen"
+    },
+    {
+      "id": "L5-M9-C02",
+      "display": "Dans l'histoire, le roi alla dans la forêt",
+      "cue": "In the story, the king went into the forest"
+    },
+    {
+      "id": "L5-M9-C03",
+      "display": "Le loup vint et le roi prit le château",
+      "cue": "The wolf came and the king took the castle"
+    },
+    { "id": "L5-M9-C04", "display": "Il fut roi, et il eut raison", "cue": "He was king, and he was right" },
+    {
+      "id": "L5-M9-C05",
+      "display": "Dans le conte, il dit non au roi",
+      "cue": "In the tale, he said no to the king"
+    },
+    {
+      "id": "L5-M9-C06",
+      "display": "En gros, je raconte une histoire de roi",
+      "cue": "Basically, I'm telling a story about a king"
+    },
+    {
+      "id": "L5-M9-C07",
+      "display": "Et là, le personnage est parti dans la forêt",
+      "cue": "And then the character went off into the forest"
+    },
+    {
+      "id": "L5-M9-C08",
+      "display": "Mais moi je dirais qu'il est parti",
+      "cue": "But I'd say he left"
+    },
+    { "id": "L5-M9-C09", "display": "Bref, voilà la fin de l'histoire", "cue": "Anyway, that's the end of the story" },
+    {
+      "id": "L5-M9-C10",
+      "display": "Voilà ma version de l'histoire, en gros",
+      "cue": "That's my version of the story, roughly"
+    },
+    {
+      "id": "L5-M9-C11",
+      "display": "Le loup est venu et le roi a pris le château",
+      "cue": "The wolf came and the king took the castle"
+    },
+    {
+      "id": "L5-M9-C12",
+      "display": "Bref, voilà la morale de l'histoire",
+      "cue": "Anyway, that's the moral of the story"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

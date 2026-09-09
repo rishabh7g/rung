@@ -1,0 +1,625 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M9",
+  "title": "Telling it your way",
+  "job": "Retell a known story in your own register",
+  "prerequisites": [
+    "L5-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 9,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "present",
+      "preterite",
+      "imperfect",
+      "perfect",
+      "pluperfect"
+    ],
+    "allowedPatterns": [
+      "Cuando + <preterite> + , ya + había + V-participle",
+      "Total que + <historical present> + , y + <historical present>",
+      "Resulta que + <clause>",
+      "Según + <person> + , + <clause>",
+      "Y llega y me dice + — + <direct speech>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Spoken Spanish narrative switches into the PRESENT at the moment the story quickens: total que llega, me mira y me dice que no. Nothing new is learned — every present form is already yours — the whole skill is knowing when to switch, and the answer is at the turn, not at the beginning."
+    },
+    {
+      "tag": "delta",
+      "text": "The pluperfect is había plus a participle, for an event already over when the story opens: cuando llegué, ya se habían ido. había and habían carry the person; the participle never changes."
+    },
+    {
+      "tag": "delta",
+      "text": "That makes four pasts and there is no fifth. Preterite for what happened, imperfect for what was going on, perfect for what has happened, pluperfect for what had already happened before that. Keeping them apart is this module's whole job."
+    },
+    {
+      "tag": "free",
+      "text": "The retelling frames open and close the account: total que gets you moving, el caso es que gets to the point, resulta que introduces the surprise, resumiendo lands it. They are the joints of a spoken story."
+    },
+    {
+      "tag": "free",
+      "text": "Attribution: según él for one person's version, dicen que and se dice que for what is going round. Spanish uses them sparingly, because the switch of tense is already telling the listener whose account this is."
+    },
+    {
+      "tag": "interference",
+      "text": "The English narrative present is casual and slightly marked, so a learner under-uses the Spanish one and the retelling comes out as a report. In Spanish the switch is ordinary and expected; if your story never leaves the preterite it sounds written down."
+    },
+    {
+      "tag": "interference",
+      "text": "English had is used far more loosely than había. English says I had seen it where Spanish is content with lo vi, so the same learner over-uses the pluperfect and the story starts to sound like a legal statement. Use había only for what was already over."
+    },
+    {
+      "tag": "interference",
+      "text": "English retelling attributes constantly — she said that, then he said that. Spanish drops the attribution and lets the switch of tense do the work. That single sentence is why this module exists."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M9-S01",
+      "display": "Cuando llegué a la fiesta, ya se habían ido todos.",
+      "cue": "By the time I got to the party, everyone had already left.",
+      "literal": "When I-arrived at the party, already themselves had gone all.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "habían",
+            "cue": "they had",
+            "tag": "delta",
+            "forms": [
+              "habían",
+              "habíamos",
+              "habías"
+            ],
+            "note": "The person sits on había, never on the participle: se habían ido, nos habíamos ido. L2-M10 taught había itself."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          6
+        ]
+      },
+      "trap": "ya is what makes this a pluperfect and not a preterite. Without it, se fueron would do; with it, the leaving is already finished at the moment you arrive, and Spanish marks that.",
+      "sound": "Habían is a-BI-an, three syllables, and the written accent on the i is what keeps them from collapsing into two.",
+      "variations": [
+        {
+          "display": "Ya se habían ido.",
+          "cue": "They had already left.",
+          "changed": "The pluperfect alone. The earlier event, with the later one left implied."
+        },
+        {
+          "display": "Cuando llegué a la fiesta, el jefe se fue.",
+          "cue": "When I got to the party, the boss left.",
+          "changed": "Preterite. Now the leaving happens after you arrive, which is a different story entirely."
+        }
+      ],
+      "mistake": {
+        "display": "Cuando llegue a la fiesta, ya se habian ido todos.",
+        "why": "Both verbs have lost their accents. llegue without one is a subjunctive and habian is not a word; in this tense the accents are doing grammatical work."
+      },
+      "usage": "Neutral. This is the ordinary opening of a story where the interesting thing happened before you got there.",
+      "register": "neutral",
+      "mnemonic": "Already over before the story starts."
+    },
+    {
+      "id": "L5-M9-S02",
+      "display": "Cuando llamé, el tren ya había llegado a la estación.",
+      "cue": "When I called, the train had already got to the station.",
+      "literal": "When I-called, the train already had arrived at the station.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "había llegado",
+            "cue": "had arrived",
+            "tag": "delta",
+            "forms": [
+              "había llegado",
+              "había salido",
+              "había ido"
+            ],
+            "note": "Auxiliary plus participle, both of them already yours. había is L2-M10's; the participle is the same one the perfect uses."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          6
+        ]
+      },
+      "trap": "English uses had far more loosely than Spanish uses había. Where English says I had seen it, Spanish is usually content with lo vi, and a story full of habías sounds like a statement to the police.",
+      "sound": "Había llegado runs as a-BI-a-ye-GA-do, with the h silent and the two words joined.",
+      "variations": [
+        {
+          "display": "El tren ya había llegado.",
+          "cue": "The train had already arrived.",
+          "changed": "The earlier event on its own, waiting for the later one."
+        },
+        {
+          "display": "Cuando llamé, el tren llegó.",
+          "cue": "When I called, the train arrived.",
+          "changed": "Two preterites, so the events are now in order rather than nested. The pluperfect is what puts one inside the other."
+        }
+      ],
+      "mistake": {
+        "display": "Cuando llame, el tren ya habia llegado a la estacion.",
+        "why": "Three missing accents, and llame without one is a different mood. The pluperfect itself is right; the spelling is what fails."
+      },
+      "usage": "Neutral. Very common in a phone story, where what matters is what had already happened by the time you rang.",
+      "register": "neutral",
+      "mnemonic": "Había for the event behind the event."
+    },
+    {
+      "id": "L5-M9-S03",
+      "display": "Total que llega, me dice que no y se va.",
+      "cue": "So anyway he turns up, tells me no and off he goes.",
+      "literal": "Total that arrives, me says that no and himself goes.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "total que",
+            "cue": "so anyway, so the thing is",
+            "tag": "delta",
+            "forms": [
+              "total que",
+              "total"
+            ],
+            "note": "Opens the fast part of a story and licenses the switch into the present. Total on its own does the same job."
+          },
+          {
+            "display": "me dice",
+            "cue": "he says to me",
+            "tag": "delta",
+            "forms": [
+              "me dice",
+              "me dijo"
+            ],
+            "note": "Historical present. L4-M6 already owns llega; what is new is using these present forms about something over and done with."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          5
+        ]
+      },
+      "trap": "Nothing in the sentence says it happened in the past — no time word, no past tense — and it is entirely past. The switch itself is the signal, and a listener who takes llega literally has missed the story.",
+      "sound": "Total que is said flat and fast, to-TAL-ke, and it runs straight into the verb after it.",
+      "variations": [
+        {
+          "display": "Y llega y me dice que no.",
+          "cue": "And he turns up and tells me no.",
+          "changed": "The bare narrative present, strung together with y, which is exactly how it sounds at a table."
+        },
+        {
+          "display": "Total que llega y se va.",
+          "cue": "So anyway he turns up and off he goes.",
+          "changed": "Trimmed to two verbs. The frame plus the present tense is the whole device."
+        }
+      ],
+      "mistake": {
+        "display": "Total que llegó, me dijo que no y se fue ayer.",
+        "why": "Not wrong Spanish, but not this module either. Once you switch back to the preterite and add ayer you are reporting again, and the quickening is gone."
+      },
+      "usage": "Informal, at a table, with people you know. This is the version of the events you tell a friend, and its neutral twin is the next sentence.",
+      "register": "informal",
+      "mnemonic": "Switch to the present when the story speeds up."
+    },
+    {
+      "id": "L5-M9-S04",
+      "display": "El caso es que llegó, me dijo que no y se fue.",
+      "cue": "The thing is, he arrived, told me no and left.",
+      "literal": "The case is that arrived, me said that no and himself went.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "el caso",
+            "cue": "the thing, the point",
+            "tag": "free",
+            "forms": [
+              "el caso"
+            ],
+            "note": "El caso es que gets straight to the point of a story. The es que half is L4-M4's and keeps its own row."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          7
+        ]
+      },
+      "trap": "These are the same events as the sentence before, and only the telling has changed. The preterite version is not more correct; it is cooler, and you would use it with somebody you do not know well.",
+      "sound": "El caso es que elides into one run, el-CA-so-es-ke, with no break before es.",
+      "variations": [
+        {
+          "display": "El caso es que se fue.",
+          "cue": "The thing is, he left.",
+          "changed": "The frame with a single verb, which is how it is usually said."
+        },
+        {
+          "display": "Total que llega y se va.",
+          "cue": "So anyway he turns up and off he goes.",
+          "changed": "The same events again in the informal telling, so you can hear the two registers side by side."
+        }
+      ],
+      "mistake": {
+        "display": "El caso que llegó, me dijo que no y se fue.",
+        "why": "The frame is el caso ES que. Dropping the es leaves a noun with a relative clause hanging off it and no main verb."
+      },
+      "usage": "Neutral. Getting to the point out loud is expected in Spanish, and this is the phrase that does it without sounding blunt.",
+      "register": "neutral",
+      "mnemonic": "Same events, cooler telling."
+    },
+    {
+      "id": "L5-M9-S05",
+      "display": "Por cierto, nadie me había avisado de la fiesta de ayer.",
+      "cue": "By the way, nobody had told me about yesterday's party.",
+      "literal": "For certain, nobody me had warned of the party of yesterday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "por cierto",
+            "cue": "by the way",
+            "tag": "free",
+            "forms": [
+              "por cierto"
+            ],
+            "note": "Opens an aside inside a story. Nothing to do with certainty, despite the cierto in it."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "Por cierto is not for certain. It marks something you have just remembered and want to slip in, and reading it as a claim about truth turns an aside into an assertion.",
+      "sound": "Cierto has the soft Spanish c: THYER-to in Spain, SYER-to in Latin America.",
+      "variations": [
+        {
+          "display": "Nadie me había avisado.",
+          "cue": "Nobody had told me.",
+          "changed": "The pluperfect on its own, which is where the complaint actually lives."
+        },
+        {
+          "display": "Por cierto, nadie me dijo nada.",
+          "cue": "By the way, nobody told me anything.",
+          "changed": "Preterite instead. Now it is simply something that did not happen, rather than something that had not happened by then."
+        }
+      ],
+      "mistake": {
+        "display": "Por cierto que nadie me habia avisado.",
+        "why": "por cierto takes no que and había needs its accent. The phrase drops straight into the sentence and then the clause runs on normally."
+      },
+      "usage": "Neutral. Spanish stories are full of asides and this is the standard way in and, said again, the way back out.",
+      "register": "neutral",
+      "mnemonic": "By the way, not for certain."
+    },
+    {
+      "id": "L5-M9-S06",
+      "display": "Según él, la película es muy larga; según ella, es corta.",
+      "cue": "According to him the film is very long; according to her it is short.",
+      "literal": "According-to him, the film is very long; according-to her, is short.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "según",
+            "cue": "according to",
+            "tag": "free",
+            "forms": [
+              "según",
+              "según él"
+            ],
+            "note": "Takes the subject pronoun after it, not the object one: según ÉL, según YO. That is unusual and worth remembering."
+          }
+        ],
+        "rules": [
+          4,
+          7
+        ]
+      },
+      "trap": "Según is one of the few Spanish prepositions followed by yo and tú rather than mí and ti. Según mí is a mistake a learner makes exactly once, and then never again.",
+      "sound": "Según is se-GUN with the stress on the last syllable, and the written accent is what puts it there.",
+      "variations": [
+        {
+          "display": "Según él, es muy larga.",
+          "cue": "According to him, it is very long.",
+          "changed": "One version only. The listener now knows whose account this is and can weigh it."
+        },
+        {
+          "display": "La película es muy larga.",
+          "cue": "The film is very long.",
+          "changed": "No attribution at all, so the claim is now yours. That is the whole work según does."
+        }
+      ],
+      "mistake": {
+        "display": "Según mí, la película es muy larga.",
+        "why": "según is followed by yo, not mí. It is one of a tiny group of prepositions that behave this way, and mí after it is never right."
+      },
+      "usage": "Neutral. Naming the source once is normal; naming it in every sentence is the English habit rule seven warns about.",
+      "register": "neutral",
+      "mnemonic": "Según yo, never según mí."
+    },
+    {
+      "id": "L5-M9-S07",
+      "display": "Dicen que hay huelga el lunes. Se dice que es larga.",
+      "cue": "They say there is a strike on Monday. Word is that it is a long one.",
+      "literal": "They-say that there-is strike the Monday. Itself says that is long.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dicen que",
+            "cue": "they say that",
+            "tag": "free",
+            "forms": [
+              "dicen que"
+            ],
+            "note": "No named source and none expected. It is the ordinary way to pass on what is going round."
+          },
+          {
+            "display": "se dice que",
+            "cue": "word is that, it is said that",
+            "tag": "free",
+            "forms": [
+              "se dice que"
+            ],
+            "note": "Cooler and more distant than dicen que, and slightly more written. L4-M7's impersonal se doing the same job."
+          }
+        ],
+        "rules": [
+          4,
+          7
+        ]
+      },
+      "trap": "Neither of these commits you to anything, and that is the point. A learner who translates them as I heard puts themselves back into the sentence, which is exactly what Spanish was avoiding.",
+      "sound": "Dicen is DI-then in Spain and DI-sen elsewhere; the stress is on the first syllable in both.",
+      "variations": [
+        {
+          "display": "Dicen que hay huelga el lunes.",
+          "cue": "They say there is a strike on Monday.",
+          "changed": "The rumour on its own, unattributed, which is how it usually arrives."
+        },
+        {
+          "display": "Se dice que es larga.",
+          "cue": "Word is that it is a long one.",
+          "changed": "The cooler frame. Same distance from the claim, a shade more formal."
+        }
+      ],
+      "mistake": {
+        "display": "Se dicen que hay huelga el lunes.",
+        "why": "The impersonal se always takes a singular verb: se dice. se dicen would need a plural subject, and there is none here."
+      },
+      "usage": "Neutral. dicen que is what you say at a bus stop; se dice que is what you say in a meeting.",
+      "register": "neutral",
+      "mnemonic": "Nobody said it, so nobody is named."
+    },
+    {
+      "id": "L5-M9-S08",
+      "display": "Te cuento la película. Hay un personaje muy gracioso al final.",
+      "cue": "Let me tell you about the film. There is a very funny character at the end.",
+      "literal": "You I-tell the film. There-is a character very funny at-the end.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cuento",
+            "cue": "I will tell you",
+            "tag": "free",
+            "forms": [
+              "cuento",
+              "contar",
+              "cuentas"
+            ],
+            "note": "Te cuento in the present is an offer, not a report: it means let me tell you. L2-M5's cuenta keeps its own row."
+          },
+          {
+            "display": "personaje",
+            "cue": "character (in a story)",
+            "tag": "free",
+            "forms": [
+              "personaje",
+              "personajes"
+            ],
+            "note": "Masculine even for a woman: el personaje. A person in real life is una persona, which is a different word."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Te cuento looks like a statement about what you are doing and works as a request for permission. Spanish opens a retelling with the present tense and no preamble at all.",
+      "sound": "Personaje ends in the throaty jota: per-so-NA-je, with the stress on the third syllable.",
+      "variations": [
+        {
+          "display": "Te cuento la película.",
+          "cue": "Let me tell you about the film.",
+          "changed": "The opening on its own, which is all the preamble a Spanish story gets."
+        },
+        {
+          "display": "Hay un personaje muy gracioso al final.",
+          "cue": "There is a very funny character at the end.",
+          "changed": "Straight into the telling, with no frame at all. Also completely ordinary."
+        }
+      ],
+      "mistake": {
+        "display": "Te voy a contar la película, hay una personaje graciosa.",
+        "why": "personaje is masculine whoever it refers to, so it is un personaje gracioso even for a woman."
+      },
+      "usage": "Informal to neutral. Te cuento is what you say leaning across a table; le cuento would be the same offer to a stranger.",
+      "register": "informal",
+      "mnemonic": "Open in the present, then keep going."
+    },
+    {
+      "id": "L5-M9-S09",
+      "display": "Mi versión es otra: cuando llegó, ya habíamos salido de la fiesta.",
+      "cue": "My version is different: by the time he arrived, we had already left the party.",
+      "literal": "My version is other: when arrived, already we-had left of the party.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "versión",
+            "cue": "version, account",
+            "tag": "free",
+            "forms": [
+              "versión",
+              "versiones"
+            ],
+            "note": "Mi versión es otra is a whole move: it disputes the account without calling anyone a liar."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          7
+        ]
+      },
+      "trap": "habíamos and habían differ by one syllable and by who left. Spanish puts the person on the auxiliary, so the participle salido never moves however many people are involved.",
+      "sound": "Versión takes its accent on the last syllable, ber-SYON, and the initial v is a soft b.",
+      "variations": [
+        {
+          "display": "Ya habíamos salido de la fiesta.",
+          "cue": "We had already left the party.",
+          "changed": "The pluperfect alone, in the first person plural."
+        },
+        {
+          "display": "Mi versión es otra.",
+          "cue": "My version is different.",
+          "changed": "The challenge with the story left out — an invitation for the other person to hear you out."
+        }
+      ],
+      "mistake": {
+        "display": "Mi versión es otra: cuando llegó, ya habíamos salidos.",
+        "why": "The participle in a compound tense never agrees with anybody. It is habíamos salido whether one person left or ten."
+      },
+      "usage": "Neutral, and useful precisely because it is not rude. You are offering another account, not contradicting the person.",
+      "register": "neutral",
+      "mnemonic": "Person on the auxiliary, participle frozen."
+    },
+    {
+      "id": "L5-M9-S10",
+      "display": "Resumiendo: la moraleja es que hay que escuchar a la gente.",
+      "cue": "To cut it short: the moral is that you have to listen to people.",
+      "literal": "Summarising: the moral is that there-is that to-listen to the people.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "resumiendo",
+            "cue": "to cut a long story short",
+            "tag": "free",
+            "forms": [
+              "resumiendo"
+            ],
+            "note": "Lands the account. Having said it you owe the listener one sentence and then the end."
+          },
+          {
+            "display": "moraleja",
+            "cue": "moral (of a story)",
+            "tag": "free",
+            "forms": [
+              "moraleja",
+              "moralejas"
+            ],
+            "note": "Only ever the moral of a tale. Morals in the ethical sense are la moral, a different word entirely."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Resumiendo is a promise that the story is nearly over. Spanish listeners hear it that way, so following it with three more events is the fastest way to lose a table.",
+      "sound": "Resumiendo is rre-su-MYEN-do, with the strong rolled r at the start because the word opens with it.",
+      "variations": [
+        {
+          "display": "Resumiendo: hay que escuchar.",
+          "cue": "To cut it short: you have to listen.",
+          "changed": "The landing at its shortest, which is usually the best version."
+        },
+        {
+          "display": "La moraleja es que hay que escuchar a la gente.",
+          "cue": "The moral is that you have to listen to people.",
+          "changed": "The point without the frame. Fine, and slightly more abrupt."
+        }
+      ],
+      "mistake": {
+        "display": "Resumiendo, la moraleja es que hay escuchar a la gente.",
+        "why": "hay que plus an infinitive is fixed. Dropping the que leaves hay escuchar, which is not Spanish."
+      },
+      "usage": "Neutral. Every told story in Spanish is expected to land somewhere, and this is the plainest way to land one.",
+      "register": "neutral",
+      "mnemonic": "Say resumiendo and then actually stop."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M9-C01",
+      "display": "Cuando llegué, ya se habían ido.",
+      "cue": "By the time I got there, they had left."
+    },
+    {
+      "id": "L5-M9-C02",
+      "display": "El tren ya había llegado.",
+      "cue": "The train had already arrived."
+    },
+    {
+      "id": "L5-M9-C03",
+      "display": "Total que llega y me dice que no.",
+      "cue": "So anyway he turns up and tells me no."
+    },
+    {
+      "id": "L5-M9-C04",
+      "display": "El caso es que se fue muy temprano.",
+      "cue": "The thing is, he left very early."
+    },
+    {
+      "id": "L5-M9-C05",
+      "display": "Por cierto, nadie me había avisado.",
+      "cue": "By the way, nobody had told me."
+    },
+    {
+      "id": "L5-M9-C06",
+      "display": "Según él, la película es muy larga.",
+      "cue": "According to him, the film is very long."
+    },
+    {
+      "id": "L5-M9-C07",
+      "display": "Dicen que hay huelga el lunes.",
+      "cue": "They say there is a strike on Monday."
+    },
+    {
+      "id": "L5-M9-C08",
+      "display": "Se dice que el jefe no viene.",
+      "cue": "Word is the boss is not coming."
+    },
+    {
+      "id": "L5-M9-C09",
+      "display": "Te cuento la fiesta de ayer.",
+      "cue": "Let me tell you about yesterday's party."
+    },
+    {
+      "id": "L5-M9-C10",
+      "display": "Hay un personaje muy gracioso.",
+      "cue": "There is a very funny character."
+    },
+    {
+      "id": "L5-M9-C11",
+      "display": "Mi versión es otra, la verdad.",
+      "cue": "My version is different, to be honest."
+    },
+    {
+      "id": "L5-M9-C12",
+      "display": "Resumiendo: la moraleja es muy buena.",
+      "cue": "To cut it short: the moral is a very good one."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

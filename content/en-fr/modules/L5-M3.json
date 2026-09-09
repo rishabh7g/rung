@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M3",
+  "title": "How they say it there",
+  "job": "Regional and generational speech; what marks an outsider",
+  "prerequisites": [
+    "L5-M1",
+    "L5-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "présent"
+    ],
+    "allowedPatterns": [
+      "À + <place> + , + on dit plutôt + <word>",
+      "<neutral word> + , + ou + <familiar word> + entre amis",
+      "On se tutoie + ?",
+      "Chez nous + , + on dit + <word>",
+      "C'est + <intensifier> + <adjective>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "FOUR AXES, AND THEY ARE NOT ONE AXIS. PLACE decides chocolatine against pain au chocolat, poche against sac, septante against soixante-dix. AGE decides meuf, relou, chelou, carrément and grave. REGISTER decides boulot against travail, bagnole against voiture, salut against bonjour. And the fourth is what SPEECH DROPS, which is rule 3. A word can be regional without being familiar (septante is ordinary Belgian) and familiar without being young (boulot is every age), so read each word on the axis it actually sits on."
+    },
+    {
+      "tag": "free",
+      "text": "PLACE, AND THE TWO FRAMES FOR NAMING IT. À + city + , + on dit plutôt + word REPORTS what is said somewhere: à Toulouse, on dit plutôt chocolatine. Chez nous + , + on dit + word CLAIMS it as your own: chez nous, on dit septante. Cities take à and feminine countries take en — à Marseille, en Belgique, en Suisse — and both frames run on on, which L2-M6 already gave you."
+    },
+    {
+      "tag": "delta",
+      "text": "TU IS ASKED FOR, NOT ASSUMED, AND FRENCH HAS A VERB FOR THE ASKING. On se tutoie ? offers the familiar address; on se vouvoie ? checks whether the formal one is still wanted. English has no verb for either move and no move to make, so an English speaker either never switches or switches silently. Ask. The older, senior or unknown person offers; you accept."
+    },
+    {
+      "tag": "interference",
+      "text": "WHAT MARKS AN ENGLISH SPEAKER IS COMPLETENESS, NOT ACCENT. Speech drops the ne (il le sait pas), squeezes tu as to t'as, tu es to t'es, il y a to y a, and says ouais for oui and chais pas for je ne sais pas. Every one of those is real and none is written in this course: docs/58 §4 says a display carries the full form, so what you read here is the written shape and what you hear is the spoken one. Learn to HEAR the reductions; keep writing the whole thing."
+    },
+    {
+      "tag": "free",
+      "text": "REGISTER IS A CHOICE YOU MAKE EVERY TIME, AND THE FRAME FOR IT IS <neutral> , ou <familiar> entre amis. travail / boulot, voiture / bagnole, femme / meuf, homme / mec, bonjour / salut. The neutral word is never wrong; the familiar one is wrong in a report, at a counter or with a stranger, and stiff nowhere. When you are unsure, the left-hand word is the safe one."
+    },
+    {
+      "tag": "free",
+      "text": "grave IS L3-M10's WORD AND YOU CANNOT HAVE IT BACK. There it is serious — c'est grave. As a youth intensifier it means the opposite of serious, so this module takes the whole phrase c'est grave bien and nothing else: tapping grave on its own will always show you L3-M10's note, which is true of the word you already met."
+    },
+    {
+      "tag": "delta",
+      "text": "A DIALECT IS NAMED AND SAMPLED HERE, NEVER TAUGHT AS A SYSTEM. This course speaks standard metropolitan French, as content/courses.json declares. Marseille, Belgium, Switzerland and Québec get a word each so you recognise one when it lands, not a grammar. And verlan is a live game, not a closed list — meuf, relou and chelou are the three that stuck."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M3-S01",
+      "display": "À Toulouse, on dit plutôt chocolatine",
+      "cue": "In Toulouse they say chocolatine instead",
+      "literal": "At Toulouse, one says rather chocolatine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Toulouse",
+            "cue": "Toulouse",
+            "tag": "free",
+            "forms": [
+              "Toulouse"
+            ],
+            "note": "The south-western city, and the flag of the chocolatine half of France. A city takes à: à Toulouse, à Paris, à Marseille."
+          },
+          {
+            "display": "on dit plutôt",
+            "cue": "they say ... instead",
+            "tag": "free",
+            "forms": [
+              "on dit plutôt"
+            ],
+            "note": "Taken whole. on is L2-M6's ordinary spoken subject and plutôt is L4-M5's rather; together they are the frame for reporting a local word."
+          },
+          {
+            "display": "chocolatine",
+            "cue": "chocolatine (pain au chocolat)",
+            "tag": "delta",
+            "forms": [
+              "chocolatine"
+            ],
+            "note": "Feminine: une chocolatine. South-west of a line through Bordeaux and Toulouse it is the only name the pastry has."
+          },
+          {
+            "display": "pain au chocolat",
+            "cue": "pain au chocolat",
+            "tag": "free",
+            "forms": [
+              "pain au chocolat"
+            ],
+            "note": "Masculine, and the Paris name. Indexed whole because it is one pastry and not a bread with chocolate on it."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "English names a regional word by quoting it — they call it a chocolatine. French names it by SAYING it: on dit plutôt puts the word itself at the end of the sentence, with no quotation and no they call it.",
+      "sound": "ah too-LOOZ, ohn dee ploo-TOH sho-ko-la-TEEN. plutôt ends on an open oh and its t is silent.",
+      "variations": [
+        {
+          "display": "À Paris, on dit plutôt pain au chocolat",
+          "cue": "In Paris they say pain au chocolat instead",
+          "changed": "the place, and so the word"
+        },
+        {
+          "display": "Chez nous, on dit chocolatine",
+          "cue": "Where we're from we say chocolatine",
+          "changed": "the frame: chez nous claims the word, à + city only reports it"
+        }
+      ],
+      "mistake": {
+        "display": "En Toulouse, on dit plutôt chocolatine",
+        "why": "a city takes à, never en. en is for feminine countries — en Belgique, en Suisse — and putting it in front of a city is the single most audible tourist error in this module."
+      },
+      "usage": "Telling someone which word your part of the country uses, or asking why a menu said something you did not expect.",
+      "register": "neutral",
+      "mnemonic": "à + city, then on dit plutôt, then the word."
+    },
+    {
+      "id": "L5-M3-S02",
+      "display": "Travail, ou boulot entre amis",
+      "cue": "Travail, or boulot among friends",
+      "literal": "Work, or job between friends",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "boulot",
+            "cue": "job, work (familiar)",
+            "tag": "free",
+            "forms": [
+              "boulot"
+            ],
+            "note": "The familiar word for L3-M2's travail. Everyone says it and nobody writes it in a letter: j'ai du boulot."
+          },
+          {
+            "display": "entre amis",
+            "cue": "among friends",
+            "tag": "free",
+            "forms": [
+              "entre amis"
+            ],
+            "note": "The register label this module keeps reaching for: it marks the word in front of it as the one you use with people you already know."
+          },
+          {
+            "display": "bagnole",
+            "cue": "car (familiar)",
+            "tag": "free",
+            "forms": [
+              "bagnole"
+            ],
+            "note": "Familiar for L1-M3's voiture, and one step rougher than boulot — affectionate about an old car, rude about a new one."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English has the same pairs — work / job, car / motor — and an English speaker knows not to mix them. The trap is that a course teaches the neutral word first, so the learner has only ever heard travail and reads boulot as a different job.",
+      "sound": "tra-VAI, oo boo-LOH ahn-tr a-MEE. boulot rhymes with the oh of plutôt.",
+      "variations": [
+        {
+          "display": "Voiture, ou bagnole entre amis",
+          "cue": "Voiture, or bagnole among friends",
+          "changed": "the pair — same axis, different word"
+        },
+        {
+          "display": "Bonjour, ou salut entre amis",
+          "cue": "Bonjour, or salut among friends",
+          "changed": "the pair, now on greetings"
+        }
+      ],
+      "mistake": {
+        "display": "Boulot, ou travail entre amis",
+        "why": "the frame runs neutral first, familiar second. Reversed, it says travail is the friendly word — and a learner who has learnt it that way round will say boulot to a stranger."
+      },
+      "usage": "Working out, or explaining, which of two words belongs where.",
+      "register": "neutral",
+      "mnemonic": "neutral, ou familiar entre amis."
+    },
+    {
+      "id": "L5-M3-S03",
+      "display": "On se tutoie ?",
+      "cue": "Shall we use tu?",
+      "literal": "One oneself tu-s?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on se tutoie",
+            "cue": "shall we use tu",
+            "tag": "delta",
+            "forms": [
+              "on se tutoie"
+            ],
+            "note": "Taken whole: it is one fixed move, not a sentence you build. Said with a rising tone it offers tu; said flat it reports that you already do."
+          },
+          {
+            "display": "tutoyer",
+            "cue": "to use tu with someone",
+            "tag": "free",
+            "forms": [
+              "tutoyer"
+            ],
+            "note": "French has a verb for addressing someone as tu, and English has none. Its opposite, vouvoyer, arrives at S08."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "English has no way to ask this, so an English speaker either never switches or switches without asking. Both read badly: the first as cold, the second as forward. The question exists precisely so nobody has to guess.",
+      "sound": "ohn suh tü-TWAH. The u of tu is the tight rounded vowel, not oo, and the -oie ending is twah.",
+      "variations": [
+        {
+          "display": "On se tutoie, non ?",
+          "cue": "We can use tu, can't we?",
+          "changed": "the tag non, which expects a yes"
+        },
+        {
+          "display": "On se vouvoie ?",
+          "cue": "Shall we use vous?",
+          "changed": "the other address"
+        }
+      ],
+      "mistake": {
+        "display": "Nous tutoyons ?",
+        "why": "grammatical and nobody says it. The move is frozen on on, which is what L2-M6 said spoken French uses for we; nous here reads as a written form and makes a light question sound like a motion at a meeting."
+      },
+      "usage": "The moment a conversation could go either way — a new colleague, a friend of a friend, someone your own age you have just met.",
+      "register": "informal",
+      "mnemonic": "on se tutoie, with the tone doing the asking."
+    },
+    {
+      "id": "L5-M3-S04",
+      "display": "Chez nous, on dit septante",
+      "cue": "Where we're from we say septante",
+      "literal": "At ours, one says seventy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chez nous",
+            "cue": "where we're from",
+            "tag": "free",
+            "forms": [
+              "chez nous"
+            ],
+            "note": "Literally at ours. It claims a place without naming it, and it is how a Belgian or a Swiss speaker introduces their own word."
+          },
+          {
+            "display": "septante",
+            "cue": "seventy",
+            "tag": "delta",
+            "forms": [
+              "septante"
+            ],
+            "note": "Seventy in Belgium and French-speaking Switzerland, and regular: sept, septante. France says soixante-dix, which S09 takes."
+          },
+          {
+            "display": "nonante",
+            "cue": "ninety",
+            "tag": "free",
+            "forms": [
+              "nonante"
+            ],
+            "note": "Ninety, same two countries, same regularity: neuf, nonante. France says quatre-vingt-dix."
+          },
+          {
+            "display": "Belgique",
+            "cue": "Belgium",
+            "tag": "free",
+            "forms": [
+              "Belgique"
+            ],
+            "note": "The country, and feminine — so en Belgique, never à Belgique. Same shape as en Suisse and en France."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "An English speaker hears septante as quaint or dialectal. It is neither: for the speakers who use it, it is simply the number, and soixante-dix is the odd one. Do not repeat it back with a smile.",
+      "sound": "shay noo, ohn dee sep-TAHNT. septante and nonante both end on the nasal ahnt.",
+      "variations": [
+        {
+          "display": "Chez nous, on dit nonante",
+          "cue": "Where we're from we say nonante",
+          "changed": "the number"
+        },
+        {
+          "display": "En Belgique, on dit septante",
+          "cue": "In Belgium they say septante",
+          "changed": "the country named outright, so the claim becomes a report"
+        }
+      ],
+      "mistake": {
+        "display": "Chez nous, on dit le septante",
+        "why": "numbers take no article here. le septante would be a thing called seventy; septante is the count itself."
+      },
+      "usage": "Saying a price, an age or a phone number the way your own region says it — and hearing one that is not yours without freezing.",
+      "register": "neutral",
+      "mnemonic": "chez nous claims it; à + place only reports it."
+    },
+    {
+      "id": "L5-M3-S05",
+      "display": "C'est carrément bien",
+      "cue": "That's downright good",
+      "literal": "It is squarely good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carrément",
+            "cue": "totally, downright",
+            "tag": "free",
+            "forms": [
+              "carrément"
+            ],
+            "note": "From carré, square: squarely, without hedging. Younger than très, usable in front of an adjective or alone as an answer — Carrément !"
+          },
+          {
+            "display": "c'est grave bien",
+            "cue": "that's seriously good",
+            "tag": "interference",
+            "forms": [
+              "c'est grave bien"
+            ],
+            "note": "Taken whole, because bare grave is L3-M10's serious. Young and spoken only; in any other seat grave still means the thing L3-M10 taught."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "English intensifiers are register-free — very, really, totally all travel. French ones are dated by generation: très is ageless, carrément is youngish, grave is young, and an adult using grave sounds like they are trying.",
+      "sound": "say kah-ray-MAHN byan. carrément has the nasal ahn at the end and a rolled-forward r at the front.",
+      "variations": [
+        {
+          "display": "C'est grave bien",
+          "cue": "That's seriously good",
+          "changed": "the intensifier, and with it the speaker's age"
+        },
+        {
+          "display": "C'est carrément super",
+          "cue": "That's totally great",
+          "changed": "the adjective"
+        }
+      ],
+      "mistake": {
+        "display": "C'est grave",
+        "why": "on its own grave is L3-M10's word: it's serious. The intensifier only exists in front of an adjective, which is why this module takes c'est grave bien whole and never the bare word."
+      },
+      "usage": "Agreeing warmly with friends, and hearing how old the person opposite you is by which intensifier they reach for.",
+      "register": "informal",
+      "mnemonic": "carrément in front of the adjective; grave only ever in front of one."
+    },
+    {
+      "id": "L5-M3-S06",
+      "display": "À Marseille, on dit plutôt poche",
+      "cue": "In Marseille they say poche instead",
+      "literal": "At Marseille, one says rather bag",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Marseille",
+            "cue": "Marseille",
+            "tag": "free",
+            "forms": [
+              "Marseille"
+            ],
+            "note": "The southern port, with an accent, a rhythm and a handful of words of its own. Named and sampled here, never taught as a system."
+          },
+          {
+            "display": "poche",
+            "cue": "(carrier) bag, in the south",
+            "tag": "delta",
+            "forms": [
+              "poche"
+            ],
+            "note": "In Marseille a poche is the plastic bag at the till; everywhere else it is a pocket. The word for the bag elsewhere is L4-M10's sac."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "This is the dangerous kind of regional word: not a word you do not know, but a word you DO know meaning something else. A learner hears poche and pictures a pocket, and the sentence still half works.",
+      "sound": "ah mar-SAY, ohn dee ploo-TOH posh. Marseille ends on the ay of say, with no l sound at all.",
+      "variations": [
+        {
+          "display": "À Paris, on dit plutôt sac",
+          "cue": "In Paris they say sac instead",
+          "changed": "the place, and so the word"
+        },
+        {
+          "display": "Chez nous, on dit poche",
+          "cue": "Where we're from we say poche",
+          "changed": "the frame, spoken by a southerner about their own word"
+        }
+      ],
+      "mistake": {
+        "display": "À Marseille, on dit plutôt une poche",
+        "why": "the frame names the WORD, so it goes in bare. une poche would be one particular bag; poche is the word itself."
+      },
+      "usage": "At a till in the south, when you are offered a poche and have to not look confused.",
+      "register": "neutral",
+      "mnemonic": "same frame as Toulouse, different corner of the map."
+    },
+    {
+      "id": "L5-M3-S07",
+      "display": "Femme, ou meuf entre amis",
+      "cue": "Femme, or meuf among friends",
+      "literal": "Woman, or woman-backwards between friends",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "meuf",
+            "cue": "woman, girl (verlan)",
+            "tag": "delta",
+            "forms": [
+              "meuf"
+            ],
+            "note": "L2-M2's femme said backwards — fe-mme becomes meu-f. Young and familiar: fine among friends, wrong at work, never about a stranger."
+          },
+          {
+            "display": "mec",
+            "cue": "guy, bloke",
+            "tag": "free",
+            "forms": [
+              "mec"
+            ],
+            "note": "The everyday familiar word for a man and the other half of mec et meuf. Not verlan, just familiar, and a little older."
+          },
+          {
+            "display": "salut",
+            "cue": "hi / bye (familiar)",
+            "tag": "delta",
+            "forms": [
+              "salut"
+            ],
+            "note": "One word for both ends of a meeting, where L1-M2 needed bonjour and au revoir. Friends, family and people your own age only."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "verlan looks like slang to be collected. It is not: meuf, relou and chelou are the three that stuck, and a learner who builds new ones by the rule produces words nobody says. Use the ones you have heard.",
+      "sound": "fam, oo muhf ahn-tr a-MEE. meuf is the eu of peur, cut short, ending on a clear f.",
+      "variations": [
+        {
+          "display": "Homme, ou mec entre amis",
+          "cue": "Homme, or mec among friends",
+          "changed": "the pair, now for a man"
+        },
+        {
+          "display": "Bonjour, ou salut entre amis",
+          "cue": "Bonjour, or salut among friends",
+          "changed": "the pair, now on greetings"
+        }
+      ],
+      "mistake": {
+        "display": "Bonjour madame, ou meuf entre amis",
+        "why": "meuf is never an address. You say it ABOUT someone to a friend, never TO the person — and calling a woman meuf to her face is not familiar, it is rude."
+      },
+      "usage": "Hearing which word a group uses about people, and matching it — or deciding not to.",
+      "register": "informal",
+      "mnemonic": "femme forwards, meuf backwards."
+    },
+    {
+      "id": "L5-M3-S08",
+      "display": "On se vouvoie ou on se tutoie ?",
+      "cue": "Do we use vous or tu?",
+      "literal": "One oneself vous-s or one oneself tu-s?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "on se vouvoie",
+            "cue": "do we use vous",
+            "tag": "free",
+            "forms": [
+              "on se vouvoie"
+            ],
+            "note": "The mirror of S03's on se tutoie, taken whole for the same reason. Asked when the answer is genuinely open — a new colleague, someone much older."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "An English speaker reads the two options as formal and friendly and picks friendly. They are not opposites of warmth: vous can be warm and tu can be curt. They are about how far into someone's life you already are.",
+      "sound": "ohn suh voo-VWAH oo ohn suh tü-TWAH. The two verbs rhyme, which is what makes the question sound like a choice.",
+      "variations": [
+        {
+          "display": "On se tutoie ou on se vouvoie ?",
+          "cue": "Do we use tu or vous?",
+          "changed": "the order, which quietly names your own preference first"
+        },
+        {
+          "display": "On se vouvoie, non ?",
+          "cue": "We're using vous, aren't we?",
+          "changed": "the tag non, which expects a yes"
+        }
+      ],
+      "mistake": {
+        "display": "Vous ou tu ?",
+        "why": "understandable and blunt: it asks the learner's question rather than the French one. The verbs are what make it a proposal about the two of you instead of a grammar quiz."
+      },
+      "usage": "A first meeting where neither side has committed, especially across an age gap or a rank gap.",
+      "register": "neutral",
+      "mnemonic": "both verbs, joined by ou, and let them choose."
+    },
+    {
+      "id": "L5-M3-S09",
+      "display": "Chez nous, on dit soixante-dix",
+      "cue": "Where we're from we say soixante-dix",
+      "literal": "At ours, one says sixty-ten",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "soixante-dix",
+            "cue": "seventy (France)",
+            "tag": "interference",
+            "forms": [
+              "soixante-dix"
+            ],
+            "note": "France's seventy, built as sixty-ten. Its hyphen parts count as words: soixante is sixty, and dix is L1-M8's ten."
+          },
+          {
+            "display": "Suisse",
+            "cue": "Switzerland",
+            "tag": "free",
+            "forms": [
+              "Suisse"
+            ],
+            "note": "Feminine, so en Suisse. Septante and nonante there too, and huitante for eighty in several cantons."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "An English speaker learns soixante-dix as the number and septante as the curiosity. Reverse the feeling: two of the four French-speaking countries in Europe count the regular way, and the arithmetic one is France's alone.",
+      "sound": "shay noo, ohn dee swa-sahnt-DEESS. The x of dix is a hissed ss when the word ends a phrase.",
+      "variations": [
+        {
+          "display": "En Suisse, on dit septante",
+          "cue": "In Switzerland they say septante",
+          "changed": "the country, and so the number"
+        },
+        {
+          "display": "À Paris, on dit soixante-dix",
+          "cue": "In Paris they say soixante-dix",
+          "changed": "the frame: à + city reports, chez nous claims"
+        }
+      ],
+      "mistake": {
+        "display": "Chez nous, on dit soixante dix",
+        "why": "written without the hyphen it is two numbers, sixty and ten, standing next to each other. The hyphen is what makes it one word, and the course indexes it as one."
+      },
+      "usage": "Giving a price or a phone number, and hearing one given back in the other system without losing the thread.",
+      "register": "neutral",
+      "mnemonic": "France does the arithmetic; Belgium and Switzerland just say the number."
+    },
+    {
+      "id": "L5-M3-S10",
+      "display": "C'est trop relou",
+      "cue": "That's so annoying",
+      "literal": "It is too heavy-backwards",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "relou",
+            "cue": "annoying, a pain (verlan)",
+            "tag": "delta",
+            "forms": [
+              "relou"
+            ],
+            "note": "lourd said backwards: heavy going. Of a person or a situation, and young and familiar — the neutral word is pénible."
+          },
+          {
+            "display": "chelou",
+            "cue": "dodgy, off (verlan)",
+            "tag": "free",
+            "forms": [
+              "chelou"
+            ],
+            "note": "louche said backwards: shifty, not quite right. Same generation and same rule as relou — familiar speech only."
+          }
+        ],
+        "rules": [
+          0,
+          6
+        ]
+      },
+      "trap": "L1-M8's trop is too much, and English too is a complaint. Here it is only an intensifier: c'est trop relou is that's so annoying, not that's excessively annoying. The complaint is already in relou.",
+      "sound": "say troh ruh-LOO. relou and chelou both end on the oo of loup, with the stress on the last syllable.",
+      "variations": [
+        {
+          "display": "C'est trop chelou",
+          "cue": "That's so dodgy",
+          "changed": "the adjective"
+        },
+        {
+          "display": "C'est carrément relou",
+          "cue": "That's downright annoying",
+          "changed": "the intensifier"
+        }
+      ],
+      "mistake": {
+        "display": "C'est très relou",
+        "why": "grammatical, and it clashes: très is ageless and relou is young, so the sentence sounds like two people wrote it. Keep the intensifier on the same axis as the adjective — trop, carrément or grave."
+      },
+      "usage": "Complaining to friends about a queue, a form, a person who will not stop talking.",
+      "register": "informal",
+      "mnemonic": "lourd backwards is relou; louche backwards is chelou."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M3-C01",
+      "display": "À Toulouse, on dit plutôt chocolatine",
+      "cue": "In Toulouse they say chocolatine instead"
+    },
+    {
+      "id": "L5-M3-C02",
+      "display": "Travail, ou boulot entre amis",
+      "cue": "Travail, or boulot among friends"
+    },
+    {
+      "id": "L5-M3-C03",
+      "display": "On se tutoie ?",
+      "cue": "Shall we use tu?"
+    },
+    {
+      "id": "L5-M3-C04",
+      "display": "Chez nous, on dit septante",
+      "cue": "Where we're from we say septante"
+    },
+    {
+      "id": "L5-M3-C05",
+      "display": "C'est carrément bien",
+      "cue": "That's downright good"
+    },
+    {
+      "id": "L5-M3-C06",
+      "display": "À Marseille, on dit plutôt poche",
+      "cue": "In Marseille they say poche instead"
+    },
+    {
+      "id": "L5-M3-C07",
+      "display": "Femme, ou meuf entre amis",
+      "cue": "Femme, or meuf among friends"
+    },
+    {
+      "id": "L5-M3-C08",
+      "display": "On se vouvoie ou on se tutoie ?",
+      "cue": "Do we use vous or tu?"
+    },
+    {
+      "id": "L5-M3-C09",
+      "display": "Chez nous, on dit soixante-dix",
+      "cue": "Where we're from we say soixante-dix"
+    },
+    {
+      "id": "L5-M3-C10",
+      "display": "C'est trop relou",
+      "cue": "That's so annoying"
+    },
+    {
+      "id": "L5-M3-C11",
+      "display": "Voiture, ou bagnole entre amis",
+      "cue": "Voiture, or bagnole among friends"
+    },
+    {
+      "id": "L5-M3-C12",
+      "display": "C'est grave bien",
+      "cue": "That's seriously good"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

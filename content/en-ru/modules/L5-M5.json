@@ -1,0 +1,706 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M5",
+  "title": "Big questions",
+  "job": "Values, beliefs, abstract talk",
+  "prerequisites": [
+    "L5-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "simple_present_imperfective",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "Ya véryu v + <N-accusative>",
+      "Éhto zavísit ot + <N-genitive>",
+      "Délo v tom + , + chto + <clause>",
+      "Chelovék dólzhen + V-inf",
+      "Glávnoye + — + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "VERB GOVERNMENT is what decides the meaning here, not just the form. verit' V plus the ACCUSATIVE is to believe IN something: ya veryu v spravedlivost'. verit' with a bare DATIVE and no preposition is to believe a PERSON who is speaking: ya vam veryu. One verb, two frames, two different claims, and English has a single preposition for both."
+    },
+    {
+      "tag": "delta",
+      "text": "zavisit OT plus the GENITIVE is to depend on, and ot is never na. eto zavisit ot pogody, ot cheloveka, ot vas. This is the preposition four levels of directions, letters and causes went past without opening: L2-M4 took do, L4-M2 took iz-za and blagodarya, and nobody took ot until this module."
+    },
+    {
+      "tag": "delta",
+      "text": "THE IMPERSONAL GENERALISER needs no new form at all. chelovek dolzhen … and kazhdyy sam … turn a private opinion into a claim about people, which is what abstract talk is made of. chelovek there is not a man and not a particular person: it is anybody, and the sentence is about everybody."
+    },
+    {
+      "tag": "interference",
+      "text": "Three L1 habits misfire. believe in against believe somebody, which is this module's first mistake plate. depend ON, which pulls na out of an English speaker where the Russian is ot. And the habit of hedging an abstract claim until it disappears: a flat abstract statement is normal in Russian and is not rudeness, while hedging one into invisibility reads as having no position at all."
+    },
+    {
+      "tag": "free",
+      "text": "Several of these nouns are internationalisms in shape if not in sound, so a learner reading svoboda, ideal or printsip guesses right and should be told so. The ones that will not be guessed are the native abstractions, and they are what the module actually spends on: spravedlivost', sud'ba, sovest', tsennosti, and smysl zhizni as a fixed pair."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M5-S01",
+      "display": "Ya véryu v spravedlívost'.",
+      "script": "Я верю в справедливость.",
+      "cue": "I believe in justice.",
+      "literal": "I believe in justice.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "véryu",
+            "script": "верю",
+            "cue": "I believe",
+            "tag": "delta",
+            "forms": [
+              "véryu",
+              "vérit",
+              "vérit'"
+            ],
+            "note": "I believe. With v plus the accusative it is believe IN; with a bare dative and no preposition it is believe a person who is speaking. The frame decides, not the verb."
+          },
+          {
+            "display": "spravedlívost'",
+            "script": "справедливость",
+            "cue": "justice; fairness",
+            "tag": "free",
+            "forms": [
+              "spravedlívost'",
+              "spravedlívosti"
+            ],
+            "note": "Justice or fairness. Feminine and ending in a soft sign, so its accusative looks exactly like its nominative, which is why the case in this frame is invisible."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English believe in has one shape, so a learner writes ya veryu v vas meaning I trust you. It does not mean that: v vas backs you as a cause. Trusting a speaker is the bare dative.",
+      "sound": "véryu is two syllables, VYE-ryu. spravedlívost' is five, spra-vyed-LEE-vast', with the stress on the third.",
+      "variations": [
+        {
+          "display": "Ya véryu v svobódu.",
+          "script": "Я верю в свободу.",
+          "cue": "I believe in freedom.",
+          "changed": "a different abstraction in the same accusative slot"
+        },
+        {
+          "display": "On vérit v spravedlívost'.",
+          "script": "Он верит в справедливость.",
+          "cue": "He believes in justice.",
+          "changed": "the third person, on the same frame"
+        }
+      ],
+      "mistake": {
+        "display": "Ya véryu spravedlívosti.",
+        "script": "Я верю справедливости.",
+        "why": "the dative, on the wrong frame. That says I believe justice, as though justice had told you something; believing IN a thing needs v plus the accusative."
+      },
+      "usage": "Stating a position you actually hold, in any register.",
+      "register": "neutral",
+      "mnemonic": "v plus a thing is believe IN it; nothing in front is believe a person."
+    },
+    {
+      "id": "L5-M5-S02",
+      "display": "On vérit v bóga, a éhto yevó véra.",
+      "script": "Он верит в бога, а это его вера.",
+      "cue": "He believes in God, and that's his faith.",
+      "literal": "He believes in God, and this his faith.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bog",
+            "script": "бог",
+            "cue": "God",
+            "tag": "free",
+            "forms": [
+              "bog",
+              "bóga"
+            ],
+            "note": "God. A monosyllable in the dictionary form, so it carries no acute. After v it goes to boga, because the noun is animate and an animate accusative borrows the genitive."
+          },
+          {
+            "display": "véra",
+            "script": "вера",
+            "cue": "faith; belief",
+            "tag": "free",
+            "forms": [
+              "véra"
+            ],
+            "note": "Faith or belief, the noun beside the verb veryu. It is also a woman's name, which is the only time it is capitalised."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "The module reports beliefs and holds none. bog and vera are vocabulary here, and nothing in this course asks a learner to have either.",
+      "sound": "bog is one syllable said bokh, with the final g going to a soft kh. véra is VYE-ra.",
+      "variations": [
+        {
+          "display": "Ya ne véryu v bóga.",
+          "script": "Я не верю в бога.",
+          "cue": "I don't believe in God.",
+          "changed": "the negative, which changes no case here"
+        },
+        {
+          "display": "Éhto yevó véra.",
+          "script": "Это его вера.",
+          "cue": "That's his faith.",
+          "changed": "the noun alone, without the verb"
+        }
+      ],
+      "mistake": {
+        "display": "On vérit v bog.",
+        "script": "Он верит в бог.",
+        "why": "the dictionary form left standing. bog is animate, so after v the accusative is boga, the same borrowing from the genitive a learner already makes for a person."
+      },
+      "usage": "Reporting somebody's belief without commenting on it.",
+      "register": "neutral",
+      "mnemonic": "An animate accusative borrows the genitive: v bóga, never v bog."
+    },
+    {
+      "id": "L5-M5-S03",
+      "display": "Ya vam véryu — u vas chístaya sóvest'.",
+      "script": "Я вам верю — у вас чистая совесть.",
+      "cue": "I believe you — your conscience is clear.",
+      "literal": "I to-you believe — at you clean conscience.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sóvest'",
+            "script": "совесть",
+            "cue": "conscience",
+            "tag": "free",
+            "forms": [
+              "sóvest'"
+            ],
+            "note": "Conscience. Russian says a clean conscience, chistaya sovest', where English says a clear one, and the adjective is the ordinary one for a washed plate."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "This sentence is the DATIVE frame: ya vam veryu is I believe you, the speaker. Written with v it becomes ya veryu v vas, which backs somebody as a cause and is what you say before an exam.",
+      "sound": "sóvest' is two syllables, SO-vyest', with a soft final t.",
+      "variations": [
+        {
+          "display": "Ya tebé véryu.",
+          "script": "Я тебе верю.",
+          "cue": "I believe you.",
+          "changed": "the ty dative, and the frame stripped to two words"
+        },
+        {
+          "display": "U menyá chístaya sóvest'.",
+          "script": "У меня чистая совесть.",
+          "cue": "My conscience is clear.",
+          "changed": "the possessor moved to the speaker"
+        }
+      ],
+      "mistake": {
+        "display": "Ya véryu v vas — u vas chístaya sóvest'.",
+        "script": "Я верю в вас — у вас чистая совесть.",
+        "why": "the believe-IN frame where believe-a-person was meant. v vas backs you as a cause; it does not say that what you just told me is true."
+      },
+      "usage": "Telling somebody you accept what they have just said.",
+      "register": "neutral",
+      "mnemonic": "No preposition means you believe the PERSON."
+    },
+    {
+      "id": "L5-M5-S04",
+      "display": "Éhto zavísit ot pogódy.",
+      "script": "Это зависит от погоды.",
+      "cue": "That depends on the weather.",
+      "literal": "This depends from weather.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zavísit",
+            "script": "зависит",
+            "cue": "depends",
+            "tag": "delta",
+            "forms": [
+              "zavísit",
+              "zavísyat"
+            ],
+            "note": "Depends. It takes ot plus the genitive and nothing else, whatever English does. The subject is the thing that depends, exactly as in English."
+          },
+          {
+            "display": "ot",
+            "script": "от",
+            "cue": "from; on (in depends on)",
+            "tag": "delta",
+            "forms": [
+              "ot"
+            ],
+            "note": "From, in the sense of away from a source or a cause, and it always takes the genitive. Four levels went by without it: L2-M4 opened do, L4-M2 opened iz-za, and ot arrives here."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "English depends ON, so na is the reflex. zavisit na is not something a Russian says; the preposition is ot and the noun after it goes to the genitive.",
+      "sound": "zavísit is three syllables, za-VEE-seet. ot is one, at, and it leans forward onto the noun behind it.",
+      "variations": [
+        {
+          "display": "Éhto zavísit ot vas.",
+          "script": "Это зависит от вас.",
+          "cue": "That depends on you.",
+          "changed": "a person as the thing depended on"
+        },
+        {
+          "display": "Vsyó zavísit ot pogódy.",
+          "script": "Всё зависит от погоды.",
+          "cue": "Everything depends on the weather.",
+          "changed": "vsyó, which is the usual subject of this frame"
+        }
+      ],
+      "mistake": {
+        "display": "Éhto zavísit na pogódu.",
+        "script": "Это зависит на погоду.",
+        "why": "na plus the accusative straight out of English depends on. The frame is ot plus the genitive: ot pogody."
+      },
+      "usage": "Refusing to commit without refusing outright.",
+      "register": "neutral",
+      "mnemonic": "It depends FROM the cause: ot, never na."
+    },
+    {
+      "id": "L5-M5-S05",
+      "display": "Vsyó zavísit ot chelovéka.",
+      "script": "Всё зависит от человека.",
+      "cue": "It all depends on the person.",
+      "literal": "All depends from person.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chelovék",
+            "script": "человек",
+            "cue": "person; anybody",
+            "tag": "delta",
+            "forms": [
+              "chelovék",
+              "chelovéka"
+            ],
+            "note": "A person, not a man. In the abstract frames of this module it means anybody at all. Its plural is a different word, lyudi, which this module does not open."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "chelovek is grammatically masculine but not gendered in meaning. Translating it as man narrows a claim the Russian deliberately leaves open.",
+      "sound": "Three syllables with the stress on the third, che-la-VYEK.",
+      "variations": [
+        {
+          "display": "Éhto zavísit ot chelovéka.",
+          "script": "Это зависит от человека.",
+          "cue": "That depends on the person.",
+          "changed": "éhto for vsyó, which narrows the claim to one case"
+        },
+        {
+          "display": "Chelovék dólzhen rabótat'.",
+          "script": "Человек должен работать.",
+          "cue": "A person has to work.",
+          "changed": "the noun as a generaliser rather than as an object"
+        }
+      ],
+      "mistake": {
+        "display": "Vsyó zavísit ot chelovék.",
+        "script": "Всё зависит от человек.",
+        "why": "the nominative left standing after ot. ot takes the genitive, so the noun goes to cheloveka."
+      },
+      "usage": "Answering a question about people in general.",
+      "register": "neutral",
+      "mnemonic": "chelovék is anybody: the word for a human being, not for a male one."
+    },
+    {
+      "id": "L5-M5-S06",
+      "display": "Kázhdyy sam dólzhen znat', chto dlya nevó vázhno.",
+      "script": "Каждый сам должен знать, что для него важно.",
+      "cue": "Everyone has to know for themselves what matters to them.",
+      "literal": "Each himself must to-know, what for him important.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sam",
+            "script": "сам",
+            "cue": "oneself; on one's own",
+            "tag": "delta",
+            "forms": [
+              "sam"
+            ],
+            "note": "Himself, in the sense of on one's own and by nobody else's doing. It agrees with its subject; this row opens only the masculine sam, the form the generaliser uses."
+          },
+          {
+            "display": "vázhno",
+            "script": "важно",
+            "cue": "important",
+            "tag": "free",
+            "forms": [
+              "vázhno"
+            ],
+            "note": "Important, in the short neuter form Russian uses for an impersonal statement: eto vazhno, chto vazhno. It is not an adjective agreeing with a noun here."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "kazhdyy is L4-M9's word for each; here it stands bare and means everyone. Putting a noun after it would narrow the claim, and the generaliser needs it alone.",
+      "sound": "sam is one syllable, sam, with no acute. vázhno is two, VAZH-na.",
+      "variations": [
+        {
+          "display": "Chelovék dólzhen sam rabótat'.",
+          "script": "Человек должен сам работать.",
+          "cue": "A person has to work for themselves.",
+          "changed": "the other generaliser frame, chelovék dólzhen plus an infinitive"
+        },
+        {
+          "display": "Éhto óchen' vázhno.",
+          "script": "Это очень важно.",
+          "cue": "That's very important.",
+          "changed": "the impersonal predicate on its own"
+        }
+      ],
+      "mistake": {
+        "display": "Kázhdyy den' dólzhen znat', chto dlya nevó vázhno.",
+        "script": "Каждый день должен знать, что для него важно.",
+        "why": "kazhdyy read as the first half of L1-M4's kazhdyy den'. Here it is bare and means everyone; adding den' turns the sentence into a day that has to know things."
+      },
+      "usage": "Making a claim about people without naming anybody.",
+      "register": "neutral",
+      "mnemonic": "kázhdyy sam: each of them, on their own."
+    },
+    {
+      "id": "L5-M5-S07",
+      "display": "Glávnoye — éhto ne dén'gi, a schást'ye.",
+      "script": "Главное — это не деньги, а счастье.",
+      "cue": "The main thing isn't money, it's happiness.",
+      "literal": "Main — this not money, but happiness.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "glávnoye",
+            "script": "главное",
+            "cue": "the main thing",
+            "tag": "free",
+            "forms": [
+              "glávnoye"
+            ],
+            "note": "The main thing. A neuter adjective standing as a noun, and the standard opening for the sentence that sums an argument up: glavnoye, then the claim."
+          },
+          {
+            "display": "schást'ye",
+            "script": "счастье",
+            "cue": "happiness",
+            "tag": "free",
+            "forms": [
+              "schást'ye"
+            ],
+            "note": "Happiness, the dictionary form. L5-M4 opened the genitive schast'ya for the wish frame; this is the same word in the case a subject takes."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The ne … a frame is not English not … but with an or in it. a contrasts two things and the second is the true one, so this reads as it is not money, it is happiness.",
+      "sound": "glávnoye is three syllables, GLAV-na-ye. schást'ye is two, SHCHAST-ye.",
+      "variations": [
+        {
+          "display": "Glávnoye — éhto svobóda.",
+          "script": "Главное — это свобода.",
+          "cue": "The main thing is freedom.",
+          "changed": "one claim instead of a contrast"
+        },
+        {
+          "display": "Ne dén'gi, a schást'ye.",
+          "script": "Не деньги, а счастье.",
+          "cue": "Not money — happiness.",
+          "changed": "the contrast alone, without glávnoye"
+        }
+      ],
+      "mistake": {
+        "display": "Glávnoye — éhto ne dén'gi, no schást'ye.",
+        "script": "Главное — это не деньги, но счастье.",
+        "why": "no where a belongs. no is but in the sense of however; the contrast that replaces one thing with another is a, and Russian keeps the two apart."
+      },
+      "usage": "Summing an argument up in one line.",
+      "register": "neutral",
+      "mnemonic": "glávnoye opens the last sentence of an argument."
+    },
+    {
+      "id": "L5-M5-S08",
+      "display": "Délo v tom, chto zhizn' — éhto ne rabóta.",
+      "script": "Дело в том, что жизнь — это не работа.",
+      "cue": "The thing is that life isn't work.",
+      "literal": "Matter in that, that life — this not work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "délo v tom",
+            "script": "дело в том",
+            "cue": "the thing is",
+            "tag": "delta",
+            "forms": [
+              "délo v tom"
+            ],
+            "note": "The thing is: three words taken whole and always followed by chto and a clause. Bare v is L1-M4's, so the phrase is indexed together and delo on its own stays free."
+          },
+          {
+            "display": "zhizn'",
+            "script": "жизнь",
+            "cue": "life",
+            "tag": "free",
+            "forms": [
+              "zhizn'",
+              "zhízni"
+            ],
+            "note": "Life. Feminine and ending in a soft sign, and a monosyllable, so it carries no acute. Its genitive zhizni is the second half of the fixed pair smysl zhizni."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "delo v tom, chto is not the same as a bare chto clause. It announces that a correction is coming, so a Russian expects what follows to overturn what was just said.",
+      "sound": "délo v tom is DYE-la f tom, with the v said as an f. zhizn' is one syllable, zhyzn', with a hard zh and a soft final n.",
+      "variations": [
+        {
+          "display": "Délo v tom, chto ya ne znáyu.",
+          "script": "Дело в том, что я не знаю.",
+          "cue": "The thing is, I don't know.",
+          "changed": "an admission after the frame instead of a claim"
+        },
+        {
+          "display": "Zhizn' — éhto ne rabóta.",
+          "script": "Жизнь — это не работа.",
+          "cue": "Life isn't work.",
+          "changed": "the frame dropped, leaving the claim bare"
+        }
+      ],
+      "mistake": {
+        "display": "Délo tom, chto zhizn' — éhto ne rabóta.",
+        "script": "Дело том, что жизнь — это не работа.",
+        "why": "the v dropped as though it were a separate preposition. The phrase is three words and the v lives inside it."
+      },
+      "usage": "Correcting an assumption before you answer the question.",
+      "register": "neutral",
+      "mnemonic": "délo v tom is a three-word colon."
+    },
+    {
+      "id": "L5-M5-S09",
+      "display": "Ya ne véryu v sud'bú, ya véryu v svobódu.",
+      "script": "Я не верю в судьбу, я верю в свободу.",
+      "cue": "I don't believe in fate, I believe in freedom.",
+      "literal": "I not believe in fate, I believe in freedom.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sud'bá",
+            "script": "судьба",
+            "cue": "fate",
+            "tag": "free",
+            "forms": [
+              "sud'bá",
+              "sud'bú"
+            ],
+            "note": "Fate. The stress sits on the ending in the dictionary form and stays there in the accusative sud'bu, which is why both carry the acute on the last vowel."
+          },
+          {
+            "display": "svobóda",
+            "script": "свобода",
+            "cue": "freedom",
+            "tag": "free",
+            "forms": [
+              "svobóda",
+              "svobódu"
+            ],
+            "note": "Freedom, the political and the personal sense. The adjective svoboden, free as in not busy, is already taught and is a different sense of the English word."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Both nouns take the plain accusative after v because both are inanimate. bog took boga because it is animate, and the two are not the same rule.",
+      "sound": "sud'bá is two syllables with the stress on the second, sud'-BA. svobóda is three, sva-BO-da.",
+      "variations": [
+        {
+          "display": "Ya véryu v sud'bú.",
+          "script": "Я верю в судьбу.",
+          "cue": "I believe in fate.",
+          "changed": "the claim reversed, in the positive"
+        },
+        {
+          "display": "Ya véryu v svobódu.",
+          "script": "Я верю в свободу.",
+          "cue": "I believe in freedom.",
+          "changed": "the second half alone"
+        }
+      ],
+      "mistake": {
+        "display": "Ya ne véryu v sud'bá, ya véryu v svobóda.",
+        "script": "Я не верю в судьба, я верю в свобода.",
+        "why": "both nouns left in the nominative. v with this verb takes the accusative, so they go to sud'bu and svobodu."
+      },
+      "usage": "Stating a position in a conversation about life.",
+      "register": "neutral",
+      "mnemonic": "A feminine -a goes to -u after v: sud'bú, svobódu."
+    },
+    {
+      "id": "L5-M5-S10",
+      "display": "Dlya menyá éhto tsénnosti i smysl zhízni.",
+      "script": "Для меня это ценности и смысл жизни.",
+      "cue": "For me these are values and the meaning of life.",
+      "literal": "For me this values and meaning of-life.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tsénnosti",
+            "script": "ценности",
+            "cue": "values",
+            "tag": "free",
+            "forms": [
+              "tsénnosti",
+              "tsénnost'"
+            ],
+            "note": "Values, and normally plural: a person's tsennosti are what they will not trade away. The singular tsennost' is one value, or the worth of a thing."
+          },
+          {
+            "display": "smysl zhízni",
+            "script": "смысл жизни",
+            "cue": "the meaning of life",
+            "tag": "delta",
+            "forms": [
+              "smysl zhízni"
+            ],
+            "note": "The meaning of life: two words taken whole, because it is a fixed pair rather than a phrase rebuilt each time. smysl on its own stays free for a later module."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "smysl zhizni is not heavy or literary in Russian. It turns up in ordinary conversation where English would reach for something lighter, and using it is not a claim to be profound.",
+      "sound": "tsénnosti is three syllables, TSEN-nas-tee. smysl is one, smysl, with no vowel you can hear between the s and the l.",
+      "variations": [
+        {
+          "display": "Éhto moí tsénnosti.",
+          "script": "Это мои ценности.",
+          "cue": "These are my values.",
+          "changed": "a possessive instead of dlya menyá"
+        },
+        {
+          "display": "Éhto i yest' smysl zhízni.",
+          "script": "Это и есть смысл жизни.",
+          "cue": "That is exactly the meaning of life.",
+          "changed": "the i yest' frame, which makes the claim emphatic"
+        }
+      ],
+      "mistake": {
+        "display": "Dlya menyá éhto tsénnost' i smysl zhízni.",
+        "script": "Для меня это ценность и смысл жизни.",
+        "why": "the singular where the plural was meant. tsennost' is the worth of one thing; a person's principles are always tsennosti."
+      },
+      "usage": "Answering a question about what matters to you.",
+      "register": "neutral",
+      "mnemonic": "Values come in the plural: tsénnosti."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M5-C01",
+      "display": "Ya véryu v spravedlívost'.",
+      "script": "Я верю в справедливость.",
+      "cue": "I believe in justice."
+    },
+    {
+      "id": "L5-M5-C02",
+      "display": "Ya vam véryu.",
+      "script": "Я вам верю.",
+      "cue": "I believe you."
+    },
+    {
+      "id": "L5-M5-C03",
+      "display": "Éhto zavísit ot vas.",
+      "script": "Это зависит от вас.",
+      "cue": "That depends on you."
+    },
+    {
+      "id": "L5-M5-C04",
+      "display": "Vsyó zavísit ot chelovéka.",
+      "script": "Всё зависит от человека.",
+      "cue": "It all depends on the person."
+    },
+    {
+      "id": "L5-M5-C05",
+      "display": "Chelovék dólzhen rabótat'.",
+      "script": "Человек должен работать.",
+      "cue": "A person has to work."
+    },
+    {
+      "id": "L5-M5-C06",
+      "display": "Kázhdyy sam dólzhen znat'.",
+      "script": "Каждый сам должен знать.",
+      "cue": "Everyone has to know for themselves."
+    },
+    {
+      "id": "L5-M5-C07",
+      "display": "Glávnoye — éhto svobóda.",
+      "script": "Главное — это свобода.",
+      "cue": "The main thing is freedom."
+    },
+    {
+      "id": "L5-M5-C08",
+      "display": "Délo v tom, chto ya ne znáyu.",
+      "script": "Дело в том, что я не знаю.",
+      "cue": "The thing is, I don't know."
+    },
+    {
+      "id": "L5-M5-C09",
+      "display": "Ya ne véryu v sud'bú.",
+      "script": "Я не верю в судьбу.",
+      "cue": "I don't believe in fate."
+    },
+    {
+      "id": "L5-M5-C10",
+      "display": "Éhto moí tsénnosti.",
+      "script": "Это мои ценности.",
+      "cue": "These are my values."
+    },
+    {
+      "id": "L5-M5-C11",
+      "display": "Éhto i yest' smysl zhízni.",
+      "script": "Это и есть смысл жизни.",
+      "cue": "That is exactly the meaning of life."
+    },
+    {
+      "id": "L5-M5-C12",
+      "display": "Zhizn' — éhto ne rabóta.",
+      "script": "Жизнь — это не работа.",
+      "cue": "Life isn't work."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

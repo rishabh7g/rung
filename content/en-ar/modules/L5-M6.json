@@ -1,0 +1,756 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M6",
+  "title": "Arguing a position",
+  "job": "A structured case, objections answered",
+  "prerequisites": [
+    "L5-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "awwalan + , + <clause> + . + thāniyan + , + <clause>",
+      "min nāḥiya + <clause> + , + wa min nāḥiya ukhrā + <clause>",
+      "qad yaqūl qāʾil inna + <objection> + , + ghayr anna + <answer>",
+      "laysa + <X> + bal + innamā + <Y>",
+      "bi-ikhtiṣār + , + <conclusion>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ARABIC MARKS THE SHAPE OF AN ARGUMENT ON THE SURFACE. English leaves it to paragraphing and intonation; Arabic puts a word at the front of each move — awwalan, thāniyan, thālithan — and a case with no markers reads as a pile of assertions rather than an argument."
+    },
+    {
+      "tag": "interference",
+      "text": "An English case that signposts every step reads as pedantic, so an English speaker under-marks and then sounds abrupt in Arabic. Mark every step. The density that would be heavy in English is the ordinary weight here."
+    },
+    {
+      "tag": "free",
+      "text": "The two-sided frame is ONE unit with two halves: min nāḥiya opens the first side, and L4-M4's min nāḥiya ukhrā answers it. Neither half stands alone, and the second is already yours — this module buys only the opener."
+    },
+    {
+      "tag": "delta",
+      "text": "qad yaqūl qāʾil inna raises the objection BEFORE the other person does. It reads as four words and works as one opener; the inna at its end is L3-M5's reported-speech particle doing its ordinary job."
+    },
+    {
+      "tag": "delta",
+      "text": "ghayr anna ANSWERS the objection. It is not L4-M4's ghayr, the negator of nouns and adjectives: the pair is one key and carries a concessive turn, not a negation, and tapping it must reach this note and not that one."
+    },
+    {
+      "tag": "interference",
+      "text": "bi-al-ʿaks is ORDINARY and carries no heat. English on the contrary is rare and emphatic, so a learner who imports that weight sounds as though they are picking a fight over a small correction."
+    },
+    {
+      "tag": "free",
+      "text": "innamā narrows: not X, but only Y. It stands after a negation, on its own or behind L4-M4's bal, and it is the exclusive half of the corrective that module taught."
+    },
+    {
+      "tag": "free",
+      "text": "Two ways to close, and they are not one register. bi-ikhtiṣār is in short and fits any conversation; khulāṣat al-qawl is the upshot of the matter and belongs to a written or public case."
+    },
+    {
+      "tag": "free",
+      "text": "Concession itself is L4-M4's — raghma anna answered by maʿa dhālika — and this module uses it without reopening it. M4 held ground inside one exchange; M6 lays out a whole structure and signposts it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M6-S01",
+      "display": "awwalan, at-taʿlīm muhimm. thāniyan, huwa ghālī. thālithan, huwa ṣaʿb",
+      "script": "أولًا، التعليم مهم. ثانيًا، هو غالي. ثالثًا، هو صعب",
+      "cue": "First, education is important. Second, it is expensive. Third, it is difficult.",
+      "literal": "firstly, the-education important. secondly, he expensive. thirdly, he difficult",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "thālithan",
+            "script": "ثالثًا",
+            "cue": "third, thirdly",
+            "tag": "free",
+            "forms": [
+              "thālithan"
+            ],
+            "note": "The third rung of the ladder awwalan (L3-M1) and thāniyan (L4-M1) started. The -an ending is the adverbial one those two already carry."
+          },
+          {
+            "display": "at-taʿlīm",
+            "script": "التعليم",
+            "cue": "education",
+            "tag": "free",
+            "forms": [
+              "at-taʿlīm",
+              "taʿlīm"
+            ],
+            "note": "Education as a whole thing, so the article is the generic one L5-M5 taught: at-taʿlīm is education in general, never a particular schooling."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "An English speaker numbers the first two points and then stops, because a third label sounds laboured. Arabic finishes the ladder: dropping thālithan leaves the last point unattached to the case.",
+      "sound": "THĀ-li-than has the same shape as THĀ-ni-yan — three syllables, stress on the first, the -an clipped. at-taʿ-LĪM assimilates its article to the t: say at-ta, never al-ta.",
+      "variations": [
+        {
+          "display": "awwalan, at-taʿlīm muhimm. thāniyan, huwa ṣaʿb",
+          "script": "أولًا، التعليم مهم. ثانيًا، هو صعب",
+          "cue": "First, education is important. Second, it is difficult.",
+          "changed": "two points instead of three — the ladder stops wherever the case does"
+        },
+        {
+          "display": "awwalan, as-safar mufīd. thāniyan, huwa ghālī. thālithan, huwa ṣaʿb",
+          "script": "أولًا، السفر مفيد. ثانيًا، هو غالي. ثالثًا، هو صعب",
+          "cue": "First, travel is useful. Second, it is expensive. Third, it is difficult.",
+          "changed": "the subject of the case — the scaffold takes any topic"
+        }
+      ],
+      "mistake": {
+        "display": "awwalan, at-taʿlīm muhimm. huwa ghālī. huwa ṣaʿb",
+        "script": "أولًا، التعليم مهم. هو غالي. هو صعب",
+        "why": "Marking only the first point is worse than marking none: the listener is told a list is coming and then has to guess where it went. Number every rung or number none."
+      },
+      "usage": "Laying out a case in order — a meeting, an exam answer, a message that has to be followed to the end.",
+      "register": "neutral",
+      "mnemonic": "awwalan, thāniyan, thālithan — one ladder, and you climb all of it."
+    },
+    {
+      "id": "L5-M6-S02",
+      "display": "min nāḥiya, as-safar mufīd, wa min nāḥiya ukhrā huwa ghālī",
+      "script": "من ناحية، السفر مفيد، ومن ناحية أخرى هو غالي",
+      "cue": "On the one hand travel is useful, and on the other hand it is expensive.",
+      "literal": "from side, the-travel useful, and from side other he expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "min nāḥiya",
+            "script": "من ناحية",
+            "cue": "on the one hand",
+            "tag": "free",
+            "forms": [
+              "min nāḥiya"
+            ],
+            "note": "The opening half of the two-sided frame. L4-M4 taught the answering half whole; this is its partner, and it must be tapped as a pair of words, not as min plus a side."
+          },
+          {
+            "display": "as-safar",
+            "script": "السفر",
+            "cue": "travel",
+            "tag": "free",
+            "forms": [
+              "as-safar",
+              "safar"
+            ],
+            "note": "Travel as an activity, with the generic article. The s is a sun letter, so the article assimilates: as-safar."
+          },
+          {
+            "display": "mufīd",
+            "script": "مفيد",
+            "cue": "useful, beneficial",
+            "tag": "free",
+            "forms": [
+              "mufīd",
+              "mufīda"
+            ],
+            "note": "Useful in the sense of doing you good. mufīda for a feminine noun: at-tajriba mufīda."
+          }
+        ],
+        "rules": [
+          2,
+          1
+        ]
+      },
+      "trap": "English can open with on the one hand and never deliver the other. Arabic's frame is a promise: min nāḥiya with no min nāḥiya ukhrā behind it leaves the sentence audibly unfinished.",
+      "sound": "min NĀ-ḥi-ya runs together into one breath — the ḥ is the tight throat-h, not the soft one. as-sa-FAR doubles its s.",
+      "variations": [
+        {
+          "display": "min nāḥiya, at-taʿlīm mufīd, wa min nāḥiya ukhrā huwa ghālī",
+          "script": "من ناحية، التعليم مفيد، ومن ناحية أخرى هو غالي",
+          "cue": "On the one hand education is useful, and on the other hand it is expensive.",
+          "changed": "the topic weighed — the frame is indifferent to what goes in it"
+        },
+        {
+          "display": "min nāḥiya, hādhā al-qarār ṣaʿb, wa min nāḥiya ukhrā huwa muhimm",
+          "script": "من ناحية، هذا القرار صعب، ومن ناحية أخرى هو مهم",
+          "cue": "On the one hand this decision is difficult, and on the other hand it is important.",
+          "changed": "a decision rather than an activity in the frame"
+        }
+      ],
+      "mistake": {
+        "display": "min nāḥiya, as-safar mufīd, lākin huwa ghālī",
+        "script": "من ناحية، السفر مفيد، لكن هو غالي",
+        "why": "lākin is a plain but and does not close the frame. Once min nāḥiya has opened one side, only min nāḥiya ukhrā answers it; anything else abandons a structure you have already announced."
+      },
+      "usage": "Showing you have seen both sides before you choose one — the move that makes a case sound weighed rather than pushed.",
+      "register": "neutral",
+      "mnemonic": "One side, then the other side — nāḥiya twice or not at all."
+    },
+    {
+      "id": "L5-M6-S03",
+      "display": "qad yaqūl qāʾil inna as-safar ghālī, ghayr anna at-tajriba ahamm",
+      "script": "قد يقول قائل إن السفر غالي، غير أن التجربة أهم",
+      "cue": "Someone may say that travel is expensive, except that the experience is more important.",
+      "literal": "may says sayer that the-travel expensive, other-than that the-experience more-important",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "qad yaqūl qāʾil inna",
+            "script": "قد يقول قائل إن",
+            "cue": "someone may say that",
+            "tag": "free",
+            "forms": [
+              "qad yaqūl qāʾil inna"
+            ],
+            "note": "One opener, four words long. It puts the objection in an imagined mouth so you can answer it before it is made; qad here is may rather than L3-M7's already."
+          },
+          {
+            "display": "ghayr anna",
+            "script": "غير أن",
+            "cue": "except that, however",
+            "tag": "free",
+            "forms": [
+              "ghayr anna"
+            ],
+            "note": "The answer to the objection. Not L4-M4's ghayr, which negates a noun — the two words together turn the argument back."
+          },
+          {
+            "display": "at-tajriba",
+            "script": "التجربة",
+            "cue": "the experience, the trial",
+            "tag": "free",
+            "forms": [
+              "at-tajriba",
+              "tajriba"
+            ],
+            "note": "What you get by going through something. The t of tajriba is a sun letter, so the article assimilates: at-tajriba."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "English pre-empts an objection with a question — you might say it is expensive. Arabic states it flatly in the third person, and a learner who turns it into a question has asked something instead of answering it.",
+      "sound": "qad ya-QŪL QĀ-ʾil holds the hamza in qāʾil as a small catch between the two vowels. GHAYR opens on the ghayn, the gargled g.",
+      "variations": [
+        {
+          "display": "qad yaqūl qāʾil inna at-taʿlīm ṣaʿb, ghayr anna at-tajriba ahamm",
+          "script": "قد يقول قائل إن التعليم صعب، غير أن التجربة أهم",
+          "cue": "Someone may say that education is difficult, except that the experience is more important.",
+          "changed": "the objection raised — the opener takes any clause"
+        },
+        {
+          "display": "qad yaqūl qāʾil inna at-taʿlīm ghālī, ghayr anna al-ʿamal muhimm",
+          "script": "قد يقول قائل إن التعليم غالي، غير أن العمل مهم",
+          "cue": "Someone may say that education is expensive, except that the work is important.",
+          "changed": "both halves at once, on a different case"
+        }
+      ],
+      "mistake": {
+        "display": "qad yaqūl qāʾil inna as-safar ghālī, ghayr as-safar muhimm",
+        "script": "قد يقول قائل إن السفر غالي، غير السفر مهم",
+        "why": "Dropping anna leaves L4-M4's ghayr, which negates the noun after it: ghayr as-safar is other than travel. The concessive needs both words — ghayr anna — and a clause behind them."
+      },
+      "usage": "Answering the objection you know is coming, in public, before anyone has to raise it.",
+      "register": "formal",
+      "mnemonic": "Someone may say — except that they are wrong."
+    },
+    {
+      "id": "L5-M6-S04",
+      "display": "as-safar laysa mushkila, bi-al-ʿaks huwa al-ḥall",
+      "script": "السفر ليس مشكلة، بالعكس هو الحل",
+      "cue": "Travel is not a problem; on the contrary, it is the solution.",
+      "literal": "the-travel is-not problem, by-the-opposite he the-solution",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bi-al-ʿaks",
+            "script": "بالعكس",
+            "cue": "on the contrary",
+            "tag": "free",
+            "forms": [
+              "bi-al-ʿaks",
+              "ʿaks"
+            ],
+            "note": "Literally by the opposite. It reverses what was just said and carries no anger at all — bare ʿaks is the opposite itself."
+          },
+          {
+            "display": "al-ḥall",
+            "script": "الحل",
+            "cue": "the solution",
+            "tag": "free",
+            "forms": [
+              "al-ḥall",
+              "ḥall"
+            ],
+            "note": "What answers a mushkila (L2-M8). The double l is held: al-ḥall, with the tight throat-h."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "English on the contrary is emphatic and rare, so a learner reaches for it only when contradicting someone sharply. bi-al-ʿaks is everyday and neutral, and saving it for a fight is the wrong instinct in both directions.",
+      "sound": "bi-al-ʿAKS is said as one word, bil-ʿaks, with the ʿayn squeezing the throat before the ks. al-ḤALL holds the l long.",
+      "variations": [
+        {
+          "display": "at-taʿlīm laysa ghālī, bi-al-ʿaks huwa mufīd",
+          "script": "التعليم ليس غالي، بالعكس هو مفيد",
+          "cue": "Education is not expensive; on the contrary, it is useful.",
+          "changed": "what is being reversed — the frame is the same"
+        },
+        {
+          "display": "hādhā al-qarār laysa ṣaʿb, bi-al-ʿaks huwa sahl",
+          "script": "هذا القرار ليس صعب، بالعكس هو سهل",
+          "cue": "This decision is not difficult; on the contrary, it is easy.",
+          "changed": "a decision, and a plain pair of opposites"
+        }
+      ],
+      "mistake": {
+        "display": "as-safar laysa mushkila, lākin huwa al-ḥall",
+        "script": "السفر ليس مشكلة، لكن هو الحل",
+        "why": "lākin only adds a second fact. bi-al-ʿaks says the opposite of the first one is true, which is the whole move: not merely not a problem, but the answer to it."
+      },
+      "usage": "Turning a negative into its opposite in one step — the cheapest reversal in the language, and no one takes offence at it.",
+      "register": "neutral",
+      "mnemonic": "By the opposite — flip it, calmly."
+    },
+    {
+      "id": "L5-M6-S05",
+      "display": "al-mushkila laysat fī al-māl, bal innamā fī al-waqt",
+      "script": "المشكلة ليست في المال، بل إنما في الوقت",
+      "cue": "The problem is not in the money, but rather only in the time.",
+      "literal": "the-problem is-not in the-money, but rather in the-time",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "innamā",
+            "script": "إنما",
+            "cue": "rather, only",
+            "tag": "free",
+            "forms": [
+              "innamā"
+            ],
+            "note": "It narrows to one thing: not X, only Y. It stands behind L4-M4's bal or alone after a negation, and it excludes everything it does not name."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "English but rather does the correcting and nothing else. innamā also EXCLUDES — it says time is the only place the problem is — so a learner who reaches for it casually has claimed more than they meant.",
+      "sound": "in-na-MĀ doubles the n and holds the final ā. bal is one short beat before it, never run together.",
+      "variations": [
+        {
+          "display": "al-mushkila laysat fī al-waqt, bal innamā fī al-ʿamal",
+          "script": "المشكلة ليست في الوقت، بل إنما في العمل",
+          "cue": "The problem is not in the time, but rather only in the work.",
+          "changed": "which two things are set against each other"
+        },
+        {
+          "display": "al-mushkila laysat fī at-taʿlīm, bal innamā fī al-māl",
+          "script": "المشكلة ليست في التعليم، بل إنما في المال",
+          "cue": "The problem is not in education, but rather only in the money.",
+          "changed": "the rejected half — the corrective frame holds"
+        }
+      ],
+      "mistake": {
+        "display": "al-mushkila laysat fī al-māl, innamā laysat fī al-waqt",
+        "script": "المشكلة ليست في المال، إنما ليست في الوقت",
+        "why": "innamā introduces what IS the case, not a second denial. Two negations in a row leave the listener with nothing named, which is the opposite of what the word is for."
+      },
+      "usage": "Correcting where someone has located a problem, when you want the real place named and nothing else left standing.",
+      "register": "neutral",
+      "mnemonic": "bal turns; innamā narrows to one."
+    },
+    {
+      "id": "L5-M6-S06",
+      "display": "attafiq maʿa hādhihi al-fikra, ghayr anna al-iʿtirāḍ qawī",
+      "script": "أتفق مع هذه الفكرة، غير أن الاعتراض قوي",
+      "cue": "I agree with this idea, except that the objection is strong.",
+      "literal": "I-agree with this the-idea, other-than that the-objection strong",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "attafiq",
+            "script": "أتفق",
+            "cue": "I agree",
+            "tag": "free",
+            "forms": [
+              "attafiq"
+            ],
+            "note": "Agreeing with a person or an idea, and it takes maʿa (L1-M5) after it. Saying it first is what makes the ghayr anna behind it a concession rather than a refusal."
+          },
+          {
+            "display": "al-iʿtirāḍ",
+            "script": "الاعتراض",
+            "cue": "the objection",
+            "tag": "free",
+            "forms": [
+              "al-iʿtirāḍ",
+              "iʿtirāḍ"
+            ],
+            "note": "The objection itself, as a thing you can weigh. It opens on a hamza and carries the ʿayn in the middle: i-ʿti-rāḍ."
+          },
+          {
+            "display": "qawī",
+            "script": "قوي",
+            "cue": "strong",
+            "tag": "free",
+            "forms": [
+              "qawī",
+              "qawiyya"
+            ],
+            "note": "Strong, of an argument as much as of a body. qawiyya for a feminine noun: al-ḥujja qawiyya."
+          }
+        ],
+        "rules": [
+          4,
+          8
+        ]
+      },
+      "trap": "English agrees and then says but, which a listener hears as the agreement being withdrawn. Arabic's attafiq … ghayr anna keeps both halves true, and the concession is L4-M4's move, not a new one.",
+      "sound": "at-TA-fiq doubles the t at the front. al-iʿ-ti-RĀḌ has the ʿayn immediately after the opening i, and the ḍ is the heavy d that darkens the ā before it.",
+      "variations": [
+        {
+          "display": "attafiq maʿa hādhihi al-ḥujja, ghayr anna ad-dalīl ḍaʿīf",
+          "script": "أتفق مع هذه الحجة، غير أن الدليل ضعيف",
+          "cue": "I agree with this case, except that the evidence is weak.",
+          "changed": "what is agreed with, and what the objection is about"
+        },
+        {
+          "display": "attafiq maʿa hādhā al-qarār, ghayr anna al-ʿamal ṣaʿb",
+          "script": "أتفق مع هذا القرار، غير أن العمل صعب",
+          "cue": "I agree with this decision, except that the work is difficult.",
+          "changed": "a decision instead of an idea"
+        }
+      ],
+      "mistake": {
+        "display": "attafiq hādhihi al-fikra, ghayr anna al-iʿtirāḍ qawī",
+        "script": "أتفق هذه الفكرة، غير أن الاعتراض قوي",
+        "why": "attafiq needs maʿa. English agree takes its object bare — I agree the idea is wrong — and Arabic agrees WITH: attafiq maʿa, every time."
+      },
+      "usage": "Conceding the point and holding your ground in the same breath, in a discussion you intend to keep.",
+      "register": "neutral",
+      "mnemonic": "I agree WITH — then, except that."
+    },
+    {
+      "id": "L5-M6-S07",
+      "display": "baʿḍ an-nās yaʿtariḍ ʿalā hādhā al-qarār",
+      "script": "بعض الناس يعترض على هذا القرار",
+      "cue": "Some people object to this decision.",
+      "literal": "some the-people objects on this the-decision",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "baʿḍ",
+            "script": "بعض",
+            "cue": "some, some of",
+            "tag": "free",
+            "forms": [
+              "baʿḍ",
+              "al-baʿḍ"
+            ],
+            "note": "Some of a group, and it heads a possessive chain: baʿḍ an-nās, some of the people. al-baʿḍ on its own is some people, with nobody named."
+          },
+          {
+            "display": "yaʿtariḍ",
+            "script": "يعترض",
+            "cue": "he objects",
+            "tag": "free",
+            "forms": [
+              "yaʿtariḍ",
+              "aʿtariḍ"
+            ],
+            "note": "To object, and it takes ʿalā (L1-M7) after it — you object ON a thing. aʿtariḍ is I object, the form you say when the objection is yours."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "baʿḍ an-nās takes a SINGULAR verb — yaʿtariḍ, not a plural — because baʿḍ is the head of the chain and it is one word. English hears some people as plural and reaches for the plural verb.",
+      "sound": "BAʿ-ḍ squeezes the ʿayn shut and lands on the heavy ḍ. ya-ʿTA-riḍ carries an ʿayn and a ḍ in one word: hold both.",
+      "variations": [
+        {
+          "display": "baʿḍ an-nās yaʿtariḍ ʿalā hādhihi al-fikra",
+          "script": "بعض الناس يعترض على هذه الفكرة",
+          "cue": "Some people object to this idea.",
+          "changed": "what is objected to"
+        },
+        {
+          "display": "aʿtariḍ ʿalā hādhā al-qarār",
+          "script": "أعترض على هذا القرار",
+          "cue": "I object to this decision.",
+          "changed": "the objector — the objection becomes yours"
+        }
+      ],
+      "mistake": {
+        "display": "baʿḍ an-nās yaʿtariḍ hādhā al-qarār",
+        "script": "بعض الناس يعترض هذا القرار",
+        "why": "yaʿtariḍ needs ʿalā. Without it the sentence has an object with no preposition, and English object to is exactly the model that hides the missing word."
+      },
+      "usage": "Naming the opposition fairly before you answer it — the honest version of the move S03 does in an imagined voice.",
+      "register": "neutral",
+      "mnemonic": "You object ON something, and only some of the people do."
+    },
+    {
+      "id": "L5-M6-S08",
+      "display": "bi-ikhtiṣār, ad-dalīl qawī wa al-iʿtirāḍ ḍaʿīf",
+      "script": "باختصار، الدليل قوي والاعتراض ضعيف",
+      "cue": "In short, the evidence is strong and the objection is weak.",
+      "literal": "in-brevity, the-evidence strong and the-objection weak",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bi-ikhtiṣār",
+            "script": "باختصار",
+            "cue": "in short, briefly",
+            "tag": "free",
+            "forms": [
+              "bi-ikhtiṣār",
+              "ikhtiṣār"
+            ],
+            "note": "Literally with brevity. It closes a case in conversation and promises that what follows is short — so keep it short."
+          },
+          {
+            "display": "ad-dalīl",
+            "script": "الدليل",
+            "cue": "the evidence, the proof",
+            "tag": "free",
+            "forms": [
+              "ad-dalīl",
+              "dalīl"
+            ],
+            "note": "What you put behind a claim. The d is a sun letter, so the article assimilates: ad-dalīl."
+          },
+          {
+            "display": "ḍaʿīf",
+            "script": "ضعيف",
+            "cue": "weak",
+            "tag": "free",
+            "forms": [
+              "ḍaʿīf",
+              "ḍaʿīfa"
+            ],
+            "note": "Weak, of an argument as much as of a body — the opposite of qawī. ḍaʿīfa for a feminine noun: al-ḥujja ḍaʿīfa."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "English in short often introduces a summary that is not short at all. In Arabic the word is taken at its word: a bi-ikhtiṣār followed by three more sentences reads as a broken promise.",
+      "sound": "bi-ikh-ti-ṢĀR runs the bi straight into the ikh, whose kh is the throat-clearing sound. ḍa-ʿĪF opens on the heavy ḍ and carries an ʿayn in the middle.",
+      "variations": [
+        {
+          "display": "bi-ikhtiṣār, al-fikra jayyida",
+          "script": "باختصار، الفكرة جيدة",
+          "cue": "In short, the idea is good.",
+          "changed": "one closing point instead of two"
+        },
+        {
+          "display": "bi-ikhtiṣār, al-ḥujja qawiyya wa al-iʿtirāḍ ḍaʿīf",
+          "script": "باختصار، الحجة قوية والاعتراض ضعيف",
+          "cue": "In short, the case is strong and the objection is weak.",
+          "changed": "the case rather than the evidence, and its adjective agrees"
+        }
+      ],
+      "mistake": {
+        "display": "bi-ikhtiṣār ad-dalīl qawī wa al-iʿtirāḍ ḍaʿīf",
+        "script": "باختصار الدليل قوي والاعتراض ضعيف",
+        "why": "The marker needs its comma. Without the pause bi-ikhtiṣār attaches to ad-dalīl and reads as the evidence in brief; the comma is what keeps it a signpost over the whole sentence."
+      },
+      "usage": "Closing an argument in speech, where the listener needs to know the end has arrived.",
+      "register": "neutral",
+      "mnemonic": "With brevity — so be brief."
+    },
+    {
+      "id": "L5-M6-S09",
+      "display": "khulāṣat al-qawl, at-taʿlīm ahamm min al-māl",
+      "script": "خلاصة القول، التعليم أهم من المال",
+      "cue": "The upshot is that education is more important than money.",
+      "literal": "summary-of the-saying, the-education more-important than the-money",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khulāṣat al-qawl",
+            "script": "خلاصة القول",
+            "cue": "the upshot, the summary of the matter",
+            "tag": "free",
+            "forms": [
+              "khulāṣat al-qawl",
+              "qawl"
+            ],
+            "note": "The formal close, literally the summary of the saying. It heads a possessive chain, so khulāṣat carries no article of its own; qawl alone is a saying."
+          }
+        ],
+        "rules": [
+          7,
+          0
+        ]
+      },
+      "trap": "An English speaker picks the closer by how long the argument was. Arabic picks it by WHERE: khulāṣat al-qawl belongs to a written or public case and sounds stiff across a table, where bi-ikhtiṣār belongs.",
+      "sound": "khu-LĀ-ṣat al-QAWL opens on the kh and ends on a diphthong, qawl, said as one syllable. The t of khulāṣat is pronounced because a possessive chain follows it.",
+      "variations": [
+        {
+          "display": "khulāṣat al-qawl, as-safar mufīd",
+          "script": "خلاصة القول، السفر مفيد",
+          "cue": "The upshot is that travel is useful.",
+          "changed": "the conclusion being drawn"
+        },
+        {
+          "display": "khulāṣat al-qawl, hādhā al-qarār ṣaḥīḥ",
+          "script": "خلاصة القول، هذا القرار صحيح",
+          "cue": "The upshot is that this decision is correct.",
+          "changed": "a verdict on a decision rather than a comparison"
+        }
+      ],
+      "mistake": {
+        "display": "al-khulāṣat al-qawl, at-taʿlīm ahamm min al-māl",
+        "script": "الخلاصة القول، التعليم أهم من المال",
+        "why": "In a possessive chain only the last word takes the article. khulāṣat al-qawl is already definite, and an al- on the first word breaks the chain — the same rule L5-M5 met with asās al-mujtamaʿ."
+      },
+      "usage": "Ending a written argument, a formal reply, or a case made in front of an audience.",
+      "register": "formal",
+      "mnemonic": "The summary OF the saying — one article, at the end."
+    },
+    {
+      "id": "L5-M6-S10",
+      "display": "awwalan, al-ḥujja qawiyya. wa akhīran, laysa hunāka iʿtirāḍ",
+      "script": "أولًا، الحجة قوية. وأخيرًا، ليس هناك اعتراض",
+      "cue": "First, the case is strong. And finally, there is no objection.",
+      "literal": "firstly, the-case strong. and finally, is-not there objection",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "al-ḥujja",
+            "script": "الحجة",
+            "cue": "the case, the argument",
+            "tag": "free",
+            "forms": [
+              "al-ḥujja",
+              "ḥujja"
+            ],
+            "note": "The argument you actually make, as against ad-dalīl, the evidence you make it with. A ḥujja can be qawiyya or ḍaʿīfa; a dalīl is either there or not."
+          }
+        ],
+        "rules": [
+          0,
+          8
+        ]
+      },
+      "trap": "English finally often means at last, with relief in it. akhīran here is the last rung of the ladder awwalan opened, and it belongs to the structure rather than to your feelings about reaching the end.",
+      "sound": "al-ḤUJ-ja doubles the j and opens on the tight throat-h. LAY-sa hu-NĀ-ka keeps its three beats separate.",
+      "variations": [
+        {
+          "display": "awwalan, ad-dalīl qawī. wa akhīran, laysa hunāka iʿtirāḍ",
+          "script": "أولًا، الدليل قوي. وأخيرًا، ليس هناك اعتراض",
+          "cue": "First, the evidence is strong. And finally, there is no objection.",
+          "changed": "the evidence rather than the case, in the first slot"
+        },
+        {
+          "display": "awwalan, al-ḥujja qawiyya. thāniyan, laysa hunāka iʿtirāḍ",
+          "script": "أولًا، الحجة قوية. ثانيًا، ليس هناك اعتراض",
+          "cue": "First, the case is strong. Second, there is no objection.",
+          "changed": "the closing rung — thāniyan continues, akhīran ends"
+        }
+      ],
+      "mistake": {
+        "display": "awwalan, al-ḥujja qawī. wa akhīran, laysa hunāka iʿtirāḍ",
+        "script": "أولًا، الحجة قوي. وأخيرًا، ليس هناك اعتراض",
+        "why": "ḥujja is feminine, so its adjective must be too: qawiyya. The masculine qawī goes with dalīl, and the pair is the easiest agreement slip in the module."
+      },
+      "usage": "The last two rungs of a case, when you want the listener to know it has been closed and nothing is outstanding.",
+      "register": "neutral",
+      "mnemonic": "Open with awwalan, shut the door with akhīran."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M6-C01",
+      "display": "awwalan, al-fikra jayyida",
+      "script": "أولًا، الفكرة جيدة",
+      "cue": "First, the idea is good."
+    },
+    {
+      "id": "L5-M6-C02",
+      "display": "min nāḥiya, al-ʿamal muhimm",
+      "script": "من ناحية، العمل مهم",
+      "cue": "On the one hand, work is important."
+    },
+    {
+      "id": "L5-M6-C03",
+      "display": "ghayr anna at-taʿlīm ghālī",
+      "script": "غير أن التعليم غالي",
+      "cue": "Except that education is expensive."
+    },
+    {
+      "id": "L5-M6-C04",
+      "display": "bi-al-ʿaks, hādhā al-qarār jayyid",
+      "script": "بالعكس، هذا القرار جيد",
+      "cue": "On the contrary, this decision is good."
+    },
+    {
+      "id": "L5-M6-C05",
+      "display": "bi-ikhtiṣār, ad-dalīl qawī",
+      "script": "باختصار، الدليل قوي",
+      "cue": "In short, the evidence is strong."
+    },
+    {
+      "id": "L5-M6-C06",
+      "display": "attafiq maʿa hādhihi al-ḥujja",
+      "script": "أتفق مع هذه الحجة",
+      "cue": "I agree with this case."
+    },
+    {
+      "id": "L5-M6-C07",
+      "display": "baʿḍ an-nās yaʿtariḍ",
+      "script": "بعض الناس يعترض",
+      "cue": "Some people object."
+    },
+    {
+      "id": "L5-M6-C08",
+      "display": "khulāṣat al-qawl, as-safar mufīd",
+      "script": "خلاصة القول، السفر مفيد",
+      "cue": "The upshot is that travel is useful."
+    },
+    {
+      "id": "L5-M6-C09",
+      "display": "thālithan, at-tajriba ahamm",
+      "script": "ثالثًا، التجربة أهم",
+      "cue": "Third, the experience is more important."
+    },
+    {
+      "id": "L5-M6-C10",
+      "display": "al-mushkila laysat fī al-māl",
+      "script": "المشكلة ليست في المال",
+      "cue": "The problem is not in the money."
+    },
+    {
+      "id": "L5-M6-C11",
+      "display": "qad yaqūl qāʾil inna al-ʿamal ṣaʿb",
+      "script": "قد يقول قائل إن العمل صعب",
+      "cue": "Someone may say that the work is difficult."
+    },
+    {
+      "id": "L5-M6-C12",
+      "display": "innamā al-ḥall huwa al-waqt",
+      "script": "إنما الحل هو الوقت",
+      "cue": "Rather, the solution is time."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 3
+  }
+}

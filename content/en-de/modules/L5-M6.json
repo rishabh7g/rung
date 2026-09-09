@@ -1,0 +1,507 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M6",
+  "title": "Arguing a position",
+  "job": "A structured case, objections answered",
+  "prerequisites": ["L5-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 6,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["present"],
+    "allowedPatterns": [
+      "Meine These ist + , + dass + <verb-final>",
+      "Erstens + V-2 + <Rest> + . + Zweitens + V-2 + <Rest>",
+      "Man könnte einwenden + , + dass + <verb-final> + . + Aber + <Klausel>",
+      "Er behauptet + , + er könne + <Infinitiv>",
+      "Zusammenfassend + V-2 + ich + <Rest>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "DISCOURSE SCAFFOLDING IS A SET OF ORDINARY ADVERBS, AND THE VERB-SECOND LAW OF L1-M4 GOVERNS EVERY ONE OF THEM. Erstens, zweitens, drittens, folglich, somit, allerdings, jedoch, abschließend and zusammenfassend all count as the first field of the sentence, so the finite verb comes immediately after them and the subject slides behind it: Erstens KOMMEN am Samstag mehr Leute, Folglich MÜSSEN wir öffnen. Three families that learners merge and this module keeps apart — ordinals that count the reasons, connectives that mark a consequence (folglich, somit), and connectives that mark a turn (allerdings, jedoch, im Gegenteil)."
+    },
+    {
+      "tag": "delta",
+      "text": "THE REPORTED CLAIM: er könne. German marks that the words are somebody else's, and the responsibility not yours, by putting the reported verb in Konjunktiv I — the -e ending on the stem: er könne, and by the same rule er müsse and er wolle, which this course names and never writes. sein already has its Konjunktiv I in L4-M7 as sei and seien, so nothing is re-opened here. The clause after behaupten takes no dass when the mood is doing the work: Er behauptet, er könne nicht arbeiten — verb second, not verb final."
+    },
+    {
+      "tag": "interference",
+      "text": "however CAN SIT ALMOST ANYWHERE IN ENGLISH; jedoch AND allerdings CANNOT. They are counted words in the German sentence, so whatever follows them is the verb, and a comma-spliced however produces a word-order ERROR rather than a stylistic wobble. Two safe placements: at the front, taking the first field (Allerdings kostet das Geld), or directly after the finite verb (Das kostet jedoch Geld). What you may not do is drop one in front of a subject and leave the verb where it was."
+    },
+    {
+      "tag": "interference",
+      "text": "im Gegenteil IS NOT on the contrary. English on the contrary corrects a fact and is mild; German im Gegenteil contradicts a whole NEGATIVE claim and reverses it — somebody has said the thing is bad, and you answer that it is the opposite. Used after a neutral statement it sounds like an accusation. If all you want is to correct a detail, the word is nicht … sondern, which is L4-M6's."
+    },
+    {
+      "tag": "free",
+      "text": "GERMAN CONCEDES IN A MAIN CLAUSE, ENGLISH IN A SUBORDINATE ONE. English builds a concession one clause deep (Although the office is expensive, …); German prefers a signposted main clause and a full stop (Das kostet Geld. Allerdings …). Angenommen and es sei denn are the two exceptions that open a clause, and both are worth learning whole: angenommen, plus a normal verb-second clause, and es sei denn, which is three tokens and one word."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M6-S01",
+      "display": "Meine These ist, dass das Büro am Samstag öffnen muss.",
+      "cue": "My argument is that the office has to open on Saturday.",
+      "literal": "My thesis is, that the office on-the Saturday open must.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "These",
+            "cue": "thesis, claim",
+            "tag": "delta",
+            "forms": ["These"],
+            "note": "Feminine, two syllables, TAY-zuh. It is the claim you are about to defend, not a scientific hypothesis — Meine These ist, dass … is how a case opens."
+          },
+          {
+            "display": "Standpunkt",
+            "cue": "position, standpoint",
+            "tag": "free",
+            "forms": ["Standpunkt"],
+            "note": "The position itself, where These is the sentence that states it. Masculine, and it opens the same frame: Mein Standpunkt ist, dass …"
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "dass sends the verb to the end, and this frame puts two verbs there: öffnen muss, infinitive first, finite verb last. English keeps has to open together and in the middle, so the hand wants to write muss öffnen.",
+      "sound": "MY-nuh TAY-zuh ist, dass das bue-ROH am ZAM-stahk UHF-nen muss — These is TAY-zuh with a voiced s, and the pause at the comma is where the listener knows a claim is coming.",
+      "variations": [
+        {
+          "display": "Mein Standpunkt ist, dass das Büro am Samstag öffnen muss.",
+          "cue": "My position is that the office has to open on Saturday.",
+          "changed": "These becomes Standpunkt, and the possessive loses its -e because Standpunkt is masculine. Nothing else moves: the frame is the same."
+        }
+      ],
+      "mistake": {
+        "display": "Meine These ist, dass das Büro muss am Samstag öffnen",
+        "why": "The finite verb has been left in second position inside a dass-clause. In a subordinate clause it goes last of all, behind the infinitive: … am Samstag öffnen muss."
+      },
+      "usage": "The opening move of a structured case — a meeting, an email, an exam answer. It commits you, so it is followed by reasons and not by a hedge.",
+      "register": "formal",
+      "mnemonic": "These states it, Standpunkt is where you are standing while you say it."
+    },
+    {
+      "id": "L5-M6-S02",
+      "display": "Erstens kommen am Samstag mehr Leute in die Stadt, zum Beispiel Familien.",
+      "cue": "Firstly, more people come into town on Saturday, families for example.",
+      "literal": "Firstly come on-the Saturday more people into the town, to-the example families.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "erstens",
+            "cue": "firstly",
+            "tag": "delta",
+            "forms": ["erstens"],
+            "note": "Counts a reason, never a thing — first place in a queue is der erste. It takes the first field, so the verb follows it directly: Erstens kommen …"
+          },
+          {
+            "display": "zum Beispiel",
+            "cue": "for example",
+            "tag": "free",
+            "forms": ["zum Beispiel"],
+            "note": "Learned whole. It does not take a field of its own, so it can sit after a comma without moving the verb, exactly as English for example does."
+          },
+          {
+            "display": "Beispiel",
+            "cue": "example",
+            "tag": "free",
+            "forms": ["Beispiel"],
+            "note": "Neuter, das Beispiel. On its own it is the example itself: Ein Beispiel: die Familien. Inside zum Beispiel it is fused into the phrase and is not tapped separately."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English lets firstly sit outside the sentence, with a comma: Firstly, more people come. German counts it as the first field, so no comma and the verb straight after — Erstens kommen. A comma there is the commonest error in a written case.",
+      "sound": "AIR-stens KOM-men am ZAM-stahk mair LOY-tuh in dee SHTAT, tsoom BY-shpeel fah-MEE-lee-en — erstens has the same -tens ending as zweitens and drittens, which is what makes the three audible as a set.",
+      "variations": [
+        {
+          "display": "Erstens kommen am Samstag mehr Leute in die Stadt. Ein Beispiel: die Familien.",
+          "cue": "Firstly, more people come into town on Saturday. One example: families.",
+          "changed": "zum Beispiel becomes a sentence of its own with the bare noun. The colon does what the comma did, and the example is given more weight."
+        }
+      ],
+      "mistake": {
+        "display": "Erstens, am Samstag kommen mehr Leute in die Stadt",
+        "why": "The comma pushes erstens outside the sentence and leaves am Samstag holding the first field. German has erstens IN the sentence, taking that field itself: Erstens kommen am Samstag …"
+      },
+      "usage": "The first numbered reason. Once you say erstens a German listener is waiting for zweitens, so do not start counting unless you have at least two.",
+      "register": "neutral",
+      "mnemonic": "erstens, zweitens, drittens — the -tens ending is the counting, and the verb comes next every time."
+    },
+    {
+      "id": "L5-M6-S03",
+      "display": "Zweitens haben viele Kollegen unter der Woche keine Zeit. Allerdings kostet das Geld.",
+      "cue": "Secondly, many colleagues have no time during the week. It costs money, though.",
+      "literal": "Secondly have many colleagues under the week no time. However costs that money.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zweitens",
+            "cue": "secondly",
+            "tag": "delta",
+            "forms": ["zweitens"],
+            "note": "The second numbered reason, built like erstens and taking the first field the same way: Zweitens haben viele Kollegen …"
+          },
+          {
+            "display": "allerdings",
+            "cue": "however, mind you",
+            "tag": "interference",
+            "forms": ["allerdings"],
+            "note": "Concedes something against your own case, which is why it is the honest one. It is a counted word: Allerdings kostet das Geld, verb second."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "English however is punctuation-light and can be dropped in anywhere: It costs money, however. German allerdings is a word in the field, so putting it at the very end after a comma is not idiomatic — it goes first, or straight after the finite verb.",
+      "sound": "TSVY-tens HAH-ben FEE-luh ko-LAY-gen UN-ter dair VOKH-uh KY-nuh tsyt. AL-er-dings KOS-tet das gelt — allerdings carries its stress on the first syllable, which is what makes the turn audible.",
+      "variations": [
+        {
+          "display": "Zweitens haben viele Kollegen unter der Woche keine Zeit.",
+          "cue": "Secondly, many colleagues have no time during the week.",
+          "changed": "The concession drops away and only the reason is left. Useful when you are still building and not yet answering."
+        }
+      ],
+      "mistake": {
+        "display": "Zweitens, viele Kollegen haben keine Zeit unter der Woche",
+        "why": "Two errors from one English habit: the comma after zweitens, and the verb left in third place behind it. Zweitens takes the field, so haben comes next."
+      },
+      "usage": "The second reason plus an honest concession in the same breath — the move that makes a case sound considered rather than sold.",
+      "register": "neutral",
+      "mnemonic": "allerdings admits it: you concede the point before your opponent gets to make it."
+    },
+    {
+      "id": "L5-M6-S04",
+      "display": "Drittens haben wir dafür einen Beleg aus dem letzten Jahr.",
+      "cue": "Thirdly, we have evidence for it from last year.",
+      "literal": "Thirdly have we for-that a proof out-of the last year.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "drittens",
+            "cue": "thirdly",
+            "tag": "delta",
+            "forms": ["drittens"],
+            "note": "The third and, in most spoken German, the last of the counted reasons. Same shape as erstens and zweitens, same first field, same verb straight after."
+          },
+          {
+            "display": "Beleg",
+            "cue": "evidence, a piece of proof",
+            "tag": "free",
+            "forms": ["Beleg"],
+            "note": "Masculine, and countable: einen Beleg is ONE piece of evidence, not evidence in general. It is also the everyday word for a receipt, which is the same idea."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English evidence is a mass noun and takes no article: we have evidence. German der Beleg is countable and needs one — einen Beleg, zwei Belege — so a bare Beleg after haben reads as unfinished.",
+      "sound": "DRIT-tens HAH-ben veer da-FUER Y-nen buh-LAYK ows daym LETS-ten yahr — Beleg has its stress on the second syllable and its final g hardens to a k.",
+      "variations": [
+        {
+          "display": "Drittens haben wir dafür einen Beleg.",
+          "cue": "Thirdly, we have evidence for it.",
+          "changed": "The source drops out. The claim is weaker without it, which is exactly what a listener will notice and ask about."
+        }
+      ],
+      "mistake": {
+        "display": "Drittens wir haben dafür einen Beleg",
+        "why": "drittens is the first field, so the verb has to be second: Drittens haben wir. Leaving wir in front of haben is the same error the other two ordinals invite."
+      },
+      "usage": "The reason you can point at. In a meeting it is the one that ends the argument, so it is worth saving for third rather than spending first.",
+      "register": "neutral",
+      "mnemonic": "A Beleg is a receipt for your claim — one piece of paper, one article in front of it."
+    },
+    {
+      "id": "L5-M6-S05",
+      "display": "Folglich müssen wir das Büro am Samstag öffnen.",
+      "cue": "Consequently we have to open the office on Saturday.",
+      "literal": "Consequently must we the office on-the Saturday open.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "folglich",
+            "cue": "consequently, it follows that",
+            "tag": "delta",
+            "forms": ["folglich"],
+            "note": "Marks a conclusion that FOLLOWS from what you just said, not merely a next thing. Heavier than deshalb (L1-M9), and it takes the first field."
+          },
+          {
+            "display": "somit",
+            "cue": "thus, and so",
+            "tag": "free",
+            "forms": ["somit"],
+            "note": "The same job as folglich and a shade more formal — a written closing move. Both are counted words, so the verb comes straight after either one."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English so is a conjunction and leaves the word order alone: so we have to open. German folglich and somit are adverbs in the first field, so the verb jumps in front of the subject: folglich MÜSSEN WIR.",
+      "sound": "FOLK-likh MUES-sen veer das bue-ROH am ZAM-stahk UHF-nen — the -lich ending is the soft ikh, never a k, and folglich carries its stress at the front.",
+      "variations": [
+        {
+          "display": "Somit müssen wir das Büro am Samstag öffnen.",
+          "cue": "Thus we have to open the office on Saturday.",
+          "changed": "folglich becomes somit — the same conclusion in a more written register. The verb still comes second, which is the point of the pair."
+        }
+      ],
+      "mistake": {
+        "display": "Folglich wir müssen das Büro am Samstag öffnen",
+        "why": "Treated as if it were English so. It is an adverb holding the first field, so the finite verb müssen must come second and wir goes behind it."
+      },
+      "usage": "The line that closes the reasons and opens the conclusion. Say it once in a case — twice and it stops sounding like a conclusion.",
+      "register": "formal",
+      "mnemonic": "folglich follows — and the verb follows folglich."
+    },
+    {
+      "id": "L5-M6-S06",
+      "display": "Man könnte einwenden, dass die Kollegen am Samstag frei haben wollen.",
+      "cue": "One could object that the colleagues want to have Saturday off.",
+      "literal": "One could object, that the colleagues on-the Saturday free have want.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "einwenden",
+            "cue": "to object, to raise an objection",
+            "tag": "free",
+            "forms": ["einwenden"],
+            "note": "Separable — ich wende ein — but in this frame it stays whole behind könnte, which is why the module teaches it as an infinitive only."
+          },
+          {
+            "display": "Einwand",
+            "cue": "an objection",
+            "tag": "free",
+            "forms": ["Einwand"],
+            "note": "Masculine, der Einwand. It is one specific objection somebody could make, not disagreement in general."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English raises an objection with a person: someone might object. German prefers the impersonal man könnte einwenden, which raises the objection without giving it an owner — and that is precisely why it is safe to use about the person sitting opposite you.",
+      "sound": "man KUENT-uh YN-ven-den, dass dee ko-LAY-gen am ZAM-stahk fry HAH-ben VOL-len — einwenden has its stress on the separable prefix, EIN, which is how you hear that it is separable.",
+      "variations": [
+        {
+          "display": "Dieser Einwand kommt oft.",
+          "cue": "This objection comes up often.",
+          "changed": "The verb becomes the noun and the objection is now a thing you can point at, which is what lets the next sentence answer it."
+        }
+      ],
+      "mistake": {
+        "display": "Man könnte einwenden, dass die Kollegen wollen am Samstag frei haben",
+        "why": "The dass-clause has three verbs and they all go to the end, in the order frei haben wollen. Leaving wollen in second position is the English word order surviving into a German subordinate clause."
+      },
+      "usage": "Raising your opponent's objection yourself, before they do. In German argument culture this reads as strength, not as weakness.",
+      "register": "formal",
+      "mnemonic": "You throw the objection IN — ein-wenden — so that you can answer it on your own terms."
+    },
+    {
+      "id": "L5-M6-S07",
+      "display": "Dieses Gegenargument kann ich jedoch widerlegen.",
+      "cue": "I can refute this counter-argument, however.",
+      "literal": "This counter-argument can I however refute.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jedoch",
+            "cue": "however",
+            "tag": "interference",
+            "forms": ["jedoch"],
+            "note": "Written-register however. Here it sits after the finite verb rather than at the front, which is its second legal spot — never in front of an unmoved subject."
+          },
+          {
+            "display": "widerlegen",
+            "cue": "to refute, to disprove",
+            "tag": "free",
+            "forms": ["widerlegen"],
+            "note": "wider means against, and this wider has no h — wieder with an ie is L3-M10's again. Not separable, so it stays whole at the end of the clause."
+          },
+          {
+            "display": "Gegenargument",
+            "cue": "counter-argument",
+            "tag": "free",
+            "forms": ["Gegenargument"],
+            "note": "Neuter, das Gegenargument, built straight onto L4-M4's Argument. An Einwand is raised in passing; a Gegenargument is built to stand."
+          },
+          {
+            "display": "im Gegenteil",
+            "cue": "on the contrary, quite the opposite",
+            "tag": "interference",
+            "forms": ["im Gegenteil"],
+            "note": "Learned whole. It reverses a NEGATIVE claim somebody has just made; after a neutral statement it lands as a rebuke."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "widerlegen and wieder are one letter apart and mean nothing like each other. wider — against — has no i-e; wieder — again — does. Say the sentence out loud and the vowel is short in the first and long in the second.",
+      "sound": "DEE-zes GAY-gen-ar-goo-ment kan ikh yay-DOKH VEE-der-lay-gen — jedoch takes its stress at the back, yay-DOKH, and widerlegen at the front.",
+      "variations": [
+        {
+          "display": "Im Gegenteil, dieses Gegenargument ist gut für meine These.",
+          "cue": "On the contrary, this counter-argument is good for my argument.",
+          "changed": "Instead of refuting the objection you turn it around and use it. im Gegenteil is what signals the reversal, and it only works because the objection was a negative claim."
+        }
+      ],
+      "mistake": {
+        "display": "Dieses Gegenargument jedoch ich kann widerlegen",
+        "why": "jedoch has been dropped in front of the subject with the verb left where it was. It goes either first in the sentence or directly after the finite verb — here, kann ich jedoch."
+      },
+      "usage": "The turn in a case: you have stated the objection, and this is the sentence that answers it. Keep it short — a long refutation sounds defensive.",
+      "register": "formal",
+      "mnemonic": "wider is against, wieder is again — you argue AGAINST a claim, you do not argue it AGAIN."
+    },
+    {
+      "id": "L5-M6-S08",
+      "display": "Er behauptet, er könne am Samstag nicht arbeiten.",
+      "cue": "He claims he cannot work on Saturday.",
+      "literal": "He claims, he could-say on-the Saturday not work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "behaupten",
+            "cue": "to claim, to assert",
+            "tag": "delta",
+            "forms": ["behaupten", "behauptet"],
+            "note": "Cooler than English claim and much cooler than to allege: it states that the words are his, and leaves whether they are true entirely open."
+          },
+          {
+            "display": "Behauptung",
+            "cue": "a claim, an assertion",
+            "tag": "free",
+            "forms": ["Behauptung"],
+            "note": "Feminine, die Behauptung — the claim as a thing on the table. Every -ung noun in German is feminine, which is one of the few reliable gender rules."
+          },
+          {
+            "display": "könne",
+            "cue": "(he) can — reported",
+            "tag": "delta",
+            "forms": ["könne"],
+            "note": "Konjunktiv I of können: the -e says these are HIS words, not yours. müsse and wolle are built the same way; sein already has sei from L4-M7."
+          }
+        ],
+        "rules": [1]
+      },
+      "trap": "English marks reported speech by backshifting the tense — he said he COULD not work — and German does not. It marks it with the mood instead, and the tense stays present: er könne, not er konnte. Writing er kann is not wrong, it just quietly makes the claim yours.",
+      "sound": "air buh-HOWP-tet, air KUEN-nuh am ZAM-stahk nikht AR-by-ten — könne is two syllables with a short ue, and the little -uh at the end is the whole grammatical signal.",
+      "variations": [
+        {
+          "display": "Seine Behauptung überzeugt mich nicht.",
+          "cue": "His claim does not convince me.",
+          "changed": "The verb becomes the noun and you step back in as the judge of it. This is the sentence that follows the reported claim, once you have let it stand."
+        }
+      ],
+      "mistake": {
+        "display": "Er behauptet, dass er kann am Samstag nicht arbeiten",
+        "why": "Two things at once. With dass the verb goes to the end; without dass the verb stays second and the mood does the reporting. Pick one frame — here, er könne … nicht arbeiten, no dass."
+      },
+      "usage": "Quoting an opponent fairly, immediately before you answer them. A German listener hears könne as scrupulous, not as sarcastic.",
+      "register": "formal",
+      "mnemonic": "The -e on könne is the pair of quotation marks German does not write."
+    },
+    {
+      "id": "L5-M6-S09",
+      "display": "Angenommen, wir öffnen nicht: dann kommen die Kunden nicht mehr.",
+      "cue": "Suppose we do not open: then the customers stop coming.",
+      "literal": "Assumed, we open not: then come the customers not more.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "angenommen",
+            "cue": "suppose, assuming",
+            "tag": "free",
+            "forms": ["angenommen"],
+            "note": "Opens a supposition and, unlike wenn, leaves the clause after it in normal verb-second order: Angenommen, wir öffnen nicht."
+          },
+          {
+            "display": "es sei denn",
+            "cue": "unless",
+            "tag": "free",
+            "forms": ["es sei denn"],
+            "note": "Three words, one conjunction, learned whole — the sei inside it is L4-M7's Konjunktiv I and is not tapped separately. The clause after it stays verb-second."
+          }
+        ],
+        "rules": [4]
+      },
+      "trap": "English suppose is followed by an ordinary clause and so is angenommen — which is exactly why learners then write wenn out of habit and send the verb to the end. Angenommen, wir öffnen nicht is right; Angenommen, wir nicht öffnen is not.",
+      "sound": "AN-guh-nom-men, veer UHF-nen nikht: dan KOM-men dee KUN-den nikht mair — the colon is a real pause, and dann takes the first field of the second half so kommen follows it.",
+      "variations": [
+        {
+          "display": "Wir öffnen am Samstag, es sei denn, der Chef sagt nein.",
+          "cue": "We open on Saturday, unless the boss says no.",
+          "changed": "The supposition becomes an exception. es sei denn is fixed in that order and needs a comma in front of it and a normal clause behind it."
+        }
+      ],
+      "mistake": {
+        "display": "Angenommen, dass wir nicht öffnen, dann kommen die Kunden nicht mehr",
+        "why": "angenommen already does the work of dass, and adding it sends the verb to the end for no reason. One or the other, and in speech it is always angenommen alone."
+      },
+      "usage": "Walking a listener through the cost of saying no. It is the polite way to make a threat, which is why it belongs in a meeting rather than in a letter.",
+      "register": "neutral",
+      "mnemonic": "angenommen assumes, es sei denn excepts — one opens the door, the other keeps one open."
+    },
+    {
+      "id": "L5-M6-S10",
+      "display": "Zusammenfassend ist mein Fazit: Das Büro öffnet am Samstag.",
+      "cue": "To sum up, my conclusion is this: the office opens on Saturday.",
+      "literal": "Summarising is my conclusion: the office opens on-the Saturday.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "zusammenfassend",
+            "cue": "to sum up, in summary",
+            "tag": "free",
+            "forms": ["zusammenfassend"],
+            "note": "Literally summarising. It takes the first field like every other signpost here, so the verb comes straight after it."
+          },
+          {
+            "display": "abschließend",
+            "cue": "finally, in closing",
+            "tag": "free",
+            "forms": ["abschließend"],
+            "note": "Marks the LAST thing you will say, where zusammenfassend marks a summary of what you already said. A speaker who says both has said neither."
+          },
+          {
+            "display": "Fazit",
+            "cue": "conclusion, upshot",
+            "tag": "free",
+            "forms": ["Fazit"],
+            "note": "Neuter, das Fazit — the one-line verdict at the end. Ordinary in a meeting or an email, and not at all bookish."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "English finally often just means at last, after a wait. German abschließend never does — it means in closing, and only a speaker who is genuinely about to stop may use it. For at last the word is endlich, which is L3-M10's.",
+      "sound": "tsoo-ZAM-men-fas-send ist myn FAH-tsit: das bue-ROH UHF-net am ZAM-stahk — Fazit is FAH-tsit, stress at the front, and the z is a ts.",
+      "variations": [
+        {
+          "display": "Abschließend ist mein Fazit: Das Büro öffnet am Samstag.",
+          "cue": "In closing, my conclusion is this: the office opens on Saturday.",
+          "changed": "zusammenfassend becomes abschließend — summing up becomes stopping. Use it only for the genuinely last sentence."
+        }
+      ],
+      "mistake": {
+        "display": "Zusammenfassend mein Fazit ist: Das Büro öffnet am Samstag",
+        "why": "The signpost takes the first field, so the verb ist must come second: Zusammenfassend IST mein Fazit. This is the same rule as erstens and folglich, arriving one last time."
+      },
+      "usage": "The close of a case, and the sentence a listener will repeat back. Make it a single clause with no hedge in it.",
+      "register": "formal",
+      "mnemonic": "Zusammenfassend gathers it together; abschließend shuts the door behind it."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L5-M6-C01", "display": "Meine These ist einfach.", "cue": "My argument is simple." },
+    { "id": "L5-M6-C02", "display": "Erstens haben wir dafür einen Grund.", "cue": "Firstly, we have a reason for it." },
+    { "id": "L5-M6-C03", "display": "Zweitens kommen am Samstag mehr Leute in die Stadt.", "cue": "Secondly, more people come into town on Saturday." },
+    { "id": "L5-M6-C04", "display": "Drittens ist das nur ein Beispiel.", "cue": "Thirdly, that is only one example." },
+    { "id": "L5-M6-C05", "display": "Folglich müssen wir das Büro öffnen.", "cue": "Consequently we have to open the office." },
+    { "id": "L5-M6-C06", "display": "Somit haben wir einen Beleg.", "cue": "Thus we have evidence." },
+    { "id": "L5-M6-C07", "display": "Man könnte einwenden, dass wir keine Zeit haben.", "cue": "One could object that we have no time." },
+    { "id": "L5-M6-C08", "display": "Dieser Einwand ist ein Gegenargument.", "cue": "This objection is a counter-argument." },
+    { "id": "L5-M6-C09", "display": "Er behauptet, er könne nicht kommen.", "cue": "He claims he cannot come." },
+    { "id": "L5-M6-C10", "display": "Seine Behauptung kann ich jedoch widerlegen.", "cue": "I can refute his claim, however." },
+    { "id": "L5-M6-C11", "display": "Angenommen, wir öffnen am Samstag.", "cue": "Suppose we open on Saturday." },
+    { "id": "L5-M6-C12", "display": "Zusammenfassend ist das mein Standpunkt.", "cue": "To sum up, that is my position." }
+  ],
+  "exitTest": { "generateCount": 2, "comprehendCount": 4 }
+}

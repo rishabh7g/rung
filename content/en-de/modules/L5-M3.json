@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M3",
+  "title": "How they say it there",
+  "job": "Regional and generational speech; what marks an outsider",
+  "prerequisites": [
+    "L5-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "present"
+    ],
+    "allowedPatterns": [
+      "In + <Region> + sagt man + <Wort>",
+      "<regionaler Gruß> + , + ich hätte gern + <Akk>",
+      "Das ist + <Dialekt> + , + nicht + Hochdeutsch",
+      "Bei uns + heißt das + <Wort>",
+      "Er spricht + mit + <Dat> + Akzent"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "GERMAN VARIATION IS LEXICAL SUBSTITUTION, NOT ACCENT. One slot in the sentence changes and the frame around it does not move: Brötchen becomes Semmel, Tüte becomes Sackerl, Guten Tag becomes Grüß Gott or Moin. That is why this module is cheap to learn and why it is safe to use — you are swapping a word inside a sentence you already own, not performing a voice. Every display here stays in Hochdeutsch orthography; the pronunciation lives in the sound line."
+    },
+    {
+      "tag": "interference",
+      "text": "Grüß Gott IS NOT INFORMAL, AND THIS INVERTS YOUR DEFAULT. An anglophone reads a regional form as casual and reaches for the textbook form to be safe. In Bavaria and Austria Grüß Gott is the neutral all-day greeting to a stranger, and Guten Tag is the marked, distancing choice. Moin in the north is the same: not slang, just what is said. The textbook German you learned is itself a register with a location on the map."
+    },
+    {
+      "tag": "free",
+      "text": "NO DISPLAY IN THIS MODULE WRITES A DIALECT VERB, A DIALECT CASE OR A DIALECT ARTICLE. Southern speech is structurally deeper than an English speaker expects — a real dialect can be hard for a northern German — and none of that is taught here. What you get is recognition plus one safe production choice: hear where a sentence is from, and pick the greeting that fits the place you are standing in."
+    },
+    {
+      "tag": "delta",
+      "text": "AUSTRIAN AND SWISS STANDARD GERMAN ARE STANDARDS, NOT DEVIATIONS. Each has its own dictionary and its own official vocabulary; Sackerl is not a broken Tüte, it is the Austrian word. Treat Österreich and die Schweiz as centres, not as edges — the same way British and American English are two standards rather than one plus an error."
+    },
+    {
+      "tag": "free",
+      "text": "THE ADDRESS IS THE ONE THING THAT VARIES BY PERSON, NOT BY PLACE. duzen and siezen are the verbs for it, and the safe rule is unchanged: follow the person opposite you. The plural you — ihr — is real German and this course does not write it, because ihr already carries L1-M2's possessive row and a second reading would send your tap to the wrong note. Recognise it when you hear it; keep producing du or Sie."
+    },
+    {
+      "tag": "free",
+      "text": "WHAT THIS MODULE POINTS AT RATHER THAN RE-TEACHES. halt, the southern twin of eben, is L4-M5's and was already yours. The southern preference for the Perfekt in writing is L4-M8's usage note. The formal register of counters and announcements is L4-M7's. And the slang here is deliberately old — krass and echt have decades behind them, where this year's marker would date the course inside a year."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M3-S01",
+      "display": "Im Süden sagt man Grüß Gott.",
+      "cue": "In the south people say Grüß Gott.",
+      "literal": "In-the south says one Greet God.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Süden",
+            "cue": "the south",
+            "tag": "free",
+            "forms": [
+              "Süden"
+            ],
+            "note": "The compass region as a noun, and it takes im — in dem. Norden is its twin; the module writes both and never a dialect spelling."
+          },
+          {
+            "display": "Grüß Gott",
+            "cue": "hello (southern and Austrian)",
+            "tag": "free",
+            "forms": [
+              "Grüß Gott"
+            ],
+            "note": "Learned whole, two words, capital G on both. Literally greet God, but it is heard as neutral hello, not as anything religious."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "An anglophone hears a greeting that mentions God and files it as either old-fashioned or devout. It is neither: south of the Main it is what you say to a stranger at nine in the morning, and Guten Tag there is the odd one.",
+      "sound": "im ZUE-den zaakt man grooss GOT — Süden's ü is a long ee said with rounded lips, and the phrase puts all its weight on Gott, with the Grüß almost swallowed.",
+      "variations": [
+        {
+          "display": "Im Norden sagt man das nicht.",
+          "cue": "In the north people do not say that.",
+          "changed": "The region flips and the claim turns negative — the same frame, which is the whole point: only the slot moves."
+        }
+      ],
+      "mistake": {
+        "display": "In Süden sagt man Grüß Gott",
+        "why": "Regions take im, not bare in: im Süden, im Norden. in Süden is the same error as saying in south in English."
+      },
+      "usage": "Naming where a word belongs, to yourself or to someone else, before you use it.",
+      "register": "neutral",
+      "mnemonic": "Süden has the ü of über: the sound is up in the front of the mouth, even when the region is down on the map."
+    },
+    {
+      "id": "L5-M3-S02",
+      "display": "Servus, ich hätte gern eine Semmel.",
+      "cue": "Hello, I would like a bread roll.",
+      "literal": "Servus, I would-have gladly a roll.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Servus",
+            "cue": "hi / bye (Bavaria and Austria)",
+            "tag": "free",
+            "forms": [
+              "Servus"
+            ],
+            "note": "One word that does both ends of a meeting, like ciao. Friendly and du-shaped: you would not say it to an official."
+          },
+          {
+            "display": "Semmel",
+            "cue": "bread roll (southern and Austrian)",
+            "tag": "free",
+            "forms": [
+              "Semmel",
+              "Semmeln"
+            ],
+            "note": "Feminine, die Semmel. The same object as a Brötchen; which word you use is a map reference, not a difference in the bread."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "English has one word for a roll everywhere and treats regional food words as quaint. Here the wrong word is simply not understood at speed: ask for a Brötchen in Vienna and you will be asked again.",
+      "sound": "ZER-voos, ikh HET-uh gairn EYE-nuh ZEM-el — Servus stresses the first syllable, and Semmel's double m keeps the e short and flat.",
+      "variations": [
+        {
+          "display": "Grüß Gott, ich hätte gern ein Brötchen.",
+          "cue": "Hello, I would like a bread roll.",
+          "changed": "Greeting and noun swap together to the other register of the same region pair — Servus is du-shaped, Grüß Gott is neutral to a stranger."
+        }
+      ],
+      "mistake": {
+        "display": "Servus, ich hätte gern eine Brötchen",
+        "why": "Two errors welded together: Brötchen is neuter, so it takes ein, and the southern greeting has pulled a northern noun in behind it. Keep the pair consistent."
+      },
+      "usage": "Ordering at a bakery counter south of the Main, where both words are the local ones.",
+      "register": "informal",
+      "mnemonic": "Semmel and simple share a shape: the simple southern roll."
+    },
+    {
+      "id": "L5-M3-S03",
+      "display": "In Österreich heißt die Tüte Sackerl.",
+      "cue": "In Austria the bag is called Sackerl.",
+      "literal": "In Austria is-called the bag Sackerl.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Österreich",
+            "cue": "Austria",
+            "tag": "free",
+            "forms": [
+              "Österreich"
+            ],
+            "note": "Takes bare in, not im: in Österreich. The Ö is written, never transcribed — Osterreich is a different, wrong word."
+          },
+          {
+            "display": "Tüte",
+            "cue": "bag (German standard)",
+            "tag": "free",
+            "forms": [
+              "Tüte",
+              "Tüten"
+            ],
+            "note": "Feminine, die Tüte — the paper or plastic carrier at a till. Austria says Sackerl for the same thing."
+          },
+          {
+            "display": "Sackerl",
+            "cue": "bag (Austrian standard)",
+            "tag": "free",
+            "forms": [
+              "Sackerl"
+            ],
+            "note": "Neuter, das Sackerl. The -erl ending is the Austrian diminutive and it is standard there, not baby talk."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Reading Sackerl as a cute local version of a real word gets the status backwards. It is the Austrian standard, printed on signs and used by officials, exactly as Tüte is in Germany.",
+      "sound": "in UERS-ter-rykh HYSST dee TUE-tuh ZAK-erl — Österreich opens on the ö, and Sackerl's -erl is one quick syllable, not two.",
+      "variations": [
+        {
+          "display": "In Österreich heißt das Brötchen Semmel.",
+          "cue": "In Austria the bread roll is called Semmel.",
+          "changed": "The same naming frame with a different pair in it — this is the module's one sentence shape, reused."
+        }
+      ],
+      "mistake": {
+        "display": "In Osterreich heisst die Tüte Sackerl",
+        "why": "Two characters were spelled around. Österreich needs its ö and heißt needs its ß; both are written in this course, never transcribed into oe or ss."
+      },
+      "usage": "Telling someone which word to use before they cross a border, or explaining a word you have just heard.",
+      "register": "neutral",
+      "mnemonic": "A Sackerl is a little sack — the -erl says little, and Austria says it often."
+    },
+    {
+      "id": "L5-M3-S04",
+      "display": "Bei uns heißt die Semmel Brötchen.",
+      "cue": "Where we are, the roll is called Brötchen.",
+      "literal": "By us is-called the roll Brötchen.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Brötchen",
+            "cue": "bread roll (northern and German standard)",
+            "tag": "free",
+            "forms": [
+              "Brötchen"
+            ],
+            "note": "Neuter, das Brötchen, and the plural is identical. The -chen ending always makes a neuter noun, whatever the root's gender was."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Bei uns is not at our house. It means where I come from, among my people — the phrase a German reaches for to mark a local usage without claiming it is the only right one.",
+      "sound": "by OONS HYSST dee ZEM-el BRUERT-khen — the -chen is a soft breathy khen, never a hard k, and the ö is short.",
+      "variations": [
+        {
+          "display": "Bei uns heißt das Sackerl Tüte.",
+          "cue": "Where we are, the Sackerl is called Tüte.",
+          "changed": "The pair reverses, and with it the speaker's location — the frame is what tells you someone is naming their own usage."
+        }
+      ],
+      "mistake": {
+        "display": "Bei uns heißt der Semmel Brötchen",
+        "why": "Semmel is feminine: die Semmel. Getting the article wrong on the word you are quoting undercuts the whole point of quoting it."
+      },
+      "usage": "Answering someone who has just used the other region's word, without correcting them.",
+      "register": "informal",
+      "mnemonic": "Brötchen is Brot plus -chen: a little bread, and little words go neuter."
+    },
+    {
+      "id": "L5-M3-S05",
+      "display": "Das ist Dialekt, nicht Hochdeutsch.",
+      "cue": "That is dialect, not standard German.",
+      "literal": "That is dialect, not high-German.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Dialekt",
+            "cue": "dialect",
+            "tag": "free",
+            "forms": [
+              "Dialekt",
+              "Dialekte"
+            ],
+            "note": "Masculine, der Dialekt, and it takes no article in this bare naming use. Mundart is the older synonym and means the same thing."
+          },
+          {
+            "display": "Hochdeutsch",
+            "cue": "standard German",
+            "tag": "free",
+            "forms": [
+              "Hochdeutsch"
+            ],
+            "note": "One word, capital H, no article. Hoch here is geographic — the highlands — not a judgement about quality."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "High German sounds like posh German to an English ear, and it is not: hoch names the upland dialects the standard grew out of. A dialect speaker is not speaking low German badly.",
+      "sound": "das ist dee-a-LEKT, nikht HOHKH-doytsh — Dialekt takes its stress on the last syllable, and Hochdeutsch on the first.",
+      "variations": [
+        {
+          "display": "Das ist kein Dialekt, das ist Hochdeutsch.",
+          "cue": "That is not dialect, that is standard German.",
+          "changed": "kein negates the noun where nicht negated the contrast, and the sentence stops being a correction and becomes a defence."
+        }
+      ],
+      "mistake": {
+        "display": "Das ist ein Dialekt, nicht ein Hochdeutsch",
+        "why": "Both nouns are bare in this naming use. Hochdeutsch never takes an indefinite article at all — there is only one of it."
+      },
+      "usage": "Saying why you did not understand something, without implying the speaker was wrong.",
+      "register": "neutral",
+      "mnemonic": "Hoch is the map, not the manners."
+    },
+    {
+      "id": "L5-M3-S06",
+      "display": "Er spricht mit einem Akzent aus dem Norden.",
+      "cue": "He speaks with an accent from the north.",
+      "literal": "He speaks with an accent from the north.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "spricht",
+            "cue": "he or she speaks",
+            "tag": "delta",
+            "forms": [
+              "spricht"
+            ],
+            "note": "The er shape of L1-M2's sprechen, which vowel-shifts e to i. First taught at the infinitive there; this row only opens the shifted form."
+          },
+          {
+            "display": "Akzent",
+            "cue": "accent",
+            "tag": "free",
+            "forms": [
+              "Akzent"
+            ],
+            "note": "Masculine, der Akzent, stress on the last syllable. It names how someone sounds, never which words they choose — that is Dialekt."
+          },
+          {
+            "display": "Norden",
+            "cue": "the north",
+            "tag": "free",
+            "forms": [
+              "Norden"
+            ],
+            "note": "Takes im for where and aus dem for where from. The pair with Süden is the module's map in two words."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "English says a northern accent with an adjective; German prefers a prepositional phrase — aus dem Norden — hung after the noun. Building nördlich into an adjective here is possible but not what is said.",
+      "sound": "air SHPRIKHT mit EYE-nem ak-TSENT ows daym NOR-den — the initial sp is shp, and Akzent's z is a ts.",
+      "variations": [
+        {
+          "display": "Sie spricht mit einem Akzent aus dem Süden.",
+          "cue": "She speaks with an accent from the south.",
+          "changed": "Subject and region both swap, and spricht does not move — the er and sie shapes of this verb are identical."
+        }
+      ],
+      "mistake": {
+        "display": "Er sprecht mit einem Akzent aus dem Norden",
+        "why": "sprechen shifts its vowel in the er form: spricht, not sprecht. sprecht exists, but it is the plural you, which this course does not write."
+      },
+      "usage": "Placing a speaker on the map from how they sound, said neutrally rather than as a complaint.",
+      "register": "neutral",
+      "mnemonic": "Akzent is the sound, Dialekt is the words."
+    },
+    {
+      "id": "L5-M3-S07",
+      "display": "Im Norden sagt man Moin und Tschüss.",
+      "cue": "In the north people say Moin and Tschüss.",
+      "literal": "In-the north says one Moin and Tschüss.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Moin",
+            "cue": "hello (northern)",
+            "tag": "free",
+            "forms": [
+              "Moin"
+            ],
+            "note": "Works at any hour despite sounding like morning, and Moin Moin is the doubled friendly version. Not slang: it is the ordinary northern greeting."
+          },
+          {
+            "display": "Tschüss",
+            "cue": "bye",
+            "tag": "free",
+            "forms": [
+              "Tschüss"
+            ],
+            "note": "Written with ü and ß. Heard across the whole country now, but it started in the north and still sounds most at home there."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "Moin looks like a shortened Morgen and is not one — it comes from a word for good, and saying it at six in the evening is completely ordinary.",
+      "sound": "im NOR-den zaakt man moyn oont CHUESS — Moin is one syllable, and Tschüss opens on the ch of church and ends on a sharp s.",
+      "variations": [
+        {
+          "display": "Im Süden sagt man Servus und Grüß Gott.",
+          "cue": "In the south people say Servus and Grüß Gott.",
+          "changed": "Both greetings swap with the region, which is the module's whole claim in one line: the frame holds, the words move."
+        }
+      ],
+      "mistake": {
+        "display": "Im Norden sagt man Moin und Tschuess",
+        "why": "The ü in Tschüss is written, not spelled out as ue. This course keeps every umlaut on the page."
+      },
+      "usage": "Summarising a region's greetings for someone about to travel there.",
+      "register": "informal",
+      "mnemonic": "Moin arrives, Tschüss leaves — the north's whole day in two words."
+    },
+    {
+      "id": "L5-M3-S08",
+      "display": "Der Kollege sagt Mahlzeit, nicht Guten Tag.",
+      "cue": "The colleague says Mahlzeit, not Guten Tag.",
+      "literal": "The colleague says meal-time, not good day.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mahlzeit",
+            "cue": "greeting used around lunchtime",
+            "tag": "free",
+            "forms": [
+              "Mahlzeit"
+            ],
+            "note": "Feminine as a noun, die Mahlzeit, but here it is a bare greeting: said in corridors and canteens between about eleven and two."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "Translating Mahlzeit as enjoy your meal misses that it is thrown at people who are not eating. In an office it is simply the midday hello, and answering with Mahlzeit is correct.",
+      "sound": "dair ko-LAY-guh zaakt MAAL-tsyt, nikht GOO-ten TAAK — Mahlzeit stresses Mahl, and the -zeit is a clean tsyt.",
+      "variations": [
+        {
+          "display": "Die Kollegen sagen Mahlzeit, nicht Guten Tag.",
+          "cue": "The colleagues say Mahlzeit, not Guten Tag.",
+          "changed": "Plural subject and plural verb; Mahlzeit itself does not move, because it is a greeting and not a noun in this seat."
+        }
+      ],
+      "mistake": {
+        "display": "Der Kollege sagt eine Mahlzeit, nicht Guten Tag",
+        "why": "As a greeting Mahlzeit takes no article. eine Mahlzeit is a meal you could eat, which is a different sentence altogether."
+      },
+      "usage": "Warning a newcomer about the one office greeting no textbook prepared them for.",
+      "register": "informal",
+      "mnemonic": "Mahlzeit is the clock talking, not the food."
+    },
+    {
+      "id": "L5-M3-S09",
+      "display": "Hier duzen wir uns, dort siezen wir uns.",
+      "cue": "Here we use du with each other, there we use Sie.",
+      "literal": "Here du-we us, there Sie-we us.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "duzen",
+            "cue": "to address someone as du",
+            "tag": "free",
+            "forms": [
+              "duzen",
+              "duze"
+            ],
+            "note": "A verb built straight out of the pronoun. Almost always reflexive between equals: wir duzen uns, we are on du terms."
+          },
+          {
+            "display": "siezen",
+            "cue": "to address someone as Sie",
+            "tag": "free",
+            "forms": [
+              "siezen",
+              "sieze"
+            ],
+            "note": "The formal twin of duzen, built the same way. Sie siezen sich is two people keeping the polite address with each other."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "English has no verb for this, so an anglophone describes the choice with a whole clause. German makes it one word, which is why the question Wollen wir uns duzen? is a single, askable move rather than a speech.",
+      "sound": "heer DOO-tsen veer oons, dort ZEE-tsen veer oons — both verbs put the z as ts, and the two lines rhyme on purpose.",
+      "variations": [
+        {
+          "display": "Hier siezen wir uns nicht.",
+          "cue": "Here we do not use Sie with each other.",
+          "changed": "One clause, negated: the same fact stated as what the place does not do, which is how it is usually said."
+        }
+      ],
+      "mistake": {
+        "display": "Hier duzen wir, dort siezen wir",
+        "why": "Both verbs want the reflexive uns when the address is mutual. Without it the sentence says we du somebody unnamed, and leaves the hearer waiting for the object."
+      },
+      "usage": "Explaining that the address depends on the room, not on the region — the one thing here that varies by person.",
+      "register": "informal",
+      "mnemonic": "duzen and siezen are the pronouns with -en bolted on: the address became a verb."
+    },
+    {
+      "id": "L5-M3-S10",
+      "display": "Junge Leute sagen krass, wir sagen echt.",
+      "cue": "Young people say krass, we say echt.",
+      "literal": "Young people say krass, we say echt.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "junge",
+            "cue": "young (before a plural noun)",
+            "tag": "delta",
+            "forms": [
+              "junge"
+            ],
+            "note": "The plural adjective shape of L2-M2's jung, first taught there as the bare form. Adjectives stay lowercase; only the noun after them is capitalised."
+          },
+          {
+            "display": "krass",
+            "cue": "intense, extreme (young slang)",
+            "tag": "free",
+            "forms": [
+              "krass"
+            ],
+            "note": "An intensifier that can be admiring or appalled, decided entirely by the voice. Old enough now that its first speakers are middle-aged."
+          },
+          {
+            "display": "echt",
+            "cue": "really, genuinely",
+            "tag": "free",
+            "forms": [
+              "echt"
+            ],
+            "note": "Also the ordinary adjective for genuine. As an intensifier it is the flat, all-ages alternative to krass and never sounds young."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "Generation is a dialect too, and an anglophone tends to hear only the map. Reaching for the newest marker you heard is the fastest way to sound like someone imitating a teenager.",
+      "sound": "YOONG-uh LOY-tuh ZAA-gen KRASS, veer ZAA-gen EKHT — krass is short and hard, echt ends on the breathy ch of loch.",
+      "variations": [
+        {
+          "display": "Junge Leute sagen das oft.",
+          "cue": "Young people say that often.",
+          "changed": "The quoted words drop out and das stands in for them, which is how you refer to a marker without performing it."
+        }
+      ],
+      "mistake": {
+        "display": "Jungen Leute sagen krass, wir sagen echt",
+        "why": "A plural adjective with no article in front takes -e, not -en: junge Leute. The -en shape needs a die or a diese ahead of it."
+      },
+      "usage": "Naming a generational marker as a marker, rather than adopting it.",
+      "register": "informal",
+      "mnemonic": "krass is loud, echt is flat — the age gap in two syllables."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M3-C01",
+      "display": "In Österreich sagt man Sackerl",
+      "cue": "In Austria people say Sackerl"
+    },
+    {
+      "id": "L5-M3-C02",
+      "display": "Im Süden sagt man Grüß Gott",
+      "cue": "In the south people say Grüß Gott"
+    },
+    {
+      "id": "L5-M3-C03",
+      "display": "Das ist kein Dialekt",
+      "cue": "That is not dialect"
+    },
+    {
+      "id": "L5-M3-C04",
+      "display": "Er spricht Hochdeutsch",
+      "cue": "He speaks standard German"
+    },
+    {
+      "id": "L5-M3-C05",
+      "display": "Moin, ich hätte gern ein Brötchen",
+      "cue": "Moin, I would like a bread roll"
+    },
+    {
+      "id": "L5-M3-C06",
+      "display": "Die Semmel kommt aus dem Süden",
+      "cue": "The Semmel comes from the south"
+    },
+    {
+      "id": "L5-M3-C07",
+      "display": "Hier duzen wir uns",
+      "cue": "Here we use du with each other"
+    },
+    {
+      "id": "L5-M3-C08",
+      "display": "Sie siezen die Kollegen",
+      "cue": "They use Sie with the colleagues"
+    },
+    {
+      "id": "L5-M3-C09",
+      "display": "Der Akzent kommt aus dem Norden",
+      "cue": "The accent comes from the north"
+    },
+    {
+      "id": "L5-M3-C10",
+      "display": "Junge Leute sagen oft krass",
+      "cue": "Young people often say krass"
+    },
+    {
+      "id": "L5-M3-C11",
+      "display": "Das ist echt gut",
+      "cue": "That is really good"
+    },
+    {
+      "id": "L5-M3-C12",
+      "display": "Tschüss sagt man in der Stadt",
+      "cue": "People say Tschüss in the city"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 4
+  }
+}

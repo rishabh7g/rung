@@ -1,0 +1,616 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M6",
+  "title": "Arguing a position",
+  "job": "A structured case, objections answered",
+  "prerequisites": ["L5-M1", "L5-M2", "L5-M3", "L5-M4", "L5-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": ["présent", "subjonctif", "infinitif"],
+    "allowedPatterns": [
+      "D'une part + <clause> + , + d'autre part + <clause>",
+      "Bien que + <subjunctive clause> + , + <main clause>",
+      "C'est tellement + <adjective> + que + <clause>",
+      "Que pensez-vous de + <noun> + ?",
+      "Certains disent que + <clause> + . + Or + , + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "CONCESSION BENDS THE VERB; RESULT DOES NOT. bien que and quoique take the SUBJUNCTIVE, because what they concede is not being ASSERTED — bien que ce soit vrai, never bien que c'est vrai. A result clause (si bien que, tellement … que, tant de … que, au point que) takes the ORDINARY indicative, because the result actually happened: c'est tellement cher que je ne peux pas. A learner who has just met the first will bend the second, and that is this module's one predictable error. Learn the two as a pair, never one at a time."
+    },
+    {
+      "tag": "free",
+      "text": "malgré TAKES A NOUN AND NO CLAUSE AT ALL. malgré le prix, malgré la pluie, malgré tout. It is the cheapest concession in French, because there is no verb to bend: where bien que needs a whole subjunctive clause, malgré needs only a thing. When the mood will not come, name the noun and move on — the sentence is still an argument."
+    },
+    {
+      "tag": "interference",
+      "text": "or IS NOT ENGLISH or. It is a TURN word — now, as it happens, and yet — and it introduces the sentence that overturns what came before: Certains sont pour, d'autres sont contre. Or, la plupart ne disent rien. French for the choice between two things is ou, with no r, and it is L1-M9's. Read or as a pivot and you will never mix them up; read it as a choice and the argument you are following inverts under you."
+    },
+    {
+      "tag": "delta",
+      "text": "INVERSION IS A REGISTER, NOT A GRAMMAR. Que pensez-vous de … ? and Comment expliquer que … ? are what a careful speaker and a written argument use. est-ce que (L2-M1) stays correct everywhere and is what you say out loud. This course has refused inversion since docs/74 §2 and takes it here for one job only: the raised register an argument is written in. Invert everything and you sound like a nineteenth-century novel; invert nothing and you cannot write a case."
+    },
+    {
+      "tag": "free",
+      "text": "THE OUTLINE WORDS THIS MODULE RUNS ON. premièrement, deuxièmement, troisièmement number a case; d'une part … d'autre part sets out a two-sided one; en conclusion, pour conclure and en résumé close it. L2-M10's d'abord, ensuite and enfin still work and are re-used here rather than re-taught — those three NARRATE, in the order things happened, and these ARGUE, in the order you chose."
+    },
+    {
+      "tag": "free",
+      "text": "ENGLISH GIVES YOU THE SHAPE, AND MORE OF IT THAN ANYWHERE ELSE IN THIS LEVEL. although … , … is bien que … , … clause for clause; on the other hand is d'autre part; most people is la plupart; in conclusion is en conclusion. The whole structure of an English argument transfers. Only two things do not: the mood after bien que, and the meaning of or."
+    },
+    {
+      "tag": "delta",
+      "text": "WHAT THIS MODULE DELIBERATELY DOES NOT TAKE. The past and imperfect subjunctive — qu'il fût, qu'il eût — are literary, and this course does not teach them at all; you will meet them in print and never say one. il faut que is not opened here either: L4-M5 owns the subjunctive triggers and a second list would contradict it. The passive is L5-M4's, and the question asked to sting rather than to ask is L5-M7's."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M6-S01",
+      "display": "D'une part c'est utile, d'autre part c'est trop cher",
+      "cue": "On the one hand it's useful, on the other it's too expensive",
+      "literal": "Of one part it is useful, of other part it is too expensive",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "d'une part",
+            "cue": "on the one hand",
+            "tag": "free",
+            "forms": ["d'une part"],
+            "note": "Opens a two-sided case and PROMISES the second side. Never said alone: if you say d'une part, d'autre part has to arrive."
+          },
+          {
+            "display": "d'autre part",
+            "cue": "on the other hand",
+            "tag": "free",
+            "forms": ["d'autre part"],
+            "note": "The second side, and the pair is fixed: d'une part … d'autre part. Note the missing article — not d'une autre part."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "English says on the one hand and French says of one part, but the two work identically and in the same order. The only thing to remember is that the pair is a promise: half of it on its own sounds like a sentence you abandoned.",
+      "sound": "doon PAR say oo-TEEL, DOH-truh PAR say troh SHAIR. d'une runs as one syllable, doon, and the t of part is silent.",
+      "variations": [
+        {
+          "display": "D'une part c'est difficile, d'autre part c'est utile",
+          "cue": "On the one hand it's hard, on the other it's useful",
+          "changed": "the two sides weighed"
+        },
+        {
+          "display": "D'une part c'est cher, d'autre part c'est la meilleure solution",
+          "cue": "On the one hand it's expensive, on the other it's the best solution",
+          "changed": "the second side made the stronger one"
+        }
+      ],
+      "mistake": {
+        "display": "D'un part c'est utile, d'une autre part c'est cher",
+        "why": "both halves are frozen and neither takes the shape English suggests. It is d'une part, feminine, and d'autre part with no article at all — de plus autre, nothing between them."
+      },
+      "usage": "Setting a case out in two halves, before you say which half you land on.",
+      "register": "formal",
+      "mnemonic": "One part, other part — two hands, no articles."
+    },
+    {
+      "id": "L5-M6-S02",
+      "display": "Bien que ce soit vrai, ce n'est pas une preuve",
+      "cue": "Although that's true, it isn't proof",
+      "literal": "Well that this be true, this is not a proof",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bien que",
+            "cue": "although",
+            "tag": "delta",
+            "forms": ["bien que"],
+            "note": "Takes the subjunctive, because what it concedes is not being asserted: bien que ce soit vrai. L3-M3's soit is the cell it needs."
+          },
+          {
+            "display": "preuve",
+            "cue": "proof",
+            "tag": "free",
+            "forms": ["preuve", "preuves"],
+            "note": "Feminine: une preuve, la preuve. The verb behind it is prouver, and an argument that has none is still an argument."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "although takes an ordinary verb in English, so your hand will write bien que c'est vrai. It is the single error this module exists to stop. Every subjunctive cell bien que needs — soit, ait, puisse, aille, fasse, sache, vienne, dise, prenne — is already on the ladder from L3-M3 and L4-M5, so nothing new has to be learnt except the bending itself.",
+      "sound": "byan kuh suh swah VRAY, suh nay pah zoon PRERV. soit is one syllable, swah, and rhymes with L1-M1's moi.",
+      "variations": [
+        {
+          "display": "Bien que ce soit cher, c'est utile",
+          "cue": "Although it's expensive, it's useful",
+          "changed": "what is conceded"
+        },
+        {
+          "display": "Bien que ce soit difficile, c'est la meilleure solution",
+          "cue": "Although it's hard, it's the best solution",
+          "changed": "the answer given to the concession"
+        }
+      ],
+      "mistake": {
+        "display": "Bien que c'est vrai, ce n'est pas une preuve",
+        "why": "bien que never takes c'est. The conceded thing is granted rather than asserted, and French marks that on the verb: ce soit, not c'est. This is the sentence an English speaker with otherwise sound grammar writes first."
+      },
+      "usage": "Granting the strongest thing against you, then saying why it does not settle the question.",
+      "register": "formal",
+      "mnemonic": "bien que bends; the thing you concede is not a thing you claim."
+    },
+    {
+      "id": "L5-M6-S03",
+      "display": "C'est tellement cher que je ne peux pas. Néanmoins, c'est utile",
+      "cue": "It's so expensive that I can't. Nevertheless, it's useful",
+      "literal": "It is so expensive that I not can not. Nevertheless, it is useful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tellement",
+            "cue": "so (much)",
+            "tag": "delta",
+            "forms": ["tellement", "tellement de"],
+            "note": "tellement + adjective + que gives the result: tellement cher que. Before a noun it needs de — tellement de gens."
+          },
+          {
+            "display": "néanmoins",
+            "cue": "nevertheless",
+            "tag": "free",
+            "forms": ["néanmoins", "toutefois"],
+            "note": "The written cousins of L4-M4's pourtant and cependant. néanmoins and toutefois belong to an argument on paper; the L4 pair belongs in speech."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "The clause after que here is an ORDINARY one — je ne peux pas, indicative — because the result really happened. Having just learnt that bien que bends the verb, you will want to bend this one too. Concession bends, result does not; the two clauses look alike and are not.",
+      "sound": "say tel-MAHN SHAIR kuh zhuh nuh puh PAH. nay-ah-MWAN. The final s of néanmoins is silent.",
+      "variations": [
+        {
+          "display": "C'est tellement difficile que je ne peux pas",
+          "cue": "It's so hard that I can't",
+          "changed": "the adjective driving the result"
+        },
+        {
+          "display": "C'est tellement utile que c'est la meilleure solution",
+          "cue": "It's so useful that it's the best solution",
+          "changed": "the result, made positive"
+        }
+      ],
+      "mistake": {
+        "display": "C'est tellement cher que je ne puisse pas",
+        "why": "a result clause takes the indicative. The expense really did stop you, so the verb states it: je ne peux pas. puisse is the subjunctive L3-M3 taught for what is wished or granted, not for what happened."
+      },
+      "usage": "Naming a consequence strong enough to settle the point, then conceding one thing anyway.",
+      "register": "formal",
+      "mnemonic": "tellement … que — so much that it actually happened, so the verb stays straight."
+    },
+    {
+      "id": "L5-M6-S04",
+      "display": "Il y a tant de gens que c'est difficile",
+      "cue": "There are so many people that it's difficult",
+      "literal": "It there has so much of people that it is difficult",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tant de",
+            "cue": "so many / so much",
+            "tag": "delta",
+            "forms": ["tant de", "tant"],
+            "note": "Before a NOUN, and de never changes for number: tant de gens, tant de temps. Bare tant is so much on its own — il travaille tant."
+          },
+          {
+            "display": "difficile",
+            "cue": "difficult",
+            "tag": "free",
+            "forms": ["difficile", "difficiles"],
+            "note": "One form for both genders, like L4-M5's utile. The opposite is L4-M8's facile."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "so many people is tant de gens, with de and no article — never tant de les gens. The de is part of the quantity word, exactly as it is in L2-M1's beaucoup de, and it is what English has no piece for.",
+      "sound": "eel ee ah tahn duh ZHAHN kuh say dee-fee-SEEL. The t of tant is silent before de.",
+      "variations": [
+        {
+          "display": "Il y a tant de solutions que c'est difficile",
+          "cue": "There are so many solutions that it's difficult",
+          "changed": "what there is too much of"
+        },
+        {
+          "display": "Il y a tellement de gens que je ne peux pas",
+          "cue": "There are so many people that I can't",
+          "changed": "tellement de for tant de, which is the spoken one"
+        }
+      ],
+      "mistake": {
+        "display": "Il y a tant des gens que c'est difficile",
+        "why": "tant is followed by bare de, never by des. The quantity word already carries the of, so the article has nothing left to do — the same rule as beaucoup de and un peu de."
+      },
+      "usage": "Making the scale of something the reason your case holds.",
+      "register": "neutral",
+      "mnemonic": "tant de — quantity plus de, and the article stays home."
+    },
+    {
+      "id": "L5-M6-S05",
+      "display": "Quoique ce soit juste, je ne suis pas d'accord. Au contraire",
+      "cue": "Though that's fair, I don't agree. Quite the opposite",
+      "literal": "Though this be fair, I am not of agreement. To the contrary",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quoique",
+            "cue": "though",
+            "tag": "delta",
+            "forms": ["quoique"],
+            "note": "Interchangeable with bien que and takes the same subjunctive. One word: quoi que, in two, means whatever and is a different thing."
+          },
+          {
+            "display": "juste",
+            "cue": "fair, right",
+            "tag": "interference",
+            "forms": ["juste"],
+            "note": "Fair or exactly right, not English just meaning only. C'est juste is that is fair; for only French uses seulement."
+          },
+          {
+            "display": "au contraire",
+            "cue": "on the contrary",
+            "tag": "free",
+            "forms": ["au contraire", "à l'inverse"],
+            "note": "Reverses what was just said rather than qualifying it. à l'inverse is its written twin and is what an argument on paper uses."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "juste looks like just and is not. C'est juste means that is fair; English just meaning merely is seulement. The word you want after a concession is this one, because you are granting that the point is FAIR before refusing it.",
+      "sound": "kwah-kuh suh swah ZHOOST, zhuh nuh swee pah dah-KOR. Quoique is two syllables, kwah-kuh, run together.",
+      "variations": [
+        {
+          "display": "Quoique ce soit vrai, je ne suis pas d'accord",
+          "cue": "Though it's true, I don't agree",
+          "changed": "what is granted"
+        },
+        {
+          "display": "Bien que ce soit juste, je ne suis pas d'accord",
+          "cue": "Although it's fair, I don't agree",
+          "changed": "bien que for quoique, which changes nothing at all"
+        }
+      ],
+      "mistake": {
+        "display": "Quoi que ce soit juste, je ne suis pas d'accord",
+        "why": "quoique in one word is though; quoi que in two is whatever, and the sentence then reads whatever it may be fair, which means nothing. The space is the whole difference."
+      },
+      "usage": "Refusing a point while making clear you understood it and thought it fair.",
+      "register": "formal",
+      "mnemonic": "quoique in one piece concedes; quoi que in two pieces shrugs."
+    },
+    {
+      "id": "L5-M6-S06",
+      "display": "Malgré le prix, c'est la meilleure solution. Autrement dit, c'est utile",
+      "cue": "Despite the price, it's the best solution. In other words, it's useful",
+      "literal": "Despite the price, it is the best solution. Otherwise said, it is useful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "malgré",
+            "cue": "despite",
+            "tag": "delta",
+            "forms": ["malgré"],
+            "note": "Takes a NOUN and never a clause: malgré le prix, malgré tout. There is no verb to bend, which is why it is the easy concession."
+          },
+          {
+            "display": "solution",
+            "cue": "solution",
+            "tag": "free",
+            "forms": ["solution", "solutions"],
+            "note": "Feminine, and spelt exactly as in English. The pair it argues against is L2-M8's problème, which is masculine despite the e."
+          },
+          {
+            "display": "autrement dit",
+            "cue": "in other words",
+            "tag": "free",
+            "forms": ["autrement dit"],
+            "note": "Re-says what you just said in plainer terms. Frozen: dit never agrees and never changes, whoever is speaking."
+          }
+        ],
+        "rules": [1, 5]
+      },
+      "trap": "malgré cannot take a clause. English despite the fact that … lets you keep a verb; French makes you find the noun instead — malgré le prix, not malgré que c'est cher. malgré que exists and educated speakers avoid it, so this course does not teach it.",
+      "sound": "mal-GRAY luh PREE, say lah may-YURR so-loo-SYOHN. The final t of dit is silent.",
+      "variations": [
+        {
+          "display": "Malgré le prix, c'est utile",
+          "cue": "Despite the price, it's useful",
+          "changed": "the shortest form of the move"
+        },
+        {
+          "display": "Malgré la solution, c'est difficile",
+          "cue": "Despite the solution, it's difficult",
+          "changed": "the noun conceded"
+        }
+      ],
+      "mistake": {
+        "display": "Malgré c'est cher, c'est la meilleure solution",
+        "why": "malgré is a preposition and a preposition takes a noun. A clause needs bien que with its subjunctive: bien que ce soit cher. Choosing between them is choosing whether you have a noun to hand."
+      },
+      "usage": "Conceding a cost in one word, then stating your conclusion anyway.",
+      "register": "formal",
+      "mnemonic": "malgré wants a thing; bien que wants a bent verb."
+    },
+    {
+      "id": "L5-M6-S07",
+      "display": "Que pensez-vous de cette idée ?",
+      "cue": "What do you think of this idea?",
+      "literal": "What think you of this idea?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "que pensez-vous",
+            "cue": "what do you think",
+            "tag": "delta",
+            "forms": ["que pensez-vous", "qu'en pensez-vous", "comment expliquer que"],
+            "note": "Inverted, and taken whole: the hyphen is what makes it a question. qu'en pensez-vous is the same question with the topic already named."
+          },
+          {
+            "display": "idée",
+            "cue": "idea",
+            "tag": "free",
+            "forms": ["idée", "idées"],
+            "note": "Feminine, une idée, and une bonne idée is the everyday compliment. The double e is one sound, ee-DAY."
+          }
+        ],
+        "rules": [3]
+      },
+      "trap": "English inverts to ask ANY question; French inverts only in a raised register. Qu'est-ce que vous pensez de cette idée ? is the same question and is what you say out loud. Use inversion when you are writing an argument or speaking carefully, and est-ce que everywhere else.",
+      "sound": "kuh pahn-say VOO duh set ee-DAY. The hyphen is not a pause — pensez-vous runs as one word, pahn-say-VOO.",
+      "variations": [
+        {
+          "display": "Que pensez-vous de cette solution ?",
+          "cue": "What do you think of this solution?",
+          "changed": "what is put to the other person"
+        },
+        {
+          "display": "Qu'en pensez-vous ?",
+          "cue": "What do you think of it?",
+          "changed": "the topic replaced by en, once it is already on the table"
+        }
+      ],
+      "mistake": {
+        "display": "Que vous pensez de cette idée ?",
+        "why": "an inverted question needs the pronoun AFTER the verb with a hyphen. Without the inversion the words are a statement with a question mark stuck on, which is exactly what est-ce que exists to avoid."
+      },
+      "usage": "Inviting an objection on purpose, so that you can answer it before it is raised.",
+      "register": "formal",
+      "mnemonic": "Verb first, pronoun after, hyphen between — that is the whole of inversion."
+    },
+    {
+      "id": "L5-M6-S08",
+      "display": "Certains sont pour, d'autres sont contre. Or, la plupart ne disent rien",
+      "cue": "Some are for it, others against. And yet most say nothing",
+      "literal": "Certain are for, of others are against. Now, the most not say nothing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "certains",
+            "cue": "some (people)",
+            "tag": "free",
+            "forms": ["certains", "d'autres"],
+            "note": "A pair used as subjects with no noun after them: certains … d'autres … , some … others … . Both are plural and both take a plural verb."
+          },
+          {
+            "display": "or",
+            "cue": "and yet, now",
+            "tag": "interference",
+            "forms": ["or"],
+            "note": "The turn word that introduces what overturns the last sentence. Not English or — the choice word is ou, L1-M9's, spelt without the r."
+          },
+          {
+            "display": "la plupart",
+            "cue": "most (of them)",
+            "tag": "delta",
+            "forms": ["la plupart"],
+            "note": "Singular in shape and PLURAL in agreement: la plupart ne disent rien, not ne dit rien. With a noun it takes de — la plupart des gens."
+          },
+          {
+            "display": "disent",
+            "cue": "(they) say",
+            "tag": "free",
+            "forms": ["disent"],
+            "note": "The they form of the verb whose il dit and il m'a dit you already have from L2-M6 and L4-M10. The ent ending is silent."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "or is the sharpest false friend in this level after L4-M4's actuellement. Reading it as English or turns a pivot into a choice and flips the whole argument: Certains sont pour, d'autres sont contre. Or … is not offering you a third option, it is about to tell you both camps are small.",
+      "sound": "sair-TAN sohn POOR, DOH-truh sohn KOHN-truh. OR, lah ploo-PAR nuh deez ree-YAN. The t of plupart is silent.",
+      "variations": [
+        {
+          "display": "Certains sont pour, d'autres sont contre",
+          "cue": "Some are for it, others against",
+          "changed": "the pair alone, before the turn"
+        },
+        {
+          "display": "Or, la plupart ne disent rien",
+          "cue": "And yet most say nothing",
+          "changed": "the turn alone, as an opening move"
+        }
+      ],
+      "mistake": {
+        "display": "Certains sont pour, d'autres sont contre. Ou, la plupart ne disent rien",
+        "why": "ou is the choice word and makes the sentence offer a third camp. or is the pivot and makes it overturn the first two. One letter, and the argument runs the other way."
+      },
+      "usage": "Setting out the visible sides of a debate, then saying what the debate is missing.",
+      "register": "formal",
+      "mnemonic": "or has an r and turns; ou has none and chooses."
+    },
+    {
+      "id": "L5-M6-S09",
+      "display": "C'est cher, si bien que personne ne vient. En effet, c'est le problème",
+      "cue": "It's expensive, so much so that nobody comes. Indeed, that's the problem",
+      "literal": "It is expensive, so well that nobody not comes. In effect, it is the problem",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "si bien que",
+            "cue": "so much so that",
+            "tag": "delta",
+            "forms": ["si bien que", "au point que", "de sorte que"],
+            "note": "Result connectors, all three followed by an ordinary indicative verb. au point que is the strongest: to the point that."
+          },
+          {
+            "display": "en effet",
+            "cue": "indeed",
+            "tag": "interference",
+            "forms": ["en effet"],
+            "note": "Confirms what was just said — yes, and here is why. Not English in effect, which is en réalité or au fond."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "en effet is not in effect. It AGREES: someone says the place is empty and you answer en effet, c'est le problème. English in effect introduces a restatement you are correcting toward, which is nearly the opposite move.",
+      "sound": "say SHAIR, see byan kuh pair-SUN nuh VYAN. ahn nay-FAY. The n of en links onto effet, ahn-nay-fay.",
+      "variations": [
+        {
+          "display": "C'est cher, si bien que personne ne vient",
+          "cue": "It's expensive, so much so that nobody comes",
+          "changed": "the result clause alone"
+        },
+        {
+          "display": "C'est difficile, au point que personne ne vient",
+          "cue": "It's hard, to the point that nobody comes",
+          "changed": "au point que, which raises the strength of the result"
+        }
+      ],
+      "mistake": {
+        "display": "C'est cher, si bien que personne ne vienne",
+        "why": "nobody really does come, so the verb states it: vient. vienne is the subjunctive L4-M5 taught for what is wanted or granted. A result is a fact and facts take the indicative."
+      },
+      "usage": "Naming the consequence that makes your point, then agreeing with the person who spotted it.",
+      "register": "formal",
+      "mnemonic": "si bien que — so well that it actually happened."
+    },
+    {
+      "id": "L5-M6-S10",
+      "display": "Premièrement c'est utile. Deuxièmement, ce n'est pas cher. En conclusion, c'est suffisant",
+      "cue": "First, it's useful. Second, it isn't expensive. In conclusion, that's enough",
+      "literal": "Firstly it is useful. Secondly, this is not expensive. In conclusion, it is sufficient",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "premièrement",
+            "cue": "first(ly)",
+            "tag": "free",
+            "forms": ["premièrement", "deuxièmement", "troisièmement"],
+            "note": "The numbered outline of an argument. L2-M10's d'abord, ensuite, enfin narrate what happened; these three number what you are claiming."
+          },
+          {
+            "display": "en conclusion",
+            "cue": "in conclusion",
+            "tag": "free",
+            "forms": ["en conclusion", "pour conclure", "en résumé"],
+            "note": "Three ways to close. en résumé promises a shorter version of what you said; the other two promise the verdict."
+          },
+          {
+            "display": "suffisant",
+            "cue": "enough, sufficient",
+            "tag": "free",
+            "forms": ["suffisant", "suffisante"],
+            "note": "An adjective, so it agrees: une preuve suffisante. It is what you claim at the end of a case that granted something along the way."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "These are the words a French argument is scaffolded with, and they are heavier than their English twins. Firstly, secondly in English speech sounds fussy; premièrement, deuxièmement in a French written case sounds simply organised. Use them on paper freely and in speech sparingly.",
+      "sound": "pruh-myair-MAHN. duh-zyem-MAHN. ahn kohn-kloo-ZYOHN, say soo-fee-ZAHN. Every one of them ends in the nasal ahn.",
+      "variations": [
+        {
+          "display": "Premièrement c'est utile. Deuxièmement, c'est la meilleure solution",
+          "cue": "First, it's useful. Second, it's the best solution",
+          "changed": "the second claim"
+        },
+        {
+          "display": "En conclusion, ce n'est pas suffisant",
+          "cue": "In conclusion, that isn't enough",
+          "changed": "the verdict, reversed"
+        }
+      ],
+      "mistake": {
+        "display": "Premier c'est utile. Deuxième, ce n'est pas cher",
+        "why": "premier and deuxième are the ordinary ordinals — the first one, the second one. Numbering the STEPS of an argument needs the ment forms: premièrement, deuxièmement."
+      },
+      "usage": "Closing a written case: number the points, then say what they add up to.",
+      "register": "formal",
+      "mnemonic": "Add ment to the ordinal and you are numbering arguments, not things."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M6-C01",
+      "display": "D'une part c'est utile, d'autre part c'est cher",
+      "cue": "On the one hand it's useful, on the other it's expensive"
+    },
+    {
+      "id": "L5-M6-C02",
+      "display": "Bien que ce soit cher, c'est la meilleure solution",
+      "cue": "Although it's expensive, it's the best solution"
+    },
+    {
+      "id": "L5-M6-C03",
+      "display": "Malgré le prix, je suis pour",
+      "cue": "Despite the price, I'm for it"
+    },
+    {
+      "id": "L5-M6-C04",
+      "display": "C'est tellement difficile que je ne peux pas",
+      "cue": "It's so hard that I can't"
+    },
+    {
+      "id": "L5-M6-C05",
+      "display": "Il y a tant de gens ici",
+      "cue": "There are so many people here"
+    },
+    {
+      "id": "L5-M6-C06",
+      "display": "Que pensez-vous de cette solution ?",
+      "cue": "What do you think of this solution?"
+    },
+    {
+      "id": "L5-M6-C07",
+      "display": "Certains sont pour, d'autres sont contre",
+      "cue": "Some are for it, others against"
+    },
+    {
+      "id": "L5-M6-C08",
+      "display": "Or, la plupart ne disent rien",
+      "cue": "And yet most say nothing"
+    },
+    {
+      "id": "L5-M6-C09",
+      "display": "C'est cher, si bien que personne ne vient",
+      "cue": "It's expensive, so much so that nobody comes"
+    },
+    {
+      "id": "L5-M6-C10",
+      "display": "Néanmoins, c'est une bonne idée",
+      "cue": "Nevertheless, it's a good idea"
+    },
+    {
+      "id": "L5-M6-C11",
+      "display": "En conclusion, ce n'est pas suffisant",
+      "cue": "In conclusion, that isn't enough"
+    },
+    {
+      "id": "L5-M6-C12",
+      "display": "Quoique ce soit juste, je ne suis pas d'accord",
+      "cue": "Though it's fair, I don't agree"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M2",
+  "title": "Humour and teasing",
+  "job": "Banter, irony, and when not to",
+  "prerequisites": ["L5-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": ["present"],
+    "allowedPatterns": [
+      "<N>+ito / <N>+illo / <N>+azo",
+      "Qué + <N> + más + <Adj>",
+      "Vaya + <N>",
+      "Qué va + / + No me digas + / + Anda ya",
+      "<tease> + , + es broma"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "-ito and -ita mark how the SPEAKER FEELS about the thing, not how big it is. Un momentito is not a shorter moment and un cafelito is not a smaller coffee: the suffix adds warmth, to the thing and to whoever is being offered it. Size is only one reading among several, and usually not the one meant."
+    },
+    {
+      "tag": "delta",
+      "text": "The other suffixes carry their own attitude. -illo shrugs a thing off, so un problemilla is a problem being made light of; -azo adds bulk and admiration, so un cochazo is a car worth whistling at; -ón adds bulk and often mockery, so un preguntón is somebody who asks too many questions."
+    },
+    {
+      "tag": "free",
+      "text": "A suffixed word is a NEW word, not a form of the old one: momento and momentito are learned apart, and so are casa and casita, café and cafelito, coche and cochazo, problema and problemilla. Every row in this module points back at the plain word an earlier level already owns."
+    },
+    {
+      "tag": "free",
+      "text": "The exclamative frames are fixed and were already in the course. Qué + noun + más + adjective admires or teases (¡Qué móvil más feo!); Vaya + noun does the same in one word less (Vaya cochazo). What is new is not the words but the job you are putting them to."
+    },
+    {
+      "tag": "interference",
+      "text": "English closes a tease after the fact with just kidding; Spanish says es broma — or era broma — in the same breath, and a learner who leaves it out lands a tease as an insult. English banter also runs on understatement and deadpan where Spanish banter runs on volume and exaggeration: a loud, fast exchange at a table is friendship, not a quarrel, and reading it as one is the commonest misreading of Spanish social life."
+    },
+    {
+      "tag": "free",
+      "text": "Register: tú throughout, and there is no usted frame anywhere in this module (docs/53 §1) — it is the only rung of the level with no formal item at all. Nothing here is safe with a stranger. Tío and tía are vocatives between friends, far more frequent and far less marked than the English words a learner will map onto them."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M2-S01",
+      "display": "Un momentito, tío, que ya voy.",
+      "cue": "One moment, mate, I am coming.",
+      "literal": "A little-moment, uncle, that already I-go.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "momentito",
+            "cue": "just a moment (warmly)",
+            "tag": "delta",
+            "forms": ["momentito"],
+            "note": "L2-M1 taught momento. The -ito does not shorten the moment; it softens the asking, so the wait sounds like a favour and not an order."
+          },
+          {
+            "display": "tío",
+            "cue": "mate · pal (to a friend)",
+            "tag": "interference",
+            "forms": ["tío", "tía"],
+            "note": "It also means uncle and aunt, but between friends it is a filler vocative — commoner and far less marked than the English mate or dude."
+          }
+        ],
+        "rules": [0, 2, 5]
+      },
+      "trap": "An English speaker hears a diminutive as childish or twee. This one is not: momentito is what an adult says to another adult in a shop, an office or a queue.",
+      "sound": "Momentito has four beats with the stress on the third: mo-men-TI-to. The stress moving onto the suffix is what makes it sound warm.",
+      "variations": [
+        {
+          "display": "Ahora voy, un momentito.",
+          "cue": "Coming now, just a moment.",
+          "changed": "The vocative drops and the diminutive moves to the end, where it softens the whole line rather than the noun."
+        }
+      ],
+      "mistake": {
+        "display": "Un momento pequeño, tío.",
+        "why": "Pequeño makes the moment literally small, which is not the point and is not Spanish. The attitude lives in the suffix and cannot be said with an adjective."
+      },
+      "usage": "Constant, and safe with anyone you are on tú terms with. Drop tío with a stranger and momentito alone is still perfectly polite.",
+      "register": "informal",
+      "mnemonic": "The little moment is not shorter — it is kinder."
+    },
+    {
+      "id": "L5-M2-S02",
+      "display": "Vivo en una casita muy pequeña, un poquito lejos de aquí.",
+      "cue": "I live in a lovely little house, a little way from here.",
+      "literal": "I-live in a little-house very small, a little-bit far from here.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "casita",
+            "cue": "little house (fondly)",
+            "tag": "delta",
+            "forms": ["casita"],
+            "note": "L1-M5 taught casa. Casita carries affection first and size second — which is why muy pequeña can sit beside it without repeating anything."
+          },
+          {
+            "display": "poquito",
+            "cue": "a little bit · a tiny bit",
+            "tag": "free",
+            "forms": ["poquito"],
+            "note": "L1-M10 taught un poco. Poquito is the softened version, and the qu keeps the k sound: it hedges rather than measuring."
+          }
+        ],
+        "rules": [0, 2]
+      },
+      "trap": "Casita and muy pequeña are not the same information twice. The first says how the speaker feels about the house; only the second says how big it is.",
+      "sound": "Poquito is po-KI-to: the qu is a plain k and the u is silent, exactly as in poco.",
+      "variations": [
+        {
+          "display": "Mi casita está muy lejos.",
+          "cue": "My little place is a long way away.",
+          "changed": "The diminutive stands alone with no adjective, so the whole of what it carries is the speaker's fondness."
+        }
+      ],
+      "mistake": {
+        "display": "Vivo en una pequeña casa, un poco poquito lejos.",
+        "why": "Un poco poquito stacks the plain word and its own diminutive, which no speaker does. Choose one: un poco measures, un poquito softens."
+      },
+      "usage": "Modest and warm — this is how somebody describes their own home without boasting. Said of somebody else's house it is a compliment.",
+      "register": "informal",
+      "mnemonic": "The suffix is the feeling; the adjective is the tape measure."
+    },
+    {
+      "id": "L5-M2-S03",
+      "display": "¿Quieres un cafelito? Anda, que es muy temprano.",
+      "cue": "Fancy a nice coffee? Go on, it is very early.",
+      "literal": "You-want a little-coffee? Go-on, that is very early.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cafelito",
+            "cue": "a nice little coffee",
+            "tag": "delta",
+            "forms": ["cafelito"],
+            "note": "L1-M1 taught café. The l is inserted before the suffix. It is not a small coffee — it is affection for the coffee and for whoever is being offered it."
+          },
+          {
+            "display": "anda ya",
+            "cue": "go on · come off it",
+            "tag": "free",
+            "forms": ["anda ya", "anda"],
+            "note": "Anda alone coaxes somebody into saying yes. Anda ya, with the ya, does the opposite job: it flatly disbelieves what was just said."
+          }
+        ],
+        "rules": [0, 2, 5]
+      },
+      "trap": "The same two letters change everything. Anda is an invitation; anda ya is a refusal to believe you, and a learner who adds ya to be friendly does the reverse.",
+      "sound": "Cafelito has the stress on the suffix, ca-fe-LI-to, and the inserted l is why it is not cafeíto.",
+      "variations": [
+        {
+          "display": "Anda, tío, un cafelito y ya está.",
+          "cue": "Go on, mate, one coffee and that is that.",
+          "changed": "The question becomes a piece of coaxing, with anda leading rather than following."
+        }
+      ],
+      "mistake": {
+        "display": "¿Quieres un café pequeño?",
+        "why": "This asks about the size of the cup and offers nothing. The whole warmth of the invitation is in the suffix, and the adjective cannot carry it."
+      },
+      "usage": "The everyday offer between friends, colleagues and family, at any hour. With a stranger, say café: the diminutive assumes a closeness you may not have.",
+      "register": "informal",
+      "mnemonic": "A cafelito is not less coffee — it is more friendship."
+    },
+    {
+      "id": "L5-M2-S04",
+      "display": "Vaya cochazo tienes, tío. Es un coche muy grande.",
+      "cue": "What a car you have got, mate. It is a very big car.",
+      "literal": "Go-it big-car you-have, uncle. Is a car very big.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cochazo",
+            "cue": "a whopping great car",
+            "tag": "delta",
+            "forms": ["cochazo"],
+            "note": "L4-M2 taught coche. The -azo adds bulk and admiration at once: a cochazo is a car you would whistle at, not merely a large one."
+          }
+        ],
+        "rules": [1, 2, 3]
+      },
+      "trap": "Vaya is L3-M3's own word and is not new here; what is new is putting it in front of a noun to admire it. Vaya cochazo is a compliment, not an exclamation of surprise.",
+      "sound": "The z of cochazo is th in most of Spain and s across Latin America: co-CHA-tho or co-CHA-so. Either is right.",
+      "variations": [
+        {
+          "display": "Vaya cochazo, ¿es nuevo?",
+          "cue": "What a car — is it new?",
+          "changed": "The vocative goes and a question follows, which is how the compliment usually continues in real speech."
+        }
+      ],
+      "mistake": {
+        "display": "Vaya coche grande tienes, tío.",
+        "why": "Grammatical, but flat: it reports the size and admires nothing. The -azo is what carries the whistle, and no adjective replaces it."
+      },
+      "usage": "Straightforward admiration between friends. Said of an expensive car it can tip into gentle mockery of the owner, and the face is what decides which.",
+      "register": "informal",
+      "mnemonic": "-azo is the whistle you cannot write."
+    },
+    {
+      "id": "L5-M2-S05",
+      "display": "Tengo un problemilla con el móvil, no es nada.",
+      "cue": "I have got a slight problem with my phone, it is nothing.",
+      "literal": "I-have a little-problem with the mobile, not is nothing.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "problemilla",
+            "cue": "a slight problem · a spot of bother",
+            "tag": "delta",
+            "forms": ["problemilla"],
+            "note": "L2-M8 taught problema. The -illo shrugs: it does not say the problem is small, it says the speaker is choosing to make light of it."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "Problema is masculine and so is problemilla — un problemilla, never una. The -a ending never made it feminine and the suffix does not change that.",
+      "sound": "The ll of problemilla is a y sound: pro-ble-MI-ya. It is never the English double-l.",
+      "variations": [
+        {
+          "display": "Es un problemilla, no es un problema.",
+          "cue": "It is a spot of bother, not a problem.",
+          "changed": "The plain word sits beside its own diminutive, which is the clearest way to hear what -illo is doing."
+        }
+      ],
+      "mistake": {
+        "display": "Tengo una problemilla con el móvil.",
+        "why": "The gender comes from problema, which is masculine despite the -a. Un problemilla is the only possible article."
+      },
+      "usage": "Very common at work and among friends, and often a polite understatement: a problemilla can be quite a serious problem being handled calmly.",
+      "register": "informal",
+      "mnemonic": "-illo is a shrug with a suffix on it."
+    },
+    {
+      "id": "L5-M2-S06",
+      "display": "Mi hermano es un preguntón, un poco pesado, pero majo.",
+      "cue": "My brother asks endless questions and is a bit much, but he is lovely.",
+      "literal": "My brother is a big-asker, a little heavy, but nice.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "preguntón",
+            "cue": "somebody who asks too many questions",
+            "tag": "delta",
+            "forms": ["preguntón"],
+            "note": "Built on preguntar, which L3-M5 taught in preguntó. The -ón adds bulk and mockery together: it is teasing, and it is not an insult."
+          },
+          {
+            "display": "pesado",
+            "cue": "a bit much · hard going",
+            "tag": "delta",
+            "forms": ["pesado", "pesada"],
+            "note": "Literally heavy, but of a person it means wearing. Softened by un poco it teases; without it, it is a real complaint."
+          },
+          {
+            "display": "majo",
+            "cue": "lovely · a good sort",
+            "tag": "free",
+            "forms": ["majo", "maja"],
+            "note": "The everyday Spanish word for a person who is easy to like. It is the half of a tease that keeps it warm, which is why it lands last here."
+          }
+        ],
+        "rules": [1, 4, 5]
+      },
+      "trap": "The order does the work. Tease first and forgive second: end on majo and the whole line is affectionate, end on pesado and it is a complaint.",
+      "sound": "The j of majo is the hard h of the Scottish loch: MA-ho. Preguntón carries its accent on the last syllable, and the accent mark is what says so.",
+      "variations": [
+        {
+          "display": "Mi hermana es muy maja, pero un poco pesada.",
+          "cue": "My sister is lovely, but a bit much.",
+          "changed": "Both adjectives take the feminine, and the order flips — so the line ends on the complaint instead of the compliment."
+        }
+      ],
+      "mistake": {
+        "display": "Mi hermano es pesado, pero majo.",
+        "why": "Dropping un poco removes the hedge and turns a tease into a verdict. The softener is not decoration: it is what makes the sentence sayable to his face."
+      },
+      "usage": "About family and close friends, ideally where they can hear it. About a stranger or a colleague it is gossip, and pesado without un poco is genuinely rude.",
+      "register": "informal",
+      "mnemonic": "Tease, then forgive: pesado first, majo last."
+    },
+    {
+      "id": "L5-M2-S07",
+      "display": "¡Qué móvil más feo tienes, tío! Es broma, es muy guay.",
+      "cue": "What an ugly phone you have got, mate! Only joking, it is very cool.",
+      "literal": "What mobile more ugly you-have, uncle! Is joke, is very cool.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "feo",
+            "cue": "ugly",
+            "tag": "free",
+            "forms": ["feo", "fea"],
+            "note": "Of an object it is ordinary and mild — the everyday opposite of the pretty one. Of a person it is not mild at all, so keep it on things."
+          },
+          {
+            "display": "es broma",
+            "cue": "it is a joke · only kidding",
+            "tag": "interference",
+            "forms": ["es broma", "era broma"],
+            "note": "Said in the same breath as the tease, never long after. Era broma is the past version, for a joke that has already gone wrong."
+          },
+          {
+            "display": "guay",
+            "cue": "cool · great",
+            "tag": "free",
+            "forms": ["guay"],
+            "note": "Spain's ordinary word for cool. It never changes for gender or number: un coche guay, unas casas guay."
+          },
+          {
+            "display": "mola",
+            "cue": "it is cool · I love it",
+            "tag": "free",
+            "forms": ["mola"],
+            "note": "The verb that does what guay does as an adjective: esto mola. It is used almost only in the third person, about the thing rather than the person."
+          }
+        ],
+        "rules": [3, 4, 5]
+      },
+      "trap": "English adds just kidding after a silence, once the face has fallen. Spanish puts es broma inside the same turn, which is why the tease never has time to land as an insult.",
+      "sound": "Guay is one syllable and rhymes with English why: gwai. Feo is two, FE-o, and neither vowel is swallowed.",
+      "variations": [
+        {
+          "display": "Tu coche mola mucho, en serio.",
+          "cue": "Your car is really cool, seriously.",
+          "changed": "The tease is dropped and only the compliment is left, with en serio marking it as meant."
+        }
+      ],
+      "mistake": {
+        "display": "¡Qué móvil más feo tienes, tío!",
+        "why": "Grammatical and complete, and that is the danger: with no es broma to close it, this is simply an insult about somebody's phone."
+      },
+      "usage": "Only with a friend who is expecting it. Never with a stranger, never with a colleague you do not know, and never without the es broma.",
+      "register": "informal",
+      "mnemonic": "The tease is not finished until es broma is said."
+    },
+    {
+      "id": "L5-M2-S08",
+      "display": "Tu hermano es muy gracioso, siempre me hace gracia.",
+      "cue": "Your brother is very funny; he always makes me laugh.",
+      "literal": "Your brother is very funny, always me makes grace.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gracioso",
+            "cue": "funny · amusing",
+            "tag": "free",
+            "forms": ["gracioso", "graciosa"],
+            "note": "Funny in the making-you-laugh sense. Said flatly to somebody's face — ¡Qué gracioso! — it can be sarcasm, so the tone does real work here."
+          },
+          {
+            "display": "hace gracia",
+            "cue": "it makes (me) laugh · I find it funny",
+            "tag": "interference",
+            "forms": ["hace gracia"],
+            "note": "The thing is the subject and the person laughing is a me or te: me hace gracia, not yo hago gracia. It works exactly like me gusta."
+          },
+          {
+            "display": "chiste",
+            "cue": "a joke (the told kind)",
+            "tag": "free",
+            "forms": ["chiste"],
+            "note": "A joke you tell, with a punchline. Broma is the joke you play on somebody — the two words are not interchangeable in either direction."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "Hacer gracia is built like gustar, so the grammar flips. Me hace gracia is I find it funny; yo hago gracia would claim you are the funny thing.",
+      "sound": "Gracioso is four beats, gra-thee-O-so in Spain and gra-see-O-so in America. Chiste opens with the ch of church: CHIS-te.",
+      "variations": [
+        {
+          "display": "Cuenta un chiste muy malo, pero me hace gracia.",
+          "cue": "He tells a really bad joke, but it makes me laugh.",
+          "changed": "The told joke appears as its own noun, and the funniness is credited to the joke rather than to the person."
+        }
+      ],
+      "mistake": {
+        "display": "Tu hermano es muy gracioso, siempre hago gracia.",
+        "why": "Hago puts the speaker in the subject slot, which says they are the amusing one. The frame needs me hace gracia, on the pattern of me gusta."
+      },
+      "usage": "Neutral to warm and safe with almost anyone. Only the flat, deadpan ¡Qué gracioso! carries sarcasm, and that reading belongs to L5-M7.",
+      "register": "informal",
+      "mnemonic": "The joke makes the grace; you only receive it."
+    },
+    {
+      "id": "L5-M2-S09",
+      "display": "No me digas, ¿en serio? Qué va, hombre.",
+      "cue": "You do not say — seriously? No way, mate.",
+      "literal": "Not me you-say, in serious? What goes, man.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "no me digas",
+            "cue": "you do not say · really?",
+            "tag": "free",
+            "forms": ["no me digas"],
+            "note": "Not an order to be quiet. It is surprise, and it invites the other person to go on talking — the opposite of what the words say."
+          },
+          {
+            "display": "en serio",
+            "cue": "seriously? · honestly",
+            "tag": "free",
+            "forms": ["en serio"],
+            "note": "Asks whether the thing was meant. As a statement it does the same job es broma does in reverse: it marks your own words as not a tease."
+          },
+          {
+            "display": "qué va",
+            "cue": "no way · not a chance",
+            "tag": "free",
+            "forms": ["qué va"],
+            "note": "A flat, friendly denial of what was just said. It is far softer than it looks and is the ordinary spoken no in an argument between friends."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "No me digas looks like the negative command L4 taught (no hables, no pongas) and is not one. Read literally it is stop talking; used it means keep going.",
+      "sound": "Qué va is two clear beats, ke-BA, with the Spanish soft v. The stress sits on qué, and the accent mark is what carries it.",
+      "variations": [
+        {
+          "display": "Qué va, hombre, no es verdad.",
+          "cue": "No way, mate, it is not true.",
+          "changed": "The denial leads and the plain restatement follows it — the L5-M1 habit of saying the plain thing too."
+        }
+      ],
+      "mistake": {
+        "display": "No digas, ¿en serio?",
+        "why": "Dropping the me turns it back into a real command: do not say it. The pronoun is what makes the phrase mean surprise instead."
+      },
+      "usage": "The three of them are the ordinary furniture of a conversation between friends, and hombre attaches to any of them regardless of who is being spoken to.",
+      "register": "informal",
+      "mnemonic": "Do not tell me — and please carry on telling me."
+    },
+    {
+      "id": "L5-M2-S10",
+      "display": "Ni hablar, tía. Qué morro tienes, es una broma pesada.",
+      "cue": "No chance, love. You have got a nerve — that is a nasty joke.",
+      "literal": "Nor to-speak, aunt. What snout you-have, is a joke heavy.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ni hablar",
+            "cue": "no chance · out of the question",
+            "tag": "free",
+            "forms": ["ni hablar"],
+            "note": "A firm refusal, said warmly between friends. Stronger than qué va, which denies a claim: ni hablar refuses a request."
+          },
+          {
+            "display": "qué morro",
+            "cue": "what a nerve · what cheek",
+            "tag": "free",
+            "forms": ["qué morro"],
+            "note": "Morro is an animal snout. Of a person it is cheek, and the phrase admires the nerve as much as it complains about it."
+          },
+          {
+            "display": "broma",
+            "cue": "a joke · a prank",
+            "tag": "free",
+            "forms": ["broma", "bromas"],
+            "note": "The joke you play, not the one you tell — that is a chiste. Una broma pesada is one that has gone too far."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "Broma pesada uses the same pesado as S06, and it is the same idea: something that weighs on the person on the receiving end. It is the line this module tells you not to cross.",
+      "sound": "Morro rolls its double r hard, MO-rro, and the roll is the whole difference from moro. Broma is two beats, BRO-ma.",
+      "variations": [
+        {
+          "display": "Ni hablar, es una broma muy pesada.",
+          "cue": "No chance — that is a really nasty joke.",
+          "changed": "The cheek goes and only the refusal and the verdict are left, which is how it would be said when nobody is smiling."
+        }
+      ],
+      "mistake": {
+        "display": "Ni hablar, tía. Qué morro tienes, es un chiste pesado.",
+        "why": "A chiste is a joke you tell and it cannot be pesada in this sense. The prank played on somebody is a broma, and that is what has gone too far here."
+      },
+      "usage": "Between friends only, and the smile is what keeps it a tease. Qué morro said without one is a real accusation, and una broma pesada is already the complaint.",
+      "register": "informal",
+      "mnemonic": "The heavy joke is the one that lands on somebody."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M2-C01",
+      "display": "Un momentito, tío.",
+      "cue": "One moment, mate."
+    },
+    {
+      "id": "L5-M2-C02",
+      "display": "Vivo en una casita muy pequeña.",
+      "cue": "I live in a lovely little house."
+    },
+    {
+      "id": "L5-M2-C03",
+      "display": "¿Quieres un cafelito?",
+      "cue": "Fancy a nice coffee?"
+    },
+    {
+      "id": "L5-M2-C04",
+      "display": "Vaya cochazo tienes.",
+      "cue": "What a car you have got."
+    },
+    {
+      "id": "L5-M2-C05",
+      "display": "Tengo un problemilla con el móvil.",
+      "cue": "I have a slight problem with my phone."
+    },
+    {
+      "id": "L5-M2-C06",
+      "display": "Mi hermano es un poco pesado, pero majo.",
+      "cue": "My brother is a bit much, but lovely."
+    },
+    {
+      "id": "L5-M2-C07",
+      "display": "Qué móvil más feo, es broma.",
+      "cue": "What an ugly phone — only joking."
+    },
+    {
+      "id": "L5-M2-C08",
+      "display": "Tu hermana es muy graciosa, me hace gracia.",
+      "cue": "Your sister is very funny, she makes me laugh."
+    },
+    {
+      "id": "L5-M2-C09",
+      "display": "No me digas, ¿en serio?",
+      "cue": "You do not say — seriously?"
+    },
+    {
+      "id": "L5-M2-C10",
+      "display": "Qué va, hombre, ni hablar.",
+      "cue": "No way, mate, out of the question."
+    },
+    {
+      "id": "L5-M2-C11",
+      "display": "Qué morro tienes, tía.",
+      "cue": "You have got a nerve."
+    },
+    {
+      "id": "L5-M2-C12",
+      "display": "Anda ya, eso es una broma.",
+      "cue": "Come off it, that is a joke."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,611 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M4",
+  "title": "Formal occasions",
+  "job": "Toasts, speeches, condolences, ceremonies",
+  "prerequisites": [
+    "L5-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "present",
+      "Präteritum"
+    ],
+    "allowedPatterns": [
+      "Ich möchte + im Namen + <Gen> + ein paar Worte + sagen",
+      "Auf + <Akk> + ! + Zum Wohl + !",
+      "Sehr geehrte Damen + und Herren + , + <Klausel>",
+      "Mein herzliches Beileid + zum + <Dat>",
+      "Wir danken + <Dat> + für + <Akk>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "THE CEREMONIAL REGISTER IS A FORMULA INVENTORY, NOT A GRAMMAR. Its sentences are frozen — Zum Wohl, Mein herzliches Beileid, Mit freundlichen Grüßen — or near-frozen with exactly one slot: Ich möchte im Namen DER FAMILIE ein paar Worte sagen. You are not composing here, you are quoting. Learn the whole string and learn which occasion it belongs to, and the freezing that happens to every competent speaker at a toast does not happen to you."
+    },
+    {
+      "tag": "delta",
+      "text": "THE TOAST HAS A SEQUENCE, AND THE SEQUENCE IS AS BINDING AS THE WORDS. Glasses go up, eyes meet — around the table, person by person — and nobody drinks until Prost or Zum Wohl has been said. A formula in the wrong slot of the ritual is as wrong as the wrong formula: drinking first is the error, not saying the phrase badly. Zum Wohl is the more formal of the two; Prost is the everyday one."
+    },
+    {
+      "tag": "interference",
+      "text": "GERMAN CONDOLENCE IS SHORT, FORMAL AND COOL ON THE PAGE. English has drifted warm and chatty — so sorry for your loss, thinking of you, let me know if you need anything — and a card translated from that reads as gushing. German signals warmth with one word, herzlich, and then stops. Two sentences is a complete condolence card. Length is not kindness here."
+    },
+    {
+      "tag": "delta",
+      "text": "Zum Wohl IS LEARNED AS ONE STRING, AND THE INDEX SAYS WHY. The bare noun Wohl already belongs to L3-M6's Ich fühle mich wohl, where it is the comfortable feeling, so the toast cannot own that word on its own. Tap the whole phrase, not the pieces: Zum Wohl is a unit, exactly like Mit freundlichen Grüßen and ein paar Worte."
+    },
+    {
+      "tag": "free",
+      "text": "HOW A LETTER OPENS, AND THE ONE OPENING THIS MODULE NAMES BUT NEVER WRITES. Sehr geehrte Damen und Herren is the address when you do not know who reads it. Liebe plus a name or a group is the warm opening. The masculine Lieber Thomas is equally correct German and stays out of this course's displays, because lieber is already L2-M9's word for preferring something and your tap would land on that note instead."
+    },
+    {
+      "tag": "free",
+      "text": "THIS IS NOT THE OFFICE OR THE COUNTER. The passive, Konjunktiv I, Wir bitten um Ihr Verständnis and the whole language of announcements and the Amt are L4-M7's, and not one word of them is re-taught here — they are a different formality, institutional rather than ceremonial. The genitive under im Namen der Familie is L3-M8's, and the Sie address and the Könnten tier are L2-M1's. Everything new here is vocabulary."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M4-S01",
+      "display": "Ich möchte im Namen der Familie ein paar Worte sagen.",
+      "cue": "I would like to say a few words on behalf of the family.",
+      "literal": "I would-like in-the name of-the family a few words say.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "im Namen",
+            "cue": "on behalf of, in the name of",
+            "tag": "free",
+            "forms": [
+              "im Namen"
+            ],
+            "note": "A frozen pair taking the genitive after it: im Namen der Familie, im Namen aller Gäste. The bare Namen is not taught apart from it."
+          },
+          {
+            "display": "ein paar Worte",
+            "cue": "a few words",
+            "tag": "free",
+            "forms": [
+              "ein paar Worte"
+            ],
+            "note": "The fixed opening of a short speech. Worte here is L4-M10's plural for connected speech, not Wörter, which counts vocabulary items."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "English says I would just like to say a few words and means it as modesty. German means it as a structural announcement: the room falls quiet, and what follows really is short.",
+      "sound": "ikh MUERKH-tuh im NAA-men dair fa-MEE-lee-uh eyn paar VOR-tuh ZAA-gen — the whole line runs flat until Worte, and sagen falls away at the end.",
+      "variations": [
+        {
+          "display": "Ich möchte im Namen der Kollegen ein paar Worte sagen.",
+          "cue": "I would like to say a few words on behalf of the colleagues.",
+          "changed": "Only the genitive noun in the slot moves; the frame either side of it is frozen, which is what makes it usable under pressure."
+        }
+      ],
+      "mistake": {
+        "display": "Ich möchte in Namen der Familie ein paar Worte sagen",
+        "why": "im is in plus dem and cannot be taken apart. in Namen is not a shorter form of the phrase, it is a broken one."
+      },
+      "usage": "Standing up at a wedding, a leaving do or a funeral to open a short speech.",
+      "register": "formal",
+      "mnemonic": "im Namen puts you behind a name that is not yours — that is what speaking for someone means."
+    },
+    {
+      "id": "L5-M4-S02",
+      "display": "Auf die Gäste! Zum Wohl!",
+      "cue": "To the guests! Cheers!",
+      "literal": "On the guests! To-the well-being!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Gast",
+            "cue": "guest",
+            "tag": "free",
+            "forms": [
+              "Gast",
+              "Gäste"
+            ],
+            "note": "Masculine, der Gast, and the plural takes an umlaut: die Gäste. Auf plus the accusative is what turns a noun into a toast."
+          },
+          {
+            "display": "Zum Wohl",
+            "cue": "cheers, to your health",
+            "tag": "free",
+            "forms": [
+              "Zum Wohl"
+            ],
+            "note": "One frozen string, more formal than Prost. Learned whole because the bare Wohl is already L3-M6's word for feeling comfortable."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "English toasts with to; German toasts with auf and puts the accusative after it — auf die Gäste, not auf den Gästen. The case says the glass is going towards them.",
+      "sound": "owf dee GES-tuh! tsoom VOHL! — Gäste's ä is the e of get, and Wohl has a long open o with the l barely touched.",
+      "variations": [
+        {
+          "display": "Auf die Familie! Zum Wohl!",
+          "cue": "To the family! Cheers!",
+          "changed": "The toast's one slot takes a different group; Zum Wohl does not move, because it is the fixed half."
+        }
+      ],
+      "mistake": {
+        "display": "Auf die Gäste! Zum Wohle!",
+        "why": "Zum Wohle exists in very old ceremonial German and is not what is said at a table. The toast is Zum Wohl, two words, no ending."
+      },
+      "usage": "Raising a glass at a table where the occasion is being marked rather than just enjoyed.",
+      "register": "formal",
+      "mnemonic": "auf points the glass, zum points the wish."
+    },
+    {
+      "id": "L5-M4-S03",
+      "display": "Wir wollen kurz anstoßen: Prost!",
+      "cue": "Let us clink glasses briefly: cheers!",
+      "literal": "We want briefly clink-glasses: cheers!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "anstoßen",
+            "cue": "to clink glasses",
+            "tag": "free",
+            "forms": [
+              "anstoßen",
+              "angestoßen"
+            ],
+            "note": "Separable — wir stoßen an — and written whole after a modal, as here. It names the clink itself, not the drinking that follows."
+          },
+          {
+            "display": "Prost",
+            "cue": "cheers",
+            "tag": "free",
+            "forms": [
+              "Prost"
+            ],
+            "note": "The everyday toast, usable anywhere Zum Wohl would be too stiff. From Latin prosit, may it be of use, which is why it takes no article."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "An anglophone treats cheers as a word said while drinking. Prost is said before, and the drinking is blocked until it lands — which is why the glasses stay in the air a beat longer than feels natural.",
+      "sound": "veer VOL-en koorts AN-shtoh-sen: PROHST — anstoßen stresses the an, and the ß is a plain sharp s.",
+      "variations": [
+        {
+          "display": "Wir wollen kurz anstoßen: Zum Wohl!",
+          "cue": "Let us clink glasses briefly: cheers!",
+          "changed": "The formal toast replaces the everyday one — same ritual, a step up in temperature, typically with older guests or a speech behind it."
+        }
+      ],
+      "mistake": {
+        "display": "Wir wollen kurz anstossen: Prost!",
+        "why": "anstoßen keeps its ß after the long o. Writing ss there is the respelling this course never uses."
+      },
+      "usage": "Calling a table to order for a toast, briefly, before anyone has drunk.",
+      "register": "neutral",
+      "mnemonic": "anstoßen is to knock against — the verb is the sound the glasses make."
+    },
+    {
+      "id": "L5-M4-S04",
+      "display": "Die Rede war kurz und sehr herzlich.",
+      "cue": "The speech was short and very warm.",
+      "literal": "The speech was short and very heartfelt.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Rede",
+            "cue": "speech",
+            "tag": "free",
+            "forms": [
+              "Rede",
+              "Reden"
+            ],
+            "note": "Feminine, die Rede — a speech held in front of people. eine Rede halten is the verb it goes with, not machen."
+          },
+          {
+            "display": "herzlich",
+            "cue": "warm, heartfelt",
+            "tag": "free",
+            "forms": [
+              "herzlich",
+              "herzliches",
+              "herzlichen"
+            ],
+            "note": "Built on Herz, heart. It is the one word the ceremonial register uses to carry warmth, and one use of it is enough for a whole card."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "herzlich is not hearty and not sentimental. It is the formal register's single controlled signal of warmth, which is why it appears in Herzlichen Glückwunsch and Mein herzliches Beileid and almost nowhere loud.",
+      "sound": "dee RAY-duh var koorts oont zair HERTS-likh — herzlich ends on the soft breathy ch, and the r in Rede is barely rolled.",
+      "variations": [
+        {
+          "display": "Die Rede war kurz und sehr gut.",
+          "cue": "The speech was short and very good.",
+          "changed": "A plain judgement replaces the warm one; gut rates the speech, herzlich rates the feeling behind it."
+        }
+      ],
+      "mistake": {
+        "display": "Die Rede war kurz und sehr herzliche",
+        "why": "After war the adjective stands bare, with no ending at all. The -e shapes only appear in front of a noun."
+      },
+      "usage": "Saying something kind about a speech afterwards, which is itself part of the occasion.",
+      "register": "formal",
+      "mnemonic": "herzlich carries the Herz inside it, and one is the ration."
+    },
+    {
+      "id": "L5-M4-S05",
+      "display": "Sehr geehrte Damen und Herren, wir danken Ihnen für alles.",
+      "cue": "Ladies and gentlemen, we thank you for everything.",
+      "literal": "Very honoured ladies and gentlemen, we thank you for everything.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Sehr geehrte",
+            "cue": "dear (formal address)",
+            "tag": "free",
+            "forms": [
+              "Sehr geehrte"
+            ],
+            "note": "The frozen opening of a formal letter or speech, learned as a pair. Literally very honoured, and it is followed by Damen und Herren or a surname."
+          },
+          {
+            "display": "Damen",
+            "cue": "ladies",
+            "tag": "free",
+            "forms": [
+              "Damen"
+            ],
+            "note": "Plural of die Dame. In this address it is fixed in this order, Damen before Herren, and never appears alone."
+          },
+          {
+            "display": "Herren",
+            "cue": "gentlemen",
+            "tag": "free",
+            "forms": [
+              "Herren"
+            ],
+            "note": "Plural of der Herr. Herr on its own is the everyday Mr; the plural in this phrase belongs to the ceremonial register."
+          },
+          {
+            "display": "danken",
+            "cue": "to thank",
+            "tag": "free",
+            "forms": [
+              "danken",
+              "dankt"
+            ],
+            "note": "Takes the dative of the person: wir danken Ihnen, never wir danken Sie. The thing thanked for hangs on für."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English thanks somebody directly, so an anglophone reaches for danken Sie. German thanks TO somebody: the person is dative and the reason takes für plus the accusative.",
+      "sound": "zair guh-AIR-tuh DAA-men oont HAIR-en, veer DAN-ken EE-nen fuer AL-es — geehrte has two e sounds either side of the h, not one long vowel.",
+      "variations": [
+        {
+          "display": "Sehr geehrte Damen und Herren, wir danken Ihnen für Ihre Hilfe.",
+          "cue": "Ladies and gentlemen, we thank you for your help.",
+          "changed": "The für phrase names what is being thanked for, which is what turns a formula into an actual sentence."
+        }
+      ],
+      "mistake": {
+        "display": "Sehr geehrte Damen und Herren, wir danken Sie für alles",
+        "why": "danken governs the dative: Ihnen, not Sie. Getting this wrong in the first line of a formal letter is the error that is noticed."
+      },
+      "usage": "Opening a letter, an email or a short address when the audience is a room or a company rather than a friend.",
+      "register": "formal",
+      "mnemonic": "geehrt holds Ehre, honour — the address hands it over before the sentence begins."
+    },
+    {
+      "id": "L5-M4-S06",
+      "display": "Mein herzliches Beileid zum Verlust in der Familie.",
+      "cue": "My heartfelt condolences on the loss in the family.",
+      "literal": "My heartfelt condolence to-the loss in the family.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Beileid",
+            "cue": "condolences",
+            "tag": "free",
+            "forms": [
+              "Beileid"
+            ],
+            "note": "Neuter and singular, das Beileid, where English pluralises. Built from bei plus Leid, sorrow: the grief stood beside."
+          },
+          {
+            "display": "Verlust",
+            "cue": "loss",
+            "tag": "free",
+            "forms": [
+              "Verlust"
+            ],
+            "note": "Masculine, der Verlust, so zum Verlust in the dative. The written register's way of naming a death without naming it."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "An English card gets longer to show it cares. A German one does not: this sentence, or Mein herzliches Beileid alone, is a complete and correct condolence. Adding three warm sentences underneath makes it worse, not kinder.",
+      "sound": "myn HERTS-likh-es BY-lyt zoom fer-LOOST in dair fa-MEE-lee-uh — Beileid is BY-lyt, two clean diphthongs, and the final d is said as t.",
+      "variations": [
+        {
+          "display": "Mein herzliches Beileid, wir denken an Sie.",
+          "cue": "My heartfelt condolences, we are thinking of you.",
+          "changed": "The second clause is the one permitted addition, and it stays formal — Sie, not du, even to a colleague you normally tease."
+        }
+      ],
+      "mistake": {
+        "display": "Meine herzliche Beileide zum Verlust in der Familie",
+        "why": "Beileid is neuter and has no plural at all. English condolences is plural; the German word is one thing."
+      },
+      "usage": "Writing a card, or saying one sentence at a door, when anything longer would be too much.",
+      "register": "formal",
+      "mnemonic": "Beileid is sorrow standing beside you — bei plus Leid, and it stands there quietly."
+    },
+    {
+      "id": "L5-M4-S07",
+      "display": "Wir wünschen Ihnen alles Gute zur Hochzeit.",
+      "cue": "We wish you all the best for the wedding.",
+      "literal": "We wish you all good to-the wedding.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wünschen",
+            "cue": "to wish",
+            "tag": "free",
+            "forms": [
+              "wünschen",
+              "wünsche",
+              "wünscht"
+            ],
+            "note": "Dative for the person, accusative for the wish: wir wünschen Ihnen alles Gute. Ich wünsche is the singular this course also writes."
+          },
+          {
+            "display": "Hochzeit",
+            "cue": "wedding",
+            "tag": "free",
+            "forms": [
+              "Hochzeit"
+            ],
+            "note": "Feminine, die Hochzeit, so zur Hochzeit. Literally high time; the Hoch has nothing to do with the Hoch of Hochdeutsch."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "alles Gute is fixed and capitalised: Gute is a noun here, not the adjective. Writing alles gut turns the good wish into a statement that everything is fine.",
+      "sound": "veer VUEN-shen EE-nen AL-es GOO-tuh tsoor HOKH-tsyt — wünschen's ü is short and rounded, and Hochzeit's ch is the hard back one.",
+      "variations": [
+        {
+          "display": "Wir wünschen Ihnen alles Gute zum Geburtstag.",
+          "cue": "We wish you all the best for your birthday.",
+          "changed": "The occasion in the slot changes and the preposition follows the gender with it: zur for die Hochzeit, zum for der Geburtstag."
+        }
+      ],
+      "mistake": {
+        "display": "Wir wünschen Sie alles Gute zur Hochzeit",
+        "why": "wünschen puts the person in the dative, like danken: Ihnen, not Sie. The accusative slot is already taken by alles Gute."
+      },
+      "usage": "Signing a card, or saying the line as you hand one over.",
+      "register": "formal",
+      "mnemonic": "Two datives in a row — danken Ihnen, wünschen Ihnen: the formal register gives things TO people."
+    },
+    {
+      "id": "L5-M4-S08",
+      "display": "Herzlichen Glückwunsch zum Geburtstag und alles Gute!",
+      "cue": "Happy birthday and all the best!",
+      "literal": "Heartfelt good-wish to-the birthday and all good!",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Glückwunsch",
+            "cue": "congratulations, good wishes",
+            "tag": "free",
+            "forms": [
+              "Glückwunsch",
+              "Glückwünsche"
+            ],
+            "note": "Masculine, der Glückwunsch — Glück plus Wunsch, luck-wish. Herzlichen is the accusative -en because the phrase is a shortened Ich wünsche dir …"
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "There is no German sentence shaped like happy birthday. The greeting is a wish handed over — Herzlichen Glückwunsch zum Geburtstag — and the -en on Herzlichen is the fossil of the verb that used to be in front of it.",
+      "sound": "HERTS-likh-en GLUEK-voonsh tsoom guh-BOORTS-tsyt oont AL-es GOO-tuh — Glückwunsch has its stress on Glück and the ü is short.",
+      "variations": [
+        {
+          "display": "Herzlichen Glückwunsch zur Hochzeit!",
+          "cue": "Congratulations on the wedding!",
+          "changed": "The same formula moves to another occasion, and zum becomes zur with the feminine noun."
+        }
+      ],
+      "mistake": {
+        "display": "Herzliche Glückwunsch zum Geburtstag und alles Gute",
+        "why": "Glückwunsch is masculine accusative here, so the adjective takes -en: Herzlichen. Herzliche would need a plural or a feminine noun after it."
+      },
+      "usage": "The written and spoken birthday greeting, on a card or across a room.",
+      "register": "neutral",
+      "mnemonic": "Glückwunsch is luck plus wish — you are not describing the day, you are handing something over."
+    },
+    {
+      "id": "L5-M4-S09",
+      "display": "Liebe Gäste, der Anlass ist heute sehr schön.",
+      "cue": "Dear guests, the occasion today is a lovely one.",
+      "literal": "Dear guests, the occasion is today very beautiful.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Liebe Gäste",
+            "cue": "dear guests",
+            "tag": "free",
+            "forms": [
+              "Liebe Gäste"
+            ],
+            "note": "The warm opening, learned as a pair. The masculine Lieber plus a name is equally correct and this course never writes it — lieber is already L2-M9's word."
+          },
+          {
+            "display": "Anlass",
+            "cue": "occasion",
+            "tag": "free",
+            "forms": [
+              "Anlass"
+            ],
+            "note": "Masculine, der Anlass, with ss after the short a. It names the reason people have gathered, not the party itself."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "Anlass is the reason for the gathering; Feier is the gathering. An English occasion covers both, so an anglophone uses Anlass where a German would say Feier and sounds oddly official about a party.",
+      "sound": "LEE-buh GES-tuh, dair AN-lass ist HOY-tuh zair SHUERN — Anlass keeps its a short, which is exactly what the double s is marking.",
+      "variations": [
+        {
+          "display": "Liebe Gäste, wir feiern heute zusammen.",
+          "cue": "Dear guests, today we are celebrating together.",
+          "changed": "The opening stays and the second clause turns active — the reason gives way to the people doing it."
+        }
+      ],
+      "mistake": {
+        "display": "Lieben Gäste, der Anlass ist heute sehr schön",
+        "why": "A plural noun with no article in front takes -e on its adjective: Liebe Gäste. The -en shape would need a die ahead of it."
+      },
+      "usage": "Opening a toast or a short speech to a room you are on warm terms with.",
+      "register": "formal",
+      "mnemonic": "Anlass is what let the day happen; the Feier is what happened."
+    },
+    {
+      "id": "L5-M4-S10",
+      "display": "Mit freundlichen Grüßen kommt immer am Ende.",
+      "cue": "Mit freundlichen Grüßen always comes at the end.",
+      "literal": "With friendly greetings comes always at-the end.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mit freundlichen Grüßen",
+            "cue": "yours sincerely (letter sign-off)",
+            "tag": "free",
+            "forms": [
+              "Mit freundlichen Grüßen"
+            ],
+            "note": "Three words, frozen, with no comma after it and the name on the next line. Herzliche Grüße is its warmer cousin for people you know."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "English sign-offs choose themselves by how well you know the reader and can be shortened to one word. This one cannot be shortened, cannot be reordered, and is what every formal German letter ends with — including one you are annoyed about.",
+      "sound": "mit FROYND-likh-en GRUE-sen kommt IM-er am EN-duh — Grüßen has a long ü and the ß is a plain sharp s, never a z sound.",
+      "variations": [
+        {
+          "display": "Mit freundlichen Grüßen kommt am Ende der Karte.",
+          "cue": "Mit freundlichen Grüßen comes at the end of the card.",
+          "changed": "The genitive names which end is meant; the formula itself is quoted rather than used, which is why it can sit in the subject slot."
+        }
+      ],
+      "mistake": {
+        "display": "Mit freundliche Grüßen kommt immer am Ende",
+        "why": "Grüßen is dative plural after mit, so the adjective takes -en. This is the one phrase where the ending is worth memorising, because it is printed on everything."
+      },
+      "usage": "Closing a formal letter or email, and explaining to someone else where it goes.",
+      "register": "formal",
+      "mnemonic": "Friendly greetings, sent with the letter — mit, so dative, so -en on both words."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M4-C01",
+      "display": "Zum Wohl!",
+      "cue": "Cheers!"
+    },
+    {
+      "id": "L5-M4-C02",
+      "display": "Wir wollen kurz anstoßen",
+      "cue": "Let us clink glasses briefly"
+    },
+    {
+      "id": "L5-M4-C03",
+      "display": "Herzlichen Glückwunsch!",
+      "cue": "Congratulations!"
+    },
+    {
+      "id": "L5-M4-C04",
+      "display": "Mein herzliches Beileid",
+      "cue": "My heartfelt condolences"
+    },
+    {
+      "id": "L5-M4-C05",
+      "display": "Sehr geehrte Damen und Herren",
+      "cue": "Ladies and gentlemen"
+    },
+    {
+      "id": "L5-M4-C06",
+      "display": "Mit freundlichen Grüßen",
+      "cue": "Yours sincerely"
+    },
+    {
+      "id": "L5-M4-C07",
+      "display": "Wir danken Ihnen sehr",
+      "cue": "We thank you very much"
+    },
+    {
+      "id": "L5-M4-C08",
+      "display": "Die Rede war zu lang",
+      "cue": "The speech was too long"
+    },
+    {
+      "id": "L5-M4-C09",
+      "display": "Wir wünschen Ihnen alles Gute",
+      "cue": "We wish you all the best"
+    },
+    {
+      "id": "L5-M4-C10",
+      "display": "Liebe Gäste, wir feiern heute",
+      "cue": "Dear guests, we are celebrating today"
+    },
+    {
+      "id": "L5-M4-C11",
+      "display": "Ich möchte ein paar Worte sagen",
+      "cue": "I would like to say a few words"
+    },
+    {
+      "id": "L5-M4-C12",
+      "display": "Der Anlass war die Hochzeit",
+      "cue": "The occasion was the wedding"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 2,
+    "comprehendCount": 4
+  }
+}

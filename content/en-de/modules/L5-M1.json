@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M1",
+  "title": "Sayings and idioms",
+  "job": "The figurative everyday, and when it is used",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 5,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": ["present", "Perfekt", "Präteritum"],
+    "allowedPatterns": [
+      "Ich habe + die Nase voll + von + <Dat>",
+      "Da + drücke ich dir + die Daumen",
+      "<Redewendung> + heißt wörtlich + <Wort für Wort> + , + aber + <Klausel>",
+      "Das sagt man + , + wenn + <verb-final>",
+      "Ich verstehe + nur Bahnhof"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A FIXED EXPRESSION IS ONE WORD THAT HAPPENS TO BE SPELLED AS SEVERAL. die Nase voll haben is a single lexical unit: nothing inside it may be swapped, pluralised or reordered. die Nasen voll haben is not a stronger version of it, it is not German at all. Learn the whole phrase, and let only the verb outside it carry the tense and the person — ich habe, du hast, wir hatten."
+    },
+    {
+      "tag": "delta",
+      "text": "A PROVERB IS A WHOLE SENTENCE; AN IDIOM IS A PHRASE THAT TAKES A SENTENCE AROUND IT. Übung macht den Meister is complete as it stands and is quoted unchanged, article and all. den Faden verlieren has no subject and no tense until you give it one: man verliert den Faden, ich habe den Faden verloren. Learners merge the two and then try to conjugate a proverb; keep them apart."
+    },
+    {
+      "tag": "free",
+      "text": "THE METALANGUAGE IS PART OF THE LESSON. eine Redewendung is an idiom, ein Sprichwort is a proverb, and wörtlich is what a phrase says word for word as opposed to what it means. With these three you can ask about the next expression you meet without anybody having to teach it to you: Was bedeutet das wörtlich? — and that question is the real product of this module."
+    },
+    {
+      "tag": "interference",
+      "text": "THE WORD-FOR-WORD READING HAS NO ERROR SIGNAL IN IT. Ich verstehe nur Bahnhof parses perfectly as I only understand station: the case is right, the verb is right, nothing is misspelled. That is exactly what makes a figurative line dangerous — the sentence you build from the parts is grammatical and wrong, and German gives you nothing to notice it by. When a correct sentence makes no sense, suspect a Redewendung."
+    },
+    {
+      "tag": "interference",
+      "text": "THE NEAR-TWIN THAT IS NOT A TWIN. English crosses its fingers; German presses its thumbs — jemandem die Daumen drücken. English is fed up; German has the nose full. The gesture and the picture are not shared, so translating the image writes nonsense even when every word is right. Take the German picture whole and do not look for the English one inside it."
+    },
+    {
+      "tag": "free",
+      "text": "THE SITUATION IS PART OF THE MEANING, AND GERMAN SAYS SO OUT LOUD. Das sagt man, wenn … is how a German speaker hands over an expression: the phrase, then the occasion that licenses it, in a wenn-clause with the verb at the end. An idiom learned without its occasion is a phrase you will use once, in the wrong place."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M1-S01",
+      "display": "Ich habe die Nase voll von der Arbeit.",
+      "cue": "I have had enough of this work.",
+      "literal": "I have the nose full of the work.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "die Nase voll",
+            "cue": "fed up, having had enough (literally: the nose full)",
+            "tag": "interference",
+            "forms": ["die Nase voll"],
+            "note": "Learned whole, with haben around it and von plus the dative after it. Never die Nasen voll: nothing inside a fixed expression may be pluralised."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "English is fed up WITH something; German has the nose full VON something, and von always takes the dative — von der Arbeit, never von die Arbeit.",
+      "sound": "ikh HAA-buh dee NAA-zuh fol fon dair AR-bytt.",
+      "variations": [
+        {
+          "display": "Hast du die Nase voll?",
+          "cue": "Have you had enough?",
+          "changed": "A question, and the phrase does not move: only the verb hops to the front and takes du with it. The three words stay welded in that order."
+        }
+      ],
+      "mistake": {
+        "display": "Ich habe die Nasen voll von der Arbeit",
+        "why": "Nase is singular inside this expression and stays singular however many people are fed up. A plural here is the surest sign the phrase was built from its parts rather than learned whole."
+      },
+      "usage": "Said to a friend or a colleague you are on du terms with, about something you have put up with for too long. It is blunt, not rude.",
+      "register": "informal",
+      "mnemonic": "A nose so full there is no room to breathe: that is one grievance too many."
+    },
+    {
+      "id": "L5-M1-S02",
+      "display": "Das ist eine Redewendung und kein Sprichwort.",
+      "cue": "That is an idiom and not a proverb.",
+      "literal": "That is an idiom and no proverb.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Redewendung",
+            "cue": "idiom, turn of phrase",
+            "tag": "free",
+            "forms": ["Redewendung", "Redewendungen"],
+            "note": "Feminine: die Redewendung. A phrase, not a sentence — it needs a subject and a tense built around it before it can be said."
+          },
+          {
+            "display": "Sprichwort",
+            "cue": "proverb, saying",
+            "tag": "free",
+            "forms": ["Sprichwort", "Sprichwörter"],
+            "note": "Neuter: das Sprichwort. A complete sentence that is quoted unchanged, which is why the plural takes an umlaut: Sprichwörter."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "English uses saying loosely for both. German does not: asking for ein Sprichwort and getting den Faden verlieren means the question was the wrong one.",
+      "sound": "das ist EYE-nuh RAY-duh-ven-doong oont kyn SHPRIKH-vort.",
+      "variations": [
+        {
+          "display": "Das ist ein Sprichwort und keine Redewendung.",
+          "cue": "That is a proverb and not an idiom.",
+          "changed": "The two nouns swap seats, and so do their articles: ein and keine follow the gender, not the position."
+        }
+      ],
+      "mistake": {
+        "display": "Das ist eine Sprichwort und kein Redewendung",
+        "why": "The articles have been swapped with the nouns. das Sprichwort is neuter and die Redewendung is feminine, so it is ein Sprichwort and keine Redewendung."
+      },
+      "usage": "Naming what kind of expression you have just met — the sentence that lets a learner ask a precise question about the next one.",
+      "register": "neutral",
+      "mnemonic": "Ein Sprichwort spricht schon von selbst: it is already a whole sentence."
+    },
+    {
+      "id": "L5-M1-S03",
+      "display": "Die Redewendung heißt wörtlich „die Nase voll“, aber sie bedeutet genug.",
+      "cue": "The idiom literally says “the nose full”, but it means enough.",
+      "literal": "The idiom is-called literally the nose full, but it means enough.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "wörtlich",
+            "cue": "literally, word for word",
+            "tag": "free",
+            "forms": ["wörtlich"],
+            "note": "From Wort: what the words say, as against what they mean. It is the word that lets you ask whether an expression is meant as it stands."
+          },
+          {
+            "display": "bedeutet",
+            "cue": "means, signifies",
+            "tag": "free",
+            "forms": ["bedeutet", "bedeuten"],
+            "note": "bedeuten is what a phrase means; heißen is what it is called. Was bedeutet das? asks for the sense, not for the name."
+          },
+          {
+            "display": "genug",
+            "cue": "enough",
+            "tag": "free",
+            "forms": ["genug"],
+            "note": "Never inflects, and follows what it measures: Arbeit genug, genug gearbeitet. Here it is the plain meaning the picture stands in for."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "heißt and bedeutet are both translated as means in English. German splits them: die Redewendung heißt wörtlich … is the wording, sie bedeutet … is the sense.",
+      "sound": "dee RAY-duh-ven-doong hyst VURT-likh dee NAA-zuh fol, AA-ber zee buh-DOY-tet guh-NOOK.",
+      "variations": [
+        {
+          "display": "Was bedeutet diese Redewendung wörtlich?",
+          "cue": "What does this idiom mean word for word?",
+          "changed": "The statement becomes the question a learner actually needs, with was in first position and the verb second."
+        }
+      ],
+      "mistake": {
+        "display": "Die Redewendung bedeutet wörtlich die Nase voll",
+        "why": "bedeuten is the sense and cannot be wörtlich — that is the contradiction the whole module turns on. The wording takes heißen: sie heißt wörtlich …"
+      },
+      "usage": "Explaining an expression to someone: the picture first, then the meaning, with aber between them.",
+      "register": "neutral",
+      "mnemonic": "wörtlich holds the Wort; bedeutet holds the deutliche meaning behind it."
+    },
+    {
+      "id": "L5-M1-S04",
+      "display": "Ich verstehe hier wirklich nur Bahnhof.",
+      "cue": "I really do not understand a thing here.",
+      "literal": "I understand here really only station.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "verstehe",
+            "cue": "I understand",
+            "tag": "free",
+            "forms": ["verstehe", "verstehst", "versteht", "verstehen"],
+            "note": "The present of verstehen, the verb the ladder never opened. Its past shapes verstand and verstanden are L4-M10's and keep their row there."
+          },
+          {
+            "display": "nur Bahnhof",
+            "cue": "not a word of it (literally: only station)",
+            "tag": "interference",
+            "forms": ["nur Bahnhof"],
+            "note": "Fixed after verstehen and never anywhere else. Word for word it says only station, and that reading is grammatical — which is what hides it."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "There is nothing wrong with the sentence, and that is the danger: I only understand station is a perfectly good parse with no error in it to warn you.",
+      "sound": "ikh fair-SHTAY-uh heer VEER-likh noor BAAN-hohf.",
+      "variations": [
+        {
+          "display": "Verstehst du hier nur Bahnhof?",
+          "cue": "Are you completely lost here?",
+          "changed": "Second person: verstehe becomes verstehst, and the idiom itself does not budge."
+        }
+      ],
+      "mistake": {
+        "display": "Ich verstehe hier wirklich nur Station",
+        "why": "Bahnhof is the only noun this expression takes. Swapping in another word for station breaks the phrase, because the phrase never meant a station in the first place."
+      },
+      "usage": "Said about a lecture, a form or a conversation that has left you behind. Self-deprecating, and always about yourself.",
+      "register": "informal",
+      "mnemonic": "So much noise in a station that only the word Bahnhof got through."
+    },
+    {
+      "id": "L5-M1-S05",
+      "display": "Da drücke ich dir die Daumen.",
+      "cue": "I will keep my fingers crossed for you.",
+      "literal": "There press I you the thumbs.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "drücke",
+            "cue": "I press, I squeeze",
+            "tag": "delta",
+            "forms": ["drücke"],
+            "note": "The ich shape of L4-M1's drücken, which owns the infinitive and drückt. Only the first person is new, and this expression is where it first appears."
+          },
+          {
+            "display": "Daumen",
+            "cue": "thumb, thumbs",
+            "tag": "interference",
+            "forms": ["Daumen"],
+            "note": "der Daumen, and the plural is the same word. In the expression it is always plural and always with die: die Daumen drücken."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "The English gesture is crossed fingers, so a learner reaches for Finger. German presses thumbs, and the person it is done for stands in the dative: dir, ihm, meiner Schwester.",
+      "sound": "daa DRUK-uh ikh deer dee DOW-men.",
+      "variations": [
+        {
+          "display": "Ich drücke dir die Daumen.",
+          "cue": "I am keeping my fingers crossed for you.",
+          "changed": "Without da in front, the subject comes first and the verb stays second — the plain word order behind the same wish."
+        }
+      ],
+      "mistake": {
+        "display": "Da kreuze ich dir die Finger",
+        "why": "This is the English gesture translated into German, and no German speaker crosses fingers for luck. The picture itself has to be swapped, not just the words."
+      },
+      "usage": "Said the moment somebody tells you about an exam, an interview or an operation to come.",
+      "register": "informal",
+      "mnemonic": "German luck is held in a fist with the thumb inside — pressed, not crossed."
+    },
+    {
+      "id": "L5-M1-S06",
+      "display": "„Schwein gehabt“ sagt man, wenn man Glück hatte.",
+      "cue": "You say “lucky escape” when someone has had good luck.",
+      "literal": "Pig had says one, when one luck had.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Schwein gehabt",
+            "cue": "lucky escape, got away with it (literally: pig had)",
+            "tag": "interference",
+            "forms": ["Schwein gehabt"],
+            "note": "A whole past tense frozen into an expression: it is quoted as it stands, with no article and no subject in front of Schwein."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "The luck is always narrow and always retrospective. Schwein gehabt is not a wish for the future — that is the thumbs — but a comment on a near miss already survived.",
+      "sound": "shvyn guh-HAABT zakt man, ven man GLUK HAT-tuh.",
+      "variations": [
+        {
+          "display": "Da hast du Schwein gehabt.",
+          "cue": "You got lucky there.",
+          "changed": "The quoted phrase is put to work: du and hast wrap around it and the wenn-clause is no longer needed."
+        }
+      ],
+      "mistake": {
+        "display": "Ein Schwein gehabt sagt man, wenn man Glück hatte",
+        "why": "The expression carries no article. Adding ein turns a fixed phrase back into an ordinary object and the saying is gone."
+      },
+      "usage": "Said about somebody who nearly came off badly and did not — a missed train that then broke down, a fine that was not written.",
+      "register": "informal",
+      "mnemonic": "The pig was the farmer's luck, and the luck kept the pig's name."
+    },
+    {
+      "id": "L5-M1-S07",
+      "display": "Ich möchte das lieber unter vier Augen sagen.",
+      "cue": "I would rather say that in private.",
+      "literal": "I would-like that rather under four eyes say.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "unter vier Augen",
+            "cue": "in private, just between the two of us (literally: under four eyes)",
+            "tag": "free",
+            "forms": ["unter vier Augen"],
+            "note": "Exactly four: two people and no more. The number never changes, however many are being excluded, because the phrase counts the pair that stays."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "English counts ears — a word in your ear — and says between us. German counts the eyes of the two people who remain, and the number is fixed at four.",
+      "sound": "ikh MURKH-tuh das LEE-ber OON-ter feer OW-gen ZAA-gen.",
+      "variations": [
+        {
+          "display": "Wir sagen das lieber unter vier Augen.",
+          "cue": "We had better say that in private.",
+          "changed": "The subject becomes wir, so möchte gives way to the plain present — the phrase is untouched."
+        }
+      ],
+      "mistake": {
+        "display": "Ich möchte das lieber unter zwei Augen sagen",
+        "why": "Two eyes is one person, and one person cannot have a private word. The four in the phrase is the two people, and it is not negotiable."
+      },
+      "usage": "Asking to step aside before saying something about pay, health or another colleague.",
+      "register": "neutral",
+      "mnemonic": "Two pairs of eyes and no third: four is the smallest number a secret needs."
+    },
+    {
+      "id": "L5-M1-S08",
+      "display": "Jetzt sind wir endlich über den Berg.",
+      "cue": "Now we are finally over the worst of it.",
+      "literal": "Now are we finally over the mountain.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "über den Berg",
+            "cue": "past the worst, out of the woods (literally: over the mountain)",
+            "tag": "free",
+            "forms": ["über den Berg"],
+            "note": "Accusative den, because the mountain was crossed rather than sat on. The article is fixed: never über einen Berg in this sense."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "English goes out of the woods; German goes over a mountain. The two pictures do not overlap at all, and über dem Berg — dative — would mean hovering above one.",
+      "sound": "yetst zint veer ENT-likh UE-ber dayn bairk.",
+      "variations": [
+        {
+          "display": "Sind wir endlich über den Berg?",
+          "cue": "Are we finally past the worst of it?",
+          "changed": "A question: sind moves to the front, jetzt drops away, and the expression stays exactly as it is."
+        }
+      ],
+      "mistake": {
+        "display": "Jetzt sind wir endlich über dem Berg",
+        "why": "Dative dem puts you above the mountain rather than across it. The crossing is a movement, so the phrase takes the accusative den and always has."
+      },
+      "usage": "Said of an illness, a deadline or a difficult month once the hardest part is behind everyone.",
+      "register": "neutral",
+      "mnemonic": "Once you are over the ridge the rest is downhill — den, not dem, because you moved."
+    },
+    {
+      "id": "L5-M1-S09",
+      "display": "Übung macht den Meister, sagt man bei uns oft.",
+      "cue": "Practice makes perfect, as we often say.",
+      "literal": "Practice makes the master, says one with us often.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Übung",
+            "cue": "practice, exercise",
+            "tag": "free",
+            "forms": ["Übung", "Übungen"],
+            "note": "die Übung. In the proverb it stands bare, with no article at all — which is one of the marks of a quoted Sprichwort."
+          },
+          {
+            "display": "macht",
+            "cue": "makes, does",
+            "tag": "delta",
+            "forms": ["macht"],
+            "note": "The er/sie/es shape of L1-M6's machen, which owns the infinitive and mache. Only this third-person form is new."
+          },
+          {
+            "display": "Meister",
+            "cue": "master, expert",
+            "tag": "free",
+            "forms": ["Meister"],
+            "note": "der Meister, and the plural is the same word. Here it is a trade's master craftsman, which is where the proverb comes from."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "English practice makes perfect ends in an adjective; the German ends in a person, and that person keeps the article: den Meister. A proverb is quoted whole, so nothing here may be tidied.",
+      "sound": "UE-boong makht dayn MYS-ter, zakt man by oons oft.",
+      "variations": [
+        {
+          "display": "Bei uns sagt man oft: Übung macht den Meister.",
+          "cue": "We often say: practice makes perfect.",
+          "changed": "The frame moves in front and takes a colon, exactly as a reporting clause does before speech. The proverb itself is unchanged."
+        }
+      ],
+      "mistake": {
+        "display": "Die Übung macht den Meister, sagt man bei uns oft",
+        "why": "The proverb has no article on Übung. Adding die makes it a sentence about one particular exercise, and a Sprichwort that has been edited is no longer a Sprichwort."
+      },
+      "usage": "Said to somebody who is discouraged by how slowly a skill is coming — encouragement with a long history behind it.",
+      "register": "neutral",
+      "mnemonic": "Bare Übung, but den Meister keeps his title: the proverb is quoted, not composed."
+    },
+    {
+      "id": "L5-M1-S10",
+      "display": "Man kann hier leicht den Faden verlieren.",
+      "cue": "It is easy to lose the thread here.",
+      "literal": "One can here easily the thread lose.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "den Faden verlieren",
+            "cue": "to lose the thread, to lose track (literally: to lose the thread)",
+            "tag": "free",
+            "forms": ["den Faden verlieren"],
+            "note": "An idiom, so it takes a tense around it: man verliert den Faden, ich habe den Faden verloren. The article den is part of the phrase."
+          }
+        ],
+        "rules": [1, 5]
+      },
+      "trap": "This is the rare one English shares — to lose the thread — so it feels free. It is not: German fixes the article at den and never says einen Faden verlieren in this sense.",
+      "sound": "man kan heer lykht dayn FAA-den fair-LEE-ren.",
+      "variations": [
+        {
+          "display": "Hier kann man leicht den Faden verlieren.",
+          "cue": "Here it is easy to lose the thread.",
+          "changed": "hier is fronted, so kann and man swap — position one is taken and the verb still comes second."
+        }
+      ],
+      "mistake": {
+        "display": "Man kann hier leicht einen Faden verlieren",
+        "why": "einen Faden is a thread you were carrying and dropped. The idiom takes the definite den, and swapping the article turns the picture back into sewing."
+      },
+      "usage": "Said about a long meeting, a dense text or a conversation with too many people talking at once.",
+      "register": "neutral",
+      "mnemonic": "One thread, the thread, den Faden — there is only ever one to lose."
+    }
+  ],
+  "comprehensionPool": [
+    { "id": "L5-M1-C01", "display": "Ich habe die Nase voll", "cue": "I have had enough" },
+    {
+      "id": "L5-M1-C02",
+      "display": "Das ist eine Redewendung und kein Sprichwort",
+      "cue": "That is an idiom and not a proverb"
+    },
+    {
+      "id": "L5-M1-C03",
+      "display": "Da drücke ich dir die Daumen",
+      "cue": "I will keep my fingers crossed for you"
+    },
+    {
+      "id": "L5-M1-C04",
+      "display": "Ich verstehe hier nur Bahnhof",
+      "cue": "I do not understand a thing here"
+    },
+    { "id": "L5-M1-C05", "display": "Da hast du Schwein gehabt", "cue": "You got lucky there" },
+    {
+      "id": "L5-M1-C06",
+      "display": "Jetzt sind wir endlich über den Berg",
+      "cue": "Now we are finally past the worst of it"
+    },
+    { "id": "L5-M1-C07", "display": "Übung macht den Meister", "cue": "Practice makes perfect" },
+    { "id": "L5-M1-C08", "display": "Das sagt man hier oft", "cue": "People often say that here" },
+    {
+      "id": "L5-M1-C09",
+      "display": "Was bedeutet diese Redewendung?",
+      "cue": "What does this idiom mean?"
+    },
+    {
+      "id": "L5-M1-C10",
+      "display": "Man kann leicht den Faden verlieren",
+      "cue": "It is easy to lose the thread"
+    },
+    {
+      "id": "L5-M1-C11",
+      "display": "Wir sagen das lieber unter vier Augen",
+      "cue": "We had better say that in private"
+    },
+    {
+      "id": "L5-M1-C12",
+      "display": "Verstehst du das Sprichwort?",
+      "cue": "Do you understand the proverb?"
+    }
+  ],
+  "exitTest": { "generateCount": 2, "comprehendCount": 4 }
+}

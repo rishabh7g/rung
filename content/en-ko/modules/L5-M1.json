@@ -1,0 +1,671 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M1",
+  "title": "Sayings and idioms",
+  "job": "The figurative everyday, and when it is used",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-08",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present",
+      "simple_past"
+    ],
+    "allowedPatterns": [
+      "N-i/ga + nopayo/keoyo/neolbeoyo",
+      "clause-raneun + mal-i + isseoyo",
+      "N-eun/neun + ip-e + majayo",
+      "<idiom>-aseo + clause",
+      "clause-raneun + tteus-ieyo"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "AN IDIOM IS ONE LEXICAL ITEM, NOT A SUM OF ITS PARTS. A body part takes -i/-ga and an ordinary adjective, and the result means something no learner could work out from the words. Learn the whole phrase, never the pieces."
+    },
+    {
+      "tag": "interference",
+      "text": "THE FIGURES DO NOT MAP. A big hand means nothing in English and a green thumb means nothing in Korean. A translated idiom is a sentence nobody has ever said, so every phrase here is met as a phrase to learn, not a metaphor to decode."
+    },
+    {
+      "tag": "delta",
+      "text": "A KOREAN IDIOM IS FIXED. English flexes its own — he has a very big heart — while Korean does not. Change the adjective, add a degree word, or swap the body part and the phrase stops meaning anything at all."
+    },
+    {
+      "tag": "free",
+      "text": "THE CITATION FRAME NAMES A SAYING: <saying>raneun mal-i isseoyo, there is a saying that. -raneun is written straight onto the saying, with no space and no hyphen, unlike L4-M10's -rago, which stands off after a closing quotation mark."
+    },
+    {
+      "tag": "free",
+      "text": "THE GLOSS FRAME EXPLAINS ONE: <plain clause>raneun tteus-ieyo, it means that. This is what a Korean speaker actually says when you ask what a saying means, and it is the frame this module hands forward to L5-M8."
+    },
+    {
+      "tag": "interference",
+      "text": "A SAYING CARRIES ITS LISTENER WITH IT. English idiom is close to register-free in speech. A Korean sokdam quoted at an elder or a stranger reads as lecturing, however kindly it is meant, so each phrase is learned with who it may be said to."
+    },
+    {
+      "tag": "free",
+      "text": "THE IDIOM BENDS AT ITS LAST WORD ONLY. nopayo becomes nopaseo, keoyo becomes keoseo, neolbeoyo becomes neolbeoseo — the L1-M9 -aseo ending on the stem. The body-part half never changes."
+    },
+    {
+      "tag": "free",
+      "text": "EVERY SAYING TAUGHT HERE IS TWO WORDS LONG. Longer proverbs and the four-character written idioms exist and are worth hearing, but they are met as whole sentences rather than learned as single items."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M1-S01",
+      "display": "Je chingu-neun nun-i nopayo.",
+      "script": "제 친구는 눈이 높아요.",
+      "cue": "My friend is very picky.",
+      "literal": "my friend-TOPIC eye-SUBJ is-high",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nun-i nopayo",
+            "script": "눈이 높아요",
+            "cue": "is picky, has high standards",
+            "tag": "interference",
+            "forms": [
+              "nun-i nopayo",
+              "nun-i nopayoraneun",
+              "nun-i nopaseo"
+            ],
+            "note": "Literally the eyes are high. It is said of taste in people or in things, never of eyesight, and it is learned whole."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Nothing to do with seeing. nun-i nopayo says the standards are high; good eyesight is said another way entirely.",
+      "sound": "JE CHIN-gu-neun NU-ni NO-pa-yo.",
+      "variations": [
+        {
+          "display": "Nun-i nopayo.",
+          "script": "눈이 높아요.",
+          "cue": "She is picky.",
+          "changed": "the saying on its own"
+        },
+        {
+          "display": "Sajangnim-eun nun-i nopayo.",
+          "script": "사장님은 눈이 높아요.",
+          "cue": "The boss is picky.",
+          "changed": "a different person, the same fixed phrase"
+        }
+      ],
+      "mistake": {
+        "display": "Je chingu-neun nun-i keoyo.",
+        "script": "제 친구는 눈이 커요.",
+        "why": "This is the literal Korean the English suggests — big eyes. Only nopayo carries the figurative meaning; swapping the adjective loses it."
+      },
+      "usage": "Explaining why someone will not settle for what is on offer.",
+      "register": "neutral",
+      "mnemonic": "High eyes, high standards."
+    },
+    {
+      "id": "L5-M1-S02",
+      "display": "Nun-i nopayoraneun mal-i isseoyo.",
+      "script": "눈이 높아요라는 말이 있어요.",
+      "cue": "There is a saying, the eyes are high.",
+      "literal": "eye-SUBJ is-high-QUOTE word-SUBJ exists",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mal-i isseoyo",
+            "script": "말이 있어요",
+            "cue": "there is a saying",
+            "tag": "free",
+            "forms": [
+              "mal-i isseoyo"
+            ],
+            "note": "The citation frame. L3-M5 taught mal as a word; here the two words are learned whole as the phrase that introduces a saying."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "-raneun is written straight onto the saying, no space and no hyphen. L4-M10's -rago stood off after a quotation mark; this one does not.",
+      "sound": "NU-ni NO-pa-yo-ra-neun MA-ri I-sseo-yo.",
+      "variations": [
+        {
+          "display": "Son-i keoyoraneun mal-i isseoyo.",
+          "script": "손이 커요라는 말이 있어요.",
+          "cue": "There is a saying, the hand is big.",
+          "changed": "another saying in the same frame"
+        },
+        {
+          "display": "Sokdam-i isseoyo.",
+          "script": "속담이 있어요.",
+          "cue": "There is a proverb.",
+          "changed": "the bare statement, without the saying itself"
+        }
+      ],
+      "mistake": {
+        "display": "Nun-i nopayo rago mal-i isseoyo.",
+        "script": "눈이 높아요라고 말이 있어요.",
+        "why": "-rago reports what somebody said. -raneun is what names a saying, and the frame that introduces a proverb takes -raneun."
+      },
+      "usage": "Introducing a fixed phrase before you use it.",
+      "register": "neutral",
+      "mnemonic": "-raneun names it, -rago reports it."
+    },
+    {
+      "id": "L5-M1-S03",
+      "display": "Geu mal-eun kkadaroweoyoraneun tteus-ieyo.",
+      "script": "그 말은 까다로워요라는 뜻이에요.",
+      "cue": "That saying means she is fussy.",
+      "literal": "that word-TOPIC is-fussy-QUOTE meaning-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kkadaroweoyo",
+            "script": "까다로워요",
+            "cue": "is fussy, is hard to please",
+            "tag": "free",
+            "forms": [
+              "kkadaroweoyo",
+              "kkadaroweoyoraneun"
+            ],
+            "note": "The plain word the saying stands in for. Said of a person's taste, and of a job that is fiddly."
+          },
+          {
+            "display": "tteus-ieyo",
+            "script": "뜻이에요",
+            "cue": "it means",
+            "tag": "free",
+            "forms": [
+              "tteus-ieyo"
+            ],
+            "note": "The gloss frame. tteus is the meaning, and a Korean speaker answers what does it mean with -raneun tteus-ieyo."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "English says it means and then the clause. Korean puts the clause first, marks it with -raneun, and lands on tteus-ieyo.",
+      "sound": "GEU MA-reun KKA-da-ro-wo-yo-ra-neun TTEU-si-e-yo.",
+      "variations": [
+        {
+          "display": "Kkadaroweoyoraneun tteus-ieyo.",
+          "script": "까다로워요라는 뜻이에요.",
+          "cue": "It means she is fussy.",
+          "changed": "the gloss alone"
+        },
+        {
+          "display": "Geu mal-eun neogeureowoyoraneun tteus-ieyo.",
+          "script": "그 말은 너그러워요라는 뜻이에요.",
+          "cue": "That saying means he is generous.",
+          "changed": "the same frame over a different gloss"
+        }
+      ],
+      "mistake": {
+        "display": "Geu mal-eun kkadaroweoyo tteus-ieyo.",
+        "script": "그 말은 까다로워요 뜻이에요.",
+        "why": "The gloss clause has to be marked. Without -raneun the two halves simply sit beside each other and the sentence is not Korean."
+      },
+      "usage": "Answering when somebody asks what a saying means.",
+      "register": "neutral",
+      "mnemonic": "Clause, -raneun, tteus-ieyo."
+    },
+    {
+      "id": "L5-M1-S04",
+      "display": "Eomeoni-neun son-i keoyo.",
+      "script": "어머니는 손이 커요.",
+      "cue": "My mother is generous.",
+      "literal": "mother-TOPIC hand-SUBJ is-big",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "son-i keoyo",
+            "script": "손이 커요",
+            "cue": "is generous, gives freely",
+            "tag": "interference",
+            "forms": [
+              "son-i keoyo",
+              "son-i keoyoraneun",
+              "son-i keoseo"
+            ],
+            "note": "Literally the hand is big. Said of somebody who cooks far too much or spends freely, and never of the size of a hand."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "English has a big heart, not a big hand. Translating generous word by word produces a sentence no Korean has heard.",
+      "sound": "EO-meo-ni-neun SO-ni KEO-yo.",
+      "variations": [
+        {
+          "display": "Son-i keoyo.",
+          "script": "손이 커요.",
+          "cue": "He is generous.",
+          "changed": "the saying on its own"
+        },
+        {
+          "display": "Sajangnim-eun son-i keoyo.",
+          "script": "사장님은 손이 커요.",
+          "cue": "The boss is generous.",
+          "changed": "a different person"
+        }
+      ],
+      "mistake": {
+        "display": "Eomeoni-neun maeum-i keoyo.",
+        "script": "어머니는 마음이 커요.",
+        "why": "This is the English figure translated — a big heart. Korean puts the figure on the hand, and the parts of a fixed phrase cannot be swapped."
+      },
+      "usage": "Praising somebody's open-handedness.",
+      "register": "neutral",
+      "mnemonic": "Big hand, open hand."
+    },
+    {
+      "id": "L5-M1-S05",
+      "display": "Son-i keoyoraneun mal-eun neogeureowoyoraneun tteus-ieyo.",
+      "script": "손이 커요라는 말은 너그러워요라는 뜻이에요.",
+      "cue": "The saying the hand is big means that someone is generous.",
+      "literal": "hand-SUBJ is-big-QUOTE word-TOPIC is-generous-QUOTE meaning-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "neogeureowoyo",
+            "script": "너그러워요",
+            "cue": "is generous, is big-hearted",
+            "tag": "free",
+            "forms": [
+              "neogeureowoyo",
+              "neogeureowoyoraneun"
+            ],
+            "note": "The plain word son-i keoyo stands in for. It describes a temperament, so a person is neogeureowoyo and a gift is not."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Both halves take -raneun: the saying being defined and the gloss that defines it. English marks neither of them.",
+      "sound": "SO-ni KEO-yo-ra-neun MA-reun NEO-geu-reo-wo-yo-ra-neun TTEU-si-e-yo.",
+      "variations": [
+        {
+          "display": "Neogeureowoyo.",
+          "script": "너그러워요.",
+          "cue": "He is generous.",
+          "changed": "the plain word alone"
+        },
+        {
+          "display": "Son-i keoyoraneun mal-i isseoyo.",
+          "script": "손이 커요라는 말이 있어요.",
+          "cue": "There is a saying, the hand is big.",
+          "changed": "the same saying in the citation frame"
+        }
+      ],
+      "mistake": {
+        "display": "Son-i keoyo mal-eun neogeureowoyo tteus-ieyo.",
+        "script": "손이 커요 말은 너그러워요 뜻이에요.",
+        "why": "Both -raneun markers have gone. Neither the saying nor the gloss can attach to the noun in front of it without one."
+      },
+      "usage": "Explaining a saying to somebody who has just met it.",
+      "register": "neutral",
+      "mnemonic": "Saying -raneun, gloss -raneun."
+    },
+    {
+      "id": "L5-M1-S06",
+      "display": "Sajangnim-eun bal-i neolbeoyo.",
+      "script": "사장님은 발이 넓어요.",
+      "cue": "The boss knows everybody.",
+      "literal": "boss-TOPIC foot-SUBJ is-wide",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bal-i neolbeoyo",
+            "script": "발이 넓어요",
+            "cue": "is well connected",
+            "tag": "interference",
+            "forms": [
+              "bal-i neolbeoyo",
+              "bal-i neolbeoseo"
+            ],
+            "note": "Literally the feet are wide. bal, the foot, means connections only inside this phrase, so the phrase is learned whole."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Nothing about walking or shoe size. English well connected has no foot in it, and the Korean has no network in it.",
+      "sound": "SA-jang-ni-meun BA-ri NEOL-beo-yo.",
+      "variations": [
+        {
+          "display": "Bal-i neolbeoyo.",
+          "script": "발이 넓어요.",
+          "cue": "She knows everybody.",
+          "changed": "the saying on its own"
+        },
+        {
+          "display": "Je chingu-neun bal-i neolbeoyo.",
+          "script": "제 친구는 발이 넓어요.",
+          "cue": "My friend knows everybody.",
+          "changed": "a friend rather than the boss"
+        }
+      ],
+      "mistake": {
+        "display": "Sajangnim-eun bal-i keoyo.",
+        "script": "사장님은 발이 커요.",
+        "why": "keoyo belongs to the hand saying. With bal it says only that the boss has big feet: each phrase takes one adjective and no other."
+      },
+      "usage": "Saying somebody can introduce you to anyone.",
+      "register": "neutral",
+      "mnemonic": "Wide feet, wide circle."
+    },
+    {
+      "id": "L5-M1-S07",
+      "display": "Bal-i neolbeoseo chingu-ga manhi isseoyo.",
+      "script": "발이 넓어서 친구가 많이 있어요.",
+      "cue": "She is well connected, so she has a lot of friends.",
+      "literal": "foot-SUBJ is-wide-BECAUSE friend-SUBJ many exist",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "manhi",
+            "script": "많이",
+            "cue": "a lot, many",
+            "tag": "free",
+            "forms": [
+              "manhi"
+            ],
+            "note": "The adverb, not the adjective. L1-M9's manayo says there are many; manhi stands in front of a verb and says it happens a lot."
+          }
+        ],
+        "rules": [
+          6
+        ]
+      },
+      "trap": "The saying bends at its last word only. neolbeoyo becomes neolbeoseo on the L1-M9 pattern, and bal-i is left exactly as it was.",
+      "sound": "BA-ri NEOL-beo-seo CHIN-gu-ga MA-ni I-sseo-yo.",
+      "variations": [
+        {
+          "display": "Chingu-ga manhi isseoyo.",
+          "script": "친구가 많이 있어요.",
+          "cue": "She has a lot of friends.",
+          "changed": "the result clause on its own"
+        },
+        {
+          "display": "Nun-i nopaseo chingu-ga eopseoyo.",
+          "script": "눈이 높아서 친구가 없어요.",
+          "cue": "He is picky, so he has no friends.",
+          "changed": "a different saying in the same -aseo frame"
+        }
+      ],
+      "mistake": {
+        "display": "Bal-i neolbeoyoseo chingu-ga manhi isseoyo.",
+        "script": "발이 넓어요서 친구가 많이 있어요.",
+        "why": "-aseo attaches to the stem, not to the finished -yo form. neolbeoyo becomes neolbeoseo, exactly as L1-M9's bappayo becomes bappaseo."
+      },
+      "usage": "Giving the reason somebody's circle is wide.",
+      "register": "neutral",
+      "mnemonic": "Drop the -yo, add -seo."
+    },
+    {
+      "id": "L5-M1-S08",
+      "display": "Igeo-neun ip-e majayo?",
+      "script": "이거는 입에 맞아요?",
+      "cue": "Is this to your taste?",
+      "literal": "this-TOPIC mouth-to fits",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ip-e majayo",
+            "script": "입에 맞아요",
+            "cue": "suits my taste",
+            "tag": "free",
+            "forms": [
+              "ip-e majayo",
+              "ip-e majayoraneun",
+              "ip-e majaseo"
+            ],
+            "note": "Literally it fits the mouth. Said of food and of nothing else, and it is the polite thing to ask a guest at the table."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "L3-M3's majayo on its own means it is right or it fits. With ip-e in front of it the phrase is only ever about food.",
+      "sound": "I-geo-neun I-be MA-ja-yo?",
+      "variations": [
+        {
+          "display": "Ip-e majayo.",
+          "script": "입에 맞아요.",
+          "cue": "It suits my taste.",
+          "changed": "the answer rather than the question"
+        },
+        {
+          "display": "Ip-e majaseo manhi meogeosseoyo.",
+          "script": "입에 맞아서 많이 먹었어요.",
+          "cue": "It suited my taste, so I ate a lot.",
+          "changed": "the -aseo form giving a reason"
+        }
+      ],
+      "mistake": {
+        "display": "Igeo-neun ip-i majayo?",
+        "script": "이거는 입이 맞아요?",
+        "why": "The mouth takes -e here, not -i. This is the one saying in the module built on a different particle, and the particle is part of the fixed phrase."
+      },
+      "usage": "Asking a guest whether the food suits them.",
+      "register": "neutral",
+      "mnemonic": "It fits the mouth."
+    },
+    {
+      "id": "L5-M1-S09",
+      "display": "Sokdam-eun jjalbeun biyu-yeyo.",
+      "script": "속담은 짧은 비유예요.",
+      "cue": "A proverb is a short figure of speech.",
+      "literal": "proverb-TOPIC short figure-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sokdam",
+            "script": "속담",
+            "cue": "a proverb, an inherited saying",
+            "tag": "free",
+            "forms": [
+              "sokdam",
+              "sokdam-i",
+              "sokdam-eun",
+              "sokdam-eul"
+            ],
+            "note": "The word for a saying handed down. It covers the fixed phrases in this module and the longer proverbs a learner will only ever hear."
+          },
+          {
+            "display": "biyu",
+            "script": "비유",
+            "cue": "a figure of speech, a comparison",
+            "tag": "free",
+            "forms": [
+              "biyu",
+              "biyu-yeyo"
+            ],
+            "note": "What makes a saying figurative. biyu ends in a vowel, so the copula contracts and it is written biyu-yeyo."
+          }
+        ],
+        "rules": [
+          7
+        ]
+      },
+      "trap": "Every saying taught here is two words long. A longer proverb is worth hearing, but it arrives as a whole sentence rather than as one item to learn.",
+      "sound": "SOK-da-meun JJAL-beun BI-yu-ye-yo.",
+      "variations": [
+        {
+          "display": "Sokdam-i isseoyo.",
+          "script": "속담이 있어요.",
+          "cue": "There is a proverb.",
+          "changed": "sokdam as the subject"
+        },
+        {
+          "display": "Sokdam-eul malhaeyo.",
+          "script": "속담을 말해요.",
+          "cue": "He says a proverb.",
+          "changed": "sokdam as the object"
+        }
+      ],
+      "mistake": {
+        "display": "Sokdam-eun jjalbeun biyu-ieyo.",
+        "script": "속담은 짧은 비유이에요.",
+        "why": "biyu ends in a vowel, so the copula contracts to -yeyo. The full -ieyo is what follows a consonant, as in tteus-ieyo."
+      },
+      "usage": "Naming what kind of thing a saying is.",
+      "register": "neutral",
+      "mnemonic": "Short figure, fixed phrase."
+    },
+    {
+      "id": "L5-M1-S10",
+      "display": "Eoreun-hante sokdam-eul malhamyeon an dwaeyo.",
+      "script": "어른한테 속담을 말하면 안 돼요.",
+      "cue": "You should not quote a proverb at an elder.",
+      "literal": "elder-to proverb-OBJ say-if not become",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eoreun",
+            "script": "어른",
+            "cue": "an elder, a grown-up",
+            "tag": "free",
+            "forms": [
+              "eoreun",
+              "eoreun-hante"
+            ],
+            "note": "Anybody senior to you. -hante marks the person spoken to, so eoreun-hante is to an elder."
+          },
+          {
+            "display": "malhaeyo",
+            "script": "말해요",
+            "cue": "says, tells",
+            "tag": "free",
+            "forms": [
+              "malhaeyo",
+              "malhamyeon"
+            ],
+            "note": "The verb built on L3-M5's mal. malhamyeon is its -myeon form: if you say."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "English proverbs run in every direction. A Korean saying quoted upward reads as a lecture, however kindly it was meant.",
+      "sound": "EO-reun-han-te SOK-da-meul MAL-ha-myeon AN DWAE-yo.",
+      "variations": [
+        {
+          "display": "Sokdam-eul malhaeyo.",
+          "script": "속담을 말해요.",
+          "cue": "He says a proverb.",
+          "changed": "the bare verb, with no warning attached"
+        },
+        {
+          "display": "Eoreun-hante malhamyeon an dwaeyo.",
+          "script": "어른한테 말하면 안 돼요.",
+          "cue": "You should not say it to an elder.",
+          "changed": "the warning without naming what is said"
+        }
+      ],
+      "mistake": {
+        "display": "Eoreun-hante sokdam-eul malhaeyo.",
+        "script": "어른한테 속담을 말해요.",
+        "why": "Grammatical and still wrong. The module's second half is that a saying chooses its listener, and this sentence does the one thing to avoid."
+      },
+      "usage": "Warning a learner where a saying does not belong.",
+      "register": "neutral",
+      "mnemonic": "A saying goes sideways or down, never up."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M1-C01",
+      "display": "Nun-i nopayo.",
+      "script": "눈이 높아요.",
+      "cue": "She is picky."
+    },
+    {
+      "id": "L5-M1-C02",
+      "display": "Son-i keoyo.",
+      "script": "손이 커요.",
+      "cue": "He is generous."
+    },
+    {
+      "id": "L5-M1-C03",
+      "display": "Bal-i neolbeoyo.",
+      "script": "발이 넓어요.",
+      "cue": "She knows everybody."
+    },
+    {
+      "id": "L5-M1-C04",
+      "display": "Ip-e majayo.",
+      "script": "입에 맞아요.",
+      "cue": "It suits my taste."
+    },
+    {
+      "id": "L5-M1-C05",
+      "display": "Sokdam-i isseoyo.",
+      "script": "속담이 있어요.",
+      "cue": "There is a proverb."
+    },
+    {
+      "id": "L5-M1-C06",
+      "display": "Son-i keoyoraneun mal-i isseoyo.",
+      "script": "손이 커요라는 말이 있어요.",
+      "cue": "There is a saying, the hand is big."
+    },
+    {
+      "id": "L5-M1-C07",
+      "display": "Geu mal-eun neogeureowoyoraneun tteus-ieyo.",
+      "script": "그 말은 너그러워요라는 뜻이에요.",
+      "cue": "That saying means he is generous."
+    },
+    {
+      "id": "L5-M1-C08",
+      "display": "Nun-i nopaseo chingu-ga eopseoyo.",
+      "script": "눈이 높아서 친구가 없어요.",
+      "cue": "He is picky, so he has no friends."
+    },
+    {
+      "id": "L5-M1-C09",
+      "display": "Eoreun-hante malhamyeon an dwaeyo.",
+      "script": "어른한테 말하면 안 돼요.",
+      "cue": "You should not say it to an elder."
+    },
+    {
+      "id": "L5-M1-C10",
+      "display": "Ip-e majaseo manhi meogeosseoyo.",
+      "script": "입에 맞아서 많이 먹었어요.",
+      "cue": "It suited my taste, so I ate a lot."
+    },
+    {
+      "id": "L5-M1-C11",
+      "display": "Je chingu-neun kkadaroweoyo.",
+      "script": "제 친구는 까다로워요.",
+      "cue": "My friend is fussy."
+    },
+    {
+      "id": "L5-M1-C12",
+      "display": "Sokdam-eul malhaeyo.",
+      "script": "속담을 말해요.",
+      "cue": "He says a proverb."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
