@@ -753,3 +753,547 @@ an LLM is a dialect judged from writing about it.
      teaches the observation and the recognition, and it cannot teach the sound. Confirm a
      `-yo`-only learner can still USE what M3 gives them, or say plainly that the module is
      preparation for a level this ladder does not have.
+
+## Wave 3 — L5-M6 through L5-M10 (#597)
+
+The third and last authoring wave of en-ko's fifth level, and the last five rungs of the product:
+`L5-M6` *Arguing a position*, `L5-M7` *Between the lines*, `L5-M8` *When words run out*, `L5-M9`
+*Telling it your way* and `L5-M10` *Your own voice*. Written against the **emitted index at
+`public/content/en-ko/index/`, folded to `L5-M5` — 1299 surfaces over 45 modules, with
+`maxSpan: 2`** — read only through `npm run content:owner` and `npm run content:shown`, never by
+grep and never by reading a shipped module whole. Every ownership claim below is a line
+`content:owner` printed on 2026-09-08.
+
+That fold is the first correction, and it is the same one wave 2 had to make. **All five briefs
+name an index seam measured against `L4-M10` — 1104 surfaces over 40 modules.** By the time this
+wave started, waves 1 and 2 had added five modules and 195 surfaces, and three words the briefs
+call free or owned had moved. The corrections are in
+[the seam section](#the-brief-seams-i-had-to-correct-wave-3) below.
+
+No file below L5 was touched, no other course was touched, and no build was run by this wave:
+`public/content/` is shared with eight sibling waves and the strict build is the parent's.
+
+### L5-M6 — Arguing a position
+
+*A structured case, objections answered.* Ten sentences, 8 rules, 14 new rows, pool of 12,
+`prerequisites: ["L5-M5"]`, `exitTest` 1 generate / 2 comprehend. 23 surfaces added.
+
+1. `Cheotjjae, sigan-i eopseoyo.`
+2. `Duljjae, i-sikdang-eun neomu bissayo.`
+3. `Waenyahamyeon sigan-i eopgi ttaemun-ieyo.`
+4. `Yereul deureo, beoseu-ga neomu neujeoyo.`
+5. `Geureoke saenggakhal su-do isseoyo. Hajiman munje-ga isseoyo.`
+6. `Majimageuro, je gyeollon-eun ganeun geo-ga joayo.`
+7. `Chingu-neun chanseong-ieyo. Hajiman je jujang-eun dallayo.`
+8. `Munje-ga hana isseoyo. Sigan-i neomu jjalbayo.`
+9. `Waenyahamyeon jeo-neun jigeum sigan-i eopgi ttaemun-ieyo.`
+10. `Je jujang-eun chanseong-ieyo. Hajiman bandae-do manhi isseoyo.`
+
+What it teaches: the **discourse frame** as a closed set of words whose only job is to say where in
+a case the listener is — `cheotjjae`, `duljjae`, `majimageuro` at the front, `yereul deureo` in
+front of an example — plus the one piece of real grammar, the **bracketed because**:
+`waenyahamyeon` opens and `-gi ttaemun-ieyo` closes, and half of it is half a construction. The
+objection half is what separates it from L4-M4: this module *raises* the objection
+(`geureoke saenggakhal su-do isseoyo`) and then turns with `hajiman` or `geuraedo`, where L4-M4
+conceded a point somebody else had already made. Five nouns carry the case — `jujang`, `munje`,
+`gyeollon`, `chanseong`, `bandae` — and all five are nouns with a copula, never verbs.
+
+### L5-M7 — Between the lines
+
+*Implication, sarcasm, indirect requests.* Ten sentences, 8 rules, 10 new rows, pool of 12,
+`prerequisites: ["L5-M6"]`, `exitTest` 1 generate / 2 comprehend. 20 surfaces added. The only
+module in the level whose per-sentence bound does **not** climb: 14, as L4 had it.
+
+1. `Bang-i jom chumneyo.`
+2. `Geureomyeon je-ga halkkayo?`
+3. `Hoksi sigan isseuseyo?`
+4. `Chingu-neun nunchi-ga isseoyo.`
+5. `Changmun-i yeollyeosseoyo. Bang-i jom chumneyo.`
+6. `Geunyang mureosseoyo. Gwaenchanayo.`
+7. `Eojjeom geureoke jal haesseoyo?`
+8. `Ama eoryeoul geot gatayo.`
+9. `Geugeo-neun jom geuraeyo.`
+10. `Bunwigi-ga an joayo. Geunyang gayo.`
+
+What it teaches: **the hint as a request** — describe the situation and stop — assembled almost
+entirely out of owned parts (L2-M1's `jom`, which is the request marker and not *a little*; L5-M3's
+`-neyo`, which frames the observation as just noticed rather than as a grievance). What is new is
+the **tentative self-offer** `V-(eu)lkkayo`, a question you ask about yourself and so the least
+intrusive request the language has; `nunchi`, Korean's own name for the skill; and `jom geuraeyo`,
+the two-word decline that names no fault. Sarcasm is taught for **reception only**, inside a marked
+frame, and the rule says in as many words that an English-shaped attempt is heard as sincere or as
+rude and never as funny.
+
+### L5-M8 — When words run out
+
+*Paraphrase, ask what something means, repair a misunderstanding.* Ten sentences, 8 rules, 12 new
+rows, pool of 12, `prerequisites: ["L5-M7"]`, `exitTest` 1 generate / 2 comprehend. 21 surfaces
+added.
+
+1. `Geugeo museun tteus-ieyo?`
+2. `Igeo-reul hangungmal-lo mworago haeyo?`
+3. `Dasi hanbeon malsseumhae juseyo. Bareum-i eoryeoweoyo.`
+4. `Geu danueo-reul moreugesseoyo.`
+5. `Cheoncheonhi dasi seolmyeonghae juseyo.`
+6. `Jong-i-reul jareuneun geo-reul malhaeyo.`
+7. `Je mareun geuge anieyo.`
+8. `Geuge sagwa-hago bisseushaeyo.`
+9. `Mworagoyo? Jal an deullyeoyo.`
+10. `Hangungmal-lo cheoncheonhi malsseumhae juseyo.`
+
+What it teaches: **metalanguage plus circumlocution**. The metalanguage is a closed set of
+questions about language itself, and the brief was right that it is nearly free at the index — which
+is what buys the second half. The circumlocution is L5-M5's nominaliser doing a different job: when
+the noun is missing, build a modifier clause and end on `geo`. The repair frames sit beside them —
+`je mareun` opening the correction, and the **cancel** (`geuge anieyo`) rather than the English
+restatement. `mworagoyo` is flagged as a repair request and not a challenge, and `deullyeoyo` is
+pinned against L4-M6's `deureoyo` in a rule of its own.
+
+### L5-M9 — Telling it your way
+
+*Retell a known story in your own register.* Ten sentences, 8 rules, 11 new rows, pool of 12,
+`prerequisites: ["L5-M8"]`, `exitTest` 1 generate / 2 comprehend. 19 surfaces added.
+
+1. `Yennal yennal-e sigol-e halmeoni-ga sarasseoyo.`
+2. `Halmeoni-neun san-e gasseoyo. Geurigo horangi-reul mannasseoyo.`
+3. `Horangi-ga "Bap-eul juseyo" rago haesseoyo. Halmeoni-neun museoweosseoyo.`
+4. `Geuraeseo halmeoni-neun domangchyeosseoyo. Algo boni horangi-do museoweosseoyo.`
+5. `Gyeolguk halmeoni-neun jip-e wasseoyo.`
+6. `Geurigo iyagi-neun kkeut-ieyo.`
+7. `Geu dongwha-neun jaemiisseoyo.`
+8. `Geu dongwha-ui jueingong-i museoweosseoyo.`
+9. `Geu iyagi-neun horangi iyagi-yeyo.`
+10. `Yennal yennal-e halmeoni-ga sigol-e sarasseumnida.`
+
+What it teaches: **register as the only variable**. S01 and S10 are the same tale, the same words
+and the same order, and only the ending moves — `sarasseoyo` to `sarasseumnida`. Between them the
+tale itself: a meeting, a quoted line that keeps its own ending under L3-M5's `rago`, L4-M10's
+`algo boni` on the one turn, and the two closes that close different things (`gyeolguk` on the last
+event, `kkeut-ieyo` on the telling). S09 is the **frame narrator**, the summary sentence that makes
+a retelling a retelling. The tale ships with **no proper nouns at all** — see
+[§W3.13](#w313-the-tale-was-chosen-to-cost-zero-proper-nouns).
+
+### L5-M10 — Your own voice
+
+*An eight-sentence piece that changes register midway.* Ten pieces of five to seven sentences each,
+8 rules, 10 rows over **2 distinct surfaces**, pool of 12, `prerequisites: ["L5-M9"]`, `exitTest`
+1 generate / 2 comprehend.
+
+1. `Oneul chingu-ga gyeolhon-eul haesseoyo. Jeongmal joasseoyo. Geurigo je-ga chuksa-reul haesseoyo. Yeoreobun, jinjja gamsahamnida. Chingu-reul wihayeo geonbae-reul hagesseumnida.`
+2. `Eoje yeok-eseo ilhaesseoyo. Saram-deul-i manhi wasseoyo. Geuraeseo bangsong-eul haesseoyo. "Yeoreobun, annae malsseum deurigesseumnida. Gicha-ga jamsi hu-e chulbalhamnida." Ijen jip-e wasseoyo. Pigonhaeyo.`
+3. `Oneul hoesa-eseo hoeui-ga isseoyo. Jeo-neun jom bappeundeyo. Sajangnim-kkeseo "Jigeum sijakhapsida" rago malsseumhasyeosseoyo. Yeoreobun, je-ga bogoseo-reul malsseum deurigesseumnida.`
+4. `Yeoreobun, annyeonghaseyo. Jamsiman gidaryeo jusipsio. Oneul jal hagesseumnida. Geurigo sueop-i kkeunnasseoyo. Chingu-ga jeonhwahaesseoyo. Ijen gwaenchanayo. Jeongmal pigonhaeyo.`
+5. `Yennal-e-neun hangugeo-reul mothaesseoyo. Geuttae-neun jeongmal himdeureosseoyo. Jigeum-eun hakgyo-eseo ilhaeyo. Yeoreobun, oneul jeongmal gamsahamnida. Ijen jal hagesseumnida.`
+6. `Oneul jangnyesik-e gasseoyo. Jeo-neun jom seulpeosseoyo. Saram-deul-i manhi wasseoyo. Yeoreobun, je-ga malsseum deurigesseumnida. Samga goin-ui myeongbog-eul bimnida.`
+7. `Eoje hoeui-e gasseoyo. Bunwigi-ga an joasseoyo. Jeo-neun nunchi-ga eopseosseoyo. Sajangnim-kkeseo "Yeoreobun, dasi hagesseumnida" rago malsseumhasyeosseoyo. Ijen gwaenchanayo.`
+8. `Eoje chingu-ga iyagi-reul haesseoyo. "Yennal yennal-e halmeoni-ga sarasseoyo" rago haesseoyo. Jeongmal jaemiisseosseoyo. Oneul hakgyo-eseo haksaeng-deul-i mureosseoyo. Yeoreobun, je-ga iyagi-reul malsseum deurigesseumnida. Yennal yennal-e halmeoni-ga sigol-e sarasseumnida.`
+9. `I-sikdang-eun jom geuraeyo. Cheotjjae, neomu bissayo. Duljjae, neomu meoreoyo. Geuraedo chingu-neun chanseong-ieyo. Yeoreobun, majimageuro je gyeollon-eul malsseum deurigesseumnida. Gamsahamnida.`
+10. `Oneul hakgyo-eseo gongbuhaesseoyo. Jeongmal himdeureosseoyo. Geuraedo jaemiisseosseoyo. Sueop-i kkeunnasseoyo. Geurigo saram-deul-i manhi wasseoyo. Yeoreobun, jeongmal gamsahamnida. Jal hagesseumnida.`
+
+What it teaches: **the switch, and the rule that it is triggered by the addressee and not by the
+mood.** Every piece makes the trigger visible on the page — `yeoreobun` naming a room (1, 3, 5, 6,
+8, 9, 10), a quotation begun (2, 7), or a room that leaves (4). Three shapes are represented: the
+account that ends formally (1, 3, 5, 6, 8, 9, 10), the account that quotes an announcement (2, 7),
+and the hard one, the piece that **begins** formally and drops to `-yo` once the class is over and
+a friend has phoned (4). Every earlier module of the level appears somewhere in the envelope —
+M6's frame and M7's decline in piece 9, M7's hint in 7, M9's tale told twice in 8, M4's funeral
+formula in 6, L4-M5's `-neundeyo` in 3 — and the module's own spend is two surfaces.
+
+### The brief seams I had to correct (wave 3)
+
+Every quoted line below is `npm run content:owner -- en-ko …` output on 2026-09-08, against the
+`L5-M5` fold.
+
+#### W3.1 `eopgi` is FREE, and the other three -gi stems are all L4-M1's
+
+The L5-M6 brief: *"The nominalised stems it rides on (hagi, gagi, meokgi, eopgi) are L4-M1's and
+L4-M2's and are reused."* Two things are wrong with that sentence.
+
+```
+hagi	L4-M1
+gagi	L4-M1
+meokgi	L4-M1
+eopgi	free
+```
+
+`eopgi` is **not owned**, and it is the one the brief's own worked example needs
+(`waenyahamyeon sigan-i eopgi ttaemun-ieyo`). It ships as its own row in S09, tagged `delta`, with
+a note pointing back at L4-M1's `hagi`. And no `-gi` stem is L4-M2's: all three owned ones are
+L4-M1's. A wave that had trusted the brief would have shipped a hero sentence on an untaught word.
+
+#### W3.2 `saenggakhal` is free — the concession costs two rows, not zero
+
+The same brief lists `geureoke` and `saenggakhaeyo` as L3-M3's and `su` as L2-M1's, which makes the
+concession look free. It is not:
+
+```
+geureoke	L3-M3
+saenggakhaeyo	L3-M3
+saenggakhal	free
+su	L2-M1
+su-do	free   [parts: su → L2-M1, do → L1-M3]
+```
+
+Both `saenggakhal` and `su-do` had to be minted. `su-do` is the more interesting of the two: **both
+its parts are owned and the whole key is still free**, because `su-do` is one whitespace token and
+`matchSurfaces` looks the whole token up before anything else. An author who reasons "su is bought,
+-do is bought, therefore su-do is bought" ships an untaught surface. The hyphen inside a token is
+not a word boundary to the matcher; it is only a donation rule at emit time, and donations run
+*outward* from a minted key, never inward to make one.
+
+#### W3.3 `ttaemun-ieyo` and `yereul deureo` confirmed exactly as the brief said
+
+Two of the level's better brief calls, both verified rather than assumed:
+
+```
+ttaemune	L3-M3
+ttaemun	free
+ttaemun-ieyo	free   [parts: ttaemun → free, ieyo → L1-M1]
+yereul deureo	free
+yereul	free
+deureo	free
+deureoyo	L4-M6
+deullyeoyo	L4-M2
+```
+
+`ttaemun-ieyo` mints `ttaemun` as a donation and leaves L3-M3's `ttaemune` alone, exactly as
+written. And `yereul deureo` indexed whole donates **nothing**: `surfaceIndexKeys` splits on
+hyphens, not on spaces, so a two-token surface leaves both its words unspent. That is why
+`deureo` is still free after this wave — the dangerous bare key the brief was worried about was
+never at risk once the surface was indexed whole.
+
+#### W3.4 The L5-M7 brief writes `jega`; the course writes `je-ga`, and they are different keys
+
+```
+je-ga	L3-M2   [parts: je → L1-M1, ga → L1-M1]
+jega	free
+```
+
+The brief's pattern line is `jega + V-(eu)lkkayo?`. Written that way it would have minted a second
+spelling of a word L3-M2 already owns, for identical Hangul (제가). The course law is that
+particles attach with a hyphen, and the fold agrees: the module writes `je-ga`, which resolves.
+**The unhyphenated spelling of an owned particle-carrying word is always a free key, and minting
+one is always a defect.** This is the same class of error as `hangug-eseo` in
+[§W2.10](#w210-hangug-eseo-would-have-minted-a-second-spelling-of-korea).
+
+#### W3.5 `isseuseyo` is free; `chumneyo` is already L5-M3's
+
+The L5-M7 brief treats its own pattern lines as available. Half of one of them was:
+
+```
+isseuseyo	free
+chumneyo	L5-M3
+jom	L2-M1
+bang	free
+```
+
+`hoksi + N + isseuseyo?` needed `isseuseyo` minted (S03, a row of its own with a note about L3-M8's
+`-si-` landing on the listener, never on your own time). The headline hint `bang-i jom chumneyo` is
+the reverse: `chumneyo` was bought by **wave 1's own L5-M3**, in the `masinneyo | jonneyo | chumneyo`
+forms list, so the sentence's verb costs nothing and only `bang` had to be minted. Two claims in
+one brief line, each wrong in the opposite direction.
+
+#### W3.6 `jal handa` cannot be written in this course, so the sarcasm frame changed
+
+The L5-M7 brief asks for sarcasm reception *"inside a marked frame — `jal handa` said of a mistake,
+named as such in the pool"*. But `-(neu)nda` is banned course-wide, and the L5-M9 and L5-M10 briefs
+both say so in as many words (*"No written -(neu)nda, which is nowhere in this course"*). The
+frame ships instead as `Eojjeom geureoke jal haesseoyo?` — a `-yo` exclamation whose words are
+positive either way — with `eojjeom` as the row, tagged `interference`, and a rule and a trap that
+both say the flat delivery is what flips it and that a course with no audio can only teach its
+reception. This is a brief asking for a surface the course's own register decision forbids.
+
+#### W3.7 `geo-yeyo` would have minted a second key for L1-M6's future
+
+The L5-M8 brief's fourth pattern is `V-(neu)n + geo-yeyo`.
+
+```
+geo-yeyo	free   [parts: geo → L1-M1, yeyo → L1-M1]
+geoyeyo	L1-M6
+```
+
+`geoyeyo` is L1-M6's, where it is the **second half of the future** (`gal geoyeyo`, will go). The
+Hangul is 거예요 in both cases. Writing the brief's hyphenated spelling would have put two keys on
+one written form, one meaning *will* and one meaning *it is the one that* — and a learner tapping
+either would get the wrong note half the time. The pattern was replaced with
+`V-(neu)n + geo-reul + malhaeyo`, which is built from L5-M5's `geo-reul` and L5-M1's `malhaeyo` and
+mints nothing (S06). **The romanization's hyphen is the only thing separating these two keys, which
+makes it exactly the wrong place to draw a distinction the learner has to see.**
+
+#### W3.8 `malsseumhae` is L2-M1's, so the repair kit really is free — but `malsseumhaeyo` is not
+
+```
+malsseumhae	L2-M1
+malsseumhaeyo	free
+dasi	L4-M2
+hanbeon	L4-M1
+juseyo	L1-M3
+cheoncheonhi	L2-M1
+```
+
+The brief's claim that `dasi hanbeon malsseumhae juseyo` is fully owned is **correct**, and it is
+the finding that shaped the module: the repair kit is on the ladder already and only has to be
+assembled. The brief also lists `malsseumhaeyo` among the fresh words; it was **not** minted,
+because nothing needs it and it would sit one letter from an owned surface. The freed budget went
+to the circumlocution half instead.
+
+#### W3.9 `hangungmal-lo` puts a second particle spelling into the fold
+
+```
+hangungmal-lo	free   [parts: hangungmal → L1-M1, lo → free]
+ro	L2-M4
+```
+
+`hangungmal-lo` is the honest romanization — after the `l` of `mal` the instrumental is *said*
+`-lo`, and this course writes assimilation. Minting it donates the bare part `lo`, and L2-M4
+already owns `ro` for the same particle. **The fold now holds two keys for one particle,
+distinguished only by the assimilation the romanization records.** This is not avoidable while the
+course romanizes what is said, and it is the third time this level has produced a key nobody
+intended (`docs/76` §4 on `-deon`, [§W2.4](#w24-the-ending-discipline-held-and-one-bare-suffix-was-minted-anyway),
+and now this). Nobody taps a bound particle, so nothing is lost today; it is recorded because the
+count of such keys is now three and rising.
+
+#### W3.10 `iyagi` is L5-M2's, not fresh
+
+The L5-M9 brief: *"Fresh, and it should stay a short list: iyagi, dongwha, gyeolguk, kkeut,
+jueingong."*
+
+```
+iyagi	L5-M2
+iyagi-yeyo	free   [parts: iyagi → L5-M2, yeyo → L1-M1]
+```
+
+`iyagi` was bought by wave 1's L5-M2 with `iyagi | iyagi-neun | iyagi-ga | iyagi-reul`. The brief
+was written before that wave landed. What this module needed was the copula form for its frame
+narrator, and `iyagi-yeyo` is free, so it ships as its own row (S09) with a note pointing back at
+L5-M2 — the "new shape of an older lexeme gets its own row" rule, applied inside the same level.
+
+#### W3.11 `yennal yennal-e` confirmed, and the brief's honesty about it is worth repeating
+
+```
+yennal yennal-e	free   [parts: yennal → L4-M8, e → L1-M4]
+sarasseoyo	free
+sarayo	L4-M2
+sarasseumnida	free
+```
+
+The brief's own recorded correction — *"I expected the tale-opening to be fresh; content:owner says
+yennal is L4-M8"* — holds today. The doubled surface is free as a whole and donates nothing, so it
+costs exactly one key. `sarasseoyo` and `sarasseumnida` are both free and both minted, and they are
+the module's whole argument: one pair of surfaces, one difference, and it is the ending.
+
+#### W3.12 `sarayo` is L4-M2's, not L3-M9's — and four more citation fixes
+
+Notes in a shipped module cite other modules by number, and a wrong citation is a wrong fact on a
+learner's screen. Five were caught by asking rather than remembering, and all five were fixed
+before the modules shipped:
+
+```
+sarayo	L4-M2
+museoweoyo	L3-M6
+ui	L5-M4
+hago	L2-M9
+bwayo	L2-M6
+mal	L3-M5
+```
+
+`sarayo` had been written as L3-M9's (L3-M9 owns `halmeoni`, which is what the memory attached to),
+`museoweoyo` as L2-M9's, `-ui` as L3-M7's, `-hago` as L2-M2's and `bwayo` as L1-M8's. `mal` at
+L3-M5 was the only one already right. **A citation inside a note is an ownership claim and belongs
+in `content:owner`'s output, not in an author's recollection.**
+
+#### W3.13 The tale was chosen to cost zero proper nouns
+
+The L5-M9 brief ends its seam with a real design lever: *"Proper nouns DO index on this course, so
+a tale with three named characters costs three keys and a tale with one costs one — which is a
+reason to choose the tale for its cast as much as for its plot."* Taken to its conclusion, the
+cheapest cast is **none**: `halmeoni` is L3-M9's and `horangi` is one fresh common noun, so the
+whole tale is told with a single new character word and no proper noun at all. The module spends
+its budget on `domangchyeosseoyo`, `museoweosseoyo`, `gyeolguk`, `kkeut`, `dongwha`, `jueingong`
+and the two `sara-` forms instead — every one of which a learner can reuse on a different tale.
+
+#### W3.14 The span count: this wave added four two-token surfaces, and L5-M10 added none
+
+The L5-M10 brief: *"this course's maxSpan is 2 and the emitted fold holds TEN two-token surfaces
+after forty modules, the L5 briefs above add ten more, and this module should add NONE."* Wave 3
+added **four**: `yereul deureo` (M6), `jom geuraeyo` (M7), `je mareun` (M8) and `yennal yennal-e`
+(M9). Each is a surface whose meaning is nothing either word says alone, which is the only case
+that earns a span. **`maxSpan` is still 2** on every emitted file of this wave, and `L5-M10`'s
+emitted index holds exactly two surfaces, `hagesseumnida` and `deurigesseumnida` — neither of them
+spanning.
+
+#### W3.15 L5-M10 spends two surfaces, not one — and why
+
+The brief holds the module to L3-M10's standard of one. It ships **two**: `hagesseumnida` and
+`deurigesseumnida`, both free, both `-gesseumnida` commitment forms. The reason is structural
+rather than lexical. Every one of the ten pieces needs at least one word row
+(`deconstruction.words` may not be empty), and a row on an already-owned surface is unreachable —
+first occurrence wins, so the learner would be shown the earlier module's note. Two rows, five
+pieces each, with a **byte-identical note on every repeat** (which is what `check-shown`'s
+collision test requires of a deliberate repeat), gives every piece a reachable row while adding two
+keys. The alternative — one surface in all ten pieces — would have forced the same sentence into
+ten different scenes. The formal half of five pieces is `malsseum deurigesseumnida`, which is the
+ordinary opener of a Korean formal address, and of the other five, `jal hagesseumnida`.
+
+#### W3.16 Formal lines that could not be written
+
+Worth recording for whoever writes L5's successor, if there is one. These are all free and all
+obvious things a formal half wants:
+
+```
+butakhamnida	free
+il-eul	free   [parts: il → L1-M9, eul → L1-M1]
+sonnim-i	free   [parts: sonnim → L5-M4, i → L1-M1]
+gippeosseoyo	free
+malhaesseoyo	free
+isseosseoyo	free
+```
+
+`jal butakhamnida` — the standard *I look forward to working with you* — is unavailable, and so is
+`sonnim-i` even though L5-M4 owns `sonnim`. The pieces route around them (`saram-deul-i` for
+`sonnim-i`, `jal hagesseumnida` for `butakhamnida`). The pattern is the familiar one: **a noun is
+owned and the particle-bearing form of it is not**, and the fold has no opinion about which forms
+an author will want next.
+
+### The ratchet
+
+`npx vitest run tools/shown-surfaces.test.ts` → **11 passed (11)**. en-ko's baseline is **12 and
+unchanged**: no baseline was raised, and none was lowered, because none of the five modules
+contributed a finding. `npm run content:shown` reports all five `clean — every shown surface
+resolves`, with **no `RE-TEACH` line and no `COLLIDES INSIDE THIS MODULE` line on any of them**.
+
+The rules that produced that, in the order they cost time:
+
+1. **Every sentence display, every `variations[].display` and every pool item is built only from
+   surfaces `content:owner` had already placed, or from a row or `forms` entry inside these five
+   modules.** Wave 2's finding — that a variation is where a module overspends — was taken as a
+   working rule this time: every variation line was checked before it was written, not after.
+   `mistake.display` is the one exempt slot (#491), and it is where the deliberately wrong Korean
+   lives: `sigan-i eopseoyo, cheotjjae`, `geureoke saenggakhaeyo su-do isseoyo`, `bang-i jom
+   chuwoyo`, `mworagoyo? jal an deureoyo`, `hangungmal-e`, `geu dongwha jueingong-i`, and every
+   register slip in L5-M10.
+2. **A row appears in exactly one sentence, except in L5-M10, where two rows repeat five times
+   each with a byte-identical note.** The collision test is note equality, so the repeat is
+   invisible to the fold and reachable for the learner; L4-M10 set that precedent with `gapjagi`
+   and `algo boni`.
+3. **A `forms` list never lists a form another row of the same module opens as its display.**
+   `chanseong` carries `chanseong-ieyo` and `chanseong-eun`; no later row displays `chanseong`.
+4. **A paradigm was checked cell by cell before it was written.** `halkkayo | galkkayo |
+   meogeulkkayo` ships complete because `content:owner` reported all three free — unlike en-it's
+   `sarei`, this one had no owned cell to leave a hole for. The hole rule was still applied to
+   `bandae | bandae-yeyo | bandae-do`, where the copula and the `-do` form were checked
+   individually.
+5. **New this wave: the whole-token rule.** `su-do`, `je-ga`, `geo-yeyo`, `bang-i`, `sonnim-i` and
+   `il-eul` are all cases where the parts are owned and the whole is not. `matchSurfaces` resolves
+   a whitespace token as a unit first, so the only safe question is the one about the token you are
+   actually going to write. Asking about the parts is asking a different question.
+
+### Verification
+
+- `npm run content:validate` → `CONTENT 448/448 ok`. The denominator climbs as eight sibling waves
+  land in the same checkout; it has been `n/n` at every reading.
+- `npm run content:shown -- en-ko L5-M6` → `L5-M6: clean — every shown surface resolves`
+- `npm run content:shown -- en-ko L5-M7` → `L5-M7: clean — every shown surface resolves`
+- `npm run content:shown -- en-ko L5-M8` → `L5-M8: clean — every shown surface resolves`
+- `npm run content:shown -- en-ko L5-M9` → `L5-M9: clean — every shown surface resolves`
+- `npm run content:shown -- en-ko L5-M10` → `L5-M10: clean — every shown surface resolves`
+- `npx vitest run tools/shown-surfaces.test.ts` → `Tests  11 passed (11)`
+- `npx vitest run src/course/types.test.ts` → `Tests  2 failed | 467 passed (469)`. Both failures
+  are census counters belonging to other people: the module census (`finds all 444 …`) and the
+  hi-en count (`expected 49 to be 48`). The en-ko case — *keeps en-ko to the decisions #373
+  settled* — was **green**: no Hangul outside `script`, pure-ASCII romanization, no bare particle
+  as its own whitespace token, no plain-style pronoun anywhere including inside the quotations in
+  L5-M9 and L5-M10, a `note` on every word row, and a `script` line on every sentence, word,
+  variation, mistake plate and pool item. The `-mnida` gate is scoped to L1–L3, so L5-M9's
+  `sarasseumnida` and L5-M10's two new surfaces pass it by construction.
+- `npx prettier --check` on all five files → `All matched files use Prettier code style!`
+
+No build was run by this wave.
+
+### Open questions for the native-speaker gate
+
+Continuing the chain; the last numbered question in this file and in
+`docs/111-en-ko-L5-brief-decisions.md` is 190. Nothing above is renumbered. **The native-speaker bar
+is not met by anything in this document** — an LLM pass cleared these modules to ship, and the
+questions below are what an LLM pass cannot answer.
+
+191. **`waenyahamyeon` with `-gi ttaemun-ieyo`, every time** (M6, S03/S09). The module teaches them
+     as one bracket and calls `waenyahamyeon` alone half a construction. Confirm a speaker really
+     does close it, in ordinary spoken `-yo`, or say how often the front half stands by itself.
+
+192. **`Geureoke saenggakhal su-do isseoyo`** (M6, S05). Confirm this reads as *one could see it
+     that way* — a concession you are about to turn — rather than as *you might be thinking that*,
+     which would be a different and more pointed act.
+
+193. **`chanseong-ieyo` and `bandae-yeyo` said of a person** (M6, S07/S10). The module insists on
+     the noun with a copula and rules out `chanseonghaeyo` in its `mistake` plate. Confirm
+     `친구는 찬성이에요` is what two friends actually say, and not committee language.
+
+194. **`Yereul deureo`** (M6, S04). Confirm it is the everyday spoken *for example* and not the
+     written one, and that a comma pause after it is right.
+
+195. **`Bang-i jom chumneyo` as a request** (M7, S01/S05). The whole module rests on this reading.
+     Confirm it is heard as *close the window*, and confirm the module's claim that answering
+     *yes, it is* is a refusal rather than agreement.
+
+196. **`Je-ga halkkayo?` frequency** (M7, S02). Confirm the self-offer is the default way to
+     volunteer, and flag whether it is too tentative in a workplace where somebody has to just do
+     the thing.
+
+197. **`Eojjeom geureoke jal haesseoyo?`** (M7, S07). This replaced the brief's `jal handa`, which
+     this course cannot write. Confirm the `-yo` exclamation carries the same double reading, and
+     say whether teaching sarcasm reception without audio is worth doing at all or should be cut.
+
+198. **`Geugeo-neun jom geuraeyo`** (M7, S09). Confirm it declines without naming a fault, and that
+     supplying the adjective (`jom bissayo`) really is a different act rather than a softer one.
+
+199. **`nunchi-ga isseoyo` / `eopseoyo`** (M7, S04). Confirm `nunchi-ga eopseoyo` is the ordinary
+     complaint and not an insult, and that `nunchi-reul bwayo` is the right form for *reading the
+     room* as an action.
+
+200. **`Mworagoyo?`** (M8, S09). The rule claims it is a repair request and not a challenge, and
+     that English intonation flips it. Confirm the flip is real, and say what a learner should do
+     with their voice instead.
+
+201. **`Je mareun geuge anieyo`** (M8, S07). The module teaches Korean repair as *cancel the wrong
+     reading* rather than *restate the right one*, and calls it blunter than a learner expects.
+     Confirm that is correct and not merely a possible phrasing.
+
+202. **`Jong-i-reul jareuneun geo-reul malhaeyo`** (M8, S06). Confirm this is how a Korean speaker
+     circumlocutes a missing noun, and flag whether `-reul malhaeyo` or something else is the
+     natural closing verb.
+
+203. **`hangungmal-lo` against `hangugeo-ro`** (M8, S02/S10). Both exist; the course owns
+     `hangungmal` at L1-M1 and `hangugeo` from L2. Confirm `한국말로` is the one said in a
+     conversation, and note that the module's choice put a second particle key (`lo` beside L2-M4's
+     `ro`) into the fold.
+
+204. **The tale itself** (M9). A grandmother, a tiger, a demand for rice, a flight, and the tiger
+     frightened too. Confirm it reads as a recognisable Korean folk tale rather than as an
+     invention, and if it does not, name one that can be told inside this ladder's vocabulary.
+
+205. **`museoweosseoyo` for both sides** (M9, S03/S04). The note claims it covers *was afraid* and
+     *was frightening*, which is what lets S04's turn land. Confirm, or split the sentence.
+
+206. **`Geu iyagi-neun horangi iyagi-yeyo`** (M9, S09). Confirm the bare topic noun in front of
+     `iyagi` is right and that `호랑이의 이야기` really would mean something else, as the `mistake`
+     plate claims.
+
+207. **`sarasseoyo` against `sarasseumnida` as the module's whole argument** (M9, S01/S10). Confirm
+     a Korean speaker retelling the same tale to a room would change only the ending — and say what
+     else *would* move that this course has no way to teach.
+
+208. **`malsseum deurigesseumnida` and `jal hagesseumnida`** (M10, five pieces each). Confirm both
+     are what a speaker says at the moment they take the floor, and flag any piece where the line
+     is too formal for the occasion — the wedding toast (1) and the classroom (8) are the two most
+     at risk.
+
+209. **The formal-to-`-yo` drop** (M10, piece 4). This is the shape the brief calls hardest and
+     most useful. Confirm the trigger — the class ending and a friend phoning — is enough to license
+     the drop mid-piece, and that the piece does not read as a register slip.
+
+210. **The hole this level never filled, said once more at its last rung: banmal.** L5-M10 is the
+     final slot in the product, and its absence could be mistaken for an oversight. Confirm that a
+     `-yo`-and-`-(seu)pnida` learner who has finished this ladder can hold a real conversation with
+     a peer, or say plainly what they will be unable to do until a level this ladder does not have
+     teaches them plain style.

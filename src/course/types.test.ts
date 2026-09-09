@@ -231,6 +231,7 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ar/modules/L4-M8.json',
       'content/en-ar/modules/L4-M9.json',
       'content/en-ar/modules/L5-M1.json',
+      'content/en-ar/modules/L5-M10.json',
       'content/en-ar/modules/L5-M2.json',
       'content/en-ar/modules/L5-M3.json',
       'content/en-ar/modules/L5-M4.json',
@@ -690,7 +691,7 @@ describe('ModuleContent against the modules that exist', () => {
   it('keeps the romanized course readable: display is the romanization, script the native line', () => {
     const romanized = MODULE_FILES.filter(([name]) => name.includes('en-ar'));
 
-    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(49);
+    expect(romanized.length, 'the en-ar modules this rule is written for').toBe(50);
     for (const [file, json] of romanized) {
       const module = parseModule(json, file);
 

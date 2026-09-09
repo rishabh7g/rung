@@ -690,3 +690,432 @@ section, so these begin at 119.
      tokens, no key — and that is exactly the risk: a frame that costs nothing gets over-used. A
      native reader should say whether a Marathi speaker actually prefaces beliefs this often, or
      whether the ordinary way in is `मला वाटतं` (L3-M3) and `माझ्या मते` is the written one.
+
+## Wave 3 — L5-M6 through L5-M10 (#581)
+
+The level's RANGE modules — **L5-M6 "Arguing a position"**, **L5-M7 "Between the lines"**,
+**L5-M8 "When words run out"**, **L5-M9 "Telling it your way"** and **L5-M10 "Your own voice"** —
+authored together on 2026-09-08 and shipped `verified: true` in the same change, signed
+`Claude Opus 5 — LLM review, authorised by repo owner`. With them the hi-mr ladder closes: fifty
+modules, five levels, and no module below L5-M10.
+
+Every ownership claim below is quoted verbatim from `npm run content:owner -- hi-mr …` run during
+this wave, never from a grep. The fold's closing line moved once mid-wave, because a sibling's
+build landed while the wave was running, and both readings are recorded here because the wave used
+both:
+
+```
+932 surfaces owned, folded over 45 modules through L5-M5
+992 surfaces owned, folded over 48 modules through L5-M8
+```
+
+Wave 1's section above quotes `809 surfaces owned, folded over 40 modules through L4-M10`. That is
+now three waves stale. **The count and the terminal module in any brief or review are perishable
+facts** — the only durable instruction is to re-run the query, which is what this wave did for
+every surface it shows.
+
+hi-mr is still the one course of the nine with `maxSpan 1`, so no frame longer than one token could
+be indexed. Five frames in this wave are therefore carried entirely in `rules[]` and in each
+sentence's `literal`: `नंतर बघू` (L5-M7), `असू दे` / `राहू दे` (L5-M7), `ज्यात … ठेवतात` (L5-M8),
+`V-त + होता` (L5-M9), and `असं मानलं जातं` / `असं म्हटलं जातं` (L5-M6, whose three tokens are three
+separate rows). Each module's rule that carries a frame says so in the rule text itself.
+
+### L5-M6 — Arguing a position
+
+
+The discourse scaffold — connectives that mark a MOVE, not a relation between two clauses — plus
+the impersonal passive of claim. The ten sentences are one argued paragraph about whether learning
+Marathi is hard, so the unit is the case and not the sentence. Ten displays:
+
+1. `पहिलं म्हणजे मराठी शिकणं सोपं नाही, दुसरं म्हणजे रोज बोलणं महत्त्वाचं आहे.`
+2. `असं मानलं जातं की मराठी अवघड आहे.`
+3. `असं म्हटलं जातं की हिंदी येते म्हणून मराठी शिकणं सोपं होतं.`
+4. `हे खरं आहे की हिंदी मदत करते, मात्र मराठी वेगळी आहे.`
+5. `याउलट मला मराठी बोलणं सोपं वाटतं.`
+6. `दुसरीकडे वेळ कमी आहे, हे मान्य आहे.`
+7. `माझा मुद्दा हा आहे की रोज थोडं बोललं तर मराठी येते.`
+8. `माझी मुलगी हे एक चांगलं उदाहरण आहे, आणि माझा पुरावा सुद्धा.`
+9. `अर्थात दुसरी बाजू आहे, पण मी सहमत नाही.`
+10. `थोडक्यात, माझा निष्कर्ष हा आहे की सराव महत्त्वाचा आहे.`
+
+New rows: `पहिलं` (with `पहिला`, `पहिली` in its forms), `दुसरं` (with `दुसरा`, `दुसरी`), `शिकणं`,
+`मानलं`, `जातं`, `म्हटलं`, `मात्र`, `याउलट`, `दुसरीकडे`, `मुद्दा`, `उदाहरण`, `पुरावा`, `अर्थात`,
+`बाजू`, `सहमत`, `थोडक्यात`, `निष्कर्ष`, `सराव` — eighteen rows, twenty-two keys, against a cap of 25.
+
+The brief's sharpest instruction is obeyed literally: **the impersonal passive is built in the
+NEUTER ONLY.** `असं मानलं जातं`, `असं म्हटलं जातं`, and nowhere a personal passive. Both `mistake`
+blocks that could carry it do — S02's is `असं मानला जातो …` and S03's is `असं म्हटलं जाते …` — and
+each `why` names the reason the brief gives: `जातो` and `जाते` are L1-M4's motion verb, so a
+masculine or feminine passive would put a goes-every-day note under the auxiliary of a passive.
+`mistake.display` is exempt from the shown check (#61), which is what makes it the right place to
+show a form the course refuses to teach.
+
+`अर्थात` is tagged `interference`, not `free`, and that is the module's biggest single call: Hindi's
+अर्थात् is *yānī*, an explaining word, while Marathi's `अर्थात` is *beshak*, a conceding word. The
+explaining sense in Marathi is `म्हणजे` — which this module cannot buy, for the reason in seam 1.
+
+### L5-M7 — Between the lines
+
+
+Three devices, each grammatical rather than lexical: the indirect request on the plain future plus
+`का`, the fact-that-is-a-request, and the deferral that means no. Ten displays:
+
+1. `जरा खिडकी उघडाल का?`
+2. `तुम्ही उद्या याल का?`
+3. `जरा दार बंद कराल का?`
+4. `मला जरा थंड पाणी देता का?`
+5. `खूप गरम होतंय ना?`
+6. `तुम्ही जरा आवाज कमी करू शकता का?`
+7. `तुमचं काम आपण नंतर बघू.`
+8. `बघूया, पण आज नाही.`
+9. `असू दे, राहू दे, त्याचं काहीच नाही.`
+10. `वा, छान केलंस! हा टोमणा आहे, कौतुक नाही.`
+
+New rows: `उघडाल`, `याल`, `दार`, `कराल`, `थंड`, `देता`, `गरम`, `होतंय`, `आवाज`, `शकता`, `बघू`,
+`बघूया`, `असू`, `राहू`, `काहीच`, `टोमणा`, `कौतुक` — seventeen.
+
+The brief's no-audio rule (note 3) shaped S10 more than anything else in the wave. A display that
+reads `वा, छान केलंस!` and trusts the reader ships a sentence that means its opposite at random, so
+**the sarcastic display says out loud that it is sarcastic**: `वा, छान केलंस! हा टोमणा आहे, कौतुक नाही.`
+The situation is in the `cue`, the surface reading in `literal`, the intended reading in `usage`, and
+the sentence itself buys the two nouns that name the difference. That is a compromise — a real
+speaker does not annotate their own jibe — and it is question 264 below.
+
+`शकता` is tagged `interference` and given a sentence of its own (S06) whose `trap` says the sentence
+is deliberately written in the Hindi shape so the difference is visible, with the Marathi version
+(`तुम्ही आवाज कमी कराल का?`) as its first variation. The module never uses `शकता` in a display where
+the plain future would do.
+
+### L5-M8 — When words run out
+
+
+The relative clause — `जो / जी / जे … तो / ती / ते` — which thirty-nine modules had never taught,
+plus the metalinguistic frames and the repair frames. Ten displays:
+
+1. `जो माणूस काल आला होता तो माझा मित्र आहे.`
+2. `जी बस स्टेशनला जाते ती मला पाहिजे.`
+3. `जे मला कळलं नाही ते तू परत सांग.`
+4. `ज्यात पाणी ठेवतात, ती वस्तू इथे नाही.`
+5. `याला मराठीत काय म्हणतात?`
+6. `याचा अर्थ काय? म्हणजे काय?`
+7. `मला तसं म्हणायचं नव्हतं, मी चुकीचं सांगितलं.`
+8. `जरा परत सांगता का? मला कळत नाही.`
+9. `मला नेमकं काय म्हणायचं ते स्पष्ट सांगता का?`
+10. `जिथे शब्द आठवत नाही, तिथे वाक्य बनवा.`
+
+New rows: `जो`, `जी`, `जे`, `ज्यात`, `ठेवतात`, `वस्तू`, `कळलं`, `परत`, `याला`, `याचा`, `अर्थ`,
+`म्हणायचं`, `चुकीचं`, `सांगता`, `कळत`, `नेमकं`, `स्पष्ट`, `जिथे`, `आठवत`, `वाक्य`, `बनवा` — twenty-one.
+
+`जो`, `जी` and `जे` get **three separate rows rather than one paradigm row**, one per sentence, and
+`ज्यात` a fourth. A single row listing all four in `forms` would have been honest about the paradigm
+but would have made S02, S03 and S04 unable to open a row of their own without colliding — the
+`COLLIDES INSIDE THIS MODULE` case, where the fold reaches the first row and the later ones are
+unreachable. Splitting is the shape the checker rewards, and each note points at the others.
+There is no hole to leave here: nothing below L5 owns any j- form. `तो`, `ती` and `ते` are L2-M2's
+and are re-shown, exactly as the brief predicted, with no row and no collision.
+
+`मतलब` is named in S06's `trap` and `mistake.why` as the Hindi word to avoid and **is not bought as a
+row**, per the brief. The three -णे pairs the module distinguishes — `कळलं` against L4-M3's `समजलं`,
+`परत` against L2-M8's `पुन्हा`, `आठवत` against L2-M8's `विसरलो` — each have the comparison in the row
+note rather than in a rule, since each is one fact.
+
+### L5-M9 — Telling it your way
+
+
+The narrative background tense — `V-त` plus `होतो / होता / होती / होतं / होते` — which is a debt
+docs/51 Q89 opened at L3-M7 and docs/85 deferred without naming a module. It lands here. Ten displays:
+
+1. `एकदा एक राजा होता.`
+2. `पाऊस पडत होता, आणि तो घरी आला.`
+3. `मी वाचत होतो, तेव्हा ती आली.`
+4. `ती खेळत होती, आणि मी बघत होतो.`
+5. `तो रोज कामाला जात होता.`
+6. `ती इथे राहत होती.`
+7. `मी काम करत होतो, तेव्हा त्याने विचारलं.`
+8. `असं म्हणतात की ती कथा खरी आहे.`
+9. `ते आले, त्यांनी सांगितलं की तो गेला.`
+10. `मी ती गोष्ट मोठ्याने वाचत होतो, आणि सगळे ऐकत होते.`
+
+New rows: `एकदा`, `राजा`, `पडत`, `वाचत`, `खेळत`, `बघत`, `जात`, `राहत`, `करत`, `कथा`, `गेला`,
+`मोठ्याने`, `ऐकत` — thirteen.
+
+`गेला` is the find of the wave and the brief was right about it: `गेला	free` while `गेलो → L1-M5`,
+`गेले → L1-M5` and `गेली → L3-M10`. The commonest verb form in any retelling had gone forty-five
+modules unbought. It is bought here, in S09, and its note names the three cells that were already
+taught so the paradigm reads as complete at the point of purchase.
+
+The interference rule (rule 2) is the module's mistake as the brief demanded: Hindi has a live
+narrative present for retelling and Marathi does not, so S01's `mistake` is `एकदा एक राजा आहे.` and
+its `why` says a learner who slides into the present does not sound vivid, they sound as though they
+lost the thread.
+
+### L5-M10 — Your own voice
+
+
+The exit of the product. One piece at a bank counter that starts in `तुम्ही` and ends in `तू`, with
+the switch at S05 and its reason — recognition — visible in the display itself. Ten displays:
+
+1. `नमस्कार, मला इथे थोडं काम आहे.`
+2. `कृपया हा फॉर्म भरा आणि इथे सही करा.`
+3. `तुम्ही जरा थांबा, काम आता होईल. धन्यवाद.`
+4. `तुमचं नाव काय आहे? कृपया स्पष्ट सांगा.`
+5. `अरे, तू माझा मित्र ना?`
+6. `मला आधी कळलं नाही, माफ कर.`
+7. `तू आता इथे काम करतोस का?`
+8. `बरं, तू फॉर्म भर आणि इथे सही कर.`
+9. `आज घरी ये, चहा घे.`
+10. `बरं, मग उद्या भेटू.`
+
+**New words: ZERO.** The brief's target was zero and its ceiling one; the module spends none, and
+`docs/103` therefore had nothing to name in advance. Every one of its ten word rows is a re-teach of
+a surface an earlier module owns, which is the same shape L4-M10 ships in (twenty-one re-teaches,
+clean) and it is deliberate here for a reason the brief states: a shape that has not appeared by
+L5-M9 has nowhere to be re-shown and nowhere to be repaired.
+
+The ten rows are chosen so the four channels of the switch each get one, and so that the two halves
+pair off across the module: `नमस्कार` (S01) against `अरे` (S05); `कृपया` (S02) against `माफ … कर`
+(S06); `धन्यवाद` (S03) against `भेटू` (S10); `तुमचं` (S04) against `करतोस` (S07); `भरा`/`करा` (S02)
+against `भर`/`कर` (S08) and `घ्या` against `घे` (S09). S08 is written as S02's twin on purpose —
+same task, same nouns, only the endings moved — and its `trap` says so, so the two can be read
+against each other.
+
+Each sentence carries its own `register` chip rather than the module carrying one: S01–S04 `formal`,
+S05–S10 `informal`. That is the only place in the product where one item legitimately holds both,
+and chipping per sentence is what makes it legible.
+
+The scene was rewritten once to keep the spend at zero. The obvious version has the clerk turn out
+to be a neighbour, and `npm run content:owner -- hi-mr शेजारी ओळखलं साहेब` says:
+
+```
+शेजारी	free
+ओळखलं	free
+साहेब	free
+```
+
+All three would have been purchases. `शेजारी` became `मित्र` (`मित्र	L2-M2`), `ओळखलं` became
+`कळलं` — this wave's own L5-M8 row — and `साहेब` was left unbought, which is what the brief asks:
+it is genuinely unspent, and this module must not be the one to spend it.
+
+## Seams — what `content:owner` said, and where the wave 3 briefs needed correcting
+
+Five of the fourteen INDEX SEAM claims across these five briefs were wrong or stale, and all five
+were wrong in the same direction: a surface the brief calls free has since been bought by an
+EARLIER MODULE OF THIS SAME LEVEL. Waves 1 and 2 shipped between the briefs being written and this
+wave running, and the L5 briefs' seams were written against an L4-deep fold.
+
+### 10. `म्हणजे → L5-M1`, not free — and it is the L5-M6 brief's headline claim
+
+The L5-M6 brief's note 6 opens: *"AGAINST INSTINCT, twice, and both were checked rather than carried
+over: मात्र → free and म्हणजे → free."* Today:
+
+```
+म्हणजे	L5-M1
+मात्र	free
+```
+
+Half of it held. `मात्र` is free and L5-M6 bought it. `म्हणजे` was bought by wave 1's L5-M1-S02,
+`डोकं खाणे म्हणजे सारखं त्रास देणे` — the sayings module needed *"X म्हणजे Y"* to gloss a proverb, and
+that is exactly the meaning L5-M6 wants. So L5-M6 **shows** `म्हणजे` in four displays and opens no row
+for it; a learner tapping it in `पहिलं म्हणजे …` is shown L5-M1's proverb-glossing note, which is
+close enough to be honest and is not the enumerating note the sentence deserves. That is question 261.
+
+The same correction lands twice more: the L5-M8 brief says *"अर्थात is L5-M6's, म्हणजे is L5-M6's."*
+Only the first is true. `अर्थात` is L5-M6's as of this wave; `म्हणजे` is L5-M1's and has been since
+wave 1.
+
+### 11. `म्हणतात → L5-M1`, and both the L5-M8 and L5-M9 briefs name the wrong module
+
+L5-M8's brief: *"म्हणतात → free (L5-M3's if that module ships first)."* L5-M9's brief:
+*"म्हणतात → free if L5-M3 has not taken it."* Both make L5-M3 the module to watch. Neither is right:
+
+```
+म्हणतात	L5-M1
+```
+
+L5-M1 took it, not L5-M3. Nothing breaks — `याला मराठीत काय म्हणतात?` (L5-M8-S05) and
+`असं म्हणतात की …` (L5-M9-S08) both resolve for free — but the two briefs' conditional was watching
+the wrong module, and an author who had trusted it and opened a row would have shipped an
+unreachable one.
+
+### 12. `वापरतात → L5-M3` and `शब्द → L5-M3` — one stale, one correctly conditional
+
+The L5-M8 brief lists `वापरतात → free` flatly, and `शब्द → free` with the condition
+*"assigned to L5-M3 … and re-shown here if M3 ships first — say which in the row."* Today:
+
+```
+वापरतात	L5-M3
+शब्द	L5-M3
+मराठीत	L5-M3
+```
+
+The conditional claim resolved as written and L5-M8 re-shows `शब्द` in S10 with no row. The flat
+claim was simply stale. `मराठीत`, which the brief's own pattern line `याला मराठीत काय म्हणतात?`
+depends on, is not mentioned in the seam at all and is owned — so the module's central frame costs
+one row (`याला`) rather than three.
+
+### 13. `वा` and `केलंस` are L5-M2's, so L5-M7's ironic frame costs nothing
+
+The L5-M7 brief's fresh-key list does not mention either word, and an author reading the list as
+complete would have concluded the frame needed buying. It does not:
+
+```
+वा	L5-M2
+केलंस	L5-M2
+करू	L2-M6
+```
+
+Wave 1's L5-M2 shipped `वा, छान … केलंस!` (its docs/112 question 128 is about exactly this), so
+L5-M7's S10 re-shows all three of `वा`, `छान` and `केलंस` and spends its rows on `टोमणा` and `कौतुक`
+instead — the two nouns that let the sentence name what it is doing. `करू` being L2-M6's means the
+modal request `करू शकता का?` costs one row, `शकता`, not two.
+
+### 14. The L5-M9 brief names two owned -त stems; there are four
+
+The brief: *"दुखत → L3-M7 and बोलत → L2-M7: the two -त stems a first draft would reach for are
+already owned."* Two more are:
+
+```
+दुखत	L3-M7
+बोलत	L2-M7
+जेवत	L2-M7
+येत	L2-M8
+```
+
+`जेवत` and `येत` are as reachable as the other two — a first draft of a retelling about a meal or an
+arrival hits them immediately. The brief's positive list (`करत`, `जात`, `राहत`, `खेळत`, `वाचत`,
+`बघत`, `पडत`) checked out free in full and is what the module teaches, with `ऐकत` added as an eighth.
+
+### 15. Where the briefs were right, and it is worth saying
+
+Four claims that a wave would have been tempted to re-check into the ground held exactly:
+
+- `गेला	free` while `गेलो	L1-M5`, `गेले	L1-M5`, `गेली	L3-M10` — the L5-M9 brief's best find, confirmed.
+- The L5-M8 brief's *"emptiest and most surprising"* seam: `जो`, `जी`, `जे`, `ज्या`, `ज्याला`,
+  `ज्यात`, `जसं`, `जिथे`, `जेवढं` all returned `free`, against `तो	L2-M2`, `ती	L2-M2`, `ते	L2-M2`,
+  `जेव्हा	L4-M6`, `तेव्हा	L4-M6`. The j-/t- system really was exactly half taught.
+- `समजलं	L4-M3` with `कळलं	free` and `कळत	free` — the against-instinct pair, confirmed.
+- `जातं	free` and `जातात	free` against `जातो	L1-M4` and `जाते	L1-M4` — the seam that decides L5-M6,
+  confirmed cell by cell before the forms list was written.
+
+### 16. Two paradigm rows, both checked for holes before they were written
+
+Only two rows in this wave list more than their own display, and each was checked cell by cell as
+the en-it `sarei` case requires:
+
+```
+पहिलं	free    पहिला	free    पहिली	free
+दुसरं	free    दुसरा	free    दुसरी	free
+```
+
+No lower level owns any of the six, so both rows carry a complete paradigm with no hole, and S01's
+second variation (`पहिली गोष्ट म्हणजे सराव, दुसरी गोष्ट म्हणजे वेळ.`) exercises the feminine cells so
+they are shown rather than merely listed. Every other row in all five modules lists exactly its own
+display — deliberately, because a fuller `forms` list on `जो`/`जी`/`जे` would have made three of
+L5-M8's own rows unreachable.
+
+## The ratchet
+
+`tools/shown-surfaces.test.ts` holds hi-mr at **7**, and this wave leaves it at 7. All five new
+modules are clean:
+
+- `npm run content:shown -- hi-mr L5-M6` → `L5-M6: clean — every shown surface resolves`
+- `npm run content:shown -- hi-mr L5-M7` → `L5-M7: clean — every shown surface resolves`
+- `npm run content:shown -- hi-mr L5-M8` → `L5-M8: clean — every shown surface resolves`
+- `npm run content:shown -- hi-mr L5-M9` → `L5-M9: clean — every shown surface resolves`
+- `npm run content:shown -- hi-mr L5-M10` → `L5-M10: clean — every shown surface resolves, 10 re-teach(es) reported above`
+
+No `SHOWN-BUT-UNTAUGHT` and no `COLLIDES INSIDE THIS MODULE` anywhere. All fifty hero displays, all
+one hundred variation displays and all sixty comprehension items resolve in the cumulative index.
+
+**No `RE-TEACH` on L5-M6 through L5-M9** — the tail that would name them is absent from all four
+lines. The ten on L5-M10 are the module: it spends zero new words, so every row it opens is a
+surface an earlier module owns, and each is kept because the sentence needs the word and because
+the pair it belongs to is the lesson (`नमस्कार`/`अरे`, `कृपया`/`माफ … कर`, `धन्यवाद`/`भेटू`,
+`तुमचं`/`करतोस`, `भर` against S02's `भरा`, `घे` against `घ्या`). A learner tapping any of them is
+shown the earlier note, which in every case is the register-neutral fact about the word; what this
+module adds about the *tier* lives in `rules[]`, where it can be read whole. That is the same trade
+L4-M10 makes with twenty-one re-teaches, and it is question 268 below.
+
+The baseline was not lowered, and could not have been: all seven findings are in hi-mr L1 (`थोडं`,
+`भाजी`, `पाच`, `झाले` taught later; `प्रिया`, `पुणं`, `बोललो` never taught — docs/52), and a level
+never edits a file below it. Wave 1's section already notes that `प्रिया` sitting unindexed is why
+L5-M2 could not put a woman's name after `अगं`; wave 3 adds one more reason to want the L1 sweep:
+`बोललो` still returns `free`, so L5-M8's repair sentence had to be written
+`मी चुकीचं सांगितलं` rather than the more natural `मी चुकीचं बोललो`, which would have shown a surface
+no row owns.
+
+`npm run content:validate` → `CONTENT 450/450 ok` (the total climbed from 447 to 450 while this
+section was being written, as the sibling waves landed). `npx vitest run tools/shown-surfaces.test.ts`
+→ 11 passed. `npx vitest run src/course/types.test.ts` → 469 passed, 2 failed, and both failures are
+file-census counts moved by sibling waves, not by this one: the module-list assertion (the parent's)
+and, on the run that ended this wave, the en-ar module count. Every course law in that file passes
+for all five new modules, including the walk that checks every `tag` is one of
+`free` / `delta` / `interference`, that every `deconstruction.rules` index is in range, and that
+every `register` is one of the three the enum allows — the last of which matters here, because
+L5-M10 is the one module in the product that chips two registers inside a single item.
+
+## Open questions for a native pass — hi-mr L5 wave 3
+
+Continuing this course's chain. The last number used is **260**, at the end of the wave 2 section
+above; wave 2 also spent 131-138 on its seam list, and `docs/103-hi-mr-L5-brief-decisions.md` runs
+to 118. Nothing above is renumbered. The native-speaker
+gate is a stricter bar than the LLM review that shipped these five modules, and it is unmet; none of
+these may be closed by rewriting a shipped module.
+
+261. **`म्हणजे` teaches the wrong note under L5-M6.** Seam 10: L5-M1 owns the key, so a learner
+     tapping `म्हणजे` inside `पहिलं म्हणजे मराठी शिकणं सोपं नाही` is shown L5-M1's proverb-glossing
+     note, not the enumerating one. L5-M6's rule 0 carries the enumerating fact instead. Is that
+     enough, or is `पहिलं म्हणजे … दुसरं म्हणजे …` different enough from `X म्हणजे Y` that a
+     Marathi speaker would want it named on the word?
+
+262. **`मात्र` against `पण`, and whether `परंतु` deserves a mention at all.** L5-M6's rule 1 puts
+     `मात्र` exactly one step above `पण` and rule 6 rules `परंतु` out as bookish. S04's `mistake`
+     is `… परंतु मराठी वेगळी आहे.` Is `परंतु` really out of reach in spoken argument, or does an
+     educated Marathi speaker use it often enough that calling it a mistake overshoots?
+
+263. **`अर्थात` tagged `interference`.** The module treats Marathi `अर्थात` as *beshak* and Hindi
+     `अर्थात्` as *yānī*, and builds S09 on the conceding sense. Does spoken Marathi also use
+     `अर्थात` in the explaining sense often enough that the `interference` tag is too strong?
+
+264. **The self-announcing jibe.** L5-M7-S10 is `वा, छान केलंस! हा टोमणा आहे, कौतुक नाही.` — the
+     sentence says it is sarcastic because the product has no audio (rule 5). No real speaker
+     annotates their own jibe. Is there a display that carries the irony on the situation alone,
+     inside thirteen words, that a reader without intonation could not mistake for praise?
+
+265. **`टोमणा` against `उपरोध`.** The brief lists both free. L5-M7 buys `टोमणा` (the concrete jibe
+     you throw) and leaves `उपरोध` (the rhetorical device) unbought, on the argument that a learner
+     needs the thing before the name for it. Is `टोमणा` the word a Marathi speaker actually uses in
+     the moment, or is it more written than spoken?
+
+266. **`होतंय` as the written form.** L5-M7-S05 ships `खूप गरम होतंय ना?` and rule 2 calls `होतंय`
+     the spoken contraction of `होत आहे`. Is `होतंय` written this way, or is the display better as
+     `होत आहे` with the contraction named only in `sound`?
+
+267. **Three rows for one relative pronoun.** L5-M8 gives `जो`, `जी` and `जे` separate rows so each
+     sentence can open one, rather than a single row whose `forms` carry the paradigm — the reason
+     is mechanical (a paradigm row makes the later rows unreachable) and not pedagogical. Does the
+     split read as three words to a learner where it should read as one word with three genders?
+
+268. **Ten re-teaches at L5-M10.** The module spends nothing, so every row shows an earlier note and
+     what it adds about register lives in `rules[]`. A learner tapping `भर` is told L3-M8's fact
+     about filling in a form, not that `भर` is the `तू` tier of S02's `भरा`. Is the rule enough at
+     the very last module, where there is no later module to repair it?
+
+269. **The switch scene itself.** L5-M10 turns a bank clerk into a friend at S05 and drops to `तू`.
+     Is that a switch a Marathi speaker would actually make at a counter with a queue behind them,
+     or would they hold `तुम्ही` until the business was finished and switch only on the way out?
+
+270. **`कथा` against `गोष्ट` at L5-M9.** S08 ships `असं म्हणतात की ती कथा खरी आहे` and the row calls
+     `कथा` the bookish, folk-tale word against L3-M3's everyday `गोष्ट`. In a retelling of a film or
+     of what happened at the office — which is what the module is for — is `कथा` ever the word, or
+     should the module have stayed on `गोष्ट` throughout and spent the row elsewhere?
+
+271. **The honorific retelling.** L5-M9's rule 4 says that when a story is about someone respected,
+     the honorific plural runs through the WHOLE retelling (`ते आले, त्यांनी सांगितलं`), not just
+     the sentence that mentions them. Is that right, and does it hold when the respected person and
+     an ordinary character appear in the same sentence?
+
+272. **`साहेब` is still unspent at the end of the ladder.** `npm run content:owner -- hi-mr साहेब`
+     returns `free` after fifty modules. L4-M7's brief claimed it and did not buy it; L5-M10 was
+     told not to. Should a fifty-module course close with no word for addressing a stranger of
+     rank, or is that a real gap the L1 sweep or a future level should fill?

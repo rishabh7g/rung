@@ -598,3 +598,454 @@ Continuing the chain; the last number in `docs/105` and in this file was 128.
      secular loading and is used the same way by everybody. Confirm — this is the one place in
      three modules where the course makes a claim about a word's social colouring that the index
      cannot check.
+
+## Wave 3 — L5-M6 through L5-M10 (#591)
+
+The level's RANGE modules and its exit rung: **L5-M6 "Arguing a position"**, **L5-M7 "Between the
+lines"**, **L5-M8 "When words run out"**, **L5-M9 "Telling it your way"** and **L5-M10 "Your own
+voice"**, written against the briefs in
+[`docs/105-en-ar-L5-brief-decisions.md`](105-en-ar-L5-brief-decisions.md) and shipped
+`verified: true` with their signature in the same change. With this wave the en-ar ladder is
+complete: fifty modules, five levels.
+
+**The index this wave was written against, and it moved under it.** M6, M7 and M8 were authored
+against
+
+```
+1329 surfaces owned, folded over 45 modules through L5-M5
+```
+
+M9 and M10 were authored after `public/content/` was rebuilt by the wave around this one, at
+
+```
+1427 surfaces owned, folded over 48 modules through L5-M8
+```
+
+— that is, against a fold that already contained this wave's own first three modules. Both
+readings are recorded because the second one is what makes the M9 and M10 seams below reproducible;
+every ownership claim in this section names the reading it was taken at. The pattern wave 2
+recorded holds and got worse: **the fold is deeper than any brief in this course says it is**, and
+where the two disagreed the tool won every time.
+
+### L5-M6 — Arguing a position
+
+Ten displays:
+
+1. `awwalan, at-taʿlīm muhimm. thāniyan, huwa ghālī. thālithan, huwa ṣaʿb`
+2. `min nāḥiya, as-safar mufīd, wa min nāḥiya ukhrā huwa ghālī`
+3. `qad yaqūl qāʾil inna as-safar ghālī, ghayr anna at-tajriba ahamm`
+4. `as-safar laysa mushkila, bi-al-ʿaks huwa al-ḥall`
+5. `al-mushkila laysat fī al-māl, bal innamā fī al-waqt`
+6. `attafiq maʿa hādhihi al-fikra, ghayr anna al-iʿtirāḍ qawī`
+7. `baʿḍ an-nās yaʿtariḍ ʿalā hādhā al-qarār`
+8. `bi-ikhtiṣār, ad-dalīl qawī wa al-iʿtirāḍ ḍaʿīf`
+9. `khulāṣat al-qawl, at-taʿlīm ahamm min al-māl`
+10. `awwalan, al-ḥujja qawiyya. wa akhīran, laysa hunāka iʿtirāḍ`
+
+**What it teaches.** A scaffold of discourse markers and nothing morphological, exactly as §2 of the
+brief asks: the enumeration completed (`thālithan` joins L3-M1's `awwalan` and L4-M1's `thāniyan`),
+the two-sided frame opened (`min nāḥiya`, answered by L4-M4's `min nāḥiya ukhrā`), the pre-empted
+objection (`qad yaqūl qāʾil inna`) and its answer (`ghayr anna`), the neutral reversal
+(`bi-al-ʿaks`), the exclusive (`innamā`), and two closes at two registers (`bi-ikhtiṣār`,
+`khulāṣat al-qawl`). Twenty-one rows, under the cap of 25. Concession (L4-M4) and the corrective
+`bal` are USED and not reopened, as §4 requires; the three interference rules carry the density
+argument and the register mismatch on `bi-al-ʿaks`.
+
+### L5-M7 — Between the lines
+
+Ten displays:
+
+1. `al-jaww ḥārr hunā`
+2. `hal tamāniʿ idhā fataḥtu an-nāfidha`
+3. `laʿallaka mashghūl al-ān`
+4. `alā tadhhab maʿanā ilā as-sūq`
+5. `ismaḥ lī an aftaḥ al-bāb`
+6. `ʿaẓīm, al-qiṭār mutaʾakhkhir`
+7. `hādhā ṣawt muzʿij`
+8. `huwa yaqūl naʿam, kaʾannahu yaqūl lā`
+9. `akīd, hādhā rāʾiʿ`
+10. `hādhā ʿudhr, wa laysa jawāb`
+
+**What it teaches.** The three named devices — the statement that is a request (S01, S07), the
+softened ask (`hal tamāniʿ` + `idhā`, S02), the negative question (`alā`, S04) — plus `laʿalla` with
+its pronoun suffix (S03) and `ismaḥ lī an` (S05). Sarcasm is the fourth thing and is deliberately
+NOT a device: S06 and S09 are built entirely out of praise words (`ʿaẓīm`, `rāʾiʿ`, `akīd`) and the
+irony lives in `usage` and `sound`, never in `display` — rule 7 says so in the module itself.
+S08's `kaʾanna` is the listener's half, which is the protection the brief asks for. Fifteen rows.
+S10 is the one flat sentence, and it is there on purpose: it is what a speaker reaches for when the
+indirection has been used against them.
+
+### L5-M8 — When words run out
+
+Ten displays:
+
+1. `mā hādhā bi-al-ʿarabiyya`
+2. `mā maʿnā hādhihi al-kalima. lam afham`
+3. `lam afham, hal yumkinuka an tuʿīd`
+4. `hal yumkinuka an taqūl hādhā bi-ʿibāra ukhrā`
+5. `hādhā shayʾ mithl al-kursī`
+6. `huwa nawʿ min al-adawāt`
+7. `kayfa taqūl hādhihi al-kalima bi-al-ʿarabiyya`
+8. `lā aʿrif hādhihi al-kalima`
+9. `aʿlam anna hādhā ṣaḥīḥ, lākin lā afham al-farq`
+10. `hādhā yusammā qāmūs aw kitāb tarjama`
+
+**What it teaches.** The course's oldest holes, paid: `afham` (S02), `aʿrif` (S08), `aʿlam` (S09)
+and `aw` (S10), each with a note written for the whole ladder rather than for this module. Bare
+`mā` is spent here (S01) with a row true of all three of its jobs, which is what L5-M1's
+whole-indexed proverbs left room for. The frames are `shayʾ mithl`, `nawʿ min`, `bi-ʿibāra ukhrā`
+and `kayfa taqūl` — four PHRASE keys built on words the level already owns. Seventeen rows. Rule 1
+carries the apology interference and rule 2 the `aw`-is-not-a-hedge one; `yusammā` (S10) is L4-M7's
+internal passive doing a table job, as §2 asks. `ay` was dropped entirely rather than risk the
+one-letter neighbourhood of L2-M9's `ayy`.
+
+### L5-M9 — Telling it your way
+
+Ten displays:
+
+1. `kāna yā mā kān, fī qadīm az-zamān`
+2. `aḥkī lakum qiṣṣa ʿan ṣayyād faqīr`
+3. `kāna aṣ-ṣayyād yaskun qurb al-baḥr`
+4. `dhahaba ilā al-baḥr, wa wajada samak kathīr`
+5. `ammā aṣ-ṣayyād fa-kāna saʿīd, thumma ʿāda ilā al-qarya`
+6. `arwī hādhihi al-ḥikāya bi-ṭarīqa rasmiyya`
+7. `aḥkī nafs al-qiṣṣa bi-ṭarīqa ukhrā`
+8. `baṭal hādhihi al-usṭūra ṣayyād faqīr`
+9. `yuqāl inna baṭal ar-riwāya kāna faqīr`
+10. `wa fī an-nihāya, ʿāda an-nās jamīʿan ilā al-qarya`
+
+**What it teaches.** Register as a set of CHOICES over grammar already owned, never as a new form.
+S04 is the plain telling (`dhahaba … wa wajada …`, thin on purpose) and S05 is the SAME EVENT
+formal (`ammā … fa-kāna … thumma …`) — the pair is the module's argument, and the vocabulary
+barely moves between them. S09 puts L4-M7's internal passive (`yuqāl`) into a story, which is the
+brief's §2 re-use. The one genuinely new frozen thing is the opener `kāna yā mā kān`, taught whole
+like L5-M1's proverbs. `aḥkī`/`arwī` and `ḥikāya`/`qiṣṣa`/`riwāya`/`usṭūra` are the register pairs.
+Twenty-one rows. Rule 4 pre-empts the dialect confusion the brief warns about; rule 8 states the
+M9/M10 boundary from this side.
+
+### L5-M10 — Your own voice
+
+Ten eight-sentence pieces; first lines and pivots, in full for the first, abbreviated after:
+
+1. `ams, dhahabtu ilā as-sūq. kāna al-jaww bārid. iltaqaytu ṣadīqī hunāka. wa ishtaraytu al-khubz.
+   kadhālika, kāna al-yawm ṭawīl. ammā as-sūq fa-kāna kabīr jiddan. yuqāl inna hādhā as-sūq qadīm.
+   wa fī an-nihāya, kānat ar-riḥla mufīda.`
+2. `kāna hunāka qarār ṣaʿb …` pivoting on `kadhālika, kāna al-qarār muhimm`, closing on
+   `khulāṣat al-qawl, kāna al-qarār ṣaḥīḥ`
+3. `aḥkī lakum qiṣṣa ʿan ṣayyād …` pivoting on `hākadhā kānat al-ḥayāt hunāka`
+4. `ams, waṣaltu ilā al-maṭār …` pivoting on `hākadhā kāna al-yawm`
+5. `kuntu adrus fī al-jāmiʿa …` pivoting on `ʿalā kulli ḥāl, kāna at-taʿlīm mufīd`
+6. `lam afham hādhihi al-kalima …` pivoting on `kadhālika, kānat al-kalima sahla`
+7. `qultu inna hādhā al-qarār ṣaḥīḥ …` pivoting on `ʿalā kulli ḥāl, al-ḥujja qawiyya`
+8. `ams, iltaqaytu jārī fī ash-shāriʿ …` pivoting on `hākadhā badaʾa al-yawm`
+9. `al-yawm, al-jaww ḥārr jiddan …` pivoting on `kadhālika, kāna as-safar ṣaʿb`
+10. `badaʾtu hādhihi al-lugha qabla sana …` pivoting on
+    `ʿalā kulli ḥāl, al-ān aḥkī qiṣṣa bi-al-ʿarabiyya`
+
+**What it teaches.** The pivot, and nothing else. **Two keys are bought in the whole module** —
+`kadhālika` and `hākadhā` — which is inside the brief's "at most two", and the target of 12 rather
+than the ratified cap of 25 is met with room to spare: ten rows, two of them new keys and eight of
+them repeats or point-backs. Every other structure in the ten pieces is owned and the module's job
+is to prove it: `ammā … fa-kāna` (L4-M2), `yuqāl` (L4-M7 via M9), `natījatan` (L4-M2), `khulāṣat
+al-qawl` / `bi-ikhtiṣār` / `min nāḥiya …` (M6), `qāla lī` and the quoted clause (L4-M10),
+`kuntu adrus` (L1-M5 + L3), `fī an-nihāya` (compositional; see the seam below). Each piece is four
+plain sentences, a pivot sentence that belongs to both halves, and three formal ones; rule 3 says
+why a piece that turns between paragraphs is two pieces.
+
+### Seams — where the brief and the index disagreed
+
+Every line below is what `npm run content:owner -- en-ar …` printed, at the reading named.
+
+**At `1329 surfaces / 45 modules / through L5-M5` (M6, M7, M8):**
+
+1. **`min nāḥiya ukhrā` is already L4-M4's — as a whole three-token key.** M6 §5 says only that
+   `nāḥiya → L4-M4` and that `min nāḥiya` must index whole "or it misfires". The tool:
+
+   ```
+   min nāḥiya ukhrā   L4-M4
+   min nāḥiya         free
+   ```
+
+   L4-M4-S07 carries a row whose `display` IS `min nāḥiya ukhrā`, with `ukhrā` in its `forms`. So
+   M6 buys the OPENER only, and its `forms` list is `["min nāḥiya"]` — putting the answering half
+   in there would have been a re-teach of a phrase key, not a paradigm. The brief's instinct was
+   right and its arithmetic was one key out.
+
+2. **`khulāṣa` is L5-M5's, so the close had to be bought as a chain.** M6 §2 names
+   "`bi-ikhtiṣār` or `khulāṣat al-qawl`" without saying which parts are free.
+
+   ```
+   khulāṣa            L5-M5
+   khulāṣat al-qawl   free   [parts: al → L1-M1, qawl → free]
+   ```
+
+   The two-token key is bought whole. It earns `qawl` as a hyphen part of `al-qawl` and does NOT
+   earn bare `khulāṣat`, which is correct: `khulāṣat` only exists in a chain.
+
+3. **`aw` is claimed by two briefs and spent in one.** M6 §5 lists `aw` under "Free, checked"; M8
+   §5 makes it one of the three headline purchases ("M8 buys all three"). Both cannot own it.
+   **M6 does not use `aw` at all** and M8 buys it in S10, because M8's brief is the one that makes
+   an argument for it. Recorded so a later reader does not think M6 forgot it.
+
+4. **`sukhriya` is not fresh.** M7 §5 lists it among "Fresh and free".
+
+   ```
+   sukhriya   L5-M2
+   ```
+
+   It is owned two rungs down. M7 shows it nowhere and rows it nowhere; the sarcasm work is done by
+   `ʿaẓīm`, `rāʾiʿ` and `akīd`, in `usage` rather than in a noun.
+
+5. **`alā tudhhab` is a misvocalisation; the shipped form is `tadhhab`.** M7 §2 writes the negative
+   question as `alā tudhhab maʿanā`.
+
+   ```
+   tudhhab   free
+   tadhhab   L1-M4
+   ```
+
+   `tudhhab` is a passive shape and is not what is said; the imperfect of *you go* is L1-M4's
+   `tadhhab`, and the en-ar mood rule (L2-M1 rule 4) writes it bare. S04 ships
+   `alā tadhhab maʿanā ilā as-sūq`, which buys nothing where the brief's spelling would have bought
+   a wrong key. `alā` itself is free and is written as ONE word, per §5 — `a-lā` would have bought
+   a bare interrogative `a`.
+
+6. **`yaftaḥ` is L4-M1's, so M7's opening verb has a hole in it.** The `fataḥtu` row lists
+   `["fataḥtu", "aftaḥ"]` and stops there:
+
+   ```
+   fataḥtu   free
+   aftaḥ     free
+   yaftaḥ    L4-M1
+   ```
+
+   A complete-looking paradigm would have swallowed L4-M1's cell and made that row unreachable.
+   Same reasoning as en-it's `sarei`/`sarebbe`.
+
+7. **`law samaḥta` is the trap the brief names, and the brief is right.** `law samaḥta free`, but
+   `law → L2-M1` and `samaḥta → L2-M1`. Buying the pair would spend a key over two paid words. M7
+   points back at it in rule 8 and buys `ismaḥ lī` instead, which is a different act (announcing,
+   not asking).
+
+8. **Four of M8's "fresh and free" list are owned, and one of its two writing bans is stale.**
+   This is the largest single correction in the wave. M8 §5:
+
+   ```
+   kalima     L5-M3      kalimāt   L5-M3     al-kalima   L5-M3
+   maʿnā      L5-M5      mā maʿnā  L5-M5
+   shayʾ      L5-M5      mithl     L5-M1
+   aḍ         L5-M5
+   ```
+
+   So the brief's own headline pattern, `mā maʿnā + hādhihi al-kalima`, is built ENTIRELY from
+   owned material — S02 ships it and buys nothing for it. What M8 actually buys are the phrase
+   keys on top: `shayʾ mithl`, `nawʿ min`, `bi-ʿibāra ukhrā`, `kayfa taqūl`, `bi-al-ʿarabiyya`,
+   `hal yumkinuka an tuʿīd` is not bought (it resolves token by token). And the ban on
+   `bi-aḍ-ḍabṭ` — "whose hyphen part `aḍ → free` would buy a bare sun-letter prefix key" — is
+   already moot: `aḍ` is L5-M5's. The phrase is still not written, for the reason the ban gives
+   (L3-M3's `tamāman` does the job), but not for the reason it names.
+
+9. **Bare `mā` really is free, and it is spent in M8.** `mā free` at every reading. S01 shows it
+   alone (`mā hādhā bi-al-ʿarabiyya`) so that the row is reachable — in S02 the longest-match walk
+   takes `mā maʿnā` as one key and never touches it.
+
+10. **`al-kalimāt` and `al-ʿibāra` are separate keys from `kalimāt` and `ʿibāra`.**
+    `content:shown` caught both (`SHOWN-BUT-UNTAUGHT L5-M8-S09 variation: al-kalimāt`, and the same
+    for `al-ʿibāra`). `al-ʿibāra` was added to the `bi-ʿibāra ukhrā` row's `forms`; the `al-kalimāt`
+    variation was rewritten instead, because the row that would have to carry it is L5-M3's. The
+    definite article is not free where the bare noun is owned by another module.
+
+**At `1427 surfaces / 48 modules / through L5-M8` (M9, M10):**
+
+11. **`uslūb` and `qadīm` are not fresh.** M9 §5 lists both under "Fresh and free":
+
+    ```
+    uslūb     L5-M3      bi-uslūb   L5-M3
+    qadīm     L5-M1
+    ```
+
+    M9 buys `bi-ṭarīqa` instead and points at `bi-uslūb` in that row's note; `qadīm` is shown
+    inside the whole-indexed `fī qadīm az-zamān` and rowed nowhere.
+
+12. **`yā` is L5-M2's and `mā` is now M8's, which is exactly why the opener indexes whole.** The
+    brief's reasoning holds and the tool confirms it: `kāna yā mā kān free`, `yā L5-M2`. One row,
+    one key, no parts re-bought.
+
+13. **`fī qadīm az-zamān` costs one key and no prefix**, as §5 predicts: `az → L3-M7` already, so
+    the phrase earns only itself and `zamān`.
+
+14. **`ʿumūman` is not free.** M10 §6 offers it among the pivot candidates.
+
+    ```
+    ʿumūman   L5-M3
+    ```
+
+15. **`fī an-nihāya` is NOT L4-M9's, and it does not need buying.** M10 §6 states it as owned
+    ("indexed whole there").
+
+    ```
+    fī an-nihāya   free   [parts: an → L1-M3, nihāya → L3-M10]
+    an-nihāya      L3-M10
+    ```
+
+    The whole key is free and no module owns it — but the phrase resolves anyway, token by token,
+    because `fī` is L1-M7's and `an-nihāya` is L3-M10's. M9-S10 and seven of M10's ten pieces show
+    it and nothing buys it. **A phrase whose every token is owned needs no key at all**; the only
+    reason to buy one is to attach a note, and at the exit rung there is no budget for that.
+
+16. **The step-back marker was bought twice before L5 ever started, and M10's brief points at a
+    third spelling.** This is the wave's most consequential correction. M10 §6 offers
+    "`ʿalā kull ḥāl` (whole, and `ḥāl` bare is free)". The tool:
+
+    ```
+    ʿalā kull ḥāl    free
+    ʿalā kulli ḥāl   L4-M4
+    ʿalā ayy ḥāl     L4-M5
+    ```
+
+    `ʿalā kull ḥāl` is free only because it is a *different spelling* of L4-M4's `ʿalā kulli ḥāl`,
+    one short vowel away — precisely the `ay`/`ayy` hazard M8's own brief warns about. Buying it
+    would have put two keys on one phrase and split the learner's taps between them. **M10 writes
+    L4-M4's spelling and points back**, which is why three of its rows report as `RE-TEACH`
+    (below). The two keys it does buy, `kadhālika` and `hākadhā`, were checked at this reading and
+    are genuinely free.
+
+17. **`fa-` compounds are bought one at a time, and `fa-kānat` is not among them.** The emitted
+    index carries `fa-adhhab`, `fa-ishtaraytu`, `fa-kāna`, `fa-tadhhab`, `fa-yadhhab` — and no
+    feminine `fa-kānat`. `content:shown` caught three pieces of M10 using it
+    (`SHOWN-BUT-UNTAUGHT L5-M10-S02: fa-kānat`, and S05, S10). All three were rewritten to
+    masculine topics rather than buying a sixth `fa-` compound at the exit rung, where §5 forbids
+    teaching anything. A hyphenated token is one whitespace token and must be an exact key: `fa-`
+    plus an owned verb does not resolve on its own.
+
+### The paradigm holes
+
+Every `forms` list in the five modules was checked cell by cell with `content:owner` before it was
+written. The holes that were left deliberately:
+
+- **`fataḥtu` / `aftaḥ`, with no `yaftaḥ`** (M7-S02) — L4-M1's, seam 6 above.
+- **`min nāḥiya`, with no `min nāḥiya ukhrā`** (M6-S02) — L4-M4's, seam 1 above.
+- **`ʿaẓīm` alone, and `rāʾiʿ` / `rāʾiʿa` as its own row** (M7-S06, S09) — they are synonyms, not a
+  paradigm, and merging them would have made the second row unreachable.
+- **`aḥkī` / `yaḥkī` / `naḥkī` and `arwī` / `yarwī` as two rows** (M9-S02, S06) — the register pair
+  is the point; one row carrying both verbs would have hidden it.
+- **`baʿḍ` / `al-baʿḍ` without `baʿḍ an-nās`** (M6-S07) — the longest-match walk resolves
+  `baʿḍ` + `an-nās` (L4-M9) with no phrase key needed, so buying one would have been waste.
+- **`qawī` / `qawiyya` and `ḍaʿīf` / `ḍaʿīfa` as two rows** (M6-S06, S08) — opposites, not cells.
+
+### The ratchet
+
+`npm run content:shown -- en-ar` is **clean** on all five modules:
+
+```
+L5-M6: clean — every shown surface resolves
+L5-M7: clean — every shown surface resolves
+L5-M8: clean — every shown surface resolves
+L5-M9: clean — every shown surface resolves
+L5-M10: clean — every shown surface resolves, 3 re-teach(es) reported above
+```
+
+`npx vitest run tools/shown-surfaces.test.ts` is **11/11**; `en-ar` holds at its baseline of 6. No
+baseline was raised, and none could honestly be lowered — the six pre-existing findings are all
+below L5.
+
+- **No `COLLIDES INSIDE THIS MODULE` anywhere in the wave.** The rows that could have collided were
+  merged or held apart deliberately: `hal tamāniʿ` carries `tamāniʿ`; `ismaḥ lī` carries `ismaḥ`;
+  `laʿalla` carries `laʿallaka` and `laʿallahu`; `kaʾanna` carries `kaʾannahu` and `kaʾannaka`;
+  `nawʿ min` carries `nawʿ`; `bi-ṭarīqa` carries `ṭarīqa`.
+- **Three deliberate `RE-TEACH`es, all on one key, all with the same note.**
+
+  ```
+  RE-TEACH L5-M10-S05 "ʿalā kulli ḥāl": L4-M4 owns the key …
+  RE-TEACH L5-M10-S07 "ʿalā kulli ḥāl": L4-M4 owns the key …
+  RE-TEACH L5-M10-S10 "ʿalā kulli ḥāl": L4-M4 owns the key …
+  ```
+
+  These are the exit rung's ledger and they are kept on purpose. Three of M10's ten pieces pivot on
+  the step-back marker and the sentence genuinely needs the word; buying the `ʿalā kull ḥāl`
+  spelling instead would have been the defect of seam 16. All three rows carry the **identical**
+  note, which is what the collision check tests, so the fold reaching L4-M4's note rather than
+  M10's costs the learner nothing. Every other piece of M10 rows on one of the two keys the module
+  actually buys.
+- **The rest of M10 is repeats by design.** Four rows on `kadhālika` and three on `hākadhā`, each
+  set carrying one note verbatim — the hi-mr L3 consolidation pattern. `validate.ts` requires a row
+  per sentence and §5 of the brief forbids teaching anything; a repeat is the only honest way to
+  satisfy both.
+- **`newWordCap`.** Rows per module: M6 21, M7 15, M8 17, M9 21, M10 10 (2 new keys). All under the
+  ratified 25, and M10 is under the 12 its brief argued for.
+- **No file below L5 was touched, and no other course was touched.**
+- **`src/course/types.test.ts` went red on the module census while this wave was in flight** — two
+  assertions, both counts: the 449-file list and `expect(romanized.length).toBe(49)` inside the
+  en-ar romanized-course law, which are now 450 and 50. Both are the parent's numbers and both had
+  been moved by the time the wave finished; the file runs **471/471**. The law itself was also
+  re-run by hand over all fifty en-ar modules and passes independently of the count: no `display`,
+  word `display`, `forms` entry, variation, mistake or pool `display` in this wave carries an Arabic
+  character, every `script` line does, and no sentence carries a `glossEn`.
+
+### Open questions for the native pass
+
+Continuing the chain; the last number in `docs/105` and in this file was 141.
+
+142. **`qad yaqūl qāʾil inna` as a spoken opener** (M6-S03). The module ships it as one four-word
+     unit at `register: formal`. Confirm that it is said aloud in an argument rather than being a
+     written-only formula, and that `qāʾil` with no article reads as *someone* rather than as *the
+     speaker*.
+143. **`bi-al-ʿaks` really carries no heat** (M6-S04, rule 5). The whole interference rule and the
+     mistake plate rest on this. Confirm it is as neutral as claimed across the region, and that a
+     learner using it to correct a superior is not being sharper than they intend.
+144. **`innamā` after `bal`** (M6-S05). The brief's pattern is `laysa + X + bal + innamā + Y`.
+     Confirm the pair is idiomatic rather than redundant, and that `innamā` alone after a negation
+     says the same thing. If `bal innamā` is a written-only stacking, the pattern should be split.
+145. **`khulāṣat al-qawl` against `bi-ikhtiṣār`** (M6-S08, S09). The module claims a register split
+     — the first written or public, the second good anywhere. Confirm, and confirm that
+     `khulāṣat al-qawl` across a table reads as stiff rather than as merely careful.
+146. **`baʿḍ an-nās` takes a singular verb** (M6-S07 trap). Confirm `yaʿtariḍ` and not a plural is
+     what is actually said, in speech as well as in writing.
+147. **`al-jaww ḥārr hunā` as a request** (M7-S01, rule 0). The module's opening claim is that this
+     is *open the window* and that the expected response is an action. Confirm the convention holds
+     between friends, and confirm the parallel claim for `hādhā ṣawt muzʿij` (S07).
+148. **`hal tamāniʿ idhā` + a PAST verb for something not yet done** (M7-S02). Confirm `fataḥtu`
+     rather than a present form is what follows `idhā` here, and confirm the answer to the question
+     is `tafaḍḍal` or `lā mushkila` rather than a bare `lā` — the trap line says both.
+149. **`alā tadhhab` is warm, not sharp** (M7-S04, rule 4). This is the module's central claim about
+     the form and no index can check it. Confirm it is an ordinary friendly invitation and that it
+     does not read as a reproach to someone who has already declined.
+150. **Flat sarcasm** (M7-S06, S09, rule 7). The module ships `ʿaẓīm` and `akīd, hādhā rāʾiʿ` as
+     ironic in the right room and says the irony must NOT be signalled. Confirm that `jiddan` on
+     either of them inverts or personalises the meaning, as both mistake plates claim, and confirm
+     the usage limit: never to the person responsible.
+151. **`laʿalla` with a pronoun suffix only** (M7-S03). Confirm `laʿalla anta` is impossible rather
+     than merely marked, and that `laʿallaka mashghūl` is a withdrawal of a request rather than a
+     guess about someone's schedule.
+152. **The repair that does not apologise** (M8-S02, rule 1). The module states that opening every
+     repair with `āsif` reads as distress and that the bare question is the polite form. Confirm —
+     this is a claim about politeness norms, not about grammar, and it is stated as a rule.
+153. **`nawʿ min` + the definite plural** (M8-S06). The trap and the mistake plate both claim
+     `nawʿ min al-adawāt` and that a bare singular after `min` is the English shape. Confirm the
+     definite plural is obligatory rather than preferred.
+154. **`aʿrif` against `aʿlam anna`** (M8-S08, S09, rule 4). The split is stated as absolute: a
+     thing after one, a clause after the other. Confirm `aʿrif anna` is wrong rather than merely
+     less common; if it is available, rule 4 is too strong and S09's plate is not a mistake.
+155. **`kāna yā mā kān` and its final clipped `kān`** (M9-S01). Confirm the opener is current across
+     the region rather than one country's storytelling formula, and confirm the mistake plate:
+     that regularising the last word to `kāna` marks it as learnt from a book.
+156. **`aḥkī` / `arwī` and `ḥikāya` / `qiṣṣa` / `riwāya` / `usṭūra`** (M9-S02, S06, S08, S09). The
+     module hangs its register axis on these two sets. Confirm the verb pairing (`aḥkī` a `ḥikāya`,
+     `arwī` a `riwāya`) is real usage rather than a tidy invention, and that `usṭūra` is the oldest
+     and least literal of the four.
+157. **`yuqāl inna` in a told story** (M9-S09, rule 5). Confirm the internal passive is what a
+     speaker actually reaches for when reporting a story without naming a source, and that the
+     particle after it is `inna` and never `anna`.
+158. **`jamīʿan` after its noun** (M9-S10). Confirm `an-nās jamīʿan` is the order and that the
+     reverse is ungrammatical rather than poetic.
+159. **The pivot inventory: `kadhālika`, `hākadhā`, `ʿalā kulli ḥāl`** (M10, rule 7). The module
+     claims three distinct turns — carry forward, sum up, step back — and builds ten pieces on the
+     distinction. Confirm the three are not interchangeable, and confirm the mistake plate that a
+     bare `ʿalā kulli ḥāl` set down as its own sentence reads as unfinished.
+160. **A pivot sentence that belongs to both halves** (M10, rule 3). This is a claim about how a
+     piece of Arabic prose is built, not about any word in it. Confirm that a register change made
+     between two paragraphs, with no hinge sentence, reads as two pieces to a native reader — the
+     whole module is designed around the answer being yes.
+161. **The register move is grammatical, not lexical** (M9 rule 2, M10 rule 6, and M10-S04's
+     mistake plate). Confirm that a piece whose nouns are swapped but whose connectors stay `wa`
+     has not changed register at all. Every piece in M10 is built on this and no index can test it.

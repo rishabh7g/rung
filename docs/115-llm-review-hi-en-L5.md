@@ -733,3 +733,492 @@ Continuing the chain; the highest number before this wave was 135.
      not translated anywhere. Confirm that `duty` glossed as कर्तव्य / फ़र्ज़ and `justice` as
      इंसाफ़ / न्याय reads as civic rather than as a quiet religious frame to a Hindi speaker, which
      is the failure mode the constraint exists to prevent.
+
+## Wave 3 — L5-M6 through L5-M10 (#592)
+
+**The index this wave was written against, and Wave 2's paragraph is stale in its turn.** Every
+ownership claim below was produced by `npm run content:owner -- hi-en "<surface>" …` on 2026-09-08,
+and every run in this wave closed with:
+
+> `1184 surfaces owned, folded over 45 modules through L5-M5`
+
+Not Wave 2's `1093 surfaces … over 42 modules through L5-M2`, and not Wave 1's
+`1055 … over 40 modules through L4-M10`. Three waves of one level on one calendar day moved the
+fold by five modules and 129 surfaces. A fourth wave must re-run the check rather than quote this
+paragraph — and must also notice that within THIS wave the fold moved five more times, because
+`tools/check-shown.ts` folds the authored `L5-M1..M<n>` sources on top of the emitted index: M7 pays
+for a word and M9 shows it free.
+
+### L5-M6 "Arguing a position" — the concession is real, the rebuttal outweighs, and English takes one connector
+
+The ten displays:
+
+1. `Granted, the train is slower. But it costs half as much.`
+2. `My claim is simple. Although it is expensive, it is worth the money.`
+3. `Firstly, the school is near. Secondly, the fees are low.`
+4. `Admittedly the room is small. Nevertheless, the rent is very low.`
+5. `If we had booked earlier, we would be on the train now.`
+6. `The bus is cheap, whereas the train is fast.`
+7. `For example, given that the train is cheap, my brother takes it.`
+8. `In fact, the evidence is here. I can prove my claim.`
+9. `I do not argue with that. But I have one objection.`
+10. `To sum up, on balance I would take the train rather than the bus.`
+
+**What it teaches.** Three systems and one deferral collected. `rules[0]` is the
+CONCESSION–REBUTTAL PAIR with the two conditions the brief insisted on — the concession must be a
+point the other side genuinely holds, and the rebuttal must outweigh it rather than deny it; S01 is
+the plate and its `mistake` is the `and` version, which concedes twice and argues nothing.
+`rules[1]` is the module's interference plate, THE DOUBLED CONNECTOR in its concessive form:
+`*Although it is expensive, but it is worth the money` is S02's `mistake` verbatim, and the rule
+names the L4-M2 `because … so …` pair it repeats one level up. `rules[2]` is SIGNPOSTING — the
+joints of an English case are marked, and `firstly`/`secondly`/`for example`/`to sum up`/`on
+balance` are the marks. `rules[3]` is the MIXED CONDITIONAL that `docs/88` §5 deferred out of
+L4-M3: past condition, present result, and S05's `mistake` is the `*If we would have booked` shape
+that a Hindi speaker reaches for first. `rules[4]` is the causal-and-contrast connector set and it
+is where the deferral that could NOT land is recorded — see seam 2.
+
+The concessive subordinators themselves are not taught: `although` and `though` are L3-M3's and the
+module points back at them, spending its budget on the PAIRING RULE instead, exactly as `docs/88`
+§3.1(2) found for L4-M6. No display carries `however`, `on the other hand`, a hedge, or the
+abstract-noun article.
+
+### L5-M7 "Between the lines" — distance is politeness, and sarcasm is invisible in writing
+
+The ten displays:
+
+1. `It's a bit chilly in here. Could you shut the window?`
+2. `I was wondering if you could help me with this.`
+3. `Do you think you could come a bit later?`
+4. `It's up to you. I don't mind.`
+5. `Oh, brilliant. That's just what I needed.`
+6. `Well, that went well. Typical.`
+7. `No, sorry, I cannot come. Thank you for asking.`
+8. `Apparently the shop is closed. Obviously I did not know.`
+9. `That was a hint. Somehow I did not notice what you imply.`
+10. `Anyway, whatever you like is fine. If you say so.`
+
+**What it teaches.** `rules[0]` is INDIRECTNESS AS A LADDER with its four rungs named and ordered,
+and S01–S03 are those rungs in sequence: statement (`It's a bit chilly in here`), ability question
+(`Could you shut the window?`), embedded willingness (`I was wondering if you could …`), and the
+opinion wrapper (`Do you think you could …`). Each sentence's `variations` walk the same sentence
+DOWN the ladder, so the learner sees the identical request at three distances.
+
+`rules[1]` and `rules[2]` carry the module's most useful claim, and the brief was right that it is
+the most useful thing in it: English is MORE indirect when requesting and MORE direct when
+refusing, and `I will try · let's see · maybe later · I will let you know` are heard as
+commitments. That sentence is S07's `mistake` — it is the mistake plate, not a display — and the
+display beside it is the English refusal, `No, sorry, I cannot come. Thank you for asking.`
+
+`rules[3]` is SARCASM AS A FIXED FRAME with the production rule stated as a rule rather than
+implied: recognise it, do not write it. S05 and S06 are the two frames, both marked
+`register: informal`, both with a `trap` saying in as many words that the reversal does not survive
+onto paper, and both with a `usage` that reads "पहचानने के लिए, लिखने के लिए नहीं" — for
+recognition, not for production. No display in the module asks a learner to produce sarcasm.
+
+The request FORMS are stacked, not taught: `could`, `can` (L2-M1), `would` (L2-M5) and
+`would you mind` (L2-M1) all appear and none has a row. Hedging is L4-M5's and is named in
+`rules[4]` as borrowed.
+
+### L5-M8 "When words run out" — the index chose the contact relative, and the choice is the better English
+
+The ten displays:
+
+1. `It is the thing you use to open bottles.`
+2. `What do you call this thing in English?`
+3. `Sorry, I did not catch that. Can you say that again?`
+4. `Pardon? Please repeat that word slowly.`
+5. `It is roughly the opposite of cheap.`
+6. `That does not make sense. Please explain it again.`
+7. `How do you spell that word? I am not clear.`
+8. `It is a sort of small box. It is used for money.`
+9. `In other words, it was a misunderstanding.`
+10. `I mean this kind of shop. Listen to me again.`
+
+**What it teaches.** `rules[0]` is the CONTACT RELATIVE CLAUSE — a noun described by a clause with
+no relative pronoun at all — and it is the shape the index forced and the shape a speaker actually
+uses. `rules[1]` is the interference: Hindi puts the clause before the noun and keeps the
+correlative, so the two errors are `*Who cuts the hair, that man` and
+`*The thing which you use it to open bottles`; the second is S01's `mistake` verbatim, and it
+carries BOTH the stranded relative and the resumptive `it` so one plate covers both halves.
+`rules[2]` is the REPAIR SET in its four fixed steps — signal (S04's `Pardon?`), locate (S02, S07),
+confirm, restate (S09) — and `rules[3]` is the refusal of the louder-Hindi-word route: describe the
+thing instead, which is what S01 and S08 are for. `rules[4]` points back at L3-M1's `mean` rather
+than reopening it, and names `sorry`, `again`, `slowly` and `understand` as borrowed.
+
+**No display in the module contains a relative pronoun.** `who` is L3-M9's, `which` L2-M9's,
+`where` L1-M7's and `that` L1-M9's — see seam 5 — and the taught shape has none of them, which is
+the whole point.
+
+### L5-M9 "Telling it your way" — two gears, and you may not change gear halfway
+
+The ten displays (each is a retelling; the per-sentence bound applies inside it):
+
+1. `Once upon a time a farmer is very poor. One day he finds gold in the forest.`
+2. `They say the wife tells everyone in the village. In the end the king takes the gold.`
+3. `It is said that the farmer is clever. In this story he is the hero.`
+4. `Apparently the king is rich and greedy. At the end he takes everything.`
+5. `This is my version of the story. My grandmother tells it another way. Her ending is not the same.`
+6. `This legend is simple. A king lives in a forest. He is rich but he is not happy.`
+7. `A farmer found gold. He told nobody. The wife told everyone. In the end the king took it.`
+8. `In short, the moral is simple. Money is not everything.`
+9. `Apparently there is another version. In that version the hero is a woman.`
+10. `A poor farmer goes to the city. He finds work in a shop. In the end he is rich. They say he still helps the village. That is the tale.`
+
+**What it teaches.** `rules[0]` is THE TWO GEARS — summary present for a plot, a film, a joke or a
+folk tale, past simple for what actually happened — and the law of consistency inside one telling.
+`rules[1]` is the interference, tense drift, and the module proves the rule by construction: S01
+and S07 are THE SAME STORY, one in each gear, and every `mistake` row in the module is a gear
+change rather than a wrong word. S01's is `was … finds`, S02's is `tells … took`, S06's is
+`is … lived … is`, S10's is `goes … found … is`. Five of the ten mistakes are the same defect seen
+from five angles, which is deliberate: it is the error a learner cannot hear.
+
+`rules[2]` is ATTRIBUTION — `They say …`, `It is said that …`, `Apparently …` — L3-M5's reporting
+skill pointed at a whole narrative; S03's `trap` adds the register split (`It is said that` is
+bookish, `They say` is spoken, and mixing them inside one telling jolts). `rules[3]` is LENGTH:
+`in short` and `at the end` are the shape of the thing, not politeness, and S10 is the six-sentence
+showpiece whose third `variation` compresses the whole retelling into one sentence.
+
+`at the end` against L3-M10's `in the end` is S04's plate, and the module keeps both live: S04
+shows `at the end` (the last part of a thing), S02, S07 and S10 show `in the end` (the outcome).
+
+### L5-M10 "Your own voice" — five switches that move together, and nothing defers past here
+
+The ten displays (each an eight-sentence piece; the bound applies to each sentence inside):
+
+1. `Dear Sir, I am writing to inform you of a problem. The room was very cold. The window was not closed. I would like an answer this week. Anyway, I am not angry. Your city is very good. To be honest, I like it here. Thanks for your help.`
+2. `Dear Sir, the meeting is postponed. … Anyway, we had to put off the meeting. The manager is not well. We are very sorry about this. Thanks for your time.`
+3. `Dear Sir, we did not receive your message. We discovered the problem yesterday. … We will find out more this week. Anyway, do not worry. … To be honest, it was our mistake.`
+4. `Dear Sir, kindly attend the meeting on Monday. … Please come to the office at ten. … Anyway, everyone will come. We really need your help. …`
+5. `Dear Sir, this is a complaint about your shop. … Anyway, I am not angry with you. … To be honest, I just want my books. Thanks, and regards.`
+6. `Dear Sir, I cannot attend the meeting on Monday. … Anyway, I am very sorry about this. The truth is, I am not well. My doctor says I must not work. …`
+7. `Hi, how are you? I have a small problem. … Look, I am very angry now. I will make a complaint. Anyway, do not worry about it. …`
+8. `Dear Sir, I am writing to inform you about the fees. … Anyway, do not worry. Everyone is late this year. To be honest, we are also late. Yours sincerely.`
+9. `Dear Sir, unfortunately the meeting is postponed. … Anyway, do not worry about it. The truth is, we are very busy. Look, it is not a big problem. Thanks, and regards.`
+10. `Dear Sir, I am writing to inform you of my last day. … Anyway, I am very happy here. The truth is, I like this office very much. Look, I will see you again. Thanks for everything, my friend. Cheers, and thanks.`
+
+(The full eight sentences of every piece are in `content/hi-en/modules/L5-M10.json`; the elisions
+above are only in this document.)
+
+**What it teaches.** `rules[0]` is REGISTER AS FIVE SWITCHES THAT MOVE TOGETHER — contraction, verb
+choice, sentence length, hedging, and how much is left unsaid — and the module's single mistake
+plate is the half-moved register, S01's `mistake`:
+`Dear Sir, I am writing to inform you that the room was cold, and to be honest I am not angry, mate.`
+`rules[1]` is the interference, stated as `docs/106` asked: Hindi carries register on the pronoun
+and the verb ending, English has one `you` and one ending, so the learner moves the switch they
+have and nothing happens — L2-M2's one-`you` rule seen from the top of the ladder, and the rule
+says so in as many words. `rules[2]` is the PIVOT set (`Anyway · To be honest · Look · The truth
+is`) with the warning that a pivot alone is not a register change. `rules[3]` is the Latinate
+rule-of-thumb WITH its disclaimer (`get married`, `receive`), and the three pairs are shown as pairs
+inside one piece each: `postpone`/`put off` in S02, `discover`/`find out` in S03,
+`attend`/`come to` in S04. `rules[4]` is the recombination inventory — what this module borrows from
+L5-M3, L5-M4, L5-M7, L4-M5, L4-M4 and L4-M7 and does not reteach — and it restates that `shall`
+stays out of every display, as at L5-M4.
+
+The module opens no grammatical system. Its arc is deliberate: S01–S06 and S08–S10 run formal to
+informal, S07 runs the OTHER way (a friendly opening that hardens at `Look,`), so the learner does
+not learn "a register change means getting warmer". S10 is the exit of the course and travels the
+whole distance in one piece, `Dear Sir` to `Cheers`.
+
+### Brief seams corrected, and what the emitted index actually said
+
+**1. The fold moved a third time, and it moves inside the wave.** Recorded above:
+`1184 surfaces owned, folded over 45 modules through L5-M5`. The new thing this wave learned is
+that the fold is not stable even within one wave — `apparently` was `free` when M7 was written and
+is M7's by the time M9 shows it, and M9 therefore shows it with no row and no cost. Any wave
+authoring several modules of one level must run `content:shown` in ladder order, as this one did.
+
+**2. M6's deferral still cannot land, and the brief was right to name it as a hole.** `docs/88` §5
+sent causal `since` and causal `as` to L5-M6. Re-checked today:
+
+> `since    L3-M7` · `as    L2-M9`
+
+The index has not moved and a level never edits a file below it, so they are NOT taught here. What
+shipped instead: `given that` (which came back `free` and is now S07's row), `because` pointed back
+at L1-M9, and `rules[4]` names `since` and `as` **in Hindi, as forms to RECOGNISE in reading only**,
+with S07's `trap` repeating it beside the display. `now that` also came back `free` and was NOT
+spent — see seam 3. The gap is real and belongs to a content issue against L3-M7 and L2-M9.
+
+**3. M6's brief offers more keys than its own cap can hold, and the excess is named here.** The
+brief's FRESH lists total 24 keys (15 bare + 9 whole) and the ten displays additionally need
+`slower`, `half`, `claim`, `simple`, `fees`, `low`, `room`, `booked` and `fast` — none of which the
+brief names and all of which came back `free`. At `newWordCap: 25` both lists cannot fit. What
+shipped is the 25 rows the displays actually need; **dropped from the brief's offer**: `argument`,
+`example` (subsumed by the whole key `for example`), `indeed`, `overall` (a near-duplicate of
+`on balance`), `in conclusion`, `on the contrary`, and `now that`. Every one of them is still free
+for a later revision.
+
+**4. M6's remaining seam claims all held.** Re-checked and unchanged:
+
+> `although    L3-M3` · `though    L3-M3` · `point    L3-M3` · `agree    L3-M3` · `disagree    L3-M3`
+> `therefore    L4-M2` · `that is why    L4-M2` · `the point is    L4-M4` · `at least    L4-M4`
+> `even if    L4-M4` · `of course    L4-M4` · `same    L4-M4` · `admit    L4-M4` · `however    L4-M4`
+> `finally    L2-M10` · `first    L2-M10` · `second    L2-M4` · `instead    L4-M3` · `rather    L2-M9`
+> `must    L3-M8`
+
+`second → L2-M4` is the reason the module writes `firstly` and `secondly`, exactly as the brief
+predicted, and S03's own `mistake` row is the `First, … Second, …` version with the reason given.
+
+**5. M8's seam is the one that designed the module, and every claim in it survived.** Re-checked:
+
+> `who    L3-M9` · `which    L2-M9` · `where    L1-M7` · `that    L1-M9` · `mean    L3-M1`
+> `means    L3-M1` · `used to    L3-M10` · `opposite    L2-M4` · `call    L1-M6` · `sorry    L1-M10`
+> `confused    L3-M6` · `understand    L3-M1` · `something    L3-M6` · `anything    L3-M7`
+> `slowly    L4-M1` · `again    L2-M8` · `thing    free`
+
+So relative `which`, relative `where` and relative `that` are all out, only L3-M9's `who` is safe,
+and the taught shape is the contact relative with no pronoun at all. `the opposite of` (3),
+`what do you call` (4) and `used for` (2) are indexed WHOLE for exactly the reasons the brief gave,
+and S08's `mistake` — `*It is used to money` — is the `used to` trap the brief warned about, shown
+as the error rather than merely avoided.
+
+**6. Three corrections to M8's brief, all found by `content:owner` rather than by reading.**
+
+- `kind` is **L2-M2's**, not free. The brief lists the whole key `kind of` and says nothing about the
+  bare word. The whole key is safe because `matchSurfaces` walks longest-match-first, so `kind of
+  shop` resolves as `kind of` + `shop` and never reaches L2-M2's kind-hearted row; S10's row note
+  says so. This is the `tomar el pelo` rule the wave brief names, confirmed a fourth time.
+- **`caught` and `listened` are `L4-M3`'s.** The brief's FRESH list names `catch` and `listen` and
+  says nothing about their past forms. Both were written into `forms` lists, both came back as
+  `RE-TEACH` from `content:shown`, and both were removed — `caught` is now named inside S03's Hindi
+  note instead, which is reachable where the row would not have been.
+- **`only` came back `free`** — after forty-five modules the ladder has never bought it. S09 was
+  rewritten from `it was only a misunderstanding` to `it was a misunderstanding` for that reason
+  alone. It is the kind of everyday word a seam note would never think to check.
+
+**7. M7's seam held, including the one the brief flagged as unstable.** Re-checked:
+
+> `would you mind    L2-M1` · `could    L2-M1` · `can    L2-M1` · `would    L2-M5` · `suppose    L4-M5`
+> `not really    L4-M5` · `a bit    L4-M5` · `maybe    L4-M5` · `perhaps    L4-M5` · `probably    L4-M5`
+> `wonder    L3-M5` · `sure    L2-M6` · `really    L1-M10` · `cold    L3-M7` · `open    L2-M1`
+> `close    L4-M1` · `notice    L4-M7` · `again    L2-M8` · `fine    L1-M2` · `quite    free`
+
+`quite` is still `free`, as the brief said and against `docs/88` §4's list — L4-M5 did not spend it,
+and this module did not either. `cold → L3-M7` is the body row, so the module took the brief's
+escape hatch and wrote **`chilly`** (free); S01's row note draws the body/room line explicitly.
+Three keys the brief does not name and the displays need: `oh`, `shut` and `thank you for asking`
+(4 tokens, at `maxSpan`), all `free`.
+
+**8. A re-teach of an IDENTICAL surface hides the new note, and that changed a design.** M7-S02 was
+written with a row for `if` in its embedded-question job, on the level law that a new shape of an
+older lexeme gets its own row. `content:owner` says `if → L3-M4` and `content:shown` reported the
+row as a `RE-TEACH`: first occurrence wins, so a learner tapping `if` is shown L3-M4's conditional
+note and the new one is unreachable. The row was deleted and the fact moved into the sentence's
+`trap`, which renders. **The level law's "own row with a note pointing back" only works when the new
+shape is a DIFFERENT SURFACE** (`slower` beside `slow`, `wives` beside `wife`); when the surface is
+identical the row is dead and the fact belongs in `trap` or `rules`. All five modules ship with
+**zero re-teaches** on that principle.
+
+**9. M9's seam held, and three words it does not name mattered.** Re-checked:
+
+> `story    L3-M10` · `in the end    L3-M10` · `while    L3-M10` · `already    L3-M10` · `still    L3-M10`
+> `before    L3-M10` · `said    L2-M10` · `told    L2-M10` · `say    L2-M7` · `says    L2-M7`
+> `tell    L2-M7` · `telling    L2-M7` · `asked    L3-M5` · `wonder    L3-M5` · `whether    L3-M5`
+> `finally    L2-M10` · `grandmother    L4-M8` · `poor    L4-M8` · `city    L3-M10` · `person    L3-M9`
+> `at first    L4-M10` · `but then    L4-M10` · `suddenly    L4-M10` · `it turned out    L4-M10`
+> `luckily    L4-M10` · `noticed    L4-M10` · `realise    L4-M10` · `laughed    L4-M10`
+
+Not named by the brief and load-bearing: **`lives` and `live` are `L3-M5`'s** (S01 and S06 need
+them and pay nothing); **`everything` is `L4-M8`'s** while **`nothing` is free**, which forced one
+S08 variation from `has nothing at the end` to `has no gold at the end`; and **`apparently` is M7's
+as of this wave**, so M9 shows it in S04 and S09 with no row. `briefly` was dropped from the brief's
+fresh list for budget — `in short` does the same job and `to cut a long story short` was already
+out at six tokens against `maxSpan` 4, so `rules[3]` carries the length rule in Hindi instead.
+
+**10. M10's seam held, and the brief's one instruction to re-check paid off.** Re-checked:
+
+> `to be honest    L3-M3` · `actually    L4-M5` · `however    L4-M4` · `on the other hand    L4-M4`
+> `get    L2-M4` · `sorry    L1-M10` · `kindly    L4-M7` · `may    L4-M7` · `notice    L4-M7`
+> `these days    L4-M8` · `shall    L2-M6` · `formal    L5-M3` · `informal    L5-M3` · `look    free`
+
+The brief said to check `look` "before spending, since it is the kind of key an earlier module takes
+without meaning to". It is still free, and it is now M10-S07's row. Two corrections the brief does
+not carry:
+
+- **`truth` is `L5-M5`'s** (`docs/115` Wave 2 spent it), so `the truth is` had to be indexed WHOLE
+  (3 tokens) or every occurrence would have opened L5-M5's abstract-noun row. It is, and the greedy
+  walk keeps it ahead. The brief names the whole key without naming the collision it avoids.
+- **`write`, `writing` and `wrote` are all free — untaught after forty-five modules.** `I am writing
+  to` is therefore a 4-token whole key whose parts nobody owns, and no display in the module may
+  write a bare `write`. Same shape as `yours` (free), which is why the sign-off is indexed as
+  `yours sincerely` (2) rather than as bare `sincerely`. And **`received` is `L4-M7`'s** while
+  `receive` is free — the identical trap to M8's `caught`, caught the same way and fixed the same
+  way.
+
+`mate` was NOT spent. `docs/106` §3.10(3) uses it inside an example sentence but its FRESH list does
+not name it, the module's target is 18 keys and it hit exactly 18, and `mate` is a British and
+Australian address term whose fit for this pair is a native-gate question — see question 170. The
+informal register is carried instead by `Hi`, `Look`, `my friend` and `Cheers`.
+
+**11. `maxSpan` stays 4, and this wave sits on the ceiling six times.** `what do you call` (M8),
+`just what I needed` (M7), `if you say so` (M7), `thank you for asking` (M7), `once upon a time`
+(M9) and `I am writing to` (M10) are all exactly four tokens and all resolve. Nothing in the wave
+needed five, and `I will let you know` (5) was deliberately kept out of every display and put in
+M7-S07's `mistake` and `trap` instead — a `mistake.display` is not scanned, which is the only reason
+that sentence can show the error at all.
+
+**12. Outside this wave's write list: `content/hi-en/levels.json` still says `hasContent: false`**
+for `L5-M6` through `L5-M10`. The five files exist and validate; whoever lands the level flips those
+five flags.
+
+### The ratchet
+
+`npm run content:shown -- hi-en L5-M6`, `… L5-M7`, `… L5-M8`, `… L5-M9` and `… L5-M10` each print
+`clean — every shown surface resolves`, with **no `RE-TEACH` line and no `COLLIDES INSIDE THIS
+MODULE` line on any of the five**. The three re-teaches the wave met on the way (`if → L3-M4`,
+`caught`/`listened` → L4-M3, `received` → L4-M7) were all removed rather than defended, for the
+reason given in seam 8. No collision was ever reported: every paradigm here is a single row carrying
+its own alternates on `forms`, and the two places where a second row could have opened a key the
+first already earned — `sort of`/`kind of` in M8 and `postpone`/`put off` in M10 — are separate
+surfaces on separate rows by design.
+
+`npx vitest run tools/shown-surfaces.test.ts` is **11/11** and hi-en holds at its baseline of **30**.
+The five modules contribute **zero** findings; the distinct set is unchanged and is still
+`priya · mumbai · jaipur · doctor · farmer · actor · coffee · water · cricket · films · dogs · hindi
+· how's · it · going · and · so · today · speak · milk · please · three · six · reading · new ·
+isn't · now · ate · me · bus`. No baseline was raised, and none could honestly be lowered by this
+wave: every surface on hi-en's list belongs to L1–L4 content that a level never edits. (One of them,
+`farmer`, is now taught by L5-M9 — but the finding it produces sits in an earlier module, where a
+key this wave adds cannot reach it.)
+
+`npm run content:validate` reports `hi-en/L5-M6.json ok`, `hi-en/L5-M7.json ok`,
+`hi-en/L5-M8.json ok`, `hi-en/L5-M9.json ok` and `hi-en/L5-M10.json ok`, in a run of
+`CONTENT 449/449 ok`.
+
+`npx vitest run src/course/types.test.ts` is **470 passed, 0 failed** — the module census had
+already been moved to 449 and hi-en's guard to 50 by the time this wave finished, so the #270
+language law beneath that guard RAN over all five files rather than being aborted by it. It was
+additionally re-run directly as a cross-check: every `display`, word `display`, `forms` entry,
+`mistake.display`, `variations[].display` and pool `display` is free of Devanagari; every
+`rules[].text`, `cue`, `literal`, `sound`, `usage`, `mnemonic`, `trap`, `mistake.why`,
+`variations[].cue`, `variations[].changed`, word `cue` and word `note` contains it; no `glossEn`
+appears anywhere; no `’` appears in any display; every word row carries a `note` and every note is
+under the 200-character ceiling; and all fifty sentences carry `literal`, `sound`, `usage`,
+`mnemonic` and a `mistake`.
+
+Each module's declared bounds were checked against every sentence INSIDE every display, as
+`docs/106` requires for the multi-sentence modules: M6 runs 4–14 inside a bound of 14, M7 runs 1–12
+inside 13, M8 runs 1–12 inside 13, M9 runs 3–10 inside 14, M10 runs 2–12 inside 14. M7's and M8's
+one-word sentences are `Typical.` and `Pardon?`, both of which are the whole utterance in real
+speech, and both modules declare `minWordsPerSentence: 1` for that reason.
+
+New keys spent against a cap of 25: M6 **25**, M7 **20**, M8 **20**, M9 **25**, M10 **18** — M10 at
+the brief's own target of 18 rather than at the level's cap, as `docs/106` §3.10(1) asked.
+
+### Open questions for the native-speaker gate
+
+Continuing the chain; the highest number before this wave was 153.
+
+154. **`Granted` as the module's first concession frame** (M6-S01, `rules[0]`). The module puts
+     `Granted` before `Admittedly` and `It is true that`, on the argument that it is the shortest
+     and commonest. Confirm that a bare sentence-initial `Granted,` reads as natural spoken English
+     to an Indian professional audience rather than as courtroom register, and that the
+     `Granted … But …` pair is the one a learner should reach for first.
+
+155. **`half as much` rather than `half the price`** (M6-S01). The display teaches the comparative
+     idiom and the row note names `half the price` as the alternative. Confirm that
+     `it costs half as much` is heard as complete without a stated comparison (half as much *as
+     what*), since the sentence never names the other option.
+
+156. **The `*Although … but …` correction stated as this level's single most recognisable error**
+     (M6, `rules[1]`, S02 `mistake`). `docs/88` §1's standing rule is that the course does not tell
+     a learner their English is broken. This rule comes close: it names the doubled connector as the
+     most recognisable Indian English structure at this level. Confirm the strength is right, and
+     that naming the Hindi pair (यद्यपि … परन्तु) as the *source* rather than as a *fault* is how it
+     lands.
+
+157. **`firstly`/`secondly` taught because `first` and `second` are owned** (M6-S03, and its
+     `mistake`). The index forced the choice; the brief argued it is also the better English for a
+     signposted case. Confirm that a Hindi speaker arguing in English will not hear `firstly` as
+     stiff, and that `First, … Second, …` — which the module marks as the mistake — is genuinely the
+     weaker choice rather than merely the unavailable one.
+
+158. **The mixed conditional taught with `booked` and nothing else** (M6-S05). The module ships
+     exactly one mixed conditional, one verb, one `variation` pair. Confirm that one instance is
+     enough for the shape to transfer, or whether a second lexical verb is needed before a learner
+     can build `If I had studied, I would be a doctor now` unaided.
+
+159. **`whereas` marked `register: formal`** (M6-S06). The module separates `whereas` (contrast,
+     no verdict) from `but`/`nevertheless` (contrast with a verdict) and calls it formal. Confirm
+     that `whereas` is in fact rare in Indian English speech and normal in Indian English writing,
+     which is what the register chip claims.
+
+160. **`chilly` taught in place of `cold` for a room** (M7-S01). `cold` is L3-M7's body row and its
+     note would not survive a cold room, so the module bought `chilly` instead. Confirm that
+     `It's a bit chilly in here` is the line an English speaker actually uses for this move, and
+     that `chilly` is a word an Indian learner will meet often enough to be worth a row.
+
+161. **Sarcasm taught for recognition only, and marked so in `usage`** (M7-S05, S06, `rules[3]`).
+     Two of the ten `usage` fields read "for recognition, not for writing". Confirm that a
+     recognition-only item does not read to a learner as a broken lesson, and that the two frames
+     chosen (`Oh, brilliant` and `Well, that went well. Typical.`) are the two most worth
+     recognising.
+
+162. **`I will try · let's see · maybe later` placed in a `mistake` rather than shown as a display**
+     (M7-S07). The brief called this the module's most useful sentence. The module shows the correct
+     refusal and puts the vague one in the `mistake` plate, so no display ever teaches the
+     evasion. Confirm the placement is right — and that `No, sorry, I cannot come. Thank you for
+     asking.` is the refusal an Indian speaker can actually use with a senior without offence.
+
+163. **`obviously` restricted to the speaker's own statement** (M7-S08, row note, `trap`,
+     `mistake`). The module states as a fact that `Obviously you did not know` reads as a jibe.
+     Confirm the strength of that claim, and whether the same restriction should have been placed
+     on `apparently`, which the module leaves unrestricted.
+
+164. **`If you say so` taught as a disguised refusal** (M7-S10). The row note says it is not
+     agreement and that the listener hears displeasure. Confirm this is reliably true rather than
+     regional, since a learner who reads it as ordinary assent will use it as one.
+
+165. **The contact relative taught with no relative pronoun anywhere in the module** (M8, `rules[0]`,
+     S01). The index forced this and the brief called it the better English. Confirm that a learner
+     who has only the contact relative can still parse `the man who cuts hair` when they meet it,
+     and that never seeing an object relative pronoun in this module does not leave a hole.
+
+166. **`Pardon?` taught as more polite than `Sorry?`** (M8-S04, row note, `register: formal`).
+     Confirm that `Pardon?` is still current rather than dated in the Englishes an Indian speaker
+     meets, and that the rising intonation the `trap` describes is what distinguishes it from the
+     apology.
+
+167. **`I am not clear` taught as a learner-safe repair** (M8-S07). The module offers it as a way to
+     signal non-understanding without blaming the speaker. Confirm that `I am not clear` (rather
+     than `I am not clear about it`) stands alone in natural English, since the `mistake` row rules
+     out `I am not clear it` but leaves the bare form as the taught default.
+
+168. **The same story told twice, once per gear** (M9-S01 and S07). The module proves the
+     consistency law by construction rather than by assertion. Confirm that a learner reading the
+     two items side by side takes them as two legitimate tellings rather than as a correction of the
+     first, and that the summary present is genuinely how a Hindi speaker would be expected to
+     retell a folk tale in English.
+
+169. **`at the end` bought as a separate key beside L3-M10's `in the end`** (M9-S04, `trap`,
+     `mistake`). The two are one word apart and mean different things. Confirm the line drawn —
+     `at the end` for the last part of a thing, `in the end` for the outcome — is the line a native
+     speaker would draw, and that the pair is worth one of the module's twenty-five keys.
+
+170. **`mate` deliberately not taught** (M10; `docs/106` §3.10(3) uses it in its own example). The
+     informal half of every piece is carried by `Hi`, `Look`, `my friend` and `Cheers` instead, on
+     the argument that `mate` is British and Australian and that the module's 18-key target is
+     tight. Confirm that omission is right for a Hindi–English learner, or whether `mate` is common
+     enough in the English they will actually encounter to be worth the key.
+
+171. **`Cheers` taught as the course's last word** (M10-S10). The final display travels `Dear Sir`
+     to `Cheers` in eight sentences, and `Cheers` carries both "goodbye" and "thanks" in the row
+     note. Confirm that both senses are live for the varieties an Indian learner meets, and that
+     ending the entire course on a British informalism is the right last note.
+
+172. **`Yours sincerely` taught without `Yours faithfully`** (M10-S08). British letter convention
+     splits the two by whether the recipient is named, and the module teaches only `Yours
+     sincerely` while its own displays open `Dear Sir` — which by that convention calls for `Yours
+     faithfully`. Confirm whether that distinction is still observed in Indian business English, and
+     if it is, whether the module's own pieces are internally inconsistent.
+
+173. **One register change per piece, stated as a limit** (M10-S09 `trap`, `mistake`). The module
+     says three pivots in one eight-sentence piece produce no pivot at all. Confirm that one is the
+     right number for a piece of this length, and that S09 — which shows both `The truth is` and
+     `Look` and then says in its own `trap` that one would have been enough — teaches that rather
+     than modelling the excess.
+
+174. **The one-`you` rule restated at the top of the ladder** (M10, `rules[1]`). The rule tells the
+     learner that their Hindi register instinct is correct and only the switches are new, and that
+     moving the pronoun does nothing in English. Confirm that this reads as encouraging rather than
+     as a late correction of something they have been doing wrong for forty-nine modules — the
+     framing `docs/106` §3.10(4) asked for.
