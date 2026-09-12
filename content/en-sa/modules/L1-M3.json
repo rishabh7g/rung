@@ -1,0 +1,768 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M3",
+  "title": "Needs and wants",
+  "job": "Say what you want and don't want",
+  "prerequisites": ["L1-M2"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": ["simple_present", "third_person_imperative", "infinitive"],
+    "allowedPatterns": [
+      "N-acc + icchāmi",
+      "V-tum + icchāmi",
+      "N-acc + icchati",
+      "mama + N + asti",
+      "mama + N + na asti",
+      "bhavataḥ/bhavatyāḥ + N + asti",
+      "N-acc + dadātu",
+      "na + V",
+      "kim + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "What you want lands BEFORE the verb, like everything else in this language: pustakam icchāmi is 'book I-want'. That is M1's verb-final law being paid off rather than a second rule to learn, and it is why nothing in these sentences ever looks rearranged."
+    },
+    {
+      "tag": "delta",
+      "text": "To want to DO something, put the doing-word in its -tum shape in front of icchāmi: gantum icchāmi, 'to-go I-want'. gantum is a shape of M2's gacchati, not a new word, so every verb you meet later can step straight into that slot."
+    },
+    {
+      "tag": "delta",
+      "text": "asti is 'is', and with an 'of me' word in front of it, it is also 'have'. mama pustakam asti is both 'I have a book' and 'there is a book of mine' — ONE Sanskrit sentence where English builds two."
+    },
+    {
+      "tag": "interference",
+      "text": "There is no Sanskrit verb for 'have' at all, and hunting for one is the commonest way to stall in this module. What English calls having, Sanskrit calls being: the owner goes into the 'of me' shape and the thing owned becomes the subject of asti."
+    },
+    {
+      "tag": "delta",
+      "text": "The copula is optional; asti is not. aham chātraḥ needs no verb because it only equates two things. mama pustakam asti needs one because it asserts that something EXISTS. M1's slogan that there is no 'to be' was half the story — this is the other half."
+    },
+    {
+      "tag": "delta",
+      "text": "Negation is na, standing immediately in front of the verb: jalam na icchāmi, mama jalam na asti. Nothing else moves and nothing is added — there is no helper to build and no word order to rearrange."
+    },
+    {
+      "tag": "delta",
+      "text": "Sanskrit has a second negator, mā, and it is used only with a command. This level writes na everywhere and mā nowhere, so that when mā does arrive it arrives with the command it belongs to instead of competing with na for the same job."
+    },
+    {
+      "tag": "delta",
+      "text": "A polite request is a third-person command, the same shape as M2's kathayatu: jalam dadātu, 'let (your honour) give water'. The courtesy is the -tu ending itself, so there is no word for 'please' to bolt on the front."
+    },
+    {
+      "tag": "delta",
+      "text": "The thing a verb acts on takes the ending -am. On this level's neuter nouns it is invisible — pustakam, phalam and jalam are spelled the same whether they act or are acted on — so the ending only becomes visible on a masculine noun: adhyāpakaḥ becomes adhyāpakam."
+    },
+    {
+      "tag": "free",
+      "text": "The possession sentence needs no new pronoun: mama is M1's word, unchanged, and asking the same of somebody else reuses M2's bhavataḥ — kim bhavataḥ pustakam asti? The 'of' shapes you already have are the whole of 'have'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M3-S01",
+      "display": "pustakam icchāmi.",
+      "script": "पुस्तकम् इच्छामि।",
+      "cue": "I want a book.",
+      "literal": "book I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "'Book', a neuter noun opened in M1 — and it is spelled the same whether it is the thing acting or the thing wanted."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": ["icchāmi", "icchati"],
+            "note": "'Want', in the shapes this level writes: icchāmi when I want, icchati when anybody else does. The ending carries who is wanting."
+          }
+        ],
+        "rules": [0, 8]
+      },
+      "trap": "English puts the wanting in the middle — 'I WANT a book'. Sanskrit puts the wanted thing first and the wanting last, and that is not emphasis: it is simply where a verb lives.",
+      "sound": "PUS-ta-kam ICH-chhaa-mi. The cch is one long held ch, not two separate sounds. Before the vowel of icchāmi the m of pustakam stays an m and runs straight on, so the two words are heard as one run — pustakamicchāmi — while the page keeps them apart.",
+      "variations": [
+        {
+          "display": "aham pustakam icchāmi.",
+          "script": "अहम् पुस्तकम् इच्छामि।",
+          "cue": "I want a book.",
+          "changed": "the I spelled out in front — the ending already said it, so adding aham is emphasis rather than grammar"
+        },
+        {
+          "display": "rāmaḥ pustakam icchati.",
+          "script": "रामः पुस्तकम् इच्छति।",
+          "cue": "Rāma wants a book.",
+          "changed": "somebody else does the wanting, so the ending moves from -āmi to -ati and a subject has to appear"
+        },
+        {
+          "display": "kim bhavān pustakam icchati?",
+          "script": "किम् भवान् पुस्तकम् इच्छति?",
+          "cue": "Do you want a book?",
+          "changed": "the same line asked, with M2's marker in front and the polite you as subject — still the he/she ending"
+        }
+      ],
+      "mistake": {
+        "display": "aham pustakam icchati.",
+        "why": "icchati is the he/she ending. With aham the verb has to be icchāmi: the ending carries the person all by itself, so a sentence whose subject and ending disagree is naming two different people at once."
+      },
+      "usage": "What you say at a counter, in a shop, or to anybody offering you something.",
+      "register": "neutral",
+      "mnemonic": "Name it first. Want it last."
+    },
+    {
+      "id": "L1-M3-S02",
+      "display": "gantum icchāmi.",
+      "script": "गन्तुम् इच्छामि।",
+      "cue": "I want to go.",
+      "literal": "to-go I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's verb, here in its -tum shape: gantum, 'to go'. It is one of the shapes that row already owns, not a word of its own."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Want', in the shapes this level writes: icchāmi when I want, icchati when anybody else does. The ending carries who is wanting."
+          }
+        ],
+        "rules": [1, 0]
+      },
+      "trap": "English marks its infinitive with a separate word, 'to'. Sanskrit marks it with an ending on the verb itself, so there is no small word to look for and nothing to put in front.",
+      "sound": "GAN-tum ICH-chhaa-mi. The t of gantum is dental — the tongue touches the teeth, further forward than an English t ever goes. The m before the vowel of icchāmi stays an m and runs on.",
+      "variations": [
+        {
+          "display": "aham gantum icchāmi.",
+          "script": "अहम् गन्तुम् इच्छामि।",
+          "cue": "I want to go.",
+          "changed": "the subject spelled out, which changes nothing in the two words that were already there"
+        },
+        {
+          "display": "rāmaḥ gantum icchati.",
+          "script": "रामः गन्तुम् इच्छति।",
+          "cue": "Rāma wants to go.",
+          "changed": "a different person wanting — only the ending of the wanting verb moves; gantum never bends for anybody"
+        },
+        {
+          "display": "kim bhavatī gantum icchati?",
+          "script": "किम् भवती गन्तुम् इच्छति?",
+          "cue": "Do you want to go? (to a woman)",
+          "changed": "asked, of a woman — the address changes and the verb does not, because it was third person already"
+        }
+      ],
+      "mistake": {
+        "display": "gacchati icchāmi.",
+        "why": "gacchati is a finished sentence on its own — 'he goes'. Two finished verbs cannot stack. What belongs in front of icchāmi is the -tum shape, gantum, which is the verb with nobody doing it yet."
+      },
+      "usage": "The frame for every 'I want to …' sentence you will build from here on.",
+      "register": "neutral",
+      "mnemonic": "-tum is the 'to'."
+    },
+    {
+      "id": "L1-M3-S03",
+      "display": "jalam na icchāmi.",
+      "script": "जलम् न इच्छामि।",
+      "cue": "I don't want water.",
+      "literal": "water not I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "delta",
+            "forms": ["jalam"],
+            "note": "'Water', neuter — and like every neuter here it keeps one shape whether it is the thing acting or the thing wanted."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's 'no' doing a second job: in front of a verb it is 'not'. One word, both answers and denials, and nothing is added around it."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Want', in the shapes this level writes: icchāmi when I want, icchati when anybody else does. The ending carries who is wanting."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "English builds a helper out of nothing to say no — 'I DO not want'. There is nothing to build here and no word for that 'do': na goes in front of the verb and the sentence is finished.",
+      "sound": "JA-lam na ICH-chhaa-mi. Said in one breath the m of jalam becomes a nasal hum before the n — jalaṃ na icchāmi — though the page keeps the m, because the m is the word's own. The l is dental, tongue on the teeth.",
+      "variations": [
+        {
+          "display": "jalam icchāmi.",
+          "script": "जलम् इच्छामि।",
+          "cue": "I want water.",
+          "changed": "the na taken out — that one small word is the entire difference between wanting and refusing"
+        },
+        {
+          "display": "gantum na icchāmi.",
+          "script": "गन्तुम् न इच्छामि।",
+          "cue": "I don't want to go.",
+          "changed": "the same negation over the -tum frame; na sits in front of the verb wherever the verb is"
+        },
+        {
+          "display": "rāmaḥ jalam na icchati.",
+          "script": "रामः जलम् न इच्छति।",
+          "cue": "Rāma doesn't want water.",
+          "changed": "somebody else refusing — na does not bend for the person, only the verb's own ending does"
+        }
+      ],
+      "mistake": {
+        "display": "jalam icchāmi na.",
+        "why": "English hangs its negative on a helper in the middle of the sentence, so a learner looking for somewhere to put na often puts it at the end. na leans on the verb it denies and stands immediately in front of it."
+      },
+      "usage": "Refusing something offered — a drink, a second helping, a lift.",
+      "register": "neutral",
+      "mnemonic": "na leans on the verb, and nowhere else."
+    },
+    {
+      "id": "L1-M3-S04",
+      "display": "mama pustakam asti.",
+      "script": "मम पुस्तकम् अस्ति।",
+      "cue": "I have a book.",
+      "literal": "of-me book is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham acts, mama is 'of me', mahyam is 'to me'. A 'have' sentence needs the middle one — mama pustakam asti is 'of-me book is'."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "'Book', a neuter noun opened in M1. In this sentence it is the subject: the thing owned is what the verb is about."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": ["asti"],
+            "note": "'Is · there is', and with an 'of' word in front it is also the whole of 'have'. M7 puts a place in front of it and the same verb says where something is."
+          }
+        ],
+        "rules": [2, 3, 4]
+      },
+      "trap": "This is the module's real divergence: English HAS a verb for having and Sanskrit has none. The owner becomes 'of me' and the thing owned becomes the subject, so the sentence reads 'of-me a-book is'.",
+      "sound": "MA-ma PUS-ta-kam AS-ti. Before the vowel of asti the m of pustakam stays an m and runs into it — pustakamasti. The s of asti is dental, the s of 'sit' with the tongue further forward, and never the sh sound.",
+      "variations": [
+        {
+          "display": "pustakam asti.",
+          "script": "पुस्तकम् अस्ति।",
+          "cue": "There is a book.",
+          "changed": "the owner taken away, and the very same verb now reports plain existence — the second reading of asti, with nothing added"
+        },
+        {
+          "display": "rāmasya pustakam asti.",
+          "script": "रामस्य पुस्तकम् अस्ति।",
+          "cue": "Rāma has a book.",
+          "changed": "a different owner, in the same 'of' shape — mama for me, rāmasya for him; the frame itself never moves"
+        },
+        {
+          "display": "mama pustakam na asti.",
+          "script": "मम पुस्तकम् न अस्ति।",
+          "cue": "I don't have a book.",
+          "changed": "negated: na goes in front of asti and nothing else in the sentence is touched"
+        }
+      ],
+      "mistake": {
+        "display": "mama pustakam.",
+        "why": "Without asti this is 'my book' — a phrase, not a sentence. M1's optional copula works for equating two things (aham chātraḥ); it cannot work here, because this sentence is asserting that the book EXISTS, and that assertion is the verb."
+      },
+      "usage": "How every 'I have' sentence in the language is built, for things, for time and for family alike.",
+      "register": "neutral",
+      "mnemonic": "No verb for having. Of me, it is."
+    },
+    {
+      "id": "L1-M3-S05",
+      "display": "mama jalam na asti.",
+      "script": "मम जलम् न अस्ति।",
+      "cue": "I don't have water.",
+      "literal": "of-me water not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', in three shapes: aham acts, mama is 'of me', mahyam is 'to me'. The owner in a 'have' sentence is always the middle one."
+          },
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water', neuter, opened just above. Here it is the subject — what there is not any of."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's 'no' doing a second job: in front of a verb it is 'not'. One word, both answers and denials, and nothing is added around it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is · there is', and with an 'of' word in front it is also the whole of 'have'. Negating it negates the having and the existing alike."
+          }
+        ],
+        "rules": [2, 5]
+      },
+      "trap": "English turns 'I have' into 'I do not have' by building a helper. Here nothing is built and nothing is added: one word, na, steps in front of the verb that was already standing there.",
+      "sound": "MA-ma JA-lam na AS-ti. Spoken quickly the m of jalam becomes a hum and na asti runs together, so it is heard as mama jalaṃ nāsti — the page keeps both words whole, which is how you will meet them again.",
+      "variations": [
+        {
+          "display": "mama jalam asti.",
+          "script": "मम जलम् अस्ति।",
+          "cue": "I have water.",
+          "changed": "the na removed, and the sentence flips — that is the whole of it"
+        },
+        {
+          "display": "jalam na asti.",
+          "script": "जलम् न अस्ति।",
+          "cue": "There is no water.",
+          "changed": "no owner at all, and the same three words report that there simply is none — existence again"
+        },
+        {
+          "display": "rāmasya jalam na asti.",
+          "script": "रामस्य जलम् न अस्ति।",
+          "cue": "Rāma doesn't have water.",
+          "changed": "a different owner going without; the negation stays exactly where it was"
+        }
+      ],
+      "mistake": {
+        "display": "aham jalam na asti.",
+        "why": "aham is the shape that ACTS, and nobody is acting here. In a 'have' sentence the owner is never the actor: the thing owned is the subject and the owner goes into the 'of me' shape, mama. aham jalam na asti reads roughly 'I, water, am not'."
+      },
+      "usage": "Saying you are out of something — at home, at a counter, anywhere.",
+      "register": "neutral",
+      "mnemonic": "Having is of-me. Not having is of-me plus na."
+    },
+    {
+      "id": "L1-M3-S06",
+      "display": "kim jalam asti?",
+      "script": "किम् जलम् अस्ति?",
+      "cue": "Is there any water?",
+      "literal": "(question) water is?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's word, here in its front seat: it turns the statement behind it into a yes/no question and means nothing by itself."
+          },
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water', neuter, opened just above. Here it is the subject of the verb — the thing whose existence is in question."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is · there is'. With no owner in front of it the verb reports plain existence, which is the same job it does inside a 'have' sentence."
+          }
+        ],
+        "rules": [2, 4]
+      },
+      "trap": "'There is' looks as though it must need a word for 'there'. It does not — the verb alone says that something exists, and kim in front turns that into a question exactly as it did in M2.",
+      "sound": "kim JA-lam AS-ti. The m of kim becomes a nasal hum before the j — kiṃ jalam asti — the join M2 already showed. asti keeps its dental s throughout; nothing else joins across these three words.",
+      "variations": [
+        {
+          "display": "jalam asti.",
+          "script": "जलम् अस्ति।",
+          "cue": "There is water.",
+          "changed": "the answer to it, with the marker dropped and not one other thing moved"
+        },
+        {
+          "display": "kim bhavataḥ jalam asti?",
+          "script": "किम् भवतः जलम् अस्ति?",
+          "cue": "Do you have water?",
+          "changed": "an owner slipped in, and the same question becomes 'do you have' — one Sanskrit verb behind two English questions"
+        },
+        {
+          "display": "kim rāmasya jalam asti?",
+          "script": "किम् रामस्य जलम् अस्ति?",
+          "cue": "Does Rāma have water?",
+          "changed": "asking about somebody who is not in the room; the 'of' shape carries whose it is"
+        }
+      ],
+      "mistake": {
+        "display": "kim jalam?",
+        "why": "M2's verbless questions worked because they equated two things — kim bhavatī chātrā? There is nothing to equate here, so with asti gone the line asks 'water?' and no more. Existence has to be stated, and asti is what states it."
+      },
+      "usage": "At a counter, at a table, or anywhere you need to know whether something is to be had.",
+      "register": "neutral",
+      "mnemonic": "One verb asks whether it exists and whether you have it."
+    },
+    {
+      "id": "L1-M3-S07",
+      "display": "jalam dadātu.",
+      "script": "जलम् ददातु।",
+      "cue": "Please give me some water.",
+      "literal": "water let-(your-honour)-give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water', neuter, opened just above — and being the thing given changes nothing about its shape."
+          },
+          {
+            "display": "dadātu",
+            "cue": "please give · let (him/her) give",
+            "tag": "delta",
+            "forms": ["dadātu"],
+            "note": "A polite request, built as a third-person command exactly like M2's kathayatu: the courtesy is the -tu ending, not a separate word."
+          }
+        ],
+        "rules": [7, 8]
+      },
+      "trap": "English bolts 'please' onto the front of a command. There is nothing to bolt on here: the -tu ending IS the courtesy, and adding a word for please would be building the English shape all over again.",
+      "sound": "JA-lam da-DAA-tu. Both d sounds are dental — the tongue touches the teeth, not the ridge behind them where an English d sits. The m of jalam runs on into the d as a hum.",
+      "variations": [
+        {
+          "display": "mahyam jalam dadātu.",
+          "script": "मह्यम् जलम् ददातु।",
+          "cue": "Please give me water.",
+          "changed": "the person receiving spelled out, in M1's 'to me' shape — the same mahyam that liking sentences use"
+        },
+        {
+          "display": "bhavān jalam dadātu.",
+          "script": "भवान् जलम् ददातु।",
+          "cue": "Please give water. (to a man)",
+          "changed": "the person asked named out loud as the subject, which is why the verb carries a he/she ending in the first place"
+        },
+        {
+          "display": "sītāyai phalam dadātu.",
+          "script": "सीतायै फलम् ददातु।",
+          "cue": "Please give a fruit to Sītā.",
+          "changed": "somebody else receives, in the same 'to' shape as mahyam — M1's sītāyai, doing the job it was taught for"
+        }
+      ],
+      "mistake": {
+        "display": "jalam dadāti.",
+        "why": "dadāti is the flat statement 'he gives'. A request needs the -tu ending: dadātu. The two differ by a single vowel and by everything they do, which is why the ending is worth hearing rather than guessing."
+      },
+      "usage": "The everyday way of asking for something — at a table, a counter or a desk.",
+      "register": "neutral",
+      "mnemonic": "-tu is the please."
+    },
+    {
+      "id": "L1-M3-S08",
+      "display": "rāmaḥ adhyāpakam icchati.",
+      "script": "रामः अध्यापकम् इच्छति।",
+      "cue": "Rāma wants a teacher.",
+      "literal": "Rāma teacher-(object) wants",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma — a man's name",
+            "tag": "delta",
+            "forms": [],
+            "note": "M1's name, in its acting shape. The -aḥ ending is what marks him as the one doing the wanting rather than the one wanted."
+          },
+          {
+            "display": "adhyāpakam",
+            "cue": "teacher (as the thing wanted)",
+            "tag": "delta",
+            "forms": ["adhyāpakam", "adhyāpikām"],
+            "note": "The object shape of M1's adhyāpakaḥ: a masculine noun swaps -aḥ for -am when it is acted on, and a woman teacher goes adhyāpikā to adhyāpikām."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Want', in the shapes this level writes: icchāmi when I want, icchati when anybody else does. Here it is somebody else, so the ending is -ati."
+          }
+        ],
+        "rules": [8, 0]
+      },
+      "trap": "The -am here is not the neuter ending you have been reading on pustakam and jalam. Those two simply look identical in both jobs; adhyāpakaḥ genuinely changes, and that change is the case ending the module has been hiding until now.",
+      "sound": "RAA-mah a-dhyaa-pa-kam ICH-chha-ti. Spoken, the first two words run together: the -aḥ of rāmaḥ turns into an -o and swallows the a that starts the next word, so it is heard as rāmo dhyāpakam icchati. The page keeps both words whole. dhy is a d with a puff behind it and a y running out of it.",
+      "variations": [
+        {
+          "display": "rāmaḥ adhyāpikām icchati.",
+          "script": "रामः अध्यापिकाम् इच्छति।",
+          "cue": "Rāma wants a teacher. (a woman)",
+          "changed": "the teacher is a woman, and the object ending lands on her shape too — adhyāpikā becomes adhyāpikām"
+        },
+        {
+          "display": "aham adhyāpakam icchāmi.",
+          "script": "अहम् अध्यापकम् इच्छामि।",
+          "cue": "I want a teacher.",
+          "changed": "I do the wanting, so the verb's ending goes back to -āmi while the object shape is untouched by who wants it"
+        },
+        {
+          "display": "kim rāmaḥ adhyāpakam icchati?",
+          "script": "किम् रामः अध्यापकम् इच्छति?",
+          "cue": "Does Rāma want a teacher?",
+          "changed": "asked, with M2's marker in front; the line behind it does not move at all"
+        }
+      ],
+      "mistake": {
+        "display": "rāmaḥ adhyāpakaḥ icchati.",
+        "why": "Two -aḥ words in one sentence are two subjects, so this reads 'Rāma, a teacher, wants'. The one being wanted has to wear the object ending: adhyāpakam. On pustakam and jalam the same rule is at work — it just cannot be seen."
+      },
+      "usage": "Wanting a person — a teacher, a doctor, somebody to help — uses exactly the verb that wants a thing.",
+      "register": "neutral",
+      "mnemonic": "-aḥ acts. -am is acted on."
+    },
+    {
+      "id": "L1-M3-S09",
+      "display": "bhavān kim icchati?",
+      "script": "भवान् किम् इच्छति?",
+      "cue": "What do you want?",
+      "literal": "your-honour what wants?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You': bhavān to a man, bhavatī to a woman, and a third-person verb with both. Opened in M2, and the reason this verb ends -ati."
+          },
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two jobs, sorted by place. Standing where the answer will stand it is 'what'; at the very front it is the yes/no marker instead."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Want', in the shapes this level writes: icchāmi when I want, icchati when anybody else does — and bhavān counts as anybody else."
+          }
+        ],
+        "rules": [0, 8]
+      },
+      "trap": "English needs 'do' to ask this — 'what DO you want'. There is no such word here and nothing to invert: the question word simply stands in the slot the answer will fill.",
+      "sound": "bha-VAAN kim ICH-chha-ti. The n of bhavān sits still before the k. The m of kim then stays an m before the vowel of icchati and runs straight into it, so the last two words are heard as one.",
+      "variations": [
+        {
+          "display": "bhavatī kim icchati?",
+          "script": "भवती किम् इच्छति?",
+          "cue": "What do you want? (to a woman)",
+          "changed": "the same question to a woman — only the address changes, because the verb was third person to begin with"
+        },
+        {
+          "display": "rāmaḥ kim icchati?",
+          "script": "रामः किम् इच्छति?",
+          "cue": "What does Rāma want?",
+          "changed": "asked about somebody who is not here, and nothing whatever moves in the verb"
+        },
+        {
+          "display": "kim bhavān jalam icchati?",
+          "script": "किम् भवान् जलम् इच्छति?",
+          "cue": "Do you want water?",
+          "changed": "kim moved to the very front, where it is the yes/no marker instead of the word 'what' — the same word in its other seat"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān kim icchasi?",
+        "why": "bhavān is closer to 'your honour' than to 'you', so it takes the he/she ending: icchati. icchasi is the blunt second person this level does not speak at all, and pairing it with bhavān puts two registers in one short sentence."
+      },
+      "usage": "The question a shopkeeper asks you, and the one you ask a guest.",
+      "register": "neutral",
+      "mnemonic": "kim in front asks yes or no. kim in the middle asks what."
+    },
+    {
+      "id": "L1-M3-S10",
+      "display": "kim bhavataḥ pustakam asti?",
+      "script": "किम् भवतः पुस्तकम् अस्ति?",
+      "cue": "Do you have a book?",
+      "literal": "(question) of-you book is?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "delta",
+            "forms": [],
+            "note": "At the front again, where it is the yes/no marker and means nothing by itself — the statement behind it is untouched."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's polite you, here in its 'of you' shape: bhavataḥ of a man, bhavatyāḥ of a woman. That is the shape a 'have' sentence needs."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "'Book', a neuter noun opened in M1. In a 'have' sentence the thing owned is the subject, so this is what the verb is about."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is · there is', and with an 'of' word in front it is the whole of 'have' — the same sentence as mama pustakam asti, with a different owner."
+          }
+        ],
+        "rules": [2, 9]
+      },
+      "trap": "English asks this with 'have you got'. Sanskrit asks it with the verb 'is' and the 'of you' shape, so it is the same sentence as mama pustakam asti with the owner changed and kim put in front.",
+      "sound": "kim bha-va-TAH PUS-ta-kam AS-ti. The m of kim becomes a hum before the bh. The visarga of bhavataḥ is a light echo of the a in front of it — bha-va-ta-ha — and before the p it stays exactly as it is.",
+      "variations": [
+        {
+          "display": "kim bhavatyāḥ pustakam asti?",
+          "script": "किम् भवत्याः पुस्तकम् अस्ति?",
+          "cue": "Do you have a book? (to a woman)",
+          "changed": "asked of a woman — the 'of you' shape is the one that bends, and the verb does not"
+        },
+        {
+          "display": "bhavataḥ pustakam asti.",
+          "script": "भवतः पुस्तकम् अस्ति।",
+          "cue": "You have a book.",
+          "changed": "the marker dropped, and the same four words are a statement instead of a question"
+        },
+        {
+          "display": "kim bhavataḥ jalam na asti?",
+          "script": "किम् भवतः जलम् न अस्ति?",
+          "cue": "Don't you have any water?",
+          "changed": "a negative question: kim at the front, na in front of the verb, and neither one crowds the other"
+        }
+      ],
+      "mistake": {
+        "display": "kim bhavān pustakam asti?",
+        "why": "bhavān is the shape that ACTS, and nobody is acting in a 'have' sentence. The owner is always the 'of' shape — mama for me, bhavataḥ for you, rāmasya for him — and the thing owned is the subject."
+      },
+      "usage": "Asking politely whether somebody has something: the shop question, and the classroom one.",
+      "register": "neutral",
+      "mnemonic": "Have is of-you, plus is."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M3-C01",
+      "display": "mahyam pustakam dadātu.",
+      "script": "मह्यम् पुस्तकम् ददातु।",
+      "cue": "Please give me a book."
+    },
+    {
+      "id": "L1-M3-C02",
+      "display": "phalam icchāmi.",
+      "script": "फलम् इच्छामि।",
+      "cue": "I want a fruit."
+    },
+    {
+      "id": "L1-M3-C03",
+      "display": "mama phalam asti.",
+      "script": "मम फलम् अस्ति।",
+      "cue": "I have a fruit."
+    },
+    {
+      "id": "L1-M3-C04",
+      "display": "rāmasya jalam asti.",
+      "script": "रामस्य जलम् अस्ति।",
+      "cue": "Rāma has water."
+    },
+    {
+      "id": "L1-M3-C05",
+      "display": "sītā jalam icchati.",
+      "script": "सीता जलम् इच्छति।",
+      "cue": "Sītā wants water."
+    },
+    {
+      "id": "L1-M3-C06",
+      "display": "kim bhavatyāḥ phalam asti?",
+      "script": "किम् भवत्याः फलम् अस्ति?",
+      "cue": "Do you have a fruit? (to a woman)"
+    },
+    {
+      "id": "L1-M3-C07",
+      "display": "aham gantum icchāmi.",
+      "script": "अहम् गन्तुम् इच्छामि।",
+      "cue": "I want to go."
+    },
+    {
+      "id": "L1-M3-C08",
+      "display": "phalam na icchāmi.",
+      "script": "फलम् न इच्छामि।",
+      "cue": "I don't want any fruit."
+    },
+    {
+      "id": "L1-M3-C09",
+      "display": "sītā adhyāpakam icchati.",
+      "script": "सीता अध्यापकम् इच्छति।",
+      "cue": "Sītā wants a teacher."
+    },
+    {
+      "id": "L1-M3-C10",
+      "display": "bhavatī jalam dadātu.",
+      "script": "भवती जलम् ददातु।",
+      "cue": "Please give water. (to a woman)"
+    },
+    {
+      "id": "L1-M3-C11",
+      "display": "mama adhyāpikā asti.",
+      "script": "मम अध्यापिका अस्ति।",
+      "cue": "I have a teacher. (a woman)"
+    },
+    {
+      "id": "L1-M3-C12",
+      "display": "phalam na asti.",
+      "script": "फलम् न अस्ति।",
+      "cue": "There is no fruit."
+    },
+    {
+      "id": "L1-M3-C13",
+      "display": "rāmaḥ gantum icchati.",
+      "script": "रामः गन्तुम् इच्छति।",
+      "cue": "Rāma wants to go."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
