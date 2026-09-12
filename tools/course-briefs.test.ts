@@ -389,6 +389,172 @@ describe('en-sa: the decisions its briefs settle (#604, #607)', () => {
   });
 });
 
+/**
+ * en-la's briefs (#630, #633), and the reason this block is longer than it looks like it should be:
+ * this is the first course in the catalogue whose spelling has NO build gate. `checkScriptMode`
+ * returns an empty report for anything but a `romanized` row, and en-la's row is `native`, so every
+ * orthographic decision #630 took is enforced by review and by tests alone. A brief seeds every
+ * future prompt, so a decision that quietly disappears from a note is a decision that quietly stops
+ * being made — and here there is no build to notice.
+ */
+describe('en-la: the decisions its briefs settle (#630, #633)', () => {
+  const all = COURSE_BRIEFS['en-la'] ?? {};
+  const briefs = Object.values(all);
+  const strings = briefs.flatMap((brief) => [
+    ...brief.patterns,
+    ...brief.notes,
+    brief.title,
+    brief.job,
+  ]);
+  const everything = strings.join('\n');
+  const notes = briefs.flatMap((brief) => brief.notes).join('\n');
+  const patterns = briefs.flatMap((brief) => brief.patterns);
+
+  it('covers exactly L1-M1..L1-M10 — the eleventh course, briefed L1 only (#633)', () => {
+    expect(Object.keys(all)).toEqual(
+      ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `L1-M${n}`),
+    );
+  });
+
+  /**
+   * en-sa's ramp, for a sharper version of the same reason: Latin's synthesis packs an English
+   * clause into two tokens, so the word bound is slack and `newWordCap` is what actually bites.
+   */
+  it('climbs its bounds 4 → 7 across the level, and caps every module at NEW_WORD_CAP', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L1-M1', 'L1-M2']) expect(bound(id), id).toBe(4);
+    for (const id of ['L1-M3', 'L1-M4', 'L1-M5']) expect(bound(id), id).toBe(5);
+    for (const id of ['L1-M6', 'L1-M7', 'L1-M8']) expect(bound(id), id).toBe(6);
+    for (const id of ['L1-M9', 'L1-M10']) expect(bound(id), id).toBe(7);
+    for (const brief of briefs) expect(brief.newWordCap, brief.id).toBe(NEW_WORD_CAP);
+  });
+
+  /**
+   * NFC is a rendering hazard, not a formality, and the argument is en-sa's with a different mark:
+   * a decomposed `ā` is `a` + U+0304, no target in `tools/font-subset.ts` claims U+0304, so
+   * `coveredChars` drops it and the base draws from Mukta while the macron draws from `system-ui`.
+   * A decomposed paste reaching an author through a prompt is exactly what this stops.
+   */
+  it('is authored precomposed — every brief string equals its own NFC', () => {
+    for (const brief of briefs) {
+      for (const [field, value] of [
+        ['title', brief.title],
+        ['job', brief.job],
+        ...brief.patterns.map((p, i): [string, string] => [`pattern ${i}`, p]),
+        ...brief.notes.map((n, i): [string, string] => [`note ${i}`, n]),
+      ] as [string, string][]) {
+        expect(value, `${brief.id} ${field}`).toBe(value.normalize('NFC'));
+      }
+    }
+  });
+
+  /**
+   * The alphabet, scoped to PATTERNS — a note is English prose and carries the punctuation English
+   * prose carries. #630 §1 fixes the inventory at printable ASCII plus ten macron vowels, and #631
+   * measured every one of them against Mukta's `latin-ext` cmap.
+   */
+  it('writes patterns in the course alphabet and no other: ASCII plus the ten macrons', () => {
+    for (const pattern of patterns) {
+      expect(pattern, `pattern "${pattern}"`).toMatch(/^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u);
+    }
+  });
+
+  /**
+   * The three bans that are index rules rather than taste (#630 §1.1, §3). `j` would split
+   * `iam`/`jam` into two keys for one word; the apostrophe is the ONE character `surface.ts` rule 3
+   * does not strip at a word edge, so an elision mints one key for a word that is two; and the
+   * acute is en-ru's mark, which Latin never needs because stress follows from vowel length.
+   *
+   * Scoped to patterns for `j` — English prose says "job" — and to everything for the other two,
+   * since neither belongs anywhere in a brief about this course.
+   */
+  it('writes no j in a pattern, and no acute or apostrophe-elision anywhere', () => {
+    for (const pattern of patterns) {
+      // The pattern language's own furniture is stripped first, because none of it is Latin: the
+      // `<...>` slots, the `(...)` English asides, and the token `Adj`. Between them they carry
+      // every `j` a correct en-la pattern can contain, and what is left is the Latin skeleton.
+      const latinOf = pattern
+        .replace(/<[^>]*>/gu, '')
+        .replace(/\([^)]*\)/gu, '')
+        .replace(/\bAdj\b/gu, '');
+      expect(/[jJ]/.test(latinOf), `pattern "${pattern}" writes a j`).toBe(false);
+    }
+    expect(/[ÁÉÍÓÚáéíóú]|́/u.test(everything), 'a brief writes an acute').toBe(false);
+    // `ȳ` U+0233 is checked on PATTERNS only, by the alphabet case above: no bundled source draws
+    // it and no target claims it (#631), but a NOTE may name the character in order to ban it, and
+    // M1's does. The same scoping is why the `j` check above is per-pattern — a note that says "j
+    // never appears" contains one, and should.
+    expect(everything).not.toMatch(/\p{Script=Devanagari}|\p{Script=Cyrillic}|\p{Script=Hangul}/u);
+  });
+
+  /**
+   * The seam (#630 §2) and the ordering law it creates, which is the one thing a brief can get
+   * wrong irrecoverably: `surfaceIndexKeys` hands the part keys to whichever row is indexed FIRST,
+   * so the bare host must be a word row at or before the seam that would donate its key. M2 opens
+   * `-ne` and M10 opens `-que`, and each has to say it.
+   */
+  it('states the seam and its ordering law in the notes of the modules that open one', () => {
+    const m2 = (all['L1-M2']?.notes ?? []).join('\n');
+    const m10 = (all['L1-M10']?.notes ?? []).join('\n');
+    expect(m2).toMatch(/agis-ne/);
+    expect(m2).toMatch(/MUST TEACH agis AS ITS OWN WORD ROW/);
+    expect(m2).toMatch(/Printed Latin writes it solid/);
+    expect(m10).toMatch(/māter-que/);
+    expect(m10).toMatch(/ORDERING LAW HOLDS HERE TOO/);
+    // The lexicalised list is written solid, or a hyphen mints keys for a word that is neither.
+    expect(m10).toMatch(/itaque/);
+    expect(m10).toMatch(/LEXICALISED ONES ARE WRITTEN SOLID/);
+    // Only these two modules write a seam; no other module may open one silently.
+    for (const [id, brief] of Object.entries(all)) {
+      if (id === 'L1-M2' || id === 'L1-M10') continue;
+      for (const pattern of brief.patterns) {
+        expect(/-(?:que|ne|ve)\b/.test(pattern), `${id} pattern "${pattern}" opens a seam`).toBe(
+          false,
+        );
+      }
+    }
+  });
+
+  /**
+   * The register decision, which is the one place en-la breaks every sibling's habit: `tū`/`vōs` is
+   * NUMBER. Six other courses in this file put politeness on a pronoun, so an author will reach for
+   * the plural as a courtesy unless a note forbids it — and a prompt shows an author only the notes.
+   */
+  it('settles tū/vōs as number and never register, in a note and in the header', () => {
+    expect(notes).toMatch(/tū and vōs are NUMBER, never politeness/);
+    expect(notes).toMatch(/Latin has no T\/V distinction/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/`tū`\/`vōs` is NUMBER, never register/);
+  });
+
+  /** The past is the perfect, the imperfect is L4-M8's, and M5 has to say both. */
+  it('settles the past as the perfect and names the imperfect as deferred', () => {
+    const m5 = (all['L1-M5']?.notes ?? []).join('\n');
+    expect(m5).toMatch(/THE PAST IS THE PERFECT/);
+    expect(m5).toMatch(/IMPERFECT IS NAMED AS DEFERRED AND WRITTEN NOWHERE/);
+    expect(m5).toMatch(/venit is 'he comes' \(M4\) and vēnit is 'he came'/);
+    // A perfect stem is its own row: folding it into the present would hand it the present's key.
+    expect(m5).toMatch(/PERFECT STEM IS ITS OWN WORD ROW/);
+  });
+
+  /** Latin has no word for yes, and M2 is where a course either says so or quietly invents one. */
+  it('tells M2 that Latin has no word for yes, and bans the word an author would reach for', () => {
+    const m2 = (all['L1-M2']?.notes ?? []).join('\n');
+    expect(m2).toMatch(/LATIN HAS NO WORD FOR YES/);
+    expect(m2).toMatch(/There is no sīc/);
+  });
+
+  it('carries the decisions in the file header as well as in the notes', () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /## en-la: decisions a brief must settle before any Latin is written/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /the first whose spelling has \*\*no build gate at all\*\*/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/stress mark, ever\*\* — Latin stress follows/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/hyphens in these briefs' PATTERNS are meta-notation/);
+  });
+});
+
 describe('hi-mr L3: the decisions its briefs settle (#452)', () => {
   const all = COURSE_BRIEFS['hi-mr'] ?? {};
   const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
