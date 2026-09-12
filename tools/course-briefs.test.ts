@@ -589,10 +589,12 @@ describe('en-la: the decisions its briefs settle (#630, #633)', () => {
   const notes = briefs.flatMap((brief) => brief.notes).join('\n');
   const patterns = briefs.flatMap((brief) => brief.patterns);
 
-  it('covers exactly L1-M1..L1-M10 — the eleventh course, briefed L1 only (#633)', () => {
-    expect(Object.keys(all)).toEqual(
-      ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `L1-M${n}`),
-    );
+  it('covers exactly L1-M1..L2-M10 — the eleventh course, briefed L1 (#633) and L2 (#638)', () => {
+    const rungs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+    expect(Object.keys(all)).toEqual([
+      ...rungs.map((n) => `L1-M${n}`),
+      ...rungs.map((n) => `L2-M${n}`),
+    ]);
   });
 
   /**
@@ -683,9 +685,15 @@ describe('en-la: the decisions its briefs settle (#630, #633)', () => {
     // The lexicalised list is written solid, or a hyphen mints keys for a word that is neither.
     expect(m10).toMatch(/itaque/);
     expect(m10).toMatch(/LEXICALISED ONES ARE WRITTEN SOLID/);
-    // Only these two modules write a seam; no other module may open one silently.
+    /**
+     * The modules CHARTERED to write a seam, and no others — a module opening one silently is what
+     * this loop exists to catch. L1-M2 opens `-ne` and L1-M10 opens `-que` (#633); L2 adds three
+     * that reuse hosts L1 already taught, so the ordering law is satisfied before they are written
+     * (#638): `pater māter-que` at M2, `vīnum aquam-que` at M5, `venīs-ne mēcum` at M6.
+     */
+    const SEAM_MODULES = new Set(['L1-M2', 'L1-M10', 'L2-M2', 'L2-M5', 'L2-M6']);
     for (const [id, brief] of Object.entries(all)) {
-      if (id === 'L1-M2' || id === 'L1-M10') continue;
+      if (SEAM_MODULES.has(id)) continue;
       for (const pattern of brief.patterns) {
         expect(/-(?:que|ne|ve)\b/.test(pattern), `${id} pattern "${pattern}" opens a seam`).toBe(
           false,
@@ -731,6 +739,91 @@ describe('en-la: the decisions its briefs settle (#630, #633)', () => {
     );
     expect(COURSE_BRIEFS_SOURCE).toMatch(/stress mark, ever\*\* — Latin stress follows/);
     expect(COURSE_BRIEFS_SOURCE).toMatch(/hyphens in these briefs' PATTERNS are meta-notation/);
+  });
+});
+
+/**
+ * en-la L2 (#638), and the two decisions that are easiest to lose. This course is the only one in
+ * the file whose politeness is not a pronoun, and it is the only one that writes a subjunctive as
+ * vocabulary rather than as a mood — both of which a later author would "fix" toward the pattern
+ * every other course follows.
+ */
+describe('en-la L2: the decisions its briefs settle (#638)', () => {
+  const all = COURSE_BRIEFS['en-la'] ?? {};
+  const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
+  const notes = l2.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('covers exactly L2-M1..L2-M10 and climbs its bounds 8 → 10', () => {
+    expect(l2.map(([id]) => id)).toEqual(
+      ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `L2-M${n}`),
+    );
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L2-M1', 'L2-M2', 'L2-M3']) expect(bound(id), id).toBe(8);
+    for (const id of ['L2-M4', 'L2-M5', 'L2-M6', 'L2-M7']) expect(bound(id), id).toBe(9);
+    for (const id of ['L2-M8', 'L2-M9', 'L2-M10']) expect(bound(id), id).toBe(10);
+    for (const [id, brief] of l2) expect(brief.newWordCap, id).toBe(NEW_WORD_CAP);
+  });
+
+  /**
+   * Six other courses in this file put the polite address on a pronoun, so an author working from
+   * habit will reach for `vōs`. L1-M2 already banned it and M1 has to ban it again, because a
+   * prompt shows an author only the notes of the module being written.
+   */
+  it('keeps politeness on the verb and off the pronoun, and says so in M1', () => {
+    const m1 = (all['L2-M1']?.notes ?? []).join('\n');
+    expect(m1).toMatch(/POLITENESS IS NOT A PRONOUN/);
+    expect(m1).toMatch(/formal NEVER goes on a pronoun/);
+    expect(m1).toMatch(/vōs to one person is simply wrong/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /en-la is the one course whose politeness is NOT a pronoun/,
+    );
+  });
+
+  /**
+   * L2 writes exactly two subjunctives and explains neither, because the productive mood is L3-M4's.
+   * A module that explains `velim` has opened a system it cannot finish in ten sentences.
+   */
+  it('writes velim and eāmus as fixed forms, and names the mood as deferred', () => {
+    const m1 = (all['L2-M1']?.notes ?? []).join('\n');
+    const m6 = (all['L2-M6']?.notes ?? []).join('\n');
+    expect(m1).toMatch(/velim IS TAUGHT AS A FIXED FORM, NOT AS A MOOD/);
+    expect(m1).toMatch(/ONLY subjunctives in L2/);
+    expect(m6).toMatch(/SECOND AND LAST SUBJUNCTIVE OF THE LEVEL/);
+    expect(m6).toMatch(/productive mood is L3-M4/);
+  });
+
+  /** `ēst` is the macron pair L1 was forbidden to spend, and M5 is where it lands. */
+  it('spends the est/ēst pair at M5 and keeps ēsse out', () => {
+    const m5 = (all['L2-M5']?.notes ?? []).join('\n');
+    expect(m5).toMatch(/ēst IS THE MACRON PAIR L1 LEFT UNSPENT/);
+    expect(m5).toMatch(/ēsse is NAMED IN PROSE AND WRITTEN NOWHERE/);
+  });
+
+  /** The imperfect is still L4-M8's, and M10's four-sentence account is where it gets reached for. */
+  it('holds the past to the perfect in M10, with the imperfect named as deferred', () => {
+    const m10 = (all['L2-M10']?.notes ?? []).join('\n');
+    expect(m10).toMatch(/STILL THE PERFECT AND ONLY THE PERFECT/);
+    expect(m10).toMatch(/legēbam, habēbam and eram are still free keys/);
+  });
+
+  it("plans against the folded L1 index rather than the last module's delta", () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/189 surfaces through L1-M10/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /24 \+ 20 \+ 18 \+ 24 \+ 11 \+\s*\n?\s*\*?\s*16 \+ 16 \+ 24 \+ 21 \+ 15 = 189/,
+    );
+  });
+
+  /** The orthography tests of #633 must still be green over twenty briefs, not ten. */
+  it('keeps the orthography clean across L2 as well', () => {
+    for (const [id, brief] of l2) {
+      for (const pattern of brief.patterns) {
+        expect(pattern, `${id} "${pattern}"`).toMatch(/^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u);
+      }
+      for (const value of [brief.title, brief.job, ...brief.patterns, ...brief.notes]) {
+        expect(value, `${id} NFC`).toBe(value.normalize('NFC'));
+      }
+    }
+    expect(/[ÁÉÍÓÚáéíóú]|\u0301/u.test(notes), 'an L2 note writes an acute').toBe(false);
   });
 });
 
