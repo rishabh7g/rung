@@ -231,3 +231,122 @@ Additions to the thirty standing in `docs/123` §11, `docs/124` §6, `docs/125` 
    `ēsse`/`esse` are three in ten sentences, all from one verb. The alternative is to split `edō`
    across M5 and M8 and teach the imperative later, at the cost of a hosting module that cannot say
    "eat!".
+---
+
+## Wave 3 — L2-M6 through L2-M10 (#641), 2026-09-12
+
+Five rungs, and the level closes: `draft` and `draftNote` come off L2 in `content/en-la/levels.json`.
+All five signed `verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"`,
+`verifiedAt: 2026-09-12`.
+
+### 3.1 What was checked
+
+- **`npm run content:validate`** → all five `ok`; `CONTENT 485/485 ok`.
+- **The strict build** → `en-la: 20 modules (L1-M1..M10, L2-M1..M10)`, `index L2-M6: 275 surfaces`,
+  `L2-M7: 288`, `L2-M8: 302`, `L2-M9: 322`, `L2-M10: 330`, and **no `shown but untaught` line** — the
+  ratchet holds at zero through the whole of the course's first two levels.
+- **The folded index** — 330 surfaces against a `surfaceCount` of 330, `maxSpan` 1.
+- **The orthography sweep** — 1,967 readable Latin strings across the emitted course: zero `j`, zero
+  apostrophes, zero acutes, zero combining marks, zero non-NFC, zero characters outside the ten
+  macron letters plus ASCII, no `script` line on any sentence or word, and **zero hyphens outside
+  `-que`, `-ne` and `-ve`**. The 156 `mistake` plates swept separately.
+- **`git diff --stat`** over all ten L1 modules and L2-M1..M5 is **empty**.
+
+### 3.2 Every reserved key still free
+
+The keys L1 and the first half of L2 were forbidden to spend, read back from the folded index after
+the level is complete — **none of them is present**:
+
+`legēbam`, `habēbam`, `eram` (L4-M8's imperfect), `nē` (L3-M4), `venī`, `sīc`, `rosa`/`rosā`,
+`nōnne`, `num`, `domī` (L4-M9's locative), `possum` and every shape of it, `esse`, `ēsse`,
+`nōbīscum`, `Mārce` and every vocative, `magis`, `maximē`, `ībimus`.
+
+`bonus` is also absent, and that is a **correction made during the wave** rather than a plan: L2-M9
+first wrote `Hic liber bonus est` in a variation and a pool item, and the pool gate caught it. The
+brief said the comparatives are their own rows and must not be folded into the positive, so folding
+the positive into `melior`'s row would have been the same defect backwards — and no sentence in the
+module writes `bonus` as a token, so there was nowhere honest to put it. Both were dropped and
+`melior`'s note now says plainly that the course writes only the last two of `bonus`, `melior`,
+`optimus`. `magnus`/`maior`/`maximus` and `malus`/`peior`/`pessimus` are named in rule 3 and written
+nowhere, which is what the brief asked for.
+
+### 3.3 The level's third seam
+
+`venīs-ne mēcum?` (L2-M6-S04). The host `venīs` is **L1-M9's**, confirmed live against
+`public/content/en-la/index/L1-M9.json` rather than assumed, so the ordering law was satisfied before
+the sentence was written. The joined form `venīs-ne` sits in the **`-ne` row's `forms`**, copying
+`L1-M2-S01`'s arrangement exactly — en-la's, not en-ko's. `ne` stays `L1-M10`'s. That is all three
+seams of the level (`pater māter-que`, `vīnum aquam-que`, `venīs-ne mēcum`) landed without moving a
+key, and `tools/course-briefs.test.ts`'s `SEAM_MODULES` allowlist held every one of them.
+
+### 3.4 Six surfaces shown before they were owned
+
+Each caught by the build, each either given a home in its lexeme's row or dropped:
+
+- **Given a home**: `edis` (L2-M6, into `edimus`'s row — the note now lists all six shapes of `edō`
+  and says two of them are traps), `accipiam`/`accipit` and `tēlephōnat` (L2-M7), `frāctus`/`frācta`
+  (L2-M8, into the neuter `frāctum`'s row, which is the shape the module's hero noun needs),
+  `gravissima`/`gravissimī`, `optimī`, `hunc` and `illam` (L2-M9).
+- **Dropped**: `bonus` and `brevia` from L2-M9 — the first as §3.2 records, the second because
+  `brevis` is L1-M7's and a new neuter plural of it would need its own row in the module that shows
+  it, which no sentence here does.
+
+### 3.5 The two decisions the level ends on
+
+**`mēcum` is a word, not a rule.** L2-M6 writes it once, names the inversion, and does not generalise:
+`nōbīscum` is named in the rule and written nowhere. There is nothing to derive it from, and the
+module says so — which is the same honesty `pedibus`'s plural got in M4.
+
+**The vocative gap is stated where it hurts.** L2-M7 is the module that wants `Mārce` most: a
+telephone call is exactly where you say a name. L1 got away without a vocative because every name it
+greeted — `Iūlia`, `magister`, `discipula` — has an address shape identical to its subject shape, and
+`Mārcus` does not. So M7 writes `Mārcus hīc est` ("Marcus here" — L1-M7's `hīc`, the neatest possible
+reuse), names the gap in a rule, and S10's `mistake` plate spends itself on `Mārce tēlephōnum nōn
+habet` — the address shape used for someone being talked about. A gap named inside a plate is a gap
+the learner will remember.
+
+### 3.6 Enrichment, and what M10 does with it
+
+M6 through M10 carry `trap`, three `variations` and `usage` on every sentence, `mistake` on the
+sentences where an error is the lesson, and `sound` and `mnemonic` where quantity or a collision makes
+them say something. M10 is the module where that pays: its four-sentence account (S01–S04) runs
+`prīmum`, `deinde`, `tum`, `postrēmō` with **one subject named once and never again**, and S05–S08
+run the same shape about someone else — where S06 names `Mārcus` because the subject CHANGED and S07
+drops it again because it did not. The `mistake` plate on S06 is `Deinde vēnit`, the subject dropped
+at the one sentence that needed it: grammatical, and wrong from there to the end of the paragraph.
+
+S10 closes the level on `Tum hōrā sextā domum īvī` — five words, three of them refusing a preposition,
+one perfect, a sequencer at the front, no subject — and its plate is `Tum in hōrā sextā ad domum īvī`,
+both prepositions put back. Each half of that plate is a different module's own mistake (M4's
+`ad domum`, M6's `in hōrā`), which is the most useful thing a last sentence can be.
+
+### 3.7 Open questions for the fluent-speaker gate
+
+Additions to the thirty-six standing in `docs/123` §11, `docs/124` §6, `docs/125` §5, `docs/126` §6,
+`docs/127` §6, §1.7 and §2.7 above. **The gate remains unmet**: no fluent speaker of living Latin has
+read any of this, and no authoring wave may close one of these by rewriting a shipped module.
+
+1. **Is a Roman hour teachable at all in a course this size?** M6 writes `hōrā sextā` and says in a
+   note that an hour was a twelfth of the daylight, so the sixth hour is around noon and the third is
+   mid-morning. A learner arranging to meet someone will want clock time, and there is no honest way
+   to give it without either anachronism or a paragraph.
+2. **Is `tēlephōnō` the verb, or is a periphrasis better?** M7 coins nothing — the noun is the
+   Vatican lexicon's — but the verb `tēlephōnō` is the community's habit rather than a lexicon entry.
+   `per tēlephōnum loquor` would need `loquor`, which is a deponent and a level away.
+3. **Does `quis` really take the third person always?** M7's rule says an unknown person is a third
+   person, which is right for `Quis est?` and may be too flat for a question addressed to a group.
+4. **Is `nōn inveniō` for "I cannot find" natural or merely available?** M8 states the gap honestly,
+   and a speaker may find the sentence simply reads as "I am not looking".
+5. **Is teaching `frāctus est` as an adjective a habit L4-M7 will have to break?** Asked at
+   `docs/127` §6 and now asked of ten sentences of content. M8's rule says out loud that it IS a
+   passive in full Latin, which is the most a course can do short of teaching one.
+6. **Is the ablative of comparison too elegant to teach beside `quam`?** M9 writes both and calls
+   `quam` the safe one. A teacher may say the ablative is literary and that a learner writing
+   `illō gravior` sounds like a book rather than a person.
+7. **Does `mālō` belong with `volō` and `nōlō` from L1-M3?** M9 introduces it as the third of the
+   family nine modules after the first two, which means a learner has had a wrong picture of a closed
+   set for a whole level. Teaching all three at L1-M3 was the alternative and would have cost a
+   comparative nothing in the level could compare.
+8. **Are `deinde` and `tum` really interchangeable in the middle of an account?** M10's rule says
+   they are close enough to swap and states the difference anyway. This is the single most likely
+   place in the level for a fluent reader to say the course is wrong.

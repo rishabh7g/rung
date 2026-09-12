@@ -1201,7 +1201,7 @@ ten modules**: **929 romanized surfaces checked, 0 of them carrying Devanagari i
 and 959 Cyrillic strings to undo; this course never had one to undo.
 
 **The shown-surface ratchet opens at ZERO, and en-sa was the first course in the catalogue there**
-(#491; en-la joined it at #637, and the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
+(#491; en-la joined it at #637 and held it through the whole of L2 at #641, and the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
 20 · en-de 11 · en-ko 12). It was designed rather than discovered, and it cost real content: every
 proper noun the course shows — `rāmaḥ`, `sītā` — carries a word row of its own from M1, because
 CLAUDE.md's warning is that a proper noun is COUNTED and not exempt; M8's agreeing numerals were
@@ -1351,6 +1351,52 @@ module as `verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"`
 open questions** across the three review docs and `docs/123` §11 are what that reader still owes, and
 the sharpest of them is the first: whether the enclitic hyphen reads as a teaching convention or as
 an error, which is the one decision that would cost an en-ru-shaped rewrite to reverse.
+
+**en-la's L2 is complete (#638-#641, 2026-09-12) — twenty rungs, and the ratchet never left zero.**
+Ten briefs (#638, `tools/course-briefs.ts`, "## en-la L2: the decisions, taken against the finished
+L1") and ten modules in three waves, all reviewed in one document,
+[`docs/128`](docs/128-llm-review-en-la-L2.md), with the brief-level reasoning in
+[`docs/127`](docs/127-en-la-L2-brief-decisions.md). `en-la: 20 modules (L1-M1..M10, L2-M1..M10)`,
+**330 cumulative surfaces**, `maxSpan` 1, and **no `shown but untaught` line at any module** — so
+`tools/shown-surfaces.test.ts` still carries no `'en-la'` entry and holds the course at 0.
+
+Four things in it are worth reading the docs for:
+
+- **The macron finally pays for itself, twice, in one module.** `docs/123` §1.1 listed `est`/`ēst` as
+  a pair the bar keeps apart, L1-M1 took `est` for "is", and every module after it was forbidden to
+  write `ēst`. L2-M5 spends it: `Pānem ēst` is "he is eating bread" and `Pānem est` is "he IS bread"
+  — grammatical, nothing failing, the reader simply told something else. The same irregular verb then
+  mints a **second** pair nobody planned: `ēs` ("eat!") against `es` ("you are"). Its third
+  collision, the alternative infinitive one bar from `esse`, is named in prose and written nowhere.
+- **Politeness is a verb.** Every other L2-M1 in `tools/course-briefs.ts` teaches a polite address —
+  `usted`, `Lei`, `vous`, `Sie`, `vy`, `bhavān`. Latin has none, `vōs` to one person is wrong rather
+  than formal, so en-la is the one course in the catalogue whose `formal` register chip (#422) sits on
+  a **verb form**: `velim`, `quaesō`, and never a pronoun.
+- **The ablative does five jobs and asks for no preposition in three of them.** After `opus est`
+  (L1-M3) and `in`/`cum` (L1-M7) it turns up bare as a means (`raedā eō`, L2-M4), as a time
+  (`hōrā sextā`, L2-M6) and as "than" (`illō gravior est`, L2-M9). Each arrival has its own mistake
+  plate putting the English preposition back, and L2-M10's last sentence carries both of them at once.
+- **The seam law held three more times.** `pater māter-que` (M2), `vīnum aquam-que` (M5) and
+  `venīs-ne mēcum` (M6), each with its host opened in an earlier sentence and each joined form in the
+  **particle's** row — en-la's arrangement, not en-ko's. `que` and `ne` never moved off L1-M10 and
+  L1-M2. `tools/course-briefs.test.ts`'s `SEAM_MODULES` allowlist pins which modules may open one.
+
+What replaces the build gate, since `checkScriptMode` returns an empty report for a `native` row: the
+en-la block in `src/course/types.test.ts`, plus a per-wave sweep over the emitted course. At level's
+end that sweep reads **1,967 readable Latin strings — zero `j`, zero apostrophes, zero acutes, zero
+combining marks, zero non-NFC, zero characters outside the ten macron letters and ASCII, no `script`
+line, and zero hyphens outside `-que`/`-ne`/`-ve`** — with the 156 `mistake` plates swept separately,
+since a plate may break the spelling bans and not the encoding ones. Every key L1 and L2 were
+forbidden to spend is still free: `legēbam`, `habēbam`, `eram`, `nē`, `venī`, `sīc`, `rosa`/`rosā`,
+`nōnne`, `num`, `domī`, `possum`, `esse`, `ēsse`, `nōbīscum`, `Mārce` and every vocative, `magis`,
+`maximē`, `ībimus`.
+
+**The gate is still UNMET and there are now forty-four open questions**, across `docs/123` §11,
+`docs/124` §6, `docs/125` §5, `docs/126` §6, `docs/127` §6 and `docs/128` §1.7, §2.7 and §3.7. The
+three that would cost the most to get wrong: whether the enclitic hyphen reads as a convention or an
+error; whether `frāctus est` taught as an adjective plants a habit L4-M7 has to break; and whether
+`deinde` and `tum` really swap freely in the middle of an account, which L2-M10's rule asserts and a
+fluent reader is most likely to deny.
 
 **Five levels per course (2026-09-07, `docs/48-five-level-ladder-plan.md`).** Every course's
 `levels.json` now lists L4 "Nuance — say it the way they do" and L5 "Voice — your own words, at
@@ -2463,10 +2509,10 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **475
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **485
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
-  fifteen on en-sa, which is all of L1 plus the first five rungs of L2 (#611, #613, #614), and ten
-  on en-la, which is all of its L1 (#637) — every one
+  fifteen on en-sa, which is all of L1 plus the first five rungs of L2 (#611, #613, #614), and
+  twenty on en-la, which is all of L1 and all of L2 (#637, #639, #640, #641) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.

@@ -1,0 +1,668 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M6",
+  "title": "Making plans together",
+  "job": "Invitations, suggestions, settling a time",
+  "prerequisites": [
+    "L2-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "eāmus (+ destination / time)",
+      "quandō + V-mus",
+      "hōrā + <ordinal-abl>",
+      "V-mus (first person plural)",
+      "venīs-ne mēcum"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "eāmus IS THE SECOND AND LAST SUBJUNCTIVE OF THIS LEVEL, and like M1's velim it is taught as a word rather than as a mood. 'Let us go' — the alternative was the plain future ībimus?, and it was rejected because that asks about fact where this module needs an invitation. Two fixed forms in ten modules, both vocabulary. The productive subjunctive is L3-M4's, and nothing here is a licence to write another."
+    },
+    {
+      "tag": "interference",
+      "text": "TIME IS AN ABLATIVE AND TAKES NO PREPOSITION: hōrā sextā, 'at the sixth hour'. L1-M4 taught the caseless time adverbs — cotīdiē, crās, herī — and promised this; here it lands. It is the same ending that follows opus est, that means 'by' in raedā, and that follows in and cum, now doing a fourth job — and the number agrees with the hour, so both words wear the long ā. A Roman hour was a twelfth of the daylight, not sixty minutes."
+    },
+    {
+      "tag": "delta",
+      "text": "THE FIRST-PERSON PLURAL -mus OPENS HERE and it is real new person-marking: venīmus, bibimus, legimus, edimus, īmus. L1 wrote -ō, -s and -t, and L1-M10 reached for agimus exactly once. nōs exists and is written ONCE in this module, for stress — the ending already says 'we', and a pronoun in every sentence is the anglophone tell L1-M10 spent a rule on."
+    },
+    {
+      "tag": "interference",
+      "text": "mēcum PUTS THE PREPOSITION AFTER THE PRONOUN AND JOINS IT ON: 'with me' is mēcum, never cum mē. It is the only place in L1 or L2 where cum behaves like that, there is no rule to derive it from, and it is learned as a word. nōbīscum ('with us') does the same and is named here and written nowhere."
+    },
+    {
+      "tag": "free",
+      "text": "AN INVITATION USES L1-M2's QUESTION MACHINERY UNCHANGED: venīs-ne mēcum? The -ne rides on the host verb, which L1-M9 already taught, so nothing new is being built — and an invitation is accepted by repeating its verb (ita, veniō), because Latin has no bare yes. quandō is already a question word and takes no -ne: two question marks on one sentence is L1-M2's rule coming back."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M6-S01",
+      "display": "Eāmus domum.",
+      "cue": "Let's go home.",
+      "literal": "let-us-go home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eāmus",
+            "cue": "let's go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Let us go' — a subjunctive, which is a mood this course does not explain yet. Take it whole, as the word that turns going into an invitation. M1's velim is the only other one."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition — M4's word, and going home needs nothing in front of it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "One word does what English needs three for. eāmus is not 'we go' and not 'we will go' — it is a suggestion, and Latin marks that with a mood rather than with words around the verb. This is the second and last such form in the level.",
+      "sound": "E-ā-mus DO-mum. Three syllables and a long ā in the middle: the invitation is in that vowel.",
+      "variations": [
+        {
+          "display": "Eāmus ad scholam.",
+          "cue": "Let's go to school.",
+          "changed": "a destination that DOES need ad"
+        },
+        {
+          "display": "Eāmus, quaesō.",
+          "cue": "Let's go, please.",
+          "changed": "M1's quaesō, softening a suggestion rather than an order"
+        },
+        {
+          "display": "Domum īmus.",
+          "cue": "We are going home.",
+          "changed": "a plain statement instead of a suggestion"
+        }
+      ],
+      "mistake": {
+        "display": "Īmus domum.",
+        "why": "the plain 'we go' used for a suggestion. It is correct Latin and it says something else: it reports what is happening rather than proposing it, and an invitation that reports is not an invitation."
+      },
+      "usage": "Said to end an evening.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S02",
+      "display": "Quandō eāmus?",
+      "cue": "When shall we go?",
+      "literal": "when let-us-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quandō",
+            "cue": "when",
+            "tag": "delta",
+            "forms": [],
+            "note": "'When', asking a question. It is not one of M4's qu- words by accident — quandō, quō, quod, quid, quālis and quantus are all one family, and only the vowels part them."
+          },
+          {
+            "display": "eāmus",
+            "cue": "let's go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Let us go' — a subjunctive taken whole. In a question it asks for a decision rather than making one."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "A suggestion and a question at once, and no -ne anywhere. quandō is already a question word, so the particle would be a second question mark on the same sentence — L1-M2's rule, coming back on a new word.",
+      "variations": [
+        {
+          "display": "Quandō venīs?",
+          "cue": "When are you coming?",
+          "changed": "asked of one person about a fact"
+        },
+        {
+          "display": "Quandō cēnam edimus?",
+          "cue": "When are we eating dinner?",
+          "changed": "the new -mus ending on a different verb"
+        },
+        {
+          "display": "Quandō venīmus?",
+          "cue": "When do we come?",
+          "changed": "the same ending on the verb of coming"
+        }
+      ],
+      "usage": "Said while making a plan.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S03",
+      "display": "Hōrā sextā venīmus.",
+      "cue": "We come at the sixth hour.",
+      "literal": "at-hour sixth we-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hōrā",
+            "cue": "at the hour",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At the hour' — the ablative, which is how Latin says WHEN. No preposition: the ending alone means 'at'. L1-M4 promised this and wrote it nowhere."
+          },
+          {
+            "display": "sextā",
+            "cue": "sixth",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sixth', agreeing with hōrā and so wearing the same ending. L1-M8's numbers counted things; this one places them in the day."
+          },
+          {
+            "display": "venīmus",
+            "cue": "we come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I come': veniō 'I come', venīs 'you come', venit 'he comes', venīmus 'we come'. The -mus is the new one, and it is the ending that means 'we'."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Three things at once: a case doing 'at', an adjective agreeing inside it, and the new -mus. The ablative here is M4's ending doing a third job — after opus est, as a means, and now as a time — and every one of them works by the ending alone.",
+      "sound": "HŌ-rā SEX-tā ve-NĪ-mus. Two long ā endings that rhyme, exactly as L2-M3 said agreement sounds.",
+      "variations": [
+        {
+          "display": "Hōrā tertiā venīmus.",
+          "cue": "We come at the third hour.",
+          "changed": "a different hour"
+        },
+        {
+          "display": "Hōrā sextā cēnam edimus.",
+          "cue": "We eat dinner at the sixth hour.",
+          "changed": "a different verb and an object"
+        },
+        {
+          "display": "Hōrā sextā veniō.",
+          "cue": "I come at the sixth hour.",
+          "changed": "one person instead of several"
+        }
+      ],
+      "mistake": {
+        "display": "In hōrā sextā venīmus.",
+        "why": "'in' borrowed from English 'at six'. The ending is already the 'at', exactly as it was already the 'by' in raedā — and this is the second time in three modules that an English preposition tries to attach itself to a case that does not need one."
+      },
+      "usage": "Said when settling a time.",
+      "mnemonic": "The hour wears the same ending as its number.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S04",
+      "display": "Venīs-ne mēcum?",
+      "cue": "Are you coming with me?",
+      "literal": "you-come-? with-me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "venīs",
+            "cue": "you come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I come': veniō 'I come', venīs 'you come', venit 'he comes', venīmus 'we come'. The -mus is the new one, and it is the ending that means 'we'."
+          },
+          {
+            "display": "-ne",
+            "cue": "?",
+            "tag": "delta",
+            "forms": [
+              "venīs-ne"
+            ],
+            "note": "The question mark, written as an ending: it rides on the back of the first word and turns a statement into a yes/no question. L1-M2's particle, and the hyphen is this course's."
+          },
+          {
+            "display": "mēcum",
+            "cue": "with me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'With me' — one word, with the preposition AFTER the pronoun. cum mē is wrong; mēcum is the form, and it is the only place in this course where cum sits behind its word."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "cum goes backwards and joins on. Everywhere else in the course a preposition comes first — ad scholam, in scholā, cum magistrō — and with a pronoun it flips and fuses. There is no rule to derive it from; mēcum is a word.",
+      "variations": [
+        {
+          "display": "Venīs-ne mēcum ad cēnam?",
+          "cue": "Are you coming to dinner with me?",
+          "changed": "a destination added"
+        },
+        {
+          "display": "Venīs-ne mēcum domum?",
+          "cue": "Are you coming home with me?",
+          "changed": "M4's home, which still needs no preposition"
+        },
+        {
+          "display": "Mēcum venīs.",
+          "cue": "You are coming with me.",
+          "changed": "the particle dropped, which makes it a statement"
+        }
+      ],
+      "mistake": {
+        "display": "Venīs-ne cum mē?",
+        "why": "cum put in front, on the model of every other preposition in the course. It is the most reasonable mistake in the module and it is still wrong — and nōbīscum ('with us') does the same thing, which this course names and does not write."
+      },
+      "usage": "Said when you want company.",
+      "mnemonic": "With a pronoun, cum rides behind.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S05",
+      "display": "Nōs vīnum bibimus.",
+      "cue": "WE are drinking wine.",
+      "literal": "we wine we-drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōs",
+            "cue": "we",
+            "tag": "interference",
+            "forms": [],
+            "note": "'We' — and you will almost never need it, because bibimus already says 'we'. Writing it puts the stress on who, exactly as L1-M10 said of ego."
+          },
+          {
+            "display": "vīnum",
+            "cue": "wine",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Wine', and it is neuter: vīnum is the subject shape and the object shape both. M5's word."
+          },
+          {
+            "display": "bibimus",
+            "cue": "we drink",
+            "tag": "delta",
+            "forms": [],
+            "note": "'We drink' — bibō 'I drink', bibis 'you drink', bibit 'he drinks', bibimus 'we drink'. L1-M5's verb with the new ending."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "nōs is in this sentence to be noticed. The ending carries 'we' on its own, so the pronoun adds emphasis and nothing else — and it is the ONE sentence in this module that writes it, because a 'we' in every line is the anglophone tell L1-M10 spent a rule on.",
+      "variations": [
+        {
+          "display": "Vīnum bibimus.",
+          "cue": "We are drinking wine.",
+          "changed": "nōs dropped, which is the ordinary way to say it"
+        },
+        {
+          "display": "Nōs pānem edimus.",
+          "cue": "WE are eating bread.",
+          "changed": "a different verb under the same stress"
+        },
+        {
+          "display": "Aquam bibimus.",
+          "cue": "We are drinking water.",
+          "changed": "a different drink and no pronoun"
+        }
+      ],
+      "usage": "Said when someone has just said what THEY are drinking.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S06",
+      "display": "Librum legimus.",
+      "cue": "We are reading a book.",
+      "literal": "book we-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the object: liber as the subject, librum as the thing read. L1-M4's word."
+          },
+          {
+            "display": "legimus",
+            "cue": "we read",
+            "tag": "delta",
+            "forms": [],
+            "note": "'We read' — legō 'I read', legis 'you read', legit 'he reads', legimus 'we read'. L1-M4's verb with the new ending."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Two words, and one of them is doing the work of three English ones. No pronoun and no auxiliary: legimus is 'we are reading', and everything about who and how many is in the last three letters.",
+      "variations": [
+        {
+          "display": "Librum legimus et cēnam edimus.",
+          "cue": "We read a book and eat dinner.",
+          "changed": "two verbs sharing one unwritten 'we'"
+        },
+        {
+          "display": "Librōs legimus.",
+          "cue": "We are reading books.",
+          "changed": "more than one book"
+        },
+        {
+          "display": "Librum legere volō.",
+          "cue": "I want to read a book.",
+          "changed": "back to one person, with an infinitive"
+        }
+      ],
+      "usage": "Said about what you are in the middle of.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S07",
+      "display": "Quandō cēnam edimus?",
+      "cue": "When are we eating dinner?",
+      "literal": "when dinner we-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quandō",
+            "cue": "when",
+            "tag": "delta",
+            "forms": [],
+            "note": "'When', asking a question — the sixth qu- word in the course and the only one that asks about time."
+          },
+          {
+            "display": "cēnam",
+            "cue": "dinner",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Dinner' — cēna as the subject, cēnam as the thing eaten. M5's word, and the one meal a Roman day had."
+          },
+          {
+            "display": "edimus",
+            "cue": "we eat",
+            "tag": "interference",
+            "forms": [
+              "edimus",
+              "edis"
+            ],
+            "note": "'We eat' — edō's plural, and one of the shapes that collides with nothing. edō, edis, ēst, ēs, edere, edimus: six shapes of one verb and two of them are traps."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "edimus is the safe shape of a dangerous verb. ēst is one bar from 'he is' and ēs one from 'you are', and the plural is clear of both — which is worth knowing, because it means the 'we' form is the one you can say without watching your vowels.",
+      "variations": [
+        {
+          "display": "Cēnam hōrā sextā edimus.",
+          "cue": "We eat dinner at the sixth hour.",
+          "changed": "the question answered, with the time ablative"
+        },
+        {
+          "display": "Quandō pānem edimus?",
+          "cue": "When are we eating bread?",
+          "changed": "a different food"
+        },
+        {
+          "display": "Quandō edis?",
+          "cue": "When do you eat?",
+          "changed": "asked of one person"
+        }
+      ],
+      "usage": "Said by whoever is hungry first.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S08",
+      "display": "Hōrā tertiā eāmus.",
+      "cue": "Let's go at the third hour.",
+      "literal": "at-hour third let-us-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hōrā",
+            "cue": "at the hour",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At the hour' — the ablative, which is how Latin says WHEN. No preposition: the ending alone means 'at'. L1-M4 promised this and wrote it nowhere."
+          },
+          {
+            "display": "tertiā",
+            "cue": "third",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Third', agreeing with hōrā. A Roman hour was a twelfth of the daylight, so the third hour is mid-morning rather than three o'clock."
+          },
+          {
+            "display": "eāmus",
+            "cue": "let's go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Let us go' — the subjunctive taken whole, and it takes a time as happily as a destination."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "The suggestion and the time in one line, and neither needs a word to hold it up: no 'shall' and no 'at'. A Roman hour is also not our hour — it stretched in summer and shrank in winter, because it was a twelfth of the daylight rather than sixty minutes.",
+      "variations": [
+        {
+          "display": "Hōrā sextā eāmus.",
+          "cue": "Let's go at the sixth hour.",
+          "changed": "the other hour this module writes"
+        },
+        {
+          "display": "Hōrā tertiā ad scholam eāmus.",
+          "cue": "Let's go to school at the third hour.",
+          "changed": "a destination added"
+        },
+        {
+          "display": "Quandō eāmus? Hōrā tertiā.",
+          "cue": "When shall we go? At the third hour.",
+          "changed": "split into a question and its answer"
+        }
+      ],
+      "usage": "Said when proposing a time.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S09",
+      "display": "Ita, veniō.",
+      "cue": "Yes, I am coming.",
+      "literal": "so I-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ita",
+            "cue": "yes",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Yes' — literally 'so'. L1-M2's word, and Latin's nearest thing to a bare yes: it agrees with whatever was just asked."
+          },
+          {
+            "display": "veniō",
+            "cue": "I come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I come': veniō 'I come', venīs 'you come', venit 'he comes', venīmus 'we come'. The -mus is the new one, and it is the ending that means 'we'."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The answer repeats the verb. Latin has no word that means yes on its own account — ita says 'so it is', and repeating the verb of the question is the commonest way to agree. So an invitation is accepted with the verb it was made with.",
+      "variations": [
+        {
+          "display": "Ita, mēcum venīs.",
+          "cue": "Yes, you are coming with me.",
+          "changed": "turned back on the asker"
+        },
+        {
+          "display": "Minimē, nōn veniō.",
+          "cue": "No, I am not coming.",
+          "changed": "L1-M2's no and L1-M3's negative"
+        },
+        {
+          "display": "Ita, eāmus.",
+          "cue": "Yes, let's go.",
+          "changed": "accepting with the suggestion itself"
+        }
+      ],
+      "usage": "Said in answer to venīs-ne mēcum?",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M6-S10",
+      "display": "Domum hōrā sextā īmus.",
+      "cue": "We are going home at the sixth hour.",
+      "literal": "home at-hour sixth we-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition — M4's word, and it is the destination shape."
+          },
+          {
+            "display": "hōrā",
+            "cue": "at the hour",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At the hour' — the ablative, which is how Latin says WHEN. No preposition: the ending alone means 'at'. L1-M4 promised this and wrote it nowhere."
+          },
+          {
+            "display": "sextā",
+            "cue": "sixth",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sixth', agreeing with hōrā and wearing its ending. The sixth hour was the middle of the day, so this is around noon."
+          },
+          {
+            "display": "īmus",
+            "cue": "we go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go': eō 'I go', īs 'you go', it 'he goes', īmus 'we go'. Four shapes of one very short verb, and only the ending tells you who."
+          }
+        ],
+        "rules": [
+          2,
+          1
+        ]
+      },
+      "trap": "Four words and three of them refuse a preposition: domum needs none, hōrā needs none, and the verb needs no pronoun. This is what a Latin sentence looks like when every ending is pulling its weight, and English would use five extra words to say it.",
+      "sound": "DO-mum HŌ-rā SEX-tā Ī-mus. Short, long, long, long — the whole back half of the line is heavy.",
+      "variations": [
+        {
+          "display": "Domum hōrā tertiā īmus.",
+          "cue": "We are going home at the third hour.",
+          "changed": "a different hour"
+        },
+        {
+          "display": "Nōs domum īmus.",
+          "cue": "WE are going home.",
+          "changed": "nōs added for stress and the time dropped"
+        },
+        {
+          "display": "Domum hōrā sextā eāmus.",
+          "cue": "Let's go home at the sixth hour.",
+          "changed": "a suggestion instead of a statement"
+        }
+      ],
+      "mistake": {
+        "display": "Ad domum in hōrā sextā īmus.",
+        "why": "both prepositions put back, because English has both. Each one on its own is the module's mistake; together they are what a sentence looks like when a learner has stopped trusting the endings."
+      },
+      "usage": "Said when the plan is settled.",
+      "mnemonic": "Three endings, no prepositions.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M6-C01",
+      "display": "Quandō venīmus?",
+      "cue": "When do we come?"
+    },
+    {
+      "id": "L2-M6-C02",
+      "display": "Hōrā sextā eāmus.",
+      "cue": "Let's go at the sixth hour."
+    },
+    {
+      "id": "L2-M6-C03",
+      "display": "Venīs-ne mēcum ad cēnam?",
+      "cue": "Are you coming to dinner with me?"
+    },
+    {
+      "id": "L2-M6-C04",
+      "display": "Vīnum bibimus.",
+      "cue": "We are drinking wine."
+    },
+    {
+      "id": "L2-M6-C05",
+      "display": "Librōs legimus.",
+      "cue": "We are reading books."
+    },
+    {
+      "id": "L2-M6-C06",
+      "display": "Eāmus ad scholam.",
+      "cue": "Let's go to school."
+    },
+    {
+      "id": "L2-M6-C07",
+      "display": "Nōs pānem edimus.",
+      "cue": "WE are eating bread."
+    },
+    {
+      "id": "L2-M6-C08",
+      "display": "Hōrā tertiā domum īmus.",
+      "cue": "We go home at the third hour."
+    },
+    {
+      "id": "L2-M6-C09",
+      "display": "Minimē, nōn veniō.",
+      "cue": "No, I am not coming."
+    },
+    {
+      "id": "L2-M6-C10",
+      "display": "Quandō cēnam edimus?",
+      "cue": "When are we eating dinner?"
+    },
+    {
+      "id": "L2-M6-C11",
+      "display": "Mēcum venīs.",
+      "cue": "You are coming with me."
+    },
+    {
+      "id": "L2-M6-C12",
+      "display": "Ita, eāmus.",
+      "cue": "Yes, let's go."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
