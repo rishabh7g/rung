@@ -10,7 +10,8 @@
  *
  * Ten courses are briefed: hi-mr through L2, en-es, en-ar, hi-en, en-ru, en-it, en-fr,
  * en-de and en-ko L1 only, and en-sa — the tenth, briefed
- * L1 (#607) and now L2 (#612), the latter planned against the finished, merged L1 index. The
+ * L1 (#607), L2 (#612) and now L3 (#616), each level planned against the finished, merged index
+ * of the level below it. The
  * L2/L3 module lists are RATIFIED (#112 closed [Q1] — titles, jobs and sequence in levels.json
  * are final), the L4/L5 lists are PROPOSED (docs/48-five-level-ladder-plan.md §4, awaiting the
  * same ratification), and a level's briefs are written when its authoring project starts: a
@@ -2667,6 +2668,300 @@
  * shape is a fresh surface. Pools are authored to 12, M1–M3 ship fully enriched, and M10's items
  * are four-sentence accounts in the participial past with `prathamam`, `tataḥ`, `anantaram` and
  * `ante`.
+ *
+ * ## en-sa L3: the decisions, taken against the finished L2
+ *
+ * Planned against the REAL cumulative L2 index — **247 surfaces through L2-M10, maxSpan 1** —
+ * FOLDED across all twenty emitted files rather than read off the last one. Since #424 each index
+ * file carries only what its own module is the FIRST to teach, while `surfaceCount` stays the
+ * folded cumulative number: `L2-M10.json` reports 247 over a delta list of FOUR keys
+ * (`anantaram`, `ante`, `prathamam`, `tataḥ`), and a reader who does not fold plans a whole level
+ * out of the last module's leftovers. That is the defect `tools/generate-prompt.test.ts` exists to
+ * catch, and it is why the fold is stated here as arithmetic a reader can check rather than as a
+ * remembered number. L1: 22 + 19 + 7 + 29 + 3 + 9 + 12 + 18 + 16 + 4 = 139. L2: 7 + 18 + 19 + 13
+ * + 12 + 8 + 10 + 11 + 6 + 4 = 108. 139 + 108 = 247, which is what `surfaceCount` says, so nothing
+ * was dropped or double-counted.
+ *
+ * **`maxSpan: 1` still holds after twenty modules** — no hyphen, no multi-token surface, no
+ * avagraha anywhere in the course — and that is what makes ownership ABSOLUTE here rather than
+ * merely tidy: an inflected shape is reachable ONLY through the `forms` of the row that lists it,
+ * and a compound donates nothing to its own members. **L3 writes no multi-token surface either**,
+ * so `maxSpan` is still 1 at L3-M10 and the resolver's greedy walk stays a one-token walk. L1's
+ * and L2's other decisions carry unchanged and are restated in the notes rather than re-derived:
+ * IAST precomposed (NFC), PADA FORM with no external sandhi across a word boundary, a word-final
+ * nasal written `m` and never the anusvāra, no avagraha, no hyphen in a `display`, no stress
+ * marks, `literal` on nearly every sentence, Devanagari in `script` alone, and every teaching
+ * field in English. Every decision below is repeated in the note of the module it governs,
+ * because a prompt only ever shows an author the notes.
+ *
+ * **Every ownership claim in this section and in the ten briefs was grepped against that folded
+ * snapshot, form by form, before it was written.** This is the defect that has corrected eleven
+ * briefs on this course across six waves, and the most recent correction was the serious one:
+ * #615 found two briefs citing the participial past as L1-M5's, when L1-M5's entire delta is
+ * `hyaḥ`, `saḥ` and `sā` and it owns no participle at all. `gatavān`/`gatavatī` are **L1-M2's**;
+ * the other five pairs are **L1-M4's**. A paradigm is not evidence; the emitted index is.
+ *
+ * ### 1. The relative–correlative enters at M2, and the correlative is OBLIGATORY and GENDERED
+ *
+ * This is the level's biggest structural debt, exactly as the verb modifier was en-ko's, and it
+ * is the one thing no module that has to describe at length can do without. **The ruling: it
+ * enters at L3-M2, not L3-M1.** M1's job is a day told in one breath, and the tool for that is
+ * the absolutive (§2), which is a different device and the cheaper one; putting both in M1 would
+ * spend the whole level's structural budget on one rung and leave M2 — the module whose job is to
+ * explain what you do and HOW — with nothing to explain it with. en-ko made the same split for
+ * the same reason (sequencing at M1, the modifier at M2), and M3 through M10 then spend what M2
+ * opened.
+ *
+ * **The law, stated as a law because the slogan it attracts is false.** The slogan is that `yaḥ`
+ * is "who" and `saḥ` is "he", so a learner may drop the second half the way English drops "that".
+ * The law is that Sanskrit's relative clause is a CORRELATIVE PAIR: the `ya-` clause comes FIRST,
+ * complete, and the main clause answers it with a `ta-` word that is **obligatory** —
+ * `yaḥ chātraḥ paṭhati saḥ jānāti`, "which student reads, HE knows". There is no shape of this
+ * construction in which the correlative is omitted, and there is no way to hang the clause off
+ * the noun the way English does. And the pair is **GENDERED and CASE-MARKED on both halves
+ * independently**: `yaḥ … saḥ` for a masculine head, `yā … sā` for a feminine one, `yat … tat`
+ * for a neuter one, and the case of each half is whatever ITS OWN clause gives it, so
+ * `yam adhyāpakam bhavān jānāti tam aham jānāmi` has an accusative in both halves and a
+ * nominative in neither. Two agreements at once is what makes this hard and what makes it worth a whole
+ * module.
+ *
+ * **`yat` is the sharp homograph and M2 owns it in the RELATIVE reading alone.** `yat` is both
+ * the neuter relative pronoun and a real classical word for "because" / "that". The index is
+ * cumulative and FIRST OCCURRENCE WINS, so a second reading written later would be unreachable
+ * and the learner would be shown a note that is false of the sentence in front of them. The
+ * ruling: **M2 writes `yat` only as the neuter relative, and the "because" reading is written
+ * NOWHERE in this course** — L1-M9's `yataḥ` already carries "because", it is a distinct key
+ * (checked against the real `normalizeSurface`, not assumed), and M3's reasons are built with it.
+ * The complementiser reading — "he said THAT he is going" — is refused for a second reason as
+ * well: M5 (§5) settles that this language reports directly with `iti` and has no word for
+ * "that", so a `yat` complementiser would contradict the module two rungs later. It belongs in
+ * M5's mistake plate and in no display. This is the `api` ruling of L1-M10 and the `vā` ruling of
+ * L2-M9, made a third time and on purpose.
+ *
+ * `tat` and `tam` have been held free since L1-M1 named them as written nowhere, and L2-M7's note
+ * still lists `tat` as free at the end of the level. **L3-M2 takes them**, as rows of its own
+ * with notes back at L1-M5's `saḥ`/`sā` row — which shipped `saḥ` and `sā` and nothing else, so a
+ * level that never edits a file below it opens rows here rather than extending that one.
+ *
+ * ### 2. The absolutive `-tvā`/`-ya` at M1 — a habitual day in one breath instead of four
+ *
+ * L2-M10 told a four-sentence account with four finite verbs and four full stops. A day told in
+ * DETAIL cannot be told that way, and the device Sanskrit uses is the absolutive: an indeclinable
+ * form of the earlier verb, with **no person and no tense of its own**, which borrows both from
+ * the one finite verb at the end of the sentence. `aham prātaḥ jalam pītvā vidyālayam gacchāmi` —
+ * "having drunk water in the morning, I go to school" — is ONE sentence with two actions, and the
+ * `-mi` at the very end is the only thing in it that says who and when.
+ *
+ * Two halves of the rule, and the second is the one authors miss. (i) **The form is `-tvā` on a
+ * bare root and `-ya` on a root that carries a prefix**: `gatvā`, `khāditvā`, `pītvā`, `kṛtvā`,
+ * `paṭhitvā`, `likhitvā`, but `āgatya` — L2-M1's `āgacchatu` is `ā` + the same root as L1-M2's
+ * `gacchati`, and the prefix is exactly what changes the ending. One pair written side by side
+ * teaches the whole alternation. (ii) **Both actions must have the SAME subject**, because the
+ * absolutive has no subject of its own to disagree with. An English speaker joins two finite
+ * clauses with "and" instead (`aham jalam pibāmi ca vidyālayam gacchāmi`), which is grammatical
+ * and is not how a day is told; that is the module's mistake plate.
+ *
+ * The absolutive is **tense-neutral**, and that is what makes it M10's cheapest tool: the same
+ * `gatvā` serves a habitual present and a participial-past account with no change at all
+ * (`gṛham gatvā aham pustakam paṭhitavān`). Say so in M1, because it is the one new form in this
+ * level that costs nothing when the level's last module reuses it.
+ *
+ * **M1's entire new-word spend is the absolutives.** The sequencers are L2-M10's (`prathamam`,
+ * `tataḥ`, `anantaram`, `ante`), the time words are L1-M4's and indeclinable, and the module opens
+ * no new adverb of frequency at all — `pratidinam` (L1-M4) already says "daily". That is
+ * deliberate: an absolutive of a verb the course already teaches is a shape of that verb, so M1
+ * buys depth rather than vocabulary, and it keeps `maxSpan` at 1 by refusing the reduplicated
+ * `punaḥ punaḥ`, which would be the course's first two-token surface.
+ *
+ * ### 3. M3 — agreeing and softening, with no complementiser and no new reason word
+ *
+ * `satyam` agrees in one word, on the pattern of L1-M2's `ām`; `na tathā` disagrees by negating
+ * the manner word rather than the verb, using L1-M2's `na` row in its second job; `kadācit`
+ * softens. `tathā` is a fresh row, and the note must say what L1-M2 had to say about `namaste`:
+ * L1-M10's `tathāpi` is ONE token with its internal sandhi written in full, it donates nothing,
+ * and the bare `tathā` opened here is a separate key rather than a piece pulled out of it.
+ *
+ * `manye` is the module's one new ending cell — the first-singular ātmanepada `-e`. It is not a
+ * new class: L1-M1's `rocate` is the third singular of the same set, and the note points back at
+ * it rather than teaching a paradigm. **Reasons open nothing.** L1-M9 shipped `yataḥ` (because)
+ * and `ataḥ` (so) and M3 uses exactly those, which is why §1 can afford to keep `yat` in one
+ * reading: the module that would most want a "because" already has two.
+ *
+ * ### 4. M4 — the optative, opened DELIBERATELY, in one cell, and `yadi … tarhi` beside it
+ *
+ * L1 and L2 both refused the optative by name — L1-M5 deferred every lakāra beyond the present,
+ * the future and the participial past; L2-M6 named `gacchema` as the form an author would reach
+ * for and plated it rather than writing it. **L3-M4 is the module chartered to open it, and this
+ * section says so explicitly rather than letting it drift in**, which is the mistake the level
+ * would otherwise make: a conditional module that quietly starts writing `-et` forms teaches a
+ * mood nobody decided to teach.
+ *
+ * **The ruling: the optative opens at M4 in the THIRD SINGULAR `-et` alone** — `gacchet`,
+ * `paṭhet`, `khādet`, `likhet` — because that is the cell `bhavān`/`bhavatī` already take, so
+ * advice lands in the register the course has spoken since L1-M2 and costs no second decision.
+ * The first-person optative (`gaccheyam`), every plural and dual shape, and the athematic
+ * `kuryāt` are NAMED in the rule prose and written nowhere. Rule prose is English and the
+ * shown-surface ratchet does not see it — the technique L1-M4 used for `gacchasi` and L2-M8 for
+ * `abhavat`, used a third time.
+ *
+ * **`yadi` opens the condition and `tarhi` opens the consequence, and `tarhi` is DROPPABLE.**
+ * That is the contrast worth a plate, and it is why this module has to come after M2 rather than
+ * before it: M2's correlative may never be dropped and M4's may, so a learner who has met both
+ * has met the real distinction instead of a rule of thumb. **The conditional does not require the
+ * optative either** — `yadi bhavān adya na gacchati tarhi śvaḥ gacchatu` is a plain present and an
+ * imperative, and the module writes at least one of that shape so that the two systems do not
+ * fuse in the learner's head. The past counterfactual ("if I had gone") is L4-M3's, needs forms
+ * this course has not opened, and is written nowhere.
+ *
+ * ### 5. M5 — `iti`, the catalogue's only postposed quotative
+ *
+ * The construction is: the words as spoken, then `iti`, then the verb of saying.
+ * `aham gacchāmi iti saḥ uktavān` is "'I am going', he said". Three deltas at once, and every one
+ * of them is a thing English does the other way round. (i) **There is no word for "that".** (ii)
+ * **There is NO TENSE SHIFT and no person shift** — the quote keeps the speaker's own `aham` and
+ * the speaker's own present, because the report is DIRECT; en-ko and hi-mr behave the same way
+ * and en-es is the catalogue's odd one out. (iii) **The quotative comes AFTER the quote**, which
+ * is L1-M10's postpositive `ca` law and L2-M9's `vā` law showing up in a third word, so the note
+ * points back rather than teaching placement a third time.
+ *
+ * **The mistake plate writes the English indirect shape**: a `yat` complementiser with a shifted
+ * person (`saḥ uktavān yat saḥ gacchati`), which is exactly what an English-trained learner
+ * builds and which also protects §1's ruling that `yat` is written only as the neuter relative.
+ *
+ * One honest complication, named rather than buried. **`uktavān`/`uktavatī` is NOT a shape of
+ * L2-M7's `vadati` row**: the past of speaking is built on the root `vac-` and `vadati` is `vad-`,
+ * two roots that share a meaning the way go and went share one in English. The standing rule that
+ * a participle is a shape of its verb therefore does NOT apply here, and `uktavān` opens a row of
+ * its own with a note saying why — an author who buries it in `vadati`'s `forms` has made a claim
+ * about Sanskrit morphology that is false. If a wave is uneasy about the pair, the module reports
+ * in the present (`saḥ vadati`) and names the past as deferred, which is the `pītaḥ`/`haritaḥ`
+ * escape L2-M3 wrote for itself.
+ *
+ * ### 6. M6 and M7 — the dative of the experiencer, and the locative of where it hurts
+ *
+ * **M6's law: a feeling has an EXPERIENCER in the dative, not a subject in the nominative.**
+ * `mahyam duḥkham asti` is "to-me there-is sorrow", and L1-M1's `mahyam phalam rocate` was that
+ * same law with a different verb, four levels of vocabulary ago. The module teaches it BESIDE the
+ * frame L1-M9 already shipped — an adjective on the speaker, `aham khinnaḥ` / `aham khinnā` — so
+ * the learner leaves with two true shapes and the knowledge that they do not mix. The mistake
+ * plate is the mixture (`aham duḥkham asti`, `mahyam khinnaḥ`), which is what an English speaker
+ * assembles from the halves.
+ *
+ * The vocabulary spend is `sukham`, `duḥkham`, `bhayam`, `cintā`, and the two gendered adjective
+ * pairs `bhītaḥ`/`bhītā` and `kruddhaḥ`/`kruddhā`. **Those two need the L2-M3 ruling repeated**:
+ * they are `-ta` forms that have lexicalised into ordinary adjectives, taught as adjectives
+ * exactly as L2-M3 taught `pītaḥ` as a colour, and **the ban on the PRODUCTIVE bare `-ta`
+ * participle holds** — no `gataḥ`, no `kṛtam`, no `naṣṭam`, and `jātam` (L2-M8) is still the one
+ * frozen member. A brief that opens two adjectives without saying this has quietly opened a
+ * paradigm.
+ *
+ * **M7's law: the pain is the subject and the body part is the LOCATIVE.**
+ * `mama śirasi vedanā asti` is "in my head there is pain" — L1-M7's locative doing a new job,
+ * L1-M3's `asti` doing its oldest one, and no verb for hurting anywhere. `śiraḥ` is the honest
+ * cost: it is an `-s` stem whose locative `śirasi` looks nothing like the a-stem locatives the
+ * course has written, so the row carries both shapes and the paradigm is NOT opened. `auṣadham`
+ * enters as a noun only: the verb a speaker uses for taking medicine is not certain enough to
+ * ship, so the module writes `mama auṣadham asti` and names the gap rather than guessing — a form
+ * you are not certain of is a form you do not write, which is L2-M4's `padbhyām` ruling reused.
+ *
+ * ### 7. M8 — what the classical register may LEND, and what it may not
+ *
+ * This is the first place the classical register's nouns appear, and the line has to be drawn
+ * precisely, because the classical register proper is **L4-M7's** and every brief since L1-M1 has
+ * said so. **What M8 may borrow: the NOUNS, and nothing else.** `kāryālayaḥ` (an office) and
+ * `pramāṇapatram` (a certificate) are two-member compounds with their internal sandhi written in
+ * full, so each is ONE token and ONE word row — exactly like L1-M6's `vidyālayaḥ` and L1-M7's
+ * `pustakālayaḥ`, which makes `-ālaya` a family of three the learner already half owns, and
+ * exactly like L2-M2's `mātāpitarau`.
+ *
+ * **What M8 may NOT borrow, each named so an author does not drift:** the `formal` value of
+ * `register`, which arrives at L4-M7 and nowhere earlier — every M8 sentence chips `neutral` and
+ * speaks `bhavān`/`bhavatī` with a third-person verb, as the whole course has; external sandhi,
+ * which stays unwritten here as everywhere (`kāryālayaḥ asti`, never `kāryālayo 'sti`, and the
+ * spoken join goes in `sound`); a compound of more than two members; and any lakāra or passive
+ * the counter would really use. The vocabulary is modern administrative Sanskrit and the module
+ * says so in `usage`, the way L2-M7 had to say it of `dūrabhāṣaḥ` — a course that teaches a
+ * modern word is fine, a course that lets a learner believe it is ancient is not.
+ *
+ * A seam worth its own line, because it is the scheme paying off: `patram` and `pramāṇapatram`
+ * are TWO keys and the compound donates nothing to its member, since `surfaceIndexKeys` splits
+ * only hyphens and this course has none. So M8 may write both, and the note says which row a tap
+ * lands on.
+ *
+ * ### 8. M9 and M10 — the plural verb at last, and the eight-sentence account
+ *
+ * **M9 opens the third-person PLURAL present `-anti`**, which is the last person-cell the course
+ * needs and the only one L1 and L2 left unwritten: L1 wrote `-mi` and `-ti` and named `-si` as
+ * deferred, L2-M6 opened `-maḥ`, L2-M2 opened the dual `staḥ`, and the only plural verb anywhere
+ * in the folded index is L1-M9's ātmanepada `rocante`. M9 writes `-anti` on at most three verbs
+ * and lets the rule carry the rest, and it opens `santi` as a row with a note back at L1-M3's
+ * `asti` — the fourth shape of that verb the course has had to open above its own level, after
+ * L2-M2's `staḥ` and L2-M6's `astu`. The nominative plural on the nouns is L1-M8's `chātrāḥ`
+ * ending reused, not a new one.
+ *
+ * **M9 writes NO new proper noun, and the reason is mechanical.** A name rides unindexed (#61)
+ * and is COUNTED by the shown-surface ratchet (#491), which is at ZERO for en-sa — the only
+ * course in the catalogue there — and L2 held it at zero across ten rungs. A festival module is
+ * the single most likely place in the whole ladder to break that, so the ruling is that a
+ * festival is talked about with the common noun `utsavaḥ` and the specific day goes in `usage`,
+ * hedged. `rāmaḥ` and `sītā` remain the only two names this course writes. India is not one
+ * custom and this module asserts nothing as universal.
+ *
+ * **M10's items are accounts of AT MOST EIGHT SENTENCES**, L2-M10's four grown up, and the
+ * per-sentence bound applies to each sentence inside an item rather than to the whole. Eight is a
+ * ceiling, not a target. Its new-word spend should be ZERO. Three laws are tested at that length
+ * and nowhere else: (i) **the participial past forks ONCE, at the speaker**, so all eight
+ * sentences are masculine or all are feminine and the variation supplies the WHOLE account in the
+ * other gender — L2-M10's law at twice the length, and the plural participial past (`gatavantaḥ`)
+ * is still written nowhere, so an account still cannot be told by two people; (ii) **a correlative
+ * pair lives INSIDE one sentence and never crosses a full stop**, while the sequencers only ever
+ * sit BETWEEN sentences — the distinction an eight-sentence account is the first thing long
+ * enough to test; (iii) pro-drop holds at eight sentences, so `aham` appears once at most.
+ *
+ * ### 9. Forms and seams — L3 never edits an L1 or an L2 file
+ *
+ * The additions-only invariant, for the third time on this course and with the same mechanism:
+ * with `maxSpan: 1` and no hyphen there is no part-key to catch a miss, so **every L3 shape of an
+ * L1 or L2 lexeme is declared as a NEW ROW here, with a note back at the row that first taught
+ * the word**, and `git diff --stat` over every L1 and L2 module must be empty. The rows that
+ * exist only for that reason, each checked against the folded snapshot rather than against a
+ * paradigm: every absolutive (M1) ← L1-M2's `gacchati`, L1-M4's `khādati`, `pibati`, `paṭhati`,
+ * `likhati` and `karoti`, and L2-M1's `āgacchatu`; `tat` and `tam` (M2) ← L1-M5's `saḥ`/`sā`;
+ * every `-et` optative (M4) ← the same verbs as the absolutives; `santi` (M9) ← L1-M3's `asti`;
+ * every `-anti` present (M9) ← L1-M2's and L1-M4's verbs. `uktavān`/`uktavatī` (M5) is the one
+ * new row that is NOT a shape of an older row, for the reason §5 gives.
+ *
+ * ### 10. What L3 opens and what it keeps refusing, form by form
+ *
+ * Every form L1 and L2 refused is ruled on here, because a deferral with no owner is how a course
+ * loses a decision. **OPENED, deliberately and narrowly:** the optative, in the third singular
+ * `-et` only (M4, §4); the relative–correlative `ya-`/`ta-` set, in the nominative and accusative
+ * of three genders (M2, §1); `tat` and `tam`, held free since L1-M1 (M2); the absolutive (M1);
+ * `iti` (M5); the third-person plural present and `santi` (M9); the first-singular ātmanepada
+ * `manye` (M3). **STILL REFUSED, written in no display, no variation, no pool item and no
+ * `forms` list, and named in the module that would otherwise reach for it:** every `-si` present
+ * including `gacchasi` (M2, whose relative clauses want a "you" clause most); `tava`, `tubhyam`,
+ * `tvām` and `te` (M2); `mā` with the imperative (M4, which is where prohibition would arrive);
+ * every imperfect and every other lakāra, `abhavat` included (M5, M10); the PRODUCTIVE bare `-ta`
+ * participle (M6, §6); the vocative (M5, whose reported dialogue wants it most and still does not
+ * get it); `svasā` (M6), `mahat` (M7), `asmi` (M3); the plural participial past (M10); and every
+ * bare-stem imperative but L2-M1's `āgaccha` (M4). **`tvam` stays at exactly one display in the
+ * whole course**, L2-M1's, and L3 writes it nowhere. The classical register is L4-M7's; the past
+ * counterfactual is L4-M3's; time clauses are L4-M6's.
+ *
+ * ### Why the en-sa L3 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim. The absolutive and a day in one breath at M1;
+ * the relative–correlative, obligatory and gendered, at M2; agreement, disagreement and softening
+ * with reasons that reuse L1-M9's at M3; `yadi … tarhi` and the third-singular optative at M4;
+ * `iti` and direct report with no tense shift at M5; the dative of the experiencer at M6; the
+ * locative of the pain at M7; the administrative compounds, borrowed as nouns and nothing else,
+ * at M8; the plural verb and a festival named by a common noun at M9; and the eight-sentence
+ * account at M10. Bounds climb 10 → 12 (M1–M3: 10, M4–M7: 11, M8–M10: 12), the ramp
+ * `docs/48-five-level-ladder-plan.md` §B3 sets for every course at this level, while `newWordCap`
+ * (`NEW_WORD_CAP`, 25) still binds first, because every case shape and every gendered shape is a
+ * fresh surface. Pools are authored to 12, M1–M3 ship fully enriched, and M10's items are
+ * eight-sentence accounts built from the whole ladder.
  *
  */
 
@@ -12656,6 +12951,227 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "INDEX SEAM. Fresh rows: prathamam, tataḥ, anantaram, ante — four, and ideally the module's whole spend. Everything else is reused with NO new row, which is what makes this module the test of the level rather than an addition to it: every participial past is L1-M2's (gatavān, gatavatī) and L1-M4's (the other five verbs) — CORRECTED BY #615: L1-M5 opened no participle, only hyaḥ, saḥ and sā — ataḥ and yataḥ are L1-M9's and take no second row here any more than L1-M10 gave them one, ca and kintu and tathāpi and api are L1-M10's, and every L2 row this account reaches for belongs to the module that opened it. Language of the fields holds to the last account: ENGLISH in every teaching field, IAST in every L2 slot, Devanagari only in script, no glossEn, and literal on every sentence — with a verb at the end of each clause, a sequencer at the front and a participle agreeing with a speaker who is not named, there is no sentence here that reads without it.",
       ],
       maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M1': {
+      id: 'L3-M1',
+      title: 'Your day, in detail',
+      job: 'Longer habitual narration with sequencing words',
+      patterns: [
+        'V-tvā + V-āmi',
+        '<time> + N-acc + V-tvā + N-acc + V-āmi',
+        'V-ya + V-āmi',
+        'prathamam + <clause> + . + tataḥ + <clause>',
+        'pratidinam + V-tvā + V-āmi',
+      ],
+      notes: [
+        "THE LEVEL'S DECISIONS, restated here because a prompt only ever shows an author the notes. Everything L1 (#607) and L2 (#612) settled carries unchanged: IAST precomposed (NFC); PADA FORM — no external sandhi across a word boundary, so write rāmaḥ gacchati and never rāmo gacchati; a word-final nasal written m and NEVER the anusvāra, while an anusvāra INSIDE a token is internal sandhi written in full (saṃskṛtam, saṃdeśaḥ) and is correct; no avagraha, no hyphen in a display, no stress marks. The register is unchanged too — bhavān (to a man) / bhavatī (to a woman) with a THIRD-person verb is the everyday 'you', tvam appears in exactly ONE display in the whole course and it is L2-M1's, and L3 writes it nowhere. The past is still the participle -tavān / -tavatī agreeing with the speaker. Language of the fields is unchanged: every teaching field in ENGLISH, Sanskrit only in the L2 slots in IAST, Devanagari only in script, no glossEn, literal on nearly every sentence. The chip: L3 is neutral throughout — informal belongs to L2-M1's one sentence and formal arrives at L4-M7.",
+        'THE ABSOLUTIVE IS THE MODULE, and it is what lets a habitual day be told in one breath instead of four. It is an indeclinable form of the earlier verb with NO PERSON AND NO TENSE OF ITS OWN, and it borrows both from the single finite verb at the end of the sentence: aham prātaḥ jalam pītvā vidyālayam gacchāmi is "having drunk water in the morning, I go to school" — one sentence, two actions, and the -mi at the very end is the only thing in it that says who and when. Carry literal on every one of them, in the Sanskrit order, or the construction is invisible.',
+        'TWO HALVES OF THE RULE, AND THE SECOND IS THE ONE AUTHORS MISS. (i) THE FORM IS -tvā ON A BARE ROOT AND -ya ON A ROOT THAT CARRIES A PREFIX: gatvā, khāditvā, pītvā, kṛtvā, paṭhitvā, likhitvā — but āgatya, because L2-M1\'s āgacchatu is ā plus the same root as L1-M2\'s gacchati, and the prefix is exactly what changes the ending. Write the pair side by side and the whole alternation teaches itself. (ii) BOTH ACTIONS MUST HAVE THE SAME SUBJECT, because an absolutive has no subject of its own to disagree with. The mistake plate is the English shape: two finite clauses joined by "and" (aham jalam pibāmi ca vidyālayam gacchāmi), which is grammatical and is not how a day is told.',
+        "THE ABSOLUTIVE IS TENSE-NEUTRAL, and saying so here is what makes L3-M10 cheap: the same gatvā serves a habitual present and a participial-past account with no change at all — gṛham gatvā aham pustakam paṭhitavān. It is the one new form in this level that costs nothing when the level's last module reuses it.",
+        "THE MODULE'S ENTIRE NEW-WORD SPEND IS THE ABSOLUTIVES, and that is deliberate. The sequencers are L2-M10's and are reused with no new row (prathamam, tataḥ, anantaram, ante); the time words are L1-M4's, indeclinable, and take no ending (adya, prātaḥ, sāyam, pratidinam); and NO NEW ADVERB OF FREQUENCY IS OPENED — pratidinam already says 'daily'. In particular the reduplicated punaḥ punaḥ is REFUSED: it would be the course's first two-token surface, and maxSpan has been 1 for twenty modules. An absolutive of a verb the course already teaches is a shape of that verb, so this module buys depth rather than vocabulary.",
+        "INDEX SEAM. Planned against the FOLDED L2 index — 247 surfaces through L2-M10, maxSpan 1, folded across all twenty emitted delta files and not read off the last one, which lists only four keys. EVERY ROW BELOW EXISTS ONLY BECAUSE A LEVEL NEVER EDITS A FILE BELOW IT, and every claim was grepped against that snapshot rather than inferred from a paradigm: gatvā ← L1-M2's gacchati; khāditvā, pītvā, kṛtvā, paṭhitvā and likhitvā ← L1-M4's khādati, pibati, karoti, paṭhati and likhati; āgatya ← L2-M1's āgacchatu. Each is a row HERE with a note back at the row that first taught the verb, because an absolutive is a shape of its verb and not a new lexeme, and the row that taught the verb shipped no absolutive. Reused with NO new row: every L1-M4 present, L1-M4's time words, L2-M10's four sequencers, L1-M6's accusative of destination, L1-M7's locative, L1-M10's ca and kintu. FULL ENRICHMENT under the M1-M3 rule of any level: sound, variations, mistake, usage and mnemonic on every sentence, at least three variations each and structural by preference, and the comprehension pool authored to 12 rather than the validator floor of 6.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M2': {
+      id: 'L3-M2',
+      title: 'Work and study',
+      job: 'Explain what you do all day, and how',
+      patterns: [
+        'yaḥ + N + V-ati + saḥ + Adj',
+        'yā + N + V-ati + sā + Adj',
+        'yat + N + V-āmi + tat + Adj',
+        'yam + N-acc + V-ati + tam + V-āmi',
+        'aham + N-inst + N-acc + V-āmi',
+      ],
+      notes: [
+        "THE RELATIVE-CORRELATIVE IS THE LEVEL'S BIGGEST DEBT AND THIS MODULE PAYS IT. It enters HERE and not at M1: M1's job is a day told in one breath and the absolutive is the tool for that, and a module whose job is to explain what you do and HOW is the first that cannot be done without a relative clause. The slogan to refuse is that yaḥ is 'who' and saḥ is 'he', so the second half may be dropped the way English drops 'that'. THE LAW: Sanskrit's relative clause is a CORRELATIVE PAIR — the ya- clause comes FIRST and complete, and the main clause answers it with a ta- word that is OBLIGATORY. yaḥ chātraḥ paṭhati saḥ jānāti, 'which student reads, HE knows'. There is no shape of this construction with the correlative left out, and there is no way to hang the clause off the noun the way English does. English builds the noun first and hangs the clause behind it; Sanskrit builds the clause first and answers it.",
+        'THE PAIR IS GENDERED, AND EACH HALF TAKES ITS OWN CASE. yaḥ … saḥ for a masculine head, yā … sā for a feminine one, yat … tat for a neuter one — and the case of each half is whatever ITS OWN clause gives it, so yam adhyāpakam bhavān jānāti tam aham jānāmi carries an accusative in both halves and a nominative in neither — adhyāpakam is the masculine accusative L1-M3 actually wrote, checked against the folded index, while chātram is NOT in it, so the example is built on the masculine accusative the course actually owns. Two agreements at once is what makes this hard and what earns it a whole module. The standing rule since L1-M1 applies to the pair as it applies to an adjective: the hero writes one gendered pair and a variations entry supplies another, in the same item.',
+        "yat IS THE SHARP HOMOGRAPH AND THIS MODULE OWNS IT IN THE RELATIVE READING ALONE. yat is both the neuter relative pronoun and a real classical word for 'because' and for 'that'. The index is cumulative and FIRST OCCURRENCE WINS, so a second reading written later would be unreachable and the learner would be shown a note false of the sentence in front of them. THE RULING: this module writes yat only as the neuter relative, and the 'because' reading is written NOWHERE in this course — L1-M9's yataḥ already carries because, it is a DISTINCT key (checked against the real normalizeSurface, not assumed), and L3-M3's reasons are built with it. The complementiser reading is refused for a second reason too: L3-M5 settles that this language reports DIRECTLY with iti and has no word for 'that', so a yat complementiser would contradict the module three rungs later. It belongs in M5's mistake plate and in no display. This is the api ruling of L1-M10 and the vā ruling of L2-M9, made a third time and on purpose.",
+        "THE VOCABULARY IS THE SMALL HALF OF THE MODULE AND THE 'HOW' IS FREE. kāryam (work) and adhyayanam (study) are the spend; the people are already owned (chātraḥ / chātrā from L1-M1, adhyāpakaḥ / adhyāpikā from L1-M1), the places are already owned (vidyālayaḥ from L1-M6, pustakālayaḥ from L1-M7), and the 'how' is L2-M4's INSTRUMENTAL doing its second job with no new case at all — yānena vidyālayam gacchāmi is L2-M4's law, not a new one, and it reaches for L1-M6's school rather than L3-M8's kāryālayam, whose key belongs to the module that opens it. Point back at L2-M4 rather than restating it. Steps and instructions in order are L4-M1's and are named here as deferred.",
+        "WHAT THIS MODULE WANTS MOST AND STILL DOES NOT GET: the second person. A relative clause about 'the work that YOU do' is the natural sentence and it needs a -si form, which the course has never written. The register answers it instead — yat kāryam bhavān karoti tat uttamam uses the third-person verb bhavān has taken since L1-M2, so the sentence is available and the ban holds. gacchasi and every other -si present, and tava, tubhyam, tvām and te, stay written nowhere.",
+        "INDEX SEAM, against the folded 247. Fresh rows: yaḥ (with yā, yat and yam in its forms — one pronoun, one row, one tap destination, exactly as L1-M9's sundaraḥ holds its gendered shapes), kāryam, adhyayanam. TWO ROWS EXIST ONLY BECAUSE A LEVEL NEVER EDITS A FILE BELOW IT, both checked against the snapshot: tat and tam ← L1-M5's saḥ / sā row, which shipped saḥ and sā and nothing else, so each is a row HERE with a note back at L1-M5. Both keys have been held free since L1-M1 named them as written nowhere and L2-M7 confirmed tat still free at the end of that level; this module takes them cleanly. Reused with no new row: saḥ and sā (L1-M5), jānāti and jānāmi (L2-M8), every L1-M4 present, uttamam (L2-M3), yānena and mārgeṇa (L2-M4), kim (L1-M2). FULL ENRICHMENT and a pool of 12, the M1-M3 rule.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M3': {
+      id: 'L3-M3',
+      title: 'Opinions with reasons',
+      job: 'Agree, disagree, soften — reasons attached',
+      patterns: [
+        'satyam + , + <statement>',
+        'na tathā',
+        'aham + tathā + manye',
+        '<statement> + yataḥ + <clause>',
+        'kadācit + <statement>',
+      ],
+      notes: [
+        "AGREEING AND DISAGREEING ARE ONE WORD EACH, AND NEITHER IS A VERB. satyam ('true') agrees, on exactly the pattern of L1-M2's ām — an indeclinable neuter standing as a whole answer. na tathā ('not so') disagrees by negating the MANNER word rather than the verb, which is L1-M2's na row doing its second job in a third place. That is a clean delta: English disagrees by contradicting a verb ('it isn't'), and this course has no first-person copula to contradict, which is the hole L1-M2 declared out loud when it ruled that a no-answer restates positively.",
+        "tathā IS A FRESH ROW AND ITS NOTE HAS TO SAY WHY. L1-M10's tathāpi is ONE token with its internal sandhi written in full; a compound donates nothing to its members, because surfaceIndexKeys splits only hyphens and this course has none. So the bare tathā opened here is a SEPARATE key rather than a piece pulled out of tathāpi — the same thing L1-M2 had to say about namaste, and the same thing L3-M8 says about patram inside pramāṇapatram. State it once, here, in the terms of the index.",
+        "manye IS THE MODULE'S ONE NEW ENDING CELL, and it is not a new class. It is the first-singular ātmanepada -e, and L1-M1's rocate is the third singular of the same set — the course has been writing ātmanepada since its first module without naming it. Point back at rocate; do NOT teach the paradigm. aham tathā manye is 'I think so' and aham na tathā manye is 'I don't think so', which is the natural pair and the module's cheapest depth. THERE IS NO WORD FOR 'THAT' HERE EITHER: a full opinion clause wants iti, which is L3-M5's and is named as deferred, so this module states its opinion with tathā and attaches the content as a separate sentence.",
+        "REASONS OPEN NOTHING AT ALL, which is what lets L3-M2 keep yat in one reading. L1-M9 shipped yataḥ ('because') and ataḥ ('so') and this module uses exactly those: idam uttamam yataḥ navam is a reason attached, mama pustakam na asti ataḥ aham khinnaḥ is a consequence. kimartham (L1-M9) asks for one. The module that would most want a second 'because' already has two, and yat is never written in that reading anywhere in this course. Cause and consequence across a paragraph is L4-M2's.",
+        "SOFTENING IS kadācit, one word, in front. A learner arriving from English will look for a hedging VERB phrase ('I would say that…') and there is none to find — and the conditional softener (yadi bhavān icchati…) is L3-M4's, not this module's. Keep the claims small and the register neutral: an opinions module is where a course starts asserting things about a culture, and this one states a view about a book, a road or a meal and nothing larger. The honest disagreement at this level of the language is na tathā plus a reason, and the note should say that bluntness is not rudeness here — the politeness lives in the third-person register, exactly as L2-M8's calm complaint does.",
+        "INDEX SEAM, against the folded 247. Fresh rows: satyam, tathā, manye, kadācit. Reused with NO new row: na (L1-M2, whose note was written true of both its jobs), ām (L1-M2), yataḥ and ataḥ and kimartham (L1-M9), khinnaḥ / khinnā and santuṣṭaḥ / santuṣṭā (L1-M9), asti and na asti (L1-M3), icchāmi (L1-M3), uttamam and navaḥ and every L2-M3 adjective, idam (L1-M1), tathāpi (L1-M10, which this module points at and does not touch). Held free still: yat in the 'because' reading, iti until M5, te, tat is M2's from this level on, mā, asmi. FULL ENRICHMENT and a pool of 12 — this is the last module of the level under the M1-M3 rule.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M4': {
+      id: 'L3-M4',
+      title: 'If and then',
+      job: 'Conditions, wishes, advice',
+      patterns: [
+        'yadi + <clause> + tarhi + <clause>',
+        'yadi + <clause> + <clause>',
+        'bhavān/bhavatī + N-acc + V-et',
+        'yadi + <clause> + tarhi + V-tu',
+        'na + V-et',
+      ],
+      notes: [
+        "THE OPTATIVE OPENS HERE, DELIBERATELY, AND THIS NOTE IS THE DECISION RATHER THAN A DISCOVERY. L1-M5 deferred every lakāra beyond the present, the future and the participial past; L2-M6 named gacchema as the form an author would reach for and PLATED it rather than writing it. L3-M4 is the module chartered to lift that ban, and it says so out loud — a conditional module that quietly starts writing -et forms is teaching a mood nobody decided to teach. THE RULING: the optative opens in the THIRD SINGULAR -et ALONE — gacchet, paṭhet, khādet, likhet — because that is the cell bhavān / bhavatī already take, so advice lands in the register the course has spoken since L1-M2 and costs no second decision. bhavān gṛham gacchet is 'you should go home'.",
+        "WHAT DOES NOT COME WITH IT, named in the rule prose so a later module cannot inherit it: the first-person optative (gaccheyam), every dual and plural shape, and the athematic kuryāt — the optative of L1-M4's karoti, which does not end -et at all and would teach an irregular stem inside the module that opens the regular one. Rule text is ENGLISH prose, it is not a display, and the shown-surface ratchet does not see it: that is the technique L1-M4 used for gacchasi and L2-M8 used for abhavat, used a third time and for the same reason.",
+        "yadi OPENS THE CONDITION, tarhi OPENS THE CONSEQUENCE, AND tarhi IS DROPPABLE. That is the contrast worth a mistake plate, and it is why this module comes after L3-M2 rather than before it: M2's correlative may NEVER be dropped and M4's may, so a learner who has met both has met the real distinction instead of a rule of thumb. Both words sit at the FRONT of their own clause, where English puts them, which makes the placement the easy half of the module.",
+        "THE CONDITIONAL DOES NOT REQUIRE THE OPTATIVE, and the module writes at least one sentence proving it, so that the two systems do not fuse in the learner's head: yadi bhavān adya na gacchati tarhi śvaḥ gacchatu is a plain present in the condition and L2-M4's imperative in the consequence, with no -et anywhere. Wishes take the same frame. WHAT STAYS OUT: the PAST COUNTERFACTUAL — 'if I had gone I would have seen it' — is L4-M3's, needs forms this course has not opened, and no display may write it; mā with the imperative is still named and still written nowhere, so a prohibition here is na plus the optative (bhavān adya na gacchet) rather than a new negator; and every bare-stem imperative but L2-M1's āgaccha stays unwritten.",
+        'ENRICHMENT: M4 is past the M1-M3 full-enrichment rule, so enrichment goes where it earns its place — the mistake plate belongs on a dropped correlative borrowed from M2 (a yaḥ clause with no saḥ) set beside a dropped tarhi that is FINE, which is the whole lesson in one plate, and on gacchema, the optative a grammar will have given the learner. usage belongs on the register of advice: advising a bhavān is the third-person verb doing the work, and kṛpayā (L2-M1) stacks on top when the advice is pressed.',
+        "INDEX SEAM, against the folded 247. Fresh rows: yadi, tarhi. ROWS THAT EXIST ONLY BECAUSE A LEVEL NEVER EDITS A FILE BELOW IT, each checked against the snapshot and each with a note back: gacchet ← L1-M2's gacchati; paṭhet, khādet and likhet ← L1-M4's paṭhati, khādati and likhati — the same verbs whose absolutives L3-M1 opened, so the two modules' rows point back at the same first-teach rows and neither opens a rival. Write at most THREE -et shapes: the ENDING is the lesson and a fourth verb in it buys nothing the rule does not already say, which is L2-M6's -āmaḥ ruling reused. Reused with no new row: every L1-M4 present, gacchatu (L2-M4), āgacchatu (L2-M1), kṛpayā (L2-M1), na (L1-M2), adya and śvaḥ (L1-M4, L1-M6), the whole L3-M2 correlative set.",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M5': {
+      id: 'L3-M5',
+      title: 'What someone said',
+      job: "Reporting other people's words",
+      patterns: [
+        '<quoted clause> + iti + saḥ/sā + uktavān/uktavatī',
+        '<quoted clause> + iti + N-nom + vadati',
+        '<quoted question> + iti + saḥ + pṛcchati',
+        'aham + V-āmi + iti + aham + uktavān',
+        'na + <clause> + iti + sā + uktavatī',
+      ],
+      notes: [
+        "iti IS THE CATALOGUE'S ONLY POSTPOSED QUOTATIVE, and the construction is: the words as spoken, then iti, then the verb of saying. aham gacchāmi iti saḥ uktavān is \"'I am going', he said\". THREE DELTAS AT ONCE, and every one of them is a thing English does the other way round. (i) THERE IS NO WORD FOR 'THAT' — iti is not a complementiser, it is a closing quote mark made of letters. (ii) THERE IS NO TENSE SHIFT AND NO PERSON SHIFT: the quote keeps the speaker's own aham and the speaker's own present, because the report is DIRECT. en-ko and hi-mr behave the same way and en-es is the catalogue's odd one out. (iii) THE QUOTATIVE COMES AFTER THE QUOTE, which is L1-M10's postpositive ca law and L2-M9's vā law showing up in a third word — point back at ca rather than teaching placement a third time.",
+        "THE MISTAKE PLATE WRITES THE ENGLISH INDIRECT SHAPE, and it is the most useful plate in the level: saḥ uktavān yat saḥ gacchati — a yat complementiser plus a shifted person, which is exactly what an English-trained learner builds. The plate does double duty, because it also protects L3-M2's ruling that yat is written ONLY as the neuter relative: the complementiser reading appears here, wrong, in a mistake.display, which is exempt from the shown-surface ratchet by design and is never read.",
+        "ONE HONEST COMPLICATION, NAMED RATHER THAN BURIED. uktavān / uktavatī IS NOT A SHAPE OF L2-M7's vadati ROW: the past of speaking is built on the root vac- and vadati is vad-, two roots that share a meaning the way go and went share one in English. The standing rule that a participle is a shape of its verb therefore does NOT apply here, and uktavān opens a row of its OWN with a note saying why — an author who buries it in vadati's forms has made a claim about Sanskrit morphology that is false, and with maxSpan 1 and no hyphen there is no part-key to catch it. If a wave is uneasy about the pair, the module reports in the PRESENT (saḥ vadati) and names the past as deferred, which is the pītaḥ / haritaḥ escape L2-M3 wrote for itself. Either way the gendered pair is hero-plus-variation, the standing rule since L1-M1: uktavān of a man, uktavatī of a woman, and the report agrees with WHO SPOKE rather than with who is telling.",
+        "THE VOCATIVE IS WHAT THIS MODULE WANTS MOST AND STILL DOES NOT GET, for the second time in the course — L2-M7 said it of a phone call and this is the module where reported dialogue would address someone by name. It is a whole case, it lands on names, and names are exactly what the shown-surface ratchet counts. So a report names its speaker in the NOMINATIVE (rāmaḥ uktavān) and addresses inside the quote with bhavān or bhavatī. rāmaḥ and sītā are L1-M1's rows and are still the only two names this course writes. The imperfect stays out too: 'he said' is uktavān, not avadat, which is L2-M8's ruling on kim jātam unchanged.",
+        'ENRICHMENT: past M3, so enrichment earns its place — the mistake plate on the indirect shape (note 2), the sound line where iti follows a visarga or a final vowel and the spoken join is audible while the display writes pada form, and usage on who may be quoted and how. A reported QUESTION is worth one sentence: kutra bhavān gacchati iti saḥ pṛcchati keeps the question word inside the quote, where English would move it.',
+        "INDEX SEAM, against the folded 247. Fresh rows: iti, pṛcchati, and uktavān (with uktavatī in its forms, one row for the gendered pair) — the last of which is the one new row in this level that is NOT a shape of an older row, for the reason in note 3. NOT WRITTEN, deliberately: kathayati, which L1-M2's kathayatu implies and which the module does not need once vadati and uktavān are on the page — a third verb of saying would buy nothing, and L1-M2's kathayatu is reused unchanged where a polite 'please tell' is wanted. Reused with no new row: vadati, vadāmi and vadatu (L2-M7), śṛṇoti and śṛṇomi (L2-M7), saḥ and sā (L1-M5), tat and tam (L3-M2), kutra and kim (L1-M2), jānāti and jānāmi (L2-M8), every participial past — L1-M2's gatavān / gatavatī and L1-M4's other five pairs, NEVER L1-M5's, whose entire delta is hyaḥ, saḥ and sā and which owns no participle at all.",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M6': {
+      id: 'L3-M6',
+      title: 'Feelings in depth',
+      job: 'Nuance past good and bad',
+      patterns: [
+        'mahyam + N + asti',
+        'mahyam + N + na asti',
+        'aham + Adj-nom',
+        'mahyam + N-nom + rocate',
+        'kim + bhavate/bhavatyai + N + asti',
+      ],
+      notes: [
+        "THE LAW: A FEELING HAS AN EXPERIENCER IN THE DATIVE, NOT A SUBJECT IN THE NOMINATIVE. mahyam duḥkham asti is 'to-me there-is sorrow', and L1-M1's mahyam phalam rocate was that same law with a different verb, nine modules and a whole level ago. That is the payoff this module exists to collect: the dative-and-backwards frame a learner met as an oddity about liking turns out to be how the language handles inner states generally. Carry literal on every one of them, dative first; the reversal is still the lesson two levels on.",
+        "TWO TRUE FRAMES, TAUGHT TOGETHER SO THEY DO NOT MIX. The dative-and-noun frame above, and the frame L1-M9 already shipped — an ADJECTIVE on the speaker in the nominative: aham khinnaḥ / aham khinnā, aham santuṣṭaḥ / aham santuṣṭā. Both are right and they are not interchangeable. THE MISTAKE PLATE IS THE MIXTURE — aham duḥkham asti and mahyam khinnaḥ — which is what an English speaker assembles from the halves, because English says 'I am sad' with one shape and has nothing that looks like the other. Author a minimal pair and plate the cross.",
+        "bhītaḥ / bhītā AND kruddhaḥ / kruddhā NEED L2-M3's RULING REPEATED, or this module quietly opens a paradigm. Both are -ta forms that have LEXICALISED into ordinary adjectives, and they are taught as adjectives exactly as L2-M3 taught pītaḥ as a colour rather than as the participle 'drunk'. THE BAN ON THE PRODUCTIVE BARE -ta PARTICIPLE HOLDS: no gataḥ, no kṛtam, no naṣṭam, and L2-M8's jātam is still the one frozen member of the family. Say so in the note; a brief that opens two adjectives without saying it has lifted a ban by accident. They are a-stem adjectives, so L2-M3's paradigm pays for them with no new machinery, and the hero writes one gendered shape while a variations entry supplies the other.",
+        "THE VOCABULARY SPEND IS FOUR NOUNS AND TWO ADJECTIVE PAIRS, and nuance past good and bad is DEGREE more than it is new lexemes: sukham, duḥkham, bhayam and cintā on the dative frame, bhītaḥ / bhītā and kruddhaḥ / kruddhā on the adjective frame, and then L2-M9's adhikam and alpam and L1-M9's khinnaḥ and santuṣṭaḥ doing the grading with nothing new at all. Asking after someone else's feeling is L2-M5's dative of the listener returning — kim bhavate duḥkham asti? — so the module reaches back three times and opens no frame of its own. svasā is named as still unwritten here, because a feelings module is where a relationship noun gets reached for and L2-M2 shipped the six it shipped.",
+        "ENRICHMENT: past M3, so it earns its place — the mistake plate of note 2 on every sentence that has one, usage on how much a speaker at this level of the language actually says about an inner state, and a mnemonic on the dative. Keep every clause in the PRESENT: the past of a feeling belongs inside M10's accounts, where the participial past already forks at the speaker.",
+        "INDEX SEAM, against the folded 247. Fresh rows: sukham, duḥkham, bhayam, cintā, bhītaḥ (with bhītā in its forms) and kruddhaḥ (with kruddhā) — six rows, eight surfaces, one tap destination per word, which is the L1-M9 sundaraḥ rule unchanged. Reused with NO new row: mahyam (inside L1-M1's aham row, which shipped aham, mama and mahyam), rocate (L1-M1) and rocante (L1-M9), asti and na asti (L1-M3), khinnaḥ / khinnā and santuṣṭaḥ / santuṣṭā (L1-M9), bhavate and bhavatyai (L2-M5), adhikam and alpam (L2-M9), kim (L1-M2), idam (L1-M1). Held free still: te, me, mā, asmi, svasā, every -si present, and the productive -ta participle.",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M7': {
+      id: 'L3-M7',
+      title: 'Body and health',
+      job: 'Say what hurts, and where',
+      patterns: [
+        'mama + N-loc + vedanā + asti',
+        'mama + N-loc + vedanā + na asti',
+        'aham + asvasthaḥ/asvasthā',
+        'bhavān/bhavatī + na + V-et',
+        'kṛpayā + N-acc + V-tu',
+      ],
+      notes: [
+        "THE LAW: THE PAIN IS THE SUBJECT AND THE BODY PART IS THE LOCATIVE. mama śirasi vedanā asti is 'in my head there is pain' — L1-M7's locative doing a new job, L1-M3's asti doing its oldest one, and NO VERB FOR HURTING anywhere in the sentence. English makes the person the subject and the hurting a verb ('my head hurts', 'I have a headache'); this builds neither. Carry literal on every one of them, locative first. The genitive mama is the possessor of the body part, not of the pain, which is worth one line of the rule because a learner will attach it to vedanā.",
+        'śiraḥ IS THE HONEST COST OF THE MODULE AND THE NOTE SAYS SO. It is an -s stem, and its locative śirasi looks nothing like the a-stem locatives the course has written since L1-M6 (gṛhe, vidyālaye, pustakālaye). Teach BOTH shapes on ONE row and do NOT open the paradigm — the same decision L2-M2 took for the -ṛ stems mātā and pitā, where the citation form shipped and the declension did not. udaram, hastaḥ and pādaḥ are ordinary a-stems and their locatives udare, haste and pāde are the ending the learner already has, so the module shows the regular three beside the irregular one and lets the contrast do the teaching.',
+        "auṣadham ENTERS AS A NOUN ONLY, AND THE GAP IS NAMED. The verb a sambhāṣaṇam speaker uses for taking medicine is not certain enough to ship, so the module writes mama auṣadham asti and auṣadham icchāmi and names the gap rather than guessing: A FORM YOU ARE NOT CERTAIN OF IS A FORM YOU DO NOT WRITE, which is L2-M4's ruling on padbhyām and pādacāreṇa reused. The same discipline keeps a verb of examining out: L2-M8 already settled that the doctor's line is vaidyaḥ mām paśyatu, and this module reuses it rather than inventing a better one.",
+        "ADVICE IS L3-M4's OPTATIVE AND COSTS NOTHING NEW: bhavān adya na gacchet ('you should not go today'), bhavatī gṛhe tiṣṭhet is NOT written, because tiṣṭhati is a verb this course has never opened — reach only for the four verbs M4 wrote. The request frames are all owned too: kṛpayā (L2-M1) stacks on a -tu imperative, sāhāyyam karotu (L2-M8) asks for help, and asvasthaḥ / asvasthā (L2-M8) says you are unwell, the gendered pair on the speaker for the fifth time in the course. REGISTER: bhavān / bhavatī with a third-person verb throughout, on both sides of the counter; every sentence chips neutral, and formal is L4-M7's.",
+        'ENRICHMENT: past M3, so it earns its place — the mistake plate belongs on the English shape (a nominative person plus a verb of hurting, and mama vedanā asti with no locative at all), and usage on how much a speaker says to a vaidyaḥ. AVOID THE CLINICAL AND AVOID THE ALARMING: the honest set at this level is a head, a stomach, a hand, a foot, a pain and a medicine, and anything beyond it is a vocabulary list rather than a module.',
+        "INDEX SEAM, against the folded 247. Fresh rows: śiraḥ (with śirasi in its forms), udaram (with udare), hastaḥ (with haste), pādaḥ (with pāde), vedanā, auṣadham, rogaḥ — seven rows, eleven surfaces, each row holding only the shapes THIS module writes. Reused with NO new row: asti and na asti (L1-M3), mama (inside L1-M1's aham row), vaidyaḥ and vaidyā, asvasthaḥ and asvasthā, sāhāyyam, samasyā, karotu and mām (L2-M8), paśyatu (L2-M4), kṛpayā (L2-M1), gacchet and the other -et shapes (L3-M4), khinnaḥ (L1-M9), gṛhe (L1-M6), every L1-M7 locative and postposition. Named as still unwritten: mahat, which a module about a big pain would reach for and which L2-M3 deferred as a consonant stem.",
+      ],
+      maxWordsPerSentence: 11,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M8': {
+      id: 'L3-M8',
+      title: 'Money and paperwork',
+      job: 'Rent, bills, forms, offices',
+      patterns: [
+        'N-nom + kutra + asti',
+        'mama + N-nom + asti',
+        'N-gen + mūlyam + kiyat',
+        'kṛpayā + N-acc + dadātu',
+        'aham + N-acc + icchāmi',
+      ],
+      notes: [
+        "THIS IS THE FIRST PLACE THE CLASSICAL REGISTER'S NOUNS APPEAR, AND THE LINE HAS TO BE DRAWN PRECISELY, because the classical register PROPER is L4-M7's and every brief since L1-M1 has said so. WHAT THIS MODULE MAY BORROW: THE NOUNS, AND NOTHING ELSE. kāryālayaḥ (an office) and pramāṇapatram (a certificate) are two-member compounds with their internal sandhi written in FULL, so each is ONE token and ONE word row — exactly like L1-M6's vidyālayaḥ and L1-M7's pustakālayaḥ, which makes -ālaya a family of three the learner already half owns, and exactly like L2-M2's mātāpitarau.",
+        'WHAT THIS MODULE MAY NOT BORROW, each named so an author does not drift into it: the formal value of register, which arrives at L4-M7 and nowhere earlier — every sentence here chips NEUTRAL and speaks bhavān / bhavatī with a third-person verb, as the whole course has; EXTERNAL SANDHI, which stays unwritten here as everywhere, so write kāryālayaḥ asti in the display and put the spoken join in sound; a compound of more than two members, however ordinary it is in a printed form; and any lakāra or passive a real counter would use. The vocabulary is modern administrative Sanskrit and usage must SAY SO, the way L2-M7 had to say it of dūrabhāṣaḥ: a course that teaches a modern word is fine, a course that lets a learner believe it is ancient is not.',
+        'A SEAM WORTH ITS OWN LINE, because it is the scheme paying off rather than a hazard: patram and pramāṇapatram are TWO KEYS, and the compound donates NOTHING to its member, since surfaceIndexKeys splits only hyphens and this course has none. So the module may write both, and the note on each row says which tap lands where — the same fact L3-M3 states about tathā inside tathāpi and L1-M2 states about namaste. With maxSpan 1 there is no multi-token surface to complicate it: every key here is one whitespace token.',
+        'THE MONEY IS ALMOST FREE, and that is what pays for the nouns. L1-M8 already shipped mūlyam, rūpyakam / rūpyakāṇi, kiyat and the numerals through daśa, and L2-M9 shipped adhikam and alpam; so a price question is kāryālayasya mūlyam kiyat?, whose whole question frame comes from L1-M8 and whose only new token is the noun this module opens, and the module spends its budget on bhāṭakam (rent), dhanam (money), śulkam (a fee) and patram. NO NEW NUMERALS AND NO CLOCK: L2-M6 named the clock as deferred and nothing here needs one, and a numeral system beside a set of compounds would break the cap before the word bound.',
+        "ENRICHMENT: past M3, so it earns its place — the mistake plate belongs on a sandhi-joined display (the one module where the temptation is real, because these are the words a printed form actually joins) and on a genitive dropped under a price, which is L1-M8's own plate reused. usage carries what a counter is really like and hedges everything it cannot verify.",
+        'INDEX SEAM, against the folded 247. Fresh rows: kāryālayaḥ (with kāryālayam, kāryālaye and kāryālayasya in its forms, since a place is asked for, gone to, stood in and priced — one row, four shapes, one wave), pramāṇapatram, patram, bhāṭakam, dhanam, śulkam. Reused with NO new row: mūlyam, rūpyakam, rūpyakāṇi, kiyat and every L1-M8 numeral, adhikam and alpam (L2-M9), asti and na asti (L1-M3), dadātu (L1-M3), kṛpayā (L2-M1), icchāmi (L1-M3), kutra (L1-M2), vidyālayaḥ (L1-M6) and pustakālayaḥ (L1-M7), which this module points at as the family kāryālayaḥ joins. Held free still: every -si present, mā, te, the vocative, and the formal chip.',
+      ],
+      maxWordsPerSentence: 12,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M9': {
+      id: 'L3-M9',
+      title: 'Festivals and everyday culture',
+      job: 'Talk about what is happening around you',
+      patterns: [
+        'adya + N-nom + asti',
+        'N-nom-pl + N-acc + V-anti',
+        'N-loc + N-nom-pl + santi',
+        'janāḥ + N-acc + V-anti',
+        'N-loc + utsavaḥ + asti',
+      ],
+      notes: [
+        "THE THIRD-PERSON PLURAL PRESENT OPENS HERE, AND IT IS THE LAST PERSON-CELL THE COURSE NEEDS. L1 wrote -mi and -ti and named -si as deferred; L2-M6 opened the first-person plural -maḥ; L2-M2 opened the dual staḥ; and the ONLY plural verb anywhere in the folded index is L1-M9's ātmanepada rocante. So janāḥ mandiram gacchanti is genuinely new marking, and a module whose job is what is happening AROUND you is the first that cannot be written without it. WRITE -anti ON AT MOST THREE VERBS and let the rule carry the rest, which is L2-M6's -āmaḥ ruling and L3-M4's -et ruling reused a third time: the ENDING is the lesson.",
+        "santi IS THE FOURTH SHAPE OF asti THIS COURSE HAS HAD TO OPEN ABOVE ITS OWN LEVEL, after L2-M2's dual staḥ and L2-M6's imperative astu. L1-M3's asti row shipped asti alone, so santi is a row HERE with a note back at L1-M3, and its own note should say the set out loud — asti for one, staḥ for two, santi for many — because a learner who has met three of them in three levels has never seen them side by side. The nominative plural on the NOUNS is not new: L1-M8's chātrāḥ and L1-M9's puṣpāṇi already taught the -āḥ and -āṇi endings, and this module reuses them rather than restating the rule.",
+        'THE MODULE WRITES NO NEW PROPER NOUN, AND THE REASON IS MECHANICAL RATHER THAN EDITORIAL. A name rides UNINDEXED (#61) and is nonetheless COUNTED by the shown-surface ratchet (#491), which is at ZERO for en-sa — the only course in the catalogue there — and L2 held it at zero across ten rungs. A festival module is the single most likely place in the whole ladder to break that, because a festival HAS a name and an author will want to write it. THE RULING: a festival is talked about with the common noun utsavaḥ, the specific day goes in usage, hedged, and rāmaḥ and sītā remain the only two names this course writes. A baseline is lowered in the commit that fixes the content and NEVER raised.',
+        'WHAT IS ASSERTED, AND WHAT IS NOT. India is not one custom, and an author reaching for colour is exactly how a course starts lecturing. The displays say what is in front of the speaker — adya utsavaḥ asti, gṛhe dīpāḥ santi, janāḥ mandiram gacchanti, sarvatra saṅgītam is NOT written because sarvatra is a word this course has never opened — and usage carries anything about who does what, hedged and small. The vocabulary spend is utsavaḥ, dīpaḥ, mandiram, vastram, miṣṭānnam and janaḥ; saṅgītam (L1-M1), puṣpam and puṣpāṇi (L1-M9), annam and bhojanam (L2-M5), mātāpitarau (L2-M2) and gṛham (L1-M6) are already owned and do most of the work.',
+        "ENRICHMENT: past M3, so it earns its place — the mistake plate belongs on a singular verb under a plural subject (janāḥ gacchati), which is the error a learner who has only ever written -ti makes, and usage belongs on the hedging. miṣṭānnam is a two-member compound with its internal sandhi written in full, so it is one token and one row, and its note points at L3-M8's pramāṇapatram and L2-M2's mātāpitarau as the same fact for the third time.",
+        "INDEX SEAM, against the folded 247. Fresh rows: utsavaḥ (with utsave), dīpaḥ (with dīpāḥ), mandiram (with mandire), vastram, miṣṭānnam, janaḥ (with janāḥ). ROWS THAT EXIST ONLY BECAUSE A LEVEL NEVER EDITS A FILE BELOW IT, each checked against the folded snapshot and each with a note back: santi ← L1-M3's asti; gacchanti ← L1-M2's gacchati; khādanti and paśyanti ← L1-M4's khādati and L2-M4's paśyati. Reused with NO new row: chātrāḥ (L1-M8), puṣpāṇi and rocante (L1-M9), saṅgītam (L1-M1), annam and bhojanam (L2-M5), gṛham and gṛhe (L1-M6), adya and pratidinam (L1-M4), mātāpitarau (L2-M2), every L2-M3 adjective, and the whole L3-M2 correlative set, which a description of a crowd wants and already has.",
+      ],
+      maxWordsPerSentence: 12,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L3-M10': {
+      id: 'L3-M10',
+      title: 'Your own story',
+      job: 'An eight-sentence account, built from the whole ladder',
+      patterns: [
+        '<eight-sentence account>',
+        'prathamam + <clause> + . + tataḥ + <clause> + . + ante + <clause>',
+        'V-tvā + V-tavān/V-tavatī',
+        'yaḥ + <clause> + saḥ + <clause>',
+        '<quoted clause> + iti + saḥ/sā + uktavān/uktavatī',
+      ],
+      notes: [
+        "THE FORMAT AND THE CAP: each item is an ACCOUNT OF AT MOST EIGHT SENTENCES, and the per-sentence bound applies to each sentence INSIDE it rather than to the whole. Eight is a CEILING and not a target — a six-sentence story that holds together beats an eight-sentence one padded to the number. This is L2-M10's four grown up, and the job says built from the whole ladder, so every item should be assemblable with NO NEW WORD AT ALL. The new-word spend here is the smallest of the level and ideally ZERO; a sentence that needs a fresh noun is a sentence that wants rewriting.",
+        "LAW ONE, CARRIED FROM L2-M10 AND TESTED AT TWICE THE LENGTH: THE PARTICIPIAL PAST FORKS ONCE, AT THE SPEAKER, AND THE WHOLE ACCOUNT FORKS WITH IT. Every -tavān / -tavatī in one account agrees with the SAME person, so eight sentences carry eight participles that are all masculine or all feminine, and the variations entry supplies the WHOLE account in the other gender rather than one sentence of it. A mixed account is grammatical sentence by sentence and impossible as a speech act. THE PLURAL PARTICIPIAL PAST IS STILL WRITTEN NOWHERE — gatavantaḥ and its kin are absent from the folded index and from this level — so an account still cannot be told by two people, and L2-M6's vayam belongs to the present and the future and never to an account.",
+        "LAW TWO, AND IT IS WHAT ONLY AN EIGHT-SENTENCE ACCOUNT IS LONG ENOUGH TO TEST: A CORRELATIVE PAIR LIVES INSIDE ONE SENTENCE AND NEVER CROSSES A FULL STOP, while the sequencers only ever sit BETWEEN sentences. L3-M2's yaḥ … saḥ and L3-M4's yadi … tarhi are sentence-internal machinery; L2-M10's prathamam, tataḥ, anantaram and ante are the joints of the account. An author who opens a sentence with saḥ meaning 'and he' has written L1-M5's pronoun, not M2's correlative, and the note must say which is which — the two readings are ONE row and one tap destination, so the row's note has to be true of both.",
+        "LAW THREE, THE CHEAP ONE: THE ABSOLUTIVE IS TENSE-NEUTRAL, so L3-M1's gatvā, khāditvā and āgatya carry straight into an account in the participial past with no change at all — gṛham gatvā aham pustakam paṭhitavān. That is what makes an eight-sentence account fit inside a twelve-word bound: the sequencers join the sentences and the absolutives pack each one. PRO-DROP HOLDS at eight sentences, exactly as L1-M10 established it at two and L2-M10 enforced it at four: aham appears in the FIRST sentence at most and usually nowhere, because the -mi ending and the participle's gender have already said who is speaking.",
+        "A GOOD STORY HAS A SHAPE AND NOT JUST A SEQUENCE, which is the difference between this module and a timetable. Each account should carry a REASON (L1-M9's yataḥ or ataḥ), a FEELING (L3-M6's dative frame or L1-M9's adjective), one REPORTED LINE (L3-M5's iti), and at least one relative clause (L3-M2's), because that is what makes it a story with other people in it. The pool tests comprehension of a whole account, so its items are eight-sentence accounts too and none may case-insensitively equal a hero.",
+        "THE ENDING ENVELOPE, named so an author stays inside it. MAY APPEAR: L1's participial past, present and simple future; L1-M9's yataḥ and ataḥ; L1-M10's ca, kintu, tathāpi and api; L2-M4's instrumental; L2-M6's first-person plural in the present only; L2-M9's ablative and vā; L2-M10's four sequencers; L3-M1's absolutives; L3-M2's correlative set; L3-M4's yadi … tarhi and its third-singular optative; L3-M5's iti and uktavān / uktavatī; L3-M6's dative of the experiencer; L3-M9's -anti plural. STAYS OUT: every imperfect and every other lakāra, abhavat included; the PRODUCTIVE bare -ta participle, which an account wants more than any other module and which L2-M8 lifted for jātam alone; the plural participial past; the first-person and plural optative and kuryāt; the vocative; every -si present, tava, tubhyam, tvām, te and mā; tvam, which appears in exactly one display in this course and it is L2-M1's; the past counterfactual (L4-M3's); time clauses (L4-M6's); and the classical register (L4-M7's).",
+        "INDEX SEAM, and it is the point of the module: FRESH ROWS SHOULD BE NONE. Everything an account reaches for belongs to the module that opened it, and the notes point back rather than re-opening — every participial past is L1-M2's (gatavān / gatavatī) and L1-M4's (the other five pairs), and NEVER L1-M5's, whose entire delta is hyaḥ, saḥ and sā and which owns no participle at all; ataḥ and yataḥ are L1-M9's; the four sequencers are L2-M10's; the absolutives are L3-M1's; yaḥ with its three gendered shapes is L3-M2's and tat and tam are L3-M2's rows with their notes back at L1-M5. maxSpan stays 1: this module writes no multi-token surface, so an eight-sentence account is still a walk over one-token keys. Language of the fields holds to the last account — ENGLISH in every teaching field, IAST in every L2 slot, Devanagari only in script, no glossEn, and literal on every sentence, because with a verb at the end of each clause, an absolutive in the middle of it, a correlative answering across it and a participle agreeing with a speaker who is not named, there is no sentence here that reads without it.",
+      ],
+      maxWordsPerSentence: 12,
       newWordCap: NEW_WORD_CAP,
     },
   },
