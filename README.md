@@ -1169,8 +1169,8 @@ second that was BORN conforming to the no-reading rule.** English (L1) → Sansk
 rungs authored against ten briefs (#607 — `tools/course-briefs.ts`, "en-sa: decisions a brief must
 settle before any Sanskrit is written"), across three authoring issues (#608 L1-M1–M2, #609
 L1-M3–M5, #610 L1-M6–M10) and reviewed in
-[`docs/122-llm-review-en-sa-L1-L3.md`](docs/122-llm-review-en-sa-L1-L3.md) — one document, now
-nine waves, eighty sections and one open-question list. Dropping `fixture: true` from the en-sa row in
+[`docs/122-llm-review-en-sa-L1-L4.md`](docs/122-llm-review-en-sa-L1-L4.md) — one document, now
+ten waves, eighty-nine sections and one open-question list. Dropping `fixture: true` from the en-sa row in
 `content/courses.json`, and L1's level `draft: true` and its `draftNote` from
 `content/en-sa/levels.json`, was the whole change: a strict `npm run build` reported `en-sa: 10
 modules (L1-M1..M10)` at graduation and emitted `public/content/en-sa/` with levels, strings, ten
@@ -1214,9 +1214,17 @@ three — and keeps the sandhi unwritten in the one module where a printed form 
 and names NO festival, because a proper noun rides unindexed and is counted; and `L3-M10` builds
 eight-sentence accounts out of the whole ladder with **zero new surfaces**, the participial past
 forking once at the speaker and the correlatives staying inside their sentences while the sequencers
-join them. A build now reports
-`en-sa: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)` and closes at **317 surfaces**, `maxSpan`
-still 1; L4–L5 are still #423's ratified placeholder lists with nothing authored in them.
+join them. **LEVEL 4 IS NOW OPEN (#621)** — `L4-M1` "Explaining how" grows the infinitive of purpose
+PRODUCTIVELY on five verbs beside L1-M2's `gantum`, and opens the gerundive in exactly one shape,
+the impersonal `-tavyam` with the actor in the INSTRUMENTAL (`mayā gantavyam`, with no nominative
+anywhere in the frame), which is how the course says "you should" without ever writing a
+second-person ending; and `L4-M2` "Cause and consequence" opens **no connective at all** — `yataḥ`
+and `ataḥ` are L1-M9's — and buys instead the ablative of CAUSE (`vṛṣṭeḥ aham na gatavān`), which is
+a second job on a case the course has and never on L2-M9's two comparison words, plus the placement
+law that carries a reason across a paragraph. A build now reports
+`en-sa: 32 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M2)` and closes at **336 surfaces**,
+`maxSpan` still 1; L4 keeps its level `draft` flag until all ten of its rungs are authored, and L5
+is still #423's ratified placeholder list with nothing authored in it.
 
 **The scheme is IAST and the course is written in PADA form, which is the decision everything else
 rests on** (#604, [`docs/121-en-sa-romanization-decisions.md`](docs/121-en-sa-romanization-decisions.md)).
@@ -1245,7 +1253,8 @@ surfaces) before a single display was written; and M10's first draft of S03's th
 was rewritten into `adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.` out of surfaces the level already
 owns. The baseline was never raised; `tools/shown-surfaces.test.ts` still carries `'en-sa': 0`, and
 neither the graduation, nor any of the three L2 waves (#613, #614, #615), nor #617's two L3 rungs,
-nor #618's three, nor #619's five, touched it — L2 and L3 write no new proper noun at all, and the
+nor #618's three, nor #619's five, nor #621's two L4 rungs, touched it — L2, L3 and L4 write no new
+proper noun at all, and the
 only names above L1 are L1-M1's `rāmaḥ` and `sītā`, both of which #618's L3-M5 reports in the
 NOMINATIVE rather than opening the vocative a module of quoted dialogue would most want. **#619's
 `L3-M9` is the sharpest case in the whole catalogue**: a module about festivals, which have names,
@@ -2674,11 +2683,11 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **530
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **532
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
-  thirty on en-sa, which is the whole of L1, L2 and L3 (#611, #613, #614, #615, #617, #618,
-  #619), and **fifty on en-la, which is the whole course** (#637, #641, #645, #649,
-  #651, #652, #653) — every one
+  thirty-two on en-sa, which is the whole of L1, L2 and L3 plus the first two rungs of L4
+  (#611, #613, #614, #615, #617, #618, #619, #621), and **fifty on en-la, which is the whole
+  course** (#637, #641, #645, #649, #651, #652, #653) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.
