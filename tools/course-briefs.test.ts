@@ -793,13 +793,14 @@ describe('en-la: the decisions its briefs settle (#630, #633)', () => {
   const notes = briefs.flatMap((brief) => brief.notes).join('\n');
   const patterns = briefs.flatMap((brief) => brief.patterns);
 
-  it('covers exactly L1-M1..L4-M10 — briefed L1 (#633), L2 (#638), L3 (#642) and L4 (#646)', () => {
+  it('covers the whole ladder — briefed L1 (#633), L2 (#638), L3 (#642), L4 (#646), L5 (#650)', () => {
     const rungs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
     expect(Object.keys(all)).toEqual([
       ...rungs.map((n) => `L1-M${n}`),
       ...rungs.map((n) => `L2-M${n}`),
       ...rungs.map((n) => `L3-M${n}`),
       ...rungs.map((n) => `L4-M${n}`),
+      ...rungs.map((n) => `L5-M${n}`),
     ]);
   });
 
@@ -1047,9 +1048,9 @@ describe('en-la L3: the decisions its briefs settle (#642)', () => {
   const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
   const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
 
-  it('covers exactly L1-M1..L4-M10 and climbs its bounds 10 → 11 → 12', () => {
+  it('covers the whole ladder and climbs its L3 bounds 10 → 11 → 12', () => {
     expect(Object.keys(all)).toEqual(
-      ['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     );
@@ -1200,9 +1201,9 @@ describe('en-la L4: the decisions its briefs settle (#646)', () => {
   const l4 = Object.entries(all).filter(([id]) => id.startsWith('L4-'));
   const notes = l4.flatMap(([, brief]) => brief.notes).join('\n');
 
-  it('covers exactly L1-M1..L4-M10 and climbs its bounds 12 → 13 → 14', () => {
+  it('covers the whole ladder and climbs its L4 bounds 12 → 13 → 14', () => {
     expect(Object.keys(all)).toEqual(
-      ['L1', 'L2', 'L3', 'L4'].flatMap((level) =>
+      ['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
         ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
       ),
     );
@@ -1335,6 +1336,157 @@ describe('en-la L4: the decisions its briefs settle (#646)', () => {
       }
     }
     expect(/[ÁÉÍÓÚáéíóú]|́/u.test(notes), 'an L4 note writes an acute').toBe(false);
+  });
+});
+
+/**
+ * en-la L5 (#650) — the last level of the eleventh course, and the only L5 in this file whose learner
+ * already owns the content. Its two sharpest decisions are the one the index forces (a saying is
+ * written with macrons, so the familiar spelling is never written at all) and the one the language
+ * forces (there is no home vernacular, so "how they say it there" is a tradition rather than a place).
+ * Both are the kind a later author would undo.
+ */
+describe('en-la L5: the decisions its briefs settle (#650)', () => {
+  const all = COURSE_BRIEFS['en-la'] ?? {};
+  const l5 = Object.entries(all).filter(([id]) => id.startsWith('L5-'));
+  const notes = l5.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('covers the whole ladder — L1-M1..L5-M10, fifty modules — and climbs its bounds 14 → 15 → 16', () => {
+    expect(Object.keys(all)).toEqual(
+      ['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    );
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L5-M1', 'L5-M2', 'L5-M3']) expect(bound(id), id).toBe(14);
+    for (const id of ['L5-M4', 'L5-M5', 'L5-M6']) expect(bound(id), id).toBe(15);
+    for (const id of ['L5-M7', 'L5-M8', 'L5-M9', 'L5-M10']) expect(bound(id), id).toBe(16);
+    for (const [id, brief] of l5) {
+      expect(brief.newWordCap, id).toBe(NEW_WORD_CAP);
+      expect(brief.patterns.length, `${id} patterns`).toBeGreaterThan(0);
+      expect(brief.notes.length, `${id} notes`).toBeGreaterThan(0);
+    }
+  });
+
+  /**
+   * The sayings-orthography decision, which the index forces and a later author would undo on the
+   * grounds that a quotation should be spelled as it is received.
+   */
+  it('writes a saying with macrons only, and records the run that forces it', () => {
+    const m1 = (all['L5-M1']?.notes ?? []).join('\n');
+    expect(m1).toMatch(/A SAYING IS A DISPLAY IN THIS COURSE's ORTHOGRAPHY, MACRONS AND ALL/);
+    expect(m1).toMatch(/THE TWO SPELLINGS ARE TWO KEYS FOR ONE WORD/);
+    expect(m1).toMatch(/writes the macroned form ONLY/);
+    expect(m1).toMatch(/DECIDE THE SOURCE REGISTER PER SAYING/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/normalizeSurface\('ālea'\) -> 'ālea'/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Rule 4 folds case and \*\*never\*\* a diacritic/);
+  });
+
+  /** The learner already owns M1's content, which is true of no other L5 in this file. */
+  it('says out loud that the learner already owns the sayings', () => {
+    expect((all['L5-M1']?.notes ?? []).join('\n')).toMatch(
+      /THE STRONGEST MODULE IN THIS COURSE's L5, BECAUSE THE LEARNER ALREADY OWNS ITS CONTENT/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /the one L5 in the file whose learner already owns the content/,
+    );
+  });
+
+  /** Humour has a ceiling and the brief has to name it, or an author will find Martial. */
+  it('settles humour at the Plautine end and bans the rest', () => {
+    const m2 = (all['L5-M2']?.notes ?? []).join('\n');
+    expect(m2).toMatch(/PLAUTUS is broad, affectionate/);
+    expect(m2).toMatch(/This course writes the PLAUTINE end/);
+    expect(m2).toMatch(/Written nowhere: anything from Martial that needs a footnote/);
+  });
+
+  /**
+   * The vocative was named as deferred from L2-M7 onward. M2 is its owner, and it is a new key rather
+   * than a shape of L1-M1's row.
+   */
+  it('makes M2 the owner of the vocative, as a new key', () => {
+    const m2 = (all['L5-M2']?.notes ?? []).join('\n');
+    expect(m2).toMatch(/THE VOCATIVE FINALLY ARRIVES, AND IT ARRIVES AS A JOKE/);
+    expect(m2).toMatch(/Mārce is a NEW KEY and a new row/);
+    expect((all['L5-M4']?.notes ?? []).join('\n')).toMatch(
+      /THE VOCATIVE'S SECOND USE IS FORMAL ADDRESS/,
+    );
+  });
+
+  /**
+   * Latin has no home vernacular, so the module that would be about region is about tradition — and
+   * the whole mechanism is that `display` does not move.
+   */
+  it('makes M3 about traditions rather than places, with sound carrying every variant', () => {
+    const m3 = (all['L5-M3']?.notes ?? []).join('\n');
+    expect(m3).toMatch(/IT IS A TRADITION, AND THAT IS THE DECISION THIS MODULE TAKES/);
+    expect(m3).toMatch(/There is no home vernacular/);
+    expect(m3).toMatch(
+      /display STAYS IN THIS COURSE's TRADITION AND sound IS WHERE THE VARIANTS LIVE/,
+    );
+    expect(m3).toMatch(/has minted two keys for one sentence/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/"How they say it there" is a TRADITION, not a place/);
+  });
+
+  /** The ecclesiastical register belongs to one module, and M1 must refuse it. */
+  it('puts the ecclesiastical register at M4 and keeps it out of M1', () => {
+    expect((all['L5-M4']?.notes ?? []).join('\n')).toMatch(
+      /THE ECCLESIASTICAL REGISTER IS AT HOME HERE AND NOWHERE ELSE IN THIS COURSE/,
+    );
+    expect((all['L5-M1']?.notes ?? []).join('\n')).toMatch(
+      /requiēscat in pāce is ECCLESIASTICAL and belongs to M4/,
+    );
+  });
+
+  /** The last two constructions the course owes, each in its promised module. */
+  it('lands the ablative absolute at M6 and the indirect question at M7', () => {
+    expect((all['L5-M6']?.notes ?? []).join('\n')).toMatch(
+      /THE ABLATIVE ABSOLUTE ARRIVES, AND L4-M2 AND L4-M4 BOTH WANTED IT/,
+    );
+    expect((all['L5-M7']?.notes ?? []).join('\n')).toMatch(
+      /THE INDIRECT QUESTION ARRIVES AND IT IS THE LAST CONSTRUCTION THIS COURSE OWES/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/After these two, \*\*this course owes nothing\*\*/);
+  });
+
+  /** Two more homographs, the cum remedy again — and the refusal condition stated for the first time. */
+  it('names both readings for ut and quod, and states the price of not affording the note', () => {
+    expect((all['L5-M1']?.notes ?? []).join('\n')).toMatch(
+      /THAT IS A HOMOGRAPH DECISION AND THE NOTE MUST CARRY IT/,
+    );
+    expect((all['L5-M6']?.notes ?? []).join('\n')).toMatch(/THAT IS A HOMOGRAPH DECISION/);
+    expect((all['L5-M6']?.notes ?? []).join('\n')).toMatch(
+      /If a brief cannot afford that note, the phrase is not worth the key/,
+    );
+  });
+
+  /** M10's shape: a register switch in three places, and a hinge that names it. */
+  it('makes M10 switch register visibly, with a hinge and no new vocabulary', () => {
+    const m10 = (all['L5-M10']?.notes ?? []).join('\n');
+    expect(m10).toMatch(/THE REGISTER SWITCH IS THE MODULE AND IT MUST BE VISIBLE IN THREE PLACES/);
+    expect(m10).toMatch(/THE HINGE IS ONE SENTENCE AND IT SHOULD BE SHORT/);
+    expect(m10).toMatch(/NOTHING NEW IS TAUGHT HERE/);
+    expect(m10).toMatch(/ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE COURSE/);
+    expect(m10).toMatch(/STILL NO BUILD GATE on en-la's spelling/);
+  });
+
+  it("plans against the folded L4 index rather than the last module's delta", () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\*\*624 surfaces, maxSpan 1\*\*/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\(L4, 145\) = 624/);
+  });
+
+  /** The orthography tests of #633 must hold over all fifty briefs. */
+  it('keeps the orthography clean across L5, and so across the whole course', () => {
+    for (const [id, brief] of Object.entries(all)) {
+      for (const pattern of brief.patterns) {
+        expect(pattern, `${id} "${pattern}"`).toMatch(/^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u);
+        expect(/[ȳȲ]/u.test(pattern), `${id} pattern writes ȳ`).toBe(false);
+      }
+      for (const value of [brief.title, brief.job, ...brief.patterns, ...brief.notes]) {
+        expect(value, `${id} NFC`).toBe(value.normalize('NFC'));
+      }
+    }
+    expect(/[ÁÉÍÓÚáéíóú]|́/u.test(notes), 'an L5 note writes an acute').toBe(false);
   });
 });
 

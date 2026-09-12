@@ -10,7 +10,8 @@
  *
  * Eleven courses are briefed: hi-mr through L2, en-es, en-ar, hi-en, en-ru, en-it, en-fr,
  * en-de and en-ko L1 only, en-sa — the tenth, briefed L1 (#607), L2 (#612) and now L3 (#616) — and
- * en-la, the eleventh, briefed L1 (#633), L2 (#638), L3 (#642) and now L4 (#646). Each level of both is
+ * en-la, the eleventh, briefed L1 (#633), L2 (#638), L3 (#642), L4 (#646) and now L5 (#650) — the
+ * first course in this file briefed to its last rung since en-ko. Each level of both is
  * planned against the finished, merged index of the level below it. The
  * L2/L3 module lists are RATIFIED (#112 closed [Q1] — titles, jobs and sequence in levels.json
  * are final), the L4/L5 lists are PROPOSED (docs/48-five-level-ladder-plan.md §4, awaiting the
@@ -3391,6 +3392,109 @@
  * M8, thirty-one modules after L1-M5 promised it; the locative and the closed list in M9, twenty-nine
  * modules after L2-M4 named it; and M10's six-sentence narrative, where `inquit` sits inside the
  * quotation and the two past tenses finally divide the work between them.
+ *
+ * ## en-la L5: the decisions, taken against the finished L4 (#650)
+ *
+ * Planned against the REAL cumulative index through L4-M10 — **624 surfaces, maxSpan 1** — FOLDED
+ * across all forty emitted files. Stated as arithmetic: 189 (L1) + 141 (L2) + 149 (L3) + 17 + 6 + 36
+ * + 7 + 14 + 14 + 20 + 21 + 5 + 5 (L4, 145) = 624, which is what `L4-M10.json`'s `surfaceCount` says.
+ *
+ * ### 1. This is the one L5 in the file whose learner already owns the content
+ *
+ * No other course can say it. An English speaker arrives at L5 of en-la knowing `carpe diem`,
+ * `festīnā lentē` and `ālea iacta est` **without knowing a word of Latin** — so M1's job is not to
+ * teach the sayings but to make them **parse**: `carpe` is L2-M5's imperative, `diem` is its object,
+ * and forty rungs of ladder let a learner take a phrase apart for the first time. The pleasure of that
+ * module is recognition and the work is analysis, and the brief says so.
+ *
+ * ### 2. A saying is written in the course's orthography, and that costs a spelling the learner knows
+ *
+ * `docs/123` requires a macron on every long vowel, so M1 writes `ālea iacta est` — and what the
+ * learner has seen on a mug is `alea iacta est`. Run against the real `src/engine/surface.ts`:
+ *
+ * ```
+ * normalizeSurface('ālea') -> 'ālea'
+ * normalizeSurface('alea') -> 'alea'
+ * ```
+ *
+ * Rule 4 folds case and **never** a diacritic, so **the two spellings are two keys for one word**.
+ * Writing both would put two rows in the index for one saying and show a learner tapping one a note
+ * about the other — the defect L4-M7's `SPQR` decision avoided by the same reasoning. **The course
+ * writes the macroned form only**, and every such note names the unmacroned spelling in prose so a
+ * learner can connect what they read here to what they have seen everywhere else.
+ *
+ * Each saying's **source register** is named in its usage line — Horace, Suetonius quoting Augustus,
+ * Caesar as Suetonius reports him — because a saying a learner cannot place is a saying they cannot
+ * use. `requiēscat in pāce` is **ecclesiastical** and belongs to M4, not M1.
+ *
+ * ### 3. Humour is Plautine, not Martial, and the vocative arrives as a joke
+ *
+ * Latin's two surviving comic voices are far apart: Plautus is broad and affectionate, Martial precise
+ * and often cruel. **This course writes the Plautine end** — teasing a friend, nothing that needs a
+ * footnote, no obscenity — and M2 says so in a usage line, because a learner who has read that Latin
+ * comedy is filthy will expect the module to go somewhere it does not.
+ *
+ * **The vocative finally arrives at M2**, and it arrives as mock address: `ō Mārce!`. L2-M7 wanted
+ * `Mārce` for a telephone call and could not have it, and every level since has named the gap. It is a
+ * NEW KEY and a new row — `Mārcus` is L1-M1's — with a note back at the first teach. M4's formal
+ * address is its second use, and a case whose whole job is tone is honestly taught by showing both.
+ *
+ * The ironic superlative costs nothing: L2-M9 taught `-issimus`, and `optimē!` of something gone wrong
+ * is L1-M2's word used sarcastically forty rungs later.
+ *
+ * ### 4. "How they say it there" is a TRADITION, not a place
+ *
+ * Latin has **no home vernacular**, which en-sa's L5 had to say of Sanskrit and en-ar's of Arabic. What
+ * it has instead is two axes, and M3 teaches both:
+ *
+ * - **Three living pronunciation traditions** — restored classical, ecclesiastical, and the national
+ *   school traditions (the English one being the strangest).
+ * - **A register spectrum across a thousand years** — Plautine, Ciceronian, Vulgar.
+ *
+ * **`display` stays in this course's tradition and `sound` is where the variants live.** One sentence,
+ * one spelling, and a `sound` line naming what each tradition does with it — so nothing in the emitted
+ * index changes and no key is spent on a variant. An author who writes two displays for two traditions
+ * has minted two keys for one sentence. `docs/123`'s macrons are the course's **orthography** and not a
+ * claim about pronunciation, and M3's note says so.
+ *
+ * ### 5. The last two constructions the course owes, and where they land
+ *
+ * - **The ablative absolute → M6.** L4-M2 and L4-M4 both wanted it. Two words in the ablative doing an
+ *   English clause's work, with no verb and no conjunction: the case IS the connection.
+ * - **The indirect question → M7.** L4-M5's `haud sciō an` only looked like one. `quaerō quid agās`
+ *   takes a **subjunctive** where English keeps the indicative, which is why it waited for a level
+ *   whose learner is fluent in the mood.
+ *
+ * After these two, **this course owes nothing**. Every construction any brief has named as deferred,
+ * from L1-M5's imperfect to L4-M4's ablative absolute, has an owning module.
+ *
+ * ### 6. Two more homographs, and the same remedy
+ *
+ * `ut` as "as" (M1's `ut dīcitur`) and `quod` in `quod sī` (M6) are both readings this course has
+ * refused for forty rungs — `ut`'s key is L3-M4's purpose reading and `quod`'s is L1-M9's "because".
+ * Where a module needs one, **its row names both readings**, which is L4-M6's `cum` remedy. And the
+ * brief states the price: if a module cannot afford that note, the phrase is not worth the key.
+ *
+ * ### 7. M10 changes register in three places at once
+ *
+ * Four sentences in one register and four in another, with a **hinge sentence that names the turn** —
+ * `at` (M6's objection word) or `sed quid dīcam?` (M7's mood). The switch shows in vocabulary, length
+ * and word order; the `sound` lines carry the pronunciation; `display` never moves. **Switching
+ * silently is the one thing that does not work**, because a learner reading eight sentences will take
+ * it for an inconsistency rather than a choice. And the cap goes almost entirely unspent: fifty modules
+ * of ladder, and a register that needs a word the course has not taught is a register being pushed
+ * further than the course can support.
+ *
+ * ### Why the en-la L5 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim, on #423's ratified list. The sayings first, because the
+ * learner owns them and can finally parse them; Plautine teasing and the vocative in M2; the two axes
+ * of tradition in M3, with `sound` carrying every variant; the ecclesiastical register at home in M4,
+ * where `valē` returns forty rungs after L1-M2 taught it as an everyday goodbye; the `-tās` suffix and
+ * `virtūs`'s drift in M5; the ablative absolute and a three-part case in M6; the indirect question and
+ * litotes completed in M7; `quid sibi vult?` out of three taught words in M8; a Phaedrus fable retold
+ * in prose in M9; and M10's eight sentences with a register switch and a hinge, which is the last rung
+ * of the course and spends nothing.
  *
  */
 
@@ -14467,6 +14571,216 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE LEVEL, as at L1-M10, L2-M10 and L3-M10: macrons per the OLD, v and i and never j, no apostrophe, no acute, NFC, no script line, a hyphen only before que, ne or ve. AND QUOTATION MARKS ARE THE ONE NEW CHARACTER QUESTION THIS COURSE HAS FACED: a quoted line needs them, they are not Latin letters, and src/engine/surface.ts rule 3 strips punctuation from a token EDGE but not an apostrophe. The decisions note records the run; the brief's instruction is to write the quotation with the repo's ordinary double quotes inside the display and to check the emitted index for any key that has kept one.",
       ],
       maxWordsPerSentence: 14,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L5-M1': {
+      id: 'L5-M1',
+      title: 'Sayings and idioms',
+      job: 'The figurative everyday, and when it is used',
+      patterns: [
+        'carpe diem',
+        'festīnā lentē',
+        'ālea iacta est',
+        '<saying> + , + ut dīcitur',
+        'N-nom + V (a saying used in a sentence)',
+      ],
+      notes: [
+        "THIS IS THE STRONGEST MODULE IN THIS COURSE's L5, BECAUSE THE LEARNER ALREADY OWNS ITS CONTENT. No other course can say that: an English speaker arrives at L5 of en-la knowing carpe diem, festīnā lentē, ālea iacta est and half a dozen more without knowing a word of Latin. The module's job is not to teach them but to make them PARSE — carpe is L2-M5's imperative shape, diem is the object of it, and a learner who has come forty rungs can take the phrase apart for the first time. Say that explicitly: the pleasure of this module is recognition, and the work is analysis.",
+        "A SAYING IS A DISPLAY IN THIS COURSE's ORTHOGRAPHY, MACRONS AND ALL, AND THE COST IS REAL. docs/123 requires a macron on every long vowel, so this module writes ālea iacta est — and what the learner has seen on a mug is alea iacta est. Checked against the real src/engine/surface.ts: normalizeSurface('ālea') is 'ālea' and normalizeSurface('alea') is 'alea', because rule 4 folds case and NEVER a diacritic. SO THE TWO SPELLINGS ARE TWO KEYS FOR ONE WORD. Writing both would put two rows in the index for one saying and show a learner tapping one a note about the other — the same defect L4-M7's SPQR decision avoided. The course writes the macroned form ONLY, and every such note names the unmacroned spelling in prose so the learner can connect them.",
+        'DECIDE THE SOURCE REGISTER PER SAYING AND SAY IT IN THE USAGE LINE. carpe diem is Horace, Ciceronian-era verse. festīnā lentē is Suetonius quoting Augustus. ālea iacta est is Caesar, as Suetonius reports him. in vīnō vēritās is proverbial and late. requiēscat in pāce is ECCLESIASTICAL and belongs to M4 rather than here. A saying with no source named is a saying a learner cannot place, and placing it is half of knowing when to use it.',
+        "ut dīcitur ('as they say') IS THE FRAME THAT MAKES A SAYING QUOTABLE, and it is built from L4-M7's passive: dīcitur is 'it is said', which that module opened, and ut here is L3-M4's word in a reading this course has otherwise refused — 'as' rather than 'so that'. THAT IS A HOMOGRAPH DECISION AND THE NOTE MUST CARRY IT: ut's key is L3-M4's and its note names the purpose reading, so a row in this module has to name both, exactly as L4-M6's cum rows do.",
+        "INDEX SEAM: carpe, diem, ālea, iacta, festīnā, lentē, vēritās and whatever sayings the module writes are fresh rows. est, in, vīnō, dīcitur and ut are all taught. Written nowhere: the unmacroned spelling of any saying; requiēscat and the ecclesiastical register, which are M4's; and any saying whose source cannot be named.",
+      ],
+      maxWordsPerSentence: 14,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L5-M2': {
+      id: 'L5-M2',
+      title: 'Humour and teasing',
+      job: 'Banter, irony, and when not to',
+      patterns: [
+        'ō + N-voc (mock address)',
+        'nimium + Adj',
+        'Adj-issimus (ironic superlative)',
+        'quid tandem + V',
+        'rīdēs + , + sed + V',
+      ],
+      notes: [
+        "THE REGISTER THIS MODULE CAN CARRY HAS TO BE DECIDED AND SAID, because Latin's two surviving comic voices are very far apart. PLAUTUS is broad, affectionate and full of abuse a friend would take; MARTIAL is precise and often cruel. This course writes the PLAUTINE end: teasing a friend, not humiliating a stranger, and nothing from Martial that needs a footnote. Say so in a usage line — a learner who has read that Latin comedy is obscene will otherwise expect this module to go somewhere it does not.",
+        "THE IRONIC SUPERLATIVE IS THE CHEAPEST JOKE IN THE LANGUAGE AND IT COSTS NOTHING NEW. L2-M9 taught -issimus and said it means 'most' and 'very'; said of an obvious failure it means the opposite, exactly as English 'brilliant' does. optimē! of something gone wrong is the whole construction, and L1-M2 taught optimē in the second module of the course. A module that opens with a forty-rung-old word used sarcastically is doing what an L5 should.",
+        "THE VOCATIVE FINALLY ARRIVES, AND IT ARRIVES AS A JOKE. L2-M7 wanted Mārce for a telephone call and could not have it; every level since has named the gap. Here it is, because mock address is where a vocative is most audible — ō stulte!, ō Mārce! — and because a module about teasing can afford a shape a module about phoning could not. Mārce is a NEW KEY and a new row: Mārcus is L1-M1's and a vocative is a different surface, so it needs its own row with a note back at the first-teach.",
+        "nimium ('too much') AND tandem ('really, pray') ARE THE MODULE's TWO TONE WORDS. nimium plus an adjective is plain exaggeration; quid tandem? is 'what on earth?' and tandem is doing nothing but carrying impatience, which is a kind of word English has (the 'on earth') and a learner will not expect to find a single Latin word for. Both are fresh rows and both are cheap.",
+        'INDEX SEAM: ō, Mārce, stulte, nimium, tandem, rīdeō (with rīdēs) are fresh rows. optimē, gravissimus, sed, quid and the whole of L2-M9 are taught. Written nowhere: anything from Martial that needs a footnote; obscenity of any kind; and the vocative of a name this course has not taught in the nominative.',
+      ],
+      maxWordsPerSentence: 14,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L5-M3': {
+      id: 'L5-M3',
+      title: 'How they say it there',
+      job: 'Regional and generational speech; what marks an outsider',
+      patterns: [
+        'N-nom + V (the same sentence, three traditions in `sound`)',
+        'Plautine: N-acc + V-present',
+        'Ciceronian: N-acc + V + , + N-abl',
+        'Vulgar: <de + N-abl for a case ending>',
+        '<one sentence, three pronunciations named>',
+      ],
+      notes: [
+        "FOR LATIN, 'HOW THEY SAY IT THERE' IS NOT A PLACE — IT IS A TRADITION, AND THAT IS THE DECISION THIS MODULE TAKES. There is no home vernacular, as en-sa's L5 had to say of Sanskrit and en-ar's of Arabic. What Latin has instead is THREE LIVING PRONUNCIATION TRADITIONS — restored classical (c as k, v as w, ae as 'eye'), ecclesiastical (c as ch before e and i, v as v, ae as 'ay'), and the national school traditions, of which the English one is the strangest — and a REGISTER SPECTRUM across a thousand years: Plautine, Ciceronian, Vulgar. The module teaches both axes and neither is regional.",
+        "display STAYS IN THIS COURSE's TRADITION AND sound IS WHERE THE VARIANTS LIVE. That is the whole mechanism: one sentence, one spelling, and a sound line naming what a restored-classical reader and an ecclesiastical reader each do with it. The orthography does not move — docs/123's macrons are the course's spelling and not a claim about pronunciation — so nothing in the emitted index changes and no key is spent on a variant. An author who writes two displays for two traditions has minted two keys for one sentence.",
+        "THE REGISTER SPECTRUM IS PROSE ONLY AND IT IS WHERE A LEARNER IS MARKED AS AN OUTSIDER. The tell is not accent but LEVEL: writing Ciceronian periods in a conversation, or Plautine abuse in a letter. One sentence in each of three registers is the module's core, and the usage line on each says where it belongs. Vulgar Latin is named and its one visible feature written — dē plus the ablative where a classical writer would use a case ending — because that is the change every Romance language is built on and a learner who has met French or Spanish will recognise it instantly.",
+        'NOTHING IN THIS MODULE IS A NEW GRAMMATICAL SYSTEM. The cap goes on two or three register words and on the sound lines, which are prose and cost no surfaces at all. That is deliberate: a module about how a language is said should spend its budget on saying rather than on grammar.',
+        "INDEX SEAM: dē is the one fresh row that matters, plus whatever two or three register words the sentences need. Everything else should be taught. Written nowhere: a second display of any sentence; a phonetic transcription in display; and any claim that one tradition is correct — the course's own tradition is a choice and the note says so.",
+      ],
+      maxWordsPerSentence: 14,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L5-M4': {
+      id: 'L5-M4',
+      title: 'Formal occasions',
+      job: 'Toasts, speeches, condolences, ceremonies',
+      patterns: [
+        'avē atque valē',
+        'requiēscat in pāce',
+        'bene tibi',
+        'grātiās agō + N-dat',
+        'N-voc + , + V-imperative (formal address)',
+      ],
+      notes: [
+        'THE ECCLESIASTICAL REGISTER IS AT HOME HERE AND NOWHERE ELSE IN THIS COURSE, and this module is where the decision is taken. requiēscat in pāce is not classical Latin: it is liturgical, it is the Latin most English speakers have actually seen, and a condolence is the one occasion where it is the right thing to say. So M4 writes it, names the register in a usage line, and M1 refuses it — a saying and a liturgical formula are different things and the course keeps them in different modules.',
+        "avē atque valē IS CATULLUS AND IT IS THE OLDEST THING IN THE COURSE. avē is a fresh row; valē is L1-M2's, taught in the second module as an everyday goodbye, and here it is half of a farewell to the dead. That contrast is the module: the same word, forty rungs apart, at opposite ends of a life. atque is L1-M10's and is the lexicalised one-word form, not a seam.",
+        "THE VOCATIVE'S SECOND USE IS FORMAL ADDRESS, and M2 opened the shape as a joke. Here it is serious — a speech addresses its audience — and the two uses in one level is the honest way to teach a case whose whole job is tone. M2 owns the key; this module's rows point back at it.",
+        "grātiās agō TAKES THE DATIVE AND L1-M2's grātiās DID NOT. That module taught grātiās as a bare thanks; the full construction is grātiās agō tibi, 'I give thanks to you', with L1-M2's agō and M1's dative — so a formal thanks is three taught words in an arrangement the course has never written. bene tibi ('good health to you') is the toast, and it is a dative with no verb at all.",
+        'INDEX SEAM: avē, requiēscat, pāce (with pāx) are fresh rows. valē, atque, grātiās, agō, tibi, bene and in are all taught. Written nowhere: any liturgical formula beyond the one above; the vocative of a name M2 has not opened; and vōs, which L2-M1 banned course-wide and which a formal occasion is the last place to smuggle back.',
+      ],
+      maxWordsPerSentence: 15,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L5-M5': {
+      id: 'L5-M5',
+      title: 'Big questions',
+      job: 'Values, beliefs, abstract talk',
+      patterns: [
+        'N-tās + est + N-nom',
+        'quid est + N-nom',
+        'virtūs + N-gen',
+        'crēdō + N-acc + V-infinitive',
+        'nēmō + V',
+      ],
+      notes: [
+        'THE ABSTRACT NOUNS ARE A SUFFIX, NOT A VOCABULARY LIST: -tās and -tūdō make an abstract out of an adjective, and both are feminine. vērus gives vēritās, līber gives lībertās, fortis gives fortitūdō. A learner who has forty rungs of adjectives can now make nouns out of them, which is the single most productive thing this level teaches — and every one of them is a word English has borrowed, so recognition is free and the ENDING is what has to be learned.',
+        "virtūs IS THE COGNATE TRAP MADE A LESSON. It does not mean 'virtue' in the modern sense: it is vir plus -tūs, 'manliness', hence courage, hence excellence of any kind — and a Roman praising a woman's virtūs was paying a real compliment with a word built out of 'man'. Say all of that. It is the clearest case in the course of a borrowed word drifting, and the module should state the Roman meaning and the English one side by side rather than choosing.",
+        "crēdō TAKES THE ACCUSATIVE AND INFINITIVE FOR A BELIEF AND THE DATIVE FOR A PERSON. crēdō deōs esse is 'I believe gods exist'; crēdō tibi is 'I believe you'. Two constructions, one verb, and the difference is what is being believed — a proposition or a person. L3-M3's putō only had the first.",
+        "nēmō ('nobody') IS THE SEVENTH WORD IN THIS COURSE WITH A NEGATIVE INSIDE IT, after nōlō, mālō, negō, nisi, nesciō and nōndum. It is nē plus homō, and it takes no nōn: nēmō scit, 'nobody knows'. The note should list all seven, because by L5 that is a fact about how Latin builds words rather than a set of exceptions.",
+        "INDEX SEAM: vēritās (M1's, if that module wrote it), lībertās, fortitūdō, virtūs, crēdō, nēmō and deus are fresh rows. quid, est, sum and the whole accusative-and-infinitive machinery are taught. Written nowhere: any theological claim the course cannot support; the ablative absolute, which is M6's; and -tiō abstracts, which would be a third suffix for one job.",
+      ],
+      maxWordsPerSentence: 15,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L5-M6': {
+      id: 'L5-M6',
+      title: 'Arguing a position',
+      job: 'A structured case, objections answered',
+      patterns: [
+        'prīmum ... deinde ... dēnique',
+        'at + V (an objection in another voice)',
+        'immō + V (a correction upwards)',
+        'N-abl + V-participle-abl (the ablative absolute)',
+        'quod sī + V (and if)',
+      ],
+      notes: [
+        "THE ABLATIVE ABSOLUTE ARRIVES, AND L4-M2 AND L4-M4 BOTH WANTED IT. It is two words in the ablative doing the work of an English clause: hīs rēbus dictīs, 'these things having been said'; Caesare duce, 'with Caesar as leader'. There is no verb in it and no conjunction — the case IS the connection — and it is the most compressed construction in the language, which is why a structured argument is where it belongs. Teach it with a participle the course already has (dictīs, frāctō) and ONE fixed pair, and do not decline anything new.",
+        "at AND immō ARE TWO DIFFERENT OBJECTIONS AND THE DIFFERENCE IS DIRECTION. at introduces someone ELSE's objection in their voice — 'but, you will say' — and it comes first in its clause. immō corrects UPWARDS: 'on the contrary, and more than that'. L1-M9's sed is the neutral 'but' and this module's two are pointed, which is the whole apparatus of a Latin argument and costs two words.",
+        "dēnique COMPLETES L2-M10's SEQUENCERS FOR AN ARGUMENT RATHER THAN A STORY. prīmum, deinde, dēnique is the classical three-part structure — 'first, next, finally' — and postrēmō, which L2-M10 taught, closes a narrative instead. Both are 'finally' and the register differs: say which is which, because a learner who ends an argument with postrēmō has told a story.",
+        "quod sī ('and if, but if') IS TWO TAUGHT WORDS MEANING SOMETHING NEITHER MEANS ALONE, and it is the one place this course writes quod at all beyond L1-M9's 'because'. THAT IS A HOMOGRAPH DECISION: quod's key is L1-M9's, the note there says 'because', and a row in this module must name both readings — the same remedy L4-M6's cum rows use. If a brief cannot afford that note, the phrase is not worth the key.",
+        "INDEX SEAM: at, immō, dēnique, rēbus (with rēs) and the ablative-absolute participles the module writes are fresh rows. prīmum, deinde, sed, quod, sī, itaque and ideō are taught. Written nowhere: the indirect question, which is M7's; a participle of a verb the course has not taught; and quārē, whose key would carry a reading quia already covers.",
+      ],
+      maxWordsPerSentence: 15,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L5-M7': {
+      id: 'L5-M7',
+      title: 'Between the lines',
+      job: 'Implication, sarcasm, indirect requests',
+      patterns: [
+        'nōn male (litotes)',
+        'nōnne + V (a loaded question as a request)',
+        'quaerō + quid + V-subjunctive (the indirect question)',
+        'sī placet + , + V-subjunctive',
+        'Adj-issimus (ironic, from M2)',
+      ],
+      notes: [
+        "THE INDIRECT QUESTION ARRIVES AND IT IS THE LAST CONSTRUCTION THIS COURSE OWES. L4-M5's haud sciō an only looked like one; this is the real thing — quaerō quid agās, 'I ask what you are doing', with a SUBJUNCTIVE in the question. English keeps the indicative and Latin does not, which is the whole of the difference and the reason it was held to L5: it needs a mood a learner is fluent in.",
+        "LITOTES IS THE MODULE's CENTRAL MOVE AND L4-M5 ALREADY TAUGHT ITS SHARPEST CASE. nōn male ('not badly') means 'rather well'; nōn ignōrō means 'I know perfectly well'. haud sciō an was the extreme version and it reversed entirely. So this module is not opening a device but completing one, and the note should point back — a learner who has met one litotes will read the others correctly.",
+        'AN INDIRECT REQUEST IS A LOADED QUESTION, AND L4-M4 BUILT THE MACHINERY. nōnne expects yes, so nōnne mē adiuvābis? is a request rather than a question; sī placet plus a subjunctive is the polite frame. Both are taught or nearly so, which is what lets this module spend its cap on the indirect question instead.',
+        "SARCASM IS M2's IRONIC SUPERLATIVE IN A COLDER REGISTER, and the two modules should not repeat each other. M2 teases a friend; M7 implies something a listener is meant to work out and possibly resent. The same optimē carries both, and the difference is the usage line — which is the honest way to teach tone in a language nobody will hear you speak.",
+        "INDEX SEAM: male, quaerō, ignōrō, placet (already taught) and whatever the indirect questions need are fresh rows. nōnne, num, optimē, sī, nōn and the whole subjunctive are taught. Written nowhere: an indirect question with an indicative in it, which is the module's mistake plate and never a display; and a second negative in a litotes.",
+      ],
+      maxWordsPerSentence: 16,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L5-M8': {
+      id: 'L5-M8',
+      title: 'When words run out',
+      job: 'Paraphrase, ask what something means, repair a misunderstanding',
+      patterns: [
+        'quid sibi vult + N-nom',
+        'iterum dīc',
+        'id est + N-nom (a paraphrase)',
+        'quō modō dīcitur + N-nom',
+        'nōn id dīcere voluī',
+      ],
+      notes: [
+        "quid sibi vult? IS THE IDIOM FOR 'WHAT DOES IT MEAN?' AND IT IS BUILT FROM THREE TAUGHT WORDS. Literally 'what does it want for itself' — quid is L1-M2's, sibi is the dative of L3-M5's sē, vult is L1-M3's. So the most useful question in this module costs one row (sibi) and a note, which is what a module this late should look like.",
+        "id est IS THE PARAPHRASE FRAME AND THE LEARNER HAS BEEN WRITING IT IN ENGLISH FOR YEARS. 'i.e.' is this phrase, and a module about running out of words is the right place to say so. id is a fresh row — is, ea, id, whose masculine object eum L3-M3 opened — and est needs nothing.",
+        "REPAIR IS AN IMPERATIVE PLUS AN ADVERB AND COSTS NOTHING: iterum dīc ('say it again'), lentē dīc ('say it slowly'). iterum is L2-M7's, lentē is M1's (in festīnā lentē), dīc is dīcō's order shape and is fresh. A learner who can say those two things can hold a conversation up indefinitely, which is what the job means by repair.",
+        "nōn id dīcere voluī ('that is not what I meant to say') IS THE MODULE's ONE LONG SENTENCE AND IT USES L4-M3's vellem's INDICATIVE SIBLING. voluī is the perfect of volō, plain and unremarkable, and the whole phrase is four taught words plus id. State that the apology for a misunderstanding in Latin is a statement of intention rather than a formula.",
+        'INDEX SEAM: sibi, id, dīc, modō (with quō modō as a phrase), voluī are fresh rows. quid, vult, est, iterum, lentē, dīcitur and nōn are taught. Written nowhere: quōmodo as one word, since the course writes the two-word form and a single key for either would do; and any metalinguistic term the course has not taught.',
+      ],
+      maxWordsPerSentence: 16,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L5-M9': {
+      id: 'L5-M9',
+      title: 'Telling it your way',
+      job: 'Retell a known story in your own register',
+      patterns: [
+        'ōlim + N-nom + V-imperfect (a fable opens)',
+        'subitō + V-perfect',
+        '<quotation> + , + inquit',
+        'N-abl + V-participle-abl (the ablative absolute, from M6)',
+        '<six-sentence retelling with a moral>',
+      ],
+      notes: [
+        "A PHAEDRUS FABLE IS THE OBVIOUS SOURCE AND THE DECISION IS TO RETELL RATHER THAN QUOTE. Phaedrus wrote in verse and this course writes prose, so the module takes a fable every learner half-knows — the fox and the crow, the wolf and the lamb — and tells it in the learner's OWN register, with L4-M8's imperfect for the scene and L4-M10's inquit for the dialogue. Name the fable and the fabulist in a usage line; do not write a line of his verse, because a hexameter in display would be a register this course has never taught.",
+        "A FABLE ENDS IN A MORAL AND THAT IS WHERE M5's ABSTRACTS EARN THEIR PLACE. haec fābula docet … — 'this story teaches …' — and what it teaches is an abstract noun: vēritās, lībertās, virtūs. So the module's last sentence is M5's suffix doing the work of a whole tradition, and docet is L3-M2's verb.",
+        'THE ANIMALS ARE THE ONLY NEW VOCABULARY AND THEY SHOULD BE FEW. vulpēs, corvus, lupus, agnus: two of them, not four, and the cap goes on the retelling rather than on a bestiary. fābula itself is fresh and is the word the module is named for.',
+        "EVERY NARRATIVE TOOL IN THIS MODULE IS L4's. The imperfect for background, the perfect for events, inquit inside a quotation, subitō for the turn, pro-drop with the subject named once where it changes — all of it landed at L4-M8 and L4-M10, and this module is the first that can retell something rather than recount it. Say that: the difference between L4-M10 and this is that here the story is one the listener already knows, which is what makes register the point.",
+        "INDEX SEAM: fābula, vulpēs, corvus (or whichever two animals), and the ablative absolute of M6 are the fresh rows. ōlim, subitō, inquit, docet, the imperfect and the perfect are all taught. Written nowhere: verse of any kind; a fable with a moral the course's vocabulary cannot state; and any animal beyond the two the story needs.",
+      ],
+      maxWordsPerSentence: 16,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L5-M10': {
+      id: 'L5-M10',
+      title: 'Your own voice',
+      job: 'An eight-sentence piece that changes register midway',
+      patterns: [
+        '<four sentences, Ciceronian>',
+        '<four sentences, Plautine>',
+        'at + V (the hinge)',
+        'sed quid dīcam (the turn made explicit)',
+        '<eight sentences, one register switch, sound changing with it>',
+      ],
+      notes: [
+        'THE REGISTER SWITCH IS THE MODULE AND IT MUST BE VISIBLE IN THREE PLACES: in the Latin, in the sound lines, and in the usage lines. Four sentences in one register and four in another — Ciceronian to Plautine is the sharpest pair, and classical to ecclesiastical is the other option — with a HINGE sentence that names the turn. M3 taught the spectrum; this is where a learner writes across it, which is the whole point of a level called Voice.',
+        "sound CARRIES THE PRONUNCIATION CHANGE AND display DOES NOT, which is M3's mechanism unchanged. A Ciceronian sentence and a Plautine one are spelled by the same rules — docs/123's macrons are this course's orthography and not a claim about any tradition — so the switch shows in vocabulary, sentence length and word order, and the sound lines say what a reader of each tradition would do. An author who changes the spelling has minted keys for a variant.",
+        "THE HINGE IS ONE SENTENCE AND IT SHOULD BE SHORT. at is M6's objection word and it comes first in its clause; sed quid dīcam? ('but what am I saying?') names the turn out loud with M7's indirect-question mood. Either works. What does not work is switching register silently, because a learner reading eight sentences will read a silent switch as an inconsistency rather than a choice.",
+        "NOTHING NEW IS TAUGHT HERE. Forty-nine modules of ladder, and the last rung's cap should go almost entirely unspent — every word in the piece should be in the index already, and if a register needs a word the course has not taught, the register is being pushed further than the course can support. That is the same discipline L2-M10, L3-M10 and L4-M10 each kept, at four, eight and six sentences.",
+        "ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE COURSE, as it did at L1-M10, L2-M10, L3-M10 and L4-M10: macrons on every long vowel per the OLD, v and i and never j, no apostrophe, no acute, NFC precomposed, no script line, a hyphen only before que, ne or ve, and a straight double quote only inside a quotation (L4-M10 verified that one stays out of the index). This is the fiftieth module and the last chance for a slip, and there is STILL NO BUILD GATE on en-la's spelling — checkScriptMode returns an empty report for a native row — so the only things between a wrong macron and a learner are src/course/types.test.ts's en-la block and the author's own sweep.",
+      ],
+      maxWordsPerSentence: 16,
       newWordCap: NEW_WORD_CAP,
     },
   },
