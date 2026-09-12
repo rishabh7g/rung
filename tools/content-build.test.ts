@@ -307,9 +307,20 @@ describe('the gate ships the graduated course, and both gates now agree', () => 
     expect(emittedCourseIds(STRICT)).toContain(FIXTURE_COURSE);
   });
 
-  it('strict: en-la ships too, with the ten rungs its first level has (#637)', () => {
+  /**
+   * en-la ships, and its FIRST LEVEL is whole. Asserted on the shape of the report line rather than
+   * on an exact module count (#639): every authoring wave changes the count, and a test that pins it
+   * turns each wave into a touch on this file for no gain. What is worth catching is a course that
+   * stops shipping or ships a partial L1, and both of those still fail here.
+   */
+  it('strict: en-la ships too, with its first level whole (#637)', () => {
     expect(STRICT.shipped.has(FIXTURE_COURSE)).toBe(true);
-    expect(STRICT.lines).toContain('en-la: 10 modules (L1-M1..M10)');
+    const line = STRICT.lines.find((l) => l.startsWith('en-la: '));
+    expect(line, 'en-la has a report line').toBeDefined();
+    expect(line).toMatch(/^en-la: \d+ modules \(L1-M1\.\.M10/);
+    expect(STRICT.shipped.get(FIXTURE_COURSE)).toEqual(
+      expect.arrayContaining(['L1-M1', 'L1-M5', 'L1-M10']),
+    );
     expect(existsSync(path.join(STRICT.outRoot, FIXTURE_COURSE, 'levels.json'))).toBe(true);
   });
 
@@ -339,7 +350,10 @@ describe('the gate ships the graduated course, and both gates now agree', () => 
   it('dev: --with-fixtures changes nothing at all, because nothing is a fixture', () => {
     expect(DEV.exitCode).toBe(0);
     expect(DEV.lines).toContain('en-sa: 15 modules (L1-M1..M10, L2-M1..M5)');
-    expect(DEV.lines).toContain('en-la: 10 modules (L1-M1..M10)');
+    // A shape rather than a count, for the reason the case above gives.
+    expect(DEV.lines.find((l) => l.startsWith('en-la: '))).toMatch(
+      /^en-la: \d+ modules \(L1-M1\.\.M10/,
+    );
     expect(DEV.lines.filter((line) => line.includes('FAIL'))).toEqual([]);
     expect(emittedCourseIds(DEV)).toEqual(emittedCourseIds(STRICT));
     expect([...DEV.shipped.entries()].sort()).toEqual([...STRICT.shipped.entries()].sort());
