@@ -1,6 +1,7 @@
-# en-sa L1–L5 — LLM review (#608, #609, #610, #613, #614, #615, #617, #618, #619, #621, #622, #623, #625, #626)
+# en-sa L1–L5 — LLM review (#608, #609, #610, #613, #614, #615, #617, #618, #619, #621, #622, #623, #625, #626, #627)
 
-Fourteen waves, one record, FOUR complete levels and the first five rungs of the fifth. **Sections 1–10
+Fifteen waves, one record, and a COMPLETE FIVE-LEVEL COURSE — fifty rungs, 450 surfaces, `maxSpan`
+still 1, and the shown-surface ratchet at ZERO from L1-M1 to L5-M10. **Sections 1–10
 are L1-M1 · L1-M2 (#608)**; **sections 11–19 are L1-M3 · L1-M4 · L1-M5 (#609)**; **sections 20–28
 are L1-M6 … L1-M10 (#610)**, which closed Level 1; **sections 29–37 are L2-M1 · L2-M2 (#613)**,
 which open Level 2 into a course that now SHIPS; **sections 38–46 are L2-M3 · L2-M4 · L2-M5
@@ -10,11 +11,14 @@ are L3-M1 · L3-M2 (#617)**, which open Level 3; **sections 65–72 are L3-M3 ·
 are L4-M1 · L4-M2 (#621)**, which OPEN Level 4; **sections 90–98 are L4-M3 · L4-M4 · L4-M5
 (#622)**; **sections 99–107 are L4-M6 … L4-M10 (#623)**, which CLOSE Level 4; and **sections
 108–116 are L5-M1 · L5-M2 (#625)**, which OPEN Level 5 — the last level of the course; and
-**sections 117–125 are L5-M3 · L5-M4 · L5-M5 (#626)**, which take it to halfway. The open
+**sections 117–125 are L5-M3 · L5-M4 · L5-M5 (#626)**, which take it to halfway; and **sections
+126–134 are L5-M6 … L5-M10 (#627)**, which CLOSE Level 5 and with it the course. The open
 questions
-run in one list from 1 to 216 across all fourteen, and none of them is closed — the fluent-speaker
+run in one list from 1 to 231 across all fifteen, and none of them is closed — the fluent-speaker
 gate
-of §9 is **UNMET** for every rung of all five levels. The file has been renamed once per wave that
+of §9 is **UNMET** for every rung of all five levels, and with the course finished it is no longer
+an outstanding task but **the course's standing debt**: nothing downstream can correct it, because
+there is no rung after L5-M10. The file has been renamed once per wave that
 widened its scope: it was `…-L1-M1-M2.md`,
 then `…-L1.md`, then `…-L1-L2.md`, then `…-L1-L3.md`, then `…-L1-L4.md`, and it is now
 `…-L1-L5.md`. **#619's claim
@@ -6678,3 +6682,622 @@ run individually, as every wave since #610 has.
 touched — and so is `git diff --stat` over `content/en-sa/modules/L5-M1.json` and `L5-M2.json` and
 over the other ten courses. The only tracked file this wave modifies under `content/` is
 `content/en-sa/levels.json`; the three module files are new.
+
+---
+
+## Wave 15 — L5-M6 · L5-M7 · L5-M8 · L5-M9 · L5-M10 (#627) — the level closes, and with it the course
+
+**Date:** 2026-09-12 · **Reviewer:** Claude Opus 5, LLM review, authorised by the repo owner ·
+**Bar:** LLM review plus owner authority.
+
+**THE FLUENT-SPEAKER GATE IS UNMET, AND WITH THIS WAVE IT BECOMES THE COURSE'S STANDING DEBT
+RATHER THAN AN OUTSTANDING TASK ON AN UNFINISHED LADDER.** Fifty modules, five levels, 450
+surfaces and 216 open questions before this wave were all cleared by an LLM reading what has been
+written about Sanskrit; not one of them was cleared by somebody who speaks it. Nothing downstream
+of this wave will correct that, because there is no module after L5-M10: **the course is complete
+and unreviewed by a speaker at the same moment.** §133 adds the last fifteen questions and says
+which of them a learner would actually be misled by if the answer came back no. No later authoring
+wave may close one of them by rewriting a shipped module.
+
+---
+
+## 126. What was authored
+
+Five modules — the sixth through tenth rungs of Level 5, and the forty-sixth through fiftieth of
+the course.
+
+| | L5-M6 Arguing a position | L5-M7 Between the lines | L5-M8 When words run out | L5-M9 Telling it your way | L5-M10 Your own voice |
+| --- | --- | --- | --- | --- | --- |
+| sentences | 10 (`S01`…`S10`) | 10 | 10 | 10 | 10, each an **eight-sentence piece** |
+| variations | 30 — 3 on every sentence | 30 | 30 | 30 | 30 |
+| comprehension items | 13 | 13 | 13 | 13 | 13, each a piece |
+| rules | 10 | 10 | 10 | 10 | 10 |
+| word rows shown | 47, of which 5 `delta` | 36, of which 2 `delta` | 33, of which 5 `delta` | 34, of which 4 `delta` | 46, of which **0 `delta`** |
+| surfaces this module adds | 4 | 2 | 5 | 7 | **0 — an EMPTY DELTA** |
+| cumulative index | 436, maxSpan 1 | 438, maxSpan 1 | 443, maxSpan 1 | 450, maxSpan 1 | **450, maxSpan 1** |
+| register | `neutral` ×10 | `neutral` ×10 | `neutral` ×10 | `neutral` ×9, **`formal` ×1** | **`formal` ×10** |
+
+**Eighteen surfaces across five rungs**, and the level's own arithmetic now reads
+14 + 6 + 14 + 8 + 6 + 4 + 2 + 5 + 7 + 0 = **66**, on top of L4's cumulative 384, which is the 450
+the emitted `L5-M10.json` reports. All five carry enrichment at the density every M6–M10 on this
+course has used: `trap`, `literal`, `usage` and three `variations` on all ten sentences of all five,
+with `sound` on 4, 4, 6, 5 and 3, `mistake` on 5, 4, 4, 4 and 3, and `mnemonic` on 6, 5, 7, 4 and 2.
+There is **no `glossEn`** anywhere (#405) and none of the five carries `fixture: true`.
+
+`prerequisites` is the previous rung in each case — `["L5-M5"]`, `["L5-M6"]`, `["L5-M7"]`,
+`["L5-M8"]`, `["L5-M9"]` — and the five were authored strictly in ladder order with a rebuild
+between each, so M8's prompt saw M7's `saṅketaḥ`, M9's saw M8's `arthaḥ`, and **M10 was written
+against the full 450-surface fold**, which is the only way its empty delta could be planned rather
+than discovered.
+
+**M10 ACHIEVED THE EMPTY DELTA.** That was the brief's target and the thing worth checking twice:
+`public/content/en-sa/index/L5-M10.json` carries `"surfaces": {}`, `"surfaceCount": 450` and
+`"maxSpan": 1`. It is the second time on this course after L3-M10, and it means the last rung of the
+last level of the last course of the arc buys nothing at all — every one of its ten eight-sentence
+pieces, all thirty variations and all thirteen pool pieces are built entirely out of what the
+previous forty-nine rungs taught.
+
+`content/en-sa/levels.json` now shows **all ten L5 rungs `hasContent: true` with no module-level
+`draft`**, and **L5's own level `draft` and `draftNote` are gone** — the file carries **no `draft`
+key anywhere**, which a scan of the serialised JSON confirms. `tools/content-build.test.ts`'s
+`FINISHED` set is extended to `['L1', 'L2', 'L3', 'L4', 'L5']`, so a level flag reappearing now
+fails there.
+
+**Provenance.** All five carry `verified: true` with
+`verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"` and `verifiedAt: "2026-09-12"`,
+shipped in the same change as the content (CLAUDE.md's standing rule), and this document is that
+change's record.
+
+---
+
+## 127. What was checked, mechanically
+
+Beyond `npm run content:validate` (550/550 ok) and both builds, a scratch script walked every
+string of all five files and asserted, per file — **0 problems reported**:
+
+- **NFC.** Every string equals its own `.normalize('NFC')`.
+- **Devanagari is confined to `script`.** Zero Devanagari codepoints appear outside a `script`
+  field — not in a `display`, a `forms` entry, or any English `note`, `rule`, `trap`, `sound`,
+  `usage`, `mnemonic`, `cue` or `changed`. M9 is the module where that rule is load-bearing: it
+  names the Pañcatantra in English prose and writes no Sanskrit name at all.
+- **IAST only.** Every `display`, word row and `forms` entry matches the alphabet
+  `src/course/types.test.ts` enumerates.
+- **Pada form.** No token ends in `ṃ`, none carries an avagraha, none carries a hyphen.
+- **`script` on every sentence, variation and pool item; `script` on NO mistake plate** — all
+  twenty plates carry none.
+- **Every `script` line was GENERATED from its `display` rather than typed.** A transliterator was
+  written for this wave and validated against the 2385 `script` lines the course already shipped:
+  it reproduces **all 2385 byte for byte** before it was used to write one new line. That is the
+  only mechanical defence this repo has against a Devanagari typo, since nothing in the build reads
+  a `script` line back.
+- **Bounds.** Every hero sits inside its own declared `minWordsPerSentence`…`maxWordsPerSentence`
+  (M6 4–15, M7 3–15, M8 3–16, M9 3–16, M10 3–16), and for M10 the bound was applied to **each
+  sentence inside each eight-sentence piece**, which is the rule L3-M10 and L4-M10 set. No pool item
+  case-insensitively equals a hero.
+
+**`maxSpan` is still 1**, at fifty rungs and at the end of the course. Nothing in the five modules
+is a multi-token surface: the emitted `L5-M6.json` … `L5-M10.json` indexes all report
+`"maxSpan": 1`, and the deltas are 4, 2, 5, 7 and 0 single tokens.
+
+---
+
+## 128. The ratchet finishes at ZERO, at FIFTY rungs
+
+The dev build prints **nine `shown but untaught` lines in the whole catalogue and not one of them
+is en-sa's** — hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr 20 · en-de 11 ·
+en-ko 12, every one of them older than en-sa, with en-la at zero beside it.
+`tools/shown-surfaces.test.ts` was **not touched**: `'en-sa': 0` still holds, no baseline was
+lowered or raised, and **the number is now final** — there is no rung left that could spend it.
+
+**Four things were done before a display was written rather than found afterwards.**
+
+1. **M9's tale is named in ENGLISH and its actors are common nouns.** This was the most dangerous
+   module in the level: a known story is known by its names, and the Pañcatantra, the lion's name in
+   any retelling and the hare's would each ride unindexed (#61) and be COUNTED (#491). The tale and
+   its collection are named in `usage` and in the rule prose, in English; the actors are `siṃhaḥ`,
+   `śaśakaḥ` and `vanam`, each with a word row of its own. **`rāmaḥ` and `sītā` remain the only two
+   names this course writes, and no rung above L1 adds one.**
+2. **A token checker was run against every display, variation and pool item of every module BEFORE
+   the build saw it**, folding the emitted index and adding the module's own rows and `forms`. It
+   caught **nine would-be findings across the wave**, every one of them the named failure mode — a
+   paradigm cell assumed because its neighbours exist. They are listed in §132.
+3. **M10 was checked for an empty delta rather than hoped into one.** Every piece was written
+   against the folded 450 and re-checked after each edit; three pool pieces had to be rewritten (§132)
+   and the target held.
+4. **Every new row that holds more than one shape was written citation-shape-first.** `siṃhaḥ` holds
+   `siṃham`, `kathā` holds `kathām`, `vanam` holds `vane` — and the forest row was **corrected during
+   authoring**: its first draft was headed `vane`, the locative, because that is the shape S02 shows.
+   It now reads `vanam`, so a tap on either shape lands on the citation form with a case-neutral cue.
+
+---
+
+## 129. Every comprehension token resolves to the RIGHT row
+
+Sixty-five pool items, read token by token out of the emitted
+`public/content/en-sa/index/L5-M6.json` … `…/L5-M10.json` and followed back to the word row each one
+lands on. Every token resolves, and every landing row's gloss fits the sentence it is in.
+
+**L5-M6 — the thirteen items and the rows they land on.**
+
+| item | tokens → landing row (gloss) |
+| --- | --- |
+| `C01 prathamam adhyayanam kartavyam.` | `prathamam`→L2-M10 `prathamam` (first) · `adhyayanam`→L3-M2 `adhyayanam` (study · studying) · `kartavyam`→L4-M1 `kartavyam` (must be done) |
+| `C02 dvitīyam vidyā jñānam dadāti.` | `dvitīyam`→L5-M6 `dvitīyam` (second) · `vidyā`→L5-M1 `vidyā` (learning · knowledge) · `jñānam`→L5-M3 `jñānam` (knowledge) · `dadāti`→L5-M1 `dadāti` (gives) |
+| `C03 tṛtīyam adhyayanam sukham dadāti.` | `tṛtīyam`→L5-M6 `tṛtīyam` (third) · `adhyayanam`→L3-M2 `adhyayanam` (study · studying) · `sukham`→L3-M6 `sukham` (happiness · ease) · `dadāti`→L5-M1 `dadāti` (gives) |
+| `C04 mama mate idam uttamam asti.` | `mama`→L1-M1 `aham` (I · me) · `mate`→L4-M4 `mate` (opinion · view) · `idam`→L1-M1 `idam` (this · this thing) · `uttamam`→L2-M3 `uttamaḥ` (excellent · very good) · `asti`→L1-M3 `asti` (is · there is) |
+| `C05 atra ekaḥ praśnaḥ asti, kintu bhayam na asti.` | `atra`→L1-M7 `atra` (here) · `ekaḥ`→L1-M8 `ekaḥ` (one) · `praśnaḥ`→L5-M5 `praśnaḥ` (a question) · `asti`→L1-M3 `asti` (is · there is) · `kintu`→L1-M10 `kintu` (but) · `bhayam`→L3-M6 `bhayam` (fear) · `na`→L1-M2 `na` (no · not) |
+| `C06 avaśyam bhavān evam vadet, kintu aham na manye.` | `avaśyam`→L4-M4 `avaśyam` (certainly · of course) · `bhavān`→L1-M2 `bhavān` (you (polite) · your honour) · `evam`→L5-M3 `evam` (thus · this way) · `vadet`→L5-M6 `vadet` (might say · would say) · `kintu`→L1-M10 `kintu` (but) · `aham`→L1-M1 `aham` (I · me) · `na`→L1-M2 `na` (no · not) · `manye`→L3-M3 `manye` (I think · I am of the view) |
+| `C07 atra bhavataḥ praśnaḥ asti, uttaram api asti.` | `atra`→L1-M7 `atra` (here) · `bhavataḥ`→L1-M2 `bhavān` (you (polite) · your honour) · `praśnaḥ`→L5-M5 `praśnaḥ` (a question) · `asti`→L1-M3 `asti` (is · there is) · `uttaram`→L5-M6 `uttaram` (an answer · a reply) · `api`→L1-M10 `api` (also · too) |
+| `C08 ataḥ pratidinam adhyayanam kartavyam.` | `ataḥ`→L1-M9 `ataḥ` (so · therefore) · `pratidinam`→L1-M4 `pratidinam` (every day · daily) · `adhyayanam`→L3-M2 `adhyayanam` (study · studying) · `kartavyam`→L4-M1 `kartavyam` (must be done) |
+| `C09 yadi samayaḥ asti, tarhi adhyayanam kartavyam.` | `yadi`→L3-M4 `yadi` (if) · `samayaḥ`→L4-M7 `samayaḥ` (time) · `asti`→L1-M3 `asti` (is · there is) · `tarhi`→L3-M4 `tarhi` (then · in that case) · `adhyayanam`→L3-M2 `adhyayanam` (study · studying) · `kartavyam`→L4-M1 `kartavyam` (must be done) |
+| `C10 ante uttaram ekam eva asti.` | `ante`→L2-M10 `ante` (in the end · finally) · `uttaram`→L5-M6 `uttaram` (an answer · a reply) · `ekam`→L1-M8 `ekaḥ` (one) · `eva`→L5-M1 `eva` (indeed · itself · nothing but) · `asti`→L1-M3 `asti` (is · there is) |
+| `C11 mama mate pariṇāmaḥ uttamaḥ asti.` | `mama`→L1-M1 `aham` (I · me) · `mate`→L4-M4 `mate` (opinion · view) · `pariṇāmaḥ`→L4-M2 `pariṇāmaḥ` (result · outcome) · `uttamaḥ`→L2-M3 `uttamaḥ` (excellent · very good) · `asti`→L1-M3 `asti` (is · there is) |
+| `C12 kadācit bhavān anyathā vadet.` | `kadācit`→L3-M3 `kadācit` (perhaps · sometimes) · `bhavān`→L1-M2 `bhavān` (you (polite) · your honour) · `anyathā`→L5-M3 `anyathā` (otherwise · differently) · `vadet`→L5-M6 `vadet` (might say · would say) |
+| `C13 avaśyam idam satyam, tathāpi mama matam bhinnam.` | `avaśyam`→L4-M4 `avaśyam` (certainly · of course) · `idam`→L1-M1 `idam` (this · this thing) · `satyam`→L3-M3 `satyam` (true · that's right) · `tathāpi`→L1-M10 `tathāpi` (even so · nevertheless) · `mama`→L1-M1 `aham` (I · me) · `matam`→L4-M4 `mate` (opinion · view) · `bhinnam`→L4-M5 `bhinnam` (different) |
+
+**L5-M7 — the thirteen items and the rows they land on.**
+
+| item | tokens → landing row (gloss) |
+| --- | --- |
+| `C01 mahyam jalam na asti, kṛpayā jalam dadātu.` | `mahyam`→L1-M1 `aham` (I · me) · `jalam`→L1-M3 `jalam` (water) · `na`→L1-M2 `na` (no · not) · `asti`→L1-M3 `asti` (is · there is) · `kṛpayā`→L2-M1 `kṛpayā` (please) · `dadātu`→L1-M3 `dadātu` (please give · let (him/her) give) |
+| `C02 atra uṣṇam asti, ataḥ aham gṛham gacchāmi.` | `atra`→L1-M7 `atra` (here) · `uṣṇam`→L5-M7 `uṣṇam` (heat · hot) · `asti`→L1-M3 `asti` (is · there is) · `ataḥ`→L1-M9 `ataḥ` (so · therefore) · `aham`→L1-M1 `aham` (I · me) · `gṛham`→L1-M6 `gṛham` (house · home) · `gacchāmi`→L1-M2 `gacchati` (goes · is going) |
+| `C03 bhavān adhunā bhojanam khādet.` | `bhavān`→L1-M2 `bhavān` (you (polite) · your honour) · `adhunā`→L4-M6 `adhunā` (now) · `bhojanam`→L2-M5 `bhojanam` (meal · food) · `khādet`→L3-M4 `khādet` (should eat) |
+| `C04 saḥ kevalam saṅketaḥ āsīt.` | `saḥ`→L1-M5 `saḥ` (he · that man) · `kevalam`→L5-M2 `kevalam` (only · merely) · `saṅketaḥ`→L5-M7 `saṅketaḥ` (a hint · a sign) · `āsīt`→L4-M8 `āsīt` (was · used to be) |
+| `C05 atra evam na kriyate iti niyamaḥ asti.` | `atra`→L1-M7 `atra` (here) · `evam`→L5-M3 `evam` (thus · this way) · `na`→L1-M2 `na` (no · not) · `kriyate`→L4-M7 `kriyate` (is done · is carried out) · `iti`→L3-M5 `iti` ((closes the quote)) · `niyamaḥ`→L4-M7 `niyamaḥ` (rule · regulation) · `asti`→L1-M3 `asti` (is · there is) |
+| `C06 kim bhavān śvaḥ sāyam kāryālaye asti?` | `kim`→L1-M2 `kim` ((yes/no marker) · what) · `bhavān`→L1-M2 `bhavān` (you (polite) · your honour) · `śvaḥ`→L1-M6 `śvaḥ` (tomorrow) · `sāyam`→L1-M4 `sāyam` (in the evening) · `kāryālaye`→L3-M8 `kāryālayaḥ` (office) · `asti`→L1-M3 `asti` (is · there is) |
+| `C07 idam na kartavyam iti sūcanā.` | `idam`→L1-M1 `idam` (this · this thing) · `na`→L1-M2 `na` (no · not) · `kartavyam`→L4-M1 `kartavyam` (must be done) · `iti`→L3-M5 `iti` ((closes the quote)) · `sūcanā`→L4-M7 `sūcanā` (notice · announcement) |
+| `C08 mahyam adhunā samayaḥ na asti.` | `mahyam`→L1-M1 `aham` (I · me) · `adhunā`→L4-M6 `adhunā` (now) · `samayaḥ`→L4-M7 `samayaḥ` (time) · `na`→L1-M2 `na` (no · not) · `asti`→L1-M3 `asti` (is · there is) |
+| `C09 atra jalam dīyate, kintu bhojanam na dīyate.` | `atra`→L1-M7 `atra` (here) · `jalam`→L1-M3 `jalam` (water) · `dīyate`→L4-M7 `dīyate` (is given · is issued) · `kintu`→L1-M10 `kintu` (but) · `bhojanam`→L2-M5 `bhojanam` (meal · food) · `na`→L1-M2 `na` (no · not) |
+| `C10 bhavataḥ saṅketaḥ mahyam rocate.` | `bhavataḥ`→L1-M2 `bhavān` (you (polite) · your honour) · `saṅketaḥ`→L5-M7 `saṅketaḥ` (a hint · a sign) · `mahyam`→L1-M1 `aham` (I · me) · `rocate`→L1-M1 `rocate` (is pleasing · (someone) likes) |
+| `C11 saḥ kruddhaḥ na āsīt.` | `saḥ`→L1-M5 `saḥ` (he · that man) · `kruddhaḥ`→L3-M6 `kruddhaḥ` (angry) · `na`→L1-M2 `na` (no · not) · `āsīt`→L4-M8 `āsīt` (was · used to be) |
+| `C12 kim tatra uṣṇam asti?` | `kim`→L1-M2 `kim` ((yes/no marker) · what) · `tatra`→L1-M7 `tatra` (there) · `uṣṇam`→L5-M7 `uṣṇam` (heat · hot) · `asti`→L1-M3 `asti` (is · there is) |
+| `C13 mama saṅketaḥ kevalam parihāsaḥ āsīt.` | `mama`→L1-M1 `aham` (I · me) · `saṅketaḥ`→L5-M7 `saṅketaḥ` (a hint · a sign) · `kevalam`→L5-M2 `kevalam` (only · merely) · `parihāsaḥ`→L5-M2 `parihāsam` (a joke · fun) · `āsīt`→L4-M8 `āsīt` (was · used to be) |
+
+**L5-M8 — the thirteen items and the rows they land on.**
+
+| item | tokens → landing row (gloss) |
+| --- | --- |
+| `C01 idam kim iti arthaḥ?` | `idam`→L1-M1 `idam` (this · this thing) · `kim`→L1-M2 `kim` ((yes/no marker) · what) · `iti`→L3-M5 `iti` ((closes the quote)) · `arthaḥ`→L5-M8 `arthaḥ` (meaning · sense) |
+| `C02 kṛpayā punaḥ kathayatu.` | `kṛpayā`→L2-M1 `kṛpayā` (please) · `punaḥ`→L2-M5 `punaḥ` (again · more) · `kathayatu`→L1-M2 `kathayatu` (please tell · let (him/her) tell) |
+| `C03 aham na avagacchāmi.` | `aham`→L1-M1 `aham` (I · me) · `na`→L1-M2 `na` (no · not) · `avagacchāmi`→L5-M8 `avagacchāmi` (I follow · I understand) |
+| `C04 idam vastu phalam iva asti.` | `idam`→L1-M1 `idam` (this · this thing) · `vastu`→L5-M8 `vastu` (a thing · an object) · `phalam`→L1-M1 `phalam` (fruit) · `iva`→L5-M8 `iva` (like · as it were) · `asti`→L1-M3 `asti` (is · there is) |
+| `C05 bhavān śanaiḥ vadatu, aham chātraḥ.` | `bhavān`→L1-M2 `bhavān` (you (polite) · your honour) · `śanaiḥ`→L5-M8 `śanaiḥ` (slowly · gently) · `vadatu`→L2-M7 `vadati` (speaks · says) · `aham`→L1-M1 `aham` (I · me) · `chātraḥ`→L1-M1 `chātraḥ` (student) |
+| `C06 arthaḥ kim iti aham na jānāmi.` | `arthaḥ`→L5-M8 `arthaḥ` (meaning · sense) · `kim`→L1-M2 `kim` ((yes/no marker) · what) · `iti`→L3-M5 `iti` ((closes the quote)) · `aham`→L1-M1 `aham` (I · me) · `na`→L1-M2 `na` (no · not) · `jānāmi`→L2-M8 `jānāmi` (I know) |
+| `C07 samasyā na asti, aham avagacchāmi.` | `samasyā`→L2-M8 `samasyā` (problem · difficulty) · `na`→L1-M2 `na` (no · not) · `asti`→L1-M3 `asti` (is · there is) · `aham`→L1-M1 `aham` (I · me) · `avagacchāmi`→L5-M8 `avagacchāmi` (I follow · I understand) |
+| `C08 saḥ arthaḥ mahyam na rocate.` | `saḥ`→L1-M5 `saḥ` (he · that man) · `arthaḥ`→L5-M8 `arthaḥ` (meaning · sense) · `mahyam`→L1-M1 `aham` (I · me) · `na`→L1-M2 `na` (no · not) · `rocate`→L1-M1 `rocate` (is pleasing · (someone) likes) |
+| `C09 idam vastu vastram iva asti, kintu vastram na asti.` | `idam`→L1-M1 `idam` (this · this thing) · `vastu`→L5-M8 `vastu` (a thing · an object) · `vastram`→L3-M9 `vastram` (cloth · garment) · `iva`→L5-M8 `iva` (like · as it were) · `asti`→L1-M3 `asti` (is · there is) · `kintu`→L1-M10 `kintu` (but) · `na`→L1-M2 `na` (no · not) |
+| `C10 saḥ arthaḥ kim iti bhavān kathayatu.` | `saḥ`→L1-M5 `saḥ` (he · that man) · `arthaḥ`→L5-M8 `arthaḥ` (meaning · sense) · `kim`→L1-M2 `kim` ((yes/no marker) · what) · `iti`→L3-M5 `iti` ((closes the quote)) · `bhavān`→L1-M2 `bhavān` (you (polite) · your honour) · `kathayatu`→L1-M2 `kathayatu` (please tell · let (him/her) tell) |
+| `C11 adhunā mahyam saṃśayaḥ na asti.` | `adhunā`→L4-M6 `adhunā` (now) · `mahyam`→L1-M1 `aham` (I · me) · `saṃśayaḥ`→L4-M5 `saṃśayaḥ` (doubt) · `na`→L1-M2 `na` (no · not) · `asti`→L1-M3 `asti` (is · there is) |
+| `C12 saḥ śanaiḥ vadati, ataḥ aham avagacchāmi.` | `saḥ`→L1-M5 `saḥ` (he · that man) · `śanaiḥ`→L5-M8 `śanaiḥ` (slowly · gently) · `vadati`→L2-M7 `vadati` (speaks · says) · `ataḥ`→L1-M9 `ataḥ` (so · therefore) · `aham`→L1-M1 `aham` (I · me) · `avagacchāmi`→L5-M8 `avagacchāmi` (I follow · I understand) |
+| `C13 kṛpayā punaḥ vadatu, aham na avagacchāmi.` | `kṛpayā`→L2-M1 `kṛpayā` (please) · `punaḥ`→L2-M5 `punaḥ` (again · more) · `vadatu`→L2-M7 `vadati` (speaks · says) · `aham`→L1-M1 `aham` (I · me) · `na`→L1-M2 `na` (no · not) · `avagacchāmi`→L5-M8 `avagacchāmi` (I follow · I understand) |
+
+**L5-M9 — the thirteen items and the rows they land on.**
+
+| item | tokens → landing row (gloss) |
+| --- | --- |
+| `C01 ekaḥ vṛddhaḥ janaḥ grāme āsīt.` | `ekaḥ`→L1-M8 `ekaḥ` (one) · `vṛddhaḥ`→L2-M2 `vṛddhaḥ` (old · elder) · `janaḥ`→L3-M9 `janaḥ` (person) · `grāme`→L4-M9 `grāmam` (village) · `āsīt`→L4-M8 `āsīt` (was · used to be) |
+| `C02 siṃhaḥ vane āsīt, śaśakaḥ api tatra āsīt.` | `siṃhaḥ`→L5-M9 `siṃhaḥ` (a lion) · `vane`→L5-M9 `vanam` (a forest · woodland) · `āsīt`→L4-M8 `āsīt` (was · used to be) · `śaśakaḥ`→L5-M9 `śaśakaḥ` (a hare) · `api`→L1-M10 `api` (also · too) · `tatra`→L1-M7 `tatra` (there) |
+| `C03 akasmāt siṃhaḥ kruddhaḥ āsīt.` | `akasmāt`→L4-M10 `akasmāt` (suddenly · all at once) · `siṃhaḥ`→L5-M9 `siṃhaḥ` (a lion) · `kruddhaḥ`→L3-M6 `kruddhaḥ` (angry) · `āsīt`→L4-M8 `āsīt` (was · used to be) |
+| `C04 mama pitā mahyam kathām uktavān.` | `mama`→L1-M1 `aham` (I · me) · `pitā`→L2-M2 `pitā` (father) · `mahyam`→L1-M1 `aham` (I · me) · `kathām`→L5-M9 `kathā` (a story · a tale) · `uktavān`→L3-M5 `uktavān` (said (a man) · has said) |
+| `C05 vane ekaḥ mārgaḥ āsīt.` | `vane`→L5-M9 `vanam` (a forest · woodland) · `ekaḥ`→L1-M8 `ekaḥ` (one) · `mārgaḥ`→L2-M4 `mārgaḥ` (road · way) · `āsīt`→L4-M8 `āsīt` (was · used to be) |
+| `C06 śaśakaḥ bhītaḥ āsīt, kintu saḥ śāntaḥ āsīt.` | `śaśakaḥ`→L5-M9 `śaśakaḥ` (a hare) · `bhītaḥ`→L3-M6 `bhītaḥ` (afraid · frightened) · `āsīt`→L4-M8 `āsīt` (was · used to be) · `kintu`→L1-M10 `kintu` (but) · `saḥ`→L1-M5 `saḥ` (he · that man) · `śāntaḥ`→L2-M2 `śāntaḥ` (calm · peaceable) |
+| `C07 idam śrutvā sā santuṣṭā āsīt.` | `idam`→L1-M1 `idam` (this · this thing) · `śrutvā`→L4-M4 `śrutvā` (having heard) · `sā`→L1-M5 `sā` (she · that woman) · `santuṣṭā`→L1-M9 `santuṣṭaḥ` (content · pleased) · `āsīt`→L4-M8 `āsīt` (was · used to be) |
+| `C08 ante siṃhaḥ vanam gatavān.` | `ante`→L2-M10 `ante` (in the end · finally) · `siṃhaḥ`→L5-M9 `siṃhaḥ` (a lion) · `vanam`→L5-M9 `vanam` (a forest · woodland) · `gatavān`→L1-M2 `gacchati` (goes · is going) |
+| `C09 mahyam kathā rocate, yataḥ kathā sukham dadāti.` | `mahyam`→L1-M1 `aham` (I · me) · `kathā`→L5-M9 `kathā` (a story · a tale) · `rocate`→L1-M1 `rocate` (is pleasing · (someone) likes) · `yataḥ`→L1-M9 `yataḥ` (because · since) · `sukham`→L3-M6 `sukham` (happiness · ease) · `dadāti`→L5-M1 `dadāti` (gives) |
+| `C10 siṃhaḥ vanam gatavān iti ucyate.` | `siṃhaḥ`→L5-M9 `siṃhaḥ` (a lion) · `vanam`→L5-M9 `vanam` (a forest · woodland) · `gatavān`→L1-M2 `gacchati` (goes · is going) · `iti`→L3-M5 `iti` ((closes the quote)) · `ucyate`→L4-M7 `ucyate` (is called · is said) |
+| `C11 śaśakaḥ siṃham uktavān iti kathā.` | `śaśakaḥ`→L5-M9 `śaśakaḥ` (a hare) · `siṃham`→L5-M9 `siṃhaḥ` (a lion) · `uktavān`→L3-M5 `uktavān` (said (a man) · has said) · `iti`→L3-M5 `iti` ((closes the quote)) · `kathā`→L5-M9 `kathā` (a story · a tale) |
+| `C12 vane janāḥ na santi.` | `vane`→L5-M9 `vanam` (a forest · woodland) · `janāḥ`→L3-M9 `janaḥ` (person) · `na`→L1-M2 `na` (no · not) · `santi`→L3-M9 `santi` (are (more than one)) |
+| `C13 bālaḥ kathām śrutvā santuṣṭaḥ āsīt.` | `bālaḥ`→L2-M2 `bālaḥ` (boy · child (m)) · `kathām`→L5-M9 `kathā` (a story · a tale) · `śrutvā`→L4-M4 `śrutvā` (having heard) · `santuṣṭaḥ`→L1-M9 `santuṣṭaḥ` (content · pleased) · `āsīt`→L4-M8 `āsīt` (was · used to be) |
+**L5-M10 — thirteen items, each an eight-sentence piece.** A piece carries between 16 and 32
+distinct tokens, so the table below records the count and then names every token that resolves into
+LEVEL 5 — the rows most likely to mis-land, because they are the newest. The full token-by-token
+walk was run and every one of the 323 distinct-token lookups across the thirteen pieces resolved to
+a row whose gloss fits its sentence.
+
+| item | tokens | Level 5 landings |
+| --- | --- | --- |
+| `C01` | 28 distinct, all resolved | `eva`→L5-M1 `eva` (indeed · itself · nothing but) |
+| `C02` | 28 distinct, all resolved | `eva`→L5-M1 `eva` (indeed · itself · nothing but) |
+| `C03` | 19 distinct, all resolved |  |
+| `C04` | 28 distinct, all resolved | `eva`→L5-M1 `eva` (indeed · itself · nothing but) |
+| `C05` | 20 distinct, all resolved | `siṃhaḥ`→L5-M9 `siṃhaḥ` (a lion) · `vane`→L5-M9 `vanam` (a forest · woodland) · `śaśakaḥ`→L5-M9 `śaśakaḥ` (a hare) · `vanam`→L5-M9 `vanam` (a forest · woodland) |
+| `C06` | 25 distinct, all resolved | `jñānam`→L5-M3 `jñānam` (knowledge) · `dadāti`→L5-M1 `dadāti` (gives) · `dvitīyam`→L5-M6 `dvitīyam` (second) · `vidyā`→L5-M1 `vidyā` (learning · knowledge) · `vinayam`→L5-M1 `vinayam` (good conduct · humility) · `vadet`→L5-M6 `vadet` (might say · would say) · `uttaram`→L5-M6 `uttaram` (an answer · a reply) |
+| `C07` | 23 distinct, all resolved | `avagacchāmi`→L5-M8 `avagacchāmi` (I follow · I understand) · `śāstre`→L5-M3 `śāstram` (a treatise · the scholarly register) · `uccāraṇam`→L5-M3 `uccāraṇam` (pronunciation · the saying of a word) · `anyathā`→L5-M3 `anyathā` (otherwise · differently) |
+| `C08` | 28 distinct, all resolved | `eva`→L5-M1 `eva` (indeed · itself · nothing but) |
+| `C09` | 16 distinct, all resolved |  |
+| `C10` | 32 distinct, all resolved | `eva`→L5-M1 `eva` (indeed · itself · nothing but) |
+| `C11` | 28 distinct, all resolved | `uṣṇam`→L5-M7 `uṣṇam` (heat · hot) · `kevalam`→L5-M2 `kevalam` (only · merely) · `saṅketaḥ`→L5-M7 `saṅketaḥ` (a hint · a sign) · `evam`→L5-M3 `evam` (thus · this way) |
+| `C12` | 26 distinct, all resolved | `svasti`→L5-M4 `svasti` (good fortune · well-being) · `vivāhaḥ`→L5-M4 `vivāhaḥ` (a wedding · a marriage) · `śubham`→L5-M4 `śubham` (the good · what is auspicious) · `maṅgalam`→L5-M4 `maṅgalam` (blessing · auspiciousness) · `sādhu`→L5-M4 `sādhu` (well done · good) · `vadanti`→L5-M1 `vadanti` (say · speak (more than one)) · `eva`→L5-M1 `eva` (indeed · itself · nothing but) |
+| `C13` | 22 distinct, all resolved | `śanaiḥ`→L5-M8 `śanaiḥ` (slowly · gently) · `śāstre`→L5-M3 `śāstram` (a treatise · the scholarly register) · `anyathā`→L5-M3 `anyathā` (otherwise · differently) · `sambhāṣaṇe`→L5-M3 `sambhāṣaṇam` (conversation · spoken Sanskrit) · `evam`→L5-M3 `evam` (thus · this way) |
+
+**Four landings worth naming, three of them pre-existing and unfixable from here.**
+
+1. **`janāḥ` lands on L3-M9's `janaḥ`, cued in the SINGULAR** — the standing near-miss from waves 13
+   and 14, now in M10-C12 and M9-C12. The row's note carries the plural explicitly. Still open
+   question 206; a level never edits a file below it, so L5 closes without closing it.
+2. **`vṛṣṭiḥ` lands on a row headed `vṛṣṭeḥ`** — L4-M2 wrote the ablative as the row's display and
+   the nominative into its `forms`, so the citation shape is not first. The cue is the bare "rain"
+   and fits either shape, so nothing a learner reads is wrong; the row is simply headed by the
+   wrong one of its two shapes. **L5 cannot fix it** and logs it as open question 222.
+3. **Every participial past lands on the L1 verb row, which is cued in the third-person present.**
+   `gatavān` → L1-M2 `gacchati` "goes · is going", `kṛtavān` → L1-M4 `karoti` "does · makes",
+   `paṭhitavatī` → L1-M4 `paṭhati` "reads · studies". This is the course's oldest and most
+   deliberate compromise, unchanged since L1-M2 authored a one-row verb with six shapes in its
+   `forms`, and it is what every past-tense module since L3-M10 has relied on. The rows' notes list
+   the past shapes by name. Not a finding of this wave; recorded because M9 and M10 lean on it
+   harder than anything before them.
+4. **`adhikam` in M10-C10 is the one gloss-fit stretch in the wave.** `nagare śulkam adhikam asti`
+   is "the fee is higher in the city", and L2-M9's row is cued "more". The gloss is true of the
+   word and slightly thin for the sentence; it was kept because the alternative was a new comparative
+   this course has never bought, and the honest fix belongs to a reviewer rather than to L5.
+
+**`jānāti` was avoided everywhere again, for the fourth wave running**, and this wave had two
+places that wanted it: M8, whose whole subject is knowing and not-knowing, and M9's moral. L2-M8's
+row is displayed `jānāmi` and cued "I know", so a third-person `jānāti` would land on a first-person
+gloss. **M8 writes `jānāmi` five times and `jānāti` never**, and M9-S10's moral is claimed with
+`aham jānāmi` for the same reason. `icchati` was avoided on identical grounds — L1-M3's row is
+displayed `icchāmi` and cued "I want" — and M10-S08 writes `icchāmi` where a third person would have
+been the easier sentence.
+
+---
+
+## 130. Decisions that could look like bugs
+
+1. **M10's register chip is `formal` on all ten pieces, and each piece begins `neutral`.** There is
+   one `register` field per `Sentence` and a piece changes register inside itself, so the chip
+   cannot follow the turn. The ruling, written into M10's rule 3: **the chip names the HIGHEST
+   register the piece reaches.** A piece carrying `ucyate`, `kriyate`, `niṣiddhaḥ` and a gerundive
+   is not a neutral piece, and a `neutral` chip on it would understate what the learner is about to
+   read. The alternative — chipping `neutral` because that is where the piece starts — was rejected
+   for the same reason. The issue text (#627) says "the chip changing with them"; the schema does
+   not allow it, and this is the nearest honest thing.
+2. **M9-S03 is the only `formal` sentence outside M10, and it says the same thing as M9-S02.**
+   That is the module's payload made visible: `ekaḥ siṃhaḥ vane āsīt` and
+   `vane ekaḥ siṃhaḥ āsīt iti ucyate` are one event in two registers, set side by side as
+   consecutive heroes so a learner meets them in the same screenful.
+3. **M7-S02's mistake plate is grammatically CORRECT Sanskrit.** `ām, atra uṣṇam asti.` is a
+   perfectly good sentence, and it is the mistake: agreeing with the observation is how an indirect
+   request is refused without either party noticing. The brief asked for the plate to sit on the
+   literal misreading, and a misreading is not a misspelling. It is the only plate on this course
+   whose `display` is well-formed, and its `why` says so in its first clause so that nobody reads it
+   as a slip. Every other plate in the wave is a real form error.
+4. **M6-S04 puts a masculine adjective beside a neuter subject.**
+   `tṛtīyam adhyayanam uttamaḥ abhyāsaḥ asti` — `uttamaḥ` agrees with `abhyāsaḥ`, the predicate
+   noun, and not with `adhyayanam`. A predicate noun keeps its own gender, and the sentence's `trap`
+   says so, because the line looks like an agreement error and is not one.
+5. **M6 and M7 both write `idam` twice in one sentence rather than using a pronoun.**
+   `bhavān idam pustakam paṭhet, yataḥ idam uttamam asti` could use L3-M2's `tat` — and must not,
+   because `tat` is the neuter CORRELATIVE and there is no relative clause here to answer. A tap on
+   it would land on a note about `yat … tat`. This is the withdrawn-pool-item shape from earlier
+   waves, applied in advance to a hero.
+6. **M8's `avagacchāmi` is written in the first person and in no other.** The row's display is the
+   first-person form and its cue is "I follow · I understand", which is the same shape L2-M8's
+   `jānāmi` takes — deliberately, because the module's whole job is the learner saying it about
+   themselves. A third person of it is written nowhere, including in variations and pool items, so
+   the row can never be tapped from a shape it does not gloss. M8-C10 was rewritten for exactly this
+   (`kim bhavān avagacchati?` → `saḥ arthaḥ kim iti bhavān kathayatu.`).
+7. **M9 tells the tale about one animal at a time.** The plural participial past is written nowhere
+   on this course, so `gatavantaḥ` and its kin do not exist; the lion acts, then the hare acts, and
+   the two never act together. M9's rule 5 says this is a constraint rather than a style, and the
+   present plural (`gacchanti`, `khādanti`, `vadanti`) is used freely in M10-S07 because the PRESENT
+   has its plural on this ladder and the past does not.
+8. **M6's objection is raised by nobody.** `atra ekaḥ praśnaḥ asti` has no "someone" in it, and the
+   indefinite pronoun is refused on two grounds at once: it is printed joined, with the avagraha
+   `docs/121` §2.3 forbids and `surface.ts` rule 3 would not strip, and undoing the join gives
+   L2-M7's interrogative and L1-M10's `api`, two rows glossed "who" and "also" — a learner tapping
+   for "someone" would be told neither. The impersonal frame costs zero keys and is what a speaker
+   says.
+9. **M7 contains a `formal`-chipped verb in `neutral` sentences.** `kriyate` and `dīyate` were
+   chipped `formal` by L4-M7 at the SENTENCE level, and M7 reuses the verbs in neutral lines. The
+   chip is a property of the sentence, not of the row, and M7's rule 4 says so; the row's gloss is
+   true in both places, which is the test that matters.
+10. **Three `sound` respellings were rewritten AFTER the first font measurement.** The first draft
+    wrote `GṚI-ham`, `KṚI-ta-vaan`, `sam-SKṚI-tam`, `tṛi-TEE-yam`, `kṛi-pa-YAA`, `USH-ṇam` and
+    `PA-ṭhi-ta-vaan` — respellings carrying IAST marks, against this course's ASCII-only respelling
+    rule. One of them, the CAPITAL `Ṛ` (U+1E5A), was a codepoint new to the repository, and it moved
+    the generated `mukta` cut by **284 bytes**. §134 records the measurement from both directions.
+
+---
+
+## 131. The briefs' ownership plan, and the three places it was corrected
+
+Every ownership claim in the L5 brief's §6, §7, §8, §9, §10 and §11 was re-grepped against the
+folded snapshot (432 surfaces through L5-M5) before anything was written. **Three corrections,
+recorded here rather than by editing `tools/course-briefs.ts`, which this wave leaves untouched.**
+
+1. **§6 says M6's spend is "three ordinals and one verb cell". It is three WORDS and one cell, and
+   only two of the three are ordinals.** `dvitīyam` and `tṛtīyam` are ordinals; `uttaram`, the third
+   fresh row, is a noun meaning an answer. The module emits four surfaces, which is the brief's own
+   arithmetic; the label on them is what was loose.
+2. **§7 says M7 "opens two rows only" and it does — but the brief's §11 does not list them among
+   what L5 opens.** `uṣṇam` and `saṅketaḥ` appear in §7's seam note and are missing from §11's
+   "OPENED, deliberately and narrowly" list, which names M8's and M9's rows but skips M7's. The
+   omission is in the summary, not in the plan, and the emitted delta of 2 is exactly what §7 said.
+3. **§9's claim that M10's "FRESH ROWS SHOULD BE NONE" was achievable is correct, and the brief
+   understates what it costs.** Three of the thirteen pool pieces had to be rewritten to hold it
+   (§132), and two hero pieces were rebuilt around verbs the ladder owns in only one person. The
+   target is right; "if an item needs a word the ladder has not bought, the ITEM is rewritten" is
+   not a contingency in this module, it is the ordinary case.
+
+**What did NOT need correcting.** §8's ruling that M9's tale must be named in English is exactly
+right and is the single most valuable line in the L5 brief: it was written before authoring, and
+the module walked straight at the wall it predicted. §7's claim that there is no word for meaning
+and no verb of understanding in the fold was **verified against the emitted index and is true** —
+`arthaḥ` was absent from all 432 surfaces and `avagacchāmi` from all fifty modules' `forms` lists.
+§6's `vadet` claim was checked the same way: the fold carries `vadati`, `vadatu`, `vadāmi` and
+`vadanti` and **no optative of that verb at all**, so `vadet` really is the eighth cell and the
+level's only one. §9's `tvam` argument is right and §132 shows it held.
+
+---
+
+## 132. Sanskrit that was deliberately NOT written
+
+**Re-verified ABSENT from every `display`, `variation`, `forms` list and pool item across all FIFTY
+modules**, by a token-level sweep over the whole course rather than over this wave. Where a form
+turns up only inside a `mistake` plate, that is noted — a plate is deliberately wrong Sanskrit, is
+never indexed and is never read as a model.
+
+| refused | status at the end of the course |
+| --- | --- |
+| every `-si` present | absent from every display; `gacchasi`, `gamiṣyasi`, `icchasi` and `karoṣi` appear only in L1-M2, L1-M10, L1-M3 and L1-M4 mistake plates, all pre-existing. `paṭhasi`, `vadasi`, `jānāsi` and `asi` are absent from the whole course, plates included. **This wave writes none.** |
+| `tava`, `tubhyam`, `tvām`, `te` | **absent from the whole course**, in every field |
+| `mā` with the imperative | **absent from the whole course**, plates included |
+| `tvam` | **exactly ONE display**, L2-M1-S04, plus that sentence's own word row and `forms` entry. **Unmoved, and now final.** |
+| every bare-stem imperative but `āgaccha` | `gaccha`, `khāda`, `paṭha`, `likha`, `piba`, `kuru`, `vada` and `paśya` all **absent**; `āgaccha` sits only in L2-M1 |
+| every imperfect but `āsīt` | `agacchat` and `agamiṣyat` **absent everywhere**; `akarot` and `abhavat` only in L2-M10 and L2-M8 mistake plates. M9 is a FABLE and writes none of them. |
+| `-syat` | **absent from the whole course** |
+| the productive bare `-ta` participle | **absent**; `jātam` (L2-M8) and `niṣiddhaḥ` (L4-M7) remain the only two frozen members, and M7 and M10 use both without opening a third |
+| **the VOCATIVE** | **absent**, refused a fifth time at L5-M4 and restated in M9's rule 9, where a fable's dialogue wants it: `siṃham uktavān` addresses with the accusative and with nothing else |
+| `svasā` | **absent from the whole course** |
+| `mahat` in any declined cell | **absent**; L5-M5's `mahattvam` seals the consonant stem inside one token |
+| `asmi` | **absent from every display**; only in L1-M1 and L2-M8 mistake plates. M8-S08's `aham chātraḥ` and M10-C04's first draft both wanted it and neither got it. |
+| the plural participial past | **absent** — no `-tavantaḥ` anywhere, which is why M9 tells its tale about one actor at a time |
+| `-anīya` | **absent from the whole course**, named at L4-M1 and again in M6's rule 10 |
+| optative cells | exactly the seven open before this wave plus M6's `vadet`: `gacchet`, `khādet`, `paṭhet`, `gaccheyam`, `paṭheyam`, `paśyeyam`, `syāt`, `vadet`. `khādeyam` appears only in L4-M3's mistake plate; `kuryāt` and `gaccheḥ` are absent. **This wave opens exactly one.** |
+| `jñātavyam` | **absent** — M7, M9 and M10 each drafted a line with it and each was rewritten |
+
+**Nine forms this wave reached for and did not write, each because the fold has no cell for it.**
+All nine were caught by the token checker before the build saw them, which is the point of running
+it in advance.
+
+- **`pṛcchāmi`** — a first-person `pṛcchati`. M8-S01's second variation drafted
+  `kim iti arthaḥ iti aham pṛcchāmi.` and became `kim iti arthaḥ iti mama praśnaḥ asti.`
+- **`jānātu`** — a request shape of `jānāmi`. M8-S05's second variation drafted
+  `idam vastu kim iti bhavān jānātu.` and became `… bhavān kathayatu.`
+- **`asya` and `vastunaḥ`** — a genitive pronoun and a genitive of M8's own new noun, neither of
+  which exists. M8-C06 drafted `asya vastunaḥ arthaḥ kim iti aham na jānāmi.` and became
+  `arthaḥ kim iti aham na jānāmi.`
+- **`avagacchati`** — a third person of the module's own new verb, whose row is written in the first.
+  M8-C10 drafted `kim bhavān avagacchati?` and became `saḥ arthaḥ kim iti bhavān kathayatu.`
+- **`spaṣṭaḥ`** — an adjective the ladder never bought. M8-C11 drafted
+  `adhunā arthaḥ mahyam spaṣṭaḥ.` and became `adhunā mahyam saṃśayaḥ na asti.`
+- **`paśyāmi`** — a first-person `paśyati`; the fold has `paśyati`, `paśyatu`, `paśyanti`,
+  `paśyeyam` and `paśyāmaḥ` and not this one. M10-C02 drafted `aham api tam paśyāmi.` and became
+  `aham api tam jānāmi.`
+- **`tayā`** — an instrumental of `sā`, assumed because `mayā`, `bhavatā` and `bhavatyā` exist.
+  M10-C03 drafted `ataḥ tayā api pratidinam paṭhitavyam.` and became `ataḥ bhavatyā api …`
+- **`asmi`** — M10-C04 drafted `ataḥ aham gṛhe eva asmi.`, which is the one refusal on the list that
+  an English speaker will reach for hardest, and became `ataḥ aham gṛhe eva paṭhāmi.`
+- **`śaśakam`** — an accusative of M9's own new noun, wanted by a drafted variation that reversed
+  who spoke to whom. The variation was rewritten so that only the lion is ever addressed, and the
+  hare's row holds one shape.
+
+**Fourteen more forms were refused at the planning stage and never reached a draft:** `likhitavyam`,
+`khāditavyam`, `dātavyam`, `vaktavyam`, `kartavyā` and `paṭhitavyaḥ` (gerundives of verbs the course
+owns in only three, and gendered shapes of a form that is fixed neuter); `paṭhatu`, `bhavati`,
+`sidhyati`, `kathayāmi`, `vadāmaḥ` and `āgacchati` (cells whose neighbours exist and which do not);
+`anyaḥ`/`anyā` and `sarvam`. Every sentence that wanted one was rewritten.
+
+**Two adjectives refused for GENDER rather than for absence.** `purāṇā` and `uttamā` — this course
+has written its a-stem adjectives in the masculine and the neuter, so a feminine one is not
+available. M9-S01 wanted `ekā purāṇā kathā asti` and ships `ekā kathā asti`; `hrasvā` was wanted by
+an M9 pool draft and the item was rebuilt. That is L5-M5's gender law, met again two rungs later.
+
+---
+
+## 133. Open questions for the fluent-speaker gate — continuing from 216
+
+**The gate is UNMET, and this is where it stops being a task and becomes a debt.** The course is
+finished. Nothing after L5-M10 can absorb a correction, so every one of the 231 questions in this
+document now describes a claim that ships to a learner unverified by anybody who speaks the
+language. Nobody has closed one. No later authoring wave may close one by rewriting a shipped
+module — that rule has held for fifteen waves and it holds after the last one.
+
+**What the bar actually is, said plainly one more time.** en-sa clears LLM review plus the repo
+owner's explicit authority, which is the same bar the other ten courses clear. It does NOT clear
+review by a fluent sambhāṣaṇa speaker or a Sanskrit teacher, and `verifiedBy` says so in those
+words on all fifty modules. The honest summary of this course is: **the orthography, the index and
+the additions-only discipline are machine-verified and hold; the Sanskrit is not.**
+
+217. **`vadet` as the shape a pre-empted objection takes.** Confirm that
+     `avaśyam samayaḥ na asti iti bhavān vadet` is how a speaker raises an objection on the other
+     person's behalf, rather than reading as a prediction about what they are going to say. If the
+     optative does not carry that job here, M6's central move is wrong and there is nothing above it
+     to fix it.
+218. **`uttaram`, `dvitīyam` and `tṛtīyam` in an argument.** Confirm `uttaram` is the ordinary word
+     for the answer to an objection rather than something closer to "a reply, a response" in a
+     letter; and that the adverbial neuters really are what numbers the points of a case, rather
+     than a written-register device a speaker would not use out loud.
+219. **The impersonal objection.** Confirm `atra ekaḥ praśnaḥ asti` is what a speaker says where
+     English says "someone might ask", and say whether refusing the indefinite pronoun entirely
+     leaves a hole a learner will feel. This is the sharpest ruling of the level and it was taken on
+     mechanical grounds, not on grounds of what people say.
+220. **`uṣṇam` and `saṅketaḥ`, and the indirection they carry.** Confirm `atra uṣṇam asti` is the
+     natural way to say it is hot in a room, and that it can be heard as a request; and that
+     `saṅketaḥ` is a hint in the deniable, between-the-lines sense rather than a signal, a code or an
+     appointment. The second is the module's whole distinction from L4-M7's `sūcanā`.
+221. **`mahyam jalam na asti` as a request.** Confirm that a plain statement of lack really does
+     function as a request in spoken Sanskrit, as it does in English and in most of India's
+     languages, rather than reading as a complaint. M7's first sentence rests entirely on this.
+222. **`arthaḥ` and `avagacchāmi`, the two words the ladder went fifty rungs without.** Confirm
+     `kim iti arthaḥ?` is what is actually said for "what does that mean?" — and in particular
+     whether a speaker would say `kaḥ arthaḥ?` or `asya arthaḥ kaḥ?` instead, neither of which this
+     course can write. Then confirm `avagacchāmi` is the everyday verb for following what was said
+     rather than a bookish one, and that `na avagacchāmi` is not too strong for "I didn't catch
+     that". **These two rows answer for the whole course and there is no module after them.**
+     Note also that `vṛṣṭiḥ` lands on a row headed by its ablative `vṛṣṭeḥ` (§129.2), which L5
+     cannot fix.
+223. **`iva`, `vastu` and `śanaiḥ` as the gap-filling kit.** Confirm `idam vastu pustakam iva asti`
+     is how somebody talks around a word they do not have; that `vastu` is the ordinary "thing"
+     rather than a philosophical term; and that `śanaiḥ vadatu` is the request a learner should make
+     rather than something closer to "speak gently".
+224. **The repair etiquette, which is a claim about people and not about grammar.** M8's rule 6 says
+     that opening a repair with `kṣamyatām` reads as confessing to a fault, and that the direct
+     question is the polite form. Confirm or deny. If it is wrong, M8's mistake plate is teaching
+     the opposite of the truth to every learner who reaches the module.
+225. **The tale as told.** Confirm the six narrative sentences of M9 read as a fable rather than as
+     a translation exercise: `ekaḥ siṃhaḥ vane āsīt`, `akasmāt śaśakaḥ siṃham uktavān`,
+     `vane ekaḥ siṃhaḥ asti iti śaśakaḥ uktavān`, `idam śrutvā siṃhaḥ kruddhaḥ āsīt`,
+     `anantaram siṃhaḥ vanam gatavān, kintu tatra siṃhaḥ na āsīt`, and
+     `ante siṃhaḥ khinnaḥ āsīt, śaśakaḥ santuṣṭaḥ āsīt`. Say in particular whether a fable told
+     without a single imperfect sounds wrong to an ear trained on the Pañcatantra, because that is
+     the largest single bet this course makes.
+226. **`siṃham uktavān` as the way a character is addressed.** Confirm the accusative of the person
+     spoken to is right after `uktavān`, and say how badly the missing vocative is felt in dialogue.
+     The refusal has four mechanical grounds (§4 of the L5 brief) and none of them is about how it
+     sounds.
+227. **`kathā` beside `kathayatu`, and `ucyate` as the classical opener.** Confirm `ekā kathā asti`
+     is a natural way to begin, that `vane ekaḥ siṃhaḥ āsīt iti ucyate` is the register move M9
+     claims it is, and that the two really do sit a register apart rather than merely sounding more
+     and less formal to a reader who has been told they do.
+228. **The moral.** `ataḥ kruddhaḥ janaḥ ante khinnaḥ iti aham jānāmi.` Confirm a verbless moral is
+     idiomatic, that claiming it with `jānāmi` rather than asserting it flat is what a teller does,
+     and that generalising from the animal to `janaḥ` is how a Pañcatantra moral is actually drawn.
+229. **M10's ten pieces, and whether the turn is audible to a speaker.** Each piece runs four
+     neutral sentences, a pivot, then three formal ones built on `kriyate`/`dīyate`/`ucyate` and the
+     gerundive with `mayā` or `bhavatā`. Confirm that a listener would hear that as a register
+     change rather than as a change of subject — and say whether the pivot sentences
+     (`ataḥ adhunā mayā ekam kāryam kartavyam`, `tathāpi mayā punaḥ tatra gantavyam`,
+     `kintu adya mayā kāryam kartavyam`) really do belong to both halves.
+230. **Whether the formal half reads as Sanskrit or as officialese.** Three sentences of agentless
+     passive and gerundive, one after another, with nobody in them: that is what a notice looks
+     like, and it is what this course has taught since L4-M7. Say whether a speaker would produce
+     three such sentences in a row in speech, or whether the register this module teaches is a
+     written one being passed off as a spoken one.
+231. **The `tvam` decision, which is the course's largest refusal and is now permanent.** Fifty
+     modules, one `tvam` display, no `-si` present, no `tava`, `tubhyam`, `tvām` or `te`, no
+     vocative. Say plainly whether a learner who finishes this course can hold an ordinary
+     conversation with a friend, or whether the register it teaches is usable only with strangers
+     and teachers — and if the latter, say how much of the ladder would have to be rebuilt to fix
+     it. **This is the question the whole course turns on and it is asked last on purpose.**
+
+---
+
+## 134. Verification run for this change
+
+```
+npm run content:validate                              → CONTENT 550/550 ok
+                                                        (en-sa/L5-M6.json ok … L5-M10.json ok)
+npm run content:build -- --with-unverified --with-fixtures
+                                                      → en-sa: 50 modules
+                                                        (L1-M1..M10, L2-M1..M10, L3-M1..M10,
+                                                         L4-M1..M10, L5-M1..M10)
+                                                          index L5-M6:  436 surfaces, maxSpan 1, delta 4
+                                                          index L5-M7:  438 surfaces, maxSpan 1, delta 2
+                                                          index L5-M8:  443 surfaces, maxSpan 1, delta 5
+                                                          index L5-M9:  450 surfaces, maxSpan 1, delta 7
+                                                          index L5-M10: 450 surfaces, maxSpan 1, delta 0
+                                                        NINE `shown but untaught` lines in the whole
+                                                        build and NONE of them en-sa's — ZERO at
+                                                        FIFTY rungs, and now final
+npx tsc --noEmit                                      → clean
+npx prettier --check .                                → All matched files use Prettier code style!
+npx eslint src/course/types.test.ts tools/content-build.test.ts
+                                                      → clean
+npm run content:build && npm run fonts:build          → en-sa: 50 modules
+                                                        (L1-M1..M10, L2-M1..M10, L3-M1..M10,
+                                                         L4-M1..M10, L5-M1..M10)
+                                                        strict; FONTS 15/15 ok — mukta 332388 bytes
+npx vitest run   (after that STRICT build)            → 1048 passed, 1 failed (see below)
+npx vite build                                        → precache 17 entries (420.13 KiB)
+npm run budget                                        → see the table below
+```
+
+**The generated font cut did NOT move — but it DID move first, and the cause was isolated rather
+than argued away.** The first strict build of this wave reported `mukta` at **332672 bytes**, 284
+more than the 332388 #625 and #626 recorded on this branch. It was isolated in three steps.
+
+1. **Removal.** The five module files were moved out of `content/en-sa/modules/` and
+   `content/en-sa/levels.json` restored; a strict `npm run content:build` reported
+   `en-sa: 45 modules (… L5-M1..M5)` and `npm run fonts:build` reported **mukta 332388 bytes** —
+   confirming the baseline against this tree rather than against a remembered number.
+2. **Codepoints, from the other direction.** A scratch pass collected every character of every
+   string in the five new files and every character of every string in every OTHER file under
+   `content/`, and took the set difference. It was **not** empty: exactly one character,
+   **`Ṛ` U+1E5A, the CAPITAL vocalic r**, was new to the repository. It appeared in one place — the
+   `sound` respelling `GṚI-ham` in L5-M10-S03 — and in two more shapes of the same mistake
+   (`KṚI-ta-vaan`, `sam-SKṚI-tam`), with four further respellings carrying lowercase IAST marks
+   (`tṛi-TEE-yam`, `kṛi-pa-YAA`, `USH-ṇam`, `PA-ṭhi-ta-vaan`).
+3. **Fix and re-measure.** All seven respellings were rewritten ASCII-only — which is this course's
+   rule for a respelling in the first place, so the font growth was a symptom of a content error and
+   not a budget question. The set difference is now **EMPTY**, and a strict
+   `npm run content:build && npm run fonts:build` reports **mukta 332388 bytes**, byte for byte the
+   number the last two waves recorded. The other three faces are unmoved:
+   noto-naskh-arabic 10716, source-sans-3 8968, noto-sans-kr 29784.
+
+**The finished course's payload, recorded because this is the graduation measurement and there will
+not be another.**
+
+```
+BUDGET first-paint   166.7 KiB gzip — 16 files
+BUDGET shell         214.0 KiB gzip — 19 files
+BUDGET course:en-sa  755.9 KiB gzip — 112 files
+BUDGET precache:en-sa 969.8 KiB gzip — 131 files
+BUDGET unmetered       0.0 KiB — 0 files
+BUDGET precache 17 files 205.5 KiB gzip = shell ok
+```
+
+`course:en-sa` is the largest course row in the catalogue — hi-mr is 621.5 KiB and en-es 314.7 —
+and the reason is not this wave: en-sa ships **both** a romanized `display` and a Devanagari
+`script` line on every sentence, variation and pool item, so its module JSON carries two
+renderings of the same fifty rungs. `unmetered` is **0.0 KiB across 0 files** — every shipped file
+has an owner in `owner()` — and the emitted worker's precache list agrees with the `shell` row, so
+BUDGET is green for the reason it is supposed to be green.
+
+**Two known-red tests, measured rather than assumed, and neither chased.**
+`scripts/generate-splash.test.ts` is the one failure in the run above — pre-existing on this
+container's rasterizer, touching nothing this change goes near, and `git status` shows no file under
+`scripts/` or `public/splash/` modified. **`tools/font-coverage.test.ts` PASSES after the strict
+build**, which is why the suite is run in that order: it is red only after
+`--with-unverified --with-fixtures`, and its four characters (`U+000A`, `$`, `×`, `•`) predate all
+en-sa work. **No fifth character was added** — §134's codepoint pass is the same evidence arrived at
+from the other side, and it is what caught the one character that nearly was.
+
+`scripts/verify.sh` was again deliberately NOT run: it stops at the first failing stage and would
+never reach CONTENT while `scripts/generate-splash.test.ts` is red on this host, so the stages were
+run individually, as every wave since #610 has.
+
+### Pinned inventories updated by this change
+
+- `src/course/types.test.ts` — `MODULE_FILES` gains `content/en-sa/modules/L5-M6.json` …
+  `L5-M10.json`; the case title's count moves 545 → 550 and its wording to "ELEVEN complete
+  five-level ladders, en-sa the last to close (#627)". **The en-sa decisions case itself is
+  unchanged** — the intimate-set ban and the `neutral` register assertion are both scoped to `L1`,
+  so M9's one `formal` chip and M10's ten pass it untouched, and no intimate pronoun is written at
+  any level.
+- `tools/content-build.test.ts` — `AUTHORED` gains `L5-M6` … `L5-M10`; **`FINISHED` becomes
+  `['L1', 'L2', 'L3', 'L4', 'L5']`**, so L5's cleared flag is now what the case asserts and a flag
+  reappearing fails; the three `en-sa: 45 modules (…, L5-M1..M5)` assertions become
+  `en-sa: 50 modules (…, L5-M1..M10)`; three case titles and the header comment move to the
+  complete-course wording. **The en-la assertions were not touched.**
+- `tools/shown-surfaces.test.ts` — **untouched.** `'en-sa': 0` still holds, and it is now the final
+  number for this course.
+- `tools/course-briefs.ts` — **untouched, and three corrections to it recorded in §131 instead.**
+- `content/en-sa/levels.json` — `L5-M6` … `L5-M10` lose `draft: true` and gain `hasContent: true`,
+  and **L5's own level `draft` and `draftNote` are removed**. The file now carries **no `draft` key
+  anywhere**, which is the shape a finished course has.
+- `README.md` — the en-sa L5 paragraph gains the closing wave (what the five rungs buy, M6's
+  refused indefinite, M7's two rows and the sentence-level chip, M8's two oldest holes, M9's
+  English-named tale, M10's empty delta and the final one-display `tvam`; module count 45 → 50 and
+  surface count 432 → 450), the ratchet paragraph records that the count finishes at zero across all
+  fifty rungs, the review-doc line moves to fifteen waves and one hundred and thirty-four sections,
+  and the live-catalogue total moves 545 → 550 with every one of the eleven courses at fifty.
+  **The payload-budget paragraph was deliberately left alone**, as every wave since #623 has left
+  it: its `course:en-sa` figure is the GRADUATION measurement, and §134 above is where this wave's
+  numbers are recorded instead.
+- **This file was NOT renamed.** Its scope was already L1–L5 and there is no L6.
+
+`git diff --stat` over every L1, L2, L3 and L4 module file is **EMPTY** — not one lower file was
+touched — and so is `git diff --stat` over `content/en-sa/modules/L5-M1.json` … `L5-M5.json` and
+over the other ten courses. The only tracked file this wave modifies under `content/` is
+`content/en-sa/levels.json`; the five module files are new.

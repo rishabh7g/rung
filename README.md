@@ -1170,7 +1170,7 @@ rungs authored against ten briefs (#607 — `tools/course-briefs.ts`, "en-sa: de
 settle before any Sanskrit is written"), across three authoring issues (#608 L1-M1–M2, #609
 L1-M3–M5, #610 L1-M6–M10) and reviewed in
 [`docs/122-llm-review-en-sa-L1-L5.md`](docs/122-llm-review-en-sa-L1-L5.md) — one document, now
-fourteen waves, one hundred and twenty-five sections and one open-question list. Dropping `fixture: true` from the en-sa row in
+fifteen waves, one hundred and thirty-four sections and one open-question list. Dropping `fixture: true` from the en-sa row in
 `content/courses.json`, and L1's level `draft: true` and its `draftNote` from
 `content/en-sa/levels.json`, was the whole change: a strict `npm run build` reported `en-sa: 10
 modules (L1-M1..M10)` at graduation and emitted `public/content/en-sa/` with levels, strings, ten
@@ -1277,10 +1277,37 @@ VOCATIVE is refused for the fifth time** in the module that wanted it most; and 
 questions" lets the emitted index pick the abstract suffix — `-tva` where an adjective is needed
 (`mahattvam uttamam`, since the ladder has no feminine `uttamam` at all) and `-tā` where the noun is
 a subject (`mitratā mahyam rocate`) — which is also how `mahat` stays refused a fourth time, sealed
-inside one token. A build now reports
-`en-sa: 45 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M10, L5-M1..M5)` and closes at
-**432 surfaces**, `maxSpan` still 1; four levels are complete with no level `draft` flag on any of
-them, and L5 keeps its flag until all ten of its rungs are authored.
+inside one token.
+
+**LEVEL 5 IS CLOSED, AND WITH IT THE COURSE (#627) — en-sa is the catalogue's eleventh complete
+five-level ladder, and the last of the arc to close.** The five rungs that finish it spend
+**eighteen surfaces between them**. `L5-M6` "Arguing a position" is the cheapest module of the
+level and deliberately so: three ordinals (`dvitīyam`, `tṛtīyam`, `uttaram`) and **one optative
+cell**, `vadet`, because a structured case is a shape of talk and the ladder had already bought
+`prathamam`, `yataḥ`, `ataḥ`, `avaśyam … kintu`, `tathāpi` and `mama mate` — and the indefinite
+pronoun is **refused on two grounds at once** (every dictionary prints it joined, with an avagraha
+this course forbids, and undoing the join gives two rows glossed "who" and "also"), so an objection
+is the impersonal `atra ekaḥ praśnaḥ asti` instead, at zero cost. `L5-M7` "Between the lines" opens
+**two rows in the whole module** (`uṣṇam`, `saṅketaḥ`) because every device in it is already owned —
+the statement that is a request (`mahyam jalam na asti`), the optative as a suggestion, the
+agentless passive doing a conversational job — and it is where the ruling that **the register chip
+belongs to the SENTENCE and not to the row** earns its keep, since L4-M7's `formal` passives appear
+here in `neutral` lines. `L5-M8` "When words run out" **pays the two oldest holes in the index**:
+across 438 surfaces there was still no word for MEANING and no verb of UNDERSTANDING, so `arthaḥ`
+and `avagacchāmi` arrive fifty rungs late — the second being L1-M2's `gacchāmi` with a prefix, **a
+lexeme of its own and not a shape**, which its note says out loud — alongside `iva`, `vastu` and
+`śanaiḥ`. `L5-M9` "Telling it your way" retells a Pañcatantra tale whose **name is written in
+ENGLISH and whose actors are common nouns** (`siṃhaḥ`, `śaśakaḥ`, `vanam`, `kathā`), because a
+proper noun rides unindexed and is counted; it tells one event twice, once in the learner's neutral
+voice and once with `ucyate`, and **opens no verb form at all**. And `L5-M10` "Your own voice"
+ships **eight-sentence pieces that turn once, upward, from neutral to formal** — with an **EMPTY
+DELTA, zero new surfaces**, matching what L3-M10 achieved at the end of Level 3 — because the
+downward switch to the intimate register would need the `-si` present, `tava`, `tubhyam`, `tvām`,
+`te` and the vocative bought in the last rung of the last level, so **`tvam` finishes the course at
+exactly ONE display**, L2-M1's. A build now reports
+`en-sa: 50 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M10, L5-M1..M10)` and closes at
+**450 surfaces**, `maxSpan` still 1 after fifty rungs; **all five levels are complete and
+`content/en-sa/levels.json` carries no `draft` key anywhere.**
 
 **The scheme is IAST and the course is written in PADA form, which is the decision everything else
 rests on** (#604, [`docs/121-en-sa-romanization-decisions.md`](docs/121-en-sa-romanization-decisions.md)).
@@ -1310,7 +1337,8 @@ was rewritten into `adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.` out o
 owns. The baseline was never raised; `tools/shown-surfaces.test.ts` still carries `'en-sa': 0`, and
 neither the graduation, nor any of the three L2 waves (#613, #614, #615), nor #617's two L3 rungs,
 nor #618's three, nor #619's five, nor #621's two L4 rungs, nor #622's three, nor #623's five that
-closed the level, nor #625's two L5 rungs, nor #626's three that take L5 to halfway, touched it — L2, L3,
+closed the level, nor #625's two L5 rungs, nor #626's three that take L5 to halfway, nor #627's five
+that CLOSE the course, touched it — **the ratchet finishes at ZERO across all fifty rungs**. L2, L3,
 L4 and L5 write no new proper noun at all, and the
 only names above L1 are L1-M1's `rāmaḥ` and `sītā`, both of which #618's L3-M5 reports in the
 NOMINATIVE rather than opening the vocative a module of quoted dialogue would most want. **#619's
@@ -2740,11 +2768,10 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **545
-  modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
-  forty-five on en-sa, which is the whole of L1, L2, L3 and L4 plus the first five rungs of L5
-  (#611, #613, #614, #615, #617, #618,
-  #619, #621, #622, #623, #625, #626), and **fifty on en-la, which is the whole course** (#637, #641, #645,
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **550
+  modules, fifty on every one of them**: hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de,
+  en-ko, **en-sa, whose five levels closed with #627** (#611, #613, #614, #615, #617, #618,
+  #619, #621, #622, #623, #625, #626, #627), and **en-la** (#637, #641, #645,
   #649, #651, #652, #653) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to

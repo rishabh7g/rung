@@ -1,0 +1,807 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M8",
+  "title": "When words run out",
+  "job": "Paraphrase, ask what something means, repair a misunderstanding",
+  "prerequisites": [
+    "L5-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 16,
+    "allowedTenses": [
+      "simple_present",
+      "verbless_nominal_present",
+      "third_person_imperative"
+    ],
+    "allowedPatterns": [
+      "kim + iti + arthaḥ",
+      "punaḥ + kathayatu",
+      "idam + vastu + pustakam + iva + asti",
+      "aham + na + avagacchāmi",
+      "śanaiḥ + vadatu"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THIS MODULE PAYS TWO HOLES THE LADDER HAS CARRIED SINCE ITS FIRST RUNG. Until now there has been no word for MEANING and no verb of UNDERSTANDING anywhere on this course. arthaḥ is the meaning of a word or a line, masculine. avagacchāmi is following what was said — which is not L2-M8's jānāmi, 'I know'. 'I do not know' and 'I did not follow' are different answers to different questions."
+    },
+    {
+      "tag": "delta",
+      "text": "avagacchāmi IS L1-M2's gacchāmi WITH A PREFIX, AND IT IS ITS OWN WORD. The course's very first verb comes back fifty rungs later meaning 'I follow you', which is the same joke English makes. A PREFIXED VERB IS A LEXEME AND NOT A SHAPE: read the prefix as decoration and you will read every prefixed verb wrongly for the rest of your life."
+    },
+    {
+      "tag": "delta",
+      "text": "kim iti arthaḥ is the whole question 'what does that mean?', and it is built out of three things you already have: L1-M2's kim, L3-M5's quotative iti, and the new noun. The iti is what points at the words just said, so the question is literally 'what is the meaning of that-just-said'."
+    },
+    {
+      "tag": "delta",
+      "text": "iva IS THE PARAPHRASE WORD AND IT STANDS AFTER WHAT IT COMPARES. pustakam iva is 'like a book'. It is postpositive, exactly as L1-M10's ca and L2-M9's vā are, and this is the third time this course has taught that placement rather than the first. With vastu, 'a thing', in front of it, you can describe anything you cannot name: idam vastu pustakam iva asti."
+    },
+    {
+      "tag": "delta",
+      "text": "śanaiḥ asks for slowness and is the most useful word in the module. It takes no ending and stands in front of the verb: śanaiḥ vadatu, śanaiḥ kathayatu. It ends in -ḥ and the visarga is part of the word, not a sandhi product, so it never changes."
+    },
+    {
+      "tag": "interference",
+      "text": "ENGLISH REPAIRS BY APOLOGISING FIRST — 'sorry, I didn't catch that'. L2-M1's kṣamyatām is an apology for a FAULT, so opening every repair with it reads as confessing to one. The direct question is the polite form here: ask what was meant, or ask for it again, and do not say sorry for not having understood."
+    },
+    {
+      "tag": "interference",
+      "text": "English hedges inside a paraphrase with 'or' — 'a chair, or something'. L2-M9's vā is a real disjunction and cannot do that job: vā offers two things and means it. The hedging in a paraphrase is done by iva and by L3-M3's kadācit, and by nothing else on this course."
+    },
+    {
+      "tag": "free",
+      "text": "ASKING WHAT A WORD MEANS IS A DIRECT ACT AND SHOULD BE DONE DIRECTLY. The previous rung was about saying things sideways; this one is its opposite, and mixing them is the commonest error here. A hint that you have not understood is not a repair — it leaves the other person guessing what went wrong."
+    },
+    {
+      "tag": "free",
+      "text": "jānāmi IS WRITTEN IN THE FIRST PERSON AND IN NO OTHER SHAPE ON THIS COURSE, and this module keeps to that. Its row is headed jānāmi and cued 'I know', so a third-person jānāti would send a tap to a first-person gloss. Where somebody else's knowing is needed, the sentence is rewritten rather than the shape guessed."
+    },
+    {
+      "tag": "free",
+      "text": "STILL WRITTEN NOWHERE. kathayāmi and pṛcchāmi — first-person cells of L1-M2's kathayatu and L3-M5's pṛcchati that this module wanted and the ladder does not have; every -si present; the vocative, which asking a named person would reach for; and mā with the imperative. A form this course has not bought is a form this course does not write."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M8-S01",
+      "display": "kim iti arthaḥ?",
+      "cue": "What does that mean?",
+      "literal": "what quote meaning",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's kim, here as 'what': it stands where the answer would stand, which is the placement rule that sorts its two jobs."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative. Here it has nothing written in front of it because what it closes is the words the other person has just said."
+          },
+          {
+            "display": "arthaḥ",
+            "cue": "meaning · sense",
+            "tag": "delta",
+            "forms": [
+              "arthaḥ"
+            ],
+            "note": "The meaning of a word or a line, masculine. The course reaches its fiftieth rung buying this word, which is how long it went without one."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "There is no word for 'that' in this question. iti is doing it: it points back at what was just said, and putting idam in front of it would point at something you can see instead.",
+      "sound": "KIM I-ti AR-thah. The th of arthaḥ is an aspirated t — a t with a puff after it — and never the th of English 'thin'. The whole question is three short beats and is said quickly.",
+      "variations": [
+        {
+          "display": "idam kim iti arthaḥ?",
+          "cue": "What does this mean?",
+          "changed": "a pointing word is added, so the question is about something visible rather than something just said",
+          "script": "इदम् किम् इति अर्थः?"
+        },
+        {
+          "display": "kim iti arthaḥ iti mama praśnaḥ asti.",
+          "cue": "My question is what that means.",
+          "changed": "the question is carried inside iti and made into a thing the speaker HAS, which is L5-M5's frame",
+          "script": "किम् इति अर्थः इति मम प्रश्नः अस्ति।"
+        },
+        {
+          "display": "saḥ arthaḥ mahyam na rocate.",
+          "cue": "I do not like that meaning.",
+          "changed": "the noun is kept and the question dropped, which shows the word standing on its own",
+          "script": "सः अर्थः मह्यम् न रोचते।"
+        }
+      ],
+      "usage": "The question to have ready before you need it. It is short, it is direct, and it is not rude: asking what a word means is an ordinary thing to do in a conversation between a learner and anybody else.",
+      "register": "neutral",
+      "mnemonic": "Three beats, and you are unstuck.",
+      "script": "किम् इति अर्थः?"
+    },
+    {
+      "id": "L5-M8-S02",
+      "display": "aham na avagacchāmi, kṛpayā punaḥ kathayatu.",
+      "cue": "I do not follow — please say it again.",
+      "literal": "I not follow, please again let-tell",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. The verb already says it, and it is written here because the repair is about the speaker and not about the other person."
+          },
+          {
+            "display": "avagacchāmi",
+            "cue": "I follow · I understand",
+            "tag": "delta",
+            "forms": [
+              "avagacchāmi"
+            ],
+            "note": "L1-M2's gacchāmi with the prefix ava in front. It is a word of its own and not a shape of 'go' — and the course writes it in this one person only."
+          },
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's 'please', added on top of a request that was already polite. The courtesy is the -tu of kathayatu; this is emphasis."
+          },
+          {
+            "display": "punaḥ",
+            "cue": "again · more",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's 'again'. In front of a verb of telling it is exactly English 'again', with nothing added and nothing implied."
+          },
+          {
+            "display": "kathayatu",
+            "cue": "please tell · let (him/her) tell",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite request, built as a third-person command: 'let your honour tell'. The courtesy is in the ending -tu."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "Do not open this with kṣamyatām. That word apologises for a FAULT, and not following something is not one — the apology turns an ordinary repair into a confession, and the other person then has to reassure you instead of repeating themselves.",
+      "sound": "a-HAM NA a-va-GACH-chhaa-mi, kri-pa-YAA PU-nah ka-THA-ya-tu. The cch of avagacchāmi is the doubled palatal of L1-M2's gacchāmi, unchanged by the prefix in front of it.",
+      "mistake": {
+        "display": "kṣamyatām, aham na avagacchāmi.",
+        "why": "Grammatically fine and pragmatically wrong. kṣamyatām apologises for a fault; not following a sentence is not a fault, and the apology asks the other person to forgive you when all you wanted was the sentence again."
+      },
+      "variations": [
+        {
+          "display": "aham na avagacchāmi.",
+          "cue": "I do not follow.",
+          "changed": "the request falls away, leaving the report — which is L5-M7's move and leaves the other person to guess",
+          "script": "अहम् न अवगच्छामि।"
+        },
+        {
+          "display": "aham avagacchāmi, kintu punaḥ kathayatu.",
+          "cue": "I do follow, but say it again.",
+          "changed": "the negation lifts and the repair becomes a check rather than a rescue",
+          "script": "अहम् अवगच्छामि, किन्तु पुनः कथयतु।"
+        },
+        {
+          "display": "kṛpayā punaḥ kathayatu.",
+          "cue": "Please say it again.",
+          "changed": "the report falls away instead, which is the shorter and more usable half of the two",
+          "script": "कृपया पुनः कथयतु।"
+        }
+      ],
+      "usage": "The full repair, in the order that works: say that you did not follow, then say what you want done about it. Either half alone is usable; the report alone leaves the other person guessing, and the request alone can sound impatient.",
+      "register": "neutral",
+      "mnemonic": "Say you missed it, then say what to do.",
+      "script": "अहम् न अवगच्छामि, कृपया पुनः कथयतु।"
+    },
+    {
+      "id": "L5-M8-S03",
+      "display": "kṛpayā śanaiḥ vadatu.",
+      "cue": "Please speak slowly.",
+      "literal": "please slowly let-speak",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śanaiḥ",
+            "cue": "slowly · gently",
+            "tag": "delta",
+            "forms": [
+              "śanaiḥ"
+            ],
+            "note": "Slowly. It takes no ending and stands in front of the verb. The -ḥ belongs to the word itself and is not a sandhi product, so it never changes."
+          },
+          {
+            "display": "vadatu",
+            "cue": "speaks · says",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M7's verb of speaking in its request shape. The courtesy is the -tu, exactly as in kathayatu and gacchatu."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "This asks for slowness and not for simplicity. Somebody who slows down will use the same words; if the words are the problem, the question is kim iti arthaḥ and not this.",
+      "sound": "kri-pa-YAA sha-NAIH VA-da-tu. The ai of śanaiḥ is one sound, not two, and the visarga after it is a breathy echo of that vowel.",
+      "variations": [
+        {
+          "display": "śanaiḥ vadatu.",
+          "cue": "Speak slowly.",
+          "changed": "the emphasis word drops, which is shorter and no less polite: the -tu was carrying the courtesy all along",
+          "script": "शनैः वदतु।"
+        },
+        {
+          "display": "kṛpayā śanaiḥ kathayatu.",
+          "cue": "Please tell it slowly.",
+          "changed": "the verb of speaking gives way to the verb of telling, which asks for a whole account rather than a line",
+          "script": "कृपया शनैः कथयतु।"
+        },
+        {
+          "display": "kim bhavān śanaiḥ vadati?",
+          "cue": "Do you speak slowly?",
+          "changed": "asked as a plain question, which is about a habit and is not a request at all",
+          "script": "किम् भवान् शनैः वदति?"
+        }
+      ],
+      "usage": "The single most useful sentence in this module for a learner standing in front of somebody. Ask once, early, and before you are lost rather than after.",
+      "register": "neutral",
+      "mnemonic": "Ask for slow before you need it.",
+      "script": "कृपया शनैः वदतु।"
+    },
+    {
+      "id": "L5-M8-S04",
+      "display": "idam vastu pustakam iva asti.",
+      "cue": "This thing is like a book.",
+      "literal": "this thing book like is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this'. It agrees with vastu, which is neuter too, and it is what you say while holding the thing up."
+          },
+          {
+            "display": "vastu",
+            "cue": "a thing · an object",
+            "tag": "delta",
+            "forms": [
+              "vastu"
+            ],
+            "note": "A thing, neuter, and it ends in -u rather than -am: not every neuter noun on this course looks like phalam. It is the placeholder for a word you do not have."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book, here as the thing compared TO. Whatever stands in front of iva is the comparison, not the subject."
+          },
+          {
+            "display": "iva",
+            "cue": "like · as it were",
+            "tag": "delta",
+            "forms": [
+              "iva"
+            ],
+            "note": "'Like', and it stands AFTER what it compares — pustakam iva. The same placement L1-M10's ca and L2-M9's vā take, taught here for the third time."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "iva goes after, and the whole comparison changes if it goes in front. pustakam iva is 'like a book'; iva pustakam is not Sanskrit at all, and an English speaker will write it that way on the first try.",
+      "sound": "i-DAM VAS-tu PUS-ta-kam I-va AS-ti. iva is unstressed and leans back on the word in front of it, which is what makes it sound like an ending rather than a word.",
+      "variations": [
+        {
+          "display": "idam vastu phalam iva asti.",
+          "cue": "This thing is like a fruit.",
+          "changed": "the comparison forks, and only the word in front of iva moves — the frame is fixed",
+          "script": "इदम् वस्तु फलम् इव अस्ति।"
+        },
+        {
+          "display": "idam vastu pustakam na asti.",
+          "cue": "This thing is not a book.",
+          "changed": "the comparison becomes a denial, which is what you say when the guess has already been made and is wrong",
+          "script": "इदम् वस्तु पुस्तकम् न अस्ति।"
+        },
+        {
+          "display": "kim idam vastu pustakam iva asti?",
+          "cue": "Is this thing like a book?",
+          "changed": "asked rather than offered, which hands the naming to the person who has the word",
+          "script": "किम् इदम् वस्तु पुस्तकम् इव अस्ति?"
+        }
+      ],
+      "usage": "The whole technique of talking around a word you do not have: point, say vastu, and compare. It is not a failure to do this — it is what fluent speakers of a second language do constantly, and it keeps a conversation moving.",
+      "register": "neutral",
+      "mnemonic": "Point, call it a thing, say what it is like.",
+      "script": "इदम् वस्तु पुस्तकम् इव अस्ति।",
+      "mistake": {
+        "display": "idam vastu iva pustakam asti.",
+        "why": "iva stands AFTER what it compares. In front of pustakam it compares nothing, exactly as L1-M10's ca and L2-M9's vā would fail in front of what they join."
+      }
+    },
+    {
+      "id": "L5-M8-S05",
+      "display": "idam vastu kim iti aham na jānāmi.",
+      "cue": "I do not know what this thing is.",
+      "literal": "this thing what quote I not know",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vastu",
+            "cue": "a thing · an object",
+            "tag": "free",
+            "forms": [],
+            "note": "The placeholder noun again, inside the quoted question this time rather than in the frame around it."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, closing the whole question so that the outer sentence can be about it. Without it the two clauses would collide."
+          },
+          {
+            "display": "jānāmi",
+            "cue": "I know",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'I know', first person, which is the only shape this course writes. Not knowing a name is a different thing from not following a sentence."
+          }
+        ],
+        "rules": [
+          8,
+          0
+        ]
+      },
+      "trap": "This is not the same admission as aham na avagacchāmi. Here the words were heard perfectly and the NAME is missing; there, the sentence went past. Answering one with the other wastes everybody's time.",
+      "variations": [
+        {
+          "display": "idam vastu kim iti aham jānāmi.",
+          "cue": "I know what this thing is.",
+          "changed": "the negation lifts, and the same frame reports knowledge instead of asking for it",
+          "script": "इदम् वस्तु किम् इति अहम् जानामि।"
+        },
+        {
+          "display": "idam vastu kim iti bhavān kathayatu.",
+          "cue": "Please tell me what this thing is.",
+          "changed": "the admission becomes a request, with L1-M2's telling verb doing the asking",
+          "script": "इदम् वस्तु किम् इति भवान् कथयतु।"
+        },
+        {
+          "display": "idam vastu kim iti saḥ pṛcchati.",
+          "cue": "He is asking what this thing is.",
+          "changed": "somebody else asks it, with L3-M5's verb of asking in the one person the course owns",
+          "script": "इदम् वस्तु किम् इति सः पृच्छति।"
+        }
+      ],
+      "usage": "The honest admission, and the one that gets you the word: say what you do not know, hold the thing up, and wait. A learner who hides this ends up with a smaller vocabulary than one who says it every day.",
+      "register": "neutral",
+      "script": "इदम् वस्तु किम् इति अहम् न जानामि।"
+    },
+    {
+      "id": "L5-M8-S06",
+      "display": "idam vastram iva asti, kintu vastram na asti.",
+      "cue": "This is like a cloth, but it is not a cloth.",
+      "literal": "this cloth like is, but cloth not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vastram",
+            "cue": "cloth · garment",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's cloth, neuter. It appears twice here on purpose: once as the comparison and once as the thing being denied."
+          },
+          {
+            "display": "iva",
+            "cue": "like · as it were",
+            "tag": "free",
+            "forms": [],
+            "note": "'Like', standing after the word it compares. Everything to the left of it is the subject; everything about it is a guess."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'but', opening its clause. It is what keeps a paraphrase from being heard as a wrong name."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "vastram and vastu are two words and one letter apart. vastu is any thing at all; vastram is cloth. Saying one for the other in this very sentence is the error the sentence exists to prevent.",
+      "sound": "i-DAM VAS-tram I-va AS-ti, KIN-tu VAS-tram NA AS-ti. vastu ends in a clean short u; vastram ends in the r-a-m cluster, and at speed they are told apart by that r alone.",
+      "variations": [
+        {
+          "display": "idam vastram iva asti.",
+          "cue": "This is like a cloth.",
+          "changed": "the correction drops, which leaves a comparison that could still be taken for a name",
+          "script": "इदम् वस्त्रम् इव अस्ति।"
+        },
+        {
+          "display": "idam vastram na asti, kintu vastram iva asti.",
+          "cue": "This is not a cloth, but it is like one.",
+          "changed": "the halves swap, so the denial comes first and the comparison softens it afterwards",
+          "script": "इदम् वस्त्रम् न अस्ति, किन्तु वस्त्रम् इव अस्ति।"
+        },
+        {
+          "display": "idam vastram asti.",
+          "cue": "This is a cloth.",
+          "changed": "both hedges go and the thing is simply named, which is what you say once you have the word",
+          "script": "इदम् वस्त्रम् अस्ति।"
+        }
+      ],
+      "usage": "The second half of a paraphrase, and the half learners forget. Saying what a thing is like without saying that it is not that thing invites a confident wrong answer, and then you have two problems.",
+      "register": "neutral",
+      "mnemonic": "Like it — but say it is not it.",
+      "script": "इदम् वस्त्रम् इव अस्ति, किन्तु वस्त्रम् न अस्ति।",
+      "mistake": {
+        "display": "idam vastu iva asti, kintu vastram na asti.",
+        "why": "vastu and vastram are one letter apart and are two words: vastu is any thing at all, vastram is cloth. Here the comparison has lost its second term and says only 'this is like a thing'."
+      }
+    },
+    {
+      "id": "L5-M8-S07",
+      "display": "saḥ arthaḥ kim iti pṛcchati.",
+      "cue": "He is asking what the meaning is.",
+      "literal": "he meaning what quote asks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saḥ",
+            "cue": "he · that man",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he'. The asking is somebody else's here, which is why the verb is in the third person and not in the speaker's."
+          },
+          {
+            "display": "arthaḥ",
+            "cue": "meaning · sense",
+            "tag": "free",
+            "forms": [],
+            "note": "The meaning, masculine, as the subject of the quoted question. It is the same word and the same shape as in kim iti arthaḥ."
+          },
+          {
+            "display": "pṛcchati",
+            "cue": "asks",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's 'asks', the verb that takes a quoted question the way vadati takes a quoted statement. The course writes it in this person only."
+          }
+        ],
+        "rules": [
+          2,
+          8
+        ]
+      },
+      "trap": "The quoted question keeps its own shape. kim stays where the answer would stand and nothing shifts for being reported — there is no 'what the meaning was' here, only the question as it was asked, with iti behind it.",
+      "variations": [
+        {
+          "display": "saḥ arthaḥ kim iti mām pṛcchati.",
+          "cue": "He is asking me what the meaning is.",
+          "changed": "the person asked is named with L2-M8's 'me', and the verb does not move",
+          "script": "सः अर्थः किम् इति माम् पृच्छति।"
+        },
+        {
+          "display": "sā arthaḥ kim iti pṛcchati.",
+          "cue": "She is asking what the meaning is.",
+          "changed": "a woman is asking, and only the pronoun knows it: this verb never agreed with gender",
+          "script": "सा अर्थः किम् इति पृच्छति।"
+        },
+        {
+          "display": "saḥ arthaḥ kim iti na pṛcchati.",
+          "cue": "He is not asking what the meaning is.",
+          "changed": "negated, which is the commoner and worse case: the question that was needed and not asked",
+          "script": "सः अर्थः किम् इति न पृच्छति।"
+        }
+      ],
+      "usage": "Reporting somebody else's question, which is what you do when you are the one who can answer it. The frame is L3-M5's and is unchanged; only the noun inside it is new.",
+      "register": "neutral",
+      "script": "सः अर्थः किम् इति पृच्छति।"
+    },
+    {
+      "id": "L5-M8-S08",
+      "display": "aham saṃskṛtam śanaiḥ vadāmi, yataḥ aham chātraḥ.",
+      "cue": "I speak Sanskrit slowly, because I am a student.",
+      "literal": "I Sanskrit slowly speak, because I student",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's Sanskrit, neuter. The ṃ is inside the word — internal sandhi written in full — and is not the sandhi anusvāra this course never writes."
+          },
+          {
+            "display": "śanaiḥ",
+            "cue": "slowly · gently",
+            "tag": "free",
+            "forms": [],
+            "note": "'Slowly', in front of the verb. Said about yourself it is an apology that needs no apologising word in it."
+          },
+          {
+            "display": "vadāmi",
+            "cue": "speaks · says",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M7's verb of speaking, first person. Its row is headed vadati, and this is one of the three shapes that row lists."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's student, and the whole predicate: aham chātraḥ has never needed a verb and does not have one here either."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "aham chātraḥ has no copula and wants none. asmi, the first person of 'to be', is written nowhere on this course, and the sentence has been complete without it since the very first rung.",
+      "variations": [
+        {
+          "display": "aham saṃskṛtam śanaiḥ vadāmi.",
+          "cue": "I speak Sanskrit slowly.",
+          "changed": "the reason drops away, and the line stops explaining itself",
+          "script": "अहम् संस्कृतम् शनैः वदामि।"
+        },
+        {
+          "display": "aham saṃskṛtam śanaiḥ vadāmi, yataḥ aham chātrā.",
+          "cue": "I speak Sanskrit slowly, because I am a student.",
+          "changed": "a woman is speaking, and the last word is the only one that shows it",
+          "script": "अहम् संस्कृतम् शनैः वदामि, यतः अहम् छात्रा।"
+        },
+        {
+          "display": "bhavān saṃskṛtam śanaiḥ vadatu.",
+          "cue": "Please speak Sanskrit slowly.",
+          "changed": "the report becomes a request, which is the same fact turned outward",
+          "script": "भवान् संस्कृतम् शनैः वदतु।"
+        }
+      ],
+      "usage": "The sentence that buys you patience before you need it. Said early in a conversation it explains everything that follows, and it is far better received than an apology after the fact.",
+      "register": "neutral",
+      "script": "अहम् संस्कृतम् शनैः वदामि, यतः अहम् छात्रः।"
+    },
+    {
+      "id": "L5-M8-S09",
+      "display": "samasyā na asti, bhavān punaḥ vadatu.",
+      "cue": "No problem — say it again.",
+      "literal": "problem not is, your-honour again let-speak",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "samasyā",
+            "cue": "problem · difficulty",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's problem, feminine. samasyā na asti is the whole of 'no problem' and is what you say to the person who is apologising."
+          },
+          {
+            "display": "punaḥ",
+            "cue": "again · more",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's 'again'. Its -ḥ is part of the word, exactly as śanaiḥ's is, and neither of them ever changes shape."
+          },
+          {
+            "display": "vadatu",
+            "cue": "speaks · says",
+            "tag": "free",
+            "forms": [],
+            "note": "The request shape of L2-M7's vadati. It asks, and the -tu is the whole of the asking."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "This is the OTHER side of a repair — what you say when somebody apologises to you for not being understood. Answering their apology with your own leaves the sentence unrepeated and both of you apologising.",
+      "variations": [
+        {
+          "display": "samasyā na asti.",
+          "cue": "No problem.",
+          "changed": "the request drops, leaving the reassurance on its own",
+          "script": "समस्या न अस्ति।"
+        },
+        {
+          "display": "samasyā na asti, bhavatī punaḥ vadatu.",
+          "cue": "No problem — say it again.",
+          "changed": "the other person is a woman, and the address word is all that moves",
+          "script": "समस्या न अस्ति, भवती पुनः वदतु।"
+        },
+        {
+          "display": "samasyā asti, ataḥ bhavān śanaiḥ vadatu.",
+          "cue": "There is a problem, so please speak slowly.",
+          "changed": "the reassurance becomes an admission, and the request behind it changes with it",
+          "script": "समस्या अस्ति, अतः भवान् शनैः वदतु।"
+        }
+      ],
+      "usage": "Repair runs both ways, and this is the half a learner is least ready for. Reassure, then ask for the repetition in the same breath, so that the conversation does not stop while the apologies are sorted out.",
+      "register": "neutral",
+      "mnemonic": "No problem — now say it again.",
+      "script": "समस्या न अस्ति, भवान् पुनः वदतु।",
+      "mistake": {
+        "display": "samasyā na asti, bhavān punaḥ vadati.",
+        "why": "vadati REPORTS that somebody speaks; vadatu ASKS them to. With the -ti ending the reassurance is followed by an observation, and the sentence that was needed again is never repeated."
+      }
+    },
+    {
+      "id": "L5-M8-S10",
+      "display": "adhunā aham avagacchāmi, dhanyavādaḥ.",
+      "cue": "Now I follow — thank you.",
+      "literal": "now I follow, thanks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adhunā",
+            "cue": "now",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M6's 'now'. It marks the moment the repair worked, and it is what makes this sentence a closing rather than a report."
+          },
+          {
+            "display": "avagacchāmi",
+            "cue": "I follow · I understand",
+            "tag": "free",
+            "forms": [],
+            "note": "'I follow', without the na this time. A repair that is not closed leaves the other person still explaining."
+          },
+          {
+            "display": "dhanyavādaḥ",
+            "cue": "thanks · thank you",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's thanks, masculine, standing as a whole sentence. It closes the exchange the way namaste opens one."
+          }
+        ],
+        "rules": [
+          1,
+          7
+        ]
+      },
+      "trap": "Say this out loud when it becomes true. Silence after a repair is read as the repair having failed, and the other person will keep explaining something you already have.",
+      "sound": "a-dhu-NAA a-HAM a-va-GACH-chhaa-mi, dhan-ya-VAA-dah. adhunā aham runs together at speed as one long a — the two vowels meet and merge, and this course still writes them apart.",
+      "variations": [
+        {
+          "display": "adhunā aham avagacchāmi.",
+          "cue": "Now I follow.",
+          "changed": "the thanks drop, which is enough between people who know each other",
+          "script": "अधुना अहम् अवगच्छामि।"
+        },
+        {
+          "display": "aham avagacchāmi, dhanyavādaḥ.",
+          "cue": "I follow — thank you.",
+          "changed": "the 'now' drops, and with it the sense that this took two tries",
+          "script": "अहम् अवगच्छामि, धन्यवादः।"
+        },
+        {
+          "display": "adhunā aham na avagacchāmi.",
+          "cue": "I still do not follow.",
+          "changed": "negated, which is the honest thing to say when the second attempt has not worked either",
+          "script": "अधुना अहम् न अवगच्छामि।"
+        }
+      ],
+      "usage": "The close, and the module's last word: a repair has two ends and this is the one the learner owns. It costs three words and it tells the other person that the effort worked.",
+      "register": "neutral",
+      "mnemonic": "Close the repair out loud.",
+      "script": "अधुना अहम् अवगच्छामि, धन्यवादः।"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M8-C01",
+      "display": "idam kim iti arthaḥ?",
+      "cue": "What does this mean?",
+      "script": "इदम् किम् इति अर्थः?"
+    },
+    {
+      "id": "L5-M8-C02",
+      "display": "kṛpayā punaḥ kathayatu.",
+      "cue": "Please say it again.",
+      "script": "कृपया पुनः कथयतु।"
+    },
+    {
+      "id": "L5-M8-C03",
+      "display": "aham na avagacchāmi.",
+      "cue": "I do not follow.",
+      "script": "अहम् न अवगच्छामि।"
+    },
+    {
+      "id": "L5-M8-C04",
+      "display": "idam vastu phalam iva asti.",
+      "cue": "This thing is like a fruit.",
+      "script": "इदम् वस्तु फलम् इव अस्ति।"
+    },
+    {
+      "id": "L5-M8-C05",
+      "display": "bhavān śanaiḥ vadatu, aham chātraḥ.",
+      "cue": "Please speak slowly — I am a student.",
+      "script": "भवान् शनैः वदतु, अहम् छात्रः।"
+    },
+    {
+      "id": "L5-M8-C06",
+      "display": "arthaḥ kim iti aham na jānāmi.",
+      "cue": "I do not know what the meaning is.",
+      "script": "अर्थः किम् इति अहम् न जानामि।"
+    },
+    {
+      "id": "L5-M8-C07",
+      "display": "samasyā na asti, aham avagacchāmi.",
+      "cue": "No problem — I follow.",
+      "script": "समस्या न अस्ति, अहम् अवगच्छामि।"
+    },
+    {
+      "id": "L5-M8-C08",
+      "display": "saḥ arthaḥ mahyam na rocate.",
+      "cue": "I do not like that meaning.",
+      "script": "सः अर्थः मह्यम् न रोचते।"
+    },
+    {
+      "id": "L5-M8-C09",
+      "display": "idam vastu vastram iva asti, kintu vastram na asti.",
+      "cue": "This thing is like a cloth, but it is not a cloth.",
+      "script": "इदम् वस्तु वस्त्रम् इव अस्ति, किन्तु वस्त्रम् न अस्ति।"
+    },
+    {
+      "id": "L5-M8-C10",
+      "display": "saḥ arthaḥ kim iti bhavān kathayatu.",
+      "cue": "Please tell me what that meaning is.",
+      "script": "सः अर्थः किम् इति भवान् कथयतु।"
+    },
+    {
+      "id": "L5-M8-C11",
+      "display": "adhunā mahyam saṃśayaḥ na asti.",
+      "cue": "Now I have no doubt.",
+      "script": "अधुना मह्यम् संशयः न अस्ति।"
+    },
+    {
+      "id": "L5-M8-C12",
+      "display": "saḥ śanaiḥ vadati, ataḥ aham avagacchāmi.",
+      "cue": "He speaks slowly, so I follow.",
+      "script": "सः शनैः वदति, अतः अहम् अवगच्छामि।"
+    },
+    {
+      "id": "L5-M8-C13",
+      "display": "kṛpayā punaḥ vadatu, aham na avagacchāmi.",
+      "cue": "Please say it again — I do not follow.",
+      "script": "कृपया पुनः वदतु, अहम् न अवगच्छामि।"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
