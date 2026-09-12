@@ -1,0 +1,815 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": [
+    "L3-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "putō + N-acc + V-infinitive",
+      "cōnsentiō / ita est / minimē vērō",
+      "fortasse + V",
+      "putō + N-acc + V-infinitive + , + quia + V",
+      "mihi vidētur + N-nom + esse"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "THE ACCUSATIVE AND INFINITIVE, AND THERE IS NO WORD FOR 'THAT'. putō eum venīre is 'I think that he is coming', built as 'I-think him to-come': whatever the reported clause is about becomes an OBJECT, its verb becomes an INFINITIVE, and nothing joins the two halves. This is the largest single structural difference between Latin and English in the whole course, and it arrives on opinion because opinion is where you first need it."
+    },
+    {
+      "tag": "delta",
+      "text": "EVERYTHING IN THE REPORTED CLAUSE MOVES, INCLUDING THE ADJECTIVES. putō librum gravem esse: the book goes into the accusative and gravis goes with it, because they describe the same thing doing the same job — which is L2-M3's agreement rule applied to a construction rather than to a sentence. esse arrives here too, and L2-M5 named it and wrote it nowhere because edō's alternative infinitive was one bar away from it."
+    },
+    {
+      "tag": "free",
+      "text": "AGREEING AND DISAGREEING ARE PHRASES, NOT CONSTRUCTIONS: cōnsentiō ('I agree' — cum plus L1-M9's sentiō, 'to feel with'), ita est ('that is so'), minimē vērō ('certainly not'). Nothing in any of them is new grammar, and cōnsentiō is the first time this course shows how much Latin vocabulary is a preposition welded to a verb you already know."
+    },
+    {
+      "tag": "delta",
+      "text": "fortasse SOFTENS AND CHANGES NOTHING ELSE — no mood, no ending, one word in front of a sentence that stays exactly as it was. Latin softens an OPINION this easily, and L2-M8 found there was nothing at all to soften a complaint with. That asymmetry is worth carrying: you may hedge what you think and you may not hedge what went wrong."
+    },
+    {
+      "tag": "interference",
+      "text": "SIX WORDS MUST COME SECOND IN THEIR CLAUSE AND SIX MUST COME FIRST, and this module adds two to the first list. Second: autem, enim, igitur, quoque, vērō, tamen. First: itaque, ergō, prīmum, deinde, tum, postrēmō. And M1's dum, postquam and antequam plus L1-M9's quia and quod join two clauses from the front. Twelve words and two rules, and the list is worth more than the principle."
+    },
+    {
+      "tag": "interference",
+      "text": "vidētur TAKES THE NOMINATIVE WHERE putō TAKES THE ACCUSATIVE, and that is a real inconsistency in Latin rather than a simplification here. putō librum gravem esse; mihi vidētur liber gravis esse. vidētur is impersonal — it never changes its person, however many people are involved — and the book is its subject, so the same English sentence has two Latin shapes depending on which verb is in front of it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "Putō eum venīre.",
+      "cue": "I think he is coming.",
+      "literal": "I-think him to-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "putō",
+            "cue": "I think",
+            "tag": "delta",
+            "forms": [
+              "putō",
+              "putat"
+            ],
+            "note": "'I think': putō 'I think', putat 'he thinks'. English 'compute' and 'reputation' come from it — it was weighing and reckoning before it was believing."
+          },
+          {
+            "display": "eum",
+            "cue": "him",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Him' as an object. It belongs to is, ea, id — a DIFFERENT pointing word from L2-M9's ille, illa, illud, which is 'that one over there'. is is the colourless one."
+          },
+          {
+            "display": "venīre",
+            "cue": "to come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To come' — veniō's infinitive, and the shape a reported thought needs. L1-M9's verb, in the one shape an opinion can use."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "THERE IS NO WORD FOR 'THAT'. Latin builds a reported thought as 'I-think him to-come': the person becomes an OBJECT and the verb becomes an INFINITIVE, and nothing joins the two halves. This is the largest single difference between the two languages in the whole course.",
+      "sound": "PU-tō E-um ve-NĪ-re. Six syllables and one long vowel in the middle of the infinitive, which is where the stress goes.",
+      "variations": [
+        {
+          "display": "Putō eum labōrāre.",
+          "cue": "I think he is working.",
+          "changed": "a different thing thought"
+        },
+        {
+          "display": "Putat eum venīre.",
+          "cue": "He thinks he is coming.",
+          "changed": "someone else doing the thinking"
+        },
+        {
+          "display": "Nōn putō eum venīre.",
+          "cue": "I do not think he is coming.",
+          "changed": "the negative, which goes on the thinking"
+        }
+      ],
+      "mistake": {
+        "display": "Putō quod venit.",
+        "why": "'that' supplied, on the English model — and this is how later Latin really did build it, which is why the pull is so strong. It is wrong here twice: it is not the construction, and quod is already L1-M9's word for 'because', so writing it would put a second reading under a key that has one true note."
+      },
+      "usage": "Said offering an opinion about someone.",
+      "mnemonic": "Him to-come. No joining word.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "Putō librum gravem esse.",
+      "cue": "I think the book is heavy.",
+      "literal": "I-think book heavy to-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "putō",
+            "cue": "I think",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I think': putō 'I think', putat 'he thinks'. English 'compute' and 'reputation' come from it — it was weighing and reckoning before it was believing."
+          },
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as an OBJECT — and it is the object of putō rather than of anything being done to it, which is what this construction does to a subject."
+          },
+          {
+            "display": "gravem",
+            "cue": "heavy",
+            "tag": "interference",
+            "forms": [
+              "gravem",
+              "brevem"
+            ],
+            "note": "'Heavy' — L2-M2's gravis in the OBJECT shape, agreeing with librum. A two-gender adjective still changes for CASE: gravis, gravem, and brevis gives brevem the same way."
+          },
+          {
+            "display": "esse",
+            "cue": "to be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To be' — sum's infinitive, and it arrives at last. L2-M5 named it and wrote it nowhere, because edō's alternative infinitive was one bar away from it."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The BOOK becomes an object here, and it is not being done to anything. In Latin's reported thought whatever the clause is about goes into the accusative, and the adjective describing it goes with it — so gravem rather than gravis, and librum rather than liber.",
+      "sound": "PU-tō LI-brum GRA-vem ES-se. The double s of esse is held, which is what keeps it off ēsse, the word L2-M5 refused to write.",
+      "variations": [
+        {
+          "display": "Putō librum brevem esse.",
+          "cue": "I think the book is short.",
+          "changed": "L1-M7's adjective in the object shape"
+        },
+        {
+          "display": "Putō mēnsam gravem esse.",
+          "cue": "I think the table is heavy.",
+          "changed": "a feminine noun, which moves the same way"
+        },
+        {
+          "display": "Librum gravem esse putō.",
+          "cue": "I think the book is heavy.",
+          "changed": "the thinking verb last, which is if anything commoner"
+        }
+      ],
+      "mistake": {
+        "display": "Putō liber gravis esse.",
+        "why": "the subject shapes kept, because the book is what the sentence is about. It IS what the sentence is about, and Latin still puts it in the accusative — the construction cares about the reporting verb, not about the meaning."
+      },
+      "usage": "Said giving an opinion about a thing.",
+      "mnemonic": "Everything reported goes into the object shape.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "Cōnsentiō.",
+      "cue": "I agree.",
+      "literal": "I-agree",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cōnsentiō",
+            "cue": "I agree",
+            "tag": "delta",
+            "forms": [
+              "cōnsentiō",
+              "cōnsentit"
+            ],
+            "note": "'I agree' — built on L1-M9's sentiō, 'I feel': agreeing in Latin is feeling WITH someone. cōnsentiō 'I agree', cōnsentit 'he agrees'."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "One word, and you can see the whole of it. cum plus sentiō, 'feel with' — L1-M9 taught sentiō and this is that verb with a preposition welded to the front, which is how a great deal of Latin vocabulary is built and the first time this course shows it.",
+      "sound": "cōn-SEN-ti-ō. The first syllable is long before ns even though no vowel looks it — a hidden length the macron marks, which docs/123 §1 said would happen.",
+      "variations": [
+        {
+          "display": "Nōn cōnsentiō.",
+          "cue": "I do not agree.",
+          "changed": "the negative, which is the flat disagreement"
+        },
+        {
+          "display": "Cōnsentit.",
+          "cue": "He agrees.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Cōnsentiō: liber gravis est.",
+          "cue": "I agree: the book is heavy.",
+          "changed": "a reason attached, with no reported construction"
+        }
+      ],
+      "mistake": {
+        "display": "Cum sentiō.",
+        "why": "the preposition written as a separate word. cōnsentiō is one verb, fused long ago and with a hidden long o to prove it — cum sentiō would be 'with I-feel', which is not a sentence at all."
+      },
+      "usage": "Said agreeing with what was just said.",
+      "mnemonic": "cum + sentiō: to feel with.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "Ita est: liber gravis est.",
+      "cue": "That is so: the book is heavy.",
+      "literal": "so it-is book heavy is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ita",
+            "cue": "so",
+            "tag": "delta",
+            "forms": [],
+            "note": "'So'. L1-M2's word, Latin's nearest thing to a bare yes — it agrees with whatever was just said rather than asserting anything of its own."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the subject — and it stays a subject here, because nothing is reporting it."
+          },
+          {
+            "display": "gravis",
+            "cue": "heavy",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Heavy'. L2-M2's adjective, the same shape for a man or a woman, agreeing with liber."
+          }
+        ],
+        "rules": [
+          2,
+          1
+        ]
+      },
+      "trap": "Compare this with S02. Here the book is a plain subject and gravis is a plain subject adjective, because the sentence is asserted rather than reported — and two sentences ago the same two words were librum gravem. The construction, not the meaning, decides the endings.",
+      "sound": "I-ta EST: LI-ber GRA-vis EST. est twice, and both times short — the sentence is four light words and an agreement.",
+      "variations": [
+        {
+          "display": "Ita est.",
+          "cue": "That is so.",
+          "changed": "the reason dropped, which is a bare agreement"
+        },
+        {
+          "display": "Ita est: mēnsa gravis est.",
+          "cue": "That is so: the table is heavy.",
+          "changed": "a different reason"
+        },
+        {
+          "display": "Minimē: liber brevis est.",
+          "cue": "Not at all: the book is short.",
+          "changed": "L1-M2's no, with a contrary reason"
+        }
+      ],
+      "mistake": {
+        "display": "Ita est: librum gravem est.",
+        "why": "the object shapes borrowed from S02 two sentences above. Nothing is reporting this clause, so the book stays a subject — the accusative belongs to the construction and not to the words."
+      },
+      "usage": "Said agreeing and then saying why.",
+      "mnemonic": "Asserted keeps the subject; reported takes the object.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "Minimē vērō: nōn cōnsentiō.",
+      "cue": "Certainly not: I do not agree.",
+      "literal": "least-of-all truly not I-agree",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "minimē",
+            "cue": "not at all",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not at all' — literally 'least of all'. L1-M2's word, and it is L2-M9's minimus as an adverb, which is worth noticing."
+          },
+          {
+            "display": "vērō",
+            "cue": "truly",
+            "tag": "delta",
+            "forms": [
+              "vērō"
+            ],
+            "note": "'Truly, indeed', and it STRENGTHENS whatever it follows. Second in its clause, like L1-M10's autem and quoque — never first."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies. L1-M3's word."
+          },
+          {
+            "display": "cōnsentiō",
+            "cue": "I agree",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I agree' — cum plus L1-M9's sentiō, 'to feel with'."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "vērō comes second and strengthens. It is the fifth word in this course that must sit second in its clause — autem, enim, igitur, quoque and now vērō — and there is no version of the phrase where it opens one: vērō minimē is not Latin.",
+      "sound": "MI-ni-mē VĒ-rō: nōn cōn-SEN-ti-ō. Three long vowels in the first two words: a firm refusal is a slow one.",
+      "variations": [
+        {
+          "display": "Minimē vērō.",
+          "cue": "Certainly not.",
+          "changed": "the reason dropped"
+        },
+        {
+          "display": "Ita vērō: cōnsentiō.",
+          "cue": "Yes indeed: I agree.",
+          "changed": "the same strengthener on the other answer"
+        },
+        {
+          "display": "Minimē: nōn cōnsentiō.",
+          "cue": "Not at all: I do not agree.",
+          "changed": "vērō dropped, which is milder"
+        }
+      ],
+      "mistake": {
+        "display": "Vērō minimē: nōn cōnsentiō.",
+        "why": "vērō put first. It is a second-position word and the rule has no exceptions — and this is the fifth such word in the course, which is why the module lists all five rather than teaching another one on its own."
+      },
+      "usage": "Said disagreeing firmly but politely.",
+      "mnemonic": "vērō is always second.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "Fortasse liber gravis est.",
+      "cue": "Perhaps the book is heavy.",
+      "literal": "perhaps book heavy is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fortasse",
+            "cue": "perhaps",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Perhaps', and it takes no ending. It is this module's one softener, and Latin softens an OPINION readily where L2-M8 found nothing at all to soften a complaint with."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the subject."
+          },
+          {
+            "display": "gravis",
+            "cue": "heavy",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Heavy'. L2-M2's adjective."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "fortasse softens and changes nothing else. There is no mood and no ending to go with it — the sentence stays exactly as it was and one word in front makes it an opinion rather than a claim. Latin softens an opinion this easily and, as L2-M8 said, cannot soften a complaint at all.",
+      "sound": "for-TAS-se LI-ber GRA-vis EST. Four words and one long vowel: a hedge is a light thing.",
+      "variations": [
+        {
+          "display": "Fortasse venit.",
+          "cue": "Perhaps he is coming.",
+          "changed": "a shorter claim softened"
+        },
+        {
+          "display": "Fortasse liber gravis nōn est.",
+          "cue": "Perhaps the book is not heavy.",
+          "changed": "the negative as well"
+        },
+        {
+          "display": "Putō fortasse librum gravem esse.",
+          "cue": "I think perhaps the book is heavy.",
+          "changed": "softened inside a reported thought, which stacks"
+        }
+      ],
+      "mistake": {
+        "display": "Fortasse liber gravem est.",
+        "why": "an object ending appearing because the module has been full of them. fortasse changes nothing at all — the sentence under it keeps every shape it had, which is exactly what makes it easy to use and easy to over-read."
+      },
+      "usage": "Said when you do not want to commit.",
+      "mnemonic": "fortasse changes nothing but the strength.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "Putō eum venīre, quia mihi dīxit.",
+      "cue": "I think he is coming, because he told me.",
+      "literal": "I-think him to-come because to-me he-said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "putō",
+            "cue": "I think",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I think': putō 'I think', putat 'he thinks'. English 'compute' and 'reputation' come from it — it was weighing and reckoning before it was believing."
+          },
+          {
+            "display": "eum",
+            "cue": "him",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Him' as an object. It belongs to is, ea, id — a DIFFERENT pointing word from L2-M9's ille, illa, illud, which is 'that one over there'. is is the colourless one."
+          },
+          {
+            "display": "venīre",
+            "cue": "to come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To come' — veniō's infinitive, and the shape a reported thought needs. L1-M9's verb, in the one shape an opinion can use."
+          },
+          {
+            "display": "quia",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Because'. L1-M9's word, and the safe one — quod also means 'because' and is the key this course keeps for that reading alone."
+          },
+          {
+            "display": "mihi",
+            "cue": "to me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To me' — the dative. L1-M1's row, and it is who was told rather than what was said."
+          },
+          {
+            "display": "dīxit",
+            "cue": "he said",
+            "tag": "delta",
+            "forms": [
+              "dīxit"
+            ],
+            "note": "'He said' — the perfect of dīcō. The reason clause is a plain statement with ordinary endings, which is the point of putting it here."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "A reported thought and a plain reason in one sentence, and only the first half takes the construction. quia introduces an ORDINARY clause — a real subject, a real verb, nothing in the accusative — so the sentence has both shapes side by side and you can see which is which.",
+      "sound": "PU-tō E-um ve-NĪ-re, QUI-a MI-hi DĪ-xit. The two halves are almost the same length and completely different in construction.",
+      "variations": [
+        {
+          "display": "Putō eum venīre, quia hīc est.",
+          "cue": "I think he is coming, because he is here.",
+          "changed": "a present reason"
+        },
+        {
+          "display": "Putō eum labōrāre, quia mihi dīxit.",
+          "cue": "I think he is working, because he told me.",
+          "changed": "a different thing thought"
+        },
+        {
+          "display": "Cōnsentiō, quia mihi dīxit.",
+          "cue": "I agree, because he told me.",
+          "changed": "agreement instead of an opinion, so no construction at all"
+        }
+      ],
+      "mistake": {
+        "display": "Putō eum venīre, quia eum dīxit.",
+        "why": "the accusative carried over into the reason clause. quia takes an ordinary clause and eum dīxit would mean 'he said him' — the construction stops at the comma, and the commonest error once a sentence has two halves is to let the first half's rules leak into the second."
+      },
+      "usage": "Said backing up an opinion.",
+      "mnemonic": "The construction stops where quia starts.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "Mihi vidētur liber gravis esse.",
+      "cue": "It seems to me the book is heavy.",
+      "literal": "to-me it-seems book heavy to-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mihi",
+            "cue": "to me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To me' — the dative, and vidētur happens TO you rather than being something you do. L1-M3's mihi opus est and L1-M7's mihi placet are the same shape."
+          },
+          {
+            "display": "vidētur",
+            "cue": "it seems",
+            "tag": "interference",
+            "forms": [
+              "vidētur"
+            ],
+            "note": "'It seems' — impersonal, so it never changes its person: mihi vidētur, tibi vidētur. It is the passive of videō ('I see') doing duty as 'seem', which is why it looks the way it does."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book', and here it is the SUBJECT of the infinitive rather than an object — which is the one place in this construction where the nominative survives."
+          },
+          {
+            "display": "gravis",
+            "cue": "heavy",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Heavy', agreeing with liber and so in the subject shape too."
+          },
+          {
+            "display": "esse",
+            "cue": "to be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To be' — sum's infinitive."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "vidētur takes the NOMINATIVE where putō takes the accusative, and that is a real inconsistency rather than a simplification. putō librum gravem esse; mihi vidētur liber gravis esse. The reason is that vidētur is impersonal and the book is its subject — so the same English sentence has two Latin shapes depending on the verb in front.",
+      "sound": "MI-hi vi-DĒ-tur LI-ber GRA-vis ES-se. Nine syllables and the long ē of vidētur is the only length in the first half.",
+      "variations": [
+        {
+          "display": "Mihi vidētur liber brevis esse.",
+          "cue": "It seems to me the book is short.",
+          "changed": "a different opinion"
+        },
+        {
+          "display": "Tibi vidētur liber gravis esse.",
+          "cue": "It seems to you the book is heavy.",
+          "changed": "M1's tibi — vidētur itself does not move"
+        },
+        {
+          "display": "Putō librum gravem esse.",
+          "cue": "I think the book is heavy.",
+          "changed": "the other verb, which puts everything into the accusative"
+        }
+      ],
+      "mistake": {
+        "display": "Mihi videor liber gravis esse.",
+        "why": "vidētur made personal. It is impersonal and stays in the it-shape however many people are involved — videor would mean 'I seem', which is a real Latin word and turns the sentence into a claim about the speaker."
+      },
+      "usage": "Said offering an opinion carefully.",
+      "mnemonic": "putō takes the object; vidētur keeps the subject.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "Nōn putō eum venīre.",
+      "cue": "I do not think he is coming.",
+      "literal": "not I-think him to-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', and it goes on the THINKING here, not on the coming. L1-M3's word in the position that decides the meaning."
+          },
+          {
+            "display": "putō",
+            "cue": "I think",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I think': putō 'I think', putat 'he thinks'. English 'compute' and 'reputation' come from it — it was weighing and reckoning before it was believing."
+          },
+          {
+            "display": "eum",
+            "cue": "him",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Him' as an object. It belongs to is, ea, id — a DIFFERENT pointing word from L2-M9's ille, illa, illud, which is 'that one over there'. is is the colourless one."
+          },
+          {
+            "display": "venīre",
+            "cue": "to come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To come' — veniō's infinitive, and the shape a reported thought needs. L1-M9's verb, in the one shape an opinion can use."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "Latin and English agree here and it is worth noticing, because they so often do not: both put the negative on the thinking rather than on the coming. 'I think he is not coming' is a different sentence in both languages, and Latin writes it eum nōn venīre.",
+      "sound": "nōn PU-tō E-um ve-NĪ-re. Seven syllables and the negative is the first of them, which is where the meaning is decided.",
+      "variations": [
+        {
+          "display": "Putō eum nōn venīre.",
+          "cue": "I think he is not coming.",
+          "changed": "the negative moved onto the coming, which is a stronger claim"
+        },
+        {
+          "display": "Nōn putō eum labōrāre.",
+          "cue": "I do not think he is working.",
+          "changed": "a different thing doubted"
+        },
+        {
+          "display": "Fortasse nōn venit.",
+          "cue": "Perhaps he is not coming.",
+          "changed": "softened instead of doubted, and no construction"
+        }
+      ],
+      "mistake": {
+        "display": "Putō eum nōn venīre esse.",
+        "why": "an extra infinitive, from a learner reaching for 'is not coming' word by word. venīre is already the whole of 'is coming', and esse belongs only where the reported clause has no verb of its own."
+      },
+      "usage": "Said doubting something someone said.",
+      "mnemonic": "Negate the thinking or the coming: two sentences.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "Fortasse errāvī; nōn tamen cōnsentiō.",
+      "cue": "Perhaps I was wrong; I do not agree, though.",
+      "literal": "perhaps I-erred not however I-agree",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fortasse",
+            "cue": "perhaps",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Perhaps', and it takes no ending. It is this module's one softener, and Latin softens an OPINION readily where L2-M8 found nothing at all to soften a complaint with."
+          },
+          {
+            "display": "errāvī",
+            "cue": "I was wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — L2-M8's perfect of errō, and the module where Latin was found to have nothing at all to soften a complaint with. fortasse can soften this, because it is an opinion."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "tamen",
+            "cue": "however",
+            "tag": "delta",
+            "forms": [
+              "tamen"
+            ],
+            "note": "'However', and it comes SECOND in its clause. The sixth such word in the course, after autem, enim, igitur, quoque and vērō."
+          },
+          {
+            "display": "cōnsentiō",
+            "cue": "I agree",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I agree' — cum plus sentiō, 'to feel with'."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "tamen is second and this module has now taught two second-position words. The list is the useful thing: autem, enim, igitur, quoque, vērō, tamen must come second; itaque, ergō, prīmum, deinde, tum, postrēmō must come first; dum, postquam, antequam, quia and quod join clauses from the front.",
+      "sound": "for-TAS-se er-RĀ-vī; nōn TA-men cōn-SEN-ti-ō. Eleven syllables, and the concession is the short word buried in the middle.",
+      "variations": [
+        {
+          "display": "Fortasse errāvī; cōnsentiō tamen.",
+          "cue": "Perhaps I was wrong; I agree, though.",
+          "changed": "the other way round, with tamen still second in its clause"
+        },
+        {
+          "display": "Errāvī; nōn tamen cōnsentiō.",
+          "cue": "I was wrong; I do not agree, though.",
+          "changed": "fortasse dropped, which makes it an admission"
+        },
+        {
+          "display": "Fortasse errāvistī; nōn tamen cōnsentiō.",
+          "cue": "Perhaps YOU were wrong; I do not agree, though.",
+          "changed": "the fault moved to the listener"
+        }
+      ],
+      "mistake": {
+        "display": "Fortasse errāvī; tamen nōn cōnsentiō.",
+        "why": "tamen first, which is how English orders 'however'. In its clause the second slot is the only one available to it — and nōn tamen is the order, because nōn belongs to cōnsentiō and tamen belongs to the clause."
+      },
+      "usage": "Said conceding a point and holding your ground.",
+      "mnemonic": "Six words go second, six go first.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M3-C01",
+      "display": "Putō eum labōrāre.",
+      "cue": "I think he is working."
+    },
+    {
+      "id": "L3-M3-C02",
+      "display": "Putō librum brevem esse.",
+      "cue": "I think the book is short."
+    },
+    {
+      "id": "L3-M3-C03",
+      "display": "Nōn cōnsentiō.",
+      "cue": "I do not agree."
+    },
+    {
+      "id": "L3-M3-C04",
+      "display": "Ita est.",
+      "cue": "That is so."
+    },
+    {
+      "id": "L3-M3-C05",
+      "display": "Minimē vērō.",
+      "cue": "Certainly not."
+    },
+    {
+      "id": "L3-M3-C06",
+      "display": "Fortasse venit.",
+      "cue": "Perhaps he is coming."
+    },
+    {
+      "id": "L3-M3-C07",
+      "display": "Mihi vidētur liber brevis esse.",
+      "cue": "It seems to me the book is short."
+    },
+    {
+      "id": "L3-M3-C08",
+      "display": "Putō eum nōn venīre.",
+      "cue": "I think he is not coming."
+    },
+    {
+      "id": "L3-M3-C09",
+      "display": "Cōnsentiō, quia mihi dīxit.",
+      "cue": "I agree, because he told me."
+    },
+    {
+      "id": "L3-M3-C10",
+      "display": "Putō mēnsam gravem esse.",
+      "cue": "I think the table is heavy."
+    },
+    {
+      "id": "L3-M3-C11",
+      "display": "Errāvī; nōn tamen cōnsentiō.",
+      "cue": "I was wrong; I do not agree, though."
+    },
+    {
+      "id": "L3-M3-C12",
+      "display": "Tibi vidētur liber gravis esse.",
+      "cue": "It seems to you the book is heavy."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

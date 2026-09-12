@@ -1,0 +1,847 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M10",
+  "title": "Your own story",
+  "job": "An eight-sentence account, built from the whole ladder",
+  "prerequisites": [
+    "L3-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "prīmum + V-perfect",
+      "postquam + V-perfect + , + V-perfect",
+      "dum + V-present + , + V-perfect",
+      "dīxī + mē + V-perfect-infinitive",
+      "postrēmō + V-perfect"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "EIGHT SENTENCES, AND THE NEW VOCABULARY IS ALMOST NOTHING. L2-M10's account was four; this is twice that, and every verb, connective and noun in it has been in the index for at least three modules. The cap exists to be spent on words and this module spends it on nothing, which is what a level's last rung is for. prīmum and prīmā appear in the same sentence three words apart — M1 spent two plates on the pair and this is where a learner has to get both right at once."
+    },
+    {
+      "tag": "interference",
+      "text": "THE LEVEL'S CONJUNCTIONS ARE WHAT MAKE EIGHT SENTENCES POSSIBLE. M1's dum, postquam and antequam JOIN clauses where L2-M10 had only adverbs that opened them; M2's relative lets a noun carry a clause; M5's dīxī mē … reports what was said inside the story. An eight-sentence account built only from L2's tools would be eight flat sentences in a row, and the difference between that and a story is this level's whole content."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PAST IS STILL THE PERFECT, AFTER TWENTY-NINE MODULES. legēbam, habēbam and eram are STILL free keys and L4-M8 still owns them. The one relief this level brought is M1's dum plus the PRESENT — dum legō, Mārcus vēnit is 'while I was reading, Marcus came' — so the account carries background action honestly with no imperfect anywhere. A state that persists becomes an event instead: sollicitus fuī, aeger fuī."
+    },
+    {
+      "tag": "free",
+      "text": "DROP THE SUBJECT UNTIL IT CHANGES, AND AT EIGHT SENTENCES THAT IS THE WHOLE NATURALNESS TEST. The first sentence says who; nothing says it again until S03, where Mārcus arrives and has to be named; and it stays him for three sentences after that without being named again. An account that names its subject every time reads like a form being filled in, and at twice L2-M10's length there is twice the temptation."
+    },
+    {
+      "tag": "interference",
+      "text": "A PERFECT INFINITIVE IS BUILT ON THE PERFECT STEM AND SITS ONE STEP BEHIND ITS REPORTING VERB: lēgī gives lēgisse, fuī gives fuisse. M5's rule, and in an account it means a sentence can carry two pasts at two different depths — dīxī mē aegrum fuisse is 'I said I had been ill', where the saying is past and the illness is past-of-past."
+    },
+    {
+      "tag": "interference",
+      "text": "solvit IS 'HE PAYS' AND 'HE PAID', AND NO MACRON CAN PART THEM. It is the third verb in this course with that ambiguity, after L2-M8's accidit and L1-M5's bibit — and in an account the sequencer decides: deinde says a step happened, so it is past. Latin has a handful of these and the honest thing is to name them rather than pretend the orthography solves everything."
+    },
+    {
+      "tag": "delta",
+      "text": "sollicitus fuī IS M6's ADJECTIVE IN L2-M8's ARRANGEMENT, IN THE PAST. The feeling word agrees with the speaker and fuī carries the tense, because the passive is a later level's and eram is not written here. So a state in an account is an adjective plus a perfect of sum, and nothing about it is new except the combination."
+    },
+    {
+      "tag": "interference",
+      "text": "sē POINTS AT THE SUBJECT OF ITS OWN CLAUSE, WHOEVER THAT IS — AND IN THE LAST SENTENCE OF THE LEVEL THAT SUBJECT IS YOU. dīxī mē aegrum fuisse, not dīxī sē: the reporter is the speaker, so the reflexive of the first person is mē. A learner who has learned sē as 'the person reporting' for five modules will write it here and say something about somebody else, which is why this is the level's last mistake plate."
+    },
+    {
+      "tag": "free",
+      "text": "ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE LEVEL, as it did at L1-M10 and L2-M10: macrons on every long vowel per the OLD, v and i and never j, no apostrophe, no acute, NFC precomposed, no script line, and a hyphen only before que, ne or ve. An eight-sentence paragraph is the likeliest place in the whole course for a slip, and there is NO BUILD GATE on en-la's spelling — checkScriptMode returns an empty report for a native row — so the only things between a wrong macron and a learner are src/course/types.test.ts's en-la block and the author's own sweep."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M10-S01",
+      "display": "Prīmum hōrā prīmā domō īvī.",
+      "cue": "First of all I went out at the first hour.",
+      "literal": "first at-hour first from-home I-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first of all",
+            "tag": "interference",
+            "forms": [],
+            "note": "'First of all'. L2-M10's adverb, at the front of its clause. Not M1's prīmā, which is the ordinal agreeing with an hour."
+          },
+          {
+            "display": "hōrā",
+            "cue": "at the hour",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At the hour' — M1's ablative, and the ending is the 'at'."
+          },
+          {
+            "display": "prīmā",
+            "cue": "first",
+            "tag": "interference",
+            "forms": [],
+            "note": "'First', the ordinal agreeing with hōrā. M1's word, and not the adverb this sentence opens with."
+          },
+          {
+            "display": "domō",
+            "cue": "from home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'From home', with no preposition — L2-M4's word, and one bar from domum, which goes the other way."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō: eō, īvī, iit. M1's row."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "prīmum and prīmā in one sentence, three words apart. The adverb opens the account and the ordinal agrees with the hour, and M1 spent two plates on the pair — this is the sentence where a learner has to get both right at once.",
+      "sound": "PRĪ-mum HŌ-rā PRĪ-mā do-MŌ Ī-vī. Six long vowels in ten syllables: the opening of an account is heavy.",
+      "variations": [
+        {
+          "display": "Prīmum hōrā sextā domō īvī.",
+          "cue": "First of all I went out at the sixth hour.",
+          "changed": "L2-M6's hour"
+        },
+        {
+          "display": "Prīmum domō īvī.",
+          "cue": "First of all I went out.",
+          "changed": "no time at all"
+        },
+        {
+          "display": "Prīmum hōrā prīmā surgō.",
+          "cue": "First of all I get up at the first hour.",
+          "changed": "the present, which is a habit rather than an account"
+        }
+      ],
+      "usage": "Said opening an account of a day.",
+      "mnemonic": "The adverb opens; the ordinal agrees.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S02",
+      "display": "Postquam ad scholam vēnī, librum lēgī.",
+      "cue": "After I got to school, I read a book.",
+      "literal": "after to school I-came book I-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "postquam",
+            "cue": "after",
+            "tag": "interference",
+            "forms": [],
+            "note": "'After', and it takes the PERFECT. M1's conjunction, and its partner antequam takes the present."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', with the object shape after it."
+          },
+          {
+            "display": "scholam",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' after ad. L1-M6's word."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō, and one bar from venit."
+          },
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the thing read."
+          },
+          {
+            "display": "lēgī",
+            "cue": "I read",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read', past — the perfect of legō: legō, lēgī, lēgisse."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Two perfects and no subject anywhere. The first sentence said who and this one does not — which is the rule L2-M10 opened and this module holds for eight sentences instead of four.",
+      "variations": [
+        {
+          "display": "Postquam ad scholam vēnī, epistulam scrīpsī.",
+          "cue": "After I got to school, I wrote a letter.",
+          "changed": "a different thing done"
+        },
+        {
+          "display": "Postquam domum vēnī, librum lēgī.",
+          "cue": "After I got home, I read a book.",
+          "changed": "a different destination, needing no ad"
+        },
+        {
+          "display": "Antequam ad scholam eō, librum legō.",
+          "cue": "Before I go to school, I read a book.",
+          "changed": "M1's other conjunction, which takes the present"
+        }
+      ],
+      "usage": "Said carrying an account forward.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S03",
+      "display": "Dum legō, Mārcus vēnit.",
+      "cue": "While I was reading, Marcus came.",
+      "literal": "while I-read Marcus he-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dum",
+            "cue": "while",
+            "tag": "interference",
+            "forms": [],
+            "note": "'While', and it takes the PRESENT even about the past. M1's conjunction, and the only relief this level gives from the missing imperfect."
+          },
+          {
+            "display": "legō",
+            "cue": "I read",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read' — the PRESENT, because dum takes it even about the past. M1's rule, and the whole of why this account needs no imperfect."
+          },
+          {
+            "display": "mārcus",
+            "cue": "Marcus",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman man's name in the subject shape. He is named because the subject has CHANGED, which is the one place an account must put it back."
+          },
+          {
+            "display": "vēnit",
+            "cue": "he came",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He came' — the perfect of veniō, one bar from venit, 'he comes'. Both are in this sentence's neighbourhood and only the bar parts them."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "dum legō is 'while I WAS reading', and the main verb is a perfect. This is the sentence M1's rule was for: the account has background action in it and no imperfect anywhere, because dum's present does the whole job.",
+      "sound": "DUM LE-gō, MĀR-cus VĒ-nit. The long ē of vēnit is what makes it past, and venit with a short e would be present.",
+      "variations": [
+        {
+          "display": "Dum legō, Iūlia vēnit.",
+          "cue": "While I was reading, Julia came.",
+          "changed": "a different person arriving"
+        },
+        {
+          "display": "Dum labōrō, Mārcus vēnit.",
+          "cue": "While I was working, Marcus came.",
+          "changed": "a different background"
+        },
+        {
+          "display": "Dum legō, Mārcus venit.",
+          "cue": "While I read, Marcus comes.",
+          "changed": "the bar dropped, which makes the whole thing present"
+        }
+      ],
+      "mistake": {
+        "display": "Dum legēbam, Mārcus vēnit.",
+        "why": "an imperfect, in the last module of the level. legēbam is still a free key after twenty-nine modules and L4-M8 owns it — and even in full Latin dum takes the present here, so the sentence reaches for a form this course has never written in order to break an idiom."
+      },
+      "usage": "Said putting someone else into your account.",
+      "mnemonic": "dum keeps the present; the story stays past.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S04",
+      "display": "Dīxit sē librum lēgisse.",
+      "cue": "He said he had read the book.",
+      "literal": "he-said himself book to-have-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīxit",
+            "cue": "he said",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He said' — the perfect of dīcō. M5's verb."
+          },
+          {
+            "display": "sē",
+            "cue": "himself",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Himself' — the speaker, not somebody else. M5's row, and the whole of that module."
+          },
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the thing read, inside the reported clause."
+          },
+          {
+            "display": "lēgisse",
+            "cue": "to have read",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To have read' — the perfect infinitive of legō, built on the perfect stem lēgī. Earlier than the saying, which is M5's rule."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Reported speech inside an account, which is what M5 was for. The story is in the perfect and the report has its own tense step — lēgisse is earlier than dīxit — so the sentence has two pasts in it at two different depths.",
+      "variations": [
+        {
+          "display": "Dīxit sē vēnisse.",
+          "cue": "He said he had come.",
+          "changed": "a shorter report"
+        },
+        {
+          "display": "Dīxit eum librum lēgisse.",
+          "cue": "He said the other man had read the book.",
+          "changed": "somebody else having read it"
+        },
+        {
+          "display": "Dīxit sē librum legere.",
+          "cue": "He said he was reading the book.",
+          "changed": "the present infinitive, so the reading was going on at the time"
+        }
+      ],
+      "usage": "Said reporting what someone told you, inside a story.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S05",
+      "display": "Deinde mercēdem solvit.",
+      "cue": "Next he paid the rent.",
+      "literal": "next rent he-paid",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deinde",
+            "cue": "next",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Next'. L2-M10's sequencer, at the front of its clause."
+          },
+          {
+            "display": "mercēdem",
+            "cue": "rent",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Rent' as the thing paid — mercēs as the subject. M8's word."
+          },
+          {
+            "display": "solvit",
+            "cue": "he paid",
+            "tag": "interference",
+            "forms": [
+              "solvit"
+            ],
+            "note": "'He pays' AND 'he paid' — the present and the perfect of solvō are spelled identically in this shape, and only the sentence decides. M8's accidit and L1-M5's bibit are the same problem."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "solvit is 'he pays' and 'he paid', with nothing to part them. The account is in the perfect and deinde says a step happened, so here it is past — this is the third verb in the course with that ambiguity, after accidit (L2-M8) and bibit (L1-M5), and no macron can fix it.",
+      "variations": [
+        {
+          "display": "Deinde chartam signāvit.",
+          "cue": "Next he signed the form.",
+          "changed": "a perfect that IS distinct from its present"
+        },
+        {
+          "display": "Tum mercēdem solvit.",
+          "cue": "Then he paid the rent.",
+          "changed": "L2-M10's other middle sequencer"
+        },
+        {
+          "display": "Deinde mercēdem nōn solvit.",
+          "cue": "Next he did not pay the rent.",
+          "changed": "the negative"
+        }
+      ],
+      "usage": "Said carrying an account through a transaction.",
+      "mnemonic": "solvit, accidit, bibit: two tenses, one spelling.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S06",
+      "display": "Postquam chartam signāvit, domum iit.",
+      "cue": "After he signed the form, he went home.",
+      "literal": "after form he-signed home he-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "postquam",
+            "cue": "after",
+            "tag": "interference",
+            "forms": [],
+            "note": "'After', and it takes the PERFECT. M1's conjunction, and its partner antequam takes the present."
+          },
+          {
+            "display": "chartam",
+            "cue": "form",
+            "tag": "free",
+            "forms": [],
+            "note": "'Form, paper' — a Greek loan with a plain a. M8's word."
+          },
+          {
+            "display": "signāvit",
+            "cue": "he signed",
+            "tag": "delta",
+            "forms": [
+              "signāvī",
+              "signāvit"
+            ],
+            "note": "'He signed' — the perfect of signō, and the tidy -āvī kind: signō, signāvī, signāvit. M8's verb."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition. L2-M4's word."
+          },
+          {
+            "display": "iit",
+            "cue": "he went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He went' — the perfect of eō: eō, īvī, iit. M1's row."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "The subject stays dropped. It changed at S03, came back as Mārcus, and has been him ever since — so an account names a subject when it changes and never again, which is L2-M10's rule holding across eight sentences rather than four.",
+      "sound": "POST-quam CHAR-tam sig-NĀ-vit, DO-mum I-it. The long ā of signāvit is the perfect, and iit is two short syllables with no ending to point at.",
+      "variations": [
+        {
+          "display": "Postquam mercēdem solvit, domum iit.",
+          "cue": "After he paid the rent, he went home.",
+          "changed": "the other transaction"
+        },
+        {
+          "display": "Postquam chartam signāvit, ad scholam iit.",
+          "cue": "After he signed the form, he went to school.",
+          "changed": "a destination needing ad"
+        },
+        {
+          "display": "Antequam chartam signat, domum it.",
+          "cue": "Before he signs the form, he goes home.",
+          "changed": "M1's other conjunction, which takes the present"
+        }
+      ],
+      "usage": "Said sequencing two finished things.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S07",
+      "display": "Tum sollicitus fuī.",
+      "cue": "Then I was worried.",
+      "literal": "then worried I-was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tum",
+            "cue": "then",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Then, at that point'. L2-M10's sequencer, and against deinde it places a step in time rather than counting it."
+          },
+          {
+            "display": "sollicitus",
+            "cue": "worried",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Worried' — M6's adjective with sum, agreeing with the speaker. M6 taught it as an adjective because the passive is a later level's."
+          },
+          {
+            "display": "fuī",
+            "cue": "I was",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I was' — the perfect of sum. This course writes no other past of 'to be': eram is L4-M8's and is still a free key."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "A state has to become an event. sollicitus fuī is 'I was worried' as something that happened and finished, because the tense that would say it went on — eram — is not taught here. L2-M10 said this and an eight-sentence account is where it bites.",
+      "variations": [
+        {
+          "display": "Tum sollicita fuī.",
+          "cue": "Then I was worried.",
+          "changed": "spoken by a woman"
+        },
+        {
+          "display": "Tum sollicitus fuit.",
+          "cue": "Then he was worried.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Tum aeger fuī.",
+          "cue": "Then I was ill.",
+          "changed": "M7's adjective in the same frame"
+        }
+      ],
+      "usage": "Said reporting how you felt at a point in a story.",
+      "mnemonic": "A state becomes an event, or stays out.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S08",
+      "display": "Postrēmō domum īvī.",
+      "cue": "Finally I went home.",
+      "literal": "finally home I-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "postrēmō",
+            "cue": "finally",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Finally, last of all'. L2-M10's closer — after it a listener expects you to stop."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition. L2-M4's word."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō: eō, īvī, iit."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Three words and the account is over. postrēmō closes it, the perfect says it is finished, and no subject has been named since S03 — eight sentences with one change of hands and nothing else to hold them together but the sequencers and the endings.",
+      "sound": "pos-TRĒ-mō DO-mum Ī-vī. Three long vowels closing the level.",
+      "variations": [
+        {
+          "display": "Postrēmō domum iit.",
+          "cue": "Finally he went home.",
+          "changed": "someone else going"
+        },
+        {
+          "display": "Postrēmō hōrā nōnā domum īvī.",
+          "cue": "Finally I went home at the ninth hour.",
+          "changed": "M1's time ablative"
+        },
+        {
+          "display": "Postrēmō domō vēnī.",
+          "cue": "Finally I came from home.",
+          "changed": "the other shape of home and the other verb"
+        }
+      ],
+      "usage": "Said finishing an account.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S09",
+      "display": "Prīmum aeger fuī; deinde medicum vīdī; postrēmō domum īvī.",
+      "cue": "First of all I was ill; next I saw a doctor; finally I went home.",
+      "literal": "first ill I-was next doctor I-saw finally home I-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first of all",
+            "tag": "interference",
+            "forms": [],
+            "note": "'First of all'. L2-M10's adverb, at the front of its clause. Not M1's prīmā, which is the ordinal agreeing with an hour."
+          },
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum, and the e drops as soon as an ending is added. M7's word, and the third in that pattern after liber and niger."
+          },
+          {
+            "display": "fuī",
+            "cue": "I was",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I was' — the perfect of sum, and the only past of it this course writes."
+          },
+          {
+            "display": "deinde",
+            "cue": "next",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Next'. L2-M10's sequencer, at the front of its clause."
+          },
+          {
+            "display": "medicum",
+            "cue": "doctor",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Doctor' as the object. M7's word."
+          },
+          {
+            "display": "vīdī",
+            "cue": "I saw",
+            "tag": "delta",
+            "forms": [
+              "vīdī",
+              "vīdit"
+            ],
+            "note": "'I saw' — the perfect of videō, lengthening the vowel: videō, vīdī. M7's verb."
+          },
+          {
+            "display": "postrēmō",
+            "cue": "finally",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Finally, last of all'. L2-M10's closer — after it a listener expects you to stop."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Three clauses, three perfects, three sequencers and one subject named nowhere at all. This is L2-M10's four-sentence account compressed into one line, and it works because every word in it has been in the index for at least three modules.",
+      "sound": "PRĪ-mum AE-ger FU-ī; DE-in-de ME-di-cum VĪ-dī; pos-TRĒ-mō DO-mum Ī-vī. Eighteen syllables and five long ī sounds, one closing each perfect.",
+      "variations": [
+        {
+          "display": "Prīmum aegra fuī; deinde medicum vīdī; postrēmō domum īvī.",
+          "cue": "First of all I was ill; next I saw a doctor; finally I went home.",
+          "changed": "spoken by a woman"
+        },
+        {
+          "display": "Prīmum aeger fuit; deinde medicum vīdit; postrēmō domum iit.",
+          "cue": "First of all he was ill; next he saw a doctor; finally he went home.",
+          "changed": "someone else throughout"
+        },
+        {
+          "display": "Prīmum aeger fuī; postrēmō domum īvī.",
+          "cue": "First of all I was ill; finally I went home.",
+          "changed": "the middle step dropped"
+        }
+      ],
+      "usage": "Said giving a whole account in one breath.",
+      "mnemonic": "Three steps, three perfects, no subject.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S10",
+      "display": "Postquam domum īvī, dīxī mē aegrum fuisse.",
+      "cue": "After I went home, I said I had been ill.",
+      "literal": "after home I-went I-said myself ill to-have-been",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "postquam",
+            "cue": "after",
+            "tag": "interference",
+            "forms": [],
+            "note": "'After', and it takes the PERFECT. M1's conjunction, and its partner antequam takes the present."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō."
+          },
+          {
+            "display": "dīxī",
+            "cue": "I said",
+            "tag": "delta",
+            "forms": [
+              "dīxī"
+            ],
+            "note": "'I said' — the perfect of dīcō, in the I-shape: dīcō, dīxī, dīxit."
+          },
+          {
+            "display": "mē",
+            "cue": "myself",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Myself' — and it is mē rather than sē, because the person reporting IS the speaker. sē points at the subject of its own clause, and here that subject is me."
+          },
+          {
+            "display": "aegrum",
+            "cue": "ill",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Ill' in the OBJECT shape, agreeing with mē. M7's adjective inside M5's construction, with the e still gone."
+          },
+          {
+            "display": "fuisse",
+            "cue": "to have been",
+            "tag": "interference",
+            "forms": [
+              "fuisse"
+            ],
+            "note": "'To have been' — the perfect infinitive of sum, built on fuī. Earlier than the saying, which is M5's rule on the commonest verb in the language."
+          }
+        ],
+        "rules": [
+          4,
+          7
+        ]
+      },
+      "trap": "mē, not sē. The whole level has taught sē for the person doing the reporting, and here the reporter is the speaker — so the reflexive of the first person is mē, and a learner who has learned sē as 'the one reporting' will write it and say something about somebody else.",
+      "sound": "POST-quam DO-mum Ī-vī, DĪ-xī MĒ AE-grum fu-IS-se. Fourteen syllables, and the last word carries the whole tense step.",
+      "variations": [
+        {
+          "display": "Postquam domum iit, dīxit sē aegrum fuisse.",
+          "cue": "After he went home, he said he had been ill.",
+          "changed": "someone else throughout, so mē becomes sē"
+        },
+        {
+          "display": "Postquam domum īvī, dīxī mē aegrum esse.",
+          "cue": "After I went home, I said I was ill.",
+          "changed": "the present infinitive, so the illness was current at the time of saying"
+        },
+        {
+          "display": "Dīxī mē aegrum fuisse.",
+          "cue": "I said I had been ill.",
+          "changed": "the sequencing clause dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Postquam domum īvī, dīxī sē aegrum fuisse.",
+        "why": "sē where mē belongs. sē always points at the subject of its OWN clause, and that subject here is the speaker — so this says I reported that somebody else had been ill, which is M5's error arriving in the last sentence of the level on the one person it is easiest to forget."
+      },
+      "usage": "Said closing an account with what you told people.",
+      "mnemonic": "sē points at its clause's subject, whoever that is.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M10-C01",
+      "display": "Prīmum hōrā sextā domō īvī.",
+      "cue": "First of all I went out at the sixth hour."
+    },
+    {
+      "id": "L3-M10-C02",
+      "display": "Postquam ad scholam vēnī, epistulam scrīpsī.",
+      "cue": "After I got to school, I wrote a letter."
+    },
+    {
+      "id": "L3-M10-C03",
+      "display": "Dum legō, Iūlia vēnit.",
+      "cue": "While I was reading, Julia came."
+    },
+    {
+      "id": "L3-M10-C04",
+      "display": "Dīxit sē vēnisse.",
+      "cue": "He said he had come."
+    },
+    {
+      "id": "L3-M10-C05",
+      "display": "Deinde chartam signāvit.",
+      "cue": "Next he signed the form."
+    },
+    {
+      "id": "L3-M10-C06",
+      "display": "Postquam mercēdem solvit, domum iit.",
+      "cue": "After he paid the rent, he went home."
+    },
+    {
+      "id": "L3-M10-C07",
+      "display": "Tum sollicita fuī.",
+      "cue": "Then I was worried."
+    },
+    {
+      "id": "L3-M10-C08",
+      "display": "Postrēmō hōrā nōnā domum īvī.",
+      "cue": "Finally I went home at the ninth hour."
+    },
+    {
+      "id": "L3-M10-C09",
+      "display": "Prīmum aeger fuī; postrēmō domum īvī.",
+      "cue": "First of all I was ill; finally I went home."
+    },
+    {
+      "id": "L3-M10-C10",
+      "display": "Dīxī mē aegrum fuisse.",
+      "cue": "I said I had been ill."
+    },
+    {
+      "id": "L3-M10-C11",
+      "display": "Tum aeger fuī.",
+      "cue": "Then I was ill."
+    },
+    {
+      "id": "L3-M10-C12",
+      "display": "Postrēmō domum iit.",
+      "cue": "Finally he went home."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

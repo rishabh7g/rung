@@ -1,0 +1,831 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M9",
+  "title": "Feelings & opinions",
+  "job": "Why — because and so",
+  "prerequisites": [
+    "L1-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": [
+      "simple_present",
+      "future"
+    ],
+    "allowedPatterns": [
+      "Adj-nom + sum",
+      "cūr + Adj/V",
+      "<statement> + quia / quod + <statement>",
+      "<statement> + itaque / ergō + <statement>",
+      "quid + sentīs"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "An adjective describing a person takes that person's gender: a man says laetus sum, a woman laeta sum. M1 taught this on nouns and it is the same rule — but now it is the whole module, because every feeling word you learn comes in two shapes and you only ever use one of them about yourself."
+    },
+    {
+      "tag": "delta",
+      "text": "Not every adjective has three shapes. laetus has laetus, laeta, laetum; trīstis has only trīstis for a man or a woman and trīste for a neuter thing. Two families of adjective, and which one a word belongs to comes with the word — exactly as with nouns and verbs."
+    },
+    {
+      "tag": "delta",
+      "text": "quia and quod both mean 'because' and either will do. quia only ever means that, so it is the safer one to reach for; quod also does other jobs a later level teaches, so when you meet it elsewhere it will not mean 'because'."
+    },
+    {
+      "tag": "delta",
+      "text": "itaque and ergō mean 'and so' and both come FIRST in their clause, exactly as English does. That is worth saying because the next module teaches two words that cannot come first — so this module is where the ordinary behaviour is established."
+    },
+    {
+      "tag": "free",
+      "text": "cūr asks 'why' and goes at the front, like ubi and quot. No -ne is needed with it, and no helper verb: Cūr nōn venīs? is 'why do you not come?' with nothing corresponding to 'do'."
+    },
+    {
+      "tag": "interference",
+      "text": "The feeling words lie about themselves in English. sentiō is 'I feel' AND 'I think' — one verb for both — and it gives English 'sentiment' and 'sense'. trīstis gives 'triste' and means simply sad. fessus gives English nothing at all. The nearer the cognate looks, the more carefully the note is worth reading."
+    },
+    {
+      "tag": "delta",
+      "text": "Two clauses in one sentence, joined by one word, and both keep their own verb at the end: Fessus sum, itaque nōn labōrō. That is the shape the next module builds on, so the comma and the joining word are all there is to it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M9-S01",
+      "display": "Laetus sum.",
+      "cue": "I am happy.",
+      "literal": "happy I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laetus",
+            "cue": "happy (a man)",
+            "tag": "delta",
+            "forms": [
+              "laetus",
+              "laeta",
+              "laetum",
+              "laetī"
+            ],
+            "note": "'Happy', bending for whoever it describes: laetus of a man, laeta of a woman, laetum of a neuter thing, laetī of more than one. The ae is the diphthong of 'eye'."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The word tells everyone your gender. There is no neutral way to say you are happy in Latin — a man and a woman use different words, and neither is the basic one.",
+      "sound": "LIE-tus SUM. The ae is one sound, the 'eye' of English, so it is LIE-tus and never LAY-tus.",
+      "variations": [
+        {
+          "display": "Laeta sum.",
+          "cue": "I am happy. (a woman speaking)",
+          "changed": "the adjective takes her gender"
+        },
+        {
+          "display": "Laetus est.",
+          "cue": "He is happy.",
+          "changed": "a third person; the adjective still describes him"
+        },
+        {
+          "display": "Laetī sunt.",
+          "cue": "They are happy.",
+          "changed": "more than one, so the adjective and the verb both go plural"
+        }
+      ],
+      "mistake": {
+        "display": "Laetus est sum.",
+        "why": "Two forms of 'to be' in one two-word sentence. sum is the whole verb, and est is a third person that has nobody to belong to here — the sentence has one subject and needs one verb."
+      },
+      "usage": "Said about how you are, past the polite answer.",
+      "mnemonic": "ae is 'eye': laetus, saepe, Caesar.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M9-S02",
+      "display": "Cūr trīstis es?",
+      "cue": "Why are you sad?",
+      "literal": "why sad you-are",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cūr",
+            "cue": "why",
+            "tag": "free",
+            "forms": [
+              "cūr"
+            ],
+            "note": "'Why', and it goes first like ubi and quot. Its ū is long, and no -ne is ever needed with it — a question word already asks."
+          },
+          {
+            "display": "trīstis",
+            "cue": "sad (a man or a woman)",
+            "tag": "delta",
+            "forms": [
+              "trīstis",
+              "trīste"
+            ],
+            "note": "'Sad', and it has only TWO shapes: trīstis of a person of either gender, trīste of a neuter thing. A different family from laetus."
+          },
+          {
+            "display": "es",
+            "cue": "you are",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          4,
+          1
+        ]
+      },
+      "trap": "trīstis does not change for a woman. laetus had three shapes and this one has two, and the only way to know which family an adjective belongs to is to have met it — the dictionary lists trīstis, trīste for exactly this reason.",
+      "sound": "CUR TRIS-tis ES. Hold the ū of cūr; the rest is short and quick.",
+      "variations": [
+        {
+          "display": "Cūr trīstis est?",
+          "cue": "Why is he sad?",
+          "changed": "a third person asked about"
+        },
+        {
+          "display": "Trīste est.",
+          "cue": "It is sad.",
+          "changed": "a neuter thing, which is the one place the second shape shows"
+        },
+        {
+          "display": "Cūr laetus es?",
+          "cue": "Why are you happy?",
+          "changed": "the other adjective, which does have a feminine shape"
+        }
+      ],
+      "mistake": {
+        "display": "Cūr trīsta es?",
+        "why": "A feminine shape invented on laetus's model. trīstis belongs to the family with only two shapes, so trīsta does not exist — and a woman saying 'why are you sad?' to another woman still says trīstis."
+      },
+      "usage": "Said when you can see something is wrong.",
+      "mnemonic": "laetus has three, trīstis has two.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M9-S03",
+      "display": "Trīstis sum, quia nōn valeō.",
+      "cue": "I am sad because I am not well.",
+      "literal": "sad I-am, because not I-am-well",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trīstis",
+            "cue": "sad (a man or a woman)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sad', and it has only TWO shapes: trīstis of a person of either gender, trīste of a neuter thing. A different family from laetus."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "quia",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [
+              "quia"
+            ],
+            "note": "'Because', and it only ever means that — which makes it the safe one. It starts its clause, and the clause keeps its own verb at the end."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not', and it goes straight in front of the verb. Nothing corresponds to English 'do not' in any tense."
+          },
+          {
+            "display": "valeō",
+            "cue": "I am well",
+            "tag": "delta",
+            "forms": [
+              "valet"
+            ],
+            "note": "'I am well' — the same verb as M2's valē, which is its command form. valēs is 'you are well' and valet 'he/she is well'."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "Two clauses, two verbs, and both verbs at the end of their own clause. English lets 'am' sit in the middle twice; Latin puts sum at the end of the first and valeō at the end of the second.",
+      "sound": "TRIS-tis SUM, QUI-a NON va-LE-ō. Pause at the comma. The two halves are two sentences with a joining word between them.",
+      "variations": [
+        {
+          "display": "Trīstis sum, quod nōn valeō.",
+          "cue": "I am sad because I am not well.",
+          "changed": "the other word for 'because', with no change in meaning"
+        },
+        {
+          "display": "Laetus sum, quia valeō.",
+          "cue": "I am happy because I am well.",
+          "changed": "both halves turned positive"
+        },
+        {
+          "display": "Trīstis est, quia nōn valet.",
+          "cue": "He is sad because he is not well.",
+          "changed": "a third person in both clauses, so both verbs move"
+        }
+      ],
+      "mistake": {
+        "display": "Trīstis sum, quia nōn sum valeō.",
+        "why": "A 'to be' added in front of valeō because English says 'I am not well' with one. valeō already means 'I am well' — it is a verb in its own right, not an adjective needing sum."
+      },
+      "usage": "Said when you are explaining a mood.",
+      "mnemonic": "quia is only ever 'because'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M9-S04",
+      "display": "Fessus sum, itaque nōn labōrō.",
+      "cue": "I am tired, and so I am not working.",
+      "literal": "tired I-am, and-so not I-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fessus",
+            "cue": "tired (a man)",
+            "tag": "delta",
+            "forms": [
+              "fessus",
+              "fessa",
+              "fessī"
+            ],
+            "note": "'Tired', of a man; fessa of a woman, fessī of more than one. It has left nothing in English at all, so there is no cognate to lean on or be misled by."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "itaque",
+            "cue": "and so · therefore",
+            "tag": "delta",
+            "forms": [
+              "itaque"
+            ],
+            "note": "'And so', and it comes FIRST in its clause, exactly as English does. It is one word — never hyphenated, though it ends in -que."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not', and it goes straight in front of the verb. Nothing corresponds to English 'do not' in any tense."
+          },
+          {
+            "display": "labōrō",
+            "cue": "I work",
+            "tag": "interference",
+            "forms": [
+              "labōrant"
+            ],
+            "note": "'I work' — ordinary work, not toil: labōrō, labōrat 'he works', labōrant 'they work'. It keeps its a before the ending, where legō changes to legis."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "itaque ends in -que and is NOT two words. The next module teaches a -que that joins things and is written with a hyphen; this one is a single word that happens to end the same way, and hyphenating it would break it into pieces that mean nothing.",
+      "sound": "FES-sus SUM, I-ta-que NON la-BO-rō. itaque is three light syllables with the stress at the front.",
+      "variations": [
+        {
+          "display": "Fessa sum, itaque nōn labōrō.",
+          "cue": "I am tired, and so I am not working. (a woman speaking)",
+          "changed": "the adjective takes her gender and nothing else moves"
+        },
+        {
+          "display": "Fessus sum, ergō nōn labōrō.",
+          "cue": "I am tired, and so I am not working.",
+          "changed": "the other word for 'and so'"
+        },
+        {
+          "display": "Fessus est, itaque nōn labōrat.",
+          "cue": "He is tired, and so he is not working.",
+          "changed": "a third person in both clauses"
+        }
+      ],
+      "mistake": {
+        "display": "Fessus sum, ita-que nōn labōrō.",
+        "why": "itaque hyphenated as if it were a joining word plus a host. It is one word, and splitting it would produce ita and que — neither of which means 'and so'. The closed list of words like this is in the next module's rules."
+      },
+      "usage": "Said when you are excusing yourself.",
+      "mnemonic": "itaque is one word. Never split it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M9-S05",
+      "display": "Laeta sum, quod aquam habeō.",
+      "cue": "I am happy because I have water.",
+      "literal": "happy I-am, because water I-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laeta",
+            "cue": "happy (a woman)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Happy', bending for whoever it describes: laetus of a man, laeta of a woman, laetum of a neuter thing. The ae is the diphthong of 'eye'."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "quod",
+            "cue": "because",
+            "tag": "interference",
+            "forms": [
+              "quod"
+            ],
+            "note": "'Because', the same as quia — but this spelling has other jobs a later level teaches, so meeting it elsewhere will not mean 'because'."
+          },
+          {
+            "display": "aquam",
+            "cue": "water (as the thing had)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after in, cum or opus est. Three shapes of one word."
+          },
+          {
+            "display": "habeō",
+            "cue": "I have",
+            "tag": "free",
+            "forms": [],
+            "note": "'I have', and it does exactly what English 'have' does: habeō 'I have', habēs 'you have', habet 'he/she has'."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "quod is doing one of several jobs here. It means 'because' in this module and nothing else — but the same four letters will turn up later meaning 'which', and only what surrounds it tells you which one you are reading.",
+      "sound": "LIE-ta SUM, QUOD A-quam ha-BE-ō. Nothing long in quod; it is short and flat.",
+      "variations": [
+        {
+          "display": "Laeta sum, quia aquam habeō.",
+          "cue": "I am happy because I have water.",
+          "changed": "the unambiguous word for 'because'"
+        },
+        {
+          "display": "Laetus sum, quod pānem habeō.",
+          "cue": "I am happy because I have bread.",
+          "changed": "a man speaking, and a different thing had"
+        },
+        {
+          "display": "Laeta est, quod aquam habet.",
+          "cue": "She is happy because she has water.",
+          "changed": "a third person in both clauses"
+        }
+      ],
+      "mistake": {
+        "display": "Laeta sum, quod aqua habeō.",
+        "why": "The object left in its subject shape inside the second clause. A because-clause is a full sentence and every rule holds inside it — the water is being had, so it takes the -m."
+      },
+      "usage": "Said when you are giving a reason for a mood.",
+      "mnemonic": "quia always, quod sometimes.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M9-S06",
+      "display": "Fessa sum, ergō nōn veniam.",
+      "cue": "I am tired, so I will not come.",
+      "literal": "tired I-am, therefore not I-will-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fessa",
+            "cue": "tired (a woman)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tired', of a man; fessa of a woman. It has left nothing in English at all, so there is no cognate to lean on or be misled by."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "ergō",
+            "cue": "therefore · and so",
+            "tag": "free",
+            "forms": [
+              "ergō"
+            ],
+            "note": "'Therefore', and it comes first in its clause. English borrowed it whole and still uses it, which makes it the one word in this module with nothing to learn."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not', and it goes straight in front of the verb. Nothing corresponds to English 'do not' in any tense."
+          },
+          {
+            "display": "veniam",
+            "cue": "I will come",
+            "tag": "delta",
+            "forms": [
+              "veniēs"
+            ],
+            "note": "'I will come' — the future of M4's veniō on the -am pattern: veniam, veniēs 'you will come', veniet 'he will come'. There is no separate word for 'will'."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "The two clauses do not have to share a tense. The first is present and the second is future, and the joining word does not change either — which is the same freedom English has and worth confirming rather than assuming.",
+      "sound": "FES-sa SUM, ER-gō NON VE-ni-am. The ō of ergō is long; the stress stays on the first syllable.",
+      "variations": [
+        {
+          "display": "Fessus sum, ergō nōn veniam.",
+          "cue": "I am tired, so I will not come.",
+          "changed": "a man speaking; only the adjective moves"
+        },
+        {
+          "display": "Fessa sum, itaque nōn veniam.",
+          "cue": "I am tired, so I will not come.",
+          "changed": "the other word for 'so'"
+        },
+        {
+          "display": "Fessa sum, ergō nōn labōrābō.",
+          "cue": "I am tired, so I will not work.",
+          "changed": "a different future in the second clause"
+        }
+      ],
+      "mistake": {
+        "display": "Fessa sum, ergō nōn venīre.",
+        "why": "An infinitive where a finite verb belongs. A clause needs a verb with a person on it, and venīre has none — nōn veniam is 'I will not come', and nōn venīre is 'not to come', which is not a statement about anybody."
+      },
+      "usage": "Said when you are cancelling.",
+      "mnemonic": "ergō came into English unchanged.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M9-S07",
+      "display": "Cūr nōn venīs?",
+      "cue": "Why are you not coming?",
+      "literal": "why not you-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cūr",
+            "cue": "why",
+            "tag": "free",
+            "forms": [],
+            "note": "'Why', and it goes first like ubi and quot. Its ū is long, and no -ne is ever needed with it — a question word already asks."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not', and it goes straight in front of the verb. Nothing corresponds to English 'do not' in any tense."
+          },
+          {
+            "display": "venīs",
+            "cue": "you come",
+            "tag": "delta",
+            "forms": [
+              "venīs"
+            ],
+            "note": "'You come' — the second person of M4's veniō, with a long ī. Beside venit 'he comes' and vēnit 'he came', this is the third short shape of the verb to keep apart."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "Three words, and one of them is 'why', one is 'not' and one is the whole of 'are you coming'. English needs five and two of them — 'are' and 'you' — have no counterpart here.",
+      "sound": "CUR NON ve-NIS. Two long vowels then a third: the ī of venīs takes the stress.",
+      "variations": [
+        {
+          "display": "Cūr venīs?",
+          "cue": "Why are you coming?",
+          "changed": "the negative dropped, which reverses the question"
+        },
+        {
+          "display": "Cūr nōn venit?",
+          "cue": "Why is he not coming?",
+          "changed": "a third person; and note the vowel shortens"
+        },
+        {
+          "display": "Cūr nōn venīs crās?",
+          "cue": "Why are you not coming tomorrow?",
+          "changed": "a time word at the end, which is allowed"
+        }
+      ],
+      "mistake": {
+        "display": "Cūr-ne nōn venīs?",
+        "why": "The yes/no particle added to a question word, the same error M7 warned about with ubi. cūr already asks for a reason; -ne asks for a yes or a no, and the two never stack."
+      },
+      "usage": "Said when someone has not turned up.",
+      "mnemonic": "venīs, venit, vēnit: you come, he comes, he came.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M9-S08",
+      "display": "Quid sentīs?",
+      "cue": "What do you think?",
+      "literal": "what you-feel",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "free",
+            "forms": [],
+            "note": "'What'. It goes first, as in English, and it is one of the few Latin question words that behaves exactly the way you expect."
+          },
+          {
+            "display": "sentīs",
+            "cue": "you feel · you think",
+            "tag": "interference",
+            "forms": [
+              "sentiō",
+              "sentīs",
+              "sentit"
+            ],
+            "note": "'I feel' AND 'I think' — one verb for both, so Latin does not separate the heart from the head here. English 'sentiment' and 'sense' both come from it."
+          }
+        ],
+        "rules": [
+          5,
+          4
+        ]
+      },
+      "trap": "One verb for feeling and for thinking. Latin does not ask you to choose between 'what do you feel' and 'what do you think' — sentīs is both, and which one an English translation picks is the translator's decision, not the Latin's.",
+      "sound": "QUID sen-TIS. The long ī of sentīs takes the stress, as it did in venīs.",
+      "variations": [
+        {
+          "display": "Quid sentit?",
+          "cue": "What does he think?",
+          "changed": "a third person, and the vowel shortens"
+        },
+        {
+          "display": "Quid sentiō?",
+          "cue": "What do I think?",
+          "changed": "the first person, with the i showing before the ending"
+        },
+        {
+          "display": "Cūr trīstis sentīs?",
+          "cue": "Why do you feel sad?",
+          "changed": "an adjective added, which takes the gender of whoever is being asked"
+        }
+      ],
+      "mistake": {
+        "display": "Quid sentīs-ne?",
+        "why": "Both question markers at once. quid asks for a thing and -ne asks for a yes or a no; a sentence cannot want both, and this is the third module to say so about a different question word."
+      },
+      "usage": "Said when you are asking for an opinion.",
+      "mnemonic": "One verb, two organs: sentiō feels and thinks.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M9-S09",
+      "display": "Cūr laetus est?",
+      "cue": "Why is he happy?",
+      "literal": "why happy he-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cūr",
+            "cue": "why",
+            "tag": "free",
+            "forms": [],
+            "note": "'Why', and it goes first like ubi and quot. Its ū is long, and no -ne is ever needed with it — a question word already asks."
+          },
+          {
+            "display": "laetus",
+            "cue": "happy (a man)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Happy', bending for whoever it describes: laetus of a man, laeta of a woman, laetum of a neuter thing. The ae is the diphthong of 'eye'."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "Nothing says 'he'. The -t on est is the whole of it, and the masculine laetus confirms it — two words agreeing about a person who is never named.",
+      "sound": "CUR LIE-tus EST. Hold the ū, then the diphthong, then stop.",
+      "variations": [
+        {
+          "display": "Cūr laeta est?",
+          "cue": "Why is she happy?",
+          "changed": "the adjective is the only thing that says which third person"
+        },
+        {
+          "display": "Cūr laetī sunt?",
+          "cue": "Why are they happy?",
+          "changed": "more than one, so the adjective and the verb both go plural"
+        },
+        {
+          "display": "Cūr laetus est Mārcus?",
+          "cue": "Why is Marcus happy?",
+          "changed": "the person named outright"
+        }
+      ],
+      "mistake": {
+        "display": "Cūr est laetus?",
+        "why": "The verb pulled into the English middle slot. Not wrong Latin — a Roman would write it for emphasis — but as a default it undoes the verb-final habit every module since M1 has been building."
+      },
+      "usage": "Said about somebody else's mood.",
+      "mnemonic": "The adjective tells you who, when the verb will not.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M9-S10",
+      "display": "Laetus sum, quia hīc es.",
+      "cue": "I am happy because you are here.",
+      "literal": "happy I-am, because here you-are",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "laetus",
+            "cue": "happy (a man)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Happy', bending for whoever it describes: laetus of a man, laeta of a woman, laetum of a neuter thing. The ae is the diphthong of 'eye'."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "quia",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Because', and it only ever means that — which makes it the safe one. It starts its clause, and the clause keeps its own verb at the end."
+          },
+          {
+            "display": "hīc",
+            "cue": "here",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Here', with a LONG i. Its short twin hic means 'this' — one bar apart, and M7 taught them together."
+          },
+          {
+            "display": "es",
+            "cue": "you are",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "Two shapes of the same verb, one in each clause. sum belongs to the first subject and es to the second, and neither can do the other's job — the ending is chosen per clause, not per sentence.",
+      "sound": "LIE-tus SUM, QUI-a HEEK ES. Hold the ī of hīc; short and it would be 'this', which would leave the clause without a place.",
+      "variations": [
+        {
+          "display": "Laeta sum, quia hīc es.",
+          "cue": "I am happy because you are here. (a woman speaking)",
+          "changed": "only the adjective moves"
+        },
+        {
+          "display": "Laetus sum, quia venīs.",
+          "cue": "I am happy because you are coming.",
+          "changed": "an action instead of a place in the second clause"
+        },
+        {
+          "display": "Trīstis sum, quia hīc nōn es.",
+          "cue": "I am sad because you are not here.",
+          "changed": "both halves reversed, with nōn in the second clause"
+        }
+      ],
+      "mistake": {
+        "display": "Laetus sum, quia hic es.",
+        "why": "The bar dropped from hīc, which turns 'here' into 'this'. The clause now says 'because you are this', and M7's pair is still one mark apart — as it will be for the rest of the course."
+      },
+      "usage": "Said to somebody who has just arrived.",
+      "mnemonic": "One verb, one clause, one ending each.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M9-C01",
+      "display": "Cūr fessa es?",
+      "cue": "Why are you tired?"
+    },
+    {
+      "id": "L1-M9-C02",
+      "display": "Laetus sum, quia aquam habeō.",
+      "cue": "I am happy because I have water."
+    },
+    {
+      "id": "L1-M9-C03",
+      "display": "Trīstis est Iūlia, quia nōn valet.",
+      "cue": "Julia is sad because she is not well."
+    },
+    {
+      "id": "L1-M9-C04",
+      "display": "Fessus sum, ergō nōn legam.",
+      "cue": "I am tired, so I will not read."
+    },
+    {
+      "id": "L1-M9-C05",
+      "display": "Quid sentit magister?",
+      "cue": "What does the teacher think?"
+    },
+    {
+      "id": "L1-M9-C06",
+      "display": "Cūr hīc nōn es?",
+      "cue": "Why are you not here?"
+    },
+    {
+      "id": "L1-M9-C07",
+      "display": "Laeta est, quod librum habet.",
+      "cue": "She is happy because she has the book."
+    },
+    {
+      "id": "L1-M9-C08",
+      "display": "Trīstis sum, itaque nōn labōrō.",
+      "cue": "I am sad, and so I am not working."
+    },
+    {
+      "id": "L1-M9-C09",
+      "display": "Cūr nōn venit Mārcus?",
+      "cue": "Why is Marcus not coming?"
+    },
+    {
+      "id": "L1-M9-C10",
+      "display": "Fessī sunt, ergō nōn labōrant.",
+      "cue": "They are tired, so they are not working."
+    },
+    {
+      "id": "L1-M9-C11",
+      "display": "Quid sentīs, Iūlia?",
+      "cue": "What do you think, Julia?"
+    },
+    {
+      "id": "L1-M9-C12",
+      "display": "Laetus sum, quia crās veniēs.",
+      "cue": "I am happy because you will come tomorrow."
+    },
+    {
+      "id": "L1-M9-C13",
+      "display": "Trīste est, quod nōn valēs.",
+      "cue": "It is sad that you are not well."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

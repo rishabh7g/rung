@@ -131,8 +131,8 @@ const reteaches = new Set<string>();
  * infinitive, and one sentence taught both. The fold cannot tell them apart, so the second row is
  * unreachable — and the re-teach check above could not see it, because `taught` is built from the
  * modules BEFORE this one. `src/course/types.test.ts` caught it only because en-de asserts one
- * owner per surface; the other nine courses have no such guard, which is why this reports for all
- * ten, and why it FAILS rather than merely reporting: unlike a re-teach, no course wants it.
+ * owner per surface; the other courses have no such guard, which is why this reports for every one
+ * of them, and why it FAILS rather than merely reporting: unlike a re-teach, no course wants it.
  *
  * The exception is a DELIBERATE repeat, and hi-mr L3 has seven: a consolidation sentence whose
  * only row is a word the module already taught (L3-M1-S07's उठून under a woman's day). There is

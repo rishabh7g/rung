@@ -1,0 +1,836 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M10",
+  "title": "A story with a twist",
+  "job": "A six-sentence narrative with a line of dialogue inside it",
+  "prerequisites": [
+    "L4-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "V-perfect + , + inquit + , + N (a split quotation)",
+      "subitō + V-perfect",
+      "ōlim + V-imperfect (background)",
+      "cūr + V-perfect + , + inquit",
+      "<six-sentence narrative with one quoted line>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "SIX SENTENCES, AND ALMOST NO NEW VOCABULARY. L3-M10's account was eight and this is six, because a twist needs less room than a day. inquit, inquam, subitō and venī are the only fresh rows the narrative needs; everything else is in the index already, including M8's imperfect for the background and M9's places."
+    },
+    {
+      "tag": "interference",
+      "text": "THE TWO PAST TENSES FINALLY DIVIDE THE WORK, AND THAT IS WHAT THE IMPERFECT WAS DEFERRED FOR. Background goes in the imperfect — ōlim Rōmae habitābam, cotīdiē ībam, aeger eram — and events go in the perfect — subitō Mārcus vēnit, postrēmō domum īvī. L2-M10 and L3-M10 both had to recast a state as an event because no imperfect existed, and a story with only perfects reads as a list of unconnected facts. S10's mistake plate is exactly that sentence."
+    },
+    {
+      "tag": "free",
+      "text": "subitō MARKS THE TURN AND THE TENSE DOES THE WORK. A narrative changes gear by changing tense, not by adding a word — so subitō only tells you the event was quick, and an imperfect after it is still background (S08: the state itself changed suddenly). S03's plate is an imperfect where the first event belongs, which is the reflex after two sentences of background."
+    },
+    {
+      "tag": "free",
+      "text": "PRO-DROP AND ITS ONE EXCEPTION, AT SIX SENTENCES: the subject is named exactly ONCE, at the sentence where it changes. Mārcus arrives and is named; nothing before or after him is. L2-M10 set this rule at four sentences and L3-M10 held it at eight; a narrative with two people in it needs the name at precisely the clause that changes hands and nowhere else."
+    },
+    {
+      "tag": "interference",
+      "text": "inquit IS POSTPOSITIVE AND THAT IS THIS MODULE'S ONE HARD FACT. It means 'he says' AND 'he said' — the same shape for both, like M6's solvit — and it goes AFTER the first word or two of the quotation: \"Venī\", inquit, \"domum\". English puts 'he said' outside the line and Latin puts it inside, splitting the quotation around it. An author who writes inquit first has produced something no Roman wrote. A short quoted question counts as one unit, so inquit follows the whole of it — the rule is about never being FIRST rather than about a precise slot. inquam is its I-shape and behaves the same way."
+    },
+    {
+      "tag": "delta",
+      "text": "DIRECT SPEECH IS THE OPPOSITE OF L3-M5's REPORTED SPEECH, AND BOTH ARE NOW YOURS. dīxit sē venīre reports without quoting and has no word for 'that'; \"Venī\", inquit quotes what was actually said. This module writes one of each so the contrast is visible — what somebody said, and what you say they said."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M10-S01",
+      "display": "Ōlim Rōmae habitābam.",
+      "cue": "I used to live at Rome.",
+      "literal": "once at-Rome I-was-living",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ōlim",
+            "cue": "once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Once, back then'. M8's word, and the opening of any story: it marks a stretch rather than a moment."
+          },
+          {
+            "display": "rōmae",
+            "cue": "at Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At Rome' — M9's locative, with no preposition."
+          },
+          {
+            "display": "habitābam",
+            "cue": "I was living",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I used to live' — M8's imperfect of habitō. Background, not event: a narrative sets its scene in this tense."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "A story opens in the IMPERFECT, and until M8 this course could not do it. L2-M10 and L3-M10 both had to recast a state as an event because no imperfect existed; now background goes in one tense and events in another, which is what Latin narrative actually does.",
+      "sound": "Ō-lim RŌ-mae ha-bi-TĀ-bam. Nine syllables and three long vowels.",
+      "variations": [
+        {
+          "display": "Ōlim domī habitābam.",
+          "cue": "I used to live at home.",
+          "changed": "M9's other locative"
+        },
+        {
+          "display": "Ōlim Rōmae habitābat.",
+          "cue": "He used to live at Rome.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Rōmae habitābam et gaudēbam.",
+          "cue": "I was living at Rome and I was glad.",
+          "changed": "two pieces of background in one line"
+        }
+      ],
+      "usage": "Said opening a story.",
+      "mnemonic": "Background is imperfect; events are perfect.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S02",
+      "display": "Cotīdiē ad officīnam ībam.",
+      "cue": "Every day I used to go to the office.",
+      "literal": "daily to office I-was-going",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cotīdiē",
+            "cue": "every day",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Every day'. L1-M4's word, and it takes no ending."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', with the object shape after it — required, because an office is not a city."
+          },
+          {
+            "display": "officīnam",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "'Office' after ad. L3-M8's word."
+          },
+          {
+            "display": "ībam",
+            "cue": "I used to go",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I used to go' — M8's imperfect of eō: eō, ībam, īvī."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "More background, and no subject named. The first sentence established who and this one carries nothing but the habit — which is L2-M10's pro-drop rule at the front of a story rather than in the middle of one.",
+      "variations": [
+        {
+          "display": "Cotīdiē ad scholam ībam.",
+          "cue": "Every day I used to go to school.",
+          "changed": "a different destination"
+        },
+        {
+          "display": "Cotīdiē legēbam.",
+          "cue": "Every day I used to read.",
+          "changed": "a habit with no journey in it"
+        },
+        {
+          "display": "Cotīdiē ad officīnam eō.",
+          "cue": "Every day I go to the office.",
+          "changed": "the present, which makes it a habit you still have"
+        }
+      ],
+      "usage": "Said filling in a routine.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S03",
+      "display": "Subitō Mārcus vēnit.",
+      "cue": "Suddenly Marcus came.",
+      "literal": "suddenly Marcus he-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "subitō",
+            "cue": "suddenly",
+            "tag": "delta",
+            "forms": [
+              "subitō"
+            ],
+            "note": "'Suddenly'. It takes no ending and it goes at the front, which is where a narrative wants it."
+          },
+          {
+            "display": "mārcus",
+            "cue": "Marcus",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman man's name in the subject shape. He is named because the subject has CHANGED, which is the one place a narrative must put it back."
+          },
+          {
+            "display": "vēnit",
+            "cue": "he came",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He came' — the perfect of veniō, and one bar from venit, 'he comes'. The first EVENT of the story, after two sentences of background."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The tense changes and the story starts. Two imperfects have set a scene and this perfect is the first thing that happens in it — so the twist of a narrative is marked by a tense rather than by a word, and subitō only tells you it was quick.",
+      "sound": "SU-bi-tō MĀR-cus VĒ-nit. Seven syllables, and the long ō of subitō is where the story turns.",
+      "variations": [
+        {
+          "display": "Subitō Iūlia vēnit.",
+          "cue": "Suddenly Julia came.",
+          "changed": "a different person arriving"
+        },
+        {
+          "display": "Subitō Mārcus domum vēnit.",
+          "cue": "Suddenly Marcus came home.",
+          "changed": "L2-M4's home added"
+        },
+        {
+          "display": "Mārcus vēnit.",
+          "cue": "Marcus came.",
+          "changed": "subitō dropped, which makes it ordinary"
+        }
+      ],
+      "mistake": {
+        "display": "Subitō Mārcus veniēbat.",
+        "why": "an imperfect for an event. It would say Marcus was in the middle of coming, which is background rather than a turn — and after two sentences of imperfects the tense is the reflex, which is exactly why this is the plate."
+      },
+      "usage": "Said at the moment a story starts.",
+      "mnemonic": "A perfect is where the story turns.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S04",
+      "display": "\"Venī\", inquit, \"domum\".",
+      "cue": "\"Come home\", he said.",
+      "literal": "come! he-said home",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "venī",
+            "cue": "come!",
+            "tag": "delta",
+            "forms": [
+              "venī"
+            ],
+            "note": "'Come!' — veniō's order shape. L1-M5 named this key thirty-nine modules ago and no module has written it until now."
+          },
+          {
+            "display": "inquit",
+            "cue": "he said",
+            "tag": "interference",
+            "forms": [
+              "inquit"
+            ],
+            "note": "'He says' and 'he said' — the same shape for both, like M6's solvit. It goes AFTER the first word or two of a quotation, never before it."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home' — the to-shape, with no preposition. L2-M4's word, and M9's closed list."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "inquit goes INSIDE the quotation, after its first word. English puts 'he said' before or after the whole line and Latin puts it in the middle — so the quotation is split around the reporting verb, and an author who writes inquit first has produced something no Roman wrote.",
+      "sound": "VE-nī, IN-quit, DO-mum. Six syllables, and inquit is the unstressed middle of the line.",
+      "variations": [
+        {
+          "display": "\"Venī\", inquit, \"Rōmam\".",
+          "cue": "\"Come to Rome\", he said.",
+          "changed": "M9's city as the destination"
+        },
+        {
+          "display": "\"Domum\", inquit, \"venī\".",
+          "cue": "\"Home\", he said, \"come\".",
+          "changed": "the two halves of the quotation swapped"
+        },
+        {
+          "display": "Dīxit mē domum venīre.",
+          "cue": "He said I was coming home.",
+          "changed": "L3-M5's reported speech, which quotes nobody"
+        }
+      ],
+      "mistake": {
+        "display": "Inquit \"Venī domum\".",
+        "why": "inquit in front of the quotation. It is postpositive and there is no version of the sentence where it opens one — English's order is the error, and it is the only hard fact this module has."
+      },
+      "usage": "Said quoting somebody.",
+      "mnemonic": "inquit sits inside the quotation.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S05",
+      "display": "Aeger eram; itaque nōn īvī.",
+      "cue": "I was ill; so I did not go.",
+      "literal": "ill I-was and-so not I-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum. L3-M7's word."
+          },
+          {
+            "display": "eram",
+            "cue": "I was",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I was' — M8's imperfect of sum, the state that went on. Every module from L1-M9 to L3-M10 said fuī here because there was nothing else."
+          },
+          {
+            "display": "itaque",
+            "cue": "and so",
+            "tag": "delta",
+            "forms": [],
+            "note": "'And so'. L1-M9's word, first in its clause — the consequence pointing back."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō. An event, against the state in the first half."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Both tenses in one sentence and each doing its own job. eram is the state I was in and īvī is the thing that did not happen — and this is the division the whole course waited thirty-four modules for, working inside a five-word clause pair.",
+      "variations": [
+        {
+          "display": "Aegra eram; itaque nōn īvī.",
+          "cue": "I was ill; so I did not go.",
+          "changed": "spoken by a woman"
+        },
+        {
+          "display": "Aeger eram; itaque domī eram.",
+          "cue": "I was ill; so I was at home.",
+          "changed": "M9's locative, and both halves imperfect"
+        },
+        {
+          "display": "Aeger fuī; itaque nōn īvī.",
+          "cue": "I was ill; so I did not go.",
+          "changed": "the perfect of sum, which treats the illness as an event"
+        }
+      ],
+      "usage": "Said explaining why you missed something.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S06",
+      "display": "\"Cūr nōn vēnistī?\", inquit.",
+      "cue": "\"Why did you not come?\", he said.",
+      "literal": "why not you-came he-said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cūr",
+            "cue": "why",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Why'. L1-M9's question word, and the one that asks for a cause — quia and ideō answer it."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "vēnistī",
+            "cue": "you came",
+            "tag": "delta",
+            "forms": [
+              "vēnistī"
+            ],
+            "note": "'You came' — the perfect's you-shape, -istī where the present is -īs. L2-M8's errāvistī was the same ending."
+          },
+          {
+            "display": "inquit",
+            "cue": "he said",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He says' and 'he said' — the same shape for both, like M6's solvit. It goes AFTER the first word or two of a quotation, never before it."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Here inquit comes after the whole quotation, because the quotation is a question and splitting it would break it. The rule is 'after the first word or two' and a short question counts as one unit — so the constraint is about not putting inquit FIRST rather than about where exactly it lands.",
+      "sound": "CŪR nōn vē-NIS-tī, IN-quit. Seven syllables and two long vowels, both in the question.",
+      "variations": [
+        {
+          "display": "\"Cūr nōn vēnistī?\", inquit Mārcus.",
+          "cue": "\"Why did you not come?\", said Marcus.",
+          "changed": "the speaker named after the verb, which is the usual order"
+        },
+        {
+          "display": "\"Quandō vēnistī?\", inquit.",
+          "cue": "\"When did you come?\", he said.",
+          "changed": "L2-M6's question word"
+        },
+        {
+          "display": "\"Cūr nōn venīs?\", inquit.",
+          "cue": "\"Why are you not coming?\", he said.",
+          "changed": "the present inside the quotation"
+        }
+      ],
+      "usage": "Said quoting a question.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S07",
+      "display": "\"Aeger\", inquam, \"eram\".",
+      "cue": "\"I was ill\", I said.",
+      "literal": "ill I-say I-was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum."
+          },
+          {
+            "display": "inquam",
+            "cue": "I said",
+            "tag": "interference",
+            "forms": [
+              "inquam"
+            ],
+            "note": "'I say, I said' — inquit's I-shape, and it is postpositive too. inquam, inquit: the only two shapes of this verb this course writes."
+          },
+          {
+            "display": "eram",
+            "cue": "I was",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I was' — M8's imperfect of sum."
+          }
+        ],
+        "rules": [
+          4,
+          1
+        ]
+      },
+      "trap": "A quotation split around inquam, and the quotation is two words with the verb of the story between them. That is as compressed as this construction gets — and it is the shape a Roman used constantly, because the reporting verb is unstressed and belongs where nobody would look for it.",
+      "variations": [
+        {
+          "display": "\"Aegra\", inquam, \"eram\".",
+          "cue": "\"I was ill\", I said.",
+          "changed": "spoken by a woman"
+        },
+        {
+          "display": "\"Aeger\", inquit, \"erat\".",
+          "cue": "\"He was ill\", he said.",
+          "changed": "someone else speaking about someone else"
+        },
+        {
+          "display": "Dīxī mē aegrum fuisse.",
+          "cue": "I said I had been ill.",
+          "changed": "L3-M10's reported speech, which is the other way of doing this"
+        }
+      ],
+      "usage": "Said quoting yourself.",
+      "mnemonic": "inquam and inquit both sit inside.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S08",
+      "display": "Subitō nōn iam aeger eram.",
+      "cue": "Suddenly I was no longer ill.",
+      "literal": "suddenly not already ill I-was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "subitō",
+            "cue": "suddenly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and it goes at the front, which is where a narrative wants it."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not' — and nōn iam together mean 'no longer'. M6's pair."
+          },
+          {
+            "display": "iam",
+            "cue": "no longer",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Already' — and with nōn in front it is 'no longer'. M6's word, built from two the course already had."
+          },
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum."
+          },
+          {
+            "display": "eram",
+            "cue": "I was",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I was' — M8's imperfect of sum, and here it is the twist: the state changed."
+          }
+        ],
+        "rules": [
+          2,
+          1
+        ]
+      },
+      "trap": "An imperfect with subitō in front of it, which looks like the plate on S03 and is not. There the imperfect would have been an event; here the state itself is what changed suddenly — so a state can turn abruptly, and the tense still holds it.",
+      "sound": "SU-bi-tō nōn I-am AE-ger E-ram. Nine syllables, and the long ō is the turn.",
+      "variations": [
+        {
+          "display": "Subitō nōn iam aegra eram.",
+          "cue": "Suddenly I was no longer ill.",
+          "changed": "spoken by a woman"
+        },
+        {
+          "display": "Subitō nōn iam Rōmae eram.",
+          "cue": "Suddenly I was no longer at Rome.",
+          "changed": "M9's locative instead of the adjective"
+        },
+        {
+          "display": "Nōn iam aeger eram.",
+          "cue": "I was no longer ill.",
+          "changed": "subitō dropped, which makes the change gradual"
+        }
+      ],
+      "usage": "Said at the turn of a story.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S09",
+      "display": "\"Venī\", inquit, \"Rōmam\"; itaque īvī.",
+      "cue": "\"Come to Rome\", he said; so I went.",
+      "literal": "come! he-said to-Rome and-so I-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "venī",
+            "cue": "come!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Come!' — veniō's order shape, and a key L1-M5 held free for thirty-nine modules."
+          },
+          {
+            "display": "inquit",
+            "cue": "he said",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He says' and 'he said' — the same shape for both, like M6's solvit. It goes AFTER the first word or two of a quotation, never before it."
+          },
+          {
+            "display": "rōmam",
+            "cue": "to Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To Rome' — M9's city, with no preposition."
+          },
+          {
+            "display": "itaque",
+            "cue": "and so",
+            "tag": "delta",
+            "forms": [],
+            "note": "'And so'. L1-M9's word, first in its clause."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō. The event the quotation caused."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "A quotation, a consequence and an event in five words. The reported line is what somebody actually said and the perfect after it is what it caused — so direct speech does inside a story what L3-M5's reported speech does in a conversation, and both are now in the learner's hands.",
+      "sound": "VE-nī, IN-quit, RŌ-mam; I-ta-que Ī-vī. Eleven syllables and four long vowels.",
+      "variations": [
+        {
+          "display": "\"Venī\", inquit, \"domum\"; itaque īvī.",
+          "cue": "\"Come home\", he said; so I went.",
+          "changed": "home instead of the city"
+        },
+        {
+          "display": "\"Venī\", inquit, \"Rōmam\"; nōn tamen īvī.",
+          "cue": "\"Come to Rome\", he said; I did not go, though.",
+          "changed": "L3-M3's tamen, and the consequence refused"
+        },
+        {
+          "display": "Dīxit mē Rōmam venīre.",
+          "cue": "He said I was coming to Rome.",
+          "changed": "L3-M5's reported speech, which quotes nobody and names no words"
+        }
+      ],
+      "usage": "Said telling what someone said and what you did.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M10-S10",
+      "display": "Ōlim Rōmae habitābam; cotīdiē ad officīnam ībam; subitō Mārcus vēnit; \"Venī\", inquit, \"domum\"; aeger eram; postrēmō domum īvī.",
+      "cue": "I used to live at Rome; every day I went to the office; suddenly Marcus came; \"Come home\", he said; I was ill; finally I went home.",
+      "literal": "once at-Rome I-was-living daily to office I-was-going suddenly Marcus he-came come! he-said home ill I-was finally home I-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ōlim",
+            "cue": "once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Once, back then'. M8's word, opening the story."
+          },
+          {
+            "display": "rōmae",
+            "cue": "at Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At Rome' — M9's locative."
+          },
+          {
+            "display": "habitābam",
+            "cue": "I was living",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I used to live' — M8's imperfect: background."
+          },
+          {
+            "display": "cotīdiē",
+            "cue": "every day",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Every day'. L1-M4's word."
+          },
+          {
+            "display": "ībam",
+            "cue": "I used to go",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I used to go' — M8's imperfect of eō: more background."
+          },
+          {
+            "display": "subitō",
+            "cue": "suddenly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Suddenly'. It takes no ending and it goes at the front, which is where a narrative wants it."
+          },
+          {
+            "display": "mārcus",
+            "cue": "Marcus",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman man's name in the subject shape, named because the subject changed."
+          },
+          {
+            "display": "vēnit",
+            "cue": "he came",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He came' — the perfect of veniō: the first event."
+          },
+          {
+            "display": "venī",
+            "cue": "come!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Come!' — veniō's order shape, inside the quotation."
+          },
+          {
+            "display": "inquit",
+            "cue": "he said",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He says' and 'he said' — the same shape for both, like M6's solvit. It goes AFTER the first word or two of a quotation, never before it."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home' — the to-shape, with no preposition."
+          },
+          {
+            "display": "eram",
+            "cue": "I was",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I was' — M8's imperfect of sum: the state behind the decision."
+          },
+          {
+            "display": "postrēmō",
+            "cue": "finally",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Finally'. L2-M10's closer — after it a listener expects you to stop."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō: the last event."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          4
+        ]
+      },
+      "trap": "Six clauses, two tenses dividing the work, one quotation with the verb inside it, and the subject named exactly once — at the sentence where it changed. That is a narrative rather than an account, and the difference from L3-M10's eight sentences is that this one has a tense for its background and a line of somebody's actual words in it.",
+      "sound": "Thirty-seven syllables — the longest line in the course. Read it in six pieces, one per clause, and the two tenses will separate themselves.",
+      "variations": [
+        {
+          "display": "Ōlim Rōmae habitābam; subitō Mārcus vēnit; postrēmō domum īvī.",
+          "cue": "I used to live at Rome; suddenly Marcus came; finally I went home.",
+          "changed": "three clauses instead of six"
+        },
+        {
+          "display": "Ōlim domī habitābam; cotīdiē legēbam; subitō Mārcus vēnit; \"Venī\", inquit, \"Rōmam\"; itaque īvī.",
+          "cue": "I used to live at home; every day I read; suddenly Marcus came; \"Come to Rome\", he said; so I went.",
+          "changed": "the journey reversed"
+        },
+        {
+          "display": "Ōlim Rōmae habitābam; cotīdiē ad officīnam ībam.",
+          "cue": "I used to live at Rome; every day I went to the office.",
+          "changed": "the background alone, with no story in it"
+        }
+      ],
+      "mistake": {
+        "display": "Ōlim Rōmae habitāvī; cotīdiē ad officīnam īvī; subitō Mārcus vēniēbat.",
+        "why": "every tense exactly backwards: perfects for the background and an imperfect for the event. It is the sentence this whole course would have had to write before M8, and it reads as a list of three unconnected facts rather than a story — which is what the imperfect was deferred thirty-four modules to prevent."
+      },
+      "usage": "Said telling a story with a turn in it.",
+      "mnemonic": "Two tenses, one quotation, one named subject.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M10-C01",
+      "display": "Ōlim domī habitābam.",
+      "cue": "I used to live at home."
+    },
+    {
+      "id": "L4-M10-C02",
+      "display": "Cotīdiē ad scholam ībam.",
+      "cue": "Every day I used to go to school."
+    },
+    {
+      "id": "L4-M10-C03",
+      "display": "Subitō Iūlia vēnit.",
+      "cue": "Suddenly Julia came."
+    },
+    {
+      "id": "L4-M10-C04",
+      "display": "\"Venī\", inquit, \"Rōmam\".",
+      "cue": "\"Come to Rome\", he said."
+    },
+    {
+      "id": "L4-M10-C05",
+      "display": "Aegra eram; itaque nōn īvī.",
+      "cue": "I was ill; so I did not go."
+    },
+    {
+      "id": "L4-M10-C06",
+      "display": "\"Quandō vēnistī?\", inquit.",
+      "cue": "\"When did you come?\", he said."
+    },
+    {
+      "id": "L4-M10-C07",
+      "display": "\"Aeger\", inquit, \"erat\".",
+      "cue": "\"He was ill\", he said."
+    },
+    {
+      "id": "L4-M10-C08",
+      "display": "Subitō nōn iam Rōmae eram.",
+      "cue": "Suddenly I was no longer at Rome."
+    },
+    {
+      "id": "L4-M10-C09",
+      "display": "\"Venī\", inquit, \"domum\"; itaque īvī.",
+      "cue": "\"Come home\", he said; so I went."
+    },
+    {
+      "id": "L4-M10-C10",
+      "display": "Ōlim Rōmae habitābam; cotīdiē ad officīnam ībam.",
+      "cue": "I used to live at Rome; every day I went to the office."
+    },
+    {
+      "id": "L4-M10-C11",
+      "display": "Mārcus vēnit.",
+      "cue": "Marcus came."
+    },
+    {
+      "id": "L4-M10-C12",
+      "display": "Dīxī mē aegrum fuisse.",
+      "cue": "I said I had been ill."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

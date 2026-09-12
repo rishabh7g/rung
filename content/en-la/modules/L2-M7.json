@@ -1,0 +1,670 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M7",
+  "title": "On the phone",
+  "job": "Calls and messages — openings, closings, taking a message",
+  "prerequisites": [
+    "L2-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "salvē + <name> + hīc est",
+      "quis + est / V",
+      "N-acc + relinquō / accipiō",
+      "iterum + V-bō",
+      "tēlephōnum + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "WHAT A LATIN TELEPHONE CALL SOUNDS LIKE IS A DECISION, NOT A DISCOVERY. No Roman made one, so the words come from one named source — the Vatican's lexicon of recent Latin and the settled usage of people who speak Latin today — and nothing is coined in this module. tēlephōnum for the instrument, nūntius for a message. The same honesty en-ar needed for Modern Standard Arabic and en-sa for spoken Sanskrit: you are being taught a living agreement, not an ancient fact."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CALL OPENS AND CLOSES WITH L1-M2's WORDS, UNCHANGED: salvē to open, valē to close. There is no Latin 'hello?' for a telephone, so the greeting that works in the street works here, and the caller names themselves with L1-M7's hīc — Mārcus hīc est, 'Marcus here'. That means the whole module adds no social vocabulary at all, only nouns and verbs."
+    },
+    {
+      "tag": "interference",
+      "text": "quis IS THE SIXTH qu- WORD AND HERE IS THE WHOLE FAMILY: ubi where, quō to where, unde from where, quid what, quod because, quis who. Six short words, one family, parted by their vowels. quis takes the he/she shape of the verb, because an unknown person is a third person — and Quis est? against Quid est? is one letter between asking who someone is and what is wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "THE MODULE HAS BOTH OF L1-M6's FUTURES SIDE BY SIDE, and which verb takes which is not guessable from the meaning: relinquam and accipiam take -am, tēlephōnābō and tēlephōnābit take -bō and -bit. The coined verb is the regular one, because whoever built it built it on the easy conjugation — a modern word is a tidy word, and the ancient ones are where the irregularity lives."
+    },
+    {
+      "tag": "interference",
+      "text": "THE VOCATIVE IS STILL DEFERRED, AND THIS IS THE MODULE THAT WANTS IT MOST. Speaking someone's name into a telephone is exactly where Mārce belongs. L1 got away without it because every name it greeted — Iūlia, magister, discipula — has an address shape identical to its subject shape, and Mārcus does not. So this module writes Mārcus as a subject only, names the gap, and leaves Mārce to a later level."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M7-S01",
+      "display": "Salvē! Mārcus hīc est.",
+      "cue": "Hello! Marcus here.",
+      "literal": "be-well Marcus here is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "salvē",
+            "cue": "hello",
+            "tag": "free",
+            "forms": [],
+            "note": "'Hello' — literally 'be well'. L1-M2's greeting, and it serves for every hour and every situation, a telephone call included, because Latin has no separate word for answering one."
+          },
+          {
+            "display": "mārcus",
+            "cue": "Marcus",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman man's name, and the subject shape. Addressing him would need a different shape, which this course has not taught — here he is naming himself, so the subject shape is right."
+          },
+          {
+            "display": "hīc",
+            "cue": "here",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Here'. L1-M7's word, and Mārcus hīc est is how a caller names themselves: 'Marcus here', exactly as in English."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "There is no Latin 'hello?' for a telephone, so the call opens with the greeting L1-M2 taught for walking up to someone in the street. The module is not hiding a word from you: no Roman ever answered a phone, and this is the living-Latin community's answer.",
+      "variations": [
+        {
+          "display": "Salvē! Iūlia hīc est.",
+          "cue": "Hello! Julia here.",
+          "changed": "a different caller"
+        },
+        {
+          "display": "Salvēte! Mārcus hīc est.",
+          "cue": "Hello! Marcus here.",
+          "changed": "L1-M2's plural greeting, for more than one listener"
+        },
+        {
+          "display": "Mārcus hīc est.",
+          "cue": "Marcus here.",
+          "changed": "the greeting dropped, which is abrupt but not wrong"
+        }
+      ],
+      "usage": "Said the moment a call connects.",
+      "mnemonic": "salvē answers everything, telephones included.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S02",
+      "display": "Quis est?",
+      "cue": "Who is it?",
+      "literal": "who is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quis",
+            "cue": "who",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Who', asking. The sixth qu- word: ubi where, quō to where, unde from where, quid what, quod because, quis who. Six words, one family, and only the vowels part them."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Two words, and they are one bar and one letter from a sentence you already know. Quid est? is 'what is it?' and Quis est? is 'who is it?' — and on a telephone the difference decides whether you are asking about a person or a problem.",
+      "variations": [
+        {
+          "display": "Quis venit?",
+          "cue": "Who is coming?",
+          "changed": "a verb of motion"
+        },
+        {
+          "display": "Quid est?",
+          "cue": "What is it?",
+          "changed": "the thing-question, one letter away"
+        },
+        {
+          "display": "Quis hīc est?",
+          "cue": "Who is here?",
+          "changed": "L1-M7's hīc added"
+        }
+      ],
+      "mistake": {
+        "display": "Quid est?",
+        "why": "the what-question asked about a person. Both are correct Latin sentences and they differ by one letter, so nothing warns you — you simply find out you asked what someone was rather than who."
+      },
+      "usage": "Said when a call comes in.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S03",
+      "display": "Tēlephōnum nōn habeō.",
+      "cue": "I do not have a telephone.",
+      "literal": "telephone not I-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tēlephōnum",
+            "cue": "telephone",
+            "tag": "free",
+            "forms": [],
+            "note": "'Telephone' — a modern word, from the Vatican's lexicon of recent Latin and the usage of people who speak Latin now. It is neuter, so it does not change between subject and object."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies. L1-M3's word."
+          },
+          {
+            "display": "habeō",
+            "cue": "I have",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I have': habeō 'I have', habēs 'you have', habet 'he has'. L1-M1's verb."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "tēlephōnum is neuter, so it looks the same whether you have one or one is sitting there. After nine modules of endings moving, the neuter nouns — vīnum, nōmen, auxilium, this — are the ones that stay still, and there are enough of them to be worth noticing.",
+      "variations": [
+        {
+          "display": "Tēlephōnum habeō.",
+          "cue": "I have a telephone.",
+          "changed": "the negative dropped"
+        },
+        {
+          "display": "Tēlephōnum hīc est.",
+          "cue": "The telephone is here.",
+          "changed": "the same shape as a subject, which proves it does not move"
+        },
+        {
+          "display": "Tēlephōnum nōn habēs.",
+          "cue": "You do not have a telephone.",
+          "changed": "about the listener"
+        }
+      ],
+      "usage": "Said when someone asks how to reach you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S04",
+      "display": "Nūntium relinquō.",
+      "cue": "I am leaving a message.",
+      "literal": "message I-leave",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nūntium",
+            "cue": "message",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Message' — nūntius as the subject, nūntium as the thing left or taken. It also means a messenger, which is what it meant first."
+          },
+          {
+            "display": "relinquō",
+            "cue": "I leave",
+            "tag": "delta",
+            "forms": [
+              "relinquō",
+              "relinquit",
+              "relinquam"
+            ],
+            "note": "'I leave behind' — relinquō 'I leave', relinquit 'he leaves', relinquam 'I shall leave'. English 'relinquish' is the same word, and the future follows L1-M6's -am."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The future of this verb is relinquam, not relinquābō. L1-M6 taught two futures — labōrābō from a first-conjugation verb and legam from a third — and relinquō belongs to the second family, so it takes the -am. The verb tells you which; the ending of the 'I' form is the clue.",
+      "variations": [
+        {
+          "display": "Nūntium relinquam.",
+          "cue": "I shall leave a message.",
+          "changed": "L1-M6's future, the -am kind"
+        },
+        {
+          "display": "Nūntium accipiō.",
+          "cue": "I am taking a message.",
+          "changed": "the other half of the job"
+        },
+        {
+          "display": "Nūntium nōn relinquō.",
+          "cue": "I am not leaving a message.",
+          "changed": "the negative"
+        }
+      ],
+      "usage": "Said to whoever answers instead of the person you wanted.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S05",
+      "display": "Nūntium accipiō.",
+      "cue": "I am taking a message.",
+      "literal": "message I-take",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nūntium",
+            "cue": "message",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Message' — nūntius as the subject, nūntium as the thing left or taken. It also means a messenger, which is what it meant first."
+          },
+          {
+            "display": "accipiō",
+            "cue": "I take",
+            "tag": "delta",
+            "forms": [
+              "accipiō",
+              "accipit",
+              "accipiam"
+            ],
+            "note": "'I receive, I take' — accipiō 'I take', accipit 'he takes', accipiam 'I shall take'. English 'accept' is the same word, and its future is the -am kind."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Two verbs, one noun, and the whole job of answering someone else's telephone. accipiō is 'take' in the sense of receiving — it is not the verb for picking something up — and that is the reading English 'accept' preserves.",
+      "variations": [
+        {
+          "display": "Nūntium accipiam.",
+          "cue": "I shall take a message.",
+          "changed": "the future"
+        },
+        {
+          "display": "Nūntium accipit.",
+          "cue": "He is taking a message.",
+          "changed": "someone else answering"
+        },
+        {
+          "display": "Nūntium accipiō et relinquō.",
+          "cue": "I take a message and leave one.",
+          "changed": "both verbs over one noun"
+        }
+      ],
+      "usage": "Said when the person wanted is not there.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S06",
+      "display": "Quis nūntium relinquit?",
+      "cue": "Who is leaving a message?",
+      "literal": "who message he-leaves",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quis",
+            "cue": "who",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Who', asking. The sixth qu- word: ubi where, quō to where, unde from where, quid what, quod because, quis who. Six words, one family, and only the vowels part them."
+          },
+          {
+            "display": "nūntium",
+            "cue": "message",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Message' — nūntius as the subject, nūntium as the thing left or taken. It also means a messenger, which is what it meant first."
+          },
+          {
+            "display": "relinquit",
+            "cue": "he leaves",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He leaves' — relinquō's third-person shape. The question word is the subject, so the verb is the he/she shape even though nobody has been named."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "quis takes the he/she shape of the verb. It is asking about one unknown person, and Latin treats an unknown person as a third person — so the verb has already decided something the question has not.",
+      "variations": [
+        {
+          "display": "Quis nūntium accipit?",
+          "cue": "Who is taking a message?",
+          "changed": "the other verb"
+        },
+        {
+          "display": "Quis tēlephōnum habet?",
+          "cue": "Who has a telephone?",
+          "changed": "a different verb and object"
+        },
+        {
+          "display": "Quis venit?",
+          "cue": "Who is coming?",
+          "changed": "the shortest form of the question"
+        }
+      ],
+      "usage": "Said when you missed who spoke.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S07",
+      "display": "Iterum tēlephōnābō.",
+      "cue": "I shall telephone again.",
+      "literal": "again I-shall-telephone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "iterum",
+            "cue": "again",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Again'. It never changes shape and it comes before the verb, like L1-M4's saepe and semper."
+          },
+          {
+            "display": "tēlephōnābō",
+            "cue": "I shall telephone",
+            "tag": "free",
+            "forms": [
+              "tēlephōnābō",
+              "tēlephōnat"
+            ],
+            "note": "'I shall telephone' — a modern verb on the modern noun: tēlephōnō 'I telephone', tēlephōnat 'he telephones', tēlephōnābō 'I shall'. It takes L1-M6's -bō, because it was built to be regular."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "This verb is the OTHER future. relinquam and accipiam take -am; tēlephōnābō takes -bō, because whoever coined it built it on the first conjugation, which is the easy one. A word made up in the twentieth century was made to be regular.",
+      "sound": "I-te-rum tē-le-phō-NĀ-bō. Seven syllables, and the stress lands on the long ā of the future.",
+      "variations": [
+        {
+          "display": "Crās tēlephōnābō.",
+          "cue": "I shall telephone tomorrow.",
+          "changed": "L1-M4's crās instead"
+        },
+        {
+          "display": "Iterum veniam.",
+          "cue": "I shall come again.",
+          "changed": "a taught verb under the same adverb"
+        },
+        {
+          "display": "Iterum nōn tēlephōnābō.",
+          "cue": "I shall not telephone again.",
+          "changed": "the negative"
+        }
+      ],
+      "usage": "Said to end a call that got nowhere.",
+      "mnemonic": "A modern verb is a regular verb.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S08",
+      "display": "Quis tēlephōnābit?",
+      "cue": "Who will telephone?",
+      "literal": "who he-will-telephone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quis",
+            "cue": "who",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Who', asking. The sixth qu- word: ubi where, quō to where, unde from where, quid what, quod because, quis who. Six words, one family, and only the vowels part them."
+          },
+          {
+            "display": "tēlephōnābit",
+            "cue": "he will telephone",
+            "tag": "free",
+            "forms": [],
+            "note": "'He will telephone' — the -bit future, which is L1-M6's labōrābit on a modern verb. Regular all the way through, which is the point of a coined word."
+          }
+        ],
+        "rules": [
+          2,
+          1
+        ]
+      },
+      "trap": "Two words and both of them are new kinds of thing: a question word that behaves like a name, and a verb nobody in Rome could have said. The grammar around it is entirely L1's — that is what makes a coinage usable.",
+      "variations": [
+        {
+          "display": "Quis tēlephōnat?",
+          "cue": "Who is telephoning?",
+          "changed": "the present instead of the future"
+        },
+        {
+          "display": "Quandō tēlephōnābit?",
+          "cue": "When will he telephone?",
+          "changed": "asking the time rather than the person"
+        },
+        {
+          "display": "Iūlia tēlephōnābit.",
+          "cue": "Julia will telephone.",
+          "changed": "the question answered with a name"
+        }
+      ],
+      "usage": "Said when arranging who calls whom.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S09",
+      "display": "Valē! Iterum tēlephōnābō.",
+      "cue": "Goodbye! I shall telephone again.",
+      "literal": "be-well again I-shall-telephone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "valē",
+            "cue": "goodbye",
+            "tag": "free",
+            "forms": [],
+            "note": "'Goodbye' — literally 'be well', and L1-M2's word. It ends a call exactly as it ends a conversation in the street, because it is the same farewell."
+          },
+          {
+            "display": "iterum",
+            "cue": "again",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Again', unchanging and before the verb."
+          },
+          {
+            "display": "tēlephōnābō",
+            "cue": "I shall telephone",
+            "tag": "free",
+            "forms": [],
+            "note": "'I shall telephone' — the modern verb with L1-M6's -bō future."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "The call closes the way it opened: with L1-M2's word, unmodified. salvē and valē carried every greeting and farewell in the course and they carry this one too, which means the whole telephone module adds no social vocabulary at all — only nouns and verbs.",
+      "variations": [
+        {
+          "display": "Valēte! Iterum tēlephōnābō.",
+          "cue": "Goodbye! I shall telephone again.",
+          "changed": "the plural farewell"
+        },
+        {
+          "display": "Valē! Crās tēlephōnābō.",
+          "cue": "Goodbye! I shall telephone tomorrow.",
+          "changed": "a definite time instead of 'again'"
+        },
+        {
+          "display": "Valē, et grātiās.",
+          "cue": "Goodbye, and thank you.",
+          "changed": "L1-M2's thanks added"
+        }
+      ],
+      "usage": "Said as you hang up.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M7-S10",
+      "display": "Mārcus tēlephōnum nōn habet; nūntium relinquam.",
+      "cue": "Marcus does not have a telephone; I shall leave a message.",
+      "literal": "Marcus telephone not he-has message I-shall-leave",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mārcus",
+            "cue": "Marcus",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman man's name in the subject shape. Talking ABOUT him needs this shape; talking TO him would need one this course has not taught."
+          },
+          {
+            "display": "tēlephōnum",
+            "cue": "telephone",
+            "tag": "free",
+            "forms": [],
+            "note": "'Telephone' — a modern word, from the Vatican's lexicon of recent Latin and the usage of people who speak Latin now. It is neuter, so it does not change between subject and object."
+          },
+          {
+            "display": "habet",
+            "cue": "he has",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He has' — habeō 'I have', habēs 'you have', habet 'he has'. L1-M1's verb."
+          },
+          {
+            "display": "nūntium",
+            "cue": "message",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Message' — nūntius as the subject, nūntium as the thing left or taken. It also means a messenger, which is what it meant first."
+          },
+          {
+            "display": "relinquam",
+            "cue": "I shall leave",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I shall leave' — relinquō's future, the -am kind. L1-M6 taught both futures and this verb takes the harder-looking one."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Two clauses and no word joining them. Latin is content to set a fact beside its consequence with nothing but a pause, where English wants 'so' — and L1-M9's itaque is available if you want it. Naming Mārcus here is also the module's whole vocative problem: this is the subject shape, and speaking TO him would need another.",
+      "variations": [
+        {
+          "display": "Mārcus tēlephōnum nōn habet; itaque nūntium relinquam.",
+          "cue": "Marcus has no telephone, so I shall leave a message.",
+          "changed": "L1-M9's itaque making the consequence explicit"
+        },
+        {
+          "display": "Iūlia tēlephōnum habet; iterum tēlephōnābō.",
+          "cue": "Julia has a telephone; I shall call again.",
+          "changed": "the other way round, with the other future"
+        },
+        {
+          "display": "Mārcus hīc nōn est; nūntium relinquam.",
+          "cue": "Marcus is not here; I shall leave a message.",
+          "changed": "absence instead of no telephone"
+        }
+      ],
+      "mistake": {
+        "display": "Mārce tēlephōnum nōn habet.",
+        "why": "the address shape used for someone being talked about. Mārce is how you speak TO Marcus and this course has not taught it — which is exactly why this module, where a learner most wants it, writes Mārcus and says the gap out loud."
+      },
+      "usage": "Said to yourself, working out how to reach someone.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M7-C01",
+      "display": "Quis est?",
+      "cue": "Who is it?"
+    },
+    {
+      "id": "L2-M7-C02",
+      "display": "Salvē! Iūlia hīc est.",
+      "cue": "Hello! Julia here."
+    },
+    {
+      "id": "L2-M7-C03",
+      "display": "Nūntium accipiam.",
+      "cue": "I shall take a message."
+    },
+    {
+      "id": "L2-M7-C04",
+      "display": "Tēlephōnum nōn habet.",
+      "cue": "He does not have a telephone."
+    },
+    {
+      "id": "L2-M7-C05",
+      "display": "Quis tēlephōnum habet?",
+      "cue": "Who has a telephone?"
+    },
+    {
+      "id": "L2-M7-C06",
+      "display": "Iterum veniam.",
+      "cue": "I shall come again."
+    },
+    {
+      "id": "L2-M7-C07",
+      "display": "Valē! Crās tēlephōnābō.",
+      "cue": "Goodbye! I shall telephone tomorrow."
+    },
+    {
+      "id": "L2-M7-C08",
+      "display": "Quandō tēlephōnābit?",
+      "cue": "When will he telephone?"
+    },
+    {
+      "id": "L2-M7-C09",
+      "display": "Nūntium relinquō, quaesō.",
+      "cue": "I am leaving a message, please."
+    },
+    {
+      "id": "L2-M7-C10",
+      "display": "Mārcus hīc nōn est.",
+      "cue": "Marcus is not here."
+    },
+    {
+      "id": "L2-M7-C11",
+      "display": "Quis nūntium accipit?",
+      "cue": "Who is taking a message?"
+    },
+    {
+      "id": "L2-M7-C12",
+      "display": "Iterum tēlephōnābō.",
+      "cue": "I shall telephone again."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

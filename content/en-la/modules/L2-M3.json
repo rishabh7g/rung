@@ -1,0 +1,793 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M3",
+  "title": "Describing things",
+  "job": "Size, colour, quality — agreement at length",
+  "prerequisites": [
+    "L2-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "Adj-nom + N-nom + est",
+      "Adj-acc + N-acc + volō / emō / habeō",
+      "omnis + N-nom + est",
+      "N-nom + Adj-nom + et + Adj-nom + est",
+      "quantus est + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "AGREEMENT REACHES THE OBJECT CASE, and this is the module's whole job. Magnum librum volō puts the adjective AND the noun in the object shape at once, for one reason: they describe the same thing doing the same job. English leaves 'big' alone whatever happens to 'book', so every sentence here asks you to change a word English would not touch."
+    },
+    {
+      "tag": "delta",
+      "text": "The size and colour words are L1-M9's family, not M2's: magnus has magnus, magna, magnum, and it takes an object shape on top of that. So a single adjective now has more shapes than any noun you have met, and the sentence decides which one — gender from the noun, case from the job."
+    },
+    {
+      "tag": "delta",
+      "text": "Two adjectives on one noun agree with the noun and therefore with each other: liber magnus et gravis est. Three words sharing one set of endings, and one of them from M2's family and one from L1's — so the two patterns finally appear side by side in a single sentence."
+    },
+    {
+      "tag": "free",
+      "text": "An adjective can stand before or after its noun with no change of meaning: magnus liber and liber magnus are the same. The order is emphasis, exactly as L1-M1 said about whole sentences — and putting the adjective second is if anything the commoner habit."
+    },
+    {
+      "tag": "delta",
+      "text": "omnis is 'every' in the singular and 'all' in the plural: omnis liber is every book, omnēs librī all the books. It belongs to M2's two-shape family, so it never tells you the gender of what it counts."
+    },
+    {
+      "tag": "interference",
+      "text": "The cognates in this module are unusually dense and unusually honest. magnus is 'big' and gives 'magnify'; parvus is 'small' and gives almost nothing; albus is white and gives 'album'; niger is black and means exactly that and nothing more. quantus looks like a noun and is an adjective, and M2's quālis is its pair: one asks how big, the other what sort."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M3-S01",
+      "display": "Magnus liber est.",
+      "cue": "It is a big book.",
+      "literal": "big book is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "magnus",
+            "cue": "big · great",
+            "tag": "delta",
+            "forms": [
+              "magnus",
+              "magna",
+              "magnum",
+              "magnam",
+              "magnōs",
+              "magnae",
+              "magnī"
+            ],
+            "note": "'Big'. Three genders like L1-M9's laetus — magnus, magna, magnum — then case and number on top: magnam, magnī, magnōs, magnae. English 'magnify' keeps it."
+          },
+          {
+            "display": "liber",
+            "cue": "book (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one, librōs as more than one object."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "This reads both 'it is a big book' and 'the big book is…', exactly as L1-M7's hic liber est did. Latin is content with that and the situation decides which.",
+      "sound": "MAG-nus LI-ber EST. The g is hard and fully said: MAG-nus, with the g and n both audible.",
+      "variations": [
+        {
+          "display": "Liber magnus est.",
+          "cue": "The book is big.",
+          "changed": "the adjective after its noun, which means the same and is if anything commoner"
+        },
+        {
+          "display": "Magna mēnsa est.",
+          "cue": "It is a big table.",
+          "changed": "a feminine noun, so the adjective takes its gender"
+        },
+        {
+          "display": "Magnī librī sunt.",
+          "cue": "They are big books.",
+          "changed": "more than one, so both words go plural together"
+        }
+      ],
+      "mistake": {
+        "display": "Magna liber est.",
+        "why": "The feminine adjective with a masculine noun. liber decides, not the sound of the word or the look of the ending — and magna belongs with mēnsa, aqua and schola."
+      },
+      "usage": "Said about the size of a thing in front of you.",
+      "mnemonic": "The noun chooses the gender; the adjective follows.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M3-S02",
+      "display": "Magnum librum volō.",
+      "cue": "I want a big book.",
+      "literal": "big book I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "magnum",
+            "cue": "big (as the thing wanted)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Big', with the three shapes of L1-M9's laetus: magnus, magna, magnum. Here magnum is the OBJECT shape, matching librum."
+          },
+          {
+            "display": "librum",
+            "cue": "book (as the thing wanted)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one, librōs as more than one object."
+          },
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I want' — irregular, and the only verb for wanting: volō 'I want', vult 'he/she wants'. It takes an object or an infinitive, and both come before it."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "TWO words changed for one reason. The book is being wanted, so it takes the object shape — and so does the word describing it, because they are describing the same thing in the same job. English changes neither.",
+      "sound": "MAG-num LI-brum VO-lō. Notice how the two -um endings rhyme: that rhyme IS the agreement, and hearing it is the quickest way to check a sentence.",
+      "variations": [
+        {
+          "display": "Magnum librum emō.",
+          "cue": "I am buying a big book.",
+          "changed": "a different verb over the same pair"
+        },
+        {
+          "display": "Magnam mēnsam volō.",
+          "cue": "I want a big table.",
+          "changed": "a feminine noun, so both words take the feminine object shape"
+        },
+        {
+          "display": "Velim magnum librum.",
+          "cue": "I would like a big book.",
+          "changed": "M1's polite request over the same pair"
+        }
+      ],
+      "mistake": {
+        "display": "Magnus librum volō.",
+        "why": "The adjective left in its subject shape while the noun moved. This is the module's central error and it will happen on every sentence until the rhyme of the two endings starts to sound wrong."
+      },
+      "usage": "Said in a shop, or about anything you are asking for.",
+      "mnemonic": "The endings should rhyme.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M3-S03",
+      "display": "Parva mēnsa est.",
+      "cue": "It is a small table.",
+      "literal": "small table is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parva",
+            "cue": "small",
+            "tag": "delta",
+            "forms": [
+              "parvus",
+              "parva",
+              "parvum",
+              "parvam",
+              "parvae",
+              "parvī"
+            ],
+            "note": "'Small', with L1-M9's three genders plus the object shapes this module writes. English kept almost nothing of it — 'parvovirus' is the nearest."
+          },
+          {
+            "display": "mēnsa",
+            "cue": "table (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Table': mēnsa as the subject, mēnsam as the object, mēnsā after in or cum, mēnsae for more than one."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "parva has no English relative to lean on. magnus, albus and gravis all left words behind and this one did not, which makes it the module's only piece of plain memorisation.",
+      "sound": "PAR-va MEN-sa EST. The ē of mēnsa is long and the a of parva is not.",
+      "variations": [
+        {
+          "display": "Mēnsa parva est.",
+          "cue": "The table is small.",
+          "changed": "the adjective after its noun"
+        },
+        {
+          "display": "Parvus liber est.",
+          "cue": "It is a small book.",
+          "changed": "a masculine noun, so the adjective takes its gender"
+        },
+        {
+          "display": "Parvam mēnsam emō.",
+          "cue": "I am buying a small table.",
+          "changed": "both words into the object shape, which is S04's lesson"
+        }
+      ],
+      "mistake": {
+        "display": "Parvus mēnsa est.",
+        "why": "The masculine adjective with a feminine noun. It is S01's error in the other direction, and the pair of them is the whole of gender agreement: the noun decides and the adjective has no say."
+      },
+      "usage": "Said about the size of a thing.",
+      "mnemonic": "parva goes with mēnsa; parvus with liber.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M3-S04",
+      "display": "Parvam mēnsam emō.",
+      "cue": "I am buying a small table.",
+      "literal": "small table I-buy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "parvam",
+            "cue": "small (as the thing bought)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Small', with L1-M9's three genders plus the object shapes this module writes. Here parvam is the feminine OBJECT shape, matching mēnsam."
+          },
+          {
+            "display": "mēnsam",
+            "cue": "table (as the thing bought)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Table': mēnsa as the subject, mēnsam as the object, mēnsā after in or cum, mēnsae for more than one."
+          },
+          {
+            "display": "emō",
+            "cue": "I buy",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I buy': emō, emit 'he buys', emere 'to buy'. No English word comes from it, so there is nothing to guess from."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The feminine object ending is -am on both words, which rhymes exactly as the masculine -um did in S02. Two families of noun, two rhymes, one rule.",
+      "sound": "PAR-vam MEN-sam E-mō. Two -am endings in a row: that is the agreement, audible.",
+      "variations": [
+        {
+          "display": "Parvum librum emō.",
+          "cue": "I am buying a small book.",
+          "changed": "a masculine noun, so the rhyme becomes -um"
+        },
+        {
+          "display": "Parvam mēnsam volō.",
+          "cue": "I want a small table.",
+          "changed": "a different verb over the same pair"
+        },
+        {
+          "display": "Parvam mēnsam habeō.",
+          "cue": "I have a small table.",
+          "changed": "and a third, which changes nothing about the agreement"
+        }
+      ],
+      "mistake": {
+        "display": "Parva mēnsam emō.",
+        "why": "The adjective left in the subject shape again. S02's plate was the masculine version of exactly this, and having both is deliberate: the error is not about gender, it is about forgetting that the adjective moves at all."
+      },
+      "usage": "Said at a market.",
+      "mnemonic": "-am and -am, or -um and -um.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M3-S05",
+      "display": "Liber albus est.",
+      "cue": "The book is white.",
+      "literal": "book white is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "liber",
+            "cue": "book (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one, librōs as more than one object."
+          },
+          {
+            "display": "albus",
+            "cue": "white",
+            "tag": "free",
+            "forms": [
+              "albus",
+              "alba"
+            ],
+            "note": "'White' — a matt, plain white. English 'album' was a white tablet and 'albino' is the same word. Three genders like magnus."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          3,
+          1
+        ]
+      },
+      "trap": "The adjective is second here and first in S01, and both are ordinary Latin. If you are looking for a rule about where an adjective goes, there is not one — there is only emphasis.",
+      "sound": "LI-ber AL-bus EST. Three short words; nothing held.",
+      "variations": [
+        {
+          "display": "Albus liber est.",
+          "cue": "It is a white book.",
+          "changed": "the adjective in front, which is the same sentence"
+        },
+        {
+          "display": "Mēnsa alba est.",
+          "cue": "The table is white.",
+          "changed": "a feminine noun"
+        },
+        {
+          "display": "Liber albus et magnus est.",
+          "cue": "The book is white and big.",
+          "changed": "two adjectives, both agreeing with the book"
+        }
+      ],
+      "mistake": {
+        "display": "Liber alba est.",
+        "why": "The feminine adjective with a masculine noun, for the third time in five sentences. The repetition is the point: there is no shortcut, and the only cure is meeting the pair often enough that the mismatch sounds wrong."
+      },
+      "usage": "Said about colour.",
+      "mnemonic": "An 'album' was a white board.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M3-S06",
+      "display": "Nigrum librum habeō.",
+      "cue": "I have a black book.",
+      "literal": "black book I-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nigrum",
+            "cue": "black (as the thing had)",
+            "tag": "delta",
+            "forms": [
+              "niger",
+              "nigra",
+              "nigram",
+              "nigrum"
+            ],
+            "note": "'Black', and it means the colour and nothing else. Its e drops out as soon as an ending is added, exactly as liber's does: niger, nigra, nigrum."
+          },
+          {
+            "display": "librum",
+            "cue": "book (as the thing had)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one, librōs as more than one object."
+          },
+          {
+            "display": "habeō",
+            "cue": "I have",
+            "tag": "free",
+            "forms": [],
+            "note": "'I have', and it does exactly what English 'have' does: habeō 'I have', habēs 'you have', habet 'he/she has'."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "niger loses its e the way liber does — nigrum, not nigerum. Two words in this module drop a vowel when an ending arrives, and they happen to be the noun and the adjective of this very sentence.",
+      "sound": "NI-grum LI-brum ha-BE-ō. Both first words are two syllables with the stress at the front, and both have lost an e.",
+      "variations": [
+        {
+          "display": "Niger liber est.",
+          "cue": "The book is black.",
+          "changed": "the subject shape, where the e comes back"
+        },
+        {
+          "display": "Nigram mēnsam habeō.",
+          "cue": "I have a black table.",
+          "changed": "a feminine noun, so the rhyme is -am"
+        },
+        {
+          "display": "Nigrum librum volō.",
+          "cue": "I want a black book.",
+          "changed": "a different verb over the same pair"
+        }
+      ],
+      "mistake": {
+        "display": "Nigerum librum habeō.",
+        "why": "The e kept when the ending arrived. niger behaves like liber and magister: the e is there only when nothing follows it, and every other shape drops it."
+      },
+      "usage": "Said about colour, of a thing you own.",
+      "mnemonic": "niger loses its e, like liber and magister.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M3-S07",
+      "display": "Omnis liber gravis est.",
+      "cue": "Every book is heavy.",
+      "literal": "every book heavy is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "omnis",
+            "cue": "every (with one thing)",
+            "tag": "delta",
+            "forms": [
+              "omnis",
+              "omnēs"
+            ],
+            "note": "'Every' with one thing and 'all' with more than one: omnis liber, omnēs librī. It is M2's two-shape family, so it never shows gender."
+          },
+          {
+            "display": "liber",
+            "cue": "book (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one, librōs as more than one object."
+          },
+          {
+            "display": "gravis",
+            "cue": "heavy",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Serious' of a person and 'heavy' of a thing; gravēs of more than one. Same shape for a man or a woman; grave for a neuter thing."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "Two adjectives here and neither shows gender, because both belong to M2's family. So the sentence has four words and nothing in it says whether a book is masculine — which it is, and only liber tells you.",
+      "sound": "OM-nis LI-ber GRA-vis EST. Four words, four first-syllable stresses, nothing long.",
+      "variations": [
+        {
+          "display": "Omnēs librī gravēs sunt.",
+          "cue": "All the books are heavy.",
+          "changed": "everything plural at once — the counter, the noun, the adjective and the verb"
+        },
+        {
+          "display": "Omnis mēnsa gravis est.",
+          "cue": "Every table is heavy.",
+          "changed": "a feminine noun, and neither adjective moves"
+        },
+        {
+          "display": "Omnis liber albus est.",
+          "cue": "Every book is white.",
+          "changed": "an adjective from the other family, which does show gender"
+        }
+      ],
+      "mistake": {
+        "display": "Omnis librī gravēs sunt.",
+        "why": "'Every' left singular in front of a plural. omnis and omnēs are the same word counting differently, and the number has to match the noun it counts — four words agreeing, and this one did not."
+      },
+      "usage": "Said when you are generalising.",
+      "mnemonic": "omnis one, omnēs many.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M3-S08",
+      "display": "Quantus est liber?",
+      "cue": "How big is the book?",
+      "literal": "how-big is the-book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quantus",
+            "cue": "how big",
+            "tag": "interference",
+            "forms": [
+              "quantus",
+              "quanta"
+            ],
+            "note": "'How big' — an adjective, so it agrees: quantus liber, quanta mēnsa. M2's quālis asks what sort and does NOT agree, which is the pair to keep apart."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "liber",
+            "cue": "book (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one, librōs as more than one object."
+          }
+        ],
+        "rules": [
+          5,
+          1
+        ]
+      },
+      "trap": "quantus agrees and quālis does not. The two questions look like a pair and belong to different adjective families, so the first changes for gender and the second cannot — and L1-M8's quantī, the price word, is a third shape of this same adjective.",
+      "sound": "QUAN-tus est LI-ber. The qu is k-plus-w; nothing in the line is long.",
+      "variations": [
+        {
+          "display": "Quanta est mēnsa?",
+          "cue": "How big is the table?",
+          "changed": "a feminine noun, so the question word takes its gender"
+        },
+        {
+          "display": "Quālis est liber?",
+          "cue": "What is the book like?",
+          "changed": "M2's question, which does not agree — the pair, side by side"
+        },
+        {
+          "display": "Quantī cōnstat liber?",
+          "cue": "How much does the book cost?",
+          "changed": "L1-M8's price question, which is a third shape of the same word"
+        }
+      ],
+      "mistake": {
+        "display": "Quantis est liber?",
+        "why": "quantus given M2's two-shape ending, on the model of quālis. They ask neighbouring questions and belong to different families — quantus has three genders and quālis has two, and neither borrows from the other."
+      },
+      "usage": "Said when you want a measurement.",
+      "mnemonic": "quantus agrees, quālis does not.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M3-S09",
+      "display": "Liber magnus et gravis est.",
+      "cue": "The book is big and heavy.",
+      "literal": "book big and heavy is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "liber",
+            "cue": "book (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one, librōs as more than one object."
+          },
+          {
+            "display": "magnus",
+            "cue": "big · great",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Big', with the three shapes of L1-M9's laetus: magnus, magna, magnum. English 'magnify' and 'magnificent' keep it."
+          },
+          {
+            "display": "et",
+            "cue": "and",
+            "tag": "free",
+            "forms": [],
+            "note": "'And', and it behaves exactly as English does: between the two things, never joined on. The safe choice whenever you are unsure."
+          },
+          {
+            "display": "gravis",
+            "cue": "heavy",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Serious' of a person and 'heavy' of a thing; gravēs of more than one. Same shape for a man or a woman; grave for a neuter thing."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2,
+          1
+        ]
+      },
+      "trap": "Two adjectives from two families on one noun, and they do not look alike: magnus shows the book's gender and gravis cannot. Both are agreeing correctly, and only one of them can prove it.",
+      "sound": "LI-ber MAG-nus et GRA-vis EST. Five words, and the whole line is light — this is what a long Latin sentence sounds like.",
+      "variations": [
+        {
+          "display": "Mēnsa magna et gravis est.",
+          "cue": "The table is big and heavy.",
+          "changed": "a feminine noun, and only magna moves"
+        },
+        {
+          "display": "Liber parvus et albus est.",
+          "cue": "The book is small and white.",
+          "changed": "two adjectives from the SAME family, so both show gender"
+        },
+        {
+          "display": "Librī magnī et gravēs sunt.",
+          "cue": "The books are big and heavy.",
+          "changed": "everything plural, and both adjectives go with it"
+        }
+      ],
+      "mistake": {
+        "display": "Liber magnus et gravus est.",
+        "why": "gravis given magnus's ending, because it is standing next to it. Two adjectives agreeing with the same noun still keep their own families — that is the module's hardest single fact and this is the sentence it lives in."
+      },
+      "usage": "Said when one word is not enough.",
+      "mnemonic": "Agreeing together does not mean looking alike.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M3-S10",
+      "display": "Omnēs librī parvī sunt.",
+      "cue": "All the books are small.",
+      "literal": "all books small are",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "omnēs",
+            "cue": "all (with more than one)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Every' with one thing and 'all' with more than one: omnis liber, omnēs librī. It is M2's two-shape family, so it never shows gender."
+          },
+          {
+            "display": "librī",
+            "cue": "books",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber for one, librī for more than one. The e drops out when the ending is added."
+          },
+          {
+            "display": "parvī",
+            "cue": "small (of more than one)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Small', with L1-M9's three genders plus the shapes this module writes. parvī is the masculine plural, matching librī."
+          },
+          {
+            "display": "sunt",
+            "cue": "they are",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          4,
+          1
+        ]
+      },
+      "trap": "Four words and every one of them is plural. omnēs, librī, parvī and sunt all carry it, which is three more places than English needs — and getting any one of them wrong is the commonest way a long Latin sentence falls over.",
+      "sound": "OM-nēs LI-brī PAR-vī SUNT. Three long ī and ē sounds in a row: the plural is audible right across the line.",
+      "variations": [
+        {
+          "display": "Omnis liber parvus est.",
+          "cue": "Every book is small.",
+          "changed": "everything singular, which is S07's shape"
+        },
+        {
+          "display": "Omnēs mēnsae parvae sunt.",
+          "cue": "All the tables are small.",
+          "changed": "a feminine noun, so two of the four words change their ending"
+        },
+        {
+          "display": "Omnēs librī gravēs sunt.",
+          "cue": "All the books are heavy.",
+          "changed": "an adjective from M2's family, which shows number but not gender"
+        }
+      ],
+      "mistake": {
+        "display": "Omnēs librī parvus sunt.",
+        "why": "The adjective left singular while everything around it went plural. Four agreements in one sentence means four chances to slip, and the adjective is the one furthest from the noun it answers to."
+      },
+      "usage": "Said when you are describing a whole set.",
+      "mnemonic": "Four words, four plurals.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M3-C01",
+      "display": "Magnam mēnsam habeō.",
+      "cue": "I have a big table."
+    },
+    {
+      "id": "L2-M3-C02",
+      "display": "Omnis liber albus est.",
+      "cue": "Every book is white."
+    },
+    {
+      "id": "L2-M3-C03",
+      "display": "Quanta est mēnsa?",
+      "cue": "How big is the table?"
+    },
+    {
+      "id": "L2-M3-C04",
+      "display": "Velim parvum librum.",
+      "cue": "I would like a small book."
+    },
+    {
+      "id": "L2-M3-C05",
+      "display": "Nigra mēnsa gravis est.",
+      "cue": "The black table is heavy."
+    },
+    {
+      "id": "L2-M3-C06",
+      "display": "Omnēs mēnsae magnae sunt.",
+      "cue": "All the tables are big."
+    },
+    {
+      "id": "L2-M3-C07",
+      "display": "Parvum librum emere volō.",
+      "cue": "I want to buy a small book."
+    },
+    {
+      "id": "L2-M3-C08",
+      "display": "Liber niger et gravis est.",
+      "cue": "The book is black and heavy."
+    },
+    {
+      "id": "L2-M3-C09",
+      "display": "Quantus est frāter?",
+      "cue": "How big is your brother?"
+    },
+    {
+      "id": "L2-M3-C10",
+      "display": "Magnōs librōs habeō.",
+      "cue": "I have big books."
+    },
+    {
+      "id": "L2-M3-C11",
+      "display": "Alba mēnsa parva est.",
+      "cue": "The white table is small."
+    },
+    {
+      "id": "L2-M3-C12",
+      "display": "Omnēs librī hīc sunt.",
+      "cue": "All the books are here."
+    },
+    {
+      "id": "L2-M3-C13",
+      "display": "Dā mihi nigrum librum, quaesō.",
+      "cue": "Give me the black book, please."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

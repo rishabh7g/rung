@@ -1,0 +1,748 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "My day",
+  "job": "Daily habits and time words",
+  "prerequisites": [
+    "L1-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": [
+      "simple_present",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "N-acc + V-ō",
+      "V-ō (subject dropped)",
+      "cotīdiē / semper / saepe + V",
+      "ad + N-acc + eō",
+      "N-acc + legō / scrībō"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "One Latin present does the work of two English ones. Legō is 'I read' and 'I am reading', and there is no progressive to build — no 'am', no '-ing', nothing to choose between. Whenever English offers you two tenses here, Latin offers one."
+    },
+    {
+      "tag": "delta",
+      "text": "The ending is the subject, and this is the module where you can see it move: legō 'I read', legis 'you read', legit 'he reads'. Three people, one word each time, and the pronoun is left out unless you want to press on who — which M2 already said about tū."
+    },
+    {
+      "tag": "delta",
+      "text": "Verbs come in families and the endings differ between them. legō drops to legis, but labōrō keeps its a — labōrat — and veniō keeps its i. The -ō of 'I' is shared; everything in front of it has to be learned per verb, which is why a dictionary gives you two shapes and not one."
+    },
+    {
+      "tag": "delta",
+      "text": "Motion takes ad plus the object shape: ad scholam eō. This is the first preposition in the course, and the noun after it wears the same -m it wears as an object — the preposition does not excuse it from having an ending."
+    },
+    {
+      "tag": "free",
+      "text": "Time words like cotīdiē, semper and saepe never change shape and sit wherever they are needed, usually in front. They are adverbs, and an adverb in Latin has nobody to agree with — so these are the cheapest words in the module."
+    },
+    {
+      "tag": "interference",
+      "text": "eō is 'I go', and it is also a shape of other words entirely — you will meet it later as 'by that' and as 'to there'. Here it is the verb, nothing else, and its shapes are eō, īs, it and the infinitive īre. Watch the tiny ones: it is a whole sentence meaning 'he goes'."
+    },
+    {
+      "tag": "interference",
+      "text": "venit means 'he comes'. Hold that spelling: in the next module you will meet vēnit with a bar, which is 'he came'. One mark is the entire difference between the two tenses, and a Roman hears the length as clearly as you hear the difference between 'ship' and 'sheep'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "Ad scholam eō.",
+      "cue": "I go to school.",
+      "literal": "to school I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ad",
+            "cue": "to · towards",
+            "tag": "delta",
+            "forms": [
+              "ad"
+            ],
+            "note": "'To, towards', and the noun after it takes the object shape — ad scholam, never ad schola. The first preposition in the course, and it never changes."
+          },
+          {
+            "display": "scholam",
+            "cue": "school (as the place gone to)",
+            "tag": "delta",
+            "forms": [
+              "schola",
+              "scholam"
+            ],
+            "note": "'School' — schola as the subject, scholam after ad. In Latin it meant the teaching rather than the building, so 'I go to school' is closer to 'I go to lessons'."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "interference",
+            "forms": [
+              "eō",
+              "īs",
+              "it",
+              "īre"
+            ],
+            "note": "'I go': eō, īs 'you go', it 'he/she goes', īre 'to go'. Tiny and irregular — it is a complete sentence on its own."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "schola became scholam after ad. English prepositions leave their noun alone, so nothing warns you that a word can need an ending because of what stands in front of it.",
+      "sound": "AD SCHO-lam E-ō. The ch is a hard k with a breath after it, not the ch of 'church'. eō is two syllables — E-o — and the ō is long.",
+      "variations": [
+        {
+          "display": "Ad scholam īs.",
+          "cue": "You go to school.",
+          "changed": "the verb ending moves it to 'you'"
+        },
+        {
+          "display": "Ad scholam it.",
+          "cue": "He goes to school.",
+          "changed": "and to a third person — two letters doing the whole job"
+        },
+        {
+          "display": "Ad scholam īre volō.",
+          "cue": "I want to go to school.",
+          "changed": "M3's wanting over the top, with the infinitive before it"
+        }
+      ],
+      "mistake": {
+        "display": "Ad schola eō.",
+        "why": "The noun left in its subject shape after ad. Every Latin preposition governs a case, and ad governs the object shape — so the -m is not optional even though nothing in the English suggests it."
+      },
+      "usage": "Said about where you go, habitually or now.",
+      "mnemonic": "ad is the 'ad-' of 'advance': movement towards.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "Cotīdiē ad scholam eō.",
+      "cue": "I go to school every day.",
+      "literal": "daily to school I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cotīdiē",
+            "cue": "every day · daily",
+            "tag": "free",
+            "forms": [
+              "cotīdiē"
+            ],
+            "note": "'Every day' in one word, and it never changes. It usually comes first, which is where English would put 'every day' only for emphasis."
+          },
+          {
+            "display": "ad",
+            "cue": "to · towards",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To, towards', and the noun after it takes the object shape — ad scholam, never ad schola. The first preposition in the course, and it never changes."
+          },
+          {
+            "display": "scholam",
+            "cue": "school (as the place gone to)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' — schola as the subject, scholam after ad. In Latin it meant the teaching rather than the building, so 'I go to school' is closer to 'I go to lessons'."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I go': eō, īs 'you go', it 'he/she goes', īre 'to go'. Tiny and irregular — it is a complete sentence on its own."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "One word for 'every day', and no extra tense to mark the habit. English can say 'I go' or 'I am going' and uses the first for habits; Latin has only eō and lets cotīdiē carry the habit.",
+      "sound": "co-TI-di-ē ad SCHO-lam E-ō. The stress in cotīdiē sits on the long ī, and its final ē is long too but unstressed.",
+      "variations": [
+        {
+          "display": "Semper ad scholam eō.",
+          "cue": "I always go to school.",
+          "changed": "a different time word in the same slot"
+        },
+        {
+          "display": "Saepe ad scholam it.",
+          "cue": "He often goes to school.",
+          "changed": "a third time word and a third person together"
+        },
+        {
+          "display": "Ad scholam cotīdiē eō.",
+          "cue": "I go to school every day.",
+          "changed": "the time word moved later, which is allowed and slightly heavier"
+        }
+      ],
+      "mistake": {
+        "display": "Cotīdiē ad scholam sum eundō.",
+        "why": "A progressive assembled out of 'to be' and a verbal noun, the way English builds 'am going'. Latin has no such construction in the present at all: eō alone is both 'I go' and 'I am going'."
+      },
+      "usage": "The ordinary way to describe a routine.",
+      "mnemonic": "cotīdiē is 'quotidian' — the everyday.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "Librum legō.",
+      "cue": "I am reading a book.",
+      "literal": "book I-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "librum",
+            "cue": "book (as the thing read)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. The e drops out as soon as an ending is added."
+          },
+          {
+            "display": "legō",
+            "cue": "I read · I am reading",
+            "tag": "delta",
+            "forms": [
+              "legō",
+              "legis",
+              "legit",
+              "legere"
+            ],
+            "note": "'I read' AND 'I am reading' — one present for both: legō, legis 'you read', legit 'he reads', legere 'to read'. The e shortens to i before the endings."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The cue says 'I am reading' and the Latin has one word for it. There is nothing here to match 'am' and nothing to match '-ing', and hunting for them is hunting for a construction Latin does not have.",
+      "sound": "LI-brum LE-gō. Hard g. The ō is long and says 'I'.",
+      "variations": [
+        {
+          "display": "Librum legis.",
+          "cue": "You are reading a book.",
+          "changed": "the ending moves it to 'you' and the e becomes an i"
+        },
+        {
+          "display": "Librum legit.",
+          "cue": "He is reading a book.",
+          "changed": "and to a third person, with the same vowel change"
+        },
+        {
+          "display": "Legō.",
+          "cue": "I am reading.",
+          "changed": "the object dropped — one word is a whole sentence"
+        }
+      ],
+      "mistake": {
+        "display": "Librum sum legēns.",
+        "why": "'I am reading' built out of two pieces because English needs two. Latin's present already covers it, and this construction says something much stranger — roughly 'I am a reading thing'."
+      },
+      "usage": "Said about what you are doing now, or what you do.",
+      "mnemonic": "legō is 'legible' and 'lecture' — reading, and reading aloud.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "Semper legō.",
+      "cue": "I am always reading.",
+      "literal": "always I-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "semper",
+            "cue": "always",
+            "tag": "free",
+            "forms": [
+              "semper"
+            ],
+            "note": "'Always', and it never changes shape. Kept whole in English 'semper fidelis' and in 'sempiternal'."
+          },
+          {
+            "display": "legō",
+            "cue": "I read · I am reading",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read' AND 'I am reading' — one present for both: legō, legis 'you read', legit 'he reads', legere 'to read'. The e shortens to i before the endings."
+          }
+        ],
+        "rules": [
+          4,
+          1
+        ]
+      },
+      "trap": "Two words, and one of them is the whole verb with its subject inside it. This is the shape to aim for: a Latin sentence can be shorter than the English one it translates without leaving anything out.",
+      "sound": "SEM-per LE-gō. Both words stressed on the first syllable.",
+      "variations": [
+        {
+          "display": "Saepe legō.",
+          "cue": "I often read.",
+          "changed": "a weaker time word in the same place"
+        },
+        {
+          "display": "Semper legit.",
+          "cue": "He is always reading.",
+          "changed": "the person moves and the time word does not"
+        },
+        {
+          "display": "Semper labōrō.",
+          "cue": "I am always working.",
+          "changed": "a different verb under the same adverb"
+        }
+      ],
+      "mistake": {
+        "display": "Ego semper legō.",
+        "why": "The pronoun put in out of habit. It is not wrong Latin, but ego means 'I, as against other people', and a sentence about your own routine rarely wants that contrast — M2 made the same point about tū."
+      },
+      "usage": "Said about a habit rather than about now.",
+      "mnemonic": "'Semper' is the 'always' English borrowed and kept.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S05",
+      "display": "Epistulam scrībō.",
+      "cue": "I am writing a letter.",
+      "literal": "letter I-write",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "epistulam",
+            "cue": "letter (as the thing written)",
+            "tag": "free",
+            "forms": [
+              "epistula",
+              "epistulam"
+            ],
+            "note": "'Letter' — the written kind. epistula as the subject, epistulam as the object. English kept it in 'epistle'."
+          },
+          {
+            "display": "scrībō",
+            "cue": "I write · I am writing",
+            "tag": "delta",
+            "forms": [
+              "scrībō",
+              "scrībit",
+              "scrībere"
+            ],
+            "note": "'I write': scrībō, scrībit 'he writes', scrībere 'to write'. The ī is long and stays long — which is what the English 'scribe' and 'describe' keep."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "epistulam looks plural because of the -am, and is not. It is one letter in its object shape — the same -am aqua takes, on a noun of the same family.",
+      "sound": "e-PIS-tu-lam SCRI-bō. Both long vowels are stressed: the i of epistulam is short, so the stress falls back onto -pis-.",
+      "variations": [
+        {
+          "display": "Epistulam scrībit.",
+          "cue": "He is writing a letter.",
+          "changed": "the ending moves the writing to a third person"
+        },
+        {
+          "display": "Cotīdiē epistulam scrībō.",
+          "cue": "I write a letter every day.",
+          "changed": "a time word in front, turning it into a habit"
+        },
+        {
+          "display": "Epistulam scrībere volō.",
+          "cue": "I want to write a letter.",
+          "changed": "M3's wanting over the top; the object still comes first"
+        }
+      ],
+      "mistake": {
+        "display": "Epistula scrībō.",
+        "why": "The object left in its subject shape, which is M3's rule not yet settled. The letter is being written, so it takes the -m — and without it the sentence reads as two subjects."
+      },
+      "usage": "Said about correspondence, then and now.",
+      "mnemonic": "An 'epistle' is a letter someone wrote.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S06",
+      "display": "Cotīdiē labōrō.",
+      "cue": "I work every day.",
+      "literal": "daily I-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cotīdiē",
+            "cue": "every day · daily",
+            "tag": "free",
+            "forms": [],
+            "note": "'Every day' in one word, and it never changes. It usually comes first, which is where English would put 'every day' only for emphasis."
+          },
+          {
+            "display": "labōrō",
+            "cue": "I work",
+            "tag": "interference",
+            "forms": [
+              "labōrō",
+              "labōrat"
+            ],
+            "note": "'I work' — ordinary work, not toil: labōrō, labōrat 'he works'. It keeps its a before the ending, where legō changes to legis."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "labōrō is not 'I labour'. English kept the word and narrowed it to hard or unpleasant work; the Latin covers any work at all, including a scholar's.",
+      "sound": "co-TI-di-ē la-BO-rō. Both of labōrō's o-sounds are long, and the stress sits on the first of them.",
+      "variations": [
+        {
+          "display": "Cotīdiē labōrat.",
+          "cue": "He works every day.",
+          "changed": "a third person, and the a is still there"
+        },
+        {
+          "display": "Semper labōrō.",
+          "cue": "I am always working.",
+          "changed": "a different time word"
+        },
+        {
+          "display": "Nōn labōrō.",
+          "cue": "I do not work.",
+          "changed": "negated, with M2's nōn in front of the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Cotīdiē labōrit.",
+        "why": "The third person built on legō's pattern. labōrō belongs to a different family and keeps its a: labōrat. There is no way to guess which family a verb is in — it comes with the word."
+      },
+      "usage": "Said about your working life.",
+      "mnemonic": "labōrō is any work; 'laborious' is English's narrowing of it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S07",
+      "display": "Saepe aquam bibō.",
+      "cue": "I often drink water.",
+      "literal": "often water I-drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saepe",
+            "cue": "often",
+            "tag": "free",
+            "forms": [
+              "saepe"
+            ],
+            "note": "'Often', and it never changes. The ae is one sound, said like the 'eye' in English — SIGH-pe."
+          },
+          {
+            "display": "aquam",
+            "cue": "water (as the thing drunk)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā as the thing needed. Three shapes of one word."
+          },
+          {
+            "display": "bibō",
+            "cue": "I drink",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To drink', the infinitive bibere — the shape a dictionary lists second. bibō 'I drink', bibis 'you drink', bibit 'he/she drinks'."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "The ae of saepe is not two vowels read in turn. It is one sound, and it is the 'eye' of English — a learner who says 'SAY-pe' has said a syllable Latin does not have.",
+      "sound": "SIGH-pe A-quam BI-bō. The ae is the diphthong of 'eye'; the ō of bibō is long.",
+      "variations": [
+        {
+          "display": "Saepe aquam bibit.",
+          "cue": "He often drinks water.",
+          "changed": "a third person; the diphthong and the object hold"
+        },
+        {
+          "display": "Cotīdiē aquam bibō.",
+          "cue": "I drink water every day.",
+          "changed": "a stronger time word"
+        },
+        {
+          "display": "Aquam saepe bibō.",
+          "cue": "I often drink water.",
+          "changed": "the time word later, which is allowed and slightly heavier"
+        }
+      ],
+      "mistake": {
+        "display": "Saepe aqua bibō.",
+        "why": "The object shape dropped again. The pattern is worth naming: every verb in this module that takes a thing puts that thing in the -m shape, and the time word in front changes nothing about it."
+      },
+      "usage": "Said about a habit, at any scale.",
+      "mnemonic": "ae is 'eye': saepe, Caesar, aetās.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S08",
+      "display": "Ad scholam it.",
+      "cue": "He goes to school.",
+      "literal": "to school he-goes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ad",
+            "cue": "to · towards",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To, towards', and the noun after it takes the object shape — ad scholam, never ad schola. The first preposition in the course, and it never changes."
+          },
+          {
+            "display": "scholam",
+            "cue": "school (as the place gone to)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' — schola as the subject, scholam after ad. In Latin it meant the teaching rather than the building."
+          },
+          {
+            "display": "it",
+            "cue": "he goes · she goes",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He goes' — two letters, and a whole sentence. It is not the English 'it': Latin has no such word here, and the person is carried by the -t."
+          }
+        ],
+        "rules": [
+          5,
+          1
+        ]
+      },
+      "trap": "it is not English 'it'. It is 'he goes' or 'she goes', and the two letters happening to spell an English word is the sharpest false friend in the course so far.",
+      "sound": "AD SCHO-lam IT. One syllable, said flatly and quickly — nothing about it sounds important, and it is the entire verb.",
+      "variations": [
+        {
+          "display": "Iūlia ad scholam it.",
+          "cue": "Julia goes to school.",
+          "changed": "the person named; the verb does not change"
+        },
+        {
+          "display": "Cotīdiē ad scholam it.",
+          "cue": "He goes to school every day.",
+          "changed": "a time word in front"
+        },
+        {
+          "display": "Ad scholam nōn it.",
+          "cue": "He does not go to school.",
+          "changed": "negated, with nōn against the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Ad scholam it est.",
+        "why": "A 'to be' added because it looks too short to be a verb. it IS the verb — adding est gives the sentence two of them, and neither has anything to do."
+      },
+      "usage": "Said about someone else's routine.",
+      "mnemonic": "The whole verb is two letters. Latin is capable of that.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S09",
+      "display": "Iūlia cotīdiē venit.",
+      "cue": "Julia comes every day.",
+      "literal": "Julia daily she-comes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Iūlia",
+            "cue": "Julia (a woman's name)",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman woman's given name, said YOO-li-a. Spelled with an i because Latin has no letter j at all."
+          },
+          {
+            "display": "cotīdiē",
+            "cue": "every day · daily",
+            "tag": "free",
+            "forms": [],
+            "note": "'Every day' in one word, and it never changes. It usually comes first, which is where English would put 'every day' only for emphasis."
+          },
+          {
+            "display": "venit",
+            "cue": "he comes · she comes",
+            "tag": "interference",
+            "forms": [
+              "veniō",
+              "venit",
+              "venīre"
+            ],
+            "note": "'She comes': veniō 'I come', venit 'he/she comes', venīre 'to come'. Learn this spelling exactly — vēnit, with a bar, is 'she CAME', and M5 teaches it."
+          }
+        ],
+        "rules": [
+          6,
+          4
+        ]
+      },
+      "trap": "This is the present, and the next module's vēnit is the past. The only difference on the page is the bar over the e, so the two tenses of this verb are one mark apart — and the mark is the tense.",
+      "sound": "YOO-li-a co-TI-di-ē VE-nit. Every vowel in venit is SHORT. Clip them: VEN-it, quickly, and hear how different it will be from VAY-nit next time.",
+      "variations": [
+        {
+          "display": "Cotīdiē veniō.",
+          "cue": "I come every day.",
+          "changed": "the first person, and the i shows before the ending"
+        },
+        {
+          "display": "Iūlia saepe venit.",
+          "cue": "Julia often comes.",
+          "changed": "a weaker time word"
+        },
+        {
+          "display": "Iūlia venīre vult.",
+          "cue": "Julia wants to come.",
+          "changed": "M3's wanting, with the infinitive in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "Iūlia cotīdiē vēnit.",
+        "why": "The bar written where it does not belong, which changes the tense: this says Julia CAME every day. It is the one mistake in this course that is invisible unless you are looking for it, and it is why every long vowel is marked."
+      },
+      "usage": "Said about somebody else's habit.",
+      "mnemonic": "Short e, present. Long ē, past. One bar, one tense.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S10",
+      "display": "Legere volō.",
+      "cue": "I want to read.",
+      "literal": "to-read I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "legere",
+            "cue": "to read",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read' AND 'I am reading' — one present for both: legō, legis 'you read', legit 'he reads', legere 'to read'. The -re ending is what makes it 'to'."
+          },
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I want' — irregular, and the only verb for wanting: volō 'I want', vult 'he/she wants'. It takes an object or an infinitive, and both come before it."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "The infinitive comes first, as it did in M3. English says 'I want to read' and Latin says 'to-read I-want' — and that order holds however long the sentence gets.",
+      "sound": "LE-ge-re VO-lō. Three light syllables then two, with the stress on the first of each word.",
+      "variations": [
+        {
+          "display": "Librum legere volō.",
+          "cue": "I want to read a book.",
+          "changed": "an object added, which goes in front of the infinitive"
+        },
+        {
+          "display": "Legere nōlō.",
+          "cue": "I do not want to read.",
+          "changed": "M3's one-word refusal in place of the wanting"
+        },
+        {
+          "display": "Legere vult.",
+          "cue": "He wants to read.",
+          "changed": "a third person wanting it"
+        }
+      ],
+      "mistake": {
+        "display": "Volō legere.",
+        "why": "The English order. A Roman would understand it and sometimes wrote it, but built this way the learner never internalises that the infinitive leads — and the sentence with an object as well becomes unreadable."
+      },
+      "usage": "Said about what you would rather be doing.",
+      "mnemonic": "The -re ending is the 'to'.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M4-C01",
+      "display": "Mārcus cotīdiē labōrat.",
+      "cue": "Marcus works every day."
+    },
+    {
+      "id": "L1-M4-C02",
+      "display": "Epistulam legere volō.",
+      "cue": "I want to read the letter."
+    },
+    {
+      "id": "L1-M4-C03",
+      "display": "Ad scholam saepe eō.",
+      "cue": "I often go to school."
+    },
+    {
+      "id": "L1-M4-C04",
+      "display": "Iūlia librum legit.",
+      "cue": "Julia is reading a book."
+    },
+    {
+      "id": "L1-M4-C05",
+      "display": "Semper aquam bibō.",
+      "cue": "I always drink water."
+    },
+    {
+      "id": "L1-M4-C06",
+      "display": "Magister epistulam scrībit.",
+      "cue": "The teacher is writing a letter."
+    },
+    {
+      "id": "L1-M4-C07",
+      "display": "Cotīdiē venit discipula.",
+      "cue": "The student comes every day."
+    },
+    {
+      "id": "L1-M4-C08",
+      "display": "Nōn saepe labōrō.",
+      "cue": "I do not often work."
+    },
+    {
+      "id": "L1-M4-C09",
+      "display": "Ad scholam īre nōlō.",
+      "cue": "I do not want to go to school."
+    },
+    {
+      "id": "L1-M4-C10",
+      "display": "Librum scrībere volō.",
+      "cue": "I want to write a book."
+    },
+    {
+      "id": "L1-M4-C11",
+      "display": "Semper pānem habet.",
+      "cue": "He always has bread."
+    },
+    {
+      "id": "L1-M4-C12",
+      "display": "Epistulam scrībere saepe volō.",
+      "cue": "I often want to write a letter."
+    },
+    {
+      "id": "L1-M4-C13",
+      "display": "Iūlia ad scholam venit.",
+      "cue": "Julia comes to school."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

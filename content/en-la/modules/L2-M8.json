@@ -1,0 +1,705 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M8",
+  "title": "When something goes wrong",
+  "job": "Problems, asking for help, complaining calmly",
+  "prerequisites": [
+    "L2-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "quid accidit",
+      "adiuvā mē (+ quaesō)",
+      "N-acc + nōn inveniō",
+      "N-nom + frāctus est",
+      "errāvī / errāvistī / errāvit"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "quid accidit? IS A PERFECT, AND IT IS ALSO ITS OWN PRESENT. 'What happened?' is a completed event, so the perfect is right — and accidit is one of a handful of Latin verbs whose perfect and present are spelled identically, with no macron to part them. Only the sentence around it decides. L1-M5's review recorded the same thing about bibit; the honest course names it rather than hiding it, because a learner will meet it and be puzzled."
+    },
+    {
+      "tag": "delta",
+      "text": "ASKING FOR HELP IS BUILT ENTIRELY FROM WHAT THE LEVEL ALREADY TAUGHT: adiuvā mē, quaesō — an order shape like M5's bibe, M1's mē, M1's quaesō. Or the noun, with no preposition: auxilium rogō, 'I ask help', because rogō takes what you want as a plain object. The third module running where an English preposition has nowhere to attach."
+    },
+    {
+      "tag": "interference",
+      "text": "THE THINGS THAT GO WRONG ARE PARTICIPLES TAUGHT AS ADJECTIVES, and that is a decision rather than a simplification. frāctus est looks like a passive and IS one in full Latin; here it is a word that AGREES — frāctus, frācta, frāctum — used with sum, because the passive system is L4-M7's. What you learn is L2-M3's agreement on a new kind of word, and no tense at all. An author who explains the construction has opened the passive two levels early."
+    },
+    {
+      "tag": "delta",
+      "text": "nōn inveniō MEANS 'I CANNOT FIND', AND THE GAP IS NAMED RATHER THAN PAPERED OVER. This course has no verb for 'can' — possum is taught in neither L1 nor L2 — so 'I do not find' carries the work. Latin does without 'can' far more readily than English, and a learner reaching for possum is reaching for a later level."
+    },
+    {
+      "tag": "free",
+      "text": "LATIN COMPLAINS BY STATING THE FACT, AND THERE IS NOTHING TO SOFTEN IT WITH. errāvī is 'I was wrong' and errāvistī is 'you were wrong', and quaesō — which softens any request — cannot touch either: it means 'I beg' and there is nothing to beg for in a statement. L1-M10's ignōsce ('forgive me') is the nearest thing to an apology the course has. An English speaker will look for a hedge and there is none to find."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M8-S01",
+      "display": "Quid accidit?",
+      "cue": "What happened?",
+      "literal": "what it-happened",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "'What', asking. L1-M2's word, and here it is the subject of the verb rather than the object — 'what happened', not 'what did you do'."
+          },
+          {
+            "display": "accidit",
+            "cue": "it happened",
+            "tag": "interference",
+            "forms": [
+              "accidit"
+            ],
+            "note": "'It happened' — a completed event, so a perfect. The same shape is ALSO its own present, 'it happens', and only context decides which: Latin has a handful of verbs like this."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "accidit is two tenses in one spelling. It is 'it happened' and 'it happens', with nothing to tell them apart but the sentence around it — and L1-M5 met the same thing in bibit. This course writes every macron it can and this pair has no macron to write.",
+      "variations": [
+        {
+          "display": "Quid herī accidit?",
+          "cue": "What happened yesterday?",
+          "changed": "L1-M5's herī, which settles the tense"
+        },
+        {
+          "display": "Quid accidit, Iūlia?",
+          "cue": "What happened, Julia?",
+          "changed": "a name added, which needs no new shape for Iūlia"
+        },
+        {
+          "display": "Quid tibi accidit?",
+          "cue": "What happened to you?",
+          "changed": "M1's tibi, which makes it personal"
+        }
+      ],
+      "usage": "Said walking into a problem.",
+      "mnemonic": "One spelling, two tenses, and the sentence decides.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S02",
+      "display": "Adiuvā mē, quaesō.",
+      "cue": "Help me, please.",
+      "literal": "help me please",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adiuvā",
+            "cue": "help!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Help!' — an order, like M5's bibe and L1-M8's dā. The verb is adiuvō, and asking for help in Latin is a command with quaesō on it."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Me' — the object shape of L1-M2's tū family: ego 'I', mē 'me'. M1's row, and it is the one pronoun this module needs."
+          },
+          {
+            "display": "quaesō",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "'Please', literally 'I beg'. M1's word. It softens a REQUEST and it cannot soften a complaint — there is nothing in Latin that does."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Every word here is already yours. The order shape is M5's pattern, mē is M1's row, quaesō is M1's word — so the level's hardest ask is built out of the level's own vocabulary, which is what a module this late should feel like.",
+      "variations": [
+        {
+          "display": "Adiuvā mē.",
+          "cue": "Help me.",
+          "changed": "quaesō dropped, which is urgent rather than rude"
+        },
+        {
+          "display": "Auxilium rogō.",
+          "cue": "I am asking for help.",
+          "changed": "the noun and a plain statement instead of an order"
+        },
+        {
+          "display": "Adiuvā nōs, quaesō.",
+          "cue": "Help us, please.",
+          "changed": "M6's nōs as the object, which does not change shape"
+        }
+      ],
+      "usage": "Said when you need someone now.",
+      "register": "formal"
+    },
+    {
+      "id": "L2-M8-S03",
+      "display": "Auxilium rogō.",
+      "cue": "I am asking for help.",
+      "literal": "help I-ask",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "auxilium",
+            "cue": "help",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Help', the thing rather than the act — and it is neuter, so it does not change between subject and object. English 'auxiliary' is the same word."
+          },
+          {
+            "display": "rogō",
+            "cue": "I ask",
+            "tag": "delta",
+            "forms": [
+              "rogō",
+              "rogat"
+            ],
+            "note": "'I ask, I ask for': rogō 'I ask', rogat 'he asks'. It takes the thing asked for as a plain object, with no preposition — no Latin 'for'."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "No 'for'. rogō takes what you are asking for as its object directly, so auxilium rogō is 'I ask help' — and adding a preposition would be the same mistake as putting one in front of raedā or hōrā, three modules running.",
+      "variations": [
+        {
+          "display": "Auxilium rogō, quaesō.",
+          "cue": "I am asking for help, please.",
+          "changed": "quaesō added, which stacks"
+        },
+        {
+          "display": "Auxilium rogat.",
+          "cue": "He is asking for help.",
+          "changed": "someone else asking"
+        },
+        {
+          "display": "Auxilium nōn rogō.",
+          "cue": "I am not asking for help.",
+          "changed": "the negative"
+        }
+      ],
+      "usage": "Said when you would rather state it than demand it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S04",
+      "display": "Tēlephōnum frāctum est.",
+      "cue": "The telephone is broken.",
+      "literal": "telephone broken it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tēlephōnum",
+            "cue": "telephone",
+            "tag": "free",
+            "forms": [],
+            "note": "'Telephone' — M7's modern word, and it is neuter, so it looks the same as a subject and as an object."
+          },
+          {
+            "display": "frāctum",
+            "cue": "broken",
+            "tag": "interference",
+            "forms": [
+              "frāctum",
+              "frāctus",
+              "frācta"
+            ],
+            "note": "'Broken' — an adjective here, not a tense, so it agrees: frāctus, frācta, frāctum. This is the neuter, matching tēlephōnum."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "frāctum est looks like one thing and is being taught as another. In full Latin it is a passive — 'it was broken' — and this course teaches it as an adjective with 'is', because the whole passive system belongs to L4-M7. What you learn here is a word that agrees, not a tense.",
+      "variations": [
+        {
+          "display": "Mēnsa frācta est.",
+          "cue": "The table is broken.",
+          "changed": "a feminine thing, so the adjective moves"
+        },
+        {
+          "display": "Liber frāctus est.",
+          "cue": "The book is broken.",
+          "changed": "a masculine thing"
+        },
+        {
+          "display": "Tēlephōnum frāctum nōn est.",
+          "cue": "The telephone is not broken.",
+          "changed": "the negative"
+        }
+      ],
+      "mistake": {
+        "display": "Tēlephōnum frāctus est.",
+        "why": "the masculine ending on a neuter noun, because frāctus is the shape you meet first. It is L2-M3's error arriving on a new kind of word — and it is the reason this module teaches the participle as an adjective, because an adjective is a thing you already know how to make agree."
+      },
+      "usage": "Said about something that has stopped working.",
+      "mnemonic": "It agrees, so it is an adjective.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S05",
+      "display": "Librum nōn inveniō.",
+      "cue": "I cannot find the book.",
+      "literal": "book not I-find",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the object: liber as the subject, librum as the thing looked for. L1-M4's word."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies. L1-M3's word."
+          },
+          {
+            "display": "inveniō",
+            "cue": "I find",
+            "tag": "delta",
+            "forms": [
+              "inveniō",
+              "invenit"
+            ],
+            "note": "'I find' — built on L1-M9's veniō, which is why it looks familiar: 'come upon'. inveniō 'I find', invenit 'he finds'."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "This says 'I do not find' and means 'I cannot find'. This course has no verb for 'can' — possum is not taught in L1 or L2 — so the gap is named rather than papered over: a learner reaching for 'cannot' is reaching for a later level, and Latin manages without it more often than English does.",
+      "variations": [
+        {
+          "display": "Tēlephōnum nōn inveniō.",
+          "cue": "I cannot find the telephone.",
+          "changed": "a different thing lost"
+        },
+        {
+          "display": "Librum inveniō.",
+          "cue": "I have found the book.",
+          "changed": "the negative dropped"
+        },
+        {
+          "display": "Librum nōn invenit.",
+          "cue": "He cannot find the book.",
+          "changed": "someone else looking"
+        }
+      ],
+      "usage": "Said while searching.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S06",
+      "display": "Errāvī.",
+      "cue": "I was wrong.",
+      "literal": "I-erred",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "errāvī",
+            "cue": "I was wrong",
+            "tag": "delta",
+            "forms": [
+              "errāvī",
+              "errāvistī",
+              "errāvit"
+            ],
+            "note": "'I went wrong, I made a mistake' — a plain perfect of errō, and L1-M5's -vī ending unchanged. English 'error' and 'erratic' are the same word."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "One word, and no softening anywhere. Latin complains and admits fault by stating the fact — quaesō softens a request and nothing softens a statement, so an English speaker looking for 'I'm afraid I may have…' will find there is nothing to build it out of.",
+      "sound": "er-RĀ-vī. Two long vowels at the end, and the stress on the first of them: L1-M5's perfect ending, audible.",
+      "variations": [
+        {
+          "display": "Errāvī, ignōsce.",
+          "cue": "I was wrong, forgive me.",
+          "changed": "L1-M10's ignōsce, which is as close to an apology as Latin gets"
+        },
+        {
+          "display": "Errāvit.",
+          "cue": "He was wrong.",
+          "changed": "someone else at fault"
+        },
+        {
+          "display": "Nōn errāvī.",
+          "cue": "I was not wrong.",
+          "changed": "the negative"
+        }
+      ],
+      "usage": "Said when you admit a mistake.",
+      "register": "formal"
+    },
+    {
+      "id": "L2-M8-S07",
+      "display": "Nōn errāvī; tū errāvistī.",
+      "cue": "I was not wrong; YOU were wrong.",
+      "literal": "not I-erred you you-erred",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "errāvī",
+            "cue": "I was wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — the perfect of errō, L1-M5's ending."
+          },
+          {
+            "display": "tū",
+            "cue": "you",
+            "tag": "interference",
+            "forms": [],
+            "note": "'You', one person. L1-M2's row, and it is here for stress: errāvistī already says who, so the pronoun is the accusation."
+          },
+          {
+            "display": "errāvistī",
+            "cue": "you were wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You went wrong' — the perfect's you-shape, which is -istī where the present is -ās. L1-M5 wrote the I and he shapes; this is the third."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "tū is doing the whole work of the quarrel. The ending already says who, so writing the pronoun is what makes it pointed — and that is the same fact L1-M10 and M6 both spent a rule on, arriving in the one place where being pointed is the purpose.",
+      "variations": [
+        {
+          "display": "Nōn errāvī; Mārcus errāvit.",
+          "cue": "I was not wrong; Marcus was wrong.",
+          "changed": "a name instead of an accusation"
+        },
+        {
+          "display": "Errāvistī.",
+          "cue": "You were wrong.",
+          "changed": "the bare charge, with no denial in front of it"
+        },
+        {
+          "display": "Nōn errāvistī.",
+          "cue": "You were not wrong.",
+          "changed": "letting the other person off"
+        }
+      ],
+      "usage": "Said in a calm argument.",
+      "mnemonic": "The pronoun is the pointed finger.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S08",
+      "display": "Mēnsa frācta est; quid accidit?",
+      "cue": "The table is broken; what happened?",
+      "literal": "table broken it-is what it-happened",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mēnsa",
+            "cue": "table",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Table' — mēnsa as the subject, mēnsam as the object. L1-M3's word."
+          },
+          {
+            "display": "frācta",
+            "cue": "broken",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Broken' — and it is being taught as an ADJECTIVE, so it agrees: frāctus for a masculine thing, frācta for a feminine one. English 'fracture' is the same word."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "'What', asking, and the subject of the verb after it."
+          },
+          {
+            "display": "accidit",
+            "cue": "it happened",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It happened' — the perfect, and also its own present. Here the broken table settles it: something already happened."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "Here the context does the work the macron cannot. accidit is 'it happens' and 'it happened' both, and a table that is already broken can only mean the past — which is what 'only context decides' looks like when you are actually reading.",
+      "variations": [
+        {
+          "display": "Liber frāctus est; quid accidit?",
+          "cue": "The book is broken; what happened?",
+          "changed": "a masculine thing broken"
+        },
+        {
+          "display": "Mēnsa frācta est; errāvī.",
+          "cue": "The table is broken; I was wrong.",
+          "changed": "the answer supplied"
+        },
+        {
+          "display": "Tēlephōnum frāctum est; quid accidit?",
+          "cue": "The telephone is broken; what happened?",
+          "changed": "the neuter"
+        }
+      ],
+      "usage": "Said walking into a room.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M8-S09",
+      "display": "Adiuvā mē: librum nōn inveniō.",
+      "cue": "Help me: I cannot find the book.",
+      "literal": "help me book not I-find",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adiuvā",
+            "cue": "help!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Help!' — the order shape of adiuvō, softened by quaesō when you want it and not otherwise."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Me' — the object shape of L1-M2's tū family: ego 'I', mē 'me'. M1's row, and it is the one pronoun this module needs."
+          },
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the thing looked for."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "inveniō",
+            "cue": "I find",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I find', built on veniō — and with nōn it is how this course says 'I cannot find'."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "The order and the reason, with nothing between them but a pause. Latin does not need 'because' here — L1-M9's quia and quod exist and are not required — and the whole request is built from words the level has already taught.",
+      "variations": [
+        {
+          "display": "Adiuvā mē, quaesō: librum nōn inveniō.",
+          "cue": "Help me, please: I cannot find the book.",
+          "changed": "quaesō added"
+        },
+        {
+          "display": "Adiuvā mē: tēlephōnum nōn inveniō.",
+          "cue": "Help me: I cannot find the telephone.",
+          "changed": "a different thing lost"
+        },
+        {
+          "display": "Adiuvā mē, quia librum nōn inveniō.",
+          "cue": "Help me, because I cannot find the book.",
+          "changed": "L1-M9's quia making the reason explicit"
+        }
+      ],
+      "usage": "Said when you have given up looking.",
+      "register": "formal"
+    },
+    {
+      "id": "L2-M8-S10",
+      "display": "Errāvī: nūntium nōn relīquī.",
+      "cue": "I was wrong: I did not leave a message.",
+      "literal": "I-erred message not I-left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "errāvī",
+            "cue": "I was wrong",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — the perfect of errō."
+          },
+          {
+            "display": "nūntium",
+            "cue": "message",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Message' — nūntius as the subject, nūntium as the thing left. M7's word."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "relīquī",
+            "cue": "I did not leave",
+            "tag": "interference",
+            "forms": [
+              "relīquī"
+            ],
+            "note": "'I left behind' — the perfect of M7's relinquō, and it drops the n and lengthens the i: relinquō, relīquī. L1-M5 said the perfect often rebuilds the word rather than adding to it."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "relīquī is relinquō with its middle taken out. The perfect in Latin is not a suffix on the present — L1-M5 established that with vēnī from veniō — and this is the same fact on a verb you met three modules ago, which is where it starts to cost you.",
+      "sound": "er-RĀ-vī: NŪN-ti-um nōn re-LĪ-quī. Five long vowels, and the two perfects both end on one.",
+      "variations": [
+        {
+          "display": "Errāvī: nūntium relīquī.",
+          "cue": "I was wrong: I DID leave a message.",
+          "changed": "the negative dropped, so the mistake was the opposite one"
+        },
+        {
+          "display": "Errāvī: tēlephōnum nōn inveniō.",
+          "cue": "I was wrong: I cannot find the telephone.",
+          "changed": "a present reason for a past mistake"
+        },
+        {
+          "display": "Nūntium nōn relīquī; iterum tēlephōnābō.",
+          "cue": "I did not leave a message; I shall telephone again.",
+          "changed": "M7's future as the remedy"
+        }
+      ],
+      "mistake": {
+        "display": "Errāvī: nūntium nōn relinquīvī.",
+        "why": "the perfect built by adding to the present, which is how a learner expects it to work after errō gave errāvī. relinquō does not do that, and neither does veniō, habeō or legō — the -vī perfect is the regular one and it is not the common one."
+      },
+      "usage": "Said owning up to something you forgot.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M8-C01",
+      "display": "Quid accidit?",
+      "cue": "What happened?"
+    },
+    {
+      "id": "L2-M8-C02",
+      "display": "Adiuvā mē, quaesō.",
+      "cue": "Help me, please."
+    },
+    {
+      "id": "L2-M8-C03",
+      "display": "Mēnsa frācta est.",
+      "cue": "The table is broken."
+    },
+    {
+      "id": "L2-M8-C04",
+      "display": "Librum nōn inveniō.",
+      "cue": "I cannot find the book."
+    },
+    {
+      "id": "L2-M8-C05",
+      "display": "Errāvī, ignōsce.",
+      "cue": "I was wrong, forgive me."
+    },
+    {
+      "id": "L2-M8-C06",
+      "display": "Auxilium rogō.",
+      "cue": "I am asking for help."
+    },
+    {
+      "id": "L2-M8-C07",
+      "display": "Tēlephōnum frāctum nōn est.",
+      "cue": "The telephone is not broken."
+    },
+    {
+      "id": "L2-M8-C08",
+      "display": "Errāvistī.",
+      "cue": "You were wrong."
+    },
+    {
+      "id": "L2-M8-C09",
+      "display": "Quid tibi accidit?",
+      "cue": "What happened to you?"
+    },
+    {
+      "id": "L2-M8-C10",
+      "display": "Nūntium nōn relīquī.",
+      "cue": "I did not leave a message."
+    },
+    {
+      "id": "L2-M8-C11",
+      "display": "Liber frāctus est; quid accidit?",
+      "cue": "The book is broken; what happened?"
+    },
+    {
+      "id": "L2-M8-C12",
+      "display": "Adiuvā nōs, quaesō.",
+      "cue": "Help us, please."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

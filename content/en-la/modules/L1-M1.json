@@ -1,0 +1,784 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M1",
+  "title": "Who I am",
+  "job": "Introduce yourself and state what you like",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "N/Adj + sum",
+      "ego + N/Adj + sum",
+      "mihi nōmen est + <name>",
+      "mihi placet + N-nom"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A Latin sentence puts its verb LAST by default, and what says who did what is the ENDING on each word, not its place in the line. Discipulus sum is, piece by piece, 'a-student I-am'. Get the endings right and the order is yours."
+    },
+    {
+      "tag": "delta",
+      "text": "There is no 'a' and no 'the'. Liber is 'a book' and 'the book' and nothing on the page tells them apart — the situation does. If you are hunting for the article you are hunting for a word Latin does not have."
+    },
+    {
+      "tag": "interference",
+      "text": "The subject pronoun is simply left out. Discipulus sum is a complete sentence, and the -m on sum is what says 'I'. Writing ego in front of it is not neutral: it is emphasis — 'I am a student, whatever you may be'. Note what is NOT dropped: unlike Sanskrit or Russian, Latin keeps its 'am / is / are'."
+    },
+    {
+      "tag": "delta",
+      "text": "A word that names or describes a person carries THAT person's gender, and it bends for it: a man says discipulus sum, a woman discipula sum. Neither one is the basic shape with the other bolted on. Learn both, every time, from the first word you meet."
+    },
+    {
+      "tag": "interference",
+      "text": "Liking runs backwards. The one who likes goes into the dative — mihi, 'to me' — and the thing liked is the SUBJECT, so placet answers to the thing and never to you. Mihi placet mūsica is 'to-me is-pleasing music'. Two things follow: a plural thing takes placent, and ego here would give the sentence two subjects and no sense."
+    },
+    {
+      "tag": "delta",
+      "text": "The bar over a vowel is not decoration — it says the vowel is held longer, and it is part of the spelling. It also tells you where the stress falls, which is why this course never writes an accent: Rōmānus is ro-MA-nus because the ā is long, and mūsica is MU-si-ca because the i is short."
+    },
+    {
+      "tag": "delta",
+      "text": "Your name is not something you have. Mihi nōmen est Mārcus is 'to-me the-name is Marcus' — the name belongs to you by sitting next to a 'to me'. Latin has a verb for having (M3's habeō) and does not use it here."
+    },
+    {
+      "tag": "delta",
+      "text": "Say c and g hard, always: mūsica is MU-si-ca with the k of 'kite', never the s of 'music'. Say v as English w. An i in front of a vowel is a y — Iūlia is YOO-li-a. Every macron in this course is true under that pronunciation and under no other."
+    },
+    {
+      "tag": "free",
+      "text": "Once the endings are right, moving a word is EMPHASIS and not grammar. Mihi placet mūsica and Mūsica mihi placet are the same sentence with the spotlight in a different place. That freedom is real, and it only exists because the endings did the work first."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M1-S01",
+      "display": "Discipulus sum.",
+      "cue": "I am a student.",
+      "literal": "a-student I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "discipulus",
+            "cue": "student",
+            "tag": "delta",
+            "forms": [
+              "discipulus",
+              "discipula",
+              "discipulī"
+            ],
+            "note": "'Student', and it carries the student's own gender: discipulus of a man, discipula of a woman. More than one is discipulī. Neither singular is the plain form of the other."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [
+              "sum",
+              "es",
+              "est",
+              "sunt"
+            ],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'. It goes last, and it is never left out."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "There is no word for 'I' to put in front. Two words is the whole sentence, and it is not an abbreviation of a longer one — the -m on sum already says who.",
+      "sound": "dis-KI-pu-lus SUM. The c is hard: say it 'dis-KI', never 'dis-SI'. The stress sits three syllables from the end because the -pu- before it is short — that is the rule the macrons exist to make visible.",
+      "variations": [
+        {
+          "display": "Discipula sum.",
+          "cue": "I am a student. (a woman speaking)",
+          "changed": "the same sentence in a woman's mouth — the noun itself carries her gender"
+        },
+        {
+          "display": "Ego discipulus sum.",
+          "cue": "I am a student. (as against you)",
+          "changed": "ego added, which is not the neutral way to say it — it puts the weight on who"
+        },
+        {
+          "display": "Discipulus es.",
+          "cue": "You are a student.",
+          "changed": "the verb ending alone moves it to 'you'; nothing else in the sentence changes"
+        }
+      ],
+      "mistake": {
+        "display": "Ego sum a discipulus.",
+        "why": "Three English reflexes at once. ego has been put in for a plain 'I' when it means emphasis, sum has been dragged into the English middle slot when it belongs at the end, and 'a' has been supplied for an article Latin does not have."
+      },
+      "usage": "The first thing you say about yourself, to anybody at all.",
+      "mnemonic": "'Disciple' is the same word: a student is someone who is taught.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M1-S02",
+      "display": "Mihi nōmen est Mārcus.",
+      "cue": "My name is Marcus.",
+      "literal": "to-me the-name is Marcus",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mihi",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [
+              "ego",
+              "mihi"
+            ],
+            "note": "'I' has more than one shape: ego does the acting, mihi is 'to me / for me'. English does the same in miniature with I and me; Latin does it to every noun as well."
+          },
+          {
+            "display": "nōmen",
+            "cue": "name",
+            "tag": "free",
+            "forms": [
+              "nōmen"
+            ],
+            "note": "'Name' — and the ō is long, which is where the English 'nominate' keeps it. It is the subject of this sentence, which is why est agrees with it."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'. It goes last, and it is never left out."
+          },
+          {
+            "display": "Mārcus",
+            "cue": "Marcus (a man's name)",
+            "tag": "free",
+            "forms": [
+              "Mārcus",
+              "Mārcō"
+            ],
+            "note": "A Roman man's given name, with a genuinely long ā: MAR-cus. A name takes endings like any other noun — Mārcō is 'to Marcus' — which is why this course writes them out rather than leaving them bare."
+          }
+        ],
+        "rules": [
+          0,
+          6,
+          5
+        ]
+      },
+      "trap": "There is no word for 'my' here. The 'to me' at the front is what makes the name yours, and the sentence reads 'to me the name is Marcus'.",
+      "sound": "MI-hi NO-men est MAR-cus. Sound the h in mihi lightly. The ō of nōmen and the ā of Mārcus are both held long — they are the two macrons in the line and they are the two syllables that carry the stress.",
+      "variations": [
+        {
+          "display": "Mihi nōmen est Iūlia.",
+          "cue": "My name is Julia.",
+          "changed": "a woman's name in the same frame — nothing else in the sentence moves"
+        },
+        {
+          "display": "Nōmen mihi est Mārcus.",
+          "cue": "My name is Marcus.",
+          "changed": "the same four words in a different order, which shifts the weight and not the sense"
+        },
+        {
+          "display": "Mārcus sum.",
+          "cue": "I am Marcus.",
+          "changed": "the blunter way to say who you are, and it is a different sentence rather than a shortening"
+        }
+      ],
+      "mistake": {
+        "display": "Meum nōmen est Mārcus.",
+        "why": "'My name' built the English way, with a possessive in front. Latin can say that, but what it reaches for first is the dative — mihi nōmen est — and a learner who only knows the possessive will not recognise the sentence a Roman actually says."
+      },
+      "usage": "How you give your name when you meet someone.",
+      "mnemonic": "'To me the name is —' is the shape; the name belongs to you by standing next to you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M1-S03",
+      "display": "Ego Rōmānus sum.",
+      "cue": "I am Roman.",
+      "literal": "I Roman I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ego",
+            "cue": "I (with weight on it)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I' — and it is never the neutral way to say it. The verb ending already says who, so ego is there to press the point: 'I am Roman, whatever you are'."
+          },
+          {
+            "display": "Rōmānus",
+            "cue": "Roman",
+            "tag": "delta",
+            "forms": [
+              "Rōmānus",
+              "Rōmāna",
+              "Rōmānī"
+            ],
+            "note": "'Roman', bending for the person it describes: Rōmānus of a man, Rōmāna of a woman, Rōmānī of more than one. Both ō and ā are long."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'. It goes last, and it is never left out."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          0
+        ]
+      },
+      "trap": "This is not the ordinary way to say 'I am Roman' — Rōmānus sum is. Putting ego in adds a contrast that is not in the English, so use it only when you mean one.",
+      "sound": "E-go ro-MA-nus SUM. The stress in Rōmānus sits on the long ā, and that is not a coincidence: a long vowel in the second-last syllable pulls the stress onto itself.",
+      "variations": [
+        {
+          "display": "Ego Rōmāna sum.",
+          "cue": "I am Roman. (a woman speaking)",
+          "changed": "the adjective takes the speaker's gender, exactly as a noun does"
+        },
+        {
+          "display": "Rōmānus sum.",
+          "cue": "I am Roman.",
+          "changed": "ego dropped, which is the ordinary way to say it"
+        },
+        {
+          "display": "Rōmānus est.",
+          "cue": "He is Roman.",
+          "changed": "the verb ending alone moves it to 'he'; there is still no pronoun"
+        }
+      ],
+      "mistake": {
+        "display": "Ego sum Rōmānus.",
+        "why": "The verb has been pulled into the English middle slot. Latin puts it last by default, so Rōmānus sum is the shape to build. This word order is not wrong Latin — Romans wrote it for emphasis — but as a default it makes every later sentence harder to read."
+      },
+      "usage": "Said when someone else has just said where they are from.",
+      "mnemonic": "ego is the English 'ego': the word you use when you want the attention on yourself.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M1-S04",
+      "display": "Mihi placet mūsica.",
+      "cue": "I like music.",
+      "literal": "to-me is-pleasing music",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mihi",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I' has more than one shape: ego does the acting, mihi is 'to me / for me'. English does the same in miniature with I and me; Latin does it to every noun as well."
+          },
+          {
+            "display": "placet",
+            "cue": "is pleasing",
+            "tag": "interference",
+            "forms": [
+              "placet",
+              "placent"
+            ],
+            "note": "'Is pleasing' — the verb of liking, and it answers to the thing liked, not to you: placet for one thing, placent for more than one."
+          },
+          {
+            "display": "mūsica",
+            "cue": "music",
+            "tag": "free",
+            "forms": [
+              "mūsica"
+            ],
+            "note": "'Music', with a long ū and a hard c: MU-si-ca. It is the SUBJECT of this sentence — the thing doing the pleasing — which is why it carries no ending of its own here."
+          }
+        ],
+        "rules": [
+          4,
+          0,
+          7
+        ]
+      },
+      "trap": "The word for 'I' is not the subject here and cannot be ego. Latin says the music pleases me, so the music is the subject and I am the one it is done to.",
+      "sound": "MI-hi PLA-cet MU-si-ca. The c in mūsica is a k — MU-si-ka — and the stress is on the first syllable because the i after it is short.",
+      "variations": [
+        {
+          "display": "Mihi placet liber.",
+          "cue": "I like the book.",
+          "changed": "a different thing doing the pleasing; the frame does not move"
+        },
+        {
+          "display": "Mihi placet magister.",
+          "cue": "I like the teacher.",
+          "changed": "the thing liked can be a person, and it is still the subject"
+        },
+        {
+          "display": "Mūsica placet.",
+          "cue": "Music is pleasing.",
+          "changed": "the 'to me' dropped, which leaves it true of nobody in particular"
+        }
+      ],
+      "mistake": {
+        "display": "Ego placet mūsica.",
+        "why": "The English subject has been put in the Latin subject's chair, and now the sentence has two of them. Whoever likes something goes into the dative — mihi — and the thing liked is what the verb answers to."
+      },
+      "usage": "The ordinary way to say you like anything at all.",
+      "mnemonic": "'It is pleasing TO ME' is the shape: think of the thing as doing something to you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M1-S05",
+      "display": "Mihi placent librī.",
+      "cue": "I like books.",
+      "literal": "to-me are-pleasing books",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mihi",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I' has more than one shape: ego does the acting, mihi is 'to me / for me'. English does the same in miniature with I and me; Latin does it to every noun as well."
+          },
+          {
+            "display": "placent",
+            "cue": "are pleasing",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Is pleasing' — the verb of liking, and it answers to the thing liked, not to you: placet for one thing, placent for more than one."
+          },
+          {
+            "display": "librī",
+            "cue": "books",
+            "tag": "delta",
+            "forms": [
+              "liber",
+              "librī"
+            ],
+            "note": "'Book': liber for one, librī for more than one. The e drops out when the ending is added, which is why the plural does not look like the singular with a letter on the end."
+          }
+        ],
+        "rules": [
+          4,
+          5,
+          0
+        ]
+      },
+      "trap": "The verb changed and you did not. placent is here because 'books' is plural — in English the verb would follow 'I' and stay the same whatever you liked.",
+      "sound": "MI-hi PLA-cent LI-brī. The long ī at the end of librī is the whole difference between one book and several, so hold it.",
+      "variations": [
+        {
+          "display": "Librī mihi placent.",
+          "cue": "Books are what I like.",
+          "changed": "the same three words reordered, which moves the spotlight onto the books"
+        },
+        {
+          "display": "Librī placent.",
+          "cue": "Books are pleasing.",
+          "changed": "the 'to me' dropped; the verb still answers to the books"
+        },
+        {
+          "display": "Mihi placent discipulī.",
+          "cue": "I like the students.",
+          "changed": "a different plural thing liked, and placent stays because it is still plural"
+        }
+      ],
+      "mistake": {
+        "display": "Mihi placet librī.",
+        "why": "The verb has been left in its singular shape while the thing liked went plural. placet answers to the books, so more than one book makes it placent — this is the agreement that catches every English speaker, because in English nothing on the verb moves."
+      },
+      "usage": "Said about a whole kind of thing rather than one particular one.",
+      "mnemonic": "More things doing the pleasing, more on the verb: placet becomes placent.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M1-S06",
+      "display": "Iūlia discipula est.",
+      "cue": "Julia is a student.",
+      "literal": "Julia a-student is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Iūlia",
+            "cue": "Julia (a woman's name)",
+            "tag": "interference",
+            "forms": [
+              "Iūlia"
+            ],
+            "note": "A Roman woman's given name, said YOO-li-a. It is spelled with an i because Latin has no letter j at all — the j in English 'Julia' is a much later invention."
+          },
+          {
+            "display": "discipula",
+            "cue": "student (a woman)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Student', and it carries the student's own gender: discipulus of a man, discipula of a woman. More than one is discipulī. Neither singular is the plain form of the other."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'. It goes last, and it is never left out."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          7
+        ]
+      },
+      "trap": "There is no 'she' to put in. The name is the subject and est says the rest; adding a pronoun would be the same mistake as putting ego in front of sum.",
+      "sound": "YOO-li-a dis-KI-pu-la EST. The I at the start is a consonant here, said like an English y — this is the single most surprising thing about reading Latin aloud.",
+      "variations": [
+        {
+          "display": "Iūlia magistra est.",
+          "cue": "Julia is a teacher.",
+          "changed": "a different word for what she is; the frame does not move"
+        },
+        {
+          "display": "Mārcus discipulus est.",
+          "cue": "Marcus is a student.",
+          "changed": "a man, so both the name and the noun describing him change together"
+        },
+        {
+          "display": "Discipula est.",
+          "cue": "She is a student.",
+          "changed": "the name dropped once it is known who is meant — the ending carries the rest"
+        }
+      ],
+      "mistake": {
+        "display": "Julia discipula est.",
+        "why": "Spelled with a j, which is not a Latin letter. Latin writes the sound with an i — Iūlia — and this course follows the dictionaries in doing so. A j here would also be a second, unreachable spelling of a word the course already teaches."
+      },
+      "usage": "Said about someone who is not in the conversation.",
+      "mnemonic": "i before a vowel is a y: Iūlia, iam, Iānuārius.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M1-S07",
+      "display": "Mārcus magister est.",
+      "cue": "Marcus is a teacher.",
+      "literal": "Marcus a-teacher is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mārcus",
+            "cue": "Marcus (a man's name)",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman man's given name, with a genuinely long ā: MAR-cus. A name takes endings like any other noun — Mārcō is 'to Marcus' — which is why this course writes them out rather than leaving them bare."
+          },
+          {
+            "display": "magister",
+            "cue": "teacher",
+            "tag": "delta",
+            "forms": [
+              "magister",
+              "magistra",
+              "magistrī"
+            ],
+            "note": "'Teacher', carrying the teacher's gender: magister of a man, magistra of a woman, magistrī of more than one. The e drops out whenever an ending is added."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'. It goes last, and it is never left out."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          1
+        ]
+      },
+      "trap": "Nothing here says 'a'. Latin puts two nouns side by side and lets est do the joining, and the English article has no Latin word to become.",
+      "sound": "MAR-cus ma-GIS-ter EST. The stress in magister sits on -gis- because that syllable is closed by two consonants, which makes it heavy — weight, not length, is what decides it here.",
+      "variations": [
+        {
+          "display": "Mārcus Rōmānus est.",
+          "cue": "Marcus is Roman.",
+          "changed": "an adjective in the noun's place, doing exactly the same job"
+        },
+        {
+          "display": "Magister est.",
+          "cue": "He is a teacher.",
+          "changed": "the name dropped; the sentence is still complete"
+        },
+        {
+          "display": "Magister Rōmānus est.",
+          "cue": "The teacher is Roman.",
+          "changed": "the noun becomes the subject and the adjective describes it"
+        }
+      ],
+      "mistake": {
+        "display": "Mārcus est a magister.",
+        "why": "An article supplied where Latin has none, and the verb moved into the English middle slot on the way. Both are the same habit: writing the English sentence with Latin words in it rather than the Latin one."
+      },
+      "usage": "Said about someone by what they do.",
+      "mnemonic": "A magister is a 'magistrate' of the classroom — the bigger one, from magis, 'more'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M1-S08",
+      "display": "Magistra sum.",
+      "cue": "I am a teacher. (a woman speaking)",
+      "literal": "a-teacher I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "magistra",
+            "cue": "teacher (a woman)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Teacher', carrying the teacher's gender: magister of a man, magistra of a woman, magistrī of more than one. The e drops out whenever an ending is added."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'. It goes last, and it is never left out."
+          }
+        ],
+        "rules": [
+          3,
+          2,
+          0
+        ]
+      },
+      "trap": "Nothing in the sentence says 'woman'. The -a on magistra is the whole of it, and a man saying the same thing says magister sum.",
+      "sound": "ma-GIS-tra SUM. Two words, and the second one is doing what English needs 'I am' for.",
+      "variations": [
+        {
+          "display": "Ego magistra sum.",
+          "cue": "I am a teacher. (as against you)",
+          "changed": "ego added for contrast, which is the only reason to add it"
+        },
+        {
+          "display": "Magistra es.",
+          "cue": "You are a teacher.",
+          "changed": "the verb ending moves it to 'you' and nothing else changes"
+        },
+        {
+          "display": "Magistra est.",
+          "cue": "She is a teacher.",
+          "changed": "and again to 'she' — three people, three endings, one word each time"
+        }
+      ],
+      "mistake": {
+        "display": "Ego sum magistra.",
+        "why": "Both English habits at once: a pronoun put in where the ending already says who, and the verb dragged into the middle. Magistra sum is two words and says everything this says."
+      },
+      "usage": "How a woman says what she does for a living.",
+      "mnemonic": "Change the last letter, change who is speaking: magister, magistra.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M1-S09",
+      "display": "Iūlia Rōmāna est.",
+      "cue": "Julia is Roman.",
+      "literal": "Julia Roman is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Iūlia",
+            "cue": "Julia (a woman's name)",
+            "tag": "interference",
+            "forms": [],
+            "note": "A Roman woman's given name, said YOO-li-a. It is spelled with an i because Latin has no letter j at all — the j in English 'Julia' is a much later invention."
+          },
+          {
+            "display": "Rōmāna",
+            "cue": "Roman (a woman)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Roman', bending for the person it describes: Rōmānus of a man, Rōmāna of a woman, Rōmānī of more than one. Both ō and ā are long."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'. It goes last, and it is never left out."
+          }
+        ],
+        "rules": [
+          3,
+          0,
+          5
+        ]
+      },
+      "trap": "The adjective took her gender, not the gender of Rome. Rōmāna is -a because Julia is a woman, and it would be Rōmānus of a man however Roman he was.",
+      "sound": "YOO-li-a ro-MA-na EST. Both of Rōmāna's long vowels are held, and the stress lands on the second one.",
+      "variations": [
+        {
+          "display": "Rōmāna est.",
+          "cue": "She is Roman.",
+          "changed": "the name dropped once it is clear who is meant"
+        },
+        {
+          "display": "Iūlia discipula Rōmāna est.",
+          "cue": "Julia is a Roman student.",
+          "changed": "a noun and an adjective together, both taking her gender"
+        },
+        {
+          "display": "Discipula Rōmāna est.",
+          "cue": "The student is Roman.",
+          "changed": "the noun becomes the subject and the adjective describes it"
+        }
+      ],
+      "mistake": {
+        "display": "Iūlia Rōmānus est.",
+        "why": "The adjective has been left in its masculine shape. It answers to the person it describes, not to the country or to the word Rome, so a woman is Rōmāna whatever else is in the sentence."
+      },
+      "usage": "Said about where someone is from.",
+      "mnemonic": "The -a on her name and the -a on her adjective come as a pair.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M1-S10",
+      "display": "Mūsica mihi placet.",
+      "cue": "Music is what I like.",
+      "literal": "music to-me is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mūsica",
+            "cue": "music",
+            "tag": "free",
+            "forms": [],
+            "note": "'Music', with a long ū and a hard c: MU-si-ca. It is the SUBJECT of this sentence — the thing doing the pleasing — which is why it carries no ending of its own here."
+          },
+          {
+            "display": "mihi",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I' has more than one shape: ego does the acting, mihi is 'to me / for me'. English does the same in miniature with I and me; Latin does it to every noun as well."
+          },
+          {
+            "display": "placet",
+            "cue": "is pleasing",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Is pleasing' — the verb of liking, and it answers to the thing liked, not to you: placet for one thing, placent for more than one."
+          }
+        ],
+        "rules": [
+          8,
+          4,
+          0
+        ]
+      },
+      "trap": "This is S04's sentence with the words in a different order, and it means the same thing. What moved is the emphasis: music, as against anything else.",
+      "sound": "MU-si-ca MI-hi PLA-cet. Nothing about the pronunciation changes when the order does — the endings are carrying the sense, so the words are free to move.",
+      "variations": [
+        {
+          "display": "Liber mihi placet.",
+          "cue": "The book is what I like.",
+          "changed": "a different thing in the front position, taking the same weight"
+        },
+        {
+          "display": "Mihi mūsica placet.",
+          "cue": "I like music.",
+          "changed": "a third order of the same three words, with the weight back on the person"
+        },
+        {
+          "display": "Magister mihi placet.",
+          "cue": "The teacher is who I like.",
+          "changed": "a person in front, still the subject and still doing the pleasing"
+        }
+      ],
+      "mistake": {
+        "display": "Mūsica mihi placent.",
+        "why": "The verb has gone plural for a singular thing. Word order changed nothing about agreement: mūsica is still one thing and still the subject, so it is still placet."
+      },
+      "usage": "Said when you are picking one thing out against others.",
+      "mnemonic": "Front position is the spotlight; the endings keep the sense wherever the words stand.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M1-C01",
+      "display": "Mārcus discipulus Rōmānus est.",
+      "cue": "Marcus is a Roman student."
+    },
+    {
+      "id": "L1-M1-C02",
+      "display": "Iūlia magistra Rōmāna est.",
+      "cue": "Julia is a Roman teacher."
+    },
+    {
+      "id": "L1-M1-C03",
+      "display": "Ego magister Rōmānus sum.",
+      "cue": "I am a Roman teacher. (as against you)"
+    },
+    {
+      "id": "L1-M1-C04",
+      "display": "Discipula Rōmāna sum.",
+      "cue": "I am a Roman student. (a woman speaking)"
+    },
+    {
+      "id": "L1-M1-C05",
+      "display": "Mihi placent magistrī.",
+      "cue": "I like the teachers."
+    },
+    {
+      "id": "L1-M1-C06",
+      "display": "Discipulī Rōmānī sunt.",
+      "cue": "The students are Roman."
+    },
+    {
+      "id": "L1-M1-C07",
+      "display": "Nōmen mihi est Iūlia.",
+      "cue": "My name is Julia."
+    },
+    {
+      "id": "L1-M1-C08",
+      "display": "Magistra Rōmāna est.",
+      "cue": "The teacher is Roman."
+    },
+    {
+      "id": "L1-M1-C09",
+      "display": "Ego discipula sum.",
+      "cue": "I am a student. (a woman, as against you)"
+    },
+    {
+      "id": "L1-M1-C10",
+      "display": "Mārcus magister Rōmānus est.",
+      "cue": "Marcus is a Roman teacher."
+    },
+    {
+      "id": "L1-M1-C11",
+      "display": "Magistrī Rōmānī sunt.",
+      "cue": "The teachers are Roman."
+    },
+    {
+      "id": "L1-M1-C12",
+      "display": "Magister sum.",
+      "cue": "I am a teacher."
+    },
+    {
+      "id": "L1-M1-C13",
+      "display": "Mūsica Mārcō placet.",
+      "cue": "Marcus likes music."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

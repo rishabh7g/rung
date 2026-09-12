@@ -1,0 +1,906 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M10",
+  "title": "Your own voice",
+  "job": "An eight-sentence piece that changes register midway",
+  "prerequisites": [
+    "L5-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 16,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "<four sentences, Ciceronian>",
+      "<four sentences, Plautine>",
+      "at + V (the hinge)",
+      "sed quid dīcam (the turn made explicit)",
+      "<eight sentences, one register switch, sound changing with it>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "THE REGISTER SWITCH IS THE MODULE, AND IT MUST BE VISIBLE IN THREE PLACES: in the Latin, in the sound lines and in the usage lines. S01 to S05 are Ciceronian — subordination first, abstracts as objects, a connective at the head of every clause. S06 is the hinge. S07 to S10 are Plautine — short, addressed, and rude. M3 taught the spectrum; this is where you write across it."
+    },
+    {
+      "tag": "interference",
+      "text": "display DOES NOT CHANGE WITH THE REGISTER AND sound DOES, which is M3's mechanism unaltered. A Ciceronian sentence and a Plautine one are spelled by the same rules — the macrons of docs/123 are this course's orthography and not a claim about any tradition — so the switch shows in vocabulary, in sentence length and in word order. An author who changes the spelling has minted a key for a variant."
+    },
+    {
+      "tag": "free",
+      "text": "THE HINGE IS ONE SENTENCE AND IT IS SHORT. Sed quid dīcam? — 'but what am I saying?' — names the turn out loud with M7's indirect-question mood, and at would do the same job with M6's objection word. What does not work is turning silently: a reader of eight sentences takes an unannounced switch for an inconsistency rather than a choice."
+    },
+    {
+      "tag": "delta",
+      "text": "NOTHING NEW IS TAUGHT IN THIS MODULE. Forty-nine rungs of ladder, and every word in the piece is already in the index — no row here opens a surface, and the newWordCap goes wholly unspent. That is the discipline L2-M10, L3-M10 and L4-M10 each kept at four, eight and six sentences. If a register needs a word the course has not taught, the register is being pushed further than the course can support."
+    },
+    {
+      "tag": "interference",
+      "text": "ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE COURSE: macrons on every long vowel, v and i and never j, no apostrophe, no acute, NFC precomposed, no script line, a hyphen only before que, ne or ve. There is STILL no build gate on en-la's spelling — checkScriptMode returns an empty report for a native course — so the only things between a wrong macron and a learner are the en-la block in src/course/types.test.ts and the author's own sweep."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M10-S01",
+      "display": "Quamquam gravissima est rēs, tamen dīcam.",
+      "cue": "Although the matter is a most serious one, I shall nevertheless speak.",
+      "literal": "although most-serious it-is matter, nevertheless I-shall-speak",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quamquam",
+            "cue": "although",
+            "tag": "interference",
+            "forms": [],
+            "note": "L4-M4's concessive, and it takes the INDICATIVE — which is why est and not sit. It opens the sentence because a Ciceronian period puts its concession first."
+          },
+          {
+            "display": "gravissima",
+            "cue": "most serious",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M7's superlative of gravis, feminine to agree with rēs. A superlative in the first clause is the Ciceronian habit of weighting a thing before naming it."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's sum. Indicative, because quamquam takes the indicative."
+          },
+          {
+            "display": "rēs",
+            "cue": "matter",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M6's noun. In this register it is 'the matter at hand' rather than 'the thing'."
+          },
+          {
+            "display": "tamen",
+            "cue": "nevertheless",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M4's adverb, answering quamquam. The pair is fixed: a quamquam clause is answered by tamen, and leaving it out loses the balance."
+          },
+          {
+            "display": "dīcam",
+            "cue": "I shall speak",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M6's future of dīcō. The main clause is one word, which is the whole trick of a period: everything before it was preparation."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "THE CICERONIAN HALF BEGINS HERE AND THE SPELLING IS THE SAME AS EVERYWHERE ELSE. What marks the register is that the concession comes first, the main verb comes last and is one word, and the subject is an abstract noun.",
+      "sound": "quam-QUAM gra-VIS-si-ma est RĒS, TA-men DĪ-cam. In the restored tradition gravissima has a doubled s you can hear; in the ecclesiastical it softens, and the vowel lengths do not move.",
+      "variations": [
+        {
+          "display": "Quamquam gravis est rēs, tamen dīcam.",
+          "cue": "Although the matter is serious, I shall nevertheless speak.",
+          "changed": "the superlative dropped to the plain adjective, which is a step down the register"
+        },
+        {
+          "display": "Gravissima est rēs; tamen dīcam.",
+          "cue": "The matter is most serious; I shall nevertheless speak.",
+          "changed": "the subordination dropped for two clauses, which is already less formal"
+        },
+        {
+          "display": "Quamquam gravis est rēs, tamen dīcam.",
+          "cue": "Although the matter is serious, I shall nevertheless speak.",
+          "changed": "the same sentence at the plainer weight"
+        }
+      ],
+      "mistake": {
+        "display": "Quamquam gravissima sit rēs, tamen dīcam.",
+        "why": "quamquam takes the indicative — est. sit is the subjunctive and belongs with quamvīs, which this course does not write at all."
+      },
+      "usage": "Said opening a speech, a letter of complaint, or anything you want taken seriously. The register is doing the work before you have said what the matter is.",
+      "mnemonic": "quamquam answers with tamen, and takes the indicative.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M10-S02",
+      "display": "Prīmum lībertātem, deinde virtūtem quaerō.",
+      "cue": "First I seek freedom, then courage.",
+      "literal": "first freedom, next courage I-seek",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M10's sequencer, at the head of its clause. In this register it announces a structure the listener is expected to hold in mind."
+          },
+          {
+            "display": "lībertātem",
+            "cue": "freedom",
+            "tag": "interference",
+            "forms": [],
+            "note": "L5-M5's abstract in the accusative — lībertās, made with -tās and so feminine. Here it is the object of quaerō."
+          },
+          {
+            "display": "deinde",
+            "cue": "then",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M10's second sequencer, answering prīmum. The pair is what makes a list an argument."
+          },
+          {
+            "display": "virtūtem",
+            "cue": "courage",
+            "tag": "interference",
+            "forms": [],
+            "note": "L5-M5's abstract in the accusative. Not 'virtue' in the modern sense — vir plus -tūs, the quality of a man, which M5 set beside the English word and chose neither."
+          },
+          {
+            "display": "quaerō",
+            "cue": "I seek",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M7's verb, from the indirect question. Here it takes plain objects and the one verb governs both."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "One verb, two objects, and the verb comes last. English would repeat the verb — 'first I seek freedom, then I seek courage' — and Latin's refusal to is what makes prīmum … deinde a structure rather than a list.",
+      "sound": "PRĪ-mum lī-ber-TĀ-tem, DE-in-de vir-TŪ-tem QUAE-rō. deinde is three syllables in the classical tradition and often two in practice, which is a tradition and not a spelling.",
+      "variations": [
+        {
+          "display": "Prīmum virtūtem, deinde lībertātem quaerō.",
+          "cue": "First I seek courage, then freedom.",
+          "changed": "the order reversed, which reverses the argument"
+        },
+        {
+          "display": "Lībertātem et virtūtem quaerō.",
+          "cue": "I seek freedom and courage.",
+          "changed": "the sequencers dropped, which makes it two wants rather than an order of them"
+        },
+        {
+          "display": "Prīmum lībertātem quaerō.",
+          "cue": "First I seek freedom.",
+          "changed": "only the first limb, which leaves the listener waiting"
+        }
+      ],
+      "mistake": {
+        "display": "Prīmum lībertās, deinde virtūs quaerō.",
+        "why": "quaerō takes the accusative, so both abstracts must be lībertātem and virtūtem. The nominatives would make them the seekers."
+      },
+      "usage": "Said laying out a case you expect to be followed. Two limbs is the most a listener will hold without writing it down, which is why prīmum … deinde beats a list of five.",
+      "mnemonic": "prīmum … deinde, and one verb at the end.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M10-S03",
+      "display": "Nam lībertātem nēmō nōn cupit.",
+      "cue": "For there is nobody who does not want freedom.",
+      "literal": "for freedom nobody not he-wants",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nam",
+            "cue": "for",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M8's conjunction, first in its clause always. It gives the reason for what came before, which is what a period does between its limbs."
+          },
+          {
+            "display": "lībertātem",
+            "cue": "freedom",
+            "tag": "interference",
+            "forms": [],
+            "note": "S02's row, and it stands before its verb because the emphasis is on it."
+          },
+          {
+            "display": "nēmō",
+            "cue": "nobody",
+            "tag": "interference",
+            "forms": [],
+            "note": "L5-M5's pronoun, the seventh negative baked into a Latin word. With nōn after it the two negatives cancel and the sense is 'everybody'."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's negative, and here it is the second of two — which M5 plated as an error and M6 used as a device."
+          },
+          {
+            "display": "cupit",
+            "cue": "he wants",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M9's cupiō, from the fox who wanted the cheese. Singular, agreeing with nēmō."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "nēmō nōn IS THE DEVICE M6 TAUGHT AND M5 PLATED. Two negatives in Latin cancel: nēmō nōn cupit is 'everybody wants'. M5's plate was a learner doing it by accident; this is doing it on purpose, and in this register it is stronger than omnēs.",
+      "variations": [
+        {
+          "display": "Nēmō nōn lībertātem cupit.",
+          "cue": "There is nobody who does not want freedom.",
+          "changed": "the abstract moved back behind nēmō, which is the plainer order"
+        },
+        {
+          "display": "Nēmō est quī lībertātem nōn cupit.",
+          "cue": "There is nobody who does not want freedom.",
+          "changed": "the device unpacked into a relative clause, which is longer and no stronger"
+        },
+        {
+          "display": "Nam lībertātem nēmō nōn cupit, nēmō nōn quaerit.",
+          "cue": "For there is nobody who does not want freedom, nobody who does not seek it.",
+          "changed": "the figure doubled, which is as Ciceronian as this course gets"
+        }
+      ],
+      "mistake": {
+        "display": "Nam lībertātem nēmō cupit.",
+        "why": "Dropping nōn reverses the sentence: nēmō cupit is 'nobody wants it'. One word is the difference between everybody and nobody, which is why M5 plated it."
+      },
+      "usage": "Said where you want agreement assumed rather than asked for. A Roman audience heard nēmō nōn as a claim it would be embarrassing to dispute.",
+      "mnemonic": "Two negatives cancel: nēmō nōn is everybody.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M10-S04",
+      "display": "Hīs rēbus dictīs, virtūs quoque necessāria est.",
+      "cue": "These things having been said, courage too is necessary.",
+      "literal": "these things having-been-said, courage also necessary it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hīs",
+            "cue": "these",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M6's hic in the ablative plural, agreeing with rēbus. The ablative absolute needs both its words in the ablative."
+          },
+          {
+            "display": "rēbus",
+            "cue": "things",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M6's rēs in the ablative plural, and the noun half of the construction."
+          },
+          {
+            "display": "dictīs",
+            "cue": "having been said",
+            "tag": "interference",
+            "forms": [],
+            "note": "L5-M6's perfect participle of dīcō in the ablative plural. With hīs rēbus it is the ablative absolute: two words carrying a whole clause."
+          },
+          {
+            "display": "virtūs",
+            "cue": "courage",
+            "tag": "interference",
+            "forms": [],
+            "note": "L5-M5's abstract in the nominative, because here it is the subject."
+          },
+          {
+            "display": "quoque",
+            "cue": "also",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M10's adverb, and it follows the word it adds to rather than preceding it: virtūs quoque, not quoque virtūs."
+          },
+          {
+            "display": "necessāria",
+            "cue": "necessary",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M6's adjective, feminine to agree with virtūs."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's sum, last as the register prefers."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "THE ABLATIVE ABSOLUTE OF M6 AND M9, IN A THIRD SETTING. A fable used it for a turn; here it summarises an argument so far. Both words ablative or it is not absolute — and hīs rēbus dictīs is worth learning whole.",
+      "sound": "hīs RĒ-bus DIC-tīs, VIR-tūs QUO-que ne-ces-SĀ-ri-a est. In the ecclesiastical tradition necessāria's c softens before the vowel; in the restored it stays hard. The spelling does not move.",
+      "variations": [
+        {
+          "display": "Hīs rēbus dictīs, virtūs necessāria est.",
+          "cue": "These things having been said, courage is necessary.",
+          "changed": "quoque dropped, which loses the addition"
+        },
+        {
+          "display": "Hīs rēbus dictīs, virtūs quoque necessāria est.",
+          "cue": "These things having been said, courage too is necessary.",
+          "changed": "unchanged, which is what a formal register does with a good clause"
+        },
+        {
+          "display": "Virtūs quoque necessāria est.",
+          "cue": "Courage too is necessary.",
+          "changed": "the ablative absolute dropped, which is a plainer register altogether"
+        }
+      ],
+      "mistake": {
+        "display": "Hīs rēs dictīs, virtūs quoque necessāria est.",
+        "why": "Every word of an ablative absolute is ablative. rēs is the nominative and has to be rēbus."
+      },
+      "usage": "Said moving from one limb of an argument to the next. It tells the listener the first part is finished, which is the courtesy a long sentence owes them.",
+      "mnemonic": "hīs rēbus dictīs — learn it whole.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M10-S05",
+      "display": "Quod sī vērum est, mēcum dēnique cōnsentīs.",
+      "cue": "If that is true, then you agree with me after all.",
+      "literal": "which if true it-is, with-me finally you-agree",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quod",
+            "cue": "which",
+            "tag": "interference",
+            "forms": [],
+            "note": "L5-M6's quod in quod sī — two taught words meaning 'but if, and if', which neither means alone. Not the 'because' of L1-M9 and not a relative."
+          },
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M4's conjunction, and the half of quod sī that does the conditional work."
+          },
+          {
+            "display": "vērum",
+            "cue": "true",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M6's adjective, neuter because what is true is a thing said rather than a person."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's sum."
+          },
+          {
+            "display": "mēcum",
+            "cue": "with me",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's cum fused onto mē, which is where Latin puts the preposition after the pronoun. One word, and the only place this course writes cum that way."
+          },
+          {
+            "display": "dēnique",
+            "cue": "finally",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M6's closing connective — the end of an ARGUMENT, where L2-M10's postrēmō is the end of a sequence of events."
+          },
+          {
+            "display": "cōnsentīs",
+            "cue": "you agree",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M6's verb. Second person, because a Ciceronian period ends by handing the conclusion to the listener."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "quod sī is two taught words and a third meaning, which is why M6 gave it a note naming both readings of quod. Here it carries the weight of the whole half: everything before it was the case, and this is the conclusion drawn from it.",
+      "variations": [
+        {
+          "display": "Quod sī vērum est, cōnsentīs.",
+          "cue": "If that is true, you agree.",
+          "changed": "mēcum and dēnique dropped, which makes it a statement rather than a victory"
+        },
+        {
+          "display": "Sī id vērum est, mēcum cōnsentīs.",
+          "cue": "If that is true, you agree with me.",
+          "changed": "quod sī opened out to sī id, which is plainer"
+        },
+        {
+          "display": "Quod sī vērum est, mēcum cōnsentiās.",
+          "cue": "If that is true, you would agree with me.",
+          "changed": "the subjunctive, which softens the conclusion into an invitation"
+        }
+      ],
+      "mistake": {
+        "display": "Quod sī vērum est, cum mē dēnique cōnsentīs.",
+        "why": "cum goes onto the pronoun and makes one word: mēcum. cum mē is the shape a learner builds from the rule and it is the one place the rule does not hold."
+      },
+      "usage": "The last sentence of the formal half, and it is doing what every peroration does: telling the listener they already agree. Say it and pause.",
+      "mnemonic": "mēcum, one word — the preposition rides behind.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M10-S06",
+      "display": "Sed quid dīcam? Satis.",
+      "cue": "But what am I saying? Enough.",
+      "literal": "but what shall-I-say? enough",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sed",
+            "cue": "but",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M10's conjunction — the plain adversative, and deliberately not M6's sharper at, because this objection is to yourself rather than to somebody else."
+          },
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's question word."
+          },
+          {
+            "display": "dīcam",
+            "cue": "shall I say",
+            "tag": "interference",
+            "forms": [],
+            "note": "S01's row, and here it is the DELIBERATIVE use: a question asked of yourself, in the same shape as the future. M7's indirect question stands behind it."
+          },
+          {
+            "display": "satis",
+            "cue": "enough",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M9's adverb, standing alone as a whole sentence. One word, and the register has already changed by the time you have said it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "THIS IS THE HINGE AND IT IS FOUR WORDS. The turn is named out loud — 'but what am I saying?' — because a silent switch reads as an inconsistency rather than as a choice. M6's at would do the same job; what will not do is nothing.",
+      "sound": "sed quid DĪ-cam? SA-tis. Four words and the pace drops. Read the Ciceronian half aloud and then this, and the switch is audible in the length before it is audible in the sounds.",
+      "variations": [
+        {
+          "display": "At quid dīcam?",
+          "cue": "But what am I saying?",
+          "changed": "M6's sharper objection word, which turns harder"
+        },
+        {
+          "display": "Sed quid agam?",
+          "cue": "But what am I to do?",
+          "changed": "the deliberative on a different verb, which turns to action rather than speech"
+        },
+        {
+          "display": "Sed satis.",
+          "cue": "But enough.",
+          "changed": "the question dropped, which is the shortest hinge there is"
+        }
+      ],
+      "mistake": {
+        "display": "Sed quid dīcō? Satis.",
+        "why": "dīcō is the plain indicative and asks a real question about the present. A deliberative question — what AM I to say — takes dīcam, which is why the shape matters more than the tense."
+      },
+      "usage": "Said when you hear yourself getting grand. It is a real Ciceronian move and it is also the honest one: the speaker notices the register and steps out of it.",
+      "mnemonic": "Name the turn, or it reads as a mistake.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M10-S07",
+      "display": "Ō stulte! Lībertās nōn est nummus.",
+      "cue": "You fool! Freedom is not a coin.",
+      "literal": "O fool! freedom not it-is coin",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ō",
+            "cue": "O",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M2's vocative particle. In M2 it was mock affection between friends; here it is the Plautine insult, which is the same word at a different temperature."
+          },
+          {
+            "display": "stulte",
+            "cue": "fool",
+            "tag": "interference",
+            "forms": [],
+            "note": "L5-M2's stultus in the vocative. M2's usage line said this is affectionate between friends and an insult to a stranger, and the register you have just switched into decides which."
+          },
+          {
+            "display": "lībertās",
+            "cue": "freedom",
+            "tag": "interference",
+            "forms": [],
+            "note": "S02's abstract, now in the nominative and now the subject of a four-word sentence rather than the object of a period."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's negative."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's sum, and here it sits in the middle where the formal half put it last."
+          },
+          {
+            "display": "nummus",
+            "cue": "coin",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M9's noun, out of the market. The register is visible in the choice: a Plautine sentence reaches for a coin where a Ciceronian one reaches for an abstract."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "THE SAME ABSTRACT, THE OTHER REGISTER. lībertātem was the object of a period five sentences ago; here lībertās is the subject of a sentence you could shout across a room. Nothing about the word changed — the sentence around it did.",
+      "sound": "ō STUL-te! lī-BER-tās nōn est NUM-mus. The exclamation is one long syllable and a short one, and the pace is twice the Ciceronian half's.",
+      "variations": [
+        {
+          "display": "Ō stulte! Nōn est nummus lībertās.",
+          "cue": "You fool! A coin freedom is not.",
+          "changed": "the abstract thrown to the end, which is ruder still"
+        },
+        {
+          "display": "Lībertās nōn est nummus.",
+          "cue": "Freedom is not a coin.",
+          "changed": "the vocative dropped, which takes the heat out"
+        },
+        {
+          "display": "Ō stulte! Virtūs nōn est nummus.",
+          "cue": "You fool! Courage is not a coin.",
+          "changed": "the other abstract, which is the same joke about a different thing"
+        }
+      ],
+      "mistake": {
+        "display": "Ō stultus! Lībertās nōn est nummus.",
+        "why": "You are addressing him, so it is the vocative stulte. stultus is the subject shape, and L5-M2 plated exactly this three times."
+      },
+      "usage": "Said to a friend, across a table, about something you both care about. To a stranger it is an insult and not a joke, which is M2's warning and it has not expired.",
+      "mnemonic": "stultus about him, stulte at him.",
+      "register": "informal"
+    },
+    {
+      "id": "L5-M10-S08",
+      "display": "Immō, virtūs labor est, nōn aliud.",
+      "cue": "On the contrary, courage is work, nothing else.",
+      "literal": "on-the-contrary, courage work it-is, not another-thing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "immō",
+            "cue": "on the contrary",
+            "tag": "interference",
+            "forms": [],
+            "note": "L5-M6's corrective. It does not merely deny: it RAISES — 'not only not that, but this' — and in the blunt register it is the whole of the objection."
+          },
+          {
+            "display": "virtūs",
+            "cue": "courage",
+            "tag": "interference",
+            "forms": [],
+            "note": "S04's row."
+          },
+          {
+            "display": "labor",
+            "cue": "work",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M4's noun. The Plautine half defines an abstract by a thing you do, where the Ciceronian half defined it by another abstract."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's sum."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's negative."
+          },
+          {
+            "display": "aliud",
+            "cue": "another thing",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M1's pronoun. nōn aliud — 'nothing else' — is the shortest way in Latin to close a definition, and it is four letters shorter than any of its alternatives."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "immō is not 'no'. It corrects UPWARDS: what you said is not merely wrong, the truth is more than that. M6 taught it in an argument; here it does the same work in five words and sounds twice as rude.",
+      "variations": [
+        {
+          "display": "Immō, virtūs labor est.",
+          "cue": "On the contrary, courage is work.",
+          "changed": "nōn aliud dropped, which leaves the definition open"
+        },
+        {
+          "display": "Virtūs labor est, nōn aliud.",
+          "cue": "Courage is work, nothing else.",
+          "changed": "immō dropped, so it corrects nobody"
+        },
+        {
+          "display": "Immō, lībertās labor est, nōn aliud.",
+          "cue": "On the contrary, freedom is work, nothing else.",
+          "changed": "the other abstract defined the same way"
+        }
+      ],
+      "mistake": {
+        "display": "Minimē, virtūs labor est, nōn aliud.",
+        "why": "minimē is a flat 'not at all' and denies without replacing. immō denies AND raises, which is what the sentence is doing, and M6 drew the line between them."
+      },
+      "usage": "Said interrupting. immō belongs at the front of a sentence you have started before the other person finished, which is the register's whole manner.",
+      "mnemonic": "immō corrects upwards; minimē just says no.",
+      "register": "informal"
+    },
+    {
+      "id": "L5-M10-S09",
+      "display": "Bibe vīnum, mārce! Iam satis dīxī.",
+      "cue": "Drink your wine, Marcus! I have said enough now.",
+      "literal": "drink wine, Marcus! now enough I-have-said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bibe",
+            "cue": "drink!",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's imperative of bibō, out of the module that hosted with bare commands. No quaesō, because the register does not soften."
+          },
+          {
+            "display": "vīnum",
+            "cue": "wine",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's noun."
+          },
+          {
+            "display": "mārce",
+            "cue": "Marcus!",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M2's vocative of Mārcus, and its third outing: M2 wrote it between friends, M4 declined to write it of the dead, and here it is used to end an argument."
+          },
+          {
+            "display": "iam",
+            "cue": "now, already",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M8's adverb. With a perfect it means the thing is done and the subject is closing the matter."
+          },
+          {
+            "display": "satis",
+            "cue": "enough",
+            "tag": "free",
+            "forms": [],
+            "note": "S06's row, and its second appearance — the hinge said it once and the Plautine half says it again, which is how the two halves are stitched."
+          },
+          {
+            "display": "dīxī",
+            "cue": "I have said",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M3's perfect of dīcō. Cicero ended speeches with it, and so does a man who wants to stop talking."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "dīxī is what a Roman advocate said to sit down — 'I have spoken' — and here a man says it over a cup of wine. The word has not changed register; the sentence around it has, which is the module's argument in one word.",
+      "sound": "BI-be VĪ-num, MĀR-ce! iam SA-tis DĪ-xī. dīxī is two long syllables and the x is ks in every tradition; mārce ends short.",
+      "variations": [
+        {
+          "display": "Bibe vīnum! Satis dīxī.",
+          "cue": "Drink your wine! I have said enough.",
+          "changed": "the name and iam dropped, which is blunter"
+        },
+        {
+          "display": "Bibe vīnum, mārce! Satis est.",
+          "cue": "Drink your wine, Marcus! That is enough.",
+          "changed": "satis est for the perfect, which closes the matter without claiming to have spoken"
+        },
+        {
+          "display": "Bibe, mārce! Iam satis dīxī.",
+          "cue": "Drink, Marcus! I have said enough now.",
+          "changed": "the object dropped, which is how you talk to somebody holding the cup"
+        }
+      ],
+      "mistake": {
+        "display": "Bibe vīnum, mārcus! Iam satis dīxī.",
+        "why": "You are addressing him: mārce. mārcus is the subject shape and L5-M2 opened the vocative for exactly this."
+      },
+      "usage": "Said ending a conversation you started too formally. The imperative plus the name plus the perfect is the whole apparatus, and it is four words shorter than the polite version.",
+      "mnemonic": "dīxī: I have spoken, and I am stopping.",
+      "register": "informal"
+    },
+    {
+      "id": "L5-M10-S10",
+      "display": "Certē! Ita agō, nōn ita dīcō.",
+      "cue": "Certainly! That is how I act, not how I talk.",
+      "literal": "certainly! thus I-act, not thus I-say",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "certē",
+            "cue": "certainly",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M6's adverb, standing alone. In this register agreement is one word and no hedging follows it."
+          },
+          {
+            "display": "ita",
+            "cue": "thus, so",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's adverb, and the figure is L5-M9's: ita … ita, the same word in both halves, pairing what it joins."
+          },
+          {
+            "display": "agō",
+            "cue": "I act",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's agō, from Quid agis? — which asked how you are DOING and is the same verb. Here it means acting rather than faring."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's negative, denying the second ita rather than the verb."
+          },
+          {
+            "display": "ita",
+            "cue": "thus, so",
+            "tag": "delta",
+            "forms": [],
+            "note": "The second ita, and the repetition is the point."
+          },
+          {
+            "display": "dīcō",
+            "cue": "I say",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M5's verb. The last verb of the fiftieth module, and it is the one the whole course has been about."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "THE LAST SENTENCE OF THE COURSE, AND IT SPENDS NOTHING. Every word in it arrived at L1-M2, L1-M6, L3-M5 or L5-M9 — six rows, no new surface, and the fiftieth rung's word cap wholly unspent. That is not thrift; it is the proof that the ladder holds.",
+      "sound": "cer-TĒ! I-ta A-gō, nōn I-ta DĪ-cō. Six words, eleven syllables, and the last two are long — which is a Plautine line ending like a Ciceronian one, on purpose.",
+      "variations": [
+        {
+          "display": "Ita agō, nōn ita dīcō.",
+          "cue": "That is how I act, not how I talk.",
+          "changed": "certē dropped, which removes the agreement it answers"
+        },
+        {
+          "display": "Certē! Ita agō.",
+          "cue": "Certainly! That is how I act.",
+          "changed": "the contrast dropped, which leaves a boast"
+        },
+        {
+          "display": "Nōn ita dīcō, sed ita agō.",
+          "cue": "I do not talk that way, but I act that way.",
+          "changed": "the halves swapped and joined with sed, which is a step back towards the formal"
+        }
+      ],
+      "usage": "The last line of the piece, and it answers the first: S01 announced a serious matter in a formal register, and this says what the speaker actually does about it. Say it and stop — there is no rung above this one.",
+      "mnemonic": "ita agō, nōn ita dīcō — and the course ends on a taught word.",
+      "register": "informal"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M10-C01",
+      "display": "Quamquam gravissima est rēs, tamen dīcam.",
+      "cue": "Although the matter is most serious, I shall nevertheless speak."
+    },
+    {
+      "id": "L5-M10-C02",
+      "display": "Prīmum lībertātem, deinde virtūtem quaerō.",
+      "cue": "First I seek freedom, then courage."
+    },
+    {
+      "id": "L5-M10-C03",
+      "display": "Nam lībertātem nēmō nōn cupit.",
+      "cue": "For there is nobody who does not want freedom."
+    },
+    {
+      "id": "L5-M10-C04",
+      "display": "Hīs rēbus dictīs, virtūs quoque necessāria est.",
+      "cue": "These things having been said, courage too is necessary."
+    },
+    {
+      "id": "L5-M10-C05",
+      "display": "Quod sī vērum est, mēcum dēnique cōnsentīs.",
+      "cue": "If that is true, then you agree with me after all."
+    },
+    {
+      "id": "L5-M10-C06",
+      "display": "Sed quid dīcam? Satis.",
+      "cue": "But what am I saying? Enough."
+    },
+    {
+      "id": "L5-M10-C07",
+      "display": "Ō stulte! Lībertās nōn est nummus.",
+      "cue": "You fool! Freedom is not a coin."
+    },
+    {
+      "id": "L5-M10-C08",
+      "display": "Immō, virtūs labor est, nōn aliud.",
+      "cue": "On the contrary, courage is work, nothing else."
+    },
+    {
+      "id": "L5-M10-C09",
+      "display": "Bibe vīnum, mārce! Iam satis dīxī.",
+      "cue": "Drink your wine, Marcus! I have said enough now."
+    },
+    {
+      "id": "L5-M10-C10",
+      "display": "Certē! Ita agō, nōn ita dīcō.",
+      "cue": "Certainly! That is how I act, not how I talk."
+    },
+    {
+      "id": "L5-M10-C11",
+      "display": "At quid dīcam?",
+      "cue": "But what am I saying?"
+    },
+    {
+      "id": "L5-M10-C12",
+      "display": "Virtūs quoque necessāria est.",
+      "cue": "Courage too is necessary."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

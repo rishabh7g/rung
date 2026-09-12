@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 490 — nine five-level ladders and en-sa’s forty rungs (#623)', () => {
+  it("finds all 540 — TEN five-level ladders and en-sa's forty rungs, four levels whole (#623, #653)", () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -490,6 +490,56 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ko/modules/L5-M7.json',
       'content/en-ko/modules/L5-M8.json',
       'content/en-ko/modules/L5-M9.json',
+      'content/en-la/modules/L1-M1.json',
+      'content/en-la/modules/L1-M10.json',
+      'content/en-la/modules/L1-M2.json',
+      'content/en-la/modules/L1-M3.json',
+      'content/en-la/modules/L1-M4.json',
+      'content/en-la/modules/L1-M5.json',
+      'content/en-la/modules/L1-M6.json',
+      'content/en-la/modules/L1-M7.json',
+      'content/en-la/modules/L1-M8.json',
+      'content/en-la/modules/L1-M9.json',
+      'content/en-la/modules/L2-M1.json',
+      'content/en-la/modules/L2-M10.json',
+      'content/en-la/modules/L2-M2.json',
+      'content/en-la/modules/L2-M3.json',
+      'content/en-la/modules/L2-M4.json',
+      'content/en-la/modules/L2-M5.json',
+      'content/en-la/modules/L2-M6.json',
+      'content/en-la/modules/L2-M7.json',
+      'content/en-la/modules/L2-M8.json',
+      'content/en-la/modules/L2-M9.json',
+      'content/en-la/modules/L3-M1.json',
+      'content/en-la/modules/L3-M10.json',
+      'content/en-la/modules/L3-M2.json',
+      'content/en-la/modules/L3-M3.json',
+      'content/en-la/modules/L3-M4.json',
+      'content/en-la/modules/L3-M5.json',
+      'content/en-la/modules/L3-M6.json',
+      'content/en-la/modules/L3-M7.json',
+      'content/en-la/modules/L3-M8.json',
+      'content/en-la/modules/L3-M9.json',
+      'content/en-la/modules/L4-M1.json',
+      'content/en-la/modules/L4-M10.json',
+      'content/en-la/modules/L4-M2.json',
+      'content/en-la/modules/L4-M3.json',
+      'content/en-la/modules/L4-M4.json',
+      'content/en-la/modules/L4-M5.json',
+      'content/en-la/modules/L4-M6.json',
+      'content/en-la/modules/L4-M7.json',
+      'content/en-la/modules/L4-M8.json',
+      'content/en-la/modules/L4-M9.json',
+      'content/en-la/modules/L5-M1.json',
+      'content/en-la/modules/L5-M10.json',
+      'content/en-la/modules/L5-M2.json',
+      'content/en-la/modules/L5-M3.json',
+      'content/en-la/modules/L5-M4.json',
+      'content/en-la/modules/L5-M5.json',
+      'content/en-la/modules/L5-M6.json',
+      'content/en-la/modules/L5-M7.json',
+      'content/en-la/modules/L5-M8.json',
+      'content/en-la/modules/L5-M9.json',
       'content/en-ru/modules/L1-M1.json',
       'content/en-ru/modules/L1-M10.json',
       'content/en-ru/modules/L1-M2.json',
@@ -1314,6 +1364,144 @@ describe('ModuleContent against the modules that exist', () => {
             expect(form, `${at} form of ${word.display} carries Devanagari`).toMatch(noDevanagari);
             expect(form, `${at} form of ${word.display} is IAST only`).toMatch(iastOnly);
             expect(form, `${at} form of ${word.display} is not NFC`).toBe(form.normalize('NFC'));
+          }
+        }
+      }
+    }
+  });
+
+  /**
+   * en-la (#629–#653) is the eleventh course and the first whose spelling has **no build gate at
+   * all**. Every course before it that needed a spelling decision was non-Latin, so
+   * `checkScriptMode` was there to ask "is this Latin?" — and its first statement is
+   * `if (scriptMode !== 'romanized') return report`, so on a `native` Latin-script row it returns
+   * an empty report and asks nothing. This case is the substitute (`docs/123` §9), and it holds the
+   * mechanical half of #630's decisions against the shipped files:
+   *
+   *   • **No `j`, ever.** #630 §1.3 writes consonantal i as `i` — `iam`, `Iūlia`, `iuvenis` — which
+   *     is the OLD's convention and the one every dictionary a learner opens uses. `j` is a
+   *     Renaissance printer's letter, and a single `iam`/`jam` split would be two index keys for
+   *     one word.
+   *   • **No apostrophe.** Latin writes no elision (`multa est`, never `mult'est`), and `'` is the
+   *     ONE character `surface.ts` rule 3 does not strip from a token edge — rule 2 even folds `’`
+   *     into it — so an elided spelling would mint a real key for a word that is two. The same ban
+   *     en-sa carries for the avagraha, arrived at from the opposite direction.
+   *   • **No acute, and NFC.** Latin vowels do not reduce, so stress follows from vowel length and
+   *     the macron already gives it; en-ru needed acutes and this course must never grow them
+   *     (#630 §1.2). NFC matters here for exactly the reason it does in en-sa: a DECOMPOSED macron
+   *     renders identically in a diff, and `tools/font-subset.ts` claims no target for U+0304, so
+   *     the mark would draw from `system-ui` while the index key normalised to the right place.
+   *   • **The ten macron vowels and nothing else above ASCII.** #631 measured Mukta's `latin-ext`
+   *     cmap and found all ten drawn at all three weights — and found `ȳ` U+0233 drawn by nobody
+   *     and claimed by no target, which is why the alphabet below stops where it does.
+   *   • **A hyphen only at the enclitic seam.** #630 §2 joins `-que`, `-ne` and `-ve` to their host
+   *     so that `surfaceIndexKeys` hands the bare host a key of its own — measured:
+   *     `surfaceIndexKeys("agis-ne bene")` is `["agis-ne bene","agis","ne"]` where the solid
+   *     `vidēsne` earns one key and no parts. A hyphen anywhere else mints junk keys, so the
+   *     lexicalised enclitics (`itaque`, `quoque`, `neque`, `atque`, `dēnique` …) are written solid
+   *     and are one row each.
+   *   • **No `script` line.** The display already is the script (#630 §7.1), so a `script` field
+   *     would be the same string twice — the opposite of every other course this file checks, and
+   *     the thing a reader who knows hi-mr would add.
+   *
+   * It passes vacuously until #634 authors the first module, which is deliberate: the rules land
+   * with the skeleton so that the first wave is written against them rather than corrected by them.
+   */
+  it('keeps en-la to the decisions docs/123 settled: macrons, no j, no elision, one seam', () => {
+    const enLa = MODULE_FILES.filter(([name]) => name.includes('en-la'));
+    const latin = /[A-Za-z]/;
+    /**
+     * The whole alphabet this course may emit: printable ASCII plus the ten macron vowels of
+     * `docs/123` §1. `ȳ` is deliberately outside it (§8) — no bundled face draws it. Anything else
+     * is either a scheme this course does not write or a decomposed sequence the NFC check catches.
+     */
+    const latinOnly = /^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u;
+    /**
+     * An acute on a vowel, in EITHER composition — en-ru's mark, which Latin never needs. The
+     * precomposed ten are spelled as escapes and the combining mark U+0301 is matched on its own,
+     * outside the class: writing `Ú` + U+0301 inside one would be a combined character in a
+     * character class, which `no-misleading-character-class` rejects and which would silently
+     * match only the first half anyway.
+     */
+    const acute = /[\u00C1\u00C9\u00CD\u00D3\u00DA\u00E1\u00E9\u00ED\u00F3\u00FA]|\u0301/u;
+    /** The three enclitics a hyphen may precede, and the only ones (#630 §2). */
+    const SEAM = /-(?:que|ne|ve)$/;
+
+    for (const [file, json] of enLa) {
+      const module = parseModule(json, file);
+
+      /**
+       * One Latin surface, wherever it lives — a sentence, a variation, a pool item, a plate.
+       *
+       * `spelled` is false for a `mistake` plate, and the split is the same one en-sa draws for its
+       * `pada` flag. A plate is deliberately WRONG Latin, and the wrong things a module most wants
+       * to show are precisely #630's bans: L1-M1's plate writes `Julia` with a j because the module
+       * is teaching that Latin has no such letter, and L1-M10's will hyphenate `ita-que` because
+       * that is the seam mistake it warns about. `buildWordIndex` never reads a mistake, so no key
+       * is minted and the invariant those bans protect is not at risk there — which is also why
+       * CLAUDE.md exempts `mistake.display` from the shown-surface ratchet.
+       *
+       * What a plate may NOT do is anything that renders wrong rather than teaching wrong: NFC, the
+       * course alphabet and the absent `script` line all still hold on it. A decomposed macron in a
+       * plate is not a lesson, it is a glyph drawn from `system-ui`.
+       */
+      const surface = (
+        target: { display: string; script?: string | null },
+        at: string,
+        spelled = true,
+      ): void => {
+        expect(target.display, `${at} display is Latin`).toMatch(latin);
+        expect(target.display, `${at} display leaves the course alphabet`).toMatch(latinOnly);
+        expect(target.display, `${at} display is not NFC`).toBe(target.display.normalize('NFC'));
+        // The display IS the script here, so the quiet line is never authored (#630 §7.1).
+        expect(target.script ?? null, `${at} carries a redundant script line`).toBeNull();
+        if (!spelled) return;
+        expect(acute.test(target.display), `${at} display writes an acute`).toBe(false);
+        expect(target.display.includes("'"), `${at} display writes an elision`).toBe(false);
+        expect(/[jJ]/.test(target.display), `${at} display writes a j`).toBe(false);
+        for (const token of tokenizeSurface(target.display)) {
+          if (token.includes('-')) {
+            expect(SEAM.test(token), `${at} hyphenates "${token}" outside the enclitic seam`).toBe(
+              true,
+            );
+          }
+        }
+      };
+
+      /** One English teaching field: never a `j`-spelling or an acute, and always NFC. */
+      const prose = (value: string | undefined, at: string): void => {
+        if (value === undefined) return;
+        expect(value, `${at} is not NFC`).toBe(value.normalize('NFC'));
+        expect(acute.test(value), `${at} writes an acute`).toBe(false);
+      };
+
+      for (const rule of module.rules) {
+        expect(rule.text, `${file} rule`).toMatch(latin);
+        prose(rule.text, `${file} rule`);
+      }
+      for (const item of module.comprehensionPool) surface(item, item.id);
+      for (const sentence of module.sentences) {
+        const at = sentence.id;
+        surface(sentence, at);
+        // No gloss on an English-L1 course (#405).
+        expect(sentence.glossEn, `${at} glossEn`).toBeUndefined();
+        for (const field of ['sound', 'usage', 'mnemonic', 'trap', 'literal'] as const) {
+          prose(sentence[field], `${at} ${field}`);
+        }
+        if (sentence.mistake !== undefined) surface(sentence.mistake, `${at} mistake`, false);
+        for (const variation of sentence.variations ?? []) surface(variation, `${at} variation`);
+        for (const word of sentence.deconstruction.words) {
+          expect(word.display, `${at} word display leaves the alphabet`).toMatch(latinOnly);
+          expect(word.display, `${at} word display is not NFC`).toBe(word.display.normalize('NFC'));
+          expect(/[jJ]/.test(word.display), `${at} word "${word.display}" writes a j`).toBe(false);
+          expect(acute.test(word.display), `${at} word "${word.display}" writes an acute`).toBe(
+            false,
+          );
+          prose(word.note, `${at} note of ${word.display}`);
+          for (const form of word.forms) {
+            expect(form, `${at} form of ${word.display} leaves the alphabet`).toMatch(latinOnly);
+            expect(form, `${at} form of ${word.display} is not NFC`).toBe(form.normalize('NFC'));
+            expect(/[jJ]/.test(form), `${at} form "${form}" writes a j`).toBe(false);
           }
         }
       }

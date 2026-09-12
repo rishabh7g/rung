@@ -1,0 +1,902 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M9",
+  "title": "Places and journeys",
+  "job": "A trip told in full, with directions inside it",
+  "prerequisites": [
+    "L4-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "Rōmam eō (to a city, no preposition)",
+      "Rōmā veniō (from a city, no preposition)",
+      "Rōmae sum (the locative)",
+      "domum / domō / domī",
+      "ad + N-acc (anything else)"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "CITY NAMES TAKE NO PREPOSITION, AND NEITHER DOES home. Rōmam eō 'I go to Rome', Rōmā veniō 'I come from Rome' — the ending carries the relation, exactly as L2-M4's domum and domō do. This module generalises that pattern from home to city names, and NOTHING ELSE IN THE LANGUAGE DOES IT: every other noun needs ad, ā or in. Thirty-seven modules have taught ad scholam, so ad Rōmam is the reflex — and it is wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "THE LOCATIVE IS A WHOLE CASE SURVIVING FOR A HANDFUL OF WORDS, and L2-M4 named domī as deferred TWENTY-NINE MODULES AGO. Rōmae is 'at Rome' and domī is 'at home', and Latin lost this case everywhere else. So it is not a rule to generalise but a list to learn: city names, domus, and two or three more. L3-M7 wanted domī for melius est … manēre and wrote domum īre instead; M8 wrote Rōmae before this module could explain it. Both borrowings are now paid off, and the set is complete — domum to, domō from, domī at."
+    },
+    {
+      "tag": "interference",
+      "text": "A CLOSED LIST HAS TO BE FENCED ON BOTH SIDES, so this module writes TWO mistake plates rather than one. ad Rōmam eō is the error thirty-seven modules of ad scholam produce; scholam eō is the error over-generalising this module produces. Both are in S05, three words apart, because the only honest way to teach a rule that applies to a handful of words is to show what happens on each side of it. in Rōmā and ā Rōmā are the third and fourth wrong prepositions, and each is correct somewhere else."
+    },
+    {
+      "tag": "free",
+      "text": "Rōmae IS A LOCATIVE AND ALSO A GENITIVE, and nothing parts them. The locative of a first-declension city name is identical to its genitive singular — which is the same collision L2-M2 named for magistrī and L3-M8 for librī: no mark, no gate, and the sentence decides. This course writes only the locative reading and names the other here."
+    },
+    {
+      "tag": "free",
+      "text": "A JOURNEY IN LATIN HAS FAR FEWER PREPOSITIONS THAN ONE IN ENGLISH. Rōmā rēctā domum vēnī has three relations in it — from, by-a-straight-route, to — and not one preposition, because each is an ending. L2-M4's ad dextram keeps its ad, because a direction is not a place. Counting prepositions is the quickest way to see how much of this language lives in its endings."
+    },
+    {
+      "tag": "interference",
+      "text": "A TRIP TOLD IN FULL USES THE WHOLE LEVEL: M6's cum with a subjunctive, M8's imperfect for what went on and the perfect for what happened once, L2-M10's sequencers, L2-M4's directions, and this module's four shapes of place. Fourteen words in S10 and the only new thing in the module is the name of a city — which is what a ninth module of a fourth level should feel like."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M9-S01",
+      "display": "Rōmam eō.",
+      "cue": "I am going to Rome.",
+      "literal": "to-Rome I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rōmam",
+            "cue": "to Rome",
+            "tag": "interference",
+            "forms": [
+              "rōma",
+              "rōmam",
+              "rōmā",
+              "rōmae"
+            ],
+            "note": "'To Rome' — the object shape, with NO preposition. City names and home are the only words in the language that do this; everything else needs ad."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go': eō, īs, it, īmus, īre, īvī. The shortest verb in the course."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "No preposition, and this is a CLOSED LIST. Names of towns and cities behave like L2-M4's domum — the ending carries 'to' — and nothing else in the language does. Thirty-seven modules have taught ad scholam, and the temptation to write ad Rōmam is the module's first plate.",
+      "sound": "RŌ-mam E-ō. Four syllables and one long vowel, which is the city's.",
+      "variations": [
+        {
+          "display": "Rōmam venīs.",
+          "cue": "You are coming to Rome.",
+          "changed": "the other verb of motion, and the listener"
+        },
+        {
+          "display": "Rōmam īre volō.",
+          "cue": "I want to go to Rome.",
+          "changed": "L1-M3's volō with an infinitive"
+        },
+        {
+          "display": "Ad scholam eō.",
+          "cue": "I am going to school.",
+          "changed": "an ordinary noun, which DOES need ad"
+        }
+      ],
+      "mistake": {
+        "display": "Ad Rōmam eō.",
+        "why": "ad added from habit. Thirty-seven modules of ad scholam make it the reflex, and a city name refuses it — the ending already says 'to', so ad would be a second one."
+      },
+      "usage": "Said about a journey.",
+      "mnemonic": "A city needs no ad.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S02",
+      "display": "Rōmā veniō.",
+      "cue": "I am coming from Rome.",
+      "literal": "from-Rome I-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rōmā",
+            "cue": "from Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'From Rome' — the ablative, with no preposition. Rōmam goes to, Rōmā comes from, Rōmae is at."
+          },
+          {
+            "display": "veniō",
+            "cue": "I come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I come': veniō, venīs, venit, venīmus, venīre, vēnī."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "One bar apart from the sentence above and the opposite direction. Rōmam goes to and Rōmā comes from — exactly as L2-M4's domum and domō do, which is the pair this module generalises from home to city names.",
+      "sound": "RŌ-mā VE-ni-ō. The long ā at the end is what makes it 'from'.",
+      "variations": [
+        {
+          "display": "Rōmā venit.",
+          "cue": "He is coming from Rome.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Rōmā hīc vēnī.",
+          "cue": "I came here from Rome.",
+          "changed": "the perfect, and L1-M7's hīc"
+        },
+        {
+          "display": "Domō veniō.",
+          "cue": "I am coming from home.",
+          "changed": "L2-M4's home, which behaves identically"
+        }
+      ],
+      "mistake": {
+        "display": "Ā Rōmā veniō.",
+        "why": "a preposition for 'from', which this course has never taught and which a city name would refuse anyway. The ablative alone carries it — and the plate exists because an English speaker looking for 'from' will invent something."
+      },
+      "usage": "Said about where you have travelled from.",
+      "mnemonic": "-am goes to; -ā comes from.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S03",
+      "display": "Rōmae sum.",
+      "cue": "I am at Rome.",
+      "literal": "at-Rome I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rōmae",
+            "cue": "at Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At Rome' — the LOCATIVE, a surviving case with a handful of members. It is also identical to the genitive, and nothing but the sentence parts them."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am' — sum, es, est, sunt. L1-M1's verb."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "THE LOCATIVE, and it is a whole case surviving for a handful of words. Latin lost it everywhere else and kept it for city names, home, and two or three more — so this is not a rule to generalise but a list to learn, and Rōmae is also identical to the genitive, which nothing but the sentence parts.",
+      "sound": "RŌ-mae SUM. Three syllables, and the -ae is one sound, 'eye'.",
+      "variations": [
+        {
+          "display": "Rōmae est.",
+          "cue": "He is at Rome.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Rōmae habitō.",
+          "cue": "I live at Rome.",
+          "changed": "M8's verb, which is what a locative is usually for"
+        },
+        {
+          "display": "Domī sum.",
+          "cue": "I am at home.",
+          "changed": "home, which is the other member of the list"
+        }
+      ],
+      "mistake": {
+        "display": "In Rōmā sum.",
+        "why": "in plus the ablative, which is L1-M7's construction for ordinary places and wrong for a city. It is the third preposition this module has to refuse — ad, ā and in — and each one is correct somewhere else."
+      },
+      "usage": "Said saying where you are.",
+      "mnemonic": "-ae is at, and it is a case Latin nearly lost.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S04",
+      "display": "Domī sum; crās Rōmam eō.",
+      "cue": "I am at home; tomorrow I am going to Rome.",
+      "literal": "at-home I-am tomorrow to-Rome I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "domī",
+            "cue": "at home",
+            "tag": "interference",
+            "forms": [
+              "domī"
+            ],
+            "note": "'At home' — the locative of domus, and L2-M4 named it as deferred twenty-nine modules ago. domum goes to, domō comes from, domī is at."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am' — sum, es, est, sunt."
+          },
+          {
+            "display": "crās",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tomorrow'. L1-M4's word, and one of six caseless time adverbs."
+          },
+          {
+            "display": "rōmam",
+            "cue": "to Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To Rome' — the object shape, with NO preposition. City names and home are the only words in the language that do this; everything else needs ad."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go': eō, īs, it, īmus, īre, īvī."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "domī arrives, and L2-M4 named it as deferred TWENTY-NINE MODULES AGO. That module taught domum and domō as two shapes of one row and said the third was L4-M9's; L3-M7 wanted it for 'it is better to stay at home' and wrote domum īre instead. Here it is, and the whole set is complete: domum to, domō from, domī at.",
+      "sound": "DO-mī SUM; CRĀS RŌ-mam E-ō. Eight syllables and three long vowels.",
+      "variations": [
+        {
+          "display": "Domī sum; crās domō eō.",
+          "cue": "I am at home; tomorrow I am leaving home.",
+          "changed": "all three shapes of home in one pair of clauses"
+        },
+        {
+          "display": "Domī est; crās Rōmam it.",
+          "cue": "He is at home; tomorrow he is going to Rome.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Rōmae sum; crās domum eō.",
+          "cue": "I am at Rome; tomorrow I am going home.",
+          "changed": "the two places swapped"
+        }
+      ],
+      "mistake": {
+        "display": "In domō sum; crās Rōmam eō.",
+        "why": "in plus the ablative for 'at home'. domō is the FROM shape, so this says something like 'in from-home' — and the locative exists precisely so that neither a preposition nor the wrong case is needed."
+      },
+      "usage": "Said about a plan.",
+      "mnemonic": "domum, domō, domī: to, from, at.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S05",
+      "display": "Ad scholam eō, nōn Rōmam.",
+      "cue": "I am going to school, not to Rome.",
+      "literal": "to school I-go not to-Rome",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', with the object shape after it — and it is REQUIRED for an ordinary noun. L1-M4's preposition."
+          },
+          {
+            "display": "scholam",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' after ad. L1-M6's word, and it is not a city, so it needs the preposition."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go': eō, īs, it, īmus, īre, īvī."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "rōmam",
+            "cue": "to Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To Rome' — the object shape, with NO preposition. City names and home are the only words in the language that do this; everything else needs ad."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Both halves in one sentence, which is the only way to fence a closed list. scholam needs ad and Rōmam refuses it, and the two are three words apart — so a learner who over-generalises this module writes scholam eō, and a learner who under-generalises writes ad Rōmam. The module has a plate for each.",
+      "sound": "ad SCHO-lam E-ō, nōn RŌ-mam. Eight syllables, and the two destinations are built differently.",
+      "variations": [
+        {
+          "display": "Ad officīnam eō, nōn Rōmam.",
+          "cue": "I am going to the office, not to Rome.",
+          "changed": "L3-M8's noun, which also needs ad"
+        },
+        {
+          "display": "Rōmam eō, nōn ad scholam.",
+          "cue": "I am going to Rome, not to school.",
+          "changed": "the two halves swapped"
+        },
+        {
+          "display": "Domum eō, nōn ad scholam.",
+          "cue": "I am going home, not to school.",
+          "changed": "home, which behaves like a city"
+        }
+      ],
+      "mistake": {
+        "display": "Scholam eō, nōn Rōmam.",
+        "why": "the preposition dropped from the ordinary noun, by over-generalising the city rule. This is the module's OTHER error and the reason it writes two plates rather than one: a rule with a closed list has to be fenced on both sides."
+      },
+      "usage": "Said correcting a wrong assumption.",
+      "mnemonic": "Cities and home, and nothing else.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S06",
+      "display": "Cum Rōmae essem, cotīdiē ad officīnam ībam.",
+      "cue": "When I was at Rome, I used to go to the office every day.",
+      "literal": "when at-Rome I-was daily to office I-was-going",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cum",
+            "cue": "when",
+            "tag": "interference",
+            "forms": [],
+            "note": "'When' with a subjunctive — M6's reading. A case after cum means 'with'."
+          },
+          {
+            "display": "rōmae",
+            "cue": "at Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At Rome' — the LOCATIVE, a surviving case with a handful of members. It is also identical to the genitive, and nothing but the sentence parts them."
+          },
+          {
+            "display": "essem",
+            "cue": "I was",
+            "tag": "interference",
+            "forms": [],
+            "note": "'When I was' — the imperfect subjunctive of sum, which cum requires. M3 opened it and M6 used it."
+          },
+          {
+            "display": "cotīdiē",
+            "cue": "every day",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Every day'. L1-M4's word."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', with the object shape after it — required for an ordinary noun."
+          },
+          {
+            "display": "officīnam",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "'Office' after ad. L3-M8's word."
+          },
+          {
+            "display": "ībam",
+            "cue": "I used to go",
+            "tag": "interference",
+            "forms": [
+              "ībam",
+              "ībat"
+            ],
+            "note": "'I used to go' — the imperfect of eō. M8's tense on the shortest verb in the course: eō, ībam, īvī."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "Three of the level's arrivals in one sentence: M6's cum with a mood, M8's imperfect, and this module's locative. None of them is new by itself and the combination is what a ninth module of a fourth level should be able to build.",
+      "sound": "cum RŌ-mae ES-sem, co-tī-di-Ē ad of-fi-CĪ-nam Ī-bam. Sixteen syllables and five long vowels.",
+      "variations": [
+        {
+          "display": "Cum Rōmae essem, cotīdiē ad scholam ībam.",
+          "cue": "When I was at Rome, I used to go to school every day.",
+          "changed": "a different destination"
+        },
+        {
+          "display": "Cum domī essem, cotīdiē legēbam.",
+          "cue": "When I was at home, I used to read every day.",
+          "changed": "home instead, and M8's reserved key"
+        },
+        {
+          "display": "Rōmae eram et cotīdiē ad officīnam ībam.",
+          "cue": "I was at Rome and used to go to the office every day.",
+          "changed": "two indicatives instead of a cum clause"
+        }
+      ],
+      "usage": "Said about a routine in another place.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S07",
+      "display": "Prīmum Rōmam īvī, deinde domum vēnī.",
+      "cue": "First I went to Rome, then I came home.",
+      "literal": "first to-Rome I-went next home I-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "'First of all'. L2-M10's adverb, at the front of its clause."
+          },
+          {
+            "display": "rōmam",
+            "cue": "to Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To Rome' — the object shape, with NO preposition. City names and home are the only words in the language that do this; everything else needs ad."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō: eō, īvī, iit. L3-M1's row."
+          },
+          {
+            "display": "deinde",
+            "cue": "next",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Next'. L2-M10's sequencer, at the front of its clause."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home' — the to-shape, with no preposition. L2-M4's word, and the pattern this module generalises."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō, one bar from venit."
+          }
+        ],
+        "rules": [
+          2,
+          4
+        ]
+      },
+      "trap": "A journey told in perfects, with two destinations and no prepositions anywhere. Every word in it is taught except the city, and the module's job — 'a trip told in full' — is mostly a matter of having enough sequencers, which L2-M10 supplied.",
+      "variations": [
+        {
+          "display": "Prīmum domō īvī, deinde Rōmam vēnī.",
+          "cue": "First I left home, then I came to Rome.",
+          "changed": "the from-shape of home opening the trip"
+        },
+        {
+          "display": "Prīmum Rōmam īvī, deinde domum īvī.",
+          "cue": "First I went to Rome, then I went home.",
+          "changed": "one verb for both legs"
+        },
+        {
+          "display": "Prīmum Rōmam īvī, deinde hīc vēnī.",
+          "cue": "First I went to Rome, then I came here.",
+          "changed": "L1-M7's hīc as the second destination"
+        }
+      ],
+      "usage": "Said telling a trip in order.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S08",
+      "display": "Rōmā rēctā domum vēnī; ad dextram nōn īvī.",
+      "cue": "I came straight home from Rome; I did not go to the right.",
+      "literal": "from-Rome straight home I-came to right not I-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rōmā",
+            "cue": "from Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'From Rome' — the ablative, with no preposition. Rōmam goes to, Rōmā comes from, Rōmae is at."
+          },
+          {
+            "display": "rēctā",
+            "cue": "straight on",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Straight on' — L2-M4's ablative doing an adverb's job: 'by a straight route'. No preposition, like the city."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home' — the to-shape, with no preposition."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', with the object shape after it."
+          },
+          {
+            "display": "dextram",
+            "cue": "the right",
+            "tag": "delta",
+            "forms": [],
+            "note": "'The right' — dextram after ad. L2-M4's word, and a direction is not a place, so it keeps its preposition."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "Four things in the ablative or accusative and only one preposition among them. Rōmā, rēctā and domum each carry their own relation, and ad dextram does not — which is the whole of this module beside L2-M4's directions, and the count of prepositions in a Latin journey is far lower than in an English one.",
+      "sound": "RŌ-mā RĒC-tā DO-mum VĒ-nī; ad DEX-tram nōn Ī-vī. Fifteen syllables and six long vowels.",
+      "variations": [
+        {
+          "display": "Rōmā rēctā domum vēnī.",
+          "cue": "I came straight home from Rome.",
+          "changed": "no second clause"
+        },
+        {
+          "display": "Rōmā rēctā ad scholam vēnī.",
+          "cue": "I came straight to school from Rome.",
+          "changed": "a destination that needs ad"
+        },
+        {
+          "display": "Domō rēctā Rōmam īvī; ad sinistram nōn īvī.",
+          "cue": "I went straight to Rome from home; I did not go to the left.",
+          "changed": "the journey reversed and the other direction"
+        }
+      ],
+      "usage": "Said describing a route.",
+      "mnemonic": "Latin needs fewer prepositions than English.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S09",
+      "display": "Ōlim Rōmae habitābam; nunc domī sum.",
+      "cue": "I used to live at Rome; now I am at home.",
+      "literal": "once at-Rome I-was-living now at-home I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ōlim",
+            "cue": "once",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Once, back then'. M8's word, marking a stretch of past time."
+          },
+          {
+            "display": "rōmae",
+            "cue": "at Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At Rome' — the LOCATIVE, a surviving case with a handful of members. It is also identical to the genitive, and nothing but the sentence parts them."
+          },
+          {
+            "display": "habitābam",
+            "cue": "I used to live",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I used to live' — the imperfect of habitō. M8's tense, and a locative is what it usually sits beside."
+          },
+          {
+            "display": "nunc",
+            "cue": "now",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Now'. M8's word, which thirty-four modules managed without."
+          },
+          {
+            "display": "domī",
+            "cue": "at home",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At home' — the locative of domus, and L2-M4 named it as deferred twenty-nine modules ago. domum goes to, domō comes from, domī is at."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am' — sum, es, est, sunt."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "Both locatives in one sentence, one in each half, and both of them are what M8's contrast needs. Rōmae and domī are the same case on two words, and M8 wrote Rōmae before this module could explain it — which is the borrowing that module's notes admitted to.",
+      "variations": [
+        {
+          "display": "Ōlim domī habitābam; nunc Rōmae sum.",
+          "cue": "I used to live at home; now I am at Rome.",
+          "changed": "the two places swapped"
+        },
+        {
+          "display": "Ōlim Rōmae habitābam; nunc hīc habitō.",
+          "cue": "I used to live at Rome; now I live here.",
+          "changed": "L1-M7's hīc, which is an adverb and not a case at all"
+        },
+        {
+          "display": "Rōmae habitābam.",
+          "cue": "I used to live at Rome.",
+          "changed": "no contrast"
+        }
+      ],
+      "usage": "Said about a move, at a distance.",
+      "mnemonic": "Rōmae and domī are one case on two words.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M9-S10",
+      "display": "Prīmum domō Rōmam īvī; cum Rōmae essem, cotīdiē ad officīnam ībam; postrēmō domum vēnī.",
+      "cue": "First I went from home to Rome; when I was at Rome, I used to go to the office every day; finally I came home.",
+      "literal": "first from-home to-Rome I-went when at-Rome I-was daily to office I-was-going finally home I-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "'First of all'. L2-M10's adverb."
+          },
+          {
+            "display": "domō",
+            "cue": "from home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home' — the from-shape, with no preposition. L2-M4's word."
+          },
+          {
+            "display": "rōmam",
+            "cue": "to Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To Rome' — the object shape, with NO preposition. City names and home are the only words in the language that do this; everything else needs ad."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō."
+          },
+          {
+            "display": "cum",
+            "cue": "when",
+            "tag": "interference",
+            "forms": [],
+            "note": "'When' with a subjunctive — M6's reading."
+          },
+          {
+            "display": "rōmae",
+            "cue": "at Rome",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At Rome' — the LOCATIVE, a surviving case with a handful of members. It is also identical to the genitive, and nothing but the sentence parts them."
+          },
+          {
+            "display": "essem",
+            "cue": "I was",
+            "tag": "interference",
+            "forms": [],
+            "note": "'When I was' — the imperfect subjunctive of sum, which cum requires."
+          },
+          {
+            "display": "cotīdiē",
+            "cue": "every day",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Every day'. L1-M4's word."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', with the object shape after it — required for an ordinary noun."
+          },
+          {
+            "display": "officīnam",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "'Office' after ad. L3-M8's word."
+          },
+          {
+            "display": "ībam",
+            "cue": "I used to go",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I used to go' — the imperfect of eō. M8's tense."
+          },
+          {
+            "display": "postrēmō",
+            "cue": "finally",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Finally'. L2-M10's closer."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home' — the to-shape, with no preposition."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "A trip told in full, with all four shapes of place in it — domō from, Rōmam to, Rōmae at, domum to again — one preposition for the one noun that needs it, three sequencers, a time clause with a mood, and both past tenses dividing the work. Fourteen words, and the only new thing in the module is a city.",
+      "sound": "PRĪ-mum do-MŌ RŌ-mam Ī-vī; cum RŌ-mae ES-sem, co-tī-di-Ē ad of-fi-CĪ-nam Ī-bam; pos-TRĒ-mō DO-mum VĒ-nī. Thirty-three syllables — the longest line in the course so far.",
+      "variations": [
+        {
+          "display": "Prīmum domō Rōmam īvī; postrēmō domum vēnī.",
+          "cue": "First I went from home to Rome; finally I came home.",
+          "changed": "the middle clause dropped"
+        },
+        {
+          "display": "Prīmum domō Rōmam īvī; cum Rōmae essem, cotīdiē legēbam; postrēmō domum vēnī.",
+          "cue": "First I went from home to Rome; when I was at Rome, I used to read every day; finally I came home.",
+          "changed": "a different habit in the middle"
+        },
+        {
+          "display": "Cum Rōmae essem, cotīdiē ad officīnam ībam.",
+          "cue": "When I was at Rome, I used to go to the office every day.",
+          "changed": "only the middle clause, which is S06"
+        }
+      ],
+      "usage": "Said telling a whole trip.",
+      "mnemonic": "Four shapes of place, one preposition, fourteen words.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M9-C01",
+      "display": "Rōmam īre volō.",
+      "cue": "I want to go to Rome."
+    },
+    {
+      "id": "L4-M9-C02",
+      "display": "Rōmā venit.",
+      "cue": "He is coming from Rome."
+    },
+    {
+      "id": "L4-M9-C03",
+      "display": "Rōmae habitō.",
+      "cue": "I live at Rome."
+    },
+    {
+      "id": "L4-M9-C04",
+      "display": "Domī sum.",
+      "cue": "I am at home."
+    },
+    {
+      "id": "L4-M9-C05",
+      "display": "Rōmam eō, nōn ad scholam.",
+      "cue": "I am going to Rome, not to school."
+    },
+    {
+      "id": "L4-M9-C06",
+      "display": "Cum domī essem, cotīdiē legēbam.",
+      "cue": "When I was at home, I used to read every day."
+    },
+    {
+      "id": "L4-M9-C07",
+      "display": "Prīmum domō īvī, deinde Rōmam vēnī.",
+      "cue": "First I left home, then I came to Rome."
+    },
+    {
+      "id": "L4-M9-C08",
+      "display": "Rōmā rēctā domum vēnī.",
+      "cue": "I came straight home from Rome."
+    },
+    {
+      "id": "L4-M9-C09",
+      "display": "Ōlim domī habitābam; nunc Rōmae sum.",
+      "cue": "I used to live at home; now I am at Rome."
+    },
+    {
+      "id": "L4-M9-C10",
+      "display": "Ad officīnam eō, nōn Rōmam.",
+      "cue": "I am going to the office, not to Rome."
+    },
+    {
+      "id": "L4-M9-C11",
+      "display": "Rōmae est.",
+      "cue": "He is at Rome."
+    },
+    {
+      "id": "L4-M9-C12",
+      "display": "Domum eō, nōn ad scholam.",
+      "cue": "I am going home, not to school."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

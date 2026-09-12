@@ -1,0 +1,695 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": [
+    "L2-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "quō / unde / ubi + V",
+      "N-abl (means) + V",
+      "N-abl (means) + ad + N-acc + V",
+      "N-nom + ad dextram / ad sinistram + est",
+      "domum eō / domō veniō"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "THREE QUESTION WORDS WHERE ENGLISH HAS ONE, and this module owns the difference. ubi is 'where' as a position (L1-M7's), quō is 'to where' for a destination, unde is 'from where' for an origin. English says 'where' for all three and lets 'to' and 'from' carry the rest; Latin carries it in the question word and adds no preposition at all."
+    },
+    {
+      "tag": "delta",
+      "text": "THE BARE ABLATIVE OF MEANS: raedā eō is 'I go by car', with nothing in front of it. L1-M3 put this ending after opus est and L1-M7 after in and cum; here it stands alone and the ending alone means 'by means of'. It is the first case in the course to do a whole job with no preposition to introduce it, and rēctā and pedibus are the same ending wearing an adverb's clothes."
+    },
+    {
+      "tag": "free",
+      "text": "raeda and birota come from the living-Latin lexicon and are not invented here. Classically a raeda was a four-wheeled carriage and a birota was nothing at all; the modern community settled both, and this course uses their words rather than coining its own. Every module in every level shares one lexicon, so a coined word would be a word only this module knows."
+    },
+    {
+      "tag": "delta",
+      "text": "DIRECTIONS USE L1-M4's ad WITH THE OBJECT SHAPE: ad dextram, ad sinistram, ad scholam. Nothing about the preposition is new and everything about the nouns is. Latin says 'to the right' where English says 'on the right', and the one phrase serves for both describing where a thing is and sending someone there."
+    },
+    {
+      "tag": "interference",
+      "text": "HOME TAKES NO PREPOSITION, and it is the module's one exception to the rule above: domum eō 'I go home', domō veniō 'I come from home'. They are two shapes of one noun doing what a place name does, and they are one bar apart with opposite meanings. The third member, domī 'at home', is a surviving locative case with a handful of words in it and belongs to L4-M9 — it is named here and written nowhere."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "Quō īs?",
+      "cue": "Where are you going?",
+      "literal": "to-where you-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quō",
+            "cue": "to where",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To where', for a destination — never plain 'where', which is L1-M7's ubi. One bar and one letter from L1-M9's quod ('because'), and only the macron parts them."
+          },
+          {
+            "display": "īs",
+            "cue": "you go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go' — irregular and short: eō 'I go', īs 'you go', it 'he/she goes', īre 'to go'. Nearly every shape is one syllable, which is why it is hard to hear."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Latin has a separate word for 'where TO'. English gets by with one 'where' and leaves the direction to the verb; Latin puts it in the question word, so choosing quō or ubi is the first decision you make, before you have said anything else.",
+      "sound": "QUŌ ĪS? Two long vowels and two syllables — this is about the shortest complete question in the language.",
+      "variations": [
+        {
+          "display": "Quō it?",
+          "cue": "Where is he going?",
+          "changed": "asked about someone else"
+        },
+        {
+          "display": "Quō venīs?",
+          "cue": "Where are you coming to?",
+          "changed": "the other verb of motion"
+        },
+        {
+          "display": "Quō tū īs?",
+          "cue": "Where are YOU going?",
+          "changed": "tū added, which stresses it rather than adding meaning"
+        }
+      ],
+      "mistake": {
+        "display": "Ubi īs?",
+        "why": "ubi asked for a destination. It means 'where' as a position — where something IS — and a Roman hearing it with a verb of motion would answer where you are standing, not where you are headed."
+      },
+      "usage": "Said to someone on their way somewhere.",
+      "mnemonic": "quō has the long ō of a long journey.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "Unde venīs?",
+      "cue": "Where are you coming from?",
+      "literal": "from-where you-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "unde",
+            "cue": "from where",
+            "tag": "delta",
+            "forms": [],
+            "note": "'From where'. It is the third of the trio — ubi is where, quō is where to, unde is where from — and it does not begin with qu-, which is the one mercy in the set."
+          },
+          {
+            "display": "venīs",
+            "cue": "you come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I come': veniō 'I come', venīs 'you come', venit 'he/she comes', venīre 'to come'. It is the pair of eō, and Latin keeps the two apart as strictly as English does."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Three question words where English has one plus a preposition. English moves the work to 'from' and 'to'; Latin puts it all in the question word and uses no preposition at all — so there is nothing to add and nothing to leave off.",
+      "variations": [
+        {
+          "display": "Unde venit?",
+          "cue": "Where is she coming from?",
+          "changed": "asked about someone else"
+        },
+        {
+          "display": "Unde es?",
+          "cue": "Where are you from?",
+          "changed": "with 'to be', which is how you ask where someone is from for good"
+        },
+        {
+          "display": "Unde veniēs?",
+          "cue": "Where will you be coming from?",
+          "changed": "L1-M6's future"
+        }
+      ],
+      "mistake": {
+        "display": "Ubi venīs?",
+        "why": "ubi again, this time for an origin. The one question word that fits nothing here is the one an English speaker reaches for first, because English says 'where' and lets 'from' do the rest."
+      },
+      "usage": "Said to someone who has just arrived.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "Ubi es?",
+      "cue": "Where are you?",
+      "literal": "where you-are",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ubi",
+            "cue": "where",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Where', for a position and nothing else. L1-M7's word, and the module that taught it never had to choose, because it never asked about motion."
+          },
+          {
+            "display": "es",
+            "cue": "you are",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "This is the sentence that shows what ubi is FOR. It asks where someone is standing, and it is the only one of the three question words that works with 'to be' — quō and unde both need something to move.",
+      "variations": [
+        {
+          "display": "Ubi est schola?",
+          "cue": "Where is the school?",
+          "changed": "asked about a place rather than a person"
+        },
+        {
+          "display": "Ubi sunt?",
+          "cue": "Where are they?",
+          "changed": "more than one"
+        },
+        {
+          "display": "Ubi erit?",
+          "cue": "Where will it be?",
+          "changed": "L1-M6's future of 'to be'"
+        }
+      ],
+      "usage": "Said on the telephone, or looking for someone in a crowd.",
+      "mnemonic": "ubi for standing still, quō for setting off, unde for coming back.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "Raedā eō.",
+      "cue": "I am going by car.",
+      "literal": "by-car I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "raedā",
+            "cue": "by car",
+            "tag": "delta",
+            "forms": [
+              "raeda",
+              "raedā"
+            ],
+            "note": "'Car' — raeda as the subject, raedā for going BY car. It is the living-Latin word (classically a four-wheeled carriage), not Cicero's, because Cicero had no car."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go' — irregular and short: eō 'I go', īs 'you go', it 'he/she goes', īre 'to go'. Nearly every shape is one syllable, which is why it is hard to hear."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "No word for 'by'. The ending IS 'by' — raedā with the long a means 'by means of a car', and putting anything in front of it is the mistake. This is the first time in the course that a case does a whole job with nothing to introduce it.",
+      "sound": "RAE-dā E-ō. The final ā is long and the stress stays on the first syllable, so the 'by' is a length you have to hold rather than a word you can hear.",
+      "variations": [
+        {
+          "display": "Raedā venit.",
+          "cue": "He is coming by car.",
+          "changed": "the other verb, someone else going"
+        },
+        {
+          "display": "Raedā ad scholam eō.",
+          "cue": "I go to school by car.",
+          "changed": "a destination added, which needs ad and the object shape"
+        },
+        {
+          "display": "Raeda magna est.",
+          "cue": "The car is big.",
+          "changed": "the same noun as a plain subject, so the ending goes back to short a"
+        }
+      ],
+      "mistake": {
+        "display": "In raedā eō.",
+        "why": "'in' borrowed from English 'in the car'. L1-M7's in does exist and does take this ending, but it means physically inside — and with a verb of motion it says you are travelling about inside the car rather than going somewhere by car."
+      },
+      "usage": "Said about how you travel.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "Pedibus veniō.",
+      "cue": "I am coming on foot.",
+      "literal": "by-feet I-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pedibus",
+            "cue": "on foot",
+            "tag": "interference",
+            "forms": [],
+            "note": "'On foot', literally 'by the feet' — and it is PLURAL, because you walk on two. There is no singular idiom: a Roman never came 'by foot'."
+          },
+          {
+            "display": "veniō",
+            "cue": "I come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I come': veniō 'I come', venīs 'you come', venit 'he/she comes', venīre 'to come'. It is the pair of eō, and Latin keeps the two apart as strictly as English does."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Plural where English is singular. 'On foot' is one foot in English and two feet in Latin, and the ending is the same means-ending raedā carries — so the sentence is built the same way and only the number surprises you.",
+      "variations": [
+        {
+          "display": "Pedibus eō.",
+          "cue": "I am going on foot.",
+          "changed": "the other verb of motion"
+        },
+        {
+          "display": "Pedibus ad scholam veniō.",
+          "cue": "I come to school on foot.",
+          "changed": "a destination added"
+        },
+        {
+          "display": "Pedibus venīre volō.",
+          "cue": "I want to come on foot.",
+          "changed": "L1-M3's volō with an infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "Pedibus in scholam veniō.",
+        "why": "in where ad belongs. ad is motion towards a place and in is being inside one, and school is somewhere you go TO — the same pair of choices as the car, one sentence later."
+      },
+      "usage": "Said when the answer to 'how did you get here' is that you walked.",
+      "mnemonic": "pedibus has the pedal in it, and there are two of those too.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "Birotā ad scholam eō.",
+      "cue": "I go to school by bicycle.",
+      "literal": "by-bicycle to school I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "birotā",
+            "cue": "by bicycle",
+            "tag": "delta",
+            "forms": [
+              "birota",
+              "birotā"
+            ],
+            "note": "'Bicycle', literally 'two-wheeler' — birota as the subject, birotā for going BY bicycle. Coined by the same living-Latin community as raeda."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', and it takes the object shape after it: ad scholam, ad dextram. L1-M4's preposition, doing exactly what it did there."
+          },
+          {
+            "display": "scholam",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School': schola as the subject, scholam after ad or as the object. L1-M6's word."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go' — irregular and short: eō 'I go', īs 'you go', it 'he/she goes', īre 'to go'. Nearly every shape is one syllable, which is why it is hard to hear."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          2
+        ]
+      },
+      "trap": "Two endings doing two different jobs in one sentence. birotā is the means and carries it in the ending alone; scholam is the destination and needs ad in front of it. One of them takes a preposition and the other refuses one, and nothing about the words tells you which.",
+      "variations": [
+        {
+          "display": "Birotā ad scholam veniō.",
+          "cue": "I come to school by bicycle.",
+          "changed": "the other verb of motion"
+        },
+        {
+          "display": "Raedā ad scholam eō.",
+          "cue": "I go to school by car.",
+          "changed": "a different means over the same frame"
+        },
+        {
+          "display": "Birota parva est.",
+          "cue": "The bicycle is small.",
+          "changed": "the noun as a plain subject with L2-M3's adjective"
+        }
+      ],
+      "mistake": {
+        "display": "Birotā ad schola eō.",
+        "why": "scholam left in its subject shape after ad. Every preposition in this course but one takes the object shape, and the longer the sentence the easier it is to spend all your attention on the interesting ending and none on the ordinary one."
+      },
+      "usage": "Said about a journey you make regularly.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "Schola ad dextram est.",
+      "cue": "The school is on the right.",
+      "literal": "school to right is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "schola",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School': schola as the subject, scholam after ad or as the object. L1-M6's word."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', and it takes the object shape after it: ad scholam, ad dextram. L1-M4's preposition, doing exactly what it did there."
+          },
+          {
+            "display": "dextram",
+            "cue": "the right",
+            "tag": "delta",
+            "forms": [],
+            "note": "'The right' — dextram after ad, which is how Latin says both 'to the right' and 'on the right'. English 'dexterous' is the same word: right-handed."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Latin says 'to the right' where English says 'on the right'. There is one phrase for both, ad dextram, and it works with 'is' as happily as with a verb of motion — so you do not have to choose between describing a place and sending someone there.",
+      "variations": [
+        {
+          "display": "Schola ad sinistram est.",
+          "cue": "The school is on the left.",
+          "changed": "the other side"
+        },
+        {
+          "display": "Mēnsa ad dextram est.",
+          "cue": "The table is on the right.",
+          "changed": "a different thing being placed"
+        },
+        {
+          "display": "Ad dextram, prope scholam.",
+          "cue": "On the right, near the school.",
+          "changed": "L1-M7's prope added, with no verb at all"
+        }
+      ],
+      "usage": "Said when you are giving directions.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "Nōn ad sinistram sed rēctā.",
+      "cue": "Not to the left but straight on.",
+      "literal": "not to left but straight",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', and it goes in front of whatever it denies — here a whole phrase rather than a verb, which it does without changing shape. L1-M3's word."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', and it takes the object shape after it: ad scholam, ad dextram. L1-M4's preposition, doing exactly what it did there."
+          },
+          {
+            "display": "sinistram",
+            "cue": "the left",
+            "tag": "interference",
+            "forms": [],
+            "note": "'The left' — sinistram after ad, the pair of dextram. English 'sinister' comes from it, because the Romans read omens on the left; the Latin word carries none of that."
+          },
+          {
+            "display": "sed",
+            "cue": "but",
+            "tag": "delta",
+            "forms": [],
+            "note": "'But'. L1-M9's word, and it joins two phrases here rather than two sentences — Latin does not mind which."
+          },
+          {
+            "display": "rēctā",
+            "cue": "straight on",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Straight on' — the same means-ending as raedā, doing an adverb's job: 'by a straight line'. Long ē, long ā, and both matter."
+          }
+        ],
+        "rules": [
+          4,
+          1
+        ]
+      },
+      "trap": "A correction with no verb in it at all. Latin is happy to answer with two phrases and nothing to hold them up, and rēctā is quietly the module's third means-ending — 'by a straight route' — which is why it needs no preposition either.",
+      "sound": "NŌN ad si-NIS-tram sed RĒC-tā. Four long vowels in six syllables: this is a sentence you have to slow down for.",
+      "variations": [
+        {
+          "display": "Nōn ad dextram sed ad sinistram.",
+          "cue": "Not to the right but to the left.",
+          "changed": "both sides named, so ad appears twice"
+        },
+        {
+          "display": "Nōn rēctā sed ad dextram.",
+          "cue": "Not straight on but to the right.",
+          "changed": "the two halves swapped"
+        },
+        {
+          "display": "Rēctā eō.",
+          "cue": "I am going straight on.",
+          "changed": "with a verb, which it does not need but will take"
+        }
+      ],
+      "mistake": {
+        "display": "Nōn ad sinistram sed ad rēctā.",
+        "why": "ad put in front of rēctā to match the phrase before it. rēctā already means 'by a straight route' in its ending, so ad adds a second 'to' — and the pull to make the two halves of a correction look alike is strong enough to do it."
+      },
+      "usage": "Said to correct someone who is about to turn the wrong way.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "Domum eō.",
+      "cue": "I am going home.",
+      "literal": "home I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "interference",
+            "forms": [
+              "domum",
+              "domō"
+            ],
+            "note": "'Home' in two shapes and no preposition: domum for going TO home, domō for coming FROM it. The third shape, domī 'at home', comes at L4-M9."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go' — irregular and short: eō 'I go', īs 'you go', it 'he/she goes', īre 'to go'. Nearly every shape is one syllable, which is why it is hard to hear."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "No preposition, and that is the point. Home is one of a tiny set of words Latin treats like a place name: domum eō is 'I go home', with the destination in the ending, exactly as English says 'home' rather than 'to home'.",
+      "sound": "DO-mum E-ō. Both vowels of domum are short, which is worth holding on to, because the shape that means 'from home' is long where this one is short.",
+      "variations": [
+        {
+          "display": "Domum it.",
+          "cue": "He is going home.",
+          "changed": "someone else going"
+        },
+        {
+          "display": "Domum īre volō.",
+          "cue": "I want to go home.",
+          "changed": "L1-M3's volō with an infinitive"
+        },
+        {
+          "display": "Raedā domum eō.",
+          "cue": "I am going home by car.",
+          "changed": "a means added, which needs no preposition either"
+        }
+      ],
+      "mistake": {
+        "display": "Ad domum eō.",
+        "why": "ad added on the model of ad scholam. Everywhere else in this module a destination needs ad; home is the exception, and the sentence that teaches the rule sits two rungs above the sentence that breaks it."
+      },
+      "usage": "Said at the end of a day.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "Domō veniō.",
+      "cue": "I am coming from home.",
+      "literal": "from-home I-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "domō",
+            "cue": "from home",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Home' in two shapes and no preposition: domum for going TO home, domō for coming FROM it. The third shape, domī 'at home', comes at L4-M9."
+          },
+          {
+            "display": "veniō",
+            "cue": "I come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I come': veniō 'I come', venīs 'you come', venit 'he/she comes', venīre 'to come'. It is the pair of eō, and Latin keeps the two apart as strictly as English does."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "One bar apart from the last sentence, and the opposite direction. domum goes to home and domō comes from it, and the difference between them is a long o at the end — the same trade the whole course makes, arriving on a word you will say every day.",
+      "sound": "do-MŌ VE-ni-ō. The stress moves onto the long ō, which is the one audible clue that this is not domum.",
+      "variations": [
+        {
+          "display": "Domō venit.",
+          "cue": "She is coming from home.",
+          "changed": "someone else coming"
+        },
+        {
+          "display": "Domō ad scholam eō.",
+          "cue": "I go from home to school.",
+          "changed": "both ends of the journey, and only one of them takes ad"
+        },
+        {
+          "display": "Domō rēctā veniō.",
+          "cue": "I come straight from home.",
+          "changed": "rēctā added, which needs nothing in front of it"
+        }
+      ],
+      "mistake": {
+        "display": "Domum veniō.",
+        "why": "the to-home shape used for coming from home. It is a real word and a real shape, so nothing looks wrong — it simply says the opposite of what you mean, which is the most expensive kind of mistake a bar can cause."
+      },
+      "usage": "Said when you have just left the house.",
+      "mnemonic": "domum is short and goes out; domō is long and comes back.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "Raedā ad scholam eō.",
+      "cue": "I go to school by car."
+    },
+    {
+      "id": "L2-M4-C02",
+      "display": "Pedibus ad scholam venīs.",
+      "cue": "You come to school on foot."
+    },
+    {
+      "id": "L2-M4-C03",
+      "display": "Quō venīs?",
+      "cue": "Where are you coming to?"
+    },
+    {
+      "id": "L2-M4-C04",
+      "display": "Unde es?",
+      "cue": "Where are you from?"
+    },
+    {
+      "id": "L2-M4-C05",
+      "display": "Birota parva est.",
+      "cue": "The bicycle is small."
+    },
+    {
+      "id": "L2-M4-C06",
+      "display": "Domō ad scholam eō.",
+      "cue": "I go from home to school."
+    },
+    {
+      "id": "L2-M4-C07",
+      "display": "Schola ad sinistram est.",
+      "cue": "The school is on the left."
+    },
+    {
+      "id": "L2-M4-C08",
+      "display": "Rēctā eō.",
+      "cue": "I am going straight on."
+    },
+    {
+      "id": "L2-M4-C09",
+      "display": "Ubi est schola?",
+      "cue": "Where is the school?"
+    },
+    {
+      "id": "L2-M4-C10",
+      "display": "Pedibus venīre volō.",
+      "cue": "I want to come on foot."
+    },
+    {
+      "id": "L2-M4-C11",
+      "display": "Raeda magna est.",
+      "cue": "The car is big."
+    },
+    {
+      "id": "L2-M4-C12",
+      "display": "Nōn pedibus sed birotā veniō.",
+      "cue": "I am coming not on foot but by bicycle."
+    },
+    {
+      "id": "L2-M4-C13",
+      "display": "Domum īre volō.",
+      "cue": "I want to go home."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

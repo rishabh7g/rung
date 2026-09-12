@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M10",
+  "title": "Telling what happened",
+  "job": "A four-sentence account in the past",
+  "prerequisites": [
+    "L2-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "prīmum + V-perfect",
+      "deinde + V-perfect",
+      "tum + V-perfect",
+      "postrēmō + V-perfect",
+      "<four-sentence account, all perfect>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "FOUR SEQUENCERS, ALL AT THE FRONT: prīmum, deinde, tum, postrēmō. They are the only new words this module needs, because everything else in an account is a verb the course has already taught. They go FIRST in their sentence, like L1-M9's itaque and ergō — and NOT second, like L1-M10's autem, enim, igitur and quoque. The level has now taught four connectives that must come first and four that must come second, and the list is worth more to you than the principle."
+    },
+    {
+      "tag": "interference",
+      "text": "THE PAST IS THE PERFECT AND ONLY THE PERFECT. L1-M5 settled this and deferred the other past — the one that says an action was going on — to L4-M8. A four-sentence account is exactly where a learner reaches for 'I was walking', and there is nothing to reach for: every event here is completed, and a state that persists is either recast as an event (fessus fuī) or left out. The keys legēbam, habēbam and eram are still unwritten and L4 needs them."
+    },
+    {
+      "tag": "free",
+      "text": "DROP THE SUBJECT UNTIL IT CHANGES. This is L1-M10's rule at four times the length and it matters more here than anywhere yet: the first sentence says who, and the next three say nothing about it. An account where every sentence names its subject reads like a list. The exception is exact — when the subject CHANGES, name it, because nothing else will tell your listener. A paragraph with two people in it needs the name at precisely that sentence and nowhere else."
+    },
+    {
+      "tag": "interference",
+      "text": "deinde AND tum ARE CLOSE ENOUGH TO SWAP: deinde is 'next in order' and tum is 'then, at that point'. In the middle of a four-sentence account either will do, and this module writes both rather than pretending the difference is sharp. prīmum and postrēmō are the ones that are fixed — the first opens and the last closes, and after postrēmō a listener expects you to stop."
+    },
+    {
+      "tag": "delta",
+      "text": "THE PERFECTS IN THIS MODULE REBUILD THEIR VERBS RATHER THAN ADDING TO THEM: eō/īvī/iit, veniō/vēnī, legō/lēgī, scrībō/scrīpsī, relinquō/relīquī, bibō/bibī, sum/fuī. L1-M5's law, and by now it has cost you seven verbs. Only errāvī, from M8, takes the tidy -vī on an unchanged stem — the regular perfect is not the common one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M10-S01",
+      "display": "Prīmum ad scholam īvī.",
+      "cue": "First I went to school.",
+      "literal": "first to school I-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "'First'. It comes FIRST in its sentence, like L1-M9's itaque and ergō and unlike L1-M10's autem and enim, which must come second."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', with the object shape after it. L1-M4's preposition."
+          },
+          {
+            "display": "scholam",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' after ad. L1-M6's word."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [
+              "īvī",
+              "iit"
+            ],
+            "note": "'I went' — the perfect of eō, and it rebuilds the verb rather than adding to it: eō, īvī, iit. L1-M5's law, on the shortest verb in the course."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "This is the first sentence of a paragraph rather than a turn in a conversation, and prīmum is what tells you so. The word costs nothing grammatically and changes everything about what a listener expects: three more sentences are coming.",
+      "sound": "PRĪ-mum ad SCHO-lam Ī-vī. Two long ī sounds at the two ends of the line.",
+      "variations": [
+        {
+          "display": "Prīmum domum īvī.",
+          "cue": "First I went home.",
+          "changed": "M4's home, which needs no ad"
+        },
+        {
+          "display": "Prīmum ad scholam iit.",
+          "cue": "First he went to school.",
+          "changed": "someone else, so the ending moves"
+        },
+        {
+          "display": "Prīmum hōrā tertiā vēnī.",
+          "cue": "First I came at the third hour.",
+          "changed": "M6's time ablative"
+        }
+      ],
+      "usage": "Said starting an account of your day.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S02",
+      "display": "Deinde librum lēgī.",
+      "cue": "Next I read a book.",
+      "literal": "next book I-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deinde",
+            "cue": "next",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Next'. It sits at the front and marks the step after. Against tum it is the plainer of the two: deinde is 'next in order', tum is 'then, at that point'."
+          },
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the thing read — liber as the subject, librum as the object. L1-M4's word."
+          },
+          {
+            "display": "lēgī",
+            "cue": "I read",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read', past — the perfect of legō, lengthening the vowel rather than adding an ending: legō, lēgī. L1-M5's word."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "No subject. The first sentence established who, and this one carries nothing but the step and the verb — which is the whole naturalness lesson of the module and the reason it reads like an account rather than a list.",
+      "variations": [
+        {
+          "display": "Deinde epistulam scrīpsī.",
+          "cue": "Next I wrote a letter.",
+          "changed": "a different thing done"
+        },
+        {
+          "display": "Deinde librum lēgit.",
+          "cue": "Next he read a book.",
+          "changed": "someone else, which is when the subject may need naming"
+        },
+        {
+          "display": "Deinde aquam bibī.",
+          "cue": "Next I drank some water.",
+          "changed": "L1-M5's verb in the perfect"
+        }
+      ],
+      "mistake": {
+        "display": "Deinde ego librum lēgī.",
+        "why": "ego put back in the second sentence. It is correct Latin and it says something the account does not mean — that the reading was MINE as against someone else's. Four sentences each naming their subject is the tell L1-M10 spent a rule on, at four times the length."
+      },
+      "usage": "Said carrying an account forward.",
+      "mnemonic": "Once the who is set, drop it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S03",
+      "display": "Tum epistulam scrīpsī.",
+      "cue": "Then I wrote a letter.",
+      "literal": "then letter I-wrote",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tum",
+            "cue": "then",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Then, at that point'. Front of the sentence, like the other three. Where deinde counts steps, tum places one in time."
+          },
+          {
+            "display": "epistulam",
+            "cue": "letter",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Letter' as the thing written — epistula as the subject, epistulam as the object. L1-M6's word, and English 'epistle' keeps it."
+          },
+          {
+            "display": "scrīpsī",
+            "cue": "I wrote",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I wrote' — the perfect of scrībō, which swaps the b for a ps: scrībō, scrīpsī. L1-M6's verb."
+          }
+        ],
+        "rules": [
+          0,
+          3
+        ]
+      },
+      "trap": "tum and deinde are close enough to swap without anyone minding. deinde counts the next step and tum places it in time, and in a four-sentence account either will do in the middle — which is why the module writes both and says the difference rather than pretending it is sharp.",
+      "variations": [
+        {
+          "display": "Deinde epistulam scrīpsī.",
+          "cue": "Next I wrote a letter.",
+          "changed": "the other sequencer, and the sentence still works"
+        },
+        {
+          "display": "Tum librum lēgī.",
+          "cue": "Then I read a book.",
+          "changed": "a different thing done"
+        },
+        {
+          "display": "Tum hōrā sextā domum īvī.",
+          "cue": "Then I went home at the sixth hour.",
+          "changed": "M6's time ablative under a sequencer"
+        }
+      ],
+      "usage": "Said in the middle of an account.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S04",
+      "display": "Postrēmō domum vēnī.",
+      "cue": "Finally I came home.",
+      "literal": "finally home I-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "postrēmō",
+            "cue": "finally",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Finally, last of all'. Front of the sentence, and it closes an account — after it a listener expects you to stop."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition — M4's word. Coming home takes the same shape as going home."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — the perfect of veniō, lengthening the vowel: veniō, vēnī, vēnit. L1-M5's very first perfect, and one bar from venit."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "postrēmō ends the account, and that is a fact about the listener rather than about the grammar. Four sentences, four sequencers, one subject named once — and the last word of the last one is a perfect, because everything in an account is over.",
+      "sound": "pos-TRĒ-mō DO-mum VĒ-nī. Three long vowels closing the paragraph.",
+      "variations": [
+        {
+          "display": "Postrēmō domum īvī.",
+          "cue": "Finally I went home.",
+          "changed": "the other verb of motion"
+        },
+        {
+          "display": "Postrēmō domum iit.",
+          "cue": "Finally he went home.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Postrēmō hōrā sextā domum vēnī.",
+          "cue": "Finally I came home at the sixth hour.",
+          "changed": "a time added"
+        }
+      ],
+      "usage": "Said finishing an account.",
+      "mnemonic": "postrēmō means stop listening for more.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S05",
+      "display": "Prīmum fessus fuī.",
+      "cue": "First I was tired.",
+      "literal": "first tired I-was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "'First'. It comes FIRST in its sentence, like L1-M9's itaque and ergō and unlike L1-M10's autem and enim, which must come second."
+          },
+          {
+            "display": "fessus",
+            "cue": "tired",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tired' — L1-M9's adjective, agreeing with whoever is speaking: fessus of a man, fessa of a woman."
+          },
+          {
+            "display": "fuī",
+            "cue": "I was",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I was' — the perfect of sum. This course writes no other past of 'to be': eram exists and belongs to L4-M8."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "Being tired is a state, and an account in the perfect has to treat it as an event: fuī is 'I was tired' as something that happened and finished. The tense that would say it stretched — eram — is not taught here, so a state either becomes an event or stays out.",
+      "variations": [
+        {
+          "display": "Prīmum fessa fuī.",
+          "cue": "First I was tired.",
+          "changed": "spoken by a woman, so the adjective moves and the verb does not"
+        },
+        {
+          "display": "Prīmum laetus fuī.",
+          "cue": "First I was happy.",
+          "changed": "L1-M9's other adjective"
+        },
+        {
+          "display": "Prīmum fessus fuit.",
+          "cue": "First he was tired.",
+          "changed": "someone else"
+        }
+      ],
+      "usage": "Said beginning an account with how you felt.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S06",
+      "display": "Deinde Mārcus vēnit.",
+      "cue": "Then Marcus came.",
+      "literal": "next Marcus he-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "deinde",
+            "cue": "next",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Next'. It sits at the front and marks the step after. Against tum it is the plainer of the two: deinde is 'next in order', tum is 'then, at that point'."
+          },
+          {
+            "display": "mārcus",
+            "cue": "Marcus",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman man's name in the subject shape. He is named because the subject has CHANGED — which is the one place an account must put it back."
+          },
+          {
+            "display": "vēnit",
+            "cue": "he came",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He came' — the perfect of veniō, and one bar from venit, 'he comes'. L1-M5 spent a sentence on this pair and here it is inside a paragraph."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The subject comes back because it changed. Dropping it would say the speaker came, and the account has been about the speaker for two sentences — so this is the exception the pro-drop rule needs, and it is the only sentence in this module that names anyone.",
+      "variations": [
+        {
+          "display": "Deinde Iūlia vēnit.",
+          "cue": "Then Julia came.",
+          "changed": "a different person arriving"
+        },
+        {
+          "display": "Deinde Mārcus domum iit.",
+          "cue": "Then Marcus went home.",
+          "changed": "a different verb"
+        },
+        {
+          "display": "Tum Mārcus vēnit.",
+          "cue": "Then Marcus came.",
+          "changed": "the other sequencer"
+        }
+      ],
+      "mistake": {
+        "display": "Deinde vēnit.",
+        "why": "the subject dropped where it changed. The sentence is grammatical and means 'then he came' with no clue who — and in an account whose first two sentences were about the speaker, a listener will keep the speaker and be wrong from here to the end."
+      },
+      "usage": "Said when someone else enters the story.",
+      "mnemonic": "Drop the subject until it changes.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S07",
+      "display": "Tum nūntium relīquit.",
+      "cue": "Then he left a message.",
+      "literal": "then message he-left",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tum",
+            "cue": "then",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Then, at that point'. Front of the sentence, like the other three. Where deinde counts steps, tum places one in time."
+          },
+          {
+            "display": "nūntium",
+            "cue": "message",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Message' as the thing left — nūntius as the subject, nūntium as the object. M7's word."
+          },
+          {
+            "display": "relīquit",
+            "cue": "he left",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He left behind' — the perfect of M7's relinquō, with the n gone and the i long: relinquō, relīquī, relīquit."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The subject stays dropped now. It changed in the sentence before and this one keeps Mārcus without naming him, which is how Latin threads a paragraph — the rule is not 'name a new subject every time' but 'name it when it changes'.",
+      "variations": [
+        {
+          "display": "Tum nūntium relīquī.",
+          "cue": "Then I left a message.",
+          "changed": "back to the speaker, which WOULD need warning in a real account"
+        },
+        {
+          "display": "Tum epistulam scrīpsit.",
+          "cue": "Then he wrote a letter.",
+          "changed": "a different thing done"
+        },
+        {
+          "display": "Deinde nūntium relīquit.",
+          "cue": "Next he left a message.",
+          "changed": "the other sequencer"
+        }
+      ],
+      "usage": "Said continuing about someone else.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S08",
+      "display": "Postrēmō domum iit.",
+      "cue": "Finally he went home.",
+      "literal": "finally home he-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "postrēmō",
+            "cue": "finally",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Finally, last of all'. Front of the sentence, and it closes an account — after it a listener expects you to stop."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition — M4's word."
+          },
+          {
+            "display": "iit",
+            "cue": "he went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He went' — the perfect of eō, two syllables and no ending you can point at: eō, īvī, iit. The shortest verb in the course is also the least regular."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Three words and the second account is finished. It ran prīmum, deinde, tum, postrēmō exactly as the first did, named its subject once at the point it changed, and used nothing but perfects — which is the module's whole content, twice.",
+      "variations": [
+        {
+          "display": "Postrēmō domum vēnit.",
+          "cue": "Finally he came home.",
+          "changed": "the other verb of motion"
+        },
+        {
+          "display": "Postrēmō ad scholam iit.",
+          "cue": "Finally he went to school.",
+          "changed": "a destination that needs ad"
+        },
+        {
+          "display": "Postrēmō hōrā sextā domum iit.",
+          "cue": "Finally he went home at the sixth hour.",
+          "changed": "a time added"
+        }
+      ],
+      "usage": "Said ending an account about someone else.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S09",
+      "display": "Prīmum aquam bibī; deinde vīnum.",
+      "cue": "First I drank water; next wine.",
+      "literal": "first water I-drank next wine",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first",
+            "tag": "delta",
+            "forms": [],
+            "note": "'First'. It comes FIRST in its sentence, like L1-M9's itaque and ergō and unlike L1-M10's autem and enim, which must come second."
+          },
+          {
+            "display": "aquam",
+            "cue": "water",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water' as the thing drunk. L1-M3's first noun."
+          },
+          {
+            "display": "bibī",
+            "cue": "I drank",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I drank' — the perfect of bibō, and it is bibī against bibit: the vowel of the ending is all there is. L1-M5's review recorded this one."
+          },
+          {
+            "display": "deinde",
+            "cue": "next",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Next'. It sits at the front and marks the step after. Against tum it is the plainer of the two: deinde is 'next in order', tum is 'then, at that point'."
+          },
+          {
+            "display": "vīnum",
+            "cue": "wine",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Wine', neuter, so the object shape and the subject shape are the same. M5's word."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The second half has no verb at all. deinde vīnum is 'next wine' and the drinking is understood from the clause before — Latin will drop a verb as readily as a subject once the sentence has established it, and an account is where that starts happening.",
+      "variations": [
+        {
+          "display": "Prīmum aquam bibī; deinde vīnum bibī.",
+          "cue": "First I drank water; next I drank wine.",
+          "changed": "the verb written out, which is heavier and not wrong"
+        },
+        {
+          "display": "Prīmum vīnum bibī; deinde aquam.",
+          "cue": "First I drank wine; next water.",
+          "changed": "the two swapped"
+        },
+        {
+          "display": "Prīmum aquam bibī; postrēmō vīnum.",
+          "cue": "First I drank water; finally wine.",
+          "changed": "the closing sequencer, which says there was nothing after"
+        }
+      ],
+      "usage": "Said accounting for an evening.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M10-S10",
+      "display": "Tum hōrā sextā domum īvī.",
+      "cue": "Then I went home at the sixth hour.",
+      "literal": "then at-hour sixth home I-went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tum",
+            "cue": "then",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Then, at that point'. Front of the sentence, like the other three. Where deinde counts steps, tum places one in time."
+          },
+          {
+            "display": "hōrā",
+            "cue": "at the hour",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At the hour' — M6's ablative, and the ending is the 'at'. No preposition."
+          },
+          {
+            "display": "sextā",
+            "cue": "sixth",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sixth', agreeing with hōrā and wearing its ending. The sixth hour was the middle of the day."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition — M4's word."
+          },
+          {
+            "display": "īvī",
+            "cue": "I went",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went' — the perfect of eō, and it rebuilds the verb rather than adding to it: eō, īvī, iit. L1-M5's law, on the shortest verb in the course."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Five words, three of them refusing a preposition, one perfect, one sequencer at the front and no subject anywhere. Everything the level taught is in this line, and the only thing holding it together is the endings.",
+      "sound": "TUM HŌ-rā SEX-tā DO-mum Ī-vī. Long, long, long, short, long: the line is almost all weight.",
+      "variations": [
+        {
+          "display": "Tum hōrā tertiā domum īvī.",
+          "cue": "Then I went home at the third hour.",
+          "changed": "the other hour"
+        },
+        {
+          "display": "Postrēmō hōrā sextā domum īvī.",
+          "cue": "Finally I went home at the sixth hour.",
+          "changed": "the closing sequencer"
+        },
+        {
+          "display": "Tum hōrā sextā domum iit.",
+          "cue": "Then he went home at the sixth hour.",
+          "changed": "someone else"
+        }
+      ],
+      "mistake": {
+        "display": "Tum in hōrā sextā ad domum īvī.",
+        "why": "both prepositions put back, in the last sentence of the level. Each one is a module's own mistake — M4's ad domum and M6's in hōrā — and together they are what a learner writes when a sentence gets long enough that trusting the endings feels like a risk."
+      },
+      "usage": "Said finishing an account with the time.",
+      "mnemonic": "The endings carry it; nothing else has to.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M10-C01",
+      "display": "Prīmum ad scholam iit.",
+      "cue": "First he went to school."
+    },
+    {
+      "id": "L2-M10-C02",
+      "display": "Deinde epistulam scrīpsī.",
+      "cue": "Next I wrote a letter."
+    },
+    {
+      "id": "L2-M10-C03",
+      "display": "Tum librum lēgī.",
+      "cue": "Then I read a book."
+    },
+    {
+      "id": "L2-M10-C04",
+      "display": "Postrēmō domum īvī.",
+      "cue": "Finally I went home."
+    },
+    {
+      "id": "L2-M10-C05",
+      "display": "Prīmum fessus fuī; deinde domum īvī.",
+      "cue": "First I was tired; next I went home."
+    },
+    {
+      "id": "L2-M10-C06",
+      "display": "Tum Iūlia vēnit.",
+      "cue": "Then Julia came."
+    },
+    {
+      "id": "L2-M10-C07",
+      "display": "Postrēmō nūntium relīquit.",
+      "cue": "Finally he left a message."
+    },
+    {
+      "id": "L2-M10-C08",
+      "display": "Deinde aquam bibī.",
+      "cue": "Next I drank some water."
+    },
+    {
+      "id": "L2-M10-C09",
+      "display": "Prīmum hōrā tertiā vēnī.",
+      "cue": "First I came at the third hour."
+    },
+    {
+      "id": "L2-M10-C10",
+      "display": "Tum errāvī.",
+      "cue": "Then I was wrong."
+    },
+    {
+      "id": "L2-M10-C11",
+      "display": "Deinde Mārcus nūntium relīquit.",
+      "cue": "Next Marcus left a message."
+    },
+    {
+      "id": "L2-M10-C12",
+      "display": "Postrēmō hōrā sextā domum iit.",
+      "cue": "Finally he went home at the sixth hour."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,959 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M8",
+  "title": "When words run out",
+  "job": "Paraphrase, ask what something means, repair a misunderstanding",
+  "prerequisites": [
+    "L5-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 16,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "quid sibi vult + N-nom",
+      "iterum dīc",
+      "id est + N-nom (a paraphrase)",
+      "quō modō dīcitur + N-nom",
+      "nōn id dīcere voluī"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "'What does it mean?' is quid sibi vult? — literally 'what does it want for itself'. Every part is taught: quid is L1-M2's question word, sibi is the dative of L3-M5's sē, vult is L1-M3's volō. Latin asks what a word WANTS, not what it means."
+    },
+    {
+      "tag": "interference",
+      "text": "id est is the paraphrase frame, and you have been writing it in English for years: 'i.e.' is this phrase, abbreviated. id is the neuter of is, ea, id — the pronoun whose masculine object eum arrived at L3-M3 — and est needs nothing."
+    },
+    {
+      "tag": "free",
+      "text": "Repair is an imperative plus an adverb and costs nothing: iterum dīc ('say it again'), lentē dīc ('say it slowly'). iterum came at L2-M7, lentē inside M1's festīnā lentē, and dīc two modules ago at M6. A learner who can say those two things can hold a conversation up indefinitely."
+    },
+    {
+      "tag": "interference",
+      "text": "quō modō dīcitur …? asks 'how is … said?' — the two-word form, never quōmodo as one word. modō is the ablative of modus, 'a manner', and dīcitur is L4-M7's passive. Answer it with id est plus the words you do have."
+    },
+    {
+      "tag": "delta",
+      "text": "nōn id dīcere voluī — 'that is not what I meant to say'. voluī is the perfect of volō, the plain indicative sibling of L4-M3's vellem. Latin apologises for a misunderstanding by stating an intention, not with a formula."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M8-S01",
+      "display": "Quid sibi vult hoc verbum?",
+      "cue": "What does this word mean?",
+      "literal": "what for-itself it-wants this word",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's question word, unchanged. Here it is the object of vult: what does the word want?"
+          },
+          {
+            "display": "sibi",
+            "cue": "for itself",
+            "tag": "delta",
+            "forms": [
+              "sibi"
+            ],
+            "note": "The dative of sē (L3-M5). 'To itself, for itself' — and it refers back to the subject of its own clause, exactly as sē does."
+          },
+          {
+            "display": "vult",
+            "cue": "it wants",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M3's volō in the third person. The idiom is fixed: a word 'wants' its meaning."
+          },
+          {
+            "display": "hoc",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's hic in the neuter, agreeing with verbum."
+          },
+          {
+            "display": "verbum",
+            "cue": "word",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M1's noun. Neuter, so hoc and not hic."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Not quid significat, which is the Latin an English speaker reaches for and which a Roman would not say. The idiom is quid sibi vult — the word is the one doing the wanting.",
+      "sound": "quid SI-bi vult HOC VER-bum. sibi is two short syllables and the stress is on the first; vult is one closed syllable and stops dead.",
+      "variations": [
+        {
+          "display": "Quid sibi vult haec rēs?",
+          "cue": "What does this thing mean?",
+          "changed": "rēs for a thing rather than a word"
+        },
+        {
+          "display": "Quid hoc verbum sibi vult?",
+          "cue": "What does this word mean?",
+          "changed": "the order rearranged, which Latin allows freely"
+        },
+        {
+          "display": "Nescio quid hoc verbum sibi vult.",
+          "cue": "I do not know what this word means.",
+          "changed": "the question turned into a statement of ignorance"
+        }
+      ],
+      "mistake": {
+        "display": "Quid sibi vult hic verbum?",
+        "why": "verbum is neuter, so the demonstrative is hoc. hic is the masculine, and it belongs to hic liber, not to hoc verbum."
+      },
+      "usage": "The single most useful sentence in the module, and it costs one new row. Ask it of a word on a page, a word you have just heard, or a word somebody has used at you and you would rather not guess at.",
+      "mnemonic": "A Latin word does not mean; it WANTS.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M8-S02",
+      "display": "Iterum dīc, quaesō.",
+      "cue": "Say it again, please.",
+      "literal": "again say, I-ask",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "iterum",
+            "cue": "again",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M7's adverb, from the telephone module where you asked somebody to repeat themselves down a bad line."
+          },
+          {
+            "display": "dīc",
+            "cue": "say!",
+            "tag": "delta",
+            "forms": [],
+            "note": "dīcō's order shape, opened at M6 two modules ago — one of the four imperatives that drop their ending: dīc, dūc, fac, fer."
+          },
+          {
+            "display": "quaesō",
+            "cue": "please",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M1's softener, which is what keeps a bare imperative from sounding like an order."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Two words and a softener. A learner who has been building long sentences all level will want a long one here, and the whole value of this sentence is that it is short enough to say while somebody is still talking.",
+      "sound": "I-te-rum DĪC, QUAE-sō. dīc is one long syllable and a whole word, which is why it can interrupt.",
+      "variations": [
+        {
+          "display": "Lentē dīc, quaesō.",
+          "cue": "Say it slowly, please.",
+          "changed": "lentē for iterum — slow rather than again"
+        },
+        {
+          "display": "Iterum dīc, sī placet.",
+          "cue": "Say it again, if you please.",
+          "changed": "sī placet, the fuller softener"
+        },
+        {
+          "display": "Iterum dīc; nōn intellegis?",
+          "cue": "Say it again; do you not understand?",
+          "changed": "turned on the other speaker, which is ruder and sometimes true"
+        }
+      ],
+      "mistake": {
+        "display": "Iterum dīce, quaesō.",
+        "why": "dīcō's imperative is dīc, not dīce. It is one of exactly four verbs that drop the ending, and M6 named all four."
+      },
+      "usage": "The politest thing you can do to somebody speaking a language you are learning is to interrupt early. quaesō is enough; the elaborate apology of L1-M10 is for something you have actually done wrong.",
+      "mnemonic": "iterum for again, lentē for slower — two words hold any conversation up.",
+      "register": "informal"
+    },
+    {
+      "id": "L5-M8-S03",
+      "display": "Officīna est locus ubi labōrō, id est sedēs negōtiī.",
+      "cue": "An office is a place where I work, that is, a seat of business.",
+      "literal": "office is place where I-work, that is seat of-business",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "officīna",
+            "cue": "office",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M7's noun, the word this sentence is explaining to somebody who does not have it."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's sum. Definition in Latin is X est Y, with no article on either side."
+          },
+          {
+            "display": "locus",
+            "cue": "place",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M4's noun."
+          },
+          {
+            "display": "ubi",
+            "cue": "where",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M4's relative. Here it opens the clause that does the defining."
+          },
+          {
+            "display": "labōrō",
+            "cue": "I work",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M4's verb."
+          },
+          {
+            "display": "id",
+            "cue": "that",
+            "tag": "delta",
+            "forms": [
+              "id",
+              "is",
+              "ea"
+            ],
+            "note": "The neuter of is, ea, id — the pronoun whose object eum arrived at L3-M3. Alone it is 'that thing'; in id est it points at what you have just said. is and ea are its masculine and feminine."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The second est is the frame's, not the definition's."
+          },
+          {
+            "display": "sedēs",
+            "cue": "seat",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M4's noun, used here figuratively — a seat of business rather than a chair."
+          },
+          {
+            "display": "negōtiī",
+            "cue": "of business",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M8's negōtium in the genitive: business belonging to the seat."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "id est is not a phrase you have to learn: it is 'i.e.', which you already write. The Latin is two ordinary words and the English abbreviation is the Latin with the vowels taken out.",
+      "sound": "of-fi-CĪ-na … id EST SE-dēs ne-GŌ-ti-ī. id est is two short words and runs together as one: i-DEST.",
+      "variations": [
+        {
+          "display": "Magister est is quī docet.",
+          "cue": "A teacher is one who teaches.",
+          "changed": "a person defined rather than a place"
+        },
+        {
+          "display": "Hoc est officium, id est labor.",
+          "cue": "This is a duty, that is, work.",
+          "changed": "one abstract glossed by a plainer one"
+        },
+        {
+          "display": "Officīna est locus ubi labōrō.",
+          "cue": "An office is a place where I work.",
+          "changed": "the gloss dropped, leaving the bare definition"
+        }
+      ],
+      "mistake": {
+        "display": "Officīna est locus ubi labōrō, hoc est sedēs negōtiī.",
+        "why": "hoc est is not wrong Latin, but it points at a thing present rather than at a thing just said. The fixed frame — and the one that became 'i.e.' — is id est."
+      },
+      "usage": "This is the move that gets you out of trouble: when the word will not come, define the thing with words that will. A Roman did the same — id est is all over Cicero's letters, doing exactly this work.",
+      "mnemonic": "id est IS 'i.e.' — you have been writing Latin for years.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M8-S04",
+      "display": "Quō modō dīcitur hoc Latīnē?",
+      "cue": "How is this said in Latin?",
+      "literal": "by-what manner it-is-said this in-Latin",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quō",
+            "cue": "by what",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M4's ablative of the question word, agreeing with modō."
+          },
+          {
+            "display": "modō",
+            "cue": "in a manner",
+            "tag": "delta",
+            "forms": [
+              "modō"
+            ],
+            "note": "The ablative of modus, 'a manner, a way'. quō modō is two words and always two words in this course: the one-word quōmodo is a later spelling and would be a second key for one question."
+          },
+          {
+            "display": "dīcitur",
+            "cue": "it is said",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M7's passive of dīcō. Latin prefers 'how is it said' to 'how do you say it' — the language does the saying, not you."
+          },
+          {
+            "display": "hoc",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's hic in the neuter: this thing, whatever you are pointing at."
+          },
+          {
+            "display": "Latīnē",
+            "cue": "in Latin",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's adverb. Not an ablative — an adverb built from the adjective, like Rōmānē."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Two words, quō modō, and the course writes no other form. You will meet quōmodo printed as one word in almost every later text; it is the same question, and here it would be a second row for a question that already has one.",
+      "sound": "quō MO-dō DĪ-ci-tur hoc la-TĪ-nē. quō is long and modō has its long vowel at the END, not the start.",
+      "variations": [
+        {
+          "display": "Quō modō dīcitur hoc verbum?",
+          "cue": "How is this word pronounced?",
+          "changed": "the word's sound asked for rather than its name"
+        },
+        {
+          "display": "Quō modō id dīcam?",
+          "cue": "How should I say it?",
+          "changed": "the question turned on yourself"
+        },
+        {
+          "display": "Quō modō hoc Latīnē dīcitur?",
+          "cue": "How is this said in Latin?",
+          "changed": "the demonstrative moved, which changes nothing"
+        }
+      ],
+      "mistake": {
+        "display": "Quōmodo dīcitur hoc Latīnē?",
+        "why": "Not a grammatical error — a spelling this course does not use. Written as one word it is a different string from quō modō, and a reader tapping it would find nothing. Two words, always."
+      },
+      "usage": "Ask this holding the thing, or pointing at it. Pair it with S01: quid sibi vult asks what a word you have means, and quō modō dīcitur asks for a word you do not.",
+      "mnemonic": "Two words, quō modō. One word is somebody else's spelling.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M8-S05",
+      "display": "Nōn id dīcere voluī.",
+      "cue": "That is not what I meant to say.",
+      "literal": "not that to-say I-wanted",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's negative, and it goes with voluī rather than with dīcere: I did not want to say that."
+          },
+          {
+            "display": "id",
+            "cue": "that",
+            "tag": "delta",
+            "forms": [],
+            "note": "S03's row. Here it is the object of dīcere."
+          },
+          {
+            "display": "dīcere",
+            "cue": "to say",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M5's infinitive."
+          },
+          {
+            "display": "voluī",
+            "cue": "I wanted",
+            "tag": "delta",
+            "forms": [
+              "voluī"
+            ],
+            "note": "The perfect of volō — the plain indicative beside L4-M3's wishful vellem. 'I wanted', flatly, of a thing already past."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "Latin apologises for a misunderstanding by stating what you intended, not with a formula. There is no Latin for 'I misspoke'; there is 'that is not what I wanted to say', which is more honest and four words long.",
+      "sound": "nōn ID DĪ-ce-re VO-lu-ī. voluī is three syllables, vo-lu-ī, and the last is long.",
+      "variations": [
+        {
+          "display": "Aliud dīcere voluī.",
+          "cue": "I meant to say something else.",
+          "changed": "aliud, 'something else', instead of the negative"
+        },
+        {
+          "display": "Id nōn dīcere voluī, sed aliud.",
+          "cue": "I did not mean to say that, but something else.",
+          "changed": "both halves said, which is the fullest form"
+        },
+        {
+          "display": "Nōn hoc dīcere voluī.",
+          "cue": "That is not what I meant to say.",
+          "changed": "hoc for id, pointing at a thing present rather than said"
+        }
+      ],
+      "mistake": {
+        "display": "Nōn id dīcere vellem.",
+        "why": "vellem is the wish — 'I should like' — so this says you would rather not be saying it. The past fact needs voluī."
+      },
+      "usage": "Say it the moment you see the misunderstanding land, not at the end of the sentence. The Latin is short enough to interrupt with, which is the only place an apology for a slip does any good.",
+      "mnemonic": "Latin does not misspeak; it states what it wanted to say.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M8-S06",
+      "display": "Verbum mihi excidit; est quasi liber sed maior.",
+      "cue": "The word escapes me; it is like a book but bigger.",
+      "literal": "word from-me it-falls-out; it-is as-if book but bigger",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "verbum",
+            "cue": "word",
+            "tag": "delta",
+            "forms": [],
+            "note": "S01's row."
+          },
+          {
+            "display": "mihi",
+            "cue": "from me",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M3's dative of ego. With excidit it is 'it has fallen away from me' — the dative of the person who loses a thing."
+          },
+          {
+            "display": "excidit",
+            "cue": "it escapes",
+            "tag": "delta",
+            "forms": [
+              "excidit"
+            ],
+            "note": "From excidō, 'to fall out'. Of a word, it is exactly the English 'it escapes me' — the word falls out of your head rather than being forgotten."
+          },
+          {
+            "display": "est",
+            "cue": "it is",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's sum, with no subject named because the thing is in front of you both."
+          },
+          {
+            "display": "quasi",
+            "cue": "as if, like",
+            "tag": "delta",
+            "forms": [
+              "quasi"
+            ],
+            "note": "'As if, something like.' The word that lets you describe a thing you cannot name, and it excuses the inexactness of everything after it."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M6's noun."
+          },
+          {
+            "display": "sed",
+            "cue": "but",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M2's conjunction, sharpened against at at M6."
+          },
+          {
+            "display": "maior",
+            "cue": "bigger",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M2's comparative of magnus."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "quasi is the permission slip. Once you have said it, nothing after it has to be right — you are offering an approximation and saying so, which is what a speaker does in every language when the word will not come.",
+      "sound": "VER-bum MI-hi EX-ci-dit … QUA-si LI-ber sed MA-ior. quasi is two shorts and unstressed enough to slip past.",
+      "variations": [
+        {
+          "display": "Nōmen mihi excidit; est quasi frāter sed minor.",
+          "cue": "The name escapes me; he is something like a brother but younger.",
+          "changed": "a person described rather than a thing"
+        },
+        {
+          "display": "Est quasi officīna sed domī.",
+          "cue": "It is something like an office but at home.",
+          "changed": "a place described with two taught nouns"
+        },
+        {
+          "display": "Quasi liber est sed maior.",
+          "cue": "It is something like a book but bigger.",
+          "changed": "the first clause dropped, leaving only the approximation"
+        }
+      ],
+      "mistake": {
+        "display": "Verbum mē excidit; est quasi liber sed maior.",
+        "why": "excidō takes the dative of the person: mihi, not the accusative mē. The word falls away FROM me, which is a direction and not an object."
+      },
+      "usage": "Two clauses and you have bought yourself the rest of the conversation: say the word is gone, then describe the thing. Most speakers do the second and skip the first, which leaves the listener guessing whether you have finished.",
+      "mnemonic": "quasi buys you the right to be approximate.",
+      "register": "informal"
+    },
+    {
+      "id": "L5-M8-S07",
+      "display": "Nescio quid dīxeris; iterum quaesō dīc lentē.",
+      "cue": "I do not know what you said; please say it again, slowly.",
+      "literal": "I-do-not-know what you-said; again I-ask say slowly",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nescio",
+            "cue": "I do not know",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M3's verb — nōn plus sciō fused, the third of the course's negatives baked into a word."
+          },
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's question word inside the indirect question M7 opened."
+          },
+          {
+            "display": "dīxeris",
+            "cue": "you said",
+            "tag": "delta",
+            "forms": [],
+            "note": "M7's construction: an indirect question takes the subjunctive, and this is dīcō's perfect subjunctive."
+          },
+          {
+            "display": "iterum",
+            "cue": "again",
+            "tag": "delta",
+            "forms": [],
+            "note": "S02's row."
+          },
+          {
+            "display": "quaesō",
+            "cue": "please",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M1's softener, placed inside the clause rather than at the end."
+          },
+          {
+            "display": "dīc",
+            "cue": "say!",
+            "tag": "delta",
+            "forms": [],
+            "note": "M6's imperative, repeated from S02 because repair is always these words."
+          },
+          {
+            "display": "lentē",
+            "cue": "slowly",
+            "tag": "delta",
+            "forms": [],
+            "note": "M1's adverb, out of festīnā lentē. This is the first time the course uses it for its plain meaning."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "dīxeris is a subjunctive because nescio quid opens an indirect question, which arrived at M7. The construction is one module old and it is already the natural way to admit you have not followed.",
+      "sound": "NES-ci-o quid DĪ-xe-ris … DĪC LEN-tē. dīxeris has its stress on the first syllable and the x is ks.",
+      "variations": [
+        {
+          "display": "Nescio quid dīcās; lentē dīc.",
+          "cue": "I do not know what you are saying; say it slowly.",
+          "changed": "the present subjunctive: what you are saying, not what you said"
+        },
+        {
+          "display": "Nescio quid dīxeris; iterum dīc.",
+          "cue": "I do not know what you said; say it again.",
+          "changed": "the softener dropped, which is blunter"
+        },
+        {
+          "display": "Nescio quid dīcat.",
+          "cue": "I do not know what he is saying.",
+          "changed": "a third person, which is how you ask somebody to interpret"
+        }
+      ],
+      "mistake": {
+        "display": "Nescio quid dīxistī; iterum quaesō dīc lentē.",
+        "why": "dīxistī is the indicative, and an indirect question takes the subjunctive: dīxeris. M7 taught exactly this and it is the commonest slip in it."
+      },
+      "usage": "Better than tacēre and nodding. Admitting you have not understood in the construction the language uses for it is worth more than a sentence you have understood half of.",
+      "mnemonic": "nescio quid takes the subjunctive: you do not know, so the mood does not either.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M8-S08",
+      "display": "Sī nōn intellegis, dīc; nam id saepe accidit.",
+      "cue": "If you do not understand, say so; for that often happens.",
+      "literal": "if not you-understand, say; for that often it-happens",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M4's conjunction."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's negative."
+          },
+          {
+            "display": "intellegis",
+            "cue": "you understand",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M6's verb."
+          },
+          {
+            "display": "dīc",
+            "cue": "say!",
+            "tag": "delta",
+            "forms": [],
+            "note": "M6's imperative, and its third appearance here — which is the point: repair is one word."
+          },
+          {
+            "display": "nam",
+            "cue": "for",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M9's conjunction. It gives the reason and it always comes first in its clause."
+          },
+          {
+            "display": "id",
+            "cue": "that",
+            "tag": "delta",
+            "forms": [],
+            "note": "S03's row, pointing back at the whole condition."
+          },
+          {
+            "display": "saepe",
+            "cue": "often",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M9's adverb."
+          },
+          {
+            "display": "accidit",
+            "cue": "it happens",
+            "tag": "delta",
+            "forms": [
+              "accidit"
+            ],
+            "note": "From accidō, 'to fall to, to happen'. Impersonal here: the thing happens, and no one is named as doing it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Note what the second clause does. It is not 'do not be embarrassed' — Latin does not tell you how to feel — it is a statement that the thing is common, which is the same reassurance arrived at from outside.",
+      "sound": "sī nōn in-TEL-le-gis, DĪC; nam id SAE-pe AC-ci-dit. nam is short and joins the word after it.",
+      "variations": [
+        {
+          "display": "Sī nōn intellegis, dīc; nam saepe accidit.",
+          "cue": "If you do not understand, say so; for it often happens.",
+          "changed": "id dropped, which makes the reason general"
+        },
+        {
+          "display": "Sī quid nōn intellegis, dīc.",
+          "cue": "If there is anything you do not understand, say so.",
+          "changed": "quid, 'anything', which narrows it to the one word"
+        },
+        {
+          "display": "Id saepe accidit.",
+          "cue": "That often happens.",
+          "changed": "the reassurance on its own, which is what a listener needs"
+        }
+      ],
+      "mistake": {
+        "display": "Sī nōn intellegis, dīc; id nam saepe accidit.",
+        "why": "nam stands first in its clause, always. Latin word order is loose and this is one of the few places it is not."
+      },
+      "usage": "Say this to somebody learning your language and you have made the rest of the conversation easier. It is also the sentence to say to yourself before a conversation in Latin.",
+      "mnemonic": "nam always goes first.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M8-S09",
+      "display": "Quō modō haec rēs Latīnē appellātur?",
+      "cue": "What is this thing called in Latin?",
+      "literal": "by-what manner this thing in-Latin it-is-called",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quō",
+            "cue": "by what",
+            "tag": "delta",
+            "forms": [],
+            "note": "S04's row."
+          },
+          {
+            "display": "modō",
+            "cue": "in a manner",
+            "tag": "delta",
+            "forms": [],
+            "note": "S04's row: two words, always."
+          },
+          {
+            "display": "haec",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's hic in the feminine, agreeing with rēs."
+          },
+          {
+            "display": "rēs",
+            "cue": "thing",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M8's noun — the most useful word in Latin for a thing you cannot name."
+          },
+          {
+            "display": "Latīnē",
+            "cue": "in Latin",
+            "tag": "delta",
+            "forms": [],
+            "note": "S04's row."
+          },
+          {
+            "display": "appellātur",
+            "cue": "it is called",
+            "tag": "delta",
+            "forms": [
+              "appellātur"
+            ],
+            "note": "From appellō, 'to call by a name', in L4-M7's passive. The name is asked of the thing, not of the person you are asking."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "rēs is doing heavy lifting. When you have no noun at all, haec rēs plus a gesture is a complete subject, and appellātur asks the question the gesture cannot.",
+      "sound": "quō MO-dō haec RĒS la-TĪ-nē ap-pel-LĀ-tur. appellātur has the stress on the long ā, second from the end.",
+      "variations": [
+        {
+          "display": "Quō modō hoc Latīnē appellātur?",
+          "cue": "What is this called in Latin?",
+          "changed": "hoc for haec rēs, when you can point at the thing"
+        },
+        {
+          "display": "Quō modō haec rēs apud nōs appellātur?",
+          "cue": "What is this thing called among us?",
+          "changed": "apud nōs, which asks for your own usage"
+        },
+        {
+          "display": "Haec rēs liber appellātur.",
+          "cue": "This thing is called a book.",
+          "changed": "the answer rather than the question"
+        }
+      ],
+      "mistake": {
+        "display": "Quid vōcās hanc rem Latīnē?",
+        "why": "Word-for-word English. Latin asks how the thing is called — quō modō … appellātur — and putting you in charge of the naming sounds like you are assigning it one."
+      },
+      "usage": "The question a learner asks most often and the one most likely to come out as English with Latin words in it. Keep it in the passive, as Latin does.",
+      "mnemonic": "The thing is called; you do not call it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M8-S10",
+      "display": "Melius Latīnē loquerēris sī plūra verba scīrēs.",
+      "cue": "You would speak Latin better if you knew more words.",
+      "literal": "better in-Latin you-would-speak if more words you-knew",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "melius",
+            "cue": "better",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M2's comparative adverb of bene."
+          },
+          {
+            "display": "Latīnē",
+            "cue": "in Latin",
+            "tag": "delta",
+            "forms": [],
+            "note": "S04's row."
+          },
+          {
+            "display": "loquerēris",
+            "cue": "you would speak",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M3's imperfect subjunctive of loquor, in the unreal condition that module opened."
+          },
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M4's conjunction."
+          },
+          {
+            "display": "plūra",
+            "cue": "more",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M2's comparative of multus, neuter plural to agree with verba."
+          },
+          {
+            "display": "verba",
+            "cue": "words",
+            "tag": "delta",
+            "forms": [],
+            "note": "S01's row in the plural."
+          },
+          {
+            "display": "scīrēs",
+            "cue": "you knew",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M3's imperfect subjunctive of sciō. Both halves of an unreal condition take it, which is why the sentence has two."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "The module's last sentence is the one that says the module is not enough, and it says it in L4-M3's unreal condition — two imperfect subjunctives, one in each half, which is the shape of every 'if I knew, I would' in Latin.",
+      "sound": "ME-li-us la-TĪ-nē lo-que-RĒ-ris sī PLŪ-ra VER-ba SCĪ-rēs. Both subjunctives carry a long vowel before the ending: -rē- and -rē-.",
+      "variations": [
+        {
+          "display": "Melius loquerēris sī plūra scīrēs.",
+          "cue": "You would speak better if you knew more.",
+          "changed": "verba dropped, which widens it to anything"
+        },
+        {
+          "display": "Sī plūra verba scīrēs, melius Latīnē loquerēris.",
+          "cue": "If you knew more words, you would speak Latin better.",
+          "changed": "the halves swapped, which Latin allows and English resists"
+        },
+        {
+          "display": "Plūra verba volō.",
+          "cue": "I want more words.",
+          "changed": "the plainest possible statement of the same wish"
+        }
+      ],
+      "mistake": {
+        "display": "Melius Latīnē loquerēris sī plūra verba scīs.",
+        "why": "An unreal condition needs the subjunctive in BOTH halves. scīs is the indicative and turns the sentence into a real condition, which says you might know them yet."
+      },
+      "usage": "A true sentence about yourself, said with a smile, and it buys goodwill in any language. It is also the honest end of a module about running out of words: the paraphrases buy time, and the vocabulary is the cure.",
+      "mnemonic": "Two subjunctives, one in each half — that is every 'if I knew, I would'.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M8-C01",
+      "display": "Quid sibi vult hoc verbum?",
+      "cue": "What does this word mean?"
+    },
+    {
+      "id": "L5-M8-C02",
+      "display": "Iterum dīc, quaesō.",
+      "cue": "Say it again, please."
+    },
+    {
+      "id": "L5-M8-C03",
+      "display": "Est quasi liber sed minor.",
+      "cue": "It is something like a book but smaller."
+    },
+    {
+      "id": "L5-M8-C04",
+      "display": "Nōn id dīcere voluī.",
+      "cue": "That is not what I meant to say."
+    },
+    {
+      "id": "L5-M8-C05",
+      "display": "Quō modō haec rēs appellātur?",
+      "cue": "What is this thing called?"
+    },
+    {
+      "id": "L5-M8-C06",
+      "display": "Nescio quid dīxeris.",
+      "cue": "I do not know what you said."
+    },
+    {
+      "id": "L5-M8-C07",
+      "display": "Verbum mihi excidit.",
+      "cue": "The word escapes me."
+    },
+    {
+      "id": "L5-M8-C08",
+      "display": "Officīna est locus ubi labōrō, id est sedēs negōtiī.",
+      "cue": "An office is a place where I work, that is, a seat of business."
+    },
+    {
+      "id": "L5-M8-C09",
+      "display": "Sī nōn intellegis, dīc.",
+      "cue": "If you do not understand, say so."
+    },
+    {
+      "id": "L5-M8-C10",
+      "display": "Lentē dīc, quaesō.",
+      "cue": "Say it slowly, please."
+    },
+    {
+      "id": "L5-M8-C11",
+      "display": "Id saepe accidit.",
+      "cue": "That often happens."
+    },
+    {
+      "id": "L5-M8-C12",
+      "display": "Melius Latīnē loquerēris sī plūra verba scīrēs.",
+      "cue": "You would speak Latin better if you knew more words."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -429,7 +429,7 @@ describe('en-sa: the decisions its briefs settle (#604, #607, #612, #616, #620)'
     expect(COURSE_BRIEFS_SOURCE).toMatch(/NFC is mandatory and it is a rendering hazard/);
     expect(COURSE_BRIEFS_SOURCE).toMatch(/en-sa has no hyphen at all/);
     expect(COURSE_BRIEFS_SOURCE).toMatch(/No stress marks\*\* — Sanskrit has syllable weight/);
-    expect(COURSE_BRIEFS_SOURCE).toMatch(/Ten courses are briefed/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Eleven courses are briefed/);
   });
 
   /**
@@ -999,6 +999,724 @@ describe('en-sa: the decisions its briefs settle (#604, #607, #612, #616, #620)'
     expect(l4['L4-M9']?.notes.join('\n')).toMatch(/no plural participial past/);
     expect(l4['L4-M9']?.notes.join('\n')).toMatch(/no padbhyām, refused at L2-M4/);
     expect(l4['L4-M10']?.notes.join('\n')).toMatch(/STAYS OUT/);
+  });
+});
+
+/**
+ * en-la's briefs (#630, #633), and the reason this block is longer than it looks like it should be:
+ * this is the first course in the catalogue whose spelling has NO build gate. `checkScriptMode`
+ * returns an empty report for anything but a `romanized` row, and en-la's row is `native`, so every
+ * orthographic decision #630 took is enforced by review and by tests alone. A brief seeds every
+ * future prompt, so a decision that quietly disappears from a note is a decision that quietly stops
+ * being made — and here there is no build to notice.
+ */
+describe('en-la: the decisions its briefs settle (#630, #633)', () => {
+  const all = COURSE_BRIEFS['en-la'] ?? {};
+  const briefs = Object.values(all);
+  const strings = briefs.flatMap((brief) => [
+    ...brief.patterns,
+    ...brief.notes,
+    brief.title,
+    brief.job,
+  ]);
+  const everything = strings.join('\n');
+  const notes = briefs.flatMap((brief) => brief.notes).join('\n');
+  const patterns = briefs.flatMap((brief) => brief.patterns);
+
+  it('covers the whole ladder — briefed L1 (#633), L2 (#638), L3 (#642), L4 (#646), L5 (#650)', () => {
+    const rungs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+    expect(Object.keys(all)).toEqual([
+      ...rungs.map((n) => `L1-M${n}`),
+      ...rungs.map((n) => `L2-M${n}`),
+      ...rungs.map((n) => `L3-M${n}`),
+      ...rungs.map((n) => `L4-M${n}`),
+      ...rungs.map((n) => `L5-M${n}`),
+    ]);
+  });
+
+  /**
+   * en-sa's ramp, for a sharper version of the same reason: Latin's synthesis packs an English
+   * clause into two tokens, so the word bound is slack and `newWordCap` is what actually bites.
+   */
+  it('climbs its bounds 4 → 7 across the level, and caps every module at NEW_WORD_CAP', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L1-M1', 'L1-M2']) expect(bound(id), id).toBe(4);
+    for (const id of ['L1-M3', 'L1-M4', 'L1-M5']) expect(bound(id), id).toBe(5);
+    for (const id of ['L1-M6', 'L1-M7', 'L1-M8']) expect(bound(id), id).toBe(6);
+    for (const id of ['L1-M9', 'L1-M10']) expect(bound(id), id).toBe(7);
+    for (const brief of briefs) expect(brief.newWordCap, brief.id).toBe(NEW_WORD_CAP);
+  });
+
+  /**
+   * NFC is a rendering hazard, not a formality, and the argument is en-sa's with a different mark:
+   * a decomposed `ā` is `a` + U+0304, no target in `tools/font-subset.ts` claims U+0304, so
+   * `coveredChars` drops it and the base draws from Mukta while the macron draws from `system-ui`.
+   * A decomposed paste reaching an author through a prompt is exactly what this stops.
+   */
+  it('is authored precomposed — every brief string equals its own NFC', () => {
+    for (const brief of briefs) {
+      for (const [field, value] of [
+        ['title', brief.title],
+        ['job', brief.job],
+        ...brief.patterns.map((p, i): [string, string] => [`pattern ${i}`, p]),
+        ...brief.notes.map((n, i): [string, string] => [`note ${i}`, n]),
+      ] as [string, string][]) {
+        expect(value, `${brief.id} ${field}`).toBe(value.normalize('NFC'));
+      }
+    }
+  });
+
+  /**
+   * The alphabet, scoped to PATTERNS — a note is English prose and carries the punctuation English
+   * prose carries. #630 §1 fixes the inventory at printable ASCII plus ten macron vowels, and #631
+   * measured every one of them against Mukta's `latin-ext` cmap.
+   */
+  it('writes patterns in the course alphabet and no other: ASCII plus the ten macrons', () => {
+    for (const pattern of patterns) {
+      expect(pattern, `pattern "${pattern}"`).toMatch(/^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u);
+    }
+  });
+
+  /**
+   * The three bans that are index rules rather than taste (#630 §1.1, §3). `j` would split
+   * `iam`/`jam` into two keys for one word; the apostrophe is the ONE character `surface.ts` rule 3
+   * does not strip at a word edge, so an elision mints one key for a word that is two; and the
+   * acute is en-ru's mark, which Latin never needs because stress follows from vowel length.
+   *
+   * Scoped to patterns for `j` — English prose says "job" — and to everything for the other two,
+   * since neither belongs anywhere in a brief about this course.
+   */
+  it('writes no j in a pattern, and no acute or apostrophe-elision anywhere', () => {
+    for (const pattern of patterns) {
+      // The pattern language's own furniture is stripped first, because none of it is Latin: the
+      // `<...>` slots, the `(...)` English asides, and the English tokens `Adj` and `subjunctive`
+      // (L3-M4's conditions are written `sī + V-subjunctive`). Between them they carry every `j` a
+      // correct en-la pattern can contain, and what is left is the Latin skeleton.
+      const latinOf = pattern
+        .replace(/<[^>]*>/gu, '')
+        .replace(/\([^)]*\)/gu, '')
+        .replace(/\bAdj\b/gu, '')
+        .replace(/\bsubjunctive\b/gu, '');
+      expect(/[jJ]/.test(latinOf), `pattern "${pattern}" writes a j`).toBe(false);
+    }
+    expect(/[ÁÉÍÓÚáéíóú]|́/u.test(everything), 'a brief writes an acute').toBe(false);
+    // `ȳ` U+0233 is checked on PATTERNS only, by the alphabet case above: no bundled source draws
+    // it and no target claims it (#631), but a NOTE may name the character in order to ban it, and
+    // M1's does. The same scoping is why the `j` check above is per-pattern — a note that says "j
+    // never appears" contains one, and should.
+    expect(everything).not.toMatch(/\p{Script=Devanagari}|\p{Script=Cyrillic}|\p{Script=Hangul}/u);
+  });
+
+  /**
+   * The seam (#630 §2) and the ordering law it creates, which is the one thing a brief can get
+   * wrong irrecoverably: `surfaceIndexKeys` hands the part keys to whichever row is indexed FIRST,
+   * so the bare host must be a word row at or before the seam that would donate its key. M2 opens
+   * `-ne` and M10 opens `-que`, and each has to say it.
+   */
+  it('states the seam and its ordering law in the notes of the modules that open one', () => {
+    const m2 = (all['L1-M2']?.notes ?? []).join('\n');
+    const m10 = (all['L1-M10']?.notes ?? []).join('\n');
+    expect(m2).toMatch(/agis-ne/);
+    expect(m2).toMatch(/MUST TEACH agis AS ITS OWN WORD ROW/);
+    expect(m2).toMatch(/Printed Latin writes it solid/);
+    expect(m10).toMatch(/māter-que/);
+    expect(m10).toMatch(/ORDERING LAW HOLDS HERE TOO/);
+    // The lexicalised list is written solid, or a hyphen mints keys for a word that is neither.
+    expect(m10).toMatch(/itaque/);
+    expect(m10).toMatch(/LEXICALISED ONES ARE WRITTEN SOLID/);
+    /**
+     * The modules CHARTERED to write a seam, and no others — a module opening one silently is what
+     * this loop exists to catch. L1-M2 opens `-ne` and L1-M10 opens `-que` (#633); L2 adds three
+     * that reuse hosts L1 already taught, so the ordering law is satisfied before they are written
+     * (#638): `pater māter-que` at M2, `vīnum aquam-que` at M5, `venīs-ne mēcum` at M6.
+     */
+    const SEAM_MODULES = new Set(['L1-M2', 'L1-M10', 'L2-M2', 'L2-M5', 'L2-M6']);
+    for (const [id, brief] of Object.entries(all)) {
+      if (SEAM_MODULES.has(id)) continue;
+      for (const pattern of brief.patterns) {
+        expect(/-(?:que|ne|ve)\b/.test(pattern), `${id} pattern "${pattern}" opens a seam`).toBe(
+          false,
+        );
+      }
+    }
+  });
+
+  /**
+   * The register decision, which is the one place en-la breaks every sibling's habit: `tū`/`vōs` is
+   * NUMBER. Six other courses in this file put politeness on a pronoun, so an author will reach for
+   * the plural as a courtesy unless a note forbids it — and a prompt shows an author only the notes.
+   */
+  it('settles tū/vōs as number and never register, in a note and in the header', () => {
+    expect(notes).toMatch(/tū and vōs are NUMBER, never politeness/);
+    expect(notes).toMatch(/Latin has no T\/V distinction/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/`tū`\/`vōs` is NUMBER, never register/);
+  });
+
+  /** The past is the perfect, the imperfect is L4-M8's, and M5 has to say both. */
+  it('settles the past as the perfect and names the imperfect as deferred', () => {
+    const m5 = (all['L1-M5']?.notes ?? []).join('\n');
+    expect(m5).toMatch(/THE PAST IS THE PERFECT/);
+    expect(m5).toMatch(/IMPERFECT IS NAMED AS DEFERRED AND WRITTEN NOWHERE/);
+    expect(m5).toMatch(/venit is 'he comes' \(M4\) and vēnit is 'he came'/);
+    // A perfect stem is its own row: folding it into the present would hand it the present's key.
+    expect(m5).toMatch(/PERFECT STEM IS ITS OWN WORD ROW/);
+  });
+
+  /** Latin has no word for yes, and M2 is where a course either says so or quietly invents one. */
+  it('tells M2 that Latin has no word for yes, and bans the word an author would reach for', () => {
+    const m2 = (all['L1-M2']?.notes ?? []).join('\n');
+    expect(m2).toMatch(/LATIN HAS NO WORD FOR YES/);
+    expect(m2).toMatch(/There is no sīc/);
+  });
+
+  it('carries the decisions in the file header as well as in the notes', () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /## en-la: decisions a brief must settle before any Latin is written/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /the first whose spelling has \*\*no build gate at all\*\*/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/stress mark, ever\*\* — Latin stress follows/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/hyphens in these briefs' PATTERNS are meta-notation/);
+  });
+});
+
+/**
+ * en-la L2 (#638), and the two decisions that are easiest to lose. This course is the only one in
+ * the file whose politeness is not a pronoun, and it is the only one that writes a subjunctive as
+ * vocabulary rather than as a mood — both of which a later author would "fix" toward the pattern
+ * every other course follows.
+ */
+describe('en-la L2: the decisions its briefs settle (#638)', () => {
+  const all = COURSE_BRIEFS['en-la'] ?? {};
+  const l2 = Object.entries(all).filter(([id]) => id.startsWith('L2-'));
+  const notes = l2.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('covers exactly L2-M1..L2-M10 and climbs its bounds 8 → 10', () => {
+    expect(l2.map(([id]) => id)).toEqual(
+      ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `L2-M${n}`),
+    );
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L2-M1', 'L2-M2', 'L2-M3']) expect(bound(id), id).toBe(8);
+    for (const id of ['L2-M4', 'L2-M5', 'L2-M6', 'L2-M7']) expect(bound(id), id).toBe(9);
+    for (const id of ['L2-M8', 'L2-M9', 'L2-M10']) expect(bound(id), id).toBe(10);
+    for (const [id, brief] of l2) expect(brief.newWordCap, id).toBe(NEW_WORD_CAP);
+  });
+
+  /**
+   * Six other courses in this file put the polite address on a pronoun, so an author working from
+   * habit will reach for `vōs`. L1-M2 already banned it and M1 has to ban it again, because a
+   * prompt shows an author only the notes of the module being written.
+   */
+  it('keeps politeness on the verb and off the pronoun, and says so in M1', () => {
+    const m1 = (all['L2-M1']?.notes ?? []).join('\n');
+    expect(m1).toMatch(/POLITENESS IS NOT A PRONOUN/);
+    expect(m1).toMatch(/formal NEVER goes on a pronoun/);
+    expect(m1).toMatch(/vōs to one person is simply wrong/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /en-la is the one course whose politeness is NOT a pronoun/,
+    );
+  });
+
+  /**
+   * L2 writes exactly two subjunctives and explains neither, because the productive mood is L3-M4's.
+   * A module that explains `velim` has opened a system it cannot finish in ten sentences.
+   */
+  it('writes velim and eāmus as fixed forms, and names the mood as deferred', () => {
+    const m1 = (all['L2-M1']?.notes ?? []).join('\n');
+    const m6 = (all['L2-M6']?.notes ?? []).join('\n');
+    expect(m1).toMatch(/velim IS TAUGHT AS A FIXED FORM, NOT AS A MOOD/);
+    expect(m1).toMatch(/ONLY subjunctives in L2/);
+    expect(m6).toMatch(/SECOND AND LAST SUBJUNCTIVE OF THE LEVEL/);
+    expect(m6).toMatch(/productive mood is L3-M4/);
+  });
+
+  /** `ēst` is the macron pair L1 was forbidden to spend, and M5 is where it lands. */
+  it('spends the est/ēst pair at M5 and keeps ēsse out', () => {
+    const m5 = (all['L2-M5']?.notes ?? []).join('\n');
+    expect(m5).toMatch(/ēst IS THE MACRON PAIR L1 LEFT UNSPENT/);
+    expect(m5).toMatch(/ēsse is NAMED IN PROSE AND WRITTEN NOWHERE/);
+  });
+
+  /** The imperfect is still L4-M8's, and M10's four-sentence account is where it gets reached for. */
+  it('holds the past to the perfect in M10, with the imperfect named as deferred', () => {
+    const m10 = (all['L2-M10']?.notes ?? []).join('\n');
+    expect(m10).toMatch(/STILL THE PERFECT AND ONLY THE PERFECT/);
+    expect(m10).toMatch(/legēbam, habēbam and eram are still free keys/);
+  });
+
+  it("plans against the folded L1 index rather than the last module's delta", () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/189 surfaces through L1-M10/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /24 \+ 20 \+ 18 \+ 24 \+ 11 \+\s*\n?\s*\*?\s*16 \+ 16 \+ 24 \+ 21 \+ 15 = 189/,
+    );
+  });
+
+  /** The orthography tests of #633 must still be green over twenty briefs, not ten. */
+  it('keeps the orthography clean across L2 as well', () => {
+    for (const [id, brief] of l2) {
+      for (const pattern of brief.patterns) {
+        expect(pattern, `${id} "${pattern}"`).toMatch(/^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u);
+      }
+      for (const value of [brief.title, brief.job, ...brief.patterns, ...brief.notes]) {
+        expect(value, `${id} NFC`).toBe(value.normalize('NFC'));
+      }
+    }
+    expect(/[ÁÉÍÓÚáéíóú]|\u0301/u.test(notes), 'an L2 note writes an acute').toBe(false);
+  });
+});
+
+/**
+ * en-la L3 (#642). This level is the one place in the course where a MOOD is opened rather than
+ * borrowed, and it is the level the shared index has cost the most: two shapes of the relative
+ * pronoun are unwritable because L1-M9 and L2-M9 already own their keys. Both facts are the kind a
+ * later author would "fix" — by teaching the full paradigm, or by explaining `velim` at L2-M1 — so
+ * they are pinned here rather than left to the prose.
+ */
+describe('en-la L3: the decisions its briefs settle (#642)', () => {
+  const all = COURSE_BRIEFS['en-la'] ?? {};
+  const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));
+  const notes = l3.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('covers the whole ladder and climbs its L3 bounds 10 → 11 → 12', () => {
+    expect(Object.keys(all)).toEqual(
+      ['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    );
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
+    for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
+    for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+    for (const [id, brief] of l3) {
+      expect(brief.newWordCap, id).toBe(NEW_WORD_CAP);
+      expect(brief.patterns.length, `${id} patterns`).toBeGreaterThan(0);
+      expect(brief.notes.length, `${id} notes`).toBeGreaterThan(0);
+    }
+  });
+
+  /**
+   * L2's ten briefs all promised the productive mood to L3-M4. If it drifts to another module, or
+   * arrives in two tenses, the promise L2 made its author is broken.
+   */
+  it('opens the subjunctive at M4, once, and in the present only', () => {
+    const m4 = (all['L3-M4']?.notes ?? []).join('\n');
+    expect(m4).toMatch(/THE SUBJUNCTIVE ENTERS THE COURSE HERE, AND HERE ONLY/);
+    expect(m4).toMatch(/opens in ONE tense: the present subjunctive/);
+    expect(m4).toMatch(/imperfect subjunctive, which a real counterfactual needs, is L4's/);
+    expect(m4).toMatch(/EVERY SUBJUNCTIVE IS ITS OWN ROW/);
+    // No other L3 module may open a mood.
+    for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) {
+      expect((all[id]?.notes ?? []).join('\n'), id).toMatch(/subjunctive/);
+    }
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /L3-M4 is the one\n \* module in the course where a mood is opened/,
+    );
+  });
+
+  /**
+   * `nē` was kept free through thirty modules because `surfaceIndexKeys` donates `ne` from L1-M2's
+   * seam. M4 is its owner, and the brief has to say so or an author will read the key as taken.
+   */
+  it('makes M4 the owner of nē and states why the seam key does not collide', () => {
+    const m4 = (all['L3-M4']?.notes ?? []).join('\n');
+    expect(m4).toMatch(/nē IS THE MACRON TWIN OF THE SEAM PART-KEY/);
+    expect(m4).toMatch(/folds case and NEVER a diacritic/);
+    expect(m4).toMatch(/There is no nōn in a purpose clause/);
+  });
+
+  /**
+   * The accusative and infinitive is the largest structural gap between the two languages in this
+   * course. It enters at M3 with `eum` and the present infinitive, and M5 adds `sē` and the perfect
+   * infinitive — and the English `quod` clause is a mistake plate in both, never a construction.
+   */
+  it('splits the accusative and infinitive across M3 and M5, with no word for "that"', () => {
+    const m3 = (all['L3-M3']?.notes ?? []).join('\n');
+    const m5 = (all['L3-M5']?.notes ?? []).join('\n');
+    expect(m3).toMatch(/THE ACCUSATIVE AND INFINITIVE ENTERS HERE AND THERE IS NO WORD FOR 'THAT'/);
+    expect(m3).toMatch(/THE MISTAKE PLATE IS THE ENGLISH quod CLAUSE/);
+    expect(m3).toMatch(/teach only the present infinitive/);
+    expect(m5).toMatch(/THE REFLEXIVE sē IS THE POINT OF THIS MODULE/);
+    expect(m5).toMatch(/RELATIVE TO THE REPORTING VERB/);
+    expect(m5).toMatch(/dīxit sē vēnisse/);
+  });
+
+  /**
+   * Three homographs with one owner each, and the two shapes of the relative the index has already
+   * spent. Writing them would not fail a build — it would serve a learner the wrong note — which is
+   * exactly why it has to be pinned in a test rather than trusted to prose.
+   */
+  it('keeps quod, quam and ut to one reading each, and names the lost relative shapes', () => {
+    const m2 = (all['L3-M2']?.notes ?? []).join('\n');
+    const m4 = (all['L3-M4']?.notes ?? []).join('\n');
+    expect(m2).toMatch(/THE RELATIVE PRONOUN ENTERS HERE/);
+    expect(m2).toMatch(/ALREADY L1-M9's WORD FOR 'BECAUSE'/);
+    expect(m2).toMatch(/ALREADY L2-M9's 'THAN'/);
+    expect(m2).toMatch(/NAMED IN PROSE AND WRITTEN NOWHERE/);
+    expect(m4).toMatch(/ut IS WRITTEN IN ONE READING ONLY/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Three homographs, three owners, one meaning each/);
+  });
+
+  /** The festivals decision, taken once: Roman, from the one named source, with the gap named. */
+  it('settles the culture as Roman in a NOTE, and bans coining a festival', () => {
+    const m9 = (all['L3-M9']?.notes ?? []).join('\n');
+    expect(m9).toMatch(/THE CULTURE IN THIS MODULE IS ROMAN/);
+    expect(m9).toMatch(/was REJECTED/);
+    expect(m9).toMatch(/Sāturnālia IS PLURAL AND HAS NO SINGULAR/);
+    expect(m9).toMatch(/Written nowhere: any non-Roman festival name; any coinage/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /Festivals are Roman, and the gap is named rather than filled/,
+    );
+  });
+
+  /**
+   * `pudet`/`taedet` take the ACCUSATIVE and `placet`/`libet` the dative. Twenty modules have taught
+   * the dative pattern, so an author will write `mihi pudet` unless the note puts both side by side.
+   */
+  it('keeps the two impersonal patterns in their two different cases at M6', () => {
+    const m6 = (all['L3-M6']?.notes ?? []).join('\n');
+    expect(m6).toMatch(/TWO IMPERSONAL PATTERNS AND THEY TAKE DIFFERENT CASES/);
+    expect(m6).toMatch(/take the ACCUSATIVE of the person/);
+    expect(m6).toMatch(/placet and libet take the DATIVE/);
+    expect(m6).toMatch(/THE THING FELT ABOUT IS A GENITIVE/);
+  });
+
+  /** The imperfect has been deferred since L1-M5 and M1 and M10 are where it gets reached for. */
+  it('holds the past to the perfect across the level, with dum + present as the relief', () => {
+    const m1 = (all['L3-M1']?.notes ?? []).join('\n');
+    const m10 = (all['L3-M10']?.notes ?? []).join('\n');
+    expect(m1).toMatch(/dum TAKES THE PRESENT EVEN WHEN THE STORY IS PAST/);
+    expect(m1).toMatch(/THE IMPERFECT IS STILL DEFERRED/);
+    expect(m10).toMatch(/STILL THE PERFECT, AFTER THIRTY MODULES/);
+    expect(m10).toMatch(/legēbam, habēbam and eram are STILL free keys/);
+    expect(m10).toMatch(/EIGHT SENTENCES/);
+  });
+
+  it("plans against the folded L2 index rather than the last module's delta", () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\*\*330 surfaces, maxSpan 1\*\*/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\(L1, 189\)/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\(L2, 141\) = 330/);
+  });
+
+  /** The orthography tests of #633 must hold over thirty briefs, not twenty. */
+  it('keeps the orthography clean across L3 as well', () => {
+    for (const [id, brief] of l3) {
+      for (const pattern of brief.patterns) {
+        expect(pattern, `${id} "${pattern}"`).toMatch(/^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u);
+      }
+      for (const value of [brief.title, brief.job, ...brief.patterns, ...brief.notes]) {
+        expect(value, `${id} NFC`).toBe(value.normalize('NFC'));
+      }
+    }
+    expect(/[ÁÉÍÓÚáéíóú]|́/u.test(notes), 'an L3 note writes an acute').toBe(false);
+    // `ȳ` is undrawn by every bundled face (#631), so no PATTERN may carry it — the alphabet case
+    // above already enforces that. A note may NAME the character in order to ban it, and L3-M8's
+    // does, which is why this is not a check over `notes`.
+    for (const [id, brief] of l3) {
+      for (const pattern of brief.patterns) {
+        expect(/[ȳȲ]/u.test(pattern), `${id} pattern writes ȳ`).toBe(false);
+      }
+    }
+  });
+});
+
+/**
+ * en-la L4 (#646). This is the level where four promissory notes come due at once — the gerund, the
+ * passive, the imperfect and the locative — and where the course diverges from en-sa by writing a
+ * real past counterfactual instead of a workaround. Two of its decisions were settled by running the
+ * real `src/engine/surface.ts` rather than by reasoning, and those runs are what the tests pin.
+ */
+describe('en-la L4: the decisions its briefs settle (#646)', () => {
+  const all = COURSE_BRIEFS['en-la'] ?? {};
+  const l4 = Object.entries(all).filter(([id]) => id.startsWith('L4-'));
+  const notes = l4.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('covers the whole ladder and climbs its L4 bounds 12 → 13 → 14', () => {
+    expect(Object.keys(all)).toEqual(
+      ['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    );
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L4-M1', 'L4-M2', 'L4-M3']) expect(bound(id), id).toBe(12);
+    for (const id of ['L4-M4', 'L4-M5', 'L4-M6', 'L4-M7']) expect(bound(id), id).toBe(13);
+    for (const id of ['L4-M8', 'L4-M9', 'L4-M10']) expect(bound(id), id).toBe(14);
+    for (const [id, brief] of l4) {
+      expect(brief.newWordCap, id).toBe(NEW_WORD_CAP);
+      expect(brief.patterns.length, `${id} patterns`).toBeGreaterThan(0);
+      expect(brief.notes.length, `${id} notes`).toBeGreaterThan(0);
+    }
+  });
+
+  /**
+   * Four deferrals, each named in a lower level's brief and each landing in a specific module here.
+   * If one drifts, a promise made to a learner three levels ago is quietly broken.
+   */
+  it('lands the gerund, the passive, the imperfect and the locative in their promised modules', () => {
+    expect((all['L4-M1']?.notes ?? []).join('\n')).toMatch(
+      /THE GERUND ARRIVES AND IT IS WHAT L3-M2 SAID IT LACKED/,
+    );
+    expect((all['L4-M7']?.notes ?? []).join('\n')).toMatch(
+      /THE PASSIVE ENTERS HERE, AND L2-M8 AND L3-M6 BOTH PROMISED IT TO THIS MODULE/,
+    );
+    expect((all['L4-M8']?.notes ?? []).join('\n')).toMatch(
+      /THE IMPERFECT ARRIVES, THIRTY-ONE MODULES AFTER IT WAS DEFERRED/,
+    );
+    expect((all['L4-M9']?.notes ?? []).join('\n')).toMatch(/THE LOCATIVE ARRIVES/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /Four things this course has deferred for thirty-one modules all arrive in this level/,
+    );
+  });
+
+  /**
+   * The counterfactual decision, and the reason it differs from en-sa: Latin HAS the form. A later
+   * author reading en-sa's module would be tempted to copy its workaround.
+   */
+  it('writes the past counterfactual in full, and names the two tenses it costs', () => {
+    const m3 = (all['L4-M3']?.notes ?? []).join('\n');
+    expect(m3).toMatch(/LATIN HAS A REAL PAST COUNTERFACTUAL AND THIS COURSE WRITES IT IN FULL/);
+    expect(m3).toMatch(/PLUPERFECT SUBJUNCTIVE in both halves/);
+    expect(m3).toMatch(/IMPERFECT subjunctive \(venīrem, venīrēs\) for the present unreal/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/unlike en-sa's workaround/);
+  });
+
+  /**
+   * `venīrem` is a mood and `venīēbam` a tense, opened four modules apart in one level. Each module
+   * has to disown the other's shape or an author will write whichever they met first.
+   */
+  it('keeps the imperfect subjunctive (M3) and the imperfect indicative (M8) apart in both notes', () => {
+    expect((all['L4-M3']?.notes ?? []).join('\n')).toMatch(
+      /THE IMPERFECT SUBJUNCTIVE IS NOT THE IMPERFECT INDICATIVE, AND M8 OWNS THAT ONE/,
+    );
+    expect((all['L4-M8']?.notes ?? []).join('\n')).toMatch(
+      /THE IMPERFECT SUBJUNCTIVE IS M3's AND IS NOT THIS/,
+    );
+    expect((all['L4-M8']?.notes ?? []).join('\n')).toMatch(
+      /legēbam, habēbam and eram as free keys/,
+    );
+  });
+
+  /**
+   * The abbreviation decision was settled by running normalizeSurface, not by reasoning — and the
+   * run belongs in the header, because a later author will otherwise re-derive it wrongly.
+   */
+  it('records the abbreviation run and writes the undotted form only', () => {
+    const m7 = (all['L4-M7']?.notes ?? []).join('\n');
+    expect(m7).toMatch(/ABBREVIATIONS ARE DISPLAYS/);
+    expect(m7).toMatch(/TWO KEYS for one thing/);
+    expect(m7).toMatch(/write the UNDOTTED form only/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/normalizeSurface\('S\.P\.Q\.R\.'\)\s+-> 's\.p\.q\.r'/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Rule 3 strips a \*\*trailing\*\* dot/);
+  });
+
+  /**
+   * `cum` is the one homograph L3's remedy cannot handle, because the second reading IS a module's
+   * job. The remedy is a per-sentence word row whose note carries both readings.
+   */
+  it('gives cum its second reading at M6 with a two-reading note, not by withholding it', () => {
+    const m6 = (all['L4-M6']?.notes ?? []).join('\n');
+    expect(m6).toMatch(
+      /cum GETS ITS SECOND READING HERE AND M6 IS ITS OWNER FOR THAT READING ONLY/,
+    );
+    expect(m6).toMatch(/WORD ROW OF THEIR OWN whose note names both readings/);
+    expect(m6).toMatch(/dōnec IS 'UNTIL' AND IT TAKES THE INDICATIVE/);
+    expect((all['L4-M1']?.notes ?? []).join('\n')).toMatch(/cum's second reading is coming/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/the note is the only place it can live/);
+  });
+
+  /** A closed list needs fencing on both sides, which is two plates rather than one. */
+  it('makes the place constructions a closed list with a plate in each direction', () => {
+    const m9 = (all['L4-M9']?.notes ?? []).join('\n');
+    expect(m9).toMatch(/CITY NAMES AND home BEHAVE THE SAME WAY AND NOTHING ELSE DOES/);
+    expect(m9).toMatch(/THE MISTAKE PLATE IS THE MISSING PREPOSITION IN BOTH DIRECTIONS/);
+    expect(m9).toMatch(/Rōmae IS A LOCATIVE AND ALSO A GENITIVE/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Place constructions are a CLOSED LIST/);
+  });
+
+  /** `nōnne` and `num` were reserved at L1-M2 and M4 is their owner. */
+  it('makes M4 the owner of the reserved question keys', () => {
+    const m4 = (all['L4-M4']?.notes ?? []).join('\n');
+    expect(m4).toMatch(/nōnne AND num ARE THE TWO RESERVED QUESTION KEYS AND M4 IS THEIR OWNER/);
+    expect(m4).toMatch(/wrote nōnne and num NOWHERE/);
+  });
+
+  /** `inquit` is postpositive, and a module that gets that wrong writes something no Roman wrote. */
+  it('makes inquit postpositive and flags the quotation-mark question', () => {
+    const m10 = (all['L4-M10']?.notes ?? []).join('\n');
+    expect(m10).toMatch(/inquit IS POSTPOSITIVE/);
+    expect(m10).toMatch(/AFTER the first word or two of the quotation, never before/);
+    expect(m10).toMatch(/QUOTATION MARKS ARE THE ONE NEW CHARACTER QUESTION/);
+    expect(m10).toMatch(/ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE LEVEL/);
+  });
+
+  it("plans against the folded L3 index rather than the last module's delta", () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\*\*479 surfaces, maxSpan 1\*\*/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\(L3, 149\) = 479/);
+  });
+
+  /** The orthography tests of #633 must hold over forty briefs, not thirty. */
+  it('keeps the orthography clean across L4 as well', () => {
+    for (const [id, brief] of l4) {
+      for (const pattern of brief.patterns) {
+        expect(pattern, `${id} "${pattern}"`).toMatch(/^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u);
+        expect(/[ȳȲ]/u.test(pattern), `${id} pattern writes ȳ`).toBe(false);
+      }
+      for (const value of [brief.title, brief.job, ...brief.patterns, ...brief.notes]) {
+        expect(value, `${id} NFC`).toBe(value.normalize('NFC'));
+      }
+    }
+    expect(/[ÁÉÍÓÚáéíóú]|́/u.test(notes), 'an L4 note writes an acute').toBe(false);
+  });
+});
+
+/**
+ * en-la L5 (#650) — the last level of the eleventh course, and the only L5 in this file whose learner
+ * already owns the content. Its two sharpest decisions are the one the index forces (a saying is
+ * written with macrons, so the familiar spelling is never written at all) and the one the language
+ * forces (there is no home vernacular, so "how they say it there" is a tradition rather than a place).
+ * Both are the kind a later author would undo.
+ */
+describe('en-la L5: the decisions its briefs settle (#650)', () => {
+  const all = COURSE_BRIEFS['en-la'] ?? {};
+  const l5 = Object.entries(all).filter(([id]) => id.startsWith('L5-'));
+  const notes = l5.flatMap(([, brief]) => brief.notes).join('\n');
+
+  it('covers the whole ladder — L1-M1..L5-M10, fifty modules — and climbs its bounds 14 → 15 → 16', () => {
+    expect(Object.keys(all)).toEqual(
+      ['L1', 'L2', 'L3', 'L4', 'L5'].flatMap((level) =>
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `${level}-M${n}`),
+      ),
+    );
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L5-M1', 'L5-M2', 'L5-M3']) expect(bound(id), id).toBe(14);
+    for (const id of ['L5-M4', 'L5-M5', 'L5-M6']) expect(bound(id), id).toBe(15);
+    for (const id of ['L5-M7', 'L5-M8', 'L5-M9', 'L5-M10']) expect(bound(id), id).toBe(16);
+    for (const [id, brief] of l5) {
+      expect(brief.newWordCap, id).toBe(NEW_WORD_CAP);
+      expect(brief.patterns.length, `${id} patterns`).toBeGreaterThan(0);
+      expect(brief.notes.length, `${id} notes`).toBeGreaterThan(0);
+    }
+  });
+
+  /**
+   * The sayings-orthography decision, which the index forces and a later author would undo on the
+   * grounds that a quotation should be spelled as it is received.
+   */
+  it('writes a saying with macrons only, and records the run that forces it', () => {
+    const m1 = (all['L5-M1']?.notes ?? []).join('\n');
+    expect(m1).toMatch(/A SAYING IS A DISPLAY IN THIS COURSE's ORTHOGRAPHY, MACRONS AND ALL/);
+    expect(m1).toMatch(/THE TWO SPELLINGS ARE TWO KEYS FOR ONE WORD/);
+    expect(m1).toMatch(/writes the macroned form ONLY/);
+    expect(m1).toMatch(/DECIDE THE SOURCE REGISTER PER SAYING/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/normalizeSurface\('ālea'\) -> 'ālea'/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Rule 4 folds case and \*\*never\*\* a diacritic/);
+  });
+
+  /** The learner already owns M1's content, which is true of no other L5 in this file. */
+  it('says out loud that the learner already owns the sayings', () => {
+    expect((all['L5-M1']?.notes ?? []).join('\n')).toMatch(
+      /THE STRONGEST MODULE IN THIS COURSE's L5, BECAUSE THE LEARNER ALREADY OWNS ITS CONTENT/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /the one L5 in the file whose learner already owns the content/,
+    );
+  });
+
+  /** Humour has a ceiling and the brief has to name it, or an author will find Martial. */
+  it('settles humour at the Plautine end and bans the rest', () => {
+    const m2 = (all['L5-M2']?.notes ?? []).join('\n');
+    expect(m2).toMatch(/PLAUTUS is broad, affectionate/);
+    expect(m2).toMatch(/This course writes the PLAUTINE end/);
+    expect(m2).toMatch(/Written nowhere: anything from Martial that needs a footnote/);
+  });
+
+  /**
+   * The vocative was named as deferred from L2-M7 onward. M2 is its owner, and it is a new key rather
+   * than a shape of L1-M1's row.
+   */
+  it('makes M2 the owner of the vocative, as a new key', () => {
+    const m2 = (all['L5-M2']?.notes ?? []).join('\n');
+    expect(m2).toMatch(/THE VOCATIVE FINALLY ARRIVES, AND IT ARRIVES AS A JOKE/);
+    expect(m2).toMatch(/Mārce is a NEW KEY and a new row/);
+    expect((all['L5-M4']?.notes ?? []).join('\n')).toMatch(
+      /THE VOCATIVE'S SECOND USE IS FORMAL ADDRESS/,
+    );
+  });
+
+  /**
+   * Latin has no home vernacular, so the module that would be about region is about tradition — and
+   * the whole mechanism is that `display` does not move.
+   */
+  it('makes M3 about traditions rather than places, with sound carrying every variant', () => {
+    const m3 = (all['L5-M3']?.notes ?? []).join('\n');
+    expect(m3).toMatch(/IT IS A TRADITION, AND THAT IS THE DECISION THIS MODULE TAKES/);
+    expect(m3).toMatch(/There is no home vernacular/);
+    expect(m3).toMatch(
+      /display STAYS IN THIS COURSE's TRADITION AND sound IS WHERE THE VARIANTS LIVE/,
+    );
+    expect(m3).toMatch(/has minted two keys for one sentence/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/"How they say it there" is a TRADITION, not a place/);
+  });
+
+  /** The ecclesiastical register belongs to one module, and M1 must refuse it. */
+  it('puts the ecclesiastical register at M4 and keeps it out of M1', () => {
+    expect((all['L5-M4']?.notes ?? []).join('\n')).toMatch(
+      /THE ECCLESIASTICAL REGISTER IS AT HOME HERE AND NOWHERE ELSE IN THIS COURSE/,
+    );
+    expect((all['L5-M1']?.notes ?? []).join('\n')).toMatch(
+      /requiēscat in pāce is ECCLESIASTICAL and belongs to M4/,
+    );
+  });
+
+  /** The last two constructions the course owes, each in its promised module. */
+  it('lands the ablative absolute at M6 and the indirect question at M7', () => {
+    expect((all['L5-M6']?.notes ?? []).join('\n')).toMatch(
+      /THE ABLATIVE ABSOLUTE ARRIVES, AND L4-M2 AND L4-M4 BOTH WANTED IT/,
+    );
+    expect((all['L5-M7']?.notes ?? []).join('\n')).toMatch(
+      /THE INDIRECT QUESTION ARRIVES AND IT IS THE LAST CONSTRUCTION THIS COURSE OWES/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/After these two, \*\*this course owes nothing\*\*/);
+  });
+
+  /** Two more homographs, the cum remedy again — and the refusal condition stated for the first time. */
+  it('names both readings for ut and quod, and states the price of not affording the note', () => {
+    expect((all['L5-M1']?.notes ?? []).join('\n')).toMatch(
+      /THAT IS A HOMOGRAPH DECISION AND THE NOTE MUST CARRY IT/,
+    );
+    expect((all['L5-M6']?.notes ?? []).join('\n')).toMatch(/THAT IS A HOMOGRAPH DECISION/);
+    expect((all['L5-M6']?.notes ?? []).join('\n')).toMatch(
+      /If a brief cannot afford that note, the phrase is not worth the key/,
+    );
+  });
+
+  /** M10's shape: a register switch in three places, and a hinge that names it. */
+  it('makes M10 switch register visibly, with a hinge and no new vocabulary', () => {
+    const m10 = (all['L5-M10']?.notes ?? []).join('\n');
+    expect(m10).toMatch(/THE REGISTER SWITCH IS THE MODULE AND IT MUST BE VISIBLE IN THREE PLACES/);
+    expect(m10).toMatch(/THE HINGE IS ONE SENTENCE AND IT SHOULD BE SHORT/);
+    expect(m10).toMatch(/NOTHING NEW IS TAUGHT HERE/);
+    expect(m10).toMatch(/ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE COURSE/);
+    expect(m10).toMatch(/STILL NO BUILD GATE on en-la's spelling/);
+  });
+
+  it("plans against the folded L4 index rather than the last module's delta", () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\*\*624 surfaces, maxSpan 1\*\*/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\(L4, 145\) = 624/);
+  });
+
+  /** The orthography tests of #633 must hold over all fifty briefs. */
+  it('keeps the orthography clean across L5, and so across the whole course', () => {
+    for (const [id, brief] of Object.entries(all)) {
+      for (const pattern of brief.patterns) {
+        expect(pattern, `${id} "${pattern}"`).toMatch(/^[\x20-\x7EĀāĒēĪīŌōŪū]+$/u);
+        expect(/[ȳȲ]/u.test(pattern), `${id} pattern writes ȳ`).toBe(false);
+      }
+      for (const value of [brief.title, brief.job, ...brief.patterns, ...brief.notes]) {
+        expect(value, `${id} NFC`).toBe(value.normalize('NFC'));
+      }
+    }
+    expect(/[ÁÉÍÓÚáéíóú]|́/u.test(notes), 'an L5 note writes an acute').toBe(false);
   });
 });
 

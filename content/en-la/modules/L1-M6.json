@@ -1,0 +1,728 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M6",
+  "title": "Tomorrow",
+  "job": "Future and plans",
+  "prerequisites": [
+    "L1-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": [
+      "future",
+      "simple_present",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "crās + V-bō",
+      "N-acc + V-bō",
+      "crās + V-am / V-ēs",
+      "crās + V-ō (present for future)",
+      "V-īre + volō"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The future has TWO formations and which one a verb uses is decided by its family. habeō and labōrō take -bō: habēbō, labōrābō. legō, scrībō and veniō take -am in the first person and -ēs, -et after it: legam, legēs, leget. One tense, two patterns, and nothing in the meaning tells you which."
+    },
+    {
+      "tag": "interference",
+      "text": "THE TRAP OF THIS MODULE: legēs is 'you WILL read' and docēs is 'you teach'. Same ending, different tense — because legō is a third-conjugation verb whose future borrows the -ēs, and doceō is a second-conjugation verb whose present already owns it. Only knowing the verb tells you which you are looking at."
+    },
+    {
+      "tag": "delta",
+      "text": "The irregulars are irregular here too, and both are unavoidable: sum becomes erō ('I will be') and eō becomes ībō ('I will go'). Neither follows either pattern above, so they are learned as themselves — which is easier than it sounds, because you will use them constantly."
+    },
+    {
+      "tag": "free",
+      "text": "The present also does the future, exactly as in English. Crās eō is 'I am going tomorrow', and for a settled plan it is what a Roman would more often say. So there are three ways to talk about tomorrow: the real future, the present with crās, and volō plus an infinitive."
+    },
+    {
+      "tag": "delta",
+      "text": "crās never changes shape and usually comes first, like herī and cotīdiē. Its ā is long — CRAS, held — and it is the only new word in this module that is not a verb."
+    },
+    {
+      "tag": "delta",
+      "text": "A future is its own word, not a present with a helper in front. There is no 'will' and no 'shall' to put anywhere: the whole tense is inside the verb, which is the same lesson M5 taught about 'did'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M6-S01",
+      "display": "Crās veniam.",
+      "cue": "I will come tomorrow.",
+      "literal": "tomorrow I-will-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "crās",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [
+              "crās"
+            ],
+            "note": "'Tomorrow', and it never changes shape — an adverb like herī and cotīdiē. The ā is long: CRAS, held."
+          },
+          {
+            "display": "veniam",
+            "cue": "I will come",
+            "tag": "delta",
+            "forms": [
+              "veniam",
+              "veniet"
+            ],
+            "note": "'I will come' — the future of M4's veniō, and it takes the -am pattern: veniam, veniet 'he will come'. There is no separate word for 'will'."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          4
+        ]
+      },
+      "trap": "Two words, and the second one contains the tense, the person and the verb. English needs three and one of them — 'will' — has no Latin counterpart at all.",
+      "sound": "CRAS VE-ni-am. Hold the ā of crās. veniam is three light syllables with the stress at the front.",
+      "variations": [
+        {
+          "display": "Crās veniet.",
+          "cue": "He will come tomorrow.",
+          "changed": "the ending moves it to a third person"
+        },
+        {
+          "display": "Crās veniō.",
+          "cue": "I am coming tomorrow.",
+          "changed": "the present doing the future's job, which is what a Roman would often say"
+        },
+        {
+          "display": "Crās venīre volō.",
+          "cue": "I want to come tomorrow.",
+          "changed": "M3's wanting instead of a tense — the third way to talk about tomorrow"
+        }
+      ],
+      "mistake": {
+        "display": "Crās volō venīre.",
+        "why": "Two things: the English order for the wanting, which M3 and M4 both warned about, and the assumption that Latin needs a helper to point at the future. veniam is one word and says all of it."
+      },
+      "usage": "Said when you are promising to turn up.",
+      "mnemonic": "No 'will'. The tense lives in the ending.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M6-S02",
+      "display": "Crās ad scholam ībō.",
+      "cue": "I will go to school tomorrow.",
+      "literal": "tomorrow to school I-will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "crās",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "'Tomorrow', and it never changes shape — an adverb like herī and cotīdiē. The ā is long: CRAS, held."
+          },
+          {
+            "display": "ad",
+            "cue": "to · towards",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To, towards', and the noun after it takes the object shape — ad scholam, never ad schola."
+          },
+          {
+            "display": "scholam",
+            "cue": "school (as the place gone to)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' — schola as the subject, scholam after ad. In Latin it meant the teaching rather than the building."
+          },
+          {
+            "display": "ībō",
+            "cue": "I will go",
+            "tag": "delta",
+            "forms": [
+              "ībō",
+              "ībit"
+            ],
+            "note": "'I will go' — the future of M4's eō, and irregular: ībō, ībit 'he will go'. Both vowels are long, which is most of what makes it recognisable."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "ībō is not eō with anything added. It is a different shape of the same tiny verb, and it has to be recognised rather than derived — which is true of both irregulars in this module.",
+      "sound": "CRAS ad SCHO-lam I-bō. Two long vowels in ībō, said EE-boh, and the stress sits on the first.",
+      "variations": [
+        {
+          "display": "Crās ad scholam ībit.",
+          "cue": "He will go to school tomorrow.",
+          "changed": "a third person on the same irregular stem"
+        },
+        {
+          "display": "Crās ad scholam eō.",
+          "cue": "I am going to school tomorrow.",
+          "changed": "the present, doing the same job with less machinery"
+        },
+        {
+          "display": "Ad scholam ībō.",
+          "cue": "I will go to school.",
+          "changed": "the time word dropped — the tense does not need it"
+        }
+      ],
+      "mistake": {
+        "display": "Crās ad scholam eōbō.",
+        "why": "The -bō ending bolted onto the present stem, which is how a regular first-conjugation verb would do it. eō is irregular and its future is ībō: there is no ending to attach because the stem itself changes."
+      },
+      "usage": "Said about tomorrow's plans.",
+      "mnemonic": "eō goes, ībō will go. The vowel lengthens and moves.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M6-S03",
+      "display": "Librum legam.",
+      "cue": "I will read the book.",
+      "literal": "book I-will-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "librum",
+            "cue": "book (as the thing read)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. The e drops out as soon as an ending is added."
+          },
+          {
+            "display": "legam",
+            "cue": "I will read",
+            "tag": "delta",
+            "forms": [
+              "legam",
+              "legēs",
+              "leget"
+            ],
+            "note": "'I will read' — the future of M4's legō on the -am pattern: legam, legēs 'you will read', leget 'he will read'. Watch legēs; it is a future, not a present."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "legam looks like nothing in particular, and that is the difficulty: a third-conjugation future has no -b- in it, so there is no visible marker of futurity at all — only an ending you have to know.",
+      "sound": "LI-brum LE-gam. Both stressed on the first syllable. Nothing here is long, which is itself a clue: the -bō futures all carry a long vowel and this pattern does not.",
+      "variations": [
+        {
+          "display": "Librum legēs.",
+          "cue": "You will read the book.",
+          "changed": "the second person — and the shape that collides with a present elsewhere"
+        },
+        {
+          "display": "Librum leget.",
+          "cue": "He will read the book.",
+          "changed": "a third person on the same pattern"
+        },
+        {
+          "display": "Crās librum legam.",
+          "cue": "I will read the book tomorrow.",
+          "changed": "a time word added, which the tense did not need"
+        }
+      ],
+      "mistake": {
+        "display": "Librum legēbō.",
+        "why": "The -bō future built on a verb that does not take it. legō is third conjugation and its future is legam; habēbō is right for habeō and wrong here, and only the verb's family decides which."
+      },
+      "usage": "Said about what you intend to read.",
+      "mnemonic": "-am, -ēs, -et for legō. No b anywhere.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M6-S04",
+      "display": "Epistulam scrībam.",
+      "cue": "I will write a letter.",
+      "literal": "letter I-will-write",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "epistulam",
+            "cue": "letter (as the thing written)",
+            "tag": "free",
+            "forms": [],
+            "note": "'Letter' — the written kind. epistula as the subject, epistulam as the object. English kept it in 'epistle'."
+          },
+          {
+            "display": "scrībam",
+            "cue": "I will write",
+            "tag": "delta",
+            "forms": [
+              "scrībam",
+              "scrībet"
+            ],
+            "note": "'I will write' — the future of M4's scrībō on the -am pattern: scrībam, scrībet 'he will write'. The ī stays long throughout the verb."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "scrībam and M5's scrīpsī are both 'the other' tense of scrībō, and neither is built from the present by adding anything. One changes the consonants and one changes the ending; the verb has to be learned in three pieces.",
+      "sound": "e-PIS-tu-lam SCRI-bam. The long ī of scrībam is stressed; the -am is light.",
+      "variations": [
+        {
+          "display": "Epistulam scrībet.",
+          "cue": "He will write a letter.",
+          "changed": "a third person on the same pattern"
+        },
+        {
+          "display": "Crās epistulam scrībam.",
+          "cue": "I will write a letter tomorrow.",
+          "changed": "a time word in front"
+        },
+        {
+          "display": "Epistulam scrībere volō.",
+          "cue": "I want to write a letter.",
+          "changed": "the wanting instead of the tense"
+        }
+      ],
+      "mistake": {
+        "display": "Epistulam scrībābō.",
+        "why": "A -bō future invented for a third-conjugation verb, and with an extra a for good measure. scrībam is the whole form; the pattern a verb uses cannot be guessed from its meaning or its shape."
+      },
+      "usage": "Said about correspondence you intend to write.",
+      "mnemonic": "scrībō, scrīpsī, scrībam — present, past, future, three different words.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M6-S05",
+      "display": "Crās Rōmānus erō.",
+      "cue": "Tomorrow I will be Roman.",
+      "literal": "tomorrow Roman I-will-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "crās",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "'Tomorrow', and it never changes shape — an adverb like herī and cotīdiē. The ā is long: CRAS, held."
+          },
+          {
+            "display": "Rōmānus",
+            "cue": "Roman",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Roman', bending for the person it describes: Rōmānus of a man, Rōmāna of a woman, Rōmānī of more than one. Both ō and ā are long."
+          },
+          {
+            "display": "erō",
+            "cue": "I will be",
+            "tag": "delta",
+            "forms": [
+              "erō",
+              "erit"
+            ],
+            "note": "'I will be' — the future of sum, and it shares nothing with either sum or M5's fuī: erō, erit 'he will be'. Three tenses, three unrelated stems."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "sum, fuī, erō. One verb, three shapes with almost no letters in common — and this is the verb you will need most often, so the irregularity is worth the effort rather than worth avoiding.",
+      "sound": "CRAS ro-MA-nus E-rō. erō is E-roh with a long final vowel; it is short enough to be missed, so say it deliberately.",
+      "variations": [
+        {
+          "display": "Crās Rōmāna erō.",
+          "cue": "Tomorrow I will be Roman. (a woman speaking)",
+          "changed": "the adjective takes her gender; the verb does not"
+        },
+        {
+          "display": "Crās Rōmānus erit.",
+          "cue": "Tomorrow he will be Roman.",
+          "changed": "a third person on the same irregular stem"
+        },
+        {
+          "display": "Crās discipulus erō.",
+          "cue": "Tomorrow I will be a student.",
+          "changed": "a noun instead of an adjective, doing the same job"
+        }
+      ],
+      "mistake": {
+        "display": "Crās Rōmānus sumbō.",
+        "why": "A -bō ending attached to sum, which has no stem to attach it to. Its future is erō, and the only way to know that is to learn it — which is what an irregular verb means."
+      },
+      "usage": "Said about a change of state you expect.",
+      "mnemonic": "sum, fuī, erō: am, was, will be, and no two alike.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M6-S06",
+      "display": "Aquam habēbō.",
+      "cue": "I will have water.",
+      "literal": "water I-will-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aquam",
+            "cue": "water (as the thing had)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā as the thing needed. Three shapes of one word."
+          },
+          {
+            "display": "habēbō",
+            "cue": "I will have",
+            "tag": "delta",
+            "forms": [
+              "habēbō",
+              "habēbit"
+            ],
+            "note": "'I will have' — the future of M3's habeō, and this one DOES take -bō: habēbō, habēbit 'he will have'. Second-conjugation verbs all do."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "This is the pattern legam did not use. habeō is second conjugation and gets -bō; legō is third and gets -am. There is no way to tell from the English which family a verb is in.",
+      "sound": "A-quam ha-BE-bō. Two long vowels in habēbō and the stress on the first of them: ha-BAY-boh.",
+      "variations": [
+        {
+          "display": "Aquam habēbit.",
+          "cue": "He will have water.",
+          "changed": "a third person on the -bō pattern"
+        },
+        {
+          "display": "Crās aquam habēbō.",
+          "cue": "I will have water tomorrow.",
+          "changed": "a time word in front"
+        },
+        {
+          "display": "Librum habēbō.",
+          "cue": "I will have the book.",
+          "changed": "a different thing had"
+        }
+      ],
+      "mistake": {
+        "display": "Aquam habeam.",
+        "why": "The -am future used on a verb that takes -bō. It is the mirror of S03's mistake, and the pair of them is the module's whole difficulty: habēbō and legam are the same tense wearing different clothes."
+      },
+      "usage": "Said about what you expect to have.",
+      "mnemonic": "habeō takes the b. legō does not.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M6-S07",
+      "display": "Crās labōrābō.",
+      "cue": "I will work tomorrow.",
+      "literal": "tomorrow I-will-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "crās",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "'Tomorrow', and it never changes shape — an adverb like herī and cotīdiē. The ā is long: CRAS, held."
+          },
+          {
+            "display": "labōrābō",
+            "cue": "I will work",
+            "tag": "delta",
+            "forms": [
+              "labōrābō",
+              "labōrābit"
+            ],
+            "note": "'I will work' — the future of M4's labōrō, on the -bō pattern: labōrābō, labōrābit 'he will work'. Four syllables, three of them long."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Four syllables for two English words. The a before the -bō is labōrō's own stem vowel, which M4 said it keeps — so the future is built on the shape you already know rather than on a new one.",
+      "sound": "CRAS la-bō-RA-bō. Say it slowly: la-boh-RAH-boh. The stress sits on the third syllable because the ā there is long.",
+      "variations": [
+        {
+          "display": "Crās labōrābit.",
+          "cue": "He will work tomorrow.",
+          "changed": "a third person on the same long stem"
+        },
+        {
+          "display": "Crās nōn labōrābō.",
+          "cue": "I will not work tomorrow.",
+          "changed": "negated, with nōn in front and no helper to build"
+        },
+        {
+          "display": "Crās labōrō.",
+          "cue": "I am working tomorrow.",
+          "changed": "the present doing the future's job"
+        }
+      ],
+      "mistake": {
+        "display": "Crās labōrābitis.",
+        "why": "A plural ending on a sentence about one person. -bitis is 'you all will', and nothing in crās labōrābō suggests more than one worker — the person is chosen by the ending, so it has to be chosen deliberately."
+      },
+      "usage": "Said about tomorrow's working day.",
+      "mnemonic": "labōrō keeps its a and takes the b: labōrābō.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M6-S08",
+      "display": "Librum legēs.",
+      "cue": "You will read the book.",
+      "literal": "book you-will-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "librum",
+            "cue": "book (as the thing read)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. The e drops out as soon as an ending is added."
+          },
+          {
+            "display": "legēs",
+            "cue": "you will read",
+            "tag": "interference",
+            "forms": [],
+            "note": "'You will read' — a FUTURE, though the -ēs ending is a present in second-conjugation verbs like doceō ('docēs', you teach). Only the verb's family tells them apart."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "legēs is a future and docēs is a present, and they look identical in their endings. There is no trick here: you have to know that legō is third conjugation and doceō is second, and the dictionary is where that lives.",
+      "sound": "LI-brum le-GES. The stress moves onto the long ē, which it did not do in legam — the ending is carrying weight as well as meaning.",
+      "variations": [
+        {
+          "display": "Librum legam.",
+          "cue": "I will read the book.",
+          "changed": "back to the first person, where the collision does not arise"
+        },
+        {
+          "display": "Crās librum legēs.",
+          "cue": "You will read the book tomorrow.",
+          "changed": "a time word in front, which settles any doubt about the tense"
+        },
+        {
+          "display": "Epistulam legēs.",
+          "cue": "You will read the letter.",
+          "changed": "a different thing read"
+        }
+      ],
+      "mistake": {
+        "display": "Librum docēs.",
+        "why": "The verbs swapped on the strength of the shared ending. docēs is 'you teach' — a present — so this says 'you teach a book'. The ending is the same; the tense, the meaning and the verb are all different."
+      },
+      "usage": "Said about what somebody else will read.",
+      "mnemonic": "Same ending, different verb, different tense. Learn the family.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M6-S09",
+      "display": "Iūlia crās veniet.",
+      "cue": "Julia will come tomorrow.",
+      "literal": "Julia tomorrow she-will-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Iūlia",
+            "cue": "Julia (a woman's name)",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman woman's given name, said YOO-li-a. Spelled with an i because Latin has no letter j at all."
+          },
+          {
+            "display": "crās",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "'Tomorrow', and it never changes shape — an adverb like herī and cotīdiē. The ā is long: CRAS, held."
+          },
+          {
+            "display": "veniet",
+            "cue": "she will come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I will come' — the future of M4's veniō, and it takes the -am pattern: veniam, veniet 'he/she will come'. There is no separate word for 'will'."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Three tenses of this verb are now in play and all three third persons are short: venit, vēnit, veniet. The first is a bar away from the second and a syllable away from the third, and all three are in your vocabulary as of this module.",
+      "sound": "YOO-li-a CRAS VE-ni-et. veniet is three syllables where venit is two — that extra syllable is the future, and it is easier to hear than the bar was.",
+      "variations": [
+        {
+          "display": "Iūlia crās veniam.",
+          "cue": "Julia, I will come tomorrow.",
+          "changed": "the same words addressed TO her, so the verb becomes first person"
+        },
+        {
+          "display": "Iūlia crās venit.",
+          "cue": "Julia is coming tomorrow.",
+          "changed": "the present doing the future's job — one syllable shorter"
+        },
+        {
+          "display": "Iūlia crās nōn veniet.",
+          "cue": "Julia will not come tomorrow.",
+          "changed": "negated, with nōn against the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Iūlia crās vēniet.",
+        "why": "A bar taken from M5's past and put on a future. vēnit is 'she came' and veniet is 'she will come'; combining them produces a form that is neither, and the macron is the thing that makes the error visible at all."
+      },
+      "usage": "Said about somebody else's plans.",
+      "mnemonic": "venit, vēnit, veniet: comes, came, will come.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M6-S10",
+      "display": "Crās venīre volō.",
+      "cue": "I want to come tomorrow.",
+      "literal": "tomorrow to-come I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "crās",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "'Tomorrow', and it never changes shape — an adverb like herī and cotīdiē. The ā is long: CRAS, held."
+          },
+          {
+            "display": "venīre",
+            "cue": "to come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'She comes': veniō 'I come', venit 'he/she comes', venīre 'to come'. The -re ending is what makes it 'to', and the ī before it is long."
+          },
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I want' — irregular, and the only verb for wanting: volō 'I want', vult 'he/she wants'. It takes an object or an infinitive, and both come before it."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "This is the third way to talk about tomorrow and the only one with no future tense in it. Latin can do the job with a tense, with a present, or with wanting — and a learner who only knows the tense will sound stiffer than a Roman.",
+      "sound": "CRAS ve-NI-re VO-lō. The long ī of venīre takes the stress, which the short i of veniam did not.",
+      "variations": [
+        {
+          "display": "Crās venīre nōlō.",
+          "cue": "I do not want to come tomorrow.",
+          "changed": "M3's one-word refusal in place of the wanting"
+        },
+        {
+          "display": "Crās venīre vult.",
+          "cue": "He wants to come tomorrow.",
+          "changed": "a third person wanting it"
+        },
+        {
+          "display": "Ad scholam venīre volō.",
+          "cue": "I want to come to school.",
+          "changed": "a destination instead of a time"
+        }
+      ],
+      "mistake": {
+        "display": "Crās veniam volō.",
+        "why": "A finite future where the infinitive belongs. volō governs an infinitive — venīre — and veniam is already a complete sentence, so this puts two verbs side by side with nothing joining them."
+      },
+      "usage": "Said when the plan is a wish rather than a promise.",
+      "mnemonic": "After volō, the -re form. Always.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M6-C01",
+      "display": "Crās ad scholam ībit Mārcus.",
+      "cue": "Marcus will go to school tomorrow."
+    },
+    {
+      "id": "L1-M6-C02",
+      "display": "Epistulam crās legam.",
+      "cue": "I will read the letter tomorrow."
+    },
+    {
+      "id": "L1-M6-C03",
+      "display": "Crās magister erit.",
+      "cue": "Tomorrow he will be a teacher."
+    },
+    {
+      "id": "L1-M6-C04",
+      "display": "Pānem habēbō.",
+      "cue": "I will have bread."
+    },
+    {
+      "id": "L1-M6-C05",
+      "display": "Crās nōn labōrābit.",
+      "cue": "He will not work tomorrow."
+    },
+    {
+      "id": "L1-M6-C06",
+      "display": "Iūlia epistulam scrībet.",
+      "cue": "Julia will write a letter."
+    },
+    {
+      "id": "L1-M6-C07",
+      "display": "Crās discipula erō.",
+      "cue": "Tomorrow I will be a student."
+    },
+    {
+      "id": "L1-M6-C08",
+      "display": "Librum crās leget.",
+      "cue": "He will read the book tomorrow."
+    },
+    {
+      "id": "L1-M6-C09",
+      "display": "Aquam bibere volō.",
+      "cue": "I want to drink water."
+    },
+    {
+      "id": "L1-M6-C10",
+      "display": "Crās ad scholam veniam.",
+      "cue": "I will come to school tomorrow."
+    },
+    {
+      "id": "L1-M6-C11",
+      "display": "Ad scholam nōn ībō.",
+      "cue": "I will not go to school."
+    },
+    {
+      "id": "L1-M6-C12",
+      "display": "Crās aquam habēbit.",
+      "cue": "He will have water tomorrow."
+    },
+    {
+      "id": "L1-M6-C13",
+      "display": "Epistulam scrībam, nōn legam.",
+      "cue": "I will write a letter, not read one."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

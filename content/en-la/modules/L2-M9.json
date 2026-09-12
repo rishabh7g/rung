@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M9",
+  "title": "Comparing and choosing",
+  "job": "More, less, better — stating a preference",
+  "prerequisites": [
+    "L2-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "Adj-ior + est",
+      "N-nom + quam + N-nom",
+      "N-nom + N-abl + Adj-ior + est",
+      "Adj-issimus / optimus + est",
+      "mālō + N-acc + quam + N-acc"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "COMPARISON IS AN ENDING, NOT A WORD: gravis becomes gravior ('heavier') and gravissimus ('heaviest'). English has both an ending and a word — 'heavier' but 'more serious' — and Latin uses the ending almost always. magis ('more') is real and rare, and reaching for it is the error this module exists to prevent. The comparative belongs to M2's two-shape family, so gravior serves a man or a woman both; the superlative does show gender."
+    },
+    {
+      "tag": "delta",
+      "text": "'THAN' IS TWO CONSTRUCTIONS AND THIS MODULE TEACHES BOTH. quam plus the SAME shape on both sides: hic liber gravior est quam ille — quam is a hinge, not a preposition, and does nothing to what follows it. Or the ABLATIVE OF COMPARISON with no word at all: hic liber illō gravior est, where the ending IS 'than'. That is the ablative's fifth job after opus est, means, place and time. Teach the ablative as the elegant one and quam as the safe one."
+    },
+    {
+      "tag": "interference",
+      "text": "THE SUPERLATIVE HAS TWO MEANINGS AND NOTHING PARTS THEM: gravissimus is 'heaviest' when there is a set to be heaviest of and 'very heavy' when there is not. Only context decides, exactly as with M8's accidit. And you have had the ending since L1-M2 without knowing it — optimē, 'very well', is optimus's adverb."
+    },
+    {
+      "tag": "free",
+      "text": "THE IRREGULAR SETS ARE FEW AND HALF-KNOWN ALREADY: bonus/melior/optimus, parvus/minor/minimus, and — named here, written nowhere — magnus/maior/maximus and malus/peior/pessimus. Not one member is built on the one before it, which is exactly what English does with good/better/best, so this is the one place in the level where the cognates help: optimal, minimum, maximum, pessimist."
+    },
+    {
+      "tag": "delta",
+      "text": "PREFERRING IS mālō, AND IT COMPLETES AN IRREGULAR FAMILY OF THREE: volō 'I want', nōlō 'I do not want', mālō 'I prefer' — volō with the comparative built into it. L1-M3 taught the first two and never said they had a third. mālō X quam Y keeps both sides in the same shape, and any infinitive comes last, after both nouns."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M9-S01",
+      "display": "Hic liber gravior est.",
+      "cue": "This book is heavier.",
+      "literal": "this book heavier is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hic",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "'This'. L1-M7's word, and it picks out which one you mean — which is what a comparison needs before it can start."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the subject: liber for one, librī for more than one."
+          },
+          {
+            "display": "gravior",
+            "cue": "heavier",
+            "tag": "delta",
+            "forms": [
+              "gravior"
+            ],
+            "note": "'Heavier' — gravis plus -ior. One ending does what English needs 'more' or '-er' for, and gravior serves a man or a woman both, like M2's family it comes from."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Comparison is an ENDING in Latin. English has both a word and an ending — 'heavier' but 'more serious' — and Latin uses the ending almost always. magis ('more') exists and is rare, and reaching for it is the mistake this module exists to prevent.",
+      "sound": "HIC LI-ber GRA-vi-or EST. The comparative adds a syllable and moves nothing: the stress stays where gravis had it.",
+      "variations": [
+        {
+          "display": "Haec mēnsa gravior est.",
+          "cue": "This table is heavier.",
+          "changed": "a feminine thing — and gravior does not move, because it is M2's family"
+        },
+        {
+          "display": "Hic liber gravissimus est.",
+          "cue": "This book is the heaviest.",
+          "changed": "the superlative ending instead"
+        },
+        {
+          "display": "Hic liber gravior nōn est.",
+          "cue": "This book is not heavier.",
+          "changed": "the negative"
+        }
+      ],
+      "mistake": {
+        "display": "Hic liber magis gravis est.",
+        "why": "'more' built as a separate word, on the English model. magis is a real Latin word and this is understandable Latin, and it is not what a Roman would say — the ending exists and does the job, so the word is left for the few adjectives that cannot take it."
+      },
+      "usage": "Said weighing two things in your hands.",
+      "mnemonic": "-ior is the whole of 'more'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M9-S02",
+      "display": "Hic liber gravior est quam ille.",
+      "cue": "This book is heavier than that one.",
+      "literal": "this book heavier is than that",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hic",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "'This', picking out the nearer one."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the subject."
+          },
+          {
+            "display": "gravior",
+            "cue": "heavier",
+            "tag": "delta",
+            "forms": [
+              "gravior"
+            ],
+            "note": "'Heavier' — gravis plus -ior. One ending does what English needs 'more' or '-er' for, and gravior serves a man or a woman both, like M2's family it comes from."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "quam",
+            "cue": "than",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Than'. It has other readings in full Latin — 'how', and a relative pronoun — and this course writes only this one, so the word carries one meaning for you."
+          },
+          {
+            "display": "ille",
+            "cue": "that one",
+            "tag": "delta",
+            "forms": [
+              "ille",
+              "illa"
+            ],
+            "note": "'That one', the far one to hic's near one. After quam it stays in the same shape as what it is compared with — here a subject, so the subject shape."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "After quam, the second thing wears the SAME shape as the first. Both are subjects here, so both are in the subject shape — quam is not a preposition and does nothing to what follows it, which is the safe half of this module's two constructions.",
+      "variations": [
+        {
+          "display": "Haec mēnsa gravior est quam illa.",
+          "cue": "This table is heavier than that one.",
+          "changed": "two feminine things"
+        },
+        {
+          "display": "Hic liber gravior est quam mēnsa.",
+          "cue": "This book is heavier than the table.",
+          "changed": "compared with a named thing rather than 'that one'"
+        },
+        {
+          "display": "Ille liber gravior est.",
+          "cue": "That book is heavier.",
+          "changed": "the far one winning, and no comparison written"
+        }
+      ],
+      "usage": "Said comparing two things in front of you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M9-S03",
+      "display": "Hic liber illō gravior est.",
+      "cue": "This book is heavier than that one.",
+      "literal": "this book than-that heavier is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hic",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "'This', the nearer one."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the subject."
+          },
+          {
+            "display": "illō",
+            "cue": "than that one",
+            "tag": "interference",
+            "forms": [
+              "illō",
+              "illā"
+            ],
+            "note": "'Than that one' — the ablative, and the 'than' is in the ending. No word for it at all, which is the same trade M4 made for 'by' and M6 for 'at'."
+          },
+          {
+            "display": "gravior",
+            "cue": "heavier",
+            "tag": "delta",
+            "forms": [
+              "gravior"
+            ],
+            "note": "'Heavier' — gravis plus -ior. One ending does what English needs 'more' or '-er' for, and gravior serves a man or a woman both, like M2's family it comes from."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The same sentence as the last one with quam deleted and one ending changed. This is the ablative doing a FIFTH job — after opus est, as a means, as a time, and now as 'than' — and it is the elegant way to say it, where quam is the safe way.",
+      "sound": "HIC LI-ber IL-lō GRA-vi-or EST. The long ō in the middle is carrying the whole word 'than'.",
+      "variations": [
+        {
+          "display": "Haec mēnsa illā gravior est.",
+          "cue": "This table is heavier than that one.",
+          "changed": "feminine, so the ablative is illā"
+        },
+        {
+          "display": "Hic liber illō minor est.",
+          "cue": "This book is smaller than that one.",
+          "changed": "an irregular comparative in the same frame"
+        },
+        {
+          "display": "Hic liber gravior est quam ille.",
+          "cue": "This book is heavier than that one.",
+          "changed": "the safe construction, saying exactly the same thing"
+        }
+      ],
+      "mistake": {
+        "display": "Hic liber quam illō gravior est.",
+        "why": "both constructions used at once. Each is correct on its own and together they say 'than' twice — which is what happens when a learner has just been told there are two ways and has not yet believed that either is enough."
+      },
+      "usage": "Said when you want to sound like you read Latin.",
+      "mnemonic": "The ablative IS 'than'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M9-S04",
+      "display": "Hic liber gravissimus est.",
+      "cue": "This book is the heaviest.",
+      "literal": "this book heaviest is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hic",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "'This', picking one out of a set."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the subject."
+          },
+          {
+            "display": "gravissimus",
+            "cue": "heaviest · very heavy",
+            "tag": "interference",
+            "forms": [
+              "gravissimus",
+              "gravissima",
+              "gravissimī"
+            ],
+            "note": "'Heaviest' AND 'very heavy' — one ending, two jobs, and only context decides. Unlike gravior, it DOES show gender: gravissimus, gravissima."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The superlative has two meanings and no way to tell them apart. gravissimus is 'heaviest' when there is a set to be heaviest of and 'very heavy' when there is not — and L1-M2's optimē was already this word's adverb, so you have met the ending before without knowing it.",
+      "variations": [
+        {
+          "display": "Haec mēnsa gravissima est.",
+          "cue": "This table is the heaviest.",
+          "changed": "feminine — and unlike gravior, the superlative moves"
+        },
+        {
+          "display": "Hic liber gravissimus nōn est.",
+          "cue": "This book is not the heaviest.",
+          "changed": "the negative"
+        },
+        {
+          "display": "Omnēs librī gravissimī sunt.",
+          "cue": "All the books are very heavy.",
+          "changed": "plural, where 'very' is the only reading that works"
+        }
+      ],
+      "usage": "Said about the worst of a bad set.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M9-S05",
+      "display": "Hic liber melior est.",
+      "cue": "This book is better.",
+      "literal": "this book better is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hic",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "'This', the one you are recommending."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the subject."
+          },
+          {
+            "display": "melior",
+            "cue": "better",
+            "tag": "interference",
+            "forms": [
+              "melior"
+            ],
+            "note": "'Better' — and it is not built on bonus ('good') at all, any more than English 'better' is built on 'good'. bonus, melior, optimus: three unrelated words, and this course writes the last two."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "bonus, melior, optimus — and not one of them is built from the one before it. English does exactly the same with good, better, best, so this is the rare place where the irregularity is already familiar; the trap is assuming the others follow suit.",
+      "variations": [
+        {
+          "display": "Hic liber optimus est.",
+          "cue": "This book is the best.",
+          "changed": "the superlative of the same set"
+        },
+        {
+          "display": "Haec mēnsa melior est.",
+          "cue": "This table is better.",
+          "changed": "feminine — and melior does not move"
+        },
+        {
+          "display": "Melior est quam ille.",
+          "cue": "It is better than that one.",
+          "changed": "the noun dropped, which Latin allows and English does not"
+        }
+      ],
+      "usage": "Said recommending one of two things.",
+      "mnemonic": "good, better, best — bonus, melior, optimus.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M9-S06",
+      "display": "Hic liber optimus est.",
+      "cue": "This book is the best.",
+      "literal": "this book best is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hic",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "'This', the one you are choosing."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the subject."
+          },
+          {
+            "display": "optimus",
+            "cue": "best · very good",
+            "tag": "interference",
+            "forms": [
+              "optimus",
+              "optima",
+              "optimī"
+            ],
+            "note": "'Best', and 'very good' — the same two jobs the -issimus superlative has. L1-M2's optimē is its adverb, which you have been saying since the second module."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "You already know this word. L1-M2 taught optimē as the answer to 'how are you' — 'very well' — and this is the same word as an adjective, which means the superlative ending has been in your mouth since the beginning. English 'optimal' and 'optimist' keep it.",
+      "variations": [
+        {
+          "display": "Haec mēnsa optima est.",
+          "cue": "This table is the best.",
+          "changed": "feminine, and it moves"
+        },
+        {
+          "display": "Hic liber optimus nōn est.",
+          "cue": "This book is not the best.",
+          "changed": "the negative"
+        },
+        {
+          "display": "Omnēs librī optimī sunt.",
+          "cue": "All the books are very good.",
+          "changed": "plural, where 'very good' is the reading"
+        }
+      ],
+      "usage": "Said when you have decided.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M9-S07",
+      "display": "Mālō librum quam mēnsam.",
+      "cue": "I prefer a book to a table.",
+      "literal": "I-prefer book than table",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mālō",
+            "cue": "I prefer",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I prefer' — volō with the comparative built in, and the third of an irregular family: volō 'I want', nōlō 'I do not want', mālō 'I prefer'."
+          },
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the thing preferred — the object shape, because mālō wants an object."
+          },
+          {
+            "display": "quam",
+            "cue": "than",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Than'. It has other readings in full Latin — 'how', and a relative pronoun — and this course writes only this one, so the word carries one meaning for you."
+          },
+          {
+            "display": "mēnsam",
+            "cue": "table",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Table' as the thing NOT preferred — and it wears the object shape too, because quam keeps both sides alike."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "quam keeps both sides in the same shape, and here that shape is the object. Both things are being preferred or not-preferred, so both are objects of mālō — and English says 'to a table' where Latin says 'than a table', which is a preposition you must not translate.",
+      "variations": [
+        {
+          "display": "Mālō aquam quam vīnum.",
+          "cue": "I prefer water to wine.",
+          "changed": "M5's drinks, one of them neuter and so unmoving"
+        },
+        {
+          "display": "Mālō cēnam quam librum.",
+          "cue": "I prefer dinner to a book.",
+          "changed": "M5's meal"
+        },
+        {
+          "display": "Librum mālō.",
+          "cue": "I prefer the book.",
+          "changed": "nothing compared, so quam goes"
+        }
+      ],
+      "mistake": {
+        "display": "Mālō librum quam mēnsa.",
+        "why": "the second thing left in its subject shape, because 'to a table' feels like something a preposition would govern. quam is not a preposition — it is a hinge, and both sides of a hinge look alike."
+      },
+      "usage": "Said choosing between two offers.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M9-S08",
+      "display": "Volō, nōlō, mālō: tria verba.",
+      "cue": "I want, I don't want, I prefer: three words.",
+      "literal": "I-want I-do-not-want I-prefer three words",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I want' — the head of an irregular family of three. L1-M3's verb."
+          },
+          {
+            "display": "nōlō",
+            "cue": "I do not want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I do not want' — not volō with nōn on it, but a whole verb of its own. L1-M3's word."
+          },
+          {
+            "display": "mālō",
+            "cue": "I prefer",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I prefer' — volō with the comparative built in, and the third of an irregular family: volō 'I want', nōlō 'I do not want', mālō 'I prefer'."
+          },
+          {
+            "display": "tria",
+            "cue": "three",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Three' in the neuter, agreeing with verba. L1-M8 taught trēs for counting people and things; this is the neuter shape."
+          },
+          {
+            "display": "verba",
+            "cue": "words",
+            "tag": "delta",
+            "forms": [
+              "verba"
+            ],
+            "note": "'Words' — verbum for one, verba for more than one. A neuter noun, so the plural ends in -a and is not feminine."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "A neuter plural ends in -a and it is NOT feminine. verba looks exactly like a feminine singular — mēnsa, aqua, schola — and it is three things rather than one. This is the last new fact about agreement the level teaches and it undoes a habit nine modules have built.",
+      "variations": [
+        {
+          "display": "Tria verba sunt.",
+          "cue": "There are three words.",
+          "changed": "a plain statement, with the verb"
+        },
+        {
+          "display": "Volō et mālō: duo verba.",
+          "cue": "I want and I prefer: two words.",
+          "changed": "two of the three, with L1-M8's duo"
+        },
+        {
+          "display": "Duo verba sunt.",
+          "cue": "There are two words.",
+          "changed": "L1-M8's duo, and the neuter plural again"
+        }
+      ],
+      "usage": "Said learning the set as a set.",
+      "mnemonic": "Three verbs, one family, and no two alike.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M9-S09",
+      "display": "Mālō aquam quam vīnum bibere.",
+      "cue": "I prefer to drink water rather than wine.",
+      "literal": "I-prefer water than wine to-drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mālō",
+            "cue": "I prefer",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I prefer' — volō with the comparative built in, and the third of an irregular family: volō 'I want', nōlō 'I do not want', mālō 'I prefer'."
+          },
+          {
+            "display": "aquam",
+            "cue": "water",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water' as the object — aqua as the subject, aquam as the thing drunk. L1-M3's first noun."
+          },
+          {
+            "display": "quam",
+            "cue": "than",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Than'. It has other readings in full Latin — 'how', and a relative pronoun — and this course writes only this one, so the word carries one meaning for you."
+          },
+          {
+            "display": "vīnum",
+            "cue": "wine",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Wine', neuter, so it looks the same on both sides of a comparison. M5's word."
+          },
+          {
+            "display": "bibere",
+            "cue": "to drink",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To drink' — L1-M5's bibō as an infinitive, and it comes at the END, after both things it governs."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "The infinitive comes last, after both nouns. English puts 'to drink' in the middle and Latin saves it for the end, so the sentence does not tell you what is being done to the water until it is over — which is the commonest reason a long Latin line feels unreadable at first.",
+      "variations": [
+        {
+          "display": "Mālō vīnum quam aquam bibere.",
+          "cue": "I prefer to drink wine rather than water.",
+          "changed": "the two swapped"
+        },
+        {
+          "display": "Mālō pānem quam cēnam edere.",
+          "cue": "I prefer to eat bread rather than dinner.",
+          "changed": "M5's other verb"
+        },
+        {
+          "display": "Aquam bibere mālō.",
+          "cue": "I prefer to drink water.",
+          "changed": "nothing compared"
+        }
+      ],
+      "usage": "Said turning down an offer politely.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M9-S10",
+      "display": "Haec mēnsa illā minor est; hanc mālō.",
+      "cue": "This table is smaller than that one; I prefer this one.",
+      "literal": "this table than-that smaller is this-one I-prefer",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "haec",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [
+              "haec"
+            ],
+            "note": "'This' for a feminine thing — hic for masculine, haec for feminine. L1-M7's row."
+          },
+          {
+            "display": "mēnsa",
+            "cue": "table",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Table' as the subject."
+          },
+          {
+            "display": "illā",
+            "cue": "than that one",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Than that one' in the feminine ablative. The 'than' is the ending, and the ending also has to match the gender of what it is compared with."
+          },
+          {
+            "display": "minor",
+            "cue": "smaller",
+            "tag": "interference",
+            "forms": [
+              "minor"
+            ],
+            "note": "'Smaller' — parvus, minor, minimus, and like bonus/melior/optimus not one is built on the last. English 'minor' and 'minimum' both come from this set."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "hanc",
+            "cue": "this one",
+            "tag": "delta",
+            "forms": [
+              "hanc",
+              "hunc",
+              "illam"
+            ],
+            "note": "'This one' as the object — haec as the subject, hanc as the thing chosen, hunc for a masculine one. The pointing word declines like everything else."
+          },
+          {
+            "display": "mālō",
+            "cue": "I prefer",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I prefer' — volō with the comparative built in, and the third of an irregular family: volō 'I want', nōlō 'I do not want', mālō 'I prefer'."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          4
+        ]
+      },
+      "trap": "Five things agreeing at once and two of them are the same word in different shapes. haec is the subject and hanc is the object, illā is the ablative of 'than', minor refuses to show gender and mēnsa decides everything — which is the level's whole grammar in one line.",
+      "sound": "HAEC MĒN-sa IL-lā MI-nor EST; HANC MĀ-lō. Two heavy halves, and each ends on the word that decides it.",
+      "variations": [
+        {
+          "display": "Hic liber illō minor est; hunc mālō.",
+          "cue": "This book is smaller than that one; I prefer this one.",
+          "changed": "masculine throughout, so three words move"
+        },
+        {
+          "display": "Haec mēnsa illā minor est; illam mālō.",
+          "cue": "This table is smaller than that one; I prefer THAT one.",
+          "changed": "the far one chosen instead"
+        },
+        {
+          "display": "Haec mēnsa minor est quam illa.",
+          "cue": "This table is smaller than that one.",
+          "changed": "the safe construction and no choice made"
+        }
+      ],
+      "mistake": {
+        "display": "Haec mēnsa illā minor est; haec mālō.",
+        "why": "the subject shape used for the thing chosen. It is the same pointing word and it feels finished, so the second half borrows the shape from the first — and the whole level has been about the fact that a word's job decides its shape, not the word next to it."
+      },
+      "usage": "Said in a shop, deciding.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M9-C01",
+      "display": "Hic liber gravior est.",
+      "cue": "This book is heavier."
+    },
+    {
+      "id": "L2-M9-C02",
+      "display": "Haec mēnsa gravissima est.",
+      "cue": "This table is the heaviest."
+    },
+    {
+      "id": "L2-M9-C03",
+      "display": "Hic liber melior est quam ille.",
+      "cue": "This book is better than that one."
+    },
+    {
+      "id": "L2-M9-C04",
+      "display": "Mālō aquam quam vīnum.",
+      "cue": "I prefer water to wine."
+    },
+    {
+      "id": "L2-M9-C05",
+      "display": "Hic liber optimus est.",
+      "cue": "This book is the best."
+    },
+    {
+      "id": "L2-M9-C06",
+      "display": "Haec mēnsa illā minor est.",
+      "cue": "This table is smaller than that one."
+    },
+    {
+      "id": "L2-M9-C07",
+      "display": "Tria verba sunt.",
+      "cue": "There are three words."
+    },
+    {
+      "id": "L2-M9-C08",
+      "display": "Mālō cēnam quam librum.",
+      "cue": "I prefer dinner to a book."
+    },
+    {
+      "id": "L2-M9-C09",
+      "display": "Omnēs librī optimī sunt.",
+      "cue": "All the books are very good."
+    },
+    {
+      "id": "L2-M9-C10",
+      "display": "Hunc librum mālō.",
+      "cue": "I prefer this book."
+    },
+    {
+      "id": "L2-M9-C11",
+      "display": "Duo verba sunt.",
+      "cue": "There are two words."
+    },
+    {
+      "id": "L2-M9-C12",
+      "display": "Mālō librum quam mēnsam.",
+      "cue": "I prefer a book to a table."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

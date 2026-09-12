@@ -1,0 +1,842 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "dum + V-present",
+      "postquam + V-perfect",
+      "antequam + V-present",
+      "hōrā + <ordinal-abl> + V",
+      "prīmum + V + , + deinde + V + , + postrēmō + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "dum TAKES THE PRESENT EVEN WHEN THE STORY IS PAST. dum legō is 'while I read' AND 'while I was reading', because dum does not carry a tense of its own — it fixes its clause against the main verb. English shifts both halves together and Latin shifts neither, so a learner reaching for 'while I was reading' has reached for a tense this course does not teach (the imperfect is L4-M8's, and legēbam is still a free key) AND broken the idiom in the same word."
+    },
+    {
+      "tag": "interference",
+      "text": "postquam TAKES THE PERFECT AND antequam THE PRESENT, and the pairing is not guessable from either meaning. postquam vēnī, 'after I came'; antequam labōrō, 'before I work'. Learn them as a pair, like L2-M7's two futures: remember that postquam takes the past and antequam looks after itself. Swapping them is this module's central slip and both directions have a mistake plate."
+    },
+    {
+      "tag": "delta",
+      "text": "THESE ARE CONJUNCTIONS AND L2-M10's WERE ADVERBS, which is the difference between a list and a sentence. prīmum, deinde, tum and postrēmō open clauses that stand alone; dum, postquam and antequam JOIN two clauses into one. The level now has seven sequencing words and a learner needs the list rather than the principle: four that open, three that join."
+    },
+    {
+      "tag": "interference",
+      "text": "TWO WAYS OF SAYING WHEN, AND A WORD BELONGS TO EXACTLY ONE. The caseless set takes no ending ever — cotīdiē, crās, herī — and the time ablative is a case with a number agreeing inside it: hōrā prīmā, hōrā sextā, hōrā nōnā. L2-M6 opened the second and L1-M4 the first. A Roman hour was a twelfth of the daylight, so the ninth hour is mid-afternoon and not nine o'clock."
+    },
+    {
+      "tag": "delta",
+      "text": "prīmum AND prīmā ARE TWO WORDS AND TWO KEYS. prīmum is L2-M10's adverb, 'first of all', which opens a clause and agrees with nothing; prīmā is the ordinal agreeing with hōrā. They differ by one ending, both are correct Latin, and each has a mistake plate in this module showing what the other one does when it is put in the wrong place."
+    },
+    {
+      "tag": "free",
+      "text": "PRO-DROP HOLDS, AND CONTRAST IS THE EXCEPTION. Three levels have said to drop the pronoun because the ending carries it; S10 writes ego because the sentence sets one person against another, and that is what the pronoun is FOR. A dum clause with its own subject names it (dum Mārcus dormit) because nothing else could tell you the clause changed hands."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "Cotīdiē hōrā prīmā surgō.",
+      "cue": "Every day I get up at the first hour.",
+      "literal": "daily at-hour first I-get-up",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cotīdiē",
+            "cue": "every day",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Every day'. L1-M4's word, and it takes no ending at all — it is one of four caseless time words beside the time ablative this sentence also uses."
+          },
+          {
+            "display": "hōrā",
+            "cue": "at the hour",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At the hour' — L2-M6's ablative, and the ending is the 'at'. No preposition, and the number agrees with it."
+          },
+          {
+            "display": "prīmā",
+            "cue": "first",
+            "tag": "interference",
+            "forms": [
+              "prīmā",
+              "nōnā"
+            ],
+            "note": "'First' as an ordinal agreeing with hōrā. It is NOT L2-M10's prīmum, which is the adverb 'first of all' — two words, two keys, and only the ending parts them."
+          },
+          {
+            "display": "surgō",
+            "cue": "I get up",
+            "tag": "delta",
+            "forms": [
+              "surgō",
+              "surgit"
+            ],
+            "note": "'I get up': surgō 'I get up', surgit 'he gets up'. English 'surge' and 'resurgent' are the same word — it is standing up, not waking."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Two ways of saying when, in one sentence. cotīdiē takes no ending and hōrā prīmā is a case — Latin has a caseless set (cotīdiē, crās, herī, and hodiē later) and a cased one, and putting a word in the wrong group is the mistake this module opens with.",
+      "sound": "co-tī-di-Ē HŌ-rā PRĪ-mā SUR-gō. Four long vowels before the verb: the whole time-phrase is heavy and the action is short.",
+      "variations": [
+        {
+          "display": "Cotīdiē hōrā sextā surgō.",
+          "cue": "Every day I get up at the sixth hour.",
+          "changed": "L2-M6's hour, which is the middle of the day"
+        },
+        {
+          "display": "Hōrā prīmā surgit.",
+          "cue": "He gets up at the first hour.",
+          "changed": "someone else, and the daily word dropped"
+        },
+        {
+          "display": "Cotīdiē hōrā prīmā surgō et labōrō.",
+          "cue": "Every day I get up at the first hour and work.",
+          "changed": "a second verb sharing the time"
+        }
+      ],
+      "mistake": {
+        "display": "Cotīdiē hōrā prīmum surgō.",
+        "why": "the adverb used where the ordinal belongs. prīmum is 'first of all', which L2-M10 taught for sequencing an account, and prīmā is 'first' agreeing with an hour. Both are real words and they differ by an ending."
+      },
+      "usage": "Said describing a routine.",
+      "mnemonic": "prīmā agrees; prīmum only ever opens.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "Dum legō, aquam bibō.",
+      "cue": "While I read, I drink water.",
+      "literal": "while I-read water I-drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dum",
+            "cue": "while",
+            "tag": "interference",
+            "forms": [],
+            "note": "'While', and it takes the PRESENT even when the story is past: dum legō is 'while I read' and 'while I was reading' both. It fixes nothing about time itself."
+          },
+          {
+            "display": "legō",
+            "cue": "I read",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read': legō 'I read', legis 'you read', legit 'he reads', legimus 'we read'. L1-M4's verb."
+          },
+          {
+            "display": "aquam",
+            "cue": "water",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water' as the thing drunk. L1-M3's first noun."
+          },
+          {
+            "display": "bibō",
+            "cue": "I drink",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I drink': bibō 'I drink', bibit 'he drinks', bibimus 'we drink'. L1-M5's verb."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "dum needs the present, and it needs it whatever tense the rest of the sentence is in. Latin puts the time in the MAIN verb and lets dum's clause float beside it; English shifts both together, so 'while I was reading' is still dum legō here.",
+      "sound": "DUM LE-gō, A-quam BI-bō. Both verbs end on a short o and both clauses are three syllables: the sentence is built as a pair.",
+      "variations": [
+        {
+          "display": "Dum legō, pānem edō.",
+          "cue": "While I read, I eat bread.",
+          "changed": "M5's food instead of a drink"
+        },
+        {
+          "display": "Dum labōrō, nōn legō.",
+          "cue": "While I work, I do not read.",
+          "changed": "the negative in the main clause"
+        },
+        {
+          "display": "Dum legō, aquam bibit.",
+          "cue": "While I read, he drinks water.",
+          "changed": "two different people in one sentence"
+        }
+      ],
+      "mistake": {
+        "display": "Dum legēbam, aquam bibī.",
+        "why": "an imperfect reached for, and this course has never written one. L1-M5 deferred every past but the perfect to L4-M8 and the keys are still free — and even in full Latin dum takes the present here, so the sentence is wrong twice."
+      },
+      "usage": "Said describing two things you do at once.",
+      "mnemonic": "dum is always now, whatever the sentence is.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "Postquam vēnī, librum lēgī.",
+      "cue": "After I came, I read a book.",
+      "literal": "after I-came book I-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "postquam",
+            "cue": "after",
+            "tag": "interference",
+            "forms": [],
+            "note": "'After', and it takes the PERFECT: postquam vēnī, 'after I came'. Its partner antequam takes the present, which is not guessable from either meaning."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I came' — L1-M5's perfect of veniō, and one bar from venit, 'he comes'."
+          },
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the thing read — liber as the subject, librum as the object."
+          },
+          {
+            "display": "lēgī",
+            "cue": "I read",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read', past — the perfect of legō, lengthening the vowel: legō, lēgī. L1-M5's word."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "postquam takes the perfect and its partner antequam takes the present, and nothing in either meaning tells you so. This is a pairing to learn as a pair, like L2-M7's two futures — and the module writes them in consecutive sentences for exactly that reason.",
+      "sound": "POST-quam VĒ-nī, LI-brum LĒ-gī. Both verbs end on a long ī, which is what a pair of perfects sounds like.",
+      "variations": [
+        {
+          "display": "Postquam vēnī, cēnam ēdī.",
+          "cue": "After I came, I ate dinner.",
+          "changed": "M5's meal, with edō's own perfect"
+        },
+        {
+          "display": "Postquam vēnit, librum lēgit.",
+          "cue": "After he came, he read a book.",
+          "changed": "someone else, both verbs moving"
+        },
+        {
+          "display": "Postquam epistulam scrīpsī, domum īvī.",
+          "cue": "After I wrote a letter, I went home.",
+          "changed": "two different perfects"
+        }
+      ],
+      "mistake": {
+        "display": "Postquam veniō, librum lēgī.",
+        "why": "the present after postquam, which is antequam's tense and not this one. The two conjunctions look alike, sit beside each other in this module and take opposite tenses, so swapping them is the module's central slip."
+      },
+      "usage": "Said sequencing two finished things.",
+      "mnemonic": "postquam looks back, so it takes the past.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "Antequam labōrō, pānem edō.",
+      "cue": "Before I work, I eat bread.",
+      "literal": "before I-work bread I-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "antequam",
+            "cue": "before",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Before', and it takes the PRESENT even about the past: antequam labōrō, 'before I work'. Its partner postquam takes the perfect."
+          },
+          {
+            "display": "labōrō",
+            "cue": "I work",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I work': labōrō 'I work', labōrat 'he works', labōrant 'they work'. L1-M4's verb."
+          },
+          {
+            "display": "pānem",
+            "cue": "bread",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Bread' as the thing eaten. L1-M8's word, back as food."
+          },
+          {
+            "display": "edō",
+            "cue": "I eat",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I eat' — irregular: edō 'I eat', ēst 'he eats', edere 'to eat'. L2-M5's verb, and the bar on ēst is all that keeps it off 'to be'."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The sentence before this one took a perfect and this one takes a present, and the only difference is the conjunction. Both describe a habit, both are about a fixed order of events, and the tense is decided by a word rather than by the meaning.",
+      "sound": "AN-te-quam la-BŌ-rō, PĀ-nem E-dō. Seven syllables before the comma: antequam is the longest connective in the course.",
+      "variations": [
+        {
+          "display": "Antequam labōrō, aquam bibō.",
+          "cue": "Before I work, I drink water.",
+          "changed": "a different thing done first"
+        },
+        {
+          "display": "Antequam dormiō, librum legō.",
+          "cue": "Before I sleep, I read a book.",
+          "changed": "the other end of the day"
+        },
+        {
+          "display": "Antequam labōrat, pānem ēst.",
+          "cue": "Before he works, he eats bread.",
+          "changed": "someone else, with edō's irregular shape"
+        }
+      ],
+      "mistake": {
+        "display": "Antequam labōrāvī, pānem edō.",
+        "why": "a perfect after antequam, borrowed from postquam one sentence above. The pair is the module's hardest fact and this is the direction the mistake usually runs, because 'before I worked' is what English says."
+      },
+      "usage": "Said describing the order of a morning.",
+      "mnemonic": "antequam looks forward, so it takes the present.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "Hōrā nōnā domum eō.",
+      "cue": "At the ninth hour I go home.",
+      "literal": "at-hour ninth home I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hōrā",
+            "cue": "at the hour",
+            "tag": "interference",
+            "forms": [],
+            "note": "'At the hour' — L2-M6's ablative, and the ending is the 'at'. No preposition, and the number agrees with it."
+          },
+          {
+            "display": "nōnā",
+            "cue": "ninth",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Ninth', agreeing with hōrā. A Roman hour was a twelfth of the daylight, so the ninth hour is mid-afternoon rather than nine o'clock."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition — L2-M4's word, and going home needs nothing in front of it."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go': eō 'I go', īs 'you go', it 'he goes', īmus 'we go', īvī 'I went'. The shortest verb in the course."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "Three of the four words refuse a preposition: hōrā needs none for 'at', domum needs none for 'to', and the verb needs no pronoun. The ninth hour is also not nine o'clock — it is three quarters of the way through the daylight, whenever that falls.",
+      "sound": "HŌ-rā NŌ-nā DO-mum E-ō. Two long ō endings that rhyme, which is the agreement made audible.",
+      "variations": [
+        {
+          "display": "Hōrā nōnā domum īvī.",
+          "cue": "At the ninth hour I went home.",
+          "changed": "the perfect, for a particular day"
+        },
+        {
+          "display": "Hōrā nōnā domum īmus.",
+          "cue": "At the ninth hour we go home.",
+          "changed": "L2-M6's plural"
+        },
+        {
+          "display": "Cotīdiē hōrā nōnā domum eō.",
+          "cue": "Every day I go home at the ninth hour.",
+          "changed": "the habit made explicit"
+        }
+      ],
+      "mistake": {
+        "display": "In hōrā nōnā ad domum eō.",
+        "why": "both prepositions put back, and it is L2's whole lesson coming undone in one line. The ending is the 'at' and home is the one destination that needs no 'to' — each half of this plate is a different module's own error."
+      },
+      "usage": "Said about when your day ends.",
+      "mnemonic": "Nine of twelve daylight hours, not nine of twenty-four.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "Dum labōrō, mūsicam nōn audiō.",
+      "cue": "While I work, I do not listen to music.",
+      "literal": "while I-work music not I-hear",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dum",
+            "cue": "while",
+            "tag": "interference",
+            "forms": [],
+            "note": "'While', and it takes the PRESENT even when the story is past: dum legō is 'while I read' and 'while I was reading' both. It fixes nothing about time itself."
+          },
+          {
+            "display": "labōrō",
+            "cue": "I work",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I work'. L1-M4's verb, and here it is the background the other clause happens against."
+          },
+          {
+            "display": "mūsicam",
+            "cue": "music",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Music' as the thing heard — mūsica as the subject, mūsicam as the object. L1-M9's word in a new shape."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies. L1-M3's word."
+          },
+          {
+            "display": "audiō",
+            "cue": "I hear",
+            "tag": "delta",
+            "forms": [
+              "audiō",
+              "audit"
+            ],
+            "note": "'I hear, I listen to': audiō 'I hear', audit 'he hears'. It takes a plain object with no 'to' — English 'audible' and 'audience' keep it."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "No 'to'. audiō takes what you are listening to as a plain object, so mūsicam audiō is 'I listen music' — the fourth construction in this course where an English preposition has nowhere to attach, after raedā, hōrā and auxilium rogō.",
+      "sound": "DUM la-BŌ-rō, MŪ-si-cam nōn AU-di-ō. The au of audiō is one sound, not two: 'ow' rather than 'ay-oo'.",
+      "variations": [
+        {
+          "display": "Dum labōrō, mūsicam audiō.",
+          "cue": "While I work, I listen to music.",
+          "changed": "the negative dropped"
+        },
+        {
+          "display": "Dum legō, mūsicam nōn audiō.",
+          "cue": "While I read, I do not listen to music.",
+          "changed": "a different background activity"
+        },
+        {
+          "display": "Dum labōrat, mūsicam audit.",
+          "cue": "While he works, he listens to music.",
+          "changed": "someone else, both verbs moving"
+        }
+      ],
+      "mistake": {
+        "display": "Dum labōrō, ad mūsicam nōn audiō.",
+        "why": "'to' put in front of the music. audiō needs no preposition and ad would make it a direction — you would be listening TOWARDS the music, which is not a thing Latin can mean."
+      },
+      "usage": "Said about how you work.",
+      "mnemonic": "You hear music, you do not hear to it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "Postquam cēnam ēdī, librum legō.",
+      "cue": "After I have eaten dinner, I read a book.",
+      "literal": "after dinner I-ate book I-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "postquam",
+            "cue": "after",
+            "tag": "interference",
+            "forms": [],
+            "note": "'After', and it takes the PERFECT: postquam vēnī, 'after I came'. Its partner antequam takes the present, which is not guessable from either meaning."
+          },
+          {
+            "display": "cēnam",
+            "cue": "dinner",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Dinner' — cēna as the subject, cēnam as the thing eaten. L2-M5's word, and the one big meal of a Roman day."
+          },
+          {
+            "display": "ēdī",
+            "cue": "I ate",
+            "tag": "interference",
+            "forms": [
+              "ēdī",
+              "ēdit"
+            ],
+            "note": "'I ate' — the perfect of edō, and the macron does a THIRD job in this verb: ēdī against edō, ēst against est, ēs against es. One verb, three bars, and ēdit is 'he ate'."
+          },
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the thing read."
+          },
+          {
+            "display": "legō",
+            "cue": "I read",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read'. L1-M4's verb, and here it is a habit rather than one occasion."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "A perfect and a present in one habitual sentence, and both are right. postquam demands the perfect for the thing already done, and the main clause stays present because the habit is standing — so this is not a past sentence with a present in it, it is a rule about order.",
+      "sound": "POST-quam CĒ-nam Ē-dī, LI-brum LE-gō. Three long vowels in the first clause and one in the second.",
+      "variations": [
+        {
+          "display": "Postquam cēnam ēdī, dormiō.",
+          "cue": "After I have eaten dinner, I sleep.",
+          "changed": "the day ending instead"
+        },
+        {
+          "display": "Postquam cēnam ēdit, librum legit.",
+          "cue": "After he has eaten dinner, he reads a book.",
+          "changed": "someone else, with edō's third-person perfect"
+        },
+        {
+          "display": "Postquam pānem ēdī, labōrō.",
+          "cue": "After I have eaten bread, I work.",
+          "changed": "M5's other food"
+        }
+      ],
+      "mistake": {
+        "display": "Postquam cēnam edō, librum legō.",
+        "why": "the present after postquam. It is the same slip as S03's and it is easier here, because the main clause is present and the ear wants the two halves to match — but postquam is what decides, not the clause beside it."
+      },
+      "usage": "Said describing an evening habit.",
+      "mnemonic": "Three bars in one verb: edō, ēst, ēdī.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "Antequam dormiō, epistulam scrībō.",
+      "cue": "Before I sleep, I write a letter.",
+      "literal": "before I-sleep letter I-write",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "antequam",
+            "cue": "before",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Before', and it takes the PRESENT even about the past: antequam labōrō, 'before I work'. Its partner postquam takes the perfect."
+          },
+          {
+            "display": "dormiō",
+            "cue": "I sleep",
+            "tag": "delta",
+            "forms": [
+              "dormiō",
+              "dormit"
+            ],
+            "note": "'I sleep': dormiō 'I sleep', dormit 'he sleeps'. English 'dormitory' and 'dormant' keep it."
+          },
+          {
+            "display": "epistulam",
+            "cue": "letter",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Letter' as the thing written — epistula as the subject, epistulam as the object. L1-M6's word, and English 'epistle' keeps it."
+          },
+          {
+            "display": "scrībō",
+            "cue": "I write",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I write': scrībō 'I write', scrībit 'he writes', scrīpsī 'I wrote'. L1-M6's verb."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "Both verbs are present and the sentence is about a fixed order. antequam is the conjunction that behaves the way English expects and postquam is the one that does not, which is why they are worth learning in this direction: remember postquam's perfect and antequam looks after itself.",
+      "sound": "AN-te-quam DOR-mi-ō, e-PIS-tu-lam SCRĪ-bō. Nine syllables of nothing but short vowels until the last two.",
+      "variations": [
+        {
+          "display": "Antequam dormiō, librum legō.",
+          "cue": "Before I sleep, I read a book.",
+          "changed": "a different last thing"
+        },
+        {
+          "display": "Antequam dormit, epistulam scrībit.",
+          "cue": "Before he sleeps, he writes a letter.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Antequam dormiō, aquam bibō.",
+          "cue": "Before I sleep, I drink water.",
+          "changed": "M5's drink"
+        }
+      ],
+      "mistake": {
+        "display": "Antequam dormīvī, epistulam scrībō.",
+        "why": "a perfect after antequam again. The pull is strong because English says 'before I went to sleep', and dormīvī is not even a word this course has taught — so the plate is wrong about the tense and about the vocabulary at once."
+      },
+      "usage": "Said about the end of a day.",
+      "mnemonic": "antequam keeps the present; postquam takes the past.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "Prīmum surgō, deinde labōrō, postrēmō dormiō.",
+      "cue": "First I get up, next I work, finally I sleep.",
+      "literal": "first I-get-up next I-work finally I-sleep",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prīmum",
+            "cue": "first of all",
+            "tag": "interference",
+            "forms": [],
+            "note": "'First of all' — L2-M10's ADVERB, which opens a sentence and agrees with nothing. S01's prīmā is the ordinal and a different key."
+          },
+          {
+            "display": "surgō",
+            "cue": "I get up",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I get up': surgō 'I get up', surgit 'he gets up'."
+          },
+          {
+            "display": "deinde",
+            "cue": "next",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Next'. L2-M10's sequencer, at the front of its clause, like the other three."
+          },
+          {
+            "display": "labōrō",
+            "cue": "I work",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I work'. L1-M4's verb."
+          },
+          {
+            "display": "postrēmō",
+            "cue": "finally",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Finally, last of all'. L2-M10's closer — after it a listener expects you to stop."
+          },
+          {
+            "display": "dormiō",
+            "cue": "I sleep",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I sleep': dormiō 'I sleep', dormit 'he sleeps'."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "These are ADVERBS and the module's other connectives are CONJUNCTIONS. prīmum, deinde and postrēmō open clauses that stand alone; dum, postquam and antequam JOIN two clauses into one sentence. L2-M10 had only the first kind, and that is the difference between a list and a sentence.",
+      "sound": "PRĪ-mum SUR-gō, DE-in-de la-BŌ-rō, pos-TRĒ-mō DOR-mi-ō. Three clauses, three stresses, and the line is a rhythm before it is a meaning.",
+      "variations": [
+        {
+          "display": "Prīmum surgō, deinde pānem edō.",
+          "cue": "First I get up, next I eat bread.",
+          "changed": "two steps instead of three"
+        },
+        {
+          "display": "Prīmum surgit, deinde labōrat.",
+          "cue": "First he gets up, next he works.",
+          "changed": "someone else, and the subject named nowhere"
+        },
+        {
+          "display": "Postquam surgō, labōrō.",
+          "cue": "After I get up, I work.",
+          "changed": "a conjunction instead, which makes one sentence of two"
+        }
+      ],
+      "mistake": {
+        "display": "Prīmā surgō, deinde labōrō.",
+        "why": "the ordinal used as the adverb. prīmā needs a noun to agree with and there is none here, so the sentence has an ending hanging off nothing — which is the mirror of S01's plate and the reason both exist."
+      },
+      "usage": "Said giving the shape of a whole day.",
+      "mnemonic": "Adverbs open; conjunctions join.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "Dum Mārcus dormit, ego labōrō.",
+      "cue": "While Marcus sleeps, I work.",
+      "literal": "while Marcus he-sleeps I I-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dum",
+            "cue": "while",
+            "tag": "interference",
+            "forms": [],
+            "note": "'While', and it takes the PRESENT even when the story is past: dum legō is 'while I read' and 'while I was reading' both. It fixes nothing about time itself."
+          },
+          {
+            "display": "mārcus",
+            "cue": "Marcus",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman man's name in the subject shape. He is named because the clause has its own subject, different from the main clause's."
+          },
+          {
+            "display": "dormit",
+            "cue": "he sleeps",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He sleeps' — dormiō's third-person shape. dormiō, dormit: the ending is the only thing that changes."
+          },
+          {
+            "display": "ego",
+            "cue": "I",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I' — and labōrō already says it. L1-M10's row, here for the contrast: the sentence is about who is doing what, so both subjects are written."
+          },
+          {
+            "display": "labōrō",
+            "cue": "I work",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I work'. L1-M4's verb."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Two subjects in one sentence, and ego is the reason it works. The course has spent three levels saying to drop the pronoun, and this is the exception: when a sentence sets one person against another, the pronoun is what carries the contrast.",
+      "sound": "DUM MĀR-cus DOR-mit, E-go la-BŌ-rō. The two names of the two people sit at the front of their own clauses.",
+      "variations": [
+        {
+          "display": "Dum Mārcus dormit, labōrō.",
+          "cue": "While Marcus sleeps, I work.",
+          "changed": "ego dropped, which is correct and flatter"
+        },
+        {
+          "display": "Dum Iūlia legit, ego labōrō.",
+          "cue": "While Julia reads, I work.",
+          "changed": "a different person doing something else"
+        },
+        {
+          "display": "Dum dormiō, Mārcus labōrat.",
+          "cue": "While I sleep, Marcus works.",
+          "changed": "the two swapped"
+        }
+      ],
+      "mistake": {
+        "display": "Dum Mārcus dormiēbat, ego labōrō.",
+        "why": "an imperfect inside a dum clause — wrong twice, as in S02. dum takes the present in real Latin and this course has no imperfect at all, so a learner who writes this has invented a form and misused a conjunction in five words."
+      },
+      "usage": "Said contrasting what two people are doing.",
+      "mnemonic": "Drop the pronoun unless it is the point.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "Dum legō, mūsicam audiō.",
+      "cue": "While I read, I listen to music."
+    },
+    {
+      "id": "L3-M1-C02",
+      "display": "Postquam vēnī, cēnam ēdī.",
+      "cue": "After I came, I ate dinner."
+    },
+    {
+      "id": "L3-M1-C03",
+      "display": "Antequam dormiō, librum legō.",
+      "cue": "Before I sleep, I read a book."
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "Hōrā prīmā surgō.",
+      "cue": "I get up at the first hour."
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "Cotīdiē hōrā nōnā domum eō.",
+      "cue": "Every day I go home at the ninth hour."
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "Dum Mārcus labōrat, ego legō.",
+      "cue": "While Marcus works, I read."
+    },
+    {
+      "id": "L3-M1-C07",
+      "display": "Postquam cēnam ēdī, dormiō.",
+      "cue": "After I have eaten dinner, I sleep."
+    },
+    {
+      "id": "L3-M1-C08",
+      "display": "Antequam labōrō, aquam bibō.",
+      "cue": "Before I work, I drink water."
+    },
+    {
+      "id": "L3-M1-C09",
+      "display": "Dum dormiō, nōn labōrō.",
+      "cue": "While I sleep, I do not work."
+    },
+    {
+      "id": "L3-M1-C10",
+      "display": "Prīmum surgō, deinde labōrō.",
+      "cue": "First I get up, next I work."
+    },
+    {
+      "id": "L3-M1-C11",
+      "display": "Hōrā sextā pānem edō.",
+      "cue": "At the sixth hour I eat bread."
+    },
+    {
+      "id": "L3-M1-C12",
+      "display": "Postquam epistulam scrīpsī, domum īvī.",
+      "cue": "After I wrote a letter, I went home."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

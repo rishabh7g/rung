@@ -1,0 +1,786 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M5",
+  "title": "What someone said",
+  "job": "Reporting other people's words",
+  "prerequisites": [
+    "L3-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "dīcit + sē + V-infinitive",
+      "dīcit + N-acc + V-infinitive",
+      "dīxit + sē + V-perfect-infinitive",
+      "negat + sē + V-infinitive",
+      "N-acc + suum + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "sē MEANS THE SPEAKER AND eum MEANS SOMEBODY ELSE, AND THAT IS THE WHOLE MODULE. dīcit sē venīre is 'he says HE HIMSELF is coming'; dīcit eum venīre is 'he says SOMEONE ELSE is coming'. One word decides it, and English needs a whole clause of context to do the same job — so every reported sentence in Latin makes you settle something English lets you leave vague. Getting it wrong produces correct Latin with the wrong meaning, which is the worst kind of error there is."
+    },
+    {
+      "tag": "delta",
+      "text": "THE CONSTRUCTION IS M3's, UNCHANGED: the reported clause's subject goes into the accusative, its verb becomes an infinitive, and NOTHING JOINS THE TWO HALVES. There is still no word for 'that', and the mistake plate is still the English quod clause — for the second module running, because it is the shape an English speaker will keep reaching for and quod is already L1-M9's 'because'."
+    },
+    {
+      "tag": "interference",
+      "text": "THE INFINITIVE'S TENSE IS RELATIVE TO THE REPORTING VERB. dīxit sē venīre is 'he said he WAS coming' — present infinitive, the same time as the saying. dīxit sē vēnisse is 'he said he HAD come' — perfect infinitive, earlier than the saying. English's two tenses are one step apart in Latin and the step is inside the INFINITIVE rather than in dīxit, which is the one place an English speaker will not look. The perfect infinitive is built on the perfect stem: vēnī gives vēnisse, lēgī gives lēgisse, errāvī gives errāvisse."
+    },
+    {
+      "tag": "delta",
+      "text": "negō IS 'I SAY THAT … NOT', ONE WORD FOR TWO, and there is no nōn anywhere in it. This is the third place in the course where Latin puts a negative inside a verb — L1-M3's nōlō and L2-M9's mālō are the others — and naming all three together turns three exceptions into one habit. Adding nōn to negat gives you two negatives, which cancel exactly as they do in careful English."
+    },
+    {
+      "tag": "interference",
+      "text": "suus IS THE FIRST POSSESSIVE THIS COURSE HAS TAUGHT, AND IT IS REFLEXIVE. L2-M2 said out loud that no Latin word in this course carried 'my', because Latin leaves obvious possession out. suus means the SUBJECT's own — librum suum legit, 'he is reading his own book' — and it agrees with what is owned rather than with who owns it. eius ('his', meaning somebody else's) and meus are named here and written nowhere: one module cannot open a possessive system and a reflexive at the same time, and the reflexive is the one reported speech needs."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M5-S01",
+      "display": "Dīcit sē venīre.",
+      "cue": "He says he is coming.",
+      "literal": "he-says himself to-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīcit",
+            "cue": "he says",
+            "tag": "delta",
+            "forms": [
+              "dīcō",
+              "dīcit"
+            ],
+            "note": "'He says' — dīcō 'I say', dīcit 'he says', dīxit 'he said'. English 'dictate' and 'verdict' come from it."
+          },
+          {
+            "display": "sē",
+            "cue": "himself",
+            "tag": "interference",
+            "forms": [
+              "sē"
+            ],
+            "note": "'Himself, herself' — and it means the person who is doing the SAYING. M3's eum means somebody else, and that one word is the whole difference."
+          },
+          {
+            "display": "venīre",
+            "cue": "to come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To come' — veniō's infinitive, and the shape a reported clause needs. L1-M9's verb."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "sē means the speaker. This is M3's accusative and infinitive with one word changed, and that word decides who is coming — Latin settles in three letters what English needs a paragraph of context for.",
+      "sound": "DĪ-cit SĒ ve-NĪ-re. Both dīcit and sē carry a long vowel, and sē is a whole word made of one.",
+      "variations": [
+        {
+          "display": "Dīcit sē labōrāre.",
+          "cue": "He says he is working.",
+          "changed": "a different thing reported"
+        },
+        {
+          "display": "Dīcit sē domum īre.",
+          "cue": "He says he is going home.",
+          "changed": "L2-M4's home inside the report"
+        },
+        {
+          "display": "Dīcō mē venīre.",
+          "cue": "I say that I am coming.",
+          "changed": "the speaker is me, so sē becomes M1's mē"
+        }
+      ],
+      "mistake": {
+        "display": "Dīcit quod venit.",
+        "why": "'that' supplied, exactly as M3's plate warned. There is no word for it, and quod is L1-M9's 'because' — this is the second module running where the English shape is the error, because it is the one an English speaker will keep reaching for."
+      },
+      "usage": "Said passing on what someone told you.",
+      "mnemonic": "sē is the one doing the saying.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S02",
+      "display": "Dīcit eum venīre.",
+      "cue": "He says that the other man is coming.",
+      "literal": "he-says him to-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīcit",
+            "cue": "he says",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He says' — dīcō 'I say', dīcit 'he says', dīxit 'he said'. English 'dictate' and 'verdict' come from it."
+          },
+          {
+            "display": "eum",
+            "cue": "him",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Him' — is, ea, id, the colourless pointing word M3 opened. In reported speech it means someone OTHER than the speaker."
+          },
+          {
+            "display": "venīre",
+            "cue": "to come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To come' — veniō's infinitive."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "One word different from the sentence above, and a different person is coming. sē is the speaker and eum is somebody else, and there is no third option — so every reported sentence in Latin makes you decide something English lets you leave vague.",
+      "sound": "DĪ-cit E-um ve-NĪ-re. eum is two short syllables where sē was one long one: the contrast is audible.",
+      "variations": [
+        {
+          "display": "Dīcit eum labōrāre.",
+          "cue": "He says the other man is working.",
+          "changed": "a different thing reported"
+        },
+        {
+          "display": "Dīcit sē venīre.",
+          "cue": "He says HE is coming.",
+          "changed": "back to the speaker, which is S01"
+        },
+        {
+          "display": "Putat eum venīre.",
+          "cue": "He thinks the other man is coming.",
+          "changed": "M3's verb of thinking instead"
+        }
+      ],
+      "mistake": {
+        "display": "Dīcit sē venīre.",
+        "why": "not wrong Latin — wrong MEANING, which is the worst kind of error a course can leave a learner with. It says the speaker is coming, and if you meant someone else you have reported the opposite of what you heard and nothing at all will warn you."
+      },
+      "usage": "Said reporting on a third person.",
+      "mnemonic": "eum is anyone but the speaker.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S03",
+      "display": "Dīxit sē vēnisse.",
+      "cue": "He said he had come.",
+      "literal": "he-said himself to-have-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīxit",
+            "cue": "he said",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He said' — the perfect of dīcō, first written at L3-M3. dīcō, dīcit, dīxit."
+          },
+          {
+            "display": "sē",
+            "cue": "himself",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Himself, herself' — and it means the person who is doing the SAYING. M3's eum means somebody else, and that one word is the whole difference."
+          },
+          {
+            "display": "vēnisse",
+            "cue": "to have come",
+            "tag": "interference",
+            "forms": [
+              "vēnisse"
+            ],
+            "note": "'To have come' — the PERFECT infinitive of veniō. venīre is 'to come' at the same time as the saying; vēnisse is earlier than it."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "The tense step is in the INFINITIVE, not in dīxit. vēnisse is 'to have come' — earlier than the saying — so this is 'he said he HAD come'. English moves the tense of the reported verb and Latin moves it too, but inside the infinitive, which is the one place an English speaker will not look.",
+      "sound": "DĪ-xit SĒ vē-NIS-se. The double s of vēnisse is held, and the long ē before it is what marks the perfect.",
+      "variations": [
+        {
+          "display": "Dīxit eum vēnisse.",
+          "cue": "He said the other man had come.",
+          "changed": "someone else having come"
+        },
+        {
+          "display": "Dīxit sē venīre.",
+          "cue": "He said he was coming.",
+          "changed": "the present infinitive, which is a different time"
+        },
+        {
+          "display": "Negat sē vēnisse.",
+          "cue": "He says he did not come.",
+          "changed": "the denial, which needs no nōn"
+        }
+      ],
+      "mistake": {
+        "display": "Dīxit sē vēnit.",
+        "why": "the plain perfect where the infinitive belongs. vēnit is a finite verb and a reported clause cannot hold one — the construction needs an infinitive, and the tense goes into it rather than into the verb doing the reporting."
+      },
+      "usage": "Said reporting something already finished.",
+      "mnemonic": "The tense step lives in the infinitive.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S04",
+      "display": "Dīxit sē venīre.",
+      "cue": "He said he was coming.",
+      "literal": "he-said himself to-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīxit",
+            "cue": "he said",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He said' — the perfect of dīcō."
+          },
+          {
+            "display": "sē",
+            "cue": "himself",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Himself, herself' — and it means the person who is doing the SAYING. M3's eum means somebody else, and that one word is the whole difference."
+          },
+          {
+            "display": "venīre",
+            "cue": "to come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To come' — the PRESENT infinitive, which means 'at the same time as the saying'. Against vēnisse, which means earlier."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "Same reporting verb as the sentence above and a different infinitive, and English translates the two with different tenses: 'he said he WAS coming' here and 'he said he HAD come' there. The present infinitive means 'at the same time', whenever that was — its tense is relative and not absolute.",
+      "variations": [
+        {
+          "display": "Dīxit sē vēnisse.",
+          "cue": "He said he had come.",
+          "changed": "the perfect infinitive, one step further back"
+        },
+        {
+          "display": "Dīcit sē venīre.",
+          "cue": "He says he is coming.",
+          "changed": "the reporting verb present, which moves the whole thing to now"
+        },
+        {
+          "display": "Dīxit eum venīre.",
+          "cue": "He said the other man was coming.",
+          "changed": "someone else coming"
+        }
+      ],
+      "usage": "Said reporting a plan someone had.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S05",
+      "display": "Negat sē venīre.",
+      "cue": "He says he is not coming.",
+      "literal": "he-denies himself to-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "negat",
+            "cue": "he says … not",
+            "tag": "interference",
+            "forms": [
+              "negō",
+              "negat"
+            ],
+            "note": "'He denies, he says that … not' — one word for two, and there is no nōn anywhere in the sentence. negō 'I deny', negat 'he denies'. English 'negative' is the same word."
+          },
+          {
+            "display": "sē",
+            "cue": "himself",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Himself, herself' — and it means the person who is doing the SAYING. M3's eum means somebody else, and that one word is the whole difference."
+          },
+          {
+            "display": "venīre",
+            "cue": "to come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To come' — veniō's infinitive."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The negative is inside the verb. This is the third place in the course where Latin does that — L1-M3's nōlō ('I do not want') and L2-M9's mālō ('I prefer') are the others — and naming all three together turns three exceptions into one habit.",
+      "sound": "NE-gat SĒ ve-NĪ-re. Three short vowels then one long: the denial is the lightest word in the line.",
+      "variations": [
+        {
+          "display": "Negat eum venīre.",
+          "cue": "He says the other man is not coming.",
+          "changed": "someone else denied"
+        },
+        {
+          "display": "Negat sē vēnisse.",
+          "cue": "He says he did not come.",
+          "changed": "the perfect infinitive, so the denial is about the past"
+        },
+        {
+          "display": "Dīcit sē nōn venīre.",
+          "cue": "He says he is not coming.",
+          "changed": "the same meaning built with nōn, which is also correct and flatter"
+        }
+      ],
+      "mistake": {
+        "display": "Negat sē nōn venīre.",
+        "why": "nōn added to a verb that already contains one. This says he denies that he is not coming — which is a real thing to say and the opposite of what you meant. Two negatives in Latin cancel each other exactly as they do in careful English."
+      },
+      "usage": "Said reporting a refusal.",
+      "mnemonic": "nōlō, mālō, negō: the negative is in the verb.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S06",
+      "display": "Librum suum legit.",
+      "cue": "He is reading his own book.",
+      "literal": "book his-own he-reads",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the thing read — liber as the subject, librum as the object."
+          },
+          {
+            "display": "suum",
+            "cue": "his own",
+            "tag": "interference",
+            "forms": [
+              "suus",
+              "suum",
+              "suam",
+              "suōs"
+            ],
+            "note": "'His own, her own' — and 'own' is the whole point: it belongs to the subject of the sentence. It agrees with what is owned, not with who owns it: suum, suam, suōs."
+          },
+          {
+            "display": "legit",
+            "cue": "he reads",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He reads' — legō, legis, legit, legimus. L1-M4's verb."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "This course has taught NO possessive at all until now — L2-M2 said so out loud, because three of its cues said 'my' and no Latin word carried it. suus is the first, and it arrives REFLEXIVE: it means the subject's own. eius, 'his' meaning somebody else's, is a different word and this course does not write it.",
+      "sound": "LI-brum SU-um LE-git. Both of the first two words end in -um, and that rhyme is the agreement.",
+      "variations": [
+        {
+          "display": "Librōs suōs legit.",
+          "cue": "He is reading his own books.",
+          "changed": "more than one book, so both words move"
+        },
+        {
+          "display": "Librum suum nōn legit.",
+          "cue": "He is not reading his own book.",
+          "changed": "the negative"
+        },
+        {
+          "display": "Librum legit.",
+          "cue": "He is reading the book.",
+          "changed": "no possessive at all, which is what Latin does when it is obvious"
+        }
+      ],
+      "mistake": {
+        "display": "Liber suus legit.",
+        "why": "the subject shapes, which would mean the book is doing the reading. suum agrees with what is OWNED and not with who owns it, so it follows librum into the accusative — and this is L2-M3's agreement on the first possessive the course has taught."
+      },
+      "usage": "Said about whose thing it is.",
+      "mnemonic": "suus agrees with the thing, not the owner.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S07",
+      "display": "Dīcit librum suum gravem esse.",
+      "cue": "He says his own book is heavy.",
+      "literal": "he-says book his-own heavy to-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīcit",
+            "cue": "he says",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He says' — dīcō 'I say', dīcit 'he says', dīxit 'he said'. English 'dictate' and 'verdict' come from it."
+          },
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book', and here it is the accusative of the reported clause rather than the object of anything."
+          },
+          {
+            "display": "suum",
+            "cue": "his own",
+            "tag": "interference",
+            "forms": [],
+            "note": "'His own, her own' — and 'own' is the whole point: it belongs to the subject of the sentence. It agrees with what is owned, not with who owns it: suum, suam, suōs."
+          },
+          {
+            "display": "gravem",
+            "cue": "heavy",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Heavy' — L2-M2's gravis in the object shape, agreeing with librum along with suum."
+          },
+          {
+            "display": "esse",
+            "cue": "to be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To be' — sum's infinitive. M3 opened it, and L2-M5 named it and wrote it nowhere."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Three words agreeing inside a reported clause: librum, suum and gravem all take the accusative because the clause is reported, and all three describe the same book. This is M3's construction and this module's possessive arriving in one sentence, and there is nothing new in it except the combination.",
+      "sound": "DĪ-cit LI-brum SU-um GRA-vem ES-se. Three -um and -em endings in a row: the whole middle of the line rhymes.",
+      "variations": [
+        {
+          "display": "Dīcit librum suum brevem esse.",
+          "cue": "He says his own book is short.",
+          "changed": "a different judgement"
+        },
+        {
+          "display": "Dīcit mēnsam suam gravem esse.",
+          "cue": "He says his own table is heavy.",
+          "changed": "a feminine thing, so all three words move"
+        },
+        {
+          "display": "Liber suus gravis est.",
+          "cue": "His own book is heavy.",
+          "changed": "asserted rather than reported, so nothing is in the accusative"
+        }
+      ],
+      "usage": "Said reporting an opinion about a possession.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S08",
+      "display": "Putat sē linguam discere.",
+      "cue": "He thinks he is learning the language.",
+      "literal": "he-thinks himself language to-learn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "putat",
+            "cue": "he thinks",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He thinks' — M3's putō, putat. English 'compute' and 'reputation' come from it."
+          },
+          {
+            "display": "sē",
+            "cue": "himself",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Himself, herself' — and it means the person who is doing the SAYING. M3's eum means somebody else, and that one word is the whole difference."
+          },
+          {
+            "display": "linguam",
+            "cue": "language",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Language' as the thing learned. M2's word, and it is the object of discere rather than of putat."
+          },
+          {
+            "display": "discere",
+            "cue": "to learn",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To learn' — M2's discō as an infinitive: discō, discit, discere."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Two accusatives in one clause and they are doing different jobs. sē is what the clause is ABOUT and linguam is what is being learned — so the shape does not tell you the role, and the only guide is which word the infinitive naturally takes as its object.",
+      "variations": [
+        {
+          "display": "Putat eum linguam discere.",
+          "cue": "He thinks the other man is learning the language.",
+          "changed": "someone else learning"
+        },
+        {
+          "display": "Negat sē linguam discere.",
+          "cue": "He says he is not learning the language.",
+          "changed": "the denial"
+        },
+        {
+          "display": "Putō mē linguam discere.",
+          "cue": "I think I am learning the language.",
+          "changed": "about myself, so both pronouns change"
+        }
+      ],
+      "mistake": {
+        "display": "Putat sē lingua discere.",
+        "why": "the language left in its subject shape, because there is already one accusative in the clause and the ear is satisfied. Both words need it and for different reasons, which is what makes this construction expensive to read."
+      },
+      "usage": "Said reporting what someone believes about themselves.",
+      "mnemonic": "Two accusatives, two jobs.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S09",
+      "display": "Dīxit sē librum lēgisse.",
+      "cue": "He said he had read the book.",
+      "literal": "he-said himself book to-have-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīxit",
+            "cue": "he said",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He said' — the perfect of dīcō."
+          },
+          {
+            "display": "sē",
+            "cue": "himself",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Himself, herself' — and it means the person who is doing the SAYING. M3's eum means somebody else, and that one word is the whole difference."
+          },
+          {
+            "display": "librum",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the thing read, inside the reported clause."
+          },
+          {
+            "display": "lēgisse",
+            "cue": "to have read",
+            "tag": "interference",
+            "forms": [
+              "lēgisse"
+            ],
+            "note": "'To have read' — the perfect infinitive of legō: legō, lēgī, lēgisse. It is earlier than the saying, exactly as vēnisse is."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "A perfect infinitive with an object, which is the longest reported clause the module writes. lēgisse is built on the perfect stem lēgī, not on legō — so a learner who knows L1-M5's rule that the perfect rebuilds the verb has everything needed to make this shape.",
+      "sound": "DĪ-xit SĒ LI-brum lē-GIS-se. Two long vowels at the front and one in the middle of the infinitive.",
+      "variations": [
+        {
+          "display": "Dīxit sē librum legere.",
+          "cue": "He said he was reading the book.",
+          "changed": "the present infinitive, so the reading was going on at the time"
+        },
+        {
+          "display": "Dīxit eum librum lēgisse.",
+          "cue": "He said the other man had read the book.",
+          "changed": "someone else having read it"
+        },
+        {
+          "display": "Negat sē librum lēgisse.",
+          "cue": "He says he did not read the book.",
+          "changed": "the denial about the past"
+        }
+      ],
+      "usage": "Said reporting something someone claimed to have done.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M5-S10",
+      "display": "Negat sē errāvisse; ego tamen putō eum errāvisse.",
+      "cue": "He says he did not make a mistake; I think he did, though.",
+      "literal": "he-denies himself to-have-erred I however I-think him to-have-erred",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "negat",
+            "cue": "he says … not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He denies' — negō, negat, with the negative inside the verb and no nōn anywhere."
+          },
+          {
+            "display": "sē",
+            "cue": "himself",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Himself, herself' — and it means the person who is doing the SAYING. M3's eum means somebody else, and that one word is the whole difference."
+          },
+          {
+            "display": "errāvisse",
+            "cue": "to have erred",
+            "tag": "interference",
+            "forms": [
+              "errāvisse"
+            ],
+            "note": "'To have made a mistake' — the perfect infinitive of L2-M8's errō: errāvī, errāvisse. The regular perfect, which is not the common one."
+          },
+          {
+            "display": "ego",
+            "cue": "I",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I' — and putō already says it. Here it carries the contrast between what he claims and what I think, which is the one job a pronoun has."
+          },
+          {
+            "display": "tamen",
+            "cue": "however",
+            "tag": "delta",
+            "forms": [],
+            "note": "'However', and it comes SECOND in its clause. M3's word, and the sixth of six that must."
+          },
+          {
+            "display": "putō",
+            "cue": "I think",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I think': putō, putat. M3's verb."
+          },
+          {
+            "display": "eum",
+            "cue": "him",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Him' — is, ea, id, the colourless pointing word M3 opened. In reported speech it means someone OTHER than the speaker."
+          },
+          {
+            "display": "errāvisse",
+            "cue": "to have erred",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To have made a mistake' — the same perfect infinitive, and this time about HIM rather than about the speaker."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "The same infinitive twice with a different pronoun each time, and that is the whole module in one line: sē in his report because he is talking about himself, eum in mine because I am talking about him. Change the pronoun and you change who was wrong.",
+      "sound": "NE-gat SĒ er-rā-VIS-se; E-go TA-men PU-tō E-um er-rā-VIS-se. Sixteen syllables and the two halves end on the same word.",
+      "variations": [
+        {
+          "display": "Negat sē errāvisse; ego tamen cōnsentiō.",
+          "cue": "He says he did not make a mistake; I agree, though.",
+          "changed": "M3's agreement instead of a contrary opinion"
+        },
+        {
+          "display": "Dīcit sē errāvisse.",
+          "cue": "He says he did make a mistake.",
+          "changed": "the admission, with no denial and no second clause"
+        },
+        {
+          "display": "Negat sē errāvisse; putō tamen eum errāvisse.",
+          "cue": "He says he did not make a mistake; I think he did, though.",
+          "changed": "ego dropped, which is correct and flatter"
+        }
+      ],
+      "mistake": {
+        "display": "Negat sē errāvisse; ego tamen putō sē errāvisse.",
+        "why": "sē used in the second clause, where the speaker is me and the person being discussed is him. sē always points at the subject of its OWN clause, so this says I think I was wrong — which is the module's central error committed at the one moment the sentence has two reporters."
+      },
+      "usage": "Said disagreeing with someone's account.",
+      "mnemonic": "sē points at its own clause's subject.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M5-C01",
+      "display": "Dīcit sē labōrāre.",
+      "cue": "He says he is working."
+    },
+    {
+      "id": "L3-M5-C02",
+      "display": "Dīcit eum labōrāre.",
+      "cue": "He says the other man is working."
+    },
+    {
+      "id": "L3-M5-C03",
+      "display": "Dīxit sē vēnisse.",
+      "cue": "He said he had come."
+    },
+    {
+      "id": "L3-M5-C04",
+      "display": "Dīxit eum venīre.",
+      "cue": "He said the other man was coming."
+    },
+    {
+      "id": "L3-M5-C05",
+      "display": "Negat sē vēnisse.",
+      "cue": "He says he did not come."
+    },
+    {
+      "id": "L3-M5-C06",
+      "display": "Librum suum nōn legit.",
+      "cue": "He is not reading his own book."
+    },
+    {
+      "id": "L3-M5-C07",
+      "display": "Dīcit librum suum brevem esse.",
+      "cue": "He says his own book is short."
+    },
+    {
+      "id": "L3-M5-C08",
+      "display": "Putat eum linguam discere.",
+      "cue": "He thinks the other man is learning the language."
+    },
+    {
+      "id": "L3-M5-C09",
+      "display": "Dīxit sē librum legere.",
+      "cue": "He said he was reading the book."
+    },
+    {
+      "id": "L3-M5-C10",
+      "display": "Negat sē errāvisse.",
+      "cue": "He says he did not make a mistake."
+    },
+    {
+      "id": "L3-M5-C11",
+      "display": "Dīcō mē venīre.",
+      "cue": "I say that I am coming."
+    },
+    {
+      "id": "L3-M5-C12",
+      "display": "Liber suus gravis est.",
+      "cue": "His own book is heavy."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

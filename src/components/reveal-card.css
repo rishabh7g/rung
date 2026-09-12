@@ -33,13 +33,18 @@
 
 /* ------------------------------------------------------------- the cue state */
 
-/* Centred in what is left of the card: the reveal sits in the middle of the screen, because
-   recalling before it is the whole of what is being asked. */
+/* Bottom of what is left of the card, NOT centred. The reveal and the self-mark are the same
+   slot: one control, at the foot of the column, that the thumb reaches without moving. A reveal
+   floating mid-screen and a mark row pinned to the bottom made the card's one control jump the
+   length of the screen on every tap, twice a card, fifteen cards a session. `justify-content:
+   flex-end` puts it where `.reveal-marks`' `margin-top: auto` puts the segments, so the tap that
+   reveals and the tap that marks land in the same place. The recall gap the centring was arguing
+   for is still there — it is the space above, which is now all of it. */
 .reveal-recall {
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 /* The registration marks frame the reveal CTA rather than a border — the prototype's `blueprint`

@@ -134,7 +134,7 @@ Sixteen files run today:
 | `src/pwa/offlineCourse.test.ts` | the scoped warm's two rules as tables — what the device does **not** download, and what an eviction deletes |
 | `src/state/store.test.ts` | the persisted document: migrations, the persisted slice, and what the progression engine is fed |
 | `tools/author-kit.test.ts` | that `content:kit` stays small — the brief, the bounds and one worked sentence, and nothing else (#480–#487) |
-| `tools/content-build.test.ts` | the fixture-course seam: a course that is a manifest row and a ladder, with no `modules/` at all (#606) — and, since en-sa graduated, that the catalogue holds no fixture row, that strict and dev now ship the identical ten courses, and that the gate still drops a fixture course on a synthetic tree (#611) |
+| `tools/content-build.test.ts` | the fixture-course seam: a course that is a manifest row and a ladder, with no `modules/` at all (#606) — and, with en-sa (#611) and en-la (#637) both graduated out of it, that the catalogue holds no fixture row, that strict and dev ship the identical eleven courses, and that the gate still drops a fixture course on a synthetic tree |
 | `tools/course-briefs.test.ts` | the briefs against the ladders they mirror, and the decisions en-ko's and en-sa's settle (#109, #376, #607) |
 | `tools/css-classes.test.ts` | the flat CSS namespace (#496) — see below |
 | `tools/delta-index.test.ts` | `fold(deltas) === the cumulative index`, exactly, for every shipped module (#424) |
@@ -1270,8 +1270,9 @@ ten modules**: **929 romanized surfaces checked, 0 of them carrying Devanagari i
 `forms`**, against **530** that carry the quiet Devanagari line underneath. en-ru cost six issues
 and 959 Cyrillic strings to undo; this course never had one to undo.
 
-**The shown-surface ratchet opens at ZERO, and en-sa is the only course in the catalogue there**
-(#491; the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
+**The shown-surface ratchet opens at ZERO, and en-sa was the first course in the catalogue there**
+(#491; en-la joined it at #637 and has held it from L1-M1 to L5-M10 — **all fifty rungs, the whole
+course** — at #641, #645, #649, #651, #652 and #653, and the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
 20 · en-de 11 · en-ko 12). It was designed rather than discovered, and it cost real content: every
 proper noun the course shows — `rāmaḥ`, `sītā` — carries a word row of its own from M1, because
 CLAUDE.md's warning is that a proper noun is COUNTED and not exempt; M8's agreeing numerals were
@@ -1332,6 +1333,274 @@ row and adds nothing to it. The Devanagari cuts came out **byte-identical** — 
 shared, which is why `course:en-ar` 405.1 → **406.2**, `course:en-ru` 391.2 → **392.3** and
 `course:en-ko` 403.2 → **404.2** each moved by ~1.1 KiB and the five native-script courses moved by
 nothing. No constant in `tools/payload-budget.ts` was edited.
+
+**en-la ships (#637, 2026-09-12) — the product has ELEVEN courses, and this is the first one whose
+spelling has no build gate at all.** English (L1) → Latin (L2). Ten L1 rungs authored against ten
+briefs (#633 — `tools/course-briefs.ts`, "en-la: decisions a brief must settle before any Latin is
+written"), across three authoring issues (#634 L1-M1–M2, #635 L1-M3–M5, #636 L1-M6–M10) and
+reviewed in [`docs/124`](docs/124-llm-review-en-la-L1-M1-M2.md),
+[`docs/125`](docs/125-llm-review-en-la-L1-M3-M5.md) and
+[`docs/126`](docs/126-llm-review-en-la-L1-M6-M10.md) — three documents, one per wave, each ending in
+its own open-question list. Dropping `fixture: true` from the en-la row in `content/courses.json`,
+and L1's level `draft: true` and its `draftNote` from `content/en-la/levels.json`, was the whole
+change: a strict `npm run build` reported `en-la: 10 modules (L1-M1..M10)` and emitted
+`public/content/en-la/` with levels, strings, ten modules and ten cumulative indexes closing at
+**189 surfaces**, and the emitted `courses.json` lists all eleven courses. The chrome is English
+(`revealLabel` = "Reveal the Latin") and the switcher offers the pair as `english → latin`. **Its
+L2–L5 ladders stay `draft: true`.**
+
+**`checkScriptMode` never runs on this course, and that is the fact everything else about it follows
+from.** Its first statement is `if (scriptMode !== 'romanized') return report`, and en-la's row is
+`scriptMode: "native"` — correctly, because Latin is written in Latin letters and there is nothing
+to transliterate. So where en-ar, en-ru, en-ko and en-sa each have a build gate standing over their
+spelling, en-la has none, and #630
+([`docs/123-en-la-orthography-decisions.md`](docs/123-en-la-orthography-decisions.md)) was written
+before the manifest row existed to say what replaces it.
+
+**The orthography in one line: a macron on every long vowel, per the Oxford Latin Dictionary, on
+every readable Latin string.** Not a stylistic preference — `src/engine/surface.ts` rule 4 folds
+case and never touches a diacritic, so `venit` (M4, "he comes") and `vēnit` (M5, "he came") are two
+index keys ONLY if the mark is written, and one row with one wrong note if it is not. The pair that
+matters most is not lexical at all: `rosa` and `rosā` are a case ending, so a macron-less en-la would
+teach the ablative and index it as the nominative. Consonantal u is `v` and consonantal i is `i`
+(`vīvō`, `iam`, `Iūlia`) and `j` never appears; no accent is ever written, because Latin stress
+follows from vowel length and en-ru's acutes have no seat here; Latin writes no elision, so no
+apostrophe appears in any display; and `script` is never authored, because the display already IS the
+script. `tū`/`vōs` is **number, not register** — Latin has no T/V distinction — so en-la will be the
+only course in the catalogue whose `formal` chip sits on a verb form (`velim`, `quaesō`) rather than
+on a pronoun.
+
+**The enclitics are joined with a HYPHEN, and the arrangement came out better than en-ko's.**
+`-ne` opens at M2 and `-que` at M10, written `agis-ne` and `aquam-que` and said solid, with the note
+saying printed Latin joins them so no learner is surprised by a page of Cicero.
+`surfaceIndexKeys('agis-ne bene')` is `['agis-ne bene', 'agis', 'ne']` where the solid `vidēsne`
+earns one key and no parts — so the hyphen is what keeps the bare host tappable. en-ko puts the
+joined form in the HOST's `forms` and the host therefore donates the particle's key one word early,
+which is #601's sixteen findings; en-la puts the joined forms in the **particle's** row and opens
+every host in an earlier sentence, so `agis`, `valēs`, `tū`, `aquam`, `librum`, `pānem` and
+`epistulam` all still answer for themselves and `ne` and `que` keep keys of their own. It works only
+because of that ordering, and the rule is written into M2's brief for L2 to inherit. The lexicalised
+ones are solid and their list is closed (`atque`, `neque`, `itaque`, `quoque`, `namque`, `dēnique`);
+M9-S04 and M10-S07 each carry a `mistake` plate hyphenating one, which is safe only because a plate
+is never indexed.
+
+**What replaces the build gate is three things, and the graduation ran all three.** First,
+`src/course/types.test.ts` gains an en-la block: no `j`, no apostrophe, no acute in either
+composition, NFC, the ten macron vowels and nothing else above ASCII, a hyphen only before
+`que`/`ne`/`ve`, and no `script` line. Second, a sweep over the emitted course — **1,016 readable
+Latin strings across ten modules, zero on every count**, and zero `script` lines authored. Third,
+the font verify, run the other way round from #631's measurement: every character in those 1,016
+strings against the cmaps of the GENERATED cuts. Six characters above ASCII (`ā ē ī ō ū Ū`), each
+drawn by `mukta-latin-ext` at all three weights; every ASCII character drawn; nothing missing. The
+honest limit of the sweep is worth recording: it cannot tell a legitimate `aquam-que` from a
+hyphenated `ita-que`, because both end in `-que`, so the closed list stays a review responsibility.
+
+**The shown-surface ratchet opens at ZERO**, which makes en-la the second course there after en-sa
+(#491). It was designed rather than discovered and it cost real content across all three waves: both
+proper nouns the course shows, `Mārcus` and `Iūlia`, carry word rows from M1, because CLAUDE.md's
+warning is that a proper noun is COUNTED; fourteen shapes shown before they were owned were each
+either given a home in their lexeme's `forms` or dropped rather than charged to the baseline; and
+M8-S02's hero was rewritten from `Duo librī sunt` to `Duae mēnsae sunt` so that the feminine plural
+was taught rather than merely shown. `tools/shown-surfaces.test.ts` carries no `'en-la'` entry at
+all, which is how it holds a course at the implicit baseline of 0.
+
+Budget, reported and not gated: `unmetered` at 0 files and `precache 17 files 205.5 KiB gzip =
+shell ok`. Before the graduation a strict build emitted no en-la rows, because the gate dropped the
+course. After: `course:en-la` **87.6 KiB** gzip (29 files), `precache:en-la` **301.5 KiB** (48
+files) — the lightest course in the product, because Latin needs no non-Latin face. `course:hi-mr`
+stays **621.5 KiB** (106 files) and `course:en-sa` moves 385.1 → **385.4 KiB**; the shared cost is
+`shell` 213.9 → **214.0 KiB** (+0.1), which is the emitted manifest gaining a row. The Mukta bundle
+grew 331,376 → **331,708 bytes** (+332), all of it the `latin` and `latin-ext` cuts taking the
+handful of characters new to the catalogue. **One line of code changed for the money:
+`SCRIPT_BY_LANGUAGE_TAG` gained `la: 'latin-ext'` (#631)** — the first row in that table whose script
+is Latin, put there by the orthography and not by the writing system. Without it `ROMANIZATION_SCRIPT`
+would never fire for a `native` row and an en-la learner would precache no `latin-ext` file at all:
+online the browser fetches it from the `@font-face` `unicode-range` and the defect is invisible,
+offline every long vowel renders in the system face with the rest of its word in Mukta. No constant
+in `tools/payload-budget.ts` was edited.
+
+**No fluent Latin reader has seen a word of it, and the gate this course needs does not exist in the
+ordinary sense.** There is no native speaker of Latin and there never will be, so the bar `docs/124`,
+`docs/125` and `docs/126` ask for is a fluent speaker of living Latin or a Latin teacher — competence
+in a community of use rather than nativity — and that bar is **UNMET**. The bar en-la clears is the
+one every other course clears: LLM review plus the owner's standing authority, signed into each
+module as `verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"`. The **twenty-four
+open questions** across the three review docs and `docs/123` §11 are what that reader still owes, and
+the sharpest of them is the first: whether the enclitic hyphen reads as a teaching convention or as
+an error, which is the one decision that would cost an en-ru-shaped rewrite to reverse.
+
+**en-la's L2 is complete (#638-#641, 2026-09-12) — twenty rungs, and the ratchet never left zero.**
+Ten briefs (#638, `tools/course-briefs.ts`, "## en-la L2: the decisions, taken against the finished
+L1") and ten modules in three waves, all reviewed in one document,
+[`docs/128`](docs/128-llm-review-en-la-L2.md), with the brief-level reasoning in
+[`docs/127`](docs/127-en-la-L2-brief-decisions.md). `en-la: 20 modules (L1-M1..M10, L2-M1..M10)`,
+**330 cumulative surfaces**, `maxSpan` 1, and **no `shown but untaught` line at any module** — so
+`tools/shown-surfaces.test.ts` still carries no `'en-la'` entry and holds the course at 0.
+
+Four things in it are worth reading the docs for:
+
+- **The macron finally pays for itself, twice, in one module.** `docs/123` §1.1 listed `est`/`ēst` as
+  a pair the bar keeps apart, L1-M1 took `est` for "is", and every module after it was forbidden to
+  write `ēst`. L2-M5 spends it: `Pānem ēst` is "he is eating bread" and `Pānem est` is "he IS bread"
+  — grammatical, nothing failing, the reader simply told something else. The same irregular verb then
+  mints a **second** pair nobody planned: `ēs` ("eat!") against `es` ("you are"). Its third
+  collision, the alternative infinitive one bar from `esse`, is named in prose and written nowhere.
+- **Politeness is a verb.** Every other L2-M1 in `tools/course-briefs.ts` teaches a polite address —
+  `usted`, `Lei`, `vous`, `Sie`, `vy`, `bhavān`. Latin has none, `vōs` to one person is wrong rather
+  than formal, so en-la is the one course in the catalogue whose `formal` register chip (#422) sits on
+  a **verb form**: `velim`, `quaesō`, and never a pronoun.
+- **The ablative does five jobs and asks for no preposition in three of them.** After `opus est`
+  (L1-M3) and `in`/`cum` (L1-M7) it turns up bare as a means (`raedā eō`, L2-M4), as a time
+  (`hōrā sextā`, L2-M6) and as "than" (`illō gravior est`, L2-M9). Each arrival has its own mistake
+  plate putting the English preposition back, and L2-M10's last sentence carries both of them at once.
+- **The seam law held three more times.** `pater māter-que` (M2), `vīnum aquam-que` (M5) and
+  `venīs-ne mēcum` (M6), each with its host opened in an earlier sentence and each joined form in the
+  **particle's** row — en-la's arrangement, not en-ko's. `que` and `ne` never moved off L1-M10 and
+  L1-M2. `tools/course-briefs.test.ts`'s `SEAM_MODULES` allowlist pins which modules may open one.
+
+What replaces the build gate, since `checkScriptMode` returns an empty report for a `native` row: the
+en-la block in `src/course/types.test.ts`, plus a per-wave sweep over the emitted course. At level's
+end that sweep reads **1,967 readable Latin strings — zero `j`, zero apostrophes, zero acutes, zero
+combining marks, zero non-NFC, zero characters outside the ten macron letters and ASCII, no `script`
+line, and zero hyphens outside `-que`/`-ne`/`-ve`** — with the 156 `mistake` plates swept separately,
+since a plate may break the spelling bans and not the encoding ones. Every key L1 and L2 were
+forbidden to spend is still free: `legēbam`, `habēbam`, `eram`, `nē`, `venī`, `sīc`, `rosa`/`rosā`,
+`nōnne`, `num`, `domī`, `possum`, `esse`, `ēsse`, `nōbīscum`, `Mārce` and every vocative, `magis`,
+`maximē`, `ībimus`.
+
+**The gate is still UNMET and there are now forty-four open questions**, across `docs/123` §11,
+`docs/124` §6, `docs/125` §5, `docs/126` §6, `docs/127` §6 and `docs/128` §1.7, §2.7 and §3.7. The
+three that would cost the most to get wrong: whether the enclitic hyphen reads as a convention or an
+error; whether `frāctus est` taught as an adjective plants a habit L4-M7 has to break; and whether
+`deinde` and `tum` really swap freely in the middle of an account, which L2-M10's rule asserts and a
+fluent reader is most likely to deny.
+
+**en-la's L3 is complete, and M4 is the one module in the course that opens a MOOD (#642-#645,
+2026-09-12).** Ten briefs ([`docs/129`](docs/129-en-la-L3-brief-decisions.md)) and ten modules in three
+waves ([`docs/130`](docs/130-llm-review-en-la-L3.md)): `en-la: 30 modules`, **479 cumulative
+surfaces**, `maxSpan` 1, and **no `shown but untaught` line at any of the thirty** — three whole levels
+at a zero ratchet. Three things in it are the shared index and
+the orthography finally being paid for:
+
+- **`ne` and `nē` are two keys**, read off the emitted index at `L1-M2-S06` and `L3-M4-S05`. The pair
+  was reserved thirty modules ago (`docs/123` §1.1) because `surfaceIndexKeys('agis-ne')` donates the
+  bare `ne`, and rule 4 of `src/engine/surface.ts` folds case and never a diacritic. Every seam form
+  L1-M2 and L2-M6 own stayed put.
+- **The one macron slip in twenty-five modules was caught by the sweep, not by a gate** — a variation
+  shipped `cras` for `crās`. en-la has no build gate on spelling at all, since `checkScriptMode`
+  returns an empty report for a `native` row, so the per-wave sweep over the emitted course is the only
+  thing between a wrong bar and a learner. At M5 it reads 2,514 readable Latin strings, zero on every
+  count.
+- **`sīs` was a subjunctive all along.** L2-M1 taught it inside a polite phrase as vocabulary, exactly
+  as it taught `velim`, and L3-M4 explains it. Three of the mood's forms were already in the learner's
+  mouth before the module that opens it, which is why one module could afford to open it.
+
+L3-M2 also carries the sharpest thing the shared index has done to this course: `quod` is L1-M9's
+"because" and `quam` is L2-M9's "than", so **the relative pronoun is taught in three of its five
+shapes** and the other two are named in a rule and written nowhere. Writing either would serve a
+learner the wrong note with no build failure at all.
+
+**en-la's L4 is complete, and it paid off every debt the course had (#646-#649, 2026-09-12).** Ten
+briefs ([`docs/131`](docs/131-en-la-L4-brief-decisions.md)) and ten modules in three waves
+([`docs/132`](docs/132-llm-review-en-la-L4.md)): `en-la: 40 modules`, **624 cumulative surfaces**,
+`maxSpan` 1, and **no `shown but untaught` line at any of the forty** — four whole levels at a zero
+ratchet.
+
+**Four deferred systems, all four landed**: the gerund and gerundive at M1 (L3-M2 named the gap), the
+passive at M7 (L2-M8's `frāctus est` and L3-M6's `sollicitus sum` both pointed here), **the imperfect
+at M8 — thirty-four modules after L1-M5 deferred it and named `legēbam`, `habēbam` and `eram` as keys
+to hold open, all three now spent in that module's first four sentences** — and the locative `domī` at
+M9, twenty-nine modules after L2-M4 named it. M8-S02 is the sentence L1-M5 could not write: every
+module from L1-M9 to L3-M10 said `fuī` where English would have said `eram`, and its plate is that
+shape in the one place it is now the weaker choice. The gerund and gerundive land at M1, and
+the past counterfactual is written **in full** at M3 — the pluperfect subjunctive in both halves, which
+is where this course diverges from en-sa's honest workaround, plus the imperfect subjunctive for the
+present unreal. Two new subjunctive tenses in one module, the largest grammatical spend in en-la,
+affordable only because everything else in M3 is L3's vocabulary. The passive landed at M7, the
+imperfect at M8 and the locative at M9, which is what closed the level.
+
+**M1's own rule caught M1**, which is worth recording: it warned that the gerund and the gerundive
+would sit in the emitted index as one key if an author were careless, and they did — in both
+directions. `legendum` resolved to the gerund's row while a later sentence uses it as a gerundive, and
+`scrībendum` the other way. Neither fails a build; a learner tapping one would simply have been shown
+the other's note. Both notes now name **both** readings, which is the remedy `docs/131` §4 prescribed
+for `cum` one module early, and withholding a reading was never available because teaching the pair is
+the module's job.
+
+**en-la's L5 has opened, and it is the one L5 in the product whose learner already owns the content
+(#650-#651, 2026-09-12).** Ten briefs ([`docs/133`](docs/133-en-la-L5-brief-decisions.md)) and three
+modules ([`docs/134`](docs/134-llm-review-en-la-L5.md)): `en-la: 50 modules`, **796 cumulative
+surfaces**, and **no `shown but untaught` line at any of the fifty**. An English speaker arrives
+at M1 knowing `carpe diem` and `ālea iacta est` without knowing a word of Latin, so the module's work
+is not learning them but taking them apart — and `ālea iacta est` turns out to be L2-M8's
+participle-as-adjective arrangement thirty-eight rungs later.
+
+Two decisions there are worth the docs. **A saying is written in the course's orthography, which means
+refusing the spelling the learner knows**: `ālea` and `alea` are two keys under
+`src/engine/surface.ts` (rule 4 folds case and never a diacritic), so writing both would put two rows
+under one saying — the index confirms only the macroned form holds a key, and M1-S03's trap names the
+other. **And "how they say it there" is a TRADITION, not a place**, because Latin has no home
+vernacular: M3 teaches three pronunciation traditions and a thousand-year register spectrum with
+`display` never moving and `sound` carrying every variant, so the index gained no key for a variant.
+Its sharpest line counts the cost — the ecclesiastical tradition changes eight sounds in one sentence
+and not one letter.
+
+**The vocative finally arrives at L5-M2, forty-nine rungs after L1 got away without one** and
+thirty-four after L2-M7 wanted `Mārce` for a telephone call. Mock address is why, and the cost is
+visible: three of that module's ten `mistake` plates are the subject shape used to address somebody.
+
+**With L5-M6 and L5-M7 (#652) the fifty-module syllabus owes no more grammar.** The **ablative
+absolute** (`hīs rēbus dictīs`) and the **indirect question** (`quaerō quid agās`) were the last two
+constructions `docs/121` promised, and both are made entirely of endings the learner already has — the
+perfect participle of L2-M8 with the ablative of L2-M4, and the present subjunctive of L3-M4 with
+L1-M2's question words. Neither module teaches a new form, and M6's rules say so out loud, because a
+learner who reads the ablative absolute as a new tense will hunt for an ending that does not exist. The
+three rungs still outstanding (#653) owe consolidation.
+
+Two things from that wave are worth recording against the next course. **An early module can spend a
+key a later module is built around**: `crēdō` resolves to **L5-M1**, not to M5 which teaches its two
+constructions, because M1-S08's `nōn tamen crēdō` wrote the surface first and the word index takes the
+first occurrence. It is benign — M1's note already points forward, and M5 teaches the constructions
+without owning the bare key — but it is the fourth time in this course, after `cum`, `ut` and `quod`,
+and it is the single most common way an en-la plan goes wrong. **And M4-S08 is the one sentence in
+fifty modules where a name's case carries the whole meaning**: `Mārcus mortuus est` leaves `Mārcus`
+nominative two modules after the vocative arrived, because you do not address the dead, and the trap
+says exactly that.
+
+**en-la is FINISHED (#653, 2026-09-12) — fifty rungs, five levels, 796 surfaces, and the shown-surface
+ratchet at ZERO from L1-M1 to L5-M10.** The eleventh course is the second complete five-level ladder
+authored here from nothing (after the nine that shipped at #112's ratification), and the last three
+modules are the only real test of whether a fifty-module ladder holds. M8 "When words run out" teaches
+the paraphrase — `quid sibi vult?`, `id est` (which is 'i.e.', a thing the learner has been writing in
+English for years), `iterum dīc`, `quasi` for an approximation. M9 "Telling it your way" retells the fox
+and the crow in prose, with `ōre apertō` as the ablative absolute's third setting and `haec fābula
+docet` closing on an imperative. And **M10 "Your own voice" spends NOTHING**: `L5-M10 delta 0`, so the
+fiftieth module's fifty-eight word rows all re-show a surface an earlier module owns and `surfaceCount`
+is unchanged from M9. L2-M10, L3-M10 and L4-M10 each spent one; this one wrote an eight-sentence piece
+across two registers out of nothing but what the previous forty-nine had taught.
+
+The register switch is in the sentences and **not in the spelling**, which is M3's mechanism doing what
+it was built for: S01–S05 are Ciceronian (concession first, abstracts as objects, the main verb last and
+alone), S06 is a four-word hinge that names the turn out loud (`Sed quid dīcam? Satis.`), S07–S10 are
+Plautine (a vocative insult, a coin where the formal half had an abstract, a bare imperative and a
+name). `display` is the same orthography in both halves and the `sound` lines carry what a reader of
+each tradition would do — an author who respelled a register would have minted a key for a variant.
+
+**The most productive gate in the build turned out to be one nobody had leaned on: `checkShownSurfaces`
+scans `variations[].display`, not only `sentence.display`.** The first draft of this wave shipped 24
+unresolved variation surfaces on M8 and fourteen on M9, and rewriting them caught `vōs` — banned
+course-wide at L2-M1 and restated at every level since — inside an M8 variation, forty-nine modules of
+discipline nearly ending in a line nobody would have read twice. It also caught `Phaedrus` in an M10
+variation, which a proper noun's unindexed ride (#61) would have turned into a raised ratchet. What the
+gate cannot catch is a word that is merely FORBIDDEN rather than untaught: `possim` is unindexed, so a
+build reports it as a count and not as a rule, and only the author's own list stands between a banned key
+and a display. Twenty-eight stale `draft: true` flags on L2, L3 and L4's module rows were cleared in the
+same commit — #641, #645 and #649 each cleared the level's flag and left the modules'.
+
+**The fluent-speaker gate is still unmet and finishing the content does not move it.** The bar en-la
+clears is an LLM review on the owner's explicit authority; the bar it does not clear is a reader who
+speaks living Latin, and [`docs/123`](docs/123-en-la-orthography-decisions.md)–[`docs/134`](docs/134-llm-review-en-la-L5.md)
+now end in something over a hundred and twenty numbered questions for that reader.
 
 **Five levels per course (2026-09-07, `docs/48-five-level-ladder-plan.md`).** Every course's
 `levels.json` now lists L4 "Nuance — say it the way they do" and L5 "Voice — your own words, at
@@ -2444,10 +2713,11 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Ten courses now ship — **490
-  modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko, and
-  forty on en-sa, which is the whole of L1, the whole of L2, the whole of L3 and the whole of L4
-  (#611, #613, #614, #615, #617, #618, #619, #621, #622, #623) — every one
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **540
+  modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
+  forty on en-sa, which is the whole of L1, L2, L3 and L4 (#611, #613, #614, #615, #617, #618,
+  #619, #621, #622, #623), and **fifty on en-la, which is the whole course** (#637, #641, #645,
+  #649, #651, #652, #653) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.

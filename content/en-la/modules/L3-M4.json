@@ -1,0 +1,851 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M4",
+  "title": "If and then",
+  "job": "Conditions, wishes, advice",
+  "prerequisites": [
+    "L3-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "sī + V-present + , + V-present",
+      "sī + V-subjunctive + , + V-subjunctive",
+      "ut + V-subjunctive (purpose)",
+      "nē + V-subjunctive (negative purpose or advice)",
+      "sī possum + , + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "TWO KINDS OF CONDITION, AND THE MOOD IS THE ONLY DIFFERENCE. Sī venit, gaudeō is an OPEN condition — 'if he is coming, I am glad', and he may well be. Sī veniat, gaudeam is the IDEAL — 'if he were to come, I should be glad', and nothing is claimed about whether he will. The two sentences differ by two endings. English marks this with 'were' and 'should' and Latin marks it with a mood, and BOTH HALVES MOVE TOGETHER: a mixed pair says nothing coherent, which is why three plates in this module are about mixing and none is about anything else."
+    },
+    {
+      "tag": "delta",
+      "text": "THE SUBJUNCTIVE IS A MOOD, AND THIS IS THE ONE MODULE THAT OPENS IT. L2-M1's velim and L2-M6's eāmus were fixed forms, named as subjunctives and left unexplained — and L2-M1's sīs was one too, which this module finally explains. It opens in the PRESENT only: veniat, gaudeam, discam, sim, sīs, eās. The tense a real counterfactual needs — 'if he HAD come' — is a later level's, and no subjunctive of possum is written anywhere in this course."
+    },
+    {
+      "tag": "interference",
+      "text": "A FORM ENDING IN -am MAY BE A FUTURE OR A MOOD, AND NOTHING MARKS WHICH. L1-M6 taught veniam as 'I shall come' and it is also what veniō's present subjunctive would look like in the I-shape. From this module on, only the construction decides: sī possum, veniam is a promise, and ut veniam would be a purpose. That ambiguity is real Latin and there is no bar to write for it."
+    },
+    {
+      "tag": "delta",
+      "text": "PURPOSE IS ut PLUS A SUBJUNCTIVE, AND M2 SAID SO BY SAYING WHAT IT LACKED. That module used ad plus a plain noun and named the limit; here is the real thing — ad scholam eō ut discam, 'I go to school in order to learn'. In full Latin ut is also 'as', 'when' and 'how', and THIS COURSE WRITES THE PURPOSE READING ONLY, so the key carries one true note. It is the third homograph handled that way, after L1-M9's quod and L2-M9's quam."
+    },
+    {
+      "tag": "interference",
+      "text": "nē IS 'SO THAT … NOT' AND THERE IS NO nōn IN A PURPOSE CLAUSE. Domum eō nē fessus sim: nē does the whole job in two letters, where English needs 'so that not'. ut nōn exists in Latin for other work and never for this. nē is also the macron twin of L1-M2's question particle — the bar makes it a different word and a different key, which is why this course writes every macron it can."
+    },
+    {
+      "tag": "free",
+      "text": "nē PLUS A SUBJUNCTIVE IS ADVICE, WHERE L2-M1's nōlī IS AN ORDER. nōlī hīc labōrāre tells someone not to; nē hīc labōrēs suggests they should not. The mood carries the softness that English carries with 'should' — and the same mood on its own, with nothing in front of it, is positive advice: cotīdiē legās, 'you should read every day'. One mood, several jobs, and the frame around it decides which."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M4-S01",
+      "display": "Sī venit, gaudeō.",
+      "cue": "If he is coming, I am glad.",
+      "literal": "if he-comes I-rejoice",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [
+              "sī"
+            ],
+            "note": "'If'. It takes the indicative for a condition that may well be true and the subjunctive for one merely imagined — the mood is the whole difference."
+          },
+          {
+            "display": "venit",
+            "cue": "he comes",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He comes' — veniō's third-person present, and one bar from vēnit, 'he came'. L1-M4's word."
+          },
+          {
+            "display": "gaudeō",
+            "cue": "I am glad",
+            "tag": "delta",
+            "forms": [
+              "gaudeō",
+              "gaudet"
+            ],
+            "note": "'I rejoice, I am glad': gaudeō 'I am glad', gaudet 'he is glad'. English 'gaudy' and 'joy' both come from it, by very different roads."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "This is the ORDINARY kind of condition and both verbs are ordinary present tenses. He may well be coming; nothing is being imagined. The whole module hangs on the difference between this sentence and the next one, and the difference is two endings.",
+      "sound": "SĪ VE-nit, GAU-de-ō. The au of gaudeō is one sound, 'ow', as in L3-M1's audiō.",
+      "variations": [
+        {
+          "display": "Sī venit, gaudet.",
+          "cue": "If he is coming, he is glad.",
+          "changed": "the gladness moved to someone else"
+        },
+        {
+          "display": "Sī hīc est, gaudeō.",
+          "cue": "If he is here, I am glad.",
+          "changed": "'to be' in the condition"
+        },
+        {
+          "display": "Sī nōn venit, nōn gaudeō.",
+          "cue": "If he is not coming, I am not glad.",
+          "changed": "both halves negative"
+        }
+      ],
+      "mistake": {
+        "display": "Sī veniat, gaudeō.",
+        "why": "one half moved into the subjunctive. The two halves of a condition go together — an imagined condition needs an imagined result — and a sentence with one of each says nothing coherent, which is the module's central error and the reason both plates are about mixing."
+      },
+      "usage": "Said about something that may well happen.",
+      "mnemonic": "Real condition, real tenses.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M4-S02",
+      "display": "Sī veniat, gaudeam.",
+      "cue": "If he were to come, I should be glad.",
+      "literal": "if he-might-come I-should-be-glad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "'If'. It takes the indicative for a condition that may well be true and the subjunctive for one merely imagined — the mood is the whole difference."
+          },
+          {
+            "display": "veniat",
+            "cue": "he were to come",
+            "tag": "interference",
+            "forms": [
+              "veniat"
+            ],
+            "note": "'He might come' — the PRESENT SUBJUNCTIVE of veniō, and the whole of 'were to'. venit is the plain present; veniat imagines it."
+          },
+          {
+            "display": "gaudeam",
+            "cue": "I should be glad",
+            "tag": "interference",
+            "forms": [
+              "gaudeam",
+              "gaudeat"
+            ],
+            "note": "'I should be glad' — the present subjunctive of gaudeō. English needs 'should' and Latin needs one letter: gaudeō becomes gaudeam."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Compare this with the sentence above, word for word. Sī venit, gaudeō and Sī veniat, gaudeam differ by two endings and mean different things: the first says he may well be coming, the second imagines it and claims nothing. English marks this with 'were' and 'should'; Latin marks it with a mood.",
+      "sound": "SĪ VE-ni-at, GAU-de-am. One syllable longer than S01 in each half, and that syllable is the mood.",
+      "variations": [
+        {
+          "display": "Sī veniat, gaudeat.",
+          "cue": "If he were to come, he would be glad.",
+          "changed": "both verbs about the same person"
+        },
+        {
+          "display": "Sī nōn veniat, nōn gaudeam.",
+          "cue": "If he were not to come, I should not be glad.",
+          "changed": "both halves negative"
+        },
+        {
+          "display": "Sī venit, gaudeō.",
+          "cue": "If he is coming, I am glad.",
+          "changed": "back to the real condition, which is S01"
+        }
+      ],
+      "mistake": {
+        "display": "Sī veniat, gaudeō.",
+        "why": "the same mixed pair as S01's plate, from the other direction. Both halves must be imagined or neither — and the reason this plate appears twice in two sentences is that the mixture is the only thing a learner reliably gets wrong here."
+      },
+      "usage": "Said about something you do not expect.",
+      "mnemonic": "Both halves imagined, or neither.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M4-S03",
+      "display": "Sī possum, veniam.",
+      "cue": "If I can, I shall come.",
+      "literal": "if I-can I-shall-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "'If'. It takes the indicative for a condition that may well be true and the subjunctive for one merely imagined — the mood is the whole difference."
+          },
+          {
+            "display": "possum",
+            "cue": "I can",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I can': possum, potes, potest. M2's irregular verb, and this course writes no subjunctive of it — sī possum is the shape to use."
+          },
+          {
+            "display": "veniam",
+            "cue": "I shall come",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I shall come' — L1-M6's FUTURE, not a subjunctive, though the two look identical in this verb. Only the sentence around it tells you which."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "veniam is the future here and it is also what the present subjunctive of veniō would look like in the I-shape. L1-M6 taught it as a future and nothing has changed — but from this module on, a form ending in -am may be either, and only the construction decides. That ambiguity is real Latin and there is no mark for it.",
+      "sound": "SĪ POS-sum, VE-ni-am. Short and flat: the commonest kind of promise.",
+      "variations": [
+        {
+          "display": "Sī possum, crās veniam.",
+          "cue": "If I can, I shall come tomorrow.",
+          "changed": "L1-M4's crās added"
+        },
+        {
+          "display": "Sī nōn possum, nōn veniam.",
+          "cue": "If I cannot, I shall not come.",
+          "changed": "both halves negative"
+        },
+        {
+          "display": "Sī possum, labōrāre volō.",
+          "cue": "If I can, I want to work.",
+          "changed": "a different main clause"
+        }
+      ],
+      "usage": "Said accepting an invitation with a condition.",
+      "mnemonic": "-am may be a future or a mood.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M4-S04",
+      "display": "Ad scholam eō ut discam.",
+      "cue": "I go to school in order to learn.",
+      "literal": "to school I-go so-that I-may-learn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', with the object shape after it. L1-M4's preposition."
+          },
+          {
+            "display": "scholam",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' after ad. L1-M6's word."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go': eō, īs, it, īmus, īvī."
+          },
+          {
+            "display": "ut",
+            "cue": "so that",
+            "tag": "interference",
+            "forms": [
+              "ut"
+            ],
+            "note": "'So that, in order that', with a subjunctive after it. In full Latin ut is also 'as', 'when' and 'how'; this course writes the purpose reading only, so the word means one thing for you."
+          },
+          {
+            "display": "discam",
+            "cue": "I may learn",
+            "tag": "interference",
+            "forms": [
+              "discam",
+              "discat"
+            ],
+            "note": "'That I may learn' — the present subjunctive of M2's discō. The purpose is what you intend rather than what happens, so Latin puts it in the mood of things not yet true."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "M2 said purpose was ad plus a plain noun and that this was a limit. Here is the real thing: ut plus a subjunctive says what you went FOR. It is not the gerund — that shape is still a level away — but it is a purpose clause with a verb in it, which ad labōrem could never be.",
+      "sound": "ad SCHO-lam E-ō ut DIS-cam. ut is one light syllable and it is the hinge of the sentence.",
+      "variations": [
+        {
+          "display": "Ad scholam eō ut linguam discam.",
+          "cue": "I go to school to learn the language.",
+          "changed": "an object inside the purpose clause"
+        },
+        {
+          "display": "Ad scholam it ut discat.",
+          "cue": "He goes to school to learn.",
+          "changed": "someone else, so both verbs move"
+        },
+        {
+          "display": "Ad scholam eō ut legam.",
+          "cue": "I go to school to read.",
+          "changed": "a different purpose"
+        }
+      ],
+      "mistake": {
+        "display": "Ad scholam eō ut discō.",
+        "why": "the plain present after ut. A purpose clause is always subjunctive because a purpose is not a fact yet — and discō is the shape a learner has written a dozen times in M2, which is exactly why it turns up here."
+      },
+      "usage": "Said explaining why you go somewhere.",
+      "mnemonic": "ut wants a mood, not a fact.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M4-S05",
+      "display": "Domum eō nē fessus sim.",
+      "cue": "I am going home so that I shall not be tired.",
+      "literal": "home I-go so-that-not tired I-may-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition — L2-M4's word."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go': eō, īs, it, īmus, īvī."
+          },
+          {
+            "display": "nē",
+            "cue": "so that not",
+            "tag": "interference",
+            "forms": [
+              "nē"
+            ],
+            "note": "'So that … not' — ut's negative, with a subjunctive. There is no nōn in a purpose clause: nē does the whole job, and the bar is what keeps it off L1-M2's question particle."
+          },
+          {
+            "display": "fessus",
+            "cue": "tired",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tired'. L1-M9's adjective, agreeing with whoever is speaking: fessus of a man, fessa of a woman."
+          },
+          {
+            "display": "sim",
+            "cue": "I may be",
+            "tag": "interference",
+            "forms": [
+              "sim",
+              "sit"
+            ],
+            "note": "'That I may be' — the present subjunctive of sum. sum, es, est in the plain shapes; sim, sīs, sit in the mood. M1 of this level already taught you sīs as a word."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "There is NO nōn in this sentence and none is allowed. nē is the whole of 'so that not' — ut nōn does exist in Latin for other jobs, and for purpose it is nē alone. A learner who writes ut nōn fessus sim has built the sentence the way English does.",
+      "sound": "DO-mum E-ō nē FES-sus SIM. nē is long and nothing else in the line is, which is the one audible clue that it is not L1-M2's question particle.",
+      "variations": [
+        {
+          "display": "Domum eō nē fessa sim.",
+          "cue": "I am going home so that I shall not be tired.",
+          "changed": "spoken by a woman, so the adjective moves"
+        },
+        {
+          "display": "Domum it nē fessus sit.",
+          "cue": "He is going home so that he shall not be tired.",
+          "changed": "someone else, so both the mood verb and the adjective move"
+        },
+        {
+          "display": "Domum eō ut legam.",
+          "cue": "I am going home to read.",
+          "changed": "a positive purpose, so ut comes back — and legam is a future in L1-M6 and a mood here"
+        }
+      ],
+      "mistake": {
+        "display": "Domum eō ut nōn fessus sim.",
+        "why": "ut nōn built on the English 'so that not'. nē exists for exactly this and does the whole job in two letters — and this is the one place in the course where a negative is a word of its own rather than nōn in front of something."
+      },
+      "usage": "Said explaining a precaution.",
+      "mnemonic": "nē IS 'so that not'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M4-S06",
+      "display": "Nē hīc labōrēs.",
+      "cue": "Do not work here.",
+      "literal": "not here you-may-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nē",
+            "cue": "do not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Do not' — nē with a subjunctive is advice rather than an order. L2-M1's nōlī is the flat command; this is the gentler shape."
+          },
+          {
+            "display": "hīc",
+            "cue": "here",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Here'. L1-M7's word."
+          },
+          {
+            "display": "labōrēs",
+            "cue": "you should work",
+            "tag": "interference",
+            "forms": [
+              "labōrēs"
+            ],
+            "note": "'That you may work' — the present subjunctive of labōrō. With nē in front it is advice: 'you should not work'."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "This is advice, not an order. L2-M1's nōlī labōrāre tells someone not to; nē labōrēs suggests they should not — and the difference is exactly the difference English makes between 'do not work' and 'you should not work', with the mood carrying it instead of a word.",
+      "sound": "nē HĪC la-BŌ-rēs. Three long vowels in three words: advice is delivered slowly.",
+      "variations": [
+        {
+          "display": "Nē hīc legās.",
+          "cue": "You should not read here.",
+          "changed": "a different thing advised against"
+        },
+        {
+          "display": "Nōlī hīc labōrāre.",
+          "cue": "Do not work here.",
+          "changed": "L2-M1's flat command, which is blunter"
+        },
+        {
+          "display": "Hīc labōrēs.",
+          "cue": "You should work here.",
+          "changed": "the advice made positive, with no nē at all"
+        }
+      ],
+      "usage": "Said advising someone against something.",
+      "mnemonic": "nōlī orders; nē labōrēs advises.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M4-S07",
+      "display": "Sī fessus sīs, domum eās.",
+      "cue": "If you were tired, you should go home.",
+      "literal": "if tired you-may-be home you-may-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "'If'. It takes the indicative for a condition that may well be true and the subjunctive for one merely imagined — the mood is the whole difference."
+          },
+          {
+            "display": "fessus",
+            "cue": "tired",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tired'. L1-M9's adjective, agreeing with the person addressed."
+          },
+          {
+            "display": "sīs",
+            "cue": "you may be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That you may be' — the present subjunctive of sum, and L2-M1 already taught it to you as a word inside a polite phrase. Now you know what it is."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition."
+          },
+          {
+            "display": "eās",
+            "cue": "you should go",
+            "tag": "interference",
+            "forms": [
+              "eās",
+              "eam",
+              "eat"
+            ],
+            "note": "'That you may go' — the present subjunctive of eō. The shortest verb in the course has a mood too: eō, īs, it; eam, eās, eat."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Both halves in the mood, which is S02's rule on a longer sentence — and sīs is a word you have been using since L2-M1 without knowing it was a subjunctive. That is the second time this course has handed you a mood as vocabulary and then explained it: velim was the first.",
+      "sound": "SĪ FES-sus SĪS, DO-mum E-ās. Four long vowels, and two of them are the mood.",
+      "variations": [
+        {
+          "display": "Sī fessa sīs, domum eās.",
+          "cue": "If you were tired, you should go home.",
+          "changed": "said to a woman"
+        },
+        {
+          "display": "Sī fessus sit, domum eat.",
+          "cue": "If he were tired, he should go home.",
+          "changed": "about someone else, so both moods move"
+        },
+        {
+          "display": "Sī fessus es, domum īs.",
+          "cue": "If you are tired, you are going home.",
+          "changed": "both halves plain, which reports rather than advises"
+        }
+      ],
+      "mistake": {
+        "display": "Sī fessus es, domum eās.",
+        "why": "one half plain and one half in the mood, for the third time in this module. It is the only error worth three plates: every other mistake here is a wrong ending, and this one is a wrong sentence built out of two right halves."
+      },
+      "usage": "Said giving gentle advice.",
+      "mnemonic": "velim and sīs were moods all along.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M4-S08",
+      "display": "Ut linguam discās, cotīdiē legās.",
+      "cue": "In order to learn the language, you should read every day.",
+      "literal": "so-that language you-may-learn daily you-may-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ut",
+            "cue": "so that",
+            "tag": "interference",
+            "forms": [],
+            "note": "'So that, in order that', with a subjunctive after it. In full Latin ut is also 'as', 'when' and 'how'; this course writes the purpose reading only, so the word means one thing for you."
+          },
+          {
+            "display": "linguam",
+            "cue": "language",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Language' as the thing learned. M2's word."
+          },
+          {
+            "display": "discās",
+            "cue": "you may learn",
+            "tag": "interference",
+            "forms": [
+              "discās"
+            ],
+            "note": "'That you may learn' — the present subjunctive of discō, in the you-shape."
+          },
+          {
+            "display": "cotīdiē",
+            "cue": "every day",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Every day'. L1-M4's word, and it takes no ending."
+          },
+          {
+            "display": "legās",
+            "cue": "you should read",
+            "tag": "interference",
+            "forms": [
+              "legās"
+            ],
+            "note": "'That you may read' — the present subjunctive of legō, and here it is the advice rather than the purpose."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "Two subjunctives and two different jobs. The first is a purpose clause after ut; the second is advice standing on its own. Same mood, same endings, and the construction around each one decides what it means — which is what makes the subjunctive hard and what makes it worth one module rather than ten.",
+      "sound": "ut LIN-guam dis-CĀS, co-tī-di-Ē le-GĀS. Both clauses end on a long ā: the mood rhymes with itself.",
+      "variations": [
+        {
+          "display": "Ut linguam discās, librōs legās.",
+          "cue": "In order to learn the language, you should read books.",
+          "changed": "an object instead of a time"
+        },
+        {
+          "display": "Ut linguam discam, cotīdiē legō.",
+          "cue": "In order to learn the language, I read every day.",
+          "changed": "about the speaker, so the advice becomes a statement of fact"
+        },
+        {
+          "display": "Cotīdiē legās.",
+          "cue": "You should read every day.",
+          "changed": "the advice alone, with no purpose"
+        }
+      ],
+      "usage": "Said giving someone a method.",
+      "mnemonic": "One mood, two jobs, and the frame decides.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M4-S09",
+      "display": "Nē errēs: liber gravis est.",
+      "cue": "Do not be mistaken: the book is heavy.",
+      "literal": "not you-may-err book heavy is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nē",
+            "cue": "do not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Do not' — nē with a subjunctive is advice. There is no nōn anywhere in a nē clause."
+          },
+          {
+            "display": "errēs",
+            "cue": "you should be mistaken",
+            "tag": "interference",
+            "forms": [
+              "errēs",
+              "erret"
+            ],
+            "note": "'That you may go wrong' — the present subjunctive of L2-M8's errō. errāvī was 'I was wrong'; this is the mood."
+          },
+          {
+            "display": "liber",
+            "cue": "book",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book' as the subject."
+          },
+          {
+            "display": "gravis",
+            "cue": "heavy",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Heavy'. L2-M2's adjective, agreeing with liber."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "The advice is in the mood and the reason is in the plain indicative, in one line. Everything after the colon is ordinary Latin with ordinary endings — the subjunctive belongs to the clause that gives advice and stops there, exactly as M3's accusative stopped at quia.",
+      "sound": "nē er-RĒS: LI-ber GRA-vis EST. The long ē of errēs is what makes it advice rather than a report.",
+      "variations": [
+        {
+          "display": "Nē errēs: liber brevis est.",
+          "cue": "Do not be mistaken: the book is short.",
+          "changed": "a different correction"
+        },
+        {
+          "display": "Nē erret: liber gravis est.",
+          "cue": "He should not be mistaken: the book is heavy.",
+          "changed": "about someone else"
+        },
+        {
+          "display": "Errāvistī: liber gravis est.",
+          "cue": "You were wrong: the book is heavy.",
+          "changed": "L2-M8's flat statement instead of advice"
+        }
+      ],
+      "mistake": {
+        "display": "Nē errēs: liber gravem est.",
+        "why": "an object ending on a plain subject, because the sentence has a mood in it and the learner has started changing endings everywhere. The mood is in the verb and only in the verb, and the clause after the colon was never part of it."
+      },
+      "usage": "Said correcting someone kindly.",
+      "mnemonic": "The mood stops at the colon.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M4-S10",
+      "display": "Sī possum, ad scholam eō ut discam.",
+      "cue": "If I can, I go to school in order to learn.",
+      "literal": "if I-can to school I-go so-that I-may-learn",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "'If'. It takes the indicative for a condition that may well be true and the subjunctive for one merely imagined — the mood is the whole difference."
+          },
+          {
+            "display": "possum",
+            "cue": "I can",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I can': possum, potes, potest. M2's verb, and no subjunctive of it is written in this course."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To', with the object shape after it."
+          },
+          {
+            "display": "scholam",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' after ad."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go': eō, īs, it, īmus, īvī."
+          },
+          {
+            "display": "ut",
+            "cue": "so that",
+            "tag": "interference",
+            "forms": [],
+            "note": "'So that, in order that', with a subjunctive after it. In full Latin ut is also 'as', 'when' and 'how'; this course writes the purpose reading only, so the word means one thing for you."
+          },
+          {
+            "display": "discam",
+            "cue": "I may learn",
+            "tag": "interference",
+            "forms": [
+              "discam",
+              "discat"
+            ],
+            "note": "'That I may learn' — the present subjunctive of discō."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Three clauses and exactly one subjunctive. The condition is real, so sī possum stays plain; the main clause is a fact, so eō stays plain; only the purpose is in the mood. That is the whole module: the mood marks what is intended or imagined, and everything else keeps the endings it always had.",
+      "sound": "SĪ POS-sum, ad SCHO-lam E-ō ut DIS-cam. Eleven syllables — the longest line of the module, and only its last word is in the mood.",
+      "variations": [
+        {
+          "display": "Sī possum, ad scholam eō ut linguam discam.",
+          "cue": "If I can, I go to school to learn the language.",
+          "changed": "an object inside the purpose clause"
+        },
+        {
+          "display": "Sī potest, ad scholam it ut discat.",
+          "cue": "If he can, he goes to school to learn.",
+          "changed": "someone else, so all three verbs move"
+        },
+        {
+          "display": "Ad scholam eō ut discam.",
+          "cue": "I go to school in order to learn.",
+          "changed": "the condition dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Sī possim, ad scholam eō ut discam.",
+        "why": "a subjunctive of possum, which this course does not write. The form is real Latin and it belongs to a level that has taught the mood properly — here the condition is real, so sī possum is the shape, and reaching for possim is a learner generalising a mood they met four sentences ago."
+      },
+      "usage": "Said explaining a plan with a condition.",
+      "mnemonic": "Only what is intended takes the mood.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M4-C01",
+      "display": "Sī venit, gaudeō.",
+      "cue": "If he is coming, I am glad."
+    },
+    {
+      "id": "L3-M4-C02",
+      "display": "Sī veniat, gaudeam.",
+      "cue": "If he were to come, I should be glad."
+    },
+    {
+      "id": "L3-M4-C03",
+      "display": "Sī possum, crās veniam.",
+      "cue": "If I can, I shall come tomorrow."
+    },
+    {
+      "id": "L3-M4-C04",
+      "display": "Ad scholam eō ut legam.",
+      "cue": "I go to school to read."
+    },
+    {
+      "id": "L3-M4-C05",
+      "display": "Domum eō ut legam.",
+      "cue": "I am going home to read."
+    },
+    {
+      "id": "L3-M4-C06",
+      "display": "Nē hīc legās.",
+      "cue": "You should not read here."
+    },
+    {
+      "id": "L3-M4-C07",
+      "display": "Sī fessus sit, domum eat.",
+      "cue": "If he were tired, he should go home."
+    },
+    {
+      "id": "L3-M4-C08",
+      "display": "Cotīdiē legās.",
+      "cue": "You should read every day."
+    },
+    {
+      "id": "L3-M4-C09",
+      "display": "Nē errēs: liber brevis est.",
+      "cue": "Do not be mistaken: the book is short."
+    },
+    {
+      "id": "L3-M4-C10",
+      "display": "Ut linguam discam, cotīdiē legō.",
+      "cue": "In order to learn the language, I read every day."
+    },
+    {
+      "id": "L3-M4-C11",
+      "display": "Nōlī hīc labōrāre.",
+      "cue": "Do not work here."
+    },
+    {
+      "id": "L3-M4-C12",
+      "display": "Sī nōn possum, nōn veniam.",
+      "cue": "If I cannot, I shall not come."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
