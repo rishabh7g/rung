@@ -142,7 +142,16 @@ const reteaches = new Set<string>();
  * Whatever the second row was going to say that the first does not belongs in the module's rules.
  */
 const collisions = new Map<string, string>();
-const mine = new Map<string, { row: string; note: string }>();
+/** Bound-morpheme rows exempted below, one line per key — reported, like a re-teach, not failing. */
+const donated = new Map<string, string>();
+/**
+ * A row writes a bound morpheme when its `display` or any of its `forms` carries a LEADING hyphen,
+ * which is how en-ko writes a suffix in all 47 of its particle rows. Interior hyphens do not
+ * count: `al-qahwa` and `peut-être` are whole words that happen to be spelled with one.
+ */
+const bound = (w: Word): boolean =>
+  [w.display, ...(w.forms ?? [])].some((form) => form.startsWith('-'));
+const mine = new Map<string, { row: string; note: string; whole: boolean }>();
 for (const s of module_.sentences) {
   for (const w of s.deconstruction.words) {
     for (const surface of [w.display, ...(w.forms ?? [])]) {
@@ -168,19 +177,49 @@ for (const s of module_.sentences) {
        * not a defect and flagging it is noise: en-ar's `al-` article makes every definite noun
        * donate `al`, so two ordinary nouns in one module would read as a collision. Nobody taps a
        * bound article — the learner taps the word.
+       *
+       * And the same argument exempts a BOUND-MORPHEME row whose key an earlier row only DONATED
+       * as a part (#601). en-ko L1 teaches the particle system in rows of its own — `-neun`,
+       * `-e`, `-eseo` — while `jeo-neun` and `jip-eseo` in the same module silently buy the bare
+       * particle off the hyphen, which reported sixteen collisions that are decided policy:
+       * `src/course/types.test.ts` accepts that the first host row owns the bare key, on the
+       * ground that Korean never writes a bare particle as its own whitespace token. Nobody taps
+       * `neun` either.
+       *
+       * The row says which it is, so no list is needed and none is kept: a leading hyphen on the
+       * `display` or on any `forms` entry is how en-ko writes a suffix, and all sixteen carry one
+       * (fourteen on the display, `euro` and `kkaji` on a form). `BARE_PARTICLES` in
+       * `src/course/types.test.ts` was the obvious candidate and is the wrong one — it misses
+       * `ieosseoyo`, `euro` and `kkaji`, so it cannot reach zero, and it answers a different
+       * question: which particles a DISPLAY may not write as a token.
+       *
+       * BOTH conditions are required, which is what keeps en-ar's catch. `min al-mumkin an`
+       * donates `mumkin` to a later bare `mumkin` row: that row carries no hyphen, so it is not
+       * bound and still fires. And two rows that each open `-e` as their own whole surface with
+       * two different notes still fire, because the earlier one earned it whole rather than as a
+       * part — an unreachable second note is a defect wherever it is written.
        */
       const row = `${s.id} "${w.display}"`;
       const opened = mine.get(key);
-      if (opened !== undefined && opened.row !== row && opened.note !== w.note)
-        collisions.set(key, `${opened.row} and ${row}`);
+      if (opened !== undefined && opened.row !== row && opened.note !== w.note) {
+        // A bound morpheme against a key an earlier row only donated: decided, not a defect.
+        if (bound(w) && !opened.whole) donated.set(key, `${opened.row} and ${row}`);
+        else collisions.set(key, `${opened.row} and ${row}`);
+      }
       for (const earned of surfaceIndexKeys(key)) {
-        if (!mine.has(earned)) mine.set(earned, { row, note: w.note });
+        if (!mine.has(earned)) mine.set(earned, { row, note: w.note, whole: earned === key });
       }
     }
   }
 }
 
 for (const r of reteaches) console.log(r);
+for (const [key, where] of donated) {
+  console.log(
+    `BOUND MORPHEME "${key}": ${where} — the earlier row donated the key off a hyphen and this` +
+      ' one writes the suffix, which is decided policy (#601), not a defect.',
+  );
+}
 for (const [key, where] of collisions) {
   findings.push(
     `COLLIDES INSIDE THIS MODULE "${key}": ${where} — the fold cannot tell them apart, so the` +
@@ -188,7 +227,11 @@ for (const [key, where] of collisions) {
   );
 }
 if (findings.length === 0) {
-  const tail = reteaches.size === 0 ? '' : `, ${reteaches.size} re-teach(es) reported above`;
+  const notes = [
+    reteaches.size === 0 ? '' : `${reteaches.size} re-teach(es)`,
+    donated.size === 0 ? '' : `${donated.size} bound morpheme(s)`,
+  ].filter((n) => n !== '');
+  const tail = notes.length === 0 ? '' : `, ${notes.join(' and ')} reported above`;
   console.log(`${moduleId}: clean — every shown surface resolves${tail}`);
 } else {
   for (const f of findings) console.log(f);
