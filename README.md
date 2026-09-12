@@ -1405,6 +1405,30 @@ error; whether `frāctus est` taught as an adjective plants a habit L4-M7 has to
 `deinde` and `tum` really swap freely in the middle of an account, which L2-M10's rule asserts and a
 fluent reader is most likely to deny.
 
+**en-la's L3 is half authored, and M4 is the one module in the course that opens a MOOD (#642-#644,
+2026-09-12).** Ten briefs ([`docs/129`](docs/129-en-la-L3-brief-decisions.md)) and five modules so far
+([`docs/130`](docs/130-llm-review-en-la-L3.md)): `en-la: 25 modules`, **409 cumulative surfaces**, and
+**no `shown but untaught` line at any of the twenty-five**. Three things in it are the shared index and
+the orthography finally being paid for:
+
+- **`ne` and `nē` are two keys**, read off the emitted index at `L1-M2-S06` and `L3-M4-S05`. The pair
+  was reserved thirty modules ago (`docs/123` §1.1) because `surfaceIndexKeys('agis-ne')` donates the
+  bare `ne`, and rule 4 of `src/engine/surface.ts` folds case and never a diacritic. Every seam form
+  L1-M2 and L2-M6 own stayed put.
+- **The one macron slip in twenty-five modules was caught by the sweep, not by a gate** — a variation
+  shipped `cras` for `crās`. en-la has no build gate on spelling at all, since `checkScriptMode`
+  returns an empty report for a `native` row, so the per-wave sweep over the emitted course is the only
+  thing between a wrong bar and a learner. At M5 it reads 2,514 readable Latin strings, zero on every
+  count.
+- **`sīs` was a subjunctive all along.** L2-M1 taught it inside a polite phrase as vocabulary, exactly
+  as it taught `velim`, and L3-M4 explains it. Three of the mood's forms were already in the learner's
+  mouth before the module that opens it, which is why one module could afford to open it.
+
+L3-M2 also carries the sharpest thing the shared index has done to this course: `quod` is L1-M9's
+"because" and `quam` is L2-M9's "than", so **the relative pronoun is taught in three of its five
+shapes** and the other two are named in a rule and written nowhere. Writing either would serve a
+learner the wrong note with no build failure at all.
+
 **Five levels per course (2026-09-07, `docs/48-five-level-ladder-plan.md`).** Every course's
 `levels.json` now lists L4 "Nuance — say it the way they do" and L5 "Voice — your own words, at
 length" under L1–L3, ten rungs each, `draft: true` and `hasContent: false` — proposed lists awaiting
@@ -2516,10 +2540,10 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **490
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **495
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
   twenty on en-sa, which is the whole of L1 and the whole of L2 (#611, #613, #614, #615), and
-  twenty on en-la, the same two levels complete (#637, #639, #640, #641) — every one
+  twenty-five on en-la, those two levels plus the first half of L3 (#637, #641, #643, #644) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.
