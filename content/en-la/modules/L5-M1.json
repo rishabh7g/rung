@@ -1,0 +1,911 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M1",
+  "title": "Sayings and idioms",
+  "job": "The figurative everyday, and when it is used",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "carpe diem",
+      "festīnā lentē",
+      "ālea iacta est",
+      "<saying> + , + ut dīcitur",
+      "<saying> + ; + V (a saying used as a premise)"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "free",
+      "text": "YOU HAVE KNOWN THESE SENTENCES FOR YEARS AND THIS IS THE FIRST TIME YOU CAN READ THEM. No other course's L5 can say that: an English speaker arrives here knowing carpe diem, festīnā lentē and ālea iacta est without knowing a word of Latin. So this module's work is not learning them but TAKING THEM APART — carpe is L2-M5's imperative shape and diem is its object, festīnā lentē is an imperative plus an adverb, and forty rungs of ladder are what make the analysis possible."
+    },
+    {
+      "tag": "delta",
+      "text": "AN ADVERB TAKES NO ENDING, EVER, AND THIS MODULE HAS TWO: lentē ('slowly', from lentus) beside L1-M2's bene and optimē and L4-M5's omnīnō. A Latin adverb is made from an adjective and then frozen — so lentus, lenta, lentum all move and lentē never does, which is the simplest thing in the language and the easiest to forget after forty modules of agreement."
+    },
+    {
+      "tag": "interference",
+      "text": "THE MACRON IS THIS COURSE's AND THE FAMILIAR SPELLING HAS NONE. docs/123 requires a macron on every long vowel, so this module writes ālea iacta est — and every mug, film poster and coat of arms says alea iacta est. THEY ARE THE SAME WORD, and in this course's index they would be TWO KEYS: src/engine/surface.ts folds case and never a diacritic, so writing both spellings would put two rows under one saying and show a learner tapping one a note about the other. The course writes ālea and this note names alea, which is the only honest arrangement — and it is the same decision L4-M7 took for SPQR against S.P.Q.R."
+    },
+    {
+      "tag": "free",
+      "text": "ālea iacta est IS L2-M8's ARRANGEMENT, THIRTY-EIGHT RUNGS LATER: a participle used as an ADJECTIVE with sum, agreeing with what it describes. iacta is feminine because ālea is, and the plate is the masculine ending — which makes the most famous participle in the language an exercise in L2-M3's agreement rule."
+    },
+    {
+      "tag": "free",
+      "text": "A PROVERB NEEDS NO VERB. in vīnō vēritās is a preposition, a noun and a noun, and the reader supplies 'is' — which L4-M7's signs did with est for the same reason: brevity is the point, and a saying that spells everything out is no longer a saying. Writing in vīnō vēritās est is correct and spoils it."
+    },
+    {
+      "tag": "interference",
+      "text": "ut MEANS 'AS' HERE AND 'SO THAT' EVERYWHERE ELSE IN THIS COURSE, and the mood after it is the only signal. L3-M4 took this key for the purpose reading and wrote no other; a saying needs ut dīcitur ('as they say'), so these rows carry BOTH readings — an indicative after ut means 'as' and a subjunctive means purpose. That is the remedy L4-M6's cum rows use, and this is its third outing. dīcitur itself is L4-M7's passive: 'it is said', with nobody named as saying it."
+    },
+    {
+      "tag": "delta",
+      "text": "A MOTTO TAKES THE IMPERFECT, WHICH IS WHY L4-M8 HAD TO COME FIRST. ita Augustus dīcēbat is 'so Augustus used to say' — a habit of speech. dīxit would mean he said it once, and a motto is by definition something said repeatedly. So the tense the course waited thirty-four modules for is what makes this sentence about a motto rather than about an occasion."
+    },
+    {
+      "tag": "free",
+      "text": "A SAYING CAN BE DISPLAYED OR DEPLOYED, and this module does both. Quoted with its author and a frame (ut Augustus dīcēbat) it is a citation; dropped into a sentence as a premise (ālea iacta est; nōn iam possum dubitāre) it does the work of a whole clause. Knowing which you are doing is most of knowing when a saying is used."
+    },
+    {
+      "tag": "interference",
+      "text": "SIX WORDS MUST COME SECOND IN THEIR CLAUSE AND THE FIFTIETH MODULE IS NOT AN EXCEPTION: autem, enim, igitur, quoque, vērō, tamen. This module writes enim and tamen, and each has a plate or a variation showing what happens when it is put first. L1-M10 settled it forty rungs ago and nothing since has softened it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M1-S01",
+      "display": "Carpe diem.",
+      "cue": "Seize the day.",
+      "literal": "pluck! day",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carpe",
+            "cue": "seize!",
+            "tag": "interference",
+            "forms": [
+              "carpe",
+              "carpō"
+            ],
+            "note": "'Seize!' — carpō's order shape, and literally 'pluck', as you pluck fruit. L2-M5's bibe and L1-M8's dā are the same kind of word."
+          },
+          {
+            "display": "diem",
+            "cue": "the day",
+            "tag": "delta",
+            "forms": [
+              "diem",
+              "hōram"
+            ],
+            "note": "'Day' as the object — L3-M9's diēs as the subject, diem as the thing seized. hōram is L2-M6's hour in the same shape. English 'diary' comes from it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "YOU HAVE KNOWN THIS SENTENCE FOR YEARS AND THIS IS THE FIRST TIME YOU CAN READ IT. carpe is an imperative — L2-M5's shape — and diem is its object. Forty rungs of ladder, and the reward is that a phrase you could always say becomes a phrase you can take apart.",
+      "sound": "CAR-pe DI-em. Four short syllables and not one long vowel: the most quoted line in Latin is also one of the lightest.",
+      "variations": [
+        {
+          "display": "Carpe hōram.",
+          "cue": "Seize the hour.",
+          "changed": "L2-M6's hour as the object, which Horace did not write and which works"
+        },
+        {
+          "display": "Diem carpe.",
+          "cue": "Seize the day.",
+          "changed": "the order reversed, which Latin allows and the quotation does not"
+        },
+        {
+          "display": "Diem carpō.",
+          "cue": "I seize the day.",
+          "changed": "a statement instead of an order"
+        }
+      ],
+      "mistake": {
+        "display": "Carpe diēs.",
+        "why": "the subject shape as the object. diēs is what a day IS and diem is what you seize — and the famous form has the object, which is the sort of thing a learner never notices until they can parse it."
+      },
+      "usage": "Said by Horace, Odes I.11, and by everyone since. Classical verse.",
+      "mnemonic": "An imperative and its object, and you always knew it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M1-S02",
+      "display": "Festīnā lentē.",
+      "cue": "Make haste slowly.",
+      "literal": "hurry! slowly",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "festīnā",
+            "cue": "hurry!",
+            "tag": "delta",
+            "forms": [
+              "festīnā",
+              "festīnō"
+            ],
+            "note": "'Hurry!' — festīnō's order shape, first conjugation like labōrō. English 'festinate' is a real if rare word from it."
+          },
+          {
+            "display": "lentē",
+            "cue": "slowly",
+            "tag": "delta",
+            "forms": [
+              "lentē"
+            ],
+            "note": "'Slowly' — an adverb from lentus, 'slow'. L4-M5's omnīnō and L1-M2's bene are the same kind of word: no ending ever."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "An order and its own contradiction, in two words. It is Augustus's motto as Suetonius reports it, and the whole of it is an imperative plus an adverb — which means a learner with L2-M5's imperative and L1-M2's adverbs already had the grammar and only lacked the vocabulary.",
+      "sound": "fes-TĪ-nā LEN-tē. Three long vowels in five syllables: the sentence slows itself down as it tells you to.",
+      "variations": [
+        {
+          "display": "Festīnā.",
+          "cue": "Hurry.",
+          "changed": "the paradox removed, which leaves an ordinary order"
+        },
+        {
+          "display": "Lentē lege.",
+          "cue": "Read slowly.",
+          "changed": "L1-M4's verb, which is the useful everyday version"
+        },
+        {
+          "display": "Nōn festīnō.",
+          "cue": "I am not hurrying.",
+          "changed": "a statement, and negative"
+        }
+      ],
+      "mistake": {
+        "display": "Festīnā lentus.",
+        "why": "the adjective where the adverb belongs. lentus describes a slow person and lentē describes a slow way of doing something — and after forty modules of making adjectives agree, the one word in the sentence that never moves is the one a learner changes."
+      },
+      "usage": "Said by Augustus, per Suetonius. Imperial prose, quoting a Greek proverb.",
+      "mnemonic": "It slows down as it says it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M1-S03",
+      "display": "Ālea iacta est.",
+      "cue": "The die is cast.",
+      "literal": "die thrown it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ālea",
+            "cue": "the die",
+            "tag": "interference",
+            "forms": [
+              "ālea",
+              "āleae"
+            ],
+            "note": "'The die' — one dice. This course writes ālea with the macron, per its own orthography; what you have seen on a mug is alea, and it is the same word."
+          },
+          {
+            "display": "iacta",
+            "cue": "thrown",
+            "tag": "interference",
+            "forms": [
+              "iacta",
+              "iactae"
+            ],
+            "note": "'Thrown' — a participle used as an ADJECTIVE, agreeing with ālea and so feminine. L2-M8's frāctus est is the same arrangement, forty rungs earlier."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "THE MACRON IS THE COURSE'S AND THE FAMILIAR SPELLING HAS NONE. This course writes a macron on every long vowel, so ālea — and every mug, film and coat of arms says alea. They are the same word. They are also two different keys in this course's index, which is why only one of them is ever written here.",
+      "sound": "Ā-le-a I-ac-ta EST. The long ā opens it; nothing else in the line is long at all.",
+      "variations": [
+        {
+          "display": "Ālea iacta nōn est.",
+          "cue": "The die is not cast.",
+          "changed": "the negative, which nobody has ever needed"
+        },
+        {
+          "display": "Mēnsa frācta est.",
+          "cue": "The table is broken.",
+          "changed": "L2-M8's own sentence, which is the same construction"
+        },
+        {
+          "display": "Āleae iactae sunt.",
+          "cue": "The dice are cast.",
+          "changed": "more than one, so all three words move"
+        }
+      ],
+      "mistake": {
+        "display": "Ālea iactus est.",
+        "why": "the masculine ending on a feminine noun. iacta agrees with ālea, which is feminine — and this is L2-M3's agreement on the most famous participle in the language, thirty-eight modules after that module taught it."
+      },
+      "usage": "Said by Caesar at the Rubicon, per Suetonius. Imperial prose reporting speech.",
+      "mnemonic": "ālea here, alea everywhere else, one word.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M1-S04",
+      "display": "In vīnō vēritās.",
+      "cue": "In wine, truth.",
+      "literal": "in wine truth",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in",
+            "cue": "in",
+            "tag": "delta",
+            "forms": [],
+            "note": "'In' plus the ablative. L1-M7's preposition, and here it introduces the place where something is found."
+          },
+          {
+            "display": "vīnō",
+            "cue": "wine",
+            "tag": "delta",
+            "forms": [
+              "vīnō"
+            ],
+            "note": "'Wine' after in — vīnum is the subject shape, vīnō the ablative. L2-M5's word."
+          },
+          {
+            "display": "vēritās",
+            "cue": "truth",
+            "tag": "interference",
+            "forms": [
+              "vēritās"
+            ],
+            "note": "'Truth' — an abstract noun made from vērus, 'true', with -tās. M5 of this level teaches the suffix; this is the word it will start from."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "No verb at all. Latin will state a proverb as two nouns and a preposition and let the reader supply 'is' — which L4-M7's signs did with est and which a saying does because brevity is the point.",
+      "sound": "in VĪ-nō VĒ-ri-tās. Three long vowels, one in each of the words that matter.",
+      "variations": [
+        {
+          "display": "In vīnō vēritās est.",
+          "cue": "In wine there is truth.",
+          "changed": "est supplied, which is correct and spoils it"
+        },
+        {
+          "display": "In aquā vēritās nōn est.",
+          "cue": "In water there is no truth.",
+          "changed": "a joke a Roman would have made"
+        },
+        {
+          "display": "Vēritās in vīnō est.",
+          "cue": "Truth is in wine.",
+          "changed": "the order made ordinary, which loses the shape"
+        }
+      ],
+      "mistake": {
+        "display": "In vīnum vēritās.",
+        "why": "the object shape after in. L1-M7's in takes the ablative for a place — vīnō — and the accusative would mean motion into the wine, which is a different and funnier sentence."
+      },
+      "usage": "Proverbial, and late. No single author owns it.",
+      "mnemonic": "A proverb needs no verb.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M1-S05",
+      "display": "Carpe diem, ut dīcitur.",
+      "cue": "Seize the day, as they say.",
+      "literal": "pluck! day as it-is-said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carpe",
+            "cue": "seize!",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Seize!' — carpō's order shape, and literally 'pluck', as you pluck fruit. L2-M5's bibe and L1-M8's dā are the same kind of word."
+          },
+          {
+            "display": "diem",
+            "cue": "the day",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Day' as the object — L3-M9's diēs as the subject, diem as the thing seized. English 'diary' and 'diurnal' come from it."
+          },
+          {
+            "display": "ut",
+            "cue": "as",
+            "tag": "interference",
+            "forms": [],
+            "note": "'As' — and this course has used ut for 'so that' since L3-M4. Two readings, one key: a subjunctive after it means purpose, an indicative means 'as'. The mood is the signal."
+          },
+          {
+            "display": "dīcitur",
+            "cue": "it is said",
+            "tag": "delta",
+            "forms": [],
+            "note": "'It is said' — L4-M7's passive, with nobody named as saying it. The whole of 'as they say' is two words."
+          }
+        ],
+        "rules": [
+          5
+        ]
+      },
+      "trap": "ut means 'as' here and 'so that' everywhere else in this course. L3-M4 took the key and wrote the purpose reading only; a saying needs the other one, so this row's note carries both — and the signal is the mood after it. That is the same remedy L4-M6's cum rows use.",
+      "sound": "CAR-pe DI-em, ut DĪ-ci-tur. Eight syllables and one long vowel, in the passive.",
+      "variations": [
+        {
+          "display": "Festīnā lentē, ut dīcitur.",
+          "cue": "Make haste slowly, as they say.",
+          "changed": "a different saying quoted"
+        },
+        {
+          "display": "Carpe diem, ut Horātius dīcit.",
+          "cue": "Seize the day, as Horace says.",
+          "changed": "the author named, which makes it a quotation rather than a proverb"
+        },
+        {
+          "display": "Ad scholam eō ut discam.",
+          "cue": "I go to school in order to learn.",
+          "changed": "L3-M4's purpose reading, with a subjunctive — the other half of this key"
+        }
+      ],
+      "mistake": {
+        "display": "Carpe diem, ut dīcātur.",
+        "why": "a subjunctive after ut, which makes it a purpose clause: 'seize the day so that it may be said'. Grammatical, and a different sentence — and this is exactly why the mood after ut is the only thing that tells a reader which word they have."
+      },
+      "usage": "Said when quoting a proverb you expect the listener to know.",
+      "mnemonic": "ut plus a mood is purpose; ut plus a fact is 'as'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M1-S06",
+      "display": "Festīnā lentē: ita Augustus dīcēbat.",
+      "cue": "Make haste slowly: so Augustus used to say.",
+      "literal": "hurry! slowly so Augustus he-was-saying",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "festīnā",
+            "cue": "hurry!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Hurry!' — festīnō's order shape."
+          },
+          {
+            "display": "lentē",
+            "cue": "slowly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Slowly' — an adverb from lentus, and it takes no ending."
+          },
+          {
+            "display": "ita",
+            "cue": "so",
+            "tag": "delta",
+            "forms": [],
+            "note": "'So'. L1-M2's word, and here it points back at the quotation rather than answering a question."
+          },
+          {
+            "display": "augustus",
+            "cue": "Augustus",
+            "tag": "free",
+            "forms": [
+              "augustus",
+              "horātius"
+            ],
+            "note": "The first emperor, and the man Suetonius reports saying this. A Roman name in the subject shape; Horātius is the poet of carpe diem, in the same shape."
+          },
+          {
+            "display": "dīcēbat",
+            "cue": "used to say",
+            "tag": "interference",
+            "forms": [
+              "dīcēbat"
+            ],
+            "note": "'He used to say' — L4-M8's imperfect of dīcō. A habit of speech, not a single occasion, which is why the imperfect and not dīxit."
+          }
+        ],
+        "rules": [
+          1,
+          6
+        ]
+      },
+      "trap": "The imperfect is doing real work here. dīxit would mean Augustus said it once; dīcēbat means it was a thing he said — and a motto is by definition something somebody said repeatedly, so the tense L4-M8 opened is what makes this sentence about a motto rather than about an occasion.",
+      "sound": "fes-TĪ-nā LEN-tē: I-ta au-GUS-tus dī-CĒ-bat. Thirteen syllables and four long vowels.",
+      "variations": [
+        {
+          "display": "Carpe diem: ita Horātius dīcēbat.",
+          "cue": "Seize the day: so Horace used to say.",
+          "changed": "a different author and saying"
+        },
+        {
+          "display": "Festīnā lentē: ita Augustus dīxit.",
+          "cue": "Make haste slowly: so Augustus said.",
+          "changed": "the perfect, which makes it one occasion"
+        },
+        {
+          "display": "Ita Augustus dīcēbat.",
+          "cue": "So Augustus used to say.",
+          "changed": "the saying dropped, which leaves nothing said"
+        }
+      ],
+      "mistake": {
+        "display": "Festīnā lentē: ita Augustus dīcit.",
+        "why": "the present for a dead man's habit. dīcit says Augustus is saying it now; dīcēbat says it was a thing he said — and L4-M8 opened that tense thirty-four modules after L1-M5 deferred it, for sentences exactly like this one."
+      },
+      "usage": "Said attributing a motto.",
+      "mnemonic": "A motto takes the imperfect.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M1-S07",
+      "display": "Ālea iacta est; nōn iam possum dubitāre.",
+      "cue": "The die is cast; I can no longer hesitate.",
+      "literal": "die thrown it-is not already I-can to-hesitate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ālea",
+            "cue": "the die",
+            "tag": "interference",
+            "forms": [],
+            "note": "'The die' — one dice. This course writes ālea with the macron, per its own orthography; what you have seen on a mug is alea, and it is the same word."
+          },
+          {
+            "display": "iacta",
+            "cue": "thrown",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Thrown' — a participle as an adjective, agreeing with ālea."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum, es, est, sunt."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not' — and nōn iam together mean 'no longer'. L4-M6's pair."
+          },
+          {
+            "display": "iam",
+            "cue": "no longer",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Already' — and with nōn in front, 'no longer'. L4-M6's word."
+          },
+          {
+            "display": "possum",
+            "cue": "I can",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I can': possum, potes, potest. L3-M2's verb, and it takes an infinitive."
+          },
+          {
+            "display": "dubitāre",
+            "cue": "to hesitate",
+            "tag": "delta",
+            "forms": [
+              "dubitō",
+              "dubitāre"
+            ],
+            "note": "'To hesitate, to doubt' — dubitō's infinitive. English 'dubious' and 'doubt' both come from it."
+          }
+        ],
+        "rules": [
+          2,
+          7
+        ]
+      },
+      "trap": "A saying used in a sentence rather than quoted on its own, which is the module's second job. The phrase does the work of a whole clause — 'there is no going back' — and the sentence after it says what follows, in words the course taught at L3-M2 and L4-M6.",
+      "sound": "Ā-le-a I-ac-ta EST; nōn I-am POS-sum du-bi-TĀ-re. Fifteen syllables and the long ā opens and the long ā of the infinitive closes.",
+      "variations": [
+        {
+          "display": "Ālea iacta est; nōn iam dubitō.",
+          "cue": "The die is cast; I hesitate no longer.",
+          "changed": "no possum, which is shorter and flatter"
+        },
+        {
+          "display": "Ālea iacta est; itaque nōn dubitō.",
+          "cue": "The die is cast; so I do not hesitate.",
+          "changed": "L1-M9's itaque making the consequence explicit"
+        },
+        {
+          "display": "Nōn iam possum dubitāre.",
+          "cue": "I can no longer hesitate.",
+          "changed": "the saying dropped, which loses the reason"
+        }
+      ],
+      "mistake": {
+        "display": "Ālea iacta est; nōn iam dubitāre possum nōn.",
+        "why": "a second negative added to a clause that already has one. nōn iam is 'no longer' and needs nothing else — and a learner reaching for the English 'can no longer not' has doubled a negative that cancels."
+      },
+      "usage": "Said at the point of no return.",
+      "mnemonic": "A saying can do a clause's work.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M1-S08",
+      "display": "In vīnō vēritās, ut dīcitur; nōn tamen crēdō.",
+      "cue": "In wine there is truth, as they say; I do not believe it, though.",
+      "literal": "in wine truth as it-is-said not however I-believe",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in",
+            "cue": "in",
+            "tag": "delta",
+            "forms": [],
+            "note": "'In' plus the ablative. L1-M7's preposition."
+          },
+          {
+            "display": "vīnō",
+            "cue": "wine",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Wine' after in. L2-M5's word."
+          },
+          {
+            "display": "vēritās",
+            "cue": "truth",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Truth' — vērus plus -tās. M5 of this level teaches the suffix."
+          },
+          {
+            "display": "ut",
+            "cue": "as",
+            "tag": "interference",
+            "forms": [],
+            "note": "'As', with an indicative after it. The other reading of L3-M4's key, and the mood is the signal."
+          },
+          {
+            "display": "dīcitur",
+            "cue": "it is said",
+            "tag": "delta",
+            "forms": [],
+            "note": "'It is said' — L4-M7's passive."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "tamen",
+            "cue": "however",
+            "tag": "delta",
+            "forms": [],
+            "note": "'However', and it comes SECOND in its clause. L3-M3's word, the sixth of six that must."
+          },
+          {
+            "display": "crēdō",
+            "cue": "I believe",
+            "tag": "delta",
+            "forms": [
+              "crēdō"
+            ],
+            "note": "'I believe' — and it takes a plain object here: crēdō is 'I believe it'. M5 of this level teaches its two constructions."
+          }
+        ],
+        "rules": [
+          5,
+          8
+        ]
+      },
+      "trap": "A proverb quoted and then refused, which is what ut dīcitur is FOR: the frame lets you report a saying without endorsing it. English does the same with 'as they say' — and the tamen that refuses it is second in its clause, which is L3-M3's rule holding at the fiftieth module.",
+      "sound": "in VĪ-nō VĒ-ri-tās, ut DĪ-ci-tur; nōn TA-men CRĒ-dō. Sixteen syllables and six long vowels.",
+      "variations": [
+        {
+          "display": "In vīnō vēritās, ut dīcitur; crēdō.",
+          "cue": "In wine there is truth, as they say; I believe it.",
+          "changed": "the refusal dropped"
+        },
+        {
+          "display": "Carpe diem, ut dīcitur; nōn tamen crēdō.",
+          "cue": "Seize the day, as they say; I do not believe it, though.",
+          "changed": "a different proverb refused"
+        },
+        {
+          "display": "In vīnō vēritās nōn est.",
+          "cue": "In wine there is no truth.",
+          "changed": "the flat denial, with no quotation at all"
+        }
+      ],
+      "mistake": {
+        "display": "In vīnō vēritās, ut dīcitur; tamen nōn crēdō.",
+        "why": "tamen put first in its clause. It must come second, which L3-M3 settled — and the fiftieth module is not an exception, however natural English's 'however' at the front feels."
+      },
+      "usage": "Said quoting a proverb sceptically.",
+      "mnemonic": "ut dīcitur quotes without endorsing.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M1-S09",
+      "display": "Carpe diem; crās enim aliud erit.",
+      "cue": "Seize the day; for tomorrow will be different.",
+      "literal": "pluck! day tomorrow for another it-will-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "carpe",
+            "cue": "seize!",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Seize!' — carpō's order shape, and literally 'pluck', as you pluck fruit. L2-M5's bibe and L1-M8's dā are the same kind of word."
+          },
+          {
+            "display": "diem",
+            "cue": "the day",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Day' as the object — L3-M9's diēs as the subject, diem as the thing seized. English 'diary' and 'diurnal' come from it."
+          },
+          {
+            "display": "crās",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tomorrow'. L1-M4's word, and one of six caseless time adverbs."
+          },
+          {
+            "display": "enim",
+            "cue": "for",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For, because' — and it comes SECOND in its clause, never first. L1-M10's word, and one of six that must."
+          },
+          {
+            "display": "aliud",
+            "cue": "another thing",
+            "tag": "delta",
+            "forms": [
+              "aliud"
+            ],
+            "note": "'Another, different' — the neuter of alius. L4-M5's aliquis was built on the same stem, which is worth noticing."
+          },
+          {
+            "display": "erit",
+            "cue": "it will be",
+            "tag": "delta",
+            "forms": [],
+            "note": "'It will be' — L1-M6's future of sum: erō, erit."
+          }
+        ],
+        "rules": [
+          0,
+          8
+        ]
+      },
+      "trap": "enim comes second and there is no choosing. It is the fourth of L1-M10's second-position words to appear in this level, and a learner who puts it first has written something that cannot be read — which is why the position list is worth more than the principle by now.",
+      "sound": "CAR-pe DI-em; CRĀS E-nim A-li-ud E-rit. Twelve syllables and the long ā of crās is the only length.",
+      "variations": [
+        {
+          "display": "Carpe hōram; crās enim aliud erit.",
+          "cue": "Seize the hour; for tomorrow will be different.",
+          "changed": "L2-M6's hour instead of the day"
+        },
+        {
+          "display": "Carpe diem; aliud enim crās erit.",
+          "cue": "Seize the day; for tomorrow will be different.",
+          "changed": "the word order shifted, with enim still second"
+        },
+        {
+          "display": "Crās aliud erit.",
+          "cue": "Tomorrow will be different.",
+          "changed": "the saying dropped"
+        }
+      ],
+      "mistake": {
+        "display": "Carpe diem; enim crās aliud erit.",
+        "why": "enim put first, which is how English orders 'for'. It must come second in its clause and there is no version of the sentence where it opens one — L1-M10 settled that forty rungs ago and the fiftieth module is not an exception."
+      },
+      "usage": "Said pressing someone to act.",
+      "mnemonic": "enim is always second.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M1-S10",
+      "display": "Festīnā lentē, ut Augustus dīcēbat; ālea enim iacta nōn est.",
+      "cue": "Make haste slowly, as Augustus used to say; for the die is not yet cast.",
+      "literal": "hurry! slowly as Augustus he-was-saying die for thrown not it-is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "festīnā",
+            "cue": "hurry!",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Hurry!' — festīnō's order shape."
+          },
+          {
+            "display": "lentē",
+            "cue": "slowly",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Slowly' — an adverb from lentus."
+          },
+          {
+            "display": "ut",
+            "cue": "as",
+            "tag": "interference",
+            "forms": [],
+            "note": "'As', with an indicative after it — the reading this module opens. With a subjunctive it is L3-M4's purpose."
+          },
+          {
+            "display": "augustus",
+            "cue": "Augustus",
+            "tag": "free",
+            "forms": [],
+            "note": "The first emperor, in the subject shape."
+          },
+          {
+            "display": "dīcēbat",
+            "cue": "used to say",
+            "tag": "interference",
+            "forms": [],
+            "note": "'He used to say' — L4-M8's imperfect. A motto is something said repeatedly."
+          },
+          {
+            "display": "ālea",
+            "cue": "the die",
+            "tag": "interference",
+            "forms": [],
+            "note": "'The die' — one dice. This course writes ālea with the macron, per its own orthography; what you have seen on a mug is alea, and it is the same word."
+          },
+          {
+            "display": "enim",
+            "cue": "for",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For' — second in its clause, never first. L1-M10's word."
+          },
+          {
+            "display": "iacta",
+            "cue": "thrown",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Thrown' — a participle as an adjective, agreeing with ālea."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum, es, est, sunt."
+          }
+        ],
+        "rules": [
+          5,
+          8
+        ]
+      },
+      "trap": "Two sayings in one sentence, one quoted with its author and one used as an argument. That is the whole module: a saying can be displayed or deployed, and the frames for each — ut dīcēbat and a bare clause — are what this rung adds to a learner who already knew both phrases.",
+      "sound": "fes-TĪ-nā LEN-tē, ut au-GUS-tus dī-CĒ-bat; Ā-le-a E-nim I-ac-ta nōn EST. Twenty-two syllables — the longest line of the module.",
+      "variations": [
+        {
+          "display": "Festīnā lentē, ut Augustus dīcēbat.",
+          "cue": "Make haste slowly, as Augustus used to say.",
+          "changed": "one saying only"
+        },
+        {
+          "display": "Carpe diem, ut Horātius dīcēbat; ālea enim iacta est.",
+          "cue": "Seize the day, as Horace used to say; for the die is cast.",
+          "changed": "the other pair of sayings, and the die cast after all"
+        },
+        {
+          "display": "Ālea enim iacta nōn est.",
+          "cue": "For the die is not yet cast.",
+          "changed": "the argument alone, with no quotation"
+        }
+      ],
+      "mistake": {
+        "display": "Festīnā lentē, ut Augustus dīcēbat; enim ālea iacta nōn est.",
+        "why": "enim first, for the second time in this module. It is one of six words that must come second and it is the one an English speaker misplaces most, because 'for' opens a clause in English and enim cannot."
+      },
+      "usage": "Said advising caution with authority behind it.",
+      "mnemonic": "A saying can be displayed or deployed.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M1-C01",
+      "display": "Carpe hōram.",
+      "cue": "Seize the hour."
+    },
+    {
+      "id": "L5-M1-C02",
+      "display": "Lentē lege.",
+      "cue": "Read slowly."
+    },
+    {
+      "id": "L5-M1-C03",
+      "display": "Āleae iactae sunt.",
+      "cue": "The dice are cast."
+    },
+    {
+      "id": "L5-M1-C04",
+      "display": "In vīnō vēritās est.",
+      "cue": "In wine there is truth."
+    },
+    {
+      "id": "L5-M1-C05",
+      "display": "Festīnā lentē, ut dīcitur.",
+      "cue": "Make haste slowly, as they say."
+    },
+    {
+      "id": "L5-M1-C06",
+      "display": "Carpe diem: ita Horātius dīcēbat.",
+      "cue": "Seize the day: so Horace used to say."
+    },
+    {
+      "id": "L5-M1-C07",
+      "display": "Ālea iacta est; nōn iam dubitō.",
+      "cue": "The die is cast; I hesitate no longer."
+    },
+    {
+      "id": "L5-M1-C08",
+      "display": "In vīnō vēritās, ut dīcitur; crēdō.",
+      "cue": "In wine there is truth, as they say; I believe it."
+    },
+    {
+      "id": "L5-M1-C09",
+      "display": "Crās aliud erit.",
+      "cue": "Tomorrow will be different."
+    },
+    {
+      "id": "L5-M1-C10",
+      "display": "Festīnā lentē, ut Augustus dīcēbat.",
+      "cue": "Make haste slowly, as Augustus used to say."
+    },
+    {
+      "id": "L5-M1-C11",
+      "display": "Diem carpō.",
+      "cue": "I seize the day."
+    },
+    {
+      "id": "L5-M1-C12",
+      "display": "Mēnsa frācta est.",
+      "cue": "The table is broken."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
