@@ -238,3 +238,123 @@ Additions to the fifty-six standing in `docs/123` §11, `docs/124` §6, `docs/12
 6. **Is teaching `suus` without `eius` worse than teaching neither?** A learner who knows `suus`
    will use it for both, which is a definite error, where a learner who knows no possessive simply
    leaves possession out — which is what Latin does anyway.
+---
+
+## Wave 3 — L3-M6 through L3-M10 (#645), 2026-09-12
+
+Five rungs, and the level closes: `draft` and `draftNote` come off L3 in `content/en-la/levels.json`.
+All five signed `verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"`,
+`verifiedAt: 2026-09-12`.
+
+### 3.1 What was checked
+
+- **`npm run content:validate`** → all five `ok`; `CONTENT 500/500 ok`.
+- **The strict build** → `en-la: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)`,
+  `index L3-M6: 421 surfaces`, `L3-M7: 441`, `L3-M8: 458`, `L3-M9: 473`, `L3-M10: 479`, and **no
+  `shown but untaught` line at any of the thirty**.
+- **The folded index** — 479 surfaces against a `surfaceCount` of 479, `maxSpan` 1, and the sum of the
+  thirty per-module deltas is 479 exactly.
+- **The orthography sweep** — 3,060 readable Latin strings: zero `j`, zero apostrophes, zero acutes,
+  zero combining marks, zero non-NFC, nothing outside the ten macron letters and ASCII, no `script`
+  line, no hyphen outside `-que`/`-ne`/`-ve`. The 216 `mistake` plates swept separately.
+- **`git diff --stat`** over every L1, L2 and L3-M1…M5 module is **empty**.
+
+### 3.2 Every reserved key still free, thirty modules on
+
+Read back from the folded index with the level complete — **none of these is present**:
+
+`legēbam`, `habēbam`, `eram` (L4-M8's imperfect), `venī`, `sīc`, `rosa`/`rosā`, `nōnne`, `num`,
+`domī` (L4-M9's locative), `possim`, `meus`, `eius`, and `ȳ` in any word.
+
+`domī` is the one worth naming: it was first deferred at L2-M4 and M7 wanted it again for
+`melius est … manēre`. It wrote `domum īre` instead. Twenty-nine modules of a named gap, still named.
+
+### 3.3 Two impersonal patterns in two cases, which `docs/129` §5 corrected the issue about
+
+M6 teaches `pudet`/`taedet` with the **accusative** and `libet`/`placet` with the **dative**, side by
+side, and the plate runs in both directions: S01's is `Mihi pudet` (the dative every other impersonal
+in the course takes) and S04's is `Mē libet` (the accusative it had just learned). Twenty-five modules
+had taught `mihi opus est`, `mihi placet` and `mihi vidētur` before anything prepared the accusative,
+so both errors are equally reasonable — which is why the module writes four verbs rather than a rule.
+
+The thing felt about is a **genitive**, the case's second job after L2-M2's possession; M8's genitive
+of price is its third, and L3 opened no fourth.
+
+### 3.4 L1-M8's phrase finally explained, twenty-two modules later
+
+`quantī cōnstat` shipped at L1-M8 as a whole phrase a learner said without knowing why. M8 explains
+it: `quantī` is a genitive of price, "at how much". A learner has been using it for two levels and is
+owed the reason at the moment the course can give it, and this is that moment.
+
+M8 also carries the level's second **benign homograph check**: `librī` is "of the book" here and
+"books" at L1-M1, spelled identically, with no mark anywhere. The module names it in a rule and writes
+`pretium librī`, where only one reading is possible. This is the third time this course has had to
+handle a collision it cannot spell away — `magistrī` (L2-M2), `grave` (L3-M2), `librī` (L3-M8).
+
+### 3.5 The festivals decision in content, and what it cost
+
+`docs/129` §4 settled that the culture is Roman. M9 teaches `Sāturnālia` — **plural with no singular at
+all**, so `Sāturnālia sunt` and never `est`, which is the module's one grammatical fact and its one
+plate — and `diēs nātālis`, and S05 says in a rule whose festivals these are. The cost is stated rather
+than hidden: the one named source (`docs/123` §7) has a telephone and a bicycle in it and no Diwali or
+Christmas Eve, and coining is banned course-wide, so a learner who wants to talk about their own
+December cannot yet. That is the third named gap of this kind, after `ēsse` and `Mārce`.
+
+### 3.6 M10 spends no cap, on purpose
+
+`docs/129` says the level's last rung should add almost nothing, and it adds **four surfaces** — three
+of them perfects of verbs already taught (`vīdī`, `dīxī`, `signāvī`, `fuisse`). Everything else in
+eight sentences has been in the index for at least three modules.
+
+What it does with them:
+
+- **`dum` + present is the relief that makes the account possible.** `Dum legō, Mārcus vēnit` is
+  "while I was reading, Marcus came", and its plate is `Dum legēbam` — wrong twice, since `dum` takes
+  the present in real Latin and `legēbam` is still a free key after twenty-nine modules.
+- **Pro-drop across eight sentences**, with the subject named once at S01 and once more at S03 where
+  it changes to `Mārcus`, and never again for three sentences after that.
+- **`solvit` is "he pays" and "he paid"** with nothing to part them — the third such verb in the
+  course after `accidit` (L2-M8) and `bibit` (L1-M5's review). In an account the sequencer decides:
+  `deinde` says a step happened.
+- **The level's last plate is `sē` where `mē` belongs.** `Dīxī mē aegrum fuisse` — the reporter is the
+  speaker, so the reflexive is `mē`. A learner who has spent five modules learning `sē` as "the person
+  reporting" will write it here, and the sentence would then be about somebody else entirely.
+
+### 3.7 Corrections made during the wave
+
+- **One row was nearly given a note about the wrong verb.** `bibam` (from `bibō`) was briefly parked in
+  the `forms` of M9's `dem` row (from `dā`) to satisfy the ratchet. That is precisely the `magistrī`
+  defect — a learner tapping `bibam` would have been shown a note about giving — so the variation that
+  showed it was rewritten instead, and `dem`'s row owns only `dem` and `det`.
+- **Two modules declared fewer rules than their sentences referenced**, and `validate.ts` caught both
+  (`rule index 8 is out of range`). Fixed by pointing the sentences at rules that exist, not by adding
+  rules to justify the indices.
+- **M6-S06 shipped a variation with no `changed` field** and the schema rejected it.
+- **`multum` and `signāre` and a dozen other shapes** were shown before they were owned and each went
+  into its own lexeme's row — every one a real shape of a word the module teaches.
+
+### 3.8 Open questions for the fluent-speaker gate
+
+Additions to the sixty-two standing in `docs/123` §11, `docs/124` §6, `docs/125` §5, `docs/126` §6,
+`docs/127` §6, `docs/128` §1.7, §2.7, §3.7, `docs/129` §7 and §1.7 and §2.8 above. **The gate remains
+unmet**: no fluent speaker of living Latin has read any of this, and no authoring wave may close one of
+these by rewriting a shipped module.
+
+1. **Is `mē taedet` without a genitive idiomatic?** M6-S03 writes it bare, on the model of `mē pudet`.
+   A teacher may say `taedet` always wants the thing one is sick of.
+2. **Is `sollicitus sum` or `sollicitor` the living form?** M6 teaches the adjective because the
+   passive is L4-M7's, and `sollicitor` is a real deponent-looking verb a speaker might reach for.
+3. **Are `oculī dolent` and `mihi caput dolet` really the same construction?** M7 teaches them as one
+   pattern with a plural verb. If the plural idiom differs, S06 is the sentence that is wrong.
+4. **Is `officīna` the right modern borrowing for an office?** `docs/129` §7 asked it of the brief and
+   M8 now writes it in a purpose clause. `tabellārium` was the alternative and is narrower.
+5. **Does `solvō` want an object at all, or is `mercēdem solvō` a Latinist's calque?** Rome paid rents
+   and `solvere` is the verb, and a teacher may say the idiom takes a dative of the person paid.
+6. **Is `Sāturnālia agunt` how a Roman said "they celebrate the Saturnalia"?** `agō` with a festival is
+   attested and `celebrāre` exists. M9 chose the verb the learner already has.
+7. **Should M9 have been about the street rather than the calendar?** `docs/129` §7 asked this of the
+   brief; ten sentences of content have not made it easier to answer, and a module about weather and
+   markets would have avoided the culture question entirely.
+8. **Is eight sentences the right ceiling, or does an account want a relative clause in it?** M10 uses
+   M2's relative in none of its ten sentences, because the sequencers and the perfects filled the line.
+   A fluent reader may find the result flat where the level intended it fluent.

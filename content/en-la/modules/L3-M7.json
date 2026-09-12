@@ -1,0 +1,793 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M7",
+  "title": "Body and health",
+  "job": "Say what hurts, and where",
+  "prerequisites": [
+    "L3-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "mihi + N-nom + dolet",
+      "quid tibi dolet",
+      "aeger / aegra + sum",
+      "medicum + V",
+      "melius est + V-infinitive"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "mihi caput dolet IS THE DATIVE OF POSSESSION, BACK FROM L1-M1 FOR A NEW JOB. 'My head hurts' is 'to-me the-head hurts': the head is the SUBJECT and you are the dative, which is exactly the shape of L1-M1's mihi nōmen est. The course opened this pattern in its first ten sentences and has not used it since. There is NO WORD FOR 'MY' in it — mihi carries the ownership — which L2-M2 and L3-M5 both prepared, the first by saying the course teaches no possessive and the second by teaching only the reflexive."
+    },
+    {
+      "tag": "interference",
+      "text": "aeger DROPS ITS e AS SOON AS AN ENDING IS ADDED: aeger, aegra, aegrum. L1-M4's liber did it and L2-M3's niger did it, and this is the third word in one pattern — which is the point at which a pattern is worth naming as a pattern rather than taught again. The e-drop survives everything, including the accusative of reported speech: dīcit sē aegrum esse."
+    },
+    {
+      "tag": "delta",
+      "text": "THE VERB AGREES WITH WHAT HURTS, NOT WITH WHOSE IT IS. mihi caput dolet, mihi oculī dolent — the dative never moves and the verb goes plural when two things hurt. Body parts that come in pairs are usually written plural: oculī, manūs. English moves 'hurt' the same way and for the opposite reason, because in English the eyes are not the grammatical subject of a dative."
+    },
+    {
+      "tag": "free",
+      "text": "videō IS M3's vidētur WITH THE IMPERSONAL TAKEN OFF. That module taught mihi vidētur, 'it seems to me', and said it was this verb's passive doing duty as 'seem' — so the plain verb arriving four modules later is a word you have already met the hard way round. It is worth saying, because a learner who met vidētur first will not recognise videō as its relative."
+    },
+    {
+      "tag": "delta",
+      "text": "melius est GIVES ADVICE WITH NOBODY IN IT. It is L2-M9's melior in the NEUTER, doing an adverb's job, plus an infinitive: melius est domum īre, 'it is better to go home'. English says 'you should' and Latin says 'it is better to' — so the advice is about the situation rather than about the person, and melior would be wrong because there is no person in the sentence to agree with. And nōn belongs to whichever word it stands in front of: melius est nōn labōrāre is 'not working is better', melius nōn est labōrāre is 'working is not better'."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ADJECTIVE MOVES INSIDE A REPORTED CLAUSE, AND THAT IS M5's RULE ON THIS MODULE's WORDS: dīcit sē aegrum esse. It agrees with sē, which is accusative. A learner who has just been taught to recognise aeger will write aeger here, which is why the plate exists."
+    },
+    {
+      "tag": "delta",
+      "text": "ADVICE HAS TWO MACHINERIES NOW AND THEY ARE NOT INTERCHANGEABLE. melius est plus an infinitive is advice about the world; M4's sī plus a subjunctive is advice inside a condition you are not claiming — sī aeger sīs, medicum videās. The mood is the more careful of the two, and M4's central error (one half plain, one half in the mood) is at its most tempting here, because being ill feels like a real possibility rather than an imagined one."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M7-S01",
+      "display": "Mihi caput dolet.",
+      "cue": "My head hurts.",
+      "literal": "to-me the-head hurts",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mihi",
+            "cue": "to me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To me' — the DATIVE of possession, back from L1-M1. mihi nōmen est was 'to me the name is'; this is the same shape for a body."
+          },
+          {
+            "display": "caput",
+            "cue": "head",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Head', and it is neuter: caput as the subject and as the object both. English 'captain' and 'capital' are the same word."
+          },
+          {
+            "display": "dolet",
+            "cue": "hurts",
+            "tag": "delta",
+            "forms": [
+              "doleō",
+              "dolet"
+            ],
+            "note": "'It hurts' — and what hurts is the SUBJECT: mihi caput dolet, 'to me the head hurts'. English 'doleful' and 'condolence' come from it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "There is no word for 'my'. The head is the SUBJECT and you are the dative — 'to me the head hurts' — which is exactly L1-M1's mihi nōmen est, a shape this course opened in its first ten sentences and has not used since. L2-M2 and M5 both prepared you for the missing possessive.",
+      "sound": "MI-hi CA-put DO-let. Six short syllables and not one long vowel: the commonest complaint in any language is a light sentence.",
+      "variations": [
+        {
+          "display": "Tibi caput dolet.",
+          "cue": "Your head hurts.",
+          "changed": "M1's tibi — the head is still the subject"
+        },
+        {
+          "display": "Mihi caput nōn dolet.",
+          "cue": "My head does not hurt.",
+          "changed": "the negative"
+        },
+        {
+          "display": "Mihi oculī dolent.",
+          "cue": "My eyes hurt.",
+          "changed": "two of them, so the verb goes plural"
+        }
+      ],
+      "mistake": {
+        "display": "Meum caput dolet.",
+        "why": "a possessive supplied, and this course has taught only M5's reflexive suus. The dative carries the ownership — mihi IS 'my' here — and adding a possessive is reaching for an English shape when a Latin one is already doing the job."
+      },
+      "usage": "Said at a doctor's, or complaining at home.",
+      "mnemonic": "mihi carries the 'my'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S02",
+      "display": "Quid tibi dolet?",
+      "cue": "What hurts?",
+      "literal": "what to-you hurts",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "'What', asking, and here it is the SUBJECT of dolet — the thing that hurts. L1-M2's word."
+          },
+          {
+            "display": "tibi",
+            "cue": "to you",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To you' — the dative, the same shape as S01's mihi. M1's row."
+          },
+          {
+            "display": "dolet",
+            "cue": "hurts",
+            "tag": "delta",
+            "forms": [],
+            "note": "'It hurts' — and what hurts is the SUBJECT: mihi caput dolet, 'to me the head hurts'. English 'doleful' and 'condolence' come from it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "The question word is the subject, which is what quis does in L2-M7 and what quid does here. English says 'what hurts you' with 'you' as an object; Latin says 'what to-you hurts' with the pain as the sentence's subject and you standing beside it.",
+      "variations": [
+        {
+          "display": "Quid tibi nōn dolet?",
+          "cue": "What does not hurt?",
+          "changed": "the negative, which is a joke a patient makes"
+        },
+        {
+          "display": "Caput tibi dolet?",
+          "cue": "Does your head hurt?",
+          "changed": "a yes-or-no question, with no question word"
+        },
+        {
+          "display": "Quid tibi placet?",
+          "cue": "What do you like?",
+          "changed": "L1-M7's verb in the same dative frame"
+        }
+      ],
+      "usage": "Said by whoever is asking after you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S03",
+      "display": "Aeger sum.",
+      "cue": "I am ill.",
+      "literal": "ill I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "interference",
+            "forms": [
+              "aeger",
+              "aegra"
+            ],
+            "note": "'Ill' — aeger, aegra, aegrum, and it drops its e as soon as an ending is added, exactly as liber and niger do. Third time, one pattern."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am' — sum, es, est, sunt. L1-M1's verb."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "aeger drops its e: aeger, aegra, aegrum. L1-M4's liber did it and L2-M3's niger did it, and this is the third word in one pattern — which is the point at which a pattern is worth naming as a pattern rather than being taught again.",
+      "variations": [
+        {
+          "display": "Aegra sum.",
+          "cue": "I am ill.",
+          "changed": "spoken by a woman"
+        },
+        {
+          "display": "Aeger est.",
+          "cue": "He is ill.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Aeger nōn sum.",
+          "cue": "I am not ill.",
+          "changed": "the negative"
+        }
+      ],
+      "usage": "Said explaining why you are not at work.",
+      "mnemonic": "liber, niger, aeger: the e drops out.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S04",
+      "display": "Medicum videō.",
+      "cue": "I am seeing a doctor.",
+      "literal": "doctor I-see",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "medicum",
+            "cue": "doctor",
+            "tag": "delta",
+            "forms": [
+              "medicus",
+              "medicum"
+            ],
+            "note": "'Doctor' — medicus as the subject, medicum as the object. English 'medicine' and 'medical' keep it."
+          },
+          {
+            "display": "videō",
+            "cue": "I see",
+            "tag": "delta",
+            "forms": [
+              "videō",
+              "vidēs",
+              "videt",
+              "vidēre"
+            ],
+            "note": "'I see': videō 'I see', videt 'he sees', vidēre 'to see'. M3's vidētur was this verb's passive doing duty as 'seem', which is where that shape came from."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "videō is M3's vidētur with the impersonal taken off. That module taught mihi vidētur, 'it seems to me', and said it was this verb's passive — so the plain verb arriving three modules later is a word you have already met the hard way round.",
+      "variations": [
+        {
+          "display": "Medicum vidēre volō.",
+          "cue": "I want to see a doctor.",
+          "changed": "L1-M3's volō with the infinitive"
+        },
+        {
+          "display": "Medicus hīc est.",
+          "cue": "The doctor is here.",
+          "changed": "the noun as a subject, so the ending goes back"
+        },
+        {
+          "display": "Medicum nōn videō.",
+          "cue": "I am not seeing a doctor.",
+          "changed": "the negative"
+        }
+      ],
+      "usage": "Said about a plan to get looked at.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S05",
+      "display": "Melius est domum īre.",
+      "cue": "It is better to go home.",
+      "literal": "better it-is home to-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "melius",
+            "cue": "better",
+            "tag": "interference",
+            "forms": [
+              "melius"
+            ],
+            "note": "'Better' — L2-M9's melior in the NEUTER, doing an adverb's job. melius est plus an infinitive is how Latin gives advice about what to do."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition — L2-M4's word. The locative domī, 'AT home', is a different shape and a later level's."
+          },
+          {
+            "display": "īre",
+            "cue": "to go",
+            "tag": "delta",
+            "forms": [
+              "īre",
+              "dormīre"
+            ],
+            "note": "'To go' — eō's infinitive: eō, īs, it, īre. M1's dormiō gives dormīre the same way: every verb's infinitive ends in -re."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "melius est is impersonal and takes an infinitive, which is M6's melius est frame on a comparative. Latin gives advice this way where English says 'you should' — and there is no 'you' in it at all, so the advice is about the situation rather than about the person.",
+      "sound": "ME-li-us EST DO-mum Ī-re. One long vowel in six syllables, and it is the infinitive's.",
+      "variations": [
+        {
+          "display": "Melius est domum īre, quia aeger sum.",
+          "cue": "It is better to go home, because I am ill.",
+          "changed": "L1-M9's quia with a reason"
+        },
+        {
+          "display": "Melius est medicum vidēre.",
+          "cue": "It is better to see a doctor.",
+          "changed": "a different piece of advice"
+        },
+        {
+          "display": "Melius est dormīre.",
+          "cue": "It is better to sleep.",
+          "changed": "M1's verb"
+        }
+      ],
+      "mistake": {
+        "display": "Melior est domum īre.",
+        "why": "the masculine comparative where the neuter belongs. melius is doing an adverb's job and has nothing to agree with, so it takes the neuter — melior would be describing a person, and there is no person in this sentence at all."
+      },
+      "usage": "Said advising someone who is unwell.",
+      "mnemonic": "melius est: advice with nobody in it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S06",
+      "display": "Mihi oculī dolent.",
+      "cue": "My eyes hurt.",
+      "literal": "to-me the-eyes hurt",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mihi",
+            "cue": "to me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To me' — the dative of possession, and it carries the 'my'."
+          },
+          {
+            "display": "oculī",
+            "cue": "eyes",
+            "tag": "delta",
+            "forms": [
+              "oculus",
+              "oculī"
+            ],
+            "note": "'Eyes' — oculus for one, oculī for two. Body parts that come in pairs are usually written plural, and English 'ocular' and 'monocle' keep the word."
+          },
+          {
+            "display": "dolent",
+            "cue": "hurt",
+            "tag": "delta",
+            "forms": [
+              "dolent"
+            ],
+            "note": "'They hurt' — dolet for one thing, dolent for more than one. The verb agrees with what hurts, not with whose it is."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "The verb goes plural because the EYES are the subject. mihi does not change — you are still the dative — so the only thing that moves when two things hurt instead of one is the verb, which is the opposite of what English does with 'my eye hurts' and 'my eyes hurt'.",
+      "variations": [
+        {
+          "display": "Tibi oculī dolent.",
+          "cue": "Your eyes hurt.",
+          "changed": "the listener"
+        },
+        {
+          "display": "Mihi oculus dolet.",
+          "cue": "One of my eyes hurts.",
+          "changed": "one eye, so both the noun and the verb move back"
+        },
+        {
+          "display": "Mihi caput et oculī dolent.",
+          "cue": "My head and my eyes hurt.",
+          "changed": "two things hurting, so the verb stays plural"
+        }
+      ],
+      "usage": "Said after a long day of reading.",
+      "mnemonic": "The verb agrees with what hurts.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S07",
+      "display": "Aeger sum; melius est domum īre.",
+      "cue": "I am ill; it is better to go home.",
+      "literal": "ill I-am better it-is home to-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum, and it drops its e as soon as an ending is added, exactly as liber and niger do. Third time, one pattern."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am' — sum, es, est, sunt."
+          },
+          {
+            "display": "melius",
+            "cue": "better",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Better' — L2-M9's melior in the NEUTER, doing an adverb's job. melius est plus an infinitive is how Latin gives advice about what to do."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition — L2-M4's word."
+          },
+          {
+            "display": "īre",
+            "cue": "to go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To go' — eō's infinitive."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "est twice in one sentence and two different jobs. The first is sum agreeing with the speaker through an adjective; the second is impersonal with nothing agreeing with it at all. Same three letters, same verb, and only what is around them tells you which.",
+      "variations": [
+        {
+          "display": "Aegra sum; melius est domum īre.",
+          "cue": "I am ill; it is better to go home.",
+          "changed": "spoken by a woman"
+        },
+        {
+          "display": "Aeger est; melius est medicum vidēre.",
+          "cue": "He is ill; it is better to see a doctor.",
+          "changed": "someone else, and different advice"
+        },
+        {
+          "display": "Aeger sum; domum eō.",
+          "cue": "I am ill; I am going home.",
+          "changed": "a decision instead of advice"
+        }
+      ],
+      "usage": "Said excusing yourself.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S08",
+      "display": "Dīcit sē aegrum esse.",
+      "cue": "He says he is ill.",
+      "literal": "he-says himself ill to-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīcit",
+            "cue": "he says",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He says' — dīcō, dīcit, dīxit. M5's verb."
+          },
+          {
+            "display": "sē",
+            "cue": "himself",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Himself' — the speaker, not somebody else. M5's row."
+          },
+          {
+            "display": "aegrum",
+            "cue": "ill",
+            "tag": "interference",
+            "forms": [
+              "aegrum",
+              "aegram"
+            ],
+            "note": "'Ill' in the OBJECT shape, agreeing with sē — and the e is still gone: aeger, aegra, aegrum."
+          },
+          {
+            "display": "esse",
+            "cue": "to be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To be' — sum's infinitive. M3 opened it."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "M5's construction on this module's adjective, and the e-drop survives the case change. aeger becomes aegrum in a reported clause, which is two rules at once — the accusative of reported speech and the pattern liber, niger and aeger share.",
+      "variations": [
+        {
+          "display": "Dīcit sē aegram esse.",
+          "cue": "She says she is ill.",
+          "changed": "a woman speaking about herself"
+        },
+        {
+          "display": "Dīcit eum aegrum esse.",
+          "cue": "He says the other man is ill.",
+          "changed": "somebody else ill"
+        },
+        {
+          "display": "Aeger est.",
+          "cue": "He is ill.",
+          "changed": "asserted rather than reported, so nothing moves"
+        }
+      ],
+      "mistake": {
+        "display": "Dīcit sē aeger esse.",
+        "why": "the subject shape inside a reported clause. It agrees with sē, which is accusative — and aeger is the shape a learner has just been taught to recognise, which is exactly why it turns up where aegrum belongs."
+      },
+      "usage": "Said passing on why someone is absent.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S09",
+      "display": "Sī aeger sīs, medicum videās.",
+      "cue": "If you were ill, you should see a doctor.",
+      "literal": "if ill you-may-be doctor you-may-see",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "'If', and with the subjunctive it imagines rather than claims. M4's word."
+          },
+          {
+            "display": "aeger",
+            "cue": "ill",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Ill' — aeger, aegra, aegrum, and it drops its e as soon as an ending is added, exactly as liber and niger do. Third time, one pattern."
+          },
+          {
+            "display": "sīs",
+            "cue": "you may be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That you may be' — sum's present subjunctive, which L2-M1 taught as a word and M4 explained."
+          },
+          {
+            "display": "medicum",
+            "cue": "doctor",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Doctor' as the object."
+          },
+          {
+            "display": "videās",
+            "cue": "you should see",
+            "tag": "interference",
+            "forms": [
+              "videās",
+              "videat"
+            ],
+            "note": "'That you may see' — videō's present subjunctive, in the you-shape."
+          }
+        ],
+        "rules": [
+          4,
+          6
+        ]
+      },
+      "trap": "Both halves in the mood, which is M4's rule, and the advice is about a situation you are not claiming to be in. Compare S05: melius est domum īre gives advice about the world, and this gives advice inside a condition — same job, two machineries, and the mood is the more careful of them.",
+      "sound": "SĪ AE-ger SĪS, ME-di-cum vi-DE-ās. Two long ī sounds in the first clause and the mood's long ā in the second.",
+      "variations": [
+        {
+          "display": "Sī aegra sīs, medicum videās.",
+          "cue": "If you were ill, you should see a doctor.",
+          "changed": "said to a woman"
+        },
+        {
+          "display": "Sī aeger sit, medicum videat.",
+          "cue": "If he were ill, he should see a doctor.",
+          "changed": "about someone else, so both moods move"
+        },
+        {
+          "display": "Sī aeger es, medicum vidēs.",
+          "cue": "If you are ill, you are seeing a doctor.",
+          "changed": "both halves plain, which reports instead of advising"
+        }
+      ],
+      "mistake": {
+        "display": "Sī aeger es, medicum videās.",
+        "why": "one half plain and one in the mood, which is M4's central error arriving in a new module. Both halves must be imagined or neither, and the pull is strongest when the condition feels like a real possibility — as being ill does."
+      },
+      "usage": "Said giving careful advice.",
+      "mnemonic": "Both halves imagined, or neither.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M7-S10",
+      "display": "Mihi caput dolet; melius est nōn labōrāre.",
+      "cue": "My head hurts; it is better not to work.",
+      "literal": "to-me the-head hurts better it-is not to-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mihi",
+            "cue": "to me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To me' — the dative of possession, carrying the 'my'."
+          },
+          {
+            "display": "caput",
+            "cue": "head",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Head', and it is neuter: caput as the subject and as the object both. English 'captain' and 'capital' are the same word."
+          },
+          {
+            "display": "dolet",
+            "cue": "hurts",
+            "tag": "delta",
+            "forms": [],
+            "note": "'It hurts' — and what hurts is the SUBJECT: mihi caput dolet, 'to me the head hurts'. English 'doleful' and 'condolence' come from it."
+          },
+          {
+            "display": "melius",
+            "cue": "better",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Better' — L2-M9's melior in the NEUTER, doing an adverb's job. melius est plus an infinitive is how Latin gives advice about what to do."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', and here it denies the INFINITIVE rather than est. What is better is not-working, so nōn stands in front of labōrāre."
+          },
+          {
+            "display": "labōrāre",
+            "cue": "to work",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To work' — labōrō's infinitive. M2's shape."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "nōn goes in front of the infinitive, not in front of est. Melius nōn est would say 'it is not better', which is a different sentence — and this is M2's lesson about nōn possum arriving on a construction where the two readings are both sensible.",
+      "sound": "MI-hi CA-put DO-let; ME-li-us EST nōn la-bō-RĀ-re. Twelve syllables and two long vowels, one in each half.",
+      "variations": [
+        {
+          "display": "Mihi caput dolet; melius est domum īre.",
+          "cue": "My head hurts; it is better to go home.",
+          "changed": "a different piece of advice"
+        },
+        {
+          "display": "Mihi oculī dolent; melius est nōn legere.",
+          "cue": "My eyes hurt; it is better not to read.",
+          "changed": "a different pain and a different remedy"
+        },
+        {
+          "display": "Aeger sum; melius est nōn labōrāre.",
+          "cue": "I am ill; it is better not to work.",
+          "changed": "the illness stated generally"
+        }
+      ],
+      "mistake": {
+        "display": "Mihi caput dolet; melius nōn est labōrāre.",
+        "why": "nōn moved onto est, which says 'working is not better' rather than 'not working is better'. Both are sentences and they say different things — the negative belongs to whichever word it stands in front of, which is the rule M2 spent a plate on."
+      },
+      "usage": "Said talking yourself out of a day's work.",
+      "mnemonic": "nōn belongs to the word in front of it.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M7-C01",
+      "display": "Mihi caput dolet.",
+      "cue": "My head hurts."
+    },
+    {
+      "id": "L3-M7-C02",
+      "display": "Quid tibi dolet?",
+      "cue": "What hurts?"
+    },
+    {
+      "id": "L3-M7-C03",
+      "display": "Aegra sum.",
+      "cue": "I am ill."
+    },
+    {
+      "id": "L3-M7-C04",
+      "display": "Medicum vidēre volō.",
+      "cue": "I want to see a doctor."
+    },
+    {
+      "id": "L3-M7-C05",
+      "display": "Melius est medicum vidēre.",
+      "cue": "It is better to see a doctor."
+    },
+    {
+      "id": "L3-M7-C06",
+      "display": "Mihi oculī dolent.",
+      "cue": "My eyes hurt."
+    },
+    {
+      "id": "L3-M7-C07",
+      "display": "Aeger est; melius est medicum vidēre.",
+      "cue": "He is ill; it is better to see a doctor."
+    },
+    {
+      "id": "L3-M7-C08",
+      "display": "Dīcit sē aegrum esse.",
+      "cue": "He says he is ill."
+    },
+    {
+      "id": "L3-M7-C09",
+      "display": "Sī aeger sit, medicum videat.",
+      "cue": "If he were ill, he should see a doctor."
+    },
+    {
+      "id": "L3-M7-C10",
+      "display": "Mihi caput nōn dolet.",
+      "cue": "My head does not hurt."
+    },
+    {
+      "id": "L3-M7-C11",
+      "display": "Medicus hīc est.",
+      "cue": "The doctor is here."
+    },
+    {
+      "id": "L3-M7-C12",
+      "display": "Melius est dormīre.",
+      "cue": "It is better to sleep."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

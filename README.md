@@ -1405,10 +1405,11 @@ error; whether `frāctus est` taught as an adjective plants a habit L4-M7 has to
 `deinde` and `tum` really swap freely in the middle of an account, which L2-M10's rule asserts and a
 fluent reader is most likely to deny.
 
-**en-la's L3 is half authored, and M4 is the one module in the course that opens a MOOD (#642-#644,
-2026-09-12).** Ten briefs ([`docs/129`](docs/129-en-la-L3-brief-decisions.md)) and five modules so far
-([`docs/130`](docs/130-llm-review-en-la-L3.md)): `en-la: 25 modules`, **409 cumulative surfaces**, and
-**no `shown but untaught` line at any of the twenty-five**. Three things in it are the shared index and
+**en-la's L3 is complete, and M4 is the one module in the course that opens a MOOD (#642-#645,
+2026-09-12).** Ten briefs ([`docs/129`](docs/129-en-la-L3-brief-decisions.md)) and ten modules in three
+waves ([`docs/130`](docs/130-llm-review-en-la-L3.md)): `en-la: 30 modules`, **479 cumulative
+surfaces**, `maxSpan` 1, and **no `shown but untaught` line at any of the thirty** — three whole levels
+at a zero ratchet. Three things in it are the shared index and
 the orthography finally being paid for:
 
 - **`ne` and `nē` are two keys**, read off the emitted index at `L1-M2-S06` and `L3-M4-S05`. The pair
@@ -2540,10 +2541,10 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **495
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **500
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
   twenty on en-sa, which is the whole of L1 and the whole of L2 (#611, #613, #614, #615), and
-  twenty-five on en-la, those two levels plus the first half of L3 (#637, #641, #643, #644) — every one
+  thirty on en-la, which is the whole of L1, L2 and L3 (#637, #641, #645) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.

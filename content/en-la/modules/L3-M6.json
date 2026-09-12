@@ -1,0 +1,764 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M6",
+  "title": "Feelings in depth",
+  "job": "Nuance past good and bad",
+  "prerequisites": [
+    "L3-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "mē pudet (+ N-gen)",
+      "mē taedet (+ N-gen)",
+      "mihi libet + V-infinitive",
+      "sollicitus / commōtus + sum",
+      "dīcit sē + Adj-acc + esse"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "TWO IMPERSONAL PATTERNS IN TWO DIFFERENT CASES, AND THAT IS THIS MODULE'S TRAP. pudet and taedet take the ACCUSATIVE of the person who feels it — mē pudet, 'I am ashamed'; mē taedet, 'I am fed up'. libet and placet take the DATIVE — mihi libet, mihi placet. Twenty-five modules have taught the dative one (L1-M3's mihi opus est, L1-M7's mihi placet, M3's mihi vidētur) and nothing has prepared the accusative. Both are 'it VERBs me' in English, so only the verb tells you, and the module writes four of them rather than a rule."
+    },
+    {
+      "tag": "delta",
+      "text": "THE THING FELT ABOUT IS A GENITIVE, AND THE CASE NOW HAS TWO JOBS. mē pudet erroris, 'I am ashamed of my mistake'. L2-M2 opened the genitive for possession between people and nothing has used it since; this is the second job, and L3 opens no third. There is no word for 'of' — the ending is it, which makes this the fifth construction in the course where English needs a preposition and Latin does not."
+    },
+    {
+      "tag": "delta",
+      "text": "libet TAKES AN INFINITIVE AND placet TAKES A THING: mihi libet domum īre, mihi placet mūsica. Both are dative, both are impersonal, and they differ in what comes after them — which is worth one line because a learner who has only met placet will try to put a noun after libet."
+    },
+    {
+      "tag": "interference",
+      "text": "THE FEELING WORDS ARE ADJECTIVES WITH sum, WHICH IS L2-M8's ARRANGEMENT FOR THE SECOND TIME. sollicitus sum, commōta est — words that look like participles, taught as adjectives that AGREE, because the passive system belongs to a later level. L2-M8's frāctus est was the first and this is the second, so a learner who has seen the pattern twice and been told 'adjective' twice will not need telling a third time."
+    },
+    {
+      "tag": "free",
+      "text": "LATIN'S FEELING VOCABULARY IS SMALLER AND ITS IMPERSONALS ARE BIGGER, AND THAT IS THE THING TO TAKE AWAY. English has a long shelf of adjectives for shades of mood; Latin says a great deal with impersonal verbs instead, so the feeling happens TO you rather than being a property you have. sollicitus sum is a state you are in and mē pudet is an event that lands on you, and the two halves of S07 are one of each."
+    },
+    {
+      "tag": "interference",
+      "text": "A FEELING ADJECTIVE IN A REPORTED CLAUSE MOVES WITH ITS PERSON: dīcit sē sollicitum esse. That is M5's construction on this module's vocabulary — the adjective agrees with sē, which is accusative, so sollicitus becomes sollicitum. Three changes in four words, every one of them a rule the level has already taught, which is what a level's later modules are for."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M6-S01",
+      "display": "Mē pudet.",
+      "cue": "I am ashamed.",
+      "literal": "me it-shames",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "interference",
+            "forms": [
+              "mē",
+              "tē"
+            ],
+            "note": "'Me' — the ACCUSATIVE, and it is not what you would expect: mihi opus est and mihi placet both take the dative and this verb does not. tē is 'you' in the same shape."
+          },
+          {
+            "display": "pudet",
+            "cue": "it shames",
+            "tag": "interference",
+            "forms": [
+              "pudet"
+            ],
+            "note": "'It shames' — impersonal, and it takes the ACCUSATIVE of the person: mē pudet, 'I am ashamed'. English 'impudent' is the same word with the shame taken out."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "mē, not mihi. Twenty-five modules have taught the dative for things that happen to you — mihi opus est, mihi placet, mihi vidētur — and pudet takes the accusative instead. Both patterns are impersonal and both are 'it VERBs me' in English, so nothing but the verb tells you which case to use.",
+      "variations": [
+        {
+          "display": "Tē pudet.",
+          "cue": "You are ashamed.",
+          "changed": "the listener, with tū's object shape"
+        },
+        {
+          "display": "Eum pudet.",
+          "cue": "He is ashamed.",
+          "changed": "someone else, with M3's eum"
+        },
+        {
+          "display": "Mē nōn pudet.",
+          "cue": "I am not ashamed.",
+          "changed": "the negative"
+        }
+      ],
+      "mistake": {
+        "display": "Mihi pudet.",
+        "why": "the dative, borrowed from every other impersonal in the course. It is the single commonest error this module can produce and it is entirely reasonable — mihi placet and mihi vidētur are both correct, and pudet simply belongs to the other family."
+      },
+      "usage": "Said admitting embarrassment.",
+      "mnemonic": "pudet takes mē; placet takes mihi.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S02",
+      "display": "Mē pudet erroris.",
+      "cue": "I am ashamed of my mistake.",
+      "literal": "me it-shames of-mistake",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Me' — the accusative, because pudet wants it."
+          },
+          {
+            "display": "pudet",
+            "cue": "it shames",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It shames' — impersonal, and it takes the ACCUSATIVE of the person: mē pudet, 'I am ashamed'. English 'impudent' is the same word with the shame taken out."
+          },
+          {
+            "display": "erroris",
+            "cue": "of the mistake",
+            "tag": "interference",
+            "forms": [
+              "error",
+              "erroris"
+            ],
+            "note": "'A mistake' — error as the subject, erroris as the thing you are ashamed OF. The genitive, which L2-M2 opened for possession and which now does a second job."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "The thing you are ashamed OF is a genitive, and that case now has two jobs: L2-M2 taught it for possession between people (fīlia magistrae) and this is the second. There is no word for 'of' — the ending is it, for the fifth construction in this course where English needs a preposition and Latin does not.",
+      "sound": "MĒ PU-det er-RŌ-ris. The long ō of erroris is the one length in the second half.",
+      "variations": [
+        {
+          "display": "Tē pudet erroris.",
+          "cue": "You are ashamed of your mistake.",
+          "changed": "the listener"
+        },
+        {
+          "display": "Mē pudet, quia errāvī.",
+          "cue": "I am ashamed, because I made a mistake.",
+          "changed": "L1-M9's quia with a plain clause instead of the genitive"
+        },
+        {
+          "display": "Mē nōn pudet erroris.",
+          "cue": "I am not ashamed of my mistake.",
+          "changed": "the negative"
+        }
+      ],
+      "mistake": {
+        "display": "Mē pudet errōrem.",
+        "why": "the object shape for the thing shamed about. The person is the accusative here and the thing is the genitive — two different cases in one three-word sentence, and putting both in the accusative is what an English speaker does when neither has a preposition to guide them."
+      },
+      "usage": "Said owning up to something.",
+      "mnemonic": "The person is mē; the thing is -is.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S03",
+      "display": "Mē taedet.",
+      "cue": "I am fed up.",
+      "literal": "me it-wearies",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Me' — the accusative, as with pudet. The two verbs belong to the same small family."
+          },
+          {
+            "display": "taedet",
+            "cue": "it wearies",
+            "tag": "interference",
+            "forms": [
+              "taedet"
+            ],
+            "note": "'It wearies' — impersonal, accusative of the person: mē taedet, 'I am fed up'. English 'tedious' comes straight from it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "A second verb in the same pattern, which is the point: pudet and taedet both take the accusative, so the family is real rather than one exception. English 'tedious' comes from this word, and knowing that makes the meaning free and the case no easier.",
+      "variations": [
+        {
+          "display": "Mē taedet erroris.",
+          "cue": "I am sick of my mistake.",
+          "changed": "the genitive added, exactly as with pudet"
+        },
+        {
+          "display": "Eum taedet.",
+          "cue": "He is fed up.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Mihi placet.",
+          "cue": "It pleases me.",
+          "changed": "the OTHER family, with the dative — the contrast this module exists for"
+        }
+      ],
+      "usage": "Said when you have had enough.",
+      "mnemonic": "taedet is where 'tedious' comes from.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S04",
+      "display": "Mihi libet domum īre.",
+      "cue": "I feel like going home.",
+      "literal": "to-me it-pleases home to-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mihi",
+            "cue": "to me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To me' — the DATIVE, and this verb wants it. L1-M3's row, and the case pudet and taedet refuse."
+          },
+          {
+            "display": "libet",
+            "cue": "it pleases",
+            "tag": "interference",
+            "forms": [
+              "libet"
+            ],
+            "note": "'It pleases, one feels like' — impersonal and DATIVE, unlike pudet. It takes an infinitive after it: mihi libet īre."
+          },
+          {
+            "display": "domum",
+            "cue": "home",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Home', with no preposition — L2-M4's word."
+          },
+          {
+            "display": "īre",
+            "cue": "to go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To go' — eō's infinitive: eō, īs, it, īre."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Here is the dative, three sentences after the accusative. libet and placet take mihi; pudet and taedet take mē. Both families are impersonal, both translate as 'it VERBs me', and the only way to know is to know the verb — which is why this module writes four of them rather than teaching a rule.",
+      "sound": "MI-hi LI-bet DO-mum Ī-re. Two short words then two with a long vowel each.",
+      "variations": [
+        {
+          "display": "Mihi libet legere.",
+          "cue": "I feel like reading.",
+          "changed": "a different thing felt like"
+        },
+        {
+          "display": "Tibi libet domum īre.",
+          "cue": "You feel like going home.",
+          "changed": "M1's tibi — libet itself does not move"
+        },
+        {
+          "display": "Mihi nōn libet domum īre.",
+          "cue": "I do not feel like going home.",
+          "changed": "the negative"
+        }
+      ],
+      "mistake": {
+        "display": "Mē libet domum īre.",
+        "why": "the accusative, borrowed from pudet two sentences above. This is the module's error running in the opposite direction to S01's plate, and both directions are equally easy — which is the honest reason the module has four verbs and two rules rather than one of each."
+      },
+      "usage": "Said about an inclination.",
+      "mnemonic": "libet and placet: dative. pudet and taedet: accusative.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S05",
+      "display": "Sollicitus sum.",
+      "cue": "I am worried.",
+      "literal": "worried I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sollicitus",
+            "cue": "worried",
+            "tag": "delta",
+            "forms": [
+              "sollicitus",
+              "sollicita"
+            ],
+            "note": "'Worried, anxious' — an adjective with sum, so it agrees: sollicitus of a man, sollicita of a woman. English 'solicitous' keeps the caring half of it."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am' — sum, es, est, sunt. L1-M1's verb, and it is what turns an adjective into a state."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "This is L2-M8's arrangement, for the second time: a word that looks like a participle taught as an ADJECTIVE with sum, because the passive is a later level's. So sollicitus agrees with whoever is speaking, exactly as frāctus agreed with what was broken — and what you learn is agreement, not a tense.",
+      "variations": [
+        {
+          "display": "Sollicita sum.",
+          "cue": "I am worried.",
+          "changed": "spoken by a woman, so the adjective moves and sum does not"
+        },
+        {
+          "display": "Sollicitus est.",
+          "cue": "He is worried.",
+          "changed": "someone else"
+        },
+        {
+          "display": "Sollicitus nōn sum.",
+          "cue": "I am not worried.",
+          "changed": "the negative"
+        }
+      ],
+      "usage": "Said about how you feel.",
+      "mnemonic": "It agrees, so it is an adjective.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S06",
+      "display": "Commōta est, quia errāvī.",
+      "cue": "She is upset, because I made a mistake.",
+      "literal": "upset she-is because I-erred",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "commōta",
+            "cue": "upset",
+            "tag": "delta",
+            "forms": [
+              "commōtus",
+              "commōta"
+            ],
+            "note": "'Upset, moved' — an adjective with sum, agreeing: commōtus of a man, commōta of a woman. It is cum plus mōtus, 'moved together', which is what being upset is."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "quia",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Because'. L1-M9's word, and the one this course uses — quod also means it and is kept for that reading alone."
+          },
+          {
+            "display": "errāvī",
+            "cue": "I made a mistake",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — L2-M8's perfect of errō."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "commōta is feminine and errāvī is first person, in one sentence. The adjective answers to whoever is upset and the verb to whoever was wrong, and they are different people — so two shapes in four words are each pointing somewhere else.",
+      "sound": "com-MŌ-ta EST, QUI-a er-RĀ-vī. The long ō and the long ā are the only lengths, one in each clause.",
+      "variations": [
+        {
+          "display": "Commōtus est, quia errāvī.",
+          "cue": "He is upset, because I made a mistake.",
+          "changed": "a man upset instead"
+        },
+        {
+          "display": "Commōta est, quia errāvistī.",
+          "cue": "She is upset, because you made a mistake.",
+          "changed": "the fault moved to the listener"
+        },
+        {
+          "display": "Sollicita est, quia errāvī.",
+          "cue": "She is worried, because I made a mistake.",
+          "changed": "a different feeling"
+        }
+      ],
+      "usage": "Said explaining someone's mood.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S07",
+      "display": "Fortasse sollicitus sum; nōn tamen mē pudet.",
+      "cue": "Perhaps I am worried; I am not ashamed, though.",
+      "literal": "perhaps worried I-am not however me it-shames",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fortasse",
+            "cue": "perhaps",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Perhaps'. M3's softener, which changes nothing else in the sentence."
+          },
+          {
+            "display": "sollicitus",
+            "cue": "worried",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Worried' — an adjective with sum, agreeing with the speaker."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am' — sum, es, est, sunt."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "tamen",
+            "cue": "however",
+            "tag": "delta",
+            "forms": [],
+            "note": "'However', and it comes SECOND in its clause. M3's word, the sixth of six."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Me' — the accusative, because pudet wants it."
+          },
+          {
+            "display": "pudet",
+            "cue": "it shames",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It shames' — impersonal, and it takes the ACCUSATIVE of the person: mē pudet, 'I am ashamed'. English 'impudent' is the same word with the shame taken out."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Latin has a long shelf of impersonal verbs where English has a long shelf of adjectives, and this sentence has one of each. sollicitus sum is a state you are in; mē pudet is something that happens TO you. That is a real difference in how the two languages carve up feeling, and it is the thing to take out of this module even if you forget every word in it.",
+      "variations": [
+        {
+          "display": "Fortasse sollicita sum; nōn tamen mē pudet.",
+          "cue": "Perhaps I am worried; I am not ashamed, though.",
+          "changed": "spoken by a woman"
+        },
+        {
+          "display": "Sollicitus sum; mē tamen nōn pudet.",
+          "cue": "I am worried; I am not ashamed, though.",
+          "changed": "tamen moved, still second in its clause"
+        },
+        {
+          "display": "Fortasse errāvī; nōn tamen mē pudet.",
+          "cue": "Perhaps I made a mistake; I am not ashamed, though.",
+          "changed": "M3's admission instead of the feeling"
+        }
+      ],
+      "usage": "Said conceding a feeling and refusing another.",
+      "mnemonic": "A state you are in; a thing that happens to you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S08",
+      "display": "Mē pudet, quia errāvī.",
+      "cue": "I am ashamed, because I made a mistake.",
+      "literal": "me it-shames because I-erred",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Me' — the accusative, because pudet wants it."
+          },
+          {
+            "display": "pudet",
+            "cue": "it shames",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It shames' — impersonal, and it takes the ACCUSATIVE of the person: mē pudet, 'I am ashamed'. English 'impudent' is the same word with the shame taken out."
+          },
+          {
+            "display": "quia",
+            "cue": "because",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Because'. L1-M9's word, taking an ordinary clause with ordinary endings."
+          },
+          {
+            "display": "errāvī",
+            "cue": "I made a mistake",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I went wrong' — L2-M8's perfect of errō."
+          }
+        ],
+        "rules": [
+          1,
+          4
+        ]
+      },
+      "trap": "The same thing said two ways. S02 put the mistake in the genitive — mē pudet erroris — and this puts it in a clause with quia. Both are correct and the genitive is tighter; the clause is what you reach for when the reason needs a verb in it.",
+      "variations": [
+        {
+          "display": "Mē pudet erroris.",
+          "cue": "I am ashamed of my mistake.",
+          "changed": "the genitive, which is S02"
+        },
+        {
+          "display": "Mē pudet, quia errāvistī.",
+          "cue": "I am ashamed, because YOU made a mistake.",
+          "changed": "somebody else at fault and still my shame"
+        },
+        {
+          "display": "Mē taedet, quia errāvī.",
+          "cue": "I am fed up, because I made a mistake.",
+          "changed": "the other accusative verb"
+        }
+      ],
+      "usage": "Said when the reason needs saying.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S09",
+      "display": "Eum taedet, sed nōn cōnsentiō.",
+      "cue": "He is fed up, but I do not agree.",
+      "literal": "him it-wearies but not I-agree",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "eum",
+            "cue": "him",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Him' — the accusative, and here it is the person the weariness happens to rather than an object being done to. M3's row."
+          },
+          {
+            "display": "taedet",
+            "cue": "it wearies",
+            "tag": "interference",
+            "forms": [],
+            "note": "'It wearies' — impersonal, accusative of the person: mē taedet, 'I am fed up'. English 'tedious' comes straight from it."
+          },
+          {
+            "display": "sed",
+            "cue": "but",
+            "tag": "delta",
+            "forms": [],
+            "note": "'But'. L1-M9's word, joining two clauses from the front."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "cōnsentiō",
+            "cue": "I agree",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I agree' — cum plus L1-M9's sentiō, 'to feel with'. M3's verb."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "eum is an accusative and it is the SUBJECT of the feeling in English. Nothing in the sentence is being done to him — the verb has no subject at all, which is what impersonal means, and the person it happens to wears the object shape.",
+      "variations": [
+        {
+          "display": "Mē taedet, sed nōn cōnsentit.",
+          "cue": "I am fed up, but he does not agree.",
+          "changed": "the two people swapped"
+        },
+        {
+          "display": "Eum pudet, sed nōn cōnsentiō.",
+          "cue": "He is ashamed, but I do not agree.",
+          "changed": "the other accusative verb"
+        },
+        {
+          "display": "Eum taedet, sed cōnsentiō.",
+          "cue": "He is fed up, but I agree.",
+          "changed": "the agreement made positive"
+        }
+      ],
+      "usage": "Said reporting someone's mood and disagreeing with it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S10",
+      "display": "Dīcit sē sollicitum esse.",
+      "cue": "He says he is worried.",
+      "literal": "he-says himself worried to-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dīcit",
+            "cue": "he says",
+            "tag": "delta",
+            "forms": [],
+            "note": "'He says' — dīcō, dīcit, dīxit. M5's verb."
+          },
+          {
+            "display": "sē",
+            "cue": "himself",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Himself' — the speaker, not somebody else. M5's row, and the whole of that module's lesson."
+          },
+          {
+            "display": "sollicitum",
+            "cue": "worried",
+            "tag": "interference",
+            "forms": [
+              "sollicitum",
+              "sollicitam"
+            ],
+            "note": "'Worried' in the OBJECT shape, agreeing with sē. An adjective in a reported clause moves with what it describes — M5's rule on this module's word."
+          },
+          {
+            "display": "esse",
+            "cue": "to be",
+            "tag": "interference",
+            "forms": [],
+            "note": "'To be' — sum's infinitive. M3 opened it."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "The feeling adjective goes into the accusative because the clause is reported. sollicitus sum becomes sē sollicitum esse — three changes in a four-word sentence, and every one of them is a rule the level has already taught. This is what M5 was for.",
+      "sound": "DĪ-cit SĒ sol-LI-ci-tum ES-se. Eight syllables and only two long vowels, both in the first two words.",
+      "variations": [
+        {
+          "display": "Dīcit sē sollicitam esse.",
+          "cue": "She says she is worried.",
+          "changed": "a woman speaking about herself"
+        },
+        {
+          "display": "Dīcit eum sollicitum esse.",
+          "cue": "He says the other man is worried.",
+          "changed": "somebody else worried"
+        },
+        {
+          "display": "Sollicitus est.",
+          "cue": "He is worried.",
+          "changed": "asserted rather than reported, so nothing is in the accusative"
+        }
+      ],
+      "mistake": {
+        "display": "Dīcit sē sollicitus esse.",
+        "why": "the subject shape kept inside a reported clause. It agrees with sē, which is accusative, so sollicitum is the shape — and this is M5's error on M6's vocabulary, which is exactly the kind of mistake a level's later modules exist to catch."
+      },
+      "usage": "Said passing on how someone feels.",
+      "mnemonic": "Reported, so the adjective moves too.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M6-C01",
+      "display": "Mē pudet.",
+      "cue": "I am ashamed."
+    },
+    {
+      "id": "L3-M6-C02",
+      "display": "Tē pudet erroris.",
+      "cue": "You are ashamed of your mistake."
+    },
+    {
+      "id": "L3-M6-C03",
+      "display": "Mē taedet.",
+      "cue": "I am fed up."
+    },
+    {
+      "id": "L3-M6-C04",
+      "display": "Mihi libet legere.",
+      "cue": "I feel like reading."
+    },
+    {
+      "id": "L3-M6-C05",
+      "display": "Sollicita sum.",
+      "cue": "I am worried."
+    },
+    {
+      "id": "L3-M6-C06",
+      "display": "Commōtus est, quia errāvī.",
+      "cue": "He is upset, because I made a mistake."
+    },
+    {
+      "id": "L3-M6-C07",
+      "display": "Eum pudet, sed nōn cōnsentiō.",
+      "cue": "He is ashamed, but I do not agree."
+    },
+    {
+      "id": "L3-M6-C08",
+      "display": "Mē taedet erroris.",
+      "cue": "I am sick of my mistake."
+    },
+    {
+      "id": "L3-M6-C09",
+      "display": "Mihi nōn libet domum īre.",
+      "cue": "I do not feel like going home."
+    },
+    {
+      "id": "L3-M6-C10",
+      "display": "Dīcit sē sollicitum esse.",
+      "cue": "He says he is worried."
+    },
+    {
+      "id": "L3-M6-C11",
+      "display": "Sollicitus nōn sum.",
+      "cue": "I am not worried."
+    },
+    {
+      "id": "L3-M6-C12",
+      "display": "Mē pudet, quia errāvistī.",
+      "cue": "I am ashamed, because you made a mistake."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
