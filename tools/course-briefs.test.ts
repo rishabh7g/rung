@@ -154,7 +154,7 @@ describe('en-ko: the decisions its briefs settle (#373, #376)', () => {
   });
 });
 
-describe('en-sa: the decisions its briefs settle (#604, #607, #612, #616)', () => {
+describe('en-sa: the decisions its briefs settle (#604, #607, #612, #616, #620)', () => {
   const all = COURSE_BRIEFS['en-sa'] ?? {};
   const briefs = Object.values(all);
   const strings = briefs.flatMap((brief) => [
@@ -183,12 +183,18 @@ describe('en-sa: the decisions its briefs settle (#604, #607, #612, #616)', () =
   const l3Notes = Object.values(l3)
     .flatMap((brief) => brief.notes)
     .join('\n');
+  /** The L4 briefs alone — #620 planned them against the finished L3, folded across THIRTY files. */
+  const l4 = Object.fromEntries(Object.entries(all).filter(([id]) => id.startsWith('L4-')));
+  const l4Notes = Object.values(l4)
+    .flatMap((brief) => brief.notes)
+    .join('\n');
 
-  it('covers exactly L1-M1..L3-M10 — briefed L1 (#607), L2 (#612) and L3 (#616)', () => {
+  it('covers exactly L1-M1..L4-M10 — L1 (#607), L2 (#612), L3 (#616) and L4 (#620)', () => {
     expect(Object.keys(all)).toEqual([
       ...MODULES.map((n) => `L1-M${n}`),
       ...MODULES.map((n) => `L2-M${n}`),
       ...MODULES.map((n) => `L3-M${n}`),
+      ...MODULES.map((n) => `L4-M${n}`),
     ]);
   });
 
@@ -197,7 +203,7 @@ describe('en-sa: the decisions its briefs settle (#604, #607, #612, #616)', () =
    * packs a whole English clause into two tokens, so the word bound is slack and `newWordCap` is
    * what actually bites. A ramp that drifted upward would be answering the wrong constraint.
    */
-  it('climbs its bounds 4 → 7, then 8 → 10, then 10 → 12, capping every module at NEW_WORD_CAP', () => {
+  it('climbs its bounds 4 → 7, 8 → 10, 10 → 12, then 12 → 14, capping every module at NEW_WORD_CAP', () => {
     const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
     for (const id of ['L1-M1', 'L1-M2']) expect(bound(id), id).toBe(4);
     for (const id of ['L1-M3', 'L1-M4', 'L1-M5']) expect(bound(id), id).toBe(5);
@@ -213,6 +219,12 @@ describe('en-sa: the decisions its briefs settle (#604, #607, #612, #616)', () =
     for (const id of ['L3-M1', 'L3-M2', 'L3-M3']) expect(bound(id), id).toBe(10);
     for (const id of ['L3-M4', 'L3-M5', 'L3-M6', 'L3-M7']) expect(bound(id), id).toBe(11);
     for (const id of ['L3-M8', 'L3-M9', 'L3-M10']) expect(bound(id), id).toBe(12);
+    // L4 restarts it higher one last time, the 12 → 14 ramp en-ko's and en-ar's L4 already use:
+    // an argument that concedes and a story with a line inside it need the room, and nothing
+    // below L4 ever had to carry a quoted clause and a narrative clause in the same sentence.
+    for (const id of ['L4-M1', 'L4-M2', 'L4-M3']) expect(bound(id), id).toBe(12);
+    for (const id of ['L4-M4', 'L4-M5', 'L4-M6', 'L4-M7']) expect(bound(id), id).toBe(13);
+    for (const id of ['L4-M8', 'L4-M9', 'L4-M10']) expect(bound(id), id).toBe(14);
     for (const brief of briefs) expect(brief.newWordCap, brief.id).toBe(NEW_WORD_CAP);
     expect(COURSE_BRIEFS_SOURCE).toMatch(/the constraint that actually binds is `newWordCap`/);
   });
@@ -769,6 +781,224 @@ describe('en-sa: the decisions its briefs settle (#604, #607, #612, #616)', () =
       /A CORRELATIVE PAIR LIVES INSIDE ONE SENTENCE AND NEVER CROSSES A FULL STOP/,
     );
     expect(m10).toMatch(/FRESH ROWS SHOULD BE NONE/);
+  });
+
+  /**
+   * #620. The L4 section is the header's fourth part for this course, and the fold it is planned
+   * against is the one that would have been fatal to skip: `L3-M10.json` reports 317 over a delta
+   * of ZERO keys, because L3-M10 was authored to open no surface at all, so a reader who takes the
+   * last file's delta for the ladder plans an entire level out of an empty list. The arithmetic is
+   * written out so it can be checked rather than remembered.
+   */
+  it('carries the L4 section, planned against the FOLDED L3 index (#620)', () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /## en-sa L4: the decisions, taken against the finished L3/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\*\*317 surfaces through L3-M10, maxSpan 1\*\*/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/FOLDED across all thirty emitted files/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/reports 317 over a delta of ZERO/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/139 \+ 108 \+ 70 = 317/);
+    // The named failure mode this wave caught one more instance of, before it could ship.
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /the named failure mode is always the same one: \*\*a paradigm\n \* cell assumed to exist/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /L3-M4's brief named four optative cells and the emitted index\n \* carries THREE/,
+    );
+    // maxSpan stays 1 at L4 too, which is what keeps `forms` the only route to an inflected shape.
+    expect(l4Notes).toMatch(/maxSpan stays 1/);
+  });
+
+  /**
+   * M1 has two devices for one job and the cap fits one and a half, so the level decides which is
+   * productive rather than letting an author find out. The infinitive is nearly free because
+   * `gantum` is already L1-M2's; the gerundive brings a case rule with it and opens one shape.
+   */
+  it('opens the infinitive of purpose productively at M1 and the gerundive in one shape', () => {
+    const m1 = l4['L4-M1']?.notes.join('\n') ?? '';
+    expect(m1).toMatch(/THE INFINITIVE OF PURPOSE OPENS PRODUCTIVELY/);
+    expect(m1).toMatch(/gantum is L1-M2's/);
+    expect(m1).toMatch(
+      /THE GERUNDIVE OPENS IN ONE SHAPE ONLY — THE IMPERSONAL NEUTER -tavyam — AND -anīya IS NAMED AND WRITTEN NOWHERE/,
+    );
+    expect(m1).toMatch(/the person who must act is in the INSTRUMENTAL/i);
+    expect(m1).toMatch(/mayā gantavyam/);
+    // The pair that will be misread, named in the module that writes both.
+    expect(m1).toMatch(/gatavān is L1-M2's past participle/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /M1 — the infinitive of purpose opens PRODUCTIVELY, the gerundive opens in ONE shape/,
+    );
+  });
+
+  /**
+   * M2's connectives are L1-M9's outright, so the note has to be precise about what is new — the
+   * chain as a placement law, and the ablative in a second JOB. The two ablatives L2-M9 already
+   * owns are the trap: reused in a cause sentence they would show a comparison note.
+   */
+  it('makes M2 open no connective, and opens the ablative of cause instead', () => {
+    const m2 = l4['L4-M2']?.notes.join('\n') ?? '';
+    expect(m2).toMatch(/THIS MODULE OPENS NO CONNECTIVE AT ALL/);
+    expect(m2).toMatch(/THE ABLATIVE OF CAUSE IS THE NEW THING/);
+    expect(m2).toMatch(/a second job on a CASE the course has and NOT a second job on the WORDS/);
+    expect(m2).toMatch(/THIS MODULE WRITES jalāt AND phalāt NOWHERE/);
+    // The homograph refused rather than assigned, for the fourth time on this course.
+    expect(m2).toMatch(/the result reading is written NOWHERE in this course, pariṇāmaḥ is opened/);
+  });
+
+  /**
+   * The level's honest problem: Sanskrit has no dedicated past counterfactual. The note has to
+   * name both candidates, say which spoken Sanskrit uses, and state the cost in CELLS — including
+   * the correction this wave had to make, that L3-M4 shipped three optative cells and not four.
+   */
+  it('settles the past counterfactual in a NOTE — yadi plus the optative, and -syat nowhere', () => {
+    const m3 = l4['L4-M3']?.notes.join('\n') ?? '';
+    expect(m3).toMatch(/SANSKRIT HAS NO DEDICATED PAST COUNTERFACTUAL/);
+    expect(m3).toMatch(/THE CONDITIONAL IN -syat \(lṛṅ\), agamiṣyat/);
+    expect(m3).toMatch(/REFUSED, named in the rule prose, written in no display/);
+    expect(m3).toMatch(/THE RULING: yadi PLUS THE OPTATIVE/);
+    expect(m3).toMatch(/what a counterfactual actually is in spoken Sanskrit/);
+    // The cost, in cells, and the snapshot correction that sizes it.
+    expect(m3).toMatch(/in exactly THREE shapes: gacchet, khādet, paṭhet/);
+    expect(m3).toMatch(/likhet was never authored/);
+    expect(m3).toMatch(/-eyam on at most three verbs/);
+    expect(m3).toMatch(/syāt is the FIFTH shape of asti/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /M3 — the past counterfactual, and Sanskrit has no dedicated form for it/,
+    );
+  });
+
+  /**
+   * M7 is the module the whole course has deferred to, and it settles two things no module below
+   * it could: the `formal` chip, and the sandhi case `docs/121` §2.4 left open for exactly here.
+   */
+  it('lets the classical register into `display` at M7, and closes the sandhi question', () => {
+    const m7 = l4['L4-M7']?.notes.join('\n') ?? '';
+    expect(m7).toMatch(/THE CLASSICAL REGISTER ENTERS display HERE AND NOWHERE EARLIER/);
+    expect(m7).toMatch(/CHIPPED formal \(#422\)/);
+    expect(m7).toMatch(/THE PASSIVE, IN THREE THIRD-SINGULAR CELLS AND NO MORE/);
+    expect(m7).toMatch(/an official sentence NAMES NO AGENT/i);
+    expect(m7).toMatch(/THE PASSIVE AS A SYSTEM DOES NOT OPEN/);
+    // The correction the ticket needed: `niṣiddhaḥ` is a -ta participle, not a gerundive.
+    expect(m7).toMatch(/niṣiddhaḥ is a bare -ta participle/);
+    expect(m7).toMatch(/the SECOND and last frozen -ta/);
+    // The deferral closed, with its index consequence stated both ways.
+    expect(m7).toMatch(/THE SANDHI QUESTION, REOPENED FOR EXACTLY THIS MODULE AND CLOSED HERE/);
+    expect(m7).toMatch(/THE RULING IS NO/);
+    expect(m7).toMatch(/this module adds ZERO keys for sandhi/);
+    expect(m7).toMatch(/checkShownSurfaces reads sentence.display and variations\[\]\.display/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /M7 — the classical register enters `display`, and the sandhi question is CLOSED/,
+    );
+  });
+
+  /**
+   * The imperfect has been refused for three levels and M8 is the module that would inherit it by
+   * drift. The note argues the refusal and declares the single cell that opens, so a later wave
+   * cannot read `āsīt` as permission for a paradigm.
+   */
+  it('keeps refusing the imperfect at M8 and opens exactly one cell, āsīt', () => {
+    const m8 = l4['L4-M8']?.notes.join('\n') ?? '';
+    expect(m8).toMatch(/THE IMPERFECT AS A SYSTEM STAYS REFUSED, FOR THE FOURTH TIME/);
+    expect(m8).toMatch(/agacchat, akarot and abhavat are written nowhere and named/);
+    expect(m8).toMatch(/ONE CELL OPENS, AND THE NARROWNESS IS THE POINT: āsīt/);
+    expect(m8).toMatch(/SIXTH shape of asti/);
+    expect(m8).toMatch(/the frozen-unit technique L2-M1 used for kṣamyatām/);
+    expect(m8).toMatch(/aham pūrvam pratidinam vidyālayam gatavān/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /M8 — the imperfect, refused for three levels, opens in exactly ONE cell/,
+    );
+  });
+
+  /** M6 is the first module to name the correlative machinery as one system, five pairs of it. */
+  it('names all five ya-/ta- pairs at M6, and holds pada form against the dictionary', () => {
+    const m6 = l4['L4-M6']?.notes.join('\n') ?? '';
+    expect(m6).toMatch(/THIS IS THE FIFTH ya- \/ ta- PAIR AND THE MODULE NAMES ALL FIVE/);
+    expect(m6).toMatch(/THE OBLIGATORINESS IS NOT UNIFORM/);
+    expect(m6).toMatch(/Every dictionary prints adyāpi/);
+    expect(m6).toMatch(/THIS COURSE WRITES na adya api/);
+    expect(m6).toMatch(/ZERO new keys/);
+  });
+
+  /** (b)–(h): each L4 module's own system, named in its own note rather than only in the header. */
+  it('names the system each L4 module opens, in that module’s note', () => {
+    const note = (id: string): string => l4[id]?.notes.join('\n') ?? '';
+    expect(note('L4-M4')).toMatch(/THE SHAPE IS CONCEDE-THEN-HOLD/);
+    expect(note('L4-M4')).toMatch(/avaśyam/);
+    expect(note('L4-M5')).toMatch(/THE OPTATIVE IS THE HEDGE/);
+    expect(note('L4-M5')).toMatch(/prāyaḥ/);
+    expect(note('L4-M5')).toMatch(/ONE LETTER from L1-M4's prātaḥ/);
+    expect(note('L4-M9')).toMatch(/THIS MODULE OPENS NO CASE/);
+    expect(note('L4-M9')).toMatch(/mahānagaram FOR A BIG CITY, WHICH IS HOW mahat STAYS REFUSED/);
+    expect(note('L4-M10')).toMatch(/SIX SENTENCES, WITH ONE LINE OF QUOTED DIALOGUE INSIDE/);
+    expect(note('L4-M10')).toMatch(/CAPPED AT EIGHT SENTENCES AND VARIED IN KIND/);
+  });
+
+  /**
+   * L4 never edits an L1, L2 or L3 file, so every L4 shape of an older lexeme is a new ROW with a
+   * note back — and with `maxSpan: 1` and no hyphen there is no part-key to catch a miss. Each
+   * claim was grepped against the folded snapshot rather than inferred from a paradigm.
+   */
+  it('opens a new ROW for every L4 shape of an older lexeme, never an edit below', () => {
+    expect(l4Notes).toMatch(/A LEVEL NEVER EDITS A FILE BELOW IT/);
+    for (const [id, brief] of Object.entries(l4)) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+      expect(brief.notes.join('\n'), `${id} checks its pool glosses`).toMatch(
+        /A pool token must resolve to a row whose GLOSS fits the sentence/i,
+      );
+    }
+    const note = (id: string): string => l4[id]?.notes.join('\n') ?? '';
+    expect(note('L4-M1')).toMatch(/kartum ← L1-M4's karoti/);
+    expect(note('L4-M1')).toMatch(/bhavatā and bhavatyā ← L1-M2's bhavān \/ bhavatī/);
+    expect(note('L4-M2')).toMatch(/rogāt ← L3-M7's rogaḥ/);
+    expect(note('L4-M3')).toMatch(/syāt ← L1-M3's asti/);
+    expect(note('L4-M4')).toMatch(/śrutvā ← L2-M7's śṛṇoti/);
+    expect(note('L4-M7')).toMatch(/ucyate ← L3-M5's uktavān/);
+    expect(note('L4-M8')).toMatch(/āsīt ← L1-M3's asti/);
+    expect(note('L4-M9')).toMatch(/mitreṇa ← L2-M2's mitram/);
+  });
+
+  /**
+   * The ratchet is at ZERO across thirty rungs and en-sa is the only course in the catalogue
+   * there. A journey module wants a city name more than any module below it, so the ruling is
+   * written before authoring rather than discovered after.
+   */
+  it('keeps the ratchet at zero through the journeys module', () => {
+    const m9 = l4['L4-M9']?.notes.join('\n') ?? '';
+    expect(m9).toMatch(/THIS MODULE WRITES NO NEW PROPER NOUN/);
+    expect(m9).toMatch(/rides UNINDEXED \(#61\) and is nonetheless COUNTED/);
+    expect(m9).toMatch(/rāmaḥ and sītā remain the only two names this course writes/);
+    expect(m9).toMatch(/NEVER raised/);
+    expect(l4['L4-M10']?.notes.join('\n')).toMatch(/THIS MODULE WRITES NO NEW PROPER NOUN/);
+  });
+
+  /**
+   * Every form L1–L3 refused is ruled on at L4 — opened deliberately or kept refusing — because a
+   * deferral with no owner is how a course loses a decision. `tvam` is the one a later wave is
+   * likeliest to soften, and M10's quoted dialogue is where it would arrive.
+   */
+  it('rules on every form L1-L3 refused, and still keeps tvam at one display', () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /### 10\. What L4 opens and what it keeps refusing, form by form/,
+    );
+    expect(l4['L4-M1']?.notes.join('\n')).toMatch(
+      /tvam appears in exactly ONE display in the whole course and it is L2-M1's, and L4 writes it nowhere/,
+    );
+    expect(l4['L4-M10']?.notes.join('\n')).toMatch(
+      /tvam DOES NOT ARRIVE HERE, AND THIS IS THE MODULE THAT WOULD OTHERWISE OPEN IT/,
+    );
+    expect(l4['L4-M1']?.notes.join('\n')).toMatch(
+      /gacchasi and every other -si present, and tava, tubhyam, tvām and te, stay written nowhere/,
+    );
+    expect(l4['L4-M3']?.notes.join('\n')).toMatch(
+      /the athematic kuryāt that L3-M4 already refused/,
+    );
+    expect(l4['L4-M5']?.notes.join('\n')).toMatch(/no vocative, which a face-saving turn wants/);
+    expect(l4['L4-M7']?.notes.join('\n')).toMatch(
+      /mā with the imperative, which a prohibition sign would reach for/,
+    );
+    expect(l4['L4-M9']?.notes.join('\n')).toMatch(/no plural participial past/);
+    expect(l4['L4-M9']?.notes.join('\n')).toMatch(/no padbhyām, refused at L2-M4/);
+    expect(l4['L4-M10']?.notes.join('\n')).toMatch(/STAYS OUT/);
   });
 });
 
