@@ -1,12 +1,15 @@
-# en-sa L1 and L2 — LLM review (#608, #609, #610, #613)
+# en-sa L1, L2 and L3 — LLM review (#608, #609, #610, #613, #614, #615, #617)
 
-Four waves, one record, one complete level and the first two rungs of the next. **Sections 1–10 are
-L1-M1 · L1-M2 (#608)**; **sections 11–19 are L1-M3 · L1-M4 · L1-M5 (#609)**; **sections 20–28 are
-L1-M6 … L1-M10 (#610)**, which closed Level 1; **sections 29–37 are L2-M1 · L2-M2 (#613)**, which
-open Level 2 into a course that now SHIPS. The open questions run in one list from 1 to 66 across
-all four, and none of them is closed — the fluent-speaker gate of §9 is **UNMET** for every rung of
-both levels. The file has been renamed once per wave that widened its scope, and this is the third
-such rename: it was `…-L1-M1-M2.md`, then `…-L1.md`, and it is now `…-L1-L2.md`.
+Seven waves, one record, two complete levels and the first two rungs of a third. **Sections 1–10
+are L1-M1 · L1-M2 (#608)**; **sections 11–19 are L1-M3 · L1-M4 · L1-M5 (#609)**; **sections 20–28
+are L1-M6 … L1-M10 (#610)**, which closed Level 1; **sections 29–37 are L2-M1 · L2-M2 (#613)**,
+which open Level 2 into a course that now SHIPS; **sections 38–46 are L2-M3 · L2-M4 · L2-M5
+(#614)**; **sections 47–56 are L2-M6 … L2-M10 (#615)**, which closed Level 2; and **sections 57–64
+are L3-M1 · L3-M2 (#617)**, which open Level 3. The open questions run in one list from 1 to 127
+across all seven, and none of them is closed — the fluent-speaker gate of §9 is **UNMET** for every
+rung of all three levels. The file has been renamed once per wave that widened its scope, and this
+is the fourth such rename: it was `…-L1-M1-M2.md`, then `…-L1.md`, then `…-L1-L2.md`, and it is now
+`…-L1-L3.md`.
 
 ## Wave 1 — L1-M1 · L1-M2 (#608)
 
@@ -2965,5 +2968,361 @@ run individually, as #610, #613 and #614 did.
 
 `git diff --stat content/en-sa/modules/L1-M1.json … L1-M10.json content/en-sa/modules/L2-M1.json …
 L2-M5.json` is **EMPTY**, and so is `git diff --stat` over the other nine courses. The only tracked
+file this wave modifies under `content/` is `content/en-sa/levels.json`; everything else it adds is
+new.
+
+---
+
+## Wave 7 — L3-M1 · L3-M2 (#617) — Level 3 opens
+
+**Date:** 2026-09-12 · **Reviewer:** Claude Opus 5, LLM review, authorised by the repo owner ·
+**Bar:** LLM review plus owner authority. The fluent-speaker gate of §9 is still **UNMET**.
+
+---
+
+## 57. What was authored
+
+Two modules, the first two rungs of Level 3, authored strictly in ladder order with a rebuild
+between them — M1 against L2-M10's real cumulative index (247 surfaces, folded across all twenty
+emitted delta files), M2 against M1's (254).
+
+| | L3-M1 Your day, in detail | L3-M2 Work and study |
+| --- | --- | --- |
+| sentences | 10 (`L3-M1-S01`…`S10`) | 10 (`L3-M2-S01`…`S10`) |
+| variations | 30 — 3 on every sentence | 30 — 3 on every sentence |
+| comprehension items | 13 | 13 |
+| rules | 10 | 10 |
+| word rows shown | 60 instances, 34 distinct | 64 instances, 39 distinct |
+| surfaces this module adds | 7 | 8 |
+| cumulative index | 254, maxSpan 1 | 262, maxSpan 1 |
+
+**The seven surfaces M1 adds are the seven absolutives and nothing else** — `gatvā`, `pītvā`,
+`khāditvā`, `kṛtvā`, `paṭhitvā`, `likhitvā` and `āgatya` — which is the brief's "the module's
+entire new-word spend is the absolutives", executed literally. No new adverb of frequency, no new
+sequencer, no new noun, no new time word. `punaḥ punaḥ` was refused, as the brief required, and
+with it the course's first two-token surface.
+
+**The eight surfaces M2 adds are the relative–correlative set plus two nouns** — `yaḥ` (one row,
+holding `yā`, `yat` and `yam` in its `forms`), `tat`, `tam`, `kāryam` and `adhyayanam`.
+
+Both ship the full M1–M3 enrichment — `sound`, `variations`, `mistake`, `usage`, `mnemonic` on
+every one of the twenty sentences — plus `literal` and `trap` on all twenty, and
+`register: "neutral"` throughout. There is no `glossEn` anywhere. Neither module carries
+`fixture: true`.
+
+`prerequisites` is `[]` for L3-M1 (the seal rule carries the cross-level dependency) and
+`["L3-M1"]` for L3-M2. `content/en-sa/levels.json` shows both rungs `hasContent: true` with no
+`draft`; **L3 itself keeps its level `draft` flag**, because that clears only when all ten rungs
+are authored and eight are still empty — exactly as L1's did until #611.
+
+**Provenance.** Both files carry `verified: true` with
+`verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"` and `verifiedAt: "2026-09-12"`,
+shipped in the same change as the content, and this document is that change's record.
+
+---
+
+## 58. The ratchet is still at ZERO — and L3 never had a proper noun to spend
+
+`npm run content:build -- --with-unverified --with-fixtures` prints **nine `shown but untaught`
+lines in the whole build and none of them en-sa's**. `tools/shown-surfaces.test.ts` is untouched:
+`'en-sa': 0` still holds across twenty-two rungs, and en-sa is still the only course in the
+catalogue at zero.
+
+Two things kept it there rather than luck.
+
+1. **Every display, variation and pool item was written out of the folded index before it was
+   written into a file.** `paśyāmi` is the one that nearly cost something: `paśyati` is L2-M4's
+   and `paśyāmaḥ` is L2-M6's, but **the first-person singular `paśyāmi` is in NO en-sa module**, so
+   a draft pool item reading `aham vidyālayam gatvā mitram paśyāmi` would have raised the count by
+   one. It was rewritten to `ante aham gṛham āgatya santuṣṭaḥ`. A paradigm would have said the form
+   exists; the emitted index says the course has never written it.
+2. **The two proper nouns this wave uses are the two the course already owns.** `sītā` and `rāmaḥ`
+   have word rows from L1-M1, so `sītā prātaḥ jalam pītvā saṃskṛtam paṭhati` and
+   `rāmaḥ annam khāditvā pustakālayam gacchati` resolve rather than ride unindexed. No third name
+   was introduced, in either module.
+
+`npx tsx tools/check-shown.ts en-sa L3-M1` and `… L3-M2` each report **no SHOWN-BUT-UNTAUGHT
+finding**. Both report RE-TEACH and COLLIDES lines (48 and 48 RE-TEACH respectively), which is the
+ordinary shape of a module that re-teaches lower-level words inside its own sentences — L2-M1
+reports eighteen of the same kind — and which the tool's own header calls information rather than a
+verdict.
+
+**`maxSpan` is 1 on every one of the twenty-two emitted en-sa index files**, checked by reading
+them rather than assumed. No hyphen, no avagraha and no multi-token surface was written, and no
+draft of either module ever wanted one.
+
+---
+
+## 59. The briefs' ownership plan, and the one place it was corrected
+
+**This is the first en-sa wave in which every ownership claim in the two module briefs held.**
+Seventeen briefs have been corrected on this course across six waves for exactly this defect, so
+each claim was grepped against the folded snapshot again rather than trusted:
+
+| brief claim | emitted index says |
+| --- | --- |
+| `gatvā` ← L1-M2's `gacchati` | `gacchati`/`gacchāmi` → `L1-M2-S07` w2 — holds |
+| `khāditvā`, `pītvā`, `kṛtvā`, `paṭhitvā`, `likhitvā` ← L1-M4 | all five presents → `L1-M4` — holds |
+| `āgatya` ← L2-M1's `āgacchatu` | `āgacchatu`/`āgaccha` → `L2-M1-S03` w2 — holds |
+| sequencers are L2-M10's | `prathamam`, `tataḥ`, `anantaram`, `ante` → `L2-M10` — holds |
+| time words are L1-M4's | `adya`, `prātaḥ`, `sāyam`, `pratidinam` → `L1-M4` — holds |
+| **`adhyāpakam` is L1-M3's and `chātram` is NOT in the index** | `adhyāpakam` → `L1-M3-S08` w1; `chātram` absent — **holds, and this is the correction #616 made to its own first draft; it was right to make it** |
+| `tat` and `tam` are unwritten and are L3-M2's to open | neither key in the folded 247 — holds |
+| `saḥ`/`sā` are L1-M5's and shipped nothing else | `saḥ` → `L1-M5-S03`, `sā` → `L1-M5-S04` — holds |
+| `jānāti`/`jānāmi` are L2-M8's | → `L2-M8-S05` w0 — holds |
+| `uttamam` is L2-M3's | → `L2-M3-S06` w1 — holds |
+| `yānena`, `mārgeṇa`, `katham` are L2-M4's | → `L2-M4-S01`, `-S02`, `-S03` — holds |
+
+**The one correction, and it is a brief-against-brief contradiction rather than a brief-against-index
+one.** `tools/course-briefs.ts` §10 of the en-sa L3 decisions said the relative–correlative set
+opens "in the nominative and accusative of three genders". M2's own seam note 6 plans **four**
+relative shapes — `yaḥ`, `yā`, `yat`, `yam` — and §1's worked example uses those four. Three genders
+in two cases would additionally require the feminine accusative `yām` and its correlative `tām`,
+which **no brief in the level plans, no example uses, and no module opens**. Left standing, §10 is
+exactly the "example that contradicts its own rule" the briefs' header rule 1 forbids, and it would
+have invited a later wave to write a shape with no owner. §10 now states the four shapes, names the
+neuter as serving both cases at once, and says in terms that `yām` and `tām` are opened nowhere in
+the level, marked `#617`. `tools/course-briefs.test.ts` is untouched and its 148 tests pass.
+
+---
+
+## 60. Decisions that could look like bugs
+
+**60.1 `prerequisites: []` on L3-M1.** The same shape L1-M1 and L2-M1 carry. Prerequisites live
+within a level; the cross-level dependency is the seal rule, not a list entry.
+
+**60.2 Word rows carry no `script`.** A first draft of L3-M1 put the Devanagari on every word row as
+well, and the build's own warning line caught it — `10 of 123 romanized surfaces carry no script
+line`, against the 35-of-88 shape every shipped en-sa module has. `docs/121` §9.1 seats the quiet
+line on sentences, distinct variations and pool items and deliberately keeps it off word rows and
+mistake plates. The rows were stripped; the warning is now `70 of 123` and `74 of 127`, which is ten
+mistake plates plus the word rows, exactly as L1 and L2 read.
+
+**60.3 `absolutive` is listed in `allowedTenses`.** It is not a tense — that is the point of the
+module — but `allowedTenses` is free text in the schema and the honest entry is the one that names
+what the sentences contain. The rules say four times over that the form has no tense of its own.
+
+**60.4 The mistake plates never write a refused form.** The natural plate for L3-M1-S10
+(`bhavatī gṛham āgatya kim karoti?`) is the second-person `karosi`, which is exactly the error an
+English speaker makes. §10 of the decisions says every `-si` present is "written in no display", and
+`mistake.display` is a field called `display`; rather than argue the ambiguity, the plate was built
+out of two finite verbs instead (`bhavatī gṛham āgacchati kim karoti?`). **Not one refused form
+appears anywhere in either module, plates included** — see §62.
+
+**60.5 `kāryam karoti` and `adhyayanam karoti` are noun-plus-verb, and the module says so.** There
+is no single verb for "to work" or "to study" in this course, and L3-M2-S09's `trap` says that in
+so many words rather than letting a learner assume one is being withheld.
+
+**60.6 `tat uttamam` has no `asti` and needs none.** Rule 7 covers it: a correlative and an
+adjective are a complete main clause, which is L1-M1's nominal sentence at work. Three of the ten
+M2 heroes end verbless, and two variations add `asti` **only** so that `na` has something to sit on
+(`saḥ mama pitā na asti`), which is the shape L2-M8 already shipped for `mama pustakam na asti`.
+
+**60.7 `yat` appears as a nominative in S03 and as an accusative in S08, and looks identical.** That
+is the neuter, and it is why the masculine `yam … tam` needed its own hero (S04): the pair's case
+rule is invisible in the neuter and visible in the masculine. S08's `trap` says this.
+
+**60.8 `uttamam` is never used adverbially.** A draft pool item read
+`sā uttamam likhati` for "she writes it well" — a real classical construction, and one this course
+has never taught, since L2-M3 owns `uttamam` as an attributive adjective only. It was replaced with
+`yā chātrā saṃskṛtam likhati sā mama bhaginī`.
+
+---
+
+## 61. Every comprehension token resolves to the RIGHT row
+
+All 26 pool items were walked token by token against the folded emitted index, and the word row each
+token lands on was read out of `public/content/en-sa/index/`. Every one lands where it should. The
+rows worth naming, because they are the ones a reviewer would want to see:
+
+**L3-M1 (13 items).** Every absolutive lands on its own new L3-M1 row and on no earlier one:
+`khāditvā` → `L3-M1-S07` w3 (C01, C03, C07, C12), `āgatya` → `L3-M1-S02` w2 (C02, C08, C10),
+`gatvā` → `L3-M1-S03` w2 (C04, C05), `kṛtvā` → `L3-M1-S06` w4 (C06), `pītvā` → `L3-M1-S01` w3
+(C09, C11), `likhitvā` → `L3-M1-S08` w2 (C13). The re-used tokens land on their first-teach rows:
+`mama`, `mahyam` and `aham` all on **L1-M1's `aham` row** (its `forms` hold them, as they have since
+M1); `paṭhitavān` on **L1-M4's `paṭhati` row**, not on a participle row of its own; `vidyālayam` on
+L1-M6's `vidyālayaḥ`; `pustakālayam` on L1-M7's `pustakālayaḥ`; `santuṣṭā` on L1-M9's `santuṣṭaḥ`;
+`śṛṇomi` on L2-M7's `śṛṇoti`; `sītā` and `rāmaḥ` on their own L1-M1 rows.
+
+**L3-M2 (13 items).** `yaḥ`, `yā`, `yat` and `yam` all land on the **single `yaḥ` row**
+(`L3-M2-S01` w0) — one pronoun, one row, one tap destination, which is what note 6 asked for.
+`tat` → `L3-M2-S03` w4 and `tam` → `L3-M2-S04` w4, each its own row. `kāryam` → `L3-M2-S03` w1,
+`adhyayanam` → `L3-M2-S06` w1. `gatvā` in C05 and C12 lands on **L3-M1's row**, which is the seam
+working: M2 re-uses M1's word and opens nothing. `kṛtavān` lands on L1-M4's `karoti`;
+`adhyāpikā` on L1-M1's `adhyāpakaḥ`; `adhyāpakam` on **L1-M3's own accusative row**, which is the
+row #616 corrected its draft to use; `dīrgham` on L2-M2's `dīrghaḥ`; `mārgeṇa` on L2-M4's `mārgaḥ`.
+
+No token in either pool resolves to a row that teaches a different word, and no pool item is
+case-insensitively equal to a hero.
+
+---
+
+## 62. Sanskrit that was deliberately NOT written
+
+**Re-verified absent by scanning every `display`, every `forms` entry and every `script` line of
+both modules, mistake plates included** — not assumed from the drafting:
+
+- **Every `-si` present.** `gacchasi`, `paṭhasi`, `khādasi`, `pibasi`, `likhasi`, `karosi`,
+  `jānāsi`, `icchasi`, `vadasi` — none of them, and no token in either module ends in `-si` at all.
+  L3-M2 is the module that wants one most (a relative clause about "the work that YOU do"), and
+  §60.4 and rule-prose in M2's S03 variation 1 show the register answering it instead:
+  `yat kāryam bhavān karoti tat uttamam`.
+- **`tava`, `tubhyam`, `tvām`, `te`** — absent. **`tvam`** — absent; it is still at exactly one
+  display in the whole course, L2-M1's, confirmed by a scan of all twenty-two files.
+- **Every optative.** No `-et`, no `gaccheyam`, no `gacchema`, no `kuryāt`. That mood is L3-M4's
+  charter and this wave did not let it drift in early; no token in either module ends in `-et`,
+  `-eyam` or `-ema`.
+- **Every imperfect,** `abhavat` included.
+- **The productive bare `-ta` participle** — no `gataḥ`, no `kṛtam`, no `naṣṭam`. `jātam` (L2-M8)
+  is still the one frozen member and this wave did not reach for it.
+- **Every bare-stem imperative but L2-M1's `āgaccha`** — none written.
+- **The vocative** — none. **`svasā`, `mahat`, `asmi`** — none. **The plural participial past**
+  (`gatavantaḥ`) — none.
+- **`yat` in the "because" and complementiser readings.** Written nowhere, in no display, no
+  variation, no pool item and no plate. M2's rule 6 names both readings in English prose and rule 7
+  points the learner at L1-M9's `yataḥ`, which is a distinct index key.
+- **`yām` and `tām`** — the feminine accusative of the pair, refused for the reason §59 gives, and
+  the reason §10 of the briefs now states.
+- **`punaḥ punaḥ`** — refused, as M1's brief required, to keep `maxSpan` at 1.
+
+Forms avoided for the separate reason that **a form you are not certain of is a form you do not
+write**:
+
+- **`paśyāmi`.** Not in the index (§58) and not written here; the sentence was rebuilt rather than
+  the form assumed from `paśyati`.
+- **A negated absolutive.** "Without eating" wants something like `abhuktvā` or a `na` in front of
+  an absolutive, and this wave is not certain which a speaker uses. No sentence negates an
+  absolutive; every `na` in both modules sits on a finite verb, which is what rule 3 of M1's set and
+  the variations actually teach.
+- **`śrutavatī`.** A past of `śṛṇoti` was wanted for L3-M1-S06's first variation and is not in the
+  index; the variation was rebuilt on `pītavatī` instead.
+- **`saṃdeśam`.** The accusative of L2-M7's `saṃdeśaḥ` is not in the index, so "having written a
+  message" was dropped and S08 writes `saṃskṛtam likhitvā`.
+- **`uttamā`.** The feminine of L2-M3's adjective is not in the index; L3-M2-S07's feminine
+  variation predicates `santuṣṭā` (L1-M9) instead.
+- **`chātram`.** Not in the index — the shape #616 corrected itself about — and not reintroduced.
+
+---
+
+## 63. Open questions for the fluent-speaker gate — continuing from 113
+
+The gate is a **fluent saṃskṛta-sambhāṣaṇam speaker or a Sanskrit teacher**, and it is **UNMET**.
+Questions 1–113 are still open. These fourteen are this wave's.
+
+114. **The absolutive as the ordinary way to tell a day.** The module's whole premise. Confirm that
+     a speaker really strings a habitual morning onto one finite verb, and say how many absolutives
+     before one verb starts to sound written rather than spoken — L3-M1-S09 uses two.
+115. **`pītvā` and `kṛtvā` as the everyday absolutives of `pibati` and `karoti`.** Confirm both, and
+     confirm that a learner who says `pibitvā` or `karitvā` would be understood rather than stopped.
+116. **`āgatya` against `āgamya`.** The module teaches `āgatya` as THE absolutive of a prefixed
+     `gam-`. Confirm that is what is said, and whether `āgamya` is heard at all in sambhāṣaṇam.
+117. **The `-tvā` / `-ya` rule stated as a bare prefix rule.** It is true and it is simplified.
+     Confirm that stating it that flatly leaves a learner with a usable rule rather than a false one,
+     and name the first place it will fail them.
+118. **`gṛham gatvā aham pustakam paṭhitavān` as ordinary past narration.** Confirm the absolutive
+     is genuinely tense-neutral in speech and that no listener hears the first clause as present.
+119. **`bhojanam kṛtvā` for "having made the meal".** L2-M10 shipped `bhojanam kṛtavān`; confirm the
+     absolutive of the same collocation is what a speaker says, and whether `annam` or `bhojanam` is
+     the commoner object of `karoti` in the kitchen sense.
+120. **Word order around the absolutive.** L3-M1-S04 puts `aham` AFTER `gatvā`. Confirm that is
+     natural rather than merely possible, and say where a speaker actually puts the subject when a
+     sentence opens with an absolutive.
+121. **`yaḥ chātraḥ paṭhati saḥ jānāti` as everyday speech.** The module's premise in turn. Confirm
+     the correlative really is never dropped in the spoken register, and say how a dropped `saḥ`
+     lands on a listener — as a slip, as incomplete, or as unnoticed.
+122. **`yam adhyāpakam bhavān jānāti tam aham jānāmi`.** The hardest sentence in the module.
+     Confirm the double accusative is what is said, and confirm the word order — whether `bhavān`
+     really sits after the noun inside the `ya-` clause.
+123. **`saṃskṛtam vadati` for "speaks Sanskrit".** Used in L3-M2-S02 and in pool item C11. Confirm
+     the accusative is right and that an instrumental (`saṃskṛtena`) is not the commoner idiom.
+124. **`kāryam karoti` and `adhyayanam karoti`.** Confirm both are the everyday way to say "works"
+     and "studies", and say whether `adhyayanam karoti` is heard beside plain `paṭhati` or whether a
+     speaker would simply use the verb.
+125. **`yat adhyayanam aham karomi tat mahyam rocate`.** A correlative whose main clause is L1-M1's
+     dative frame. Confirm the pair and `rocate` sit together comfortably, and that `tat` as the
+     subject of `rocate` reads as intended.
+126. **`kaḥ` against `yaḥ`,** the contrast L3-M2-S07's third variation draws. Confirm a learner who
+     has both will not use `kaḥ` to open a relative clause, and say whether that error is common.
+127. **Naturalness of the 26 pool items**, as questions 12, 26, 47, 66, 90 and 113 asked of the
+     first 117. They are grammatical by construction and recombined from the cumulative index; an
+     LLM cannot hear which of them nobody would say.
+     `sāyam mama mātā bhojanam kṛtvā santuṣṭā.`,
+     `bhavān prātaḥ kim khāditvā vidyālayam gacchati?` and
+     `yam adhyāpakam sā jānāti tam aham api jānāmi.` are the three most worth a second opinion.
+
+---
+
+## 64. Verification run for this change
+
+```
+npm run content:validate                              → CONTENT 472/472 ok
+                                                        (en-sa/L3-M1.json ok, L3-M2.json ok)
+npm run content:build -- --with-unverified --with-fixtures
+                                                      → en-sa: 22 modules
+                                                        (L1-M1..M10, L2-M1..M10, L3-M1..M2)
+                                                          index L3-M1: 254 surfaces
+                                                          index L3-M2: 262 surfaces
+                                                        NINE `shown but untaught` lines in the whole
+                                                        build and NONE of them en-sa's — still zero,
+                                                        and still the only course in the catalogue
+                                                        without one
+npx tsx tools/check-shown.ts en-sa L3-M1 / L3-M2      → no SHOWN-BUT-UNTAUGHT finding on either
+npx tsc --noEmit                                      → clean
+npx prettier --check .                                → All matched files use Prettier code style!
+npx eslint src/course/types.test.ts tools/content-build.test.ts tools/course-briefs.ts
+                                                      → clean
+npx vitest run src/course/types.test.ts tools/content-build.test.ts \
+               tools/shown-surfaces.test.ts tools/course-briefs.test.ts
+                                                      → 4 files, 668 tests passed
+npm run content:build && npm run fonts:build          → en-sa: 22 modules
+                                                        (L1-M1..M10, L2-M1..M10, L3-M1..M2) strict;
+                                                        FONTS 15/15 ok — mukta 331376 bytes
+npx vitest run   (after that STRICT build)            → 16 files, 886 tests: 885 passed, 1 failed —
+                                                        scripts/generate-splash.test.ts only
+npx vitest run tools/font-coverage.test.ts tools/shown-surfaces.test.ts
+                                                      → 2 files, 29 tests passed, after the STRICT
+                                                        build
+```
+
+**`tools/font-coverage.test.ts` PASSES after the strict build**, which is again why the suite is run
+in that order: it is red only after `--with-unverified --with-fixtures`, and its four characters
+(`U+000A`, `$`, `×`, `•`) predate all en-sa work. A green run here is the evidence that this wave
+added **no fifth character**: every `sound` line in both modules is an ASCII respelling, and no
+capitalised IAST letter (the `Ṛ` U+1E5A failure mode of #613 §33.8) was written anywhere.
+`scripts/generate-splash.test.ts` is the one remaining red, measured rather than assumed and
+pre-existing on this container's rasterizer.
+
+`scripts/verify.sh` was again deliberately NOT run: it stops at the first failing stage and would
+never reach CONTENT while `scripts/generate-splash.test.ts` is red on this host, so the stages were
+run individually, as #610, #613, #614 and #615 did.
+
+### Pinned inventories updated by this change
+
+- `src/course/types.test.ts` — `MODULE_FILES` gains `content/en-sa/modules/L3-M1.json` and
+  `L3-M2.json`; the case title's count moves 470 → 472 and its wording to "en-sa's two levels plus
+  L3-M1..M2 (#617)". **The en-sa decisions case itself is unchanged** — the intimate-set ban and the
+  `neutral` register assertion are both scoped to `L1`, and these two modules chip `neutral` on all
+  twenty sentences and write no intimate pronoun at any level.
+- `tools/content-build.test.ts` — `AUTHORED` gains `L3-M1` and `L3-M2`; the three
+  `en-sa: 20 modules (L1-M1..M10, L2-M1..M10)` assertions become
+  `en-sa: 22 modules (L1-M1..M10, L2-M1..M10, L3-M1..M2)`; two case titles move to "two complete
+  levels and two rungs of a third" and "22 modules and 22 indexes"; the comment above `AUTHORED`
+  and the ladder case's comment record that **L3's level `draft` flag STAYS** at two rungs of ten.
+  The `drafted` predicate is unchanged and still correct.
+- `tools/shown-surfaces.test.ts` — **untouched.** `'en-sa': 0` still holds.
+- `tools/course-briefs.ts` — **one decision corrected** (§59), marked `#617`: §10's claim that the
+  relative–correlative opens "in the nominative and accusative of three genders", which contradicted
+  M2's own seam note 6 and would have required `yām` and `tām`. `tools/course-briefs.test.ts` is
+  untouched and its tests pass.
+- `content/en-sa/levels.json` — `L3-M1` and `L3-M2` lose `draft: true` and gain `hasContent: true`.
+  **L3's own level `draft` and `draftNote` stay**, because eight rungs are still empty. L4 and L5 are
+  untouched.
+- `README.md` — the en-sa paragraph's module and surface counts, and the review-doc link, name, wave
+  and section counts.
+- This document, renamed `docs/122-llm-review-en-sa-L1-L2.md` → `docs/122-llm-review-en-sa-L1-L3.md`
+  for the fourth time in its life, for the fourth time because its scope widened.
+
+`git diff --stat content/en-sa/modules/L1-M1.json … L1-M10.json content/en-sa/modules/L2-M1.json …
+L2-M10.json` is **EMPTY**, and so is `git diff --stat` over the other nine courses. The only tracked
 file this wave modifies under `content/` is `content/en-sa/levels.json`; everything else it adds is
 new.
