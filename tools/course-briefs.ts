@@ -3186,8 +3186,14 @@
  *
  * Every form L1 and L2 refused is ruled on here, because a deferral with no owner is how a course
  * loses a decision. **OPENED, deliberately and narrowly:** the optative, in the third singular
- * `-et` only (M4, §4); the relative–correlative `ya-`/`ta-` set, in the nominative and accusative
- * of three genders (M2, §1); `tat` and `tam`, held free since L1-M1 (M2); the absolutive (M1);
+ * `-et` only (M4, §4); the relative–correlative `ya-`/`ta-` set, in FOUR relative shapes and no
+ * more — `yaḥ`, `yā`, `yat` and `yam` (M2, §1 and M2's own seam note 6), which is the nominative
+ * of all three genders plus the MASCULINE accusative, the neuter `yat` serving both cases at
+ * once. **The feminine accusative `yām` and its correlative `tām` are opened NOWHERE in this
+ * level** — an earlier draft of this line read "in the nominative and accusative of three
+ * genders", which would have required both, and #617 corrected it against M2's own brief rather
+ * than let an author write a shape no seam note plans; `tat` and `tam`, held free since L1-M1
+ * (M2); the absolutive (M1);
  * `iti` (M5); the third-person plural present and `santi` (M9); the first-singular ātmanepada
  * `manye` (M3). **STILL REFUSED, written in no display, no variation, no pool item and no
  * `forms` list, and named in the module that would otherwise reach for it:** every `-si` present

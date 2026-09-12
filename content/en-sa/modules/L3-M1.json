@@ -1,0 +1,1026 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M1",
+  "title": "Your day, in detail",
+  "job": "Longer habitual narration with sequencing words",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present",
+      "participial_past",
+      "verbless_nominal_present",
+      "absolutive"
+    ],
+    "allowedPatterns": [
+      "V-tvā + V-āmi",
+      "<time> + N-acc + V-tvā + N-acc + V-āmi",
+      "V-ya + V-āmi",
+      "prathamam + <clause> + . + tataḥ + <clause>",
+      "pratidinam + V-tvā + V-āmi"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The absolutive is a verb with its person and its tense taken out. gatvā is 'having gone' — it never says who went, and it never says when. The one finite verb at the end of the sentence says both, for itself and for the absolutive in front of it."
+    },
+    {
+      "tag": "delta",
+      "text": "-tvā goes on a bare root and -ya goes on a root that already carries a prefix. M2's gacchati gives gatvā; L2-M1's āgacchatu, the same root with ā in front of it, gives āgatya. The prefix is the whole of the difference."
+    },
+    {
+      "tag": "interference",
+      "text": "English tells a day with 'and' and two full verbs — 'I drink water and I go to school'. Sanskrit hangs the first action on the second as an absolutive and leaves one finite verb standing. Both are grammatical; only one is how a day is told."
+    },
+    {
+      "tag": "delta",
+      "text": "Both actions must have the SAME subject. An absolutive has no subject of its own to disagree with, so it borrows the one the finite verb names. If two people are doing the two things, you need two sentences."
+    },
+    {
+      "tag": "delta",
+      "text": "The absolutive carries no tense either. gṛham gatvā aham pustakam paṭhāmi is today and gṛham gatvā aham pustakam paṭhitavān is yesterday — the absolutive is the same word in both, and the only thing that moved is the last word."
+    },
+    {
+      "tag": "free",
+      "text": "Word order is the ordinary one. Time first, the objects next, the finite verb last of all — and the absolutive sits in front of the action it leads into, which is where it happened in time anyway."
+    },
+    {
+      "tag": "delta",
+      "text": "An absolutive cannot end a sentence. It is a step on the way to a verb, not a verb, so a line made only of absolutives has not said anything yet."
+    },
+    {
+      "tag": "free",
+      "text": "The sequencers still work, and they work BETWEEN sentences. prathamam, tataḥ, anantaram and ante join full stops; the absolutive joins actions inside one sentence. Using both in one account is normal."
+    },
+    {
+      "tag": "free",
+      "text": "An absolutive of a verb you already know is not a new word — it is that verb wearing no person and no tense. Six of the seven forms in this module are L1 verbs, and the seventh is L2-M1's."
+    },
+    {
+      "tag": "interference",
+      "text": "There is no '-ing' in this. English's 'drinking water, I go' and 'having drunk water, I go' are two different things, and the absolutive is only ever the second: the first action is FINISHED before the next one starts."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M1-S01",
+      "display": "aham prātaḥ jalam pītvā vidyālayam gacchāmi.",
+      "script": "अहम् प्रातः जलम् पीत्वा विद्यालयम् गच्छामि।",
+      "cue": "In the morning I drink water and go to school.",
+      "literal": "I in-the-morning water having-drunk school go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'I'. It is written once in a sentence at most, and a sentence that has an absolutive in it still only needs it once."
+          },
+          {
+            "display": "prātaḥ",
+            "cue": "in the morning",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's time word, unchanged and unchangeable — it takes no ending and it goes first."
+          },
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's water, in the shape a thing takes when something is being done to it. pītvā takes an object exactly as pibāmi would."
+          },
+          {
+            "display": "pītvā",
+            "cue": "having drunk",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L1-M4's pibati. The absolutive of this verb looks nothing like its present, so learn the pair pibati / pītvā together. It carries no person and no tense of its own."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school as a destination. The accusative of where you are going is unchanged by the absolutive in front of it."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'I go'. The -mi is the only thing in this whole sentence that says who and when, and it is carrying pītvā as well as itself."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          5
+        ]
+      },
+      "trap": "Nothing in pītvā says 'I' and nothing in it says 'now'. Both come from the -mi four words later, which is why the sentence cannot be cut in half.",
+      "sound": "a-HAM PRAA-tah JA-lam PEET-vaa vid-YAA-la-yam GACH-chhaa-mi. The -tvaa is one heavy syllable: the t and the v run straight together with no vowel between them.",
+      "variations": [
+        {
+          "display": "bhavān prātaḥ jalam pītvā vidyālayam gacchati.",
+          "script": "भवान् प्रातः जलम् पीत्वा विद्यालयम् गच्छति।",
+          "cue": "In the morning you drink water and go to school.",
+          "changed": "the speaker becomes the person spoken to — bhavān with a third-person verb, and pītvā does not move, because it never held the person anyway"
+        },
+        {
+          "display": "aham prātaḥ jalam pītvā vidyālayam gatavān.",
+          "script": "अहम् प्रातः जलम् पीत्वा विद्यालयम् गतवान्।",
+          "cue": "In the morning I drank water and went to school.",
+          "changed": "the whole thing moves to yesterday and only the last word changes — the absolutive is tense-neutral"
+        },
+        {
+          "display": "aham prātaḥ jalam pītvā vidyālayam na gacchāmi.",
+          "script": "अहम् प्रातः जलम् पीत्वा विद्यालयम् न गच्छामि।",
+          "cue": "In the morning I drink water and do not go to school.",
+          "changed": "na negates the finite verb only; the drinking still happened, because na cannot reach an absolutive"
+        }
+      ],
+      "mistake": {
+        "display": "aham jalam pibāmi ca vidyālayam gacchāmi.",
+        "why": "This is the English sentence wearing Sanskrit words: two finite verbs joined by ca. It is grammatical, and it is not how a day is told — it reads as two separate announcements rather than one morning. The absolutive is what makes it one."
+      },
+      "usage": "The ordinary way to answer 'what do you do in the morning?'. One breath, one finite verb, as many absolutives in front of it as the morning needs.",
+      "register": "neutral",
+      "mnemonic": "One sentence, one ending. Everything before the last word is borrowing its person and its tense."
+    },
+    {
+      "id": "L3-M1-S02",
+      "display": "aham gṛham āgatya pustakam paṭhāmi.",
+      "script": "अहम् गृहम् आगत्य पुस्तकम् पठामि।",
+      "cue": "I come home and read a book.",
+      "literal": "I home having-come book read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'I'. It is written once in a sentence at most, and a sentence that has an absolutive in it still only needs it once."
+          },
+          {
+            "display": "gṛham",
+            "cue": "home (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house as a destination. Coming to it takes the same accusative as going to it."
+          },
+          {
+            "display": "āgatya",
+            "cue": "having come",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L2-M1's āgacchatu — the same root as gacchati with the prefix ā in front. A prefixed root takes -ya, never -tvā, and that is the only reason this ending is different from gatvā's."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book, as the thing being read."
+          },
+          {
+            "display": "paṭhāmi",
+            "cue": "I read · I study",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'I read'. It is the only finite verb here, so it speaks for āgatya too."
+          }
+        ],
+        "rules": [
+          1,
+          0,
+          5
+        ]
+      },
+      "trap": "āgatya is not an irregular gatvā. It is the regular ending for a prefixed root — the prefix ā is doing all of it.",
+      "sound": "a-HAM GRI-ham aa-GAT-ya PUS-ta-kam PA-thaa-mi. The aa- of āgatya is long and the -ya is light; the weight of the word sits in the middle, on GAT.",
+      "variations": [
+        {
+          "display": "bhavatī gṛham āgatya pustakam paṭhati.",
+          "script": "भवती गृहम् आगत्य पुस्तकम् पठति।",
+          "cue": "You come home and read a book.",
+          "changed": "the polite 'you' to a woman, with the third-person verb the course has spoken since L1-M2"
+        },
+        {
+          "display": "aham gṛham āgatya pustakam paṭhitavān.",
+          "script": "अहम् गृहम् आगत्य पुस्तकम् पठितवान्।",
+          "cue": "I came home and read a book.",
+          "changed": "past, and āgatya is the same word — a man speaking"
+        },
+        {
+          "display": "kim bhavān gṛham āgatya pustakam paṭhati?",
+          "script": "किम् भवान् गृहम् आगत्य पुस्तकम् पठति?",
+          "cue": "Do you read a book after you come home?",
+          "changed": "a yes/no question built with L1-M2's kim, which changes nothing inside the sentence"
+        }
+      ],
+      "mistake": {
+        "display": "aham gṛham āgatvā pustakam paṭhāmi.",
+        "why": "-tvā has been forced onto a prefixed root. The root here already carries ā, and a prefixed root takes -ya: āgatya. This is the single commonest slip in the whole construction, because -tvā is the ending learners meet first."
+      },
+      "usage": "What you say about the part of the day that starts when you get home. The prefix on the verb is what makes it 'come' rather than 'go'.",
+      "register": "neutral",
+      "mnemonic": "Prefix on the front, -ya on the back. Bare root, -tvā."
+    },
+    {
+      "id": "L3-M1-S03",
+      "display": "aham vidyālayam gatvā gṛham āgatya bhojanam khādāmi.",
+      "script": "अहम् विद्यालयम् गत्वा गृहम् आगत्य भोजनम् खादामि।",
+      "cue": "I go to school, come home and have a meal.",
+      "literal": "I school having-gone home having-come meal eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'I'. It is written once in a sentence at most, and a sentence that has an absolutive in it still only needs it once."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school. Two absolutives in one sentence each keep their own object."
+          },
+          {
+            "display": "gatvā",
+            "cue": "having gone",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L1-M2's gacchati, and the bare-root -tvā shape. Compare āgatya in the same sentence: same root, a prefix in front of it, and a different ending because of it."
+          },
+          {
+            "display": "gṛham",
+            "cue": "home (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house as a destination."
+          },
+          {
+            "display": "āgatya",
+            "cue": "having come",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L2-M1's āgacchatu — the same root as gacchati with the prefix ā in front. A prefixed root takes -ya, never -tvā, and that is the only reason this ending is different from gatvā's."
+          },
+          {
+            "display": "bhojanam",
+            "cue": "meal",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's meal, as the thing eaten."
+          },
+          {
+            "display": "khādāmi",
+            "cue": "I eat",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'I eat', and the only finite verb here. It is carrying three actions."
+          }
+        ],
+        "rules": [
+          1,
+          0,
+          7
+        ]
+      },
+      "trap": "gatvā and āgatya are the same root twice in one line. Nothing but the prefix separates them, and the prefix is why the endings differ.",
+      "sound": "a-HAM vid-YAA-la-yam GAT-vaa GRI-ham aa-GAT-ya BHO-ja-nam KHAA-daa-mi. GAT-vaa and aa-GAT-ya share their middle syllable exactly; hear it twice and the pair sticks.",
+      "variations": [
+        {
+          "display": "sā vidyālayam gatvā gṛham āgatya bhojanam khādati.",
+          "script": "सा विद्यालयम् गत्वा गृहम् आगत्य भोजनम् खादति।",
+          "cue": "She goes to school, comes home and has a meal.",
+          "changed": "a third-person subject; neither absolutive changes, because neither ever held a person"
+        },
+        {
+          "display": "aham vidyālayam gatvā gṛham āgatya bhojanam khāditavān.",
+          "script": "अहम् विद्यालयम् गत्वा गृहम् आगत्य भोजनम् खादितवान्।",
+          "cue": "I went to school, came home and had a meal.",
+          "changed": "one word moves the whole day into the past — a man speaking"
+        },
+        {
+          "display": "aham vidyālayam gatvā gṛham āgatya bhojanam na khādāmi.",
+          "script": "अहम् विद्यालयम् गत्वा गृहम् आगत्य भोजनम् न खादामि।",
+          "cue": "I go to school, come home and do not eat.",
+          "changed": "negation lands on the finite verb alone; the going and the coming are untouched"
+        }
+      ],
+      "mistake": {
+        "display": "aham vidyālayam gatya gṛham āgatvā bhojanam khādāmi.",
+        "why": "The two endings have been swapped. gacchati has no prefix, so it takes -tvā and cannot take -ya; āgacchatu has one, so it takes -ya and cannot take -tvā. Both halves of this line are wrong in opposite directions."
+      },
+      "usage": "Three actions, one verb. This is the shape a whole afternoon takes in ordinary speech.",
+      "register": "neutral",
+      "mnemonic": "gatvā out, āgatya back. One prefix, one ending change."
+    },
+    {
+      "id": "L3-M1-S04",
+      "display": "gṛham gatvā aham pustakam paṭhitavān.",
+      "script": "गृहम् गत्वा अहम् पुस्तकम् पठितवान्।",
+      "cue": "I went home and read a book. (a man speaking)",
+      "literal": "home having-gone I book read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gṛham",
+            "cue": "home (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house as a destination."
+          },
+          {
+            "display": "gatvā",
+            "cue": "having gone",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L1-M2's gacchati, and the bare-root -tvā shape. Compare āgatya in the same sentence: same root, a prefix in front of it, and a different ending because of it."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'I'. It sits after the absolutive here, which changes nothing — the word order is free around it and the verb still comes last."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book."
+          },
+          {
+            "display": "paṭhitavān",
+            "cue": "read (past, a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's participial past, agreeing with the man speaking. This word alone puts the whole sentence — gatvā included — in the past."
+          }
+        ],
+        "rules": [
+          4,
+          0,
+          5
+        ]
+      },
+      "trap": "gatvā is the same word here as in the present sentences. It is not a past form; it is a form with no tense, and the past is entirely in paṭhitavān.",
+      "sound": "GRI-ham GAT-vaa a-HAM PUS-ta-kam PA-thi-ta-vaan. The final -vaan is long and closes the line; everything before it is waiting on it.",
+      "variations": [
+        {
+          "display": "gṛham gatvā aham pustakam paṭhitavatī.",
+          "script": "गृहम् गत्वा अहम् पुस्तकम् पठितवती।",
+          "cue": "I went home and read a book. (a woman speaking)",
+          "changed": "the past forks at the speaker, as it has since L1-M4; gatvā has no gender to fork"
+        },
+        {
+          "display": "gṛham gatvā aham pustakam paṭhāmi.",
+          "script": "गृहम् गत्वा अहम् पुस्तकम् पठामि।",
+          "cue": "I go home and read a book.",
+          "changed": "the same absolutive in a present sentence — proof it carries no tense"
+        },
+        {
+          "display": "gṛham gatvā saḥ pustakam paṭhitavān.",
+          "script": "गृहम् गत्वा सः पुस्तकम् पठितवान्।",
+          "cue": "He went home and read a book.",
+          "changed": "a third-person subject; the absolutive is untouched again"
+        }
+      ],
+      "mistake": {
+        "display": "gṛham gatavān aham pustakam paṭhitavān.",
+        "why": "The first action has been made finite and past as well, so the line now has two complete past verbs and no link between them. The absolutive exists precisely so that only one verb in a sentence has to carry a tense."
+      },
+      "usage": "The everyday shape of a short account of yesterday. L3-M10 tells eight sentences this way and spends no new grammar doing it.",
+      "register": "neutral",
+      "mnemonic": "Tense lives in the last word. The absolutive just waits for it."
+    },
+    {
+      "id": "L3-M1-S05",
+      "display": "pratidinam aham saṃskṛtam paṭhitvā saṅgītam śṛṇomi.",
+      "script": "प्रतिदिनम् अहम् संस्कृतम् पठित्वा सङ्गीतम् शृणोमि।",
+      "cue": "Every day I study Sanskrit and then listen to music.",
+      "literal": "daily I sanskrit having-read music listen",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pratidinam",
+            "cue": "every day · daily",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's frequency word. It already says 'daily', which is why this module opens no new adverb of frequency at all."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'I'. It is written once in a sentence at most, and a sentence that has an absolutive in it still only needs it once."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's Sanskrit, as the thing studied."
+          },
+          {
+            "display": "paṭhitvā",
+            "cue": "having read · having studied",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L1-M4's paṭhati. This is the regular shape: the root, an i, and -tvā."
+          },
+          {
+            "display": "saṅgītam",
+            "cue": "music",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's music, as the thing listened to."
+          },
+          {
+            "display": "śṛṇomi",
+            "cue": "I listen · I hear",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M7's 'I hear'. The finite verb, and the only word here with a person in it."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          8
+        ]
+      },
+      "trap": "paṭhitvā is not 'reading'. It says the reading is over before the listening starts, which is why the order of the two cannot be swapped without changing the day.",
+      "sound": "pra-ti-DI-nam a-HAM sam-SKRI-tam PA-thi-tvaa san-GEE-tam SHRI-no-mi. paṭhitvā is four light syllables running into one heavy last one.",
+      "variations": [
+        {
+          "display": "pratidinam saḥ saṃskṛtam paṭhitvā saṅgītam śṛṇoti.",
+          "script": "प्रतिदिनम् सः संस्कृतम् पठित्वा सङ्गीतम् शृणोति।",
+          "cue": "Every day he studies Sanskrit and then listens to music.",
+          "changed": "third person; only the last word carries the change"
+        },
+        {
+          "display": "pratidinam aham saṃskṛtam paṭhitvā saṅgītam na śṛṇomi.",
+          "script": "प्रतिदिनम् अहम् संस्कृतम् पठित्वा सङ्गीतम् न शृणोमि।",
+          "cue": "Every day I study Sanskrit and do not listen to music.",
+          "changed": "na reaches the finite verb only — the studying is still asserted"
+        },
+        {
+          "display": "kim bhavān pratidinam saṃskṛtam paṭhitvā saṅgītam śṛṇoti?",
+          "script": "किम् भवान् प्रतिदिनम् संस्कृतम् पठित्वा सङ्गीतम् शृणोति?",
+          "cue": "Do you study Sanskrit and then listen to music every day?",
+          "changed": "a question to the person in front of you, with the register's third-person verb"
+        }
+      ],
+      "mistake": {
+        "display": "pratidinam aham saṃskṛtam paṭhāmi ca saṅgītam śṛṇomi.",
+        "why": "Two finite verbs joined by ca again. It says both things are true of your days; it does not say one follows the other, which is the whole point of describing a routine."
+      },
+      "usage": "How a habit with two halves is described. pratidinam at the front sets the frequency for everything after it.",
+      "register": "neutral",
+      "mnemonic": "Finished first, then the next thing. That is all -tvā means."
+    },
+    {
+      "id": "L3-M1-S06",
+      "display": "mama mātā prātaḥ bhojanam kṛtvā saṅgītam śṛṇoti.",
+      "script": "मम माता प्रातः भोजनम् कृत्वा सङ्गीतम् शृणोति।",
+      "cue": "My mother makes the meal in the morning and then listens to music.",
+      "literal": "my mother in-the-morning meal having-made music listens",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'my'."
+          },
+          {
+            "display": "mātā",
+            "cue": "mother",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's mother. She is the subject of both the absolutive and the finite verb, which is the only arrangement the construction allows."
+          },
+          {
+            "display": "prātaḥ",
+            "cue": "in the morning",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's time word."
+          },
+          {
+            "display": "bhojanam",
+            "cue": "meal",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's meal. L2-M10 already wrote bhojanam kṛtavān for making one."
+          },
+          {
+            "display": "kṛtvā",
+            "cue": "having made · having done",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L1-M4's karoti. Its vowel is the ṛ the present does not show, so karoti / kṛtvā is a pair to learn whole, like pibati / pītvā."
+          },
+          {
+            "display": "saṅgītam",
+            "cue": "music",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's music."
+          },
+          {
+            "display": "śṛṇoti",
+            "cue": "listens · hears",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M7's third-person 'hears'. It names the subject for kṛtvā as well as for itself."
+          }
+        ],
+        "rules": [
+          3,
+          0,
+          5
+        ]
+      },
+      "trap": "The mother is doing both things. There is nowhere in kṛtvā to put a different person, so if someone else made the meal this sentence cannot be used at all.",
+      "sound": "MA-ma MAA-taa PRAA-tah BHO-ja-nam KRIT-vaa san-GEE-tam SHRI-no-ti. The kṛ of kṛtvā is one vowel — a short curled 'ri' — not a k followed by an r.",
+      "variations": [
+        {
+          "display": "mama mātā prātaḥ bhojanam kṛtvā jalam pītavatī.",
+          "script": "मम माता प्रातः भोजनम् कृत्वा जलम् पीतवती।",
+          "cue": "My mother made the meal in the morning and then drank some water.",
+          "changed": "the past, forking on the mother rather than on the speaker"
+        },
+        {
+          "display": "aham prātaḥ bhojanam kṛtvā saṅgītam śṛṇomi.",
+          "script": "अहम् प्रातः भोजनम् कृत्वा सङ्गीतम् शृणोमि।",
+          "cue": "I make the meal in the morning and then listen to music.",
+          "changed": "the subject becomes the speaker; both halves move together, because they were never separable"
+        },
+        {
+          "display": "mama mātā prātaḥ bhojanam kṛtvā saṅgītam na śṛṇoti.",
+          "script": "मम माता प्रातः भोजनम् कृत्वा सङ्गीतम् न शृणोति।",
+          "cue": "My mother makes the meal in the morning and does not listen to music.",
+          "changed": "negation on the finite verb; the meal is still made"
+        }
+      ],
+      "mistake": {
+        "display": "mama mātā prātaḥ bhojanam kṛtvā saṅgītam śṛṇomi.",
+        "why": "The absolutive's subject is the mother and the finite verb's is 'I'. An absolutive has no subject of its own, so it takes whoever the finite verb names — and this line therefore says that I made the meal, which is not what it looks like it says. Two subjects need two sentences."
+      },
+      "usage": "Describing somebody else's routine. The subject is named once, at the front, and everything after it belongs to that person.",
+      "register": "neutral",
+      "mnemonic": "One subject per sentence. The absolutive has none of its own to argue with."
+    },
+    {
+      "id": "L3-M1-S07",
+      "display": "aham sāyam phalam khāditvā gṛhe likhāmi.",
+      "script": "अहम् सायम् फलम् खादित्वा गृहे लिखामि।",
+      "cue": "In the evening I eat a fruit and write at home.",
+      "literal": "I in-the-evening fruit having-eaten at-home write",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'I'. It is written once in a sentence at most, and a sentence that has an absolutive in it still only needs it once."
+          },
+          {
+            "display": "sāyam",
+            "cue": "in the evening",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's time word, taking no ending."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's fruit, as the thing eaten."
+          },
+          {
+            "display": "khāditvā",
+            "cue": "having eaten",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L1-M4's khādati. -itvā rather than a bare -tvā, because this root keeps its i; there is no person and no tense in it either way."
+          },
+          {
+            "display": "gṛhe",
+            "cue": "at home · in the house",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house in the locative — where you are, not where you are going. The absolutive in front of it changes nothing about the case."
+          },
+          {
+            "display": "likhāmi",
+            "cue": "I write",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'I write'. The finite verb, last."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          9
+        ]
+      },
+      "trap": "The accusative phalam belongs to khāditvā and the locative gṛhe belongs to likhāmi. Each verb keeps its own case frame, and the absolutive does not pool them.",
+      "sound": "a-HAM SAA-yam PHA-lam KHAA-dit-vaa GRI-he LI-khaa-mi. khāditvā has its long syllable first and then runs downhill into -tvaa.",
+      "variations": [
+        {
+          "display": "aham sāyam phalam khāditvā gṛhe likhitavān.",
+          "script": "अहम् सायम् फलम् खादित्वा गृहे लिखितवान्।",
+          "cue": "In the evening I ate a fruit and wrote at home.",
+          "changed": "the past, a man speaking; khāditvā does not move"
+        },
+        {
+          "display": "bhavān sāyam phalam khāditvā gṛhe likhati.",
+          "script": "भवान् सायम् फलम् खादित्वा गृहे लिखति।",
+          "cue": "In the evening you eat a fruit and write at home.",
+          "changed": "the polite 'you' to a man, with its third-person verb"
+        },
+        {
+          "display": "aham sāyam phalam khāditvā gṛhe na likhāmi.",
+          "script": "अहम् सायम् फलम् खादित्वा गृहे न लिखामि।",
+          "cue": "In the evening I eat a fruit and do not write at home.",
+          "changed": "negation on the finite verb alone"
+        }
+      ],
+      "mistake": {
+        "display": "aham sāyam phalam khādāmi ca gṛhe likhāmi.",
+        "why": "Two finite verbs again, joined by ca. Nothing here is ungrammatical and nothing here is an evening: it lists two facts instead of telling one stretch of time."
+      },
+      "usage": "An ordinary evening. Note that the place word attaches to the last verb, which is where the writing actually happens.",
+      "register": "neutral",
+      "mnemonic": "Each verb keeps its own objects. The absolutive borrows only the person and the tense."
+    },
+    {
+      "id": "L3-M1-S08",
+      "display": "aham saṃskṛtam likhitvā pustakam paṭhāmi.",
+      "script": "अहम् संस्कृतम् लिखित्वा पुस्तकम् पठामि।",
+      "cue": "I write Sanskrit and then read a book.",
+      "literal": "I sanskrit having-written book read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'I'. It is written once in a sentence at most, and a sentence that has an absolutive in it still only needs it once."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's Sanskrit. The anusvāra inside it is internal and is written in full, as it always has been."
+          },
+          {
+            "display": "likhitvā",
+            "cue": "having written",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L1-M4's likhati, on the same regular -itvā pattern as paṭhitvā."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book."
+          },
+          {
+            "display": "paṭhāmi",
+            "cue": "I read · I study",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'I read', and the only finite verb here."
+          }
+        ],
+        "rules": [
+          0,
+          6,
+          8
+        ]
+      },
+      "trap": "likhitvā and paṭhitvā differ by one letter and sit next to each other in a day. The -i- before -tvā is the regular pattern; it is the verbs WITHOUT it — gatvā, kṛtvā, pītvā — that have to be learnt one at a time.",
+      "sound": "a-HAM sam-SKRI-tam LI-khit-vaa PUS-ta-kam PA-thaa-mi. likhitvā and paṭhitvā are built the same way: root, a light i, then the heavy -tvaa.",
+      "variations": [
+        {
+          "display": "sā saṃskṛtam likhitvā pustakam paṭhati.",
+          "script": "सा संस्कृतम् लिखित्वा पुस्तकम् पठति।",
+          "cue": "She writes Sanskrit and then reads a book.",
+          "changed": "third-person feminine subject; the absolutive is unchanged"
+        },
+        {
+          "display": "aham saṃskṛtam likhitvā pustakam paṭhitavān.",
+          "script": "अहम् संस्कृतम् लिखित्वा पुस्तकम् पठितवान्।",
+          "cue": "I wrote Sanskrit and then read a book.",
+          "changed": "past, a man speaking"
+        },
+        {
+          "display": "kim bhavatī saṃskṛtam likhitvā pustakam paṭhati?",
+          "script": "किम् भवती संस्कृतम् लिखित्वा पुस्तकम् पठति?",
+          "cue": "Do you write Sanskrit and then read a book?",
+          "changed": "a question to a woman, in the register the course has spoken since L1-M2"
+        }
+      ],
+      "mistake": {
+        "display": "aham saṃskṛtam likhitvā pustakam paṭhitvā.",
+        "why": "Two absolutives and nothing for them to land on. Neither of them is a verb, so the line has no person, no tense and in fact no assertion — it stops in mid-air. Every chain of absolutives needs one finite verb at the end of it."
+      },
+      "usage": "Two study habits in the order they happen. Reverse the two and you have described a different afternoon, not the same one said differently.",
+      "register": "neutral",
+      "mnemonic": "A chain has to be tied to something. The finite verb is the knot."
+    },
+    {
+      "id": "L3-M1-S09",
+      "display": "prathamam aham jalam pītvā annam khāditvā vidyālayam gacchāmi.",
+      "script": "प्रथमम् अहम् जलम् पीत्वा अन्नम् खादित्वा विद्यालयम् गच्छामि।",
+      "cue": "First I drink water, then eat, and then go to school.",
+      "literal": "first I water having-drunk food having-eaten school go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prathamam",
+            "cue": "first",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M10's sequencer. It still marks the first step; here the steps are inside one sentence instead of spread over four."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'I'. It is written once in a sentence at most, and a sentence that has an absolutive in it still only needs it once."
+          },
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's water."
+          },
+          {
+            "display": "pītvā",
+            "cue": "having drunk",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L1-M4's pibati. The absolutive of this verb looks nothing like its present, so learn the pair pibati / pītvā together. It carries no person and no tense of its own."
+          },
+          {
+            "display": "annam",
+            "cue": "food",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's food, as the thing eaten."
+          },
+          {
+            "display": "khāditvā",
+            "cue": "having eaten",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L1-M4's khādati. -itvā rather than a bare -tvā, because this root keeps its i; there is no person and no tense in it either way."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school as a destination."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'I go'. One finite verb for three actions."
+          }
+        ],
+        "rules": [
+          0,
+          7,
+          5
+        ]
+      },
+      "trap": "Two absolutives in a row are read in the order they are written. There is no word for 'then' between them and none is missing — the order is the sequence.",
+      "sound": "pra-tha-MAM a-HAM JA-lam PEET-vaa AN-nam KHAA-dit-vaa vid-YAA-la-yam GACH-chhaa-mi. Long, but it is one breath: nothing closes until the last word.",
+      "variations": [
+        {
+          "display": "prathamam aham jalam pītvā annam khāditvā vidyālayam gatavān.",
+          "script": "प्रथमम् अहम् जलम् पीत्वा अन्नम् खादित्वा विद्यालयम् गतवान्।",
+          "cue": "First I drank water, then ate, and then went to school.",
+          "changed": "the last word alone moves all three actions into the past — a man speaking"
+        },
+        {
+          "display": "prathamam sā jalam pītvā annam khāditvā vidyālayam gacchati.",
+          "script": "प्रथमम् सा जलम् पीत्वा अन्नम् खादित्वा विद्यालयम् गच्छति।",
+          "cue": "First she drinks water, then eats, and then goes to school.",
+          "changed": "a third-person subject for all three actions at once"
+        },
+        {
+          "display": "prathamam aham jalam pibāmi. tataḥ annam khāditvā vidyālayam gacchāmi.",
+          "script": "प्रथमम् अहम् जलम् पिबामि। ततः अन्नम् खादित्वा विद्यालयम् गच्छामि।",
+          "cue": "First I drink water. Then I eat and go to school.",
+          "changed": "the same morning cut into two sentences, with L2-M10's tataḥ doing the joining between them and an absolutive still joining inside the second"
+        }
+      ],
+      "mistake": {
+        "display": "prathamam aham jalam pītvā. tataḥ annam khāditvā vidyālayam gacchāmi.",
+        "why": "The first sentence ends on an absolutive and therefore ends on nothing: pītvā is not a verb, so 'first I having-drunk water' is not a sentence at all. A full stop can only follow a finite verb."
+      },
+      "usage": "A morning routine at full length. The sequencers and the absolutive are not rivals — use prathamam to open the account and the absolutive to keep each sentence to one verb.",
+      "register": "neutral",
+      "mnemonic": "Sequencers join sentences. Absolutives join actions."
+    },
+    {
+      "id": "L3-M1-S10",
+      "display": "bhavatī gṛham āgatya kim karoti?",
+      "script": "भवती गृहम् आगत्य किम् करोति?",
+      "cue": "What do you do after you come home?",
+      "literal": "you(f) home having-come what do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavatī",
+            "cue": "you (to a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you' to a woman, taking a third-person verb as it always has. L3 writes no tvam anywhere."
+          },
+          {
+            "display": "gṛham",
+            "cue": "home (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house as a destination."
+          },
+          {
+            "display": "āgatya",
+            "cue": "having come",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L2-M1's āgacchatu — the same root as gacchati with the prefix ā in front. A prefixed root takes -ya, never -tvā, and that is the only reason this ending is different from gatvā's."
+          },
+          {
+            "display": "kim",
+            "cue": "what",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's question word, standing where the answer's object would stand."
+          },
+          {
+            "display": "karoti",
+            "cue": "does · makes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'does'. The finite verb, and the one word that says who is being asked."
+          }
+        ],
+        "rules": [
+          1,
+          0,
+          5
+        ]
+      },
+      "trap": "The question word sits inside the sentence, not at the front. Sanskrit does not move it, and the absolutive stays exactly where it was.",
+      "sound": "bha-va-TEE GRI-ham aa-GAT-ya KIM ka-RO-ti? The question is carried by kim alone — the line does not rise at the end the way an English question does.",
+      "variations": [
+        {
+          "display": "bhavān gṛham āgatya kim karoti?",
+          "script": "भवान् गृहम् आगत्य किम् करोति?",
+          "cue": "What do you do after you come home?",
+          "changed": "the same question to a man; the verb does not change, because both are third persons"
+        },
+        {
+          "display": "bhavatī vidyālayam gatvā kim karoti?",
+          "script": "भवती विद्यालयम् गत्वा किम् करोति?",
+          "cue": "What do you do after you get to school?",
+          "changed": "the prefixed root swapped for the bare one, and the ending changes with it"
+        },
+        {
+          "display": "bhavatī gṛham āgatya kim kṛtavatī?",
+          "script": "भवती गृहम् आगत्य किम् कृतवती?",
+          "cue": "What did you do after you came home?",
+          "changed": "past; āgatya is untouched and the participle agrees with the woman asked"
+        }
+      ],
+      "mistake": {
+        "display": "bhavatī gṛham āgacchati kim karoti?",
+        "why": "Two finite verbs and no link at all — the line now says 'you come home you do what'. This is the English habit of leaving both verbs whole, with even the 'and' dropped, and it is the shape the absolutive exists to replace."
+      },
+      "usage": "How you ask someone about the rest of their day. The answer comes back in the same shape, with an absolutive and one finite verb.",
+      "register": "neutral",
+      "mnemonic": "Ask with kim in the middle. The absolutive does not move for a question."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M1-C01",
+      "display": "aham prātaḥ annam khāditvā vidyālayam gacchāmi.",
+      "script": "अहम् प्रातः अन्नम् खादित्वा विद्यालयम् गच्छामि।",
+      "cue": "In the morning I eat and go to school."
+    },
+    {
+      "id": "L3-M1-C02",
+      "display": "sā gṛham āgatya jalam pibati.",
+      "script": "सा गृहम् आगत्य जलम् पिबति।",
+      "cue": "She comes home and drinks water."
+    },
+    {
+      "id": "L3-M1-C03",
+      "display": "prathamam aham jalam pibāmi. tataḥ annam khāditvā vidyālayam gacchāmi.",
+      "script": "प्रथमम् अहम् जलम् पिबामि। ततः अन्नम् खादित्वा विद्यालयम् गच्छामि।",
+      "cue": "First I drink water. Then I eat and go to school."
+    },
+    {
+      "id": "L3-M1-C04",
+      "display": "mama bhrātā vidyālayam gatvā saṃskṛtam paṭhati.",
+      "script": "मम भ्राता विद्यालयम् गत्वा संस्कृतम् पठति।",
+      "cue": "My brother goes to school and studies Sanskrit."
+    },
+    {
+      "id": "L3-M1-C05",
+      "display": "hyaḥ aham pustakālayam gatvā pustakam paṭhitavān.",
+      "script": "ह्यः अहम् पुस्तकालयम् गत्वा पुस्तकम् पठितवान्।",
+      "cue": "Yesterday I went to the library and read a book. (a man speaking)"
+    },
+    {
+      "id": "L3-M1-C06",
+      "display": "sāyam mama mātā bhojanam kṛtvā santuṣṭā.",
+      "script": "सायम् मम माता भोजनम् कृत्वा सन्तुष्टा।",
+      "cue": "In the evening my mother makes the meal and is content."
+    },
+    {
+      "id": "L3-M1-C07",
+      "display": "bhavān prātaḥ kim khāditvā vidyālayam gacchati?",
+      "script": "भवान् प्रातः किम् खादित्वा विद्यालयम् गच्छति?",
+      "cue": "What do you eat in the morning before you go to school?"
+    },
+    {
+      "id": "L3-M1-C08",
+      "display": "aham gṛham āgatya saṅgītam śṛṇomi.",
+      "script": "अहम् गृहम् आगत्य सङ्गीतम् शृणोमि।",
+      "cue": "I come home and listen to music."
+    },
+    {
+      "id": "L3-M1-C09",
+      "display": "pratidinam sā dugdham pītvā pustakam paṭhati.",
+      "script": "प्रतिदिनम् सा दुग्धम् पीत्वा पुस्तकम् पठति।",
+      "cue": "Every day she drinks milk and reads a book."
+    },
+    {
+      "id": "L3-M1-C10",
+      "display": "ante aham gṛham āgatya santuṣṭaḥ.",
+      "script": "अन्ते अहम् गृहम् आगत्य सन्तुष्टः।",
+      "cue": "In the end I come home and am content. (a man speaking)"
+    },
+    {
+      "id": "L3-M1-C11",
+      "display": "sītā prātaḥ jalam pītvā saṃskṛtam paṭhati.",
+      "script": "सीता प्रातः जलम् पीत्वा संस्कृतम् पठति।",
+      "cue": "In the morning Sītā drinks water and studies Sanskrit."
+    },
+    {
+      "id": "L3-M1-C12",
+      "display": "rāmaḥ annam khāditvā pustakālayam gacchati.",
+      "script": "रामः अन्नम् खादित्वा पुस्तकालयम् गच्छति।",
+      "cue": "Rāma eats and goes to the library."
+    },
+    {
+      "id": "L3-M1-C13",
+      "display": "anantaram aham saṃskṛtam likhitvā saṅgītam śṛṇomi.",
+      "script": "अनन्तरम् अहम् संस्कृतम् लिखित्वा सङ्गीतम् शृणोमि।",
+      "cue": "After that I write Sanskrit and listen to music."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

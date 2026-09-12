@@ -1,0 +1,1092 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M2",
+  "title": "Work and study",
+  "job": "Explain what you do all day, and how",
+  "prerequisites": [
+    "L3-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": [
+      "simple_present",
+      "participial_past",
+      "verbless_nominal_present",
+      "absolutive"
+    ],
+    "allowedPatterns": [
+      "yaḥ + N + V-ati + saḥ + Adj",
+      "yā + N + V-ati + sā + Adj",
+      "yat + N + V-āmi + tat + Adj",
+      "yam + N-acc + V-ati + tam + V-āmi",
+      "aham + N-inst + N-acc + V-āmi"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A relative clause in Sanskrit is a PAIR. The ya- clause comes first and complete, and the main clause answers it with a ta- word. yaḥ chātraḥ paṭhati saḥ jānāti — 'which student reads, HE knows'."
+    },
+    {
+      "tag": "delta",
+      "text": "The correlative is never dropped. There is no shape of this construction in which the saḥ, sā or tat is left out; the pair is the grammar, not a stylistic doubling, and a half of it on its own is not a sentence."
+    },
+    {
+      "tag": "interference",
+      "text": "English builds the noun first and hangs the clause behind it — 'the student who reads'. Sanskrit builds the clause FIRST and answers it. There is no way to attach a ya- clause to a noun the English way."
+    },
+    {
+      "tag": "delta",
+      "text": "The pair is gendered on both halves. yaḥ … saḥ for a man, yā … sā for a woman, yat … tat for a neuter thing, and the two halves must agree with each other about which it is."
+    },
+    {
+      "tag": "delta",
+      "text": "Each half takes the case its OWN clause gives it. yam adhyāpakam bhavān jānāti tam aham jānāmi is accusative twice, because the teacher is the object in both clauses — and nominative nowhere."
+    },
+    {
+      "tag": "interference",
+      "text": "English's 'who', 'which' and 'that' are one word doing three jobs. Here the relative is only ever the ya- half of a pair; it does not introduce a reported statement and it does not mean 'because'."
+    },
+    {
+      "tag": "free",
+      "text": "Because is still L1-M9's yataḥ, and so is L3-M3's. yat in this module is a pronoun and nothing else — the two words are not related in use, and reaching for yat to say 'because' will be understood as the start of a relative clause."
+    },
+    {
+      "tag": "free",
+      "text": "The main clause can be verbless. yat kāryam aham karomi tat uttamam has no asti in it and needs none — the correlative and an adjective are a complete answer, exactly as L1-M1's nominal sentences were."
+    },
+    {
+      "tag": "free",
+      "text": "'How' opens nothing new. katham asks it and L2-M4's instrumental answers it — yānena, mārgeṇa. There is no preposition and no extra case: the ending on the noun is the whole of 'by'."
+    },
+    {
+      "tag": "delta",
+      "text": "A correlative pair lives inside ONE sentence and never crosses a full stop. The sequencers of L2-M10 do the opposite — they only ever sit between sentences — so the two devices never compete for the same seam."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M2-S01",
+      "display": "yaḥ chātraḥ paṭhati saḥ jānāti.",
+      "script": "यः छात्रः पठति सः जानाति।",
+      "cue": "The student who studies is the one who knows.",
+      "literal": "which student reads he knows",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "delta",
+            "forms": [
+              "yaḥ",
+              "yā",
+              "yat",
+              "yam"
+            ],
+            "note": "The relative pronoun, one row for the four shapes this module writes: yaḥ (a man), yā (a woman), yat (a thing), yam (a man as object). It always opens its clause and a ta- word always answers it."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's student. He is the subject of the ya- clause, so he is nominative there."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'reads'. The relative clause is a whole clause, with its own finite verb."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he · that man",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he', doing the job it was made for. It is obligatory: without it the sentence has a first half and no second."
+          },
+          {
+            "display": "jānāti",
+            "cue": "knows",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'knows'. The main clause's verb, and the main clause is everything from saḥ onward."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "saḥ is not a repetition. The ya- clause is not a noun phrase, so nothing has been said yet when it ends — saḥ is what turns it into a subject.",
+      "sound": "YAH CHHAA-trah PA-tha-ti SAH JAA-naa-ti. The two halves are said as two beats with a small pause between paṭhati and saḥ.",
+      "variations": [
+        {
+          "display": "yā chātrā paṭhati sā jānāti.",
+          "script": "या छात्रा पठति सा जानाति।",
+          "cue": "The student who studies is the one who knows. (a woman)",
+          "changed": "both halves move to the feminine together — yā with sā, never yā with saḥ"
+        },
+        {
+          "display": "yaḥ chātraḥ na paṭhati saḥ na jānāti.",
+          "script": "यः छात्रः न पठति सः न जानाति।",
+          "cue": "The student who does not study is the one who does not know.",
+          "changed": "each clause is negated on its own verb; na belongs to a clause, not to the pair"
+        },
+        {
+          "display": "yaḥ chātraḥ paṭhati saḥ santuṣṭaḥ.",
+          "script": "यः छात्रः पठति सः सन्तुष्टः।",
+          "cue": "The student who studies is content.",
+          "changed": "the main clause loses its verb entirely and still answers — a correlative plus an adjective is complete"
+        }
+      ],
+      "mistake": {
+        "display": "chātraḥ yaḥ paṭhati jānāti.",
+        "why": "This is the English sentence in Sanskrit words: the noun first, the clause hung behind it, and no correlative at all. Sanskrit cannot attach a ya- clause to a noun that way, and with saḥ missing the second half never starts."
+      },
+      "usage": "The ordinary way to say anything about 'the person who …'. It is the sentence you need the moment you describe what you or anyone else does all day.",
+      "register": "neutral",
+      "mnemonic": "ya- opens, ta- answers. Neither half stands alone."
+    },
+    {
+      "id": "L3-M2-S02",
+      "display": "yā adhyāpikā saṃskṛtam vadati sā atra asti.",
+      "script": "या अध्यापिका संस्कृतम् वदति सा अत्र अस्ति।",
+      "cue": "The teacher who speaks Sanskrit is here.",
+      "literal": "which teacher(f) sanskrit speaks she here is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "delta",
+            "forms": [
+              "yaḥ",
+              "yā",
+              "yat",
+              "yam"
+            ],
+            "note": "The relative pronoun, one row for the four shapes this module writes: yaḥ (a man), yā (a woman), yat (a thing), yam (a man as object). It always opens its clause and a ta- word always answers it."
+          },
+          {
+            "display": "adhyāpikā",
+            "cue": "teacher (a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's woman teacher. She is nominative in the ya- clause because she is its subject."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's Sanskrit, as the thing spoken."
+          },
+          {
+            "display": "vadati",
+            "cue": "speaks · says",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M7's 'speaks'. The relative clause's own verb."
+          },
+          {
+            "display": "sā",
+            "cue": "she · that woman",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'she', answering yā. The feminine of the pair is yā … sā and the two may not be mixed with the masculine."
+          },
+          {
+            "display": "atra",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M7's 'here'."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is'. The main clause's verb."
+          }
+        ],
+        "rules": [
+          3,
+          0,
+          1
+        ]
+      },
+      "trap": "yā agrees with the teacher, not with the speaker and not with the sentence. The gender is fixed by the noun the pair is about, and both halves follow it.",
+      "sound": "YAA a-dhyaa-PI-kaa sam-SKRI-tam VA-da-ti SAA AT-ra AS-ti. yā and sā are a single long vowel each — they are the shortest words in the line and the two it turns on.",
+      "variations": [
+        {
+          "display": "yaḥ adhyāpakaḥ saṃskṛtam vadati saḥ atra asti.",
+          "script": "यः अध्यापकः संस्कृतम् वदति सः अत्र अस्ति।",
+          "cue": "The teacher who speaks Sanskrit is here. (a man)",
+          "changed": "the masculine of the same sentence; four words change and the shape does not"
+        },
+        {
+          "display": "yā adhyāpikā saṃskṛtam vadati sā mama mātā.",
+          "script": "या अध्यापिका संस्कृतम् वदति सा मम माता।",
+          "cue": "The teacher who speaks Sanskrit is my mother.",
+          "changed": "the main clause becomes a verbless nominal one; the correlative is still there, because it always is"
+        },
+        {
+          "display": "yā adhyāpikā saṃskṛtam na vadati sā atra na asti.",
+          "script": "या अध्यापिका संस्कृतम् न वदति सा अत्र न अस्ति।",
+          "cue": "The teacher who does not speak Sanskrit is not here.",
+          "changed": "both clauses negated separately, each on its own verb"
+        }
+      ],
+      "mistake": {
+        "display": "yā adhyāpikā saṃskṛtam vadati atra asti.",
+        "why": "The correlative has been dropped, which English allows and this does not. Without sā the main clause has no subject at all — the ya- clause cannot supply one, because it is a clause and not a noun."
+      },
+      "usage": "Pointing someone out by what they do. This is how you identify a person when you do not know or do not want to use their name.",
+      "register": "neutral",
+      "mnemonic": "yā answers to sā. Pick the gender once and both halves wear it."
+    },
+    {
+      "id": "L3-M2-S03",
+      "display": "yat kāryam aham karomi tat uttamam.",
+      "script": "यत् कार्यम् अहम् करोमि तत् उत्तमम्।",
+      "cue": "The work I do is good work.",
+      "literal": "which work I do that good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "delta",
+            "forms": [
+              "yaḥ",
+              "yā",
+              "yat",
+              "yam"
+            ],
+            "note": "The relative pronoun, one row for the four shapes this module writes: yaḥ (a man), yā (a woman), yat (a thing), yam (a man as object). It always opens its clause and a ta- word always answers it."
+          },
+          {
+            "display": "kāryam",
+            "cue": "work · the thing to be done",
+            "tag": "delta",
+            "forms": [],
+            "note": "Work as a thing you do, not a place you go to. It is neuter, so its correlative is yat … tat, and its nominative and accusative are the same word."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is the subject of the ya- clause; the main clause has no subject of its own beyond tat."
+          },
+          {
+            "display": "karomi",
+            "cue": "I do · I make",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'I do'. The relative clause's finite verb."
+          },
+          {
+            "display": "tat",
+            "cue": "that (thing) · it",
+            "tag": "delta",
+            "forms": [],
+            "note": "The neuter correlative, answering yat. L1-M5 taught saḥ and sā and this shape was left unwritten until now; it is a row here rather than an edit to that one."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', neuter to agree with tat and with kāryam."
+          }
+        ],
+        "rules": [
+          3,
+          7,
+          0
+        ]
+      },
+      "trap": "There is no asti here and none is missing. tat uttamam is a complete main clause — the correlative is the subject and the adjective is the whole predicate.",
+      "sound": "YAT KAAR-yam a-HAM ka-RO-mi TAT UT-ta-mam. yat and tat rhyme on purpose; the y and the t are the only difference between them.",
+      "variations": [
+        {
+          "display": "yat kāryam bhavān karoti tat uttamam.",
+          "script": "यत् कार्यम् भवान् करोति तत् उत्तमम्।",
+          "cue": "The work you do is good work.",
+          "changed": "the person spoken to, with the third-person verb the register has used since L1-M2 — this is how the module says 'you' without a second-person ending"
+        },
+        {
+          "display": "yat kāryam aham karomi tat na uttamam.",
+          "script": "यत् कार्यम् अहम् करोमि तत् न उत्तमम्।",
+          "cue": "The work I do is not good work.",
+          "changed": "negation inside the main clause only; the relative clause still asserts that I do the work"
+        },
+        {
+          "display": "yat kāryam sā karoti tat uttamam.",
+          "script": "यत् कार्यम् सा करोति तत् उत्तमम्।",
+          "cue": "The work she does is good work.",
+          "changed": "a third-person subject inside the ya- clause; the pair stays neuter, because it agrees with the work and not with her"
+        }
+      ],
+      "mistake": {
+        "display": "aham yat kāryam karomi uttamam.",
+        "why": "Two faults at once: the clause has been pushed inside the main sentence the way English embeds one, and the correlative has been dropped. Sanskrit puts the whole ya- clause first, and tat is what the adjective is then said about."
+      },
+      "usage": "How you say anything about your own work without naming it. The gender of the pair is fixed by kāryam, which is neuter, so yat and tat it is.",
+      "register": "neutral",
+      "mnemonic": "yat opens a thing, tat closes it. One letter apart, and both compulsory."
+    },
+    {
+      "id": "L3-M2-S04",
+      "display": "yam adhyāpakam bhavān jānāti tam aham jānāmi.",
+      "script": "यम् अध्यापकम् भवान् जानाति तम् अहम् जानामि।",
+      "cue": "I know the teacher you know.",
+      "literal": "which teacher you know him I know",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "delta",
+            "forms": [
+              "yaḥ",
+              "yā",
+              "yat",
+              "yam"
+            ],
+            "note": "The relative pronoun, one row for the four shapes this module writes: yaḥ (a man), yā (a woman), yat (a thing), yam (a man as object). It always opens its clause and a ta- word always answers it."
+          },
+          {
+            "display": "adhyāpakam",
+            "cue": "teacher (a man, as object)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's teacher in the accusative. He is the OBJECT of the ya- clause, so the relative in front of him is accusative too."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you', taking a third-person verb. The course writes no second-person ending anywhere, and this sentence is why the register earns its keep."
+          },
+          {
+            "display": "jānāti",
+            "cue": "knows",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'knows', with bhavān as its subject."
+          },
+          {
+            "display": "tam",
+            "cue": "him · that man (as object)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The masculine accusative correlative, answering yam. L1-M5's row shipped saḥ and sā only, so this is its own row here, with a note back at that one."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', the subject of the main clause."
+          },
+          {
+            "display": "jānāmi",
+            "cue": "I know",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'I know'. The main clause's verb."
+          }
+        ],
+        "rules": [
+          4,
+          0,
+          1
+        ]
+      },
+      "trap": "There is no nominative in this sentence at all except the two people knowing. The teacher is an object twice over, so the pair is accusative in both halves — the case is not copied from the noun, it is taken from each clause separately.",
+      "sound": "YAM a-dhyaa-PA-kam bha-VAAN JAA-naa-ti TAM a-HAM JAA-naa-mi. yam and tam are one syllable each and carry the whole grammar of the line.",
+      "variations": [
+        {
+          "display": "yam adhyāpakam bhavatī jānāti tam aham jānāmi.",
+          "script": "यम् अध्यापकम् भवती जानाति तम् अहम् जानामि।",
+          "cue": "I know the teacher you know.",
+          "changed": "the same question put to a woman; the verb does not move, because bhavatī is a third person too"
+        },
+        {
+          "display": "yam adhyāpakam aham jānāmi tam bhavān api jānāti.",
+          "script": "यम् अध्यापकम् अहम् जानामि तम् भवान् अपि जानाति।",
+          "cue": "You know the teacher I know too.",
+          "changed": "the two halves swap who is doing the knowing, and L1-M10's api lands on the person rather than on the verb"
+        },
+        {
+          "display": "yam adhyāpakam bhavān jānāti tam aham na jānāmi.",
+          "script": "यम् अध्यापकम् भवान् जानाति तम् अहम् न जानामि।",
+          "cue": "I do not know the teacher you know.",
+          "changed": "the main clause is negated and the relative clause still stands"
+        }
+      ],
+      "mistake": {
+        "display": "yaḥ adhyāpakaḥ bhavān jānāti saḥ aham jānāmi.",
+        "why": "The case has been copied from the idea of the teacher instead of taken from each clause. He is the object of both verbs here, so both halves must be accusative — yam … tam. Nominatives leave two subjects in each clause and neither clause can be read."
+      },
+      "usage": "Identifying a person you and your listener have in common. It is the most useful sentence in the module and the hardest, because it asks for two agreements at once.",
+      "register": "neutral",
+      "mnemonic": "Each half asks its own clause what case it wants. Neither half asks the other."
+    },
+    {
+      "id": "L3-M2-S05",
+      "display": "katham bhavān vidyālayam gacchati?",
+      "script": "कथम् भवान् विद्यालयम् गच्छति?",
+      "cue": "How do you get to school?",
+      "literal": "how you school go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "katham",
+            "cue": "how",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's 'how'. It opens no new case here: the answer comes back in the instrumental, which L2-M4 already taught."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you', with its third-person verb."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school as a destination."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'goes'."
+          }
+        ],
+        "rules": [
+          8
+        ]
+      },
+      "trap": "'How' is not a new piece of grammar. It is a question word that L2-M4 already shipped, and the answer is an ending on a noun rather than a word of its own.",
+      "sound": "ka-THAM bha-VAAN vid-YAA-la-yam GACH-chha-ti? katham is the question; the line is otherwise said flat.",
+      "variations": [
+        {
+          "display": "katham bhavatī vidyālayam gacchati?",
+          "script": "कथम् भवती विद्यालयम् गच्छति?",
+          "cue": "How do you get to school?",
+          "changed": "the same question to a woman, with the verb unchanged"
+        },
+        {
+          "display": "aham yānena vidyālayam gacchāmi.",
+          "script": "अहम् यानेन विद्यालयम् गच्छामि।",
+          "cue": "I go to school by vehicle.",
+          "changed": "the answer as a statement — the instrumental ending on yānam is the whole of 'by'"
+        },
+        {
+          "display": "kadā bhavān vidyālayam gacchati?",
+          "script": "कदा भवान् विद्यालयम् गच्छति?",
+          "cue": "When do you get to school?",
+          "changed": "a different question word in the same slot; L2-M6's kadā asks for a time word back, not an ending"
+        }
+      ],
+      "mistake": {
+        "display": "katham bhavān yānam vidyālayam gacchati?",
+        "why": "yānam is the accusative — the thing you are going TO. As the means it has to be yānena, L2-M4's instrumental. English uses the same word after 'by' as after 'to', so the ending is the only thing that separates the vehicle you ride from the vehicle you approach."
+      },
+      "usage": "The everyday commuting question, and the reason this module needs no new case: 'how' was paid for two levels ago.",
+      "register": "neutral",
+      "mnemonic": "katham asks, the instrumental answers. No preposition is coming."
+    },
+    {
+      "id": "L3-M2-S06",
+      "display": "yat adhyayanam aham karomi tat mahyam rocate.",
+      "script": "यत् अध्ययनम् अहम् करोमि तत् मह्यम् रोचते।",
+      "cue": "I enjoy the studying I do.",
+      "literal": "which study I do that to-me is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "delta",
+            "forms": [
+              "yaḥ",
+              "yā",
+              "yat",
+              "yam"
+            ],
+            "note": "The relative pronoun, one row for the four shapes this module writes: yaḥ (a man), yā (a woman), yat (a thing), yam (a man as object). It always opens its clause and a ta- word always answers it."
+          },
+          {
+            "display": "adhyayanam",
+            "cue": "study · studying",
+            "tag": "delta",
+            "forms": [],
+            "note": "The activity of studying, as a noun. adhyayanam karoti is how it is said — a noun with L1-M4's 'does' on it — and it is neuter, so it takes yat … tat too."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', the subject of the ya- clause."
+          },
+          {
+            "display": "karomi",
+            "cue": "I do · I make",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'I do'."
+          },
+          {
+            "display": "tat",
+            "cue": "that (thing) · it",
+            "tag": "delta",
+            "forms": [],
+            "note": "The neuter correlative, answering yat. L1-M5 taught saḥ and sā and this shape was left unwritten until now; it is a row here rather than an edit to that one."
+          },
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'to me'. The person who likes a thing is not its subject here — the thing is."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · appeals",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's liking verb. Its subject is tat, so the pair and the verb agree with the studying, not with me."
+          }
+        ],
+        "rules": [
+          3,
+          0,
+          9
+        ]
+      },
+      "trap": "tat is the SUBJECT of rocate. L1-M1's law has not changed: the thing liked does the pleasing, and the person liking it stands in the dative.",
+      "sound": "YAT a-dhya-YA-nam a-HAM ka-RO-mi TAT MAH-yam RO-cha-te. adhyayanam is four light syllables with nothing heavy in it.",
+      "variations": [
+        {
+          "display": "yat adhyayanam bhavān karoti tat mahyam rocate.",
+          "script": "यत् अध्ययनम् भवान् करोति तत् मह्यम् रोचते।",
+          "cue": "I enjoy the studying you do.",
+          "changed": "the ya- clause changes subject and the main clause does not — the two halves are independent in person as well as in case"
+        },
+        {
+          "display": "yat adhyayanam aham karomi tat mahyam na rocate.",
+          "script": "यत् अध्ययनम् अहम् करोमि तत् मह्यम् न रोचते।",
+          "cue": "I do not enjoy the studying I do.",
+          "changed": "negation in the main clause only"
+        },
+        {
+          "display": "yat adhyayanam sā karoti tat mahyam rocate.",
+          "script": "यत् अध्ययनम् सा करोति तत् मह्यम् रोचते।",
+          "cue": "I enjoy the studying she does.",
+          "changed": "a third-person subject inside the relative clause; the neuter pair is untouched, because it agrees with the studying"
+        }
+      ],
+      "mistake": {
+        "display": "aham yat adhyayanam karomi mahyam rocate.",
+        "why": "The correlative is gone and the clause has been embedded English-fashion. Without tat, rocate has no subject — and rocate must have one, because the thing liked is what it is about."
+      },
+      "usage": "How you say you enjoy a specific part of your day rather than a thing in general. mahyam saṃskṛtam rocate likes a subject; this likes an activity you have just described.",
+      "register": "neutral",
+      "mnemonic": "The thing pleases. You just receive it — and tat is the thing."
+    },
+    {
+      "id": "L3-M2-S07",
+      "display": "yaḥ chātraḥ pustakālaye paṭhati saḥ uttamaḥ.",
+      "script": "यः छात्रः पुस्तकालये पठति सः उत्तमः।",
+      "cue": "The student who studies in the library is a good one.",
+      "literal": "which student in-the-library reads he excellent",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "delta",
+            "forms": [
+              "yaḥ",
+              "yā",
+              "yat",
+              "yam"
+            ],
+            "note": "The relative pronoun, one row for the four shapes this module writes: yaḥ (a man), yā (a woman), yat (a thing), yam (a man as object). It always opens its clause and a ta- word always answers it."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's student."
+          },
+          {
+            "display": "pustakālaye",
+            "cue": "in the library",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M7's library in the locative — where the reading happens. A relative clause takes all the ordinary case machinery."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'reads'."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he · that man",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he', answering yaḥ."
+          },
+          {
+            "display": "uttamaḥ",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', masculine to agree with saḥ."
+          }
+        ],
+        "rules": [
+          0,
+          7,
+          3
+        ]
+      },
+      "trap": "The place word sits inside the relative clause, because that is where the reading happens. Everything between yaḥ and the clause's verb belongs to the clause.",
+      "sound": "YAH CHHAA-trah PUS-ta-kaa-la-ye PA-tha-ti SAH UT-ta-mah. pustakālaye is the long word; the -e at the end of it is the locative and is not to be swallowed.",
+      "variations": [
+        {
+          "display": "yā chātrā pustakālaye paṭhati sā santuṣṭā.",
+          "script": "या छात्रा पुस्तकालये पठति सा सन्तुष्टा।",
+          "cue": "The student who studies in the library is content. (a woman)",
+          "changed": "the feminine of both halves, with a feminine adjective to match"
+        },
+        {
+          "display": "yaḥ chātraḥ pustakālaye na paṭhati saḥ uttamaḥ na asti.",
+          "script": "यः छात्रः पुस्तकालये न पठति सः उत्तमः न अस्ति।",
+          "cue": "The student who does not study in the library is not a good one.",
+          "changed": "both clauses negated, and the main clause takes asti so that na has a verb to sit on"
+        },
+        {
+          "display": "kaḥ chātraḥ pustakālaye paṭhati?",
+          "script": "कः छात्रः पुस्तकालये पठति?",
+          "cue": "Which student is studying in the library?",
+          "changed": "the question word instead of the relative — kaḥ asks and expects an answer, yaḥ relates and expects a saḥ"
+        }
+      ],
+      "mistake": {
+        "display": "yaḥ chātraḥ pustakālaye paṭhati sā uttamaḥ.",
+        "why": "The two halves disagree about gender: yaḥ is masculine and sā is feminine, so the sentence says that the man who reads, she is excellent. The pair must agree with each other, and the adjective must agree with the correlative."
+      },
+      "usage": "Praising or describing someone by their habit. The contrast with kaḥ in the third variation is the one worth practising: one asks, the other relates.",
+      "register": "neutral",
+      "mnemonic": "Same gender on both ends of the pair. Check yaḥ against saḥ before anything else."
+    },
+    {
+      "id": "L3-M2-S08",
+      "display": "yat pustakam bhavatī icchati tat mama gṛhe asti.",
+      "script": "यत् पुस्तकम् भवती इच्छति तत् मम गृहे अस्ति।",
+      "cue": "The book you want is at my house.",
+      "literal": "which book you want that my at-house is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "delta",
+            "forms": [
+              "yaḥ",
+              "yā",
+              "yat",
+              "yam"
+            ],
+            "note": "The relative pronoun, one row for the four shapes this module writes: yaḥ (a man), yā (a woman), yat (a thing), yam (a man as object). It always opens its clause and a ta- word always answers it."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book. It is neuter and it is the object of icchati, but yat is the same word in both cases, so nothing shows."
+          },
+          {
+            "display": "bhavatī",
+            "cue": "you (to a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you' to a woman, with a third-person verb."
+          },
+          {
+            "display": "icchati",
+            "cue": "wants",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'wants', inside the relative clause."
+          },
+          {
+            "display": "tat",
+            "cue": "that (thing) · it",
+            "tag": "delta",
+            "forms": [],
+            "note": "The neuter correlative, answering yat. L1-M5 taught saḥ and sā and this shape was left unwritten until now; it is a row here rather than an edit to that one."
+          },
+          {
+            "display": "mama",
+            "cue": "my",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'my'."
+          },
+          {
+            "display": "gṛhe",
+            "cue": "at home · in the house",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house in the locative — where the book is, not where it is going."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is'. The main clause's verb."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          1
+        ]
+      },
+      "trap": "yat here is an accusative and in S03 it was a nominative. The neuter does not distinguish the two, which is exactly why the masculine pair yam … tam had to be taught separately.",
+      "sound": "YAT PUS-ta-kam bha-va-TEE ICH-chha-ti TAT MA-ma GRI-he AS-ti. The -chchh- of icchati is one held cluster, as it is in gacchati.",
+      "variations": [
+        {
+          "display": "yat pustakam bhavān icchati tat mama gṛhe asti.",
+          "script": "यत् पुस्तकम् भवान् इच्छति तत् मम गृहे अस्ति।",
+          "cue": "The book you want is at my house.",
+          "changed": "the same offer to a man; only the pronoun moves"
+        },
+        {
+          "display": "yat pustakam aham icchāmi tat mama gṛhe na asti.",
+          "script": "यत् पुस्तकम् अहम् इच्छामि तत् मम गृहे न अस्ति।",
+          "cue": "The book I want is not at my house.",
+          "changed": "both halves change at once — the wanting becomes mine and the main clause is negated"
+        },
+        {
+          "display": "yat pustakam bhavatī icchati tat aham jānāmi.",
+          "script": "यत् पुस्तकम् भवती इच्छति तत् अहम् जानामि।",
+          "cue": "I know which book you want.",
+          "changed": "the main clause takes a transitive verb, so tat is now its object rather than its subject — the correlative's case follows its own clause, as always"
+        }
+      ],
+      "mistake": {
+        "display": "bhavatī yat pustakam icchati mama gṛhe asti.",
+        "why": "Embedded like English and missing its correlative. Without tat the main clause has nothing to be about, and asti is left with no subject — the ya- clause is a clause and can never fill that slot."
+      },
+      "usage": "Offering or locating something the other person has asked about. The third variation is the shape to notice: the same pair, with tat as an object instead of a subject.",
+      "register": "neutral",
+      "mnemonic": "The neuter hides its case. The masculine shows it — that is why both are taught."
+    },
+    {
+      "id": "L3-M2-S09",
+      "display": "yaḥ adhyāpakaḥ vidyālaye kāryam karoti saḥ mama pitā.",
+      "script": "यः अध्यापकः विद्यालये कार्यम् करोति सः मम पिता।",
+      "cue": "The teacher who works at the school is my father.",
+      "literal": "which teacher at-school work does he my father",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "delta",
+            "forms": [
+              "yaḥ",
+              "yā",
+              "yat",
+              "yam"
+            ],
+            "note": "The relative pronoun, one row for the four shapes this module writes: yaḥ (a man), yā (a woman), yat (a thing), yam (a man as object). It always opens its clause and a ta- word always answers it."
+          },
+          {
+            "display": "adhyāpakaḥ",
+            "cue": "teacher (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's teacher, nominative as the subject of his own clause."
+          },
+          {
+            "display": "vidyālaye",
+            "cue": "at school · in the school",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school in the locative — where the work is done."
+          },
+          {
+            "display": "kāryam",
+            "cue": "work · the thing to be done",
+            "tag": "delta",
+            "forms": [],
+            "note": "Work as a thing you do, not a place you go to. It is neuter, so its correlative is yat … tat, and its nominative and accusative are the same word."
+          },
+          {
+            "display": "karoti",
+            "cue": "does · makes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'does'. kāryam karoti is how 'works' is said: a noun and this verb."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he · that man",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he', answering yaḥ."
+          },
+          {
+            "display": "mama",
+            "cue": "my",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'my'."
+          },
+          {
+            "display": "pitā",
+            "cue": "father",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's father. The main clause is verbless and complete."
+          }
+        ],
+        "rules": [
+          0,
+          7,
+          9
+        ]
+      },
+      "trap": "There is no single verb for 'to work'. kāryam karoti is a noun plus 'does', and adhyayanam karoti is built the same way — this is how the language makes most activity verbs.",
+      "sound": "YAH a-dhyaa-PA-kah vid-YAA-la-ye KAAR-yam ka-RO-ti SAH MA-ma pi-TAA. The line is long but it is two clauses, and the pause falls before SAH.",
+      "variations": [
+        {
+          "display": "yā adhyāpikā vidyālaye kāryam karoti sā mama mātā.",
+          "script": "या अध्यापिका विद्यालये कार्यम् करोति सा मम माता।",
+          "cue": "The teacher who works at the school is my mother.",
+          "changed": "the whole sentence in the feminine, both halves of the pair together"
+        },
+        {
+          "display": "yam adhyāpakam aham jānāmi saḥ vidyālaye kāryam karoti.",
+          "script": "यम् अध्यापकम् अहम् जानामि सः विद्यालये कार्यम् करोति।",
+          "cue": "The teacher I know works at the school.",
+          "changed": "accusative in the first half and nominative in the second, because he is an object in one clause and a subject in the other"
+        },
+        {
+          "display": "yaḥ adhyāpakaḥ vidyālaye kāryam karoti saḥ mama pitā na asti.",
+          "script": "यः अध्यापकः विद्यालये कार्यम् करोति सः मम पिता न अस्ति।",
+          "cue": "The teacher who works at the school is not my father.",
+          "changed": "the verbless main clause takes asti so that na has something to negate"
+        }
+      ],
+      "mistake": {
+        "display": "saḥ mama pitā yaḥ adhyāpakaḥ vidyālaye kāryam karoti.",
+        "why": "The halves are in the wrong order. The ya- clause has to come first and complete; putting it after the main clause is the English arrangement, and here it leaves saḥ pointing at nothing when it is said."
+      },
+      "usage": "Saying what someone's job is by way of where they do it. The second variation is worth studying: it is the same man, accusative in one clause and nominative in the other.",
+      "register": "neutral",
+      "mnemonic": "Clause first, answer second. Reverse them and the answer arrives before the question."
+    },
+    {
+      "id": "L3-M2-S10",
+      "display": "aham yānena vidyālayam gatvā adhyayanam karomi.",
+      "script": "अहम् यानेन विद्यालयम् गत्वा अध्ययनम् करोमि।",
+      "cue": "I go to school by vehicle and study.",
+      "literal": "I by-vehicle school having-gone study do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'."
+          },
+          {
+            "display": "yānena",
+            "cue": "by vehicle",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's instrumental, answering katham. The ending is the whole of 'by' — there is no separate word."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school as a destination, accusative — not the same ending as the vehicle, and not the same job."
+          },
+          {
+            "display": "gatvā",
+            "cue": "having gone",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's absolutive, already in the index. It has no person and no tense and takes both from karomi at the end."
+          },
+          {
+            "display": "adhyayanam",
+            "cue": "study · studying",
+            "tag": "delta",
+            "forms": [],
+            "note": "The activity of studying, as a noun. adhyayanam karoti is how it is said — a noun with L1-M4's 'does' on it — and it is neuter, so it takes yat … tat too."
+          },
+          {
+            "display": "karomi",
+            "cue": "I do · I make",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'I do'. The only finite verb here, speaking for gatvā as well."
+          }
+        ],
+        "rules": [
+          8
+        ]
+      },
+      "trap": "yānena and vidyālayam are both 'the thing after the verb' in English and are two different cases here. One is how you travel and one is where you arrive.",
+      "sound": "a-HAM YAA-ne-na vid-YAA-la-yam GAT-vaa a-dhya-YA-nam ka-RO-mi. yānena and vidyālayam both begin long and then run light.",
+      "variations": [
+        {
+          "display": "bhavān yānena vidyālayam gatvā adhyayanam karoti.",
+          "script": "भवान् यानेन विद्यालयम् गत्वा अध्ययनम् करोति।",
+          "cue": "You go to school by vehicle and study.",
+          "changed": "the person spoken to; gatvā does not move, because it never carried a person"
+        },
+        {
+          "display": "aham yānena vidyālayam gatvā adhyayanam kṛtavān.",
+          "script": "अहम् यानेन विद्यालयम् गत्वा अध्ययनम् कृतवान्।",
+          "cue": "I went to school by vehicle and studied.",
+          "changed": "the past, on the last word alone — a man speaking"
+        },
+        {
+          "display": "aham mārgeṇa vidyālayam gatvā adhyayanam na karomi.",
+          "script": "अहम् मार्गेण विद्यालयम् गत्वा अध्ययनम् न करोमि।",
+          "cue": "I walk to school along the road and do not study.",
+          "changed": "a different instrumental and a negated main verb; the absolutive is untouched by either"
+        }
+      ],
+      "mistake": {
+        "display": "aham yānena vidyālayam gacchāmi ca adhyayanam karomi.",
+        "why": "Two finite verbs joined by ca — M1's mistake, made again in this module's vocabulary. It is grammatical and it is not how a day is told; the absolutive is what keeps one sentence to one ending."
+      },
+      "usage": "The full answer to katham bhavān vidyālayam gacchati?, with what you do when you get there. It is M1's construction and M2's vocabulary in one line.",
+      "register": "neutral",
+      "mnemonic": "One finite verb at the end. Everything in front of it is leaning on it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M2-C01",
+      "display": "yaḥ chātraḥ saṃskṛtam paṭhati saḥ mama mitram.",
+      "script": "यः छात्रः संस्कृतम् पठति सः मम मित्रम्।",
+      "cue": "The student who studies Sanskrit is my friend."
+    },
+    {
+      "id": "L3-M2-C02",
+      "display": "yā adhyāpikā atra asti sā mama mātā.",
+      "script": "या अध्यापिका अत्र अस्ति सा मम माता।",
+      "cue": "The teacher who is here is my mother."
+    },
+    {
+      "id": "L3-M2-C03",
+      "display": "yat kāryam bhavān karoti tat aham jānāmi.",
+      "script": "यत् कार्यम् भवान् करोति तत् अहम् जानामि।",
+      "cue": "I know the work you do."
+    },
+    {
+      "id": "L3-M2-C04",
+      "display": "yam adhyāpakam sā jānāti tam aham api jānāmi.",
+      "script": "यम् अध्यापकम् सा जानाति तम् अहम् अपि जानामि।",
+      "cue": "I know the teacher she knows too."
+    },
+    {
+      "id": "L3-M2-C05",
+      "display": "aham mārgeṇa vidyālayam gatvā adhyayanam karomi.",
+      "script": "अहम् मार्गेण विद्यालयम् गत्वा अध्ययनम् करोमि।",
+      "cue": "I walk to school along the road and study."
+    },
+    {
+      "id": "L3-M2-C06",
+      "display": "yat adhyayanam aham karomi tat dīrgham.",
+      "script": "यत् अध्ययनम् अहम् करोमि तत् दीर्घम्।",
+      "cue": "The studying I do is long."
+    },
+    {
+      "id": "L3-M2-C07",
+      "display": "yaḥ chātraḥ pratidinam paṭhati saḥ santuṣṭaḥ.",
+      "script": "यः छात्रः प्रतिदिनम् पठति सः सन्तुष्टः।",
+      "cue": "The student who studies every day is content."
+    },
+    {
+      "id": "L3-M2-C08",
+      "display": "katham bhavatī kāryam karoti?",
+      "script": "कथम् भवती कार्यम् करोति?",
+      "cue": "How do you do the work?"
+    },
+    {
+      "id": "L3-M2-C09",
+      "display": "yat pustakam aham icchāmi tat pustakālaye asti.",
+      "script": "यत् पुस्तकम् अहम् इच्छामि तत् पुस्तकालये अस्ति।",
+      "cue": "The book I want is in the library."
+    },
+    {
+      "id": "L3-M2-C10",
+      "display": "yā chātrā saṃskṛtam likhati sā mama bhaginī.",
+      "script": "या छात्रा संस्कृतम् लिखति सा मम भगिनी।",
+      "cue": "The student who writes Sanskrit is my sister."
+    },
+    {
+      "id": "L3-M2-C11",
+      "display": "yaḥ adhyāpakaḥ saṃskṛtam vadati saḥ mama pitā.",
+      "script": "यः अध्यापकः संस्कृतम् वदति सः मम पिता।",
+      "cue": "The teacher who speaks Sanskrit is my father."
+    },
+    {
+      "id": "L3-M2-C12",
+      "display": "hyaḥ aham vidyālayam gatvā adhyayanam kṛtavān.",
+      "script": "ह्यः अहम् विद्यालयम् गत्वा अध्ययनम् कृतवान्।",
+      "cue": "Yesterday I went to school and studied. (a man speaking)"
+    },
+    {
+      "id": "L3-M2-C13",
+      "display": "yat kāryam mama bhrātā karoti tat mahyam rocate.",
+      "script": "यत् कार्यम् मम भ्राता करोति तत् मह्यम् रोचते।",
+      "cue": "I like the work my brother does."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
