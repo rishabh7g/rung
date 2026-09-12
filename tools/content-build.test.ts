@@ -22,11 +22,11 @@
  *     happens to hold on the day, which is the whole point of having built it: the next graduation
  *     empties the catalogue of fixtures again and this file should not go quiet when it does. That
  *     is the shape of the test #273 retired on 2026-08-30, rebuilt.
- *   • `--with-fixtures` STILL changes nothing about the emitted manifest, and for a reason that is
- *     about to expire. en-la has no modules yet, so both gates drop it — strict for the flag, dev
- *     for the emptiness — and the two emitted manifests are equal by coincidence rather than by
- *     rule. The case below asserts both reasons separately, so that when #634 authors L1-M1 the
- *     equality breaks and says which of the two facts changed.
+ *   • `--with-fixtures` changes the emitted manifest again, which it had not done since #611.
+ *     #632 left the two gates agreeing by coincidence — en-la had no modules, and a course with
+ *     none is dropped by both — and #634's first rung ended that: dev ships en-la, strict drops it,
+ *     and the manifests differ by exactly one course. The last case asserts the difference by NAME
+ *     rather than asserting an inequality, so a second course drifting into dev-only still fails.
  *
  * It asserts the seam at the level the surviving tests work at: the build's own functions, over the
  * AUTHORED tree, writing to a scratch directory. There is no DOM here and there is nothing to
@@ -326,26 +326,39 @@ describe('the gate ships the graduated course, and both gates now agree', () => 
   });
 
   /**
-   * **The two gates still emit the same ten courses, and this case is about WHY — because the
-   * reason expires (#632).**
+   * **The asymmetry #606 pinned is back, and this case is it (#632, #634).**
    *
-   * While en-sa was a fixture, `--with-fixtures` was the difference between a course a learner
-   * could reach and one they could not; #611 graduated it and the flag had nothing left to relax.
-   * en-la puts a fixture row back, so the flag has something to relax again — and the manifests
-   * are STILL equal, because en-la has no modules and a course with none is dropped by both gates:
-   * strict for the flag, dev for the emptiness. Two different reasons, asserted separately, so
-   * that #634's first module breaks the equality and the failure names which fact moved.
+   * The history in three steps, because the case has now been rewritten twice and the reasons are
+   * not interchangeable. While en-sa was a fixture, `--with-fixtures` was the difference between a
+   * course a learner could reach and one they could not. #611 graduated it and the flag had nothing
+   * left to relax, so the two gates had to agree exactly. #632 put en-la in the seam and the gates
+   * still agreed — but only because en-la had no modules, and a course with none is dropped by
+   * both: strict for the flag, dev for the emptiness. #634 authored the first rung, and the
+   * coincidence ended: dev ships en-la, strict does not, and the manifests DIVERGE by exactly one
+   * course.
+   *
+   * That divergence is the gate working, not a defect, and it is asserted as a named difference
+   * rather than as an inequality — so that a SECOND course drifting into dev-only, which is the
+   * failure this case exists to catch, still fails it.
    */
-  it('dev: --with-fixtures admits the fixture row, which is still empty, so nothing ships', () => {
+  it('dev: --with-fixtures ships the fixture course that strict drops, and only that one', () => {
     expect(DEV.exitCode).toBe(0);
     expect(DEV.lines).toContain('en-sa: 10 modules (L1-M1..M10)');
     expect(DEV.lines.filter((line) => line.includes('FAIL'))).toEqual([]);
-    // The flag is doing its job: the line changes from the gate's refusal to a plain count.
-    expect(DEV.lines).toContain('en-la: 0 modules — nothing authored yet');
-    expect(DEV.shipped.has(FIXTURE_COURSE)).toBe(false);
-    // Equal manifests, by coincidence of the emptiness rather than by the gate agreeing.
-    expect(emittedCourseIds(DEV)).toEqual(emittedCourseIds(STRICT));
-    expect([...DEV.shipped.entries()].sort()).toEqual([...STRICT.shipped.entries()].sort());
+    // The flag is doing its job: the gate's refusal becomes a plain count of what is authored.
+    expect(DEV.lines.some((line) => /^en-la: \d+ modules? \(L1-M1/.test(line))).toBe(true);
+    expect(DEV.shipped.has(FIXTURE_COURSE)).toBe(true);
+    expect(STRICT.shipped.has(FIXTURE_COURSE)).toBe(false);
+    // Exactly one course between them, and it is the one carrying the flag.
+    const extra = emittedCourseIds(DEV).filter((id) => !emittedCourseIds(STRICT).includes(id));
+    expect(extra).toEqual([FIXTURE_COURSE]);
+    expect(emittedCourseIds(STRICT).filter((id) => !emittedCourseIds(DEV).includes(id))).toEqual(
+      [],
+    );
+    // And every course they share ships the same modules under both gates.
+    for (const [id, modules] of STRICT.shipped) {
+      expect(DEV.shipped.get(id), `${id} ships the same rungs under both gates`).toEqual(modules);
+    }
   });
 });
 

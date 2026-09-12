@@ -188,7 +188,7 @@ function undeclaredLevelsKeys(levels: Levels): string[] {
 /* -------------------------------------------------------------- the checks */
 
 describe('ModuleContent against the modules that exist', () => {
-  it('finds all 460 — nine complete five-level ladders, and en-sa’s whole first level (#610)', () => {
+  it('finds all 462 — nine five-level ladders, en-sa’s first level, and en-la’s first two (#634)', () => {
     expect(MODULE_FILES.map(([file]) => file)).toEqual([
       'content/en-ar/modules/L1-M1.json',
       'content/en-ar/modules/L1-M10.json',
@@ -490,6 +490,8 @@ describe('ModuleContent against the modules that exist', () => {
       'content/en-ko/modules/L5-M7.json',
       'content/en-ko/modules/L5-M8.json',
       'content/en-ko/modules/L5-M9.json',
+      'content/en-la/modules/L1-M1.json',
+      'content/en-la/modules/L1-M2.json',
       'content/en-ru/modules/L1-M1.json',
       'content/en-ru/modules/L1-M10.json',
       'content/en-ru/modules/L1-M2.json',
@@ -1350,16 +1352,35 @@ describe('ModuleContent against the modules that exist', () => {
     for (const [file, json] of enLa) {
       const module = parseModule(json, file);
 
-      /** One Latin surface, wherever it lives — a sentence, a variation, a pool item, a plate. */
-      const surface = (target: { display: string; script?: string | null }, at: string): void => {
+      /**
+       * One Latin surface, wherever it lives — a sentence, a variation, a pool item, a plate.
+       *
+       * `spelled` is false for a `mistake` plate, and the split is the same one en-sa draws for its
+       * `pada` flag. A plate is deliberately WRONG Latin, and the wrong things a module most wants
+       * to show are precisely #630's bans: L1-M1's plate writes `Julia` with a j because the module
+       * is teaching that Latin has no such letter, and L1-M10's will hyphenate `ita-que` because
+       * that is the seam mistake it warns about. `buildWordIndex` never reads a mistake, so no key
+       * is minted and the invariant those bans protect is not at risk there — which is also why
+       * CLAUDE.md exempts `mistake.display` from the shown-surface ratchet.
+       *
+       * What a plate may NOT do is anything that renders wrong rather than teaching wrong: NFC, the
+       * course alphabet and the absent `script` line all still hold on it. A decomposed macron in a
+       * plate is not a lesson, it is a glyph drawn from `system-ui`.
+       */
+      const surface = (
+        target: { display: string; script?: string | null },
+        at: string,
+        spelled = true,
+      ): void => {
         expect(target.display, `${at} display is Latin`).toMatch(latin);
         expect(target.display, `${at} display leaves the course alphabet`).toMatch(latinOnly);
         expect(target.display, `${at} display is not NFC`).toBe(target.display.normalize('NFC'));
+        // The display IS the script here, so the quiet line is never authored (#630 §7.1).
+        expect(target.script ?? null, `${at} carries a redundant script line`).toBeNull();
+        if (!spelled) return;
         expect(acute.test(target.display), `${at} display writes an acute`).toBe(false);
         expect(target.display.includes("'"), `${at} display writes an elision`).toBe(false);
         expect(/[jJ]/.test(target.display), `${at} display writes a j`).toBe(false);
-        // The display IS the script here, so the quiet line is never authored (#630 §7.1).
-        expect(target.script ?? null, `${at} carries a redundant script line`).toBeNull();
         for (const token of tokenizeSurface(target.display)) {
           if (token.includes('-')) {
             expect(SEAM.test(token), `${at} hyphenates "${token}" outside the enclitic seam`).toBe(
@@ -1389,7 +1410,7 @@ describe('ModuleContent against the modules that exist', () => {
         for (const field of ['sound', 'usage', 'mnemonic', 'trap', 'literal'] as const) {
           prose(sentence[field], `${at} ${field}`);
         }
-        if (sentence.mistake !== undefined) surface(sentence.mistake, `${at} mistake`);
+        if (sentence.mistake !== undefined) surface(sentence.mistake, `${at} mistake`, false);
         for (const variation of sentence.variations ?? []) surface(variation, `${at} variation`);
         for (const word of sentence.deconstruction.words) {
           expect(word.display, `${at} word display leaves the alphabet`).toMatch(latinOnly);
