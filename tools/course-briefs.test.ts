@@ -154,6 +154,241 @@ describe('en-ko: the decisions its briefs settle (#373, #376)', () => {
   });
 });
 
+describe('en-sa: the decisions its briefs settle (#604, #607)', () => {
+  const all = COURSE_BRIEFS['en-sa'] ?? {};
+  const briefs = Object.values(all);
+  const strings = briefs.flatMap((brief) => [
+    ...brief.patterns,
+    ...brief.notes,
+    brief.title,
+    brief.job,
+  ]);
+  const everything = strings.join('\n');
+  const notes = briefs.flatMap((brief) => brief.notes).join('\n');
+
+  /** The IAST marks this course writes — the class every mechanical check below is scoped by. */
+  const IAST_DIACRITIC = /[āīūṛṝḷḹṃḥṅñṭḍṇśṣ]/u;
+  /** A whitespace token with the prose punctuation that can sit around it removed. */
+  const bare = (token: string): string =>
+    token.replace(/^[([{"“‘]+/u, '').replace(/[)\]},.;:!?"”]+$/u, '');
+
+  it('covers exactly L1-M1..L1-M10 — the tenth course, briefed L1 only (#607)', () => {
+    expect(Object.keys(all)).toEqual(
+      ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `L1-M${n}`),
+    );
+  });
+
+  /**
+   * The same ramp en-ko uses, and for a sharper version of the same reason: Sanskrit's synthesis
+   * packs a whole English clause into two tokens, so the word bound is slack and `newWordCap` is
+   * what actually bites. A ramp that drifted upward would be answering the wrong constraint.
+   */
+  it('climbs its bounds 4 → 7 across the level, and caps every module at NEW_WORD_CAP', () => {
+    const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
+    for (const id of ['L1-M1', 'L1-M2']) expect(bound(id), id).toBe(4);
+    for (const id of ['L1-M3', 'L1-M4', 'L1-M5']) expect(bound(id), id).toBe(5);
+    for (const id of ['L1-M6', 'L1-M7', 'L1-M8']) expect(bound(id), id).toBe(6);
+    for (const id of ['L1-M9', 'L1-M10']) expect(bound(id), id).toBe(7);
+    for (const brief of briefs) expect(brief.newWordCap, brief.id).toBe(NEW_WORD_CAP);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/the constraint that actually binds is `newWordCap`/);
+  });
+
+  /**
+   * `docs/design-contract.md` (#353) forbids an English-L1 course from asking the learner to
+   * decode a non-Latin script, and #605 puts Devanagari in `script` alone. `checkScriptMode`
+   * catches a Devanagari `display`; nothing catches Devanagari inside English prose, and a brief
+   * seeds every future prompt — so catch it here, where it would start.
+   */
+  it('writes no Devanagari anywhere — a brief is English prose about Sanskrit in IAST', () => {
+    expect(everything).not.toMatch(/\p{Script=Devanagari}/u);
+  });
+
+  /**
+   * NFC is not cosmetic here. The decomposed spellings carry U+0304, U+0323, U+0307, U+0301 and
+   * U+0303, and no target in `tools/font-subset.ts` claims any of them — `latin` stops at U+00FF
+   * and `latin-ext` starts at U+0100 — so a decomposed `ā` passes `checkScriptMode`, is dropped by
+   * `coveredChars`, and renders its accent from `system-ui`. `surface.ts` normalises the index KEY
+   * only, so the index would resolve while the line looked wrong. A decomposed paste reaching an
+   * author through a prompt is exactly what this stops.
+   */
+  it('is authored precomposed — every brief string equals its own NFC', () => {
+    for (const brief of briefs) {
+      for (const [field, value] of [
+        ['title', brief.title],
+        ['job', brief.job],
+        ...brief.patterns.map((p, i): [string, string] => [`pattern ${i}`, p]),
+        ...brief.notes.map((n, i): [string, string] => [`note ${i}`, n]),
+      ] as [string, string][]) {
+        expect(value, `${brief.id} ${field}`).toBe(value.normalize('NFC'));
+      }
+    }
+  });
+
+  /**
+   * #604 chose IAST, so a pattern is ASCII plus the IAST letters plus the two meta-notation marks
+   * the pattern language itself uses. A stray Cyrillic, Hangul or typographic character would be
+   * a scheme that is not the one this course teaches.
+   */
+  it('writes its patterns in IAST and nothing else', () => {
+    for (const brief of briefs) {
+      for (const pattern of brief.patterns) {
+        expect(pattern, `${brief.id} pattern`).toMatch(/^[\x20-\x7EĀ-ſḀ-ỿñ→…·]*$/u);
+      }
+    }
+  });
+
+  /**
+   * The pada-form rule (#604), made mechanically checkable. Both halves were verified against the
+   * real `src/engine/surface.ts` rather than assumed: the anusvāra spelling of a word-final nasal
+   * normalises to a DIFFERENT key from the `m` spelling, and the apostrophe is the one character
+   * rule 3 does NOT strip at a word edge — so an avagraha survives into the key and folds with
+   * en-ar's hamza class on top of that. Either slip mints a second, unreachable surface.
+   */
+  it('keeps pada form — no word-final anusvāra, no avagraha on a Sanskrit token', () => {
+    for (const text of strings) {
+      for (const raw of text.split(/\s+/)) {
+        const token = bare(raw);
+        expect(token.endsWith('ṃ'), `word-final anusvāra in ${JSON.stringify(token)}`).toBe(false);
+        if (!IAST_DIACRITIC.test(token)) continue;
+        expect(token, 'apostrophe at a word edge').not.toMatch(/^['’ʼʾ]|['’ʼʾ]$/u);
+      }
+    }
+    expect(notes).toMatch(/PADA FORM — no external sandhi across a word boundary/);
+    expect(notes).toMatch(/Write rāmaḥ gacchati, never rāmo gacchati/);
+  });
+
+  /** (a), first half: the register, decided course-wide and repeated where an author sees it. */
+  it('settles the "you" in a NOTE — bhavān/bhavatī with a third-person verb, tvam deferred', () => {
+    expect(notes).toMatch(/REGISTER, settled course-wide/);
+    expect(notes).toMatch(/bhavān \(to a man\) \/ bhavatī \(to a woman\) WITH A THIRD-PERSON VERB/);
+    expect(notes).toMatch(/bhavān kutra gacchati\?/);
+    expect(notes).toMatch(/tvam with second-person endings is the intimate address/);
+    expect(notes).toMatch(/deferred to L2-M1/);
+    // The cell that decision costs, paid in M4 rather than discovered by an author.
+    expect(all['L1-M4']?.notes.join('\n')).toMatch(/-si belongs to tvam/);
+  });
+
+  /** (a), second half: the past is a participle, and it agrees with the speaker. */
+  it('settles the past in a NOTE — a participle that agrees, both shapes on every row', () => {
+    expect(notes).toMatch(/it is the participle -tavān\/-tavatī, which AGREES/);
+    expect(all['L1-M5']?.notes.join('\n')).toMatch(/THE PAST IS A PARTICIPLE THAT AGREES/);
+    expect(all['L1-M5']?.notes.join('\n')).toMatch(/aham gatavān and a woman says aham gatavatī/);
+    expect(all['L1-M5']?.notes.join('\n')).toMatch(/owns BOTH gendered shapes from its first row/);
+    // The lakāras the course does not reach, named where they would otherwise be reached for.
+    expect(all['L1-M5']?.notes.join('\n')).toMatch(
+      /the imperfect \(agacchat\) and the other lakāras/,
+    );
+    expect(all['L1-M6']?.notes.join('\n')).toMatch(/gamiṣyāmi/);
+  });
+
+  /** (b): no hyphen means one key per surface, so a case shape lives in its noun's `forms`. */
+  it('names the index seam a language without a hyphen has', () => {
+    expect(notes).toMatch(/INDEX SEAM/);
+    expect(notes).toMatch(/surfaceIndexKeys returns exactly ONE key per surface here/);
+    expect(notes).toMatch(/rāmaḥ, rāmam, rāmasya, rāme are four keys the fold will never merge/);
+    expect(notes).toMatch(/plan the WAVE, not the module/);
+    expect(notes).toMatch(/only shapes of THAT word, never a cousin and never a synonym/);
+    // One verb, one row, five shapes — the decision M5 and M6 both depend on.
+    expect(all['L1-M2']?.notes.join('\n')).toMatch(
+      /gamiṣyāmi \(M6\) are all FORMS of this one row/,
+    );
+    expect(all['L1-M5']?.notes.join('\n')).toMatch(/This module opens NO verb row at all/);
+    for (const brief of briefs) {
+      expect(brief.notes.join('\n'), `${brief.id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+  });
+
+  /** (c): first occurrence wins, so every collision has a named owner or is written nowhere. */
+  it('assigns every homograph an owner, and records that saḥ/sā is not one', () => {
+    expect(all['L1-M2']?.notes.join('\n')).toMatch(/kim IS THE COURSE'S SHARPEST HOMOGRAPH/);
+    expect(all['L1-M2']?.notes.join('\n')).toMatch(/true of BOTH readings from the first row/);
+    // M9's "why" is its own token, which is what lets M2 keep `kim`.
+    expect(all['L1-M9']?.notes.join('\n')).toMatch(
+      /kimartham is a single token and its own index key/,
+    );
+    // The readings kept out of L1 altogether, so no learner is shown a false note.
+    expect(all['L1-M1']?.notes.join('\n')).toMatch(/Written NOWHERE in L1/);
+    expect(all['L1-M1']?.notes.join('\n')).toMatch(
+      /me \(this course says mama and mahyam\), te \(they \/ your\), tat \(that \/ it/,
+    );
+    expect(all['L1-M2']?.notes.join('\n')).toMatch(
+      /sentence-final vā, and sentence-initial api — so that a later module cannot quietly introduce one/,
+    );
+    expect(all['L1-M10']?.notes.join('\n')).toMatch(
+      /api is written in exactly ONE reading, 'also', which this module owns/,
+    );
+    // Checked against the real fold, not assumed: rule 4 never touches a diacritic.
+    expect(all['L1-M5']?.notes.join('\n')).toMatch(/saḥ, sā and a bare sa are three distinct keys/);
+  });
+
+  /** (d): gender on the speaker, the listener, the adjective and the number — and the dual. */
+  it('states which gendered shapes each module writes, and pins the dual to M8', () => {
+    expect(all['L1-M1']?.notes.join('\n')).toMatch(
+      /aham chātraḥ \(a man\) · aham chātrā \(a woman\)/,
+    );
+    expect(all['L1-M2']?.notes.join('\n')).toMatch(
+      /bhavān kuśalī\? to a man, bhavatī kuśalinī\? to a woman/,
+    );
+    expect(all['L1-M9']?.notes.join('\n')).toMatch(/aham khinnaḥ \/ aham khinnā/);
+    expect(notes).toMatch(/a variations entry supplies the other/);
+    // The dual enters at M8 and nowhere earlier: any dual form in another module's brief may only
+    // be a forward reference that names M8 as its owner.
+    expect(all['L1-M8']?.notes.join('\n')).toMatch(/THE DUAL ENTERS HERE AND NOWHERE EARLIER/);
+    expect(all['L1-M8']?.notes.join('\n')).toMatch(/dvau chātrau, dve phale/);
+    for (const [id, brief] of Object.entries(all)) {
+      if (id === 'L1-M8') continue;
+      for (const text of [...brief.patterns, ...brief.notes]) {
+        for (const match of text.matchAll(/dvau|dve\b|chātrau|phale\b/gu)) {
+          const index = match.index ?? 0;
+          expect(
+            text.slice(Math.max(0, index - 5), index),
+            `${id} may only forward-reference the dual as M8's`,
+          ).toBe("M8's ");
+        }
+      }
+    }
+  });
+
+  /** (e): Devanagari has exactly one seat, and it is typed on five shapes rather than three. */
+  it('puts Devanagari in `script` alone and names all five shapes that carry it', () => {
+    expect(all['L1-M1']?.notes.join('\n')).toMatch(
+      /typed on FIVE shapes — Word, Variation, Mistake, Sentence and PoolItem — while sound is Sentence-only/,
+    );
+    expect(all['L1-M10']?.notes.join('\n')).toMatch(/Devanagari only in script/);
+    // #405: the L1 is English, so the gloss field is gone and `literal` does its work.
+    expect(all['L1-M1']?.notes.join('\n')).toMatch(/There is NO glossEn on this course/);
+    expect(all['L1-M1']?.notes.join('\n')).toMatch(/literal is the tool that replaces it/);
+  });
+
+  /** Each module names the false slogan it will attract and the law that replaces it. */
+  it('names the slogan each module attracts, and the law replacing it', () => {
+    expect(all['L1-M1']?.notes.join('\n')).toMatch(/'Sanskrit has free word order'/);
+    expect(all['L1-M1']?.notes.join('\n')).toMatch(/case-marked, and verb-final by default/);
+    expect(all['L1-M1']?.notes.join('\n')).toMatch(/'there is no to be'/);
+    expect(all['L1-M3']?.notes.join('\n')).toMatch(
+      /the present COPULA is optional \(aham chātraḥ\), asti is not/,
+    );
+    expect(all['L1-M5']?.notes.join('\n')).toMatch(/the past IS the -tavān ending/);
+    expect(all['L1-M10']?.notes.join('\n')).toMatch(/ca means and, and it comes AFTER/);
+    expect(notes).toMatch(/learn the sandhi first/);
+  });
+
+  /**
+   * The header carries the five decisions in full; a prompt shows an author only the notes, so the
+   * section and the notes have to agree. These pin the section's existence and the two claims that
+   * live only there.
+   */
+  it('carries the decisions in the file header as well as in the notes', () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /## en-sa: decisions a brief must settle before any Sanskrit is written/,
+    );
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/NFC is mandatory and it is a rendering hazard/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/en-sa has no hyphen at all/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/No stress marks\*\* — Sanskrit has syllable weight/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Ten courses are briefed/);
+  });
+});
+
 describe('hi-mr L3: the decisions its briefs settle (#452)', () => {
   const all = COURSE_BRIEFS['hi-mr'] ?? {};
   const l3 = Object.entries(all).filter(([id]) => id.startsWith('L3-'));

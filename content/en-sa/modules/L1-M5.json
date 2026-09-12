@@ -1,0 +1,759 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M5",
+  "title": "Yesterday",
+  "job": "Past tense — the first big divergence",
+  "prerequisites": ["L1-M4"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": ["participial_past", "simple_present"],
+    "allowedPatterns": [
+      "aham + V-tavān / V-tavatī",
+      "saḥ + V-tavān",
+      "sā + V-tavatī",
+      "hyaḥ + V-tavān / V-tavatī",
+      "aham + N-acc + V-tavān / V-tavatī",
+      "na + V-tavān / V-tavatī",
+      "bhavān/bhavatī + hyaḥ + kim + V-tavān / V-tavatī",
+      "<name> + N-acc + V-tavān / V-tavatī"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The past is an ADJECTIVE that agrees, not a verb that conjugates. gatavān is what a man says and gatavatī what a woman says, and the word is describing the person, not the moment. Nothing goes in front of it and nothing is added behind it."
+    },
+    {
+      "tag": "interference",
+      "text": "There is no Sanskrit word for 'did', and a learner hunting for one is hunting for something that was never there. English builds its past three ways — I went, I have gone, I did go — out of helpers; Sanskrit builds it out of one ending on the verb's own stem."
+    },
+    {
+      "tag": "free",
+      "text": "Here is the relief, and it is worth saying plainly because you will brace for it: there is NO perfect against preterite split. One past does the work English divides between 'I went', 'I have gone' and 'I did go'. German and French make you choose; this does not, so do not invent the choice."
+    },
+    {
+      "tag": "delta",
+      "text": "The participle marks gender and number but NOT person — so the pronoun comes back. aham gatavān is 'I went'; gatavān standing alone is 'he went'. M4's subject drop worked because the -mi ending carried the person, and here that ending is simply gone."
+    },
+    {
+      "tag": "delta",
+      "text": "The past is built on the stem you already learned: paṭhati gives paṭhitavān, khādati gives khāditavān, likhati gives likhitavān, karoti gives kṛtavān and pibati gives pītavān. Learn the stem once and the past comes with it — which is what M4's eighth rule was promising."
+    },
+    {
+      "tag": "delta",
+      "text": "hyaḥ, 'yesterday', is a time word exactly like adya and sāyam: no ending, no preposition, and free to stand at either end of the sentence. Time words did not change when the tense did."
+    },
+    {
+      "tag": "delta",
+      "text": "saḥ is 'he' and sā is 'she', and each pulls its own shape of the past along behind it: saḥ gatavān, sā gatavatī. Two short sentences, two agreements, and never a mixed pair."
+    },
+    {
+      "tag": "delta",
+      "text": "Negation does not change for the past: na still stands immediately in front of what it denies. aham na gatavān, sā jalam na pītavatī. Everything M3 taught about na survives the tense change untouched."
+    },
+    {
+      "tag": "delta",
+      "text": "Sanskrit has other past tenses — the imperfect agacchat, and more beyond it — and this course writes none of them before L4. They are named here so that meeting one in a book is not a shock, and left unwritten so that nothing competes with the one past you actually need to speak."
+    },
+    {
+      "tag": "free",
+      "text": "The past of asti is not in this course either. 'I had a book' needs a form this level does not write, so say mama pustakam asti in the present and leave the past of having until the level that opens it. An honest limit is cheaper than a form you cannot use."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M5-S01",
+      "display": "aham gatavān.",
+      "script": "अहम् गतवान्।",
+      "cue": "I went. (a man speaking)",
+      "literal": "I gone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', M1's word — and here it is compulsory, not emphatic: the past has no ending that says who, so the pronoun has to."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's verb in its past shape: gatavān when a man went, gatavatī when a woman did. It agrees with whoever went, like an adjective."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "English hides a helper in almost every past it builds — have, did, was. There is nothing here to hide one in: two words, and the second is doing all of it.",
+      "sound": "A-ham ga-ta-VAAN. Before the g the m of aham becomes a nasal hum — ahaṃ gatavān — while the page keeps the m. The final n of gatavān is dental, tongue on the teeth, and the ā before it is long.",
+      "variations": [
+        {
+          "display": "aham gatavatī.",
+          "script": "अहम् गतवती।",
+          "cue": "I went. (a woman speaking)",
+          "changed": "a woman saying the very same thing — the word for 'I' does not move, and the past does, because it is describing her"
+        },
+        {
+          "display": "aham na gatavān.",
+          "script": "अहम् न गतवान्।",
+          "cue": "I didn't go. (a man speaking)",
+          "changed": "negated with M3's na, in front of the past exactly as it stood in front of the present"
+        },
+        {
+          "display": "aham hyaḥ gatavān.",
+          "script": "अहम् ह्यः गतवान्।",
+          "cue": "I went yesterday. (a man speaking)",
+          "changed": "the day named, and the past does not need it — the participle was already past before the time word arrived"
+        }
+      ],
+      "mistake": {
+        "display": "aham gatavān asti.",
+        "why": "English needs an auxiliary — I HAVE gone, I DID go — and asti is the nearest thing this course has offered. Nothing goes behind gatavān: the participle is the whole of the past, and asti would be asserting that the going exists."
+      },
+      "usage": "The everyday past, and the only one this course writes: the imperfect agacchat and Sanskrit's other past tenses belong to a much later level, so gatavān carries 'I went', 'I have gone' and 'I did go' alike.",
+      "register": "neutral",
+      "mnemonic": "The past describes the person, so it bends for the person."
+    },
+    {
+      "id": "L1-M5-S02",
+      "display": "aham hyaḥ saṃskṛtam paṭhitavān.",
+      "script": "अहम् ह्यः संस्कृतम् पठितवान्।",
+      "cue": "I studied Sanskrit yesterday. (a man speaking)",
+      "literal": "I yesterday Sanskrit studied",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', and compulsory here. Take it away and the sentence says 'he studied Sanskrit yesterday' — the past cannot tell you which person on its own."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "delta",
+            "forms": ["hyaḥ"],
+            "note": "'Yesterday', a time word like adya and sāyam: no ending, no preposition, and free to stand at either end of the sentence."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sanskrit', M1's neuter noun. The thing studied keeps its shape whatever the tense of the studying."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "delta",
+            "forms": [],
+            "note": "M4's verb in its past shape: paṭhitavān from a man, paṭhitavatī from a woman — the same stem with -itavat on the end of it."
+          }
+        ],
+        "rules": [4, 5]
+      },
+      "trap": "Four words and still no helper. English would need 'I was studying' or 'I studied' and would choose between them; here the choice does not exist, and hyaḥ is doing the only work that choosing would have done.",
+      "sound": "A-ham HYAH SANS-kri-tam pa-thi-ta-VAAN. The hy of hyaḥ is an h with a y running straight out of it, said as one sound. Before it the m of aham becomes a hum, and the visarga before the s stays exactly as it is.",
+      "variations": [
+        {
+          "display": "aham hyaḥ saṃskṛtam paṭhitavatī.",
+          "script": "अहम् ह्यः संस्कृतम् पठितवती।",
+          "cue": "I studied Sanskrit yesterday. (a woman speaking)",
+          "changed": "a woman speaking, so only the last word bends — everything in front of it is the same sentence"
+        },
+        {
+          "display": "hyaḥ aham saṃskṛtam paṭhitavān.",
+          "script": "ह्यः अहम् संस्कृतम् पठितवान्।",
+          "cue": "Yesterday I studied Sanskrit.",
+          "changed": "the time word moved to the front, which is where M4 usually put it — it is free to stand at either end"
+        },
+        {
+          "display": "aham hyaḥ saṃskṛtam na paṭhitavān.",
+          "script": "अहम् ह्यः संस्कृतम् न पठितवान्।",
+          "cue": "I didn't study Sanskrit yesterday.",
+          "changed": "negated, with na immediately in front of the past and nothing else in the line disturbed"
+        }
+      ],
+      "mistake": {
+        "display": "hyaḥ saṃskṛtam paṭhitavān.",
+        "why": "Without aham this says 'he studied Sanskrit yesterday'. M4 let you drop the subject because the -mi ending carried the person; a participle carries gender and number but no person at all, so in the past the pronoun has to come back."
+      },
+      "usage": "Reporting your own day after the fact — the frame most of a conversation about yesterday runs on.",
+      "register": "neutral",
+      "mnemonic": "No -mi, no dropping."
+    },
+    {
+      "id": "L1-M5-S03",
+      "display": "saḥ gatavān.",
+      "script": "सः गतवान्।",
+      "cue": "He went.",
+      "literal": "he gone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saḥ",
+            "cue": "he · that man",
+            "tag": "delta",
+            "forms": ["saḥ"],
+            "note": "'He'. Its partner is sā, 'she', and each takes the matching shape of the past: saḥ gatavān against sā gatavatī."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's verb in its past shape, masculine here because saḥ is. The verb row is M2's; nothing new has been opened for the past."
+          }
+        ],
+        "rules": [6, 0]
+      },
+      "trap": "saḥ, sā and a plain sa look almost alike and are three different things. The visarga and the long ā are not decoration — they are what tells a man from a woman here.",
+      "sound": "SAH ga-ta-VAAN. Spoken, the -aḥ of saḥ turns into an -o before the voiced g, so it is heard as so gatavān — the join this course keeps off the page and in this line instead. The visarga alone is a light echo of the a.",
+      "variations": [
+        {
+          "display": "saḥ hyaḥ gatavān.",
+          "script": "सः ह्यः गतवान्।",
+          "cue": "He went yesterday.",
+          "changed": "the day added between the two, taking no ending and changing nothing on either side of it"
+        },
+        {
+          "display": "saḥ na gatavān.",
+          "script": "सः न गतवान्।",
+          "cue": "He didn't go.",
+          "changed": "negated — na in front of the past, and saḥ holding its place as the one it is about"
+        },
+        {
+          "display": "saḥ phalam khāditavān.",
+          "script": "सः फलम् खादितवान्।",
+          "cue": "He ate a fruit.",
+          "changed": "a different verb in the same frame; the past shape is built from its own stem and agrees with saḥ just the same"
+        }
+      ],
+      "mistake": {
+        "display": "saḥ gatavatī.",
+        "why": "The past agrees with whoever it is about, so a masculine saḥ cannot take the feminine gatavatī. As written, the two halves of this sentence are describing two different people."
+      },
+      "usage": "Reporting what somebody else did — the other half of talking about yesterday.",
+      "register": "neutral",
+      "mnemonic": "saḥ takes -tavān. sā takes -tavatī."
+    },
+    {
+      "id": "L1-M5-S04",
+      "display": "sā gatavatī.",
+      "script": "सा गतवती।",
+      "cue": "She went.",
+      "literal": "she gone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sā",
+            "cue": "she · that woman",
+            "tag": "delta",
+            "forms": ["sā"],
+            "note": "'She', the partner of saḥ. A long ā and no visarga — and the past beside it takes the -tavatī shape to match."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's verb in its past shape, feminine here because sā is. Neither shape is the standard one; each belongs to whoever is being described."
+          }
+        ],
+        "rules": [6, 0]
+      },
+      "trap": "Neither gatavān nor gatavatī is the default with the other bolted on. Half the learners of this course will say gatavatī of themselves every time, and it is not the exception.",
+      "sound": "SAA ga-ta-va-TEE. sā ends in a long open ā and joins with nothing after it. The final ī of gatavatī is long too — hold it, or the word starts to sound like the masculine.",
+      "variations": [
+        {
+          "display": "sā hyaḥ gatavatī.",
+          "script": "सा ह्यः गतवती।",
+          "cue": "She went yesterday.",
+          "changed": "the day added, taking no ending, exactly as it did in the masculine sentence"
+        },
+        {
+          "display": "sā na gatavatī.",
+          "script": "सा न गतवती।",
+          "cue": "She didn't go.",
+          "changed": "negated, and na sits in front of the past whichever shape the past is wearing"
+        },
+        {
+          "display": "sītā gatavatī.",
+          "script": "सीता गतवती।",
+          "cue": "Sītā went.",
+          "changed": "a name in place of the pronoun; the past agrees with her either way, because it is agreeing with the person and not the word"
+        }
+      ],
+      "mistake": {
+        "display": "sā gatavān.",
+        "why": "sā is 'she' and gatavān describes a man. The mistake is worth meeting from this side too: it is the same disagreement as saḥ gatavatī, and it is the one a learner makes by treating gatavān as the dictionary form of the past."
+      },
+      "usage": "Reporting what a woman did — as ordinary as the masculine, and needed just as often.",
+      "register": "neutral",
+      "mnemonic": "sā is long and bare. Her past ends long too."
+    },
+    {
+      "id": "L1-M5-S05",
+      "display": "aham phalam khāditavān.",
+      "script": "अहम् फलम् खादितवान्।",
+      "cue": "I ate a fruit. (a man speaking)",
+      "literal": "I fruit eaten",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', compulsory in the past because the participle names no person of its own."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "'Fruit', M1's neuter noun, still the same shape as the thing eaten — neuters never show the object ending."
+          },
+          {
+            "display": "khādati",
+            "cue": "eats",
+            "tag": "delta",
+            "forms": [],
+            "note": "M4's verb in its past shape: khāditavān from a man, khāditavatī from a woman — the stem you already know with -itavat behind it."
+          }
+        ],
+        "rules": [4, 0]
+      },
+      "trap": "The object sits exactly where M3 and M4 put it, between the subject and the verb. The tense changed and the word order did not.",
+      "sound": "A-ham PHA-lam khaa-di-ta-VAAN. Both m's soften to a nasal hum before the next word. ph is a p with a puff and kh a k with one; the d of khāditavān is dental, tongue against the teeth.",
+      "variations": [
+        {
+          "display": "aham phalam khāditavatī.",
+          "script": "अहम् फलम् खादितवती।",
+          "cue": "I ate a fruit. (a woman speaking)",
+          "changed": "a woman speaking — the last word bends and the two in front of it do not"
+        },
+        {
+          "display": "sā phalam khāditavatī.",
+          "script": "सा फलम् खादितवती।",
+          "cue": "She ate a fruit.",
+          "changed": "somebody else entirely, and the past is unchanged from the sentence above — because it was agreeing with a woman in both"
+        },
+        {
+          "display": "aham hyaḥ phalam na khāditavān.",
+          "script": "अहम् ह्यः फलम् न खादितवान्।",
+          "cue": "I didn't eat a fruit yesterday.",
+          "changed": "a day and a refusal added at once, each in the slot M3 and M4 gave it"
+        }
+      ],
+      "usage": "Saying what you ate or drank, which is most of what small talk about yesterday consists of.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S06",
+      "display": "sā jalam pītavatī.",
+      "script": "सा जलम् पीतवती।",
+      "cue": "She drank water.",
+      "literal": "she water drunk",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sā",
+            "cue": "she · that woman",
+            "tag": "delta",
+            "forms": [],
+            "note": "'She', opened just above, and the reason the last word of this sentence ends -tavatī."
+          },
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water', M3's neuter noun. Being drunk rather than wanted changes nothing about its shape."
+          },
+          {
+            "display": "pibati",
+            "cue": "drinks",
+            "tag": "delta",
+            "forms": [],
+            "note": "M4's verb in its past shape, and the one irregular one here: pibati gives pītavān / pītavatī, with the b gone and the ī long."
+          }
+        ],
+        "rules": [4, 6]
+      },
+      "trap": "pibati gives pītavān, not pibitavān. Four of this level's five verbs build their past by simply adding to the stem; this one does not, and it is the only one worth memorising as itself.",
+      "sound": "SAA JA-lam pee-ta-va-TEE. The ī of pītavatī is long and so is the final one — the word is bracketed by two long vowels. Before the p the m of jalam becomes a nasal hum.",
+      "variations": [
+        {
+          "display": "saḥ jalam pītavān.",
+          "script": "सः जलम् पीतवान्।",
+          "cue": "He drank water.",
+          "changed": "a man, so the past takes -tavān; the irregular stem pīta is the same for both"
+        },
+        {
+          "display": "sā jalam na pītavatī.",
+          "script": "सा जलम् न पीतवती।",
+          "cue": "She didn't drink water.",
+          "changed": "negated, with na in front of the past and the object left where it was"
+        },
+        {
+          "display": "sā hyaḥ jalam pītavatī.",
+          "script": "सा ह्यः जलम् पीतवती।",
+          "cue": "She drank water yesterday.",
+          "changed": "the day slipped in behind the subject, taking no ending, as time words never do"
+        }
+      ],
+      "usage": "Everyday reporting, and the place to notice that one verb of the five does not behave.",
+      "register": "neutral",
+      "mnemonic": "pibati drinks. pīta was drunk."
+    },
+    {
+      "id": "L1-M5-S07",
+      "display": "aham hyaḥ na gatavān.",
+      "script": "अहम् ह्यः न गतवान्।",
+      "cue": "I didn't go yesterday. (a man speaking)",
+      "literal": "I yesterday not gone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', compulsory in the past — and unaffected by the negation standing further along the line."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Yesterday', opened just above. It keeps its place in front of the negation, because na belongs to the verb and not to the day."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's word, in the job M3 gave it: immediately in front of what it denies. The tense change did not move it."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's verb in its past shape, gatavān for a man and gatavatī for a woman — and negating it does not touch the agreement."
+          }
+        ],
+        "rules": [7, 3]
+      },
+      "trap": "English rebuilds the sentence to say no in the past: 'I went' becomes 'I DID not go', with a helper appearing out of nowhere. Here the only change is one small word in the place it has stood since M3.",
+      "sound": "A-ham HYAH na ga-ta-VAAN. Spoken, the visarga of hyaḥ turns into an -o before the voiced n, so it is heard as hyo na gatavān. The m of aham becomes a hum before the h in front of it.",
+      "variations": [
+        {
+          "display": "aham hyaḥ na gatavatī.",
+          "script": "अहम् ह्यः न गतवती।",
+          "cue": "I didn't go yesterday. (a woman speaking)",
+          "changed": "a woman, and again only the last word bends — the negation is indifferent to who is speaking"
+        },
+        {
+          "display": "sā hyaḥ na gatavatī.",
+          "script": "सा ह्यः न गतवती।",
+          "cue": "She didn't go yesterday.",
+          "changed": "somebody else refusing the day; the pronoun swaps and the rest of the line holds"
+        },
+        {
+          "display": "aham adya na gatavān.",
+          "script": "अहम् अद्य न गतवान्।",
+          "cue": "I haven't gone today.",
+          "changed": "today instead of yesterday, and the past stays past — the time word says which day, not which tense"
+        }
+      ],
+      "usage": "Correcting somebody who assumed you went, which is most of what a negative past is for.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S08",
+      "display": "bhavān hyaḥ kim kṛtavān?",
+      "script": "भवान् ह्यः किम् कृतवान्?",
+      "cue": "What did you do yesterday? (to a man)",
+      "literal": "your-honour yesterday what done?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's polite you — and now it decides the shape of the past as well: bhavān kṛtavān to a man, bhavatī kṛtavatī to a woman."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Yesterday', opened just above, standing between the person and the question word without bending for either."
+          },
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "delta",
+            "forms": [],
+            "note": "'What', standing where the answer will stand — the middle seat of M2's two, unchanged by the tense around it."
+          },
+          {
+            "display": "karoti",
+            "cue": "does · makes",
+            "tag": "delta",
+            "forms": [],
+            "note": "M4's verb in its past shape: kṛtavān from or about a man, kṛtavatī about a woman. The stem shortens to kṛ, which is worth hearing once."
+          }
+        ],
+        "rules": [4, 6]
+      },
+      "trap": "English needs 'did' twice over — once as the helper and once as the verb. Sanskrit has kṛtavān for the verb and nothing at all for the helper, which is the same hole M4 left in the present.",
+      "sound": "bha-VAAN HYAH kim kri-ta-VAAN. The ṛ of kṛtavān is said ri, so the word is 'kritavaan'. The m of kim becomes a hum before the k, and the visarga of hyaḥ stays as it is before the following k.",
+      "variations": [
+        {
+          "display": "bhavatī hyaḥ kim kṛtavatī?",
+          "script": "भवती ह्यः किम् कृतवती?",
+          "cue": "What did you do yesterday? (to a woman)",
+          "changed": "asked of a woman, and now TWO words move together — the address and the past, agreeing across the sentence"
+        },
+        {
+          "display": "bhavān hyaḥ kutra gatavān?",
+          "script": "भवान् ह्यः कुत्र गतवान्?",
+          "cue": "Where did you go yesterday?",
+          "changed": "where instead of what, on M2's other question word, standing in the same slot the answer will fill"
+        },
+        {
+          "display": "kim bhavān hyaḥ gatavān?",
+          "script": "किम् भवान् ह्यः गतवान्?",
+          "cue": "Did you go yesterday?",
+          "changed": "kim moved to the very front, where it is the yes/no marker instead of the word 'what'"
+        }
+      ],
+      "mistake": {
+        "display": "bhavatī hyaḥ kim kṛtavān?",
+        "why": "bhavatī addresses a woman, so the past has to be kṛtavatī. The polite you already bent for the listener in M2; now the past bends with it, and the two have to bend the same way."
+      },
+      "usage": "The question that opens a conversation about yesterday, and the one this whole module exists to answer.",
+      "register": "neutral",
+      "mnemonic": "Ask a woman, and two words answer for her."
+    },
+    {
+      "id": "L1-M5-S09",
+      "display": "rāmaḥ pustakam likhitavān.",
+      "script": "रामः पुस्तकम् लिखितवान्।",
+      "cue": "Rāma wrote a book.",
+      "literal": "Rāma book written",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma — a man's name",
+            "tag": "delta",
+            "forms": [],
+            "note": "M1's name in its acting shape, and the reason the past at the end of this line is masculine."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "'Book', M1's neuter noun, and the thing written — which, being neuter, it shows in no way at all."
+          },
+          {
+            "display": "likhati",
+            "cue": "writes",
+            "tag": "delta",
+            "forms": [],
+            "note": "M4's verb in its past shape: likhitavān about a man, likhitavatī about a woman — the plain stem with -itavat behind it."
+          }
+        ],
+        "rules": [0, 4]
+      },
+      "trap": "The participle agrees with Rāma and not with the book, even though the book is the thing that was written. What it describes is the one who did it.",
+      "sound": "RAA-mah PUS-ta-kam li-khi-ta-VAAN. rāmaḥ before the p keeps its visarga, a light echo of the ā. The m of pustakam becomes a hum before the l, and kh is a k with a puff.",
+      "variations": [
+        {
+          "display": "sītā pustakam likhitavatī.",
+          "script": "सीता पुस्तकम् लिखितवती।",
+          "cue": "Sītā wrote a book.",
+          "changed": "a woman wrote it, so the past bends — the book, which is neuter, has no say in the matter"
+        },
+        {
+          "display": "rāmaḥ hyaḥ pustakam likhitavān.",
+          "script": "रामः ह्यः पुस्तकम् लिखितवान्।",
+          "cue": "Rāma wrote a book yesterday.",
+          "changed": "the day added behind the name, taking no ending, as ever"
+        },
+        {
+          "display": "rāmaḥ pustakam na likhitavān.",
+          "script": "रामः पुस्तकम् न लिखितवान्।",
+          "cue": "Rāma didn't write a book.",
+          "changed": "negated — na in front of the past, with the object standing untouched in front of it"
+        }
+      ],
+      "usage": "Reporting what somebody made or wrote, and the clearest place to see what the past is agreeing with.",
+      "register": "neutral",
+      "mnemonic": "It agrees with the doer, not with the done."
+    },
+    {
+      "id": "L1-M5-S10",
+      "display": "sītā hyaḥ saṃskṛtam paṭhitavatī.",
+      "script": "सीता ह्यः संस्कृतम् पठितवती।",
+      "cue": "Sītā studied Sanskrit yesterday.",
+      "literal": "Sītā yesterday Sanskrit studied",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sītā",
+            "cue": "Sītā — a woman's name",
+            "tag": "delta",
+            "forms": [],
+            "note": "M1's name, and the reason the last word of this sentence ends -tavatī rather than -tavān."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Yesterday', opened above, sitting between the name and the object and bending for neither of them."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sanskrit', M1's neuter noun, the thing studied — and nothing about the past reaches it."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "delta",
+            "forms": [],
+            "note": "M4's verb in its past shape, feminine here to agree with Sītā: paṭhitavatī against the paṭhitavān a man would earn."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "Four words, one of them a name and one a time word, and the only thing carrying the tense is the last syllable of the last word. There is nowhere else in the sentence for it to hide.",
+      "sound": "SEE-taa HYAH SANS-kri-tam pa-thi-ta-va-TEE. sītā ends in a long ā and joins with nothing. The visarga of hyaḥ stays before the s, and the ṭh of paṭhitavatī is retroflex with a puff.",
+      "variations": [
+        {
+          "display": "rāmaḥ hyaḥ saṃskṛtam paṭhitavān.",
+          "script": "रामः ह्यः संस्कृतम् पठितवान्।",
+          "cue": "Rāma studied Sanskrit yesterday.",
+          "changed": "a man, and the last word is the only one that moves — which is the whole module in one line"
+        },
+        {
+          "display": "sā hyaḥ saṃskṛtam paṭhitavatī.",
+          "script": "सा ह्यः संस्कृतम् पठितवती।",
+          "cue": "She studied Sanskrit yesterday.",
+          "changed": "the pronoun in place of the name; the past agrees with her either way"
+        },
+        {
+          "display": "sītā adya saṃskṛtam paṭhati.",
+          "script": "सीता अद्य संस्कृतम् पठति।",
+          "cue": "Sītā is studying Sanskrit today.",
+          "changed": "brought back into M4's present, where the verb ends -ti and says nothing at all about her being a woman"
+        }
+      ],
+      "usage": "Reporting somebody else's day — and, set against its last variation, the shortest way to feel what the past costs that the present does not.",
+      "register": "neutral",
+      "mnemonic": "Present: person only. Past: person and gender."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M5-C01",
+      "display": "aham hyaḥ gatavatī.",
+      "script": "अहम् ह्यः गतवती।",
+      "cue": "I went yesterday. (a woman speaking)"
+    },
+    {
+      "id": "L1-M5-C02",
+      "display": "saḥ jalam pītavān.",
+      "script": "सः जलम् पीतवान्।",
+      "cue": "He drank water."
+    },
+    {
+      "id": "L1-M5-C03",
+      "display": "sā pustakam paṭhitavatī.",
+      "script": "सा पुस्तकम् पठितवती।",
+      "cue": "She read a book."
+    },
+    {
+      "id": "L1-M5-C04",
+      "display": "rāmaḥ hyaḥ na gatavān.",
+      "script": "रामः ह्यः न गतवान्।",
+      "cue": "Rāma didn't go yesterday."
+    },
+    {
+      "id": "L1-M5-C05",
+      "display": "bhavatī hyaḥ kim kṛtavatī?",
+      "script": "भवती ह्यः किम् कृतवती?",
+      "cue": "What did you do yesterday? (to a woman)"
+    },
+    {
+      "id": "L1-M5-C06",
+      "display": "sītā phalam khāditavatī.",
+      "script": "सीता फलम् खादितवती।",
+      "cue": "Sītā ate a fruit."
+    },
+    {
+      "id": "L1-M5-C07",
+      "display": "aham saṃskṛtam likhitavān.",
+      "script": "अहम् संस्कृतम् लिखितवान्।",
+      "cue": "I wrote Sanskrit. (a man speaking)"
+    },
+    {
+      "id": "L1-M5-C08",
+      "display": "saḥ adya gatavān.",
+      "script": "सः अद्य गतवान्।",
+      "cue": "He went today."
+    },
+    {
+      "id": "L1-M5-C09",
+      "display": "sā jalam na pītavatī.",
+      "script": "सा जलम् न पीतवती।",
+      "cue": "She didn't drink water."
+    },
+    {
+      "id": "L1-M5-C10",
+      "display": "rāmaḥ hyaḥ pustakam likhitavān.",
+      "script": "रामः ह्यः पुस्तकम् लिखितवान्।",
+      "cue": "Rāma wrote a book yesterday."
+    },
+    {
+      "id": "L1-M5-C11",
+      "display": "aham hyaḥ phalam khāditavān.",
+      "script": "अहम् ह्यः फलम् खादितवान्।",
+      "cue": "I ate a fruit yesterday. (a man speaking)"
+    },
+    {
+      "id": "L1-M5-C12",
+      "display": "kim bhavān hyaḥ jalam pītavān?",
+      "script": "किम् भवान् ह्यः जलम् पीतवान्?",
+      "cue": "Did you drink water yesterday?"
+    },
+    {
+      "id": "L1-M5-C13",
+      "display": "sītā hyaḥ kutra gatavatī?",
+      "script": "सीता ह्यः कुत्र गतवती?",
+      "cue": "Where did Sītā go yesterday?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

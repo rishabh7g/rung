@@ -1,0 +1,787 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M7",
+  "title": "Where things are",
+  "job": "Locations and prepositions",
+  "prerequisites": ["L1-M6"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "N + <place>-loc + asti",
+      "N + kutra + asti",
+      "atra / tatra + N + asti",
+      "N-gen + upari / adhaḥ / samīpe / purataḥ / pṛṣṭhataḥ + N + asti",
+      "N-gen + <postposition> + kim + asti",
+      "N + <place>-loc + na + asti"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The LOCATIVE ending alone does at, in and on. gṛhe is 'at home', vidyālaye is 'at school', pustakālaye is 'in the library'. There is no separate word anywhere in the line and nothing has been left out."
+    },
+    {
+      "tag": "interference",
+      "text": "English cannot build any of those sentences without a preposition, so you will feel a gap and you will fill it. Do not fill it. The -e on the end of the noun is 'at', 'in' and 'on' at once, and any word you add is a word too many."
+    },
+    {
+      "tag": "delta",
+      "text": "Position words are POSTPOSITIONS and they take a GENITIVE. pustakasya upari is 'of-the-book on-top'; gṛhasya samīpe is 'of-the-house near'. Moving the word to the back is the small half of the rule — the noun in front of it changing shape is the real one."
+    },
+    {
+      "tag": "delta",
+      "text": "The locative is where something IS and M6's accusative is where something is GOING: gṛhe asti against gṛham gacchati. English hands you 'at' and 'to' as a signal; here the signal is the VERB, and the ending on the place follows it."
+    },
+    {
+      "tag": "free",
+      "text": "kutra asks with M2's grammar unchanged: pustakam kutra asti? No inversion, no do-support, nothing moves. The answer is the same line with atra or tatra standing in kutra's own place."
+    },
+    {
+      "tag": "free",
+      "text": "atra and tatra take no ending at all, exactly like M4's time words. A word that POINTS at a place does not decline; a word that NAMES one does. That is the whole difference between atra and gṛhe."
+    },
+    {
+      "tag": "delta",
+      "text": "asti is M3's verb doing a third job. It was 'there is' and, with an 'of' word, the whole of 'have'; with a place in front of it, it is 'is at'. One verb, and the shape of the sentence around it decides which reading you get."
+    },
+    {
+      "tag": "free",
+      "text": "One ending, three English prepositions. Whether you say at, in or on in English depends on the shape of the thing you are talking about; Sanskrit never asks, and the locative is the same either way."
+    },
+    {
+      "tag": "delta",
+      "text": "The postpositional phrase travels as one piece, and it normally stands in front of the thing it locates: gṛhasya samīpe vidyālayaḥ asti. Read it back to front — 'of-the-house near' — and the English appears."
+    },
+    {
+      "tag": "free",
+      "text": "This module writes one verb and no more. Everything that changed is in the nouns, and asti is enough to say where anything is — there is no 'to be located', no 'to stand', nothing extra to learn."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M7-S01",
+      "display": "pustakam kutra asti?",
+      "script": "पुस्तकम् कुत्र अस्ति?",
+      "cue": "Where is the book?",
+      "literal": "book where is?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's neuter noun, in the naming shape a subject wears. It is the thing being located, so nothing on it changes."
+          },
+          {
+            "display": "kutra",
+            "cue": "where",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's 'where', standing exactly where the answer will stand. It asked about going there; it asks about being there with no change at all."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "M3's verb in its third job: with a place in the sentence it says where something is. One verb covers 'there is', 'have' and 'is at'."
+          }
+        ],
+        "rules": [4, 6]
+      },
+      "trap": "M2's question grammar, untouched by five modules. Nothing inverts, no helper appears, and the verb stays last — kutra simply occupies the slot the answer will occupy.",
+      "sound": "PUS-ta-kam KU-tra AS-ti. The m of pustakam becomes a nasal hum in front of the k. kutra then runs into asti, its final a and the a of asti merging into one long aa — kutrāsti — and the page keeps the two words apart.",
+      "variations": [
+        {
+          "display": "phalam kutra asti?",
+          "script": "फलम् कुत्र अस्ति?",
+          "cue": "Where is the fruit?",
+          "changed": "a different thing looked for, and every other word of the frame holds still"
+        },
+        {
+          "display": "rāmaḥ kutra asti?",
+          "script": "रामः कुत्र अस्ति?",
+          "cue": "Where is Rāma?",
+          "changed": "a person rather than a thing, and asti does not notice the difference between them"
+        },
+        {
+          "display": "bhavataḥ pustakam kutra asti?",
+          "script": "भवतः पुस्तकम् कुत्र अस्ति?",
+          "cue": "Where is your book?",
+          "changed": "M2's 'of your honour' in front of the thing, and the question behind it entirely unchanged"
+        }
+      ],
+      "mistake": {
+        "display": "pustakam kutra gacchati?",
+        "why": "That asks where the book is GOING. gacchati is motion and wants a destination in the accusative; asti is position and wants a place in the locative. English keeps the two apart with 'at' and 'to'; Sanskrit keeps them apart with the verb."
+      },
+      "usage": "The question that starts every search, and the one the whole module is an answer to.",
+      "register": "neutral",
+      "mnemonic": "kutra sits where the answer sits."
+    },
+    {
+      "id": "L1-M7-S02",
+      "display": "pustakam atra asti.",
+      "script": "पुस्तकम् अत्र अस्ति।",
+      "cue": "The book is here.",
+      "literal": "book here is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "The thing located, in its naming shape. Nothing about being somewhere changes the noun that is there."
+          },
+          {
+            "display": "atra",
+            "cue": "here",
+            "tag": "delta",
+            "forms": ["atra"],
+            "note": "'Here'. It takes no ending and never will: it POINTS at a place instead of naming one, and only a named place gets a case."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is at'. It is the only verb this module writes, and it is enough for every sentence in it."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "'Here' looks like it should behave like 'at home' and it does not. gṛhe carries an ending because it names a building; atra carries none because it only points, and a pointing word has nothing to decline.",
+      "sound": "PUS-ta-ka-MA-tra AS-ti. In front of a vowel the m of pustakam stays an m and runs straight on — pustakamatra — and atra then swallows the a of asti into one long aa, atrāsti.",
+      "variations": [
+        {
+          "display": "phalam atra asti.",
+          "script": "फलम् अत्र अस्ति।",
+          "cue": "The fruit is here.",
+          "changed": "a different thing located, with the pointer and the verb untouched"
+        },
+        {
+          "display": "atra pustakam asti.",
+          "script": "अत्र पुस्तकम् अस्ति।",
+          "cue": "Here is the book.",
+          "changed": "the pointer moved to the front, which is where English puts 'here is' — both orders are allowed and neither changes the meaning"
+        },
+        {
+          "display": "pustakam atra na asti.",
+          "script": "पुस्तकम् अत्र न अस्ति।",
+          "cue": "The book is not here.",
+          "changed": "negated, with na immediately in front of the verb exactly as M3 taught it"
+        }
+      ],
+      "usage": "The answer to kutra, and the sentence a pointing hand goes with.",
+      "register": "neutral",
+      "mnemonic": "atra points. It does not bend."
+    },
+    {
+      "id": "L1-M7-S03",
+      "display": "tatra vidyālayaḥ asti.",
+      "script": "तत्र विद्यालयः अस्ति।",
+      "cue": "The school is there.",
+      "literal": "there school is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tatra",
+            "cue": "there",
+            "tag": "delta",
+            "forms": ["tatra"],
+            "note": "'There', atra's opposite number and built the same way. Neither takes an ending, and neither cares where in the line it stands."
+          },
+          {
+            "display": "vidyālayaḥ",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "M6's noun back in its naming shape. Here the school is the thing BEING somewhere, so it is a subject — in M6 it was vidyālayam because it was the destination."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is at'. With a pointing word in front of it, asti alone says the whole sentence."
+          }
+        ],
+        "rules": [5, 8]
+      },
+      "trap": "Two shapes of one noun in two modules: vidyālayam when you are going to it, vidyālayaḥ when it is simply standing somewhere. English writes 'school' both times and lets the verb carry the difference alone.",
+      "sound": "TA-tra vid-YAA-la-yah AS-ti. Said aloud the -aḥ of vidyālayaḥ turns into an o and swallows the a of asti — vidyālayo 'sti — which is the one join this course never writes into a line.",
+      "variations": [
+        {
+          "display": "atra vidyālayaḥ asti.",
+          "script": "अत्र विद्यालयः अस्ति।",
+          "cue": "The school is here.",
+          "changed": "here instead of there, and that one word is the entire change"
+        },
+        {
+          "display": "tatra pustakālayaḥ asti.",
+          "script": "तत्र पुस्तकालयः अस्ति।",
+          "cue": "The library is there.",
+          "changed": "a different building pointed at, and the frame behind it does not move"
+        },
+        {
+          "display": "vidyālayaḥ tatra asti.",
+          "script": "विद्यालयः तत्र अस्ति।",
+          "cue": "The school is there.",
+          "changed": "the pointer after the subject instead of in front of it — free, and the meaning does not shift"
+        }
+      ],
+      "mistake": {
+        "display": "tatra vidyālaye asti.",
+        "why": "vidyālaye means 'at school' — a place that something ELSE is at. Here the school itself is the thing being located, so it wears the naming shape. Two place-words in one line leave nothing left to locate."
+      },
+      "usage": "Pointing something out across a street.",
+      "register": "neutral",
+      "mnemonic": "atra here, tatra there. Neither bends."
+    },
+    {
+      "id": "L1-M7-S04",
+      "display": "rāmaḥ gṛhe asti.",
+      "script": "रामः गृहे अस्ति।",
+      "cue": "Rāma is at home.",
+      "literal": "Rāma home-at is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma — a man's name",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's name in its naming shape, which is what the thing being located always wears."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "delta",
+            "forms": [],
+            "note": "M6's noun in its LOCATIVE shape: gṛhe, 'at home'. The -e is 'at', 'in' and 'on' all at once, and no other word joins it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is at'. It is not a verb of motion, which is exactly why the place in front of it is gṛhe and not gṛham."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "There is no 'at'. English cannot build the sentence without one and Sanskrit cannot use one — the -e on gṛhe is the whole of it, and the word you are reaching for does not exist to be left out.",
+      "sound": "RAA-mo GRI-he AS-ti. The -aḥ of rāmaḥ becomes an o in front of the voiced g. gṛhe then runs into asti, its e swallowing the a — gṛhe 'sti — and, as ever, the page keeps the words whole.",
+      "variations": [
+        {
+          "display": "sītā gṛhe asti.",
+          "script": "सीता गृहे अस्ति।",
+          "cue": "Sītā is at home.",
+          "changed": "a woman in the subject slot, and asti does not agree with gender at all"
+        },
+        {
+          "display": "rāmaḥ gṛham gacchati.",
+          "script": "रामः गृहम् गच्छति।",
+          "cue": "Rāma is going home.",
+          "changed": "the other job of the same noun — the destination ending with a verb of motion, which is M6's half of the pair"
+        },
+        {
+          "display": "rāmaḥ gṛhe na asti.",
+          "script": "रामः गृहे न अस्ति।",
+          "cue": "Rāma is not at home.",
+          "changed": "negated, with na in front of the verb and the place-word untouched behind it"
+        }
+      ],
+      "mistake": {
+        "display": "rāmaḥ gṛham asti.",
+        "why": "gṛham is the destination shape and asti is no verb of motion. A place something is AT takes the locative gṛhe; a place something is GOING to takes gṛham. English hides the whole distinction behind 'at' and 'to'."
+      },
+      "usage": "Saying where somebody is — most often down a telephone.",
+      "register": "neutral",
+      "mnemonic": "gṛhe is at. gṛham is to."
+    },
+    {
+      "id": "L1-M7-S05",
+      "display": "sītā vidyālaye asti.",
+      "script": "सीता विद्यालये अस्ति।",
+      "cue": "Sītā is at school.",
+      "literal": "Sītā school-at is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sītā",
+            "cue": "Sītā — a woman's name",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's name, and the thing located. A feminine subject changes nothing in this frame, because asti never agreed with gender."
+          },
+          {
+            "display": "vidyālayaḥ",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "The locative of M6's noun: vidyālaye, 'at school'. Same -e as gṛhe, on a masculine noun instead of a neuter one."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is at'. Three words is the whole sentence; there is nothing the line is short of."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "English chooses 'at school' here and 'in the library' at the next sentence, on nothing but habit. Sanskrit never asks which preposition a building deserves: both places take the same ending.",
+      "sound": "SEE-taa vid-YAA-la-ye AS-ti. Nothing joins between sītā and vidyālaye — a long aa in front of a v stays as it is — and vidyālaye then runs into asti, vidyālaye 'sti.",
+      "variations": [
+        {
+          "display": "rāmaḥ vidyālaye asti.",
+          "script": "रामः विद्यालये अस्ति।",
+          "cue": "Rāma is at school.",
+          "changed": "a man in the subject slot and not one other letter moved"
+        },
+        {
+          "display": "sītā vidyālayam gacchati.",
+          "script": "सीता विद्यालयम् गच्छति।",
+          "cue": "Sītā is going to school.",
+          "changed": "the accusative with a verb of motion again — the pair that decides which ending a place wears"
+        },
+        {
+          "display": "sītā kutra asti?",
+          "script": "सीता कुत्र अस्ति?",
+          "cue": "Where is Sītā?",
+          "changed": "the question this line answers, with kutra standing in the place-word's own slot"
+        }
+      ],
+      "usage": "Saying where somebody spends their day.",
+      "register": "neutral",
+      "mnemonic": "One ending. Three English prepositions."
+    },
+    {
+      "id": "L1-M7-S06",
+      "display": "rāmaḥ pustakālaye asti.",
+      "script": "रामः पुस्तकालये अस्ति।",
+      "cue": "Rāma is in the library.",
+      "literal": "Rāma library-in is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma — a man's name",
+            "tag": "free",
+            "forms": [],
+            "note": "The thing located, in its naming shape, for the third time in this module. The subject slot never changes for a place."
+          },
+          {
+            "display": "pustakālayaḥ",
+            "cue": "library",
+            "tag": "delta",
+            "forms": ["pustakālayaḥ", "pustakālaye", "pustakālayam"],
+            "note": "'Library' — pustaka, book, and ālaya, a seat for it, written as one word because a join inside a word is written in full. pustakālaye is 'in the library'."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is at', and 'is in' too. The verb does not change with the English preposition, because the English preposition is not here."
+          }
+        ],
+        "rules": [0, 7]
+      },
+      "trap": "English switches from 'at' to 'in' between a school and a library and could not tell you why it did. The Sanskrit ending is the same -e in both, and the switch simply does not happen.",
+      "sound": "RAA-mah pus-ta-KAA-la-ye AS-ti. The visarga of rāmaḥ stays exactly as it is in front of the voiceless p. pustakālaye then runs into asti as the other place-words did.",
+      "variations": [
+        {
+          "display": "sītā pustakālaye asti.",
+          "script": "सीता पुस्तकालये अस्ति।",
+          "cue": "Sītā is in the library.",
+          "changed": "a woman located instead of a man, with the building and the verb untouched"
+        },
+        {
+          "display": "pustakam pustakālaye asti.",
+          "script": "पुस्तकम् पुस्तकालये अस्ति।",
+          "cue": "The book is in the library.",
+          "changed": "a thing rather than a person located — and the word for the place is built out of the word for the thing"
+        },
+        {
+          "display": "rāmaḥ pustakālayam gacchati.",
+          "script": "रामः पुस्तकालयम् गच्छति।",
+          "cue": "Rāma is going to the library.",
+          "changed": "the destination ending with a verb of motion, which is the contrast the whole module is built on"
+        }
+      ],
+      "usage": "Saying where somebody is when the place is a building with a job.",
+      "register": "neutral",
+      "mnemonic": "pustaka plus ālaya. A seat for books."
+    },
+    {
+      "id": "L1-M7-S07",
+      "display": "pustakasya upari phalam asti.",
+      "script": "पुस्तकस्य उपरि फलम् अस्ति।",
+      "cue": "There is a fruit on the book.",
+      "literal": "book's on-top fruit is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pustakasya",
+            "cue": "the book's · of the book",
+            "tag": "delta",
+            "forms": ["pustakasya"],
+            "note": "The 'of' shape of M1's pustakam. A postposition demands it: upari cannot stand behind the bare noun any more than English 'on' can stand behind nothing."
+          },
+          {
+            "display": "upari",
+            "cue": "on top of · above",
+            "tag": "interference",
+            "forms": ["upari"],
+            "note": "'On top of', and it comes AFTER what it governs. English puts 'on' first and leaves the noun alone; this comes last and puts the noun into the genitive."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "The thing located, in its naming shape. The genitive belongs to the reference point, never to what is being placed."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'There is'. M3's existence reading and this module's location reading are the same word doing the same work."
+          }
+        ],
+        "rules": [2, 8]
+      },
+      "trap": "English puts 'on' first and leaves the book alone; Sanskrit puts upari last and changes the book. Read the Sanskrit back to front — 'of-the-book on-top' — and it turns into a possessive English would never use here.",
+      "sound": "pus-ta-ka-SYO-pa-ri PHA-lam AS-ti. Said aloud the a of pustakasya and the u of upari merge into a single o — pustakasyopari — and phalam then runs straight into asti.",
+      "variations": [
+        {
+          "display": "phalam pustakasya upari asti.",
+          "script": "फलम् पुस्तकस्य उपरि अस्ति।",
+          "cue": "The fruit is on the book.",
+          "changed": "the located thing moved to the front — the phrase travels as one piece and the genitive stays glued to upari"
+        },
+        {
+          "display": "pustakasya upari phalam na asti.",
+          "script": "पुस्तकस्य उपरि फलम् न अस्ति।",
+          "cue": "There is no fruit on the book.",
+          "changed": "negated, with na in front of the verb and the phrase in front of it undisturbed"
+        },
+        {
+          "display": "pustakasya upari kim asti?",
+          "script": "पुस्तकस्य उपरि किम् अस्ति?",
+          "cue": "What is on the book?",
+          "changed": "turned into a question, with M2's kim standing exactly where its answer will stand"
+        }
+      ],
+      "mistake": {
+        "display": "upari pustakam phalam asti.",
+        "why": "Two English habits in one line: the position word put in front, and the book left in its naming shape. upari comes AFTER what it governs, and what it governs goes into the genitive — pustakasya upari."
+      },
+      "usage": "Saying where a thing has been left.",
+      "register": "neutral",
+      "mnemonic": "Of-the-book on-top. Back to front."
+    },
+    {
+      "id": "L1-M7-S08",
+      "display": "phalasya adhaḥ pustakam asti.",
+      "script": "फलस्य अधः पुस्तकम् अस्ति।",
+      "cue": "The book is under the fruit.",
+      "literal": "fruit's under book is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "phalasya",
+            "cue": "the fruit's · of the fruit",
+            "tag": "delta",
+            "forms": ["phalasya"],
+            "note": "The 'of' shape of M1's phalam. The genitive is not part of pustakasya — it goes on whichever noun is the reference point, and here that is the fruit."
+          },
+          {
+            "display": "adhaḥ",
+            "cue": "below · underneath",
+            "tag": "delta",
+            "forms": ["adhaḥ"],
+            "note": "'Below', upari's opposite and built the same way: it comes after the noun and the noun goes into the genitive."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "The thing located, naming shape again. In the sentence before it was the reference point and wore the genitive; the words swapped jobs, not shapes at random."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is'. The only verb this module writes, and it has now covered a pointer, a locative and two postpositions."
+          }
+        ],
+        "rules": [2, 8]
+      },
+      "trap": "This is the sentence before it, described from the other end of the same desk. The genitive moved because the reference point moved — it is not stuck to pustakam and it is not part of the position word.",
+      "sound": "pha-la-SYAA-dhah PUS-ta-kam AS-ti. The a of phalasya and the a of adhaḥ merge into one long aa — phalasyādhaḥ — and the visarga of adhaḥ then stays exactly as it is in front of the voiceless p.",
+      "variations": [
+        {
+          "display": "pustakam phalasya adhaḥ asti.",
+          "script": "पुस्तकम् फलस्य अधः अस्ति।",
+          "cue": "The book is under the fruit.",
+          "changed": "the located thing in front and the phrase behind it, and the sentence means precisely what it did"
+        },
+        {
+          "display": "phalasya adhaḥ pustakam na asti.",
+          "script": "फलस्य अधः पुस्तकम् न अस्ति।",
+          "cue": "There is no book under the fruit.",
+          "changed": "negated, and na has taken its usual slot immediately in front of the verb"
+        },
+        {
+          "display": "phalasya upari pustakam asti.",
+          "script": "फलस्य उपरि पुस्तकम् अस्ति।",
+          "cue": "The book is on the fruit.",
+          "changed": "the position word swapped and nothing else touched — which is the whole of what a position word does"
+        }
+      ],
+      "usage": "Describing a table to somebody who cannot see it.",
+      "register": "neutral",
+      "mnemonic": "Change the postposition, not the ending."
+    },
+    {
+      "id": "L1-M7-S09",
+      "display": "gṛhasya samīpe vidyālayaḥ asti.",
+      "script": "गृहस्य समीपे विद्यालयः अस्ति।",
+      "cue": "The school is near the house.",
+      "literal": "house's near school is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "delta",
+            "forms": [],
+            "note": "M6's noun in its 'of' shape: gṛhasya, 'of the house'. Three shapes now — gṛham to it, gṛhe at it, gṛhasya of it — and one word under all three."
+          },
+          {
+            "display": "samīpe",
+            "cue": "near · close to",
+            "tag": "interference",
+            "forms": ["samīpe"],
+            "note": "'Near', after the noun it governs. English says 'near the house' in that order and leaves the house alone; this says 'of-the-house near'."
+          },
+          {
+            "display": "vidyālayaḥ",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "The thing located, in its naming shape. A postpositional phrase in front of it does not touch it at all."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is'. Four words, and the only one that is not a noun or a position word is this."
+          }
+        ],
+        "rules": [2, 8]
+      },
+      "trap": "'Near the house' is two words in English and two here as well — but they are in the opposite order and the house has changed shape. Only the second half of that is hard to remember, and it is the half that matters.",
+      "sound": "gri-HA-sya sa-MEE-pe vid-YAA-la-yah AS-ti. Nothing joins between gṛhasya and samīpe. At the end, the -aḥ of vidyālayaḥ becomes an o and swallows the a of asti — vidyālayo 'sti.",
+      "variations": [
+        {
+          "display": "gṛhasya samīpe pustakālayaḥ asti.",
+          "script": "गृहस्य समीपे पुस्तकालयः अस्ति।",
+          "cue": "The library is near the house.",
+          "changed": "a different building located, with the phrase in front of it entirely unchanged"
+        },
+        {
+          "display": "gṛhasya samīpe kim asti?",
+          "script": "गृहस्य समीपे किम् अस्ति?",
+          "cue": "What is near the house?",
+          "changed": "a question, with kim standing where the answer will stand and the phrase not moving for it"
+        },
+        {
+          "display": "vidyālayaḥ gṛhasya samīpe asti.",
+          "script": "विद्यालयः गृहस्य समीपे अस्ति।",
+          "cue": "The school is near the house.",
+          "changed": "the subject first, which is English's own order — and the phrase still travels behind it as one piece"
+        }
+      ],
+      "mistake": {
+        "display": "gṛham samīpe vidyālayaḥ asti.",
+        "why": "samīpe wants a genitive in front of it and gṛham is not one — it is M6's destination shape. A postposition governs 'of the house', never 'the house', and no amount of word order will repair the ending."
+      },
+      "usage": "Giving directions, and describing where you live.",
+      "register": "neutral",
+      "mnemonic": "A postposition eats a genitive."
+    },
+    {
+      "id": "L1-M7-S10",
+      "display": "gṛhasya purataḥ pustakālayaḥ asti.",
+      "script": "गृहस्य पुरतः पुस्तकालयः अस्ति।",
+      "cue": "The library is in front of the house.",
+      "literal": "house's in-front library is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "delta",
+            "forms": [],
+            "note": "gṛhasya again, the 'of' shape. Every one of this module's five position words takes exactly this, and none of them takes anything else."
+          },
+          {
+            "display": "purataḥ",
+            "cue": "in front of · before",
+            "tag": "interference",
+            "forms": ["purataḥ"],
+            "note": "'In front of', after the noun. The visarga on the end is part of the word itself and not a case ending — the case is on gṛhasya, where it belongs."
+          },
+          {
+            "display": "pustakālayaḥ",
+            "cue": "library",
+            "tag": "delta",
+            "forms": [],
+            "note": "The thing located, naming shape. It is the library that is in front of the house, and the endings say so without a word of help."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Is'. The last of ten sentences and still the only verb the module has needed."
+          },
+          {
+            "display": "pṛṣṭhataḥ",
+            "cue": "behind",
+            "tag": "delta",
+            "forms": ["pṛṣṭhataḥ"],
+            "note": "'Behind', purataḥ's opposite and governed identically: gṛhasya pṛṣṭhataḥ. Swapping one for the other changes nothing else in the line."
+          }
+        ],
+        "rules": [2, 9]
+      },
+      "trap": "purataḥ and pṛṣṭhataḥ both end in a visarga and neither of them is a case ending — they are whole words that happen to look like endings. What carries the case is the noun standing in front of them.",
+      "sound": "gri-HA-sya pu-ra-TAH pus-ta-KAA-la-yah AS-ti. The visarga of purataḥ stays as it is in front of the voiceless p, and at the end pustakālayaḥ runs into asti as pustakālayo 'sti.",
+      "variations": [
+        {
+          "display": "gṛhasya pṛṣṭhataḥ pustakālayaḥ asti.",
+          "script": "गृहस्य पृष्ठतः पुस्तकालयः अस्ति।",
+          "cue": "The library is behind the house.",
+          "changed": "the opposite position word in the same slot, with the genitive in front of it untouched — the pair works exactly alike"
+        },
+        {
+          "display": "gṛhasya purataḥ vidyālayaḥ asti.",
+          "script": "गृहस्य पुरतः विद्यालयः अस्ति।",
+          "cue": "The school is in front of the house.",
+          "changed": "a different building located, and every other word holds still"
+        },
+        {
+          "display": "gṛhasya purataḥ kim asti?",
+          "script": "गृहस्य पुरतः किम् अस्ति?",
+          "cue": "What is in front of the house?",
+          "changed": "a question, and the postpositional phrase does not move to make room for it"
+        }
+      ],
+      "usage": "The sentence a taxi driver needs, and the one that describes a street.",
+      "register": "neutral",
+      "mnemonic": "Five position words. One genitive behind them all."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M7-C01",
+      "display": "phalam gṛhe asti.",
+      "script": "फलम् गृहे अस्ति।",
+      "cue": "The fruit is at home."
+    },
+    {
+      "id": "L1-M7-C02",
+      "display": "pustakālayaḥ kutra asti?",
+      "script": "पुस्तकालयः कुत्र अस्ति?",
+      "cue": "Where is the library?"
+    },
+    {
+      "id": "L1-M7-C03",
+      "display": "jalam atra asti.",
+      "script": "जलम् अत्र अस्ति।",
+      "cue": "The water is here."
+    },
+    {
+      "id": "L1-M7-C04",
+      "display": "rāmaḥ tatra asti.",
+      "script": "रामः तत्र अस्ति।",
+      "cue": "Rāma is there."
+    },
+    {
+      "id": "L1-M7-C05",
+      "display": "sītā pustakālayam gacchati.",
+      "script": "सीता पुस्तकालयम् गच्छति।",
+      "cue": "Sītā is going to the library."
+    },
+    {
+      "id": "L1-M7-C06",
+      "display": "pustakasya samīpe jalam asti.",
+      "script": "पुस्तकस्य समीपे जलम् अस्ति।",
+      "cue": "There is water near the book."
+    },
+    {
+      "id": "L1-M7-C07",
+      "display": "rāmaḥ gṛhasya samīpe asti.",
+      "script": "रामः गृहस्य समीपे अस्ति।",
+      "cue": "Rāma is near the house."
+    },
+    {
+      "id": "L1-M7-C08",
+      "display": "gṛhasya purataḥ phalam asti.",
+      "script": "गृहस्य पुरतः फलम् अस्ति।",
+      "cue": "There is a fruit in front of the house."
+    },
+    {
+      "id": "L1-M7-C09",
+      "display": "bhavataḥ pustakam atra asti.",
+      "script": "भवतः पुस्तकम् अत्र अस्ति।",
+      "cue": "Your book is here."
+    },
+    {
+      "id": "L1-M7-C10",
+      "display": "phalasya upari jalam na asti.",
+      "script": "फलस्य उपरि जलम् न अस्ति।",
+      "cue": "There is no water on the fruit."
+    },
+    {
+      "id": "L1-M7-C11",
+      "display": "bhavataḥ gṛham kutra asti?",
+      "script": "भवतः गृहम् कुत्र अस्ति?",
+      "cue": "Where is your house?"
+    },
+    {
+      "id": "L1-M7-C12",
+      "display": "pustakam vidyālaye asti.",
+      "script": "पुस्तकम् विद्यालये अस्ति।",
+      "cue": "The book is at school."
+    },
+    {
+      "id": "L1-M7-C13",
+      "display": "gṛhasya pṛṣṭhataḥ pustakam asti.",
+      "script": "गृहस्य पृष्ठतः पुस्तकम् अस्ति।",
+      "cue": "There is a book behind the house."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

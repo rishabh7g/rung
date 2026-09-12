@@ -1,0 +1,730 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M4",
+  "title": "My day",
+  "job": "Daily habits and time words",
+  "prerequisites": ["L1-M3"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": ["simple_present"],
+    "allowedPatterns": [
+      "V-āmi",
+      "N-acc + V-āmi",
+      "<time> + V-āmi",
+      "<time> + N-acc + V-āmi",
+      "aham + N-acc + V-āmi",
+      "bhavān/bhavatī + <time> + V-ati",
+      "<name> + <time> + V-ati",
+      "na + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The present has three singular endings: -mi for me, -si for the blunt you, -ti for he, she, and for bhavān and bhavatī. gacchāmi, gacchasi, gacchati. This course writes -mi and -ti and never -si, because -si belongs to tvam, which L2 opens — you need to know the middle one exists in order to read the other two, and that is all."
+    },
+    {
+      "tag": "delta",
+      "text": "The subject is dropped whenever the ending already supplies it. gacchāmi on its own is a whole sentence, not a fragment and not poetry: the -mi has said who, and saying it twice is the only thing that would be odd."
+    },
+    {
+      "tag": "interference",
+      "text": "Repeating aham in every sentence is the single clearest English accent in this language. English needs a subject because its verb barely marks one; Sanskrit's verb marks it every time, so aham is EMPHASIS — 'I, at any rate, am studying Sanskrit' — and not the ordinary way to say it."
+    },
+    {
+      "tag": "delta",
+      "text": "Time words take no case and no preposition at all. adya, prātaḥ, sāyam and pratidinam just stand in the sentence, unchanged, with nothing in front of them. There is no 'in the' and nothing for the -am ending to do."
+    },
+    {
+      "tag": "delta",
+      "text": "One Sanskrit present covers both English presents. paṭhāmi is 'I read' and 'I am reading' alike, and pratidinam paṭhāmi is 'I read every day'. Which one it means is the time word's business, or the situation's, never the verb's."
+    },
+    {
+      "tag": "interference",
+      "text": "There is no 'am …-ing' to assemble, so there is nothing to reach for when English would build one. A learner who hunts for the word to put beside paṭhāmi usually lands on asti — and that says the reading EXISTS, which is M3's verb doing M3's job in the wrong sentence."
+    },
+    {
+      "tag": "free",
+      "text": "Here is the relief: the present marks the speaker's gender NOWHERE. gacchāmi is what a man says and what a woman says, and paṭhati is the same for both. After M1's chātraḥ / chātrā and M2's kuśalī / kuśalinī this is a rest — and M5 takes it away again."
+    },
+    {
+      "tag": "delta",
+      "text": "A verb is a stem with a changeable end, and that is worth learning once: paṭhati and paṭhāmi are the same word wearing two endings, and the same stem carries the past and the future you meet next. Five verbs learned this way are five verbs, not twenty-five."
+    },
+    {
+      "tag": "delta",
+      "text": "The verb is still last, and the time word is still first. prātaḥ phalam khādāmi runs time, then the thing, then the doing — and the object slot in the middle is exactly where M3 put it."
+    },
+    {
+      "tag": "free",
+      "text": "bhavān takes the very same -ti that rāmaḥ takes, and now you can see why M2 said so: 'your honour eats' and 'Rāma eats' are the same verb form, because bhavān is a third person that happens to be standing in front of you."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M4-S01",
+      "display": "pustakam paṭhāmi.",
+      "script": "पुस्तकम् पठामि।",
+      "cue": "I am reading a book.",
+      "literal": "book I-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "'Book', a neuter noun opened in M1 — and as M3 showed, it is spelled the same acting or acted on."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "delta",
+            "forms": ["paṭhati", "paṭhāmi", "paṭhitavān", "paṭhitavatī", "paṭhiṣyāmi"],
+            "note": "The verb for reading and for studying, in the shapes this level writes: paṭhati, paṭhāmi, the past paṭhitavān / paṭhitavatī and the future paṭhiṣyāmi."
+          }
+        ],
+        "rules": [1, 4]
+      },
+      "trap": "There is no subject in this sentence and none is missing. English cannot leave 'I' out, so an English eye reads a gap here; the -āmi is what fills it, and it fills it completely.",
+      "sound": "PUS-ta-kam PA-thaa-mi. The ṭh is retroflex — the tongue curls back to the roof of the mouth — and it carries a puff, which is what the h in the spelling is for. Before the p the m of pustakam becomes a nasal hum.",
+      "variations": [
+        {
+          "display": "pustakam paṭhati.",
+          "script": "पुस्तकम् पठति।",
+          "cue": "He is reading a book.",
+          "changed": "one ending swapped, and the person changes — with nobody named anywhere, the ending is the only thing saying who"
+        },
+        {
+          "display": "pustakam na paṭhāmi.",
+          "script": "पुस्तकम् न पठामि।",
+          "cue": "I'm not reading a book.",
+          "changed": "M3's negation over a subjectless sentence; na still stands immediately in front of the verb"
+        },
+        {
+          "display": "kim bhavān pustakam paṭhati?",
+          "script": "किम् भवान् पुस्तकम् पठति?",
+          "cue": "Are you reading a book?",
+          "changed": "asked, and a subject appears only because the question has to name who is being asked"
+        }
+      ],
+      "mistake": {
+        "display": "pustakam paṭhāmi asti.",
+        "why": "English builds 'I am reading' out of two words, and a learner reaching for that 'am' lands on asti. paṭhāmi is already both 'I read' and 'I am reading'; adding asti says instead that the reading exists, which is M3's verb doing M3's job in the wrong sentence."
+      },
+      "usage": "How you say what you are doing right now, and what you do generally — the same words for both.",
+      "register": "neutral",
+      "mnemonic": "The ending is the subject."
+    },
+    {
+      "id": "L1-M4-S02",
+      "display": "gacchāmi.",
+      "script": "गच्छामि।",
+      "cue": "I'm going.",
+      "literal": "I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's verb in its I-shape, gacchāmi. One word, and a complete sentence: the -mi ending is the subject."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "A single word looks too short to be a sentence, and in English it would be. Here nothing has been left out — the verb is carrying both halves of the job at once.",
+      "sound": "GACH-chhaa-mi. The cch is one long held ch rather than two sounds, and the ā that follows is long — hold it. Standing alone, the word has no neighbour to join with.",
+      "variations": [
+        {
+          "display": "na gacchāmi.",
+          "script": "न गच्छामि।",
+          "cue": "I'm not going.",
+          "changed": "one more word and the whole sentence is refused; na goes in front of the verb even when the verb is all there is"
+        },
+        {
+          "display": "gacchati.",
+          "script": "गच्छति।",
+          "cue": "He is going.",
+          "changed": "one ending swapped, and the sentence is about somebody else — still one word long"
+        },
+        {
+          "display": "adya gacchāmi.",
+          "script": "अद्य गच्छामि।",
+          "cue": "I'm going today.",
+          "changed": "a time word added in front, taking no ending and needing no preposition to hold it there"
+        }
+      ],
+      "mistake": {
+        "display": "aham.",
+        "why": "The pronoun is not the sentence — the verb is. Drop gacchāmi and keep aham and nothing is left; drop aham and keep gacchāmi and the sentence is complete. That asymmetry is the whole of this module."
+      },
+      "usage": "The ordinary answer to 'where are you going?', and the thing you say on standing up to leave.",
+      "register": "neutral",
+      "mnemonic": "One verb, one sentence."
+    },
+    {
+      "id": "L1-M4-S03",
+      "display": "adya saṃskṛtam paṭhāmi.",
+      "script": "अद्य संस्कृतम् पठामि।",
+      "cue": "Today I'm studying Sanskrit.",
+      "literal": "today Sanskrit I-study",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "delta",
+            "forms": ["adya"],
+            "note": "'Today'. It never bends and never takes anything in front of it — a time word simply stands in the sentence."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sanskrit', a neuter noun opened in M1. As the thing being studied it keeps exactly the shape you already know."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb for reading and for studying, in the shapes this level writes: paṭhati, paṭhāmi, the past paṭhitavān / paṭhitavatī and the future paṭhiṣyāmi."
+          }
+        ],
+        "rules": [3, 4]
+      },
+      "trap": "English needs a preposition for most times — 'in the morning', 'on Monday'. Sanskrit needs nothing at all for these words: no preposition, no ending, no agreement with anything.",
+      "sound": "AD-ya SANS-kri-tam PA-thaa-mi. The ṛ of saṃskṛtam is said ri, so the word comes out 'sanskritam'. Before the p the m of saṃskṛtam becomes a nasal hum, while adya joins nothing in front of it.",
+      "variations": [
+        {
+          "display": "pratidinam saṃskṛtam paṭhāmi.",
+          "script": "प्रतिदिनम् संस्कृतम् पठामि।",
+          "cue": "I study Sanskrit every day.",
+          "changed": "the time word swapped and the verb untouched — one present serves 'today' and 'every day' alike"
+        },
+        {
+          "display": "adya saṃskṛtam na paṭhāmi.",
+          "script": "अद्य संस्कृतम् न पठामि।",
+          "cue": "I'm not studying Sanskrit today.",
+          "changed": "negated, with na in front of the verb and the time word left where it was"
+        },
+        {
+          "display": "rāmaḥ adya saṃskṛtam paṭhati.",
+          "script": "रामः अद्य संस्कृतम् पठति।",
+          "cue": "Rāma is studying Sanskrit today.",
+          "changed": "a named subject and the he/she ending; the time word does not care whose day it is"
+        }
+      ],
+      "mistake": {
+        "display": "adyam saṃskṛtam paṭhāmi.",
+        "why": "adya takes no ending at all. A learner who has just met M3's -am object ending reaches for it here too, but a time word is not the thing the verb acts on — it simply stands in the sentence, unchanged, for ever."
+      },
+      "usage": "Saying what today holds, which is most of what small talk is made of.",
+      "register": "neutral",
+      "mnemonic": "Time words never bend."
+    },
+    {
+      "id": "L1-M4-S04",
+      "display": "prātaḥ phalam khādāmi.",
+      "script": "प्रातः फलम् खादामि।",
+      "cue": "I eat a fruit in the morning.",
+      "literal": "morning fruit I-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prātaḥ",
+            "cue": "in the morning · early",
+            "tag": "delta",
+            "forms": ["prātaḥ"],
+            "note": "'In the morning'. The English needs three words and Sanskrit needs one, which takes no ending and no preposition."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "'Fruit', a neuter noun opened in M1 — and neuter means the object slot cannot be seen on it."
+          },
+          {
+            "display": "khādati",
+            "cue": "eats",
+            "tag": "delta",
+            "forms": ["khādati", "khādāmi", "khāditavān", "khāditavatī", "khādiṣyāmi"],
+            "note": "'Eat', in the shapes this level writes: khādati, khādāmi, the past khāditavān / khāditavatī and the future khādiṣyāmi."
+          }
+        ],
+        "rules": [3, 8]
+      },
+      "trap": "'In the morning' is three English words and one Sanskrit word. There is nothing in prātaḥ standing in for 'in' or 'the' — the single word is the whole of the phrase.",
+      "sound": "PRAA-tah PHA-lam KHAA-daa-mi. prātaḥ ends in a visarga, a light echo of the ā before it — 'praa-ta-ha' — and before the ph it simply stays as it is. ph is a p with a puff behind it, never the f of 'phone'; kh is the same puff on a k.",
+      "variations": [
+        {
+          "display": "prātaḥ phalam khādati.",
+          "script": "प्रातः फलम् खादति।",
+          "cue": "He eats a fruit in the morning.",
+          "changed": "the ending moves to -ati and the sentence is about somebody else, with nobody named at all"
+        },
+        {
+          "display": "sāyam phalam khādāmi.",
+          "script": "सायम् फलम् खादामि।",
+          "cue": "I eat a fruit in the evening.",
+          "changed": "morning for evening — the two words swap cleanly, because neither of them takes an ending to adjust"
+        },
+        {
+          "display": "bhavān prātaḥ kim khādati?",
+          "script": "भवान् प्रातः किम् खादति?",
+          "cue": "What do you eat in the morning?",
+          "changed": "asked, with kim standing in the slot the answer will fill and the time word keeping its own place"
+        }
+      ],
+      "usage": "Talking about what you do at a fixed time of day — the backbone of describing a routine.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S05",
+      "display": "sāyam likhāmi.",
+      "script": "सायम् लिखामि।",
+      "cue": "I write in the evening.",
+      "literal": "evening I-write",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sāyam",
+            "cue": "in the evening",
+            "tag": "delta",
+            "forms": ["sāyam"],
+            "note": "'In the evening'. The -am on the end is part of the word and not the object ending — nothing is being acted on here."
+          },
+          {
+            "display": "likhati",
+            "cue": "writes",
+            "tag": "delta",
+            "forms": ["likhati", "likhāmi", "likhitavān", "likhitavatī", "lekhiṣyāmi"],
+            "note": "'Write', in the shapes this level writes: likhati, likhāmi, the past likhitavān / likhitavatī and the future lekhiṣyāmi."
+          }
+        ],
+        "rules": [1, 3]
+      },
+      "trap": "sāyam ends in -am, which is exactly the object ending M3 taught, and it is not that ending. A time word is never the thing a verb acts on; the resemblance is an accident of spelling.",
+      "sound": "SAA-yam LI-khaa-mi. The kh is a k with a puff behind it, one sound rather than two. Before the l the m of sāyam becomes a nasal hum — sāyaṃ likhāmi — while the page keeps the m.",
+      "variations": [
+        {
+          "display": "sāyam likhati.",
+          "script": "सायम् लिखति।",
+          "cue": "He writes in the evening.",
+          "changed": "the ending alone carries the change; there is still nobody named anywhere in the line"
+        },
+        {
+          "display": "sāyam saṃskṛtam likhāmi.",
+          "script": "सायम् संस्कृतम् लिखामि।",
+          "cue": "In the evening I write Sanskrit.",
+          "changed": "an object threaded in between the time word and the verb — the verb stays last, as it always does"
+        },
+        {
+          "display": "kim bhavatī sāyam likhati?",
+          "script": "किम् भवती सायम् लिखति?",
+          "cue": "Do you write in the evening? (to a woman)",
+          "changed": "asked of a woman, with M2's marker in front and the same third-person ending underneath"
+        }
+      ],
+      "usage": "Fitting an activity to a part of the day, which is how a routine gets described.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S06",
+      "display": "pratidinam jalam pibāmi.",
+      "script": "प्रतिदिनम् जलम् पिबामि।",
+      "cue": "I drink water every day.",
+      "literal": "every-day water I-drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pratidinam",
+            "cue": "every day · daily",
+            "tag": "delta",
+            "forms": ["pratidinam"],
+            "note": "'Every day', built from prati and dina inside one word. It bends for nothing, like every time word here."
+          },
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water', the neuter noun M3 opened. Drinking it does not change its shape, because neuters never show the object ending."
+          },
+          {
+            "display": "pibati",
+            "cue": "drinks",
+            "tag": "delta",
+            "forms": ["pibati", "pibāmi", "pītavān", "pītavatī", "pāsyāmi"],
+            "note": "'Drink', in the shapes this level writes: pibati, pibāmi, the past pītavān / pītavatī and the future pāsyāmi — the past drops the b."
+          }
+        ],
+        "rules": [4, 3]
+      },
+      "trap": "English needs a second construction for a habit — 'I drink' against 'I am drinking'. Sanskrit has one present and lets pratidinam do the rest, so there is no second form to choose.",
+      "sound": "pra-ti-DI-nam JA-lam PI-baa-mi. Both m's soften to a nasal hum before the next word. The d and the t of pratidinam are dental, tongue against the teeth, and the short i of pibāmi is quick before the long ā.",
+      "variations": [
+        {
+          "display": "pratidinam jalam pibati.",
+          "script": "प्रतिदिनम् जलम् पिबति।",
+          "cue": "He drinks water every day.",
+          "changed": "the person carried entirely by the ending, with the habit word untouched"
+        },
+        {
+          "display": "adya jalam na pibāmi.",
+          "script": "अद्य जलम् न पिबामि।",
+          "cue": "I'm not drinking water today.",
+          "changed": "a different day and a refusal, both slotted in without disturbing the verb's place at the end"
+        },
+        {
+          "display": "pratidinam saṃskṛtam paṭhāmi.",
+          "script": "प्रतिदिनम् संस्कृतम् पठामि।",
+          "cue": "I study Sanskrit every day.",
+          "changed": "the same frame around a different verb — pratidinam sits in front of any of them without adjusting"
+        }
+      ],
+      "usage": "Habits: what you do daily, and what you are doing this minute, in one and the same form.",
+      "register": "neutral",
+      "mnemonic": "One present. Two English tenses."
+    },
+    {
+      "id": "L1-M4-S07",
+      "display": "bhavān kim karoti?",
+      "script": "भवान् किम् करोति?",
+      "cue": "What are you doing?",
+      "literal": "your-honour what does?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's polite you — bhavān to a man, bhavatī to a woman — and the reason the verb beside it carries the he/she ending."
+          },
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two jobs, sorted by place. Standing where the answer will stand it is 'what'; at the very front it is the yes/no marker."
+          },
+          {
+            "display": "karoti",
+            "cue": "does · makes",
+            "tag": "delta",
+            "forms": ["karoti", "karomi", "kṛtavān", "kṛtavatī", "kariṣyāmi"],
+            "note": "'Do · make', in the shapes this level writes: karoti, karomi, the past kṛtavān / kṛtavatī and the future kariṣyāmi."
+          }
+        ],
+        "rules": [0, 9]
+      },
+      "trap": "English needs 'do' twice over to ask this — once as the helper and once as the verb. Sanskrit has karoti for the verb and nothing at all for the helper, because there is no helper to have.",
+      "sound": "bha-VAAN kim KA-ro-ti. The m of kim becomes a hum before the k — kiṃ karoti. The r is a single quick tap of the tongue, not the English glide, and the o is long and clean.",
+      "variations": [
+        {
+          "display": "bhavatī kim karoti?",
+          "script": "भवती किम् करोति?",
+          "cue": "What are you doing? (to a woman)",
+          "changed": "asked of a woman; the verb does not move, because it was third person to begin with"
+        },
+        {
+          "display": "kim karomi?",
+          "script": "किम् करोमि?",
+          "cue": "What am I to do?",
+          "changed": "the I-ending, and no subject at all — kim is the only thing left standing in front of the verb"
+        },
+        {
+          "display": "rāmaḥ kim karoti?",
+          "script": "रामः किम् करोति?",
+          "cue": "What is Rāma doing?",
+          "changed": "asked about somebody who is not here, on the very same ending bhavān takes"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān kim karoṣi?",
+        "why": "bhavān is closer to 'your honour' than to 'you', so the verb beside it takes the he/she ending: karoti. karoṣi is the -si ending of the blunt second person this level does not speak, and putting it next to bhavān mixes two registers in three words."
+      },
+      "usage": "The everyday opener, in person and on the phone alike.",
+      "register": "neutral",
+      "mnemonic": "Polite you, he-she ending."
+    },
+    {
+      "id": "L1-M4-S08",
+      "display": "rāmaḥ pratidinam paṭhati.",
+      "script": "रामः प्रतिदिनम् पठति।",
+      "cue": "Rāma reads every day.",
+      "literal": "Rāma every-day reads",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma — a man's name",
+            "tag": "delta",
+            "forms": [],
+            "note": "M1's name in its acting shape. Named or not, the verb would still end -ti; the name simply says which he."
+          },
+          {
+            "display": "pratidinam",
+            "cue": "every day · daily",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Every day', opened just above — and it stands in the same free slot whoever the sentence is about."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb for reading and for studying, in the shapes this level writes: paṭhati, paṭhāmi, the past paṭhitavān / paṭhitavatī and the future paṭhiṣyāmi."
+          }
+        ],
+        "rules": [6, 0]
+      },
+      "trap": "English marks nothing about a man or a woman on its verb and neither does this one — but you have been trained by M1 and M2 to expect gender everywhere. Here there is none, and there will be none until M5.",
+      "sound": "RAA-mah pra-ti-DI-nam PA-tha-ti. rāmaḥ before the p keeps its visarga, an echo of the ā — 'raa-ma-ha'. The m of pratidinam becomes a hum before the next p.",
+      "variations": [
+        {
+          "display": "sītā pratidinam paṭhati.",
+          "script": "सीता प्रतिदिनम् पठति।",
+          "cue": "Sītā reads every day.",
+          "changed": "a woman, and not one letter of the verb moves — the present marks the person and never the gender"
+        },
+        {
+          "display": "pratidinam paṭhāmi.",
+          "script": "प्रतिदिनम् पठामि।",
+          "cue": "I read every day.",
+          "changed": "the name gone and the ending to -āmi: a whole sentence in two words"
+        },
+        {
+          "display": "rāmaḥ pratidinam na paṭhati.",
+          "script": "रामः प्रतिदिनम् न पठति।",
+          "cue": "Rāma doesn't read every day.",
+          "changed": "negated, with na in its one place in front of the verb and nothing else disturbed"
+        }
+      ],
+      "mistake": {
+        "display": "rāmaḥ pratidinam paṭhāmi.",
+        "why": "-āmi is the I-ending. With rāmaḥ standing in front, the verb has to be paṭhati: a subject and an ending can never name two different people, and in Sanskrit it is the ending that gives the game away."
+      },
+      "usage": "Reporting somebody else's routine — the other half of describing your own.",
+      "register": "neutral",
+      "mnemonic": "The present sees persons, not genders."
+    },
+    {
+      "id": "L1-M4-S09",
+      "display": "bhavatī adya kutra gacchati?",
+      "script": "भवती अद्य कुत्र गच्छति?",
+      "cue": "Where are you going today? (to a woman)",
+      "literal": "your-honour today where goes?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's polite you, here in its bhavatī shape for a woman — and taking the same third-person verb as ever."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Today', opened just above. It sits between the person and the question word without bending for either."
+          },
+          {
+            "display": "kutra",
+            "cue": "where",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Where', opened in M2, standing in the slot the answer will fill — exactly as kim does when it means 'what'."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's verb, third person. It is the same form for bhavān, for bhavatī and for any name at all."
+          }
+        ],
+        "rules": [3, 9]
+      },
+      "trap": "Four words and not one of them is a preposition, a helper or an article. English would spend three of its four on exactly those; Sanskrit spends all four on meaning.",
+      "sound": "bha-va-TEE AD-ya KUT-ra GACH-cha-ti. Spoken, the ī of bhavatī and the a of adya run together into a y — bhavatyadya — which is the join the page does not write. The t of kutra is dental and the r after it is a single tap.",
+      "variations": [
+        {
+          "display": "bhavān adya kutra gacchati?",
+          "script": "भवान् अद्य कुत्र गच्छति?",
+          "cue": "Where are you going today? (to a man)",
+          "changed": "asked of a man — the address changes and the verb does not, because it was never second person"
+        },
+        {
+          "display": "adya kutra gacchati?",
+          "script": "अद्य कुत्र गच्छति?",
+          "cue": "Where is he going today?",
+          "changed": "the address dropped, and the sentence is about somebody else entirely on the very same ending"
+        },
+        {
+          "display": "sītā adya kutra gacchati?",
+          "script": "सीता अद्य कुत्र गच्छति?",
+          "cue": "Where is Sītā going today?",
+          "changed": "a named person in the subject slot; the time word keeps its seat and the question word keeps its own"
+        }
+      ],
+      "usage": "The commonest question of the day, asked of a colleague or a guest.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M4-S10",
+      "display": "aham saṃskṛtam paṭhāmi.",
+      "script": "अहम् संस्कृतम् पठामि।",
+      "cue": "I study Sanskrit.",
+      "literal": "I Sanskrit I-study",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I', M1's word. Here it is optional and therefore emphatic: the -āmi had already said it, so aham adds weight rather than sense."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sanskrit', a neuter noun opened in M1. As the thing being studied it keeps exactly the shape you already know."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb for reading and for studying, in the shapes this level writes: paṭhati, paṭhāmi, the past paṭhitavān / paṭhitavatī and the future paṭhiṣyāmi."
+          }
+        ],
+        "rules": [2, 1]
+      },
+      "trap": "The literal line says 'I Sanskrit I-study' and it is not a typo. The person is on the page twice, and that is exactly why an English speaker should not write it twice by default.",
+      "sound": "A-ham SANS-kri-tam PA-thaa-mi. Before the s the m of aham becomes a nasal hum. Said with weight on aham this is emphasis; said flat it simply sounds like somebody who has not stopped translating.",
+      "variations": [
+        {
+          "display": "saṃskṛtam paṭhāmi.",
+          "script": "संस्कृतम् पठामि।",
+          "cue": "I study Sanskrit.",
+          "changed": "aham taken away and nothing lost — which is the point of the module: it was emphasis, not grammar"
+        },
+        {
+          "display": "aham saṃskṛtam na paṭhāmi.",
+          "script": "अहम् संस्कृतम् न पठामि।",
+          "cue": "I don't study Sanskrit.",
+          "changed": "negated with the emphasis kept — na goes in front of the verb, where it always goes"
+        },
+        {
+          "display": "aham adya saṃskṛtam paṭhāmi.",
+          "script": "अहम् अद्य संस्कृतम् पठामि।",
+          "cue": "Today I am studying Sanskrit.",
+          "changed": "a time word threaded in behind the emphatic subject, still taking no ending of its own"
+        }
+      ],
+      "usage": "What you say when somebody else has just said what they study — the contrast is what earns the aham.",
+      "register": "neutral",
+      "mnemonic": "aham is for contrast. Otherwise let the ending speak."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M4-C01",
+      "display": "aham pustakam paṭhāmi.",
+      "script": "अहम् पुस्तकम् पठामि।",
+      "cue": "I am reading a book."
+    },
+    {
+      "id": "L1-M4-C02",
+      "display": "sītā jalam pibati.",
+      "script": "सीता जलम् पिबति।",
+      "cue": "Sītā drinks water."
+    },
+    {
+      "id": "L1-M4-C03",
+      "display": "adya phalam khādāmi.",
+      "script": "अद्य फलम् खादामि।",
+      "cue": "Today I am eating a fruit."
+    },
+    {
+      "id": "L1-M4-C04",
+      "display": "sītā kim karoti?",
+      "script": "सीता किम् करोति?",
+      "cue": "What is Sītā doing?"
+    },
+    {
+      "id": "L1-M4-C05",
+      "display": "prātaḥ gacchāmi.",
+      "script": "प्रातः गच्छामि।",
+      "cue": "I go in the morning."
+    },
+    {
+      "id": "L1-M4-C06",
+      "display": "kim bhavān saṃskṛtam paṭhati?",
+      "script": "किम् भवान् संस्कृतम् पठति?",
+      "cue": "Do you study Sanskrit?"
+    },
+    {
+      "id": "L1-M4-C07",
+      "display": "sāyam saṃskṛtam paṭhāmi.",
+      "script": "सायम् संस्कृतम् पठामि।",
+      "cue": "I study Sanskrit in the evening."
+    },
+    {
+      "id": "L1-M4-C08",
+      "display": "sāyam na gacchāmi.",
+      "script": "सायम् न गच्छामि।",
+      "cue": "I don't go in the evening."
+    },
+    {
+      "id": "L1-M4-C09",
+      "display": "bhavatī adya kim karoti?",
+      "script": "भवती अद्य किम् करोति?",
+      "cue": "What are you doing today? (to a woman)"
+    },
+    {
+      "id": "L1-M4-C10",
+      "display": "rāmaḥ phalam khādati.",
+      "script": "रामः फलम् खादति।",
+      "cue": "Rāma is eating a fruit."
+    },
+    {
+      "id": "L1-M4-C11",
+      "display": "rāmaḥ pratidinam jalam pibati.",
+      "script": "रामः प्रतिदिनम् जलम् पिबति।",
+      "cue": "Rāma drinks water every day."
+    },
+    {
+      "id": "L1-M4-C12",
+      "display": "sītā sāyam likhati.",
+      "script": "सीता सायम् लिखति।",
+      "cue": "Sītā writes in the evening."
+    },
+    {
+      "id": "L1-M4-C13",
+      "display": "adya na gacchāmi.",
+      "script": "अद्य न गच्छामि।",
+      "cue": "I'm not going today."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

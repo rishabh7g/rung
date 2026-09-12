@@ -1,0 +1,740 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M8",
+  "title": "Numbers & shopping",
+  "job": "Prices, quantities, buying",
+  "prerequisites": ["L1-M7"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": ["simple_present", "simple_future", "imperative"],
+    "allowedPatterns": [
+      "<numeral> + N",
+      "<numeral> + N + asti",
+      "<numeral> + N-acc + dadātu",
+      "<numeral> + N-acc + icchāmi",
+      "kati + N",
+      "kiyat mūlyam",
+      "N-gen + mūlyam + kiyat",
+      "<numeral> + rūpyakāṇi"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Numerals from one to four are ADJECTIVES and they agree with what they count. ekaḥ chātraḥ, ekā chātrā, ekam phalam — one word, three endings, and every ending is the noun's own. Nothing in English prepares you for a number that bends."
+    },
+    {
+      "tag": "free",
+      "text": "From five upward they stop dead. pañca, daśa and everything above them never change shape at all, whatever they are counting and whatever gender it is. Learn four numbers properly and the rest of the language's numbers are free."
+    },
+    {
+      "tag": "delta",
+      "text": "Sanskrit counts in THREE numbers, not two. One, exactly two, and three-or-more each have their own shape: phalam, phale, phalāni — chātraḥ, chātrau, chātrāḥ. The middle one is the dual, and English has nothing whatever like it."
+    },
+    {
+      "tag": "delta",
+      "text": "The dual changes the NOUN as well as the numeral. dve phale is not 'two' bolted onto an ordinary plural — both words are in the dual and both have to be, which is why two of anything costs you two new shapes rather than one."
+    },
+    {
+      "tag": "interference",
+      "text": "You will reach for a plural when there are two of something, because English has only one shape for 'more than one'. dve phalāni is as wrong here as 'two fruit' is in English, and for the mirror-image reason."
+    },
+    {
+      "tag": "free",
+      "text": "kati asks how many and stands exactly where the numeral would stand: kati phalāni? The answer is the same line with a number in kati's place. That is M2's question grammar for the fourth time, and it has still not changed."
+    },
+    {
+      "tag": "delta",
+      "text": "kiyat mūlyam? is 'how much price?'. The price is a NOUN and the question word sits beside it the way an adjective would, with no verb anywhere in the line — M1's verbless sentence, doing shop work."
+    },
+    {
+      "tag": "free",
+      "text": "dadātu is M3's polite request and it has not changed. Put a counted phrase in front of it — dve phale dadātu — and you have bought something. The whole shopping frame is built from grammar you already own."
+    },
+    {
+      "tag": "delta",
+      "text": "This level shows the dual on the NOUN only. Sanskrit also puts the dual on the VERB, and that ending is written nowhere in this course — so a dual answer stands without a verb until a later level opens the form."
+    },
+    {
+      "tag": "free",
+      "text": "Plurals arrive here only because counting forces them. phalāni and rūpyakāṇi are shapes of nouns you already have, not new words, and this level builds no plural paradigm beyond what a count actually needs."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M8-S01",
+      "display": "ekam phalam asti.",
+      "script": "एकम् फलम् अस्ति।",
+      "cue": "There is one fruit.",
+      "literal": "one fruit is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ekaḥ",
+            "cue": "one",
+            "tag": "delta",
+            "forms": ["ekaḥ", "ekā", "ekam"],
+            "note": "'One', and it bends: ekaḥ with a masculine noun, ekā with a feminine, ekam with a neuter. The ending is copied from the noun, never chosen."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's neuter noun in its singular. One of something is the shape you already know — it is two and three that will cost you."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'there is', unchanged. A count sits in front of it exactly as an ordinary noun did."
+          }
+        ],
+        "rules": [0, 9]
+      },
+      "trap": "'One' agreeing with its noun is the thing to absorb before anything else in this module. English numbers are frozen words; here the small ones are adjectives, and an adjective in Sanskrit always copies the noun in front of it.",
+      "sound": "E-kam PHA-lam AS-ti. The m of ekam becomes a nasal hum in front of the ph. phalam then runs straight into asti — phalamasti — because in front of a vowel a final m stays an m and carries on.",
+      "variations": [
+        {
+          "display": "ekaḥ chātraḥ atra asti.",
+          "script": "एकः छात्रः अत्र अस्ति।",
+          "cue": "One student is here. (a man)",
+          "changed": "the masculine shape of the same numeral, ekaḥ, taking its ending straight off chātraḥ"
+        },
+        {
+          "display": "ekā chātrā asti.",
+          "script": "एका छात्रा अस्ति।",
+          "cue": "There is one student. (a woman)",
+          "changed": "the feminine shape — one word, three endings, and each of them the noun's own"
+        },
+        {
+          "display": "ekam phalam na asti.",
+          "script": "एकम् फलम् न अस्ति।",
+          "cue": "There is not one fruit.",
+          "changed": "negated, with na immediately in front of the verb and the count undisturbed"
+        }
+      ],
+      "mistake": {
+        "display": "ekaḥ phalam asti.",
+        "why": "ekaḥ is the masculine shape and phalam is neuter. A numeral below five copies its noun's ending, so one fruit is ekam phalam. English never asks a number to agree with anything and so never warns you that this is a decision."
+      },
+      "usage": "Counting what is in front of you — the simplest thing a number is for.",
+      "register": "neutral",
+      "mnemonic": "The number copies the noun."
+    },
+    {
+      "id": "L1-M8-S02",
+      "display": "dve phale dadātu.",
+      "script": "द्वे फले ददातु।",
+      "cue": "Please give two fruits.",
+      "literal": "two fruits-two please-give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dvau",
+            "cue": "two",
+            "tag": "delta",
+            "forms": ["dvau", "dve"],
+            "note": "'Two', in the dual: dvau with a masculine noun, dve with a feminine or neuter one. There is no third shape, because the dual has none."
+          },
+          {
+            "display": "phale",
+            "cue": "two fruits · fruits",
+            "tag": "delta",
+            "forms": ["phale", "phalāni"],
+            "note": "The counted shapes of M1's phalam: phale is exactly two, phalāni is three or more. The noun enters the dual with the numeral, not after it."
+          },
+          {
+            "display": "dadātu",
+            "cue": "please give · let (him/her) give",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's polite request, untouched. Put a counted phrase in front of it and you have bought something."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "Two words changed shape for the number two, and English would have changed one. There is no way to say this with phalāni in it — the dual is not an emphasis on the plural, it is a different number altogether.",
+      "sound": "DVE PHA-le da-DAA-tu. Nothing joins anywhere in this line: dve and phale both end in a vowel that does not change in front of a consonant. The dv at the front is a d and a v said as a single sound.",
+      "variations": [
+        {
+          "display": "ekam phalam dadātu.",
+          "script": "एकम् फलम् ददातु।",
+          "cue": "Please give one fruit.",
+          "changed": "one instead of two, and the noun leaves the dual with it — the two words always move together"
+        },
+        {
+          "display": "dve phale icchāmi.",
+          "script": "द्वे फले इच्छामि।",
+          "cue": "I want two fruits.",
+          "changed": "M3's wish frame instead of the request, with the counted phrase in front of it untouched"
+        },
+        {
+          "display": "dve phale khādiṣyāmi.",
+          "script": "द्वे फले खादिष्यामि।",
+          "cue": "I will eat two fruits.",
+          "changed": "M6's future behind the same pair, which shows the count is independent of the tense"
+        }
+      ],
+      "mistake": {
+        "display": "dve phalāni dadātu.",
+        "why": "phalāni is three or more. Two of anything takes the dual, and the noun has to be in it too: dve phale. Reaching for the plural is the precise English habit, because English has only one shape for everything above one."
+      },
+      "usage": "The sentence you say across a counter, and the one that makes the dual worth learning on day one.",
+      "register": "neutral",
+      "mnemonic": "Two words for two. Both of them."
+    },
+    {
+      "id": "L1-M8-S03",
+      "display": "kati chātrāḥ?",
+      "script": "कति छात्राः?",
+      "cue": "How many students?",
+      "literal": "how-many students?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kati",
+            "cue": "how many",
+            "tag": "free",
+            "forms": ["kati"],
+            "note": "'How many', standing exactly where a numeral would stand. It takes no ending itself, and M2's question grammar is unchanged behind it."
+          },
+          {
+            "display": "chātrau",
+            "cue": "two students · students",
+            "tag": "delta",
+            "forms": ["chātrau", "chātrāḥ"],
+            "note": "The counted shapes of M1's chātraḥ: chātrau is exactly two, chātrāḥ is three or more. One noun, three numbers, and English offers only two of them."
+          }
+        ],
+        "rules": [5, 2]
+      },
+      "trap": "The question is two words and has no verb in it. English needs 'how many students are there?' — a verb and a dummy subject — and Sanskrit needs neither, because nothing is being asserted, only counted.",
+      "sound": "KA-ti CHAA-traah. The ch is one aspirated sound and not a c followed by an h, and it is held a beat after the short i of kati. The visarga at the end is a light echo of the aa in front of it.",
+      "variations": [
+        {
+          "display": "kati phalāni?",
+          "script": "कति फलानि?",
+          "cue": "How many fruits?",
+          "changed": "a different thing counted, and the question word does not bend for it the way a numeral would"
+        },
+        {
+          "display": "kati rūpyakāṇi?",
+          "script": "कति रूप्यकाणि?",
+          "cue": "How many rupees?",
+          "changed": "the shop's own version of the question, with money in the counted slot"
+        },
+        {
+          "display": "atra kati chātrāḥ?",
+          "script": "अत्र कति छात्राः?",
+          "cue": "How many students are here?",
+          "changed": "M7's pointer in front of it, and the question behind it entirely unchanged"
+        }
+      ],
+      "usage": "Asking for a count, in a class or at a stall.",
+      "register": "neutral",
+      "mnemonic": "kati stands where the number stands."
+    },
+    {
+      "id": "L1-M8-S04",
+      "display": "dvau chātrau.",
+      "script": "द्वौ छात्रौ।",
+      "cue": "Two students.",
+      "literal": "two students-two",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dvau",
+            "cue": "two",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Two' with a masculine noun: dvau, not dve. The numeral copies the gender exactly as ekaḥ did — the dual does not excuse it from agreeing."
+          },
+          {
+            "display": "chātrau",
+            "cue": "two students · students",
+            "tag": "delta",
+            "forms": [],
+            "note": "The dual of chātraḥ, and its ending rhymes with the numeral's on purpose: dvau chātrau. Two words, one au, exactly two students."
+          },
+          {
+            "display": "trayaḥ",
+            "cue": "three",
+            "tag": "delta",
+            "forms": ["trayaḥ", "trīṇi"],
+            "note": "'Three', and it bends too: trayaḥ with a masculine noun, trīṇi with a neuter. Three is the first number that takes an ordinary plural behind it."
+          }
+        ],
+        "rules": [2, 0]
+      },
+      "trap": "This is a whole sentence in Sanskrit and a fragment in English. It is also the one place the dual is audible on both words at once — say dvau chātrau aloud and the two au endings are the count.",
+      "sound": "DVAU CHAA-trau. Both words end in the same au, and in speech that vowel is doing the counting — say it long and open, a broad aa sliding into an u.",
+      "variations": [
+        {
+          "display": "trayaḥ chātrāḥ.",
+          "script": "त्रयः छात्राः।",
+          "cue": "Three students.",
+          "changed": "one more student, and BOTH words change again — three takes the plural, and two never did"
+        },
+        {
+          "display": "pañca chātrāḥ.",
+          "script": "पञ्च छात्राः।",
+          "cue": "Five students.",
+          "changed": "five, which never changes shape at all, in front of the same plural noun"
+        },
+        {
+          "display": "ekaḥ chātraḥ.",
+          "script": "एकः छात्रः।",
+          "cue": "One student.",
+          "changed": "back to one, where the noun is M1's own singular and the numeral copies it"
+        }
+      ],
+      "mistake": {
+        "display": "dvau chātrāḥ.",
+        "why": "Two takes the dual on the noun as well: dvau chātrau. chātrāḥ is three or more, so this says 'two several-students'. The numeral cannot carry the dual by itself, which is the half of rule 4 English hides."
+      },
+      "usage": "The answer to kati, and the shape of every count in this language.",
+      "register": "neutral",
+      "mnemonic": "dvau chātrau. Both end in au."
+    },
+    {
+      "id": "L1-M8-S05",
+      "display": "trīṇi phalāni dadātu.",
+      "script": "त्रीणि फलानि ददातु।",
+      "cue": "Please give three fruits.",
+      "literal": "three fruits please-give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trayaḥ",
+            "cue": "three",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Three' with a neuter noun is trīṇi; with a masculine one it is trayaḥ. Still an adjective, still copying — and this is the last number that does."
+          },
+          {
+            "display": "phale",
+            "cue": "two fruits · fruits",
+            "tag": "delta",
+            "forms": [],
+            "note": "phalāni, the plural: three or more. The dual phale is behind you the moment the count passes two, and it never returns for a larger number."
+          },
+          {
+            "display": "dadātu",
+            "cue": "please give · let (him/her) give",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's request again. Everything in this module happens in front of it; the verb itself has learned nothing new."
+          }
+        ],
+        "rules": [0, 9]
+      },
+      "trap": "The jump from two to three changes both words a second time, and then it stops: everything from three upward uses this same plural, and everything from five upward stops changing the numeral too.",
+      "sound": "TREE-ni pha-LAA-ni da-DAA-tu. The ṇ of trīṇi is retroflex, tongue curled back behind the ridge, while the n of phalāni is dental against the teeth — the two words look alike on the page and not in the mouth.",
+      "variations": [
+        {
+          "display": "pañca phalāni dadātu.",
+          "script": "पञ्च फलानि ददातु।",
+          "cue": "Please give five fruits.",
+          "changed": "five instead of three — the noun stays exactly as it is and the numeral stops bending for good"
+        },
+        {
+          "display": "trīṇi phalāni icchāmi.",
+          "script": "त्रीणि फलानि इच्छामि।",
+          "cue": "I want three fruits.",
+          "changed": "the wish frame instead of the request, with the counted phrase unchanged in front of it"
+        },
+        {
+          "display": "daśa phalāni dadātu.",
+          "script": "दश फलानि ददातु।",
+          "cue": "Please give ten fruits.",
+          "changed": "ten, and nothing in the line notices the size of the jump"
+        }
+      ],
+      "usage": "Buying more than a couple of anything.",
+      "register": "neutral",
+      "mnemonic": "Three and up: one plural, forever."
+    },
+    {
+      "id": "L1-M8-S06",
+      "display": "pañca phalāni icchāmi.",
+      "script": "पञ्च फलानि इच्छामि।",
+      "cue": "I want five fruits.",
+      "literal": "five fruits I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pañca",
+            "cue": "five",
+            "tag": "free",
+            "forms": ["pañca"],
+            "note": "'Five', and it never changes for anything: not for gender, not for what it counts. Every numeral from five upward behaves this way."
+          },
+          {
+            "display": "phale",
+            "cue": "two fruits · fruits",
+            "tag": "free",
+            "forms": [],
+            "note": "phalāni again. The noun still carries the plural even though the numeral has given up carrying anything."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's verb, with a counted phrase where a single object used to stand. Nothing about wanting changed when the object became five things."
+          }
+        ],
+        "rules": [1, 9]
+      },
+      "trap": "Here is the relief this module owes you: five and everything above it are ordinary frozen words, exactly like English numbers. The whole agreement problem lives in the first four numerals and stops there.",
+      "sound": "PAÑ-cha pha-LAA-ni ICH-chaa-mi. The ñ is the ny of 'canyon'. phalāni then runs into icchāmi, its final i and the i of icchāmi merging into a single long ee — phalānīcchāmi.",
+      "variations": [
+        {
+          "display": "daśa rūpyakāṇi icchāmi.",
+          "script": "दश रूप्यकाणि इच्छामि।",
+          "cue": "I want ten rupees.",
+          "changed": "money counted instead of fruit, with the same invariable numeral in front of it"
+        },
+        {
+          "display": "pañca phalāni na icchāmi.",
+          "script": "पञ्च फलानि न इच्छामि।",
+          "cue": "I don't want five fruits.",
+          "changed": "negated, with na in the slot immediately in front of the verb"
+        },
+        {
+          "display": "kati phalāni icchati?",
+          "script": "कति फलानि इच्छति?",
+          "cue": "How many fruits does he want?",
+          "changed": "turned into a question about somebody else, with kati standing exactly where the numeral stood"
+        }
+      ],
+      "mistake": {
+        "display": "pañcaḥ phalāni icchāmi.",
+        "why": "pañca never changes. Giving it a masculine -aḥ invents a shape Sanskrit does not have — and it is a mistake a learner makes only after learning rule 1 properly, by carrying agreement one numeral too far."
+      },
+      "usage": "Ordering anything by the handful.",
+      "register": "neutral",
+      "mnemonic": "Four bend. Five and up are stone."
+    },
+    {
+      "id": "L1-M8-S07",
+      "display": "kiyat mūlyam?",
+      "script": "कियत् मूल्यम्?",
+      "cue": "How much does it cost?",
+      "literal": "how-much price?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kiyat",
+            "cue": "how much",
+            "tag": "delta",
+            "forms": ["kiyat"],
+            "note": "'How much', and it asks about an amount rather than a count — kati asks how many things, kiyat asks how much of something."
+          },
+          {
+            "display": "mūlyam",
+            "cue": "price · value",
+            "tag": "delta",
+            "forms": ["mūlyam"],
+            "note": "'Price' is a NOUN here, not a verb. The question word stands beside it the way an adjective would, and no verb is needed at all."
+          }
+        ],
+        "rules": [6, 9]
+      },
+      "trap": "English asks the price with a verb — 'how much does it cost', 'what is the price' — and Sanskrit asks with two nouns and nothing else. This is M1's verbless sentence, doing the work of a whole shop transaction.",
+      "sound": "ki-YAN MOOL-yam. Said aloud the final t of kiyat becomes an n in front of the m, because a dental stop in front of a nasal turns into the nasal of its own row. The page keeps the t, as it keeps every pada form.",
+      "variations": [
+        {
+          "display": "phalasya kiyat mūlyam?",
+          "script": "फलस्य कियत् मूल्यम्?",
+          "cue": "What is the price of the fruit?",
+          "changed": "the thing priced named in front, in M7's genitive — the price belongs to it, so it wears the 'of' shape"
+        },
+        {
+          "display": "pustakasya kiyat mūlyam?",
+          "script": "पुस्तकस्य कियत् मूल्यम्?",
+          "cue": "What is the price of the book?",
+          "changed": "the same question about a book, and the genitive is doing exactly what it did under M7's postpositions"
+        },
+        {
+          "display": "kiyat mūlyam asti?",
+          "script": "कियत् मूल्यम् अस्ति?",
+          "cue": "What is the price?",
+          "changed": "asti added, which is allowed and adds nothing — the verbless question was already a complete sentence"
+        }
+      ],
+      "usage": "The two words that open every purchase.",
+      "register": "neutral",
+      "mnemonic": "How-much price. No verb needed."
+    },
+    {
+      "id": "L1-M8-S08",
+      "display": "daśa rūpyakāṇi.",
+      "script": "दश रूप्यकाणि।",
+      "cue": "Ten rupees.",
+      "literal": "ten rupees",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "daśa",
+            "cue": "ten",
+            "tag": "free",
+            "forms": ["daśa"],
+            "note": "'Ten', invariable like pañca. Everything from five upward is a frozen word, which is why money is the easy half of this module."
+          },
+          {
+            "display": "rūpyakam",
+            "cue": "rupee",
+            "tag": "delta",
+            "forms": ["rūpyakam", "rūpyakāṇi"],
+            "note": "'Rupee', a neuter noun: rūpyakam for one, rūpyakāṇi for several. The noun still marks the plural even when the numeral cannot."
+          }
+        ],
+        "rules": [1, 9]
+      },
+      "trap": "The answer to a price is two words and no verb, exactly as the question was. Nothing in the exchange needs 'it is' or 'that will be' — those are English scaffolding around a bare noun phrase.",
+      "sound": "DA-sha ROO-pya-kaa-ni. The ś of daśa is the sh of 'ship'; the ṇ of rūpyakāṇi is retroflex. Nothing joins across the two words — daśa ends in a vowel that does not change in front of an r.",
+      "variations": [
+        {
+          "display": "pañca rūpyakāṇi.",
+          "script": "पञ्च रूप्यकाणि।",
+          "cue": "Five rupees.",
+          "changed": "a different invariable numeral in front of the same plural, and that is the whole of the change"
+        },
+        {
+          "display": "daśa rūpyakāṇi dadātu.",
+          "script": "दश रूप्यकाणि ददातु।",
+          "cue": "Please give ten rupees.",
+          "changed": "M3's request added, which turns a stated price into a payment"
+        },
+        {
+          "display": "mūlyam daśa rūpyakāṇi.",
+          "script": "मूल्यम् दश रूप्यकाणि।",
+          "cue": "The price is ten rupees.",
+          "changed": "the price named in front of the amount, and still no verb anywhere — M1's verbless sentence at a shop counter"
+        }
+      ],
+      "usage": "What the shopkeeper says back.",
+      "register": "neutral",
+      "mnemonic": "Numbers stop. Nouns do not."
+    },
+    {
+      "id": "L1-M8-S09",
+      "display": "ekā chātrā atra asti.",
+      "script": "एका छात्रा अत्र अस्ति।",
+      "cue": "One student is here. (a woman)",
+      "literal": "one student here is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ekaḥ",
+            "cue": "one",
+            "tag": "delta",
+            "forms": [],
+            "note": "'One' in its feminine shape, ekā, taken straight off chātrā. Three shapes of one word, and this module has now shown all three."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's noun in its feminine singular, chātrā. A count of one leaves the noun exactly as the first module taught it."
+          },
+          {
+            "display": "atra",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's pointer, which takes no ending and does not care that there is a count in front of it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's location reading. A singular subject takes asti; a dual subject would need a verb this course does not write."
+          }
+        ],
+        "rules": [0, 8]
+      },
+      "trap": "Say this sentence about two women and asti will no longer serve — Sanskrit puts the dual on the verb as well, and that ending is not in this course. This is the one place the level admits a hole rather than filling it.",
+      "sound": "e-KAA CHAA-traa A-tra AS-ti. Said quickly the long aa of chātrā swallows the a of atra, and atra then swallows the a of asti — two joins in four words, and the page writes neither of them.",
+      "variations": [
+        {
+          "display": "ekaḥ chātraḥ tatra asti.",
+          "script": "एकः छात्रः तत्र अस्ति।",
+          "cue": "One student is there. (a man)",
+          "changed": "a man, and M7's other pointer — and the numeral bends with the noun in the same breath"
+        },
+        {
+          "display": "dvau chātrau atra.",
+          "script": "द्वौ छात्रौ अत्र।",
+          "cue": "Two students are here.",
+          "changed": "the dual, standing without a verb — the dual of asti is a form this course does not write, so the answer is left bare"
+        },
+        {
+          "display": "ekā chātrā vidyālaye asti.",
+          "script": "एका छात्रा विद्यालये अस्ति।",
+          "cue": "One student is at school. (a woman)",
+          "changed": "M7's locative behind the counted subject, and the count does not disturb it at all"
+        }
+      ],
+      "usage": "Counting people in a room, which is where a learner meets the dual first in practice.",
+      "register": "neutral",
+      "mnemonic": "One takes asti. Two takes a form we do not write."
+    },
+    {
+      "id": "L1-M8-S10",
+      "display": "pustakasya mūlyam kiyat?",
+      "script": "पुस्तकस्य मूल्यम् कियत्?",
+      "cue": "What is the price of the book?",
+      "literal": "book's price how-much?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pustakasya",
+            "cue": "the book's · of the book",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's genitive. The price belongs to the book, so the book wears the 'of' shape — the same ending a postposition demanded."
+          },
+          {
+            "display": "mūlyam",
+            "cue": "price · value",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Price', the thing being asked about. It is the noun the genitive hangs on, exactly as upari was in M7."
+          },
+          {
+            "display": "kiyat",
+            "cue": "how much",
+            "tag": "delta",
+            "forms": [],
+            "note": "'How much', standing at the END here. That is not a second rule: a question word stands where its answer will stand, and the answer is the amount."
+          }
+        ],
+        "rules": [6, 5]
+      },
+      "trap": "kiyat sits at the front in S07 and at the back here, and neither is a special order — it stands where the answer will stand. M2's kim did exactly this, and the fact has not changed in eight modules.",
+      "sound": "pus-ta-KA-sya MOOL-yam ki-YAT. The m of mūlyam becomes a nasal hum in front of the k. kiyat at the end keeps its t, because there is nothing behind it for the t to change for.",
+      "variations": [
+        {
+          "display": "phalasya mūlyam kiyat?",
+          "script": "फलस्य मूल्यम् कियत्?",
+          "cue": "What is the price of the fruit?",
+          "changed": "a different thing priced, and the frame around it holds exactly still"
+        },
+        {
+          "display": "pustakasya mūlyam daśa rūpyakāṇi.",
+          "script": "पुस्तकस्य मूल्यम् दश रूप्यकाणि।",
+          "cue": "The price of the book is ten rupees.",
+          "changed": "the answer to the same line, and it has no verb in it either"
+        },
+        {
+          "display": "pustakasya mūlyam kati rūpyakāṇi?",
+          "script": "पुस्तकस्य मूल्यम् कति रूप्यकाणि?",
+          "cue": "How many rupees is the book?",
+          "changed": "kati counting the money instead of kiyat asking the amount — two honest ways to ask one thing"
+        }
+      ],
+      "mistake": {
+        "display": "pustakam mūlyam kiyat?",
+        "why": "The price belongs to the book, so the book goes into the genitive: pustakasya. M7's rule has not lapsed because the subject turned to money — two nouns side by side with no ending between them say nothing about each other."
+      },
+      "usage": "The sentence that finishes the transaction, and the last new question this level asks.",
+      "register": "neutral",
+      "mnemonic": "The price is OF the thing."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M8-C01",
+      "display": "trīṇi phalāni khādiṣyāmi.",
+      "script": "त्रीणि फलानि खादिष्यामि।",
+      "cue": "I will eat three fruits."
+    },
+    {
+      "id": "L1-M8-C02",
+      "display": "pañca rūpyakāṇi dadātu.",
+      "script": "पञ्च रूप्यकाणि ददातु।",
+      "cue": "Please give five rupees."
+    },
+    {
+      "id": "L1-M8-C03",
+      "display": "ekam pustakam icchāmi.",
+      "script": "एकम् पुस्तकम् इच्छामि।",
+      "cue": "I want one book."
+    },
+    {
+      "id": "L1-M8-C04",
+      "display": "pustakasya mūlyam pañca rūpyakāṇi.",
+      "script": "पुस्तकस्य मूल्यम् पञ्च रूप्यकाणि।",
+      "cue": "The price of the book is five rupees."
+    },
+    {
+      "id": "L1-M8-C05",
+      "display": "vidyālaye kati chātrāḥ?",
+      "script": "विद्यालये कति छात्राः?",
+      "cue": "How many students are at school?"
+    },
+    {
+      "id": "L1-M8-C06",
+      "display": "dvau chātrau tatra.",
+      "script": "द्वौ छात्रौ तत्र।",
+      "cue": "Two students are there."
+    },
+    {
+      "id": "L1-M8-C07",
+      "display": "daśa phalāni icchāmi.",
+      "script": "दश फलानि इच्छामि।",
+      "cue": "I want ten fruits."
+    },
+    {
+      "id": "L1-M8-C08",
+      "display": "ekā chātrā gṛhe asti.",
+      "script": "एका छात्रा गृहे अस्ति।",
+      "cue": "One student is at home. (a woman)"
+    },
+    {
+      "id": "L1-M8-C09",
+      "display": "trayaḥ chātrāḥ atra.",
+      "script": "त्रयः छात्राः अत्र।",
+      "cue": "Three students are here."
+    },
+    {
+      "id": "L1-M8-C10",
+      "display": "pustakasya upari dve phale.",
+      "script": "पुस्तकस्य उपरि द्वे फले।",
+      "cue": "Two fruits are on the book."
+    },
+    {
+      "id": "L1-M8-C11",
+      "display": "rūpyakam dadātu.",
+      "script": "रूप्यकम् ददातु।",
+      "cue": "Please give a rupee."
+    },
+    {
+      "id": "L1-M8-C12",
+      "display": "ekaḥ chātraḥ pustakālaye asti.",
+      "script": "एकः छात्रः पुस्तकालये अस्ति।",
+      "cue": "One student is in the library. (a man)"
+    },
+    {
+      "id": "L1-M8-C13",
+      "display": "sītā dve phale icchati.",
+      "script": "सीता द्वे फले इच्छति।",
+      "cue": "Sītā wants two fruits."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

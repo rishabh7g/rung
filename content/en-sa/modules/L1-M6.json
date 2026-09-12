@@ -1,0 +1,739 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M6",
+  "title": "Tomorrow",
+  "job": "Future and plans",
+  "prerequisites": ["L1-M5"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": ["simple_future", "simple_present", "participial_past"],
+    "allowedPatterns": [
+      "śvaḥ + V-iṣyāmi",
+      "śvaḥ + V-āmi",
+      "<place>-acc + V-iṣyāmi",
+      "śvaḥ + N-acc + V-iṣyāmi",
+      "śvaḥ + na + V-iṣyāmi",
+      "bhavān/bhavatī + kutra / kim + V-iṣyati",
+      "<name> + <place>-acc + V-iṣyati"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The future is ONE marker. Put -iṣya- on the stem and then use M4's own endings: gacchāmi becomes gamiṣyāmi, paṭhāmi becomes paṭhiṣyāmi, khādāmi becomes khādiṣyāmi. One rule, two tenses — there is nothing new to learn but the syllable."
+    },
+    {
+      "tag": "free",
+      "text": "The future marks NO gender, and after M5 that is worth saying out loud. Every past sentence forked into -tavān and -tavatī; gamiṣyāmi is what every speaker says. Gender belonged to the participle, never to the idea of another time."
+    },
+    {
+      "tag": "delta",
+      "text": "The cheapest future is not a future at all: śvaḥ plus the ordinary present already does it. śvaḥ gacchāmi is 'I'm going tomorrow', built from M4 and nothing else. Keep the -iṣya- form for the sentences with no day named in them."
+    },
+    {
+      "tag": "delta",
+      "text": "A place you are GOING TO takes the accusative and no preposition whatsoever: vidyālayam gamiṣyāmi, gṛham gamiṣyāmi. English spends a separate word on 'to'; here the ending is the whole of it and nothing stands where 'to' stood."
+    },
+    {
+      "tag": "interference",
+      "text": "There is no 'will' and no 'going to'. A learner hunting for the helper is hunting for something that was never there — the tense lives inside the verb, exactly as the past did. Whatever word you are about to add, do not add it."
+    },
+    {
+      "tag": "delta",
+      "text": "vidyālayaḥ becomes vidyālayam when it is the destination, and this is the first place the object ending actually SHOWS. M1's phalam and pustakam are neuter, so they look identical in both jobs and hid the ending from you until now."
+    },
+    {
+      "tag": "free",
+      "text": "Word order does not move. The time word stands at either end, the verb stays last, the question word keeps M2's slot. The future changes the verb and changes nothing else in the line."
+    },
+    {
+      "tag": "delta",
+      "text": "The person endings are M4's, untouched: -mi for I (gamiṣyāmi) and -ti for he, she and bhavān / bhavatī (gamiṣyati). The marker sits in front of the ending and alters nothing behind it."
+    },
+    {
+      "tag": "delta",
+      "text": "The subject drops again. -iṣyāmi carries 'I' the way -āmi did, so śvaḥ gamiṣyāmi needs no aham. That is the difference from M5, where a participle carried no person at all and the pronoun had to come back."
+    },
+    {
+      "tag": "free",
+      "text": "Sanskrit has a second future built out of two words, and more past tenses behind the imperfect M5 named. This course writes one future and one past. The rest are named here so that meeting one in a book is not a shock."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M6-S01",
+      "display": "śvaḥ gacchāmi.",
+      "script": "श्वः गच्छामि।",
+      "cue": "I'm going tomorrow.",
+      "literal": "tomorrow I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": ["śvaḥ"],
+            "note": "'Tomorrow', a time word exactly like adya and hyaḥ: no ending, no preposition, and free to stand at either end of the sentence."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's verb in its ordinary present. With a day named in front of it, the present is already saying something that has not happened yet."
+          }
+        ],
+        "rules": [2, 6]
+      },
+      "trap": "English cannot leave this alone. 'I go tomorrow' sounds wrong and you reach for 'I'm going' or 'I will go' to repair it. Sanskrit needs no repair: the day is named, so the plain present is the finished sentence.",
+      "sound": "SHVO GACH-chaa-mi. Said aloud the visarga of śvaḥ turns into an o in front of the voiced g — śvo gacchāmi — and the cch is held a beat longer than a single ch. The page keeps the two words apart; the mouth does not.",
+      "variations": [
+        {
+          "display": "adya gacchāmi.",
+          "script": "अद्य गच्छामि।",
+          "cue": "I'm going today.",
+          "changed": "today instead of tomorrow, and the verb has not moved — the time word is carrying the whole of the tense here"
+        },
+        {
+          "display": "śvaḥ vidyālayam gacchāmi.",
+          "script": "श्वः विद्यालयम् गच्छामि।",
+          "cue": "I'm going to school tomorrow.",
+          "changed": "a destination added, in the accusative, and the plain present is still doing the future's work"
+        },
+        {
+          "display": "śvaḥ na gacchāmi.",
+          "script": "श्वः न गच्छामि।",
+          "cue": "I'm not going tomorrow.",
+          "changed": "negated, with na immediately in front of the verb and the time word undisturbed"
+        }
+      ],
+      "usage": "Announcing a plan once the day is already named — the commonest way to talk about tomorrow in ordinary speech.",
+      "register": "neutral",
+      "mnemonic": "Name the day and the present will do."
+    },
+    {
+      "id": "L1-M6-S02",
+      "display": "śvaḥ gamiṣyāmi.",
+      "script": "श्वः गमिष्यामि।",
+      "cue": "I will go tomorrow.",
+      "literal": "tomorrow I-will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tomorrow' again, and it is optional here: the verb is already future, so the day is added for precision rather than to build the tense."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "The future of M2's verb: the stem gam-, the marker -iṣya-, and M4's own -mi on the end of it. Three pieces, and you already had two."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Two words and no 'will' anywhere, because 'will' is not a word here — it is the -iṣya- in the middle of the verb. Count the syllables against gacchāmi and you can see exactly where English's helper went.",
+      "sound": "SHVO ga-mi-SHYAA-mi. The visarga becomes an o again in front of the voiced g. The ṣy is a retroflex ṣ with a y running out of it, said as one sound, and the stress sits on the long yaa.",
+      "variations": [
+        {
+          "display": "aham hyaḥ gatavān.",
+          "script": "अहम् ह्यः गतवान्।",
+          "cue": "I went yesterday. (a man speaking)",
+          "changed": "the same journey in the past — which needs its aham back and forks by gender, while the future above needs neither"
+        },
+        {
+          "display": "aham hyaḥ gatavatī.",
+          "script": "अहम् ह्यः गतवती।",
+          "cue": "I went yesterday. (a woman speaking)",
+          "changed": "the woman's past, which is a different word; the future has no second shape to offer her, and that is rule 2 on the page"
+        },
+        {
+          "display": "śvaḥ gantum icchāmi.",
+          "script": "श्वः गन्तुम् इच्छामि।",
+          "cue": "I want to go tomorrow.",
+          "changed": "M3's wish frame instead of the future — an infinitive under icchāmi, and the marker gone from the verb entirely"
+        }
+      ],
+      "mistake": {
+        "display": "śvaḥ gamiṣyati.",
+        "why": "gamiṣyati is the he/she shape. With no pronoun in front of it this says 'he will go tomorrow', not 'I will'. The -mi is what carries 'I', and putting a marker in front of that ending changes nothing about it."
+      },
+      "usage": "Saying what you will do, with or without a day attached — the form that works when there is no time word to lean on.",
+      "register": "neutral",
+      "mnemonic": "Stem, then -iṣya-, then M4's ending."
+    },
+    {
+      "id": "L1-M6-S03",
+      "display": "vidyālayam gamiṣyāmi.",
+      "script": "विद्यालयम् गमिष्यामि।",
+      "cue": "I will go to school.",
+      "literal": "school-to I-will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vidyālayaḥ",
+            "cue": "school",
+            "tag": "delta",
+            "forms": ["vidyālayaḥ", "vidyālayam", "vidyālaye"],
+            "note": "'School'. As a destination it is vidyālayam — a masculine noun where the object ending finally shows. vidyālaye, 'at school', is M7's job and a different ending."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "The future of 'go'. The verb takes the destination directly: nothing stands between the place and the going."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "There is no 'to'. English needs a preposition and cannot build the sentence without one; Sanskrit needs an ending, and once you have written vidyālayam there is nothing left to add.",
+      "sound": "vid-YAA-la-yam ga-mi-SHYAA-mi. The dy is a d and a y said together in one beat, and the m at the end of vidyālayam becomes a nasal hum in front of the g so the two words run straight on.",
+      "variations": [
+        {
+          "display": "vidyālayam gacchāmi.",
+          "script": "विद्यालयम् गच्छामि।",
+          "cue": "I'm going to school.",
+          "changed": "the plain present, so the same destination now reads as today's journey rather than tomorrow's"
+        },
+        {
+          "display": "aham hyaḥ vidyālayam gatavān.",
+          "script": "अहम् ह्यः विद्यालयम् गतवान्।",
+          "cue": "I went to school yesterday. (a man speaking)",
+          "changed": "the past, and the destination ending has not moved — the accusative belongs to the place, not to the tense"
+        },
+        {
+          "display": "bhavān vidyālayam gamiṣyati?",
+          "script": "भवान् विद्यालयम् गमिष्यति?",
+          "cue": "Will you go to school?",
+          "changed": "a question to your honour, with the -ti ending and not one word out of its place"
+        }
+      ],
+      "mistake": {
+        "display": "vidyālayaḥ gamiṣyāmi.",
+        "why": "vidyālayaḥ is the naming shape — the school as somebody doing something. A destination is vidyālayam. Leaving the naming shape in place is what an English speaker does when they expect a preposition to carry the meaning."
+      },
+      "usage": "The ordinary answer to 'where are you going?', and the sentence a learner needs on a first day.",
+      "register": "neutral",
+      "mnemonic": "The ending is the 'to'."
+    },
+    {
+      "id": "L1-M6-S04",
+      "display": "śvaḥ gṛham gamiṣyāmi.",
+      "script": "श्वः गृहम् गमिष्यामि।",
+      "cue": "I will go home tomorrow.",
+      "literal": "tomorrow home-to I-will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tomorrow', at the front of the line where M4 usually put its time words. It is free to stand at the other end instead."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "delta",
+            "forms": ["gṛham", "gṛhe", "gṛhasya"],
+            "note": "'House · home', and it is neuter, so the naming shape and the destination shape are one word. gṛhe, 'at home', and gṛhasya, 'of the house', are M7's."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "The future of 'go' again, and the destination in front of it needs no preposition whether the noun is masculine or neuter."
+          }
+        ],
+        "rules": [3, 2]
+      },
+      "trap": "English says 'go home' with no 'to' in it, which makes this look like the one place the two languages agree. They do not: gṛham is carrying the same ending vidyālayam carries, and it is only invisible because the word is neuter.",
+      "sound": "SHVO GRI-ham ga-mi-SHYAA-mi. The visarga becomes an o in front of the voiced g. The ṛ of gṛham is said ri with the tongue curled back, and the m then hums into the following g.",
+      "variations": [
+        {
+          "display": "sāyam gṛham gamiṣyāmi.",
+          "script": "सायम् गृहम् गमिष्यामि।",
+          "cue": "I will go home in the evening.",
+          "changed": "a different time word in the same front slot, and nothing else in the line notices"
+        },
+        {
+          "display": "bhavatī śvaḥ gṛham gamiṣyati?",
+          "script": "भवती श्वः गृहम् गमिष्यति?",
+          "cue": "Will you go home tomorrow? (to a woman)",
+          "changed": "turned into a question to your honour — only the ending changes, and the word order does not"
+        },
+        {
+          "display": "śvaḥ gṛham na gamiṣyāmi.",
+          "script": "श्वः गृहम् न गमिष्यामि।",
+          "cue": "I won't go home tomorrow.",
+          "changed": "negated, with na in front of the verb rather than in front of the destination"
+        }
+      ],
+      "usage": "Saying where you will be at the end of a day — the sentence that closes a conversation about plans.",
+      "register": "neutral",
+      "mnemonic": "Neuter hides the ending. It is still there."
+    },
+    {
+      "id": "L1-M6-S05",
+      "display": "bhavān kutra gamiṣyati?",
+      "script": "भवान् कुत्र गमिष्यति?",
+      "cue": "Where will you go?",
+      "literal": "your-honour where will-go?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You': bhavān to a man, bhavatī to a woman, and a third-person verb with both — which is why the future here ends -ti and not -si."
+          },
+          {
+            "display": "kutra",
+            "cue": "where",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's 'where', sitting where the answer will sit, in front of the verb. The new tense has not moved it."
+          },
+          {
+            "display": "gamiṣyati",
+            "cue": "will go (he · she · your honour)",
+            "tag": "delta",
+            "forms": ["gamiṣyati"],
+            "note": "The he/she future of M2's gacchati: the same -iṣya- marker as gamiṣyāmi, with M4's -ti ending behind it instead of -mi."
+          }
+        ],
+        "rules": [7, 6]
+      },
+      "trap": "The verb says 'will go', not 'will you go'. Nothing inverts, no helper appears in front of the subject, and the question mark is the only thing English would recognise. M2's question grammar survives the new tense exactly.",
+      "sound": "bha-VAAN KU-tra ga-mi-SHYA-ti. Nothing joins across the three: the n of bhavān sits still in front of a k, and kutra ends in a vowel. The t of kutra is dental, tongue against the teeth.",
+      "variations": [
+        {
+          "display": "bhavatī śvaḥ kutra gamiṣyati?",
+          "script": "भवती श्वः कुत्र गमिष्यति?",
+          "cue": "Where will you go tomorrow? (to a woman)",
+          "changed": "the address bends and the verb does not, and a time word slots in without disturbing the question"
+        },
+        {
+          "display": "rāmaḥ kutra gamiṣyati?",
+          "script": "रामः कुत्र गमिष्यति?",
+          "cue": "Where will Rāma go?",
+          "changed": "a name in the same slot, and the same ending again: it was third person all along"
+        },
+        {
+          "display": "bhavān kutra gacchati?",
+          "script": "भवान् कुत्र गच्छति?",
+          "cue": "Where are you going?",
+          "changed": "M2's own sentence back with the plain present — the only difference between the two lines is the marker in the middle"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān kutra gamiṣyāmi?",
+        "why": "gamiṣyāmi is the 'I' shape, and it has been reached for because the sentence is about the person standing in front of you. bhavān is grammatically a third person, so its verb ends -ti: gamiṣyati."
+      },
+      "usage": "The everyday question to someone who has plans — and the one whose answer S03 and S04 are.",
+      "register": "neutral",
+      "mnemonic": "Your honour will go. Not: you will go."
+    },
+    {
+      "id": "L1-M6-S06",
+      "display": "śvaḥ saṃskṛtam paṭhiṣyāmi.",
+      "script": "श्वः संस्कृतम् पठिष्यामि।",
+      "cue": "I will study Sanskrit tomorrow.",
+      "literal": "tomorrow Sanskrit I-will-study",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tomorrow'. In front of a sibilant the visarga simply stays as it is, which is not what it did in front of the g of gamiṣyāmi."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's neuter noun, and the thing studied. Neuter, so its object shape is the same word — the ending that shows on vidyālayam is hidden here."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "delta",
+            "forms": [],
+            "note": "M4's verb in its future: paṭhāmi with -iṣya- wedged in. The stem did not change and the ending did not change."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "paṭhiṣyāmi is paṭhāmi with three letters pushed into the middle of it. Nothing was rebuilt. If you learned the stem in M4 you have already learned this tense, which is the opposite of what a future tense usually costs.",
+      "sound": "SHVAH SANS-kri-tam pa-thi-SHYAA-mi. The visarga stays exactly as it is in front of the s of saṃskṛtam. The ṭh of paṭhiṣyāmi is retroflex and aspirated — tongue curled back, then a puff.",
+      "variations": [
+        {
+          "display": "aham hyaḥ saṃskṛtam paṭhitavān.",
+          "script": "अहम् ह्यः संस्कृतम् पठितवान्।",
+          "cue": "I studied Sanskrit yesterday. (a man speaking)",
+          "changed": "the past, which needs its aham and picks up a gender — the future above did neither"
+        },
+        {
+          "display": "pratidinam saṃskṛtam paṭhāmi.",
+          "script": "प्रतिदिनम् संस्कृतम् पठामि।",
+          "cue": "I study Sanskrit every day.",
+          "changed": "the habit, with the plain present and a time word that means it happens over and over"
+        },
+        {
+          "display": "śvaḥ saṃskṛtam na paṭhiṣyāmi.",
+          "script": "श्वः संस्कृतम् न पठिष्यामि।",
+          "cue": "I won't study Sanskrit tomorrow.",
+          "changed": "negated, and na has taken the slot immediately in front of the verb as it always does"
+        }
+      ],
+      "usage": "Saying what tomorrow's work is — the sentence a student says at the end of a class.",
+      "register": "neutral",
+      "mnemonic": "Stem untouched. Ending untouched. Marker between."
+    },
+    {
+      "id": "L1-M6-S07",
+      "display": "śvaḥ na gamiṣyāmi.",
+      "script": "श्वः न गमिष्यामि।",
+      "cue": "I won't go tomorrow.",
+      "literal": "tomorrow not I-will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tomorrow'. In front of the voiced n the visarga becomes an o when spoken, exactly as it does in front of g."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's 'not', standing immediately in front of what it denies. Everything M3 taught about it survives the change of tense untouched."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "delta",
+            "forms": [],
+            "note": "The future of 'go'. Negation does not reach inside it: the marker and the ending are the same as in the positive sentence."
+          }
+        ],
+        "rules": [6, 0]
+      },
+      "trap": "There is no 'won't' to build, and no 'do not' either. English hangs its negative on a helper; with no helper on the page, na simply stands in front of the verb and the sentence is finished.",
+      "sound": "SHVO na ga-mi-SHYAA-mi. The visarga turns into an o in front of the n. na is one short beat and never stretched — it is not carrying the emphasis English would put on 'won't'.",
+      "variations": [
+        {
+          "display": "śvaḥ vidyālayam na gamiṣyāmi.",
+          "script": "श्वः विद्यालयम् न गमिष्यामि।",
+          "cue": "I won't go to school tomorrow.",
+          "changed": "a destination added, and na still stands in front of the verb rather than in front of the place"
+        },
+        {
+          "display": "aham hyaḥ na gatavān.",
+          "script": "अहम् ह्यः न गतवान्।",
+          "cue": "I didn't go yesterday. (a man speaking)",
+          "changed": "the past, where the pronoun has to come back — but na itself has not moved an inch"
+        },
+        {
+          "display": "sā śvaḥ na gamiṣyati.",
+          "script": "सा श्वः न गमिष्यति।",
+          "cue": "She won't go tomorrow.",
+          "changed": "a third person, and the same verb with -ti behind the marker instead of -mi"
+        }
+      ],
+      "mistake": {
+        "display": "śvaḥ gamiṣyāmi na.",
+        "why": "na stranded at the end is where an English speaker puts 'not' when they cannot find a helper to hang it on. In Sanskrit na stands immediately in front of what it denies, and here that is the verb."
+      },
+      "usage": "Declining an invitation without a story attached — three words and the matter is closed.",
+      "register": "neutral",
+      "mnemonic": "na in front. Always in front."
+    },
+    {
+      "id": "L1-M6-S08",
+      "display": "śvaḥ phalam khādiṣyāmi.",
+      "script": "श्वः फलम् खादिष्यामि।",
+      "cue": "I will eat a fruit tomorrow.",
+      "literal": "tomorrow fruit I-will-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tomorrow'. In front of the ph the visarga stays as it is — the o only appears before a voiced sound."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's neuter noun. As the thing eaten it keeps its shape, which is why the object ending has been invisible for five modules."
+          },
+          {
+            "display": "khādati",
+            "cue": "eats",
+            "tag": "delta",
+            "forms": [],
+            "note": "M4's verb in its future: khādāmi with the marker pushed in. Regular, like four of M4's five verbs."
+          }
+        ],
+        "rules": [0, 3]
+      },
+      "trap": "Two endings are doing work here that English spends words on — the 'will' inside the verb, and the object marking on phalam that you cannot see because the word is neuter. Neither is missing; both are simply not separate words.",
+      "sound": "SHVAH PHA-lam khaa-di-SHYAA-mi. The visarga holds in front of ph. Both ph and kh are aspirated stops — a p and a k with a puff of breath behind them — and neither is ever an f or a ch.",
+      "variations": [
+        {
+          "display": "śvaḥ jalam pāsyāmi.",
+          "script": "श्वः जलम् पास्यामि।",
+          "cue": "I will drink water tomorrow.",
+          "changed": "a different verb, and one whose future is not built the regular way at all — pibati gives pāsyāmi"
+        },
+        {
+          "display": "prātaḥ phalam khādiṣyāmi.",
+          "script": "प्रातः फलम् खादिष्यामि।",
+          "cue": "I will eat a fruit in the morning.",
+          "changed": "morning instead of tomorrow, in the same front slot, and the future ending unbothered by it"
+        },
+        {
+          "display": "aham hyaḥ phalam khāditavān.",
+          "script": "अहम् ह्यः फलम् खादितवान्।",
+          "cue": "I ate a fruit yesterday. (a man speaking)",
+          "changed": "the past of the same sentence — the pronoun returns and the verb picks up a gender it does not have above"
+        }
+      ],
+      "usage": "Everyday planning talk about food, and the frame a shopkeeper's question gets answered in.",
+      "register": "neutral",
+      "mnemonic": "pibati gives pāsyāmi. The one that misbehaves."
+    },
+    {
+      "id": "L1-M6-S09",
+      "display": "rāmaḥ vidyālayam gamiṣyati.",
+      "script": "रामः विद्यालयम् गमिष्यति।",
+      "cue": "Rāma will go to school.",
+      "literal": "Rāma school-to will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma — a man's name",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's name in its naming shape, which is what a subject wears. The -aḥ on the end is the ending vidyālayam has traded away."
+          },
+          {
+            "display": "vidyālayaḥ",
+            "cue": "school",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' as the destination: vidyālayam. Two nouns in one line, and the endings alone say which of them is going and which is being gone to."
+          },
+          {
+            "display": "gamiṣyati",
+            "cue": "will go (he · she · your honour)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The he/she future. A name takes it exactly as bhavān does, because bhavān was a third person all along."
+          }
+        ],
+        "rules": [3, 7]
+      },
+      "trap": "Three words, and two of them carry an ending English spends a separate word on: the destination has no 'to' in front of it and the verb has no 'will'. Nothing has been left out — it has been folded in.",
+      "sound": "RAA-mo vid-YAA-la-yam ga-mi-SHYA-ti. Said aloud the -aḥ of rāmaḥ becomes an o in front of the voiced v — rāmo vidyālayam — and the page keeps the two words apart as it always does.",
+      "variations": [
+        {
+          "display": "sītā vidyālayam gamiṣyati.",
+          "script": "सीता विद्यालयम् गमिष्यति।",
+          "cue": "Sītā will go to school.",
+          "changed": "a woman in the subject slot and the verb unchanged — the future has no gender to show, which the past could not manage"
+        },
+        {
+          "display": "rāmaḥ vidyālayam gacchati.",
+          "script": "रामः विद्यालयम् गच्छति।",
+          "cue": "Rāma is going to school.",
+          "changed": "the plain present, which is M2's own sentence with a destination dropped into it"
+        },
+        {
+          "display": "rāmaḥ gṛham gamiṣyati.",
+          "script": "रामः गृहम् गमिष्यति।",
+          "cue": "Rāma will go home.",
+          "changed": "home instead of school, and the neuter destination hides the ending the masculine one showed"
+        }
+      ],
+      "mistake": {
+        "display": "rāmaḥ vidyālayaḥ gamiṣyati.",
+        "why": "Two naming shapes and nothing to connect them — the line now has two subjects and no destination. A place being gone to is vidyālayam, and leaving it as vidyālayaḥ is what happens when you expect a preposition to carry the meaning."
+      },
+      "usage": "Talking about somebody else's day, which is most of what a conversation about plans actually is.",
+      "register": "neutral",
+      "mnemonic": "Two subjects means you dropped an ending."
+    },
+    {
+      "id": "L1-M6-S10",
+      "display": "bhavatī śvaḥ kim kariṣyati?",
+      "script": "भवती श्वः किम् करिष्यति?",
+      "cue": "What will you do tomorrow? (to a woman)",
+      "literal": "your-honour tomorrow what will-do?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You' to a woman is bhavatī, and it takes the same third-person verb bhavān does. The address bends; the ending behind it never does."
+          },
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tomorrow', here in the middle of the line. A time word is free to stand at either end or between, and nothing agrees with it."
+          },
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's kim in its 'what' reading, standing exactly where the answer will stand. The new tense has not moved it."
+          },
+          {
+            "display": "kariṣyati",
+            "cue": "will do · will make (he · she · your honour)",
+            "tag": "delta",
+            "forms": ["kariṣyati"],
+            "note": "The he/she future of M4's karoti. The o of karoti drops before the marker — kariṣyāmi, kariṣyati — which is this module's one irregularity."
+          }
+        ],
+        "rules": [7, 6]
+      },
+      "trap": "Four words, one of them the question word, and not a single thing has been rearranged. English builds 'what will you do' out of an inversion and a helper; here kim stands in the answer's own slot and the verb stays last.",
+      "sound": "bha-va-TEE SHVAH KIM ka-ri-SHYA-ti. The visarga of śvaḥ stays in front of the k, and the m of kim becomes a nasal hum before the following k so the two run together.",
+      "variations": [
+        {
+          "display": "bhavān śvaḥ kim kariṣyati?",
+          "script": "भवान् श्वः किम् करिष्यति?",
+          "cue": "What will you do tomorrow? (to a man)",
+          "changed": "the address bends to a man and the verb does not — bhavān and bhavatī take the same -ti ending"
+        },
+        {
+          "display": "bhavatī adya kim karoti?",
+          "script": "भवती अद्य किम् करोति?",
+          "cue": "What are you doing today? (to a woman)",
+          "changed": "M4's own question, with the plain present and today in the slot tomorrow held"
+        },
+        {
+          "display": "śvaḥ kim kariṣyāmi?",
+          "script": "श्वः किम् करिष्यामि?",
+          "cue": "What will I do tomorrow?",
+          "changed": "turned on the speaker — the -mi ending brings 'I' back, so no pronoun is needed to say it"
+        }
+      ],
+      "usage": "Opening a conversation about somebody's plans, and the question S01 through S08 are all answers to.",
+      "register": "neutral",
+      "mnemonic": "karoti gives kariṣyati. The o goes."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M6-C01",
+      "display": "śvaḥ vidyālayam gamiṣyāmi.",
+      "script": "श्वः विद्यालयम् गमिष्यामि।",
+      "cue": "I will go to school tomorrow."
+    },
+    {
+      "id": "L1-M6-C02",
+      "display": "sītā śvaḥ kutra gamiṣyati?",
+      "script": "सीता श्वः कुत्र गमिष्यति?",
+      "cue": "Where will Sītā go tomorrow?"
+    },
+    {
+      "id": "L1-M6-C03",
+      "display": "bhavān gṛham gamiṣyati?",
+      "script": "भवान् गृहम् गमिष्यति?",
+      "cue": "Will you go home?"
+    },
+    {
+      "id": "L1-M6-C04",
+      "display": "śvaḥ pustakam paṭhiṣyāmi.",
+      "script": "श्वः पुस्तकम् पठिष्यामि।",
+      "cue": "I will read a book tomorrow."
+    },
+    {
+      "id": "L1-M6-C05",
+      "display": "sā vidyālayam gamiṣyati.",
+      "script": "सा विद्यालयम् गमिष्यति।",
+      "cue": "She will go to school."
+    },
+    {
+      "id": "L1-M6-C06",
+      "display": "prātaḥ jalam pāsyāmi.",
+      "script": "प्रातः जलम् पास्यामि।",
+      "cue": "I will drink water in the morning."
+    },
+    {
+      "id": "L1-M6-C07",
+      "display": "saḥ śvaḥ gṛham gamiṣyati.",
+      "script": "सः श्वः गृहम् गमिष्यति।",
+      "cue": "He will go home tomorrow."
+    },
+    {
+      "id": "L1-M6-C08",
+      "display": "bhavatī kutra gamiṣyati?",
+      "script": "भवती कुत्र गमिष्यति?",
+      "cue": "Where will you go? (to a woman)"
+    },
+    {
+      "id": "L1-M6-C09",
+      "display": "śvaḥ pustakam lekhiṣyāmi.",
+      "script": "श्वः पुस्तकम् लेखिष्यामि।",
+      "cue": "I will write a book tomorrow."
+    },
+    {
+      "id": "L1-M6-C10",
+      "display": "sītā gṛham gamiṣyati.",
+      "script": "सीता गृहम् गमिष्यति।",
+      "cue": "Sītā will go home."
+    },
+    {
+      "id": "L1-M6-C11",
+      "display": "śvaḥ kim kariṣyati?",
+      "script": "श्वः किम् करिष्यति?",
+      "cue": "What will he do tomorrow?"
+    },
+    {
+      "id": "L1-M6-C12",
+      "display": "gṛham gantum icchāmi.",
+      "script": "गृहम् गन्तुम् इच्छामि।",
+      "cue": "I want to go home."
+    },
+    {
+      "id": "L1-M6-C13",
+      "display": "vidyālayam gantum icchāmi.",
+      "script": "विद्यालयम् गन्तुम् इच्छामि।",
+      "cue": "I want to go to school."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

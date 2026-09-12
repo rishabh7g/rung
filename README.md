@@ -106,7 +106,7 @@ vitest.
 CI job. There is deliberately no separate lint/test/build pipeline to keep in sync. When a run is
 red, each step's full log is in `.verify/<step>.log`.
 
-### What TEST actually runs — eleven files, and the suite that was cut
+### What TEST actually runs — sixteen files, and the suite that was cut
 
 **The suite was cut in half on 2026-08-30, in two commits, and the sections below say so wherever
 they used to lean on a file that went.** `02a45dd` (#362–#365) removed the render-level suite —
@@ -116,7 +116,14 @@ twenty test files that had been deleted; every one of them existed once, and non
 #503 finished the sweep everywhere else — `docs/`, `index.html` and the headers under `tools/` and
 `scripts/` — under one rule: **a deleted test may be named only where the same paragraph says it
 was deleted.** Cited as a live gate it is a lie; cited as history, marked, it is the record.
-Eleven files run today:
+
+**The same prose then drifted the other way, and #606 caught it.** The sweep left an accurate list
+of eleven, and four files were added afterwards without it — `tools/author-kit.test.ts` (#480–#487),
+`tools/font-coverage.test.ts` (#375, #382), `tools/generate-prompt.test.ts` (#424, #471) and
+`src/pwa/offlineCourse.test.ts` — so a count that had been corrected for naming dead tests went
+wrong again by omitting live ones. The rule that fixes both is the same one: this list is what
+`vite.config.ts`'s `test.include` actually matches, checked against the tree, not remembered.
+Sixteen files run today:
 
 | File | What it proves |
 |---|---|
@@ -124,10 +131,15 @@ Eleven files run today:
 | `scripts/verify.test.ts` | the harness's own step order, summary line, failure block and exit codes, in a tmp dir against fake `npm`/`npx` |
 | `src/course/types.test.ts` | every module and ladder in `content/` walked key by key against `types.ts`, plus the `FORCED_DUPLICATES` ownership map |
 | `src/engine/leitner.test.ts` | the review scheduler's boxes, intervals and per-session picks |
+| `src/pwa/offlineCourse.test.ts` | the scoped warm's two rules as tables — what the device does **not** download, and what an eviction deletes |
 | `src/state/store.test.ts` | the persisted document: migrations, the persisted slice, and what the progression engine is fed |
-| `tools/course-briefs.test.ts` | the briefs against the ladders they mirror, and the decisions en-ko's settle (#109, #376) |
+| `tools/author-kit.test.ts` | that `content:kit` stays small — the brief, the bounds and one worked sentence, and nothing else (#480–#487) |
+| `tools/content-build.test.ts` | the fixture-course seam: a course that is a manifest row and a ladder, with no `modules/` at all (#606) |
+| `tools/course-briefs.test.ts` | the briefs against the ladders they mirror, and the decisions en-ko's and en-sa's settle (#109, #376, #607) |
 | `tools/css-classes.test.ts` | the flat CSS namespace (#496) — see below |
 | `tools/delta-index.test.ts` | `fold(deltas) === the cumulative index`, exactly, for every shipped module (#424) |
+| `tools/font-coverage.test.ts` | every character the content build harvested is drawn by some cut this repo ships, read from the cmaps — **skips whole unless `public/content/` and `src/fonts/generated/` both exist**, so it proves nothing until CONTENT and FONTS have run (#375, #382) |
+| `tools/generate-prompt.test.ts` | the prompt's vocabulary section against the delta indexes — that it folds rather than listing one module's delta (#424, #471) |
 | `tools/module-ids.test.ts` | the five-level id grammar in all four places that spell it |
 | `tools/register.test.ts` | the sentence-register enum stayed closed when `formal` widened it (#422) |
 | `tools/shown-surfaces.test.ts` | the shown-but-untaught count per course may fall, never rise (#491) |
