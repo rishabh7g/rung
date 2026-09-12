@@ -1,0 +1,1240 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M3",
+  "title": "What might have been",
+  "job": "Regrets and past hypotheticals",
+  "prerequisites": [
+    "L4-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present",
+      "participial_past",
+      "verbless_nominal_present",
+      "optative_first_singular",
+      "optative_third_singular"
+    ],
+    "allowedPatterns": [
+      "yadi + aham + hyaḥ + V-eyam + tarhi + <clause>",
+      "yadi + <clause> + tarhi + N-nom + syāt",
+      "yadi + bhavān + V-et + tarhi + <clause>",
+      "yadi + aham + N-acc + paśyeyam + tarhi + <clause>",
+      "mahyam + duḥkham + asti + yataḥ + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Sanskrit has no dedicated past counterfactual, so this module builds one. The frame is L3-M4's own yadi … tarhi with an OPTATIVE IN BOTH HALVES: yadi aham hyaḥ gaccheyam tarhi mama mitram paśyeyam."
+    },
+    {
+      "tag": "delta",
+      "text": "The optative in the speaker's cell ends -eyam where L3-M4's third singular ends -et: gacchet becomes gaccheyam, paṭhet becomes paṭheyam. Three verbs carry it here — gaccheyam, paṭheyam, paśyeyam — and no fourth."
+    },
+    {
+      "tag": "delta",
+      "text": "syāt is 'would be', the optative of L1-M3's asti, and it is what a supposed verbless sentence needs. The set of this verb, side by side at last: asti one is, staḥ two are, santi many are, astu let it be, syāt would be."
+    },
+    {
+      "tag": "delta",
+      "text": "What does NOT open with it, so you know the shape of the hole: every dual and plural optative, the second singular gaccheḥ, the athematic kuryāt that L3-M4 already refused, and the conditional agamiṣyat — the one form that means exactly 'would have gone' and that almost nobody says."
+    },
+    {
+      "tag": "delta",
+      "text": "The optative in BOTH halves is the only visible difference between a plan and a regret. L3-M4's yadi bhavān adya gacchati tarhi aham api gacchāmi is a live arrangement; yadi mārgaḥ hrasvaḥ syāt tarhi aham hyaḥ gaccheyam is something that did not happen."
+    },
+    {
+      "tag": "delta",
+      "text": "The pastness is LEXICAL, never on the verb. hyaḥ is what makes a counterfactual about yesterday, and a sentence with no time word in it is about whatever the situation is about. Nothing in the verb changes when the day does."
+    },
+    {
+      "tag": "interference",
+      "text": "English marks unreality twice, in the auxiliary and in the tense, so a learner builds the condition with the participle: yadi aham hyaḥ gatavān … That is a plain statement that the thing DID happen, and it leaves the second half supposing about a fact."
+    },
+    {
+      "tag": "free",
+      "text": "A regret needs no counterfactual at all, and this is the commoner sentence: mahyam duḥkham asti, yataḥ aham hyaḥ na gatavān — L3-M6's dative frame, L1-M9's yataḥ, and a participle reporting the fact behind the feeling."
+    },
+    {
+      "tag": "free",
+      "text": "The listener's half never takes -eyam. bhavān and bhavatī have taken a third-person verb since L1-M2, so a counterfactual about you uses L3-M4's -et and one about me uses -eyam. That is the whole of the person system here."
+    },
+    {
+      "tag": "free",
+      "text": "na stands in front of the optative exactly as it stands in front of a present: samasyā na syāt, 'there would be no problem'. It never negates the bare noun, and tarhi may still be dropped, as L3-M4 said."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M3-S01",
+      "display": "yadi aham hyaḥ gaccheyam tarhi mama mitram paśyeyam.",
+      "script": "यदि अहम् ह्यः गच्छेयम् तर्हि मम मित्रम् पश्येयम्।",
+      "cue": "If I had gone yesterday, I would have seen my friend.",
+      "literal": "if I yesterday would-go then my friend would-see",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'if'. It opens its clause and takes no ending. What changed here is not yadi but the mood of the two verbs it stands over."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most: the -eyam on the verb already says who is speaking."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday', and in this module it is load-bearing: the verbs carry no tense at all, so this one word is what makes the sentence about the past."
+          },
+          {
+            "display": "gaccheyam",
+            "cue": "I would go · I would have gone",
+            "tag": "delta",
+            "forms": [],
+            "note": "The optative of L1-M2's gacchati in the SPEAKER's cell: -eyam where L3-M4's gacchet has -et. A row of its own here, pointing back at gacchati, with no edit to L1-M2."
+          },
+          {
+            "display": "tarhi",
+            "cue": "then · in that case",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'then', opening the consequence. It may still be left out, exactly as L3-M4 said, and the counterfactual survives without it."
+          },
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape. aham acts, mama owns, mahyam receives."
+          },
+          {
+            "display": "mitram",
+            "cue": "friend",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's 'friend', and the word is neuter whoever the friend is. Here it is the object of the seeing and the shape does not change for that either."
+          },
+          {
+            "display": "paśyeyam",
+            "cue": "I would see · I would have seen",
+            "tag": "delta",
+            "forms": [],
+            "note": "The optative of L2-M4's paśyati in the speaker's cell. Its own row here, pointing back at paśyati. This course writes no third-singular paśyet."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      "trap": "Nothing in this sentence is past. Both verbs are optatives, hyaḥ is the only word carrying time, and take it away and the same seven words are about today.",
+      "sound": "YA-di a-HAM HYAH gach-CHEH-yam TAR-hi MA-ma MI-tram pash-YEH-yam. The eyam at the end of both verbs is two syllables, eh-yam.",
+      "variations": [
+        {
+          "display": "yadi aham adya gaccheyam tarhi mama mitram paśyeyam.",
+          "script": "यदि अहम् अद्य गच्छेयम् तर्हि मम मित्रम् पश्येयम्।",
+          "cue": "If I went today, I would see my friend.",
+          "changed": "one time word swaps and the sentence stops being about the past — the verbs are untouched, which is the whole lesson"
+        },
+        {
+          "display": "yadi aham hyaḥ na gaccheyam tarhi mama mitram na paśyeyam.",
+          "script": "यदि अहम् ह्यः न गच्छेयम् तर्हि मम मित्रम् न पश्येयम्।",
+          "cue": "If I had not gone yesterday, I would not have seen my friend.",
+          "changed": "na enters both halves, in front of the optative exactly as it stands in front of a present"
+        },
+        {
+          "display": "yadi aham hyaḥ gaccheyam mama mitram paśyeyam.",
+          "script": "यदि अहम् ह्यः गच्छेयम् मम मित्रम् पश्येयम्।",
+          "cue": "If I had gone yesterday, I would have seen my friend.",
+          "changed": "tarhi is dropped, which L3-M4 already allowed, and the counterfactual is unharmed"
+        }
+      ],
+      "mistake": {
+        "display": "yadi aham hyaḥ gatavān tarhi mama mitram paśyeyam.",
+        "why": "The condition has been built with the participle gatavān, which is a plain statement that I DID go. A counterfactual needs the optative in BOTH halves; a participle in the first half says the thing happened, and then the second half has nothing left to suppose."
+      },
+      "usage": "The everyday shape of a regret. A speaker says it about a missed visit far more often than about anything grand.",
+      "register": "neutral",
+      "mnemonic": "Both halves suppose; only hyaḥ remembers."
+    },
+    {
+      "id": "L4-M3-S02",
+      "display": "yadi aham hyaḥ paṭheyam tarhi mahyam sukham syāt.",
+      "script": "यदि अहम् ह्यः पठेयम् तर्हि मह्यम् सुखम् स्यात्।",
+      "cue": "If I had studied yesterday, I would be happy.",
+      "literal": "if I yesterday would-study then to-me happiness would-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'if'. It opens its clause and takes no ending. What changed here is not yadi but the mood of the two verbs it stands over."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most: the -eyam on the verb already says who is speaking."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday', and in this module it is load-bearing: the verbs carry no tense at all, so this one word is what makes the sentence about the past."
+          },
+          {
+            "display": "paṭheyam",
+            "cue": "I would study · I would have studied",
+            "tag": "delta",
+            "forms": [],
+            "note": "The optative of L1-M4's paṭhati in the speaker's cell, beside L3-M4's third-singular paṭhet. Its own row here, pointing back at paṭhati."
+          },
+          {
+            "display": "tarhi",
+            "cue": "then · in that case",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'then', opening the consequence. It may still be left out, exactly as L3-M4 said, and the counterfactual survives without it."
+          },
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'to me' shape, the one L3-M6 builds a feeling on: mahyam duḥkham asti is 'I am sad'."
+          },
+          {
+            "display": "sukham",
+            "cue": "happiness · ease",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M6's neuter noun, the subject of the second half. It is duḥkham's opposite number and is built the same way."
+          },
+          {
+            "display": "syāt",
+            "cue": "would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "The optative of L1-M3's asti, and the whole of 'would be'. The set, side by side at last: asti one is, staḥ two are, santi many are, astu let it be, syāt would be."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          5
+        ]
+      },
+      "trap": "syāt is third singular and there is no first-person shape of it in this course. 'I would be happy' is therefore built round mahyam and a neuter noun, as L3-M6 built 'I am happy'.",
+      "sound": "YA-di a-HAM HYAH pa-THEH-yam TAR-hi MAH-yam SU-kham SYAAT. The syaat is one syllable, sy together.",
+      "variations": [
+        {
+          "display": "yadi aham hyaḥ paṭheyam tarhi mahyam duḥkham na syāt.",
+          "script": "यदि अहम् ह्यः पठेयम् तर्हि मह्यम् दुःखम् न स्यात्।",
+          "cue": "If I had studied yesterday, I would not be sad.",
+          "changed": "the consequence is negated and the feeling flips with it; na goes in front of syāt like any other verb"
+        },
+        {
+          "display": "yadi bhavatī hyaḥ paṭhet tarhi bhavatyai sukham syāt.",
+          "script": "यदि भवती ह्यः पठेत् तर्हि भवत्यै सुखम् स्यात्।",
+          "cue": "If you had studied yesterday, you would be happy.",
+          "changed": "the person shifts to the listener, so -eyam becomes L3-M4's -et and mahyam becomes L2-M5's bhavatyai"
+        },
+        {
+          "display": "yadi aham hyaḥ paṭheyam tarhi kim mahyam sukham syāt?",
+          "script": "यदि अहम् ह्यः पठेयम् तर्हि किम् मह्यम् सुखम् स्यात्?",
+          "cue": "If I had studied yesterday, would I be happy?",
+          "changed": "L1-M2's kim turns the consequence into a yes/no question and the condition is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "yadi aham hyaḥ paṭhitavān tarhi mahyam sukham syāt.",
+        "why": "paṭhitavān says I did study. Once the first half asserts the past, the second half is not a counterfactual any more but a conclusion drawn from a fact, and syāt in front of a fact reads as a hedge instead of a regret."
+      },
+      "usage": "What a student says the evening before a result. The regret is in the shape, not in any word meaning 'sorry'.",
+      "register": "neutral",
+      "mnemonic": "asti states, syāt supposes."
+    },
+    {
+      "id": "L4-M3-S03",
+      "display": "yadi mārgaḥ hrasvaḥ syāt tarhi aham hyaḥ gaccheyam.",
+      "script": "यदि मार्गः ह्रस्वः स्यात् तर्हि अहम् ह्यः गच्छेयम्।",
+      "cue": "If the road had been short, I would have gone yesterday.",
+      "literal": "if road short would-be then I yesterday would-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'if'. It opens its clause and takes no ending. What changed here is not yadi but the mood of the two verbs it stands over."
+          },
+          {
+            "display": "mārgaḥ",
+            "cue": "road · way",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's road, in the nominative as the subject of the condition. Nothing about the counterfactual touches a noun's case."
+          },
+          {
+            "display": "hrasvaḥ",
+            "cue": "short",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'short' of a thing, agreeing with mārgaḥ. An adjective in a supposed clause looks exactly like an adjective in a real one."
+          },
+          {
+            "display": "syāt",
+            "cue": "would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "The optative of L1-M3's asti. Here it is the verb of the CONDITION: a verbless nominal sentence, mārgaḥ hrasvaḥ, needs syāt put into it before it can be supposed."
+          },
+          {
+            "display": "tarhi",
+            "cue": "then · in that case",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'then', opening the consequence. It may still be left out, exactly as L3-M4 said, and the counterfactual survives without it."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most: the -eyam on the verb already says who is speaking."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday', and in this module it is load-bearing: the verbs carry no tense at all, so this one word is what makes the sentence about the past."
+          },
+          {
+            "display": "gaccheyam",
+            "cue": "I would go · I would have gone",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's gacchati in the speaker's optative cell. It is the consequence here and the condition in S01 — the cell does not care which half it stands in."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          4
+        ]
+      },
+      "trap": "mārgaḥ hrasvaḥ is a complete sentence with no verb at all. To suppose it rather than assert it you must put syāt in, and that is the one place this course ever needs a copula.",
+      "sound": "YA-di MAAR-gah HRAS-vah SYAAT TAR-hi a-HAM HYAH gach-CHEH-yam.",
+      "variations": [
+        {
+          "display": "yadi mārgaḥ dīrghaḥ na syāt tarhi aham hyaḥ gaccheyam.",
+          "script": "यदि मार्गः दीर्घः न स्यात् तर्हि अहम् ह्यः गच्छेयम्।",
+          "cue": "If the road had not been long, I would have gone yesterday.",
+          "changed": "the negation moves into the condition and the adjective flips with it — two ways of saying one thing"
+        },
+        {
+          "display": "yadi mārgaḥ hrasvaḥ syāt tarhi bhavān api hyaḥ gacchet.",
+          "script": "यदि मार्गः ह्रस्वः स्यात् तर्हि भवान् अपि ह्यः गच्छेत्।",
+          "cue": "If the road had been short, you too would have gone yesterday.",
+          "changed": "the person shifts to the listener, so the optative moves to L3-M4's -et cell and L1-M10's api comes in behind bhavān"
+        },
+        {
+          "display": "mārgaḥ dīrghaḥ, ataḥ aham hyaḥ na gatavān.",
+          "script": "मार्गः दीर्घः, अतः अहम् ह्यः न गतवान्।",
+          "cue": "The road is long, so I did not go yesterday.",
+          "changed": "the supposition becomes a report: L1-M9's ataḥ and L1-M2's participle, with no optative anywhere"
+        }
+      ],
+      "mistake": {
+        "display": "yadi mārgaḥ hrasvaḥ tarhi aham hyaḥ gaccheyam.",
+        "why": "The condition has been left verbless. mārgaḥ hrasvaḥ asserts that the road IS short, so the sentence says 'the road is short, so I would have gone', which is not a counterfactual. The supposition needs syāt."
+      },
+      "usage": "The half a speaker most often reaches for when explaining a decision already taken.",
+      "register": "neutral",
+      "mnemonic": "To suppose a verbless sentence, give it syāt."
+    },
+    {
+      "id": "L4-M3-S04",
+      "display": "yadi bhavān hyaḥ alpam khādet tarhi adya bhavān kuśalī syāt.",
+      "script": "यदि भवान् ह्यः अल्पम् खादेत् तर्हि अद्य भवान् कुशली स्यात्।",
+      "cue": "If you had eaten a little yesterday, you would be well today.",
+      "literal": "if you yesterday a-little would-eat then today you well would-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'if'. It opens its clause and takes no ending. What changed here is not yadi but the mood of the two verbs it stands over."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you', with a THIRD-person verb after it. That is why the listener's half of a counterfactual uses -et and never -eyam."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday', and in this module it is load-bearing: the verbs carry no tense at all, so this one word is what makes the sentence about the past."
+          },
+          {
+            "display": "alpam",
+            "cue": "a little · not much",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M9's 'a little', standing in front of the verb it measures. L3-M4 put it in front of khādet in exactly this slot."
+          },
+          {
+            "display": "khādet",
+            "cue": "should eat · would eat",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's optative of khādati, reused with no new row. It is one of the three -et cells this course has, and there are no others."
+          },
+          {
+            "display": "tarhi",
+            "cue": "then · in that case",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'then', opening the consequence. It may still be left out, exactly as L3-M4 said, and the counterfactual survives without it."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. A counterfactual about yesterday can have its consequence in today, and the time words say which half is when."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you' again, in the second half. It is written twice here because the two clauses have different times and the sentence reads more clearly with the subject in both."
+          },
+          {
+            "display": "kuśalī",
+            "cue": "well · in good health",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'well', of a man. It would be kuśalinī of a woman, and syāt would not change."
+          },
+          {
+            "display": "syāt",
+            "cue": "would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M3's asti in the optative. bhavān kuśalī is a verbless sentence; syāt is what turns it into something supposed rather than reported."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3,
+          8
+        ]
+      },
+      "trap": "The listener's half never takes -eyam. bhavān is followed by a third-person verb everywhere in this course, so a counterfactual about you uses L3-M4's -et and a counterfactual about me uses -eyam.",
+      "sound": "YA-di bha-VAAN HYAH AL-pam KHAA-det TAR-hi A-dya bha-VAAN ku-sha-LEE SYAAT.",
+      "variations": [
+        {
+          "display": "yadi bhavatī hyaḥ alpam khādet tarhi adya bhavatī kuśalinī syāt.",
+          "script": "यदि भवती ह्यः अल्पम् खादेत् तर्हि अद्य भवती कुशलिनी स्यात्।",
+          "cue": "If you had eaten a little yesterday, you would be well today.",
+          "changed": "the listener is a woman: bhavatī and kuśalinī fork, and neither khādet nor syāt moves"
+        },
+        {
+          "display": "yadi bhavān hyaḥ adhikam na khādet tarhi adya bhavān kuśalī syāt.",
+          "script": "यदि भवान् ह्यः अधिकम् न खादेत् तर्हि अद्य भवान् कुशली स्यात्।",
+          "cue": "If you had not eaten too much yesterday, you would be well today.",
+          "changed": "L2-M9's adhikam replaces alpam and na negates the condition — the same advice from the other end"
+        },
+        {
+          "display": "kim bhavān hyaḥ alpam khāditavān?",
+          "script": "किम् भवान् ह्यः अल्पम् खादितवान्?",
+          "cue": "Did you eat a little yesterday?",
+          "changed": "the whole supposition collapses into L1-M2's kim question in the plain participial past"
+        }
+      ],
+      "mistake": {
+        "display": "yadi bhavān hyaḥ alpam khādeyam tarhi adya bhavān kuśalī syāt.",
+        "why": "-eyam is the SPEAKER's ending and bhavān is the listener. The two cannot meet. Beside that, khādeyam is not a form this course writes at all: the -eyam cells here are gaccheyam, paṭheyam and paśyeyam and there is no fourth."
+      },
+      "usage": "Advice one day too late. A speaker softens it further by dropping hyaḥ, which turns the regret into standing advice.",
+      "register": "neutral",
+      "mnemonic": "-eyam is mine; -et is yours."
+    },
+    {
+      "id": "L4-M3-S05",
+      "display": "yadi aham hyaḥ patram paśyeyam tarhi samasyā na syāt.",
+      "script": "यदि अहम् ह्यः पत्रम् पश्येयम् तर्हि समस्या न स्यात्।",
+      "cue": "If I had seen the letter yesterday, there would be no problem.",
+      "literal": "if I yesterday letter would-see then problem not would-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'if'. It opens its clause and takes no ending. What changed here is not yadi but the mood of the two verbs it stands over."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most: the -eyam on the verb already says who is speaking."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday', and in this module it is load-bearing: the verbs carry no tense at all, so this one word is what makes the sentence about the past."
+          },
+          {
+            "display": "patram",
+            "cue": "paper · a form · a letter",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M8's wide word for a written sheet. It is the object of the seeing and takes the same shape it takes as a subject, because it is neuter."
+          },
+          {
+            "display": "paśyeyam",
+            "cue": "I would see · I would have seen",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M4's paśyati in the speaker's optative cell. Seeing is what a regret is usually about, which is why this is one of the three verbs the cell opens on."
+          },
+          {
+            "display": "tarhi",
+            "cue": "then · in that case",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'then', opening the consequence. It may still be left out, exactly as L3-M4 said, and the counterfactual survives without it."
+          },
+          {
+            "display": "samasyā",
+            "cue": "problem · difficulty",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'problem', feminine and in the nominative. It is the subject of syāt, and a subject's case is untouched by the mood of its verb."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', standing in front of the verb it negates. An optative is negated exactly like a present."
+          },
+          {
+            "display": "syāt",
+            "cue": "would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M3's asti in the optative. samasyā na syāt is 'there would be no problem' — the existence is supposed and then denied."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          9
+        ]
+      },
+      "trap": "na goes in front of syāt and not in front of samasyā. L1-M2's rule is unchanged: na negates a verb, never a bare noun.",
+      "sound": "YA-di a-HAM HYAH PA-tram pash-YEH-yam TAR-hi sa-mas-YAA NA SYAAT.",
+      "variations": [
+        {
+          "display": "yadi aham adya patram paśyeyam tarhi samasyā na syāt.",
+          "script": "यदि अहम् अद्य पत्रम् पश्येयम् तर्हि समस्या न स्यात्।",
+          "cue": "If I saw the letter today, there would be no problem.",
+          "changed": "hyaḥ gives way to adya and the impossible condition becomes an open one, with no verb changing"
+        },
+        {
+          "display": "yadi aham hyaḥ patram na paśyeyam tarhi samasyā syāt.",
+          "script": "यदि अहम् ह्यः पत्रम् न पश्येयम् तर्हि समस्या स्यात्।",
+          "cue": "If I had not seen the letter yesterday, there would be a problem.",
+          "changed": "the negation moves from the consequence into the condition and the consequence turns positive"
+        },
+        {
+          "display": "mahyam duḥkham asti, yataḥ aham hyaḥ patram na paṭhitavān.",
+          "script": "मह्यम् दुःखम् अस्ति, यतः अहम् ह्यः पत्रम् न पठितवान्।",
+          "cue": "I am sad, because I did not read the letter yesterday.",
+          "changed": "the same regret rebuilt with no supposition at all — L3-M6's dative frame, L1-M9's yataḥ and a participle"
+        }
+      ],
+      "mistake": {
+        "display": "yadi aham hyaḥ patram paśyeyam tarhi na samasyā syāt.",
+        "why": "na has been put in front of the noun. Sanskrit negates the verb: samasyā na syāt. na samasyā would have to mean something like 'a non-problem', which is not what the sentence is for."
+      },
+      "usage": "An office sentence. The letter is patram, the trouble is samasyā, and the supposition is the polite half of an apology.",
+      "register": "neutral",
+      "mnemonic": "Negate the verb, never the noun."
+    },
+    {
+      "id": "L4-M3-S06",
+      "display": "mahyam duḥkham asti, yataḥ aham hyaḥ na gatavān.",
+      "script": "मह्यम् दुःखम् अस्ति, यतः अहम् ह्यः न गतवान्।",
+      "cue": "I am sad, because I did not go yesterday.",
+      "literal": "to-me sorrow is, because I yesterday not went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'to me' shape, the one L3-M6 builds a feeling on: mahyam duḥkham asti is 'I am sad'."
+          },
+          {
+            "display": "duḥkham",
+            "cue": "sorrow · unhappiness",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M6's neuter noun. With mahyam in front of it, it is the whole of 'I am sad' — no adjective and no first-person verb."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is'. It states a fact about now; syāt is the same verb supposing instead of stating."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because · since",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'because', heading the cause. L4-M2 settled where it may stand; one link takes this marker or ataḥ, never both."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most: the -eyam on the verb already says who is speaking."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday', and in this module it is load-bearing: the verbs carry no tense at all, so this one word is what makes the sentence about the past."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', standing in front of the verb it negates. An optative is negated exactly like a present."
+          },
+          {
+            "display": "gatavān",
+            "cue": "went (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's participial past, forking with the speaker. This clause REPORTS the past rather than supposing it, which is why there is no optative in the sentence."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "There is no counterfactual here at all. A regret does not require one: the feeling is stated and the fact behind it is reported, and this is what a speaker says most of the time.",
+      "sound": "MAH-yam DUH-kham AS-ti, ya-TAH a-HAM HYAH NA ga-ta-VAAN.",
+      "variations": [
+        {
+          "display": "mahyam duḥkham asti, yataḥ sā hyaḥ na gatavatī.",
+          "script": "मह्यम् दुःखम् अस्ति, यतः सा ह्यः न गतवती।",
+          "cue": "I am sad, because she did not go yesterday.",
+          "changed": "the cause is about somebody else, so the participle forks to gatavatī while the feeling stays with mahyam"
+        },
+        {
+          "display": "aham hyaḥ na gatavān, ataḥ mahyam duḥkham asti.",
+          "script": "अहम् ह्यः न गतवान्, अतः मह्यम् दुःखम् अस्ति।",
+          "cue": "I did not go yesterday, so I am sad.",
+          "changed": "the link is marked at the other end — L1-M9's ataḥ on the consequence instead of yataḥ on the cause"
+        },
+        {
+          "display": "yadi aham hyaḥ gaccheyam tarhi mahyam duḥkham na syāt.",
+          "script": "यदि अहम् ह्यः गच्छेयम् तर्हि मह्यम् दुःखम् न स्यात्।",
+          "cue": "If I had gone yesterday, I would not be sad.",
+          "changed": "the same regret rebuilt as a counterfactual: two optatives arrive and both the participle and the connective leave"
+        }
+      ],
+      "mistake": {
+        "display": "mahyam duḥkham asti, yataḥ aham hyaḥ na gaccheyam.",
+        "why": "An optative in a yataḥ clause supposes the cause instead of stating it, so the sentence says 'I am sad because I would not go', which explains nothing. A reason is a fact, and a fact takes the participle."
+      },
+      "usage": "The plainest regret in the language, and the one to reach for first. The counterfactual is for when the missed thing itself has to be named.",
+      "register": "neutral",
+      "mnemonic": "Reasons are facts; facts take the participle."
+    },
+    {
+      "id": "L4-M3-S07",
+      "display": "yadi bhavatī hyaḥ idam pustakam paṭhet tarhi adya samasyā na syāt.",
+      "script": "यदि भवती ह्यः इदम् पुस्तकम् पठेत् तर्हि अद्य समस्या न स्यात्।",
+      "cue": "If you had read this book yesterday, there would be no problem today.",
+      "literal": "if you yesterday this book would-read then today problem not would-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'if'. It opens its clause and takes no ending. What changed here is not yadi but the mood of the two verbs it stands over."
+          },
+          {
+            "display": "bhavatī",
+            "cue": "you (polite, to a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you' to a woman. The verb does not fork for it — only an adjective does."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday', and in this module it is load-bearing: the verbs carry no tense at all, so this one word is what makes the sentence about the past."
+          },
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this', leaning on pustakam. It is the pointing word this course uses; L3-M2's tat is a correlative and does a different job."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book, the object of the reading. Neuter, so subject and object look alike."
+          },
+          {
+            "display": "paṭhet",
+            "cue": "should read · would read",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's optative of paṭhati, reused with no new row. Beside it stands this module's paṭheyam, the same cell in the speaker's person."
+          },
+          {
+            "display": "tarhi",
+            "cue": "then · in that case",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'then', opening the consequence. It may still be left out, exactly as L3-M4 said, and the counterfactual survives without it."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. A counterfactual about yesterday can have its consequence in today, and the time words say which half is when."
+          },
+          {
+            "display": "samasyā",
+            "cue": "problem · difficulty",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'problem'. The two halves sit in different times — yesterday's reading, today's trouble — and only the time words say so."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', standing in front of the verb it negates. An optative is negated exactly like a present."
+          },
+          {
+            "display": "syāt",
+            "cue": "would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M3's asti in the optative, carrying the whole of 'there would be'."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          5,
+          8
+        ]
+      },
+      "trap": "The two halves are in different times and no verb says so. hyaḥ and adya carry the whole of it, which is exactly the arrangement this module exists to teach.",
+      "sound": "YA-di bha-va-TEE HYAH i-DAM PUS-ta-kam PA-thet TAR-hi A-dya sa-mas-YAA NA SYAAT.",
+      "variations": [
+        {
+          "display": "yadi aham hyaḥ idam pustakam paṭheyam tarhi adya samasyā na syāt.",
+          "script": "यदि अहम् ह्यः इदम् पुस्तकम् पठेयम् तर्हि अद्य समस्या न स्यात्।",
+          "cue": "If I had read this book yesterday, there would be no problem today.",
+          "changed": "the person shifts to the speaker and the optative moves from the -et cell to the -eyam one; nothing else in the sentence knows"
+        },
+        {
+          "display": "yadi bhavatī hyaḥ idam pustakam na paṭhet tarhi adya samasyā syāt.",
+          "script": "यदि भवती ह्यः इदम् पुस्तकम् न पठेत् तर्हि अद्य समस्या स्यात्।",
+          "cue": "If you had not read this book yesterday, there would be a problem today.",
+          "changed": "the na moves from the consequence into the condition and both halves turn over"
+        },
+        {
+          "display": "kim bhavatī hyaḥ idam pustakam paṭhitavatī?",
+          "script": "किम् भवती ह्यः इदम् पुस्तकम् पठितवती?",
+          "cue": "Did you read this book yesterday?",
+          "changed": "the supposition becomes a plain question in the participial past, forked to a woman"
+        }
+      ],
+      "mistake": {
+        "display": "yadi bhavatī hyaḥ idam pustakam paṭhitavatī tarhi adya samasyā na syāt.",
+        "why": "The participle in the condition says you DID read it. The sentence then means 'since you read this book yesterday, there would be no problem today', which contradicts itself: the trouble is here precisely because the reading did not happen."
+      },
+      "usage": "What a colleague says about a briefing nobody opened. The politeness lives in bhavatī, not in the mood.",
+      "register": "neutral",
+      "mnemonic": "Two optatives, two time words, two different days."
+    },
+    {
+      "id": "L4-M3-S08",
+      "display": "yadi hyaḥ vṛṣṭiḥ na syāt tarhi aham mandiram gaccheyam.",
+      "script": "यदि ह्यः वृष्टिः न स्यात् तर्हि अहम् मन्दिरम् गच्छेयम्।",
+      "cue": "If it had not rained yesterday, I would have gone to the temple.",
+      "literal": "if yesterday rain not would-be then I temple would-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'if'. It opens its clause and takes no ending. What changed here is not yadi but the mood of the two verbs it stands over."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday', and in this module it is load-bearing: the verbs carry no tense at all, so this one word is what makes the sentence about the past."
+          },
+          {
+            "display": "vṛṣṭiḥ",
+            "cue": "rain",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M2's rain in its citation shape, as the subject. L4-M2's own sentences use the ablative vṛṣṭeḥ for the cause; here the rain is what is being supposed away, so it is a subject."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', standing in front of the verb it negates. An optative is negated exactly like a present."
+          },
+          {
+            "display": "syāt",
+            "cue": "would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M3's asti in the optative. vṛṣṭiḥ na syāt is 'there would be no rain' — the same existential asti L1-M3 opened, supposed instead of stated."
+          },
+          {
+            "display": "tarhi",
+            "cue": "then · in that case",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'then', opening the consequence. It may still be left out, exactly as L3-M4 said, and the counterfactual survives without it."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most: the -eyam on the verb already says who is speaking."
+          },
+          {
+            "display": "mandiram",
+            "cue": "temple",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's temple, as the place gone to. It is neuter, so the destination looks like the subject would."
+          },
+          {
+            "display": "gaccheyam",
+            "cue": "I would go · I would have gone",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's gacchati in the speaker's optative cell, carrying the trip that did not happen."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          9
+        ]
+      },
+      "trap": "The rain is a subject here, not a cause. L4-M2's vṛṣṭeḥ would say 'because of the rain' and would leave nothing for the condition to suppose.",
+      "sound": "YA-di HYAH VRISH-tih NA SYAAT TAR-hi a-HAM MAN-di-ram gach-CHEH-yam.",
+      "variations": [
+        {
+          "display": "yadi adya vṛṣṭiḥ na syāt tarhi aham mandiram gaccheyam.",
+          "script": "यदि अद्य वृष्टिः न स्यात् तर्हि अहम् मन्दिरम् गच्छेयम्।",
+          "cue": "If it were not raining today, I would go to the temple.",
+          "changed": "the time word moves to today and the impossible condition becomes a live one — the rain is still falling either way"
+        },
+        {
+          "display": "vṛṣṭeḥ aham hyaḥ mandiram na gatavān.",
+          "script": "वृष्टेः अहम् ह्यः मन्दिरम् न गतवान्।",
+          "cue": "Because of the rain I did not go to the temple yesterday.",
+          "changed": "the supposition collapses into L4-M2's cause ablative and a participle: one word for the reason, no optative at all"
+        },
+        {
+          "display": "yadi hyaḥ vṛṣṭiḥ na syāt tarhi bhavān api mandiram gacchet.",
+          "script": "यदि ह्यः वृष्टिः न स्यात् तर्हि भवान् अपि मन्दिरम् गच्छेत्।",
+          "cue": "If it had not rained yesterday, you too would have gone to the temple.",
+          "changed": "the person shifts to the listener, so -eyam becomes -et and L1-M10's api sits behind bhavān"
+        }
+      ],
+      "mistake": {
+        "display": "yadi hyaḥ vṛṣṭeḥ na syāt tarhi aham mandiram gaccheyam.",
+        "why": "vṛṣṭeḥ is the ablative and already means 'because of the rain', so the condition reads 'if there would not be because-of-the-rain'. A thing being supposed away is the SUBJECT of syāt and takes the nominative vṛṣṭiḥ."
+      },
+      "usage": "Weather is the commonest thing to suppose away, in Sanskrit as anywhere. This and L4-M2's vṛṣṭeḥ sentence are the two halves of the same complaint.",
+      "register": "neutral",
+      "mnemonic": "Suppose it away and it is a subject."
+    },
+    {
+      "id": "L4-M3-S09",
+      "display": "yadi bhavān hyaḥ gṛham gacchet tarhi bhavataḥ mātā santuṣṭā syāt.",
+      "script": "यदि भवान् ह्यः गृहम् गच्छेत् तर्हि भवतः माता सन्तुष्टा स्यात्।",
+      "cue": "If you had gone home yesterday, your mother would be content.",
+      "literal": "if you yesterday home would-go then of-you mother content would-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'if'. It opens its clause and takes no ending. What changed here is not yadi but the mood of the two verbs it stands over."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you', with a THIRD-person verb after it. That is why the listener's half of a counterfactual uses -et and never -eyam."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday', and in this module it is load-bearing: the verbs carry no tense at all, so this one word is what makes the sentence about the past."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's home, as the place gone to. Neuter, and unchanged by the mood of the verb after it."
+          },
+          {
+            "display": "gacchet",
+            "cue": "should go · could go",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's optative of gacchati, reused with no new row. It is the listener's cell; this module's gaccheyam is the speaker's."
+          },
+          {
+            "display": "tarhi",
+            "cue": "then · in that case",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'then', opening the consequence. It may still be left out, exactly as L3-M4 said, and the counterfactual survives without it."
+          },
+          {
+            "display": "bhavataḥ",
+            "cue": "your · of you",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's bhavān in its 'of you' shape, to a man. To a woman it is bhavatyāḥ, and mātā would not move."
+          },
+          {
+            "display": "mātā",
+            "cue": "mother",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's mother, the subject of the second half. She is content or not; the supposing is done by syāt alone."
+          },
+          {
+            "display": "santuṣṭā",
+            "cue": "content · pleased (a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's santuṣṭaḥ forked to a woman. An adjective agrees with who it describes even inside something only supposed."
+          },
+          {
+            "display": "syāt",
+            "cue": "would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M3's asti in the optative. mātā santuṣṭā is a complete verbless sentence; syāt is what makes it supposed."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3,
+          8
+        ]
+      },
+      "trap": "Two people are in this sentence and only one of them is being advised. The optative on gacchet is about the listener; syāt is about the mother, and both are third singular.",
+      "sound": "YA-di bha-VAAN HYAH GRI-ham GACH-chet TAR-hi bha-va-TAH MAA-taa san-tush-TAA SYAAT.",
+      "variations": [
+        {
+          "display": "yadi bhavatī hyaḥ gṛham gacchet tarhi bhavatyāḥ mātā santuṣṭā syāt.",
+          "script": "यदि भवती ह्यः गृहम् गच्छेत् तर्हि भवत्याः माता सन्तुष्टा स्यात्।",
+          "cue": "If you had gone home yesterday, your mother would be content.",
+          "changed": "the listener is a woman, so bhavataḥ becomes bhavatyāḥ; the verbs do not fork, because this course never forks a verb for gender"
+        },
+        {
+          "display": "yadi aham hyaḥ gṛham gaccheyam tarhi mama mātā santuṣṭā syāt.",
+          "script": "यदि अहम् ह्यः गृहम् गच्छेयम् तर्हि मम माता सन्तुष्टा स्यात्।",
+          "cue": "If I had gone home yesterday, my mother would be content.",
+          "changed": "the person shifts to the speaker: gacchet becomes gaccheyam and bhavataḥ becomes L1-M1's mama"
+        },
+        {
+          "display": "bhavān hyaḥ gṛham na gatavān, ataḥ bhavataḥ mātā khinnā.",
+          "script": "भवान् ह्यः गृहम् न गतवान्, अतः भवतः माता खिन्ना।",
+          "cue": "You did not go home yesterday, so your mother is unhappy.",
+          "changed": "the supposition becomes a report: L1-M2's participle, L1-M9's ataḥ, and a verbless present for the feeling"
+        }
+      ],
+      "mistake": {
+        "display": "yadi bhavān hyaḥ gṛham gaccheyam tarhi bhavataḥ mātā santuṣṭā syāt.",
+        "why": "gaccheyam is the speaker's ending sitting after bhavān. The listener always takes a third-person verb in this course, so the cell here is L3-M4's gacchet — and the two endings are a level apart precisely so they are never swapped."
+      },
+      "usage": "A reproach with the sting taken out. Putting the consequence on somebody absent is what makes it bearable.",
+      "register": "neutral",
+      "mnemonic": "One supposing sentence can hold two people."
+    },
+    {
+      "id": "L4-M3-S10",
+      "display": "yadi aham adhikam paṭheyam tarhi pariṇāmaḥ uttamaḥ syāt.",
+      "script": "यदि अहम् अधिकम् पठेयम् तर्हि परिणामः उत्तमः स्यात्।",
+      "cue": "If I had studied more, the result would have been excellent.",
+      "literal": "if I more would-study then result excellent would-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'if'. It opens its clause and takes no ending. What changed here is not yadi but the mood of the two verbs it stands over."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most: the -eyam on the verb already says who is speaking."
+          },
+          {
+            "display": "adhikam",
+            "cue": "more",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M9's 'more', in front of the verb it measures. It says how much of the studying, not how much of anything else."
+          },
+          {
+            "display": "paṭheyam",
+            "cue": "I would study · I would have studied",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M4's paṭhati in the speaker's optative cell. Its own row here, pointing back at paṭhati, because a level never edits a file below it."
+          },
+          {
+            "display": "tarhi",
+            "cue": "then · in that case",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's 'then', opening the consequence. It may still be left out, exactly as L3-M4 said, and the counterfactual survives without it."
+          },
+          {
+            "display": "pariṇāmaḥ",
+            "cue": "result · outcome",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M2's 'result', a row opened one rung ago precisely so phalam could keep meaning fruit. Here it is the subject of syāt."
+          },
+          {
+            "display": "uttamaḥ",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's warm praise, agreeing with pariṇāmaḥ. The praise is being supposed, not given."
+          },
+          {
+            "display": "syāt",
+            "cue": "would be",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M3's asti in the optative, closing the sentence. pariṇāmaḥ uttamaḥ would be a flat claim; syāt makes it a thing that did not happen."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2,
+          5
+        ]
+      },
+      "trap": "There is no time word in this sentence and it is still a regret. The situation carries the pastness on its own — which is also why adding hyaḥ narrows it to one particular day.",
+      "sound": "YA-di a-HAM A-dhi-kam pa-THEH-yam TAR-hi pa-ri-NAA-mah ut-ta-MAH SYAAT.",
+      "variations": [
+        {
+          "display": "yadi aham hyaḥ adhikam paṭheyam tarhi pariṇāmaḥ uttamaḥ syāt.",
+          "script": "यदि अहम् ह्यः अधिकम् पठेयम् तर्हि परिणामः उत्तमः स्यात्।",
+          "cue": "If I had studied more yesterday, the result would have been excellent.",
+          "changed": "hyaḥ is added and the regret is pinned to one day instead of to a whole term"
+        },
+        {
+          "display": "yadi aham alpam paṭheyam tarhi pariṇāmaḥ uttamaḥ na syāt.",
+          "script": "यदि अहम् अल्पम् पठेयम् तर्हि परिणामः उत्तमः न स्यात्।",
+          "cue": "If I had studied little, the result would not have been excellent.",
+          "changed": "L2-M9's alpam replaces adhikam and na enters the consequence — the scale turns and the outcome turns with it"
+        },
+        {
+          "display": "aham adhikam na paṭhitavān, ataḥ pariṇāmaḥ na uttamaḥ.",
+          "script": "अहम् अधिकम् न पठितवान्, अतः परिणामः न उत्तमः।",
+          "cue": "I did not study more, so the result is not good.",
+          "changed": "the whole supposition becomes a report: a participle, L1-M9's ataḥ, and a verbless present"
+        }
+      ],
+      "mistake": {
+        "display": "yadi aham adhikam paṭheyam tarhi pariṇāmaḥ uttamaḥ.",
+        "why": "The consequence has been left verbless, so it asserts: 'the result IS excellent'. A verbless sentence in Sanskrit is a claim about now, and the moment one half of a counterfactual asserts, the sentence stops supposing. syāt is what the second half needs."
+      },
+      "usage": "Said after a result is out. Without hyaḥ it is about a habit rather than a day, which is usually the honest version.",
+      "register": "neutral",
+      "mnemonic": "No time word, and still yesterday."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M3-C01",
+      "display": "yadi aham hyaḥ vidyālayam gaccheyam tarhi saṃskṛtam paṭheyam.",
+      "script": "यदि अहम् ह्यः विद्यालयम् गच्छेयम् तर्हि संस्कृतम् पठेयम्।",
+      "cue": "If I had gone to school yesterday, I would have studied Sanskrit."
+    },
+    {
+      "id": "L4-M3-C02",
+      "display": "yadi bhavān hyaḥ mandiram gacchet tarhi bhavān santuṣṭaḥ syāt.",
+      "script": "यदि भवान् ह्यः मन्दिरम् गच्छेत् तर्हि भवान् सन्तुष्टः स्यात्।",
+      "cue": "If you had gone to the temple yesterday, you would be content."
+    },
+    {
+      "id": "L4-M3-C03",
+      "display": "mahyam duḥkham asti, yataḥ saḥ hyaḥ na uktavān.",
+      "script": "मह्यम् दुःखम् अस्ति, यतः सः ह्यः न उक्तवान्।",
+      "cue": "I am sad, because he did not speak yesterday."
+    },
+    {
+      "id": "L4-M3-C04",
+      "display": "yadi mama pustakam atra syāt tarhi aham paṭheyam.",
+      "script": "यदि मम पुस्तकम् अत्र स्यात् तर्हि अहम् पठेयम्।",
+      "cue": "If my book were here, I would read it."
+    },
+    {
+      "id": "L4-M3-C05",
+      "display": "yadi vṛṣṭiḥ na syāt tarhi mārgaḥ uttamaḥ syāt.",
+      "script": "यदि वृष्टिः न स्यात् तर्हि मार्गः उत्तमः स्यात्।",
+      "cue": "If it were not raining, the road would be good."
+    },
+    {
+      "id": "L4-M3-C06",
+      "display": "yadi bhavatī alpam khādet tarhi bhavatī kuśalinī syāt.",
+      "script": "यदि भवती अल्पम् खादेत् तर्हि भवती कुशलिनी स्यात्।",
+      "cue": "If you ate a little, you would be well."
+    },
+    {
+      "id": "L4-M3-C07",
+      "display": "aham hyaḥ na paṭhitavān, ataḥ mahyam adya cintā asti.",
+      "script": "अहम् ह्यः न पठितवान्, अतः मह्यम् अद्य चिन्ता अस्ति।",
+      "cue": "I did not study yesterday, so I am worried today."
+    },
+    {
+      "id": "L4-M3-C08",
+      "display": "yadi aham hyaḥ kāryālayam gaccheyam tarhi patram paśyeyam.",
+      "script": "यदि अहम् ह्यः कार्यालयम् गच्छेयम् तर्हि पत्रम् पश्येयम्।",
+      "cue": "If I had gone to the office yesterday, I would have seen the letter."
+    },
+    {
+      "id": "L4-M3-C09",
+      "display": "yadi saḥ hyaḥ mama gṛham gacchet tarhi mahyam sukham syāt.",
+      "script": "यदि सः ह्यः मम गृहम् गच्छेत् तर्हि मह्यम् सुखम् स्यात्।",
+      "cue": "If he had come to my house yesterday, I would be happy."
+    },
+    {
+      "id": "L4-M3-C10",
+      "display": "yadi adhyāpakaḥ atra syāt tarhi samasyā na syāt.",
+      "script": "यदि अध्यापकः अत्र स्यात् तर्हि समस्या न स्यात्।",
+      "cue": "If the teacher were here, there would be no problem."
+    },
+    {
+      "id": "L4-M3-C11",
+      "display": "vṛṣṭeḥ aham hyaḥ na gatavān, ataḥ mahyam duḥkham asti.",
+      "script": "वृष्टेः अहम् ह्यः न गतवान्, अतः मह्यम् दुःखम् अस्ति।",
+      "cue": "Because of the rain I did not go yesterday, so I am sad."
+    },
+    {
+      "id": "L4-M3-C12",
+      "display": "yadi bhavatyāḥ mātā atra syāt tarhi bhavatī santuṣṭā syāt.",
+      "script": "यदि भवत्याः माता अत्र स्यात् तर्हि भवती सन्तुष्टा स्यात्।",
+      "cue": "If your mother were here, you would be content."
+    },
+    {
+      "id": "L4-M3-C13",
+      "display": "yadi mama mitram atra syāt tarhi aham na khinnaḥ.",
+      "script": "यदि मम मित्रम् अत्र स्यात् तर्हि अहम् न खिन्नः।",
+      "cue": "If my friend were here, I would not be unhappy."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1170,7 +1170,7 @@ rungs authored against ten briefs (#607 — `tools/course-briefs.ts`, "en-sa: de
 settle before any Sanskrit is written"), across three authoring issues (#608 L1-M1–M2, #609
 L1-M3–M5, #610 L1-M6–M10) and reviewed in
 [`docs/122-llm-review-en-sa-L1-L4.md`](docs/122-llm-review-en-sa-L1-L4.md) — one document, now
-ten waves, eighty-nine sections and one open-question list. Dropping `fixture: true` from the en-sa row in
+eleven waves, ninety-eight sections and one open-question list. Dropping `fixture: true` from the en-sa row in
 `content/courses.json`, and L1's level `draft: true` and its `draftNote` from
 `content/en-sa/levels.json`, was the whole change: a strict `npm run build` reported `en-sa: 10
 modules (L1-M1..M10)` at graduation and emitted `public/content/en-sa/` with levels, strings, ten
@@ -1221,8 +1221,18 @@ anywhere in the frame), which is how the course says "you should" without ever w
 second-person ending; and `L4-M2` "Cause and consequence" opens **no connective at all** — `yataḥ`
 and `ataḥ` are L1-M9's — and buys instead the ablative of CAUSE (`vṛṣṭeḥ aham na gatavān`), which is
 a second job on a case the course has and never on L2-M9's two comparison words, plus the placement
-law that carries a reason across a paragraph. A build now reports
-`en-sa: 32 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M2)` and closes at **336 surfaces**,
+law that carries a reason across a paragraph. **#622 carries the level to halfway**: `L4-M3`
+"What might have been" builds the past counterfactual the language has NO DEDICATED FORM for —
+the conditional in `-syat` (`agamiṣyat`) is real, is exactly the meaning, and is refused as the
+rarest finite form in the language, so the module is L3-M4's own `yadi … tarhi` with an OPTATIVE IN
+BOTH HALVES and the pastness carried by `hyaḥ` rather than by any verb, at a cost of four cells
+(`gaccheyam`, `paṭheyam`, `paśyeyam` and `syāt`); `L4-M4` "Persuading" opens **no connective at
+all** — `kintu` and `tathāpi` are L1-M10's — and buys `avaśyam`, which concedes IN ADVANCE, plus
+`hitam`, `lābhaḥ`, `matam`/`mate` and `śrutvā`, the absolutive L2-M7 never shipped; and `L4-M5`
+"Disagreeing well" is the level's cheapest module BY DESIGN, three words (`prāyaḥ`, `bhinnam`,
+`saṃśayaḥ`) on top of a lesson the ladder already owned — the optative IS the hedge. A build now
+reports
+`en-sa: 35 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M5)` and closes at **349 surfaces**,
 `maxSpan` still 1; L4 keeps its level `draft` flag until all ten of its rungs are authored, and L5
 is still #423's ratified placeholder list with nothing authored in it.
 
@@ -1252,8 +1262,8 @@ surfaces) before a single display was written; and M10's first draft of S03's th
 was rewritten into `adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.` out of surfaces the level already
 owns. The baseline was never raised; `tools/shown-surfaces.test.ts` still carries `'en-sa': 0`, and
 neither the graduation, nor any of the three L2 waves (#613, #614, #615), nor #617's two L3 rungs,
-nor #618's three, nor #619's five, nor #621's two L4 rungs, touched it — L2, L3 and L4 write no new
-proper noun at all, and the
+nor #618's three, nor #619's five, nor #621's two L4 rungs, nor #622's three, touched it — L2, L3
+and L4 write no new proper noun at all, and the
 only names above L1 are L1-M1's `rāmaḥ` and `sītā`, both of which #618's L3-M5 reports in the
 NOMINATIVE rather than opening the vocative a module of quoted dialogue would most want. **#619's
 `L3-M9` is the sharpest case in the whole catalogue**: a module about festivals, which have names,
@@ -2414,10 +2424,10 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Ten courses now ship — **482
+  content" boot screen, because no module had cleared the gate. Ten courses now ship — **485
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko, and
-  thirty-two on en-sa, which is the whole of L1, the whole of L2, the whole of L3 and the first two
-  rungs of L4 (#611, #613, #614, #615, #617, #618, #619, #621) — every one
+  thirty-five on en-sa, which is the whole of L1, the whole of L2, the whole of L3 and the first
+  five rungs of L4 (#611, #613, #614, #615, #617, #618, #619, #621, #622) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.
