@@ -154,7 +154,7 @@ describe('en-ko: the decisions its briefs settle (#373, #376)', () => {
   });
 });
 
-describe('en-sa: the decisions its briefs settle (#604, #607)', () => {
+describe('en-sa: the decisions its briefs settle (#604, #607, #612)', () => {
   const all = COURSE_BRIEFS['en-sa'] ?? {};
   const briefs = Object.values(all);
   const strings = briefs.flatMap((brief) => [
@@ -172,10 +172,18 @@ describe('en-sa: the decisions its briefs settle (#604, #607)', () => {
   const bare = (token: string): string =>
     token.replace(/^[([{"“‘]+/u, '').replace(/[)\]},.;:!?"”]+$/u, '');
 
-  it('covers exactly L1-M1..L1-M10 — the tenth course, briefed L1 only (#607)', () => {
-    expect(Object.keys(all)).toEqual(
-      ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((n) => `L1-M${n}`),
-    );
+  const MODULES = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+  /** The L2 briefs alone — #612 planned them against the finished L1, so they are pinned apart. */
+  const l2 = Object.fromEntries(Object.entries(all).filter(([id]) => id.startsWith('L2-')));
+  const l2Notes = Object.values(l2)
+    .flatMap((brief) => brief.notes)
+    .join('\n');
+
+  it('covers exactly L1-M1..L2-M10 — the tenth course, briefed L1 (#607) and L2 (#612)', () => {
+    expect(Object.keys(all)).toEqual([
+      ...MODULES.map((n) => `L1-M${n}`),
+      ...MODULES.map((n) => `L2-M${n}`),
+    ]);
   });
 
   /**
@@ -183,14 +191,27 @@ describe('en-sa: the decisions its briefs settle (#604, #607)', () => {
    * packs a whole English clause into two tokens, so the word bound is slack and `newWordCap` is
    * what actually bites. A ramp that drifted upward would be answering the wrong constraint.
    */
-  it('climbs its bounds 4 → 7 across the level, and caps every module at NEW_WORD_CAP', () => {
+  it('climbs its bounds 4 → 7 then 8 → 10, and caps every module at NEW_WORD_CAP', () => {
     const bound = (id: string): number | undefined => all[id]?.maxWordsPerSentence;
     for (const id of ['L1-M1', 'L1-M2']) expect(bound(id), id).toBe(4);
     for (const id of ['L1-M3', 'L1-M4', 'L1-M5']) expect(bound(id), id).toBe(5);
     for (const id of ['L1-M6', 'L1-M7', 'L1-M8']) expect(bound(id), id).toBe(6);
     for (const id of ['L1-M9', 'L1-M10']) expect(bound(id), id).toBe(7);
+    // L2 restarts the ramp higher, the way en-ko's does: a request and an account need the
+    // adverbials L1 could do without, while `newWordCap` still binds first.
+    for (const id of ['L2-M1', 'L2-M2', 'L2-M3']) expect(bound(id), id).toBe(8);
+    for (const id of ['L2-M4', 'L2-M5', 'L2-M6', 'L2-M7']) expect(bound(id), id).toBe(9);
+    for (const id of ['L2-M8', 'L2-M9', 'L2-M10']) expect(bound(id), id).toBe(10);
     for (const brief of briefs) expect(brief.newWordCap, brief.id).toBe(NEW_WORD_CAP);
     expect(COURSE_BRIEFS_SOURCE).toMatch(/the constraint that actually binds is `newWordCap`/);
+  });
+
+  /** Every brief carries the two things `generate-prompt.ts` renders: patterns and notes. */
+  it('gives every brief at least one pattern and one note', () => {
+    for (const brief of briefs) {
+      expect(brief.patterns.length, `${brief.id} patterns`).toBeGreaterThan(0);
+      expect(brief.notes.length, `${brief.id} notes`).toBeGreaterThan(0);
+    }
   });
 
   /**
@@ -386,6 +407,164 @@ describe('en-sa: the decisions its briefs settle (#604, #607)', () => {
     expect(COURSE_BRIEFS_SOURCE).toMatch(/en-sa has no hyphen at all/);
     expect(COURSE_BRIEFS_SOURCE).toMatch(/No stress marks\*\* — Sanskrit has syllable weight/);
     expect(COURSE_BRIEFS_SOURCE).toMatch(/Ten courses are briefed/);
+  });
+
+  /**
+   * #612. The L2 section is the header's second half for this course, and the two decisions it
+   * exists to take — the register meeting the imperative at M1, and the past of "what happened"
+   * at M8 — are the ones a later wave is most likely to soften. A prompt shows an author only the
+   * NOTES, so each is pinned in the header AND in the note of the module it governs.
+   */
+  it('carries the L2 section, planned against the FOLDED L1 index (#612)', () => {
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /## en-sa L2: the decisions, taken against the finished L1 \(#612\)/,
+    );
+    // The count is the folded one, and the arithmetic is written out so a reader can check it —
+    // `L1-M10.json` reports 139 over a delta list of four keys, which is the trap #471 caught.
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/\*\*139 surfaces through L1-M10, maxSpan 1\*\*/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/FOLDED across all ten emitted files/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /22 \+ 19\n \* \+ 7 \+ 29 \+ 3 \+ 9 \+ 12 \+ 18 \+ 16 \+ 4 = 139/,
+    );
+  });
+
+  /** (a) The level's biggest decision: `tvam` enters, once, chipped — and `-si` does not. */
+  it('settles the register in a NOTE — tvam once at L2-M1, chipped informal, bhavān default', () => {
+    const m1 = l2['L2-M1']?.notes.join('\n') ?? '';
+    expect(m1).toMatch(/REGISTER MEETS THE IMPERATIVE/);
+    expect(m1).toMatch(/tvam enters here, NAMED, with ONE row and ONE display/);
+    expect(m1).toMatch(/that sentence chips informal/);
+    expect(m1).toMatch(/bhavān \/ bhavatī stays the display default/);
+    expect(m1).toMatch(/chips neutral/);
+    // The paradigm that does NOT come with it, so `types.test.ts` needs no edit past its scope.
+    expect(m1).toMatch(/gacchasi and every other -si form stays written nowhere/);
+    expect(m1).toMatch(/tava, tubhyam, tvām and te/);
+    expect(m1).toMatch(/types\.test\.ts/);
+    // The polite/intimate contrast is one row, so a learner taps one destination for both.
+    expect(m1).toMatch(/āgacchatu against the intimate āgaccha/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Register meets the imperative at M1/);
+  });
+
+  /** (g) The past stays a participle: `kim jātam`, never `kim abhavat`. */
+  it('settles the past of "what happened" in a NOTE — kim jātam, and abhavat nowhere', () => {
+    const m8 = l2['L2-M8']?.notes.join('\n') ?? '';
+    expect(m8).toMatch(/THE PAST OF 'WHAT HAPPENED' STAYS A PARTICIPLE/);
+    expect(m8).toMatch(/this module writes kim jātam\? and writes abhavat NOWHERE/);
+    expect(m8).toMatch(/CONSISTENT with L1-M5/);
+    // The one ban lifted, and the words that prove it stayed narrow.
+    expect(m8).toMatch(/ONE FROZEN IMPERSONAL/);
+    expect(m8).toMatch(/no gataḥ, no kṛtam, no naṣṭam/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/the past of "what happened" stays a PARTICIPLE/);
+  });
+
+  /** (b)–(h): each module's own system, named in its own note rather than only in the header. */
+  it('names the system each L2 module opens, in that module’s note', () => {
+    const note = (id: string): string => l2[id]?.notes.join('\n') ?? '';
+    expect(note('L2-M2')).toMatch(/mātāpitarau/);
+    expect(note('L2-M2')).toMatch(/closes that hole with EXACTLY ONE FORM, staḥ/);
+    expect(note('L2-M3')).toMatch(/L2 WRITES a-STEM ADJECTIVES ONLY/);
+    expect(note('L2-M4')).toMatch(/THE INSTRUMENTAL OPENS HERE/);
+    expect(note('L2-M4')).toMatch(/yānena/);
+    expect(note('L2-M4')).toMatch(/vāmataḥ, dakṣiṇataḥ and agrataḥ are -taḥ adverbs/);
+    expect(note('L2-M5')).toMatch(/khādatu and pibatu are not orders, they are offers/);
+    expect(note('L2-M5')).toMatch(/REFUSING WITHOUT OFFENCE IS alam \+ INSTRUMENTAL/);
+    expect(note('L2-M6')).toMatch(/THE FIRST-PERSON PLURAL OPENS HERE/);
+    expect(note('L2-M6')).toMatch(/gacchāmaḥ/);
+    expect(note('L2-M6')).toMatch(/kadā/);
+    expect(note('L2-M9')).toMatch(/COMPARISON IS AN ABLATIVE, NOT A SUFFIX/);
+    expect(note('L2-M9')).toMatch(/adhikam/);
+    expect(note('L2-M10')).toMatch(/prathamam \('first'\), tataḥ \('then'\), anantaram/);
+    expect(note('L2-M10')).toMatch(/ACCOUNT OF FOUR SENTENCES/);
+  });
+
+  /**
+   * (f) M7 is the module where the course has to say what it is. The honest answer had to be
+   * ARGUED rather than assumed, so the note carries the options it refused as well as the one it
+   * took — and the rider that keeps the decision defensible: `dūrabhāṣaḥ` is a modern coinage and
+   * the module says so out loud.
+   */
+  it('decides the phone call honestly, and names the modern coinage as modern', () => {
+    const m7 = l2['L2-M7']?.notes.join('\n') ?? '';
+    expect(m7).toMatch(/WHAT A PHONE CALL ACTUALLY SOUNDS LIKE, DECIDED HONESTLY/);
+    expect(m7).toMatch(/There is no classical Sanskrit telephone formula/);
+    expect(m7).toMatch(/TAKEN: the call opens with namaste/);
+    expect(m7).toMatch(/TWENTIETH-CENTURY COINAGE of the spoken-Sanskrit movement/);
+    expect(m7).toMatch(/must SAY SO rather than presenting it as ancient/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /what a phone call actually sounds like, decided honestly/,
+    );
+  });
+
+  /**
+   * The defect the L1 waves were corrected on four times (docs/122 §23.1): a brief assumed a row
+   * would carry a shape the module that opened it never declared. With `maxSpan: 1` and no hyphen
+   * there is no part-key to catch the miss, so every L2 shape of an L1 lexeme is declared HERE as
+   * a new row with a note back — and the phrase that says so is pinned, per module.
+   */
+  it('opens a new ROW for every L2 shape of an L1 lexeme, never an edit to a file below', () => {
+    expect(l2Notes).toMatch(/A LEVEL NEVER EDITS A FILE BELOW IT/);
+    for (const [id, brief] of Object.entries(l2)) {
+      expect(brief.notes.join('\n'), `${id} names its seam`).toMatch(/INDEX SEAM/);
+    }
+    const note = (id: string): string => l2[id]?.notes.join('\n') ?? '';
+    // Each claim was checked against the folded snapshot index, not against a paradigm.
+    expect(note('L2-M2')).toMatch(/staḥ is a row HERE with a note back at L1-M3/);
+    expect(note('L2-M2')).toMatch(/bālaḥ is a row here with a note back at L1-M9/);
+    expect(note('L2-M4')).toMatch(/gacchatu is a row here with a note back at L1-M2/);
+    expect(note('L2-M5')).toMatch(/khādatu and pibatu are shapes of L1-M4's khādati and pibati/);
+    expect(note('L2-M5')).toMatch(/bhavate is a row here with bhavatyai in its forms/);
+    expect(note('L2-M6')).toMatch(/mayā ← L1-M1's aham/);
+    expect(note('L2-M8')).toMatch(/mām ← L1-M1's aham/);
+    expect(note('L2-M9')).toMatch(/phalāt ← L1-M1's phalam/);
+  });
+
+  /**
+   * The homographs L2 creates, each with an owner and a reading it does NOT write — the `api`
+   * ruling of L1-M10, applied three more times. `vā` is the one that has been held free since
+   * L1-M2 precisely so this level could take it.
+   */
+  it('assigns an owner to every homograph L2 creates, and keeps one reading of each', () => {
+    expect(l2['L2-M3']?.notes.join('\n')).toMatch(
+      /pīta- is BOTH 'yellow' AND the -ta participle 'drunk'/,
+    );
+    expect(l2['L2-M3']?.notes.join('\n')).toMatch(/OWNS IT IN THE COLOUR READING ALONE/);
+    expect(l2['L2-M3']?.notes.join('\n')).toMatch(/kṛṣṇaḥ is owned here as 'black'/);
+    expect(l2['L2-M9']?.notes.join('\n')).toMatch(
+      /OPENS IT AS 'OR' AND THE INTERROGATIVE READING STAYS WRITTEN NOWHERE/,
+    );
+    expect(l2['L2-M9']?.notes.join('\n')).toMatch(/varam is owned in ONE reading/);
+  });
+
+  /**
+   * The ratchet is at ZERO for this course (docs/122 §22) and L2 is planned to keep it there. A
+   * proper noun rides unindexed (#61) and is COUNTED, so the level writes no new name — `rāmaḥ`
+   * and `sītā` already have L1-M1 rows, and the brief says which modules would otherwise reach
+   * for one.
+   */
+  it('keeps the shown-surface ratchet at zero by writing no new proper noun', () => {
+    expect(l2['L2-M2']?.notes.join('\n')).toMatch(/THE PROPER-NOUN TRAP/);
+    expect(l2['L2-M2']?.notes.join('\n')).toMatch(
+      /The level writes NO new proper noun: rāmaḥ and sītā already have rows from L1-M1/,
+    );
+    expect(l2['L2-M7']?.notes.join('\n')).toMatch(
+      /rāmaḥ and sītā are L1-M1's rows and are the only two names this level writes/,
+    );
+  });
+
+  /** What L2 withholds, named in the module that would otherwise reach for it. */
+  it('names what L2 defers, where it would be reached for', () => {
+    expect(l2['L2-M5']?.notes.join('\n')).toMatch(/THIS IS WHY mā STAYS OUT/);
+    expect(l2['L2-M2']?.notes.join('\n')).toMatch(/ONE DUAL VERB IS THE CEILING/);
+    expect(l2['L2-M3']?.notes.join('\n')).toMatch(/mahat is NAMED as deferred and written nowhere/);
+    expect(l2['L2-M6']?.notes.join('\n')).toMatch(/an author who reaches for gacchema/);
+    expect(l2['L2-M7']?.notes.join('\n')).toMatch(
+      /THE VOCATIVE IS WHAT THIS MODULE WANTS MOST AND STILL DOES NOT GET/,
+    );
+    expect(l2['L2-M9']?.notes.join('\n')).toMatch(/-tara and -tama are REAL and are named/);
+    expect(l2['L2-M10']?.notes.join('\n')).toMatch(/STAYS OUT/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(
+      /### 7\. What L2 withholds, and where each piece is named/,
+    );
   });
 });
 
