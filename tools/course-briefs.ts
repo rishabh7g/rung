@@ -8,9 +8,9 @@
  * levels.json stays the single source of the ladder, and a brief only adds the authoring
  * guidance on top.
  *
- * Ten courses are briefed: hi-mr through L2, en-es, en-ar, hi-en, en-ru, en-it, en-fr,
- * en-de and en-ko L1 only, and en-sa — the tenth, briefed
- * L1 (#607) and now L2 (#612), the latter planned against the finished, merged L1 index. The
+ * Eleven courses are briefed: hi-mr through L2, en-es, en-ar, hi-en, en-ru, en-it, en-fr,
+ * en-de and en-ko L1 only, en-sa — the tenth, briefed L1 (#607) and now L2 (#612), the latter
+ * planned against the finished, merged L1 index — and en-la, the eleventh, briefed L1 (#633). The
  * L2/L3 module lists are RATIFIED (#112 closed [Q1] — titles, jobs and sequence in levels.json
  * are final), the L4/L5 lists are PROPOSED (docs/48-five-level-ladder-plan.md §4, awaiting the
  * same ratification), and a level's briefs are written when its authoring project starts: a
