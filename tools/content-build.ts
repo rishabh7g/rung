@@ -724,8 +724,9 @@ export interface ShownSurfaceFinding {
  *
  * This REPORTS rather than fails, and the distinction is deliberate. Two kinds of finding are not
  * content bugs: a proper noun rides unindexed by #61, and a mistake display is wrong by design (so
- * it is not read at all). The rest are real, and there are 133 of them across the nine shipped
- * courses — a sweep of verified content, not something to spring on a build. `shown-surfaces.test.ts`
+ * it is not read at all). The rest are real, and there are 133 of them across the ten shipped
+ * courses, all of them older than en-sa, which graduated at zero (#611) — a sweep of verified
+ * content, not something to spring on a build. `shown-surfaces.test.ts`
  * ratchets the counts so new content cannot add to them, and the sweep is its own issue.
  *
  * A finding is also raised when a variation shows a word taught LATER in the same ladder — a

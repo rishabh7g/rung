@@ -25,7 +25,7 @@
  * queue — runs only on that deliberate tap (the structural version of #316 was built and backed
  * out over exactly this). On a module they have PASSED it goes to the next module's FIRST
  * SENTENCE instead, so a re-read of the ladder carries straight on. That id is built by
- * convention — every module's first sentence is `<id>-S01`, checked across all nine courses'
+ * convention — every module's first sentence is `<id>-S01`, checked across all ten courses'
  * content — and the convention failing is not a broken link: an id the screen cannot find falls
  * through to the module list, which is a fair place to arrive.
  *
