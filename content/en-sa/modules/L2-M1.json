@@ -1,0 +1,830 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M1",
+  "title": "Asking politely",
+  "job": "Requests, thanks, apologies in the right register",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present",
+      "verbless_nominal_present",
+      "third_person_imperative",
+      "second_person_imperative",
+      "simple_future"
+    ],
+    "allowedPatterns": [
+      "kṛpayā + N-acc + dadātu",
+      "kṛpayā + V-tu",
+      "bhavān/bhavatī + V-tu",
+      "dhanyavādaḥ / kṣamyatām",
+      "tvam + V-a"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The polite request is a THIRD-person command. dadātu is 'let him give', and said to the person standing in front of you it is 'please give'. You are not ordering them; you are letting the thing happen."
+    },
+    {
+      "tag": "interference",
+      "text": "kṛpayā is not the Sanskrit for 'please' in the way English needs one. The please is already the -tu ending: jalam dadātu is polite on its own. kṛpayā STACKS on top of it as emphasis and never replaces it."
+    },
+    {
+      "tag": "delta",
+      "text": "-tu is one cell of a full imperative, the he/she/it one, and it is the only cell a polite request uses — because bhavān and bhavatī are third persons. A -tu form is never aimed at a tvam."
+    },
+    {
+      "tag": "delta",
+      "text": "tvam is 'you' to a child, a younger sibling or a friend you grew up with, and it brings its own ending: the bare stem, āgaccha. bhavān or bhavatī with āgacchatu is the same request said politely."
+    },
+    {
+      "tag": "interference",
+      "text": "English marks politeness by bolting words on — 'please', 'would you'. Sanskrit marks it by choosing a PERSON. Moving tvam āgaccha to bhavān āgacchatu changes the pronoun and the ending together, and there is no half-way."
+    },
+    {
+      "tag": "delta",
+      "text": "dhanyavādaḥ is 'thanks', and it is a noun — 'a saying of blessing'. It stands alone as a complete sentence, exactly as namaste does, and nothing is missing from it."
+    },
+    {
+      "tag": "delta",
+      "text": "kṣamyatām is 'sorry'. Taken apart it says 'let it be forgiven' — nobody is named and nobody is blamed. Learn it whole: this course never takes that shape apart, and no other word in it is built this way."
+    },
+    {
+      "tag": "free",
+      "text": "A request keeps the ordinary word order. The verb goes last, kṛpayā goes first, and the thing asked for sits between them: kṛpayā jalam dadātu is the whole of it."
+    },
+    {
+      "tag": "delta",
+      "text": "There is no negative command in this course. na in front of a -tu form is not a Sanskrit sentence — a command has its own negator, which this course does not write, and the polite refusal formula is L2-M5's job (saying plainly that you do not want a thing, na icchāmi, is M3's and is not a command at all)."
+    },
+    {
+      "tag": "interference",
+      "text": "Thanks and apology are not automatic here the way they are in English. dhanyavādaḥ is for a real favour and kṣamyatām for a real fault; spread over every small exchange they sound odd rather than polite."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M1-S01",
+      "display": "kṛpayā jalam dadātu.",
+      "script": "कृपया जलम् ददातु।",
+      "cue": "Please give me some water.",
+      "literal": "please water let-give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "interference",
+            "forms": [
+              "kṛpayā"
+            ],
+            "note": "'Please' — but only as emphasis. The courtesy is the -tu on dadātu; kṛpayā is added on top of a request that was already polite, and it can never carry one alone."
+          },
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'water', in the shape a thing takes when something is being done to it. Asking for it and drinking it use the same jalam."
+          },
+          {
+            "display": "dadātu",
+            "cue": "please give · let (him) give",
+            "tag": "delta",
+            "forms": [],
+            "note": "M3's polite request, unchanged. The -tu ending is the whole of the politeness, which is why kṛpayā in front of it is optional."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7
+        ]
+      },
+      "trap": "There is no word for 'me' in it, and none is missing. dadātu already points at the person you are speaking to, and the one asking is the one speaking.",
+      "sound": "kṛ-pa-YAA JA-lam da-DAA-tu. The ṛ of kṛpayā is a vowel in its own right — a short 'ri' with the tongue curled back — not a k followed by an r. At speed the m of jalam becomes a nasal hum into the d behind it: jalan dadātu. The page keeps the m.",
+      "variations": [
+        {
+          "display": "jalam dadātu.",
+          "script": "जलम् ददातु।",
+          "cue": "Please give me some water.",
+          "changed": "kṛpayā drops out and the line is still polite — the -tu was carrying it all along"
+        },
+        {
+          "display": "kṛpayā mahyam jalam dadātu.",
+          "script": "कृपया मह्यम् जलम् ददातु।",
+          "cue": "Please give me some water.",
+          "changed": "mahyam names the person asked for, 'to me', which the bare request had left to the situation"
+        },
+        {
+          "display": "kṛpayā jalam phalam ca dadātu.",
+          "script": "कृपया जलम् फलम् च ददातु।",
+          "cue": "Please give me water and a fruit.",
+          "changed": "two things asked for at once, with ca standing after the last of them rather than between the two"
+        }
+      ],
+      "mistake": {
+        "display": "kṛpayā jalam.",
+        "why": "The request has lost its verb, and with it all of its courtesy. kṛpayā is not a request — it is emphasis on one — so with no -tu form in the line there is nothing polite in it, and nothing has actually been asked."
+      },
+      "usage": "Said to a shopkeeper, a host, a stranger — anyone you would address as bhavān or bhavatī.",
+      "register": "neutral",
+      "mnemonic": "The please is the -tu. kṛpayā is the bow you add on top of it."
+    },
+    {
+      "id": "L2-M1-S02",
+      "display": "bhavān atra upaviśatu.",
+      "script": "भवान् अत्र उपविशतु।",
+      "cue": "Please sit here. (to a man)",
+      "literal": "your-honour here let-sit",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "delta",
+            "forms": [],
+            "note": "M2's polite 'you' — bhavān to a man, bhavatī to a woman — and the reason the verb beside it ends -tu and not anything second person."
+          },
+          {
+            "display": "atra",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's 'here', in its ordinary seat in front of the verb. A place word does not change for a request."
+          },
+          {
+            "display": "upaviśatu",
+            "cue": "please sit · let (him) sit",
+            "tag": "delta",
+            "forms": [
+              "upaviśatu"
+            ],
+            "note": "'Let him sit', and said to the man in front of you it is 'please sit'. Same -tu cell as dadātu and kathayatu — one ending covers every polite request."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          7
+        ]
+      },
+      "trap": "upaviśatu says 'let him sit', and the 'him' is the man you are talking to. That is not a slip of person: bhavān IS a third person, which is exactly why the verb ends -tu.",
+      "sound": "bha-VAAN A-tra u-pa-VI-sha-tu. The ś of upaviśatu is the 'sh' of 'ship' with the tongue flat against the palate, not the retroflex ṣ. The n of bhavān runs straight into the vowel of atra, one breath: bhavaan-atra.",
+      "variations": [
+        {
+          "display": "bhavatī atra upaviśatu.",
+          "script": "भवती अत्र उपविशतु।",
+          "cue": "Please sit here. (to a woman)",
+          "changed": "the addressee is a woman, so bhavān becomes bhavatī — and the verb does not move at all, because both are third persons"
+        },
+        {
+          "display": "kṛpayā bhavān atra upaviśatu.",
+          "script": "कृपया भवान् अत्र उपविशतु।",
+          "cue": "Please do sit here. (to a man)",
+          "changed": "kṛpayā stacks onto a request that was already polite, and nothing else in the line changes"
+        },
+        {
+          "display": "rāmaḥ atra upaviśatu.",
+          "script": "रामः अत्र उपविशतु।",
+          "cue": "Let Rāma sit here.",
+          "changed": "the same -tu aimed at somebody who is not in the conversation — which is what the ending has literally meant all along"
+        }
+      ],
+      "mistake": {
+        "display": "bhavataḥ atra upaviśatu.",
+        "why": "bhavataḥ is the 'of you' shape — 'of your honour' — and nothing in this line belongs to anybody. The one who is to sit stands in the naming shape, bhavān; the 'of' shape is for M2's bhavataḥ nāma kim?"
+      },
+      "usage": "What a host says the moment a guest is through the door.",
+      "register": "neutral",
+      "mnemonic": "Your honour may sit. Say it ABOUT them and it arrives as courtesy."
+    },
+    {
+      "id": "L2-M1-S03",
+      "display": "kṛpayā mama gṛham āgacchatu.",
+      "script": "कृपया मम गृहम् आगच्छतु।",
+      "cue": "Please come to my house.",
+      "literal": "please of-me house let-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Please', stacked on a -tu request as always. Here it marks an invitation as warm rather than merely correct; it is not what makes the line polite."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's 'house' in its destination shape. The ending is the whole of 'to the house' — there is no word for 'to' anywhere in the line."
+          },
+          {
+            "display": "āgacchatu",
+            "cue": "please come · let (him) come",
+            "tag": "delta",
+            "forms": [
+              "āgacchatu",
+              "āgaccha"
+            ],
+            "note": "'Come': āgacchatu to a bhavān or bhavatī, āgaccha to a tvam. Two shapes of one verb, and the ending is what picks the register."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          3
+        ]
+      },
+      "trap": "There is no word for 'to'. gṛham is in the shape that marks a destination, which M6 taught — the ending is the preposition.",
+      "sound": "kṛ-pa-YAA MA-ma GRI-ham aa-GA-ccha-tu. The ā of āgacchatu is long and it is the piece that means 'towards'; the cch is a doubled ch, held. The m of gṛham leans into the ā behind it.",
+      "variations": [
+        {
+          "display": "mama gṛham āgacchatu.",
+          "script": "मम गृहम् आगच्छतु।",
+          "cue": "Please come to my house.",
+          "changed": "kṛpayā drops and the invitation stays polite, exactly as it did with dadātu"
+        },
+        {
+          "display": "kṛpayā śvaḥ mama gṛham āgacchatu.",
+          "script": "कृपया श्वः मम गृहम् आगच्छतु।",
+          "cue": "Please come to my house tomorrow.",
+          "changed": "a day is named and goes at the front, where M6 put it; the verb does not change for a future this near"
+        },
+        {
+          "display": "bhavatī mama gṛham āgacchatu.",
+          "script": "भवती मम गृहम् आगच्छतु।",
+          "cue": "Please come to my house. (to a woman)",
+          "changed": "the person invited is named with bhavatī and the ending stays -tu, which is the whole reason the polite pronoun works"
+        }
+      ],
+      "mistake": {
+        "display": "kṛpayā mama gṛhe āgacchatu.",
+        "why": "gṛhe is 'in the house', which is where you are once you have arrived. Coming needs the destination shape gṛham; the locative describes a resting place, never a journey towards one."
+      },
+      "usage": "An invitation to somebody you address as bhavān or bhavatī — a colleague, a teacher, a neighbour.",
+      "register": "neutral",
+      "mnemonic": "ā- turns going into coming. The direction is a prefix, not a word."
+    },
+    {
+      "id": "L2-M1-S04",
+      "display": "tvam atra āgaccha.",
+      "script": "त्वम् अत्र आगच्छ।",
+      "cue": "Come here. (to a child or a close friend)",
+      "literal": "you here come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tvam",
+            "cue": "you (intimate)",
+            "tag": "delta",
+            "forms": [
+              "tvam"
+            ],
+            "note": "'You' to a child, a younger sibling or an old friend. It is the only sentence in this course that uses it, and it brings the bare-stem ending with it."
+          },
+          {
+            "display": "āgaccha",
+            "cue": "come",
+            "tag": "delta",
+            "forms": [],
+            "note": "The intimate shape of āgacchatu. Drop the -tu, keep the bare stem, and the request is now aimed at a tvam — the same verb, a different person."
+          },
+          {
+            "display": "atra",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's 'here', unchanged by the register around it. Only the pronoun and the verb ending carry the difference between this line and a polite one."
+          }
+        ],
+        "rules": [
+          3,
+          4,
+          2
+        ]
+      },
+      "trap": "Both halves change together. tvam brings the bare-stem āgaccha with it; there is no sentence in which tvam takes -tu or bhavān takes the bare stem.",
+      "sound": "TVAM A-tra aa-GA-ccha. tv- is one cluster with both letters sounded, not 'tuh-vam'. The final -a of āgaccha is short and real — it is the ending, so do not swallow it.",
+      "variations": [
+        {
+          "display": "bhavān atra āgacchatu.",
+          "script": "भवान् अत्र आगच्छतु।",
+          "cue": "Please come here. (to a man)",
+          "changed": "the same request said politely — the pronoun AND the ending move together, which is the only way they ever move"
+        },
+        {
+          "display": "atra āgaccha.",
+          "script": "अत्र आगच्छ।",
+          "cue": "Come here.",
+          "changed": "tvam drops out; the bare -a ending was already saying who, so the pronoun had been emphasis"
+        },
+        {
+          "display": "mama gṛham āgaccha.",
+          "script": "मम गृहम् आगच्छ।",
+          "cue": "Come to my house.",
+          "changed": "'here' gives way to a destination in the accusative — the case does the work an English preposition would"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān atra āgaccha.",
+        "why": "The polite pronoun with the intimate ending. Sanskrit does not let you be half-polite: choosing bhavān has already chosen a third person, and the verb must follow it to āgacchatu."
+      },
+      "usage": "Said to a child, a younger sibling, or a friend you grew up with. Until somebody uses it to you, use the bhavān line instead.",
+      "register": "informal",
+      "mnemonic": "Drop the -tu and you have dropped the distance."
+    },
+    {
+      "id": "L2-M1-S05",
+      "display": "kṛpayā pustakam dadātu. dhanyavādaḥ.",
+      "script": "कृपया पुस्तकम् ददातु। धन्यवादः।",
+      "cue": "Please give me the book. Thank you.",
+      "literal": "please book let-give. thanks.",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'book'. Named things and asked-for things take the same shape here, so nothing about the noun marks this as a request."
+          },
+          {
+            "display": "dadātu",
+            "cue": "please give · let (him) give",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's request verb, last in its own sentence. The thanks that follows is a separate sentence and does not lean on it."
+          },
+          {
+            "display": "dhanyavādaḥ",
+            "cue": "thanks · thank you",
+            "tag": "delta",
+            "forms": [
+              "dhanyavādaḥ"
+            ],
+            "note": "'Thanks', and it is a noun — dhanya 'blessed' plus vāda 'a saying'. One word is a whole sentence, as namaste is."
+          }
+        ],
+        "rules": [
+          5,
+          7,
+          0
+        ]
+      },
+      "trap": "dhanyavādaḥ is a whole sentence by itself, and it is a noun rather than a verb. Nothing has been left out of it.",
+      "sound": "kṛ-pa-YAA PUS-ta-kam da-DAA-tu. dhan-ya-VAA-daḥ. The dh of dhanya is one sound, a d with a puff of breath after it, not a d followed by an h. The final -aḥ is an echo of the a in front of it: 'vaa-da-ha'.",
+      "variations": [
+        {
+          "display": "pustakam dadātu. dhanyavādaḥ.",
+          "script": "पुस्तकम् ददातु। धन्यवादः।",
+          "cue": "Please give me the book. Thank you.",
+          "changed": "kṛpayā drops; the request and the thanks both stand exactly as they were"
+        },
+        {
+          "display": "kṛpayā pustakam phalam ca dadātu. dhanyavādaḥ.",
+          "script": "कृपया पुस्तकम् फलम् च ददातु। धन्यवादः।",
+          "cue": "Please give me a book and a fruit. Thank you.",
+          "changed": "two things asked for in one request, and one thanks covers both of them"
+        },
+        {
+          "display": "kim pustakam asti? kṛpayā dadātu.",
+          "script": "किम् पुस्तकम् अस्ति? कृपया ददातु।",
+          "cue": "Is there a book? Please give it to me.",
+          "changed": "a question comes first, so the request behind it does not have to name the book a second time"
+        }
+      ],
+      "mistake": {
+        "display": "kṛpayā pustakam dadātu. dhanyavādam.",
+        "why": "dhanyavādam is the shape a noun takes when something is being done TO it, and nothing is being done to the thanks. Standing on its own, it stands in the naming shape: dhanyavādaḥ."
+      },
+      "usage": "The ordinary two-move exchange at a counter: ask, then thank.",
+      "register": "neutral",
+      "mnemonic": "dhanya is 'blessed', vāda is 'a saying'. Thanks is a blessing said out loud."
+    },
+    {
+      "id": "L2-M1-S06",
+      "display": "kṣamyatām, mama pustakam atra na asti.",
+      "script": "क्षम्यताम्, मम पुस्तकम् अत्र न अस्ति।",
+      "cue": "I'm sorry, my book isn't here.",
+      "literal": "let-it-be-forgiven, of-me book here not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kṣamyatām",
+            "cue": "sorry · forgive me",
+            "tag": "delta",
+            "forms": [
+              "kṣamyatām"
+            ],
+            "note": "'Let it be forgiven'. Nobody is named in it and nothing is blamed. Learn it whole, the way M2's namaste is learnt whole; this course never takes it apart."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'I', here as mama, 'of me'. An apology needs it because the sentence behind it is about a thing rather than about the speaker."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'is', negated by the na in front of it. A statement about where something is, or is not, keeps asti; only a bare 'X is Y' may drop it."
+          }
+        ],
+        "rules": [
+          6,
+          9,
+          7
+        ]
+      },
+      "trap": "kṣamyatām names nobody — not you, not the fault. It says only 'let it be forgiven', and that is the whole apology.",
+      "sound": "kṣam-ya-TAAM, MA-ma PUS-ta-kam A-tra na AS-ti. kṣ is one cluster, a k running straight into the retroflex ṣ: start it as 'ksh' and curl the tongue back. The m before the y is held a beat.",
+      "variations": [
+        {
+          "display": "kṣamyatām, mama pustakam gṛhe asti.",
+          "script": "क्षम्यताम्, मम पुस्तकम् गृहे अस्ति।",
+          "cue": "I'm sorry, my book is at home.",
+          "changed": "the negation gives way to a place, so the apology now explains where the book IS rather than where it is not"
+        },
+        {
+          "display": "mama pustakam atra na asti.",
+          "script": "मम पुस्तकम् अत्र न अस्ति।",
+          "cue": "My book isn't here.",
+          "changed": "the apology drops, and what is left is not rude — only flat"
+        },
+        {
+          "display": "kim bhavataḥ pustakam atra asti?",
+          "script": "किम् भवतः पुस्तकम् अत्र अस्ति?",
+          "cue": "Is your book here?",
+          "changed": "the same fact turned round into a question and put to the other person, with kim at the front doing the asking"
+        }
+      ],
+      "mistake": {
+        "display": "kṣamyatām, mama pustakam atra na.",
+        "why": "The verb has been dropped on the English pattern, where 'my book isn't here' hides its 'is'. Sanskrit leaves the present 'is' out only when it is simply linking two nouns; a statement about where something is, or is not, needs asti."
+      },
+      "usage": "For a real failure to deliver — not sprinkled over every small exchange the way English 'sorry' is.",
+      "register": "neutral",
+      "mnemonic": "Nobody is blamed, because nobody is named."
+    },
+    {
+      "id": "L2-M1-S07",
+      "display": "bhavatī kim icchati? kṛpayā kathayatu.",
+      "script": "भवती किम् इच्छति? कृपया कथयतु।",
+      "cue": "What would you like? Please tell me.",
+      "literal": "your-honour what wants? please let-tell",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's polite 'you', here as bhavatī to a woman. Both verbs in the turn are third person because of it, and neither one is aimed anywhere else."
+          },
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's word in its 'what' reading, standing where the answer will stand. Moved to the very front it would stop meaning 'what' and start asking yes or no."
+          },
+          {
+            "display": "kathayatu",
+            "cue": "please tell · let (him) tell",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's polite request, unchanged, with kṛpayā stacked in front of it. The -tu is still what makes it a request rather than an order."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "Two third-person verbs and not one second-person ending anywhere, although both sentences are aimed straight at the person in front of you. That is what bhavatī buys.",
+      "sound": "bha-va-TII KIM I-cchati? kṛ-pa-YAA ka-tha-YA-tu. The cch of icchati is doubled — hold it. The th of kathayatu is a t with breath behind it, never the 'th' of 'think'.",
+      "variations": [
+        {
+          "display": "bhavān kim icchati? kṛpayā kathayatu.",
+          "script": "भवान् किम् इच्छति? कृपया कथयतु।",
+          "cue": "What would you like? Please tell me. (to a man)",
+          "changed": "the customer is a man, so bhavatī becomes bhavān; neither verb moves"
+        },
+        {
+          "display": "bhavatī kim icchati? kathayatu.",
+          "script": "भवती किम् इच्छति? कथयतु।",
+          "cue": "What would you like? Please tell me.",
+          "changed": "kṛpayā drops from the second half and the nudge is still polite"
+        },
+        {
+          "display": "bhavatī kutra gacchati? kṛpayā kathayatu.",
+          "script": "भवती कुत्र गच्छति? कृपया कथयतु।",
+          "cue": "Where are you going? Please tell me.",
+          "changed": "the question word changes from 'what' to 'where', and the request behind it does not move at all"
+        }
+      ],
+      "mistake": {
+        "display": "kim bhavatī icchati? kṛpayā kathayatu.",
+        "why": "With kim at the very front the question has stopped meaning 'what' and started asking yes or no — 'does your honour want something?' — which is answered with ām or na. As 'what' it stands where the answer will stand, after bhavatī."
+      },
+      "usage": "A shopkeeper's question, and the nudge that follows when the customer hesitates.",
+      "register": "neutral",
+      "mnemonic": "Ask ABOUT them, not AT them."
+    },
+    {
+      "id": "L2-M1-S08",
+      "display": "namaste. kṛpayā atra upaviśatu.",
+      "script": "नमस्ते। कृपया अत्र उपविशतु।",
+      "cue": "Hello. Please sit here.",
+      "literal": "hello. please here let-sit",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "namaste",
+            "cue": "hello · goodbye",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's greeting, opening a turn rather than standing alone. One word is still a whole sentence, and it is said on arriving and on leaving alike."
+          },
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Please', leaning on the upaviśatu at the end. On its own it is not an invitation — English can say 'this way, please'; Sanskrit cannot."
+          },
+          {
+            "display": "upaviśatu",
+            "cue": "please sit · let (him) sit",
+            "tag": "free",
+            "forms": [],
+            "note": "The request verb, last as always. Nothing in the line names the guest, and the -tu ending is what makes it clear who is meant."
+          }
+        ],
+        "rules": [
+          1,
+          7,
+          0
+        ]
+      },
+      "trap": "Nothing names the guest. namaste and a -tu verb between them make it perfectly clear who is meant, and adding bhavān would be heavier rather than politer.",
+      "sound": "na-mas-TE. kṛ-pa-YAA A-tra u-pa-VI-sha-tu. The e of namaste is always long. kṛpayā runs straight into atra with no break at all: kṛpayaa-atra.",
+      "variations": [
+        {
+          "display": "namaste. bhavān atra upaviśatu.",
+          "script": "नमस्ते। भवान् अत्र उपविशतु।",
+          "cue": "Hello. Please sit here. (to a man)",
+          "changed": "the guest is named with bhavān and kṛpayā drops — two changes pulling opposite ways, leaving the politeness where it was"
+        },
+        {
+          "display": "namaste. kṛpayā atra upaviśatu. kim jalam icchati?",
+          "script": "नमस्ते। कृपया अत्र उपविशतु। किम् जलम् इच्छति?",
+          "cue": "Hello. Please sit here. Would you like some water?",
+          "changed": "a third move is added, the offer, and kim at the front turns it into a yes-or-no question"
+        },
+        {
+          "display": "namaste. kṛpayā mama gṛham āgacchatu.",
+          "script": "नमस्ते। कृपया मम गृहम् आगच्छतु।",
+          "cue": "Hello. Please come into my house.",
+          "changed": "the verb changes from sitting to coming and the frame around it does not — both are the same -tu cell"
+        }
+      ],
+      "mistake": {
+        "display": "namaste. atra kṛpayā.",
+        "why": "kṛpayā has been made to carry the invitation on its own, as English 'please' can in 'this way, please'. It cannot: it is emphasis on a request, and with no -tu form in the line there is no request for it to emphasise."
+      },
+      "usage": "The first two things a host says, in that order.",
+      "register": "neutral",
+      "mnemonic": "Greet, then seat."
+    },
+    {
+      "id": "L2-M1-S09",
+      "display": "dhanyavādaḥ. mahyam idam pustakam rocate.",
+      "script": "धन्यवादः। मह्यम् इदम् पुस्तकम् रोचते।",
+      "cue": "Thank you. I like this book.",
+      "literal": "thanks. to-me this book is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dhanyavādaḥ",
+            "cue": "thanks · thank you",
+            "tag": "free",
+            "forms": [],
+            "note": "'Thanks', standing as its own sentence and then explaining itself in the next one. Nothing joins the two — the full stop is the join."
+          },
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'this', in the shape a neuter thing takes. idam pustakam is 'this book' here, because a second noun follows it."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "interference",
+            "forms": [],
+            "note": "M1's verb. It answers to the THING liked, not to the person pleased, so the book is the subject and mahyam is only 'to me'."
+          }
+        ],
+        "rules": [
+          5,
+          9,
+          7
+        ]
+      },
+      "trap": "rocate agrees with the book, not with me — M1's frame, unchanged by the thanks in front of it.",
+      "sound": "dhan-ya-VAA-daḥ. MAH-yam i-dam PUS-ta-kam RO-cha-te. The c of rocate is the ch of 'church'. The hy of mahyam is an h and a y, both sounded, in that order.",
+      "variations": [
+        {
+          "display": "dhanyavādaḥ. rāmāya idam pustakam rocate.",
+          "script": "धन्यवादः। रामाय इदम् पुस्तकम् रोचते।",
+          "cue": "Thank you. Rāma likes this book.",
+          "changed": "the person pleased changes from me to Rāma, and like mahyam he stands in the 'to' shape"
+        },
+        {
+          "display": "dhanyavādaḥ. mahyam puṣpāṇi rocante.",
+          "script": "धन्यवादः। मह्यम् पुष्पाणि रोचन्ते।",
+          "cue": "Thank you. I like the flowers.",
+          "changed": "the thing liked goes plural, so the verb follows IT to rocante while mahyam stays exactly as it was"
+        },
+        {
+          "display": "dhanyavādaḥ, kintu idam pustakam na icchāmi.",
+          "script": "धन्यवादः, किन्तु इदम् पुस्तकम् न इच्छामि।",
+          "cue": "Thank you, but I don't want this book.",
+          "changed": "the thanks is kept and then turned with kintu — 'thanks, but', built out of M10's word and nothing new"
+        }
+      ],
+      "mistake": {
+        "display": "dhanyavādaḥ. aham idam pustakam rocate.",
+        "why": "aham has been put in as the liker, on the English pattern. rocate has no room for one: the book is what is pleasing, so the book is the subject, and the person pleased stands in the 'to me' shape, mahyam."
+      },
+      "usage": "Said on being given a present, where English would also thank twice over.",
+      "register": "neutral",
+      "mnemonic": "Thanks first, reason second — and the reason has the thing as its subject."
+    },
+    {
+      "id": "L2-M1-S10",
+      "display": "kṣamyatām, adya na gamiṣyāmi. śvaḥ gamiṣyāmi.",
+      "script": "क्षम्यताम्, अद्य न गमिष्यामि। श्वः गमिष्यामि।",
+      "cue": "I'm sorry, I won't go today. I'll go tomorrow.",
+      "literal": "let-it-be-forgiven, today not will-go. tomorrow will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kṣamyatām",
+            "cue": "sorry · forgive me",
+            "tag": "free",
+            "forms": [],
+            "note": "'Let it be forgiven', opening a turn rather than standing alone. It is a fixed phrase: the pieces inside it are never used separately in this course."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's verb in M6's future, gamiṣyāmi. The -āmi is the 'I', which is why neither sentence needs a pronoun."
+          },
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's 'tomorrow', at the front where a named day belongs. Putting the day first is what lets the second sentence drop everything else."
+          }
+        ],
+        "rules": [
+          6,
+          9,
+          7
+        ]
+      },
+      "trap": "There is no 'I' anywhere, in either sentence. The -āmi ending is the I, and putting aham back in would be emphasis rather than grammar.",
+      "sound": "kṣam-ya-TAAM, A-dya na ga-mi-SHYAA-mi. SHVAH ga-mi-SHYAA-mi. The ṣy of gamiṣyāmi is a retroflex ṣ running into a y. śvaḥ is one syllable, and its -aḥ is a breathed echo of the a in front.",
+      "variations": [
+        {
+          "display": "kṣamyatām, adya na gamiṣyāmi.",
+          "script": "क्षम्यताम्, अद्य न गमिष्यामि।",
+          "cue": "I'm sorry, I won't go today.",
+          "changed": "the second half drops and the apology stands alone — shorter, and noticeably colder"
+        },
+        {
+          "display": "kṣamyatām, adya aham na gamiṣyāmi. śvaḥ gamiṣyāmi.",
+          "script": "क्षम्यताम्, अद्य अहम् न गमिष्यामि। श्वः गमिष्यामि।",
+          "cue": "I'm sorry, I won't go today. I'll go tomorrow.",
+          "changed": "aham is put back in; the ending had already said 'I', so the pronoun adds weight rather than sense"
+        },
+        {
+          "display": "kṣamyatām, adya na gamiṣyāmi, yataḥ aham khinnaḥ.",
+          "script": "क्षम्यताम्, अद्य न गमिष्यामि, यतः अहम् खिन्नः।",
+          "cue": "I'm sorry, I won't go today, because I am unhappy.",
+          "changed": "a reason is added with yataḥ, which leads its own clause exactly as M9 taught"
+        }
+      ],
+      "mistake": {
+        "display": "kṣamyatām, adya na gamiṣyati. śvaḥ gamiṣyāmi.",
+        "why": "The first verb has slipped into the he/she ending while the second kept the I ending, so one turn now has two different people going. Nothing in the line names either of them, which is precisely why the endings have to be right."
+      },
+      "usage": "Cancelling on somebody and offering the next day in the same breath — which is what makes it an apology rather than an excuse.",
+      "register": "neutral",
+      "mnemonic": "Say sorry, then say when."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M1-C01",
+      "display": "kṛpayā phalam dadātu.",
+      "script": "कृपया फलम् ददातु।",
+      "cue": "Please give me a fruit."
+    },
+    {
+      "id": "L2-M1-C02",
+      "display": "bhavatī atra upaviśatu. kim jalam icchati?",
+      "script": "भवती अत्र उपविशतु। किम् जलम् इच्छति?",
+      "cue": "Please sit here. Would you like some water?"
+    },
+    {
+      "id": "L2-M1-C03",
+      "display": "kṣamyatām, adya aham na gamiṣyāmi.",
+      "script": "क्षम्यताम्, अद्य अहम् न गमिष्यामि।",
+      "cue": "I'm sorry, I won't go today."
+    },
+    {
+      "id": "L2-M1-C04",
+      "display": "dhanyavādaḥ. mahyam saṃskṛtam rocate.",
+      "script": "धन्यवादः। मह्यम् संस्कृतम् रोचते।",
+      "cue": "Thank you. I like Sanskrit."
+    },
+    {
+      "id": "L2-M1-C05",
+      "display": "kṛpayā mama gṛham śvaḥ āgacchatu.",
+      "script": "कृपया मम गृहम् श्वः आगच्छतु।",
+      "cue": "Please come to my house tomorrow."
+    },
+    {
+      "id": "L2-M1-C06",
+      "display": "bhavān kutra gacchati? kṛpayā kathayatu.",
+      "script": "भवान् कुत्र गच्छति? कृपया कथयतु।",
+      "cue": "Where are you going? Please tell me."
+    },
+    {
+      "id": "L2-M1-C07",
+      "display": "kṣamyatām, mama pustakam na asti.",
+      "script": "क्षम्यताम्, मम पुस्तकम् न अस्ति।",
+      "cue": "I'm sorry, I don't have my book."
+    },
+    {
+      "id": "L2-M1-C08",
+      "display": "namaste. kṛpayā upaviśatu.",
+      "script": "नमस्ते। कृपया उपविशतु।",
+      "cue": "Hello. Please sit down."
+    },
+    {
+      "id": "L2-M1-C09",
+      "display": "kṛpayā dve phale dadātu. dhanyavādaḥ.",
+      "script": "कृपया द्वे फले ददातु। धन्यवादः।",
+      "cue": "Please give me two fruits. Thank you."
+    },
+    {
+      "id": "L2-M1-C10",
+      "display": "mahyam idam puṣpam rocate. dhanyavādaḥ.",
+      "script": "मह्यम् इदम् पुष्पम् रोचते। धन्यवादः।",
+      "cue": "I like this flower. Thank you."
+    },
+    {
+      "id": "L2-M1-C11",
+      "display": "kṣamyatām, aham khinnaḥ, ataḥ na gamiṣyāmi.",
+      "script": "क्षम्यताम्, अहम् खिन्नः, अतः न गमिष्यामि।",
+      "cue": "I'm sorry, I am unhappy, so I won't go."
+    },
+    {
+      "id": "L2-M1-C12",
+      "display": "kim bhavatī saṃskṛtam paṭhati? kṛpayā kathayatu.",
+      "script": "किम् भवती संस्कृतम् पठति? कृपया कथयतु।",
+      "cue": "Do you study Sanskrit? Please tell me."
+    },
+    {
+      "id": "L2-M1-C13",
+      "display": "kṣamyatām, mama gṛhe jalam na asti.",
+      "script": "क्षम्यताम्, मम गृहे जलम् न अस्ति।",
+      "cue": "I'm sorry, there is no water at my house."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

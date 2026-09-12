@@ -1,0 +1,845 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": [
+    "L2-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "mama + N + N-nom",
+      "N + Adj-nom",
+      "mama + mātāpitarau + Adj-au",
+      "mātāpitarau + <place>-loc + staḥ",
+      "saḥ / sā + Adj"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A describing word copies the thing described: -aḥ for a man, -ā for a woman, -am for a neuter noun. dīrghaḥ, dīrghā and dīrgham are one word, and not one of them is the plain form the other two are built from."
+    },
+    {
+      "tag": "delta",
+      "text": "mātāpitarau is ONE word meaning 'mother and father'. The two nouns are welded together and the ending on the end says 'two' — there is no word for 'and' anywhere inside it and no way to put one there."
+    },
+    {
+      "tag": "delta",
+      "text": "Sanskrit counts in threes: one, TWO, and many. A pair takes endings of its own — mātāpitarau, vṛddhau, staḥ — and that is not a plural spelt differently."
+    },
+    {
+      "tag": "delta",
+      "text": "The pair marking runs through the whole sentence. mama mātāpitarau vṛddhau has a dual noun and a dual adjective; add the verb and staḥ makes three agreements inside four words."
+    },
+    {
+      "tag": "delta",
+      "text": "staḥ is 'the two are'. It is M3's asti carrying a dual ending, and it is the ONLY dual verb this course writes — no other verb is put in the dual anywhere in this level."
+    },
+    {
+      "tag": "interference",
+      "text": "English adjectives never change at all. Sanskrit's always do, and they copy the NOUN's grammar rather than the person's sex: mitram is a neuter word, so a friend of either sex is mama mitram dīrgham."
+    },
+    {
+      "tag": "delta",
+      "text": "mātā, pitā and bhrātā do not look like the nouns M1 taught, because they belong to a different stem class. Learn each as it stands; this course bends none of them, and the only bent shape it writes is the compound mātāpitarau."
+    },
+    {
+      "tag": "free",
+      "text": "A sentence about a relative needs no verb at all. mama bhaginī dīrghā is a possessive, a noun and an adjective, and it is complete — the present 'is' has been optional since M1. A sentence about WHERE somebody is still needs asti or staḥ."
+    },
+    {
+      "tag": "delta",
+      "text": "A relationship noun carries the person's gender in the word itself — bhrātā against bhaginī, bālaḥ against bālā — so there is no single word covering both the way English 'sibling' does."
+    },
+    {
+      "tag": "interference",
+      "text": "vṛddhaḥ is 'old' said of a PERSON, and it leans respectful rather than rude. It is not the word for an old object, so do not stretch it across both the way English 'old' stretches; describing people here stays with height, age and temperament."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "mama mātā śāntā.",
+      "script": "मम माता शान्ता।",
+      "cue": "My mother is calm.",
+      "literal": "of-me mother calm",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'I', here as mama, 'of me'. A relationship is said with the 'of' shape and nothing else — there is no separate word for 'my'."
+          },
+          {
+            "display": "mātā",
+            "cue": "mother",
+            "tag": "delta",
+            "forms": [
+              "mātā"
+            ],
+            "note": "'Mother'. It ends in -ā and is feminine, which is a coincidence rather than a rule — the next word, pitā, ends the same way and is a man."
+          },
+          {
+            "display": "śāntaḥ",
+            "cue": "calm · peaceable",
+            "tag": "delta",
+            "forms": [
+              "śāntaḥ",
+              "śāntā",
+              "śāntau",
+              "śāntam"
+            ],
+            "note": "'Calm': śāntaḥ of a man, śāntā of a woman, śāntam of a neuter noun, śāntau of a pair. One word, four shapes, chosen by what it describes."
+          }
+        ],
+        "rules": [
+          0,
+          6,
+          7
+        ]
+      },
+      "trap": "There is no word for 'is'. A possessive, a noun and an adjective stand side by side and that is the whole sentence, exactly as it was in M1.",
+      "sound": "MA-ma MAA-taa SHAAN-taa. Three long ā's once the first word is past — hold every one. The ś of śāntā is the flat 'sh' of 'ship', and the n before the t is dental, tongue against the teeth.",
+      "variations": [
+        {
+          "display": "mama pitā śāntaḥ.",
+          "script": "मम पिता शान्तः।",
+          "cue": "My father is calm.",
+          "changed": "the person described is a man, so the adjective moves to -aḥ and nothing else in the line moves"
+        },
+        {
+          "display": "mama mātā adhyāpikā.",
+          "script": "मम माता अध्यापिका।",
+          "cue": "My mother is a teacher.",
+          "changed": "the adjective gives way to a noun, and the sentence is still verbless — two words side by side already say 'is'"
+        },
+        {
+          "display": "mama mātā atra asti.",
+          "script": "मम माता अत्र अस्ति।",
+          "cue": "My mother is here.",
+          "changed": "a place enters, and with it M3's asti — a sentence about where somebody is does not drop its verb"
+        }
+      ],
+      "mistake": {
+        "display": "mama mātā śāntaḥ.",
+        "why": "The adjective has stayed masculine while the noun beside it is feminine. A Sanskrit adjective copies its noun every single time; there is no default shape that can be left alone."
+      },
+      "usage": "How you would describe your own family to somebody who has just met you.",
+      "register": "neutral",
+      "mnemonic": "mātā, with 'maternal' standing right behind it."
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "mama pitā vṛddhaḥ.",
+      "script": "मम पिता वृद्धः।",
+      "cue": "My father is old.",
+      "literal": "of-me father old",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pitā",
+            "cue": "father",
+            "tag": "delta",
+            "forms": [
+              "pitā"
+            ],
+            "note": "'Father', and it is masculine although it ends in -ā. The ending on this noun says nothing about gender; the adjective beside it does."
+          },
+          {
+            "display": "vṛddhaḥ",
+            "cue": "old · elder",
+            "tag": "delta",
+            "forms": [
+              "vṛddhaḥ",
+              "vṛddhā",
+              "vṛddhau"
+            ],
+            "note": "'Old', said of a person and leaning respectful: vṛddhaḥ of a man, vṛddhā of a woman, vṛddhau of a pair. It is not the word for an old object."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'I' in its 'of me' shape, mama. It does not change for the gender of what follows it — only the adjective at the end does."
+          }
+        ],
+        "rules": [
+          0,
+          6,
+          9
+        ]
+      },
+      "trap": "pitā ends in -ā and is a MAN. Nothing about the shape of a noun in this class predicts its gender; you learn the gender with the word.",
+      "sound": "MA-ma pi-TAA VRID-dhaḥ. The ddh of vṛddhaḥ is a doubled d with breath on the release — hold the first, then let the second out. The ṛ is the curled-back vowel, a short 'ri'.",
+      "variations": [
+        {
+          "display": "mama mātā vṛddhā.",
+          "script": "मम माता वृद्धा।",
+          "cue": "My mother is old.",
+          "changed": "the parent described is the mother, so the adjective goes to -ā — and nothing else does"
+        },
+        {
+          "display": "mama pitā adhyāpakaḥ.",
+          "script": "मम पिता अध्यापकः।",
+          "cue": "My father is a teacher.",
+          "changed": "a noun takes the adjective's place and the sentence stays verbless"
+        },
+        {
+          "display": "mama pitā vṛddhaḥ, tathāpi saḥ pratidinam paṭhati.",
+          "script": "मम पिता वृद्धः, तथापि सः प्रतिदिनम् पठति।",
+          "cue": "My father is old, even so he reads every day.",
+          "changed": "a second clause is hung on with M10's tathāpi, and saḥ picks up the father the first clause named"
+        }
+      ],
+      "mistake": {
+        "display": "mama pitā vṛddhā.",
+        "why": "The adjective has been made feminine because pitā ends in -ā. It is the noun's gender that decides, not the noun's last letter, and pitā is masculine however it looks."
+      },
+      "usage": "Said with respect. Of a person vṛddhaḥ is nearer 'elder' than 'old'.",
+      "register": "neutral",
+      "mnemonic": "pitā, with 'paternal' standing right behind it."
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "mama mātāpitarau vṛddhau.",
+      "script": "मम मातापितरौ वृद्धौ।",
+      "cue": "My parents are old.",
+      "literal": "of-me mother-father-two old-two",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mātāpitarau",
+            "cue": "parents · mother and father",
+            "tag": "delta",
+            "forms": [
+              "mātāpitarau"
+            ],
+            "note": "'Mother and father' in ONE word: the two nouns are welded and the -au on the end says 'two'. No word for 'and' is inside it, and it cannot be split."
+          },
+          {
+            "display": "vṛddhaḥ",
+            "cue": "old · elder",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Old', here as vṛddhau because what it describes is a pair. The adjective takes the same -au the noun took."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'Of me', unchanged by the pair behind it. Only the noun and the adjective count; the possessive never does."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "There is no word for 'and' inside mātāpitarau and no way to put one there. The two nouns are welded, and the ending on the end is what says 'two'.",
+      "sound": "MA-ma maa-taa-pi-ta-RAU VRID-dhau. One word, five syllables, no break in the middle — the joint between mātā and pitṛ is inside it and is never heard as a seam. The -au is the 'ow' of 'now'.",
+      "variations": [
+        {
+          "display": "mama mātāpitarau śāntau.",
+          "script": "मम मातापितरौ शान्तौ।",
+          "cue": "My parents are calm.",
+          "changed": "the adjective changes and keeps the dual ending — the pair marking sits on every word that describes them"
+        },
+        {
+          "display": "mama mātāpitarau atra staḥ.",
+          "script": "मम मातापितरौ अत्र स्तः।",
+          "cue": "My parents are here.",
+          "changed": "a verb is added and it is dual too, which is the third agreement the pair demands"
+        },
+        {
+          "display": "mama bhaginī vṛddhā.",
+          "script": "मम भगिनी वृद्धा।",
+          "cue": "My sister is old.",
+          "changed": "one person instead of a pair, so the noun and the adjective both fall back to the singular"
+        }
+      ],
+      "mistake": {
+        "display": "mama mātāpitarau vṛddhāḥ.",
+        "why": "The adjective has been made plural. Two is not 'many' in this language: a pair has its own ending, -au, and the adjective has to take the one the noun took."
+      },
+      "usage": "The ordinary way to speak of your parents as a pair; two separate sentences would sound like two separate subjects.",
+      "register": "neutral",
+      "mnemonic": "Mother-father-two. The count rides on the end of the pair, not on either half of it."
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "mama mātāpitarau gṛhe staḥ.",
+      "script": "मम मातापितरौ गृहे स्तः।",
+      "cue": "My parents are at home.",
+      "literal": "of-me mother-father-two in-house are-two",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mātāpitarau",
+            "cue": "parents · mother and father",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Mother and father', one word and one pair. Everything after it in the sentence has to agree with the two, including the verb."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's house in its 'at' shape, gṛhe. The -e is the whole of 'at home'; nothing stands in front of it."
+          },
+          {
+            "display": "staḥ",
+            "cue": "the two are",
+            "tag": "delta",
+            "forms": [
+              "staḥ"
+            ],
+            "note": "'The two are' — M3's asti with a dual ending. It is the only dual verb this course writes: asti for one, staḥ for two."
+          }
+        ],
+        "rules": [
+          4,
+          2,
+          7
+        ]
+      },
+      "trap": "staḥ is not a plural asti. It is the shape for exactly two, and using it of three people would be as wrong as using asti of two.",
+      "sound": "MA-ma maa-taa-pi-ta-RAU GRI-he STAḤ. staḥ is one syllable with st- together at the front. The e of gṛhe is long, as every e in this language is.",
+      "variations": [
+        {
+          "display": "mama mātāpitarau vidyālaye staḥ.",
+          "script": "मम मातापितरौ विद्यालये स्तः।",
+          "cue": "My parents are at the school.",
+          "changed": "the place changes and keeps its -e ending, which is what 'at' is made of"
+        },
+        {
+          "display": "mama mātā gṛhe asti.",
+          "script": "मम माता गृहे अस्ति।",
+          "cue": "My mother is at home.",
+          "changed": "one person instead of two, so the dual staḥ falls back to M3's asti"
+        },
+        {
+          "display": "mama mātāpitarau gṛhe na staḥ.",
+          "script": "मम मातापितरौ गृहे न स्तः।",
+          "cue": "My parents are not at home.",
+          "changed": "na negates the line and stands in front of the verb, exactly where M3 put it"
+        }
+      ],
+      "mistake": {
+        "display": "mama mātāpitarau gṛhe asti.",
+        "why": "asti is the shape for one. The pair has been marked on the noun and then forgotten on the verb — the half-agreement English never has to think about. Here the count is carried by every word that can carry it."
+      },
+      "usage": "The answer to 'where are your parents?' — the commonest sentence this module builds.",
+      "register": "neutral",
+      "mnemonic": "asti for one, staḥ for two. The verb counts as well."
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "mama bhaginī dīrghā.",
+      "script": "मम भगिनी दीर्घा।",
+      "cue": "My sister is tall.",
+      "literal": "of-me sister tall",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhaginī",
+            "cue": "sister",
+            "tag": "delta",
+            "forms": [
+              "bhaginī"
+            ],
+            "note": "'Sister', the everyday word. It names a woman in the word itself, so no adjective beside it is ever masculine."
+          },
+          {
+            "display": "dīrghaḥ",
+            "cue": "tall · long",
+            "tag": "delta",
+            "forms": [
+              "dīrghaḥ",
+              "dīrghā",
+              "dīrgham"
+            ],
+            "note": "'Tall' of a person and 'long' of a thing — one word for both. dīrghaḥ of a man, dīrghā of a woman, dīrgham of a neuter noun."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'Of me'. The same mama has now stood in front of a mother, a father, a pair and a sister without changing once."
+          }
+        ],
+        "rules": [
+          0,
+          8,
+          7
+        ]
+      },
+      "trap": "dīrghā is 'tall' of a person and 'long' of a thing, and the same word does both. English needs two adjectives here; Sanskrit needs one.",
+      "sound": "MA-ma bha-gi-NII DIIR-ghaa. The bh of bhaginī is a b with breath behind it, one sound and not two. Both ī's are long, and the r of dīrghā is a light tap before the gh.",
+      "variations": [
+        {
+          "display": "mama bhrātā dīrghaḥ.",
+          "script": "मम भ्राता दीर्घः।",
+          "cue": "My brother is tall.",
+          "changed": "the sibling is a brother, so the noun and the adjective change together"
+        },
+        {
+          "display": "sītā mama bhaginī.",
+          "script": "सीता मम भगिनी।",
+          "cue": "Sītā is my sister.",
+          "changed": "a name takes the adjective's place, and the sentence is two nouns with nothing between them"
+        },
+        {
+          "display": "mama bhaginī chātrā. sā dīrghā.",
+          "script": "मम भगिनी छात्रा। सा दीर्घा।",
+          "cue": "My sister is a student. She is tall.",
+          "changed": "the description moves into a second sentence, where sā picks up the sister without naming her again"
+        }
+      ],
+      "mistake": {
+        "display": "mama bhaginī dīrghaḥ.",
+        "why": "The masculine ending has been left on an adjective describing a woman. bhaginī is feminine and the adjective has to follow it to dīrghā; there is no neutral shape to fall back on."
+      },
+      "usage": "Height, age and temperament are what this module describes people with.",
+      "register": "neutral",
+      "mnemonic": "dīrghā is 'long'. A tall person is a long one."
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "mama bhrātā chātraḥ. saḥ dīrghaḥ.",
+      "script": "मम भ्राता छात्रः। सः दीर्घः।",
+      "cue": "My brother is a student. He is tall.",
+      "literal": "of-me brother student. he tall",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhrātā",
+            "cue": "brother",
+            "tag": "delta",
+            "forms": [
+              "bhrātā"
+            ],
+            "note": "'Brother', and it is the same word as English 'brother', five thousand years apart. Like mātā and pitā it ends in -ā and is never bent in this course."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he · that (man)",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's 'he', carrying the brother into the second sentence. Nothing joins the two sentences but this word."
+          },
+          {
+            "display": "dīrghaḥ",
+            "cue": "tall · long",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tall', masculine here because saḥ is. The adjective agrees with the word in front of it, not with the noun two sentences back."
+          }
+        ],
+        "rules": [
+          6,
+          0,
+          8
+        ]
+      },
+      "trap": "saḥ is doing the work of English 'he', and it is the only thing holding the two sentences together — there is no conjunction of any kind between them.",
+      "sound": "MA-ma BHRAA-taa CHAA-traḥ. SAḤ DIIR-ghaḥ. bhr- is one cluster, the bh breathed with the r tapped straight after it. Both sentences end in that breathed -aḥ, an echo of the a in front of it.",
+      "variations": [
+        {
+          "display": "mama bhaginī chātrā. sā dīrghā.",
+          "script": "मम भगिनी छात्रा। सा दीर्घा।",
+          "cue": "My sister is a student. She is tall.",
+          "changed": "every word that can carry gender changes at once — the noun, the pronoun and the adjective"
+        },
+        {
+          "display": "mama bhrātā chātraḥ. saḥ vidyālaye asti.",
+          "script": "मम भ्राता छात्रः। सः विद्यालये अस्ति।",
+          "cue": "My brother is a student. He is at the school.",
+          "changed": "the second sentence says where instead of what, so it needs asti where the first needed nothing"
+        },
+        {
+          "display": "mama bhrātā chātraḥ. saḥ pratidinam paṭhati.",
+          "script": "मम भ्राता छात्रः। सः प्रतिदिनम् पठति।",
+          "cue": "My brother is a student. He reads every day.",
+          "changed": "the second sentence takes a real verb, and saḥ is still what carries the brother into it"
+        }
+      ],
+      "mistake": {
+        "display": "mama bhrātā chātrā. saḥ dīrghaḥ.",
+        "why": "chātrā is the shape for a female student, and the brother has been given it. A noun naming a person carries that person's gender — M1's first lesson, and it does not stop applying because a relationship word stands in front of it."
+      },
+      "usage": "How you introduce a family member and then say one thing about them.",
+      "register": "neutral",
+      "mnemonic": "bhrātā and 'brother' are the same word, a very long time apart."
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "mama mitram dīrgham.",
+      "script": "मम मित्रम् दीर्घम्।",
+      "cue": "My friend is tall.",
+      "literal": "of-me friend tall",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mitram",
+            "cue": "friend",
+            "tag": "delta",
+            "forms": [
+              "mitram"
+            ],
+            "note": "'Friend', and the word is NEUTER. It does not change for who the friend is, and neither does the adjective beside it: mama mitram dīrgham, of a man or of a woman."
+          },
+          {
+            "display": "dīrghaḥ",
+            "cue": "tall · long",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tall' in its neuter shape, dīrgham, because mitram is neuter. The ending reports the noun's grammar, not the person's sex."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'Of me'. Unchanged again — the possessive is the one word in these sentences that never agrees with anything."
+          }
+        ],
+        "rules": [
+          5,
+          0,
+          7
+        ]
+      },
+      "trap": "mitram is a NEUTER noun, so its adjective is neuter — dīrgham — whether the friend is a man or a woman. The ending reports the word's grammar, not the person.",
+      "sound": "MA-ma MIT-ram DIIR-gham. Both words end in that -am, which is really a light m; said at speed it becomes a hum into the next word, and the page keeps the m.",
+      "variations": [
+        {
+          "display": "mama mitram śāntam.",
+          "script": "मम मित्रम् शान्तम्।",
+          "cue": "My friend is calm.",
+          "changed": "a different adjective, and it takes the same neuter ending — the noun decides, every time"
+        },
+        {
+          "display": "mama mitram gṛhe asti.",
+          "script": "मम मित्रम् गृहे अस्ति।",
+          "cue": "My friend is at home.",
+          "changed": "a place and a verb enter, and mitram does not change at all, because 'at home' is carried by the -e on the house"
+        },
+        {
+          "display": "sītā mama mitram.",
+          "script": "सीता मम मित्रम्।",
+          "cue": "Sītā is my friend.",
+          "changed": "a woman is named as the friend and mitram stays neuter — the clearest proof that the word's gender is not the person's"
+        }
+      ],
+      "mistake": {
+        "display": "mama mitram dīrghaḥ.",
+        "why": "The adjective has been made masculine because the friend is a man. It agrees with mitram, which is neuter, and nothing about the person outside the sentence can reach in and change it."
+      },
+      "usage": "The everyday word for a friend, and it never changes shape for who the friend is.",
+      "register": "neutral",
+      "mnemonic": "The language files a friend as neuter. Read nothing into it."
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "saḥ bālaḥ śāntaḥ.",
+      "script": "सः बालः शान्तः।",
+      "cue": "That boy is calm.",
+      "literal": "that boy calm",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bālaḥ",
+            "cue": "boy · child (m)",
+            "tag": "delta",
+            "forms": [
+              "bālaḥ"
+            ],
+            "note": "'Boy', the masculine partner of M9's bālā, 'girl'. Neither is built from the other; each carries its own gender and its own ending."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he · that (man)",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's word, here as 'that' in front of a noun rather than 'he' standing alone. It agrees with the noun it points at."
+          },
+          {
+            "display": "śāntaḥ",
+            "cue": "calm · peaceable",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Calm', masculine to match the boy. Three words in a row ending -aḥ is not a rhyme; it is agreement."
+          }
+        ],
+        "rules": [
+          8,
+          0,
+          7
+        ]
+      },
+      "trap": "bālaḥ is the boy to M9's bālā, the girl — one word with two genders, and neither is made out of the other.",
+      "sound": "SAḤ BAA-laḥ SHAAN-taḥ. Three words ending in the breathed -aḥ, each an echo of the vowel in front of it. The long ā of bālaḥ is the whole difference between it and a short one.",
+      "variations": [
+        {
+          "display": "sā bālā śāntā.",
+          "script": "सा बाला शान्ता।",
+          "cue": "That girl is calm.",
+          "changed": "every word in the line changes gender together — the pronoun, the noun and the adjective"
+        },
+        {
+          "display": "saḥ bālaḥ vidyālaye asti.",
+          "script": "सः बालः विद्यालये अस्ति।",
+          "cue": "That boy is at the school.",
+          "changed": "the adjective gives way to a place, and a place needs asti where an adjective needed nothing"
+        },
+        {
+          "display": "saḥ bālaḥ mama bhrātā.",
+          "script": "सः बालः मम भ्राता।",
+          "cue": "That boy is my brother.",
+          "changed": "the adjective gives way to a second noun, and the sentence is still verbless"
+        }
+      ],
+      "mistake": {
+        "display": "saḥ bālā śāntaḥ.",
+        "why": "bālā is the girl. The masculine saḥ and the masculine śāntaḥ are both right and the noun between them has been left feminine — the one thing in the line that context cannot repair."
+      },
+      "usage": "Said about a child who is not in the conversation.",
+      "register": "neutral",
+      "mnemonic": "bālaḥ and bālā: the boy and the girl, one letter apart."
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "bhavataḥ mātāpitarau kutra staḥ?",
+      "script": "भवतः मातापितरौ कुत्र स्तः?",
+      "cue": "Where are your parents? (to a man)",
+      "literal": "of-your-honour mother-father-two where are-two",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's polite 'you' in its 'of you' shape: bhavataḥ to a man, bhavatyāḥ to a woman. It does not change for the pair behind it."
+          },
+          {
+            "display": "kutra",
+            "cue": "where",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's 'where', at the front of what it asks about. The question is marked by this word alone — nothing else in the line moves."
+          },
+          {
+            "display": "staḥ",
+            "cue": "the two are",
+            "tag": "delta",
+            "forms": [],
+            "note": "'The two are', in a question exactly as in a statement. A question does not suspend agreement: the pair is still a pair."
+          }
+        ],
+        "rules": [
+          4,
+          3,
+          7
+        ]
+      },
+      "trap": "bhavataḥ is 'of your honour' — the polite 'your'. It does not change for the pair behind it; only the noun and the verb do.",
+      "sound": "bha-va-TAḤ maa-taa-pi-ta-RAU KU-tra STAḤ. kutra is a light tap of an r between two short vowels. The voice usually rises at the end, but kutra is what makes it a question.",
+      "variations": [
+        {
+          "display": "bhavatyāḥ mātāpitarau kutra staḥ?",
+          "script": "भवत्याः मातापितरौ कुत्र स्तः?",
+          "cue": "Where are your parents? (to a woman)",
+          "changed": "the polite 'your' takes its feminine shape bhavatyāḥ, and nothing else in the question moves"
+        },
+        {
+          "display": "bhavataḥ mātā kutra asti?",
+          "script": "भवतः माता कुत्र अस्ति?",
+          "cue": "Where is your mother?",
+          "changed": "one parent instead of two, so the noun and the verb both fall back to the singular"
+        },
+        {
+          "display": "mama mātāpitarau gṛhe staḥ.",
+          "script": "मम मातापितरौ गृहे स्तः।",
+          "cue": "My parents are at home.",
+          "changed": "the answer, with kutra replaced by the place it was asking for and bhavataḥ by mama"
+        }
+      ],
+      "mistake": {
+        "display": "bhavataḥ mātāpitarau kutra?",
+        "why": "The verb has been dropped, on the pattern of M2's bhavataḥ nāma kim? A sentence that says WHERE somebody is keeps its verb; only a sentence linking two nouns may go without one."
+      },
+      "usage": "The commonest polite question about somebody's family.",
+      "register": "neutral",
+      "mnemonic": "Ask with kutra, answer with staḥ. The pair stays dual on both sides."
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "mama bhrātā bhaginī ca vidyālaye staḥ.",
+      "script": "मम भ्राता भगिनी च विद्यालये स्तः।",
+      "cue": "My brother and sister are at the school.",
+      "literal": "of-me brother sister and in-school are-two",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhrātā",
+            "cue": "brother",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Brother', first of the two joined by ca. Neither noun changes for being joined; only the verb at the end registers that there are two of them."
+          },
+          {
+            "display": "ca",
+            "cue": "and",
+            "tag": "free",
+            "forms": [],
+            "note": "M10's 'and', standing after the last of the things it joins rather than between them. Two people joined by ca are still two."
+          },
+          {
+            "display": "staḥ",
+            "cue": "the two are",
+            "tag": "delta",
+            "forms": [],
+            "note": "'The two are'. A pair built with ca takes the same verb a welded compound would — the verb counts people, not words."
+          }
+        ],
+        "rules": [
+          4,
+          2,
+          3
+        ]
+      },
+      "trap": "Two nouns joined with ca still count as two, so the verb is staḥ. A pair made with ca and a pair welded into a compound behave identically once the verb is reached.",
+      "sound": "MA-ma BHRAA-taa bha-gi-NII cha vi-dyaa-LA-ye STAḤ. ca is a single light syllable that leans on the word in front of it — bhaginii-cha, said as one.",
+      "variations": [
+        {
+          "display": "mama mātā pitā ca gṛhe staḥ.",
+          "script": "मम माता पिता च गृहे स्तः।",
+          "cue": "My mother and father are at home.",
+          "changed": "the pair is built with ca instead of the compound, and the verb is staḥ either way"
+        },
+        {
+          "display": "mama bhrātā vidyālaye asti.",
+          "script": "मम भ्राता विद्यालये अस्ति।",
+          "cue": "My brother is at the school.",
+          "changed": "one person, so ca goes and the verb falls back to asti"
+        },
+        {
+          "display": "mama bhrātā bhaginī ca gṛhe staḥ.",
+          "script": "मम भ्राता भगिनी च गृहे स्तः।",
+          "cue": "My brother and sister are at home.",
+          "changed": "the place changes and keeps its -e, which is the only thing marking 'at'"
+        }
+      ],
+      "mistake": {
+        "display": "mama bhrātā bhaginī ca vidyālaye asti.",
+        "why": "ca has joined two people and the verb has stayed singular, as it might in English when the subject 'looks' single. Sanskrit counts what is actually there: two, so staḥ."
+      },
+      "usage": "Where a compound is not available, ca does the same job and the verb does not notice the difference.",
+      "register": "neutral",
+      "mnemonic": "Two people, however you joined them, take staḥ."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M2-C01",
+      "display": "mama mātā adhyāpikā.",
+      "script": "मम माता अध्यापिका।",
+      "cue": "My mother is a teacher."
+    },
+    {
+      "id": "L2-M2-C02",
+      "display": "mama pitā vidyālaye asti.",
+      "script": "मम पिता विद्यालये अस्ति।",
+      "cue": "My father is at the school."
+    },
+    {
+      "id": "L2-M2-C03",
+      "display": "bhavataḥ bhaginī kutra asti?",
+      "script": "भवतः भगिनी कुत्र अस्ति?",
+      "cue": "Where is your sister?"
+    },
+    {
+      "id": "L2-M2-C04",
+      "display": "sā bālā mama bhaginī.",
+      "script": "सा बाला मम भगिनी।",
+      "cue": "That girl is my sister."
+    },
+    {
+      "id": "L2-M2-C05",
+      "display": "mama mitram atra asti.",
+      "script": "मम मित्रम् अत्र अस्ति।",
+      "cue": "My friend is here."
+    },
+    {
+      "id": "L2-M2-C06",
+      "display": "mama mātāpitarau atra na staḥ.",
+      "script": "मम मातापितरौ अत्र न स्तः।",
+      "cue": "My parents are not here."
+    },
+    {
+      "id": "L2-M2-C07",
+      "display": "saḥ bālaḥ dīrghaḥ.",
+      "script": "सः बालः दीर्घः।",
+      "cue": "That boy is tall."
+    },
+    {
+      "id": "L2-M2-C08",
+      "display": "mama bhaginī bhrātā ca gṛhe staḥ.",
+      "script": "मम भगिनी भ्राता च गृहे स्तः।",
+      "cue": "My sister and brother are at home."
+    },
+    {
+      "id": "L2-M2-C09",
+      "display": "mama pitā vṛddhaḥ. saḥ pratidinam paṭhati.",
+      "script": "मम पिता वृद्धः। सः प्रतिदिनम् पठति।",
+      "cue": "My father is old. He reads every day."
+    },
+    {
+      "id": "L2-M2-C10",
+      "display": "kim bhavatyāḥ mātā adhyāpikā?",
+      "script": "किम् भवत्याः माता अध्यापिका?",
+      "cue": "Is your mother a teacher?"
+    },
+    {
+      "id": "L2-M2-C11",
+      "display": "mama mātā śāntā, ataḥ aham api śāntaḥ.",
+      "script": "मम माता शान्ता, अतः अहम् अपि शान्तः।",
+      "cue": "My mother is calm, so I am calm too."
+    },
+    {
+      "id": "L2-M2-C12",
+      "display": "sītā mama mitram. sā chātrā.",
+      "script": "सीता मम मित्रम्। सा छात्रा।",
+      "cue": "Sītā is my friend. She is a student."
+    },
+    {
+      "id": "L2-M2-C13",
+      "display": "kutra bhavataḥ mitram asti?",
+      "script": "कुत्र भवतः मित्रम् अस्ति?",
+      "cue": "Where is your friend?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

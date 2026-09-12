@@ -1169,15 +1169,18 @@ second that was BORN conforming to the no-reading rule.** English (L1) → Sansk
 rungs authored against ten briefs (#607 — `tools/course-briefs.ts`, "en-sa: decisions a brief must
 settle before any Sanskrit is written"), across three authoring issues (#608 L1-M1–M2, #609
 L1-M3–M5, #610 L1-M6–M10) and reviewed in
-[`docs/122-llm-review-en-sa-L1.md`](docs/122-llm-review-en-sa-L1.md) — one document, three waves,
-twenty-eight sections and one open-question list. Dropping `fixture: true` from the en-sa row in
+[`docs/122-llm-review-en-sa-L1-L2.md`](docs/122-llm-review-en-sa-L1-L2.md) — one document, now four
+waves, thirty-seven sections and one open-question list. Dropping `fixture: true` from the en-sa row in
 `content/courses.json`, and L1's level `draft: true` and its `draftNote` from
-`content/en-sa/levels.json`, was the whole change: a strict `npm run build` now reports `en-sa: 10
-modules (L1-M1..M10)` and emits `public/content/en-sa/` with levels, strings, ten modules and ten
-cumulative indexes closing at **139 surfaces**, and the emitted `courses.json` lists all ten
-courses. The chrome is English (`revealLabel` = "Reveal the Sanskrit") and the switcher offers the
-pair as `english → sanskrit`. **Its L2–L5 ladders stay `draft: true`** — those four levels are
-still #423's ratified placeholder lists and not one rung of them is authored.
+`content/en-sa/levels.json`, was the whole change: a strict `npm run build` reported `en-sa: 10
+modules (L1-M1..M10)` at graduation and emitted `public/content/en-sa/` with levels, strings, ten
+modules and ten cumulative indexes closing at **139 surfaces**, and the emitted `courses.json`
+lists all ten courses. The chrome is English (`revealLabel` = "Reveal the Sanskrit") and the switcher offers the
+pair as `english → sanskrit`. **Its L2–L5 ladders stay `draft: true`** — a level's flag clears only
+when all ten of its rungs are authored. #613 opened L2 with `L2-M1` and `L2-M2` against the L2 briefs (#612),
+so a build now reports `en-sa: 12 modules (L1-M1..M10, L2-M1..M2)` and closes at **164 surfaces**;
+L2-M3–M10 and the whole of L3–L5 are still #423's ratified placeholder lists with nothing authored
+in them.
 
 **The scheme is IAST and the course is written in PADA form, which is the decision everything else
 rests on** (#604, [`docs/121-en-sa-romanization-decisions.md`](docs/121-en-sa-romanization-decisions.md)).
