@@ -109,11 +109,11 @@ describe('the manifest carries the fixture row (#606)', () => {
   });
 });
 
-/** The rungs #608 authored: the first two of L1, and the only en-sa content that exists. */
-const AUTHORED = ['L1-M1', 'L1-M2'];
+/** The rungs authored so far: L1-M1..M2 (#608) plus M3..M5 (#609) — the only en-sa content there is. */
+const AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'];
 
 describe('the fixture course ships a complete ladder and bundle', () => {
-  it('is five levels of ten, with #608’s two rungs authored and every other one drafted', () => {
+  it('is five levels of ten, with the five authored rungs flagged and every other one drafted', () => {
     const levels = readJson<{
       courseId: string;
       levels: {
@@ -182,11 +182,12 @@ describe('the fixture course ships a complete ladder and bundle', () => {
 
   /**
    * #606 shipped the course with NO `modules/` folder, and this case pinned that a missing folder
-   * is tolerated rather than an error. #608 created the folder with the first two rungs, so what
-   * is pinned now is its exact contents: the ladder is authored in order, and a third file here
-   * without its `levels.json` flag flipped would be a rung the app cannot reach.
+   * is tolerated rather than an error. #608 created the folder with the first two rungs and #609
+   * carried it to five, so what is pinned now is its exact contents: the ladder is authored in
+   * order, and a sixth file here without its `levels.json` flag flipped would be a rung the app
+   * cannot reach.
    */
-  it('has exactly the rungs #608 authored, and nothing ahead of them', () => {
+  it('has exactly the rungs authored so far, and nothing ahead of them', () => {
     const dir = path.join(CONTENT, FIXTURE_COURSE, 'modules');
     expect(existsSync(dir)).toBe(true);
     expect(readdirSync(dir).sort()).toEqual(AUTHORED.map((id) => `${id}.json`));
@@ -209,7 +210,7 @@ describe('the gate drops the fixture course, and the build does not trip over it
 
   it('dev: --with-fixtures admits the course and ships the rungs it has, without erroring', () => {
     expect(DEV.exitCode).toBe(0);
-    expect(DEV.lines).toContain('en-sa: 2 modules (L1-M1..M2)');
+    expect(DEV.lines).toContain('en-sa: 5 modules (L1-M1..M5)');
     expect(DEV.lines.filter((line) => line.includes('FAIL'))).toEqual([]);
   });
 
@@ -219,7 +220,7 @@ describe('the gate drops the fixture course, and the build does not trip over it
    * `emitTree` writes only the courses that shipped at least one module, and the emitted
    * `courses.json` is filtered the same way. While the ladder was empty, en-sa was absent from the
    * manifest the APP reads on BOTH gates — the Settings switcher could not offer
-   * `english → sanskrit` at all. With two rungs authored the dev gate now emits the course and its
+   * `english → sanskrit` at all. With rungs authored the dev gate now emits the course and its
    * indexes, while the strict gate still drops it on `fixture: true` alone: the row graduates in
    * its own issue, not in an authoring wave. That asymmetry is the thing worth pinning, because a
    * course that quietly reached a learner build before its row graduated would be a gate failure
