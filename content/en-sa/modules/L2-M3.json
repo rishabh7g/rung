@@ -1,0 +1,844 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M3",
+  "title": "Describing things",
+  "job": "Size, colour, quality — agreement at length",
+  "prerequisites": [
+    "L2-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "Adj-nom + N-nom",
+      "idam + N + Adj",
+      "Adj-acc + N-acc + icchāmi",
+      "kim + N + Adj",
+      "N + Adj + asti"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A describing word copies the gender of the thing described: navaḥ in front of a masculine noun, navā in front of a feminine one, navam in front of a neuter one. One word, three shapes, and not one of the three is the plain form the others are built from."
+    },
+    {
+      "tag": "delta",
+      "text": "The describing word copies the CASE as well. navaḥ vidyālayaḥ is the new school as the thing being talked about; navam vidyālayam is the same school as the place you are walking to. Both words move together, or neither does."
+    },
+    {
+      "tag": "delta",
+      "text": "-am is doing two jobs, and telling them apart is this module's hardest minute. It is the neuter ending in both of the cases this course writes, so nīlam pustakam is 'blue book' whether the book is the subject or the thing wanted; and it is also what a masculine word takes once it becomes a destination or an object, which is what navam vidyālayam is."
+    },
+    {
+      "tag": "delta",
+      "text": "Where the describing word stands decides how it is read. In front of its noun it is part of the name of the thing — nīlam pustakam, 'the blue book'. After it, with no verb, it is the whole statement — pustakam nīlam, 'the book is blue'. Sanskrit's word order is freer than this; these two orders are the ones that are heard the way you mean them."
+    },
+    {
+      "tag": "delta",
+      "text": "This course writes a-stem describing words only — the ones that end -aḥ, -ā and -am. Sanskrit's everyday word for 'big', mahat, belongs to another class entirely and is written nowhere in this level. Size here is dīrghaḥ and hrasvaḥ, long and short, and navaḥ and purāṇaḥ, new and old."
+    },
+    {
+      "tag": "interference",
+      "text": "English describing words never change: a red flower, a red book, a red house. Every Sanskrit one changes for every noun it touches, and it copies the noun's grammar rather than anything about the thing itself."
+    },
+    {
+      "tag": "free",
+      "text": "There is no new word for 'what kind of?'. M2's kim in front of an unchanged sentence asks it — kim idam puṣpam raktam? is 'is this flower red?' — and that is the whole question grammar this module needs. A word for it does exist, and a later level may open it."
+    },
+    {
+      "tag": "interference",
+      "text": "English 'old' covers a person and a thing with one word; Sanskrit splits them. vṛddhaḥ is old of a PERSON and leans respectful, and it is M2's word; purāṇaḥ is old of a THING — a book, a house, a library. Calling a book vṛddham is the first mistake an English speaker makes here."
+    },
+    {
+      "tag": "delta",
+      "text": "Three of this module's words have a second life elsewhere, and this course writes each of them in one meaning only. pītaḥ is 'yellow' here, and the other pīta- of the grammar books is a past participle written nowhere in this course. kṛṣṇaḥ is 'black' here, and the name it is also is written nowhere. navaḥ is 'new' here; the numeral nine is nava, without the ending, and no sentence writes it."
+    },
+    {
+      "tag": "free",
+      "text": "A description needs no verb. idam puṣpam raktam is complete as it stands, and asti may be put in or left out without changing what it means. A sentence saying WHERE something is still needs asti."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M3-S01",
+      "display": "idam puṣpam raktam.",
+      "script": "इदम् पुष्पम् रक्तम्।",
+      "cue": "This flower is red.",
+      "literal": "this flower red",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "raktaḥ",
+            "cue": "red",
+            "tag": "delta",
+            "forms": [
+              "raktaḥ",
+              "raktam"
+            ],
+            "note": "'Red'. It copies the noun it describes: puṣpam is neuter, so the adjective ends -am. The shape the row is named by, raktaḥ, is the one a masculine noun would take."
+          },
+          {
+            "display": "puṣpam",
+            "cue": "flower",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's flower, and a neuter noun. Nothing in the word announces that; what shows it is the ending on the adjective standing beside it."
+          },
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'this'. Sanskrit has masculine and feminine shapes of it too; this course writes only idam, and every sentence here that uses it points at a neuter noun."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          9
+        ]
+      },
+      "trap": "The -am on raktam is not a mark of an object. It is the neuter ending, and puṣpam carries it as well — the two words are matching each other, not doing different jobs.",
+      "sound": "i-DAM PUSH-pam RAK-tam. The ṣ of puṣpam is an s said with the tongue curled back, and the p after it carries no breath.",
+      "variations": [
+        {
+          "display": "idam raktam puṣpam sundaram.",
+          "script": "इदम् रक्तम् पुष्पम् सुन्दरम्।",
+          "cue": "This red flower is beautiful.",
+          "changed": "the colour moves in front of the noun, where it stops being the statement and becomes part of the name of the thing — so a second adjective is needed to finish the sentence"
+        },
+        {
+          "display": "idam puṣpam raktam asti.",
+          "script": "इदम् पुष्पम् रक्तम् अस्ति।",
+          "cue": "This flower is red.",
+          "changed": "asti is put back in, and the sentence means exactly what it meant without it"
+        },
+        {
+          "display": "raktam puṣpam icchāmi.",
+          "script": "रक्तम् पुष्पम् इच्छामि।",
+          "cue": "I want a red flower.",
+          "changed": "the flower becomes the thing wanted, and not one letter of raktam puṣpam changes to say so"
+        }
+      ],
+      "mistake": {
+        "display": "idam puṣpam raktaḥ.",
+        "why": "The masculine ending has been left on an adjective describing a neuter noun. puṣpam is neuter, so raktam is the only shape that can stand beside it; raktaḥ would need a masculine noun in front of it."
+      },
+      "usage": "How you say the colour of something you are looking at.",
+      "register": "neutral",
+      "mnemonic": "raktam ends the way puṣpam does. When the two words rhyme, they agree."
+    },
+    {
+      "id": "L2-M3-S02",
+      "display": "mama gṛham śvetam.",
+      "script": "मम गृहम् श्वेतम्।",
+      "cue": "My house is white.",
+      "literal": "of-me house white",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śvetaḥ",
+            "cue": "white",
+            "tag": "delta",
+            "forms": [
+              "śvetaḥ",
+              "śvetam"
+            ],
+            "note": "'White'. śvetam in front of or behind a neuter noun, śvetaḥ with a masculine one. The colour word is the only thing in this sentence that has had to choose a shape."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's house, neuter. It kept this same shape as the thing owned and as the thing described; only its locative gṛhe was ever different."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'Of me', mama. It does not move for the gender of what follows it, and it has not moved once since M1."
+          }
+        ],
+        "rules": [
+          0,
+          9,
+          5
+        ]
+      },
+      "trap": "mama does not change for gṛham and gṛham does not change for mama. The only word in the sentence that has had to move is the one at the end.",
+      "sound": "MA-ma GRI-ham SHVE-tam. The śv- of śvetam is one cluster: a soft sh made with the tongue forward, then the v, with nothing between them.",
+      "variations": [
+        {
+          "display": "mama vidyālayaḥ śvetaḥ.",
+          "script": "मम विद्यालयः श्वेतः।",
+          "cue": "My school is white.",
+          "changed": "the thing described is a masculine noun, so the adjective goes to -aḥ and nothing else in the sentence moves"
+        },
+        {
+          "display": "mama gṛham śvetam asti.",
+          "script": "मम गृहम् श्वेतम् अस्ति।",
+          "cue": "My house is white.",
+          "changed": "asti is added; a description may take it or leave it"
+        },
+        {
+          "display": "idam śvetam gṛham mama.",
+          "script": "इदम् श्वेतम् गृहम् मम।",
+          "cue": "This white house is mine.",
+          "changed": "the adjective moves in front of the noun and mama moves to the end, so the sentence now claims the house rather than describing it"
+        }
+      ],
+      "mistake": {
+        "display": "mama gṛhaḥ śvetaḥ.",
+        "why": "The house has been made masculine. gṛham is a neuter noun and stays gṛham; once the noun is wrong the adjective follows it wrong, so one slip has broken two words."
+      },
+      "usage": "Said of a building, a room or anything you could point at from where you stand.",
+      "register": "neutral",
+      "mnemonic": "śvetam begins with the softest sibilant in the language — a whisper of a sound for the palest colour."
+    },
+    {
+      "id": "L2-M3-S03",
+      "display": "nīlam pustakam icchāmi.",
+      "script": "नीलम् पुस्तकम् इच्छामि।",
+      "cue": "I want the blue book.",
+      "literal": "blue book I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nīlaḥ",
+            "cue": "blue · dark blue",
+            "tag": "delta",
+            "forms": [
+              "nīlaḥ",
+              "nīlam"
+            ],
+            "note": "'Blue', and it reaches over into dark blue and blue-black. Here it is nīlam because pustakam is neuter, and it would be nīlam again if the book were the subject."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's book. A neuter noun looks the same as the doer and as the thing done to, which is why this sentence needs the verb to be readable at all."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'I want', still carrying its -mi. It is the last word in the sentence and the only thing in it that says the book is what is wanted."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "Nothing in nīlam pustakam says 'object'. A neuter noun has one shape for both jobs and so does its adjective — icchāmi at the end is the whole of the evidence.",
+      "sound": "NII-lam PUS-ta-kam ICH-chhaa-mi. The cch of icchāmi is held: a c, then a breathed ch, two beats where English would give one.",
+      "variations": [
+        {
+          "display": "nīlam pustakam atra asti.",
+          "script": "नीलम् पुस्तकम् अत्र अस्ति।",
+          "cue": "The blue book is here.",
+          "changed": "the same two words are now the subject rather than the thing wanted, and only the verb has changed"
+        },
+        {
+          "display": "saḥ nīlam pustakam icchati.",
+          "script": "सः नीलम् पुस्तकम् इच्छति।",
+          "cue": "He wants the blue book.",
+          "changed": "somebody else is doing the wanting, so the verb ending moves from -mi to -ti"
+        },
+        {
+          "display": "kim bhavān nīlam pustakam icchati?",
+          "script": "किम् भवान् नीलम् पुस्तकम् इच्छति?",
+          "cue": "Do you want the blue book?",
+          "changed": "M2's kim turns the line into a question without moving a single word of it"
+        }
+      ],
+      "mistake": {
+        "display": "nīlaḥ pustakam icchāmi.",
+        "why": "The adjective has been given a masculine ending while the noun stays neuter. pustakam is neuter in both of the cases this course writes, so nīlam is the only shape that can stand in front of it."
+      },
+      "usage": "How you ask for one particular thing in a shop or a library.",
+      "register": "neutral",
+      "mnemonic": "nīlam is the blue of the indigo trade, and English took the word 'anil' from it by way of Arabic."
+    },
+    {
+      "id": "L2-M3-S04",
+      "display": "navaḥ vidyālayaḥ atra asti.",
+      "script": "नवः विद्यालयः अत्र अस्ति।",
+      "cue": "The new school is here.",
+      "literal": "new school here is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "navaḥ",
+            "cue": "new",
+            "tag": "delta",
+            "forms": [
+              "navaḥ",
+              "navā",
+              "navam"
+            ],
+            "note": "'New'. navaḥ with a masculine noun, navā with a feminine one, navam with a neuter one — and navam again when a masculine noun becomes a destination. This is the module's full pattern in one word."
+          },
+          {
+            "display": "vidyālayaḥ",
+            "cue": "school",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's school, a masculine noun. This is the one sentence in the module whose adjective ends -aḥ, and the school is the reason."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'is'. A description can do without it; a sentence saying WHERE something is cannot, and atra is what makes this one of those."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          9
+        ]
+      },
+      "trap": "The -aḥ on navaḥ is there because vidyālayaḥ is a masculine word, not because a school is anything in particular. Gender here is a fact about the word.",
+      "sound": "NA-vaḥ vid-YAA-la-yaḥ A-tra AS-ti. Both -aḥ endings are a light breath with a ghost of the vowel in front of them still audible.",
+      "variations": [
+        {
+          "display": "navam vidyālayam gacchāmi.",
+          "script": "नवम् विद्यालयम् गच्छामि।",
+          "cue": "I go to the new school.",
+          "changed": "the school becomes the place walked to, so BOTH words take -am — the adjective copies the case as well as the gender"
+        },
+        {
+          "display": "navā chātrā atra asti.",
+          "script": "नवा छात्रा अत्र अस्ति।",
+          "cue": "The new student is here.",
+          "changed": "the thing described is a woman, so the adjective goes to -ā"
+        },
+        {
+          "display": "purāṇaḥ pustakālayaḥ tatra asti.",
+          "script": "पुराणः पुस्तकालयः तत्र अस्ति।",
+          "cue": "The old library is there.",
+          "changed": "new becomes old and here becomes there; the endings do not move, because the noun has not"
+        }
+      ],
+      "mistake": {
+        "display": "navaḥ vidyālayam atra asti.",
+        "why": "The noun has gone into the accusative and the adjective has stayed behind in the nominative. The two move together or not at all: navaḥ vidyālayaḥ is the school being talked about, navam vidyālayam the school being walked to."
+      },
+      "usage": "Pointing out something that has recently appeared.",
+      "register": "neutral",
+      "mnemonic": "navaḥ is 'new', and English 'novel' is the same word — a novel idea is a new one."
+    },
+    {
+      "id": "L2-M3-S05",
+      "display": "sā chātrā navā.",
+      "script": "सा छात्रा नवा।",
+      "cue": "That student is new.",
+      "literal": "she student new",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "navaḥ",
+            "cue": "new",
+            "tag": "delta",
+            "forms": [],
+            "note": "'New' in its feminine shape, navā, because chātrā is a woman. The word is the same word as navaḥ four sentences ago; only its last sound has changed."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's student in its feminine shape, chātrā. The noun already says the student is a woman, and the adjective has to say it again."
+          },
+          {
+            "display": "sā",
+            "cue": "she · that woman",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's 'she'. Three words in a row here end in a long -ā, and all three are agreeing about the same person."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          9
+        ]
+      },
+      "trap": "chātrā has already said the student is a woman, and the adjective still says it a second time. Sanskrit marks the same fact on every word that can carry it and treats none of them as redundant.",
+      "sound": "SAA CHAA-traa NA-vaa. Four long a-sounds in three words; let each one run its full length, because a short one would change the grammar.",
+      "variations": [
+        {
+          "display": "saḥ chātraḥ navaḥ.",
+          "script": "सः छात्रः नवः।",
+          "cue": "That student is new.",
+          "changed": "every word that can carry gender moves at once — the pronoun, the noun and the adjective"
+        },
+        {
+          "display": "sā navā chātrā.",
+          "script": "सा नवा छात्रा।",
+          "cue": "She is a new student.",
+          "changed": "the adjective moves in front of the noun and stops being the statement; the noun becomes it instead"
+        },
+        {
+          "display": "sā chātrā navā. sā saṃskṛtam paṭhati.",
+          "script": "सा छात्रा नवा। सा संस्कृतम् पठति।",
+          "cue": "She is a new student. She studies Sanskrit.",
+          "changed": "a second sentence takes over, with sā carrying the student into it and nothing else joining them"
+        }
+      ],
+      "mistake": {
+        "display": "sā chātrā navaḥ.",
+        "why": "The masculine ending has been left on an adjective describing a woman. There is no neutral shape to fall back on: chātrā is feminine, so navā is the only ending available."
+      },
+      "usage": "Said of somebody who has just joined a class or a place of work.",
+      "register": "neutral",
+      "mnemonic": "navā, navaḥ, navam — the adjective ends the way the noun in front of it does."
+    },
+    {
+      "id": "L2-M3-S06",
+      "display": "mama pustakam purāṇam, kintu uttamam.",
+      "script": "मम पुस्तकम् पुराणम्, किन्तु उत्तमम्।",
+      "cue": "My book is old, but excellent.",
+      "literal": "of-me book old, but excellent",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "purāṇaḥ",
+            "cue": "old (of a thing)",
+            "tag": "delta",
+            "forms": [
+              "purāṇaḥ",
+              "purāṇam"
+            ],
+            "note": "'Old' said of a THING — a book, a house, a library. The word for an old person is M2's vṛddhaḥ, and neither of the two will do the other's work."
+          },
+          {
+            "display": "uttamaḥ",
+            "cue": "excellent · very good",
+            "tag": "delta",
+            "forms": [
+              "uttamaḥ",
+              "uttamam"
+            ],
+            "note": "'Excellent'. It is warm praise rather than a measured 'good', and it takes the same three endings every adjective in this module takes."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "M10's 'but'. It stands between the two halves and neither half needs a verb for the join to work."
+          }
+        ],
+        "rules": [
+          7,
+          0,
+          9
+        ]
+      },
+      "trap": "English 'old' covers a grandmother and a paperback with one word. Sanskrit does not: purāṇam for the paperback, vṛddhaḥ for the grandmother, and using the second of a book is the first mistake an English speaker makes here.",
+      "sound": "MA-ma PUS-ta-kam pu-RAA-nam, KIN-tu UT-ta-mam. The ṇ of purāṇam is made with the tongue curled back — a deeper n than the plain one in kintu.",
+      "variations": [
+        {
+          "display": "saḥ pustakālayaḥ purāṇaḥ.",
+          "script": "सः पुस्तकालयः पुराणः।",
+          "cue": "That library is old.",
+          "changed": "the thing described is a masculine noun, so old ends -aḥ"
+        },
+        {
+          "display": "mama pustakam purāṇam, tathāpi aham paṭhāmi.",
+          "script": "मम पुस्तकम् पुराणम्, तथापि अहम् पठामि।",
+          "cue": "My book is old, even so I read it.",
+          "changed": "tathāpi replaces kintu and the second half becomes a clause of its own, with a subject and a verb"
+        },
+        {
+          "display": "kim bhavataḥ pustakam purāṇam?",
+          "script": "किम् भवतः पुस्तकम् पुराणम्?",
+          "cue": "Is your book old?",
+          "changed": "kim makes it a question and bhavataḥ replaces mama — the polite 'your' where 'my' had been"
+        }
+      ],
+      "mistake": {
+        "display": "mama pustakam vṛddham.",
+        "why": "vṛddhaḥ is 'old' of a person and it has been put on a book. A book is purāṇam. The ending here is correctly neuter; it is the choice of word that is wrong, which is the harder kind of mistake to hear."
+      },
+      "usage": "Conceding one thing about an object while praising another.",
+      "register": "neutral",
+      "mnemonic": "purāṇam is the word behind the purāṇas, the old stories. Old is exactly what it means."
+    },
+    {
+      "id": "L2-M3-S07",
+      "display": "kim idam phalam raktam?",
+      "script": "किम् इदम् फलम् रक्तम्?",
+      "cue": "Is this fruit red?",
+      "literal": "(question) this fruit red",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kim",
+            "cue": "(yes/no marker) · what",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's question marker. It stands at the front and asks the whole sentence; there is no other word for 'what kind of?' in this course."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's fruit, neuter like puṣpam and pustakam. Most of the things this module describes are neuter, which is why -am is the ending you meet most."
+          },
+          {
+            "display": "raktaḥ",
+            "cue": "red",
+            "tag": "delta",
+            "forms": [],
+            "note": "Red, neuter again. A question changes nothing about agreement: the adjective answers to the fruit whether the sentence is asking or telling."
+          }
+        ],
+        "rules": [
+          6,
+          0,
+          9
+        ]
+      },
+      "trap": "Nothing has been reordered to build this question. kim is added at the front and the rest of the line is the statement, word for word.",
+      "sound": "KIM i-DAM PHA-lam RAK-tam. The ph of phalam is a p with breath behind it, never the f of English \"phone\".",
+      "variations": [
+        {
+          "display": "idam phalam raktam.",
+          "script": "इदम् फलम् रक्तम्।",
+          "cue": "This fruit is red.",
+          "changed": "kim drops away and the question becomes its own answer"
+        },
+        {
+          "display": "kim bhavān idam phalam icchati?",
+          "script": "किम् भवान् इदम् फलम् इच्छति?",
+          "cue": "Do you want this fruit?",
+          "changed": "the question moves from what the fruit is to what you want, and kim does the same job in both"
+        },
+        {
+          "display": "raktam phalam icchāmi.",
+          "script": "रक्तम् फलम् इच्छामि।",
+          "cue": "I want a red fruit.",
+          "changed": "the question becomes a request, and the adjective moves in front of its noun where it names the thing rather than reports on it"
+        }
+      ],
+      "mistake": {
+        "display": "kim idam phalam raktaḥ?",
+        "why": "The adjective has taken a masculine ending inside a question. Asking changes nothing: phalam is neuter in a question exactly as it is in a statement, so raktam is still the only shape available."
+      },
+      "usage": "Checking a fact you half know, rather than asking an open question.",
+      "register": "neutral",
+      "mnemonic": "kim in front, and the sentence behind it does not move."
+    },
+    {
+      "id": "L2-M3-S08",
+      "display": "saḥ pītam puṣpam icchati.",
+      "script": "सः पीतम् पुष्पम् इच्छति।",
+      "cue": "He wants a yellow flower.",
+      "literal": "he yellow flower wants",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pītaḥ",
+            "cue": "yellow",
+            "tag": "delta",
+            "forms": [
+              "pītaḥ",
+              "pītam"
+            ],
+            "note": "'Yellow', and in this course it is a colour and nothing else. It agrees with puṣpam, the flower, and not with saḥ, the man who wants it."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he · that man",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's 'he'. He is masculine and the adjective in the sentence is neuter, and that is exactly right — an adjective answers to the noun it describes."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's wanting verb in its third-person shape, icchati. The row is named by its -mi form because that is the shape M3 taught it in."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          2
+        ]
+      },
+      "trap": "pītam puṣpam as the thing wanted looks exactly like pītam puṣpam sitting on a table. It is icchati that makes it the object, and no ending anywhere in the phrase.",
+      "sound": "SAḤ PII-tam PUSH-pam ICH-cha-ti. The long ī of pītam is held about twice as long as the i of icchati, and the difference is not decoration.",
+      "variations": [
+        {
+          "display": "pītam puṣpam icchāmi.",
+          "script": "पीतम् पुष्पम् इच्छामि।",
+          "cue": "I want a yellow flower.",
+          "changed": "the wanter becomes me, so the verb ends -mi and saḥ drops out of the sentence altogether"
+        },
+        {
+          "display": "sā pītam puṣpam icchati.",
+          "script": "सा पीतम् पुष्पम् इच्छति।",
+          "cue": "She wants a yellow flower.",
+          "changed": "the wanter is a woman: the pronoun moves and the verb does not, because a Sanskrit verb carries no gender"
+        },
+        {
+          "display": "saḥ pītam puṣpam na icchati.",
+          "script": "सः पीतम् पुष्पम् न इच्छति।",
+          "cue": "He does not want a yellow flower.",
+          "changed": "na goes in front of the verb and denies it; the adjective and its noun are untouched"
+        }
+      ],
+      "mistake": {
+        "display": "saḥ pītaḥ puṣpam icchati.",
+        "why": "The adjective has been made masculine to match saḥ. An adjective agrees with the noun it describes, and what is yellow here is the flower, not the man who wants it."
+      },
+      "usage": "Said in a shop or a garden, of one thing among several.",
+      "register": "neutral",
+      "mnemonic": "pītam is yellow, and in this course it is yellow and nothing else."
+    },
+    {
+      "id": "L2-M3-S09",
+      "display": "mama pustakam hrasvam, bhavataḥ pustakam dīrgham.",
+      "script": "मम पुस्तकम् ह्रस्वम्, भवतः पुस्तकम् दीर्घम्।",
+      "cue": "My book is short, your book is long.",
+      "literal": "of-me book short, of-you book long",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hrasvaḥ",
+            "cue": "short",
+            "tag": "delta",
+            "forms": [
+              "hrasvaḥ",
+              "hrasvam"
+            ],
+            "note": "'Short' of a thing — its length, not a person's height. It is the grammarians' own word for a short vowel, and it measures a book the same way."
+          },
+          {
+            "display": "dīrghaḥ",
+            "cue": "tall · long",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's word for tall and long at once. Here it is dīrgham, neuter, because the thing being measured is a book."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's polite 'you' in its 'of you' shape, bhavataḥ, standing where mama stands in the first half."
+          }
+        ],
+        "rules": [
+          4,
+          0,
+          9
+        ]
+      },
+      "trap": "dīrgham here is 'long' of a book, and M2 taught the same word as 'tall' of a person. One Sanskrit word covers both; English needs two and will try to make you choose.",
+      "sound": "MA-ma PUS-ta-kam HRAS-vam, bha-va-TAḤ PUS-ta-kam DIIR-gham. The hr- of hrasvam starts with the breath: h first, the r tapped straight after it, nothing between.",
+      "variations": [
+        {
+          "display": "mama pustakam hrasvam, kintu uttamam.",
+          "script": "मम पुस्तकम् ह्रस्वम्, किन्तु उत्तमम्।",
+          "cue": "My book is short, but excellent.",
+          "changed": "kintu replaces the second half, so both halves now describe the same book instead of two"
+        },
+        {
+          "display": "kim bhavataḥ pustakam dīrgham?",
+          "script": "किम् भवतः पुस्तकम् दीर्घम्?",
+          "cue": "Is your book long?",
+          "changed": "half the sentence is taken away and kim turns what is left into a question"
+        },
+        {
+          "display": "mama hrasvam pustakam atra asti.",
+          "script": "मम ह्रस्वम् पुस्तकम् अत्र अस्ति।",
+          "cue": "My short book is here.",
+          "changed": "the adjective moves in front of its noun, and the sentence then needs asti to say anything at all"
+        }
+      ],
+      "mistake": {
+        "display": "mama pustakam hrasvaḥ, bhavataḥ pustakam dīrghaḥ.",
+        "why": "Both adjectives have taken the masculine ending and both nouns are pustakam, which is neuter. One wrong ending is a slip; the same wrong ending twice is the habit this module exists to break."
+      },
+      "usage": "Setting two things side by side without any word for \"than\".",
+      "register": "neutral",
+      "mnemonic": "hrasva and dīrgha are what the grammarians call a short vowel and a long one. They measure books the same way."
+    },
+    {
+      "id": "L2-M3-S10",
+      "display": "kṛṣṇam pustakam kutra asti?",
+      "script": "कृष्णम् पुस्तकम् कुत्र अस्ति?",
+      "cue": "Where is the black book?",
+      "literal": "black book where is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kṛṣṇaḥ",
+            "cue": "black · dark",
+            "tag": "delta",
+            "forms": [
+              "kṛṣṇaḥ",
+              "kṛṣṇam"
+            ],
+            "note": "'Black', and it reaches into dark generally. This course writes it as a colour only; it is also a famous name, and no sentence here uses it that way."
+          },
+          {
+            "display": "kutra",
+            "cue": "where",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's 'where'. It does not go to the front the way kim does — it sits in front of the verb, where the answer atra or tatra would sit."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "A question about a place needs the verb. Only a description can leave it out, and this is not one."
+          }
+        ],
+        "rules": [
+          0,
+          9,
+          8
+        ]
+      },
+      "trap": "A description can drop asti and a question about where something is cannot. The line kutra is asking about is a place, and a place needs a verb of being.",
+      "sound": "KRISH-nam PUS-ta-kam KU-tra AS-ti. The ṛ of kṛṣṇam is a vowel, a short curled \"ri\", and the ṣṇ after it is one cluster with the tongue held back for both.",
+      "variations": [
+        {
+          "display": "kṛṣṇam pustakam atra asti.",
+          "script": "कृष्णम् पुस्तकम् अत्र अस्ति।",
+          "cue": "The black book is here.",
+          "changed": "the question is answered, and only the question word has been replaced"
+        },
+        {
+          "display": "kṛṣṇam pustakam icchāmi.",
+          "script": "कृष्णम् पुस्तकम् इच्छामि।",
+          "cue": "I want the black book.",
+          "changed": "the book becomes the thing wanted, and neither word changes shape to say so"
+        },
+        {
+          "display": "kim idam pustakam kṛṣṇam?",
+          "script": "किम् इदम् पुस्तकम् कृष्णम्?",
+          "cue": "Is this book black?",
+          "changed": "the question moves from where the book is to what colour it is, and the adjective goes to the end where it makes the statement"
+        }
+      ],
+      "mistake": {
+        "display": "kṛṣṇā pustakam kutra asti?",
+        "why": "The feminine ending has been put on an adjective describing pustakam, which is neuter. A -ā belongs in front of a word like chātrā; a book takes -am."
+      },
+      "usage": "Asking for one particular thing among several.",
+      "register": "neutral",
+      "mnemonic": "kṛṣṇam is black. In this course it is a colour and only a colour."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M3-C01",
+      "display": "idam pustakam nīlam.",
+      "script": "इदम् पुस्तकम् नीलम्।",
+      "cue": "This book is blue."
+    },
+    {
+      "id": "L2-M3-C02",
+      "display": "mama gṛham purāṇam, kintu sundaram.",
+      "script": "मम गृहम् पुराणम्, किन्तु सुन्दरम्।",
+      "cue": "My house is old, but beautiful."
+    },
+    {
+      "id": "L2-M3-C03",
+      "display": "saḥ bālaḥ navam pustakam icchati.",
+      "script": "सः बालः नवम् पुस्तकम् इच्छति।",
+      "cue": "That boy wants a new book."
+    },
+    {
+      "id": "L2-M3-C04",
+      "display": "kim idam puṣpam śvetam?",
+      "script": "किम् इदम् पुष्पम् श्वेतम्?",
+      "cue": "Is this flower white?"
+    },
+    {
+      "id": "L2-M3-C05",
+      "display": "navaḥ vidyālayaḥ gṛhasya samīpe asti.",
+      "script": "नवः विद्यालयः गृहस्य समीपे अस्ति।",
+      "cue": "The new school is near the house."
+    },
+    {
+      "id": "L2-M3-C06",
+      "display": "mama bhaginī navā chātrā.",
+      "script": "मम भगिनी नवा छात्रा।",
+      "cue": "My sister is a new student."
+    },
+    {
+      "id": "L2-M3-C07",
+      "display": "raktam puṣpam pustakasya upari asti.",
+      "script": "रक्तम् पुष्पम् पुस्तकस्य उपरि अस्ति।",
+      "cue": "The red flower is on top of the book."
+    },
+    {
+      "id": "L2-M3-C08",
+      "display": "aham pītam phalam khādāmi.",
+      "script": "अहम् पीतम् फलम् खादामि।",
+      "cue": "I eat the yellow fruit."
+    },
+    {
+      "id": "L2-M3-C09",
+      "display": "kim bhavataḥ gṛham purāṇam?",
+      "script": "किम् भवतः गृहम् पुराणम्?",
+      "cue": "Is your house old?"
+    },
+    {
+      "id": "L2-M3-C10",
+      "display": "kṛṣṇam pustakam mama, nīlam pustakam bhavataḥ.",
+      "script": "कृष्णम् पुस्तकम् मम, नीलम् पुस्तकम् भवतः।",
+      "cue": "The black book is mine, the blue book is yours."
+    },
+    {
+      "id": "L2-M3-C11",
+      "display": "saḥ chātraḥ uttamaḥ. saḥ pratidinam paṭhati.",
+      "script": "सः छात्रः उत्तमः। सः प्रतिदिनम् पठति।",
+      "cue": "That student is excellent. He reads every day."
+    },
+    {
+      "id": "L2-M3-C12",
+      "display": "hrasvam pustakam kutra asti?",
+      "script": "ह्रस्वम् पुस्तकम् कुत्र अस्ति?",
+      "cue": "Where is the short book?"
+    },
+    {
+      "id": "L2-M3-C13",
+      "display": "rāmaḥ nīlam pustakam paṭhati.",
+      "script": "रामः नीलम् पुस्तकम् पठति।",
+      "cue": "Rāma reads the blue book."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

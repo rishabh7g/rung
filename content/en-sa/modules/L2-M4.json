@@ -1,0 +1,812 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M4",
+  "title": "Getting around",
+  "job": "Directions, transport, asking the way",
+  "prerequisites": [
+    "L2-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "polite_imperative",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "N-nom + kutra + asti",
+      "N-gen + vāmataḥ / dakṣiṇataḥ + asti",
+      "agrataḥ + gacchatu",
+      "aham + N-inst + gacchāmi",
+      "katham + <place>-acc + gacchāmi"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "This module opens a new case, and it is the case of the thing BY WHICH. yānena is 'by vehicle' and mārgeṇa is 'along the road', and there is no word for 'by' or 'along' in either — the ending is the whole preposition. It is the first new case since Level 1, and the level spends it again in three later modules."
+    },
+    {
+      "tag": "delta",
+      "text": "The ending is -ena, and it is written and heard -eṇa when an r or a curled-back sound has come earlier in the word: yānena, but mārgeṇa. The two are one ending, and the change is a rule of the sound system rather than a second ending to learn."
+    },
+    {
+      "tag": "delta",
+      "text": "The route and the destination are different cases and can sit in one sentence: saḥ mārgeṇa vidyālayam gacchati. mārgeṇa is the road he travels along, vidyālayam the school he ends at. English marks the difference with 'along' and 'to'; Sanskrit marks it with two endings and no little words at all."
+    },
+    {
+      "tag": "delta",
+      "text": "A -taḥ direction word takes the 'of' shape in front of it: gṛhasya vāmataḥ is 'to the left of the house', built exactly like M7's gṛhasya samīpe and gṛhasya purataḥ. The genitive comes first and the direction word second — the opposite order to English."
+    },
+    {
+      "tag": "free",
+      "text": "The -taḥ words are now a family of seven across the course: M9's ataḥ and kutaḥ, M7's purataḥ and pṛṣṭhataḥ, and this module's vāmataḥ, dakṣiṇataḥ and agrataḥ. They rhyme and they do not mean similar things — ataḥ is 'therefore' and kutaḥ is 'why'. Learn each for its meaning and not for its ending."
+    },
+    {
+      "tag": "interference",
+      "text": "English needs a small word for every one of these ideas: BY car, ALONG the road, TO the school, on the LEFT OF the house. Sanskrit supplies none of them. Every time you reach for one of those words here, the language has already put it inside an ending."
+    },
+    {
+      "tag": "delta",
+      "text": "katham is 'how', and it asks about the means — which is why the answer to it comes back with -ena or -eṇa on it. Like kim and kutra it changes nothing else in the sentence it is added to."
+    },
+    {
+      "tag": "delta",
+      "text": "gacchatu is 'please go'. It is L2-M1's polite -tu ending on M2's verb of going, and it is the only kind of command this course gives to somebody addressed as bhavān. No second-person ending is written anywhere in this course, in this module least of all."
+    },
+    {
+      "tag": "free",
+      "text": "The place you are going to still takes no preposition, exactly as M6 taught it: vidyālayam gacchāmi is 'I go to the school'. The same shape is what a verb of seeing reaches for — mārgam paśyati, 'he sees the road' — so one ending covers the destination and the thing looked at."
+    },
+    {
+      "tag": "free",
+      "text": "Two things a transport module would like to say are deliberately not said here. There is no word in this course for going ON FOOT: the ordinary Sanskrit ways of saying it use shapes this course has not opened, and a form you are unsure of is a form you do not write. And the modern words for a bus, a train and a car are left for the later module in this level that decides how this course handles a word invented in the last hundred years. yānam covers every vehicle until then."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M4-S01",
+      "display": "aham yānena gacchāmi.",
+      "script": "अहम् यानेन गच्छामि।",
+      "cue": "I go by vehicle.",
+      "literal": "I by-vehicle go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yānam",
+            "cue": "vehicle · conveyance",
+            "tag": "delta",
+            "forms": [
+              "yānam",
+              "yānena"
+            ],
+            "note": "'Vehicle', a general word covering anything you ride in. yānena is the shape that means BY vehicle — one word doing the work of English 'by' and 'vehicle' together."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's verb of going, here as gacchāmi. It has not changed at all to take the new ending on yānena; the ending is the whole construction."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'I'. It is optional, since -mi already says who is going, and it is written here to hold the sentence beside its variations."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "There is no word for 'by' anywhere in this sentence. English needs one and Sanskrit puts the whole idea inside the ending -ena.",
+      "sound": "A-ham YAA-ne-na GACH-chhaa-mi. The long aa of yānena is held, and the -ena runs on lightly after it without a break.",
+      "variations": [
+        {
+          "display": "saḥ yānena gacchati.",
+          "script": "सः यानेन गच्छति।",
+          "cue": "He goes by vehicle.",
+          "changed": "the traveller changes, so the verb ending moves from -mi to -ti and yānena does not move at all"
+        },
+        {
+          "display": "aham yānena na gacchāmi.",
+          "script": "अहम् यानेन न गच्छामि।",
+          "cue": "I do not go by vehicle.",
+          "changed": "na goes in front of the verb and denies it; the instrumental is untouched"
+        },
+        {
+          "display": "kim bhavān yānena gacchati?",
+          "script": "किम् भवान् यानेन गच्छति?",
+          "cue": "Do you go by vehicle?",
+          "changed": "kim makes it a question and bhavān makes it about you — asked politely, so the verb stays third-person"
+        }
+      ],
+      "mistake": {
+        "display": "aham yānam gacchāmi.",
+        "why": "yānam is the shape for the vehicle as a thing — as what you see or want. As the thing you TRAVEL BY it has to be yānena. Left as yānam the sentence reads as though the vehicle were the destination."
+      },
+      "usage": "How you answer a question about how you got somewhere.",
+      "register": "neutral",
+      "mnemonic": "-ena is the by-ending. Whatever carries you, carries -ena."
+    },
+    {
+      "id": "L2-M4-S02",
+      "display": "saḥ mārgeṇa vidyālayam gacchati.",
+      "script": "सः मार्गेण विद्यालयम् गच्छति।",
+      "cue": "He goes to the school along the road.",
+      "literal": "he by-road school goes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mārgaḥ",
+            "cue": "road · way",
+            "tag": "delta",
+            "forms": [
+              "mārgaḥ",
+              "mārgam",
+              "mārgasya",
+              "mārgeṇa"
+            ],
+            "note": "'Road'. mārgeṇa is the road as the route travelled along — the same ending as yānena, spelt with ṇ because of the r earlier in the word."
+          },
+          {
+            "display": "vidyālayaḥ",
+            "cue": "school",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's school, here as vidyālayam, the place gone TO. The destination still takes no preposition, exactly as M6 taught it."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "One verb with two different endings depending on it — the route in one case and the destination in another. Neither is a preposition."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "mārgeṇa and vidyālayam are both attached to gacchati and they mean completely different things. -eṇa is the road you travel along; -am is the place you end up.",
+      "sound": "SAḤ MAAR-ge-na vid-YAA-la-yam GACH-chha-ti. The ṇ of mārgeṇa is made with the tongue curled back, deeper than the n of yānena.",
+      "variations": [
+        {
+          "display": "aham mārgeṇa vidyālayam gacchāmi.",
+          "script": "अहम् मार्गेण विद्यालयम् गच्छामि।",
+          "cue": "I go to the school along the road.",
+          "changed": "the traveller becomes me and only the verb ending shows it"
+        },
+        {
+          "display": "saḥ mārgeṇa gṛham gacchati.",
+          "script": "सः मार्गेण गृहम् गच्छति।",
+          "cue": "He goes home along the road.",
+          "changed": "the destination changes and the route does not, which is the point of keeping them in different cases"
+        },
+        {
+          "display": "saḥ yānena vidyālayam gacchati.",
+          "script": "सः यानेन विद्यालयम् गच्छति।",
+          "cue": "He goes to the school by vehicle.",
+          "changed": "the road is replaced by the vehicle; both are the thing he travels BY, so both take the same ending"
+        }
+      ],
+      "mistake": {
+        "display": "saḥ mārgam vidyālayam gacchati.",
+        "why": "The road has been put in the same case as the school, which gives the sentence two destinations and no route. One of the two has to be the thing travelled by, and that is mārgeṇa."
+      },
+      "usage": "Describing a journey when the route matters as much as the destination.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S03",
+      "display": "katham vidyālayam gacchāmi?",
+      "script": "कथम् विद्यालयम् गच्छामि?",
+      "cue": "How do I get to the school?",
+      "literal": "how school go-I",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "katham",
+            "cue": "how · by what means",
+            "tag": "delta",
+            "forms": [
+              "katham"
+            ],
+            "note": "'How'. It asks about the means, which is why the answer to it comes back in the instrumental: yānena, mārgeṇa, and nothing else needed."
+          },
+          {
+            "display": "vidyālayaḥ",
+            "cue": "school",
+            "tag": "free",
+            "forms": [],
+            "note": "The destination again, still with no preposition in front of it and still unchanged by the question."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "Asked about myself, so -mi. A question in this course never changes the verb's person; it only adds a question word."
+          }
+        ],
+        "rules": [
+          6,
+          2,
+          8
+        ]
+      },
+      "trap": "katham asks how and nothing else in the sentence moves for it. There is no rearrangement, no auxiliary and no change of verb form.",
+      "variations": [
+        {
+          "display": "katham gṛham gacchāmi?",
+          "script": "कथम् गृहम् गच्छामि?",
+          "cue": "How do I get home?",
+          "changed": "the destination changes and the question word does not move"
+        },
+        {
+          "display": "katham bhavān vidyālayam gacchati?",
+          "script": "कथम् भवान् विद्यालयम् गच्छति?",
+          "cue": "How do you get to the school?",
+          "changed": "the question is now about you, so bhavān is added and the verb goes third-person with it"
+        },
+        {
+          "display": "aham yānena vidyālayam gacchāmi.",
+          "script": "अहम् यानेन विद्यालयम् गच्छामि।",
+          "cue": "I go to the school by vehicle.",
+          "changed": "the question is answered, and the answer arrives in the instrumental that katham was asking for"
+        }
+      ],
+      "mistake": {
+        "display": "katham vidyālayaḥ gacchāmi?",
+        "why": "The school has been left in the shape it takes as a subject. It is the place being gone to, so it must be vidyālayam — a question does not excuse a noun from its case."
+      },
+      "usage": "Asked of a stranger in the street, and the most useful line in the module.",
+      "register": "neutral",
+      "mnemonic": "katham begins like kim and kutra. The k- words are the questions."
+    },
+    {
+      "id": "L2-M4-S04",
+      "display": "gṛhasya vāmataḥ pustakālayaḥ asti.",
+      "script": "गृहस्य वामतः पुस्तकालयः अस्ति।",
+      "cue": "The library is to the left of the house.",
+      "literal": "of-house to-the-left library is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vāmataḥ",
+            "cue": "to the left · on the left of",
+            "tag": "delta",
+            "forms": [
+              "vāmataḥ"
+            ],
+            "note": "'To the left of'. It takes a genitive in front of it — gṛhasya vāmataḥ — built exactly like M7's gṛhasya samīpe and gṛhasya purataḥ."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's house in its 'of the house' shape, gṛhasya. Sanskrit says 'of the house, to the left'; English says 'to the left OF the house'. Same idea, opposite order."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "A sentence about where something is needs the verb. This is the pattern M7 set and this module has only added new words to it."
+          }
+        ],
+        "rules": [
+          3,
+          4,
+          5
+        ]
+      },
+      "trap": "The genitive comes FIRST and the direction word follows it. gṛhasya vāmataḥ is 'to the left of the house'; there is no word order in which vāmataḥ comes first and means the same thing.",
+      "sound": "GRI-has-ya VAA-ma-taḥ pus-ta-KAA-la-yaḥ AS-ti. Both -taḥ and -yaḥ end in the same light breath.",
+      "variations": [
+        {
+          "display": "gṛhasya vāmataḥ mārgaḥ asti.",
+          "script": "गृहस्य वामतः मार्गः अस्ति।",
+          "cue": "The road is to the left of the house.",
+          "changed": "what stands on the left changes and the direction phrase in front of it does not"
+        },
+        {
+          "display": "gṛhasya purataḥ pustakālayaḥ asti.",
+          "script": "गृहस्य पुरतः पुस्तकालयः अस्ति।",
+          "cue": "The library is in front of the house.",
+          "changed": "M7's purataḥ replaces the new word, and the sentence is built identically — one family, one construction"
+        },
+        {
+          "display": "kim gṛhasya vāmataḥ pustakālayaḥ asti?",
+          "script": "किम् गृहस्य वामतः पुस्तकालयः अस्ति?",
+          "cue": "Is the library to the left of the house?",
+          "changed": "kim at the front turns the direction into something you are checking rather than stating"
+        }
+      ],
+      "mistake": {
+        "display": "gṛham vāmataḥ pustakālayaḥ asti.",
+        "why": "The house has been left in its plain shape. A -taḥ direction word wants the 'of' shape in front of it, so it is gṛhasya — the same genitive M7 put in front of samīpe."
+      },
+      "usage": "Giving directions to somebody who already knows where the house is.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S05",
+      "display": "gṛhasya dakṣiṇataḥ mārgaḥ asti.",
+      "script": "गृहस्य दक्षिणतः मार्गः अस्ति।",
+      "cue": "The road is to the right of the house.",
+      "literal": "of-house to-the-right road is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dakṣiṇataḥ",
+            "cue": "to the right · on the right of",
+            "tag": "delta",
+            "forms": [
+              "dakṣiṇataḥ"
+            ],
+            "note": "'To the right of', and built like vāmataḥ in every way: a genitive in front, no preposition anywhere, and the same -taḥ ending."
+          },
+          {
+            "display": "mārgaḥ",
+            "cue": "road · way",
+            "tag": "delta",
+            "forms": [],
+            "note": "The road in its plain shape here, because it is what the sentence is about rather than the way anybody travelled."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "The same gṛhasya as the sentence before it. One genitive serves every direction word in the family."
+          }
+        ],
+        "rules": [
+          3,
+          4,
+          5
+        ]
+      },
+      "trap": "dakṣiṇa- is right as opposed to left. It also means south, because facing east is how the old directions were reckoned, and this course writes only the left-and-right reading.",
+      "sound": "GRI-has-ya DAK-shi-na-taḥ MAAR-gaḥ AS-ti. The kṣ of dakṣiṇataḥ is one sound in Sanskrit, a k and a curled-back sh run together.",
+      "variations": [
+        {
+          "display": "gṛhasya dakṣiṇataḥ vidyālayaḥ asti.",
+          "script": "गृहस्य दक्षिणतः विद्यालयः अस्ति।",
+          "cue": "The school is to the right of the house.",
+          "changed": "what stands on the right changes and nothing else does"
+        },
+        {
+          "display": "gṛhasya pṛṣṭhataḥ mārgaḥ asti.",
+          "script": "गृहस्य पृष्ठतः मार्गः अस्ति।",
+          "cue": "The road is behind the house.",
+          "changed": "M7's pṛṣṭhataḥ steps into the same slot, which is the whole argument for calling these one family"
+        },
+        {
+          "display": "mārgaḥ gṛhasya dakṣiṇataḥ asti.",
+          "script": "मार्गः गृहस्य दक्षिणतः अस्ति।",
+          "cue": "The road is to the right of the house.",
+          "changed": "the road moves to the front of the sentence; the genitive stays welded to its direction word, because that pair cannot be split"
+        }
+      ],
+      "usage": "The other half of a direction, and the one people ask for twice.",
+      "register": "neutral",
+      "mnemonic": "dakṣiṇa- is behind 'Deccan', the south of India. Face the sunrise and the south is on your right."
+    },
+    {
+      "id": "L2-M4-S06",
+      "display": "kṛpayā agrataḥ gacchatu.",
+      "script": "कृपया अग्रतः गच्छतु।",
+      "cue": "Please go straight ahead.",
+      "literal": "please ahead let-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "agrataḥ",
+            "cue": "ahead · in front",
+            "tag": "delta",
+            "forms": [
+              "agrataḥ"
+            ],
+            "note": "'Ahead'. With a genitive in front of it, it is 'in front of' something; standing alone, as here, it is simply forward — the direction you keep walking in."
+          },
+          {
+            "display": "gacchatu",
+            "cue": "please go · let (him) go",
+            "tag": "delta",
+            "forms": [
+              "gacchatu"
+            ],
+            "note": "M1's polite -tu ending on M2's verb of going. M2 taught gacchati, gacchāmi and the rest; this is the request shape, and it is new here."
+          },
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's 'please'. The -tu ending already carries the courtesy; kṛpayā sits on top of it as emphasis and can be dropped without the line turning rude."
+          }
+        ],
+        "rules": [
+          7,
+          4,
+          5
+        ]
+      },
+      "trap": "This is a direction, not an order. The -tu ending is what M1 taught as the polite request, and it is the only shape of a command this course writes to somebody you address as bhavān.",
+      "sound": "kri-PA-yaa A-gra-taḥ GACH-chha-tu. The gr- of agrataḥ is one cluster with the r tapped, and the word breaks a-gra-taḥ rather than ag-ra-taḥ.",
+      "variations": [
+        {
+          "display": "agrataḥ gacchatu.",
+          "script": "अग्रतः गच्छतु।",
+          "cue": "Please go ahead.",
+          "changed": "kṛpayā drops away and the line is exactly as polite, because the courtesy was never in that word"
+        },
+        {
+          "display": "kṛpayā mārgeṇa gacchatu.",
+          "script": "कृपया मार्गेण गच्छतु।",
+          "cue": "Please go along the road.",
+          "changed": "the direction word is replaced by the route, so the request now says which way rather than which direction"
+        },
+        {
+          "display": "aham agrataḥ gacchāmi.",
+          "script": "अहम् अग्रतः गच्छामि।",
+          "cue": "I go on ahead.",
+          "changed": "the request becomes a statement about myself, and agrataḥ does not change at all"
+        }
+      ],
+      "mistake": {
+        "display": "kṛpayā agrataḥ gacchati.",
+        "why": "gacchati is 'he goes' — a report, not a request. Asking somebody to do something needs the -tu ending, and kṛpayā cannot rescue a sentence that is missing it."
+      },
+      "usage": "What you say to a driver, or what a stranger says back when you ask the way.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S07",
+      "display": "saḥ mārgam paśyati.",
+      "script": "सः मार्गम् पश्यति।",
+      "cue": "He sees the road.",
+      "literal": "he road sees",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "paśyati",
+            "cue": "sees · looks at",
+            "tag": "delta",
+            "forms": [
+              "paśyati",
+              "paśyatu"
+            ],
+            "note": "'Sees'. The thing seen goes into the same shape as the place gone to — mārgam — because both are what the verb reaches out to."
+          },
+          {
+            "display": "mārgaḥ",
+            "cue": "road · way",
+            "tag": "delta",
+            "forms": [],
+            "note": "The road as the thing looked at, so mārgam. Three shapes of this one word are now in play: mārgaḥ, mārgam and mārgeṇa, and each says what the road is doing in its sentence."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he · that man",
+            "tag": "free",
+            "forms": [],
+            "note": "M5's 'he', the one doing the looking. He is in his plain shape because he is the one acting."
+          }
+        ],
+        "rules": [
+          2,
+          7,
+          8
+        ]
+      },
+      "trap": "mārgam here is the thing seen, and in a sentence with gacchati the same shape would be the place gone to. The ending marks the target of the verb, and which kind of target it is depends on the verb.",
+      "variations": [
+        {
+          "display": "kṛpayā mārgam paśyatu.",
+          "script": "कृपया मार्गम् पश्यतु।",
+          "cue": "Please look at the road.",
+          "changed": "the report becomes a polite request, with the same -tu ending gacchatu carries"
+        },
+        {
+          "display": "saḥ vidyālayam paśyati.",
+          "script": "सः विद्यालयम् पश्यति।",
+          "cue": "He sees the school.",
+          "changed": "what is seen changes, and it takes the very shape it would take as a destination"
+        },
+        {
+          "display": "saḥ mārgam na paśyati.",
+          "script": "सः मार्गम् न पश्यति।",
+          "cue": "He does not see the road.",
+          "changed": "na goes in front of the verb; the road keeps its ending because it is still what he is failing to see"
+        }
+      ],
+      "usage": "Pointing something out, or saying that somebody has missed it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S08",
+      "display": "mārgasya dakṣiṇataḥ navaḥ vidyālayaḥ asti.",
+      "script": "मार्गस्य दक्षिणतः नवः विद्यालयः अस्ति।",
+      "cue": "The new school is to the right of the road.",
+      "literal": "of-road to-the-right new school is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mārgaḥ",
+            "cue": "road · way",
+            "tag": "delta",
+            "forms": [],
+            "note": "The road in its 'of the road' shape, mārgasya. A -taḥ direction word takes a genitive whichever noun supplies it — a house in the sentences before, a road here."
+          },
+          {
+            "display": "navaḥ",
+            "cue": "new",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'new', masculine because vidyālayaḥ is. Agreement keeps working inside a sentence that is mostly about where something is."
+          },
+          {
+            "display": "dakṣiṇataḥ",
+            "cue": "to the right · on the right of",
+            "tag": "delta",
+            "forms": [],
+            "note": "The same word as two sentences ago, with a different genitive in front of it. The construction is the constant; the noun is free."
+          }
+        ],
+        "rules": [
+          3,
+          5,
+          8
+        ]
+      },
+      "trap": "Two different nouns have now supplied the genitive for the same direction word. It is the ENDING that the direction word wants, not any particular noun.",
+      "sound": "MAAR-gas-ya DAK-shi-na-taḥ NA-vaḥ vid-YAA-la-yaḥ AS-ti.",
+      "variations": [
+        {
+          "display": "mārgasya vāmataḥ purāṇaḥ pustakālayaḥ asti.",
+          "script": "मार्गस्य वामतः पुराणः पुस्तकालयः अस्ति।",
+          "cue": "The old library is to the left of the road.",
+          "changed": "the side, the adjective and the building all change at once, and the shape of the sentence does not"
+        },
+        {
+          "display": "mārgasya dakṣiṇataḥ vidyālayaḥ asti.",
+          "script": "मार्गस्य दक्षिणतः विद्यालयः अस्ति।",
+          "cue": "The school is to the right of the road.",
+          "changed": "the adjective drops out, which is the shortest way to see that it was never holding the sentence up"
+        },
+        {
+          "display": "kim mārgasya dakṣiṇataḥ navaḥ vidyālayaḥ asti?",
+          "script": "किम् मार्गस्य दक्षिणतः नवः विद्यालयः अस्ति?",
+          "cue": "Is the new school to the right of the road?",
+          "changed": "kim at the front, and a six-word direction becomes a question with nothing else moved"
+        }
+      ],
+      "usage": "A direction given to somebody already standing on the road you are naming.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S09",
+      "display": "pustakālayaḥ kutra asti? gṛhasya purataḥ asti.",
+      "script": "पुस्तकालयः कुत्र अस्ति? गृहस्य पुरतः अस्ति।",
+      "cue": "Where is the library? It is in front of the house.",
+      "literal": "library where is? of-house in-front is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kutra",
+            "cue": "where",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's 'where', unchanged. This module adds no new way of asking where something is, because there was nothing wrong with the old one."
+          },
+          {
+            "display": "purataḥ",
+            "cue": "in front of · before",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's word, and the oldest member of the -taḥ family this module has been growing. It takes a genitive exactly as vāmataḥ and dakṣiṇataḥ do."
+          },
+          {
+            "display": "pustakālayaḥ",
+            "cue": "library",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's library. It is named once, in the question, and the answer does not repeat it — Sanskrit leaves it out rather than putting in a word for 'it'."
+          }
+        ],
+        "rules": [
+          3,
+          5,
+          8
+        ]
+      },
+      "trap": "The answer has no word for 'it'. The library was named in the question and that is enough; supplying a pronoun here would sound like a second, different thing.",
+      "variations": [
+        {
+          "display": "pustakālayaḥ kutra asti? gṛhasya vāmataḥ asti.",
+          "script": "पुस्तकालयः कुत्र अस्ति? गृहस्य वामतः अस्ति।",
+          "cue": "Where is the library? It is to the left of the house.",
+          "changed": "the answer changes side, and the new word slots into M7's construction without adjustment"
+        },
+        {
+          "display": "vidyālayaḥ kutra asti? mārgasya dakṣiṇataḥ asti.",
+          "script": "विद्यालयः कुत्र अस्ति? मार्गस्य दक्षिणतः अस्ति।",
+          "cue": "Where is the school? It is to the right of the road.",
+          "changed": "both halves change their nouns, which is the fastest proof that the pattern is not tied to either of them"
+        },
+        {
+          "display": "kim pustakālayaḥ gṛhasya purataḥ asti?",
+          "script": "किम् पुस्तकालयः गृहस्य पुरतः अस्ति?",
+          "cue": "Is the library in front of the house?",
+          "changed": "the two-part exchange collapses into one question that already carries its own guess at the answer"
+        }
+      ],
+      "usage": "The exchange itself: one question, one answer, nothing else said.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M4-S10",
+      "display": "bhavān yānena gacchatu, aham mārgeṇa gacchāmi.",
+      "script": "भवान् यानेन गच्छतु, अहम् मार्गेण गच्छामि।",
+      "cue": "You go by vehicle, I will go along the road.",
+      "literal": "your-honour by-vehicle let-go, I by-road go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's polite 'you'. It stands beside a -tu verb without the slightest awkwardness, because that verb is third-person and so is bhavān."
+          },
+          {
+            "display": "gacchatu",
+            "cue": "please go · let (him) go",
+            "tag": "delta",
+            "forms": [],
+            "note": "The request shape again, this time with the person addressed named. Naming bhavān makes it clear who is being asked, which matters when two people are being sorted out at once."
+          },
+          {
+            "display": "yānam",
+            "cue": "vehicle · conveyance",
+            "tag": "delta",
+            "forms": [],
+            "note": "yānena against mārgeṇa in one sentence: two different things travelled by, one ending shared between them."
+          }
+        ],
+        "rules": [
+          0,
+          7,
+          1
+        ]
+      },
+      "trap": "Both halves are about how somebody travels and neither has a preposition. The -ena and -eṇa endings are the whole of it.",
+      "sound": "bha-VAAN YAA-ne-na GACH-chha-tu, A-ham MAAR-ge-na GACH-chhaa-mi. The two verbs differ in one syllable and in nothing else.",
+      "variations": [
+        {
+          "display": "bhavān mārgeṇa gacchatu, aham yānena gacchāmi.",
+          "script": "भवान् मार्गेण गच्छतु, अहम् यानेन गच्छामि।",
+          "cue": "You go along the road, I will go by vehicle.",
+          "changed": "the two travellers swap, and the endings stay exactly where they were"
+        },
+        {
+          "display": "bhavān agrataḥ gacchatu, aham pṛṣṭhataḥ gacchāmi.",
+          "script": "भवान् अग्रतः गच्छतु, अहम् पृष्ठतः गच्छामि।",
+          "cue": "You go ahead, I will come behind.",
+          "changed": "the instrumentals are replaced by two direction words, one new and one M7's"
+        },
+        {
+          "display": "kim bhavān yānena gacchati?",
+          "script": "किम् भवान् यानेन गच्छति?",
+          "cue": "Do you go by vehicle?",
+          "changed": "the arrangement becomes a question about one of the two, and the -tu request drops back to a plain report"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān yānena gacchāmi, aham mārgeṇa gacchāmi.",
+        "why": "gacchāmi says 'I go', and it has been left standing after bhavān. The ending has to agree with whoever is doing the going, and bhavān — 'your honour' — is grammatically a third person, so its verb is gacchati to report and gacchatu to ask."
+      },
+      "usage": "Splitting up: two people, two ways, settled in one sentence.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M4-C01",
+      "display": "aham yānena pustakālayam gacchāmi.",
+      "script": "अहम् यानेन पुस्तकालयम् गच्छामि।",
+      "cue": "I go to the library by vehicle."
+    },
+    {
+      "id": "L2-M4-C02",
+      "display": "gṛhasya vāmataḥ vidyālayaḥ asti.",
+      "script": "गृहस्य वामतः विद्यालयः अस्ति।",
+      "cue": "The school is to the left of the house."
+    },
+    {
+      "id": "L2-M4-C03",
+      "display": "katham gṛham gacchāmi?",
+      "script": "कथम् गृहम् गच्छामि?",
+      "cue": "How do I get home?"
+    },
+    {
+      "id": "L2-M4-C04",
+      "display": "saḥ agrataḥ gacchati.",
+      "script": "सः अग्रतः गच्छति।",
+      "cue": "He goes on ahead."
+    },
+    {
+      "id": "L2-M4-C05",
+      "display": "mārgasya vāmataḥ puṣpam asti.",
+      "script": "मार्गस्य वामतः पुष्पम् अस्ति।",
+      "cue": "There is a flower to the left of the road."
+    },
+    {
+      "id": "L2-M4-C06",
+      "display": "kim bhavān yānena gacchati?",
+      "script": "किम् भवान् यानेन गच्छति?",
+      "cue": "Do you go by vehicle?"
+    },
+    {
+      "id": "L2-M4-C07",
+      "display": "mama gṛham mārgasya dakṣiṇataḥ asti.",
+      "script": "मम गृहम् मार्गस्य दक्षिणतः अस्ति।",
+      "cue": "My house is to the right of the road."
+    },
+    {
+      "id": "L2-M4-C08",
+      "display": "kṛpayā agrataḥ paśyatu.",
+      "script": "कृपया अग्रतः पश्यतु।",
+      "cue": "Please look ahead."
+    },
+    {
+      "id": "L2-M4-C09",
+      "display": "rāmaḥ yānena vidyālayam gacchati.",
+      "script": "रामः यानेन विद्यालयम् गच्छति।",
+      "cue": "Rāma goes to the school by vehicle."
+    },
+    {
+      "id": "L2-M4-C10",
+      "display": "navaḥ pustakālayaḥ kutra asti?",
+      "script": "नवः पुस्तकालयः कुत्र अस्ति?",
+      "cue": "Where is the new library?"
+    },
+    {
+      "id": "L2-M4-C11",
+      "display": "aham mārgeṇa gacchāmi, saḥ yānena gacchati.",
+      "script": "अहम् मार्गेण गच्छामि, सः यानेन गच्छति।",
+      "cue": "I go along the road, he goes by vehicle."
+    },
+    {
+      "id": "L2-M4-C12",
+      "display": "kim bhavataḥ gṛham mārgasya vāmataḥ asti?",
+      "script": "किम् भवतः गृहम् मार्गस्य वामतः अस्ति?",
+      "cue": "Is your house to the left of the road?"
+    },
+    {
+      "id": "L2-M4-C13",
+      "display": "saḥ mārgam paśyati, tathāpi na gacchati.",
+      "script": "सः मार्गम् पश्यति, तथापि न गच्छति।",
+      "cue": "He sees the road, even so he does not go."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

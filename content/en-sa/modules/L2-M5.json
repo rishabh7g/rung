@@ -1,0 +1,802 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M5",
+  "title": "Food and hosting",
+  "job": "Ordering, offering, refusing without offence",
+  "prerequisites": [
+    "L2-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 9,
+    "allowedTenses": [
+      "simple_present",
+      "polite_imperative",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "kṛpayā + N-acc + khādatu / pibatu",
+      "alam + N-inst",
+      "kim + bhavate / bhavatyai + N + rocate",
+      "svāgatam",
+      "punaḥ + N-acc + khādatu"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "An offer here is an IMPERATIVE, not a question. kṛpayā phalam khādatu is 'please have some fruit', and its ending is the same -tu that L2-M1 taught for a request. The host does not ask whether you would like some; the host tells you, politely, to eat."
+    },
+    {
+      "tag": "interference",
+      "text": "So the first thing an English speaker builds in this module is a question, and a question is a different act. kim bhavān phalam icchati? asks what you want; kṛpayā phalam khādatu puts the fruit in front of you. Both sentences are correct and only the second one is hosting."
+    },
+    {
+      "tag": "delta",
+      "text": "Refusing is alam with the by-ending: alam jalena, literally 'enough by water'. It negates NOTHING — there is no na in it and no other negative word — which is exactly why it gives no offence. What it says is that the glass is full enough, not that the water is unwanted."
+    },
+    {
+      "tag": "delta",
+      "text": "This is what M4 opened the case for. The -ena on jalena is the same ending as yānena and mārgeṇa; alam is simply one of the words that reaches for it, so refusing costs no new grammar at all — only one new word."
+    },
+    {
+      "tag": "free",
+      "text": "alam can stand alone. alam, dhanyavādaḥ is a complete and courteous refusal, and naming what is being refused — alam jalena — only makes it more specific, never ruder."
+    },
+    {
+      "tag": "delta",
+      "text": "The word a grammar would offer for refusing a command is mā, and this course writes it NOWHERE. A guest is not handed a prohibition; a guest says alam. mā is named here so that a later level can open it deliberately rather than inherit it from a food module."
+    },
+    {
+      "tag": "delta",
+      "text": "bhavate and bhavatyai are 'to you': the shapes of M2's bhavān and bhavatī that the liking frame needs. kim bhavate bhojanam rocate? is word for word 'is the meal pleasing to your honour?', and bhavatyai is the same question asked of a woman."
+    },
+    {
+      "tag": "interference",
+      "text": "The liking frame is still backwards, four modules into a new level. The thing liked is the SUBJECT and the person is only who it is pleasing TO — so the verb follows the food and not the eater: annam rocate for one thing, M9's rocante for several. A learner who has only ever run this frame on themselves has not yet learned it."
+    },
+    {
+      "tag": "free",
+      "text": "svāgatam opens the encounter and needs nothing built around it, the way namaste does. punaḥ is 'again', and standing in front of a verb of eating or drinking it is English 'more' — there is no separate word for 'more food' in this course, only 'eat again'."
+    },
+    {
+      "tag": "free",
+      "text": "What is on the table: bhojanam is a meal taken as a whole, annam is food and especially the cooked rice at the centre of it, dugdham is milk. Nothing here is claimed to be what anybody eats or ought to eat. India is not one cuisine, and this module names three ordinary words rather than a custom."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M5-S01",
+      "display": "svāgatam. kṛpayā upaviśatu.",
+      "script": "स्वागतम्। कृपया उपविशतु।",
+      "cue": "Welcome. Please sit down.",
+      "literal": "welcome. please let-sit",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "svāgatam",
+            "cue": "welcome",
+            "tag": "delta",
+            "forms": [
+              "svāgatam"
+            ],
+            "note": "'Welcome', said by the host as the guest arrives. It is a whole greeting on its own and needs nothing built around it, the way namaste does."
+          },
+          {
+            "display": "upaviśatu",
+            "cue": "please sit · let (him) sit",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's 'please sit', carrying the same -tu ending every request in this course carries. Hosting is built almost entirely out of that one ending."
+          },
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's 'please'. The courtesy is already in -tu; kṛpayā warms it, and dropping it leaves the line perfectly polite."
+          }
+        ],
+        "rules": [
+          0,
+          8,
+          1
+        ]
+      },
+      "sound": "SVAA-ga-tam. kri-PA-yaa u-pa-VI-sha-tu. The sv- of svāgatam is one cluster — the s and the v run together with no vowel between them.",
+      "variations": [
+        {
+          "display": "svāgatam. kṛpayā atra upaviśatu.",
+          "script": "स्वागतम्। कृपया अत्र उपविशतु।",
+          "cue": "Welcome. Please sit here.",
+          "changed": "M7's atra is added, and the invitation acquires a place without acquiring a preposition"
+        },
+        {
+          "display": "svāgatam. kṛpayā gṛham āgacchatu.",
+          "script": "स्वागतम्। कृपया गृहम् आगच्छतु।",
+          "cue": "Welcome. Please come in.",
+          "changed": "sitting becomes coming in, and the destination takes the same bare accusative M6 taught"
+        },
+        {
+          "display": "namaste. svāgatam.",
+          "script": "नमस्ते। स्वागतम्।",
+          "cue": "Hello. Welcome.",
+          "changed": "M2's greeting opens instead, and svāgatam follows it as the second half of one doorway"
+        }
+      ],
+      "usage": "The first two things a host says, in the order a host says them.",
+      "register": "neutral",
+      "mnemonic": "svāgatam holds su- ('well') and āgata ('come'): well come, which is exactly what English built too."
+    },
+    {
+      "id": "L2-M5-S02",
+      "display": "kṛpayā phalam khādatu.",
+      "script": "कृपया फलम् खादतु।",
+      "cue": "Please have some fruit.",
+      "literal": "please fruit let-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "khādatu",
+            "cue": "please eat · let (him) eat",
+            "tag": "delta",
+            "forms": [
+              "khādatu"
+            ],
+            "note": "M4's verb of eating with the request ending on it. M4 taught khādati, khādāmi and the past and future shapes; this is the offering shape, and it is new here."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's fruit, the thing offered. It takes the same shape it takes as a thing wanted — what the verb reaches for does not change because the verb is a request."
+          },
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "Optional here as everywhere. An offer with kṛpayā presses a little harder; an offer without it is still an offer."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          8
+        ]
+      },
+      "trap": "This is the module's whole delta. In English an offer is a QUESTION — 'would you like some fruit?' — and here it is a command, politely shaped. Building a question instead is the first thing an English speaker does, and it asks something different.",
+      "sound": "kri-PA-yaa PHA-lam KHAA-da-tu. The kh of khādatu is a k with breath straight after it, and the long aa that follows is held.",
+      "variations": [
+        {
+          "display": "phalam khādatu.",
+          "script": "फलम् खादतु।",
+          "cue": "Please have some fruit.",
+          "changed": "kṛpayā drops and the offer is exactly as polite, because the courtesy never lived in that word"
+        },
+        {
+          "display": "kṛpayā bhojanam khādatu.",
+          "script": "कृपया भोजनम् खादतु।",
+          "cue": "Please have the meal.",
+          "changed": "what is offered changes and the shape of the offer does not"
+        },
+        {
+          "display": "kim bhavān phalam icchati?",
+          "script": "किम् भवान् फलम् इच्छति?",
+          "cue": "Do you want some fruit?",
+          "changed": "the offer is rebuilt as a question, which is what English would have done — and it now asks about a wish instead of putting the fruit in front of the guest"
+        }
+      ],
+      "mistake": {
+        "display": "kṛpayā phalam khādati.",
+        "why": "khādati is 'he eats' — a report about somebody. Offering needs the -tu ending, and kṛpayā cannot turn a statement into an offer on its own."
+      },
+      "usage": "Said with the plate already moving towards the guest.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S03",
+      "display": "kṛpayā jalam pibatu.",
+      "script": "कृपया जलम् पिबतु।",
+      "cue": "Please have some water.",
+      "literal": "please water let-drink",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pibatu",
+            "cue": "please drink · let (him) drink",
+            "tag": "delta",
+            "forms": [
+              "pibatu"
+            ],
+            "note": "M4's verb of drinking with the request ending. It is built exactly like khādatu, from the same stem the -ti and -mi shapes are built from."
+          },
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "free",
+            "forms": [
+              "jalena"
+            ],
+            "note": "M3's water. jalam is the water offered; jalena is the water refused, and the next sentence is where that second shape does its work."
+          },
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "The third offer in a row built the same way. The pattern is the lesson, and the repetition is deliberate."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "sound": "kri-PA-yaa JA-lam PI-ba-tu. pibatu has a short i and a short a: PI-ba-tu, three quick beats.",
+      "variations": [
+        {
+          "display": "jalam pibatu.",
+          "script": "जलम् पिबतु।",
+          "cue": "Please have some water.",
+          "changed": "the bare request, still courteous, with nothing but the ending carrying it"
+        },
+        {
+          "display": "kṛpayā dugdham pibatu.",
+          "script": "कृपया दुग्धम् पिबतु।",
+          "cue": "Please have some milk.",
+          "changed": "water becomes milk; both are neuter, so nothing else in the line moves"
+        },
+        {
+          "display": "aham jalam pibāmi.",
+          "script": "अहम् जलम् पिबामि।",
+          "cue": "I am drinking water.",
+          "changed": "the offer becomes a report about myself, and -tu gives way to -mi"
+        }
+      ],
+      "usage": "Water is what a guest is given first, before anything is asked.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S04",
+      "display": "alam jalena.",
+      "script": "अलम् जलेन।",
+      "cue": "That's enough water, thank you.",
+      "literal": "enough by-water",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "alam",
+            "cue": "enough · no more",
+            "tag": "delta",
+            "forms": [
+              "alam"
+            ],
+            "note": "'Enough'. It is how you decline without declining anything: there is no negative word in the phrase at all, and none is wanted."
+          },
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "free",
+            "forms": [],
+            "note": "The water in the shape M4 opened — jalena, 'by water'. alam reaches for that ending the way a verb of travelling reaches for yānena."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "Nobody is named in this sentence and nobody needs to be. Two words refuse a whole offer, and the person refusing is obvious from the room."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          4
+        ]
+      },
+      "trap": "There is no 'no' in this sentence. An English speaker reaches for a negative word and there is none to reach for — alam does the whole job, and adding a negative to it would sound like a rebuke.",
+      "sound": "A-lam JA-le-na. Both words are short and level; the phrase is said quickly and with a small lift of the hand.",
+      "variations": [
+        {
+          "display": "alam dugdhena.",
+          "script": "अलम् दुग्धेन।",
+          "cue": "That's enough milk, thank you.",
+          "changed": "what is being declined changes, and the -ena ending stays where it was"
+        },
+        {
+          "display": "alam, dhanyavādaḥ.",
+          "script": "अलम्, धन्यवादः।",
+          "cue": "No more, thank you.",
+          "changed": "the thing declined is left unsaid and thanks is added; alam can stand entirely alone"
+        },
+        {
+          "display": "alam jalena. aham dugdham icchāmi.",
+          "script": "अलम् जलेन। अहम् दुग्धम् इच्छामि।",
+          "cue": "No more water. I would like milk.",
+          "changed": "a refusal is followed by a request, which is what a guest actually does"
+        }
+      ],
+      "mistake": {
+        "display": "na jalam icchāmi.",
+        "why": "This is a true sentence — 'I do not want water' — and it is not a refusal of an offer. It states a dislike where alam jalena simply says the glass is full enough. In somebody's house the first sounds ungrateful and the second does not."
+      },
+      "usage": "How a guest declines the fourth refill without anybody losing face. Hedged, because table manners differ across India: what is safe to say is that alam is the form, not what a host will do next.",
+      "register": "neutral",
+      "mnemonic": "alam is \"enough\", and the thing you have had enough OF takes the by-ending."
+    },
+    {
+      "id": "L2-M5-S05",
+      "display": "kim bhavate bhojanam rocate?",
+      "script": "किम् भवते भोजनम् रोचते?",
+      "cue": "Do you like the meal?",
+      "literal": "(question) to-your-honour meal is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavate",
+            "cue": "to you (polite, to a man)",
+            "tag": "delta",
+            "forms": [
+              "bhavate",
+              "bhavatyai"
+            ],
+            "note": "M2's polite 'you' in its 'to you' shape: bhavate to a man, bhavatyai to a woman. M2 taught bhavān, bhavatī and their 'of you' shapes; these two are new here."
+          },
+          {
+            "display": "bhojanam",
+            "cue": "meal · food",
+            "tag": "delta",
+            "forms": [
+              "bhojanam"
+            ],
+            "note": "'A meal' — the food on the table taken together, rather than any one dish. In this sentence it is the SUBJECT, which is what makes the whole frame feel backwards."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's liking verb, unchanged. It agrees with the meal and not with the person, because the meal is what is doing the pleasing."
+          }
+        ],
+        "rules": [
+          6,
+          7,
+          1
+        ]
+      },
+      "trap": "The person is not the subject. Literally this asks whether the meal is pleasing TO your honour, so the verb follows the meal — and if more than one thing were on the table it would be M9's rocante instead.",
+      "sound": "KIM bha-VA-te BHO-ja-nam RO-cha-te. bhavate is three light beats with the stress in the middle.",
+      "variations": [
+        {
+          "display": "kim bhavatyai bhojanam rocate?",
+          "script": "किम् भवत्यै भोजनम् रोचते?",
+          "cue": "Do you like the meal?",
+          "changed": "the guest is a woman, so bhavate becomes bhavatyai — and nothing else in the question moves"
+        },
+        {
+          "display": "bhavate bhojanam rocate.",
+          "script": "भवते भोजनम् रोचते।",
+          "cue": "You like the meal.",
+          "changed": "kim drops and the question becomes a statement, with no other change at all"
+        },
+        {
+          "display": "mahyam bhojanam rocate.",
+          "script": "मह्यम् भोजनम् रोचते।",
+          "cue": "I like the meal.",
+          "changed": "the person pleased becomes me, using M1's mahyam — the same slot, a different word in it"
+        }
+      ],
+      "usage": "Asked by a host halfway through the meal, and expected to be answered warmly.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S06",
+      "display": "kim bhavatyai annam rocate?",
+      "script": "किम् भवत्यै अन्नम् रोचते?",
+      "cue": "Do you like the food?",
+      "literal": "(question) to-your-honour food is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "annam",
+            "cue": "food · cooked rice",
+            "tag": "delta",
+            "forms": [
+              "annam"
+            ],
+            "note": "'Food', and in everyday use the cooked rice at the centre of a meal. bhojanam is the meal as a whole; annam is what is in the dish."
+          },
+          {
+            "display": "bhavate",
+            "cue": "to you (polite, to a man)",
+            "tag": "delta",
+            "forms": [],
+            "note": "Here as bhavatyai, the shape used to a woman. The two shapes are one word and one row, exactly as bhavān and bhavatī were."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "free",
+            "forms": [],
+            "note": "Still agreeing with the food rather than with the guest. Four modules into a new level, this frame is still the reversal it was in M1."
+          }
+        ],
+        "rules": [
+          6,
+          7,
+          9
+        ]
+      },
+      "trap": "bhavatyai is the feminine of bhavate, and the change is in the address and not in the food. Nothing about annam knows or cares who is being asked.",
+      "variations": [
+        {
+          "display": "kim bhavate annam rocate?",
+          "script": "किम् भवते अन्नम् रोचते?",
+          "cue": "Do you like the food?",
+          "changed": "the guest is a man, so the address goes back to bhavate"
+        },
+        {
+          "display": "kim bhavatyai dugdham rocate?",
+          "script": "किम् भवत्यै दुग्धम् रोचते?",
+          "cue": "Do you like the milk?",
+          "changed": "the thing being asked about changes; the ending on it does not, because both words are neuter"
+        },
+        {
+          "display": "bhavatyai annam rocate, kintu alam.",
+          "script": "भवत्यै अन्नम् रोचते, किन्तु अलम्।",
+          "cue": "You like the food, but that is enough.",
+          "changed": "the question becomes a statement and M10's kintu hangs a refusal on the end of it"
+        }
+      ],
+      "usage": "The same question as the sentence before it, asked of a woman.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S07",
+      "display": "kṛpayā punaḥ annam khādatu.",
+      "script": "कृपया पुनः अन्नम् खादतु।",
+      "cue": "Please have some more food.",
+      "literal": "please again food let-eat",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "punaḥ",
+            "cue": "again · more",
+            "tag": "delta",
+            "forms": [
+              "punaḥ"
+            ],
+            "note": "'Again'. In front of a verb of eating or drinking it is English 'more' — there is no separate word for 'more food', only 'eat again'."
+          },
+          {
+            "display": "khādatu",
+            "cue": "please eat · let (him) eat",
+            "tag": "delta",
+            "forms": [],
+            "note": "The offer shape again, pressed a second time. This sentence is what a host says when the first plate has been finished."
+          },
+          {
+            "display": "annam",
+            "cue": "food · cooked rice",
+            "tag": "delta",
+            "forms": [],
+            "note": "The food offered, in the same shape it had as the thing liked. What the verb reaches for looks the same whichever verb it is."
+          }
+        ],
+        "rules": [
+          8,
+          0,
+          1
+        ]
+      },
+      "trap": "punaḥ is 'again' and it is doing the work of English 'more'. Trying to build 'more food' as two words here produces a phrase this language does not use.",
+      "sound": "kri-PA-yaa PU-nah AN-nam KHAA-da-tu. Said as one breath, the -aḥ of punaḥ blurs into the a of annam in speech — and the written line keeps them apart, which is what pada form means.",
+      "variations": [
+        {
+          "display": "punaḥ annam khādatu.",
+          "script": "पुनः अन्नम् खादतु।",
+          "cue": "Have some more food.",
+          "changed": "kṛpayā drops; the press is gentler and the line is still an offer"
+        },
+        {
+          "display": "kṛpayā punaḥ jalam pibatu.",
+          "script": "कृपया पुनः जलम् पिबतु।",
+          "cue": "Please have some more water.",
+          "changed": "eating becomes drinking and punaḥ does not move, because it belongs to the verb"
+        },
+        {
+          "display": "alam, dhanyavādaḥ.",
+          "script": "अलम्, धन्यवादः।",
+          "cue": "No more, thank you.",
+          "changed": "the answer rather than a rebuilt offer — the two lines are the exchange this module exists for"
+        }
+      ],
+      "mistake": {
+        "display": "kṛpayā punaḥ annam icchati.",
+        "why": "icchati reports what somebody wants; it does not offer them anything. An offer needs khādatu, and putting kṛpayā in front of a report leaves it a report."
+      },
+      "usage": "The second offer, which in many households is the one that is meant.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S08",
+      "display": "alam dugdhena, dhanyavādaḥ.",
+      "script": "अलम् दुग्धेन, धन्यवादः।",
+      "cue": "No more milk, thank you.",
+      "literal": "enough by-milk, thanks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dugdham",
+            "cue": "milk",
+            "tag": "delta",
+            "forms": [
+              "dugdham",
+              "dugdhena"
+            ],
+            "note": "'Milk'. dugdham is the milk offered, dugdhena the milk declined — the same pair of shapes jalam and jalena make."
+          },
+          {
+            "display": "alam",
+            "cue": "enough · no more",
+            "tag": "delta",
+            "forms": [],
+            "note": "The refusal again, with a different thing after it. Whatever is declined takes the by-ending, and that is the whole of the construction."
+          },
+          {
+            "display": "dhanyavādaḥ",
+            "cue": "thanks · thank you",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's thanks, doing here what English 'thank you' does at the end of a refusal: turning it from a rejection into a courtesy."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          4
+        ]
+      },
+      "variations": [
+        {
+          "display": "alam dugdhena.",
+          "script": "अलम् दुग्धेन।",
+          "cue": "No more milk.",
+          "changed": "thanks drops away, and the refusal is still not rude — the courtesy was in alam"
+        },
+        {
+          "display": "kim bhavate dugdham rocate?",
+          "script": "किम् भवते दुग्धम् रोचते?",
+          "cue": "Do you like milk?",
+          "changed": "the milk moves from the thing declined to the thing asked about, and its ending moves with it"
+        },
+        {
+          "display": "alam jalena, dhanyavādaḥ.",
+          "script": "अलम् जलेन, धन्यवादः।",
+          "cue": "No more water, thank you.",
+          "changed": "the same refusal about water, which is how the construction proves it is a construction"
+        }
+      ],
+      "mistake": {
+        "display": "alam dugdham, dhanyavādaḥ.",
+        "why": "The milk has been left in its plain shape. alam wants the by-ending on whatever follows it, so it is dugdhena — the same ending M4 put on yānena and mārgeṇa."
+      },
+      "usage": "Refusing a second glass without making anybody feel they offered wrongly.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M5-S09",
+      "display": "mahyam idam bhojanam rocate.",
+      "script": "मह्यम् इदम् भोजनम् रोचते।",
+      "cue": "I like this meal.",
+      "literal": "to-me this meal is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'I' in its 'to me' shape, mahyam. The liking frame has wanted this shape since M1 and it has not changed since."
+          },
+          {
+            "display": "bhojanam",
+            "cue": "meal · food",
+            "tag": "delta",
+            "forms": [],
+            "note": "The meal, and the subject of the sentence. The sentence says the meal pleases me; English says I like the meal, and the two sentences have their nouns the other way round."
+          },
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's 'this', standing in front of a neuter noun as it always does in this course."
+          }
+        ],
+        "rules": [
+          7,
+          9,
+          1
+        ]
+      },
+      "trap": "mahyam is not the subject, and the sentence has no word that behaves like English \"I\" here. What is doing the pleasing is the meal.",
+      "variations": [
+        {
+          "display": "mahyam annam rocate.",
+          "script": "मह्यम् अन्नम् रोचते।",
+          "cue": "I like the food.",
+          "changed": "the thing that pleases changes and the frame around it does not"
+        },
+        {
+          "display": "mahyam idam bhojanam na rocate.",
+          "script": "मह्यम् इदम् भोजनम् न रोचते।",
+          "cue": "I do not like this meal.",
+          "changed": "na goes in front of the verb and denies the pleasing, which is the only honest way this course has of saying it"
+        },
+        {
+          "display": "kim bhavate idam bhojanam rocate?",
+          "script": "किम् भवते इदम् भोजनम् रोचते?",
+          "cue": "Do you like this meal?",
+          "changed": "the person pleased becomes the guest, and kim turns the whole thing into the question a host asks"
+        }
+      ],
+      "usage": "Said to a host, and the one sentence in the module a guest is most likely to need.",
+      "register": "neutral",
+      "mnemonic": "rocate makes the food the doer. Whatever pleases you is the subject, and you are only the one it happens to."
+    },
+    {
+      "id": "L2-M5-S10",
+      "display": "kṛpayā punaḥ jalam pibatu. alam, dhanyavādaḥ.",
+      "script": "कृपया पुनः जलम् पिबतु। अलम्, धन्यवादः।",
+      "cue": "Please have some more water. No more, thank you.",
+      "literal": "please again water let-drink. enough, thanks",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pibatu",
+            "cue": "please drink · let (him) drink",
+            "tag": "delta",
+            "forms": [],
+            "note": "The host presses and the guest declines, in six words. This is the exchange the whole module has been assembling."
+          },
+          {
+            "display": "alam",
+            "cue": "enough · no more",
+            "tag": "delta",
+            "forms": [],
+            "note": "Standing alone here, with the water left unnamed because it was named one sentence earlier. Naming it again would be possible and would sound more emphatic."
+          },
+          {
+            "display": "punaḥ",
+            "cue": "again · more",
+            "tag": "delta",
+            "forms": [],
+            "note": "The second offer, marked as second by this one word. A first offer does not carry it."
+          }
+        ],
+        "rules": [
+          0,
+          4,
+          8
+        ]
+      },
+      "trap": "Neither half of this exchange contains a negative word, and neither half contains a question. English would build both: \"would you like more?\" and \"no thank you\".",
+      "sound": "kri-PA-yaa PU-nah JA-lam PI-ba-tu. A-lam, dhan-ya-VAA-daḥ. The refusal is said faster and lower than the offer.",
+      "variations": [
+        {
+          "display": "kṛpayā punaḥ annam khādatu. alam, dhanyavādaḥ.",
+          "script": "कृपया पुनः अन्नम् खादतु। अलम्, धन्यवादः।",
+          "cue": "Please have some more food. No more, thank you.",
+          "changed": "the same exchange about food, with both verbs changing and nothing else"
+        },
+        {
+          "display": "kṛpayā punaḥ jalam pibatu. dhanyavādaḥ.",
+          "script": "कृपया पुनः जलम् पिबतु। धन्यवादः।",
+          "cue": "Please have some more water. Thank you.",
+          "changed": "the offer is accepted instead, and thanks alone does it"
+        },
+        {
+          "display": "kṛpayā punaḥ jalam pibatu. alam jalena.",
+          "script": "कृपया पुनः जलम् पिबतु। अलम् जलेन।",
+          "cue": "Please have some more water. That is enough water.",
+          "changed": "the refusal names what it is refusing, which is firmer and just as courteous"
+        }
+      ],
+      "usage": "The whole of hosting in two lines: an offer that is an imperative and a refusal that negates nothing.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M5-C01",
+      "display": "svāgatam. kṛpayā gṛham āgacchatu.",
+      "script": "स्वागतम्। कृपया गृहम् आगच्छतु।",
+      "cue": "Welcome. Please come in."
+    },
+    {
+      "id": "L2-M5-C02",
+      "display": "kṛpayā bhojanam khādatu.",
+      "script": "कृपया भोजनम् खादतु।",
+      "cue": "Please have the meal."
+    },
+    {
+      "id": "L2-M5-C03",
+      "display": "mahyam annam rocate.",
+      "script": "मह्यम् अन्नम् रोचते।",
+      "cue": "I like the food."
+    },
+    {
+      "id": "L2-M5-C04",
+      "display": "kim bhavatyai phalam rocate?",
+      "script": "किम् भवत्यै फलम् रोचते?",
+      "cue": "Do you like fruit?"
+    },
+    {
+      "id": "L2-M5-C05",
+      "display": "saḥ pratidinam dugdham pibati.",
+      "script": "सः प्रतिदिनम् दुग्धम् पिबति।",
+      "cue": "He drinks milk every day."
+    },
+    {
+      "id": "L2-M5-C06",
+      "display": "kṛpayā punaḥ phalam khādatu.",
+      "script": "कृपया पुनः फलम् खादतु।",
+      "cue": "Please have some more fruit."
+    },
+    {
+      "id": "L2-M5-C07",
+      "display": "aham bhojanam icchāmi.",
+      "script": "अहम् भोजनम् इच्छामि।",
+      "cue": "I would like a meal."
+    },
+    {
+      "id": "L2-M5-C08",
+      "display": "bhavān annam khādatu, aham jalam pibāmi.",
+      "script": "भवान् अन्नम् खादतु, अहम् जलम् पिबामि।",
+      "cue": "You have the food, I will drink water."
+    },
+    {
+      "id": "L2-M5-C09",
+      "display": "mama mātā uttamam bhojanam karoti.",
+      "script": "मम माता उत्तमम् भोजनम् करोति।",
+      "cue": "My mother makes an excellent meal."
+    },
+    {
+      "id": "L2-M5-C10",
+      "display": "kim idam annam uttamam?",
+      "script": "किम् इदम् अन्नम् उत्तमम्?",
+      "cue": "Is this food good?"
+    },
+    {
+      "id": "L2-M5-C11",
+      "display": "alam jalena. aham dugdham icchāmi.",
+      "script": "अलम् जलेन। अहम् दुग्धम् इच्छामि।",
+      "cue": "No more water. I would like milk."
+    },
+    {
+      "id": "L2-M5-C12",
+      "display": "rāmaḥ punaḥ phalam khādati.",
+      "script": "रामः पुनः फलम् खादति।",
+      "cue": "Rāma is eating another fruit."
+    },
+    {
+      "id": "L2-M5-C13",
+      "display": "kṛpayā atra upaviśatu. bhojanam atra asti.",
+      "script": "कृपया अत्र उपविशतु। भोजनम् अत्र अस्ति।",
+      "cue": "Please sit here. The meal is here."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
