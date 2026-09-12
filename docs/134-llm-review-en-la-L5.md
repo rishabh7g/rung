@@ -144,3 +144,119 @@ Additions to the hundred standing in the docs listed across `docs/123`–`docs/1
 6. **Is `cīvis Rōmānus sum` too famous a sentence for a module about register?** It is Cicero's own and
    it is three words — which the trap notes is not a Ciceronian period at all, and may undercut the
    module's own spectrum.
+
+---
+
+## Wave 2 — L5-M4, L5-M5, L5-M6 and L5-M7 (#652), 2026-09-12
+
+Authored in ladder order against the same briefs (#650) and `docs/133`, rebuilding between modules.
+All four signed `verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"`,
+`verifiedAt: 2026-09-12`.
+
+### 2.1 What was checked
+
+- **`npm run content:validate`** → all four `ok`; `CONTENT 527/527 ok`.
+- **The strict build** → `en-la: 47 modules`, `index L5-M4: 674 surfaces`, `L5-M5: 686`, `L5-M6: 701`,
+  `L5-M7: 715`, and **no `shown but untaught` line at any of the forty-seven**. The ratchet has now
+  held at zero through forty-seven authored rungs.
+- **The folded index** — 715 surfaces against a `surfaceCount` of 715, `maxSpan` 1.
+- **The orthography sweep** — 5,052 readable Latin strings, every counter zero:
+
+  ```
+  readable Latin 5052 {'alpha': 0, 'nfc': 0, 'j': 0, 'apos': 0, 'acute': 0, 'comb': 0, 'hyph': 0, 'smartq': 0}
+  mistake plates 311 {...all zero...}
+  ```
+
+  There is no build gate on en-la spelling — `checkScriptMode` returns an empty report for a `native`
+  course — so this sweep and the en-la block in `src/course/types.test.ts` are the whole of the
+  defence, and they are run against the **emitted** course rather than the authored JSON.
+- **`git diff --stat`** over every L1–L4 module and over L5-M1…M3 is **empty**.
+
+### 2.2 The last two constructions the course owed
+
+L5-M6 brings the **ablative absolute** (`hīs rēbus dictīs`, "these things having been said") and
+L5-M7 the **indirect question** (`quaerō quid agās`). With those the fifty-module syllabus in `docs/121`
+has nothing outstanding: every construction the course promised is now taught somewhere, and the three
+remaining modules (#653) owe consolidation rather than new grammar.
+
+Both arrive late on purpose and both are *made of parts the learner already owns*. The ablative
+absolute needs only the perfect participle (L2-M8) and the ablative (L2-M4); the indirect question
+needs only the present subjunctive (L3-M4) and the question words of L1-M2. Neither module teaches a
+new ending. M6's rules say so out loud, because a learner who thinks the ablative absolute is a new
+tense will look for a form that does not exist.
+
+### 2.3 `crēdō` landed at M1, not at M5, and that is what M1 said would happen
+
+M5 is the module that teaches `crēdō`'s two constructions — accusative + infinitive for a belief,
+dative for a person you trust. The key resolves to **L5-M1**, because M1-S08's `nōn tamen crēdō` wrote
+the surface first and **first occurrence wins** in the word index.
+
+This is the `cum` situation of L1-M7 and the `ut` situation of L3-M4 in its mildest form: the collision
+was anticipated in the authoring, M1's note already points forward ("M5 of this level teaches its two
+constructions"), and M5's rows teach the constructions without needing to own the bare key. No build
+gate fires and no learner is misled. It is recorded here because the *pattern* — an early module
+spending a key a later module is built around — has now happened four times in this course and is the
+single most common way an en-la plan goes wrong.
+
+### 2.4 The vocative's second use, and the one word that is declined instead
+
+L5-M2 taught the vocative as address between friends. M4 gives it its formal use — `avē atque valē`,
+`grātiās tibi agō`, `bene tibi` — and then S08 writes `Mārcus mortuus est`, where **`Mārcus` is
+nominative**, not vocative, because you do not address the dead. The trap says exactly that. It is the
+only place in fifty modules where a name's case carries the whole meaning of the sentence, and the
+usage line is doing more work than the rule.
+
+`requiēscat in pāce` is the one row in the course where the **ecclesiastical register** is at home
+rather than a mistake. Its usage line says so and says where the boundary is, because a learner who
+generalises from it will write church Latin in a classical sentence.
+
+### 2.5 Negation inside a word reached eight
+
+`nēmō` (M5) and `ignōrō` (M7) are the seventh and eighth words in the course whose negative is baked
+in. M5 plates `nēmō nōn` as an error; **M6 then uses `nēmō nōn` deliberately** as a rhetorical device,
+and its usage line names the M5 plate by what it says rather than by number. That is deliberate and it
+is the riskiest thing in the wave: a learner who meets the plate and the device in the wrong order has
+been told a thing is wrong and then shown it. §2.8 asks whether the ordering survives a fluent reader.
+
+M7's litotes rows (`nōn male`, `nōn ignōrō`) are the same shape one level up — a double negative as
+understatement — and they are the reason M7 rather than M5 owns `ignōrō`.
+
+### 2.6 Corrections made during the wave
+
+- **`vēritāsque` (M5) and `venit-ne` (M4)** — two seams opened in modules that are not in
+  `SEAM_MODULES`. Replaced with `et` and with `Agis-ne bene?`, which L1-M2 already owns. The rule is
+  that only the five seam modules may join an enclitic, and neither M4 nor M5 is one of them.
+- **`requiēscant` (M4), `deum` (M5), `facilis` and `dicta` (M6), `dīcam` (M7)** — surfaces shown with
+  no owning row. Each was given a row in its own lexeme or the display was rewritten; none was
+  exempted.
+- **Enrichment** — `ENRICHMENT_FULL_THROUGH_MODULE = 3` binds only a level's first three modules, so
+  none of M4…M7 was required to carry `sound`, `mistake` or `mnemonic` at all. They carry 38 `sound`
+  lines, 12 `mistake` plates and 29 `mnemonic`s between them anyway, because at this level the
+  difficulty is pronunciation and register rather than form (`avē`, `requiēscat`, `hīs rēbus dictīs`).
+- **Two notes over `NOTE_MAX_CHARS`** were shortened rather than split.
+
+### 2.7 Reserved keys still unspent
+
+Read back from the folded index after M7: `sīc`, `rosa`/`rosā`, `possim`, `meus`, `eius`, `vōs`,
+`s.p.q.r`, `quārē`, `quamvīs` and `quōmodo` are all **absent**, each promised to one of L5-M8…M10.
+Every key the course has reserved across five levels has been spent in the module that promised it and
+in no other — checked by reading the emitted index back, not by reading the authoring JSON.
+
+### 2.8 Open questions for the fluent-speaker gate
+
+Additions to the hundred-odd standing across `docs/123`–`docs/134` §1.9.
+
+1. **Is M6's deliberate `nēmō nōn` teachable one module after M5 plates it as an error?** A fluent
+   reader may say the device belongs in a rhetoric lesson and the plate should stand alone.
+2. **Is `hīs rēbus dictīs` the right first ablative absolute?** It is the commonest shape in oratory
+   and it is also four words of abstraction; a concrete one (`urbe captā`) would be easier to picture
+   and harder to reuse.
+3. **Does `at` vs `sed` survive contact with real prose?** M6 teaches `at` as the sharper adversative.
+   Cicero's usage is looser than the module admits.
+4. **Is `immō` "a correction upwards" or simply a correction?** The module claims the upward force; a
+   fluent reader may find it neutral.
+5. **Is `quod sī` too rare to spend a row on**, given that `quod` already carries two readings and this
+   is its third?
+6. **Do the four ways of asking for help in M7 rank as the module says** — blunt to elaborate — or is
+   the ranking a modern politeness intuition read back into Latin?
+7. **Is litotes without audio teachable at all?** `nōn male` is a tone of voice on the page.
