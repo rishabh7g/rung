@@ -1169,8 +1169,8 @@ second that was BORN conforming to the no-reading rule.** English (L1) → Sansk
 rungs authored against ten briefs (#607 — `tools/course-briefs.ts`, "en-sa: decisions a brief must
 settle before any Sanskrit is written"), across three authoring issues (#608 L1-M1–M2, #609
 L1-M3–M5, #610 L1-M6–M10) and reviewed in
-[`docs/122-llm-review-en-sa-L1-L4.md`](docs/122-llm-review-en-sa-L1-L4.md) — one document, now
-twelve waves, one hundred and seven sections and one open-question list. Dropping `fixture: true` from the en-sa row in
+[`docs/122-llm-review-en-sa-L1-L5.md`](docs/122-llm-review-en-sa-L1-L5.md) — one document, now
+thirteen waves, one hundred and sixteen sections and one open-question list. Dropping `fixture: true` from the en-sa row in
 `content/courses.json`, and L1's level `draft: true` and its `draftNote` from
 `content/en-sa/levels.json`, was the whole change: a strict `npm run build` reported `en-sa: 10
 modules (L1-M1..M10)` at graduation and emitted `public/content/en-sa/` with levels, strings, ten
@@ -1250,10 +1250,22 @@ opens **exactly one imperfect cell, `āsīt`**, because the participial past has
 that is how `mahat` STAYS REFUSED; and `L4-M10` "A story with a twist" is six sentences with one
 quoted line, spending **two surfaces in the whole module** — `akasmāt` and `āścaryam` — and holding
 `tvam` at the one display L2-M1 gave it, because a quoted line is spoken in the narration's own
-register. A build now reports
-`en-sa: 40 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M10)` and closes at **384 surfaces**,
-`maxSpan` still 1; four levels are complete with no level `draft` flag on any of them, and L5
-is still #423's ratified placeholder list with nothing authored in it.
+register. **LEVEL 5 IS NOW OPEN (#625)**: `L5-M1` "Sayings and idioms" makes the subhāṣita the
+module and settles the CUT — the unit is the pāda, a saying is cut at a quarter-verse boundary and
+never inside one, and where the first quarter's verb has its subject in the next one the cut takes
+the half-verse instead (`vidyā dadāti vinayam`, `vasudhā eva kuṭumbakam`,
+`udyamena hi sidhyanti kāryāṇi na manorathaiḥ`) — while L4-M7's **sandhi refusal is HONOURED**: the
+recited, fully joined line (`vasudhaiva kuṭumbakam`) is written in `sound`, which
+`checkShownSurfaces` does not read, so it costs the ratchet nothing and `maxSpan` stays 1 after
+forty-two rungs; and `L5-M2` "Humour and teasing" says out loud that the course's everyday address
+is `bhavān`/`bhavatī` with a third-person verb, so **the second-person jab is unwritable here** and
+the module takes the framed joke, the clean retraction (`kṣamyatām, aham parihāsam kṛtavān`), the
+self-directed tease and the wit of a well-turned saying instead — with the pun REFUSED as a display
+and taught as a mechanism in English prose, out of the course's own four levels of refused second
+readings. A build now reports
+`en-sa: 42 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M10, L5-M1..M2)` and closes at
+**404 surfaces**, `maxSpan` still 1; four levels are complete with no level `draft` flag on any of
+them, and L5 keeps its flag until all ten of its rungs are authored.
 
 **The scheme is IAST and the course is written in PADA form, which is the decision everything else
 rests on** (#604, [`docs/121-en-sa-romanization-decisions.md`](docs/121-en-sa-romanization-decisions.md)).
@@ -1283,8 +1295,8 @@ was rewritten into `adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.` out o
 owns. The baseline was never raised; `tools/shown-surfaces.test.ts` still carries `'en-sa': 0`, and
 neither the graduation, nor any of the three L2 waves (#613, #614, #615), nor #617's two L3 rungs,
 nor #618's three, nor #619's five, nor #621's two L4 rungs, nor #622's three, nor #623's five that
-closed the level, touched it — L2, L3
-and L4 write no new proper noun at all, and the
+closed the level, nor #625's two L5 rungs, touched it — L2, L3,
+L4 and L5 write no new proper noun at all, and the
 only names above L1 are L1-M1's `rāmaḥ` and `sītā`, both of which #618's L3-M5 reports in the
 NOMINATIVE rather than opening the vocative a module of quoted dialogue would most want. **#619's
 `L3-M9` is the sharpest case in the whole catalogue**: a module about festivals, which have names,
@@ -2713,10 +2725,11 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **540
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **542
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
-  forty on en-sa, which is the whole of L1, L2, L3 and L4 (#611, #613, #614, #615, #617, #618,
-  #619, #621, #622, #623), and **fifty on en-la, which is the whole course** (#637, #641, #645,
+  forty-two on en-sa, which is the whole of L1, L2, L3 and L4 plus the first two rungs of L5
+  (#611, #613, #614, #615, #617, #618,
+  #619, #621, #622, #623, #625), and **fifty on en-la, which is the whole course** (#637, #641, #645,
   #649, #651, #652, #653) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to

@@ -1,0 +1,911 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M1",
+  "title": "Sayings and idioms",
+  "job": "The figurative everyday, and when it is used",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 14,
+    "allowedTenses": ["simple_present", "verbless_nominal_present"],
+    "allowedPatterns": [
+      "vidyā + dadāti + vinayam",
+      "<pāda in pada form> + iti + subhāṣitam",
+      "<pāda in pada form> + iti + janāḥ + vadanti",
+      "vasudhā + eva + kuṭumbakam",
+      "idam + subhāṣitam + hi + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A subhāṣitam is a 'well-said thing' — a verse of two or four quarters that a speaker quotes whole. Sanskrit's figurative everyday IS the subhāṣita: there is no separate stock of idioms underneath it."
+    },
+    {
+      "tag": "delta",
+      "text": "The unit of a quotation is the pāda, the quarter-verse, and a saying is cut at a pāda boundary and NEVER inside one. vidyā dadāti vinayam is the whole first quarter of a four-quarter verse, so the cut lands there and stops."
+    },
+    {
+      "tag": "delta",
+      "text": "Three conditions on a cut, all three required: the quoted line must be a complete sentence on its own; every word in it must be one this course has taught; and it must fit the sentence bound. A saying that fails any one of the three is named in English here and written in no line at all."
+    },
+    {
+      "tag": "delta",
+      "text": "When the first quarter's verb has its subject in the NEXT quarter, the cut takes the half-verse instead. udyamena hi sidhyanti is not a sentence — its subject kāryāṇi stands in the second quarter — so the quotation takes both quarters: udyamena hi sidhyanti kāryāṇi na manorathaiḥ."
+    },
+    {
+      "tag": "delta",
+      "text": "A reciter joins the words and this course does not. Every display here stays in pada form, and the sound line carries the joined line a speaker actually says: vasudhā eva kuṭumbakam is recited vasudhaiva kuṭumbakam, and vidyā eva is recited vidyaiva. The join belongs to the boundary, not to the word."
+    },
+    {
+      "tag": "delta",
+      "text": "eva is the emphasiser — 'indeed', 'itself', 'nothing but'. It stands AFTER the word it lifts, never before it: vasudhā eva is 'the earth itself', vidyā eva is 'learning and nothing else'."
+    },
+    {
+      "tag": "delta",
+      "text": "hi is 'for' or 'indeed'. It never opens a clause: it stands second, after the first word. subhāṣitāni hi mahyam rocante is 'for I like subhāṣitas', and in the verse udyamena hi is 'by effort indeed'."
+    },
+    {
+      "tag": "free",
+      "text": "iti closes a quotation, exactly as L3-M5 taught it for reported speech, and a saying is quoted the same way: <line> iti subhāṣitam, <line> iti janāḥ vadanti. The quoted line comes first and iti shuts it."
+    },
+    {
+      "tag": "free",
+      "text": "dadāti is 'gives', the plain third-person present of the verb L1-M3 taught as the request dadātu. vadanti is the plural of L2-M7's vadati. Both are rows of their own here; no file below this level changes."
+    },
+    {
+      "tag": "interference",
+      "text": "English opens a quotation with marks before the words. Sanskrit writes no marks at all and closes with iti after them — and a saying is quoted, never rebuilt, so a word of it may not be swapped for a synonym the way a sentence of your own may be."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M1-S01",
+      "display": "vidyā dadāti vinayam.",
+      "script": "विद्या ददाति विनयम्।",
+      "cue": "Learning gives good conduct.",
+      "literal": "learning gives humility",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vidyā",
+            "cue": "learning · knowledge",
+            "tag": "delta",
+            "forms": ["vidyā"],
+            "note": "Learning, in the sense of what a teacher hands on. It is the vidyā already inside L1-M6's vidyālayaḥ, 'the house of learning' — one word, met at last on its own."
+          },
+          {
+            "display": "dadāti",
+            "cue": "gives",
+            "tag": "delta",
+            "forms": ["dadāti"],
+            "note": "Gives. L1-M3 taught the request shape dadātu, 'please give'; this is the plain statement shape of the same verb, and it is a row of its own here."
+          },
+          {
+            "display": "vinayam",
+            "cue": "good conduct · humility",
+            "tag": "delta",
+            "forms": ["vinayam"],
+            "note": "Good conduct — the modesty that shows in how a person behaves. It is the object here, which is the shape the verse uses; the cue is written for the word, not for the case."
+          }
+        ],
+        "rules": [0, 1, 8]
+      },
+      "trap": "Three words and no linking verb, because there is one already: dadāti. What is missing is the article — Sanskrit writes neither 'the' nor 'a', so vidyā alone is 'learning'.",
+      "sound": "vid-YAA da-DAA-ti VI-na-yam. The dy of vidyā is one cluster, d and y run together with no vowel between them. Reciters say the line vidyā dadāti vinayaṃ, because the next quarter of the verse begins with a consonant and the final m softens to a hum; the page keeps the m.",
+      "variations": [
+        {
+          "display": "vidyā vinayam dadāti.",
+          "script": "विद्या विनयम् ददाति।",
+          "cue": "Learning gives good conduct.",
+          "changed": "the same words in this course's own verb-final order — the verse keeps the poet's order because the metre wants it, and a learner's own sentence need not"
+        },
+        {
+          "display": "vidyā vinayam na dadāti.",
+          "script": "विद्या विनयम् न ददाति।",
+          "cue": "Learning does not give good conduct.",
+          "changed": "negated — which is a sentence a learner may build and NOT a saying anyone quotes, and that is the difference the module is about"
+        },
+        {
+          "display": "kim vidyā vinayam dadāti?",
+          "script": "किम् विद्या विनयम् ददाति?",
+          "cue": "Does learning give good conduct?",
+          "changed": "L1-M2's kim turns the claim into a yes/no question; the saying itself is never asked, only quoted"
+        }
+      ],
+      "mistake": {
+        "display": "vidyā dadāti vinayaṃ.",
+        "why": "The recited line really does end in that hum, but the hum is a sandhi product made by the word that FOLLOWS in the verse. This course writes a word-final nasal as m everywhere, so the page says vinayam and the sound line says the rest."
+      },
+      "usage": "The first quarter of a four-quarter verse that runs on through worthiness, wealth and happiness. The rest is named here rather than quoted: pāda 2 needs an ablative abstract this course has not opened, so the cut stops at the end of quarter one.",
+      "register": "neutral",
+      "mnemonic": "Learning hands over manners."
+    },
+    {
+      "id": "L5-M1-S02",
+      "display": "vidyā dadāti vinayam iti subhāṣitam.",
+      "script": "विद्या ददाति विनयम् इति सुभाषितम्।",
+      "cue": "'Learning gives good conduct' — that is a subhāṣita.",
+      "literal": "learning gives humility (quote-close) well-said-thing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vidyā",
+            "cue": "learning · knowledge",
+            "tag": "free",
+            "forms": [],
+            "note": "The same vidyā, now inside a quotation. Nothing about the quoted line changes when it is framed — that is the point of the frame."
+          },
+          {
+            "display": "dadāti",
+            "cue": "gives",
+            "tag": "free",
+            "forms": [],
+            "note": "Gives. The quoted line keeps its own verb; iti does not turn it into anything else."
+          },
+          {
+            "display": "vinayam",
+            "cue": "good conduct · humility",
+            "tag": "free",
+            "forms": [],
+            "note": "Good conduct, the object inside the quotation. The last word of a pāda is where a cut is allowed to land."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quote-closer, doing the same job for a saying as for reported speech. It shuts the quotation; there is no opening mark to match it."
+          },
+          {
+            "display": "subhāṣitam",
+            "cue": "a saying · a well-said thing",
+            "tag": "delta",
+            "forms": ["subhāṣitam", "subhāṣitāni"],
+            "note": "A subhāṣita — literally a well-said thing. Neuter, so one is subhāṣitam and more than one is subhāṣitāni; the cue is written for the word and holds in either."
+          }
+        ],
+        "rules": [0, 1, 7]
+      },
+      "trap": "There is no 'is' here and none is missing. A Sanskrit sentence of the shape <quotation> iti <noun> equates the two without a verb, exactly as L1-M1's aham chātraḥ does.",
+      "sound": "vid-YAA da-DAA-ti VI-na-yam I-ti su-BHAA-shi-tam. bh is a b with a real puff behind it, and ṣ is an s with the tongue curled back. Said at speed vinayam iti runs together as vinayamiti — the m keeps its m before a vowel and simply joins.",
+      "variations": [
+        {
+          "display": "vasudhā eva kuṭumbakam iti subhāṣitam.",
+          "script": "वसुधा एव कुटुम्बकम् इति सुभाषितम्।",
+          "cue": "'The earth itself is one family' — that is a subhāṣita.",
+          "changed": "the frame holds still and the quoted line swaps; the frame is a slot and any complete pāda fits it"
+        },
+        {
+          "display": "udyamena hi sidhyanti kāryāṇi na manorathaiḥ iti subhāṣitam.",
+          "script": "उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः इति सुभाषितम्।",
+          "cue": "'Tasks are accomplished by effort, not by wishes' — that is a subhāṣita.",
+          "changed": "a half-verse in the same slot, which is the longest thing this frame carries and still one sentence"
+        },
+        {
+          "display": "vidyā dadāti vinayam iti kim subhāṣitam?",
+          "script": "विद्या ददाति विनयम् इति किम् सुभाषितम्?",
+          "cue": "Is 'learning gives good conduct' a subhāṣita?",
+          "changed": "the frame becomes a question with kim, which is how a learner checks whether a line they half-remember really is one"
+        }
+      ],
+      "mistake": {
+        "display": "iti vidyā dadāti vinayam subhāṣitam.",
+        "why": "iti has been put in front of the quotation, where an English quotation mark would go. It closes and never opens, so it belongs after the last word of the quoted line and nowhere else."
+      },
+      "usage": "How a saying is introduced in speech when the listener may not know it. A teacher says the line, then iti subhāṣitam, and the frame is the whole of the explanation.",
+      "register": "neutral",
+      "mnemonic": "Say the line, then shut it with iti."
+    },
+    {
+      "id": "L5-M1-S03",
+      "display": "vidyā dadāti vinayam iti janāḥ vadanti.",
+      "script": "विद्या ददाति विनयम् इति जनाः वदन्ति।",
+      "cue": "People say, 'Learning gives good conduct.'",
+      "literal": "learning gives humility (quote-close) people say",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vidyā",
+            "cue": "learning · knowledge",
+            "tag": "free",
+            "forms": [],
+            "note": "The quoted line opens the sentence, as every quotation in this course does since L3-M5."
+          },
+          {
+            "display": "dadāti",
+            "cue": "gives",
+            "tag": "free",
+            "forms": [],
+            "note": "Gives. A quoted verb keeps the tense the saying gave it, whatever tense the framing verb has."
+          },
+          {
+            "display": "vinayam",
+            "cue": "good conduct · humility",
+            "tag": "free",
+            "forms": [],
+            "note": "Good conduct. The pāda ends here and iti follows it immediately."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "The quote-closer again, this time with a speaking verb after it rather than a noun."
+          },
+          {
+            "display": "janāḥ",
+            "cue": "people",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's janaḥ in the plural. It is the right subject for a saying, because a subhāṣita belongs to nobody in particular."
+          },
+          {
+            "display": "vadanti",
+            "cue": "say · speak (more than one)",
+            "tag": "delta",
+            "forms": ["vadanti"],
+            "note": "They say — the plural of L2-M7's vadati, and a row of its own here because a level never edits a file below it."
+          }
+        ],
+        "rules": [7, 8, 9]
+      },
+      "trap": "The framing verb comes LAST and the quotation first, which is the reverse of English. Nothing marks where the quotation starts; iti is the only signal, and it arrives at the end.",
+      "sound": "vid-YAA da-DAA-ti VI-na-yam I-ti ja-NAAH va-DAN-ti. On its own the final -ḥ of janāḥ is an echo of the ā in front of it: 'ja-naa-ha'. In front of the v of vadanti that echo goes and the long ā simply runs on — janā vadanti — and the page keeps the -ḥ.",
+      "variations": [
+        {
+          "display": "vidyā dadāti vinayam iti adhyāpakaḥ vadati.",
+          "script": "विद्या ददाति विनयम् इति अध्यापकः वदति।",
+          "cue": "The teacher says, 'Learning gives good conduct.'",
+          "changed": "one speaker instead of many, so the verb drops back to L2-M7's singular vadati"
+        },
+        {
+          "display": "vasudhā eva kuṭumbakam iti janāḥ vadanti.",
+          "script": "वसुधा एव कुटुम्बकम् इति जनाः वदन्ति।",
+          "cue": "People say, 'The earth itself is one family.'",
+          "changed": "the quoted pāda swaps and the frame does not move — the same slot the previous sentence showed, now with a speaking verb"
+        },
+        {
+          "display": "vidyā dadāti vinayam iti janāḥ na vadanti.",
+          "script": "विद्या ददाति विनयम् इति जनाः न वदन्ति।",
+          "cue": "People do not say, 'Learning gives good conduct.'",
+          "changed": "the FRAME is negated and the quotation is untouched — na stands before vadanti, never inside the quoted line"
+        }
+      ],
+      "mistake": {
+        "display": "janāḥ vadanti vidyā dadāti vinayam.",
+        "why": "Two faults at once: the framing verb has been put in front in the English order, and iti has been dropped. Without iti there is nothing to tell a listener where the quotation ended."
+      },
+      "usage": "The everyday way to quote a saying without claiming it. janāḥ vadanti is 'they say' — it hands the line to everyone and to no one, which is what a proverb wants.",
+      "register": "neutral",
+      "mnemonic": "Quotation first, iti, then who said it."
+    },
+    {
+      "id": "L5-M1-S04",
+      "display": "vasudhā eva kuṭumbakam.",
+      "script": "वसुधा एव कुटुम्बकम्।",
+      "cue": "The earth itself is one family.",
+      "literal": "earth indeed family",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vasudhā",
+            "cue": "the earth · the world",
+            "tag": "delta",
+            "forms": ["vasudhā"],
+            "note": "The earth, as the ground everybody stands on. Feminine, and the subject of a sentence that has no verb in it at all."
+          },
+          {
+            "display": "eva",
+            "cue": "indeed · itself · nothing but",
+            "tag": "delta",
+            "forms": ["eva"],
+            "note": "The emphasiser. It stands after the word it lifts, so vasudhā eva is 'the earth ITSELF' — put it before vasudhā and it lifts nothing."
+          },
+          {
+            "display": "kuṭumbakam",
+            "cue": "family · household",
+            "tag": "delta",
+            "forms": ["kuṭumbakam"],
+            "note": "A family, in the sense of one household. Neuter, and the predicate of a verbless sentence — 'is one family', with the 'is' left for the reader."
+          }
+        ],
+        "rules": [0, 4, 5]
+      },
+      "trap": "Every poster prints this as two words. The join is real and it is sandhi: vasudhā plus eva is said vasudhaiva. This course writes the parts, so that each one keeps a row you can tap.",
+      "sound": "va-su-DHAA E-va ku-TUM-ba-kam. dh is a d with a puff of breath, and ṭ is a t with the tongue curled back to the roof. Said at speed the first two words fuse into one long ai: vasudhaiva kuṭumbakam. That is the line as it is recited, and it is the same three words.",
+      "variations": [
+        {
+          "display": "vasudhā kuṭumbakam.",
+          "script": "वसुधा कुटुम्बकम्।",
+          "cue": "The earth is a family.",
+          "changed": "eva removed — the sentence survives and loses all its force, which is the cleanest demonstration of what eva does"
+        },
+        {
+          "display": "kim vasudhā eva kuṭumbakam?",
+          "script": "किम् वसुधा एव कुटुम्बकम्?",
+          "cue": "Is the earth itself one family?",
+          "changed": "a yes/no question built on the saying — the shape a learner uses to ask about the line, not to quote it"
+        },
+        {
+          "display": "vidyā eva dhanam.",
+          "script": "विद्या एव धनम्।",
+          "cue": "Learning and nothing else is wealth.",
+          "changed": "the same eva in a sentence of the learner's own making, on two words the ladder already owns — this one is not a quotation and is not offered as one"
+        }
+      ],
+      "mistake": {
+        "display": "eva vasudhā kuṭumbakam.",
+        "why": "eva has been put in front, where English would put 'only'. It is postpositive: it lifts the word it FOLLOWS, so in front of vasudhā it has nothing to lift and the sentence loses the very thing it was famous for."
+      },
+      "usage": "The closing quarter of a verse whose first half says that counting people as one's own or another's is the reckoning of small minds. That first half is named here in English and quoted nowhere, because it needs a genitive plural this course has not opened.",
+      "register": "neutral",
+      "mnemonic": "The earth ITSELF — eva leans backward."
+    },
+    {
+      "id": "L5-M1-S05",
+      "display": "aham subhāṣitāni paṭhāmi, subhāṣitāni hi mahyam rocante.",
+      "script": "अहम् सुभाषितानि पठामि, सुभाषितानि हि मह्यम् रोचन्ते।",
+      "cue": "I read subhāṣitas, for I like them.",
+      "literal": "I well-said-things read, well-said-things for to-me are-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. The second clause has no subject pronoun because its subject is the sayings, not the speaker."
+          },
+          {
+            "display": "subhāṣitāni",
+            "cue": "sayings · well-said things",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural of subhāṣitam. Neuter plurals end in -āni here, the ending L1-M8's phalāni and L3-M9's puṣpāṇi already showed."
+          },
+          {
+            "display": "paṭhāmi",
+            "cue": "read · study",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'I read'. A subhāṣita is something you read and learn by heart, which is why this is the verb it takes."
+          },
+          {
+            "display": "subhāṣitāni",
+            "cue": "sayings · well-said things",
+            "tag": "free",
+            "forms": [],
+            "note": "The same plural again, now the subject of the second clause. The noun is repeated because the neuter plural 'them' is not on this ladder."
+          },
+          {
+            "display": "hi",
+            "cue": "for · indeed",
+            "tag": "delta",
+            "forms": ["hi"],
+            "note": "For — the reason-giver. It never opens a clause: here it stands second, after subhāṣitāni, and the clause it explains is the one before it."
+          },
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's dative 'to me'. rocate and rocante take the liker in this case, which is why the sentence has no word for 'I' in it."
+          },
+          {
+            "display": "rocante",
+            "cue": "are pleasing (more than one)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's plural of rocate. The things liked are the subject and the person is in the dative — 'to me they are pleasing'."
+          }
+        ],
+        "rules": [6, 0]
+      },
+      "trap": "hi cannot start its clause. English puts 'for' or 'because' first; Sanskrit slides hi into second place and the clause reads as the reason for what came before.",
+      "sound": "a-HAM su-BHAA-shi-TAA-ni pa-THAA-mi, su-BHAA-shi-TAA-ni HI MAH-yam ro-CHAN-te. ṭh in paṭhāmi is a t curled back with a puff; c in rocante is the ch of 'church'. Said at speed aham subhāṣitāni is ahaṃ subhāṣitāni, the m softening to a hum before the s.",
+      "variations": [
+        {
+          "display": "aham subhāṣitam paṭhāmi, idam hi mahyam rocate.",
+          "script": "अहम् सुभाषितम् पठामि, इदम् हि मह्यम् रोचते।",
+          "cue": "I am reading a subhāṣita, for I like it.",
+          "changed": "singular throughout — one saying, so the noun, the demonstrative and both verbs all drop to the singular together"
+        },
+        {
+          "display": "aham subhāṣitāni na paṭhāmi, subhāṣitāni hi mahyam na rocante.",
+          "script": "अहम् सुभाषितानि न पठामि, सुभाषितानि हि मह्यम् न रोचन्ते।",
+          "cue": "I do not read subhāṣitas, for I do not like them.",
+          "changed": "both clauses negated; hi keeps its second place and the reason link is untouched by the na in front of the verb"
+        },
+        {
+          "display": "kim bhavān subhāṣitāni paṭhati?",
+          "script": "किम् भवान् सुभाषितानि पठति?",
+          "cue": "Do you read subhāṣitas?",
+          "changed": "turned outward to the listener in this course's polite frame — bhavān with a third-person verb, as it has been since L1-M2"
+        }
+      ],
+      "mistake": {
+        "display": "aham subhāṣitāni paṭhāmi, hi subhāṣitāni mahyam rocante.",
+        "why": "hi has been moved to the front of its clause, on the model of English 'for'. It is an enclitic: it takes second place, after the first word, and a sentence cannot begin with it."
+      },
+      "usage": "How a learner says why they bother with the things. It is also the sentence that shows hi doing ordinary work, off the verse — the same particle that sits inside the half-verse two rungs down this list.",
+      "register": "neutral",
+      "mnemonic": "hi never goes first."
+    },
+    {
+      "id": "L5-M1-S06",
+      "display": "udyamena hi sidhyanti kāryāṇi na manorathaiḥ.",
+      "script": "उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः।",
+      "cue": "Tasks are accomplished by effort, not by wishes.",
+      "literal": "by-effort indeed succeed tasks not by-wishes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "udyamena",
+            "cue": "effort · exertion",
+            "tag": "delta",
+            "forms": ["udyamena"],
+            "note": "Effort, in the instrumental — 'by effort'. The cue is written for the word rather than for the case, because this is the only shape of it the course writes."
+          },
+          {
+            "display": "hi",
+            "cue": "for · indeed",
+            "tag": "free",
+            "forms": [],
+            "note": "The same enclitic, second in its line as always. Here it is emphatic rather than causal: 'by effort INDEED'."
+          },
+          {
+            "display": "sidhyanti",
+            "cue": "succeed · are accomplished",
+            "tag": "delta",
+            "forms": ["sidhyanti"],
+            "note": "Are brought off. Plural, agreeing with kāryāṇi in the next quarter — which is exactly why the cut could not stop at the end of this quarter."
+          },
+          {
+            "display": "kāryāṇi",
+            "cue": "tasks · things to be done",
+            "tag": "delta",
+            "forms": ["kāryāṇi"],
+            "note": "The plural of L3-M2's kāryam, and a row of its own here because a level never edits a file below it. It is the subject, and it opens the second quarter."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', negating what follows it rather than the whole line: not the tasks, but the wishes."
+          },
+          {
+            "display": "manorathaiḥ",
+            "cue": "wishes · daydreams",
+            "tag": "delta",
+            "forms": ["manorathaiḥ"],
+            "note": "Wishes — literally chariots of the mind, manas and ratha joined inside one word. Instrumental plural, matching udyamena at the other end of the line."
+          }
+        ],
+        "rules": [3, 2, 6]
+      },
+      "trap": "This is a HALF-verse, not a quarter, and the reason is mechanical: udyamena hi sidhyanti has no subject in it. The cut had to take both quarters or leave the saying out.",
+      "sound": "ud-ya-ME-na HI SIDH-yan-ti KAAR-yaa-ni NA ma-no-ra-THAIH. The ṇ of kāryāṇi is curled back, and the final -ḥ of manorathaiḥ echoes the ai: 'ma-no-ra-thai-hi'. Nothing joins across the words in this line — it is recited exactly as the page writes it, which is not true of most verses.",
+      "variations": [
+        {
+          "display": "udyamena kāryāṇi sidhyanti.",
+          "script": "उद्यमेन कार्याणि सिध्यन्ति।",
+          "cue": "Tasks are accomplished by effort.",
+          "changed": "the claim alone, in this course's own verb-final order and without the verse's hi — a sentence a learner may build rather than a line they quote"
+        },
+        {
+          "display": "manorathaiḥ kāryāṇi na sidhyanti.",
+          "script": "मनोरथैः कार्याणि न सिध्यन्ति।",
+          "cue": "Tasks are not accomplished by wishes.",
+          "changed": "the second half standing alone, with na now in front of the verb where a learner would put it"
+        },
+        {
+          "display": "kim udyamena kāryāṇi sidhyanti?",
+          "script": "किम् उद्यमेन कार्याणि सिध्यन्ति?",
+          "cue": "Are tasks accomplished by effort?",
+          "changed": "the question form, which no one asks of the verse and everyone asks of the claim"
+        }
+      ],
+      "mistake": {
+        "display": "udyamena hi sidhyanti.",
+        "why": "The cut has been made in the middle of the saying, at the end of the first quarter. sidhyanti is plural and its subject kāryāṇi is in the next quarter, so what is left is a verb with nothing to be about."
+      },
+      "usage": "The first half of a verse whose second half says that deer do not walk into a sleeping lion's mouth. The lion half is named here and quoted nowhere: it needs a genitive of a participle and two nouns this course has not bought.",
+      "register": "neutral",
+      "mnemonic": "Effort, not wishes — and take both quarters."
+    },
+    {
+      "id": "L5-M1-S07",
+      "display": "adhyāpakaḥ vidyālaye subhāṣitāni vadati.",
+      "script": "अध्यापकः विद्यालये सुभाषितानि वदति।",
+      "cue": "The teacher says subhāṣitas at school.",
+      "literal": "teacher at-school well-said-things says",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adhyāpakaḥ",
+            "cue": "teacher",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's teacher. A man teaching is adhyāpakaḥ and a woman adhyāpikā, and the verb after either is the same."
+          },
+          {
+            "display": "vidyālaye",
+            "cue": "school",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school, in the locative — 'at school'. The word is vidyā plus ālayaḥ, the house of learning, which S01 has just met the first half of."
+          },
+          {
+            "display": "subhāṣitāni",
+            "cue": "sayings · well-said things",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural again, as the object this time. Neuter plurals look the same whether they are subject or object, and the sentence around them decides."
+          },
+          {
+            "display": "vadati",
+            "cue": "speaks · says",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M7's 'says', singular for one teacher. With no iti anywhere, this is not a quotation — it is a statement about what somebody says."
+          }
+        ],
+        "rules": [9, 0]
+      },
+      "trap": "No iti here, and none belongs. iti closes a quoted LINE; when the object is just the word for sayings, the sentence is an ordinary one and takes no quote-closer at all.",
+      "sound": "a-DHYAA-pa-kah vid-YAA-la-ye su-BHAA-shi-TAA-ni VA-da-ti. dhy is one cluster, an aspirated d with a y riding off it. Said at speed adhyāpakaḥ vidyālaye becomes adhyāpako vidyālaye — the final -aḥ turns into -o before a voiced sound. The page keeps -aḥ.",
+      "variations": [
+        {
+          "display": "adhyāpikā vidyālaye subhāṣitāni vadati.",
+          "script": "अध्यापिका विद्यालये सुभाषितानि वदति।",
+          "cue": "The teacher says subhāṣitas at school.",
+          "changed": "the teacher is a woman, so only the noun forks — the verb is third person either way and does not move"
+        },
+        {
+          "display": "adhyāpakaḥ vidyālaye subhāṣitāni na vadati.",
+          "script": "अध्यापकः विद्यालये सुभाषितानि न वदति।",
+          "cue": "The teacher does not say subhāṣitas at school.",
+          "changed": "negated in front of the verb, which leaves the place phrase exactly where it was"
+        },
+        {
+          "display": "kutra adhyāpakaḥ subhāṣitāni vadati?",
+          "script": "कुत्र अध्यापकः सुभाषितानि वदति?",
+          "cue": "Where does the teacher say subhāṣitas?",
+          "changed": "L1-M2's kutra asks for the place, so the locative drops out and the question word takes the front"
+        }
+      ],
+      "mistake": {
+        "display": "adhyāpakaḥ vidyālaye subhāṣitāni iti vadati.",
+        "why": "iti has been added after a plain object. It closes a quotation, and there is no quotation here — only the word for sayings. A quote-closer with nothing to close is a sentence a listener waits for the end of."
+      },
+      "usage": "Where the thing actually lives. A subhāṣita is quoted at the start of a class, at the end of an argument and at the top of a letter, and the school is where an Indian learner first meets the ones everybody knows.",
+      "register": "neutral",
+      "mnemonic": "No quoted line, no iti."
+    },
+    {
+      "id": "L5-M1-S08",
+      "display": "aham tat subhāṣitam na jānāmi.",
+      "script": "अहम् तत् सुभाषितम् न जानामि।",
+      "cue": "I do not know that saying.",
+      "literal": "I that well-said-thing not know",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. The verb already carries the person, so this pronoun is here for weight rather than necessity."
+          },
+          {
+            "display": "tat",
+            "cue": "that (thing) · it",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's 'that', pointing at something already mentioned. Neuter, which is what subhāṣitam needs."
+          },
+          {
+            "display": "subhāṣitam",
+            "cue": "a saying · a well-said thing",
+            "tag": "free",
+            "forms": [],
+            "note": "The singular, as the object. Neuter nouns look the same as subject and as object, and tat in front of it does too."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', standing in front of the verb it negates."
+          },
+          {
+            "display": "jānāmi",
+            "cue": "I know",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'I know'. A saying is a thing you either have by heart or do not, which is why this verb and not a verb of understanding."
+          }
+        ],
+        "rules": [9, 0]
+      },
+      "trap": "tat is 'that' pointing at a thing, not 'that' introducing a clause. Sanskrit uses different words for the two jobs, and the clause-introducer is not in this sentence.",
+      "sound": "a-HAM TAT su-BHAA-shi-tam NA jaa-NAA-mi. The j is the j of 'jam'. Said at speed aham tat is ahaṃ tat, the m softening to a hum before the t, and subhāṣitam na is subhāṣitaṃ na for the same reason.",
+      "variations": [
+        {
+          "display": "aham idam subhāṣitam jānāmi.",
+          "script": "अहम् इदम् सुभाषितम् जानामि।",
+          "cue": "I know this saying.",
+          "changed": "positive, and the demonstrative moves from that-over-there to this-one-here — two changes that answer each other"
+        },
+        {
+          "display": "aham tat subhāṣitam na jānāmi, kintu idam jānāmi.",
+          "script": "अहम् तत् सुभाषितम् न जानामि, किन्तु इदम् जानामि।",
+          "cue": "I do not know that saying, but I know this one.",
+          "changed": "L1-M10's kintu turns the admission into a contrast, which is what a speaker actually says next"
+        },
+        {
+          "display": "aham subhāṣitāni na jānāmi.",
+          "script": "अहम् सुभाषितानि न जानामि।",
+          "cue": "I do not know subhāṣitas.",
+          "changed": "the object goes plural and loses its demonstrative, turning one gap into a general confession"
+        }
+      ],
+      "mistake": {
+        "display": "aham na tat subhāṣitam jānāmi.",
+        "why": "na has drifted to the front, in front of the object. It negates the word that follows it, so this says something closer to 'I know a not-that saying'. It belongs immediately before the verb."
+      },
+      "usage": "The honest answer when a saying is quoted at you and you have never met it. It is also the sentence that sets up the repair module at the end of this level, which buys the words for meaning and understanding.",
+      "register": "neutral",
+      "mnemonic": "na hugs the verb."
+    },
+    {
+      "id": "L5-M1-S09",
+      "display": "saḥ pratidinam ekam subhāṣitam paṭhati.",
+      "script": "सः प्रतिदिनम् एकम् सुभाषितम् पठति।",
+      "cue": "He reads one subhāṣita every day.",
+      "literal": "he every-day one well-said-thing reads",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "saḥ",
+            "cue": "he · that man",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he'. The verb is third person whether the subject is saḥ, sā or a polite bhavān."
+          },
+          {
+            "display": "pratidinam",
+            "cue": "every day · daily",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'every day'. It is one word and needs no preposition in front of it."
+          },
+          {
+            "display": "ekam",
+            "cue": "one",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M8's 'one', in the shape that goes with a neuter noun. Counting words agree with what they count."
+          },
+          {
+            "display": "subhāṣitam",
+            "cue": "a saying · a well-said thing",
+            "tag": "free",
+            "forms": [],
+            "note": "The singular, counted by ekam. This is the sentence that says what a learner actually does with the things."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'reads'. In this course reading and studying are one verb, which is exactly right for a line learnt by heart."
+          }
+        ],
+        "rules": [0, 9]
+      },
+      "trap": "ekam is not an article. Sanskrit has none, so ekam is a real count — one saying rather than two — and dropping it changes the sentence to 'he reads a subhāṣita every day'.",
+      "sound": "SAH pra-ti-DI-nam E-kam su-BHAA-shi-tam PA-tha-ti. The final -ḥ of saḥ is a light echo of the a in front of it: 'sa-ha'. The ṭh of paṭhati is a t curled back to the roof with a puff of breath behind it. ekam subhāṣitam is said ekaṃ subhāṣitam, the m softening to a hum before the s.",
+      "variations": [
+        {
+          "display": "sā pratidinam ekam subhāṣitam paṭhati.",
+          "script": "सा प्रतिदिनम् एकम् सुभाषितम् पठति।",
+          "cue": "She reads one subhāṣita every day.",
+          "changed": "the subject becomes a woman; the verb does not move, because a third-person present has no gender in it"
+        },
+        {
+          "display": "aham pratidinam ekam subhāṣitam paṭhāmi.",
+          "script": "अहम् प्रतिदिनम् एकम् सुभाषितम् पठामि।",
+          "cue": "I read one subhāṣita every day.",
+          "changed": "first person, so the verb takes its -āmi ending and the subject pronoun changes with it"
+        },
+        {
+          "display": "kadā saḥ subhāṣitam paṭhati?",
+          "script": "कदा सः सुभाषितम् पठति?",
+          "cue": "When does he read a subhāṣita?",
+          "changed": "L2-M6's kadā asks for the time, so the time word drops out and the question word takes the front"
+        }
+      ],
+      "mistake": {
+        "display": "saḥ pratidinam ekaḥ subhāṣitam paṭhati.",
+        "why": "ekaḥ is the shape that goes with a masculine noun, and subhāṣitam is neuter. The count has to match what it counts, so it is ekam here — the same agreement L1-M8 taught with ekam phalam."
+      },
+      "usage": "The ordinary discipline: one line a day, learnt by heart. It is how the stock of sayings an adult can quote actually gets built, and it is why a subhāṣita is quoted whole rather than paraphrased.",
+      "register": "neutral",
+      "mnemonic": "One a day, and it must agree."
+    },
+    {
+      "id": "L5-M1-S10",
+      "display": "mama mate vidyā eva uttamam dhanam.",
+      "script": "मम मते विद्या एव उत्तमम् धनम्।",
+      "cue": "In my view, learning and nothing else is the best wealth.",
+      "literal": "my in-view learning indeed excellent wealth",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'my'. It belongs to mate and the two travel together as one phrase."
+          },
+          {
+            "display": "mate",
+            "cue": "opinion · view",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M4's 'opinion' in the locative — 'in the view'. mama mate is the standing way to mark what follows as yours and not everybody's."
+          },
+          {
+            "display": "vidyā",
+            "cue": "learning · knowledge",
+            "tag": "free",
+            "forms": [],
+            "note": "The module's first word, here as the subject of a sentence with no verb in it."
+          },
+          {
+            "display": "eva",
+            "cue": "indeed · itself · nothing but",
+            "tag": "free",
+            "forms": [],
+            "note": "The emphasiser, lifting vidyā because it stands after it. Said at speed the two fuse into vidyaiva, exactly as vasudhā eva fuses."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', in its neuter shape to agree with dhanam. It agrees with the word it describes, never with the subject."
+          },
+          {
+            "display": "dhanam",
+            "cue": "money · wealth",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M8's 'wealth'. It is neuter and vidyā is feminine, and that is fine — a predicate noun is its own word with its own gender."
+          }
+        ],
+        "rules": [4, 9]
+      },
+      "trap": "mama mate is a hedge, and it is doing real work here. Without it the sentence reads as a quoted saying, and this one is not: it is the learner's own line, built out of the module's particle.",
+      "sound": "MA-ma MA-te vid-YAA E-va UT-ta-mam DHA-nam. Said at speed vidyā eva fuses to vidyaiva, the long ā and the e running together into one ai, and uttamam dhanam is uttamaṃ dhanam. The page keeps all four words apart.",
+      "variations": [
+        {
+          "display": "mama mate vidyā uttamam dhanam.",
+          "script": "मम मते विद्या उत्तमम् धनम्।",
+          "cue": "In my view, learning is the best wealth.",
+          "changed": "eva removed, so the claim stays and the exclusion goes — 'learning is' rather than 'learning and nothing else is'"
+        },
+        {
+          "display": "bhavataḥ mate kim vidyā eva uttamam dhanam?",
+          "script": "भवतः मते किम् विद्या एव उत्तमम् धनम्?",
+          "cue": "In your view, is learning and nothing else the best wealth?",
+          "changed": "the hedge is handed to the listener in the polite genitive bhavataḥ, and kim makes the whole thing a question"
+        },
+        {
+          "display": "mama mate vidyā eva uttamam dhanam, kintu dhanam api uttamam.",
+          "script": "मम मते विद्या एव उत्तमम् धनम्, किन्तु धनम् अपि उत्तमम्।",
+          "cue": "In my view learning is the best wealth — but money is good too.",
+          "changed": "a second clause takes half of it back with kintu and api, which is what eva invites a listener to do"
+        }
+      ],
+      "mistake": {
+        "display": "mama mate eva vidyā uttamam dhanam.",
+        "why": "eva has landed after mate, so it now lifts the opinion — 'in my view and nobody else's'. The word it was meant to lift is vidyā, and eva only ever lifts the word in front of it."
+      },
+      "usage": "Where the module ends up: the learner using the saying-maker's own particle in a sentence of their own, hedged so that nobody mistakes it for a quotation. That is the honest end of a module about lines other people wrote.",
+      "register": "neutral",
+      "mnemonic": "Your own line needs mama mate in front of it."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M1-C01",
+      "display": "vidyā eva uttamam dhanam.",
+      "script": "विद्या एव उत्तमम् धनम्।",
+      "cue": "Learning and nothing else is the best wealth."
+    },
+    {
+      "id": "L5-M1-C02",
+      "display": "vidyā dadāti vinayam iti adhyāpakaḥ vadati.",
+      "script": "विद्या ददाति विनयम् इति अध्यापकः वदति।",
+      "cue": "The teacher says, 'Learning gives good conduct.'"
+    },
+    {
+      "id": "L5-M1-C03",
+      "display": "sā pratidinam subhāṣitāni paṭhati.",
+      "script": "सा प्रतिदिनम् सुभाषितानि पठति।",
+      "cue": "She reads subhāṣitas every day."
+    },
+    {
+      "id": "L5-M1-C04",
+      "display": "idam subhāṣitam mahyam rocate.",
+      "script": "इदम् सुभाषितम् मह्यम् रोचते।",
+      "cue": "I like this saying."
+    },
+    {
+      "id": "L5-M1-C05",
+      "display": "vasudhā eva kuṭumbakam iti janāḥ vadanti.",
+      "script": "वसुधा एव कुटुम्बकम् इति जनाः वदन्ति।",
+      "cue": "People say, 'The earth itself is one family.'"
+    },
+    {
+      "id": "L5-M1-C06",
+      "display": "aham ekam subhāṣitam jānāmi.",
+      "script": "अहम् एकम् सुभाषितम् जानामि।",
+      "cue": "I know one subhāṣita."
+    },
+    {
+      "id": "L5-M1-C07",
+      "display": "udyamena eva kāryāṇi sidhyanti.",
+      "script": "उद्यमेन एव कार्याणि सिध्यन्ति।",
+      "cue": "Tasks are accomplished by effort and nothing else."
+    },
+    {
+      "id": "L5-M1-C08",
+      "display": "mama kāryāṇi udyamena sidhyanti.",
+      "script": "मम कार्याणि उद्यमेन सिध्यन्ति।",
+      "cue": "My tasks are accomplished by effort."
+    },
+    {
+      "id": "L5-M1-C09",
+      "display": "bhavān pratidinam subhāṣitāni paṭhati.",
+      "script": "भवान् प्रतिदिनम् सुभाषितानि पठति।",
+      "cue": "You read subhāṣitas every day."
+    },
+    {
+      "id": "L5-M1-C10",
+      "display": "saḥ vidyālaye subhāṣitam vadati.",
+      "script": "सः विद्यालये सुभाषितम् वदति।",
+      "cue": "He says a subhāṣita at school."
+    },
+    {
+      "id": "L5-M1-C11",
+      "display": "idam subhāṣitam purāṇam, kintu uttamam.",
+      "script": "इदम् सुभाषितम् पुराणम्, किन्तु उत्तमम्।",
+      "cue": "This saying is old, but it is excellent."
+    },
+    {
+      "id": "L5-M1-C12",
+      "display": "vinayam vidyā eva dadāti.",
+      "script": "विनयम् विद्या एव ददाति।",
+      "cue": "Learning and nothing else gives good conduct."
+    },
+    {
+      "id": "L5-M1-C13",
+      "display": "aham subhāṣitāni na jānāmi, kintu vidyā dadāti vinayam iti jānāmi.",
+      "script": "अहम् सुभाषितानि न जानामि, किन्तु विद्या ददाति विनयम् इति जानामि।",
+      "cue": "I do not know subhāṣitas, but I do know 'learning gives good conduct'."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
