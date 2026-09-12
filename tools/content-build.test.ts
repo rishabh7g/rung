@@ -109,11 +109,25 @@ describe('the manifest carries the fixture row (#606)', () => {
   });
 });
 
-/** The rungs authored so far: L1-M1..M2 (#608) plus M3..M5 (#609) — the only en-sa content there is. */
-const AUTHORED = ['L1-M1', 'L1-M2', 'L1-M3', 'L1-M4', 'L1-M5'];
+/**
+ * The rungs authored so far: L1-M1..M2 (#608), M3..M5 (#609) and M6..M10 (#610) — the whole of
+ * en-sa L1 and the only en-sa content there is. L2..L5 are still an empty skeleton.
+ */
+const AUTHORED = [
+  'L1-M1',
+  'L1-M2',
+  'L1-M3',
+  'L1-M4',
+  'L1-M5',
+  'L1-M6',
+  'L1-M7',
+  'L1-M8',
+  'L1-M9',
+  'L1-M10',
+];
 
 describe('the fixture course ships a complete ladder and bundle', () => {
-  it('is five levels of ten, with the five authored rungs flagged and every other one drafted', () => {
+  it('is five levels of ten, with the ten authored rungs flagged and every other one drafted', () => {
     const levels = readJson<{
       courseId: string;
       levels: {
@@ -131,8 +145,9 @@ describe('the fixture course ships a complete ladder and bundle', () => {
       expect(typeof level.draftNote, `${level.id} draftNote`).toBe('string');
       expect(level.modules.length, `${level.id} rungs`).toBe(10);
       for (const module of level.modules) {
-        // An authored rung loses its draft flag and gains content; the level keeps its own draft
-        // until all ten are authored, which is the rule the skeleton (#606) shipped with.
+        // An authored rung loses its draft flag and gains content. L1's own level draft stays
+        // ON even now that all ten of its rungs are authored: the flag clears at graduation
+        // (#611), which is a separate issue from the authoring wave that filled the level.
         const authored = AUTHORED.includes(module.id);
         expect(module.hasContent, `${module.id} hasContent`).toBe(authored);
         expect(module.draft, `${module.id} draft`).toBe(authored ? undefined : true);
@@ -182,15 +197,17 @@ describe('the fixture course ships a complete ladder and bundle', () => {
 
   /**
    * #606 shipped the course with NO `modules/` folder, and this case pinned that a missing folder
-   * is tolerated rather than an error. #608 created the folder with the first two rungs and #609
-   * carried it to five, so what is pinned now is its exact contents: the ladder is authored in
-   * order, and a sixth file here without its `levels.json` flag flipped would be a rung the app
-   * cannot reach.
+   * is tolerated rather than an error. #608 created the folder with the first two rungs, #609
+   * carried it to five and #610 closed the level at ten, so what is pinned now is its exact
+   * contents: the ladder is authored in order, and an L2 file here without its `levels.json`
+   * flag flipped would be a rung the app cannot reach.
    */
   it('has exactly the rungs authored so far, and nothing ahead of them', () => {
     const dir = path.join(CONTENT, FIXTURE_COURSE, 'modules');
     expect(existsSync(dir)).toBe(true);
-    expect(readdirSync(dir).sort()).toEqual(AUTHORED.map((id) => `${id}.json`));
+    // AUTHORED is in LADDER order and readdir is in STRING order, where L1-M10 sorts next to
+    // L1-M1 — so both sides are sorted before the comparison rather than the list reordered.
+    expect(readdirSync(dir).sort()).toEqual(AUTHORED.map((id) => `${id}.json`).sort());
   });
 });
 
@@ -210,12 +227,12 @@ describe('the gate drops the fixture course, and the build does not trip over it
 
   it('dev: --with-fixtures admits the course and ships the rungs it has, without erroring', () => {
     expect(DEV.exitCode).toBe(0);
-    expect(DEV.lines).toContain('en-sa: 5 modules (L1-M1..M5)');
+    expect(DEV.lines).toContain('en-sa: 10 modules (L1-M1..M10)');
     expect(DEV.lines.filter((line) => line.includes('FAIL'))).toEqual([]);
   });
 
   /**
-   * **The seam #606 could only assert half of, now that #608 has authored the first two rungs.**
+   * **The seam #606 could only assert half of, now that L1 is authored end to end.**
    *
    * `emitTree` writes only the courses that shipped at least one module, and the emitted
    * `courses.json` is filtered the same way. While the ladder was empty, en-sa was absent from the
