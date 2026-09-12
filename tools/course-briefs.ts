@@ -1650,6 +1650,155 @@
  * as cases; plurals beyond the counted ones M8 needs; and the classical register, which is
  * L4-M7's.
  *
+ * ## en-la: decisions a brief must settle before any Latin is written
+ *
+ * en-la is the eleventh course and the first whose spelling has **no build gate at all**. Every
+ * course before it that needed a spelling decision wrote a non-Latin alphabet, so
+ * `checkScriptMode` was there to ask "is this Latin?"; its first statement is
+ * `if (scriptMode !== 'romanized') return report`, and en-la's row is `native`, so it returns an
+ * empty report and asks nothing. The orthography was settled BEFORE any brief existed (#630,
+ * recorded in `docs/123-en-la-orthography-decisions.md`), so a brief TEACHES it and never
+ * re-derives it. Everything below is what a brief must settle ON TOP of the orthography, and every
+ * point is repeated in the note of the module it governs, because a prompt only ever shows an
+ * author the notes.
+ *
+ * ### 0. The orthography, in the lines a brief has to obey — settled, not reopened
+ *
+ * **Macrons on every long vowel, per the Oxford Latin Dictionary, on every readable Latin string**
+ * — a `display`, a `forms` entry, a variation, a pool item — including hidden quantity before
+ * `ns`/`nf` (`cōnsul`, `īnfāns`) and the long first-person `-ō` (`amō`). **Consonantal u is `v` and
+ * consonantal i is `i`: `vīvō`, `via`, `iam`, `Iūlia`, `iuvenis`, and `j` never appears.** **No
+ * stress mark, ever** — Latin stress follows from vowel length by the penultimate rule, so the
+ * macron already gives it and an acute would be a second mark on the same vowel; en-ru needed
+ * acutes because Russian reduces unstressed vowels and Latin does not. **No apostrophe**, because
+ * Latin writes no elision (`multa est`, never `mult'est`). **NFC**, precomposed: `ā` U+0101,
+ * `ē` U+0113, `ī` U+012B, `ō` U+014D, `ū` U+016B and their capitals, never a base letter plus
+ * U+0304. **`ȳ` is never written** — no source in `tools/font-subset.ts` draws it and no target
+ * claims it (#631), so Greek loans take a plain `y`. **`script` is never authored**: the display
+ * already IS the script, so a `script` line would be the same string twice.
+ *
+ * Three of those are index rules rather than taste, and each was checked against the real
+ * `src/engine/surface.ts` rather than assumed. Rule 4 folds case without a locale and **never
+ * touches a diacritic**, so `normalizeSurface('venit') !== normalizeSurface('vēnit')` — the present
+ * M4 teaches and the perfect M5 teaches are two keys **only if the macron is written**, and one row
+ * with one wrong note if it is not. The same run separates `est`/`ēst`, `hic`/`hīc`, `liber`/`līber`
+ * and — the one that matters most, because it is a case ending rather than a lexical pair —
+ * `rosa`/`rosā`. A macron-less en-la would teach the ablative and index it as the nominative. And
+ * the apostrophe is the one character rule 3 does NOT strip at a word edge, so an elided spelling
+ * would mint one real key for a word that is two.
+ *
+ * **NFC is a rendering hazard, not a formality**, and the argument is en-sa's with a different
+ * mark: a decomposed `ā` is `a` + U+0304, no target in `tools/font-subset.ts` claims U+0304, so
+ * `coveredChars` drops it and the base letter draws from Mukta while the macron draws from
+ * `system-ui`. Nothing in the build normalises — `tools/content-build.ts` emits authored bytes
+ * verbatim — and `surface.ts` normalises the index KEY only, so the index would resolve correctly
+ * while the rendered line looked wrong.
+ *
+ * ### 1. (a) The enclitic seam — the decision the course rests on
+ *
+ * `-que`, `-ne` and `-ve` attach to the word before them, and printed Latin writes them solid.
+ * **This course writes the hyphen** (#630 §2): `agis-ne bene?`, `pater māter-que`. Measured, not
+ * assumed — `surfaceIndexKeys('agis-ne bene')` is `['agis-ne bene', 'agis', 'ne']`, where the solid
+ * `vidēsne` earns `['vidēsne']` and no parts — so the hyphen is what keeps the bare host reachable
+ * by tap and gives the enclitic a key of its own. `sound` carries the accent shift the enclitic
+ * causes (vi-DES-ne, ma-TER-que, with the enclitic pulling the stress onto the syllable before it)
+ * and the note says plainly that printed Latin writes it solid, so
+ * the learner is not surprised by a page of Cicero. This is en-ko's particle hyphen in Latin:
+ * morphophonemic at the hyphen, orthographic everywhere else.
+ *
+ * **The ordering law the hyphen creates, and it is the one thing a brief can get wrong
+ * irrecoverably.** `surfaceIndexKeys` hands the part keys to whichever row is indexed FIRST, and
+ * index order is ladder → sentence → word → forms. en-ko proves what that means: in its emitted
+ * `L1-M1` index the key `neun` belongs to the HOST row at word 0, not to the `-neun` row at word 1
+ * (#601, "decided policy, not defects"). So **the bare host must be a word row at or before the
+ * seam that would donate its key** — L1-M2 teaches `agis` as its own row before it writes
+ * `agis-ne`, or the learner tapping the bare `agis` a later module writes is handed the question
+ * particle's note.
+ *
+ * **Lexicalised `-que` is written solid and the list is closed**: `atque`, `neque`, `itaque`,
+ * `quoque`, `quisque`, `uterque`, `namque`, `undique`, `ubīque`, `dēnique`. Each is one row and
+ * none is a seam — a hyphen in `itaque` would mint `ita` and `que` as keys for a word that is
+ * neither. **`-ne` attaches to the questioned word, not always the verb** (`tū-ne es?`), so the
+ * seam is a place the author chooses and the brief names the host in each pattern. **The part key
+ * `ne` is not `nē`**: distinct keys, so the enclitic here and the negative of the subjunctive in
+ * L3-M4 never collide, and no L1 row may claim `nē`.
+ *
+ * **The hyphens in these briefs' PATTERNS are meta-notation and never reach a display.** `N-acc`,
+ * `N-abl`, `V-ō`, `V-ī` and `V-bō` name a case or an ending in the pattern language every course in
+ * this file uses; only `<host>-ne` and `N-que` describe a hyphen an author actually writes. The
+ * distinction matters because §0 bans the hyphen everywhere but the seam, and a reader skimming the
+ * patterns would otherwise find the ban contradicted on its own page.
+ *
+ * ### 2. (b) Which "you", and which past — course-wide, decided once
+ *
+ * **`tū`/`vōs` is NUMBER, never register.** Latin has no T/V distinction, and `vōs` to one person
+ * is simply wrong. Every other course in this catalogue puts politeness on a pronoun — `usted`,
+ * `Lei`, `vous`, `Sie`, `vy`, `bhavān` — so a brief must SAY this, or an author will reach for the
+ * plural as a polite form out of habit. Politeness rides on the **verb**: `velim`, `quaesō`, `sīs`,
+ * which is L2-M1's, and the consequence for this repo is that en-la's `formal` register chip sits
+ * on a verb form rather than on a pronoun.
+ *
+ * **The past is the PERFECT** (M5): a second stem learned per verb — `veniō`/`vēnī`,
+ * `faciō`/`fēcī`, `sum`/`fuī`, `amō`/`amāvī` — with no auxiliary, covering both "I did" and "I have
+ * done". **The imperfect is deferred to L4-M8** and is named in M5 as deferred, because every
+ * English speaker wants it there. A perfect stem is its OWN row and never a `forms` entry of the
+ * present: different stem, different index key (§0), and treating it as a form would hand the
+ * perfect's key to the present's row and put M4's note under M5's word.
+ *
+ * ### 3. (c) Homographs — first occurrence wins, so every collision has a named owner
+ *
+ * The macron REMOVES nine collisions (`est`/`ēst`, `hic`/`hīc`, `venit`/`vēnit`, `liber`/`līber`,
+ * `malum`/`mālum`, `rosa`/`rosā`, `solum`/`sōlum`, `os`/`ōs`, `ne`/`nē`), which is most of the work.
+ * What is left is real homography and each gets an owner: **`quod`** — M9 owns "because", the
+ * relative waits for L3; **`eō`** — M4 owns the verb "I go", against the ablative "by that" and the
+ * adverb "there"; **`cum`** — L2-M4 owns the preposition, L4-M6 the conjunction; **`quam`** — L2-M9
+ * owns "than"; **`ut`** and **`quī`** are L3's. `sē` and `suus` are deferred to L3-M5 with the
+ * accusative and infinitive, the first construction that needs them.
+ *
+ * ### 4. (d) Gender on the speaker, and the numerals that decline
+ *
+ * `discipulus`/`discipula` is in the FIRST sentence of M1, and every row whose display is gendered
+ * owns both shapes from its first row — the hero writing one and a variation the other, in the same
+ * item, so no learner meets a course that can only introduce half of them. Neither shape is the
+ * default and a note must not present the masculine as one. The same holds for `Rōmānus`/`Rōmāna`
+ * and for every predicate adjective M9 writes. **`ūnus/ūna/ūnum`, `duo/duae/duo` and `trēs/tria`
+ * decline; `quattuor` upward do not** — the declining numerals enter at **M8** and nothing below it
+ * writes one, because a number that agrees is the one thing in that module English does not prepare
+ * a learner for.
+ *
+ * ### 5. (e) The cognate trap, named per module
+ *
+ * English is a Latin-vocabulary language, which is a help for reading and a trap for meaning. The
+ * learner will read `familia` as family (it is the household, slaves included), `virtūs` as virtue
+ * (manliness, courage), `villa` as villa (a farm), `pānis` as a pan. **Each module's brief names
+ * its own false friends** so that the `mistake` plate lands on them and not only on grammar.
+ *
+ * ### 6. Which Latin, and where the other registers live
+ *
+ * The **conversational classical register** — the comedies, Cicero's letters, and the ancient
+ * *Colloquia* phrasebooks — pronounced in **restored classical**: hard `c` and `g` always, `v` as
+ * *w*, `ae` as *eye*, `r` trilled, `h` sounded, vowel length as length. That is the only tradition
+ * under which the macrons are true, which is why it is the course's, and the **ecclesiastical**
+ * tradition is named as L5-M3's subject and appears in no `sound` line before it. Modern vocabulary
+ * comes from **one named source** — the Vatican's *Lexicon Recentis Latinitatis*, then the settled
+ * usage of the living-Latin community (`tēlephōnum`, `raeda`, `computātrum`, `birota`) — so that
+ * L2-M7 and L3-M8 do not each coin a word for the same object. Inscriptional and legal Latin is
+ * L4-M7's, and no earlier module reaches for it.
+ *
+ * ### 7. Bounds, and which one actually binds
+ *
+ * The ramp is en-sa's, 4 → 7, for a sharper version of the same reason: Latin's synthesis packs a
+ * whole English clause into two tokens (`gacchāmi`'s Latin twin is `eō`), so the word bound is
+ * slack and **the constraint that actually binds is `newWordCap` (`NEW_WORD_CAP`, 25)** — every
+ * case ending and every gendered shape is a new surface, and one noun shown in three cases with
+ * both genders has spent six of the twenty-five.
+ *
+ * Kept deliberately OUT of L1, and named as deferred in the module that would otherwise reach for
+ * it: the imperfect and every other past but the perfect (M5); the subjunctive in any use (M3's
+ * `nōlī` and L2-M6's `eāmus` are where it starts to press); the locative (M7); `nōlī` + infinitive
+ * as the negative command (M3 names it, L2-M1 teaches it); `sē` and `suus` (L3-M5); the relative
+ * pronoun (L3); the passive (L4-M7); and the ecclesiastical register, which is L5-M3's.
+ *
  * ## en-es L2: the decisions, taken against the finished L1 (#426)
  *
  * The second L2 briefed, after hi-mr's (#295). Planned against the REAL cumulative L1 index —
@@ -12650,6 +12799,228 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "INDEX SEAM. Fresh rows: prathamam, tataḥ, anantaram, ante — four, and ideally the module's whole spend. Everything else is reused with NO new row, which is what makes this module the test of the level rather than an addition to it: every participial past is L1-M4's and L1-M5's, ataḥ and yataḥ are L1-M9's and take no second row here any more than L1-M10 gave them one, ca and kintu and tathāpi and api are L1-M10's, and every L2 row this account reaches for belongs to the module that opened it. Language of the fields holds to the last account: ENGLISH in every teaching field, IAST in every L2 slot, Devanagari only in script, no glossEn, and literal on every sentence — with a verb at the end of each clause, a sequencer at the front and a participle agreeing with a speaker who is not named, there is no sentence here that reads without it.",
       ],
       maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+  },
+  'en-la': {
+    'L1-M1': {
+      id: 'L1-M1',
+      title: 'Who I am',
+      job: 'Introduce yourself and state what you like',
+      patterns: [
+        'N/Adj + sum',
+        'ego + N/Adj + sum',
+        'mihi nōmen est + <name>',
+        'mihi placet + N-nom',
+      ],
+      notes: [
+        "LANGUAGE OF THE FIELDS, settled once for the course: the document speaks the course's L1, so every teaching field — rules[].text, word note, trap, sound, usage, mnemonic, cue, mistake.why and variations[].changed — is ENGLISH, and Latin appears only in the L2 slots: sentence / word / variation / mistake / pool display, and word forms. There is NO glossEn on this course (#405; checkGlossEn fails a build that carries one) and NO script line either — the display already IS the script, so a script field would be the same string twice, which is the one thing a reader who knows hi-mr will try to add. literal is the tool that replaces the gloss, and in a verb-final, case-marked language it is needed on nearly every sentence rather than occasionally: discipulus sum is 'a-student I-am', mihi nōmen est Marcus is 'to-me the-name is Marcus', mihi placet liber is 'to-me is-pleasing the-book'. An author who skips literal is hiding the one thing that makes the case system readable.",
+        "THREE STRUCTURAL FACTS, all in M1, because no Latin sentence can dodge them. (a) The verb is LAST by default, and what says who did what is the CASE ENDING, not the position — so moving a word is emphasis, never grammar. The slogan this module will attract is 'Latin has free word order'; the law that replaces it is 'case-marked, and verb-final by default'. A brief that repeats the slogan leaves the learner unable to write a sentence at all, because free order is only free once the endings are right. (b) There are NO ARTICLES: liber is 'a book' and 'the book' and nothing on the page tells them apart. (c) THE PRONOUN IS DROPPED whenever the ending carries it: discipulus sum is a complete sentence and ego is EMPHASIS ('I am a student, whatever you are'). Note the contrast with the copula itself — unlike Sanskrit, Latin's sum is not optional, so what is dropped here is the subject and never the verb.",
+        "THE ORTHOGRAPHY, taught here and never re-derived (#630, docs/123): macrons on EVERY long vowel per the Oxford Latin Dictionary, on every readable Latin string — display, forms, variations, pool items — including hidden quantity before ns/nf (cōnsul, īnfāns) and the long first-person -ō (amō, sum is short but errō is not). Consonantal u is v and consonantal i is i: vīvō, via, iam, Iūlia, and j NEVER appears. No stress mark ever: Latin stress follows from vowel length by the penultimate rule, so the macron already gives it — en-ru needs acutes because Russian reduces unstressed vowels and Latin does not. No apostrophe, because Latin writes no elision (multa est, never mult'est). NFC, precomposed: ā U+0101, ē U+0113, ī U+012B, ō U+014D, ū U+016B and their capitals, never a base letter plus U+0304. ȳ is never written — no bundled face draws it (#631) — so a Greek loan takes a plain y. Three of those are index rules rather than taste and each was checked against the real src/engine/surface.ts: rule 4 folds case but NEVER a diacritic, so venit (M4) and vēnit (M5) are two keys only if the macron is written and one row with one wrong note if it is not; est and ēst, hic and hīc, liber and līber part the same way; and the apostrophe is the one character rule 3 does not strip at a word edge, so an elision would mint one real key for a word that is two. The sharpest of them is not a lexical pair at all — rosa and rosā are a CASE ENDING, so a macron-less en-la would teach the ablative and index it as the nominative.",
+        "REGISTER, settled course-wide and inherited by all ten modules, and it is the one place en-la breaks every sibling's habit: tū and vōs are NUMBER, never politeness. Latin has no T/V distinction and vōs to one person is simply wrong. Every other course in this catalogue puts the polite address on a pronoun — usted, Lei, vous, Sie, vy, bhavān — so an author will reach for the plural as a courtesy out of habit unless the note forbids it. Politeness in Latin rides on the VERB (velim, quaesō, sīs), which is L2-M1's, and the consequence for this repo is that en-la's formal chip will sit on a verb form rather than on a pronoun. L1 writes tū to one person and vōs to more than one, and nothing else.",
+        "LIKING IS DATIVE AND BACKWARDS, the gustar shape in Latin dress: mihi placet liber is 'to-me is-pleasing the-book'. The thing liked is the grammatical SUBJECT, so the verb follows IT and not the speaker — a plural thing takes placent (mihi placent librī), which M9 shows when it returns to this frame. mihi is the dative of ego, so it belongs in the ego row's forms and not in a row of its own. Carry literal on every one of these; the reversal is the lesson, and the mistake plate is the English speaker writing ego placet.",
+        'GENDER ON THE SPEAKER, from the very first sentence: discipulus sum (a man) · discipula sum (a woman), Rōmānus sum · Rōmāna sum. The standing rule for the whole course, and it starts here — the hero writes one gendered shape and a variations entry supplies the other, in the same item, so no learner ever meets a course that can only introduce half of them. Neither shape is the default and the note must not present the masculine as one.',
+        "THE NAME SENTENCE IS A DATIVE OF POSSESSION, and it is the first 'have' in the course that is not habeō: mihi nōmen est Marcus — 'to me the name is Marcus'. Latin also allows Marcus sum, and both are real; teach the dative one as the hero because M3's habeō then lands as a clean delta rather than as a correction. PROPER NOUNS: a name rides unindexed (#61) and IS counted by the shown-surface ratchet (#491), so either give the name a word row of its own or the module raises a baseline it must then live with for the rest of the course. Decide before authoring, not after — en-sa opened at zero by giving both its names rows, and that is the bar.",
+        "INDEX SEAM, and it has no hyphen to help it in this module. A case ending changes the WHOLE token — rosa, rosam, rosae, rosā are four keys the fold will never merge — so plan the WAVE, not the module (hi-mr docs/15): a first-teach row lists every shape THIS LEVEL writes, and only shapes of THAT word, never a cousin and never a synonym (docs/07-llm-review-L1-M6-M10.md). Opened here and owning their level: sum (with es, est and M4's sumus in forms — one verb, one row, and its note says 'the verb to be in the shapes this level writes'), ego (with mē and mihi in forms), discipulus (with discipula), nōmen, liber (with M8's librum), placet (with placent). Written NOWHERE in L1 so their keys stay free: est with a macron (ēst, 'eats', which is L2-M5's), hīc (M7's), and quod in its relative reading (L3's — M9 owns 'because').",
+      ],
+      maxWordsPerSentence: 4,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M2': {
+      id: 'L1-M2',
+      title: 'First exchange',
+      job: 'Greetings, wellbeing, yes/no questions',
+      patterns: [
+        'salvē / salvēte',
+        'valē / valēte',
+        'quid agis',
+        '<host>-ne + <rest>',
+        'ita / minimē + , + <statement>',
+      ],
+      notes: [
+        "THE GREETING AGREES IN NUMBER, and that is the module's first surprise: salvē to one person, salvēte to more than one; valē and valēte the same. It is the first imperative in the course and therefore also the first place the number contrast is visible in a verb — which is worth a rule, because English greets one person and a crowd with the same word. It is NOT a politeness contrast: M1 settled that tū and vōs are number, and salvē/salvēte is the same fact wearing a verb ending. One greeting covers every hour of the day, so there is no good-morning / good-afternoon split to teach, which is the cheapest win in the level.",
+        "LATIN HAS NO WORD FOR YES, and this is the module that has to say so. The answer echoes the verb — Agis-ne bene? — Agō. ('Do you? — I do.') — or is ita, ita vērō, certē for yes and minimē, nōn for no. There is no sīc: that is Spanish, arrived at later and through a different word, and an author who reaches for it is writing a language this course does not teach. Say it in a rule rather than smoothing it over, because the verb-echo answer is a live pattern the learner will need for the rest of the ladder.",
+        "THE YES/NO QUESTION IS THE ENCLITIC -ne, AND IT IS WRITTEN WITH A HYPHEN (#630 §2): agis-ne bene? tū-ne es? Printed Latin writes it solid (agisne) and the note MUST say so, so the learner is not surprised by a page of Cicero; the hyphen is this course's, and it is mechanical rather than aesthetic. surfaceIndexKeys('agis-ne bene') is ['agis-ne bene', 'agis', 'ne'] where the solid vidēsne earns ['vidēsne'] and no parts, so the hyphen is the only thing that keeps the bare host reachable by tap and gives the particle a key of its own. sound carries the accent shift the enclitic causes — a-GIS-ne, said as one word with the stress pulled onto the syllable immediately before the hyphen, and marked with capitals the way every sound line in this repo marks stress, never with an acute (the one mark #630 bans outright). THE ORDERING LAW, and it is the one thing this module can get wrong irrecoverably: surfaceIndexKeys hands the part keys to whichever row is indexed FIRST, in ladder → sentence → word → forms order, and en-ko's emitted L1-M1 index proves what that means — its key neun belongs to the HOST row at word 0, not to the -neun row at word 1 (#601, decided policy). So THIS MODULE MUST TEACH agis AS ITS OWN WORD ROW AT OR BEFORE THE SENTENCE THAT WRITES agis-ne, or a later module's bare agis resolves to the question particle's note. -ne attaches to the WORD BEING QUESTIONED and not always to the verb (tū-ne es? asks 'is it YOU?'), so the seam is a place the author chooses and every pattern above names its host.",
+        'THE ALTERNATIVES ARE NAMED IN PROSE AND WRITTEN NOWHERE. nōnne expects yes, num expects no, and bare intonation does the job in speech — all three are real spoken Latin, all three are named here so a later module cannot quietly introduce one, and all three are written in no L1 display so their keys stay free for L2. INDEX CONSEQUENCE of the question itself, and it is intended: surface.ts strips edge punctuation, so Agis-ne bene? and Agis bene. differ by exactly the seam and nothing else — the question mark is not part of the key. That is what makes the hyphen load-bearing rather than decorative here.',
+        "WELLBEING IS A VERB, NOT AN ADJECTIVE: quid agis? is 'how are you?' and literally 'what are you doing?', answered bene, optimē, or male. Latin has valeō for it too (valēs-ne? — valeō), and the two are worth one usage line between them, because valē the farewell is the same verb in the imperative and a learner who sees both will ask. The cognate trap for this module: quid agis is not 'what are you doing right now' — it is the greeting, and an author who translates it literally in the cue teaches the wrong speech act.",
+        "INDEX SEAM: agis is opened here AS ITS OWN ROW, before the seam that would take its key, and its note is written true of the whole verb — 'the verb agō in the shapes this level writes' — because agō and agit will join it. -ne is its own row too, and its display is written -ne, which normalizeSurface strips to the key ne (checked); the row exists so the particle has a note of its own even though the host donates the key, which is #601's shape and en-la's inheritance rather than a defect to work around. Fresh rows: salvē (with salvēte in forms), valē (with valēte), quid, bene, ita, minimē, nōn, tū (with M3's tē). Written NOWHERE in L1 so their keys stay free: nē with its macron (L3-M4's negative — distinct from this module's ne by rule 4's refusal to fold a diacritic, checked, so the collision is not real), nōnne and num as above, and sīc, which is not a Latin word this course writes at all.",
+      ],
+      maxWordsPerSentence: 4,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M3': {
+      id: 'L1-M3',
+      title: 'Needs and wants',
+      job: "Say what you want and don't want",
+      patterns: [
+        'N-acc + volō',
+        'V-īre + volō',
+        'nōlō + V-īre',
+        'N-acc + habeō',
+        'mihi opus est + N-abl',
+        'nōn + V',
+      ],
+      notes: [
+        "WANTING IS ONE IRREGULAR VERB AND ITS OWN NEGATIVE: volō ('I want'), nōlō ('I do not want'), and nōlō is not nōn volō — it is a separate verb built out of it, which is a shape English has no equivalent for at all. Both take an object or an infinitive, and both land before the verb: aquam volō ('water I-want'), īre volō ('to-go I-want'). Carry literal on every one; the order IS the lesson, and it is M1's verb-final law being paid off rather than a new rule.",
+        "habeō IS THE MODULE'S RELIEF, and it is deliberately placed one module after M1's dative: librum habeō does exactly what English 'I have a book' does, verb-final order aside. M1 taught mihi nōmen est for the name because THAT construction has no habeō version a Roman would use, so the pair reads as two tools rather than as a correction — say so in a usage line, because a learner who meets habeō first will write habeō nōmen, which is the mistake plate.",
+        "NEED IS AN IMPERSONAL WITH AN ABLATIVE, and it is the module's honest difficulty: mihi opus est aquā — 'for me there is need with water'. The thing needed is in the ABLATIVE, not the accusative, so it is the first case in the course that is neither subject nor object, and the ending on a first-declension noun is exactly the macron M1 argued for (aqua → aquā). Show it on a word the level already owns so the ending is visible against a shape the learner has seen, and carry literal. An author who finds this too hard for M3 may hold it to a single hero with its variations, but may not replace it with a habeō sentence: 'need' and 'have' are not the same claim.",
+        "NEGATION IS nōn BEFORE THE VERB and that is L1's whole negation: nōn habeō, nōn volō (beside nōlō). nōlī + infinitive is the negative COMMAND ('do not go') and is NAMED here in prose and written in NO display, because an imperative negated by a different word is a second system and L2-M1 owns it. Latin has no do-support, so there is no helper to negate — nōn sits directly on the verb, which is a clean double delta from English and worth stating as such.",
+        'THE ACCUSATIVE IS THE FIRST CASE ENDING THE LEVEL WRITES, and the module must be honest about a problem it cannot fully solve: the easiest L1 objects are first- and second-declension nouns where the ending IS visible (aqua → aquam, liber → librum), but the neuters are not (nōmen stays nōmen). Say so in the rule rather than pretending every case ending shows, and show the accusative at least twice on nouns where it does. Every accusative shape goes in the FORMS of its first-teach row and never in a row of its own.',
+        "INDEX SEAM: volō and habeō are fresh rows whose notes say 'the verb in the shapes this level writes', so M4's habēs and M6's volet can join them rather than opening rivals. nōlō is its OWN row and not a form of volō — it is a different verb with a different stem, and folding it in would put volō's note under a word that negates it. Fresh: aqua (with aquam and aquā in forms — three shapes, three keys, one row), opus, nōn, īre (a form of the verb eō, which M4 opens as its own row: teach the infinitive here and let M4 own the lexeme). liber gains librum in its M1 row and opens nothing. Written nowhere: nōlī, as above.",
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M4': {
+      id: 'L1-M4',
+      title: 'My day',
+      job: 'Daily habits and time words',
+      patterns: [
+        'N-acc + V-ō',
+        'V-ō (subject dropped)',
+        'cotīdiē / semper / saepe + V',
+        'ad + N-acc + eō',
+        'N-acc + legō / scrībō / labōrō',
+      ],
+      notes: [
+        "THE CONJUGATION IS THE MODULE'S BIG IDEA, and it has to be taught as a pattern rather than as vocabulary: -ō, -s, -t across the persons, on one verb per conjugation so the learner sees the shape rather than a list. Pick one each — amō (first), habeō and videō (second, already half-owned by M3), legō and scrībō (third), audiō (fourth) — plus the two irregulars the level cannot avoid, sum (M1's) and eō. ONE Latin present covers BOTH English presents: legō is 'I read' and 'I am reading', and there is no progressive to build, which is the module's clean delta and worth a rule.",
+        'THE SUBJECT IS DROPPED, taught here as the natural shape rather than as a liberty: legō is a whole sentence, and at least one hero in this module carries NO pronoun at all. M1 said this; M4 is where it becomes the ordinary way to speak, because the endings now vary across three persons and the pronoun would be redundant in all of them. ego, tū and the third person written out are EMPHASIS, and the note says which of the two a sentence is doing.',
+        "eō IS THE COURSE'S SHARPEST REMAINING HOMOGRAPH AND THIS MODULE OWNS IT. The index is cumulative and FIRST OCCURRENCE WINS, so the earliest module to write a spelling owns the note every later learner sees. eō is 'I go' (this module's), the ablative of is/id ('by that'), and an adverb ('to that place'). M4 writes ONLY the verb, and the note is written as 'the verb eō, to go' without claiming the spelling has one meaning — exactly as hi-en's do row defines the helper and the main verb. The other two readings are named in prose and written nowhere in L1, so no later module has to contradict this row.",
+        "TIME WORDS SPLIT TWO WAYS AND L1 TEACHES ONE. cotīdiē, semper, saepe, numquam, māne, vesperī are ADVERBS and take no case at all — that is the half this module writes. The ablative of time (hōrā sextā, 'at the sixth hour') is a case construction and is NAMED here in prose and written in NO display: it belongs with M7's other case-for-preposition work and M8's numbers, and opening it here would spend the cap on an ending nothing else in the module needs. An author who wants a clock time uses M8's numbers or waits.",
+        "MOTION TAKES ad + ACCUSATIVE, and it is the first preposition in the course: ad scholam eō. That is a deliberate down payment on M7, where in + ablative against in + accusative becomes the module's whole lesson — so write ad here, name in nowhere, and let the learner meet one preposition governing one case before meeting one governing two. The cognate trap for this module: schola is not a school building so much as the teaching itself, and labōrō is 'I work' rather than 'I labour' in the English sense of toil.",
+        "INDEX SEAM: eō is opened here as its own row with īre from M3 folded into its FORMS (an infinitive is a shape of its verb, not a lexeme), and its note must be true of both. sum gains sumus and estis in M1's row and opens nothing. Fresh rows: legō, scrībō, audiō, amō, labōrō, schola (with scholam), cotīdiē, semper, saepe, māne, ad. Every second- and third-person shape of a verb the level already owns goes in that verb's existing row: habēs joins M3's habeō, agit joins M2's agis. Written nowhere: hōrā and the ablative of time, as above; the imperfect in any shape, which is L4-M8's.",
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M5': {
+      id: 'L1-M5',
+      title: 'Yesterday',
+      job: 'Past tense — the first big divergence',
+      patterns: [
+        'N-acc + V-ī (perfect)',
+        'herī + V-ī',
+        'V-it (perfect, third person)',
+        'fuī + N/Adj',
+        'nōn + V-ī',
+      ],
+      notes: [
+        "THE PAST IS THE PERFECT, AND IT IS A SECOND STEM LEARNED PER VERB. veniō → vēnī, faciō → fēcī, sum → fuī, amō → amāvī, legō → lēgī, scrībō → scrīpsī, eō → iī. There is no auxiliary and no participle: vēnī is one word doing what English needs two or three for, and the same form covers 'I came' AND 'I have come'. That last point is the module's relief and deserves a rule of its own — English splits the preterite from the perfect and makes the learner choose; Latin does not, so one form is always right.",
+        "THE MACRON IS THE WHOLE DIFFERENCE FROM M4, AND THIS IS WHERE #630 EARNS ITSELF. venit is 'he comes' (M4) and vēnit is 'he came' (here), distinguished by one mark — and checked against the real surface.ts, they are two index keys ONLY because the macron is written: normalizeSurface('venit') !== normalizeSurface('vēnit'), while rule 4 folds Vēnit onto vēnit harmlessly. Every perfect this module writes must be checked against the OLD for quantity, and the review doc must read the emitted index back for this pair specifically. An unmarked perfect here does not fail the build — checkScriptMode does not run on a native row — it silently merges the tense the module exists to teach into the one the module below it taught.",
+        "A PERFECT STEM IS ITS OWN WORD ROW, NEVER A forms ENTRY OF THE PRESENT. Different stem, different key, and folding vēnī into M4's veniō row would hand the perfect's key to the present's row and put M4's note under M5's word. Each perfect row carries a note back to the first-teach row of its present ('the past of the verb M4 taught as legō'), which is the ladder rule — a level never edits a file below it, so the connection is made in the NEW row and not by amending the old one.",
+        "THE IMPERFECT IS NAMED AS DEFERRED AND WRITTEN NOWHERE, and the note must say so out loud, because every English speaker wants it in this module: 'I was reading', 'I used to read' and 'I read yesterday' are three English shapes and this module writes one Latin form for all of them. legēbam is L4-M8's ('Back then'), and an author who writes it here spends the cap on a system the level cannot finish and takes a key L4 needs. The slogan to name and replace: 'the past is -ī' is close enough to be dangerous — the past is a SECOND STEM plus the perfect endings, and the endings are regular while the stem is not.",
+        "GENDER DOES NOT LAND ON THE VERB HERE, and that is worth saying because the sibling courses make it. Sanskrit's participial past agrees with the speaker (gatavān / gatavatī) and Latin's perfect does not: vēnī is the same word whoever says it. Where gender DOES land is the predicate after fuī — laetus fuī / laeta fuī — so the hero-plus-variation rule from M1 applies to those and to nothing else in the module.",
+        "INDEX SEAM: every perfect is a FRESH row — vēnī, fēcī, fuī, amāvī, lēgī, scrīpsī — each noting the present it belongs to. herī is a fresh row. nōn is M3's row extended to the past with no second row, and its M3 note is already true of both. The cognate trap: fuī is not 'I was' in the sense of an ongoing state (that is the imperfect eram, deferred), so the cue must be a completed one — 'I was in Rome yesterday', not 'I was happy as a child'. Written nowhere: eram and every other imperfect; the pluperfect and the future perfect; and the perfect participle, which L4 needs for the passive.",
+      ],
+      maxWordsPerSentence: 5,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M6': {
+      id: 'L1-M6',
+      title: 'Tomorrow',
+      job: 'Future and plans',
+      patterns: [
+        'crās + V-bō',
+        'N-acc + V-bō',
+        'V-am / V-ēs (third and fourth conjugation future)',
+        'crās + V-ō (present for future)',
+        'volō + V-īre',
+      ],
+      notes: [
+        "THE FUTURE HAS TWO SHAPES AND THE SPLIT IS THE MODULE'S LESSON. First and second conjugation take -bō, -bis, -bit (amābō, habēbō, vidēbō); third and fourth take -am, -ēs, -et (legam, legēs, leget; audiam, audiēs). Two formations for one tense is not a thing English has, and a learner who has only met -bō will read legēs as a present. THE TRAP, and it is the module's mistake plate: third-conjugation legēs ('you will read') looks exactly like second-conjugation docēs ('you teach') — same ending, different tense, and only the verb's own conjugation tells them apart. Name it, show the pair, and put the plate on it.",
+        "THE PRESENT ALSO DOES THE JOB, exactly as in English: crās eō is 'I am going tomorrow' and is what a Roman would more often say for a settled plan. Teach it as the everyday alternative rather than as a shortcut, and pair it with volō + infinitive from M3, which covers intention ('I want to go'). Between them the module has three ways to talk about tomorrow, which is honest and is worth one usage line rather than three rules.",
+        "THE IRREGULARS ARE NOT OPTIONAL HERE: sum → erō, eō → ībō. Both are in every sentence the learner will want to write, and neither follows either pattern above, so they are taught as themselves and each is a fresh row noting its present. Their macrons carry real weight — erō against M5's fuī and M1's est is three tenses of one verb across three modules, and the review doc should read all three back from the emitted index together.",
+        "GENDER AND NUMBER LAND WHERE THEY DID: the future of the verb is the same word whoever says it, and the predicate after erō is where the hero-plus-variation pair goes (laetus erō / laeta erō). The cognate trap for this module: crās is 'tomorrow' and has no English descendant to lean on, while the near-homograph carus ('dear') does — an author reaching for a mnemonic must not build one that makes the learner hear 'crass'.",
+        "INDEX SEAM: every future is a FRESH row — amābō, habēbō, legam, audiam, erō, ībō — each noting the present it belongs to, exactly as M5's perfects do. crās is a fresh row. volō gains nothing: M3's row already covers it, and the infinitive after it is a form of its own verb's row. Written nowhere: the future perfect; the subjunctive in any use, which is still the biggest thing L1 withholds and which L2-M6's eāmus will be the first to press on.",
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M7': {
+      id: 'L1-M7',
+      title: 'Where things are',
+      job: 'Locations and prepositions',
+      patterns: [
+        'in + N-abl + est',
+        'in + N-acc + eō',
+        'ad / apud / prope + N-acc',
+        'ubi + est + N',
+        'hīc / ibi + est + N',
+      ],
+      notes: [
+        "THIS IS THE MODULE WHERE ENGLISH PREPOSITIONS BECOME CASES, and one preposition carries the whole lesson: in + ABLATIVE is 'in / on' (in scholā sum, 'I am in the school') and in + ACCUSATIVE is 'into' (in scholam eō, 'I go into the school'). Same word, two cases, two meanings — and English has ONE 'in' for both, which is the mistake plate: the learner will write in scholam sum. M4's ad + accusative was the down payment on this; now the case is doing the work the preposition does in English, and the rule has to say that plainly rather than listing prepositions.",
+        "THE OTHER PREPOSITIONS TAKE ONE CASE EACH and are taught as vocabulary rather than as a system: ad, apud, prope, ante, post with the accusative; cum, sine, dē with the ablative. Keep the list short enough that every one of them appears in a sentence — a preposition named in a note and never written is a key the module spent nothing on and taught nothing about. cum is the one to watch: this module owns it as 'with' + ablative, and L4-M6 owns it as 'when' + subjunctive, so the note here is written true of the preposition and does not claim the spelling has one job.",
+        "hīc IS THE MACRON'S SECOND SHOWCASE AND THIS MODULE OWNS BOTH SIDES OF IT. hic is 'this' and hīc is 'here', one mark apart and checked as two keys against the real surface.ts. Both are useful in exactly this module, so write BOTH, in the same module, with each other named in both notes — that is the one configuration where a near-homograph is safe, because no later module can meet one without the other. ibi ('there') pairs with hīc, and ubi ('where') opens the question.",
+        "est DOES 'THERE IS', with no separate construction to learn: in mēnsā est liber is 'on the table there is a book'. English needs a dummy subject; Latin needs word order, and the order it needs is the thing being located LAST. That is a second job for M1's sum row rather than a new row, and M1's note is already written broadly enough to carry it — check that it is, and if it is not, the fix goes in the NEW row here with a note back, never by editing M1's file.",
+        "THE LOCATIVE IS NAMED AS DEFERRED AND WRITTEN NOWHERE. Rōmae ('in Rome'), domī ('at home') and humī are a surviving case with a handful of members, they look like a genitive and are not, and they are L4-M9's ('Places and journeys'). An author who writes Rōmae here takes the key L4 needs and teaches a form the module cannot justify with one example. Use in + ablative with a common noun instead, which is what the rest of the module is about anyway.",
+        "INDEX SEAM: in is ONE row with a note true of both cases it governs — that is the module's whole point, and two rows would undo it. hic and hīc are two rows, deliberately. Fresh rows: mēnsa (with mēnsā), ubi, ibi, apud, prope, cum, sine, and whichever place nouns the sentences need (with both their accusative and ablative shapes in forms — this is where the cap bites hardest, so count before authoring). scholam joins M4's schola row and adds scholā. Written nowhere: the locative as above; ablative absolutes; and the ablative of time, still M4's deferral.",
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M8': {
+      id: 'L1-M8',
+      title: 'Numbers & shopping',
+      job: 'Prices, quantities, buying',
+      patterns: [
+        'ūnus / duo / trēs + N',
+        'quot + N + habēs',
+        'quantī cōnstat + N',
+        'N-acc + emō',
+        'dā mihi + N-acc',
+      ],
+      notes: [
+        "THE FIRST THREE NUMBERS DECLINE AND THE REST DO NOT, and nothing in English prepares a learner for a number that agrees. ūnus / ūna / ūnum, duo / duae / duo, trēs / trēs / tria — three genders on 'one', and 'two' with its own irregular shapes — while quattuor upward are invariable and simply sit in front of the noun. THE DECLINING NUMERALS ENTER HERE AND NOWHERE EARLIER: that is pinned by this brief, and a module below that reached for 'two' would have opened a system it could not finish. Write all three genders of ūnus across a hero and its variations, and let duo and trēs show two each.",
+        "PRICE IS A GENITIVE: quantī cōnstat? — 'at what (price) does it stand?'. That is a case doing a job English does with a preposition, which is M7's lesson arriving in a new place, and it is the module's honest difficulty. The answer can be a bare number plus the money word, so the genitive need only appear in the question — do not force a genitive of price into every sentence.",
+        "THE MONEY WORD IS DECIDED ONCE AND IT IS nummī (#630 §7's one-named-source rule applied to a concrete case). sēstertiī is the classical unit and is dated in a way that makes a shopping module read as historical reenactment; a modern coinage would be this module inventing vocabulary the rest of the course does not share. nummus / nummī is the ordinary Latin word for coins and money, it works in a market of any century, and it is what this course writes — recorded here so no later module reaches for a different one. This remains an open question for the fluent-speaker gate, and the review doc says so.",
+        "BUYING AND ASKING ARE VERBS THE LEVEL ALREADY HALF-OWNS: emō and vendō are fresh (third conjugation, so their futures follow M6's -am shape), and dā mihi ('give me') is the imperative of dō plus M1's dative — the first imperative since M2's salvē, and the first one carrying an object. Keep it as dā mihi rather than opening the whole imperative system: the negative command (nōlī) is still L2-M1's, and the polite request (velim, quaesō) is too.",
+        "THE COGNATE TRAP is dense here and worth a rule: emō is 'I buy' and has no English descendant that means buying; pretium is 'price' and 'value' both; and the learner who knows 'quantity' will expect quantī to be a noun when it is a genitive of quantus. quot ('how many') is invariable and looks like a case form that would agree, and does not.",
+        "INDEX SEAM: ūnus, duo and trēs are three rows, each with its gendered shapes in FORMS (ūna and ūnum are shapes of ūnus, not rows), and that is six or seven surfaces from three rows — count them against the cap first. Fresh rows: quot, quantī, cōnstat, emō, vendō, dā, nummus (with nummī and nummōs). mihi stays inside M1's ego row. habēs joins M3's habeō row. Written nowhere: the numbers above ten; the ablative of price; and the distributive and ordinal numerals, which no level below L3 needs.",
+      ],
+      maxWordsPerSentence: 6,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M9': {
+      id: 'L1-M9',
+      title: 'Feelings & opinions',
+      job: 'Why — because and so',
+      patterns: [
+        'N/Adj-nom + sum (predicate adjective)',
+        'cūr + V',
+        'quia / quod + V',
+        'itaque / ergō + V',
+        'mihi placet + N-nom',
+      ],
+      notes: [
+        "ADJECTIVES AGREE IN GENDER, NUMBER AND CASE, and this is the module that teaches it as a system rather than as the speaker's gender M1 has been carrying all along. laetus / laeta / laetum, trīstis / trīste, fessus / fessa / fessum: the first-and-second-declension pattern has three distinct genders and the third-declension pattern has two, which is the module's real complication. Decide whether L1 opens the third-declension adjective at all — trīstis is the natural word for 'sad' and its absence would force a worse one — and if it does, one adjective is enough and its note says it belongs to a second pattern.",
+        "quod IS THE COURSE'S LAST BIG HOMOGRAPH AND THIS MODULE OWNS 'BECAUSE'. quod is 'because' (here), the relative pronoun 'which' (L3's), and the neuter of 'what'. FIRST OCCURRENCE WINS, so the note written here is what every later learner sees, and it must be written as one word with more than one job rather than as a conjunction L3 will have to contradict. quia is the safer twin — it is only ever 'because' — so write quia as the hero pattern and quod as the variation, which teaches both and puts the unambiguous one first.",
+        "THE CONSEQUENCE WORDS COME FIRST AND THE POSTPOSITIVES DO NOT, which is a down payment on M10: itaque and ergō start a clause ('and so…'), while autem and enim cannot start one at all. M10 teaches the postpositive rule; M9 writes only the clause-initial ones, so the contrast is available rather than confusing. igitur is both, which is exactly the kind of detail to leave to M10.",
+        "mihi placet RETURNS FROM M1 AND NOW TAKES A PLURAL: mihi placent librī. That is the same frame with the verb following the thing liked, which M1's note promised and this module pays off — and it is the cheapest way to show agreement doing real work, because the verb changes for a reason the learner can see. mē dēlectat is the alternative and is worth a usage line, not a rule.",
+        "THE COGNATE TRAP IS THE MODULE'S WHOLE VOCABULARY, and it needs a rule of its own because this is the module where it bites hardest. The learner reads sentiō as 'sentiment' when it is 'I feel' and also 'I think'; grātus as 'grateful' when it is 'pleasing'; and — the one every Latin course meets — virtūs as 'virtue' when it is manliness and courage. Whichever of these the module writes, its note states the Roman sense first and the English descendant second, and the mistake plate should land on one of them rather than on grammar.",
+        "INDEX SEAM: every adjective is one row with its gendered shapes in FORMS (laeta and laetum are shapes of laetus), and the predicate shapes M1, M5 and M6 already wrote in their own modules stay theirs — a new shape of an older adjective gets its row HERE with a note back at the first-teach row, and L1-M1's file is not touched. Fresh rows: laetus, trīstis, fessus, cūr, quia, quod, itaque, ergō, sentiō. placet gains placent inside M1's row. Written nowhere: autem and enim, which are M10's; quod as a relative, which is L3's; and the comparative and superlative, which are L2-M9's.",
+      ],
+      maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L1-M10': {
+      id: 'L1-M10',
+      title: 'Connected talk',
+      job: 'Short 2–3 sentence exchanges',
+      patterns: [
+        '<statement> + et + <statement>',
+        '<statement> + sed + <statement>',
+        'N + N-que',
+        '<word> + autem + <rest>',
+        '<statement> + igitur + <statement>',
+      ],
+      notes: [
+        "TWO OR THREE SENTENCES IN ONE TURN, built only out of what the level already owns — this module's job is connection, not vocabulary, so the cap should be spent almost entirely on the joining words. Pro-drop across a turn is the naturalness marker: the second sentence of an exchange should usually have no subject at all, because the first one established it, and a turn where every sentence names its subject reads as a list rather than as speech.",
+        "THE POSTPOSITIVES ARE THE MODULE'S LAW: autem and enim CANNOT COME FIRST. They sit after the first word of their clause — Ego autem nōn eō, 'I, however, am not going' — and English puts 'however' and 'for' at the front, so the mistake plate writes them there. igitur does both and is the exception worth naming. This is the catalogue's first postpositive conjunction, so it earns a rule rather than a usage line, and it earns a mistake plate.",
+        "-que IS THE SECOND SEAM AND THE LAST NEW ORTHOGRAPHY IN THE LEVEL (#630 §2): pater māter-que, 'father and mother', written with the hyphen this course uses and said solid. surfaceIndexKeys('pater māter-que') is ['pater māter-que', 'māter', 'que'] — so the host keeps its bare key and the enclitic gets one of its own, exactly as M2's -ne. THE ORDERING LAW HOLDS HERE TOO: the host of every -que in this module must already be a word row from an earlier module, or be written as its own row in an earlier sentence of this one, or the bare host's key goes to the joined entry. AND THE LEXICALISED ONES ARE WRITTEN SOLID, with their closed list named so no author hyphenates one: atque, neque, itaque (M9's), quoque, namque, dēnique. A hyphen in itaque would mint ita and que as keys for a word that is neither.",
+        "et AND sed DO THE ORDINARY WORK, and -que is the alternative rather than the default: et joins anything, sed contrasts, and -que joins two things that belong together as a pair (senātus populus-que). Say which is which, because a learner who meets -que first will hyphenate every 'and' in the course. neque is 'and not' and is one word — the cheapest way to negate the second half of a turn.",
+        "INDEX SEAM, and it is the last one in the level: et, sed, autem, enim, igitur, atque, neque and -que are fresh rows. -que's display is written -que, which normalizeSurface strips to the key que (checked), and the row exists so the enclitic has a note even though its host donates the key — #601's shape, inherited deliberately and not a defect. quoque is 'also' and is ONE word, not a seam, and its key must not be confused with que: write it solid and the fold keeps them apart. ORTHOGRAPHY HOLDS TO THE LAST TURN: macrons on every long vowel, no j, no apostrophe, no acute, NFC, no script line, and a hyphen only before que, ne or ve. Two sentences side by side is precisely where an author reaches for something the course does not write, so the last note in the level is the same one the first note made.",
+      ],
+      maxWordsPerSentence: 7,
       newWordCap: NEW_WORD_CAP,
     },
   },
