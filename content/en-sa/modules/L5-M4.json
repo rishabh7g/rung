@@ -1,0 +1,951 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M4",
+  "title": "Formal occasions",
+  "job": "Toasts, speeches, condolences, ceremonies",
+  "prerequisites": [
+    "L5-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 4,
+    "maxWordsPerSentence": 15,
+    "allowedTenses": [
+      "verbless_nominal_present",
+      "third_person_imperative",
+      "simple_present",
+      "participial_past",
+      "absolutive"
+    ],
+    "allowedPatterns": [
+      "svasti + bhavate",
+      "śubham + astu",
+      "bhavate + abhinandanam",
+      "<clause> + iti + śrutvā + aham + khinnaḥ",
+      "sādhu + sādhu + iti + janāḥ + vadanti"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "svasti is the blessing word and it governs the DATIVE: svasti bhavate, 'good fortune to you'. L2-M5 already bought bhavate and bhavatyai as the 'to you' shapes, so the whole blessing costs exactly one new word and no new grammar."
+    },
+    {
+      "tag": "delta",
+      "text": "śubham astu is 'may it be well'. L2-M6's astu is the request shape of L1-M3's asti, and in front of it a neuter noun is what is wished. The blessing names NOBODY, which is the mechanical reason this module needs no address form."
+    },
+    {
+      "tag": "delta",
+      "text": "maṅgalam and śubham are both neuter and both sit in front of astu, and they are not interchangeable: śubham is the plain good, maṅgalam is the auspiciousness an OCCASION carries. A wedding gets maṅgalam; a day gets śubham."
+    },
+    {
+      "tag": "delta",
+      "text": "abhinandanam is the congratulation and it takes the dative too: bhavate abhinandanam. There is no verb in it — the noun is the whole act, which is what makes these formulae so short."
+    },
+    {
+      "tag": "delta",
+      "text": "sādhu is 'well done' and it is doubled for force: sādhu sādhu. It never bends for who did the thing, and it is praise of the deed rather than of the person."
+    },
+    {
+      "tag": "delta",
+      "text": "A condolence costs this module almost nothing: L3-M6's dative-experiencer frame and L4-M4's śrutvā do the whole job, so mama adhyāpakaḥ asvasthaḥ iti śrutvā aham khinnaḥ is a complete one. śokaḥ is the single new word in it — the grief itself, masculine, and it belongs to somebody in the 'to me' shape."
+    },
+    {
+      "tag": "interference",
+      "text": "English shows sincerity by ORIGINALITY and this register shows it by saying the correct thing. An improvised condolence does not read as heartfelt here; it reads as not knowing what is said. Learn the formula rather than a way around it."
+    },
+    {
+      "tag": "interference",
+      "text": "An English congratulation needs no reply and every one of these does: each is a social move that expects an answer. dhanyavādaḥ answers a blessing, and a blessing back answers it better — bhavate api śubham astu."
+    },
+    {
+      "tag": "delta",
+      "text": "THE VOCATIVE IS STILL NOT WRITTEN, and this is the module on the whole ladder that wanted it most. Four reasons, and none of them is taste. It is a paradigm and not a cell, and this course has never opened a paradigm inside one module. The honorific's own vocative is one short vowel from its nominative, which would put two keys one letter apart on the most-written word of the course. It is an ADDRESS form and this course has no second person, so a vocative beside a third-person verb would teach a false agreement. And nothing here needs it: a Sanskrit blessing is impersonal, and address is bhavān or bhavatī in the nominative, as it has been since L1-M2."
+    },
+    {
+      "tag": "free",
+      "text": "The formal chip is the DEFAULT in this module rather than the exception, because a blessing, a congratulation and a condolence are things the learner SAYS in the elevated register as themselves. And what this module is not: it is not L2-M1's dhanyavādaḥ or L2-M5's svāgatam, which are the everyday courtesies and stay where they are; it is not L4-M7's official notice, which is the same register in somebody else's voice; and it gives no account of any religion, because these are social formulae and the module claims nothing more for them."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M4-S01",
+      "display": "svasti bhavate, śubham astu.",
+      "script": "स्वस्ति भवते, शुभम् अस्तु।",
+      "cue": "Good fortune to you; may all be well.",
+      "literal": "good-fortune to-you, the-good let-it-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "svasti",
+            "cue": "good fortune · well-being",
+            "tag": "delta",
+            "forms": [],
+            "note": "The blessing word, and it governs the DATIVE: svasti bhavate is 'good fortune TO you'. It never bends and there is no verb in it."
+          },
+          {
+            "display": "bhavate",
+            "cue": "to you (polite, to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's 'to you'. It was bought for giving and receiving, and a blessing needs exactly the same shape: the good is given to somebody."
+          },
+          {
+            "display": "śubham",
+            "cue": "the good · what is auspicious",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plain good that is wished, a neuter noun. With astu behind it, śubham astu is a whole blessing that names nobody at all."
+          },
+          {
+            "display": "astu",
+            "cue": "let it be · may it be",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's astu, the request shape of L1-M3's asti. In a conversation about plans it is 'agreed'; in front of a blessing it is 'let there be'."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Neither half has a verb of wishing in it. svasti bhavate is a noun and a dative and nothing else, and śubham astu is a noun with L2-M6's astu behind it — the wishing is in the shapes, not in a word.",
+      "sound": "SVA-sti bha-VA-tay, SHU-bham AS-tu. The sv of svasti is one cluster, the s and the v said together with no vowel between them. Said at speed śubham astu runs on as śubhamastu, the m keeping its m in front of the vowel.",
+      "variations": [
+        {
+          "display": "svasti bhavatyai, śubham astu.",
+          "script": "स्वस्ति भवत्यै, शुभम् अस्तु।",
+          "cue": "Good fortune to you; may all be well.",
+          "changed": "the listener is a woman, so bhavate forks to bhavatyai and the impersonal half does not move at all"
+        },
+        {
+          "display": "svasti bhavate, maṅgalam astu.",
+          "script": "स्वस्ति भवते, मङ्गलम् अस्तु।",
+          "cue": "Good fortune to you; may there be blessing.",
+          "changed": "maṅgalam replaces śubham, which raises it from a plain good to the auspiciousness of an occasion"
+        },
+        {
+          "display": "śubham astu.",
+          "script": "शुभम् अस्तु।",
+          "cue": "May all be well.",
+          "changed": "the addressed half drops away, leaving the blessing that names nobody — which is how it is written on a card"
+        }
+      ],
+      "mistake": {
+        "display": "svasti bhavān, śubham astu.",
+        "why": "svasti governs the DATIVE, so it is bhavate and never bhavān. bhavān is the naming shape and would make the listener the subject of a sentence that has no verb for him to be the subject of."
+      },
+      "usage": "The module's opening pair, and they are said together far more often than either is said alone. The first is aimed at a person and the second at the situation, which is why one takes a dative and the other takes nobody.",
+      "register": "formal",
+      "mnemonic": "Bless the person, then bless the day."
+    },
+    {
+      "id": "L5-M4-S02",
+      "display": "bhavate abhinandanam, aham santuṣṭaḥ.",
+      "script": "भवते अभिनन्दनम्, अहम् सन्तुष्टः।",
+      "cue": "Congratulations to you — I am delighted.",
+      "literal": "to-you congratulation, I delighted",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavate",
+            "cue": "to you (polite, to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's 'to you'. It was bought for giving and receiving, and a blessing needs exactly the same shape: the good is given to somebody."
+          },
+          {
+            "display": "abhinandanam",
+            "cue": "congratulation",
+            "tag": "delta",
+            "forms": [],
+            "note": "The congratulation itself, a neuter noun, and it takes the dative like svasti: bhavate abhinandanam. There is no verb in it — the noun IS the act."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. A condolence is the one formula in this module that has a subject, because it is the speaker's own feeling being reported."
+          },
+          {
+            "display": "santuṣṭaḥ",
+            "cue": "delighted · well pleased",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'delighted', agreeing with the speaker: santuṣṭaḥ from a man, santuṣṭā from a woman. The second half is the speaker's own feeling, which is what stops the first half being a formality."
+          }
+        ],
+        "rules": [
+          3,
+          7
+        ]
+      },
+      "trap": "The first half has no verb and the second half has no verb either. abhinandanam IS the congratulating, and aham santuṣṭaḥ is L1-M3's verbless present — two complete clauses and not one finite word between them.",
+      "variations": [
+        {
+          "display": "bhavatyai abhinandanam, aham santuṣṭaḥ.",
+          "script": "भवत्यै अभिनन्दनम्, अहम् सन्तुष्टः।",
+          "cue": "Congratulations to you — I am delighted.",
+          "changed": "the listener is a woman and the dative forks; the speaker's own half is untouched"
+        },
+        {
+          "display": "bhavate abhinandanam, aham santuṣṭā.",
+          "script": "भवते अभिनन्दनम्, अहम् सन्तुष्टा।",
+          "cue": "Congratulations to you — I am delighted.",
+          "changed": "the SPEAKER is a woman this time, so the adjective forks at the other end of the line"
+        },
+        {
+          "display": "bhavate abhinandanam.",
+          "script": "भवते अभिनन्दनम्।",
+          "cue": "Congratulations to you.",
+          "changed": "the warmth is dropped and the formula stands alone, which is what is said to somebody barely known"
+        }
+      ],
+      "usage": "The congratulation with its warmth attached. The formula alone is correct and cold; a speaker who stops at bhavate abhinandanam has said the right thing and nothing else, which is exactly what the second half repairs.",
+      "register": "formal",
+      "mnemonic": "The formula is correct; the second half is kind."
+    },
+    {
+      "id": "L5-M4-S03",
+      "display": "adya vivāhaḥ asti, ataḥ maṅgalam astu.",
+      "script": "अद्य विवाहः अस्ति, अतः मङ्गलम् अस्तु।",
+      "cue": "The wedding is today, so may there be blessing.",
+      "literal": "today wedding is, therefore blessing let-it-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. A time word simply stands in the sentence and takes nothing in front of it."
+          },
+          {
+            "display": "vivāhaḥ",
+            "cue": "a wedding · a marriage",
+            "tag": "delta",
+            "forms": [
+              "vivāhaḥ",
+              "vivāhe"
+            ],
+            "note": "The wedding, a masculine noun, cued for the word rather than the case: vivāhaḥ names it and vivāhe is 'at the wedding'."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's copula, written out because the first half is a statement of fact that the second half draws a conclusion from."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'therefore', opening its own half. It is what turns a fact about a day into a reason for a blessing."
+          },
+          {
+            "display": "maṅgalam",
+            "cue": "blessing · auspiciousness",
+            "tag": "delta",
+            "forms": [],
+            "note": "The auspiciousness an occasion is wished, a neuter noun. It is the heavier of the two: śubham is plain good, maṅgalam is the good of an occasion."
+          },
+          {
+            "display": "astu",
+            "cue": "let it be · may it be",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's astu, the request shape of L1-M3's asti. In a conversation about plans it is 'agreed'; in front of a blessing it is 'let there be'."
+          }
+        ],
+        "rules": [
+          2,
+          9
+        ]
+      },
+      "trap": "maṅgalam and not śubham: this is an occasion and not a plain good day. The two words are both neuter and both sit in front of astu, which is what makes the choice between them easy to get wrong.",
+      "sound": "A-dya vi-VAA-hah AS-ti, A-tah MAN-ga-lam AS-tu. The ṅ of maṅgalam is the nasal made at the back of the mouth, the same one in saṅgītam, and it is written with its own letter rather than with the anusvāra. Said at speed vivāhaḥ asti joins as vivāho asti, the visarga turning to o in front of the vowel.",
+      "variations": [
+        {
+          "display": "adya utsavaḥ asti, ataḥ maṅgalam astu.",
+          "script": "अद्य उत्सवः अस्ति, अतः मङ्गलम् अस्तु।",
+          "cue": "The festival is today, so may there be blessing.",
+          "changed": "a festival in place of a wedding; L3-M9's utsavaḥ takes the same blessing without changing anything else"
+        },
+        {
+          "display": "śvaḥ vivāhaḥ asti, ataḥ adya maṅgalam astu.",
+          "script": "श्वः विवाहः अस्ति, अतः अद्य मङ्गलम् अस्तु।",
+          "cue": "The wedding is tomorrow, so may there be blessing today.",
+          "changed": "the occasion moves to tomorrow and the blessing stays today, which is when it is actually said"
+        },
+        {
+          "display": "adya vivāhaḥ asti, ataḥ śubham astu.",
+          "script": "अद्य विवाहः अस्ति, अतः शुभम् अस्तु।",
+          "cue": "The wedding is today, so may all be well.",
+          "changed": "the plain good replaces the occasion's blessing — correct, and one degree less formal for it"
+        }
+      ],
+      "mistake": {
+        "display": "adya vivāhaḥ asti, ataḥ maṅgalaḥ astu.",
+        "why": "maṅgalam is NEUTER and has no -ḥ shape at all. The -ḥ was copied across from vivāhaḥ in the half before it, which is the commonest way a wrong ending gets into a line like this one."
+      },
+      "usage": "How a blessing is attached to an occasion: state the occasion, then wish on it. The two halves are joined by ataḥ, and the learner who leaves it out has said two unconnected things.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M4-S04",
+      "display": "sādhu sādhu, bhavate abhinandanam.",
+      "script": "साधु साधु, भवते अभिनन्दनम्।",
+      "cue": "Well done, well done — congratulations to you.",
+      "literal": "well-done well-done, to-you congratulation",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sādhu",
+            "cue": "well done · good",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Well done', and it is doubled for force: sādhu sādhu. It never bends, and it praises the DEED rather than the person who did it."
+          },
+          {
+            "display": "bhavate",
+            "cue": "to you (polite, to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's 'to you'. It was bought for giving and receiving, and a blessing needs exactly the same shape: the good is given to somebody."
+          },
+          {
+            "display": "abhinandanam",
+            "cue": "congratulation",
+            "tag": "delta",
+            "forms": [],
+            "note": "The congratulation itself, a neuter noun, and it takes the dative like svasti: bhavate abhinandanam. There is no verb in it — the noun IS the act."
+          }
+        ],
+        "rules": [
+          4,
+          3
+        ]
+      },
+      "trap": "sādhu praises what was done and abhinandanam congratulates who did it, and a speaker who uses only the first has applauded a performance without addressing anybody.",
+      "variations": [
+        {
+          "display": "sādhu sādhu iti janāḥ vadanti.",
+          "script": "साधु साधु इति जनाः वदन्ति।",
+          "cue": "'Well done, well done,' people say.",
+          "changed": "the call reported rather than made, which puts the speaker in the audience instead of on the floor"
+        },
+        {
+          "display": "sādhu, bhavate abhinandanam.",
+          "script": "साधु, भवते अभिनन्दनम्।",
+          "cue": "Well done — congratulations to you.",
+          "changed": "one sādhu instead of two: measured approval rather than delight"
+        },
+        {
+          "display": "sādhu sādhu, bhavatyai abhinandanam.",
+          "script": "साधु साधु, भवत्यै अभिनन्दनम्।",
+          "cue": "Well done, well done — congratulations to you.",
+          "changed": "the dative forks for a woman and the undeclinable praise in front of it does not move"
+        }
+      ],
+      "usage": "What is actually called out at the end of a recitation or a speech. The doubling is not emphasis for its own sake — a single sādhu reads as measured approval, and two read as delight.",
+      "register": "formal",
+      "mnemonic": "Praise the deed, then congratulate the doer."
+    },
+    {
+      "id": "L5-M4-S05",
+      "display": "mama adhyāpakaḥ asvasthaḥ iti śrutvā aham khinnaḥ.",
+      "script": "मम अध्यापकः अस्वस्थः इति श्रुत्वा अहम् खिन्नः।",
+      "cue": "Hearing that my teacher is unwell, I am saddened.",
+      "literal": "of-me teacher unwell thus having-heard I saddened",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'of me'. The condolence is about somebody the speaker owns a relation to, and that relation is the whole reason the line is said."
+          },
+          {
+            "display": "adhyāpakaḥ",
+            "cue": "teacher",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's teacher. A condolence in this course is always about a named relation rather than about a stranger, because the sympathy has to have a route."
+          },
+          {
+            "display": "asvasthaḥ",
+            "cue": "unwell · not well",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'unwell', agreeing with the teacher. There is no copula in the quoted half — L1-M3's rule holds inside a quotation exactly as it does outside one."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, closing the thing that was heard. Everything in front of it is what reached the speaker."
+          },
+          {
+            "display": "śrutvā",
+            "cue": "having heard",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M4's absolutive of śṛṇoti. It carries no person and no tense and waits for the finite word at the end, which is why a condolence can be built on it."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. A condolence is the one formula in this module that has a subject, because it is the speaker's own feeling being reported."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "sad · downcast",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'sad', agreeing with the SPEAKER: khinnaḥ from a man, khinnā from a woman. The whole condolence ends on the speaker's own gender."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "The finite verb never arrives and the sentence is complete without one. śrutvā waits, aham khinnaḥ is L1-M3's verbless present, and the line closes on an adjective.",
+      "sound": "MA-ma a-DHYAA-pa-kah a-SVA-sthah i-ti SHRU-tvaa a-HAM KHIN-nah. Three visargas in one line, and each is a breathy echo of the vowel in front of it. Said at speed adhyāpakaḥ asvasthaḥ joins as adhyāpako asvasthaḥ, the visarga turning to o before the vowel.",
+      "variations": [
+        {
+          "display": "mama adhyāpikā asvasthā iti śrutvā aham khinnaḥ.",
+          "script": "मम अध्यापिका अस्वस्था इति श्रुत्वा अहम् खिन्नः।",
+          "cue": "Hearing that my teacher is unwell, I am saddened.",
+          "changed": "the teacher is a woman, so both the noun and the adjective inside the quotation fork together"
+        },
+        {
+          "display": "mama adhyāpakaḥ asvasthaḥ iti śrutvā aham khinnā.",
+          "script": "मम अध्यापकः अस्वस्थः इति श्रुत्वा अहम् खिन्ना।",
+          "cue": "Hearing that my teacher is unwell, I am saddened.",
+          "changed": "the SPEAKER is a woman, so the fork happens at the end of the line instead of inside the quotation"
+        },
+        {
+          "display": "idam śrutvā aham khinnaḥ.",
+          "script": "इदम् श्रुत्वा अहम् खिन्नः।",
+          "cue": "Hearing this, I am saddened.",
+          "changed": "the quotation is replaced by idam, which is what is said when both speakers already know the news"
+        }
+      ],
+      "mistake": {
+        "display": "mama adhyāpakaḥ asvasthaḥ iti śrutvā mama khinnaḥ.",
+        "why": "khinnaḥ is an adjective describing the speaker, so its subject is aham and never mama. mama is 'of me' and would say 'my saddened' with nobody being anything."
+      },
+      "usage": "The condolence this course teaches, and it opens no form at all. The technique is worth naming: report what was heard, then report what it did to you. A speaker who adds an opinion about the illness has left the formula and said something else.",
+      "register": "formal",
+      "mnemonic": "Report what you heard, then what it did to you."
+    },
+    {
+      "id": "L5-M4-S06",
+      "display": "bhavataḥ duḥkham śrutvā mahyam api śokaḥ asti.",
+      "script": "भवतः दुःखम् श्रुत्वा मह्यम् अपि शोकः अस्ति।",
+      "cue": "Hearing of your sorrow, I am grieved too.",
+      "literal": "of-you sorrow having-heard to-me also grief is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavataḥ",
+            "cue": "of you (polite, to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'of you'. The sorrow belongs to the listener, and saying so out loud is half of what a condolence does."
+          },
+          {
+            "display": "duḥkham",
+            "cue": "sorrow · unhappiness",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M6's sorrow, neuter, and the thing that was heard about. It is lighter in this language than the English 'sorrow' is."
+          },
+          {
+            "display": "śrutvā",
+            "cue": "having heard",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M4's absolutive of śṛṇoti. It carries no person and no tense and waits for the finite word at the end, which is why a condolence can be built on it."
+          },
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'to me'. Grief belongs to somebody in this shape, which is L3-M6's frame and the only way this course says a feeling is had."
+          },
+          {
+            "display": "api",
+            "cue": "also · too",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'also', standing AFTER the word it lifts. Here it lifts the speaker: 'to me TOO'."
+          },
+          {
+            "display": "śokaḥ",
+            "cue": "grief · mourning",
+            "tag": "delta",
+            "forms": [],
+            "note": "Grief, a masculine noun and the heavier word beside duḥkham: duḥkham is an unhappiness and śokaḥ is a mourning. Like every feeling here it belongs to somebody in the 'to me' shape."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "The copula, and it is doing the whole work of 'I have': mahyam śokaḥ asti is 'to me grief is'."
+          }
+        ],
+        "rules": [
+          5,
+          7
+        ]
+      },
+      "trap": "There is no verb of grieving anywhere in the line. The grief is a NOUN that belongs to the speaker, which is L3-M6's frame and the same one that carries fear, happiness and sorrow on this course.",
+      "sound": "bha-va-TAH DUH-kham SHRU-tvaa MAH-yam a-pi SHOH-kah AS-ti. The kh of duḥkham is an aspirated k and the visarga in front of it is heard as a light breath. Said at speed mahyam api runs on as mahyamapi, and śokaḥ asti joins as śoko asti.",
+      "variations": [
+        {
+          "display": "bhavatyāḥ duḥkham śrutvā mahyam api śokaḥ asti.",
+          "script": "भवत्याः दुःखम् श्रुत्वा मह्यम् अपि शोकः अस्ति।",
+          "cue": "Hearing of your sorrow, I am grieved too.",
+          "changed": "the listener is a woman, so the 'of you' shape forks and nothing else in the line moves"
+        },
+        {
+          "display": "bhavataḥ duḥkham śrutvā mahyam api duḥkham asti.",
+          "script": "भवतः दुःखम् श्रुत्वा मह्यम् अपि दुःखम् अस्ति।",
+          "cue": "Hearing of your sorrow, I am unhappy too.",
+          "changed": "the same word comes back in the second half, which reads as sharing the feeling rather than raising it"
+        },
+        {
+          "display": "idam śrutvā mahyam śokaḥ asti.",
+          "script": "इदम् श्रुत्वा मह्यम् शोकः अस्ति।",
+          "cue": "Hearing this, I am grieved.",
+          "changed": "api drops out and the line stops being an answer: it is now a first statement rather than a reply"
+        }
+      ],
+      "mistake": {
+        "display": "bhavataḥ duḥkham śrutvā aham api śokaḥ asti.",
+        "why": "śokaḥ is the subject of asti and the speaker is not, so the speaker must be mahyam. With aham the line has two subjects and reads as 'I also grief is'."
+      },
+      "usage": "The answering half of a condolence, and the module's reason for teaching both sides: a formula that expects a reply has not been taught until the reply is taught with it. api is what makes it an answer rather than an announcement.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M4-S07",
+      "display": "dhanyavādaḥ, bhavate api śubham astu.",
+      "script": "धन्यवादः, भवते अपि शुभम् अस्तु।",
+      "cue": "Thank you — and may all be well with you too.",
+      "literal": "thanks, to-you also the-good let-it-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dhanyavādaḥ",
+            "cue": "thanks · thank you",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's thanks, a masculine noun that is a whole sentence on its own. Here it is only the first half of the answer, because thanks alone under-answers a blessing."
+          },
+          {
+            "display": "bhavate",
+            "cue": "to you (polite, to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's 'to you'. It was bought for giving and receiving, and a blessing needs exactly the same shape: the good is given to somebody."
+          },
+          {
+            "display": "api",
+            "cue": "also · too",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'also', standing AFTER the word it lifts. Here it lifts the speaker: 'to me TOO'."
+          },
+          {
+            "display": "śubham",
+            "cue": "the good · what is auspicious",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plain good that is wished, a neuter noun. With astu behind it, śubham astu is a whole blessing that names nobody at all."
+          },
+          {
+            "display": "astu",
+            "cue": "let it be · may it be",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's astu, the request shape of L1-M3's asti. In a conversation about plans it is 'agreed'; in front of a blessing it is 'let there be'."
+          }
+        ],
+        "rules": [
+          7,
+          1
+        ]
+      },
+      "trap": "api stands after bhavate and lifts exactly that word: 'to YOU too'. In front of it the sentence would lift nothing, and the reply would stop being a reply.",
+      "variations": [
+        {
+          "display": "dhanyavādaḥ, bhavatyai api śubham astu.",
+          "script": "धन्यवादः, भवत्यै अपि शुभम् अस्तु।",
+          "cue": "Thank you — and may all be well with you too.",
+          "changed": "the dative forks for a woman; the rest of the answer is fixed"
+        },
+        {
+          "display": "dhanyavādaḥ, bhavate api maṅgalam astu.",
+          "script": "धन्यवादः, भवते अपि मङ्गलम् अस्तु।",
+          "cue": "Thank you — and may there be blessing for you too.",
+          "changed": "the returned blessing is raised to the occasion's word, which answers a maṅgalam in kind"
+        },
+        {
+          "display": "bhavate api śubham astu.",
+          "script": "भवते अपि शुभम् अस्तु।",
+          "cue": "And may all be well with you too.",
+          "changed": "the thanks drops away and the blessing answers alone, which is warmer and slightly less formal"
+        }
+      ],
+      "usage": "How a blessing is answered. Thanks alone is correct and thin; the blessing returned is what the first speaker is waiting for, and this is the sentence to have ready.",
+      "register": "formal",
+      "mnemonic": "Thanks is the half; the blessing back is the whole."
+    },
+    {
+      "id": "L5-M4-S08",
+      "display": "bhavate maṅgalam astu, bhavatyai api maṅgalam astu.",
+      "script": "भवते मङ्गलम् अस्तु, भवत्यै अपि मङ्गलम् अस्तु।",
+      "cue": "May there be blessing for you, and for you too.",
+      "literal": "to-you blessing let-it-be, to-you also blessing let-it-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavate",
+            "cue": "to you (polite, to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's 'to you'. It was bought for giving and receiving, and a blessing needs exactly the same shape: the good is given to somebody."
+          },
+          {
+            "display": "maṅgalam",
+            "cue": "blessing · auspiciousness",
+            "tag": "delta",
+            "forms": [],
+            "note": "The auspiciousness an occasion is wished, a neuter noun. It is the heavier of the two: śubham is plain good, maṅgalam is the good of an occasion."
+          },
+          {
+            "display": "astu",
+            "cue": "let it be · may it be",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's astu, the request shape of L1-M3's asti. In a conversation about plans it is 'agreed'; in front of a blessing it is 'let there be'."
+          },
+          {
+            "display": "bhavatyai",
+            "cue": "to you (polite, to a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's 'to you' for a woman, the partner of bhavate. The two sit side by side here because a blessing at an occasion is usually said to a pair."
+          },
+          {
+            "display": "api",
+            "cue": "also · too",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'also', standing AFTER the word it lifts. Here it lifts the speaker: 'to me TOO'."
+          }
+        ],
+        "rules": [
+          2,
+          9
+        ]
+      },
+      "trap": "The blessing has to be said twice because there is no plural 'you' on this course and no way to address two people at once. That is a real gap, and repeating the formula is what a speaker actually does about it.",
+      "sound": "bha-VA-tay MAN-ga-lam AS-tu, bha-va-TYAI a-pi MAN-ga-lam AS-tu. bhavate ends on a plain long e and bhavatyai on the diphthong ai, and that one vowel is the whole difference between the two listeners. Said at speed maṅgalam astu runs on as maṅgalamastu.",
+      "variations": [
+        {
+          "display": "bhavate śubham astu, bhavatyai api śubham astu.",
+          "script": "भवते शुभम् अस्तु, भवत्यै अपि शुभम् अस्तु।",
+          "cue": "May all be well with you, and with you too.",
+          "changed": "the plain good in both halves: the same structure one degree less formal"
+        },
+        {
+          "display": "bhavate ca bhavatyai ca maṅgalam astu.",
+          "script": "भवते च भवत्यै च मङ्गलम् अस्तु।",
+          "cue": "May there be blessing for you both.",
+          "changed": "L1-M10's paired ca joins the two datives, so the blessing is said once — shorter, and less warm for it"
+        },
+        {
+          "display": "bhavatyai maṅgalam astu.",
+          "script": "भवत्यै मङ्गलम् अस्तु।",
+          "cue": "May there be blessing for you.",
+          "changed": "one listener only, which is what most of these formulae are actually said to"
+        }
+      ],
+      "usage": "The blessing at a wedding or a house-warming, where two people are being addressed. The repetition is not clumsy — it is what the occasion sounds like, and each half lands on one of them.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M4-S09",
+      "display": "bhavatyai svasti, bhavatyāḥ gṛhe śubham astu.",
+      "script": "भवत्यै स्वस्ति, भवत्याः गृहे शुभम् अस्तु।",
+      "cue": "Good fortune to you; may all be well in your house.",
+      "literal": "to-you good-fortune, of-you in-house the-good let-it-be",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavatyai",
+            "cue": "to you (polite, to a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "The 'to you' shape for a woman, which is what svasti governs. The dative is the case of the person a good thing is aimed at."
+          },
+          {
+            "display": "svasti",
+            "cue": "good fortune · well-being",
+            "tag": "delta",
+            "forms": [],
+            "note": "The blessing word, and it governs the DATIVE: svasti bhavate is 'good fortune TO you'. It never bends and there is no verb in it."
+          },
+          {
+            "display": "bhavatyāḥ",
+            "cue": "of you (polite, to a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'of you' for a woman. Two different shapes of one word in one line: the dative receives the blessing and the genitive owns the house."
+          },
+          {
+            "display": "gṛhe",
+            "cue": "in the house",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house in its 'in' shape. A blessing on a household goes to the place, which is why the second half needs no person in it at all."
+          },
+          {
+            "display": "śubham",
+            "cue": "the good · what is auspicious",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plain good that is wished, a neuter noun. With astu behind it, śubham astu is a whole blessing that names nobody at all."
+          },
+          {
+            "display": "astu",
+            "cue": "let it be · may it be",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's astu, the request shape of L1-M3's asti. In a conversation about plans it is 'agreed'; in front of a blessing it is 'let there be'."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "bhavatyai and bhavatyāḥ are one word in two shapes and they do opposite jobs here. The first RECEIVES the good fortune; the second only owns the house, and the house is what the second blessing lands on.",
+      "variations": [
+        {
+          "display": "bhavate svasti, bhavataḥ gṛhe śubham astu.",
+          "script": "भवते स्वस्ति, भवतः गृहे शुभम् अस्तु।",
+          "cue": "Good fortune to you; may all be well in your house.",
+          "changed": "the whole line forks for a man, and both shapes of the honorific fork together"
+        },
+        {
+          "display": "bhavatyai svasti, bhavatyāḥ gṛhe maṅgalam astu.",
+          "script": "भवत्यै स्वस्ति, भवत्याः गृहे मङ्गलम् अस्तु।",
+          "cue": "Good fortune to you; may there be blessing in your house.",
+          "changed": "the household blessing is raised to the occasion's word, which is what is said at a house-warming"
+        },
+        {
+          "display": "bhavatyai svasti.",
+          "script": "भवत्यै स्वस्ति।",
+          "cue": "Good fortune to you.",
+          "changed": "the place drops away and the person keeps the whole blessing — which is the shorter thing said in a doorway"
+        }
+      ],
+      "mistake": {
+        "display": "bhavatyai svasti, bhavatyai gṛhe śubham astu.",
+        "why": "The second shape must be the 'of you' one, bhavatyāḥ. bhavatyai is the dative and would give the blessing to the listener twice while leaving the house belonging to nobody."
+      },
+      "usage": "The blessing said on entering somebody's home, and the shape of it is worth copying: bless the person, then bless the place. Nothing in either half is a request, so nothing in either half can be refused.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M4-S10",
+      "display": "utsave abhinandanam śrutvā saḥ dhanyavādaḥ iti uktavān.",
+      "script": "उत्सवे अभिनन्दनम् श्रुत्वा सः धन्यवादः इति उक्तवान्।",
+      "cue": "At the festival, having heard the congratulation, he said thank you.",
+      "literal": "at-festival congratulation having-heard he 'thanks' thus said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "utsave",
+            "cue": "at the festival",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's festival in its 'at' shape. The occasion is the frame of the whole report, which is why it opens the line."
+          },
+          {
+            "display": "abhinandanam",
+            "cue": "congratulation",
+            "tag": "delta",
+            "forms": [],
+            "note": "The congratulation itself, a neuter noun, and it takes the dative like svasti: bhavate abhinandanam. There is no verb in it — the noun IS the act."
+          },
+          {
+            "display": "śrutvā",
+            "cue": "having heard",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M4's absolutive of śṛṇoti. It carries no person and no tense and waits for the finite word at the end, which is why a condolence can be built on it."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he · that man",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he'. The report is about somebody else, which is what puts this sentence in the learner's own everyday register rather than in the occasion's."
+          },
+          {
+            "display": "dhanyavādaḥ",
+            "cue": "thanks · thank you",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's thanks, quoted here rather than said. Inside iti it is somebody else's word and not the speaker's."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, closing the thing that was heard. Everything in front of it is what reached the speaker."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said (a man) · has said",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's 'said', a row of its own and not a past shape of vadati. uktavatī is the shape when a woman spoke."
+          }
+        ],
+        "rules": [
+          7,
+          9
+        ]
+      },
+      "trap": "This is the one NEUTRAL sentence in the module and the reason is mechanical: it REPORTS an occasion instead of taking part in one. The formulae inside it keep their register; the sentence around them does not.",
+      "variations": [
+        {
+          "display": "utsave abhinandanam śrutvā sā dhanyavādaḥ iti uktavatī.",
+          "script": "उत्सवे अभिनन्दनम् श्रुत्वा सा धन्यवादः इति उक्तवती।",
+          "cue": "At the festival, having heard the congratulation, she said thank you.",
+          "changed": "a woman spoke, so the pronoun and the participle fork together"
+        },
+        {
+          "display": "utsave svasti iti janāḥ vadanti.",
+          "script": "उत्सवे स्वस्ति इति जनाः वदन्ति।",
+          "cue": "At the festival people say svasti.",
+          "changed": "the report moves from one person to everybody, and the quoted formula moves with it"
+        },
+        {
+          "display": "vivāhe abhinandanam śrutvā saḥ dhanyavādaḥ iti uktavān.",
+          "script": "विवाहे अभिनन्दनम् श्रुत्वा सः धन्यवादः इति उक्तवान्।",
+          "cue": "At the wedding, having heard the congratulation, he said thank you.",
+          "changed": "a wedding in place of a festival, which is the other occasion this module is written for"
+        }
+      ],
+      "usage": "The register chip belongs to the sentence and not to the row. abhinandanam is the elevated word wherever it stands, but a learner telling a friend what happened at a festival is speaking their own everyday Sanskrit, and this line is chipped for that and not for its vocabulary.",
+      "register": "neutral",
+      "mnemonic": "The occasion is formal; telling someone about it is not."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M4-C01",
+      "display": "svasti bhavatyai.",
+      "script": "स्वस्ति भवत्यै।",
+      "cue": "Good fortune to you."
+    },
+    {
+      "id": "L5-M4-C02",
+      "display": "bhavate abhinandanam.",
+      "script": "भवते अभिनन्दनम्।",
+      "cue": "Congratulations to you."
+    },
+    {
+      "id": "L5-M4-C03",
+      "display": "adya mama vivāhaḥ asti.",
+      "script": "अद्य मम विवाहः अस्ति।",
+      "cue": "My wedding is today."
+    },
+    {
+      "id": "L5-M4-C04",
+      "display": "utsave janāḥ sādhu sādhu iti vadanti.",
+      "script": "उत्सवे जनाः साधु साधु इति वदन्ति।",
+      "cue": "At the festival people say well done, well done."
+    },
+    {
+      "id": "L5-M4-C05",
+      "display": "mahyam śokaḥ asti, kintu aham śāntaḥ.",
+      "script": "मह्यम् शोकः अस्ति, किन्तु अहम् शान्तः।",
+      "cue": "I am grieved, but I am calm."
+    },
+    {
+      "id": "L5-M4-C06",
+      "display": "bhavataḥ gṛhe maṅgalam astu.",
+      "script": "भवतः गृहे मङ्गलम् अस्तु।",
+      "cue": "May there be blessing in your house."
+    },
+    {
+      "id": "L5-M4-C07",
+      "display": "idam śrutvā aham khinnaḥ.",
+      "script": "इदम् श्रुत्वा अहम् खिन्नः।",
+      "cue": "Hearing this, I am saddened."
+    },
+    {
+      "id": "L5-M4-C08",
+      "display": "sā abhinandanam śrutvā santuṣṭā.",
+      "script": "सा अभिनन्दनम् श्रुत्वा सन्तुष्टा।",
+      "cue": "Hearing the congratulation, she was delighted."
+    },
+    {
+      "id": "L5-M4-C09",
+      "display": "adya utsavaḥ asti, ataḥ śubham astu.",
+      "script": "अद्य उत्सवः अस्ति, अतः शुभम् अस्तु।",
+      "cue": "The festival is today, so may all be well."
+    },
+    {
+      "id": "L5-M4-C10",
+      "display": "rāmāya svasti, sītāyai ca svasti.",
+      "script": "रामाय स्वस्ति, सीतायै च स्वस्ति।",
+      "cue": "Good fortune to Rama, and good fortune to Sita."
+    },
+    {
+      "id": "L5-M4-C11",
+      "display": "bhavataḥ śokaḥ mama api śokaḥ.",
+      "script": "भवतः शोकः मम अपि शोकः।",
+      "cue": "Your grief is my grief too."
+    },
+    {
+      "id": "L5-M4-C12",
+      "display": "sādhu, bhavān uttamam kṛtavān.",
+      "script": "साधु, भवान् उत्तमम् कृतवान्।",
+      "cue": "Well done — you did it excellently."
+    },
+    {
+      "id": "L5-M4-C13",
+      "display": "vivāhe janāḥ śubham astu iti vadanti.",
+      "script": "विवाहे जनाः शुभम् अस्तु इति वदन्ति।",
+      "cue": "At the wedding people say may all be well."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
