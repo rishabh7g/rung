@@ -1,0 +1,682 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M2",
+  "title": "First exchange",
+  "job": "Greetings, wellbeing, yes/no questions",
+  "prerequisites": ["L1-M1"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 4,
+    "allowedTenses": ["simple_present", "imperative"],
+    "allowedPatterns": [
+      "salvē / salvēte + <name>",
+      "valē / valēte + <name>",
+      "quid agis",
+      "<host>-ne + <rest>",
+      "ita / minimē + , + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The greeting counts. Salvē to one person, salvēte to more than one — and the same for valē and valēte on the way out. It is a verb, which is why it has endings at all, and it is the first place you can see number sitting on one. This is NOT politeness: Latin has no polite plural, and tū and vōs are simply one person and more than one."
+    },
+    {
+      "tag": "free",
+      "text": "One greeting covers the whole day. Salvē works at dawn and at midnight, arriving and — with valē — leaving, to a stranger and to a friend. There is no good-morning to learn and no good-evening to get wrong."
+    },
+    {
+      "tag": "interference",
+      "text": "Latin has no word for 'yes'. You answer by giving the verb back: Agis-ne bene? — Agō. Where English says 'yes, I do', Latin says 'I do'. There are words that lean that way — ita, ita vērō, certē — and a flat minimē or nōn for 'no', but the verb-echo is the everyday answer and it is what you will hear."
+    },
+    {
+      "tag": "delta",
+      "text": "A yes/no question is made by hanging -ne on the end of a word, and nothing else moves: Agis bene becomes Agis-ne bene? English lifts the verb to the front or builds a 'do' out of nothing; Latin does neither. This course writes the join with a hyphen so you can see both halves — printed Latin runs them together as agisne, and you should expect that on any real page."
+    },
+    {
+      "tag": "delta",
+      "text": "-ne goes on the word you are actually asking about, not always on the verb. Agis-ne bene? asks whether you are well; Tū-ne discipulus es? asks whether it is YOU who is the student. Choosing where to hang it is how Latin does what English does with stress in the voice."
+    },
+    {
+      "tag": "delta",
+      "text": "Asking how someone is uses a verb, not an adjective: Quid agis? is literally 'what are you doing?' and it means 'how are you?'. Answer with an adverb — bene, optimē — and not with a noun. Valēs-ne? is the other way to ask it, from valeō, 'I am well', which is the same verb as the valē you leave on."
+    },
+    {
+      "tag": "delta",
+      "text": "nōn goes straight in front of the verb and there is nothing to build it out of: Nōn bene agō. English needs a 'do' that carries the negative and Latin has no such helper, so nothing here corresponds to 'don't'. The negative command is a different word again, nōlī, and it waits for a later module."
+    },
+    {
+      "tag": "free",
+      "text": "The question mark is the only thing on the page that separates Agis-ne bene? from a statement — and even it is not what makes it a question. The -ne is. In speech the pitch does the rest, and this course never spells that out."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M2-S01",
+      "display": "Salvē, Iūlia!",
+      "cue": "Hello, Julia!",
+      "literal": "be-well, Julia",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "salvē",
+            "cue": "hello (to one person)",
+            "tag": "delta",
+            "forms": ["salvē", "salvēte"],
+            "note": "'Hello', at any hour and to anyone — and it is a verb, literally 'be well'. Salvē to one person, salvēte to more than one."
+          },
+          {
+            "display": "Iūlia",
+            "cue": "Julia (a woman's name)",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman woman's given name, said YOO-li-a. Spoken TO rather than about, it keeps the same shape — which is not true of every Latin name."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "There is no 'hi' and no 'good morning' to choose between. One word covers every hour and every degree of closeness, and the only choice is how many people you are greeting.",
+      "sound": "SAL-vē YOO-li-a. Hold the ē of salvē — it is long, and it is the whole of the ending. The v is an English w, so the greeting begins 'SAL-way'.",
+      "variations": [
+        {
+          "display": "Salvē, magister!",
+          "cue": "Hello, teacher!",
+          "changed": "greeting someone by what they do rather than by name"
+        },
+        {
+          "display": "Salvēte!",
+          "cue": "Hello, all of you!",
+          "changed": "more than one person, and the greeting itself carries the number"
+        },
+        {
+          "display": "Salvē, discipula!",
+          "cue": "Hello, student!",
+          "changed": "the same greeting with a feminine noun after it"
+        }
+      ],
+      "mistake": {
+        "display": "Salvēte, Iūlia!",
+        "why": "The plural greeting aimed at one person. English has no singular-and-plural hello, so there is nothing to transfer and nothing to warn you — but salvēte to one woman is as odd as 'hello, all of you' would be."
+      },
+      "usage": "The first word of any exchange, at any hour.",
+      "mnemonic": "'Salvē' is 'be well' — the same root as 'salvage' and 'salvation'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M2-S02",
+      "display": "Quid agis?",
+      "cue": "How are you?",
+      "literal": "what you-are-doing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "free",
+            "forms": ["quid"],
+            "note": "'What'. It goes first, as in English, and it is one of the few Latin question words that behaves exactly the way you expect."
+          },
+          {
+            "display": "agis",
+            "cue": "you are doing",
+            "tag": "delta",
+            "forms": ["agō", "agis", "agit"],
+            "note": "The verb agō, 'do / drive / carry on', in the shapes this level writes: agō 'I do', agis 'you do', agit 'he/she does'. One present covers 'do' and 'am doing'."
+          }
+        ],
+        "rules": [5, 0]
+      },
+      "trap": "It is not asking what you are doing right now. Quid agis? is the greeting — the English question it matches is 'how are you?', and answering with a list of your afternoon misses it.",
+      "sound": "QUID A-gis. The qu is a k with a w in it, as in 'quick', and the g is hard. Two words, both stressed on the first syllable.",
+      "variations": [
+        {
+          "display": "Quid agit?",
+          "cue": "How is he?",
+          "changed": "the verb ending alone moves the question to someone else"
+        },
+        {
+          "display": "Quid agis, Iūlia?",
+          "cue": "How are you, Julia?",
+          "changed": "a name added, which changes nothing in the grammar"
+        },
+        {
+          "display": "Quid agit Mārcus?",
+          "cue": "How is Marcus?",
+          "changed": "the person asked about named outright, still with no pronoun anywhere"
+        }
+      ],
+      "mistake": {
+        "display": "Quid es?",
+        "why": "'How are you?' built out of 'to be', because that is the verb English uses. Latin asks with agō — what are you doing — and Quid es? asks what kind of thing you are, which is a much stranger question."
+      },
+      "usage": "Said straight after the greeting, every time.",
+      "mnemonic": "Latin asks what you are DOING, not how you ARE.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M2-S03",
+      "display": "Bene agō.",
+      "cue": "I am well.",
+      "literal": "well I-am-doing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bene",
+            "cue": "well",
+            "tag": "delta",
+            "forms": ["bene"],
+            "note": "'Well' — an adverb, and the right answer to Quid agis?. It never changes shape, because an adverb in Latin has nobody to agree with."
+          },
+          {
+            "display": "agō",
+            "cue": "I am doing",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb agō, 'do / drive / carry on', in the shapes this level writes: agō 'I do', agis 'you do', agit 'he/she does'. One present covers 'do' and 'am doing'."
+          }
+        ],
+        "rules": [5, 2]
+      },
+      "trap": "The answer is an adverb, not an adjective. English says 'I am good' with an adjective describing you; Latin says 'I am doing well' with an adverb describing the doing.",
+      "sound": "BE-ne A-gō. The ō at the end of agō is long and it is what says 'I' — clip it and you have said something else.",
+      "variations": [
+        {
+          "display": "Optimē agō.",
+          "cue": "I am very well.",
+          "changed": "a stronger adverb in the same slot"
+        },
+        {
+          "display": "Bene agit.",
+          "cue": "He is well.",
+          "changed": "the ending moves it to a third person"
+        },
+        {
+          "display": "Bene agis.",
+          "cue": "You are well.",
+          "changed": "and again to 'you' — three people, one word each time"
+        }
+      ],
+      "mistake": {
+        "display": "Ego sum bonus.",
+        "why": "The English answer translated word for word: a pronoun, a 'to be', and an adjective. Every piece of it is a real Latin word and the sentence means 'I am a good man', which is not what anybody asked."
+      },
+      "usage": "The standard answer, to anybody.",
+      "mnemonic": "'Bene' is 'benefit' and 'benevolent' — well, in one word.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M2-S04",
+      "display": "Optimē valeō.",
+      "cue": "I am very well.",
+      "literal": "very-well I-am-well",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "optimē",
+            "cue": "very well · excellently",
+            "tag": "free",
+            "forms": ["optimē"],
+            "note": "'Very well', the strongest of the everyday answers — the adverb behind English 'optimal'. Its final ē is long, and the stress falls back onto the first syllable."
+          },
+          {
+            "display": "valeō",
+            "cue": "I am well",
+            "tag": "delta",
+            "forms": ["valē", "valēte", "valeō", "valēs"],
+            "note": "'I am well' — and it is the same verb as the valē you say on leaving, which is its command form. valēs is 'you are well', valēte 'be well, all of you'."
+          }
+        ],
+        "rules": [5, 0]
+      },
+      "trap": "valeō and valē are one verb, not two words that happen to look alike. Saying goodbye in Latin is telling someone to be well, which is why the farewell and the health question share a stem.",
+      "sound": "OP-ti-mē VA-le-ō. The stress in both words sits three syllables from the end, because in both the syllable before the last is short — the pattern the macrons let you see.",
+      "variations": [
+        {
+          "display": "Bene valeō.",
+          "cue": "I am well.",
+          "changed": "the plainer adverb with the same verb"
+        },
+        {
+          "display": "Valēs bene.",
+          "cue": "You are well.",
+          "changed": "the person moves and the adverb follows the verb instead of leading"
+        },
+        {
+          "display": "Optimē valēs.",
+          "cue": "You are very well.",
+          "changed": "the same statement about the other person"
+        }
+      ],
+      "mistake": {
+        "display": "Optimē sum.",
+        "why": "'To be' put where valeō belongs. An adverb like optimē has to describe a doing, and sum is not one — Latin will not say 'I am excellently', any more than English says it."
+      },
+      "usage": "Said when you mean it rather than out of politeness.",
+      "mnemonic": "valeō is 'I am strong' — the same root as 'valid' and 'value'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M2-S05",
+      "display": "Tū discipulus es.",
+      "cue": "You are a student.",
+      "literal": "you a-student you-are",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tū",
+            "cue": "you (one person)",
+            "tag": "interference",
+            "forms": ["tū"],
+            "note": "'You', to exactly one person, and never as a courtesy. Latin has no polite plural: vōs means more than one and nothing else, so tū to an elder is correct."
+          },
+          {
+            "display": "discipulus",
+            "cue": "student",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Student', and it carries the student's own gender: discipulus of a man, discipula of a woman. More than one is discipulī."
+          },
+          {
+            "display": "es",
+            "cue": "you are",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [0]
+      },
+      "trap": "tū is not respectful or disrespectful — it is singular. Every other European language in this app makes you choose a pronoun for politeness; Latin does not have the choice to make.",
+      "sound": "TU dis-KI-pu-lus ES. The ū of tū is long and the word is just that one held vowel.",
+      "variations": [
+        {
+          "display": "Tū magister es.",
+          "cue": "You are a teacher.",
+          "changed": "a different noun in the same frame"
+        },
+        {
+          "display": "Tū Rōmāna es.",
+          "cue": "You are Roman.",
+          "changed": "an adjective instead, taking the gender of the person spoken to"
+        },
+        {
+          "display": "Tū discipula es.",
+          "cue": "You are a student. (to a woman)",
+          "changed": "the noun bends for the woman being spoken to"
+        }
+      ],
+      "mistake": {
+        "display": "Vōs discipulus es.",
+        "why": "The plural pronoun used as a politeness, the way French or German would. vōs is more than one person, so it cannot stand with es or with a singular noun — the sentence has no reading at all."
+      },
+      "usage": "Said when the 'you' needs pointing at.",
+      "mnemonic": "One person, one letter: tū.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M2-S06",
+      "display": "Agis-ne bene?",
+      "cue": "Are you well?",
+      "literal": "you-are-doing-QUESTION well",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "-ne",
+            "cue": "makes it a question",
+            "tag": "delta",
+            "forms": ["-ne", "agis-ne", "valēs-ne", "tū-ne"],
+            "note": "The question particle. Hang it on the end of the word you are asking about and the statement becomes a question. Printed Latin joins it up: agisne."
+          },
+          {
+            "display": "agis",
+            "cue": "you are doing",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb agō, 'do / drive / carry on', in the shapes this level writes: agō 'I do', agis 'you do', agit 'he/she does'."
+          },
+          {
+            "display": "bene",
+            "cue": "well",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Well' — an adverb, and the right answer to Quid agis?. It never changes shape, because an adverb in Latin has nobody to agree with."
+          }
+        ],
+        "rules": [3, 4, 7]
+      },
+      "trap": "Nothing moved. The verb stayed where it was and no helper appeared — the only difference from Agis bene is the two letters on the end. English cannot make a question without rearranging something, so this feels like it must be incomplete.",
+      "sound": "a-GIS-ne BE-ne. The stress in agis has MOVED: on its own it is A-gis, and with -ne on it the whole thing becomes one word and the beat shifts to a-GIS-ne. That shift is why the enclitic is worth hearing rather than only reading.",
+      "variations": [
+        {
+          "display": "Valēs-ne bene?",
+          "cue": "Are you well?",
+          "changed": "the other verb for the same question, with -ne on it instead"
+        },
+        {
+          "display": "Tū-ne bene agis?",
+          "cue": "Are YOU well?",
+          "changed": "the particle moved onto the pronoun, which moves what is being asked"
+        },
+        {
+          "display": "Agis-ne optimē?",
+          "cue": "Are you very well?",
+          "changed": "a stronger adverb; the question machinery does not move"
+        }
+      ],
+      "mistake": {
+        "display": "Agisne bene?",
+        "why": "Written the way a Roman would, joined up — and that is not a mistake in Latin at all, only in this course. We write the hyphen so that both halves stay visible and tappable; expect the joined spelling everywhere else, and read it as the same thing."
+      },
+      "usage": "The direct way to ask, once the greeting is out of the way.",
+      "mnemonic": "-ne on the end is the question mark that goes inside the word.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M2-S07",
+      "display": "Ita, bene agō.",
+      "cue": "Yes, I am well.",
+      "literal": "so, well I-am-doing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ita",
+            "cue": "yes · so",
+            "tag": "interference",
+            "forms": ["ita"],
+            "note": "The nearest thing Latin has to 'yes', and it means 'so, thus'. It is not a required word: giving the verb back — Agō — answers the question on its own."
+          },
+          {
+            "display": "bene",
+            "cue": "well",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Well' — an adverb, and the right answer to Quid agis?. It never changes shape, because an adverb in Latin has nobody to agree with."
+          },
+          {
+            "display": "agō",
+            "cue": "I am doing",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb agō, 'do / drive / carry on', in the shapes this level writes: agō 'I do', agis 'you do', agit 'he/she does'."
+          }
+        ],
+        "rules": [2]
+      },
+      "trap": "ita is not the Latin for 'yes' — it is the closest available word. What actually answers a Latin question is the verb, repeated, and a learner who reaches for ita every time will sound like someone translating.",
+      "sound": "I-ta BE-ne A-gō. Short i, short a: nothing in ita is held.",
+      "variations": [
+        {
+          "display": "Ita, optimē agō.",
+          "cue": "Yes, I am very well.",
+          "changed": "the stronger adverb after the same yes"
+        },
+        {
+          "display": "Ita, bene valeō.",
+          "cue": "Yes, I am well.",
+          "changed": "the other verb of wellbeing, answering the same question"
+        },
+        {
+          "display": "Ita, discipulus sum.",
+          "cue": "Yes, I am a student.",
+          "changed": "answering a different question entirely, with the same opening word"
+        }
+      ],
+      "mistake": {
+        "display": "Sīc, bene agō.",
+        "why": "sīc borrowed as 'yes' because Spanish and Italian use its descendants that way. Classical Latin does not: sīc means 'in this way', and the word for agreeing is ita — or, better, the verb said again."
+      },
+      "usage": "Said when a plain verb-echo would feel too short.",
+      "mnemonic": "ita is 'so' — the same word English keeps in 'item'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M2-S08",
+      "display": "Minimē, nōn bene agō.",
+      "cue": "No, I am not well.",
+      "literal": "least, not well I-am-doing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "minimē",
+            "cue": "no · not at all",
+            "tag": "delta",
+            "forms": ["minimē"],
+            "note": "'No' — and literally 'least of all', which is why it is emphatic. A flat nōn will also do the job on its own."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": ["nōn"],
+            "note": "'Not', and it goes straight in front of the verb. Nothing corresponds to English 'do not': there is no helper to hang the negative on, so nōn sits on the verb itself."
+          },
+          {
+            "display": "bene",
+            "cue": "well",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Well' — an adverb, and the right answer to Quid agis?. It never changes shape, because an adverb in Latin has nobody to agree with."
+          },
+          {
+            "display": "agō",
+            "cue": "I am doing",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb agō, 'do / drive / carry on', in the shapes this level writes: agō 'I do', agis 'you do', agit 'he/she does'."
+          }
+        ],
+        "rules": [6, 2]
+      },
+      "trap": "There is no 'do' in the negative. English builds 'I do not' out of a helper verb that means nothing; Latin puts nōn against the verb and stops.",
+      "sound": "MI-ni-mē NON BE-ne A-gō. The ō of nōn is long — hold it, or it becomes the short syllable of a different word.",
+      "variations": [
+        {
+          "display": "Minimē, nōn valeō.",
+          "cue": "No, I am not well.",
+          "changed": "the other verb of wellbeing under the same negative"
+        },
+        {
+          "display": "Nōn bene agō.",
+          "cue": "I am not well.",
+          "changed": "the opening 'no' dropped; the negative on the verb is enough"
+        },
+        {
+          "display": "Minimē, magister nōn sum.",
+          "cue": "No, I am not a teacher.",
+          "changed": "the negative in front of 'to be' rather than an action verb"
+        }
+      ],
+      "mistake": {
+        "display": "Minimē, nōn agō bene.",
+        "why": "Not wrong so much as un-Latin in its order: the adverb has been pushed past the verb into the English position. Latin puts bene in front of what it describes and the verb last, so nōn bene agō is the shape to build."
+      },
+      "usage": "Said when the honest answer is no.",
+      "mnemonic": "minimē is the 'minimum' — the least possible amount of yes.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M2-S09",
+      "display": "Valēs-ne, Iūlia?",
+      "cue": "Are you well, Julia?",
+      "literal": "you-are-well-QUESTION, Julia",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "valēs",
+            "cue": "you are well",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I am well' — and it is the same verb as the valē you say on leaving, which is its command form. valēs is 'you are well', valēte 'be well, all of you'."
+          },
+          {
+            "display": "-ne",
+            "cue": "makes it a question",
+            "tag": "delta",
+            "forms": [],
+            "note": "The question particle. Hang it on the end of the word you are asking about and the statement becomes a question. Printed Latin joins it up: valēsne."
+          },
+          {
+            "display": "Iūlia",
+            "cue": "Julia (a woman's name)",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman woman's given name, said YOO-li-a. Spoken TO rather than about, it keeps the same shape — which is not true of every Latin name."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "The particle attaches to valēs and not to the name, even though the name comes last. -ne goes on the word being asked about, and here that is the being-well.",
+      "sound": "va-LES-ne YOO-li-a. The stress was already on the last syllable of valēs, so the enclitic changes nothing audible here — which is exactly why agis-ne is the one to learn the shift from.",
+      "variations": [
+        {
+          "display": "Valēs-ne, magister?",
+          "cue": "Are you well, teacher?",
+          "changed": "addressed by role rather than by name"
+        },
+        {
+          "display": "Valēs-ne optimē?",
+          "cue": "Are you very well?",
+          "changed": "an adverb instead of a name after the question"
+        },
+        {
+          "display": "Valēs-ne, discipula?",
+          "cue": "Are you well, student?",
+          "changed": "a feminine noun in the address slot"
+        }
+      ],
+      "mistake": {
+        "display": "Valēs, Iūlia-ne?",
+        "why": "The particle hung on the name because that is where the question mark would go in English. -ne marks what is being asked, and hanging it on Iūlia asks whether it is Julia rather than whether she is well."
+      },
+      "usage": "A warmer way to ask than Quid agis?, and often used after it.",
+      "mnemonic": "The particle rides the word you care about.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M2-S10",
+      "display": "Valē, magister!",
+      "cue": "Goodbye, teacher!",
+      "literal": "be-well, teacher",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "valē",
+            "cue": "goodbye (to one person)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Goodbye', and literally 'be well' — the command form of valeō. valē to one person, valēte to more than one, exactly like salvē."
+          },
+          {
+            "display": "magister",
+            "cue": "teacher",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Teacher', carrying the teacher's gender: magister of a man, magistra of a woman, magistrī of more than one."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Goodbye is an instruction. You are telling the other person to be well, which is why it carries a verb ending and why it counts the people you are saying it to.",
+      "sound": "VA-lē ma-GIS-ter. The ē is long and it is the command ending — the same one on salvē.",
+      "variations": [
+        {
+          "display": "Valēte!",
+          "cue": "Goodbye, all of you!",
+          "changed": "more than one person leaving, and the farewell carries the number"
+        },
+        {
+          "display": "Valē, Iūlia!",
+          "cue": "Goodbye, Julia!",
+          "changed": "by name rather than by role"
+        },
+        {
+          "display": "Valē, discipula!",
+          "cue": "Goodbye, student!",
+          "changed": "a feminine noun in the address slot"
+        }
+      ],
+      "mistake": {
+        "display": "Valē, magistrī!",
+        "why": "One farewell aimed at several people. The number is carried twice in this sentence — once on valē and once on the noun — and both have to agree with how many are actually leaving: Valēte, magistrī."
+      },
+      "usage": "The last word of the exchange.",
+      "mnemonic": "'Valē' and 'valeō' are the same verb: goodbye is 'be well'.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M2-C01",
+      "display": "Quid agit magister?",
+      "cue": "How is the teacher?"
+    },
+    {
+      "id": "L1-M2-C02",
+      "display": "Minimē, discipula nōn sum.",
+      "cue": "No, I am not a student."
+    },
+    {
+      "id": "L1-M2-C03",
+      "display": "Ita, magistra sum.",
+      "cue": "Yes, I am a teacher."
+    },
+    {
+      "id": "L1-M2-C04",
+      "display": "Tū-ne magister es?",
+      "cue": "Are you a teacher?"
+    },
+    {
+      "id": "L1-M2-C05",
+      "display": "Optimē agis.",
+      "cue": "You are very well."
+    },
+    {
+      "id": "L1-M2-C06",
+      "display": "Salvēte, discipulī!",
+      "cue": "Hello, students!"
+    },
+    {
+      "id": "L1-M2-C07",
+      "display": "Nōn bene valeō.",
+      "cue": "I am not well."
+    },
+    {
+      "id": "L1-M2-C08",
+      "display": "Ita, Rōmānus sum.",
+      "cue": "Yes, I am Roman."
+    },
+    {
+      "id": "L1-M2-C09",
+      "display": "Quid agis, discipula?",
+      "cue": "How are you, student?"
+    },
+    {
+      "id": "L1-M2-C10",
+      "display": "Tū-ne Rōmāna es?",
+      "cue": "Are you Roman?"
+    },
+    {
+      "id": "L1-M2-C11",
+      "display": "Valēte, magistrī!",
+      "cue": "Goodbye, teachers!"
+    },
+    {
+      "id": "L1-M2-C12",
+      "display": "Minimē, nōn agō.",
+      "cue": "No, I am not."
+    },
+    {
+      "id": "L1-M2-C13",
+      "display": "Bene agis, Iūlia.",
+      "cue": "You are well, Julia."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
