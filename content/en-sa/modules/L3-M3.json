@@ -1,0 +1,909 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M3",
+  "title": "Opinions with reasons",
+  "job": "Agree, disagree, soften — reasons attached",
+  "prerequisites": ["L3-M2"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 10,
+    "allowedTenses": ["simple_present", "participial_past", "verbless_nominal_present"],
+    "allowedPatterns": [
+      "satyam + , + <statement>",
+      "na tathā + , + <statement>",
+      "aham + (na) + tathā + manye",
+      "<statement> + , + yataḥ + <clause>",
+      "<cause> + , + ataḥ + <consequence>",
+      "kadācit + <statement>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "Agreeing is ONE WORD and it is not a verb. satyam — 'true' — is a whole answer on its own, takes no ending and needs no asti after it. It is L1-M2's ām doing a bigger job: ām answers a yes-or-no question, satyam agrees with a claim someone has just made."
+    },
+    {
+      "tag": "delta",
+      "text": "Disagreeing negates the MANNER word, not the verb. na tathā is 'not so', and it is L1-M2's na in its second job — the same na that negates a verb, put in front of tathā instead. Like satyam it stands alone as a complete answer."
+    },
+    {
+      "tag": "interference",
+      "text": "English disagrees by contradicting a verb: 'it isn't', 'it doesn't', 'I'm not'. There is no first-person copula in this course to contradict — asmi is written nowhere — so the contradiction has nothing to land on and lands on tathā instead. That hole is the one L1-M2 declared out loud when it ruled that a no-answer restates positively."
+    },
+    {
+      "tag": "delta",
+      "text": "tathā is 'so, in that way', and it is a fresh word here even though you have seen those letters before. L1-M10's tathāpi ('even so, nevertheless') is ONE word with its internal join written in full, and a word never donates its pieces to the index — tapping tathāpi will not reach tathā and tapping tathā will not reach tathāpi. This is the same thing L1-M2 had to say about namaste."
+    },
+    {
+      "tag": "delta",
+      "text": "aham tathā manye is 'I think so' and aham na tathā manye is 'I don't think so'. manye ends -e, and that is one new ending cell rather than a new class: L1-M1's rocate is the third person of exactly this set, so the course has been writing these endings since its first module without naming them."
+    },
+    {
+      "tag": "interference",
+      "text": "There is no word for 'that' here. English builds 'I think THAT this book is good' as one sentence; this module says the opinion and says the claim, as two. The word that ties a quoted thought to a verb of thinking or saying is iti, it comes AFTER the quote, and it arrives in L3-M5 — not here."
+    },
+    {
+      "tag": "free",
+      "text": "Reasons open nothing new at all. yataḥ ('because') and ataḥ ('so, therefore') are both L1-M9's, and kimartham ('why, what for') asks for one. yat is the neuter relative pronoun of L3-M2 and is never 'because' anywhere in this course — reaching for it will be read as the start of a relative clause."
+    },
+    {
+      "tag": "free",
+      "text": "yataḥ opens the REASON and follows the claim: idam pustakam uttamam, yataḥ navam. ataḥ opens the CONSEQUENCE and follows the cause: idam pustakam navam, ataḥ uttamam. The two sentences are the same facts in opposite directions, and swapping the words says the opposite of what you meant."
+    },
+    {
+      "tag": "delta",
+      "text": "Softening is one word and it goes in front: kadācit, 'perhaps'. There is no hedging verb phrase to build — no 'I would say', no 'it seems to me' — and the conditional softener yadi belongs to L3-M4. A hedge here is one short word or it is nothing."
+    },
+    {
+      "tag": "free",
+      "text": "Bluntness is not rudeness here. na tathā plus a reason is the ordinary, unremarkable way to disagree at this level of the language; the politeness lives where it has lived since L1-M2, in the third-person bhavān / bhavatī register the whole course speaks."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M3-S01",
+      "display": "satyam, idam bhojanam uttamam.",
+      "script": "सत्यम्, इदम् भोजनम् उत्तमम्।",
+      "cue": "True — this food is excellent.",
+      "literal": "true this food excellent",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "satyam",
+            "cue": "true · that's right",
+            "tag": "delta",
+            "forms": [],
+            "note": "Agreement in one word. It is a neuter word meaning 'true' and it stands as a whole answer, with no verb before or after it. Say it and then say what you are agreeing with, or say it and stop."
+          },
+          {
+            "display": "idam",
+            "cue": "this",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'this', for a neuter thing. bhojanam is neuter, so idam is the shape it takes; a masculine noun would want a different one and this course does not write it."
+          },
+          {
+            "display": "bhojanam",
+            "cue": "food · a meal",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's food, here as the thing being judged rather than the thing being eaten."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', in the neuter to agree with bhojanam. There is no asti in this sentence and it needs none, exactly as L1-M1's nominal sentences needed none."
+          }
+        ],
+        "rules": [0, 9]
+      },
+      "trap": "satyam is not a verb and it is not 'yes'. It agrees with a CLAIM — with something somebody has just asserted — where L1-M2's ām answers a QUESTION. Answer a question with satyam and you have agreed with something nobody said.",
+      "sound": "SAT-yam, I-dam bho-JA-nam UT-ta-mam. The -ty- of satyam is one join, t and y run together with nothing between them.",
+      "variations": [
+        {
+          "display": "na tathā, idam bhojanam na uttamam.",
+          "script": "न तथा, इदम् भोजनम् न उत्तमम्।",
+          "cue": "Not so — this food is not good.",
+          "changed": "the whole move reversed: the agreement word becomes the disagreement word, and the claim it heads is negated to match"
+        },
+        {
+          "display": "satyam, idam bhojanam uttamam, yataḥ navam.",
+          "script": "सत्यम्, इदम् भोजनम् उत्तमम्, यतः नवम्।",
+          "cue": "True — this food is excellent, because it is fresh.",
+          "changed": "a reason attached with yataḥ; the agreement and the claim are untouched, and the reason clause has no subject of its own"
+        },
+        {
+          "display": "idam bhojanam uttamam?",
+          "script": "इदम् भोजनम् उत्तमम्?",
+          "cue": "Is this food good?",
+          "changed": "the claim becomes the question that satyam would answer — no word is added, only the question mark and the voice"
+        }
+      ],
+      "mistake": {
+        "display": "idam satyam asti.",
+        "why": "Two errors that arrive together. satyam has been turned into something a sentence is ABOUT ('this is true') and then given a copula to sit on. It is neither: it is an answer, complete in one word, and this course puts no asti after it."
+      },
+      "usage": "Agreeing with what the person in front of you has just said, at a meal, about a book, about the weather. It is the most common single word of agreement in spoken Sanskrit and it carries no flattery.",
+      "register": "neutral",
+      "mnemonic": "satyam is a whole sentence pretending to be a word. Do not lend it a verb."
+    },
+    {
+      "id": "L3-M3-S02",
+      "display": "aham tathā manye.",
+      "script": "अहम् तथा मन्ये।",
+      "cue": "I think so.",
+      "literal": "I so think",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. manye already says the speaker is first person, so aham here is the emphasis — 'I for my part think so'."
+          },
+          {
+            "display": "tathā",
+            "cue": "so · in that way",
+            "tag": "delta",
+            "forms": [],
+            "note": "'So' — pointing back at what was just said. A fresh word in the index: L1-M10's tathāpi is one whole word and donates nothing to its pieces, so this tathā is a separate entry, not half of it."
+          },
+          {
+            "display": "manye",
+            "cue": "I think · I am of the view",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I think'. The ending is -e: the first person of the set L1-M1's rocate belongs to, in the speaker's cell instead of the third person's. One new cell, not a new class."
+          }
+        ],
+        "rules": [4, 3, 5]
+      },
+      "trap": "manye does not take an opinion clause after it. There is nothing here that can say 'I think THAT…' — the thought goes in tathā, pointing back, and its content is a separate sentence.",
+      "sound": "a-HAM ta-THAA MAN-ye. manye is two syllables: MAN and ye, with the n and y joined.",
+      "variations": [
+        {
+          "display": "aham na tathā manye.",
+          "script": "अहम् न तथा मन्ये।",
+          "cue": "I don't think so.",
+          "changed": "na negates tathā rather than manye — the disagreement is about the 'so', which is the whole logic of this module"
+        },
+        {
+          "display": "aham tathā manye, yataḥ saḥ saṃskṛtam jānāti.",
+          "script": "अहम् तथा मन्ये, यतः सः संस्कृतम् जानाति।",
+          "cue": "I think so, because he knows Sanskrit.",
+          "changed": "a reason hung on the opinion; the opinion clause itself does not change shape to carry it"
+        },
+        {
+          "display": "kadācit aham tathā manye.",
+          "script": "कदाचित् अहम् तथा मन्ये।",
+          "cue": "Perhaps I think so.",
+          "changed": "the hedge goes in front of the whole sentence, not inside the verb — there is no softer shape of manye to reach for"
+        }
+      ],
+      "mistake": {
+        "display": "aham manye tat.",
+        "why": "The English order, with 'that' translated as a word. tat is L3-M2's neuter pronoun, it answers a yat clause, and it cannot introduce a thought. English needs a complementiser here and this language does not have one at all."
+      },
+      "usage": "The ordinary agreement when somebody has stated a view and you share it. aham na tathā manye is its exact opposite and is equally unremarkable to say.",
+      "register": "neutral",
+      "mnemonic": "manye looks back, never forward. Whatever you think, it was already said."
+    },
+    {
+      "id": "L3-M3-S03",
+      "display": "na tathā, mārgaḥ dīrghaḥ.",
+      "script": "न तथा, मार्गः दीर्घः।",
+      "cue": "Not so — the road is long.",
+      "literal": "not so road long",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', doing its second job. It usually sits in front of a verb; here it sits in front of tathā, and the whole two-word phrase is the disagreement."
+          },
+          {
+            "display": "tathā",
+            "cue": "so · in that way",
+            "tag": "delta",
+            "forms": [],
+            "note": "The 'so' that na negates. na tathā together is 'it is not like that' — and there is no verb in it to carry that 'is'."
+          },
+          {
+            "display": "mārgaḥ",
+            "cue": "road · way",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's road, in the shape a thing takes when it is what the sentence is about."
+          },
+          {
+            "display": "dīrghaḥ",
+            "cue": "long",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's 'long', in the masculine to agree with mārgaḥ. A judgement stated flat, with no verb, is a complete correction."
+          }
+        ],
+        "rules": [1, 2]
+      },
+      "trap": "There is no verb anywhere in na tathā, so there is nothing for na to be negating except tathā itself. An English speaker hears 'it is not so' and looks for the 'is'. It was never written.",
+      "sound": "na ta-THAA, MAAR-gah DIIR-ghah. The -gh- of dīrghaḥ is one sound with breath behind it, not g followed by h.",
+      "variations": [
+        {
+          "display": "satyam, mārgaḥ dīrghaḥ.",
+          "script": "सत्यम्, मार्गः दीर्घः।",
+          "cue": "True — the road is long.",
+          "changed": "the same claim agreed with instead of corrected; the claim itself is word for word identical"
+        },
+        {
+          "display": "na tathā, mārgaḥ na dīrghaḥ.",
+          "script": "न तथा, मार्गः न दीर्घः।",
+          "cue": "Not so — the road is not long.",
+          "changed": "the correction is doubled: na on the manner word, and a second na on the adjective of the claim itself"
+        },
+        {
+          "display": "na tathā, mārgaḥ hrasvaḥ, ataḥ aham mārgeṇa gacchāmi.",
+          "script": "न तथा, मार्गः ह्रस्वः, अतः अहम् मार्गेण गच्छामि।",
+          "cue": "Not so — the road is short, so I go on foot.",
+          "changed": "the correction grows a consequence with ataḥ, and the road turns up a second time in the by-way shape"
+        }
+      ],
+      "mistake": {
+        "display": "na asti tathā.",
+        "why": "An English 'it isn't so', assembled out of a verb this sentence never had. asti is 'there is' and it is third person, so this says roughly 'there is not, in that way'. The disagreement is the two words na tathā, and nothing joins them to a verb."
+      },
+      "usage": "The blunt, ordinary correction. It is what you say when somebody has the facts wrong, and by itself it carries no annoyance — the reason you add after it is what softens or sharpens it.",
+      "register": "neutral",
+      "mnemonic": "Two words, no verb. na tathā is the whole disagreement."
+    },
+    {
+      "id": "L3-M3-S04",
+      "display": "aham na tathā manye, yataḥ mārgaḥ hrasvaḥ.",
+      "script": "अहम् न तथा मन्ये, यतः मार्गः ह्रस्वः।",
+      "cue": "I don't think so, because the road is short.",
+      "literal": "I not so think because road short",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It appears once, at the front; the reason clause has its own subject and does not want a second one."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', in front of tathā and not in front of manye. What is denied is the 'so', not the thinking."
+          },
+          {
+            "display": "tathā",
+            "cue": "so · in that way",
+            "tag": "delta",
+            "forms": [],
+            "note": "The 'so' that points back at somebody else's claim. na tathā manye is the settled phrase for 'I don't think so'."
+          },
+          {
+            "display": "manye",
+            "cue": "I think · I am of the view",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I think', first person, ending -e. L1-M1's rocate is the third person of the same set — compare rocate and manye and the family is visible in one line."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'because', unchanged. It opens the reason and the reason comes after the claim, which is where English puts it too."
+          },
+          {
+            "display": "mārgaḥ",
+            "cue": "road · way",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's road. The reason clause is a full clause with its own subject."
+          },
+          {
+            "display": "hrasvaḥ",
+            "cue": "short",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'short', the opposite of dīrghaḥ and masculine to agree with mārgaḥ. The reason clause needs no verb either."
+          }
+        ],
+        "rules": [4, 6, 1]
+      },
+      "trap": "The reason word is yataḥ, never yat. yat is the neuter relative pronoun L3-M2 opened, and in this course it is only ever half of a yat … tat pair. Write yat here and a listener will wait for the tat that never comes.",
+      "sound": "a-HAM na ta-THAA MAN-ye, ya-TAH MAAR-gah HRAS-vah. hrasvaḥ starts with the breath: h first, the r tapped straight after, nothing between them.",
+      "variations": [
+        {
+          "display": "aham tathā manye, yataḥ mārgaḥ dīrghaḥ.",
+          "script": "अहम् तथा मन्ये, यतः मार्गः दीर्घः।",
+          "cue": "I think so, because the road is long.",
+          "changed": "the opinion flipped positive and the reason flipped with it — an opinion and its reason have to agree or the sentence argues with itself"
+        },
+        {
+          "display": "aham na tathā manye.",
+          "script": "अहम् न तथा मन्ये।",
+          "cue": "I don't think so.",
+          "changed": "the reason dropped entirely; the opinion is a complete sentence without it, which is what makes yataḥ a choice rather than a requirement"
+        },
+        {
+          "display": "aham na tathā manye, yataḥ yānam navam.",
+          "script": "अहम् न तथा मन्ये, यतः यानम् नवम्।",
+          "cue": "I don't think so, because the vehicle is new.",
+          "changed": "a different reason under the same opinion, and a neuter subject in it, so the adjective moves to the neuter ending"
+        }
+      ],
+      "mistake": {
+        "display": "aham na tathā manye, yat mārgaḥ hrasvaḥ.",
+        "why": "yat has been used for 'because'. It is not: it is the neuter relative pronoun, the ya- half of the pair L3-M2 taught, and it must be answered by a tat. The word for 'because' has been yataḥ since L1-M9 and this module does not replace it."
+      },
+      "usage": "Disagreement with its reason attached, which is the polite length. na tathā alone is a flat contradiction; na tathā with a yataḥ clause is a conversation.",
+      "register": "neutral",
+      "mnemonic": "yataḥ has a tail and yat does not. The tail is what makes it a reason."
+    },
+    {
+      "id": "L3-M3-S05",
+      "display": "kadācit idam kāryam uttamam.",
+      "script": "कदाचित् इदम् कार्यम् उत्तमम्।",
+      "cue": "Perhaps this work is good.",
+      "literal": "perhaps this work good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kadācit",
+            "cue": "perhaps · sometimes",
+            "tag": "delta",
+            "forms": [],
+            "note": "The softener. It takes no ending, it goes in front of what it softens, and it is the whole hedge — there is no verb phrase in this course that does this job."
+          },
+          {
+            "display": "idam",
+            "cue": "this",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'this', neuter to match kāryam."
+          },
+          {
+            "display": "kāryam",
+            "cue": "work · task",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's work, the noun that module opened for the clause about what you do all day."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', neuter. kadācit does not change the shape of anything after it; it only softens the whole claim."
+          }
+        ],
+        "rules": [8, 5]
+      },
+      "trap": "kadācit softens the sentence, not the word next to it. It is not attached to idam and it is not attached to uttamam — it is in front of the whole thing, which is why it does not move when the rest of the sentence does.",
+      "sound": "ka-DAA-chit I-dam KAAR-yam UT-ta-mam. The -cit is chit, with the ch of church.",
+      "variations": [
+        {
+          "display": "idam kāryam uttamam.",
+          "script": "इदम् कार्यम् उत्तमम्।",
+          "cue": "This work is good.",
+          "changed": "the hedge removed, and the claim becomes flat and certain — the only difference between an opinion and an assertion here is that one word"
+        },
+        {
+          "display": "kadācit idam kāryam na uttamam.",
+          "script": "कदाचित् इदम् कार्यम् न उत्तमम्।",
+          "cue": "Perhaps this work is not good.",
+          "changed": "the claim under the hedge negated; a hedged negative is the gentlest thing this module can say"
+        },
+        {
+          "display": "kadācit bhavān idam kāryam karoti.",
+          "script": "कदाचित् भवान् इदम् कार्यम् करोति।",
+          "cue": "Perhaps you do this work.",
+          "changed": "the nominal claim becomes a clause with a verb and a subject, and kadācit does not move — it softens a verb sentence exactly as it softened a verbless one"
+        }
+      ],
+      "mistake": {
+        "display": "aham icchāmi idam kāryam uttamam.",
+        "why": "An English 'I would say that this work is good', built out of the pieces that looked closest. icchāmi is 'I want', not a hedge, and there is still no word for 'that' to join the two halves. The softener in this course is one word, kadācit, and it goes at the front."
+      },
+      "usage": "Giving a view you are not certain of, or being tactful about one you are. In an opinions module the claims stay small: a book, a road, a meal, a piece of work, and nothing about a whole people.",
+      "register": "neutral",
+      "mnemonic": "One word in front, and the whole sentence goes soft."
+    },
+    {
+      "id": "L3-M3-S06",
+      "display": "idam pustakam uttamam, yataḥ navam.",
+      "script": "इदम् पुस्तकम् उत्तमम्, यतः नवम्।",
+      "cue": "This book is excellent, because it is new.",
+      "literal": "this book excellent because new",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idam",
+            "cue": "this",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'this', neuter for pustakam."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book, as the thing being judged."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', neuter. The claim is a verbless nominal sentence and the reason clause after it is one too."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'because', opening the reason. It comes after the claim."
+          },
+          {
+            "display": "navam",
+            "cue": "new",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'new', neuter. The reason clause repeats no subject: the book is already on the page and the ending of navam says which gender it agrees with."
+          }
+        ],
+        "rules": [6, 7]
+      },
+      "trap": "The reason clause here has no subject and no verb — just navam. Nothing has been left out by accident: the agreement on the adjective is what ties it back to pustakam, and repeating the noun would be the odd thing to do.",
+      "sound": "I-dam PUS-ta-kam UT-ta-mam, ya-TAH NA-vam. yataḥ ends with a breathed h, and before a pause you can hear a faint echo of the a after it.",
+      "variations": [
+        {
+          "display": "idam pustakam na uttamam, yataḥ purāṇam.",
+          "script": "इदम् पुस्तकम् न उत्तमम्, यतः पुराणम्।",
+          "cue": "This book is not good, because it is old.",
+          "changed": "claim and reason both flipped, and both flips are one word each — the structure does not move"
+        },
+        {
+          "display": "idam pustakam navam, ataḥ uttamam.",
+          "script": "इदम् पुस्तकम् नवम्, अतः उत्तमम्।",
+          "cue": "This book is new, so it is excellent.",
+          "changed": "the same two facts in the opposite direction: the reason becomes the cause and yataḥ becomes ataḥ"
+        },
+        {
+          "display": "kimartham idam pustakam uttamam?",
+          "script": "किमर्थम् इदम् पुस्तकम् उत्तमम्?",
+          "cue": "Why is this book excellent?",
+          "changed": "the claim turned into the question that asks for the reason; kimartham replaces nothing and simply goes first"
+        }
+      ],
+      "mistake": {
+        "display": "idam pustakam uttamam ataḥ navam.",
+        "why": "yataḥ and ataḥ have been swapped. As written this says the book became new BECAUSE it is excellent. yataḥ points backwards to a cause, ataḥ points forwards to a result, and which one you pick decides which half of your sentence is the explanation."
+      },
+      "usage": "The everyday shape of a recommendation. Say what you think, then say why, and a listener will take the second half as the evidence for the first.",
+      "register": "neutral",
+      "mnemonic": "yataḥ before the reason, ataḥ before the result. The claim never moves."
+    },
+    {
+      "id": "L3-M3-S07",
+      "display": "mama pustakam na asti, ataḥ aham khinnaḥ.",
+      "script": "मम पुस्तकम् न अस्ति, अतः अहम् खिन्नः।",
+      "cue": "I don't have my book, so I am unhappy.",
+      "literal": "my book not is therefore I unhappy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'my'. mama pustakam asti is how this language says 'I have a book', and its negative is how it says 'I don't'."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book. In a mama … asti sentence the book is the subject, not the object — nothing is being done to it."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', here in its first job, in front of a verb."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is'. na asti is written as two words in this course, never joined."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'therefore'. It opens the consequence and the cause is what came before it."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. The consequence clause has its own subject because it is about a different thing from the first clause."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "unhappy · downcast (a man speaking)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'unhappy'. It agrees with the SPEAKER, so a woman says khinnā; it does not agree with the book, which is why khinnam would be wrong here."
+          }
+        ],
+        "rules": [7, 6]
+      },
+      "trap": "khinnaḥ agrees with whoever is speaking, not with the book the sentence started with. The two clauses are about two different things and each adjective looks only at its own.",
+      "sound": "MA-ma PUS-ta-kam na AS-ti, a-TAH a-HAM KHIN-nah. khinnaḥ has a double n you can hold, and the kh is k with breath.",
+      "variations": [
+        {
+          "display": "mama pustakam na asti, ataḥ aham khinnā.",
+          "script": "मम पुस्तकम् न अस्ति, अतः अहम् खिन्ना।",
+          "cue": "I don't have my book, so I am unhappy. (a woman speaking)",
+          "changed": "one ending, and the speaker is a woman; nothing else in the sentence knows or cares"
+        },
+        {
+          "display": "mama pustakam asti, ataḥ aham santuṣṭaḥ.",
+          "script": "मम पुस्तकम् अस्ति, अतः अहम् सन्तुष्टः।",
+          "cue": "I have my book, so I am pleased.",
+          "changed": "both halves turned positive at once — the cause loses its na and the consequence takes the opposite adjective"
+        },
+        {
+          "display": "aham khinnaḥ, yataḥ mama pustakam na asti.",
+          "script": "अहम् खिन्नः, यतः मम पुस्तकम् न अस्ति।",
+          "cue": "I am unhappy, because I don't have my book.",
+          "changed": "the same two clauses in the other order, which forces ataḥ to become yataḥ — the direction of the join is what changes, not the facts"
+        }
+      ],
+      "mistake": {
+        "display": "mama pustakam na asti, ataḥ aham khinnam.",
+        "why": "The adjective has agreed with pustakam, which is neuter, instead of with aham, who is speaking. The book is in the other clause entirely. A feeling word always looks at the person feeling it."
+      },
+      "usage": "Cause and consequence in one breath. This is the shape a small complaint takes: what happened, then how it left you.",
+      "register": "neutral",
+      "mnemonic": "ataḥ points forward to the result. The adjective at the end points back at you."
+    },
+    {
+      "id": "L3-M3-S08",
+      "display": "kimartham idam pustakam uttamam?",
+      "script": "किमर्थम् इदम् पुस्तकम् उत्तमम्?",
+      "cue": "Why is this book excellent?",
+      "literal": "why this book excellent",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kimartham",
+            "cue": "why · what for",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'why'. It asks for a reason, and the answer comes back with yataḥ — the question word and the answer word were shipped together and have not changed."
+          },
+          {
+            "display": "idam",
+            "cue": "this",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'this', neuter for pustakam."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', neuter. A question about a verbless claim is still verbless — only the question word and the voice are added."
+          }
+        ],
+        "rules": [6, 9]
+      },
+      "trap": "kimartham asks for a REASON. kim asks what something is. They start with the same three letters and they get different answers, and asking kim here would be asking what the book is rather than why you rate it.",
+      "sound": "ki-MAR-tham I-dam PUS-ta-kam UT-ta-mam? The -tham is one breathed sound, t with air behind it, not t followed by h.",
+      "variations": [
+        {
+          "display": "kimartham bhavān idam pustakam paṭhati?",
+          "script": "किमर्थम् भवान् इदम् पुस्तकम् पठति?",
+          "cue": "Why are you reading this book?",
+          "changed": "the verbless claim becomes a verb clause with the person spoken to in it — bhavān with a third-person verb, as everywhere in this course"
+        },
+        {
+          "display": "kimartham idam pustakam na uttamam?",
+          "script": "किमर्थम् इदम् पुस्तकम् न उत्तमम्?",
+          "cue": "Why is this book not good?",
+          "changed": "the question asks for the reason behind a negative claim; na goes in front of the adjective, where the claim it questions had it"
+        },
+        {
+          "display": "bhavān kimartham tathā vadati?",
+          "script": "भवान् किमर्थम् तथा वदति?",
+          "cue": "Why do you say so?",
+          "changed": "the question stops being about the book and becomes about the opinion — tathā points back at what the other person just said"
+        }
+      ],
+      "mistake": {
+        "display": "kim idam pustakam uttamam?",
+        "why": "kim asks 'what', and used like this it reads as a question about what the book is, not why it is good. kimartham is the word that asks for a reason, and it is the one L1-M9 paired with yataḥ."
+      },
+      "usage": "Asking for the reason behind an opinion someone has just given. It is a normal, unloaded question here; asking for a reason is not challenging someone.",
+      "register": "neutral",
+      "mnemonic": "kimartham asks and yataḥ answers. They were taught on the same day for that reason."
+    },
+    {
+      "id": "L3-M3-S09",
+      "display": "kadācit sā adya vidyālayam na gacchati.",
+      "script": "कदाचित् सा अद्य विद्यालयम् न गच्छति।",
+      "cue": "Perhaps she is not going to school today.",
+      "literal": "perhaps she today school not goes",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kadācit",
+            "cue": "perhaps",
+            "tag": "delta",
+            "forms": [],
+            "note": "The softener, in front of the whole sentence. It hedges the claim and says nothing about how often — the frequency word for 'daily' is L1-M4's pratidinam and it is a different word."
+          },
+          {
+            "display": "sā",
+            "cue": "she",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'she'. Here she is simply the subject; there is no yā in this sentence for her to be answering."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today', unchanging."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school as a destination."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', in front of the verb. A hedged sentence can be negative: kadācit softens the claim and na denies what is claimed."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'goes'. kadācit puts no mood on the verb — the verb is the ordinary present and the hedge is a separate word."
+          }
+        ],
+        "rules": [8, 5]
+      },
+      "trap": "Nothing in gacchati has been softened. English softens the verb — 'she might not be going' — and this softens the sentence instead, with a word that sits outside it and never touches an ending.",
+      "sound": "ka-DAA-chit SAA A-dya vid-YAA-la-yam na GACH-cha-ti. adya is two syllables, A and dya, with the d and y joined.",
+      "variations": [
+        {
+          "display": "kadācit saḥ adya vidyālayam na gacchati.",
+          "script": "कदाचित् सः अद्य विद्यालयम् न गच्छति।",
+          "cue": "Perhaps he is not going to school today.",
+          "changed": "the subject changes gender and the verb does not — a third-person verb here says nothing about who"
+        },
+        {
+          "display": "sā adya vidyālayam na gacchati.",
+          "script": "सा अद्य विद्यालयम् न गच्छति।",
+          "cue": "She is not going to school today.",
+          "changed": "the hedge dropped and the report becomes a statement of fact — the difference between hearsay and knowledge is that one word"
+        },
+        {
+          "display": "kadācit sā adya vidyālayam gatavatī.",
+          "script": "कदाचित् सा अद्य विद्यालयम् गतवती।",
+          "cue": "Perhaps she went to school today.",
+          "changed": "the tense moves to the participial past and kadācit does not move with it — a hedge that sits outside the sentence works on any tense"
+        }
+      ],
+      "mistake": {
+        "display": "aham manye sā adya vidyālayam na gacchati.",
+        "why": "The English 'I think she isn't going today', with the two clauses laid end to end and nothing joining them. There is no word for 'that' in this module. Say aham na tathā manye as its own sentence, or hedge the claim itself with kadācit and say only the claim."
+      },
+      "usage": "Reporting something you are not sure of. In a language with no hedging verb, kadācit is how you avoid asserting something about another person that you do not actually know.",
+      "register": "neutral",
+      "mnemonic": "kadācit stands outside the sentence and never touches it."
+    },
+    {
+      "id": "L3-M3-S10",
+      "display": "satyam, kintu idam kāryam na uttamam.",
+      "script": "सत्यम्, किन्तु इदम् कार्यम् न उत्तमम्।",
+      "cue": "True — but this work is not good.",
+      "literal": "true but this work not good",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "satyam",
+            "cue": "true · that's right",
+            "tag": "delta",
+            "forms": [],
+            "note": "Agreement in one word, here conceding a point before taking it back. It still needs no verb, even with a whole clause coming after it."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'but'. It opens its clause, where English puts it — unlike ca and api, which sit AFTER the word they join."
+          },
+          {
+            "display": "idam",
+            "cue": "this",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'this', neuter for kāryam."
+          },
+          {
+            "display": "kāryam",
+            "cue": "work · task",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's work."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', in front of the adjective this time — there is no verb in the clause for it to stand before."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', neuter, negated. na uttamam is the softest way this module has to say something is poor."
+          }
+        ],
+        "rules": [0, 1, 9]
+      },
+      "trap": "Conceding with satyam and then disagreeing is not a contradiction and it is not rude. It is the ordinary shape of a careful objection, and the whole of the disagreement lives in the kintu clause.",
+      "sound": "SAT-yam, KIN-tu I-dam KAAR-yam na UT-ta-mam. kintu is two clean syllables and the n is the ordinary one.",
+      "variations": [
+        {
+          "display": "na tathā, idam kāryam uttamam.",
+          "script": "न तथा, इदम् कार्यम् उत्तमम्।",
+          "cue": "Not so — this work is good.",
+          "changed": "the concession replaced by a flat correction, and the judgement flipped with it; no kintu is needed once you have contradicted outright"
+        },
+        {
+          "display": "idam kāryam na uttamam, tathāpi aham santuṣṭaḥ.",
+          "script": "इदम् कार्यम् न उत्तमम्, तथापि अहम् सन्तुष्टः।",
+          "cue": "This work is not good, even so I am pleased.",
+          "changed": "the concession moves to the second half and becomes tathāpi, which is one whole word and not tathā with something added"
+        },
+        {
+          "display": "satyam, kintu aham na tathā manye.",
+          "script": "सत्यम्, किन्तु अहम् न तथा मन्ये।",
+          "cue": "True — but I don't think so.",
+          "changed": "the objection stops being about the work and becomes an opinion, which is the bluntest thing this module can say politely"
+        }
+      ],
+      "mistake": {
+        "display": "satyam, idam kāryam na uttamam kintu.",
+        "why": "kintu has been sent to the end of the clause, on the model of L1-M10's ca and api, which really do sit after the word they join. kintu is not one of those: it opens its clause, exactly where English puts 'but'."
+      },
+      "usage": "Agreeing with part of what was said and objecting to the rest. This is the most useful sentence shape in the module and it is what keeps a disagreement from sounding like a contradiction.",
+      "register": "neutral",
+      "mnemonic": "satyam concedes, kintu turns, and kintu turns from the front."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M3-C01",
+      "display": "satyam, idam phalam uttamam.",
+      "script": "सत्यम्, इदम् फलम् उत्तमम्।",
+      "cue": "True — this fruit is excellent."
+    },
+    {
+      "id": "L3-M3-C02",
+      "display": "na tathā, saḥ adya na gacchati.",
+      "script": "न तथा, सः अद्य न गच्छति।",
+      "cue": "Not so — he is not going today."
+    },
+    {
+      "id": "L3-M3-C03",
+      "display": "aham tathā manye, yataḥ sā saṃskṛtam jānāti.",
+      "script": "अहम् तथा मन्ये, यतः सा संस्कृतम् जानाति।",
+      "cue": "I think so, because she knows Sanskrit."
+    },
+    {
+      "id": "L3-M3-C04",
+      "display": "kadācit adya bhojanam na asti.",
+      "script": "कदाचित् अद्य भोजनम् न अस्ति।",
+      "cue": "Perhaps there is no food today."
+    },
+    {
+      "id": "L3-M3-C05",
+      "display": "aham santuṣṭaḥ, yataḥ mama pustakam navam.",
+      "script": "अहम् सन्तुष्टः, यतः मम पुस्तकम् नवम्।",
+      "cue": "I am pleased, because my book is new."
+    },
+    {
+      "id": "L3-M3-C06",
+      "display": "kimartham sā adya khinnā?",
+      "script": "किमर्थम् सा अद्य खिन्ना?",
+      "cue": "Why is she unhappy today?"
+    },
+    {
+      "id": "L3-M3-C07",
+      "display": "idam gṛham sundaram, yataḥ śāntam.",
+      "script": "इदम् गृहम् सुन्दरम्, यतः शान्तम्।",
+      "cue": "This house is beautiful, because it is quiet."
+    },
+    {
+      "id": "L3-M3-C08",
+      "display": "saḥ vaidyaḥ uttamaḥ, ataḥ aham tatra gacchāmi.",
+      "script": "सः वैद्यः उत्तमः, अतः अहम् तत्र गच्छामि।",
+      "cue": "That doctor is good, so I go there."
+    },
+    {
+      "id": "L3-M3-C09",
+      "display": "kadācit śvaḥ aham pustakālayam gacchāmi.",
+      "script": "कदाचित् श्वः अहम् पुस्तकालयम् गच्छामि।",
+      "cue": "Perhaps I will go to the library tomorrow."
+    },
+    {
+      "id": "L3-M3-C10",
+      "display": "satyam, mārgaḥ dīrghaḥ, ataḥ yānena gacchāmi.",
+      "script": "सत्यम्, मार्गः दीर्घः, अतः यानेन गच्छामि।",
+      "cue": "True — the road is long, so I go by vehicle."
+    },
+    {
+      "id": "L3-M3-C11",
+      "display": "aham na tathā manye, yataḥ idam pustakam purāṇam.",
+      "script": "अहम् न तथा मन्ये, यतः इदम् पुस्तकम् पुराणम्।",
+      "cue": "I don't think so, because this book is old."
+    },
+    {
+      "id": "L3-M3-C12",
+      "display": "idam saṅgītam sundaram, ataḥ aham santuṣṭā.",
+      "script": "इदम् सङ्गीतम् सुन्दरम्, अतः अहम् सन्तुष्टा।",
+      "cue": "This music is beautiful, so I am pleased. (a woman speaking)"
+    },
+    {
+      "id": "L3-M3-C13",
+      "display": "kadācit saḥ adya kāryam kṛtavān.",
+      "script": "कदाचित् सः अद्य कार्यम् कृतवान्।",
+      "cue": "Perhaps he did the work today."
+    }
+  ],
+  "exitTest": { "generateCount": 1, "comprehendCount": 2 }
+}
