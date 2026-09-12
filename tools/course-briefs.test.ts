@@ -406,7 +406,7 @@ describe('en-sa: the decisions its briefs settle (#604, #607, #612)', () => {
     expect(COURSE_BRIEFS_SOURCE).toMatch(/NFC is mandatory and it is a rendering hazard/);
     expect(COURSE_BRIEFS_SOURCE).toMatch(/en-sa has no hyphen at all/);
     expect(COURSE_BRIEFS_SOURCE).toMatch(/No stress marks\*\* — Sanskrit has syllable weight/);
-    expect(COURSE_BRIEFS_SOURCE).toMatch(/Ten courses are briefed/);
+    expect(COURSE_BRIEFS_SOURCE).toMatch(/Eleven courses are briefed/);
   });
 
   /**
