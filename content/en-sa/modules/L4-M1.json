@@ -1,0 +1,996 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M1",
+  "title": "Explaining how",
+  "job": "Steps and instructions in order, and what they are for",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present",
+      "participial_past",
+      "verbless_nominal_present",
+      "absolutive",
+      "infinitive_of_purpose",
+      "gerundive_obligation",
+      "polite_imperative"
+    ],
+    "allowedPatterns": [
+      "N-acc + V-tum + V-āmi",
+      "mayā + N-acc + V-tavyam",
+      "bhavatā + N-acc + V-tavyam",
+      "V-tvā + N-acc + V-tum + V-tu",
+      "prathamam + <clause> + . + tataḥ + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The infinitive of purpose is the verb plus -tum: gantum, kartum, paṭhitum, khāditum, pātum, likhitum. It is indeclinable — no person, no number, no tense — and it sits in front of the finite verb."
+    },
+    {
+      "tag": "delta",
+      "text": "The stem in front of -tum is not always the stem of the present. gacchati gives gantum, karoti gives kartum and pibati gives pātum, while paṭhati, khādati and likhati keep their i: paṭhitum, khāditum, likhitum."
+    },
+    {
+      "tag": "delta",
+      "text": "The gerundive is the verb plus -tavyam and it means 'is to be done'. Three of them here: gantavyam, kartavyam, paṭhitavyam. It is a fixed neuter -am and never changes for anybody."
+    },
+    {
+      "tag": "delta",
+      "text": "The person who must act is INSTRUMENTAL, not nominative. mayā gantavyam is 'I must go', word for word 'by-me it-is-to-be-gone'. There is no nominative anywhere in that sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "bhavatā and bhavatyā are the instrumentals of L1-M2's bhavān and bhavatī, and they are how this course says 'you should' — bhavatā kartavyam — without ever writing a second-person verb ending."
+    },
+    {
+      "tag": "interference",
+      "text": "gatavān and gantavyam differ by one letter in the middle and by a whole tense in meaning: -tavān is 'went', a finished report, and -tavyam is 'must be gone to', an obligation with no time in it at all."
+    },
+    {
+      "tag": "interference",
+      "text": "English says 'I have to go' with I as the subject, so a learner writes aham gantavyam. Sanskrit makes the whole clause impersonal and demotes the actor to the instrumental. The subject slot stays empty."
+    },
+    {
+      "tag": "free",
+      "text": "One sentence, one finite verb. An infinitive and an absolutive may stack in front of it as deeply as the instruction needs, but exactly one word at the end carries the person and the tense for all of them."
+    },
+    {
+      "tag": "free",
+      "text": "Steps are ordered with L2-M10's prathamam, tataḥ, anantaram and ante, which join whole sentences, and with L3-M1's absolutives inside one. This module writes no time clause — that is L4-M6's."
+    },
+    {
+      "tag": "free",
+      "text": "Sanskrit has a second obligation suffix, -anīya, with the same meaning as -tavyam. It is real and you will meet it in reading; this course writes -tavyam only, so that one idea costs one ending."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M1-S01",
+      "display": "aham jalam pātum gacchāmi.",
+      "script": "अहम् जलम् पातुम् गच्छामि।",
+      "cue": "I am going to drink water.",
+      "literal": "I water to-drink go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. Sanskrit drops it freely, so one is enough in a sentence however many verbs and infinitives stand in it."
+          },
+          {
+            "display": "jalam",
+            "cue": "water",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's water, in the shape a thing takes when something is done to it. An infinitive takes its object exactly as the finite verb would."
+          },
+          {
+            "display": "pātum",
+            "cue": "to drink",
+            "tag": "delta",
+            "forms": [],
+            "note": "The infinitive of L1-M4's pibati. The stem changes completely — pibati but pātum — so learn the pair together. It carries no person and no tense."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'I go'. The -mi is the only thing in the sentence that says who and when, and it is carrying pātum as well as itself."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7
+        ]
+      },
+      "trap": "Nothing in pātum says 'I' and nothing in it says 'now'. Both come from gacchāmi, which is why the same infinitive can sit unchanged in a past sentence.",
+      "sound": "a-HAM JA-lam PAA-tum GACH-chhaa-mi. The paa is long and open, the vowel of \"father\" rather than of \"pin\".",
+      "variations": [
+        {
+          "display": "bhavān jalam pātum gacchati.",
+          "script": "भवान् जलम् पातुम् गच्छति।",
+          "cue": "You are going to drink water.",
+          "changed": "the speaker becomes the person spoken to — bhavān with a third-person verb, and pātum does not move, because it never held the person"
+        },
+        {
+          "display": "aham jalam pātum gatavān.",
+          "script": "अहम् जलम् पातुम् गतवान्।",
+          "cue": "I went to drink water.",
+          "changed": "the whole sentence moves to yesterday and only the last word changes: the infinitive is tense-neutral"
+        },
+        {
+          "display": "aham jalam pātum na gacchāmi.",
+          "script": "अहम् जलम् पातुम् न गच्छामि।",
+          "cue": "I am not going to drink water.",
+          "changed": "na negates the finite verb only; the purpose is still drinking, because na cannot reach an infinitive"
+        }
+      ],
+      "mistake": {
+        "display": "aham jalam pibāmi gacchāmi.",
+        "why": "Two finite verbs side by side, which is the English 'I drink water, I go'. Sanskrit takes the person and the tense out of the first one and leaves pātum: one sentence, one ending."
+      },
+      "usage": "The everyday answer to 'where are you off to?'. The purpose goes in the middle and the verb of motion goes last.",
+      "register": "neutral",
+      "mnemonic": "-tum has no who and no when. The last word has both."
+    },
+    {
+      "id": "L4-M1-S02",
+      "display": "bhavān saṃskṛtam paṭhitum vidyālayam gacchati.",
+      "script": "भवान् संस्कृतम् पठितुम् विद्यालयम् गच्छति।",
+      "cue": "You go to school to study Sanskrit.",
+      "literal": "you Sanskrit to-study school go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you'. It is grammatically a third person, so the verb beside it is gacchati and never a second-person ending. That is the register of the whole course."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's Sanskrit. The anusvāra is INSIDE the word, which is internal sandhi written in full and correct; a word-final nasal would be written m."
+          },
+          {
+            "display": "paṭhitum",
+            "cue": "to study · to read",
+            "tag": "delta",
+            "forms": [],
+            "note": "The infinitive of L1-M4's paṭhati. This root keeps its i before the ending — paṭhitum, not paṭhtum — exactly as its absolutive paṭhitvā does."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school as a destination. The accusative of where you are going is untouched by the infinitive standing in front of it."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'goes'. It is the person-marking of the whole sentence and it agrees with bhavān, which is a third person however it is translated."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4,
+          7
+        ]
+      },
+      "trap": "Two accusatives, doing different jobs: saṃskṛtam is what is studied and vidyālayam is where you go. The infinitive collects the first and the finite verb the second.",
+      "sound": "bha-VAAN sam-SKRI-tam pa-THI-tum vid-YAA-la-yam GACH-chha-ti. The n of bhavaan is held, not released.",
+      "variations": [
+        {
+          "display": "bhavatī saṃskṛtam paṭhitum vidyālayam gacchati.",
+          "script": "भवती संस्कृतम् पठितुम् विद्यालयम् गच्छति।",
+          "cue": "You go to school to study Sanskrit.",
+          "changed": "the person spoken to is a woman — bhavān becomes bhavatī and the verb does not move, because it was third person all along"
+        },
+        {
+          "display": "kim bhavān saṃskṛtam paṭhitum vidyālayam gacchati?",
+          "script": "किम् भवान् संस्कृतम् पठितुम् विद्यालयम् गच्छति?",
+          "cue": "Do you go to school to study Sanskrit?",
+          "changed": "the statement becomes a yes/no question with kim at the front, and nothing else in it changes"
+        },
+        {
+          "display": "bhavān saṃskṛtam paṭhitum vidyālayam na gacchati.",
+          "script": "भवान् संस्कृतम् पठितुम् विद्यालयम् न गच्छति।",
+          "cue": "You do not go to school to study Sanskrit.",
+          "changed": "negation lands on the finite verb; the purpose clause is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān saṃskṛtam paṭhati vidyālayam gacchati.",
+        "why": "Grammatical, and it says something else: two separate facts, \"you read Sanskrit\" and \"you go to school\". The purpose link is exactly what an infinitive carries and a finite verb cannot."
+      },
+      "usage": "How you state or ask what a journey is for. It is also the polite frame — bhavān plus a third-person verb — which does not change anywhere in L4.",
+      "register": "neutral",
+      "mnemonic": "The purpose is an infinitive. Two finite verbs are two announcements."
+    },
+    {
+      "id": "L4-M1-S03",
+      "display": "aham prātaḥ kāryam kartum yānena kāryālayam gacchāmi.",
+      "script": "अहम् प्रातः कार्यम् कर्तुम् यानेन कार्यालयम् गच्छामि।",
+      "cue": "In the morning I go to the office by bus to do the work.",
+      "literal": "I in-the-morning work to-do by-vehicle office go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. Sanskrit drops it freely, so one is enough in a sentence however many verbs and infinitives stand in it."
+          },
+          {
+            "display": "prātaḥ",
+            "cue": "in the morning",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's time word. It takes no ending, it never changes, and it goes at the front of the sentence."
+          },
+          {
+            "display": "kāryam",
+            "cue": "work · task",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's work, in the object shape. It is what kartum does, and it sits directly in front of its own infinitive."
+          },
+          {
+            "display": "kartum",
+            "cue": "to do · to make",
+            "tag": "delta",
+            "forms": [],
+            "note": "The infinitive of L1-M4's karoti. The r moves — karoti but kartum — which is the same shift its absolutive kṛtvā shows. No person, no tense."
+          },
+          {
+            "display": "yānena",
+            "cue": "by vehicle · by bus",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's instrumental of means. This is the instrumental doing a TOOL job; the gerundive sentences below use the same case for a person."
+          },
+          {
+            "display": "kāryālayam",
+            "cue": "office (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M8's office as a destination. One token with its internal sandhi written in full, and one row."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'I go'. Six words of detail hang on it, and it is the only one of the seven that says who and when."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7,
+          8
+        ]
+      },
+      "trap": "yānena and kartum both answer how, and only one of them is a case. The tool is instrumental; the purpose is an indeclinable infinitive that takes no case at all.",
+      "sound": "a-HAM PRAA-tah KAAR-yam KAR-tum YAA-ne-na kaar-YAA-la-yam GACH-chhaa-mi.",
+      "variations": [
+        {
+          "display": "aham prātaḥ kāryam kartum yānena kāryālayam gatavān.",
+          "script": "अहम् प्रातः कार्यम् कर्तुम् यानेन कार्यालयम् गतवान्।",
+          "cue": "In the morning I went to the office by bus to do the work.",
+          "changed": "only the finite verb moves, to the participial past; the other six words are unchanged"
+        },
+        {
+          "display": "bhavatī prātaḥ kāryam kartum yānena kāryālayam gacchati.",
+          "script": "भवती प्रातः कार्यम् कर्तुम् यानेन कार्यालयम् गच्छति।",
+          "cue": "In the morning you go to the office by bus to do the work.",
+          "changed": "the speaker becomes a woman being spoken to; the instrumental and the infinitive both stay put"
+        },
+        {
+          "display": "aham prātaḥ kāryam kartum kāryālayam gacchāmi.",
+          "script": "अहम् प्रातः कार्यम् कर्तुम् कार्यालयम् गच्छामि।",
+          "cue": "In the morning I go to the office to do the work.",
+          "changed": "the means is dropped — yānena is optional detail, while kartum is the point of the sentence"
+        }
+      ],
+      "mistake": {
+        "display": "aham prātaḥ kāryam karomi kāryālayam gacchāmi.",
+        "why": "karomi has a person in it, so the sentence now claims two separate actions rather than one journey with a purpose. Swapping karomi for kartum is the whole repair."
+      },
+      "usage": "The ordinary morning answer at work: time first, purpose in the middle, destination and verb at the end.",
+      "register": "neutral",
+      "mnemonic": "Instrumental for the tool. Infinitive for the reason."
+    },
+    {
+      "id": "L4-M1-S04",
+      "display": "sā hyaḥ phalam khāditum gṛham gatavatī.",
+      "script": "सा ह्यः फलम् खादितुम् गृहम् गतवती।",
+      "cue": "Yesterday she went home to eat fruit.",
+      "literal": "she yesterday fruit to-eat home went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sā",
+            "cue": "she",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'she'. She is the subject of the sentence, and the participle at the end is what agrees with her."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday'. It is what makes this sentence past; the infinitive in the middle has no opinion about the time."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's fruit, in the object shape. It belongs to khāditum, not to gatavatī."
+          },
+          {
+            "display": "khāditum",
+            "cue": "to eat",
+            "tag": "delta",
+            "forms": [],
+            "note": "The infinitive of L1-M4's khādati. It keeps the i, like its absolutive khāditvā, and it looks the same in a past sentence as in a present one."
+          },
+          {
+            "display": "gṛham",
+            "cue": "home (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house as a destination. Where you go is accusative whether the verb is present or past."
+          },
+          {
+            "display": "gatavatī",
+            "cue": "went (a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's participial past in the woman's shape, agreeing with sā. It is the only word here carrying a time, and khāditum borrows it."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          5,
+          7
+        ]
+      },
+      "trap": "-tum and -tavān stand in the same sentence here. khāditum is the purpose and gatavatī is the past; neither ending could do the other one’s job.",
+      "sound": "SAA HYAH PHA-lam khaa-DI-tum GRI-ham ga-ta-va-TEE. The h of hyah is a breath at the start, not a syllable of its own.",
+      "variations": [
+        {
+          "display": "saḥ hyaḥ phalam khāditum gṛham gatavān.",
+          "script": "सः ह्यः फलम् खादितुम् गृहम् गतवान्।",
+          "cue": "Yesterday he went home to eat fruit.",
+          "changed": "the subject becomes a man, so the participle forks to gatavān — and khāditum does not fork, because it has no gender either"
+        },
+        {
+          "display": "sā adya phalam khāditum gṛham gacchati.",
+          "script": "सा अद्य फलम् खादितुम् गृहम् गच्छति।",
+          "cue": "Today she goes home to eat fruit.",
+          "changed": "the time word and the finite verb move to the present together; the infinitive is the one word that could stay"
+        },
+        {
+          "display": "sā hyaḥ phalam khāditum gṛham na gatavatī.",
+          "script": "सा ह्यः फलम् खादितुम् गृहम् न गतवती।",
+          "cue": "Yesterday she did not go home to eat fruit.",
+          "changed": "na negates the going; the eating was never asserted in the first place, because an infinitive asserts nothing"
+        }
+      ],
+      "mistake": {
+        "display": "sā hyaḥ phalam khāditavatī gṛham gatavatī.",
+        "why": "Two participial pasts, so the sentence reports that she ate fruit and that she went home — two finished events instead of one journey with a reason. Only the infinitive leaves the eating unfinished."
+      },
+      "usage": "How a small errand gets told. The purpose stays an infinitive even when everything around it is finished and past.",
+      "register": "neutral",
+      "mnemonic": "-tum never fixes a time. The last word always does."
+    },
+    {
+      "id": "L4-M1-S05",
+      "display": "kṛpayā atra āgatya patram likhitum upaviśatu.",
+      "script": "कृपया अत्र आगत्य पत्रम् लिखितुम् उपविशतु।",
+      "cue": "Please come here and sit down to write the form.",
+      "literal": "please here having-come form to-write sit-down",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's 'please'. It sits at the very front and it is what makes an imperative a request rather than an order."
+          },
+          {
+            "display": "atra",
+            "cue": "here",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M7's 'here'. It goes with āgatya, the coming, and not with the sitting."
+          },
+          {
+            "display": "āgatya",
+            "cue": "having come",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M1's absolutive of L2-M1's āgacchatu — a prefixed root, so -ya and not -tvā. Like the infinitive, it has no person and no tense of its own."
+          },
+          {
+            "display": "patram",
+            "cue": "form · letter",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M8's form. It is the object of likhitum: an infinitive governs its object exactly as a finite verb does."
+          },
+          {
+            "display": "likhitum",
+            "cue": "to write",
+            "tag": "delta",
+            "forms": [],
+            "note": "The infinitive of L1-M4's likhati. It keeps the i, as its absolutive likhitvā does, and it sits in front of the finite verb."
+          },
+          {
+            "display": "upaviśatu",
+            "cue": "please sit",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's polite imperative. It is the finite verb of the sentence, so it is what both āgatya and likhitum hang on."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7,
+          8
+        ]
+      },
+      "trap": "Three verb shapes in one line and only one of them is finite. āgatya and likhitum are both endingless; upaviśatu carries the whole instruction.",
+      "sound": "kri-pa-YAA A-tra AA-ga-tya PA-tram li-KHI-tum u-pa-VI-sha-tu. The aa at the front of aagatya is the long one.",
+      "variations": [
+        {
+          "display": "kṛpayā atra āgatya patram likhitum upaviśatu iti saḥ vadati.",
+          "script": "कृपया अत्र आगत्य पत्रम् लिखितुम् उपविशतु इति सः वदति।",
+          "cue": "He says, please come here and sit down to write the form.",
+          "changed": "the instruction is quoted with L3-M5’s postposed iti, and nothing inside the quote shifts"
+        },
+        {
+          "display": "kṛpayā atra āgatya patram likhitum upaviśatu, tataḥ gṛham gacchatu.",
+          "script": "कृपया अत्र आगत्य पत्रम् लिखितुम् उपविशतु, ततः गृहम् गच्छतु।",
+          "cue": "Please come here and sit down to write the form, then go home.",
+          "changed": "a second instruction is chained with L2-M10’s tataḥ, which joins clauses and never moves inside one"
+        },
+        {
+          "display": "kṛpayā atra āgatya patram paṭhitum upaviśatu.",
+          "script": "कृपया अत्र आगत्य पत्रम् पठितुम् उपविशतु।",
+          "cue": "Please come here and sit down to read the form.",
+          "changed": "the purpose alone changes — one infinitive swaps for another and every other word holds"
+        }
+      ],
+      "mistake": {
+        "display": "kṛpayā atra āgatya patram likhitum.",
+        "why": "Two endingless verb shapes and no finite verb at all, so nobody has been asked to do anything. An absolutive and an infinitive can only lean on a verb that carries an ending."
+      },
+      "usage": "What a counter clerk says. The absolutive and the infinitive stack in front of one polite imperative, which is how a two-step instruction fits in one breath.",
+      "register": "neutral",
+      "mnemonic": "Stack as many endingless verbs as you like. Exactly one must end."
+    },
+    {
+      "id": "L4-M1-S06",
+      "display": "mayā adya vidyālayam gantavyam.",
+      "script": "मया अद्य विद्यालयम् गन्तव्यम्।",
+      "cue": "I have to go to school today.",
+      "literal": "by-me today school it-is-to-be-gone",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mayā",
+            "cue": "by me",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's instrumental 'by me'. In this frame it names the person who must act, and it is the closest thing the sentence has to a subject."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. The gerundive has no tense of its own, so a time word is what places the obligation."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school as a destination. The frame is impersonal but it still takes the destination a finite verb would take."
+          },
+          {
+            "display": "gantavyam",
+            "cue": "must be gone to",
+            "tag": "delta",
+            "forms": [],
+            "note": "The gerundive of L1-M2's gacchati. Fixed neuter -am: it never agrees with mayā, with vidyālayam, or with anything else in the sentence."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          5,
+          6
+        ]
+      },
+      "trap": "There is no nominative anywhere in this sentence. Every word in it is instrumental, accusative, indeclinable, or the fixed neuter gerundive.",
+      "sound": "ma-YAA A-dya vid-YAA-la-yam gan-TAV-yam. The tav is the syllable to hold; it is what separates this from gatavaan.",
+      "variations": [
+        {
+          "display": "bhavatā adya vidyālayam gantavyam.",
+          "script": "भवता अद्य विद्यालयम् गन्तव्यम्।",
+          "cue": "You have to go to school today.",
+          "changed": "the person who must act changes and nothing else does — the gerundive is impersonal, so it cannot register who it is"
+        },
+        {
+          "display": "mayā adya vidyālayam na gantavyam.",
+          "script": "मया अद्य विद्यालयम् न गन्तव्यम्।",
+          "cue": "I do not have to go to school today.",
+          "changed": "na in front of the gerundive cancels the obligation rather than the going"
+        },
+        {
+          "display": "aham adya vidyālayam gantum icchāmi.",
+          "script": "अहम् अद्य विद्यालयम् गन्तुम् इच्छामि।",
+          "cue": "I want to go to school today.",
+          "changed": "obligation becomes desire, and the whole frame turns over with it: nominative aham, L1-M2’s infinitive gantum, and a finite verb at the end"
+        }
+      ],
+      "mistake": {
+        "display": "aham adya vidyālayam gantavyam.",
+        "why": "aham is nominative and this frame has no nominative slot at all. The one who must act is instrumental — mayā — which is exactly why the construction is called impersonal."
+      },
+      "usage": "The everyday \"I have to\". It is what you say when you are leaving and want the reason understood rather than argued with.",
+      "register": "neutral",
+      "mnemonic": "By-me it-is-to-be-gone. No I, no he, no she."
+    },
+    {
+      "id": "L4-M1-S07",
+      "display": "bhavatā idam kāryam kartavyam.",
+      "script": "भवता इदम् कार्यम् कर्तव्यम्।",
+      "cue": "You have to do this work.",
+      "literal": "by-you this work it-is-to-be-done",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavatā",
+            "cue": "by you (to a man)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The instrumental of L1-M2's bhavān, which shipped bhavān and bhavataḥ and no by-you shape. This is the one the gerundive needs."
+          },
+          {
+            "display": "idam",
+            "cue": "this",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this', agreeing with kāryam. It is the pointing word this course uses; L3-M2's tat is a correlative and does a different job."
+          },
+          {
+            "display": "kāryam",
+            "cue": "work · task",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's work: neuter, and accusative here. kartavyam happens to look neuter too, and that is a coincidence of shape rather than agreement."
+          },
+          {
+            "display": "kartavyam",
+            "cue": "must be done",
+            "tag": "delta",
+            "forms": [],
+            "note": "The gerundive of L1-M4's karoti, fixed neuter -am. Compare kṛtavān, 'did': one letter apart in the middle and a whole tense apart in meaning."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "trap": "kāryam and kartavyam both end -am and neither is agreeing with the other. The noun is a real neuter accusative; the gerundive is frozen in that shape whatever stands beside it.",
+      "sound": "bha-va-TAA I-dam KAAR-yam kar-TAV-yam. bhavataa is three syllables with the long one last.",
+      "variations": [
+        {
+          "display": "bhavatyā idam kāryam kartavyam.",
+          "script": "भवत्या इदम् कार्यम् कर्तव्यम्।",
+          "cue": "You have to do this work.",
+          "changed": "the person spoken to is a woman — bhavatā becomes bhavatyā, and the gerundive still does not move"
+        },
+        {
+          "display": "mayā idam kāryam kartavyam.",
+          "script": "मया इदम् कार्यम् कर्तव्यम्।",
+          "cue": "I have to do this work.",
+          "changed": "the obligation moves to the speaker; only the instrumental changes, which is the whole lesson of the frame"
+        },
+        {
+          "display": "bhavatā idam kāryam na kartavyam.",
+          "script": "भवता इदम् कार्यम् न कर्तव्यम्।",
+          "cue": "You must not do this work.",
+          "changed": "na turns the obligation into a prohibition — and this is how the course forbids, because mā with an imperative is written nowhere"
+        }
+      ],
+      "mistake": {
+        "display": "bhavatā idam kāryam kṛtavān.",
+        "why": "kṛtavān is the past participle: 'you did this work', a report. kartavyam is the gerundive: 'you must do it', an instruction. One letter apart in the middle, and everything apart in meaning."
+      },
+      "usage": "How a task is handed over with no order in it. bhavatā plus -tavyam is this course's 'you should', and it never needs a second-person ending to get there.",
+      "register": "neutral",
+      "mnemonic": "-tavān is done. -tavyam is to be done."
+    },
+    {
+      "id": "L4-M1-S08",
+      "display": "bhavatyā saṃskṛtam paṭhitavyam.",
+      "script": "भवत्या संस्कृतम् पठितव्यम्।",
+      "cue": "You have to study Sanskrit.",
+      "literal": "by-you Sanskrit it-is-to-be-studied",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavatyā",
+            "cue": "by you (to a woman)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The instrumental of L1-M2's bhavatī. L2-M5 taught bhavatyai, 'to you'; this is the by-you shape, and the gerundive takes this one."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's Sanskrit, as the thing to be studied. Its -am is a real neuter accusative, exactly as it was in S02."
+          },
+          {
+            "display": "paṭhitavyam",
+            "cue": "must be studied",
+            "tag": "delta",
+            "forms": [],
+            "note": "The gerundive of L1-M4's paṭhati, keeping the i as paṭhitum and paṭhitvā do. Fixed neuter, and it agrees with nobody."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "trap": "Three words and not one of them is nominative. A learner counting subjects will find none, which is correct.",
+      "sound": "bha-vat-YAA sam-SKRI-tam pa-thi-TAV-yam.",
+      "variations": [
+        {
+          "display": "bhavatā saṃskṛtam paṭhitavyam.",
+          "script": "भवता संस्कृतम् पठितव्यम्।",
+          "cue": "You have to study Sanskrit.",
+          "changed": "the person spoken to is a man; bhavatyā becomes bhavatā and the gerundive holds"
+        },
+        {
+          "display": "bhavatyā adya saṃskṛtam paṭhitavyam.",
+          "script": "भवत्या अद्य संस्कृतम् पठितव्यम्।",
+          "cue": "You have to study Sanskrit today.",
+          "changed": "a time word is added, because the gerundive carries no tense of its own and cannot say when"
+        },
+        {
+          "display": "bhavatī saṃskṛtam paṭhitum vidyālayam gacchati.",
+          "script": "भवती संस्कृतम् पठितुम् विद्यालयम् गच्छति।",
+          "cue": "You go to school to study Sanskrit.",
+          "changed": "obligation becomes purpose: the nominative bhavatī comes back, an infinitive replaces the gerundive, and a finite verb reappears"
+        }
+      ],
+      "mistake": {
+        "display": "bhavatī saṃskṛtam paṭhitavyam.",
+        "why": "bhavatī is nominative and this frame has no nominative in it. The listener has to be instrumental — bhavatyā — which is the single hardest thing about the construction."
+      },
+      "usage": "Advice from a teacher. It is firmer than L3-M4’s gacchet and softer than an imperative, which is the register most instruction actually lives in.",
+      "register": "neutral",
+      "mnemonic": "bhavān points. bhavatā pushes."
+    },
+    {
+      "id": "L4-M1-S09",
+      "display": "prathamam kramam paśyatu. tataḥ bhavatā saṃskṛtam paṭhitavyam.",
+      "script": "प्रथमम् क्रमम् पश्यतु। ततः भवता संस्कृतम् पठितव्यम्।",
+      "cue": "First look at the step. Then you have to study Sanskrit.",
+      "literal": "first step let-look. then by-you Sanskrit it-is-to-be-studied",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prathamam",
+            "cue": "first",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M10's first sequencer. It orders whole sentences, which is how steps are numbered here; there is no time clause in this module."
+          },
+          {
+            "display": "kramam",
+            "cue": "step · procedure",
+            "tag": "delta",
+            "forms": [
+              "kramaḥ",
+              "kramam"
+            ],
+            "note": "A step in an order, and an order of steps taken whole. This is the object shape; the citation shape is kramaḥ, since a masculine noun swaps -aḥ for -am when acted on."
+          },
+          {
+            "display": "paśyatu",
+            "cue": "please look",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's polite imperative of paśyati. It is finite, and it carries the whole first instruction on its own."
+          },
+          {
+            "display": "tataḥ",
+            "cue": "then",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M10's second sequencer. It joins two SENTENCES and never sits inside one, which is what separates it from a time clause."
+          },
+          {
+            "display": "bhavatā",
+            "cue": "by you (to a man)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The instrumental of L1-M2's bhavān, doing the same job as in S07: naming who the obligation falls on without a nominative."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's Sanskrit as the thing to be studied, in its ordinary neuter accusative."
+          },
+          {
+            "display": "paṭhitavyam",
+            "cue": "must be studied",
+            "tag": "delta",
+            "forms": [],
+            "note": "The gerundive of L1-M4's paṭhati. Fixed neuter, no tense and no person — the sequencer in front is what places it in the order."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          5,
+          8
+        ]
+      },
+      "trap": "The first sentence has a finite imperative and the second has no finite verb at all. Both are complete: the gerundive is a predicate in its own right.",
+      "sound": "pra-tha-MAM KRA-mam PASH-ya-tu. TA-tah bha-va-TAA sam-SKRI-tam pa-thi-TAV-yam.",
+      "variations": [
+        {
+          "display": "prathamam kramam paśyatu. tataḥ bhavatyā saṃskṛtam paṭhitavyam.",
+          "script": "प्रथमम् क्रमम् पश्यतु। ततः भवत्या संस्कृतम् पठितव्यम्।",
+          "cue": "First look at the step. Then you have to study Sanskrit.",
+          "changed": "the person instructed is a woman, so bhavatā alone forks and both halves otherwise hold"
+        },
+        {
+          "display": "prathamam kramam paśyatu. anantaram bhavatā saṃskṛtam paṭhitavyam.",
+          "script": "प्रथमम् क्रमम् पश्यतु। अनन्तरम् भवता संस्कृतम् पठितव्यम्।",
+          "cue": "First look at the step. After that you have to study Sanskrit.",
+          "changed": "tataḥ swaps for anantaram — the sequencers are interchangeable between sentences and none of them may move inside one"
+        },
+        {
+          "display": "prathamam kramam paśyatu. tataḥ bhavatā saṃskṛtam na paṭhitavyam.",
+          "script": "प्रथमम् क्रमम् पश्यतु। ततः भवता संस्कृतम् न पठितव्यम्।",
+          "cue": "First look at the step. Then you must not study Sanskrit.",
+          "changed": "na cancels the second step rather than the first; each sentence is negated on its own"
+        }
+      ],
+      "mistake": {
+        "display": "prathamam bhavatā kramam paśyatu.",
+        "why": "The instrumental has been pulled in front of an imperative, where it has no work to do. bhavatā belongs to a gerundive; an imperative already names its addressee by being one."
+      },
+      "usage": "The shape written instructions take — a numbered step, then what follows from it. It is why this module orders with sequencers rather than with a time word.",
+      "register": "neutral",
+      "mnemonic": "Sequencers between sentences. Never inside one."
+    },
+    {
+      "id": "L4-M1-S10",
+      "display": "kramaḥ dīrghaḥ, tathāpi mayā adya kāryam kartavyam.",
+      "script": "क्रमः दीर्घः, तथापि मया अद्य कार्यम् कर्तव्यम्।",
+      "cue": "The procedure is long; even so I have to do the work today.",
+      "literal": "procedure long, even-so by-me today work it-is-to-be-done",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kramaḥ",
+            "cue": "step · procedure",
+            "tag": "delta",
+            "forms": [
+              "kramaḥ",
+              "kramam"
+            ],
+            "note": "The citation shape of S09's kramam — an order of steps taken as a whole. Masculine, so it is the -aḥ shape when it is the subject."
+          },
+          {
+            "display": "dīrghaḥ",
+            "cue": "long",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's 'long', agreeing with kramaḥ in the masculine. There is no copula: a nominal sentence in the present needs none."
+          },
+          {
+            "display": "tathāpi",
+            "cue": "even so",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's turn word. It heads the clause it turns, exactly as it did there, and it is not postpositive the way ca and api are."
+          },
+          {
+            "display": "mayā",
+            "cue": "by me",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M6's 'by me'. It crosses the comma into the gerundive clause, where it is the one who must act; it does not carry back to kramaḥ."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today', placing an obligation that has no tense of its own."
+          },
+          {
+            "display": "kāryam",
+            "cue": "work · task",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's work in the object shape. It belongs to kartavyam, and not to the first clause."
+          },
+          {
+            "display": "kartavyam",
+            "cue": "must be done",
+            "tag": "delta",
+            "forms": [],
+            "note": "The gerundive of L1-M4's karoti, fixed neuter. It is the whole predicate of the second clause, which has no finite verb anywhere in it."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          5,
+          6,
+          9
+        ]
+      },
+      "trap": "The first clause has a nominative and no verb; the second has a verb shape and no nominative. Both are ordinary Sanskrit, and joining them changes neither.",
+      "sound": "KRA-mah DEER-ghah, ta-THAA-pi ma-YAA A-dya KAAR-yam kar-TAV-yam.",
+      "variations": [
+        {
+          "display": "kramaḥ dīrghaḥ, tathāpi bhavatā adya kāryam kartavyam.",
+          "script": "क्रमः दीर्घः, तथापि भवता अद्य कार्यम् कर्तव्यम्।",
+          "cue": "The procedure is long; even so you have to do the work today.",
+          "changed": "the obligation moves to the person spoken to, and only the instrumental changes"
+        },
+        {
+          "display": "kramaḥ na dīrghaḥ, ataḥ mayā adya kāryam kartavyam.",
+          "script": "क्रमः न दीर्घः, अतः मया अद्य कार्यम् कर्तव्यम्।",
+          "cue": "The procedure is not long, so I have to do the work today.",
+          "changed": "the first clause is negated and tathāpi gives way to L1-M9’s ataḥ — a turn becomes a consequence"
+        },
+        {
+          "display": "kramaḥ dīrghaḥ, tathāpi aham adya kāryam kartum icchāmi.",
+          "script": "क्रमः दीर्घः, तथापि अहम् अद्य कार्यम् कर्तुम् इच्छामि।",
+          "cue": "The procedure is long; even so I want to do the work today.",
+          "changed": "the second clause leaves the gerundive frame altogether: nominative aham, the infinitive kartum, and a finite verb carrying the person"
+        }
+      ],
+      "mistake": {
+        "display": "kramaḥ dīrghaḥ, tathāpi mayā adya kāryam kartavyaḥ.",
+        "why": "kartavyaḥ has been made masculine to agree with kramaḥ. The gerundive in this construction is frozen neuter -am and agrees with nothing; the moment it agrees, it is a different construction."
+      },
+      "usage": "A complaint and a commitment in one line. It is the commonest real use of -tavyam: conceding a difficulty and then stating the obligation anyway.",
+      "register": "neutral",
+      "mnemonic": "The gerundive never changes shape. Everything around it does."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M1-C01",
+      "display": "aham annam khāditum gṛham gacchāmi.",
+      "script": "अहम् अन्नम् खादितुम् गृहम् गच्छामि।",
+      "cue": "I am going home to eat."
+    },
+    {
+      "id": "L4-M1-C02",
+      "display": "kṛpayā jalam pātum atra upaviśatu.",
+      "script": "कृपया जलम् पातुम् अत्र उपविशतु।",
+      "cue": "Please sit here to drink water."
+    },
+    {
+      "id": "L4-M1-C03",
+      "display": "mayā śvaḥ kāryālayam gantavyam.",
+      "script": "मया श्वः कार्यालयम् गन्तव्यम्।",
+      "cue": "I have to go to the office tomorrow."
+    },
+    {
+      "id": "L4-M1-C04",
+      "display": "bhavatā idam pustakam paṭhitavyam.",
+      "script": "भवता इदम् पुस्तकम् पठितव्यम्।",
+      "cue": "You have to read this book."
+    },
+    {
+      "id": "L4-M1-C05",
+      "display": "sā pustakam paṭhitum pustakālayam gatavatī.",
+      "script": "सा पुस्तकम् पठितुम् पुस्तकालयम् गतवती।",
+      "cue": "She went to the library to read a book."
+    },
+    {
+      "id": "L4-M1-C06",
+      "display": "aham patram likhitum kāryālayam gacchāmi.",
+      "script": "अहम् पत्रम् लिखितुम् कार्यालयम् गच्छामि।",
+      "cue": "I am going to the office to write the form."
+    },
+    {
+      "id": "L4-M1-C07",
+      "display": "kramaḥ na dīrghaḥ, ataḥ mayā adya kāryam kartavyam.",
+      "script": "क्रमः न दीर्घः, अतः मया अद्य कार्यम् कर्तव्यम्।",
+      "cue": "The procedure is not long, so I have to do the work today."
+    },
+    {
+      "id": "L4-M1-C08",
+      "display": "prathamam jalam pātum gacchatu. tataḥ bhojanam khādatu.",
+      "script": "प्रथमम् जलम् पातुम् गच्छतु। ततः भोजनम् खादतु।",
+      "cue": "First go and drink water. Then eat the meal."
+    },
+    {
+      "id": "L4-M1-C09",
+      "display": "bhavatyā adya vidyālayam gantavyam.",
+      "script": "भवत्या अद्य विद्यालयम् गन्तव्यम्।",
+      "cue": "You have to go to school today."
+    },
+    {
+      "id": "L4-M1-C10",
+      "display": "mama bhaginī dugdham pātum gṛham gatavatī.",
+      "script": "मम भगिनी दुग्धम् पातुम् गृहम् गतवती।",
+      "cue": "My sister went home to drink milk."
+    },
+    {
+      "id": "L4-M1-C11",
+      "display": "pustakam paṭhitvā mayā kāryālayam gantavyam.",
+      "script": "पुस्तकम् पठित्वा मया कार्यालयम् गन्तव्यम्।",
+      "cue": "Having read the book, I have to go to the office."
+    },
+    {
+      "id": "L4-M1-C12",
+      "display": "dhanyavādaḥ, kintu mayā adya gantavyam.",
+      "script": "धन्यवादः, किन्तु मया अद्य गन्तव्यम्।",
+      "cue": "Thank you, but I have to go today."
+    },
+    {
+      "id": "L4-M1-C13",
+      "display": "adhyāpakaḥ saṃskṛtam paṭhitum vidyālayam gacchati.",
+      "script": "अध्यापकः संस्कृतम् पठितुम् विद्यालयम् गच्छति।",
+      "cue": "The teacher goes to school to read Sanskrit."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

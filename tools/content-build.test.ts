@@ -147,12 +147,15 @@ describe('the manifest carries no fixture row again (#611)', () => {
 
 /**
  * The rungs authored so far: L1-M1..M2 (#608), M3..M5 (#609), M6..M10 (#610) — the whole of
- * en-sa L1 — L2-M1..M2 (#613), L2-M3..M5 (#614) and L2-M6..M10 (#615), the whole of Level 2 — and
- * L3-M1..M2 (#617), which open Level 3, L3-M3..M5 (#618) and L3-M6..M10 (#619), which CLOSE it.
+ * en-sa L1 — L2-M1..M2 (#613), L2-M3..M5 (#614) and L2-M6..M10 (#615), the whole of Level 2 —
+ * L3-M1..M2 (#617), which open Level 3, L3-M3..M5 (#618) and L3-M6..M10 (#619), which CLOSE it —
+ * and L4-M1..M2 (#621), which OPEN Level 4.
  * **#615 closed L2, so its level `draft` flag came off with its tenth rung** — unlike L1, whose
  * flag waited for a separate graduation issue (#611) — and **#619 did the same for L3**: three
- * complete levels, thirty rungs, and no level `draft` flag on any of them. L4 and L5 are still an
- * empty skeleton and keep theirs.
+ * complete levels and no level `draft` flag on any of them. L4 is now PARTLY authored, which is a
+ * third state the predicate below has to carry: two of its rungs have content while the level
+ * itself keeps its `draft` flag until all ten do, exactly as L2 and L3 did on the way up. L5 is
+ * still an empty skeleton.
  */
 const AUTHORED = [
   'L1-M1',
@@ -185,10 +188,12 @@ const AUTHORED = [
   'L3-M8',
   'L3-M9',
   'L3-M10',
+  'L4-M1',
+  'L4-M2',
 ];
 
 describe('the graduated course ships a complete ladder and bundle', () => {
-  it('is five levels of ten, with L1..L3 out of draft and L4..L5 still placeholder lists', () => {
+  it('is five levels of ten, with L1..L3 out of draft and L4 opened but still drafted', () => {
     const levels = readJson<{
       courseId: string;
       levels: {
@@ -203,10 +208,10 @@ describe('the graduated course ships a complete ladder and bundle', () => {
     expect(levels.levels.map((level) => level.id)).toEqual(['L1', 'L2', 'L3', 'L4', 'L5']);
     for (const level of levels.levels) {
       // L1's level draft flag cleared at graduation (#611), L2's came off with its tenth rung
-      // (#615) and L3's came off with ITS tenth rung (#619) — thirty rungs are authored, verified
-      // and shipping. A level's flag clears only when all ten of its rungs are authored, so the
-      // predicate names the finished levels; L4 and L5 are unauthored placeholder lists and keep
-      // theirs.
+      // (#615) and L3's came off with ITS tenth rung (#619). A level's flag clears only when ALL
+      // TEN of its rungs are authored, so the predicate names the finished levels rather than
+      // asking whether any rung has content: L4 carries two authored rungs (#621) and still keeps
+      // its flag, which is the state L2 and L3 each passed through. L5 is untouched.
       const FINISHED = new Set(['L1', 'L2', 'L3']);
       const drafted = !FINISHED.has(level.id);
       expect(level.draft, `${level.id} draft`).toBe(drafted ? true : undefined);
@@ -280,18 +285,20 @@ describe('the graduated course ships a complete ladder and bundle', () => {
 });
 
 describe('the gate ships the graduated course, and both gates now agree', () => {
-  it('strict: en-sa reaches a learner build, three complete levels of ten', () => {
+  it('strict: en-sa reaches a learner build, three complete levels and two more rungs', () => {
     expect(STRICT.exitCode).toBe(0);
     expect(STRICT.shipped.has(GRADUATED_COURSE)).toBe(true);
     expect(STRICT.shipped.get(GRADUATED_COURSE)).toEqual(AUTHORED);
-    expect(STRICT.lines).toContain('en-sa: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)');
+    expect(STRICT.lines).toContain(
+      'en-sa: 32 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M2)',
+    );
     expect(STRICT.lines.filter((line) => line.includes('FAIL'))).toEqual([]);
     // Ten courses in the emitted manifest, in manifest order — the app reads this file.
     expect(emittedCourseIds(STRICT)).toEqual(MANIFEST.map((row) => row.id));
     expect(emittedCourseIds(STRICT)).toHaveLength(10);
   });
 
-  it('strict: the course tree is emitted — levels, strings, 30 modules and 30 indexes', () => {
+  it('strict: the course tree is emitted — levels, strings, 32 modules and 32 indexes', () => {
     const courseDir = path.join(STRICT.outRoot, GRADUATED_COURSE);
     expect(existsSync(path.join(courseDir, 'levels.json'))).toBe(true);
     expect(existsSync(path.join(courseDir, 'strings.json'))).toBe(true);
@@ -315,7 +322,9 @@ describe('the gate ships the graduated course, and both gates now agree', () => 
    */
   it('dev: --with-fixtures changes nothing at all, because nothing is a fixture', () => {
     expect(DEV.exitCode).toBe(0);
-    expect(DEV.lines).toContain('en-sa: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)');
+    expect(DEV.lines).toContain(
+      'en-sa: 32 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M2)',
+    );
     expect(DEV.lines.filter((line) => line.includes('FAIL'))).toEqual([]);
     expect(emittedCourseIds(DEV)).toEqual(emittedCourseIds(STRICT));
     expect([...DEV.shipped.entries()].sort()).toEqual([...STRICT.shipped.entries()].sort());
@@ -364,7 +373,9 @@ describe('the fixture gate still drops a fixture course (on a synthetic tree)', 
 
   it('dev: --with-fixtures admits it and ships the rungs it has, indexes and all', () => {
     expect(FIXTURE_DEV.exitCode).toBe(0);
-    expect(FIXTURE_DEV.lines).toContain('en-sa: 30 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10)');
+    expect(FIXTURE_DEV.lines).toContain(
+      'en-sa: 32 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M2)',
+    );
     expect(FIXTURE_DEV.lines.filter((line) => line.includes('FAIL'))).toEqual([]);
     expect(FIXTURE_DEV.shipped.has(GRADUATED_COURSE)).toBe(true);
     expect(emittedCourseIds(FIXTURE_DEV)).toContain(GRADUATED_COURSE);

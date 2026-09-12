@@ -1,0 +1,1143 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M2",
+  "title": "Cause and consequence",
+  "job": "Why things happen and what follows, across a paragraph",
+  "prerequisites": [
+    "L4-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present",
+      "participial_past",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "<clause> + yataḥ + <clause>",
+      "yataḥ + <clause> + . + <clause>",
+      "N-abl + <clause>",
+      "vṛṣṭeḥ + aham + na + gatavān",
+      "<clause> + . + ataḥ + <clause> + . + kintu + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A noun in the ablative is a cause all by itself, with no connective in front of it. vṛṣṭeḥ is 'because of the rain' — one word, and it is the whole explanation."
+    },
+    {
+      "tag": "delta",
+      "text": "The cause ablatives this module opens are bhayāt (out of fear), duḥkhāt (out of sorrow), rogāt (because of illness) and vṛṣṭeḥ (because of rain). Each is a row of its own."
+    },
+    {
+      "tag": "delta",
+      "text": "L2-M9 opened the SAME ending for comparison — jalāt, phalāt, 'than water', 'than fruit'. The ending does two jobs and the sentence around it decides which. This module writes neither of L2-M9's two words."
+    },
+    {
+      "tag": "delta",
+      "text": "vṛṣṭiḥ is an i-stem, so its ablative is vṛṣṭeḥ and not vṛṣṭyāt. Two shapes, and the rest of the i-stem paradigm is not opened here — the same ruling L3-M7 made for śiraḥ and śirasi."
+    },
+    {
+      "tag": "delta",
+      "text": "kāraṇam is 'a reason' and pariṇāmaḥ is 'a result'. phalam is fruit in this course and nothing else, even though it is also the ordinary Sanskrit word for a result — one spelling, one meaning, decided once. kāraṇam is written in ONE shape: its ablative kāraṇāt is real, but 'for that reason' needs a demonstrative in the ablative that this course has not opened, and a bare kāraṇāt is not what a speaker says."
+    },
+    {
+      "tag": "free",
+      "text": "yataḥ ('because') and ataḥ ('so') are L1-M9's and unchanged. What is new is where they may stand: yataḥ heads the CAUSE and may sit before or after the clause it explains, and ataḥ heads the CONSEQUENCE and never the cause."
+    },
+    {
+      "tag": "interference",
+      "text": "One link takes one connective. Once yataḥ has marked the cause, ataḥ on the consequence adds nothing to it — which is the English 'because … so …' carried straight across. Pick the end of the link you want to mark and mark it once."
+    },
+    {
+      "tag": "interference",
+      "text": "English has one because for a clause and one because of for a noun. Sanskrit has a connective for the clause and a CASE for the noun, so yataḥ in front of an ablative is doing a job that has already been done."
+    },
+    {
+      "tag": "free",
+      "text": "A cause ablative can be a whole answer on its own. Asked kimartham na gatavān? — 'why didn't you go?' — a speaker can reply with the single word vṛṣṭeḥ, and nothing is missing."
+    },
+    {
+      "tag": "free",
+      "text": "The cause runs on past one sentence: ataḥ opens the consequence sentence, kintu turns it, and the participial past keeps the whole account forked at one speaker. That is the paragraph this module is for."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M2-S01",
+      "display": "vṛṣṭeḥ aham adya vidyālayam na gatavān.",
+      "script": "वृष्टेः अहम् अद्य विद्यालयम् न गतवान्।",
+      "cue": "Because of the rain I did not go to school today.",
+      "literal": "from-rain I today school not went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vṛṣṭeḥ",
+            "cue": "rain",
+            "tag": "delta",
+            "forms": [
+              "vṛṣṭiḥ",
+              "vṛṣṭeḥ"
+            ],
+            "note": "Rain, in the ablative — the case that by itself means 'because of'. The citation shape is vṛṣṭiḥ; this i-stem makes its ablative vṛṣṭeḥ, not vṛṣṭyāt."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most, and the participle at the end of the sentence is what forks with the speaker."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. A cause sentence still needs its time word; the ablative says why, never when."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school as a destination. The ablative in front changes nothing about the rest of the sentence."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', standing in front of the verb it negates. The cause holds whether the verb is positive or negative."
+          },
+          {
+            "display": "gatavān",
+            "cue": "went (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's participial past, agreeing with the speaker. It is the only word here carrying a tense — an ablative has none."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          7,
+          8
+        ]
+      },
+      "trap": "There is no word for \"because\" in this sentence. The ending of vṛṣṭeḥ is the whole of it, which is why nothing may be put in front.",
+      "sound": "VRISH-teh a-HAM A-dya vid-YAA-la-yam NA ga-ta-VAAN. The vrish at the front is one syllable, not two.",
+      "variations": [
+        {
+          "display": "vṛṣṭeḥ sā adya vidyālayam na gatavatī.",
+          "script": "वृष्टेः सा अद्य विद्यालयम् न गतवती।",
+          "cue": "Because of the rain she did not go to school today.",
+          "changed": "the speaker becomes a woman and only the participle forks; the ablative has no gender to agree with"
+        },
+        {
+          "display": "vṛṣṭeḥ aham adya vidyālayam na gacchāmi.",
+          "script": "वृष्टेः अहम् अद्य विद्यालयम् न गच्छामि।",
+          "cue": "Because of the rain I am not going to school today.",
+          "changed": "the sentence moves to the present and the cause is untouched, because an ablative carries no tense"
+        },
+        {
+          "display": "rogāt aham adya vidyālayam na gatavān.",
+          "script": "रोगात् अहम् अद्य विद्यालयम् न गतवान्।",
+          "cue": "Because of illness I did not go to school today.",
+          "changed": "one cause swaps for another — the frame is a slot, and any ablative fills it"
+        }
+      ],
+      "mistake": {
+        "display": "vṛṣṭeḥ yataḥ aham adya vidyālayam na gatavān.",
+        "why": "yataḥ has been put in front of an ablative, so the reason is given twice. yataḥ introduces a CLAUSE; the ablative is the noun version of the same job, and a sentence takes one or the other."
+      },
+      "usage": "The shortest way to explain yourself in Sanskrit. It is also the one English has no single word for — 'because of the rain' takes two.",
+      "register": "neutral",
+      "mnemonic": "The case IS the because."
+    },
+    {
+      "id": "L4-M2-S02",
+      "display": "aham adya vidyālayam na gatavān, yataḥ vṛṣṭiḥ asti.",
+      "script": "अहम् अद्य विद्यालयम् न गतवान्, यतः वृष्टिः अस्ति।",
+      "cue": "I did not go to school today, because it is raining.",
+      "literal": "I today school not went, because rain is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most, and the participle at the end of the sentence is what forks with the speaker."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. It belongs to the first clause; the yataḥ clause has its own time, carried by asti."
+          },
+          {
+            "display": "vidyālayam",
+            "cue": "school (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's school as a destination, unchanged from S01 — the two sentences differ only in how the cause is built."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not'. It negates the going and does not reach across the comma into the reason."
+          },
+          {
+            "display": "gatavān",
+            "cue": "went (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's participial past. The main clause is in the past and the reason clause is in the present, which is ordinary: the rain is still falling."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'because'. It heads a whole CLAUSE, which is what separates it from the ablative of S01 — same meaning, different size of thing."
+          },
+          {
+            "display": "vṛṣṭeḥ",
+            "cue": "rain",
+            "tag": "delta",
+            "forms": [
+              "vṛṣṭiḥ",
+              "vṛṣṭeḥ"
+            ],
+            "note": "Rain in its citation shape, the subject of its own little clause. S01's vṛṣṭeḥ is the same word in the ablative; nothing else in the paradigm is opened here."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is'. The reason clause is a full sentence with its own verb, which is exactly why it needs yataḥ and the ablative does not."
+          }
+        ],
+        "rules": [
+          5,
+          7,
+          0
+        ]
+      },
+      "trap": "This sentence and S01 say the same thing. One uses a case on a noun and one uses a connective on a clause, and putting both in would be the mistake below.",
+      "sound": "a-HAM A-dya vid-YAA-la-yam NA ga-ta-VAAN, ya-TAH VRISH-tih AS-ti.",
+      "variations": [
+        {
+          "display": "yataḥ vṛṣṭiḥ asti, aham adya vidyālayam na gatavān.",
+          "script": "यतः वृष्टिः अस्ति, अहम् अद्य विद्यालयम् न गतवान्।",
+          "cue": "Because it is raining, I did not go to school today.",
+          "changed": "the yataḥ clause moves to the front — it may sit on either side of what it explains, and nothing inside it changes"
+        },
+        {
+          "display": "aham adya vidyālayam na gatavān, yataḥ mama rogaḥ asti.",
+          "script": "अहम् अद्य विद्यालयम् न गतवान्, यतः मम रोगः अस्ति।",
+          "cue": "I did not go to school today, because I am ill.",
+          "changed": "the reason clause is swapped whole; the main clause never notices which reason is attached to it"
+        },
+        {
+          "display": "kim bhavān adya vidyālayam na gatavān?",
+          "script": "किम् भवान् अद्य विद्यालयम् न गतवान्?",
+          "cue": "Did you not go to school today?",
+          "changed": "the statement becomes a question with kim at the front, and the reason is dropped for the other speaker to supply"
+        }
+      ],
+      "mistake": {
+        "display": "aham adya vidyālayam na gatavān, ataḥ vṛṣṭiḥ asti.",
+        "why": "ataḥ heads a consequence, so this says \"I did not go to school, therefore it is raining\" — the two halves have swapped roles. ataḥ may never stand in front of the cause."
+      },
+      "usage": "The long form of S01, and the one you need when the reason has a verb in it. Both are everyday; the ablative is shorter and the clause is more precise.",
+      "register": "neutral",
+      "mnemonic": "yataḥ takes a clause. The ablative takes a noun."
+    },
+    {
+      "id": "L4-M2-S03",
+      "display": "rogāt saḥ hyaḥ kāryālayam na gatavān.",
+      "script": "रोगात् सः ह्यः कार्यालयम् न गतवान्।",
+      "cue": "Because of illness he did not go to the office yesterday.",
+      "literal": "from-illness he yesterday office not went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "rogāt",
+            "cue": "because of illness",
+            "tag": "delta",
+            "forms": [],
+            "note": "The ablative of L3-M7's rogaḥ, opened here as a cause. L3-M7 taught the noun; this is the shape that explains something with it."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'he'. He is the subject and the participle agrees with him, not with the cause in front."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday'. It is what puts the sentence in the past; rogāt says nothing about when the illness was."
+          },
+          {
+            "display": "kāryālayam",
+            "cue": "office (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M8's office as a destination, in its accusative shape."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not'. The cause explains the non-going, which is the commonest thing a cause ablative does."
+          },
+          {
+            "display": "gatavān",
+            "cue": "went (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's participial past agreeing with saḥ. The ablative in front of it has no person and no tense to contribute."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          8
+        ]
+      },
+      "trap": "rogāt is not a verb and not a connective. It is a noun wearing one ending, and that ending is doing the work \"because of\" does in English.",
+      "sound": "ro-GAAT SAH HYAH kaar-YAA-la-yam NA ga-ta-VAAN.",
+      "variations": [
+        {
+          "display": "rogāt sā hyaḥ kāryālayam na gatavatī.",
+          "script": "रोगात् सा ह्यः कार्यालयम् न गतवती।",
+          "cue": "Because of illness she did not go to the office yesterday.",
+          "changed": "the subject becomes a woman and the participle forks with her; rogāt does not move"
+        },
+        {
+          "display": "saḥ hyaḥ kāryālayam na gatavān, yataḥ saḥ asvasthaḥ.",
+          "script": "सः ह्यः कार्यालयम् न गतवान्, यतः सः अस्वस्थः।",
+          "cue": "He did not go to the office yesterday, because he was unwell.",
+          "changed": "the noun cause becomes a clause cause, so yataḥ appears and the ablative disappears"
+        },
+        {
+          "display": "rogāt saḥ hyaḥ kāryālayam gatavān.",
+          "script": "रोगात् सः ह्यः कार्यालयम् गतवान्।",
+          "cue": "Because of illness he went to the office yesterday.",
+          "changed": "the negation is dropped and the sentence still parses — a cause explains what did happen just as readily as what did not"
+        }
+      ],
+      "mistake": {
+        "display": "rogaḥ saḥ hyaḥ kāryālayam na gatavān.",
+        "why": "rogaḥ is the plain nominative, so the sentence now has two subjects and says nothing coherent. Only the ablative ending turns a noun into a reason."
+      },
+      "usage": "What gets said at a workplace about somebody who is not there. The ablative is short enough to be the whole of a polite explanation.",
+      "register": "neutral",
+      "mnemonic": "-āt on the noun, and the reason is given."
+    },
+    {
+      "id": "L4-M2-S04",
+      "display": "duḥkhāt aham adya na khāditavān.",
+      "script": "दुःखात् अहम् अद्य न खादितवान्।",
+      "cue": "Out of sorrow I did not eat today.",
+      "literal": "from-sorrow I today not ate",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "duḥkhāt",
+            "cue": "out of sorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "The ablative of L3-M6's duḥkham, opened here as a cause. L3-M6 put duḥkham on the dative frame; this is the shape that explains an action with it."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most, and the participle at the end of the sentence is what forks with the speaker."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. A feeling as a cause still needs its time word."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not'. A cause and a negation sit together happily; neither one touches the other."
+          },
+          {
+            "display": "khāditavān",
+            "cue": "ate (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's participial past of khādati, agreeing with the speaker. It carries the tense for the whole sentence."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          9
+        ]
+      },
+      "trap": "duḥkham is a noun for a feeling and duḥkhāt is that noun used as a reason. English changes the whole phrase; Sanskrit changes three letters at the end.",
+      "sound": "duh-KHAAT a-HAM A-dya NA khaa-di-ta-VAAN.",
+      "variations": [
+        {
+          "display": "bhayāt aham adya na khāditavān.",
+          "script": "भयात् अहम् अद्य न खादितवान्।",
+          "cue": "Out of fear I did not eat today.",
+          "changed": "one feeling swaps for another and the ending is the same — the slot is what the module teaches, not the word"
+        },
+        {
+          "display": "duḥkhāt sā adya na khāditavatī.",
+          "script": "दुःखात् सा अद्य न खादितवती।",
+          "cue": "Out of sorrow she did not eat today.",
+          "changed": "the speaker is a woman, so the participle forks and the ablative does not"
+        },
+        {
+          "display": "aham adya na khāditavān, yataḥ mahyam duḥkham asti.",
+          "script": "अहम् अद्य न खादितवान्, यतः मह्यम् दुःखम् अस्ति।",
+          "cue": "I did not eat today, because I am sad.",
+          "changed": "the same cause as L3-M6 built it, on the dative frame inside a yataḥ clause — the noun cause becomes a clause cause"
+        }
+      ],
+      "mistake": {
+        "display": "aham adya na khāditavān, yataḥ duḥkhāt.",
+        "why": "yataḥ is waiting for a clause and has been handed a bare ablative instead. Either write the clause — yataḥ mahyam duḥkham asti — or drop yataḥ and let duḥkhāt stand on its own."
+      },
+      "usage": "It is stronger than saying you were sad: the ablative claims the sorrow caused the not-eating rather than merely accompanying it.",
+      "register": "neutral",
+      "mnemonic": "A feeling in the ablative is a feeling given as a reason."
+    },
+    {
+      "id": "L4-M2-S05",
+      "display": "bhayāt sā na uktavatī.",
+      "script": "भयात् सा न उक्तवती।",
+      "cue": "Out of fear she did not speak.",
+      "literal": "from-fear she not said",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhayāt",
+            "cue": "out of fear",
+            "tag": "delta",
+            "forms": [],
+            "note": "The ablative of L3-M6's bhayam, opened here as a cause. It is the commonest cause ablative in real Sanskrit and it is what 'out of fear' is."
+          },
+          {
+            "display": "sā",
+            "cue": "she",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'she', the subject. The participle at the end agrees with her; bhayāt agrees with nobody."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not'. Fear stopped the speaking, which is why the negation and the cause belong in the same sentence."
+          },
+          {
+            "display": "uktavatī",
+            "cue": "said (a woman)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's participial past of saying, in the woman's shape. It is a row of its own and not a past of L2-M7's vadati."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          8
+        ]
+      },
+      "trap": "Four words and no connective anywhere. The reason, the subject, the negation and the tense are each carried by an ending rather than by a separate word.",
+      "sound": "bha-YAAT SAA NA uk-ta-va-TEE.",
+      "variations": [
+        {
+          "display": "bhayāt saḥ na uktavān.",
+          "script": "भयात् सः न उक्तवान्।",
+          "cue": "Out of fear he did not speak.",
+          "changed": "the subject becomes a man and the participle forks to uktavān"
+        },
+        {
+          "display": "bhayāt sā na uktavatī, kintu adya vadati.",
+          "script": "भयात् सा न उक्तवती, किन्तु अद्य वदति।",
+          "cue": "Out of fear she did not speak, but today she does.",
+          "changed": "a turn is added with L1-M10’s kintu, which heads its clause and does not touch the cause in the first half"
+        },
+        {
+          "display": "sā na uktavatī, yataḥ sā bhītā.",
+          "script": "सा न उक्तवती, यतः सा भीता।",
+          "cue": "She did not speak, because she was afraid.",
+          "changed": "the cause becomes a clause with L3-M6’s adjective bhītā, so yataḥ appears and bhayāt goes"
+        }
+      ],
+      "mistake": {
+        "display": "bhayam sā na uktavatī.",
+        "why": "bhayam is the plain nominative and cannot explain anything. The sentence reads as a list — \"fear, she did not speak\" — and the missing -āt is the only thing wrong with it."
+      },
+      "usage": "The ordinary way to say somebody kept quiet out of fear. The ablative is what makes it an explanation rather than two facts side by side.",
+      "register": "neutral",
+      "mnemonic": "bhayam is the fear. bhayāt is the reason."
+    },
+    {
+      "id": "L4-M2-S06",
+      "display": "mahyam cintā asti, yataḥ kāraṇam na jānāmi.",
+      "script": "मह्यम् चिन्ता अस्ति, यतः कारणम् न जानामि।",
+      "cue": "I am worried, because I do not know the reason.",
+      "literal": "to-me worry is, because reason not I-know",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's dative 'to me'. L3-M6's experiencer frame: the feeling is the subject and the person it happens to is dative."
+          },
+          {
+            "display": "cintā",
+            "cue": "worry · anxiety",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M6's worry. It is feminine and nominative — the grammatical subject of asti, however English translates it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is'. The first clause is complete on its own before the reason is attached."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'because'. The cause runs to the end of the sentence; it attaches to the whole clause and not to mahyam alone."
+          },
+          {
+            "display": "kāraṇam",
+            "cue": "reason",
+            "tag": "delta",
+            "forms": [],
+            "note": "A reason, as a thing rather than as a connective. Neuter, so the nominative and the accusative are the same shape; here it is what is not known."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', inside the reason clause. Each clause negates on its own."
+          },
+          {
+            "display": "jānāmi",
+            "cue": "I know",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'I know'. It is the verb of the yataḥ clause, which is what makes that clause a clause and not an ablative."
+          }
+        ],
+        "rules": [
+          4,
+          5,
+          9
+        ]
+      },
+      "trap": "kāraṇam is the noun for a reason, and it is not how a reason is given. Giving one is yataḥ or an ablative; kāraṇam is what you call the thing afterwards.",
+      "sound": "MAH-yam CHIN-taa AS-ti, ya-TAH KAA-ra-nam NA JAA-naa-mi.",
+      "variations": [
+        {
+          "display": "mahyam cintā asti, yataḥ saḥ kāraṇam na uktavān.",
+          "script": "मह्यम् चिन्ता अस्ति, यतः सः कारणम् न उक्तवान्।",
+          "cue": "I am worried, because he did not say the reason.",
+          "changed": "the reason clause changes person and tense while the frame in front of it holds"
+        },
+        {
+          "display": "yataḥ kāraṇam na jānāmi, mahyam cintā asti.",
+          "script": "यतः कारणम् न जानामि, मह्यम् चिन्ता अस्ति।",
+          "cue": "Because I do not know the reason, I am worried.",
+          "changed": "the yataḥ clause moves to the front, which it may always do"
+        },
+        {
+          "display": "mahyam cintā na asti, yataḥ kāraṇam jānāmi.",
+          "script": "मह्यम् चिन्ता न अस्ति, यतः कारणम् जानामि।",
+          "cue": "I am not worried, because I know the reason.",
+          "changed": "both halves are negated in the opposite direction, and the link between them is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "mahyam cintā asti, ataḥ kāraṇam na jānāmi.",
+        "why": "ataḥ makes the second half a consequence: \"I am worried, so I do not know the reason\". The link has been turned round, and ataḥ can only ever head the result."
+      },
+      "usage": "What you say when something has gone wrong and nobody has explained it. kāraṇam is the word you ask for: 'kim kāraṇam?'",
+      "register": "neutral",
+      "mnemonic": "kāraṇam names a reason. yataḥ gives one."
+    },
+    {
+      "id": "L4-M2-S07",
+      "display": "yataḥ mama rogaḥ asti, aham adya kāryālayam na gacchāmi.",
+      "script": "यतः मम रोगः अस्ति, अहम् अद्य कार्यालयम् न गच्छामि।",
+      "cue": "Because I am ill, I am not going to the office today.",
+      "literal": "because my illness is, I today office not go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yataḥ",
+            "cue": "because",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'because', at the FRONT. A yataḥ clause may stand before or after what it explains; here it comes first and the result follows it bare."
+          },
+          {
+            "display": "mama",
+            "cue": "my",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'my'. Sanskrit says the illness is mine rather than that I am ill, and the noun is what the verb agrees with."
+          },
+          {
+            "display": "rogaḥ",
+            "cue": "illness",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M7's illness, in its citation shape as the subject of asti. Its ablative rogāt is S03's, and it is a separate row for that reason."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is', closing the cause clause. The comma is where the cause ends and the consequence begins."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most, and the participle at the end of the sentence is what forks with the speaker."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. It belongs to the consequence clause, which has its own time and its own verb."
+          },
+          {
+            "display": "kāryālayam",
+            "cue": "office (to)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M8's office as a destination."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not'. The consequence is a negative one, and the cause clause in front is not negated with it."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'I go'. The consequence clause carries no connective at all, because yataḥ has already marked which end of the link is the cause."
+          }
+        ],
+        "rules": [
+          5,
+          6,
+          9
+        ]
+      },
+      "trap": "The second half has no connective in front of it and needs none. Once yataḥ has marked the cause, adding ataḥ to the result marks the same link twice.",
+      "sound": "ya-TAH MA-ma RO-gah AS-ti, a-HAM A-dya kaar-YAA-la-yam NA GACH-chhaa-mi.",
+      "variations": [
+        {
+          "display": "aham adya kāryālayam na gacchāmi, yataḥ mama rogaḥ asti.",
+          "script": "अहम् अद्य कार्यालयम् न गच्छामि, यतः मम रोगः अस्ति।",
+          "cue": "I am not going to the office today, because I am ill.",
+          "changed": "the two halves swap places — the same link with the cause put second, which yataḥ allows and ataḥ would not"
+        },
+        {
+          "display": "rogāt aham adya kāryālayam na gacchāmi.",
+          "script": "रोगात् अहम् अद्य कार्यालयम् न गच्छामि।",
+          "cue": "Because of illness I am not going to the office today.",
+          "changed": "the whole cause clause collapses into one ablative noun, which is S03’s frame"
+        },
+        {
+          "display": "yataḥ mama rogaḥ asti, aham adya gṛhe paṭhāmi.",
+          "script": "यतः मम रोगः अस्ति, अहम् अद्य गृहे पठामि।",
+          "cue": "Because I am ill, I am reading at home today.",
+          "changed": "the consequence is replaced with a positive one; the cause clause in front is unchanged"
+        }
+      ],
+      "mistake": {
+        "display": "yataḥ mama rogaḥ asti, ataḥ aham adya kāryālayam na gacchāmi.",
+        "why": "Both ends of one link are marked — \"because I am ill, therefore I am not going\". English makes the same slip. Mark the cause with yataḥ or the result with ataḥ, and then stop."
+      },
+      "usage": "The cause-first order, which is what you use when the reason is the news and the consequence is obvious.",
+      "register": "neutral",
+      "mnemonic": "One link, one connective."
+    },
+    {
+      "id": "L4-M2-S08",
+      "display": "pariṇāmaḥ uttamaḥ, yataḥ aham pratidinam paṭhitavān.",
+      "script": "परिणामः उत्तमः, यतः अहम् प्रतिदिनम् पठितवान्।",
+      "cue": "The result is excellent, because I studied every day.",
+      "literal": "result excellent, because I every-day studied",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pariṇāmaḥ",
+            "cue": "result · outcome",
+            "tag": "delta",
+            "forms": [],
+            "note": "A result. It is a row of its own because phalam, which is also the ordinary Sanskrit word for a result, means fruit in this course and nothing else."
+          },
+          {
+            "display": "uttamaḥ",
+            "cue": "excellent",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', agreeing with pariṇāmaḥ in the masculine. No copula is needed in a present nominal sentence."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'because'. The consequence has been stated first and the cause follows it, which is the order an English speaker finds easiest."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most, and the participle at the end of the sentence is what forks with the speaker."
+          },
+          {
+            "display": "pratidinam",
+            "cue": "every day",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'every day'. A habit as a cause: the reason is not one event but a repeated one."
+          },
+          {
+            "display": "paṭhitavān",
+            "cue": "studied (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's participial past of paṭhati, agreeing with the speaker. It is the tense of the reason clause."
+          }
+        ],
+        "rules": [
+          4,
+          5,
+          9
+        ]
+      },
+      "trap": "The result comes first and the reason second, and the sentence still has exactly one connective. Order is free; the count is not.",
+      "sound": "pa-ri-NAA-mah ut-ta-MAH, ya-TAH a-HAM pra-ti-DI-nam pa-thi-ta-VAAN.",
+      "variations": [
+        {
+          "display": "pariṇāmaḥ na uttamaḥ, yataḥ aham na paṭhitavān.",
+          "script": "परिणामः न उत्तमः, यतः अहम् न पठितवान्।",
+          "cue": "The result is not good, because I did not study.",
+          "changed": "both halves are negated and the link between them holds unchanged"
+        },
+        {
+          "display": "aham pratidinam paṭhitavān, ataḥ pariṇāmaḥ uttamaḥ.",
+          "script": "अहम् प्रतिदिनम् पठितवान्, अतः परिणामः उत्तमः।",
+          "cue": "I studied every day, so the result is excellent.",
+          "changed": "the same fact told from the other end: the cause comes first and ataḥ heads the consequence, replacing yataḥ"
+        },
+        {
+          "display": "pariṇāmaḥ uttamaḥ, yataḥ sā pratidinam paṭhitavatī.",
+          "script": "परिणामः उत्तमः, यतः सा प्रतिदिनम् पठितवती।",
+          "cue": "The result is excellent, because she studied every day.",
+          "changed": "the person who did the studying changes, and only the participle forks with her"
+        }
+      ],
+      "mistake": {
+        "display": "phalam uttamam, yataḥ aham pratidinam paṭhitavān.",
+        "why": "phalam is fruit in this course. Sanskrit does use it for a result, and this course decided it would not — a learner tapping it would be shown L1-M1's note about fruit, which is false of this sentence."
+      },
+      "usage": "What a teacher or a parent says about an examination. pariṇāmaḥ is the word for an outcome of any kind, not only a mark.",
+      "register": "neutral",
+      "mnemonic": "pariṇāmaḥ is the result. phalam stays fruit."
+    },
+    {
+      "id": "L4-M2-S09",
+      "display": "adya vṛṣṭiḥ asti. ataḥ aham gṛhe paṭhāmi. kintu mahyam duḥkham na asti.",
+      "script": "अद्य वृष्टिः अस्ति। अतः अहम् गृहे पठामि। किन्तु मह्यम् दुःखम् न अस्ति।",
+      "cue": "It is raining today. So I am reading at home. But I am not unhappy.",
+      "literal": "today rain is. so I at-home read. but to-me sorrow not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today', setting the time for all three sentences. Only the first one needs it."
+          },
+          {
+            "display": "vṛṣṭeḥ",
+            "cue": "rain",
+            "tag": "delta",
+            "forms": [
+              "vṛṣṭiḥ",
+              "vṛṣṭeḥ"
+            ],
+            "note": "Rain in its citation shape, as the subject. The ablative vṛṣṭeḥ is S01's; this clause has a verb, so it does not need the case to explain anything."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is'. The first sentence is a plain statement of fact and carries no connective at all."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'so', heading the CONSEQUENCE sentence. It may never head the cause, and the cause sentence in front of it takes nothing."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most, and the participle at the end of the sentence is what forks with the speaker."
+          },
+          {
+            "display": "gṛhe",
+            "cue": "at home",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's house in the locative — where the reading happens. L1-M7's locative rule is unchanged by the cause chain around it."
+          },
+          {
+            "display": "paṭhāmi",
+            "cue": "I read · I study",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'I read'. The consequence is in the present, like its cause; a chain does not have to change tense to hold together."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'but', heading the third sentence. It turns what has just been said and is not a cause word at all."
+          },
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's dative. L3-M6's experiencer frame, arriving as the third step of the chain."
+          },
+          {
+            "display": "duḥkham",
+            "cue": "sorrow · unhappiness",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M6's sorrow, in its citation shape as the subject of asti. Its ablative duḥkhāt is S04's and is a separate row."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', negating the third sentence alone. A chain negates one link at a time."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is' again, closing the turn. Three sentences, three verbs, and one connective between each pair."
+          }
+        ],
+        "rules": [
+          5,
+          6,
+          9
+        ]
+      },
+      "trap": "Three sentences and only two connective words. The first sentence is bare because it is the cause, and ataḥ belongs to the sentence it opens, never to the one before it.",
+      "sound": "A-dya VRISH-tih AS-ti. A-tah a-HAM GRI-he PA-thaa-mi. KIN-tu MAH-yam DUH-kham NA AS-ti.",
+      "variations": [
+        {
+          "display": "vṛṣṭeḥ aham adya gṛhe paṭhāmi. kintu mahyam duḥkham na asti.",
+          "script": "वृष्टेः अहम् अद्य गृहे पठामि। किन्तु मह्यम् दुःखम् न अस्ति।",
+          "cue": "Because of the rain I am reading at home today. But I am not unhappy.",
+          "changed": "the first two sentences collapse into one: the cause becomes an ablative and ataḥ disappears with the sentence it headed"
+        },
+        {
+          "display": "adya vṛṣṭiḥ asti. ataḥ aham gṛhe paṭhāmi. kintu mahyam cintā asti.",
+          "script": "अद्य वृष्टिः अस्ति। अतः अहम् गृहे पठामि। किन्तु मह्यम् चिन्ता अस्ति।",
+          "cue": "It is raining today. So I am reading at home. But I am worried.",
+          "changed": "the turn is reversed — the third sentence now goes against the second instead of reassuring about it"
+        },
+        {
+          "display": "adya vṛṣṭiḥ asti. ataḥ aham gṛhe na paṭhāmi.",
+          "script": "अद्य वृष्टिः अस्ति। अतः अहम् गृहे न पठामि।",
+          "cue": "It is raining today. So I am not reading at home.",
+          "changed": "the chain is cut to two sentences and the consequence is negated; ataḥ still opens it"
+        }
+      ],
+      "mistake": {
+        "display": "adya vṛṣṭiḥ asti. yataḥ aham gṛhe paṭhāmi.",
+        "why": "yataḥ has been put in front of the consequence, so the second sentence now claims to explain the rain: \"it is raining, because I am reading at home\". ataḥ is the one that heads a result."
+      },
+      "usage": "The everyday weather paragraph. Three short sentences chained with one connective each is how a reason is carried past a single clause.",
+      "register": "neutral",
+      "mnemonic": "ataḥ opens the result. Never the reason."
+    },
+    {
+      "id": "L4-M2-S10",
+      "display": "duḥkhāt aham hyaḥ na paṭhitavān. ataḥ pariṇāmaḥ na uttamaḥ. kintu adya aham punaḥ paṭhāmi.",
+      "script": "दुःखात् अहम् ह्यः न पठितवान्। अतः परिणामः न उत्तमः। किन्तु अद्य अहम् पुनः पठामि।",
+      "cue": "Out of sorrow I did not study yesterday. So the result is not good. But today I am studying again.",
+      "literal": "from-sorrow I yesterday not studied. so result not excellent. but today I again study",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "duḥkhāt",
+            "cue": "out of sorrow",
+            "tag": "delta",
+            "forms": [],
+            "note": "The ablative of L3-M6's duḥkham, opening the account. A cause ablative can start a paragraph as easily as it can answer a question."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I'. It is written once at most, and the participle at the end of the sentence is what forks with the speaker."
+          },
+          {
+            "display": "hyaḥ",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's 'yesterday'. It puts the first sentence in the past, and the third sentence resets the time with adya."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not'. The first link is a cause for something that did NOT happen."
+          },
+          {
+            "display": "paṭhitavān",
+            "cue": "studied (a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's participial past of paṭhati. The account forks once, at the speaker, and stays forked to the end."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'so', heading the consequence. The first sentence already carried its cause in an ablative, so nothing more is needed there."
+          },
+          {
+            "display": "pariṇāmaḥ",
+            "cue": "result · outcome",
+            "tag": "delta",
+            "forms": [],
+            "note": "The result, as a noun. This is the module's second reason for opening it: a consequence sentence often needs to NAME the outcome rather than describe it."
+          },
+          {
+            "display": "uttamaḥ",
+            "cue": "excellent",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's 'excellent', agreeing with pariṇāmaḥ. Negated by the na in front of it, so the outcome is merely not good rather than bad."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'but'. It turns the account without explaining anything, which is what separates it from ataḥ and yataḥ."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'. It moves the third sentence to the present, against the hyaḥ of the first."
+          },
+          {
+            "display": "punaḥ",
+            "cue": "again",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's 'again'. It is what makes the last sentence a recovery rather than a restatement."
+          },
+          {
+            "display": "paṭhāmi",
+            "cue": "I read · I study",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'I study', in the present. Three sentences, two connectives, one ablative and one speaker."
+          }
+        ],
+        "rules": [
+          0,
+          5,
+          6,
+          9
+        ]
+      },
+      "trap": "Three links and three different devices: an ablative for the first cause, ataḥ for the consequence, kintu for the turn. None of them may take another one of the three in front of it.",
+      "sound": "duh-KHAAT a-HAM HYAH NA pa-thi-ta-VAAN. A-tah pa-ri-NAA-mah NA ut-ta-MAH. KIN-tu A-dya a-HAM PU-nah PA-thaa-mi.",
+      "variations": [
+        {
+          "display": "rogāt aham hyaḥ na paṭhitavān. ataḥ pariṇāmaḥ na uttamaḥ. kintu adya aham punaḥ paṭhāmi.",
+          "script": "रोगात् अहम् ह्यः न पठितवान्। अतः परिणामः न उत्तमः। किन्तु अद्य अहम् पुनः पठामि।",
+          "cue": "Because of illness I did not study yesterday. So the result is not good. But today I am studying again.",
+          "changed": "the opening cause swaps for another ablative and the rest of the account is untouched"
+        },
+        {
+          "display": "duḥkhāt sā hyaḥ na paṭhitavatī. ataḥ pariṇāmaḥ na uttamaḥ. kintu adya sā punaḥ paṭhati.",
+          "script": "दुःखात् सा ह्यः न पठितवती। अतः परिणामः न उत्तमः। किन्तु अद्य सा पुनः पठति।",
+          "cue": "Out of sorrow she did not study yesterday. So the result is not good. But today she is studying again.",
+          "changed": "the whole account forks to a woman, which happens once at the speaker and then holds across all three sentences"
+        },
+        {
+          "display": "duḥkhāt aham hyaḥ na paṭhitavān. ataḥ pariṇāmaḥ na uttamaḥ.",
+          "script": "दुःखात् अहम् ह्यः न पठितवान्। अतः परिणामः न उत्तमः।",
+          "cue": "Out of sorrow I did not study yesterday. So the result is not good.",
+          "changed": "the turn is cut away and the account stops at the consequence, which ataḥ still opens"
+        }
+      ],
+      "mistake": {
+        "display": "duḥkham aham hyaḥ na paṭhitavān, yataḥ pariṇāmaḥ na uttamaḥ.",
+        "why": "The cause and the consequence have changed places: this says the result was bad and that is why the studying did not happen. It also drops the -āt, leaving duḥkham with no job in the sentence."
+      },
+      "usage": "A three-sentence account of something going wrong and being picked back up. It is the paragraph-length cause this module exists for.",
+      "register": "neutral",
+      "mnemonic": "Ablative, then ataḥ, then kintu. One device per join."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M2-C01",
+      "display": "vṛṣṭeḥ sā adya gṛhe asti.",
+      "script": "वृष्टेः सा अद्य गृहे अस्ति।",
+      "cue": "Because of the rain she is at home today."
+    },
+    {
+      "id": "L4-M2-C02",
+      "display": "bhayāt aham tatra na gatavān.",
+      "script": "भयात् अहम् तत्र न गतवान्।",
+      "cue": "Out of fear I did not go there."
+    },
+    {
+      "id": "L4-M2-C03",
+      "display": "rogāt aham hyaḥ na paṭhitavān.",
+      "script": "रोगात् अहम् ह्यः न पठितवान्।",
+      "cue": "Because of illness I did not study yesterday."
+    },
+    {
+      "id": "L4-M2-C04",
+      "display": "mahyam duḥkham asti, yataḥ pariṇāmaḥ na uttamaḥ.",
+      "script": "मह्यम् दुःखम् अस्ति, यतः परिणामः न उत्तमः।",
+      "cue": "I am sad, because the result is not good."
+    },
+    {
+      "id": "L4-M2-C05",
+      "display": "adya vṛṣṭiḥ asti, ataḥ utsavaḥ na asti.",
+      "script": "अद्य वृष्टिः अस्ति, अतः उत्सवः न अस्ति।",
+      "cue": "It is raining today, so there is no festival."
+    },
+    {
+      "id": "L4-M2-C06",
+      "display": "duḥkhāt sā adya na uktavatī.",
+      "script": "दुःखात् सा अद्य न उक्तवती।",
+      "cue": "Out of sorrow she did not speak today."
+    },
+    {
+      "id": "L4-M2-C07",
+      "display": "kim kāraṇam asti? aham na jānāmi.",
+      "script": "किम् कारणम् अस्ति? अहम् न जानामि।",
+      "cue": "What is the reason? I do not know."
+    },
+    {
+      "id": "L4-M2-C08",
+      "display": "yataḥ mahyam bhayam asti, aham tatra na gacchāmi.",
+      "script": "यतः मह्यम् भयम् अस्ति, अहम् तत्र न गच्छामि।",
+      "cue": "Because I am afraid, I am not going there."
+    },
+    {
+      "id": "L4-M2-C09",
+      "display": "saḥ pratidinam paṭhitavān, ataḥ pariṇāmaḥ uttamaḥ.",
+      "script": "सः प्रतिदिनम् पठितवान्, अतः परिणामः उत्तमः।",
+      "cue": "He studied every day, so the result is excellent."
+    },
+    {
+      "id": "L4-M2-C10",
+      "display": "vṛṣṭeḥ mārgaḥ na uttamaḥ, kintu aham gacchāmi.",
+      "script": "वृष्टेः मार्गः न उत्तमः, किन्तु अहम् गच्छामि।",
+      "cue": "Because of the rain the road is not good, but I am going."
+    },
+    {
+      "id": "L4-M2-C11",
+      "display": "vṛṣṭeḥ janāḥ gṛhe santi.",
+      "script": "वृष्टेः जनाः गृहे सन्ति।",
+      "cue": "Because of the rain the people are at home."
+    },
+    {
+      "id": "L4-M2-C12",
+      "display": "aham santuṣṭaḥ, yataḥ kāraṇam jānāmi.",
+      "script": "अहम् सन्तुष्टः, यतः कारणम् जानामि।",
+      "cue": "I am content, because I know the reason."
+    },
+    {
+      "id": "L4-M2-C13",
+      "display": "rogāt mama mātā adya mandiram na gatavatī.",
+      "script": "रोगात् मम माता अद्य मन्दिरम् न गतवती।",
+      "cue": "Because of illness my mother did not go to the temple today."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
