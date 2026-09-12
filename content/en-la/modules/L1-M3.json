@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M3",
+  "title": "Needs and wants",
+  "job": "Say what you want and don't want",
+  "prerequisites": [
+    "L1-M2"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": [
+      "simple_present",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "N-acc + volō",
+      "N-acc + V-re + volō",
+      "nōlō + N-acc",
+      "N-acc + habeō",
+      "mihi opus est + N-abl",
+      "nōn + V"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The object of a verb changes shape. aqua is 'water' as the subject and aquam as the thing wanted — Aquam volō. English marks this on nobody except a handful of pronouns (I/me, he/him), so the habit of leaving a noun alone has to be unlearned on every noun."
+    },
+    {
+      "tag": "interference",
+      "text": "'I do not want' is one word, and it is not nōn volō. Latin builds nōlō out of the same verb with the negative fused in — nōlō aquam. nōn volō exists and means the same, but nōlō is what a Roman reaches for, and it is a separate verb to learn rather than a phrase to assemble."
+    },
+    {
+      "tag": "delta",
+      "text": "An infinitive comes BEFORE the verb that governs it: Aquam bibere volō, 'water to-drink I-want'. English puts 'want' first and the infinitive after it, so the whole sentence arrives in reverse order — and the object goes first of all, because it belongs to bibere."
+    },
+    {
+      "tag": "free",
+      "text": "habeō does exactly what English 'have' does: Librum habeō. It is the one construction in this module with nothing to unlearn — which is worth noticing, because M1's name sentence used a 'to me' instead and this is not that."
+    },
+    {
+      "tag": "interference",
+      "text": "Needing is impersonal and takes a strange case: Mihi opus est aquā — 'for me there is need with water'. Nobody is the subject except the need itself, and the thing needed goes into the ablative, which is neither the subject's shape nor the object's. It is the first case in the course that is neither."
+    },
+    {
+      "tag": "delta",
+      "text": "The ablative of a first-declension noun is the nominative with a long vowel and nothing else: aqua becomes aquā. That bar is the whole ending. Drop it in writing and you have written the subject; drop it in speech and a Roman hears the subject."
+    },
+    {
+      "tag": "delta",
+      "text": "nōn sits directly in front of what it negates and there is no helper to build: Nōn habeō librum. English needs a 'do' that carries the negative and means nothing; Latin has no such word, so there is nothing here that corresponds to 'don't'."
+    },
+    {
+      "tag": "interference",
+      "text": "pānis is bread, not a pan; and while English 'aquatic' keeps aqua, English 'volition' keeps volō and English 'habit' keeps habeō — none of which helps you guess which shape to write. The cognates tell you the meaning and lie about the grammar."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M3-S01",
+      "display": "Aquam volō.",
+      "cue": "I want water.",
+      "literal": "water I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aquam",
+            "cue": "water (as the thing wanted)",
+            "tag": "delta",
+            "forms": [
+              "aqua",
+              "aquam",
+              "aquā"
+            ],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after opus est. Three shapes of one word, and the -m is what marks it as the thing being wanted."
+          },
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [
+              "volō",
+              "vult"
+            ],
+            "note": "'I want' — irregular, and the only verb for wanting: volō 'I want', vult 'he/she wants'. It takes an object or an infinitive, and both come before it."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "aqua became aquam. English leaves 'water' alone whether it is doing the wanting or being wanted, so nothing warns you that the noun has to move.",
+      "sound": "A-quam VO-lō. The qu is the k-plus-w of 'quick'. The ō of volō is long and it is what says 'I'.",
+      "variations": [
+        {
+          "display": "Aquam vult.",
+          "cue": "He wants water.",
+          "changed": "the ending moves the wanting to someone else; the object does not move"
+        },
+        {
+          "display": "Pānem volō.",
+          "cue": "I want bread.",
+          "changed": "a different thing wanted, in the same object shape"
+        },
+        {
+          "display": "Librum volō.",
+          "cue": "I want the book.",
+          "changed": "M1's book, now as an object and wearing the -m"
+        }
+      ],
+      "mistake": {
+        "display": "Aqua volō.",
+        "why": "The noun left in its subject shape. Written like this the sentence says 'water, I want' with two subjects and no object — and it is the single commonest error an English speaker makes in Latin, because English nouns never move."
+      },
+      "usage": "Said at a table, or to anyone who can fetch it.",
+      "mnemonic": "The -m on the end is the hand reaching out for it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M3-S02",
+      "display": "Aquam bibere volō.",
+      "cue": "I want to drink water.",
+      "literal": "water to-drink I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aquam",
+            "cue": "water (as the thing drunk)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after opus est. Here it belongs to bibere, not to volō."
+          },
+          {
+            "display": "bibere",
+            "cue": "to drink",
+            "tag": "delta",
+            "forms": [
+              "bibere",
+              "bibō",
+              "bibis",
+              "bibit"
+            ],
+            "note": "'To drink', the infinitive — the shape a dictionary lists second. bibō 'I drink', bibis 'you drink', bibit 'he/she drinks'. The -re ending is what makes it 'to'."
+          },
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I want' — irregular, and the only verb for wanting: volō 'I want', vult 'he/she wants'. It takes an object or an infinitive, and both come before it."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "The whole sentence is back to front. English is 'I want to drink water' and Latin is 'water to-drink I-want' — three pieces in exactly the opposite order, and the object belongs to the infinitive rather than to the wanting.",
+      "sound": "A-quam BI-be-re VO-lō. Three words, three stresses on first syllables. Say the -re of bibere lightly; it carries no weight.",
+      "variations": [
+        {
+          "display": "Aquam bibere vult.",
+          "cue": "He wants to drink water.",
+          "changed": "only the last word moves; the front of the sentence is untouched"
+        },
+        {
+          "display": "Bibere volō.",
+          "cue": "I want to drink.",
+          "changed": "the object dropped, leaving the bare infinitive"
+        },
+        {
+          "display": "Aquam bibō.",
+          "cue": "I drink water.",
+          "changed": "no wanting at all — the drinking becomes the main verb and takes the ending"
+        }
+      ],
+      "mistake": {
+        "display": "Volō bibere aquam.",
+        "why": "The English word order with Latin words in it. Every piece is a real form and a Roman would understand it, but built this way the learner never discovers that the object attaches to the infinitive — and the next sentence with two objects will be unreadable."
+      },
+      "usage": "Said when you want the action and not just the thing.",
+      "mnemonic": "Latin loads the sentence front to back and fires the verb last.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M3-S03",
+      "display": "Nōlō aquam.",
+      "cue": "I do not want water.",
+      "literal": "I-do-not-want water",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōlō",
+            "cue": "I do not want",
+            "tag": "interference",
+            "forms": [
+              "nōlō"
+            ],
+            "note": "'I do not want' in ONE word — nōn and volō fused. It is a separate verb, not a phrase: a Roman refuses with nōlō rather than with nōn volō."
+          },
+          {
+            "display": "aquam",
+            "cue": "water (as the thing refused)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after opus est. Refusing something still puts it in the object shape."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "There is no 'do not' to assemble. English needs three words and Latin needs one, and the one is not the negative of the other bolted together — it is its own verb with its own stem.",
+      "sound": "NO-lō A-quam. Both vowels of nōlō are long, which makes it a slow, flat word — the sound of a refusal.",
+      "variations": [
+        {
+          "display": "Nōlō pānem.",
+          "cue": "I do not want bread.",
+          "changed": "a different thing refused; the verb does not move"
+        },
+        {
+          "display": "Aquam nōlō.",
+          "cue": "Water is what I don't want.",
+          "changed": "the object first, which throws the weight onto it"
+        },
+        {
+          "display": "Nōn volō aquam.",
+          "cue": "I do not want water.",
+          "changed": "the long way round — real Latin, and not what a Roman says first"
+        }
+      ],
+      "mistake": {
+        "display": "Nōlō aqua.",
+        "why": "The object left in its subject shape, exactly as in S01. Refusing a thing does not excuse it from the accusative — nōlō governs an object like any other verb of wanting."
+      },
+      "usage": "The ordinary way to turn something down.",
+      "mnemonic": "nōn plus volō, squeezed into nōlō.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M3-S04",
+      "display": "Librum habeō.",
+      "cue": "I have a book.",
+      "literal": "book I-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "librum",
+            "cue": "book (as the thing had)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. The e drops out as soon as an ending is added."
+          },
+          {
+            "display": "habeō",
+            "cue": "I have",
+            "tag": "free",
+            "forms": [
+              "habeō",
+              "habēs",
+              "habet"
+            ],
+            "note": "'I have', and it does exactly what English 'have' does: habeō 'I have', habēs 'you have', habet 'he/she has'. Nothing here needs unlearning."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "This is not how M1 said your name. Mihi nōmen est used a 'to me' because that is the idiom for a name; for an ordinary possession Latin has habeō and uses it.",
+      "sound": "LI-brum ha-BE-ō. Say the h. habeō is three syllables — ha-BE-o — with the stress on the middle one.",
+      "variations": [
+        {
+          "display": "Librum habēs.",
+          "cue": "You have a book.",
+          "changed": "the ending moves the having to the other person"
+        },
+        {
+          "display": "Aquam habeō.",
+          "cue": "I have water.",
+          "changed": "a different thing had, in the same object shape"
+        },
+        {
+          "display": "Librum habet.",
+          "cue": "He has a book.",
+          "changed": "and again to a third person, with no pronoun anywhere"
+        }
+      ],
+      "mistake": {
+        "display": "Mihi liber est.",
+        "why": "M1's name construction stretched to cover an ordinary possession. Latin can say this and it means 'I have a book' — but it is the shape reserved for what belongs to you inalienably, and a learner who uses it for everything never learns habeō."
+      },
+      "usage": "Said about anything you are carrying or own.",
+      "mnemonic": "habeō is 'have' — one of the few words that is simply itself.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M3-S05",
+      "display": "Mihi opus est aquā.",
+      "cue": "I need water.",
+      "literal": "for-me need is with-water",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mihi",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I' has more than one shape: ego does the acting, mihi is 'to me / for me'. Needing, like liking, puts you in this one rather than in the subject's chair."
+          },
+          {
+            "display": "opus",
+            "cue": "need",
+            "tag": "delta",
+            "forms": [
+              "opus"
+            ],
+            "note": "'Need' — a noun, and the subject of this sentence. It never changes shape here, because opus est is a fixed pairing: 'there is need'."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "aquā",
+            "cue": "water (as the thing needed)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā as the thing needed. The bar over the a is the whole of that third ending."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "You are not the subject and the water is not the object. The need is the subject, you are the one it exists for, and the water is in a third case that does neither job — so nothing in the English sentence maps onto anything in the Latin one.",
+      "sound": "MI-hi O-pus est a-QUA. The last word is the one to get right: a long ā at the end, held, and the stress pulled onto it.",
+      "variations": [
+        {
+          "display": "Mihi opus est pāne.",
+          "cue": "I need bread.",
+          "changed": "a different thing needed, in the same third case"
+        },
+        {
+          "display": "Aquā mihi opus est.",
+          "cue": "Water is what I need.",
+          "changed": "the thing needed brought to the front for weight"
+        },
+        {
+          "display": "Nōn mihi opus est aquā.",
+          "cue": "I do not need water.",
+          "changed": "negated, with nōn in front of the whole need-phrase"
+        }
+      ],
+      "mistake": {
+        "display": "Aquam opus est.",
+        "why": "The thing needed put in the object shape, because 'I need water' looks like it has an object. opus est is not a verb that takes objects — it is a noun and 'to be', and what it pairs with goes into the ablative: aquā."
+      },
+      "usage": "Said when you need something rather than merely want it.",
+      "mnemonic": "'For me there is need' — and the thing is what the need is WITH.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M3-S06",
+      "display": "Pānem volō.",
+      "cue": "I want bread.",
+      "literal": "bread I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pānem",
+            "cue": "bread (as the thing wanted)",
+            "tag": "interference",
+            "forms": [
+              "pānis",
+              "pānem",
+              "pāne"
+            ],
+            "note": "'Bread': pānis as the subject, pānem as the object, pāne as the thing needed. It is not a pan — the English word that kept it is 'pantry', the bread room."
+          },
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I want' — irregular, and the only verb for wanting: volō 'I want', vult 'he/she wants'. It takes an object or an infinitive, and both come before it."
+          }
+        ],
+        "rules": [
+          0,
+          7
+        ]
+      },
+      "trap": "pānis does not become pānam. Its object shape is pānem, because it belongs to a different family of nouns from aqua — the ending you need depends on the word, not on the job.",
+      "sound": "PA-nem VO-lō. The ā is long and stressed; the -em is light and quick.",
+      "variations": [
+        {
+          "display": "Pānem habeō.",
+          "cue": "I have bread.",
+          "changed": "a different verb over the same object"
+        },
+        {
+          "display": "Pānem bibere nōlō.",
+          "cue": "I do not want to drink bread.",
+          "changed": "the refusal and the infinitive together, which is deliberately odd"
+        },
+        {
+          "display": "Pānis est.",
+          "cue": "It is bread.",
+          "changed": "the subject shape, which is where the -is ending finally shows"
+        }
+      ],
+      "mistake": {
+        "display": "Pānam volō.",
+        "why": "The accusative guessed from aqua's pattern. -am belongs to nouns like aqua; pānis takes -em, and there is no way to know which family a noun is in except by meeting it — which is why the dictionary lists two shapes rather than one."
+      },
+      "usage": "Said at a table, or in a shop.",
+      "mnemonic": "A 'pantry' is where the pānis lives.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M3-S07",
+      "display": "Nōn habeō librum.",
+      "cue": "I do not have a book.",
+      "literal": "not I-have book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not', and it goes straight in front of the verb. Nothing corresponds to English 'do not': there is no helper to hang the negative on, so nōn sits on the verb itself."
+          },
+          {
+            "display": "habeō",
+            "cue": "I have",
+            "tag": "free",
+            "forms": [],
+            "note": "'I have', and it does exactly what English 'have' does: habeō 'I have', habēs 'you have', habet 'he/she has'. Nothing here needs unlearning."
+          },
+          {
+            "display": "librum",
+            "cue": "book (as the thing had)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. The e drops out as soon as an ending is added."
+          }
+        ],
+        "rules": [
+          6,
+          0
+        ]
+      },
+      "trap": "There is no 'do' in it. English cannot negate a verb without borrowing a helper; Latin puts nōn in front and the sentence is finished.",
+      "sound": "NON ha-BE-ō LI-brum. Hold the ō of nōn — it is long, and the word is doing all the negating on its own.",
+      "variations": [
+        {
+          "display": "Librum nōn habeō.",
+          "cue": "I do not have a book.",
+          "changed": "the object first and the verb last, which is the more usual Latin order"
+        },
+        {
+          "display": "Nōn habēs librum.",
+          "cue": "You do not have a book.",
+          "changed": "the ending moves the having; nōn does not move"
+        },
+        {
+          "display": "Aquam nōn habeō.",
+          "cue": "I do not have water.",
+          "changed": "a different thing not had"
+        }
+      ],
+      "mistake": {
+        "display": "Habeō nōn librum.",
+        "why": "nōn placed after the verb, where English puts 'not'. In Latin it goes in front of the word it negates, and after the verb it would be read as negating the book — 'I have a non-book' — which is a different claim."
+      },
+      "usage": "Said when you are asked for something you do not have.",
+      "mnemonic": "nōn leans on whatever comes next.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M3-S08",
+      "display": "Pānem habēs.",
+      "cue": "You have bread.",
+      "literal": "bread you-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pānem",
+            "cue": "bread (as the thing had)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Bread': pānis as the subject, pānem as the object, pāne as the thing needed. It is not a pan — the English word that kept it is 'pantry', the bread room."
+          },
+          {
+            "display": "habēs",
+            "cue": "you have",
+            "tag": "free",
+            "forms": [],
+            "note": "'I have', and it does exactly what English 'have' does: habeō 'I have', habēs 'you have', habet 'he/she has'. Nothing here needs unlearning."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "There is no tū. The -s on habēs is the whole of 'you', exactly as the -ō was the whole of 'I' — and putting tū in would be emphasis, as M2 said.",
+      "sound": "PA-nem ha-BES. The ē of habēs is long, and it is what separates 'you have' from 'he has'.",
+      "variations": [
+        {
+          "display": "Tū pānem habēs.",
+          "cue": "YOU have bread.",
+          "changed": "tū added, which presses on who has it"
+        },
+        {
+          "display": "Pānem habet.",
+          "cue": "He has bread.",
+          "changed": "a third person, and the vowel before the ending shortens"
+        },
+        {
+          "display": "Pānem nōn habēs.",
+          "cue": "You do not have bread.",
+          "changed": "negated, with nōn in front of the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Pānem habes.",
+        "why": "The macron dropped. habes with a short e is not a word this course writes, and the long ē is the only thing separating 'you have' from the stem it is built on — the bar is spelling, not decoration."
+      },
+      "usage": "Said when you can see that someone has what you want.",
+      "mnemonic": "The long ē is the 'you' in habēs.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M3-S09",
+      "display": "Aquam bibere nōlō.",
+      "cue": "I do not want to drink water.",
+      "literal": "water to-drink I-do-not-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aquam",
+            "cue": "water (as the thing drunk)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after opus est. Here it belongs to bibere, not to nōlō."
+          },
+          {
+            "display": "bibere",
+            "cue": "to drink",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To drink', the infinitive — the shape a dictionary lists second. bibō 'I drink', bibis 'you drink', bibit 'he/she drinks'. The -re ending is what makes it 'to'."
+          },
+          {
+            "display": "nōlō",
+            "cue": "I do not want",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I do not want' in ONE word — nōn and volō fused. It is a separate verb, not a phrase: a Roman refuses with nōlō rather than with nōn volō."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Four English words become one Latin one at the end. 'I do not want' is nōlō, and it sits where volō sat — the refusal changes the verb, not the shape of the sentence.",
+      "sound": "A-quam BI-be-re NO-lō. The sentence ends on two long vowels, which is why a refusal in Latin sounds unhurried.",
+      "variations": [
+        {
+          "display": "Pānem bibere nōlō.",
+          "cue": "I do not want to drink bread.",
+          "changed": "the same frame with a thing you cannot drink — the grammar holds anyway"
+        },
+        {
+          "display": "Bibere nōlō.",
+          "cue": "I do not want to drink.",
+          "changed": "the object dropped, leaving the refusal and the infinitive"
+        },
+        {
+          "display": "Aquam bibere nōn vult.",
+          "cue": "He does not want to drink water.",
+          "changed": "the long way round in a third person, since nōlō has no third-person shape in this module"
+        }
+      ],
+      "mistake": {
+        "display": "Nōlō bibere aquam.",
+        "why": "The English order again: verb, infinitive, object. It is real Latin and a Roman would follow it, but it hides the rule the module is built on — the object belongs to the infinitive and both stand before what governs them."
+      },
+      "usage": "Said when you are refusing the action, not the thing.",
+      "mnemonic": "Refusal goes last, because in Latin the verb always does.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M3-S10",
+      "display": "Mihi opus est pāne.",
+      "cue": "I need bread.",
+      "literal": "for-me need is with-bread",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mihi",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I' has more than one shape: ego does the acting, mihi is 'to me / for me'. Needing, like liking, puts you in this one rather than in the subject's chair."
+          },
+          {
+            "display": "opus",
+            "cue": "need",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Need' — a noun, and the subject of this sentence. It never changes shape here, because opus est is a fixed pairing: 'there is need'."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "pāne",
+            "cue": "bread (as the thing needed)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Bread': pānis as the subject, pānem as the object, pāne as the thing needed. Its ablative ends in a short e, where aqua's ends in a long ā."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "pāne ends in a short e and aquā in a long ā, and both are the same case. The ending you need depends on which family the noun belongs to, so the case has to be learned as a job rather than as a letter.",
+      "sound": "MI-hi O-pus est PA-ne. The final e of pāne is short and unstressed — the opposite of aquā's long ā in the same slot.",
+      "variations": [
+        {
+          "display": "Pāne mihi opus est.",
+          "cue": "Bread is what I need.",
+          "changed": "the thing needed in front, for weight"
+        },
+        {
+          "display": "Mihi opus est aquā.",
+          "cue": "I need water.",
+          "changed": "back to the first-declension ending, for the contrast"
+        },
+        {
+          "display": "Opus est pāne.",
+          "cue": "Bread is needed.",
+          "changed": "the 'for me' dropped, which leaves the need true of nobody in particular"
+        }
+      ],
+      "mistake": {
+        "display": "Mihi opus est pānem.",
+        "why": "The object shape used where the ablative belongs, because 'I need bread' feels like it has an object. opus est never takes one: what it pairs with goes into the ablative, and for pānis that is pāne."
+      },
+      "usage": "Said when you need it rather than merely want it.",
+      "mnemonic": "Two nouns, two ablatives, two different letters: aquā and pāne.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M3-C01",
+      "display": "Librum bibere nōlō.",
+      "cue": "I do not want to drink a book."
+    },
+    {
+      "id": "L1-M3-C02",
+      "display": "Aquam habet magister.",
+      "cue": "The teacher has water."
+    },
+    {
+      "id": "L1-M3-C03",
+      "display": "Opus est aquā.",
+      "cue": "Water is needed."
+    },
+    {
+      "id": "L1-M3-C04",
+      "display": "Pānem nōn volō.",
+      "cue": "I do not want bread."
+    },
+    {
+      "id": "L1-M3-C05",
+      "display": "Tū aquam bibis.",
+      "cue": "You are drinking water."
+    },
+    {
+      "id": "L1-M3-C06",
+      "display": "Discipula librum habet.",
+      "cue": "The student has a book."
+    },
+    {
+      "id": "L1-M3-C07",
+      "display": "Nōn habeō pānem.",
+      "cue": "I do not have bread."
+    },
+    {
+      "id": "L1-M3-C08",
+      "display": "Aquam bibere vult Iūlia.",
+      "cue": "Julia wants to drink water."
+    },
+    {
+      "id": "L1-M3-C09",
+      "display": "Minimē, aquam nōlō.",
+      "cue": "No, I do not want water."
+    },
+    {
+      "id": "L1-M3-C10",
+      "display": "Magister pānem habet.",
+      "cue": "The teacher has bread."
+    },
+    {
+      "id": "L1-M3-C11",
+      "display": "Ita, pānem habeō.",
+      "cue": "Yes, I have bread."
+    },
+    {
+      "id": "L1-M3-C12",
+      "display": "Mārcus pānem vult.",
+      "cue": "Marcus wants bread."
+    },
+    {
+      "id": "L1-M3-C13",
+      "display": "Aquam bibit Mārcus.",
+      "cue": "Marcus is drinking water."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

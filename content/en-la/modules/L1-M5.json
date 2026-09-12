@@ -1,0 +1,718 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M5",
+  "title": "Yesterday",
+  "job": "Past tense — the first big divergence",
+  "prerequisites": [
+    "L1-M4"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": [
+      "perfect",
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "herī + V-ī",
+      "N-acc + V-ī",
+      "N/Adj + fuī",
+      "V-it (perfect, third person)",
+      "nōn + V-ī"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The past is a SECOND STEM, learned per verb, with regular endings on it. veniō gives vēnī, legō gives lēgī, scrībō gives scrīpsī, habeō gives habuī, sum gives fuī. The endings are predictable; the stems are not, which is why a dictionary lists a third shape for every verb."
+    },
+    {
+      "tag": "free",
+      "text": "One Latin past covers two English ones. Lēgī is 'I read' and 'I have read', and there is nothing to choose between. English makes you decide whether the action is finished or connected to now; Latin does not ask."
+    },
+    {
+      "tag": "interference",
+      "text": "There is no helper verb anywhere in it. English builds 'I have read' out of 'have' plus a participle, and Latin has habeō and does NOT use it here — lēgī is one word. A learner who reaches for habeō to make a past tense has built a sentence about possession."
+    },
+    {
+      "tag": "interference",
+      "text": "The whole difference between venit and vēnit is one bar. venit is 'he comes' (M4) and vēnit is 'he came' (here), and the same trick runs through the module: the long vowel IS the tense. Write the bar or you have written the wrong tense, and a Roman hears the length the way you hear 'ship' against 'sheep'."
+    },
+    {
+      "tag": "delta",
+      "text": "The past does NOT carry the speaker's gender. Vēnī is the same word whoever says it — which is worth saying because a Latin sentence has carried gender since M1. Where gender lands is after fuī: a man says Rōmānus fuī and a woman Rōmāna fuī, because the adjective describes the person and the verb does not."
+    },
+    {
+      "tag": "delta",
+      "text": "The bar on the end matters as much as the one inside. Vēnī is 'I came' and vēnit is 'he came' — the long ī is the person. Two long vowels in one short word, doing two different jobs, is ordinary in this tense."
+    },
+    {
+      "tag": "delta",
+      "text": "'I was reading' and 'I used to read' are NOT this tense. Latin has a separate past for them and this course does not teach it yet — every English past that means a habit or an unfinished action waits for a later level. Here, everything is a completed event: Herī vēnī."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M5-S01",
+      "display": "Herī vēnī.",
+      "cue": "I came yesterday.",
+      "literal": "yesterday I-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "herī",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [
+              "herī"
+            ],
+            "note": "'Yesterday', and it never changes shape — an adverb like cotīdiē. Its final ī is long, so the stress stays on the first syllable: HE-rī."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "interference",
+            "forms": [
+              "vēnī",
+              "vēnit"
+            ],
+            "note": "'I came' — the past of M4's veniō, built on a different stem: vēnī 'I came', vēnit 'he/she came'. Both bars matter; the first is the tense and the second the person."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          6
+        ]
+      },
+      "trap": "Two words, and one of them is the whole past tense with its subject inside it. English needs three — 'I came yesterday' — and two of them do work Latin does with endings.",
+      "sound": "HE-rī VAY-nee. Both vowels of vēnī are long: hold the ē and hold the ī. Said next to M4's VEN-it, the difference is unmistakable — and that is the point of the bar.",
+      "variations": [
+        {
+          "display": "Herī vēnit.",
+          "cue": "He came yesterday.",
+          "changed": "the final bar goes and the person changes; the tense does not"
+        },
+        {
+          "display": "Vēnī.",
+          "cue": "I came.",
+          "changed": "the time word dropped — the tense is in the verb, not in herī"
+        },
+        {
+          "display": "Herī nōn vēnī.",
+          "cue": "I did not come yesterday.",
+          "changed": "negated, with nōn in front and no helper to build"
+        }
+      ],
+      "mistake": {
+        "display": "Herī venī.",
+        "why": "The first bar dropped, which takes the tense with it. venī with a short e is the command 'come!', so the sentence has turned from a report into an order — and nothing on the page except that bar says which you meant."
+      },
+      "usage": "Said about when you arrived.",
+      "mnemonic": "Long ē, past. Short e, present. The bar is the tense.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S02",
+      "display": "Iūlia herī vēnit.",
+      "cue": "Julia came yesterday.",
+      "literal": "Julia yesterday she-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Iūlia",
+            "cue": "Julia (a woman's name)",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman woman's given name, said YOO-li-a. Spelled with an i because Latin has no letter j at all."
+          },
+          {
+            "display": "herī",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "'Yesterday', and it never changes shape — an adverb like cotīdiē. Its final ī is long, so the stress stays on the first syllable: HE-rī."
+          },
+          {
+            "display": "vēnit",
+            "cue": "she came",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I came' — the past of M4's veniō, built on a different stem: vēnī 'I came', vēnit 'he/she came'. The bar inside is the tense; without it this is 'she comes'."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "Put this beside M4's Iūlia cotīdiē venit and the only difference on the page is one bar. That bar is the entire past tense, and it is why this course marks every long vowel rather than leaving them to be guessed.",
+      "sound": "YOO-li-a HE-rī VAY-nit. Hold the ē. Then say M4's VEN-it immediately afterwards and hear that they are two different words.",
+      "variations": [
+        {
+          "display": "Mārcus herī vēnit.",
+          "cue": "Marcus came yesterday.",
+          "changed": "a man instead, and the verb does not move — the past carries no gender"
+        },
+        {
+          "display": "Iūlia cotīdiē venit.",
+          "cue": "Julia comes every day.",
+          "changed": "back to the present, which is M4's sentence and differs by one bar"
+        },
+        {
+          "display": "Iūlia nōn vēnit.",
+          "cue": "Julia did not come.",
+          "changed": "negated, with no 'did' to build"
+        }
+      ],
+      "mistake": {
+        "display": "Iūlia herī venit.",
+        "why": "The bar dropped, so the sentence says Julia comes yesterday — a present tense with a past time word, which is nonsense in Latin as it is in English. This is the error the whole orthography exists to make visible."
+      },
+      "usage": "Said about someone else's arrival.",
+      "mnemonic": "herī wants a bar on the verb.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S03",
+      "display": "Librum lēgī.",
+      "cue": "I read the book.",
+      "literal": "book I-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "librum",
+            "cue": "book (as the thing read)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. The e drops out as soon as an ending is added."
+          },
+          {
+            "display": "lēgī",
+            "cue": "I read · I have read",
+            "tag": "delta",
+            "forms": [
+              "lēgī",
+              "lēgit"
+            ],
+            "note": "'I read' in the past — the second stem of M4's legō, with its e lengthened: lēgī 'I read', lēgit 'he read'. It also covers 'I have read'."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          2
+        ]
+      },
+      "trap": "One Latin word covers 'I read', 'I have read' and 'I did read'. English makes you choose between them and Latin does not offer the choice — so there is nothing here to get wrong except the stem.",
+      "sound": "LI-brum LAY-gee. Both vowels of lēgī are long. Beside M4's LE-git the past is audibly slower, which is exactly how a Roman told them apart.",
+      "variations": [
+        {
+          "display": "Librum lēgit.",
+          "cue": "He read the book.",
+          "changed": "the person moves; the long e of the stem stays"
+        },
+        {
+          "display": "Herī librum lēgī.",
+          "cue": "I read the book yesterday.",
+          "changed": "a time word added, which the tense did not need"
+        },
+        {
+          "display": "Epistulam lēgī.",
+          "cue": "I read the letter.",
+          "changed": "a different thing read, still in the object shape"
+        }
+      ],
+      "mistake": {
+        "display": "Librum habeō lēctum.",
+        "why": "'I have read' assembled out of habeō and a participle, the way English builds it. Latin's lēgī already means that, and this construction says something closer to 'I possess a book that has been read'."
+      },
+      "usage": "Said about anything you finished reading.",
+      "mnemonic": "legō becomes lēgī: the vowel stretches and the tense moves.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S04",
+      "display": "Epistulam scrīpsī.",
+      "cue": "I wrote a letter.",
+      "literal": "letter I-wrote",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "epistulam",
+            "cue": "letter (as the thing written)",
+            "tag": "free",
+            "forms": [],
+            "note": "'Letter' — the written kind. epistula as the subject, epistulam as the object. English kept it in 'epistle'."
+          },
+          {
+            "display": "scrīpsī",
+            "cue": "I wrote · I have written",
+            "tag": "delta",
+            "forms": [
+              "scrīpsī",
+              "scrīpsit"
+            ],
+            "note": "'I wrote' — the second stem of M4's scrībō, and the b has become ps: scrīpsī, scrīpsit 'he wrote'. English keeps that ps in 'script'."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The b of scrībō turned into ps. A past stem is not the present with a suffix — it can change the consonants as well as the vowel, which is why it has to be learned as a separate word.",
+      "sound": "e-PIS-tu-lam SCRIP-see. The ī of scrīpsī is long and stressed; the final ī is long too.",
+      "variations": [
+        {
+          "display": "Epistulam scrīpsit.",
+          "cue": "He wrote a letter.",
+          "changed": "the person moves on the same stem"
+        },
+        {
+          "display": "Herī epistulam scrīpsī.",
+          "cue": "I wrote a letter yesterday.",
+          "changed": "a time word added"
+        },
+        {
+          "display": "Epistulam nōn scrīpsī.",
+          "cue": "I did not write a letter.",
+          "changed": "negated, and English's 'did' has nothing to become"
+        }
+      ],
+      "mistake": {
+        "display": "Epistulam scrībī.",
+        "why": "The past built by putting the ending straight onto the present stem. It does not work: the stem itself changes, and scrībō's past is scrīpsī — there is no rule to derive it from, only the dictionary."
+      },
+      "usage": "Said about correspondence you have finished.",
+      "mnemonic": "scrībō, scrīpsī — the b becomes the ps of 'script'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S05",
+      "display": "Rōmānus fuī.",
+      "cue": "I was Roman.",
+      "literal": "Roman I-was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Rōmānus",
+            "cue": "Roman",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Roman', bending for the person it describes: Rōmānus of a man, Rōmāna of a woman, Rōmānī of more than one. Both ō and ā are long."
+          },
+          {
+            "display": "fuī",
+            "cue": "I was · I have been",
+            "tag": "delta",
+            "forms": [
+              "fuī",
+              "fuit"
+            ],
+            "note": "'I was' — the past of sum, and it shares no letters with it at all: fuī, fuit 'he was'. The most irregular verb in the language is irregular here too."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "The gender is on the adjective and not on the verb. fuī is the same word whoever says it, and a woman changes Rōmānus to Rōmāna and leaves fuī alone — which is the opposite of what several other languages do.",
+      "sound": "ro-MA-nus FU-ee. fuī is two syllables, FU-ee, and the final ī is long.",
+      "variations": [
+        {
+          "display": "Rōmāna fuī.",
+          "cue": "I was Roman. (a woman speaking)",
+          "changed": "the adjective takes her gender and the verb does not move"
+        },
+        {
+          "display": "Rōmānus fuit.",
+          "cue": "He was Roman.",
+          "changed": "the person moves, on a stem that looks nothing like sum"
+        },
+        {
+          "display": "Discipulus fuī.",
+          "cue": "I was a student.",
+          "changed": "a noun instead of an adjective, doing the same job"
+        }
+      ],
+      "mistake": {
+        "display": "Rōmānus sum fuī.",
+        "why": "Both tenses of the same verb in one sentence, because English's 'was' looks like it needs 'be' inside it. fuī is the whole past of sum, so the sentence has two verbs and no room for the second."
+      },
+      "usage": "Said about what you used to be — though for a lasting state, a later level has a better tense.",
+      "mnemonic": "sum and fuī are one verb with two unrelated halves.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S06",
+      "display": "Herī aquam habuī.",
+      "cue": "I had water yesterday.",
+      "literal": "yesterday water I-had",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "herī",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "'Yesterday', and it never changes shape — an adverb like cotīdiē. Its final ī is long, so the stress stays on the first syllable: HE-rī."
+          },
+          {
+            "display": "aquam",
+            "cue": "water (as the thing had)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā as the thing needed. Three shapes of one word."
+          },
+          {
+            "display": "habuī",
+            "cue": "I had",
+            "tag": "delta",
+            "forms": [
+              "habuī",
+              "habuit"
+            ],
+            "note": "'I had' — the past of M3's habeō, with a u in the stem: habuī, habuit 'he had'. This is the verb for possessing, never a helper for building other pasts."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "habuī is 'I had' and nothing else. It is not the piece English uses to build 'I have read' — Latin's past needs no helper, so habeō and habuī only ever talk about possession.",
+      "sound": "HE-rī A-quam ha-BU-ee. habuī is three syllables with the stress in the middle.",
+      "variations": [
+        {
+          "display": "Herī aquam habuit.",
+          "cue": "He had water yesterday.",
+          "changed": "the person moves on the same u-stem"
+        },
+        {
+          "display": "Librum habuī.",
+          "cue": "I had a book.",
+          "changed": "a different thing had"
+        },
+        {
+          "display": "Aquam nōn habuī.",
+          "cue": "I did not have water.",
+          "changed": "negated, with no 'did' to supply"
+        }
+      ],
+      "mistake": {
+        "display": "Herī aquam habēbam.",
+        "why": "The other past tense, the one this course has not taught. habēbam is 'I was having / I used to have' and it is a different form for a different job — L4 opens it, and reaching for it here writes a tense the learner cannot yet use correctly."
+      },
+      "usage": "Said about what you had at some point.",
+      "mnemonic": "habeō becomes habuī: the e gives way to a u.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S07",
+      "display": "Mārcus herī lēgit.",
+      "cue": "Marcus read yesterday.",
+      "literal": "Marcus yesterday he-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "Mārcus",
+            "cue": "Marcus (a man's name)",
+            "tag": "free",
+            "forms": [],
+            "note": "A Roman man's given name, with a genuinely long ā: MAR-cus. A name takes endings like any other noun — Mārcō is 'to Marcus'."
+          },
+          {
+            "display": "herī",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "'Yesterday', and it never changes shape — an adverb like cotīdiē. Its final ī is long, so the stress stays on the first syllable: HE-rī."
+          },
+          {
+            "display": "lēgit",
+            "cue": "he read",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read' in the past — the second stem of M4's legō, with its e lengthened: lēgī 'I read', lēgit 'he read'. The bar is the tense: legit is 'he reads'."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "lēgit against M4's legit is the same trap as vēnit against venit, on a different verb. English does the same thing with 'read' and 'read' and gives you no spelling to help; Latin gives you the bar, and that is why it is written.",
+      "sound": "MAR-cus HE-rī LAY-git. Hold the ē. M4's legit is LEG-it, short and quick.",
+      "variations": [
+        {
+          "display": "Mārcus librum lēgit.",
+          "cue": "Marcus read the book.",
+          "changed": "an object added and the time word dropped"
+        },
+        {
+          "display": "Mārcus herī legit.",
+          "cue": "Marcus reads yesterday.",
+          "changed": "the present with a past time word — deliberately broken, to show what one bar carries"
+        },
+        {
+          "display": "Iūlia herī lēgit.",
+          "cue": "Julia read yesterday.",
+          "changed": "a woman instead, and the verb does not move"
+        }
+      ],
+      "mistake": {
+        "display": "Mārcus herī legit.",
+        "why": "The bar missing, so the tense is present and the time word is past. This is the same sentence as the third variation above, which is there on purpose: the module wants you to see it once as a demonstration and once as an error."
+      },
+      "usage": "Said about what somebody did yesterday.",
+      "mnemonic": "legit reads, lēgit read. The bar is the past.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S08",
+      "display": "Nōn vēnī.",
+      "cue": "I did not come.",
+      "literal": "not I-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not', and it goes straight in front of the verb. Nothing corresponds to English 'did not': there is no helper to hang the negative on in any tense."
+          },
+          {
+            "display": "vēnī",
+            "cue": "I came",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I came' — the past of M4's veniō, built on a different stem: vēnī 'I came', vēnit 'he/she came'. Both bars matter; the first is the tense and the second the person."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "English's 'did' has nothing to become. It exists only to carry the tense and the negative, and Latin's verb carries both itself — so a two-word English past becomes a two-word Latin sentence with nothing in common.",
+      "sound": "NON VAY-nee. Three long vowels in two short words, which makes a flat, deliberate sound.",
+      "variations": [
+        {
+          "display": "Nōn vēnit.",
+          "cue": "He did not come.",
+          "changed": "the person moves; nōn does not"
+        },
+        {
+          "display": "Herī nōn vēnī.",
+          "cue": "I did not come yesterday.",
+          "changed": "a time word in front of the negative"
+        },
+        {
+          "display": "Nōn lēgī.",
+          "cue": "I did not read.",
+          "changed": "a different verb under the same negative"
+        }
+      ],
+      "mistake": {
+        "display": "Nōn habuī venīre.",
+        "why": "A past negative assembled out of a helper and an infinitive, on the model of 'did not come'. Every piece is a real Latin word and the whole means roughly 'I did not possess to come' — which is why the module's rule says nōn sits on the verb and stops."
+      },
+      "usage": "Said when you are explaining an absence.",
+      "mnemonic": "nōn plus the past verb. Nothing else is needed.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S09",
+      "display": "Discipula fuī.",
+      "cue": "I was a student. (a woman speaking)",
+      "literal": "a-student I-was",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "discipula",
+            "cue": "student (a woman)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Student', and it carries the student's own gender: discipulus of a man, discipula of a woman. More than one is discipulī."
+          },
+          {
+            "display": "fuī",
+            "cue": "I was · I have been",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I was' — the past of sum, and it shares no letters with it at all: fuī, fuit 'he was'. The most irregular verb in the language is irregular here too."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "The -a says a woman is speaking and fuī says nothing about her at all. Two words, and only one of them knows who she is — which is the whole of this module's gender rule.",
+      "sound": "dis-KI-pu-la FU-ee. Hard c, and fuī ends on a long ī.",
+      "variations": [
+        {
+          "display": "Discipulus fuī.",
+          "cue": "I was a student. (a man speaking)",
+          "changed": "the noun takes his gender; the verb is untouched"
+        },
+        {
+          "display": "Discipula fuit.",
+          "cue": "She was a student.",
+          "changed": "the person moves and the gender stays on the noun"
+        },
+        {
+          "display": "Magistra fuī.",
+          "cue": "I was a teacher. (a woman speaking)",
+          "changed": "a different role, gendered the same way"
+        }
+      ],
+      "mistake": {
+        "display": "Discipula fuīa.",
+        "why": "A feminine ending invented for the verb, because the noun has one. Latin verbs in this tense do not carry gender at all — fuī is the whole word, and adding to it produces nothing."
+      },
+      "usage": "Said about what you used to do.",
+      "mnemonic": "The noun knows your gender. The verb does not.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M5-S10",
+      "display": "Herī epistulam scrīpsit.",
+      "cue": "She wrote a letter yesterday.",
+      "literal": "yesterday letter she-wrote",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "herī",
+            "cue": "yesterday",
+            "tag": "free",
+            "forms": [],
+            "note": "'Yesterday', and it never changes shape — an adverb like cotīdiē. Its final ī is long, so the stress stays on the first syllable: HE-rī."
+          },
+          {
+            "display": "epistulam",
+            "cue": "letter (as the thing written)",
+            "tag": "free",
+            "forms": [],
+            "note": "'Letter' — the written kind. epistula as the subject, epistulam as the object. English kept it in 'epistle'."
+          },
+          {
+            "display": "scrīpsit",
+            "cue": "she wrote",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I wrote' — the second stem of M4's scrībō, and the b has become ps: scrīpsī, scrīpsit 'he wrote'. English keeps that ps in 'script'."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Nothing in the sentence says 'she'. The -t says a third person and the situation says which one — Latin has no gendered verb ending to tell you, and M4's it was the same.",
+      "sound": "HE-rī e-PIS-tu-lam SCRIP-sit. Three words, and only the middle one has more than two syllables.",
+      "variations": [
+        {
+          "display": "Herī epistulam scrīpsī.",
+          "cue": "I wrote a letter yesterday.",
+          "changed": "back to the first person, on the same stem"
+        },
+        {
+          "display": "Iūlia epistulam scrīpsit.",
+          "cue": "Julia wrote a letter.",
+          "changed": "the person named, which is the only way to say which third person"
+        },
+        {
+          "display": "Herī epistulam nōn scrīpsit.",
+          "cue": "She did not write a letter yesterday.",
+          "changed": "negated, with nōn against the verb"
+        }
+      ],
+      "mistake": {
+        "display": "Herī epistulam scrīpsit ea.",
+        "why": "A pronoun added at the end to supply the 'she'. Latin has words for she, but a plain narrative does not use one — the ending is enough, and adding a pronoun makes it emphatic in a sentence that has nothing to emphasise."
+      },
+      "usage": "Said about what somebody else did.",
+      "mnemonic": "A third-person past ends in -it, whoever it was.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M5-C01",
+      "display": "Mārcus herī epistulam lēgit.",
+      "cue": "Marcus read a letter yesterday."
+    },
+    {
+      "id": "L1-M5-C02",
+      "display": "Magister fuit.",
+      "cue": "He was a teacher."
+    },
+    {
+      "id": "L1-M5-C03",
+      "display": "Herī pānem habuī.",
+      "cue": "I had bread yesterday."
+    },
+    {
+      "id": "L1-M5-C04",
+      "display": "Iūlia nōn vēnit.",
+      "cue": "Julia did not come."
+    },
+    {
+      "id": "L1-M5-C05",
+      "display": "Librum herī scrīpsī.",
+      "cue": "I wrote a book yesterday."
+    },
+    {
+      "id": "L1-M5-C06",
+      "display": "Rōmāna fuit Iūlia.",
+      "cue": "Julia was Roman."
+    },
+    {
+      "id": "L1-M5-C07",
+      "display": "Ad scholam herī vēnī.",
+      "cue": "I came to school yesterday."
+    },
+    {
+      "id": "L1-M5-C08",
+      "display": "Aquam nōn habuit.",
+      "cue": "He did not have water."
+    },
+    {
+      "id": "L1-M5-C09",
+      "display": "Discipulus fuit Mārcus.",
+      "cue": "Marcus was a student."
+    },
+    {
+      "id": "L1-M5-C10",
+      "display": "Herī nōn lēgī.",
+      "cue": "I did not read yesterday."
+    },
+    {
+      "id": "L1-M5-C11",
+      "display": "Epistulam scrīpsit magistra.",
+      "cue": "The teacher wrote a letter."
+    },
+    {
+      "id": "L1-M5-C12",
+      "display": "Discipula herī vēnit.",
+      "cue": "The student came yesterday."
+    },
+    {
+      "id": "L1-M5-C13",
+      "display": "Magistra fuī, nōn discipula.",
+      "cue": "I was a teacher, not a student."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
