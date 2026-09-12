@@ -2813,6 +2813,109 @@
  * are four-sentence accounts in the participial past with `prathamam`, `tataḥ`, `anantaram` and
  * `ante`.
  *
+ * ## en-la L2: the decisions, taken against the finished L1 (#638)
+ *
+ * Planned against the REAL cumulative L1 index — **189 surfaces through L1-M10, maxSpan 1** —
+ * FOLDED across all ten emitted files rather than read off the last one. Each file carries only
+ * what its own module is the FIRST to teach (#424) while `surfaceCount` stays cumulative, so the
+ * fold is stated here as arithmetic rather than as a remembered number: 24 + 20 + 18 + 24 + 11 +
+ * 16 + 16 + 24 + 21 + 15 = 189, which is what `L1-M10.json`'s `surfaceCount` says. Nothing was
+ * dropped or double-counted.
+ *
+ * ### 1. Register — en-la is the one course whose politeness is NOT a pronoun
+ *
+ * Every other L2-M1 in this file teaches a polite address: `usted`, `Lei`, `vous`, `Sie`, `vy`,
+ * `bhavān`. **Latin has none**, and L1-M2 already said so — `tū` is one person and `vōs` is more
+ * than one, and `vōs` to one person is simply wrong. So M1 teaches politeness as a set of VERB
+ * shapes and fixed phrases, and the `formal` register chip (#422) sits on those rather than on a
+ * word for "you". Three things follow, and all three are decisions rather than taste:
+ *
+ * - **`velim` is the workhorse and it is a subjunctive**, which L1 never taught. It is written as a
+ *   FIXED POLITE FORM and not as a mood: `velim aquam` is "I should like some water", learned whole
+ *   the way `quantī cōnstat` was learned whole in L1-M8. The productive subjunctive is L3-M4's, and
+ *   a module that explains `velim` as a mood has opened a system it cannot finish.
+ * - **`quaesō` and `sīs` are the softeners**, both invariable in practice: `dā mihi aquam, quaesō`.
+ *   `sīs` is `sī vīs` worn down ("if you would"), and it is worth one usage line rather than a rule.
+ * - **`nōlī` + infinitive is the negative command**, which L1-M3 named as deferred and this module
+ *   finally writes: `nōlī īre`. It is the one place L2-M1 adds a construction rather than a phrase.
+ *
+ * The thanks-and-apology set is `grātiās agō` (literally "I do thanks" — L1-M2's `agō` doing a new
+ * job, so it extends that row rather than opening one), `ignōsce mihi` and `mē paenitet`. The last
+ * is impersonal, like L1-M3's `mihi opus est`, and `mē` is the object shape of `ego` — so it is the
+ * first display in the course to write `mē` and the `ego` row gains it.
+ *
+ * ### 2. Adjectives at length, and the third-declension family opened properly
+ *
+ * L1-M9 taught `laetus`/`laeta`/`laetum` and met `trīstis`/`trīste` once. M2 and M3 open the second
+ * family as a system: `fortis`, `gravis`, `brevis`, `omnis` — one shape for masculine AND feminine,
+ * a separate one for neuter — and the consequence is stated rather than implied: **an adjective's
+ * ending does not tell you its noun's gender**, so `fortis magister` and `fortis magistra` look
+ * identical and only the noun decides. Agreement runs across gender, number AND case by M3, which
+ * is where the object shape of an adjective first appears (`magnum librum`).
+ *
+ * **Kinship nouns are gendered from their first row** (M2): `frāter`/`soror`, `fīlius`/`fīlia`,
+ * `pater`/`māter`. hi-mr's rule, and the reason it matters here is that `pater` and `māter` are the
+ * hosts L1-M10's `-que` seam was built for, so their rows arrive with the joined shapes already
+ * planned.
+ *
+ * ### 3. The first subjunctive, and where it is allowed to be
+ *
+ * M6 wants "let's go". **Decided: `eāmus` is written, as a FIXED FORM in one pattern, and named as
+ * a subjunctive without being explained as one.** The alternative — deferring it to L3-M4 and
+ * having M6 say "shall we go?" with a plain future — was rejected because `ībimus?` is a question
+ * about fact rather than an invitation, and a module whose job is "invitations, suggestions,
+ * settling a time" cannot do it. So L2 writes exactly two subjunctives, both as vocabulary:
+ * `velim` (M1) and `eāmus` (M6). `nōlī` is an imperative, not a subjunctive, and the note says so.
+ *
+ * ### 4. `ēst` — the macron pair L1 deliberately left unspent
+ *
+ * `docs/123` §1.1 listed `est`/`ēst` as the second pair the macron keeps apart, and L1-M1 took
+ * `est` while every later module was forbidden to write `ēst`. **M5 spends it**: `ēst` is "he eats",
+ * one bar from "he is", and the two rows now sit side by side in the index. That is the whole
+ * argument of the orthography arriving in a module about food, and M5 owes it a `mistake` plate.
+ * The verb is `edō`, whose shapes are irregular enough to be worth learning as a set (`edō`, `ēst`,
+ * `edere`/`ēsse`) — and `ēsse` against `esse` is a second pair of the same kind, so **`ēsse` is
+ * named in prose and written nowhere**, exactly as L1 handled `ēst`.
+ *
+ * ### 5. Seams — the hosts L2 adds, and the one rule that cannot be broken
+ *
+ * L1's ordering law holds: `surfaceIndexKeys` hands the part keys to whichever row is indexed
+ * first, so **a new `X-ne` or `X-que` needs `X` opened in an earlier sentence.** L2's new hosts are
+ * all L1 words or L2 words opened earlier in their own module — `pater māter-que` (M2),
+ * `vīnum aquam-que` (M5) — and every one is checked against the emitted index rather than assumed.
+ * The lexicalised list is closed and unchanged.
+ *
+ * Collisions L2 owns: **`quam`** — M9 owns "than", and its other readings ("how", and the feminine
+ * object of the relative) are named and written nowhere; **`cum`** — L1-M7 owns the preposition and
+ * L2 adds no second reading, because "when" is L4-M6's; **`ēst`/`est`** as above. `quō` (M4, "to
+ * where") is NOT `quod` (L1-M9, "because") and not `quid` (L1-M2, "what") — three question words a
+ * bar and a letter apart, so M4's note must name all three.
+ *
+ * ### 6. Bounds, and what L2 withholds
+ *
+ * 8 → 10 (M1–M3: 8, M4–M7: 9, M8–M10: 10); `newWordCap` stays `NEW_WORD_CAP`. The cap is still
+ * what binds, and L2 spends more of it on noun and adjective shapes than L1 did, because agreement
+ * at length means a single adjective can cost four surfaces before it appears in a sentence.
+ *
+ * Kept OUT of L2 and named as deferred in the module that would otherwise reach for it: the
+ * productive subjunctive (M1 and M6 write two fixed forms and say so); the imperfect and every past
+ * but the perfect (M10, and L4-M8 owns it); the relative pronoun (M9 wants it for comparison and
+ * gets the ablative instead — L3's); `sē` and `suus` (L3-M5); the passive (L4-M7); the locative
+ * (M4 wants it for "at home" and uses `domum`/`domō` as fixed forms instead, with the case named
+ * and not taught); and the vocative, which M7's phone call wants most of all and still does not get,
+ * because L1 greeted people whose vocative was identical to their nominative and M7 would have to
+ * break that with `Mārce`.
+ *
+ * ### Why the en-la L2 ladder teaches what it teaches
+ *
+ * The jobs are levels.json's, mirrored verbatim. Politeness as verb shapes in M1, because Latin has
+ * no polite pronoun to teach; the third-declension adjective and the gendered kinship pair in M2;
+ * agreement into the object case in M3; the ablative of means and the three question words in M4;
+ * `ēst` and hosting in M5; the one hortatory subjunctive and the first-person plural in M6; the
+ * phone call built from a named source rather than coined in M7; `quid accidit` and the perfect of
+ * asking for help in M8; comparison by ablative and the `-ior`/`-issimus` pair in M9; and M10's
+ * four-sentence account, which is the first thing in the course that is a paragraph.
+ *
  */
 
 /** PRD §5 module budget: at most 25 new words per module, every course, every level. */
@@ -13023,6 +13126,225 @@ export const COURSE_BRIEFS: Readonly<Record<string, Readonly<Record<string, Modu
         "INDEX SEAM, and it is the last one in the level: et, sed, autem, enim, igitur, atque, neque and -que are fresh rows. -que's display is written -que, which normalizeSurface strips to the key que (checked), and the row exists so the enclitic has a note even though its host donates the key — #601's shape, inherited deliberately and not a defect. quoque is 'also' and is ONE word, not a seam, and its key must not be confused with que: write it solid and the fold keeps them apart. ORTHOGRAPHY HOLDS TO THE LAST TURN: macrons on every long vowel, no j, no apostrophe, no acute, NFC, no script line, and a hyphen only before que, ne or ve. Two sentences side by side is precisely where an author reaches for something the course does not write, so the last note in the level is the same one the first note made.",
       ],
       maxWordsPerSentence: 7,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M1': {
+      id: 'L2-M1',
+      title: 'Asking politely',
+      job: 'Requests, thanks, apologies in the right register',
+      patterns: [
+        'velim + N-acc',
+        'dā mihi + N-acc + , + quaesō',
+        'nōlī + V-re',
+        'grātiās agō / tibi grātiās agō',
+        'ignōsce mihi / mē paenitet',
+      ],
+      notes: [
+        'REGISTER, AND en-la IS THE ONE COURSE IN THIS FILE WHOSE POLITENESS IS NOT A PRONOUN. Every other L2-M1 here teaches a polite address — usted, Lei, vous, Sie, vy, bhavān — and Latin has none: L1-M2 settled that tū is one person and vōs is more than one, and vōs to one person is simply wrong. So this module teaches politeness as VERB shapes and fixed phrases, and the formal register chip goes on those. Chip discipline for the whole level: neutral is the default, formal goes on the velim and quaesō sentences, and formal NEVER goes on a pronoun. An author who reaches for vōs as a courtesy has undone L1-M2.',
+        "velim IS TAUGHT AS A FIXED FORM, NOT AS A MOOD. velim aquam is 'I should like some water' — softer than volō, which L1-M3 taught — and it is a subjunctive, which L1 never opened. Say the word 'subjunctive' in the note and then do NOT explain it: this module writes velim the way L1-M8 wrote quantī cōnstat, as a phrase learned whole. The productive subjunctive is L3-M4's, and a module that explains velim as a mood has opened a system it cannot finish in ten sentences. The same discipline covers M6's eāmus, and those two are the ONLY subjunctives in L2.",
+        "THE SOFTENERS ARE quaesō AND sīs, and both ride an existing imperative rather than replacing it: dā mihi aquam, quaesō. L1-M8's dā is the command this module makes polite, so nothing new happens to the verb — which is the point, and is what makes 'please' feel like a word rather than a construction. sīs is sī vīs worn down, 'if you would', and belongs in a usage line rather than a rule. There is still no single word for 'please': a learner who wants one gets quaesō and the honest note that it is closer to 'I ask'.",
+        "nōlī + INFINITIVE IS THE NEGATIVE COMMAND, and it is the one construction this module adds. L1-M3 named it as deferred and wrote it nowhere, so the key is free: nōlī īre, nōlī bibere. It is an imperative of nōlō — the verb L1-M3 taught as the one-word refusal — so it extends that row's story rather than opening a rival, and the note must say it is NOT a subjunctive, because it sits next to velim in the same module.",
+        "THANKS AND APOLOGY: grātiās agō is literally 'I do thanks', which is L1-M2's agō doing a new job — so it EXTENDS that row and opens no second one, and tibi grātiās agō adds the dative of tū. ignōsce mihi is another imperative with a dative, the same shape as dā mihi. mē paenitet is impersonal, like L1-M3's mihi opus est: nobody is the subject but the regret, and mē is the OBJECT shape of ego, which is the first display in the course to write it — so L1-M1's ego row gains mē here, as a new shape of an older lexeme with a note back.",
+        "INDEX SEAM: velim, quaesō, sīs, nōlī, grātiās, tibi, ignōsce and paenitet are fresh rows; mē joins L1-M1's ego row and agō stays L1-M2's. Written NOWHERE: vōs in any polite reading (the ban is the module's whole register decision); esse and ēsse, which M5 needs the pair of; and any second subjunctive beyond velim. The cap binds here for the first time on phrases rather than words — count grātiās agō as two surfaces, not one, because the index sees two tokens.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M2': {
+      id: 'L2-M2',
+      title: 'Describing people',
+      job: 'Appearance, character, relationships',
+      patterns: [
+        'N-nom + Adj-nom + est',
+        'fortis / gravis + N',
+        'pater / māter + N-que',
+        'N-nom + N-gen + est',
+        'quālis est + N',
+      ],
+      notes: [
+        "THE THIRD-DECLENSION ADJECTIVE OPENS AS A SYSTEM, and the consequence is the module's hardest fact: fortis is masculine AND feminine, so fortis magister and fortis magistra look identical and only the NOUN decides. L1-M9 met trīstis once and named the family; here it becomes productive with fortis, gravis and brevis. State it as a rule: an adjective's ending does not tell you its noun's gender. L1's laetus family still has its three shapes, so the module is teaching two patterns side by side, which is why its cap is spent on adjectives rather than on nouns.",
+        "KINSHIP NOUNS ARE GENDERED FROM THEIR FIRST ROW: frāter/soror, fīlius/fīlia, pater/māter. hi-mr's standing rule, and it lands here because these are the words a learner most wants and the ones an author most easily leaves half-taught. Hero writes one, a variations entry writes the other, in the same item — and neither is the default.",
+        "pater AND māter ARE THE HOSTS L1-M10's SEAM WAS BUILT FOR: pater māter-que is the textbook pair, and it is the first seam L2 writes. THE ORDERING LAW HOLDS AND MUST BE CHECKED: surfaceIndexKeys('pater māter-que') donates māter and que, so māter's own row has to be indexed FIRST — in an earlier sentence of this module or an earlier module. Plan the sentence order before authoring, and read the emitted index back afterwards. que is already L1-M10's row and cannot be stolen; māter can.",
+        "THE GENITIVE ENTERS QUIETLY, for relationships only: fīlia magistrī est, 'she is the teacher's daughter'. That is a fourth case after L1's nominative, accusative and ablative, and it is introduced on ONE job rather than as a system — possession between people. Its price shape (L1-M8's quantī) was a genitive too and was taught as a fixed phrase; say so, because a learner who connects them has understood something real.",
+        "quālis est asks 'what is he like?' and is the module's question. It is itself a third-declension adjective, which makes it a neat demonstration: quālis est magister? and quālis est magistra? are the same three words. Its answer is an adjective in the nominative, agreeing with whoever was asked about.",
+        "INDEX SEAM: fortis, gravis, brevis, quālis are fresh rows, each with its neuter shape in forms (forte, grave, breve) only if a sentence writes one — do not list a shape the module does not show. frāter (with soror), fīlius (with fīlia), pater (with māter) are gendered pairs in one row each; magistrī is a new shape of L1-M1's magister and gets its own row here with a note back. Written nowhere: the comparative and superlative, which are M9's; omnis, which M3 wants; and the vocative, still deferred.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M3': {
+      id: 'L2-M3',
+      title: 'Describing things',
+      job: 'Size, colour, quality — agreement at length',
+      patterns: [
+        'Adj-nom + N-nom + est',
+        'Adj-acc + N-acc + volō / emō',
+        'omnis + N',
+        'N-nom + Adj-nom + et + Adj-nom',
+        'quālis / quantus + est + N',
+      ],
+      notes: [
+        "AGREEMENT REACHES THE OBJECT CASE, and that is this module's whole job: L1 and M2 kept adjectives in the nominative, and here magnum librum volō puts both words in the object shape at once. Two words changing together for one reason is the thing to drill, and it is where an English speaker's habit of leaving modifiers alone finally costs a sentence.",
+        "THE COLOUR AND SIZE WORDS ARE THE FIRST-DECLENSION FAMILY AGAIN: magnus, parvus, albus, niger — laetus's pattern from L1-M9, so nothing is new about the endings and everything is new about how many of them a sentence carries. Keep one third-declension adjective in the module for contrast (M2's fortis, or gravis in its 'heavy' reading) so the two families stay visible against each other.",
+        "omnis IS THE MODULE'S QUIET DIFFICULTY: 'every' in the singular and 'all' in the plural, and it is third-declension so it does not show gender. omnis liber is 'every book' and omnēs librī is 'all the books'. Decide whether the plural is written at all — if it is, omnēs is a fresh surface and the cap has to carry it.",
+        "TWO ADJECTIVES ON ONE NOUN uses L1-M10's et: liber magnus et gravis est. Both agree with the noun and with each other, which is the first sentence in the course where three words share one set of endings. It is also where a learner discovers that Latin puts an adjective after its noun as readily as before — say that the order is emphasis, exactly as L1-M1 said about the whole sentence.",
+        "quantus asks 'how big' and is a first-declension adjective, so quantus liber? and quanta mēnsa? differ. It sits beside M2's quālis deliberately: one asks what something is like and the other how big it is, and one of them shows gender while the other does not. THE COGNATE TRAP of this module is dense: magnus gives 'magnify' and is simply 'big'; gravis gives 'grave' and means heavy or serious; niger is a colour word with a loaded English descendant and its note should say plainly that it means black and nothing else.",
+        "INDEX SEAM: magnus, parvus, albus, niger and quantus are fresh rows with their gendered and object shapes in forms as the module writes them — count before authoring, because four adjectives across three genders and two cases is more surfaces than the cap allows if every shape is written. omnis is a fresh row. Written nowhere: the comparative degrees (M9's) and any adjective in the ablative, which M4 needs.",
+      ],
+      maxWordsPerSentence: 8,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M4': {
+      id: 'L2-M4',
+      title: 'Getting around',
+      job: 'Directions, transport, asking the way',
+      patterns: [
+        'quō + V-īs',
+        'unde + V-īs',
+        'N-abl (means) + V',
+        'ad dextram / ad sinistram',
+        'domum eō / domō veniō',
+      ],
+      notes: [
+        "THREE QUESTION WORDS A LETTER APART, and this module owns the distinction: quō is 'to where', unde is 'from where', and L1-M7's ubi is 'where'. Add L1-M9's quod ('because') and L1-M2's quid ('what') and there are five short qu- words in the course, so M4's note must name all five and say which module owns each. quō is the sharp one — one bar and one letter from quod — and surface.ts keeps them apart only because the macron is written.",
+        "THE ABLATIVE OF MEANS is the module's real lesson: raedā eō, 'I go by carriage', with no preposition at all. L1-M3 taught the ablative after opus est and L1-M7 after in and cum; here it appears BARE, which is the first time a case does a job with nothing in front of it. English needs 'by' and Latin needs an ending — state it as the same trade M7 made for 'in'. pedibus ('on foot') is the idiom worth teaching beside it, and it is plural, which is worth one line.",
+        "MODERN TRANSPORT COMES FROM THE NAMED SOURCE AND IS NOT COINED HERE (docs/123 §7): raeda for a car, birota for a bicycle. Write them, note that they are the living-Latin community's words rather than Cicero's, and do not invent a third. A module that coins vocabulary has broken the rule that the whole course shares one lexicon.",
+        "DIRECTIONS ARE ad dextram and ad sinistram — L1-M4's ad with the object shape, so nothing new about the preposition and everything new about the nouns. rēctā ('straight on') is an ablative doing an adverb's job, which ties back to the means above.",
+        "HOME IS THE MODULE'S HONEST GAP. 'I go home' is domum eō and 'I come from home' is domō veniō, and neither uses a preposition — they are the accusative and ablative of domus doing what a place name does. The LOCATIVE domī ('at home') is the third member and is NAMED and written NOWHERE, because it is a surviving case with a handful of members and L4-M9 owns it. Write two of the three and say why the third is missing.",
+        "INDEX SEAM: quō, unde, raeda (with raedā), birota, pedibus, dextram, sinistram, rēctā, domum and domō are fresh rows. domum and domō get ONE row between them if the module writes both, with the note naming domī as deferred — a single row is honest here because they are two shapes of one noun and neither is more basic. Written nowhere: domī; the locative in any form; and cum in its 'when' reading, which is L4-M6's.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M5': {
+      id: 'L2-M5',
+      title: 'Food and hosting',
+      job: 'Ordering, offering, refusing without offence',
+      patterns: [
+        'N-acc + ēst / edō',
+        'bibe / ēs + N-acc',
+        'velim + N-acc',
+        'satis est / nōlō, grātiās',
+        'N-acc + N-acc-que + volō',
+      ],
+      notes: [
+        "ēst IS THE MACRON PAIR L1 LEFT UNSPENT, AND THIS MODULE SPENDS IT. docs/123 §1.1 listed est/ēst as the second pair the bar keeps apart; L1-M1 took est and every later L1 module was forbidden to write ēst. Here it arrives: ēst is 'he eats', one bar from 'he is', and the two rows now sit side by side in the emitted index. That is the orthography's whole argument landing in a module about food, and it earns a mistake plate of its own. Read the index back and quote both entries in the review.",
+        "THE VERB IS edō AND IT IS IRREGULAR ENOUGH TO LEARN AS A SET: edō 'I eat', ēst 'he eats', edere 'to eat'. Its alternative infinitive ēsse collides with esse ('to be') by exactly one bar — so ēsse is NAMED IN PROSE AND WRITTEN NOWHERE, exactly as L1 handled ēst itself, and edere is the infinitive this course uses. An author who writes ēsse has minted a key that is one mark from the commonest verb in the language.",
+        "OFFERING USES THE IMPERATIVE THE LEVEL ALREADY OWNS: bibe ('drink!') and ēs ('eat!') beside L1-M8's dā, with M1's quaesō available to soften any of them. Hosting in Latin is commands, warmly meant, and the usage line should say so — an English speaker hears a bare imperative as brusque and will want to build 'would you like'.",
+        "REFUSING WITHOUT OFFENCE is the job's hardest half and Latin does it in three words: nōlō, grātiās ('no thanks' — L1-M3's refusal plus M1's thanks) and satis est ('that is enough'). Neither is a construction; both are phrases. benignē is the classical 'no thank you' and is worth a usage line, because it literally means 'kindly' and an English speaker would read it as acceptance.",
+        "THE SECOND SEAM OF THE LEVEL lands here if the module wants it: vīnum aquam-que volō. The host is L1-M3's aquam, so the ordering law is satisfied by L1 and needs no new work — but check the emitted index anyway, because that check is the rule.",
+        "INDEX SEAM: edō (with ēst and edere in forms — ONE row, and its note true of all three), bibe, ēs, satis, benignē, vīnum, cēna and whatever food nouns the sentences need. ēst is a FORMS entry of edō and not its own row, because it is the same verb; est stays L1-M1's sum row, and the two keys differ only by the bar. Written nowhere: ēsse, as above; esse, which no L2 module needs; and the passive, which L4-M7 owns.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M6': {
+      id: 'L2-M6',
+      title: 'Making plans together',
+      job: 'Invitations, suggestions, settling a time',
+      patterns: [
+        'eāmus',
+        'quandō + V-mus',
+        'hōrā + <number-abl>',
+        'V-mus (first person plural)',
+        'venīs-ne mēcum',
+      ],
+      notes: [
+        "eāmus IS THE SECOND AND LAST SUBJUNCTIVE OF THE LEVEL, and it is taught as a fixed form: 'let's go'. The alternative was a plain future — ībimus? — and it was REJECTED, because that asks about fact and this module's job is invitation. Name it a subjunctive, do not explain it, and write no other: the productive mood is L3-M4's. Beside M1's velim that makes exactly two, both vocabulary, and the note should say so out loud so a later author does not read eāmus as a licence.",
+        "THE FIRST-PERSON PLURAL OPENS HERE and it is genuinely new person-marking: L1 wrote -ō, -s and -t and L1-M10's last variation reached for agimus once. Now -mus is productive — eāmus, veniāmus? no: venīmus, bibimus, legimus — and nōs gets one row and at most one display, because L1 made the ending carry the person and a 'we' in every sentence is the same anglophone tell L1-M10 spent a rule on.",
+        "TIME IS AN ABLATIVE, and this is the deferral L1-M4 named coming due: hōrā sextā, 'at the sixth hour'. L1 taught the caseless adverbs (cotīdiē, crās, herī) and wrote the ablative of time nowhere; here it arrives with L1-M8's numbers in a new case, so sextā and its neighbours are new surfaces and the cap has to carry them. quandō ('when') asks the question and is a fresh row.",
+        "mēcum IS THE MODULE'S ODDITY and worth exactly one sentence: 'with me' is written as one word with the preposition AFTER the pronoun — mēcum, not cum mē. It is the only place in L1 or L2 where cum behaves like that. Teach it as a word, note the inversion, and do not generalise: nōbīscum exists and this course does not write it.",
+        "INVITATIONS USE THE QUESTION MACHINERY L1-M2 BUILT: venīs-ne mēcum? is L1's seam on a verb the course already owns, so the host venīs is L1-M9's row and the ordering law is already satisfied. Check the index; do not assume.",
+        "INDEX SEAM: eāmus, quandō, hōrā, sextā, nōs, mēcum, and the first-person plurals the module writes (venīmus, bibimus, legimus — each a FORMS entry of its L1 verb row, never a new row, because they are shapes of verbs the course has taught). Written nowhere: nōbīscum; any other subjunctive; and vōs, still banned by M1's register decision.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M7': {
+      id: 'L2-M7',
+      title: 'On the phone',
+      job: 'Calls and messages — openings, closings, taking a message',
+      patterns: [
+        'tēlephōnum + V',
+        'quis + est',
+        'nūntium + relinquō / accipiō',
+        'salvē + , + <name> + hīc est',
+        'iterum + V-bō',
+      ],
+      notes: [
+        "WHAT A PHONE CALL SOUNDS LIKE IN LATIN IS A DECISION, NOT A DISCOVERY, and this module has to take it honestly: no Roman ever made one. The vocabulary comes from the ONE NAMED SOURCE (docs/123 §7) — the Vatican's Lexicon Recentis Latinitatis and then the settled usage of the living-Latin community — so tēlephōnum for the telephone and nūntius/nūntium for a message, and nothing is coined in this module. Say in a usage line that these are modern words agreed by people who speak Latin now, which is the same honesty en-ar's MSA decision and en-sa's sambhāṣaṇam decision each needed.",
+        "THE OPENING IS THE MODULE'S REAL PROBLEM AND ITS ANSWER IS L1's: there is no Latin 'hello?' for a telephone, so the call opens with salvē — the greeting L1-M2 taught for every hour and every situation — and continues with the caller naming themselves. Mārcus hīc est ('Marcus here') uses L1-M7's hīc, which makes it the neatest possible reuse; write it, and note that the vocative a learner might expect (Mārce) is not needed because the speaker is naming themselves rather than addressing anyone.",
+        "quis ('who') is the module's new question word and the sixth qu- word in the course. Its note must place it against M4's five: ubi where, quō to where, unde from where, quid what, quod because, quis who. That list is the single most useful thing a learner can be handed at this point, and it belongs in a NOTE rather than only in a rule, because a prompt shows an author only the notes.",
+        "TAKING A MESSAGE uses two verbs and one noun: nūntium relinquō ('I leave a message') and nūntium accipiō ('I take one'). Both are third- and fourth-conjugation verbs whose futures follow L1-M6's -am pattern, so the module can write relinquam and accipiam without teaching a new formation. iterum ('again') plus a future is how a call is ended: iterum tēlephōnābō.",
+        'THE VOCATIVE IS STILL DEFERRED AND THIS IS THE MODULE THAT WANTS IT MOST. Addressing someone by name on a telephone is exactly where Mārce belongs, and L1 got away without it because every name it greeted had a vocative identical to its nominative (Iūlia, magister, discipula). Name the gap in a note, write Mārcus only as a subject, and leave Mārce to a later level — opening it here would be a second row for a name L1-M1 owns.',
+        "INDEX SEAM: tēlephōnum, tēlephōnābō, nūntius (with nūntium), relinquō, accipiō, quis, iterum are fresh rows. hīc is L1-M7's and gains nothing. Written nowhere: Mārce and every other vocative; vōs; and quem, the object shape of quis, unless a sentence writes it.",
+      ],
+      maxWordsPerSentence: 9,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M8': {
+      id: 'L2-M8',
+      title: 'When something goes wrong',
+      job: 'Problems, asking for help, complaining calmly',
+      patterns: [
+        'quid accidit',
+        'adiuvā mē + , + quaesō',
+        'N-acc + nōn inveniō',
+        'N-nom + frāctus est',
+        'errāvī / errāvit',
+      ],
+      notes: [
+        "quid accidit? IS THE MODULE'S OPENING AND IT IS A PERFECT, which keeps L1-M5's decision consistent: the past in this course is the perfect and nothing else. 'What happened?' is a completed event, so accidit is right — and it is worth noting that accidit is ALSO its own present ('it happens'), one of the few Latin verbs where the two coincide. That ambiguity is real and the note should own it rather than hide it, the way L1-M5's review recorded bibit.",
+        "ASKING FOR HELP REUSES M1's POLITENESS ENTIRELY: adiuvā mē, quaesō. The imperative is new, mē is M1's row, quaesō is M1's word — so the sentence is built from L2 vocabulary the learner already has, which is what a level's eighth module should feel like. auxilium ('help', the noun) is worth one row for auxilium rogō.",
+        "THE THINGS THAT GO WRONG ARE PERFECT PARTICIPLES USED AS ADJECTIVES, and that is a decision: frāctus est ('it is broken') looks like a passive and is being taught as an ADJECTIVE with sum, because the passive system is L4-M7's. Say so in the note — frāctus, perditus and āmissus are learned as words that agree, not as a tense — and write no other participle. An author who explains the construction has opened the passive two levels early.",
+        "errāvī ('I was wrong') is the calm complaint's other half and it is a plain perfect of a regular first-conjugation verb, so it costs nothing new grammatically. The module's register point: Latin complains by stating the fact, and there is no softening particle to add. quaesō softens a request and nothing softens a complaint, which is worth a usage line because an English speaker will look for one.",
+        "nōn inveniō ('I cannot find') is how 'can't' is said, because this course has no verb for 'can' yet — possum is not taught in L1 or L2. Name that gap: the module says 'I do not find' and means 'I cannot find', and a learner who wants possum is reaching for a later level.",
+        "INDEX SEAM: accidit, adiuvā, auxilium, rogō, inveniō, frāctus (with frācta), perditus, errāvī are fresh rows. mē, quaesō and grātiās stay M1's. Written nowhere: possum and every shape of it; the passive; and any participle beyond the three adjectival ones above.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M9': {
+      id: 'L2-M9',
+      title: 'Comparing and choosing',
+      job: 'More, less, better — stating a preference',
+      patterns: [
+        'Adj-ior + est',
+        'N-nom + N-abl + Adj-ior + est',
+        'Adj-issimus + est',
+        'melior / optimus + est',
+        'mālō + N-acc + quam + N-acc',
+      ],
+      notes: [
+        "COMPARISON IS AN ENDING, NOT A WORD: longus becomes longior ('longer') and longissimus ('longest'). English has both an ending and a word ('taller', 'more beautiful') and Latin uses the ending far more, so a learner will reach for magis and should be told it exists and is rare. The comparative is a third-declension adjective — longior for masculine and feminine, longius for neuter — which ties straight back to M2's family.",
+        "THAN IS TWO CONSTRUCTIONS AND THIS MODULE TEACHES BOTH: quam plus the same case (hic liber longior est quam ille? no — quam ille liber), and the ABLATIVE OF COMPARISON with no word at all (hic liber illō longior est). Teach the ablative as the elegant one and quam as the safe one, exactly as M4 taught the bare ablative of means beside a preposition. quam IS THE MODULE'S HOMOGRAPH AND IT OWNS 'than' — its other readings ('how', and the feminine object of the relative) are named in prose and written nowhere, so the key carries one true note.",
+        'THE IRREGULAR COMPARATIVES ARE UNAVOIDABLE AND FEW: bonus/melior/optimus, malus/peior/pessimus, magnus/maior/maximus, parvus/minor/minimus. Four sets, and every one of them is a word an English speaker half-knows already (optimal, pessimist, maximum, minimum) — which makes this the one module in the level where the cognates help rather than mislead. Write two of the four and name the others.',
+        "PREFERRING IS mālō, which is volō with the comparative built in — L1-M3 taught volō and nōlō, and this is the third member of the same irregular family: mālō X quam Y, 'I prefer X to Y'. Say that the three belong together (volō, nōlō, mālō) because a learner who sees the pattern has three verbs for the price of one.",
+        "THE SUPERLATIVE HAS A SECOND JOB and it is worth one line: longissimus is 'longest' AND 'very long', and only context decides. L1-M2's optimē was already this word's adverb, so the module can point back at it.",
+        "INDEX SEAM: longior, longissimus, melior, optimus, mālō, quam are fresh rows, each comparative and superlative as its own row rather than as a forms entry of the positive — they are different words with different endings, and folding them in would put the positive's note under a comparative. Written nowhere: magis and maximē as productive words; the relative pronoun, which M9 could reach for and which is L3's; and any comparison of an adverb.",
+      ],
+      maxWordsPerSentence: 10,
+      newWordCap: NEW_WORD_CAP,
+    },
+    'L2-M10': {
+      id: 'L2-M10',
+      title: 'Telling what happened',
+      job: 'A four-sentence account in the past',
+      patterns: [
+        'prīmum + V-ī',
+        'deinde + V-ī',
+        'tum + V-ī',
+        'postrēmō + V-ī',
+        '<four-sentence account, all perfect>',
+      ],
+      notes: [
+        'FOUR SENTENCES IN THE PERFECT, SEQUENCED, and that is the whole module: prīmum, deinde, tum, postrēmō. It is the first thing in this course that is a paragraph rather than a turn, and the sequencers are the only new vocabulary it needs — every verb in it should be a perfect L1-M5 or a later module already taught, so the cap goes almost entirely on the four adverbs.',
+        "THE PAST IS STILL THE PERFECT AND ONLY THE PERFECT. L1-M5 deferred the imperfect to L4-M8 and wrote it nowhere; a four-sentence narrative is exactly where an author reaches for 'I was walking' and must not. State it as the module's law: every event in the account is completed, and a state that persists is either recast as an event or left out. legēbam, habēbam and eram are still free keys and L4 needs them.",
+        "PRO-DROP IS THE NATURALNESS MARKER and it matters more here than anywhere yet: once the first sentence establishes who, the following three should carry no subject at all. An account where every sentence names its subject reads like a list, which is L1-M10's rule at four times the length. Name the exception: the subject returns when it CHANGES, and a narrative with two people in it needs it exactly there.",
+        "THE SEQUENCERS ARE ADVERBS AND THEY COME FIRST, like L1-M9's itaque and ergō rather than L1-M10's autem and enim. Say which, because this level has now taught four connectives that must be second and four that must be first, and a learner needs the list rather than the principle. deinde and tum are close enough in meaning to be worth one usage line between them: deinde is 'next' and tum is 'then, at that point'.",
+        "INDEX SEAM: prīmum, deinde, tum, postrēmō are the four fresh rows, and everything else in the module should already be taught. If a perfect the account needs is not in the index, open it HERE as its own row with a note back at its present — L1-M5's rule, unchanged. ORTHOGRAPHY HOLDS TO THE LAST LINE OF THE LEVEL, as it did in L1-M10: macrons per the OLD, no j, no apostrophe, no accent, NFC, no script line, and a hyphen only before que, ne or ve. A four-sentence paragraph is the longest thing the course has asked for, which makes it the likeliest place for a slip.",
+      ],
+      maxWordsPerSentence: 10,
       newWordCap: NEW_WORD_CAP,
     },
   },
