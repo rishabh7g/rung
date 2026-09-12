@@ -109,6 +109,18 @@ export const SCRIPT_BY_LANGUAGE_TAG: Readonly<Record<string, CourseScript>> = {
   // #375 — en-ko's QUIET LINE ONLY. The romanized display is ASCII and is charged nothing; this
   // row pays for the Hangul the `script` field repeats underneath it (#373 decided the split).
   ko: 'korean',
+  // #631 — en-la's DISPLAY LINE, and the one row here that is not a non-Latin script. Latin is
+  // written in Latin letters, so nothing about the writing system puts it in this table; the
+  // macrons do. #630 fixed the orthography at macrons-on-every-long-vowel per the OLD, because
+  // `venit` and `vēnit` are one index key without them, and Ā ā Ē ē Ī ī Ō ō Ū ū are U+0100-016B —
+  // past the U+00FF where Mukta's `latin` cut stops, inside the `latin-ext` target. The row is
+  // `scriptMode: "native"`, so `ROMANIZATION_SCRIPT` below never fires for it and without this
+  // entry an en-la learner would precache no `latin-ext` file at all: online the browser fetches
+  // it from the `@font-face` `unicode-range` on demand, offline every long vowel in the course
+  // renders in the system face while the rest of its word renders in Mukta. Measured, not assumed
+  // (#631): Mukta's own `latin-ext` source draws all ten at 400/600/700, so this charges a cut
+  // that exists rather than widening a target.
+  la: 'latin-ext',
 };
 
 /**
@@ -145,7 +157,14 @@ export function coursesFromManifest(manifest: unknown): ShippedCourse[] {
         .filter((script): script is CourseScript => script !== undefined);
       // A romanized course prints its L2 in Latin letters with transliteration marks, so it pays
       // for the diacritic cuts on top of its native script's face (#222). `scriptMode` is the
-      // manifest's own word for it — a native-script course never prints a mark.
+      // manifest's own word for it.
+      //
+      // It is not the only way a course reaches a mark, and saying so here used to be wrong: this
+      // comment read "a native-script course never prints a mark" until #631, which is true of
+      // every native row that writes an alphabet other than Latin and false of en-la, whose native
+      // script IS Latin and whose orthography is macronised (#630). A mark a native row prints is
+      // charged by its tag in `SCRIPT_BY_LANGUAGE_TAG` above, not here — `scriptMode` says how the
+      // L2 is transcribed, never what its alphabet costs.
       if (row.scriptMode === 'romanized') scripts.push(ROMANIZATION_SCRIPT);
       return { id: String(row.id), scripts: [...new Set(scripts)] };
     },

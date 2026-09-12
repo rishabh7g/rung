@@ -377,6 +377,49 @@ is two codepoints where it looks like one (the problem that disqualified ISO 159
 **6. The host-donates-the-part-key law, on shipped content** — `public/content/en-ko/index/L1-M1.json`,
 §2.1's table.
 
+### 8.2 The cmap measurement, and the charge (#631)
+
+Read with fontkit off the `@fontsource` **source** files — not the generated cuts, which contain
+only what the harvest kept — on 2026-09-12:
+
+| Face / weight | `Ā ā` | `Ē ē` | `Ī ī` | `Ō ō` | `Ū ū` | `ȳ Ȳ` |
+|---|---|---|---|---|---|---|
+| mukta `latin-ext` 400 | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ |
+| mukta `latin-ext` 600 | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ |
+| mukta `latin-ext` 700 | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ |
+| source-sans-3 `latin-ext` 400/600/700 | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ |
+| mukta `latin` 400/600/700 | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+
+**Outcome: no target is widened and no face is added.** Mukta's own `latin-ext` source draws all ten
+macron vowels at all three weights of the L2 ramp, which is #375's outcome (A) — the same answer
+#222 got for en-ar's `ā ī ū`, now extended to `ē ō` that the file's comment had only ever called
+"the ē ō a future scheme may want". Source Sans 3 draws them too, so there is a second bundled face
+behind the first; Mukta is named first in `--font-devanagari` and answers.
+
+Two things the same run settles:
+
+- **`mukta latin` holds exactly three codepoints in U+0100–017F** (U+0131, U+0152, U+0153 — the
+  three the `latin` target claims by hand). So the macrons are unambiguously the `latin-ext`
+  target's, and the two targets stay disjoint.
+- **`ȳ Ȳ` U+0233/U+0232 are drawn by nobody**, which is §8's decision measured rather than argued:
+  no target claims them and no source draws them, so writing one would ship a character with no
+  glyph and no routing.
+
+**The charge.** `SCRIPT_BY_LANGUAGE_TAG` gains `la: 'latin-ext'`. Without it an en-la learner
+precaches no `latin-ext` file at all — `ROMANIZATION_SCRIPT` fires on `scriptMode === 'romanized'`
+and en-la is `native`, so nothing else in `coursesFromManifest` would reach the cut. Online the
+browser fetches it from the `@font-face` `unicode-range` on demand and the defect is invisible;
+offline every long vowel renders in the system face with the rest of its word in Mukta. The
+comment that used to read *"a native-script course never prints a mark"* is corrected in the same
+commit: it is true of every native row whose alphabet is not Latin, and false of this one.
+
+`tools/payload-budget.test.ts` pins it — a new file, never deleted and so never a resurrected gate
+— asserting that a `native` row tagged `la` is charged `latin-ext`, a `native` row tagged `it` is
+charged nothing, a `romanized` row is charged by mode, and that no tag in the table names a script
+the build does not cut. The change is a **no-op for every shipped course**: no shipped row carries
+`la`, and `npm run budget` after it reports the same rows as before, `unmetered` at 0.0 KiB and
+`precache 17 files 205.1 KiB gzip = shell ok`.
+
 ---
 
 ## 9. What no build gate can catch, and what replaces it
