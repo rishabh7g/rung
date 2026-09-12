@@ -1858,3 +1858,518 @@ that is why §33.8 exists and why the respellings are ASCII.
 
 `git diff --stat content/en-sa/modules/L1-M1.json … L1-M10.json` is **empty**, and so is
 `git diff --stat` over the other nine courses.
+
+---
+
+## Wave 5 — L2-M3 · L2-M4 · L2-M5 (#614)
+
+**Date:** 2026-09-12 · **Reviewer:** Claude Opus 5, LLM review, authorised by the repo owner ·
+**Bar:** LLM review plus owner authority.
+
+The second wave that reaches a learner: en-sa graduated at #611, so these three rungs ship on the
+next deploy. The fluent-speaker gate of §9 is still **UNMET**. Sections 38–46 are written on that
+understanding, nothing here claims a native or fluent reading, and no later wave may close one of
+the questions in §45 by rewriting a shipped module.
+
+---
+
+## 38. What was authored
+
+Three modules, the middle of Level 2's first half, authored strictly in ladder order with a rebuild
+between each — M3 against L2-M2's real cumulative index (164 surfaces, folded across the twelve
+files that existed), M4 against M3's (183), M5 against M4's (196).
+
+| | L2-M3 Describing things | L2-M4 Getting around | L2-M5 Food and hosting |
+| --- | --- | --- | --- |
+| sentences | 10 (`S01`…`S10`) | 10 | 10 |
+| variations | 30 — 3 on every sentence | 30 — 3 on every sentence | 30 — 3 on every sentence |
+| comprehension items | 13 | 13 | 13 |
+| rules | 10 | 10 | 10 |
+| word row slots | 30 (3 per sentence), 26 distinct | 30, 20 distinct | 30, 17 distinct |
+| rows that OPEN a surface here | 9 | 8 | 10 |
+| surfaces this module adds | 19 | 13 | 12 |
+| cumulative index | 183, maxSpan 1 | 196, maxSpan 1 | 208, maxSpan 1 |
+| longest / shortest hero | 6 / 3 words | 6 / 3 words | 6 / 2 words |
+| register chips | 10 `neutral` | 10 `neutral` | 10 `neutral` |
+
+**Enrichment.** M3 is an M1–M3 module, so it ships **FULL** enrichment — `sound`, `variations`,
+`mistake`, `usage`, `mnemonic` on all ten sentences, plus `literal`, `trap` and a `register` chip on
+all ten. M4 and M5 are past that rule and carry enrichment where it earns its place: M4 has `sound`
+on 7, `mistake` on 6, `mnemonic` on 3, `usage` and `trap` and `literal` on all 10; M5 has `sound` on
+7, `mistake` on 4, `mnemonic` on 3, `trap` on 7, `usage` and `literal` on all 10. **Every sentence
+in all three carries `literal`**, which in a verb-final case-marked language is not optional.
+There is no `glossEn` anywhere (#405) and no module carries `fixture: true`.
+
+`prerequisites` is the previous module in the same level: `["L2-M2"]`, `["L2-M3"]`, `["L2-M4"]`.
+Bounds are the briefs' — M3 max 8, M4 and M5 max 9 — and no hero reaches either; `newWordCap` is 25
+and the real spend is 19, 13 and 12. `content/en-sa/levels.json` shows all three rungs
+`hasContent: true` with no `draft`; **L2 itself keeps its level `draft` flag and its `draftNote`**,
+because five of its ten rungs are still empty.
+
+**The 19 surfaces L2-M3 opens**, nine rows, every one an a-stem adjective holding its own gendered
+shapes rather than spawning a row per gender: `raktaḥ` `raktam` · `nīlaḥ` `nīlam` · `navaḥ` `navā`
+`navam` · `pītaḥ` `pītam` · `śvetaḥ` `śvetam` · `kṛṣṇaḥ` `kṛṣṇam` · `purāṇaḥ` `purāṇam` · `hrasvaḥ`
+`hrasvam` · `uttamaḥ` `uttamam`.
+
+**The 13 surfaces L2-M4 opens**, eight rows: `mārgaḥ` `mārgam` `mārgasya` `mārgeṇa` · `yānam`
+`yānena` · `vāmataḥ` · `dakṣiṇataḥ` · `agrataḥ` · `katham` · `paśyati` `paśyatu` · `gacchatu`.
+
+**The 12 surfaces L2-M5 opens**, ten rows: `alam` · `bhojanam` · `annam` · `dugdham` `dugdhena` ·
+`svāgatam` · `punaḥ` · `khādatu` · `pibatu` · `jalena` · `bhavate` `bhavatyai`.
+
+**Provenance.** All three files carry `verified: true` with
+`verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"` and `verifiedAt: "2026-09-12"`,
+shipped in the same change as the content (CLAUDE.md's standing rule), and this document is that
+change's record.
+
+---
+
+## 39. The brief's accusative claim was false, and the module teaches the true thing instead
+
+This is the wave's one substantive disagreement with its own brief, and it is recorded first
+because a module that had simply obeyed would have taught a learner something untrue.
+
+L2-M3's brief note 1 said the accusative is "the only way the case is visible on a neuter noun at
+all", with `nīlam pustakam icchāmi` as the example and the gloss "the adjective is doing the work
+L1-M3 admitted the neuter ending could not". **It is not doing that work and it cannot.** A neuter
+a-stem has ONE shape for the nominative and the accusative — `pustakam` either way — and its
+agreeing adjective has one shape too: `nīlam` either way. So `nīlam pustakam` is byte-identical as
+the subject and as the thing wanted, and the only evidence of which it is is the verb at the end.
+
+What IS true, and what the module teaches:
+
+- **Agreement is in case as well as gender** (rule 1). `navaḥ vidyālayaḥ` is the new school being
+  talked about; `navam vidyālayam` is the same school as the place walked to. On a MASCULINE noun
+  both words move and the case is fully visible, which is why `L2-M3-S04`'s first variation is
+  `navam vidyālayam gacchāmi.` and why its mistake plate is `navaḥ vidyālayam atra asti.` — the
+  noun moved and the adjective did not.
+- **`-am` does two jobs** (rule 2), and this is the module's hardest minute: it is the neuter ending
+  in both cases this course writes, AND it is what a masculine word takes once it becomes an object
+  or a destination. `nīlam pustakam` and `navam vidyālayam` look alike and are not alike.
+- **On a neuter noun the case is invisible, and the module says so** rather than pretending
+  otherwise. `L2-M3-S03`'s `trap` is exactly this: "Nothing in nīlam pustakam says 'object'… icchāmi
+  at the end is the whole of the evidence", and `S03`'s first variation is `nīlam pustakam atra
+  asti.` — the identical two words as the subject, which is the proof.
+
+`tools/course-briefs.ts` now carries the correction inline, marked `CORRECTED BY #614`, so the next
+author reads the true version. This is the same technique #613 used on the `śāntaḥ` seam note (§32)
+and #478 established: a brief is edited in place, with the issue number, rather than quietly
+ignored.
+
+---
+
+## 40. The ratchet is still at ZERO
+
+`tools/shown-surfaces.test.ts` is **untouched**: `'en-sa': 0` still holds and en-sa is still the
+only course in the catalogue at zero. The dev build prints no `shown but untaught` line for en-sa:
+
+```
+en-sa: 15 modules (L1-M1..M10, L2-M1..M5)
+  …
+  index L2-M3: 183 surfaces
+  index L2-M4: 196 surfaces
+  index L2-M5: 208 surfaces
+```
+
+and the next line is the familiar `warn` about optional script lines, not a finding.
+`npx tsx tools/check-shown.ts en-sa L2-M3` (and M4, M5) reports **no `SHOWN-BUT-UNTAUGHT` line at
+all** on any of the three.
+
+**Planned around, not tested against.** The two hazards were designed out before a display was
+written:
+
+1. **No new proper noun.** The briefs planned L2 to write none, and this wave wrote none. The only
+   names in the three modules are `rāmaḥ` (`L2-M3-C13`, `L2-M4-C09`, `L2-M5-C12`), which has had a
+   word row with its own `forms` since L1-M1. Everything else is anchored on a common noun.
+2. **No form invented for a variation, a pool item or a plate.** Every hero, variation and pool
+   token in all three modules was walked against the emitted cumulative index: **0 unresolved
+   across 30 heroes, 90 variations and 39 pool items** (217 + 222 + 198 = 637 tokens).
+
+**One variation was caught and rewritten by this check.** A first draft of `L2-M4-S09`'s third
+variation was `pustakālayaḥ kutra asti? aham na jānāmi.` — the honest answer to a question about the
+way, and `jānāmi` is taught by no module in this course. Its own `changed` line even said so. It was
+replaced with `kim pustakālayaḥ gṛhasya purataḥ asti?`, built entirely out of surfaces the level
+already owns. This is #610's incident repeating in the same shape, and the check caught it in the
+same way.
+
+---
+
+## 41. The briefs' ownership plan, and the four places it was corrected
+
+Every ownership claim was checked against the **emitted index**, never against a paradigm. The
+folded 164-surface snapshot was read before a line of M3 was written, and re-folded before M4 and
+again before M5.
+
+**Held, with no correction needed:**
+
+- `gacchatu` (M4) is a new row. L1-M2's `gacchati` shipped with `gacchati`, `gacchāmi`, `gamiṣyāmi`,
+  `gantum`, `gatavān`, `gatavatī` and **no imperative** — confirmed in the index, not assumed. Its
+  note points back at L1-M2.
+- `khādatu` and `pibatu` (M5) are new rows. L1-M4's `khādati` shipped its present, future and both
+  participial past shapes, and `pibati` the same, and **neither shipped an imperative**. Both notes
+  point back at L1-M4.
+- `jalena` (M5) is a new row. L1-M3's `jalam` shipped with `["jalam"]` alone. The row's note points
+  back at M3, and the emitted index confirms the seam works the way it was meant to: `jalam`
+  resolves to **L1-M3's** row and `jalena` to **L2-M5-S03's**, so the citation form keeps its
+  first-teach note and the new shape gets its own.
+- `bhavate` and `bhavatyai` (M5) are one new row. L1-M2's `bhavān` shipped `bhavān`, `bhavatī`,
+  `bhavataḥ`, `bhavatyāḥ` and **no dative**. Note back at L1-M2.
+- `dīrghaḥ` (M3) is reused with no new row — L2-M2 shipped `dīrghaḥ`, `dīrghā` and `dīrgham`, and
+  M3's S09 needs only `dīrgham`, which that row already owns.
+- Reused with no new row and confirmed present: `idam`, `asti`, `icchāmi`/`icchati`, `kim`, `na`,
+  `kintu`, `tathāpi`, `sundaraḥ`/`sundaram`, `puṣpam`, `phalam`, `pustakam`, `gṛham`/`gṛhasya`,
+  `vidyālayaḥ`/`vidyālayam`, `pustakālayaḥ`/`pustakālayam`, `chātraḥ`/`chātrā`, `bālaḥ`, `bhaginī`,
+  `mātā`, `saḥ`/`sā`, `aham`/`mama`/`mahyam`, `bhavān`/`bhavataḥ`, `kutra`, `atra`, `tatra`,
+  `upari`, `samīpe`, `purataḥ`, `pṛṣṭhataḥ`, `pustakasya`, `pratidinam`, `paṭhati`/`paṭhāmi`,
+  `khādati`/`khādāmi`, `pibati`/`pibāmi`, `karoti`, `rocate`, `kṛpayā`, `upaviśatu`, `āgacchatu`,
+  `dhanyavādaḥ`, `ām`, `rāmaḥ`.
+
+**Four briefs corrected, all four in `tools/course-briefs.ts`, each marked with #614:**
+
+1. **The M3 accusative claim** — false, corrected in place, §39 above.
+2. **M3's "two colours written in full across the genders".** Note 3 recommended `raktaḥ` and
+   `nīlaḥ` be written across all three genders. **That is not writable against this index**: every
+   noun a colour can sit on in the cumulative 164 is neuter (`puṣpam`, `pustakam`, `phalam`,
+   `gṛham`, `mitram`, `jalam`) or masculine (`vidyālayaḥ`, `pustakālayaḥ`); there is no feminine
+   THING anywhere, and a red or blue *person* is not a sentence this module would write. And a
+   `forms` list may hold only shapes the module actually writes, so an unwritable `raktā` cannot be
+   smuggled in as a form either. The three-gender paradigm is carried instead by
+   **`navaḥ` / `navā` / `navam`**, where `navā chātrā` is entirely natural, and the colours are
+   written in the neuter with their masculine citation form heading the row. The brief now says so.
+3. **M4's `-taḥ` family count.** The brief said the family is "eight strong (`ataḥ`, `kutaḥ`,
+   `purataḥ`, `pṛṣṭhataḥ`, `adhaḥ`, plus M4's three, plus M10's `tataḥ`)". **`adhaḥ` is not a member**
+   — it ends `-aḥ`, not `-taḥ` — so the family is SEVEN once M4 has shipped and eight when M10 adds
+   `tataḥ`. M4's rule 5 counts only what is written and genuinely rhymes, and names the real hazard:
+   the seven rhyme and do not mean similar things, `ataḥ` being "therefore" and `kutaḥ` "why".
+4. **Two `forms` extensions, both inside rows this wave itself opens.** `mārgaḥ` gains the genitive
+   **`mārgasya`** (M4), because a `-taḥ` adverb takes a genitive in front of it and `gṛhasya` cannot
+   be the only noun in the course that ever supplies one — `L2-M4-S08` is `mārgasya dakṣiṇataḥ navaḥ
+   vidyālayaḥ asti.` and it is what proves the construction is a construction. `dugdham` gains
+   **`dugdhena`** (M5), so that `alam` governs two different nouns rather than one frozen phrase.
+   Neither touches an L1 or L2-M1..M2 row; both are shapes the module writes.
+
+---
+
+## 42. Decisions that could look like bugs
+
+**42.1 `L2-M5-S04` has a word row for a word its display does not contain.** The hero is
+`alam jalena.` and the third row is `aham`, with `forms: []` and a note explaining that nobody is
+named and nobody needs to be. This is §24.3's technique (`pṛṣṭhataḥ` seated in a sentence that does
+not show it), used here for the opposite reason — to teach an ABSENCE. It adds nothing to the index,
+because the row opens no surface.
+
+**42.2 M3's colours are mostly written in the neuter, and that is the index's doing, not laziness.**
+See §41.2. `raktaḥ`, `nīlaḥ`, `pītaḥ`, `śvetaḥ`, `kṛṣṇaḥ`, `hrasvaḥ` and `uttamaḥ` head their rows
+as citation forms and appear in a display only where a masculine or feminine noun exists to carry
+them (`śvetaḥ` on `vidyālayaḥ` at S02 V1, `purāṇaḥ` on `pustakālayaḥ` at S06 V1, `uttamaḥ` on
+`chātraḥ` at C11).
+
+**42.3 No sentence in any of the three negates an adjective.** #613 §35.14 refused
+`mama bhrātā na dīrghaḥ` as a spelling it was not certain of, and this wave honours that refusal
+rather than quietly reversing it: every negation here is `na` in front of a finite verb
+(`saḥ pītam puṣpam na icchati.`, `mahyam idam bhojanam na rocate.`, `saḥ mārgam paśyati, tathāpi na
+gacchati.`) or `na` in front of `asti`, both of which L1 already taught.
+
+**42.4 No mistake plate writes a second-person form.** The obvious plate for `L2-M4-S10`
+(`bhavān yānena gacchatu, aham mārgeṇa gacchāmi.`) was `bhavān yānena gacchasi` — the register
+mixed. It was refused for exactly #613 §33.2's reason: a plate is still a surface a learner reads,
+and `gacchasi` is written nowhere in this course. The shipped plate is
+`bhavān yānena gacchāmi, …` — a `-mi` ending left standing after `bhavān`, an error built entirely
+out of taught forms.
+
+**42.5 `pītaḥ` is owned as a colour and the participle reading is written nowhere.** The brief's
+sharpest homograph, taken as planned. `pītavān` ("drank", L1-M4) is a different key, checked against
+the emitted index; the bare `pītaḥ`/`pītam` key was free and M3 now owns it as "yellow" alone. The
+named fallback `haritaḥ` was NOT written, so that key stays free. M3's rule 9 states the one-meaning
+rule for `pītaḥ`, `kṛṣṇaḥ` and `navaḥ` together, in English prose, without writing a second reading
+of any of them.
+
+**42.6 `dugdham` is a lexicalised `-ta` participle and is taught as a noun.** `dugdha-` is
+historically the participle of "to milk", and the course's ban on the productive bare `-ta`
+participle still holds: the row is glossed "milk", the participial reading is written nowhere, and
+nothing in M5 suggests a pattern. The same reasoning L2-M8 will use for `jātam` — one frozen word,
+named — applies here without needing to be spent, because `dugdham` is not presented as a verb form
+at all.
+
+**42.7 M5-S05 and M5-S06 are the same sentence with one word changed, on purpose.** `kim bhavate
+bhojanam rocate?` against `kim bhavatyai annam rocate?` — §24.4's precedent. The dative pair
+`bhavate`/`bhavatyai` is one row with two shapes, and the ONLY way to show the contrast is to put
+the two sentences beside each other. Each carries the other's shape in a variation as well.
+
+**42.8 The refusal's mistake plate is a grammatically perfect sentence.** `L2-M5-S04`'s plate is
+`na jalam icchāmi.` — flawless Sanskrit built from L1-M3 alone. What is wrong with it is
+pragmatic, not grammatical: it states a dislike where `alam jalena` says the glass is full enough.
+The `why` says so in those terms. This is the only plate in the wave whose error is not an ending.
+
+**42.9 `minWordsPerSentence` is 2 in M5.** `alam jalena.` is two words and is the module's headline.
+§15.7 and §24.7 set the precedent of declaring the real minimum rather than padding a hero to reach
+a rounder bound.
+
+**42.10 M4 names what it will not say, in a rule.** Rule 10 states that this course has no word for
+going ON FOOT, because the ordinary Sanskrit ways of saying it (`padbhyām`, `pādacāreṇa`) use shapes
+this course has not opened and neither was certain enough to ship; and that the modern coinages for
+a bus, a train and a car are left for the later module chartered to decide how this course handles a
+word invented in the last hundred years. Rule prose is English, so the ratchet does not see it —
+L1-M4's `-si` technique, third use.
+
+**42.11 `katham` is written at the head of its question and `kutra` is not.** `katham vidyālayam
+gacchāmi?` puts the question word first; `pustakālayaḥ kutra asti?` leaves `kutra` in front of the
+verb where the answer `atra` would sit. Both follow the L1 modules that taught them, and M4's rule 7
+says only that `katham` changes nothing else in the sentence — it makes no claim that every question
+word sits in the same slot.
+
+**42.12 Pronunciation respellings are ASCII, and the one capital diacritic used is one the corpus
+already carries.** `KRISH-nam`, `GRI-he`, `PUSH-pam`, `DIIR-gham`, `MAAR-ge-na`. The only non-ASCII
+capitals anywhere in en-sa are `Ḥ` (U+1E24, six occurrences before this wave) and `Ñ` (U+00D1, one),
+both already covered by the generated cuts; a capital `Ṛ` U+1E5A is written nowhere, which is the
+lesson of #613 §33.8 applied rather than rediscovered.
+
+---
+
+## 43. Every comprehension token resolves to the RIGHT row
+
+Thirty-nine pool items across the three modules, **170 tokens (59 + 56 + 55), 0 unresolved and 0
+misrouted**, read out of `public/content/en-sa/index/L2-M3.json`, `…M4.json` and `…M5.json` folded
+over the twelve files below them. The same walk over 30 hero and 90 variation displays is also
+clean.
+
+The routings worth naming, because each is a place where a wrong row would have answered a tap with
+the wrong gloss:
+
+| token | lands on | why that is right |
+| --- | --- | --- |
+| `nīlam`, `raktam`, `śvetam`, `pītam`, `kṛṣṇam`, `purāṇam`, `hrasvam`, `uttamam` | their own M3 rows (`nīlaḥ`, `raktaḥ`, `śvetaḥ`, `pītaḥ`, `kṛṣṇaḥ`, `purāṇaḥ`, `hrasvaḥ`, `uttamaḥ`) | one adjective is one row with its shapes, never a row per gender |
+| `navam`, `navā`, `navaḥ` | `navaḥ` (L2-M3-S04 w0) | the module's full three-gender paradigm, one destination |
+| `uttamaḥ` (C11) | `uttamaḥ` (L2-M3-S06 w1) | the masculine citation form, reached from a pool item that is the only place it is shown |
+| `sundaram` | `sundaraḥ` (L1-M9-S01 w1) | M9's adjective row, not an M3 one |
+| `dīrgham` | `dīrghaḥ` (L2-M2-S05 w1) | M3 re-teaches it with `forms: []`, so the tap still lands on L2-M2's note |
+| `mārgeṇa`, `mārgam`, `mārgasya` | `mārgaḥ` (L2-M4-S02 w0) | one road row, four shapes, one tap destination |
+| `yānena` | `yānam` (L2-M4-S01 w0) | likewise |
+| `paśyatu` | `paśyati` (L2-M4-S07 w0) | an imperative is a shape of its verb |
+| `gacchatu` | `gacchatu` (L2-M4-S06 w1) | the NEW L2 row — while `gacchati` and `gacchāmi` still land on L1-M2-S07 |
+| `vāmataḥ`, `dakṣiṇataḥ`, `agrataḥ` | their own M4 rows | three distinct keys; the fold merges none of the seven `-taḥ` words |
+| `purataḥ`, `pṛṣṭhataḥ` | L1-M7's rows | the old members of the family keep their first-teach notes |
+| `jalena` | `jalam` row at **L2-M5-S03 w1** | the new shape's own row — while bare `jalam` still lands on **L1-M3-S03 w0** |
+| `khādatu`, `pibatu` | L2-M5-S02 / L2-M5-S03 | the imperative rows — while `khādati`, `khādāmi`, `pibati`, `pibāmi` still land on L1-M4 |
+| `bhavate`, `bhavatyai` | `bhavate` (L2-M5-S05 w0) | the new dative row — while `bhavān`, `bhavataḥ`, `bhavatī`, `bhavatyāḥ` still land on L1-M2-S02 |
+| `dugdhena`, `dugdham` | `dugdham` (L2-M5-S08 w0) | one milk row, both shapes |
+| `mahyam`, `mama`, `aham` | `aham` (L1-M1-S01 w0) | M1's three-shape pronoun row, four modules on |
+| `rocate` | `rocate` (L1-M1-S05 w2) | M1's liking verb, unchanged and unrepeated |
+| `chātrā` | `chātraḥ` (L1-M1-S01 w1) | one student row, two genders |
+| `rāmaḥ` | `rāmaḥ` (L1-M1-S02 w2) | the only proper noun the level writes, and it has a row |
+
+---
+
+## 44. Sanskrit that was deliberately NOT written
+
+Every wave of this course lists its refusals; these are this wave's. A form one is not certain of is
+a form one does not write.
+
+**Banned by the briefs and RE-VERIFIED absent from the folded 208-surface index at the end of the
+wave**, and absent from every hero, variation, pool and mistake display as well: `gacchasi`,
+`paṭhasi`, `khādasi`, `pibasi`, `icchasi` and every other `-si` present · `tava` · `tubhyam` ·
+`tvām` · `te` · `mā` · `abhavat`, `agacchat`, `akarot` and every imperfect · the productive bare
+`-ta` participle (`gataḥ`, `gatam`, `kṛtam`, `naṣṭam`, `jātam`) · `gacchet`, `gacchema`, `bhavet`
+and the whole optative · the vocative (`he`, `bho`) · `svasā` · `mahat` · `santi` · `vā` ·
+`adhikam` · `tataḥ` · every bare-stem imperative other than L2-M1's `āgaccha`. The only two keys on
+the ban-adjacent list that the index DOES hold are `pītaḥ` and `pītam`, owned by M3 in the colour
+reading alone — which is the brief's own ruling and §42.5 above.
+
+**Refused by this wave on its own judgement, each because it was not certain enough or not this
+module's to spend:**
+
+1. **`mahat`** for "big". Sanskrit's everyday word and a consonant stem outside the a-stem paradigm
+   M3's whole job is. Named as deferred in M3's rule 5 and written nowhere. Size is `dīrghaḥ` /
+   `hrasvaḥ` and `navaḥ` / `purāṇaḥ`.
+2. **`laghuḥ` and `śuciḥ`** — the `-u` and `-i` stem adjectives, refused for the same reason and not
+   even named individually, since naming two more classes would have cost a rule.
+3. **`kīdṛśam`** ("what kind of?"). A fourth gendered set inside the module with the tightest cap in
+   the level. M3's rule 7 names it as existing and left for a later level; `kim` in front of an
+   unchanged sentence does the work.
+4. **`haritaḥ`** ("green"), the brief's named fallback for `pītaḥ`. Not needed once `pītaḥ` was
+   taken, and writing both would have spent a surface to no purpose. The key stays free.
+5. **`raktā` and `nīlā`** — see §41.2. Not writable against this index, so not written, and
+   therefore not listed in any `forms`.
+6. **`hrasvaḥ` of a person's height.** `hrasva-` is short of a THING, and using it of a person
+   risks a reading this wave could not vouch for, so no sentence in M3 calls anybody short. The
+   height contrast in M3-S09 is between two books.
+7. **`vṛddham`** outside a mistake plate. It appears once, on M3-S06's plate, precisely because
+   calling a book `vṛddham` is the error the rule warns about; no hero, variation or pool item
+   writes it.
+8. **`padbhyām` and `pādacāreṇa`** for "on foot". A dual instrumental and a compound, and neither
+   was certain enough to ship. M4's rule 10 names the gap out loud rather than papering over it.
+9. **Modern vehicle words** — a bus, a train, a car. Left for the module the briefs charter to
+   decide how this course handles a twentieth-century coinage. `yānam` covers every vehicle here.
+10. **`jānāmi`** ("I know"). Wanted by M4-S09's third variation and written by no module, so the
+    variation was rewritten — §40 above.
+11. **`vāmam` / `dakṣiṇam`** as adjectives. The directions in this module are `-taḥ` adverbs only;
+    opening the adjectives would have started a second system inside a module that exists to avoid
+    starting one.
+12. **`gaccha`, `paśya`, `khāda`, `piba`, `dehi`.** Every bare-stem imperative. #613 wrote exactly
+    one (`āgaccha`) and named it as the only one; this wave adds none, in a module whose subject is
+    telling somebody where to go and in a module whose subject is offering food.
+13. **`mā`.** The brief singled M5 out as the one place in the level that would reach for it, and
+    the ruling held: a guest is not given a prohibition. `alam` is the device and `mā` stays named
+    and unwritten. M5's rule 6 says which is which.
+14. **`annena`, `bhojanena`, `phalena`.** More instrumentals after `alam` than the two the module
+    needs. Two is enough to show a construction; five would be a paradigm drill.
+15. **`bhojyam`, `khādyam`, `pānam`, `bhaktam`, `roṭikā`, `cāyaḥ`.** More food words. M5 names three
+    and claims nothing about what anybody eats — rule 10 says India is not one cuisine.
+16. **`svāgatam` in any inflected shape.** It is taught as a fixed greeting, the way `namaste` is,
+    and no second form of it is written.
+17. **`tubhyam rocate`** and every other intimate-register version of the liking frame. The frame is
+    run on `bhavate`, `bhavatyai` and `mahyam` only.
+18. **`uccaḥ`** for "tall", still — question 59's alternative, still not written, since `dīrghaḥ`
+    remains the brief's word and M3-S09 uses it of a book where the question does not arise.
+
+---
+
+## 45. Open questions for the fluent-speaker gate — continuing from 66
+
+The gate is a **fluent saṃskṛta-sambhāṣaṇam speaker or a Sanskrit teacher**, and it is **UNMET**.
+Questions 1–66 are still open. These twenty-two are this wave's.
+
+67. **The colour inventory.** `raktaḥ`, `nīlaḥ`, `pītaḥ`, `śvetaḥ`, `kṛṣṇaḥ`. Confirm these five are
+    what a sambhāṣaṇam speaker actually says for red, blue, yellow, white and black, and that none
+    of them is heard as literary or as a technical term first.
+68. **`pītaḥ` as a colour, with the participle in the background.** The whole homograph ruling rests
+    on the claim that `pītam puṣpam` is heard as "a yellow flower" with no shadow of "a drunk
+    flower". Confirm, and say whether `haritaḥ` would have been the safer word after all.
+69. **`kṛṣṇaḥ` used of an ordinary black object.** `kṛṣṇam pustakam` — confirm a speaker says it
+    without the name intruding, and that no everyday alternative (`kālaḥ`) is the more usual word.
+70. **`navaḥ` against `nūtanaḥ` for "new".** Both are said. Confirm the brief's choice, and confirm
+    that `navaḥ` of a school or a student reads as "recently arrived" rather than "young".
+71. **`purāṇaḥ` of an ordinary old object.** M3's rule 8 splits `vṛddhaḥ` (person) from `purāṇaḥ`
+    (thing). Confirm the split is real in speech, and that `purāṇaḥ` of a book does not sound like a
+    joke about the Purāṇas. `jīrṇaḥ` is the alternative this wave did not write.
+72. **`hrasvaḥ` and `dīrghaḥ` of a book's length.** They are the grammarians' terms for a short and
+    a long vowel. Confirm they are also what you would say of a book, and that M3-S09 does not read
+    as a pun.
+73. **`uttamaḥ` as everyday praise.** Confirm it is warm ordinary praise for a meal or a student and
+    not a superlative that overshoots — "best" where "very good" was meant.
+74. **Attributive against predicative order.** M3's rule 4 claims `nīlam pustakam` reads as "the
+    blue book" and `pustakam nīlam` as "the book is blue". Sanskrit's word order is freer than that
+    and the rule says so; confirm that these two orders are nevertheless what a listener expects,
+    and that neither is genuinely ambiguous in speech.
+75. **The neuter accusative admission.** M3-S03's trap says the verb is the only evidence that
+    `nīlam pustakam` is the thing wanted. Confirm that is how a listener actually parses it, and
+    that no intonation or particle does part of the work.
+76. **`yānam` as the generic vehicle.** Confirm a sambhāṣaṇam speaker uses it for whatever they
+    happen to be travelling in, rather than reserving it for a cart or a chariot.
+77. **`yānena` and `mārgeṇa` with a verb of going.** M4's rule 1 treats both as the case of the
+    thing BY WHICH. Confirm `mārgeṇa gacchāmi` is really said for travelling ALONG a road, rather
+    than needing a different construction.
+78. **`vāmataḥ` and `dakṣiṇataḥ` with a genitive.** Confirm `gṛhasya vāmataḥ` is what a person
+    giving directions says, and that `vāmabhāge` or a locative phrase is not the commoner form.
+79. **`agrataḥ` standing alone as "straight ahead".** M4-S06 is `kṛpayā agrataḥ gacchatu.` Confirm
+    that is an idiomatic direction to a driver, and not only "in front of [something]".
+80. **`dakṣiṇa-` as right and as south.** M4-S05's trap says the module writes only the left-and-right
+    reading. Confirm the ambiguity is live enough to be worth warning about.
+81. **`katham` for "how" of a means.** Confirm `katham vidyālayam gacchāmi?` is the question a
+    stranger is actually asked, and that `kena` (the instrumental of "what") is not the more
+    natural one for a means.
+82. **`paśyati` / `paśyatu` for pointing something out.** Confirm `kṛpayā mārgam paśyatu` is what a
+    speaker says for "look at the road", rather than a verb of looking built on a different root.
+83. **`gacchatu` said to a person standing in front of you.** M4's rule 8 claims the `-tu` form is
+    the only command this course gives to somebody addressed as `bhavān`. Confirm a speaker really
+    uses it face to face rather than only of a third party.
+84. **`svāgatam` at a door.** Confirm it is what a host says as the guest arrives, and whether
+    anything obligatory comes before or after it.
+85. **The offer as an imperative.** M5's rule 1 is the module's whole delta: `kṛpayā phalam khādatu`
+    rather than a question. Confirm that a host really commands rather than asks, and say how odd
+    `kim bhavān phalam icchati?` sounds as an offer.
+86. **`alam` + instrumental as a refusal.** The sharpest question of M5. Confirm `alam jalena` is
+    what a guest says, that it carries no reproach, and that `alam` alone with `dhanyavādaḥ` is a
+    complete and courteous decline. Confirm too that M5-S04's plate `na jalam icchāmi` really does
+    land differently in somebody's house.
+87. **`punaḥ` doing the work of "more".** Confirm `punaḥ annam khādatu` is how a second helping is
+    offered, and that there is no separate word for "more food" that a speaker would reach for.
+88. **`bhavate` and `bhavatyai` in the liking frame.** Confirm `kim bhavate bhojanam rocate?` is the
+    question a host asks at the table, and that the dative of `bhavat` is what is heard there rather
+    than a different address.
+89. **`bhojanam`, `annam` and `dugdham`.** Confirm the three are the ordinary spoken words, that
+    `annam` really does carry "cooked rice" as its everyday sense, and that `dugdham` is heard as
+    "milk" with no participial shadow. Confirm too that M5's usage lines are hedged far enough:
+    nothing in this module should read as a claim about how anybody eats.
+90. **Naturalness of the 39 pool turns**, as questions 12, 26, 47 and 66 asked of the first 65. They
+    are grammatical by construction and recombined from the cumulative index; an LLM cannot hear
+    which of them nobody would say. `mama mātā uttamam bhojanam karoti.`,
+    `saḥ mārgam paśyati, tathāpi na gacchati.` and
+    `kṛṣṇam pustakam mama, nīlam pustakam bhavataḥ.` are the three most worth a second opinion.
+
+---
+
+## 46. Verification run for this change
+
+```
+npm run content:validate                              → CONTENT 465/465 ok
+                                                        (en-sa/L2-M3.json ok, en-sa/L2-M4.json ok,
+                                                         en-sa/L2-M5.json ok)
+npm run content:build -- --with-unverified --with-fixtures
+                                                      → en-sa: 15 modules (L1-M1..M10, L2-M1..M5)
+                                                          index L2-M3: 183 surfaces
+                                                          index L2-M4: 196 surfaces
+                                                          index L2-M5: 208 surfaces
+                                                        NO `shown but untaught` line for en-sa —
+                                                        still zero, and still the only course in
+                                                        the catalogue without one
+npx tsx tools/check-shown.ts en-sa L2-M3 / L2-M4 / L2-M5
+                                                      → no SHOWN-BUT-UNTAUGHT finding on any of the
+                                                        three; re-teach and same-module-collision
+                                                        reports only, the same class L2-M1 and
+                                                        L2-M2 already ship with
+npx tsc --noEmit                                      → clean
+npx prettier --check .                                → All matched files use Prettier code style!
+npx eslint src/course/types.test.ts tools/content-build.test.ts tools/course-briefs.ts
+                                                      → clean
+npx vitest run tools/course-briefs.test.ts            → 136 passed
+npx vitest run src/course/types.test.ts tools/content-build.test.ts \
+               tools/shown-surfaces.test.ts
+                                                      → 3 files, 513 tests passed
+npm run content:build && npm run fonts:build          → en-sa 15 modules (L1-M1..M10, L2-M1..M5)
+                                                        FONTS 15/15 ok, strict build
+npx vitest run   (after that STRICT build)            → 866 passed, 1 failed
+                                                        (scripts/generate-splash.test.ts only —
+                                                        pre-existing on this host)
+npx vitest run tools/font-coverage.test.ts tools/shown-surfaces.test.ts
+                                                      → 2 files, 29 tests passed
+```
+
+**`tools/font-coverage.test.ts` PASSES in this wave**, which is the point of running the suite after
+a strict build rather than a dev one: it is red only after `--with-unverified --with-fixtures`, and
+its four characters (`U+000A`, `$`, `×`, `•`) predate all en-sa work. A green run here is the
+evidence that this wave added no fifth character — the failure mode #613 §33.8 recorded, when a
+capitalised pronunciation respelling put `Ṛ` U+1E5A into the harvest. `scripts/generate-splash.test.ts`
+is the one remaining red, measured rather than assumed and pre-existing on this container's
+rasterizer.
+
+`scripts/verify.sh` was again deliberately NOT run: it stops at the first failing stage and would
+never reach CONTENT while `scripts/generate-splash.test.ts` is red on this host, so the stages were
+run individually, as #610 and #613 did.
+
+### Pinned inventories updated by this change
+
+- `src/course/types.test.ts` — `MODULE_FILES` gains `content/en-sa/modules/L2-M3.json`, `L2-M4.json`
+  and `L2-M5.json`; the case title's count moves 462 → 465 and its wording from "its first two L2
+  rungs (#613)" to "its first five L2 rungs (#614)". **The en-sa decisions case itself is
+  unchanged** — the intimate-set ban and the `neutral` register assertion are both already scoped to
+  `L1`, and these three modules chip `neutral` on all thirty sentences in any case.
+- `tools/content-build.test.ts` — `AUTHORED` gains `L2-M3`, `L2-M4` and `L2-M5`; the three
+  `en-sa: 12 modules (L1-M1..M10, L2-M1..M2)` assertions become
+  `en-sa: 15 modules (L1-M1..M10, L2-M1..M5)`; two case titles move from "twelve"/"first two" to
+  "fifteen"/"first five"; the comment above `AUTHORED` records that L2 still keeps its own level
+  `draft` flag, with five rungs left.
+- `tools/shown-surfaces.test.ts` — **untouched.** `'en-sa': 0` still holds.
+- `tools/course-briefs.ts` — **four seam and decision notes corrected** (§41), each marked `#614`:
+  the M3 accusative claim, M3's three-gender colour recommendation, M4's `-taḥ` family count, and
+  the two `forms` extensions (`mārgasya`, `dugdhena`). `tools/course-briefs.test.ts` is untouched
+  and its 136 tests pass.
+- `content/en-sa/levels.json` — `L2-M3`, `L2-M4` and `L2-M5` lose `draft: true` and gain
+  `hasContent: true`. L2's own level `draft` and `draftNote` are untouched.
+- `README.md` — the en-sa paragraph's module line, surface count and review-doc wave count, and the
+  deploy section's total, which was stale at 460 from before #613 and is now 465.
+
+`git diff --stat content/en-sa/modules/L1-M1.json … L1-M10.json content/en-sa/modules/L2-M1.json
+content/en-sa/modules/L2-M2.json` is **EMPTY**, and so is `git diff --stat` over the other nine
+courses. The only tracked file this wave modifies under `content/` is `content/en-sa/levels.json`;
+everything else it adds is new.
