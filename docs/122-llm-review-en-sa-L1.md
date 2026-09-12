@@ -1,7 +1,9 @@
-# en-sa L1 — LLM review (#608, #609)
+# en-sa L1 — LLM review (#608, #609, #610)
 
-Two waves, one record. **Sections 1–10 are L1-M1 · L1-M2 (#608)**; **sections 11–19 are
-L1-M3 · L1-M4 · L1-M5 (#609)**, and the open questions run in one list from 1 to 26 across both.
+Three waves, one record, and one complete level. **Sections 1–10 are L1-M1 · L1-M2 (#608)**;
+**sections 11–19 are L1-M3 · L1-M4 · L1-M5 (#609)**; **sections 20–28 are L1-M6 … L1-M10 (#610)**,
+which closed the level. The open questions run in one list from 1 to 47 across all three, and none
+of them is closed — the fluent-speaker gate of §9 is **UNMET** for every rung of this level.
 
 ## Wave 1 — L1-M1 · L1-M2 (#608)
 
@@ -875,3 +877,579 @@ never reach CONTENT while that splash test is red here, so the stages were run i
 
 `git diff --stat content/en-sa/modules/L1-M1.json content/en-sa/modules/L1-M2.json` is empty, and so
 is `git diff --stat` over the other nine courses.
+
+---
+
+## Wave 3 — L1-M6 · L1-M7 · L1-M8 · L1-M9 · L1-M10 (#610)
+
+**Date:** 2026-09-12 · **Reviewer:** Claude Opus 5, LLM review, authorised by the repo owner ·
+**Bar:** unchanged — LLM review plus owner authority, and the fluent-speaker gate of §9 still
+**UNMET**. Section 27 continues the open questions from 26; nothing in this wave closes one of the
+first twenty-six, and nothing here rewrote a shipped module in order to try.
+
+**The file was renamed a second time**, `…-L1-M1-M5.md` → `…-L1.md`, for wave 2's own stated reason:
+the level is now whole and a name promising five rungs on a record of ten misleads a later reader.
+Nothing in the repo references the doc by filename — `tools/shown-surfaces.test.ts` cites it as
+`docs/122`, by number — so the rename costs nothing again.
+
+---
+
+## 20. What was authored
+
+Five modules, in ladder order, each against the **real** cumulative index of the one below it, with
+a `content:build -- --with-unverified --with-fixtures` between every pair: M6 against M5's 80
+surfaces, M7 against M6's 89, M8 against M7's 101, M9 against M8's 119, M10 against M9's 135.
+
+| | M6 Tomorrow | M7 Where things are | M8 Numbers & shopping | M9 Feelings & opinions | M10 Connected talk |
+| --- | --- | --- | --- | --- | --- |
+| sentences | 10 | 10 | 10 | 10 | 10 |
+| variations | 30 | 30 | 30 | 30 | 30 |
+| comprehension items | 13 | 13 | 13 | 13 | 13 |
+| rules | 10 | 10 | 10 | 10 | 10 |
+| word rows on the page | 28 | 35 | 28 | 37 | 65 |
+| rows OPENED here | 5 | 10 | 11 | 10 | **4** |
+| surfaces this module adds | 9 | 12 | **18** | 16 | **4** |
+| cumulative index | 89 | 101 | 119 | 135 | **139** |
+| words per sentence | 2–4 | 3–5 | 2–4 | 2–6 | 1–5 (per sentence **inside** a turn) |
+
+Rows opened: **M6** — `śvaḥ`, `vidyālayaḥ`, `gṛham`, `gamiṣyati`, `kariṣyati`. **M7** — `atra`,
+`tatra`, `pustakālayaḥ`, `pustakasya`, `upari`, `phalasya`, `adhaḥ`, `samīpe`, `purataḥ`,
+`pṛṣṭhataḥ`. **M8** — `ekaḥ`, `dvau`, `trayaḥ`, `pañca`, `daśa`, `phale`, `chātrau`, `kati`,
+`kiyat`, `mūlyam`, `rūpyakam`. **M9** — `puṣpam`, `sundaraḥ`, `bālā`, `khinnaḥ`, `santuṣṭaḥ`,
+`kimartham`, `kutaḥ`, `yataḥ`, `ataḥ`, `rocante`. **M10** — `ca`, `kintu`, `tathāpi`, `api`,
+**and nothing else at all**, which is §24.5.
+
+`prerequisites` is `["L1-M5"]` … `["L1-M9"]` respectively. All five carry `verified: true` with
+`verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"` and `verifiedAt: "2026-09-12"`,
+shipped in the same change as the content. `content/en-sa/levels.json` now shows **all ten L1 rungs
+`hasContent: true` with no module-level `draft`** — and **L1 keeps its own level `draft` flag and
+its `draftNote` untouched**, because those come off at graduation (#611), which is a different
+issue from the wave that filled the level.
+
+### 20.1 Enrichment, module by module
+
+`ENRICHMENT_FULL_THROUGH_MODULE` is 3 and checks the module NUMBER, so none of these five is bound
+by it. All five nevertheless came out fully enriched, and the reason is honest rather than
+decorative: every one of them has ten sentences whose sound, trap and usage are genuinely different
+from each other.
+
+| | `sound` | `variations` | `usage` | `trap` | `literal` | `mistake` | `mnemonic` |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| M6 | 10 | 30 | 10 | 10 | 10 | **5** | 10 |
+| M7 | 10 | 30 | 10 | 10 | 10 | **5** | 10 |
+| M8 | 10 | 30 | 10 | 10 | 10 | **5** | 10 |
+| M9 | 10 | 30 | 10 | 10 | 10 | **6** | 10 |
+| M10 | 10 | 30 | 10 | 10 | 10 | **5** | 10 |
+
+`mistake` is the field that stayed selective, on wave 2's test: a plate goes where the English
+reflex is specific and nowhere else, because a repeated plate teaches the learner to skip the panel.
+The twenty-six plates are listed in §24.6.
+
+`sound` earns its place on every hero of all five modules for one reason in particular: `śvaḥ`,
+`kutaḥ`, `ataḥ`, `adhaḥ` and `purataḥ` all end in a visarga that behaves differently in front of
+almost every following sound, and this is the wave where the learner meets enough of them to need
+the pattern rather than the individual facts.
+
+---
+
+## 21. What was checked, mechanically
+
+The same scratch walk as §2 and §12, re-run over all five files:
+
+- **NFC.** Every string in all five documents equals its own `.normalize('NFC')` — every `display`,
+  `forms` entry, `script`, rule, note and prose field. Also enforced in CI by the en-sa case in
+  `src/course/types.test.ts`, which #608 proved bites.
+- **Devanagari is confined to `script`.** Zero Devanagari codepoints outside a `script` field in any
+  of the five. The build reports no `checkScriptMode` errors.
+- **Pada form.** No `display`, `forms` entry, variation, plate or pool item carries a hyphen, an
+  avagraha, or a word-final `ṃ`. Every word-final nasal is `m` — `vidyālayam`, `gṛham`, `ekam`,
+  `mūlyam`, `puṣpam`, `kimartham`, `pustakālayam`. `ṃ` appears only inside `saṃskṛtam`, §2.3's rule
+  exactly. The new visarga-final words — `śvaḥ`, `adhaḥ`, `purataḥ`, `pṛṣṭhataḥ`, `kutaḥ`, `yataḥ`,
+  `ataḥ`, `chātrāḥ`, `trayaḥ` — are word endings, not sandhi products, and the joins they *would*
+  make in speech are described in `sound` and written in no line (§24.1).
+- **`script` seating.** `script` on every sentence, every variation and every pool item; **no
+  `script` on any word row and none on any of the twenty-six mistake plates**, which is `docs/121`
+  §9.1 and what the en-sa test block requires.
+- **The register.** No `tvam`, `tava`, `tubhyam`, `tvām` or `te` in any L1 slot in any of the five.
+  The second-person ENDING appears exactly once, on M10-S06's plate (`gamiṣyasi`), which is §8.6's
+  precedent with `gacchasi` and §12's with `icchasi` and `karoṣi`; its `why` says the ending belongs
+  to a register this course does not speak.
+- **Bars.** Exactly 10 sentences each; 3 variations on every one of the fifty (no sentence took the
+  ≥ 2 exemption anywhere in this level); 13 pool items each, none case-insensitively equal to a hero
+  and — a check wave 2 added after its own collision — none equal to a variation either; every word
+  note inside the 200-character ceiling.
+- **Word bounds.** Every hero, variation, plate and pool item inside its module's declared
+  `minWordsPerSentence`/`maxWordsPerSentence`. For M10 the bound is checked **per sentence inside a
+  turn**, which is what the brief's note 1 says it means; the whole-turn token count of a
+  three-sentence item is naturally larger and is not what the field bounds.
+
+### 21.1 The build warning, and why the numbers are what they are
+
+```
+warn en-sa/L1-M6.json:  33 of 86 romanized surfaces carry no script line
+warn en-sa/L1-M7.json:  40 of 93 romanized surfaces carry no script line
+warn en-sa/L1-M8.json:  33 of 86 romanized surfaces carry no script line
+warn en-sa/L1-M9.json:  43 of 96 romanized surfaces carry no script line
+warn en-sa/L1-M10.json: 70 of 123 romanized surfaces carry no script line
+```
+
+Each number is exactly **word rows + mistake plates**: M6 28 + 5, M7 35 + 5, M8 28 + 5, M9 37 + 6,
+M10 65 + 5. That is §2.1's arithmetic on five more files. **M10's 70 is the largest in the course
+and is not a defect**: a turn of three sentences deconstructs into six to eight word rows, so the
+module has 65 rows against the same ten sentences — every one of them a re-teach carrying
+`forms: []`, and every one of them deliberately without a Devanagari line per `docs/121` §9.1.
+
+---
+
+## 22. The ratchet is still at ZERO — and this is the wave where it bit
+
+The dev build prints **no `shown but untaught` line for en-sa** at 10 modules:
+
+```
+en-sa: 10 modules (L1-M1..M10)
+  index L1-M6:  89 surfaces
+  index L1-M7: 101 surfaces
+  index L1-M8: 119 surfaces
+  index L1-M9: 135 surfaces
+  index L1-M10: 139 surfaces
+```
+
+`tools/shown-surfaces.test.ts` still carries `'en-sa': 0` and **was not edited by this change.**
+en-sa remains the only course in the catalogue that prints no such line; on the same run the other
+nine sit at `hi-mr: 7 · en-es: 10 · en-ar: 6 · hi-en: 30 · en-ru: 20 · en-it: 17 · en-fr: 20 ·
+en-de: 11 · en-ko: 12`.
+
+### 22.1 It actually failed once, in M10, and the fix was content
+
+The first draft of M10-S03's third variation was `bhavān saṃskṛtam paṭhiṣyati lekhiṣyati ca?` — a
+register-holding variation on a joined pair of verbs, and a good one. The build answered:
+
+```
+  shown but untaught: 2 surfaces — paṭhiṣyati · lekhiṣyati
+```
+
+M4 declared the `-iṣyāmi` futures of its five verbs in their rows (§15.4) and M6 collected on that,
+but **no module declared a third-person future of `paṭhati` or `likhati`**, and M10 opens no verb
+row at all — its whole claim (rule 10) is that it adds no new ending. Two ways out existed: open
+two verb rows in M10, contradicting its own rule, or write the variation out of surfaces the level
+already owns. The variation became `adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.` — the joined pair
+split across two sentences, which is a *better* variation for a module about turns, and the line
+went back to zero. **The ratchet is the reason a wrong thing was noticed at all, and it was lowered
+by fixing content rather than by raising a baseline.**
+
+### 22.2 How M8's agreeing numerals were kept off it — planned before a display was written
+
+M8 is the module CLAUDE.md warns about, and the count is the reason: `ekaḥ`/`ekā`/`ekam` and
+`dvau`/`dve` are **four separate surfaces for two words**, the counted nouns are three more
+(`phale`, `phalāni`, `chātrāḥ`, `chātrau`), and the money words arrive all at once. The rows were
+laid out before any sentence was:
+
+1. **One row per NUMERAL, never one per shape.** `ekaḥ` carries `ekā` and `ekam` in `forms`;
+   `dvau` carries `dve`; `trayaḥ` carries `trīṇi`. Three rows cover seven surfaces, and a learner
+   tapping any of them gets the note that says the numeral copies its noun.
+2. **One row per counted NOUN, opened here and not in M1.** `phale` carries `phalāni`; `chātrau`
+   carries `chātrāḥ`. The brief said these were forms of M1's rows, and on the emitted index they
+   are not — M1 shipped `phalam` with `forms: ["phalam"]` and `chātraḥ` with `["chātraḥ","chātrā"]`,
+   and **a later module may not edit a file below it**. So CLAUDE.md's rule applies exactly as it
+   did for `adhyāpakam` in M3: a new shape of an older lexeme gets its own row where it is first
+   shown, with a note back at the first-teach row. §23.1 records the brief correction.
+3. **Four was named in a rule and written nowhere.** `catvāraḥ`, `catasraḥ` and `catvāri` are three
+   more surfaces for one word, and the module already carried eighteen. Rule 1 states the four-way
+   agreement and gives one gendered shape of three (`trayaḥ`/`trīṇi`); four is named in prose, which
+   the ratchet does not read, and appears in no display. §26.3.
+4. **Every display was checked against the planned rows before it was written**, not after. The
+   count landed at 18 new surfaces against a `newWordCap` of 25, and the module needed no cut.
+
+No display in any of these five modules carries an unindexed proper noun. `rāmaḥ` and `sītā` have
+had rows since M1, `bālā` is a common noun opened in M9, and **M10's `ca` sentences are anchored on
+common nouns throughout** — `pustakam phalam ca`, `jalam phalam ca`, `vidyālayam pustakālayam ca`,
+`paṭhiṣyāmi lekhiṣyāmi ca` — which is the brief's own warning obeyed rather than discovered.
+
+---
+
+## 23. The briefs' ownership plan, and the four places it was corrected
+
+Wave 1 (§4.1) and wave 2 (§14.1) each checked every ownership assignment against the emitted index
+and found nothing to correct. **This wave found four, and corrected the briefs** —
+`#478`'s precedent, invoked for the first time on this course. All four are the same defect: a brief
+written before M1 and M2 shipped assumed a row would carry a shape that the module which opened the
+row did not in fact declare. Since **a later module never edits a file below it**, the shape has to
+become its own row, and the brief has to say so.
+
+`tools/course-briefs.ts` is edited in four notes; `tools/course-briefs.test.ts` is untouched and
+passes (126/126).
+
+### 23.1 The four corrections
+
+| brief | said | the emitted index says | corrected to |
+| --- | --- | --- | --- |
+| **M6** seam | `gamiṣyāmi` **and `gamiṣyati`** are forms of M2's `gacchati` row | M2 declared six shapes and `gamiṣyati` is not among them | `gamiṣyati` and `kariṣyati` are rows opened in M6, each with a note back at the row that taught the verb |
+| **M7** seam | fresh rows: **`kutra`**, `atra`, `tatra`, … | `kutra` is M2's, opened at L1-M2-S07, and M2's own seam note claims it | `kutra` is M2's returning and NOT fresh here; `pustakasya` added to M7's fresh list |
+| **M8** seam | `dve`, `phale`, `phalāni` are forms of M1's `phalam` row; `dvau`, `chātrau` of M1's `chātraḥ` row | M1 shipped `phalam` with `forms: ["phalam"]` and `chātraḥ` with `["chātraḥ","chātrā"]` | `phale` (with `phalāni`) and `chātrau` (with `chātrāḥ`) are rows opened in M8 with notes back at M1 |
+| **M9** seam | `rocante` joins M1's `rocate` row as a form | M1 shipped `rocate` with `forms: ["rocate"]` | `rocante` is a row opened in M9 with a note back at M1's |
+
+**None of these is a content decision dressed as a brief fix.** In every case the alternative was
+either editing a shipped module (forbidden) or showing a surface with no row (the ratchet). The
+briefs' *intent* — one lexeme, one tap destination — survives in the notes: every one of the new
+rows names the row it came from in its own `note`, so the Why panel says "this is the object shape
+of M1's `pustakam`" rather than pretending to be a new word.
+
+### 23.2 What did NOT need correcting
+
+- **`gacchati` (M2) owns `gamiṣyāmi`** and M6 opened no row for it, exactly as the brief planned
+  five modules earlier.
+- **`paṭhiṣyāmi`, `khādiṣyāmi`, `lekhiṣyāmi`, `pāsyāmi` and `kariṣyāmi` are M4's**, declared a
+  module ahead of the module that shows them (§15.4), and M6 spent four of the five without opening
+  a row. That is the technique working as designed.
+- **`asti` is still one row** and M7 extended it to location with no rival row, which is what M3's
+  note was written in advance to survive (§15.3). Its note reads *"M7 puts a place in front of it
+  and the same verb says where something is"* — written in M3, and true on the page in M7.
+- **`ataḥ` and `yataḥ` are M9's** and M10 re-uses both with no second row, which is what the M9
+  brief required its notes to be true of in advance.
+- **`kim` stays M2's with both readings**, and `kimartham` opened its own key without touching it —
+  the homograph decision #607 made, holding on the real index.
+- The keys the briefs keep FREE through L1 are **still free**: `me`, `te`, `tat`, `vā`, `tvam`,
+  `mā`, `saḥ`-as-`sa`, `gacchasi`. `api` is no longer free — M10 opened it, in exactly one reading
+  ('also'), which is the brief's instruction. **The interrogative `api` is written in no display,
+  no variation and no pool item**; it appears once on M10-S05's plate, where the `why` names it as
+  the reading the course does not write.
+
+---
+
+## 24. Decisions that could look like bugs
+
+### 24.1 Six sentences describe a join the page can never write
+
+`vidyālayaḥ asti` is said *vidyālayo 'sti*; `gṛhe asti` is *gṛhe 'sti*; `ataḥ aham` is *ato 'ham*;
+`śvaḥ api` is *śvo 'pi*; `tathāpi aham` is *tathāpy aham*; `kintu adya` is *kintv adya*. Every one of
+those joins produces an **avagraha or a semivowel the course never writes into a line**, because
+`'` is the one character `surface.ts` rule 3 does not strip from a token edge (types.test.ts says
+so in as many words). So the join goes into `sound`, in prose, which is §5.6's decision met six more
+times. A reader who checks a `sound` line against a `display` and finds them different has found the
+rule, not a typo.
+
+### 24.2 M7 gives `pustakasya` and `upari` separate rows rather than one two-token surface
+
+The M7 brief suggests `pustakasya upari` could be a surface of its own, since a multi-token surface
+donates neither of its tokens and the phrase would then resolve as a unit. **It was written as two
+one-token rows instead**, and the reasons are cumulative:
+
+- it keeps `maxSpan` at **1** for the whole course, so the resolver's greedy walk stays trivial and
+  a later module cannot accidentally shadow a one-token key with a two-token one;
+- it means `pustakasya` resolves **on its own**, which M8 immediately needs — `pustakasya mūlyam
+  kiyat?` has no `upari` in it;
+- and it is the `adhyāpakam` precedent (§15.2) rather than a new technique.
+
+The cost is that `pustakasya` is a row for a shape of a word M1 owns, which is the same cost §15.2
+already accepted and defended. The brief's sentence is permissive ("can be"), so this is a choice
+inside it rather than a departure from it.
+
+### 24.3 `pṛṣṭhataḥ` is a row seated in a sentence whose display does not show it
+
+M7-S10 is `gṛhasya purataḥ pustakālayaḥ asti.` and its first variation is
+`gṛhasya pṛṣṭhataḥ pustakālayaḥ asti.` The `pṛṣṭhataḥ` row is **appended to S10's `deconstruction`**
+so that the surface has an owner. That is §3's `sītā` precedent exactly — a row seated at the
+sentence that teaches the SLOT rather than at the line that first prints the word — and it was
+chosen over the alternative of a tenth hero, because "behind the house" and "in front of the house"
+are one lesson and two heroes would have been a noun swap wearing a rule's clothes.
+
+The same move seats `bālā` in M9-S01 (which shows `sundarī` in a variation) and `trayaḥ` in M8-S04
+(which shows `trayaḥ chātrāḥ` in a variation).
+
+### 24.4 M6-S01 and M6-S02 are the same sentence with one word changed, on purpose
+
+`śvaḥ gacchāmi.` and `śvaḥ gamiṣyāmi.` differ by a single word and mean the same thing. That is the
+module's headline: the brief's note 3 says the cheapest future is the plain present with a day named,
+and the only way to show two routes to one meaning is to write both and put them next to each other.
+S01's rule list points at rule 3 and S02's at rules 1 and 2; neither claims the other is wrong.
+
+### 24.5 M10 opens four rows and 65 word rows, and adds four surfaces
+
+The smallest vocabulary gain of any module in the level (`ca`, `kintu`, `tathāpi`, `api`) sits on the
+largest deconstruction count in the course. That is the module working: its rule 10 says there is no
+new tense, case or ending in it, only four small words and the places they stand, and the index
+proves the claim — **139 surfaces at M10 against 135 at M9**. Every other row in M10 is a re-teach
+carrying `forms: []` and the citation display of the row that owns it, which is §6.3's rule applied
+to the densest module in the course.
+
+### 24.6 The twenty-six plates, and what each is for
+
+M6 — `śvaḥ gamiṣyati` (the `-mi`/`-ti` person slip), `vidyālayaḥ gamiṣyāmi` (nominative for a
+destination), `bhavān kutra gamiṣyāmi?` (the register's third person), `śvaḥ gamiṣyāmi na` (stranded
+`na`), `rāmaḥ vidyālayaḥ gamiṣyati` (two nominatives).
+M7 — `pustakam kutra gacchati?` (the locative/accusative pair, met through the verb),
+`tatra vidyālaye asti` (locative on the subject), `rāmaḥ gṛham asti` (destination with a stative
+verb), **`upari pustakam phalam asti`** (the module's own plate: preposition first AND bare noun),
+`gṛham samīpe vidyālayaḥ asti` (a postposition without its genitive).
+M8 — `ekaḥ phalam asti` (numeral not agreeing), **`dve phalāni dadātu`** (the plural for two — the
+module's own), `dvau chātrāḥ` (the dual on the numeral only), `pañcaḥ phalāni icchāmi` (agreement
+over-generalised past four — a mistake only a learner who understood rule 1 can make),
+`pustakam mūlyam kiyat?` (no genitive under a price).
+M9 — **`puṣpam sundaram asti`** (the copula, the module's own), `aham khinnam` (neuter on a person),
+`aham khinnaḥ, pustakam na asti yataḥ` (`yataḥ` moved to the back — the M7 habit over-applied),
+`mahyam puṣpāṇi rocate` (the verb agreeing with the liker), `kutaḥ bhavatī santuṣṭaḥ?` (adjective
+not copying the addressee), `sundaraḥ puṣpam mahyam rocate` (an attributive adjective not agreeing).
+M10 — **`ca pustakam phalam icchāmi`** (`ca` first — the module's own), `adya na gamiṣyāmi kintu`
+(the mirror mistake: `kintu` last), `api sītā chātrā` (`api` fronted, which turns it into the
+interrogative the course does not write), `bhavān kutra gamiṣyasi?` (the deferred register inside a
+turn), and **`namaste. mama nāma rāmaḥ. aham saṃskṛtam paṭhāmi.`** — a plate on which **nothing is
+ungrammatical**. It is a naturalness error: `aham` repeated in a turn that has already named its
+speaker twice. M2-S09's register plate is the precedent (§7), and this one is flagged as different
+inside its own `why`.
+
+### 24.7 `minWordsPerSentence` is 1 in M10, and 2 in M6 and M8
+
+`namaste.` is one word and opens M10-S09. `śvaḥ gacchāmi.`, `kati chātrāḥ?`, `dvau chātrau.`,
+`kiyat mūlyam?` and `daśa rūpyakāṇi.` are two. §7 and §15.7 made this decision twice already for
+the same reason: a floor a correct sentence cannot meet is a floor in the wrong place.
+
+### 24.8 M8 writes four two-word "sentences" that are answers rather than statements
+
+`kati chātrāḥ?` / `dvau chātrau.` and `kiyat mūlyam?` / `daśa rūpyakāṇi.` are two question-and-answer
+pairs written as four heroes. The brief's pattern list sanctions a bare `<numeral> + N` and a bare
+`kiyat mūlyam`, and counting in speech really does happen in fragments. The alternative — wrapping
+each count in `asti` — would have been **wrong for the dual**, which is §24.9.
+
+### 24.9 M8 admits a hole rather than filling it: there is no dual verb in this course
+
+`dvau chātrau atra.` (M8-S09's second variation) stands without a verb, and its `changed` says why:
+a dual subject needs a dual verb, and `staḥ` is a form `docs/121` does not admit at L1. The brief's
+own limit is explicit — *"L1 shows the dual on the NOUN only, and the dual VERB agreement is named
+as deferred and written in no display"* — so M8 rule 9 names it and writes it nowhere. M5's rule 10
+(no past of `asti`) and M2's rule 7 (no first-person copula to negate) are the precedents: **an
+honest limit is cheaper than a form the course cannot support.** Question 34 asks the gate what a
+speaker actually says.
+
+### 24.10 M10's `ca` sentences avoid joining two subjects
+
+Every `ca` in M10 joins two **objects** (`pustakam phalam ca icchāmi`), two **destinations**
+(`vidyālayam pustakālayam ca gamiṣyāmi`) or two **verbs** (`paṭhiṣyāmi lekhiṣyāmi ca`) — never two
+nominative subjects. Two joined singular subjects would take a **dual verb**, which is the form
+§24.9 has just declared this course does not write. The one pool item that first drafted it
+(`pustakam phalam ca pustakālaye asti`) was caught and rewritten to
+`sītā pustakam phalam ca icchati` before validation. The learner is never shown a `ca` that would
+need an agreement the level cannot spell.
+
+### 24.11 `api` is postpositive too, and the module says so
+
+The brief frames `ca` as "the catalogue's first postpositive conjunction" against three
+sentence-initial connectives. `api` is the fourth new word and it is **also postpositive**, so M10
+rule 3 and M10-S05's `trap` state the real count out loud: *two* words in this module follow
+(`ca`, `api`) and everything else that joins or qualifies leads (`kintu`, `ataḥ`, `tathāpi`,
+`yataḥ`, `na`). Leaving `api` out of that statement would have taught a false symmetry.
+
+### 24.12 `icchāmi` keeps its first-person citation display, nine modules on
+
+M3's row is headed `icchāmi` rather than `icchati` (§15.1). M6, M8, M9 and M10 all re-teach it and
+all four carry the same display, because a re-teach quotes the row that owns the key. §15.1's
+reasoning is unchanged and the alternative — a different display on a re-teach — would break
+§6.3 and the Why panel at once.
+
+---
+
+## 25. Every comprehension token resolves to the RIGHT row
+
+Sixty-five pool items across the five modules, **251 tokens, 0 unresolved, 0 landing on a wrong
+row**, each resolved through the emitted `public/content/en-sa/index/L1-M<n>.json` (folded
+cumulatively across the deltas) to the word row it actually lands on, and each row read. The same
+walk over all 50 hero displays and all 150 variation displays also found 0 unresolved, which is
+§22's fact from the other side.
+
+The entries where a wrong row would have been invisible:
+
+| token | lands on row | row's cue | opened at |
+| --- | --- | --- | --- |
+| `gamiṣyāmi` · `gantum` | `gacchati` | goes · is going | L1-M2-S07 |
+| `gamiṣyati` | **`gamiṣyati`** | will go (he · she · your honour) | L1-M6-S05 |
+| `kariṣyati` | **`kariṣyati`** | will do · will make | L1-M6-S10 |
+| `paṭhiṣyāmi` · `lekhiṣyāmi` · `pāsyāmi` · `khādiṣyāmi` | `paṭhati` · `likhati` · `pibati` · `khādati` | the M4 verbs | L1-M4 |
+| `vidyālayam` · `vidyālaye` | `vidyālayaḥ` | school | L1-M6-S03 |
+| `gṛhe` · `gṛhasya` | `gṛham` | house · home | L1-M6-S04 |
+| `pustakālaye` · `pustakālayam` | `pustakālayaḥ` | library | L1-M7-S06 |
+| `pustakasya` | `pustakasya` | the book's · of the book | L1-M7-S07 |
+| `phalasya` | `phalasya` | the fruit's · of the fruit | L1-M7-S08 |
+| `ekam` · `ekā` · `ekaḥ` | `ekaḥ` | one | L1-M8-S01 |
+| `dve` · `dvau` | `dvau` | two | L1-M8-S02 |
+| `trīṇi` · `trayaḥ` | `trayaḥ` | three | L1-M8-S04 |
+| `phale` · `phalāni` | `phale` | two fruits · fruits | L1-M8-S02 |
+| `chātrau` · `chātrāḥ` | `chātrau` | two students · students | L1-M8-S03 |
+| `chātrā` · `chātraḥ` | `chātraḥ` | student | L1-M1-S01 |
+| `rūpyakam` · `rūpyakāṇi` | `rūpyakam` | rupee | L1-M8-S08 |
+| `sundaram` · `sundarī` · `sundaraḥ` · `sundarāṇi` | `sundaraḥ` | beautiful | L1-M9-S01 |
+| `khinnā` · `khinnaḥ` | `khinnaḥ` | sad · downcast | L1-M9-S02 |
+| `santuṣṭā` · `santuṣṭaḥ` | `santuṣṭaḥ` | content · pleased | L1-M9-S05 |
+| `puṣpāṇi` · `puṣpam` | `puṣpam` | flower | L1-M9-S01 |
+| `rocante` | **`rocante`** | are pleasing (more than one) | L1-M9-S06 |
+| `rocate` | `rocate` | is pleasing · (someone) likes | L1-M1-S05 |
+| `mahyam` · `mama` | `aham` | I · me | L1-M1-S01 |
+| `bhavatī` · `bhavataḥ` | `bhavān` | you (polite) · your honour | L1-M2-S02 |
+| `kutaḥ` | `kutaḥ` | why · from what | L1-M9-S07 |
+| `kutra` | `kutra` | where | L1-M2-S07 |
+
+**The three pairs the issue asked to see verified hold.** The dual resolves to a row whose cue names
+the dual (`chātrau`, `phale`), the agreeing numerals resolve to one row each across all their
+genders (`ekaḥ`, `dvau`, `trayaḥ`), and `kutaḥ` and `kutra` — one letter apart, different questions
+— are **two distinct keys landing on two distinct rows**, which is the thing a learner's tap would
+have got wrong silently.
+
+---
+
+## 26. Sanskrit that was deliberately NOT written
+
+Continuing §8 and §17. The rule only means something if the avoided forms are named.
+
+1. **The dual VERB**, everywhere: no `staḥ`, `gacchataḥ`, `paṭhataḥ`. M8 rule 9 names it as deferred
+   and no display contains one; the dual answers stand as verbless fragments instead (§24.9).
+2. **The periphrastic future** (`gantā asmi`) and every lakāra beyond the two this course writes.
+   M6 rule 10 names them; the list did not grow past what M5 had already named.
+3. **Third-person futures other than `gamiṣyati` and `kariṣyati`.** `paṭhiṣyati`, `lekhiṣyati`,
+   `khādiṣyati` and `pāsyati` are all certain forms, and all four are written nowhere — §22.1 is the
+   record of the one that tried to get in and was caught.
+4. **`catvāraḥ` / `catasraḥ` / `catvāri` ("four")**, and every numeral above ten. Four is named in
+   M8 rule 1 as the last of the agreeing numerals and written in no display (§22.2.3).
+5. **`ṣaṭ`, `sapta`, `aṣṭa`, `nava`** — the invariable numerals between five and ten. `pañca` and
+   `daśa` carry the rule; four more surfaces would have carried nothing extra.
+6. **The dual of `puṣpam` (`puṣpe`)** and of `rūpyakam` (`rūpyake`). M8 opened the dual on two nouns
+   and M9 and M10 count flowers only in the plural, so the pattern is taught without being padded.
+7. **`āpaṇaḥ` ("shop")**, which M8's shopping frame obviously wants. It was drafted and cut: the
+   module was already carrying eighteen new surfaces and the frame works without naming the place.
+8. **`vidyālayasya` and every genitive not actually printed.** M7 writes `gṛhasya`, `pustakasya`,
+   `phalasya`, `mama`, `bhavataḥ` and `rāmasya` and stops. A genitive declared but not shown would
+   be a surface with no sentence behind it.
+9. **`kṛpayā` ("please")**, for the third wave running — §8.9 and §16.3, unchanged. M8's requests are
+   `dadātu` and nothing else.
+10. **`asmi`** and every first-person copula. M9's verbless sentences (`aham khinnaḥ`) are the same
+    shape M1 established, and `asti` appears in them only on M9-S01's mistake plate.
+11. **`kadā` ("when")**, which M6 and M10 both wanted. `kutra`, `kim`, `kati`, `kiyat`, `kimartham`
+    and `kutaḥ` are six question words already; a seventh with no sentence of its own was cut, and
+    an M10 variation that had reached for it was rewritten (`kutaḥ` in its place).
+12. **`eva`, `khalu`, `nanu`** and every emphatic particle. M10 writes `ca` and `api` and no other
+    postpositive, so that the two placements it teaches stay a clean pair.
+13. **`athavā` / `vā` ("or").** `vā` has been held free since M2 and stays free: M10 teaches joining,
+    not choosing, and a second postpositive conjunction would have blurred `ca`'s lesson.
+14. **The interrogative `api`.** M10 opens `api` in exactly one reading and writes the question
+    reading only on M10-S05's plate, where its `why` names it as the reading this course does not use.
+15. **`nāsti`, `necchāmi`, `rāmo`, `vidyālayo 'sti`, `ato 'ham`, `śvo 'pi`, `kintv adya`,
+    `tathāpy aham`** and every other external-sandhi surface. All eight are described in `sound`
+    lines and written in no display — §24.1.
+16. **`saṃskṛtapustakam` / `saṃskṛtam pustakam`**, §8.7's decision, still avoided in five more
+    modules.
+
+---
+
+## 27. Open questions for the fluent-speaker gate — continuing from 26
+
+Addressed, as before, to a fluent saṃskṛta-sambhāṣaṇam speaker or a Sanskrit teacher. Until one has
+answered them these five modules carry an LLM signature and nothing stronger, and **no later
+authoring wave may close one of them by rewriting a shipped module.**
+
+27. **`śvaḥ gacchāmi` against `śvaḥ gamiṣyāmi`.** M6 teaches both and says they are interchangeable.
+    Confirm that a speaker really does use the plain present with `śvaḥ`, and say whether one of the
+    two is markedly commoner in a spoken class — if so, M6's rule 3 is overstating the choice.
+28. **The accusative of destination with no preposition.** `vidyālayam gacchāmi`, `gṛham gamiṣyāmi`.
+    Confirm that nothing (`prati`, a locative, anything) normally accompanies the destination in
+    speech, since M6 rule 4 is absolute about it.
+29. **`gṛham` as the everyday "home".** Confirm against `gṛhān` and against simply naming the place,
+    and say whether `gṛham gacchāmi` is what somebody actually says on leaving.
+30. **The locative alone for at, in and on.** `gṛhe`, `vidyālaye`, `pustakālaye`. Confirm that
+    spoken usage does not prefer a postposition (`vidyālayasya samīpe`) for some of these, and in
+    particular whether "at school" is really `vidyālaye` rather than something longer.
+31. **The five position words as the right five.** `upari`, `adhaḥ`, `samīpe`, `purataḥ`,
+    `pṛṣṭhataḥ`. Confirm each governs a genitive in ordinary speech (rather than an ablative or a
+    locative for some of them), and say which of the five a speaker actually reaches for.
+32. **`pustakālayaḥ` as the everyday "library"** and its locative `pustakālaye`. Confirm against
+    `granthālayaḥ`, which is the word several sources give first.
+33. **The dual in spoken Sanskrit.** `dve phale`, `dvau chātrau`. Confirm the dual is genuinely
+    alive in sambhāṣaṇam rather than a written-language survival — if speakers use the plural for
+    two, M8's whole headline is teaching a book form as an everyday one.
+34. **What a speaker says for "two students are here."** §24.9 declares the hole: the dual verb is
+    not in this course, so M8 leaves the answer verbless. Naming the real spoken form would let a
+    later level fill it deliberately rather than by improvisation.
+35. **`kiyat mūlyam?` as the everyday price question**, and `pustakasya mūlyam kiyat?` with `kiyat`
+    final. Confirm both orders are ordinary — M8 shows them as a free pair and would be teaching a
+    false freedom if one of them is marked.
+36. **`rūpyakam` / `rūpyakāṇi` for rupees.** Confirm against `rūpyakāṇi` versus a bare number, and
+    say whether a speaker names the currency at all when giving a price.
+37. **`kati` against `kiyat`.** M8 rule 6 and S07 split them as how-many against how-much. Confirm
+    that split holds in speech, and that `kati` is not also used for an amount.
+38. **`sundaraḥ` / `sundarī` / `sundaram` as the everyday "beautiful"**, and whether an adjective is
+    really used predicatively with no copula as often as M9 claims (`puṣpam sundaram`).
+39. **`khinnaḥ` and `santuṣṭaḥ` as the everyday sad and content.** Confirm against `duḥkhitaḥ` and
+    `sukhī`, which are the pair several spoken courses use, and say whether `khinnaḥ` is bookish.
+40. **`kimartham` against `kutaḥ` for "why".** M9 teaches them as free alternatives. Confirm both are
+    ordinary, and say whether `kutaḥ` is heard primarily as "from where" in speech — if it is, M9-S07
+    is teaching a reading that competes with M7's `kutra` more than the rules admit.
+41. **`yataḥ` for "because" and `ataḥ` for "so".** Confirm both are what a speaker uses, against
+    `yasmāt`/`tasmāt` and against `yataḥ hi`; and confirm that `yataḥ` really does lead its clause in
+    speech, since M9-S04's plate rests entirely on that.
+42. **`rocante` with a plural liked thing.** Confirm the agreement is heard as M9 rule 8 states it,
+    and that `mahyam puṣpāṇi rocante` is not normally said with the singular anyway.
+43. **`ca` after a two-item list, and after a pair of verbs.** Confirm `pustakam phalam ca` is what a
+    speaker says rather than `pustakam ca phalam ca`, which several grammars give as the fuller form
+    — M10's whole first rule depends on the single-`ca` pattern being the ordinary spoken one.
+44. **`tathāpi` against `kintu`.** M10 rule 8 splits them as concession against opposition. Confirm
+    that split is real in speech and that `tathāpi` is not simply a more emphatic `kintu`.
+45. **`api` as "also", after its word.** Confirm the placement, and confirm that a sentence-initial
+    `api` is genuinely heard as the yes/no marker rather than as "also" — M10-S05's plate asserts it.
+46. **Pro-drop across a turn.** M10 rule 4 says `aham` belongs in the first sentence at most and
+    usually nowhere, and M10-S09's plate calls a grammatical turn wrong on that basis alone. Confirm
+    this is how a speaker actually sounds, since it is the strongest naturalness claim this course
+    makes anywhere.
+47. **Naturalness of the 65 pool turns**, as questions 12 and 26 asked of the first 65. They are
+    grammatical by construction and recombined from the cumulative index; an LLM cannot hear which of
+    them nobody would say. `phalasya adhaḥ pustakam asti`, `gṛhasya pṛṣṭhataḥ pustakam asti` and
+    `bhavān kuśalī? aham api kuśalī.` are the three most worth a second opinion.
+
+---
+
+## 28. Verification run for this change
+
+```
+npm run content:validate                              → CONTENT 460/460 ok
+                                                        (en-sa/L1-M6…L1-M10.json all ok)
+npm run content:build -- --with-unverified --with-fixtures
+                                                      → en-sa: 10 modules (L1-M1..M10)
+                                                          index L1-M6:  89 surfaces
+                                                          index L1-M7: 101 surfaces
+                                                          index L1-M8: 119 surfaces
+                                                          index L1-M9: 135 surfaces
+                                                          index L1-M10: 139 surfaces
+                                                        NO `shown but untaught` line for en-sa —
+                                                        still zero, and the only course in the
+                                                        catalogue without one
+npx tsc --noEmit                                      → clean
+npx prettier --check .                                → All matched files use Prettier code style!
+npx eslint src/course/types.test.ts tools/content-build.test.ts tools/course-briefs.ts
+                                                      → clean
+npx vitest run tools/course-briefs.test.ts            → 126 passed
+npx vitest run src/course/types.test.ts tools/content-build.test.ts \
+               tools/shown-surfaces.test.ts tools/delta-index.test.ts
+                                                      → 4 files, 517 tests passed
+npx vitest run                                        → 831 passed, 1 failed
+                                                        (scripts/generate-splash.test.ts — pre-existing
+                                                        on this host, byte-compares regenerated splash
+                                                        PNGs against a different rasterizer)
+```
+
+`scripts/verify.sh` was again deliberately NOT run: it stops at the first failing stage and would
+never reach CONTENT while `scripts/generate-splash.test.ts` is red on this host (it regenerates
+splash PNGs from font rasterization and byte-compares them against a different rasterizer), so the
+stages were run individually. That failure is pre-existing and is the same one §10 and §19 recorded.
+
+### Pinned inventories updated by this change
+
+- `src/course/types.test.ts` — `MODULE_FILES` gains `content/en-sa/modules/L1-M6.json` … `L1-M10.json`
+  (with `L1-M10.json` in STRING order, directly after `L1-M1.json`); the case title's count moves
+  455 → 460 and its wording from "first five rungs (#609)" to "whole first level (#610)".
+- `tools/content-build.test.ts` — `AUTHORED` becomes the ten rungs; the ladder case, the
+  modules-folder case and the dev-build line (`en-sa: 10 modules (L1-M1..M10)`) move with it. The
+  modules-folder assertion now sorts BOTH sides, because `AUTHORED` is in ladder order and
+  `readdirSync` is in string order, where `L1-M10.json` sorts next to `L1-M1.json`. The ladder case's
+  comment now states explicitly that **L1's own level `draft` stays on even with ten rungs
+  authored**, because it clears at graduation (#611).
+- `tools/shown-surfaces.test.ts` — **untouched.** `'en-sa': 0` still holds.
+- `tools/course-briefs.ts` — **four seam notes corrected** (§23.1), which is the first use of #478's
+  precedent on this course. `tools/course-briefs.test.ts` is untouched and passes.
+
+`git diff --stat content/en-sa/modules/L1-M1.json … L1-M5.json` is **empty**, and so is
+`git diff --stat` over the other nine courses.

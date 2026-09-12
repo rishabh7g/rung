@@ -1,0 +1,806 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M9",
+  "title": "Feelings & opinions",
+  "job": "Why — because and so",
+  "prerequisites": ["L1-M8"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": ["simple_present", "simple_future"],
+    "allowedPatterns": [
+      "N + Adj",
+      "aham + Adj",
+      "Adj + N + <place>-loc + asti",
+      "kimartham / kutaḥ + <question>",
+      "<clause> + , + yataḥ + <clause>",
+      "<clause> + , + ataḥ + <clause>",
+      "mahyam + N + rocate / rocante"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "An adjective agrees in gender, number and case, and its ending is COPIED from the noun rather than chosen off a list. sundaraḥ chātraḥ, sundarī bālā, sundaram puṣpam — one word, three endings, and every one of them is the noun's own."
+    },
+    {
+      "tag": "interference",
+      "text": "THE COPULA IS STILL ABSENT, and this is where you will finally reach for one. puṣpam sundaram is a whole sentence: 'the flower is beautiful'. Put asti into it and you have said 'a beautiful flower exists' instead — a different claim entirely."
+    },
+    {
+      "tag": "delta",
+      "text": "Feeling words are gendered on the SPEAKER, for the third time in this level and the last. aham khinnaḥ from a man, aham khinnā from a woman. By now it should feel like a habit rather than a surprise, which is exactly why it is the last time."
+    },
+    {
+      "tag": "delta",
+      "text": "An adjective IN FRONT of its noun describes; BEHIND it, the adjective asserts. sundaram puṣpam is 'a beautiful flower' and puṣpam sundaram is 'the flower is beautiful'. Word order alone does the work English spends a verb on."
+    },
+    {
+      "tag": "delta",
+      "text": "kimartham and kutaḥ both ask why — kimartham is 'for what purpose' and kutaḥ is 'from what'. Either opens the question, and M2's word order holds for the fifth time: the question word goes in front and nothing else moves."
+    },
+    {
+      "tag": "delta",
+      "text": "yataḥ gives the reason and ataḥ gives the consequence, and BOTH stand at the front of their own clause. aham khinnaḥ, yataḥ pustakam na asti. phalam na asti, ataḥ aham khinnaḥ. Two clauses, one joining word, and it always leads."
+    },
+    {
+      "tag": "free",
+      "text": "Negating a verbless sentence is still just na, standing in front of what it denies: aham na khinnaḥ. There is no helper to attach it to, and none is missing — this is M3's rule with an adjective where the verb used to be."
+    },
+    {
+      "tag": "delta",
+      "text": "rocate agrees with the thing LIKED, not with the person liking it. One flower is rocate, several are rocante, and the liker stays in the dative mahyam however many things there are. English makes 'I like' agree with the I."
+    },
+    {
+      "tag": "free",
+      "text": "kimartham is ONE word, not kim plus something. It has its own entry and asks its own question, so M2's kim keeps both of its readings — the yes/no marker and 'what' — entirely untouched."
+    },
+    {
+      "tag": "free",
+      "text": "Nine modules on, the verbless sentence is still the ordinary way to say what something is like. A noun, a describing word, and a full stop: that is M1's first shape, and this module has only put better words into it."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M9-S01",
+      "display": "puṣpam sundaram.",
+      "script": "पुष्पम् सुन्दरम्।",
+      "cue": "The flower is beautiful.",
+      "literal": "flower beautiful",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "puṣpam",
+            "cue": "flower",
+            "tag": "delta",
+            "forms": ["puṣpam", "puṣpāṇi"],
+            "note": "'Flower', a neuter noun like phalam. puṣpāṇi is more than one of them, which M8's counting already showed you how to read."
+          },
+          {
+            "display": "sundaraḥ",
+            "cue": "beautiful",
+            "tag": "delta",
+            "forms": ["sundaraḥ", "sundarī", "sundaram", "sundarāṇi"],
+            "note": "'Beautiful', and it copies its noun: sundaraḥ with a masculine, sundarī with a feminine, sundaram with a neuter, sundarāṇi with a neuter plural."
+          },
+          {
+            "display": "bālā",
+            "cue": "girl",
+            "tag": "delta",
+            "forms": ["bālā"],
+            "note": "'Girl', a feminine noun ending in -ā like sītā and chātrā. It is here as the carrier of sundarī, the adjective's feminine shape."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Two words and no verb, and nothing is missing. This is M1's first shape — aham chātraḥ — with a describing word in the second slot instead of a naming one, and it is still a complete sentence.",
+      "sound": "PUSH-pam SUN-da-ram. The ṣ of puṣpam is retroflex, tongue curled back, and it is not the ś of ship. The m of puṣpam becomes a nasal hum in front of the s that follows it.",
+      "variations": [
+        {
+          "display": "vidyālayaḥ sundaraḥ.",
+          "script": "विद्यालयः सुन्दरः।",
+          "cue": "The school is beautiful.",
+          "changed": "a masculine noun, and the adjective takes its ending straight off the end of it"
+        },
+        {
+          "display": "bālā sundarī.",
+          "script": "बाला सुन्दरी।",
+          "cue": "The girl is beautiful.",
+          "changed": "a feminine noun, and the third of the adjective's three endings — one word wearing whatever is in front of it"
+        },
+        {
+          "display": "sundaram puṣpam atra asti.",
+          "script": "सुन्दरम् पुष्पम् अत्र अस्ति।",
+          "cue": "There is a beautiful flower here.",
+          "changed": "the adjective moved IN FRONT of the noun, where it describes instead of asserting — and now the sentence does need a verb"
+        }
+      ],
+      "mistake": {
+        "display": "puṣpam sundaram asti.",
+        "why": "asti is existence, not a linking verb. With it in the line this says 'a beautiful flower exists', which is a different claim. You have met asti in M3 and M7 and it is exactly that familiarity that makes the reach for it feel right."
+      },
+      "usage": "Saying what you think of something — the plainest opinion this language can hold.",
+      "register": "neutral",
+      "mnemonic": "Noun, describing word, full stop."
+    },
+    {
+      "id": "L1-M9-S02",
+      "display": "aham khinnaḥ.",
+      "script": "अहम् खिन्नः।",
+      "cue": "I am sad. (a man speaking)",
+      "literal": "I sad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'I', compulsory here for the same reason as in M5: there is no ending anywhere in the line to carry the person."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "sad · downcast",
+            "tag": "delta",
+            "forms": ["khinnaḥ", "khinnā"],
+            "note": "'Sad', and it agrees with whoever is saying it: khinnaḥ from a man, khinnā from a woman. The feeling is an adjective, so it bends like one."
+          }
+        ],
+        "rules": [2, 1]
+      },
+      "trap": "Your mood has a gender on it. English says 'I am sad' whoever is speaking; here the word changes with the speaker, which is the same standing rule M1 and M5 already spent — and the last time this level will spend it.",
+      "sound": "A-ham KHIN-nah. The m of aham becomes a nasal hum in front of the kh. The kh is an aspirated k, a k with a puff of breath, and never the ch of loch.",
+      "variations": [
+        {
+          "display": "aham khinnā.",
+          "script": "अहम् खिन्ना।",
+          "cue": "I am sad. (a woman speaking)",
+          "changed": "a woman speaking, so the one word that can bend does — and everything in front of it is the same sentence"
+        },
+        {
+          "display": "aham na khinnaḥ.",
+          "script": "अहम् न खिन्नः।",
+          "cue": "I am not sad. (a man speaking)",
+          "changed": "negated, with na in front of the adjective and no helper anywhere for it to lean on"
+        },
+        {
+          "display": "bhavān khinnaḥ?",
+          "script": "भवान् खिन्नः?",
+          "cue": "Are you sad?",
+          "changed": "turned into a question by nothing whatever but the voice — M2's rule 8, and this course does not spell intonation"
+        }
+      ],
+      "mistake": {
+        "display": "aham khinnam.",
+        "why": "khinnam is the neuter, and a person is not a thing. The adjective copies the gender of whoever it describes, so a man says khinnaḥ and a woman khinnā — and the neuter is for the fruit, the book and the flower."
+      },
+      "usage": "Answering 'how are you' honestly, which M2 only let you do with kuśalī.",
+      "register": "neutral",
+      "mnemonic": "The mood bends with the mouth it comes out of."
+    },
+    {
+      "id": "L1-M9-S03",
+      "display": "kimartham bhavān khinnaḥ?",
+      "script": "किमर्थम् भवान् खिन्नः?",
+      "cue": "Why are you sad?",
+      "literal": "for-what your-honour sad?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kimartham",
+            "cue": "why · for what reason",
+            "tag": "delta",
+            "forms": ["kimartham"],
+            "note": "'Why', literally 'for what purpose'. It is ONE word and not kim plus something, so M2's kim keeps both of its own readings untouched."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "'You' to a man. There is no verb in this question at all, so nothing has to be reminded that bhavān is a third person."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "sad · downcast",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sad', agreeing with bhavān. Ask a woman and it is khinnā — the question word is the only part of the line that never bends."
+          }
+        ],
+        "rules": [4, 8]
+      },
+      "trap": "Three words, no verb, and no inversion. English cannot ask this without 'are' and cannot ask it without moving that 'are' in front of you; here the question word simply stands at the front and the statement behind it is untouched.",
+      "sound": "ki-MAR-tham bha-VAAN KHIN-nah. The m at the end of kimartham becomes a nasal hum in front of the bh. The n of bhavān sits still in front of the kh and nothing joins across it.",
+      "variations": [
+        {
+          "display": "kimartham bhavatī khinnā?",
+          "script": "किमर्थम् भवती खिन्ना?",
+          "cue": "Why are you sad? (to a woman)",
+          "changed": "the address and the adjective bend together, and the question word in front of them does not"
+        },
+        {
+          "display": "kimartham sā khinnā?",
+          "script": "किमर्थम् सा खिन्ना?",
+          "cue": "Why is she sad?",
+          "changed": "M5's 'she' in the subject slot, and not one other thing in the line moves"
+        },
+        {
+          "display": "kutaḥ bhavān khinnaḥ?",
+          "script": "कुतः भवान् खिन्नः?",
+          "cue": "Why are you sad?",
+          "changed": "the other why-word, which asks the same thing from the other end — 'from what' rather than 'for what'"
+        }
+      ],
+      "usage": "The question that asks for a reason, and the one S04 answers.",
+      "register": "neutral",
+      "mnemonic": "Why goes first. Nothing else moves."
+    },
+    {
+      "id": "L1-M9-S04",
+      "display": "aham khinnaḥ, yataḥ pustakam na asti.",
+      "script": "अहम् खिन्नः, यतः पुस्तकम् न अस्ति।",
+      "cue": "I am sad, because there is no book.",
+      "literal": "I sad, because book not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'I', carrying the person in a clause that has no verb in it at all."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "sad · downcast",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sad', from a man. The reason clause behind it has no effect on the adjective's ending whatsoever."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because · since",
+            "tag": "delta",
+            "forms": ["yataḥ"],
+            "note": "'Because', and it stands at the FRONT of the clause it introduces, exactly where English puts it. The comma is a real pause."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's noun, the thing whose absence is the reason. It is the subject of the second clause and wears the naming shape."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "'Not', in front of what it denies. Denying an existence is the same move as denying anything else."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'there is'. The second clause is a complete sentence of its own; yataḥ only says how to read it against the first."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "The one joining word you can move in this module is the one you will want to move least. yataḥ leads its clause like English 'because' — it is M7's position words that come last, and they are not conjunctions.",
+      "sound": "A-ham KHIN-nah, ya-TAH PUS-ta-kam NAA-sti. The comma is a real pause. The visarga of yataḥ stays as it is in front of the p, and the last two words run together as nāsti — na and asti sharing one long aa.",
+      "variations": [
+        {
+          "display": "aham khinnā, yataḥ pustakam na asti.",
+          "script": "अहम् खिन्ना, यतः पुस्तकम् न अस्ति।",
+          "cue": "I am sad, because there is no book. (a woman speaking)",
+          "changed": "a woman speaking, so only the first adjective bends and the whole reason behind it is untouched"
+        },
+        {
+          "display": "aham santuṣṭaḥ, yataḥ pustakam asti.",
+          "script": "अहम् सन्तुष्टः, यतः पुस्तकम् अस्ति।",
+          "cue": "I am content, because there is a book.",
+          "changed": "the opposite feeling with the opposite reason, and the frame holding them together is identical"
+        },
+        {
+          "display": "sā khinnā, yataḥ phalam na asti.",
+          "script": "सा खिन्ना, यतः फलम् न अस्ति।",
+          "cue": "She is sad, because there is no fruit.",
+          "changed": "a third person feeling it, and the reason clause does not care in the least who that is"
+        }
+      ],
+      "mistake": {
+        "display": "aham khinnaḥ, pustakam na asti yataḥ.",
+        "why": "yataḥ opens its clause; it does not close it. A learner who has just met M7's postpositions moves every small word to the back on principle — but upari and samīpe govern a noun, and yataḥ joins two clauses, which is a different job with the opposite habit."
+      },
+      "usage": "Giving a reason without being asked for one.",
+      "register": "neutral",
+      "mnemonic": "yataḥ leads. Position words follow."
+    },
+    {
+      "id": "L1-M9-S05",
+      "display": "adya aham santuṣṭaḥ.",
+      "script": "अद्य अहम् सन्तुष्टः।",
+      "cue": "Today I am content.",
+      "literal": "today I content",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's time word, which takes no ending and stands at either end of the line. A sentence with no verb in it can still be dated."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'I'. Two words in and there is still nothing in the line that could have carried the person by itself."
+          },
+          {
+            "display": "santuṣṭaḥ",
+            "cue": "content · pleased",
+            "tag": "delta",
+            "forms": ["santuṣṭaḥ", "santuṣṭā"],
+            "note": "'Content', khinnaḥ's opposite and built the same way: santuṣṭaḥ from a man, santuṣṭā from a woman. The ṣṭ is retroflex throughout."
+          }
+        ],
+        "rules": [2, 9]
+      },
+      "trap": "A time word in front of a verbless sentence is perfectly ordinary. English needs 'I am content today' and cannot drop the 'am'; the Sanskrit line has no slot for it to be dropped from.",
+      "sound": "a-DYAA-ham san-TUSH-tah. The a of adya and the a of aham merge into one long aa — adyāham — and the m of aham then hums in front of the s. The ṣṭ of santuṣṭaḥ is retroflex, tongue curled well back.",
+      "variations": [
+        {
+          "display": "adya aham santuṣṭā.",
+          "script": "अद्य अहम् सन्तुष्टा।",
+          "cue": "Today I am content. (a woman speaking)",
+          "changed": "a woman speaking, and the last word is once again the only one that moves"
+        },
+        {
+          "display": "adya bhavān santuṣṭaḥ?",
+          "script": "अद्य भवान् सन्तुष्टः?",
+          "cue": "Are you content today?",
+          "changed": "a question to your honour, with no verb to invert and nothing at all to add"
+        },
+        {
+          "display": "adya aham na santuṣṭaḥ.",
+          "script": "अद्य अहम् न सन्तुष्टः।",
+          "cue": "Today I am not content.",
+          "changed": "negated, and na goes in front of the adjective just as it went in front of every verb"
+        }
+      ],
+      "usage": "The honest answer to M2's wellbeing question, nine modules later.",
+      "register": "neutral",
+      "mnemonic": "khinnaḥ down, santuṣṭaḥ up. Both bend."
+    },
+    {
+      "id": "L1-M9-S06",
+      "display": "mahyam puṣpāṇi rocante.",
+      "script": "मह्यम् पुष्पाणि रोचन्ते।",
+      "cue": "I like flowers.",
+      "literal": "to-me flowers are-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "mahyam, 'to me' — M1's dative shape of aham. The liker has stood in this case since the very first module and it does not move now."
+          },
+          {
+            "display": "puṣpam",
+            "cue": "flower",
+            "tag": "delta",
+            "forms": [],
+            "note": "puṣpāṇi, more than one flower. The thing liked is the SUBJECT of this frame, which is why its number is about to matter."
+          },
+          {
+            "display": "rocante",
+            "cue": "are pleasing (more than one)",
+            "tag": "delta",
+            "forms": ["rocante"],
+            "note": "The plural of M1's rocate. The verb agrees with the thing LIKED: one flower is rocate, several are rocante, and mahyam never changes."
+          }
+        ],
+        "rules": [7, 9]
+      },
+      "trap": "English makes 'I like' agree with the I and gives you no warning at all. Here the verb agrees with the flowers, and the person doing the liking sits in a case that cannot agree with anything.",
+      "sound": "MAH-yam push-PAA-ni ro-CHAN-te. The m of mahyam hums in front of the p. The ṇ of puṣpāṇi is retroflex while the n of rocante is dental — a difference the page shows and the ear must learn.",
+      "variations": [
+        {
+          "display": "mahyam puṣpam rocate.",
+          "script": "मह्यम् पुष्पम् रोचते।",
+          "cue": "I like the flower.",
+          "changed": "one flower instead of several, and the verb drops back to the singular with it"
+        },
+        {
+          "display": "rāmāya puṣpāṇi rocante.",
+          "script": "रामाय पुष्पाणि रोचन्ते।",
+          "cue": "Rāma likes flowers.",
+          "changed": "M1's dative on a name instead of mahyam — the liker's slot, whoever happens to fill it"
+        },
+        {
+          "display": "mahyam puṣpāṇi na rocante.",
+          "script": "मह्यम् पुष्पाणि न रोचन्ते।",
+          "cue": "I don't like flowers.",
+          "changed": "negated, with na in the slot immediately in front of the verb"
+        }
+      ],
+      "mistake": {
+        "display": "mahyam puṣpāṇi rocate.",
+        "why": "rocate is singular and puṣpāṇi is plural. The verb agrees with what is liked, so several flowers take rocante. English lets you say 'I like' for one thing and for a thousand, and that is precisely why the agreement goes unnoticed here."
+      },
+      "usage": "Saying what you like, now that M8 has given you more than one of anything.",
+      "register": "neutral",
+      "mnemonic": "The liked thing drives the verb."
+    },
+    {
+      "id": "L1-M9-S07",
+      "display": "kutaḥ bhavatī santuṣṭā?",
+      "script": "कुतः भवती सन्तुष्टा?",
+      "cue": "Why are you content? (to a woman)",
+      "literal": "from-what your-honour content?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kutaḥ",
+            "cue": "why · from what",
+            "tag": "delta",
+            "forms": ["kutaḥ"],
+            "note": "'Why', from the other end: 'out of what'. It is not M2's kutra — that asks where, and one letter apart they are two separate words."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "bhavatī, 'you' to a woman. With no verb in the line the address is the only thing that says who is being asked."
+          },
+          {
+            "display": "santuṣṭaḥ",
+            "cue": "content · pleased",
+            "tag": "delta",
+            "forms": [],
+            "note": "santuṣṭā, agreeing with bhavatī. A question does not suspend agreement — the adjective copies the person asked, not the person asking."
+          }
+        ],
+        "rules": [4, 0]
+      },
+      "trap": "kutaḥ and kutra are one letter apart and ask completely different questions — why and where. Learn them as a pair now, because there is no context in which a wrong guess between them is harmless.",
+      "sound": "ku-TO bha-va-TEE san-TUSH-taa. The visarga of kutaḥ turns into an o in front of the voiced bh — kuto bhavatī — and the page, as ever, keeps the two words as they are.",
+      "variations": [
+        {
+          "display": "kutaḥ bhavān santuṣṭaḥ?",
+          "script": "कुतः भवान् सन्तुष्टः?",
+          "cue": "Why are you content? (to a man)",
+          "changed": "a man asked, so both the address and the adjective bend and the question word does not"
+        },
+        {
+          "display": "kimartham bhavatī santuṣṭā?",
+          "script": "किमर्थम् भवती सन्तुष्टा?",
+          "cue": "Why are you content? (to a woman)",
+          "changed": "the other why-word in the same slot, asking the same thing from the purpose end instead of the source end"
+        },
+        {
+          "display": "bhavatī santuṣṭā?",
+          "script": "भवती सन्तुष्टा?",
+          "cue": "Are you content? (to a woman)",
+          "changed": "the question word dropped entirely, which turns a why into a yes-or-no and changes nothing else"
+        }
+      ],
+      "mistake": {
+        "display": "kutaḥ bhavatī santuṣṭaḥ?",
+        "why": "santuṣṭaḥ is the masculine and bhavatī is a woman. The adjective copies whoever it describes, so it must be santuṣṭā. The verb never agreed with gender in this course and the adjective always does — that is the swap to hold on to."
+      },
+      "usage": "Asking after good news rather than bad.",
+      "register": "neutral",
+      "mnemonic": "kutra where. kutaḥ why."
+    },
+    {
+      "id": "L1-M9-S08",
+      "display": "phalam na asti, ataḥ aham khinnaḥ.",
+      "script": "फलम् न अस्ति, अतः अहम् खिन्नः।",
+      "cue": "There is no fruit, so I am sad.",
+      "literal": "fruit not is, so I sad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's noun, the subject of the first clause and the cause of everything in the second."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "'Not', in front of what it denies. The denial comes first and the consequence follows it, which is the order English uses too."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'there is'. The first clause stands alone as a sentence; ataḥ only tells you how to read the second against it."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "delta",
+            "forms": ["ataḥ"],
+            "note": "'So', at the FRONT of the consequence. yataḥ gives you the reason after the fact; ataḥ gives you the result after the cause."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'I', because the second clause has no verb either and nothing else in it can say who."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "sad · downcast",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sad', from a man. A woman ends the same six-word sentence with khinnā and changes nothing else in it."
+          }
+        ],
+        "rules": [5, 6]
+      },
+      "trap": "This is S04's pair of facts in the opposite order. English swaps 'because' for 'so' to do it and Sanskrit swaps yataḥ for ataḥ — the one place in this module where the two languages behave identically.",
+      "sound": "PHA-lam NAA-sti, a-TO 'ham KHIN-nah. na and asti run together as nāsti. Then the visarga of ataḥ becomes an o and swallows the a of aham — ato 'ham — which is the join this course never writes into a line.",
+      "variations": [
+        {
+          "display": "phalam asti, ataḥ aham santuṣṭaḥ.",
+          "script": "फलम् अस्ति, अतः अहम् सन्तुष्टः।",
+          "cue": "There is fruit, so I am content.",
+          "changed": "the cause positive and the consequence with it — ataḥ does not care which way the argument runs"
+        },
+        {
+          "display": "aham khinnaḥ, yataḥ phalam na asti.",
+          "script": "अहम् खिन्नः, यतः फलम् न अस्ति।",
+          "cue": "I am sad, because there is no fruit.",
+          "changed": "the same two facts in the opposite order, with yataḥ instead of ataḥ — consequence first and reason after"
+        },
+        {
+          "display": "phalam na asti, ataḥ aham khinnā.",
+          "script": "फलम् न अस्ति, अतः अहम् खिन्ना।",
+          "cue": "There is no fruit, so I am sad. (a woman speaking)",
+          "changed": "a woman speaking, and the very last word of six is the only one that bends"
+        }
+      ],
+      "usage": "Explaining yourself in one breath, which is what M10 will build whole turns out of.",
+      "register": "neutral",
+      "mnemonic": "yataḥ because. ataḥ so. Both in front."
+    },
+    {
+      "id": "L1-M9-S09",
+      "display": "sundaram puṣpam mahyam rocate.",
+      "script": "सुन्दरम् पुष्पम् मह्यम् रोचते।",
+      "cue": "I like the beautiful flower.",
+      "literal": "beautiful flower to-me is-pleasing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sundaraḥ",
+            "cue": "beautiful",
+            "tag": "delta",
+            "forms": [],
+            "note": "sundaram, the neuter, in FRONT of its noun — so it describes rather than asserts. Behind the noun it would have made a sentence instead."
+          },
+          {
+            "display": "puṣpam",
+            "cue": "flower",
+            "tag": "free",
+            "forms": [],
+            "note": "'Flower', and the thing liked. An adjective in front of it does not change its own shape at all."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "mahyam, 'to me'. The liker's dative, standing between the thing liked and the verb exactly as it did in M1."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's verb, singular because one flower is being liked. Two flowers would make it rocante and leave mahyam alone."
+          }
+        ],
+        "rules": [3, 0]
+      },
+      "trap": "Two words in front of the dative, and neither of them is doing anything English would recognise: the adjective is inside the subject and the subject is the flower, not you. Read the literal line twice.",
+      "sound": "SUN-da-ram PUSH-pam MAH-yam ro-CHA-te. Three words end in an m and all three become a nasal hum before the consonant that follows. The line is almost entirely hummed, which is what makes it easy to say fast.",
+      "variations": [
+        {
+          "display": "sundarāṇi puṣpāṇi mahyam rocante.",
+          "script": "सुन्दराणि पुष्पाणि मह्यम् रोचन्ते।",
+          "cue": "I like the beautiful flowers.",
+          "changed": "several flowers, and BOTH the adjective and the verb move into the plural with the noun — agreement in number, not only gender"
+        },
+        {
+          "display": "sundaram puṣpam icchāmi.",
+          "script": "सुन्दरम् पुष्पम् इच्छामि।",
+          "cue": "I want a beautiful flower.",
+          "changed": "M3's wish frame instead of the liking one, and the describing pair in front of it is unchanged"
+        },
+        {
+          "display": "mahyam sundaram puṣpam rocate.",
+          "script": "मह्यम् सुन्दरम् पुष्पम् रोचते।",
+          "cue": "I like the beautiful flower.",
+          "changed": "the dative moved to the front, which is where M1 put it — both orders are ordinary and neither is emphatic"
+        }
+      ],
+      "mistake": {
+        "display": "sundaraḥ puṣpam mahyam rocate.",
+        "why": "sundaraḥ is masculine and puṣpam is neuter. An adjective in front of its noun agrees exactly as hard as one behind it — being a description rather than an assertion excuses nothing about the ending."
+      },
+      "usage": "Saying which of several things you want, with the adjective doing the picking.",
+      "register": "neutral",
+      "mnemonic": "In front describes. Behind asserts. Both agree."
+    },
+    {
+      "id": "L1-M9-S10",
+      "display": "kimartham bhavatī vidyālayam gamiṣyati?",
+      "script": "किमर्थम् भवती विद्यालयम् गमिष्यति?",
+      "cue": "Why will you go to school? (to a woman)",
+      "literal": "for-what your-honour school-to will-go?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kimartham",
+            "cue": "why · for what reason",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Why', at the front as always. Here it is asking about a plan rather than a feeling, and nothing about the word changes for that."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "bhavatī, 'you' to a woman — and the verb behind it is third person, which has been true since M2 and is true in the future too."
+          },
+          {
+            "display": "vidyālayaḥ",
+            "cue": "school",
+            "tag": "free",
+            "forms": [],
+            "note": "vidyālayam, the destination shape from M6. A question about the reason does not touch the ending on the place."
+          },
+          {
+            "display": "gamiṣyati",
+            "cue": "will go (he · she · your honour)",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's future in its third-person shape. Four words, four different jobs, and the only thing the question word did was arrive first."
+          }
+        ],
+        "rules": [4, 8]
+      },
+      "trap": "A why-question about the future needs nothing added to the future. English inserts 'will you' and inverts; here kimartham lands at the front of a sentence M6 already taught you, and the sentence does not move for it.",
+      "sound": "ki-MAR-tham bha-va-TEE vid-YAA-la-yam ga-mi-SHYA-ti. The m of kimartham hums in front of the bh, and the m of vidyālayam hums in front of the g. Nothing else in the line joins at all.",
+      "variations": [
+        {
+          "display": "kimartham bhavān vidyālayam gamiṣyati?",
+          "script": "किमर्थम् भवान् विद्यालयम् गमिष्यति?",
+          "cue": "Why will you go to school? (to a man)",
+          "changed": "a man asked, and the verb does not bend for it — only the address does"
+        },
+        {
+          "display": "kutaḥ bhavatī vidyālayam gamiṣyati?",
+          "script": "कुतः भवती विद्यालयम् गमिष्यति?",
+          "cue": "Why will you go to school? (to a woman)",
+          "changed": "the other why-word, and the future behind it does not notice the substitution"
+        },
+        {
+          "display": "bhavatī kimartham vidyālayam gamiṣyati?",
+          "script": "भवती किमर्थम् विद्यालयम् गमिष्यति?",
+          "cue": "Why will you go to school? (to a woman)",
+          "changed": "the question word after the address instead of in front of it — both are ordinary, and the verb is undisturbed either way"
+        }
+      ],
+      "usage": "Asking after somebody's plans and their reasons at once — the last new question of the level.",
+      "register": "neutral",
+      "mnemonic": "Why in front. The sentence behind it is M6's."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M9-C01",
+      "display": "bālā santuṣṭā.",
+      "script": "बाला सन्तुष्टा।",
+      "cue": "The girl is content."
+    },
+    {
+      "id": "L1-M9-C02",
+      "display": "sītāyai puṣpāṇi rocante.",
+      "script": "सीतायै पुष्पाणि रोचन्ते।",
+      "cue": "Sītā likes flowers."
+    },
+    {
+      "id": "L1-M9-C03",
+      "display": "kutaḥ saḥ khinnaḥ?",
+      "script": "कुतः सः खिन्नः?",
+      "cue": "Why is he sad?"
+    },
+    {
+      "id": "L1-M9-C04",
+      "display": "rāmaḥ santuṣṭaḥ, yataḥ phalam asti.",
+      "script": "रामः सन्तुष्टः, यतः फलम् अस्ति।",
+      "cue": "Rāma is content, because there is fruit."
+    },
+    {
+      "id": "L1-M9-C05",
+      "display": "sundaram puṣpam gṛhe asti.",
+      "script": "सुन्दरम् पुष्पम् गृहे अस्ति।",
+      "cue": "There is a beautiful flower at home."
+    },
+    {
+      "id": "L1-M9-C06",
+      "display": "pustakam sundaram.",
+      "script": "पुस्तकम् सुन्दरम्।",
+      "cue": "The book is beautiful."
+    },
+    {
+      "id": "L1-M9-C07",
+      "display": "bālā vidyālaye asti.",
+      "script": "बाला विद्यालये अस्ति।",
+      "cue": "The girl is at school."
+    },
+    {
+      "id": "L1-M9-C08",
+      "display": "kimartham bhavatī gṛham gamiṣyati?",
+      "script": "किमर्थम् भवती गृहम् गमिष्यति?",
+      "cue": "Why will you go home? (to a woman)"
+    },
+    {
+      "id": "L1-M9-C09",
+      "display": "mahyam saṅgītam rocate, ataḥ aham santuṣṭaḥ.",
+      "script": "मह्यम् सङ्गीतम् रोचते, अतः अहम् सन्तुष्टः।",
+      "cue": "I like music, so I am content."
+    },
+    {
+      "id": "L1-M9-C10",
+      "display": "sundaraḥ vidyālayaḥ atra asti.",
+      "script": "सुन्दरः विद्यालयः अत्र अस्ति।",
+      "cue": "There is a beautiful school here."
+    },
+    {
+      "id": "L1-M9-C11",
+      "display": "sā khinnā, yataḥ jalam na asti.",
+      "script": "सा खिन्ना, यतः जलम् न अस्ति।",
+      "cue": "She is sad, because there is no water."
+    },
+    {
+      "id": "L1-M9-C12",
+      "display": "mahyam phalāni rocante.",
+      "script": "मह्यम् फलानि रोचन्ते।",
+      "cue": "I like fruits."
+    },
+    {
+      "id": "L1-M9-C13",
+      "display": "kutaḥ bālā khinnā?",
+      "script": "कुतः बाला खिन्ना?",
+      "cue": "Why is the girl sad?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,1000 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M10",
+  "title": "Connected talk",
+  "job": "Short 2–3 sentence exchanges",
+  "prerequisites": ["L1-M9"],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 1,
+    "maxWordsPerSentence": 5,
+    "allowedTenses": ["simple_present", "simple_future"],
+    "allowedPatterns": [
+      "<sentence> + . + <sentence>",
+      "<sentence> + . + <sentence> + . + <sentence>",
+      "N + N + ca",
+      "V + V + ca",
+      "N + api + Adj/N",
+      "kintu + <sentence>",
+      "ataḥ + <sentence>",
+      "tathāpi + <sentence>",
+      "<sentence> + . + yataḥ + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "ca comes AFTER the words it joins. pustakam phalam ca is 'a book and a fruit'. The slogan is that ca means and; the law is that ca means and AND it comes last, so a list ends with the joining word instead of opening its second half with one."
+    },
+    {
+      "tag": "interference",
+      "text": "kintu, ataḥ and tathāpi are sentence-INITIAL, exactly where English puts them. This module therefore holds two opposite placements at once, and no rule of thumb covers both: ca is a particle that follows, and these three are sentence openers."
+    },
+    {
+      "tag": "delta",
+      "text": "api is 'also', and like ca it comes after the word it applies to. sītā api chātrā is 'Sītā too is a student'. Move api and you have changed which word is 'also' — its position is the whole of its meaning."
+    },
+    {
+      "tag": "delta",
+      "text": "PRO-DROP IS A PROPERTY OF THE WHOLE TURN. aham belongs in the first sentence at most and usually nowhere. A turn that repeats it in every sentence is grammatical and still wrong, and it is the loudest English accent this course can fix."
+    },
+    {
+      "tag": "free",
+      "text": "The register holds from the first line of a turn to the last: bhavān / bhavatī with a THIRD-person verb, all the way through. One -si ending inside a turn is audible, and tvam is not written anywhere in this course."
+    },
+    {
+      "tag": "delta",
+      "text": "A turn is two or three SHORT sentences, not one long one. Sanskrit packs so much into an ending that three real sentences here are shorter than two padded ones would be in English — so do not join what does not need joining."
+    },
+    {
+      "tag": "free",
+      "text": "yataḥ and ataḥ are M9's words and they work across a full stop exactly as they worked across a comma. Nothing about joining two sentences is different from joining two clauses; only the punctuation changed."
+    },
+    {
+      "tag": "delta",
+      "text": "tathāpi is 'even so'. It concedes the sentence before it and then denies its consequence, which is a job kintu cannot do — kintu simply opposes. Use tathāpi when the first fact is true and does not win."
+    },
+    {
+      "tag": "free",
+      "text": "Pada form holds to the very last turn. Write na asti and not nāsti, rāmaḥ gacchati and not rāmo gacchati. Two sentences side by side is exactly where the hand reaches for a join, and the join belongs in the sound line."
+    },
+    {
+      "tag": "free",
+      "text": "Everything here is a way of standing sentences you already own next to one another. There is no new tense, no new case and no new ending in this module — only four small words and the places they are allowed to stand."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M10-S01",
+      "display": "pustakam phalam ca icchāmi. kiyat mūlyam?",
+      "script": "पुस्तकम् फलम् च इच्छामि। कियत् मूल्यम्?",
+      "cue": "I want a book and a fruit. How much is it?",
+      "literal": "book fruit and I-want. how-much price?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's noun, the first thing wanted. Both items are in the object shape; ca does not change either of them."
+          },
+          {
+            "display": "phalam",
+            "cue": "fruit",
+            "tag": "free",
+            "forms": [],
+            "note": "The second thing wanted. It is the word ca attaches to, and it stands in front of ca rather than behind it."
+          },
+          {
+            "display": "ca",
+            "cue": "and",
+            "tag": "interference",
+            "forms": ["ca"],
+            "note": "'And', and it comes AFTER. pustakam phalam ca is 'a book and a fruit' — the joining word closes the list instead of opening its second half."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's verb, with a joined pair where one object used to be. The -mi carries 'I', so no pronoun is needed to open the turn."
+          },
+          {
+            "display": "kiyat",
+            "cue": "how much",
+            "tag": "free",
+            "forms": [],
+            "note": "M8's price question, standing as a second sentence. A turn is two short sentences; neither has to lean on the other."
+          },
+          {
+            "display": "mūlyam",
+            "cue": "price · value",
+            "tag": "free",
+            "forms": [],
+            "note": "'Price'. The second sentence has no verb in it at all, and the first one dropped its subject — between them the turn is six words long."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "English hears the second item coming and puts 'and' in front of it. Sanskrit hears the list end and puts ca after it. Everything else about the line — the objects, the verb, the order — is exactly what you would have written.",
+      "sound": "PUS-ta-kam PHA-lam CHE-chaa-mi. KI-yan MOOL-yam. Both final m's become a nasal hum. ca and icchāmi merge into one e — cecchāmi — and in the second sentence the t of kiyat becomes an n in front of the m.",
+      "variations": [
+        {
+          "display": "pustakam jalam ca icchāmi. kiyat mūlyam?",
+          "script": "पुस्तकम् जलम् च इच्छामि। कियत् मूल्यम्?",
+          "cue": "I want a book and water. How much is it?",
+          "changed": "a different second item, and ca sits behind it exactly where it sat behind the first"
+        },
+        {
+          "display": "pustakam phalam ca dadātu. daśa rūpyakāṇi.",
+          "script": "पुस्तकम् फलम् च ददातु। दश रूप्यकाणि।",
+          "cue": "Please give a book and a fruit. Ten rupees.",
+          "changed": "the request instead of the wish, and the shopkeeper's answer as the second half of the turn"
+        },
+        {
+          "display": "pustakam phalam ca na icchāmi.",
+          "script": "पुस्तकम् फलम् च न इच्छामि।",
+          "cue": "I don't want a book or a fruit.",
+          "changed": "negated and shortened to one sentence — na stands in front of the verb and the joined pair is untouched"
+        }
+      ],
+      "mistake": {
+        "display": "ca pustakam phalam icchāmi.",
+        "why": "ca first is the English order and it is the one thing this module exists to unteach. ca comes AFTER what it joins, so the list is pustakam phalam ca — the joining word closes the list rather than announcing its second half."
+      },
+      "usage": "Buying two things at once, which is the commonest reason a beginner needs 'and' at all.",
+      "register": "neutral",
+      "mnemonic": "ca comes last. Always last."
+    },
+    {
+      "id": "L1-M10-S02",
+      "display": "śvaḥ vidyālayam pustakālayam ca gamiṣyāmi. kintu adya na gamiṣyāmi.",
+      "script": "श्वः विद्यालयम् पुस्तकालयम् च गमिष्यामि। किन्तु अद्य न गमिष्यामि।",
+      "cue": "Tomorrow I will go to the school and the library. But today I won't go.",
+      "literal": "tomorrow school-to library-to and I-will-go. but today not I-will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's time word, opening the turn. It covers the first sentence only — the second says adya and overrides it."
+          },
+          {
+            "display": "vidyālayaḥ",
+            "cue": "school",
+            "tag": "free",
+            "forms": [],
+            "note": "vidyālayam, the destination shape. Both places are in the accusative, and ca joins them without touching either ending."
+          },
+          {
+            "display": "pustakālayaḥ",
+            "cue": "library",
+            "tag": "free",
+            "forms": [],
+            "note": "pustakālayam, the second destination. It is what ca attaches to, so ca stands immediately behind it."
+          },
+          {
+            "display": "ca",
+            "cue": "and",
+            "tag": "interference",
+            "forms": [],
+            "note": "'And', after the pair. Two destinations, one going, and the joining word at the end of the list rather than inside it."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "gamiṣyāmi, M6's future. The same verb closes both sentences of the turn, and neither of them needs aham."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "delta",
+            "forms": ["kintu"],
+            "note": "'But', and it opens its sentence — exactly where English puts it. This is the turn where both placements stand side by side."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's time word, contradicting śvaḥ. A turn can change its own time frame between one sentence and the next."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "'Not', in front of the verb as ever. kintu opened the sentence and na negates inside it; the two jobs never collide."
+          }
+        ],
+        "rules": [0, 1]
+      },
+      "trap": "Two joining words, two opposite positions, one turn. ca comes last and kintu comes first, and nothing about either word tells you which it is — you have to know the word, not the class.",
+      "sound": "SHVO vid-YAA-la-yam pus-ta-KAA-la-yan cha ga-mi-SHYAA-mi. KIN-tvad-ya na ga-mi-SHYAA-mi. The visarga of śvaḥ becomes an o; kintu and adya run together as kintv adya.",
+      "variations": [
+        {
+          "display": "śvaḥ vidyālayam pustakālayam ca gamiṣyāmi.",
+          "script": "श्वः विद्यालयम् पुस्तकालयम् च गमिष्यामि।",
+          "cue": "Tomorrow I will go to the school and the library.",
+          "changed": "the turn cut back to its first sentence, which stands perfectly well alone — kintu was never holding it up"
+        },
+        {
+          "display": "rāmaḥ vidyālayam pustakālayam ca gamiṣyati. kintu adya na gamiṣyati.",
+          "script": "रामः विद्यालयम् पुस्तकालयम् च गमिष्यति। किन्तु अद्य न गमिष्यति।",
+          "cue": "Rāma will go to the school and the library. But today he won't go.",
+          "changed": "a third person held across the whole turn — named once, and the -ti ending carries him through the second sentence"
+        },
+        {
+          "display": "adya na gamiṣyāmi. kintu śvaḥ gamiṣyāmi.",
+          "script": "अद्य न गमिष्यामि। किन्तु श्वः गमिष्यामि।",
+          "cue": "I won't go today. But tomorrow I will go.",
+          "changed": "the two halves swapped, so kintu now introduces the positive — it opposes whatever came before it, in either direction"
+        }
+      ],
+      "mistake": {
+        "display": "adya na gamiṣyāmi kintu.",
+        "why": "kintu at the end is the mirror image of ca at the front, and a learner makes it immediately after learning rule 1 properly. kintu opens its sentence exactly as 'but' does; only ca and api come after."
+      },
+      "usage": "Correcting a plan you have just announced, which is most of what 'but' is for.",
+      "register": "neutral",
+      "mnemonic": "ca last, kintu first. Same turn."
+    },
+    {
+      "id": "L1-M10-S03",
+      "display": "śvaḥ saṃskṛtam paṭhiṣyāmi lekhiṣyāmi ca. adya na paṭhiṣyāmi.",
+      "script": "श्वः संस्कृतम् पठिष्यामि लेखिष्यामि च। अद्य न पठिष्यामि।",
+      "cue": "Tomorrow I will read and write Sanskrit. Today I won't read.",
+      "literal": "tomorrow Sanskrit I-will-read I-will-write and. today not I-will-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's time word at the front of the turn, covering both verbs that follow it in the first sentence."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's noun, the object of both verbs at once. It is written once and does not need repeating for the second one."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "free",
+            "forms": [],
+            "note": "paṭhiṣyāmi, the first of the two futures. Both verbs are first person and both are dropped-subject, as M4 taught."
+          },
+          {
+            "display": "likhati",
+            "cue": "writes",
+            "tag": "free",
+            "forms": [],
+            "note": "lekhiṣyāmi, the second future. ca joins verbs exactly as it joins nouns, and it stands behind this one."
+          },
+          {
+            "display": "ca",
+            "cue": "and",
+            "tag": "interference",
+            "forms": [],
+            "note": "'And', after the pair of verbs. English would put 'and' between them; ca closes the list from behind, whatever the list is made of."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "'Today', opening the second sentence. No joining word at all here — two sentences may simply stand beside each other."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "'Not', in front of the verb. The second sentence denies only one of the two things the first one promised."
+          }
+        ],
+        "rules": [0, 5]
+      },
+      "trap": "ca joins verbs with no adjustment at all — no infinitive, no change of ending, nothing between them. English needs 'read and write' to share one subject and one tense word; here each verb carries its own and ca simply follows both.",
+      "sound": "SHVAH SANS-kri-tam pa-thi-SHYAA-mi le-khi-SHYAA-mi cha. A-dya na pa-thi-SHYAA-mi. The visarga of śvaḥ stays as it is in front of the s, and nothing joins between the two long verbs or between them and ca.",
+      "variations": [
+        {
+          "display": "adya saṃskṛtam paṭhāmi likhāmi ca.",
+          "script": "अद्य संस्कृतम् पठामि लिखामि च।",
+          "cue": "Today I read and write Sanskrit.",
+          "changed": "the present instead of the future, in a single sentence — and ca is behind the pair either way"
+        },
+        {
+          "display": "śvaḥ saṃskṛtam paṭhiṣyāmi lekhiṣyāmi ca.",
+          "script": "श्वः संस्कृतम् पठिष्यामि लेखिष्यामि च।",
+          "cue": "Tomorrow I will read and write Sanskrit.",
+          "changed": "the turn reduced to its first sentence, which never depended on the second"
+        },
+        {
+          "display": "adya saṃskṛtam paṭhāmi. śvaḥ lekhiṣyāmi.",
+          "script": "अद्य संस्कृतम् पठामि। श्वः लेखिष्यामि।",
+          "cue": "Today I read Sanskrit. Tomorrow I will write.",
+          "changed": "the pair split across two sentences instead of joined by ca — which is what a turn is for when the two actions are not at the same time"
+        }
+      ],
+      "usage": "Saying what a day's work will contain.",
+      "register": "neutral",
+      "mnemonic": "Two verbs, then ca."
+    },
+    {
+      "id": "L1-M10-S04",
+      "display": "pustakam na asti. tathāpi aham santuṣṭaḥ.",
+      "script": "पुस्तकम् न अस्ति। तथापि अहम् सन्तुष्टः।",
+      "cue": "There is no book. Even so, I am content.",
+      "literal": "book not is. even-so I content",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's noun, the subject of the first sentence — a fact stated plainly before anything is done with it."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "'Not', denying the existence. The whole first sentence is M3's, unchanged by anything this module adds."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "'There is'. Two words and a negation make a complete first half of a turn; nothing is waiting to be finished."
+          },
+          {
+            "display": "tathāpi",
+            "cue": "even so · nevertheless",
+            "tag": "delta",
+            "forms": ["tathāpi"],
+            "note": "'Even so', and it opens its sentence. It grants the fact before it and then denies the consequence you expected from it."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'I', and here it is compulsory: the second sentence has no verb in it, so nothing else could say who is content."
+          },
+          {
+            "display": "santuṣṭaḥ",
+            "cue": "content · pleased",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's adjective, from a man. A woman ends this turn with santuṣṭā and changes nothing else in the six words."
+          }
+        ],
+        "rules": [7, 3]
+      },
+      "trap": "tathāpi is not another word for kintu. kintu opposes the fact; tathāpi accepts the fact and refuses its consequence. 'There is no book, but I am content' and 'even so, I am content' are different claims in English too.",
+      "sound": "PUS-ta-kam NAA-sti. ta-THAA-pyA-ham san-TUSH-tah. na and asti run together as nāsti, and tathāpi then merges into aham as tathāpy aham — two joins the page writes as four separate words.",
+      "variations": [
+        {
+          "display": "pustakam na asti. tathāpi aham santuṣṭā.",
+          "script": "पुस्तकम् न अस्ति। तथापि अहम् सन्तुष्टा।",
+          "cue": "There is no book. Even so, I am content. (a woman speaking)",
+          "changed": "a woman speaking, and the last word of the turn is the only one that bends"
+        },
+        {
+          "display": "pustakam na asti. ataḥ aham khinnaḥ.",
+          "script": "पुस्तकम् न अस्ति। अतः अहम् खिन्नः।",
+          "cue": "There is no book. So I am sad.",
+          "changed": "the consequence you would have expected, with M9's ataḥ — which is exactly what tathāpi refuses"
+        },
+        {
+          "display": "phalam na asti. tathāpi santuṣṭaḥ aham.",
+          "script": "फलम् न अस्ति। तथापि सन्तुष्टः अहम्।",
+          "cue": "There is no fruit. Even so, I am content.",
+          "changed": "a different fact, and the adjective in front of the pronoun — a verbless sentence does not fix its own order"
+        }
+      ],
+      "usage": "Conceding a problem and refusing to be moved by it.",
+      "register": "neutral",
+      "mnemonic": "ataḥ follows the fact. tathāpi defies it."
+    },
+    {
+      "id": "L1-M10-S05",
+      "display": "aham chātraḥ. sītā api chātrā.",
+      "script": "अहम् छात्रः। सीता अपि छात्रा।",
+      "cue": "I am a student. Sītā is a student too.",
+      "literal": "I student. Sītā also student",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'I', in the first sentence of the turn and nowhere after it. That is the whole of rule 4 in one line."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's noun, from a man. The very first sentence this course taught, now opening a turn instead of standing alone."
+          },
+          {
+            "display": "sītā",
+            "cue": "Sītā — a woman's name",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's name, and the word api applies to. Whatever api stands behind is the thing that is 'also'."
+          },
+          {
+            "display": "api",
+            "cue": "also · too",
+            "tag": "interference",
+            "forms": ["api"],
+            "note": "'Also', after the word it applies to, like ca. sītā api is 'Sītā too'; put api anywhere else and a different word becomes 'also'."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student",
+            "tag": "free",
+            "forms": [],
+            "note": "chātrā, the feminine. Both sentences of this turn are verbless, which is M1's shape holding to the end of the level."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "api and ca are both postpositive and they are the only two words in this module that are. Everything else you have met that joins or qualifies — kintu, ataḥ, tathāpi, yataḥ, na — stands in front.",
+      "sound": "A-ham CHAA-trah. SEE-taa-pi CHAA-traa. The m of aham hums in front of the ch. The long aa of sītā swallows the a of api — sītāpi — which is the join the page keeps apart.",
+      "variations": [
+        {
+          "display": "aham chātraḥ. rāmaḥ api chātraḥ.",
+          "script": "अहम् छात्रः। रामः अपि छात्रः।",
+          "cue": "I am a student. Rāma is a student too.",
+          "changed": "a man in the second sentence, so both the name and the noun take the masculine and api does not move"
+        },
+        {
+          "display": "aham chātrā. sītā api chātrā.",
+          "script": "अहम् छात्रा। सीता अपि छात्रा।",
+          "cue": "I am a student. Sītā is a student too. (a woman speaking)",
+          "changed": "a woman opening the turn, and now both halves of it are feminine"
+        },
+        {
+          "display": "sītā chātrā. aham api chātraḥ.",
+          "script": "सीता छात्रा। अहम् अपि छात्रः।",
+          "cue": "Sītā is a student. I am a student too.",
+          "changed": "the two halves swapped, so api now makes the speaker the one who is 'also' — the word it follows is the word it is about"
+        }
+      ],
+      "mistake": {
+        "display": "api sītā chātrā.",
+        "why": "api after a word makes THAT word 'also'. At the front of a sentence api is the yes/no question marker — a reading this course names in M2 and writes nowhere — so the line stops meaning 'Sītā too' and starts asking whether she is a student."
+      },
+      "usage": "Adding yourself, or somebody else, to something already said.",
+      "register": "neutral",
+      "mnemonic": "api follows what it means."
+    },
+    {
+      "id": "L1-M10-S06",
+      "display": "bhavān kutra gamiṣyati? kimartham tatra gamiṣyati?",
+      "script": "भवान् कुत्र गमिष्यति? किमर्थम् तत्र गमिष्यति?",
+      "cue": "Where will you go? Why will you go there?",
+      "literal": "your-honour where will-go? for-what there will-go?",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "'You', in the first question only. The second does not repeat it, and its third-person ending is what holds the address across the turn."
+          },
+          {
+            "display": "kutra",
+            "cue": "where",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's 'where'. A turn may ask twice: the second question builds on the answer the first has not been given yet."
+          },
+          {
+            "display": "gamiṣyati",
+            "cue": "will go (he · she · your honour)",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's future, third person, and the same verb ends both questions. That ending is the register, and it must not slip to -si."
+          },
+          {
+            "display": "kimartham",
+            "cue": "why · for what reason",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's 'why', opening the second question. A question word goes first; that has not changed in eight modules."
+          },
+          {
+            "display": "tatra",
+            "cue": "there",
+            "tag": "free",
+            "forms": [],
+            "note": "M7's pointer, standing for the place the first question asked about. It is what lets the second question drop everything else."
+          }
+        ],
+        "rules": [4, 3]
+      },
+      "trap": "The second question has no 'you' in it and is still addressed to you. Drop the subject and the -ti ending alone carries the address — which is why one -si ending anywhere in a turn would give the whole thing away.",
+      "sound": "bha-VAAN KU-tra ga-mi-SHYA-ti? ki-MAR-tham TA-tra ga-mi-SHYA-ti? The n of bhavān sits still in front of the k, and the m of kimartham becomes a nasal hum in front of the t.",
+      "variations": [
+        {
+          "display": "bhavatī kutra gamiṣyati? kimartham tatra gamiṣyati?",
+          "script": "भवती कुत्र गमिष्यति? किमर्थम् तत्र गमिष्यति?",
+          "cue": "Where will you go? Why will you go there? (to a woman)",
+          "changed": "the address bends once, in the first question, and the second is word for word the same"
+        },
+        {
+          "display": "bhavān kutra gamiṣyati? kutaḥ gamiṣyati?",
+          "script": "भवान् कुत्र गमिष्यति? कुतः गमिष्यति?",
+          "cue": "Where will you go? Why will you go?",
+          "changed": "M9's other why-word in the second question, and the turn is a word shorter for it"
+        },
+        {
+          "display": "bhavān kutra asti? kimartham tatra asti?",
+          "script": "भवान् कुत्र अस्ति? किमर्थम् तत्र अस्ति?",
+          "cue": "Where are you? Why are you there?",
+          "changed": "M7's location verb instead of the future, and the same two questions about being rather than going"
+        }
+      ],
+      "mistake": {
+        "display": "bhavān kutra gamiṣyasi?",
+        "why": "gamiṣyasi is the 'you' ending and it belongs with tvam, the intimate address this course does not speak. bhavān takes -ti, from the first sentence of a turn to the last — and inside a turn the slip is more audible, not less."
+      },
+      "usage": "Two questions in a row, which is how an actual conversation asks for detail.",
+      "register": "neutral",
+      "mnemonic": "-ti from the first line to the last."
+    },
+    {
+      "id": "L1-M10-S07",
+      "display": "adya aham khinnaḥ. yataḥ mama pustakam na asti.",
+      "script": "अद्य अहम् खिन्नः। यतः मम पुस्तकम् न अस्ति।",
+      "cue": "Today I am sad. Because I don't have my book.",
+      "literal": "today I sad. because of-me book not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's time word, opening the turn and covering the first sentence. The reason behind it is not dated at all."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "'I', once and only once. The second sentence says mama instead — the same word in its 'of' shape, which is not a repetition."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "sad · downcast",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's adjective, from a man. A verbless first half, and the reason for it comes as a whole sentence of its own."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because · since",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's 'because', at the front of its clause. Across a full stop it behaves exactly as it did across a comma."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "mama, 'of me'. M3's possession frame, which is the only way this level says 'I have' — and the reason the turn holds together."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's noun. What is denied is the book's being there, not any action, so the second sentence needs no verb but asti."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "'Not', in front of asti. The denial sits inside the reason clause and yataḥ is untouched by it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's 'have' reading, with mama in front of it. Three jobs for one verb, and the level closes with the first of them."
+          }
+        ],
+        "rules": [6, 3]
+      },
+      "trap": "A reason can be a sentence of its own and does not have to be glued to what it explains. English would say 'because I don't have my book' as a fragment; here it is a full sentence with yataḥ leading it.",
+      "sound": "a-DYAA-ham KHIN-nah. ya-TO MA-ma PUS-ta-kam NAA-sti. adya and aham merge into adyāham. The visarga of yataḥ becomes an o in front of the voiced m, and na and asti run together as nāsti.",
+      "variations": [
+        {
+          "display": "adya aham khinnā. yataḥ mama pustakam na asti.",
+          "script": "अद्य अहम् खिन्ना। यतः मम पुस्तकम् न अस्ति।",
+          "cue": "Today I am sad. Because I don't have my book. (a woman speaking)",
+          "changed": "a woman speaking, and only the adjective in the first sentence bends for it"
+        },
+        {
+          "display": "mama pustakam na asti. ataḥ aham khinnaḥ.",
+          "script": "मम पुस्तकम् न अस्ति। अतः अहम् खिन्नः।",
+          "cue": "I don't have my book. So I am sad.",
+          "changed": "the same two facts in the opposite order, with ataḥ instead of yataḥ — reason first, consequence after"
+        },
+        {
+          "display": "adya aham santuṣṭaḥ. yataḥ mama pustakam asti.",
+          "script": "अद्य अहम् सन्तुष्टः। यतः मम पुस्तकम् अस्ति।",
+          "cue": "Today I am content. Because I have my book.",
+          "changed": "both halves turned positive, and the frame between them does not move at all"
+        }
+      ],
+      "usage": "Explaining a mood, which is what most of a real conversation about feelings actually is.",
+      "register": "neutral",
+      "mnemonic": "A reason can be its own sentence."
+    },
+    {
+      "id": "L1-M10-S08",
+      "display": "mahyam puṣpāṇi rocante. ataḥ trīṇi puṣpāṇi icchāmi.",
+      "script": "मह्यम् पुष्पाणि रोचन्ते। अतः त्रीणि पुष्पाणि इच्छामि।",
+      "cue": "I like flowers. So I want three flowers.",
+      "literal": "to-me flowers are-pleasing. so three flowers I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "mahyam, 'to me' — M1's dative. The second sentence drops the person entirely, because -mi has it."
+          },
+          {
+            "display": "puṣpam",
+            "cue": "flower",
+            "tag": "free",
+            "forms": [],
+            "note": "puṣpāṇi, more than one flower. It is the subject in the first sentence and the object in the second, and it does not change shape between them."
+          },
+          {
+            "display": "rocante",
+            "cue": "are pleasing (more than one)",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's plural, agreeing with the flowers. The liker is in the dative and has no say in the ending at all."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's 'so', opening the consequence. Across a full stop it does exactly what it did across a comma in M9."
+          },
+          {
+            "display": "trayaḥ",
+            "cue": "three",
+            "tag": "free",
+            "forms": [],
+            "note": "trīṇi, the neuter of M8's 'three', agreeing with puṣpāṇi. A count and a plural, both inherited and neither new."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "free",
+            "forms": [],
+            "note": "M3's verb, closing the turn with no pronoun in front of it. Four modules' grammar, and not one new word in the sentence."
+          }
+        ],
+        "rules": [6, 3]
+      },
+      "trap": "Nothing in this turn is new. Two sentences, one connective, and every word of it was taught between M1 and M9 — which is what the whole module is for: the last thing to learn is how to stand what you know beside itself.",
+      "sound": "MAH-yam push-PAA-ni ro-CHAN-te. a-TAS TREE-ni push-PAA-nee-chaa-mi. The visarga of ataḥ stays in front of the t, and puṣpāṇi runs into icchāmi with the two i's merging into one long ee.",
+      "variations": [
+        {
+          "display": "mahyam puṣpam rocate. ataḥ ekam puṣpam icchāmi.",
+          "script": "मह्यम् पुष्पम् रोचते। अतः एकम् पुष्पम् इच्छामि।",
+          "cue": "I like the flower. So I want one flower.",
+          "changed": "one flower throughout, so the verb drops to the singular and the numeral copies the neuter noun"
+        },
+        {
+          "display": "mahyam puṣpāṇi na rocante. ataḥ puṣpāṇi na icchāmi.",
+          "script": "मह्यम् पुष्पाणि न रोचन्ते। अतः पुष्पाणि न इच्छामि।",
+          "cue": "I don't like flowers. So I don't want flowers.",
+          "changed": "both halves negated, and ataḥ carries a negative consequence exactly as it carried a positive one"
+        },
+        {
+          "display": "rāmāya puṣpāṇi rocante. ataḥ trīṇi puṣpāṇi icchati.",
+          "script": "रामाय पुष्पाणि रोचन्ते। अतः त्रीणि पुष्पाणि इच्छति।",
+          "cue": "Rāma likes flowers. So he wants three flowers.",
+          "changed": "a third person across both sentences — the dative names him once and the -ti ending holds him through the second"
+        }
+      ],
+      "usage": "Saying what you want and why, in the order a shopkeeper needs it.",
+      "register": "neutral",
+      "mnemonic": "ataḥ across a full stop is still ataḥ."
+    },
+    {
+      "id": "L1-M10-S09",
+      "display": "namaste. mama nāma rāmaḥ. saṃskṛtam paṭhāmi.",
+      "script": "नमस्ते। मम नाम रामः। संस्कृतम् पठामि।",
+      "cue": "Hello. My name is Rāma. I study Sanskrit.",
+      "literal": "a-bow-to-you. of-me name Rāma. Sanskrit I-study",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "namaste",
+            "cue": "hello · goodbye",
+            "tag": "free",
+            "forms": [],
+            "note": "M2's greeting, opening a turn rather than standing alone. One word is a whole sentence, and it always was."
+          },
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "mama, 'of me' — M1's naming frame. This is the only place the speaker is named in three sentences."
+          },
+          {
+            "display": "nāma",
+            "cue": "name",
+            "tag": "free",
+            "forms": [],
+            "note": "'Name', with no verb anywhere near it. M1's first real sentence, now the middle of a turn."
+          },
+          {
+            "display": "rāmaḥ",
+            "cue": "Rāma — a man's name",
+            "tag": "free",
+            "forms": [],
+            "note": "The name itself, in the naming shape. A woman says mama nāma sītā and the frame around it does not move."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's noun, the object of the third sentence — which has no subject in it at all, and needs none."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "free",
+            "forms": [],
+            "note": "paṭhāmi, M4's present. The -mi has carried 'I' since M4, and in a turn that is exactly what lets the pronoun disappear."
+          }
+        ],
+        "rules": [3, 5]
+      },
+      "trap": "Three sentences and one mention of the speaker, in the middle one. English would say I three times; a Sanskrit turn says it once at most, and here the once is mama rather than aham.",
+      "sound": "na-mas-TE. MA-ma NAA-ma RAA-mah. SANS-kri-tam pa-THAA-mi. Nothing joins across the full stops, and nothing joins inside the second sentence either — every word there ends in a vowel or a visarga at rest.",
+      "variations": [
+        {
+          "display": "namaste. mama nāma sītā. saṃskṛtam paṭhāmi.",
+          "script": "नमस्ते। मम नाम सीता। संस्कृतम् पठामि।",
+          "cue": "Hello. My name is Sītā. I study Sanskrit.",
+          "changed": "a woman introducing herself, and only the name changes — the third sentence has no gender in it to bend"
+        },
+        {
+          "display": "namaskāraḥ. mama nāma rāmaḥ. aham chātraḥ.",
+          "script": "नमस्कारः। मम नाम रामः। अहम् छात्रः।",
+          "cue": "Hello. My name is Rāma. I am a student.",
+          "changed": "M2's other greeting and a verbless third sentence, which is where aham has to come back"
+        },
+        {
+          "display": "namaste. mama nāma rāmaḥ. saṃskṛtam paṭhāmi likhāmi ca.",
+          "script": "नमस्ते। मम नाम रामः। संस्कृतम् पठामि लिखामि च।",
+          "cue": "Hello. My name is Rāma. I read and write Sanskrit.",
+          "changed": "the third sentence takes a joined pair of verbs, with ca behind them and the turn still carrying one pronoun"
+        }
+      ],
+      "mistake": {
+        "display": "namaste. mama nāma rāmaḥ. aham saṃskṛtam paṭhāmi.",
+        "why": "Nothing here is ungrammatical, and it is still wrong. The speaker has already been named twice over, and repeating aham in every sentence of a turn is the single most audible English accent in this course — which is why this plate is a register error and not a grammar one."
+      },
+      "usage": "Introducing yourself properly, which takes three sentences and not one.",
+      "register": "neutral",
+      "mnemonic": "Say I once. At most."
+    },
+    {
+      "id": "L1-M10-S10",
+      "display": "mahyam saṃskṛtam rocate. ataḥ pratidinam paṭhāmi. śvaḥ api paṭhiṣyāmi.",
+      "script": "मह्यम् संस्कृतम् रोचते। अतः प्रतिदिनम् पठामि। श्वः अपि पठिष्यामि।",
+      "cue": "I like Sanskrit. So I study every day. Tomorrow I will study too.",
+      "literal": "to-me Sanskrit is-pleasing. so every-day I-study. tomorrow also I-will-study",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I · me",
+            "tag": "free",
+            "forms": [],
+            "note": "mahyam, the dative liker. It is the only reference to the speaker in three sentences, and the two -mi endings do the rest."
+          },
+          {
+            "display": "saṃskṛtam",
+            "cue": "Sanskrit — the language",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's noun, the thing liked — and therefore the subject of rocate, which is the frame's whole surprise."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "free",
+            "forms": [],
+            "note": "M1's verb, singular for one thing liked. The very first frame this course taught, opening its last turn."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "M9's 'so', at the front of the consequence. Two connectives in this turn and both of them come first."
+          },
+          {
+            "display": "pratidinam",
+            "cue": "every day · daily",
+            "tag": "free",
+            "forms": [],
+            "note": "M4's time word. The habit sentence in the middle is the one that needs it; neither neighbour does."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "free",
+            "forms": [],
+            "note": "paṭhāmi now and paṭhiṣyāmi in the next sentence — one stem, two tenses, and the subject dropped in both."
+          },
+          {
+            "display": "śvaḥ",
+            "cue": "tomorrow",
+            "tag": "free",
+            "forms": [],
+            "note": "M6's 'tomorrow', and the word api attaches to: śvaḥ api is 'tomorrow too'. The word in front of api is the one that is 'also'."
+          },
+          {
+            "display": "api",
+            "cue": "also · too",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Also', after the word it applies to. It is the last word this level teaches and the second of only two that follow rather than lead."
+          }
+        ],
+        "rules": [2, 3]
+      },
+      "trap": "Three sentences, one pronoun, two connectives at the front and one particle at the back. That mixture is the whole of L1's grammar of connected speech, and every piece of it was taught before this module opened.",
+      "sound": "MAH-yam SANS-kri-tam ro-CHA-te. a-TAS pra-ti-DI-nam pa-THAA-mi. SHVO-pi pa-thi-SHYAA-mi. The visarga of ataḥ stays in front of the p, and the visarga of śvaḥ becomes an o and swallows the a of api — śvo 'pi.",
+      "variations": [
+        {
+          "display": "mahyam saṃskṛtam rocate. ataḥ pratidinam paṭhāmi.",
+          "script": "मह्यम् संस्कृतम् रोचते। अतः प्रतिदिनम् पठामि।",
+          "cue": "I like Sanskrit. So I study every day.",
+          "changed": "the turn cut to two sentences, which is the shortest a turn is allowed to be and still a turn"
+        },
+        {
+          "display": "rāmāya saṃskṛtam rocate. ataḥ pratidinam paṭhati.",
+          "script": "रामाय संस्कृतम् रोचते। अतः प्रतिदिनम् पठति।",
+          "cue": "Rāma likes Sanskrit. So he studies every day.",
+          "changed": "a third person across both sentences — the dative names him once and the -ti ending holds him through the second"
+        },
+        {
+          "display": "mahyam saṃskṛtam na rocate.",
+          "script": "मह्यम् संस्कृतम् न रोचते।",
+          "cue": "I don't like Sanskrit.",
+          "changed": "negated and reduced to one sentence — with no consequence to draw, ataḥ has nothing to open"
+        }
+      ],
+      "usage": "The turn a learner will actually say first, and the one this whole level has been building.",
+      "register": "neutral",
+      "mnemonic": "Connectives lead. ca and api follow."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M10-C01",
+      "display": "jalam phalam ca dadātu.",
+      "script": "जलम् फलम् च ददातु।",
+      "cue": "Please give water and a fruit."
+    },
+    {
+      "id": "L1-M10-C02",
+      "display": "aham khinnaḥ. kintu adya santuṣṭaḥ.",
+      "script": "अहम् खिन्नः। किन्तु अद्य सन्तुष्टः।",
+      "cue": "I am sad. But today I am content."
+    },
+    {
+      "id": "L1-M10-C03",
+      "display": "sītā chātrā. bālā api chātrā.",
+      "script": "सीता छात्रा। बाला अपि छात्रा।",
+      "cue": "Sītā is a student. The girl is a student too."
+    },
+    {
+      "id": "L1-M10-C04",
+      "display": "pustakam na asti. tathāpi paṭhiṣyāmi.",
+      "script": "पुस्तकम् न अस्ति। तथापि पठिष्यामि।",
+      "cue": "There is no book. Even so, I will study."
+    },
+    {
+      "id": "L1-M10-C05",
+      "display": "bhavatī kutra asti? kimartham tatra asti?",
+      "script": "भवती कुत्र अस्ति? किमर्थम् तत्र अस्ति?",
+      "cue": "Where are you? Why are you there? (to a woman)"
+    },
+    {
+      "id": "L1-M10-C06",
+      "display": "mahyam puṣpāṇi phalāni ca rocante.",
+      "script": "मह्यम् पुष्पाणि फलानि च रोचन्ते।",
+      "cue": "I like flowers and fruits."
+    },
+    {
+      "id": "L1-M10-C07",
+      "display": "rāmaḥ gṛhe asti. sītā api gṛhe asti.",
+      "script": "रामः गृहे अस्ति। सीता अपि गृहे अस्ति।",
+      "cue": "Rāma is at home. Sītā is at home too."
+    },
+    {
+      "id": "L1-M10-C08",
+      "display": "adya na gamiṣyāmi. yataḥ khinnaḥ aham.",
+      "script": "अद्य न गमिष्यामि। यतः खिन्नः अहम्।",
+      "cue": "I won't go today. Because I am sad."
+    },
+    {
+      "id": "L1-M10-C09",
+      "display": "namaste. mama nāma sītā. bhāratīyā aham.",
+      "script": "नमस्ते। मम नाम सीता। भारतीया अहम्।",
+      "cue": "Hello. My name is Sītā. I am Indian."
+    },
+    {
+      "id": "L1-M10-C10",
+      "display": "śvaḥ pustakālayam gamiṣyāmi. kintu adya na gamiṣyāmi.",
+      "script": "श्वः पुस्तकालयम् गमिष्यामि। किन्तु अद्य न गमिष्यामि।",
+      "cue": "Tomorrow I will go to the library. But today I won't go."
+    },
+    {
+      "id": "L1-M10-C11",
+      "display": "sītā pustakam phalam ca icchati.",
+      "script": "सीता पुस्तकम् फलम् च इच्छति।",
+      "cue": "Sītā wants a book and a fruit."
+    },
+    {
+      "id": "L1-M10-C12",
+      "display": "bhavān kuśalī? aham api kuśalī.",
+      "script": "भवान् कुशली? अहम् अपि कुशली।",
+      "cue": "Are you well? I am well too."
+    },
+    {
+      "id": "L1-M10-C13",
+      "display": "mahyam saṃskṛtam rocate. ataḥ sāyam paṭhiṣyāmi.",
+      "script": "मह्यम् संस्कृतम् रोचते। अतः सायम् पठिष्यामि।",
+      "cue": "I like Sanskrit. So I will study in the evening."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
