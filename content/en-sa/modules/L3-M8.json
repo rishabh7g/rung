@@ -1,0 +1,864 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M8",
+  "title": "Money and paperwork",
+  "job": "Rent, bills, forms, offices",
+  "prerequisites": [
+    "L3-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present",
+      "polite_imperative",
+      "verbless_nominal_present",
+      "absolutive"
+    ],
+    "allowedPatterns": [
+      "N-nom + kutra + asti",
+      "mama + N-nom + asti",
+      "N-gen + mūlyam + kiyat",
+      "kṛpayā + N-acc + dadātu",
+      "aham + N-acc + icchāmi"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "These are the words of an office and they are MODERN. kāryālayaḥ, pramāṇapatram, śulkam and bhāṭakam are administrative Sanskrit — real, ordinary, used every day where the language is spoken, and no older than L2-M7's dūrabhāṣaḥ. A course that teaches them is fine; a learner who thinks they are ancient has been misled."
+    },
+    {
+      "tag": "delta",
+      "text": "-ālaya is a family you already half own. vidyālayaḥ (L1-M6) is a place of learning, pustakālayaḥ (L1-M7) a place of books, and kāryālayaḥ is a place of work. Each is ONE word with its internal join written in full, and the third costs you almost nothing."
+    },
+    {
+      "tag": "delta",
+      "text": "patram and pramāṇapatram are TWO WORDS, not a word and its compound. A tap on pramāṇapatram lands on its own row and tells you nothing about patram, because a compound donates nothing to the pieces inside it. Learn them as two entries."
+    },
+    {
+      "tag": "free",
+      "text": "The join INSIDE one word is written; the join BETWEEN two words is not. kāryālayaḥ keeps its join, and kāryālayaḥ asti keeps its two words apart — never kāryālayo 'sti, however a printed form spells it. This is the module where that temptation is real, which is why the rule is restated here."
+    },
+    {
+      "tag": "free",
+      "text": "The price frame is L1-M8's and nothing in it is new. kiyat asks how much, the thing being priced stands in the genitive — gṛhasya bhāṭakam — and the answer is a bare number of rupees with no verb at all."
+    },
+    {
+      "tag": "free",
+      "text": "bhāṭakam, śulkam, dhanam, patram and pramāṇapatram are all neuter, so L2-M9's adhikam and alpam grade any of them without changing shape: śulkam adhikam, dhanam alpam."
+    },
+    {
+      "tag": "free",
+      "text": "mama X asti is still how you say you have something, exactly as it was in L1-M3. There is no verb for \"have\" in this course and none is needed at a counter: mama pramāṇapatram asti."
+    },
+    {
+      "tag": "free",
+      "text": "A counter request is a request you can already make. kṛpayā (L2-M1) on L1-M3's dadātu asks for a thing to be given; aham … icchāmi says what you are there for. Nothing new is borrowed for politeness."
+    },
+    {
+      "tag": "free",
+      "text": "No new numerals and no clock. L1-M8's ekaḥ through daśa are everything this course counts with, and L2-M6 named the clock as deferred — an office is exactly where a course starts inventing both, so neither is written here."
+    },
+    {
+      "tag": "free",
+      "text": "Every sentence here is NEUTRAL. A counter in this course speaks the way a friend does — bhavān or bhavatī with a third-person verb — and the separate formal register a real office would use belongs to L4-M7 and appears nowhere earlier."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M8-S01",
+      "display": "kāryālayaḥ kutra asti?",
+      "script": "कार्यालयः कुत्र अस्ति?",
+      "cue": "Where is the office?",
+      "literal": "office where is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kāryālayaḥ",
+            "cue": "office",
+            "tag": "delta",
+            "forms": [
+              "kāryālayaḥ",
+              "kāryālayam",
+              "kāryālaye",
+              "kāryālayasya"
+            ],
+            "note": "A place of work, and the third -ālaya after vidyālayaḥ and pustakālayaḥ. One word, one row, four shapes you will meet in this module."
+          },
+          {
+            "display": "kutra",
+            "cue": "where",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's \"where\", sitting in front of the verb. The question word does not have to come first in the sentence."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\". A question with kutra needs no kim, because kutra is already a question word."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          0
+        ]
+      },
+      "trap": "kāryālayaḥ and asti stay two words. In speech they run together, and a printed form would spell them joined; the display never does.",
+      "sound": "kaar-YAA-la-yah KU-tra AS-ti. The final -ah of kāryālayaḥ and the a- of asti blur into one sound when spoken, and stay two letters when written.",
+      "variations": [
+        {
+          "display": "kāryālayaḥ atra asti.",
+          "script": "कार्यालयः अत्र अस्ति।",
+          "cue": "The office is here.",
+          "changed": "the answer — L1-M7's atra takes the question word's place and the sentence stops being a question"
+        },
+        {
+          "display": "kim kāryālayaḥ atra asti?",
+          "script": "किम् कार्यालयः अत्र अस्ति?",
+          "cue": "Is the office here?",
+          "changed": "a yes/no question instead of an open one, so L1-M2's kim goes to the front and atra supplies the place the question no longer asks for"
+        },
+        {
+          "display": "kāryālayaḥ kutra asti iti saḥ pṛcchati.",
+          "script": "कार्यालयः कुत्र अस्ति इति सः पृच्छति।",
+          "cue": "'Where is the office?' he asks.",
+          "changed": "the whole question quoted with L3-M5's iti, which keeps the question word inside the quote where it was asked"
+        }
+      ],
+      "mistake": {
+        "display": "kāryālayaḥ kutrāsti?",
+        "why": "The spoken join written into the display. kutra and asti have been run into one word, which is what the mouth does and not what this course writes: a joined surface is a word no row owns, so the learner taps it and nothing answers."
+      },
+      "usage": "The first thing you say in an unfamiliar building. Ordinary and neutral.",
+      "register": "neutral",
+      "mnemonic": "Inside a word, join. Between two words, never."
+    },
+    {
+      "id": "L3-M8-S02",
+      "display": "mama pramāṇapatram kāryālaye asti.",
+      "script": "मम प्रमाणपत्रम् कार्यालये अस्ति।",
+      "cue": "My certificate is at the office.",
+      "literal": "my certificate office-in is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's \"my\", attached to the certificate."
+          },
+          {
+            "display": "pramāṇapatram",
+            "cue": "certificate",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two members joined into one word, with the join written in full — like mātāpitarau. It is its own row and shares nothing with patram."
+          },
+          {
+            "display": "kāryālayaḥ",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "The locative kāryālaye, \"in the office\" — the ordinary -e ending of gṛhe and vidyālaye, because this is a regular a-stem."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\", agreeing with the certificate. It is the only verb the sentence has or needs."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          6
+        ]
+      },
+      "trap": "pramāṇapatram is one token and one row. Looking for patram inside it is looking for a word that is not separately there, however clearly you can see it.",
+      "variations": [
+        {
+          "display": "mama pramāṇapatram kāryālaye na asti.",
+          "script": "मम प्रमाणपत्रम् कार्यालये न अस्ति।",
+          "cue": "My certificate is not at the office.",
+          "changed": "negated on asti, the sentence's only verb; the locative and the possessor are untouched"
+        },
+        {
+          "display": "bhavataḥ pramāṇapatram kāryālaye asti.",
+          "script": "भवतः प्रमाणपत्रम् कार्यालये अस्ति।",
+          "cue": "Your certificate is at the office.",
+          "changed": "the owner becomes the listener — L1-M2's polite genitive bhavataḥ stands exactly where mama stood"
+        },
+        {
+          "display": "mama pramāṇapatram kutra asti?",
+          "script": "मम प्रमाणपत्रम् कुत्र अस्ति?",
+          "cue": "Where is my certificate?",
+          "changed": "turned into an open question: kutra replaces the locative, because the place is now what is being asked for"
+        }
+      ],
+      "mistake": {
+        "display": "mama pramāṇapatram kāryālaye 'sti.",
+        "why": "The spoken join again, this time with the apostrophe a printed text uses to show a swallowed a-. The display never carries it: an apostrophe at a word edge is a real character in the index, so 'sti would be a surface with no row behind it."
+      },
+      "usage": "Said when a form is being asked for and you do not have it on you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S03",
+      "display": "gṛhasya bhāṭakam kiyat?",
+      "script": "गृहस्य भाटकम् कियत्?",
+      "cue": "What is the rent of the house?",
+      "literal": "house's rent how-much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's \"house\" in its genitive shape gṛhasya — the thing whose rent is being asked about."
+          },
+          {
+            "display": "bhāṭakam",
+            "cue": "rent",
+            "tag": "delta",
+            "forms": [],
+            "note": "A neuter noun. It stands where mūlyam stands in L1-M8's price question, and the frame around it is exactly L1-M8's."
+          },
+          {
+            "display": "kiyat",
+            "cue": "how much",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M8's \"how much\", and the whole of the question. There is no verb here, and none is missing."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "The genitive is doing the work English does with \"of\" or with word order. Drop it and the sentence stops saying whose rent is meant.",
+      "sound": "GRI-has-ya BHAA-ta-kam KI-yat. The ṛ of gṛhasya is a vowel, close to the ri of \"rich\".",
+      "variations": [
+        {
+          "display": "kiyat gṛhasya bhāṭakam?",
+          "script": "कियत् गृहस्य भाटकम्?",
+          "cue": "How much is the house rent?",
+          "changed": "the question word fronted — L1-M8 wrote both orders, and neither is more of a question than the other"
+        },
+        {
+          "display": "gṛhasya bhāṭakam adhikam.",
+          "script": "गृहस्य भाटकम् अधिकम्।",
+          "cue": "The rent of the house is high.",
+          "changed": "an answer instead of a question: L2-M9's adhikam is neuter to agree with bhāṭakam, and the sentence still has no verb"
+        },
+        {
+          "display": "gṛhasya bhāṭakam kiyat iti saḥ pṛcchati.",
+          "script": "गृहस्य भाटकम् कियत् इति सः पृच्छति।",
+          "cue": "'What is the rent of the house?' he asks.",
+          "changed": "the question quoted whole with L3-M5's iti, which keeps kiyat inside where it was asked"
+        }
+      ],
+      "mistake": {
+        "display": "gṛham bhāṭakam kiyat?",
+        "why": "The genitive dropped — L1-M8's own mistake, made again with a new noun. gṛham and bhāṭakam are now two nominatives side by side, and nothing in the sentence says the rent belongs to the house."
+      },
+      "usage": "The question you ask about a place you might take. Rent and price take the same frame.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S04",
+      "display": "gṛhasya bhāṭakam daśa rūpyakāṇi.",
+      "script": "गृहस्य भाटकम् दश रूप्यकाणि।",
+      "cue": "The rent of the house is ten rupees.",
+      "literal": "house's rent ten rupees",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "The genitive gṛhasya again, naming what the rent is for."
+          },
+          {
+            "display": "bhāṭakam",
+            "cue": "rent",
+            "tag": "free",
+            "forms": [],
+            "note": "The subject of a sentence that has no verb. L1-M8 answered a price the same way."
+          },
+          {
+            "display": "daśa",
+            "cue": "ten",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M8's \"ten\", which never changes shape. The numerals this course counts with stop here."
+          },
+          {
+            "display": "rūpyakam",
+            "cue": "rupee",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M8's \"rupee\" in its plural shape rūpyakāṇi, because ten of them are being named."
+          }
+        ],
+        "rules": [
+          4,
+          8
+        ]
+      },
+      "trap": "There is no \"is\" in the answer and none is wanted. A price or a rent in this course is two noun phrases set beside each other.",
+      "variations": [
+        {
+          "display": "gṛhasya bhāṭakam adhikam na asti.",
+          "script": "गृहस्य भाटकम् अधिकम् न अस्ति।",
+          "cue": "The rent of the house is not high.",
+          "changed": "graded and negated at once, which forces asti back in — na needs a verb to stand in front of, so a verbless sentence cannot simply be negated"
+        },
+        {
+          "display": "mama gṛhasya bhāṭakam daśa rūpyakāṇi.",
+          "script": "मम गृहस्य भाटकम् दश रूप्यकाणि।",
+          "cue": "The rent of my house is ten rupees.",
+          "changed": "a possessor added in front of the genitive, so two genitive-like words stack: mama belongs to gṛhasya, and gṛhasya to bhāṭakam"
+        },
+        {
+          "display": "gṛhasya bhāṭakam daśa rūpyakāṇi iti saḥ uktavān.",
+          "script": "गृहस्य भाटकम् दश रूप्यकाणि इति सः उक्तवान्।",
+          "cue": "'The rent of the house is ten rupees', he said.",
+          "changed": "the whole verbless answer quoted — L3-M5's iti closes a sentence with no verb in it as readily as one with"
+        }
+      ],
+      "usage": "The numbers are the course's, not a real rent. Sanskrit counts past daśa and this course does not.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S05",
+      "display": "aham pramāṇapatram icchāmi.",
+      "script": "अहम् प्रमाणपत्रम् इच्छामि।",
+      "cue": "I want a certificate.",
+      "literal": "I certificate want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's \"I\". It could be dropped, since icchāmi already says who wants; it is kept here because it is the first thing you say at a counter."
+          },
+          {
+            "display": "pramāṇapatram",
+            "cue": "certificate",
+            "tag": "free",
+            "forms": [],
+            "note": "The thing wanted. A neuter noun looks the same whether it is the subject or the object, so only the verb tells you which it is."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"I want\", at the end where a verb belongs. Nothing about a counter changes the sentence you would use for fruit."
+          }
+        ],
+        "rules": [
+          7,
+          9
+        ]
+      },
+      "trap": "This is the same sentence L1-M3 taught with a different noun in the middle. The office has not brought a new grammar with it, only new words.",
+      "sound": "a-HAM pra-MAA-na-pa-tram ICH-chhaa-mi. Six syllables in pramāṇapatram, with the stress-free evenness every long Sanskrit word has.",
+      "variations": [
+        {
+          "display": "aham pramāṇapatram na icchāmi.",
+          "script": "अहम् प्रमाणपत्रम् न इच्छामि।",
+          "cue": "I do not want a certificate.",
+          "changed": "negated on the verb, which is where na always goes when there is one"
+        },
+        {
+          "display": "saḥ pramāṇapatram icchati.",
+          "script": "सः प्रमाणपत्रम् इच्छति।",
+          "cue": "He wants a certificate.",
+          "changed": "the wanter becomes a third person, so the verb moves to L1-M3's icchati and the pronoun can no longer be dropped"
+        },
+        {
+          "display": "kim bhavān pramāṇapatram icchati?",
+          "script": "किम् भवान् प्रमाणपत्रम् इच्छति?",
+          "cue": "Do you want a certificate?",
+          "changed": "the clerk's side of the exchange — kim opens the question and bhavān takes the same third-person verb as saḥ did"
+        }
+      ],
+      "usage": "What you are there for, said first. Modern administrative Sanskrit really does use this noun; nothing about it is old.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S06",
+      "display": "kṛpayā patram dadātu.",
+      "script": "कृपया पत्रम् ददातु।",
+      "cue": "Please give me the form.",
+      "literal": "please paper let-give",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kṛpayā",
+            "cue": "please",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's \"please\". It stacks on an imperative and never replaces one."
+          },
+          {
+            "display": "patram",
+            "cue": "paper · a form · a letter",
+            "tag": "delta",
+            "forms": [],
+            "note": "Its own row, and a wide word: a leaf, a sheet, a written form. pramāṇapatram is a separate entry and a tap here does not reach it."
+          },
+          {
+            "display": "dadātu",
+            "cue": "please give · let (him/her) give",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's third-person imperative. Who it is for goes unsaid, as it did when the thing was fruit."
+          }
+        ],
+        "rules": [
+          7,
+          2
+        ]
+      },
+      "trap": "patram is not narrower than the English \"form\" — it is wider. It is any written sheet, and the office is only where you happen to be holding one.",
+      "variations": [
+        {
+          "display": "kṛpayā pramāṇapatram dadātu.",
+          "script": "कृपया प्रमाणपत्रम् ददातु।",
+          "cue": "Please give me the certificate.",
+          "changed": "the other document asked for, which is the clearest proof that the two are separate words: the whole compound goes in, not a piece of it"
+        },
+        {
+          "display": "kṛpayā patram mahyam dadātu.",
+          "script": "कृपया पत्रम् मह्यम् ददातु।",
+          "cue": "Please give the form to me.",
+          "changed": "the recipient made explicit with L1-M1's dative mahyam, which the sentence can carry and does not need"
+        },
+        {
+          "display": "patram dadātu.",
+          "script": "पत्रम् ददातु।",
+          "cue": "Give me the form.",
+          "changed": "kṛpayā dropped — the imperative alone is still not rude, because a third-person imperative is indirect to begin with"
+        }
+      ],
+      "usage": "The exchange at a counter is short in this register: the thing, and the imperative.",
+      "register": "neutral",
+      "mnemonic": "One word, one row. pramāṇapatram never hands you a patram."
+    },
+    {
+      "id": "L3-M8-S07",
+      "display": "kāryālayasya samīpe pustakālayaḥ asti.",
+      "script": "कार्यालयस्य समीपे पुस्तकालयः अस्ति।",
+      "cue": "There is a library near the office.",
+      "literal": "office's near library is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kāryālayaḥ",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "The genitive kāryālayasya. L1-M7's place words all take a genitive in front of them, and this is that rule with a new noun."
+          },
+          {
+            "display": "samīpe",
+            "cue": "near · close to",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M7's \"near\", standing AFTER what it is near. English puts it first; this language puts it second, every time."
+          },
+          {
+            "display": "pustakālayaḥ",
+            "cue": "library",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M7's library — a place of books, and the -ālaya family's second member. The third is the office in front of it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\", with the library as its subject. The office is not the subject of anything here."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "Two -ālaya words in one sentence and neither is a form of the other. They are three separate rows across three modules, sharing an ending the way \"bakery\" and \"library\" share one.",
+      "variations": [
+        {
+          "display": "kāryālayasya samīpe pustakālayaḥ na asti.",
+          "script": "कार्यालयस्य समीपे पुस्तकालयः न अस्ति।",
+          "cue": "There is no library near the office.",
+          "changed": "negated on asti; the genitive and the postposition in front of it are untouched"
+        },
+        {
+          "display": "kāryālayasya purataḥ mārgaḥ asti.",
+          "script": "कार्यालयस्य पुरतः मार्गः अस्ति।",
+          "cue": "There is a road in front of the office.",
+          "changed": "a different place word from the same L1-M7 set — purataḥ also stands after its genitive, which is what makes them one family"
+        },
+        {
+          "display": "kim kāryālayasya samīpe pustakālayaḥ asti?",
+          "script": "किम् कार्यालयस्य समीपे पुस्तकालयः अस्ति?",
+          "cue": "Is there a library near the office?",
+          "changed": "turned into a yes/no question with kim at the front and nothing else moved"
+        }
+      ],
+      "usage": "How you are given directions inside a town. The landmark comes first and the thing you are looking for comes last.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S08",
+      "display": "kāryālaye śulkam adhikam.",
+      "script": "कार्यालये शुल्कम् अधिकम्।",
+      "cue": "The fee at the office is high.",
+      "literal": "office-in fee much",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kāryālayaḥ",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "The locative kāryālaye, \"at the office\", setting the place before anything is said about it."
+          },
+          {
+            "display": "śulkam",
+            "cue": "fee · charge",
+            "tag": "delta",
+            "forms": [],
+            "note": "A neuter noun, and what an office charges. bhāṭakam is what you pay for a place; śulkam is what you pay for a service."
+          },
+          {
+            "display": "adhikam",
+            "cue": "much · high · more",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M9's \"more\", neuter to agree with śulkam. No verb is needed: an adjective beside its noun is already a sentence."
+          }
+        ],
+        "rules": [
+          5,
+          9
+        ]
+      },
+      "trap": "Three words, no verb, and a complete complaint. The absence of asti here is not shorthand; a nominal sentence is the ordinary shape.",
+      "variations": [
+        {
+          "display": "kāryālaye śulkam alpam.",
+          "script": "कार्यालये शुल्कम् अल्पम्।",
+          "cue": "The fee at the office is low.",
+          "changed": "graded the other way with L2-M9's alpam, which is the same kind of word in the same slot"
+        },
+        {
+          "display": "kāryālaye śulkam na asti.",
+          "script": "कार्यालये शुल्कम् न अस्ति।",
+          "cue": "There is no fee at the office.",
+          "changed": "negated, which pulls asti in — na cannot stand alone in a verbless sentence and needs the verb back to attach to"
+        },
+        {
+          "display": "kāryālaye śulkam kiyat?",
+          "script": "कार्यालये शुल्कम् कियत्?",
+          "cue": "How much is the fee at the office?",
+          "changed": "turned into a price question with L1-M8's kiyat, which takes the grading word's place because it is asking for it"
+        }
+      ],
+      "usage": "Said about a counter, hedged by the fact that fees change. The course says nothing about what any real fee is.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S09",
+      "display": "mama dhanam alpam, tathāpi aham pramāṇapatram icchāmi.",
+      "script": "मम धनम् अल्पम्, तथापि अहम् प्रमाणपत्रम् इच्छामि।",
+      "cue": "I have little money, even so I want the certificate.",
+      "literal": "my money little, even-so I certificate want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's \"my\". mama X asti is \"I have X\", and here the asti has been dropped because an adjective follows instead."
+          },
+          {
+            "display": "dhanam",
+            "cue": "money · wealth",
+            "tag": "delta",
+            "forms": [],
+            "note": "A neuter noun, the general word for money. rūpyakam is the coin you count; dhanam is what you have or do not have."
+          },
+          {
+            "display": "alpam",
+            "cue": "a little · not much",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M9's \"a little\", neuter to agree with dhanam. The first clause has no verb and needs none."
+          },
+          {
+            "display": "tathāpi",
+            "cue": "even so · nevertheless",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's \"even so\", one token with its join written in full, opening the clause that pulls against the first."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "The second clause's own subject. The first clause had mama instead, because there the speaker was a possessor and not an actor."
+          },
+          {
+            "display": "pramāṇapatram",
+            "cue": "certificate",
+            "tag": "free",
+            "forms": [],
+            "note": "The thing wanted, in the same shape it had as a subject in S02."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"I want\", closing the second clause."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "The speaker is mama in the first clause and aham in the second, and both are right. Each clause gives the same person the case its own grammar asks for.",
+      "sound": "MA-ma DHA-nam AL-pam, ta-THAA-pi a-HAM pra-MAA-na-pa-tram ICH-chhaa-mi. dh is one sound, a d with breath behind it.",
+      "variations": [
+        {
+          "display": "mama dhanam alpam, ataḥ aham pramāṇapatram na icchāmi.",
+          "script": "मम धनम् अल्पम्, अतः अहम् प्रमाणपत्रम् न इच्छामि।",
+          "cue": "I have little money, so I do not want the certificate.",
+          "changed": "the joint becomes L1-M9's ataḥ, which makes the first clause a reason rather than an obstacle, and the second clause follows it into the negative"
+        },
+        {
+          "display": "mama dhanam adhikam, tathāpi aham pramāṇapatram na icchāmi.",
+          "script": "मम धनम् अधिकम्, तथापि अहम् प्रमाणपत्रम् न इच्छामि।",
+          "cue": "I have plenty of money, even so I do not want the certificate.",
+          "changed": "both halves reversed at once — the grading word and the negation — with the concessive joint holding them apart as before"
+        },
+        {
+          "display": "yadi mama dhanam asti tarhi aham pramāṇapatram icchāmi.",
+          "script": "यदि मम धनम् अस्ति तर्हि अहम् प्रमाणपत्रम् इच्छामि।",
+          "cue": "If I have money, then I want the certificate.",
+          "changed": "recast as L3-M4's condition, which needs asti back because yadi opens a clause and a clause here wants its verb"
+        }
+      ],
+      "usage": "The ordinary shape of a hesitation at a counter. Neither half is an apology.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M8-S10",
+      "display": "aham adya kāryālayam gacchāmi, yataḥ mama patram tatra asti.",
+      "script": "अहम् अद्य कार्यालयम् गच्छामि, यतः मम पत्रम् तत्र अस्ति।",
+      "cue": "I am going to the office today, because my form is there.",
+      "literal": "I today office-to go, because my paper there is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "The subject of the first clause. It is not repeated in the second, which has a subject of its own."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's \"today\", in front of the destination as time words usually are."
+          },
+          {
+            "display": "kāryālayaḥ",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "The accusative kāryālayam — the place gone TO, the fourth and last shape of this row. L1-M6's vidyālayam works the same way."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go · I am going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's \"I go\". A place gone to takes the accusative and no preposition."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because · since",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's \"because\", opening the reason clause after the thing it explains."
+          },
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's \"my\", belonging to the paper."
+          },
+          {
+            "display": "patram",
+            "cue": "paper · a form",
+            "tag": "free",
+            "forms": [],
+            "note": "The subject of the reason clause. Its own row, separate from pramāṇapatram as ever."
+          },
+          {
+            "display": "tatra",
+            "cue": "there",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M7's \"there\", pointing back at the office rather than naming it a second time."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\", closing the reason clause. mama patram asti is \"I have a form\", with tatra saying where."
+          }
+        ],
+        "rules": [
+          6,
+          9
+        ]
+      },
+      "trap": "kāryālayam here is the place you are going to, and kāryālaye in S02 was the place something was in. One row, two shapes, and the ending is the only thing that says which.",
+      "variations": [
+        {
+          "display": "aham adya kāryālayam na gacchāmi, yataḥ mama patram atra asti.",
+          "script": "अहम् अद्य कार्यालयम् न गच्छामि, यतः मम पत्रम् अत्र अस्ति।",
+          "cue": "I am not going to the office today, because my form is here.",
+          "changed": "both clauses flip together — the verb negated and tatra becoming atra, since the reason has moved to where the speaker is"
+        },
+        {
+          "display": "rāmaḥ adya kāryālayam gacchati, yataḥ rāmasya patram tatra asti.",
+          "script": "रामः अद्य कार्यालयम् गच्छति, यतः रामस्य पत्रम् तत्र अस्ति।",
+          "cue": "Rāma is going to the office today, because his form is there.",
+          "changed": "a third person throughout, so the verb moves to gacchati and L1-M1's genitive rāmasya replaces mama — this course has no word for \"his\""
+        },
+        {
+          "display": "aham adya kāryālayam gatvā patram icchāmi.",
+          "script": "अहम् अद्य कार्यालयम् गत्वा पत्रम् इच्छामि।",
+          "cue": "Having gone to the office today, I ask for the form.",
+          "changed": "the two clauses packed into one with L3-M1's absolutive gatvā, which drops the reason word and leaves a single finite verb at the end"
+        }
+      ],
+      "usage": "An errand explained. The reason after the fact is where this language puts it.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M8-C01",
+      "display": "kāryālayaḥ atra asti.",
+      "script": "कार्यालयः अत्र अस्ति।",
+      "cue": "The office is here."
+    },
+    {
+      "id": "L3-M8-C02",
+      "display": "mama pramāṇapatram na asti.",
+      "script": "मम प्रमाणपत्रम् न अस्ति।",
+      "cue": "I do not have a certificate."
+    },
+    {
+      "id": "L3-M8-C03",
+      "display": "bhāṭakam daśa rūpyakāṇi.",
+      "script": "भाटकम् दश रूप्यकाणि।",
+      "cue": "The rent is ten rupees."
+    },
+    {
+      "id": "L3-M8-C04",
+      "display": "kṛpayā pramāṇapatram dadātu.",
+      "script": "कृपया प्रमाणपत्रम् ददातु।",
+      "cue": "Please give me the certificate."
+    },
+    {
+      "id": "L3-M8-C05",
+      "display": "aham kāryālayam gacchāmi.",
+      "script": "अहम् कार्यालयम् गच्छामि।",
+      "cue": "I am going to the office."
+    },
+    {
+      "id": "L3-M8-C06",
+      "display": "kāryālaye mama patram asti.",
+      "script": "कार्यालये मम पत्रम् अस्ति।",
+      "cue": "My form is at the office."
+    },
+    {
+      "id": "L3-M8-C07",
+      "display": "adya mama dhanam alpam.",
+      "script": "अद्य मम धनम् अल्पम्।",
+      "cue": "I have little money today."
+    },
+    {
+      "id": "L3-M8-C08",
+      "display": "kāryālayasya samīpe vidyālayaḥ asti.",
+      "script": "कार्यालयस्य समीपे विद्यालयः अस्ति।",
+      "cue": "There is a school near the office."
+    },
+    {
+      "id": "L3-M8-C09",
+      "display": "śulkam kiyat iti saḥ pṛcchati.",
+      "script": "शुल्कम् कियत् इति सः पृच्छति।",
+      "cue": "'How much is the fee?' he asks."
+    },
+    {
+      "id": "L3-M8-C10",
+      "display": "yaḥ chātraḥ kāryālayam gacchati saḥ mama bhrātā.",
+      "script": "यः छात्रः कार्यालयम् गच्छति सः मम भ्राता।",
+      "cue": "The student who goes to the office is my brother."
+    },
+    {
+      "id": "L3-M8-C11",
+      "display": "mama bhāṭakam adhikam, ataḥ aham khinnaḥ.",
+      "script": "मम भाटकम् अधिकम्, अतः अहम् खिन्नः।",
+      "cue": "My rent is high, so I am unhappy."
+    },
+    {
+      "id": "L3-M8-C12",
+      "display": "kṛpayā kāryālayam gacchatu.",
+      "script": "कृपया कार्यालयम् गच्छतु।",
+      "cue": "Please go to the office."
+    },
+    {
+      "id": "L3-M8-C13",
+      "display": "aham kāryālayam gatvā patram icchāmi.",
+      "script": "अहम् कार्यालयम् गत्वा पत्रम् इच्छामि।",
+      "cue": "Having gone to the office, I ask for the form."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
