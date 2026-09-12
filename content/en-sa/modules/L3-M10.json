@@ -1,0 +1,879 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M10",
+  "title": "Your own story",
+  "job": "An eight-sentence account, built from the whole ladder",
+  "prerequisites": [
+    "L3-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "participial_past",
+      "simple_present",
+      "simple_future",
+      "optative_third_singular",
+      "polite_imperative",
+      "verbless_nominal_present",
+      "absolutive"
+    ],
+    "allowedPatterns": [
+      "<eight-sentence account>",
+      "prathamam + <clause> + . + tataḥ + <clause> + . + ante + <clause>",
+      "V-tvā + V-tavān/V-tavatī",
+      "yaḥ + <clause> + saḥ + <clause>",
+      "<quoted clause> + iti + saḥ/sā + uktavān/uktavatī"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "An account here is AT MOST EIGHT SENTENCES, and the word bound applies to each sentence inside it rather than to the whole. Eight is a ceiling and not a target: a six-sentence story that holds together beats an eight-sentence one padded out to the number."
+    },
+    {
+      "tag": "delta",
+      "text": "The participial past forks ONCE, at the speaker, and the whole account forks with it. Every -tavān in a man's account and every -tavatī in a woman's agrees with the same person, so eight sentences carry eight participles of one gender. A mixed account is grammatical sentence by sentence and impossible as a thing anybody says."
+    },
+    {
+      "tag": "delta",
+      "text": "The one participle that does NOT fork with the speaker is the one inside a report. uktavān and uktavatī agree with whoever SPOKE, so a woman telling her own story still writes mama mātā uktavatī and mama adhyāpakaḥ uktavān for the people she is quoting."
+    },
+    {
+      "tag": "delta",
+      "text": "A correlative pair lives INSIDE one sentence and never crosses a full stop. yaḥ … saḥ and yadi … tarhi are machinery inside a sentence; prathamam, tataḥ, anantaram and ante are the joints BETWEEN sentences. Putting a full stop between yaḥ and saḥ breaks the sentence in half."
+    },
+    {
+      "tag": "free",
+      "text": "saḥ has two jobs and they are one row. After a yaḥ clause it is the correlative and is obligatory; at the head of a sentence it is L1-M5's plain \"he\". Which one it is depends only on whether a ya- word came before it."
+    },
+    {
+      "tag": "free",
+      "text": "The absolutive is tense-neutral, which is what makes it cheap here. gatvā, khāditvā and pītvā serve a past account and a future one unchanged — gṛham gatvā pustakam paṭhitavān and gṛham gatvā pustakam paṭhiṣyāmi differ only at the very end."
+    },
+    {
+      "tag": "delta",
+      "text": "Pro-drop holds at eight sentences exactly as it held at two. aham appears in the FIRST sentence at most and usually nowhere: the -mi ending and the participle's gender have already said who is speaking, and repeating the pronoun is the loudest English habit this course can produce."
+    },
+    {
+      "tag": "free",
+      "text": "A story has a shape and not just an order. A good account carries a reason (yataḥ or ataḥ), a feeling (L3-M6's dative frame or an adjective), one line somebody said (iti), and at least one relative clause — which is what puts other people in it."
+    },
+    {
+      "tag": "free",
+      "text": "Nothing new is opened here, and nothing needs to be. Everything an account reaches for belongs to the module that taught it, and a sentence that wants a fresh word is a sentence that wants rewriting."
+    },
+    {
+      "tag": "free",
+      "text": "Still outside the envelope at the end of the level: every imperfect and every other lakāra, the productive bare -ta participle, the plural participial past (so an account cannot be told by two people), the first-person and plural optative, the vocative, every -si present, tava, tubhyam, tvām, te and mā."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M10-S01",
+      "display": "prathamam aham vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. yaḥ adhyāpakaḥ tatra asti saḥ saṃskṛtam vadati. bhavān adya gṛham gacchatu iti saḥ uktavān. anantaram gṛham gatavān. gṛham gatvā bhojanam khāditavān. mahyam sukham asti, yataḥ bhojanam uttamam. ante pustakam paṭhitavān.",
+      "script": "प्रथमम् अहम् विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। यः अध्यापकः तत्र अस्ति सः संस्कृतम् वदति। भवान् अद्य गृहम् गच्छतु इति सः उक्तवान्। अनन्तरम् गृहम् गतवान्। गृहम् गत्वा भोजनम् खादितवान्। मह्यम् सुखम् अस्ति, यतः भोजनम् उत्तमम्। अन्ते पुस्तकम् पठितवान्।",
+      "cue": "First I went to the school. Then I studied Sanskrit. The teacher who is there speaks Sanskrit. 'Go home today', he said. After that I went home. Having got home I had a meal. I am happy, because the meal was good. In the end I read a book.",
+      "literal": "first I school-to went. then Sanskrit read. which teacher there is he Sanskrit speaks. your-honour today home-to let-go quote he said. after-that home-to went. home-to having-gone meal ate. to-me happiness is, because meal excellent. in-the-end book read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prathamam",
+            "cue": "first",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M10's sequencer, opening the account. A sequencer sits BETWEEN sentences and never inside one."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's verb as gatavān, the past that agrees with the speaker. Every participle in this account is his, so every one of them is -tavān."
+          },
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's relative, opening a clause that is answered by saḥ inside the SAME sentence. The full stop comes after both halves."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he",
+            "tag": "free",
+            "forms": [],
+            "note": "Twice in this account and two different jobs: the correlative answering yaḥ, and then the plain \"he\" who did the speaking. One row, both readings."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said (a man) · has said",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's \"said\". It agrees with the TEACHER, who spoke — the only participle here that is not the speaker's."
+          },
+          {
+            "display": "gatvā",
+            "cue": "having gone",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M1's absolutive, packing two actions into one sentence. It has no tense of its own and borrows one from khāditavān at the end."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          6
+        ]
+      },
+      "trap": "Eight sentences and one aham. The participles have said who is speaking since the first word, and a second aham would be the English habit showing through.",
+      "sound": "pra-tha-MAM a-HAM vid-YAA-la-yam GA-ta-vaan. TA-tah sams-KRI-tam PA-thi-ta-vaan. Each sequencer is said a little apart from the sentence it opens.",
+      "variations": [
+        {
+          "display": "prathamam aham vidyālayam gatavatī. tataḥ saṃskṛtam paṭhitavatī. yaḥ adhyāpakaḥ tatra asti saḥ saṃskṛtam vadati. bhavatī adya gṛham gacchatu iti saḥ uktavān. anantaram gṛham gatavatī. gṛham gatvā bhojanam khāditavatī. mahyam sukham asti, yataḥ bhojanam uttamam. ante pustakam paṭhitavatī.",
+          "script": "प्रथमम् अहम् विद्यालयम् गतवती। ततः संस्कृतम् पठितवती। यः अध्यापकः तत्र अस्ति सः संस्कृतम् वदति। भवती अद्य गृहम् गच्छतु इति सः उक्तवान्। अनन्तरम् गृहम् गतवती। गृहम् गत्वा भोजनम् खादितवती। मह्यम् सुखम् अस्ति, यतः भोजनम् उत्तमम्। अन्ते पुस्तकम् पठितवती।",
+          "cue": "First I went to the school. Then I studied Sanskrit. The teacher who is there speaks Sanskrit. 'Go home today', he said. After that I went home. Having got home I had a meal. I am happy, because the meal was good. In the end I read a book.",
+          "changed": "the whole account told by a woman — all five of HER participles fork to -tavatī, and uktavān does not, because the teacher who spoke is still a man"
+        },
+        {
+          "display": "prathamam aham vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. anantaram gṛham gatvā bhojanam khāditavān. ante pustakam paṭhitavān.",
+          "script": "प्रथमम् अहम् विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। अनन्तरम् गृहम् गत्वा भोजनम् खादितवान्। अन्ते पुस्तकम् पठितवान्।",
+          "cue": "First I went to the school. Then I studied Sanskrit. After that, having got home, I had a meal. In the end I read a book.",
+          "changed": "the account cut to four sentences — the relative clause and the reported line drop out together, and the absolutive swallows a whole sentence; eight is a ceiling and not a quota"
+        },
+        {
+          "display": "śvaḥ prathamam aham vidyālayam gamiṣyāmi. tataḥ saṃskṛtam paṭhiṣyāmi. anantaram gṛham gatvā bhojanam khādiṣyāmi. ante pustakam paṭhiṣyāmi.",
+          "script": "श्वः प्रथमम् अहम् विद्यालयम् गमिष्यामि। ततः संस्कृतम् पठिष्यामि। अनन्तरम् गृहम् गत्वा भोजनम् खादिष्यामि। अन्ते पुस्तकम् पठिष्यामि।",
+          "cue": "Tomorrow I will go to the school first. Then I will study Sanskrit. After that, having got home, I will eat. In the end I will read a book.",
+          "changed": "the same shape in the future — the sequencers and the absolutive gatvā are unchanged, because neither of them carries a tense to change"
+        }
+      ],
+      "mistake": {
+        "display": "prathamam aham vidyālayam gatavān. tataḥ aham saṃskṛtam paṭhitavān. anantaram aham gṛham gatavān. ante aham pustakam paṭhitavān.",
+        "why": "Every sentence is correct and the account is wrong. aham belongs in the first sentence at most; -tavān has already said who at the end of every clause, and four of them in a row is the one thing an ear catches immediately."
+      },
+      "usage": "A day told as a day. This is the length a speaker actually uses when somebody asks what they did.",
+      "register": "neutral",
+      "mnemonic": "One aham at the front. The endings carry the rest."
+    },
+    {
+      "id": "L3-M10-S02",
+      "display": "prathamam aham gṛhe bhojanam kṛtavatī. tataḥ jalam pītavatī. anantaram yat pustakam mama gṛhe asti tat paṭhitavatī. idam pustakam uttamam iti mama mātā uktavatī. mahyam idam pustakam rocate, yataḥ tat uttamam. ante bhojanam khāditvā saṃskṛtam likhitavatī.",
+      "script": "प्रथमम् अहम् गृहे भोजनम् कृतवती। ततः जलम् पीतवती। अनन्तरम् यत् पुस्तकम् मम गृहे अस्ति तत् पठितवती। इदम् पुस्तकम् उत्तमम् इति मम माता उक्तवती। मह्यम् इदम् पुस्तकम् रोचते, यतः तत् उत्तमम्। अन्ते भोजनम् खादित्वा संस्कृतम् लिखितवती।",
+      "cue": "First I made a meal at home. Then I drank some water. After that I read the book that is in my house. 'This book is excellent', my mother said. I like this book, because it is good. In the end, having eaten, I wrote Sanskrit.",
+      "literal": "first I house-in meal made. then water drank. after-that which book my house-in is that read. this book excellent quote my mother said. to-me this book is-pleasing, because it excellent. in-the-end meal having-eaten Sanskrit wrote",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "karoti",
+            "cue": "does · makes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's verb as kṛtavatī, a woman's past. Every participle of hers in this account ends the same way."
+          },
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "free",
+            "forms": [],
+            "note": "The neuter yat, agreeing with pustakam. Its clause and the tat that answers it are inside one sentence, between one capital letter and one full stop."
+          },
+          {
+            "display": "tat",
+            "cue": "that (thing) · it",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's neuter correlative, obligatory after yat. Later in the account the same word stands alone as plain \"it\", which is its other job."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said · has said",
+            "tag": "free",
+            "forms": [],
+            "note": "uktavatī here because the MOTHER spoke. The speaker of the account is also a woman, which is a coincidence and not the rule."
+          },
+          {
+            "display": "khāditvā",
+            "cue": "having eaten",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M1's absolutive. Both actions in its sentence belong to the same person, which is the condition an absolutive always carries."
+          }
+        ],
+        "rules": [
+          1,
+          2,
+          3
+        ]
+      },
+      "trap": "Two participles in this account are -tavatī for two different reasons: four because the speaker is a woman, and uktavatī because her mother is. Only the first four would move if a man told the story.",
+      "variations": [
+        {
+          "display": "prathamam aham gṛhe bhojanam kṛtavān. tataḥ jalam pītavān. anantaram yat pustakam mama gṛhe asti tat paṭhitavān. idam pustakam uttamam iti mama mātā uktavatī. mahyam idam pustakam rocate, yataḥ tat uttamam. ante bhojanam khāditvā saṃskṛtam likhitavān.",
+          "script": "प्रथमम् अहम् गृहे भोजनम् कृतवान्। ततः जलम् पीतवान्। अनन्तरम् यत् पुस्तकम् मम गृहे अस्ति तत् पठितवान्। इदम् पुस्तकम् उत्तमम् इति मम माता उक्तवती। मह्यम् इदम् पुस्तकम् रोचते, यतः तत् उत्तमम्। अन्ते भोजनम् खादित्वा संस्कृतम् लिखितवान्।",
+          "cue": "First I made a meal at home. Then I drank some water. After that I read the book that is in my house. 'This book is excellent', my mother said. I like this book, because it is good. In the end, having eaten, I wrote Sanskrit.",
+          "changed": "a man telling it — four participles fork to -tavān and uktavatī does not move at all, because the mother who said it is unchanged by who is passing it on"
+        },
+        {
+          "display": "prathamam aham gṛhe bhojanam kṛtavatī. tataḥ jalam pītavatī. ante saṃskṛtam likhitavatī.",
+          "script": "प्रथमम् अहम् गृहे भोजनम् कृतवती। ततः जलम् पीतवती। अन्ते संस्कृतम् लिखितवती।",
+          "cue": "First I made a meal at home. Then I drank some water. In the end I wrote Sanskrit.",
+          "changed": "cut to three sentences — anantaram simply disappears with the sentence it opened, because a sequencer belongs to its sentence and not to a fixed sequence"
+        },
+        {
+          "display": "prathamam aham gṛhe bhojanam kṛtvā jalam pītavatī. anantaram yat pustakam mama gṛhe asti tat paṭhitavatī. ante saṃskṛtam likhitavatī.",
+          "script": "प्रथमम् अहम् गृहे भोजनम् कृत्वा जलम् पीतवती। अनन्तरम् यत् पुस्तकम् मम गृहे अस्ति तत् पठितवती। अन्ते संस्कृतम् लिखितवती।",
+          "cue": "First, having made a meal at home, I drank some water. After that I read the book that is in my house. In the end I wrote Sanskrit.",
+          "changed": "the first two sentences packed into one with the absolutive kṛtvā, which drops a finite verb and a full stop at once"
+        }
+      ],
+      "mistake": {
+        "display": "prathamam aham gṛhe bhojanam kṛtavatī. tataḥ jalam pītavān. ante saṃskṛtam likhitavatī.",
+        "why": "The account changes gender halfway. Each sentence is correct on its own and the three of them cannot be one person's story: the participle forks once, at the speaker, and then holds to the last word."
+      },
+      "usage": "An evening at home. The reported line is what makes it a story rather than a list.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S03",
+      "display": "adya mama śirasi vedanā asti. ataḥ aham vidyālayam na gatavān. bhavān adya na gacchet iti mama mātā uktavatī. anantaram gṛhe pustakam paṭhitavān. yat pustakam paṭhāmi tat uttamam. pustakam paṭhitvā jalam pītavān. ante mahyam sukham asti, yataḥ vedanā na asti.",
+      "script": "अद्य मम शिरसि वेदना अस्ति। अतः अहम् विद्यालयम् न गतवान्। भवान् अद्य न गच्छेत् इति मम माता उक्तवती। अनन्तरम् गृहे पुस्तकम् पठितवान्। यत् पुस्तकम् पठामि तत् उत्तमम्। पुस्तकम् पठित्वा जलम् पीतवान्। अन्ते मह्यम् सुखम् अस्ति, यतः वेदना न अस्ति।",
+      "cue": "My head hurts today. So I did not go to school. 'You should not go today', my mother said. After that I read a book at home. The book I am reading is good. Having read the book I drank some water. In the end I am happy, because there is no pain.",
+      "literal": "today my head-in pain is. so I school-to not went. your-honour today not should-go quote my mother said. after-that house-in book read. which book I-read that excellent. book having-read water drank. in-the-end to-me happiness is, because pain not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "śiraḥ",
+            "cue": "head",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M7's locative śirasi. The pain is the subject and the head is where it is, in an account exactly as in a single sentence."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's \"so\", joining a reason to its consequence ACROSS a full stop — which a reason word may do and a correlative may not."
+          },
+          {
+            "display": "gacchet",
+            "cue": "should go · could go",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's optative, inside the quote because it is what the mother said. The report does not reach in and change her mood or her tense."
+          },
+          {
+            "display": "paṭhitvā",
+            "cue": "having read",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M1's absolutive. It takes its tense from pītavān at the end of the sentence and has none of its own."
+          }
+        ],
+        "rules": [
+          2,
+          5,
+          7
+        ]
+      },
+      "trap": "The account is in the past and its first and last sentences are in the present, because a pain and a feeling are true now. Mixing them is not a slip; it is what the story means.",
+      "sound": "A-dya MA-ma SHI-ra-si ve-da-NAA AS-ti. a-TAH a-HAM vid-YAA-la-yam na GA-ta-vaan.",
+      "variations": [
+        {
+          "display": "adya mama śirasi vedanā asti. ataḥ aham vidyālayam na gatavatī. bhavatī adya na gacchet iti mama mātā uktavatī. anantaram gṛhe pustakam paṭhitavatī. yat pustakam paṭhāmi tat uttamam. pustakam paṭhitvā jalam pītavatī. ante mahyam sukham asti, yataḥ vedanā na asti.",
+          "script": "अद्य मम शिरसि वेदना अस्ति। अतः अहम् विद्यालयम् न गतवती। भवती अद्य न गच्छेत् इति मम माता उक्तवती। अनन्तरम् गृहे पुस्तकम् पठितवती। यत् पुस्तकम् पठामि तत् उत्तमम्। पुस्तकम् पठित्वा जलम् पीतवती। अन्ते मह्यम् सुखम् अस्ति, यतः वेदना न अस्ति।",
+          "cue": "My head hurts today. So I did not go to school. 'You should not go today', my mother said. After that I read a book at home. The book I am reading is good. Having read the book I drank some water. In the end I am happy, because there is no pain.",
+          "changed": "a woman telling it — her three participles fork, and so does the bhavān inside the quote, because the mother was speaking to her"
+        },
+        {
+          "display": "adya mama śirasi vedanā asti. ataḥ aham vidyālayam na gatavān. anantaram gṛhe pustakam paṭhitavān. ante mahyam sukham asti.",
+          "script": "अद्य मम शिरसि वेदना अस्ति। अतः अहम् विद्यालयम् न गतवान्। अनन्तरम् गृहे पुस्तकम् पठितवान्। अन्ते मह्यम् सुखम् अस्ति।",
+          "cue": "My head hurts today. So I did not go to school. After that I read a book at home. In the end I am happy.",
+          "changed": "cut to four sentences, which drops the reported line, the relative clause and the reason — what is left is a sequence and no longer a story"
+        },
+        {
+          "display": "yadi mama śirasi vedanā asti tarhi aham vidyālayam na gacchāmi. anantaram gṛhe pustakam paṭhāmi. ante mahyam sukham asti.",
+          "script": "यदि मम शिरसि वेदना अस्ति तर्हि अहम् विद्यालयम् न गच्छामि। अनन्तरम् गृहे पुस्तकम् पठामि। अन्ते मह्यम् सुखम् अस्ति।",
+          "cue": "If my head hurts, then I do not go to school. After that I read a book at home. In the end I am happy.",
+          "changed": "recast as a habit — the first two sentences fuse into one L3-M4 condition, and the whole account drops into the present"
+        }
+      ],
+      "usage": "A day explained rather than listed. The reason at the front is what makes the rest of it follow.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S04",
+      "display": "prathamam aham mandiram gatavatī. tatra dīpāḥ santi. janāḥ miṣṭānnam khādanti. yaḥ janaḥ tatra asti saḥ santuṣṭaḥ. adya utsavaḥ uttamaḥ iti mama bhaginī uktavatī. mandiram gatvā miṣṭānnam khāditavatī. ante mahyam sukham asti, yataḥ utsavaḥ uttamaḥ.",
+      "script": "प्रथमम् अहम् मन्दिरम् गतवती। तत्र दीपाः सन्ति। जनाः मिष्टान्नम् खादन्ति। यः जनः तत्र अस्ति सः सन्तुष्टः। अद्य उत्सवः उत्तमः इति मम भगिनी उक्तवती। मन्दिरम् गत्वा मिष्टान्नम् खादितवती। अन्ते मह्यम् सुखम् अस्ति, यतः उत्सवः उत्तमः।",
+      "cue": "First I went to the temple. There are lamps there. People are eating sweets. Everyone who is there is happy. 'The festival is wonderful today', my sister said. Having gone to the temple I ate sweets. In the end I am happy, because the festival is wonderful.",
+      "literal": "first I temple-to went. there lamps are-many. people sweet-food eat-many. which person there is he content. today festival excellent quote my sister said. temple-to having-gone sweet-food ate. in-the-end to-me happiness is, because festival excellent",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "santi",
+            "cue": "are (more than one)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's plural of asti. An account may hold present description as well as past narration, and this sentence is what the speaker can still see."
+          },
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "free",
+            "forms": [],
+            "note": "The relative, with saḥ answering it three words later and the full stop after both. A crowd is exactly what this construction is for."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said · has said",
+            "tag": "free",
+            "forms": [],
+            "note": "uktavatī, agreeing with the sister who spoke. It happens to match the narrator's own shape, and it is not doing so because of her."
+          },
+          {
+            "display": "utsavaḥ",
+            "cue": "festival · celebration",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's common noun. No festival is named anywhere in this course, and an account is not the place to start."
+          }
+        ],
+        "rules": [
+          3,
+          2,
+          7
+        ]
+      },
+      "trap": "The relative pair sits inside the fourth sentence and the account's joints sit between sentences. Break the fourth sentence at its own middle and you have two halves that are neither of them a sentence.",
+      "variations": [
+        {
+          "display": "prathamam aham mandiram gatavān. tatra dīpāḥ santi. janāḥ miṣṭānnam khādanti. yaḥ janaḥ tatra asti saḥ santuṣṭaḥ. adya utsavaḥ uttamaḥ iti mama bhaginī uktavatī. mandiram gatvā miṣṭānnam khāditavān. ante mahyam sukham asti, yataḥ utsavaḥ uttamaḥ.",
+          "script": "प्रथमम् अहम् मन्दिरम् गतवान्। तत्र दीपाः सन्ति। जनाः मिष्टान्नम् खादन्ति। यः जनः तत्र अस्ति सः सन्तुष्टः। अद्य उत्सवः उत्तमः इति मम भगिनी उक्तवती। मन्दिरम् गत्वा मिष्टान्नम् खादितवान्। अन्ते मह्यम् सुखम् अस्ति, यतः उत्सवः उत्तमः।",
+          "cue": "First I went to the temple. There are lamps there. People are eating sweets. Everyone who is there is happy. 'The festival is wonderful today', my sister said. Having gone to the temple I ate sweets. In the end I am happy, because the festival is wonderful.",
+          "changed": "a man telling it — only his own two participles fork, and uktavatī stays, because the sister is his sister either way"
+        },
+        {
+          "display": "prathamam aham mandiram gatavatī. tatra dīpāḥ santi. yaḥ janaḥ tatra asti saḥ santuṣṭaḥ. ante mahyam sukham asti.",
+          "script": "प्रथमम् अहम् मन्दिरम् गतवती। तत्र दीपाः सन्ति। यः जनः तत्र अस्ति सः सन्तुष्टः। अन्ते मह्यम् सुखम् अस्ति।",
+          "cue": "First I went to the temple. There are lamps there. Everyone who is there is happy. In the end I am happy.",
+          "changed": "cut to four sentences with the relative clause kept, because it is the sentence that has other people in it"
+        },
+        {
+          "display": "prathamam aham mandiram gatvā miṣṭānnam khāditavatī. yaḥ janaḥ tatra asti saḥ santuṣṭaḥ. ante mahyam sukham asti, yataḥ utsavaḥ uttamaḥ.",
+          "script": "प्रथमम् अहम् मन्दिरम् गत्वा मिष्टान्नम् खादितवती। यः जनः तत्र अस्ति सः सन्तुष्टः। अन्ते मह्यम् सुखम् अस्ति, यतः उत्सवः उत्तमः।",
+          "cue": "First, having gone to the temple, I ate sweets. Everyone who is there is happy. In the end I am happy, because the festival is wonderful.",
+          "changed": "the first and sixth sentences packed into one with the absolutive gatvā, which lets a seven-sentence account say the same thing in three"
+        }
+      ],
+      "mistake": {
+        "display": "yaḥ janaḥ tatra asti. saḥ santuṣṭaḥ.",
+        "why": "The correlative split across a full stop. The first half is a relative clause with nothing to answer it and the second is a new sentence whose saḥ now means plain \"he\" — two sentences, and the connection between them gone."
+      },
+      "usage": "Told from inside the day, which is why the description stays in the present while the narration is past.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S05",
+      "display": "prathamam aham kāryālayam gatavān. tatra mama patram na asti iti saḥ uktavān. ataḥ mahyam cintā asti. yaḥ janaḥ kāryālaye asti saḥ mama mitram. anantaram gṛham gatvā patram paṭhitavān. ante punaḥ kāryālayam gatavān.",
+      "script": "प्रथमम् अहम् कार्यालयम् गतवान्। तत्र मम पत्रम् न अस्ति इति सः उक्तवान्। अतः मह्यम् चिन्ता अस्ति। यः जनः कार्यालये अस्ति सः मम मित्रम्। अनन्तरम् गृहम् गत्वा पत्रम् पठितवान्। अन्ते पुनः कार्यालयम् गतवान्।",
+      "cue": "First I went to the office. 'Your form is not here', he said. So I am worried. The person who is at the office is my friend. After that, having got home, I read the form. In the end I went to the office again.",
+      "literal": "first I office-to went. there my paper not is quote he said. so to-me worry is. which person office-in is he my friend. after-that home-to having-gone paper read. in-the-end again office-to went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kāryālayaḥ",
+            "cue": "office",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M8's office, in three shapes across this account: kāryālayam where he goes, kāryālaye where the friend is. One row throughout."
+          },
+          {
+            "display": "iti",
+            "cue": "(closes the quote)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M5's quotative, closing the clerk's own words. mama inside the quote is HIS, which is why the English has to say \"your\"."
+          },
+          {
+            "display": "cintā",
+            "cue": "worry · anxiety",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M6's dative frame, in the present because the worry is still going on. A past feeling would need forms this course has not opened."
+          },
+          {
+            "display": "punaḥ",
+            "cue": "again · more",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's \"again\". It is written once; the reduplicated punaḥ punaḥ would be this course's first two-token surface and is not written."
+          }
+        ],
+        "rules": [
+          7,
+          3,
+          6
+        ]
+      },
+      "trap": "mama inside the quote belongs to the clerk. Read it as the narrator's and the sentence says the opposite of what happened.",
+      "variations": [
+        {
+          "display": "prathamam aham kāryālayam gatavatī. tatra mama patram na asti iti saḥ uktavān. ataḥ mahyam cintā asti. yaḥ janaḥ kāryālaye asti saḥ mama mitram. anantaram gṛham gatvā patram paṭhitavatī. ante punaḥ kāryālayam gatavatī.",
+          "script": "प्रथमम् अहम् कार्यालयम् गतवती। तत्र मम पत्रम् न अस्ति इति सः उक्तवान्। अतः मह्यम् चिन्ता अस्ति। यः जनः कार्यालये अस्ति सः मम मित्रम्। अनन्तरम् गृहम् गत्वा पत्रम् पठितवती। अन्ते पुनः कार्यालयम् गतवती।",
+          "cue": "First I went to the office. 'Your form is not here', he said. So I am worried. The person who is at the office is my friend. After that, having got home, I read the form. In the end I went to the office again.",
+          "changed": "a woman telling it — her three participles fork and uktavān does not, because the clerk who spoke is a man"
+        },
+        {
+          "display": "prathamam aham kāryālayam gatavān. tatra mama patram na asti iti saḥ uktavān. ante punaḥ kāryālayam gatavān.",
+          "script": "प्रथमम् अहम् कार्यालयम् गतवान्। तत्र मम पत्रम् न अस्ति इति सः उक्तवान्। अन्ते पुनः कार्यालयम् गतवान्।",
+          "cue": "First I went to the office. 'Your form is not here', he said. In the end I went to the office again.",
+          "changed": "cut to three sentences, keeping the reported line because it is the one that says what went wrong"
+        },
+        {
+          "display": "yadi mama patram kāryālaye na asti tarhi aham punaḥ gamiṣyāmi.",
+          "script": "यदि मम पत्रम् कार्यालये न अस्ति तर्हि अहम् पुनः गमिष्यामि।",
+          "cue": "If my form is not at the office, then I will go again.",
+          "changed": "the whole account collapsed into one L3-M4 condition — which is what an account is NOT, and is worth seeing beside one"
+        }
+      ],
+      "usage": "An errand that did not work. The report is the point of it.",
+      "register": "neutral",
+      "mnemonic": "Everything before iti belongs to whoever said it."
+    },
+    {
+      "id": "L3-M10-S06",
+      "display": "prathamam aham saṃskṛtam paṭhitavatī. tataḥ saṃskṛtam likhitavatī. yat pustakam mama gṛhe asti tat uttamam. idam uttamam iti mama adhyāpakaḥ uktavān. ataḥ mahyam sukham asti. anantaram gṛham gatvā bhojanam khāditavatī. bhojanam khāditvā jalam pītavatī. ante punaḥ saṃskṛtam paṭhitavatī.",
+      "script": "प्रथमम् अहम् संस्कृतम् पठितवती। ततः संस्कृतम् लिखितवती। यत् पुस्तकम् मम गृहे अस्ति तत् उत्तमम्। इदम् उत्तमम् इति मम अध्यापकः उक्तवान्। अतः मह्यम् सुखम् अस्ति। अनन्तरम् गृहम् गत्वा भोजनम् खादितवती। भोजनम् खादित्वा जलम् पीतवती। अन्ते पुनः संस्कृतम् पठितवती।",
+      "cue": "First I studied Sanskrit. Then I wrote Sanskrit. The book that is in my house is excellent. 'This is excellent', my teacher said. So I am happy. After that, having got home, I had a meal. Having eaten, I drank some water. In the end I studied Sanskrit again.",
+      "literal": "first I Sanskrit read. then Sanskrit wrote. which book my house-in is that excellent. this excellent quote my teacher said. so to-me happiness is. after-that home-to having-gone meal ate. meal having-eaten water drank. in-the-end again Sanskrit read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's verb as paṭhitavatī, opening and closing the account. Eight sentences, five of the speaker's participles, one gender."
+          },
+          {
+            "display": "uktavān",
+            "cue": "said (a man) · has said",
+            "tag": "free",
+            "forms": [],
+            "note": "The teacher is a man, so this is -tavān inside a woman's account. It is the clearest case there is of the report not forking with the narrator."
+          },
+          {
+            "display": "khāditvā",
+            "cue": "having eaten",
+            "tag": "free",
+            "forms": [],
+            "note": "The second absolutive in two sentences. Both actions of a sentence with one in it must share a subject, and here both are hers."
+          },
+          {
+            "display": "ante",
+            "cue": "in the end · finally",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M10's last sequencer. Four of them across eight sentences is comfortable; one on every sentence would not be."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          5
+        ]
+      },
+      "trap": "uktavān in the middle of five -tavatī endings is correct and looks like a mistake. It agrees with the teacher, and nothing about who is telling the story reaches it.",
+      "sound": "pra-tha-MAM a-HAM sams-KRI-tam PA-thi-ta-va-tee. The -tavatī ending is four light syllables and it closes nearly every sentence here.",
+      "variations": [
+        {
+          "display": "prathamam aham saṃskṛtam paṭhitavān. tataḥ saṃskṛtam likhitavān. yat pustakam mama gṛhe asti tat uttamam. idam uttamam iti mama adhyāpakaḥ uktavān. ataḥ mahyam sukham asti. anantaram gṛham gatvā bhojanam khāditavān. bhojanam khāditvā jalam pītavān. ante punaḥ saṃskṛtam paṭhitavān.",
+          "script": "प्रथमम् अहम् संस्कृतम् पठितवान्। ततः संस्कृतम् लिखितवान्। यत् पुस्तकम् मम गृहे अस्ति तत् उत्तमम्। इदम् उत्तमम् इति मम अध्यापकः उक्तवान्। अतः मह्यम् सुखम् अस्ति। अनन्तरम् गृहम् गत्वा भोजनम् खादितवान्। भोजनम् खादित्वा जलम् पीतवान्। अन्ते पुनः संस्कृतम् पठितवान्।",
+          "cue": "First I studied Sanskrit. Then I wrote Sanskrit. The book that is in my house is excellent. 'This is excellent', my teacher said. So I am happy. After that, having got home, I had a meal. Having eaten, I drank some water. In the end I studied Sanskrit again.",
+          "changed": "a man telling it — his five participles fork and uktavān stays exactly where it was, which now makes it invisible; the woman's version is where the rule shows"
+        },
+        {
+          "display": "prathamam aham saṃskṛtam paṭhitavatī. idam uttamam iti mama adhyāpakaḥ uktavān. ataḥ mahyam sukham asti. ante gṛham gatavatī.",
+          "script": "प्रथमम् अहम् संस्कृतम् पठितवती। इदम् उत्तमम् इति मम अध्यापकः उक्तवान्। अतः मह्यम् सुखम् अस्ति। अन्ते गृहम् गतवती।",
+          "cue": "First I studied Sanskrit. 'This is excellent', my teacher said. So I am happy. In the end I went home.",
+          "changed": "cut to four sentences, keeping the report, the reason and the feeling — the three things that make it a story rather than a timetable"
+        },
+        {
+          "display": "prathamam aham saṃskṛtam paṭhitvā likhitavatī. anantaram gṛham gatvā bhojanam khāditavatī. ante punaḥ saṃskṛtam paṭhitavatī.",
+          "script": "प्रथमम् अहम् संस्कृतम् पठित्वा लिखितवती। अनन्तरम् गृहम् गत्वा भोजनम् खादितवती। अन्ते पुनः संस्कृतम् पठितवती।",
+          "cue": "First, having studied Sanskrit, I wrote it. After that, having got home, I had a meal. In the end I studied Sanskrit again.",
+          "changed": "two pairs of sentences packed with absolutives, which halves the number of full stops without losing a single action"
+        }
+      ],
+      "mistake": {
+        "display": "prathamam aham saṃskṛtam paṭhitavatī tataḥ saṃskṛtam likhitavatī.",
+        "why": "A sequencer used inside a sentence. tataḥ joins two SENTENCES and there is no full stop in front of it here, so the result is one sentence with two finite verbs and nothing joining them — which is the job L1-M10's ca does and tataḥ does not."
+      },
+      "usage": "The fullest account in the module: eight sentences, and still nothing in it that was not taught below.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S07",
+      "display": "prathamam aham pustakālayam gatavān. tatra yat pustakam mahyam rocate tat na asti. ataḥ mahyam duḥkham asti. śvaḥ punaḥ āgacchatu iti saḥ uktavān. anantaram gṛham gatvā pustakam paṭhitavān. yadi śvaḥ tat pustakam asti tarhi punaḥ gamiṣyāmi.",
+      "script": "प्रथमम् अहम् पुस्तकालयम् गतवान्। तत्र यत् पुस्तकम् मह्यम् रोचते तत् न अस्ति। अतः मह्यम् दुःखम् अस्ति। श्वः पुनः आगच्छतु इति सः उक्तवान्। अनन्तरम् गृहम् गत्वा पुस्तकम् पठितवान्। यदि श्वः तत् पुस्तकम् अस्ति तर्हि पुनः गमिष्यामि।",
+      "cue": "First I went to the library. The book I like was not there. So I am sad. 'Come again tomorrow', he said. After that, having got home, I read a book. If the book is there tomorrow, then I will go again.",
+      "literal": "first I library-to went. there which book to-me is-pleasing that not is. so to-me sorrow is. tomorrow again let-come quote he said. after-that home-to having-gone book read. if tomorrow that book is then again will-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "free",
+            "forms": [],
+            "note": "The neuter yat and its tat, inside one sentence. The relative clause holds a whole dative frame of its own — mahyam rocate — and the sentence still works."
+          },
+          {
+            "display": "duḥkham",
+            "cue": "sorrow · unhappiness",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M6's dative frame. A feeling in an account stays in the PRESENT, because the past of a feeling would need forms this course has not opened."
+          },
+          {
+            "display": "āgacchatu",
+            "cue": "please come · let (him) come",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M1's imperative, inside the quote because it is what the librarian said. The plain present of this verb is in no module of this course."
+          },
+          {
+            "display": "yadi",
+            "cue": "if",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's condition, closing the account by looking forward. yadi … tarhi lives inside one sentence, exactly as yaḥ … saḥ does."
+          }
+        ],
+        "rules": [
+          3,
+          7,
+          8
+        ]
+      },
+      "trap": "Two pairs in one account — yat … tat and yadi … tarhi — and each stays inside its own sentence. Neither has anything to do with the sequencers that join the sentences.",
+      "variations": [
+        {
+          "display": "prathamam aham pustakālayam gatavatī. tatra yat pustakam mahyam rocate tat na asti. ataḥ mahyam duḥkham asti. śvaḥ punaḥ āgacchatu iti saḥ uktavān. anantaram gṛham gatvā pustakam paṭhitavatī. yadi śvaḥ tat pustakam asti tarhi punaḥ gamiṣyāmi.",
+          "script": "प्रथमम् अहम् पुस्तकालयम् गतवती। तत्र यत् पुस्तकम् मह्यम् रोचते तत् न अस्ति। अतः मह्यम् दुःखम् अस्ति। श्वः पुनः आगच्छतु इति सः उक्तवान्। अनन्तरम् गृहम् गत्वा पुस्तकम् पठितवती। यदि श्वः तत् पुस्तकम् अस्ति तर्हि पुनः गमिष्यामि।",
+          "cue": "First I went to the library. The book I like was not there. So I am sad. 'Come again tomorrow', he said. After that, having got home, I read a book. If the book is there tomorrow, then I will go again.",
+          "changed": "a woman telling it — the two participles fork and gamiṣyāmi does not, because a future ending has never carried gender"
+        },
+        {
+          "display": "prathamam aham pustakālayam gatavān. tatra yat pustakam mahyam rocate tat na asti. ante gṛham gatavān.",
+          "script": "प्रथमम् अहम् पुस्तकालयम् गतवान्। तत्र यत् पुस्तकम् मह्यम् रोचते तत् न अस्ति। अन्ते गृहम् गतवान्।",
+          "cue": "First I went to the library. The book I like was not there. In the end I went home.",
+          "changed": "cut to three, and anantaram is replaced by ante — the last sentence takes the closing sequencer whichever sentence it is"
+        },
+        {
+          "display": "prathamam aham pustakālayam gatavān. tatra yat pustakam mahyam rocate tat na asti. yadi śvaḥ tat pustakam asti tarhi punaḥ gamiṣyāmi.",
+          "script": "प्रथमम् अहम् पुस्तकालयम् गतवान्। तत्र यत् पुस्तकम् मह्यम् रोचते तत् न अस्ति। यदि श्वः तत् पुस्तकम् अस्ति तर्हि पुनः गमिष्यामि।",
+          "cue": "First I went to the library. The book I like was not there. If the book is there tomorrow, then I will go again.",
+          "changed": "the middle dropped so that the two pairs stand in consecutive sentences — a relative pair and a conditional pair, side by side and neither crossing a stop"
+        }
+      ],
+      "usage": "A small disappointment, which is most of what an ordinary day holds. The conditional at the end is what makes it a story and not a complaint.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S08",
+      "display": "prathamam aham yānena vidyālayam gatavatī. mārgaḥ dīrghaḥ, ataḥ mahyam cintā asti. tataḥ mārgam na jānāmi. mārgaḥ atra asti iti saḥ janaḥ uktavān. anantaram vidyālayam gatvā saṃskṛtam paṭhitavatī. yaḥ adhyāpakaḥ tatra asti saḥ uttamaḥ. ante yānena gṛham gatavatī.",
+      "script": "प्रथमम् अहम् यानेन विद्यालयम् गतवती। मार्गः दीर्घः, अतः मह्यम् चिन्ता अस्ति। ततः मार्गम् न जानामि। मार्गः अत्र अस्ति इति सः जनः उक्तवान्। अनन्तरम् विद्यालयम् गत्वा संस्कृतम् पठितवती। यः अध्यापकः तत्र अस्ति सः उत्तमः। अन्ते यानेन गृहम् गतवती।",
+      "cue": "First I went to the school by vehicle. The road is long, so I am worried. Then I did not know the road. 'The road is here', that man said. After that, having reached the school, I studied Sanskrit. The teacher who is there is excellent. In the end I went home by vehicle.",
+      "literal": "first I vehicle-by school-to went. road long, so to-me worry is. then road not I-know. road here is quote that person said. after-that school-to having-gone Sanskrit read. which teacher there is he excellent. in-the-end vehicle-by home-to went",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yānam",
+            "cue": "vehicle · conveyance",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's instrumental yānena, \"by vehicle\". It opens and closes the account, which is how a journey is framed."
+          },
+          {
+            "display": "jānāmi",
+            "cue": "I know",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's \"I know\". Its -mi ending says who, which is why the sentence needs no aham even in the middle of an account."
+          },
+          {
+            "display": "janaḥ",
+            "cue": "person",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M9's \"person\", singular here. saḥ janaḥ is \"that man\" — a stranger named as briefly as he can be."
+          },
+          {
+            "display": "uttamaḥ",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's adjective, masculine to agree with the correlative saḥ. The main clause of a relative sentence may be verbless like any other."
+          }
+        ],
+        "rules": [
+          6,
+          3,
+          7
+        ]
+      },
+      "trap": "saḥ appears twice here doing its two different jobs: saḥ janaḥ is L1-M5's plain \"that man\", and the saḥ after the yaḥ clause is the correlative. The same row, and the ya- word in front decides which.",
+      "variations": [
+        {
+          "display": "prathamam aham yānena vidyālayam gatavān. mārgaḥ dīrghaḥ, ataḥ mahyam cintā asti. tataḥ mārgam na jānāmi. mārgaḥ atra asti iti saḥ janaḥ uktavān. anantaram vidyālayam gatvā saṃskṛtam paṭhitavān. yaḥ adhyāpakaḥ tatra asti saḥ uttamaḥ. ante yānena gṛham gatavān.",
+          "script": "प्रथमम् अहम् यानेन विद्यालयम् गतवान्। मार्गः दीर्घः, अतः मह्यम् चिन्ता अस्ति। ततः मार्गम् न जानामि। मार्गः अत्र अस्ति इति सः जनः उक्तवान्। अनन्तरम् विद्यालयम् गत्वा संस्कृतम् पठितवान्। यः अध्यापकः तत्र अस्ति सः उत्तमः। अन्ते यानेन गृहम् गतवान्।",
+          "cue": "First I went to the school by vehicle. The road is long, so I am worried. Then I did not know the road. 'The road is here', that man said. After that, having reached the school, I studied Sanskrit. The teacher who is there is excellent. In the end I went home by vehicle.",
+          "changed": "a man telling it — his three participles fork, and jānāmi, uktavān and the whole relative sentence are untouched"
+        },
+        {
+          "display": "prathamam aham yānena vidyālayam gatavatī. mārgaḥ dīrghaḥ, ataḥ mahyam cintā asti. ante yānena gṛham gatavatī.",
+          "script": "प्रथमम् अहम् यानेन विद्यालयम् गतवती। मार्गः दीर्घः, अतः मह्यम् चिन्ता अस्ति। अन्ते यानेन गृहम् गतवती।",
+          "cue": "First I went to the school by vehicle. The road is long, so I am worried. In the end I went home by vehicle.",
+          "changed": "cut to three sentences, which is the journey with everything that happened on it removed — short, and no longer a story"
+        },
+        {
+          "display": "śvaḥ prathamam aham yānena vidyālayam gamiṣyāmi. ante yānena gṛham gamiṣyāmi.",
+          "script": "श्वः प्रथमम् अहम् यानेन विद्यालयम् गमिष्यामि। अन्ते यानेन गृहम् गमिष्यामि।",
+          "cue": "Tomorrow I will go to the school by vehicle first. In the end I will go home by vehicle.",
+          "changed": "the journey moved into the future, where the instrumental and the sequencers behave identically and only the verb endings change"
+        }
+      ],
+      "usage": "A journey with a stranger in it. One sentence of dialogue is usually all such a story carries.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M10-S09",
+      "display": "śvaḥ prathamam aham vidyālayam gamiṣyāmi. tataḥ saṃskṛtam paṭhiṣyāmi. yat pustakam mahyam rocate tat paṭhiṣyāmi. anantaram gṛham gatvā bhojanam khādiṣyāmi. bhavān api āgacchatu iti vadāmi. ante mahyam sukham asti, yataḥ śvaḥ utsavaḥ asti.",
+      "script": "श्वः प्रथमम् अहम् विद्यालयम् गमिष्यामि। ततः संस्कृतम् पठिष्यामि। यत् पुस्तकम् मह्यम् रोचते तत् पठिष्यामि। अनन्तरम् गृहम् गत्वा भोजनम् खादिष्यामि। भवान् अपि आगच्छतु इति वदामि। अन्ते मह्यम् सुखम् अस्ति, यतः श्वः उत्सवः अस्ति।",
+      "cue": "Tomorrow I will go to the school first. Then I will study Sanskrit. I will read the book I like. After that, having got home, I will eat. 'You come too', I say. In the end I am happy, because tomorrow there is a festival.",
+      "literal": "tomorrow first I school-to will-go. then Sanskrit will-read. which book to-me is-pleasing that will-read. after-that home-to having-gone meal will-eat. your-honour also let-come quote I-say. in-the-end to-me happiness is, because tomorrow festival is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gamiṣyati",
+            "cue": "will go",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's future as gamiṣyāmi. A future account has NO participles in it at all, so nothing in it forks at the speaker."
+          },
+          {
+            "display": "gatvā",
+            "cue": "having gone",
+            "tag": "free",
+            "forms": [],
+            "note": "The absolutive in a future sentence, unchanged from its past one. It has no tense of its own and takes khādiṣyāmi's."
+          },
+          {
+            "display": "vadati",
+            "cue": "speaks · says",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M7's verb as vadāmi. A report in the present needs no participle, so this sentence sidesteps the gender question entirely."
+          },
+          {
+            "display": "api",
+            "cue": "also · too",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's \"also\", standing AFTER the word it attaches to. bhavān api is \"you too\", inside the quote where it was said."
+          }
+        ],
+        "rules": [
+          5,
+          6,
+          8
+        ]
+      },
+      "trap": "Nothing here says whether the speaker is a man or a woman, and nothing needs to. Gender rides on the participle, and a future account has none.",
+      "variations": [
+        {
+          "display": "prathamam aham vidyālayam gatavān. tataḥ saṃskṛtam paṭhitavān. yat pustakam mahyam rocate tat paṭhitavān. anantaram gṛham gatvā bhojanam khāditavān. ante mahyam sukham asti.",
+          "script": "प्रथमम् अहम् विद्यालयम् गतवान्। ततः संस्कृतम् पठितवान्। यत् पुस्तकम् मह्यम् रोचते तत् पठितवान्। अनन्तरम् गृहम् गत्वा भोजनम् खादितवान्। अन्ते मह्यम् सुखम् अस्ति।",
+          "cue": "First I went to the school. Then I studied Sanskrit. I read the book I like. After that, having got home, I had a meal. In the end I am happy.",
+          "changed": "the same plan told as something that happened — and the moment it goes into the past it forks at the speaker, which the future version never had to"
+        },
+        {
+          "display": "śvaḥ prathamam aham vidyālayam gamiṣyāmi. tataḥ saṃskṛtam paṭhiṣyāmi. ante gṛham gatvā bhojanam khādiṣyāmi.",
+          "script": "श्वः प्रथमम् अहम् विद्यालयम् गमिष्यामि। ततः संस्कृतम् पठिष्यामि। अन्ते गृहम् गत्वा भोजनम् खादिष्यामि।",
+          "cue": "Tomorrow I will go to the school first. Then I will study Sanskrit. In the end, having got home, I will eat.",
+          "changed": "cut to three, with anantaram dropped and ante taking the last sentence — the same three verbs and one fewer joint"
+        },
+        {
+          "display": "śvaḥ prathamam vayam vidyālayam gacchāmaḥ. ante gṛhe bhojanam khādāmaḥ.",
+          "script": "श्वः प्रथमम् वयम् विद्यालयम् गच्छामः। अन्ते गृहे भोजनम् खादामः।",
+          "cue": "Tomorrow we go to the school first. In the end we eat at home.",
+          "changed": "told by more than one person, which only the PRESENT allows — L2-M6's vayam has no participial past to go with it, so an account of what two people DID cannot be written in this course"
+        }
+      ],
+      "usage": "A plan, said the day before. The future is where an account can be told without saying who you are.",
+      "register": "neutral",
+      "mnemonic": "No participle, no gender. A plan tells you nothing about the planner."
+    },
+    {
+      "id": "L3-M10-S10",
+      "display": "prathamam aham kāryālayam gatavatī. tatra yat patram icchāmi tat na asti. śvaḥ punaḥ āgacchatu iti sā uktavatī. ataḥ mahyam cintā asti. anantaram gṛham gatavatī. gṛham gatvā jalam pītavatī. mama mātā adya santuṣṭā. ante mahyam api sukham asti.",
+      "script": "प्रथमम् अहम् कार्यालयम् गतवती। तत्र यत् पत्रम् इच्छामि तत् न अस्ति। श्वः पुनः आगच्छतु इति सा उक्तवती। अतः मह्यम् चिन्ता अस्ति। अनन्तरम् गृहम् गतवती। गृहम् गत्वा जलम् पीतवती। मम माता अद्य सन्तुष्टा। अन्ते मह्यम् अपि सुखम् अस्ति।",
+      "cue": "First I went to the office. The form I want was not there. 'Come again tomorrow', she said. So I am worried. After that I went home. Having got home I drank some water. My mother is happy today. In the end I am happy too.",
+      "literal": "first I office-to went. there which paper I-want that not is. tomorrow again let-come quote she said. so to-me worry is. after-that home-to went. home-to having-gone water drank. my mother today content. in-the-end to-me also happiness is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "uktavān",
+            "cue": "said · has said",
+            "tag": "free",
+            "forms": [],
+            "note": "uktavatī, because the CLERK spoke and she is a woman. The narrator is also a woman here, which is why the next account's teacher is a man."
+          },
+          {
+            "display": "tat",
+            "cue": "that (thing) · it",
+            "tag": "free",
+            "forms": [],
+            "note": "The neuter correlative answering yat, inside the second sentence. Both halves are in the same sentence and the full stop comes after both."
+          },
+          {
+            "display": "santuṣṭaḥ",
+            "cue": "content · pleased",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective as santuṣṭā, agreeing with the MOTHER. An adjective in an account agrees with whoever it is about, not with the narrator."
+          },
+          {
+            "display": "api",
+            "cue": "also · too",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's \"also\", after mahyam — \"to me too\". It is what ties the last sentence to the one before it without a sequencer."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          7
+        ]
+      },
+      "trap": "Three feminine endings in this account belong to three different women: the narrator's participles, the clerk's uktavatī and the mother's santuṣṭā. Only the first set moves if a man tells it.",
+      "sound": "pra-tha-MAM a-HAM kaar-YAA-la-yam GA-ta-va-tee. SHVAH PU-nah aa-GACH-chha-tu I-ti SAA UK-ta-va-tee.",
+      "variations": [
+        {
+          "display": "prathamam aham kāryālayam gatavān. tatra yat patram icchāmi tat na asti. śvaḥ punaḥ āgacchatu iti sā uktavatī. ataḥ mahyam cintā asti. anantaram gṛham gatavān. gṛham gatvā jalam pītavān. mama mātā adya santuṣṭā. ante mahyam api sukham asti.",
+          "script": "प्रथमम् अहम् कार्यालयम् गतवान्। तत्र यत् पत्रम् इच्छामि तत् न अस्ति। श्वः पुनः आगच्छतु इति सा उक्तवती। अतः मह्यम् चिन्ता अस्ति। अनन्तरम् गृहम् गतवान्। गृहम् गत्वा जलम् पीतवान्। मम माता अद्य सन्तुष्टा। अन्ते मह्यम् अपि सुखम् अस्ति।",
+          "cue": "First I went to the office. The form I want was not there. 'Come again tomorrow', she said. So I am worried. After that I went home. Having got home I drank some water. My mother is happy today. In the end I am happy too.",
+          "changed": "a man telling it — only his own three participles fork; uktavatī stays with the clerk and santuṣṭā stays with the mother, and the account now carries two genders honestly"
+        },
+        {
+          "display": "prathamam aham kāryālayam gatavatī. tatra yat patram icchāmi tat na asti. śvaḥ punaḥ āgacchatu iti sā uktavatī. ante gṛham gatavatī.",
+          "script": "प्रथमम् अहम् कार्यालयम् गतवती। तत्र यत् पत्रम् इच्छामि तत् न अस्ति। श्वः पुनः आगच्छतु इति सा उक्तवती। अन्ते गृहम् गतवती।",
+          "cue": "First I went to the office. The form I want was not there. 'Come again tomorrow', she said. In the end I went home.",
+          "changed": "cut to four sentences, keeping the relative clause and the report — the two things that carry the whole of what happened"
+        },
+        {
+          "display": "yat patram icchāmi tat kāryālaye na asti, ataḥ mahyam cintā asti.",
+          "script": "यत् पत्रम् इच्छामि तत् कार्यालये न अस्ति, अतः मह्यम् चिन्ता अस्ति।",
+          "cue": "The form I want is not at the office, so I am worried.",
+          "changed": "the account reduced to one sentence with a correlative and a reason inside it — the smallest thing this module can say, and the proof that an account is a choice of length"
+        }
+      ],
+      "mistake": {
+        "display": "śvaḥ punaḥ āgacchatu iti sā uktavān.",
+        "why": "The report made to agree with the wrong person. sā is the clerk and she is a woman, so uktavatī is the only shape available. A participle inside a report follows whoever SPOKE, and never the person telling you about it afterwards."
+      },
+      "usage": "The account this whole level was for: eight sentences, three people in it, and not one word that a module below did not teach.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M10-C01",
+      "display": "prathamam aham gṛhe bhojanam kṛtavān. tataḥ jalam pītavān. anantaram pustakam paṭhitavān. mahyam idam pustakam rocate. ante saṃskṛtam likhitavān.",
+      "script": "प्रथमम् अहम् गृहे भोजनम् कृतवान्। ततः जलम् पीतवान्। अनन्तरम् पुस्तकम् पठितवान्। मह्यम् इदम् पुस्तकम् रोचते। अन्ते संस्कृतम् लिखितवान्।",
+      "cue": "First I made a meal at home. Then I drank some water. After that I read a book. I like this book. In the end I wrote Sanskrit."
+    },
+    {
+      "id": "L3-M10-C02",
+      "display": "prathamam aham vidyālayam gatavatī. tataḥ saṃskṛtam paṭhitavatī. yaḥ adhyāpakaḥ tatra asti saḥ uttamaḥ. anantaram gṛham gatvā bhojanam khāditavatī. ante mahyam sukham asti.",
+      "script": "प्रथमम् अहम् विद्यालयम् गतवती। ततः संस्कृतम् पठितवती। यः अध्यापकः तत्र अस्ति सः उत्तमः। अनन्तरम् गृहम् गत्वा भोजनम् खादितवती। अन्ते मह्यम् सुखम् अस्ति।",
+      "cue": "First I went to the school. Then I studied Sanskrit. The teacher who is there is excellent. After that, having got home, I had a meal. In the end I am happy."
+    },
+    {
+      "id": "L3-M10-C03",
+      "display": "adya mama udare vedanā asti. ataḥ aham na gatavān. bhavān alpam khādet iti vaidyaḥ uktavān. anantaram gṛhe pustakam paṭhitavān. ante vedanā na asti.",
+      "script": "अद्य मम उदरे वेदना अस्ति। अतः अहम् न गतवान्। भवान् अल्पम् खादेत् इति वैद्यः उक्तवान्। अनन्तरम् गृहे पुस्तकम् पठितवान्। अन्ते वेदना न अस्ति।",
+      "cue": "My stomach hurts today. So I did not go. 'You should eat little', the doctor said. After that I read a book at home. In the end there is no pain."
+    },
+    {
+      "id": "L3-M10-C04",
+      "display": "prathamam aham mandiram gatavatī. tatra dīpāḥ santi. janāḥ miṣṭānnam khādanti. mahyam utsavaḥ rocate. ante gṛham gatavatī.",
+      "script": "प्रथमम् अहम् मन्दिरम् गतवती। तत्र दीपाः सन्ति। जनाः मिष्टान्नम् खादन्ति। मह्यम् उत्सवः रोचते। अन्ते गृहम् गतवती।",
+      "cue": "First I went to the temple. There are lamps there. People are eating sweets. I like the festival. In the end I went home."
+    },
+    {
+      "id": "L3-M10-C05",
+      "display": "prathamam aham kāryālayam gatavān. tatra mama patram na asti. ataḥ mahyam cintā asti. anantaram gṛham gatvā patram paṭhitavān. ante punaḥ kāryālayam gatavān.",
+      "script": "प्रथमम् अहम् कार्यालयम् गतवान्। तत्र मम पत्रम् न अस्ति। अतः मह्यम् चिन्ता अस्ति। अनन्तरम् गृहम् गत्वा पत्रम् पठितवान्। अन्ते पुनः कार्यालयम् गतवान्।",
+      "cue": "First I went to the office. My form is not there. So I am worried. After that, having got home, I read the form. In the end I went to the office again."
+    },
+    {
+      "id": "L3-M10-C06",
+      "display": "śvaḥ prathamam aham kāryālayam gamiṣyāmi. tataḥ pramāṇapatram icchāmi. anantaram gṛham gamiṣyāmi. ante saṃskṛtam paṭhiṣyāmi.",
+      "script": "श्वः प्रथमम् अहम् कार्यालयम् गमिष्यामि। ततः प्रमाणपत्रम् इच्छामि। अनन्तरम् गृहम् गमिष्यामि। अन्ते संस्कृतम् पठिष्यामि।",
+      "cue": "Tomorrow I will go to the office first. Then I want a certificate. After that I will go home. In the end I will study Sanskrit."
+    },
+    {
+      "id": "L3-M10-C07",
+      "display": "prathamam aham yānena gṛham gatavatī. mārgaḥ dīrghaḥ. tataḥ jalam pītavatī. anantaram bhojanam khāditavatī. ante mahyam sukham asti.",
+      "script": "प्रथमम् अहम् यानेन गृहम् गतवती। मार्गः दीर्घः। ततः जलम् पीतवती। अनन्तरम् भोजनम् खादितवती। अन्ते मह्यम् सुखम् अस्ति।",
+      "cue": "First I went home by vehicle. The road is long. Then I drank some water. After that I had a meal. In the end I am happy."
+    },
+    {
+      "id": "L3-M10-C08",
+      "display": "prathamam aham pustakālayam gatavān. yat pustakam mahyam rocate tat na asti. ataḥ mahyam duḥkham asti. śvaḥ punaḥ āgacchatu iti saḥ uktavān. ante gṛham gatavān.",
+      "script": "प्रथमम् अहम् पुस्तकालयम् गतवान्। यत् पुस्तकम् मह्यम् रोचते तत् न अस्ति। अतः मह्यम् दुःखम् अस्ति। श्वः पुनः आगच्छतु इति सः उक्तवान्। अन्ते गृहम् गतवान्।",
+      "cue": "First I went to the library. The book I like is not there. So I am sad. 'Come again tomorrow', he said. In the end I went home."
+    },
+    {
+      "id": "L3-M10-C09",
+      "display": "adya utsavaḥ asti. janāḥ mandiram gacchanti. gṛhe dīpāḥ santi. mama navam vastram asti. ante aham santuṣṭaḥ.",
+      "script": "अद्य उत्सवः अस्ति। जनाः मन्दिरम् गच्छन्ति। गृहे दीपाः सन्ति। मम नवम् वस्त्रम् अस्ति। अन्ते अहम् सन्तुष्टः।",
+      "cue": "There is a festival today. The people are going to the temple. There are lamps in the house. I have new clothes. In the end I am happy."
+    },
+    {
+      "id": "L3-M10-C10",
+      "display": "prathamam aham saṃskṛtam paṭhitavatī. tataḥ saṃskṛtam likhitavatī. idam uttamam iti mama adhyāpakaḥ uktavān. ataḥ mahyam sukham asti. ante gṛham gatavatī.",
+      "script": "प्रथमम् अहम् संस्कृतम् पठितवती। ततः संस्कृतम् लिखितवती। इदम् उत्तमम् इति मम अध्यापकः उक्तवान्। अतः मह्यम् सुखम् अस्ति। अन्ते गृहम् गतवती।",
+      "cue": "First I studied Sanskrit. Then I wrote Sanskrit. 'This is excellent', my teacher said. So I am happy. In the end I went home."
+    },
+    {
+      "id": "L3-M10-C11",
+      "display": "prathamam aham jalam pītavān. tataḥ vidyālayam gatavān. yat saṃskṛtam adhyāpakaḥ vadati tat mahyam rocate. anantaram gṛham gatvā pustakam paṭhitavān. ante jalam pītavān.",
+      "script": "प्रथमम् अहम् जलम् पीतवान्। ततः विद्यालयम् गतवान्। यत् संस्कृतम् अध्यापकः वदति तत् मह्यम् रोचते। अनन्तरम् गृहम् गत्वा पुस्तकम् पठितवान्। अन्ते जलम् पीतवान्।",
+      "cue": "First I drank some water. Then I went to the school. I like the Sanskrit the teacher speaks. After that, having got home, I read a book. In the end I drank some water."
+    },
+    {
+      "id": "L3-M10-C12",
+      "display": "adya prathamam aham asvasthaḥ. ataḥ vidyālayam na gatavān. bhavān adya gṛhe paṭhet iti mātā uktavatī. anantaram pustakam paṭhitavān. ante mahyam sukham asti.",
+      "script": "अद्य प्रथमम् अहम् अस्वस्थः। अतः विद्यालयम् न गतवान्। भवान् अद्य गृहे पठेत् इति माता उक्तवती। अनन्तरम् पुस्तकम् पठितवान्। अन्ते मह्यम् सुखम् अस्ति।",
+      "cue": "Today I am unwell first of all. So I did not go to school. 'You should read at home today', my mother said. After that I read a book. In the end I am happy."
+    },
+    {
+      "id": "L3-M10-C13",
+      "display": "prathamam aham mandiram gatavatī. tatra janāḥ santi. yaḥ janaḥ tatra asti saḥ santuṣṭaḥ. anantaram miṣṭānnam khāditavatī. ante gṛham gatvā jalam pītavatī.",
+      "script": "प्रथमम् अहम् मन्दिरम् गतवती। तत्र जनाः सन्ति। यः जनः तत्र अस्ति सः सन्तुष्टः। अनन्तरम् मिष्टान्नम् खादितवती। अन्ते गृहम् गत्वा जलम् पीतवती।",
+      "cue": "First I went to the temple. There are people there. Everyone who is there is happy. After that I ate sweets. In the end, having got home, I drank some water."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

@@ -1,0 +1,930 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M6",
+  "title": "Feelings in depth",
+  "job": "Nuance past good and bad",
+  "prerequisites": [
+    "L3-M5"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 11,
+    "allowedTenses": [
+      "simple_present",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "mahyam + N + asti",
+      "mahyam + N + na asti",
+      "aham + Adj-nom",
+      "mahyam + N-nom + rocate",
+      "kim + bhavate/bhavatyai + N + asti"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A feeling has an EXPERIENCER in the dative, not a subject in the nominative. mahyam duḥkham asti is \"to-me there-is sorrow\": the sorrow is the subject of the sentence and you are the person it is happening to."
+    },
+    {
+      "tag": "delta",
+      "text": "You have met this frame before. L1-M1's mahyam phalam rocate — \"fruit is pleasing to me\" — was the same law with a different verb, a whole level ago. What looked then like an oddity about liking turns out to be how this language handles inner states generally."
+    },
+    {
+      "tag": "delta",
+      "text": "The other true frame is an ADJECTIVE on you, in the nominative, with no asti at all: aham khinnaḥ, aham santuṣṭā. L1-M9 shipped it and it has not changed. Both frames are right and they are not interchangeable."
+    },
+    {
+      "tag": "delta",
+      "text": "The two frames never mix. aham duḥkham asti and mahyam khinnaḥ are both wrong, and they are what an English speaker builds out of the halves. A feeling NOUN takes the dative; a feeling ADJECTIVE takes the nominative."
+    },
+    {
+      "tag": "free",
+      "text": "asti stays singular and never agrees with you. mahyam cintā asti has a feminine noun, mahyam duḥkham asti a neuter one, and asti does not move for either — it is agreeing with the feeling, which is singular in both."
+    },
+    {
+      "tag": "delta",
+      "text": "bhītaḥ and kruddhaḥ are ordinary adjectives here, not participles. They are -ta forms that have hardened into words of their own, exactly as L2-M3's pītaḥ is \"yellow\" rather than \"drunk\". Learn them as adjectives and nothing follows from them."
+    },
+    {
+      "tag": "free",
+      "text": "The bare -ta participle stays shut. This course writes no gataḥ, no kṛtam, no naṣṭam; L2-M8's jātam is the one frozen member of the family. The past is the -tavān participle you already have, and it belongs to M10's accounts."
+    },
+    {
+      "tag": "free",
+      "text": "The adjectives agree with the speaker's gender on L2-M3's a-stem pattern, so there is no new machinery: bhītaḥ · bhītā, kruddhaḥ · kruddhā, khinnaḥ · khinnā, santuṣṭaḥ · santuṣṭā. Four pairs, one ending."
+    },
+    {
+      "tag": "free",
+      "text": "Degree is bought with words you already own. L2-M9's adhikam grades a feeling up and alpam grades it down, and they agree with the feeling noun in front of them: adhikam bhayam, alpam bhayam."
+    },
+    {
+      "tag": "free",
+      "text": "Asking after somebody else's feeling reuses L2-M5's dative of the listener: kim bhavate duḥkham asti? to a man, kim bhavatyai cintā asti? to a woman. The frame does not change; only who is in the dative changes."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M6-S01",
+      "display": "mahyam duḥkham asti.",
+      "script": "मह्यम् दुःखम् अस्ति।",
+      "cue": "I am sad.",
+      "literal": "to-me sorrow is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's dative of aham, doing the same job it did for liking. The person who feels stands in this case and not in the nominative."
+          },
+          {
+            "display": "duḥkham",
+            "cue": "sorrow · unhappiness",
+            "tag": "delta",
+            "forms": [],
+            "note": "A neuter noun, and the SUBJECT of this sentence. English has no everyday noun that sits here; \"sorrow\" is heavier in English than duḥkham is here."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\", agreeing with duḥkham. It is singular because the sorrow is singular, never because you are one person."
+          }
+        ],
+        "rules": [
+          0,
+          1,
+          4
+        ]
+      },
+      "trap": "There is no word for \"I\" in this sentence and no verb for \"feel\". The nearest English gets is \"there is sorrow to me\", and that is what the sentence literally is.",
+      "sound": "MAH-yam DUHKH-kham AS-ti. The h in duḥkham is a real breath between the vowel and the kh, not a silent letter.",
+      "variations": [
+        {
+          "display": "mahyam duḥkham na asti.",
+          "script": "मह्यम् दुःखम् न अस्ति।",
+          "cue": "I am not sad.",
+          "changed": "negated — na goes in front of asti, because asti is the verb of the sentence and duḥkham is its subject"
+        },
+        {
+          "display": "rāmāya duḥkham asti.",
+          "script": "रामाय दुःखम् अस्ति।",
+          "cue": "Rāma is sad.",
+          "changed": "the experiencer moves to a third person, so L1-M1's dative rāmāya replaces mahyam; nothing else in the sentence moves"
+        },
+        {
+          "display": "kim bhavate duḥkham asti?",
+          "script": "किम् भवते दुःखम् अस्ति?",
+          "cue": "Are you sad?",
+          "changed": "a question about the listener — L1-M2's kim opens it and L2-M5's bhavate is the listener in the same dative"
+        }
+      ],
+      "mistake": {
+        "display": "aham duḥkham asti.",
+        "why": "The English shape: the feeler made the subject. It says \"I there-is sorrow\" and leaves aham with nothing to be the subject of, because duḥkham already is one. The experiencer belongs in the dative."
+      },
+      "usage": "The everyday way to say you are down. It is not dramatic and it does not invite a long answer.",
+      "register": "neutral",
+      "mnemonic": "The feeling is the subject. You are only where it lands."
+    },
+    {
+      "id": "L3-M6-S02",
+      "display": "adya aham khinnaḥ.",
+      "script": "अद्य अहम् खिन्नः।",
+      "cue": "Today I am sad.",
+      "literal": "today I sad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's \"today\". A feeling word is often pinned to a day, because the alternative is a claim about your whole character."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's \"I\", in the nominative — which is exactly what S01 refused. The adjective frame wants it and the noun frame does not."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "sad · downcast",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective, agreeing with a male speaker. No asti is needed: an adjective and its noun make a whole sentence."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          7
+        ]
+      },
+      "trap": "This says almost what S01 says and it is built the other way round. Nothing in Sanskrit lets you swap the pieces between them.",
+      "sound": "AD-ya a-HAM KHIN-nah. The dy of adya is two sounds run together, and the final h of khinnaḥ is a soft echo of the vowel before it.",
+      "variations": [
+        {
+          "display": "adya aham khinnā.",
+          "script": "अद्य अहम् खिन्ना।",
+          "cue": "Today I am sad. (a woman speaking)",
+          "changed": "the speaker's gender moves the adjective, on the a-stem pattern L2-M3 taught across three genders"
+        },
+        {
+          "display": "adya aham na khinnaḥ.",
+          "script": "अद्य अहम् न खिन्नः।",
+          "cue": "Today I am not sad.",
+          "changed": "negated — with no verb in the sentence, na stands in front of the adjective instead"
+        },
+        {
+          "display": "adya saḥ khinnaḥ.",
+          "script": "अद्य सः खिन्नः।",
+          "cue": "Today he is sad.",
+          "changed": "the subject moves to L1-M5's \"he\"; the adjective is already masculine, so it does not have to move with him"
+        }
+      ],
+      "mistake": {
+        "display": "adya mahyam khinnaḥ.",
+        "why": "The cross: the dative of the noun frame with the adjective of the other one. khinnaḥ has to agree with somebody in the nominative, and after mahyam there is nobody there for it to agree with."
+      },
+      "usage": "The commonest of the two frames in speech, because the adjective is short and needs no verb.",
+      "register": "neutral",
+      "mnemonic": "Adjective, nominative. Noun, dative. Never the other pair."
+    },
+    {
+      "id": "L3-M6-S03",
+      "display": "mahyam adhikam bhayam asti.",
+      "script": "मह्यम् अधिकम् भयम् अस्ति।",
+      "cue": "I am very afraid.",
+      "literal": "to-me much fear is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "The experiencer again. Degree is added to the FEELING, not to the person, so mahyam is untouched by adhikam."
+          },
+          {
+            "display": "adhikam",
+            "cue": "much · more",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M9's \"more\", here neuter to agree with bhayam. It grades the noun the way an adjective does, because that is what it is."
+          },
+          {
+            "display": "bhayam",
+            "cue": "fear",
+            "tag": "delta",
+            "forms": [],
+            "note": "A neuter noun and the subject. mahyam bhayam asti is the whole of \"I am afraid\" — there is no verb of fearing in it."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "Still singular, still agreeing with the feeling. Grading the fear does not make it plural."
+          }
+        ],
+        "rules": [
+          0,
+          8,
+          4
+        ]
+      },
+      "trap": "adhikam is grading bhayam, not mahyam. \"A lot of fear is to me\" is the shape; there is no way to say it a lot harder about yourself.",
+      "variations": [
+        {
+          "display": "mahyam alpam bhayam asti.",
+          "script": "मह्यम् अल्पम् भयम् अस्ति।",
+          "cue": "I am a little afraid.",
+          "changed": "graded down instead of up — L2-M9's alpam replaces adhikam in the same slot and agrees with bhayam the same way"
+        },
+        {
+          "display": "mahyam bhayam na asti.",
+          "script": "मह्यम् भयम् न अस्ति।",
+          "cue": "I am not afraid.",
+          "changed": "negated, and the degree word drops out with it — you cannot negate a graded fear without first saying there is one"
+        },
+        {
+          "display": "kim bhavatyai bhayam asti?",
+          "script": "किम् भवत्यै भयम् अस्ति?",
+          "cue": "Are you afraid? (to a woman)",
+          "changed": "a question to a woman — L2-M5's bhavatyai is the listener's dative, and it is the only thing in the frame that changes"
+        }
+      ],
+      "usage": "Said about something in front of you rather than about life in general. A speaker who says it usually says what of, next.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S04",
+      "display": "aham bhītaḥ, tathāpi gacchāmi.",
+      "script": "अहम् भीतः, तथापि गच्छामि।",
+      "cue": "I am afraid, even so I am going.",
+      "literal": "I afraid, even-so go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "The nominative, because what follows is an adjective. It is said once and the second clause does without it."
+          },
+          {
+            "display": "bhītaḥ",
+            "cue": "afraid · frightened",
+            "tag": "delta",
+            "forms": [
+              "bhītaḥ",
+              "bhītā"
+            ],
+            "note": "An ordinary adjective, not a participle — the same ruling L2-M3 made for pītaḥ as \"yellow\". bhītā is the shape when a woman speaks."
+          },
+          {
+            "display": "tathāpi",
+            "cue": "even so · nevertheless",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's \"even so\", one token with its join written in full. L3-M3's bare tathā is a separate word and a separate row."
+          },
+          {
+            "display": "gacchāmi",
+            "cue": "I go · I am going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's \"I go\". The -mi ending has already said who, so aham is not repeated in the second clause."
+          }
+        ],
+        "rules": [
+          5,
+          2,
+          7
+        ]
+      },
+      "trap": "bhītaḥ looks like a past participle and is not being used as one. Nothing about it means \"was frightened\"; it is a plain adjective in the present, like khinnaḥ beside it.",
+      "sound": "a-HAM BHEE-tah, ta-THAA-pi GACH-chhaa-mi. bh is one sound, a b with breath behind it, not b followed by h.",
+      "variations": [
+        {
+          "display": "aham bhītā, tathāpi gacchāmi.",
+          "script": "अहम् भीता, तथापि गच्छामि।",
+          "cue": "I am afraid, even so I am going. (a woman speaking)",
+          "changed": "a woman speaking, so the adjective moves and the verb does not — gacchāmi has never carried gender"
+        },
+        {
+          "display": "aham bhītaḥ, ataḥ na gacchāmi.",
+          "script": "अहम् भीतः, अतः न गच्छामि।",
+          "cue": "I am afraid, so I am not going.",
+          "changed": "the joint reverses — L1-M9's ataḥ makes the fear a reason instead of an obstacle, and the verb is negated"
+        },
+        {
+          "display": "kim bhavān bhītaḥ?",
+          "script": "किम् भवान् भीतः?",
+          "cue": "Are you afraid?",
+          "changed": "turned into a question about the listener, who is bhavān in the nominative because the frame here is the adjective one"
+        }
+      ],
+      "mistake": {
+        "display": "mahyam bhītaḥ asti.",
+        "why": "An adjective forced into the noun frame. bhītaḥ is masculine nominative and mahyam is a dative, so nothing in the sentence agrees with anything, and asti has no subject at all."
+      },
+      "usage": "Saying you are afraid and doing the thing anyway. Ordinary, and not a boast.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S05",
+      "display": "mama mātā khinnā, ataḥ mahyam cintā asti.",
+      "script": "मम माता खिन्ना, अतः मह्यम् चिन्ता अस्ति।",
+      "cue": "My mother is sad, so I am worried.",
+      "literal": "my mother sad, so to-me worry is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's genitive. It belongs to mātā and not to anything in the second clause."
+          },
+          {
+            "display": "mātā",
+            "cue": "mother",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's \"mother\". That module shipped six relationship words and svasā is not among them — bhaginī is the sister this course writes."
+          },
+          {
+            "display": "khinnā",
+            "cue": "sad · downcast",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective in its feminine shape, agreeing with mātā. Here it agrees with somebody who is not the speaker."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's \"so\". It stands at the head of the clause that is the consequence, which is where L1-M9 first put it."
+          },
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "The experiencer of the second clause. Two clauses, two frames: an adjective and a nominative first, a noun and a dative second."
+          },
+          {
+            "display": "cintā",
+            "cue": "worry · anxiety",
+            "tag": "delta",
+            "forms": [],
+            "note": "A FEMININE noun, and the subject of its clause. Its gender changes nothing about the frame: asti after it is the same asti as after duḥkham."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "Singular, agreeing with cintā. A learner expecting the verb to follow the speaker will look for a different shape and there is not one."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          4
+        ]
+      },
+      "trap": "The two clauses use the two different frames, on purpose. Read khinnā as the pattern for the whole sentence and the second half stops parsing.",
+      "variations": [
+        {
+          "display": "mama pitā khinnaḥ, ataḥ mahyam cintā asti.",
+          "script": "मम पिता खिन्नः, अतः मह्यम् चिन्ता अस्ति।",
+          "cue": "My father is sad, so I am worried.",
+          "changed": "the first clause changes gender — pitā takes the masculine adjective, while the second clause is untouched because its frame has no gender in it"
+        },
+        {
+          "display": "mama mātā khinnā, tathāpi mahyam cintā na asti.",
+          "script": "मम माता खिन्ना, तथापि मह्यम् चिन्ता न अस्ति।",
+          "cue": "My mother is sad, even so I am not worried.",
+          "changed": "the joint becomes a concession and the second clause is negated — na in front of asti, the verb of that clause"
+        },
+        {
+          "display": "kimartham bhavatyai cintā asti?",
+          "script": "किमर्थम् भवत्यै चिन्ता अस्ति?",
+          "cue": "Why are you worried?",
+          "changed": "recast as a question with L1-M9's kimartham, and the listener takes the dative that the speaker had"
+        }
+      ],
+      "mistake": {
+        "display": "mama mātā khinnā, ataḥ aham cintā asti.",
+        "why": "The second clause built like the first. aham is nominative and cintā is already the subject, so the clause has two of them and no place for the person who is worried."
+      },
+      "usage": "Worry about somebody else is stated exactly like this, one clause for them and one for you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S06",
+      "display": "kim bhavate cintā asti?",
+      "script": "किम् भवते चिन्ता अस्ति?",
+      "cue": "Are you worried?",
+      "literal": "question to-you worry is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kim",
+            "cue": "(yes/no marker)",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's question marker, at the front of the sentence and changing nothing else in it."
+          },
+          {
+            "display": "bhavate",
+            "cue": "to you (polite, to a man)",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M5's dative of bhavān. The listener steps into exactly the slot mahyam occupies when you are talking about yourself."
+          },
+          {
+            "display": "cintā",
+            "cue": "worry · anxiety",
+            "tag": "free",
+            "forms": [],
+            "note": "Still the subject, still feminine, still singular. Asking about a feeling does not move it out of the subject slot."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\". A yes/no question in this course is the statement with kim in front, so the verb is unchanged."
+          }
+        ],
+        "rules": [
+          9,
+          0,
+          4
+        ]
+      },
+      "trap": "bhavate is not the subject of the question any more than mahyam is the subject of S01. You are asking whether a worry exists, and whose it is is in the case.",
+      "sound": "KIM bha-VA-te CHIN-taa AS-ti. c is always the ch of \"church\", so cintā begins chin-, never sin-.",
+      "variations": [
+        {
+          "display": "kim bhavatyai cintā asti?",
+          "script": "किम् भवत्यै चिन्ता अस्ति?",
+          "cue": "Are you worried? (to a woman)",
+          "changed": "the listener's gender moves the dative to bhavatyai; nothing else in the question has a gender to move"
+        },
+        {
+          "display": "mahyam cintā asti.",
+          "script": "मह्यम् चिन्ता अस्ति।",
+          "cue": "I am worried.",
+          "changed": "the answer — the same frame with the dative back on the speaker, and kim dropped because it is no longer a question"
+        },
+        {
+          "display": "kim bhavān khinnaḥ?",
+          "script": "किम् भवान् खिन्नः?",
+          "cue": "Are you sad?",
+          "changed": "the other frame asked as a question: an adjective, so the listener is nominative bhavān and asti disappears entirely"
+        }
+      ],
+      "mistake": {
+        "display": "kim bhavān cintā asti?",
+        "why": "The listener put in the nominative under a feeling NOUN. That leaves bhavān and cintā both claiming to be the subject. With a noun the listener takes bhavate or bhavatyai; bhavān belongs with an adjective."
+      },
+      "usage": "What you actually ask somebody who looks troubled. Short, and it does not press.",
+      "register": "neutral",
+      "mnemonic": "Ask with the same case you would answer in."
+    },
+    {
+      "id": "L3-M6-S07",
+      "display": "aham na kruddhaḥ, kintu khinnaḥ.",
+      "script": "अहम् न क्रुद्धः, किन्तु खिन्नः।",
+      "cue": "I am not angry, but sad.",
+      "literal": "I not angry, but sad",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "Said once for both halves. The second clause has no verb and no subject of its own — it hangs on this one."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's \"not\", in front of the adjective because there is no verb here for it to stand before."
+          },
+          {
+            "display": "kruddhaḥ",
+            "cue": "angry",
+            "tag": "delta",
+            "forms": [
+              "kruddhaḥ",
+              "kruddhā"
+            ],
+            "note": "An adjective, like bhītaḥ and for the same reason. kruddhā is the shape when a woman speaks; nothing else changes."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's \"but\". Unlike ca and vā it comes FIRST in its clause, which is why it can open a clause this short."
+          },
+          {
+            "display": "khinnaḥ",
+            "cue": "sad · downcast",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective, agreeing with the aham three words back. Two adjectives, one speaker, one gender."
+          }
+        ],
+        "rules": [
+          5,
+          3,
+          7
+        ]
+      },
+      "trap": "Both adjectives agree with the same person, so both have to move together when a woman says it. Moving one and not the other is the commonest slip here.",
+      "variations": [
+        {
+          "display": "aham na kruddhā, kintu khinnā.",
+          "script": "अहम् न क्रुद्धा, किन्तु खिन्ना।",
+          "cue": "I am not angry, but sad. (a woman speaking)",
+          "changed": "both adjectives move together, because both agree with the one speaker and there is only one of her"
+        },
+        {
+          "display": "aham kruddhaḥ, kintu na khinnaḥ.",
+          "script": "अहम् क्रुद्धः, किन्तु न खिन्नः।",
+          "cue": "I am angry, but not sad.",
+          "changed": "the negation moves to the second clause, which reverses what is being denied without touching the frame"
+        },
+        {
+          "display": "mama bhrātā kruddhaḥ.",
+          "script": "मम भ्राता क्रुद्धः।",
+          "cue": "My brother is angry.",
+          "changed": "the adjective put on somebody else — L2-M2's bhrātā takes it in the nominative exactly as aham did"
+        }
+      ],
+      "mistake": {
+        "display": "aham na kruddhaḥ asti.",
+        "why": "asti added under an adjective, because English needs \"am\". An adjective and its noun are already a sentence here; adding asti gives the clause a verb it has no work for."
+      },
+      "usage": "Correcting somebody's guess about how you feel. The pair of adjectives is how the nuance is done, not a stronger single word.",
+      "register": "neutral",
+      "mnemonic": "One speaker, one gender, every adjective in the sentence."
+    },
+    {
+      "id": "L3-M6-S08",
+      "display": "mahyam saṅgītam rocate, ataḥ mahyam sukham asti.",
+      "script": "मह्यम् सङ्गीतम् रोचते, अतः मह्यम् सुखम् अस्ति।",
+      "cue": "I like music, so I am happy.",
+      "literal": "to-me music is-pleasing, so to-me happiness is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "The same dative in both clauses, once for liking and once for happiness. That identity is the whole point of this sentence."
+          },
+          {
+            "display": "saṅgītam",
+            "cue": "music",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's \"music\", and the SUBJECT of rocate. The thing liked is what the verb agrees with."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's verb. Singular for one thing; L1-M9's rocante is the shape when more than one thing pleases you."
+          },
+          {
+            "display": "ataḥ",
+            "cue": "so · therefore",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's \"so\", joining a cause to its consequence — here one dative frame to another."
+          },
+          {
+            "display": "sukham",
+            "cue": "happiness · ease",
+            "tag": "delta",
+            "forms": [],
+            "note": "A neuter noun, the opposite number of duḥkham and built the same way. mahyam sukham asti is \"I am happy\"."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\", agreeing with sukham. rocate and asti are two different verbs doing the same grammatical job in the two clauses."
+          }
+        ],
+        "rules": [
+          1,
+          0,
+          4
+        ]
+      },
+      "trap": "rocate is not \"like\". The music is doing the pleasing and you are where it lands, which is why the sentence needs no word for \"I\" in the nominative anywhere in it.",
+      "sound": "MAH-yam san-GEE-tam RO-cha-te, a-TAH MAH-yam SU-kham AS-ti. The ng of saṅgītam is the ng of \"sing\", tucked in front of the g.",
+      "variations": [
+        {
+          "display": "mahyam puṣpāṇi rocante, ataḥ mahyam sukham asti.",
+          "script": "मह्यम् पुष्पाणि रोचन्ते, अतः मह्यम् सुखम् अस्ति।",
+          "cue": "I like flowers, so I am happy.",
+          "changed": "more than one thing pleases, so the verb moves to L1-M9's plural rocante while the dative — the person — does not move at all"
+        },
+        {
+          "display": "mahyam saṅgītam na rocate, ataḥ mahyam sukham na asti.",
+          "script": "मह्यम् सङ्गीतम् न रोचते, अतः मह्यम् सुखम् न अस्ति।",
+          "cue": "I do not like music, so I am not happy.",
+          "changed": "both clauses negated, each on its own verb, which shows that the two halves are two full sentences joined"
+        },
+        {
+          "display": "bhavate saṅgītam rocate, ataḥ bhavate sukham asti.",
+          "script": "भवते सङ्गीतम् रोचते, अतः भवते सुखम् अस्ति।",
+          "cue": "You like music, so you are happy.",
+          "changed": "the experiencer becomes the listener in both clauses at once — one word swapped twice, and no verb moves"
+        }
+      ],
+      "mistake": {
+        "display": "aham saṅgītam rocāmi.",
+        "why": "\"I like music\" built as an English transitive verb, with the liker as subject and a first-person ending invented to match. rocate has no such form in this course: the thing liked is the subject and the person is always the dative."
+      },
+      "usage": "Giving a reason for a mood. Pairing the liking frame with the feeling frame is common precisely because they are the same shape.",
+      "register": "neutral",
+      "mnemonic": "Music pleases me, so happiness is to me. Both clauses point the same way."
+    },
+    {
+      "id": "L3-M6-S09",
+      "display": "aham santuṣṭaḥ, yataḥ mahyam cintā na asti.",
+      "script": "अहम् सन्तुष्टः, यतः मह्यम् चिन्ता न अस्ति।",
+      "cue": "I am content, because I have nothing to worry about.",
+      "literal": "I content, because to-me worry not is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "Nominative, because the first clause is the adjective frame. The second clause will not reuse it."
+          },
+          {
+            "display": "santuṣṭaḥ",
+            "cue": "content · pleased",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective, masculine for a male speaker. santuṣṭā is the feminine shape, on the same a-stem pattern as the rest."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because · since",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's \"because\", opening the clause that gives the reason. L3-M2's yat is a relative pronoun and never does this job."
+          },
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "The other frame, in the same sentence as the first. The switch is not a mistake: the reason is a noun and nouns take the dative."
+          },
+          {
+            "display": "cintā",
+            "cue": "worry · anxiety",
+            "tag": "free",
+            "forms": [],
+            "note": "The subject of the second clause, being denied rather than asserted."
+          },
+          {
+            "display": "na",
+            "cue": "not",
+            "tag": "free",
+            "forms": [],
+            "note": "In front of asti, the verb of its own clause. na asti together is L1-M3's \"there is not\"."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\". Negating existence is how this language says you have no worry; there is no verb for \"have\"."
+          }
+        ],
+        "rules": [
+          2,
+          3,
+          0
+        ]
+      },
+      "trap": "One sentence, both frames, and neither has leaked into the other. That is the target: not choosing between them but knowing which one each half needs.",
+      "variations": [
+        {
+          "display": "aham santuṣṭā, yataḥ mahyam cintā na asti.",
+          "script": "अहम् सन्तुष्टा, यतः मह्यम् चिन्ता न अस्ति।",
+          "cue": "I am content, because I have nothing to worry about. (a woman speaking)",
+          "changed": "the adjective moves for a woman and the second clause is untouched — its frame has no gender anywhere in it"
+        },
+        {
+          "display": "aham khinnaḥ, yataḥ mahyam cintā asti.",
+          "script": "अहम् खिन्नः, यतः मह्यम् चिन्ता अस्ति।",
+          "cue": "I am sad, because I am worried.",
+          "changed": "both halves reversed at once — a different adjective and the negation gone, with the frames themselves unchanged"
+        },
+        {
+          "display": "yadi mahyam cintā na asti tarhi aham santuṣṭaḥ.",
+          "script": "यदि मह्यम् चिन्ता न अस्ति तर्हि अहम् सन्तुष्टः।",
+          "cue": "If I have nothing to worry about, then I am content.",
+          "changed": "recast as L3-M4's condition: the reason clause becomes the yadi clause and moves to the front, and tarhi answers it"
+        }
+      ],
+      "usage": "A settled, unremarkable answer to how you are. It says less than English \"content\" does.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M6-S10",
+      "display": "yaḥ chātraḥ paṭhati saḥ santuṣṭaḥ.",
+      "script": "यः छात्रः पठति सः सन्तुष्टः।",
+      "cue": "The student who studies is content.",
+      "literal": "which student reads he content",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's relative pronoun, masculine to agree with chātraḥ. Its clause comes first and comes complete."
+          },
+          {
+            "display": "chātraḥ",
+            "cue": "student",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's \"student\", inside the relative clause and nominative because that clause makes it its subject."
+          },
+          {
+            "display": "paṭhati",
+            "cue": "reads · studies",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's verb, closing the relative clause. Everything before saḥ belongs to it."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's \"he\", here as the correlative answering yaḥ. It may never be dropped, which is L3-M2's law."
+          },
+          {
+            "display": "santuṣṭaḥ",
+            "cue": "content · pleased",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective, agreeing with saḥ. The main clause is the adjective frame and needs no verb."
+          }
+        ],
+        "rules": [
+          2,
+          7,
+          3
+        ]
+      },
+      "trap": "Feelings can be said about anybody, not only about you — but the frame does not relax. The adjective still needs somebody in the nominative, and here that somebody is saḥ.",
+      "variations": [
+        {
+          "display": "yaḥ chātraḥ na paṭhati saḥ khinnaḥ.",
+          "script": "यः छात्रः न पठति सः खिन्नः।",
+          "cue": "The student who does not study is unhappy.",
+          "changed": "the relative clause negated and the adjective reversed; the pair yaḥ … saḥ is untouched, because negation is not its business"
+        },
+        {
+          "display": "yā bālā bhītā sā na gacchati.",
+          "script": "या बाला भीता सा न गच्छति।",
+          "cue": "The girl who is afraid does not go.",
+          "changed": "feminine throughout — yā and sā — and the relative clause now holds an adjective instead of a verb, which it may"
+        },
+        {
+          "display": "yaḥ chātraḥ paṭhati tam aham jānāmi.",
+          "script": "यः छात्रः पठति तम् अहम् जानामि।",
+          "cue": "I know the student who studies.",
+          "changed": "the correlative changes case on its own — L3-M2's tam, accusative because the main clause makes it an object, while yaḥ stays nominative"
+        }
+      ],
+      "mistake": {
+        "display": "yaḥ chātraḥ paṭhati santuṣṭaḥ.",
+        "why": "The correlative dropped, on the English habit of hanging the clause off the noun. Without saḥ the main clause has no subject at all, and L3-M2's law is that the ta- word is never optional."
+      },
+      "usage": "A general remark of the proverb kind. This is the shape such remarks take.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M6-C01",
+      "display": "mahyam sukham asti.",
+      "script": "मह्यम् सुखम् अस्ति।",
+      "cue": "I am happy."
+    },
+    {
+      "id": "L3-M6-C02",
+      "display": "rāmāya cintā asti.",
+      "script": "रामाय चिन्ता अस्ति।",
+      "cue": "Rāma is worried."
+    },
+    {
+      "id": "L3-M6-C03",
+      "display": "adya aham bhītaḥ.",
+      "script": "अद्य अहम् भीतः।",
+      "cue": "Today I am afraid."
+    },
+    {
+      "id": "L3-M6-C04",
+      "display": "mama pitā kruddhaḥ.",
+      "script": "मम पिता क्रुद्धः।",
+      "cue": "My father is angry."
+    },
+    {
+      "id": "L3-M6-C05",
+      "display": "kim bhavate sukham asti?",
+      "script": "किम् भवते सुखम् अस्ति?",
+      "cue": "Are you happy?"
+    },
+    {
+      "id": "L3-M6-C06",
+      "display": "mahyam bhayam na asti, kintu mahyam cintā asti.",
+      "script": "मह्यम् भयम् न अस्ति, किन्तु मह्यम् चिन्ता अस्ति।",
+      "cue": "I am not afraid, but I am worried."
+    },
+    {
+      "id": "L3-M6-C07",
+      "display": "yā bālā kruddhā sā na vadati.",
+      "script": "या बाला क्रुद्धा सा न वदति।",
+      "cue": "The girl who is angry does not speak."
+    },
+    {
+      "id": "L3-M6-C08",
+      "display": "mahyam phalāni rocante, ataḥ mahyam sukham asti.",
+      "script": "मह्यम् फलानि रोचन्ते, अतः मह्यम् सुखम् अस्ति।",
+      "cue": "I like fruits, so I am happy."
+    },
+    {
+      "id": "L3-M6-C09",
+      "display": "yadi mahyam duḥkham asti tarhi aham gṛham gacchāmi.",
+      "script": "यदि मह्यम् दुःखम् अस्ति तर्हि अहम् गृहम् गच्छामि।",
+      "cue": "If I am sad, then I go home."
+    },
+    {
+      "id": "L3-M6-C10",
+      "display": "mahyam cintā asti iti saḥ uktavān.",
+      "script": "मह्यम् चिन्ता अस्ति इति सः उक्तवान्।",
+      "cue": "'I am worried', he said."
+    },
+    {
+      "id": "L3-M6-C11",
+      "display": "bhavatī kruddhā iti aham manye.",
+      "script": "भवती क्रुद्धा इति अहम् मन्ये।",
+      "cue": "I think you are angry."
+    },
+    {
+      "id": "L3-M6-C12",
+      "display": "adya mama mātā santuṣṭā.",
+      "script": "अद्य मम माता सन्तुष्टा।",
+      "cue": "Today my mother is content."
+    },
+    {
+      "id": "L3-M6-C13",
+      "display": "mahyam alpam bhayam asti, kintu aham gacchāmi.",
+      "script": "मह्यम् अल्पम् भयम् अस्ति, किन्तु अहम् गच्छामि।",
+      "cue": "I am a little afraid, but I am going."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

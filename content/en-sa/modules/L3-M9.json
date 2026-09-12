@@ -1,0 +1,871 @@
+{
+  "schemaVersion": 5,
+  "id": "L3-M9",
+  "title": "Festivals and everyday culture",
+  "job": "Talk about what is happening around you",
+  "prerequisites": [
+    "L3-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 12,
+    "allowedTenses": [
+      "simple_present",
+      "verbless_nominal_present"
+    ],
+    "allowedPatterns": [
+      "adya + N-nom + asti",
+      "N-nom-pl + N-acc + V-anti",
+      "N-loc + N-nom-pl + santi",
+      "janāḥ + N-acc + V-anti",
+      "N-loc + utsavaḥ + asti"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "The third-person PLURAL present ends -anti. janāḥ gacchanti is \"the people go\". This is the last person-ending the course needs: L1 wrote -mi and -ti, L2-M6 opened the first-person plural -maḥ, L2-M2 opened the dual staḥ, and this closes the set."
+    },
+    {
+      "tag": "delta",
+      "text": "asti for one, staḥ for two, santi for many. Three shapes of the one verb \"to be\", opened one level at a time, and this is the first place you see them named side by side. gṛhe dīpaḥ asti · gṛhe dīpāḥ santi."
+    },
+    {
+      "tag": "free",
+      "text": "Only three verbs are written with -anti here: gacchanti, khādanti, paśyanti. The ENDING is the lesson and not the list. Put -anti where you would put -ti on any verb you already have and you have the plural."
+    },
+    {
+      "tag": "free",
+      "text": "The plural on the NOUNS is not new either. L1-M8's chātrāḥ taught the masculine -āḥ and L1-M9's puṣpāṇi the neuter -āṇi, so janāḥ and dīpāḥ are an ending you have had for two levels."
+    },
+    {
+      "tag": "delta",
+      "text": "A plural subject takes a plural verb, every time. janāḥ gacchati is what a learner who has only ever written -ti produces, and it is a real error: the ending is the only thing in the sentence saying how many are going."
+    },
+    {
+      "tag": "free",
+      "text": "A festival here is utsavaḥ, the common noun, and no festival is named. India is not one custom, and a module that named one and described it would be teaching a claim about a country rather than a language."
+    },
+    {
+      "tag": "free",
+      "text": "miṣṭānnam is a two-member compound with its join written in full, so it is ONE token and ONE row — the same fact as L3-M8's pramāṇapatram and L2-M2's mātāpitarau, stated a third time because it keeps surprising people."
+    },
+    {
+      "tag": "free",
+      "text": "mandire and utsave are ordinary a-stem locatives, the same -e as gṛhe and vidyālaye. A temple and a festival need no new machinery; they are places and occasions like any other."
+    },
+    {
+      "tag": "free",
+      "text": "mahyam utsavaḥ rocate is L1-M1's frame with nothing changed: the festival is what pleases, and you are in the dative. Liking something that is happening around you is still liking."
+    },
+    {
+      "tag": "free",
+      "text": "What a display says is what is in front of the speaker — lamps, sweets, people going somewhere. Anything about who does what and when is hedged in usage, because a speaker at this level describes and does not explain."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L3-M9-S01",
+      "display": "adya utsavaḥ asti.",
+      "script": "अद्य उत्सवः अस्ति।",
+      "cue": "There is a festival today.",
+      "literal": "today festival is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's \"today\". An occasion is nearly always pinned to a day, which is why this word opens the module."
+          },
+          {
+            "display": "utsavaḥ",
+            "cue": "festival · celebration",
+            "tag": "delta",
+            "forms": [
+              "utsavaḥ",
+              "utsave"
+            ],
+            "note": "The general word for a festival. This course names no particular one, so utsavaḥ does all the work; utsave is \"at the festival\"."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's \"is\", singular for one festival. santi would be the shape if there were several."
+          }
+        ],
+        "rules": [
+          5,
+          1
+        ]
+      },
+      "trap": "There is no name in this sentence and there does not need to be. Which festival it is comes from standing where the speaker is standing.",
+      "sound": "AD-ya ut-SA-vah AS-ti. The ts of utsavaḥ is a t and an s in sequence, not the ts of \"cats\".",
+      "variations": [
+        {
+          "display": "adya utsavaḥ na asti.",
+          "script": "अद्य उत्सवः न अस्ति।",
+          "cue": "There is no festival today.",
+          "changed": "negated on asti, which is the sentence's only verb"
+        },
+        {
+          "display": "kim adya utsavaḥ asti?",
+          "script": "किम् अद्य उत्सवः अस्ति?",
+          "cue": "Is there a festival today?",
+          "changed": "a yes/no question, so L1-M2's kim goes to the front and nothing else about the sentence moves"
+        },
+        {
+          "display": "adya mandire utsavaḥ asti.",
+          "script": "अद्य मन्दिरे उत्सवः अस्ति।",
+          "cue": "There is a festival at the temple today.",
+          "changed": "a place added in the locative — mandire, the ordinary -e ending — which sets the scene before the thing that is happening"
+        }
+      ],
+      "usage": "Said to somebody who has just arrived. What follows is usually what is happening, not what it is called.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S02",
+      "display": "janāḥ mandiram gacchanti.",
+      "script": "जनाः मन्दिरम् गच्छन्ति।",
+      "cue": "The people are going to the temple.",
+      "literal": "people temple-to go-many",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "janaḥ",
+            "cue": "person",
+            "tag": "delta",
+            "forms": [
+              "janaḥ",
+              "janāḥ"
+            ],
+            "note": "One person is janaḥ and people are janāḥ — L1-M8's chātrāḥ ending, on a new noun. The plural is what this module needs it for."
+          },
+          {
+            "display": "mandiram",
+            "cue": "temple",
+            "tag": "delta",
+            "forms": [
+              "mandiram",
+              "mandire"
+            ],
+            "note": "A neuter noun. The place gone TO takes the same shape as the subject would, which is normal for a neuter; mandire is \"in the temple\"."
+          },
+          {
+            "display": "gacchanti",
+            "cue": "go (more than one)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's gacchati with the plural ending. A row of its own here, because a level never reaches back to add a shape to an older word."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          4
+        ]
+      },
+      "trap": "The ending carries the number and nothing else does. Change gacchanti to gacchati and the sentence is about one person, however plural janāḥ looks.",
+      "sound": "ja-NAAH MAN-di-ram GACH-chhan-ti. -anti is two light syllables on the end of the stem you already know.",
+      "variations": [
+        {
+          "display": "janaḥ mandiram gacchati.",
+          "script": "जनः मन्दिरम् गच्छति।",
+          "cue": "The person is going to the temple.",
+          "changed": "singular throughout — the noun and the verb move together, which is the one thing that has to happen and the one thing a learner forgets"
+        },
+        {
+          "display": "janāḥ mandiram na gacchanti.",
+          "script": "जनाः मन्दिरम् न गच्छन्ति।",
+          "cue": "The people are not going to the temple.",
+          "changed": "negated in front of the verb, where na has gone since L1-M2"
+        },
+        {
+          "display": "kim janāḥ mandiram gacchanti?",
+          "script": "किम् जनाः मन्दिरम् गच्छन्ति?",
+          "cue": "Are the people going to the temple?",
+          "changed": "turned into a yes/no question with kim, which leaves the plural agreement untouched"
+        }
+      ],
+      "mistake": {
+        "display": "janāḥ mandiram gacchati.",
+        "why": "A plural subject with a singular verb — the error of somebody who has written -ti for two whole levels. The sentence now says that many people, taken as one, is going, which is not a thing this language lets you say."
+      },
+      "usage": "The plainest description of a crowd. Where they are going says what is happening without your having to name it.",
+      "register": "neutral",
+      "mnemonic": "Many people, many-ending. -āḥ at the front, -anti at the back."
+    },
+    {
+      "id": "L3-M9-S03",
+      "display": "gṛhe dīpāḥ santi.",
+      "script": "गृहे दीपाः सन्ति।",
+      "cue": "There are lamps in the house.",
+      "literal": "house-in lamps are-many",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's \"house\" in the locative gṛhe. The place comes first, exactly as it does in L3-M7's sentences about pain."
+          },
+          {
+            "display": "dīpaḥ",
+            "cue": "lamp",
+            "tag": "delta",
+            "forms": [
+              "dīpaḥ",
+              "dīpāḥ"
+            ],
+            "note": "A masculine noun. dīpāḥ is more than one, taking the -āḥ ending L1-M8 taught on chātrāḥ."
+          },
+          {
+            "display": "santi",
+            "cue": "are (more than one)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The plural of L1-M3's asti, and its own row here. asti for one, L2-M2's staḥ for two, santi for many."
+          }
+        ],
+        "rules": [
+          1,
+          3
+        ]
+      },
+      "trap": "santi does not look like asti and is the same verb. Three shapes with three different beginnings is what this verb does, and there is no rule to derive one from another.",
+      "sound": "GRI-he DEE-paah SAN-ti. The long ee of dīpāḥ and the long aa of its ending are both held.",
+      "variations": [
+        {
+          "display": "gṛhe dīpaḥ asti.",
+          "script": "गृहे दीपः अस्ति।",
+          "cue": "There is a lamp in the house.",
+          "changed": "singular throughout — one lamp and asti, the pair that santi replaces when there are several"
+        },
+        {
+          "display": "gṛhe dīpāḥ na santi.",
+          "script": "गृहे दीपाः न सन्ति।",
+          "cue": "There are no lamps in the house.",
+          "changed": "negated in front of santi, exactly as na asti is negated in front of asti"
+        },
+        {
+          "display": "kutra dīpāḥ santi?",
+          "script": "कुत्र दीपाः सन्ति?",
+          "cue": "Where are the lamps?",
+          "changed": "an open question with L1-M2's kutra, which takes the locative's place because the place is what is being asked for"
+        }
+      ],
+      "mistake": {
+        "display": "gṛhe dīpāḥ asti.",
+        "why": "A plural subject under a singular verb, this time on the copula. dīpāḥ says there are several and asti says there is one, so the sentence contradicts itself across two words; santi is the only shape that agrees with it."
+      },
+      "usage": "What lamps are for and when they are lit varies from place to place, and the sentence says none of that.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S04",
+      "display": "mama navam vastram asti.",
+      "script": "मम नवम् वस्त्रम् अस्ति।",
+      "cue": "I have new clothes.",
+      "literal": "my new cloth is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's \"my\". mama X asti is \"I have X\", which is still the only way this course says it."
+          },
+          {
+            "display": "navam",
+            "cue": "new",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's \"new\", neuter to agree with vastram. Adjective before noun, as in every module since."
+          },
+          {
+            "display": "vastram",
+            "cue": "cloth · garment",
+            "tag": "delta",
+            "forms": [],
+            "note": "A neuter noun covering a garment or a length of cloth. English \"clothes\" is plural and this is not; one vastram is one piece."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "Singular, agreeing with the one garment. The English plural does not reach in and change it."
+          }
+        ],
+        "rules": [
+          3,
+          9
+        ]
+      },
+      "trap": "vastram is singular and the English it translates to is not. Do not reach for santi because \"clothes\" sounds plural in your own language.",
+      "variations": [
+        {
+          "display": "mama navam vastram na asti.",
+          "script": "मम नवम् वस्त्रम् न अस्ति।",
+          "cue": "I do not have new clothes.",
+          "changed": "negated on asti, the verb the possession frame is built on"
+        },
+        {
+          "display": "bhavataḥ navam vastram asti.",
+          "script": "भवतः नवम् वस्त्रम् अस्ति।",
+          "cue": "You have new clothes.",
+          "changed": "the owner becomes the listener — L1-M2's polite genitive bhavataḥ stands where mama stood"
+        },
+        {
+          "display": "mama vastram nīlam.",
+          "script": "मम वस्त्रम् नीलम्।",
+          "cue": "My garment is blue.",
+          "changed": "recast as a verbless sentence, with the adjective moved BEHIND the noun so that it is a statement about it rather than a description of it"
+        }
+      ],
+      "usage": "New clothes at a festival are common in many places and universal in none. The sentence says what is true of the speaker only.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S05",
+      "display": "janāḥ miṣṭānnam khādanti.",
+      "script": "जनाः मिष्टान्नम् खादन्ति।",
+      "cue": "The people are eating sweets.",
+      "literal": "people sweet-food eat-many",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "janaḥ",
+            "cue": "person",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural janāḥ again, as the subject. It is the module's working subject because it takes no position on who anybody is."
+          },
+          {
+            "display": "miṣṭānnam",
+            "cue": "sweets · sweet food",
+            "tag": "delta",
+            "forms": [],
+            "note": "Two members joined into one word with the join written in full — ONE token and one row, like pramāṇapatram. L2-M5's annam is a separate entry."
+          },
+          {
+            "display": "khādanti",
+            "cue": "eat (more than one)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M4's khādati with the plural ending, and a row of its own here. The second of the three verbs this module writes with -anti."
+          }
+        ],
+        "rules": [
+          0,
+          6,
+          2
+        ]
+      },
+      "trap": "miṣṭānnam is one word and annam is inside it only to your eye. A tap lands on this row and tells you nothing about L2-M5's food.",
+      "variations": [
+        {
+          "display": "janāḥ miṣṭānnam na khādanti.",
+          "script": "जनाः मिष्टान्नम् न खादन्ति।",
+          "cue": "The people are not eating sweets.",
+          "changed": "negated in front of the plural verb, which is where na goes whatever the number"
+        },
+        {
+          "display": "aham miṣṭānnam khādāmi.",
+          "script": "अहम् मिष्टान्नम् खादामि।",
+          "cue": "I am eating sweets.",
+          "changed": "the subject becomes the speaker, so the verb drops to L1-M4's khādāmi — a different ending on the same stem, and the noun is untouched"
+        },
+        {
+          "display": "utsave janāḥ miṣṭānnam khādanti.",
+          "script": "उत्सवे जनाः मिष्टान्नम् खादन्ति।",
+          "cue": "At the festival people eat sweets.",
+          "changed": "a locative added at the front — utsave, the occasion rather than a place, in the same case a place would take"
+        }
+      ],
+      "usage": "Describing what is going on in front of you. What is eaten and when differs everywhere, and the sentence claims nothing beyond the room.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S06",
+      "display": "chātrāḥ puṣpāṇi paśyanti.",
+      "script": "छात्राः पुष्पाणि पश्यन्ति।",
+      "cue": "The students are looking at the flowers.",
+      "literal": "students flowers look-at-many",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "chātrau",
+            "cue": "students",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M8's row, in its plural shape chātrāḥ. That module taught the -āḥ ending and this one reuses it rather than restating it."
+          },
+          {
+            "display": "puṣpam",
+            "cue": "flower",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's flower in its plural puṣpāṇi, the neuter -āṇi. Neuter plurals look the same as subject and as object."
+          },
+          {
+            "display": "paśyanti",
+            "cue": "look at · see (more than one)",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M4's paśyati with the plural ending, and the third and last verb this module writes with -anti."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Nothing in puṣpāṇi says whether the flowers are doing the looking or being looked at. The verb's ending points at chātrāḥ, and that settles it.",
+      "variations": [
+        {
+          "display": "chātraḥ puṣpam paśyati.",
+          "script": "छात्रः पुष्पम् पश्यति।",
+          "cue": "The student is looking at the flower.",
+          "changed": "everything singular at once — subject, object and verb — which is the same sentence with all three numbers turned down"
+        },
+        {
+          "display": "chātrāḥ puṣpāṇi na paśyanti.",
+          "script": "छात्राः पुष्पाणि न पश्यन्ति।",
+          "cue": "The students are not looking at the flowers.",
+          "changed": "negated in front of the verb, leaving both plurals in place"
+        },
+        {
+          "display": "kim chātrāḥ puṣpāṇi paśyanti?",
+          "script": "किम् छात्राः पुष्पाणि पश्यन्ति?",
+          "cue": "Are the students looking at the flowers?",
+          "changed": "a yes/no question with kim at the front; agreement is not something a question touches"
+        }
+      ],
+      "usage": "An ordinary observation. paśyati is looking at as much as seeing, which is why it works for a crowd watching something.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S07",
+      "display": "utsave mandire dīpāḥ santi.",
+      "script": "उत्सवे मन्दिरे दीपाः सन्ति।",
+      "cue": "At the festival there are lamps in the temple.",
+      "literal": "festival-at temple-in lamps are-many",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "utsavaḥ",
+            "cue": "festival · celebration",
+            "tag": "free",
+            "forms": [],
+            "note": "The locative utsave. An occasion takes the same case a place does, which is why no new ending is needed for it."
+          },
+          {
+            "display": "mandiram",
+            "cue": "temple",
+            "tag": "free",
+            "forms": [],
+            "note": "The locative mandire, the ordinary -e of gṛhe. Two locatives can stack: the occasion first, then the place."
+          },
+          {
+            "display": "dīpaḥ",
+            "cue": "lamp",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural dīpāḥ, and the subject of the sentence. Both words in front of it are setting the scene, not doing anything."
+          },
+          {
+            "display": "santi",
+            "cue": "are (more than one)",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural of asti, agreeing with dīpāḥ. Neither locative in front of it has any say in its shape."
+          }
+        ],
+        "rules": [
+          1,
+          7
+        ]
+      },
+      "trap": "Two locatives in a row and neither is the subject. The one word that santi is agreeing with is the last noun before it.",
+      "sound": "ut-SA-ve MAN-di-re DEE-paah SAN-ti. Two words ending -e and neither is plural; -e is a case, not a number.",
+      "variations": [
+        {
+          "display": "utsave mandire dīpāḥ na santi.",
+          "script": "उत्सवे मन्दिरे दीपाः न सन्ति।",
+          "cue": "At the festival there are no lamps in the temple.",
+          "changed": "negated in front of santi, with both locatives left standing"
+        },
+        {
+          "display": "utsave gṛhe dīpāḥ santi.",
+          "script": "उत्सवे गृहे दीपाः सन्ति।",
+          "cue": "At the festival there are lamps in the house.",
+          "changed": "the inner locative moves from the temple to the home, which shows that the two are stacked rather than joined into one phrase"
+        },
+        {
+          "display": "mandire dīpāḥ santi iti saḥ uktavān.",
+          "script": "मन्दिरे दीपाः सन्ति इति सः उक्तवान्।",
+          "cue": "'There are lamps in the temple', he said.",
+          "changed": "the sentence quoted whole with L3-M5's iti, which keeps the plural verb exactly as it was spoken"
+        }
+      ],
+      "usage": "Lamps mean different things in different places and at different times of year. The sentence reports them and stops.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S08",
+      "display": "janaḥ mandiram gacchati, janāḥ api mandiram gacchanti.",
+      "script": "जनः मन्दिरम् गच्छति, जनाः अपि मन्दिरम् गच्छन्ति।",
+      "cue": "The person is going to the temple, and the people are going too.",
+      "literal": "person temple-to goes, people also temple-to go-many",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "janaḥ",
+            "cue": "person",
+            "tag": "free",
+            "forms": [],
+            "note": "The singular. This sentence exists to put it beside its own plural in one breath."
+          },
+          {
+            "display": "mandiram",
+            "cue": "temple",
+            "tag": "free",
+            "forms": [],
+            "note": "The place gone to, unchanged between the two halves. Only the subject and the verb move."
+          },
+          {
+            "display": "gacchati",
+            "cue": "goes · is going",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's singular. It is the shape you have had since the second module of the course."
+          },
+          {
+            "display": "janaḥ",
+            "cue": "people",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural janāḥ, the same row as the janaḥ that opens the sentence. One word, two numbers."
+          },
+          {
+            "display": "api",
+            "cue": "also · too",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's \"also\", standing AFTER the word it attaches to — janāḥ api is \"the people too\", never api janāḥ."
+          },
+          {
+            "display": "mandiram",
+            "cue": "temple",
+            "tag": "free",
+            "forms": [],
+            "note": "Repeated rather than dropped. This language repeats where English would say \"there\"."
+          },
+          {
+            "display": "gacchanti",
+            "cue": "go (more than one)",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural ending on the same stem. Put the two verbs of this sentence side by side and the whole rule is visible."
+          }
+        ],
+        "rules": [
+          0,
+          4
+        ]
+      },
+      "trap": "Nothing but the two endings distinguishes the halves. gacchati and gacchanti differ by three letters and by everything.",
+      "variations": [
+        {
+          "display": "janaḥ mandiram na gacchati, janāḥ api na gacchanti.",
+          "script": "जनः मन्दिरम् न गच्छति, जनाः अपि न गच्छन्ति।",
+          "cue": "The person is not going to the temple, and the people are not going either.",
+          "changed": "both halves negated, and the second drops its object — which it may, because mandiram has already been said once"
+        },
+        {
+          "display": "chātraḥ vidyālayam gacchati, chātrāḥ api vidyālayam gacchanti.",
+          "script": "छात्रः विद्यालयम् गच्छति, छात्राः अपि विद्यालयम् गच्छन्ति।",
+          "cue": "The student goes to school, and the students go too.",
+          "changed": "the same pair built on L1-M1's chātraḥ and L1-M6's school, which shows the contrast is about the endings and not about these words"
+        },
+        {
+          "display": "janaḥ miṣṭānnam khādati, janāḥ api miṣṭānnam khādanti.",
+          "script": "जनः मिष्टान्नम् खादति, जनाः अपि मिष्टान्नम् खादन्ति।",
+          "cue": "The person eats sweets, and the people eat too.",
+          "changed": "the same pair on a different verb — khādati against khādanti — so the -ti and -anti contrast is shown twice on two stems"
+        }
+      ],
+      "mistake": {
+        "display": "janaḥ mandiram gacchati, janāḥ api mandiram gacchati.",
+        "why": "The second half left in the singular. The whole sentence exists to put -ti beside -anti, and copying the first verb into the second clause destroys the one thing it was built to show."
+      },
+      "usage": "Not a sentence anybody says; a sentence built to be looked at. The pair is the lesson.",
+      "register": "neutral",
+      "mnemonic": "-ti is one. -anti is many. Everything else in the sentence stays put."
+    },
+    {
+      "id": "L3-M9-S09",
+      "display": "yaḥ janaḥ utsave asti saḥ santuṣṭaḥ.",
+      "script": "यः जनः उत्सवे अस्ति सः सन्तुष्टः।",
+      "cue": "The person who is at the festival is happy.",
+      "literal": "which person festival-at is he content",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "yaḥ",
+            "cue": "which · who (the one that)",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's relative pronoun, masculine to agree with janaḥ. Its clause comes first and comes complete."
+          },
+          {
+            "display": "janaḥ",
+            "cue": "person",
+            "tag": "free",
+            "forms": [],
+            "note": "The singular, inside the relative clause and nominative because that clause makes it its subject."
+          },
+          {
+            "display": "utsavaḥ",
+            "cue": "festival · celebration",
+            "tag": "free",
+            "forms": [],
+            "note": "The locative utsave, \"at the festival\", inside the relative clause."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "Singular, closing the relative clause. Everything before saḥ belongs to that clause."
+          },
+          {
+            "display": "saḥ",
+            "cue": "he",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M5's \"he\", here as the correlative answering yaḥ. It may never be dropped, which is L3-M2's law."
+          },
+          {
+            "display": "santuṣṭaḥ",
+            "cue": "content · pleased",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's adjective agreeing with saḥ. The main clause has no verb and needs none."
+          }
+        ],
+        "rules": [
+          9,
+          7
+        ]
+      },
+      "trap": "A relative clause about one person keeps everything in it singular, however many people are around. The correlative pair does not care what the rest of the module is doing.",
+      "variations": [
+        {
+          "display": "yā bālā utsave asti sā santuṣṭā.",
+          "script": "या बाला उत्सवे अस्ति सा सन्तुष्टा।",
+          "cue": "The girl who is at the festival is happy.",
+          "changed": "feminine throughout — yā, sā and the adjective all move together, because all three agree with the same girl"
+        },
+        {
+          "display": "yaḥ janaḥ utsave na asti saḥ khinnaḥ.",
+          "script": "यः जनः उत्सवे न अस्ति सः खिन्नः।",
+          "cue": "The person who is not at the festival is unhappy.",
+          "changed": "the relative clause negated and the adjective reversed; the pair yaḥ … saḥ is untouched, because negation is not its business"
+        },
+        {
+          "display": "yaḥ janaḥ utsave asti tam aham jānāmi.",
+          "script": "यः जनः उत्सवे अस्ति तम् अहम् जानामि।",
+          "cue": "I know the person who is at the festival.",
+          "changed": "the correlative changes case on its own — L3-M2's accusative tam, because the main clause makes him an object, while yaḥ stays nominative"
+        }
+      ],
+      "usage": "A remark rather than a report. It says something about one person in a crowd, not about crowds.",
+      "register": "neutral"
+    },
+    {
+      "id": "L3-M9-S10",
+      "display": "mahyam utsavaḥ rocate, yataḥ janāḥ miṣṭānnam khādanti.",
+      "script": "मह्यम् उत्सवः रोचते, यतः जनाः मिष्टान्नम् खादन्ति।",
+      "cue": "I like the festival, because people eat sweets.",
+      "literal": "to-me festival is-pleasing, because people sweet-food eat-many",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mahyam",
+            "cue": "to me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's dative, the experiencer. L3-M6 made this frame the module of its own; here it is doing its oldest job."
+          },
+          {
+            "display": "utsavaḥ",
+            "cue": "festival · celebration",
+            "tag": "free",
+            "forms": [],
+            "note": "The SUBJECT of rocate. The festival does the pleasing; you are where it lands."
+          },
+          {
+            "display": "rocate",
+            "cue": "is pleasing · (someone) likes",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's verb, singular for one festival. L1-M9's rocante is the shape when more than one thing pleases you."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because · since",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's \"because\", opening the reason clause after the thing it explains."
+          },
+          {
+            "display": "janaḥ",
+            "cue": "people",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural janāḥ, subject of the reason clause and quite separate from the first clause's subject."
+          },
+          {
+            "display": "miṣṭānnam",
+            "cue": "sweets · sweet food",
+            "tag": "free",
+            "forms": [],
+            "note": "The thing eaten. One token, one row, whatever its two halves look like."
+          },
+          {
+            "display": "khādanti",
+            "cue": "eat (more than one)",
+            "tag": "free",
+            "forms": [],
+            "note": "The plural, agreeing with janāḥ and closing its own clause. Two clauses, two subjects, two different verb numbers."
+          }
+        ],
+        "rules": [
+          8,
+          0
+        ]
+      },
+      "trap": "The first clause has no nominative at all and the second has a plural one. Each clause is built on its own frame, and the sentence does not try to make them match.",
+      "sound": "MAH-yam ut-SA-vah RO-cha-te, ya-TAH ja-NAAH mish-TAAN-nam KHAA-dan-ti. The ṣṭ of miṣṭānnam is a retroflex pair, tongue curled back for both.",
+      "variations": [
+        {
+          "display": "mahyam utsavaḥ na rocate, yataḥ janāḥ adhikam miṣṭānnam khādanti.",
+          "script": "मह्यम् उत्सवः न रोचते, यतः जनाः अधिकम् मिष्टान्नम् खादन्ति।",
+          "cue": "I do not like the festival, because people eat too many sweets.",
+          "changed": "the liking negated and the reason graded up with L2-M9's adhikam, so the same two facts now point the other way"
+        },
+        {
+          "display": "bhavate utsavaḥ rocate, yataḥ janāḥ miṣṭānnam khādanti.",
+          "script": "भवते उत्सवः रोचते, यतः जनाः मिष्टान्नम् खादन्ति।",
+          "cue": "You like the festival, because people eat sweets.",
+          "changed": "the experiencer becomes the listener — L2-M5's dative bhavate — and no verb in the sentence moves with it"
+        },
+        {
+          "display": "mahyam puṣpāṇi rocante, yataḥ puṣpāṇi sundarāṇi.",
+          "script": "मह्यम् पुष्पाणि रोचन्ते, यतः पुष्पाणि सुन्दराणि।",
+          "cue": "I like flowers, because flowers are beautiful.",
+          "changed": "more than one thing pleases, so rocate becomes L1-M9's rocante, and the reason clause turns verbless with a neuter plural adjective"
+        }
+      ],
+      "usage": "A personal reason, said lightly. It is about the speaker and not about the festival.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L3-M9-C01",
+      "display": "adya mandire utsavaḥ asti.",
+      "script": "अद्य मन्दिरे उत्सवः अस्ति।",
+      "cue": "There is a festival at the temple today."
+    },
+    {
+      "id": "L3-M9-C02",
+      "display": "janāḥ gṛham gacchanti.",
+      "script": "जनाः गृहम् गच्छन्ति।",
+      "cue": "The people are going home."
+    },
+    {
+      "id": "L3-M9-C03",
+      "display": "mandire dīpāḥ santi.",
+      "script": "मन्दिरे दीपाः सन्ति।",
+      "cue": "There are lamps in the temple."
+    },
+    {
+      "id": "L3-M9-C04",
+      "display": "chātrāḥ miṣṭānnam khādanti.",
+      "script": "छात्राः मिष्टान्नम् खादन्ति।",
+      "cue": "The students are eating sweets."
+    },
+    {
+      "id": "L3-M9-C05",
+      "display": "mama vastram raktam.",
+      "script": "मम वस्त्रम् रक्तम्।",
+      "cue": "My garment is red."
+    },
+    {
+      "id": "L3-M9-C06",
+      "display": "janaḥ utsave saṅgītam śṛṇoti.",
+      "script": "जनः उत्सवे सङ्गीतम् शृणोति।",
+      "cue": "The person hears music at the festival."
+    },
+    {
+      "id": "L3-M9-C07",
+      "display": "kim adya utsavaḥ asti iti saḥ pṛcchati.",
+      "script": "किम् अद्य उत्सवः अस्ति इति सः पृच्छति।",
+      "cue": "'Is there a festival today?' he asks."
+    },
+    {
+      "id": "L3-M9-C08",
+      "display": "yaḥ janaḥ mandiram gacchati saḥ santuṣṭaḥ.",
+      "script": "यः जनः मन्दिरम् गच्छति सः सन्तुष्टः।",
+      "cue": "The person who goes to the temple is happy."
+    },
+    {
+      "id": "L3-M9-C09",
+      "display": "mahyam miṣṭānnam rocate.",
+      "script": "मह्यम् मिष्टान्नम् रोचते।",
+      "cue": "I like sweets."
+    },
+    {
+      "id": "L3-M9-C10",
+      "display": "gṛhe mātāpitarau staḥ, janāḥ api atra santi.",
+      "script": "गृहे मातापितरौ स्तः, जनाः अपि अत्र सन्ति।",
+      "cue": "My parents are at home, and there are people here too."
+    },
+    {
+      "id": "L3-M9-C11",
+      "display": "janāḥ puṣpāṇi paśyanti, yataḥ puṣpāṇi sundarāṇi.",
+      "script": "जनाः पुष्पाणि पश्यन्ति, यतः पुष्पाणि सुन्दराणि।",
+      "cue": "The people look at the flowers, because the flowers are beautiful."
+    },
+    {
+      "id": "L3-M9-C12",
+      "display": "pratidinam janāḥ mandiram gacchanti.",
+      "script": "प्रतिदिनम् जनाः मन्दिरम् गच्छन्ति।",
+      "cue": "Every day the people go to the temple."
+    },
+    {
+      "id": "L3-M9-C13",
+      "display": "yadi adya utsavaḥ asti tarhi aham mandiram gacchāmi.",
+      "script": "यदि अद्य उत्सवः अस्ति तर्हि अहम् मन्दिरम् गच्छामि।",
+      "cue": "If there is a festival today, then I am going to the temple."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
