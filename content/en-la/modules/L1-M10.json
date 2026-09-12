@@ -1,0 +1,845 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M10",
+  "title": "Connected talk",
+  "job": "Short 2–3 sentence exchanges",
+  "prerequisites": [
+    "L1-M9"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 7,
+    "allowedTenses": [
+      "simple_present",
+      "future",
+      "perfect",
+      "imperative"
+    ],
+    "allowedPatterns": [
+      "<statement> + et + <statement>",
+      "<statement> + sed + <statement>",
+      "N + N-que",
+      "<word> + autem / enim + <rest>",
+      "neque + N + neque + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "TWO WORDS THAT CANNOT COME FIRST. autem ('however') and enim ('for, you see') sit AFTER the first word of their clause: Ego autem nōn eō is 'I, however, am not going'. English puts 'however' and 'for' at the front, so this is the one thing in the module a learner gets wrong every time. igitur can do both and is the exception."
+    },
+    {
+      "tag": "delta",
+      "text": "-que is 'and', joined onto the SECOND of two things: pānem aquam-que is 'bread and water'. Printed Latin writes it solid — pānem aquamque — and this course uses a hyphen so both halves stay visible, exactly as M2 did for -ne. Use it for two things that belong together; use et for everything else."
+    },
+    {
+      "tag": "interference",
+      "text": "SOME WORDS END IN -que AND ARE NOT SEAMS. atque, neque, itaque (M9's), quoque, dēnique and namque are single words with nothing joined on. Hyphenating one would split it into pieces that mean nothing — quoque is 'also' and has no relation to the -que that joins. The list is closed: learn it as a list."
+    },
+    {
+      "tag": "free",
+      "text": "et and sed do the ordinary work and behave exactly as English does: et joins, sed contrasts, and both come first in their clause. If you are unsure whether something takes -que, use et — it is never wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "neque is 'and not', one word, and Latin doubles it for 'neither … nor': neque aquam neque pānem habeō. English needs two different words; Latin uses the same one twice, and it negates the whole sentence on its own so no nōn is needed."
+    },
+    {
+      "tag": "free",
+      "text": "A turn of two or three sentences drops the subject after the first one. Once it is clear who is speaking, every following verb carries the person on its own — and a turn where every sentence names its subject reads like a list rather than like speech."
+    },
+    {
+      "tag": "delta",
+      "text": "The orthography holds to the last line of the level: a bar on every long vowel, no j, no apostrophe, no accent, and a hyphen ONLY before que, ne or ve. Two sentences side by side is exactly where a writer reaches for something the course does not use, so this rule is the first one of M1 said one last time."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M10-S01",
+      "display": "Pānem et aquam habeō.",
+      "cue": "I have bread and water.",
+      "literal": "bread and water I-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pānem",
+            "cue": "bread (as the thing had)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Bread': pānis as the subject, pānem as the object, pāne as the thing needed. It is not a pan — the English word that kept it is 'pantry'."
+          },
+          {
+            "display": "et",
+            "cue": "and",
+            "tag": "free",
+            "forms": [
+              "et"
+            ],
+            "note": "'And', and it behaves exactly as English does: between the two things, never joined on. The safe choice whenever you are unsure."
+          },
+          {
+            "display": "aquam",
+            "cue": "water (as the thing had)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after in, cum or opus est. Three shapes of one word."
+          },
+          {
+            "display": "habeō",
+            "cue": "I have",
+            "tag": "free",
+            "forms": [],
+            "note": "'I have', and it does exactly what English 'have' does: habeō 'I have', habēs 'you have', habet 'he/she has'."
+          }
+        ],
+        "rules": [
+          3,
+          6
+        ]
+      },
+      "trap": "Both things take the object shape. et joins two words doing the same job, so whatever ending the first one needs the second needs too — a rule that holds however long the list gets.",
+      "sound": "PA-nem et A-quam ha-BE-ō. et is one short syllable and carries no weight at all.",
+      "variations": [
+        {
+          "display": "Librum et epistulam legō.",
+          "cue": "I am reading a book and a letter.",
+          "changed": "two different things joined, under a different verb"
+        },
+        {
+          "display": "Pānem et aquam habēs.",
+          "cue": "You have bread and water.",
+          "changed": "the verb ending moves the having"
+        },
+        {
+          "display": "Pānem et aquam volō.",
+          "cue": "I want bread and water.",
+          "changed": "M3's wanting over the same pair"
+        }
+      ],
+      "mistake": {
+        "display": "Pānem et aqua habeō.",
+        "why": "The second thing left in its subject shape. et does not excuse a noun from having an ending — both items are being had, so both wear the object one."
+      },
+      "usage": "Said about what is in front of you.",
+      "mnemonic": "et joins two things that match.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M10-S02",
+      "display": "Fessus sum, sed labōrō.",
+      "cue": "I am tired, but I am working.",
+      "literal": "tired I-am, but I-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fessus",
+            "cue": "tired (a man)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tired', of a man; fessa of a woman, fessī of more than one. It has left nothing in English at all, so there is no cognate to lean on."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "sed",
+            "cue": "but",
+            "tag": "free",
+            "forms": [
+              "sed"
+            ],
+            "note": "'But', and it comes first in its clause exactly as English does. One of two words in this module that behave the way you expect."
+          },
+          {
+            "display": "labōrō",
+            "cue": "I work",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I work' — ordinary work, not toil: labōrō, labōrat 'he works', labōrant 'they work'. It keeps its a before the ending."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "The second clause has no subject at all. M9's sentences named nobody either, but here it matters more: once the first clause establishes who, every following verb carries the person on its own, and that is what makes a turn sound spoken.",
+      "sound": "FES-sus SUM, sed la-BO-rō. Pause at the comma; sed is unstressed and leans on what follows.",
+      "variations": [
+        {
+          "display": "Fessa sum, sed labōrō.",
+          "cue": "I am tired, but I am working. (a woman speaking)",
+          "changed": "only the adjective moves"
+        },
+        {
+          "display": "Fessus sum, sed nōn labōrō.",
+          "cue": "I am tired, but I am not working.",
+          "changed": "the second clause negated"
+        },
+        {
+          "display": "Fessus est, sed labōrat.",
+          "cue": "He is tired, but he is working.",
+          "changed": "a third person in both clauses"
+        }
+      ],
+      "mistake": {
+        "display": "Fessus sum, sed ego labōrō.",
+        "why": "A pronoun added in the second clause. It is not wrong, but ego means 'I as against someone else', and this sentence is contrasting two facts about one person rather than two people — so the emphasis lands in the wrong place."
+      },
+      "usage": "Said when you are carrying on anyway.",
+      "mnemonic": "sed first, like 'but'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M10-S03",
+      "display": "Pānem aquam-que volō.",
+      "cue": "I want bread and water.",
+      "literal": "bread water-and I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "-que",
+            "cue": "and (joined to the second thing)",
+            "tag": "delta",
+            "forms": [
+              "-que",
+              "aquam-que",
+              "epistulam-que",
+              "librum-que",
+              "pānem-que"
+            ],
+            "note": "'And', hung on the SECOND of a pair: pānem aquam-que. Printed Latin joins it up — aquamque. Use it for two things that belong together."
+          },
+          {
+            "display": "pānem",
+            "cue": "bread (as the thing wanted)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Bread': pānis as the subject, pānem as the object, pāne as the thing needed. It is not a pan — the English word that kept it is 'pantry'."
+          },
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I want' — irregular, and the only verb for wanting: volō 'I want', vult 'he/she wants'. It takes an object or an infinitive, and both come before it."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "The 'and' is inside the second word. There is no gap where English puts 'and', and the thing it joins is the word it is attached to — so reading left to right you meet the second item before you learn that it is a second item.",
+      "sound": "PA-nem a-QUAM-que VO-lō. The enclitic pulls the stress onto the syllable before it: aqua was A-quam, and with -que on it the beat moves to a-QUAM-que.",
+      "variations": [
+        {
+          "display": "Librum epistulam-que legō.",
+          "cue": "I am reading a book and a letter.",
+          "changed": "a different pair joined the same way"
+        },
+        {
+          "display": "Pānem et aquam volō.",
+          "cue": "I want bread and water.",
+          "changed": "et instead, which means the same and is never wrong"
+        },
+        {
+          "display": "Aquam librum-que volō.",
+          "cue": "I want water and a book.",
+          "changed": "the enclitic on a different host, which is where the author chooses to put it"
+        }
+      ],
+      "mistake": {
+        "display": "Pānem-que aquam volō.",
+        "why": "The enclitic on the first item instead of the second. -que joins its host to what came BEFORE, so hanging it on pānem leaves the sentence claiming that bread is being added to nothing."
+      },
+      "usage": "Said of two things that go together.",
+      "mnemonic": "-que rides the second thing, not the first.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M10-S04",
+      "display": "Ego autem nōn eō.",
+      "cue": "I, however, am not going.",
+      "literal": "I however not I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ego",
+            "cue": "I (with weight on it)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I' — never the neutral way to say it. Here it is doing real work: it is the first word, so it is what autem leans on, and the contrast is with somebody else."
+          },
+          {
+            "display": "autem",
+            "cue": "however · on the other hand",
+            "tag": "interference",
+            "forms": [
+              "autem"
+            ],
+            "note": "'However', and it can NEVER come first. It goes after the first word of its clause, which is the opposite of where English puts it."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not', and it goes straight in front of the verb. Nothing corresponds to English 'do not' in any tense."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I go': eō, īs 'you go', it 'he/she goes', īre 'to go'. Tiny and irregular — it is a complete sentence on its own."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "autem is second and cannot be first. English says 'However, I am not going' and Latin cannot: the word has to wait for something to stand behind, which is why ego is here doing a job it usually does not.",
+      "sound": "E-go AU-tem NON E-ō. The au of autem is the 'ow' of English 'now'. autem is unstressed in the flow even though it has two syllables.",
+      "variations": [
+        {
+          "display": "Iūlia autem nōn venit.",
+          "cue": "Julia, however, is not coming.",
+          "changed": "a name as the word autem leans on"
+        },
+        {
+          "display": "Fessus autem sum.",
+          "cue": "I am tired, though.",
+          "changed": "an adjective in the first slot instead"
+        },
+        {
+          "display": "Ego autem veniam.",
+          "cue": "I, however, will come.",
+          "changed": "the negative dropped and the tense moved to the future"
+        }
+      ],
+      "mistake": {
+        "display": "Autem ego nōn eō.",
+        "why": "autem put first, where English puts 'however'. It is the single most common mistake an English speaker makes with Latin connectives, and a Roman would find the sentence simply unreadable — the word has nothing to lean on."
+      },
+      "usage": "Said when you are contrasting yourself with somebody.",
+      "mnemonic": "autem is always second. Never first.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M10-S05",
+      "display": "Nōn veniō, fessus enim sum.",
+      "cue": "I am not coming, for I am tired.",
+      "literal": "not I-come, tired for I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not', and it goes straight in front of the verb. Nothing corresponds to English 'do not' in any tense."
+          },
+          {
+            "display": "veniō",
+            "cue": "I come",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I come': veniō, venīs 'you come', venit 'he/she comes'. Its past is vēnit with a bar, and its future veniet with an extra syllable."
+          },
+          {
+            "display": "fessus",
+            "cue": "tired (a man)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tired', of a man; fessa of a woman, fessī of more than one. It has left nothing in English at all, so there is no cognate to lean on."
+          },
+          {
+            "display": "enim",
+            "cue": "for · you see",
+            "tag": "interference",
+            "forms": [
+              "enim"
+            ],
+            "note": "'For, you see' — it gives a reason, and like autem it can NEVER come first. It goes after the first word of its clause."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "enim is the second word of its clause, so the reason begins with the adjective rather than with the joining word. M9's quia came first and did the same job; enim is the version that cannot.",
+      "sound": "NON VE-ni-ō, FES-sus E-nim SUM. Pause at the comma, then say fessus enim as one run — enim leans back onto it.",
+      "variations": [
+        {
+          "display": "Nōn veniō, fessa enim sum.",
+          "cue": "I am not coming, for I am tired. (a woman speaking)",
+          "changed": "only the adjective moves"
+        },
+        {
+          "display": "Nōn veniō, quia fessus sum.",
+          "cue": "I am not coming because I am tired.",
+          "changed": "M9's quia instead, which DOES come first — the same reason, a different shape"
+        },
+        {
+          "display": "Nōn veniam, fessus enim sum.",
+          "cue": "I will not come, for I am tired.",
+          "changed": "the first clause moved to the future"
+        }
+      ],
+      "mistake": {
+        "display": "Nōn veniō, enim fessus sum.",
+        "why": "enim put first, on the model of English 'for'. Like autem it must be second — and the fix is to start the clause with the word the reason is really about, which here is fessus."
+      },
+      "usage": "Said when you are giving a reason without being asked.",
+      "mnemonic": "enim and autem: both second, never first.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M10-S06",
+      "display": "Fessus sum, igitur nōn labōrābō.",
+      "cue": "I am tired, so I will not work.",
+      "literal": "tired I-am, therefore not I-will-work",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fessus",
+            "cue": "tired (a man)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Tired', of a man; fessa of a woman, fessī of more than one. It has left nothing in English at all, so there is no cognate to lean on."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "igitur",
+            "cue": "therefore · so",
+            "tag": "delta",
+            "forms": [
+              "igitur"
+            ],
+            "note": "'Therefore', and it is the exception in this module: it may come first OR second. Where autem and enim are fixed, igitur is free."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not', and it goes straight in front of the verb. Nothing corresponds to English 'do not' in any tense."
+          },
+          {
+            "display": "labōrābō",
+            "cue": "I will work",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I will work' — the future of M4's labōrō on the -bō pattern: labōrābō, labōrābit 'he will work'. Four syllables, three of them long."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "igitur is allowed first here and autem was not. The three consequence words of this level behave in three ways: itaque and ergō first (M9), autem and enim second, igitur either. That is a list to learn rather than a rule to derive.",
+      "sound": "FES-sus SUM, I-gi-tur NON la-bō-RA-bō. igitur is three light syllables stressed at the front.",
+      "variations": [
+        {
+          "display": "Fessus sum; nōn igitur labōrābō.",
+          "cue": "I am tired; I will not work, then.",
+          "changed": "igitur in second position, which it is also allowed"
+        },
+        {
+          "display": "Fessus sum, ergō nōn labōrābō.",
+          "cue": "I am tired, so I will not work.",
+          "changed": "M9's ergō, which is fixed first"
+        },
+        {
+          "display": "Fessa sum, igitur nōn labōrābō.",
+          "cue": "I am tired, so I will not work. (a woman speaking)",
+          "changed": "only the adjective moves"
+        }
+      ],
+      "mistake": {
+        "display": "Fessus sum, igitur-que nōn labōrābō.",
+        "why": "An enclitic hung on a word that does not take one. igitur is already a connective and -que is another; using both is like writing 'and therefore-and'. The hyphen belongs only before que, ne or ve on a HOST that is not itself a joining word."
+      },
+      "usage": "Said when you are drawing a conclusion.",
+      "mnemonic": "igitur goes wherever it likes. It is the only one that does.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M10-S07",
+      "display": "Librum atque epistulam legō.",
+      "cue": "I am reading both a book and a letter.",
+      "literal": "book and-also letter I-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "librum",
+            "cue": "book (as the thing read)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one, librōs as more than one object."
+          },
+          {
+            "display": "atque",
+            "cue": "and also · and indeed",
+            "tag": "interference",
+            "forms": [
+              "atque"
+            ],
+            "note": "'And also', a heavier 'and' than et — and ONE WORD, despite ending in -que. It is never hyphenated and never split."
+          },
+          {
+            "display": "epistulam",
+            "cue": "letter (as the thing read)",
+            "tag": "free",
+            "forms": [],
+            "note": "'Letter' — the written kind. epistula as the subject, epistulam as the object. English kept it in 'epistle'."
+          },
+          {
+            "display": "legō",
+            "cue": "I read · I am reading",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read' AND 'I am reading' — one present for both: legō, legis 'you read', legit 'he reads', legere 'to read'."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "atque ends in -que and is not a seam. It is a whole word meaning 'and also', and writing at-que would split it into two pieces, neither of which means anything — which is the trap the closed list exists to prevent.",
+      "sound": "LI-brum AT-que e-PIS-tu-lam LE-gō. atque is stressed on its first syllable, like any two-syllable word — an enclitic would have moved the stress, and this is not one.",
+      "variations": [
+        {
+          "display": "Pānem atque aquam habeō.",
+          "cue": "I have both bread and water.",
+          "changed": "a different pair under a different verb"
+        },
+        {
+          "display": "Librum et epistulam legō.",
+          "cue": "I am reading a book and a letter.",
+          "changed": "plain et, which is lighter and more ordinary"
+        },
+        {
+          "display": "Librum quoque legō.",
+          "cue": "I am reading the book too.",
+          "changed": "'also' — another word ending in -que and another single word"
+        }
+      ],
+      "mistake": {
+        "display": "Librum at-que epistulam legō.",
+        "why": "atque hyphenated as if the -que were joined on. The closed list — atque, neque, itaque, quoque, dēnique, namque — is exactly the set of words this mistake is available for, and the fix is always to write them solid."
+      },
+      "usage": "Said when you want the second item to land harder.",
+      "mnemonic": "atque, neque, quoque, itaque: one word each.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M10-S08",
+      "display": "Neque aquam neque pānem habeō.",
+      "cue": "I have neither water nor bread.",
+      "literal": "and-not water and-not bread I-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "neque",
+            "cue": "and not · nor",
+            "tag": "delta",
+            "forms": [
+              "neque"
+            ],
+            "note": "'And not', one word — and doubled it does 'neither … nor'. It negates on its own, so no nōn is needed anywhere in the sentence."
+          },
+          {
+            "display": "aquam",
+            "cue": "water (as the thing not had)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after in, cum or opus est. Three shapes of one word."
+          },
+          {
+            "display": "pānem",
+            "cue": "bread (as the thing not had)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Bread': pānis as the subject, pānem as the object, pāne as the thing needed. It is not a pan — the English word that kept it is 'pantry'."
+          },
+          {
+            "display": "habeō",
+            "cue": "I have",
+            "tag": "free",
+            "forms": [],
+            "note": "'I have', and it does exactly what English 'have' does: habeō 'I have', habēs 'you have', habet 'he/she has'."
+          }
+        ],
+        "rules": [
+          4,
+          2
+        ]
+      },
+      "trap": "The same word twice where English uses two. 'Neither' and 'nor' are one Latin word used in both slots, and it carries the negative by itself — adding nōn as well would negate the sentence twice.",
+      "sound": "NE-que A-quam NE-que PA-nem ha-BE-ō. Both neque's are stressed at the front; the repetition is the construction.",
+      "variations": [
+        {
+          "display": "Neque librum neque epistulam legō.",
+          "cue": "I am reading neither a book nor a letter.",
+          "changed": "a different pair under a different verb"
+        },
+        {
+          "display": "Aquam neque pānem habeō.",
+          "cue": "I have water and not bread.",
+          "changed": "one neque only, which makes it 'and not' rather than 'neither'"
+        },
+        {
+          "display": "Neque aquam neque pānem habet.",
+          "cue": "He has neither water nor bread.",
+          "changed": "a third person"
+        }
+      ],
+      "mistake": {
+        "display": "Neque aquam neque pānem nōn habeō.",
+        "why": "A nōn added on top of two neque's. Latin's negatives do not stack the way English colloquial ones do — neque has already done the negating, and a third negative would in strict logic turn the sentence positive."
+      },
+      "usage": "Said when you have run out of both.",
+      "mnemonic": "neque … neque: the same word in both slots.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M10-S09",
+      "display": "Ego quoque veniam.",
+      "cue": "I will come too.",
+      "literal": "I also I-will-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ego",
+            "cue": "I (with weight on it)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I' — never the neutral way to say it, and here it earns its place: quoque is about who else is coming, so the pronoun is the point."
+          },
+          {
+            "display": "quoque",
+            "cue": "also · too",
+            "tag": "interference",
+            "forms": [
+              "quoque"
+            ],
+            "note": "'Also', and it goes AFTER the word it applies to: ego quoque is 'me too'. One word, despite the -que, and never hyphenated."
+          },
+          {
+            "display": "veniam",
+            "cue": "I will come",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I will come' — the future of M4's veniō on the -am pattern: veniam, veniēs 'you will come', veniet 'he will come'."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "quoque follows the word it is about. English 'too' can sit at the end of the sentence and mean the same thing; Latin puts it immediately after whatever is being added, so moving it changes what is 'also'.",
+      "sound": "E-go QUO-que VE-ni-am. quoque is stressed on its first syllable — it is a word, not an enclitic, and the stress proves it.",
+      "variations": [
+        {
+          "display": "Iūlia quoque veniet.",
+          "cue": "Julia will come too.",
+          "changed": "somebody else added, with quoque still following them"
+        },
+        {
+          "display": "Ego quoque fessus sum.",
+          "cue": "I am tired too.",
+          "changed": "a different thing being shared"
+        },
+        {
+          "display": "Librum quoque volō.",
+          "cue": "I want the book as well.",
+          "changed": "quoque after a thing rather than a person"
+        }
+      ],
+      "mistake": {
+        "display": "Quoque ego veniam.",
+        "why": "quoque put before the word instead of after it. It would leave the sentence claiming that 'also' applies to nothing — and the fix is the same as autem's: Latin's small connectives lean backwards, not forwards."
+      },
+      "usage": "Said when you are joining in.",
+      "mnemonic": "quoque comes after what it adds.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M10-S10",
+      "display": "Salvē! Quid agis? Bene agō.",
+      "cue": "Hello! How are you? I am well.",
+      "literal": "be-well! what you-are-doing? well I-am-doing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "salvē",
+            "cue": "hello (to one person)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Hello', at any hour and to anyone — and it is a verb, literally 'be well'. Salvē to one person, salvēte to more than one."
+          },
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "free",
+            "forms": [],
+            "note": "'What'. It goes first, as in English, and it is one of the few Latin question words that behaves exactly the way you expect."
+          },
+          {
+            "display": "agis",
+            "cue": "you are doing",
+            "tag": "delta",
+            "forms": [
+              "agitis",
+              "agimus"
+            ],
+            "note": "The verb agō in the shapes this level writes: agō 'I do', agis 'you do', agit 'he does', agimus 'we do', agitis 'you all do'. One present covers 'do' and 'am doing'."
+          },
+          {
+            "display": "bene",
+            "cue": "well",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Well' — an adverb, and the right answer to Quid agis?. It never changes shape, because an adverb in Latin has nobody to agree with."
+          },
+          {
+            "display": "agō",
+            "cue": "I am doing",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb agō, 'do / drive / carry on', in the shapes this level writes: agō 'I do', agis 'you do', agit 'he/she does'."
+          }
+        ],
+        "rules": [
+          5,
+          6
+        ]
+      },
+      "trap": "Three sentences and not one pronoun. The whole exchange runs on verb endings, which is what M1's second rule promised and what the level has been building towards — five words carry a greeting, a question and an answer.",
+      "sound": "SAL-vē! QUID A-gis? BE-ne A-gō. Three short units with a pause after each. This is the rhythm of spoken Latin: nothing held except the greeting's ē.",
+      "variations": [
+        {
+          "display": "Salvēte! Quid agitis? Bene agimus.",
+          "cue": "Hello, all of you! How are you? We are well.",
+          "changed": "the whole exchange with more than one person on both sides"
+        },
+        {
+          "display": "Salvē! Valēs-ne? Optimē valeō.",
+          "cue": "Hello! Are you well? I am very well.",
+          "changed": "the other verb of wellbeing, with M2's question particle"
+        },
+        {
+          "display": "Salvē! Quid agis? Nōn bene agō.",
+          "cue": "Hello! How are you? I am not well.",
+          "changed": "the answer negated"
+        }
+      ],
+      "mistake": {
+        "display": "Salvē! Quid tū agis? Ego bene agō.",
+        "why": "Pronouns put into both halves out of English habit. Every ending here already says who, so tū and ego add contrast the exchange does not want — and the level's last plate is the same one its first plate was."
+      },
+      "usage": "The whole of a first exchange, in five words.",
+      "mnemonic": "The endings carry the people. They have all level.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M10-C01",
+      "display": "Librum et epistulam habeō.",
+      "cue": "I have a book and a letter."
+    },
+    {
+      "id": "L1-M10-C02",
+      "display": "Iūlia autem fessa est.",
+      "cue": "Julia, however, is tired."
+    },
+    {
+      "id": "L1-M10-C03",
+      "display": "Aquam pānem-que emō.",
+      "cue": "I am buying water and bread."
+    },
+    {
+      "id": "L1-M10-C04",
+      "display": "Neque veniō neque labōrō.",
+      "cue": "I am neither coming nor working."
+    },
+    {
+      "id": "L1-M10-C05",
+      "display": "Laetus sum, sed fessus.",
+      "cue": "I am happy, but tired."
+    },
+    {
+      "id": "L1-M10-C06",
+      "display": "Mārcus quoque venit.",
+      "cue": "Marcus is coming too."
+    },
+    {
+      "id": "L1-M10-C07",
+      "display": "Nōn legam, fessus enim sum.",
+      "cue": "I will not read, for I am tired."
+    },
+    {
+      "id": "L1-M10-C08",
+      "display": "Trēs librōs atque duo nummōs habeō.",
+      "cue": "I have three books and two coins."
+    },
+    {
+      "id": "L1-M10-C09",
+      "display": "Hīc sum, igitur nōn ībō.",
+      "cue": "I am here, so I will not go."
+    },
+    {
+      "id": "L1-M10-C10",
+      "display": "Valē! Crās veniam.",
+      "cue": "Goodbye! I will come tomorrow."
+    },
+    {
+      "id": "L1-M10-C11",
+      "display": "Ego autem nōn legō.",
+      "cue": "I, however, am not reading."
+    },
+    {
+      "id": "L1-M10-C12",
+      "display": "Quid agis? Optimē valeō.",
+      "cue": "How are you? I am very well."
+    },
+    {
+      "id": "L1-M10-C13",
+      "display": "Aquam et pānem dā mihi.",
+      "cue": "Give me water and bread."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

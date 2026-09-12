@@ -1,0 +1,775 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M7",
+  "title": "Where things are",
+  "job": "Locations and prepositions",
+  "prerequisites": [
+    "L1-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "in + N-abl + sum",
+      "in + N-acc + eō",
+      "apud / prope + N-acc",
+      "cum + N-abl",
+      "ubi / hīc / ibi + est + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "ONE PREPOSITION, TWO CASES, TWO MEANINGS. in with the -ā shape is 'in / on' and says where you ARE: in scholā sum. in with the -am shape is 'into' and says where you are GOING: in scholam eō. English has one 'in' for both and lets the verb sort it out; Latin puts the difference on the noun, and getting it wrong changes the sentence."
+    },
+    {
+      "tag": "delta",
+      "text": "This is the module where English prepositions become case endings. The -ā on scholā and the -ē on mēnsā are doing what 'in' and 'on' do in English — so a Latin place-phrase is a preposition AND an ending, and dropping the ending leaves the preposition with nothing to govern."
+    },
+    {
+      "tag": "delta",
+      "text": "Every preposition governs one case, and which one is part of the word. ad, apud and prope take the object shape; cum takes the -ā shape. Only in takes both, and only in changes meaning when it does. Learn each preposition with its case, the way you learn a verb with its family."
+    },
+    {
+      "tag": "interference",
+      "text": "hic and hīc are two different words, one bar apart. hic is 'this' and hīc is 'here' — and both are useful in exactly this module, so they are taught together rather than one at a time. Say hīc long and hic short, and a Roman will hear which you meant."
+    },
+    {
+      "tag": "delta",
+      "text": "'This' bends for the gender of what it points at: hic liber (a book), haec mēnsa (a table), hoc nōmen (a name). Three shapes for one English word, and the ending follows the noun rather than the speaker."
+    },
+    {
+      "tag": "free",
+      "text": "est does 'there is' with no extra machinery: In mēnsā est liber, 'on the table there is a book'. English needs a dummy 'there'; Latin needs word order, and what it wants is the thing being located LAST."
+    },
+    {
+      "tag": "delta",
+      "text": "Place names work differently and this course has not taught them yet. 'In Rome' is not in Rōmā but Rōmae, a surviving shape with only a handful of members — it is deferred to a later level, so use in with an ordinary noun here."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M7-S01",
+      "display": "In scholā sum.",
+      "cue": "I am at school.",
+      "literal": "in school I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in",
+            "cue": "in · on · into",
+            "tag": "interference",
+            "forms": [
+              "in"
+            ],
+            "note": "'In / on' with the -ā shape (where you are), 'into' with the -am shape (where you are going). One word, two cases, two meanings."
+          },
+          {
+            "display": "scholā",
+            "cue": "school (as the place you are in)",
+            "tag": "delta",
+            "forms": [
+              "scholā"
+            ],
+            "note": "The -ā shape of M4's schola, used after in for being somewhere and after cum for being with something. The bar is the whole ending."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "The long ā is the word 'at'. Write schola and the sentence says something else; write scholam and it says you are going in. English puts the whole meaning in the preposition and Latin splits it between the preposition and the ending.",
+      "sound": "IN SCHO-lā SUM. Hold the ā — it is the only thing separating this from 'into school'.",
+      "variations": [
+        {
+          "display": "In scholā es.",
+          "cue": "You are at school.",
+          "changed": "the verb ending moves it to 'you'"
+        },
+        {
+          "display": "In scholā est.",
+          "cue": "He is at school.",
+          "changed": "and to a third person"
+        },
+        {
+          "display": "In mēnsā est.",
+          "cue": "It is on the table.",
+          "changed": "a different place, and the same -ā shape doing 'on' instead of 'in'"
+        }
+      ],
+      "mistake": {
+        "display": "In scholam sum.",
+        "why": "The 'into' shape used for being somewhere. With sum the sentence cannot mean motion, so a Roman would hear a contradiction — the noun says you are going and the verb says you are standing still."
+      },
+      "usage": "Said about where you are now.",
+      "mnemonic": "Long ā, standing still. Short -am, moving in.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M7-S02",
+      "display": "In scholam eō.",
+      "cue": "I go into school.",
+      "literal": "into school I-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "in",
+            "cue": "in · on · into",
+            "tag": "interference",
+            "forms": [],
+            "note": "'In / on' with the -ā shape (where you are), 'into' with the -am shape (where you are going). One word, two cases, two meanings."
+          },
+          {
+            "display": "scholam",
+            "cue": "school (as the place gone into)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' — schola as the subject, scholam after ad and after in when in means 'into'. In Latin it meant the teaching rather than the building."
+          },
+          {
+            "display": "eō",
+            "cue": "I go",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I go': eō, īs 'you go', it 'he/she goes', īre 'to go'. Tiny and irregular — it is a complete sentence on its own."
+          }
+        ],
+        "rules": [
+          0,
+          2
+        ]
+      },
+      "trap": "Compare M4's ad scholam eō: ad is 'to' and in with this shape is 'into'. Both take the same ending, and the difference between arriving at a place and entering it is carried by the preposition alone.",
+      "sound": "IN SCHO-lam E-ō. Clip the -am; it is short, and that shortness is the case.",
+      "variations": [
+        {
+          "display": "In scholam it.",
+          "cue": "He goes into school.",
+          "changed": "a third person; the case does not move"
+        },
+        {
+          "display": "Ad scholam eō.",
+          "cue": "I go to school.",
+          "changed": "a different preposition over the same ending, and a slightly different arrival"
+        },
+        {
+          "display": "In scholam īre volō.",
+          "cue": "I want to go into school.",
+          "changed": "M3's wanting over the top, with the infinitive first"
+        }
+      ],
+      "mistake": {
+        "display": "In scholā eō.",
+        "why": "The 'where you are' shape with a verb of motion. It is the exact mirror of S01's mistake: the noun says you are standing still and the verb says you are moving."
+      },
+      "usage": "Said about entering somewhere.",
+      "mnemonic": "Motion wants the -m.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M7-S03",
+      "display": "Ubi est liber?",
+      "cue": "Where is the book?",
+      "literal": "where is the-book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ubi",
+            "cue": "where",
+            "tag": "free",
+            "forms": [
+              "ubi"
+            ],
+            "note": "'Where', and it goes first, as in English. It asks about being somewhere rather than about going — so its answer is an -ā shape, never an -am one."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "liber",
+            "cue": "book (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. Here it is what the question is about, so it is the plain shape."
+          }
+        ],
+        "rules": [
+          5,
+          2
+        ]
+      },
+      "trap": "No -ne is needed. A question with a question word in it does not take the particle M2 taught — ubi already makes it a question, and adding -ne would be asking twice.",
+      "sound": "U-bi est LI-ber. Three short words; nothing in the line is held.",
+      "variations": [
+        {
+          "display": "Ubi est mēnsa?",
+          "cue": "Where is the table?",
+          "changed": "a different thing asked about"
+        },
+        {
+          "display": "Ubi es?",
+          "cue": "Where are you?",
+          "changed": "the person asked about, with no noun at all"
+        },
+        {
+          "display": "Ubi est magister?",
+          "cue": "Where is the teacher?",
+          "changed": "a person as the thing located"
+        }
+      ],
+      "mistake": {
+        "display": "Ubi-ne est liber?",
+        "why": "The question particle added to a question word. -ne turns a STATEMENT into a yes/no question; ubi already asks for a place, so the two do different jobs and never stack."
+      },
+      "usage": "Said when you have lost something.",
+      "mnemonic": "ubi asks; -ne asks a different kind of question.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M7-S04",
+      "display": "Liber in mēnsā est.",
+      "cue": "The book is on the table.",
+      "literal": "the-book on table is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "liber",
+            "cue": "book (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. Here it is what is being located, so it is the plain shape."
+          },
+          {
+            "display": "in",
+            "cue": "in · on · into",
+            "tag": "interference",
+            "forms": [],
+            "note": "'In / on' with the -ā shape (where you are), 'into' with the -am shape (where you are going). One word, two cases, two meanings."
+          },
+          {
+            "display": "mēnsā",
+            "cue": "table (as the place something is on)",
+            "tag": "delta",
+            "forms": [
+              "mēnsa",
+              "mēnsam",
+              "mēnsā"
+            ],
+            "note": "'Table': mēnsa as the subject, mēnsam as the object, mēnsā after in or cum. The ē is long in all three."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          1,
+          5
+        ]
+      },
+      "trap": "One Latin word covers 'in' and 'on'. Latin does not care whether you are inside a thing or resting on it — in plus the -ā shape does both, and the noun tells you which is meant.",
+      "sound": "LI-ber in MEN-sā est. Two long vowels in mēnsā, one after the other, and the stress on the first.",
+      "variations": [
+        {
+          "display": "In mēnsā est liber.",
+          "cue": "There is a book on the table.",
+          "changed": "the thing located moved to the end, which turns it into 'there is'"
+        },
+        {
+          "display": "Aqua in mēnsā est.",
+          "cue": "The water is on the table.",
+          "changed": "a different thing located"
+        },
+        {
+          "display": "Librī in mēnsā sunt.",
+          "cue": "The books are on the table.",
+          "changed": "more than one, so the verb becomes sunt"
+        }
+      ],
+      "mistake": {
+        "display": "Liber in mēnsam est.",
+        "why": "The 'into' shape where nothing is moving. It would mean the book is in the act of going into the table, which is not a thing — and est is the clue that the -ā shape was wanted."
+      },
+      "usage": "Said in answer to ubi est.",
+      "mnemonic": "in plus long ā: in it, on it, at it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M7-S05",
+      "display": "Hīc est aqua.",
+      "cue": "The water is here.",
+      "literal": "here is water",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hīc",
+            "cue": "here",
+            "tag": "interference",
+            "forms": [
+              "hīc"
+            ],
+            "note": "'Here', with a LONG i. Its short twin hic means 'this' — one bar apart, and both are in this module so the pair can be learned together."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "aqua",
+            "cue": "water (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after in, cum or opus est. Three shapes of one word."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "hīc with the bar is 'here'. Without it you have written 'this', which is S07's word — and the two sentences differ by that one mark and by nothing else.",
+      "sound": "HEEK est A-qua. Hold the ī and say the c as a k. Then say S07's hic short and quick, and the pair separates cleanly.",
+      "variations": [
+        {
+          "display": "Hīc est liber.",
+          "cue": "The book is here.",
+          "changed": "a different thing located"
+        },
+        {
+          "display": "Hīc sum.",
+          "cue": "I am here.",
+          "changed": "the person located, with no noun"
+        },
+        {
+          "display": "Ibi est aqua.",
+          "cue": "The water is there.",
+          "changed": "the opposite word — here becomes there and nothing else moves"
+        }
+      ],
+      "mistake": {
+        "display": "Hic est aqua.",
+        "why": "The bar dropped, which turns 'here' into 'this'. The sentence now says 'this is water', which is a real sentence and a different one — and nothing but the macron distinguishes them."
+      },
+      "usage": "Said when pointing at where something is.",
+      "mnemonic": "Long ī, a place. Short i, a thing.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M7-S06",
+      "display": "Ibi est schola.",
+      "cue": "The school is there.",
+      "literal": "there is school",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ibi",
+            "cue": "there",
+            "tag": "free",
+            "forms": [
+              "ibi"
+            ],
+            "note": "'There', the opposite of hīc — and unlike hīc it has no near twin, so nothing about it can be misread. Both vowels are short."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "schola",
+            "cue": "school (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'School' — schola as the subject, scholam after ad, scholā after in. In Latin it meant the teaching rather than the building."
+          }
+        ],
+        "rules": [
+          5,
+          2
+        ]
+      },
+      "trap": "schola is the plain shape here because it is the subject, not a place. Being a word about a place does not make a noun take a place ending — the job in the sentence decides, and here its job is to be what the sentence is about.",
+      "sound": "I-bi est SCHO-la. Nothing long anywhere; the whole line is light.",
+      "variations": [
+        {
+          "display": "Ibi est mēnsa.",
+          "cue": "The table is there.",
+          "changed": "a different thing located"
+        },
+        {
+          "display": "Ibi sum.",
+          "cue": "I am there.",
+          "changed": "the person located"
+        },
+        {
+          "display": "Schola ibi est.",
+          "cue": "The school is there.",
+          "changed": "the order reversed, which puts the weight on the school"
+        }
+      ],
+      "mistake": {
+        "display": "Ibi est scholā.",
+        "why": "A place ending put on the subject because the sentence is about a place. scholā is what you use after in; as the thing being talked about, the school takes its plain shape."
+      },
+      "usage": "Said when pointing somewhere else.",
+      "mnemonic": "hīc here, ibi there.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M7-S07",
+      "display": "Hic liber est.",
+      "cue": "This is a book.",
+      "literal": "this book is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hic",
+            "cue": "this (of a masculine noun)",
+            "tag": "delta",
+            "forms": [
+              "hic",
+              "haec",
+              "hoc"
+            ],
+            "note": "'This', bending for what it points at: hic liber, haec mēnsa, hoc nōmen. Its i is SHORT — the long hīc is 'here'."
+          },
+          {
+            "display": "liber",
+            "cue": "book (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. Here it is what the sentence is about."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          4,
+          3
+        ]
+      },
+      "trap": "Hic liber est reads both 'this is a book' and 'this book is…', and only the situation tells you which. Latin is content with that ambiguity; English is not, which is why the sentence feels unfinished.",
+      "sound": "HIC LI-ber est. Short i — clipped. Beside S05's HEEK the difference is the whole of the two words.",
+      "variations": [
+        {
+          "display": "Haec mēnsa est.",
+          "cue": "This is a table.",
+          "changed": "a feminine noun, so 'this' becomes haec"
+        },
+        {
+          "display": "Hoc nōmen est.",
+          "cue": "This is a name.",
+          "changed": "a neuter noun, so 'this' becomes hoc — three genders, three shapes"
+        },
+        {
+          "display": "Hic magister est.",
+          "cue": "This is a teacher.",
+          "changed": "a person pointed at, with the same masculine shape"
+        }
+      ],
+      "mistake": {
+        "display": "Hic mēnsa est.",
+        "why": "The masculine 'this' with a feminine noun. hic follows the gender of what it points at, so a table takes haec — and the two words have to agree even though only one of them carries the meaning 'this'."
+      },
+      "usage": "Said when you are pointing at something close by.",
+      "mnemonic": "hic, haec, hoc — three genders of one small word.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M7-S08",
+      "display": "Apud magistrum sum.",
+      "cue": "I am at the teacher's.",
+      "literal": "at teacher I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "apud",
+            "cue": "at (someone's place) · with",
+            "tag": "delta",
+            "forms": [
+              "apud"
+            ],
+            "note": "'At the house of, in the presence of', and it takes the object shape. It is used of PEOPLE rather than places — apud magistrum, not apud scholam."
+          },
+          {
+            "display": "magistrum",
+            "cue": "teacher (as the person you are at)",
+            "tag": "delta",
+            "forms": [
+              "magistrum"
+            ],
+            "note": "The object shape of M1's magister, used after ad, apud and prope. The e drops out whenever an ending is added."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2,
+          1
+        ]
+      },
+      "trap": "apud takes the object shape even though nothing is moving. The case a preposition governs has nothing to do with motion — only in changes its case for that reason, and every other preposition has one case and keeps it.",
+      "sound": "A-pud ma-GIS-trum SUM. The d at the end of apud is said, lightly.",
+      "variations": [
+        {
+          "display": "Apud magistrum est.",
+          "cue": "He is at the teacher's.",
+          "changed": "a third person; the case does not move"
+        },
+        {
+          "display": "Apud magistrum es.",
+          "cue": "You are at the teacher's.",
+          "changed": "the verb ending moves it to you; the case does not move"
+        },
+        {
+          "display": "Prope magistrum sum.",
+          "cue": "I am near the teacher.",
+          "changed": "a different preposition, and it governs the same case"
+        }
+      ],
+      "mistake": {
+        "display": "Apud magistrō sum.",
+        "why": "The -ā-type shape used because the sentence is about being somewhere. apud governs the object shape and always does — the meaning of the sentence does not get a vote."
+      },
+      "usage": "Said about being at someone's house or in their company.",
+      "mnemonic": "apud is for people, in is for places.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M7-S09",
+      "display": "Prope mēnsam sum.",
+      "cue": "I am near the table.",
+      "literal": "near table I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "prope",
+            "cue": "near",
+            "tag": "delta",
+            "forms": [
+              "prope"
+            ],
+            "note": "'Near', and it takes the object shape like ad and apud. English 'approach' and 'propinquity' both keep it."
+          },
+          {
+            "display": "mēnsam",
+            "cue": "table (as the thing you are near)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Table': mēnsa as the subject, mēnsam as the object, mēnsā after in or cum. The ē is long in all three."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2,
+          1
+        ]
+      },
+      "trap": "Three prepositions now take the object shape — ad, apud, prope — and one takes the -ā shape. The pattern is not 'motion takes the object': it is that each word carries its own case, and you learn them as pairs.",
+      "sound": "PRO-pe MEN-sam SUM. The final e of prope is short and said; it is not silent as in English 'rope'.",
+      "variations": [
+        {
+          "display": "Prope mēnsam est.",
+          "cue": "He is near the table.",
+          "changed": "a third person"
+        },
+        {
+          "display": "Prope scholam sum.",
+          "cue": "I am near the school.",
+          "changed": "a different thing to be near"
+        },
+        {
+          "display": "Liber prope mēnsam est.",
+          "cue": "The book is near the table.",
+          "changed": "a thing located rather than a person"
+        }
+      ],
+      "mistake": {
+        "display": "Prope mēnsā sum.",
+        "why": "The wrong case again, and for the same reason: 'near the table' feels like a place and places feel like they want the -ā shape. prope does not care — it governs the object shape."
+      },
+      "usage": "Said about being close to something.",
+      "mnemonic": "ad, apud, prope: all three take the -m.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M7-S10",
+      "display": "Cum magistrō sum.",
+      "cue": "I am with the teacher.",
+      "literal": "with teacher I-am",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cum",
+            "cue": "with",
+            "tag": "delta",
+            "forms": [
+              "cum"
+            ],
+            "note": "'With', and it takes the -ā-type shape rather than the object one. A later level uses this same spelling as 'when'; here it is only ever 'with'."
+          },
+          {
+            "display": "magistrō",
+            "cue": "teacher (as the person you are with)",
+            "tag": "delta",
+            "forms": [
+              "magistrō"
+            ],
+            "note": "The -ō shape of M1's magister, used after cum and in. Nouns like magister take -ō where nouns like schola take -ā."
+          },
+          {
+            "display": "sum",
+            "cue": "I am",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2,
+          1
+        ]
+      },
+      "trap": "The ending after cum is -ō here and -ā after schola. It is the same case in both, and which letter it uses depends on the noun's family — exactly as the object shape was -am for aqua and -em for pānis in M3.",
+      "sound": "CUM ma-GIS-trō SUM. The long ō at the end of magistrō is the case; hold it.",
+      "variations": [
+        {
+          "display": "Cum magistrō est.",
+          "cue": "He is with the teacher.",
+          "changed": "a third person"
+        },
+        {
+          "display": "Cum Mārcō sum.",
+          "cue": "I am with Marcus.",
+          "changed": "a name, taking the same -ō shape"
+        },
+        {
+          "display": "In scholā cum magistrō sum.",
+          "cue": "I am at school with the teacher.",
+          "changed": "two place-phrases in one sentence, each with its own preposition and ending"
+        }
+      ],
+      "mistake": {
+        "display": "Cum magistrum sum.",
+        "why": "The object shape after cum, which governs the other case. Three of this module's prepositions take the object shape and cum does not — it is the one to memorise as an exception."
+      },
+      "usage": "Said about whose company you are in.",
+      "mnemonic": "cum takes the long ending: cum magistrō, cum mēnsā.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M7-C01",
+      "display": "Ubi est mēnsa?",
+      "cue": "Where is the table?"
+    },
+    {
+      "id": "L1-M7-C02",
+      "display": "Hīc est magister.",
+      "cue": "The teacher is here."
+    },
+    {
+      "id": "L1-M7-C03",
+      "display": "In mēnsā sunt librī.",
+      "cue": "There are books on the table."
+    },
+    {
+      "id": "L1-M7-C04",
+      "display": "Cum magistrō es.",
+      "cue": "You are with the teacher."
+    },
+    {
+      "id": "L1-M7-C05",
+      "display": "Haec aqua est.",
+      "cue": "This is water."
+    },
+    {
+      "id": "L1-M7-C06",
+      "display": "Ibi est liber, nōn hīc.",
+      "cue": "The book is there, not here."
+    },
+    {
+      "id": "L1-M7-C07",
+      "display": "In scholam crās ībō.",
+      "cue": "I will go into school tomorrow."
+    },
+    {
+      "id": "L1-M7-C08",
+      "display": "Prope scholam est mēnsa.",
+      "cue": "There is a table near the school."
+    },
+    {
+      "id": "L1-M7-C09",
+      "display": "Apud magistrum est Iūlia.",
+      "cue": "Julia is at the teacher's."
+    },
+    {
+      "id": "L1-M7-C10",
+      "display": "Hoc nōmen est.",
+      "cue": "This is a name."
+    },
+    {
+      "id": "L1-M7-C11",
+      "display": "In scholā herī fuī.",
+      "cue": "I was at school yesterday."
+    },
+    {
+      "id": "L1-M7-C12",
+      "display": "Cum magistrō in scholā sum.",
+      "cue": "I am at school with the teacher."
+    },
+    {
+      "id": "L1-M7-C13",
+      "display": "Ubi est aqua? Hīc est.",
+      "cue": "Where is the water? It is here."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

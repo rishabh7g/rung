@@ -1,0 +1,785 @@
+{
+  "schemaVersion": 5,
+  "id": "L1-M8",
+  "title": "Numbers & shopping",
+  "job": "Prices, quantities, buying",
+  "prerequisites": [
+    "L1-M7"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 6,
+    "allowedTenses": [
+      "simple_present",
+      "imperative",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "ūnus / duo / trēs + N",
+      "quot + N-acc + habēs",
+      "quantī cōnstat + N",
+      "N-acc + emō / vendō",
+      "dā mihi + N-acc"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "THE FIRST THREE NUMBERS AGREE. ūnus becomes ūna for a feminine noun and ūnum for a neuter one; duo becomes duae in the feminine; trēs becomes tria in the neuter. Nothing in English prepares you for a number that changes shape — 'one' is 'one' whatever it counts — and this is the only module where it matters."
+    },
+    {
+      "tag": "free",
+      "text": "From four upwards they stop. quattuor, quīnque, sex and the rest never change at all and simply stand in front of their noun. So the whole difficulty of Latin numbers is in the first three, and after that they are easier than English ones."
+    },
+    {
+      "tag": "delta",
+      "text": "Asking a price uses a case, not a preposition: Quantī cōnstat liber? is 'at what (price) does the book stand?'. quantī is the price-shape of quantus, and the construction is fixed — you learn the question whole rather than building it."
+    },
+    {
+      "tag": "delta",
+      "text": "cōnstat agrees with what is being priced, so more than one thing makes it cōnstant: Quantī cōnstant librī? That is the same agreement placet and placent had in M1, arriving in a place you would not expect it."
+    },
+    {
+      "tag": "delta",
+      "text": "dā is an order — 'give!' — and it is the first command in this course to carry an object: Dā mihi aquam. Two things after it, the person in the 'to me' shape and the thing in the object shape, and no word for 'please' to add. Politeness in Latin lives in a verb form that a later level teaches."
+    },
+    {
+      "tag": "interference",
+      "text": "emō is 'I buy' and has no English descendant that means buying, so there is nothing to lean on. pretium gives 'price' and 'precious'; quantī looks like a noun and is a case ending; quot looks like it should agree and never does. The cognates in this module help least of any so far."
+    },
+    {
+      "tag": "delta",
+      "text": "The money here is the nummus — the ordinary Latin word for a coin. This course uses it everywhere rather than the classical sēstertius, which would date every sentence, or a modern coinage, which would be this module inventing vocabulary the rest of the course does not share."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L1-M8-S01",
+      "display": "Ūnum librum emō.",
+      "cue": "I am buying one book.",
+      "literal": "one book I-buy",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ūnum",
+            "cue": "one (of a masculine object)",
+            "tag": "interference",
+            "forms": [
+              "ūnus",
+              "ūna",
+              "ūnum",
+              "ūnam"
+            ],
+            "note": "'One', and it agrees: ūnus with a masculine noun, ūna with a feminine one, ūnum with a neuter — and here also as the object shape of ūnus."
+          },
+          {
+            "display": "librum",
+            "cue": "book (as the thing bought)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. The e drops out as soon as an ending is added."
+          },
+          {
+            "display": "emō",
+            "cue": "I buy",
+            "tag": "interference",
+            "forms": [
+              "emō",
+              "emit",
+              "emere"
+            ],
+            "note": "'I buy': emō, emit 'he buys', emere 'to buy'. No English word comes from it, so there is nothing to guess from — 'redeem' is the closest relative."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "The number wears an ending. ūnum matches librum because they describe the same thing in the same job, so the number is agreeing with the noun the way an adjective does — which is exactly what it is.",
+      "sound": "U-num LI-brum E-mō. The ū of ūnum is long and the rest of the line is light.",
+      "variations": [
+        {
+          "display": "Ūnam mēnsam emō.",
+          "cue": "I am buying one table.",
+          "changed": "a feminine noun, so 'one' becomes ūnam"
+        },
+        {
+          "display": "Ūnum librum emit.",
+          "cue": "He is buying one book.",
+          "changed": "a third person; the number does not move"
+        },
+        {
+          "display": "Ūnum librum emere volō.",
+          "cue": "I want to buy one book.",
+          "changed": "M3's wanting over the top, with the infinitive before it"
+        }
+      ],
+      "mistake": {
+        "display": "Ūnus librum emō.",
+        "why": "The number left in its subject shape while the noun went to the object one. They have to match: the book is being bought, so both the noun and the number that counts it wear the object ending."
+      },
+      "usage": "Said in a shop, about a single item.",
+      "mnemonic": "The number dresses like the noun it counts.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M8-S02",
+      "display": "Duae mēnsae sunt.",
+      "cue": "There are two tables.",
+      "literal": "two tables are",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "duae",
+            "cue": "two (of a feminine noun)",
+            "tag": "interference",
+            "forms": [
+              "duo",
+              "duae"
+            ],
+            "note": "'Two', and it has its own irregular shapes: duo with masculine and neuter nouns, duae with feminine ones. It is never just 'duo' for everything."
+          },
+          {
+            "display": "mēnsae",
+            "cue": "tables",
+            "tag": "delta",
+            "forms": [
+              "mēnsae"
+            ],
+            "note": "More than one mēnsa. First-declension nouns make their plural in -ae, which is also the shape a single one takes after some other words — context decides."
+          },
+          {
+            "display": "sunt",
+            "cue": "they are",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "Three words for four English ones, and none of them is 'there'. The number and the noun both carry the feminine plural, so the agreement is written twice — which is how Latin can afford to drop the 'there' entirely.",
+      "sound": "DU-ae MEN-sae SUNT. Both -ae endings are the diphthong of English \"eye\": DOO-eye, MEN-seye.",
+      "variations": [
+        {
+          "display": "Duo librī sunt.",
+          "cue": "There are two books.",
+          "changed": "a masculine noun, so 'two' becomes duo and the noun ends in -ī"
+        },
+        {
+          "display": "Duae mēnsae hīc sunt.",
+          "cue": "There are two tables here.",
+          "changed": "M7's 'here' added"
+        },
+        {
+          "display": "Duo librōs habeō.",
+          "cue": "I have two books.",
+          "changed": "the books become the object, so both words take the object shape"
+        }
+      ],
+      "mistake": {
+        "display": "Duae mēnsa est.",
+        "why": "The noun left singular after a plural number, and the verb left singular to match it. Counting two of something changes the noun AND the verb; English changes only the noun."
+      },
+      "usage": "Said about what is on the table in front of you.",
+      "mnemonic": "duo for men and things, duae for women and tables.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M8-S03",
+      "display": "Trēs nummōs habeō.",
+      "cue": "I have three coins.",
+      "literal": "three coins I-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trēs",
+            "cue": "three",
+            "tag": "delta",
+            "forms": [
+              "trēs"
+            ],
+            "note": "'Three', and it is the last number that changes at all: trēs with masculine and feminine nouns, tria with neuter ones. From four upwards nothing changes ever again."
+          },
+          {
+            "display": "nummōs",
+            "cue": "coins (as the things had)",
+            "tag": "delta",
+            "forms": [
+              "nummus",
+              "nummī",
+              "nummum",
+              "nummōs"
+            ],
+            "note": "'Coin, money' — the everyday word: nummus one, nummī more than one, nummum and nummōs as objects. This course's money word throughout."
+          },
+          {
+            "display": "habeō",
+            "cue": "I have",
+            "tag": "free",
+            "forms": [],
+            "note": "'I have', and it does exactly what English 'have' does: habeō 'I have', habēs 'you have', habet 'he/she has'. Nothing here needs unlearning."
+          }
+        ],
+        "rules": [
+          0,
+          6
+        ]
+      },
+      "trap": "trēs does not change for the object shape — it is trēs whether the coins are the subject or the thing had. The noun moves and the number does not, which is the opposite of what S01 just taught about ūnus.",
+      "sound": "TRES NUM-mōs ha-BE-ō. Hold the ē of trēs and the ō of nummōs; both are long and both are stressed.",
+      "variations": [
+        {
+          "display": "Trēs nummōs habēs.",
+          "cue": "You have three coins.",
+          "changed": "the verb ending moves the having"
+        },
+        {
+          "display": "Trēs librōs habeō.",
+          "cue": "I have three books.",
+          "changed": "a different thing counted, with the same number"
+        },
+        {
+          "display": "Nummōs nōn habeō.",
+          "cue": "I do not have any coins.",
+          "changed": "negated, and with no number at all"
+        }
+      ],
+      "mistake": {
+        "display": "Trēs nummus habeō.",
+        "why": "The noun left singular after a plural number. Three coins is nummōs, and the number is the one word in the phrase that does NOT change here — which makes the noun the only place the plural can show."
+      },
+      "usage": "Said about what you can pay with.",
+      "mnemonic": "trēs, tria, and then nothing changes ever again.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M8-S04",
+      "display": "Quot librōs habēs?",
+      "cue": "How many books do you have?",
+      "literal": "how-many books you-have",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quot",
+            "cue": "how many",
+            "tag": "interference",
+            "forms": [
+              "quot"
+            ],
+            "note": "'How many', and it NEVER changes shape, though it looks like it should agree. One of the few Latin words that is simply invariable."
+          },
+          {
+            "display": "librōs",
+            "cue": "books (as the things had)",
+            "tag": "delta",
+            "forms": [
+              "librōs"
+            ],
+            "note": "The object shape of more than one liber. So the book has four shapes in this course now: liber, librum, librī, librōs — subject, object, and both again in the plural."
+          },
+          {
+            "display": "habēs",
+            "cue": "you have",
+            "tag": "free",
+            "forms": [],
+            "note": "'I have', and it does exactly what English 'have' does: habeō 'I have', habēs 'you have', habet 'he/she has'. Nothing here needs unlearning."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "No 'do'. English needs a helper verb to ask a question and Latin does not — quot at the front is the whole of it, and no -ne is needed either because quot already asks.",
+      "sound": "QUOT LI-brōs ha-BES. Hold the ō of librōs and the ē of habēs.",
+      "variations": [
+        {
+          "display": "Quot nummōs habēs?",
+          "cue": "How many coins do you have?",
+          "changed": "a different thing counted"
+        },
+        {
+          "display": "Quot librōs habet?",
+          "cue": "How many books does he have?",
+          "changed": "a third person asked about"
+        },
+        {
+          "display": "Quot librī hīc sunt?",
+          "cue": "How many books are here?",
+          "changed": "the books as the subject, so they take the plain plural shape"
+        }
+      ],
+      "mistake": {
+        "display": "Quotōs librōs habēs?",
+        "why": "An ending invented for quot because everything around it has one. quot is invariable — it is one of the handful of Latin words with no shapes at all, and adding to it produces nothing."
+      },
+      "usage": "Said when you are counting what somebody else has.",
+      "mnemonic": "quot never changes. Ever.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M8-S05",
+      "display": "Quantī cōnstat liber?",
+      "cue": "How much does the book cost?",
+      "literal": "at-what-price stands the-book",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quantī",
+            "cue": "at what price · how much",
+            "tag": "delta",
+            "forms": [
+              "quantī"
+            ],
+            "note": "'At what price' — a case ending doing what English does with 'how much'. It is fixed in this question and does not change with what is being priced."
+          },
+          {
+            "display": "cōnstat",
+            "cue": "costs · stands at",
+            "tag": "delta",
+            "forms": [
+              "cōnstat",
+              "cōnstant"
+            ],
+            "note": "'Costs', literally 'stands at'. It agrees with the thing priced: cōnstat for one, cōnstant for more than one."
+          },
+          {
+            "display": "liber",
+            "cue": "book (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. Here it is what is being priced, so it is the plain shape."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "The book is the subject. Latin says the book stands at a price rather than that you pay one, so what English makes the object of 'cost' is the thing doing the standing.",
+      "sound": "QUAN-tī CON-stat LI-ber. Both long vowels are stressed. Say the whole question as one unit — it is a fixed phrase.",
+      "variations": [
+        {
+          "display": "Quantī cōnstat mēnsa?",
+          "cue": "How much does the table cost?",
+          "changed": "a different thing priced; the question does not move"
+        },
+        {
+          "display": "Quantī cōnstat aqua?",
+          "cue": "How much does the water cost?",
+          "changed": "and again, with a noun from M3"
+        },
+        {
+          "display": "Quantī cōnstat?",
+          "cue": "How much does it cost?",
+          "changed": "the thing dropped once it is obvious what you are pointing at"
+        }
+      ],
+      "mistake": {
+        "display": "Quantī cōnstat librum?",
+        "why": "The book put in the object shape, because English makes it the object of 'cost'. In Latin the book is doing the standing, so it takes the plain subject shape — the whole construction is turned round."
+      },
+      "usage": "The question you ask before you buy.",
+      "mnemonic": "The thing stands at a price; you do not pay one.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M8-S06",
+      "display": "Dā mihi aquam.",
+      "cue": "Give me water.",
+      "literal": "give to-me water",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dā",
+            "cue": "give! (to one person)",
+            "tag": "delta",
+            "forms": [
+              "dā"
+            ],
+            "note": "'Give!' — an order to one person, like M2's salvē and valē. Its ā is long, and it takes two things after it: a 'to me' and an object."
+          },
+          {
+            "display": "mihi",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I' has more than one shape: ego does the acting, mihi is 'to me / for me'. The person something is given TO takes this shape."
+          },
+          {
+            "display": "aquam",
+            "cue": "water (as the thing given)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after in, cum or opus est. Three shapes of one word."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "There is no 'please' to add. Latin has ways of being polite and all of them are verb forms a later level teaches — so a bare dā is not rude here, it is simply all this course has.",
+      "sound": "DA MI-hi A-quam. One long syllable then four short ones. Hold the ā of dā; it is the whole command.",
+      "variations": [
+        {
+          "display": "Dā mihi librum.",
+          "cue": "Give me the book.",
+          "changed": "a different thing given"
+        },
+        {
+          "display": "Dā mihi trēs nummōs.",
+          "cue": "Give me three coins.",
+          "changed": "a counted object, with the number agreeing"
+        },
+        {
+          "display": "Dā mihi pānem.",
+          "cue": "Give me bread.",
+          "changed": "M3's bread, in its own object shape"
+        }
+      ],
+      "mistake": {
+        "display": "Dā mē aquam.",
+        "why": "The wrong shape of 'I'. mē is the object shape and the water is already the object; the person receiving takes mihi, which is the 'to me' shape M1 taught for liking and M3 for needing."
+      },
+      "usage": "Said across a table or a counter.",
+      "mnemonic": "dā takes two: to whom, and what.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M8-S07",
+      "display": "Ūna mēnsa hīc est.",
+      "cue": "There is one table here.",
+      "literal": "one table here is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ūna",
+            "cue": "one (of a feminine noun)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'One', and it agrees: ūnus with a masculine noun, ūna with a feminine one, ūnum with a neuter. The table is feminine, so it takes ūna."
+          },
+          {
+            "display": "mēnsa",
+            "cue": "table (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Table': mēnsa as the subject, mēnsam as the object, mēnsā after in or cum. The ē is long in all three."
+          },
+          {
+            "display": "hīc",
+            "cue": "here",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Here', with a LONG i. Its short twin hic means 'this' — one bar apart, and M7 taught them together."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "ūna, not ūnus. The table's gender decides it, and nothing about the number itself or about the English 'one' gives you any clue — you have to know that mēnsa is feminine.",
+      "sound": "U-na MEN-sa HEEK est. Three long vowels in the line: the ū, the ē and the ī of hīc.",
+      "variations": [
+        {
+          "display": "Ūnus liber hīc est.",
+          "cue": "There is one book here.",
+          "changed": "a masculine noun, so 'one' becomes ūnus"
+        },
+        {
+          "display": "Ūna mēnsa ibi est.",
+          "cue": "There is one table there.",
+          "changed": "M7's 'there' in place of 'here'"
+        },
+        {
+          "display": "Ūna mēnsa in scholā est.",
+          "cue": "There is one table at school.",
+          "changed": "a place-phrase instead of a place-word"
+        }
+      ],
+      "mistake": {
+        "display": "Ūnum mēnsa hīc est.",
+        "why": "The neuter 'one' with a feminine noun. ūnum is for neuter nouns like nōmen; mēnsa takes ūna, and the three shapes are not interchangeable even though English has one word for all of them."
+      },
+      "usage": "Said about what is in the room.",
+      "mnemonic": "ūnus, ūna, ūnum — one word, three genders.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M8-S08",
+      "display": "Librum vendō.",
+      "cue": "I am selling the book.",
+      "literal": "book I-sell",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "librum",
+            "cue": "book (as the thing sold)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one. The e drops out as soon as an ending is added."
+          },
+          {
+            "display": "vendō",
+            "cue": "I sell",
+            "tag": "free",
+            "forms": [
+              "vendō",
+              "vendit",
+              "vendis"
+            ],
+            "note": "'I sell': vendō, vendis 'you sell', vendit 'he sells'. English 'vend' and 'vendor' both keep it and mean the same thing — one of the few clean cognates here."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "Nothing. This is the one sentence in the module with no agreement, no case surprise and a cognate that tells the truth — worth noticing, because it will not happen often.",
+      "sound": "LI-brum VEN-dō. The ō is long and says 'I'.",
+      "variations": [
+        {
+          "display": "Librum vendit.",
+          "cue": "He is selling the book.",
+          "changed": "a third person"
+        },
+        {
+          "display": "Librōs vendō.",
+          "cue": "I am selling books.",
+          "changed": "more than one thing sold"
+        },
+        {
+          "display": "Librum emō, nōn vendō.",
+          "cue": "I am buying the book, not selling it.",
+          "changed": "the two verbs of the module against each other"
+        }
+      ],
+      "mistake": {
+        "display": "Liber vendō.",
+        "why": "The object left in its subject shape — the module's oldest error, and it is worth one last plate because the cognate makes this sentence feel too easy to check."
+      },
+      "usage": "Said on the other side of the counter.",
+      "mnemonic": "vendō is 'vendor': the word came through unchanged.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M8-S09",
+      "display": "Quantī cōnstant librī?",
+      "cue": "How much do the books cost?",
+      "literal": "at-what-price stand the-books",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quantī",
+            "cue": "at what price · how much",
+            "tag": "delta",
+            "forms": [],
+            "note": "'At what price' — a case ending doing what English does with 'how much'. It is fixed in this question and does not change with what is being priced."
+          },
+          {
+            "display": "cōnstant",
+            "cue": "cost · stand at",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Costs', literally 'stands at'. It agrees with the thing priced: cōnstat for one, cōnstant for more than one."
+          },
+          {
+            "display": "librī",
+            "cue": "books (as the subject)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber for one, librī for more than one. Here they are what is being priced, so they take the plain plural shape."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "The verb moved and quantī did not. cōnstant agrees with the books because they are its subject; quantī is a fixed price-shape and stays as it is however many things you are pricing.",
+      "sound": "QUAN-tī CON-stant LI-brī. One more consonant than S05 and one more thing being priced.",
+      "variations": [
+        {
+          "display": "Quantī cōnstant nummī?",
+          "cue": "How much do the coins cost?",
+          "changed": "a different plural thing priced"
+        },
+        {
+          "display": "Quantī cōnstat liber?",
+          "cue": "How much does the book cost?",
+          "changed": "back to one thing, so the verb loses its plural"
+        },
+        {
+          "display": "Quantī cōnstant duo librī?",
+          "cue": "How much do two books cost?",
+          "changed": "the number added, agreeing with the books"
+        }
+      ],
+      "mistake": {
+        "display": "Quantī cōnstat librī?",
+        "why": "The verb left singular for a plural subject. It is M1's placet/placent all over again in a new construction: the verb follows the thing, and here the thing is more than one book."
+      },
+      "usage": "Said when you are pricing a set rather than an item.",
+      "mnemonic": "More things standing, cōnstant.",
+      "register": "neutral"
+    },
+    {
+      "id": "L1-M8-S10",
+      "display": "Trēs librōs emere volō.",
+      "cue": "I want to buy three books.",
+      "literal": "three books to-buy I-want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "trēs",
+            "cue": "three",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Three': trēs with masculine and feminine nouns, tria with neuter ones. Only two shapes rather than ūnus's three, and the last number that changes at all."
+          },
+          {
+            "display": "librōs",
+            "cue": "books (as the things bought)",
+            "tag": "delta",
+            "forms": [],
+            "note": "The object shape of more than one liber. So the book has four shapes in this course now: liber, librum, librī, librōs."
+          },
+          {
+            "display": "emere",
+            "cue": "to buy",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I buy': emō, emit 'he buys', emere 'to buy'. No English word comes from it, so there is nothing to guess from — 'redeem' is the closest relative."
+          },
+          {
+            "display": "volō",
+            "cue": "I want",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I want' — irregular, and the only verb for wanting: volō 'I want', vult 'he/she wants'. It takes an object or an infinitive, and both come before it."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "Four words in exactly the opposite order from English. The number and its noun come first because they belong to emere, the infinitive comes next because it belongs to volō, and volō comes last because Latin verbs do.",
+      "sound": "TRES LI-brōs E-me-re VO-lō. Four words, and the stress is on the first syllable of each.",
+      "variations": [
+        {
+          "display": "Duo librōs emere volō.",
+          "cue": "I want to buy two books.",
+          "changed": "a different number, and duo takes its own object shape"
+        },
+        {
+          "display": "Trēs librōs emere nōlō.",
+          "cue": "I do not want to buy three books.",
+          "changed": "M3's one-word refusal"
+        },
+        {
+          "display": "Trēs librōs emit.",
+          "cue": "He is buying three books.",
+          "changed": "no wanting at all — the buying becomes the main verb"
+        }
+      ],
+      "mistake": {
+        "display": "Volō emere trēs librōs.",
+        "why": "The English order, for the last time in this level. Every module since M3 has warned about it, and it is worth one more plate because a four-word sentence is where the temptation is strongest."
+      },
+      "usage": "Said when you are about to spend money.",
+      "mnemonic": "Object, infinitive, verb. Load it front to back.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L1-M8-C01",
+      "display": "Quantī cōnstat pānis?",
+      "cue": "How much does the bread cost?"
+    },
+    {
+      "id": "L1-M8-C02",
+      "display": "Duo nummī in mēnsā sunt.",
+      "cue": "There are two coins on the table."
+    },
+    {
+      "id": "L1-M8-C03",
+      "display": "Dā mihi ūnum librum.",
+      "cue": "Give me one book."
+    },
+    {
+      "id": "L1-M8-C04",
+      "display": "Trēs librōs vendō.",
+      "cue": "I am selling three books."
+    },
+    {
+      "id": "L1-M8-C05",
+      "display": "Quot nummōs habet Mārcus?",
+      "cue": "How many coins does Marcus have?"
+    },
+    {
+      "id": "L1-M8-C06",
+      "display": "Ūnam mēnsam emere volō.",
+      "cue": "I want to buy one table."
+    },
+    {
+      "id": "L1-M8-C07",
+      "display": "Nummōs nōn habeō.",
+      "cue": "I do not have any coins."
+    },
+    {
+      "id": "L1-M8-C08",
+      "display": "Duo librī hīc sunt.",
+      "cue": "There are two books here."
+    },
+    {
+      "id": "L1-M8-C09",
+      "display": "Quantī cōnstant trēs librī?",
+      "cue": "How much do three books cost?"
+    },
+    {
+      "id": "L1-M8-C10",
+      "display": "Iūlia ūnum librum emit.",
+      "cue": "Julia is buying one book."
+    },
+    {
+      "id": "L1-M8-C11",
+      "display": "Dā mihi nummōs.",
+      "cue": "Give me the coins."
+    },
+    {
+      "id": "L1-M8-C12",
+      "display": "Quot mēnsae hīc sunt?",
+      "cue": "How many tables are here?"
+    },
+    {
+      "id": "L1-M8-C13",
+      "display": "Quot librōs vendis?",
+      "cue": "How many books are you selling?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
