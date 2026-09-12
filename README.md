@@ -1234,7 +1234,8 @@ ten modules**: **929 romanized surfaces checked, 0 of them carrying Devanagari i
 and 959 Cyrillic strings to undo; this course never had one to undo.
 
 **The shown-surface ratchet opens at ZERO, and en-sa was the first course in the catalogue there**
-(#491; en-la joined it at #637 and has held it through all four of its authored levels, forty rungs, at #641, #645 and #649, and the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
+(#491; en-la joined it at #637 and has held it through all four of its authored levels and seven rungs
+of the fifth, forty-seven in all, at #641, #645, #649, #651 and #652, and the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
 20 · en-de 11 · en-ko 12). It was designed rather than discovered, and it cost real content: every
 proper noun the course shows — `rāmaḥ`, `sītā` — carries a word row of its own from M1, because
 CLAUDE.md's warning is that a proper noun is COUNTED and not exempt; M8's agreeing numerals were
@@ -1489,8 +1490,8 @@ the module's job.
 
 **en-la's L5 has opened, and it is the one L5 in the product whose learner already owns the content
 (#650-#651, 2026-09-12).** Ten briefs ([`docs/133`](docs/133-en-la-L5-brief-decisions.md)) and three
-modules so far ([`docs/134`](docs/134-llm-review-en-la-L5.md)): `en-la: 43 modules`, **667 cumulative
-surfaces**, and **no `shown but untaught` line at any of the forty-three**. An English speaker arrives
+modules so far ([`docs/134`](docs/134-llm-review-en-la-L5.md)): `en-la: 47 modules`, **715 cumulative
+surfaces**, and **no `shown but untaught` line at any of the forty-seven**. An English speaker arrives
 at M1 knowing `carpe diem` and `ālea iacta est` without knowing a word of Latin, so the module's work
 is not learning them but taking them apart — and `ālea iacta est` turns out to be L2-M8's
 participle-as-adjective arrangement thirty-eight rungs later.
@@ -1508,6 +1509,24 @@ and not one letter.
 **The vocative finally arrives at L5-M2, forty-nine rungs after L1 got away without one** and
 thirty-four after L2-M7 wanted `Mārce` for a telephone call. Mock address is why, and the cost is
 visible: three of that module's ten `mistake` plates are the subject shape used to address somebody.
+
+**With L5-M6 and L5-M7 (#652) the fifty-module syllabus owes no more grammar.** The **ablative
+absolute** (`hīs rēbus dictīs`) and the **indirect question** (`quaerō quid agās`) were the last two
+constructions `docs/121` promised, and both are made entirely of endings the learner already has — the
+perfect participle of L2-M8 with the ablative of L2-M4, and the present subjunctive of L3-M4 with
+L1-M2's question words. Neither module teaches a new form, and M6's rules say so out loud, because a
+learner who reads the ablative absolute as a new tense will hunt for an ending that does not exist. The
+three rungs still outstanding (#653) owe consolidation.
+
+Two things from that wave are worth recording against the next course. **An early module can spend a
+key a later module is built around**: `crēdō` resolves to **L5-M1**, not to M5 which teaches its two
+constructions, because M1-S08's `nōn tamen crēdō` wrote the surface first and the word index takes the
+first occurrence. It is benign — M1's note already points forward, and M5 teaches the constructions
+without owning the bare key — but it is the fourth time in this course, after `cum`, `ut` and `quod`,
+and it is the single most common way an en-la plan goes wrong. **And M4-S08 is the one sentence in
+fifty modules where a name's case carries the whole meaning**: `Mārcus mortuus est` leaves `Mārcus`
+nominative two modules after the vocative arrived, because you do not address the dead, and the trap
+says exactly that.
 
 **Five levels per course (2026-09-07, `docs/48-five-level-ladder-plan.md`).** Every course's
 `levels.json` now lists L4 "Nuance — say it the way they do" and L5 "Voice — your own words, at
@@ -2620,11 +2639,11 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **523
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **527
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
   thirty on en-sa, which is the whole of L1, L2 and L3 (#611, #613, #614, #615, #617, #618,
-  #619), and forty-three on en-la, which is the whole of L1, L2, L3 and L4 plus the first three
-  rungs of L5 (#637, #641, #645, #649, #651) — every one
+  #619), and forty-seven on en-la, which is the whole of L1, L2, L3 and L4 plus the first seven
+  rungs of L5 (#637, #641, #645, #649, #651, #652) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.

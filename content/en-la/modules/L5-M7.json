@@ -1,0 +1,882 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M7",
+  "title": "Between the lines",
+  "job": "Implication, sarcasm, indirect requests",
+  "prerequisites": [
+    "L5-M6"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 16,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "nōn male (litotes)",
+      "nōn ignōrō + quid + V-subjunctive",
+      "quaerō + quid + V-subjunctive",
+      "nōnne + V-future (a request)",
+      "sī placet + , + V-subjunctive"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "LITOTES IS UNDERSTATEMENT THAT MEANS MORE, NOT LESS. nōn male is not 'not badly' but 'RATHER WELL' — a compliment — and nōn ignōrō is not 'I am not ignorant' but 'I know perfectly well'. L4-M5's haud sciō an was the extreme case, a litotes that reversed entirely, so this module COMPLETES the device rather than opening it: a learner who has met one will read the others correctly. And nōn bene is one word away from nōn male and really is criticism."
+    },
+    {
+      "tag": "delta",
+      "text": "ignōrō IS THE EIGHTH WORD IN THIS COURSE WITH A NEGATIVE INSIDE IT, after nōlō, mālō, negō, nisi, nesciō, nōndum and nēmō. It is in- plus gnārus, 'not knowing'. By the fiftieth module that is a settled habit of the language — Latin prefers to weld a negative into a word than to put one beside it — and nōn ignōrō is therefore two negatives in one phrase that do NOT cancel, because the litotes is the point."
+    },
+    {
+      "tag": "interference",
+      "text": "THE INDIRECT QUESTION ARRIVES AND IT IS THE LAST CONSTRUCTION THIS COURSE OWES. L4-M5's haud sciō an only looked like one. quaerō quid agās is 'I ask what you are doing' — with a SUBJUNCTIVE, where English keeps the indicative — and that single fact is the whole difference and the reason this waited for a level whose learner is fluent in the mood. quid agis? was L1-M2's greeting; quid agās inside a clause is a report, and the mood is the only change."
+    },
+    {
+      "tag": "free",
+      "text": "A LOADED QUESTION IS AN INDIRECT REQUEST, AND L4-M4 BUILT THE MACHINERY. nōnne expects yes, so nōnne mē adiuvābis? asks for help while handing the listener the easier answer — English does the same with a tag question. sī placet plus a subjunctive is the elaborate version. The course now has FOUR ways of asking for help: adiuvā, adiuvā quaesō, nōnne mē adiuvābis, sī placet mē adiuvēs — blunt to elaborate, in that order."
+    },
+    {
+      "tag": "interference",
+      "text": "ONE MOOD, MANY MASTERS: S09 has two subjunctives for two unrelated reasons — quaerās because sī placet asks for it, agam because an indirect question demands it. Five conjunctions and two constructions now require the subjunctive (ut, nē, licet, an, cum, dōnec, plus a question inside a clause and a wish with nothing in front of it), and a single sentence can easily carry two of them for reasons that have nothing to do with each other."
+    },
+    {
+      "tag": "free",
+      "text": "SARCASM IS M2's DEVICE IN A COLDER REGISTER, and this module does not repeat that one. M2 teased a friend; here the listener is meant to work something out and possibly resent it — and a litotes after a superlative is what tips the balance, because nobody understates what they actually admire. The same optimē carries both, and only the usage line tells them apart, which is the honest way to teach tone in a language nobody will hear you speak."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M7-S01",
+      "display": "Nōn male scrībis.",
+      "cue": "You write rather well.",
+      "literal": "not badly you-write",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies — and here it denies male, not the writing."
+          },
+          {
+            "display": "male",
+            "cue": "badly",
+            "tag": "interference",
+            "forms": [
+              "male"
+            ],
+            "note": "'Badly'. L1-M2's bene is its opposite, and with nōn in front of it — nōn male — it means 'rather well', which is understatement rather than denial."
+          },
+          {
+            "display": "scrībis",
+            "cue": "you write",
+            "tag": "delta",
+            "forms": [
+              "scrībis"
+            ],
+            "note": "'You write' — scrībō, scrībis, scrībit, scrīpsī. L1-M6's verb."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "LITOTES: nōn male IS NOT 'NOT BADLY' BUT 'RATHER WELL', and the understatement is a compliment. L4-M5's haud sciō an was the extreme version of this device — a litotes that reversed entirely — so this module is not opening it but completing it, and a learner who has met one will read the others correctly.",
+      "sound": "nōn MA-le SCRĪ-bis. Five syllables and two long vowels, one at each end.",
+      "variations": [
+        {
+          "display": "Nōn male legis.",
+          "cue": "You read rather well.",
+          "changed": "a different skill praised"
+        },
+        {
+          "display": "Bene scrībis.",
+          "cue": "You write well.",
+          "changed": "L1-M2's plain adverb, which says less by saying more"
+        },
+        {
+          "display": "Male scrībis.",
+          "cue": "You write badly.",
+          "changed": "the negative dropped, which is an insult and not a hedge"
+        }
+      ],
+      "mistake": {
+        "display": "Nōn bene scrībis.",
+        "why": "the wrong adverb negated. nōn bene is 'not well' and really is criticism; nōn male is praise — and one word apart the two say opposite things, which is what makes litotes worth a module rather than a footnote."
+      },
+      "usage": "Said complimenting somebody without gushing.",
+      "mnemonic": "nōn male praises; nōn bene criticises.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M7-S02",
+      "display": "Nōn ignōrō quid dīcās.",
+      "cue": "I know perfectly well what you mean.",
+      "literal": "not I-am-ignorant what you-may-say",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of what it denies."
+          },
+          {
+            "display": "ignōrō",
+            "cue": "I do not know",
+            "tag": "interference",
+            "forms": [
+              "ignōrō"
+            ],
+            "note": "'I do not know' — in- plus gnārus, so the negative is inside the word. The EIGHTH such word in this course, and nōn ignōrō means 'I know perfectly well'."
+          },
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "'What' — and here it opens an INDIRECT QUESTION, which is a question inside another clause."
+          },
+          {
+            "display": "dīcās",
+            "cue": "you may say",
+            "tag": "interference",
+            "forms": [
+              "dīcās",
+              "dīcam"
+            ],
+            "note": "'That you may say' — the present subjunctive of dīcō, and dīcam for the speaker. An indirect question takes the MOOD where English keeps the indicative."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "THE INDIRECT QUESTION ARRIVES AND IT IS THE LAST CONSTRUCTION THIS COURSE OWES. L4-M5's haud sciō an only looked like one. quid dīcās is 'what you say' with a SUBJUNCTIVE — English keeps the indicative and Latin does not, which is why this waited for a level whose learner is fluent in the mood.",
+      "sound": "nōn ig-NŌ-rō kwid DĪ-cās. Eight syllables and three long vowels.",
+      "variations": [
+        {
+          "display": "Nōn ignōrō quid agās.",
+          "cue": "I know perfectly well what you are doing.",
+          "changed": "L1-M2's agō in the mood"
+        },
+        {
+          "display": "Ignōrō quid dīcās.",
+          "cue": "I do not know what you mean.",
+          "changed": "the litotes dropped, which is plain ignorance"
+        },
+        {
+          "display": "Sciō quid dīcās.",
+          "cue": "I know what you mean.",
+          "changed": "L4-M5's sciō, which says the same thing flatly"
+        }
+      ],
+      "mistake": {
+        "display": "Nōn ignōrō quid dīcis.",
+        "why": "the indicative in an indirect question. English keeps it — 'I know what you say' — and Latin requires the subjunctive, which is the single most reliable mistake an English speaker makes in this construction and the reason it needed a level of fluency in the mood behind it."
+      },
+      "usage": "Said letting somebody know you have understood more than they said.",
+      "mnemonic": "An indirect question takes the mood.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M7-S03",
+      "display": "Quaerō quid agās.",
+      "cue": "I ask what you are doing.",
+      "literal": "I-ask what you-may-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quaerō",
+            "cue": "I ask",
+            "tag": "interference",
+            "forms": [
+              "quaerō",
+              "quaerit"
+            ],
+            "note": "'I ask': quaerō, quaerit. It takes an indirect question after it, and the question's verb goes into the SUBJUNCTIVE where English keeps the indicative."
+          },
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "'What', opening an indirect question."
+          },
+          {
+            "display": "agās",
+            "cue": "you may do",
+            "tag": "interference",
+            "forms": [
+              "agās"
+            ],
+            "note": "'That you may do' — the present subjunctive of L1-M2's agō. quid agis? was that module's greeting; in the mood it is a real question reported."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "quid agis? was 'how are you?' at L1-M2 and quid agās is 'what you are doing' inside a clause. The mood is the only difference, and it converts a greeting into a report — which is the neatest demonstration this construction gets.",
+      "sound": "QUAE-rō kwid A-gās. Five syllables and two long vowels, which are the verb and the mood.",
+      "variations": [
+        {
+          "display": "Quaerō quid dīcās.",
+          "cue": "I ask what you mean.",
+          "changed": "a different verb reported"
+        },
+        {
+          "display": "Quaerit quid agās.",
+          "cue": "He asks what you are doing.",
+          "changed": "someone else asking"
+        },
+        {
+          "display": "Quid agis?",
+          "cue": "How are you?",
+          "changed": "L1-M2's direct question, which is the same words without the mood"
+        }
+      ],
+      "usage": "Said reporting a question rather than asking one.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M7-S04",
+      "display": "Nōnne mē adiuvābis?",
+      "cue": "You will help me, won't you?",
+      "literal": "surely-not me you-will-help",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōnne",
+            "cue": "surely … ?",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Surely …?' — L4-M4's particle, which expects YES. A question that expects yes is a request, which is what makes it indirect."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Me' — the object. L3-M6's row."
+          },
+          {
+            "display": "adiuvābis",
+            "cue": "you will help",
+            "tag": "delta",
+            "forms": [
+              "adiuvābis"
+            ],
+            "note": "'You will help' — L1-M6's -bis future on L3-M6's adiuvō."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "A LOADED QUESTION IS AN INDIRECT REQUEST, and L4-M4 built the machinery. nōnne expects yes, so this is not really asking — it is asking for help while giving the listener the easier answer. English does the same with a tag question, and Latin does it with one particle at the front.",
+      "sound": "NŌN-ne MĒ ad-iu-VĀ-bis. Seven syllables and three long vowels.",
+      "variations": [
+        {
+          "display": "Nōnne mē adiuvābis, ō Mārce?",
+          "cue": "You will help me, won't you, Marcus?",
+          "changed": "M2's vocative in its formal use"
+        },
+        {
+          "display": "Mē adiuvā.",
+          "cue": "Help me.",
+          "changed": "L3-M6's flat imperative, which asks directly"
+        },
+        {
+          "display": "Num mē adiuvābis?",
+          "cue": "Surely you will not help me?",
+          "changed": "L4-M4's other particle, which expects no and is a very different thing to say"
+        }
+      ],
+      "usage": "Said asking a favour without asking.",
+      "mnemonic": "nōnne wants yes, so it is a request.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M7-S05",
+      "display": "Sī placet, mē adiuvēs.",
+      "cue": "If you would, do help me.",
+      "literal": "if it-pleases me you-may-help",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "'If' — L3-M4's word, and here it is a politeness frame rather than a real condition."
+          },
+          {
+            "display": "placet",
+            "cue": "it pleases",
+            "tag": "delta",
+            "forms": [],
+            "note": "'It pleases' — impersonal, and L1-M7's word. sī placet is 'if it pleases you', which is 'please' at its most formal."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Me' — the object."
+          },
+          {
+            "display": "adiuvēs",
+            "cue": "you may help",
+            "tag": "interference",
+            "forms": [
+              "adiuvēs"
+            ],
+            "note": "'That you may help' — the present subjunctive of adiuvō. L3-M4's mood, and with sī placet in front of it the request is as soft as this language gets."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "A subjunctive request, which is gentler than L3-M6's imperative and gentler than S04's loaded question. The course now has four ways of asking for help — adiuvā, adiuvā quaesō, nōnne mē adiuvābis, sī placet mē adiuvēs — and they run from blunt to elaborate in that order.",
+      "sound": "SĪ PLA-cet, MĒ ad-iu-VĒS. Seven syllables and three long vowels.",
+      "variations": [
+        {
+          "display": "Sī placet, mē adiuvā.",
+          "cue": "If you would, help me.",
+          "changed": "the imperative instead of the mood, which is a shade blunter"
+        },
+        {
+          "display": "Sī tibi placet, mē adiuvēs.",
+          "cue": "If it pleases you, do help me.",
+          "changed": "M4's dative written out, which is more formal still"
+        },
+        {
+          "display": "Mē adiuvā, quaesō.",
+          "cue": "Help me, please.",
+          "changed": "L3-M6's own sentence, which is the plain polite request"
+        }
+      ],
+      "usage": "Said asking somebody senior.",
+      "mnemonic": "Four ways to ask, blunt to elaborate.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M7-S06",
+      "display": "Optimē scrīpsistī: nōn male.",
+      "cue": "You wrote brilliantly: not badly at all.",
+      "literal": "excellently you-wrote not badly",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "optimē",
+            "cue": "brilliantly",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Very well' — L1-M2's word, and M2 of this level showed it doing sarcasm. Here the second half decides which it is."
+          },
+          {
+            "display": "scrīpsistī",
+            "cue": "you wrote",
+            "tag": "delta",
+            "forms": [
+              "scrīpsistī"
+            ],
+            "note": "'You wrote' — the perfect's you-shape of scrībō, -istī where the present is -is."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of male."
+          },
+          {
+            "display": "male",
+            "cue": "badly",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Badly'. L1-M2's bene is its opposite, and with nōn in front of it — nōn male — it means 'rather well', which is understatement rather than denial."
+          }
+        ],
+        "rules": [
+          0,
+          5
+        ]
+      },
+      "trap": "SARCASM IS M2's DEVICE IN A COLDER REGISTER, and the litotes after it is what tips the balance. optimē scrīpsistī on its own could be either; followed by nōn male it reads as damning praise, because a litotes is understatement and nobody understates what they actually admire.",
+      "sound": "op-ti-MĒ scrīp-SIS-tī: nōn MA-le. Ten syllables and four long vowels.",
+      "variations": [
+        {
+          "display": "Optimē scrīpsistī.",
+          "cue": "You wrote brilliantly.",
+          "changed": "the litotes dropped, which leaves it sincere"
+        },
+        {
+          "display": "Nōn male scrīpsistī.",
+          "cue": "You wrote rather well.",
+          "changed": "the superlative dropped, which is plain praise"
+        },
+        {
+          "display": "Optimē scrīpsistī: bene.",
+          "cue": "You wrote brilliantly: well.",
+          "changed": "L1-M2's plain adverb, which is sincere and flat"
+        }
+      ],
+      "usage": "Said praising something you do not admire.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M7-S07",
+      "display": "Nōn ignōrō cūr nōn veniās.",
+      "cue": "I know perfectly well why you are not coming.",
+      "literal": "not I-am-ignorant why not you-may-come",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of ignōrō."
+          },
+          {
+            "display": "ignōrō",
+            "cue": "I do not know",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I do not know' — in- plus gnārus, so the negative is inside the word. The EIGHTH such word in this course, and nōn ignōrō means 'I know perfectly well'."
+          },
+          {
+            "display": "cūr",
+            "cue": "why",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Why' — L1-M9's question word, and here it opens an indirect question like quid does."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', and here it is inside the reported question: why you are NOT coming."
+          },
+          {
+            "display": "veniās",
+            "cue": "you may come",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That you may come' — the present subjunctive of veniō. L3-M4's mood, required by the indirect question."
+          }
+        ],
+        "rules": [
+          1,
+          2
+        ]
+      },
+      "trap": "Two negatives and they do not cancel, because they are in different clauses. nōn ignōrō is a litotes meaning 'I know perfectly well' and nōn veniās is the content of what is known — which is M5's two-clause rule arriving inside a construction rather than across a sentence.",
+      "sound": "nōn ig-NŌ-rō CŪR nōn ve-NI-ās. Nine syllables and four long vowels.",
+      "variations": [
+        {
+          "display": "Nōn ignōrō cūr veniās.",
+          "cue": "I know perfectly well why you are coming.",
+          "changed": "the inner negative dropped"
+        },
+        {
+          "display": "Ignōrō cūr nōn veniās.",
+          "cue": "I do not know why you are not coming.",
+          "changed": "the litotes dropped, which is real ignorance"
+        },
+        {
+          "display": "Nōn ignōrō quid agās.",
+          "cue": "I know perfectly well what you are doing.",
+          "changed": "a different question reported"
+        }
+      ],
+      "usage": "Said letting somebody know they have been seen through.",
+      "mnemonic": "Two clauses, two negatives, no cancelling.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M7-S08",
+      "display": "Nōnne quaeris quid agam?",
+      "cue": "Are you not going to ask what I am doing?",
+      "literal": "surely-not you-ask what I-may-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōnne",
+            "cue": "surely … ?",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Surely …?' — L4-M4's particle, expecting yes. Here it makes a complaint out of a question."
+          },
+          {
+            "display": "quaeris",
+            "cue": "you ask",
+            "tag": "delta",
+            "forms": [
+              "quaeris"
+            ],
+            "note": "'You ask' — quaerō, quaeris, quaerit."
+          },
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "'What', opening an indirect question."
+          },
+          {
+            "display": "agam",
+            "cue": "I may do",
+            "tag": "interference",
+            "forms": [
+              "agam"
+            ],
+            "note": "'That I may do' — the present subjunctive of agō, in the I-shape. An indirect question reported about the SPEAKER."
+          }
+        ],
+        "rules": [
+          2,
+          3
+        ]
+      },
+      "trap": "A loaded question with an indirect question inside it, and both are this level's. nōnne expects yes and the complaint is that the listener has not asked — so the sentence asks for attention by pointing out its absence, which is about as indirect as a request can get.",
+      "sound": "NŌN-ne QUAE-ris kwid A-gam? Seven syllables and two long vowels.",
+      "variations": [
+        {
+          "display": "Nōnne quaeris quid dīcam?",
+          "cue": "Are you not going to ask what I mean?",
+          "changed": "a different question inside"
+        },
+        {
+          "display": "Quaeris quid agam.",
+          "cue": "You are asking what I am doing.",
+          "changed": "the particle dropped, which is a plain report"
+        },
+        {
+          "display": "Num quaeris quid agam?",
+          "cue": "Surely you are not asking what I am doing?",
+          "changed": "L4-M4's other particle, which expects no and sounds suspicious"
+        }
+      ],
+      "usage": "Said fishing for attention.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M7-S09",
+      "display": "Sī placet, quaerās quid agam; nōn male enim scrīpsī.",
+      "cue": "If you would, do ask what I am doing; for I have written rather well.",
+      "literal": "if it-pleases you-may-ask what I-may-do not badly for I-wrote",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "'If' — a politeness frame here rather than a condition."
+          },
+          {
+            "display": "placet",
+            "cue": "it pleases",
+            "tag": "delta",
+            "forms": [],
+            "note": "'It pleases' — impersonal. sī placet is 'please' at its most formal."
+          },
+          {
+            "display": "quaerās",
+            "cue": "you may ask",
+            "tag": "interference",
+            "forms": [
+              "quaerās"
+            ],
+            "note": "'That you may ask' — the present subjunctive of quaerō, which sī placet requires."
+          },
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "'What', opening an indirect question."
+          },
+          {
+            "display": "agam",
+            "cue": "I may do",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That I may do' — the present subjunctive of agō, reported about the speaker."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of male."
+          },
+          {
+            "display": "male",
+            "cue": "badly",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Badly'. L1-M2's bene is its opposite, and with nōn in front of it — nōn male — it means 'rather well', which is understatement rather than denial."
+          },
+          {
+            "display": "enim",
+            "cue": "for",
+            "tag": "delta",
+            "forms": [],
+            "note": "'For' — and it comes SECOND in its clause, never first. L1-M10's word."
+          },
+          {
+            "display": "scrīpsī",
+            "cue": "I wrote",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I wrote' — the perfect of scrībō. L1-M6's verb."
+          }
+        ],
+        "rules": [
+          3,
+          4,
+          5
+        ]
+      },
+      "trap": "TWO SUBJUNCTIVES FOR TWO DIFFERENT REASONS: quaerās because sī placet asks for it, agam because an indirect question demands it. The mood is not doing one job in Latin — five conjunctions and two constructions now require it — and a single sentence can carry two of them for unrelated reasons.",
+      "sound": "SĪ PLA-cet, QUAE-rās kwid A-gam; nōn MA-le E-nim scrīp-SĪ. Fifteen syllables and five long vowels.",
+      "variations": [
+        {
+          "display": "Sī placet, quaerās quid agam.",
+          "cue": "If you would, do ask what I am doing.",
+          "changed": "the boast dropped"
+        },
+        {
+          "display": "Quaerās quid agam; nōn male enim scrīpsī.",
+          "cue": "Do ask what I am doing; for I have written rather well.",
+          "changed": "the politeness frame dropped"
+        },
+        {
+          "display": "Nōnne quaeris quid agam?",
+          "cue": "Are you not going to ask what I am doing?",
+          "changed": "S08's complaint, which is the same request made rudely"
+        }
+      ],
+      "usage": "Said fishing for a compliment, politely.",
+      "mnemonic": "One mood, many masters.",
+      "register": "formal"
+    },
+    {
+      "id": "L5-M7-S10",
+      "display": "Nōn ignōrō cūr nōn veniās; nōnne tamen mē adiuvābis? Sī placet, quaerās quid agam.",
+      "cue": "I know perfectly well why you are not coming; but you will help me, won't you? If you would, do ask what I am doing.",
+      "literal": "not I-am-ignorant why not you-may-come surely-not however me you-will-help if it-pleases you-may-ask what I-may-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', in front of ignōrō."
+          },
+          {
+            "display": "ignōrō",
+            "cue": "I do not know",
+            "tag": "interference",
+            "forms": [],
+            "note": "'I do not know' — in- plus gnārus, so the negative is inside the word. The EIGHTH such word in this course, and nōn ignōrō means 'I know perfectly well'."
+          },
+          {
+            "display": "cūr",
+            "cue": "why",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Why', opening an indirect question."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Not', inside the reported question."
+          },
+          {
+            "display": "veniās",
+            "cue": "you may come",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That you may come' — the present subjunctive of veniō."
+          },
+          {
+            "display": "nōnne",
+            "cue": "surely … ?",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Surely …?' — L4-M4's particle, expecting yes."
+          },
+          {
+            "display": "tamen",
+            "cue": "however",
+            "tag": "delta",
+            "forms": [],
+            "note": "'However', and it comes SECOND in its clause. L3-M3's word, and its clause begins at nōnne."
+          },
+          {
+            "display": "mē",
+            "cue": "me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Me' — the object."
+          },
+          {
+            "display": "adiuvābis",
+            "cue": "you will help",
+            "tag": "delta",
+            "forms": [],
+            "note": "'You will help' — L1-M6's future of adiuvō."
+          },
+          {
+            "display": "sī",
+            "cue": "if",
+            "tag": "delta",
+            "forms": [],
+            "note": "'If' — a politeness frame."
+          },
+          {
+            "display": "placet",
+            "cue": "it pleases",
+            "tag": "delta",
+            "forms": [],
+            "note": "'It pleases' — impersonal."
+          },
+          {
+            "display": "quaerās",
+            "cue": "you may ask",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That you may ask' — the present subjunctive of quaerō."
+          },
+          {
+            "display": "quid",
+            "cue": "what",
+            "tag": "delta",
+            "forms": [],
+            "note": "'What', opening an indirect question."
+          },
+          {
+            "display": "agam",
+            "cue": "I may do",
+            "tag": "interference",
+            "forms": [],
+            "note": "'That I may do' — the present subjunctive of agō."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          3
+        ]
+      },
+      "trap": "Nothing in this sentence says what it means. A litotes claims knowledge by denying ignorance; a loaded question asks for help by expecting agreement; a politeness frame asks for attention by not asking. Three indirect moves, four subjunctives, and every word of it taught — which is what 'between the lines' means when a language has no tone of voice on the page.",
+      "sound": "Twenty-five syllables in three moves. Read it as three, and not one of them is literal.",
+      "variations": [
+        {
+          "display": "Nōn ignōrō cūr nōn veniās; nōnne tamen mē adiuvābis?",
+          "cue": "I know perfectly well why you are not coming; but you will help me, won't you?",
+          "changed": "two moves instead of three"
+        },
+        {
+          "display": "Ignōrō cūr nōn veniās; mē adiuvā.",
+          "cue": "I do not know why you are not coming; help me.",
+          "changed": "every indirection removed, which is the same content said plainly"
+        },
+        {
+          "display": "Sī placet, quaerās quid agam.",
+          "cue": "If you would, do ask what I am doing.",
+          "changed": "the last move alone"
+        }
+      ],
+      "usage": "Said when everything is meant and nothing is said.",
+      "mnemonic": "Three moves, and not one of them literal.",
+      "register": "formal"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M7-C01",
+      "display": "Nōn male legis.",
+      "cue": "You read rather well."
+    },
+    {
+      "id": "L5-M7-C02",
+      "display": "Nōn ignōrō quid agās.",
+      "cue": "I know perfectly well what you are doing."
+    },
+    {
+      "id": "L5-M7-C03",
+      "display": "Quaerō quid dīcās.",
+      "cue": "I ask what you mean."
+    },
+    {
+      "id": "L5-M7-C04",
+      "display": "Num mē adiuvābis?",
+      "cue": "Surely you will not help me?"
+    },
+    {
+      "id": "L5-M7-C05",
+      "display": "Sī placet, mē adiuvā.",
+      "cue": "If you would, help me."
+    },
+    {
+      "id": "L5-M7-C06",
+      "display": "Optimē scrīpsistī.",
+      "cue": "You wrote brilliantly."
+    },
+    {
+      "id": "L5-M7-C07",
+      "display": "Ignōrō cūr nōn veniās.",
+      "cue": "I do not know why you are not coming."
+    },
+    {
+      "id": "L5-M7-C08",
+      "display": "Quaeris quid agam.",
+      "cue": "You are asking what I am doing."
+    },
+    {
+      "id": "L5-M7-C09",
+      "display": "Quaerās quid agam; nōn male enim scrīpsī.",
+      "cue": "Do ask what I am doing; for I have written rather well."
+    },
+    {
+      "id": "L5-M7-C10",
+      "display": "Sciō quid dīcās.",
+      "cue": "I know what you mean."
+    },
+    {
+      "id": "L5-M7-C11",
+      "display": "Male scrībis.",
+      "cue": "You write badly."
+    },
+    {
+      "id": "L5-M7-C12",
+      "display": "Quaerit quid agās.",
+      "cue": "He asks what you are doing."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
