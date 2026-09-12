@@ -1,0 +1,1098 @@
+{
+  "schemaVersion": 5,
+  "id": "L4-M4",
+  "title": "Persuading",
+  "job": "Make a case, concede a point, hold your ground",
+  "prerequisites": [
+    "L4-M3"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 13,
+    "allowedTenses": [
+      "simple_present",
+      "participial_past",
+      "verbless_nominal_present",
+      "optative_third_singular"
+    ],
+    "allowedPatterns": [
+      "avaśyam + <clause> + kintu + <clause>",
+      "satyam + <clause> + tathāpi + <clause>",
+      "mama + mate + <clause>",
+      "idam + uttamam + yataḥ + <clause>",
+      "N-acc + śrutvā + <clause>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "avaśyam is 'certainly', and it concedes IN ADVANCE: it grants a point before anybody has pressed it. avaśyam idam satyam, kintu … is a concession; without the kintu behind it, it is a surrender."
+    },
+    {
+      "tag": "delta",
+      "text": "L3-M3's satyam AGREES with something just said. avaśyam concedes something nobody has said yet. The turn behind them is the same word; the door in front is not, and choosing the wrong one either answers a question that was not asked or ignores one that was."
+    },
+    {
+      "tag": "delta",
+      "text": "mama mate is 'in my opinion': two tokens, one idea and one new word. matam names the opinion — bhavataḥ matam uttamam — and mate is the 'in' shape, L1-M7's locative worn by an abstract noun instead of a place."
+    },
+    {
+      "tag": "delta",
+      "text": "hitam is what is GOOD FOR somebody and lābhaḥ is the gain itself. L2-M3's uttamam praises; these two argue, because a case is made out of somebody's benefit and not out of your admiration."
+    },
+    {
+      "tag": "delta",
+      "text": "śrutvā is 'having heard', the absolutive of L2-M7's śṛṇoti under L3-M1's rule: no person, no tense, its object in front of it, and the finite verb at the end supplying both. It is how a turn answers what was just said."
+    },
+    {
+      "tag": "free",
+      "text": "Every connective here is already owned. kintu and tathāpi (L1-M10) turn, yataḥ and ataḥ (L1-M9) explain, and L4-M2's cause ablatives carry a reason. What is new is the ORDER alone: concede, then hold."
+    },
+    {
+      "tag": "interference",
+      "text": "English argues by stacking claims, so a learner who carries that across writes a turn that reads as an attack. The commoner failure after three levels of politeness is the opposite one — the turn arrives with no position left in it, and ataḥ where kintu belongs gives the whole case away."
+    },
+    {
+      "tag": "interference",
+      "text": "satyam agrees that something is TRUE. It never agrees to DO anything, so it can never answer a request; that is L2-M1's kṛpayā register and not this module's."
+    },
+    {
+      "tag": "free",
+      "text": "tathāpi sits at the FRONT of the clause it turns, where English puts 'even so'. L1-M10's ca and L2-M9's vā are postpositive and these turn-words are not, so nothing new has to be learned about placement here."
+    },
+    {
+      "tag": "free",
+      "text": "Comparison is still what L2-M9 left it: varam for 'better', adhikam for 'more', and the ablative for 'than'. No -tara and no -tama — L2-M9 named both as deferred and an argument module does not get to take them."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L4-M4-S01",
+      "display": "avaśyam idam kāryam dīrgham, kintu idam hitam.",
+      "script": "अवश्यम् इदम् कार्यम् दीर्घम्, किन्तु इदम् हितम्।",
+      "cue": "Certainly this work is long, but it is good for us.",
+      "literal": "certainly this work long, but this beneficial",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avaśyam",
+            "cue": "certainly · of course",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Certainly', and it concedes IN ADVANCE: it grants a point before anybody has pressed it. That is what makes the kintu behind it a turn instead of a contradiction."
+          },
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this'. It is the pointing word this module argues with: L3-M2's tat is a CORRELATIVE, and a tap on it would land on a note about relative clauses."
+          },
+          {
+            "display": "kāryam",
+            "cue": "work · the thing to be done",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's 'work' as a thing done rather than a place gone to. Neuter, so an adjective on it ends -am."
+          },
+          {
+            "display": "dīrgham",
+            "cue": "tall · long",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's 'long', agreeing with the neuter kāryam. The concession is about the length and nothing else, which is why it is safe to grant."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'but', opening its clause where English puts it. After avaśyam it is a turn; after nothing it is a contradiction."
+          },
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this' again, now the subject of the second half. Repeating it is what keeps the two halves about the same thing."
+          },
+          {
+            "display": "hitam",
+            "cue": "good · beneficial",
+            "tag": "delta",
+            "forms": [],
+            "note": "What is GOOD FOR somebody, as against L2-M3's uttamam, which simply praises. It is the word an argument holds its ground with."
+          }
+        ],
+        "rules": [
+          0,
+          3,
+          5,
+          6
+        ]
+      },
+      "trap": "The grant and the hold are about DIFFERENT things — the length is conceded, the benefit is not. Concede the same thing you then hold and you have contradicted yourself.",
+      "sound": "a-VASH-yam i-DAM KAAR-yam DEER-gham, KIN-tu i-DAM HI-tam.",
+      "variations": [
+        {
+          "display": "avaśyam idam kāryam dīrgham, tathāpi aham idam kartum icchāmi.",
+          "script": "अवश्यम् इदम् कार्यम् दीर्घम्, तथापि अहम् इदम् कर्तुम् इच्छामि।",
+          "cue": "Certainly this work is long; even so, I want to do it.",
+          "changed": "the hold becomes a first-person intention, with L4-M1's infinitive carrying what is wanted"
+        },
+        {
+          "display": "idam kāryam dīrgham, kintu idam hitam.",
+          "script": "इदम् कार्यम् दीर्घम्, किन्तु इदम् हितम्।",
+          "cue": "This work is long, but it is good for us.",
+          "changed": "avaśyam is dropped and the grant goes with it — what is left is a plain contrast, and the first half now reads as a complaint"
+        },
+        {
+          "display": "kim idam kāryam hitam?",
+          "script": "किम् इदम् कार्यम् हितम्?",
+          "cue": "Is this work good for us?",
+          "changed": "L1-M2's kim turns the position into a question, which is what you ask before you have one"
+        }
+      ],
+      "mistake": {
+        "display": "avaśyam idam kāryam dīrgham.",
+        "why": "The concession has been left standing on its own. avaśyam grants a point in advance, so with nothing behind it you have agreed with an objection nobody made and said nothing of your own. A concession needs kintu or tathāpi after it."
+      },
+      "usage": "The whole module in one line. avaśyam can also be said flat and slowly, and then it is sarcasm — the words do not change and the room does.",
+      "register": "neutral",
+      "mnemonic": "Grant the length, keep the point."
+    },
+    {
+      "id": "L4-M4-S02",
+      "display": "satyam, mārgaḥ dīrghaḥ, tathāpi bhavān yānena gacchet.",
+      "script": "सत्यम्, मार्गः दीर्घः, तथापि भवान् यानेन गच्छेत्।",
+      "cue": "True, the road is long; even so you should go by vehicle.",
+      "literal": "true, road long, even-so you by-vehicle should-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "satyam",
+            "cue": "true · that's right",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M3's one-word agreement. It agrees with something the other person has just SAID; avaśyam grants something they have not said yet."
+          },
+          {
+            "display": "mārgaḥ",
+            "cue": "road · way",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's road, the thing being conceded about."
+          },
+          {
+            "display": "dīrghaḥ",
+            "cue": "tall · long",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M2's 'long', agreeing with the masculine mārgaḥ."
+          },
+          {
+            "display": "tathāpi",
+            "cue": "even so · nevertheless",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'even so', at the FRONT of the clause it turns. L1-M10's ca and L2-M9's vā are postpositive; these turn-words are not."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you', with a third-person verb behind it. Persuading changes nothing about the register."
+          },
+          {
+            "display": "yānena",
+            "cue": "vehicle · conveyance",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M4's 'by vehicle' — one word doing the work of English 'by' and 'vehicle' together."
+          },
+          {
+            "display": "gacchet",
+            "cue": "should go · could go",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's optative. Advice is the natural landing place of a turn: you have granted the objection, so the advice behind it is not an order."
+          }
+        ],
+        "rules": [
+          1,
+          5,
+          8
+        ]
+      },
+      "trap": "satyam here answers something that was actually said. Open a sentence with it when nobody has spoken and you are agreeing with yourself.",
+      "variations": [
+        {
+          "display": "avaśyam mārgaḥ dīrghaḥ, tathāpi bhavān yānena gacchet.",
+          "script": "अवश्यम् मार्गः दीर्घः, तथापि भवान् यानेन गच्छेत्।",
+          "cue": "Certainly the road is long; even so you should go by vehicle.",
+          "changed": "the grant moves from satyam, which agrees with something said, to avaśyam, which concedes before anybody says it"
+        },
+        {
+          "display": "satyam, mārgaḥ na dīrghaḥ, tathāpi bhavān yānena gacchet.",
+          "script": "सत्यम्, मार्गः न दीर्घः, तथापि भवान् यानेन गच्छेत्।",
+          "cue": "True, the road is not long; even so you should go by vehicle.",
+          "changed": "the conceded fact is negated and the advice survives it, which is what tathāpi is for"
+        },
+        {
+          "display": "mārgaḥ dīrghaḥ, ataḥ bhavān yānena gacchet.",
+          "script": "मार्गः दीर्घः, अतः भवान् यानेन गच्छेत्।",
+          "cue": "The road is long, so you should go by vehicle.",
+          "changed": "L1-M9's ataḥ replaces the turn and the length stops being an objection: it becomes the reason for the advice"
+        }
+      ],
+      "usage": "A turn that lands on advice rather than on a claim. It is the gentlest shape in the module.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S03",
+      "display": "mama mate idam pustakam uttamam.",
+      "script": "मम मते इदम् पुस्तकम् उत्तमम्।",
+      "cue": "In my opinion this book is excellent.",
+      "literal": "my in-opinion this book excellent",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape. With mate behind it, it is the whole of 'in my opinion'."
+          },
+          {
+            "display": "mate",
+            "cue": "opinion · view",
+            "tag": "delta",
+            "forms": [
+              "matam",
+              "mate"
+            ],
+            "note": "'Opinion', one row and two shapes: matam names it, mate is the 'in' shape — L1-M7's locative doing a job with an abstract noun instead of a place. mama mate is the whole idiom."
+          },
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this'. It is the pointing word this module argues with: L3-M2's tat is a CORRELATIVE, and a tap on it would land on a note about relative clauses."
+          },
+          {
+            "display": "pustakam",
+            "cue": "book",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's book, the thing being judged."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's warm praise, agreeing with a neuter noun. It praises; hitam and lābhaḥ argue."
+          }
+        ],
+        "rules": [
+          2,
+          6
+        ]
+      },
+      "trap": "mama mate is two words and one idea, and neither of them is new machinery: mama is L1-M1's and the -e on mate is L1-M7's locative, worn by an abstract noun instead of a place.",
+      "sound": "MA-ma MA-teh i-DAM PUS-ta-kam UT-ta-mam.",
+      "variations": [
+        {
+          "display": "mama mate idam pustakam na uttamam.",
+          "script": "मम मते इदम् पुस्तकम् न उत्तमम्।",
+          "cue": "In my opinion this book is not good.",
+          "changed": "the judgement is negated and the frame is untouched — an opinion holds a negative as easily as a positive"
+        },
+        {
+          "display": "kadācit idam pustakam uttamam.",
+          "script": "कदाचित् इदम् पुस्तकम् उत्तमम्।",
+          "cue": "Perhaps this book is excellent.",
+          "changed": "L3-M3's kadācit hedges the claim instead of owning it; mama mate owns the opinion and names whose it is"
+        },
+        {
+          "display": "mama mate idam pustakam uttamam, yataḥ navam.",
+          "script": "मम मते इदम् पुस्तकम् उत्तमम्, यतः नवम्।",
+          "cue": "In my opinion this book is excellent, because it is new.",
+          "changed": "L1-M9's yataḥ adds a reason, which is what turns an opinion into an argument"
+        }
+      ],
+      "mistake": {
+        "display": "mama matam idam pustakam uttamam.",
+        "why": "matam is the naming shape and cannot mean 'in my opinion'. The sentence comes out as 'my opinion this book excellent', with two subjects and nothing joining them. The idiom needs the locative mate; matam is for when the opinion itself is the subject or the object, as in bhavataḥ matam uttamam."
+      },
+      "usage": "The politest way in this course to disagree with a book, a plan or a person: put the judgement inside an opinion and it stops being a verdict.",
+      "register": "neutral",
+      "mnemonic": "matam names it; mate sits inside it."
+    },
+    {
+      "id": "L4-M4-S04",
+      "display": "idam kāryam uttamam, yataḥ lābhaḥ asti.",
+      "script": "इदम् कार्यम् उत्तमम्, यतः लाभः अस्ति।",
+      "cue": "This work is excellent, because there is a gain in it.",
+      "literal": "this work excellent, because gain is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this'. It is the pointing word this module argues with: L3-M2's tat is a CORRELATIVE, and a tap on it would land on a note about relative clauses."
+          },
+          {
+            "display": "kāryam",
+            "cue": "work · the thing to be done",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's 'work' as a thing done rather than a place gone to. Neuter, so an adjective on it ends -am."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's warm praise, agreeing with a neuter noun. It praises; hitam and lābhaḥ argue."
+          },
+          {
+            "display": "yataḥ",
+            "cue": "because · since",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'because', heading the reason. L4-M2 settled the placement: one link takes this marker or ataḥ, never both."
+          },
+          {
+            "display": "lābhaḥ",
+            "cue": "gain · profit",
+            "tag": "delta",
+            "forms": [],
+            "note": "The gain itself, as a thing — masculine, so an adjective on it would end -aḥ. hitam says something is good FOR you; lābhaḥ is what you come away with."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is · there is'. It states plainly, which is what a concession needs."
+          }
+        ],
+        "rules": [
+          3,
+          5
+        ]
+      },
+      "trap": "hitam and lābhaḥ are not two words for one idea. hitam is a judgement about somebody's good; lābhaḥ is a thing that exists or does not.",
+      "variations": [
+        {
+          "display": "idam kāryam na uttamam, yataḥ lābhaḥ na asti.",
+          "script": "इदम् कार्यम् न उत्तमम्, यतः लाभः न अस्ति।",
+          "cue": "This work is not good, because there is no gain in it.",
+          "changed": "both halves are negated and the argument runs backwards on the same frame"
+        },
+        {
+          "display": "lābhaḥ asti, ataḥ idam kāryam uttamam.",
+          "script": "लाभः अस्ति, अतः इदम् कार्यम् उत्तमम्।",
+          "cue": "There is a gain, so this work is excellent.",
+          "changed": "the link is marked at the other end with L1-M9's ataḥ, and the reason arrives before the claim instead of after it"
+        },
+        {
+          "display": "mama mate idam kāryam uttamam, yataḥ lābhaḥ asti.",
+          "script": "मम मते इदम् कार्यम् उत्तमम्, यतः लाभः अस्ति।",
+          "cue": "In my opinion this work is excellent, because there is a gain.",
+          "changed": "the claim becomes an opinion and the reason stays a fact — which is the ordinary shape of a case"
+        }
+      ],
+      "usage": "An argument with the reason attached. Without the yataḥ clause it is only an assertion, and assertions are what a concession is meant to avoid.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S05",
+      "display": "idam śrutvā aham santuṣṭaḥ, kintu mama mate samasyā asti.",
+      "script": "इदम् श्रुत्वा अहम् सन्तुष्टः, किन्तु मम मते समस्या अस्ति।",
+      "cue": "Hearing this I am pleased, but in my opinion there is a problem.",
+      "literal": "this having-heard I content, but my in-opinion problem is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this', and here it is what was heard. An absolutive takes its object in FRONT of it, exactly as L3-M1 said."
+          },
+          {
+            "display": "śrutvā",
+            "cue": "having heard",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L2-M7's śṛṇoti, under L3-M1's rule: no person, no tense, and it waits for the finite verb at the end. Its own row here, since L2-M7 shipped no absolutive."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', written once at most."
+          },
+          {
+            "display": "santuṣṭaḥ",
+            "cue": "content · pleased",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M9's 'content', forking with the speaker. The clause has no verb at all, which is ordinary."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'but', opening its clause where English puts it. After avaśyam it is a turn; after nothing it is a contradiction."
+          },
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape. With mate behind it, it is the whole of 'in my opinion'."
+          },
+          {
+            "display": "mate",
+            "cue": "opinion · view",
+            "tag": "delta",
+            "forms": [
+              "matam",
+              "mate"
+            ],
+            "note": "The 'in' shape of matam. Putting the objection inside an opinion is what keeps it from being a flat contradiction."
+          },
+          {
+            "display": "samasyā",
+            "cue": "problem · difficulty",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'problem', feminine and in the nominative. Naming it plainly is what a concession is for."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is · there is'. It states plainly, which is what a concession needs."
+          }
+        ],
+        "rules": [
+          2,
+          4,
+          6
+        ]
+      },
+      "trap": "śrutvā carries no person. It is the aham at the end of the clause that says who heard, and if the speaker changes, śrutvā does not move.",
+      "sound": "i-DAM SHRU-tvaa a-HAM san-TUSH-tah, KIN-tu MA-ma MA-teh sa-mas-YAA AS-ti.",
+      "variations": [
+        {
+          "display": "idam śrutvā aham santuṣṭā, kintu mama mate samasyā asti.",
+          "script": "इदम् श्रुत्वा अहम् सन्तुष्टा, किन्तु मम मते समस्या अस्ति।",
+          "cue": "Hearing this I am pleased, but in my opinion there is a problem.",
+          "changed": "the speaker is a woman and only the adjective forks — the absolutive has no gender to carry"
+        },
+        {
+          "display": "idam śrutvā aham na santuṣṭaḥ.",
+          "script": "इदम् श्रुत्वा अहम् न सन्तुष्टः।",
+          "cue": "Hearing this I am not pleased.",
+          "changed": "the turn is dropped and the negation moves onto the feeling; an absolutive can carry a bare reaction with nothing behind it"
+        },
+        {
+          "display": "bhavataḥ matam śrutvā aham santuṣṭaḥ.",
+          "script": "भवतः मतम् श्रुत्वा अहम् सन्तुष्टः।",
+          "cue": "Having heard your opinion I am pleased.",
+          "changed": "the thing heard is named instead of pointed at, and it still sits in front of the absolutive"
+        }
+      ],
+      "usage": "How a turn answers what was just said rather than ignoring it. The absolutive is the politeness here: it shows you listened before you disagreed.",
+      "register": "neutral",
+      "mnemonic": "Hear first, then hold."
+    },
+    {
+      "id": "L4-M4-S06",
+      "display": "avaśyam bhavataḥ matam uttamam, kintu mama mate idam varam.",
+      "script": "अवश्यम् भवतः मतम् उत्तमम्, किन्तु मम मते इदम् वरम्।",
+      "cue": "Certainly your opinion is excellent, but in my opinion this is better.",
+      "literal": "certainly of-you opinion excellent, but my in-opinion this better",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avaśyam",
+            "cue": "certainly · of course",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Certainly', and it concedes IN ADVANCE: it grants a point before anybody has pressed it. That is what makes the kintu behind it a turn instead of a contradiction."
+          },
+          {
+            "display": "bhavataḥ",
+            "cue": "your · of you",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's bhavān in its 'of you' shape, to a man; bhavatyāḥ to a woman. It is what makes the opinion the listener's rather than yours."
+          },
+          {
+            "display": "matam",
+            "cue": "opinion · view",
+            "tag": "delta",
+            "forms": [
+              "matam",
+              "mate"
+            ],
+            "note": "The naming shape: here the opinion is the SUBJECT of its clause. mama mate in the second half is the same word in its 'in' shape."
+          },
+          {
+            "display": "uttamam",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's warm praise, agreeing with a neuter noun. It praises; hitam and lābhaḥ argue."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'but', opening its clause where English puts it. After avaśyam it is a turn; after nothing it is a contradiction."
+          },
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape. With mate behind it, it is the whole of 'in my opinion'."
+          },
+          {
+            "display": "mate",
+            "cue": "opinion · view",
+            "tag": "delta",
+            "forms": [
+              "matam",
+              "mate"
+            ],
+            "note": "The 'in' shape, and the second half's whole politeness. Without it the clause would simply say that this is better."
+          },
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this'. It is the pointing word this module argues with: L3-M2's tat is a CORRELATIVE, and a tap on it would land on a note about relative clauses."
+          },
+          {
+            "display": "varam",
+            "cue": "better",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M9's 'better'. It never changes shape, and comparison in this course is still this word or the ablative with adhikam — no -tara and no -tama."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          6,
+          9
+        ]
+      },
+      "trap": "Both opinions are named and only one of them is mine. bhavataḥ matam is the listener's, mama mate is where I stand, and the sentence works because it puts theirs first.",
+      "sound": "a-VASH-yam bha-va-TAH MA-tam UT-ta-mam, KIN-tu MA-ma MA-teh i-DAM VA-ram.",
+      "variations": [
+        {
+          "display": "avaśyam bhavatyāḥ matam uttamam, kintu mama mate idam varam.",
+          "script": "अवश्यम् भवत्याः मतम् उत्तमम्, किन्तु मम मते इदम् वरम्।",
+          "cue": "Certainly your opinion is excellent, but in my opinion this is better.",
+          "changed": "the listener is a woman: bhavataḥ becomes bhavatyāḥ and nothing else in the sentence knows"
+        },
+        {
+          "display": "bhavataḥ matam uttamam, kintu mama mate idam varam.",
+          "script": "भवतः मतम् उत्तमम्, किन्तु मम मते इदम् वरम्।",
+          "cue": "Your opinion is excellent, but in my opinion this is better.",
+          "changed": "avaśyam is dropped, and praise followed straight by kintu reads as a dismissal rather than as a grant"
+        },
+        {
+          "display": "avaśyam bhavataḥ matam uttamam, kintu mama mate idam na varam.",
+          "script": "अवश्यम् भवतः मतम् उत्तमम्, किन्तु मम मते इदम् न वरम्।",
+          "cue": "Certainly your opinion is excellent, but in my opinion this is not better.",
+          "changed": "the held position is negated, which is the harder turn to make politely and the reason the grant in front matters"
+        }
+      ],
+      "mistake": {
+        "display": "avaśyam bhavataḥ matam uttamam, ataḥ mama mate idam varam.",
+        "why": "ataḥ says the second clause FOLLOWS from the first, so the line reads 'your opinion is excellent, therefore mine is better'. A turn takes kintu or tathāpi; ataḥ marks a consequence and cannot carry a disagreement."
+      },
+      "usage": "The sentence this module exists for. Said quickly it is courteous; said with a pause after avaśyam it is not.",
+      "register": "neutral",
+      "mnemonic": "Their view first, then mine."
+    },
+    {
+      "id": "L4-M4-S07",
+      "display": "kadācit bhavān na icchati, tathāpi idam hitam.",
+      "script": "कदाचित् भवान् न इच्छति, तथापि इदम् हितम्।",
+      "cue": "Perhaps you do not want to, even so this is good for you.",
+      "literal": "perhaps you not want, even-so this beneficial",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "kadācit",
+            "cue": "perhaps · sometimes",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M3's softener, in front of what it softens. It guesses at the listener's wish rather than granting it, which is a weaker concession than avaśyam."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you', with a third-person verb behind it. Persuading changes nothing about the register."
+          },
+          {
+            "display": "na",
+            "cue": "no · not",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's 'not', in front of the verb it negates."
+          },
+          {
+            "display": "icchati",
+            "cue": "wants",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'want' in the third person, which is the shape bhavān takes. icchāmi is the speaker's."
+          },
+          {
+            "display": "tathāpi",
+            "cue": "even so · nevertheless",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'even so', at the FRONT of the clause it turns. L1-M10's ca and L2-M9's vā are postpositive; these turn-words are not."
+          },
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this'. It is the pointing word this module argues with: L3-M2's tat is a CORRELATIVE, and a tap on it would land on a note about relative clauses."
+          },
+          {
+            "display": "hitam",
+            "cue": "good · beneficial",
+            "tag": "delta",
+            "forms": [],
+            "note": "What is good FOR somebody. It is exactly the word to hold a position with, because it argues from the listener's own good rather than from mine."
+          }
+        ],
+        "rules": [
+          1,
+          3,
+          5,
+          8
+        ]
+      },
+      "trap": "kadācit is not avaśyam. It says the objection MIGHT be there; avaśyam says it certainly is. Guessing at an objection is weaker than granting it, and a listener hears the difference.",
+      "variations": [
+        {
+          "display": "avaśyam bhavān na icchati, tathāpi idam hitam.",
+          "script": "अवश्यम् भवान् न इच्छति, तथापि इदम् हितम्।",
+          "cue": "Certainly you do not want to, even so this is good for you.",
+          "changed": "the guess becomes a grant, which is a stronger concession and a harder turn to carry"
+        },
+        {
+          "display": "bhavān na icchati, ataḥ idam na hitam.",
+          "script": "भवान् न इच्छति, अतः इदम् न हितम्।",
+          "cue": "You do not want to, so this is not good for you.",
+          "changed": "with ataḥ the reluctance becomes the reason and the position is given away — a concession with no turn behind it is a surrender"
+        },
+        {
+          "display": "kim idam hitam, yadi bhavān na icchati?",
+          "script": "किम् इदम् हितम्, यदि भवान् न इच्छति?",
+          "cue": "Is this good for you, if you do not want to?",
+          "changed": "the same two clauses become a question and a plain open condition, with L3-M4's yadi and no optative anywhere"
+        }
+      ],
+      "usage": "Persuading somebody who has not objected yet. The risk is real: guess wrong about the objection and you have supplied one.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S08",
+      "display": "mama mate bhavān adya gṛham gacchet.",
+      "script": "मम मते भवान् अद्य गृहम् गच्छेत्।",
+      "cue": "In my opinion you should go home today.",
+      "literal": "my in-opinion you today home should-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape. With mate behind it, it is the whole of 'in my opinion'."
+          },
+          {
+            "display": "mate",
+            "cue": "opinion · view",
+            "tag": "delta",
+            "forms": [
+              "matam",
+              "mate"
+            ],
+            "note": "The 'in' shape. In front of advice it names whose advice it is, which is the difference between a suggestion and an instruction."
+          },
+          {
+            "display": "bhavān",
+            "cue": "you (polite) · your honour",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's polite 'you', with a third-person verb behind it. Persuading changes nothing about the register."
+          },
+          {
+            "display": "adya",
+            "cue": "today",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M4's 'today'."
+          },
+          {
+            "display": "gṛham",
+            "cue": "house · home",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M6's home, as the place gone to."
+          },
+          {
+            "display": "gacchet",
+            "cue": "should go · could go",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M4's optative, advising rather than ordering. mama mate softens it once more."
+          }
+        ],
+        "rules": [
+          2,
+          5
+        ]
+      },
+      "trap": "The optative already softens; mama mate softens again. Two softenings are not too many in this register, and dropping both leaves gacchati, which is a statement about what you do.",
+      "variations": [
+        {
+          "display": "mama mate bhavān adya gṛham na gacchet.",
+          "script": "मम मते भवान् अद्य गृहम् न गच्छेत्।",
+          "cue": "In my opinion you should not go home today.",
+          "changed": "na in front of the optative turns advice into its opposite, and the opinion frame carries the negative unchanged"
+        },
+        {
+          "display": "bhavān adya gṛham gacchet.",
+          "script": "भवान् अद्य गृहम् गच्छेत्।",
+          "cue": "You should go home today.",
+          "changed": "mama mate is dropped and the advice loses its owner — L3-M4's bare optative, which advises without saying who thinks so"
+        },
+        {
+          "display": "mama mate bhavān adya gṛham gacchet, yataḥ mārgaḥ dīrghaḥ.",
+          "script": "मम मते भवान् अद्य गृहम् गच्छेत्, यतः मार्गः दीर्घः।",
+          "cue": "In my opinion you should go home today, because the road is long.",
+          "changed": "a reason is attached with L1-M9's yataḥ, which is what turns advice into a case"
+        }
+      ],
+      "usage": "Advice with a name on it. In an argument this is the half you can be talked out of without losing anything.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S09",
+      "display": "avaśyam samasyā asti, kintu mama mate pariṇāmaḥ uttamaḥ.",
+      "script": "अवश्यम् समस्या अस्ति, किन्तु मम मते परिणामः उत्तमः।",
+      "cue": "Certainly there is a problem, but in my opinion the result is excellent.",
+      "literal": "certainly problem is, but my in-opinion result excellent",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "avaśyam",
+            "cue": "certainly · of course",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Certainly', and it concedes IN ADVANCE: it grants a point before anybody has pressed it. That is what makes the kintu behind it a turn instead of a contradiction."
+          },
+          {
+            "display": "samasyā",
+            "cue": "problem · difficulty",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M8's 'problem', feminine and in the nominative. Naming it plainly is what a concession is for."
+          },
+          {
+            "display": "asti",
+            "cue": "is · there is",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'is · there is'. It states plainly, which is what a concession needs."
+          },
+          {
+            "display": "kintu",
+            "cue": "but",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M10's 'but', opening its clause where English puts it. After avaśyam it is a turn; after nothing it is a contradiction."
+          },
+          {
+            "display": "mama",
+            "cue": "my · of me",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's aham in its 'of me' shape. With mate behind it, it is the whole of 'in my opinion'."
+          },
+          {
+            "display": "mate",
+            "cue": "opinion · view",
+            "tag": "delta",
+            "forms": [
+              "matam",
+              "mate"
+            ],
+            "note": "The 'in' shape. It is doing the same work here as in S06 — the position after kintu is mine, and saying so keeps it from being a flat denial."
+          },
+          {
+            "display": "pariṇāmaḥ",
+            "cue": "result · outcome",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M2's 'result', opened one rung ago so that phalam could keep meaning fruit."
+          },
+          {
+            "display": "uttamaḥ",
+            "cue": "excellent · very good",
+            "tag": "free",
+            "forms": [],
+            "note": "L2-M3's praise, agreeing with the masculine pariṇāmaḥ. uttamam beside a neuter noun is the same word."
+          }
+        ],
+        "rules": [
+          0,
+          2,
+          6
+        ]
+      },
+      "trap": "The problem is granted outright and is never denied again. A turn that comes back to the conceded point and argues about it has thrown the concession away.",
+      "variations": [
+        {
+          "display": "satyam, samasyā asti, kintu mama mate pariṇāmaḥ uttamaḥ.",
+          "script": "सत्यम्, समस्या अस्ति, किन्तु मम मते परिणामः उत्तमः।",
+          "cue": "True, there is a problem, but in my opinion the result is excellent.",
+          "changed": "L3-M3's satyam agrees with something the other person said; avaśyam concedes before they say it, and the turn behind is identical"
+        },
+        {
+          "display": "avaśyam samasyā asti, ataḥ pariṇāmaḥ na uttamaḥ.",
+          "script": "अवश्यम् समस्या अस्ति, अतः परिणामः न उत्तमः।",
+          "cue": "Certainly there is a problem, so the result is not good.",
+          "changed": "ataḥ instead of kintu, and the concession becomes a surrender: the granted point is now the whole conclusion"
+        },
+        {
+          "display": "avaśyam adya samasyā asti, kintu mama mate śvaḥ pariṇāmaḥ uttamaḥ.",
+          "script": "अवश्यम् अद्य समस्या अस्ति, किन्तु मम मते श्वः परिणामः उत्तमः।",
+          "cue": "Certainly there is a problem today, but in my opinion the result will be excellent tomorrow.",
+          "changed": "time words split the two halves, so the grant is about today and the position about tomorrow"
+        }
+      ],
+      "usage": "The shape of a case made to somebody who is already unhappy. Granting the problem first is what buys the second half a hearing.",
+      "register": "neutral"
+    },
+    {
+      "id": "L4-M4-S10",
+      "display": "bhavataḥ matam śrutvā aham idam kāryam kartum icchāmi.",
+      "script": "भवतः मतम् श्रुत्वा अहम् इदम् कार्यम् कर्तुम् इच्छामि।",
+      "cue": "Having heard your opinion, I want to do this work.",
+      "literal": "of-you opinion having-heard I this work to-do want",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "bhavataḥ",
+            "cue": "your · of you",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M2's bhavān in its 'of you' shape, to a man; bhavatyāḥ to a woman. It is what makes the opinion the listener's rather than yours."
+          },
+          {
+            "display": "matam",
+            "cue": "opinion · view",
+            "tag": "delta",
+            "forms": [
+              "matam",
+              "mate"
+            ],
+            "note": "The naming shape, and here the object of the hearing. An absolutive takes its object in front of it, so the whole phrase bhavataḥ matam leans on śrutvā."
+          },
+          {
+            "display": "śrutvā",
+            "cue": "having heard",
+            "tag": "delta",
+            "forms": [],
+            "note": "The absolutive of L2-M7's śṛṇoti. It carries no person and no tense and waits for icchāmi at the end to supply both."
+          },
+          {
+            "display": "aham",
+            "cue": "I",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's 'I', written once at most."
+          },
+          {
+            "display": "idam",
+            "cue": "this · this thing",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M1's neuter 'this'. It is the pointing word this module argues with: L3-M2's tat is a CORRELATIVE, and a tap on it would land on a note about relative clauses."
+          },
+          {
+            "display": "kāryam",
+            "cue": "work · the thing to be done",
+            "tag": "free",
+            "forms": [],
+            "note": "L3-M2's 'work' as a thing done rather than a place gone to. Neuter, so an adjective on it ends -am."
+          },
+          {
+            "display": "kartum",
+            "cue": "to do · to make",
+            "tag": "free",
+            "forms": [],
+            "note": "L4-M1's infinitive of purpose, indeclinable and sitting in front of the finite verb. Two non-finite shapes in one sentence and only one person-marking, at the very end."
+          },
+          {
+            "display": "icchāmi",
+            "cue": "I want",
+            "tag": "free",
+            "forms": [],
+            "note": "L1-M3's 'I want'. It is the only word here carrying a person, and it is what tells you who did the hearing."
+          }
+        ],
+        "rules": [
+          4,
+          5
+        ]
+      },
+      "trap": "Three verb shapes and one person. śrutvā and kartum are both indeclinable, so the -āmi at the end is the whole of who is speaking.",
+      "sound": "bha-va-TAH MA-tam SHRU-tvaa a-HAM i-DAM KAAR-yam KAR-tum ICH-chaa-mi.",
+      "variations": [
+        {
+          "display": "bhavatyāḥ matam śrutvā aham idam kāryam kartum icchāmi.",
+          "script": "भवत्याः मतम् श्रुत्वा अहम् इदम् कार्यम् कर्तुम् इच्छामि।",
+          "cue": "Having heard your opinion, I want to do this work.",
+          "changed": "the listener is a woman, so bhavataḥ becomes bhavatyāḥ and no verb moves"
+        },
+        {
+          "display": "bhavataḥ matam śrutvā aham idam kāryam kartum na icchāmi.",
+          "script": "भवतः मतम् श्रुत्वा अहम् इदम् कार्यम् कर्तुम् न इच्छामि।",
+          "cue": "Having heard your opinion, I do not want to do this work.",
+          "changed": "na negates the finite verb at the end, and both non-finite shapes in front of it are untouched"
+        },
+        {
+          "display": "bhavataḥ matam śrutvā aham idam kāryam kṛtavān.",
+          "script": "भवतः मतम् श्रुत्वा अहम् इदम् कार्यम् कृतवान्।",
+          "cue": "Having heard your opinion, I did this work.",
+          "changed": "the wanting becomes a doing in the past, and śrutvā does not move — an absolutive takes its tense from the verb it waits for"
+        }
+      ],
+      "mistake": {
+        "display": "bhavataḥ matam śṛṇoti aham idam kāryam kartum icchāmi.",
+        "why": "A finite verb has been put where the absolutive belongs. śṛṇoti is complete and carries its own subject, so the sentence has two main verbs and nothing joining them. śrutvā is what makes the hearing wait for the wanting — L3-M1's rule, unchanged."
+      },
+      "usage": "How an argument ends well. Naming what you heard before saying what you will do is the whole of conceding gracefully.",
+      "register": "neutral",
+      "mnemonic": "One ending, three verbs."
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L4-M4-C01",
+      "display": "avaśyam idam kāryam alpam, kintu hitam.",
+      "script": "अवश्यम् इदम् कार्यम् अल्पम्, किन्तु हितम्।",
+      "cue": "Certainly this work is small, but it is good for us."
+    },
+    {
+      "id": "L4-M4-C02",
+      "display": "mama mate saṃskṛtam uttamam.",
+      "script": "मम मते संस्कृतम् उत्तमम्।",
+      "cue": "In my opinion Sanskrit is excellent."
+    },
+    {
+      "id": "L4-M4-C03",
+      "display": "satyam, mārgaḥ dīrghaḥ, tathāpi aham gacchāmi.",
+      "script": "सत्यम्, मार्गः दीर्घः, तथापि अहम् गच्छामि।",
+      "cue": "True, the road is long; even so I am going."
+    },
+    {
+      "id": "L4-M4-C04",
+      "display": "bhavataḥ matam śrutvā aham santuṣṭaḥ.",
+      "script": "भवतः मतम् श्रुत्वा अहम् सन्तुष्टः।",
+      "cue": "Having heard your opinion I am pleased."
+    },
+    {
+      "id": "L4-M4-C05",
+      "display": "avaśyam samasyā asti, kintu lābhaḥ api asti.",
+      "script": "अवश्यम् समस्या अस्ति, किन्तु लाभः अपि अस्ति।",
+      "cue": "Certainly there is a problem, but there is a gain too."
+    },
+    {
+      "id": "L4-M4-C06",
+      "display": "mama mate bhavān idam pustakam paṭhet.",
+      "script": "मम मते भवान् इदम् पुस्तकम् पठेत्।",
+      "cue": "In my opinion you should read this book."
+    },
+    {
+      "id": "L4-M4-C07",
+      "display": "idam hitam, yataḥ mahyam sukham asti.",
+      "script": "इदम् हितम्, यतः मह्यम् सुखम् अस्ति।",
+      "cue": "This is good for me, because I am happy."
+    },
+    {
+      "id": "L4-M4-C08",
+      "display": "avaśyam bhavatyāḥ matam uttamam, kintu mama mate idam varam.",
+      "script": "अवश्यम् भवत्याः मतम् उत्तमम्, किन्तु मम मते इदम् वरम्।",
+      "cue": "Certainly your opinion is excellent, but in my opinion this is better."
+    },
+    {
+      "id": "L4-M4-C09",
+      "display": "idam śrutvā mama mātā santuṣṭā.",
+      "script": "इदम् श्रुत्वा मम माता सन्तुष्टा।",
+      "cue": "Hearing this, my mother is content."
+    },
+    {
+      "id": "L4-M4-C10",
+      "display": "mama mate idam kāryam adhikam hitam.",
+      "script": "मम मते इदम् कार्यम् अधिकम् हितम्।",
+      "cue": "In my opinion this work is more beneficial."
+    },
+    {
+      "id": "L4-M4-C11",
+      "display": "avaśyam vṛṣṭiḥ asti, tathāpi aham mandiram gacchāmi.",
+      "script": "अवश्यम् वृष्टिः अस्ति, तथापि अहम् मन्दिरम् गच्छामि।",
+      "cue": "Certainly it is raining; even so I am going to the temple."
+    },
+    {
+      "id": "L4-M4-C12",
+      "display": "bhavataḥ matam śrutvā aham na khinnaḥ.",
+      "script": "भवतः मतम् श्रुत्वा अहम् न खिन्नः।",
+      "cue": "Having heard your opinion I am not unhappy."
+    },
+    {
+      "id": "L4-M4-C13",
+      "display": "mama mate lābhaḥ na uttamaḥ, kintu kāryam hitam.",
+      "script": "मम मते लाभः न उत्तमः, किन्तु कार्यम् हितम्।",
+      "cue": "In my opinion the gain is not good, but the work is beneficial."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
