@@ -1,0 +1,796 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M2",
+  "title": "Describing people",
+  "job": "Appearance, character, relationships",
+  "prerequisites": [
+    "L2-M1"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "N-nom + Adj-nom + est",
+      "fortis / gravis / brevis + est",
+      "pater + et + māter + sunt",
+      "pater + māter-que + sunt",
+      "quālis est + N"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "SOME ADJECTIVES DO NOT SHOW GENDER AT ALL. fortis is the shape for a man AND for a woman — fortis frāter and fortis soror — where L1's laetus had laetus and laeta. So an adjective's ending stops being a clue about who is being described: only the noun tells you, and this family is as common as the other."
+    },
+    {
+      "tag": "delta",
+      "text": "This family has two shapes rather than three: fortis for a person of either gender, forte for a neuter thing. L1-M9 met trīstis once and said the family existed; here it is fortis, gravis and brevis, and the pattern is productive. A dictionary lists both shapes — fortis, forte — for exactly this reason."
+    },
+    {
+      "tag": "interference",
+      "text": "gravis is 'heavy' and also 'serious', and of a person it means the second. English kept the word in 'grave' and 'gravity', which is a rare case of a cognate telling the truth — but it does NOT mean sad, which is L1-M9's trīstis."
+    },
+    {
+      "tag": "delta",
+      "text": "Family words come in pairs and each pair is two separate words, not one word with two endings: frāter and soror, pater and māter. fīlius and fīlia are the exception — they ARE one word with two endings, like discipulus and discipula. Learn which is which, because it decides whether you can guess the other half."
+    },
+    {
+      "tag": "delta",
+      "text": "-que joins the second of two things, and this module is where L1-M10's seam gets its textbook pair: pater māter-que, 'father and mother'. Printed Latin writes it solid — patermaterque is wrong but māterque is right — and this course keeps the hyphen so both halves stay visible. et does the same job in a separate word and is never wrong."
+    },
+    {
+      "tag": "delta",
+      "text": "A fourth case appears, and only for relationships: fīlia magistrae est, 'she is the teacher's daughter'. The -ae is doing what English does with an apostrophe. Of a man it would be magistrī — which is also the word for 'teachers', so one spelling does two jobs and only the sentence tells you which."
+    },
+    {
+      "tag": "free",
+      "text": "quālis est asks 'what is he like?' and its answer is an adjective. It is itself one of this module's two-shape adjectives, which makes it a neat demonstration: quālis est magister? and quālis est magistra? are the same three words."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M2-S01",
+      "display": "Frāter fortis est.",
+      "cue": "My brother is brave.",
+      "literal": "brother brave is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "frāter",
+            "cue": "brother",
+            "tag": "delta",
+            "forms": [
+              "frāter"
+            ],
+            "note": "'Brother'. Its pair is soror, 'sister' — a completely separate word, not frāter with a different ending, so knowing one does not give you the other."
+          },
+          {
+            "display": "fortis",
+            "cue": "brave · strong",
+            "tag": "interference",
+            "forms": [
+              "fortis",
+              "forte"
+            ],
+            "note": "'Brave, strong' — and the SAME shape for a man or a woman. Only forte, for a neuter thing, is different. English 'fortitude' and 'force' keep it."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          0,
+          1
+        ]
+      },
+      "trap": "There is no 'my'. Latin leaves possession to the situation when it is obvious, exactly as it leaves out 'a' and 'the' — and a learner hunting for a word for 'my' is hunting for one this course has not taught.",
+      "sound": "FRA-ter FOR-tis EST. The ā of frāter is long and stressed; fortis is two short syllables.",
+      "variations": [
+        {
+          "display": "Soror fortis est.",
+          "cue": "My sister is brave.",
+          "changed": "a woman, and the adjective does NOT change — which is the module's whole point"
+        },
+        {
+          "display": "Frāter gravis est.",
+          "cue": "My brother is serious.",
+          "changed": "a different adjective of the same family"
+        },
+        {
+          "display": "Frāter brevis est.",
+          "cue": "My brother is short.",
+          "changed": "and a third, describing height rather than character"
+        }
+      ],
+      "mistake": {
+        "display": "Soror forta est.",
+        "why": "A feminine ending invented on laetus's model. fortis belongs to the family with no separate feminine — a woman is fortis, exactly as a man is — and forta is not a Latin word at all."
+      },
+      "usage": "Said about a member of your family.",
+      "mnemonic": "fortis is the same for him and for her.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M2-S02",
+      "display": "Soror gravis est.",
+      "cue": "My sister is serious.",
+      "literal": "sister serious is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "soror",
+            "cue": "sister",
+            "tag": "delta",
+            "forms": [
+              "soror"
+            ],
+            "note": "'Sister', and its pair is frāter — two separate words. English 'sorority' keeps it, where 'fraternity' keeps the other."
+          },
+          {
+            "display": "gravis",
+            "cue": "serious · heavy",
+            "tag": "interference",
+            "forms": [
+              "gravis",
+              "grave",
+              "gravēs"
+            ],
+            "note": "'Serious' of a person and 'heavy' of a thing; gravēs of more than one. Same shape for a man or a woman; grave for a neuter thing. It does NOT mean sad — that is trīstis."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "gravis is not 'grave' in the English sense of grim. Of a person it is weighty, dignified, to be taken seriously — a compliment rather than a warning, which the cognate hides.",
+      "sound": "SO-ror GRA-vis EST. Nothing long anywhere; the whole line is light and quick.",
+      "variations": [
+        {
+          "display": "Frāter gravis est.",
+          "cue": "My brother is serious.",
+          "changed": "a man, and again the adjective does not move"
+        },
+        {
+          "display": "Liber gravis est.",
+          "cue": "The book is heavy.",
+          "changed": "a thing, where the same word means weight rather than character"
+        },
+        {
+          "display": "Soror trīstis est.",
+          "cue": "My sister is sad.",
+          "changed": "L1-M9's word, which is what 'grave' does NOT mean"
+        }
+      ],
+      "mistake": {
+        "display": "Soror gravem est.",
+        "why": "An object ending on a word that is describing the subject. gravis follows soror, which is what the sentence is about, so it takes the subject shape — the object shape belongs in M3, where an adjective finally describes something being acted on."
+      },
+      "usage": "Said about somebody's character.",
+      "mnemonic": "gravis of a person is weighty; of a book it is heavy.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M2-S03",
+      "display": "Pater et māter hīc sunt.",
+      "cue": "My father and mother are here.",
+      "literal": "father and mother here are",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pater",
+            "cue": "father",
+            "tag": "delta",
+            "forms": [
+              "pater"
+            ],
+            "note": "'Father'. Its pair is māter — a separate word, like frāter and soror. English 'paternal' and 'patriot' keep it."
+          },
+          {
+            "display": "et",
+            "cue": "and",
+            "tag": "free",
+            "forms": [],
+            "note": "'And', and it behaves exactly as English does: between the two things, never joined on. The safe choice whenever you are unsure."
+          },
+          {
+            "display": "māter",
+            "cue": "mother",
+            "tag": "delta",
+            "forms": [
+              "māter"
+            ],
+            "note": "'Mother', with a long ā, and pater's pair. English 'maternal' and 'matrix' keep it. The next sentence joins it to pater with an enclitic instead of et."
+          },
+          {
+            "display": "hīc",
+            "cue": "here",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Here', with a LONG i. Its short twin hic means 'this' — one bar apart, and L1-M7 taught them together."
+          },
+          {
+            "display": "sunt",
+            "cue": "they are",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          3,
+          4
+        ]
+      },
+      "trap": "Two people means sunt and not est. L1-M8 showed this with two books; here it is two people joined by et, and the verb answers to both of them together.",
+      "sound": "PA-ter et MA-ter HEEK SUNT. The ā of māter is long and pater's a is not — one pair of words, one long vowel between them.",
+      "variations": [
+        {
+          "display": "Frāter et soror hīc sunt.",
+          "cue": "My brother and sister are here.",
+          "changed": "the other pair of family words in the same frame"
+        },
+        {
+          "display": "Pater et māter ibi sunt.",
+          "cue": "My father and mother are there.",
+          "changed": "L1-M7's 'there' instead"
+        },
+        {
+          "display": "Pater hīc est.",
+          "cue": "My father is here.",
+          "changed": "one person, so the verb goes back to est"
+        }
+      ],
+      "mistake": {
+        "display": "Pater et māter hīc est.",
+        "why": "The verb left singular after two subjects. et joins them into a plural whatever their own shapes are, so sunt is the only possible verb — and this is the commonest agreement error in the module."
+      },
+      "usage": "Said when you are introducing your family.",
+      "mnemonic": "pater and māter, like frāter and soror: two words, not two endings.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M2-S04",
+      "display": "Pater māter-que hīc sunt.",
+      "cue": "My father and mother are here.",
+      "literal": "father mother-and here are",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "pater",
+            "cue": "father",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Father'. Its pair is māter — a separate word, like frāter and soror. English 'paternal' and 'patriot' keep it."
+          },
+          {
+            "display": "-que",
+            "cue": "and (joined to the second thing)",
+            "tag": "delta",
+            "forms": [
+              "māter-que",
+              "soror-que"
+            ],
+            "note": "'And', hung on the SECOND of a pair — L1-M10's enclitic, and pater māter-que is its textbook use. Printed Latin joins it up: māterque."
+          },
+          {
+            "display": "hīc",
+            "cue": "here",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Here', with a LONG i. Its short twin hic means 'this' — one bar apart, and L1-M7 taught them together."
+          },
+          {
+            "display": "sunt",
+            "cue": "they are",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          4,
+          3
+        ]
+      },
+      "trap": "This is S03 with one word fewer and the same meaning. -que and et are interchangeable here, and -que is what a Roman reaches for when the two things belong together — a pair of parents rather than two unrelated people.",
+      "sound": "PA-ter MA-ter-que HEEK SUNT. The enclitic pulls the stress: māter alone is MA-ter, and with -que on it the beat moves to ma-TER-que.",
+      "variations": [
+        {
+          "display": "Pater et māter hīc sunt.",
+          "cue": "My father and mother are here.",
+          "changed": "the separate word instead of the enclitic — same sentence, same meaning"
+        },
+        {
+          "display": "Pater māter-que ibi sunt.",
+          "cue": "My father and mother are there.",
+          "changed": "a different place; the seam does not move"
+        },
+        {
+          "display": "Pater māter-que gravēs sunt.",
+          "cue": "My father and mother are serious.",
+          "changed": "an adjective for both of them, which goes plural to match"
+        }
+      ],
+      "mistake": {
+        "display": "Pater-que māter hīc sunt.",
+        "why": "The enclitic on the first of the pair. -que joins its host to what came BEFORE it, so on pater it has nothing to join — the sentence claims that the father is being added to something unmentioned."
+      },
+      "usage": "Said of two people who go together.",
+      "mnemonic": "-que rides the second one.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M2-S05",
+      "display": "Quālis est magister?",
+      "cue": "What is the teacher like?",
+      "literal": "what-sort is the-teacher",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quālis",
+            "cue": "what sort of · what like",
+            "tag": "delta",
+            "forms": [
+              "quālis",
+              "quālēs"
+            ],
+            "note": "'What is he like?' — itself a two-shape adjective, so quālis est magister? and quālis est magistra? are identical; quālēs for more than one. Its answer is an adjective."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "magister",
+            "cue": "teacher",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Teacher', carrying the teacher's gender: magister of a man, magistra of a woman, magistrī of more than one."
+          }
+        ],
+        "rules": [
+          6,
+          1
+        ]
+      },
+      "trap": "No -ne and no helper. quālis already asks, so the question particle would be asking twice — the same rule ubi, quot and cūr each taught in L1.",
+      "sound": "QUA-lis est ma-GIS-ter. The ā of quālis is long and stressed.",
+      "variations": [
+        {
+          "display": "Quālis est magistra?",
+          "cue": "What is the teacher like? (a woman)",
+          "changed": "a woman asked about, and the question word does not move"
+        },
+        {
+          "display": "Quālis est frāter?",
+          "cue": "What is your brother like?",
+          "changed": "a family member asked about instead"
+        },
+        {
+          "display": "Quālis est liber?",
+          "cue": "What is the book like?",
+          "changed": "a thing asked about, which is allowed and common"
+        }
+      ],
+      "mistake": {
+        "display": "Quālis-ne est magister?",
+        "why": "The yes/no particle stacked on a question word. L1 said this three times about ubi, quot and cūr; quālis is the fourth, and the rule has not changed — -ne turns a statement into a question, and this is already one."
+      },
+      "usage": "Said when you want a description rather than a fact.",
+      "mnemonic": "quālis asks for an adjective back.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M2-S06",
+      "display": "Fīlius fortis est.",
+      "cue": "His son is brave.",
+      "literal": "son brave is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fīlius",
+            "cue": "son",
+            "tag": "delta",
+            "forms": [
+              "fīlius",
+              "fīlia"
+            ],
+            "note": "'Son', and fīlia is 'daughter' — ONE word with two endings, unlike pater/māter. The same trick as discipulus and discipula."
+          },
+          {
+            "display": "fortis",
+            "cue": "brave · strong",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Brave, strong' — and the SAME shape for a man or a woman. Only forte, for a neuter thing, is different. English 'fortitude' and 'force' keep it."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "fīlius and fīlia work the way discipulus and discipula did, and pater and māter do not. Two systems for family words in one module, and the note on each says which it belongs to.",
+      "sound": "FI-li-us FOR-tis EST. The ī of fīlius is long and takes the stress; the -ius is two light syllables.",
+      "variations": [
+        {
+          "display": "Fīlia fortis est.",
+          "cue": "His daughter is brave.",
+          "changed": "the same word with the other ending — and the adjective still does not move"
+        },
+        {
+          "display": "Fīlius gravis est.",
+          "cue": "His son is serious.",
+          "changed": "a different adjective"
+        },
+        {
+          "display": "Fīlia et fīlius hīc sunt.",
+          "cue": "His daughter and son are here.",
+          "changed": "both endings in one sentence, joined by et"
+        }
+      ],
+      "mistake": {
+        "display": "Fīlia fortia est.",
+        "why": "The adjective given a feminine ending to match fīlia. fortis does not have one — the noun changed and the adjective cannot, which is exactly the asymmetry this module exists to teach."
+      },
+      "usage": "Said about somebody else's child.",
+      "mnemonic": "fīlius and fīlia are one word; pater and māter are two.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M2-S07",
+      "display": "Fīlia brevis est.",
+      "cue": "His daughter is short.",
+      "literal": "daughter short is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fīlia",
+            "cue": "daughter",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Son', and fīlia is 'daughter' — ONE word with two endings, unlike pater/māter. The same trick as discipulus and discipula."
+          },
+          {
+            "display": "brevis",
+            "cue": "short",
+            "tag": "delta",
+            "forms": [
+              "brevis"
+            ],
+            "note": "'Short' — of height, of time, of a book. Same shape for a man or a woman, like fortis and gravis. English 'brief' and 'abbreviate' keep it."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "Three adjectives now, all behaving the same way, and none of them showing gender. That is the module's shape: the family is large, its members are useful, and its whole difficulty is that they look like they should agree and do not.",
+      "sound": "FI-li-a BRE-vis EST. brevis is two short syllables with the stress at the front.",
+      "variations": [
+        {
+          "display": "Fīlius brevis est.",
+          "cue": "His son is short.",
+          "changed": "the other ending on the noun; the adjective holds"
+        },
+        {
+          "display": "Liber brevis est.",
+          "cue": "The book is short.",
+          "changed": "a thing described, where 'short' means length rather than height"
+        },
+        {
+          "display": "Fīlia brevis et fortis est.",
+          "cue": "His daughter is short and brave.",
+          "changed": "two adjectives joined by et, both in the same shape"
+        }
+      ],
+      "mistake": {
+        "display": "Fīlia breva est.",
+        "why": "The same invented feminine as S01's forta and S06's fortia. Three plates on one error in one module is deliberate: it is the single thing an English speaker who has learned laetus will get wrong every time."
+      },
+      "usage": "Said about appearance.",
+      "mnemonic": "fortis, gravis, brevis — three words, one shape each for people.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M2-S08",
+      "display": "Fīlia magistrae est.",
+      "cue": "She is the teacher's daughter.",
+      "literal": "daughter of-the-teacher is",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fīlia",
+            "cue": "daughter",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Son', and fīlia is 'daughter' — ONE word with two endings, unlike pater/māter. The same trick as discipulus and discipula."
+          },
+          {
+            "display": "magistrae",
+            "cue": "of the teacher (a woman)",
+            "tag": "delta",
+            "forms": [
+              "magistrae"
+            ],
+            "note": "'Of the teacher' — a new shape of L1-M1's magistra, doing what English does with an apostrophe. Of a man it is magistrī, which is ALSO the plural L1-M1 taught: one spelling, two jobs."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "magistrī would have been ambiguous. Of a man, 'of the teacher' is spelled exactly like 'teachers', which L1-M1 already taught — so this module shows the feminine, where the two jobs have different endings, and names the collision rather than walking into it.",
+      "sound": "FI-li-a ma-GIS-trae EST. The -ae at the end is the diphthong of English \"eye\": ma-GIS-try.",
+      "variations": [
+        {
+          "display": "Fīlius magistrae est.",
+          "cue": "He is the teacher's son.",
+          "changed": "the other ending on the noun"
+        },
+        {
+          "display": "Soror magistrae est.",
+          "cue": "She is the teacher's sister.",
+          "changed": "a different relationship, same construction"
+        },
+        {
+          "display": "Fīlia magistrae fortis est.",
+          "cue": "The teacher's daughter is brave.",
+          "changed": "an adjective added, agreeing with the daughter and not with the teacher"
+        }
+      ],
+      "mistake": {
+        "display": "Fīlia magistra est.",
+        "why": "The possessor left in its plain shape. Latin marks 'of' on the noun itself, and without the ending the sentence has two subjects — 'the daughter is a teacher', which is a different claim entirely."
+      },
+      "usage": "Said when you are placing somebody in a family.",
+      "mnemonic": "The -ae is the apostrophe-s, for a woman.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M2-S09",
+      "display": "Fortis est, nōn brevis.",
+      "cue": "She is brave, not short.",
+      "literal": "brave is, not short",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "fortis",
+            "cue": "brave · strong",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Brave, strong' — and the SAME shape for a man or a woman. Only forte, for a neuter thing, is different. English 'fortitude' and 'force' keep it."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Not', and it goes straight in front of what it negates. Here that is an adjective rather than a verb, which is the one place it does not sit on the verb."
+          },
+          {
+            "display": "brevis",
+            "cue": "short",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Short' — of height, of time, of a book. Same shape for a man or a woman, like fortis and gravis. English 'brief' and 'abbreviate' keep it."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "Nothing says who. No subject, no gender anywhere in the line — and because these adjectives do not show gender either, the sentence is genuinely ambiguous between a man and a woman. Latin is content with that and the situation decides.",
+      "sound": "FOR-tis EST, NON BRE-vis. The ō of nōn is the only long vowel; pause at the comma.",
+      "variations": [
+        {
+          "display": "Gravis est, nōn trīstis.",
+          "cue": "He is serious, not sad.",
+          "changed": "the pair the cognate confuses, set against each other"
+        },
+        {
+          "display": "Fortis est, nōn gravis.",
+          "cue": "She is brave, not serious.",
+          "changed": "two adjectives of the same family contrasted"
+        },
+        {
+          "display": "Soror fortis est, nōn brevis.",
+          "cue": "My sister is brave, not short.",
+          "changed": "the subject named, which removes the ambiguity"
+        }
+      ],
+      "mistake": {
+        "display": "Fortis est, brevis nōn.",
+        "why": "nōn placed after the word it negates, where English can put 'not' at the end of a clause. Latin's nōn always leans forward onto what follows it, which L1-M3 said about verbs and is just as true of adjectives."
+      },
+      "usage": "Said when you are correcting somebody.",
+      "mnemonic": "nōn leans on whatever comes next.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M2-S10",
+      "display": "Quālis est soror?",
+      "cue": "What is your sister like?",
+      "literal": "what-sort is sister",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "quālis",
+            "cue": "what sort of · what like",
+            "tag": "delta",
+            "forms": [],
+            "note": "'What is he like?' — and it is itself a two-shape adjective, so quālis est magister? and quālis est magistra? are identical. Its answer is an adjective."
+          },
+          {
+            "display": "est",
+            "cue": "is",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb 'to be' in the shapes this level writes: sum 'I am', es 'you are', est 'he/she/it is', sunt 'they are'."
+          },
+          {
+            "display": "soror",
+            "cue": "sister",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Sister', and its pair is frāter — two separate words. English 'sorority' keeps it, where 'fraternity' keeps the other."
+          }
+        ],
+        "rules": [
+          6,
+          0
+        ]
+      },
+      "trap": "The answer has to be an adjective from this module's family or L1's, and the two behave differently — so the question is easy and the reply is where the module's difficulty actually lands.",
+      "sound": "QUA-lis est SO-ror. Three words, one long vowel, the stress on the first syllable of each.",
+      "variations": [
+        {
+          "display": "Quālis est pater?",
+          "cue": "What is your father like?",
+          "changed": "a different family member"
+        },
+        {
+          "display": "Quālis est soror? Fortis est.",
+          "cue": "What is your sister like? She is brave.",
+          "changed": "the question with its answer, which is the whole exchange"
+        },
+        {
+          "display": "Quālēs sunt?",
+          "cue": "What are they like?",
+          "changed": "more than one person asked about, so the question word goes plural too"
+        }
+      ],
+      "mistake": {
+        "display": "Quālis soror est? Forta.",
+        "why": "The answer, not the question. The question is fine in that order; the reply invents a feminine fortis for the fourth time in this module, which is the error it is built around."
+      },
+      "usage": "Said when you are asking about somebody you have not met.",
+      "mnemonic": "Ask with quālis, answer with an adjective.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M2-C01",
+      "display": "Pater gravis est, nōn trīstis.",
+      "cue": "My father is serious, not sad."
+    },
+    {
+      "id": "L2-M2-C02",
+      "display": "Frāter soror-que hīc sunt.",
+      "cue": "My brother and sister are here."
+    },
+    {
+      "id": "L2-M2-C03",
+      "display": "Quālis est fīlia magistrae?",
+      "cue": "What is the teacher's daughter like?"
+    },
+    {
+      "id": "L2-M2-C04",
+      "display": "Māter fortis est.",
+      "cue": "My mother is brave."
+    },
+    {
+      "id": "L2-M2-C05",
+      "display": "Fīlius magistrae brevis est.",
+      "cue": "The teacher's son is short."
+    },
+    {
+      "id": "L2-M2-C06",
+      "display": "Soror gravis est, nōn brevis.",
+      "cue": "My sister is serious, not short."
+    },
+    {
+      "id": "L2-M2-C07",
+      "display": "Pater et fīlius gravēs sunt.",
+      "cue": "My father and son are serious."
+    },
+    {
+      "id": "L2-M2-C08",
+      "display": "Quālis est frāter? Brevis est.",
+      "cue": "What is your brother like? He is short."
+    },
+    {
+      "id": "L2-M2-C09",
+      "display": "Māter magistra est.",
+      "cue": "My mother is a teacher."
+    },
+    {
+      "id": "L2-M2-C10",
+      "display": "Fīlia fortis est, nōn gravis.",
+      "cue": "His daughter is brave, not serious."
+    },
+    {
+      "id": "L2-M2-C11",
+      "display": "Quālis est fīlius? Fortis est.",
+      "cue": "What is his son like? He is brave."
+    },
+    {
+      "id": "L2-M2-C12",
+      "display": "Pater māter-que Rōmānī sunt.",
+      "cue": "My father and mother are Roman."
+    },
+    {
+      "id": "L2-M2-C13",
+      "display": "Quālēs sunt pater et māter?",
+      "cue": "What are your father and mother like?"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}

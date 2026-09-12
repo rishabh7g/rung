@@ -1,0 +1,737 @@
+{
+  "schemaVersion": 5,
+  "id": "L2-M1",
+  "title": "Asking politely",
+  "job": "Requests, thanks, apologies in the right register",
+  "prerequisites": [],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 2,
+    "maxWordsPerSentence": 8,
+    "allowedTenses": [
+      "simple_present",
+      "imperative",
+      "infinitive"
+    ],
+    "allowedPatterns": [
+      "velim + N-acc",
+      "dā mihi + N-acc + , + quaesō",
+      "nōlī + V-re",
+      "grātiās agō / tibi grātiās agō",
+      "ignōsce mihi / mē paenitet"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "interference",
+      "text": "LATIN HAS NO POLITE 'YOU', and this is the module where that matters. Every other language in this app gives you a second pronoun for respect — usted, vous, Sie, Lei. Latin does not: tū is one person and vōs is more than one, and vōs to a single person is not formal, it is wrong. Politeness lives in the VERB and in a handful of fixed phrases, all of which are here."
+    },
+    {
+      "tag": "delta",
+      "text": "velim is the polite 'I would like', and it is softer than L1's volō. Velim aquam asks; aquam volō states. It is a subjunctive — a shape of the verb this course has not taught and will not explain here — so learn it as a word, the way you learned quantī cōnstat. There is exactly one other subjunctive in this level, and it is M6's."
+    },
+    {
+      "tag": "delta",
+      "text": "quaesō is the nearest thing Latin has to 'please', and it is a verb meaning 'I ask'. It goes at the end, after a comma, and it does not change the command in front of it: Dā mihi aquam, quaesō. sīs is the other softener, worn down from sī vīs, 'if you would'."
+    },
+    {
+      "tag": "delta",
+      "text": "nōlī plus an infinitive is how you tell somebody NOT to do something: Nōlī īre, 'don't go'. It is the command form of nōlō, L1-M3's one-word refusal, so it is the same verb doing a new job. It is an imperative and not a subjunctive, even though it sits next to velim in this module."
+    },
+    {
+      "tag": "free",
+      "text": "grātiās agō is 'thank you', and it is literally 'I do thanks' — L1-M2's agō with a new object. Add tibi for 'I thank YOU' when the person matters. Nothing here is new grammar; it is one verb you know and one noun you do not."
+    },
+    {
+      "tag": "interference",
+      "text": "mē paenitet is 'I am sorry', and it is built the way L1-M3's mihi opus est was built: impersonally. Nobody is the subject but the regret itself, and mē is the object shape of ego — so the sentence says, roughly, 'it repents me'. English has no construction like it, which is why it has to be learned whole."
+    },
+    {
+      "tag": "delta",
+      "text": "ignōsce mihi is the other apology and it is an ordinary imperative with a 'to me' after it — the same shape as L1-M8's dā mihi. Two apologies, two constructions: one is a command asking to be forgiven, the other a statement that you regret something."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L2-M1-S01",
+      "display": "Velim aquam.",
+      "cue": "I would like some water.",
+      "literal": "I-would-like water",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "velim",
+            "cue": "I would like",
+            "tag": "delta",
+            "forms": [
+              "velim"
+            ],
+            "note": "The polite 'I would like' — softer than L1's volō. A subjunctive, learned here as a fixed word rather than as a form: this course explains the shape at a later level."
+          },
+          {
+            "display": "aquam",
+            "cue": "water (as the thing wanted)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after in, cum or opus est. Three shapes of one word."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "There is no polite pronoun to add. The politeness is entirely in velim — swap it for volō and the same two words become a flat demand.",
+      "sound": "VE-lim A-quam. Nothing long in velim; it is two short syllables and the stress is at the front.",
+      "variations": [
+        {
+          "display": "Aquam volō.",
+          "cue": "I want water.",
+          "changed": "L1's blunt version, for the contrast — same request, no courtesy"
+        },
+        {
+          "display": "Velim pānem.",
+          "cue": "I would like some bread.",
+          "changed": "a different thing asked for"
+        },
+        {
+          "display": "Velim librum.",
+          "cue": "I would like the book.",
+          "changed": "and again, with a thing rather than a substance"
+        }
+      ],
+      "mistake": {
+        "display": "Vōs velim aquam.",
+        "why": "A plural pronoun put in as a courtesy, on the model of French or German. vōs means more than one person and nothing else, so it cannot make a request polite — and with velim, which is already first person, it has nothing at all to attach to."
+      },
+      "usage": "Said to anyone you are asking a favour of.",
+      "mnemonic": "velim is volō with its edges softened.",
+      "register": "formal"
+    },
+    {
+      "id": "L2-M1-S02",
+      "display": "Dā mihi aquam, quaesō.",
+      "cue": "Give me some water, please.",
+      "literal": "give to-me water, I-ask",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dā",
+            "cue": "give! (to one person)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Give!' — an order to one person, like salvē and valē. Its ā is long, and it takes two things after it: a 'to me' and an object."
+          },
+          {
+            "display": "mihi",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I' has more than one shape: ego does the acting, mihi is 'to me / for me'. The person something is given TO takes this shape."
+          },
+          {
+            "display": "aquam",
+            "cue": "water (as the thing given)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Water': aqua as the subject, aquam as the object, aquā after in, cum or opus est. Three shapes of one word."
+          },
+          {
+            "display": "quaesō",
+            "cue": "please (literally 'I ask')",
+            "tag": "delta",
+            "forms": [
+              "quaesō"
+            ],
+            "note": "The nearest Latin has to 'please', and it is a verb: 'I ask'. It goes at the end after a comma and changes nothing about the command in front of it."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "quaesō is a whole verb bolted on, not a particle. English 'please' is a word that has forgotten it was ever 'if it pleases you'; quaesō has not forgotten, which is why it takes a comma.",
+      "sound": "DA MI-hi A-quam, QUAE-sō. The ae of quaesō is the 'eye' of English and its ō is long: KWIGH-soh.",
+      "variations": [
+        {
+          "display": "Dā mihi pānem, quaesō.",
+          "cue": "Give me some bread, please.",
+          "changed": "a different thing asked for"
+        },
+        {
+          "display": "Dā mihi aquam.",
+          "cue": "Give me some water.",
+          "changed": "the courtesy dropped, which leaves a bare order"
+        },
+        {
+          "display": "Quaesō, dā mihi aquam.",
+          "cue": "Please give me some water.",
+          "changed": "the courtesy in front instead, which is allowed and slightly more insistent"
+        }
+      ],
+      "mistake": {
+        "display": "Dā mihi aquam placet.",
+        "why": "'Please' built out of placet, on the strength of the English word's history. placet is L1-M1's verb of liking and means 'it is pleasing'; dropped in here it says something closer to 'give me water, it pleases'."
+      },
+      "usage": "The everyday polite request.",
+      "mnemonic": "quaesō is 'I ask' — a verb, so it gets a comma.",
+      "register": "formal"
+    },
+    {
+      "id": "L2-M1-S03",
+      "display": "Nōlī īre.",
+      "cue": "Do not go.",
+      "literal": "be-unwilling to-go",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōlī",
+            "cue": "do not (to one person)",
+            "tag": "interference",
+            "forms": [
+              "nōlī"
+            ],
+            "note": "'Do not!' — the command form of L1-M3's nōlō, and it takes an infinitive after it: nōlī īre. Latin forbids by telling you to be unwilling."
+          },
+          {
+            "display": "īre",
+            "cue": "to go",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I go': eō, īs 'you go', it 'he/she goes', īre 'to go'. Tiny and irregular — and the -re ending is what makes it 'to'."
+          }
+        ],
+        "rules": [
+          3,
+          0
+        ]
+      },
+      "trap": "You cannot negate an imperative with nōn. L1-M3 said nōn goes in front of a verb, and that is true of statements only — a command needs nōlī and an infinitive, which is a different construction rather than a negated one.",
+      "sound": "NO-lī I-re. Both vowels of nōlī are long and so is the ī of īre — three long vowels in four syllables makes it a slow, deliberate line.",
+      "variations": [
+        {
+          "display": "Nōlī bibere.",
+          "cue": "Do not drink.",
+          "changed": "a different action forbidden"
+        },
+        {
+          "display": "Nōlī legere, quaesō.",
+          "cue": "Please do not read.",
+          "changed": "the courtesy added, which softens a prohibition without changing it"
+        },
+        {
+          "display": "Nōlī īre, sīs.",
+          "cue": "Don't go, would you.",
+          "changed": "the other softener, which is warmer and less formal than quaesō"
+        }
+      ],
+      "mistake": {
+        "display": "Nōn ī.",
+        "why": "A command negated with nōn, which is how English does it. Latin has a dedicated construction — nōlī plus the infinitive — and nōn against a bare imperative is not something a Roman wrote."
+      },
+      "usage": "Said when you need somebody to stop.",
+      "mnemonic": "nōlī plus -re: 'be unwilling to …'.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M1-S04",
+      "display": "Grātiās agō.",
+      "cue": "Thank you.",
+      "literal": "thanks I-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "grātiās",
+            "cue": "thanks",
+            "tag": "free",
+            "forms": [
+              "grātiās"
+            ],
+            "note": "'Thanks' — plural, always, and in the object shape because it is what you are doing. English kept it in 'gratitude' and 'grace'."
+          },
+          {
+            "display": "agō",
+            "cue": "I do",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb agō, 'do / drive / carry on', in the shapes this level writes: agō 'I do', agis 'you do', agit 'he does', agimus 'we do'."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "Thanking is something you DO, and the thanks are the object. There is no word for 'you' in it at all — S05 adds one when the person matters, and this bare version is the ordinary form.",
+      "sound": "GRA-ti-ās A-gō. The first ā of grātiās is long and stressed; the -ās at the end is long too but unstressed.",
+      "variations": [
+        {
+          "display": "Tibi grātiās agō.",
+          "cue": "I thank you.",
+          "changed": "the person added, in the 'to you' shape"
+        },
+        {
+          "display": "Grātiās agimus.",
+          "cue": "We thank you.",
+          "changed": "more than one person thanking, which is L1-M10's plural ending"
+        },
+        {
+          "display": "Grātiās agit.",
+          "cue": "He says thank you.",
+          "changed": "a third person doing the thanking"
+        }
+      ],
+      "mistake": {
+        "display": "Grātia agō.",
+        "why": "The thanks left singular. Latin always thanks in the plural — grātiās — and a single grātia is 'favour' or 'charm', which turns the sentence into something closer to 'I exercise charm'."
+      },
+      "usage": "Said whenever English would say thank you.",
+      "mnemonic": "Thanks are plural and they are something you DO.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M1-S05",
+      "display": "Tibi grātiās agō.",
+      "cue": "I thank you.",
+      "literal": "to-you thanks I-do",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "tibi",
+            "cue": "to you · for you",
+            "tag": "delta",
+            "forms": [
+              "tibi"
+            ],
+            "note": "'To you' — the shape of tū that matches mihi. One person only: L1-M2's rule holds, and there is no polite plural to reach for."
+          },
+          {
+            "display": "grātiās",
+            "cue": "thanks",
+            "tag": "free",
+            "forms": [],
+            "note": "'Thanks' — plural, always, and in the object shape because it is what you are doing. English kept it in 'gratitude' and 'grace'."
+          },
+          {
+            "display": "agō",
+            "cue": "I do",
+            "tag": "delta",
+            "forms": [],
+            "note": "The verb agō, 'do / drive / carry on', in the shapes this level writes: agō 'I do', agis 'you do', agit 'he does', agimus 'we do'."
+          }
+        ],
+        "rules": [
+          4,
+          0
+        ]
+      },
+      "trap": "tibi is the polite form and the familiar form, because there is only one. A learner who has met French or German will look for a second word here and there is none — the warmth is in adding tibi at all.",
+      "sound": "TI-bi GRA-ti-ās A-gō. tibi is two short syllables, exactly like mihi, which is the pair worth hearing together.",
+      "variations": [
+        {
+          "display": "Tibi grātiās agimus.",
+          "cue": "We thank you.",
+          "changed": "more than one person thanking one person"
+        },
+        {
+          "display": "Grātiās tibi agō.",
+          "cue": "I thank you.",
+          "changed": "the same three words reordered, which is allowed and very common"
+        },
+        {
+          "display": "Tibi grātiās agō, magister.",
+          "cue": "I thank you, teacher.",
+          "changed": "the person named as well as addressed"
+        }
+      ],
+      "mistake": {
+        "display": "Tē grātiās agō.",
+        "why": "The object shape of tū where the 'to you' shape belongs. grātiās is already the object — a verb cannot have two — and the person thanked is who the thanks go TO, which is tibi."
+      },
+      "usage": "Said when the thanks are pointed at someone in particular.",
+      "mnemonic": "mihi and tibi: to me, to you.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M1-S06",
+      "display": "Ignōsce mihi.",
+      "cue": "Forgive me.",
+      "literal": "forgive to-me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ignōsce",
+            "cue": "forgive! (to one person)",
+            "tag": "delta",
+            "forms": [
+              "ignōsce"
+            ],
+            "note": "'Forgive!' — an imperative with a 'to me' after it, the same shape as dā mihi. Literally 'do not take note of', from the same root as nōscō, 'I know'."
+          },
+          {
+            "display": "mihi",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I' has more than one shape: ego does the acting, mihi is 'to me / for me'. The person forgiven takes this shape, not the object one."
+          }
+        ],
+        "rules": [
+          6,
+          0
+        ]
+      },
+      "trap": "You are forgiven TO rather than forgiven. The verb takes a 'to me' where English takes a plain object, which is a small thing to remember and an easy one to get wrong once dā mihi has taught the same shape for giving.",
+      "sound": "ig-NOS-ce MI-hi. The ō is long and takes the stress; the c is hard, so the middle is -NOS-kay.",
+      "variations": [
+        {
+          "display": "Ignōsce mihi, quaesō.",
+          "cue": "Forgive me, please.",
+          "changed": "the courtesy added"
+        },
+        {
+          "display": "Ignōsce magistrō.",
+          "cue": "Forgive the teacher.",
+          "changed": "somebody else forgiven, in the same 'to' shape"
+        },
+        {
+          "display": "Ignōsce, sīs.",
+          "cue": "Sorry, would you.",
+          "changed": "the 'to me' dropped and the softer word used — the casual version"
+        }
+      ],
+      "mistake": {
+        "display": "Ignōsce mē.",
+        "why": "The object shape where the 'to me' shape belongs. ignōscō governs a dative — the person is who the forgiveness goes to — so mē is wrong for the same reason it was wrong in S05."
+      },
+      "usage": "Said when you have done something small and want it overlooked.",
+      "mnemonic": "Forgive TO me: ignōsce mihi.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M1-S07",
+      "display": "Mē paenitet.",
+      "cue": "I am sorry.",
+      "literal": "me it-repents",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "mē",
+            "cue": "me (as the object)",
+            "tag": "delta",
+            "forms": [
+              "mē"
+            ],
+            "note": "The object shape of L1-M1's ego: ego does the acting, mē is acted on, mihi is 'to me'. Three shapes of one word, and this is the last of them."
+          },
+          {
+            "display": "paenitet",
+            "cue": "it causes regret",
+            "tag": "interference",
+            "forms": [
+              "paenitet"
+            ],
+            "note": "'It repents' — impersonal, like mihi opus est. Nobody is the subject but the regret, and the person who feels it is the OBJECT: mē paenitet."
+          }
+        ],
+        "rules": [
+          5,
+          0
+        ]
+      },
+      "trap": "You are the object of your own regret. There is no English construction like it — the nearest is the archaic 'it repenteth me' — so the two words have to be learned as a unit and not assembled.",
+      "sound": "ME pae-NI-tet. The ē of mē is long; the ae of paenitet is the 'eye' sound, so it is pie-NI-tet.",
+      "variations": [
+        {
+          "display": "Mē paenitet, quaesō ignōsce.",
+          "cue": "I am sorry, please forgive me.",
+          "changed": "both apologies together, which is what a real apology sounds like"
+        },
+        {
+          "display": "Mē paenitet, magister.",
+          "cue": "I am sorry, teacher.",
+          "changed": "the person addressed, which changes nothing in the construction"
+        },
+        {
+          "display": "Nōn mē paenitet.",
+          "cue": "I am not sorry.",
+          "changed": "negated, with nōn in front of the whole thing"
+        }
+      ],
+      "mistake": {
+        "display": "Ego paenitet.",
+        "why": "The English subject put in the subject's chair. paenitet has no personal subject at all, so ego has nothing to be — it is L1-M1's mihi placet problem in a new construction, and the fix is the same: the person is not the subject."
+      },
+      "usage": "The real apology, as against ignōsce mihi's request.",
+      "mnemonic": "It repents ME: the regret does the acting.",
+      "register": "neutral"
+    },
+    {
+      "id": "L2-M1-S08",
+      "display": "Velim librum legere.",
+      "cue": "I would like to read the book.",
+      "literal": "I-would-like book to-read",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "velim",
+            "cue": "I would like",
+            "tag": "delta",
+            "forms": [],
+            "note": "The polite 'I would like' — softer than L1's volō. A subjunctive, learned here as a fixed word rather than as a form: this course explains the shape at a later level."
+          },
+          {
+            "display": "librum",
+            "cue": "book (as the thing read)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Book': liber as the subject, librum as the object, librī for more than one, librōs as more than one object."
+          },
+          {
+            "display": "legere",
+            "cue": "to read",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I read' AND 'I am reading' — one present for both: legō, legis, legit, legere 'to read'. The -re ending is what makes it 'to'."
+          }
+        ],
+        "rules": [
+          1,
+          0
+        ]
+      },
+      "trap": "velim takes an infinitive exactly as volō did, and the order is the same: object, infinitive, verb. Nothing about the politeness changes the shape of the sentence — which is the useful thing about it.",
+      "sound": "VE-lim LI-brum LE-ge-re. Three words, all stressed at the front, none of them long.",
+      "variations": [
+        {
+          "display": "Velim aquam bibere.",
+          "cue": "I would like to drink some water.",
+          "changed": "a different object and infinitive in the same frame"
+        },
+        {
+          "display": "Librum legere volō.",
+          "cue": "I want to read the book.",
+          "changed": "L1's blunt version, with the verb back at the end"
+        },
+        {
+          "display": "Velim librum legere, sīs.",
+          "cue": "I would like to read the book, if I may.",
+          "changed": "the softener added to an already polite request"
+        }
+      ],
+      "mistake": {
+        "display": "Velim legere librum.",
+        "why": "The English order — verb, infinitive, object. Every module since L1-M3 has warned about it, and a polite sentence is exactly where a learner stops watching the order because they are concentrating on the courtesy."
+      },
+      "usage": "Said when you are asking permission as much as asking for a thing.",
+      "mnemonic": "Politeness changes the verb, not the order.",
+      "register": "formal"
+    },
+    {
+      "id": "L2-M1-S09",
+      "display": "Nōlī bibere, quaesō.",
+      "cue": "Please do not drink.",
+      "literal": "be-unwilling to-drink, I-ask",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "nōlī",
+            "cue": "do not (to one person)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Do not!' — the command form of L1-M3's nōlō, and it takes an infinitive after it: nōlī īre. Latin forbids by telling you to be unwilling."
+          },
+          {
+            "display": "bibere",
+            "cue": "to drink",
+            "tag": "delta",
+            "forms": [],
+            "note": "'To drink', the infinitive — bibō 'I drink', bibis 'you drink', bibit 'he drinks'. The -re ending is what makes it 'to'."
+          },
+          {
+            "display": "quaesō",
+            "cue": "please (literally 'I ask')",
+            "tag": "delta",
+            "forms": [],
+            "note": "The nearest Latin has to 'please', and it is a verb: 'I ask'. It goes at the end after a comma and changes nothing about the command in front of it."
+          }
+        ],
+        "rules": [
+          3,
+          2
+        ]
+      },
+      "trap": "A prohibition can be polite without changing shape. quaesō softens it and nōlī still governs the infinitive — so the courtesy is an addition rather than an alteration, which is the pattern of the whole module.",
+      "sound": "NO-lī BI-be-re, QUAE-sō. Two long vowels at the start, two short words in the middle, and the diphthong at the end.",
+      "variations": [
+        {
+          "display": "Nōlī bibere.",
+          "cue": "Do not drink.",
+          "changed": "the courtesy dropped"
+        },
+        {
+          "display": "Nōlī aquam bibere, quaesō.",
+          "cue": "Please do not drink the water.",
+          "changed": "an object added, and it goes in front of the infinitive"
+        },
+        {
+          "display": "Nōlī legere, sīs.",
+          "cue": "Don't read, would you.",
+          "changed": "a different action and the warmer softener"
+        }
+      ],
+      "mistake": {
+        "display": "Nōlī bibis, quaesō.",
+        "why": "A finite verb where the infinitive belongs. nōlī governs the -re form, so bibis ('you drink') cannot follow it — the construction is 'be unwilling TO drink', and the 'to' is the ending."
+      },
+      "usage": "Said when you have to stop somebody without offending them.",
+      "mnemonic": "nōlī always takes -re.",
+      "register": "formal"
+    },
+    {
+      "id": "L2-M1-S10",
+      "display": "Dā mihi pānem, sīs.",
+      "cue": "Pass me the bread, would you.",
+      "literal": "give to-me bread, if-you-would",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "dā",
+            "cue": "give! (to one person)",
+            "tag": "delta",
+            "forms": [],
+            "note": "'Give!' — an order to one person, like salvē and valē. Its ā is long, and it takes two things after it: a 'to me' and an object."
+          },
+          {
+            "display": "mihi",
+            "cue": "to me · for me",
+            "tag": "delta",
+            "forms": [],
+            "note": "'I' has more than one shape: ego does the acting, mē is acted on, mihi is 'to me'. The person something is given TO takes this shape."
+          },
+          {
+            "display": "pānem",
+            "cue": "bread (as the thing given)",
+            "tag": "interference",
+            "forms": [],
+            "note": "'Bread': pānis as the subject, pānem as the object, pāne as the thing needed. It is not a pan — the English word that kept it is 'pantry'."
+          },
+          {
+            "display": "sīs",
+            "cue": "would you · if you please",
+            "tag": "delta",
+            "forms": [
+              "sīs"
+            ],
+            "note": "'If you would' — sī vīs worn down to one syllable. Warmer and less formal than quaesō, and used between people who know each other."
+          }
+        ],
+        "rules": [
+          2,
+          0
+        ]
+      },
+      "trap": "sīs and quaesō are not interchangeable in tone. quaesō is what you say to a stranger or a superior; sīs is what you say across a table to a friend. Neither is a grammatical choice, which is why both sit in the same module.",
+      "sound": "DA MI-hi PA-nem, SIS. The ī of sīs is long, so it is SEES and not 'sis'.",
+      "variations": [
+        {
+          "display": "Dā mihi pānem, quaesō.",
+          "cue": "Give me the bread, please.",
+          "changed": "the formal softener instead, for a stranger rather than a friend"
+        },
+        {
+          "display": "Dā mihi aquam, sīs.",
+          "cue": "Pass me the water, would you.",
+          "changed": "a different thing asked for"
+        },
+        {
+          "display": "Velim pānem, sīs.",
+          "cue": "I would like the bread, if you would.",
+          "changed": "the polite request instead of the softened command — both courtesies at once"
+        }
+      ],
+      "mistake": {
+        "display": "Dā mihi pānem, sī vīs.",
+        "why": "Not wrong at all — sī vīs is what sīs is made of, and a Roman wrote both. It is here as a plate because a learner who writes the long form has understood the word correctly and will sound bookish: sīs is what speech uses."
+      },
+      "usage": "Said at a table, to somebody you know.",
+      "mnemonic": "sīs is 'if you would', squeezed into one syllable.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L2-M1-C01",
+      "display": "Velim librum, quaesō.",
+      "cue": "I would like the book, please."
+    },
+    {
+      "id": "L2-M1-C02",
+      "display": "Nōlī īre, quaesō.",
+      "cue": "Please do not go."
+    },
+    {
+      "id": "L2-M1-C03",
+      "display": "Tibi grātiās agimus.",
+      "cue": "We thank you."
+    },
+    {
+      "id": "L2-M1-C04",
+      "display": "Ignōsce mihi, mē paenitet.",
+      "cue": "Forgive me, I am sorry."
+    },
+    {
+      "id": "L2-M1-C05",
+      "display": "Dā mihi librum, sīs.",
+      "cue": "Pass me the book, would you."
+    },
+    {
+      "id": "L2-M1-C06",
+      "display": "Velim aquam bibere.",
+      "cue": "I would like to drink some water."
+    },
+    {
+      "id": "L2-M1-C07",
+      "display": "Nōlī legere, sīs.",
+      "cue": "Don't read, would you."
+    },
+    {
+      "id": "L2-M1-C08",
+      "display": "Grātiās agō, magister.",
+      "cue": "Thank you, teacher."
+    },
+    {
+      "id": "L2-M1-C09",
+      "display": "Mē nōn paenitet.",
+      "cue": "I am not sorry."
+    },
+    {
+      "id": "L2-M1-C10",
+      "display": "Velim trēs librōs.",
+      "cue": "I would like three books."
+    },
+    {
+      "id": "L2-M1-C11",
+      "display": "Ignōsce mihi, quaesō.",
+      "cue": "Forgive me, please."
+    },
+    {
+      "id": "L2-M1-C12",
+      "display": "Tibi grātiās agō, Iūlia.",
+      "cue": "I thank you, Julia."
+    },
+    {
+      "id": "L2-M1-C13",
+      "display": "Nōlī aquam bibere.",
+      "cue": "Do not drink the water."
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
