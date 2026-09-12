@@ -235,12 +235,22 @@ understatement — and they are the reason M7 rather than M5 owns `ignōrō`.
   difficulty is pronunciation and register rather than form (`avē`, `requiēscat`, `hīs rēbus dictīs`).
 - **Two notes over `NOTE_MAX_CHARS`** were shortened rather than split.
 
-### 2.7 Reserved keys still unspent
+### 2.7 The withheld keys are still absent
 
 Read back from the folded index after M7: `sīc`, `rosa`/`rosā`, `possim`, `meus`, `eius`, `vōs`,
-`s.p.q.r`, `quārē`, `quamvīs` and `quōmodo` are all **absent**, each promised to one of L5-M8…M10.
-Every key the course has reserved across five levels has been spent in the module that promised it and
-in no other — checked by reading the emitted index back, not by reading the authoring JSON.
+`s.p.q.r`, `quārē`, `quamvīs` and `quōmodo` are all **absent**. Every key the course *reserved* across
+five levels has by now been spent in the module that promised it and in no other — checked by reading
+the emitted index back, not the authoring JSON.
+
+**These ten are not reservations, and §3.6 corrects an earlier sentence here that called them that.**
+They are **permanent withholdings** plus one demonstrator pair: `sīc` (banned by name at L1-M2 and
+again at L3-M4), `possim` (`docs/129` §1), `meus` and `eius` (named at L3-M5 and written nowhere,
+because one module cannot open a possessive system and a reflexive at once), `vōs` (banned course-wide
+at L2-M1), `quārē`, `quamvīs` and `quōmodo` (`docs/131` §7 and `docs/133` §9 — each would mint a key
+carrying a reading `quia`, `licet` or the two-word `quō modō` already covers), and `s.p.q.r`, whose
+absence is the L4-M7 decision holding: the undotted `spqr` owns the key and the dotted spelling is
+written nowhere. `rosa`/`rosā` is `docs/123`'s macron demonstrator, never owed to a module at all.
+Nothing in L5-M8…M10 was ever going to spend any of them.
 
 ### 2.8 Open questions for the fluent-speaker gate
 
@@ -260,3 +270,182 @@ Additions to the hundred-odd standing across `docs/123`–`docs/134` §1.9.
 6. **Do the four ways of asking for help in M7 rank as the module says** — blunt to elaborate — or is
    the ranking a modern politeness intuition read back into Latin?
 7. **Is litotes without audio teachable at all?** `nōn male` is a tone of voice on the page.
+
+---
+
+## Wave 3 — L5-M8, L5-M9 and L5-M10 (#653), 2026-09-12
+
+The last three rungs of the fiftieth module of the eleventh course. Authored in ladder order against
+the L5 briefs (#650) and `docs/133`, rebuilding between modules; all three signed
+`verifiedBy: "Claude Opus 5 — LLM review, authorised by repo owner"`, `verifiedAt: 2026-09-12`.
+L5's `draft: true` and every module's `draft` flag are gone from `content/en-la/levels.json`, so
+**en-la is a complete five-level course** and #629 closes with this.
+
+### 3.1 What was checked
+
+- **`npm run content:validate`** → all three `ok`; `CONTENT 530/530 ok`.
+- **The strict build** → `en-la: 50 modules (L1-M1..M10, L2-M1..M10, L3-M1..M10, L4-M1..M10,
+  L5-M1..M10)`, `index L5-M8: 738 surfaces`, `L5-M9: 796`, **`L5-M10: 796`** — and **no
+  `shown but untaught` line at any of the fifty**. Exactly nine such lines are printed across the
+  build, one per other course; en-la is not among them and never has been.
+- **The folded index** — 796 surfaces against a `surfaceCount` of 796, `maxSpan` 1.
+- **The orthography sweep** — 4,690 readable Latin strings (sentence displays, variation displays,
+  word rows and comprehension items over the emitted course), every counter zero:
+
+  ```
+  readable Latin 4690 {'alpha': 0, 'nfc': 0, 'j': 0, 'apos': 0, 'acute': 0, 'comb': 0, 'hyph': 0, 'smartq': 0}
+  ```
+
+  The 339 `mistake` plates were swept separately and carry exactly one `j`: L1-M1's
+  `Julia discipula est.`, which is the plate that teaches the course writes `Iūlia`. That `j` is the
+  lesson, `mistake.display` is never read as Latin, and it is the only one in fifty modules.
+- **The withheld keys** — `sīc`, `rosa`/`rosā`, `possim`, `meus`, `eius`, `vōs`, `s.p.q.r`, `quārē`,
+  `quamvīs`, `quōmodo` and `ȳ` are all still absent from the folded index at the last rung.
+- **`git diff --stat`** over every L1–L4 module and over L5-M1…M7 is **empty**. No level edited a file
+  below it at any point in the course.
+
+### 3.2 The fiftieth rung spends nothing, and the index proves it
+
+`docs/133` §8 set the target at zero new words and the ceiling at one. The emitted index for L5-M10 is:
+
+```
+L5-M10 delta 0 surfaceCount 796
+```
+
+**Zero.** Every one of L5-M10's fifty-eight word rows re-shows a surface an earlier module owns, so the
+module adds no key at all and `surfaceCount` is unchanged from M9. That is stronger than L2-M10,
+L3-M10 and L4-M10, which each spent one, and it is the only real test of whether a fifty-module ladder
+holds: the last rung had to write an eight-sentence piece across two registers using nothing but what
+the previous forty-nine had taught, and it did.
+
+S10's trap says so in the module itself — `Certē! Ita agō, nōn ita dīcō.`, six words from L1-M2, L1-M6,
+L3-M5 and L5-M9, and the course ends on a taught word.
+
+### 3.3 The register switch is in the sentences, not the spelling
+
+M3's mechanism, unchanged and now doing what it was built for. S01–S05 are Ciceronian: the concession
+first (`Quamquam gravissima est rēs, tamen dīcam.`), abstracts as objects (`lībertātem`, `virtūtem`),
+`prīmum … deinde` announcing a structure, the ablative absolute summarising (`Hīs rēbus dictīs`), and
+the main verb last and alone. S07–S10 are Plautine: a vocative insult (`Ō stulte!`), a coin where the
+formal half had an abstract (`Lībertās nōn est nummus.`), `immō` interrupting, a bare imperative and a
+name (`Bibe vīnum, mārce!`).
+
+**Nothing about the spelling changes**, and that was the decision: `display` is the same orthography in
+both halves, the `sound` lines carry what a reader of each tradition would do (`necessāria`'s c hard in
+the restored tradition and soft in the ecclesiastical), and an author who respelled a register would
+have minted a key for a variant. The switch is visible in vocabulary, sentence length and word order,
+which is exactly the three places `docs/133` §8 required.
+
+The hinge is S06, four words: `Sed quid dīcam? Satis.` — the deliberative question naming the turn out
+loud, with M6's `at` offered as the sharper alternative in a variation. A silent switch reads as an
+inconsistency; this is the module's own claim and it is the reason the hinge is a sentence rather than a
+paragraph break.
+
+### 3.4 Two lexemes got a row for a shape they already had elsewhere
+
+Both are the ratchet rule working, not an exception to it.
+
+- **`verbīs` (M9-S05)** — the ablative plural of `verbum`, which M8 opened one module earlier. A new
+  shape of an older lexeme gets its own row in the module that first shows it, with a note back at the
+  first-teach row, so `verbīs` has a row and its note points at M8's.
+- **`is` and `ea` (M8-S03)** — added to the `id` row's `forms`, not given rows of their own, because
+  they are the same lexeme (`is, ea, id`) and the row's note is true of all three. This is the
+  distinction that keeps the `magistrī` defect out: a form of one lexeme never sits in another
+  lexeme's row, and a form of the SAME lexeme belongs in `forms`.
+
+### 3.5 What the variation gate caught, and it caught a banned word
+
+**`checkShownSurfaces` scans `variations[].display` as well as `sentence.display`**, which the first
+draft of this wave did not respect: M8 shipped 24 unresolved variation surfaces and M9 fourteen, and
+every one had to be rewritten or given a home. This is the single most productive gate in the build and
+it caught three things worth recording:
+
+1. **`vōs` in an M8 variation** — `Quō modō haec rēs apud vōs appellātur?`. `vōs` is banned course-wide
+   (L2-M1, restated at `docs/133` §9, and M4's note forbids smuggling it back), and forty-nine modules
+   of discipline nearly ended in a variation nobody would have read twice. It became `apud nōs`.
+2. **`possim` in a candidate M8 variation** — refused before it was written, because `docs/129` §1 bans
+   it and the index cannot know that. The gate would have passed it: `possim` is simply unindexed, so
+   a build would have reported it as untaught rather than as forbidden, and the ratchet would have
+   caught it as a count rather than as a rule. Only the author's own list stands between a banned key
+   and a display.
+3. **`Phaedrus` in an M10 variation** — a proper noun rides unindexed (#61's known gap) and is COUNTED,
+   so naming the fabulist in a display would have raised the ratchet. `docs/133` §8 and the brief both
+   said to name him in a `usage` line, and M9's S10 does.
+
+Fixing these produced better content, not merely legal content: the thirty-eight replacement variations
+are all built from taught surfaces, which is what a variation is for.
+
+### 3.6 A correction to §2.7 of this document
+
+§2.7 as first written said the ten absent keys were "each promised to one of L5-M8…M10". **That is
+wrong** and §2.7 now says so. They are permanent withholdings — `sīc`, `possim`, `meus`, `eius`, `vōs`,
+`quārē`, `quamvīs`, `quōmodo` — plus `s.p.q.r`, which is the L4-M7 abbreviation decision holding
+(`spqr` owns the key, the dotted spelling is written nowhere), plus `rosa`/`rosā`, which is
+`docs/123`'s macron demonstrator and was never owed to any module. No reservation was outstanding when
+this wave began.
+
+The error mattered because of the shape it has: a sentence in a review doc that misdescribes what a
+later module owes is exactly how the "a proper noun is exempt" line misled three authoring waves before
+2026-09-08. It is corrected in place rather than annotated, and recorded here so the correction is the
+record.
+
+### 3.7 Corrections made during the wave
+
+- The `dīc` row was **not** written fresh at M8, although the brief said it was: `dīc` resolves to
+  **L5-M6**, which spent it two modules earlier on the four ending-dropping imperatives. M8 re-shows it
+  three times — S02, S07, S08 — and points back. A brief corrected by the index.
+- **The pool gate fired four times on M8** (`sententia`, `intellegam`, `loquerer`, `scīrem`) before the
+  variation gate was reached. Every comprehension token must resolve in the cumulative index, and a
+  pool item is not a place to introduce a form.
+- **The first `rules[]` I wrote used the wrong shape entirely** — `{id, text}` against schema v5's
+  `{tag, text}`, and word tags of `"taught"` against the closed set `free`/`delta`/`interference`.
+  Schema v5 is closed and said so in twelve lines at once.
+
+### 3.8 The course, finished
+
+Fifty modules, five levels, **796 surfaces**, and the shown-surface ratchet at **zero from L1-M1 to
+L5-M10**. Every construction `docs/121` promised is taught. Every reserved key was spent in the module
+that promised it: `ēst`/`ēs` at L2-M5, `nē` at L3-M4, `nōnne`/`num` at L4-M4 thirty-three modules after
+L1-M2 named them, `legēbam`/`habēbam`/`eram` at L4-M8 thirty-four after L1-M5, `domī` at L4-M9,
+`venī` at L4-M10 thirty-nine on, the vocative `Mārce` at L5-M2 forty-nine rungs on — and that last one
+appears three times in all: between friends at M2, refused for the dead at M4, and ending an argument
+at M10-S09.
+
+**The fluent-speaker gate is still unmet, and finishing the content does not move it.** The bar en-la
+clears is an LLM review on the repo owner's explicit authority. The bar it does not clear is a reader
+who speaks living Latin, and `docs/123`–`docs/134` now end in something over a hundred and twenty
+numbered questions for that reader.
+
+### 3.9 Open questions for the fluent-speaker gate
+
+Additions to the standing list across `docs/123`–`docs/134` §1.9/§2.8.
+
+1. **Is `quid sibi vult?` the idiom a living Latin speaker would use** for "what does it mean?", or is
+   it a textbook phrase? M8 refuses `quid significat` as an anglicism, which may be the wrong call.
+2. **Does `quasi` really license an approximation** the way M8-S06 claims, or is that an English
+   speaker's reading of a word that means something narrower?
+3. **Is the fox and the crow the right fable** when the course cannot write Phaedrus's verse? A
+   retelling in prose of a poem is a compromise the module names but does not defend.
+4. **Should M9's moral be an imperative?** `cavē eum quī nimis laudat` is what the module chose; an
+   abstract statement would be closer to what Phaedrus actually wrote.
+5. **Is `ōre apertō` a natural ablative absolute or a constructed one?** It is the module's best
+   sentence and it may be the kind of thing only a grammar writes.
+6. **Is a register switch inside eight sentences a real skill?** `docs/133` §10 asked this of the
+   brief and the module does not answer it. A Roman moved between registers by writing to different
+   people, not by turning mid-piece, and M10 may be teaching something nobody does.
+7. **Is the Ciceronian half Ciceronian?** Five sentences of at most nine words each, and a real period
+   runs to forty. The module claims a register it may only be gesturing at.
+8. **Is ending the course on `ita agō, nōn ita dīcō` earned or glib?** It spends nothing, which was the
+   design, and a fluent reader may find it a slogan rather than a sentence.
+
+### 3.10 Twenty-eight stale `draft` flags cleared from `levels.json`
+
+Clearing L5's `draft` exposed an inconsistency three waves old. A finished level in this repo carries no
+`draft` on the level **and none on its modules** — hi-mr's five levels and en-sa's L1–L3 all look like
+that, and en-sa's unauthored L4/L5 carry both. en-la's L1 was clean, but **L2-M3…M10, L3-M1…M10 and
+L4-M1…M10 still carried `draft: true`** because #641, #645 and #649 each cleared the level's flag and
+its `draftNote` and left the module flags behind.
+
+Twenty-eight flags removed, all in `content/en-la/levels.json`. No code reads `LevelModule.draft` — it
+is metadata, which is exactly why nothing caught it for thirty modules — so this changes no behaviour
+and makes the file say what is true.

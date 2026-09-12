@@ -1234,8 +1234,8 @@ ten modules**: **929 romanized surfaces checked, 0 of them carrying Devanagari i
 and 959 Cyrillic strings to undo; this course never had one to undo.
 
 **The shown-surface ratchet opens at ZERO, and en-sa was the first course in the catalogue there**
-(#491; en-la joined it at #637 and has held it through all four of its authored levels and seven rungs
-of the fifth, forty-seven in all, at #641, #645, #649, #651 and #652, and the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
+(#491; en-la joined it at #637 and has held it from L1-M1 to L5-M10 — **all fifty rungs, the whole
+course** — at #641, #645, #649, #651, #652 and #653, and the other nine sit at hi-mr 7 · en-es 10 · en-ar 6 · hi-en 30 · en-ru 20 · en-it 17 · en-fr
 20 · en-de 11 · en-ko 12). It was designed rather than discovered, and it cost real content: every
 proper noun the course shows — `rāmaḥ`, `sītā` — carries a word row of its own from M1, because
 CLAUDE.md's warning is that a proper noun is COUNTED and not exempt; M8's agreeing numerals were
@@ -1490,8 +1490,8 @@ the module's job.
 
 **en-la's L5 has opened, and it is the one L5 in the product whose learner already owns the content
 (#650-#651, 2026-09-12).** Ten briefs ([`docs/133`](docs/133-en-la-L5-brief-decisions.md)) and three
-modules so far ([`docs/134`](docs/134-llm-review-en-la-L5.md)): `en-la: 47 modules`, **715 cumulative
-surfaces**, and **no `shown but untaught` line at any of the forty-seven**. An English speaker arrives
+modules ([`docs/134`](docs/134-llm-review-en-la-L5.md)): `en-la: 50 modules`, **796 cumulative
+surfaces**, and **no `shown but untaught` line at any of the fifty**. An English speaker arrives
 at M1 knowing `carpe diem` and `ālea iacta est` without knowing a word of Latin, so the module's work
 is not learning them but taking them apart — and `ālea iacta est` turns out to be L2-M8's
 participle-as-adjective arrangement thirty-eight rungs later.
@@ -1527,6 +1527,41 @@ and it is the single most common way an en-la plan goes wrong. **And M4-S08 is t
 fifty modules where a name's case carries the whole meaning**: `Mārcus mortuus est` leaves `Mārcus`
 nominative two modules after the vocative arrived, because you do not address the dead, and the trap
 says exactly that.
+
+**en-la is FINISHED (#653, 2026-09-12) — fifty rungs, five levels, 796 surfaces, and the shown-surface
+ratchet at ZERO from L1-M1 to L5-M10.** The eleventh course is the second complete five-level ladder
+authored here from nothing (after the nine that shipped at #112's ratification), and the last three
+modules are the only real test of whether a fifty-module ladder holds. M8 "When words run out" teaches
+the paraphrase — `quid sibi vult?`, `id est` (which is 'i.e.', a thing the learner has been writing in
+English for years), `iterum dīc`, `quasi` for an approximation. M9 "Telling it your way" retells the fox
+and the crow in prose, with `ōre apertō` as the ablative absolute's third setting and `haec fābula
+docet` closing on an imperative. And **M10 "Your own voice" spends NOTHING**: `L5-M10 delta 0`, so the
+fiftieth module's fifty-eight word rows all re-show a surface an earlier module owns and `surfaceCount`
+is unchanged from M9. L2-M10, L3-M10 and L4-M10 each spent one; this one wrote an eight-sentence piece
+across two registers out of nothing but what the previous forty-nine had taught.
+
+The register switch is in the sentences and **not in the spelling**, which is M3's mechanism doing what
+it was built for: S01–S05 are Ciceronian (concession first, abstracts as objects, the main verb last and
+alone), S06 is a four-word hinge that names the turn out loud (`Sed quid dīcam? Satis.`), S07–S10 are
+Plautine (a vocative insult, a coin where the formal half had an abstract, a bare imperative and a
+name). `display` is the same orthography in both halves and the `sound` lines carry what a reader of
+each tradition would do — an author who respelled a register would have minted a key for a variant.
+
+**The most productive gate in the build turned out to be one nobody had leaned on: `checkShownSurfaces`
+scans `variations[].display`, not only `sentence.display`.** The first draft of this wave shipped 24
+unresolved variation surfaces on M8 and fourteen on M9, and rewriting them caught `vōs` — banned
+course-wide at L2-M1 and restated at every level since — inside an M8 variation, forty-nine modules of
+discipline nearly ending in a line nobody would have read twice. It also caught `Phaedrus` in an M10
+variation, which a proper noun's unindexed ride (#61) would have turned into a raised ratchet. What the
+gate cannot catch is a word that is merely FORBIDDEN rather than untaught: `possim` is unindexed, so a
+build reports it as a count and not as a rule, and only the author's own list stands between a banned key
+and a display. Twenty-eight stale `draft: true` flags on L2, L3 and L4's module rows were cleared in the
+same commit — #641, #645 and #649 each cleared the level's flag and left the modules'.
+
+**The fluent-speaker gate is still unmet and finishing the content does not move it.** The bar en-la
+clears is an LLM review on the owner's explicit authority; the bar it does not clear is a reader who
+speaks living Latin, and [`docs/123`](docs/123-en-la-orthography-decisions.md)–[`docs/134`](docs/134-llm-review-en-la-L5.md)
+now end in something over a hundred and twenty numbered questions for that reader.
 
 **Five levels per course (2026-09-07, `docs/48-five-level-ladder-plan.md`).** Every course's
 `levels.json` now lists L4 "Nuance — say it the way they do" and L5 "Voice — your own words, at
@@ -2639,11 +2674,11 @@ again.
   keeps every route in the fragment, so there is no 404-rewrite to configure.
 - **The live site ships every authored module, and nothing that has not been reviewed.** The deploy
   builds strict content; until 2026-08-13 that was an empty ladder and the honest "no course
-  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **527
+  content" boot screen, because no module had cleared the gate. Eleven courses now ship — **530
   modules**: fifty each on hi-mr, en-es, en-ar, hi-en, en-ru, en-it, en-fr, en-de and en-ko,
   thirty on en-sa, which is the whole of L1, L2 and L3 (#611, #613, #614, #615, #617, #618,
-  #619), and forty-seven on en-la, which is the whole of L1, L2, L3 and L4 plus the first seven
-  rungs of L5 (#637, #641, #645, #649, #651, #652) — every one
+  #619), and **fifty on en-la, which is the whole course** (#637, #641, #645, #649,
+  #651, #652, #653) — every one
   carrying `verified: true` on the owner's explicit authority, signed `verifiedBy` as an LLM review.
   The native-speaker gate (#64, #110, #111) remains unmet and open. Deploying **dev** content to
   make the demo look fuller would still be lying to the one person this is for.

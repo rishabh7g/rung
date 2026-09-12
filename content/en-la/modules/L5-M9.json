@@ -1,0 +1,955 @@
+{
+  "schemaVersion": 5,
+  "id": "L5-M9",
+  "title": "Telling it your way",
+  "job": "Retell a known story in your own register",
+  "prerequisites": [
+    "L5-M8"
+  ],
+  "verified": true,
+  "verifiedBy": "Claude Opus 5 — LLM review, authorised by repo owner",
+  "verifiedAt": "2026-09-12",
+  "complexity": {
+    "minWordsPerSentence": 3,
+    "maxWordsPerSentence": 16,
+    "allowedTenses": [
+      "simple_present"
+    ],
+    "allowedPatterns": [
+      "ōlim + N-nom + V-imperfect (a fable opens)",
+      "subitō + V-perfect",
+      "<quotation> + , + inquit",
+      "N-abl + V-participle-abl (the ablative absolute, from M6)",
+      "<six-sentence retelling with a moral>"
+    ],
+    "newWordCap": 25
+  },
+  "rules": [
+    {
+      "tag": "delta",
+      "text": "A FABLE OPENS IN THE IMPERFECT AND TURNS IN THE PERFECT, which is L4-M8's tense pair doing the work it was built for. ōlim plus an imperfect sets the scene — a crow WAS SITTING — and the first perfect is the moment the story starts moving. Every narrative tool in this module arrived at L4-M8 and L4-M10; nothing here is new."
+    },
+    {
+      "tag": "interference",
+      "text": "THE ABLATIVE ABSOLUTE IS THE FABLE'S NATURAL TURN, and M6 taught it four modules ago: ōre apertō, 'the mouth having been opened'. Two words carry a whole subordinate clause, and it is why S06 needs five words where English needs nine. A fable is where this construction earns its keep."
+    },
+    {
+      "tag": "free",
+      "text": "A FABLE ENDS IN A MORAL AND THE MORAL IS AN IMPERATIVE. haec fābula docet — 'this story teaches' — and what follows is cavē plus a relative clause: cavē eum quī nimis laudat. docet is L3-M2's verb and cavē is L4-M7's warning, so the moral costs one word."
+    },
+    {
+      "tag": "delta",
+      "text": "ONE QUOTED LINE, PUNCTUATED L4-M10's WAY. inquit goes INSIDE the quotation or straight after it, never before, and it is the only verb of speaking a fable needs. A retelling may carry one line of direct speech and should not carry two."
+    },
+    {
+      "tag": "interference",
+      "text": "THE POINT OF THIS MODULE IS NOT THE STORY BUT WHO YOU TELL IT TO. L4-M10 recounted something the listener did not know; here the listener half-knows it already, so what you are choosing is register — short sentences and a plain moral for a friend, and something else for a teacher. S09 says that out loud."
+    }
+  ],
+  "sentences": [
+    {
+      "id": "L5-M9-S01",
+      "display": "Ōlim corvus in arbore sedēbat.",
+      "cue": "Once a crow was sitting in a tree.",
+      "literal": "once crow in tree it-was-sitting",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ōlim",
+            "cue": "once",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M8's adverb. In a fable it does the work of 'once upon a time' on its own, and it always comes first."
+          },
+          {
+            "display": "corvus",
+            "cue": "crow",
+            "tag": "free",
+            "forms": [
+              "corvus",
+              "corve",
+              "corvum",
+              "corvō"
+            ],
+            "note": "corvus, corve, corvum, corvō — 'a crow'. The vocative corve is S04's, where the fox addresses him."
+          },
+          {
+            "display": "in",
+            "cue": "in",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's preposition with the ablative: position, not motion."
+          },
+          {
+            "display": "arbore",
+            "cue": "in a tree",
+            "tag": "free",
+            "forms": [
+              "arbor",
+              "arborem",
+              "arbore"
+            ],
+            "note": "The ablative of arbor, 'a tree' — arbor, arborem, arbore. Feminine despite the -or ending, which is the one thing to remember about it."
+          },
+          {
+            "display": "sedēbat",
+            "cue": "he was sitting",
+            "tag": "delta",
+            "forms": [
+              "sedeō",
+              "sedet",
+              "sedēbat"
+            ],
+            "note": "The imperfect of sedeō — sedeō, sedet, sedēbat. L4-M8's tense, and the shape every fable opens in: a state that was going on when the story found it."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "ōlim plus an imperfect is the whole of 'once upon a time'. There is no Latin formula to learn — the tense does the work, which is why L4-M8 had to come before this module.",
+      "sound": "Ō-lim COR-vus in AR-bo-re se-DĒ-bat. sedēbat has its stress on the long ē, which is where every imperfect carries it.",
+      "variations": [
+        {
+          "display": "Ōlim vulpēs in arbore sedēbat.",
+          "cue": "Once a fox was sitting in a tree.",
+          "changed": "the other animal put in the crow's place"
+        },
+        {
+          "display": "Corvus in arbore sedet.",
+          "cue": "A crow is sitting in a tree.",
+          "changed": "the present, which reports rather than narrates"
+        },
+        {
+          "display": "Ōlim corvus in arbore sedēbat et tenēbat cāseum.",
+          "cue": "Once a crow was sitting in a tree and holding a cheese.",
+          "changed": "two imperfects, both scene"
+        }
+      ],
+      "mistake": {
+        "display": "Ōlim corvus in arbore sēdit.",
+        "why": "sēdit is the perfect and makes the sitting an event — 'he sat down'. A fable's opening is a state, so it takes the imperfect sedēbat."
+      },
+      "usage": "Said starting a story somebody has heard before. The ōlim tells them which kind of story it is, and they will settle in accordingly.",
+      "mnemonic": "ōlim plus imperfect: once upon a time, in one tense.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M9-S02",
+      "display": "Cāseum in ōre tenēbat.",
+      "cue": "He was holding a cheese in his mouth.",
+      "literal": "cheese in mouth he-was-holding",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "cāseum",
+            "cue": "cheese",
+            "tag": "free",
+            "forms": [
+              "cāseus",
+              "cāseum",
+              "cāseō"
+            ],
+            "note": "The accusative of cāseus — cāseus, cāseum, cāseō. The one thing the whole fable turns on."
+          },
+          {
+            "display": "in",
+            "cue": "in",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's preposition, ablative again."
+          },
+          {
+            "display": "ōre",
+            "cue": "in his mouth",
+            "tag": "free",
+            "forms": [
+              "ōs",
+              "ōre"
+            ],
+            "note": "The ablative of ōs, 'a mouth' — ōs, ōre. Neuter, and short: the nominative is one syllable."
+          },
+          {
+            "display": "tenēbat",
+            "cue": "he was holding",
+            "tag": "delta",
+            "forms": [
+              "teneō",
+              "tenet",
+              "tenēbat"
+            ],
+            "note": "The imperfect of teneō — teneō, tenet, tenēbat. Still scene: the holding was going on, and S06 is where it stops."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "No possessive. Latin does not say 'in HIS mouth' — whose mouth it is follows from the subject, and suus (L3-M5) would be reserved for a case where it could be somebody else's.",
+      "sound": "CĀ-se-um in Ō-re te-NĒ-bat. ōs and ōre both carry the long ō, and ōre is two syllables.",
+      "variations": [
+        {
+          "display": "Cāseum ōre tenēbat.",
+          "cue": "He was holding a cheese in his mouth.",
+          "changed": "in dropped — the bare ablative, which older Latin prefers"
+        },
+        {
+          "display": "Cāseum in ōre tenet.",
+          "cue": "He is holding a cheese in his mouth.",
+          "changed": "the present tense"
+        },
+        {
+          "display": "Cāseum tenēbat.",
+          "cue": "He was holding a cheese.",
+          "changed": "the place dropped, which loses the reason the cheese can fall"
+        }
+      ],
+      "mistake": {
+        "display": "Cāseum in ōre suō tenēbat.",
+        "why": "suō is not wrong, but Latin does not mark a possessor the sentence already implies. Put suus in only when the mouth could belong to somebody else."
+      },
+      "usage": "The second scene-setting sentence, and it plants the thing that falls. A fable tells you where every object is before anything happens to it.",
+      "mnemonic": "Whose mouth? The subject's. Latin does not say so.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M9-S03",
+      "display": "Vulpēs, quae cāseum cupiēbat, ad arborem vēnit.",
+      "cue": "A fox, who wanted the cheese, came to the tree.",
+      "literal": "fox, who cheese she-was-wanting, to tree she-came",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vulpēs",
+            "cue": "fox",
+            "tag": "free",
+            "forms": [
+              "vulpēs",
+              "vulpem",
+              "vulpe"
+            ],
+            "note": "vulpēs, vulpem, vulpe — 'a fox'. Feminine, so the relative is quae and not quī, and every adjective about her agrees feminine."
+          },
+          {
+            "display": "quae",
+            "cue": "who",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M2's relative pronoun, feminine to agree with vulpēs. It is the subject of its own clause."
+          },
+          {
+            "display": "cāseum",
+            "cue": "cheese",
+            "tag": "free",
+            "forms": [],
+            "note": "S02's row."
+          },
+          {
+            "display": "cupiēbat",
+            "cue": "she was wanting",
+            "tag": "free",
+            "forms": [
+              "cupiō",
+              "cupit",
+              "cupiēbat"
+            ],
+            "note": "The imperfect of cupiō — cupiō, cupit, cupiēbat. Still scene: the wanting was going on before she moved."
+          },
+          {
+            "display": "ad",
+            "cue": "to",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M4's preposition with the accusative: motion towards."
+          },
+          {
+            "display": "arborem",
+            "cue": "tree",
+            "tag": "free",
+            "forms": [],
+            "note": "S01's row in the accusative, because ad takes it."
+          },
+          {
+            "display": "vēnit",
+            "cue": "she came",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M5's perfect of veniō. The first perfect in the fable, and it is where the story starts moving."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "vēnit with the macron is the perfect, venit without it is the present, and L1-M4 and L1-M5 bought them as two separate rows for exactly this reason. In a fable the macron is the difference between narrating and reporting.",
+      "sound": "VUL-pēs, quae CĀ-se-um cu-pi-Ē-bat, ad AR-bo-rem VĒ-nit. vēnit has a long ē and venit a short one — the perfect and the present, one macron apart.",
+      "variations": [
+        {
+          "display": "Vulpēs ad arborem vēnit.",
+          "cue": "A fox came to the tree.",
+          "changed": "the relative clause dropped, which loses her motive"
+        },
+        {
+          "display": "Vulpēs, quae cāseum cupiēbat, ad arborem vēnit.",
+          "cue": "A fox, who wanted the cheese, came to the tree.",
+          "changed": "unchanged from the display, which is what a retelling repeats"
+        },
+        {
+          "display": "Vēnit vulpēs, quae cāseum cupiēbat.",
+          "cue": "There came a fox, who wanted the cheese.",
+          "changed": "the verb first, which is how a storyteller introduces somebody new"
+        }
+      ],
+      "mistake": {
+        "display": "Vulpēs, quī cāseum cupiēbat, ad arborem vēnit.",
+        "why": "vulpēs is feminine, so the relative is quae. quī is the masculine, and it would make the fox a different animal from the one the sentence named."
+      },
+      "usage": "Three clauses and the whole setup is done. The relative clause carrying the motive is what lets the next sentence be dialogue rather than explanation.",
+      "mnemonic": "vēnit came, venit comes — one macron, two tenses.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M9-S04",
+      "display": "\"Ō pulcher corve,\" inquit, \"cantā mihi!\"",
+      "cue": "\"O beautiful crow,\" she said, \"sing for me!\"",
+      "literal": "O beautiful crow, she-says, sing to-me",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ō",
+            "cue": "O",
+            "tag": "delta",
+            "forms": [],
+            "note": "L5-M2's vocative particle, seven modules ago. In a fable it is flattery rather than affection, which is the same word doing a different job."
+          },
+          {
+            "display": "pulcher",
+            "cue": "beautiful",
+            "tag": "free",
+            "forms": [
+              "pulcher",
+              "pulchrum"
+            ],
+            "note": "pulcher, pulchrum — masculine, agreeing with corve. L5-M3 wrote the feminine pulchra; this is the shape it takes for a man or a crow."
+          },
+          {
+            "display": "corve",
+            "cue": "crow!",
+            "tag": "free",
+            "forms": [],
+            "note": "S01's row in the vocative. The -us of corvus becomes -e when you address him, which is L5-M2's rule and its second outing."
+          },
+          {
+            "display": "inquit",
+            "cue": "she said",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M10's verb of speaking. It sits INSIDE or straight after the quotation and never in front of it."
+          },
+          {
+            "display": "cantā",
+            "cue": "sing!",
+            "tag": "free",
+            "forms": [
+              "cantō",
+              "cantat",
+              "cantā",
+              "cantāvit"
+            ],
+            "note": "The imperative of cantō — cantō, cantat, cantā, cantāvit. A plain order, with no softener, because a flatterer does not need one."
+          },
+          {
+            "display": "mihi",
+            "cue": "for me",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's dative of ego. 'For my benefit' — the dative of the person a thing is done for."
+          }
+        ],
+        "rules": [
+          3
+        ]
+      },
+      "trap": "The fable's one quoted line, and the whole trick is inside it. She asks him to sing, which is the one thing he cannot do with a cheese in his mouth — and the vocative corve is what makes it sound like a compliment.",
+      "sound": "ō PUL-cher COR-ve, IN-quit, can-TĀ MI-hi. corve ends in a short e and pulcher has the stress on the first syllable.",
+      "variations": [
+        {
+          "display": "\"Ō pulcher corve,\" inquit, \"cantā!\"",
+          "cue": "\"O beautiful crow,\" she said, \"sing!\"",
+          "changed": "the dative dropped, which is blunter"
+        },
+        {
+          "display": "\"Pulcher es,\" inquit vulpēs.",
+          "cue": "\"You are beautiful,\" the fox said.",
+          "changed": "a statement instead of an order, and the speaker named"
+        },
+        {
+          "display": "\"Ō corve,\" inquit, \"cantā mihi, quaesō.\"",
+          "cue": "\"O crow,\" she said, \"sing for me, please.\"",
+          "changed": "quaesō added, which a flatterer would not use"
+        }
+      ],
+      "mistake": {
+        "display": "\"Ō pulcher corvus,\" inquit, \"cantā mihi!\"",
+        "why": "corvus is the nominative and you are addressing him, so it must be corve. L5-M2 taught the vocative and this is the shape it was taught for."
+      },
+      "usage": "One line of dialogue is what a fable gets. Two would make it a scene, and a retelling that turns into a scene has stopped being a fable.",
+      "mnemonic": "corvus for the crow, corve to the crow.",
+      "register": "informal"
+    },
+    {
+      "id": "L5-M9-S05",
+      "display": "Corvus blandīs verbīs gaudēbat.",
+      "cue": "The crow was delighted by the flattering words.",
+      "literal": "crow by-flattering by-words he-was-rejoicing",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "corvus",
+            "cue": "crow",
+            "tag": "free",
+            "forms": [],
+            "note": "S01's row."
+          },
+          {
+            "display": "blandīs",
+            "cue": "flattering",
+            "tag": "free",
+            "forms": [
+              "blandus",
+              "blanda",
+              "blandīs"
+            ],
+            "note": "The ablative plural of blandus — blandus, blanda, blandīs. 'Coaxing, flattering', and in a fable it is never a compliment."
+          },
+          {
+            "display": "verbīs",
+            "cue": "by words",
+            "tag": "free",
+            "forms": [
+              "verbīs"
+            ],
+            "note": "The ablative plural of L5-M8's verbum — a new shape of a noun one module old, so it gets its own row here and points back to M8's."
+          },
+          {
+            "display": "gaudēbat",
+            "cue": "he was delighted",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M6's gaudeō in the imperfect. It takes the ablative of the thing you are delighted BY, which is why blandīs verbīs is not a subject."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "gaudeō takes the ablative of the cause, not the accusative: you rejoice BY a thing rather than AT it. blandīs verbīs is that ablative, and a learner reading it as a subject gets the sentence backwards.",
+      "variations": [
+        {
+          "display": "Corvus verbīs gaudēbat.",
+          "cue": "The crow was delighted by the words.",
+          "changed": "the adjective dropped, which loses the fable's judgement of them"
+        },
+        {
+          "display": "Corvus blandīs verbīs gaudet.",
+          "cue": "The crow is delighted by the flattering words.",
+          "changed": "the present tense"
+        },
+        {
+          "display": "Blandīs verbīs gaudēbat.",
+          "cue": "He was delighted by the flattering words.",
+          "changed": "the subject dropped, which Latin allows once it is known"
+        }
+      ],
+      "mistake": {
+        "display": "Corvus blanda verba gaudēbat.",
+        "why": "gaudeō takes the ablative, so it is blandīs verbīs. The accusative blanda verba makes the words the thing rejoiced, as if he were enjoying them the way you enjoy a meal."
+      },
+      "usage": "The sentence that judges the crow without saying so. blandus does the work: the narrator has told you the words were flattery while the crow is still enjoying them.",
+      "mnemonic": "gaudeō rejoices BY a thing — ablative, not accusative.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M9-S06",
+      "display": "Ōre apertō, cāseus subitō cecidit.",
+      "cue": "His mouth having been opened, the cheese suddenly fell.",
+      "literal": "mouth having-been-opened, cheese suddenly it-fell",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ōre",
+            "cue": "mouth",
+            "tag": "free",
+            "forms": [],
+            "note": "S02's row, and here it is the noun of the ablative absolute rather than a place."
+          },
+          {
+            "display": "apertō",
+            "cue": "having been opened",
+            "tag": "free",
+            "forms": [
+              "aperiō",
+              "aperit",
+              "aperuit",
+              "apertō"
+            ],
+            "note": "The perfect participle of aperiō in the ablative — aperiō, aperit, aperuit, apertō. With ōre it makes M6's ablative absolute: two words for a whole clause."
+          },
+          {
+            "display": "cāseus",
+            "cue": "cheese",
+            "tag": "free",
+            "forms": [],
+            "note": "S02's row in the nominative, because now the cheese is the one doing something."
+          },
+          {
+            "display": "subitō",
+            "cue": "suddenly",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M10's adverb, and the word that marks the turn in every narrative this course has written."
+          },
+          {
+            "display": "cecidit",
+            "cue": "it fell",
+            "tag": "free",
+            "forms": [
+              "cadō",
+              "cadit",
+              "cecidit"
+            ],
+            "note": "The perfect of cadō — cadō, cadit, cecidit. The reduplicated perfect: the stem doubles its first syllable, which is rarer than it looks."
+          }
+        ],
+        "rules": [
+          1
+        ]
+      },
+      "trap": "THE ABLATIVE ABSOLUTE, four modules after M6 opened it, and this is what it was for. Ōre apertō is two words where English needs 'his mouth having been opened' or 'as soon as he opened his mouth'. It is not a tense and there is no new ending in it.",
+      "sound": "Ō-re a-PER-tō, CĀ-se-us SU-bi-tō CE-ci-dit. cecidit has all three syllables short and the stress on the first.",
+      "variations": [
+        {
+          "display": "Ōre apertō, cāseus cecidit.",
+          "cue": "His mouth having been opened, the cheese fell.",
+          "changed": "subitō dropped, which flattens the turn"
+        },
+        {
+          "display": "Ōs aperuit, et cāseus cecidit.",
+          "cue": "He opened his mouth, and the cheese fell.",
+          "changed": "two plain clauses, which is the long way round the ablative absolute"
+        },
+        {
+          "display": "Cantāvit, et cāseus cecidit.",
+          "cue": "He sang, and the cheese fell.",
+          "changed": "two plain clauses, which is how a child would tell it"
+        }
+      ],
+      "mistake": {
+        "display": "Ōs apertum, cāseus subitō cecidit.",
+        "why": "An ablative absolute is in the ablative, and ōs apertum is the accusative-looking neuter nominative. Both words have to be ablative: ōre apertō."
+      },
+      "usage": "The sentence that pays for M6. Say the long version — cum ōs aperuisset — to somebody and they will understand you; say ōre apertō and you sound like you have read Latin.",
+      "mnemonic": "Both words ablative, or it is not absolute.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M9-S07",
+      "display": "Vulpēs cāseum cōnsūmpsit.",
+      "cue": "The fox ate the cheese.",
+      "literal": "fox cheese she-consumed",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "vulpēs",
+            "cue": "fox",
+            "tag": "free",
+            "forms": [],
+            "note": "S03's row."
+          },
+          {
+            "display": "cāseum",
+            "cue": "cheese",
+            "tag": "free",
+            "forms": [],
+            "note": "S02's row, accusative again and for the last time."
+          },
+          {
+            "display": "cōnsūmpsit",
+            "cue": "she ate it up",
+            "tag": "free",
+            "forms": [
+              "cōnsūmō",
+              "cōnsūmit",
+              "cōnsūmpsit"
+            ],
+            "note": "The perfect of cōnsūmō — cōnsūmō, cōnsūmit, cōnsūmpsit. 'Consumed', which is the same word in English and means rather more than ēdit."
+          }
+        ],
+        "rules": [
+          0
+        ]
+      },
+      "trap": "Three words, and it should be three words. A fable's resolution is always shorter than its setup, and a retelling that gives the fox a speech here has misjudged the form.",
+      "variations": [
+        {
+          "display": "Vulpēs cāseum ēdit.",
+          "cue": "The fox ate the cheese.",
+          "changed": "L3-M1's plainer verb, which says less"
+        },
+        {
+          "display": "Cāseum vulpēs cōnsūmpsit.",
+          "cue": "The cheese — the fox ate it.",
+          "changed": "the object first, which puts the weight on the cheese"
+        },
+        {
+          "display": "Cāseus nōn iam in ōre erat.",
+          "cue": "The cheese was no longer in his mouth.",
+          "changed": "told from the crow's side, which is crueller"
+        }
+      ],
+      "mistake": {
+        "display": "Vulpēs cāseus cōnsūmpsit.",
+        "why": "cāseus is the nominative and there cannot be two subjects. The thing eaten is the object: cāseum."
+      },
+      "usage": "Said flatly, with no comment. The moral is the next sentence's job and a narrator who editorialises here has taken it away from the listener.",
+      "mnemonic": "Setup long, resolution short.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M9-S08",
+      "display": "Haec fābula docet: cavē eum quī nimis laudat.",
+      "cue": "This story teaches: beware the man who praises too much.",
+      "literal": "this story it-teaches: beware him who too-much he-praises",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "haec",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's hic in the feminine, agreeing with fābula."
+          },
+          {
+            "display": "fābula",
+            "cue": "story",
+            "tag": "free",
+            "forms": [
+              "fābula",
+              "fābulam",
+              "fābulae"
+            ],
+            "note": "fābula, fābulam, fābulae — 'a story, a fable'. The word the module is named for, and the word Phaedrus used of his own."
+          },
+          {
+            "display": "docet",
+            "cue": "it teaches",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M2's verb. haec fābula docet is the fixed opening of a moral and it is worth learning whole."
+          },
+          {
+            "display": "cavē",
+            "cue": "beware",
+            "tag": "delta",
+            "forms": [],
+            "note": "L4-M7's imperative of caveō, from the notice on a Roman door. Here it takes a person in the accusative: beware HIM."
+          },
+          {
+            "display": "eum",
+            "cue": "him",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M3's accusative of is, ea, id — the pronoun whose neuter id arrived at M8."
+          },
+          {
+            "display": "quī",
+            "cue": "who",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M2's relative, masculine to agree with eum."
+          },
+          {
+            "display": "nimis",
+            "cue": "too much",
+            "tag": "free",
+            "forms": [
+              "nimis"
+            ],
+            "note": "'Too much, excessively'. Beside L5-M2's nimium it is the adverb rather than the noun, and it is the word that makes praise a warning."
+          },
+          {
+            "display": "laudat",
+            "cue": "he praises",
+            "tag": "free",
+            "forms": [
+              "laudō",
+              "laudat",
+              "laudā",
+              "laudāvit"
+            ],
+            "note": "laudō, laudat, laudā, laudāvit — 'to praise'. The verb the whole fable is about, and it arrives only at the moral."
+          }
+        ],
+        "rules": [
+          2
+        ]
+      },
+      "trap": "haec fābula docet is fixed and the moral after it is an imperative. Latin does not moralise in the abstract — it tells you what to do, which is why the moral is cavē and not a statement about flattery.",
+      "sound": "haec FĀ-bu-la DO-cet: CA-vē E-um quī NI-mis LAU-dat. cavē has a long ē at the end, which is what marks it as an order.",
+      "variations": [
+        {
+          "display": "Fābula docet: cavē eum quī laudat.",
+          "cue": "The story teaches: beware the man who praises.",
+          "changed": "nimis dropped, which makes all praise suspect"
+        },
+        {
+          "display": "Haec fābula vēritātem docet.",
+          "cue": "This story teaches a truth.",
+          "changed": "M5's abstract as the object, which is vaguer and grander"
+        },
+        {
+          "display": "Cavē eum quī tē nimis laudat.",
+          "cue": "Beware the man who praises YOU too much.",
+          "changed": "tē added, which makes it personal"
+        }
+      ],
+      "mistake": {
+        "display": "Haec fābula docet: cavē is quī nimis laudat.",
+        "why": "cavē takes the accusative, so it is eum. is is the nominative and would make him the one doing the bewaring."
+      },
+      "usage": "Said as the last line and then stopped. A moral explained is a moral wasted, which is the one thing every fabulist agrees on.",
+      "mnemonic": "haec fābula docet, then an order.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M9-S09",
+      "display": "Hanc fābulam amīcō nārrāvī, nōn magistrō.",
+      "cue": "I told this story to a friend, not to a teacher.",
+      "literal": "this story to-friend I-told, not to-teacher",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "hanc",
+            "cue": "this",
+            "tag": "delta",
+            "forms": [],
+            "note": "L2-M9's hic in the feminine accusative, agreeing with fābulam."
+          },
+          {
+            "display": "fābulam",
+            "cue": "story",
+            "tag": "free",
+            "forms": [],
+            "note": "S08's row in the accusative."
+          },
+          {
+            "display": "amīcō",
+            "cue": "to a friend",
+            "tag": "free",
+            "forms": [
+              "amīcus",
+              "amīcum",
+              "amīcō"
+            ],
+            "note": "The dative of amīcus — amīcus, amīcum, amīcō. 'A friend', and the dative is who you tell a thing to."
+          },
+          {
+            "display": "nārrāvī",
+            "cue": "I told",
+            "tag": "free",
+            "forms": [
+              "nārrō",
+              "nārrat",
+              "nārrāvī"
+            ],
+            "note": "The perfect of nārrō — nārrō, nārrat, nārrāvī. 'To tell, to narrate', and the whole English word is in it."
+          },
+          {
+            "display": "nōn",
+            "cue": "not",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's negative, denying magistrō rather than the telling."
+          },
+          {
+            "display": "magistrō",
+            "cue": "to a teacher",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M7's magister in the dative. The contrast that makes the module's point."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "THIS IS THE MODULE'S SUBJECT SENTENCE. The story is one the listener half-knows already, so what you are choosing is not the words but the register — short sentences and a blunt moral for a friend, and something longer and hedged for a teacher.",
+      "variations": [
+        {
+          "display": "Hanc fābulam magistrō nārrāvī, nōn amīcō.",
+          "cue": "I told this story to a teacher, not to a friend.",
+          "changed": "the contrast reversed, and the register with it"
+        },
+        {
+          "display": "Hanc fābulam saepe nārrō.",
+          "cue": "I often tell this story.",
+          "changed": "the present, which makes it a habit rather than an occasion"
+        },
+        {
+          "display": "Hanc fābulam nōn magistrō nārrāvī.",
+          "cue": "I did not tell this story to a teacher.",
+          "changed": "only the negative half, which leaves the friend implied"
+        }
+      ],
+      "mistake": {
+        "display": "Hanc fābulam amīcum nārrāvī, nōn magistrum.",
+        "why": "The person you tell a thing TO goes in the dative: amīcō, magistrō. The accusative would make the friend the thing narrated."
+      },
+      "usage": "The sentence to say to yourself before you tell any story in a language you are learning. Decide who is listening, then pick how long the sentences are.",
+      "mnemonic": "The dative is who hears it.",
+      "register": "neutral"
+    },
+    {
+      "id": "L5-M9-S10",
+      "display": "Ita fābula docet; ita ego nārrō.",
+      "cue": "That is how the story teaches; that is how I tell it.",
+      "literal": "thus story it-teaches; thus I I-tell",
+      "deconstruction": {
+        "words": [
+          {
+            "display": "ita",
+            "cue": "thus, so",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M2's adverb, in both halves. Repeating it is the figure that pairs the two clauses, which is L5-M6's territory used here for a closing."
+          },
+          {
+            "display": "fābula",
+            "cue": "story",
+            "tag": "free",
+            "forms": [],
+            "note": "S08's row."
+          },
+          {
+            "display": "docet",
+            "cue": "it teaches",
+            "tag": "delta",
+            "forms": [],
+            "note": "L3-M2's verb, S08's row."
+          },
+          {
+            "display": "ita",
+            "cue": "thus, so",
+            "tag": "delta",
+            "forms": [],
+            "note": "The second ita, and the repetition is deliberate."
+          },
+          {
+            "display": "ego",
+            "cue": "I",
+            "tag": "delta",
+            "forms": [],
+            "note": "L1-M1's pronoun, written out because the contrast is between the fable and me."
+          },
+          {
+            "display": "nārrō",
+            "cue": "I tell",
+            "tag": "free",
+            "forms": [],
+            "note": "S09's row in the present: what I do, rather than what I did."
+          }
+        ],
+        "rules": [
+          4
+        ]
+      },
+      "trap": "ego is written because the sentence is a contrast. Latin drops the pronoun unless it is doing work, and here the work is the whole point of the level: the fable has its way and I have mine.",
+      "variations": [
+        {
+          "display": "Ita fābula docet; ita nārrō.",
+          "cue": "That is how the story teaches; that is how I tell it.",
+          "changed": "ego dropped, which loses the contrast"
+        },
+        {
+          "display": "Fābula docet; ego nārrō.",
+          "cue": "The story teaches; I tell.",
+          "changed": "both ita dropped, which is blunter and less balanced"
+        },
+        {
+          "display": "Ita fābula docet; ego ita nārrō.",
+          "cue": "That is how the story teaches; I tell it that way.",
+          "changed": "ego moved in front of its ita, which leans harder on the contrast"
+        }
+      ],
+      "usage": "The last line of a retelling, and it is the fiftieth module's argument in six words: the story is not yours, the telling is. Say it and stop.",
+      "mnemonic": "ita … ita — the fable's way, then mine.",
+      "register": "neutral"
+    }
+  ],
+  "comprehensionPool": [
+    {
+      "id": "L5-M9-C01",
+      "display": "Ōlim corvus in arbore sedēbat.",
+      "cue": "Once a crow was sitting in a tree."
+    },
+    {
+      "id": "L5-M9-C02",
+      "display": "Cāseum in ōre tenēbat.",
+      "cue": "He was holding a cheese in his mouth."
+    },
+    {
+      "id": "L5-M9-C03",
+      "display": "Vulpēs cāseum cupiēbat.",
+      "cue": "The fox wanted the cheese."
+    },
+    {
+      "id": "L5-M9-C04",
+      "display": "Ōre apertō, cāseus cecidit.",
+      "cue": "His mouth having been opened, the cheese fell."
+    },
+    {
+      "id": "L5-M9-C05",
+      "display": "Vulpēs cāseum cōnsūmpsit.",
+      "cue": "The fox ate the cheese."
+    },
+    {
+      "id": "L5-M9-C06",
+      "display": "Haec fābula docet: cavē eum quī nimis laudat.",
+      "cue": "This story teaches: beware the man who praises too much."
+    },
+    {
+      "id": "L5-M9-C07",
+      "display": "Corvus blandīs verbīs gaudēbat.",
+      "cue": "The crow was delighted by the flattering words."
+    },
+    {
+      "id": "L5-M9-C08",
+      "display": "Hanc fābulam amīcō nārrāvī.",
+      "cue": "I told this story to a friend."
+    },
+    {
+      "id": "L5-M9-C09",
+      "display": "Ita fābula docet; ita ego nārrō.",
+      "cue": "That is how the story teaches; that is how I tell it."
+    },
+    {
+      "id": "L5-M9-C10",
+      "display": "Vulpēs ad arborem vēnit.",
+      "cue": "The fox came to the tree."
+    },
+    {
+      "id": "L5-M9-C11",
+      "display": "Corvus pulcher nōn est.",
+      "cue": "The crow is not beautiful."
+    },
+    {
+      "id": "L5-M9-C12",
+      "display": "Cantā mihi!",
+      "cue": "Sing for me!"
+    }
+  ],
+  "exitTest": {
+    "generateCount": 1,
+    "comprehendCount": 2
+  }
+}
